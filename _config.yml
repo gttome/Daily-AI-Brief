@@ -1,4 +1,6 @@
 theme: jekyll-theme-cayman
 title: Daily Generative AI Brief
-description: Five worthwhile Generative AI developments selected daily for George Tome
+description: "Connecting my books, applications, and learning tools to evolving technologies, concepts, and practices shaping reliable Generative AI."
+series_name: "Generative AI Professional Series"
+series_url: "https://leanpub.com/u/george-tome"
 markdown: GFM
