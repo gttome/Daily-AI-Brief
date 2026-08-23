@@ -3,7 +3,7 @@
 **Published:** August 23, 2026  
 **Coverage period:** Primary window: August 22–23, 2026; research-release extension: August 20–21, 2026
 
-> **Freshness note:** No major company, product, standards, security, or research announcement in the strict 24-hour window met today’s quality threshold. The five selections therefore come from the latest Friday research release, were not covered in earlier editions, and are all dated August 20. Four are non-peer-reviewed preprints; InsufficiencyBench received a Best Paper Honorable Mention at the ICML AI4Law 2026 workshop, although the linked arXiv version should still be read as an early research report. This rerun includes five visually differentiated, story-specific editorial illustrations: a benchmark gauge and clean-rerun cycle, transferable skill modules, a missing-facts clarification gate, a rationale-versus-action audit trail, and a robustness-search Pareto landscape.
+> **Freshness note:** No major company, product, standards, security, or research announcement in the strict 24-hour window met today’s quality threshold. The five selections therefore come from the latest Friday research release, were not covered in earlier editions, and are all dated August 20. Four are non-peer-reviewed preprints; InsufficiencyBench received a Best Paper Honorable Mention at the ICML AI4Law 2026 workshop, although the linked arXiv version should still be read as an early research report. This rerun includes five visually differentiated, story-specific editorial illustrations: a benchmark gauge and clean-rerun cycle, transferable skill modules, a missing-facts clarification gate, a rationale-versus-action audit trail, and a robustness-search Pareto landscape. The illustrations were rechecked with clear bottom margins and without overlapping text.
 
 ## 1. AI4AI-Bench finds coding agents rarely redesign the learning algorithm itself
 
@@ -117,13 +117,7 @@ Across four benchmarks covering vision, natural language, and code generation, t
 
 ## Worth Watching
 
-### How Harvey Built a Research Lab on a Budget — Gabe Pereyra
-
-**Channel / presenter:** Sequoia Capital; Gabe Pereyra, Harvey co-founder and research lead  
-**Uploaded:** August 11, 2026  
-**Why it is worth watching:** This 29-minute interview explains an application-layer AI playbook centered on domain benchmarks, post-training, serving open and closed models together, model routing, and feedback loops. Its practical value is the sequence: establish the evaluation and decision system before spending heavily on customization.  
-**Relevant topics:** Domain evaluation; model routing; feedback loops; legal AI; context and application engineering  
-**Watch:** https://www.youtube.com/watch?v=MGouk8W51v0
+No recent YouTube video met both today’s substantive-quality threshold and the maximum verified runtime of **8 minutes 00 seconds**. The previously listed 29-minute interview was removed because it exceeds the new duration limit.
 
 ## Editorial takeaway
 
