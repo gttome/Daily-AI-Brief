@@ -3,9 +3,11 @@
 **Published:** August 23, 2026  
 **Coverage period:** Primary window: August 22–23, 2026; research-release extension: August 20–21, 2026
 
-> **Freshness note:** No major company, product, standards, security, or research announcement in the strict 24-hour window met today’s quality threshold. The five selections therefore come from the latest Friday research release, were not covered in earlier editions, and are all dated August 20. Four are non-peer-reviewed preprints; InsufficiencyBench received a Best Paper Honorable Mention at the ICML AI4Law 2026 workshop, although the linked arXiv version should still be read as an early research report. No item image is included because no stable, substantive standalone source image could be verified; generic icons, logos, and placeholders were deliberately excluded.
+> **Freshness note:** No major company, product, standards, security, or research announcement in the strict 24-hour window met today’s quality threshold. The five selections therefore come from the latest Friday research release, were not covered in earlier editions, and are all dated August 20. Four are non-peer-reviewed preprints; InsufficiencyBench received a Best Paper Honorable Mention at the ICML AI4Law 2026 workshop, although the linked arXiv version should still be read as an early research report. This corrected edition includes one topic-specific editorial diagram for each selected development.
 
 ## 1. AI4AI-Bench finds coding agents rarely redesign the learning algorithm itself
+
+![Editorial diagram showing the AI4AI-Bench verified-improvement loop]({{ '/briefs/images/2026-08-23/ai4ai-bench.svg' | relative_url }})
 
 **Date:** August 20, 2026  
 **Topics:** Coding agents; loop engineering; harness engineering; evaluation; AI research automation
@@ -27,6 +29,8 @@ Across 29 configurations of six systems on all ten tasks, the reported mean scor
 
 ## 2. Smaller, text-based agent skills transfer better than monolithic task recipes
 
+![Editorial diagram showing transferable agent skills decomposed into reusable text procedures]({{ '/briefs/images/2026-08-23/skill-transfer.svg' | relative_url }})
+
 **Date:** August 20, 2026  
 **Topics:** Agent skills; context engineering; memory; prompt engineering; reusable workflows
 
@@ -46,6 +50,8 @@ The study also defines specificity—how closely a skill matches real tasks—an
 ---
 
 ## 3. InsufficiencyBench shows frontier models struggle to ask for legally decisive missing facts
+
+![Editorial diagram showing a sufficiency check before an AI system answers]({{ '/briefs/images/2026-08-23/insufficiency-bench.svg' | relative_url }})
 
 **Date:** August 20, 2026  
 **Topics:** Clarification; guardrails; human review; legal AI; evaluation
@@ -67,6 +73,8 @@ Across ten frontier models, none exceeded an F2 score of 0.46 for missing-elemen
 
 ## 4. ReguSim separates an agent’s explanation from the action it actually attempted
 
+![Editorial diagram separating policy, attempted action, enforcement, and audit evidence]({{ '/briefs/images/2026-08-23/regusim.svg' | relative_url }})
+
 **Date:** August 20, 2026  
 **Topics:** Guardrails; agent monitoring; tool use; audit evidence; financial compliance
 
@@ -86,6 +94,8 @@ In runs using DeepSeek V4 Pro and Gemini 3.5 Flash, visible rules reduced but di
 ---
 
 ## 5. TESTNAV searches for realistic combinations that break AI systems
+
+![Editorial diagram showing TESTNAV searching combined transformations for realistic failures]({{ '/briefs/images/2026-08-23/testnav.svg' | relative_url }})
 
 **Date:** August 20, 2026  
 **Topics:** Evaluation; robustness; AI-assisted coding; multimodal systems; test generation
