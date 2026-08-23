@@ -117,7 +117,7 @@ Across four benchmarks covering vision, natural language, and code generation, t
 
 ## Worth Watching
 
-No recent YouTube video met both today’s substantive-quality threshold and the maximum verified runtime of **8 minutes 00 seconds**. The previously listed 29-minute interview was removed because it exceeds the new duration limit.
+No recent YouTube video met both today’s substantive-quality threshold and the maximum verified runtime of **10 minutes 00 seconds**. The previously listed 29-minute interview was removed because it exceeds the new duration limit.
 
 ## Editorial takeaway
 
