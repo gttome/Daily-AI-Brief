@@ -1,145 +1,122 @@
-# Daily Generative AI Brief — August 22, 2026
+# Daily Generative AI Brief — August 23, 2026
 
-**Published:** August 22, 2026  
-**Coverage period:** Primary window: August 21–22, 2026; research-release extension: August 20–21, 2026
+**Published:** August 23, 2026  
+**Coverage period:** Primary window: August 22–23, 2026; research-release extension: August 20–21, 2026
 
-> **Freshness note:** Today’s rerun applies the updated media standard. Two major GitHub product announcements from August 21 and three high-value August 20 research releases make up the five selected developments. The three research items are non-peer-reviewed preprints. Four items have substantive source-specific visuals; the fifth intentionally has no image rather than using a generic icon. Two recent YouTube videos also qualified for the separate **Worth Watching** section.
+> **Freshness note:** No major company, product, standards, security, or research announcement in the strict 24-hour window met today’s quality threshold. The five selections therefore come from the latest Friday research release, were not covered in earlier editions, and are all dated August 20. Four are non-peer-reviewed preprints; InsufficiencyBench received a Best Paper Honorable Mention at the ICML AI4Law 2026 workshop, although the linked arXiv version should still be read as an early research report. No item image is included because no stable, substantive standalone source image could be verified; generic icons, logos, and placeholders were deliberately excluded.
 
-## 1. GitHub brings visible, steerable Copilot agent sessions into Microsoft Teams
-
-![GitHub Copilot agent session in Microsoft Teams](https://github.blog/wp-content/uploads/2026/08/638616055-5259fa4e-a40a-411c-b642-f49a5ddee934.jpg?resize=2000%2C1095)
-
-**Date:** August 21, 2026  
-**Topics:** AI-assisted coding; agent workflows; harness engineering; human review; collaboration tools
-
-**Summary:** GitHub released a public preview that lets Microsoft Teams participants mention `@GitHub` in a channel, thread, meeting chat, or direct message to start a Copilot cloud-agent session. Everyone in the conversation can add context and steer the work. Participants with repository write access can trigger code changes, while the agent runs asynchronously in a cloud sandbox and can hand work back into GitHub, an IDE, or a terminal.
-
-GitHub also provides an optional repository control requiring an additional approval for pull requests attributed to the Teams integration identity.
-
-**Why it matters:** Agentic coding is moving out of a private developer session and into shared work conversations. That makes delegation more observable—discussion, assignment, agent investigation, review, and approval—but it also makes identity, permissions, sandboxing, cost controls, and responsibility for final changes more important.
-
-**Evidence caution:** This is a public preview rather than a mature production release. GitHub has not published comparative evidence showing that Teams-originated agent work is faster or more reliable, so organizations still need to establish repository, review, sandbox, and budget policies.
-
-**Implications for George’s publishing and training work:** This is a strong practical example of **Bounded Agentic Delegation**. The AI can perform substantial work, but capability does not confer authority: permissions determine who may initiate changes, the sandbox constrains execution, and a human-controlled merge gate can remain in place.
-
-**Source:**  
-- GitHub Changelog: https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/
-
----
-
-## 2. GitHub turns Slack conversations into shared Copilot coding-agent sessions
-
-![GitHub Copilot working in a Slack code channel](https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096)
-
-**Date:** August 21, 2026  
-**Topics:** AI-assisted coding; agent workflows; collaboration; human review; tool permissions; shared context
-
-**Summary:** GitHub also introduced a new Copilot experience in Slack. In public preview, users can mention `@GitHub` in a direct message, channel, or thread to start an agent session that can answer questions about code and GitHub, triage bugs and issues, investigate failures, implement and validate changes in a cloud sandbox, and open a pull request. GitHub is also introducing dedicated Slack Code channels designed around shared agent sessions.
-
-The experience is bounded by GitHub permissions, and organizations can require an additional approval before agent-created changes are merged.
-
-**Why it matters:** This pushes agent orchestration into the collaboration layer. Instead of one person privately prompting a coding agent and later showing the result, a team can contribute context, observe progress, redirect the agent, and review the resulting work in a shared conversational surface.
-
-**Evidence caution:** Like the Teams integration, this is a public preview. Its effect on team productivity, review quality, security, and coordination remains to be demonstrated in production use.
-
-**Implications for George’s publishing and training work:** This is especially useful for explaining agentic work to knowledge workers because the interaction model is familiar: a team conversation becomes the place where a task is delegated, context is supplied, work is observed, and authority is constrained. It illustrates why **context, tools, permissions, human gates, and evaluation** belong together.
-
-**Source:**  
-- GitHub Changelog: https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/
-
----
-
-## 3. MidTool teaches models the structure of real tool workflows before post-training
-
-![MidTool mid-training pipeline and tool-use results](https://arxiv.org/html/2608.20314v1/teaser.png)
+## 1. AI4AI-Bench finds coding agents rarely redesign the learning algorithm itself
 
 **Date:** August 20, 2026  
-**Topics:** Tool use; MCP; context engineering; agent training; harness engineering
+**Topics:** Coding agents; loop engineering; harness engineering; evaluation; AI research automation
 
-**Summary:** *MidTool: Mid-training Data Synthesis for Agentic Tool Use* introduces an open data-construction pipeline for teaching general tool use during model mid-training. Its MidTool-Mix corpus combines web, PDF, and code data with synthesized supervision derived from real APIs, MCP skills, and document-grounded workflows. The training material is designed to teach tool affordances, context-grounded arguments, multi-tool sequences, and recovery when information is incomplete.
+**Summary:** *AI4AI-Bench* tests whether agents can improve machine-learning training algorithms rather than merely tune parameters or collect more data. It freezes ten research repositories covering ten algorithm families. For each task, an agent gets four hours on one NVIDIA B300 to rewrite the training algorithm; the resulting code is then rerun from scratch for up to 12 hours and scored by a fixed evaluator hidden from the agent.
 
-The authors mid-trained Qwen3 4B and 8B base models, then applied supervised and reinforcement-learning post-training. They report consistent improvements over baselines on BFCL, τ²-bench, and MCP Universe.
+Across 29 configurations of six systems on all ten tasks, the reported mean score was 0.166 and the best system reached 0.250, on a scale where the repository’s shipped algorithm is 0.1 and the stated task optimum is 1.0. Most submissions never changed how the model learned. The minority that did averaged 0.226 versus 0.126 for the rest. Increasing reasoning effort raised the share that attempted an algorithmic change from 8% to 64%, while mean score rose from 0.094 to 0.196.
 
-**Why it matters:** Tool competence cannot always be added reliably through a prompt or a thin orchestration layer. MidTool suggests that models benefit when concepts such as API use, MCP skills, tool sequencing, and recovery are represented earlier in training.
+**Why it matters:** Longer agent loops and more compute can increase willingness to attempt a deeper change, but they do not guarantee a good one. The benchmark also makes the harness visible: frozen repositories, bounded compute, clean reruns, and hidden evaluators are part of the evidence—not implementation details.
 
-**Evidence caution:** This is a new, non-peer-reviewed preprint using two Qwen3 model sizes and three benchmark families. The results do not establish production reliability, safety, or transfer to every tool ecosystem, and synthesized workflows can encode unrealistic assumptions.
+**Evidence caution:** This is a new, non-peer-reviewed benchmark built around ten costly research tasks. Its normalized score and compute regime are benchmark-specific, and the results do not establish that recursive self-improvement is generally feasible or infeasible.
 
-**Implications for George’s publishing and training work:** For a knowledge-worker audience, this helps separate three layers: the **model’s learned tool literacy**, the **context describing available tools**, and the **harness controlling access and execution**. A model becoming better at tools does not eliminate the need for permissions, approval gates, or verification.
+**Implications for George’s publishing and training work:** This is a strong case study for separating **activity from verified improvement**. A useful teaching loop is: propose a change → rebuild from a clean state → run a hidden acceptance test → compare against a fixed baseline → preserve the full evidence trail.
 
-**Sources:**  
-- arXiv: https://arxiv.org/abs/2608.20314  
-- Data and model artifacts: https://huggingface.co/collections/MidTool/midtool-release
+**Source:**  
+- arXiv paper and artifacts: https://arxiv.org/abs/2608.20318
 
 ---
 
-## 4. StateMem shows that agent memory must track what is current—not merely what was said
-
-![StateMemBench illustration of evolving state and stale-memory failures](https://arxiv.org/html/2608.19652v1/state_drift_teaser1.png)
+## 2. Smaller, text-based agent skills transfer better than monolithic task recipes
 
 **Date:** August 20, 2026  
-**Topics:** Context engineering; agent memory; evolving state; RAG; long-running workflows
+**Topics:** Agent skills; context engineering; memory; prompt engineering; reusable workflows
 
-**Summary:** *Can Agent Memory Systems Track Evolving State?* introduces StateMemBench, 234 multi-session scenarios in which facts, constraints, and decisions change over time. Its grading distinguishes answers based on the current state from answers that repeat a superseded state. The authors report that conventional memory, retrieval, and long-context baselines struggle with this distinction.
+**Summary:** *Break It Down, Pass It On* compares two choices in agent skill induction: learning a recipe for an entire task versus learning skills for component subtasks, and storing those skills as text versus code. In the authors’ experiments, task-level skills mostly pushed performance below a no-memory baseline, while subtask-level skills improved it on average. Text skills transferred better than code skills.
 
-Their StateMem method explicitly records supersession and relational dependencies. The paper reports current-state accuracy increasing from 0.205 to 0.363 on DeepSeek-V4-Flash and from 0.149 to 0.233 over the strongest comparison memory system on Qwen-3.5-9B. A single-call wrapper produced much larger gains across six backends, while matched controls attributed a substantial part of the improvement to the state structure rather than merely adding more context.
+The study also defines specificity—how closely a skill matches real tasks—and abstractness—how broadly its relevance is distributed. Neither predicts success alone, but a combined skill-utility score correlates with transfer performance and can be computed from the skill and task descriptions before executing a new task.
 
-**Why it matters:** Retrieval systems often optimize for finding a relevant past statement even when that statement is no longer valid. Reliable long-running agents need memory that can represent relationships such as **replaced by**, **depends on**, and **currently active**.
+**Why it matters:** More stored procedures are not automatically better context. Large, overfitted recipes can interfere with new work, while compact procedural components are easier for a harness to retrieve, compose, inspect, and revise.
 
-**Evidence caution:** This is a non-peer-reviewed benchmark and method created by the same authors. The scenarios are closed-pool evaluations rather than live deployments, and absolute current-state accuracy remains imperfect even after the reported improvements.
+**Evidence caution:** This is a 34-page, non-peer-reviewed preprint. Transfer behavior may change with different models, skill-retrieval methods, task distributions, or definitions of text and code skills; the proposed utility score is a diagnostic, not a guarantee.
 
-**Implications for George’s publishing and training work:** This directly strengthens the distinction among session, project, and memory context. A practical rule is: do not merely append a changed decision—mark the prior decision as superseded, record the active replacement, and verify which state the AI used before it acts.
+**Implications for George’s publishing and training work:** For books and workshops, teach reusable AI procedures at the **subtask** level—such as gather evidence, check dates, challenge a claim, or format citations—then let the workflow compose them. Natural-language skills may also be more accessible and adaptable for non-software developers than executable code bundles.
 
 **Source:**  
-- arXiv: https://arxiv.org/abs/2608.19652
+- arXiv paper: https://arxiv.org/abs/2608.20274
 
 ---
 
-## 5. Pandora’s Router asks whether a better routing decision is worth the cost of making it
+## 3. InsufficiencyBench shows frontier models struggle to ask for legally decisive missing facts
 
 **Date:** August 20, 2026  
-**Topics:** Model routing; evaluation; cost engineering; RAG; inference-time reasoning
+**Topics:** Clarification; guardrails; human review; legal AI; evaluation
 
-**Summary:** *Pandora’s AI Model Routing Box* studies systems that choose among multiple models, harnesses, retrieval specialists, or reasoning settings. The central problem is that predicting which specialist will perform best can itself be expensive. A cheap estimator may be fast but noisy; a more accurate estimator may require retrieval, partial reasoning, or another model call.
+**Summary:** *InsufficiencyBench* evaluates whether a model recognizes when a legal question lacks facts that materially determine the answer, identifies what is missing, and avoids a premature conclusion. Its 202 items—58 complete queries and 144 deficient variants—span six legal domains and 24 U.S. jurisdictions and were annotated by practicing attorneys.
 
-The proposed Pandora’s Router uses value-of-information calculations to decide when the cheap estimate is sufficient and when paying for a more accurate estimate is justified. Across a multi-LLM benchmark, retrieval-augmented specialists, and variable inference-time reasoning, the authors report routing quality comparable to exhaustive estimation while querying the expensive estimator substantially less often.
+Across ten frontier models, none exceeded an F2 score of 0.46 for missing-element identification, and median recall was 0.44. The authors observed two recurring failure modes: models hedged broadly even when a question was sufficiently specified, or answered an underspecified question using unstated assumptions.
 
-**Why it matters:** “Use the best model for each task” is incomplete advice if deciding which model is best consumes much of the savings. Routing therefore becomes a two-stage decision: choose the likely specialist and determine how much evidence is worth acquiring before committing.
+**Why it matters:** A fluent answer can be wrong before reasoning begins because the task definition is incomplete. Reliability therefore needs a pre-answer gate that asks whether the available facts are sufficient, not just a post-answer fact check.
 
-**Evidence caution:** This is a non-peer-reviewed preprint built around a Gaussian signal model and three experimental domains. Real deployments must consider latency, privacy, availability, governance, and failure cost in addition to the expected value calculations studied here.
+**Evidence quality and caution:** The paper received a Best Paper Honorable Mention at the ICML AI4Law 2026 workshop, giving it more external scrutiny than an unreviewed submission alone. It remains a compact benchmark focused on U.S. legal advice, and benchmark performance should not be treated as proof of real-world legal competence.
 
-**Implications for George’s publishing and training work:** This supports an accessible escalation pattern: **start economical → estimate difficulty and consequence → acquire more evidence only when justified → escalate capability when the expected improvement exceeds the added cost**.
+**Implications for George’s publishing and training work:** Add an explicit **sufficiency check** to high-consequence prompt and agent patterns: identify decision-changing unknowns → ask targeted questions → state remaining assumptions → escalate to a qualified human when needed. This applies well beyond law to finance, health, policy, and business analysis.
 
 **Source:**  
-- arXiv: https://arxiv.org/abs/2608.20316
+- arXiv paper: https://arxiv.org/abs/2608.20220
+
+---
+
+## 4. ReguSim separates an agent’s explanation from the action it actually attempted
+
+**Date:** August 20, 2026  
+**Topics:** Guardrails; agent monitoring; tool use; audit evidence; financial compliance
+
+**Summary:** *ReguSim* introduces a controlled financial-compliance environment and the ReguBench monitoring benchmark. Its design records four artifacts separately: the agent’s stated reasoning, its attempted action, the execution layer’s enforcement decision, and the evidence available to a monitor.
+
+In runs using DeepSeek V4 Pro and Gemini 3.5 Flash, visible rules reduced but did not eliminate rejected actions, while incentive and persona framing shifted behavior. A bridge study found that an independent monitor could be misled by the trader agent’s rationale unless it also saw enforcement evidence. For monitoring, simple structured baselines matched or exceeded prompt-only LLM monitors.
+
+**Why it matters:** A plausible rationale is not reliable proof that an agent followed a rule. Operational assurance requires observation at the tool and enforcement layer, where attempted actions, rejected calls, changed state, and policy decisions can be audited.
+
+**Evidence caution:** This is a non-peer-reviewed preprint using a controlled financial setting and two named model configurations. The result may not generalize to other regulations, tools, incentives, or production monitoring systems.
+
+**Implications for George’s publishing and training work:** This offers a clean architecture for reliable agents: **policy context → proposed action → deterministic enforcement → execution evidence → independent review**. Courses can use it to show why chain-of-thought-style explanations should never substitute for logs, validators, permissions, and receipts.
+
+**Source:**  
+- arXiv paper: https://arxiv.org/abs/2608.19974
+
+---
+
+## 5. TESTNAV searches for realistic combinations that break AI systems
+
+**Date:** August 20, 2026  
+**Topics:** Evaluation; robustness; AI-assisted coding; multimodal systems; test generation
+
+**Summary:** *TESTNAV* addresses compositional robustness testing: inputs can be affected by several changes at once, but exhaustively trying every combination quickly becomes expensive and many combinations are too distorted to be meaningful. The framework treats testing as a two-objective search—maximize performance degradation while preserving input fidelity—and uses NSGA-II to approximate the Pareto frontier.
+
+Across four benchmarks covering vision, natural language, and code generation, the authors report recovering Pareto fronts up to 2.15 times faster than search baselines while evaluating 35.8% to 89.3% of a discrete space with four perturbation dimensions and six levels each.
+
+**Why it matters:** Real failures often emerge from interactions that single-variable tests miss: wording plus formatting, a refactor plus renamed identifiers, or image noise plus compression. A useful evaluator must find hard cases while rejecting unrealistic corruption.
+
+**Evidence caution:** This is a non-peer-reviewed preprint. Its efficiency claims depend on the selected perturbations, fidelity metrics, models, benchmarks, and search budget; preserving a metric such as SSIM, chrF, or BERT-F1 does not guarantee that humans view every transformed input as equivalent.
+
+**Implications for George’s publishing and training work:** This provides a practical extension to vibe-coding review: generate meaning-preserving combinations of changes, run them against the application, and inspect the Pareto frontier between realism and failure severity. It also reinforces that evaluation is a search process, not a single benchmark score.
+
+**Source:**  
+- arXiv paper: https://arxiv.org/abs/2608.19882
 
 ---
 
 ## Worth Watching
 
-### Context Engineering in 2026 — Louis-François Bouchard, Omar Solano & Samridhi Vaid
+### How Harvey Built a Research Lab on a Budget — Gabe Pereyra
 
-[![Watch Context Engineering in 2026 on YouTube](https://img.youtube.com/vi/WP3hjUXd918/hqdefault.jpg)](https://www.youtube.com/watch?v=WP3hjUXd918)
-
-**Channel / presenter:** AI Engineer; Louis-François Bouchard, Omar Solano & Samridhi Vaid, Towards AI  
-**Uploaded:** August 2026; newly published recording surfaced August 21  
-**Why it is worth watching:** This workshop reports hands-on experiments with context compaction, full-history retention, prompt caching, RAG, hybrid retrieval, memory, latency, and cost. It is unusually useful because the presenters compare approaches empirically instead of treating context-management advice as universal rules.  
-**Relevant topics:** Context engineering; RAG; memory; evaluation; agent reliability; cost engineering  
-**Watch:** https://www.youtube.com/watch?v=WP3hjUXd918
-
-### Meet Pi: The Minimalist, Self-Modifying Coding Agent
-
-[![Watch Meet Pi on YouTube](https://img.youtube.com/vi/RKHaecOi0CA/hqdefault.jpg)](https://www.youtube.com/watch?v=RKHaecOi0CA)
-
-**Channel / presenter:** Cult.Repo; Mario Zechner and collaborators  
-**Uploaded:** August 21, 2026  
-**Why it is worth watching:** The discussion examines why Pi was deliberately built as a small, model-agnostic coding-agent harness, how its core loop is structured, and how extensions and skills let the system evolve without turning the base harness into a large monolith. It provides a useful concrete comparison between **model capability** and the **agent environment surrounding the model**.  
-**Relevant topics:** Harness engineering; coding agents; tool use; skills; extensibility; vibe coding  
-**Watch:** https://youtu.be/RKHaecOi0CA
-
----
+**Channel / presenter:** Sequoia Capital; Gabe Pereyra, Harvey co-founder and research lead  
+**Uploaded:** August 11, 2026  
+**Why it is worth watching:** This 29-minute interview explains an application-layer AI playbook centered on domain benchmarks, post-training, serving open and closed models together, model routing, and feedback loops. Its practical value is the sequence: establish the evaluation and decision system before spending heavily on customization.  
+**Relevant topics:** Domain evaluation; model routing; feedback loops; legal AI; context and application engineering  
+**Watch:** https://www.youtube.com/watch?v=MGouk8W51v0
 
 ## Editorial takeaway
 
-Today’s strongest thread is **visible, bounded delegation**. GitHub is moving coding agents directly into shared team conversations; MidTool addresses what models must learn about tools; StateMem addresses what an agent must remember as reality changes; and Pandora addresses when stronger reasoning is worth paying for. The accompanying videos reinforce the same systems view through context management and minimalist agent-harness design.
+Today’s papers converge on one operational lesson: **reliable improvement requires structured evidence at every boundary**. AI4AI-Bench reruns agent changes against hidden evaluators; transferable skills are smaller and diagnosable; InsufficiencyBench checks whether a task is answerable before an answer is trusted; ReguSim distinguishes explanations from attempted actions and enforcement evidence; and TESTNAV searches systematically for combinations that expose failure.
 
-For reliable Generative AI, the important unit is increasingly not the prompt or even the model. It is the **complete operating system around the work: context, tools, permissions, state, loops, evaluation, cost controls, and human judgment.**
+For George’s books, workshops, and applications, the common pattern is concise: **decompose the work, test whether the context is sufficient, constrain the action, capture what actually happened, and evaluate under realistic variation.**
