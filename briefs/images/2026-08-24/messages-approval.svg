@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#1D1720"/>
+<text x="60" y="82" fill="#FFF9F2" font-family="Arial,sans-serif" font-size="38" font-weight="700">An agent can draft the message—approval sends it</text>
+<rect x="95" y="145" width="390" height="420" rx="55" fill="#302636" stroke="#D7C6DE" stroke-width="7"/>
+<rect x="155" y="220" width="240" height="80" rx="35" fill="#6F5CFF"/>
+<rect x="200" y="340" width="220" height="80" rx="35" fill="#4A3D50"/>
+<circle cx="290" cy="495" r="28" fill="#4ED692"/>
+<path d="M600 330 h170" stroke="#FFB454" stroke-width="18" stroke-linecap="round"/>
+<path d="M742 292 l48 38-48 38" fill="none" stroke="#FFB454" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M915 155 l155 55 v118 c0 86-63 145-155 177-92-32-155-91-155-177V210z" fill="#FFB454"/>
+<path d="M850 320 l48 48 88-100" fill="none" stroke="#2A1A0B" stroke-width="21" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="780" y="500" width="270" height="54" rx="27" fill="#FFF3DA"/>
+<text x="915" y="536" text-anchor="middle" fill="#2A1A0B" font-family="Arial,sans-serif" font-size="24" font-weight="700">HUMAN APPROVAL</text>
+<text x="60" y="604" fill="#C7B8CE" font-family="Arial,sans-serif" font-size="23">Read and prepare with permission; confirm recipient and content before sending.</text>
+</svg>
