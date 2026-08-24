@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<defs><radialGradient id="g" cx="50%" cy="45%"><stop offset="0" stop-color="#2C2357"/><stop offset="1" stop-color="#0E1026"/></radialGradient></defs>
+<rect width="1200" height="630" rx="28" fill="url(#g)"/>
+<text x="60" y="82" fill="#FFFFFF" font-family="Arial,sans-serif" font-size="38" font-weight="700">AVO: progress compounds through a grounded loop</text>
+<circle cx="600" cy="330" r="92" fill="#7C5CFC"/>
+<text x="600" y="322" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="32" font-weight="700">AGENT</text>
+<text x="600" y="359" text-anchor="middle" fill="#E8E1FF" font-family="Arial,sans-serif" font-size="23">persistent state</text>
+<ellipse cx="600" cy="330" rx="410" ry="180" fill="none" stroke="#A88CFF" stroke-width="5" stroke-dasharray="12 14"/>
+<g font-family="Arial,sans-serif" font-size="23" font-weight="700" text-anchor="middle">
+<circle cx="230" cy="250" r="58" fill="#1FC7B6"/><text x="230" y="258" fill="#061D25">INSPECT</text>
+<circle cx="410" cy="480" r="58" fill="#F7B84B"/><text x="410" y="488" fill="#2B1B00">PLAN</text>
+<circle cx="790" cy="480" r="58" fill="#FF718B"/><text x="790" y="488" fill="#2A0710">ACT</text>
+<circle cx="970" cy="250" r="58" fill="#59B7FF"/><text x="970" y="258" fill="#041B2B">TEST</text>
+</g>
+<path d="M280 205 C390 100 810 100 920 205" fill="none" stroke="#F3EFFF" stroke-width="8" marker-end="url(#a)"/>
+<path d="M910 390 C820 535 380 535 290 390" fill="none" stroke="#F3EFFF" stroke-width="8"/>
+<rect x="72" y="484" width="250" height="74" rx="22" fill="#191D3D" stroke="#8A74DF" stroke-width="3"/>
+<text x="197" y="530" text-anchor="middle" fill="#D7CEFF" font-family="Arial,sans-serif" font-size="25">SUPERVISOR</text>
+<text x="906" y="557" text-anchor="middle" fill="#AAB0D6" font-family="Arial,sans-serif" font-size="23">183 public-set levels completed</text>
+</svg>
