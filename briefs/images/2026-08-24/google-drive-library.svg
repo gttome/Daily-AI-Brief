@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#F4F8FF"/>
+<text x="60" y="82" fill="#17345C" font-family="Arial,sans-serif" font-size="38" font-weight="700">Google Drive files become working context</text>
+<rect x="90" y="150" width="720" height="390" rx="26" fill="#FFFFFF" stroke="#8CB7F2" stroke-width="5"/>
+<rect x="140" y="220" width="160" height="245" rx="15" fill="#4285F4"/>
+<rect x="330" y="190" width="160" height="275" rx="15" fill="#34A853"/>
+<rect x="520" y="250" width="160" height="215" rx="15" fill="#F9AB00"/>
+<path d="M180 280 h80 M180 325 h80 M180 370 h60" stroke="white" stroke-width="12" stroke-linecap="round"/>
+<path d="M370 255 h80 M370 305 h80 M370 355 h60" stroke="white" stroke-width="12" stroke-linecap="round"/>
+<path d="M560 315 h80 M560 360 h80 M560 405 h55" stroke="white" stroke-width="12" stroke-linecap="round"/>
+<circle cx="900" cy="315" r="120" fill="none" stroke="#2D5E9E" stroke-width="26"/>
+<path d="M985 400 l145 145" stroke="#2D5E9E" stroke-width="32" stroke-linecap="round"/>
+<circle cx="900" cy="315" r="30" fill="#EA4335"/>
+<text x="900" y="525" text-anchor="middle" fill="#17345C" font-family="Arial,sans-serif" font-size="25" font-weight="700">SEARCH • ANALYZE • UPDATE</text>
+<text x="60" y="590" fill="#4A6B92" font-family="Arial,sans-serif" font-size="24">Docs, Sheets, Slides and folders can stay linked to their source.</text>
+</svg>
