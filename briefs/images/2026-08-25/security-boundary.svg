@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#F6F2FF"/>
+<text x="58" y="76" fill="#251943" font-family="Arial,sans-serif" font-size="38" font-weight="700">The agent proposes; the runtime decides</text>
+<g font-family="Arial,sans-serif" text-anchor="middle" font-weight="700">
+<circle cx="205" cy="238" r="86" fill="#8067D4"/><text x="205" y="246" fill="white" font-size="27">MODEL</text>
+<polygon points="480,145 570,195 570,295 480,345 390,295 390,195" fill="#4D93C4"/><text x="480" y="252" fill="white" font-size="27">HARNESS</text>
+<rect x="720" y="162" width="250" height="150" rx="35" fill="#E69250"/><text x="845" y="246" fill="#29180C" font-size="27">TOOLS</text>
+</g>
+<path d="M105 390 H1095" stroke="#C82F5B" stroke-width="22"/>
+<rect x="370" y="322" width="460" height="54" rx="27" fill="#FFF"/>
+<text x="600" y="357" text-anchor="middle" fill="#A51F49" font-family="Arial,sans-serif" font-size="23" font-weight="700">AUTHORITATIVE SECURITY BOUNDARY</text>
+<path d="M600 405 v60" stroke="#251943" stroke-width="10" stroke-dasharray="12 12"/>
+<path d="M574 444 l26 30 26-30" fill="none" stroke="#251943" stroke-width="10"/>
+<rect x="220" y="480" width="760" height="90" rx="28" fill="#251943"/>
+<text x="600" y="534" text-anchor="middle" fill="#F9F6FF" font-family="Arial,sans-serif" font-size="25" font-weight="700">IDENTITY • POLICY • ISOLATION • AUDIT</text>
+</svg>
