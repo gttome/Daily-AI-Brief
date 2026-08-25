@@ -1,143 +1,146 @@
 
-# Daily Generative AI Brief — August 24, 2026
+# Daily Generative AI Brief — August 25, 2026
 
-**Published:** August 24, 2026  
-**Coverage period:** Primary window: August 23–24, 2026; extended window: April 22–August 21, 2026
+**Published:** August 25, 2026  
+**Coverage period:** Primary window: August 24–25, 2026; extended window: August 12–21, 2026
 
-> **Freshness note:** No qualifying primary-source development appeared in the strict previous 24 hours. Rather than pad the edition, today’s six selections use the most recent uncovered releases and current authoritative guidance that best satisfy the new editorial allocation: two Technical AI Engineering items, two Applied Generative AI for Knowledge Workers items, and two Agents for Non-Technical People items. The older agent-workflow guidance is included because it directly documents how non-software-engineers can build a recurring briefing workflow. Vendor benchmark and product claims are identified as such.
+> **Freshness note:** One strong primary-source development appeared in the strict previous 24 hours. The remaining five selections are the strongest recent, previously uncovered official releases needed to preserve the required two Technical AI Engineering, two Applied Generative AI for Knowledge Workers, and two Agents for Non-Technical People allocation. No story from the August 24 edition is repeated.
 
 
-## 1. Microsoft Agent Framework adds recovery mechanics for long-running agents
+## 1. AgentX measures infrastructure using real agent-session behavior
 
-![Rail-style diagram showing checkpoints, steering, and recovery in a long-running agent workflow](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-24/microsoft-agent-framework.svg)
+![Irregular agent-session timeline contrasting uniform chat turns with long context, tool gaps, and cache reuse](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/agentx.svg)
+
+**Focus: Technical AI Engineering**  
+**Date:** August 24, 2026  
+**Topics:** Agent evaluation; long context; inference infrastructure; KV-cache reuse; performance per watt
+
+**Summary:** NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30× more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.
+
+**Why it matters:** Agent infrastructure cannot be evaluated realistically with a single fixed context length. Long-running agents create irregular bursts of model calls, tool waits, subagent work, and repeated context. A benchmark that preserves those trajectories is closer to measuring the actual cost and responsiveness of an agent harness.
+
+**Evidence caution:** The Vera Rubin measurements were produced by NVIDIA and were pending SemiAnalysis review when published. The large ratios are workload- and operating-point-specific; they do not prove universal superiority across models, serving stacks, or agent tasks.
+
+**Implications for George’s work:** This offers a valuable evaluation distinction for books and courses: measure not only output quality, but also completed-work latency, context growth, cache reuse, tool-wait time, concurrency, energy, and cost across the full loop.
+
+**Source:** [NVIDIA AgentX and Vera Rubin analysis](https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/)
+
+---
+
+## 2. NVIDIA draws a hard line between behavioral guidance and enforceable agent security
+
+![Layered security diagram placing models, harnesses, and tools above an authoritative runtime boundary](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/security-boundary.svg)
 
 **Focus: Technical AI Engineering**  
 **Date:** August 21, 2026  
-**Topics:** Harness engineering; long-running workflows; checkpoints; approvals; A2A; MCP
+**Topics:** Agent security; runtime enforcement; least privilege; isolation; auditability
 
-**Summary:** Microsoft Agent Framework Python 1.15.0 adds steering, retry, and recovery support for resilient Foundry Hosted Agents, along with long-running workflow samples. The release also introduces a first-class fatal middleware signal, a workflow checkpoint type registry, persisted approval state, and fixes for A2A inputs, tool-call duplication, remote MCP name shadowing, and superlinear history growth.
+**Summary:** NVIDIA’s security teams propose a layered agent stack in which prompts, models, and harness logic influence behavior, while a secure runtime and infrastructure enforce identity, policy, isolation, credentials, and audit. Their governing rule is that components above the boundary may propose actions, but only the authoritative environment below it decides what can occur.
 
-**Why it matters:** The release treats failure recovery, approvals, state restoration, and trace continuity as core harness responsibilities. Those mechanics determine whether an agent can resume safely after interruption instead of repeating work, losing context, or silently diverging.
+The guidance identifies recurring gaps: unclear boundaries, excessive standing access, untrusted data influencing control, uncontrolled external effects, cascading delegation failures, and incomplete audit evidence. It recommends checking every consequential effect, using short-lived task-scoped access, isolating each agent, and retaining independent records below the agent boundary.
 
-**Evidence caution:** This is a project release, not an independent comparison. Teams should test recovery, replay, approval persistence, and backward compatibility in their own environment.
+**Why it matters:** A prompt telling an agent to behave safely is not a security control. Reliable systems need restrictions the model cannot rewrite, ignore, or route around.
 
-**Implications for George’s work:** This is a concrete teaching example for distinguishing the model from the harness around it. A useful workshop exercise could deliberately interrupt an agent at a checkpoint and verify that state, approvals, tools, and audit evidence resume correctly.
+**Evidence caution:** This is architectural guidance from NVIDIA rather than a formal standard or comparative security evaluation. Its recommended controls still require correct policy, configuration, testing, and incident-response procedures.
 
-**Source:** [Microsoft Agent Framework 1.15.0 release](https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0)
+**Implications for George’s work:** The article strongly supports the principle **Capability does not confer authority**. It can connect the AI Authority Ladder to a concrete technical architecture: the harness guides behavior, while infrastructure enforces the approved authority ceiling.
+
+**Source:** [NVIDIA: Where Security Fits in an AI Agent Stack](https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/)
 
 ---
 
-## 2. NVIDIA AVO shows how memory, supervision, and grounded feedback sustain an agent loop
+## 3. ChatGPT plugin discovery now prioritizes tools people continue using
 
-![Orbital feedback-loop diagram with inspect, plan, act, test, persistent memory, and a supervisor](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-24/nvidia-avo.svg)
+![Plugin gallery with a usage trail and magnifying glass representing discovery based on continued use](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/plugin-discovery.svg)
 
-**Focus: Technical AI Engineering**  
+**Focus: Applied Generative AI for Knowledge Workers**  
 **Date:** August 21, 2026  
-**Topics:** Loop engineering; harness evaluation; persistent memory; supervision; ARC-AGI-3
+**Topics:** Plugin discovery; connected tools; accessible AI; workflow selection
 
-**Summary:** NVIDIA reports that its Agentic Variation Operators architecture completed all 183 levels across the 25-environment ARC-AGI-3 public set with a 100.00 Relative Human Action Efficiency score. The same architecture previously ran a seven-day GPU-kernel optimization loop. AVO combines persistent memory, tools, execution-grounded tests, and a supervisor that can redirect the main agent when progress stalls.
+**Summary:** ChatGPT updated plugin recommendations on web and mobile so discovery rankings give more weight to plugins people continue using after installation. Availability still varies by plan, region, and workspace settings, and the update does not yet include desktop.
 
-**Why it matters:** The work reinforces that long-horizon performance is a system property. Memory preserves useful state, tools make actions possible, external feedback grounds revisions, and supervision helps the loop recover from plateaus.
+**Why it matters:** Knowledge workers often struggle less with whether an integration exists than with choosing one that will remain useful after the initial experiment. Continued use is an imperfect but more meaningful signal than installation alone.
 
-**Evidence caution:** The result covers the public ARC-AGI-3 set, not the semi-private or private sets. NVIDIA says its comparison with other systems is not a controlled ablation because the harnesses, reasoning settings, observation formats, and memory systems differ. Treat the results as vendor-reported until independently reproduced.
+**Practical caution:** Retention does not establish reliability, privacy, suitability, or value for a particular workflow. Users should still inspect permissions, data handling, supported actions, pricing, and approval behavior before connecting a tool.
 
-**Implications for George’s work:** This supports a strong lesson for books and courses: evaluate the complete loop—hypothesis → action → observation → state update → recovery—not only the model’s one-shot answer.
+**Implications for George’s work:** This supports a practical plugin-selection rubric for workshops: recurring need → permission fit → source quality → action boundaries → evidence and review → continued value. Popularity should inform discovery, not replace evaluation.
 
-**Source:** [NVIDIA AVO technical report](https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/)
+**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
 
 ---
 
-## 3. ChatGPT Projects now let knowledge workers choose a tighter memory boundary
+## 4. Make separates input and output token rates for accessible AI workflows
 
-![Folder-and-boundary illustration showing project-only memory separated from outside context](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-24/project-memory.svg)
+![Balance scale separating input tokens, output tokens, and the credits used by an AI workflow](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/token-pricing.svg)
 
 **Focus: Applied Generative AI for Knowledge Workers**  
-**Date:** August 14, 2026  
-**Topics:** Context engineering; memory; projects; privacy; reliable knowledge work
+**Date:** August 24, 2026  
+**Effective:** August 25, 2026  
+**Topics:** No-code AI; workflow economics; context efficiency; token usage
 
-**Summary:** Eligible unshared ChatGPT Projects can now switch between default memory and project-only memory without creating a new project. In project-only mode, ChatGPT can use conversations from the same project but will not reference memories or conversations outside it, and project information is kept out of memory used elsewhere.
+**Summary:** Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.
 
-**Why it matters:** Context engineering for everyday work is increasingly a boundary-management problem. Authors, educators, consultants, and analysts can keep a book, course, client, or research stream internally coherent without allowing unrelated conversations to influence the work.
+**Why it matters:** Non-technical builders can now see more clearly that large source packets and long generated responses have different economic effects. This makes context selection, output limits, summarization stages, and model choice part of responsible workflow design rather than invisible technical details.
 
-**Practical limitation:** Shared projects remain project-only, and ChatGPT Work is not available inside projects using project-only memory. Users should verify the selected setting and still review outputs for unsupported claims or stale project information.
+**Practical caution:** Conversion rates are model-specific and subject to change. The relevant measure is the cost of a successfully completed, reviewed workflow—not the cheapest token rate in isolation.
 
-**Implications for George’s work:** This is a useful no-code pattern for separating each book, course, workshop, or application into its own governed context space, with explicit rules for what information may enter or leave.
+**Implications for George’s work:** A useful exercise could compare three versions of the same research workflow: indiscriminate context loading, selective retrieval, and staged summarization. Learners can evaluate quality, review burden, and credits consumed together.
 
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
-
----
-
-## 4. Google Drive in ChatGPT Library reduces manual context assembly
-
-![Document-library illustration with linked Docs, Sheets, and Slides under a search lens](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-24/google-drive-library.svg)
-
-**Focus: Applied Generative AI for Knowledge Workers**  
-**Date:** August 13, 2026  
-**Topics:** Grounded work; connected files; research; writing; analysis
-
-**Summary:** With the Google Drive plugin connected, users can browse Drive files and folders directly from ChatGPT Library, bring a file or folder into a conversation without re-uploading it, and keep Google Docs, Sheets, or Slides open beside the chat. Where supported and authorized, ChatGPT can update the source file directly.
-
-**Why it matters:** The update makes grounded knowledge work more accessible to people who do not use APIs or build RAG infrastructure. Source materials remain linked to their original location, reducing copy-and-paste friction and making it easier to inspect the documents behind a summary or draft.
-
-**Practical limitation:** The initial experience excludes Shared Drives, some editing and collaboration features are not yet available, and mobile support follows later. Connected context improves grounding but does not replace source review.
-
-**Implications for George’s work:** A practical workshop can teach a source-first workflow: select an approved folder → ask for a dated synthesis → require document-level citations → review the originals beside the draft → write back only after human approval.
-
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+**Sources:** [Make 2026 product updates](https://help.make.com/2026) · [Make credits and AI token rates](https://help.make.com/credits)
 
 ---
 
-## 5. Apple Messages brings an approval-gated action to ChatGPT Work
+## 5. RadarFirst puts AI agents around—not in place of—regulated decisions
 
-![Phone, outbound arrow, and approval shield illustrating human confirmation before an agent sends a message](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-24/messages-approval.svg)
+![Compliance workflow illustration showing agents organizing an evidence file before human judgment](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/compliance-agents.svg)
 
 **Focus: Agents for Non-Technical People**  
-**Date:** August 20, 2026  
-**Topics:** Accessible agents; tool use; human approval; messaging; delegated work
+**Date:** August 18, 2026  
+**Topics:** Compliance agents; human judgment; evidence organization; bounded delegation
 
-**Summary:** On Apple silicon Macs, the Apple Messages plugin lets ChatGPT Work read and search iMessage, SMS, and RCS conversations and prepare or send messages through the Messages app. By default, ChatGPT asks the user to approve the message and recipients before sending.
+**Summary:** RadarFirst introduced an Agentic Layer for privacy, AI, and compliance operations. Purpose-built assistants guide incident intake, identify missing information, draft follow-up questions, prioritize cases, organize evidence, and prepare communications. RadarFirst states that the agents do not make regulatory decisions: people review recommendations, approve or override actions, and remain accountable.
 
-**Why it matters:** This is a clear example of an agentic workflow available through a mainstream interface: gather context from a communication tool, draft an action, and pause at a consequential boundary for human confirmation. It moves beyond text generation without handing the agent unrestricted authority.
+**Why it matters:** This is a substantive example of agentic work for legal, privacy, risk, and compliance professionals rather than software engineers. The system delegates preparation and coordination while keeping consequential interpretation and decision authority with qualified people.
 
-**Practical limitation:** The feature is limited to Apple silicon Macs and depends on user permission, plan, and plugin availability. Users should verify recipient identity, sensitive content, and final wording before approval.
+**Evidence caution:** Capability and efficiency claims come from the vendor announcement. Organizations should independently test missed facts, false prioritization, escalation behavior, audit completeness, and how the product applies their actual policies and jurisdictional requirements.
 
-**Implications for George’s work:** This provides a simple pattern for non-technical agent design: define what the agent may read, what it may prepare, and exactly which action must stop for approval. The same pattern applies to email, calendar, document updates, and publication workflows.
+**Implications for George’s work:** RadarFirst maps cleanly to Bounded Agentic Delegation: the agent prepares, identifies gaps, and recommends; deterministic controls structure the case; a human decides. It is a strong case study for **Prepare** and **Recommend** on the AI Authority Ladder.
 
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+**Source:** [RadarFirst Agentic Layer announcement](https://www.radarfirst.com/news/radarfirst-agentic-layer-privacy-ai-compliance/)
 
 ---
 
-## 6. OpenAI documents “briefing” as a repeatable workspace-agent pattern
+## 6. Maia turns plain-language intent into a visible agent or automation canvas
 
-![Hub-and-spoke illustration showing a briefing agent collecting, distilling, reviewing, and publishing](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-24/workspace-agent-brief.svg)
+![Speech bubble feeding a visible node-based automation that users can watch, question, test, and edit](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/maia-canvas.svg)
 
 **Focus: Agents for Non-Technical People**  
-**Date:** April 22, 2026  
-**Topics:** No-code agent building; recurring briefs; governance; human review; publishing workflows
+**Date:** August 12, 2026  
+**Topics:** No-code agents; visual automation; human review; transparent building; debugging
 
-**Summary:** OpenAI Academy’s workspace-agent guide defines an agent through a trigger, a process with reusable skills, and approved tools. Its named “Briefing” pattern gathers information from multiple places, extracts important signals, summarizes for an audience, and shares a memo or briefing. The builder starts in plain language: describe the job, success criteria, constraints, tools, and approval boundaries, then test it in preview.
+**Summary:** Make released Maia, a conversational co-worker inside its visual Scenario Builder. Users describe an outcome in plain language; Maia asks clarifying questions, selects and configures modules, and visibly builds the workflow step by step. It can also customize templates, explain existing scenarios, modify automations, and troubleshoot failed modules. Maia is available to all Make users, with plan-dependent usage.
 
-**Why it matters:** The guidance directly shows how a non-software-engineer can turn a recurring manual process—such as this Daily AI Brief—into a governed agent workflow without writing an SDK integration or managing API keys.
+**Why it matters:** Many no-code builders hide the construction process and present a finished result that users may not understand. Maia’s visible canvas gives a non-software-engineer an opportunity to inspect the graph, question decisions, test modules, and learn enough to maintain the workflow.
 
-**Practical limitation:** Workspace-agent building is controlled by plan and organizational administrators. Because agent outputs are probabilistic, OpenAI recommends low-risk tests, explicit stop conditions, preview evaluation, and human judgment for consequential work.
+**Practical caution:** Visibility does not guarantee correctness. Users still need test cases, sample and failure inputs, connection review, approval gates, run history, and a safe rollback plan before deploying a consequential automation.
 
-**Implications for George’s work:** This can anchor a practical “Agents for Non-Technical People” module: define the outcome → specify sources and selection rules → set a schedule → add quality gates → require approval for publication → test failures → improve the reusable procedure.
+**Implications for George’s work:** Maia is a practical example for teaching the difference between opaque vibe building and human-gated agent development. A Daily Brief exercise could have learners build the collection and drafting workflow visually, then add source-quality checks and a mandatory publication approval.
 
-**Source:** [OpenAI Academy: Workspace agents](https://openai.com/academy/workspace-agents/)
+**Source:** [Make: Introducing Maia](https://www.make.com/en/blog/maia-conversational-ai-coworker-for-ai-agents-and-automation)
 
 ---
 
 ## Worth Watching
 
-**Video slot 1 — General:** No recent video qualified after verifying the substantive-quality requirement and the hard maximum runtime of **10 minutes 00 seconds**.
+**Video slot 1 — General:** No recent video met both the substantive-quality requirement and the hard maximum verified runtime of **10 minutes 00 seconds**.
 
-**Video slot 2 — Agents for Non-Technical People:** No recent video qualified with a verified runtime of **10 minutes 00 seconds or less** and a sufficiently practical, non-developer agent workflow. The dedicated slot was left empty rather than filled with a generic or coding-focused video.
+**Video slot 2 — Agents for Non-Technical People:** Make’s official Maia clip is within the runtime limit, but it functions primarily as a short promotional overview rather than a sufficiently substantive workflow demonstration. The dedicated slot is therefore left empty.
 
 ## Editorial takeaway
 
-Today’s six items separate three different kinds of progress. For technical teams, agent quality increasingly depends on recoverable state, grounded feedback, supervision, and enforceable boundaries. For knowledge workers, better context comes from deliberate memory scopes and direct access to governed source files. For non-technical agent builders, the transferable pattern is **trigger → process → tools → approval → evidence**.
+Today’s developments reinforce a single boundary-centered view of reliable AI work. Technical teams need benchmarks that reproduce real agent trajectories and infrastructure controls the model cannot bypass. Knowledge workers need better signals for selecting tools and clearer visibility into workflow economics. Non-technical agent builders need systems that prepare work visibly, surface missing information, and stop before decisions that require human judgment.
 
-For George’s books, courses, and applications, the most useful bridge is to teach the same reliability questions at two levels: engineers implement the mechanisms; non-technical builders specify the outcome, context, authority, checkpoints, and proof that the workflow completed correctly.
+For George’s publishing and training, the connecting framework is: **measure the real workflow, expose the graph, constrain authority, preserve evidence, and evaluate the completed result—not merely the generated response.**
 
 ---
 
