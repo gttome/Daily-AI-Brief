@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#FFF9EC"/>
+<text x="58" y="76" fill="#3A2A0A" font-family="Arial,sans-serif" font-size="38" font-weight="700">Input and output tokens now have separate rates</text>
+<path d="M600 165 v310" stroke="#493817" stroke-width="18"/><path d="M340 245 H860" stroke="#493817" stroke-width="16" stroke-linecap="round"/>
+<path d="M355 250 l-110 170 h220z" fill="#5A89C9"/><path d="M845 250 l-110 170 h220z" fill="#E27A50"/>
+<g fill="#EAF3FF"><circle cx="310" cy="356" r="25"/><circle cx="355" cy="356" r="25"/><circle cx="400" cy="356" r="25"/></g>
+<g fill="#FFF0E8"><circle cx="800" cy="356" r="25"/><circle cx="845" cy="356" r="25"/><circle cx="890" cy="356" r="25"/></g>
+<text x="355" y="468" text-anchor="middle" fill="#29486F" font-family="Arial,sans-serif" font-size="29" font-weight="700">INPUT</text>
+<text x="845" y="468" text-anchor="middle" fill="#7B351B" font-family="Arial,sans-serif" font-size="29" font-weight="700">OUTPUT</text>
+<rect x="470" y="475" width="260" height="85" rx="42" fill="#F0B83F"/>
+<text x="600" y="529" text-anchor="middle" fill="#352300" font-family="Arial,sans-serif" font-size="30" font-weight="700">CREDITS</text>
+</svg>
