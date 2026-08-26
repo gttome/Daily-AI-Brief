@@ -3,149 +3,117 @@ layout: default
 title: Daily Generative AI Brief
 ---
 
+# Daily Generative AI Brief — August 26, 2026
 
-# Daily Generative AI Brief — August 25, 2026
+**Published:** August 26, 2026  
+**Coverage period:** Primary window: August 24–26, 2026
 
-**Published:** August 25, 2026  
-**Coverage period:** Primary window: August 24–25, 2026; extended window: August 12–21, 2026
+> **Freshness note:** All six selections were published or formally released during the current two-day window. The mix preserves the required two Technical AI Engineering, two Applied Generative AI for Knowledge Workers, and two Agents for Non-Technical People allocation without repeating a development from the August 25 edition.
 
-> **Freshness note:** One strong primary-source development appeared in the strict previous 24 hours. The remaining five selections are the strongest recent, previously uncovered official releases needed to preserve the required two Technical AI Engineering, two Applied Generative AI for Knowledge Workers, and two Agents for Non-Technical People allocation. No story from the August 24 edition is repeated.
+## 1. Prime Agent turns the harness into a persistent, self-improving system
 
-
-## 1. AgentX measures infrastructure using real agent-session behavior
-
-![Irregular agent-session timeline contrasting uniform chat turns with long context, tool gaps, and cache reuse](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/agentx.svg)
+![Recursive agent paths coordinating around a persistent computation core](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/prime-agent.svg)
 
 **Focus: Technical AI Engineering**  
 **Date:** August 24, 2026  
-**Topics:** Agent evaluation; long context; inference infrastructure; KV-cache reuse; performance per watt
+**Topics:** Harness engineering; recursive subagents; persistent state; long-horizon evaluation
 
-**Summary:** NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30× more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.
+**Summary:** Prime Intellect released Prime Agent, an open-source harness built around a persistent IPython environment, recursive subagents, agent-to-agent coordination, and a “Continual Harness” that retains histories, memories, skills, prompts, and subagent specifications across trajectories. The paper reports substantial gains across ARC-AGI-3 and several long-horizon coding and reasoning workloads.
 
-**Why it matters:** Agent infrastructure cannot be evaluated realistically with a single fixed context length. Long-running agents create irregular bursts of model calls, tool waits, subagent work, and repeated context. A benchmark that preserves those trajectories is closer to measuring the actual cost and responsiveness of an agent harness.
+**Why it matters:** The design treats context, computation, recovery, verification, and resource accounting as durable system capabilities rather than rebuilding them inside every model turn. That is a concrete example of harness engineering changing measured agent capability without changing the underlying model.
 
-**Evidence caution:** The Vera Rubin measurements were produced by NVIDIA and were pending SemiAnalysis review when published. The large ratios are workload- and operating-point-specific; they do not prove universal superiority across models, serving stacks, or agent tasks.
+**For George’s work:** This is a useful technical case study for separating model capability from loop and harness capability. A course exercise could compare a stateless chat loop with a persistent workspace that records intermediate artifacts, delegates bounded subtasks, and verifies outputs.
 
-**Implications for George’s work:** This offers a valuable evaluation distinction for books and courses: measure not only output quality, but also completed-work latency, context growth, cache reuse, tool-wait time, concurrency, energy, and cost across the full loop.
+**Evidence caution:** The reported results come from the project authors and a new preprint that has not yet been peer reviewed. Independent replication is needed, especially for claims about maximal underlying model capability.
 
-**Source:** [NVIDIA AgentX and Vera Rubin analysis](https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/)
+[Paper and project links](https://huggingface.co/papers/2608.23552) · [Open-source repository](https://github.com/PrimeIntellect-ai/prime-agent)
 
----
+## 2. GitHub gives agent customization a unified discovery layer
 
-## 2. NVIDIA draws a hard line between behavioral guidance and enforceable agent security
-
-![Layered security diagram placing models, harnesses, and tools above an authoritative runtime boundary](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/security-boundary.svg)
+![Four distinct customization paths converging on the GitHub Copilot app](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/copilot-customize.svg)
 
 **Focus: Technical AI Engineering**  
-**Date:** August 21, 2026  
-**Topics:** Agent security; runtime enforcement; least privilege; isolation; auditability
+**Date:** August 25, 2026  
+**Topics:** MCP; plugins; skills; canvases; agent customization
 
-**Summary:** NVIDIA’s security teams propose a layered agent stack in which prompts, models, and harness logic influence behavior, while a secure runtime and infrastructure enforce identity, policy, isolation, credentials, and audit. Their governing rule is that components above the boundary may propose actions, but only the authoritative environment below it decides what can occur.
+**Summary:** GitHub made the Copilot app’s Customize tab generally available. It brings MCP servers, plugins, skills, and canvases into one place, adds featured collections, and lets users browse trending MCP servers by category. GitHub’s featured canvases can also connect visible work context to delegated backlog actions.
 
-The guidance identifies recurring gaps: unclear boundaries, excessive standing access, untrusted data influencing control, uncontrolled external effects, cascading delegation failures, and incomplete audit evidence. It recommends checking every consequential effect, using short-lived task-scoped access, isolating each agent, and retaining independent records below the agent boundary.
+**Why it matters:** Agent extensibility is becoming a discoverable product surface rather than a collection of configuration files and disconnected catalogs. That can lower integration friction, but it also makes provenance, permissions, compatibility, and review signals more important because teams can add capabilities faster.
 
-**Why it matters:** A prompt telling an agent to behave safely is not a security control. Reliable systems need restrictions the model cannot rewrite, ignore, or route around.
+**For George’s work:** The four customization types provide a clean teaching distinction: MCP connects tools and data; skills encode repeatable procedures; plugins package capabilities; and canvases organize context and action around visible work.
 
-**Evidence caution:** This is architectural guidance from NVIDIA rather than a formal standard or comparative security evaluation. Its recommended controls still require correct policy, configuration, testing, and incident-response procedures.
+[GitHub announcement](https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/)
 
-**Implications for George’s work:** The article strongly supports the principle **Capability does not confer authority**. It can connect the AI Authority Ladder to a concrete technical architecture: the harness guides behavior, while infrastructure enforces the approved authority ceiling.
+## 3. Google Meet puts AI note-taking control in the room
 
-**Source:** [NVIDIA: Where Security Fits in an AI Agent Stack](https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/)
-
----
-
-## 3. ChatGPT plugin discovery now prioritizes tools people continue using
-
-![Plugin gallery with a usage trail and magnifying glass representing discovery based on continued use](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/plugin-discovery.svg)
+![Meeting-room screen showing participants, AI notes, and a visible pause control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/meet-notes.svg)
 
 **Focus: Applied Generative AI for Knowledge Workers**  
-**Date:** August 21, 2026  
-**Topics:** Plugin discovery; connected tools; accessible AI; workflow selection
+**Date:** August 25, 2026  
+**Topics:** Meeting notes; human control; privacy; Gemini
 
-**Summary:** ChatGPT updated plugin recommendations on web and mobile so discovery rankings give more weight to plugins people continue using after installation. Availability still varies by plan, region, and workspace settings, and the update does not yet include desktop.
+**Summary:** Google announced that eligible Google Meet hardware touch controllers will gain direct start, stop, and pause controls for “Take notes for me.” In-room participants will be able to see whether Gemini is recording notes and pause it for off-the-record discussion without joining from a laptop in Companion mode. Rollout begins August 31 for Early Preview devices and September 8 for Rapid and Scheduled Release domains.
 
-**Why it matters:** Knowledge workers often struggle less with whether an integration exists than with choosing one that will remain useful after the initial experiment. Continued use is an imperfect but more meaningful signal than installation alone.
+**Why it matters:** Reliable workplace AI is partly an interface problem. A conspicuous control in the physical room gives participants a practical way to govern when AI-generated records are created, which is stronger than relying on a remote organizer to remember a hidden setting.
 
-**Practical caution:** Retention does not establish reliability, privacy, suitability, or value for a particular workflow. Users should still inspect permissions, data handling, supported actions, pricing, and approval behavior before connecting a tool.
+**For George’s work:** This is a compact human-review and governance example: visibility, consent, pause, resumption, and clear state should be designed into an AI workflow—not added as policy text after deployment.
 
-**Implications for George’s work:** This supports a practical plugin-selection rubric for workshops: recurring need → permission fit → source quality → action boundaries → evidence and review → continued value. Popularity should inform discovery, not replace evaluation.
+[Google Workspace announcement](https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html)
 
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+## 4. Copilot brings Python-backed analysis into the Excel editing workflow
 
----
-
-## 4. Make separates input and output token rates for accessible AI workflows
-
-![Balance scale separating input tokens, output tokens, and the credits used by an AI workflow](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/token-pricing.svg)
+![Spreadsheet grid transformed into a rising analytical chart with an inspection control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/excel-python.svg)
 
 **Focus: Applied Generative AI for Knowledge Workers**  
-**Date:** August 24, 2026  
-**Effective:** August 25, 2026  
-**Topics:** No-code AI; workflow economics; context efficiency; token usage
+**Date:** August 25, 2026  
+**Topics:** Excel; data analysis; natural-language editing; human verification
 
-**Summary:** Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.
+**Summary:** Microsoft’s latest Microsoft 365 Copilot release notes add Python support to “Edit with Copilot” in Excel on Windows, Mac, and the web. Users can request advanced analysis, automation, data transformation, simulations, or visualizations in natural language, with results returned directly to the workbook under existing execution and security controls.
 
-**Why it matters:** Non-technical builders can now see more clearly that large source packets and long generated responses have different economic effects. This makes context selection, output limits, summarization stages, and model choice part of responsible workflow design rather than invisible technical details.
+**Why it matters:** Knowledge workers can apply a technical analysis language without leaving a familiar spreadsheet interface or manually assembling an execution environment. The important reliability shift is that generated analysis becomes an inspectable workbook artifact rather than a prose-only answer.
 
-**Practical caution:** Conversion rates are model-specific and subject to change. The relevant measure is the cost of a successfully completed, reviewed workflow—not the cheapest token rate in isolation.
+**For George’s work:** This supports a practical lesson on reviewable AI output: ask for the analysis, inspect the inputs and resulting cells or charts, test edge cases, and record assumptions before using the result for a decision.
 
-**Implications for George’s work:** A useful exercise could compare three versions of the same research workflow: indiscriminate context loading, selective retrieval, and staged summarization. Learners can evaluate quality, review burden, and credits consumed together.
+[Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
 
-**Sources:** [Make 2026 product updates](https://help.make.com/2026) · [Make credits and AI token rates](https://help.make.com/credits)
+## 5. ChatGPT scheduled tasks can now react to app events and be shared
 
----
-
-## 5. RadarFirst puts AI agents around—not in place of—regulated decisions
-
-![Compliance workflow illustration showing agents organizing an evidence file before human judgment](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/compliance-agents.svg)
+![Email, collaboration, and code events converging into a completed recurring task](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/event-tasks.svg)
 
 **Focus: Agents for Non-Technical People**  
-**Date:** August 18, 2026  
-**Topics:** Compliance agents; human judgment; evidence organization; bounded delegation
+**Date:** August 25, 2026  
+**Topics:** Event triggers; recurring workflows; Gmail; Slack; GitHub; sharing
 
-**Summary:** RadarFirst introduced an Agentic Layer for privacy, AI, and compliance operations. Purpose-built assistants guide incident intake, identify missing information, draft follow-up questions, prioritize cases, organize evidence, and prepare communications. RadarFirst states that the agents do not make regulatory decisions: people review recommendations, approve or override actions, and remain accountable.
+**Summary:** ChatGPT Work scheduled tasks can now start when supported events occur in Gmail, Slack, or GitHub instead of relying only on a clock. Plus and Pro users can create these event-triggered tasks on web, iOS, and Android, while actions requiring approval pause for review. Scheduled tasks can also be shared so another person can inspect and customize the instructions, connect their own apps, and create an independent copy.
 
-**Why it matters:** This is a substantive example of agentic work for legal, privacy, risk, and compliance professionals rather than software engineers. The system delegates preparation and coordination while keeping consequential interpretation and decision authority with qualified people.
+**Why it matters:** This moves accessible agent-building from “run this every morning” to “begin when something meaningful happens.” A non-technical user can define a trigger, desired outcome, evidence requirements, approval points, and delivery format in ordinary language.
 
-**Evidence caution:** Capability and efficiency claims come from the vendor announcement. Organizations should independently test missed facts, false prioritization, escalation behavior, audit completeness, and how the product applies their actual policies and jurisdictional requirements.
+**For George’s work:** The Daily AI Brief is a time-triggered workflow; this release enables a companion teaching example built around events—such as preparing a response plan when client feedback arrives—while preserving human approval for consequential actions. Task sharing also creates a simple way to distribute reusable workflow recipes without sharing account access.
 
-**Implications for George’s work:** RadarFirst maps cleanly to Bounded Agentic Delegation: the agent prepares, identifies gaps, and recommends; deterministic controls structure the case; a human decides. It is a strong case study for **Prepare** and **Recommend** on the AI Authority Ladder.
+[ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
 
-**Source:** [RadarFirst Agentic Layer announcement](https://www.radarfirst.com/news/radarfirst-agentic-layer-privacy-ai-compliance/)
+## 6. OpenAI’s Admin plugin turns workspace operations into governed agent workflows
 
----
-
-## 6. Maia turns plain-language intent into a visible agent or automation canvas
-
-![Speech bubble feeding a visible node-based automation that users can watch, question, test, and edit](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/maia-canvas.svg)
+![Administration dashboard with usage and access gauges feeding an approval checklist](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/admin-plugin.svg)
 
 **Focus: Agents for Non-Technical People**  
-**Date:** August 12, 2026  
-**Topics:** No-code agents; visual automation; human review; transparent building; debugging
+**Date:** August 25, 2026  
+**Topics:** No-code agents; workspace administration; permissions; approvals; recurring checks
 
-**Summary:** Make released Maia, a conversational co-worker inside its visual Scenario Builder. Users describe an outcome in plain language; Maia asks clarifying questions, selects and configures modules, and visibly builds the workflow step by step. It can also customize templates, explain existing scenarios, modify automations, and troubleshoot failed modules. Maia is available to all Make users, with plan-dependent usage.
+**Summary:** OpenAI introduced an Admin plugin for ChatGPT Work and Codex. Authorized administrators can conversationally analyze adoption and credit usage, manage members and groups, diagnose permissions, adjust limits, and review spending requests. They can also automate recurring checks and high-volume requests, route decisions to Slack or Microsoft Teams, and automatically handle cases that meet predefined criteria while escalating exceptions.
 
-**Why it matters:** Many no-code builders hide the construction process and present a finished result that users may not understand. Maia’s visible canvas gives a non-software-engineer an opportunity to inspect the graph, question decisions, test modules, and learn enough to maintain the workflow.
+**Why it matters:** This is agent design for an operational role rather than for software development. The workflow combines observation, policy, action authority, exceptions, human judgment, and confirmation—exactly the elements non-technical agent builders need to define explicitly.
 
-**Practical caution:** Visibility does not guarantee correctness. Users still need test cases, sample and failure inputs, connection review, approval gates, run history, and a safe rollback plan before deploying a consequential automation.
+**For George’s work:** It offers a strong agent-governance template for workshops: define allowed actions, decision rules, exception thresholds, reviewers, evidence, and confirmation. Participants could adapt that pattern to editorial review, course enrollment, client onboarding, or content-production operations.
 
-**Implications for George’s work:** Maia is a practical example for teaching the difference between opaque vibe building and human-gated agent development. A Daily Brief exercise could have learners build the collection and drafting workflow visually, then add source-quality checks and a mandatory publication approval.
-
-**Source:** [Make: Introducing Maia](https://www.make.com/en/blog/maia-conversational-ai-coworker-for-ai-agents-and-automation)
-
----
+[OpenAI announcement](https://openai.com/index/introducing-admin-plugin/)
 
 ## Worth Watching
 
-**Video slot 1 — General:** No recent video met both the substantive-quality requirement and the hard maximum verified runtime of **10 minutes 00 seconds**.
+**General video slot:** No recent video met all three requirements today: authoritative source, substantive value, and independently verifiable runtime of 10:00 or less.
 
-**Video slot 2 — Agents for Non-Technical People:** Make’s official Maia clip is within the runtime limit, but it functions primarily as a short promotional overview rather than a sufficiently substantive workflow demonstration. The dedicated slot is therefore left empty.
+**Agents for Non-Technical People video slot:** No dedicated video met the same evidence and verified-runtime threshold. The slot was left empty rather than filled with an unverified or promotional tutorial.
 
 ## Editorial takeaway
 
-Today’s developments reinforce a single boundary-centered view of reliable AI work. Technical teams need benchmarks that reproduce real agent trajectories and infrastructure controls the model cannot bypass. Knowledge workers need better signals for selecting tools and clearer visibility into workflow economics. Non-technical agent builders need systems that prepare work visibly, surface missing information, and stop before decisions that require human judgment.
-
-For George’s publishing and training, the connecting framework is: **measure the real workflow, expose the graph, constrain authority, preserve evidence, and evaluate the completed result—not merely the generated response.**
-
----
-
+Today’s developments show two complementary movements. Technical agent systems are becoming more persistent, modular, and customizable, while mainstream work products are exposing clearer controls and simpler automation surfaces. The unifying engineering lesson is to make state, authority, evidence, and review visible—whether the builder is writing Python or describing a workflow in plain language.
