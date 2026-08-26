@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#eefaf3"/><path d="M70 110h1060v430H70z" fill="#fff" stroke="#1b7f4b" stroke-width="5"/>
+<g stroke="#cae6d5" stroke-width="2"><path d="M70 200h1060M70 290h1060M70 380h1060M70 470h1060"/><path d="M250 110v430M430 110v430M610 110v430M790 110v430M970 110v430"/></g>
+<path d="M155 448L330 360l155 40 180-180 180 72 190-130" fill="none" stroke="#7a3cff" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+<g fill="#7a3cff"><circle cx="155" cy="448" r="14"/><circle cx="330" cy="360" r="14"/><circle cx="485" cy="400" r="14"/><circle cx="665" cy="220" r="14"/><circle cx="845" cy="292" r="14"/><circle cx="1035" cy="162" r="14"/></g>
+<circle cx="1020" cy="480" r="78" fill="#145d39"/><path d="M982 480h76M1020 442v76" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+<text x="70" y="76" fill="#164b31" font-family="Arial,sans-serif" font-size="40" font-weight="700">Ask in Excel; inspect the analysis in place</text>
+</svg>
