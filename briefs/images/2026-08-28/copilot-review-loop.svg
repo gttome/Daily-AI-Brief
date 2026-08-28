@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#071a2b"/>
+<text x="60" y="72" fill="#f4fbff" font-family="Arial" font-size="44" font-weight="700">AGENT CODE → REVIEW → RESOLUTION</text>
+<rect x="75" y="145" width="275" height="300" rx="28" fill="#183b56" stroke="#6dd5ed" stroke-width="7"/>
+<path d="M125 220h175M125 280h130M125 340h155" stroke="#6dd5ed" stroke-width="18" stroke-linecap="round"/>
+<circle cx="595" cy="295" r="125" fill="#f7b32b"/>
+<path d="M530 295l45 45 90-105" fill="none" stroke="#071a2b" stroke-width="24" stroke-linecap="round"/>
+<rect x="835" y="145" width="290" height="300" rx="28" fill="#f4fbff"/>
+<circle cx="900" cy="225" r="28" fill="#31c48d"/><text x="945" y="237" fill="#183b56" font-family="Arial" font-size="31" font-weight="700">Addressed</text>
+<circle cx="900" cy="310" r="28" fill="#f7b32b"/><text x="945" y="322" fill="#183b56" font-family="Arial" font-size="31" font-weight="700">Won’t fix</text>
+<circle cx="900" cy="395" r="28" fill="#ef476f"/><text x="945" y="407" fill="#183b56" font-family="Arial" font-size="31" font-weight="700">Incorrect</text>
+<path d="M360 295h95M735 295h85" stroke="#f4fbff" stroke-width="14"/><path d="M455 295l-30-22v44zM820 295l-30-22v44z" fill="#f4fbff"/>
+<text x="60" y="570" fill="#6dd5ed" font-family="Arial" font-size="29" font-weight="700">FULL REVIEW FOR BOT-AUTHORED AND VERY LARGE PULL REQUESTS</text>
+</svg>
