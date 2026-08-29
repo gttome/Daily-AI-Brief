@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5efe8"/>
+  <text x="60" y="76" fill="#34231f" font-family="Arial" font-size="36" font-weight="700">A shared conversation becomes delegated work</text>
+  <path d="M95 165 C270 120 340 260 495 230 S700 120 830 230 S990 360 1110 300" fill="none" stroke="#d5a083" stroke-width="34" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#b87755" stroke-width="5"><circle cx="130" cy="155" r="42"/><circle cx="315" cy="210" r="42"/><circle cx="495" cy="230" r="42"/></g>
+  <circle cx="680" cy="170" r="70" fill="#e86f51"/>
+  <text x="680" y="180" text-anchor="middle" fill="#fff" font-family="Arial" font-size="30" font-weight="700">@Claude</text>
+  <path d="M730 205 C790 250 825 310 855 390" fill="none" stroke="#e86f51" stroke-width="16"/>
+  <path d="M700 230 C690 320 620 370 555 415" fill="none" stroke="#e86f51" stroke-width="16"/>
+  <path d="M745 175 C860 155 930 150 1045 175" fill="none" stroke="#e86f51" stroke-width="16"/>
+  <g transform="translate(400 390)"><path d="M0 0 h200 l55 55 v120 h-255 z" fill="#fff" stroke="#7b665e" stroke-width="5"/><path d="M200 0 v55 h55" fill="#eadcd3"/><rect x="35" y="55" width="150" height="12" rx="6" fill="#bca79e"/><rect x="35" y="90" width="120" height="12" rx="6" fill="#bca79e"/></g>
+  <g transform="translate(780 360)"><rect width="250" height="175" rx="22" fill="#fff" stroke="#7b665e" stroke-width="5"/><path d="M45 120 l48-45 40 25 68-70" fill="none" stroke="#5d9f8b" stroke-width="12"/><circle cx="201" cy="30" r="13" fill="#5d9f8b"/></g>
+  <g transform="translate(960 95)"><circle cx="80" cy="80" r="62" fill="#fff" stroke="#7b665e" stroke-width="5"/><path d="M45 83 l24 25 48-60" fill="none" stroke="#5d9f8b" stroke-width="13"/></g>
+  <text x="600" y="604" text-anchor="middle" fill="#6a4a3d" font-family="Arial" font-size="23">Thread context branches into documents, reports, and review</text>
+</svg>
