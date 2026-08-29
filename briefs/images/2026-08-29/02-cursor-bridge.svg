@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fff7ea"/>
+  <text x="60" y="76" fill="#2b2438" font-family="Arial" font-size="36" font-weight="700">A model dependency reaches a hard boundary</text>
+  <path d="M60 500 C250 360 380 360 535 500" fill="none" stroke="#52466e" stroke-width="34"/>
+  <path d="M665 500 C820 360 950 360 1140 500" fill="none" stroke="#52466e" stroke-width="34"/>
+  <g stroke="#8e7aaa" stroke-width="8"><line x1="100" y1="460" x2="100" y2="550"/><line x1="290" y1="390" x2="290" y2="550"/><line x1="910" y1="390" x2="910" y2="550"/><line x1="1100" y1="460" x2="1100" y2="550"/></g>
+  <rect x="513" y="190" width="174" height="330" rx="22" fill="#d95656"/>
+  <rect x="535" y="225" width="130" height="125" rx="12" fill="#fff3f1"/>
+  <text x="600" y="268" text-anchor="middle" fill="#9f3030" font-family="Arial" font-size="24" font-weight="700">MODEL</text>
+  <text x="600" y="302" text-anchor="middle" fill="#9f3030" font-family="Arial" font-size="24" font-weight="700">GATE</text>
+  <line x1="535" y1="392" x2="665" y2="392" stroke="#fff" stroke-width="14"/>
+  <circle cx="600" cy="392" r="28" fill="#2b2438"/>
+  <g fill="#4f78d1"><circle cx="170" cy="310" r="48"/><circle cx="365" cy="260" r="35"/></g>
+  <g fill="#f39a55"><circle cx="835" cy="260" r="35"/><circle cx="1030" cy="310" r="48"/></g>
+  <path d="M220 310 H500" stroke="#4f78d1" stroke-width="10" stroke-dasharray="20 14"/>
+  <path d="M700 310 H980" stroke="#f39a55" stroke-width="10" stroke-dasharray="20 14"/>
+  <rect x="425" y="90" width="350" height="70" rx="35" fill="#2b2438"/>
+  <text x="600" y="135" text-anchor="middle" fill="#fff" font-family="Arial" font-size="28" font-weight="700">Proposed shutoff: Nov. 12</text>
+  <text x="600" y="592" text-anchor="middle" fill="#5a5068" font-family="Arial" font-size="23">AI coding stacks need provider-exit plans</text>
+</svg>
