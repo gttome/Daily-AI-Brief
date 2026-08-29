@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#071f2c"/>
+  <text x="60" y="76" fill="#fff" font-family="Arial" font-size="36" font-weight="700">Published playbooks now launch from Slack</text>
+  <g transform="translate(65 125)">
+    <rect x="0" y="0" width="280" height="405" rx="34" fill="#eaf8f7"/>
+    <rect x="22" y="38" width="236" height="300" rx="18" fill="#173847"/>
+    <circle cx="55" cy="84" r="18" fill="#58d2c3"/><rect x="86" y="72" width="130" height="22" rx="11" fill="#9bded6"/>
+    <rect x="42" y="130" width="195" height="72" rx="16" fill="#fff"/>
+    <text x="140" y="175" text-anchor="middle" fill="#173847" font-family="Arial" font-size="23" font-weight="700">/writer playbooks</text>
+    <rect x="42" y="228" width="150" height="55" rx="14" fill="#58d2c3"/>
+    <text x="117" y="263" text-anchor="middle" fill="#07302a" font-family="Arial" font-size="21">Run</text>
+    <circle cx="140" cy="368" r="16" fill="#9bb4bd"/>
+  </g>
+  <g transform="translate(405 175)">
+    <path d="M0 100 H640" stroke="#4fb5b9" stroke-width="18" stroke-linecap="round"/>
+    <g fill="#fff"><path d="M35 30 h120 v140 h-120 z"/><path d="M220 30 h120 v140 h-120 z"/><path d="M405 30 h120 v140 h-120 z"/></g>
+    <g fill="#ffcc70"><circle cx="95" cy="100" r="22"/><polygon points="280,75 310,125 250,125"/><rect x="445" y="70" width="40" height="60" rx="8"/></g>
+    <path d="M555 100 H630" stroke="#fff" stroke-width="12" marker-end="url(#a)"/>
+    <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#fff"/></marker></defs>
+    <g transform="translate(505 215)"><path d="M0 0 h170 v120 h-170 z" fill="#fff"/><path d="M28 35 h112 M28 65 h85" stroke="#6e8791" stroke-width="10" stroke-linecap="round"/><circle cx="145" cy="95" r="22" fill="#58d2c3"/></g>
+    <g transform="translate(65 235)"><circle cx="65" cy="65" r="58" fill="#ffcc70"/><path d="M35 67 l22 22 42-52" fill="none" stroke="#163847" stroke-width="13"/></g>
+    <text x="320" y="388" text-anchor="middle" fill="#bdeae7" font-family="Arial" font-size="23">Files and conversations move through reusable procedures</text>
+  </g>
+  <text x="600" y="596" text-anchor="middle" fill="#d6f4f1" font-family="Arial" font-size="22">Admin install required · published playbooks only</text>
+</svg>
