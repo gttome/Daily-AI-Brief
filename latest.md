@@ -1,120 +1,108 @@
-# Daily Generative AI Brief — August 28, 2026
+# Daily Generative AI Brief — August 29, 2026
 
-**Published:** August 28, 2026  
-**Coverage period:** Sources reviewed August 27–28, 2026; selected developments dated August 24–27
+Six developments for reliable AI engineering, practical knowledge work, and agentic delegation. Five announcements landed on August 28; the sixth is a newly documented workflow updated August 28. Product claims below come from the vendors’ own announcements and should be validated in the reader’s environment before broad rollout.
 
-> **Freshness note:** Four selections were published on August 26–27. Two earlier Microsoft and Anthropic items were retained because they are unusually strong, concrete examples of non-technical people creating grounded, recurring agent workflows. The required two Technical AI Engineering, two Applied Generative AI for Knowledge Workers, and two Agents for Non-Technical People allocation is preserved.
 
-## 1. GitHub closes the review gap for agent-authored and very large pull requests
-
-![Agent-written code moving through an agentic review to explicit human resolution reasons](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/copilot-review-loop.svg)
+## 1. GitHub turns Visual Studio into a more controllable agent cockpit
 
 **Focus: Technical AI Engineering**  
-**Date:** August 27, 2026  
-**Topics:** Agentic code review; coding agents; evaluation feedback; human review
+**Date:** August 28, 2026
 
-**Summary:** GitHub expanded Copilot code review so automatically requested reviews of pull requests opened by Copilot cloud agent receive the full agentic review rather than a limited fallback. GitHub also removed the previous 300-file or 20,000-line review ceiling and added explicit resolution reasons—“Addressed,” “Won’t fix,” and “Incorrect”—for Copilot comments.
+![Visual Studio agent cockpit with thinking-effort dial, organization agents, model controls, usage view, and Git-agent review](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/01-visual-studio-control.svg)
 
-**Why it matters:** Agent-generated code now receives a stronger automated review loop even when the change is unusually large. The resolution reasons are also structured evaluation data: they distinguish accepted findings from intentional exceptions and false positives. Removal of a size ceiling does not prove review completeness, so large changes still need risk-based tests and human sampling.
+**What happened:** GitHub’s August Visual Studio update adds organization-level custom agents, per-model Low/Medium/High thinking effort, model and context-window comparison, plan-usage visibility, and a Git agent that can review uncommitted changes or individual commits before a pull request. The release applies across Copilot plans, though publishing organization agents requires a GitHub organization.
 
-**For George’s work:** This is a clean example of a human-gated loop: agent produces, agent reviews, tests provide independent evidence, and a person records the disposition. It can support a course exercise on designing feedback that improves both accountability and future evaluation.
+**Why it matters:** This is harness engineering arriving in the IDE as explicit controls. Teams can match reasoning spend to task difficulty, distribute specialized procedures as named agents, and insert review before code leaves the workstation. The Git-agent pass is useful, but it remains a second machine review—not evidence that tests, security checks, or human review can be removed.
 
-[GitHub changelog](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/)
+**For George’s work:** A workshop can turn these controls into a concrete “delegate → inspect → test → review” loop, showing why agent quality depends on the surrounding process as much as the model.
 
-## 2. Warp turns human feedback into reviewable agent-skill updates
+**Source:** [GitHub Copilot in Visual Studio — August update](https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/)
 
-![Human feedback and an improver skill circling a reviewable base skill](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/self-improving-loop.svg)
+## 2. OpenAI’s planned Cursor cutoff exposes model-provider concentration risk
 
 **Focus: Technical AI Engineering**  
-**Date:** August 26, 2026  
-**Topics:** Loop engineering; skills; feedback; agent improvement; progressive disclosure
+**Date:** August 28, 2026
 
-**Summary:** Anthropic published Warp’s pattern for self-improving agents. A task-specific base skill performs work; people leave feedback where the work already occurs; and a scheduled “improver” skill proposes a small edit to the base skill. The change moves through a normal pull-request review before becoming part of later runs. Warp says it applies the pattern to specification, review, and issue-triage agents.
+![Broken bridge with a model gate marking OpenAI’s proposed November 12 cutoff for Cursor](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/02-cursor-bridge.svg)
 
-**Why it matters:** The pattern converts transient feedback into persistent, inspectable procedure without allowing the working agent to silently rewrite itself. File-based skills also support progressive disclosure: the agent loads targeted instructions and resources when needed instead of expanding every prompt.
+**What happened:** OpenAI says it notified SpaceX that it intends to wind down the contract supplying OpenAI models to Cursor, proposing November 12, 2026 as the shutoff date after SpaceX’s acquisition of Cursor. OpenAI also says it will not provide Cursor with future models, including its upcoming Astra model. These are OpenAI’s stated contractual and safety reasons; the announcement does not include Cursor or SpaceX’s response.
 
-**Evidence caution:** This is a vendor-authored customer example, not a controlled comparison. Its strongest contribution is the architecture and governance pattern rather than a generalized performance claim.
+**Why it matters:** AI-assisted development products inherit availability, policy, and commercial risk from upstream model providers. A strong coding harness should therefore separate model-specific features from core workflow logic, maintain tested alternatives, and document what degrades when a provider disappears. “Multi-model” only counts as resilience if fallback paths are exercised before an incident.
 
-**For George’s work:** It closely matches the Human-Gated Agentic Work model. A reusable “improver” could periodically examine corrections to a briefing, manuscript workflow, or course-production process and propose—never silently apply—the smallest rule change.
+**For George’s work:** This is a timely architecture case study for courses on harness engineering: treat model access as a replaceable dependency, and evaluate migration costs alongside benchmark quality.
 
-[Anthropic case study](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude)
+**Source:** [OpenAI — Our decision on Cursor following its acquisition by SpaceX](https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/)
 
-## 3. Randomized study separates ChatGPT’s quality gains from critical thinking’s originality gains
-
-![ChatGPT quality gains contrasted with originality gains from causal-reasoning practice](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/ai-critical-thinking.svg)
+## 3. Claude for Teachers expands from individuals to governed school deployments
 
 **Focus: Applied Generative AI for Knowledge Workers**  
-**Date:** August 27, 2026  
-**Topics:** Learning; critical thinking; evaluation; originality; human judgment
+**Date:** August 28, 2026
 
-**Summary:** More than 1,000 first-year Bocconi University students were assigned by class period to ChatGPT access, causal-reasoning training, both, or neither while completing a real marketing case. Human graders used a five-point rubric, and researchers separately measured idea variety and causal reasoning. ChatGPT access raised rubric scores by almost one point and produced clearer, more expert-like work; causal-reasoning training produced more distinct ideas and clearer explanations of why ideas might succeed or fail. Students receiving both showed both effects.
+![Open standards book with lesson-preparation and understanding-check skills beside a district governance panel](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/03-teacher-standards.svg)
 
-**Why it matters:** Polished quality and original thinking are not the same outcome. A conventional rubric can reward coherent, expert-like output while missing whether everyone converged on similar ideas. The study concerned one university assignment using GPT-4o, so it should not be generalized to every learning or workplace task.
+**What happened:** Anthropic made Claude for Teachers available to qualifying U.S. K–12 schools and districts as a free Enterprise offering for one year if they sign up by June 30, 2027. It adds centralized administration, SSO, role-based access, domain claiming, K–12 terms and a data-processing agreement. Two new skills support lesson preparation and standards-aligned checks for understanding; the latter is limited to math at launch.
 
-**For George’s work:** Courses should combine AI assistance with an independent thinking intervention and evaluate both execution quality and idea diversity. A useful sequence is: reason independently, use AI to expand or challenge the work, document changes, then defend the final judgment.
+**Why it matters:** The important move is not simply free access. Claude is being packaged with domain context, reusable teaching procedures, privacy terms, and organizational governance—the components that turn generic prompting into a repeatable professional workflow. Anthropic says teacher data is not used for model training and plans a Detroit district evaluation this fall; outcome evidence is therefore still forthcoming.
 
-[OpenAI research summary and paper link](https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training/)
+**For George’s work:** Educator workshops can model the same pattern: ground a task in standards, expose the teacher’s review point, and evaluate whether the output improves practice rather than merely saving time.
 
-## 4. OpenAI pairs Brazil expansion with role-specific AI literacy
+**Source:** [Anthropic — Claude for Teachers, now available for U.S. K–12 schools and districts](https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts)
 
-![Brazilian AI-literacy network connecting legal work, small business, public service, and education](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/brazil-ai-literacy.svg)
+## 4. OpenAI’s Thailand accelerator puts reliability between prototype and deployment
 
 **Focus: Applied Generative AI for Knowledge Workers**  
-**Date:** August 27, 2026  
-**Topics:** AI literacy; legal professionals; small business; public service; responsible adoption
+**Date:** August 28, 2026
 
-**Summary:** Alongside launching commercial operations in Brazil, OpenAI announced planned programs with Brazilian organizations: national AI-literacy training for legal professionals with ENTER; free, mobile-first training for micro and small-business owners with Estímulo; and exploration of AI-supported public services with São Paulo and Prodam. OpenAI reports that 35% of classified Brazilian ChatGPT messages were work-related in June, versus 30% globally.
+![Eight-week path through Bangkok from prototype to deployed health and education products](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/04-thailand-accelerator.svg)
 
-**Why it matters:** The emphasis is moving from generic access toward role-specific use, critical evaluation, safety, and practical workflows. The programs are newly announced, so their reach, curriculum quality, completion rates, and workplace outcomes remain to be measured.
+**What happened:** OpenAI and Thailand’s Ministry of Higher Education, Science, Research and Innovation launched an eight-week accelerator for ten startups in health, wellness, and education. The program connects founders with mentors from government, universities, research, investment, and industry. OpenAI explicitly frames testing, real-user feedback, safeguards, and a sustainable business model as the bridge from demo to dependable product.
 
-**For George’s work:** This supports localized versions of courses and workshops. The strongest design would use domain examples, explicit verification practices, mobile-friendly exercises, and outcome measures—not a translated generic prompt guide.
+**Why it matters:** That framing is useful well beyond startups. Authors, consultants, educators, and entrepreneurs often evaluate AI by the first impressive output; deployment requires a loop that tests the result with real users, records failure modes, and decides who approves consequential actions. The accelerator is a program announcement, not evidence that the cohort’s products are effective yet.
 
-[OpenAI announcement](https://openai.com/index/expanding-our-presence-in-brazil/)
+**For George’s work:** It offers a strong teaching structure for applied-AI courses: prototype → user test → safeguard → business/process fit → measured deployment.
 
-## 5. A non-technical marketer builds a recurring personalized briefing agent
+**Source:** [OpenAI — Supporting Thailand’s next generation of AI startups](https://openai.com/index/supporting-next-generation-ai-startups-thailand/)
 
-![One weekly marketing report fanning out into personalized briefings for individual sales representatives](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/personalized-briefings.svg)
-
-**Focus: Agents for Non-Technical People**  
-**Date:** August 24, 2026  
-**Topics:** Recurring briefings; personalization; feedback; non-technical agent building
-
-**Summary:** Anthropic field marketer Adam Ward described replacing hours of Sunday preparation with a Claude workflow that converts a weekly marketing report into personalized Monday briefings for each sales representative. He began by explaining the business problem as a non-technical product manager, piloted with a small group, gathered corrections from recipients, and folded those corrections into explicit operating rules.
-
-**Why it matters:** This is closely analogous to the Daily AI Brief: recurring inputs, audience-specific selection, a scheduled output, human feedback, and a procedure that improves over time. The value comes from the workflow and domain context—not merely generating a summary.
-
-**Evidence caution:** This is a first-person practitioner account from the model provider’s own marketing organization. It demonstrates a credible pattern but does not provide an independent productivity evaluation.
-
-**For George’s work:** This could become a practical workshop project: define source inputs, recipient profiles, selection criteria, output template, factual checks, feedback capture, and a human approval gate before distribution.
-
-[Anthropic practitioner guide](https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep)
-
-## 6. Microsoft Agent Builder accepts files up to 512 MB for grounded agents
-
-![Large document stack passing through a grounding funnel into an agent knowledge base](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/large-file-grounding.svg)
+## 5. Anthropic publishes copyable Claude Tag workflows for real team work
 
 **Focus: Agents for Non-Technical People**  
-**Date:** August 25, 2026  
-**Topics:** No-code agents; grounding; large files; domain knowledge; RAG
+**Date:** August 28, 2026
 
-**Summary:** Microsoft’s latest Microsoft 365 Copilot release notes say Agent Builder now accepts file uploads up to 512 MB on Android, iOS, Windows, and the web. Makers can use larger manuals and other documents as grounding sources without first splitting or compressing them.
+![Shared chat thread branching through a tagged Claude agent into a document, report, and review checkpoint](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/05-claude-tag-thread.svg)
 
-**Why it matters:** Larger uploads reduce a practical barrier for non-technical agent creators working with manuals, policies, course materials, and application documentation. File capacity does not guarantee retrieval quality: builders still need authoritative sources, clear document structure, representative tests, citation checks, and a process for replacing outdated material.
+**What happened:** Anthropic published more than a dozen Claude Tag use cases with prompts and setup guidance, highlighting three internal workflows: converting a Slack thread into customer-ready collateral, compiling weekly issue reports, and running legal review. In one example, a product marketer turned a 15-plus-message thread into a review-ready one-pager in 45 minutes by tagging Claude inside the conversation.
 
-**For George’s work:** This directly supports project-specific assistants grounded in book manuscripts, user guides, or application documentation. A course exercise should test answerability, conflicting sources, missing information, citations, and update behavior before the agent is trusted.
+**Why it matters:** The agent receives the live thread as context, completes multi-step work, and returns the artifact where collaborators can inspect it. That removes copy-paste setup while preserving a visible human review surface. Claude Tag is aimed at Team and Enterprise environments and requires scoped access, so this is low-code for users—not zero-governance for administrators.
 
-[Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+**For George’s work:** This is a clean blueprint for a recurring publication agent: keep source discussion, standing instructions, delegated production, and approval in one auditable channel.
+
+**Source:** [Anthropic — How Anthropic employees use Claude Tag](https://claude.com/blog/how-anthropic-employees-use-claude-tag)
+
+## 6. WRITER puts sessions, files, and reusable playbooks inside Slack
+
+**Focus: Agents for Non-Technical People**  
+**Date:** August 28, 2026
+
+![Mobile Slack interface launching a published WRITER playbook that processes files and returns a deliverable](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/06-writer-playbook.svg)
+
+**What happened:** WRITER’s August 28 changelog announces its Slack experience for starting agent sessions, launching playbooks, and producing deliverables inside a conversation. The updated setup guide says users can run published playbooks from a picker, resume prior sessions, @mention the agent in channels, and submit office documents, images, audio, or video for processing—including on Slack mobile.
+
+**Why it matters:** A non-technical user can invoke a governed, reusable procedure without opening a workflow editor. The constraints are important: a Slack admin must install the app; a playbook must be published and shared; and a playbook cannot yet be triggered directly from an existing thread. Those limits make the authority boundary visible instead of implying unrestricted autonomy.
+
+**For George’s work:** A course exercise could turn a briefing procedure into a published playbook, define required inputs and approval points, and compare one-off chat with a repeatable agent workflow.
+
+**Sources:** [WRITER changelog](https://support.writer.com/articles/1313908954-what-s-new-at-writer) · [Using WRITER for Slack](https://support.writer.com/articles/6702604588-using-writer-for-slack)
 
 ## Worth Watching
 
-**Video slot 1 — General:** No qualifying video was selected. The closest authoritative candidate, [Demo: end-to-end agentic development with GitHub Copilot](https://www.youtube.com/watch?v=onVn-lnHZ9s) from GitHub (verified runtime **5:20**; uploaded **August 26, 2025**), is below the **20:00** ceiling but predates this briefing by a year and does not cover the August 27 code-review changes. It was excluded for recency and topic fit.
+### General
 
-**Video slot 2 — Agents for Non-Technical People:** [Introduction to 8 new Agent Builder templates for Microsoft 365 Copilot](https://www.youtube.com/watch?v=FeKHUZAfiP8) — Microsoft Community Learning; verified runtime **18:12**; uploaded **August 17, 2026**.
+**[Modernize .NET Apps with GitHub Copilot](https://www.youtube.com/watch?v=DKTcSpJrcGo)** — dotnet / Mika Dumont · **13:43** · June 16, 2026. A focused official demonstration of an agentic modernization loop—assessment, planning, execution, and review—useful alongside Item 1’s new reasoning and Git-review controls. Runtime and publication metadata were verified from the public YouTube page.
 
-**Why it is worth watching:** This practical demo shows how non-software-engineers can start from eight retrieval, task, and autonomous-agent templates to create personal and team productivity agents faster, without relying on a developer framework.
+### Agents for Non-Technical People
 
-**Connection to today’s briefing:** It complements the two agent-focused stories by turning reusable update workflows and grounded Microsoft 365 agents into concrete, accessible starting points.
+**[Tag Claude in, right where you already work](https://www.youtube.com/watch?v=VojDzHaciKQ)** — Claude · **2:25** · June 23, 2026. Anthropic’s compact official demo shows an agent entering a shared Slack context, receiving delegated work, and returning results in the thread. It directly illustrates the interaction model behind Item 5 without requiring code or an API key. Runtime and publication metadata were verified from the public YouTube page.
 
 ## Editorial takeaway
 
-Today’s common thread is improvement with evidence. Technical teams are turning agent output and human corrections into explicit review loops; educators are separating polished performance from original thinking; and non-technical builders are creating recurring, grounded workflows. The design principle is consistent: preserve the work, capture feedback, evaluate the right dimensions, and require approval before a procedural change or consequential action becomes operational.
+Today’s through-line is control at the handoff. Developers are getting explicit reasoning, model, and review controls; schools are getting standards and administrative boundaries; and knowledge workers are getting agents inside the conversations where work begins. The reusable lesson is to specify the outcome, provide scoped context and authority, preserve a visible approval point, and test the workflow—not just the model response.
