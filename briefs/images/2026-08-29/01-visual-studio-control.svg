@@ -2,7 +2,7 @@
   <defs><linearGradient id="bg" x1="0" x2="1"><stop stop-color="#09152f"/><stop offset="1" stop-color="#25366b"/></linearGradient></defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <text x="60" y="78" fill="#ffffff" font-family="Arial" font-size="34" font-weight="700">Copilot becomes a configurable engineering cockpit</text>
-  <rect x="60" y="118" width="1080" height="450" rx="26" fill="#111d3d" stroke="#6ea8fe" stroke-width="3"/>
+  <rect x="60" y="118" width="1080" height="420" rx="26" fill="#111d3d" stroke="#6ea8fe" stroke-width="3"/>
   <g transform="translate(110 180)">
     <circle cx="115" cy="105" r="82" fill="#182a55" stroke="#79c0ff" stroke-width="12"/>
     <path d="M115 105 L168 66" stroke="#ffd166" stroke-width="10" stroke-linecap="round"/>
@@ -23,5 +23,5 @@
     <text x="815" y="198" text-anchor="middle" fill="#146c51" font-family="Arial" font-size="24" font-weight="700">Git agent review</text>
     <path d="M650 260 H925" stroke="#9aa9bd" stroke-width="5" stroke-dasharray="13 11"/>
   </g>
-  <text x="600" y="608" text-anchor="middle" fill="#bcd7ff" font-family="Arial" font-size="22">Reasoning depth · shared agents · pre-PR review</text>
+  <text x="600" y="580" text-anchor="middle" fill="#bcd7ff" font-family="Arial" font-size="22">Reasoning depth · shared agents · pre-PR review</text>
 </svg>

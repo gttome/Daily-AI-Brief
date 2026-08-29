@@ -19,7 +19,7 @@
     <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0 0 L8 3 L0 6 Z" fill="#fff"/></marker></defs>
     <g transform="translate(505 215)"><path d="M0 0 h170 v120 h-170 z" fill="#fff"/><path d="M28 35 h112 M28 65 h85" stroke="#6e8791" stroke-width="10" stroke-linecap="round"/><circle cx="145" cy="95" r="22" fill="#58d2c3"/></g>
     <g transform="translate(65 235)"><circle cx="65" cy="65" r="58" fill="#ffcc70"/><path d="M35 67 l22 22 42-52" fill="none" stroke="#163847" stroke-width="13"/></g>
-    <text x="320" y="388" text-anchor="middle" fill="#bdeae7" font-family="Arial" font-size="23">Files and conversations move through reusable procedures</text>
+    <text x="320" y="10" text-anchor="middle" fill="#bdeae7" font-family="Arial" font-size="23">Files and conversations move through reusable procedures</text>
   </g>
-  <text x="600" y="596" text-anchor="middle" fill="#d6f4f1" font-family="Arial" font-size="22">Admin install required · published playbooks only</text>
+  <text x="600" y="580" text-anchor="middle" fill="#d6f4f1" font-family="Arial" font-size="22">Admin install required · published playbooks only</text>
 </svg>

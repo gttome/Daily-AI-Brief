@@ -16,5 +16,5 @@
   <path d="M700 310 H980" stroke="#f39a55" stroke-width="10" stroke-dasharray="20 14"/>
   <rect x="425" y="90" width="350" height="70" rx="35" fill="#2b2438"/>
   <text x="600" y="135" text-anchor="middle" fill="#fff" font-family="Arial" font-size="28" font-weight="700">Proposed shutoff: Nov. 12</text>
-  <text x="600" y="592" text-anchor="middle" fill="#5a5068" font-family="Arial" font-size="23">AI coding stacks need provider-exit plans</text>
+  <text x="600" y="580" text-anchor="middle" fill="#5a5068" font-family="Arial" font-size="23">AI coding stacks need provider-exit plans</text>
 </svg>
