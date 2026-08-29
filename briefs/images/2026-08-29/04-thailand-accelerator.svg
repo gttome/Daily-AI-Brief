@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="sky" y1="0" y2="1"><stop stop-color="#25145d"/><stop offset="1" stop-color="#ff8b6a"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <text x="60" y="76" fill="#fff" font-family="Arial" font-size="36" font-weight="700">Eight weeks from prototype to trusted deployment</text>
+  <g opacity=".9" fill="#24143f"><rect x="55" y="415" width="90" height="150"/><rect x="165" y="350" width="130" height="215"/><rect x="320" y="445" width="100" height="120"/><rect x="950" y="380" width="100" height="185"/><rect x="1070" y="430" width="80" height="135"/></g>
+  <path d="M170 365 C285 160 430 150 535 300 S800 460 1025 250" fill="none" stroke="#ffe27a" stroke-width="18" stroke-linecap="round"/>
+  <g fill="#fff" stroke="#5d3cb3" stroke-width="5">
+    <circle cx="170" cy="365" r="37"/><circle cx="305" cy="215" r="31"/><circle cx="450" cy="210" r="31"/><circle cx="585" cy="340" r="31"/><circle cx="735" cy="415" r="31"/><circle cx="880" cy="345" r="31"/><circle cx="1025" cy="250" r="42"/>
+  </g>
+  <text x="170" y="375" text-anchor="middle" fill="#3c2774" font-family="Arial" font-size="24" font-weight="700">P</text>
+  <text x="1025" y="260" text-anchor="middle" fill="#3c2774" font-family="Arial" font-size="24" font-weight="700">D</text>
+  <g transform="translate(480 420)"><rect width="210" height="112" rx="20" fill="#fff"/><path d="M42 73 h55 v-35 h55 v35 h25" fill="none" stroke="#e95d71" stroke-width="10"/><circle cx="42" cy="73" r="10" fill="#e95d71"/><text x="105" y="101" text-anchor="middle" fill="#37225f" font-family="Arial" font-size="20">health + education</text></g>
+  <g transform="translate(760 130)"><path d="M0 90 L55 0 L110 90 Z" fill="#ffd166"/><path d="M55 0 V90" stroke="#fff" stroke-width="5"/><rect x="20" y="90" width="70" height="55" fill="#fff"/></g>
+  <text x="600" y="604" text-anchor="middle" fill="#fff4d6" font-family="Arial" font-size="23">Mentoring · user feedback · safeguards · viable operations</text>
+</svg>
