@@ -3,6 +3,7 @@ Daily briefings covering important Generative AI developments, tools, concepts, 
 
 ## Archive
 
+- [August 30, 2026](briefs/2026-08-30.md)
 - [August 29, 2026](briefs/2026-08-29.md)
 - [August 28, 2026](briefs/2026-08-28.md)
 - [August 27, 2026](briefs/2026-08-27.md)
