@@ -17,5 +17,5 @@
     <circle cx="80" cy="208" r="20" fill="#f3c65d"/>
     <text x="132" y="315" text-anchor="middle" fill="#252321" font-family="Arial" font-size="28" font-weight="700">Approve each change</text>
   </g>
-  <text x="600" y="586" text-anchor="middle" fill="#55514c" font-family="Arial" font-size="24">Line-level review keeps editing authority with the human</text>
+  <text x="600" y="584" text-anchor="middle" fill="#55514c" font-family="Arial" font-size="24">Line-level review keeps editing authority with the human</text>
 </svg>
