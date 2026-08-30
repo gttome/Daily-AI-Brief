@@ -40,7 +40,7 @@ Six developments for reliable AI engineering, practical knowledge work, and agen
 **Date:** August 28, 2026  
 **Topics:** human review, writing, suggested edits, approval workflow
 
-![A document with a highlighted agent suggestion and a human approval control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/03-suggest-edits.svg)
+![A document with a highlighted agent suggestion and a human approval control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/03-suggest-edits.svg?v=20260830-2)
 
 **Summary:** Notion agents can now propose line-level changes instead of editing a document directly. A user asks the agent to “suggest edits,” then reviews the proposed changes from top to bottom and approves them individually. Notion positions the feature for tasks such as a grammar pass.
 
@@ -56,7 +56,7 @@ Six developments for reliable AI engineering, practical knowledge work, and agen
 **Date:** August 18, 2026  
 **Topics:** Copilot migration, research workflow continuity, account boundaries, OneDrive
 
-![Personal and work accounts entering one Copilot app while Deep Research is retired](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/04-copilot-migration.svg)
+![Personal and work accounts entering one Copilot app while Deep Research is retired](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/04-copilot-migration.svg?v=20260830-2)
 
 **Summary:** Microsoft is consolidating personal, work, and school access into an updated Copilot app while keeping personal and organizational data boundaries separate. The app adds direct access to Microsoft 365 apps, files, email, calendar, and cloud storage, but Microsoft is retiring consumer Deep Research, Podcasts, and Group Chat. Deep Research retirement began August 18; generated files move to OneDrive, and users must preserve Group Chat content that will not migrate.
 
@@ -72,7 +72,7 @@ Six developments for reliable AI engineering, practical knowledge work, and agen
 **Date:** August 26, 2026  
 **Topics:** browser agents, tool use, action safety, prompt injection, user approvals
 
-![A browser agent passing a proposed click through an action-safety classifier](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/05-browser-agent.svg)
+![A browser agent passing a proposed click through an action-safety classifier](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/05-browser-agent.svg?v=20260830-2)
 
 **Summary:** Anthropic made Claude in Chrome generally available to users on paid Claude plans. The extension can read pages, type, click, navigate, and complete forms using the user’s existing browser logins. It now uses an action-safety classifier to decide when an action can proceed autonomously rather than asking for approval every time; users can restore manual approval for every action.
 
@@ -88,7 +88,7 @@ Six developments for reliable AI engineering, practical knowledge work, and agen
 **Date:** August 6, 2026  
 **Topics:** no-code agents, scoped permissions, AI guardrails, human checkpoints, monitoring
 
-![A no-code task moving through content screening, approval, and monitoring safeguards](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/06-zapier-guardrails.svg)
+![A no-code task moving through content screening, approval, and monitoring safeguards](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/06-zapier-guardrails.svg?v=20260830-2)
 
 **Summary:** Zapier published an updated practical guide for building safer no-code agents. Its recommended layers are scoped connections and permissions, input and output screening, human checkpoints for high-stakes or irreversible actions, and ongoing activity monitoring. Zapier’s AI Guardrails step can screen for categories including personally identifiable information, prompt injection, toxic content, and sentiment inside a visual workflow.
 
@@ -111,4 +111,3 @@ No recent video met both the substantive-quality bar and the dedicated slot’s 
 ## Editorial takeaway
 
 Today’s through-line is bounded authority. Windows is adding identity and isolation beneath the harness; Anthropic is standardizing both physical tool access and browser action controls; and Notion, Microsoft, and Zapier show why human review, portable artifacts, scoped permissions, and monitoring belong in the workflow itself. The most teachable pattern is: identify the actor, constrain its tools, expose proposed changes, approve irreversible effects, and retain evidence for review.
-
