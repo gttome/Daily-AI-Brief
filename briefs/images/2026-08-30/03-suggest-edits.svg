@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630">
+  <rect width="1200" height="630" fill="#f6f3ed"/>
+  <text x="60" y="74" fill="#252321" font-family="Arial" font-size="36" font-weight="700">An agent proposes; the author decides</text>
+  <g transform="translate(95 125)">
+    <rect x="0" y="0" width="680" height="390" rx="24" fill="#fff" stroke="#292724" stroke-width="5"/>
+    <rect x="52" y="62" width="480" height="19" rx="9" fill="#c9c6bf"/>
+    <rect x="52" y="112" width="560" height="19" rx="9" fill="#c9c6bf"/>
+    <rect x="45" y="155" width="580" height="52" rx="10" fill="#ffe7a6"/>
+    <line x1="65" y1="181" x2="580" y2="181" stroke="#bc5b4a" stroke-width="5"/>
+    <rect x="52" y="244" width="535" height="19" rx="9" fill="#c9c6bf"/>
+    <rect x="52" y="294" width="420" height="19" rx="9" fill="#c9c6bf"/>
+  </g>
+  <g transform="translate(825 168)">
+    <circle cx="132" cy="132" r="125" fill="#242321"/>
+    <path d="M78 126l34 35 79-83" fill="none" stroke="#74d59f" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M82 208h105" stroke="#f3c65d" stroke-width="16" stroke-linecap="round"/>
+    <circle cx="80" cy="208" r="20" fill="#f3c65d"/>
+    <text x="132" y="315" text-anchor="middle" fill="#252321" font-family="Arial" font-size="28" font-weight="700">Approve each change</text>
+  </g>
+  <text x="600" y="586" text-anchor="middle" fill="#55514c" font-family="Arial" font-size="24">Line-level review keeps editing authority with the human</text>
+</svg>
