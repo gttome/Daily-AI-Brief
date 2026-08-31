@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f0fdf4"/>
+  <text id="t1" x="60" y="78" fill="#14532d" font-family="Arial" font-size="34" font-weight="700">A customer agent assembled on a visual canvas</text>
+  <circle cx="165" cy="235" r="52" fill="#fdba74"/><path d="M90 410 q75-155 150 0z" fill="#2563eb"/><path d="M210 290 C285 300 320 330 365 355" fill="none" stroke="#ea580c" stroke-width="15" stroke-linecap="round"/>
+  <rect x="390" y="145" width="410" height="330" rx="28" fill="#fff" stroke="#22c55e" stroke-width="7"/>
+  <rect x="440" y="205" width="125" height="90" rx="18" fill="#bfdbfe"/><circle cx="502" cy="250" r="25" fill="#2563eb"/>
+  <rect x="625" y="205" width="125" height="90" rx="18" fill="#fde68a"/><path d="M665 250 h45" stroke="#b45309" stroke-width="12"/>
+  <rect x="530" y="335" width="125" height="90" rx="18" fill="#bbf7d0"/><path d="M570 370 h45 M570 395 h30" stroke="#15803d" stroke-width="10"/>
+  <path d="M565 250 h60 M688 295 L625 335 M502 295 L530 335" fill="none" stroke="#475569" stroke-width="7"/>
+  <path d="M805 310 h82" stroke="#16a34a" stroke-width="10"/><polygon points="887,310 858,292 858,328" fill="#16a34a"/>
+  <g transform="translate(900 175)"><rect width="235" height="285" rx="35" fill="#14532d"/><rect x="18" y="22" width="199" height="218" rx="22" fill="#fff"/><path d="M48 65 h115" stroke="#86efac" stroke-width="22" stroke-linecap="round"/><path d="M80 115 h105" stroke="#bfdbfe" stroke-width="22" stroke-linecap="round"/><path d="M48 165 h135" stroke="#86efac" stroke-width="22" stroke-linecap="round"/><circle cx="117" cy="262" r="10" fill="#bbf7d0"/></g>
+  <text id="t2" x="60" y="575" fill="#166534" font-family="Arial" font-size="21">Plain-language intent → connected knowledge → governed customer conversation</text>
+</svg>
