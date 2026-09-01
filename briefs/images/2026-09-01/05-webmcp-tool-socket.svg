@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#071526"/>
+  <text id="t1" x="60" y="78" fill="#eff6ff" font-family="Arial" font-size="34" font-weight="700">WebMCP turns a website into an agent tool surface</text>
+  <rect x="75" y="140" width="615" height="355" rx="26" fill="#0f2947" stroke="#60a5fa" stroke-width="7"/>
+  <rect x="105" y="175" width="555" height="62" rx="20" fill="#dbeafe"/><circle cx="145" cy="206" r="12" fill="#3b82f6"/><circle cx="180" cy="206" r="12" fill="#60a5fa"/><path d="M225 206 h380" stroke="#64748b" stroke-width="12" stroke-linecap="round"/>
+  <path d="M170 305 h170 M170 365 h235 M170 425 h190" stroke="#93c5fd" stroke-width="20" stroke-linecap="round"/>
+  <path d="M690 315 h130" stroke="#fbbf24" stroke-width="16"/><path d="M720 275 v80 M760 275 v80" stroke="#fbbf24" stroke-width="18"/>
+  <circle cx="850" cy="315" r="72" fill="#111827" stroke="#fbbf24" stroke-width="8"/>
+  <path d="M825 315 h50 M850 290 v50" stroke="#fde68a" stroke-width="12"/>
+  <g fill="#1e3a8a" stroke="#93c5fd" stroke-width="5"><rect x="970" y="155" width="150" height="90" rx="18"/><rect x="970" y="270" width="150" height="90" rx="18"/><rect x="970" y="385" width="150" height="90" rx="18"/></g>
+  <path d="M1005 200 h80 M1005 315 h80 M1005 430 h80" stroke="#bfdbfe" stroke-width="12" stroke-linecap="round"/>
+  <text id="t2" x="742" y="430" fill="#fde68a" font-family="Arial" font-size="22">consent gate</text>
+  <text id="t3" x="60" y="575" fill="#93c5fd" font-family="Arial" font-size="21">Discover page-provided actions without configuring a separate connector</text>
+</svg>
