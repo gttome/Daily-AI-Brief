@@ -1,6 +1,10 @@
 # Daily-AI-Brief
 Daily briefings covering important Generative AI developments, tools, concepts, and engineering practices.
 
+## Reader sharing
+
+Every numbered briefing item automatically receives a native/fallback Share control with an item-specific share count. See [SHARING.md](SHARING.md) for behavior, counter semantics, publication requirements, and QA checks.
+
 ## Archive
 
 - [September 1, 2026](briefs/2026-09-01.md)
