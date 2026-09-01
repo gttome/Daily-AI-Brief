@@ -1,19 +1,11 @@
 (() => {
   'use strict';
 
-  const COUNTER_BASE = 'https://api.countapi.xyz';
-  const COUNTER_NAMESPACE = 'daily-ai-brief-shares';
+  const COUNTER_BASE = 'https://countapi.mileshilliard.com/api/v1';
   const main = document.querySelector('main.main-content, main#content');
   if (!main) return;
 
   const state = new Map();
-
-  const slug = (value) => String(value || '')
-    .toLowerCase()
-    .trim()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-    .slice(0, 60);
 
   function siteBasePath() {
     const p = window.location.pathname;
@@ -54,7 +46,9 @@
 
   function counterKey(itemId) {
     const datePart = briefDate || 'undated';
-    return `${datePart}-${itemId}`.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 64);
+    return `daily-ai-brief-shares-${datePart}-${itemId}`
+      .replace(/[^a-zA-Z0-9_-]/g, '-')
+      .slice(0, 100);
   }
 
   function localCounterKey(key) {
@@ -62,8 +56,12 @@
   }
 
   function readLocalCount(key) {
-    const n = Number(localStorage.getItem(localCounterKey(key)) || 0);
-    return Number.isFinite(n) && n >= 0 ? n : 0;
+    try {
+      const n = Number(localStorage.getItem(localCounterKey(key)) || 0);
+      return Number.isFinite(n) && n >= 0 ? n : 0;
+    } catch (_) {
+      return 0;
+    }
   }
 
   function writeLocalCount(key, value) {
@@ -71,21 +69,24 @@
   }
 
   async function fetchRemoteCount(key) {
-    const response = await fetch(`${COUNTER_BASE}/get/${COUNTER_NAMESPACE}/${encodeURIComponent(key)}`, {
+    const response = await fetch(`${COUNTER_BASE}/get/${encodeURIComponent(key)}`, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-store',
       credentials: 'omit'
     });
-    if (!response.ok) throw new Error(`Counter read failed: ${response.status}`);
+    if (!response.ok) {
+      if (response.status === 404) return 0;
+      throw new Error(`Counter read failed: ${response.status}`);
+    }
     const data = await response.json();
-    const value = Number(data.value ?? data.count ?? data.data ?? 0);
+    const value = Number(data.value ?? 0);
     if (!Number.isFinite(value)) throw new Error('Counter response did not include a number');
     return value;
   }
 
   async function incrementRemoteCount(key) {
-    const response = await fetch(`${COUNTER_BASE}/hit/${COUNTER_NAMESPACE}/${encodeURIComponent(key)}`, {
+    const response = await fetch(`${COUNTER_BASE}/hit/${encodeURIComponent(key)}`, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-store',
@@ -93,14 +94,20 @@
     });
     if (!response.ok) throw new Error(`Counter increment failed: ${response.status}`);
     const data = await response.json();
-    const value = Number(data.value ?? data.count ?? data.data ?? 0);
+    const value = Number(data.value ?? 0);
     if (!Number.isFinite(value)) throw new Error('Counter response did not include a number');
     return value;
   }
 
+  function escapeSelectorValue(value) {
+    if (window.CSS && typeof window.CSS.escape === 'function') return window.CSS.escape(value);
+    return String(value).replace(/["\\]/g, '\\$&');
+  }
+
   function updateCountDisplay(key, value) {
     state.set(key, value);
-    document.querySelectorAll(`[data-share-counter-key="${CSS.escape(key)}"] .brief-share-count`).forEach((el) => {
+    const safeKey = escapeSelectorValue(key);
+    document.querySelectorAll(`[data-share-counter-key="${safeKey}"] .brief-share-count`).forEach((el) => {
       el.textContent = String(value);
       el.setAttribute('aria-label', `${value} shares`);
     });
@@ -114,7 +121,7 @@
       updateCountDisplay(key, remote);
       writeLocalCount(key, remote);
     } catch (_) {
-      // The share feature remains usable if the external counter is temporarily unavailable.
+      // Sharing remains available if the lightweight public counter service is temporarily unavailable.
     }
   }
 
@@ -127,7 +134,7 @@
       updateCountDisplay(key, remote);
       writeLocalCount(key, remote);
     } catch (_) {
-      // Preserve an immediate local count while the global counter service is unavailable.
+      // Keep the immediate local count until the global counter is reachable again.
     }
   }
 
@@ -278,7 +285,6 @@
 
     if (typeof dialog.showModal === 'function') dialog.showModal();
     else {
-      // Very old browsers: copy the permanent Daily Brief item link instead.
       copyLink(item);
       dialog.remove();
     }
@@ -296,7 +302,6 @@
         return;
       } catch (error) {
         if (error && error.name === 'AbortError') return;
-        // Unsupported payload or platform issue: fall through to the in-page share panel.
       }
     }
     openFallback(item);
@@ -327,7 +332,7 @@
     let index = 0;
 
     while (node && node.tagName !== 'H2') {
-      const anchors = [...node.querySelectorAll?.('a[href]') || []].filter((a) => /(?:youtube\.com|youtu\.be)/i.test(a.href));
+      const anchors = [...node.querySelectorAll('a[href]')].filter((a) => /(?:youtube\.com|youtu\.be)/i.test(a.href));
       anchors.forEach((a) => {
         if (seen.has(a.href)) return;
         seen.add(a.href);
