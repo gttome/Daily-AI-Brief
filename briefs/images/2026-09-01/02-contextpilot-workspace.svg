@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#071c18"/>
+  <text id="t1" x="60" y="78" fill="#ecfdf5" font-family="Arial" font-size="34" font-weight="700">ContextPilot trains agents to curate their workspace</text>
+  <path d="M380 185 q-95 0-95 90 q-60 30-30 100 q-20 100 85 105 q45 70 120 20 q80 35 120-40 q80-15 65-100 q45-75-35-120 q-15-75-100-60 q-65-55-130 5z" fill="#064e3b" stroke="#34d399" stroke-width="8"/>
+  <circle cx="445" cy="330" r="90" fill="#022c22" stroke="#6ee7b7" stroke-width="6" stroke-dasharray="18 12"/>
+  <path d="M410 330 h70 M445 295 v70" stroke="#a7f3d0" stroke-width="12" stroke-linecap="round"/>
+  <path d="M665 205 C805 145 920 155 1060 220" fill="none" stroke="#60a5fa" stroke-width="9"/>
+  <path d="M665 330 C820 330 915 330 1060 330" fill="none" stroke="#fbbf24" stroke-width="9"/>
+  <path d="M665 455 C805 515 920 505 1060 440" fill="none" stroke="#f472b6" stroke-width="9"/>
+  <circle cx="1080" cy="220" r="36" fill="#1d4ed8"/><circle cx="1080" cy="330" r="36" fill="#b45309"/><circle cx="1080" cy="440" r="36" fill="#be185d"/>
+  <text id="t2" x="815" y="135" fill="#bfdbfe" font-family="Arial" font-size="22">plan</text>
+  <text id="t3" x="815" y="305" fill="#fde68a" font-family="Arial" font-size="22">memorize</text>
+  <text id="t4" x="815" y="535" fill="#fbcfe8" font-family="Arial" font-size="22">soft offload</text>
+  <text id="t5" x="60" y="575" fill="#a7f3d0" font-family="Arial" font-size="21">Branch high-impact edits; assign credit to the context decision itself</text>
+</svg>
