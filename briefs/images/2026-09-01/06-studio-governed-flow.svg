@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f5f3ff"/>
+  <text id="t1" x="60" y="78" fill="#3b0764" font-family="Arial" font-size="34" font-weight="700">A no-code flow passes four governance checkpoints</text>
+  <path d="M110 320 C300 120 460 510 640 300 C785 130 930 155 1090 310" fill="none" stroke="#8b5cf6" stroke-width="22" stroke-linecap="round"/>
+  <g fill="#fff" stroke-width="7"><circle cx="240" cy="235" r="70" stroke="#2563eb"/><circle cx="465" cy="405" r="70" stroke="#dc2626"/><circle cx="720" cy="225" r="70" stroke="#16a34a"/><circle cx="955" cy="225" r="70" stroke="#d97706"/></g>
+  <circle cx="240" cy="215" r="22" fill="#2563eb"/><path d="M195 275 q45-70 90 0z" fill="#93c5fd"/>
+  <path d="M430 405 l25 25 50-65" fill="none" stroke="#dc2626" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M720 175 l55 20 v55 q-10 45-55 65 q-45-20-55-65 v-55z" fill="#bbf7d0" stroke="#16a34a" stroke-width="6"/>
+  <path d="M920 180 h70 v95 h-70z" fill="#fef3c7"/><path d="M935 205 h40 M935 230 h40 M935 255 h28" stroke="#b45309" stroke-width="8"/>
+  <text id="t2" x="185" y="145" fill="#1d4ed8" font-family="Arial" font-size="21">identity</text>
+  <text id="t3" x="410" y="515" fill="#991b1b" font-family="Arial" font-size="21">approval</text>
+  <text id="t4" x="681" y="145" fill="#166534" font-family="Arial" font-size="21">DLP</text>
+  <text id="t5" x="920" y="145" fill="#92400e" font-family="Arial" font-size="21">audit</text>
+  <text id="t6" x="60" y="575" fill="#5b21b6" font-family="Arial" font-size="21">Least privilege, attributable actions, revocable scopes, and human review</text>
+</svg>
