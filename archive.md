@@ -10,6 +10,8 @@ Past editions of the Daily Generative AI Brief are listed below, newest first.
 
 [← Back to Home]({{ '/' | relative_url }})
 
+- [Daily Generative AI Brief - September 1, 2026]({{ '/briefs/2026-09-01/' | relative_url }})
+
 - [Daily Generative AI Brief - August 31, 2026]({{ '/briefs/2026-08-31/' | relative_url }})
 
 - [Daily Generative AI Brief - August 30, 2026]({{ '/briefs/2026-08-30/' | relative_url }})
