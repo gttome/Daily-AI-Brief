@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#fffaf0"/>
+  <text id="t1" x="60" y="78" fill="#3f2d14" font-family="Arial" font-size="34" font-weight="700">Gemini labels files; people keep the final say</text>
+  <g transform="translate(90 150)"><rect width="330" height="330" rx="25" fill="#fde68a" stroke="#d97706" stroke-width="7"/><path d="M55 80 h220 M55 145 h220 M55 210 h220 M55 275 h220" stroke="#fef3c7" stroke-width="35"/><circle cx="260" cy="80" r="16" fill="#ef4444"/><circle cx="260" cy="145" r="16" fill="#3b82f6"/><circle cx="260" cy="210" r="16" fill="#22c55e"/><circle cx="260" cy="275" r="16" fill="#a855f7"/></g>
+  <path d="M455 310 C560 195 620 195 725 255" fill="none" stroke="#3b82f6" stroke-width="12"/><polygon points="725,255 690,245 710,220" fill="#3b82f6"/>
+  <path d="M455 345 C560 460 620 460 725 400" fill="none" stroke="#22c55e" stroke-width="12"/><polygon points="725,400 690,410 710,435" fill="#22c55e"/>
+  <g transform="translate(760 150)"><path d="M0 60 h310 v260 h-310z" fill="#fff" stroke="#64748b" stroke-width="6"/><path d="M0 60 h135 l35-45 h140 v45z" fill="#bfdbfe" stroke="#64748b" stroke-width="6"/><rect x="45" y="115" width="220" height="70" rx="18" fill="#fee2e2"/><text id="t2" x="84" y="160" fill="#991b1b" font-family="Arial" font-size="25" font-weight="700">CONFIDENTIAL</text><path d="M70 245 l35 35 75-85" fill="none" stroke="#16a34a" stroke-width="15" stroke-linecap="round" stroke-linejoin="round"/><path d="M205 235 h55 M205 275 h55" stroke="#64748b" stroke-width="10"/></g>
+  <text id="t3" x="60" y="575" fill="#6b4f25" font-family="Arial" font-size="21">Instruction-defined labels, editor review, audit history, and DLP enforcement</text>
+</svg>
