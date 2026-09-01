@@ -1,127 +1,127 @@
-# Daily Generative AI Brief — August 31, 2026
+# Daily Generative AI Brief — September 1, 2026
 
-Today’s edition emphasizes operational consequences over announcement volume. Three selections were released or became effective August 29–31; the remaining late-week developments earned inclusion because they create immediate implementation lessons. The required 2–2–2 editorial allocation is preserved without treating popularity as evidence.
+Today’s edition is anchored by three developments released in the past 24 hours and three late-week updates with an active rollout or research signal today. The selection favors concrete controls—tool budgets, context management, visible human intervention, governed data, explicit website actions, and auditable no-code agents—over launch volume or social engagement.
 
 
-## 1. Operant AI puts an intent-aware enforcement layer in front of agent actions
-
-**Focus: Technical AI Engineering**
-
-**Date:** August 27, 2026
-
-**Topics:** agent security, semantic policy enforcement, tool calls, data loss prevention
-
-![A shield classifying prompt, tool-call, and data-flow intent into allow, redact, and block decisions](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/01-semantic-firewall.svg)
-
-**Summary:** Operant AI launched its Semantic Firewall, an inline control layer that evaluates the intent of prompts, commands, tool calls, code and data flows. Its Tool, Code, Data and Scope guards can allow, block or redact activity before execution. Operant says the system makes decisions in real time without routing protected traffic to external providers.
-
-**Why it matters:** Agent security is moving from keyword filtering toward contextual authorization: *what is this action trying to do, with which tool and data, inside what boundary?* That is a useful harness pattern even for teams that do not buy this product. The claims are vendor-reported, however; semantic classifiers can still miss attacks or interrupt legitimate work, so least privilege, deterministic controls, audit logs and adversarial testing remain necessary.
-
-**For George’s work:** A workshop can turn the four-guard structure into a practical threat-modeling exercise: define prohibited intent, sensitive data, allowed tools and scope before connecting an agent to real systems.
-
-**Source:** [Operant AI — Semantic Firewall](https://www.operant.ai/platform/semantic-firewall)
-
-## 2. Codex 0.151 makes subagent cost and restored permissions more visible
+## 1. Codex 0.152 puts limits and durable evidence around agent tool use
 
 **Focus: Technical AI Engineering**
 
-**Date:** August 29, 2026
+**Date:** September 1, 2026
 
-**Topics:** coding agents, harness observability, subagent accounting, permission state
+**Topics:** coding agents, MCP, output budgets, authorization evidence, cloud-task security
 
-![A root coding agent branching to three subagents whose usage is recorded in a ledger beside a permission lock](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/02-codex-harness-ledger.svg)
+![An MCP output pipe passing through a token-limit gauge into an approval transcript protected by a lock](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-01/01-codex-tool-budget.svg)
 
-**Summary:** OpenAI’s Codex CLI `rust-v0.151.0` release accounts subagent token use against root goals, preserves restored permission profiles in TUI sessions, reports which capabilities remote plugin syncs affect, and adds telemetry around escalated stdin reviews and remote-executor MCP discovery. The release also includes test stabilization.
+**Summary:** OpenAI released Codex CLI 0.152 with per-tool `output_token_limit` settings for MCP tools, configurable shell-command timeouts, package-style MCP server names, and fixes that preserve user instructions, answers and valid authorizations across approval-history compaction. The release also keeps MCP tools available through cache and plugin changes, restores saved working directories on resumed threads, and rejects untrusted cloud-task backend URLs and redirects.
 
-**Why it matters:** Multi-agent systems hide cost and authority in branches. Rolling child-agent usage into the parent goal improves budget attribution, while preserving and surfacing permissions reduces ambiguity after a session is restored. This is a maintenance release, not a model-capability leap, and telemetry is useful only if teams review it and set thresholds.
+**Why it matters:** These changes address common harness failure points: tools can flood context, long-running work can outlive default timeouts, compaction can erase approval evidence, and saved credentials can be exposed through unsafe routing. The release improves control surfaces rather than model intelligence, and teams still need local policies for tool budgets, trusted origins, timeout escalation and review retention.
 
-**For George’s work:** Use it as a compact example of harness engineering: an agent loop is not production-ready until delegated work, restored authority and external capabilities are visible to the operator.
+**For George’s work:** Use this release as a checklist for “production harness” training: bound every tool’s output, preserve authorization evidence through summarization, restore execution context deliberately, and treat URLs that receive credentials as policy-controlled resources.
 
-**Source:** [OpenAI Codex releases on GitHub](https://github.com/openai/codex/releases)
+**Source:** [OpenAI Codex 0.152 release](https://github.com/openai/codex/releases/tag/rust-v0.152.0)
 
-## 3. GitHub Spark retires today, turning exportability into a no-code requirement
+## 2. ContextPilot teaches agents when to plan, remember and offload context
+
+**Focus: Technical AI Engineering**
+
+**Date:** August 28, 2026
+
+**Topics:** context engineering, long-term memory, context offloading, reinforcement learning
+
+![An agent workspace branching into planning, memory and soft-offloading paths](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-01/02-contextpilot-workspace.svg)
+
+**Summary:** Tencent researchers introduced ContextPilot, a proactive context-management framework that extends an agent’s tools beyond search, deletion and summarization to include planning, structured long-term memory and “soft” context offloading. Its training method samples branches around high-impact context edits and assigns credit to intermediate context decisions rather than applying only the final trajectory reward. The authors report stronger results with more compact working context across long-context QA and deep-search tasks.
+
+**Why it matters:** Long-running agents need to decide not only what to retrieve, but what to retain, transform or move out of active context. ContextPilot treats those choices as trainable actions, making context engineering part of the loop rather than a static prompt-construction step. This is a new arXiv preprint, not peer reviewed; results come from the authors’ selected models, tasks and baselines and need independent replication.
+
+**For George’s work:** It provides a useful teaching model for research and publishing agents: plan the evidence map, promote durable facts into structured memory, offload completed branches, and evaluate whether each context edit improved the final artifact.
+
+**Source:** [ContextPilot preprint on arXiv](https://arxiv.org/abs/2608.28476)
+
+## 3. Google Meet gives the room a visible pause switch for AI notes
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
 **Date:** August 31, 2026
 
-**Topics:** vibe coding, app portability, hosted inference, product retirement
+**Topics:** meeting notes, human control, privacy, off-the-record discussion
 
-![An app card at sunset moving into a repository box while its hosted language-model connection breaks](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/03-spark-sunset.svg)
+![People around a meeting table using a prominent pause control beside an AI-generated notes page](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-01/03-meet-note-control.svg)
 
-**Summary:** GitHub’s retirement window for Spark on GitHub.com closes today. Existing users were given until August 31 to move app code into a repository with **Create repository**. Deployed apps can continue running, but apps that depend on Spark’s `llm()` helper must replace it with another inference provider for AI features to keep working.
+**Summary:** Google began rolling out direct controls for “Take notes for me” on Google Meet hardware touch controllers. In eligible meetings, in-room participants can see whether Gemini note-taking is active, stop it for an off-the-record discussion and resume it without joining from a laptop in Companion mode. Early Preview devices began receiving the feature August 31; broader rollout is scheduled to begin September 8.
 
-**Why it matters:** For non-developers, “the app still runs” can conceal a partial failure: the interface survives while the AI dependency disappears. No-code and vibe-coded projects need an exit plan covering source export, data, authentication, model access and operating cost—not merely a download button.
+**Why it matters:** Reliable AI use includes an obvious, nearby way for affected people to see and change system state. A room-level control reduces ambiguity about whether a sensitive conversation is being summarized. It does not replace meeting policy, participant notice or review of generated notes, and it requires licensed Google Meet hardware plus an eligible plan.
 
-**For George’s work:** Add a portability checklist to courses and application templates: repository ownership, replaceable model calls, documented secrets, exportable content and a tested recovery path.
+**For George’s work:** Add a “visible stop control” requirement to human-review guidance: participants should know when AI capture is active, who may pause it, what happens to previously recorded content, and who verifies the final summary.
 
-**Source:** [GitHub Changelog — upcoming deprecation of GitHub Spark](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/)
+**Source:** [Google Workspace Updates — control “Take notes for me” from Meet hardware](https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html)
 
-## 4. The Financial Stability Board frames frontier AI as a resilience problem
+## 4. Gemini labels Drive files at scale while owners retain review authority
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** August 31, 2026
+**Date:** August 28, 2026
 
-**Topics:** cyber resilience, concentration risk, human oversight, financial decision support
+**Topics:** data classification, Google Drive, human review, DLP, audit logs
 
-![A network of financial nodes carrying a red risk wave toward a circuit breaker](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/04-systemic-risk-network.svg)
+![A cabinet of color-coded files flowing to a confidential label that a person can approve or revise](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-01/04-drive-label-review.svg)
 
-**Summary:** In a letter to G20 finance ministers and central-bank governors, Financial Stability Board chair Andrew Bailey identifies frontier AI’s effect on cyber risk as the financial system’s most immediate AI concern. The letter says greater attack speed and scale could interact with concentrated technology providers and interconnected infrastructure, and calls for stronger vulnerability management, response and recovery.
+**Summary:** Google opened Gemini-based data classification in Drive to beta. Administrators choose a label, write instructions and define the file audience; Gemini evaluates files and applies labels without a manually labeled training set. Eligible owners and editors can accept or modify the proposed label, and audit logs record both automated labeling and human changes. Labels can support DLP, retention and investigations.
 
-**Why it matters:** This shifts executive AI literacy from “Can the model do the task?” to “Can the organization contain and recover from what the system enables?” The letter is a supervisory warning, not an empirical forecast of a specific incident. Its practical value is the operating agenda: map shared providers, test recovery, shorten patch cycles safely and retain accountable human decisions.
+**Why it matters:** This is accessible prompt engineering applied to information governance: administrators define classification intent in natural language, while people retain correction authority. It can help ground downstream AI and agent permissions in file sensitivity. It remains a beta limited to selected Workspace editions, and classification errors can misroute protection, so sampling, exception review and measured false-positive and false-negative rates are essential.
 
-**For George’s work:** Build a leadership exercise around a dependency map: which AI, cloud, identity and data providers are shared across critical workflows, and what human-approved fallback works when one becomes unavailable or compromised?
+**For George’s work:** Use it as a practical evaluation exercise for consultants and managers: write label instructions, assemble a boundary-case test set, compare Gemini labels with human judgments, document disagreements and refine the policy before enforcement.
 
-**Source:** [Financial Stability Board — August 2026 letter to the G20](https://www.fsb.org/2026/08/fsb-chairs-letter-to-g20-finance-ministers-and-central-bank-governors-august-2026/)
+**Source:** [Google Workspace Updates — Gemini-based Drive classification open beta](https://workspaceupdates.googleblog.com/2026/08/gemini-based-data-classification-in-Google-Drive-is-now-available-in-open-beta.html)
 
-## 5. Make adds global search across scenarios and their runs
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** August 31, 2026
-
-**Topics:** no-code automation, workflow discovery, run history, operational review
-
-![A magnifying glass spanning a constellation of connected workflow nodes and a run-history card](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/05-make-global-search.svg)
-
-**Summary:** Make’s August 31 release notes announce global search for scenarios and scenario runs. Users can search across workflow definitions and past executions from a workspace-level entry point instead of locating the right scenario first and then inspecting its history.
-
-**Why it matters:** Accessible agents need findability as much as creation. When a recurring workflow publishes the wrong result, the operator must quickly locate both the procedure and the exact run that produced it. Search improves that control surface, although it does not itself validate outputs or resolve errors; naming standards, retained run data and human review still matter.
-
-**For George’s work:** Treat “find the procedure, find the run, inspect the evidence” as a basic operating skill for non-technical agent owners—and include a run-naming and review convention in workshop templates.
-
-**Source:** [Make — 2026 release notes](https://help.make.com/2026)
-
-## 6. Google Cloud schedules a no-code, build-to-deploy customer-agent demonstration
+## 5. ChatGPT Work can discover tools provided directly by a website
 
 **Focus: Agents for Non-Technical People**
 
 **Date:** August 31, 2026
 
-**Topics:** no-code agents, customer service, visual workflow design, deployment governance
+**Topics:** WebMCP, website tools, ChatGPT Work, browser agents, confirmations
 
-![A non-technical builder arranging knowledge and instruction blocks on a visual canvas that connects to a customer chat](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/06-no-code-agent-workshop.svg)
+![A browser page connecting through a consent gate to three structured website tools](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-01/05-webmcp-tool-socket.svg)
 
-**Summary:** Google Cloud announced a September 4 live session that promises to build and deploy a functional customer agent from scratch in under 15 minutes using a no-code/low-code environment. The demonstration is aimed at routine inquiries, multi-turn conversations and brand-aligned responses rather than software-framework setup.
+**Summary:** ChatGPT Work and Codex can now discover and use actions that supported websites expose through WebMCP in the desktop app’s built-in browser. A user can inspect available site tools from the address bar and ask the agent to use them without configuring a separate connector. OpenAI’s documentation gives actions such as finding a document section or adding a comment as examples. Existing website-access and sensitive-action confirmations still apply.
 
-**Why it matters:** A short visual build lowers the entry barrier, but deployment speed is not evidence of production reliability. The substantive lesson for non-technical owners is the governance work around the canvas: select grounded sources, define what the agent may do, create escalation triggers, review conversation traces and test failure cases before exposing it to customers.
+**Why it matters:** Non-technical users can delegate through a site’s structured actions instead of relying only on fragile visual clicking. That can make multi-step work more legible and reliable, because the website defines named capabilities. Availability is constrained: it requires a supported account, model and page, runs in the built-in desktop browser rather than the Chrome extension, and does not make consequential actions automatically safe.
 
-**For George’s work:** Recreate the demonstration as a two-part exercise: first build the workflow, then spend equal time on boundaries, approval points, an evaluation set and a rollback procedure.
+**For George’s work:** This supports a new workshop pattern: inspect the tools a site offers, select only the actions required for the outcome, state approval boundaries and review the resulting artifact or audit evidence before accepting completion.
 
-**Source:** [Google Cloud OnAir — Develop proactive customer agents in minutes](https://cloudonair.withgoogle.com/events/develop-proactive-customer-agents-in-minutes)
+**Sources:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes) · [ChatGPT Learning Center — What’s new](https://learn.chatgpt.com/docs/whats-new)
+
+## 6. Workspace Studio’s no-code agents gain least privilege, approvals and audit context
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 1, 2026
+
+**Topics:** no-code agents, least privilege, human approval, DLP, auditability
+
+![A no-code workflow crossing identity, approval, data-protection and audit checkpoints](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-01/06-studio-governed-flow.svg)
+
+**Summary:** Google began the Scheduled Release rollout of new Workspace Studio controls today. Newly created flows can run with least-privileged agent identities and unique auditable identifiers. Administrators can revoke individual OAuth scopes, inspect flow context in audit events, disable step types or webhooks, require confirmation before externally sharing data, and use DLP conditions to block execution or force review.
+
+**Why it matters:** This is the governance layer that no-code agent adoption has been missing: identity, authority, human approval, data rules and evidence are configured around the visual workflow. The current limitation is important—several protections initially apply only to newly created flows, with existing-flow support promised later—and DLP availability varies by Workspace edition.
+
+**For George’s work:** Convert the control set into a reusable “bounded delegation” worksheet for non-technical builders: name the agent owner, minimize scopes, identify external-sharing steps, require approval at irreversible boundaries and specify which audit events prove the run behaved as intended.
+
+**Source:** [Google Workspace Updates — enterprise security controls for Workspace Studio](https://workspaceupdates.googleblog.com/2026/08/new-enterprise-security-controls-for-Workspace-Studio-enable-expanded-collaboration-use-cases.html)
 
 ## Worth Watching
 
 ### General
 
-**[Microsoft 365 AI Workplace Update August 2026](https://www.youtube.com/watch?v=BzOUD7UCy5U)** — Empowering.Cloud; **14:37**; uploaded **August 6, 2026**. Microsoft MVP-led coverage of practical Microsoft 365 AI changes makes this a useful compact orientation for knowledge workers and trainers. It connects most directly to governed mainstream AI adoption and the operational product changes surrounding today’s applied stories. Consequential product claims should still be checked against Microsoft’s documentation.
+No video qualified. The strongest timely candidate was Netlify’s **[WebMCP In Action](https://www.youtube.com/watch?v=qR8zraGmHZo)**, uploaded **August 28, 2026**, with a verified runtime of **1:20:23**. It is technically substantive and directly relevant to Item 5, but it exceeds the 20:00 ceiling by 1 hour and 23 seconds.
 
 ### Agents for Non-Technical People
 
-No video qualified. The strongest directly relevant candidate was Google Cloud’s official **[Build and share no code agents](https://www.youtube.com/watch?v=rHWMZLrlmV8)**, uploaded **April 27, 2026**, with a verified runtime of **21:29**. It was rejected because it exceeds the 20:00 ceiling by 1 minute 29 seconds.
+No video qualified. The strongest official candidate was **[Google Workspace Studio: Automate work with AI agents](https://www.youtube.com/watch?v=Xy0r5fKwlVo)** from Google Workspace, uploaded **December 3, 2025**, with a verified runtime of **1:24**. It accurately introduces the no-code product behind Item 6, but it is too brief and promotional to demonstrate how a non-technical user configures authority, evaluates results or governs a substantive workflow.
 
 ## Editorial takeaway
 
-Today’s common thread is operability. Semantic firewalls, usage ledgers, portable code, resilience maps, global run search and visual agent builders all address a different point in the same lifecycle: define authority, observe delegated work, preserve an exit, recover from failure and keep a human able to find and govern what happened.
+Today’s common pattern is inspectable control. Strong agent systems expose the size of tool output, the state of working context, whether capture is active, how data is labeled, which website actions exist, who authorized them and where the audit trail lives. Capability matters, but the operational advantage comes from making authority, state and evidence visible to the person accountable for the work.
 
