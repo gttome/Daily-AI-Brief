@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f7fb"/>
+  <text id="t1" x="60" y="78" fill="#1e293b" font-family="Arial" font-size="34" font-weight="700">AI note-taking gets a room-level pause button</text>
+  <ellipse cx="475" cy="365" rx="330" ry="125" fill="#dbeafe" stroke="#2563eb" stroke-width="7"/>
+  <g fill="#fed7aa" stroke="#c2410c" stroke-width="4"><circle cx="205" cy="200" r="42"/><circle cx="470" cy="155" r="42"/><circle cx="740" cy="205" r="42"/></g>
+  <g fill="#475569"><path d="M145 285 q60-100 120 0z"/><path d="M410 245 q60-100 120 0z"/><path d="M680 290 q60-100 120 0z"/></g>
+  <circle cx="475" cy="365" r="86" fill="#fee2e2" stroke="#dc2626" stroke-width="10"/>
+  <rect x="435" y="325" width="28" height="80" rx="5" fill="#dc2626"/><rect x="488" y="325" width="28" height="80" rx="5" fill="#dc2626"/>
+  <rect x="850" y="145" width="250" height="320" rx="24" fill="#fff" stroke="#64748b" stroke-width="6"/>
+  <path d="M900 215 h145 M900 265 h120 M900 315 h155 M900 365 h105" stroke="#94a3b8" stroke-width="12" stroke-linecap="round"/>
+  <path d="M905 420 h130" stroke="#22c55e" stroke-width="14" stroke-linecap="round"/>
+  <text id="t2" x="840" y="505" fill="#334155" font-family="Arial" font-size="22">visible state + local control</text>
+  <text id="t3" x="60" y="575" fill="#475569" font-family="Arial" font-size="21">Pause for off-the-record discussion; resume without a companion laptop</text>
+</svg>
