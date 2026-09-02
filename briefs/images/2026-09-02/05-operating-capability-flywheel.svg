@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0c1f17"/>
+<text x="55" y="68" fill="#ecfdf5" font-family="Arial" font-size="34" font-weight="700">FROM A REPEATABLE WORKFLOW TO OPERATING CAPABILITY</text>
+<circle cx="590" cy="330" r="190" fill="none" stroke="#34d399" stroke-width="42" stroke-dasharray="225 65"/>
+<path d="M590 140l35 60-70 0z" fill="#fbbf24"/><path d="M780 330l-60 35v-70z" fill="#fbbf24"/><path d="M590 520l-35-60h70z" fill="#fbbf24"/><path d="M400 330l60-35v70z" fill="#fbbf24"/>
+<circle cx="590" cy="330" r="105" fill="#16372a"/><text x="590" y="316" fill="#fff" font-family="Arial" font-size="28" text-anchor="middle" font-weight="700">PERSISTENT</text><text x="590" y="354" fill="#fff" font-family="Arial" font-size="28" text-anchor="middle" font-weight="700">CONTEXT</text>
+<text x="590" y="108" fill="#a7f3d0" font-family="Arial" font-size="24" text-anchor="middle">TEACH A STABLE PROCESS</text><text x="1000" y="338" fill="#a7f3d0" font-family="Arial" font-size="24" text-anchor="middle">TEST ACTIONS</text><text x="590" y="585" fill="#a7f3d0" font-family="Arial" font-size="24" text-anchor="middle">REVIEW OUTCOMES</text><text x="190" y="338" fill="#a7f3d0" font-family="Arial" font-size="24" text-anchor="middle">IMPROVE</text>
+</svg>
