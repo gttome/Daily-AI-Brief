@@ -16,7 +16,7 @@ title: Daily Generative AI Brief
 
 **Topics:** frontier models, long-running agents, coding, safeguards, evaluation
 
-![Two model classes connected by an arrow, representing coding and knowledge work alongside restricted frontier research capabilities](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/01-claude-51-models.svg)
+![Two model classes connected by an arrow, representing coding and knowledge work alongside restricted frontier research capabilities](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/01-claude-51-models.svg?v=20260902-2)
 
 **Summary:** Anthropic introduced Claude Fable 5.1 for coding and knowledge work, with support for long-running, multi-application agent tasks, while restricting higher-risk capabilities through a separate Mythos access path.
 
@@ -70,7 +70,7 @@ title: Daily Generative AI Brief
 
 **Topics:** image generation, editing, Workspace, no-code creation, Docs, Slides
 
-![A visual canvas beside stacked editing controls, representing prompt-based image creation inside Workspace](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/04-google-pics.svg)
+![A visual canvas beside stacked editing controls, representing prompt-based image creation inside Workspace](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/04-google-pics.svg?v=20260902-2)
 
 **Summary:** Google made Google Pics available to eligible AI Pro and Ultra subscribers as a Workspace-oriented image creation and editing tool, including generation, refinement, object isolation and text editing or translation within images.
 
@@ -106,7 +106,7 @@ title: Daily Generative AI Brief
 
 **Topics:** law firms, AI governance, adoption, human accountability, enterprise workflows
 
-![A governance dashboard with rising adoption bars above a common accountability baseline](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/06-gilbert-tobin-governance.svg)
+![A governance dashboard with rising adoption bars above a common accountability baseline](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/06-gilbert-tobin-governance.svg?v=20260902-2)
 
 **Summary:** OpenAI published a case study describing how Gilbert + Tobin combines leadership commitment, governance and human accountability around ChatGPT Enterprise and Codex, reporting 87% active usage among enabled ChatGPT users.
 
