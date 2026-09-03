@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f7f9fc"/>
+<text x="70" y="85" font-family="DejaVu Sans" font-size="34" font-weight="700" fill="#172033">Gemini 3.8: long-horizon agents + cyber defense</text>
+<rect x="80" y="150" width="430" height="330" rx="36" fill="#e7efff" stroke="#4d6fb8" stroke-width="4"/>
+<circle cx="295" cy="285" r="86" fill="#ffffff" stroke="#4d6fb8" stroke-width="8"/>
+<path d="M238 285c28-58 86-58 114 0-28 58-86 58-114 0z" fill="none" stroke="#4d6fb8" stroke-width="10"/>
+<text x="160" y="430" font-family="DejaVu Sans" font-size="30" font-weight="700" fill="#172033">3.8 FLASH</text>
+<rect x="690" y="150" width="430" height="330" rx="36" fill="#eef8f0" stroke="#3d8152" stroke-width="4"/>
+<path d="M905 205l95 38v80c0 72-48 122-95 146-47-24-95-74-95-146v-80z" fill="#ffffff" stroke="#3d8152" stroke-width="8"/>
+<path d="M864 331l30 31 57-67" fill="none" stroke="#3d8152" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="782" y="430" font-family="DejaVu Sans" font-size="30" font-weight="700" fill="#172033">FLASH CYBER</text>
+<path d="M525 290c56-56 94-56 150 0" fill="none" stroke="#687386" stroke-width="8" stroke-linecap="round"/>
+<path d="M647 274l28 16-28 16" fill="none" stroke="#687386" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="430" y="560" font-family="DejaVu Sans" font-size="25" fill="#465066">recursive agentic loops</text>
+</svg>
