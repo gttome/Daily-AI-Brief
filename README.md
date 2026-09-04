@@ -7,6 +7,7 @@ Every numbered briefing item automatically receives a native/fallback Share cont
 
 ## Archive
 
+- [September 4, 2026](briefs/2026-09-04.md)
 - [September 3, 2026](briefs/2026-09-03.md)
 - [September 2, 2026](briefs/2026-09-02.md)
 - [September 1, 2026](briefs/2026-09-01.md)
