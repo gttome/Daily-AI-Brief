@@ -5,6 +5,10 @@ Daily briefings covering important Generative AI developments, tools, concepts, 
 
 Every numbered briefing item automatically receives a native/fallback Share control with an item-specific share count. See [SHARING.md](SHARING.md) for behavior, counter semantics, publication requirements, and QA checks.
 
+## QA History
+
+Daily QA and self-healing repair results are stored permanently in [`qa/`](qa/) and published at https://gttome.github.io/Daily-AI-Brief/qa/ . Each dated report records PASS/FAIL checks, detected issues, repairs performed, deployment status, and the final live result.
+
 ## Archive
 
 - [September 4, 2026](briefs/2026-09-04.md)
