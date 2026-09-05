@@ -11,7 +11,7 @@
 
 **Topics:** multi-model orchestration, GitHub Copilot, coding agents, routing, critique, evaluation, cost-quality tradeoffs
 
-![HydraFusion runtime model orchestration across single, cascade, and critique execution patterns](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-05/01-hydrafusion.svg?v=20260905-1)
+![HydraFusion runtime model orchestration across single, cascade, and critique execution patterns](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-05/01-hydrafusion.svg?v=20260905-2)
 
 **Summary:** GitHub introduced Project HydraFusion as a research preview in GitHub Copilot CLI. Instead of sending every coding task to one fixed model, HydraFusion builds an execution plan and chooses among three patterns: a single model, a cascade that escalates after a quality gate, or a draft-and-critique workflow using a separate read-only critic. GitHub says the runtime validates workflow definitions and fallbacks before execution and applies no patch when a workflow is cancelled or fails validation. In controlled offline evaluations, GitHub reported that its strongest HydraFusion configurations approached or exceeded Claude Opus 5 quality on several coding benchmarks while reducing estimated workflow cost.
 
