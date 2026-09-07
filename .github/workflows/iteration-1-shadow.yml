@@ -1,12 +1,10 @@
 name: Iteration 1 publication shadow
 
 on:
-  schedule:
-    - cron: '40 12 * * *'
   workflow_dispatch:
     inputs:
       date:
-        description: America/Chicago edition date; blank uses current date
+        description: Edition date for an on-demand publication parity diagnostic
         required: false
         type: string
 

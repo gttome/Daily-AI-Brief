@@ -1,7 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "publication_mode": "shadow",
-  "shadow_required_consecutive_passes": 7,
-  "automatic_candidate_trigger_enabled": false,
-  "cutover_authorized_by_gate": false
+  "publication_mode": "active",
+  "time_based_shadow_gate_enabled": false,
+  "shadow_required_consecutive_passes": 0,
+  "exit_gate": "comprehensive_acceptance_regression_failure_injection_and_live_smoke",
+  "automatic_candidate_trigger_enabled": true,
+  "cutover_authorized_by_gate": true
 }
