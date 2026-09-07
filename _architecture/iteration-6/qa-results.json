@@ -1,6 +1,33 @@
 {
-  "record_version":"1.0.0","iteration":6,"name":"Integration hardening","status":"CANDIDATE_QA_PASS","implemented":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
-  "acceptance":{"node_tests":45,"contract_tests":13,"integrated_repository":"PASS","failure_injections":11,"failure_injection_result":"PASS","generation_budget_ms":3000,"observed_generation_ms_under_budget":true,"url_regression":"PASS","rollback_paths":"READY"},
-  "qa":{"local_result":"PASS","regression":"PASS","critical_defects":0,"high_defects":0,"github_ci":"PENDING","github_pages":"PENDING","live_smoke":"PENDING"},
-  "limitations":["Local Bundler/Jekyll is unavailable; the authoritative Jekyll build runs in GitHub CI."],"rollback_target_sha":"39638bef649813f33b2dd172513164c15dadd83d","rollback_status":"READY","gate_result":"CANDIDATE_PASS"
+  "record_version": "1.0.0",
+  "iteration": 6,
+  "name": "Integration hardening",
+  "status": "PASS",
+  "implemented": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+  "acceptance": {
+    "node_tests": 45,
+    "contract_tests": 13,
+    "integrated_repository": "PASS",
+    "failure_injections": 11,
+    "failure_injection_result": "PASS",
+    "generation_budget_ms": 3000,
+    "observed_generation_ms_under_budget": true,
+    "url_regression": "PASS",
+    "rollback_paths": "READY"
+  },
+  "qa": {
+    "local_result": "PASS",
+    "regression": "PASS",
+    "critical_defects": 0,
+    "high_defects": 0,
+    "candidate_ci": {"result": "PASS", "run_id": 34162521391},
+    "production_ci": {"result": "PASS", "run_id": 34162570403},
+    "github_pages": {"result": "PASS", "run_id": 34162569662},
+    "live_smoke": {"result": "PASS", "executed_at": "2026-09-07T21:26:50Z", "http_failures": 0}
+  },
+  "production_commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a",
+  "limitations": ["The public analytics transport provides directional aggregate signals rather than audited audience totals."],
+  "rollback_target_sha": "39638bef649813f33b2dd172513164c15dadd83d",
+  "rollback_status": "READY",
+  "gate_result": "PASS"
 }

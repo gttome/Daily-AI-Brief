@@ -14,37 +14,24 @@
     }
   },
   "active_stage": {
-    "number": 3,
-    "name": "Reader foundation",
-    "status": "IN_PROGRESS",
-    "production_commit": "39638bef649813f33b2dd172513164c15dadd83d",
+    "number": 7,
+    "name": "Production readiness",
+    "status": "PASS_PENDING_FINAL_USER_APPROVAL",
+    "production_commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a",
     "required_consecutive_passes": 0,
     "observed_consecutive_passes": 0
   },
   "completed_stages": [
-    {
-      "number": 0,
-      "name": "Architecture & contracts",
-      "result": "APPROVED",
-      "commit": "414c87185aa39f9f92ffbd7b6721ab17be79baa0"
-    },
-    {
-      "number": 1,
-      "name": "Publication reliability",
-      "result": "PASS",
-      "commit": "15ee5a1aaedaaaf12a4e18c52c397551bd27d35e"
-    },
-    {
-      "number": 2,
-      "name": "Editorial intelligence",
-      "result": "PASS",
-      "commit": "2337dbef1a379f46be5f9024444eb385dbd26397",
-      "repair_commit": "3bd692723144a1516e1269c002baa7276b1fd7b1",
-      "production_evidence_commit": "39638bef649813f33b2dd172513164c15dadd83d"
-    }
+    {"number": 0, "name": "Architecture & contracts", "result": "APPROVED", "commit": "414c87185aa39f9f92ffbd7b6721ab17be79baa0"},
+    {"number": 1, "name": "Publication reliability", "result": "PASS", "commit": "15ee5a1aaedaaaf12a4e18c52c397551bd27d35e"},
+    {"number": 2, "name": "Editorial intelligence", "result": "PASS", "commit": "2337dbef1a379f46be5f9024444eb385dbd26397", "repair_commit": "3bd692723144a1516e1269c002baa7276b1fd7b1", "production_evidence_commit": "39638bef649813f33b2dd172513164c15dadd83d"},
+    {"number": 3, "name": "Reader foundation", "result": "PASS", "commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a"},
+    {"number": 4, "name": "Measurement & accessibility", "result": "PASS", "commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a"},
+    {"number": 5, "name": "Intelligence & learning", "result": "PASS", "commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a"},
+    {"number": 6, "name": "Integration hardening", "result": "PASS", "commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a"}
   ],
-  "pending_stages": [3, 4, 5, 6, 7],
-  "last_evaluated_at": "2026-09-07T18:00:54Z",
+  "pending_stages": [7],
+  "last_evaluated_at": "2026-09-07T21:26:50Z",
   "critical_or_high_defects": [],
   "rollback_status": "READY"
 }

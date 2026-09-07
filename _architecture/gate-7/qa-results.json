@@ -1,0 +1,50 @@
+{
+  "record_version": "1.0.0",
+  "gate": 7,
+  "name": "Production readiness",
+  "status": "PASS_PENDING_FINAL_USER_APPROVAL",
+  "time_based_wait": "REMOVED_BY_USER_AUTHORIZATION",
+  "replacement_gate": "COMPREHENSIVE_EVIDENCE_BASED_IMMEDIATE_GATE",
+  "production_commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a",
+  "pull_request": 9,
+  "evidence": {
+    "candidate_ci": {"result": "PASS", "run_id": 34162521391},
+    "production_ci": {"result": "PASS", "run_id": 34162570403},
+    "github_pages": {"result": "PASS", "run_id": 34162569662},
+    "node_tests": {"result": "PASS", "passed": 45, "failed": 0},
+    "contract_tests": {"result": "PASS", "passed": 13, "failed": 0},
+    "failure_injections": {"result": "PASS", "scenarios": 11},
+    "repository_parity": "PASS",
+    "atomic_publication_validation": "PASS",
+    "live_smoke": {
+      "result": "PASS",
+      "executed_at": "2026-09-07T21:26:50Z",
+      "homepage": 200,
+      "dated_brief": 200,
+      "archive": 200,
+      "qa_dashboard": 200,
+      "trend_radar": 200,
+      "atom_feed": {"status": 200, "entries": 125},
+      "json_feed": {"status": 200, "entries": 125},
+      "archive_data": {"status": 200, "stories": 125, "editions": 22},
+      "qa_data": 200,
+      "current_story_pages": {"tested": 6, "http_failures": 0},
+      "story_social_metadata": "PASS",
+      "counter_transport": {"result": "PASS", "isolated_key": "dab-v1-gate7-smoke-20260907", "observed_value": 1},
+      "production_analytics": {"collection_status": "complete", "story_count": 6, "small_count_suppression": true}
+    }
+  },
+  "acceptance_result": "PASS",
+  "regression_result": "PASS",
+  "critical_defects": 0,
+  "high_defects": 0,
+  "known_limitations": [
+    "Historical evidence and availability fields remain Unspecified where legacy briefs did not retain them.",
+    "Client-side aggregate analytics are directional and can be affected by blockers, bots, or replay; they are not presented as audited audience totals.",
+    "Editorial weighting remains inactive until enough evidence exists and a human approves a recommendation."
+  ],
+  "rollback_target_sha": "39638bef649813f33b2dd172513164c15dadd83d",
+  "rollback_status": "READY",
+  "command_center": "BLOCKED_PENDING_FINAL_USER_APPROVAL",
+  "recommendation": "APPROVE"
+}
