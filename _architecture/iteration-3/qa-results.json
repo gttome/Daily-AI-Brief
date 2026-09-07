@@ -1,6 +1,35 @@
 {
-  "record_version":"1.0.0","iteration":3,"name":"Reader foundation","status":"CANDIDATE_QA_PASS","implemented":[10,12,13],
-  "acceptance":{"permanent_story_pages":125,"current_story_social_metadata":"PASS","archive_index_stories":125,"archive_editions":22,"filter_dimensions":["date","company","topic","focus","evidence_class","availability_status","trend"],"atom_feed":"PASS","json_feed_1_1":"PASS","existing_url_contract":"PASS","mobile_css":"PASS"},
-  "qa":{"reader_tests":3,"result":"PASS","integration_regression":"PASS","github_ci":"PENDING"},
-  "critical_defects":0,"high_defects":0,"limitations":["Historical evidence and availability filters show Unspecified where legacy briefs did not retain those fields."],"rollback_target_sha":"39638bef649813f33b2dd172513164c15dadd83d","rollback_status":"READY","gate_result":"CANDIDATE_PASS"
+  "record_version": "1.0.0",
+  "iteration": 3,
+  "name": "Reader foundation",
+  "status": "PASS",
+  "implemented": [10, 12, 13],
+  "acceptance": {
+    "permanent_story_pages": 125,
+    "current_story_pages_live": 6,
+    "current_story_social_metadata": "PASS",
+    "archive_index_stories": 125,
+    "archive_editions": 22,
+    "filter_dimensions": ["date", "company", "topic", "focus", "evidence_class", "availability_status", "trend"],
+    "atom_feed_entries": 125,
+    "json_feed_1_1_entries": 125,
+    "existing_url_contract": "PASS",
+    "mobile_css": "PASS"
+  },
+  "qa": {
+    "reader_tests": 3,
+    "result": "PASS",
+    "integration_regression": "PASS",
+    "github_ci": {"result": "PASS", "run_id": 34162521391},
+    "production_ci": {"result": "PASS", "run_id": 34162570403},
+    "github_pages": {"result": "PASS", "run_id": 34162569662},
+    "live_smoke": {"result": "PASS", "executed_at": "2026-09-07T21:26:50Z"}
+  },
+  "production_commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a",
+  "critical_defects": 0,
+  "high_defects": 0,
+  "limitations": ["Historical evidence and availability filters show Unspecified where legacy briefs did not retain those fields."],
+  "rollback_target_sha": "39638bef649813f33b2dd172513164c15dadd83d",
+  "rollback_status": "READY",
+  "gate_result": "PASS"
 }

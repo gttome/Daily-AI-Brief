@@ -1,6 +1,6 @@
 # Iteration 3 — Reader Foundation
 
-Status: candidate QA PASS  
+Status: PASS
 Scope: improvements #10, #12 and #13  
 Rollback target: `39638bef649813f33b2dd172513164c15dadd83d`
 
@@ -8,4 +8,4 @@ The canonical edition and active 30-day history now generate permanent story pag
 
 The archive retains a static chronological fallback when JavaScript or the index is unavailable. Search is client-side and sends no query text to a service. Mobile controls use a single-column layout below 640px and retain 44px input targets.
 
-Acceptance evidence is recorded in `qa-results.json`; final GitHub/Jekyll and production route evidence is completed during Iteration 6 and Gate 7.
+Acceptance evidence in `qa-results.json` includes successful candidate/main CI, Pages deployment, live feeds, all six current story pages, story-specific metadata, and the 30-day archive.

@@ -1,6 +1,6 @@
 # Iteration 5 — Intelligence & Learning
 
-Status: candidate QA PASS  
+Status: PASS
 Scope: improvements #15 and #17
 
 Trend Radar applies a versioned 30-day frequency method with a distinct recent seven-day window. Every classification stores counts, rationale, stable story IDs, dates, and permanent URLs. Current signals are descriptive coverage evidence, not forecasts.

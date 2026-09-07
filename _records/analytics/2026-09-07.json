@@ -1,0 +1,89 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-07",
+  "timezone": "America/Chicago",
+  "aggregation_window": {
+    "start": "2026-09-07T05:00:00Z",
+    "end": "2026-09-08T05:00:00Z"
+  },
+  "privacy": {
+    "contains_personal_identifiers": false,
+    "small_count_suppression": true,
+    "suppression_threshold": 5,
+    "retention_days": 400
+  },
+  "site_totals": {
+    "views": 0,
+    "source_clicks": 0,
+    "share_initiations": 0,
+    "worth_watching_clicks": 0,
+    "retention_30s": 0
+  },
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-07-3f4df523",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-07-dab4bc85",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-07-8053a573",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-07-968c0cd8",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-07-379d301c",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-07-fdefded2",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null
+      }
+    }
+  ],
+  "collection_status": "complete",
+  "limitations": [
+    "Client events contain no names, emails, cookies, persistent reader IDs, or page content.",
+    "The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals."
+  ]
+}
