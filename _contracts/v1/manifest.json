@@ -1,0 +1,19 @@
+{
+  "contract_version": "1.0.0",
+  "json_schema_draft": "2020-12",
+  "vocabulary": "../../_architecture/iteration-0/status-vocabulary.json",
+  "contracts": [
+    {"name": "edition", "schema": "edition.schema.json", "valid_example": "examples/edition.valid.json"},
+    {"name": "publication_event", "schema": "publication-event.schema.json", "valid_example": "examples/publication-event.valid.json"},
+    {"name": "qa_run", "schema": "qa-run.schema.json", "valid_example": "examples/qa-run.valid.json"},
+    {"name": "ledger_entry", "schema": "ledger-entry.schema.json", "valid_example": "examples/ledger-entry.valid.json"},
+    {"name": "alert", "schema": "alert.schema.json", "valid_example": "examples/alert.valid.json"},
+    {"name": "analytics_daily", "schema": "analytics-daily.schema.json", "valid_example": "examples/analytics-daily.valid.json"},
+    {"name": "trend_radar", "schema": "trend-radar.schema.json", "valid_example": "examples/trend-radar.valid.json"},
+    {"name": "editorial_feedback", "schema": "editorial-feedback.schema.json", "valid_example": "examples/editorial-feedback.valid.json"}
+  ],
+  "negative_examples": [
+    "examples/edition.invalid-allocation.json",
+    "examples/publication-event.invalid-incomplete.json"
+  ]
+}

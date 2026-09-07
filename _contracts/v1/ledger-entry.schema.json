@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/ledger-entry.schema.json",
+  "title": "Daily AI Brief append-only ledger entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "entry_id", "entry_type", "created_at", "status", "summary", "evidence", "affected_urls", "related_entry_ids", "details"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "entry_id": {"type": "string", "pattern": "^dab-(correction|incident)-[0-9]{8}T[0-9]{6}Z-[0-9a-f]{8}$"},
+    "entry_type": {"enum": ["correction", "incident"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["open", "acknowledged", "resolved", "superseded"]},
+    "summary": {"type": "string", "minLength": 1},
+    "evidence": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "affected_urls": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+    "related_entry_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-"}},
+    "details": {
+      "oneOf": [
+        {"$ref": "#/$defs/correction"},
+        {"$ref": "#/$defs/incident"}
+      ]
+    }
+  },
+  "$defs": {
+    "correction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "edition_id", "story_id", "materiality", "prior_fact", "corrected_fact", "reason", "corrected_at"],
+      "properties": {
+        "kind": {"const": "correction"},
+        "edition_id": {"type": "string", "pattern": "^dab-edition-"},
+        "story_id": {"type": ["string", "null"]},
+        "materiality": {"enum": ["material", "non_material"]},
+        "prior_fact": {"type": "string", "minLength": 1},
+        "corrected_fact": {"type": "string", "minLength": 1},
+        "reason": {"type": "string", "minLength": 1},
+        "corrected_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "incident": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "severity", "component", "user_impact", "probable_cause", "confidence", "corrective_action", "approval_state", "rollback_target_sha", "resolved_at"],
+      "properties": {
+        "kind": {"const": "incident"},
+        "severity": {"enum": ["critical", "high", "medium", "low", "info"]},
+        "component": {"type": "string", "minLength": 1},
+        "user_impact": {"type": "string", "minLength": 1},
+        "probable_cause": {"type": ["string", "null"]},
+        "confidence": {"enum": ["high", "medium", "low"]},
+        "corrective_action": {"type": "string", "minLength": 1},
+        "approval_state": {"enum": ["not_required", "pending", "approved", "rejected"]},
+        "rollback_target_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+        "resolved_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    }
+  }
+}

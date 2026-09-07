@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260907T122000Z-abcdef02",
+  "edition_id": "dab-edition-2026-09-07",
+  "publication_run_id": "dab-publication-20260907T120000Z-abcdef01",
+  "executed_at": "2026-09-07T12:20:00Z",
+  "initial_result": "pass",
+  "final_result": "pass",
+  "checks": [
+    {"check_id": "public_url_contract", "class": "deterministic", "result": "pass", "severity": "critical", "evidence": "Every frozen and current route is present in the Pages artifact."},
+    {"check_id": "image_meaning", "class": "editorial", "result": "pass", "severity": "high", "evidence": "All six images accurately explain their stories."}
+  ],
+  "repairs": [],
+  "defects": [],
+  "deployment_evidence": {"pages_run_id": 34036329986, "head_sha": "b70bc37b4e190750eda08842bfe3ee09995c0b8a", "conclusion": "success"},
+  "record_path": "_records/qa/2026-09-07/dab-qa-20260907T122000Z-abcdef02.json"
+}

@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/qa-run.schema.json",
+  "title": "Daily AI Brief QA run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "edition_id", "publication_run_id", "executed_at", "initial_result", "final_result", "checks", "repairs", "defects", "deployment_evidence", "record_path"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "run_id": {"type": "string", "pattern": "^dab-qa-[0-9]{8}T[0-9]{6}Z-[0-9a-f]{8}$"},
+    "edition_id": {"type": "string", "pattern": "^dab-edition-"},
+    "publication_run_id": {"type": ["string", "null"]},
+    "executed_at": {"type": "string", "format": "date-time"},
+    "initial_result": {"enum": ["pass", "fail"]},
+    "final_result": {"enum": ["pass", "fail"]},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["check_id", "class", "result", "severity", "evidence"],
+        "properties": {
+          "check_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "class": {"enum": ["deterministic", "editorial"]},
+          "result": {"enum": ["pass", "fail", "not_run", "not_applicable", "waived"]},
+          "severity": {"enum": ["critical", "high", "medium", "low", "info"]},
+          "evidence": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "repairs": {"type": "array", "items": {"type": "object", "required": ["description", "commit_sha"], "properties": {"description": {"type": "string", "minLength": 1}, "commit_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"}}, "additionalProperties": false}},
+    "defects": {"type": "array", "items": {"type": "object", "required": ["severity", "code", "status", "description"], "properties": {"severity": {"enum": ["critical", "high", "medium", "low", "info"]}, "code": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "status": {"enum": ["open", "resolved", "accepted"]}, "description": {"type": "string", "minLength": 1}}, "additionalProperties": false}},
+    "deployment_evidence": {"type": "object", "required": ["pages_run_id", "head_sha", "conclusion"], "properties": {"pages_run_id": {"type": ["integer", "null"]}, "head_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"}, "conclusion": {"enum": ["success", "failure", "cancelled", "timed_out", "not_run"]}}, "additionalProperties": false},
+    "record_path": {"type": "string", "pattern": "^_records/qa/"}
+  }
+}

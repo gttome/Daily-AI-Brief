@@ -1,0 +1,97 @@
+{
+  "inventory_version": "1.0.0",
+  "captured_at": "2026-09-07T15:49:46Z",
+  "repository": "gttome/Daily-AI-Brief",
+  "branch": "main",
+  "head_sha": "b70bc37b4e190750eda08842bfe3ee09995c0b8a",
+  "branch_protected": false,
+  "required_status_checks": [],
+  "tree": {
+    "paths": 151,
+    "files": 129,
+    "directories": 22,
+    "dated_briefs": 21,
+    "dated_image_assets": 95,
+    "image_date_directories": 15,
+    "dated_qa_reports": 3
+  },
+  "content_window": {
+    "first_brief": "2026-08-17",
+    "latest_brief": "2026-09-06",
+    "six_story_format_begins": "2026-08-24",
+    "qa_history_begins": "2026-09-04"
+  },
+  "duplicated_views": [
+    "briefs/YYYY-MM-DD.md",
+    "latest.md",
+    "index.md",
+    "archive.md",
+    "README.md"
+  ],
+  "repository_ci": {
+    "custom_workflows_present": false,
+    "pages_workflow": "dynamic/pages/pages-build-deployment",
+    "latest_verified_run_id": 34036329986,
+    "latest_verified_run_conclusion": "success",
+    "latest_verified_run_head_sha": "b70bc37b4e190750eda08842bfe3ee09995c0b8a"
+  },
+  "active_automations": [
+    {
+      "title": "Daily AI Brief",
+      "automation_id": "6a81179a32cc819187e213ab0b417c08",
+      "timezone": "America/Chicago",
+      "schedule": "daily at 07:00",
+      "allowed_paths": [
+        "briefs/YYYY-MM-DD.md",
+        "briefs/images/YYYY-MM-DD/",
+        "latest.md",
+        "index.md",
+        "archive.md",
+        "README.md"
+      ]
+    },
+    {
+      "title": "Daily Brief QA + Repair",
+      "automation_id": "6a90af05401081919a242aa5ec1bd4a5",
+      "timezone": "America/Chicago",
+      "schedule": "daily at 07:20",
+      "allowed_paths": [
+        "briefs/YYYY-MM-DD.md",
+        "briefs/images/YYYY-MM-DD/",
+        "latest.md",
+        "index.md",
+        "archive.md",
+        "README.md",
+        "qa/YYYY-MM-DD.md",
+        "qa/index.md"
+      ]
+    }
+  ],
+  "observed_risks": [
+    {
+      "severity": "high",
+      "code": "multi_commit_publication",
+      "evidence": "The September 6 recovery used separate commits for six images, dated content, latest, homepage, archive, README, QA report, and QA history."
+    },
+    {
+      "severity": "high",
+      "code": "no_deterministic_ci",
+      "evidence": "No .github/workflows files exist and main has no required status checks."
+    },
+    {
+      "severity": "high",
+      "code": "automation_execution_without_artifact",
+      "evidence": "Both active automations recorded September 7 executions, while main remained at the September 6 edition and no September 7 brief or QA record existed at capture time."
+    },
+    {
+      "severity": "medium",
+      "code": "unversioned_qa",
+      "evidence": "QA records are free-form Markdown and do not expose a stable machine-readable schema."
+    },
+    {
+      "severity": "medium",
+      "code": "unauthenticated_share_counter",
+      "evidence": "assets/js/share.js relies on a public CountAPI endpoint with local fallback; it is not reliable reader analytics."
+    }
+  ]
+}
