@@ -15,6 +15,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '.
 const baseline = 'b70bc37b4e190750eda08842bfe3ee09995c0b8a';
 const edition = importLegacyFile(path.join(root, 'briefs', '2026-09-06.md'), root, baseline);
 
+function currentBriefDate() {
+  return importLegacyFile(path.join(root, 'latest.md'), root).brief_date;
+}
+
 test('legacy edition imports into the canonical six-story contract', () => {
   assert.deepEqual(validateEdition(edition), []);
   assert.equal(edition.edition_id, 'dab-edition-2026-09-06');
@@ -22,7 +26,8 @@ test('legacy edition imports into the canonical six-story contract', () => {
 });
 
 test('homepage, latest, and dated brief are semantically synchronized', () => {
-  const dated = semanticEditionView(importLegacyFile(path.join(root, 'briefs', '2026-09-06.md'), root));
+  const date = currentBriefDate();
+  const dated = semanticEditionView(importLegacyFile(path.join(root, 'briefs', `${date}.md`), root));
   const latest = semanticEditionView(importLegacyFile(path.join(root, 'latest.md'), root));
   const homepage = semanticEditionView(importLegacyFile(path.join(root, 'index.md'), root));
   assert.deepEqual(latest, dated);
@@ -102,7 +107,7 @@ test('failed staging leaves the source checkout unchanged and rollback target ex
 });
 
 test('baseline shadow check passes', () => {
-  const record = runShadowCheck(root, '2026-09-06', baseline);
+  const record = runShadowCheck(root, currentBriefDate(), baseline);
   assert.equal(record.result, 'pass');
   assert.deepEqual(record.errors, []);
 });
