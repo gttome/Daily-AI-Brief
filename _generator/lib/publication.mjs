@@ -61,8 +61,12 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   return {files: [...files.keys()].sort(), digest: stagedDigest(files), event: event.value};
 }
 
-export function validateAtomicChangedPaths(paths, date) {
+export function validateAtomicChangedPaths(paths, date, {policyProfile = 'publication_reliability_v1'} = {}) {
   const required = new Set([`_data/editions/${date}.json`, `briefs/${date}.md`, ...COMPATIBILITY_OUTPUTS]);
+  if (['editorial_intelligence_v1', 'reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1'].includes(policyProfile)) {
+    required.add(`_records/editorial/candidates/${date}.json`);
+    required.add(`_data/story-memory/${date}.json`);
+  }
   const missing = [...required].filter(name => !paths.includes(name));
   const imagePrefix = `briefs/images/${date}/`;
   const imageCount = new Set(paths.filter(name => name.startsWith(imagePrefix))).size;

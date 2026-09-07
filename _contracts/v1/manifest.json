@@ -11,6 +11,8 @@
     {"name": "analytics_daily", "schema": "analytics-daily.schema.json", "valid_example": "examples/analytics-daily.valid.json"},
     {"name": "trend_radar", "schema": "trend-radar.schema.json", "valid_example": "examples/trend-radar.valid.json"},
     {"name": "editorial_feedback", "schema": "editorial-feedback.schema.json", "valid_example": "examples/editorial-feedback.valid.json"}
+    ,{"name": "story_memory", "schema": "story-memory.schema.json", "valid_example": "examples/story-memory.valid.json"}
+    ,{"name": "candidate_pool", "schema": "candidate-pool.schema.json", "valid_example": "examples/candidate-pool.valid.json"}
   ],
   "negative_examples": [
     "examples/edition.invalid-allocation.json",

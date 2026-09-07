@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.0.0",
+  "window": {
+    "start_date": "2026-08-08",
+    "end_date": "2026-09-06",
+    "days": 30
+  },
+  "editions_scanned": 21,
+  "stories_scanned": 119,
+  "candidates_requiring_review": 2,
+  "result": "PASS",
+  "rule": "A match blocks disposition=new; publication requires material_update or approved_repeat, prior story IDs, and a non-empty what_changed explanation.",
+  "review_candidates": [
+    {
+      "story_id": "dab-story-2026-09-01-5005fc67",
+      "brief_date": "2026-09-01",
+      "headline": "Google Meet gives the room a visible pause switch for AI notes",
+      "disposition": "would_require_material-update_review",
+      "matches": [
+        {
+          "prior_story_id": "dab-story-2026-08-26-3128a73a",
+          "prior_brief_date": "2026-08-26",
+          "reason": "source_and_concept",
+          "shared_url": "https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html",
+          "concept_similarity": 0.273
+        }
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-a2c5e263",
+      "brief_date": "2026-09-04",
+      "headline": "ChatGPT for Healthcare connects authorized Epic context with official public data",
+      "disposition": "would_require_material-update_review",
+      "matches": [
+        {
+          "prior_story_id": "dab-story-2026-09-02-ad704042",
+          "prior_brief_date": "2026-09-02",
+          "reason": "source_and_concept",
+          "shared_url": "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/",
+          "concept_similarity": 0.462
+        }
+      ]
+    }
+  ]
+}

@@ -70,6 +70,18 @@ test('atomic change validator accepts one complete edition transaction', () => {
   assert.deepEqual(validateAtomicChangedPaths(complete, date), []);
 });
 
+test('editorial-intelligence transaction also requires candidate and memory evidence', () => {
+  const date = '2026-09-07';
+  const files = [
+    `_data/editions/${date}.json`, `briefs/${date}.md`, 'latest.md', 'index.md', 'archive.md', 'README.md',
+    ...Array.from({length: 6}, (_, index) => `briefs/images/${date}/${index + 1}.svg`)
+  ];
+  const incomplete = validateAtomicChangedPaths(files, date, {policyProfile: 'editorial_intelligence_v1'});
+  assert.ok(incomplete.includes(`_records/editorial/candidates/${date}.json`));
+  assert.ok(incomplete.includes(`_data/story-memory/${date}.json`));
+  assert.deepEqual(validateAtomicChangedPaths([...files, `_records/editorial/candidates/${date}.json`, `_data/story-memory/${date}.json`], date, {policyProfile: 'editorial_intelligence_v1'}), []);
+});
+
 test('failed staging leaves the source checkout unchanged and rollback target explicit', () => {
   const before = stagedDigest(new Map([
     ['briefs/2026-09-06.md', fs.readFileSync(path.join(root, 'briefs', '2026-09-06.md'), 'utf8')],

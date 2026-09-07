@@ -7,7 +7,9 @@
     "test": "node --test _generator/test/*.test.mjs && node _tools/validate-contracts.mjs",
     "validate": "node _generator/cli.mjs validate-repo",
     "shadow": "node _generator/cli.mjs shadow",
-    "generate": "node _generator/cli.mjs generate"
+    "generate": "node _generator/cli.mjs generate",
+    "backfill-memory": "node _generator/cli.mjs backfill-memory",
+    "backtest-novelty": "node _generator/cli.mjs backtest-novelty"
   },
   "engines": {
     "node": ">=20"
