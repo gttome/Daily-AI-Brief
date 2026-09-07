@@ -56,6 +56,39 @@ test('atomic change validator rejects partial publication', () => {
   assert.ok(missing.some(item => item.includes('<exactly six assets')));
 });
 
+test('atomic change validator accepts one complete edition transaction', () => {
+  const date = '2026-09-07';
+  const complete = [
+    `_data/editions/${date}.json`,
+    `briefs/${date}.md`,
+    'latest.md',
+    'index.md',
+    'archive.md',
+    'README.md',
+    ...Array.from({length: 6}, (_, index) => `briefs/images/${date}/${String(index + 1).padStart(2, '0')}-story.svg`)
+  ];
+  assert.deepEqual(validateAtomicChangedPaths(complete, date), []);
+});
+
+test('failed staging leaves the source checkout unchanged and rollback target explicit', () => {
+  const before = stagedDigest(new Map([
+    ['briefs/2026-09-06.md', fs.readFileSync(path.join(root, 'briefs', '2026-09-06.md'), 'utf8')],
+    ['latest.md', fs.readFileSync(path.join(root, 'latest.md'), 'utf8')],
+    ['index.md', fs.readFileSync(path.join(root, 'index.md'), 'utf8')]
+  ]));
+  const invalid = structuredClone(edition);
+  invalid.stories = invalid.stories.slice(0, 5);
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'dab-failed-stage-'));
+  assert.throws(() => buildPublicationStage(invalid, root, out, {baselineSha: baseline, observedAt: '2026-09-07T12:00:00Z'}));
+  const after = stagedDigest(new Map([
+    ['briefs/2026-09-06.md', fs.readFileSync(path.join(root, 'briefs', '2026-09-06.md'), 'utf8')],
+    ['latest.md', fs.readFileSync(path.join(root, 'latest.md'), 'utf8')],
+    ['index.md', fs.readFileSync(path.join(root, 'index.md'), 'utf8')]
+  ]));
+  assert.equal(after, before);
+  assert.match(baseline, /^[0-9a-f]{40}$/);
+});
+
 test('baseline shadow check passes', () => {
   const record = runShadowCheck(root, '2026-09-06', baseline);
   assert.equal(record.result, 'pass');

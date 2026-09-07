@@ -2,7 +2,7 @@
   "record_version": "1.0.0",
   "iteration": 1,
   "name": "Publication reliability",
-  "status": "SHADOW_RUNNING",
+  "status": "IMMEDIATE_GATE_IN_PROGRESS",
   "implemented": [1, 2, 3, 7],
   "local_tests": {
     "result": "PASS",
@@ -23,7 +23,8 @@
     "deployed_at": "2026-09-07T16:30:02Z"
   },
   "production_behavior_changed": false,
-  "shadow_required_consecutive_passes": 7,
+  "time_based_shadow_gate_enabled": false,
+  "shadow_required_consecutive_passes": 0,
   "shadow_observed_consecutive_passes": 0,
   "critical_defects": 0,
   "high_defects": 0,

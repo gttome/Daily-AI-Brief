@@ -5,14 +5,20 @@
     "iterations_1_through_6": "AUTONOMOUS",
     "gate_7": "AUTONOMOUS",
     "command_center": "BLOCKED_PENDING_FINAL_USER_APPROVAL",
-    "authorized_at": "2026-09-07"
+    "authorized_at": "2026-09-07",
+    "time_based_gate_override": {
+      "approved_at": "2026-09-07",
+      "iteration_1_seven_day_shadow": "REMOVED",
+      "gate_7_seven_day_burn_in": "REMOVED",
+      "replacement": "COMPREHENSIVE_EVIDENCE_BASED_IMMEDIATE_GATES"
+    }
   },
   "active_stage": {
     "number": 1,
     "name": "Publication reliability",
-    "status": "SHADOW_RUNNING",
+    "status": "IMMEDIATE_GATE_IN_PROGRESS",
     "production_commit": "8a5306b56c5305d6215994e65ef879c6d899942b",
-    "required_consecutive_passes": 7,
+    "required_consecutive_passes": 0,
     "observed_consecutive_passes": 0
   },
   "completed_stages": [
