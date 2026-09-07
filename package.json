@@ -1,0 +1,15 @@
+{
+  "name": "daily-ai-brief-publication",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test _generator/test/*.test.mjs && node _tools/validate-contracts.mjs",
+    "validate": "node _generator/cli.mjs validate-repo",
+    "shadow": "node _generator/cli.mjs shadow",
+    "generate": "node _generator/cli.mjs generate"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

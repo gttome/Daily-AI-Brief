@@ -1,0 +1,21 @@
+{
+  "record_version": "1.0.0",
+  "iteration": 1,
+  "name": "Publication reliability",
+  "status": "SHADOW_PENDING",
+  "implemented": [1, 2, 3, 7],
+  "local_tests": {
+    "result": "PASS",
+    "generator_and_alert_tests": 12,
+    "contract_tests": 10,
+    "baseline_shadow": "PASS",
+    "deterministic_replay": "PASS"
+  },
+  "production_behavior_changed": false,
+  "shadow_required_consecutive_passes": 7,
+  "shadow_observed_consecutive_passes": 0,
+  "critical_defects": 0,
+  "high_defects": 0,
+  "rollback_status": "READY",
+  "gate_result": "PENDING"
+}

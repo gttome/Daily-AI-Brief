@@ -1,0 +1,125 @@
+name: Iteration 1 publication shadow
+
+on:
+  schedule:
+    - cron: '40 12 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: America/Chicago edition date; blank uses current date
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: iteration-1-publication-shadow
+  cancel-in-progress: false
+
+jobs:
+  shadow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out production main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Determine edition date
+        id: date
+        env:
+          REQUESTED_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$REQUESTED_DATE" ]; then
+            edition_date="$REQUESTED_DATE"
+          else
+            edition_date="$(TZ=America/Chicago date +%F)"
+          fi
+          echo "value=$edition_date" >> "$GITHUB_OUTPUT"
+
+      - name: Run deterministic shadow validation
+        id: shadow
+        run: |
+          set +e
+          node _generator/cli.mjs shadow \
+            --date "${{ steps.date.outputs.value }}" \
+            --commit "$GITHUB_SHA" \
+            --out "/tmp/shadow-record.json"
+          exit_code="$?"
+          set -e
+          echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+          cat /tmp/shadow-record.json >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload immutable shadow evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: iteration-1-shadow-${{ steps.date.outputs.value }}-${{ github.run_id }}
+          path: /tmp/shadow-record.json
+          retention-days: 30
+
+      - name: Append evidence to non-production branch
+        if: always()
+        env:
+          EDITION_DATE: ${{ steps.date.outputs.value }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          git config user.name "Daily AI Brief Automation"
+          git config user.email "130812356+gttome@users.noreply.github.com"
+          git fetch origin iteration-1-shadow
+          evidence_dir="$(mktemp -d)"
+          git worktree add --detach "$evidence_dir" origin/iteration-1-shadow
+          cd "$evidence_dir"
+          git switch -C iteration-1-shadow origin/iteration-1-shadow
+          mkdir -p "_records/shadow/iteration-1/$EDITION_DATE"
+          cp /tmp/shadow-record.json "_records/shadow/iteration-1/$EDITION_DATE/$RUN_ID.json"
+          git add "_records/shadow/iteration-1/$EDITION_DATE/$RUN_ID.json"
+          git commit -m "Record Iteration 1 shadow result for $EDITION_DATE"
+          git push origin HEAD:iteration-1-shadow
+
+      - name: Create deduplicated failure alert
+        if: steps.shadow.outputs.exit_code != '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Daily AI Brief alert: Iteration 1 shadow failure';
+            const {data: issues} = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100
+            });
+            const existing = issues.find(issue => issue.title === title);
+            if (!existing) {
+              await github.rest.issues.create({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                title,
+                body: `The deterministic shadow check failed for ${{ steps.date.outputs.value }}. Evidence: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`
+              });
+            }
+
+      - name: Resolve shadow alert after recovery
+        if: steps.shadow.outputs.exit_code == '0'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const title = 'Daily AI Brief alert: Iteration 1 shadow failure';
+            const {data: issues} = await github.rest.issues.listForRepo({owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100});
+            const existing = issues.find(issue => issue.title === title);
+            if (existing) {
+              await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, body: `Recovered on ${{ steps.date.outputs.value }}. Evidence: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
+              await github.rest.issues.update({owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, state: 'closed'});
+            }
+
+      - name: Enforce shadow result
+        if: steps.shadow.outputs.exit_code != '0'
+        run: exit 1
