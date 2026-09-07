@@ -3,6 +3,10 @@ import path from 'node:path';
 import {FOCUS} from './constants.mjs';
 import {formatDate, listBriefDates} from './util.mjs';
 
+function label(value) {
+  return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+}
+
 function renderStory(story) {
   return `## ${story.ordinal}. ${story.headline}
 
@@ -12,7 +16,7 @@ function renderStory(story) {
 
 **Topics:** ${story.topics.join(', ')}
 
-![${story.image.alt}](${story.image.public_url})
+${story.source.evidence_type ? `**Evidence:** ${label(story.source.evidence_type)}  \n**Availability:** ${label(story.source.availability_status)}\n\n` : ''}${story.novelty && story.novelty.disposition !== 'new' ? `**What changed since last coverage:** ${story.novelty.what_changed}\n\n` : ''}![${story.image.alt}](${story.image.public_url})
 
 **Summary:** ${story.summary}
 

@@ -14,10 +14,10 @@
     }
   },
   "active_stage": {
-    "number": 1,
-    "name": "Publication reliability",
-    "status": "IMMEDIATE_GATE_IN_PROGRESS",
-    "production_commit": "8a5306b56c5305d6215994e65ef879c6d899942b",
+    "number": 2,
+    "name": "Editorial intelligence",
+    "status": "CANDIDATE_QA_PASS",
+    "production_commit": null,
     "required_consecutive_passes": 0,
     "observed_consecutive_passes": 0
   },
@@ -27,10 +27,16 @@
       "name": "Architecture & contracts",
       "result": "APPROVED",
       "commit": "414c87185aa39f9f92ffbd7b6721ab17be79baa0"
+    },
+    {
+      "number": 1,
+      "name": "Publication reliability",
+      "result": "PASS",
+      "commit": "15ee5a1aaedaaaf12a4e18c52c397551bd27d35e"
     }
   ],
-  "pending_stages": [2, 3, 4, 5, 6, 7],
-  "last_evaluated_at": "2026-09-07T16:30:12Z",
+  "pending_stages": [3, 4, 5, 6, 7],
+  "last_evaluated_at": "2026-09-07T16:50:00Z",
   "critical_or_high_defects": [],
   "rollback_status": "READY"
 }

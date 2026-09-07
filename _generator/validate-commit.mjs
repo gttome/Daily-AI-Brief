@@ -20,7 +20,12 @@ if (mode.publication_mode === 'active') {
   }
 }
 const failures = [];
-for (const date of dates) failures.push(...validateAtomicChangedPaths(changed, date).map(item => `${date}: missing ${item}`));
+for (const date of dates) {
+  const editionPath = `_data/editions/${date}.json`;
+  let policyProfile = mode.active_policy_profile || 'publication_reliability_v1';
+  if (fs.existsSync(editionPath)) policyProfile = JSON.parse(fs.readFileSync(editionPath, 'utf8')).policy_profile || policyProfile;
+  failures.push(...validateAtomicChangedPaths(changed, date, {policyProfile}).map(item => `${date}: missing ${item}`));
+}
 if (failures.length) {
   console.error(`Atomic publication validation failed:\n- ${failures.join('\n- ')}`);
   process.exit(1);

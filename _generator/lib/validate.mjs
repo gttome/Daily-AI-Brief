@@ -17,6 +17,7 @@ export function validateEdition(edition) {
   const ids = new Set();
   const slugs = new Set();
   const sourceUrls = new Set();
+  const editorialProfiles = new Set(['editorial_intelligence_v1', 'reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1']);
   (edition.stories || []).forEach((story, index) => {
     const label = `stories[${index}]`;
     if (story.ordinal !== index + 1) errors.push(`${label}.ordinal must equal ${index + 1}`);
@@ -44,10 +45,16 @@ export function validateEdition(edition) {
       const dimensions = ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty', 'practical_value', 'category_fit'];
       const sum = dimensions.reduce((total, key) => total + story.candidate_score[key], 0);
       if (sum !== story.candidate_score.total) errors.push(`${label}.candidate_score.total is incorrect`);
+      requireText(story.candidate_score.selection_rationale, `${label}.candidate_score.selection_rationale`);
+    }
+    if (story.novelty?.disposition === 'new' && (story.novelty.prior_story_ids?.length || story.novelty.what_changed !== null)) errors.push(`${label}.novelty new stories cannot cite prior coverage`);
+    if (story.novelty && story.novelty.disposition !== 'new' && (!story.novelty.prior_story_ids?.length || !story.novelty.what_changed?.trim())) errors.push(`${label}.novelty repeated coverage requires lineage and what_changed`);
+    if (editorialProfiles.has(edition.policy_profile)) {
+      for (const field of ['novelty', 'candidate_score']) if (!story[field]) errors.push(`${label}.${field} is required by ${edition.policy_profile}`);
+      for (const field of ['evidence_type', 'availability_status']) if (!story.source?.[field]) errors.push(`${label}.source.${field} is required by ${edition.policy_profile}`);
     }
     if (edition.policy_profile === 'full_v1') {
-      for (const field of ['novelty', 'candidate_score', 'what_to_do_now']) if (!story[field]) errors.push(`${label}.${field} is required by full_v1`);
-      for (const field of ['evidence_type', 'availability_status']) if (!story.source?.[field]) errors.push(`${label}.source.${field} is required by full_v1`);
+      if (!story.what_to_do_now) errors.push(`${label}.what_to_do_now is required by full_v1`);
     }
   });
   for (const slot of ['general', 'agents_non_technical_people']) {

@@ -8,6 +8,9 @@ import {runShadowCheck} from './lib/shadow.mjs';
 import {evaluateShadowGate} from './lib/shadow-gate.mjs';
 import {latestBriefDate, parseArgs, readJson, writeText} from './lib/util.mjs';
 import {assertValidEdition, validateEdition} from './lib/validate.mjs';
+import {scanHistoricalBriefs} from './lib/historical.mjs';
+import {backtestNovelty} from './lib/novelty.mjs';
+import {validateCandidatePool} from './lib/scoring.mjs';
 
 const generatorDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultRoot = path.resolve(generatorDir, '..');
@@ -30,19 +33,47 @@ if (command === 'import') {
   const files = fs.existsSync(editionDir) ? fs.readdirSync(editionDir).filter(name => name.endsWith('.json')).sort() : [];
   const errors = [];
   for (const file of files) errors.push(...validateEdition(readJson(path.join(editionDir, file))).map(item => `${file}: ${item}`));
+  const candidateDir = path.join(repoRoot, '_records', 'editorial', 'candidates');
+  const candidateFiles = fs.existsSync(candidateDir) ? fs.readdirSync(candidateDir).filter(name => name.endsWith('.json')).sort() : [];
+  for (const file of candidateFiles) errors.push(...validateCandidatePool(readJson(path.join(candidateDir, file))).map(item => `${file}: ${item}`));
+  const memoryDir = path.join(repoRoot, '_data', 'story-memory');
+  const memoryFiles = fs.existsSync(memoryDir) ? fs.readdirSync(memoryDir).filter(name => name.endsWith('.json')).sort() : [];
+  for (const file of memoryFiles) {
+    const memory = readJson(path.join(memoryDir, file));
+    if (memory.window?.days !== 30) errors.push(`${file}: story-memory window must be 30 days`);
+    const ids = memory.stories?.map(story => story.story_id) || [];
+    if (new Set(ids).size !== ids.length) errors.push(`${file}: story-memory story IDs must be unique`);
+  }
   const date = latestBriefDate(repoRoot);
   if (date) {
     const shadow = runShadowCheck(repoRoot, date, args.commit || null);
     errors.push(...shadow.errors.map(item => `shadow:${date}: ${item}`));
   }
   if (errors.length) throw new Error(`Repository validation failed:\n- ${errors.join('\n- ')}`);
-  console.log(JSON.stringify({result: 'PASS', canonical_editions: files.length, latest_shadow_date: date}, null, 2));
+  console.log(JSON.stringify({result: 'PASS', canonical_editions: files.length, candidate_pools: candidateFiles.length, story_memory_snapshots: memoryFiles.length, latest_shadow_date: date}, null, 2));
 } else if (command === 'shadow') {
   const date = args.date || chicagoDate();
   const record = runShadowCheck(repoRoot, date, args.commit || process.env.GITHUB_SHA || null);
   if (args.out) writeText(path.resolve(args.out), JSON.stringify(record, null, 2));
   else console.log(JSON.stringify(record, null, 2));
   if (record.result !== 'pass') process.exitCode = 1;
+} else if (command === 'backfill-memory') {
+  const endDate = args.date || latestBriefDate(repoRoot);
+  const memory = scanHistoricalBriefs(repoRoot, endDate, Number(args.days || 30));
+  const output = JSON.stringify(memory, null, 2);
+  if (args.out) writeText(path.resolve(args.out), output);
+  else console.log(output);
+} else if (command === 'backtest-novelty') {
+  const endDate = args.date || latestBriefDate(repoRoot);
+  const result = backtestNovelty(scanHistoricalBriefs(repoRoot, endDate, Number(args.days || 30)));
+  const output = JSON.stringify(result, null, 2);
+  if (args.out) writeText(path.resolve(args.out), output);
+  else console.log(output);
+} else if (command === 'validate-candidates') {
+  if (!args.file) throw new Error('validate-candidates requires --file');
+  const errors = validateCandidatePool(readJson(path.resolve(args.file)));
+  console.log(JSON.stringify({result: errors.length ? 'FAIL' : 'PASS', errors}, null, 2));
+  if (errors.length) process.exitCode = 1;
 } else if (command === 'generate') {
   if (!args.edition || !args.out || !args['baseline-sha']) throw new Error('generate requires --edition, --out, and --baseline-sha');
   const edition = readJson(path.resolve(args.edition));
@@ -58,6 +89,6 @@ if (command === 'import') {
   console.log(JSON.stringify(result, null, 2));
   if (result.result !== 'PASS') process.exitCode = 1;
 } else {
-  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|generate|semantic> [options]');
+  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|semantic> [options]');
   process.exitCode = 2;
 }

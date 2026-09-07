@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {validateCandidatePool} from '../_generator/lib/scoring.mjs';
 
 const toolDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(toolDir, '..');
@@ -94,9 +95,12 @@ function semanticErrors(name, value) {
       }
       if (story.novelty?.disposition === 'new' && (story.novelty.prior_story_ids.length || story.novelty.what_changed !== null)) errors.push(`story ${index + 1}: new novelty record cannot cite prior coverage`);
       if (story.novelty && story.novelty.disposition !== 'new' && (!story.novelty.prior_story_ids.length || !story.novelty.what_changed)) errors.push(`story ${index + 1}: repeated coverage requires lineage and what_changed`);
+      if (['editorial_intelligence_v1', 'reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1'].includes(value.policy_profile)) {
+        for (const field of ['novelty', 'candidate_score']) if (!story[field]) errors.push(`story ${index + 1}: ${value.policy_profile} requires ${field}`);
+        for (const field of ['evidence_type', 'availability_status']) if (!story.source[field]) errors.push(`story ${index + 1}: ${value.policy_profile} requires source.${field}`);
+      }
       if (value.policy_profile === 'full_v1') {
-        for (const field of ['novelty', 'candidate_score', 'what_to_do_now']) if (!story[field]) errors.push(`story ${index + 1}: full_v1 requires ${field}`);
-        for (const field of ['evidence_type', 'availability_status']) if (!story.source[field]) errors.push(`story ${index + 1}: full_v1 requires source.${field}`);
+        if (!story.what_to_do_now) errors.push(`story ${index + 1}: full_v1 requires what_to_do_now`);
       }
     });
     for (const field of ['story_id', 'slug']) {
@@ -119,6 +123,12 @@ function semanticErrors(name, value) {
     if (blocking.length) errors.push('PASS QA run cannot contain a failed Critical/High check');
   }
   if (name === 'ledger_entry' && value.entry_type !== value.details?.kind) errors.push('ledger entry_type must match details.kind');
+  if (name === 'candidate_pool') errors.push(...validateCandidatePool(value));
+  if (name === 'story_memory') {
+    if (value.window?.start_date > value.window?.end_date) errors.push('story-memory evidence window is reversed');
+    const ids = value.stories?.map(story => story.story_id) || [];
+    if (new Set(ids).size !== ids.length) errors.push('story-memory story IDs must be unique');
+  }
   if (name === 'trend_radar' && value.evidence_window?.start_date > value.evidence_window?.end_date) errors.push('trend evidence window is reversed');
   return errors;
 }

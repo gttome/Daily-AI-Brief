@@ -1,0 +1,6 @@
+{
+  "schema_version": "1.0.0",
+  "window": {"start_date": "2026-08-08", "end_date": "2026-09-06", "days": 30},
+  "editions_scanned": ["2026-09-06"],
+  "stories": [{"story_id": "dab-story-2026-09-06-deadbeef", "edition_id": "dab-edition-2026-09-06", "brief_date": "2026-09-06", "ordinal": 1, "headline": "Example story", "event_date": "2026-09-06", "focus": "technical_ai_engineering", "topics": ["Reliability"], "normalized_urls": ["https://example.com/story"], "concept_tokens": ["example", "story"]}]
+}

@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/story-memory.schema.json",
+  "title": "Daily AI Brief 30-day story memory",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "window", "editions_scanned", "stories"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "window": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["start_date", "end_date", "days"],
+      "properties": {
+        "start_date": {"type": "string", "format": "date"},
+        "end_date": {"type": "string", "format": "date"},
+        "days": {"const": 30}
+      }
+    },
+    "editions_scanned": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "date"}},
+    "stories": {"type": "array", "items": {"$ref": "#/$defs/story"}}
+  },
+  "$defs": {
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["story_id", "edition_id", "brief_date", "ordinal", "headline", "event_date", "focus", "topics", "normalized_urls", "concept_tokens"],
+      "properties": {
+        "story_id": {"type": "string", "pattern": "^dab-story-"},
+        "edition_id": {"type": "string", "pattern": "^dab-edition-"},
+        "brief_date": {"type": "string", "format": "date"},
+        "ordinal": {"type": "integer", "minimum": 1},
+        "headline": {"type": "string", "minLength": 1},
+        "event_date": {"type": "string", "format": "date"},
+        "focus": {"enum": ["technical_ai_engineering", "applied_genai_knowledge_workers", "agents_non_technical_people", "historical_unspecified"]},
+        "topics": {"type": "array", "items": {"type": "string", "minLength": 1}},
+        "normalized_urls": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+        "concept_tokens": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}
