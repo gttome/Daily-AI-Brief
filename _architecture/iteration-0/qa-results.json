@@ -1,0 +1,47 @@
+{
+  "qa_record_version": "1.0.0",
+  "iteration": 0,
+  "iteration_name": "Architecture & Contracts",
+  "executed_at": "2026-09-07T15:51:49Z",
+  "result": "PASS",
+  "baseline_main_sha": "b70bc37b4e190750eda08842bfe3ee09995c0b8a",
+  "acceptance_tests": [
+    {"id": "I0-01", "result": "PASS", "evidence": "current-state-inventory.json records the repository tree, content history, Pages workflow, branch state, active automation schedules/scopes, and observed risks."},
+    {"id": "I0-02", "result": "PASS", "evidence": "url-contract.json freezes 21 dated brief routes, three dated QA routes, site navigation routes, and stable asset patterns."},
+    {"id": "I0-03", "result": "PASS", "evidence": "README.md and data-contracts.md define one canonical edition record and explicit authority for every derived output."},
+    {"id": "I0-04", "result": "PASS", "evidence": "Stable ID rules and status-vocabulary.json define immutable identities and enumerated states."},
+    {"id": "I0-05", "result": "PASS", "evidence": "Eight versioned contracts cover editions, publication events, QA runs, ledger entries, alerts, privacy-conscious analytics, Trend Radar, and editorial feedback."},
+    {"id": "I0-06", "result": "PASS", "evidence": "Eight positive contract fixtures passed structural and semantic validation."},
+    {"id": "I0-07", "result": "PASS", "evidence": "Two negative fixtures failed for the intended 2/2/2 and atomic-output reasons."},
+    {"id": "I0-08", "result": "PASS", "evidence": "Check records distinguish deterministic and editorial QA, including severity and evidence."},
+    {"id": "I0-09", "result": "PASS", "evidence": "Shadow migration, compare-and-swap publication, append-only deployment evidence, one-commit rollback, and failure injection are documented."},
+    {"id": "I0-10", "result": "PASS", "evidence": "All implementation files are isolated under Jekyll-excluded underscore directories on a non-production branch; main and active automations remained unchanged."}
+  ],
+  "contract_validation": {
+    "result": "PASS",
+    "positive_fixtures_passed": 8,
+    "negative_fixtures_passed": 2,
+    "failed": 0,
+    "deterministic_replay": "PASS",
+    "replay_digest": "sha256:2e2428441d3cb1c2ac9fd6a444da46b3c547e17c7afe655c621913ba26ecb8ac"
+  },
+  "regression": {
+    "result": "PASS",
+    "main_sha_unchanged": true,
+    "automation_definitions_changed": false,
+    "public_files_changed": false,
+    "public_urls_changed": false,
+    "pages_behavior_changed": false
+  },
+  "defects_remaining": {"critical": 0, "high": 0},
+  "known_limitations": [
+    "Iteration 0 defines contracts but intentionally does not implement production generation, CI, atomic publication, alerting, or rollback execution.",
+    "Direct live HTTP retrieval of the GitHub Pages site was unavailable in the execution environment; baseline deployment evidence came from the successful GitHub Pages run and repository artifacts.",
+    "The pre-existing September 7 automation-without-artifact condition is documented as a High production risk but is outside the no-production-change boundary of Iteration 0."
+  ],
+  "rollback": {
+    "status": "READY",
+    "action": "Delete or abandon the non-production architecture branch; main requires no rollback."
+  },
+  "recommendation": "APPROVE"
+}

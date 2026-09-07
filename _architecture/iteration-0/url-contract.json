@@ -1,0 +1,56 @@
+{
+  "contract_version": "1.0.0",
+  "base_url": "https://gttome.github.io/Daily-AI-Brief",
+  "must_preserve": [
+    {"kind": "homepage", "path": "/", "producer": "index.md"},
+    {"kind": "archive", "path": "/briefs-archive/", "producer": "archive.md"},
+    {"kind": "qa_history", "path": "/qa/", "producer": "qa/index.md"},
+    {"kind": "dated_brief_pattern", "path": "/briefs/YYYY-MM-DD/", "producer": "briefs/YYYY-MM-DD.md"},
+    {"kind": "dated_qa_pattern", "path": "/qa/YYYY-MM-DD/", "producer": "qa/YYYY-MM-DD.md"},
+    {"kind": "dated_image_pattern", "path": "/briefs/images/YYYY-MM-DD/<asset>", "producer": "briefs/images/YYYY-MM-DD/<asset>"},
+    {"kind": "share_script", "path": "/assets/js/share.js", "producer": "assets/js/share.js"},
+    {"kind": "share_styles", "path": "/assets/css/share.css", "producer": "assets/css/share.css"}
+  ],
+  "frozen_dated_briefs": [
+    "/briefs/2026-08-17/",
+    "/briefs/2026-08-18/",
+    "/briefs/2026-08-19/",
+    "/briefs/2026-08-20/",
+    "/briefs/2026-08-21/",
+    "/briefs/2026-08-22/",
+    "/briefs/2026-08-23/",
+    "/briefs/2026-08-24/",
+    "/briefs/2026-08-25/",
+    "/briefs/2026-08-26/",
+    "/briefs/2026-08-27/",
+    "/briefs/2026-08-28/",
+    "/briefs/2026-08-29/",
+    "/briefs/2026-08-30/",
+    "/briefs/2026-08-31/",
+    "/briefs/2026-09-01/",
+    "/briefs/2026-09-02/",
+    "/briefs/2026-09-03/",
+    "/briefs/2026-09-04/",
+    "/briefs/2026-09-05/",
+    "/briefs/2026-09-06/"
+  ],
+  "frozen_qa_reports": [
+    "/qa/2026-09-04/",
+    "/qa/2026-09-05/",
+    "/qa/2026-09-06/"
+  ],
+  "future_routes": [
+    {"kind": "story", "path": "/stories/YYYY-MM-DD/<slug>/", "introduced_by": 10},
+    {"kind": "atom_feed", "path": "/feed.xml", "introduced_by": 13},
+    {"kind": "json_feed", "path": "/feed.json", "introduced_by": 13},
+    {"kind": "search_index", "path": "/data/archive-index.json", "introduced_by": 12},
+    {"kind": "qa_aggregate", "path": "/data/qa/30-day.json", "introduced_by": 8}
+  ],
+  "rules": {
+    "redirects_are_not_a_substitute_for_preservation": true,
+    "historical_brief_content_is_immutable_except_append_only_corrections": true,
+    "story_slug_is_immutable_after_first_publication": true,
+    "source_asset_paths_are_not_rewritten": true,
+    "cache_busting_query_changes_do_not_change_identity": true
+  }
+}

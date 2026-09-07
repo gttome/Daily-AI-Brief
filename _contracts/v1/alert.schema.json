@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/alert.schema.json",
+  "title": "Daily AI Brief operational alert",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "alert_id", "fingerprint", "alert_type", "severity", "state", "component", "edition_id", "run_id", "first_seen_at", "last_seen_at", "occurrence_count", "summary", "evidence_url", "notification"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "alert_id": {"type": "string", "pattern": "^dab-alert-[0-9]{8}T[0-9]{6}Z-[0-9a-f]{8}$"},
+    "fingerprint": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "alert_type": {"enum": ["publication_failure", "qa_failure", "major_regression", "resource_blocker", "approval_required", "recovery"]},
+    "severity": {"enum": ["critical", "high", "medium", "low", "info"]},
+    "state": {"enum": ["open", "acknowledged", "resolved", "suppressed"]},
+    "component": {"type": "string", "minLength": 1},
+    "edition_id": {"type": ["string", "null"]},
+    "run_id": {"type": ["string", "null"]},
+    "first_seen_at": {"type": "string", "format": "date-time"},
+    "last_seen_at": {"type": "string", "format": "date-time"},
+    "occurrence_count": {"type": "integer", "minimum": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "evidence_url": {"type": ["string", "null"], "format": "uri"},
+    "notification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sent", "sent_at", "deduplicated", "reason"],
+      "properties": {
+        "sent": {"type": "boolean"},
+        "sent_at": {"type": ["string", "null"], "format": "date-time"},
+        "deduplicated": {"type": "boolean"},
+        "reason": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

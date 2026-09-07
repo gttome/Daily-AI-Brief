@@ -1,0 +1,67 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import os from 'node:os';
+import path from 'node:path';
+import test from 'node:test';
+import {fileURLToPath} from 'node:url';
+import {importLegacyFile, semanticEditionView} from '../lib/import-legacy.mjs';
+import {buildPublicationStage, stagedDigest, validateAtomicChangedPaths} from '../lib/publication.mjs';
+import {generatedFiles} from '../lib/render.mjs';
+import {runShadowCheck} from '../lib/shadow.mjs';
+import {normalizeUrl} from '../lib/util.mjs';
+import {validateEdition} from '../lib/validate.mjs';
+
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
+const baseline = 'b70bc37b4e190750eda08842bfe3ee09995c0b8a';
+const edition = importLegacyFile(path.join(root, 'briefs', '2026-09-06.md'), root, baseline);
+
+test('legacy edition imports into the canonical six-story contract', () => {
+  assert.deepEqual(validateEdition(edition), []);
+  assert.equal(edition.edition_id, 'dab-edition-2026-09-06');
+  assert.deepEqual(edition.stories.map(story => story.ordinal), [1, 2, 3, 4, 5, 6]);
+});
+
+test('homepage, latest, and dated brief are semantically synchronized', () => {
+  const dated = semanticEditionView(importLegacyFile(path.join(root, 'briefs', '2026-09-06.md'), root));
+  const latest = semanticEditionView(importLegacyFile(path.join(root, 'latest.md'), root));
+  const homepage = semanticEditionView(importLegacyFile(path.join(root, 'index.md'), root));
+  assert.deepEqual(latest, dated);
+  assert.deepEqual(homepage, dated);
+});
+
+test('generator is deterministic for identical inputs', () => {
+  const first = generatedFiles(edition, root);
+  const second = generatedFiles(edition, root);
+  assert.equal(stagedDigest(first), stagedDigest(second));
+  assert.deepEqual([...first], [...second]);
+});
+
+test('publication stage contains canonical, compatibility, and operational records', () => {
+  const out = fs.mkdtempSync(path.join(os.tmpdir(), 'dab-stage-'));
+  const result = buildPublicationStage(edition, root, out, {baselineSha: baseline, observedAt: '2026-09-07T12:00:00Z'});
+  for (const required of ['_data/editions/2026-09-06.json', 'briefs/2026-09-06.md', 'latest.md', 'index.md', 'archive.md', 'README.md']) {
+    assert.ok(result.files.includes(required), required);
+    assert.ok(fs.existsSync(path.join(out, required)), required);
+  }
+  assert.equal(result.event.phase, 'validated');
+  assert.equal(result.event.commit_sha, null);
+  assert.equal(result.event.pages.conclusion, 'not_run');
+});
+
+test('atomic change validator rejects partial publication', () => {
+  const date = '2026-09-07';
+  const incomplete = [`_data/editions/${date}.json`, `briefs/${date}.md`, 'latest.md'];
+  const missing = validateAtomicChangedPaths(incomplete, date);
+  assert.ok(missing.includes('index.md'));
+  assert.ok(missing.some(item => item.includes('<exactly six assets')));
+});
+
+test('baseline shadow check passes', () => {
+  const record = runShadowCheck(root, '2026-09-06', baseline);
+  assert.equal(record.result, 'pass');
+  assert.deepEqual(record.errors, []);
+});
+
+test('URL normalization removes tracking and sorts retained query parameters', () => {
+  assert.equal(normalizeUrl('HTTPS://Example.COM:443/path?utm_source=x&b=2&a=1#fragment'), 'https://example.com/path?a=1&b=2');
+});

@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "publication_mode": "shadow",
+  "shadow_required_consecutive_passes": 7,
+  "automatic_candidate_trigger_enabled": false,
+  "cutover_authorized_by_gate": false
+}

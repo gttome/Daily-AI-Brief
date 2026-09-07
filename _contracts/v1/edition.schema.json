@@ -1,0 +1,168 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/edition.schema.json",
+  "title": "Daily AI Brief canonical edition",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "policy_profile", "edition_id", "brief_date", "timezone", "title", "published_at", "coverage_period", "status", "stories", "worth_watching", "editorial_takeaway", "provenance"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "policy_profile": {"enum": ["publication_reliability_v1", "editorial_intelligence_v1", "reader_foundation_v1", "measurement_accessibility_v1", "full_v1"]},
+    "edition_id": {"type": "string", "pattern": "^dab-edition-[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
+    "brief_date": {"type": "string", "format": "date"},
+    "timezone": {"const": "America/Chicago"},
+    "title": {"type": "string", "minLength": 1},
+    "published_at": {"type": "string", "format": "date-time"},
+    "coverage_period": {"type": "string", "minLength": 1},
+    "status": {"enum": ["draft", "staged", "validated", "published", "degraded", "failed", "rolled_back", "superseded"]},
+    "stories": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {"$ref": "#/$defs/story"}
+    },
+    "worth_watching": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["general", "agents_non_technical_people"],
+      "properties": {
+        "general": {"$ref": "#/$defs/videoSlot"},
+        "agents_non_technical_people": {"$ref": "#/$defs/videoSlot"}
+      }
+    },
+    "editorial_takeaway": {"type": "string", "minLength": 1},
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["created_by", "created_at", "source_commit"],
+      "properties": {
+        "created_by": {"type": "string", "minLength": 1},
+        "created_at": {"type": "string", "format": "date-time"},
+        "source_commit": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"}
+      }
+    }
+  },
+  "$defs": {
+    "story": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["story_id", "ordinal", "slug", "permanent_url", "focus", "headline", "event_date", "topics", "image", "summary", "why_it_matters", "george_implication", "source", "social"],
+      "properties": {
+        "story_id": {"type": "string", "pattern": "^dab-story-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9a-f]{8}$"},
+        "ordinal": {"type": "integer", "minimum": 1, "maximum": 6},
+        "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "permanent_url": {"type": "string", "pattern": "^/stories/[0-9]{4}-[0-9]{2}-[0-9]{2}/[a-z0-9]+(?:-[a-z0-9]+)*/$"},
+        "focus": {"enum": ["technical_ai_engineering", "applied_genai_knowledge_workers", "agents_non_technical_people"]},
+        "headline": {"type": "string", "minLength": 1},
+        "event_date": {"type": "string", "format": "date"},
+        "topics": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "companies": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+        "image": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["path", "public_url", "alt", "width", "height", "kind"],
+          "properties": {
+            "path": {"type": "string", "pattern": "^briefs/images/[0-9]{4}-[0-9]{2}-[0-9]{2}/[^/]+$"},
+            "public_url": {"type": "string", "format": "uri"},
+            "alt": {"type": "string", "minLength": 1},
+            "width": {"type": "integer", "minimum": 1},
+            "height": {"type": "integer", "minimum": 1},
+            "kind": {"enum": ["official", "editorial_explainer"]},
+            "cache_key": {"type": ["string", "null"]}
+          }
+        },
+        "summary": {"type": "string", "minLength": 1},
+        "why_it_matters": {"type": "string", "minLength": 1},
+        "george_implication": {"type": "string", "minLength": 1},
+        "source": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "organization", "url", "normalized_url"],
+          "properties": {
+            "title": {"type": "string", "minLength": 1},
+            "organization": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "format": "uri"},
+            "normalized_url": {"type": "string", "format": "uri"},
+            "publication_date": {"type": ["string", "null"], "format": "date"},
+            "evidence_type": {"enum": ["official_announcement", "official_documentation", "official_changelog", "official_repository", "research_paper", "standard_or_government", "independent_evaluation", "authoritative_reporting", "practitioner_analysis"]},
+            "availability_status": {"enum": ["general_availability", "public_preview", "limited_preview", "beta", "alpha", "research", "announced", "reported", "proposed", "deprecated", "not_applicable"]}
+          }
+        },
+        "novelty": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["disposition", "prior_story_ids", "what_changed"],
+          "properties": {
+            "disposition": {"enum": ["new", "material_update", "approved_repeat"]},
+            "prior_story_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-story-"}},
+            "what_changed": {"type": ["string", "null"]}
+          }
+        },
+        "candidate_score": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["significance", "freshness", "authority", "evidence_quality", "novelty", "practical_value", "category_fit", "total", "selection_rationale"],
+          "properties": {
+            "significance": {"type": "integer", "minimum": 0, "maximum": 5},
+            "freshness": {"type": "integer", "minimum": 0, "maximum": 5},
+            "authority": {"type": "integer", "minimum": 0, "maximum": 5},
+            "evidence_quality": {"type": "integer", "minimum": 0, "maximum": 5},
+            "novelty": {"type": "integer", "minimum": 0, "maximum": 5},
+            "practical_value": {"type": "integer", "minimum": 0, "maximum": 5},
+            "category_fit": {"type": "integer", "minimum": 0, "maximum": 5},
+            "total": {"type": "integer", "minimum": 0, "maximum": 35},
+            "selection_rationale": {"type": "string", "minLength": 1}
+          }
+        },
+        "what_to_do_now": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["action", "label", "rationale"],
+          "properties": {
+            "action": {"enum": ["test", "monitor", "update_policy", "teach", "adopt", "evaluate", "ignore_for_now"]},
+            "label": {"type": "string", "minLength": 1},
+            "rationale": {"type": "string", "minLength": 1}
+          }
+        },
+        "social": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["title", "description", "image_url"],
+          "properties": {
+            "title": {"type": "string", "minLength": 1},
+            "description": {"type": "string", "minLength": 1},
+            "image_url": {"type": "string", "format": "uri"}
+          }
+        }
+      }
+    },
+    "videoSlot": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "exception"],
+          "properties": {
+            "status": {"const": "empty"},
+            "exception": {"type": "string", "minLength": 1}
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "title", "channel", "upload_date", "runtime_seconds", "why_useful", "connection", "url"],
+          "properties": {
+            "status": {"const": "included"},
+            "title": {"type": "string", "minLength": 1},
+            "channel": {"type": "string", "minLength": 1},
+            "upload_date": {"type": "string", "format": "date"},
+            "runtime_seconds": {"type": "integer", "minimum": 1, "maximum": 1200},
+            "why_useful": {"type": "string", "minLength": 1},
+            "connection": {"type": "string", "minLength": 1},
+            "url": {"type": "string", "format": "uri"}
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-09-07",
+  "method_version": "1.0.0",
+  "evidence_window": {"start_date": "2026-08-25", "end_date": "2026-09-07", "days": 14},
+  "trends": [
+    {"trend_id": "dab-trend-governed-agents", "name": "Governed agents", "classification": "accelerating", "confidence": "medium", "rationale": "Multiple independent stories show stronger permission, evaluation, and approval controls.", "supporting_story_ids": ["dab-story-2026-09-07-00000001", "dab-story-2026-09-07-00000006"]}
+  ]
+}
