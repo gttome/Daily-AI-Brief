@@ -40,7 +40,7 @@ jobs:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.sha }}
         run: |
-          base_sha="${EVENT_BEFORE:-${PR_BASE:-}}"
+          base_sha="${PR_BASE:-${EVENT_BEFORE:-}}"
           if [ -z "$base_sha" ] || [[ "$base_sha" =~ ^0+$ ]]; then
             base_sha="$(git rev-parse HEAD^ 2>/dev/null || true)"
           fi
@@ -52,7 +52,7 @@ jobs:
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.sha }}
         run: |
-          base_sha="${EVENT_BEFORE:-${PR_BASE:-}}"
+          base_sha="${PR_BASE:-${EVENT_BEFORE:-}}"
           if [ -z "$base_sha" ] || [[ "$base_sha" =~ ^0+$ ]]; then
             base_sha="$(git rev-parse HEAD^ 2>/dev/null || true)"
           fi
