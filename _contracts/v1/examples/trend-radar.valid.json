@@ -4,6 +4,6 @@
   "method_version": "1.0.0",
   "evidence_window": {"start_date": "2026-08-25", "end_date": "2026-09-07", "days": 14},
   "trends": [
-    {"trend_id": "dab-trend-governed-agents", "name": "Governed agents", "classification": "accelerating", "confidence": "medium", "rationale": "Multiple independent stories show stronger permission, evaluation, and approval controls.", "supporting_story_ids": ["dab-story-2026-09-07-00000001", "dab-story-2026-09-07-00000006"]}
+    {"trend_id": "dab-trend-governed-agents", "name": "Governed agents", "classification": "accelerating", "confidence": "medium", "rationale": "Multiple independent stories show stronger permission, evaluation, and approval controls.", "evidence_counts": {"recent_7_days": 2, "preceding_days": 1, "total": 3}, "supporting_story_ids": ["dab-story-2026-09-07-00000001", "dab-story-2026-09-07-00000006"], "supporting_stories": [{"story_id":"dab-story-2026-09-07-00000001","brief_date":"2026-09-07","url":"/stories/2026-09-07/governed-agent-one/"},{"story_id":"dab-story-2026-09-07-00000006","brief_date":"2026-09-07","url":"/stories/2026-09-07/governed-agent-six/"}]}
   ]
 }

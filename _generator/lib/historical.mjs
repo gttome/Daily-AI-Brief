@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import {normalizeUrl, stableSuffix} from './util.mjs';
+import {normalizeUrl, slugify, stableSuffix} from './util.mjs';
 
 const FOCUS_LABELS = new Map([
   ['technical ai engineering', 'technical_ai_engineering'],
@@ -32,6 +32,26 @@ function linksFrom(block) {
   return [...new Set(found.filter(url => !url.includes('raw.githubusercontent.com/gttome/Daily-AI-Brief')).map(normalizeUrl))];
 }
 
+function textField(block, labels) {
+  const alternatives = labels.map(label => label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|');
+  const match = block.match(new RegExp(`\\*\\*(?:${alternatives}):\\*\\*\\s*([\\s\\S]*?)(?=\\n\\n\\*\\*|\\n\\n\\[|\\n\\n---|$)`, 'i'));
+  return match?.[1]?.replace(/\s+/g, ' ').trim() || '';
+}
+
+function organizationFor(url) {
+  if (!url) return null;
+  const host = new URL(url).hostname.replace(/^www\./, '');
+  if (/openai\.com$/.test(host)) return 'OpenAI';
+  if (/(anthropic\.com|claude\.com)$/.test(host)) return 'Anthropic';
+  if (/(github\.com|github\.blog)$/.test(host)) return 'GitHub';
+  if (/(google\.com|googleblog\.com)$/.test(host)) return 'Google';
+  if (/microsoft\.com$/.test(host)) return 'Microsoft';
+  if (/nvidia\.com$/.test(host)) return 'NVIDIA';
+  if (/huggingface\.co$/.test(host)) return 'Hugging Face';
+  if (/arxiv\.org$/.test(host)) return 'arXiv';
+  return host;
+}
+
 export function parseHistoricalBrief(markdown, briefDate) {
   const headings = [...markdown.matchAll(/^## (\d+)\.\s+(.+)$/gm)];
   return headings.map((heading, index) => {
@@ -46,16 +66,31 @@ export function parseHistoricalBrief(markdown, briefDate) {
     const topics = block.match(/\*\*Topics:\*\*\s*([^\n]+)/i)?.[1]?.split(/[;,]/).map(item => item.trim()).filter(Boolean) || [];
     const normalizedUrls = linksFrom(block);
     const identity = `${normalizedUrls[0] || 'no-source'}|${headline.toLowerCase()}`;
+    const slug = slugify(headline);
+    const image = block.match(/!\[([^\]]*)\]\((https?:\/\/[^)\s]+)\)/);
+    const relativeImage = block.match(/!\[([^\]]*)\]\(\{\{\s*['"](\/briefs\/images\/[^'"]+)['"]\s*\|\s*relative_url\s*\}\}\)/);
+    const imageUrl = image?.[2] || (relativeImage ? `https://gttome.github.io/Daily-AI-Brief${relativeImage[2]}` : null);
+    const imageAlt = image?.[1] || relativeImage?.[1] || headline;
+    const sourceRegion = block.slice(Math.max(0, block.search(/\*\*Sources?:\*\*/i)));
+    const sourceLink = sourceRegion.match(/(?<!!)\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)/);
     return {
       story_id: `dab-story-${briefDate}-${stableSuffix(`${briefDate}|${identity}`)}`,
       edition_id: `dab-edition-${briefDate}`,
       brief_date: briefDate,
       ordinal,
       headline,
+      slug,
+      permanent_url: `/stories/${briefDate}/${slug}/`,
       event_date: eventDate,
       focus,
       topics,
       normalized_urls: normalizedUrls,
+      source_title: sourceLink?.[1] || organizationFor(normalizedUrls[0]) || 'Source',
+      source_organization: organizationFor(normalizedUrls[0]),
+      image: imageUrl ? {url: imageUrl, alt: imageAlt} : null,
+      summary: textField(block, ['Summary']),
+      why_it_matters: textField(block, ['Why it matters']),
+      george_implication: textField(block, ["For George’s work", "For George's work", "Implications for George’s work", "Implications for George's work", "Implications for George’s publishing and training work", "Implications for George's publishing and training work"]),
       concept_tokens: conceptTokens(headline)
     };
   });

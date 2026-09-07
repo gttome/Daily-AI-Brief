@@ -78,6 +78,16 @@ jobs:
             cp "$memory_path" "$payload_dir/_data/story-memory/$edition_date.json"
           fi
 
+          if [[ "$policy_profile" == "measurement_accessibility_v1" || "$policy_profile" == "full_v1" ]]; then
+            accessibility_path="_records/accessibility/$edition_date.json"
+            if ! git diff --name-only origin/main...HEAD -- "$accessibility_path" | grep -Fxq "$accessibility_path"; then
+              echo "Policy $policy_profile requires staged editorial accessibility review $accessibility_path." >&2
+              exit 1
+            fi
+            mkdir -p "$payload_dir/_records/accessibility"
+            cp "$accessibility_path" "$payload_dir/_records/accessibility/$edition_date.json"
+          fi
+
           for image in "${image_files[@]}"; do cp "$image" "$payload_dir/briefs/images/$edition_date/"; done
 
           git worktree add --detach "$candidate_dir" origin/main

@@ -2,6 +2,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {FOCUS} from './constants.mjs';
 import {formatDate, listBriefDates} from './util.mjs';
+import {readerFoundationFiles} from './reader.mjs';
+import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -16,13 +18,19 @@ function renderStory(story) {
 
 **Topics:** ${story.topics.join(', ')}
 
+<span class="story-data" data-story-id="${story.story_id}" data-story-url="${story.permanent_url}" hidden></span>
+
+[Open the permanent story page]({{ '${story.permanent_url}' | relative_url }})
+
 ${story.source.evidence_type ? `**Evidence:** ${label(story.source.evidence_type)}  \n**Availability:** ${label(story.source.availability_status)}\n\n` : ''}${story.novelty && story.novelty.disposition !== 'new' ? `**What changed since last coverage:** ${story.novelty.what_changed}\n\n` : ''}![${story.image.alt}](${story.image.public_url})
 
 **Summary:** ${story.summary}
 
 **Why it matters:** ${story.why_it_matters}
 
-**For George’s work:** ${story.george_implication}
+**For George’s work:** ${story.george_implication}${story.what_to_do_now ? `
+
+**What to do now — ${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : ''}
 
 **Source:** [${story.source.title}](${story.source.url})`;
 }
@@ -83,7 +91,7 @@ export function renderLatest(edition) {
 }
 
 export function renderIndex(edition) {
-  return `---\nlayout: default\ntitle: Daily Generative AI Brief\n---\n\n${renderBody(edition)}\n`;
+  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n---\n\n${renderBody(edition)}\n`;
 }
 
 export function renderArchive(repoRoot, currentDate) {
@@ -118,11 +126,14 @@ export function renderReadme(repoRoot, currentDate) {
 }
 
 export function generatedFiles(edition, repoRoot) {
-  return new Map([
+  const files = new Map([
     [`briefs/${edition.brief_date}.md`, renderDated(edition)],
     ['latest.md', renderLatest(edition)],
     ['index.md', renderIndex(edition)],
-    ['archive.md', renderArchive(repoRoot, edition.brief_date)],
     ['README.md', renderReadme(repoRoot, edition.brief_date)]
   ]);
+  for (const [name, content] of readerFoundationFiles(edition, repoRoot)) files.set(name, content);
+  files.set('qa/index.md', renderQaDashboard(repoRoot));
+  files.set('data/qa/30-day.json', JSON.stringify(qaAggregate(loadQaRecords(repoRoot)), null, 2));
+  return files;
 }

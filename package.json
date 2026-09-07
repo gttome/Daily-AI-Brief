@@ -9,7 +9,11 @@
     "shadow": "node _generator/cli.mjs shadow",
     "generate": "node _generator/cli.mjs generate",
     "backfill-memory": "node _generator/cli.mjs backfill-memory",
-    "backtest-novelty": "node _generator/cli.mjs backtest-novelty"
+    "backtest-novelty": "node _generator/cli.mjs backtest-novelty",
+    "refresh-derived": "node _generator/cli.mjs refresh-derived",
+    "audit-accessibility": "node _generator/cli.mjs audit-accessibility",
+    "collect-analytics": "node _generator/cli.mjs collect-analytics",
+    "integration-check": "node _generator/cli.mjs integration-check"
   },
   "engines": {
     "node": ">=20"

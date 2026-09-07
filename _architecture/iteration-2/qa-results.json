@@ -2,7 +2,7 @@
   "record_version": "1.0.0",
   "iteration": 2,
   "name": "Editorial intelligence",
-  "status": "CANDIDATE_QA_PASS",
+  "status": "PASS",
   "implemented": [4, 5, 6, 9],
   "acceptance": {
     "story_memory_window_days": 30,
@@ -26,8 +26,16 @@
     "candidate_validation": "PASS",
     "ledger_mutation_rejection": "PASS",
     "repository_validation": "PASS",
-    "github_ci": "PENDING",
-    "github_pages": "PENDING"
+    "candidate_ci": {"run_id": 34146410409, "result": "PASS", "commit": "40943bd7e5563fe592bb92f481a1d83ff218fd5a"},
+    "publisher_repair_ci": {"run_id": 34147431408, "result": "PASS", "commit": "a1942d0ccdea362d77698f1d978abc94cd67918b"},
+    "production_ci": {"run_id": 34149860871, "result": "PASS", "commit": "39638bef649813f33b2dd172513164c15dadd83d"},
+    "github_pages": {"run_id": 34149860638, "result": "PASS", "commit": "39638bef649813f33b2dd172513164c15dadd83d"},
+    "live_smoke": {
+      "homepage": "PASS",
+      "dated_brief": "PASS",
+      "archive": "PASS",
+      "observed_http_status": 200
+    }
   },
   "critical_defects": 0,
   "high_defects": 0,
@@ -38,5 +46,8 @@
   ],
   "rollback_target_sha": "15ee5a1aaedaaaf12a4e18c52c397551bd27d35e",
   "rollback_status": "READY",
-  "gate_result": "PENDING_GITHUB_QA"
+  "production_merge_sha": "2337dbef1a379f46be5f9024444eb385dbd26397",
+  "publisher_repair_merge_sha": "3bd692723144a1516e1269c002baa7276b1fd7b1",
+  "production_evidence_sha": "39638bef649813f33b2dd172513164c15dadd83d",
+  "gate_result": "PASS"
 }

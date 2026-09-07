@@ -1,6 +1,6 @@
 # Iteration 2 — Editorial Intelligence
 
-Status: implementation candidate  
+Status: **PASS — lifecycle gate complete**  
 Scope: improvements #4, #5, #6 and #9  
 Production baseline: `15ee5a1aaedaaaf12a4e18c52c397551bd27d35e`
 
@@ -37,6 +37,15 @@ Material factual corrections and incidents use append-only JSON Lines ledgers un
 - Generated memory and backtest evidence are deterministic for the same repository state.
 - The publication transaction must include the dated candidate pool and refreshed 30-day memory when `editorial_intelligence_v1` is active.
 - The pre-change production commit is the rollback target. Reverting the Iteration 2 merge restores the prior publisher policy and renderer without altering any dated public URL or historical brief.
+
+## Gate evidence
+
+- Iteration 2 merge: `2337dbef1a379f46be5f9024444eb385dbd26397`.
+- Candidate CI: run `34146410409`, PASS.
+- Publisher payload repair: merge `3bd692723144a1516e1269c002baa7276b1fd7b1`; repair CI run `34147431408`, PASS.
+- Live editorial-intelligence publication: `39638bef649813f33b2dd172513164c15dadd83d` contains the September 7 canonical edition, 20-candidate record, 30-day memory, six assets, and synchronized derived views.
+- Production CI run `34149860871` and Pages run `34149860638`: PASS.
+- Live homepage, dated brief, and `/briefs-archive/` smoke checks: HTTP 200.
 
 ## Known limitations
 

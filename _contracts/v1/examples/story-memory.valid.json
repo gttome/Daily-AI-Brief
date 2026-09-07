@@ -2,5 +2,5 @@
   "schema_version": "1.0.0",
   "window": {"start_date": "2026-08-08", "end_date": "2026-09-06", "days": 30},
   "editions_scanned": ["2026-09-06"],
-  "stories": [{"story_id": "dab-story-2026-09-06-deadbeef", "edition_id": "dab-edition-2026-09-06", "brief_date": "2026-09-06", "ordinal": 1, "headline": "Example story", "event_date": "2026-09-06", "focus": "technical_ai_engineering", "topics": ["Reliability"], "normalized_urls": ["https://example.com/story"], "concept_tokens": ["example", "story"]}]
+  "stories": [{"story_id": "dab-story-2026-09-06-deadbeef", "edition_id": "dab-edition-2026-09-06", "brief_date": "2026-09-06", "ordinal": 1, "headline": "Example story", "slug": "example-story", "permanent_url": "/stories/2026-09-06/example-story/", "event_date": "2026-09-06", "focus": "technical_ai_engineering", "topics": ["Reliability"], "normalized_urls": ["https://example.com/story"], "source_title": "Example source", "source_organization": "Example", "image": {"url": "https://example.com/image.png", "alt": "Example image"}, "summary": "Example summary.", "why_it_matters": "Example importance.", "george_implication": "Example implication.", "concept_tokens": ["example", "story"]}]
 }

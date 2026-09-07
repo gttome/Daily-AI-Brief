@@ -13,6 +13,7 @@
     {"name": "editorial_feedback", "schema": "editorial-feedback.schema.json", "valid_example": "examples/editorial-feedback.valid.json"}
     ,{"name": "story_memory", "schema": "story-memory.schema.json", "valid_example": "examples/story-memory.valid.json"}
     ,{"name": "candidate_pool", "schema": "candidate-pool.schema.json", "valid_example": "examples/candidate-pool.valid.json"}
+    ,{"name": "accessibility_review", "schema": "accessibility-review.schema.json", "valid_example": "examples/accessibility-review.valid.json"}
   ],
   "negative_examples": [
     "examples/edition.invalid-allocation.json",

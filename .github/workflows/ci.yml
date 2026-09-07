@@ -34,6 +34,9 @@ jobs:
       - name: Validate repository state
         run: node _generator/cli.mjs validate-repo --commit "${GITHUB_SHA}"
 
+      - name: Validate integrated system state
+        run: node _generator/cli.mjs integration-check
+
       - name: Validate atomic publication change set
         env:
           EVENT_BEFORE: ${{ github.event.before }}

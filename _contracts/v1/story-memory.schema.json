@@ -31,10 +31,21 @@
         "brief_date": {"type": "string", "format": "date"},
         "ordinal": {"type": "integer", "minimum": 1},
         "headline": {"type": "string", "minLength": 1},
+        "slug": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+        "permanent_url": {"type": "string", "pattern": "^/stories/"},
         "event_date": {"type": "string", "format": "date"},
         "focus": {"enum": ["technical_ai_engineering", "applied_genai_knowledge_workers", "agents_non_technical_people", "historical_unspecified"]},
         "topics": {"type": "array", "items": {"type": "string", "minLength": 1}},
         "normalized_urls": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "uri"}},
+        "source_title": {"type": "string", "minLength": 1},
+        "source_organization": {"type": ["string", "null"]},
+        "image": {
+          "type": ["object", "null"],
+          "properties": {"url": {"type": "string", "format": "uri"}, "alt": {"type": "string", "minLength": 1}}
+        },
+        "summary": {"type": "string"},
+        "why_it_matters": {"type": "string"},
+        "george_implication": {"type": "string"},
         "concept_tokens": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
       }
     }

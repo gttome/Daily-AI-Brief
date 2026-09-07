@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Daily Generative AI Brief
+brief_date: 2026-09-07
 ---
 
 # Daily Generative AI Brief — September 7, 2026
@@ -16,6 +17,10 @@ title: Daily Generative AI Brief
 
 **Topics:** coding agents, AI research automation, human supervision, agent evaluation, harness engineering
 
+<span class="story-data" data-story-id="dab-story-2026-09-07-3f4df523" data-story-url="/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/' | relative_url }})
+
 **Evidence:** Official Announcement  
 **Availability:** Research
 
@@ -27,6 +32,8 @@ title: Daily Generative AI Brief
 
 **For George’s work:** Use this as an evidence-backed case study for Bounded Agentic Delegation and harness engineering: measure transferred work and interventions rather than simply counting prompts.
 
+**What to do now — Teach:** Use agent-workdays and intervention burden as concrete measures when explaining bounded delegation.
+
 **Source:** [OpenAI — Research acceleration: The view inside OpenAI](https://openai.com/index/research-acceleration-view-inside-openai/)
 
 ## 2. Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents
@@ -36,6 +43,10 @@ title: Daily Generative AI Brief
 **Date:** September 4, 2026
 
 **Topics:** formal verification, multi-agent systems, Lean, research agents, verifiable reasoning
+
+<span class="story-data" data-story-id="dab-story-2026-09-07-dab4bc85" data-story-url="/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/' | relative_url }})
 
 **Evidence:** Official Announcement  
 **Availability:** Research
@@ -48,6 +59,8 @@ title: Daily Generative AI Brief
 
 **For George’s work:** Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking.
 
+**What to do now — Teach:** Show how a deterministic verifier can bound generative exploration in reliability training.
+
 **Source:** [Anthropic — Formalizing Fermat's Last Theorem](https://www.anthropic.com/news/formalizing-fermats-last-theorem)
 
 ## 3. GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout
@@ -57,6 +70,10 @@ title: Daily Generative AI Brief
 **Date:** September 7, 2026
 
 **Topics:** GPT-6 Astra, computer use, professional work, ChatGPT, agentic workflows
+
+<span class="story-data" data-story-id="dab-story-2026-09-07-8053a573" data-story-url="/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }})
 
 **Evidence:** Official Announcement  
 **Availability:** Limited Preview
@@ -71,6 +88,8 @@ title: Daily Generative AI Brief
 
 **For George’s work:** Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification.
 
+**What to do now — Evaluate:** Test Astra on one bounded professional workflow and verify access, outputs, and approval boundaries before broader use.
+
 **Source:** [OpenAI — GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra/)
 
 ## 4. NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model
@@ -80,6 +99,10 @@ title: Daily Generative AI Brief
 **Date:** September 4, 2026
 
 **Topics:** agent memory, NemoClaw, knowledge continuity, human-readable memory
+
+<span class="story-data" data-story-id="dab-story-2026-09-07-968c0cd8" data-story-url="/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/' | relative_url }})
 
 **Evidence:** Official Documentation  
 **Availability:** General Availability
@@ -92,6 +115,8 @@ title: Daily Generative AI Brief
 
 **For George’s work:** Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory.
 
+**What to do now — Test:** Prototype a small inspectable memory record and confirm that a user can correct stale or wrong context.
+
 **Source:** [NVIDIA Technical Blog — Building a Memory-Driven Agent with NVIDIA NemoClaw](https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/)
 
 ## 5. Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset
@@ -101,6 +126,10 @@ title: Daily Generative AI Brief
 **Date:** September 2, 2026
 
 **Topics:** SharePoint Copilot, reusable skills, evaluations, natural-language workflows
+
+<span class="story-data" data-story-id="dab-story-2026-09-07-379d301c" data-story-url="/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/' | relative_url }})
 
 **Evidence:** Official Announcement  
 **Availability:** General Availability
@@ -113,6 +142,8 @@ title: Daily Generative AI Brief
 
 **For George’s work:** Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures.
 
+**What to do now — Test:** Turn one repeated SharePoint task into a reusable skill and define an evaluation before expanding it.
+
 **Source:** [Microsoft SharePoint Blog — What's New in Copilot in SharePoint: September 2026](https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422)
 
 ## 6. Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents
@@ -122,6 +153,10 @@ title: Daily Generative AI Brief
 **Date:** September 2, 2026
 
 **Topics:** Copilot Studio, Fabric Data Agents, governed enterprise data, low-code agents, tool use
+
+<span class="story-data" data-story-id="dab-story-2026-09-07-fdefded2" data-story-url="/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/' | relative_url }})
 
 **Evidence:** Official Announcement  
 **Availability:** General Availability
@@ -133,6 +168,8 @@ title: Daily Generative AI Brief
 **Why it matters:** This is a practical low-code agent architecture: the orchestrating agent delegates data questions to a governed specialist tool instead of flattening every dataset into its prompt, reducing context bloat and preserving a clearer permission boundary.
 
 **For George’s work:** Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system.
+
+**What to do now — Evaluate:** Identify one governed data question that a low-code agent could answer, then validate permissions and citations.
 
 **Source:** [Microsoft Fabric Community — Fabric Data Agents in Microsoft Copilot Studio (Generally Available)](https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882)
 

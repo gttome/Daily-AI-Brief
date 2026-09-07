@@ -1,0 +1,6 @@
+{
+  "record_version":"1.0.0","iteration":6,"name":"Integration hardening","status":"CANDIDATE_QA_PASS","implemented":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17],
+  "acceptance":{"node_tests":45,"contract_tests":13,"integrated_repository":"PASS","failure_injections":11,"failure_injection_result":"PASS","generation_budget_ms":3000,"observed_generation_ms_under_budget":true,"url_regression":"PASS","rollback_paths":"READY"},
+  "qa":{"local_result":"PASS","regression":"PASS","critical_defects":0,"high_defects":0,"github_ci":"PENDING","github_pages":"PENDING","live_smoke":"PENDING"},
+  "limitations":["Local Bundler/Jekyll is unavailable; the authoritative Jekyll build runs in GitHub CI."],"rollback_target_sha":"39638bef649813f33b2dd172513164c15dadd83d","rollback_status":"READY","gate_result":"CANDIDATE_PASS"
+}

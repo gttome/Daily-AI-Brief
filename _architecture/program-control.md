@@ -14,7 +14,7 @@ Governance override, 2026-09-07: the user explicitly removed both seven-day elap
 4. Preserve existing public URLs, archive history, and working behavior.
 5. Do not advance merely because code exists; require the roadmap's acceptance and production evidence.
 6. Keep the active publisher in its last proven mode until the current iteration's cutover criteria pass.
-7. Keep the Command Center blocked until every improvement passes seven consecutive live production editions and the user gives final approval.
+7. Keep the Command Center blocked until every improvement passes the evidence-based Gate 7 readiness checklist and the user gives final approval.
 
 ## Ordered gates
 

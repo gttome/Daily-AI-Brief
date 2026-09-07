@@ -4,6 +4,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {importLegacyFile, semanticEditionView} from './lib/import-legacy.mjs';
 import {buildPublicationStage} from './lib/publication.mjs';
+import {generatedFiles} from './lib/render.mjs';
 import {runShadowCheck} from './lib/shadow.mjs';
 import {evaluateShadowGate} from './lib/shadow-gate.mjs';
 import {latestBriefDate, parseArgs, readJson, writeText} from './lib/util.mjs';
@@ -11,6 +12,11 @@ import {assertValidEdition, validateEdition} from './lib/validate.mjs';
 import {scanHistoricalBriefs} from './lib/historical.mjs';
 import {backtestNovelty} from './lib/novelty.mjs';
 import {validateCandidatePool} from './lib/scoring.mjs';
+import {accessibilityReview} from './lib/accessibility.mjs';
+import {collectAnalytics} from './lib/analytics.mjs';
+import {readerStories} from './lib/reader.mjs';
+import {renderQaDashboard} from './lib/quality.mjs';
+import {validateIntegratedRepository} from './lib/integrity.mjs';
 
 const generatorDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultRoot = path.resolve(generatorDir, '..');
@@ -80,6 +86,43 @@ if (command === 'import') {
   const observedAt = args['observed-at'] || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
   const result = buildPublicationStage(edition, repoRoot, path.resolve(args.out), {baselineSha: args['baseline-sha'], observedAt, runId: args['run-id']});
   console.log(JSON.stringify(result, null, 2));
+} else if (command === 'refresh-derived') {
+  const date = args.date || latestBriefDate(repoRoot);
+  const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
+  assertValidEdition(edition);
+  const files = generatedFiles(edition, repoRoot);
+  for (const [name, content] of files) writeText(path.join(repoRoot, name), content);
+  console.log(JSON.stringify({result: 'PASS', date, files: [...files.keys()].sort()}, null, 2));
+} else if (command === 'audit-accessibility') {
+  const date = args.date || latestBriefDate(repoRoot);
+  const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
+  const record = accessibilityReview(edition, repoRoot, args['reviewed-at'] || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z'));
+  const output = JSON.stringify(record, null, 2);
+  if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
+  if (record.automated_result !== 'PASS') process.exitCode = 1;
+} else if (command === 'render-qa-dashboard') {
+  const output = renderQaDashboard(repoRoot);
+  if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
+} else if (command === 'collect-analytics') {
+  const date = args.date || latestBriefDate(repoRoot);
+  const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
+  const stories = readerStories(repoRoot, edition).filter(story => story.brief_date === date);
+  const endpoint = args.endpoint || 'https://countapi.mileshilliard.com/api/v1/get';
+  const record = await collectAnalytics(date, stories, async key => {
+    const response = await fetch(`${endpoint}/${encodeURIComponent(key)}`, {headers: {'user-agent': 'Daily-AI-Brief-analytics-aggregator/1.0'}});
+    if (response.status === 404) return 0;
+    if (!response.ok) throw new Error(`counter transport ${response.status}`);
+    const data = await response.json();
+    return Number(data.value);
+  });
+  const output = JSON.stringify(record, null, 2);
+  if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
+} else if (command === 'integration-check') {
+  const date = args.date || latestBriefDate(repoRoot);
+  const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
+  const errors = validateIntegratedRepository(edition, repoRoot);
+  console.log(JSON.stringify({result: errors.length ? 'FAIL' : 'PASS', date, errors}, null, 2));
+  if (errors.length) process.exitCode = 1;
 } else if (command === 'semantic') {
   const date = args.date || latestBriefDate(repoRoot);
   console.log(JSON.stringify(semanticEditionView(importLegacyFile(path.join(repoRoot, 'briefs', `${date}.md`), repoRoot)), null, 2));
@@ -89,6 +132,6 @@ if (command === 'import') {
   console.log(JSON.stringify(result, null, 2));
   if (result.result !== 'PASS') process.exitCode = 1;
 } else {
-  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|semantic> [options]');
+  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|refresh-derived|audit-accessibility|render-qa-dashboard|collect-analytics|integration-check|semantic> [options]');
   process.exitCode = 2;
 }
