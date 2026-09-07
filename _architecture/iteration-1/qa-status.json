@@ -2,7 +2,7 @@
   "record_version": "1.0.0",
   "iteration": 1,
   "name": "Publication reliability",
-  "status": "SHADOW_PENDING",
+  "status": "SHADOW_RUNNING",
   "implemented": [1, 2, 3, 7],
   "local_tests": {
     "result": "PASS",
@@ -10,6 +10,17 @@
     "contract_tests": 10,
     "baseline_shadow": "PASS",
     "deterministic_replay": "PASS"
+  },
+  "github_qa": {
+    "pull_request": 1,
+    "candidate_ci_run": 34143381572,
+    "candidate_ci_result": "PASS",
+    "main_ci_run": 34143494523,
+    "main_ci_result": "PASS",
+    "pages_run": 34143493723,
+    "pages_result": "PASS",
+    "production_commit": "8a5306b56c5305d6215994e65ef879c6d899942b",
+    "deployed_at": "2026-09-07T16:30:02Z"
   },
   "production_behavior_changed": false,
   "shadow_required_consecutive_passes": 7,
