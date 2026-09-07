@@ -2,7 +2,12 @@
   "record_version": "1.0.0",
   "gate": 7,
   "name": "Production readiness",
-  "status": "PASS_PENDING_FINAL_USER_APPROVAL",
+  "status": "APPROVED",
+  "final_user_approval": {
+    "decision": "APPROVED",
+    "approved_at": "2026-09-07T21:41:03Z",
+    "approval_text": "APPROVE FINAL GATE 7"
+  },
   "time_based_wait": "REMOVED_BY_USER_AUTHORIZATION",
   "replacement_gate": "COMPREHENSIVE_EVIDENCE_BASED_IMMEDIATE_GATE",
   "production_commit": "dec66afd7dac8e2f3a4a49ccb64a5ddf3de7300a",
@@ -45,6 +50,6 @@
   ],
   "rollback_target_sha": "39638bef649813f33b2dd172513164c15dadd83d",
   "rollback_status": "READY",
-  "command_center": "BLOCKED_PENDING_FINAL_USER_APPROVAL",
-  "recommendation": "APPROVE"
+  "command_center": "ELIGIBLE_NOT_STARTED",
+  "recommendation": "FULFILLED"
 }
