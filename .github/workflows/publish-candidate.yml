@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       staging_ref:
-        description: Branch containing one canonical edition and exactly six dated assets
+        description: Branch containing one canonical edition, required editorial records, and exactly six dated assets
         required: true
         type: string
       dry_run:
@@ -49,18 +49,37 @@ jobs:
           fi
           edition_path="${edition_files[0]}"
           edition_date="$(basename "$edition_path" .json)"
+          policy_profile="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync(process.argv[1],'utf8')).policy_profile)" "$edition_path")"
+
           mapfile -t image_files < <(git diff --name-only origin/main...HEAD -- "briefs/images/$edition_date/*")
           if [ "${#image_files[@]}" -ne 6 ]; then
             echo "Expected exactly six dated image assets; found ${#image_files[@]}." >&2
             exit 1
           fi
+
           baseline_sha="$(git rev-parse origin/main)"
           payload_dir="$(mktemp -d)"
           candidate_dir="$(mktemp -d)"
           stage_dir="$(mktemp -d)"
           mkdir -p "$payload_dir/_data/editions" "$payload_dir/briefs/images/$edition_date"
           cp "$edition_path" "$payload_dir/_data/editions/$edition_date.json"
+
+          if [[ "$policy_profile" != "publication_reliability_v1" ]]; then
+            candidate_path="_records/editorial/candidates/$edition_date.json"
+            memory_path="_data/story-memory/$edition_date.json"
+            for required_path in "$candidate_path" "$memory_path"; do
+              if ! git diff --name-only origin/main...HEAD -- "$required_path" | grep -Fxq "$required_path"; then
+                echo "Policy $policy_profile requires staged editorial record $required_path." >&2
+                exit 1
+              fi
+            done
+            mkdir -p "$payload_dir/_records/editorial/candidates" "$payload_dir/_data/story-memory"
+            cp "$candidate_path" "$payload_dir/_records/editorial/candidates/$edition_date.json"
+            cp "$memory_path" "$payload_dir/_data/story-memory/$edition_date.json"
+          fi
+
           for image in "${image_files[@]}"; do cp "$image" "$payload_dir/briefs/images/$edition_date/"; done
+
           git worktree add --detach "$candidate_dir" origin/main
           cp -a "$payload_dir/." "$candidate_dir/"
           observed_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
