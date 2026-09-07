@@ -291,6 +291,7 @@
   }
 
   async function handleShare(item) {
+    document.dispatchEvent(new CustomEvent('dab:share', {detail: {storyId: item.storyId || ''}}));
     if (navigator.share) {
       try {
         await navigator.share({
@@ -318,9 +319,25 @@
       heading.id = id;
       heading.classList.add('brief-share-target');
       const key = counterKey(id);
-      const item = { id, title, counterKey: key, url: shareUrl(id) };
+      let cursor = heading.nextElementSibling;
+      let marker = null;
+      while (cursor && cursor.tagName !== 'H2') {
+        marker = cursor.matches('.story-data[data-story-id]') ? cursor : cursor.querySelector?.('.story-data[data-story-id]');
+        if (marker) break;
+        cursor = cursor.nextElementSibling;
+      }
+      const item = { id, title, counterKey: key, url: marker?.dataset.storyUrl ? `${window.location.origin}${siteBasePath().replace(/\/$/, '')}${marker.dataset.storyUrl}` : shareUrl(id), storyId: marker?.dataset.storyId || '' };
       heading.insertAdjacentElement('afterend', makeButton(item));
     });
+  }
+
+  function addPermanentStoryButton() {
+    const storyId = document.body.dataset.storyId;
+    if (!storyId) return;
+    const heading = main.querySelector('h1');
+    if (!heading || heading.nextElementSibling?.classList.contains('brief-share-wrap')) return;
+    const item = {id: storyId, title: heading.textContent.trim(), counterKey: counterKey(storyId), url: window.location.href.split('#')[0], storyId};
+    heading.insertAdjacentElement('afterend', makeButton(item));
   }
 
   function addVideoButtons() {
@@ -352,4 +369,5 @@
 
   addStoryButtons();
   addVideoButtons();
+  addPermanentStoryButton();
 })();

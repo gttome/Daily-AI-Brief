@@ -1,0 +1,1768 @@
+{
+  "schema_version": "1.0.0",
+  "snapshot_date": "2026-09-07",
+  "method_version": "1.0.0",
+  "evidence_window": {
+    "start_date": "2026-08-09",
+    "end_date": "2026-09-07",
+    "days": 30
+  },
+  "trends": [
+    {
+      "trend_id": "dab-trend-agent-reliability-governance",
+      "name": "Agent reliability and governance",
+      "classification": "stable",
+      "confidence": "high",
+      "rationale": "20 supporting stories appeared in the latest 7 days and 51 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "evidence_counts": {
+        "recent_7_days": 20,
+        "preceding_days": 51,
+        "total": 71
+      },
+      "supporting_story_ids": [
+        "dab-story-2026-09-07-3f4df523",
+        "dab-story-2026-09-07-dab4bc85",
+        "dab-story-2026-09-07-8053a573",
+        "dab-story-2026-09-07-379d301c",
+        "dab-story-2026-09-06-679de9b0",
+        "dab-story-2026-09-06-adb097bb",
+        "dab-story-2026-09-06-d73ebecb",
+        "dab-story-2026-09-05-a956fc27",
+        "dab-story-2026-09-05-d26b77c9",
+        "dab-story-2026-09-05-9c2ab12f",
+        "dab-story-2026-09-04-dfb80844",
+        "dab-story-2026-09-04-687d1566",
+        "dab-story-2026-09-03-9e81e5ce",
+        "dab-story-2026-09-03-a001445a",
+        "dab-story-2026-09-03-1cda360c",
+        "dab-story-2026-09-02-ad64fbde",
+        "dab-story-2026-09-02-d4186454",
+        "dab-story-2026-09-02-6dc5626e",
+        "dab-story-2026-09-01-4df260d4",
+        "dab-story-2026-09-01-c324f577",
+        "dab-story-2026-08-31-ae8493a1",
+        "dab-story-2026-08-31-f97bd21f",
+        "dab-story-2026-08-30-7712bd8b",
+        "dab-story-2026-08-30-6c8007e6",
+        "dab-story-2026-08-30-71d505c2",
+        "dab-story-2026-08-30-6649fb3e",
+        "dab-story-2026-08-29-da2869d0",
+        "dab-story-2026-08-29-74777276",
+        "dab-story-2026-08-29-67aff0e3",
+        "dab-story-2026-08-29-b98b5a80",
+        "dab-story-2026-08-28-00afae1b",
+        "dab-story-2026-08-28-633f53c9",
+        "dab-story-2026-08-27-2fe3956c",
+        "dab-story-2026-08-27-5e4d5095",
+        "dab-story-2026-08-26-b03e2253",
+        "dab-story-2026-08-26-9271a92d",
+        "dab-story-2026-08-26-893a3c2c",
+        "dab-story-2026-08-26-48060fd1",
+        "dab-story-2026-08-25-a653e831",
+        "dab-story-2026-08-25-b52263f4",
+        "dab-story-2026-08-24-f58c2c99",
+        "dab-story-2026-08-24-4517141d",
+        "dab-story-2026-08-24-fb9e9c08",
+        "dab-story-2026-08-24-db55e747",
+        "dab-story-2026-08-23-b2a17ab9",
+        "dab-story-2026-08-23-be5593e7",
+        "dab-story-2026-08-23-40885c98",
+        "dab-story-2026-08-23-dbdd1c3a",
+        "dab-story-2026-08-22-fe121e20",
+        "dab-story-2026-08-22-88a696d2",
+        "dab-story-2026-08-22-d6deaef1",
+        "dab-story-2026-08-21-92a6e1fe",
+        "dab-story-2026-08-21-2e9487fe",
+        "dab-story-2026-08-21-eeb92c90",
+        "dab-story-2026-08-21-6877cf6f",
+        "dab-story-2026-08-20-396b7ecc",
+        "dab-story-2026-08-20-6364926f",
+        "dab-story-2026-08-20-f54a140b",
+        "dab-story-2026-08-20-5d1fe565",
+        "dab-story-2026-08-19-f2f22489",
+        "dab-story-2026-08-19-973cfd13",
+        "dab-story-2026-08-19-a8e67241",
+        "dab-story-2026-08-19-c4d5a830",
+        "dab-story-2026-08-19-79e308b8",
+        "dab-story-2026-08-18-90367aa5",
+        "dab-story-2026-08-18-038bbe13",
+        "dab-story-2026-08-18-195439db",
+        "dab-story-2026-08-18-9acc47c5",
+        "dab-story-2026-08-17-cdb22c68",
+        "dab-story-2026-08-17-b7974d43",
+        "dab-story-2026-08-17-8c5a5979"
+      ],
+      "supporting_stories": [
+        {
+          "story_id": "dab-story-2026-09-07-3f4df523",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-dab4bc85",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-8053a573",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-379d301c",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-679de9b0",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-adb097bb",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-d73ebecb",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-a956fc27",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-d26b77c9",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/amazon-quick-automate-formalizes-a-reliability-pattern-for-non-technical-agentic/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-9c2ab12f",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/salesforce-is-bundling-the-stack-needed-to-put-agents-into-everyday-business-ope/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-dfb80844",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-687d1566",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/reported-agent-breakout-puts-scope-control-and-monitoring-back-at-center-stage/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-9e81e5ce",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/gemini-3-8-flash-pushes-long-horizon-agents-while-cyber-access-stays-bounded/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-a001445a",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/repo-to-skill-argues-that-operational-know-how-belongs-in-reusable-agent-skills/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-1cda360c",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/copilot-studio-brings-a-reasoning-heavy-harness-into-the-low-code-agent-builder/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-ad64fbde",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-d4186454",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/enterprise-frontier-safeguards-puts-misuse-monitoring-into-customer-controlled-i/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-6dc5626e",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-4df260d4",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-c324f577",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-ae8493a1",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-f97bd21f",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-7712bd8b",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-6c8007e6",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/notion-lets-an-ai-agent-propose-edits-without-taking-authorship-control/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-71d505c2",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/claude-in-chrome-shifts-browser-work-toward-bounded-autonomy/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-6649fb3e",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-da2869d0",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-74777276",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/claude-for-teachers-expands-from-individuals-to-governed-school-deployments/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-67aff0e3",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/openai-s-thailand-accelerator-puts-reliability-between-prototype-and-deployment/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-b98b5a80",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-00afae1b",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-633f53c9",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/randomized-study-separates-chatgpt-s-quality-gains-from-critical-thinking-s-orig/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-2fe3956c",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/openai-documents-an-agent-escape-that-reached-hugging-face-systems/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-5e4d5095",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-b03e2253",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/prime-agent-turns-the-harness-into-a-persistent-self-improving-system/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-9271a92d",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/copilot-brings-python-backed-analysis-into-the-excel-editing-workflow/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-893a3c2c",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/chatgpt-scheduled-tasks-can-now-react-to-app-events-and-be-shared/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-48060fd1",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/openai-s-admin-plugin-turns-workspace-operations-into-governed-agent-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-a653e831",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-b52263f4",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/nvidia-draws-a-hard-line-between-behavioral-guidance-and-enforceable-agent-secur/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-f58c2c99",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/microsoft-agent-framework-adds-recovery-mechanics-for-long-running-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-4517141d",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-fb9e9c08",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/apple-messages-brings-an-approval-gated-action-to-chatgpt-work/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-db55e747",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-b2a17ab9",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/ai4ai-bench-finds-coding-agents-rarely-redesign-the-learning-algorithm-itself/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-be5593e7",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/insufficiencybench-shows-frontier-models-struggle-to-ask-for-legally-decisive-mi/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-40885c98",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/regusim-separates-an-agent-s-explanation-from-the-action-it-actually-attempted/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-dbdd1c3a",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/testnav-searches-for-realistic-combinations-that-break-ai-systems/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-fe121e20",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-brings-visible-steerable-copilot-agent-sessions-into-microsoft-teams/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-88a696d2",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-turns-slack-conversations-into-shared-copilot-coding-agent-sessions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-d6deaef1",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/pandora-s-router-asks-whether-a-better-routing-decision-is-worth-the-cost-of-mak/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-92a6e1fe",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/policyguide-converts-organizational-rules-into-a-live-workflow-graph/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-2e9487fe",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/phantom-gains-finds-that-self-improvement-can-be-a-measurement-illusion/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-eeb92c90",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/envharness-adapts-an-agent-s-training-world-without-rebuilding-it/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-6877cf6f",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/dual-gatekeeping-improves-ai-generated-educational-videos-by-refusing-weak-outpu/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-396b7ecc",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-6364926f",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/evalcegar-evolves-executable-evaluation-checks-from-an-evaluator-s-blind-spots/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-f54a140b",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/componentbench-proves-that-the-harness-can-change-computer-agent-performance-by-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-5d1fe565",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-f2f22489",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/openai-slows-frontier-development-while-rebuilding-security-around-cyber-capable/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-973cfd13",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/openai-and-codeai-put-critical-evaluation-not-passive-tool-use-at-the-center-of-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-a8e67241",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/admitor-reduces-the-risk-that-self-improving-agents-learn-from-bad-experience/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-c4d5a830",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/harnesseval-w-turns-evaluation-into-a-transparent-graph-of-evidence/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-79e308b8",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-90367aa5",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/agent-containment-and-cyber-safeguards-move-to-the-center-of-the-reliability-deb/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-038bbe13",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-195439db",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-9acc47c5",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-cdb22c68",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-b7974d43",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-8c5a5979",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/small-but-useful-study-shows-one-explicit-compliance-instruction-can-sharply-cha/"
+        }
+      ]
+    },
+    {
+      "trend_id": "dab-trend-agent-memory-context",
+      "name": "Agent memory and context",
+      "classification": "accelerating",
+      "confidence": "high",
+      "rationale": "15 supporting stories appeared in the latest 7 days and 28 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "evidence_counts": {
+        "recent_7_days": 15,
+        "preceding_days": 28,
+        "total": 43
+      },
+      "supporting_story_ids": [
+        "dab-story-2026-09-07-8053a573",
+        "dab-story-2026-09-07-968c0cd8",
+        "dab-story-2026-09-06-2d659eea",
+        "dab-story-2026-09-06-679de9b0",
+        "dab-story-2026-09-05-9cfd0663",
+        "dab-story-2026-09-04-a2c5e263",
+        "dab-story-2026-09-04-f5563221",
+        "dab-story-2026-09-04-2c938c91",
+        "dab-story-2026-09-03-a001445a",
+        "dab-story-2026-09-03-acfceabb",
+        "dab-story-2026-09-03-1cda360c",
+        "dab-story-2026-09-02-ad704042",
+        "dab-story-2026-09-02-097ae25d",
+        "dab-story-2026-09-01-09eff21b",
+        "dab-story-2026-09-01-c324f577",
+        "dab-story-2026-08-30-3ea4c141",
+        "dab-story-2026-08-30-4faf2d80",
+        "dab-story-2026-08-29-363c6a4d",
+        "dab-story-2026-08-29-ebf7f693",
+        "dab-story-2026-08-28-faa38e9f",
+        "dab-story-2026-08-26-47742631",
+        "dab-story-2026-08-25-a653e831",
+        "dab-story-2026-08-25-b3b680ed",
+        "dab-story-2026-08-24-4517141d",
+        "dab-story-2026-08-24-4c295f61",
+        "dab-story-2026-08-24-c688328c",
+        "dab-story-2026-08-23-b2a17ab9",
+        "dab-story-2026-08-23-e8deab9a",
+        "dab-story-2026-08-22-fe121e20",
+        "dab-story-2026-08-22-88a696d2",
+        "dab-story-2026-08-22-24c74a86",
+        "dab-story-2026-08-22-0a66eadf",
+        "dab-story-2026-08-22-d6deaef1",
+        "dab-story-2026-08-21-f1184b97",
+        "dab-story-2026-08-20-396b7ecc",
+        "dab-story-2026-08-19-973cfd13",
+        "dab-story-2026-08-19-a8e67241",
+        "dab-story-2026-08-19-c4d5a830",
+        "dab-story-2026-08-19-79e308b8",
+        "dab-story-2026-08-18-038bbe13",
+        "dab-story-2026-08-17-cdb22c68",
+        "dab-story-2026-08-17-b7974d43",
+        "dab-story-2026-08-17-f72cbc5e"
+      ],
+      "supporting_stories": [
+        {
+          "story_id": "dab-story-2026-09-07-8053a573",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-968c0cd8",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-2d659eea",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/gpt-6-astra-is-now-generally-available-inside-github-copilot/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-679de9b0",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-9cfd0663",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/aws-treats-agent-memory-as-a-governed-resource-that-must-expire-and-evolve/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-a2c5e263",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/chatgpt-for-healthcare-connects-authorized-epic-context-with-official-public-dat/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-f5563221",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/asana-is-bringing-agentic-work-management-to-every-paid-tier/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-2c938c91",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-a001445a",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/repo-to-skill-argues-that-operational-know-how-belongs-in-reusable-agent-skills/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-acfceabb",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/empower-work-uses-ai-for-retrieval-and-handoffs-while-counselors-retain-judgment/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-1cda360c",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/copilot-studio-brings-a-reasoning-heavy-harness-into-the-low-code-agent-builder/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-ad704042",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/chatgpt-for-healthcare-connects-ehr-context-and-nine-official-public-health-sour/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-097ae25d",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-09eff21b",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-c324f577",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-3ea4c141",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/anthropic-proposes-a-shared-hardware-layer-for-scientific-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-4faf2d80",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-363c6a4d",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-ebf7f693",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/anthropic-publishes-copyable-claude-tag-workflows-for-real-team-work/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-faa38e9f",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-47742631",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/github-gives-agent-customization-a-unified-discovery-layer/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-a653e831",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-b3b680ed",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-4517141d",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-4c295f61",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/chatgpt-projects-now-let-knowledge-workers-choose-a-tighter-memory-boundary/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-c688328c",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/google-drive-in-chatgpt-library-reduces-manual-context-assembly/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-b2a17ab9",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/ai4ai-bench-finds-coding-agents-rarely-redesign-the-learning-algorithm-itself/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-e8deab9a",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/smaller-text-based-agent-skills-transfer-better-than-monolithic-task-recipes/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-fe121e20",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-brings-visible-steerable-copilot-agent-sessions-into-microsoft-teams/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-88a696d2",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-turns-slack-conversations-into-shared-copilot-coding-agent-sessions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-24c74a86",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/midtool-teaches-models-the-structure-of-real-tool-workflows-before-post-training/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-0a66eadf",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/statemem-shows-that-agent-memory-must-track-what-is-current-not-merely-what-was-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-d6deaef1",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/pandora-s-router-asks-whether-a-better-routing-decision-is-worth-the-cost-of-mak/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-f1184b97",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-396b7ecc",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-973cfd13",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/openai-and-codeai-put-critical-evaluation-not-passive-tool-use-at-the-center-of-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-a8e67241",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/admitor-reduces-the-risk-that-self-improving-agents-learn-from-bad-experience/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-c4d5a830",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/harnesseval-w-turns-evaluation-into-a-transparent-graph-of-evidence/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-79e308b8",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-038bbe13",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-cdb22c68",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-b7974d43",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-f72cbc5e",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/"
+        }
+      ]
+    },
+    {
+      "trend_id": "dab-trend-ai-assisted-development",
+      "name": "AI-assisted development",
+      "classification": "accelerating",
+      "confidence": "high",
+      "rationale": "20 supporting stories appeared in the latest 7 days and 42 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "evidence_counts": {
+        "recent_7_days": 20,
+        "preceding_days": 42,
+        "total": 62
+      },
+      "supporting_story_ids": [
+        "dab-story-2026-09-07-3f4df523",
+        "dab-story-2026-09-07-8053a573",
+        "dab-story-2026-09-07-379d301c",
+        "dab-story-2026-09-07-fdefded2",
+        "dab-story-2026-09-06-2d659eea",
+        "dab-story-2026-09-06-679de9b0",
+        "dab-story-2026-09-06-adb097bb",
+        "dab-story-2026-09-06-d73ebecb",
+        "dab-story-2026-09-05-a956fc27",
+        "dab-story-2026-09-04-dfb80844",
+        "dab-story-2026-09-04-2c938c91",
+        "dab-story-2026-09-03-9e81e5ce",
+        "dab-story-2026-09-03-1cda360c",
+        "dab-story-2026-09-03-e5b0cb85",
+        "dab-story-2026-09-02-ad64fbde",
+        "dab-story-2026-09-02-b368145c",
+        "dab-story-2026-09-02-6dc5626e",
+        "dab-story-2026-09-01-4df260d4",
+        "dab-story-2026-09-01-2881d03e",
+        "dab-story-2026-09-01-c324f577",
+        "dab-story-2026-08-31-ae8493a1",
+        "dab-story-2026-08-31-a3f5c0f6",
+        "dab-story-2026-08-31-7b2aa975",
+        "dab-story-2026-08-31-5f4981c9",
+        "dab-story-2026-08-31-f97bd21f",
+        "dab-story-2026-08-30-7712bd8b",
+        "dab-story-2026-08-30-4faf2d80",
+        "dab-story-2026-08-30-6649fb3e",
+        "dab-story-2026-08-29-363c6a4d",
+        "dab-story-2026-08-29-da2869d0",
+        "dab-story-2026-08-28-00afae1b",
+        "dab-story-2026-08-28-faa38e9f",
+        "dab-story-2026-08-27-5e4d5095",
+        "dab-story-2026-08-27-67f78ae1",
+        "dab-story-2026-08-27-ef414dd5",
+        "dab-story-2026-08-26-b03e2253",
+        "dab-story-2026-08-26-47742631",
+        "dab-story-2026-08-26-9271a92d",
+        "dab-story-2026-08-26-893a3c2c",
+        "dab-story-2026-08-26-48060fd1",
+        "dab-story-2026-08-25-a653e831",
+        "dab-story-2026-08-25-b3b680ed",
+        "dab-story-2026-08-25-66cea67b",
+        "dab-story-2026-08-24-db55e747",
+        "dab-story-2026-08-23-b2a17ab9",
+        "dab-story-2026-08-23-e8deab9a",
+        "dab-story-2026-08-23-dbdd1c3a",
+        "dab-story-2026-08-22-fe121e20",
+        "dab-story-2026-08-22-88a696d2",
+        "dab-story-2026-08-22-24c74a86",
+        "dab-story-2026-08-21-f1184b97",
+        "dab-story-2026-08-21-2e9487fe",
+        "dab-story-2026-08-20-5d1fe565",
+        "dab-story-2026-08-19-f2f22489",
+        "dab-story-2026-08-19-973cfd13",
+        "dab-story-2026-08-18-038bbe13",
+        "dab-story-2026-08-18-195439db",
+        "dab-story-2026-08-18-9acc47c5",
+        "dab-story-2026-08-18-4bb94882",
+        "dab-story-2026-08-17-c5282e0d",
+        "dab-story-2026-08-17-8c5a5979",
+        "dab-story-2026-08-17-f72cbc5e"
+      ],
+      "supporting_stories": [
+        {
+          "story_id": "dab-story-2026-09-07-3f4df523",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-8053a573",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-379d301c",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-fdefded2",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-2d659eea",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/gpt-6-astra-is-now-generally-available-inside-github-copilot/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-679de9b0",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-adb097bb",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-d73ebecb",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-a956fc27",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-dfb80844",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-2c938c91",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-9e81e5ce",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/gemini-3-8-flash-pushes-long-horizon-agents-while-cyber-access-stays-bounded/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-1cda360c",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/copilot-studio-brings-a-reasoning-heavy-harness-into-the-low-code-agent-builder/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-e5b0cb85",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/freshdesk-documents-no-code-building-blocks-for-bounded-agentic-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-ad64fbde",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-b368145c",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/google-pics-brings-prompt-based-image-creation-and-editing-into-the-workspace-fl/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-6dc5626e",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-4df260d4",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-2881d03e",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-c324f577",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-ae8493a1",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-a3f5c0f6",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/codex-0-151-makes-subagent-cost-and-restored-permissions-more-visible/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-7b2aa975",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-5f4981c9",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-f97bd21f",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-7712bd8b",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-4faf2d80",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-6649fb3e",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-363c6a4d",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-da2869d0",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-00afae1b",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-faa38e9f",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-5e4d5095",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-67f78ae1",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/claude-s-watermark-explainer-clarifies-what-provenance-can-and-cannot-prove/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-ef414dd5",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/loveholidays-shows-non-engineers-shipping-prototypes-with-codex/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-b03e2253",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/prime-agent-turns-the-harness-into-a-persistent-self-improving-system/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-47742631",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/github-gives-agent-customization-a-unified-discovery-layer/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-9271a92d",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/copilot-brings-python-backed-analysis-into-the-excel-editing-workflow/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-893a3c2c",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/chatgpt-scheduled-tasks-can-now-react-to-app-events-and-be-shared/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-48060fd1",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/openai-s-admin-plugin-turns-workspace-operations-into-governed-agent-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-a653e831",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-b3b680ed",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-66cea67b",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/maia-turns-plain-language-intent-into-a-visible-agent-or-automation-canvas/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-db55e747",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-b2a17ab9",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/ai4ai-bench-finds-coding-agents-rarely-redesign-the-learning-algorithm-itself/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-e8deab9a",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/smaller-text-based-agent-skills-transfer-better-than-monolithic-task-recipes/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-dbdd1c3a",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/testnav-searches-for-realistic-combinations-that-break-ai-systems/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-fe121e20",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-brings-visible-steerable-copilot-agent-sessions-into-microsoft-teams/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-88a696d2",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-turns-slack-conversations-into-shared-copilot-coding-agent-sessions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-24c74a86",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/midtool-teaches-models-the-structure-of-real-tool-workflows-before-post-training/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-f1184b97",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-2e9487fe",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/phantom-gains-finds-that-self-improvement-can-be-a-measurement-illusion/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-5d1fe565",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-f2f22489",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/openai-slows-frontier-development-while-rebuilding-security-around-cyber-capable/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-973cfd13",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/openai-and-codeai-put-critical-evaluation-not-passive-tool-use-at-the-center-of-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-038bbe13",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-195439db",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-9acc47c5",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-4bb94882",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-c5282e0d",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/google-unveils-gemini-3-7-flash-for-coding-and-agent-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-8c5a5979",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/small-but-useful-study-shows-one-explicit-compliance-instruction-can-sharply-cha/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-f72cbc5e",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/"
+        }
+      ]
+    },
+    {
+      "trend_id": "dab-trend-accessible-work-agents",
+      "name": "Accessible agents for knowledge work",
+      "classification": "accelerating",
+      "confidence": "high",
+      "rationale": "38 supporting stories appeared in the latest 7 days and 68 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "evidence_counts": {
+        "recent_7_days": 38,
+        "preceding_days": 68,
+        "total": 106
+      },
+      "supporting_story_ids": [
+        "dab-story-2026-09-07-3f4df523",
+        "dab-story-2026-09-07-dab4bc85",
+        "dab-story-2026-09-07-8053a573",
+        "dab-story-2026-09-07-968c0cd8",
+        "dab-story-2026-09-07-379d301c",
+        "dab-story-2026-09-07-fdefded2",
+        "dab-story-2026-09-06-2d659eea",
+        "dab-story-2026-09-06-679de9b0",
+        "dab-story-2026-09-06-adb097bb",
+        "dab-story-2026-09-06-d73ebecb",
+        "dab-story-2026-09-06-4819d1f6",
+        "dab-story-2026-09-06-0532fd4e",
+        "dab-story-2026-09-05-a956fc27",
+        "dab-story-2026-09-05-9cfd0663",
+        "dab-story-2026-09-05-a3bb0c7b",
+        "dab-story-2026-09-05-d26b77c9",
+        "dab-story-2026-09-05-9c2ab12f",
+        "dab-story-2026-09-04-dfb80844",
+        "dab-story-2026-09-04-687d1566",
+        "dab-story-2026-09-04-af83f986",
+        "dab-story-2026-09-04-a2c5e263",
+        "dab-story-2026-09-04-f5563221",
+        "dab-story-2026-09-04-2c938c91",
+        "dab-story-2026-09-03-9e81e5ce",
+        "dab-story-2026-09-03-a001445a",
+        "dab-story-2026-09-03-98cf7178",
+        "dab-story-2026-09-03-acfceabb",
+        "dab-story-2026-09-03-1cda360c",
+        "dab-story-2026-09-03-e5b0cb85",
+        "dab-story-2026-09-02-ad64fbde",
+        "dab-story-2026-09-02-ad704042",
+        "dab-story-2026-09-02-b368145c",
+        "dab-story-2026-09-02-097ae25d",
+        "dab-story-2026-09-02-6dc5626e",
+        "dab-story-2026-09-01-4df260d4",
+        "dab-story-2026-09-01-09eff21b",
+        "dab-story-2026-09-01-2881d03e",
+        "dab-story-2026-09-01-c324f577",
+        "dab-story-2026-08-31-ae8493a1",
+        "dab-story-2026-08-31-a3f5c0f6",
+        "dab-story-2026-08-31-7b2aa975",
+        "dab-story-2026-08-31-5f4981c9",
+        "dab-story-2026-08-31-f97bd21f",
+        "dab-story-2026-08-30-7712bd8b",
+        "dab-story-2026-08-30-3ea4c141",
+        "dab-story-2026-08-30-6c8007e6",
+        "dab-story-2026-08-30-4faf2d80",
+        "dab-story-2026-08-30-71d505c2",
+        "dab-story-2026-08-30-6649fb3e",
+        "dab-story-2026-08-29-363c6a4d",
+        "dab-story-2026-08-29-74777276",
+        "dab-story-2026-08-29-67aff0e3",
+        "dab-story-2026-08-29-ebf7f693",
+        "dab-story-2026-08-29-b98b5a80",
+        "dab-story-2026-08-28-00afae1b",
+        "dab-story-2026-08-28-b578ffa1",
+        "dab-story-2026-08-28-04a6435b",
+        "dab-story-2026-08-28-239cf04c",
+        "dab-story-2026-08-28-faa38e9f",
+        "dab-story-2026-08-27-2fe3956c",
+        "dab-story-2026-08-27-5e4d5095",
+        "dab-story-2026-08-27-ef414dd5",
+        "dab-story-2026-08-27-20c9ba69",
+        "dab-story-2026-08-26-b03e2253",
+        "dab-story-2026-08-26-47742631",
+        "dab-story-2026-08-26-9271a92d",
+        "dab-story-2026-08-26-893a3c2c",
+        "dab-story-2026-08-26-48060fd1",
+        "dab-story-2026-08-25-a653e831",
+        "dab-story-2026-08-25-b52263f4",
+        "dab-story-2026-08-25-ae2e6fb8",
+        "dab-story-2026-08-25-b3b680ed",
+        "dab-story-2026-08-25-a2eb5c74",
+        "dab-story-2026-08-25-66cea67b",
+        "dab-story-2026-08-24-f58c2c99",
+        "dab-story-2026-08-24-4517141d",
+        "dab-story-2026-08-24-4c295f61",
+        "dab-story-2026-08-24-fb9e9c08",
+        "dab-story-2026-08-24-db55e747",
+        "dab-story-2026-08-23-b2a17ab9",
+        "dab-story-2026-08-23-e8deab9a",
+        "dab-story-2026-08-23-40885c98",
+        "dab-story-2026-08-22-fe121e20",
+        "dab-story-2026-08-22-88a696d2",
+        "dab-story-2026-08-22-24c74a86",
+        "dab-story-2026-08-22-0a66eadf",
+        "dab-story-2026-08-21-f1184b97",
+        "dab-story-2026-08-21-92a6e1fe",
+        "dab-story-2026-08-21-eeb92c90",
+        "dab-story-2026-08-20-396b7ecc",
+        "dab-story-2026-08-20-89c66468",
+        "dab-story-2026-08-20-f54a140b",
+        "dab-story-2026-08-20-5d1fe565",
+        "dab-story-2026-08-19-f2f22489",
+        "dab-story-2026-08-19-a8e67241",
+        "dab-story-2026-08-19-c4d5a830",
+        "dab-story-2026-08-19-79e308b8",
+        "dab-story-2026-08-18-90367aa5",
+        "dab-story-2026-08-18-038bbe13",
+        "dab-story-2026-08-18-195439db",
+        "dab-story-2026-08-18-9acc47c5",
+        "dab-story-2026-08-18-4bb94882",
+        "dab-story-2026-08-17-cdb22c68",
+        "dab-story-2026-08-17-c5282e0d",
+        "dab-story-2026-08-17-b7974d43",
+        "dab-story-2026-08-17-f72cbc5e"
+      ],
+      "supporting_stories": [
+        {
+          "story_id": "dab-story-2026-09-07-3f4df523",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-dab4bc85",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-8053a573",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-968c0cd8",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-379d301c",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/"
+        },
+        {
+          "story_id": "dab-story-2026-09-07-fdefded2",
+          "brief_date": "2026-09-07",
+          "url": "/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-2d659eea",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/gpt-6-astra-is-now-generally-available-inside-github-copilot/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-679de9b0",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-adb097bb",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-d73ebecb",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/claude-fable-5-1-raises-the-bar-for-research-and-difficult-professional-knowledg/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-4819d1f6",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/openai-s-workspace-agent-guidance-emphasizes-reusable-workflows-rather-than-one-/"
+        },
+        {
+          "story_id": "dab-story-2026-09-06-0532fd4e",
+          "brief_date": "2026-09-06",
+          "url": "/stories/2026-09-06/claude-cowork-now-formalizes-a-connector-browser-computer-use-escalation-path/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-a956fc27",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/github-s-hydrafusion-turns-model-choice-into-runtime-orchestration/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-9cfd0663",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/aws-treats-agent-memory-as-a-governed-resource-that-must-expire-and-evolve/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-a3bb0c7b",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/chatgpt-sites-can-now-be-shared-privately-with-named-people-outside-a-workspace/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-d26b77c9",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/amazon-quick-automate-formalizes-a-reliability-pattern-for-non-technical-agentic/"
+        },
+        {
+          "story_id": "dab-story-2026-09-05-9c2ab12f",
+          "brief_date": "2026-09-05",
+          "url": "/stories/2026-09-05/salesforce-is-bundling-the-stack-needed-to-put-agents-into-everyday-business-ope/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-dfb80844",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/gpt-6-astra-raises-the-ceiling-on-computer-use-and-professional-work/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-687d1566",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/reported-agent-breakout-puts-scope-control-and-monitoring-back-at-center-stage/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-af83f986",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/google-pics-puts-professional-ai-image-creation-directly-inside-workspace/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-a2c5e263",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/chatgpt-for-healthcare-connects-authorized-epic-context-with-official-public-dat/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-f5563221",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/asana-is-bringing-agentic-work-management-to-every-paid-tier/"
+        },
+        {
+          "story_id": "dab-story-2026-09-04-2c938c91",
+          "brief_date": "2026-09-04",
+          "url": "/stories/2026-09-04/fabric-data-agents-become-reusable-tools-inside-low-code-copilot-studio-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-9e81e5ce",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/gemini-3-8-flash-pushes-long-horizon-agents-while-cyber-access-stays-bounded/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-a001445a",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/repo-to-skill-argues-that-operational-know-how-belongs-in-reusable-agent-skills/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-98cf7178",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/google-s-ai-adoption-playbook-moves-the-target-from-licenses-to-redesigned-workf/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-acfceabb",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/empower-work-uses-ai-for-retrieval-and-handoffs-while-counselors-retain-judgment/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-1cda360c",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/copilot-studio-brings-a-reasoning-heavy-harness-into-the-low-code-agent-builder/"
+        },
+        {
+          "story_id": "dab-story-2026-09-03-e5b0cb85",
+          "brief_date": "2026-09-03",
+          "url": "/stories/2026-09-03/freshdesk-documents-no-code-building-blocks-for-bounded-agentic-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-ad64fbde",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-ad704042",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/chatgpt-for-healthcare-connects-ehr-context-and-nine-official-public-health-sour/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-b368145c",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/google-pics-brings-prompt-based-image-creation-and-editing-into-the-workspace-fl/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-097ae25d",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/"
+        },
+        {
+          "story_id": "dab-story-2026-09-02-6dc5626e",
+          "brief_date": "2026-09-02",
+          "url": "/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-4df260d4",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-09eff21b",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-2881d03e",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/"
+        },
+        {
+          "story_id": "dab-story-2026-09-01-c324f577",
+          "brief_date": "2026-09-01",
+          "url": "/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-ae8493a1",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-a3f5c0f6",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/codex-0-151-makes-subagent-cost-and-restored-permissions-more-visible/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-7b2aa975",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-5f4981c9",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/"
+        },
+        {
+          "story_id": "dab-story-2026-08-31-f97bd21f",
+          "brief_date": "2026-08-31",
+          "url": "/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-7712bd8b",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-3ea4c141",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/anthropic-proposes-a-shared-hardware-layer-for-scientific-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-6c8007e6",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/notion-lets-an-ai-agent-propose-edits-without-taking-authorship-control/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-4faf2d80",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-71d505c2",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/claude-in-chrome-shifts-browser-work-toward-bounded-autonomy/"
+        },
+        {
+          "story_id": "dab-story-2026-08-30-6649fb3e",
+          "brief_date": "2026-08-30",
+          "url": "/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-363c6a4d",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-74777276",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/claude-for-teachers-expands-from-individuals-to-governed-school-deployments/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-67aff0e3",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/openai-s-thailand-accelerator-puts-reliability-between-prototype-and-deployment/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-ebf7f693",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/anthropic-publishes-copyable-claude-tag-workflows-for-real-team-work/"
+        },
+        {
+          "story_id": "dab-story-2026-08-29-b98b5a80",
+          "brief_date": "2026-08-29",
+          "url": "/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-00afae1b",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-b578ffa1",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/warp-turns-human-feedback-into-reviewable-agent-skill-updates/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-04a6435b",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/openai-pairs-brazil-expansion-with-role-specific-ai-literacy/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-239cf04c",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/a-non-technical-marketer-builds-a-recurring-personalized-briefing-agent/"
+        },
+        {
+          "story_id": "dab-story-2026-08-28-faa38e9f",
+          "brief_date": "2026-08-28",
+          "url": "/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-2fe3956c",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/openai-documents-an-agent-escape-that-reached-hugging-face-systems/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-5e4d5095",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-ef414dd5",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/loveholidays-shows-non-engineers-shipping-prototypes-with-codex/"
+        },
+        {
+          "story_id": "dab-story-2026-08-27-20c9ba69",
+          "brief_date": "2026-08-27",
+          "url": "/stories/2026-08-27/claude-cowork-gains-a-separate-built-in-browser-for-delegated-web-work/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-b03e2253",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/prime-agent-turns-the-harness-into-a-persistent-self-improving-system/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-47742631",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/github-gives-agent-customization-a-unified-discovery-layer/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-9271a92d",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/copilot-brings-python-backed-analysis-into-the-excel-editing-workflow/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-893a3c2c",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/chatgpt-scheduled-tasks-can-now-react-to-app-events-and-be-shared/"
+        },
+        {
+          "story_id": "dab-story-2026-08-26-48060fd1",
+          "brief_date": "2026-08-26",
+          "url": "/stories/2026-08-26/openai-s-admin-plugin-turns-workspace-operations-into-governed-agent-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-a653e831",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-b52263f4",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/nvidia-draws-a-hard-line-between-behavioral-guidance-and-enforceable-agent-secur/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-ae2e6fb8",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/chatgpt-plugin-discovery-now-prioritizes-tools-people-continue-using/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-b3b680ed",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-a2eb5c74",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/radarfirst-puts-ai-agents-around-not-in-place-of-regulated-decisions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-25-66cea67b",
+          "brief_date": "2026-08-25",
+          "url": "/stories/2026-08-25/maia-turns-plain-language-intent-into-a-visible-agent-or-automation-canvas/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-f58c2c99",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/microsoft-agent-framework-adds-recovery-mechanics-for-long-running-agents/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-4517141d",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-4c295f61",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/chatgpt-projects-now-let-knowledge-workers-choose-a-tighter-memory-boundary/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-fb9e9c08",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/apple-messages-brings-an-approval-gated-action-to-chatgpt-work/"
+        },
+        {
+          "story_id": "dab-story-2026-08-24-db55e747",
+          "brief_date": "2026-08-24",
+          "url": "/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-b2a17ab9",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/ai4ai-bench-finds-coding-agents-rarely-redesign-the-learning-algorithm-itself/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-e8deab9a",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/smaller-text-based-agent-skills-transfer-better-than-monolithic-task-recipes/"
+        },
+        {
+          "story_id": "dab-story-2026-08-23-40885c98",
+          "brief_date": "2026-08-23",
+          "url": "/stories/2026-08-23/regusim-separates-an-agent-s-explanation-from-the-action-it-actually-attempted/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-fe121e20",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-brings-visible-steerable-copilot-agent-sessions-into-microsoft-teams/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-88a696d2",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/github-turns-slack-conversations-into-shared-copilot-coding-agent-sessions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-24c74a86",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/midtool-teaches-models-the-structure-of-real-tool-workflows-before-post-training/"
+        },
+        {
+          "story_id": "dab-story-2026-08-22-0a66eadf",
+          "brief_date": "2026-08-22",
+          "url": "/stories/2026-08-22/statemem-shows-that-agent-memory-must-track-what-is-current-not-merely-what-was-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-f1184b97",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-92a6e1fe",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/policyguide-converts-organizational-rules-into-a-live-workflow-graph/"
+        },
+        {
+          "story_id": "dab-story-2026-08-21-eeb92c90",
+          "brief_date": "2026-08-21",
+          "url": "/stories/2026-08-21/envharness-adapts-an-agent-s-training-world-without-rebuilding-it/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-396b7ecc",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-89c66468",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/skillgate-shows-that-agents-need-separate-learning-signals-for-selecting-and-exe/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-f54a140b",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/componentbench-proves-that-the-harness-can-change-computer-agent-performance-by-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-20-5d1fe565",
+          "brief_date": "2026-08-20",
+          "url": "/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-f2f22489",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/openai-slows-frontier-development-while-rebuilding-security-around-cyber-capable/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-a8e67241",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/admitor-reduces-the-risk-that-self-improving-agents-learn-from-bad-experience/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-c4d5a830",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/harnesseval-w-turns-evaluation-into-a-transparent-graph-of-evidence/"
+        },
+        {
+          "story_id": "dab-story-2026-08-19-79e308b8",
+          "brief_date": "2026-08-19",
+          "url": "/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-90367aa5",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/agent-containment-and-cyber-safeguards-move-to-the-center-of-the-reliability-deb/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-038bbe13",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-195439db",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-9acc47c5",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/"
+        },
+        {
+          "story_id": "dab-story-2026-08-18-4bb94882",
+          "brief_date": "2026-08-18",
+          "url": "/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-cdb22c68",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-c5282e0d",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/google-unveils-gemini-3-7-flash-for-coding-and-agent-workflows/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-b7974d43",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/"
+        },
+        {
+          "story_id": "dab-story-2026-08-17-f72cbc5e",
+          "brief_date": "2026-08-17",
+          "url": "/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/"
+        }
+      ]
+    }
+  ]
+}

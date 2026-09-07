@@ -87,6 +87,20 @@ test('editorial-intelligence transaction also requires candidate and memory evid
   assert.deepEqual(validateAtomicChangedPaths([...files, `_records/editorial/candidates/${date}.json`, `_data/story-memory/${date}.json`], date, {policyProfile: 'editorial_intelligence_v1'}), []);
 });
 
+test('reader-foundation transaction requires story pages, search index, and both feeds', () => {
+  const date = '2026-09-07';
+  const base = [
+    `_data/editions/${date}.json`, `briefs/${date}.md`, 'latest.md', 'index.md', 'archive.md', 'README.md',
+    `_records/editorial/candidates/${date}.json`, `_data/story-memory/${date}.json`,
+    ...Array.from({length: 6}, (_, index) => `briefs/images/${date}/${index + 1}.svg`)
+  ];
+  const incomplete = validateAtomicChangedPaths(base, date, {policyProfile: 'reader_foundation_v1'});
+  assert.ok(incomplete.includes('feed.xml'));
+  assert.ok(incomplete.some(item => item.includes('exactly six story pages')));
+  const complete = [...base, 'data/archive-index.json', 'feed.xml', 'feed.json', ...Array.from({length: 6}, (_, index) => `stories/${date}/story-${index + 1}.md`)];
+  assert.deepEqual(validateAtomicChangedPaths(complete, date, {policyProfile: 'reader_foundation_v1'}), []);
+});
+
 test('failed staging leaves the source checkout unchanged and rollback target explicit', () => {
   const before = stagedDigest(new Map([
     ['briefs/2026-09-06.md', fs.readFileSync(path.join(root, 'briefs', '2026-09-06.md'), 'utf8')],

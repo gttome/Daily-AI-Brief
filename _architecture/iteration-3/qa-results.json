@@ -1,0 +1,6 @@
+{
+  "record_version":"1.0.0","iteration":3,"name":"Reader foundation","status":"CANDIDATE_QA_PASS","implemented":[10,12,13],
+  "acceptance":{"permanent_story_pages":125,"current_story_social_metadata":"PASS","archive_index_stories":125,"archive_editions":22,"filter_dimensions":["date","company","topic","focus","evidence_class","availability_status","trend"],"atom_feed":"PASS","json_feed_1_1":"PASS","existing_url_contract":"PASS","mobile_css":"PASS"},
+  "qa":{"reader_tests":3,"result":"PASS","integration_regression":"PASS","github_ci":"PENDING"},
+  "critical_defects":0,"high_defects":0,"limitations":["Historical evidence and availability filters show Unspecified where legacy briefs did not retain those fields."],"rollback_target_sha":"39638bef649813f33b2dd172513164c15dadd83d","rollback_status":"READY","gate_result":"CANDIDATE_PASS"
+}

@@ -32,6 +32,7 @@
     "repairs": {"type": "array", "items": {"type": "object", "required": ["description", "commit_sha"], "properties": {"description": {"type": "string", "minLength": 1}, "commit_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"}}, "additionalProperties": false}},
     "defects": {"type": "array", "items": {"type": "object", "required": ["severity", "code", "status", "description"], "properties": {"severity": {"enum": ["critical", "high", "medium", "low", "info"]}, "code": {"type": "string", "pattern": "^[a-z0-9_]+$"}, "status": {"enum": ["open", "resolved", "accepted"]}, "description": {"type": "string", "minLength": 1}}, "additionalProperties": false}},
     "deployment_evidence": {"type": "object", "required": ["pages_run_id", "head_sha", "conclusion"], "properties": {"pages_run_id": {"type": ["integer", "null"]}, "head_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"}, "conclusion": {"enum": ["success", "failure", "cancelled", "timed_out", "not_run"]}}, "additionalProperties": false},
-    "record_path": {"type": "string", "pattern": "^_records/qa/"}
+    "record_path": {"type": "string", "pattern": "^_records/qa/"},
+    "deployment_latency_seconds": {"type": ["integer", "null"], "minimum": 0}
   }
 }

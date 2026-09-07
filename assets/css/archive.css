@@ -1,0 +1,14 @@
+.archive-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .8rem; padding: 1rem; border: 1px solid #d8e1e7; border-radius: 12px; background: #f7fbfb; }
+.archive-controls label { display: grid; gap: .3rem; color: #264b62; font-weight: 700; }
+.archive-controls input, .archive-controls select, .archive-controls button { min-height: 44px; border: 1px solid #9fb0bb; border-radius: 7px; background: #fff; color: #263238; font: inherit; padding: .55rem .65rem; }
+.archive-controls button { align-self: end; border-color: #157878; background: #157878; color: #fff; cursor: pointer; font-weight: 700; }
+.archive-results { display: grid; gap: 1rem; margin: 1rem 0 2rem; }
+.archive-story { padding: 1rem; border: 1px solid #dde5ea; border-radius: 10px; background: #fff; box-shadow: 0 2px 10px rgba(23, 55, 75, .06); }
+.archive-story h2 { margin: .25rem 0 .45rem; font-size: 1.15rem; }
+.archive-story p { margin: .25rem 0; }
+.archive-story-meta { color: #586b78; font-size: .88rem; font-weight: 700; }
+@media (max-width: 640px) { .archive-controls { grid-template-columns: 1fr; } .archive-story { padding: .85rem; } }
+.qa-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: .75rem; margin: 1rem 0 1.5rem; }
+.qa-metrics div { display: grid; gap: .2rem; padding: .9rem; border: 1px solid #d8e1e7; border-radius: 10px; background: #f7fbfb; }
+.qa-metrics strong { color: #126a6a; font-size: 1.5rem; }
+.qa-metrics span { color: #536773; font-size: .86rem; font-weight: 700; }

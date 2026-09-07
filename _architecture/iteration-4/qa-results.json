@@ -1,0 +1,6 @@
+{
+  "record_version":"1.0.0","iteration":4,"name":"Measurement & accessibility","status":"CANDIDATE_QA_PASS","implemented":[8,11,14,16],
+  "acceptance":{"public_qa_metrics_match_records":"PASS","controlled_analytics_counts":"PASS","analytics_outage_state":"PASS","personal_identifiers_stored":false,"small_count_suppression_threshold":5,"accessibility_automated_result":"PASS","editorial_alt_reviews":6,"what_to_do_now_stories":6},
+  "qa":{"measurement_accessibility_tests":6,"result":"PASS","privacy_review":"PASS","regression":"PASS","github_ci":"PENDING"},
+  "critical_defects":0,"high_defects":0,"limitations":["Client-side aggregate counters are directional rather than audited audience totals; the limitation is surfaced in every analytics record."],"rollback_target_sha":"39638bef649813f33b2dd172513164c15dadd83d","rollback_status":"READY","gate_result":"CANDIDATE_PASS"
+}

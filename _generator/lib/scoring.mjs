@@ -34,6 +34,15 @@ export function validateCandidatePool(pool) {
   return errors;
 }
 
-export function rankCandidates(candidates) {
-  return [...candidates].sort((a, b) => b.score.total - a.score.total || a.candidate_id.localeCompare(b.candidate_id)).map((candidate, index) => ({...candidate, overall_rank: index + 1}));
+export function feedbackAdjustedScore(candidate, feedback) {
+  if (!feedback || feedback.approval_state !== 'approved') return candidate.score.total;
+  if (!feedback.guardrails?.popularity_only_selection_prohibited || !feedback.guardrails?.hard_gates_override_weights || !feedback.guardrails?.category_balance_preserved || !feedback.guardrails?.human_approval_required) return candidate.score.total;
+  const deltas = new Map((feedback.weight_recommendations || []).map(item => [item.dimension, Math.max(-0.25, Math.min(0.25, item.delta))]));
+  return SCORE_DIMENSIONS.reduce((sum, key) => sum + candidate.score[key] * (1 + (deltas.get(key) || 0)), 0);
+}
+
+export function rankCandidates(candidates, feedback = null) {
+  return [...candidates]
+    .sort((a, b) => feedbackAdjustedScore(b, feedback) - feedbackAdjustedScore(a, feedback) || b.score.total - a.score.total || a.candidate_id.localeCompare(b.candidate_id))
+    .map((candidate, index) => ({...candidate, overall_rank: index + 1, feedback_adjusted_score: Number(feedbackAdjustedScore(candidate, feedback).toFixed(3))}));
 }

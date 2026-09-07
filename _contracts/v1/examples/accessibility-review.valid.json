@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-07",
+  "reviewed_at": "2026-09-07T18:00:54Z",
+  "severity_policy": {"critical": "block", "high": "block", "medium": "degrade_and_repair", "low": "record"},
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {"story_id": "dab-story-2026-09-07-00000001", "result": "pass", "alt": "An explanatory diagram with a clear workflow and labeled relationship", "rationale": "Alternative text conveys the diagram meaning."},
+    {"story_id": "dab-story-2026-09-07-00000002", "result": "pass", "alt": "An explanatory diagram with a clear workflow and labeled relationship", "rationale": "Alternative text conveys the diagram meaning."},
+    {"story_id": "dab-story-2026-09-07-00000003", "result": "pass", "alt": "An explanatory diagram with a clear workflow and labeled relationship", "rationale": "Alternative text conveys the diagram meaning."},
+    {"story_id": "dab-story-2026-09-07-00000004", "result": "pass", "alt": "An explanatory diagram with a clear workflow and labeled relationship", "rationale": "Alternative text conveys the diagram meaning."},
+    {"story_id": "dab-story-2026-09-07-00000005", "result": "pass", "alt": "An explanatory diagram with a clear workflow and labeled relationship", "rationale": "Alternative text conveys the diagram meaning."},
+    {"story_id": "dab-story-2026-09-07-00000006", "result": "pass", "alt": "An explanatory diagram with a clear workflow and labeled relationship", "rationale": "Alternative text conveys the diagram meaning."}
+  ]
+}

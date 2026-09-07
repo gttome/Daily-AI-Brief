@@ -1,6 +1,6 @@
 {
   "schema_version":"1.0.0",
-  "policy_profile":"editorial_intelligence_v1",
+  "policy_profile":"full_v1",
   "edition_id":"dab-edition-2026-09-07",
   "brief_date":"2026-09-07",
   "timezone":"America/Chicago",
@@ -17,6 +17,7 @@
       "george_implication":"Use this as an evidence-backed case study for Bounded Agentic Delegation and harness engineering: measure transferred work and interventions rather than simply counting prompts.",
       "source":{"title":"OpenAI — Research acceleration: The view inside OpenAI","organization":"OpenAI","url":"https://openai.com/index/research-acceleration-view-inside-openai/","normalized_url":"https://openai.com/index/research-acceleration-view-inside-openai/","publication_date":"2026-09-06","evidence_type":"official_announcement","availability_status":"research"},
       "novelty":{"disposition":"new","prior_story_ids":[],"what_changed":null},"candidate_score":{"significance":5,"freshness":5,"authority":5,"evidence_quality":5,"novelty":5,"practical_value":5,"category_fit":5,"total":35,"selection_rationale":"Fresh primary evidence with unusually concrete operational metrics on long-horizon agent use and intervention."},
+      "what_to_do_now":{"action":"teach","label":"Teach","rationale":"Use agent-workdays and intervention burden as concrete measures when explaining bounded delegation."},
       "social":{"title":"OpenAI measures 3.1 agent-workdays per human workday","description":"OpenAI reports concrete internal measurements of delegated research-agent work and retained human judgment.","image_url":"https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/01-research-agent-workdays.svg?v=20260907-1"}
     },
     {
@@ -27,6 +28,7 @@
       "george_implication":"Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking.",
       "source":{"title":"Anthropic — Formalizing Fermat's Last Theorem","organization":"Anthropic","url":"https://www.anthropic.com/news/formalizing-fermats-last-theorem","normalized_url":"https://www.anthropic.com/news/formalizing-fermats-last-theorem","publication_date":"2026-09-04","evidence_type":"official_announcement","availability_status":"research"},
       "novelty":{"disposition":"new","prior_story_ids":[],"what_changed":null},"candidate_score":{"significance":5,"freshness":4,"authority":5,"evidence_quality":5,"novelty":5,"practical_value":5,"category_fit":5,"total":34,"selection_rationale":"High-significance primary-source demonstration of multi-agent work coupled to deterministic formal verification."},
+      "what_to_do_now":{"action":"teach","label":"Teach","rationale":"Show how a deterministic verifier can bound generative exploration in reliability training."},
       "social":{"title":"Claude formalizes Fermat's Last Theorem","description":"Anthropic reports a largely autonomous multi-agent formalization checked by Lean.","image_url":"https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/02-formal-proof-verification.svg?v=20260907-1"}
     },
     {
@@ -37,6 +39,7 @@
       "george_implication":"Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification.",
       "source":{"title":"OpenAI — GPT-6 Astra: A new generation of intelligence","organization":"OpenAI","url":"https://openai.com/index/gpt-6-astra/","normalized_url":"https://openai.com/index/gpt-6-astra/","publication_date":"2026-09-07","evidence_type":"official_announcement","availability_status":"limited_preview"},
       "novelty":{"disposition":"material_update","prior_story_ids":["dab-story-2026-09-06-0b55fd52"],"what_changed":"September 6 covered Astra becoming available inside GitHub Copilot. OpenAI has now launched Astra itself, published broader capability and safety results, and begun a staged rollout across ChatGPT and API channels."},"candidate_score":{"significance":5,"freshness":5,"authority":5,"evidence_quality":5,"novelty":3,"practical_value":5,"category_fit":5,"total":33,"selection_rationale":"Today's primary launch materially extends yesterday's Copilot-specific coverage into broad professional-work and computer-use availability."},
+      "what_to_do_now":{"action":"evaluate","label":"Evaluate","rationale":"Test Astra on one bounded professional workflow and verify access, outputs, and approval boundaries before broader use."},
       "social":{"title":"GPT-6 Astra launches","description":"OpenAI begins a staged Astra rollout with stronger computer use and professional-work capabilities.","image_url":"https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/03-astra-professional-work.svg?v=20260907-1"}
     },
     {
@@ -47,6 +50,7 @@
       "george_implication":"Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory.",
       "source":{"title":"NVIDIA Technical Blog — Building a Memory-Driven Agent with NVIDIA NemoClaw","organization":"NVIDIA","url":"https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/","normalized_url":"https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/","publication_date":"2026-09-04","evidence_type":"official_documentation","availability_status":"general_availability"},
       "novelty":{"disposition":"new","prior_story_ids":[],"what_changed":null},"candidate_score":{"significance":4,"freshness":4,"authority":5,"evidence_quality":5,"novelty":5,"practical_value":5,"category_fit":5,"total":33,"selection_rationale":"Strong practical context-engineering pattern with an inspectable memory architecture for enterprise agents."},
+      "what_to_do_now":{"action":"test","label":"Test","rationale":"Prototype a small inspectable memory record and confirm that a user can correct stale or wrong context."},
       "social":{"title":"NVIDIA shows an inspectable memory-driven agent","description":"A human-readable self model provides durable, correctable context for enterprise agent work.","image_url":"https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/04-memory-self-model.svg?v=20260907-1"}
     },
     {
@@ -57,6 +61,7 @@
       "george_implication":"Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures.",
       "source":{"title":"Microsoft SharePoint Blog — What's New in Copilot in SharePoint: September 2026","organization":"Microsoft","url":"https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422","normalized_url":"https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422","publication_date":"2026-09-02","evidence_type":"official_announcement","availability_status":"general_availability"},
       "novelty":{"disposition":"new","prior_story_ids":[],"what_changed":null},"candidate_score":{"significance":4,"freshness":3,"authority":5,"evidence_quality":4,"novelty":5,"practical_value":5,"category_fit":5,"total":31,"selection_rationale":"Mainstream non-technical agent pattern: reusable skills plus evaluations inside an existing knowledge-work surface."},
+      "what_to_do_now":{"action":"test","label":"Test","rationale":"Turn one repeated SharePoint task into a reusable skill and define an evaluation before expanding it."},
       "social":{"title":"SharePoint Copilot adds reusable skills and evaluations","description":"Natural-language skills become reusable, measurable, and improvable across SharePoint and OneDrive.","image_url":"https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/05-sharepoint-skills-evals.svg?v=20260907-1"}
     },
     {
@@ -67,6 +72,7 @@
       "george_implication":"Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system.",
       "source":{"title":"Microsoft Fabric Community — Fabric Data Agents in Microsoft Copilot Studio (Generally Available)","organization":"Microsoft","url":"https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882","normalized_url":"https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882","publication_date":"2026-09-02","evidence_type":"official_announcement","availability_status":"general_availability"},
       "novelty":{"disposition":"new","prior_story_ids":[],"what_changed":null},"candidate_score":{"significance":4,"freshness":3,"authority":5,"evidence_quality":4,"novelty":5,"practical_value":5,"category_fit":5,"total":31,"selection_rationale":"Accessible low-code example of agent-to-tool delegation with governed enterprise data and existing permissions."},
+      "what_to_do_now":{"action":"evaluate","label":"Evaluate","rationale":"Identify one governed data question that a low-code agent could answer, then validate permissions and citations."},
       "social":{"title":"Fabric Data Agents become Copilot Studio tools","description":"Copilot Studio can delegate governed data work to Fabric Data Agents while preserving underlying permissions.","image_url":"https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/06-fabric-data-agents.svg?v=20260907-1"}
     }
   ],

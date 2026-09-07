@@ -34,7 +34,7 @@ export function createValidatedEvent(edition, files, options) {
       file_set: {
         canonical_sources: [`_data/editions/${edition.brief_date}.json`],
         assets: assetPaths,
-        derived_outputs: [...files.keys()].filter(name => name.endsWith('.md')),
+        derived_outputs: [...files.keys()].filter(name => name.endsWith('.md') || name === 'feed.xml' || name === 'feed.json' || name.startsWith('data/')),
         operational_records: [eventPath]
       },
       commit_sha: null,
@@ -66,6 +66,21 @@ export function validateAtomicChangedPaths(paths, date, {policyProfile = 'public
   if (['editorial_intelligence_v1', 'reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1'].includes(policyProfile)) {
     required.add(`_records/editorial/candidates/${date}.json`);
     required.add(`_data/story-memory/${date}.json`);
+  }
+  if (['reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1'].includes(policyProfile)) {
+    for (const output of ['data/archive-index.json', 'feed.xml', 'feed.json']) required.add(output);
+    const storyPagePrefix = `stories/${date}/`;
+    const storyPageCount = new Set(paths.filter(name => name.startsWith(storyPagePrefix) && name.endsWith('.md'))).size;
+    if (storyPageCount !== 6) required.add(`${storyPagePrefix}<exactly six story pages; found ${storyPageCount}>`);
+  }
+  if (['measurement_accessibility_v1', 'full_v1'].includes(policyProfile)) {
+    required.add(`_records/accessibility/${date}.json`);
+    required.add('qa/index.md');
+    required.add('data/qa/30-day.json');
+  }
+  if (policyProfile === 'full_v1') {
+    required.add(`_records/trends/${date}.json`);
+    required.add(`_records/editorial-feedback/${date.slice(0, 7)}.json`);
   }
   const missing = [...required].filter(name => !paths.includes(name));
   const imagePrefix = `briefs/images/${date}/`;

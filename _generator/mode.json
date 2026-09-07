@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "publication_mode": "active",
-  "active_policy_profile": "editorial_intelligence_v1",
+  "active_policy_profile": "full_v1",
   "time_based_shadow_gate_enabled": false,
   "shadow_required_consecutive_passes": 0,
   "exit_gate": "comprehensive_acceptance_regression_failure_injection_and_live_smoke",

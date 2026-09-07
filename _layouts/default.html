@@ -11,9 +11,10 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/share.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/archive.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
-  <body data-brief-date="{{ page.brief_date | default: '' }}">
+  <body data-brief-date="{{ page.brief_date | default: '' }}" data-story-id="{{ page.story_id | default: '' }}" data-baseurl="{{ site.baseurl }}">
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header" role="banner">
@@ -38,6 +39,8 @@
       </footer>
     </main>
     <script defer src="{{ '/assets/js/share.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/archive.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/analytics.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('#content p').forEach(function (paragraph) {

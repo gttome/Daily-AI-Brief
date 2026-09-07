@@ -24,7 +24,20 @@ for (const date of dates) {
   const editionPath = `_data/editions/${date}.json`;
   let policyProfile = mode.active_policy_profile || 'publication_reliability_v1';
   if (fs.existsSync(editionPath)) policyProfile = JSON.parse(fs.readFileSync(editionPath, 'utf8')).policy_profile || policyProfile;
-  failures.push(...validateAtomicChangedPaths(changed, date, {policyProfile}).map(item => `${date}: missing ${item}`));
+  let validationPaths = changed;
+  try {
+    execFileSync('git', ['cat-file', '-e', `${base}:_data/editions/${date}.json`], {stdio: 'ignore'});
+    const retained = [
+      `_records/editorial/candidates/${date}.json`,
+      `_data/story-memory/${date}.json`,
+      'README.md',
+      ...execFileSync('git', ['ls-tree', '-r', '--name-only', head, `briefs/images/${date}`], {encoding: 'utf8'}).trim().split('\n').filter(Boolean)
+    ];
+    validationPaths = [...new Set([...changed, ...retained])];
+  } catch {
+    // A new edition must carry every atomic input and output in the change set.
+  }
+  failures.push(...validateAtomicChangedPaths(validationPaths, date, {policyProfile}).map(item => `${date}: missing ${item}`));
 }
 if (failures.length) {
   console.error(`Atomic publication validation failed:\n- ${failures.join('\n- ')}`);
