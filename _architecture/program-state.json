@@ -1,0 +1,30 @@
+{
+  "record_version": "1.0.0",
+  "program": "Daily AI Brief 17 Improvements",
+  "authorization": {
+    "iterations_1_through_6": "AUTONOMOUS",
+    "gate_7": "AUTONOMOUS",
+    "command_center": "BLOCKED_PENDING_FINAL_USER_APPROVAL",
+    "authorized_at": "2026-09-07"
+  },
+  "active_stage": {
+    "number": 1,
+    "name": "Publication reliability",
+    "status": "SHADOW_RUNNING",
+    "production_commit": "8a5306b56c5305d6215994e65ef879c6d899942b",
+    "required_consecutive_passes": 7,
+    "observed_consecutive_passes": 0
+  },
+  "completed_stages": [
+    {
+      "number": 0,
+      "name": "Architecture & contracts",
+      "result": "APPROVED",
+      "commit": "414c87185aa39f9f92ffbd7b6721ab17be79baa0"
+    }
+  ],
+  "pending_stages": [2, 3, 4, 5, 6, 7],
+  "last_evaluated_at": "2026-09-07T16:30:12Z",
+  "critical_or_high_defects": [],
+  "rollback_status": "READY"
+}
