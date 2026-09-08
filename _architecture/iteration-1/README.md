@@ -1,6 +1,6 @@
 # Iteration 1 - Publication Reliability
 
-Status: shadow evidence in progress
+Status: **PASS — lifecycle gate complete**
 
 ## Scope
 
@@ -30,4 +30,4 @@ The repository now contains a dependency-free Node.js publication engine. The la
 
 ## Exit gate
 
-Iteration 1 cannot pass until seven consecutive daily shadow records pass, a dry-run candidate completes, an atomic publication is demonstrated without partial visibility, deterministic checks reproduce, alert deduplication is demonstrated, and no Critical/High defect remains.
+The user removed the elapsed seven-day shadow requirement on September 7, 2026. The replacement comprehensive evidence-based immediate gate passed: deterministic replay, complete atomic publication, partial-transaction rejection, rollback failure injection, alert deduplication/recovery, candidate and production CI, GitHub Pages, and production verification all passed with no Critical/High defect. The authoritative results are recorded in `qa-status.json`; production cutover commit `15ee5a1aaedaaaf12a4e18c52c397551bd27d35e` activated the atomic publisher.
