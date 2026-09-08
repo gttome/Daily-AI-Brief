@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import {fileURLToPath} from 'node:url';
 import {accessibilityReview, auditEditionAccessibility, contrastRatio} from '../lib/accessibility.mjs';
-import {aggregateAnalytics, analyticsKey, collectAnalytics} from '../lib/analytics.mjs';
+import {ANALYTICS_METRICS, aggregateAnalytics, analyticsKey, collectAnalytics} from '../lib/analytics.mjs';
 import {qaMetrics, renderQaDashboard} from '../lib/quality.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -13,12 +13,13 @@ const edition = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-
 test('controlled analytics counts aggregate exactly and suppress small story counts', async () => {
   const stories = edition.stories.slice(0, 2);
   const values = new Map();
-  for (const [index, story] of stories.entries()) for (const metric of ['views', 'source_clicks', 'share_initiations', 'worth_watching_clicks', 'retention_30s']) values.set(analyticsKey('2026-09-07', story.story_id, metric), index ? 7 : 3);
+  for (const [index, story] of stories.entries()) for (const metric of ANALYTICS_METRICS) values.set(analyticsKey('2026-09-07', story.story_id, metric), index ? 7 : 3);
   const record = await collectAnalytics('2026-09-07', stories, async key => values.get(key));
   assert.equal(record.collection_status, 'complete');
   assert.equal(record.site_totals.views, 10);
   assert.equal(record.stories[0].metrics.views, null);
   assert.equal(record.stories[1].metrics.views, 7);
+  assert.equal(record.site_totals.feedback_most_useful, 10);
   assert.equal(record.privacy.contains_personal_identifiers, false);
 });
 
@@ -26,6 +27,20 @@ test('analytics outage is explicit and never becomes a zero-count success', asyn
   const record = await collectAnalytics('2026-09-07', edition.stories.slice(0, 1), async () => { throw new Error('outage'); });
   assert.equal(record.collection_status, 'unavailable');
   assert.equal(record.site_totals.views, null);
+});
+
+test('analytics counters are collected concurrently so added feedback metrics do not delay publishing', async () => {
+  let active = 0;
+  let maximumActive = 0;
+  const record = await collectAnalytics('2026-09-07', edition.stories.slice(0, 2), async () => {
+    active += 1;
+    maximumActive = Math.max(maximumActive, active);
+    await new Promise(resolve => setTimeout(resolve, 2));
+    active -= 1;
+    return 8;
+  });
+  assert.equal(record.collection_status, 'complete');
+  assert.ok(maximumActive > 1);
 });
 
 test('aggregate analytics rejects unsupported identity-shaped fields by construction', () => {

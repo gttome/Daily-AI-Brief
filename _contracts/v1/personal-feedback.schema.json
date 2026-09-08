@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/personal-feedback.schema.json",
+  "title": "Daily AI Brief primary-reader editorial feedback",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "feedback_id", "brief_date", "submitted_at", "source", "ratings", "privacy", "approved_for_learning"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "feedback_id": {"type": "string", "pattern": "^dab-personal-feedback-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9a-f]{8}$"},
+    "brief_date": {"type": "string", "format": "date"},
+    "submitted_at": {"type": "string", "format": "date-time"},
+    "source": {"const": "primary_reader_weekly_checkin"},
+    "ratings": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["story_id", "focus", "rating", "reasons"],
+        "properties": {
+          "story_id": {"type": "string", "pattern": "^dab-story-[0-9]{4}-[0-9]{2}-[0-9]{2}-"},
+          "focus": {"enum": ["technical_ai_engineering", "applied_genai_knowledge_workers", "agents_non_technical_people"]},
+          "rating": {"enum": ["most_useful", "useful", "neutral", "not_useful"]},
+          "reasons": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {"enum": ["book_or_course", "consulting", "tool_worth_testing", "important_emerging_concept", "too_technical", "too_promotional", "not_relevant"]}
+          }
+        }
+      }
+    },
+    "privacy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contains_personal_identifiers", "contains_browsing_history", "publishable"],
+      "properties": {
+        "contains_personal_identifiers": {"const": false},
+        "contains_browsing_history": {"const": false},
+        "publishable": {"const": true}
+      }
+    },
+    "approved_for_learning": {"const": true}
+  }
+}

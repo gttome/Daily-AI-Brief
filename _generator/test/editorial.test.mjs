@@ -46,6 +46,9 @@ test('candidate pool requires 20-30 scored candidates and exact selected 2/2/2',
   invalid.candidates[0].novelty_check.matches = [{prior_story_id: 'dab-story-prior'}];
   assert.ok(validateCandidatePool(invalid).some(error => error.includes('total is incorrect')));
   assert.ok(validateCandidatePool(invalid).some(error => error.includes('disposition is new')));
+  const adjusted = structuredClone(pool);
+  adjusted.candidates[0].learning_adjustment = {learning_id: 'dab-editorial-learning-2026-10-09-a1b2c3d4', mode: 'shadow', base_total: adjusted.candidates[0].score.total - 1, adjusted_total: adjusted.candidates[0].score.total};
+  assert.ok(validateCandidatePool(adjusted).some(error => error.includes('base_total must match')));
 });
 
 test('editorial profile requires evidence, availability, novelty, and score rationale', () => {

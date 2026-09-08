@@ -32,6 +32,9 @@
   ],
   "pending_stages": [],
   "next_program": {"name": "Command Center", "status": "ELIGIBLE_NOT_STARTED"},
+  "operational_extensions": [
+    {"name": "Personal Editorial Learning", "status": "CANDIDATE_QA_PASS", "command_center_impact": "NONE"}
+  ],
   "last_evaluated_at": "2026-09-07T21:41:03Z",
   "critical_or_high_defects": [],
   "rollback_status": "READY"

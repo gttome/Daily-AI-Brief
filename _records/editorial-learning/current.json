@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0.0",
+  "learning_id": "dab-editorial-learning-2026-09-07-be360a27",
+  "evaluated_at": "2026-09-07T21:50:00Z",
+  "status": "insufficient_evidence",
+  "inputs": {
+    "feedback_ids": [],
+    "brief_dates": [],
+    "rated_stories": 0,
+    "focus_coverage": {
+      "technical_ai_engineering": 0,
+      "applied_genai_knowledge_workers": 0,
+      "agents_non_technical_people": 0
+    }
+  },
+  "sufficiency": {
+    "minimum_editions": 5,
+    "minimum_ratings": 30,
+    "minimum_per_focus": 10,
+    "result": "INSUFFICIENT",
+    "reasons": [
+      "Need 5 more rated editions.",
+      "Need 30 more story ratings.",
+      "Need 10 more technical_ai_engineering ratings.",
+      "Need 10 more applied_genai_knowledge_workers ratings.",
+      "Need 10 more agents_non_technical_people ratings."
+    ]
+  },
+  "signals": {
+    "practical_value": null,
+    "category_fit": null
+  },
+  "weight_recommendations": [],
+  "shadow": {
+    "minimum_candidate_sets": 5,
+    "candidate_sets_evaluated": 1,
+    "result": "NOT_READY",
+    "rank_changes": []
+  },
+  "activation": {
+    "approval_state": "pending",
+    "approved_at": null,
+    "state": "inactive",
+    "effective_from": null,
+    "max_editions": 10
+  },
+  "guardrails": {
+    "explicit_feedback_primary": true,
+    "public_analytics_secondary": true,
+    "popularity_only_selection_prohibited": true,
+    "protected_dimensions": [
+      "significance",
+      "freshness",
+      "authority",
+      "evidence_quality",
+      "novelty"
+    ],
+    "category_balance_preserved": true,
+    "human_approval_required": true
+  },
+  "rollback": {
+    "status": "READY",
+    "triggers": [
+      "qa_failure",
+      "critical_or_high_defect",
+      "protected_dimension_change",
+      "category_balance_change",
+      "edition_limit_reached"
+    ]
+  }
+}

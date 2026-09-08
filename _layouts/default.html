@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/share.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/archive.css?v=' | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/feedback.css?v=' | append: site.github.build_revision | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body data-brief-date="{{ page.brief_date | default: '' }}" data-story-id="{{ page.story_id | default: '' }}" data-baseurl="{{ site.baseurl }}">
@@ -21,6 +22,7 @@
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       <a href="{{ '/briefs-archive/' | relative_url }}" class="btn">Briefs Archive</a>
+      <a href="{{ '/feedback/' | relative_url }}" class="btn">Rate This Brief</a>
       <a href="{{ site.series_url }}" class="btn" target="_blank" rel="noopener noreferrer">{{ site.series_name }}</a>
       {% if site.show_downloads %}
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
@@ -41,6 +43,7 @@
     <script defer src="{{ '/assets/js/share.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/archive.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/analytics.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/feedback.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('#content p').forEach(function (paragraph) {

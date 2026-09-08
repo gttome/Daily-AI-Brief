@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/editorial-learning.schema.json",
+  "title": "Daily AI Brief personal editorial learning state",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "learning_id", "evaluated_at", "status", "inputs", "sufficiency", "signals", "weight_recommendations", "shadow", "activation", "guardrails", "rollback"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "learning_id": {"type": "string", "pattern": "^dab-editorial-learning-[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9a-f]{8}$"},
+    "evaluated_at": {"type": "string", "format": "date-time"},
+    "status": {"enum": ["insufficient_evidence", "no_change_recommended", "shadow_ready", "pending_approval", "active", "expired", "rolled_back"]},
+    "inputs": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["feedback_ids", "brief_dates", "rated_stories", "focus_coverage"],
+      "properties": {
+        "feedback_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-personal-feedback-"}},
+        "brief_dates": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "date"}},
+        "rated_stories": {"type": "integer", "minimum": 0},
+        "focus_coverage": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["technical_ai_engineering", "applied_genai_knowledge_workers", "agents_non_technical_people"],
+          "properties": {
+            "technical_ai_engineering": {"type": "integer", "minimum": 0},
+            "applied_genai_knowledge_workers": {"type": "integer", "minimum": 0},
+            "agents_non_technical_people": {"type": "integer", "minimum": 0}
+          }
+        }
+      }
+    },
+    "sufficiency": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_editions", "minimum_ratings", "minimum_per_focus", "result", "reasons"],
+      "properties": {
+        "minimum_editions": {"const": 5},
+        "minimum_ratings": {"const": 30},
+        "minimum_per_focus": {"const": 10},
+        "result": {"enum": ["PASS", "INSUFFICIENT"]},
+        "reasons": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "signals": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["practical_value", "category_fit"],
+      "properties": {
+        "practical_value": {"type": ["number", "null"], "minimum": -1, "maximum": 1},
+        "category_fit": {"type": ["number", "null"], "minimum": -1, "maximum": 1}
+      }
+    },
+    "weight_recommendations": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["dimension", "delta", "rationale", "max_duration_editions"],
+        "properties": {
+          "dimension": {"enum": ["practical_value", "category_fit"]},
+          "delta": {"type": "number", "minimum": -0.1, "maximum": 0.1},
+          "rationale": {"type": "string", "minLength": 1},
+          "max_duration_editions": {"const": 10}
+        }
+      }
+    },
+    "shadow": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["minimum_candidate_sets", "candidate_sets_evaluated", "result", "rank_changes"],
+      "properties": {
+        "minimum_candidate_sets": {"const": 5},
+        "candidate_sets_evaluated": {"type": "integer", "minimum": 0},
+        "result": {"enum": ["NOT_READY", "PASS", "FAIL"]},
+        "rank_changes": {"type": "array", "items": {"type": "object"}}
+      }
+    },
+    "activation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["approval_state", "approved_at", "state", "effective_from", "max_editions"],
+      "properties": {
+        "approval_state": {"enum": ["pending", "approved", "rejected"]},
+        "approved_at": {"type": ["string", "null"], "format": "date-time"},
+        "state": {"enum": ["inactive", "shadow", "active", "expired", "rolled_back"]},
+        "effective_from": {"type": ["string", "null"], "format": "date"},
+        "max_editions": {"const": 10}
+      }
+    },
+    "guardrails": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["explicit_feedback_primary", "public_analytics_secondary", "popularity_only_selection_prohibited", "protected_dimensions", "category_balance_preserved", "human_approval_required"],
+      "properties": {
+        "explicit_feedback_primary": {"const": true},
+        "public_analytics_secondary": {"const": true},
+        "popularity_only_selection_prohibited": {"const": true},
+        "protected_dimensions": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"enum": ["significance", "freshness", "authority", "evidence_quality", "novelty"]}},
+        "category_balance_preserved": {"const": true},
+        "human_approval_required": {"const": true}
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["status", "triggers"],
+      "properties": {
+        "status": {"enum": ["READY", "NOT_READY", "EXECUTED"]},
+        "triggers": {"type": "array", "minItems": 3, "uniqueItems": true, "items": {"enum": ["qa_failure", "critical_or_high_defect", "protected_dimension_change", "category_balance_change", "edition_limit_reached"]}}
+      }
+    }
+  }
+}

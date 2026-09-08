@@ -1,0 +1,35 @@
+{
+  "record_version": "1.0.0",
+  "name": "Personal Editorial Learning",
+  "status": "CANDIDATE_QA_PASS",
+  "acceptance": {
+    "primary_reader_signal": "PASS",
+    "public_feedback_secondary_only": "PASS",
+    "minimum_rated_editions": 5,
+    "minimum_story_ratings": 30,
+    "minimum_ratings_per_focus": 10,
+    "shadow_candidate_sets": 5,
+    "practical_value_cap": 0.1,
+    "category_fit_cap": 0.05,
+    "protected_dimensions": ["significance", "freshness", "authority", "evidence_quality", "novelty"],
+    "maximum_active_editions": 10,
+    "human_approval_required": true,
+    "shareable_feedback_page": "PASS",
+    "personal_identifiers_collected": false
+  },
+  "qa": {
+    "local_result": "PASS",
+    "github_ci": "PENDING",
+    "github_pages": "PENDING",
+    "live_feedback_smoke": "PENDING"
+  },
+  "critical_defects": 0,
+  "high_defects": 0,
+  "limitations": [
+    "Anonymous public ratings are directional and cannot be attributed to the primary reader.",
+    "The recommendation engine remains inactive until five explicitly approved six-story feedback records exist."
+  ],
+  "rollback_status": "READY",
+  "rollback_target_sha": "09596a4fe1ed5001a7a95d5b2c605f77cc0fe736",
+  "gate_result": "CANDIDATE_PASS"
+}
