@@ -1,0 +1,420 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "full_v1",
+  "edition_id": "dab-edition-2026-09-08",
+  "brief_date": "2026-09-08",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief - September 8, 2026",
+  "published_at": "2026-09-08T14:30:00Z",
+  "coverage_period": "Primarily September 2–8, 2026. The September 8 source window was unusually light, so this edition uses the strongest verified, previously uncovered primary and rigorous practitioner sources without filler.",
+  "status": "validated",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-08-aad4e966",
+      "ordinal": 1,
+      "slug": "execution-traces-make-agent-reliability-measurable-across-real-development-workflows",
+      "permanent_url": "/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/",
+      "focus": "technical_ai_engineering",
+      "headline": "Execution traces make agent reliability measurable across real development workflows",
+      "event_date": "2026-09-04",
+      "topics": [
+        "agent evaluation",
+        "execution traces",
+        "observability",
+        "workflow reliability"
+      ],
+      "companies": [
+        "Hugging Face"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-1",
+        "alt": "Editorial illustration: Execution traces make agent reliability measurable across real development workflows",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260908-1"
+      },
+      "summary": "A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows.",
+      "why_it_matters": "Trace-level evidence makes loop and harness defects diagnosable and supports safer regression testing. The article is practitioner analysis rather than a peer-reviewed benchmark, so its recommendations should be validated on each organization’s own workflows.",
+      "george_implication": "Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.",
+      "source": {
+        "title": "Using Execution Traces to Evaluate AI Agent Behavior",
+        "organization": "Hugging Face",
+        "url": "https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior",
+        "normalized_url": "https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior",
+        "publication_date": "2026-09-04",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "research"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 32,
+        "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "what_to_do_now": {
+        "action": "teach",
+        "label": "Teach",
+        "rationale": "Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result."
+      },
+      "social": {
+        "title": "Execution traces make agent reliability measurable across real development workflows",
+        "description": "A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-4a71e714",
+      "ordinal": 2,
+      "slug": "github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o",
+      "permanent_url": "/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
+      "event_date": "2026-09-04",
+      "topics": [
+        "GitHub Copilot",
+        "coding agents",
+        "release management",
+        "code review"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-1",
+        "alt": "Editorial illustration: GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260908-1"
+      },
+      "summary": "GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly.",
+      "why_it_matters": "Agent products now change faster than many teams’ validation cycles. A recurring release checkpoint helps teams retest prompts, permissions, review rules, and repository safeguards instead of assuming stable behavior. Individual features still need separate verification before production use.",
+      "george_implication": "Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow.",
+      "source": {
+        "title": "GitHub Copilot weekly releases — August 31",
+        "organization": "GitHub",
+        "url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/",
+        "normalized_url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/",
+        "publication_date": "2026-09-04",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test",
+        "rationale": "Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow."
+      },
+      "social": {
+        "title": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
+        "description": "GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operationa",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-08eab2e3",
+      "ordinal": 3,
+      "slug": "gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le",
+      "permanent_url": "/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
+      "event_date": "2026-09-02",
+      "topics": [
+        "Google Workspace",
+        "custom instructions",
+        "context engineering",
+        "personalization"
+      ],
+      "companies": [
+        "Google"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-1",
+        "alt": "Editorial illustration: Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260908-1"
+      },
+      "summary": "Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance.",
+      "why_it_matters": "This turns a prompt habit into reusable context infrastructure for ordinary knowledge work. Persistent instructions can also spread an outdated or overly broad rule, so users should keep them concise, inspectable, and scoped to appropriate work.",
+      "george_implication": "Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.",
+      "source": {
+        "title": "Custom instructions for Gemini in Workspace now available in more apps",
+        "organization": "Google",
+        "url": "https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html",
+        "normalized_url": "https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html",
+        "publication_date": "2026-09-02",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Adopt",
+        "rationale": "Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work."
+      },
+      "social": {
+        "title": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
+        "description": "Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported wo",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-b9c617e3",
+      "ordinal": 4,
+      "slug": "google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human",
+      "permanent_url": "/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
+      "event_date": "2026-09-08",
+      "topics": [
+        "Google Vids",
+        "document transformation",
+        "video summaries",
+        "human review"
+      ],
+      "companies": [
+        "Google"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-1",
+        "alt": "Editorial illustration: Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260908-1"
+      },
+      "summary": "Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response.",
+      "why_it_matters": "The feature lowers the effort required to repurpose reports and training documents into multimedia. Generated narration and visuals can omit qualifications or overstate source content, so factual and accessibility review remain necessary before publishing.",
+      "george_implication": "Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse.",
+      "source": {
+        "title": "Turn Google Docs, PDFs, and Word files into video summaries in Google Vids",
+        "organization": "Google",
+        "url": "https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html",
+        "normalized_url": "https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test",
+        "rationale": "Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse."
+      },
+      "social": {
+        "title": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
+        "description": "Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing sou",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-3444f489",
+      "ordinal": 5,
+      "slug": "box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w",
+      "permanent_url": "/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/",
+      "focus": "agents_non_technical_people",
+      "headline": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
+      "event_date": "2026-09-08",
+      "topics": [
+        "Box",
+        "ChatGPT",
+        "Claude",
+        "connected work",
+        "administration"
+      ],
+      "companies": [
+        "Box"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-1",
+        "alt": "Editorial illustration: Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260908-1"
+      },
+      "summary": "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps.",
+      "why_it_matters": "Lower setup friction can make document-grounded agent workflows accessible to more non-technical workers. Added by default does not remove governance responsibility: administrators should still review access, approved use cases, data boundaries, and user training.",
+      "george_implication": "Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.",
+      "source": {
+        "title": "ChatGPT and Claude moving to Added by Default on September 8",
+        "organization": "Box",
+        "url": "https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8",
+        "normalized_url": "https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "what_to_do_now": {
+        "action": "update_policy",
+        "label": "Update Policy",
+        "rationale": "Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents."
+      },
+      "social": {
+        "title": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
+        "description": "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and plac",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-9061ff44",
+      "ordinal": 6,
+      "slug": "microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua",
+      "permanent_url": "/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/",
+      "focus": "agents_non_technical_people",
+      "headline": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
+      "event_date": "2026-09-08",
+      "topics": [
+        "Copilot Studio",
+        "Insights Agent",
+        "agent governance",
+        "usage evidence"
+      ],
+      "companies": [
+        "Microsoft"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg?v=20260908-1",
+        "alt": "Editorial illustration: Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260908-1"
+      },
+      "summary": "Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface.",
+      "why_it_matters": "Non-technical makers need evidence about adoption, failure, and value after an agent is launched. A conversational analytics layer may simplify that review, but this is an early community demonstration and available metrics and controls must be verified before relying on it.",
+      "george_implication": "Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.",
+      "source": {
+        "title": "Copilot Extensibility community call — September 2026",
+        "organization": "Microsoft",
+        "url": "https://techcommunity.microsoft.com/tag/copilot%20studio",
+        "normalized_url": "https://techcommunity.microsoft.com/tag/copilot%20studio",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_documentation",
+        "availability_status": "public_preview"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "what_to_do_now": {
+        "action": "monitor",
+        "label": "Monitor",
+        "rationale": "Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote."
+      },
+      "social": {
+        "title": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
+        "description": "Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility f",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg?v=20260908-1"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "empty",
+      "exception": "No recent substantive general video with a directly verified runtime of 20:00 or less met the evidence threshold."
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "exception": "No recent practical agent video for non-technical people with a directly verified runtime of 20:00 or less met the evidence threshold."
+    }
+  },
+  "editorial_takeaway": "The common thread is operationalization: reusable context, trace evidence, governed integrations, human-reviewed media, and post-launch agent insight are becoming part of everyday AI work.",
+  "provenance": {
+    "created_by": "Daily AI Brief recovery workflow",
+    "created_at": "2026-09-08T14:30:00Z",
+    "source_commit": "484ad0f7ddc878837cae30adcdbb96a1f36a7683"
+  }
+}
