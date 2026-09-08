@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import {fileURLToPath} from 'node:url';
 import {scanHistoricalBriefs} from '../lib/historical.mjs';
-import {isAppendOnly, parseJsonLines, validateLedgerEntries} from '../lib/ledger.mjs';
+import {appendLedgerEntry, correctionFingerprint, isAppendOnly, parseJsonLines, validateLedgerEntries} from '../lib/ledger.mjs';
 import {backtestNovelty, noveltyMatches} from '../lib/novelty.mjs';
 import {renderBody} from '../lib/render.mjs';
 import {validateCandidatePool} from '../lib/scoring.mjs';
@@ -76,10 +76,16 @@ test('reader output exposes evidence labels and material-update explanation', ()
 });
 
 test('correction and incident ledgers are append-only JSON Lines', () => {
-  const entry = JSON.stringify({schema_version: '1.0.0', entry_id: 'dab-correction-20260907T120000Z-deadbeef', entry_type: 'correction', summary: 'Correct a material fact.', evidence: ['https://example.com/evidence'], details: {kind: 'correction'}});
+  const entry = JSON.stringify({schema_version: '1.0.0', entry_id: 'dab-correction-20260907T120000Z-deadbeef', entry_type: 'correction', created_at: '2026-09-07T12:00:00Z', status: 'resolved', summary: 'Correct a material fact.', evidence: ['https://example.com/evidence'], affected_urls: ['https://example.com/story'], related_entry_ids: [], details: {kind: 'correction', edition_id: 'dab-edition-2026-09-07', story_id: 'dab-story-2026-09-07-deadbeef', materiality: 'material', prior_fact: 'Old fact.', corrected_fact: 'New fact.', reason: 'Primary evidence changed.', corrected_at: '2026-09-07T12:00:00Z'}});
   const previous = `${entry}\n`;
-  const next = `${previous}${JSON.stringify({...JSON.parse(entry), entry_id: 'dab-correction-20260907T130000Z-feedbeef'})}\n`;
+  const duplicate = {...JSON.parse(entry), entry_id: 'dab-correction-20260907T130000Z-feedbeef', created_at: '2026-09-07T13:00:00Z', details: {...JSON.parse(entry).details, corrected_at: '2026-09-07T13:00:00Z'}};
+  const next = `${previous}${JSON.stringify(duplicate)}\n`;
   assert.equal(isAppendOnly(previous, next), true);
   assert.equal(isAppendOnly(previous, next.replace('material fact', 'rewritten fact')), false);
-  assert.deepEqual(validateLedgerEntries(parseJsonLines(next)), []);
+  assert.equal(correctionFingerprint(JSON.parse(entry)), correctionFingerprint(duplicate));
+  assert.match(validateLedgerEntries(parseJsonLines(next)).join('\n'), /semantic correction fingerprint is duplicated/);
+  assert.deepEqual(appendLedgerEntry(previous, duplicate), {value: previous, appended: false, duplicateOf: 'dab-correction-20260907T120000Z-deadbeef'});
+
+  const reconciliation = {...JSON.parse(entry), entry_id: 'dab-correction-20260907T140000Z-cafebabe', created_at: '2026-09-07T14:00:00Z', summary: 'Reconciled a duplicate correction pair.', related_entry_ids: ['dab-correction-20260907T120000Z-deadbeef', 'dab-correction-20260907T130000Z-feedbeef'], details: {...JSON.parse(entry).details, story_id: null, materiality: 'non_material', prior_fact: 'Two ledger rows represented one correction.', corrected_fact: 'One canonical correction is counted and both immutable rows are retained.', reason: 'The duplicate was reconciled without rewriting append-only history.', corrected_at: '2026-09-07T14:00:00Z'}};
+  assert.deepEqual(validateLedgerEntries(parseJsonLines(`${next}${JSON.stringify(reconciliation)}\n`)), []);
 });
