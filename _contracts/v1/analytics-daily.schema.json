@@ -36,7 +36,11 @@
         "source_clicks": {"type": ["integer", "null"], "minimum": 0},
         "share_initiations": {"type": ["integer", "null"], "minimum": 0},
         "worth_watching_clicks": {"type": ["integer", "null"], "minimum": 0},
-        "retention_30s": {"type": ["integer", "null"], "minimum": 0}
+        "retention_30s": {"type": ["integer", "null"], "minimum": 0},
+        "feedback_most_useful": {"type": ["integer", "null"], "minimum": 0},
+        "feedback_useful": {"type": ["integer", "null"], "minimum": 0},
+        "feedback_neutral": {"type": ["integer", "null"], "minimum": 0},
+        "feedback_not_useful": {"type": ["integer", "null"], "minimum": 0}
       }
     }
   }

@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "learning_id": "dab-editorial-learning-2026-10-09-a1b2c3d4",
+  "evaluated_at": "2026-10-09T20:00:00Z",
+  "status": "pending_approval",
+  "inputs": {
+    "feedback_ids": ["dab-personal-feedback-2026-09-07-1a2b3c4d"],
+    "brief_dates": ["2026-09-07", "2026-09-14", "2026-09-21", "2026-09-28", "2026-10-05"],
+    "rated_stories": 30,
+    "focus_coverage": {"technical_ai_engineering": 10, "applied_genai_knowledge_workers": 10, "agents_non_technical_people": 10}
+  },
+  "sufficiency": {"minimum_editions": 5, "minimum_ratings": 30, "minimum_per_focus": 10, "result": "PASS", "reasons": []},
+  "signals": {"practical_value": 0.4, "category_fit": 0.3},
+  "weight_recommendations": [
+    {"dimension": "practical_value", "delta": 0.1, "rationale": "Primary-reader ratings consistently favor immediately reusable material.", "max_duration_editions": 10},
+    {"dimension": "category_fit", "delta": 0.05, "rationale": "Primary-reader ratings favor stories closely aligned with the intended audiences.", "max_duration_editions": 10}
+  ],
+  "shadow": {"minimum_candidate_sets": 5, "candidate_sets_evaluated": 5, "result": "PASS", "rank_changes": []},
+  "activation": {"approval_state": "pending", "approved_at": null, "state": "shadow", "effective_from": null, "max_editions": 10},
+  "guardrails": {
+    "explicit_feedback_primary": true,
+    "public_analytics_secondary": true,
+    "popularity_only_selection_prohibited": true,
+    "protected_dimensions": ["significance", "freshness", "authority", "evidence_quality", "novelty"],
+    "category_balance_preserved": true,
+    "human_approval_required": true
+  },
+  "rollback": {"status": "READY", "triggers": ["qa_failure", "critical_or_high_defect", "protected_dimension_change", "category_balance_change", "edition_limit_reached"]}
+}

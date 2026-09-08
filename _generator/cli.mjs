@@ -17,6 +17,7 @@ import {collectAnalytics} from './lib/analytics.mjs';
 import {readerStories} from './lib/reader.mjs';
 import {renderQaDashboard} from './lib/quality.mjs';
 import {validateIntegratedRepository} from './lib/integrity.mjs';
+import {activationState, buildPersonalLearning, loadPersonalFeedback, validatePersonalFeedback} from './lib/personal-learning.mjs';
 
 const generatorDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultRoot = path.resolve(generatorDir, '..');
@@ -117,6 +118,29 @@ if (command === 'import') {
   });
   const output = JSON.stringify(record, null, 2);
   if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
+} else if (command === 'validate-personal-feedback') {
+  if (!args.file) throw new Error('validate-personal-feedback requires --file');
+  const errors = validatePersonalFeedback(readJson(path.resolve(args.file)));
+  console.log(JSON.stringify({result: errors.length ? 'FAIL' : 'PASS', errors}, null, 2));
+  if (errors.length) process.exitCode = 1;
+} else if (command === 'evaluate-personal-learning') {
+  const candidateDir = path.join(repoRoot, '_records', 'editorial', 'candidates');
+  const pools = fs.existsSync(candidateDir) ? fs.readdirSync(candidateDir).filter(name => name.endsWith('.json')).sort().map(name => readJson(path.join(candidateDir, name))) : [];
+  const evaluatedAt = args['evaluated-at'] || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
+  const learning = buildPersonalLearning(loadPersonalFeedback(repoRoot), pools, evaluatedAt);
+  const output = JSON.stringify(learning, null, 2);
+  if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
+} else if (command === 'learning-status') {
+  if (!args.file) throw new Error('learning-status requires --file');
+  const learning = readJson(path.resolve(args.file));
+  const state = activationState(learning, {
+    editionCount: Number(args['edition-count'] || 0),
+    qaPassed: args['qa-passed'] !== 'false',
+    criticalHighDefects: Number(args['critical-high'] || 0),
+    protectedDimensionsChanged: args['protected-dimensions-changed'] === 'true',
+    categoryBalanceChanged: args['category-balance-changed'] === 'true'
+  });
+  console.log(JSON.stringify({result: 'PASS', activation_state: state}, null, 2));
 } else if (command === 'integration-check') {
   const date = args.date || latestBriefDate(repoRoot);
   const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
@@ -132,6 +156,6 @@ if (command === 'import') {
   console.log(JSON.stringify(result, null, 2));
   if (result.result !== 'PASS') process.exitCode = 1;
 } else {
-  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|refresh-derived|audit-accessibility|render-qa-dashboard|collect-analytics|integration-check|semantic> [options]');
+  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|refresh-derived|audit-accessibility|render-qa-dashboard|collect-analytics|validate-personal-feedback|evaluate-personal-learning|learning-status|integration-check|semantic> [options]');
   process.exitCode = 2;
 }

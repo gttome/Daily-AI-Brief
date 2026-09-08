@@ -102,6 +102,46 @@ ${image ? `![${story.image.alt}](${image})\n\n` : ''}**Summary:** ${story.summar
 `;
 }
 
+export function renderFeedbackPage(stories, briefDate) {
+  const current = stories.filter(story => story.brief_date === briefDate).sort((a, b) => a.ordinal - b.ordinal);
+  return `---
+layout: default
+title: Weekly Reader Feedback
+permalink: /feedback/
+description: One-minute anonymous feedback for the Daily Generative AI Brief.
+brief_date: ${briefDate}
+---
+
+# Rate this Daily AI Brief
+
+Rate the six stories with one tap each. Your anonymous feedback helps improve future briefs and can be shared with other readers.
+
+<div class="feedback-notice">
+  <strong>Privacy and editorial control:</strong> No name, email, cookie, persistent reader identifier, or written browsing history is collected. One rating per story is retained only in this browser to prevent accidental duplicate votes. Public ratings are a secondary signal and can never activate editorial weighting without George’s explicit approval.
+</div>
+
+<div class="weekly-feedback" data-feedback-brief-date="${briefDate}">
+${current.map(story => `<article class="feedback-story" data-feedback-story-id="${story.story_id}">
+  <p class="feedback-story-meta">${story.ordinal}. ${focusLabels[story.focus] || label(story.focus)}</p>
+  <h2><a href="{{ '${story.permanent_url}' | relative_url }}">${xml(story.headline)}</a></h2>
+  <div class="feedback-buttons" role="group" aria-label="Rate story ${story.ordinal}">
+    <button type="button" data-feedback-rating="most_useful">Most useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <p class="feedback-status" aria-live="polite"></p>
+</article>`).join('\n')}
+</div>
+
+<p><button id="share-feedback-page" class="feedback-share" type="button">Share this feedback page</button></p>
+
+<noscript><p>Rating controls require JavaScript. The story links remain available without JavaScript.</p></noscript>
+
+[← Back to today’s brief]({{ '/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+`;
+}
+
 export function archiveIndex(stories) {
   return {
     schema_version: '1.0.0',
@@ -210,6 +250,7 @@ export function readerFoundationFiles(edition, repoRoot) {
   files.set('data/archive-index.json', JSON.stringify(archiveIndex(stories), null, 2));
   files.set('feed.json', renderJsonFeed(stories));
   files.set('feed.xml', renderAtomFeed(stories, edition.published_at));
+  files.set('feedback/index.md', renderFeedbackPage(stories, edition.brief_date));
   for (const [name, content] of trends.files) files.set(name, content);
   return files;
 }

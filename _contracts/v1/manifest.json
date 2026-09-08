@@ -14,6 +14,8 @@
     ,{"name": "story_memory", "schema": "story-memory.schema.json", "valid_example": "examples/story-memory.valid.json"}
     ,{"name": "candidate_pool", "schema": "candidate-pool.schema.json", "valid_example": "examples/candidate-pool.valid.json"}
     ,{"name": "accessibility_review", "schema": "accessibility-review.schema.json", "valid_example": "examples/accessibility-review.valid.json"}
+    ,{"name": "personal_feedback", "schema": "personal-feedback.schema.json", "valid_example": "examples/personal-feedback.valid.json"}
+    ,{"name": "editorial_learning", "schema": "editorial-learning.schema.json", "valid_example": "examples/editorial-learning.valid.json"}
   ],
   "negative_examples": [
     "examples/edition.invalid-allocation.json",

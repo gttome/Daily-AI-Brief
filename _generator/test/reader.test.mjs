@@ -34,3 +34,14 @@ test('Atom and JSON feeds validate and point to permanent story URLs', () => {
   assert.equal(feed.items[0].url.startsWith('https://gttome.github.io/Daily-AI-Brief/stories/'), true);
   assert.equal(new Set(feed.items.map(item => item.id)).size, feed.items.length);
 });
+
+test('shareable feedback page exposes six accessible anonymous rating groups', () => {
+  const files = readerFoundationFiles(edition, root);
+  const page = files.get('feedback/index.md');
+  assert.match(page, /permalink: \/feedback\//);
+  assert.equal((page.match(/class="feedback-story"/g) || []).length, 6);
+  assert.equal((page.match(/role="group"/g) || []).length, 6);
+  assert.equal((page.match(/data-feedback-rating="most_useful"/g) || []).length, 6);
+  assert.match(page, /Public ratings are a secondary signal/);
+  assert.match(page, /Share this feedback page/);
+});

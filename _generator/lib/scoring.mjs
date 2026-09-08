@@ -1,4 +1,5 @@
 import {EXPECTED_FOCUS_ORDER} from './constants.mjs';
+import {activationState, boundedRecommendations} from './personal-learning.mjs';
 
 export const SCORE_DIMENSIONS = ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty', 'practical_value', 'category_fit'];
 
@@ -20,6 +21,11 @@ export function validateCandidatePool(pool) {
     if (!candidate.score?.rationale?.trim()) errors.push(`${label}.score.rationale is required`);
     if (!candidate.source?.normalized_url) errors.push(`${label}.source.normalized_url is required`);
     if (!candidate.source?.evidence_type || !candidate.source?.availability_status) errors.push(`${label}.source evidence and availability classifications are required`);
+    if (candidate.learning_adjustment) {
+      if (candidate.learning_adjustment.base_total !== candidate.score.total) errors.push(label + '.learning_adjustment.base_total must match score.total');
+      if (!['shadow', 'active'].includes(candidate.learning_adjustment.mode)) errors.push(label + '.learning_adjustment.mode is unsupported');
+      if (!candidate.learning_adjustment.learning_id?.startsWith('dab-editorial-learning-')) errors.push(label + '.learning_adjustment.learning_id is invalid');
+    }
     if (candidate.selected) {
       selected.push(candidate);
       if (!candidate.selection_rationale?.trim()) errors.push(`${label}.selection_rationale is required for selected candidates`);
@@ -34,15 +40,23 @@ export function validateCandidatePool(pool) {
   return errors;
 }
 
-export function feedbackAdjustedScore(candidate, feedback) {
-  if (!feedback || feedback.approval_state !== 'approved') return candidate.score.total;
-  if (!feedback.guardrails?.popularity_only_selection_prohibited || !feedback.guardrails?.hard_gates_override_weights || !feedback.guardrails?.category_balance_preserved || !feedback.guardrails?.human_approval_required) return candidate.score.total;
-  const deltas = new Map((feedback.weight_recommendations || []).map(item => [item.dimension, Math.max(-0.25, Math.min(0.25, item.delta))]));
+export function feedbackAdjustedScore(candidate, feedback, context = {}) {
+  if (!feedback) return candidate.score.total;
+  let recommendations = [];
+  if (feedback.learning_id) {
+    if (activationState(feedback, context) !== 'active') return candidate.score.total;
+    recommendations = boundedRecommendations(feedback);
+  } else {
+    if (feedback.approval_state !== 'approved') return candidate.score.total;
+    if (!feedback.guardrails?.popularity_only_selection_prohibited || !feedback.guardrails?.hard_gates_override_weights || !feedback.guardrails?.category_balance_preserved || !feedback.guardrails?.human_approval_required) return candidate.score.total;
+    recommendations = (feedback.weight_recommendations || []).map(item => ({...item, delta: Math.max(-0.25, Math.min(0.25, item.delta))}));
+  }
+  const deltas = new Map(recommendations.map(item => [item.dimension, item.delta]));
   return SCORE_DIMENSIONS.reduce((sum, key) => sum + candidate.score[key] * (1 + (deltas.get(key) || 0)), 0);
 }
 
-export function rankCandidates(candidates, feedback = null) {
+export function rankCandidates(candidates, feedback = null, context = {}) {
   return [...candidates]
-    .sort((a, b) => feedbackAdjustedScore(b, feedback) - feedbackAdjustedScore(a, feedback) || b.score.total - a.score.total || a.candidate_id.localeCompare(b.candidate_id))
-    .map((candidate, index) => ({...candidate, overall_rank: index + 1, feedback_adjusted_score: Number(feedbackAdjustedScore(candidate, feedback).toFixed(3))}));
+    .sort((a, b) => feedbackAdjustedScore(b, feedback, context) - feedbackAdjustedScore(a, feedback, context) || b.score.total - a.score.total || a.candidate_id.localeCompare(b.candidate_id))
+    .map((candidate, index) => ({...candidate, overall_rank: index + 1, feedback_adjusted_score: Number(feedbackAdjustedScore(candidate, feedback, context).toFixed(3))}));
 }

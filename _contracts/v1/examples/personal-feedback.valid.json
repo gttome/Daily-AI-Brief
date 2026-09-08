@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "feedback_id": "dab-personal-feedback-2026-09-07-1a2b3c4d",
+  "brief_date": "2026-09-07",
+  "submitted_at": "2026-09-11T20:00:00Z",
+  "source": "primary_reader_weekly_checkin",
+  "ratings": [
+    {"story_id": "dab-story-2026-09-07-3f4df523", "focus": "technical_ai_engineering", "rating": "most_useful", "reasons": ["book_or_course", "consulting"]},
+    {"story_id": "dab-story-2026-09-07-dab4bc85", "focus": "technical_ai_engineering", "rating": "useful", "reasons": ["important_emerging_concept"]},
+    {"story_id": "dab-story-2026-09-07-8053a573", "focus": "applied_genai_knowledge_workers", "rating": "useful", "reasons": ["tool_worth_testing"]},
+    {"story_id": "dab-story-2026-09-07-968c0cd8", "focus": "applied_genai_knowledge_workers", "rating": "neutral", "reasons": []},
+    {"story_id": "dab-story-2026-09-07-379d301c", "focus": "agents_non_technical_people", "rating": "useful", "reasons": ["book_or_course"]},
+    {"story_id": "dab-story-2026-09-07-fdefded2", "focus": "agents_non_technical_people", "rating": "not_useful", "reasons": ["not_relevant"]}
+  ],
+  "privacy": {"contains_personal_identifiers": false, "contains_browsing_history": false, "publishable": true},
+  "approved_for_learning": true
+}

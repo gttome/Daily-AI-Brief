@@ -4,6 +4,7 @@ import {auditEditionAccessibility} from './accessibility.mjs';
 import {validateFeeds} from './reader.mjs';
 import {generatedFiles} from './render.mjs';
 import {validateEdition} from './validate.mjs';
+import {validateEditorialLearning, validatePersonalFeedback} from './personal-learning.mjs';
 
 function files(dir, pattern = /\.json$/) {
   return fs.existsSync(dir) ? fs.readdirSync(dir).filter(name => pattern.test(name)).sort().map(name => path.join(dir, name)) : [];
@@ -45,6 +46,17 @@ export function validateOperationalRecords(repoRoot) {
     const record = JSON.parse(fs.readFileSync(file, 'utf8'));
     const guardrails = record.guardrails || {};
     if (!guardrails.popularity_only_selection_prohibited || !guardrails.hard_gates_override_weights || !guardrails.category_balance_preserved || !guardrails.human_approval_required) errors.push(`${path.relative(repoRoot, file)}: editorial guardrails are incomplete`);
+  }
+  const feedbackDates = new Set();
+  for (const file of files(path.join(repoRoot, '_records', 'personal-feedback'))) {
+    const record = JSON.parse(fs.readFileSync(file, 'utf8'));
+    errors.push(...validatePersonalFeedback(record).map(item => path.relative(repoRoot, file) + ': ' + item));
+    if (feedbackDates.has(record.brief_date)) errors.push(path.relative(repoRoot, file) + ': duplicate primary-reader feedback for ' + record.brief_date);
+    feedbackDates.add(record.brief_date);
+  }
+  for (const file of files(path.join(repoRoot, '_records', 'editorial-learning'))) {
+    const record = JSON.parse(fs.readFileSync(file, 'utf8'));
+    errors.push(...validateEditorialLearning(record).map(item => path.relative(repoRoot, file) + ': ' + item));
   }
   return errors;
 }

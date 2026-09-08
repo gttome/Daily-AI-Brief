@@ -62,7 +62,18 @@
           }
         },
         "selection_rationale": {"type": ["string", "null"]},
-        "rejection_reason": {"type": ["string", "null"]}
+        "rejection_reason": {"type": ["string", "null"]},
+        "learning_adjustment": {
+          "type": ["object", "null"],
+          "additionalProperties": false,
+          "required": ["learning_id", "mode", "base_total", "adjusted_total"],
+          "properties": {
+            "learning_id": {"type": "string", "pattern": "^dab-editorial-learning-"},
+            "mode": {"enum": ["shadow", "active"]},
+            "base_total": {"type": "number", "minimum": 0},
+            "adjusted_total": {"type": "number", "minimum": 0}
+          }
+        }
       }
     }
   }
