@@ -120,37 +120,24 @@ ${renderInlineFeedback(story)}` : ''}
 `;
 }
 
-export function renderFeedbackPage(stories, briefDate) {
-  const current = stories.filter(story => story.brief_date === briefDate).sort((a, b) => a.ordinal - b.ordinal);
+export function renderFeedbackPage(_stories, briefDate) {
   return `---
 layout: default
-title: Daily Reader Feedback
+title: Reader Ratings Have Moved
 permalink: /feedback/
-description: One-minute anonymous feedback for the Daily Generative AI Brief.
+description: Rate each Daily Generative AI Brief story directly beneath the article.
 brief_date: ${briefDate}
 ---
 
-# Rate this Daily AI Brief
+# Reader ratings are now built into every story
 
-Rate the six stories with one tap each. Your anonymous feedback helps improve future briefs and can be shared with other readers.
+The separate Daily Reader Feedback form has been retired. Each story now has its own four-button rating scale directly beneath the article, so you can read and rate in one place.
 
 <div class="feedback-notice">
-  <strong>Privacy and editorial control:</strong> No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One rating per story is retained only in this browser to prevent accidental duplicate votes. Explicit ratings from George and other readers are combined anonymously and may inform a recommendation, but only George can approve an editorial-weight change. Passive views and clicks remain secondary.
+  <strong>Privacy and editorial control:</strong> The inline controls collect only the brief date, stable story ID, and selected rating. No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One selection per story is retained only in this browser to prevent accidental duplicate votes.
 </div>
 
-<div class="daily-feedback" data-feedback-brief-date="${briefDate}">
-${current.map(story => `<article class="feedback-story">
-  <p class="feedback-story-meta">${story.ordinal}. ${focusLabels[story.focus] || label(story.focus)}</p>
-  <h2><a href="{{ '${story.permanent_url}' | relative_url }}">${xml(story.headline)}</a></h2>
-  ${renderInlineFeedback(story, false)}
-</article>`).join('\n')}
-</div>
-
-<p><button id="share-feedback-page" class="feedback-share" type="button">Share this feedback page</button></p>
-
-<noscript><p>Rating controls require JavaScript. The story links remain available without JavaScript.</p></noscript>
-
-[← Back to today’s brief]({{ '/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[Open today’s brief and rate its stories]({{ '/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
 `;
 }
 
