@@ -15,7 +15,7 @@
       "additionalProperties": false,
       "required": ["feedback_ids", "brief_dates", "rated_stories", "focus_coverage"],
       "properties": {
-        "feedback_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-personal-feedback-"}},
+        "feedback_ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-(personal|reader)-feedback-"}},
         "brief_dates": {"type": "array", "uniqueItems": true, "items": {"type": "string", "format": "date"}},
         "rated_stories": {"type": "integer", "minimum": 0},
         "focus_coverage": {

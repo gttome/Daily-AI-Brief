@@ -24,7 +24,7 @@ Create a new rollback commit from the last verified target; never reset or delet
 
 Analytics stores aggregate counters only, suppresses story counts below five, and states transport limitations. Monthly feedback remains pending until owner approval. Feedback cannot override novelty, evidence, source, accessibility, or 2/2/2 gates.
 
-Personal Editorial Learning uses George’s explicitly approved weekly six-story ratings as its primary signal. Anonymous ratings from the shareable /feedback/ page remain secondary and can never activate weights. Run node _generator/cli.mjs evaluate-personal-learning after a new approved feedback record. Do not request approval until the state reports five rated editions, 30 ratings, ten ratings per focus, and five passing candidate-set shadow comparisons. Approved weights fail closed after ten editions or immediately on any configured rollback trigger.
+Personal Editorial Learning uses explicit anonymous daily ratings from compact controls beneath each story. George is the primary reader, while shared readers may contribute to the same aggregate. Passive views/clicks remain secondary. The analytics workflow refreshes seven canonical editions and reevaluates learning automatically. Inline ratings may recommend only practical_value ±10%; category_fit requires richer explicitly approved owner feedback. No weight activates without George’s approval. Do not request approval until the state reports five completely rated editions, 30 ratings, ten ratings per focus, and five passing candidate-set shadow comparisons. Approved weights fail closed after ten editions or immediately on any configured rollback trigger.
 
 ## Known limitations
 

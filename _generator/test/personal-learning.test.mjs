@@ -8,6 +8,8 @@ import {
   activationState,
   buildPersonalLearning,
   evaluateSufficiency,
+  inlineFeedbackFromAnalytics,
+  mergeLearningFeedback,
   validateEditorialLearning,
   validatePersonalFeedback
 } from '../lib/personal-learning.mjs';
@@ -15,6 +17,7 @@ import {
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const feedbackExample = JSON.parse(fs.readFileSync(path.join(root, '_contracts/v1/examples/personal-feedback.valid.json'), 'utf8'));
 const poolExample = JSON.parse(fs.readFileSync(path.join(root, '_contracts/v1/examples/candidate-pool.valid.json'), 'utf8'));
+const currentEdition = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-07.json'), 'utf8'));
 
 function feedbackFor(date, index) {
   const record = structuredClone(feedbackExample);
@@ -29,6 +32,22 @@ function feedbackFor(date, index) {
 const dates = ['2026-09-07', '2026-09-14', '2026-09-21', '2026-09-28', '2026-10-05'];
 const completeFeedback = dates.map((date, index) => feedbackFor(date, index + 1));
 const completePools = dates.map(date => ({...structuredClone(poolExample), brief_date: date}));
+
+function inlineFor(date) {
+  return {
+    feedback_id: 'dab-reader-feedback-' + date,
+    brief_date: date,
+    source: 'anonymous_inline_buttons',
+    complete_edition: true,
+    ratings: Array.from({length: 6}, (_, index) => ({
+      story_id: 'dab-story-' + date + '-' + String(index + 1).padStart(8, '0'),
+      focus: ['technical_ai_engineering', 'technical_ai_engineering', 'applied_genai_knowledge_workers', 'applied_genai_knowledge_workers', 'agents_non_technical_people', 'agents_non_technical_people'][index],
+      rating: 'most_useful',
+      reasons: [],
+      weight: 1
+    }))
+  };
+}
 
 test('primary-reader feedback requires exactly six unique 2/2/2 ratings and no personal data', () => {
   assert.deepEqual(validatePersonalFeedback(feedbackExample), []);
@@ -60,6 +79,38 @@ test('five rated editions produce only bounded practical-value and category-fit 
   assert.equal(learning.weight_recommendations[0].delta, 0.1);
   assert.equal(learning.weight_recommendations[1].delta, 0.05);
   assert.deepEqual(validateEditorialLearning(learning), []);
+});
+
+test('six exact inline story aggregates become one complete daily learning record', () => {
+  const analytics = {
+    date: currentEdition.brief_date,
+    stories: currentEdition.stories.map(story => ({story_id: story.story_id, metrics: {
+      feedback_most_useful: 0,
+      feedback_useful: 1,
+      feedback_neutral: 0,
+      feedback_not_useful: 0
+    }}))
+  };
+  const record = inlineFeedbackFromAnalytics(analytics, currentEdition);
+  assert.equal(record.source, 'anonymous_inline_buttons');
+  assert.equal(record.ratings.length, 6);
+  assert.equal(record.ratings.every(rating => rating.weight === 1), true);
+});
+
+test('five daily inline editions inform only practical value and still require approval', () => {
+  const records = dates.map(inlineFor);
+  const learning = buildPersonalLearning(records, completePools, '2026-10-09T20:00:00Z');
+  assert.equal(learning.sufficiency.result, 'PASS');
+  assert.equal(learning.inputs.rated_stories, 30);
+  assert.deepEqual(learning.weight_recommendations.map(item => item.dimension), ['practical_value']);
+  assert.equal(learning.signals.category_fit, null);
+  assert.equal(activationState(learning), 'inactive');
+});
+
+test('complete inline aggregates take precedence over legacy manual feedback for the same edition', () => {
+  const merged = mergeLearningFeedback([completeFeedback[0]], [inlineFor(dates[0])]);
+  assert.equal(merged.length, 1);
+  assert.equal(merged[0].source, 'anonymous_inline_buttons');
 });
 
 test('personal weighting is inert until explicit approval and active state', () => {

@@ -33,7 +33,7 @@
   "pending_stages": [],
   "next_program": {"name": "Command Center", "status": "ELIGIBLE_NOT_STARTED"},
   "operational_extensions": [
-    {"name": "Personal Editorial Learning", "status": "PASS", "production_commit": "a90ce9488f12db643825221f2a0b7a3c6b33f991", "command_center_impact": "NONE"}
+    {"name": "Personal Editorial Learning", "status": "INLINE_DAILY_FEEDBACK_CANDIDATE", "production_commit": "a90ce9488f12db643825221f2a0b7a3c6b33f991", "command_center_impact": "NONE"}
   ],
   "last_evaluated_at": "2026-09-08T01:53:07Z",
   "critical_or_high_defects": [],

@@ -15,6 +15,12 @@ export const PERSONAL_LEARNING_POLICY = Object.freeze({
 export const FEEDBACK_RATINGS = Object.freeze({most_useful: 1, useful: 0.5, neutral: 0, not_useful: -1});
 export const FEEDBACK_REASONS = new Set(['book_or_course', 'consulting', 'tool_worth_testing', 'important_emerging_concept', 'too_technical', 'too_promotional', 'not_relevant']);
 const FOCUSES = ['technical_ai_engineering', 'applied_genai_knowledge_workers', 'agents_non_technical_people'];
+const INLINE_METRICS = {
+  most_useful: 'feedback_most_useful',
+  useful: 'feedback_useful',
+  neutral: 'feedback_neutral',
+  not_useful: 'feedback_not_useful'
+};
 
 export function validatePersonalFeedback(record) {
   const errors = [];
@@ -46,21 +52,74 @@ export function loadPersonalFeedback(repoRoot) {
     .map(name => JSON.parse(fs.readFileSync(path.join(dir, name), 'utf8')));
 }
 
+export function inlineFeedbackFromAnalytics(analytics, edition) {
+  if (!analytics || !edition || analytics.date !== edition.brief_date || !Array.isArray(analytics.stories) || edition.stories?.length !== 6) return null;
+  const byStory = new Map(analytics.stories.map(story => [story.story_id, story]));
+  const ratings = [];
+  for (const story of edition.stories) {
+    const metrics = byStory.get(story.story_id)?.metrics;
+    if (!metrics) return null;
+    let storyRatings = 0;
+    for (const [rating, metric] of Object.entries(INLINE_METRICS)) {
+      const weight = metrics[metric];
+      if (!Number.isInteger(weight) || weight < 0) return null;
+      storyRatings += weight;
+      if (weight) ratings.push({story_id: story.story_id, focus: story.focus, rating, reasons: [], weight});
+    }
+    if (!storyRatings) return null;
+  }
+  return {
+    feedback_id: 'dab-reader-feedback-' + edition.brief_date,
+    brief_date: edition.brief_date,
+    source: 'anonymous_inline_buttons',
+    complete_edition: true,
+    ratings
+  };
+}
+
+export function loadInlineFeedback(repoRoot) {
+  const analyticsDir = path.join(repoRoot, '_records', 'analytics');
+  const editionDir = path.join(repoRoot, '_data', 'editions');
+  if (!fs.existsSync(analyticsDir) || !fs.existsSync(editionDir)) return [];
+  return fs.readdirSync(analyticsDir)
+    .filter(name => name.endsWith('.json') && fs.existsSync(path.join(editionDir, name)))
+    .sort()
+    .map(name => inlineFeedbackFromAnalytics(
+      JSON.parse(fs.readFileSync(path.join(analyticsDir, name), 'utf8')),
+      JSON.parse(fs.readFileSync(path.join(editionDir, name), 'utf8'))
+    ))
+    .filter(Boolean);
+}
+
+export function mergeLearningFeedback(personalRecords, inlineRecords) {
+  const inlineDates = new Set(inlineRecords.map(record => record.brief_date));
+  return [...personalRecords.filter(record => !inlineDates.has(record.brief_date)), ...inlineRecords]
+    .sort((a, b) => a.brief_date.localeCompare(b.brief_date));
+}
+
+function isValidLearningRecord(record) {
+  if (record.source === 'primary_reader_weekly_checkin') return validatePersonalFeedback(record).length === 0;
+  if (record.source !== 'anonymous_inline_buttons' || record.complete_edition !== true || !record.feedback_id?.startsWith('dab-reader-feedback-')) return false;
+  const storyIds = new Set(record.ratings?.map(rating => rating.story_id));
+  return storyIds.size === 6 && record.ratings.every(rating => rating.rating in FEEDBACK_RATINGS && FOCUSES.includes(rating.focus) && Number.isInteger(rating.weight) && rating.weight > 0);
+}
+
 export function evaluateSufficiency(records) {
-  const valid = records.filter(record => validatePersonalFeedback(record).length === 0);
+  const valid = records.filter(isValidLearningRecord);
   const dates = [...new Set(valid.map(record => record.brief_date))].sort();
   const ratings = valid.flatMap(record => record.ratings);
-  const focusCoverage = Object.fromEntries(FOCUSES.map(focus => [focus, ratings.filter(rating => rating.focus === focus).length]));
+  const ratingCount = ratings.reduce((sum, rating) => sum + (rating.weight || 1), 0);
+  const focusCoverage = Object.fromEntries(FOCUSES.map(focus => [focus, ratings.filter(rating => rating.focus === focus).reduce((sum, rating) => sum + (rating.weight || 1), 0)]));
   const reasons = [];
   if (dates.length < PERSONAL_LEARNING_POLICY.minimumEditions) reasons.push('Need ' + (PERSONAL_LEARNING_POLICY.minimumEditions - dates.length) + ' more rated editions.');
-  if (ratings.length < PERSONAL_LEARNING_POLICY.minimumRatings) reasons.push('Need ' + (PERSONAL_LEARNING_POLICY.minimumRatings - ratings.length) + ' more story ratings.');
+  if (ratingCount < PERSONAL_LEARNING_POLICY.minimumRatings) reasons.push('Need ' + (PERSONAL_LEARNING_POLICY.minimumRatings - ratingCount) + ' more story ratings.');
   for (const focus of FOCUSES) if (focusCoverage[focus] < PERSONAL_LEARNING_POLICY.minimumPerFocus) reasons.push('Need ' + (PERSONAL_LEARNING_POLICY.minimumPerFocus - focusCoverage[focus]) + ' more ' + focus + ' ratings.');
   return {
     validRecords: valid,
     inputs: {
       feedback_ids: valid.map(record => record.feedback_id),
       brief_dates: dates,
-      rated_stories: ratings.length,
+      rated_stories: ratingCount,
       focus_coverage: focusCoverage
     },
     result: reasons.length ? 'INSUFFICIENT' : 'PASS',
@@ -72,30 +131,40 @@ function mean(values) {
   return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
 }
 
+function weightedMean(values) {
+  const weight = values.reduce((sum, item) => sum + item.weight, 0);
+  return weight ? values.reduce((sum, item) => sum + item.value * item.weight, 0) / weight : null;
+}
+
 export function preferenceSignals(records) {
   const ratings = records.flatMap(record => record.ratings);
   if (!ratings.length) return {practical_value: null, category_fit: null};
   const practical = ratings.map(item => {
     const value = FEEDBACK_RATINGS[item.rating];
     const practicalReason = item.reasons.some(reason => ['book_or_course', 'consulting', 'tool_worth_testing'].includes(reason));
-    return Math.max(-1, Math.min(1, value + (practicalReason && value > 0 ? 0.25 : 0)));
+    return {value: Math.max(-1, Math.min(1, value + (practicalReason && value > 0 ? 0.25 : 0))), weight: item.weight || 1};
   });
-  const category = ratings.map(item => {
+  const personalRecords = records.filter(record => record.source === 'primary_reader_weekly_checkin');
+  const personalRatings = personalRecords.flatMap(record => record.ratings);
+  const category = personalRatings.map(item => {
     const value = FEEDBACK_RATINGS[item.rating];
     const mismatch = item.reasons.some(reason => ['too_technical', 'too_promotional', 'not_relevant'].includes(reason));
     const positiveFit = item.reasons.includes('important_emerging_concept');
-    return Math.max(-1, Math.min(1, value + (positiveFit && value > 0 ? 0.25 : 0) - (mismatch ? 0.25 : 0)));
+    return {value: Math.max(-1, Math.min(1, value + (positiveFit && value > 0 ? 0.25 : 0) - (mismatch ? 0.25 : 0))), weight: item.weight || 1};
   });
+  const practicalMean = weightedMean(practical);
+  const categoryEvidenceReady = new Set(personalRecords.map(record => record.brief_date)).size >= PERSONAL_LEARNING_POLICY.minimumEditions && personalRatings.reduce((sum, item) => sum + (item.weight || 1), 0) >= PERSONAL_LEARNING_POLICY.minimumRatings;
+  const categoryMean = categoryEvidenceReady ? weightedMean(category) : null;
   return {
-    practical_value: Number(mean(practical).toFixed(3)),
-    category_fit: Number(mean(category).toFixed(3))
+    practical_value: practicalMean === null ? null : Number(practicalMean.toFixed(3)),
+    category_fit: categoryMean === null ? null : Number(categoryMean.toFixed(3))
   };
 }
 
 export function recommendationsFromSignals(signals) {
   const recommendations = [];
-  if (signals.practical_value >= 0.2) recommendations.push({dimension: 'practical_value', delta: 0.1, rationale: 'Primary-reader ratings consistently favor immediately reusable material.', max_duration_editions: 10});
-  else if (signals.practical_value <= -0.2) recommendations.push({dimension: 'practical_value', delta: -0.1, rationale: 'Primary-reader ratings indicate that practical usefulness is being overestimated.', max_duration_editions: 10});
+  if (signals.practical_value >= 0.2) recommendations.push({dimension: 'practical_value', delta: 0.1, rationale: 'Explicit daily ratings consistently favor immediately reusable material.', max_duration_editions: 10});
+  else if (signals.practical_value <= -0.2) recommendations.push({dimension: 'practical_value', delta: -0.1, rationale: 'Explicit daily ratings indicate that practical usefulness is being overestimated.', max_duration_editions: 10});
   if (signals.category_fit >= 0.2) recommendations.push({dimension: 'category_fit', delta: 0.05, rationale: 'Primary-reader ratings favor stories closely aligned with the intended audiences.', max_duration_editions: 10});
   else if (signals.category_fit <= -0.2) recommendations.push({dimension: 'category_fit', delta: -0.05, rationale: 'Primary-reader ratings indicate that audience fit is being overestimated.', max_duration_editions: 10});
   return recommendations;

@@ -68,7 +68,7 @@ export function validateAtomicChangedPaths(paths, date, {policyProfile = 'public
     required.add(`_data/story-memory/${date}.json`);
   }
   if (['reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1'].includes(policyProfile)) {
-    for (const output of ['data/archive-index.json', 'feed.xml', 'feed.json']) required.add(output);
+    for (const output of ['data/archive-index.json', 'feed.xml', 'feed.json', 'feedback/index.md']) required.add(output);
     const storyPagePrefix = `stories/${date}/`;
     const storyPageCount = new Set(paths.filter(name => name.startsWith(storyPagePrefix) && name.endsWith('.md'))).size;
     if (storyPageCount !== 6) required.add(`${storyPagePrefix}<exactly six story pages; found ${storyPageCount}>`);

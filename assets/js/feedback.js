@@ -1,11 +1,11 @@
 (() => {
   'use strict';
-  const panel = document.querySelector('.weekly-feedback[data-feedback-brief-date]');
-  if (!panel) return;
+  const groups = [...document.querySelectorAll('[data-feedback-story-id][data-feedback-brief-date]')]
+    .filter(group => group.querySelector('[data-feedback-rating]'));
+  if (!groups.length) return;
   const endpoint = 'https://countapi.mileshilliard.com/api/v1/hit';
-  const briefDate = panel.dataset.feedbackBriefDate;
   const storageKey = storyId => 'dab-feedback:' + storyId;
-  const counterKey = (storyId, rating) => ('dab-v1-' + briefDate + '-' + storyId + '-feedback_' + rating).replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 100);
+  const counterKey = (briefDate, storyId, rating) => ('dab-v1-' + briefDate + '-' + storyId + '-feedback_' + rating).replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 100);
 
   const storedRating = storyId => {
     try { return localStorage.getItem(storageKey(storyId)); } catch (_) { return null; }
@@ -21,8 +21,9 @@
     story.querySelector('.feedback-status').textContent = message;
   };
 
-  panel.querySelectorAll('.feedback-story[data-feedback-story-id]').forEach(story => {
+  groups.forEach(story => {
     const storyId = story.dataset.feedbackStoryId;
+    const briefDate = story.dataset.feedbackBriefDate;
     const prior = storedRating(storyId);
     if (prior) finish(story, prior, 'Your rating is saved in this browser.');
     story.addEventListener('click', async event => {
@@ -33,7 +34,7 @@
       story.querySelectorAll('[data-feedback-rating]').forEach(item => { item.disabled = true; });
       story.querySelector('.feedback-status').textContent = 'Recording…';
       try {
-        const response = await fetch(endpoint + '/' + encodeURIComponent(counterKey(storyId, rating)), {method: 'GET', mode: 'cors', cache: 'no-store', credentials: 'omit'});
+        const response = await fetch(endpoint + '/' + encodeURIComponent(counterKey(briefDate, storyId, rating)), {method: 'GET', mode: 'cors', cache: 'no-store', credentials: 'omit'});
         if (!response.ok) throw new Error('feedback transport unavailable');
         rememberRating(storyId, rating);
         finish(story, rating, 'Thank you—your anonymous rating was recorded.');
@@ -46,7 +47,7 @@
   });
 
   document.querySelector('#share-feedback-page')?.addEventListener('click', async () => {
-    const data = {title: document.title, text: 'Rate this week’s Daily Generative AI Brief.', url: location.href};
+    const data = {title: document.title, text: 'Rate today’s Daily Generative AI Brief.', url: location.href};
     if (navigator.share) {
       try { await navigator.share(data); return; } catch (_) {}
     }

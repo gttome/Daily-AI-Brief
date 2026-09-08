@@ -2,14 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {FOCUS} from './constants.mjs';
 import {formatDate, listBriefDates} from './util.mjs';
-import {readerFoundationFiles} from './reader.mjs';
+import {readerFoundationFiles, renderInlineFeedback} from './reader.mjs';
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 }
 
-function renderStory(story) {
+function renderStory(story, briefDate) {
   return `## ${story.ordinal}. ${story.headline}
 
 **Focus: ${FOCUS[story.focus]}**
@@ -32,7 +32,9 @@ ${story.source.evidence_type ? `**Evidence:** ${label(story.source.evidence_type
 
 **What to do now — ${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : ''}
 
-**Source:** [${story.source.title}](${story.source.url})`;
+**Source:** [${story.source.title}](${story.source.url})
+
+${renderInlineFeedback({...story, brief_date: briefDate})}`;
 }
 
 function runtime(value) {
@@ -60,7 +62,7 @@ export function renderBody(edition) {
 **Published:** ${formatDate(edition.brief_date)}  
 **Coverage period:** ${edition.coverage_period}
 
-${edition.stories.map(renderStory).join('\n\n')}
+${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\n')}
 
 ## Worth Watching
 
