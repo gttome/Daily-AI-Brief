@@ -1,6 +1,6 @@
 # Daily AI Brief Command Center — Work Handoff
 
-Prepared: September 8, 2026 (UTC; September 7 in America/Chicago)  
+Prepared: September 8, 2026 (UTC and America/Chicago)
 Repository: [gttome/Daily-AI-Brief](https://github.com/gttome/Daily-AI-Brief)  
 Production branch at handoff: `main`  
 Verified production head before this documentation change: `96db8680c318d02c2f8e1d7fea3e6d6f9554f00f`  
