@@ -10,7 +10,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/",
       "title": "Execution traces make agent reliability measurable across real development workflows",
       "summary": "A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-2",
       "date_published": "2026-09-08T13:00:00-05:00",
       "tags": [
         "agent evaluation",
@@ -25,7 +25,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/",
       "title": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
       "summary": "GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-2",
       "date_published": "2026-09-08T13:00:00-05:00",
       "tags": [
         "GitHub Copilot",
@@ -40,7 +40,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/",
       "title": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
       "summary": "Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-2",
       "date_published": "2026-09-08T13:00:00-05:00",
       "tags": [
         "Google Workspace",
@@ -55,7 +55,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/",
       "title": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
       "summary": "Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-2",
       "date_published": "2026-09-08T13:00:00-05:00",
       "tags": [
         "Google Vids",
@@ -70,7 +70,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/",
       "title": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
       "summary": "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-2",
       "date_published": "2026-09-08T13:00:00-05:00",
       "tags": [
         "Box",
@@ -85,7 +85,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/",
       "title": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
       "summary": "Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg?v=20260908-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg?v=20260908-2",
       "date_published": "2026-09-08T13:00:00-05:00",
       "tags": [
         "Copilot Studio",
