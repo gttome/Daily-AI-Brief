@@ -37,13 +37,13 @@ test('Atom and JSON feeds validate and point to permanent story URLs', () => {
   assert.equal(new Set(feed.items.map(item => item.id)).size, feed.items.length);
 });
 
-test('shareable feedback page exposes six accessible anonymous rating groups', () => {
+test('retired feedback route points readers to inline article ratings without duplicate controls', () => {
   const files = readerFoundationFiles(edition, root);
   const page = files.get('feedback/index.md');
   assert.match(page, /permalink: \/feedback\//);
-  assert.equal((page.match(/class="feedback-story"/g) || []).length, 6);
-  assert.equal((page.match(/role="group"/g) || []).length, 6);
-  assert.equal((page.match(/data-feedback-rating="most_useful"/g) || []).length, 6);
-  assert.match(page, /only George can approve an editorial-weight change/);
-  assert.match(page, /Share this feedback page/);
+  assert.equal((page.match(/class="feedback-story"/g) || []).length, 0);
+  assert.equal((page.match(/role="group"/g) || []).length, 0);
+  assert.equal((page.match(/data-feedback-rating=/g) || []).length, 0);
+  assert.match(page, /separate Daily Reader Feedback form has been retired/);
+  assert.match(page, /Open today’s brief and rate its stories/);
 });

@@ -107,7 +107,7 @@ The original roadmap proposed monthly analytics-informed editorial learning with
 
 - George is the primary reader; there may be few or no other readers.
 - Compact four-button controls appear under every story on the homepage, dated brief, and permanent story page: **Very useful, Useful, Neutral, Not useful**.
-- `/feedback/` remains a lightweight shareable page. Anyone receiving a shared brief or permanent story link can submit anonymous feedback.
+- The standalone `/feedback/` form is retired. Its URL remains as a lightweight notice that directs readers to the rating controls beneath each story.
 - Daily explicit ratings—not a weekly reminder—are the primary learning evidence. The earlier weekly feedback automation is retired and disabled.
 - A browser stores one selection per story locally to prevent accidental duplicate voting across page types.
 - The system collects no name, email, cookie, persistent reader identifier, free text, browsing history, credentials, or raw headers.
@@ -123,6 +123,10 @@ The original roadmap proposed monthly analytics-informed editorial learning with
 - The legacy manual personal-feedback contract remains available for richer reason-tagged input. A complete inline aggregate takes precedence for the same date to avoid double counting.
 
 The Command Center therefore needs a **Feedback & Editorial Learning** view that reports evidence sufficiency, signal limitations, protected dimensions, proposed `practical_value` delta, shadow effects, approval state, active-edition count, expiry, and rollback triggers. It must never label inactive weighting as active or infer approval from silence.
+
+### 6.3 Daily image standard
+
+Every final story image must use a dominant clean white or near-white background and meet a professional textbook-illustration standard. Images should be detailed, instructional, story-specific, and immediately understandable, with precise visual hierarchy, restrained accent colors, short readable labels, meaningful system or workflow components, and at least 40-pixel safety margins. Official source art is acceptable only when it meets the same standard; otherwise the publisher creates a custom illustration. The integrated QA stage inspects all six rendered images individually and together and rejects clipping, overlap, crowded text, generic imagery, repeated templates, misleading claims, or near-duplicate compositions.
 
 ## 7. Current production architecture
 
@@ -173,7 +177,7 @@ The Command Center is not a replacement for the public Brief. Preserve all exist
 | Archive/search | <https://gttome.github.io/Daily-AI-Brief/briefs-archive/> |
 | Public QA | <https://gttome.github.io/Daily-AI-Brief/qa/> |
 | Trend Radar | <https://gttome.github.io/Daily-AI-Brief/trend-radar/> |
-| Shareable feedback | <https://gttome.github.io/Daily-AI-Brief/feedback/> |
+| Retired feedback route | <https://gttome.github.io/Daily-AI-Brief/feedback/> |
 | Atom feed | <https://gttome.github.io/Daily-AI-Brief/feed.xml> |
 | JSON Feed | <https://gttome.github.io/Daily-AI-Brief/feed.json> |
 
@@ -185,8 +189,8 @@ At handoff, the relevant ChatGPT Work automations are:
 
 | Automation | State | Schedule/purpose |
 | --- | --- | --- |
-| `Daily AI Brief` | Enabled | Daily 7:00 AM America/Chicago; research, canonical `full_v1` creation, candidate PR, CI, atomic merge, Pages verification, and daily feedback invitation. |
-| `Daily Brief QA + Repair` | Enabled | Daily 7:20 AM America/Chicago; independent QA, safe repair, evidence, feedback/privacy/learning guardrails. |
+| `Daily AI Brief + QA` | Enabled | Daily 7:00 AM America/Chicago; research, canonical `full_v1` creation, candidate PR, CI, atomic merge, Pages verification, then independent QA, safe repair, permanent QA evidence, and inline-feedback/privacy/learning guardrails in the same run. |
+| `Daily Brief QA + Repair` | Disabled | Retired after its full audit-and-repair stage was integrated into the 7:00 AM publisher. |
 | `Weekly Brief Feedback` | Disabled | Retired after inline daily ratings replaced the weekly response mechanism. |
 | `Daily AI Brief Program` | Disabled | Completed 17-improvement controller; must remain disabled. |
 

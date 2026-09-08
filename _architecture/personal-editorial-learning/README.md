@@ -11,7 +11,7 @@ This operational extension optimizes the Daily AI Brief primarily for George whi
 3. Passive views, clicks, sharing, and retention remain secondary context only.
 4. Anonymous ratings may inform a recommendation, but only George can approve activation. Popularity alone can never determine selection.
 
-Compact four-button controls appear beneath every story on the homepage, dated brief, and canonical permanent story pages. The public /feedback/ page remains available as a dedicated shareable rating view. The client collects no name, email, cookie, persistent reader identifier, free text, or browsing history. A story can be rated once per browser. Aggregates can be affected by blockers, replay, cleared browser storage, or deliberate manipulation and are therefore directional.
+Compact four-button controls appear beneath every story on the homepage, dated brief, and canonical permanent story pages. The former public `/feedback/` form is retired and now only points readers to those inline controls. The client collects no name, email, cookie, persistent reader identifier, free text, or browsing history. A story can be rated once per browser. Aggregates can be affected by blockers, replay, cleared browser storage, or deliberate manipulation and are therefore directional.
 
 ## Evidence and activation
 
@@ -21,6 +21,6 @@ Five candidate pools must pass shadow comparison before an approval recommendati
 
 ## Daily use
 
-Rate stories as they are read; no weekly response or separate record-confirmation step is required. The same browser remembers each story’s selection and prevents accidental duplicate votes across the homepage, dated brief, feedback page, and permanent link.
+Rate stories as they are read; no weekly response, separate feedback page, or separate record-confirmation step is required. The same browser remembers each story’s selection and prevents accidental duplicate votes across the homepage, dated brief, and permanent link.
 
 The prior manual primary-reader feedback contract remains valid as a fallback for richer reason-tagged input. When both a complete inline aggregate and a manual record exist for the same date, the aggregate takes precedence to avoid double-counting.
