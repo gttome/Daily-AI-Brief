@@ -11,7 +11,7 @@ This operational extension optimizes the Daily AI Brief primarily for George whi
 3. Passive views, clicks, sharing, and retention remain secondary context only.
 4. Anonymous ratings may inform a recommendation, but only George can approve activation. Popularity alone can never determine selection.
 
-Compact four-button controls appear beneath every story on the homepage, dated brief, and canonical permanent story pages. The former public `/feedback/` form is retired and now only points readers to those inline controls. The client collects no name, email, cookie, persistent reader identifier, free text, or browsing history. A story can be rated once per browser. Aggregates can be affected by blockers, replay, cleared browser storage, or deliberate manipulation and are therefore directional.
+Compact four-button controls appear beneath every story on the homepage and dated brief. Canonical permanent story pages are optimized for sharing: they retain the Share control and share count but omit the rating scale. The former public `/feedback/` form is retired and now points readers to the daily brief controls. The client collects no name, email, cookie, persistent reader identifier, free text, or browsing history. A story can be rated once per browser. Aggregates can be affected by blockers, replay, cleared browser storage, or deliberate manipulation and are therefore directional.
 
 ## Evidence and activation
 

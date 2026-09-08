@@ -78,7 +78,7 @@ export function readerStories(repoRoot, edition, days = 30) {
   return [...byEditionPosition.values()].sort((a, b) => b.brief_date.localeCompare(a.brief_date) || a.ordinal - b.ordinal);
 }
 
-export function renderStoryPage(story, feedbackEnabled = false) {
+export function renderStoryPage(story) {
   const source = story.source_url || story.normalized_urls?.[0];
   const image = story.image?.url || '';
   const action = story.what_to_do_now ? `\n\n## What to do now\n\n**${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : '';
@@ -110,9 +110,7 @@ ${image ? `![${story.image.alt}](${image})\n\n` : ''}**Summary:** ${story.summar
 
 **For George’s work:** ${story.george_implication || 'See the dated edition for the original implication.'}${action}
 
-**Source:** ${source ? `[${story.source_title || story.source_organization || 'Original source'}](${source})` : 'Source retained in the dated edition.'}${feedbackEnabled ? `
-
-${renderInlineFeedback(story)}` : ''}
+**Source:** ${source ? `[${story.source_title || story.source_organization || 'Original source'}](${source})` : 'Source retained in the dated edition.'}
 
 ---
 
@@ -129,9 +127,9 @@ description: Rate each Daily Generative AI Brief story directly beneath the arti
 brief_date: ${briefDate}
 ---
 
-# Reader ratings are now built into every story
+# Reader ratings are built into each daily brief
 
-The separate Daily Reader Feedback form has been retired. Each story now has its own four-button rating scale directly beneath the article, so you can read and rate in one place.
+The separate Daily Reader Feedback form has been retired. Each story has its own four-button rating scale on the homepage and dated daily brief, so you can read and rate in one place. Shared permanent story pages show the Share control and share count without displaying the rating scale.
 
 <div class="feedback-notice">
   <strong>Privacy and editorial control:</strong> The inline controls collect only the brief date, stable story ID, and selected rating. No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One selection per story is retained only in this browser to prevent accidental duplicate votes.
@@ -243,10 +241,8 @@ export function readerFoundationFiles(edition, repoRoot) {
   const baseStories = readerStories(repoRoot, edition);
   const trends = trendFiles(baseStories, edition, repoRoot);
   const stories = trends.tagged;
-  const editionDir = path.join(repoRoot, '_data', 'editions');
-  const feedbackDates = new Set(fs.existsSync(editionDir) ? fs.readdirSync(editionDir).filter(name => name.endsWith('.json')).map(name => name.slice(0, -5)) : [edition.brief_date]);
   const files = new Map();
-  for (const story of stories) files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
+  for (const story of stories) files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story));
   files.set('archive.md', renderArchiveSearch(stories));
   files.set('data/archive-index.json', JSON.stringify(archiveIndex(stories), null, 2));
   files.set('feed.json', renderJsonFeed(stories));

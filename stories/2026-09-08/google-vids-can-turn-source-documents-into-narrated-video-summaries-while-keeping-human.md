@@ -34,17 +34,6 @@ story_id: dab-story-2026-09-08-b9c617e3
 
 **Source:** [Turn Google Docs, PDFs, and Word files into video summaries in Google Vids](https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-b9c617e3">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
 ---
 
 [← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})

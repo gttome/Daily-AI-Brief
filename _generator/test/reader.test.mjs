@@ -8,7 +8,7 @@ import {archiveIndex, readerFoundationFiles, readerStories, validateFeeds} from 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const edition = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-07.json'), 'utf8'));
 
-test('reader foundation creates six stable current story pages with story-specific social metadata', () => {
+test('reader foundation creates six stable shared story pages with social metadata, share identity, and no ratings', () => {
   const files = readerFoundationFiles(edition, root);
   const current = [...files.keys()].filter(name => name.startsWith('stories/2026-09-07/') && name.endsWith('.md'));
   assert.equal(current.length, 6);
@@ -17,8 +17,9 @@ test('reader foundation creates six stable current story pages with story-specif
     assert.match(page, new RegExp(`permalink: ${story.permanent_url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
     assert.ok(page.includes(JSON.stringify(story.social.title)));
     assert.ok(page.includes(JSON.stringify(story.social.image_url)));
-    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 1);
-    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 4);
+    assert.match(page, new RegExp(`story_id: ${story.story_id.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
+    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 0);
+    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 0);
   }
 });
 
@@ -46,4 +47,5 @@ test('retired feedback route points readers to inline article ratings without du
   assert.equal((page.match(/data-feedback-rating=/g) || []).length, 0);
   assert.match(page, /separate Daily Reader Feedback form has been retired/);
   assert.match(page, /Open today’s brief and rate its stories/);
+  assert.match(page, /Shared permanent story pages show the Share control and share count without displaying the rating scale/);
 });

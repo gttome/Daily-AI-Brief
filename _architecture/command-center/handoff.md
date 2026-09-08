@@ -106,7 +106,7 @@ The original Command Center proposal separately recommends a seven-calendar-day 
 The original roadmap proposed monthly analytics-informed editorial learning with a possible approved score adjustment of up to ±25%. The completed system is intentionally more conservative and better suited to the actual audience:
 
 - George is the primary reader; there may be few or no other readers.
-- Compact four-button controls appear under every story on the homepage, dated brief, and permanent story page: **Very useful, Useful, Neutral, Not useful**.
+- Compact four-button controls appear under every story on the homepage and dated brief: **Very useful, Useful, Neutral, Not useful**. Permanent shared-story pages omit ratings and retain the Share control and share count.
 - The standalone `/feedback/` form is retired. Its URL remains as a lightweight notice that directs readers to the rating controls beneath each story.
 - Daily explicit ratings—not a weekly reminder—are the primary learning evidence. The earlier weekly feedback automation is retired and disabled.
 - A browser stores one selection per story locally to prevent accidental duplicate voting across page types.
@@ -212,7 +212,7 @@ The later inline-feedback completion passed:
 - Candidate CI: [run 34180321734](https://github.com/gttome/Daily-AI-Brief/actions/runs/34180321734).
 - Main CI: [run 34180361248](https://github.com/gttome/Daily-AI-Brief/actions/runs/34180361248).
 - Pages: [run 34180360249](https://github.com/gttome/Daily-AI-Brief/actions/runs/34180360249).
-- Production smoke: homepage and dated brief each had six rating groups/24 controls; one permanent story had one group/four controls; `/feedback/` had six groups/24 controls; all returned HTTP 200.
+- Production target: homepage and dated brief each have six rating groups/24 controls; permanent shared-story pages have no rating controls and retain a Share control with share count; `/feedback/` is a form-free retirement notice.
 - Evidence-only PR validation: [run 34180721620](https://github.com/gttome/Daily-AI-Brief/actions/runs/34180721620); post-merge main CI [34180773411](https://github.com/gttome/Daily-AI-Brief/actions/runs/34180773411); Pages [34180772947](https://github.com/gttome/Daily-AI-Brief/actions/runs/34180772947).
 
 ## 11. Current editorial-learning state
