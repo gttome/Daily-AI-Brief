@@ -10,15 +10,16 @@ description: A privacy-safe 30-day view of Daily AI Brief publication quality.
 This public dashboard summarizes versioned QA records. It excludes credentials, identities, raw headers, and private operational details.
 
 <div class="qa-metrics" aria-label="Quality metrics">
-  <div><strong>1</strong><span>QA runs</span></div>
+  <div><strong>2</strong><span>QA runs</span></div>
   <div><strong>100%</strong><span>First-pass QA</span></div>
   <div><strong>100%</strong><span>Final pass</span></div>
-  <div><strong>0</strong><span>Recorded repairs</span></div>
+  <div><strong>1</strong><span>Recorded repairs</span></div>
   <div><strong>47s</strong><span>Average deploy latency</span></div>
 </div>
 
 | Edition | Initial | Final | Repairs | Deploy | Deterministic / Editorial |
 |---|---:|---:|---:|---:|---|
+| [September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) | PASS | PASS | 1 | —s | 3 / 2 |
 | [September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) | PASS | PASS | 0 | 47s | 3 / 1 |
 
 ## How to read this
