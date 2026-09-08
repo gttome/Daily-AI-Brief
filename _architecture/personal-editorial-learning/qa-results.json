@@ -1,7 +1,7 @@
 {
   "record_version": "1.1.0",
   "name": "Personal Editorial Learning — Inline Daily Feedback Completion",
-  "status": "CANDIDATE_QA_PASS",
+  "status": "PASS",
   "acceptance": {
     "compact_controls_beneath_every_current_brief_story": "PASS",
     "canonical_permanent_story_controls": "PASS",
@@ -20,7 +20,7 @@
     "maximum_active_editions": 10,
     "human_approval_required": true,
     "personal_identifiers_collected": false,
-    "weekly_checkin_retired": "PENDING"
+    "weekly_checkin_retired": "PASS"
   },
   "qa": {
     "local_result": "PASS",
@@ -29,12 +29,29 @@
     "repository_validation": "PASS",
     "integration_validation": "PASS",
     "learning_inactive_without_evidence_or_approval": "PASS",
-    "candidate_ci": "PENDING",
-    "main_ci": "PENDING",
-    "github_pages": "PENDING",
-    "live_inline_smoke": "PENDING",
-    "counter_transport": "PENDING",
-    "daily_analytics_evaluation": "PENDING"
+    "candidate_ci": {
+      "result": "PASS",
+      "run": "https://github.com/gttome/Daily-AI-Brief/actions/runs/34180321734"
+    },
+    "main_ci": {
+      "result": "PASS",
+      "run": "https://github.com/gttome/Daily-AI-Brief/actions/runs/34180361248"
+    },
+    "github_pages": {
+      "result": "PASS",
+      "run": "https://github.com/gttome/Daily-AI-Brief/actions/runs/34180360249"
+    },
+    "live_inline_smoke": {
+      "result": "PASS",
+      "homepage": {"http_status": 200, "story_groups": 6, "rating_controls": 24},
+      "dated_brief": {"http_status": 200, "story_groups": 6, "rating_controls": 24},
+      "permanent_story": {"http_status": 200, "story_groups": 1, "rating_controls": 4},
+      "feedback_page": {"http_status": 200, "story_groups": 6, "rating_controls": 24}
+    },
+    "counter_transport": "PASS_ISOLATED_KEY_HTTP_200",
+    "daily_analytics_evaluation": "DEPLOYED_TESTED_AND_WORKFLOW_VALIDATED",
+    "publisher_guardrails": "ACTIVE",
+    "independent_qa_guardrails": "ACTIVE"
   },
   "critical_defects": 0,
   "high_defects": 0,
@@ -45,5 +62,7 @@
   ],
   "rollback_status": "READY",
   "rollback_target_sha": "b2880b64e2b35c73499c68dc5233d4f9fbc28f21",
-  "gate_result": "CANDIDATE_PASS"
+  "production_commit": "44aab193afef859c1719140a6cfe22a84bb2a613",
+  "pull_request": "https://github.com/gttome/Daily-AI-Brief/pull/14",
+  "gate_result": "PASS"
 }
