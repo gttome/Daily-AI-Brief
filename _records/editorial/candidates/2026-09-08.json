@@ -117,13 +117,13 @@
       },
       "score": {
         "significance": 4,
-        "freshness": 5,
+        "freshness": 4,
         "authority": 5,
         "evidence_quality": 5,
         "novelty": 5,
         "practical_value": 5,
         "category_fit": 5,
-        "total": 34,
+        "total": 33,
         "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
       },
       "novelty_check": {
@@ -176,8 +176,8 @@
       "selected": true,
       "selected_ordinal": 6,
       "source": {
-        "url": "https://techcommunity.microsoft.com/tag/copilot%20studio",
-        "normalized_url": "https://techcommunity.microsoft.com/tag/copilot%20studio",
+        "url": "https://techcommunity.microsoft.com/event/sharepoint-events/copilot-microsoft-365--power-platform-product-updates-call/4553894",
+        "normalized_url": "https://techcommunity.microsoft.com/event/sharepoint-events/copilot-microsoft-365--power-platform-product-updates-call/4553894",
         "evidence_type": "official_documentation",
         "availability_status": "public_preview"
       },
