@@ -2,7 +2,7 @@
 layout: default
 title: "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop"
 description: "Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing sou"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-1"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-2"
 permalink: /stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/
 brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-b9c617e3
@@ -15,12 +15,12 @@ story_id: dab-story-2026-09-08-b9c617e3
 <span class="story-data" data-story-id="dab-story-2026-09-08-b9c617e3" hidden></span>
 
 **Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 8, 2026  
+**Date:** September 2, 2026  
 **Topics:** Google Vids, document transformation, video summaries, human review  
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Editorial illustration: Google Vids can turn source documents into narrated video summaries while keeping human review in the loop](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-1)
+![Editorial illustration: Google Vids can turn source documents into narrated video summaries while keeping human review in the loop](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-2)
 
 **Summary:** Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response.
 

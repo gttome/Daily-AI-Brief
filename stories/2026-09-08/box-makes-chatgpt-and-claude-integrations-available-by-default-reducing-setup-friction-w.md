@@ -2,7 +2,7 @@
 layout: default
 title: "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control"
 description: "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and plac"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-1"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-2"
 permalink: /stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/
 brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-3444f489
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-08-3444f489
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Editorial illustration: Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-1)
+![Editorial illustration: Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-2)
 
 **Summary:** Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps.
 

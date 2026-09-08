@@ -2,7 +2,7 @@
 layout: default
 title: "Execution traces make agent reliability measurable across real development workflows"
 description: "A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-1"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-2"
 permalink: /stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/
 brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-aad4e966
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-08-aad4e966
 **Evidence:** Practitioner Analysis  
 **Availability:** Research
 
-![Editorial illustration: Execution traces make agent reliability measurable across real development workflows](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-1)
+![Editorial illustration: Execution traces make agent reliability measurable across real development workflows](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-2)
 
 **Summary:** A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows.
 
