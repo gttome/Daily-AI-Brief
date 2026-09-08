@@ -41,6 +41,15 @@ test('generator is deterministic for identical inputs', () => {
   assert.deepEqual([...first], [...second]);
 });
 
+test('homepage and dated brief place compact daily feedback controls under all six stories', () => {
+  const files = generatedFiles(edition, root);
+  for (const name of ['index.md', `briefs/${edition.brief_date}.md`]) {
+    const page = files.get(name);
+    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 6);
+    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 24);
+  }
+});
+
 test('publication stage contains canonical, compatibility, and operational records', () => {
   const out = fs.mkdtempSync(path.join(os.tmpdir(), 'dab-stage-'));
   const result = buildPublicationStage(edition, root, out, {baselineSha: baseline, observedAt: '2026-09-07T12:00:00Z'});
@@ -96,8 +105,9 @@ test('reader-foundation transaction requires story pages, search index, and both
   ];
   const incomplete = validateAtomicChangedPaths(base, date, {policyProfile: 'reader_foundation_v1'});
   assert.ok(incomplete.includes('feed.xml'));
+  assert.ok(incomplete.includes('feedback/index.md'));
   assert.ok(incomplete.some(item => item.includes('exactly six story pages')));
-  const complete = [...base, 'data/archive-index.json', 'feed.xml', 'feed.json', ...Array.from({length: 6}, (_, index) => `stories/${date}/story-${index + 1}.md`)];
+  const complete = [...base, 'data/archive-index.json', 'feed.xml', 'feed.json', 'feedback/index.md', ...Array.from({length: 6}, (_, index) => `stories/${date}/story-${index + 1}.md`)];
   assert.deepEqual(validateAtomicChangedPaths(complete, date, {policyProfile: 'reader_foundation_v1'}), []);
 });
 

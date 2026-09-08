@@ -1,59 +1,49 @@
 {
-  "record_version": "1.0.0",
-  "name": "Personal Editorial Learning",
-  "status": "PASS",
+  "record_version": "1.1.0",
+  "name": "Personal Editorial Learning — Inline Daily Feedback Completion",
+  "status": "CANDIDATE_QA_PASS",
   "acceptance": {
-    "primary_reader_signal": "PASS",
-    "public_feedback_secondary_only": "PASS",
+    "compact_controls_beneath_every_current_brief_story": "PASS",
+    "canonical_permanent_story_controls": "PASS",
+    "shareable_feedback_page": "PASS",
+    "one_rating_per_browser_story": "PASS",
+    "anonymous_aggregate_learning_evidence": "PASS",
+    "passive_analytics_secondary_only": "PASS",
+    "seven_day_rating_refresh": "PASS",
     "minimum_rated_editions": 5,
     "minimum_story_ratings": 30,
     "minimum_ratings_per_focus": 10,
     "shadow_candidate_sets": 5,
-    "practical_value_cap": 0.1,
-    "category_fit_cap": 0.05,
+    "inline_practical_value_cap": 0.1,
+    "inline_category_fit_change": 0,
     "protected_dimensions": ["significance", "freshness", "authority", "evidence_quality", "novelty"],
     "maximum_active_editions": 10,
     "human_approval_required": true,
-    "shareable_feedback_page": "PASS",
-    "personal_identifiers_collected": false
+    "personal_identifiers_collected": false,
+    "weekly_checkin_retired": "PENDING"
   },
   "qa": {
     "local_result": "PASS",
-    "local_tests": "53/53 PASS",
+    "local_tests": "58/58 PASS",
     "contract_fixtures": "15/15 PASS",
-    "candidate_ci": {
-      "result": "PASS",
-      "run": "https://github.com/gttome/Daily-AI-Brief/actions/runs/34177769363"
-    },
-    "main_ci": {
-      "result": "PASS",
-      "run": "https://github.com/gttome/Daily-AI-Brief/actions/runs/34177834586"
-    },
-    "github_pages": {
-      "result": "PASS",
-      "run": "https://github.com/gttome/Daily-AI-Brief/actions/runs/34177834161"
-    },
-    "live_feedback_smoke": {
-      "result": "PASS",
-      "url": "https://gttome.github.io/Daily-AI-Brief/feedback/",
-      "http_status": 200,
-      "story_groups": 6,
-      "rating_controls": 24,
-      "counter_transport": "PASS_ISOLATED_KEY"
-    },
-    "publisher_guardrails": "ACTIVE",
-    "independent_qa_guardrails": "ACTIVE",
-    "weekly_feedback_checkin": "ACTIVE_FRIDAY_AFTERNOON_AMERICA_CHICAGO"
+    "repository_validation": "PASS",
+    "integration_validation": "PASS",
+    "learning_inactive_without_evidence_or_approval": "PASS",
+    "candidate_ci": "PENDING",
+    "main_ci": "PENDING",
+    "github_pages": "PENDING",
+    "live_inline_smoke": "PENDING",
+    "counter_transport": "PENDING",
+    "daily_analytics_evaluation": "PENDING"
   },
   "critical_defects": 0,
   "high_defects": 0,
   "limitations": [
-    "Anonymous public ratings are directional and cannot be attributed to the primary reader.",
-    "The recommendation engine remains inactive until five explicitly approved six-story feedback records exist."
+    "Anonymous ratings cannot be attributed to George or another reader.",
+    "Cleared browser storage, blockers, bots, or replay can affect directional counts.",
+    "Only canonical editions within the seven-edition refresh window accept learning-eligible delayed ratings."
   ],
   "rollback_status": "READY",
-  "rollback_target_sha": "09596a4fe1ed5001a7a95d5b2c605f77cc0fe736",
-  "production_commit": "a90ce9488f12db643825221f2a0b7a3c6b33f991",
-  "pull_request": "https://github.com/gttome/Daily-AI-Brief/pull/12",
-  "gate_result": "PASS"
+  "rollback_target_sha": "b2880b64e2b35c73499c68dc5233d4f9fbc28f21",
+  "gate_result": "CANDIDATE_PASS"
 }

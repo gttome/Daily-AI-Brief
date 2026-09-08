@@ -28,9 +28,24 @@ for (const date of dates) {
   try {
     execFileSync('git', ['cat-file', '-e', `${base}:_data/editions/${date}.json`], {stdio: 'ignore'});
     const retained = [
+      `_data/editions/${date}.json`,
       `_records/editorial/candidates/${date}.json`,
       `_data/story-memory/${date}.json`,
+      `_records/accessibility/${date}.json`,
+      `_records/trends/${date}.json`,
+      `_records/editorial-feedback/${date.slice(0, 7)}.json`,
+      `briefs/${date}.md`,
+      'latest.md',
+      'index.md',
+      'archive.md',
       'README.md',
+      'data/archive-index.json',
+      'feed.xml',
+      'feed.json',
+      'feedback/index.md',
+      'qa/index.md',
+      'data/qa/30-day.json',
+      ...execFileSync('git', ['ls-tree', '-r', '--name-only', head, `stories/${date}`], {encoding: 'utf8'}).trim().split('\n').filter(Boolean),
       ...execFileSync('git', ['ls-tree', '-r', '--name-only', head, `briefs/images/${date}`], {encoding: 'utf8'}).trim().split('\n').filter(Boolean)
     ];
     validationPaths = [...new Set([...changed, ...retained])];

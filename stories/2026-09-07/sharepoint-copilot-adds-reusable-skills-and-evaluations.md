@@ -34,6 +34,17 @@ story_id: dab-story-2026-09-07-379d301c
 
 **Source:** [Microsoft SharePoint Blog — What's New in Copilot in SharePoint: September 2026](https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422)
 
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-379d301c">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
 ---
 
 [← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})

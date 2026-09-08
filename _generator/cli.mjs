@@ -13,11 +13,11 @@ import {scanHistoricalBriefs} from './lib/historical.mjs';
 import {backtestNovelty} from './lib/novelty.mjs';
 import {validateCandidatePool} from './lib/scoring.mjs';
 import {accessibilityReview} from './lib/accessibility.mjs';
-import {collectAnalytics} from './lib/analytics.mjs';
+import {collectAnalytics, refreshFeedbackAnalytics} from './lib/analytics.mjs';
 import {readerStories} from './lib/reader.mjs';
 import {renderQaDashboard} from './lib/quality.mjs';
 import {validateIntegratedRepository} from './lib/integrity.mjs';
-import {activationState, buildPersonalLearning, loadPersonalFeedback, validatePersonalFeedback} from './lib/personal-learning.mjs';
+import {activationState, buildPersonalLearning, loadInlineFeedback, loadPersonalFeedback, mergeLearningFeedback, validatePersonalFeedback} from './lib/personal-learning.mjs';
 
 const generatorDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultRoot = path.resolve(generatorDir, '..');
@@ -118,6 +118,28 @@ if (command === 'import') {
   });
   const output = JSON.stringify(record, null, 2);
   if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
+} else if (command === 'refresh-feedback-analytics') {
+  const endDate = args.date || latestBriefDate(repoRoot);
+  const editionDir = path.join(repoRoot, '_data', 'editions');
+  const days = Math.max(1, Math.min(30, Number(args.days || 7)));
+  const names = fs.readdirSync(editionDir).filter(name => name.endsWith('.json') && name.slice(0, 10) <= endDate).sort().slice(-days);
+  const endpoint = args.endpoint || 'https://countapi.mileshilliard.com/api/v1/get';
+  const results = [];
+  for (const name of names) {
+    const edition = readJson(path.join(editionDir, name));
+    const outputPath = path.join(repoRoot, '_records', 'analytics', name);
+    const existing = fs.existsSync(outputPath) ? readJson(outputPath) : null;
+    const result = await refreshFeedbackAnalytics(existing, edition.brief_date, edition.stories, async key => {
+      const response = await fetch(`${endpoint}/${encodeURIComponent(key)}`, {headers: {'user-agent': 'Daily-AI-Brief-feedback-aggregator/1.0'}});
+      if (response.status === 404) return 0;
+      if (!response.ok) throw new Error(`counter transport ${response.status}`);
+      return Number((await response.json()).value);
+    });
+    writeText(outputPath, JSON.stringify(result.record, null, 2));
+    results.push({date: edition.brief_date, feedback_status: result.feedback_status, failures: result.failures});
+  }
+  console.log(JSON.stringify({result: results.every(item => item.feedback_status === 'complete') ? 'PASS' : 'FAIL', days: results}, null, 2));
+  if (results.some(item => item.feedback_status !== 'complete')) process.exitCode = 1;
 } else if (command === 'validate-personal-feedback') {
   if (!args.file) throw new Error('validate-personal-feedback requires --file');
   const errors = validatePersonalFeedback(readJson(path.resolve(args.file)));
@@ -127,7 +149,8 @@ if (command === 'import') {
   const candidateDir = path.join(repoRoot, '_records', 'editorial', 'candidates');
   const pools = fs.existsSync(candidateDir) ? fs.readdirSync(candidateDir).filter(name => name.endsWith('.json')).sort().map(name => readJson(path.join(candidateDir, name))) : [];
   const evaluatedAt = args['evaluated-at'] || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
-  const learning = buildPersonalLearning(loadPersonalFeedback(repoRoot), pools, evaluatedAt);
+  const feedback = mergeLearningFeedback(loadPersonalFeedback(repoRoot), loadInlineFeedback(repoRoot));
+  const learning = buildPersonalLearning(feedback, pools, evaluatedAt);
   const output = JSON.stringify(learning, null, 2);
   if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
 } else if (command === 'learning-status') {
@@ -156,6 +179,6 @@ if (command === 'import') {
   console.log(JSON.stringify(result, null, 2));
   if (result.result !== 'PASS') process.exitCode = 1;
 } else {
-  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|refresh-derived|audit-accessibility|render-qa-dashboard|collect-analytics|validate-personal-feedback|evaluate-personal-learning|learning-status|integration-check|semantic> [options]');
+  console.error('Usage: cli.mjs <import|validate-repo|shadow|evaluate-shadow|backfill-memory|backtest-novelty|validate-candidates|generate|refresh-derived|audit-accessibility|render-qa-dashboard|collect-analytics|refresh-feedback-analytics|validate-personal-feedback|evaluate-personal-learning|learning-status|integration-check|semantic> [options]');
   process.exitCode = 2;
 }

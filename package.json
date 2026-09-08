@@ -13,6 +13,7 @@
     "refresh-derived": "node _generator/cli.mjs refresh-derived",
     "audit-accessibility": "node _generator/cli.mjs audit-accessibility",
     "collect-analytics": "node _generator/cli.mjs collect-analytics",
+    "refresh-feedback-analytics": "node _generator/cli.mjs refresh-feedback-analytics",
     "validate-personal-feedback": "node _generator/cli.mjs validate-personal-feedback",
     "evaluate-personal-learning": "node _generator/cli.mjs evaluate-personal-learning",
     "learning-status": "node _generator/cli.mjs learning-status",

@@ -1,3 +1,5 @@
+import fs from 'node:fs';
+import path from 'node:path';
 import {PUBLIC_BASE} from './constants.mjs';
 import {scanHistoricalBriefs} from './historical.mjs';
 import {formatDate} from './util.mjs';
@@ -13,6 +15,20 @@ const focusLabels = {
 const label = value => String(value || 'unspecified').split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 const yamlString = value => JSON.stringify(String(value || ''));
 const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+
+export function renderInlineFeedback(story, compact = true) {
+  const className = compact ? 'story-feedback story-feedback-compact' : 'story-feedback';
+  return `<div class="${className}" data-feedback-brief-date="${story.brief_date}" data-feedback-story-id="${story.story_id}">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>`;
+}
 
 function canonicalStory(story, edition) {
   return {
@@ -62,7 +78,7 @@ export function readerStories(repoRoot, edition, days = 30) {
   return [...byEditionPosition.values()].sort((a, b) => b.brief_date.localeCompare(a.brief_date) || a.ordinal - b.ordinal);
 }
 
-export function renderStoryPage(story) {
+export function renderStoryPage(story, feedbackEnabled = false) {
   const source = story.source_url || story.normalized_urls?.[0];
   const image = story.image?.url || '';
   const action = story.what_to_do_now ? `\n\n## What to do now\n\n**${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : '';
@@ -94,7 +110,9 @@ ${image ? `![${story.image.alt}](${image})\n\n` : ''}**Summary:** ${story.summar
 
 **For George’s work:** ${story.george_implication || 'See the dated edition for the original implication.'}${action}
 
-**Source:** ${source ? `[${story.source_title || story.source_organization || 'Original source'}](${source})` : 'Source retained in the dated edition.'}
+**Source:** ${source ? `[${story.source_title || story.source_organization || 'Original source'}](${source})` : 'Source retained in the dated edition.'}${feedbackEnabled ? `
+
+${renderInlineFeedback(story)}` : ''}
 
 ---
 
@@ -106,7 +124,7 @@ export function renderFeedbackPage(stories, briefDate) {
   const current = stories.filter(story => story.brief_date === briefDate).sort((a, b) => a.ordinal - b.ordinal);
   return `---
 layout: default
-title: Weekly Reader Feedback
+title: Daily Reader Feedback
 permalink: /feedback/
 description: One-minute anonymous feedback for the Daily Generative AI Brief.
 brief_date: ${briefDate}
@@ -117,20 +135,14 @@ brief_date: ${briefDate}
 Rate the six stories with one tap each. Your anonymous feedback helps improve future briefs and can be shared with other readers.
 
 <div class="feedback-notice">
-  <strong>Privacy and editorial control:</strong> No name, email, cookie, persistent reader identifier, or written browsing history is collected. One rating per story is retained only in this browser to prevent accidental duplicate votes. Public ratings are a secondary signal and can never activate editorial weighting without George’s explicit approval.
+  <strong>Privacy and editorial control:</strong> No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One rating per story is retained only in this browser to prevent accidental duplicate votes. Explicit ratings from George and other readers are combined anonymously and may inform a recommendation, but only George can approve an editorial-weight change. Passive views and clicks remain secondary.
 </div>
 
-<div class="weekly-feedback" data-feedback-brief-date="${briefDate}">
-${current.map(story => `<article class="feedback-story" data-feedback-story-id="${story.story_id}">
+<div class="daily-feedback" data-feedback-brief-date="${briefDate}">
+${current.map(story => `<article class="feedback-story">
   <p class="feedback-story-meta">${story.ordinal}. ${focusLabels[story.focus] || label(story.focus)}</p>
   <h2><a href="{{ '${story.permanent_url}' | relative_url }}">${xml(story.headline)}</a></h2>
-  <div class="feedback-buttons" role="group" aria-label="Rate story ${story.ordinal}">
-    <button type="button" data-feedback-rating="most_useful">Most useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <p class="feedback-status" aria-live="polite"></p>
+  ${renderInlineFeedback(story, false)}
 </article>`).join('\n')}
 </div>
 
@@ -244,8 +256,10 @@ export function readerFoundationFiles(edition, repoRoot) {
   const baseStories = readerStories(repoRoot, edition);
   const trends = trendFiles(baseStories, edition, repoRoot);
   const stories = trends.tagged;
+  const editionDir = path.join(repoRoot, '_data', 'editions');
+  const feedbackDates = new Set(fs.existsSync(editionDir) ? fs.readdirSync(editionDir).filter(name => name.endsWith('.json')).map(name => name.slice(0, -5)) : [edition.brief_date]);
   const files = new Map();
-  for (const story of stories) files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story));
+  for (const story of stories) files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
   files.set('archive.md', renderArchiveSearch(stories));
   files.set('data/archive-index.json', JSON.stringify(archiveIndex(stories), null, 2));
   files.set('feed.json', renderJsonFeed(stories));

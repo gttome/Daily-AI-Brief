@@ -17,6 +17,8 @@ test('reader foundation creates six stable current story pages with story-specif
     assert.match(page, new RegExp(`permalink: ${story.permanent_url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}`));
     assert.ok(page.includes(JSON.stringify(story.social.title)));
     assert.ok(page.includes(JSON.stringify(story.social.image_url)));
+    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 1);
+    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 4);
   }
 });
 
@@ -42,6 +44,6 @@ test('shareable feedback page exposes six accessible anonymous rating groups', (
   assert.equal((page.match(/class="feedback-story"/g) || []).length, 6);
   assert.equal((page.match(/role="group"/g) || []).length, 6);
   assert.equal((page.match(/data-feedback-rating="most_useful"/g) || []).length, 6);
-  assert.match(page, /Public ratings are a secondary signal/);
+  assert.match(page, /only George can approve an editorial-weight change/);
   assert.match(page, /Share this feedback page/);
 });

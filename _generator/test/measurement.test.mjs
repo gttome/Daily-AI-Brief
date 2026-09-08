@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import {fileURLToPath} from 'node:url';
 import {accessibilityReview, auditEditionAccessibility, contrastRatio} from '../lib/accessibility.mjs';
-import {ANALYTICS_METRICS, aggregateAnalytics, analyticsKey, collectAnalytics} from '../lib/analytics.mjs';
+import {ANALYTICS_METRICS, aggregateAnalytics, analyticsKey, collectAnalytics, refreshFeedbackAnalytics} from '../lib/analytics.mjs';
 import {qaMetrics, renderQaDashboard} from '../lib/quality.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -18,6 +18,7 @@ test('controlled analytics counts aggregate exactly and suppress small story cou
   assert.equal(record.collection_status, 'complete');
   assert.equal(record.site_totals.views, 10);
   assert.equal(record.stories[0].metrics.views, null);
+  assert.equal(record.stories[0].metrics.feedback_most_useful, 3);
   assert.equal(record.stories[1].metrics.views, 7);
   assert.equal(record.site_totals.feedback_most_useful, 10);
   assert.equal(record.privacy.contains_personal_identifiers, false);
@@ -41,6 +42,16 @@ test('analytics counters are collected concurrently so added feedback metrics do
   });
   assert.equal(record.collection_status, 'complete');
   assert.ok(maximumActive > 1);
+});
+
+test('rolling feedback refresh preserves passive metrics and exposes exact small rating counts', async () => {
+  const stories = edition.stories.slice(0, 2);
+  const existing = await collectAnalytics('2026-09-07', stories, async key => key.endsWith('views') ? 12 : 0);
+  const refreshed = await refreshFeedbackAnalytics(existing, '2026-09-07', stories, async key => key.endsWith('feedback_useful') ? 1 : 0);
+  assert.equal(refreshed.feedback_status, 'complete');
+  assert.equal(refreshed.record.stories[0].metrics.views, 12);
+  assert.equal(refreshed.record.stories[0].metrics.feedback_useful, 1);
+  assert.equal(refreshed.record.site_totals.feedback_useful, 2);
 });
 
 test('aggregate analytics rejects unsupported identity-shaped fields by construction', () => {
