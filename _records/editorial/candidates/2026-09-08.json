@@ -1,0 +1,675 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_set_id": "dab-candidates-2026-09-08-f82a5829",
+  "brief_date": "2026-09-08",
+  "generated_at": "2026-09-08T14:30:00Z",
+  "candidates": [
+    {
+      "candidate_id": "dab-candidate-2026-09-08-01",
+      "focus": "technical_ai_engineering",
+      "headline": "Execution traces make agent reliability measurable across real development workflows",
+      "selected": true,
+      "selected_ordinal": 1,
+      "source": {
+        "url": "https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior",
+        "normalized_url": "https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 32,
+        "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-02",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
+      "selected": true,
+      "selected_ordinal": 2,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/",
+        "normalized_url": "https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-03",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
+      "selected": true,
+      "selected_ordinal": 3,
+      "source": {
+        "url": "https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html",
+        "normalized_url": "https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-04",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
+      "selected": true,
+      "selected_ordinal": 4,
+      "source": {
+        "url": "https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html",
+        "normalized_url": "https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-05",
+      "focus": "agents_non_technical_people",
+      "headline": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
+      "selected": true,
+      "selected_ordinal": 5,
+      "source": {
+        "url": "https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8",
+        "normalized_url": "https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-06",
+      "focus": "agents_non_technical_people",
+      "headline": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
+      "selected": true,
+      "selected_ordinal": 6,
+      "source": {
+        "url": "https://techcommunity.microsoft.com/tag/copilot%20studio",
+        "normalized_url": "https://techcommunity.microsoft.com/tag/copilot%20studio",
+        "evidence_type": "official_documentation",
+        "availability_status": "public_preview"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Selected as the strongest verified, audience-aligned development available after novelty review."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected as the strongest verified, audience-aligned development available after novelty review.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-07",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+        "normalized_url": "https://openai.com/index/research-acceleration-view-inside-openai/",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "rationale": "Fresh primary evidence with concrete workload and intervention metrics."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-08",
+      "focus": "technical_ai_engineering",
+      "headline": "Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://www.anthropic.com/news/formalizing-fermats-last-theorem",
+        "normalized_url": "https://www.anthropic.com/news/formalizing-fermats-last-theorem",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Multi-agent generation paired with deterministic formal verification."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-09",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/gpt-6-astra/",
+        "normalized_url": "https://openai.com/index/gpt-6-astra/",
+        "evidence_type": "official_announcement",
+        "availability_status": "limited_preview"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 3,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "Today's primary launch materially extends yesterday's Copilot-specific coverage."
+      },
+      "novelty_check": {
+        "disposition": "material_update",
+        "matches": [
+          {
+            "match_type": "concept",
+            "prior_story_id": "dab-story-2026-09-06-0b55fd52"
+          }
+        ],
+        "prior_story_ids": [
+          "dab-story-2026-09-06-0b55fd52"
+        ],
+        "what_changed": "September 6 covered Astra inside GitHub Copilot; September 7 adds the model launch, broader capability evidence, and staged ChatGPT/API rollout."
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-10",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "NVIDIA demonstrates a memory-driven chief-of-staff agent built around a human-readable self model",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/",
+        "normalized_url": "https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "Concrete inspectable-memory architecture for enterprise agents."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-11",
+      "focus": "agents_non_technical_people",
+      "headline": "Copilot in SharePoint adds reusable skills and evaluations",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422",
+        "normalized_url": "https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 31,
+        "rationale": "Mainstream reusable-skill and evaluation pattern for non-technical users."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-12",
+      "focus": "agents_non_technical_people",
+      "headline": "Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882",
+        "normalized_url": "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 31,
+        "rationale": "Accessible low-code delegation to governed specialist data tools."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-13",
+      "focus": "technical_ai_engineering",
+      "headline": "NVIDIA PAIR routes local agent inference across multiple PCs",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/",
+        "normalized_url": "https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/",
+        "evidence_type": "official_documentation",
+        "availability_status": "beta"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 31,
+        "rationale": "Strong local multi-agent infrastructure story."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-14",
+      "focus": "technical_ai_engineering",
+      "headline": "NVIDIA explains frontier reasoning deployment on Jetson edge systems",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/",
+        "normalized_url": "https://developer.nvidia.com/blog/frontier-reasoning-reaches-the-edge-how-to-deploy-and-optimize-models-on-nvidia-jetson/",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 29,
+        "rationale": "Useful edge deployment guidance."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-15",
+      "focus": "technical_ai_engineering",
+      "headline": "Gemini 3.8 Flash becomes available in GitHub Copilot",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot/",
+        "normalized_url": "https://github.blog/changelog/2026-09-03-gemini-3-8-flash-is-now-available-in-github-copilot/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 29,
+        "rationale": "Useful model availability update."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-16",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub content exclusions reach general availability in Copilot app and CLI",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/",
+        "normalized_url": "https://github.blog/changelog/2026-09-02-content-exclusions-generally-available-in-copilot-app-and-cli/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 31,
+        "rationale": "Important governance capability."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-17",
+      "focus": "technical_ai_engineering",
+      "headline": "Anthropic describes stronger alignment and security practices",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+        "normalized_url": "https://www.anthropic.com/news/improving-alignment-security-efforts",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 3,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 31,
+        "rationale": "Material safety work with recent thematic overlap."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-18",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenAI details Astra's frontier safeguards",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/path-to-astra/",
+        "normalized_url": "https://openai.com/index/path-to-astra/",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 3,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 31,
+        "rationale": "Important but tightly coupled to the selected Astra launch."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-19",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenAI describes monitoring internal coding agents for misalignment",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+        "normalized_url": "https://openai.com/index/how-we-monitor-internal-coding-agents-misalignment/",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "High-value safety work with conceptual overlap."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-08-20",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Hugging Face Funes gives coding agents user-owned memory",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://huggingface.co/blog/funes",
+        "normalized_url": "https://huggingface.co/blog/funes",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 4,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 29,
+        "rationale": "Interesting memory pattern."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Reviewed but not selected because it was already covered, less fresh, less authoritative, or weaker for today’s required allocation.",
+      "learning_adjustment": null
+    }
+  ]
+}
