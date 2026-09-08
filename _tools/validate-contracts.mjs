@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {validateCandidatePool} from '../_generator/lib/scoring.mjs';
+import {validateEditorialLearning, validatePersonalFeedback} from '../_generator/lib/personal-learning.mjs';
 
 const toolDir = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(toolDir, '..');
@@ -130,6 +131,8 @@ function semanticErrors(name, value) {
     if (new Set(ids).size !== ids.length) errors.push('story-memory story IDs must be unique');
   }
   if (name === 'trend_radar' && value.evidence_window?.start_date > value.evidence_window?.end_date) errors.push('trend evidence window is reversed');
+  if (name === 'personal_feedback') errors.push(...validatePersonalFeedback(value));
+  if (name === 'editorial_learning') errors.push(...validateEditorialLearning(value));
   return errors;
 }
 

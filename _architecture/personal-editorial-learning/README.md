@@ -1,6 +1,6 @@
 # Personal Editorial Learning
 
-Status: candidate QA PASS
+Status: production QA PASS
 
 This operational extension optimizes the Daily AI Brief primarily for George while permitting optional anonymous feedback from other readers. It does not change the completed 17-improvement program or begin Command Center work.
 
