@@ -34,6 +34,17 @@ story_id: dab-story-2026-09-08-3444f489
 
 **Source:** [ChatGPT and Claude moving to Added by Default on September 8](https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8)
 
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-3444f489">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
 ---
 
 [← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})

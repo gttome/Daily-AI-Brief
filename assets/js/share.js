@@ -336,7 +336,9 @@
     if (!storyId) return;
     const heading = main.querySelector('h1');
     if (!heading || heading.nextElementSibling?.classList.contains('brief-share-wrap')) return;
-    const item = {id: storyId, title: heading.textContent.trim(), counterKey: counterKey(storyId), url: window.location.href.split('#')[0], storyId};
+    // Share only the canonical page address. Browser-local rating state and any
+    // query/hash state must never travel with the shared story link.
+    const item = {id: storyId, title: heading.textContent.trim(), counterKey: counterKey(storyId), url: window.location.origin + window.location.pathname, storyId};
     heading.insertAdjacentElement('afterend', makeButton(item));
   }
 
