@@ -22,7 +22,6 @@
       <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
       <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
       <a href="{{ '/briefs-archive/' | relative_url }}" class="btn">Briefs Archive</a>
-      <a href="{{ '/feedback/' | relative_url }}" class="btn">Rate This Brief</a>
       <a href="{{ site.series_url }}" class="btn" target="_blank" rel="noopener noreferrer">{{ site.series_name }}</a>
       {% if site.show_downloads %}
         <a href="{{ site.github.zip_url }}" class="btn">Download .zip</a>
