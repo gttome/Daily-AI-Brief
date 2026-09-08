@@ -4,46 +4,88 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-07T17:40:00Z</updated>
+  <updated>2026-09-08T14:30:00Z</updated>
+  <entry>
+    <title>Execution traces make agent reliability measurable across real development workflows</title>
+    <id>dab-story-2026-09-08-aad4e966</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/" />
+    <updated>2026-09-08T18:00:00Z</updated>
+    <summary>A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows.</summary>
+  </entry>
+  <entry>
+    <title>GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence</title>
+    <id>dab-story-2026-09-08-4a71e714</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/" />
+    <updated>2026-09-08T18:00:00Z</updated>
+    <summary>GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly.</summary>
+  </entry>
+  <entry>
+    <title>Gemini custom instructions expand across Workspace, making reusable context a platform-level control</title>
+    <id>dab-story-2026-09-08-08eab2e3</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/" />
+    <updated>2026-09-08T18:00:00Z</updated>
+    <summary>Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance.</summary>
+  </entry>
+  <entry>
+    <title>Google Vids can turn source documents into narrated video summaries while keeping human review in the loop</title>
+    <id>dab-story-2026-09-08-b9c617e3</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/" />
+    <updated>2026-09-08T18:00:00Z</updated>
+    <summary>Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response.</summary>
+  </entry>
+  <entry>
+    <title>Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control</title>
+    <id>dab-story-2026-09-08-3444f489</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/" />
+    <updated>2026-09-08T18:00:00Z</updated>
+    <summary>Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used</title>
+    <id>dab-story-2026-09-08-9061ff44</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/" />
+    <updated>2026-09-08T18:00:00Z</updated>
+    <summary>Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface.</summary>
+  </entry>
   <entry>
     <title>OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization</title>
-    <id>dab-story-2026-09-07-3f4df523</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/" />
+    <id>dab-story-2026-09-07-3d813834</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/openai-says-coding-agents-now-deliver-more-agent-workdays-than-human-workdays-in/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>OpenAI reports that by mid-August its research organization was using 3.1 agent-workdays of coding-agent runtime for every human workday. Researchers are delegating longer-horizon work while humans still set priorities, judge results, and make deployment decisions.</summary>
   </entry>
   <entry>
     <title>Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents</title>
-    <id>dab-story-2026-09-07-dab4bc85</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/" />
+    <id>dab-story-2026-09-07-6043a1d0</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/claude-completes-a-computer-checked-formalization-of-fermat-s-last-theorem-with-/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>Anthropic says Claude produced the first complete computer-checked formalization of Fermat&apos;s Last Theorem, working largely autonomously for 11 days with dozens of collaborating agents and the Lean proof assistant.</summary>
   </entry>
   <entry>
     <title>GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout</title>
-    <id>dab-story-2026-09-07-8053a573</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/" />
+    <id>dab-story-2026-09-07-d43124d3</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/gpt-6-astra-launches-with-stronger-computer-use-and-professional-work-performanc/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>OpenAI introduced GPT-6 Astra on September 7, highlighting stronger computer use, browsing, software engineering, professional work, long context, and safety. Rollout begins with a limited set of organizations before broader ChatGPT and API access.</summary>
   </entry>
   <entry>
     <title>NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model</title>
-    <id>dab-story-2026-09-07-968c0cd8</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/" />
+    <id>dab-story-2026-09-07-2b73e189</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/nvidia-demonstrates-a-memory-driven-chief-of-staff-agent-built-around-a-human-re/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>NVIDIA published a memory-driven agent pattern built with NemoClaw for enterprise work spanning messages, decisions, projects, and obligations. The design maintains a human-readable self model so durable context can be inspected and corrected.</summary>
   </entry>
   <entry>
     <title>Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset</title>
-    <id>dab-story-2026-09-07-379d301c</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/" />
+    <id>dab-story-2026-09-07-712cf271</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/copilot-in-sharepoint-adds-reusable-skills-and-evaluations-turning-natural-langu/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>Microsoft&apos;s September Copilot in SharePoint update says reusable skills can follow users across SharePoint and OneDrive, and Copilot can evaluate and improve those skills alongside natural-language workflows and content creation.</summary>
   </entry>
   <entry>
     <title>Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents</title>
-    <id>dab-story-2026-09-07-fdefded2</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/" />
+    <id>dab-story-2026-09-07-db445689</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-07/microsoft-makes-fabric-data-agents-generally-available-as-tools-inside-copilot-s/" />
     <updated>2026-09-07T18:00:00Z</updated>
     <summary>Microsoft says Fabric Data Agents are generally available for use in Copilot Studio. A Copilot Studio agent can call a Fabric Data Agent as a tool, combine it with other tools and knowledge, and use permissions already applied to the underlying Fabric data.</summary>
   </entry>

@@ -1,74 +1,36 @@
-# Daily Generative AI Brief — September 7, 2026
+# Daily Generative AI Brief — September 8, 2026
 
-**Published:** September 7, 2026  
-**Coverage period:** Primarily September 2–7, 2026. Labor Day weekend produced fewer same-day primary-source releases, so this edition prioritizes the strongest verified developments not already covered, with a material-update exception for today's GPT-6 Astra launch.
+**Published:** September 8, 2026  
+**Coverage period:** Primarily September 2–8, 2026. The September 8 source window was unusually light, so this edition uses the strongest verified, previously uncovered primary and rigorous practitioner sources without filler.
 
-## 1. OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization
-
-**Focus: Technical AI Engineering**
-
-**Date:** September 6, 2026
-
-**Topics:** coding agents, AI research automation, human supervision, agent evaluation, harness engineering
-
-<span class="story-data" data-story-id="dab-story-2026-09-07-3f4df523" data-story-url="/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** Research
-
-![OpenAI research-agent workload measured against a human workday](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/01-research-agent-workdays.svg?v=20260907-1)
-
-**Summary:** OpenAI reports that by mid-August its research organization was using 3.1 agent-workdays of coding-agent runtime for every human workday. Researchers are delegating longer-horizon work while humans still set priorities, judge results, and make deployment decisions.
-
-**Why it matters:** This is unusually concrete evidence of agentic AI changing expert work. Agent runtime is not the same as scientific output, but the measurements point toward better operating metrics: delegated workload, success rate, intervention burden, and retained human decisions.
-
-**For George’s work:** Use this as an evidence-backed case study for Bounded Agentic Delegation and harness engineering: measure transferred work and interventions rather than simply counting prompts.
-
-**What to do now — Teach:** Use agent-workdays and intervention burden as concrete measures when explaining bounded delegation.
-
-**Source:** [OpenAI — Research acceleration: The view inside OpenAI](https://openai.com/index/research-acceleration-view-inside-openai/)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-3f4df523">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 2. Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents
+## 1. Execution traces make agent reliability measurable across real development workflows
 
 **Focus: Technical AI Engineering**
 
 **Date:** September 4, 2026
 
-**Topics:** formal verification, multi-agent systems, Lean, research agents, verifiable reasoning
+**Topics:** agent evaluation, execution traces, observability, workflow reliability
 
-<span class="story-data" data-story-id="dab-story-2026-09-07-dab4bc85" data-story-url="/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-08-aad4e966" data-story-url="/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/' | relative_url }})
 
-**Evidence:** Official Announcement  
+**Evidence:** Practitioner Analysis  
 **Availability:** Research
 
-![Generative agents producing a formal proof that is accepted by the Lean verifier](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/02-formal-proof-verification.svg?v=20260907-1)
+![Editorial illustration: Execution traces make agent reliability measurable across real development workflows](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-1)
 
-**Summary:** Anthropic says Claude produced the first complete computer-checked formalization of Fermat's Last Theorem, working largely autonomously for 11 days with dozens of collaborating agents and the Lean proof assistant.
+**Summary:** A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows.
 
-**Why it matters:** The important pattern is generative exploration paired with an external deterministic verifier. Agents can search and construct at scale while Lean provides a correctness gate that fluent text cannot bypass.
+**Why it matters:** Trace-level evidence makes loop and harness defects diagnosable and supports safer regression testing. The article is practitioner analysis rather than a peer-reviewed benchmark, so its recommendations should be validated on each organization’s own workflows.
 
-**For George’s work:** Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking.
+**For George’s work:** Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.
 
-**What to do now — Teach:** Show how a deterministic verifier can bound generative exploration in reliability training.
+**What to do now — Teach:** Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.
 
-**Source:** [Anthropic — Formalizing Fermat's Last Theorem](https://www.anthropic.com/news/formalizing-fermats-last-theorem)
+**Source:** [Using Execution Traces to Evaluate AI Agent Behavior](https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-dab4bc85">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-aad4e966">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -79,150 +41,186 @@
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-## 3. GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout
+## 2. GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence
 
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 7, 2026
-
-**Topics:** GPT-6 Astra, computer use, professional work, ChatGPT, agentic workflows
-
-<span class="story-data" data-story-id="dab-story-2026-09-07-8053a573" data-story-url="/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** Limited Preview
-
-**What changed since last coverage:** September 6 covered Astra becoming available inside GitHub Copilot. OpenAI has now launched Astra itself, published broader capability and safety results, and begun a staged rollout across ChatGPT and API channels.
-
-![GPT-6 Astra connected to professional artifacts, computer use, staged access, and human authority](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/03-astra-professional-work.svg?v=20260907-1)
-
-**Summary:** OpenAI introduced GPT-6 Astra on September 7, highlighting stronger computer use, browsing, software engineering, professional work, long context, and safety. Rollout begins with a limited set of organizations before broader ChatGPT and API access.
-
-**Why it matters:** For knowledge workers, the change is the combination of stronger reasoning, direct computer use, and production of documents, spreadsheets, presentations, and multi-step work. Availability is staged, so teams should verify access and evaluate the model in real workflows.
-
-**For George’s work:** Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification.
-
-**What to do now — Evaluate:** Test Astra on one bounded professional workflow and verify access, outputs, and approval boundaries before broader use.
-
-**Source:** [OpenAI — GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra/)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-8053a573">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 4. NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model
-
-**Focus: Applied Generative AI for Knowledge Workers**
+**Focus: Technical AI Engineering**
 
 **Date:** September 4, 2026
 
-**Topics:** agent memory, NemoClaw, knowledge continuity, human-readable memory
+**Topics:** GitHub Copilot, coding agents, release management, code review
 
-<span class="story-data" data-story-id="dab-story-2026-09-07-968c0cd8" data-story-url="/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-08-4a71e714" data-story-url="/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/' | relative_url }})
+
+**Evidence:** Official Changelog  
+**Availability:** General Availability
+
+![Editorial illustration: GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-1)
+
+**Summary:** GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly.
+
+**Why it matters:** Agent products now change faster than many teams’ validation cycles. A recurring release checkpoint helps teams retest prompts, permissions, review rules, and repository safeguards instead of assuming stable behavior. Individual features still need separate verification before production use.
+
+**For George’s work:** Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow.
+
+**What to do now — Test:** Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow.
+
+**Source:** [GitHub Copilot weekly releases — August 31](https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-4a71e714">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 3. Gemini custom instructions expand across Workspace, making reusable context a platform-level control
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 2, 2026
+
+**Topics:** Google Workspace, custom instructions, context engineering, personalization
+
+<span class="story-data" data-story-id="dab-story-2026-09-08-08eab2e3" data-story-url="/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** General Availability
+
+![Editorial illustration: Gemini custom instructions expand across Workspace, making reusable context a platform-level control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-1)
+
+**Summary:** Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance.
+
+**Why it matters:** This turns a prompt habit into reusable context infrastructure for ordinary knowledge work. Persistent instructions can also spread an outdated or overly broad rule, so users should keep them concise, inspectable, and scoped to appropriate work.
+
+**For George’s work:** Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.
+
+**What to do now — Adopt:** Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.
+
+**Source:** [Custom instructions for Gemini in Workspace now available in more apps](https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-08eab2e3">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 4. Google Vids can turn source documents into narrated video summaries while keeping human review in the loop
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 8, 2026
+
+**Topics:** Google Vids, document transformation, video summaries, human review
+
+<span class="story-data" data-story-id="dab-story-2026-09-08-b9c617e3" data-story-url="/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** General Availability
+
+![Editorial illustration: Google Vids can turn source documents into narrated video summaries while keeping human review in the loop](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-1)
+
+**Summary:** Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response.
+
+**Why it matters:** The feature lowers the effort required to repurpose reports and training documents into multimedia. Generated narration and visuals can omit qualifications or overstate source content, so factual and accessibility review remain necessary before publishing.
+
+**For George’s work:** Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse.
+
+**What to do now — Test:** Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse.
+
+**Source:** [Turn Google Docs, PDFs, and Word files into video summaries in Google Vids](https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-b9c617e3">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 5. Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 8, 2026
+
+**Topics:** Box, ChatGPT, Claude, connected work, administration
+
+<span class="story-data" data-story-id="dab-story-2026-09-08-3444f489" data-story-url="/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** General Availability
+
+![Editorial illustration: Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-1)
+
+**Summary:** Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps.
+
+**Why it matters:** Lower setup friction can make document-grounded agent workflows accessible to more non-technical workers. Added by default does not remove governance responsibility: administrators should still review access, approved use cases, data boundaries, and user training.
+
+**For George’s work:** Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.
+
+**What to do now — Update Policy:** Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.
+
+**Source:** [ChatGPT and Claude moving to Added by Default on September 8](https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-3444f489">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 6. Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 8, 2026
+
+**Topics:** Copilot Studio, Insights Agent, agent governance, usage evidence
+
+<span class="story-data" data-story-id="dab-story-2026-09-08-9061ff44" data-story-url="/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/' | relative_url }})
 
 **Evidence:** Official Documentation  
-**Availability:** General Availability
+**Availability:** Public Preview
 
-![Work signals flowing through a human-readable memory model into a chief-of-staff agent](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/04-memory-self-model.svg?v=20260907-1)
+![Editorial illustration: Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg?v=20260908-1)
 
-**Summary:** NVIDIA published a memory-driven agent pattern built with NemoClaw for enterprise work spanning messages, decisions, projects, and obligations. The design maintains a human-readable self model so durable context can be inspected and corrected.
+**Summary:** Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface.
 
-**Why it matters:** Persistent memory helps turn a chatbot into a reusable work agent, but opaque memory creates governance and correctness risk. A readable memory layer supports inspection, correction, and scoping.
+**Why it matters:** Non-technical makers need evidence about adoption, failure, and value after an agent is launched. A conversational analytics layer may simplify that review, but this is an early community demonstration and available metrics and controls must be verified before relying on it.
 
-**For George’s work:** Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory.
+**For George’s work:** Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.
 
-**What to do now — Test:** Prototype a small inspectable memory record and confirm that a user can correct stale or wrong context.
+**What to do now — Monitor:** Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.
 
-**Source:** [NVIDIA Technical Blog — Building a Memory-Driven Agent with NVIDIA NemoClaw](https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/)
+**Source:** [Copilot Extensibility community call — September 2026](https://techcommunity.microsoft.com/tag/copilot%20studio)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-968c0cd8">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 5. Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 2, 2026
-
-**Topics:** SharePoint Copilot, reusable skills, evaluations, natural-language workflows
-
-<span class="story-data" data-story-id="dab-story-2026-09-07-379d301c" data-story-url="/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** General Availability
-
-![A reusable skill moving through create, reuse, evaluate, improve, and run stages](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/05-sharepoint-skills-evals.svg?v=20260907-1)
-
-**Summary:** Microsoft's September Copilot in SharePoint update says reusable skills can follow users across SharePoint and OneDrive, and Copilot can evaluate and improve those skills alongside natural-language workflows and content creation.
-
-**Why it matters:** For non-technical users, this moves agentic work from one-off instructions toward reusable capabilities that can be measured and improved. Repeatability becomes more valuable when it includes evaluation.
-
-**For George’s work:** Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures.
-
-**What to do now — Test:** Turn one repeated SharePoint task into a reusable skill and define an evaluation before expanding it.
-
-**Source:** [Microsoft SharePoint Blog — What's New in Copilot in SharePoint: September 2026](https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-379d301c">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 6. Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 2, 2026
-
-**Topics:** Copilot Studio, Fabric Data Agents, governed enterprise data, low-code agents, tool use
-
-<span class="story-data" data-story-id="dab-story-2026-09-07-fdefded2" data-story-url="/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** General Availability
-
-![Copilot Studio orchestrating a Fabric Data Agent while preserving enterprise data permissions](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-07/06-fabric-data-agents.svg?v=20260907-1)
-
-**Summary:** Microsoft says Fabric Data Agents are generally available for use in Copilot Studio. A Copilot Studio agent can call a Fabric Data Agent as a tool, combine it with other tools and knowledge, and use permissions already applied to the underlying Fabric data.
-
-**Why it matters:** This is a practical low-code agent architecture: the orchestrating agent delegates data questions to a governed specialist tool instead of flattening every dataset into its prompt, reducing context bloat and preserving a clearer permission boundary.
-
-**For George’s work:** Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system.
-
-**What to do now — Evaluate:** Identify one governed data question that a low-code agent could answer, then validate permissions and citations.
-
-**Source:** [Microsoft Fabric Community — Fabric Data Agents in Microsoft Copilot Studio (Generally Available)](https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-fdefded2">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-9061ff44">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -237,12 +235,12 @@
 
 ### General
 
-No recent video was included because no candidate independently verified today met the combined requirements for authoritative sourcing, distinct editorial value, and an exact runtime of 20:00 or less.
+No recent substantive general video with a directly verified runtime of 20:00 or less met the evidence threshold.
 
 ### Agents for Non-Technical People
 
-No separate recent agents-for-non-technical-people video independently verified today met the required authority, distinctiveness, and exact runtime threshold of 20:00 or less.
+No recent practical agent video for non-technical people with a directly verified runtime of 20:00 or less met the evidence threshold.
 
 ## Editorial takeaway
 
-The strongest signal today is that agentic AI is moving from isolated prompting toward measured operating systems: delegated work is being measured, formal reasoning is coupled to deterministic verification, models are gaining stronger computer use, memory is becoming inspectable infrastructure, and low-code products are packaging reusable skills and governed specialist tools.
+The common thread is operationalization: reusable context, trace evidence, governed integrations, human-reviewed media, and post-launch agent insight are becoming part of everyday AI work.

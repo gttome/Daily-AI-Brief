@@ -3,7 +3,7 @@ layout: default
 title: Daily Reader Feedback
 permalink: /feedback/
 description: One-minute anonymous feedback for the Daily Generative AI Brief.
-brief_date: 2026-09-07
+brief_date: 2026-09-08
 ---
 
 # Rate this Daily AI Brief
@@ -14,11 +14,11 @@ Rate the six stories with one tap each. Your anonymous feedback helps improve fu
   <strong>Privacy and editorial control:</strong> No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One rating per story is retained only in this browser to prevent accidental duplicate votes. Explicit ratings from George and other readers are combined anonymously and may inform a recommendation, but only George can approve an editorial-weight change. Passive views and clicks remain secondary.
 </div>
 
-<div class="daily-feedback" data-feedback-brief-date="2026-09-07">
+<div class="daily-feedback" data-feedback-brief-date="2026-09-08">
 <article class="feedback-story">
   <p class="feedback-story-meta">1. Technical AI Engineering</p>
-  <h2><a href="{{ '/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/' | relative_url }}">OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization</a></h2>
-  <div class="story-feedback" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-3f4df523">
+  <h2><a href="{{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/' | relative_url }}">Execution traces make agent reliability measurable across real development workflows</a></h2>
+  <div class="story-feedback" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-aad4e966">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -31,8 +31,8 @@ Rate the six stories with one tap each. Your anonymous feedback helps improve fu
 </article>
 <article class="feedback-story">
   <p class="feedback-story-meta">2. Technical AI Engineering</p>
-  <h2><a href="{{ '/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/' | relative_url }}">Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents</a></h2>
-  <div class="story-feedback" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-dab4bc85">
+  <h2><a href="{{ '/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/' | relative_url }}">GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence</a></h2>
+  <div class="story-feedback" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-4a71e714">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -45,8 +45,8 @@ Rate the six stories with one tap each. Your anonymous feedback helps improve fu
 </article>
 <article class="feedback-story">
   <p class="feedback-story-meta">3. Applied Generative AI for Knowledge Workers</p>
-  <h2><a href="{{ '/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/' | relative_url }}">GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout</a></h2>
-  <div class="story-feedback" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-8053a573">
+  <h2><a href="{{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/' | relative_url }}">Gemini custom instructions expand across Workspace, making reusable context a platform-level control</a></h2>
+  <div class="story-feedback" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-08eab2e3">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -59,8 +59,8 @@ Rate the six stories with one tap each. Your anonymous feedback helps improve fu
 </article>
 <article class="feedback-story">
   <p class="feedback-story-meta">4. Applied Generative AI for Knowledge Workers</p>
-  <h2><a href="{{ '/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/' | relative_url }}">NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model</a></h2>
-  <div class="story-feedback" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-968c0cd8">
+  <h2><a href="{{ '/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/' | relative_url }}">Google Vids can turn source documents into narrated video summaries while keeping human review in the loop</a></h2>
+  <div class="story-feedback" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-b9c617e3">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -73,8 +73,8 @@ Rate the six stories with one tap each. Your anonymous feedback helps improve fu
 </article>
 <article class="feedback-story">
   <p class="feedback-story-meta">5. Agents for Non-Technical People</p>
-  <h2><a href="{{ '/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/' | relative_url }}">Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset</a></h2>
-  <div class="story-feedback" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-379d301c">
+  <h2><a href="{{ '/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/' | relative_url }}">Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control</a></h2>
+  <div class="story-feedback" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-3444f489">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -87,8 +87,8 @@ Rate the six stories with one tap each. Your anonymous feedback helps improve fu
 </article>
 <article class="feedback-story">
   <p class="feedback-story-meta">6. Agents for Non-Technical People</p>
-  <h2><a href="{{ '/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/' | relative_url }}">Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents</a></h2>
-  <div class="story-feedback" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-fdefded2">
+  <h2><a href="{{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/' | relative_url }}">Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used</a></h2>
+  <div class="story-feedback" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-9061ff44">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
