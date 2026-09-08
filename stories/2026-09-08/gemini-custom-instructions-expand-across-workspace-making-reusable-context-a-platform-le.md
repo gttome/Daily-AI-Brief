@@ -2,7 +2,7 @@
 layout: default
 title: "Gemini custom instructions expand across Workspace, making reusable context a platform-level control"
 description: "Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported wo"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-1"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-2"
 permalink: /stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/
 brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-08eab2e3
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-08-08eab2e3
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Editorial illustration: Gemini custom instructions expand across Workspace, making reusable context a platform-level control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-1)
+![Editorial illustration: Gemini custom instructions expand across Workspace, making reusable context a platform-level control](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-2)
 
 **Summary:** Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance.
 
