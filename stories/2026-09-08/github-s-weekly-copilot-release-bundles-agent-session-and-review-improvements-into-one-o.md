@@ -2,7 +2,7 @@
 layout: default
 title: "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence"
 description: "GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operationa"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-1"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-2"
 permalink: /stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/
 brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-4a71e714
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-08-4a71e714
 **Evidence:** Official Changelog  
 **Availability:** General Availability
 
-![Editorial illustration: GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-1)
+![Editorial illustration: GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-2)
 
 **Summary:** GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly.
 
