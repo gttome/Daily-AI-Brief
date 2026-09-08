@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
-  "date": "2026-09-07",
+  "date": "2026-09-08",
   "timezone": "America/Chicago",
   "aggregation_window": {
-    "start": "2026-09-07T05:00:00Z",
-    "end": "2026-09-08T05:00:00Z"
+    "start": "2026-09-08T05:00:00Z",
+    "end": "2026-09-09T05:00:00Z"
   },
   "privacy": {
     "contains_personal_identifiers": false,
@@ -13,19 +13,33 @@
     "retention_days": 400
   },
   "site_totals": {
-    "views": 0,
+    "views": 6,
     "source_clicks": 0,
-    "share_initiations": 0,
+    "share_initiations": 4,
     "worth_watching_clicks": 0,
-    "retention_30s": 0,
-    "feedback_most_useful": 2,
+    "retention_30s": 1,
+    "feedback_most_useful": 4,
     "feedback_useful": 0,
     "feedback_neutral": 1,
     "feedback_not_useful": 0
   },
   "stories": [
     {
-      "story_id": "dab-story-2026-09-07-3f4df523",
+      "story_id": "dab-story-2026-09-08-aad4e966",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": 0,
+        "feedback_useful": 0,
+        "feedback_neutral": 0,
+        "feedback_not_useful": 0
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-4a71e714",
       "metrics": {
         "views": null,
         "source_clicks": null,
@@ -39,7 +53,35 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-dab4bc85",
+      "story_id": "dab-story-2026-09-08-08eab2e3",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": 1,
+        "feedback_useful": 0,
+        "feedback_neutral": 0,
+        "feedback_not_useful": 0
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-b9c617e3",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": 1,
+        "feedback_useful": 0,
+        "feedback_neutral": 0,
+        "feedback_not_useful": 0
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-08-3444f489",
       "metrics": {
         "views": null,
         "source_clicks": null,
@@ -53,21 +95,7 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-8053a573",
-      "metrics": {
-        "views": null,
-        "source_clicks": null,
-        "share_initiations": null,
-        "worth_watching_clicks": null,
-        "retention_30s": null,
-        "feedback_most_useful": 0,
-        "feedback_useful": 0,
-        "feedback_neutral": 0,
-        "feedback_not_useful": 0
-      }
-    },
-    {
-      "story_id": "dab-story-2026-09-07-968c0cd8",
+      "story_id": "dab-story-2026-09-08-9061ff44",
       "metrics": {
         "views": null,
         "source_clicks": null,
@@ -79,39 +107,13 @@
         "feedback_neutral": 0,
         "feedback_not_useful": 0
       }
-    },
-    {
-      "story_id": "dab-story-2026-09-07-379d301c",
-      "metrics": {
-        "views": null,
-        "source_clicks": null,
-        "share_initiations": null,
-        "worth_watching_clicks": null,
-        "retention_30s": null,
-        "feedback_most_useful": 0,
-        "feedback_useful": 0,
-        "feedback_neutral": 0,
-        "feedback_not_useful": 0
-      }
-    },
-    {
-      "story_id": "dab-story-2026-09-07-fdefded2",
-      "metrics": {
-        "views": null,
-        "source_clicks": null,
-        "share_initiations": null,
-        "worth_watching_clicks": null,
-        "retention_30s": null,
-        "feedback_most_useful": 0,
-        "feedback_useful": 0,
-        "feedback_neutral": 0,
-        "feedback_not_useful": 0
-      }
     }
   ],
   "collection_status": "complete",
   "limitations": [
-    "Client events contain no names, emails, cookies, persistent reader IDs, or page content.",
+    "Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.",
+    "Explicit rating-button totals remain exact because they contain no identifiers; passive story metrics below five remain suppressed.",
+    "Anonymous reader feedback can inform a recommendation but cannot activate editorial weighting without George’s explicit approval.",
     "The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals.",
     "Explicit rating-button totals are refreshed for seven days and remain exact because they contain no identifiers."
   ]
