@@ -18,10 +18,21 @@ test('controlled analytics counts aggregate exactly and suppress small story cou
   assert.equal(record.collection_status, 'complete');
   assert.equal(record.site_totals.views, 10);
   assert.equal(record.stories[0].metrics.views, null);
+  assert.equal(record.stories[0].metrics.share_initiations, 3);
   assert.equal(record.stories[0].metrics.feedback_most_useful, 3);
   assert.equal(record.stories[1].metrics.views, 7);
   assert.equal(record.site_totals.feedback_most_useful, 10);
   assert.equal(record.privacy.contains_personal_identifiers, false);
+});
+
+test('video shares and ratings are included without entering story-learning inputs', async () => {
+  const stories = edition.stories.slice(0, 1);
+  const videos = [{story_id: 'dab-video-2026-09-07-general', title: 'General video', url: 'https://www.youtube.com/watch?v=example'}];
+  const record = await collectAnalytics('2026-09-07', stories, async key => key.includes('dab-video') ? 1 : 0, videos);
+  assert.equal(record.videos.length, 1);
+  assert.equal(record.videos[0].metrics.share_initiations, 1);
+  assert.equal(record.videos[0].metrics.feedback_most_useful, 1);
+  assert.equal(record.stories.length, 1);
 });
 
 test('analytics outage is explicit and never becomes a zero-count success', async () => {

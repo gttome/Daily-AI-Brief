@@ -108,14 +108,27 @@ if (command === 'import') {
   const date = args.date || latestBriefDate(repoRoot);
   const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
   const stories = readerStories(repoRoot, edition).filter(story => story.brief_date === date);
-  const endpoint = args.endpoint || 'https://countapi.mileshilliard.com/api/v1/get';
+  const videos = [
+    {story_id: `dab-video-${date}-general`, ...edition.worth_watching?.general},
+    {story_id: `dab-video-${date}-agent-skills`, ...edition.worth_watching?.agents_non_technical_people}
+  ].filter(video => video.status === 'included');
+  const items = [...stories, ...videos];
+  const endpoint = args.endpoint || 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/events';
+  const ratingsEndpoint = args['ratings-endpoint'] || 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/ratings';
   const record = await collectAnalytics(date, stories, async key => {
-    const response = await fetch(`${endpoint}/${encodeURIComponent(key)}`, {headers: {'user-agent': 'Daily-AI-Brief-analytics-aggregator/1.0'}});
-    if (response.status === 404) return 0;
+    const story = items.find(item => key.includes(`-${item.story_id}-`));
+    const passiveMetric = ['views', 'source_clicks', 'share_initiations', 'worth_watching_clicks', 'retention_30s'].find(item => key.endsWith(`-${item}`));
+    const feedbackMetric = FEEDBACK_METRICS.find(item => key.endsWith(`-${item}`));
+    const metric = passiveMetric || feedbackMetric;
+    if (!story || !metric) throw new Error('invalid analytics counter key');
+    const query = new URLSearchParams({brief_date: date, item_id: story.story_id});
+    const transport = feedbackMetric ? ratingsEndpoint : endpoint;
+    const response = await fetch(`${transport}?${query}`, {headers: {'user-agent': 'Daily-AI-Brief-analytics-aggregator/2.0', origin: 'https://gttome.github.io'}});
     if (!response.ok) throw new Error(`counter transport ${response.status}`);
     const data = await response.json();
-    return Number(data.value);
-  });
+    const field = feedbackMetric ? feedbackMetric.slice('feedback_'.length) : passiveMetric;
+    return Number(data.totals?.[field]);
+  }, videos);
   const output = JSON.stringify(record, null, 2);
   if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
 } else if (command === 'refresh-feedback-analytics') {
@@ -127,17 +140,22 @@ if (command === 'import') {
   const results = [];
   for (const name of names) {
     const edition = readJson(path.join(editionDir, name));
+    const videos = [
+      {story_id: `dab-video-${edition.brief_date}-general`, ...edition.worth_watching?.general},
+      {story_id: `dab-video-${edition.brief_date}-agent-skills`, ...edition.worth_watching?.agents_non_technical_people}
+    ].filter(video => video.status === 'included');
+    const items = [...edition.stories, ...videos];
     const outputPath = path.join(repoRoot, '_records', 'analytics', name);
     const existing = fs.existsSync(outputPath) ? readJson(outputPath) : null;
     const result = await refreshFeedbackAnalytics(existing, edition.brief_date, edition.stories, async key => {
-      const story = edition.stories.find(item => key.includes(`-${item.story_id}-`));
+      const story = items.find(item => key.includes(`-${item.story_id}-`));
       const metric = FEEDBACK_METRICS.find(item => key.endsWith(`-${item}`));
       if (!story || !metric) throw new Error('invalid feedback counter key');
       const query = new URLSearchParams({brief_date: edition.brief_date, item_id: story.story_id});
       const response = await fetch(`${endpoint}?${query}`, {headers: {'user-agent': 'Daily-AI-Brief-feedback-aggregator/2.0', origin: 'https://gttome.github.io'}});
       if (!response.ok) throw new Error(`counter transport ${response.status}`);
       return Number((await response.json()).totals?.[metric.slice('feedback_'.length)]);
-    });
+    }, videos);
     writeText(outputPath, JSON.stringify(result.record, null, 2));
     results.push({date: edition.brief_date, feedback_status: result.feedback_status, failures: result.failures});
   }
