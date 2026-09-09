@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Dart’s SKILL.md packaging makes reusable agent know-how portable"
+title: "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages"
 description: "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and ins"
 image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1"
 permalink: /stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/
@@ -10,27 +10,27 @@ story_id: dab-story-2026-09-09-0b6b1021
 
 [← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
 
-# Dart’s SKILL.md packaging makes reusable agent know-how portable
+# Dart’s Skills CLI 1.0 makes agent instructions portable with software packages
 
 <span class="story-data" data-story-id="dab-story-2026-09-09-0b6b1021" hidden></span>
 
 **Focus:** Technical AI Engineering  
 **Date:** September 8, 2026  
-**Topics:** agent skills, SKILL.md, knowledge-worker workflows, progressive disclosure  
+**Topics:** agent skills, context engineering, software packages, progressive disclosure  
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
 ![Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1)
 
-**Summary:** Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to nontechnical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.
+**Summary:** The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout.
 
-**Why it matters:** Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.
+**Why it matters:** Bundling operational guidance beside versioned code can reduce stale instructions and repeated context setup. Portability does not guarantee correctness or safety: teams still need to inspect skill instructions, validate examples, and constrain the tools an installed skill may invoke.
 
-**For George’s work:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a nontechnical user before sharing it.
+**For George’s work:** Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence.
 
 ## What to do now
 
-**Create a Skill:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a nontechnical user before sharing it.
+**Test:** Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence.
 
 **Source:** [Skills CLI 1.0: Bundle and distribute AI agent skills for your packages](https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages)
 
