@@ -6,6 +6,7 @@
   if (!main) return;
 
   const state = new Map();
+  const flushes = new Map();
 
   function siteBasePath() {
     const p = window.location.pathname;
@@ -54,6 +55,10 @@
     return `daily-ai-brief-share-count:${key}`;
   }
 
+  function pendingCounterKey(key) {
+    return `daily-ai-brief-share-pending:${key}`;
+  }
+
   function readLocalCount(key) {
     try {
       const n = Number(localStorage.getItem(localCounterKey(key)) || 0);
@@ -65,6 +70,22 @@
 
   function writeLocalCount(key, value) {
     try { localStorage.setItem(localCounterKey(key), String(value)); } catch (_) {}
+  }
+
+  function readPendingCount(key) {
+    try {
+      const n = Number(localStorage.getItem(pendingCounterKey(key)) || 0);
+      return Number.isInteger(n) && n >= 0 ? n : 0;
+    } catch (_) {
+      return 0;
+    }
+  }
+
+  function writePendingCount(key, value) {
+    try {
+      if (value > 0) localStorage.setItem(pendingCounterKey(key), String(value));
+      else localStorage.removeItem(pendingCounterKey(key));
+    } catch (_) {}
   }
 
   async function fetchRemoteCount(key) {
@@ -120,24 +141,46 @@
     updateCountDisplay(key, local);
     try {
       const remote = await fetchRemoteCount(key);
-      updateCountDisplay(key, remote);
-      writeLocalCount(key, remote);
+      let pending = readPendingCount(key);
+      // Recover counts created by the earlier optimistic-only implementation.
+      if (pending === 0 && local > remote) {
+        pending = local - remote;
+        writePendingCount(key, pending);
+      }
+      updateCountDisplay(key, remote + pending);
+      writeLocalCount(key, remote + pending);
+      flushPending(key);
     } catch (_) {
-      // Sharing remains available if the lightweight public counter service is temporarily unavailable.
+      flushPending(key);
     }
   }
 
-  async function incrementCount(key) {
+  function flushPending(key) {
+    if (flushes.has(key)) return flushes.get(key);
+    const task = (async () => {
+      let pending = readPendingCount(key);
+      while (pending > 0) {
+        try {
+          const remote = await incrementRemoteCount(key);
+          pending -= 1;
+          writePendingCount(key, pending);
+          updateCountDisplay(key, remote + pending);
+          writeLocalCount(key, remote + pending);
+        } catch (_) {
+          break;
+        }
+      }
+    })().finally(() => flushes.delete(key));
+    flushes.set(key, task);
+    return task;
+  }
+
+  function incrementCount(key) {
+    writePendingCount(key, readPendingCount(key) + 1);
     const optimistic = Math.max(state.get(key) ?? 0, readLocalCount(key)) + 1;
     updateCountDisplay(key, optimistic);
     writeLocalCount(key, optimistic);
-    try {
-      const remote = await incrementRemoteCount(key);
-      updateCountDisplay(key, remote);
-      writeLocalCount(key, remote);
-    } catch (_) {
-      // Keep the immediate local count until the global counter is reachable again.
-    }
+    return flushPending(key);
   }
 
   function toast(message) {
