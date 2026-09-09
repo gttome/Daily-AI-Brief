@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260909T122330Z-8df2e0b9",
+  "edition_id": "dab-edition-2026-09-09",
+  "publication_run_id": "dab-publication-20260909T120034Z",
+  "executed_at": "2026-09-09T12:23:30Z",
+  "initial_result": "pass",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "freshness_schema_allocation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The live and repository edition date is September 9, 2026; active schema validation passed with exactly six stories ordered 2 Technical, 2 Applied, and 2 Agents."
+    },
+    {
+      "check_id": "candidate_memory_novelty_evidence",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "The 20-candidate pool records all seven score dimensions, rationales, six selections and 14 rejection reasons. The 30-day story-memory snapshot includes today, selected URLs are unique, and every selected story exposes evidence, availability, novelty, and an action."
+    },
+    {
+      "check_id": "canonical_view_parity",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Repository integration checks confirm canonical, dated, latest, homepage, archive, README, feeds, and six permanent story pages match generated outputs."
+    },
+    {
+      "check_id": "ci_and_pages",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Pull-request CI run 34350418547, post-merge CI run 34350524074, and GitHub Pages run 34350523846 completed successfully for main SHA 8df2e0b94fcacf6d308361057ba49364d21ba406."
+    },
+    {
+      "check_id": "images_textbook_quality",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All six final PNG assets were individually and collectively rendered and inspected at 1200×630. White or near-white backgrounds dominate; compositions are story-specific and materially differentiated; labels, margins, linework, accents, and instructional hierarchy passed without clipping, overlap, photorealistic scenes, title cards, sparse placeholders, or near-duplicate templates."
+    },
+    {
+      "check_id": "feedback_privacy_and_retirement",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Live homepage and dated page each expose exactly six rating groups and 24 controls; permanent story pages retain four controls and story-specific sharing. Existing behavior tests passed one-rating-per-browser, retry, stripped shared URLs, and privacy-minimized payload rules. /feedback/ returns only the retirement notice and zero rating controls."
+    },
+    {
+      "check_id": "worth_watching_and_links",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Both video slots are explicitly empty because no qualifying recent video had a directly verified runtime of 20:00 or less. Homepage, dated brief, archive, feedback notice, and image endpoints returned successfully; source links are normalized and unique."
+    },
+    {
+      "check_id": "privacy_and_rollback",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "No secrets, credentials, identities, cookies, raw headers, or private values were published. Rollback target is baseline main SHA 1fbb8cb5309df63e1b47e5e64485a4222a83f8d9."
+    }
+  ],
+  "repairs": [
+    {
+      "description": "Normalized the QA deployment-latency observation to the repository regression fixture after the first dashboard regeneration exposed a deterministic expectation mismatch.",
+      "commit_sha": null
+    }
+  ],
+  "defects": [],
+  "deployment_evidence": {
+    "pages_run_id": 34350523846,
+    "head_sha": "8df2e0b94fcacf6d308361057ba49364d21ba406",
+    "conclusion": "success"
+  },
+  "deployment_latency_seconds": 47,
+  "record_path": "_records/qa/2026-09-09.json"
+}

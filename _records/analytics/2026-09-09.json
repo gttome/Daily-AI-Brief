@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-09",
+  "timezone": "America/Chicago",
+  "aggregation_window": {
+    "start": "2026-09-09T05:00:00Z",
+    "end": "2026-09-10T05:00:00Z"
+  },
+  "privacy": {
+    "contains_personal_identifiers": false,
+    "small_count_suppression": true,
+    "suppression_threshold": 5,
+    "retention_days": 400
+  },
+  "site_totals": {
+    "views": null,
+    "source_clicks": null,
+    "share_initiations": null,
+    "worth_watching_clicks": null,
+    "retention_30s": null,
+    "feedback_most_useful": null,
+    "feedback_useful": null,
+    "feedback_neutral": null,
+    "feedback_not_useful": null
+  },
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-09-e9be6ec5",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-0b6b1021",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-259c8fd8",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-1f112fc7",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-a02b9db1",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-81d2a78e",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "collection_status": "unavailable",
+  "limitations": [
+    "Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.",
+    "Explicit rating-button totals remain exact because they contain no identifiers; passive story metrics below five remain suppressed.",
+    "Anonymous reader feedback can inform a recommendation but cannot activate editorial weighting without George’s explicit approval.",
+    "The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals."
+  ]
+}

@@ -2,17 +2,27 @@
   "schema_version": "1.0.0",
   "window_days": 30,
   "generated_from": [
+    "_records/qa/2026-09-09.json",
     "_records/qa/2026-09-08.json",
     "_records/qa/2026-09-07.json"
   ],
   "metrics": {
-    "runs": 2,
+    "runs": 3,
     "first_pass_rate": 100,
     "final_pass_rate": 100,
-    "repairs": 1,
+    "repairs": 2,
     "average_deployment_latency_seconds": 47
   },
   "runs": [
+    {
+      "run_id": "dab-qa-20260909T122330Z-8df2e0b9",
+      "edition_id": "dab-edition-2026-09-09",
+      "executed_at": "2026-09-09T12:23:30Z",
+      "initial_result": "pass",
+      "final_result": "pass",
+      "repairs": 1,
+      "deployment_latency_seconds": 47
+    },
     {
       "run_id": "dab-qa-20260908T175739Z-899990bb",
       "edition_id": "dab-edition-2026-09-08",
