@@ -23,6 +23,19 @@ test('reader foundation creates six stable shared story pages with a fresh ratin
   }
 });
 
+test('every permanent story page inherits a visible Home link', () => {
+  const layout = fs.readFileSync(path.join(root, '_layouts', 'default.html'), 'utf8');
+  assert.match(layout, /href="{{ '\/' \| relative_url }}" class="btn">Home<\/a>/);
+  const storiesRoot = path.join(root, 'stories');
+  const storyPages = fs.readdirSync(storiesRoot, {recursive:true})
+    .filter(name => name.endsWith('.md'));
+  assert.ok(storyPages.length > 0);
+  for (const name of storyPages) {
+    const page = fs.readFileSync(path.join(storiesRoot, name), 'utf8');
+    assert.match(page, /^layout: default$/m, name);
+  }
+});
+
 test('archive index supports every required filter dimension', () => {
   const index = archiveIndex(readerStories(root, edition));
   assert.ok(index.stories.length >= 6);
