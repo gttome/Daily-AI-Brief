@@ -51,7 +51,7 @@
         "AI-assisted development",
         "Accessible agents for knowledge work"
       ],
-      "summary": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout."
+      "summary": "Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow."
     },
     {
       "story_id": "dab-story-2026-09-09-259c8fd8",
