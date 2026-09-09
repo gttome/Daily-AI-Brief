@@ -234,8 +234,7 @@
   async function copyLink(item) {
     try {
       await navigator.clipboard.writeText(item.url);
-      await incrementCount(item.counterKey);
-      toast('Daily Brief story link copied');
+      toast('Daily Brief link copied');
       return true;
     } catch (_) {
       const input = document.createElement('textarea');
@@ -248,8 +247,7 @@
       const ok = document.execCommand('copy');
       input.remove();
       if (ok) {
-        await incrementCount(item.counterKey);
-        toast('Daily Brief story link copied');
+        toast('Daily Brief link copied');
       }
       return ok;
     }
@@ -260,162 +258,3 @@
     const t = encodeURIComponent(shareText(item.title));
     const body = encodeURIComponent(`${shareText(item.title)}\n\n${item.url}`);
     const subject = encodeURIComponent(item.title);
-    const urls = {
-      email: `mailto:?subject=${subject}&body=${body}`,
-      whatsapp: `https://wa.me/?text=${body}`,
-      facebook: `https://www.facebook.com/sharer/sharer.php?u=${u}`,
-      linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${u}`,
-      x: `https://twitter.com/intent/tweet?text=${t}&url=${u}`
-    };
-    return urls[kind];
-  }
-
-  function openFallback(item) {
-    const dialog = document.createElement('dialog');
-    dialog.className = 'brief-share-dialog';
-
-    const panel = document.createElement('div');
-    panel.className = 'brief-share-panel';
-
-    const heading = document.createElement('h3');
-    heading.textContent = 'Share this Daily Brief story';
-    const note = document.createElement('p');
-    note.textContent = 'Share the Daily AI Brief link for this item, not just the external source.';
-
-    const options = document.createElement('div');
-    options.className = 'brief-share-options';
-
-    const copy = document.createElement('button');
-    copy.type = 'button';
-    copy.className = 'brief-share-copy';
-    copy.textContent = 'Copy link';
-    copy.addEventListener('click', async () => {
-      if (await copyLink(item)) dialog.close();
-    });
-    options.appendChild(copy);
-
-    [
-      ['email', 'Email'],
-      ['whatsapp', 'WhatsApp'],
-      ['linkedin', 'LinkedIn'],
-      ['facebook', 'Facebook'],
-      ['x', 'X']
-    ].forEach(([kind, label]) => {
-      const a = document.createElement('a');
-      a.className = 'brief-share-option';
-      a.href = socialUrl(kind, item);
-      a.target = kind === 'email' ? '_self' : '_blank';
-      if (kind !== 'email') a.rel = 'noopener noreferrer';
-      a.textContent = label;
-      a.addEventListener('click', () => {
-        incrementCount(item.counterKey);
-        setTimeout(() => dialog.close(), 150);
-      });
-      options.appendChild(a);
-    });
-
-    const closeRow = document.createElement('div');
-    closeRow.className = 'brief-share-close-row';
-    const close = document.createElement('button');
-    close.type = 'button';
-    close.className = 'brief-share-close';
-    close.textContent = 'Cancel';
-    close.addEventListener('click', () => dialog.close());
-    closeRow.appendChild(close);
-
-    panel.append(heading, note, options, closeRow);
-    dialog.appendChild(panel);
-    dialog.addEventListener('close', () => dialog.remove());
-    document.body.appendChild(dialog);
-
-    if (typeof dialog.showModal === 'function') dialog.showModal();
-    else {
-      copyLink(item);
-      dialog.remove();
-    }
-  }
-
-  async function handleShare(item) {
-    document.dispatchEvent(new CustomEvent('dab:share', {detail: {storyId: item.storyId || ''}}));
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: item.title,
-          text: shareText(item.title),
-          url: item.url
-        });
-        await incrementCount(item.counterKey);
-        return;
-      } catch (error) {
-        if (error && error.name === 'AbortError') return;
-      }
-    }
-    openFallback(item);
-  }
-
-  function addStoryButtons() {
-    const headings = [...main.querySelectorAll('h2')].filter((h) => /^\s*\d+\./.test(h.textContent || ''));
-    headings.forEach((heading) => {
-      const m = heading.textContent.match(/^\s*(\d+)\.\s*(.+)$/);
-      if (!m) return;
-      const number = m[1];
-      const title = m[2].trim();
-      const id = `story-${number}`;
-      heading.id = id;
-      heading.classList.add('brief-share-target');
-      let cursor = heading.nextElementSibling;
-      let marker = null;
-      while (cursor && cursor.tagName !== 'H2') {
-        marker = cursor.matches('.story-data[data-story-id]') ? cursor : cursor.querySelector?.('.story-data[data-story-id]');
-        if (marker) break;
-        cursor = cursor.nextElementSibling;
-      }
-      const key = counterKey(marker?.dataset.storyId || id);
-      const item = { id, title, counterKey: key, url: marker?.dataset.storyUrl ? `${window.location.origin}${siteBasePath().replace(/\/$/, '')}${marker.dataset.storyUrl}` : shareUrl(id), storyId: marker?.dataset.storyId || '' };
-      heading.insertAdjacentElement('afterend', makeButton(item));
-    });
-  }
-
-  function addPermanentStoryButton() {
-    const storyId = document.body.dataset.storyId;
-    if (!storyId) return;
-    const heading = main.querySelector('h1');
-    if (!heading || heading.nextElementSibling?.classList.contains('brief-share-wrap')) return;
-    // Share only the canonical page address. Browser-local rating state and any
-    // query/hash state must never travel with the shared story link.
-    const item = {id: storyId, title: heading.textContent.trim(), counterKey: counterKey(storyId), url: window.location.origin + window.location.pathname, storyId};
-    heading.insertAdjacentElement('afterend', makeButton(item));
-  }
-
-  function addVideoButtons() {
-    const worth = [...main.querySelectorAll('h2')].find((h) => /worth watching/i.test(h.textContent || ''));
-    if (!worth) return;
-
-    let node = worth.nextElementSibling;
-    const seen = new Set();
-    let index = 0;
-
-    while (node && node.tagName !== 'H2') {
-      const anchors = [...node.querySelectorAll('a[href]')].filter((a) => /(?:youtube\.com|youtu\.be)/i.test(a.href));
-      anchors.forEach((a) => {
-        if (seen.has(a.href)) return;
-        seen.add(a.href);
-        index += 1;
-        const id = index === 1 ? 'general' : 'agent-skills';
-        const target = a.closest('p, li, blockquote, div') || a;
-        if (!target.id) target.id = id;
-        target.classList.add('brief-share-target');
-        const title = (a.textContent || `Worth Watching video ${index}`).trim();
-        const stableId = `dab-video-${briefDate}-${id}`;
-        const key = counterKey(stableId);
-        const item = { id, title, counterKey: key, url: shareUrl(id), storyId: stableId };
-        target.insertAdjacentElement('afterend', makeButton(item));
-      });
-      node = node.nextElementSibling;
-    }
-  }
-
-  addStoryButtons();
-  addVideoButtons();
-  addPermanentStoryButton();
-})();
