@@ -234,8 +234,7 @@
   async function copyLink(item) {
     try {
       await navigator.clipboard.writeText(item.url);
-      await incrementCount(item.counterKey);
-      toast('Daily Brief story link copied');
+      toast('Daily Brief link copied');
       return true;
     } catch (_) {
       const input = document.createElement('textarea');
@@ -248,8 +247,7 @@
       const ok = document.execCommand('copy');
       input.remove();
       if (ok) {
-        await incrementCount(item.counterKey);
-        toast('Daily Brief story link copied');
+        toast('Daily Brief link copied');
       }
       return ok;
     }
@@ -278,7 +276,7 @@
     panel.className = 'brief-share-panel';
 
     const heading = document.createElement('h3');
-    heading.textContent = 'Share this Daily Brief story';
+    heading.textContent = 'Share this Daily Brief item';
     const note = document.createElement('p');
     note.textContent = 'Share the Daily AI Brief link for this item, not just the external source.';
 
@@ -308,7 +306,6 @@
       if (kind !== 'email') a.rel = 'noopener noreferrer';
       a.textContent = label;
       a.addEventListener('click', () => {
-        incrementCount(item.counterKey);
         setTimeout(() => dialog.close(), 150);
       });
       options.appendChild(a);
@@ -336,6 +333,8 @@
   }
 
   async function handleShare(item) {
+    // Count the initiation once when Share is clicked, even if the reader later cancels.
+    incrementCount(item.counterKey);
     document.dispatchEvent(new CustomEvent('dab:share', {detail: {storyId: item.storyId || ''}}));
     if (navigator.share) {
       try {
@@ -344,7 +343,6 @@
           text: shareText(item.title),
           url: item.url
         });
-        await incrementCount(item.counterKey);
         return;
       } catch (error) {
         if (error && error.name === 'AbortError') return;
