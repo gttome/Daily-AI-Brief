@@ -4,13 +4,9 @@
     .filter(group => group.querySelector('[data-feedback-rating]'));
   if (!groups.length) return;
 
-  const endpoint = 'https://countapi.mileshilliard.com/api/v1/hit';
+  const endpoint = 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/ratings';
   const storageKey = storyId => 'dab-feedback:' + storyId;
   const syncKey = storyId => 'dab-feedback-sync:' + storyId;
-  const counterKey = (briefDate, storyId, rating) =>
-    ('dab-v1-' + briefDate + '-' + storyId + '-feedback_' + rating)
-      .replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 100);
-
   const read = key => {
     try { return localStorage.getItem(key); } catch (_) { return null; }
   };
@@ -32,10 +28,14 @@
   };
 
   const send = async (briefDate, storyId, rating) => {
-    const response = await fetch(endpoint + '/' + encodeURIComponent(counterKey(briefDate, storyId, rating)), {
-      method: 'GET', mode: 'cors', cache: 'no-store', credentials: 'omit'
+    const response = await fetch(endpoint, {
+      method: 'POST', mode: 'cors', cache: 'no-store', credentials: 'omit',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({brief_date: briefDate, item_id: storyId, rating})
     });
     if (!response.ok) throw new Error('feedback transport unavailable');
+    const result = await response.json();
+    if (result.recorded !== true || !Number.isInteger(result.count)) throw new Error('feedback persistence unconfirmed');
   };
 
   const synchronize = async (story, briefDate, storyId, rating, quiet = false) => {

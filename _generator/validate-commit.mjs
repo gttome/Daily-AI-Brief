@@ -65,7 +65,12 @@ for (const date of dates) {
       ...execFileSync('git', ['ls-tree', '-r', '--name-only', head, `stories/${date}`], {encoding: 'utf8'}).trim().split('\n').filter(Boolean),
       ...execFileSync('git', ['ls-tree', '-r', '--name-only', head, `briefs/images/${date}`], {encoding: 'utf8'}).trim().split('\n').filter(Boolean)
     ];
-    validationPaths = [...new Set([...changed, ...retained])];
+    // For a repair of an existing edition, count dated assets and story pages
+    // from the candidate tree. Deleted superseded files still appear in
+    // `git diff --name-only` and must not inflate the final-state counts.
+    const finalStatePrefixes = [`briefs/images/${date}/`, `stories/${date}/`];
+    const changedOutsideFinalSets = changed.filter(name => !finalStatePrefixes.some(prefix => name.startsWith(prefix)));
+    validationPaths = [...new Set([...changedOutsideFinalSets, ...retained])];
   } catch {
     // A new edition must carry every atomic input and output in the change set.
   }

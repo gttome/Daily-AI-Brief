@@ -41,12 +41,14 @@ test('generator is deterministic for identical inputs', () => {
   assert.deepEqual([...first], [...second]);
 });
 
-test('homepage and dated brief place compact daily feedback controls under all six stories', () => {
-  const files = generatedFiles(edition, root);
-  for (const name of ['index.md', `briefs/${edition.brief_date}.md`]) {
+test('homepage and dated brief place compact feedback controls under all six stories and both videos', () => {
+  const currentEdition = JSON.parse(fs.readFileSync(path.join(root, '_data', 'editions', '2026-09-09.json'), 'utf8'));
+  const files = generatedFiles(currentEdition, root);
+  for (const name of ['index.md', `briefs/${currentEdition.brief_date}.md`]) {
     const page = files.get(name);
-    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 6);
-    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 24);
+    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 8);
+    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 32);
+    assert.equal((page.match(/Was this video useful\?/g) || []).length, 2);
   }
 });
 
@@ -82,6 +84,14 @@ test('atomic change validator accepts one complete edition transaction', () => {
     ...Array.from({length: 6}, (_, index) => `briefs/images/${date}/${String(index + 1).padStart(2, '0')}-story.svg`)
   ];
   assert.deepEqual(validateAtomicChangedPaths(complete, date), []);
+});
+
+test('existing-edition repair counts the candidate tree rather than deleted asset paths', () => {
+  const date = '2026-09-07';
+  const finalAssets = Array.from({length: 6}, (_, index) => `briefs/images/${date}/${String(index + 1).padStart(2, '0')}-story.svg`);
+  const deletedSupersededAssets = Array.from({length: 3}, (_, index) => `briefs/images/${date}/${String(index + 1).padStart(2, '0')}-old.svg`);
+  assert.notDeepEqual(validateAtomicChangedPaths([...finalAssets, ...deletedSupersededAssets], date), []);
+  assert.deepEqual(validateAtomicChangedPaths(finalAssets, date).filter(item => item.includes('exactly six assets')), []);
 });
 
 test('editorial-intelligence transaction also requires candidate and memory evidence', () => {
