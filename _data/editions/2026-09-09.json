@@ -93,13 +93,13 @@
         "Dart"
       ],
       "image": {
-        "path": "briefs/images/2026-09-09/02-portable-agent-skills.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1",
+        "path": "briefs/images/2026-09-09/02-portable-agent-skills-v2.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills-v2.png?v=20260909-2",
         "alt": "Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "20260909-1"
+        "cache_key": "20260909-2"
       },
       "summary": "Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.",
       "why_it_matters": "Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.",
@@ -158,13 +158,13 @@
         "OpenAI"
       ],
       "image": {
-        "path": "briefs/images/2026-09-09/03-chatgpt-images-25.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25.png?v=20260909-1",
+        "path": "briefs/images/2026-09-09/03-chatgpt-images-25-v2.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25-v2.png?v=20260909-2",
         "alt": "Circular textbook workflow showing prompt, reference, and edit-mask inputs feeding a layered image canvas, fidelity and detail checks, precise editing, and export.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "20260909-1"
+        "cache_key": "20260909-2"
       },
       "summary": "OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API.",
       "why_it_matters": "Faster, more controllable iteration can improve textbook diagrams, course graphics, and marketing assets. The performance figures are vendor-reported, and stronger visual fidelity does not verify factual labels or eliminate the need for accessibility and editorial review.",
@@ -224,13 +224,13 @@
         "MIT"
       ],
       "image": {
-        "path": "briefs/images/2026-09-09/04-quantum-agent-loop.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop.png?v=20260909-1",
+        "path": "briefs/images/2026-09-09/04-quantum-agent-loop-v2.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-2",
         "alt": "Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "20260909-1"
+        "cache_key": "20260909-2"
       },
       "summary": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.",
       "why_it_matters": "This is a strong example of a bounded closed loop: the agent handles repetitive, software-controlled experiments while the researcher designs goals and interprets ambiguous physics. It is a case study rather than an independent evaluation; weak or noisy signals still required expert guidance.",

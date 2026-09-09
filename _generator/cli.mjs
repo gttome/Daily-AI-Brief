@@ -13,7 +13,7 @@ import {scanHistoricalBriefs} from './lib/historical.mjs';
 import {backtestNovelty} from './lib/novelty.mjs';
 import {validateCandidatePool} from './lib/scoring.mjs';
 import {accessibilityReview} from './lib/accessibility.mjs';
-import {collectAnalytics, refreshFeedbackAnalytics} from './lib/analytics.mjs';
+import {collectAnalytics, FEEDBACK_METRICS, refreshFeedbackAnalytics} from './lib/analytics.mjs';
 import {readerStories} from './lib/reader.mjs';
 import {renderQaDashboard} from './lib/quality.mjs';
 import {validateIntegratedRepository} from './lib/integrity.mjs';
@@ -123,17 +123,20 @@ if (command === 'import') {
   const editionDir = path.join(repoRoot, '_data', 'editions');
   const days = Math.max(1, Math.min(30, Number(args.days || 7)));
   const names = fs.readdirSync(editionDir).filter(name => name.endsWith('.json') && name.slice(0, 10) <= endDate).sort().slice(-days);
-  const endpoint = args.endpoint || 'https://countapi.mileshilliard.com/api/v1/get';
+  const endpoint = args.endpoint || 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/ratings';
   const results = [];
   for (const name of names) {
     const edition = readJson(path.join(editionDir, name));
     const outputPath = path.join(repoRoot, '_records', 'analytics', name);
     const existing = fs.existsSync(outputPath) ? readJson(outputPath) : null;
     const result = await refreshFeedbackAnalytics(existing, edition.brief_date, edition.stories, async key => {
-      const response = await fetch(`${endpoint}/${encodeURIComponent(key)}`, {headers: {'user-agent': 'Daily-AI-Brief-feedback-aggregator/1.0'}});
-      if (response.status === 404) return 0;
+      const story = edition.stories.find(item => key.includes(`-${item.story_id}-`));
+      const metric = FEEDBACK_METRICS.find(item => key.endsWith(`-${item}`));
+      if (!story || !metric) throw new Error('invalid feedback counter key');
+      const query = new URLSearchParams({brief_date: edition.brief_date, item_id: story.story_id});
+      const response = await fetch(`${endpoint}?${query}`, {headers: {'user-agent': 'Daily-AI-Brief-feedback-aggregator/2.0', origin: 'https://gttome.github.io'}});
       if (!response.ok) throw new Error(`counter transport ${response.status}`);
-      return Number((await response.json()).value);
+      return Number((await response.json()).totals?.[metric.slice('feedback_'.length)]);
     });
     writeText(outputPath, JSON.stringify(result.record, null, 2));
     results.push({date: edition.brief_date, feedback_status: result.feedback_status, failures: result.failures});

@@ -43,7 +43,7 @@ function runtime(value) {
   return `${minutes}:${seconds}`;
 }
 
-function renderVideo(name, slot) {
+function renderVideo(name, slot, briefDate, slotId) {
   const heading = `### ${name}`;
   if (slot.status === 'empty') return `${heading}\n\n${slot.exception}`;
   return `${heading}
@@ -53,7 +53,13 @@ function renderVideo(name, slot) {
 **Upload date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
 **Runtime:** ${runtime(slot.runtime_seconds)}  
 **Why it is useful:** ${slot.why_useful}  
-**Connection to the brief:** ${slot.connection}`;
+**Connection to the brief:** ${slot.connection}
+
+${renderInlineFeedback({
+    brief_date: briefDate,
+    story_id: `dab-video-${briefDate}-${slotId}`,
+    feedback_subject: 'video'
+  })}`;
 }
 
 export function renderBody(edition) {
@@ -66,9 +72,9 @@ ${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\
 
 ## Worth Watching
 
-${renderVideo('General', edition.worth_watching.general)}
+${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'general')}
 
-${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people)}
+${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
 ## Editorial takeaway
 

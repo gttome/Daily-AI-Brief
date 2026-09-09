@@ -56,7 +56,7 @@
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1)
+![Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills-v2.png?v=20260909-2)
 
 **Summary:** Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.
 
@@ -94,7 +94,7 @@
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Circular textbook workflow showing prompt, reference, and edit-mask inputs feeding a layered image canvas, fidelity and detail checks, precise editing, and export.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25.png?v=20260909-1)
+![Circular textbook workflow showing prompt, reference, and edit-mask inputs feeding a layered image canvas, fidelity and detail checks, precise editing, and export.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25-v2.png?v=20260909-2)
 
 **Summary:** OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API.
 
@@ -132,7 +132,7 @@
 **Evidence:** Official Announcement  
 **Availability:** Research
 
-![Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop.png?v=20260909-1)
+![Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-2)
 
 **Summary:** An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.
 
@@ -242,6 +242,17 @@
 **Why it is useful:** A concise official overview of shared agents that can handle longer-running work across team tools.  
 **Connection to the brief:** Shows the broader workspace-agent model behind today’s themes of reusable workflows, permissions, and human oversight.
 
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-video-2026-09-09-general">
+  <span class="feedback-prompt">Was this video useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this video">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
 ### Agents for Non-Technical People
 
 **Title:** [ChatGPT Projects vs Skills Explained in 2 Minutes](https://www.youtube.com/watch?v=GRWChm0sYHE)  
@@ -250,6 +261,17 @@
 **Runtime:** 2:00  
 **Why it is useful:** A short, plain-language distinction between project context and reusable skills for repeated work.  
 **Connection to the brief:** Directly supports today’s SKILL.md focus by helping non-technical users decide when to package a method as a reusable skill.
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-video-2026-09-09-agent-skills">
+  <span class="feedback-prompt">Was this video useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this video">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
 
 ## Editorial takeaway
 

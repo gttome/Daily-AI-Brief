@@ -41,12 +41,14 @@ test('generator is deterministic for identical inputs', () => {
   assert.deepEqual([...first], [...second]);
 });
 
-test('homepage and dated brief place compact daily feedback controls under all six stories', () => {
-  const files = generatedFiles(edition, root);
-  for (const name of ['index.md', `briefs/${edition.brief_date}.md`]) {
+test('homepage and dated brief place compact feedback controls under all six stories and both videos', () => {
+  const currentEdition = JSON.parse(fs.readFileSync(path.join(root, '_data', 'editions', '2026-09-09.json'), 'utf8'));
+  const files = generatedFiles(currentEdition, root);
+  for (const name of ['index.md', `briefs/${currentEdition.brief_date}.md`]) {
     const page = files.get(name);
-    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 6);
-    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 24);
+    assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 8);
+    assert.equal((page.match(/data-feedback-rating=/g) || []).length, 32);
+    assert.equal((page.match(/Was this video useful\?/g) || []).length, 2);
   }
 });
 

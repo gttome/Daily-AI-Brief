@@ -25,7 +25,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/",
       "title": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
       "summary": "Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills-v2.png?v=20260909-2",
       "date_published": "2026-09-09T13:00:00-05:00",
       "tags": [
         "agent skills",
@@ -41,7 +41,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/",
       "title": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
       "summary": "OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25.png?v=20260909-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25-v2.png?v=20260909-2",
       "date_published": "2026-09-09T13:00:00-05:00",
       "tags": [
         "image generation",
@@ -56,7 +56,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/",
       "title": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
       "summary": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop.png?v=20260909-1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-2",
       "date_published": "2026-09-09T13:00:00-05:00",
       "tags": [
         "scientific agents",

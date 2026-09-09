@@ -18,9 +18,11 @@ const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&
 
 export function renderInlineFeedback(story, compact = true) {
   const className = compact ? 'story-feedback story-feedback-compact' : 'story-feedback';
+  const subject = story.feedback_subject === 'video' ? 'video' : 'story';
+  const prompt = subject === 'video' ? 'Was this video useful?' : 'Was this useful?';
   return `<div class="${className}" data-feedback-brief-date="${story.brief_date}" data-feedback-story-id="${story.story_id}">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+  <span class="feedback-prompt">${prompt}</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this ${subject}">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
     <button type="button" data-feedback-rating="useful">Useful</button>
     <button type="button" data-feedback-rating="neutral">Neutral</button>
