@@ -58,13 +58,13 @@
 
 ![Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1)
 
-**Summary:** The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout.
+**Summary:** Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.
 
-**Why it matters:** Bundling operational guidance beside versioned code can reduce stale instructions and repeated context setup. Portability does not guarantee correctness or safety: teams still need to inspect skill instructions, validate examples, and constrain the tools an installed skill may invoke.
+**Why it matters:** Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.
 
-**For George’s work:** Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence.
+**For George’s work:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
 
-**What to do now — Test:** Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence.
+**What to do now — Create a Skill:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
 
 **Source:** [Skills CLI 1.0: Bundle and distribute AI agent skills for your packages](https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages)
 
@@ -235,11 +235,21 @@
 
 ### General
 
-No recent substantive general video with a directly verified runtime of 20:00 or less met the evidence threshold.
+**Title:** [Introducing workspace agents in ChatGPT](https://www.youtube.com/watch?v=yyvVUEPSCu0)  
+**Channel:** OpenAI  
+**Upload date:** April 22, 2026  
+**Runtime:** 1:11  
+**Why it is useful:** A concise official overview of shared agents that can handle longer-running work across team tools.  
+**Connection to the brief:** Shows the broader workspace-agent model behind today’s themes of reusable workflows, permissions, and human oversight.
 
 ### Agents for Non-Technical People
 
-No recent practical agent video for non-technical people with a directly verified runtime of 20:00 or less met the evidence threshold.
+**Title:** [ChatGPT Projects vs Skills Explained in 2 Minutes](https://www.youtube.com/watch?v=GRWChm0sYHE)  
+**Channel:** AI with Kyle  
+**Upload date:** July 24, 2026  
+**Runtime:** 2:00  
+**Why it is useful:** A short, plain-language distinction between project context and reusable skills for repeated work.  
+**Connection to the brief:** Directly supports today’s SKILL.md focus by helping non-technical users decide when to package a method as a reusable skill.
 
 ## Editorial takeaway
 

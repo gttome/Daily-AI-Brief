@@ -17,7 +17,7 @@
     <id>dab-story-2026-09-09-0b6b1021</id>
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/" />
     <updated>2026-09-09T18:00:00Z</updated>
-    <summary>The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout.</summary>
+    <summary>Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.</summary>
   </entry>
   <entry>
     <title>ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed</title>

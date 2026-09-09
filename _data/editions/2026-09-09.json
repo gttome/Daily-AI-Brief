@@ -101,9 +101,9 @@
         "kind": "editorial_explainer",
         "cache_key": "20260909-1"
       },
-      "summary": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout.",
-      "why_it_matters": "Bundling operational guidance beside versioned code can reduce stale instructions and repeated context setup. Portability does not guarantee correctness or safety: teams still need to inspect skill instructions, validate examples, and constrain the tools an installed skill may invoke.",
-      "george_implication": "Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence.",
+      "summary": "Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.",
+      "why_it_matters": "Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.",
+      "george_implication": "Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.",
       "source": {
         "title": "Skills CLI 1.0: Bundle and distribute AI agent skills for your packages",
         "organization": "Dart",
@@ -131,12 +131,12 @@
       },
       "what_to_do_now": {
         "action": "test",
-        "label": "Test",
-        "rationale": "Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence."
+        "label": "Create a Skill",
+        "rationale": "Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it."
       },
       "social": {
         "title": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
-        "description": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and ins",
+        "description": "A SKILL.md can turn a repeated knowledge-worker method into portable, reviewable agent instructions without requiring the user to be a software developer.",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1"
       }
     },
@@ -404,12 +404,24 @@
   ],
   "worth_watching": {
     "general": {
-      "status": "empty",
-      "exception": "No recent substantive general video with a directly verified runtime of 20:00 or less met the evidence threshold."
+      "status": "included",
+      "title": "Introducing workspace agents in ChatGPT",
+      "channel": "OpenAI",
+      "upload_date": "2026-04-22",
+      "runtime_seconds": 71,
+      "why_useful": "A concise official overview of shared agents that can handle longer-running work across team tools.",
+      "connection": "Shows the broader workspace-agent model behind today’s themes of reusable workflows, permissions, and human oversight.",
+      "url": "https://www.youtube.com/watch?v=yyvVUEPSCu0"
     },
     "agents_non_technical_people": {
-      "status": "empty",
-      "exception": "No recent practical agent video for non-technical people with a directly verified runtime of 20:00 or less met the evidence threshold."
+      "status": "included",
+      "title": "ChatGPT Projects vs Skills Explained in 2 Minutes",
+      "channel": "AI with Kyle",
+      "upload_date": "2026-07-24",
+      "runtime_seconds": 120,
+      "why_useful": "A short, plain-language distinction between project context and reusable skills for repeated work.",
+      "connection": "Directly supports today’s SKILL.md focus by helping non-technical users decide when to package a method as a reusable skill.",
+      "url": "https://www.youtube.com/watch?v=GRWChm0sYHE"
     }
   },
   "editorial_takeaway": "The strongest developments pair broader agent capability with visible control surfaces: centrally enforced sandboxes, versioned skills, explicit permissions, approval gates, source grounding, and expert review.",
