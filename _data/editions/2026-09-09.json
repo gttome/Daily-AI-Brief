@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "full_v1",
+  "edition_id": "dab-edition-2026-09-09",
+  "brief_date": "2026-09-09",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief - September 9, 2026",
+  "published_at": "2026-09-09T12:00:34Z",
+  "coverage_period": "Primarily September 8–9, 2026, using newly published primary sources and one launch-day official product record.",
+  "status": "validated",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-09-e9be6ec5",
+      "ordinal": 1,
+      "slug": "github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox",
+      "permanent_url": "/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub gives enterprises central control over Copilot’s JetBrains sandbox",
+      "event_date": "2026-09-08",
+      "topics": [
+        "GitHub Copilot",
+        "sandboxing",
+        "enterprise policy",
+        "agent security"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-09/01-enterprise-managed-sandbox.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/01-enterprise-managed-sandbox.png?v=20260909-1",
+        "alt": "Layered textbook diagram showing administrator policy governing filesystem, network, proxy, tools, keychain, and terminal access inside a sandboxed IDE agent workspace.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260909-1"
+      },
+      "summary": "GitHub added enterprise-managed sandbox policies for Copilot in JetBrains IDEs. Administrators can centrally control sandbox enablement, filesystem and network access, proxy settings, developer tools, and macOS Keychain access; managed restrictions override local user settings and policy diagnostics show whether controls are enforced.",
+      "why_it_matters": "Agentic coding tools increasingly operate across files, terminals, and external services. Central policy converts safety from a developer preference into an enforceable organizational boundary. The sandbox controls are in public preview, and the broader release also includes preview features, so teams should validate behavior on their own platforms before relying on it.",
+      "george_implication": "Use this as a concrete governance example in agent training: define allowed resources centrally, lock high-risk controls, and verify enforcement with diagnostics rather than trusting written instructions alone.",
+      "source": {
+        "title": "Enterprise-managed sandbox in Copilot for JetBrains",
+        "organization": "GitHub",
+        "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/",
+        "normalized_url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_changelog",
+        "availability_status": "public_preview"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "what_to_do_now": {
+        "action": "update_policy",
+        "label": "Update Policy",
+        "rationale": "Use this as a concrete governance example in agent training: define allowed resources centrally, lock high-risk controls, and verify enforcement with diagnostics rather than trusting written instructions alone."
+      },
+      "social": {
+        "title": "GitHub gives enterprises central control over Copilot’s JetBrains sandbox",
+        "description": "GitHub added enterprise-managed sandbox policies for Copilot in JetBrains IDEs. Administrators can centrally control sandbox enablement, filesystem and network access, proxy settin",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/01-enterprise-managed-sandbox.png?v=20260909-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-0b6b1021",
+      "ordinal": 2,
+      "slug": "dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages",
+      "permanent_url": "/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/",
+      "focus": "technical_ai_engineering",
+      "headline": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
+      "event_date": "2026-09-08",
+      "topics": [
+        "agent skills",
+        "context engineering",
+        "software packages",
+        "progressive disclosure"
+      ],
+      "companies": [
+        "Google",
+        "Dart"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-09/02-portable-agent-skills.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1",
+        "alt": "Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260909-1"
+      },
+      "summary": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout.",
+      "why_it_matters": "Bundling operational guidance beside versioned code can reduce stale instructions and repeated context setup. Portability does not guarantee correctness or safety: teams still need to inspect skill instructions, validate examples, and constrain the tools an installed skill may invoke.",
+      "george_implication": "Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence.",
+      "source": {
+        "title": "Skills CLI 1.0: Bundle and distribute AI agent skills for your packages",
+        "organization": "Dart",
+        "url": "https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages",
+        "normalized_url": "https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test",
+        "rationale": "Add “knowledge travels with the tool” to your context-engineering material, paired with a review checklist for provenance, version alignment, permissions, and test evidence."
+      },
+      "social": {
+        "title": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
+        "description": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and ins",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-259c8fd8",
+      "ordinal": 3,
+      "slug": "chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed",
+      "permanent_url": "/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
+      "event_date": "2026-09-08",
+      "topics": [
+        "image generation",
+        "precision editing",
+        "reference fidelity",
+        "creative workflows"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-09/03-chatgpt-images-25.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25.png?v=20260909-1",
+        "alt": "Circular textbook workflow showing prompt, reference, and edit-mask inputs feeding a layered image canvas, fidelity and detail checks, precise editing, and export.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260909-1"
+      },
+      "summary": "OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API.",
+      "why_it_matters": "Faster, more controllable iteration can improve textbook diagrams, course graphics, and marketing assets. The performance figures are vendor-reported, and stronger visual fidelity does not verify factual labels or eliminate the need for accessibility and editorial review.",
+      "george_implication": "Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow.",
+      "source": {
+        "title": "Introducing ChatGPT Images 2.5",
+        "organization": "OpenAI",
+        "url": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+        "normalized_url": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Evaluate",
+        "rationale": "Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow."
+      },
+      "social": {
+        "title": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
+        "description": "OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Im",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25.png?v=20260909-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-1f112fc7",
+      "ordinal": 4,
+      "slug": "gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg",
+      "permanent_url": "/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
+      "event_date": "2026-09-08",
+      "topics": [
+        "scientific agents",
+        "closed-loop experimentation",
+        "quantum computing",
+        "human review"
+      ],
+      "companies": [
+        "OpenAI",
+        "MIT"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-09/04-quantum-agent-loop.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop.png?v=20260909-1",
+        "alt": "Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260909-1"
+      },
+      "summary": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.",
+      "why_it_matters": "This is a strong example of a bounded closed loop: the agent handles repetitive, software-controlled experiments while the researcher designs goals and interprets ambiguous physics. It is a case study rather than an independent evaluation; weak or noisy signals still required expert guidance.",
+      "george_implication": "Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.",
+      "source": {
+        "title": "How GPT-5.6 Sol helps run quantum computing experiments",
+        "organization": "OpenAI",
+        "url": "https://openai.com/index/codex-quantum-computing-experiments/",
+        "normalized_url": "https://openai.com/index/codex-quantum-computing-experiments/",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "what_to_do_now": {
+        "action": "teach",
+        "label": "Teach",
+        "rationale": "Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts."
+      },
+      "social": {
+        "title": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
+        "description": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selecte",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop.png?v=20260909-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-a02b9db1",
+      "ordinal": 5,
+      "slug": "meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints",
+      "permanent_url": "/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/",
+      "focus": "agents_non_technical_people",
+      "headline": "Meta launches Muse as a personal agent with secure execution and approval checkpoints",
+      "event_date": "2026-09-08",
+      "topics": [
+        "personal agents",
+        "computer use",
+        "secure virtual machines",
+        "human approval"
+      ],
+      "companies": [
+        "Meta"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-09/05-personal-agent-architecture.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/05-personal-agent-architecture.png?v=20260909-1",
+        "alt": "Radial textbook architecture showing a personal agent inside a secure virtual machine connected to email, calendar, travel, shopping, and payments with permission toggles and approval gates.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260909-1"
+      },
+      "summary": "Meta introduced Muse in the United States for adults through a dedicated app and WhatsApp. Meta says the personal agent can plan and carry out tasks across connected services, runs in a dedicated secure virtual machine, and uses permissions plus approval steps for consequential actions.",
+      "why_it_matters": "Muse brings broad, action-taking agents closer to ordinary consumers, making permissions, prompt-injection defenses, and confirmation design practical adoption issues. Security and reliability claims are vendor-provided at launch; users should begin with reversible, low-consequence tasks and narrow access.",
+      "george_implication": "Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history.",
+      "source": {
+        "title": "Introducing Muse: The World’s First Personal AI Agent Built for Everyone",
+        "organization": "Meta",
+        "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "normalized_url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "what_to_do_now": {
+        "action": "monitor",
+        "label": "Monitor",
+        "rationale": "Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history."
+      },
+      "social": {
+        "title": "Meta launches Muse as a personal agent with secure execution and approval checkpoints",
+        "description": "Meta introduced Muse in the United States for adults through a dedicated app and WhatsApp. Meta says the personal agent can plan and carry out tasks across connected services, runs",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/05-personal-agent-architecture.png?v=20260909-1"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-09-81d2a78e",
+      "ordinal": 6,
+      "slug": "github-unifies-support-resources-behind-copilot-powered-search",
+      "permanent_url": "/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub unifies support resources behind Copilot-powered search",
+      "event_date": "2026-09-08",
+      "topics": [
+        "Copilot search",
+        "support workflows",
+        "knowledge retrieval",
+        "human escalation"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-09/06-copilot-support-search.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/06-copilot-support-search.png?v=20260909-1",
+        "alt": "Textbook retrieval diagram showing a question routed through Copilot search across documentation, learning, community, account, and support sources, with source markers and escalation.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260909-1"
+      },
+      "summary": "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation.",
+      "why_it_matters": "For non-technical users, an AI search layer can reduce the navigation burden across fragmented help systems. It should still be treated as a retrieval aid: confirm consequential account or billing guidance in the cited source and escalate unresolved cases to human support.",
+      "george_implication": "Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.",
+      "source": {
+        "title": "New customer portal help.github.com",
+        "organization": "GitHub",
+        "url": "https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/",
+        "normalized_url": "https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/",
+        "publication_date": "2026-09-08",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 31,
+        "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test",
+        "rationale": "Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary."
+      },
+      "social": {
+        "title": "GitHub unifies support resources behind Copilot-powered search",
+        "description": "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The por",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/06-copilot-support-search.png?v=20260909-1"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "empty",
+      "exception": "No recent substantive general video with a directly verified runtime of 20:00 or less met the evidence threshold."
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "exception": "No recent practical agent video for non-technical people with a directly verified runtime of 20:00 or less met the evidence threshold."
+    }
+  },
+  "editorial_takeaway": "The strongest developments pair broader agent capability with visible control surfaces: centrally enforced sandboxes, versioned skills, explicit permissions, approval gates, source grounding, and expert review.",
+  "provenance": {
+    "created_by": "Daily AI Brief integrated publisher",
+    "created_at": "2026-09-09T12:00:34Z",
+    "source_commit": "1fbb8cb5309df63e1b47e5e64485a4222a83f8d9"
+  }
+}

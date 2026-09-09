@@ -1,0 +1,668 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_set_id": "dab-candidates-2026-09-09-de201e98",
+  "brief_date": "2026-09-09",
+  "generated_at": "2026-09-09T12:00:34Z",
+  "candidates": [
+    {
+      "candidate_id": "dab-candidate-2026-09-09-01",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub gives enterprises central control over Copilot’s JetBrains sandbox",
+      "selected": true,
+      "selected_ordinal": 1,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/",
+        "normalized_url": "https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/",
+        "evidence_type": "official_changelog",
+        "availability_status": "public_preview"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-02",
+      "focus": "technical_ai_engineering",
+      "headline": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
+      "selected": true,
+      "selected_ordinal": 2,
+      "source": {
+        "url": "https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages",
+        "normalized_url": "https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 33,
+        "rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-03",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
+      "selected": true,
+      "selected_ordinal": 3,
+      "source": {
+        "url": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+        "normalized_url": "https://openai.com/index/introducing-chatgpt-images-2-5/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-04",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
+      "selected": true,
+      "selected_ordinal": 4,
+      "source": {
+        "url": "https://openai.com/index/codex-quantum-computing-experiments/",
+        "normalized_url": "https://openai.com/index/codex-quantum-computing-experiments/",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-05",
+      "focus": "agents_non_technical_people",
+      "headline": "Meta launches Muse as a personal agent with secure execution and approval checkpoints",
+      "selected": true,
+      "selected_ordinal": 5,
+      "source": {
+        "url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "normalized_url": "https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-06",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub unifies support resources behind Copilot-powered search",
+      "selected": true,
+      "selected_ordinal": 6,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/",
+        "normalized_url": "https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 4,
+        "category_fit": 4,
+        "total": 31,
+        "rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category.",
+      "rejection_reason": null,
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-07",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenAI publishes an AI-generated Navier–Stokes solution",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/navier-stokes-solution/",
+        "normalized_url": "https://openai.com/index/navier-stokes-solution/",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Strong primary research claim, but independent mathematical review is not yet available."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Strong primary research claim, but independent mathematical review is not yet available.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-08",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenEnv expands open infrastructure for agentic reinforcement learning",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://huggingface.co/blog/openenv-agentic-rl",
+        "normalized_url": "https://huggingface.co/blog/openenv-agentic-rl",
+        "evidence_type": "official_announcement",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Relevant infrastructure update but less immediately actionable than the selected controls and skill packaging."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Relevant infrastructure update but less immediately actionable than the selected controls and skill packaging.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-09",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Enterprise Server 3.22 adds Copilot CLI options for disconnected environments",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-08-github-enterprise-server-3-22-is-now-generally-available/",
+        "normalized_url": "https://github.blog/changelog/2026-09-08-github-enterprise-server-3-22-is-now-generally-available/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Useful enterprise capability but narrower for George’s present audience."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Useful enterprise capability but narrower for George’s present audience.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-10",
+      "focus": "technical_ai_engineering",
+      "headline": "Automatic Dependabot access reaches GitHub-hosted registries",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://github.blog/changelog/2026-09-08-automatic-dependabot-access-to-github-hosted-registries/",
+        "normalized_url": "https://github.blog/changelog/2026-09-08-automatic-dependabot-access-to-github-hosted-registries/",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Security-adjacent but not primarily a generative-AI development."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Security-adjacent but not primarily a generative-AI development.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-11",
+      "focus": "technical_ai_engineering",
+      "headline": "Tool-layer analysis explains MCP, function calling, and A2A",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://www.arcade.dev/blog/what-is-ai-agent-tool-calling",
+        "normalized_url": "https://www.arcade.dev/blog/what-is-ai-agent-tool-calling",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Practitioner overview was less authoritative than selected primary releases."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Practitioner overview was less authoritative than selected primary releases.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-12",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "OpenAI expands AI programs for journalism education and newsrooms",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms/",
+        "normalized_url": "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms/",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Valuable domain program, but less broadly reusable for today’s knowledge-worker allocation."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Valuable domain program, but less broadly reusable for today’s knowledge-worker allocation.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-13",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "OpenAI describes the economic work now within reach",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/the-work-now-within-reach/",
+        "normalized_url": "https://openai.com/index/the-work-now-within-reach/",
+        "evidence_type": "official_announcement",
+        "availability_status": "not_applicable"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Strategic company framing contains less concrete workflow change than selected items."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Strategic company framing contains less concrete workflow change than selected items.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-14",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "OpenAI funds research on AI and teen development",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/funding-grants-ai-teen-development/",
+        "normalized_url": "https://openai.com/index/funding-grants-ai-teen-development/",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Important safety research funding, but not a current practical workflow change for the target audience."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Important safety research funding, but not a current practical workflow change for the target audience.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-15",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Google summarizes its August AI product releases",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
+        "normalized_url": "https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Monthly roundup repeats changes already covered in the 30-day memory."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Monthly roundup repeats changes already covered in the 30-day memory.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-16",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Mistral argues for sovereign open-weight AI",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+        "normalized_url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Strategic position is material but lacks a sufficiently specific new knowledge-work feature."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Strategic position is material but lacks a sufficiently specific new knowledge-work feature.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-17",
+      "focus": "agents_non_technical_people",
+      "headline": "Hugging Face analysis warns that agent-read README files are an attack surface",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://huggingface.co/blog/relayshieldadmin/your-agent-reads-the-readme-and-that-is-the-attack",
+        "normalized_url": "https://huggingface.co/blog/relayshieldadmin/your-agent-reads-the-readme-and-that-is-the-attack",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "High-value warning, but the underlying claims require further primary verification before selection."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "High-value warning, but the underlying claims require further primary verification before selection.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-18",
+      "focus": "agents_non_technical_people",
+      "headline": "Hugging Face explains why tool layers turn assistants into agents",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://huggingface.co/blog/prismberry-technologies/the-tool-layer-is-the-real-power-behind-ai-agents",
+        "normalized_url": "https://huggingface.co/blog/prismberry-technologies/the-tool-layer-is-the-real-power-behind-ai-agents",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "research"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Conceptual practitioner article did not outrank launch-day primary evidence."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Conceptual practitioner article did not outrank launch-day primary evidence.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-19",
+      "focus": "agents_non_technical_people",
+      "headline": "OpenAI highlights product investment across ChatGPT Work and Codex",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://openai.com/index/the-work-now-within-reach/",
+        "normalized_url": "https://openai.com/index/the-work-now-within-reach/",
+        "evidence_type": "official_announcement",
+        "availability_status": "not_applicable"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Company-level narrative does not document a distinct new agent workflow."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Company-level narrative does not document a distinct new agent workflow.",
+      "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-09-20",
+      "focus": "agents_non_technical_people",
+      "headline": "Meta outlines longer-term personal-superintelligence ambitions",
+      "selected": false,
+      "selected_ordinal": null,
+      "source": {
+        "url": "https://about.fb.com/news/2026/08/personal-superintelligence/",
+        "normalized_url": "https://about.fb.com/news/2026/08/personal-superintelligence/",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced"
+      },
+      "score": {
+        "significance": 3,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 4,
+        "practical_value": 3,
+        "category_fit": 4,
+        "total": 26,
+        "rationale": "Superseded for today by the concrete Muse launch and therefore not separately selected."
+      },
+      "novelty_check": {
+        "disposition": "new",
+        "matches": [],
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "selection_rationale": null,
+      "rejection_reason": "Superseded for today by the concrete Muse launch and therefore not separately selected.",
+      "learning_adjustment": null
+    }
+  ]
+}
