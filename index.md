@@ -138,7 +138,7 @@ brief_date: 2026-09-09
 **Evidence:** Official Announcement  
 **Availability:** Research
 
-![Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-2)
+![Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-3)
 
 **Summary:** An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.
 
