@@ -141,12 +141,9 @@
     updateCountDisplay(key, local);
     try {
       const remote = await fetchRemoteCount(key);
-      let pending = readPendingCount(key);
-      // Recover counts created by the earlier optimistic-only implementation.
-      if (pending === 0 && local > remote) {
-        pending = local - remote;
-        writePendingCount(key, pending);
-      }
+      const pending = readPendingCount(key);
+      // The server is authoritative unless a real offline write remains queued.
+      // This prevents stale optimistic values from being replayed after a correction.
       updateCountDisplay(key, remote + pending);
       writeLocalCount(key, remote + pending);
       flushPending(key);
