@@ -13,14 +13,14 @@
     "retention_days": 400
   },
   "site_totals": {
-    "views": 0,
+    "views": 7,
     "source_clicks": 0,
-    "share_initiations": 0,
+    "share_initiations": 8,
     "worth_watching_clicks": 0,
-    "retention_30s": 0,
-    "feedback_most_useful": 6,
-    "feedback_useful": 2,
-    "feedback_neutral": 0,
+    "retention_30s": 1,
+    "feedback_most_useful": 10,
+    "feedback_useful": 5,
+    "feedback_neutral": 1,
     "feedback_not_useful": 0
   },
   "stories": [
@@ -29,10 +29,10 @@
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": 0,
+        "share_initiations": 1,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 0,
+        "feedback_most_useful": 1,
         "feedback_useful": 1,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -43,12 +43,12 @@
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": 0,
+        "share_initiations": 3,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
         "feedback_useful": 1,
-        "feedback_neutral": 0,
+        "feedback_neutral": 1,
         "feedback_not_useful": 0
       }
     },
@@ -57,10 +57,10 @@
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": 0,
+        "share_initiations": 1,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 2,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -71,10 +71,10 @@
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": 0,
+        "share_initiations": 1,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 2,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -85,11 +85,11 @@
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": 0,
+        "share_initiations": 1,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 1,
-        "feedback_useful": 0,
+        "feedback_useful": 1,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
       }
@@ -103,7 +103,7 @@
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 1,
-        "feedback_useful": 0,
+        "feedback_useful": 1,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
       }
@@ -117,11 +117,11 @@
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": 0,
+        "share_initiations": 1,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 1,
-        "feedback_useful": 0,
+        "feedback_useful": 1,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
       }
@@ -136,7 +136,7 @@
         "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 2,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -148,6 +148,7 @@
     "Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.",
     "Explicit rating-button and share totals remain exact because they contain no identifiers; other passive metrics below five remain suppressed.",
     "Anonymous reader feedback can inform a recommendation but cannot activate editorial weighting without George’s explicit approval.",
-    "The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals."
+    "The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals.",
+    "Explicit rating-button totals are refreshed for seven days and remain exact because they contain no identifiers."
   ]
 }

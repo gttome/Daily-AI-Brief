@@ -1,16 +1,20 @@
 {
   "schema_version": "1.0.0",
-  "learning_id": "dab-editorial-learning-2026-09-08-b347e2c4",
-  "evaluated_at": "2026-09-08T17:54:37Z",
+  "learning_id": "dab-editorial-learning-2026-09-09-f407a4cf",
+  "evaluated_at": "2026-09-09T17:49:22Z",
   "status": "insufficient_evidence",
   "inputs": {
-    "feedback_ids": [],
-    "brief_dates": [],
-    "rated_stories": 0,
+    "feedback_ids": [
+      "dab-reader-feedback-2026-09-09"
+    ],
+    "brief_dates": [
+      "2026-09-09"
+    ],
+    "rated_stories": 12,
     "focus_coverage": {
-      "technical_ai_engineering": 0,
-      "applied_genai_knowledge_workers": 0,
-      "agents_non_technical_people": 0
+      "technical_ai_engineering": 4,
+      "applied_genai_knowledge_workers": 4,
+      "agents_non_technical_people": 4
     }
   },
   "sufficiency": {
@@ -19,21 +23,21 @@
     "minimum_per_focus": 10,
     "result": "INSUFFICIENT",
     "reasons": [
-      "Need 5 more rated editions.",
-      "Need 30 more story ratings.",
-      "Need 10 more technical_ai_engineering ratings.",
-      "Need 10 more applied_genai_knowledge_workers ratings.",
-      "Need 10 more agents_non_technical_people ratings."
+      "Need 4 more rated editions.",
+      "Need 18 more story ratings.",
+      "Need 6 more technical_ai_engineering ratings.",
+      "Need 6 more applied_genai_knowledge_workers ratings.",
+      "Need 6 more agents_non_technical_people ratings."
     ]
   },
   "signals": {
-    "practical_value": null,
+    "practical_value": 0.75,
     "category_fit": null
   },
   "weight_recommendations": [],
   "shadow": {
     "minimum_candidate_sets": 5,
-    "candidate_sets_evaluated": 2,
+    "candidate_sets_evaluated": 3,
     "result": "NOT_READY",
     "rank_changes": []
   },

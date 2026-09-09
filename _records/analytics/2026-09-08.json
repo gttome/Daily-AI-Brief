@@ -18,9 +18,9 @@
     "share_initiations": 4,
     "worth_watching_clicks": 0,
     "retention_30s": 1,
-    "feedback_most_useful": 4,
+    "feedback_most_useful": 0,
     "feedback_useful": 0,
-    "feedback_neutral": 1,
+    "feedback_neutral": 0,
     "feedback_not_useful": 0
   },
   "stories": [
@@ -46,7 +46,7 @@
         "share_initiations": null,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 0,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -60,7 +60,7 @@
         "share_initiations": null,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 0,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -74,7 +74,7 @@
         "share_initiations": null,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 0,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
@@ -90,7 +90,7 @@
         "retention_30s": null,
         "feedback_most_useful": 0,
         "feedback_useful": 0,
-        "feedback_neutral": 1,
+        "feedback_neutral": 0,
         "feedback_not_useful": 0
       }
     },
@@ -102,13 +102,14 @@
         "share_initiations": null,
         "worth_watching_clicks": null,
         "retention_30s": null,
-        "feedback_most_useful": 1,
+        "feedback_most_useful": 0,
         "feedback_useful": 0,
         "feedback_neutral": 0,
         "feedback_not_useful": 0
       }
     }
   ],
+  "videos": [],
   "collection_status": "complete",
   "limitations": [
     "Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.",
