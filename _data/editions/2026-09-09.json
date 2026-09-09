@@ -225,12 +225,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-09/04-quantum-agent-loop-v2.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-2",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-3",
         "alt": "Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "20260909-2"
+        "cache_key": "20260909-3"
       },
       "summary": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.",
       "why_it_matters": "This is a strong example of a bounded closed loop: the agent handles repetitive, software-controlled experiments while the researcher designs goals and interprets ambiguous physics. It is a case study rather than an independent evaluation; weak or noisy signals still required expert guidance.",
