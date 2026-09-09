@@ -130,7 +130,7 @@
         "selection_rationale": "Selected after 30-day normalized-source and concept review as one of the strongest current, primary-source developments for its assigned category."
       },
       "what_to_do_now": {
-        "action": "create_skill",
+        "action": "test",
         "label": "Create a Skill",
         "rationale": "Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a nontechnical user before sharing it."
       },
