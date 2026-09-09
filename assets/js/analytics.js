@@ -24,5 +24,4 @@
     if (/youtube\.com|youtu\.be/i.test(link.href)) record('worth_watching_clicks', storyId);
     else if (link.closest('p')?.querySelector('strong:first-child')?.textContent.trim() === 'Source:') record('source_clicks', storyId);
   });
-  document.addEventListener('dab:share', event => record('share_initiations', event.detail?.storyId || bodyStory));
 })();

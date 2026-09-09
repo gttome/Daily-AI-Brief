@@ -335,7 +335,6 @@
   async function handleShare(item) {
     // Count the initiation once when Share is clicked, even if the reader later cancels.
     incrementCount(item.counterKey);
-    document.dispatchEvent(new CustomEvent('dab:share', {detail: {storyId: item.storyId || ''}}));
     if (navigator.share) {
       try {
         await navigator.share({
