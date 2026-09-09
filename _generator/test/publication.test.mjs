@@ -49,6 +49,7 @@ test('homepage and dated brief place compact feedback controls under all six sto
     assert.equal((page.match(/class="story-feedback story-feedback-compact"/g) || []).length, 8);
     assert.equal((page.match(/data-feedback-rating=/g) || []).length, 32);
     assert.equal((page.match(/Was this video useful\?/g) || []).length, 2);
+    assert.equal((page.match(/rating total|aggregate rating|votes for/gi) || []).length, 0);
   }
 });
 

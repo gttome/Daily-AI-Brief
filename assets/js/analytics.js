@@ -1,14 +1,17 @@
 (() => {
   'use strict';
-  const ENDPOINT = 'https://countapi.mileshilliard.com/api/v1/hit';
+  const ENDPOINT = 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/events';
   const briefDate = document.body.dataset.briefDate;
   const bodyStory = document.body.dataset.storyId;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(briefDate || '')) return;
   const storyIdFor = element => bodyStory || element?.closest('main')?.querySelector('.story-data[data-story-id]')?.dataset.storyId || '';
-  const key = (storyId, metric) => `dab-v1-${briefDate}-${storyId}-${metric}`.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 100);
   const record = (metric, storyId = bodyStory) => {
     if (!storyId) return;
-    fetch(`${ENDPOINT}/${encodeURIComponent(key(storyId, metric))}`, {method: 'GET', mode: 'cors', cache: 'no-store', credentials: 'omit', keepalive: true}).catch(() => {});
+    fetch(ENDPOINT, {
+      method: 'POST', mode: 'cors', cache: 'no-store', credentials: 'omit', keepalive: true,
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({brief_date: briefDate, item_id: storyId, metric})
+    }).catch(() => {});
   };
   const once = (name, callback) => { try { if (sessionStorage.getItem(name)) return; sessionStorage.setItem(name, '1'); } catch (_) {} callback(); };
   if (bodyStory) {

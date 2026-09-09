@@ -23,6 +23,7 @@
     },
     "site_totals": {"$ref": "#/$defs/metrics"},
     "stories": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["story_id", "metrics"], "properties": {"story_id": {"type": "string", "pattern": "^dab-story-"}, "metrics": {"$ref": "#/$defs/metrics"}}}},
+    "videos": {"type": "array", "maxItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["item_id", "title", "url", "metrics"], "properties": {"item_id": {"type": "string", "pattern": "^dab-video-"}, "title": {"type": "string", "minLength": 1}, "url": {"type": "string", "format": "uri", "pattern": "^https://"}, "metrics": {"$ref": "#/$defs/metrics"}}}},
     "collection_status": {"enum": ["complete", "partial", "unavailable"]},
     "limitations": {"type": "array", "items": {"type": "string"}}
   },

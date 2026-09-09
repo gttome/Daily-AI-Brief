@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const COUNTER_BASE = 'https://countapi.mileshilliard.com/api/v1';
+  const EVENTS_ENDPOINT = 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/events';
   const main = document.querySelector('main.main-content, main#content');
   if (!main) return;
 
@@ -45,10 +45,9 @@
   }
 
   function counterKey(itemId) {
-    const datePart = briefDate || 'undated';
-    return `daily-ai-brief-shares-${datePart}-${itemId}`
-      .replace(/[^a-zA-Z0-9_-]/g, '-')
-      .slice(0, 100);
+    if (/^dab-(?:story|video)-/.test(itemId)) return itemId;
+    const kind = String(itemId).startsWith('video-') ? 'video' : 'story';
+    return `dab-${kind}-${briefDate || 'undated'}-${itemId}`.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 140);
   }
 
   function localCounterKey(key) {
@@ -69,32 +68,35 @@
   }
 
   async function fetchRemoteCount(key) {
-    const response = await fetch(`${COUNTER_BASE}/get/${encodeURIComponent(key)}`, {
+    const query = new URLSearchParams({brief_date: briefDate, item_id: key});
+    const response = await fetch(`${EVENTS_ENDPOINT}?${query}`, {
       method: 'GET',
       mode: 'cors',
       cache: 'no-store',
       credentials: 'omit'
     });
     if (!response.ok) {
-      if (response.status === 404) return 0;
       throw new Error(`Counter read failed: ${response.status}`);
     }
     const data = await response.json();
-    const value = Number(data.value ?? 0);
+    const value = Number(data.totals?.share_initiations ?? 0);
     if (!Number.isFinite(value)) throw new Error('Counter response did not include a number');
     return value;
   }
 
   async function incrementRemoteCount(key) {
-    const response = await fetch(`${COUNTER_BASE}/hit/${encodeURIComponent(key)}`, {
-      method: 'GET',
+    const response = await fetch(EVENTS_ENDPOINT, {
+      method: 'POST',
       mode: 'cors',
       cache: 'no-store',
-      credentials: 'omit'
+      credentials: 'omit',
+      headers: {'content-type': 'application/json'},
+      body: JSON.stringify({brief_date: briefDate, item_id: key, metric: 'share_initiations'})
     });
     if (!response.ok) throw new Error(`Counter increment failed: ${response.status}`);
     const data = await response.json();
-    const value = Number(data.value ?? 0);
+    if (data.recorded !== true) throw new Error('Share persistence was not confirmed');
+    const value = Number(data.count ?? 0);
     if (!Number.isFinite(value)) throw new Error('Counter response did not include a number');
     return value;
   }
@@ -318,7 +320,6 @@
       const id = `story-${number}`;
       heading.id = id;
       heading.classList.add('brief-share-target');
-      const key = counterKey(id);
       let cursor = heading.nextElementSibling;
       let marker = null;
       while (cursor && cursor.tagName !== 'H2') {
@@ -326,6 +327,7 @@
         if (marker) break;
         cursor = cursor.nextElementSibling;
       }
+      const key = counterKey(marker?.dataset.storyId || id);
       const item = { id, title, counterKey: key, url: marker?.dataset.storyUrl ? `${window.location.origin}${siteBasePath().replace(/\/$/, '')}${marker.dataset.storyUrl}` : shareUrl(id), storyId: marker?.dataset.storyId || '' };
       heading.insertAdjacentElement('afterend', makeButton(item));
     });
@@ -356,13 +358,14 @@
         if (seen.has(a.href)) return;
         seen.add(a.href);
         index += 1;
-        const id = `video-${index}`;
+        const id = index === 1 ? 'general' : 'agent-skills';
         const target = a.closest('p, li, blockquote, div') || a;
         if (!target.id) target.id = id;
         target.classList.add('brief-share-target');
         const title = (a.textContent || `Worth Watching video ${index}`).trim();
-        const key = counterKey(id);
-        const item = { id, title, counterKey: key, url: shareUrl(id) };
+        const stableId = `dab-video-${briefDate}-${id}`;
+        const key = counterKey(stableId);
+        const item = { id, title, counterKey: key, url: shareUrl(id), storyId: stableId };
         target.insertAdjacentElement('afterend', makeButton(item));
       });
       node = node.nextElementSibling;
