@@ -61,6 +61,8 @@ test('a Share click records exactly one article or video initiation', () => {
   assert.match(handler, /incrementCount\(item\.counterKey\)/);
   assert.doesNotMatch(script, /dispatchEvent\(new CustomEvent\('dab:share'/);
   assert.doesNotMatch(analytics, /share_initiations/);
+  assert.doesNotMatch(script, /local > remote/);
+  assert.match(script, /const pending = readPendingCount\(key\)/);
 });
 
 test('publication stage contains canonical, compatibility, and operational records', () => {
