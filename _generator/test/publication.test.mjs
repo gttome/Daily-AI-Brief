@@ -55,9 +55,12 @@ test('homepage and dated brief place compact feedback controls under all six sto
 
 test('a Share click records exactly one article or video initiation', () => {
   const script = fs.readFileSync(path.join(root, 'assets', 'js', 'share.js'), 'utf8');
+  const analytics = fs.readFileSync(path.join(root, 'assets', 'js', 'analytics.js'), 'utf8');
   assert.equal((script.match(/incrementCount\(item\.counterKey\)/g) || []).length, 1);
   const handler = script.match(/async function handleShare\(item\) \{([\s\S]*?)\n  \}/)?.[1] || '';
   assert.match(handler, /incrementCount\(item\.counterKey\)/);
+  assert.doesNotMatch(script, /dispatchEvent\(new CustomEvent\('dab:share'/);
+  assert.doesNotMatch(analytics, /share_initiations/);
 });
 
 test('publication stage contains canonical, compatibility, and operational records', () => {
