@@ -6,8 +6,100 @@
   "description": "Six worthwhile Generative AI developments selected daily for George Tome.",
   "items": [
     {
-      "id": "dab-story-2026-09-08-aad4e966",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/",
+      "id": "dab-story-2026-09-09-e9be6ec5",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/",
+      "title": "GitHub gives enterprises central control over Copilot’s JetBrains sandbox",
+      "summary": "GitHub added enterprise-managed sandbox policies for Copilot in JetBrains IDEs. Administrators can centrally control sandbox enablement, filesystem and network access, proxy settings, developer tools, and macOS Keychain access; managed restrictions override local user settings and policy diagnostics show whether controls are enforced.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/01-enterprise-managed-sandbox.png?v=20260909-1",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "GitHub Copilot",
+        "sandboxing",
+        "enterprise policy",
+        "agent security",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-09-0b6b1021",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/",
+      "title": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
+      "summary": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills.png?v=20260909-1",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "agent skills",
+        "context engineering",
+        "software packages",
+        "progressive disclosure",
+        "Google",
+        "Dart"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-09-259c8fd8",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/",
+      "title": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
+      "summary": "OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25.png?v=20260909-1",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "image generation",
+        "precision editing",
+        "reference fidelity",
+        "creative workflows",
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-09-1f112fc7",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/",
+      "title": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
+      "summary": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop.png?v=20260909-1",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "scientific agents",
+        "closed-loop experimentation",
+        "quantum computing",
+        "human review",
+        "OpenAI",
+        "MIT"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-09-a02b9db1",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/",
+      "title": "Meta launches Muse as a personal agent with secure execution and approval checkpoints",
+      "summary": "Meta introduced Muse in the United States for adults through a dedicated app and WhatsApp. Meta says the personal agent can plan and carry out tasks across connected services, runs in a dedicated secure virtual machine, and uses permissions plus approval steps for consequential actions.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/05-personal-agent-architecture.png?v=20260909-1",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "personal agents",
+        "computer use",
+        "secure virtual machines",
+        "human approval",
+        "Meta"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-09-81d2a78e",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/",
+      "title": "GitHub unifies support resources behind Copilot-powered search",
+      "summary": "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/06-copilot-support-search.png?v=20260909-1",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "Copilot search",
+        "support workflows",
+        "knowledge retrieval",
+        "human escalation",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-08-a6856793",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/",
       "title": "Execution traces make agent reliability measurable across real development workflows",
       "summary": "A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows.",
       "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/01-execution-traces-make-agent-reliability-me.svg?v=20260908-2",
@@ -21,8 +113,8 @@
       ]
     },
     {
-      "id": "dab-story-2026-09-08-4a71e714",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/",
+      "id": "dab-story-2026-09-08-abf16e3a",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-in/",
       "title": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
       "summary": "GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly.",
       "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/02-github-s-weekly-copilot-release-bundles-ag.svg?v=20260908-2",
@@ -36,8 +128,8 @@
       ]
     },
     {
-      "id": "dab-story-2026-09-08-08eab2e3",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/",
+      "id": "dab-story-2026-09-08-0b136de8",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-pla/",
       "title": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
       "summary": "Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance.",
       "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/03-gemini-custom-instructions-expand-across-w.svg?v=20260908-2",
@@ -51,8 +143,8 @@
       ]
     },
     {
-      "id": "dab-story-2026-09-08-b9c617e3",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/",
+      "id": "dab-story-2026-09-08-47284df4",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keepin/",
       "title": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
       "summary": "Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response.",
       "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/04-google-vids-can-turn-source-documents-into.svg?v=20260908-2",
@@ -66,8 +158,8 @@
       ]
     },
     {
-      "id": "dab-story-2026-09-08-3444f489",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/",
+      "id": "dab-story-2026-09-08-c1333b8f",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-fr/",
       "title": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
       "summary": "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps.",
       "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/05-box-makes-chatgpt-and-claude-integrations-.svg?v=20260908-2",
@@ -77,12 +169,13 @@
         "ChatGPT",
         "Claude",
         "connected work",
-        "administration"
+        "administration",
+        "support.box.com"
       ]
     },
     {
-      "id": "dab-story-2026-09-08-9061ff44",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/",
+      "id": "dab-story-2026-09-08-c1fc056c",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-a/",
       "title": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
       "summary": "Microsoft’s September Copilot extensibility session introduces an Insights Agent pattern that lets makers ask how their agents are being used. The focus is operational visibility for Copilot Studio builders rather than another agent-creation surface.",
       "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-08/06-microsoft-introduces-an-insights-agent-pat.svg?v=20260908-2",

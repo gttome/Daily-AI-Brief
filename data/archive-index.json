@@ -3,11 +3,160 @@
   "generated_from": "canonical-edition-and-30-day-story-memory",
   "stories": [
     {
-      "story_id": "dab-story-2026-09-08-aad4e966",
+      "story_id": "dab-story-2026-09-09-e9be6ec5",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-08",
+      "headline": "GitHub gives enterprises central control over Copilot’s JetBrains sandbox",
+      "url": "/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "GitHub Copilot",
+        "sandboxing",
+        "enterprise policy",
+        "agent security"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "public_preview",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub added enterprise-managed sandbox policies for Copilot in JetBrains IDEs. Administrators can centrally control sandbox enablement, filesystem and network access, proxy settings, developer tools, and macOS Keychain access; managed restrictions override local user settings and policy diagnostics show whether controls are enforced."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-0b6b1021",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-08",
+      "headline": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
+      "url": "/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent skills",
+        "context engineering",
+        "software packages",
+        "progressive disclosure"
+      ],
+      "companies": [
+        "Google",
+        "Dart"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "The Dart team released Skills CLI 1.0, maintained and published by Dart, so package authors can ship Agent Skills in a top-level skills directory and consumers can discover and install skills from project dependencies. Incremental updates surface new, changed, removed, or skipped skills, and the format follows the Agent Skills layout."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-259c8fd8",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-08",
+      "headline": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
+      "url": "/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "image generation",
+        "precision editing",
+        "reference fidelity",
+        "creative workflows"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-1f112fc7",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-08",
+      "headline": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
+      "url": "/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "scientific agents",
+        "closed-loop experimentation",
+        "quantum computing",
+        "human review"
+      ],
+      "companies": [
+        "OpenAI",
+        "MIT"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "research",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-a02b9db1",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-08",
+      "headline": "Meta launches Muse as a personal agent with secure execution and approval checkpoints",
+      "url": "/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "personal agents",
+        "computer use",
+        "secure virtual machines",
+        "human approval"
+      ],
+      "companies": [
+        "Meta"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Meta introduced Muse in the United States for adults through a dedicated app and WhatsApp. Meta says the personal agent can plan and carry out tasks across connected services, runs in a dedicated secure virtual machine, and uses permissions plus approval steps for consequential actions."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-81d2a78e",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-08",
+      "headline": "GitHub unifies support resources behind Copilot-powered search",
+      "url": "/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Copilot search",
+        "support workflows",
+        "knowledge retrieval",
+        "human escalation"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation."
+    },
+    {
+      "story_id": "dab-story-2026-09-08-a6856793",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-04",
       "headline": "Execution traces make agent reliability measurable across real development workflows",
-      "url": "/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/",
+      "url": "/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/",
       "focus": "technical_ai_engineering",
       "topics": [
         "agent evaluation",
@@ -18,8 +167,8 @@
       "companies": [
         "Hugging Face"
       ],
-      "evidence_type": "practitioner_analysis",
-      "availability_status": "research",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -28,11 +177,11 @@
       "summary": "A new Hugging Face technical analysis shows how complete execution traces expose tool calls, intermediate states, retries, and failure paths that aggregate success scores hide. The proposed evaluation pattern compares what an agent did—not only whether it reached an answer—across realistic developer workflows."
     },
     {
-      "story_id": "dab-story-2026-09-08-4a71e714",
+      "story_id": "dab-story-2026-09-08-abf16e3a",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-04",
       "headline": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
-      "url": "/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/",
+      "url": "/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-in/",
       "focus": "technical_ai_engineering",
       "topics": [
         "GitHub Copilot",
@@ -43,8 +192,8 @@
       "companies": [
         "GitHub"
       ],
-      "evidence_type": "official_changelog",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -52,11 +201,11 @@
       "summary": "GitHub’s August 31 weekly release consolidates recent Copilot changes affecting agent-assisted development and review. The weekly packaging provides teams with a clearer operational checkpoint for testing changed behavior before adopting it broadly."
     },
     {
-      "story_id": "dab-story-2026-09-08-08eab2e3",
+      "story_id": "dab-story-2026-09-08-0b136de8",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-02",
       "headline": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
-      "url": "/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/",
+      "url": "/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-pla/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "Google Workspace",
@@ -67,8 +216,8 @@
       "companies": [
         "Google"
       ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Agent memory and context",
         "Accessible agents for knowledge work"
@@ -76,11 +225,11 @@
       "summary": "Google is expanding persistent Gemini custom instructions beyond Docs to more Workspace surfaces. Users can maintain preferences centrally and have them applied across supported work contexts instead of repeatedly restating the same guidance."
     },
     {
-      "story_id": "dab-story-2026-09-08-b9c617e3",
+      "story_id": "dab-story-2026-09-08-47284df4",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-02",
       "headline": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
-      "url": "/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/",
+      "url": "/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keepin/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "Google Vids",
@@ -91,19 +240,19 @@
       "companies": [
         "Google"
       ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Accessible agents for knowledge work"
       ],
       "summary": "Google Vids now converts Google Docs, PDFs, and Word files into video-summary drafts with generated scripts, narration, and custom visuals. The workflow begins from an existing source document and produces an editable artifact rather than only a text response."
     },
     {
-      "story_id": "dab-story-2026-09-08-3444f489",
+      "story_id": "dab-story-2026-09-08-c1333b8f",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-08",
       "headline": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
-      "url": "/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/",
+      "url": "/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-fr/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Box",
@@ -113,19 +262,19 @@
         "administration"
       ],
       "companies": [
-        "Box"
+        "support.box.com"
       ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [],
       "summary": "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps."
     },
     {
-      "story_id": "dab-story-2026-09-08-9061ff44",
+      "story_id": "dab-story-2026-09-08-c1fc056c",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-08",
       "headline": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
-      "url": "/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/",
+      "url": "/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-a/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Copilot Studio",
@@ -136,8 +285,8 @@
       "companies": [
         "Microsoft"
       ],
-      "evidence_type": "official_documentation",
-      "availability_status": "public_preview",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
