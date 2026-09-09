@@ -9,8 +9,6 @@ description: A privacy-safe 30-day view of Daily AI Brief publication quality.
 
 This public dashboard summarizes versioned QA records. It excludes credentials, identities, raw headers, and private operational details.
 
-**Latest recovery:** [September 9 image, rating transport, and video-rating verification]({{ '/qa/2026-09-09/' | relative_url }}#final-repair-run-2026-09-09t152400z) — PASS.
-
 <div class="qa-metrics" aria-label="Quality metrics">
   <div><strong>3</strong><span>QA runs</span></div>
   <div><strong>100%</strong><span>First-pass QA</span></div>
