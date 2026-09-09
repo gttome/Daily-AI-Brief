@@ -23,3 +23,17 @@
 .feedback-status { min-height: 1.4em; margin: .6rem 0 0; color: #35616a; font-weight: 700; }
 .story-feedback-compact .feedback-status { flex-basis: 100%; min-height: 0; margin: 0; font-size: .78rem; }
 @media (max-width: 640px) { .feedback-buttons { grid-template-columns: repeat(2, minmax(0, 1fr)); } .story-feedback-compact { align-items: stretch; } .story-feedback-compact .feedback-buttons { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+
+/* Reader-media integrity: show each complete 1200×630 story diagram. */
+main.main-content img,
+main#content img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  overflow: visible;
+}
