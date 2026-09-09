@@ -86,6 +86,14 @@ test('atomic change validator accepts one complete edition transaction', () => {
   assert.deepEqual(validateAtomicChangedPaths(complete, date), []);
 });
 
+test('existing-edition repair counts the candidate tree rather than deleted asset paths', () => {
+  const date = '2026-09-07';
+  const finalAssets = Array.from({length: 6}, (_, index) => `briefs/images/${date}/${String(index + 1).padStart(2, '0')}-story.svg`);
+  const deletedSupersededAssets = Array.from({length: 3}, (_, index) => `briefs/images/${date}/${String(index + 1).padStart(2, '0')}-old.svg`);
+  assert.notDeepEqual(validateAtomicChangedPaths([...finalAssets, ...deletedSupersededAssets], date), []);
+  assert.deepEqual(validateAtomicChangedPaths(finalAssets, date).filter(item => item.includes('exactly six assets')), []);
+});
+
 test('editorial-intelligence transaction also requires candidate and memory evidence', () => {
   const date = '2026-09-07';
   const files = [
