@@ -2,7 +2,7 @@
 layout: default
 title: "Microsoft argues AI value should be measured in completed work, not prompt volume"
 description: "Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed mea"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910hq2"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910premium3"
 permalink: /stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/
 brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-c9c45c5e
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-10-c9c45c5e
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
 
-![Measurement ladder diagram showing prompt counts and active use progressing to completed tasks, quality checks, review effort, and business outcomes as stronger evidence of AI value.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910hq2)
+![Executive measurement framework distinguishing prompt and usage activity from completed tasks, quality, review cost and business outcomes. Conceptual framework with no measured performance data.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910premium3)
 
 **Summary:** Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed measurement shift is toward completed work and outcome-oriented evidence rather than treating activity itself as impact.
 
