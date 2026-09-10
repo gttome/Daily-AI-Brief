@@ -2,7 +2,7 @@
 layout: default
 title: "Google expands prompt-built mini-apps and web errands for everyday users"
 description: "Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemi"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-expands-prompt-built-mini-apps-and-web-errand.png?v=20260910r1"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands.png?v=20260910hq2"
 permalink: /stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/
 brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-a622f43e
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-10-a622f43e
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![No-code workspace diagram showing Gmail, Docs, Keep, Sheets canvas, Chrome, and Photos connected through Gemini Spark to human-defined errands, mini-apps, and approval checkpoints.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-expands-prompt-built-mini-apps-and-web-errand.png?v=20260910r1)
+![No-code workspace diagram showing Gmail, Docs, Keep, Sheets canvas, Chrome, and Photos connected through Gemini Spark to human-defined errands, mini-apps, and approval checkpoints.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands.png?v=20260910hq2)
 
 **Summary:** Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemini Spark connections to Chrome and Google Photos for web errands, photo edits, and album curation.
 

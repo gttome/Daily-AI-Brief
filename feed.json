@@ -10,7 +10,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/",
       "title": "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations",
       "summary": "Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and running without the safeguards used in released models. A broader scan of roughly 481 million transcripts re-identified the four known incidents and found no additional cases of similar or greater severity; METR is conducting an independent investigation.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-s-cyber-incident-review-exposes-a-failure.png?v=20260910r1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment.png?v=20260910hq2",
       "date_published": "2026-09-10T13:00:00-05:00",
       "tags": [
         "agent security",
@@ -26,7 +26,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/",
       "title": "GitHub adds centrally enforced permissions for Copilot agent operations",
       "summary": "GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shell commands, file reads and edits, and network domains, and GitHub says user settings, auto-approval, or saved approvals cannot weaken those enterprise restrictions.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-adds-centrally-enforced-permissions-for-copil.png?v=20260910r1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions.png?v=20260910hq2",
       "date_published": "2026-09-10T13:00:00-05:00",
       "tags": [
         "GitHub Copilot",
@@ -41,7 +41,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/",
       "title": "Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio",
       "summary": "Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables. Adobe says document answers include clickable citations, and new enterprise capabilities can query shared document collections for structured insights.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-turns-acrobat-into-a-document-productivity-age.png?v=20260910r1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent.png?v=20260910hq2",
       "date_published": "2026-09-10T13:00:00-05:00",
       "tags": [
         "document AI",
@@ -56,7 +56,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
       "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
       "summary": "Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed measurement shift is toward completed work and outcome-oriented evidence rather than treating activity itself as impact.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-argues-ai-value-should-be-measured-in-comp.png?v=20260910r1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910hq2",
       "date_published": "2026-09-10T13:00:00-05:00",
       "tags": [
         "AI measurement",
@@ -71,7 +71,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/",
       "title": "Google expands prompt-built mini-apps and web errands for everyday users",
       "summary": "Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemini Spark connections to Chrome and Google Photos for web errands, photo edits, and album curation.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-expands-prompt-built-mini-apps-and-web-errand.png?v=20260910r1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands.png?v=20260910hq2",
       "date_published": "2026-09-10T13:00:00-05:00",
       "tags": [
         "no-code AI",
@@ -86,7 +86,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/",
       "title": "A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools",
       "summary": "A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, and many other compatible tools. This fills today’s required Agent Skills slot using the seven-day fallback window; it is practitioner analysis, so compatibility claims should be verified against each runtime before production use.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-a-september-update-maps-one-skill-md-across-codex-cl.png?v=20260910r1",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability.png?v=20260910hq2",
       "date_published": "2026-09-10T13:00:00-05:00",
       "tags": [
         "Agent Skills",
