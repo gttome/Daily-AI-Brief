@@ -1,4 +1,6 @@
 import path from 'node:path';
+import fs from 'node:fs';
+import {reviewedImages} from './image-gate.mjs';
 import {COMPATIBILITY_OUTPUTS} from './constants.mjs';
 import {generatedFiles} from './render.mjs';
 import {sha256, stableSuffix, writeText} from './util.mjs';
@@ -54,10 +56,16 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
     {check_id: 'edition_validation', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'Canonical edition passed structural and semantic validation.'},
     {check_id: 'atomic_file_set', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'All five compatibility outputs are present in the staged transaction.'}
   ];
-  const event = createValidatedEvent(edition, files, {...options, checks});
   files.set(`_data/editions/${edition.brief_date}.json`, `${JSON.stringify(edition, null, 2)}\n`);
+  const review=reviewedImages(edition,repoRoot);
+  if(review.errors.length)throw new Error(review.errors.join('; '));
+  for(const asset of review.assets)files.set(asset.path,fs.readFileSync(path.join(repoRoot,asset.path)));
+  if(review.review_path)files.set(review.review_path,fs.readFileSync(path.join(repoRoot,review.review_path),'utf8'));
+  const manifest={schema_version:'1.0.0',edition_id:edition.edition_id,baseline_sha:options.baselineSha,rollback_target_sha:options.baselineSha,policy_profile:edition.policy_profile,image_review:review.review_path||null,image_review_sha256:review.review_sha256||null,assets:review.assets,canonical_sha256:sha256(files.get(`_data/editions/${edition.brief_date}.json`)),candidate_digest:stagedDigest(files)};
+  files.set(`_records/releases/${edition.brief_date}.json`,JSON.stringify(manifest,null,2)+'\n');
+  const event = createValidatedEvent(edition, files, {...options, checks});
   files.set(event.path, `${JSON.stringify(event.value, null, 2)}\n`);
-  for (const [name, content] of files) writeText(path.join(outDir, name), content);
+  for (const [name, content] of files) { if(Buffer.isBuffer(content)){fs.mkdirSync(path.dirname(path.join(outDir,name)),{recursive:true});fs.writeFileSync(path.join(outDir,name),content);}else writeText(path.join(outDir, name), content); }
   return {files: [...files.keys()].sort(), digest: stagedDigest(files), event: event.value};
 }
 
@@ -86,6 +94,7 @@ export function validateAtomicChangedPaths(paths, date, {policyProfile = 'public
   const missing = [...required].filter(name => !paths.includes(name));
   const imagePrefix = `briefs/images/${date}/`;
   const imageCount = new Set(paths.filter(name => name.startsWith(imagePrefix))).size;
-  if (imageCount !== 6) missing.push(`${imagePrefix}<exactly six assets; found ${imageCount}>`);
+  // Final referenced assets and approval are checked against the full candidate tree.
+  // Unchanged approved assets and additional retained recovery files are valid.
   return missing;
 }

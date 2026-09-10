@@ -3808,6 +3808,38 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "The survey *Self-Evolving Coding Agents* synthesizes an emerging class of coding agents that improve future behavior using prior software-development experience. The authors organize the field around what can evolve—frameworks, memory, skills, tools, models, and collaboration structures—and around the feedback signals that drive change, including executable test results, repository context, and prior coding trajectories."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-09-general",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-09",
+      "headline": "Introducing workspace agents in ChatGPT",
+      "url": "https://www.youtube.com/watch?v=yyvVUEPSCu0",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "youtube_video",
+      "availability_status": "public",
+      "summary": "A concise official overview of shared agents that can handle longer-running work across team tools."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-09-agent-skills",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-09-09",
+      "headline": "ChatGPT Projects vs Skills Explained in 2 Minutes",
+      "url": "https://www.youtube.com/watch?v=GRWChm0sYHE",
+      "focus": "agent_skills_video",
+      "topics": [],
+      "companies": [
+        "AI with Kyle"
+      ],
+      "evidence_type": "youtube_video",
+      "availability_status": "public",
+      "summary": "A short, plain-language distinction between project context and reusable skills for repeated work."
     }
   ]
 }

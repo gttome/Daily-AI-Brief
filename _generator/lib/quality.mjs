@@ -2,10 +2,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {formatDate} from './util.mjs';
 
-export function loadQaRecords(repoRoot, days = 30) {
+export function loadQaRecords(repoRoot, days = 30, endDate = null) {
   const dir = path.join(repoRoot, '_records', 'qa');
   if (!fs.existsSync(dir)) return [];
-  return fs.readdirSync(dir).filter(name => /^\d{4}-\d{2}-\d{2}\.json$/.test(name)).sort().reverse().slice(0, days).map(name => JSON.parse(fs.readFileSync(path.join(dir, name), 'utf8')));
+  const names=fs.readdirSync(dir).filter(name => /^\d{4}-\d{2}-\d{2}\.json$/.test(name)).sort().reverse();
+  const end=endDate || names[0]?.slice(0,10);
+  if(!end)return [];
+  const start=new Date(Date.parse(end+'T12:00:00Z')-(days-1)*86400000).toISOString().slice(0,10);
+  return names.filter(name=>name.slice(0,10)>=start&&name.slice(0,10)<=end).map(name=>JSON.parse(fs.readFileSync(path.join(dir,name),'utf8')));
 }
 
 export function qaMetrics(records) {

@@ -1,177 +1,51 @@
 name: Publish validated candidate
-
 on:
   workflow_dispatch:
     inputs:
       staging_ref:
-        description: Branch containing one canonical edition, required editorial records, and exactly six dated assets
+        description: Existing reviewed candidate branch; this workflow validates and opens a PR, never writes main
         required: true
         type: string
       dry_run:
-        description: Build and validate without updating main
+        description: Validate without opening a pull request
         required: true
         default: true
         type: boolean
-
 permissions:
-  contents: write
-  issues: write
-
+  contents: read
+  pull-requests: write
 concurrency:
   group: daily-ai-brief-publication
   cancel-in-progress: false
-
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out staging ref
-        uses: actions/checkout@v4
+      - name: Check out trusted main validation code
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ inputs.staging_ref }}
+          ref: main
           fetch-depth: 0
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '20'
-
-      - name: Prepare isolated publication candidate
-        id: prepare
+          node-version: '22'
+      - name: Validate final candidate with trusted code
         env:
           STAGING_REF: ${{ inputs.staging_ref }}
-        run: |
-          git fetch origin main
-          mapfile -t edition_files < <(git diff --name-only origin/main...HEAD -- '_data/editions/*.json')
-          if [ "${#edition_files[@]}" -ne 1 ]; then
-            echo "Expected exactly one canonical edition change; found ${#edition_files[@]}." >&2
-            exit 1
-          fi
-          edition_path="${edition_files[0]}"
-          edition_date="$(basename "$edition_path" .json)"
-          policy_profile="$(node -e "const fs=require('fs'); console.log(JSON.parse(fs.readFileSync(process.argv[1],'utf8')).policy_profile)" "$edition_path")"
-
-          mapfile -t image_files < <(git diff --name-only origin/main...HEAD -- "briefs/images/$edition_date/*")
-          if [ "${#image_files[@]}" -ne 6 ]; then
-            echo "Expected exactly six dated image assets; found ${#image_files[@]}." >&2
-            exit 1
-          fi
-
-          baseline_sha="$(git rev-parse origin/main)"
-          payload_dir="$(mktemp -d)"
-          candidate_dir="$(mktemp -d)"
-          stage_dir="$(mktemp -d)"
-          mkdir -p "$payload_dir/_data/editions" "$payload_dir/briefs/images/$edition_date"
-          cp "$edition_path" "$payload_dir/_data/editions/$edition_date.json"
-
-          if [[ "$policy_profile" != "publication_reliability_v1" ]]; then
-            candidate_path="_records/editorial/candidates/$edition_date.json"
-            memory_path="_data/story-memory/$edition_date.json"
-            for required_path in "$candidate_path" "$memory_path"; do
-              if ! git diff --name-only origin/main...HEAD -- "$required_path" | grep -Fxq "$required_path"; then
-                echo "Policy $policy_profile requires staged editorial record $required_path." >&2
-                exit 1
-              fi
-            done
-            mkdir -p "$payload_dir/_records/editorial/candidates" "$payload_dir/_data/story-memory"
-            cp "$candidate_path" "$payload_dir/_records/editorial/candidates/$edition_date.json"
-            cp "$memory_path" "$payload_dir/_data/story-memory/$edition_date.json"
-          fi
-
-          if [[ "$policy_profile" == "measurement_accessibility_v1" || "$policy_profile" == "full_v1" ]]; then
-            accessibility_path="_records/accessibility/$edition_date.json"
-            if ! git diff --name-only origin/main...HEAD -- "$accessibility_path" | grep -Fxq "$accessibility_path"; then
-              echo "Policy $policy_profile requires staged editorial accessibility review $accessibility_path." >&2
-              exit 1
-            fi
-            mkdir -p "$payload_dir/_records/accessibility"
-            cp "$accessibility_path" "$payload_dir/_records/accessibility/$edition_date.json"
-          fi
-
-          for image in "${image_files[@]}"; do cp "$image" "$payload_dir/briefs/images/$edition_date/"; done
-
-          git worktree add --detach "$candidate_dir" origin/main
-          cp -a "$payload_dir/." "$candidate_dir/"
-          observed_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          node "$candidate_dir/_generator/cli.mjs" generate \
-            --root "$candidate_dir" \
-            --edition "$candidate_dir/_data/editions/$edition_date.json" \
-            --out "$stage_dir" \
-            --baseline-sha "$baseline_sha" \
-            --observed-at "$observed_at" > /tmp/publication-plan.json
-          cp -a "$stage_dir/." "$candidate_dir/"
-          echo "edition_date=$edition_date" >> "$GITHUB_OUTPUT"
-          echo "baseline_sha=$baseline_sha" >> "$GITHUB_OUTPUT"
-          echo "candidate_dir=$candidate_dir" >> "$GITHUB_OUTPUT"
-
-      - name: Validate candidate and create one commit
-        id: commit
-        env:
-          CANDIDATE_DIR: ${{ steps.prepare.outputs.candidate_dir }}
-          BASELINE_SHA: ${{ steps.prepare.outputs.baseline_sha }}
-          EDITION_DATE: ${{ steps.prepare.outputs.edition_date }}
-        run: |
-          cd "$CANDIDATE_DIR"
-          node --test _generator/test/*.test.mjs
-          node _tools/validate-contracts.mjs
-          node _generator/cli.mjs validate-repo
-          git config user.name "Daily AI Brief Automation"
-          git config user.email "130812356+gttome@users.noreply.github.com"
-          git add --all
-          git commit -m "Publish Daily AI Brief for $EDITION_DATE atomically"
-          candidate_sha="$(git rev-parse HEAD)"
-          BASE_SHA="$BASELINE_SHA" HEAD_SHA="$candidate_sha" node _generator/validate-commit.mjs
-          echo "candidate_sha=$candidate_sha" >> "$GITHUB_OUTPUT"
-          git show --stat --oneline "$candidate_sha" >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Materialize candidate for Jekyll action
-        env:
-          CANDIDATE_DIR: ${{ steps.prepare.outputs.candidate_dir }}
-        run: |
-          mkdir -p _candidate_site
-          git -C "$CANDIDATE_DIR" archive HEAD | tar -x -C _candidate_site
-
-      - name: Build candidate with Jekyll
-        uses: actions/jekyll-build-pages@v1
+        run: node _tools/check-candidate.mjs
+      - name: Build candidate site
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697
         with:
           source: ./_candidate_site
           destination: ./_site-candidate
-
-      - name: Update main once
+      - name: Open one reviewable publication PR
         if: inputs.dry_run == false
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
         env:
-          CANDIDATE_DIR: ${{ steps.prepare.outputs.candidate_dir }}
-        run: |
-          cd "$CANDIDATE_DIR"
-          git push origin HEAD:main
-
-      - name: Confirm dry-run isolation
-        if: inputs.dry_run == true
-        run: echo "Dry run completed; main was not updated." >> "$GITHUB_STEP_SUMMARY"
-
-      - name: Upload publication plan
-        uses: actions/upload-artifact@v4
-        with:
-          name: publication-plan-${{ steps.prepare.outputs.edition_date }}-${{ github.run_id }}
-          path: /tmp/publication-plan.json
-          retention-days: 30
-
-  alert:
-    needs: publish
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Maintain deduplicated publication alert
-        uses: actions/github-script@v7
+          STAGING_REF: ${{ inputs.staging_ref }}
         with:
           script: |
-            const title = 'Daily AI Brief alert: atomic publication failure';
-            const {data: issues} = await github.rest.issues.listForRepo({owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100});
-            const existing = issues.find(issue => issue.title === title);
-            if ('${{ needs.publish.result }}' !== 'success' && !existing) {
-              await github.rest.issues.create({owner: context.repo.owner, repo: context.repo.repo, title, body: `Atomic publication failed. Evidence: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
-            }
-            if ('${{ needs.publish.result }}' === 'success' && existing) {
-              await github.rest.issues.createComment({owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, body: `Recovered. Evidence: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
-              await github.rest.issues.update({owner: context.repo.owner, repo: context.repo.repo, issue_number: existing.number, state: 'closed'});
-            }
+            const head=process.env.STAGING_REF;
+            const {data: prs}=await github.rest.pulls.list({...context.repo,head:`${context.repo.owner}:${head}`,base:'main',state:'open'});
+            if(!prs.length)await github.rest.pulls.create({...context.repo,head,base:'main',title:'Publish validated Daily AI Brief candidate',body:'Complete candidate validated with trusted main code and Jekyll. Merge only after required CI passes for the exact head. No direct-main write is permitted.'});

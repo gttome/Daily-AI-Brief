@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {reviewedImages} from './image-gate.mjs';
 import path from 'node:path';
 import {auditEditionAccessibility} from './accessibility.mjs';
 import {validateFeeds} from './reader.mjs';
@@ -15,7 +16,7 @@ export function validateQaRecord(record) {
   if (!record.run_id?.startsWith('dab-qa-')) errors.push('QA run ID is invalid');
   if (!['pass', 'fail'].includes(record.initial_result) || !['pass', 'fail'].includes(record.final_result)) errors.push('QA results are invalid');
   if (record.final_result === 'pass' && record.checks?.some(check => check.result === 'fail' && ['critical', 'high'].includes(check.severity))) errors.push('Passing QA record contains a blocking failed check');
-  if (record.defects?.some(defect => defect.status === 'open' && ['critical', 'high'].includes(defect.severity))) errors.push('QA record contains an unresolved Critical/High defect');
+  if (record.final_result === 'pass' && record.defects?.some(defect => defect.status === 'open' && ['critical', 'high'].includes(defect.severity))) errors.push('QA record contains an unresolved Critical/High defect');
   return errors;
 }
 
@@ -91,7 +92,7 @@ export function validateDerivedParity(edition, repoRoot) {
 }
 
 export function validateIntegratedRepository(edition, repoRoot) {
-  const errors = [...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...validateDerivedParity(edition, repoRoot), ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
+  const errors = [...reviewedImages(edition, repoRoot).errors, ...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...validateDerivedParity(edition, repoRoot), ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
   const atom = fs.existsSync(path.join(repoRoot, 'feed.xml')) ? fs.readFileSync(path.join(repoRoot, 'feed.xml'), 'utf8') : '';
   const json = fs.existsSync(path.join(repoRoot, 'feed.json')) ? fs.readFileSync(path.join(repoRoot, 'feed.json'), 'utf8') : '';
   errors.push(...validateFeeds(atom, json));
