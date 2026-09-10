@@ -28,7 +28,7 @@
   "images": [
     {
       "story_id": "dab-story-2026-09-10-415f8f1a",
-      "asset": "briefs/images/2026-09-10/01-anthropic-containment.png",
+      "asset": "briefs/images/2026-09-10/01-anthropic-containment-premium3.png",
       "baseline_sha256": "c723a5a855086db0f0f86fd4a8d90d29f6dcd0a1a2a10c1f75ee3b7800e80506",
       "replacement_sha256": "1adfd3ad4fef2423dacb7deba6db4bd257ade78c166a445024fb8143e3918bd2",
       "width": 1200,
@@ -55,7 +55,7 @@
     },
     {
       "story_id": "dab-story-2026-09-10-fdde2a0c",
-      "asset": "briefs/images/2026-09-10/02-github-agent-permissions.png",
+      "asset": "briefs/images/2026-09-10/02-github-agent-permissions-premium3.png",
       "baseline_sha256": "4f73395a7bcb0fa94c9dd338247511d110a454411f06f6e25ed91c43a0b18b54",
       "replacement_sha256": "c318e345db3852c57f6c53f9ecf9000c6a1a8ad001025a4f23c01f14e7331217",
       "width": 1200,
@@ -82,7 +82,7 @@
     },
     {
       "story_id": "dab-story-2026-09-10-061a7b54",
-      "asset": "briefs/images/2026-09-10/03-adobe-document-agent.png",
+      "asset": "briefs/images/2026-09-10/03-adobe-document-agent-premium3.png",
       "baseline_sha256": "4db87d508dd1cccc6911824b023d56efa95881baff2d0696ef7b2b3b2a9e23be",
       "replacement_sha256": "21be5328f80b8481c1b1d9c1a02cd9c85d193f710e26a433b881075ab7e52e1b",
       "width": 1200,
@@ -109,7 +109,7 @@
     },
     {
       "story_id": "dab-story-2026-09-10-c9c45c5e",
-      "asset": "briefs/images/2026-09-10/04-microsoft-work-value.png",
+      "asset": "briefs/images/2026-09-10/04-microsoft-work-value-premium3.png",
       "baseline_sha256": "ab45200ba65230e2cf0bb4629eb45b197c0e9e96bffeaa2a2a14fd822d17e8cf",
       "replacement_sha256": "4a4c92adb8810b667ccca4d4e37b969e61133f8e8b6d3970040f2f6006dd6e09",
       "width": 1200,
@@ -136,7 +136,7 @@
     },
     {
       "story_id": "dab-story-2026-09-10-a622f43e",
-      "asset": "briefs/images/2026-09-10/05-google-opal-web-errands.png",
+      "asset": "briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png",
       "baseline_sha256": "07d66cd26faba6f5d44cfa7d0b3e4505e1501e4b0ac9732445d1450dbc5335ac",
       "replacement_sha256": "697d5b8ad74f3d46d55a989b4c24cd1cdfc054f66711eb34a647e355fa5d69a7",
       "width": 1200,
@@ -163,7 +163,7 @@
     },
     {
       "story_id": "dab-story-2026-09-10-b2d6f046",
-      "asset": "briefs/images/2026-09-10/06-skillmd-portability.png",
+      "asset": "briefs/images/2026-09-10/06-skillmd-portability-premium3.png",
       "baseline_sha256": "63a33aa69a8e3b3ade86b7ddc3ee0ab80a03df41af1bfa766e331d205ffe7571",
       "replacement_sha256": "8b9ee0f755f0f1c1deb71a4a0a426bde7a1afe2cca7141386a64e13d58ae68db",
       "width": 1200,
@@ -201,5 +201,11 @@
     "edition_semantics_preserved": "pass",
     "image_replacements": 6,
     "rejected_drafts": 2
-  }
+  },
+  "deployment_repairs": [
+    {
+      "issue": "Canonical raw main URLs still served baseline PNG bytes after successful Pages deployment, despite updated query cache keys.",
+      "resolution": "Use new premium3 asset filenames; preserve story URLs and image composition; reverify exact public image hashes after CI and deployment."
+    }
+  ]
 }

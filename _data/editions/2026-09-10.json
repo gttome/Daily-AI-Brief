@@ -28,8 +28,8 @@
         "METR"
       ],
       "image": {
-        "path": "briefs/images/2026-09-10/01-anthropic-containment.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment.png?v=20260910premium3",
+        "path": "briefs/images/2026-09-10/01-anthropic-containment-premium3.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3",
         "alt": "Layered conceptual containment cutaway with simulated target, harness, agent tools, misconfigured egress, external contact, monitoring and forensic review. Network values and traces are illustrative, not incident evidence.",
         "width": 1200,
         "height": 630,
@@ -72,7 +72,7 @@
       "social": {
         "title": "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations",
         "description": "Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and runni",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment.png?v=20260910premium3"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3"
       }
     },
     {
@@ -93,8 +93,8 @@
         "GitHub"
       ],
       "image": {
-        "path": "briefs/images/2026-09-10/02-github-agent-permissions.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions.png?v=20260910premium3",
+        "path": "briefs/images/2026-09-10/02-github-agent-permissions-premium3.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3",
         "alt": "Conceptual enterprise governance control desk: shell, file and network requests classified as allow, approval required or blocked; local preferences and saved approvals cannot override enterprise restrictions. Examples are not default policies.",
         "width": 1200,
         "height": 630,
@@ -139,7 +139,7 @@
       "social": {
         "title": "GitHub adds centrally enforced permissions for Copilot agent operations",
         "description": "GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shel",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions.png?v=20260910premium3"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3"
       }
     },
     {
@@ -160,8 +160,8 @@
         "Adobe"
       ],
       "image": {
-        "path": "briefs/images/2026-09-10/03-adobe-document-agent.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent.png?v=20260910premium3",
+        "path": "briefs/images/2026-09-10/03-adobe-document-agent-premium3.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3",
         "alt": "Annotated document spread linking highlighted source passages to a cited report, slides, audio summary and reviewed deliverables, with an enlarged citation verification detail.",
         "width": 1200,
         "height": 630,
@@ -204,7 +204,7 @@
       "social": {
         "title": "Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio",
         "description": "Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent.png?v=20260910premium3"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3"
       }
     },
     {
@@ -225,8 +225,8 @@
         "Microsoft"
       ],
       "image": {
-        "path": "briefs/images/2026-09-10/04-microsoft-work-value.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910premium3",
+        "path": "briefs/images/2026-09-10/04-microsoft-work-value-premium3.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value-premium3.png?v=20260910premium3",
         "alt": "Executive measurement framework distinguishing prompt and usage activity from completed tasks, quality, review cost and business outcomes. Conceptual framework with no measured performance data.",
         "width": 1200,
         "height": 630,
@@ -269,7 +269,7 @@
       "social": {
         "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
         "description": "Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed mea",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910premium3"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value-premium3.png?v=20260910premium3"
       }
     },
     {
@@ -290,8 +290,8 @@
         "Google"
       ],
       "image": {
-        "path": "briefs/images/2026-09-10/05-google-opal-web-errands.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands.png?v=20260910premium3",
+        "path": "briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png?v=20260910premium3",
         "alt": "Conceptual no-code productivity workspace with Sheets mini-apps, Chrome web errands, Photos albums and familiar Gmail, Docs and Keep surfaces. Human review is recommended practice; feature availability varies.",
         "width": 1200,
         "height": 630,
@@ -334,7 +334,7 @@
       "social": {
         "title": "Google expands prompt-built mini-apps and web errands for everyday users",
         "description": "Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemi",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands.png?v=20260910premium3"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png?v=20260910premium3"
       }
     },
     {
@@ -358,8 +358,8 @@
         "Microsoft"
       ],
       "image": {
-        "path": "briefs/images/2026-09-10/06-skillmd-portability.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability.png?v=20260910premium3",
+        "path": "briefs/images/2026-09-10/06-skillmd-portability-premium3.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3",
         "alt": "Exploded reviewed SKILL.md package shared across compatible runtimes, each with separate local permissions and tool access, above an external human review lane. Illustrated settings are examples, not runtime defaults.",
         "width": 1200,
         "height": 630,
@@ -402,7 +402,7 @@
       "social": {
         "title": "A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools",
         "description": "A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, a",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability.png?v=20260910premium3"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3"
       }
     }
   ],

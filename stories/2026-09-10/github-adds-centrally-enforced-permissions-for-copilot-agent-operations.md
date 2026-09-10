@@ -2,7 +2,7 @@
 layout: default
 title: "GitHub adds centrally enforced permissions for Copilot agent operations"
 description: "GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shel"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions.png?v=20260910premium3"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3"
 permalink: /stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/
 brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-fdde2a0c
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-10-fdde2a0c
 **Evidence:** Official Changelog  
 **Availability:** General Availability
 
-![Conceptual enterprise governance control desk: shell, file and network requests classified as allow, approval required or blocked; local preferences and saved approvals cannot override enterprise restrictions. Examples are not default policies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions.png?v=20260910premium3)
+![Conceptual enterprise governance control desk: shell, file and network requests classified as allow, approval required or blocked; local preferences and saved approvals cannot override enterprise restrictions. Examples are not default policies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3)
 
 **Summary:** GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shell commands, file reads and edits, and network domains, and GitHub says user settings, auto-approval, or saved approvals cannot weaken those enterprise restrictions.
 
