@@ -12,7 +12,7 @@
     "first_pass_rate": 100,
     "final_pass_rate": 100,
     "repairs": 3,
-    "average_deployment_latency_seconds": 47
+    "average_deployment_latency_seconds": 45
   },
   "runs": [
     {
@@ -22,7 +22,7 @@
       "initial_result": "pass",
       "final_result": "pass",
       "repairs": 1,
-      "deployment_latency_seconds": null
+      "deployment_latency_seconds": 42
     },
     {
       "run_id": "dab-qa-20260909T122330Z-8df2e0b9",
