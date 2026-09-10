@@ -93,6 +93,9 @@ test('public QA dashboard metrics match the machine-readable record', () => {
   assert.deepEqual(qaMetrics([record]), {runs: 1, first_pass_rate: 100, final_pass_rate: 100, repairs: 0, average_deployment_latency_seconds: 47});
   const metrics = qaMetrics(loadQaRecords(root));
   const page = renderQaDashboard(root);
-  assert.match(page, /100%<\/strong><span>First-pass QA/);
+  assert.match(page, new RegExp(`${metrics.first_pass_rate}%</strong><span>First-pass QA`));
+  assert.match(page, new RegExp(`${metrics.final_pass_rate}%</strong><span>Final pass`));
   assert.match(page, new RegExp(`${metrics.average_deployment_latency_seconds}s</strong><span>Average deploy latency`));
+  const recovered = {...record, initial_result: 'fail', final_result: 'pass', repairs: [{description: 'Image recovery', commit_sha: null}], deployment_latency_seconds: null};
+  assert.deepEqual(qaMetrics([record, recovered]), {runs: 2, first_pass_rate: 50, final_pass_rate: 100, repairs: 1, average_deployment_latency_seconds: 47});
 });
