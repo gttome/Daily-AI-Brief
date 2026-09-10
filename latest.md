@@ -1,150 +1,36 @@
-# Daily Generative AI Brief — September 9, 2026
+# Daily Generative AI Brief — September 10, 2026
 
-**Published:** September 9, 2026  
-**Coverage period:** Primarily September 8–9, 2026, using newly published primary sources and one launch-day official product record.
+**Published:** September 10, 2026  
+**Coverage period:** Primarily September 9–10, 2026; the required Agent Skills slot uses the permitted seven-day fallback rule.
 
-## 1. GitHub gives enterprises central control over Copilot’s JetBrains sandbox
-
-**Focus: Technical AI Engineering**
-
-**Date:** September 8, 2026
-
-**Topics:** GitHub Copilot, sandboxing, enterprise policy, agent security
-
-<span class="story-data" data-story-id="dab-story-2026-09-09-e9be6ec5" data-story-url="/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/' | relative_url }})
-
-**Evidence:** Official Changelog  
-**Availability:** Public Preview
-
-![Layered textbook diagram showing administrator policy governing filesystem, network, proxy, tools, keychain, and terminal access inside a sandboxed IDE agent workspace.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/01-enterprise-managed-sandbox.png?v=20260909-1)
-
-**Summary:** GitHub added enterprise-managed sandbox policies for Copilot in JetBrains IDEs. Administrators can centrally control sandbox enablement, filesystem and network access, proxy settings, developer tools, and macOS Keychain access; managed restrictions override local user settings and policy diagnostics show whether controls are enforced.
-
-**Why it matters:** Agentic coding tools increasingly operate across files, terminals, and external services. Central policy converts safety from a developer preference into an enforceable organizational boundary. The sandbox controls are in public preview, and the broader release also includes preview features, so teams should validate behavior on their own platforms before relying on it.
-
-**For George’s work:** Use this as a concrete governance example in agent training: define allowed resources centrally, lock high-risk controls, and verify enforcement with diagnostics rather than trusting written instructions alone.
-
-**What to do now — Update Policy:** Use this as a concrete governance example in agent training: define allowed resources centrally, lock high-risk controls, and verify enforcement with diagnostics rather than trusting written instructions alone.
-
-**Source:** [Enterprise-managed sandbox in Copilot for JetBrains](https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-e9be6ec5">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 2. Dart’s Skills CLI 1.0 makes agent instructions portable with software packages
+## 1. Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 8, 2026
+**Date:** September 9, 2026
 
-**Topics:** agent skills, context engineering, software packages, progressive disclosure
+**Topics:** agent security, evaluation containment, alignment, failure analysis
 
-<span class="story-data" data-story-id="dab-story-2026-09-09-0b6b1021" data-story-url="/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-10-415f8f1a" data-story-url="/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** General Availability
-
-![Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/02-portable-agent-skills-v2.png?v=20260909-2)
-
-**Summary:** Dart’s Skills CLI 1.0 shows how reusable Agent Skills can travel with a tool: a SKILL.md file explains a repeatable method, while supporting resources and validation help an agent load the right instructions only when needed. Although the release is aimed at package authors, the practical pattern applies to non-technical work such as preparing reports, reviewing documents, building presentations, or running a standard client workflow.
-
-**Why it matters:** Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.
-
-**For George’s work:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
-
-**What to do now — Create a Skill:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
-
-**Source:** [Skills CLI 1.0: Bundle and distribute AI agent skills for your packages](https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-0b6b1021">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 3. ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 8, 2026
-
-**Topics:** image generation, precision editing, reference fidelity, creative workflows
-
-<span class="story-data" data-story-id="dab-story-2026-09-09-259c8fd8" data-story-url="/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** General Availability
-
-![Circular textbook workflow showing prompt, reference, and edit-mask inputs feeding a layered image canvas, fidelity and detail checks, precise editing, and export.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/03-chatgpt-images-25-v2.png?v=20260909-2)
-
-**Summary:** OpenAI released ChatGPT Images 2.5 with sharper detail, more reliable reference preservation, more precise multi-turn editing, and generation latency reduced by up to 50% versus Images 2.0. ChatGPT adds sketch references, image comments, templates, and prompt sharing; the model is available across ChatGPT, ChatGPT Work, and Codex, with Flare and Sunburst variants in the API.
-
-**Why it matters:** Faster, more controllable iteration can improve textbook diagrams, course graphics, and marketing assets. The performance figures are vendor-reported, and stronger visual fidelity does not verify factual labels or eliminate the need for accessibility and editorial review.
-
-**For George’s work:** Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow.
-
-**What to do now — Evaluate:** Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow.
-
-**Source:** [Introducing ChatGPT Images 2.5](https://openai.com/index/introducing-chatgpt-images-2-5/)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-259c8fd8">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 4. GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 8, 2026
-
-**Topics:** scientific agents, closed-loop experimentation, quantum computing, human review
-
-<span class="story-data" data-story-id="dab-story-2026-09-09-1f112fc7" data-story-url="/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/' | relative_url }})
 
 **Evidence:** Official Announcement  
 **Availability:** Research
 
-![Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/04-quantum-agent-loop-v2.png?v=20260909-3)
+![Layered containment diagram showing an AI evaluation harness, simulated target boundary, accidental open-internet path, external system, monitoring rail, and independent forensic review.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-s-cyber-incident-review-exposes-a-failure.png?v=20260910r1)
 
-**Summary:** An OpenAI case study describes an MIT researcher connecting GPT-5.6 Sol through Codex to quantum-lab software. Given measurement-specific skills and chip targets, the agent selected parameters, ran measurements, analyzed results, refined weak runs, and passed outputs into subsequent measurements.
+**Summary:** Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and running without the safeguards used in released models. A broader scan of roughly 481 million transcripts re-identified the four known incidents and found no additional cases of similar or greater severity; METR is conducting an independent investigation.
 
-**Why it matters:** This is a strong example of a bounded closed loop: the agent handles repetitive, software-controlled experiments while the researcher designs goals and interprets ambiguous physics. It is a case study rather than an independent evaluation; weak or noisy signals still required expert guidance.
+**Why it matters:** The important lesson is architectural, not sensational: an evaluation harness can invalidate the assumptions given to the model. Isolation, egress controls, environment verification, monitoring, and post-run forensic review must be treated as independent controls rather than prompt-level assumptions.
 
-**For George’s work:** Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.
+**For George’s work:** Use this as a concrete reliability case study for harness engineering, agent containment, failure handling, and independent verification. It sharply illustrates why a model being told it is in a simulation is not a substitute for enforcing the simulation boundary.
 
-**What to do now — Teach:** Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.
+**What to do now — Teach the harness failure:** Use the incident to show why environment controls and independent verification belong outside the model.
 
-**Source:** [How GPT-5.6 Sol helps run quantum computing experiments](https://openai.com/index/codex-quantum-computing-experiments/)
+**Source:** [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-1f112fc7">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-415f8f1a">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -155,72 +41,188 @@
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-## 5. Meta launches Muse as a personal agent with secure execution and approval checkpoints
+## 2. GitHub adds centrally enforced permissions for Copilot agent operations
 
-**Focus: Agents for Non-Technical People**
+**Focus: Technical AI Engineering**
 
-**Date:** September 8, 2026
+**Date:** September 9, 2026
 
-**Topics:** personal agents, computer use, secure virtual machines, human approval
+**Topics:** GitHub Copilot, agent permissions, human approval, enterprise guardrails
 
-<span class="story-data" data-story-id="dab-story-2026-09-09-a02b9db1" data-story-url="/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-10-fdde2a0c" data-story-url="/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** General Availability
-
-![Radial textbook architecture showing a personal agent inside a secure virtual machine connected to email, calendar, travel, shopping, and payments with permission toggles and approval gates.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/05-personal-agent-architecture.png?v=20260909-1)
-
-**Summary:** Meta introduced Muse in the United States for adults through a dedicated app and WhatsApp. Meta says the personal agent can plan and carry out tasks across connected services, runs in a dedicated secure virtual machine, and uses permissions plus approval steps for consequential actions.
-
-**Why it matters:** Muse brings broad, action-taking agents closer to ordinary consumers, making permissions, prompt-injection defenses, and confirmation design practical adoption issues. Security and reliability claims are vendor-provided at launch; users should begin with reversible, low-consequence tasks and narrow access.
-
-**For George’s work:** Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history.
-
-**What to do now — Monitor:** Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history.
-
-**Source:** [Introducing Muse: The World’s First Personal AI Agent Built for Everyone](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-a02b9db1">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 6. GitHub unifies support resources behind Copilot-powered search
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 8, 2026
-
-**Topics:** Copilot search, support workflows, knowledge retrieval, human escalation
-
-<span class="story-data" data-story-id="dab-story-2026-09-09-81d2a78e" data-story-url="/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/' | relative_url }})
 
 **Evidence:** Official Changelog  
 **Availability:** General Availability
 
-![Textbook retrieval diagram showing a question routed through Copilot search across documentation, learning, community, account, and support sources, with source markers and escalation.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/06-copilot-support-search.png?v=20260909-1)
+**What changed since last coverage:** September 9 extends GitHub’s control model beyond the prior JetBrains sandbox story to centrally enforced operation-level permissions across the Copilot app, Copilot CLI, and VS Code Agent Host.
 
-**Summary:** GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation.
+![Policy-gate diagram showing shell, file, and network agent operations flowing through centrally enforced allow, approval-required, and blocked decisions before execution.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-adds-centrally-enforced-permissions-for-copil.png?v=20260910r1)
 
-**Why it matters:** For non-technical users, an AI search layer can reduce the navigation burden across fragmented help systems. It should still be treated as a retrieval aid: confirm consequential account or billing guidance in the cited source and escalate unresolved cases to human support.
+**Summary:** GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shell commands, file reads and edits, and network domains, and GitHub says user settings, auto-approval, or saved approvals cannot weaken those enterprise restrictions.
 
-**For George’s work:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
+**Why it matters:** This moves human-in-the-loop from a UI convention toward an enforceable policy layer. Reliable agent systems need authority boundaries that survive local configuration changes and distinguish low-risk actions from operations that require explicit review.
 
-**What to do now — Test:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
+**For George’s work:** This is a strong example for the AI Authority Ladder and agent-governance material: permissions should be encoded in the harness, not left to memory or prompt wording. It also gives consulting clients a concrete pattern for role- and team-specific controls.
 
-**Source:** [New customer portal help.github.com](https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/)
+**What to do now — Update authority examples:** Add operation-level allow, block, and approval-required controls to agent-governance examples.
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-81d2a78e">
+**Source:** [Enterprise managed permissions for GitHub Copilot agent operations](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-fdde2a0c">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 3. Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 9, 2026
+
+**Topics:** document AI, grounding, interactive reports, knowledge work
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-061a7b54" data-story-url="/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** General Availability
+
+![Document transformation diagram showing trusted PDFs feeding a productivity agent that produces cited interactive reports, summary slides, audio, and polished deliverables with verification links.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-turns-acrobat-into-a-document-productivity-age.png?v=20260910r1)
+
+**Summary:** Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables. Adobe says document answers include clickable citations, and new enterprise capabilities can query shared document collections for structured insights.
+
+**Why it matters:** This is a practical example of generative AI moving from summarization into evidence-linked transformation of working documents. The clickable-citation pattern is especially important because it keeps verification attached to the output instead of hiding the source trail.
+
+**For George’s work:** This can strengthen training for knowledge workers on grounded document workflows: ingest trusted files, transform them into a decision artifact, then verify important claims through source-linked citations before sharing.
+
+**What to do now — Test cited document transformation:** Compare Acrobat’s report and slide outputs with a manual source-verification checklist on a real consulting document set.
+
+**Source:** [Adobe Productivity Agent in Acrobat Now Transforms Complex Documents into Understandable Visuals, Audio and Presentations](https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-061a7b54">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 4. Microsoft argues AI value should be measured in completed work, not prompt volume
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 9, 2026
+
+**Topics:** AI measurement, knowledge work, outcomes, Copilot Cowork
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-c9c45c5e" data-story-url="/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/' | relative_url }})
+
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
+
+![Measurement ladder diagram showing prompt counts and active use progressing to completed tasks, quality checks, review effort, and business outcomes as stronger evidence of AI value.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-argues-ai-value-should-be-measured-in-comp.png?v=20260910r1)
+
+**Summary:** Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed measurement shift is toward completed work and outcome-oriented evidence rather than treating activity itself as impact.
+
+**Why it matters:** Agentic systems make conventional usage dashboards increasingly misleading. A workflow that requires fewer prompts may be more valuable if it reliably completes a meaningful task; measurement therefore needs task definitions, quality checks, human-review cost, and outcome evidence.
+
+**For George’s work:** This directly supports consulting and training on evaluating AI adoption. Add a distinction between activity metrics, completion metrics, and business outcome metrics so clients do not mistake high AI usage for high AI value.
+
+**What to do now — Teach outcome-based AI measurement:** Separate prompts and active users from completed tasks, quality, review effort, and business outcomes in adoption scorecards.
+
+**Source:** [Measuring the value of Cowork: From AI interactions to completed work](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-c9c45c5e">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 5. Google expands prompt-built mini-apps and web errands for everyday users
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 9, 2026
+
+**Topics:** no-code AI, Gemini Spark, Google Workspace, web errands
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-a622f43e" data-story-url="/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** General Availability
+
+![No-code workspace diagram showing Gmail, Docs, Keep, Sheets canvas, Chrome, and Photos connected through Gemini Spark to human-defined errands, mini-apps, and approval checkpoints.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-expands-prompt-built-mini-apps-and-web-errand.png?v=20260910r1)
+
+**Summary:** Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemini Spark connections to Chrome and Google Photos for web errands, photo edits, and album curation.
+
+**Why it matters:** These features lower the implementation barrier for agent-like work. Non-technical users increasingly define the outcome in natural language while the product handles orchestration across documents, spreadsheets, browsing, and media behind the interface.
+
+**For George’s work:** Use this as an accessible example of the shift from chat to delegated work. It is especially useful for showing knowledge workers that agentic AI can be introduced through familiar productivity surfaces without requiring them to build software.
+
+**What to do now — Test one no-code workflow:** Turn a recurring spreadsheet process into a prompt-built mini-app and document where human review is still required.
+
+**Source:** [Tackle your to-do list with new features in our Google AI plans](https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-a622f43e">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 6. A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 9, 2026
+
+**Topics:** Agent Skills, SKILL.md, portable workflows, agent interoperability
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-b2d6f046" data-story-url="/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/' | relative_url }})
+
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
+
+![Portable Agent Skills diagram showing one reviewed SKILL.md package with instructions and resources moving across Codex, Claude, Gemini, and other runtimes while permissions and human review remain runtime controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-a-september-update-maps-one-skill-md-across-codex-cl.png?v=20260910r1)
+
+**Summary:** A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, and many other compatible tools. This fills today’s required Agent Skills slot using the seven-day fallback window; it is practitioner analysis, so compatibility claims should be verified against each runtime before production use.
+
+**Why it matters:** For knowledge workers, the important idea is portability: a repeatable report, review, research, publishing, or client-delivery method can be documented once as a reusable skill instead of being rebuilt as a long prompt every time. Portability reduces lock-in, but tool permissions and runtime behavior still differ and must be reviewed.
+
+**For George’s work:** Create one plain-language SKILL.md for a recurring knowledge-work outcome, keep tool permissions outside the skill where possible, require a human checkpoint before irreversible actions, and test the same skill in two supported runtimes. Share the skill only after reviewing the full instructions and bundled resources.
+
+**What to do now — Create one portable skill:** Package a repeatable knowledge-work procedure in SKILL.md, test it in two runtimes, and compare behavior before sharing.
+
+**Source:** [The Agent Skills Open Standard: Writing Portable SKILL.md Files That Work Across Codex CLI, Claude Code, and 30+ Tools](https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-b2d6f046">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -235,74 +237,42 @@
 
 ### General
 
-**Title:** [Introducing workspace agents in ChatGPT](https://www.youtube.com/watch?v=yyvVUEPSCu0)  
-**Channel:** OpenAI  
-**Upload date:** April 22, 2026  
-**Runtime:** 1:11  
-**Why it is useful:** A concise official overview of shared agents that can handle longer-running work across team tools.  
-**Connection to the brief:** Shows the broader workspace-agent model behind today’s themes of reusable workflows, permissions, and human oversight.
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-video-2026-09-09-general">
-  <span class="feedback-prompt">Was this video useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this video">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+No General YouTube item was included because current searches did not yield a recent, substantive, direct YouTube source with an independently verifiable runtime of 20:00 or less. A 19-minute CIO governance demonstration was found, but the accessible evidence did not establish a direct YouTube URL, so it was rejected rather than relaxing the verification rule.
 
 ### Agents for Non-Technical People
 
-**Title:** [ChatGPT Projects vs Skills Explained in 2 Minutes](https://www.youtube.com/watch?v=GRWChm0sYHE)  
-**Channel:** AI with Kyle  
-**Upload date:** July 24, 2026  
-**Runtime:** 2:00  
-**Why it is useful:** A short, plain-language distinction between project context and reusable skills for repeated work.  
-**Connection to the brief:** Directly supports today’s SKILL.md focus by helping non-technical users decide when to package a method as a reusable skill.
-
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-video-2026-09-09-agent-skills">
-  <span class="feedback-prompt">Was this video useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this video">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+No Agent Skills YouTube item was included after checking recent SKILL.md, Agent Skills, Codex skills, Claude Skills, and reusable-agent-workflow searches across the permitted 30-day video window. Recent items located were either over 20:00, outside the window, or lacked a directly verified YouTube runtime.
 
 ## Worth Listening — Podcast
 
-### 9. Agentic Loops for Knowledge Workers
+### 9. Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-09-agentic-loops" data-podcast-title="Agentic Loops for Knowledge Workers" data-podcast-url="/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-10-twiml-tokenomics" data-podcast-title="Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts" data-podcast-url="/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/" hidden></span>
 
-[Open the permanent podcast page]({{ '/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/' | relative_url }})
+[Open the permanent podcast page]({{ '/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/' | relative_url }})
 
-**Show:** The AI Daily Brief  
-**Host / guest:** Nathaniel Whittemore; guest presenter Nufar Gaspar  
-**Focus:** Agents for Non-Technical People  
-**Date:** September 3, 2026  
-**Duration:** Not independently verified · No episode time limit  
-**Topics:** loop engineering, graph engineering, verification, human review, knowledge work
+**Show:** The TWIML AI Podcast  
+**Host / guest:** Sam Charrington  
+**Focus:** Applied Generative AI for Knowledge Workers  
+**Date:** September 9, 2026  
+**Duration:** 59:29 · No episode time limit  
+**Topics:** AI economics, evaluation, token efficiency, AI fluency
 
-**Summary:** Nufar Gaspar explains how knowledge workers can use agent loops and connected workflows. The central lesson is to define a checkable completion condition before asking an agent to repeat work. The session includes a Claude Code demonstration.
+**Summary:** Stanford professor Christopher Potts joins Sam Charrington to examine whether growing token consumption is producing proportional value, why benchmarks alone can hide economic tradeoffs, and how AI fluency and iterative human interaction affect outcomes.
 
-**Why it matters:** A practical introduction to verification and stopping conditions for non-software work. Treat the demonstration as practitioner instruction, not proof that unattended agents are reliable for every task.
+**Why it matters:** It gives knowledge workers and AI leaders a practical lens for evaluating AI beyond benchmark scores: measure the value produced per unit of model effort, and distinguish capability gains from simply spending more inference.
 
-**Connection to the brief:** Directly supports the brief’s loop, graph, context, agent-workflow, evaluation, and human-review focus areas.
+**Connection to the brief:** The episode complements today’s Microsoft measurement story by connecting outcome measurement to model economics, token use, and the limits of benchmark-only comparisons.
 
-**For George’s work:** Use the episode to develop a workshop exercise: define a work outcome, a checkable acceptance test, a turn limit, and a human review checkpoint.
+**For George’s work:** Useful for consulting and training on AI ROI: add token/compute efficiency as a cost dimension alongside task completion, output quality, human review effort, and business outcomes.
 
-**Coverage:** September 3 episode selected from the preceding seven days; added to the September 9 edition with the podcast launch.
+**Coverage:** Selected in the preferred preceding-48-hour window; no older fallback was required.
 
-**Evidence:** Practitioner analysis. Episode identity and content checked against the publisher’s dated notes and Spotify episode. Publisher lists approximately 57 minutes; an exact matching runtime was not independently verified. The YouTube channel was checked, but a direct episode URL could not be verified.
+**Evidence:** Practitioner analysis. Publisher page and Apple Podcasts confirm episode identity and September 9 release. Apple lists 59m; a podcast directory reports 3,569 seconds, used here as the exact runtime. Podcast duration is not capped.
 
-**Listen / watch:** [Episode website and notes](https://aidailybrief.ai/e/2026-09-03) · [Spotify episode](https://open.spotify.com/episode/1vbROFe80yIFRPLTI2Krg4)
+**Listen / watch:** [TWIML](https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks) · [Apple Podcasts](https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-podcast-2026-09-09-agentic-loops">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-podcast-2026-09-10-twiml-tokenomics">
   <span class="feedback-prompt">Was this podcast useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this podcast">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
@@ -315,4 +285,4 @@
 
 ## Editorial takeaway
 
-The strongest developments pair broader agent capability with visible control surfaces: centrally enforced sandboxes, versioned skills, explicit permissions, approval gates, source grounding, and expert review.
+Today’s strongest signal is that useful agentic AI is becoming less about model novelty and more about enforced boundaries, evidence-linked work products, outcome measurement, accessible delegation, and reusable procedural knowledge.

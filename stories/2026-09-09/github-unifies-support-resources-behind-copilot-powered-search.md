@@ -1,24 +1,24 @@
 ---
 layout: default
 title: "GitHub unifies support resources behind Copilot-powered search"
-description: "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The por"
+description: "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation."
 image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/06-copilot-support-search.png?v=20260909-1"
 permalink: /stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/
 brief_date: 2026-09-09
-story_id: dab-story-2026-09-09-81d2a78e
+story_id: dab-story-2026-09-09-9558fc40
 ---
 
 [← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
 
 # GitHub unifies support resources behind Copilot-powered search
 
-<span class="story-data" data-story-id="dab-story-2026-09-09-81d2a78e" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-09-9558fc40" hidden></span>
 
 **Focus:** Agents for Non-Technical People  
 **Date:** September 8, 2026  
 **Topics:** Copilot search, support workflows, knowledge retrieval, human escalation  
-**Evidence:** Official Changelog  
-**Availability:** General Availability
+**Evidence:** Unspecified  
+**Availability:** Unspecified
 
 ![Textbook retrieval diagram showing a question routed through Copilot search across documentation, learning, community, account, and support sources, with source markers and escalation.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-09/06-copilot-support-search.png?v=20260909-1)
 
@@ -28,13 +28,9 @@ story_id: dab-story-2026-09-09-81d2a78e
 
 **For George’s work:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
 
-## What to do now
-
-**Test:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
-
 **Source:** [New customer portal help.github.com](https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-81d2a78e">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-9558fc40">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>

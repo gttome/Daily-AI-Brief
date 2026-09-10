@@ -3,7 +3,7 @@ layout: default
 title: Reader Ratings Have Moved
 permalink: /feedback/
 description: Rate each Daily Generative AI Brief story directly beneath the article.
-brief_date: 2026-09-09
+brief_date: 2026-09-10
 ---
 
 # Reader ratings are built into each daily brief

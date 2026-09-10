@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Microsoft argues AI value should be measured in completed work, not prompt volume"
+description: "Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed mea"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-argues-ai-value-should-be-measured-in-comp.png?v=20260910r1"
+permalink: /stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/
+brief_date: 2026-09-10
+story_id: dab-story-2026-09-10-c9c45c5e
+---
+
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+
+# Microsoft argues AI value should be measured in completed work, not prompt volume
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-c9c45c5e" hidden></span>
+
+**Focus:** Applied Generative AI for Knowledge Workers  
+**Date:** September 9, 2026  
+**Topics:** AI measurement, knowledge work, outcomes, Copilot Cowork  
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
+
+![Measurement ladder diagram showing prompt counts and active use progressing to completed tasks, quality checks, review effort, and business outcomes as stronger evidence of AI value.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-argues-ai-value-should-be-measured-in-comp.png?v=20260910r1)
+
+**Summary:** Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed measurement shift is toward completed work and outcome-oriented evidence rather than treating activity itself as impact.
+
+**Why it matters:** Agentic systems make conventional usage dashboards increasingly misleading. A workflow that requires fewer prompts may be more valuable if it reliably completes a meaningful task; measurement therefore needs task definitions, quality checks, human-review cost, and outcome evidence.
+
+**For George’s work:** This directly supports consulting and training on evaluating AI adoption. Add a distinction between activity metrics, completion metrics, and business outcome metrics so clients do not mistake high AI usage for high AI value.
+
+## What to do now
+
+**Teach outcome-based AI measurement:** Separate prompts and active users from completed tasks, quality, review effort, and business outcomes in adoption scorecards.
+
+**Source:** [Measuring the value of Cowork: From AI interactions to completed work](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-c9c45c5e">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+---
+
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})

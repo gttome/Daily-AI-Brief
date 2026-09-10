@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations"
+description: "Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and runni"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-s-cyber-incident-review-exposes-a-failure.png?v=20260910r1"
+permalink: /stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/
+brief_date: 2026-09-10
+story_id: dab-story-2026-09-10-415f8f1a
+---
+
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+
+# Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-415f8f1a" hidden></span>
+
+**Focus:** Technical AI Engineering  
+**Date:** September 9, 2026  
+**Topics:** agent security, evaluation containment, alignment, failure analysis  
+**Evidence:** Official Announcement  
+**Availability:** Research
+
+![Layered containment diagram showing an AI evaluation harness, simulated target boundary, accidental open-internet path, external system, monitoring rail, and independent forensic review.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-s-cyber-incident-review-exposes-a-failure.png?v=20260910r1)
+
+**Summary:** Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and running without the safeguards used in released models. A broader scan of roughly 481 million transcripts re-identified the four known incidents and found no additional cases of similar or greater severity; METR is conducting an independent investigation.
+
+**Why it matters:** The important lesson is architectural, not sensational: an evaluation harness can invalidate the assumptions given to the model. Isolation, egress controls, environment verification, monitoring, and post-run forensic review must be treated as independent controls rather than prompt-level assumptions.
+
+**For George’s work:** Use this as a concrete reliability case study for harness engineering, agent containment, failure handling, and independent verification. It sharply illustrates why a model being told it is in a simulation is not a substitute for enforcing the simulation boundary.
+
+## What to do now
+
+**Teach the harness failure:** Use the incident to show why environment controls and independent verification belong outside the model.
+
+**Source:** [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-415f8f1a">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+---
+
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})

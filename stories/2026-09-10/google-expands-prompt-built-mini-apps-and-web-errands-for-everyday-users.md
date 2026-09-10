@@ -1,0 +1,50 @@
+---
+layout: default
+title: "Google expands prompt-built mini-apps and web errands for everyday users"
+description: "Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemi"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-expands-prompt-built-mini-apps-and-web-errand.png?v=20260910r1"
+permalink: /stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/
+brief_date: 2026-09-10
+story_id: dab-story-2026-09-10-a622f43e
+---
+
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+
+# Google expands prompt-built mini-apps and web errands for everyday users
+
+<span class="story-data" data-story-id="dab-story-2026-09-10-a622f43e" hidden></span>
+
+**Focus:** Agents for Non-Technical People  
+**Date:** September 9, 2026  
+**Topics:** no-code AI, Gemini Spark, Google Workspace, web errands  
+**Evidence:** Official Announcement  
+**Availability:** General Availability
+
+![No-code workspace diagram showing Gmail, Docs, Keep, Sheets canvas, Chrome, and Photos connected through Gemini Spark to human-defined errands, mini-apps, and approval checkpoints.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-expands-prompt-built-mini-apps-and-web-errand.png?v=20260910r1)
+
+**Summary:** Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemini Spark connections to Chrome and Google Photos for web errands, photo edits, and album curation.
+
+**Why it matters:** These features lower the implementation barrier for agent-like work. Non-technical users increasingly define the outcome in natural language while the product handles orchestration across documents, spreadsheets, browsing, and media behind the interface.
+
+**For George’s work:** Use this as an accessible example of the shift from chat to delegated work. It is especially useful for showing knowledge workers that agentic AI can be introduced through familiar productivity surfaces without requiring them to build software.
+
+## What to do now
+
+**Test one no-code workflow:** Turn a recurring spreadsheet process into a prompt-built mini-app and document where human review is still required.
+
+**Source:** [Tackle your to-do list with new features in our Google AI plans](https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/)
+
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-a622f43e">
+  <span class="feedback-prompt">Was this useful?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate this story">
+    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
+    <button type="button" data-feedback-rating="useful">Useful</button>
+    <button type="button" data-feedback-rating="neutral">Neutral</button>
+    <button type="button" data-feedback-rating="not_useful">Not useful</button>
+  </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+---
+
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
