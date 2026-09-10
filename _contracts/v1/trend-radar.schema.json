@@ -23,8 +23,8 @@
           "confidence": {"enum": ["high", "medium", "low"]},
           "rationale": {"type": "string", "minLength": 1},
           "evidence_counts": {"type": "object", "additionalProperties": false, "required": ["recent_7_days", "preceding_days", "total"], "properties": {"recent_7_days": {"type": "integer", "minimum": 0}, "preceding_days": {"type": "integer", "minimum": 0}, "total": {"type": "integer", "minimum": 1}}},
-          "supporting_story_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-story-"}},
-          "supporting_stories": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["story_id", "brief_date", "url"], "properties": {"story_id": {"type": "string", "pattern": "^dab-story-"}, "brief_date": {"type": "string", "format": "date"}, "url": {"type": "string", "pattern": "^/stories/"}}}}
+          "supporting_story_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "pattern": "^dab-(story|podcast)-"}},
+          "supporting_stories": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["story_id", "brief_date", "url"], "properties": {"story_id": {"type": "string", "pattern": "^dab-(story|podcast)-"}, "brief_date": {"type": "string", "format": "date"}, "url": {"type": "string", "pattern": "^/(stories|podcasts)/"}}}}
         }
       }
     }

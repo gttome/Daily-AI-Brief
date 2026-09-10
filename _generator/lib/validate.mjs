@@ -64,6 +64,23 @@ export function validateEdition(edition) {
     else if (video.status === 'included' && (!Number.isInteger(video.runtime_seconds) || video.runtime_seconds < 1 || video.runtime_seconds > 1200)) errors.push(`worth_watching.${slot}.runtime_seconds must be 1-1200`);
     else if (!['empty', 'included'].includes(video.status)) errors.push(`worth_watching.${slot}.status is invalid`);
   }
+  const podcast = edition.podcast;
+  if (edition.policy_profile === 'full_v1' && edition.brief_date >= '2026-09-10' && !podcast) errors.push('podcast slot 9 is required');
+  if (podcast?.status === 'included') {
+    for (const field of ['item_id','title','show','host','publication_date','summary','why_useful','connection','george_implication','selection_rationale','verification_note','coverage_note']) requireText(podcast[field], `podcast.${field}`);
+    if (!podcast.item_id?.startsWith(`dab-podcast-${edition.brief_date}-`)) errors.push('podcast.item_id must match brief_date');
+    if (podcast.ordinal !== 9) errors.push('podcast.ordinal must be 9');
+    if (!podcast.permanent_url?.startsWith(`/podcasts/${edition.brief_date}/`)) errors.push('podcast.permanent_url must match brief_date');
+    if (!EXPECTED_FOCUS_ORDER.includes(podcast.focus)) errors.push('podcast.focus is invalid');
+    if (podcast.runtime_seconds !== null && (!Number.isInteger(podcast.runtime_seconds) || podcast.runtime_seconds < 1)) errors.push('podcast runtime must be positive or unknown; no maximum');
+    if (!podcast.platforms?.length || !podcast.topics?.length) errors.push('podcast platforms and topics are required');
+    for (const url of [podcast.url, ...(podcast.platforms || []).map(p => p.url)]) {
+      try { if (new URL(url).protocol !== 'https:') throw Error(); } catch { errors.push('podcast URL must be HTTPS'); }
+    }
+    const otherUrls = [...sourceUrls, ...Object.values(edition.worth_watching || {}).map(v => v.url)];
+    if ([podcast.url,...(podcast.platforms || []).map(p => p.url)].some(url => otherUrls.includes(url))) errors.push('podcast duplicates another edition item');
+  } else if (podcast?.status === 'empty') requireText(podcast.exception, 'podcast.exception');
+  else if (podcast) errors.push('podcast.status is invalid');
   return errors;
 }
 

@@ -22,17 +22,17 @@
       const render = () => {
         const q = controls.query.value.trim().toLowerCase();
         const filtered = stories.filter(story => {
-          const haystack = [story.headline, story.summary, ...(story.topics || []), ...(story.companies || [])].join(' ').toLowerCase();
+          const haystack = [story.content_type, story.headline, story.summary, ...(story.topics || []), ...(story.companies || [])].join(' ').toLowerCase();
           return (!q || haystack.includes(q)) && (!controls.from.value || story.brief_date >= controls.from.value) && (!controls.to.value || story.brief_date <= controls.to.value) && (!controls.focus.value || story.focus === controls.focus.value) && (!controls.evidence.value || story.evidence_type === controls.evidence.value) && (!controls.status.value || story.availability_status === controls.status.value) && (!controls.trend.value || (story.trends || []).includes(controls.trend.value));
         });
         results.replaceChildren(...filtered.map(story => {
           const article = document.createElement('article'); article.className = 'archive-story';
-          const meta = document.createElement('p'); meta.className = 'archive-story-meta'; meta.textContent = `${story.brief_date} · ${pretty(story.focus)}`;
+          const meta = document.createElement('p'); meta.className = 'archive-story-meta'; meta.textContent = `${story.brief_date} · ${story.content_type || "Article"} · ${pretty(story.focus)}`;
           const heading = document.createElement('h2'); const link = document.createElement('a'); link.href = `${base}${story.url}`; link.textContent = story.headline; heading.appendChild(link);
           const summary = document.createElement('p'); summary.textContent = story.summary;
           article.append(meta, heading, summary); return article;
         }));
-        document.querySelector('#archive-result-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'story' : 'stories'}`;
+        document.querySelector('#archive-result-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'item' : 'items'}`;
       };
       Object.values(controls).forEach(control => control.addEventListener(control.type === 'search' ? 'input' : 'change', render));
       document.querySelector('#archive-reset').addEventListener('click', () => { Object.values(controls).forEach(control => { control.value = ''; }); render(); controls.query.focus(); });

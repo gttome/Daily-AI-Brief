@@ -13,12 +13,13 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-19 supporting stories appeared in the latest 7 days and 56 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+20 supporting stories appeared in the latest 7 days and 56 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
 - [September 9, 2026]({{ '/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/' | relative_url }})
+- [September 9, 2026]({{ '/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-a/' | relative_url }})
 - [September 7, 2026]({{ '/stories/2026-09-07/openai-says-coding-agents-now-deliver-more-agent-workdays-than-human-workdays-in/' | relative_url }})
@@ -152,7 +153,7 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-22 supporting stories appeared in the latest 7 days and 48 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+23 supporting stories appeared in the latest 7 days and 48 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -161,6 +162,7 @@ Supporting stories:
 - [September 9, 2026]({{ '/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
+- [September 9, 2026]({{ '/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-in/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-a/' | relative_url }})
@@ -231,7 +233,7 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-40 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+41 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -241,6 +243,7 @@ Supporting stories:
 - [September 9, 2026]({{ '/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
+- [September 9, 2026]({{ '/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-in/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-pla/' | relative_url }})

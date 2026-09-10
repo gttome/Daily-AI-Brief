@@ -13,15 +13,16 @@
       "name": "Agent reliability and governance",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "19 supporting stories appeared in the latest 7 days and 56 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "20 supporting stories appeared in the latest 7 days and 56 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 19,
+        "recent_7_days": 20,
         "preceding_days": 56,
-        "total": 75
+        "total": 76
       },
       "supporting_story_ids": [
         "dab-story-2026-09-09-e9be6ec5",
         "dab-story-2026-09-09-a02b9db1",
+        "dab-podcast-2026-09-09-agentic-loops",
         "dab-story-2026-09-08-a6856793",
         "dab-story-2026-09-08-c1fc056c",
         "dab-story-2026-09-07-3d813834",
@@ -106,6 +107,11 @@
           "story_id": "dab-story-2026-09-09-a02b9db1",
           "brief_date": "2026-09-09",
           "url": "/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/"
+        },
+        {
+          "story_id": "dab-podcast-2026-09-09-agentic-loops",
+          "brief_date": "2026-09-09",
+          "url": "/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/"
         },
         {
           "story_id": "dab-story-2026-09-08-a6856793",
@@ -771,11 +777,11 @@
       "name": "AI-assisted development",
       "classification": "accelerating",
       "confidence": "high",
-      "rationale": "22 supporting stories appeared in the latest 7 days and 48 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "23 supporting stories appeared in the latest 7 days and 48 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 22,
+        "recent_7_days": 23,
         "preceding_days": 48,
-        "total": 70
+        "total": 71
       },
       "supporting_story_ids": [
         "dab-story-2026-09-09-e9be6ec5",
@@ -783,6 +789,7 @@
         "dab-story-2026-09-09-259c8fd8",
         "dab-story-2026-09-09-1f112fc7",
         "dab-story-2026-09-09-81d2a78e",
+        "dab-podcast-2026-09-09-agentic-loops",
         "dab-story-2026-09-08-a6856793",
         "dab-story-2026-09-08-abf16e3a",
         "dab-story-2026-09-08-c1fc056c",
@@ -874,6 +881,11 @@
           "story_id": "dab-story-2026-09-09-81d2a78e",
           "brief_date": "2026-09-09",
           "url": "/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/"
+        },
+        {
+          "story_id": "dab-podcast-2026-09-09-agentic-loops",
+          "brief_date": "2026-09-09",
+          "url": "/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/"
         },
         {
           "story_id": "dab-story-2026-09-08-a6856793",
@@ -1207,11 +1219,11 @@
       "name": "Accessible agents for knowledge work",
       "classification": "accelerating",
       "confidence": "high",
-      "rationale": "40 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "41 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 40,
+        "recent_7_days": 41,
         "preceding_days": 77,
-        "total": 117
+        "total": 118
       },
       "supporting_story_ids": [
         "dab-story-2026-09-09-e9be6ec5",
@@ -1220,6 +1232,7 @@
         "dab-story-2026-09-09-1f112fc7",
         "dab-story-2026-09-09-a02b9db1",
         "dab-story-2026-09-09-81d2a78e",
+        "dab-podcast-2026-09-09-agentic-loops",
         "dab-story-2026-09-08-a6856793",
         "dab-story-2026-09-08-abf16e3a",
         "dab-story-2026-09-08-0b136de8",
@@ -1362,6 +1375,11 @@
           "story_id": "dab-story-2026-09-09-81d2a78e",
           "brief_date": "2026-09-09",
           "url": "/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/"
+        },
+        {
+          "story_id": "dab-podcast-2026-09-09-agentic-loops",
+          "brief_date": "2026-09-09",
+          "url": "/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/"
         },
         {
           "story_id": "dab-story-2026-09-08-a6856793",

@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {FOCUS} from './constants.mjs';
 import {formatDate, listBriefDates} from './util.mjs';
-import {readerFoundationFiles, renderInlineFeedback} from './reader.mjs';
+import {readerFoundationFiles, renderInlineFeedback, renderPodcast} from './reader.mjs';
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 function label(value) {
@@ -76,7 +76,7 @@ ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'ge
 
 ${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
-## Editorial takeaway
+${edition.podcast ? renderPodcast(edition.podcast, edition.brief_date) + '\n\n' : ''}## Editorial takeaway
 
 ${edition.editorial_takeaway}`;
 }

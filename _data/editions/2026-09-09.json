@@ -429,5 +429,42 @@
     "created_by": "Daily AI Brief integrated publisher",
     "created_at": "2026-09-09T12:00:34Z",
     "source_commit": "1fbb8cb5309df63e1b47e5e64485a4222a83f8d9"
+  },
+  "podcast": {
+    "status": "included",
+    "ordinal": 9,
+    "item_id": "dab-podcast-2026-09-09-agentic-loops",
+    "title": "Agentic Loops for Knowledge Workers",
+    "show": "The AI Daily Brief",
+    "host": "Nathaniel Whittemore; guest presenter Nufar Gaspar",
+    "publication_date": "2026-09-03",
+    "runtime_seconds": null,
+    "focus": "agents_non_technical_people",
+    "topics": [
+      "loop engineering",
+      "graph engineering",
+      "verification",
+      "human review",
+      "knowledge work"
+    ],
+    "url": "https://aidailybrief.ai/e/2026-09-03",
+    "permanent_url": "/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/",
+    "summary": "Nufar Gaspar explains how knowledge workers can use agent loops and connected workflows. The central lesson is to define a checkable completion condition before asking an agent to repeat work. The session includes a Claude Code demonstration.",
+    "why_useful": "A practical introduction to verification and stopping conditions for non-software work. Treat the demonstration as practitioner instruction, not proof that unattended agents are reliable for every task.",
+    "connection": "Directly supports the brief’s loop, graph, context, agent-workflow, evaluation, and human-review focus areas.",
+    "george_implication": "Use the episode to develop a workshop exercise: define a work outcome, a checkable acceptance test, a turn limit, and a human review checkpoint.",
+    "selection_rationale": "Strong direct fit for non-technical knowledge workers and reliable agent workflows. Selected from the seven-day fallback window over broader model-news and promotional episodes.",
+    "verification_note": "Episode identity and content checked against the publisher’s dated notes and Spotify episode. Publisher lists approximately 57 minutes; an exact matching runtime was not independently verified. The YouTube channel was checked, but a direct episode URL could not be verified.",
+    "coverage_note": "September 3 episode selected from the preceding seven days; added to the September 9 edition with the podcast launch.",
+    "platforms": [
+      {
+        "name": "Episode website and notes",
+        "url": "https://aidailybrief.ai/e/2026-09-03"
+      },
+      {
+        "name": "Spotify episode",
+        "url": "https://open.spotify.com/episode/1vbROFe80yIFRPLTI2Krg4"
+      }
+    ]
   }
 }

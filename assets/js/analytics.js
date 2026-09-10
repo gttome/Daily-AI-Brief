@@ -20,8 +20,12 @@
   }
   document.addEventListener('click', event => {
     const link = event.target.closest('a[href]'); if (!link) return;
-    const storyId = bodyStory || link.closest('.dab-story')?.querySelector('.story-data')?.dataset.storyId || storyIdFor(link);
+    let section = link.closest('p,li,div');
+    let sectionId = '';
+    while (section && !/^H[12]$/.test(section.tagName)) { sectionId = section.matches?.('.podcast-data') ? section.dataset.podcastId : section.querySelector?.('.podcast-data')?.dataset.podcastId; if (sectionId) break; section = section.previousElementSibling; }
+    const storyId = bodyStory || sectionId || link.closest('.dab-story')?.querySelector('.story-data')?.dataset.storyId || storyIdFor(link);
     if (/youtube\.com|youtu\.be/i.test(link.href)) record('worth_watching_clicks', storyId);
+    else if (sectionId) record('source_clicks', storyId);
     else if (link.closest('p')?.querySelector('strong:first-child')?.textContent.trim() === 'Source:') record('source_clicks', storyId);
   });
 })();

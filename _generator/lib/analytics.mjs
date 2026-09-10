@@ -18,7 +18,7 @@ export function analyticsKey(date, storyId, metric) {
   return `dab-v1-${date}-${storyId}-${metric}`.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 100);
 }
 
-export function aggregateAnalytics({date, stories, videos = [], counts, collectionStatus = 'complete', suppressionThreshold = 5, limitations = []}) {
+export function aggregateAnalytics({date, stories, videos = [], podcasts = [], counts, collectionStatus = 'complete', suppressionThreshold = 5, limitations = []}) {
   const rawStories = stories.map(story => ({
     story_id: story.story_id,
     metrics: Object.fromEntries(ANALYTICS_METRICS.map(metric => [metric, Number.isInteger(counts[story.story_id]?.[metric]) ? counts[story.story_id][metric] : null]))
@@ -29,7 +29,8 @@ export function aggregateAnalytics({date, stories, videos = [], counts, collecti
     url: video.url,
     metrics: Object.fromEntries(ANALYTICS_METRICS.map(metric => [metric, Number.isInteger(counts[video.story_id]?.[metric]) ? counts[video.story_id][metric] : null]))
   }));
-  const raw = [...rawStories, ...rawVideos];
+  const rawPodcasts = podcasts.map(p => ({item_id:p.story_id,title:p.title,url:p.url,metrics:Object.fromEntries(ANALYTICS_METRICS.map(m => [m,Number.isInteger(counts[p.story_id]?.[m]) ? counts[p.story_id][m] : null]))}));
+  const raw = [...rawStories, ...rawVideos, ...rawPodcasts];
   const siteTotals = Object.fromEntries(ANALYTICS_METRICS.map(metric => {
     const values = raw.map(item => item.metrics[metric]).filter(Number.isInteger);
     return [metric, values.length ? values.reduce((sum, value) => sum + value, 0) : null];
@@ -45,16 +46,17 @@ export function aggregateAnalytics({date, stories, videos = [], counts, collecti
     site_totals: siteTotals,
     stories: suppressedStories,
     videos: suppressedVideos,
+    podcasts: rawPodcasts.map(item => ({...item,metrics:suppressMetrics(item)})),
     collection_status: collectionStatus,
     limitations
   };
 }
 
-export async function collectAnalytics(date, stories, getCount, videos = []) {
+export async function collectAnalytics(date, stories, getCount, videos = [], podcasts = []) {
   const counts = {};
   const limitations = ['Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.', 'Explicit rating-button and share totals remain exact because they contain no identifiers; other passive metrics below five remain suppressed.', 'Anonymous reader feedback can inform a recommendation but cannot activate editorial weighting without George’s explicit approval.', 'The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals.'];
   let failures = 0;
-  const items = [...stories, ...videos];
+  const items = [...stories, ...videos, ...podcasts];
   for (const story of items) counts[story.story_id] = {};
   await Promise.all(items.flatMap(story => ANALYTICS_METRICS.map(async metric => {
       try {
@@ -65,11 +67,11 @@ export async function collectAnalytics(date, stories, getCount, videos = []) {
     })));
   const total = items.length * ANALYTICS_METRICS.length;
   const status = failures === 0 ? 'complete' : failures === total ? 'unavailable' : 'partial';
-  return aggregateAnalytics({date, stories, videos, counts, collectionStatus: status, limitations});
+  return aggregateAnalytics({date, stories, videos, podcasts, counts, collectionStatus: status, limitations});
 }
 
-export async function refreshFeedbackAnalytics(existing, date, stories, getCount, videos = []) {
-  const items = [...stories, ...videos];
+export async function refreshFeedbackAnalytics(existing, date, stories, getCount, videos = [], podcasts = []) {
+  const items = [...stories, ...videos, ...podcasts];
   const counts = Object.fromEntries(items.map(story => [story.story_id, {}]));
   let failures = 0;
   await Promise.all(items.flatMap(story => FEEDBACK_METRICS.map(async metric => {
@@ -88,6 +90,7 @@ export async function refreshFeedbackAnalytics(existing, date, stories, getCount
     date,
     stories,
     videos,
+    podcasts,
     counts,
     collectionStatus: feedbackStatus === 'complete' && existing?.collection_status === 'complete' ? 'complete' : feedbackStatus === 'unavailable' && !existing ? 'unavailable' : 'partial',
     limitations: [...new Set([...(existing?.limitations || []), 'Explicit rating-button totals are refreshed for seven days and remain exact because they contain no identifiers.'])]
@@ -101,8 +104,8 @@ export async function refreshFeedbackAnalytics(existing, date, stories, getCount
       const previous = existingStories.get(story.story_id)?.metrics || {};
       for (const metric of ANALYTICS_METRICS.filter(metric => !FEEDBACK_METRICS.includes(metric))) story.metrics[metric] = previous[metric] ?? null;
     }
-    const existingVideos = new Map((existing.videos || []).map(video => [video.item_id, video]));
-    for (const video of refreshed.videos) {
+    const existingVideos = new Map([...(existing.videos || []),...(existing.podcasts || [])].map(video => [video.item_id, video]));
+    for (const video of [...refreshed.videos,...refreshed.podcasts]) {
       const previous = existingVideos.get(video.item_id)?.metrics || {};
       for (const metric of ANALYTICS_METRICS.filter(metric => !FEEDBACK_METRICS.includes(metric))) video.metrics[metric] = previous[metric] ?? null;
     }
