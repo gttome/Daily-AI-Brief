@@ -9,20 +9,20 @@
   ],
   "metrics": {
     "runs": 4,
-    "first_pass_rate": 100,
+    "first_pass_rate": 75,
     "final_pass_rate": 100,
-    "repairs": 3,
-    "average_deployment_latency_seconds": 45
+    "repairs": 5,
+    "average_deployment_latency_seconds": 47
   },
   "runs": [
     {
-      "run_id": "dab-qa-20260910T143108Z-5e52cdb0",
+      "run_id": "dab-qa-20260910T184338Z-e734c91a",
       "edition_id": "dab-edition-2026-09-10",
-      "executed_at": "2026-09-10T14:31:08Z",
-      "initial_result": "pass",
+      "executed_at": "2026-09-10T18:43:38Z",
+      "initial_result": "fail",
       "final_result": "pass",
-      "repairs": 1,
-      "deployment_latency_seconds": 42
+      "repairs": 3,
+      "deployment_latency_seconds": null
     },
     {
       "run_id": "dab-qa-20260909T122330Z-8df2e0b9",

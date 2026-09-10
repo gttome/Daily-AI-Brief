@@ -72,4 +72,6 @@ For an image recovery, compare all replacement hashes against the observed main 
 
 ## Cache and replacement behavior
 
-When replacing an already-published story image, use a new stable asset path or bump the canonical `cache_key` and `public_url`, regenerate all derived reader surfaces from the canonical edition, and verify the exact public asset after deployment. Do not rely on a stale branch URL or browser cache when judging the replacement.
+When replacing an already-published story image, prefer a new versioned asset filename and update the canonical `path`, `cache_key` and `public_url`, regenerate all derived reader surfaces from the canonical edition, and verify the exact public asset after deployment. Do not rely on a stale branch URL or browser cache when judging the replacement.
+
+The September 10 recovery demonstrated that changing a query cache key alone can still serve stale raw-main bytes. If a byte comparison fails, use a new asset filename and regenerate the reader surfaces; do not report success from a Pages build alone.
