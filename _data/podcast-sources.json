@@ -5,7 +5,7 @@
     "slot": 9,
     "max_runtime_seconds": null,
     "recency_days": [
-      1,
+      2,
       7,
       30
     ],
@@ -16,7 +16,10 @@
     "fallback_focus": [
       "technical_ai_engineering"
     ],
-    "deduplicate_across_platforms": true
+    "deduplicate_across_platforms": true,
+    "preferred_max_age_hours": 48,
+    "freshness_priority": "Select a worthwhile verified episode within 48 hours before considering older episodes, even if an older episode has somewhat better audience fit.",
+    "older_episode_rule": "Only after no worthwhile relevant verified 48-hour candidate qualifies: expand to seven days, then 30 days exceptionally; disclose episode date, window and reason."
   },
   "sources": [
     {
