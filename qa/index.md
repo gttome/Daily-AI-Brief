@@ -11,15 +11,15 @@ This public dashboard summarizes versioned QA records. It excludes credentials, 
 
 <div class="qa-metrics" aria-label="Quality metrics">
   <div><strong>4</strong><span>QA runs</span></div>
-  <div><strong>100%</strong><span>First-pass QA</span></div>
+  <div><strong>75%</strong><span>First-pass QA</span></div>
   <div><strong>100%</strong><span>Final pass</span></div>
-  <div><strong>3</strong><span>Recorded repairs</span></div>
-  <div><strong>45s</strong><span>Average deploy latency</span></div>
+  <div><strong>5</strong><span>Recorded repairs</span></div>
+  <div><strong>47s</strong><span>Average deploy latency</span></div>
 </div>
 
 | Edition | Initial | Final | Repairs | Deploy | Deterministic / Editorial |
 |---|---:|---:|---:|---:|---|
-| [September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) | PASS | PASS | 1 | 42s | 2 / 4 |
+| [September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) | FAIL | PASS | 3 | —s | 4 / 4 |
 | [September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) | PASS | PASS | 1 | 47s | 5 / 3 |
 | [September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) | PASS | PASS | 1 | —s | 3 / 2 |
 | [September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) | PASS | PASS | 0 | 47s | 3 / 1 |

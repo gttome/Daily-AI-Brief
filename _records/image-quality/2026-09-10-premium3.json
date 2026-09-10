@@ -190,7 +190,7 @@
       "attempts": 1
     }
   ],
-  "publication_status": "pending CI and deployment",
+  "publication_status": "pass",
   "rollback_target_sha": "a0129ed06f6c668ea2e56e2920d650421f155d1d",
   "prepublication_checks": {
     "generator_tests": 66,
@@ -207,5 +207,299 @@
       "issue": "Canonical raw main URLs still served baseline PNG bytes after successful Pages deployment, despite updated query cache keys.",
       "resolution": "Use new premium3 asset filenames; preserve story URLs and image composition; reverify exact public image hashes after CI and deployment."
     }
-  ]
+  ],
+  "final_qa": "pass",
+  "live_verification": {
+    "verified_at": "2026-09-10T18:41:54.103Z",
+    "result": "pass",
+    "pages": [
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/",
+        "status": 200,
+        "imageReferences": 6,
+        "ratingGroups": 7,
+        "expectedGroups": 7
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/briefs/2026-09-10/",
+        "status": 200,
+        "imageReferences": 6,
+        "ratingGroups": 7,
+        "expectedGroups": 7
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/latest.html",
+        "status": 200,
+        "imageReferences": 6,
+        "ratingGroups": 7,
+        "expectedGroups": 7
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/briefs-archive/",
+        "status": 200,
+        "imageReferences": 0,
+        "ratingGroups": 0,
+        "expectedGroups": 0
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/qa/",
+        "status": 200,
+        "imageReferences": 0,
+        "ratingGroups": 0,
+        "expectedGroups": 0
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/qa/2026-09-10/",
+        "status": 200,
+        "imageReferences": 0,
+        "ratingGroups": 0,
+        "expectedGroups": 0
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/",
+        "status": 200,
+        "imageReferences": 4,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/",
+        "status": 200,
+        "imageReferences": 4,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/",
+        "status": 200,
+        "imageReferences": 4,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
+        "status": 200,
+        "imageReferences": 4,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/",
+        "status": 200,
+        "imageReferences": 4,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/",
+        "status": 200,
+        "imageReferences": 4,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/",
+        "status": 200,
+        "imageReferences": 0,
+        "ratingGroups": 1,
+        "expectedGroups": 1
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/feedback/",
+        "status": 200,
+        "imageReferences": 0,
+        "ratingGroups": 0,
+        "expectedGroups": 0
+      }
+    ],
+    "assets": [
+      {
+        "url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3",
+        "status": 200,
+        "sha256": "1adfd3ad4fef2423dacb7deba6db4bd257ade78c166a445024fb8143e3918bd2",
+        "width": 1200,
+        "height": 630,
+        "reviewed_hash_matches": true
+      },
+      {
+        "url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3",
+        "status": 200,
+        "sha256": "c318e345db3852c57f6c53f9ecf9000c6a1a8ad001025a4f23c01f14e7331217",
+        "width": 1200,
+        "height": 630,
+        "reviewed_hash_matches": true
+      },
+      {
+        "url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3",
+        "status": 200,
+        "sha256": "21be5328f80b8481c1b1d9c1a02cd9c85d193f710e26a433b881075ab7e52e1b",
+        "width": 1200,
+        "height": 630,
+        "reviewed_hash_matches": true
+      },
+      {
+        "url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value-premium3.png?v=20260910premium3",
+        "status": 200,
+        "sha256": "4a4c92adb8810b667ccca4d4e37b969e61133f8e8b6d3970040f2f6006dd6e09",
+        "width": 1200,
+        "height": 630,
+        "reviewed_hash_matches": true
+      },
+      {
+        "url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png?v=20260910premium3",
+        "status": 200,
+        "sha256": "697d5b8ad74f3d46d55a989b4c24cd1cdfc054f66711eb34a647e355fa5d69a7",
+        "width": 1200,
+        "height": 630,
+        "reviewed_hash_matches": true
+      },
+      {
+        "url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3",
+        "status": 200,
+        "sha256": "8b9ee0f755f0f1c1deb71a4a0a426bde7a1afe2cca7141386a64e13d58ae68db",
+        "width": 1200,
+        "height": 630,
+        "reviewed_hash_matches": true
+      }
+    ]
+  },
+  "source_links": [
+    {
+      "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "final_url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "status": 200,
+      "bytes": 483719
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+      "final_url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+      "status": 200,
+      "bytes": 98531
+    },
+    {
+      "url": "https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents",
+      "final_url": "https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents",
+      "status": 200,
+      "bytes": 21164
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464",
+      "final_url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464",
+      "status": 200,
+      "bytes": 306574
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/",
+      "final_url": "https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/",
+      "status": 200,
+      "bytes": 390617
+    },
+    {
+      "url": "https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/",
+      "final_url": "https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/",
+      "status": 200,
+      "bytes": 46444
+    },
+    {
+      "url": "https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks",
+      "final_url": "https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks",
+      "status": 200,
+      "bytes": 130692
+    },
+    {
+      "url": "https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051",
+      "final_url": "https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051",
+      "status": 200,
+      "bytes": 530471
+    }
+  ],
+  "reader_endpoint_checks": [
+    {
+      "item_id": "dab-story-2026-09-10-415f8f1a",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-415f8f1a",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-fdde2a0c",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-fdde2a0c",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-061a7b54",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-061a7b54",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-c9c45c5e",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-c9c45c5e",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-a622f43e",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-a622f43e",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-b2d6f046",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-story-2026-09-10-b2d6f046",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-podcast-2026-09-10-twiml-tokenomics",
+      "endpoint": "events",
+      "status": 200,
+      "json_response": true
+    },
+    {
+      "item_id": "dab-podcast-2026-09-10-twiml-tokenomics",
+      "endpoint": "ratings",
+      "status": 200,
+      "json_response": true
+    }
+  ],
+  "production_commit": "c88ab64b4a2aa5d0a647bcc1009f00442aba95a2",
+  "pages_run_id": 34515695561,
+  "ci_run_id": 34515695456
 }

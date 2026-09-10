@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
-  "run_id": "dab-qa-20260910T143108Z-5e52cdb0",
+  "run_id": "dab-qa-20260910T184338Z-e734c91a",
   "edition_id": "dab-edition-2026-09-10",
-  "publication_run_id": "dab-publication-20260910T143108Z-d1369d29",
-  "executed_at": "2026-09-10T14:31:08Z",
-  "initial_result": "pass",
+  "publication_run_id": "dab-publication-20260910T183753Z-5b69fe29",
+  "executed_at": "2026-09-10T18:43:38Z",
+  "initial_result": "fail",
   "final_result": "pass",
   "checks": [
     {
@@ -26,7 +26,7 @@
       "class": "editorial",
       "result": "pass",
       "severity": "high",
-      "evidence": "Six story-specific textbook-style SVG sources were rendered as 1200x630 PNG assets; accessibility review contains six passing alternative-text assessments."
+      "evidence": "All six replacement 1200x630 PNGs passed rendered baseline/set comparison for refinement, meaningful detail, hierarchy and differentiation. Two drafts were rejected and regenerated. Exact deployed hashes match the reviewed manifest. See _records/image-quality/2026-09-10-premium3.json."
     },
     {
       "check_id": "podcast_slot",
@@ -47,21 +47,56 @@
       "class": "deterministic",
       "result": "pass",
       "severity": "info",
-      "evidence": "Production commit 797b8d2471232c3e837904610af2946bb34a73fd passed deterministic CI run 34490580048 and GitHub Pages run 34490579167. The Pages deploy job reported success for that exact commit and set the environment URL to https://gttome.github.io/Daily-AI-Brief/."
+      "evidence": "Image-cache repair production commit c88ab64b4a2aa5d0a647bcc1009f00442aba95a2 passed CI 34515695456 and Pages 34515695561. Fourteen live reader/navigation pages returned 200; all six canonical image URLs returned exact reviewed replacement bytes."
+    },
+    {
+      "check_id": "recovery_semantic_preservation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Canonical edition matched baseline exactly outside image metadata and social image URLs. Six stories and 2/2/2 allocation, stable IDs, podcast/video outcomes and existing rating/share code preserved."
+    },
+    {
+      "check_id": "recovery_independent_live_checks",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "A fresh checkout of merged main passed 66 generator tests, 15 contract examples, repository/integration/accessibility checks. Live browser loaded six uncropped 1200x630 images; seven share controls and 28 rating buttons. Fourteen read-only rating/share endpoint checks and eight distinct source/platform URLs returned 200."
     }
   ],
   "repairs": [
     {
       "description": "Recovered the missing September 10 edition through the canonical full_v1 publication path and repaired stable repository image URL compatibility before production.",
       "commit_sha": "797b8d2471232c3e837904610af2946bb34a73fd"
+    },
+    {
+      "description": "Replaced all six repeated-template images with individually composed textbook/editorial illustrations; rejected and regenerated Adobe and Microsoft drafts.",
+      "commit_sha": "571b1e7fc9c245273bb3c58fb6fdf18e19e81f3c"
+    },
+    {
+      "description": "Independent post-deployment byte checks found stale raw-main assets despite query cache keys. Renamed all six images to premium3 filenames and verified exact deployed bytes.",
+      "commit_sha": "c88ab64b4a2aa5d0a647bcc1009f00442aba95a2"
     }
   ],
-  "defects": [],
+  "defects": [
+    {
+      "severity": "high",
+      "code": "repeated_image_template",
+      "status": "resolved",
+      "description": "Baseline image gate was superseded after rendered review found a repeated sparse template across all six images."
+    },
+    {
+      "severity": "high",
+      "code": "stale_raw_image_cache",
+      "status": "resolved",
+      "description": "Initial deployment served old raw images despite refreshed query keys; new asset filenames resolved the issue and passed hash checks."
+    }
+  ],
   "deployment_evidence": {
-    "pages_run_id": 34490579167,
-    "head_sha": "797b8d2471232c3e837904610af2946bb34a73fd",
+    "pages_run_id": 34515695561,
+    "head_sha": "c88ab64b4a2aa5d0a647bcc1009f00442aba95a2",
     "conclusion": "success"
   },
   "record_path": "_records/qa/2026-09-10.json",
-  "deployment_latency_seconds": 42
+  "deployment_latency_seconds": null
 }
