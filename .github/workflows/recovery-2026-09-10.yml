@@ -1,0 +1,44 @@
+name: Recover Daily AI Brief 2026-09-10
+on:
+  push:
+    branches: [recovery/2026-09-10]
+permissions:
+  contents: write
+concurrency:
+  group: daily-ai-brief-recovery-2026-09-10
+  cancel-in-progress: false
+jobs:
+  build-candidate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-node@v4
+        with: {node-version: '20'}
+      - id: prep
+        name: Assemble, test and commit candidate
+        run: |
+          tar -xzf _recovery/2026-09-10/bundle.tar.gz -C _recovery/2026-09-10
+          _recovery/2026-09-10/run.sh prepare
+      - name: Materialize candidate
+        env:
+          CANDIDATE_DIR: ${{ steps.prep.outputs.candidate_dir }}
+        run: |
+          mkdir -p _candidate_site
+          git -C "$CANDIDATE_DIR" archive HEAD | tar -x -C _candidate_site
+      - name: Jekyll build
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./_candidate_site
+          destination: ./_site-candidate
+      - name: Publish validated candidate to temporary branch
+        env:
+          CANDIDATE_DIR: ${{ steps.prep.outputs.candidate_dir }}
+          BASELINE_SHA: ${{ steps.prep.outputs.baseline_sha }}
+          CANDIDATE_SHA: ${{ steps.prep.outputs.candidate_sha }}
+        run: _recovery/2026-09-10/run.sh publish
+      - uses: actions/upload-artifact@v4
+        with:
+          name: september-10-recovery-publication-plan
+          path: /tmp/publication-plan.json
+          retention-days: 30
