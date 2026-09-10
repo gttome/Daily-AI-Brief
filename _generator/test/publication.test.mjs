@@ -82,7 +82,7 @@ test('atomic change validator rejects partial publication', () => {
   const incomplete = [`_data/editions/${date}.json`, `briefs/${date}.md`, 'latest.md'];
   const missing = validateAtomicChangedPaths(incomplete, date);
   assert.ok(missing.includes('index.md'));
-  assert.ok(missing.some(item => item.includes('<exactly six assets')));
+  assert.ok(missing.includes('README.md')); // Asset validity is checked on the full candidate tree.
 });
 
 test('atomic change validator accepts one complete edition transaction', () => {

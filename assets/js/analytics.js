@@ -9,7 +9,7 @@
     if (!storyId) return;
     fetch(ENDPOINT, {
       method: 'POST', mode: 'cors', cache: 'no-store', credentials: 'omit', keepalive: true,
-      headers: {'content-type': 'application/json'},
+      headers: {'content-type': 'application/json', 'x-operation-id': crypto.randomUUID()},
       body: JSON.stringify({brief_date: briefDate, item_id: storyId, metric})
     }).catch(() => {});
   };

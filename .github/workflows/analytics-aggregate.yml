@@ -1,48 +1,21 @@
-name: Aggregate privacy-conscious analytics
-
+name: Verify publication freshness
 on:
   schedule:
     - cron: '15 14 * * *'
   workflow_dispatch:
-    inputs:
-      date:
-        description: Edition date (YYYY-MM-DD); defaults to America/Chicago today
-        required: false
-        type: string
-
 permissions:
-  contents: write
-
+  contents: read
 concurrency:
-  group: daily-ai-brief-analytics
+  group: daily-ai-brief-freshness
   cancel-in-progress: false
-
 jobs:
-  aggregate:
+  verify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          fetch-depth: 1
-      - uses: actions/setup-node@v4
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
-          node-version: '20'
-      - name: Collect aggregate counters
-        env:
-          REQUESTED_DATE: ${{ inputs.date }}
-          TZ: America/Chicago
-        run: |
-          edition_date="${REQUESTED_DATE:-$(date +%F)}"
-          node _generator/cli.mjs collect-analytics --date "$edition_date" --out "_records/analytics/$edition_date.json"
-          node _generator/cli.mjs refresh-feedback-analytics --date "$edition_date" --days 7
-          node _generator/cli.mjs evaluate-personal-learning --out _records/editorial-learning/current.json
-      - name: Validate and commit aggregate
-        run: |
-          node _tools/validate-contracts.mjs
-          node _generator/cli.mjs integration-check
-          git config user.name "Daily AI Brief Automation"
-          git config user.email "130812356+gttome@users.noreply.github.com"
-          git add _records/analytics _records/editorial-learning/current.json
-          if git diff --cached --quiet; then exit 0; fi
-          git commit -m "Update privacy-conscious Daily AI Brief analytics"
-          git push origin HEAD:main
+          node-version: '22'
+      - run: node _tools/freshness-check.mjs

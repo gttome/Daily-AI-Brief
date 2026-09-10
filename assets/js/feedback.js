@@ -27,24 +27,29 @@
     story.querySelector('.feedback-status').textContent = message;
   };
 
-  const send = async (briefDate, storyId, rating) => {
+  const send = async (briefDate, storyId, rating, operationId) => {
     const response = await fetch(endpoint, {
       method: 'POST', mode: 'cors', cache: 'no-store', credentials: 'omit',
-      headers: {'content-type': 'application/json'},
+      headers: {'content-type': 'application/json','x-operation-id':operationId},
       body: JSON.stringify({brief_date: briefDate, item_id: storyId, rating})
     });
     if (!response.ok) throw new Error('feedback transport unavailable');
     const result = await response.json();
-    if (result.recorded !== true || !Number.isInteger(result.count)) throw new Error('feedback persistence unconfirmed');
+    if (result.recorded !== true) throw new Error('feedback persistence unconfirmed');
   };
 
   const synchronize = async (story, briefDate, storyId, rating, quiet = false) => {
+    let queued;
+    try {queued=JSON.parse(read(syncKey(storyId))||'null');}catch{}
+    if(queued?.createdAt && Date.now()-queued.createdAt>29*86400000){finish(story,rating,'Saved locally; automatic retry window expired.');return;}
+    const operationId=queued?.operationId || crypto.randomUUID();
+    write(syncKey(storyId),JSON.stringify({briefDate,storyId,rating,operationId,createdAt:queued?.createdAt||Date.now()}));
     try {
-      await send(briefDate, storyId, rating);
+      await send(briefDate, storyId, rating, operationId);
       remove(syncKey(storyId));
       finish(story, rating, 'Thank you—your anonymous rating was recorded.');
     } catch (_) {
-      write(syncKey(storyId), JSON.stringify({briefDate, storyId, rating}));
+
       finish(story, rating, quiet
         ? 'Your rating is saved on this device; synchronization is pending.'
         : 'Rating saved on this device; synchronization pending.');

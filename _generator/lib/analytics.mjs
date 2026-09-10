@@ -18,6 +18,13 @@ export function analyticsKey(date, storyId, metric) {
   return `dab-v1-${date}-${storyId}-${metric}`.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 100);
 }
 
+function chicagoMidnight(date) {
+  const noon=new Date(date+'T12:00:00Z');
+  const zone=new Intl.DateTimeFormat('en-US',{timeZone:TIMEZONE,timeZoneName:'shortOffset'}).formatToParts(noon).find(x=>x.type==='timeZoneName').value;
+  const offset=Number(zone.replace('GMT',''));
+  return new Date(Date.parse(date+'T00:00:00Z')-offset*3600000).toISOString();
+}
+
 export function aggregateAnalytics({date, stories, videos = [], podcasts = [], counts, collectionStatus = 'complete', suppressionThreshold = 5, limitations = []}) {
   const rawStories = stories.map(story => ({
     story_id: story.story_id,
@@ -41,14 +48,14 @@ export function aggregateAnalytics({date, stories, videos = [], podcasts = [], c
   const suppressedVideos = rawVideos.map(item => ({...item, metrics: suppressMetrics(item)}));
   return {
     schema_version: '1.0.0', date, timezone: TIMEZONE,
-    aggregation_window: {start: `${date}T05:00:00Z`, end: `${new Date(new Date(`${date}T05:00:00Z`).valueOf() + 86400000).toISOString().replace('.000Z', 'Z')}`},
+    aggregation_window: {start: chicagoMidnight(date), end: chicagoMidnight(new Date(Date.parse(date+'T12:00:00Z')+86400000).toISOString().slice(0,10))},
     privacy: {contains_personal_identifiers: false, small_count_suppression: true, suppression_threshold: suppressionThreshold, retention_days: 400},
     site_totals: siteTotals,
     stories: suppressedStories,
     videos: suppressedVideos,
     podcasts: rawPodcasts.map(item => ({...item,metrics:suppressMetrics(item)})),
     collection_status: collectionStatus,
-    limitations
+    limitations: [...limitations, "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."]
   };
 }
 

@@ -72,21 +72,12 @@
     try { localStorage.setItem(localCounterKey(key), String(value)); } catch (_) {}
   }
 
-  function readPendingCount(key) {
-    try {
-      const n = Number(localStorage.getItem(pendingCounterKey(key)) || 0);
-      return Number.isInteger(n) && n >= 0 ? n : 0;
-    } catch (_) {
-      return 0;
-    }
+  function readOperations(key) {
+    try {const rows=JSON.parse(localStorage.getItem(pendingCounterKey(key)+':v2')||'[]');return Array.isArray(rows)?rows.filter(x=>x.id&&Date.now()-x.at<29*86400000):[];}catch{return [];}
   }
-
-  function writePendingCount(key, value) {
-    try {
-      if (value > 0) localStorage.setItem(pendingCounterKey(key), String(value));
-      else localStorage.removeItem(pendingCounterKey(key));
-    } catch (_) {}
-  }
+  function saveOperations(key,rows){try{localStorage.setItem(pendingCounterKey(key)+':v2',JSON.stringify(rows));}catch{}}
+  function readPendingCount(key){return readOperations(key).length;}
+  function writePendingCount(key,value){const rows=readOperations(key);while(rows.length<value)rows.push({id:crypto.randomUUID(),at:Date.now()});while(rows.length>value)rows.shift();saveOperations(key,rows);}
 
   async function fetchRemoteCount(key) {
     const query = new URLSearchParams({brief_date: briefDate, item_id: key});
@@ -105,13 +96,13 @@
     return value;
   }
 
-  async function incrementRemoteCount(key) {
+  async function incrementRemoteCount(key, operationId) {
     const response = await fetch(EVENTS_ENDPOINT, {
       method: 'POST',
       mode: 'cors',
       cache: 'no-store',
       credentials: 'omit',
-      headers: {'content-type': 'application/json'},
+      headers: {'content-type': 'application/json', 'x-operation-id': operationId},
       body: JSON.stringify({brief_date: briefDate, item_id: key, metric: 'share_initiations'})
     });
     if (!response.ok) throw new Error(`Counter increment failed: ${response.status}`);
@@ -158,7 +149,7 @@
       let pending = readPendingCount(key);
       while (pending > 0) {
         try {
-          const remote = await incrementRemoteCount(key);
+          const remote = await incrementRemoteCount(key, readOperations(key)[0].id);
           pending -= 1;
           writePendingCount(key, pending);
           updateCountDisplay(key, remote + pending);

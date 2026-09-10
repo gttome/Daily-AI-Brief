@@ -263,7 +263,15 @@ export function readerFoundationFiles(edition, repoRoot) {
     } else files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
   }
   files.set('archive.md', renderArchiveSearch(stories));
-  files.set('data/archive-index.json', JSON.stringify(archiveIndex(stories), null, 2));
+  const index=archiveIndex(stories);
+  for(const name of fs.readdirSync(editionDir).filter(n=>n.endsWith('.json'))){
+    const record=name===`${edition.brief_date}.json`?edition:JSON.parse(fs.readFileSync(path.join(editionDir,name),'utf8'));
+    for(const [key,role,suffix] of [['general','general_video','general'],['agents_non_technical_people','agent_skills_video','agent-skills']]){
+      const slot=record.worth_watching?.[key];if(slot?.status!=='included')continue;
+      index.stories.push({content_type:'Video',story_id:`dab-video-${record.brief_date}-${suffix}`,brief_date:record.brief_date,event_date:slot.publication_date||record.brief_date,headline:slot.title,url:slot.url,focus:role,topics:[],companies:[slot.channel].filter(Boolean),evidence_type:'youtube_video',availability_status:'public',summary:slot.why_useful||''});
+    }
+  }
+  files.set('data/archive-index.json', JSON.stringify(index, null, 2));
   files.set('feed.json', renderJsonFeed(stories));
   files.set('feed.xml', renderAtomFeed(stories, edition.published_at));
   files.set('feedback/index.md', renderFeedbackPage(stories, edition.brief_date));

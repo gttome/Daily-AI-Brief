@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "observed_at": "2026-09-10T19:54:25.857Z",
+  "automations": [
+    {
+      "name": "Daily AI Brief + QA",
+      "state": "Enabled",
+      "schedule": "Daily 07:00 America/Chicago",
+      "last_verified_run": "2026-09-10T12:01:46.131161+00:00",
+      "detail": "Publisher and integrated QA; Plus allowance"
+    },
+    {
+      "name": "Validate & Sync Command Centers",
+      "state": "Enabled",
+      "schedule": "Daily 07:40 America/Chicago",
+      "last_verified_run": "2026-09-10T12:41:50.095967+00:00",
+      "detail": "Read-only Brief validation; separate Sites stage preserved"
+    },
+    {
+      "name": "Daily Brief QA + Repair",
+      "state": "Retired",
+      "schedule": "Disabled former 07:20 QA task",
+      "last_verified_run": "2026-09-08T12:23:58.935662+00:00",
+      "detail": "History only; no independent publisher"
+    }
+  ]
+}
