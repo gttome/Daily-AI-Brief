@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
-  "date": "2026-09-07",
+  "date": "2026-09-10",
   "timezone": "America/Chicago",
   "aggregation_window": {
-    "start": "2026-09-07T05:00:00Z",
-    "end": "2026-09-08T05:00:00Z"
+    "start": "2026-09-10T05:00:00Z",
+    "end": "2026-09-11T05:00:00Z"
   },
   "privacy": {
     "contains_personal_identifiers": false,
@@ -13,8 +13,8 @@
     "retention_days": 400
   },
   "site_totals": {
-    "views": 0,
-    "source_clicks": 0,
+    "views": 6,
+    "source_clicks": 3,
     "share_initiations": 0,
     "worth_watching_clicks": 0,
     "retention_30s": 0,
@@ -25,11 +25,11 @@
   },
   "stories": [
     {
-      "story_id": "dab-story-2026-09-07-3f4df523",
+      "story_id": "dab-story-2026-09-10-415f8f1a",
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": null,
+        "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
@@ -39,11 +39,11 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-dab4bc85",
+      "story_id": "dab-story-2026-09-10-fdde2a0c",
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": null,
+        "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
@@ -53,11 +53,11 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-8053a573",
+      "story_id": "dab-story-2026-09-10-061a7b54",
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": null,
+        "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
@@ -67,11 +67,11 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-968c0cd8",
+      "story_id": "dab-story-2026-09-10-c9c45c5e",
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": null,
+        "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
@@ -81,11 +81,11 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-379d301c",
+      "story_id": "dab-story-2026-09-10-a622f43e",
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": null,
+        "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
@@ -95,11 +95,11 @@
       }
     },
     {
-      "story_id": "dab-story-2026-09-07-fdefded2",
+      "story_id": "dab-story-2026-09-10-b2d6f046",
       "metrics": {
         "views": null,
         "source_clicks": null,
-        "share_initiations": null,
+        "share_initiations": 0,
         "worth_watching_clicks": null,
         "retention_30s": null,
         "feedback_most_useful": 0,
@@ -110,10 +110,29 @@
     }
   ],
   "videos": [],
-  "podcasts": [],
+  "podcasts": [
+    {
+      "item_id": "dab-podcast-2026-09-10-twiml-tokenomics",
+      "title": "Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts",
+      "url": "https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": 0,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": 0,
+        "feedback_useful": 0,
+        "feedback_neutral": 0,
+        "feedback_not_useful": 0
+      }
+    }
+  ],
   "collection_status": "complete",
   "limitations": [
-    "Client events contain no names, emails, cookies, persistent reader IDs, or page content.",
+    "Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.",
+    "Explicit rating-button and share totals remain exact because they contain no identifiers; other passive metrics below five remain suppressed.",
+    "Anonymous reader feedback can inform a recommendation but cannot activate editorial weighting without George’s explicit approval.",
     "The public aggregate counter transport can be affected by blockers, bots, or deliberate replay; these counts are directional, not audited audience totals.",
     "Explicit rating-button totals are refreshed for seven days and remain exact because they contain no identifiers."
   ]

@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "learning_id": "dab-editorial-learning-2026-09-09-f407a4cf",
-  "evaluated_at": "2026-09-09T17:49:22Z",
+  "learning_id": "dab-editorial-learning-2026-09-10-0cad73d5",
+  "evaluated_at": "2026-09-10T17:41:37Z",
   "status": "insufficient_evidence",
   "inputs": {
     "feedback_ids": [
@@ -37,7 +37,7 @@
   "weight_recommendations": [],
   "shadow": {
     "minimum_candidate_sets": 5,
-    "candidate_sets_evaluated": 3,
+    "candidate_sets_evaluated": 4,
     "result": "NOT_READY",
     "rank_changes": []
   },

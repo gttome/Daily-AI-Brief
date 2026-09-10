@@ -110,6 +110,7 @@
     }
   ],
   "videos": [],
+  "podcasts": [],
   "collection_status": "complete",
   "limitations": [
     "Client events contain no names, emails, cookies, persistent reader IDs, free text, or page content.",
