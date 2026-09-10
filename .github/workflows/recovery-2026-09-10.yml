@@ -19,6 +19,17 @@ jobs:
         name: Assemble, test and commit candidate
         run: |
           tar -xzf _recovery/2026-09-10/bundle.tar.gz -C _recovery/2026-09-10
+          python - <<'PY'
+          from pathlib import Path
+          p=Path('_recovery/2026-09-10/run.sh')
+          s=p.read_text()
+          needle='cat _recovery/$DATE/edition.b64.part{01,02,03} | base64 -d > "$PAYLOAD/_data/editions/$DATE.json"\n'
+          fix='''node --input-type=module <<'NODEFIX'\nimport fs from 'node:fs';\nconst p=process.env.PAYLOAD + '/_data/editions/' + process.env.DATE + '.json';\nconst e=JSON.parse(fs.readFileSync(p,'utf8'));\nfor (const story of e.stories) { story.image.public_url='https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/'+story.image.path+'?v='+story.image.cache_key; story.social.image_url=story.image.public_url; }\nfs.writeFileSync(p,JSON.stringify(e));\nNODEFIX\n'''
+          if 'NODEFIX' not in s:
+              s=s.replace(needle,needle+fix,1)
+          p.write_text(s)
+          PY
+          export DATE=2026-09-10 PAYLOAD=/tmp/dab-payload
           _recovery/2026-09-10/run.sh prepare
       - name: Materialize candidate
         env:
