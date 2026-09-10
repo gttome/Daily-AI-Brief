@@ -2,7 +2,7 @@
 layout: default
 title: "Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio"
 description: "Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent.png?v=20260910premium3"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3"
 permalink: /stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/
 brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-061a7b54
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-10-061a7b54
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Annotated document spread linking highlighted source passages to a cited report, slides, audio summary and reviewed deliverables, with an enlarged citation verification detail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent.png?v=20260910premium3)
+![Annotated document spread linking highlighted source passages to a cited report, slides, audio summary and reviewed deliverables, with an enlarged citation verification detail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3)
 
 **Summary:** Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables. Adobe says document answers include clickable citations, and new enterprise capabilities can query shared document collections for structured insights.
 

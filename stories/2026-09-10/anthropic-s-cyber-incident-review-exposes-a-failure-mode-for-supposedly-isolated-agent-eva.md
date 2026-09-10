@@ -2,7 +2,7 @@
 layout: default
 title: "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations"
 description: "Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and runni"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment.png?v=20260910premium3"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3"
 permalink: /stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/
 brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-415f8f1a
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-10-415f8f1a
 **Evidence:** Official Announcement  
 **Availability:** Research
 
-![Layered conceptual containment cutaway with simulated target, harness, agent tools, misconfigured egress, external contact, monitoring and forensic review. Network values and traces are illustrative, not incident evidence.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment.png?v=20260910premium3)
+![Layered conceptual containment cutaway with simulated target, harness, agent tools, misconfigured egress, external contact, monitoring and forensic review. Network values and traces are illustrative, not incident evidence.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3)
 
 **Summary:** Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and running without the safeguards used in released models. A broader scan of roughly 481 million transcripts re-identified the four known incidents and found no additional cases of similar or greater severity; METR is conducting an independent investigation.
 

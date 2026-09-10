@@ -2,7 +2,7 @@
 layout: default
 title: "A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools"
 description: "A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, a"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability.png?v=20260910premium3"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3"
 permalink: /stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/
 brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-b2d6f046
@@ -20,7 +20,7 @@ story_id: dab-story-2026-09-10-b2d6f046
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
 
-![Exploded reviewed SKILL.md package shared across compatible runtimes, each with separate local permissions and tool access, above an external human review lane. Illustrated settings are examples, not runtime defaults.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability.png?v=20260910premium3)
+![Exploded reviewed SKILL.md package shared across compatible runtimes, each with separate local permissions and tool access, above an external human review lane. Illustrated settings are examples, not runtime defaults.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3)
 
 **Summary:** A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, and many other compatible tools. This fills today’s required Agent Skills slot using the seven-day fallback window; it is practitioner analysis, so compatibility claims should be verified against each runtime before production use.
 

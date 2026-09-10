@@ -24,7 +24,7 @@ brief_date: 2026-09-10
 **Evidence:** Official Announcement  
 **Availability:** Research
 
-![Layered conceptual containment cutaway with simulated target, harness, agent tools, misconfigured egress, external contact, monitoring and forensic review. Network values and traces are illustrative, not incident evidence.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment.png?v=20260910premium3)
+![Layered conceptual containment cutaway with simulated target, harness, agent tools, misconfigured egress, external contact, monitoring and forensic review. Network values and traces are illustrative, not incident evidence.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3)
 
 **Summary:** Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and running without the safeguards used in released models. A broader scan of roughly 481 million transcripts re-identified the four known incidents and found no additional cases of similar or greater severity; METR is conducting an independent investigation.
 
@@ -64,7 +64,7 @@ brief_date: 2026-09-10
 
 **What changed since last coverage:** September 9 extends GitHub’s control model beyond the prior JetBrains sandbox story to centrally enforced operation-level permissions across the Copilot app, Copilot CLI, and VS Code Agent Host.
 
-![Conceptual enterprise governance control desk: shell, file and network requests classified as allow, approval required or blocked; local preferences and saved approvals cannot override enterprise restrictions. Examples are not default policies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions.png?v=20260910premium3)
+![Conceptual enterprise governance control desk: shell, file and network requests classified as allow, approval required or blocked; local preferences and saved approvals cannot override enterprise restrictions. Examples are not default policies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3)
 
 **Summary:** GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shell commands, file reads and edits, and network domains, and GitHub says user settings, auto-approval, or saved approvals cannot weaken those enterprise restrictions.
 
@@ -102,7 +102,7 @@ brief_date: 2026-09-10
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Annotated document spread linking highlighted source passages to a cited report, slides, audio summary and reviewed deliverables, with an enlarged citation verification detail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent.png?v=20260910premium3)
+![Annotated document spread linking highlighted source passages to a cited report, slides, audio summary and reviewed deliverables, with an enlarged citation verification detail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3)
 
 **Summary:** Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables. Adobe says document answers include clickable citations, and new enterprise capabilities can query shared document collections for structured insights.
 
@@ -140,7 +140,7 @@ brief_date: 2026-09-10
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
 
-![Executive measurement framework distinguishing prompt and usage activity from completed tasks, quality, review cost and business outcomes. Conceptual framework with no measured performance data.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value.png?v=20260910premium3)
+![Executive measurement framework distinguishing prompt and usage activity from completed tasks, quality, review cost and business outcomes. Conceptual framework with no measured performance data.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value-premium3.png?v=20260910premium3)
 
 **Summary:** Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed measurement shift is toward completed work and outcome-oriented evidence rather than treating activity itself as impact.
 
@@ -178,7 +178,7 @@ brief_date: 2026-09-10
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Conceptual no-code productivity workspace with Sheets mini-apps, Chrome web errands, Photos albums and familiar Gmail, Docs and Keep surfaces. Human review is recommended practice; feature availability varies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands.png?v=20260910premium3)
+![Conceptual no-code productivity workspace with Sheets mini-apps, Chrome web errands, Photos albums and familiar Gmail, Docs and Keep surfaces. Human review is recommended practice; feature availability varies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png?v=20260910premium3)
 
 **Summary:** Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemini Spark connections to Chrome and Google Photos for web errands, photo edits, and album curation.
 
@@ -216,7 +216,7 @@ brief_date: 2026-09-10
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
 
-![Exploded reviewed SKILL.md package shared across compatible runtimes, each with separate local permissions and tool access, above an external human review lane. Illustrated settings are examples, not runtime defaults.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability.png?v=20260910premium3)
+![Exploded reviewed SKILL.md package shared across compatible runtimes, each with separate local permissions and tool access, above an external human review lane. Illustrated settings are examples, not runtime defaults.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3)
 
 **Summary:** A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, and many other compatible tools. This fills today’s required Agent Skills slot using the seven-day fallback window; it is practitioner analysis, so compatibility claims should be verified against each runtime before production use.
 
