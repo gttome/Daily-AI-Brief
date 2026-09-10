@@ -4,44 +4,247 @@
   "title": "Daily AI Brief privacy-conscious analytics aggregate",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "date", "timezone", "aggregation_window", "privacy", "site_totals", "stories", "collection_status"],
+  "required": [
+    "schema_version",
+    "date",
+    "timezone",
+    "aggregation_window",
+    "privacy",
+    "site_totals",
+    "stories",
+    "collection_status"
+  ],
   "properties": {
-    "schema_version": {"const": "1.0.0"},
-    "date": {"type": "string", "format": "date"},
-    "timezone": {"const": "America/Chicago"},
-    "aggregation_window": {"type": "object", "required": ["start", "end"], "properties": {"start": {"type": "string", "format": "date-time"}, "end": {"type": "string", "format": "date-time"}}, "additionalProperties": false},
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "timezone": {
+      "const": "America/Chicago"
+    },
+    "aggregation_window": {
+      "type": "object",
+      "required": [
+        "start",
+        "end"
+      ],
+      "properties": {
+        "start": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "end": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "additionalProperties": false
+    },
     "privacy": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["contains_personal_identifiers", "small_count_suppression", "suppression_threshold", "retention_days"],
+      "required": [
+        "contains_personal_identifiers",
+        "small_count_suppression",
+        "suppression_threshold",
+        "retention_days"
+      ],
       "properties": {
-        "contains_personal_identifiers": {"const": false},
-        "small_count_suppression": {"type": "boolean"},
-        "suppression_threshold": {"type": "integer", "minimum": 0},
-        "retention_days": {"type": "integer", "minimum": 1}
+        "contains_personal_identifiers": {
+          "const": false
+        },
+        "small_count_suppression": {
+          "type": "boolean"
+        },
+        "suppression_threshold": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "retention_days": {
+          "type": "integer",
+          "minimum": 1
+        }
       }
     },
-    "site_totals": {"$ref": "#/$defs/metrics"},
-    "stories": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["story_id", "metrics"], "properties": {"story_id": {"type": "string", "pattern": "^dab-story-"}, "metrics": {"$ref": "#/$defs/metrics"}}}},
-    "videos": {"type": "array", "maxItems": 2, "items": {"type": "object", "additionalProperties": false, "required": ["item_id", "title", "url", "metrics"], "properties": {"item_id": {"type": "string", "pattern": "^dab-video-"}, "title": {"type": "string", "minLength": 1}, "url": {"type": "string", "format": "uri", "pattern": "^https://"}, "metrics": {"$ref": "#/$defs/metrics"}}}},
-    "collection_status": {"enum": ["complete", "partial", "unavailable"]},
-    "limitations": {"type": "array", "items": {"type": "string"}}
+    "site_totals": {
+      "$ref": "#/$defs/metrics"
+    },
+    "stories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "story_id",
+          "metrics"
+        ],
+        "properties": {
+          "story_id": {
+            "type": "string",
+            "pattern": "^dab-story-"
+          },
+          "metrics": {
+            "$ref": "#/$defs/metrics"
+          }
+        }
+      }
+    },
+    "videos": {
+      "type": "array",
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item_id",
+          "title",
+          "url",
+          "metrics"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "pattern": "^dab-video-"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "metrics": {
+            "$ref": "#/$defs/metrics"
+          }
+        }
+      }
+    },
+    "collection_status": {
+      "enum": [
+        "complete",
+        "partial",
+        "unavailable"
+      ]
+    },
+    "limitations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "podcasts": {
+      "type": "array",
+      "maxItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "item_id",
+          "title",
+          "url",
+          "metrics"
+        ],
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "pattern": "^dab-podcast-"
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "pattern": "^https://"
+          },
+          "metrics": {
+            "$ref": "#/$defs/metrics"
+          }
+        }
+      }
+    }
   },
   "$defs": {
     "metrics": {
       "type": "object",
       "additionalProperties": false,
-      "required": ["views", "source_clicks", "share_initiations", "worth_watching_clicks", "retention_30s"],
+      "required": [
+        "views",
+        "source_clicks",
+        "share_initiations",
+        "worth_watching_clicks",
+        "retention_30s"
+      ],
       "properties": {
-        "views": {"type": ["integer", "null"], "minimum": 0},
-        "source_clicks": {"type": ["integer", "null"], "minimum": 0},
-        "share_initiations": {"type": ["integer", "null"], "minimum": 0},
-        "worth_watching_clicks": {"type": ["integer", "null"], "minimum": 0},
-        "retention_30s": {"type": ["integer", "null"], "minimum": 0},
-        "feedback_most_useful": {"type": ["integer", "null"], "minimum": 0},
-        "feedback_useful": {"type": ["integer", "null"], "minimum": 0},
-        "feedback_neutral": {"type": ["integer", "null"], "minimum": 0},
-        "feedback_not_useful": {"type": ["integer", "null"], "minimum": 0}
+        "views": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "source_clicks": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "share_initiations": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "worth_watching_clicks": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "retention_30s": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "feedback_most_useful": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "feedback_useful": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "feedback_neutral": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "feedback_not_useful": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
       }
     }
   }

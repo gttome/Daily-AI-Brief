@@ -1,6 +1,10 @@
 # Daily-AI-Brief
 Daily briefings covering important Generative AI developments, tools, concepts, and engineering practices.
 
+## Podcasts
+
+Each new edition includes slot 9 after the videos: one relevant podcast with no duration cap, a permanent shareable page, and usefulness ratings. See [source research and selection policy](docs/podcasts/source-research.md) and the [source registry](_data/podcast-sources.json).
+
 ## Reader sharing
 
 Every numbered briefing item automatically receives a native/fallback Share control with an item-specific share count. See [SHARING.md](SHARING.md) for behavior, counter semantics, publication requirements, and QA checks.

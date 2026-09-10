@@ -39,7 +39,7 @@ export function validateOperationalRecords(repoRoot) {
     const record = JSON.parse(fs.readFileSync(file, 'utf8'));
     for (const trend of record.trends || []) {
       if (trend.supporting_story_ids.length !== trend.supporting_stories.length) errors.push(`${path.relative(repoRoot, file)}: trend evidence count mismatch`);
-      if (trend.supporting_stories.some(story => story.brief_date < record.evidence_window.start_date || story.brief_date > record.evidence_window.end_date || !story.url.startsWith('/stories/'))) errors.push(`${path.relative(repoRoot, file)}: trend has evidence outside its window or without a stable URL`);
+      if (trend.supporting_stories.some(story => story.brief_date < record.evidence_window.start_date || story.brief_date > record.evidence_window.end_date || !/^\/(stories|podcasts)\//.test(story.url))) errors.push(`${path.relative(repoRoot, file)}: trend has evidence outside its window or without a stable URL`);
     }
   }
   for (const file of files(path.join(repoRoot, '_records', 'editorial-feedback'))) {

@@ -18,8 +18,8 @@ const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&
 
 export function renderInlineFeedback(story, compact = true) {
   const className = compact ? 'story-feedback story-feedback-compact' : 'story-feedback';
-  const subject = story.feedback_subject === 'video' ? 'video' : 'story';
-  const prompt = subject === 'video' ? 'Was this video useful?' : 'Was this useful?';
+  const subject = ['video', 'podcast'].includes(story.feedback_subject) ? story.feedback_subject : 'story';
+  const prompt = subject === 'story' ? 'Was this useful?' : `Was this ${subject} useful?`;
   return `<div class="${className}" data-feedback-brief-date="${story.brief_date}" data-feedback-story-id="${story.story_id}">
   <span class="feedback-prompt">${prompt}</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this ${subject}">
@@ -77,6 +77,13 @@ export function readerStories(repoRoot, edition, days = 30) {
   const historical = scanHistoricalBriefs(repoRoot, edition.brief_date, days).stories.map(historicalStory);
   const byEditionPosition = new Map(historical.map(story => [`${story.brief_date}:${story.ordinal}`, story]));
   for (const story of edition.stories) byEditionPosition.set(`${edition.brief_date}:${story.ordinal}`, canonicalStory(story, edition));
+  const canonicalDir = path.join(repoRoot, '_data', 'editions');
+  if (fs.existsSync(canonicalDir)) for (const name of fs.readdirSync(canonicalDir).filter(n => n.endsWith('.json'))) {
+    const record = name === `${edition.brief_date}.json` ? edition : JSON.parse(fs.readFileSync(path.join(canonicalDir, name), 'utf8'));
+    const age = (Date.parse(edition.brief_date) - Date.parse(record.brief_date)) / 86400000;
+    if (age >= 0 && age < days && record.podcast?.status === 'included') byEditionPosition.set(`${record.brief_date}:9`, podcastStory(record.podcast, record));
+  }
+  if (edition.podcast?.status === 'included') byEditionPosition.set(`${edition.brief_date}:9`, podcastStory(edition.podcast, edition));
   return [...byEditionPosition.values()].sort((a, b) => b.brief_date.localeCompare(a.brief_date) || a.ordinal - b.ordinal);
 }
 
@@ -148,6 +155,7 @@ export function archiveIndex(stories) {
     schema_version: '1.0.0',
     generated_from: 'canonical-edition-and-30-day-story-memory',
     stories: stories.map(story => ({
+      content_type: story.content_type || 'Article',
       story_id: story.story_id,
       brief_date: story.brief_date,
       event_date: story.event_date,
@@ -175,10 +183,10 @@ description: Search and filter the Daily Generative AI Brief archive.
 
 # Search the Daily AI Brief Archive
 
-Search ${stories.length} stories across ${editions} recent editions. Existing dated-brief URLs remain unchanged.
+Search ${stories.length} items across ${editions} recent editions. Existing dated-brief URLs remain unchanged.
 
 <div class="archive-controls" role="search" aria-label="Daily AI Brief archive filters">
-  <label>Search <input id="archive-query" type="search" placeholder="Company, topic, headline, or phrase"></label>
+  <label>Search <input id="archive-query" type="search" placeholder="Podcast, company, topic, or headline"></label>
   <label>From <input id="archive-from" type="date"></label>
   <label>To <input id="archive-to" type="date"></label>
   <label>Focus <select id="archive-focus"><option value="">All focus areas</option></select></label>
@@ -188,10 +196,10 @@ Search ${stories.length} stories across ${editions} recent editions. Existing da
   <button id="archive-reset" type="button">Reset</button>
 </div>
 
-<p id="archive-result-count" role="status" aria-live="polite">${stories.length} stories</p>
+<p id="archive-result-count" role="status" aria-live="polite">${stories.length} items</p>
 
 <div id="archive-results" class="archive-results">
-${stories.map(story => `<article class="archive-story"><p class="archive-story-meta">${formatDate(story.brief_date)} · ${focusLabels[story.focus] || label(story.focus)}</p><h2><a href="{{ '${story.permanent_url}' | relative_url }}">${xml(story.headline)}</a></h2><p>${xml(story.summary || '')}</p></article>`).join('\n')}
+${stories.map(story => `<article class="archive-story"><p class="archive-story-meta">${formatDate(story.brief_date)} · ${story.content_type || 'Article'} · ${focusLabels[story.focus] || label(story.focus)}</p><h2><a href="{{ '${story.permanent_url}' | relative_url }}">${xml(story.headline)}</a></h2><p>${xml(story.summary || '')}</p></article>`).join('\n')}
 </div>
 
 <noscript><p>Search and filters require JavaScript. The complete chronological archive remains listed below.</p></noscript>
@@ -210,7 +218,7 @@ export function renderJsonFeed(stories) {
     title: 'Daily Generative AI Brief',
     home_page_url: `${PUBLIC_BASE}/`,
     feed_url: `${PUBLIC_BASE}/feed.json`,
-    description: 'Six worthwhile Generative AI developments selected daily for George Tome.',
+    description: 'Six AI articles, two videos, and one podcast selected daily for George Tome.',
     items: stories.map(story => ({
       id: story.story_id,
       url: `${PUBLIC_BASE}${story.permanent_url}`,
@@ -248,7 +256,12 @@ export function readerFoundationFiles(edition, repoRoot) {
   const editionDir = path.join(repoRoot, '_data', 'editions');
   const feedbackDates = new Set(fs.existsSync(editionDir) ? fs.readdirSync(editionDir).filter(name => name.endsWith('.json')).map(name => name.slice(0, -5)) : [edition.brief_date]);
   const files = new Map();
-  for (const story of stories) files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
+  for (const story of stories) {
+    if (story.content_type === 'Podcast') {
+      const header = renderStoryPage(story, false).split('---\n\n')[0] + '---\n\n';
+      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + renderPodcast(story.podcast, story.brief_date).replace(/^## Worth Listening — Podcast\n\n### 9\. [^\n]+\n\n/, '') + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);
+    } else files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
+  }
   files.set('archive.md', renderArchiveSearch(stories));
   files.set('data/archive-index.json', JSON.stringify(archiveIndex(stories), null, 2));
   files.set('feed.json', renderJsonFeed(stories));
@@ -268,4 +281,52 @@ export function validateFeeds(atom, json) {
     if (parsed.items?.some(item => !item.id || !item.url || !item.title)) errors.push('JSON Feed item is missing an ID, URL, or title');
   } catch (error) { errors.push(`JSON Feed is invalid: ${error.message}`); }
   return errors;
+}
+
+export function podcastStory(slot, edition) {
+  return {
+    story_id: slot.item_id, edition_id: edition.edition_id, brief_date: edition.brief_date,
+    ordinal: 9, content_type: 'Podcast', feedback_subject: 'podcast', headline: slot.title,
+    slug: slot.permanent_url.split('/').filter(Boolean).at(-1), permanent_url: slot.permanent_url,
+    event_date: slot.publication_date, focus: slot.focus, topics: slot.topics,
+    companies: [slot.show], normalized_urls: [slot.url], source_title: slot.show,
+    source_organization: slot.show, source_url: slot.url, evidence_type: 'practitioner_analysis',
+    availability_status: 'not_applicable', summary: slot.summary, why_it_matters: slot.why_useful,
+    george_implication: slot.george_implication, trends: [], podcast: slot
+  };
+}
+
+export function renderPodcast(slot, briefDate) {
+  if (!slot) return '';
+  if (slot.status === 'empty') return `## Worth Listening — Podcast\n\n**Slot 9:** ${slot.exception}`;
+  return `## Worth Listening — Podcast
+
+### 9. ${slot.title}
+
+<span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
+
+[Open the permanent podcast page]({{ '${slot.permanent_url}' | relative_url }})
+
+**Show:** ${slot.show}  
+**Host / guest:** ${slot.host}  
+**Focus:** ${focusLabels[slot.focus]}  
+**Date:** ${formatDate(slot.publication_date)}  
+**Duration:** ${slot.runtime_seconds === null ? 'Not independently verified' : `${Math.floor(slot.runtime_seconds / 60)}:${String(slot.runtime_seconds % 60).padStart(2,'0')}`} · No episode time limit  
+**Topics:** ${slot.topics.join(', ')}
+
+**Summary:** ${slot.summary}
+
+**Why it matters:** ${slot.why_useful}
+
+**Connection to the brief:** ${slot.connection}
+
+**For George’s work:** ${slot.george_implication}
+
+**Coverage:** ${slot.coverage_note}
+
+**Evidence:** Practitioner analysis. ${slot.verification_note}
+
+**Listen / watch:** ${slot.platforms.map(p => `[${p.name}](${p.url})`).join(' · ')}
+
+${renderInlineFeedback({brief_date:briefDate,story_id:slot.item_id,feedback_subject:'podcast'})}`;
 }

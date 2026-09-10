@@ -3,7 +3,7 @@
   "title": "Daily Generative AI Brief",
   "home_page_url": "https://gttome.github.io/Daily-AI-Brief/",
   "feed_url": "https://gttome.github.io/Daily-AI-Brief/feed.json",
-  "description": "Six worthwhile Generative AI developments selected daily for George Tome.",
+  "description": "Six AI articles, two videos, and one podcast selected daily for George Tome.",
   "items": [
     {
       "id": "dab-story-2026-09-09-e9be6ec5",
@@ -95,6 +95,21 @@
         "knowledge retrieval",
         "human escalation",
         "GitHub"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-09-agentic-loops",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/",
+      "title": "Agentic Loops for Knowledge Workers",
+      "summary": "Nufar Gaspar explains how knowledge workers can use agent loops and connected workflows. The central lesson is to define a checkable completion condition before asking an agent to repeat work. The session includes a Claude Code demonstration.",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "loop engineering",
+        "graph engineering",
+        "verification",
+        "human review",
+        "knowledge work",
+        "The AI Daily Brief"
       ]
     },
     {

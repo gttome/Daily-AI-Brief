@@ -1,0 +1,107 @@
+{
+  "schema_version": "1.0.0",
+  "checked_at": "2026-09-10",
+  "policy": {
+    "slot": 9,
+    "max_runtime_seconds": null,
+    "recency_days": [
+      1,
+      7,
+      30
+    ],
+    "preferred_focus": [
+      "applied_genai_knowledge_workers",
+      "agents_non_technical_people"
+    ],
+    "fallback_focus": [
+      "technical_ai_engineering"
+    ],
+    "deduplicate_across_platforms": true
+  },
+  "sources": [
+    {
+      "show": "The AI Daily Brief",
+      "website": "https://aidailybrief.ai/",
+      "priority": "always_check",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    },
+    {
+      "show": "Everyday AI",
+      "website": "https://www.youreverydayai.com/",
+      "priority": "core",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    },
+    {
+      "show": "The Artificial Intelligence Show",
+      "website": "https://podcast.smarterx.ai/",
+      "priority": "core",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    },
+    {
+      "show": "AI for Humans",
+      "website": "https://www.aiforhumans.show/",
+      "priority": "core",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    },
+    {
+      "show": "Practical AI",
+      "website": "https://practicalai.show/",
+      "priority": "fallback",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    },
+    {
+      "show": "Latent Space",
+      "website": "https://www.latent.space/podcast",
+      "priority": "fallback",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    },
+    {
+      "show": "TWIML",
+      "website": "https://twimlai.com/podcast/twimlai/",
+      "priority": "fallback",
+      "discovery": [
+        "publisher episode catalog and notes",
+        "official YouTube channel",
+        "Apple Podcasts",
+        "Spotify",
+        "publisher-linked RSS when verified"
+      ]
+    }
+  ]
+}

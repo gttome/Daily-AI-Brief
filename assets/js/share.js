@@ -46,7 +46,7 @@
   }
 
   function counterKey(itemId) {
-    if (/^dab-(?:story|video)-/.test(itemId)) return itemId;
+    if (/^dab-(?:story|video|podcast)-/.test(itemId)) return itemId;
     const kind = String(itemId).startsWith('video-') ? 'video' : 'story';
     return `dab-${kind}-${briefDate || 'undated'}-${itemId}`.replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 140);
   }
@@ -409,6 +409,15 @@
     }
   }
 
+  function addPodcastButtons() {
+    if (document.body.dataset.storyId) return;
+    main.querySelectorAll('.podcast-data').forEach(marker => {
+      const id = marker.dataset.podcastId;
+      const url = `${window.location.origin}${siteBasePath().replace(/\/$/, '')}${marker.dataset.podcastUrl}`;
+      marker.insertAdjacentElement('afterend', makeButton({id, title:marker.dataset.podcastTitle, counterKey:counterKey(id), url, storyId:id}));
+    });
+  }
+  addPodcastButtons();
   addStoryButtons();
   addVideoButtons();
   addPermanentStoryButton();

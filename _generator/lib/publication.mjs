@@ -82,6 +82,7 @@ export function validateAtomicChangedPaths(paths, date, {policyProfile = 'public
     required.add(`_records/trends/${date}.json`);
     required.add(`_records/editorial-feedback/${date.slice(0, 7)}.json`);
   }
+  if (date >= '2026-09-10' && policyProfile === 'full_v1') required.add(`_records/editorial/podcasts/${date}.json`);
   const missing = [...required].filter(name => !paths.includes(name));
   const imagePrefix = `briefs/images/${date}/`;
   const imageCount = new Set(paths.filter(name => name.startsWith(imagePrefix))).size;

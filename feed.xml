@@ -48,6 +48,13 @@
     <summary>GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation.</summary>
   </entry>
   <entry>
+    <title>Agentic Loops for Knowledge Workers</title>
+    <id>dab-podcast-2026-09-09-agentic-loops</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/" />
+    <updated>2026-09-09T18:00:00Z</updated>
+    <summary>Nufar Gaspar explains how knowledge workers can use agent loops and connected workflows. The central lesson is to define a checkable completion condition before asking an agent to repeat work. The session includes a Claude Code demonstration.</summary>
+  </entry>
+  <entry>
     <title>Execution traces make agent reliability measurable across real development workflows</title>
     <id>dab-story-2026-09-08-a6856793</id>
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/" />

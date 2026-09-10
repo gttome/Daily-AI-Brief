@@ -107,12 +107,13 @@ if (command === 'import') {
 } else if (command === 'collect-analytics') {
   const date = args.date || latestBriefDate(repoRoot);
   const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
-  const stories = readerStories(repoRoot, edition).filter(story => story.brief_date === date);
+  const stories = readerStories(repoRoot, edition).filter(story => story.brief_date === date && story.content_type !== 'Podcast');
   const videos = [
     {story_id: `dab-video-${date}-general`, ...edition.worth_watching?.general},
     {story_id: `dab-video-${date}-agent-skills`, ...edition.worth_watching?.agents_non_technical_people}
   ].filter(video => video.status === 'included');
-  const items = [...stories, ...videos];
+  const podcasts = edition.podcast?.status === 'included' ? [{...edition.podcast,story_id:edition.podcast.item_id}] : [];
+  const items = [...stories, ...videos, ...podcasts];
   const endpoint = args.endpoint || 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/events';
   const ratingsEndpoint = args['ratings-endpoint'] || 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/ratings';
   const record = await collectAnalytics(date, stories, async key => {
@@ -128,7 +129,7 @@ if (command === 'import') {
     const data = await response.json();
     const field = feedbackMetric ? feedbackMetric.slice('feedback_'.length) : passiveMetric;
     return Number(data.totals?.[field]);
-  }, videos);
+  }, videos, podcasts);
   const output = JSON.stringify(record, null, 2);
   if (args.out) writeText(path.resolve(args.out), output); else console.log(output);
 } else if (command === 'refresh-feedback-analytics') {
@@ -144,7 +145,8 @@ if (command === 'import') {
       {story_id: `dab-video-${edition.brief_date}-general`, ...edition.worth_watching?.general},
       {story_id: `dab-video-${edition.brief_date}-agent-skills`, ...edition.worth_watching?.agents_non_technical_people}
     ].filter(video => video.status === 'included');
-    const items = [...edition.stories, ...videos];
+    const podcasts = edition.podcast?.status === 'included' ? [{...edition.podcast,story_id:edition.podcast.item_id}] : [];
+    const items = [...edition.stories, ...videos, ...podcasts];
     const outputPath = path.join(repoRoot, '_records', 'analytics', name);
     const existing = fs.existsSync(outputPath) ? readJson(outputPath) : null;
     const result = await refreshFeedbackAnalytics(existing, edition.brief_date, edition.stories, async key => {
@@ -155,7 +157,7 @@ if (command === 'import') {
       const response = await fetch(`${endpoint}?${query}`, {headers: {'user-agent': 'Daily-AI-Brief-feedback-aggregator/2.0', origin: 'https://gttome.github.io'}});
       if (!response.ok) throw new Error(`counter transport ${response.status}`);
       return Number((await response.json()).totals?.[metric.slice('feedback_'.length)]);
-    }, videos);
+    }, videos, podcasts);
     writeText(outputPath, JSON.stringify(result.record, null, 2));
     results.push({date: edition.brief_date, feedback_status: result.feedback_status, failures: result.failures});
   }
