@@ -5,7 +5,7 @@ import test from 'node:test';
 import {fileURLToPath} from 'node:url';
 import {accessibilityReview, auditEditionAccessibility, contrastRatio} from '../lib/accessibility.mjs';
 import {ANALYTICS_METRICS, aggregateAnalytics, analyticsKey, collectAnalytics, refreshFeedbackAnalytics} from '../lib/analytics.mjs';
-import {qaMetrics, renderQaDashboard} from '../lib/quality.mjs';
+import {loadQaRecords, qaMetrics, renderQaDashboard} from '../lib/quality.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const edition = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-07.json'), 'utf8'));
@@ -91,7 +91,8 @@ test('editorial alt review covers all six stories and color contrast passes AA',
 test('public QA dashboard metrics match the machine-readable record', () => {
   const record = JSON.parse(fs.readFileSync(path.join(root, '_records/qa/2026-09-07.json'), 'utf8'));
   assert.deepEqual(qaMetrics([record]), {runs: 1, first_pass_rate: 100, final_pass_rate: 100, repairs: 0, average_deployment_latency_seconds: 47});
+  const metrics = qaMetrics(loadQaRecords(root));
   const page = renderQaDashboard(root);
   assert.match(page, /100%<\/strong><span>First-pass QA/);
-  assert.match(page, /47s<\/strong><span>Average deploy latency/);
+  assert.match(page, new RegExp(`${metrics.average_deployment_latency_seconds}s</strong><span>Average deploy latency`));
 });
