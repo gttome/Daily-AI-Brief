@@ -1,6 +1,6 @@
 # Podcast extension release status
 
-Implementation is prepared; the complete feature is not yet live.
+Released September 10, 2026. The podcast launch is live in the September 9 edition.
 
 ## Completed checks
 
@@ -9,9 +9,19 @@ Implementation is prepared; the complete feature is not yet live.
 - Repository validation and integrated canonical-to-generated parity passed.
 - 19 Command Center tests and its static/accessibility/security audit passed.
 - Ratings service build passed and its podcast-compatible version was deployed. Existing origin restrictions, privacy controls, and duplicate-share protection were retained.
-- Podcast-aware Command Center version 11 is saved but not deployed.
+- Podcast-aware Command Center version 11 was saved during preparation and subsequently deployed as recorded below.
 
-## Pending release
+## Release evidence
+
+- User explicitly approved GitHub publication, Command Center deployment, and revised instructions.
+- [PR 48](https://github.com/gttome/Daily-AI-Brief/pull/48) merged as `1eb18e7775df05592397e3aa6c9e074c2e35fe09`.
+- [Production CI](https://github.com/gttome/Daily-AI-Brief/actions/runs/34463075179) and [Pages deployment](https://github.com/gttome/Daily-AI-Brief/actions/runs/34463074393) passed.
+- Live homepage and dated edition return HTTP 200 with nine rating groups; permanent podcast page returns HTTP 200 with one group.
+- Feed and archive index include the podcast stable ID.
+- Command Center version 11 deployed successfully with owner-only access.
+- Daily publisher and combined Command Center validation instructions were updated and read back exactly; schedules and enabled states were preserved.
+
+## Original release checkpoint (retained history)
 
 Automatic approval review rejected the GitHub push because it did not consider implementation permission sufficient authorization to publish code to GitHub. Do not retry or use a different write mechanism without explicit approval.
 
