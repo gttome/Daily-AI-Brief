@@ -72,7 +72,15 @@
         "title": "OpenAI’s Agents API turns the Codex harness into a programmable platform",
         "description": "OpenAI introduced the Agents API in public beta for all developers, exposing the same managed Codex harness used by its coding products. The API supports long-running sessions with context c",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/01-openai-agents-api.png?v=20260911textbook"
-      }
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI Context Engineering",
+          "proposed_change": "Add a layered diagram separating model, harness, tool access and evidence handoff.",
+          "evidence_reason": "The reported Agents API makes the harness an explicit part of the workflow.",
+          "teaching_asset": "A failure-injection exercise in which a tool result or context handoff is missing."
+        }
+      ]
     },
     {
       "story_id": "dab-story-2026-09-11-d957d6c9",
@@ -137,7 +145,15 @@
         "title": "Anthropic’s latest misuse report shows AI orchestrating adaptive attack loops",
         "description": "Anthropic’s September threat-intelligence report covers cases it disrupted from December 2025 through August 2026 across seven harm areas. It describes AI being used not only for isolated ta",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/02-anthropic-misuse-loops.png?v=20260911textbook"
-      }
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI",
+          "proposed_change": "Add an adaptive-loop misuse case with monitoring, stopping conditions and human escalation.",
+          "evidence_reason": "The incident analysis illustrates how repeated tool use changes the risk beyond a single prompt.",
+          "teaching_asset": "A trace-review worksheet that distinguishes observation from inference."
+        }
+      ]
     },
     {
       "story_id": "dab-story-2026-09-11-80fe8cea",
@@ -202,7 +218,15 @@
         "title": "ChatGPT for Financial Services builds citations, entitlements, and governance into research work",
         "description": "OpenAI introduced ChatGPT for Financial Services, a tailored ChatGPT Work experience for eligible financial institutions. It combines premium datasets including Daloopa, PitchBook, LSEG News",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/03-openai-financial-services.png?v=20260911textbook"
-      }
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI Context Engineering",
+          "proposed_change": "Extend the retrieval-governance example to show entitlement checks beside source citations.",
+          "evidence_reason": "The financial-research workflow connects grounding with permission boundaries.",
+          "teaching_asset": "A comparison of a cited answer with an unauthorized-source answer."
+        }
+      ]
     },
     {
       "story_id": "dab-story-2026-09-11-53dc2a82",
@@ -267,7 +291,15 @@
         "title": "GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default",
         "description": "GitHub published a beginner workflow for the Copilot app built around three integrated verification surfaces: a diff for inspecting code changes, a terminal for running commands and tests, a",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/04-github-copilot-review-loop.png?v=20260911textbook"
-      }
+      },
+      "series_implications": [
+        {
+          "book_title": "Generative AI Prompt Engineering Learning Ecosystem",
+          "proposed_change": "Add a beginner exercise that alternates generation, inspection, tests and preview.",
+          "evidence_reason": "The reported Copilot review workflow gives learners concrete checkpoints.",
+          "teaching_asset": "A short screen-based practice activity with acceptance criteria."
+        }
+      ]
     },
     {
       "story_id": "dab-story-2026-09-11-0abd52ec",
@@ -333,7 +365,15 @@
         "title": "Gemini Enterprise in Slack adds a private review step before channel sharing",
         "description": "Google made new Gemini Enterprise for Slack interactions generally available: users can mention Gemini in a channel, receive a response privately for review, and deliberately share it back; ",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/05-gemini-slack-review.png?v=20260911textbook"
-      }
+      },
+      "series_implications": [
+        {
+          "book_title": "Generative AI Professional Prompt Engineering Guide",
+          "proposed_change": "Add a private-draft-to-approved-share prompt pattern.",
+          "evidence_reason": "The Slack workflow puts review before channel publication.",
+          "teaching_asset": "A reusable prompt and checklist for deciding what may be shared."
+        }
+      ]
     },
     {
       "story_id": "dab-story-2026-09-11-bc8138fb",
@@ -401,22 +441,70 @@
         "title": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
         "description": "Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, ",
         "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/06-atlassian-agent-skills.png?v=20260911textbook"
-      }
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI Context Engineering",
+          "proposed_change": "Add a portable skill-package example with version, scope, permissions and review ownership.",
+          "evidence_reason": "The TWG CLI story distinguishes a reusable method from a one-off prompt.",
+          "teaching_asset": "A diagram and exercise comparing skill instructions across two agent environments."
+        }
+      ]
     }
   ],
   "worth_watching": {
     "general": {
       "status": "empty",
-      "exception": "No General YouTube item was included. Current searches found topical videos, but the accessible primary evidence did not establish both an exact runtime of 20:00 or less and a sufficiently substantive connection to today’s selected developments; unverified items were rejected."
+      "exception": "No qualifying video could be verified: the broader recovery search checked eight channel catalogs and publisher video links, but current upload dates or exact runtimes were inaccessible. Videos of 10 minutes or less remain preferred; the 20-minute fallback also requires verified metadata."
     },
     "agents_non_technical_people": {
       "status": "empty",
-      "exception": "No non-technical agent video was included after checking current Agent Skills and reusable-agent-workflow results. Candidate YouTube pages did not provide independently accessible exact runtime and upload-date evidence, so the slot remains empty rather than relaxing the 20:00 verification limit."
+      "exception": "No qualifying video could be verified: the broader recovery search checked eight channel catalogs and publisher video links, but current upload dates or exact runtimes were inaccessible. Videos of 10 minutes or less remain preferred; the 20-minute fallback also requires verified metadata."
     }
   },
   "podcast": {
-    "status": "empty",
-    "exception": "Podcast slot 9 is empty after checking every registered core source and the designated fallbacks. No new September 10–11 episode with reliable date metadata and a strong connection to today’s brief was verified; the September 9 TWIML episode was already selected for the prior edition and was not repeated."
+    "status": "included",
+    "ordinal": 9,
+    "item_id": "dab-podcast-2026-09-11-computer-use-agents",
+    "title": "Computer-Use Agents and the Future of the Agentic Internet",
+    "show": "Practical AI",
+    "host": "Chris Benson; guest Demetrios Brinkmann",
+    "publication_date": "2026-09-10",
+    "runtime_seconds": 3361,
+    "focus": "agents_non_technical_people",
+    "topics": [
+      "computer-use agents",
+      "MCP",
+      "agent harnesses",
+      "human review"
+    ],
+    "url": "https://practicalai.show/371",
+    "permanent_url": "/podcasts/2026-09-11/computer-use-agents/",
+    "summary": "Chris Benson and Demetrios Brinkmann discuss computer-use workflows, MCP, and the relationship between models and agent harnesses. Their examples span personal tasks and workplace adoption. Predictions about agent-led commerce are discussion, not established outcomes.",
+    "why_useful": "A practical conversation about opportunities and control gaps when agents operate existing software.",
+    "connection": "Relevant to the brief’s agent authority, context and human-review themes.",
+    "george_implication": "Consider a worked example comparing computer use with a structured tool connection.",
+    "selection_rationale": "Verified September 10 episode within the preferred 48-hour window; no duplicate in the archive.",
+    "verification_note": "Publisher page and transcript checked during the September 11 recovery. Date and 56:01 runtime are publisher-reported; anecdotes are not independent reliability evidence.",
+    "coverage_note": "Added during the September 11 recovery after broader source discovery.",
+    "platforms": [
+      {
+        "name": "Publisher episode and show notes",
+        "url": "https://practicalai.show/371"
+      },
+      {
+        "name": "Transcript",
+        "url": "https://practicalai.show/371/transcript"
+      }
+    ],
+    "series_implications": [
+      {
+        "book_title": "Reliable Generative AI",
+        "proposed_change": "Add a comparison of computer-use and structured-tool workflows.",
+        "evidence_reason": "The discussion raises practical permission and reliability questions.",
+        "teaching_asset": "A proposed exercise identifying approval and verification checkpoints."
+      }
+    ]
   },
   "editorial_takeaway": "The common thread is a maturing control plane around generative AI: programmable harnesses, adaptive-threat defenses, governed retrieval, explicit review loops, private collaboration gates, and reusable skills that remain subject to runtime-specific permissions and verification.",
   "provenance": {

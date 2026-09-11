@@ -119,3 +119,14 @@ export async function refreshFeedbackAnalytics(existing, date, stories, getCount
   }
   return {record: refreshed, feedback_status: feedbackStatus, failures};
 }
+
+export function publicAnalyticsEvidence(edition, observedAt=new Date().toISOString(), privateStatus='not_collected') {
+ const record=aggregateAnalytics({date:edition.brief_date,stories:edition.stories,counts:{},collectionStatus:'partial',limitations:[
+  'Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.',
+  'Exact credit usage is unavailable without an attributable platform usage record.',
+  'A later observation must not be represented as reconstructed event-day activity.'
+ ]});
+ record.observed_at=observedAt;record.edition_id=edition.edition_id;
+ record.private_evidence={status:privateStatus,reference:`owner-only:/api/snapshot?key=_records/analytics/${edition.brief_date}.json`,metric_basis:'lifetime_observed',public_metric_status:'suppressed'};
+ return record;
+}

@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-30-6649fb3e
 
 **Why it matters:** Non-technical builders need an operating model for agent authority, not merely a prompt template. The guide makes useful distinctions between reversible and irreversible work and between low- and high-stakes actions. It is vendor guidance rather than an independent evaluation, and guardrails are classifiers that can miss attacks or block legitimate content, so logs and spot checks remain necessary.
 
-**For George’s work:** This can become a reusable course worksheet: list every tool connection, minimize permissions, screen untrusted inputs, require approval before external effects, and review a sample of completed runs for drift.
+**Original commentary:** This can become a reusable course worksheet: list every tool connection, minimize permissions, screen untrusted inputs, require approval before external effects, and review a sample of completed runs for drift.
 
-**Source:** [Zapier — How to build safe and trustworthy AI agents](https://zapier.com/blog/safe-trustworthy-ai-agents/)
+**Source:** <a href="https://zapier.com/blog/safe-trustworthy-ai-agents/" data-item-id="dab-story-2026-08-30-6649fb3e" data-edition-date="2026-08-30" data-action="source_clicks">Zapier — How to build safe and trustworthy AI agents</a>
 
 ---
 

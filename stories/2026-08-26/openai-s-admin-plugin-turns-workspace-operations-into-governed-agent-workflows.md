@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-26-48060fd1
 
 **Why it matters:** This is agent design for an operational role rather than for software development. The workflow combines observation, policy, action authority, exceptions, human judgment, and confirmation—exactly the elements non-technical agent builders need to define explicitly.
 
-**For George’s work:** It offers a strong agent-governance template for workshops: define allowed actions, decision rules, exception thresholds, reviewers, evidence, and confirmation. Participants could adapt that pattern to editorial review, course enrollment, client onboarding, or content-production operations.
+**Original commentary:** It offers a strong agent-governance template for workshops: define allowed actions, decision rules, exception thresholds, reviewers, evidence, and confirmation. Participants could adapt that pattern to editorial review, course enrollment, client onboarding, or content-production operations.
 
-**Source:** [OpenAI announcement](https://openai.com/index/introducing-admin-plugin/)
+**Source:** <a href="https://openai.com/index/introducing-admin-plugin/" data-item-id="dab-story-2026-08-26-48060fd1" data-edition-date="2026-08-26" data-action="source_clicks">OpenAI announcement</a>
 
 ---
 

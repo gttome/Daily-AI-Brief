@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-26-b03e2253
 
 **Why it matters:** The design treats context, computation, recovery, verification, and resource accounting as durable system capabilities rather than rebuilding them inside every model turn. That is a concrete example of harness engineering changing measured agent capability without changing the underlying model.
 
-**For George’s work:** This is a useful technical case study for separating model capability from loop and harness capability. A course exercise could compare a stateless chat loop with a persistent workspace that records intermediate artifacts, delegates bounded subtasks, and verifies outputs.
+**Original commentary:** This is a useful technical case study for separating model capability from loop and harness capability. A course exercise could compare a stateless chat loop with a persistent workspace that records intermediate artifacts, delegates bounded subtasks, and verifies outputs.
 
-**Source:** [Paper and project links](https://huggingface.co/papers/2608.23552)
+**Source:** <a href="https://huggingface.co/papers/2608.23552" data-item-id="dab-story-2026-08-26-b03e2253" data-edition-date="2026-08-26" data-action="source_clicks">Paper and project links</a>
 
 ---
 

@@ -51,3 +51,10 @@ main#content img {
 .rating-guide p{margin:.5rem 0}
 .rating-guide ol{margin:.4rem 0;padding-left:1.4rem}
 .story-feedback-compact.star-feedback .feedback-status{font-size:.9rem;white-space:pre-line;line-height:1.6;color:#254e56}
+.comment-open{margin-left:auto;font:inherit;padding:.45rem .7rem;border:1px solid #3775a0;border-radius:.35rem;background:#fff;color:#164a70}
+.comment-dialog{max-width:36rem;width:calc(100% - 2rem);padding:1.5rem;border:1px solid #b8c9d8;border-radius:.6rem;color:#16324a}
+.comment-dialog::backdrop{background:rgb(0 20 40 / .5)}
+.comment-dialog textarea{display:block;width:100%;font:inherit;margin:.75rem 0;box-sizing:border-box}
+.comment-dialog button,.subscription-card button,.subscription-card input{font:inherit;padding:.5rem .7rem}
+.subscription-card{padding:1.25rem;border:1px solid #c7d6e2;border-radius:.5rem;margin:2rem 0}
+@media(max-width:600px){.comment-open{margin-left:0;flex-basis:100%}.subscription-card input{max-width:100%;box-sizing:border-box}}

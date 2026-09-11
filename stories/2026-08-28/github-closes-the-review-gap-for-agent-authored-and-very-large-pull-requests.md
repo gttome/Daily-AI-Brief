@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-28-00afae1b
 
 **Why it matters:** Agent-generated code now receives a stronger automated review loop even when the change is unusually large. The resolution reasons are also structured evaluation data: they distinguish accepted findings from intentional exceptions and false positives. Removal of a size ceiling does not prove review completeness, so large changes still need risk-based tests and human sampling.
 
-**For George’s work:** This is a clean example of a human-gated loop: agent produces, agent reviews, tests provide independent evidence, and a person records the disposition. It can support a course exercise on designing feedback that improves both accountability and future evaluation.
+**Original commentary:** This is a clean example of a human-gated loop: agent produces, agent reviews, tests provide independent evidence, and a person records the disposition. It can support a course exercise on designing feedback that improves both accountability and future evaluation.
 
-**Source:** [GitHub changelog](https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/)
+**Source:** <a href="https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/" data-item-id="dab-story-2026-08-28-00afae1b" data-edition-date="2026-08-28" data-action="source_clicks">GitHub changelog</a>
 
 ---
 

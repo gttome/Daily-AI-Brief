@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-17-cdb22c68
 
 **Why it matters:** As agent systems become more heterogeneous, interoperability is becoming part of the reliability stack. Standardized discovery, task exchange, long-running coordination, and cross-agent communication can reduce brittle custom glue code while creating clearer architectural boundaries between agents, tools, and context sources.
 
-**For George’s work:** This is a strong update for material on harness engineering, context engineering, graph/agent architectures, tool use, and multi-agent workflows. A useful teaching distinction is emerging: **MCP connects agents to tools and data; A2A connects agents to agents.** That distinction can anchor diagrams, workshops, and application architecture examples.
+**Original commentary:** This is a strong update for material on harness engineering, context engineering, graph/agent architectures, tool use, and multi-agent workflows. A useful teaching distinction is emerging: **MCP connects agents to tools and data; A2A connects agents to agents.** That distinction can anchor diagrams, workshops, and application architecture examples.
 
-**Source:** [axios.com](https://www.axios.com/2026/08/17/a2a-agentic-ai-foundation-open-ai-standards)
+**Source:** <a href="https://www.axios.com/2026/08/17/a2a-agentic-ai-foundation-open-ai-standards" data-item-id="dab-story-2026-08-17-cdb22c68" data-edition-date="2026-08-17" data-action="source_clicks">axios.com</a>
 
 ---
 

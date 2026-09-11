@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-01-5005fc67
 
 **Why it matters:** Reliable AI use includes an obvious, nearby way for affected people to see and change system state. A room-level control reduces ambiguity about whether a sensitive conversation is being summarized. It does not replace meeting policy, participant notice or review of generated notes, and it requires licensed Google Meet hardware plus an eligible plan.
 
-**For George’s work:** Add a “visible stop control” requirement to human-review guidance: participants should know when AI capture is active, who may pause it, what happens to previously recorded content, and who verifies the final summary.
+**Original commentary:** Add a “visible stop control” requirement to human-review guidance: participants should know when AI capture is active, who may pause it, what happens to previously recorded content, and who verifies the final summary.
 
-**Source:** [Google Workspace Updates — control “Take notes for me” from Meet hardware](https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html)
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html" data-item-id="dab-story-2026-09-01-5005fc67" data-edition-date="2026-09-01" data-action="source_clicks">Google Workspace Updates — control “Take notes for me” from Meet hardware</a>
 
 ---
 

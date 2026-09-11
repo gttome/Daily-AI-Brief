@@ -26,13 +26,17 @@ story_id: dab-story-2026-09-11-53dc2a82
 
 **Why it matters:** This reframes vibe coding as a review loop rather than prompt-and-ship. The guidance is instructional, not evidence that every generated change is safe; beginners still need appropriate tests, security review, and judgment about whether the preview proves the intended behavior.
 
-**For George’s work:** Turn this into a practical workshop checklist: inspect the diff, run tests, preview the result, repair failures, and only then accept or open a PR. It is a clear bridge from conversational building to accountable software change.
+**Original commentary:** Turn this into a practical workshop checklist: inspect the diff, run tests, preview the result, repair failures, and only then accept or open a PR. It is a clear bridge from conversational building to accountable software change.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Generative AI Prompt Engineering Learning Ecosystem</strong> — Proposed update: Add a beginner exercise that alternates generation, inspection, tests and preview. The reported Copilot review workflow gives learners concrete checkpoints. Teaching asset: A short screen-based practice activity with acceptance criteria.</p>
 
 ## What to do now
 
 **Adopt the review loop:** Require diff inspection, executable checks, and a preview before accepting AI-assisted changes.
 
-**Source:** [GitHub Copilot app for beginners: Using the diff, terminal, and browser](https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/)
+**Source:** <a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/" data-item-id="dab-story-2026-09-11-53dc2a82" data-edition-date="2026-09-11" data-action="source_clicks">GitHub Copilot app for beginners: Using the diff, terminal, and browser</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-53dc2a82">
   <span class="feedback-prompt">How useful was this?</span>

@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-21-6877cf6f
 
 **Why it matters:** Generative systems tend to optimize for completing a polished artifact. This work treats refusal and revision as productive controls: the system can defer publication until content satisfies both pedagogical judgment and measurable coordination between words and visuals.
 
-**For George’s work:** This is immediately actionable for courses and videos: use a human gate for audience, sequence, examples, and cognitive load; use an automated gate for consistency, pacing, claims, and narration–visual alignment; then require evidence checks before publication. The broader lesson is that reliable AI content creation needs permission to say **not ready yet**.
+**Original commentary:** This is immediately actionable for courses and videos: use a human gate for audience, sequence, examples, and cognitive load; use an automated gate for consistency, pacing, claims, and narration–visual alignment; then require evidence checks before publication. The broader lesson is that reliable AI content creation needs permission to say **not ready yet**.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.19812)
+**Source:** <a href="https://arxiv.org/abs/2608.19812" data-item-id="dab-story-2026-08-21-6877cf6f" data-edition-date="2026-08-21" data-action="source_clicks">arXiv</a>
 
 ---
 

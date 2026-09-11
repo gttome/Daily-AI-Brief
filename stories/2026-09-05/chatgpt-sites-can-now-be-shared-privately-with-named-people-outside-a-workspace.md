@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-05-a3bb0c7b
 
 **Why it matters:** This fills an important distribution gap between internal-only workspaces and fully public publishing. Consultants, educators, project teams, and client-facing knowledge workers can now use Sites for controlled delivery to specific external audiences while preserving ownership and publishing boundaries. Access still depends on workspace settings and authenticated recipient accounts, so it is not a replacement for unrestricted public web distribution.
 
-**For George’s work:** This directly expands how your Sites can be used for consulting deliverables, client dashboards, private training resources, book companion experiences, and review copies. It also provides a practical example of separating viewing authority from editing and production authority.
+**Original commentary:** This directly expands how your Sites can be used for consulting deliverables, client dashboards, private training resources, book companion experiences, and review copies. It also provides a practical example of separating viewing authority from editing and production authority.
 
-**Source:** [OpenAI — Release notes: Share ChatGPT Sites with people outside your workspace](https://openai.com/products/release-notes/)
+**Source:** <a href="https://openai.com/products/release-notes/" data-item-id="dab-story-2026-09-05-a3bb0c7b" data-edition-date="2026-09-05" data-action="source_clicks">OpenAI — Release notes: Share ChatGPT Sites with people outside your workspace</a>
 
 ---
 

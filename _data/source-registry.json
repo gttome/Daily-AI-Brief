@@ -1,0 +1,996 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-09-11T16:51:22.115133+00:00",
+  "next_review": "2026-10-11",
+  "sources": [
+    {
+      "source_id": "anthropic-engineering",
+      "owner": "Anthropic Engineering",
+      "canonical_url": "https://www.anthropic.com/engineering",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:54:34.646700+00:00",
+      "discovery_endpoint": "https://www.anthropic.com/engineering",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Verified publisher catalog through web retrieval; direct HTTP retrieval was limited. Use catalog through supported search. Individual metadata still required."
+    },
+    {
+      "source_id": "hugging-face",
+      "owner": "Hugging Face",
+      "canonical_url": "https://huggingface.co/blog",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://huggingface.co/blog",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 112,
+      "publisher_linked_feed_leads": [
+        "https://huggingface.co/blog/feed.xml"
+      ]
+    },
+    {
+      "source_id": "microsoft-research",
+      "owner": "Microsoft Research",
+      "canonical_url": "https://www.microsoft.com/en-us/research/blog/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/research/blog/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 240,
+      "publisher_linked_feed_leads": [
+        "https://www.microsoft.com/en-us/research/feed/"
+      ]
+    },
+    {
+      "source_id": "stanford-hai",
+      "owner": "Stanford HAI",
+      "canonical_url": "https://hai.stanford.edu/news",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://hai.stanford.edu/news",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 124,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "langchain",
+      "owner": "LangChain",
+      "canonical_url": "https://www.langchain.com/blog",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.langchain.com/blog",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 99,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "llamaindex",
+      "owner": "LlamaIndex",
+      "canonical_url": "https://www.llamaindex.ai/blog",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.llamaindex.ai/blog",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 1009,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "google-workspace",
+      "owner": "Google Workspace",
+      "canonical_url": "https://workspaceupdates.googleblog.com/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://workspaceupdates.googleblog.com/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 137,
+      "publisher_linked_feed_leads": [
+        "https://workspaceupdates.googleblog.com/atom.xml",
+        "http://workspaceupdates.googleblog.com/atom.xml"
+      ]
+    },
+    {
+      "source_id": "microsoft-365",
+      "owner": "Microsoft 365",
+      "canonical_url": "https://www.microsoft.com/en-us/microsoft-365/blog/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/microsoft-365/blog/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 251,
+      "publisher_linked_feed_leads": [
+        "https://www.microsoft.com/en-us/microsoft-365/blog/feed/",
+        "https://www.microsoft.com/en-us/microsoft-365/blog/comments/feed/"
+      ]
+    },
+    {
+      "source_id": "ibm-technology",
+      "owner": "IBM Technology",
+      "canonical_url": "https://www.ibm.com/think/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:54:34.646700+00:00",
+      "discovery_endpoint": "https://www.ibm.com/think/videos",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Verified publisher catalog through web retrieval; direct HTTP retrieval was limited. Use catalog through supported search. Individual metadata still required."
+    },
+    {
+      "source_id": "nvidia-ai-podcast",
+      "owner": "NVIDIA AI Podcast",
+      "canonical_url": "https://ai-podcast.nvidia.com/",
+      "format": "podcast",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:54:34.646700+00:00",
+      "discovery_endpoint": "https://ai-podcast.nvidia.com/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Verified publisher catalog through web retrieval; direct HTTP retrieval was limited. Use catalog through supported search. Individual metadata still required."
+    },
+    {
+      "source_id": "practical-ai",
+      "owner": "Practical AI",
+      "canonical_url": "https://practicalai.show/",
+      "format": "podcast",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:54:34.646700+00:00",
+      "discovery_endpoint": "https://practicalai.show/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Verified publisher catalog through web retrieval; direct HTTP retrieval was limited. Use catalog through supported search. Individual metadata still required."
+    },
+    {
+      "source_id": "everyday-ai",
+      "owner": "Everyday AI",
+      "canonical_url": "https://www.youreverydayai.com/",
+      "format": "podcast",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.youreverydayai.com/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 156,
+      "publisher_linked_feed_leads": [
+        "https://www.youreverydayai.com/feed/",
+        "https://www.youreverydayai.com/comments/feed/",
+        "https://podcasts.google.com/feed/aHR0cHM6Ly9mZWVkcy5idXp6c3Byb3V0LmNvbS8yMTc1Nzc5LnJzcw"
+      ]
+    },
+    {
+      "source_id": "ai-for-humans",
+      "owner": "AI for Humans",
+      "canonical_url": "https://www.aiforhumans.show/",
+      "format": "podcast",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.aiforhumans.show/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 69,
+      "publisher_linked_feed_leads": [
+        "https://feeds.libsyn.com/469701/rss"
+      ]
+    },
+    {
+      "source_id": "latent-space",
+      "owner": "Latent Space",
+      "canonical_url": "https://www.latent.space/podcast",
+      "format": "podcast",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "google-deepmind",
+      "owner": "Google DeepMind",
+      "canonical_url": "https://deepmind.google/discover/blog/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://deepmind.google/blog/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 35,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "github-changelog",
+      "owner": "GitHub Changelog",
+      "canonical_url": "https://github.blog/changelog/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://github.blog/changelog/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 173,
+      "publisher_linked_feed_leads": [
+        "https://github.blog/feed/",
+        "https://github.blog/comments/feed/",
+        "https://github.blog/changelog/feed/",
+        "https://atom.io/"
+      ]
+    },
+    {
+      "source_id": "aws-machine-learning",
+      "owner": "AWS Machine Learning",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "TimeoutError"
+    },
+    {
+      "source_id": "nvidia-developer",
+      "owner": "NVIDIA Developer",
+      "canonical_url": "https://developer.nvidia.com/blog/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://developer.nvidia.com/blog/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 170,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "microsoft-learn",
+      "owner": "Microsoft Learn",
+      "canonical_url": "https://learn.microsoft.com/en-us/training/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://learn.microsoft.com/en-us/training/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 23,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "atlassian",
+      "owner": "Atlassian",
+      "canonical_url": "https://www.atlassian.com/blog/artificial-intelligence",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.atlassian.com/blog",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 231,
+      "publisher_linked_feed_leads": [
+        "https://www.atlassian.com/blog/feed",
+        "https://www.atlassian.com/blog/comments/feed",
+        "https://atlassianblog.wpengine.com/wp-content/plugins/curator/dist/feed/style-index.css?ver=0.1.0"
+      ]
+    },
+    {
+      "source_id": "adobe",
+      "owner": "Adobe",
+      "canonical_url": "https://blog.adobe.com/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "HTTP 200; insufficient usable catalog",
+      "retrieved_link_count": 8,
+      "publisher_linked_feed_leads": [
+        "https://blog.adobe.com/feed.xml"
+      ]
+    },
+    {
+      "source_id": "notion",
+      "owner": "Notion",
+      "canonical_url": "https://www.notion.com/blog",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "zapier",
+      "owner": "Zapier",
+      "canonical_url": "https://zapier.com/blog/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://zapier.com/blog/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 297,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "make",
+      "owner": "Make",
+      "canonical_url": "https://www.make.com/en/blog",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "salesforce",
+      "owner": "Salesforce",
+      "canonical_url": "https://www.salesforce.com/blog/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://www.salesforce.com/blog/?bc=OTH",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 183,
+      "publisher_linked_feed_leads": [
+        "https://www.salesforce.com/blog/feed/"
+      ]
+    },
+    {
+      "source_id": "box",
+      "owner": "Box",
+      "canonical_url": "https://blog.box.com/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "acl-anthology",
+      "owner": "ACL Anthology",
+      "canonical_url": "https://aclanthology.org/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "HTTP 200; insufficient usable catalog",
+      "retrieved_link_count": 0,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "berkeley-bair",
+      "owner": "Berkeley BAIR",
+      "canonical_url": "https://bair.berkeley.edu/blog/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "mit-csail",
+      "owner": "MIT CSAIL",
+      "canonical_url": "https://www.csail.mit.edu/news",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "nist",
+      "owner": "NIST",
+      "canonical_url": "https://www.nist.gov/artificial-intelligence",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "simon-willison",
+      "owner": "Simon Willison",
+      "canonical_url": "https://simonwillison.net/",
+      "format": "article",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": "2026-09-11T16:51:22.115133+00:00",
+      "discovery_endpoint": "https://simonwillison.net/",
+      "candidate_yield": null,
+      "status": "active",
+      "access_limitations": "Catalog retrieval verified; individual candidates still require date/content checks. No feed URL assumed.",
+      "retrieved_link_count": 463,
+      "publisher_linked_feed_leads": [
+        "https://simonwillison.net/atom/everything/"
+      ]
+    },
+    {
+      "source_id": "the-batch",
+      "owner": "The Batch",
+      "canonical_url": "https://www.deeplearning.ai/the-batch/",
+      "format": "article",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "no-priors",
+      "owner": "No Priors",
+      "canonical_url": "https://www.nopriors.com/",
+      "format": "podcast",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "HTTP 200; insufficient usable catalog",
+      "retrieved_link_count": 1,
+      "publisher_linked_feed_leads": []
+    },
+    {
+      "source_id": "me-myself-and-ai",
+      "owner": "Me Myself and AI",
+      "canonical_url": "https://sloanreview.mit.edu/audio-series/me-myself-and-ai/",
+      "format": "podcast",
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "dwarkesh",
+      "owner": "Dwarkesh",
+      "canonical_url": "https://www.dwarkesh.com/",
+      "format": "podcast",
+      "audience": [
+        "technical"
+      ],
+      "focus_tags": [
+        "reliable_ai",
+        "agents",
+        "knowledge_work"
+      ],
+      "evidence_class": "commentary",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "pending_validation",
+      "access_limitations": "HTTPError"
+    },
+    {
+      "source_id": "openai-video",
+      "owner": "OpenAI",
+      "canonical_url": "https://www.youtube.com/@OpenAI/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "anthropic-ai-video",
+      "owner": "Anthropic",
+      "canonical_url": "https://www.youtube.com/@anthropic-ai/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "ibmtechnology-video",
+      "owner": "IBM Technology",
+      "canonical_url": "https://www.youtube.com/@IBMTechnology/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "microsoftmechanics-video",
+      "owner": "Microsoft Mechanics",
+      "canonical_url": "https://www.youtube.com/@MicrosoftMechanics/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "googleworkspace-video",
+      "owner": "Google Workspace",
+      "canonical_url": "https://www.youtube.com/@GoogleWorkspace/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "github-video",
+      "owner": "GitHub",
+      "canonical_url": "https://www.youtube.com/@github/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "langchain-video",
+      "owner": "LangChain",
+      "canonical_url": "https://www.youtube.com/@LangChain/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "llamaindex-video",
+      "owner": "LlamaIndex",
+      "canonical_url": "https://www.youtube.com/@LlamaIndex/videos",
+      "format": "video",
+      "audience": [
+        "knowledge_worker",
+        "technical"
+      ],
+      "focus_tags": [
+        "agents",
+        "reliable_ai"
+      ],
+      "evidence_class": "publisher_authored",
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "discovery_endpoint": null,
+      "candidate_yield": null,
+      "status": "retrieval_limited",
+      "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    }
+  ],
+  "targets": {
+    "articles": [
+      40,
+      60
+    ],
+    "videos": [
+      15,
+      20
+    ],
+    "podcasts": [
+      12,
+      15
+    ]
+  },
+  "target_note": "Targets are goals, not claimed inventory. Historical podcast registry remains in force."
+}

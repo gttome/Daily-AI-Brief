@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-28-633f53c9
 
 **Why it matters:** Polished quality and original thinking are not the same outcome. A conventional rubric can reward coherent, expert-like output while missing whether everyone converged on similar ideas. The study concerned one university assignment using GPT-4o, so it should not be generalized to every learning or workplace task.
 
-**For George’s work:** Courses should combine AI assistance with an independent thinking intervention and evaluate both execution quality and idea diversity. A useful sequence is: reason independently, use AI to expand or challenge the work, document changes, then defend the final judgment.
+**Original commentary:** Courses should combine AI assistance with an independent thinking intervention and evaluate both execution quality and idea diversity. A useful sequence is: reason independently, use AI to expand or challenge the work, document changes, then defend the final judgment.
 
-**Source:** [OpenAI research summary and paper link](https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training/)
+**Source:** <a href="https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training/" data-item-id="dab-story-2026-08-28-633f53c9" data-edition-date="2026-08-28" data-action="source_clicks">OpenAI research summary and paper link</a>
 
 ---
 

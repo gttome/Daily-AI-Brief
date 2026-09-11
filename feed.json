@@ -100,6 +100,20 @@
       ]
     },
     {
+      "id": "dab-podcast-2026-09-11-computer-use-agents",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-11/computer-use-agents/",
+      "title": "Computer-Use Agents and the Future of the Agentic Internet",
+      "summary": "Chris Benson and Demetrios Brinkmann discuss computer-use workflows, MCP, and the relationship between models and agent harnesses. Their examples span personal tasks and workplace adoption. Predictions about agent-led commerce are discussion, not established outcomes.",
+      "date_published": "2026-09-11T13:00:00-05:00",
+      "tags": [
+        "computer-use agents",
+        "MCP",
+        "agent harnesses",
+        "human review",
+        "Practical AI"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-10-3e9c6210",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/",
       "title": "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations",
@@ -291,6 +305,26 @@
         "knowledge retrieval",
         "human escalation",
         "GitHub"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-09-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-09/general/",
+      "title": "Introducing workspace agents in ChatGPT",
+      "summary": "A concise official overview of shared agents that can handle longer-running work across team tools.",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-09-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-09/agent-skills/",
+      "title": "ChatGPT Projects vs Skills Explained in 2 Minutes",
+      "summary": "A short, plain-language distinction between project context and reusable skills for repeated work.",
+      "date_published": "2026-09-09T13:00:00-05:00",
+      "tags": [
+        "AI with Kyle"
       ]
     },
     {

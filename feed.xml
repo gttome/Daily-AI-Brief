@@ -48,6 +48,13 @@
     <summary>Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, and Rovo Dev, with a compatibility copy for Claude tooling. The package separates an operating contract, product semantics, workflow instructions, and references loaded when needed.</summary>
   </entry>
   <entry>
+    <title>Computer-Use Agents and the Future of the Agentic Internet</title>
+    <id>dab-podcast-2026-09-11-computer-use-agents</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-11/computer-use-agents/" />
+    <updated>2026-09-11T18:00:00Z</updated>
+    <summary>Chris Benson and Demetrios Brinkmann discuss computer-use workflows, MCP, and the relationship between models and agent harnesses. Their examples span personal tasks and workplace adoption. Predictions about agent-led commerce are discussion, not established outcomes.</summary>
+  </entry>
+  <entry>
     <title>Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations</title>
     <id>dab-story-2026-09-10-3e9c6210</id>
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/" />
@@ -137,6 +144,20 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/" />
     <updated>2026-09-09T18:00:00Z</updated>
     <summary>GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation.</summary>
+  </entry>
+  <entry>
+    <title>Introducing workspace agents in ChatGPT</title>
+    <id>dab-video-2026-09-09-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-09/general/" />
+    <updated>2026-09-09T18:00:00Z</updated>
+    <summary>A concise official overview of shared agents that can handle longer-running work across team tools.</summary>
+  </entry>
+  <entry>
+    <title>ChatGPT Projects vs Skills Explained in 2 Minutes</title>
+    <id>dab-video-2026-09-09-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-09/agent-skills/" />
+    <updated>2026-09-09T18:00:00Z</updated>
+    <summary>A short, plain-language distinction between project context and reusable skills for repeated work.</summary>
   </entry>
   <entry>
     <title>Agentic Loops for Knowledge Workers</title>

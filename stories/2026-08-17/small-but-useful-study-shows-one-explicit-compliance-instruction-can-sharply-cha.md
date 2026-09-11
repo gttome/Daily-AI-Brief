@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-17-8c5a5979
 
 **Why it matters:** The result reinforces two reliability principles at once. First, critical constraints should be made explicit rather than assumed to be implicit in the task. Second, evaluation systems themselves can fail, so a green rubric score is not sufficient evidence that generated code is safe or compliant.
 
-**For George’s work:** This is a strong case study for structured prompts, explicit constraints, guardrails, evaluation design, and human review. It supports a practical training rule: **state non-negotiable requirements in the prompt or specification, then independently test whether they were actually satisfied.**
+**Original commentary:** This is a strong case study for structured prompts, explicit constraints, guardrails, evaluation design, and human review. It supports a practical training rule: **state non-negotiable requirements in the prompt or specification, then independently test whether they were actually satisfied.**
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.07776)
+**Source:** <a href="https://arxiv.org/abs/2608.07776" data-item-id="dab-story-2026-08-17-8c5a5979" data-edition-date="2026-08-17" data-action="source_clicks">arXiv</a>
 
 ---
 

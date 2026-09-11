@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-19-973cfd13
 
 **Why it matters:** AI education is beginning to move beyond prompt tips toward judgment, verification, responsible creation, and supervised building. That is the same transition occurring in professional practice: fluency means being able to direct an AI system and evaluate its work, not merely generate an answer.
 
-**For George’s work:** The announcement supports positioning George’s materials for non-developers around a repeatable sequence: **ask → inspect → verify → revise → decide**. It also strengthens the case for workshops and learning applications that combine practical creation with evaluation rubrics, source checking, failure recognition, and explicit human responsibility.
+**Original commentary:** The announcement supports positioning George’s materials for non-developers around a repeatable sequence: **ask → inspect → verify → revise → decide**. It also strengthens the case for workshops and learning applications that combine practical creation with evaluation rubrics, source checking, failure recognition, and explicit human responsibility.
 
-**Source:** [OpenAI](https://openai.com/index/partnering-with-codeai/)
+**Source:** <a href="https://openai.com/index/partnering-with-codeai/" data-item-id="dab-story-2026-08-19-973cfd13" data-edition-date="2026-08-19" data-action="source_clicks">OpenAI</a>
 
 ---
 

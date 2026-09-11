@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-03-98cf7178
 
 **Why it matters:** For knowledge-worker adoption, the bottleneck increasingly shifts from access to operating design. Organizations need role-specific workflows, repeatable prompt and agent patterns, training, champions and outcome measures. The supporting performance figures are drawn from Google research and customer examples, so they are useful directional evidence rather than independent proof that the same gains will generalize to every organization.
 
-**For George’s work:** Extend training beyond tool instruction. Pair each AI capability with a reusable workflow, expected business outcome, review requirement and measurable value indicator so organizations can distinguish adoption from actual value realization.
+**Original commentary:** Extend training beyond tool instruction. Pair each AI capability with a reusable workflow, expected business outcome, review requirement and measurable value indicator so organizations can distinguish adoption from actual value realization.
 
-**Source:** [Google Workspace — From deployment to transformation: The playbook for realizing AI value](https://workspace.google.com/blog/ai-and-machine-learning/from-deployment-to-transformation-the-playbook-for-realizing-ai-value)
+**Source:** <a href="https://workspace.google.com/blog/ai-and-machine-learning/from-deployment-to-transformation-the-playbook-for-realizing-ai-value" data-item-id="dab-story-2026-09-03-98cf7178" data-edition-date="2026-09-03" data-action="source_clicks">Google Workspace — From deployment to transformation: The playbook for realizing AI value</a>
 
 ---
 

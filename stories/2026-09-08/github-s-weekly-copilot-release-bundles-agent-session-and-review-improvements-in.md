@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-08-abf16e3a
 
 **Why it matters:** Agent products now change faster than many teams’ validation cycles. A recurring release checkpoint helps teams retest prompts, permissions, review rules, and repository safeguards instead of assuming stable behavior. Individual features still need separate verification before production use.
 
-**For George’s work:** Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow.
+**Original commentary:** Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow.
 
-**Source:** [GitHub Copilot weekly releases — August 31](https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/)
+**Source:** <a href="https://github.blog/changelog/2026-09-04-github-copilot-weekly-releases-august-31/" data-item-id="dab-story-2026-09-08-abf16e3a" data-edition-date="2026-09-08" data-action="source_clicks">GitHub Copilot weekly releases — August 31</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-abf16e3a">
   <span class="feedback-prompt">Was this useful?</span>

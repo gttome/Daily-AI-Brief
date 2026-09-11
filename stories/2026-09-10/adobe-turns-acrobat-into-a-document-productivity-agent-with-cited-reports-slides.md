@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-10-a0732e6e
 
 **Why it matters:** This is a practical example of generative AI moving from summarization into evidence-linked transformation of working documents. The clickable-citation pattern is especially important because it keeps verification attached to the output instead of hiding the source trail.
 
-**For George’s work:** This can strengthen training for knowledge workers on grounded document workflows: ingest trusted files, transform them into a decision artifact, then verify important claims through source-linked citations before sharing.
+**Original commentary:** This can strengthen training for knowledge workers on grounded document workflows: ingest trusted files, transform them into a decision artifact, then verify important claims through source-linked citations before sharing.
 
-**Source:** [Adobe Productivity Agent in Acrobat Now Transforms Complex Documents into Understandable Visuals, Audio and Presentations](https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents)
+**Source:** <a href="https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents" data-item-id="dab-story-2026-09-10-a0732e6e" data-edition-date="2026-09-10" data-action="source_clicks">Adobe Productivity Agent in Acrobat Now Transforms Complex Documents into Understandable Visuals, Audio and Presentations</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-a0732e6e">
   <span class="feedback-prompt">How useful was this?</span>

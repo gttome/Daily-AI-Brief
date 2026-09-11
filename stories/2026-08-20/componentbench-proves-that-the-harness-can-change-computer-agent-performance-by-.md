@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-20-f54a140b
 
 **Why it matters:** A computer-use agent’s result is not simply a property of the model. What the harness lets the agent observe—and how it lets the agent act—can dominate performance. This is direct empirical support for evaluating complete systems rather than comparing models in isolation.
 
-**For George’s work:** ComponentBench is an excellent visual example for explaining harness engineering to non-software professionals: the same AI can appear capable or incapable depending on the interface and tools surrounding it. A training exercise could compare three forms of context—pixels, accessibility structure, and application data—and ask which offers the clearest, safest evidence for action.
+**Original commentary:** ComponentBench is an excellent visual example for explaining harness engineering to non-software professionals: the same AI can appear capable or incapable depending on the interface and tools surrounding it. A training exercise could compare three forms of context—pixels, accessibility structure, and application data—and ask which offers the clearest, safest evidence for action.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.18307)
+**Source:** <a href="https://arxiv.org/abs/2608.18307" data-item-id="dab-story-2026-08-20-f54a140b" data-edition-date="2026-08-20" data-action="source_clicks">arXiv</a>
 
 ---
 

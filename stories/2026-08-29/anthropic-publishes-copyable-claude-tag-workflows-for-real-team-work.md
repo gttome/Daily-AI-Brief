@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-29-ebf7f693
 
 **Why it matters:** The agent receives the live thread as context, completes multi-step work, and returns the artifact where collaborators can inspect it. That removes copy-paste setup while preserving a visible human review surface. Claude Tag is aimed at Team and Enterprise environments and requires scoped access, so this is low-code for users—not zero-governance for administrators.
 
-**For George’s work:** This is a clean blueprint for a recurring publication agent: keep source discussion, standing instructions, delegated production, and approval in one auditable channel.
+**Original commentary:** This is a clean blueprint for a recurring publication agent: keep source discussion, standing instructions, delegated production, and approval in one auditable channel.
 
-**Source:** [Anthropic — How Anthropic employees use Claude Tag](https://claude.com/blog/how-anthropic-employees-use-claude-tag)
+**Source:** <a href="https://claude.com/blog/how-anthropic-employees-use-claude-tag" data-item-id="dab-story-2026-08-29-ebf7f693" data-edition-date="2026-08-29" data-action="source_clicks">Anthropic — How Anthropic employees use Claude Tag</a>
 
 ---
 

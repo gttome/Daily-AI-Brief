@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-03-acfceabb
 
 **Why it matters:** This is a practical pattern for high-empathy knowledge work: use AI to reduce retrieval and administrative burden while leaving consequential judgment with a person. The reported operational gains are organization-reported figures presented in an OpenAI case study, not an independent controlled evaluation, and they do not establish case-level answer correctness or safety.
 
-**For George’s work:** Use this as a reliability pattern for sensitive workflows: bound the AI to trusted retrieval and summarization, keep the human responsible for the final decision, and measure cycle time, review burden, escalation and quality rather than usage alone.
+**Original commentary:** Use this as a reliability pattern for sensitive workflows: bound the AI to trusted retrieval and summarization, keep the human responsible for the final decision, and measure cycle time, review burden, escalation and quality rather than usage alone.
 
-**Source:** [OpenAI Academy — A nonprofit founder uses ChatGPT to help more workers in crisis](https://academy.openai.com/public/blogs/a-nonprofit-founder-uses-chatgpt-to-help-more-workers-in-crisis-2026-09-02)
+**Source:** <a href="https://academy.openai.com/public/blogs/a-nonprofit-founder-uses-chatgpt-to-help-more-workers-in-crisis-2026-09-02" data-item-id="dab-story-2026-09-03-acfceabb" data-edition-date="2026-09-03" data-action="source_clicks">OpenAI Academy — A nonprofit founder uses ChatGPT to help more workers in crisis</a>
 
 ---
 

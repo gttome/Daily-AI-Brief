@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-06-4819d1f6
 
 **Why it matters:** This is a useful conceptual shift for non-technical adoption. The core skill is not writing a clever prompt; it is defining a repeatable operating procedure with clear inputs, permissions, checkpoints, and success criteria. That makes agentic work easier to standardize, teach, govern, and improve over time.
 
-**For George’s work:** This directly supports your Bounded Agentic Delegation model. A training exercise can have learners convert a recurring manual process into an agent specification: desired outcome, context, allowed tools, authority level, approval points, schedule, and evaluation criteria.
+**Original commentary:** This directly supports your Bounded Agentic Delegation model. A training exercise can have learners convert a recurring manual process into an agent specification: desired outcome, context, allowed tools, authority level, approval points, schedule, and evaluation criteria.
 
-**Source:** [OpenAI Academy — Workspace agents](https://academy.openai.com/public/clubs/work-users-ynjqu/resources/workspace-agents)
+**Source:** <a href="https://academy.openai.com/public/clubs/work-users-ynjqu/resources/workspace-agents" data-item-id="dab-story-2026-09-06-4819d1f6" data-edition-date="2026-09-06" data-action="source_clicks">OpenAI Academy — Workspace agents</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-4819d1f6">
   <span class="feedback-prompt">Was this useful?</span>

@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-06-679de9b0
 
 **Why it matters:** Agent systems are becoming complex enough that manual configuration is a reliability risk. Declarative definitions, reviewed plans, stable resource identity, and version-controlled configuration make agent environments easier to reproduce, audit, roll back, and move through CI/CD. This is a concrete sign that agent engineering is converging with mature software and infrastructure operations.
 
-**For George’s work:** Add “agent resources as code” to harness-engineering material. It provides a strong bridge from prompts and context into operational reliability: version the agent, its skills, memory resources, and environment together, then review proposed changes before deployment.
+**Original commentary:** Add “agent resources as code” to harness-engineering material. It provides a strong bridge from prompts and context into operational reliability: version the agent, its skills, memory resources, and environment together, then review proposed changes before deployment.
 
-**Source:** [Anthropic — Claude Platform release notes](https://docs.anthropic.com/en/release-notes/api)
+**Source:** <a href="https://docs.anthropic.com/en/release-notes/api" data-item-id="dab-story-2026-09-06-679de9b0" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic — Claude Platform release notes</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-679de9b0">
   <span class="feedback-prompt">Was this useful?</span>

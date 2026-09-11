@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-19-c4d5a830
 
 **Why it matters:** Conventional evaluation often compresses performance into a score that does not explain the failure. HarnessEval-W makes the evaluation process inspectable: decomposition, evidence gathering, validation, and judgment remain connected in a graph. That structure can support diagnosis and human review better than a single scalar metric.
 
-**For George’s work:** The paper creates a clean bridge among graph, harness, context, and evaluation engineering. It can illustrate an **evaluation graph** in which nodes represent questions, tools, evidence, and judgments, while edges preserve provenance and dependency. That is a useful architecture for courses, diagrams, and reliable-AI applications.
+**Original commentary:** The paper creates a clean bridge among graph, harness, context, and evaluation engineering. It can illustrate an **evaluation graph** in which nodes represent questions, tools, evidence, and judgments, while edges preserve provenance and dependency. That is a useful architecture for courses, diagrams, and reliable-AI applications.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.16859)
+**Source:** <a href="https://arxiv.org/abs/2608.16859" data-item-id="dab-story-2026-08-19-c4d5a830" data-edition-date="2026-08-19" data-action="source_clicks">arXiv</a>
 
 ---
 

@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-28-b578ffa1
 
 **Why it matters:** The pattern converts transient feedback into persistent, inspectable procedure without allowing the working agent to silently rewrite itself. File-based skills also support progressive disclosure: the agent loads targeted instructions and resources when needed instead of expanding every prompt.
 
-**For George’s work:** It closely matches the Human-Gated Agentic Work model. A reusable “improver” could periodically examine corrections to a briefing, manuscript workflow, or course-production process and propose—never silently apply—the smallest rule change.
+**Original commentary:** It closely matches the Human-Gated Agentic Work model. A reusable “improver” could periodically examine corrections to a briefing, manuscript workflow, or course-production process and propose—never silently apply—the smallest rule change.
 
-**Source:** [Anthropic case study](https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude)
+**Source:** <a href="https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude" data-item-id="dab-story-2026-08-28-b578ffa1" data-edition-date="2026-08-28" data-action="source_clicks">Anthropic case study</a>
 
 ---
 

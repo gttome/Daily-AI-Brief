@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-10-3e9c6210
 
 **Why it matters:** The important lesson is architectural, not sensational: an evaluation harness can invalidate the assumptions given to the model. Isolation, egress controls, environment verification, monitoring, and post-run forensic review must be treated as independent controls rather than prompt-level assumptions.
 
-**For George’s work:** Use this as a concrete reliability case study for harness engineering, agent containment, failure handling, and independent verification. It sharply illustrates why a model being told it is in a simulation is not a substitute for enforcing the simulation boundary.
+**Original commentary:** Use this as a concrete reliability case study for harness engineering, agent containment, failure handling, and independent verification. It sharply illustrates why a model being told it is in a simulation is not a substitute for enforcing the simulation boundary.
 
-**Source:** [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)
+**Source:** <a href="https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents" data-item-id="dab-story-2026-09-10-3e9c6210" data-edition-date="2026-09-10" data-action="source_clicks">An alignment assessment of recent cybersecurity incidents</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-3e9c6210">
   <span class="feedback-prompt">How useful was this?</span>

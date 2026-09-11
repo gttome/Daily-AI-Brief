@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-28-faa38e9f
 
 **Why it matters:** Larger uploads reduce a practical barrier for non-technical agent creators working with manuals, policies, course materials, and application documentation. File capacity does not guarantee retrieval quality: builders still need authoritative sources, clear document structure, representative tests, citation checks, and a process for replacing outdated material.
 
-**For George’s work:** This directly supports project-specific assistants grounded in book manuscripts, user guides, or application documentation. A course exercise should test answerability, conflicting sources, missing information, citations, and update behavior before the agent is trusted.
+**Original commentary:** This directly supports project-specific assistants grounded in book manuscripts, user guides, or application documentation. A course exercise should test answerability, conflicting sources, missing information, citations, and update behavior before the agent is trusted.
 
-**Source:** [Microsoft 365 Copilot release notes](https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes)
+**Source:** <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" data-item-id="dab-story-2026-08-28-faa38e9f" data-edition-date="2026-08-28" data-action="source_clicks">Microsoft 365 Copilot release notes</a>
 
 ---
 

@@ -1,0 +1,129 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-11",
+  "timezone": "America/Chicago",
+  "aggregation_window": {
+    "start": "2026-09-11T05:00:00.000Z",
+    "end": "2026-09-12T05:00:00.000Z"
+  },
+  "privacy": {
+    "contains_personal_identifiers": false,
+    "small_count_suppression": true,
+    "suppression_threshold": 5,
+    "retention_days": 400
+  },
+  "site_totals": {
+    "views": null,
+    "source_clicks": null,
+    "share_initiations": null,
+    "worth_watching_clicks": null,
+    "retention_30s": null,
+    "feedback_most_useful": null,
+    "feedback_useful": null,
+    "feedback_neutral": null,
+    "feedback_not_useful": null
+  },
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-11-8a71a280",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-d957d6c9",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-80fe8cea",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-53dc2a82",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-0abd52ec",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-bc8138fb",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "videos": [],
+  "podcasts": [],
+  "collection_status": "partial",
+  "limitations": [
+    "Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.",
+    "Exact credit usage is unavailable without an attributable platform usage record.",
+    "A later observation must not be represented as reconstructed event-day activity.",
+    "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."
+  ],
+  "observed_at": "2026-09-11T16:52:12.181Z",
+  "edition_id": "dab-edition-2026-09-11",
+  "private_evidence": {
+    "status": "not_collected",
+    "reference": "owner-only:/api/snapshot?key=_records/analytics/2026-09-11.json",
+    "metric_basis": "lifetime_observed",
+    "public_metric_status": "suppressed"
+  }
+}

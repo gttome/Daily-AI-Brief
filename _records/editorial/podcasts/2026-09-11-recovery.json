@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-09-11T16:54:34.646700+00:00",
+  "edition": "2026-09-11",
+  "selected": "https://practicalai.show/371",
+  "transcript": "https://practicalai.show/371/transcript",
+  "date": "2026-09-10",
+  "runtime_seconds": 3361,
+  "window": "48_hours",
+  "review": "Publisher metadata and substantive transcript sections reviewed; discussion/opinion labeled; no duplicate archive episode.",
+  "catalogs_checked": [
+    "https://ai-podcast.nvidia.com/",
+    "https://practicalai.show/",
+    "https://www.youreverydayai.com/",
+    "https://www.aiforhumans.show/",
+    "https://www.latent.space/podcast"
+  ],
+  "limitations": "Search effort below the aspirational episode-screening target; a qualifying recent episode was verified."
+}

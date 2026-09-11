@@ -521,11 +521,11 @@
       "name": "Agent memory and context",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "12 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "13 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 12,
+        "recent_7_days": 13,
         "preceding_days": 38,
-        "total": 50
+        "total": 51
       },
       "supporting_story_ids": [
         "dab-story-2026-09-11-8a71a280",
@@ -534,6 +534,7 @@
         "dab-story-2026-09-10-a0732e6e",
         "dab-story-2026-09-09-be5f728f",
         "dab-story-2026-09-09-9558fc40",
+        "dab-video-2026-09-09-agent-skills",
         "dab-story-2026-09-08-0b136de8",
         "dab-story-2026-09-07-d43124d3",
         "dab-story-2026-09-07-2b73e189",
@@ -609,6 +610,11 @@
           "story_id": "dab-story-2026-09-09-9558fc40",
           "brief_date": "2026-09-09",
           "url": "/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/"
+        },
+        {
+          "story_id": "dab-video-2026-09-09-agent-skills",
+          "brief_date": "2026-09-09",
+          "url": "/videos/2026-09-09/agent-skills/"
         },
         {
           "story_id": "dab-story-2026-09-08-0b136de8",
@@ -1319,13 +1325,13 @@
     {
       "trend_id": "dab-trend-accessible-work-agents",
       "name": "Accessible agents for knowledge work",
-      "classification": "stable",
+      "classification": "accelerating",
       "confidence": "high",
-      "rationale": "40 supporting stories appeared in the latest 7 days and 89 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "42 supporting stories appeared in the latest 7 days and 89 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 40,
+        "recent_7_days": 42,
         "preceding_days": 89,
-        "total": 129
+        "total": 131
       },
       "supporting_story_ids": [
         "dab-story-2026-09-11-8a71a280",
@@ -1334,6 +1340,7 @@
         "dab-story-2026-09-11-53dc2a82",
         "dab-story-2026-09-11-0abd52ec",
         "dab-story-2026-09-11-bc8138fb",
+        "dab-podcast-2026-09-11-computer-use-agents",
         "dab-story-2026-09-10-3e9c6210",
         "dab-story-2026-09-10-f9d75a59",
         "dab-story-2026-09-10-a0732e6e",
@@ -1345,6 +1352,7 @@
         "dab-story-2026-09-09-5ad5de16",
         "dab-story-2026-09-09-6013a2a8",
         "dab-story-2026-09-09-9558fc40",
+        "dab-video-2026-09-09-general",
         "dab-podcast-2026-09-09-agentic-loops",
         "dab-story-2026-09-08-a6856793",
         "dab-story-2026-09-08-abf16e3a",
@@ -1490,6 +1498,11 @@
           "url": "/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/"
         },
         {
+          "story_id": "dab-podcast-2026-09-11-computer-use-agents",
+          "brief_date": "2026-09-11",
+          "url": "/podcasts/2026-09-11/computer-use-agents/"
+        },
+        {
           "story_id": "dab-story-2026-09-10-3e9c6210",
           "brief_date": "2026-09-10",
           "url": "/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/"
@@ -1543,6 +1556,11 @@
           "story_id": "dab-story-2026-09-09-9558fc40",
           "brief_date": "2026-09-09",
           "url": "/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/"
+        },
+        {
+          "story_id": "dab-video-2026-09-09-general",
+          "brief_date": "2026-09-09",
+          "url": "/videos/2026-09-09/general/"
         },
         {
           "story_id": "dab-podcast-2026-09-09-agentic-loops",

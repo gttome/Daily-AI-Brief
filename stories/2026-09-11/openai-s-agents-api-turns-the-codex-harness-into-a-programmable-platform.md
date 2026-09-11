@@ -26,13 +26,17 @@ story_id: dab-story-2026-09-11-8a71a280
 
 **Why it matters:** This separates agent reliability work from a one-shot model call: context, tools, environments, delegation, evidence, and failure handling become explicit harness components. Public beta still warrants staged evaluation; the announcement describes capabilities, not independent reliability results.
 
-**For George’s work:** Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.
+**Original commentary:** Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Add a layered diagram separating model, harness, tool access and evidence handoff. The reported Agents API makes the harness an explicit part of the workflow. Teaching asset: A failure-injection exercise in which a tool result or context handoff is missing.</p>
 
 ## What to do now
 
 **Evaluate one bounded workflow:** Test a real multi-step workflow with evidence capture, tool-failure handling, and a human release gate.
 
-**Source:** [Introducing the Agents API](https://openai.com/index/introducing-the-agents-api/)
+**Source:** <a href="https://openai.com/index/introducing-the-agents-api/" data-item-id="dab-story-2026-09-11-8a71a280" data-edition-date="2026-09-11" data-action="source_clicks">Introducing the Agents API</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-8a71a280">
   <span class="feedback-prompt">How useful was this?</span>

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "edition_id": "dab-edition-2026-09-11",
-  "baseline_sha": "4df75c21bdd0a614db2ceaba9695e9bda4cf9365",
-  "rollback_target_sha": "4df75c21bdd0a614db2ceaba9695e9bda4cf9365",
+  "baseline_sha": "ff64af2fa87e6e8065103014c173cead9de0d4be",
+  "rollback_target_sha": "ff64af2fa87e6e8065103014c173cead9de0d4be",
   "policy_profile": "full_v1",
   "image_review": "_records/image-quality/2026-09-11-textbook.json",
   "image_review_sha256": "8857336da1649c524072129d11f19ea21e812b8a77576a04be58e9bf92ac9f47",
@@ -38,6 +38,6 @@
       "bytes": 502159
     }
   ],
-  "canonical_sha256": "edb030d6f04752807ead328b67d5aa7f13e6902944dc119adf6191863d9c01d4",
-  "candidate_digest": "sha256:67ac9129cd4df64db286a97b509d5b229b7986b7f90e456231848b95444e9009"
+  "canonical_sha256": "c88075981f372597b6cebf9a4b5303cce0624fa9d829e8638270c81b86130dd3",
+  "candidate_digest": "sha256:517d08fe3ed69e05ad2b942a7b1f80c4a6c4ff91907284952316463466647b2f"
 }

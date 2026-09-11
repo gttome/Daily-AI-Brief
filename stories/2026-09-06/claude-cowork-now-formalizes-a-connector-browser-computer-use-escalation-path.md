@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-06-0532fd4e
 
 **Why it matters:** This is a strong reliability pattern for non-technical agents: use the narrowest, most structured tool that can complete the task, and escalate to more flexible interfaces only when necessary. The broader the interface, the larger the error and security surface. Tool choice is therefore part of the agent’s risk model, not merely a convenience decision.
 
-**For George’s work:** Incorporate “least-flexible sufficient tool” into agent governance. It maps cleanly to the AI Authority Ladder: connector actions can be tightly bounded, browser actions need more observation, and direct computer use warrants still stronger review for consequential workflows.
+**Original commentary:** Incorporate “least-flexible sufficient tool” into agent governance. It maps cleanly to the AI Authority Ladder: connector actions can be tightly bounded, browser actions need more observation, and direct computer use warrants still stronger review for consequential workflows.
 
-**Source:** [Anthropic Help Center — Let Claude use your computer in Cowork](https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork)
+**Source:** <a href="https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork" data-item-id="dab-story-2026-09-06-0532fd4e" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic Help Center — Let Claude use your computer in Cowork</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-0532fd4e">
   <span class="feedback-prompt">Was this useful?</span>

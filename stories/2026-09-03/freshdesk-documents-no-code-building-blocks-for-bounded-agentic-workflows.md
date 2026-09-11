@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-03-e5b0cb85
 
 **Why it matters:** This is a documentation update rather than a major new product launch, but it illustrates a useful design direction for non-technical agent creation: combine deterministic control flow with selective AI behavior and explicit handoff points. High-impact actions can require confirmation, while versioning allows changes to be tested without deleting the live workflow. Reliability still depends on permissions, integration behavior, testing and fallback design.
 
-**For George’s work:** Use this as a concrete example of how non-technical users can visually separate deterministic steps, AI judgment, consequential actions and human escalation. It maps directly to the AI Authority Ladder and the principle that capability does not confer authority.
+**Original commentary:** Use this as a concrete example of how non-technical users can visually separate deterministic steps, AI judgment, consequential actions and human escalation. It maps directly to the AI Authority Ladder and the principle that capability does not confer authority.
 
-**Source:** [Freshdesk Support — Build workflows: no code agentic workflows](https://support.freshdesk.com/support/solutions/articles/50000011782-build-workflows-no-code-agentic-workflows)
+**Source:** <a href="https://support.freshdesk.com/support/solutions/articles/50000011782-build-workflows-no-code-agentic-workflows" data-item-id="dab-story-2026-09-03-e5b0cb85" data-edition-date="2026-09-03" data-action="source_clicks">Freshdesk Support — Build workflows: no code agentic workflows</a>
 
 ---
 

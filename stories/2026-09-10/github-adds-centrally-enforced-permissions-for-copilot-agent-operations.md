@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-10-f9d75a59
 
 **Why it matters:** This moves human-in-the-loop from a UI convention toward an enforceable policy layer. Reliable agent systems need authority boundaries that survive local configuration changes and distinguish low-risk actions from operations that require explicit review.
 
-**For George’s work:** This is a strong example for the AI Authority Ladder and agent-governance material: permissions should be encoded in the harness, not left to memory or prompt wording. It also gives consulting clients a concrete pattern for role- and team-specific controls.
+**Original commentary:** This is a strong example for the AI Authority Ladder and agent-governance material: permissions should be encoded in the harness, not left to memory or prompt wording. It also gives consulting clients a concrete pattern for role- and team-specific controls.
 
-**Source:** [Enterprise managed permissions for GitHub Copilot agent operations](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
+**Source:** <a href="https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/" data-item-id="dab-story-2026-09-10-f9d75a59" data-edition-date="2026-09-10" data-action="source_clicks">Enterprise managed permissions for GitHub Copilot agent operations</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-f9d75a59">
   <span class="feedback-prompt">How useful was this?</span>

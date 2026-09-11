@@ -1,0 +1,112 @@
+{
+  "date": "2026-09-11",
+  "sources": [
+    {
+      "source_id": "stanford-hai",
+      "status": "retrieved",
+      "candidate_links": 11
+    },
+    {
+      "source_id": "anthropic-engineering",
+      "status": "retrieved",
+      "candidate_links": 28
+    },
+    {
+      "source_id": "hugging-face",
+      "status": "retrieved",
+      "candidate_links": 25
+    },
+    {
+      "source_id": "microsoft-research",
+      "status": "retrieved",
+      "candidate_links": 8
+    },
+    {
+      "source_id": "langchain",
+      "status": "retrieved",
+      "candidate_links": 11
+    },
+    {
+      "source_id": "microsoft-365",
+      "status": "retrieved",
+      "candidate_links": 23
+    },
+    {
+      "source_id": "llamaindex",
+      "status": "retrieved",
+      "candidate_links": 328
+    },
+    {
+      "source_id": "nvidia-ai-podcast",
+      "status": "retrieved",
+      "candidate_links": 159
+    },
+    {
+      "source_id": "google-workspace",
+      "status": "retrieved",
+      "candidate_links": 16
+    },
+    {
+      "source_id": "ibm-technology",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout"
+    },
+    {
+      "source_id": "ai-for-humans",
+      "status": "retrieved",
+      "candidate_links": 0
+    },
+    {
+      "source_id": "everyday-ai",
+      "status": "retrieved",
+      "candidate_links": 17
+    },
+    {
+      "source_id": "practical-ai",
+      "status": "retrieved",
+      "candidate_links": 4
+    },
+    {
+      "source_id": "google-deepmind",
+      "status": "retrieved",
+      "candidate_links": 0
+    },
+    {
+      "source_id": "microsoft-learn",
+      "status": "retrieved",
+      "candidate_links": 1
+    },
+    {
+      "source_id": "atlassian",
+      "status": "retrieved",
+      "candidate_links": 2
+    },
+    {
+      "source_id": "github-changelog",
+      "status": "retrieved",
+      "candidate_links": 19
+    },
+    {
+      "source_id": "nvidia-developer",
+      "status": "retrieved",
+      "candidate_links": 65
+    },
+    {
+      "source_id": "salesforce",
+      "status": "retrieved",
+      "candidate_links": 17
+    },
+    {
+      "source_id": "zapier",
+      "status": "retrieved",
+      "candidate_links": 22
+    },
+    {
+      "source_id": "simon-willison",
+      "status": "retrieved",
+      "candidate_links": 38
+    }
+  ],
+  "queue_size": 655,
+  "note": "Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review."
+}

@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-19-a8e67241
 
 **Why it matters:** A self-improving loop can compound errors if “it ran” is treated as proof that a solution deserves to enter memory. Reliable learning therefore needs an admission gate between execution and durable context. This turns memory management into an evidence-quality problem rather than a storage problem.
 
-**For George’s work:** This offers a powerful addition to loop and context engineering: **generate → execute → test across variations → accept, abstain, or escalate → store**. It can anchor material on memory poisoning, confidence gates, human review, and why successful execution alone is a weak reliability signal.
+**Original commentary:** This offers a powerful addition to loop and context engineering: **generate → execute → test across variations → accept, abstain, or escalate → store**. It can anchor material on memory poisoning, confidence gates, human review, and why successful execution alone is a weak reliability signal.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.15565)
+**Source:** <a href="https://arxiv.org/abs/2608.15565" data-item-id="dab-story-2026-08-19-a8e67241" data-edition-date="2026-08-19" data-action="source_clicks">arXiv</a>
 
 ---
 

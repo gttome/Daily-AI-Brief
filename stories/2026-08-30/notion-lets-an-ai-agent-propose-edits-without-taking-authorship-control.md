@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-30-6c8007e6
 
 **Why it matters:** This is a small but important interface distinction between assistance and delegated authority. Suggested edits expose the delta and preserve a deliberate human decision, which is more reliable for publishing, policy, legal, and educational material than silently rewriting the source. The announcement does not provide accuracy testing, so approval remains meaningful only if the reviewer checks substance as well as style.
 
-**For George’s work:** Authors and course participants can use this as a repeatable editing loop: define the editorial goal, request suggestions, inspect every change against the source, accept selectively, and run a final fact check.
+**Original commentary:** Authors and course participants can use this as a repeatable editing loop: define the editorial goal, request suggestions, inspect every change against the source, accept selectively, and run a final fact check.
 
-**Source:** [Notion release — Ask your agent to suggest edits](https://www.notion.com/releases/2026-08-28)
+**Source:** <a href="https://www.notion.com/releases/2026-08-28" data-item-id="dab-story-2026-08-30-6c8007e6" data-edition-date="2026-08-30" data-action="source_clicks">Notion release — Ask your agent to suggest edits</a>
 
 ---
 

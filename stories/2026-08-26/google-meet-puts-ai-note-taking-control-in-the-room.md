@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-26-3128a73a
 
 **Why it matters:** Reliable workplace AI is partly an interface problem. A conspicuous control in the physical room gives participants a practical way to govern when AI-generated records are created, which is stronger than relying on a remote organizer to remember a hidden setting.
 
-**For George’s work:** This is a compact human-review and governance example: visibility, consent, pause, resumption, and clear state should be designed into an AI workflow—not added as policy text after deployment.
+**Original commentary:** This is a compact human-review and governance example: visibility, consent, pause, resumption, and clear state should be designed into an AI workflow—not added as policy text after deployment.
 
-**Source:** [Google Workspace announcement](https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html)
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html" data-item-id="dab-story-2026-08-26-3128a73a" data-edition-date="2026-08-26" data-action="source_clicks">Google Workspace announcement</a>
 
 ---
 

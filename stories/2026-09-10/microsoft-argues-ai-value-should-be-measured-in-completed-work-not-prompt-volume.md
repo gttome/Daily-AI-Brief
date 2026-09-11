@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-10-e2aa5736
 
 **Why it matters:** Agentic systems make conventional usage dashboards increasingly misleading. A workflow that requires fewer prompts may be more valuable if it reliably completes a meaningful task; measurement therefore needs task definitions, quality checks, human-review cost, and outcome evidence.
 
-**For George’s work:** This directly supports consulting and training on evaluating AI adoption. Add a distinction between activity metrics, completion metrics, and business outcome metrics so clients do not mistake high AI usage for high AI value.
+**Original commentary:** This directly supports consulting and training on evaluating AI adoption. Add a distinction between activity metrics, completion metrics, and business outcome metrics so clients do not mistake high AI usage for high AI value.
 
-**Source:** [Measuring the value of Cowork: From AI interactions to completed work](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464)
+**Source:** <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464" data-item-id="dab-story-2026-09-10-e2aa5736" data-edition-date="2026-09-10" data-action="source_clicks">Measuring the value of Cowork: From AI interactions to completed work</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-e2aa5736">
   <span class="feedback-prompt">How useful was this?</span>

@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-07-3d813834
 
 **Why it matters:** This is unusually concrete evidence of agentic AI changing expert work. Agent runtime is not the same as scientific output, but the measurements point toward better operating metrics: delegated workload, success rate, intervention burden, and retained human decisions.
 
-**For George’s work:** Use this as an evidence-backed case study for Bounded Agentic Delegation and harness engineering: measure transferred work and interventions rather than simply counting prompts.
+**Original commentary:** Use this as an evidence-backed case study for Bounded Agentic Delegation and harness engineering: measure transferred work and interventions rather than simply counting prompts.
 
-**Source:** [OpenAI — Research acceleration: The view inside OpenAI](https://openai.com/index/research-acceleration-view-inside-openai/)
+**Source:** <a href="https://openai.com/index/research-acceleration-view-inside-openai/" data-item-id="dab-story-2026-09-07-3d813834" data-edition-date="2026-09-07" data-action="source_clicks">OpenAI — Research acceleration: The view inside OpenAI</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-3d813834">
   <span class="feedback-prompt">Was this useful?</span>

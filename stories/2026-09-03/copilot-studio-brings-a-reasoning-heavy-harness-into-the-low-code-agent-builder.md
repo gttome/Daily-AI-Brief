@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-03-1cda360c
 
 **Why it matters:** Concepts previously associated with developer agent frameworks are becoming available through a low-code maker surface. That lowers the barrier for non-software-engineers to create multi-step business agents, but also raises the importance of identity, permissions, telemetry, memory boundaries and human approval. Several supporting capabilities remain in preview, so production designs should distinguish generally available components from preview features.
 
-**For George’s work:** This is a useful teaching example for showing that non-technical agent builders still need harness-engineering concepts: outcome, context, tools, memory, authority, checkpoints, fallback and evaluation. The interface may be low-code, but the governance problem does not disappear.
+**Original commentary:** This is a useful teaching example for showing that non-technical agent builders still need harness-engineering concepts: outcome, context, tools, memory, authority, checkpoints, fallback and evaluation. The interface may be low-code, but the governance problem does not disappear.
 
-**Source:** [Microsoft Copilot — New and improved: GitHub Copilot harness, agent skills, and richer context](https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-github-copilot-harness-agent-skills-and-richer-context/)
+**Source:** <a href="https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-github-copilot-harness-agent-skills-and-richer-context/" data-item-id="dab-story-2026-09-03-1cda360c" data-edition-date="2026-09-03" data-action="source_clicks">Microsoft Copilot — New and improved: GitHub Copilot harness, agent skills, and richer context</a>
 
 ---
 

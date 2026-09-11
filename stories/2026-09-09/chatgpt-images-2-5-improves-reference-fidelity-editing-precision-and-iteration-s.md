@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-09-7702638b
 
 **Why it matters:** Faster, more controllable iteration can improve textbook diagrams, course graphics, and marketing assets. The performance figures are vendor-reported, and stronger visual fidelity does not verify factual labels or eliminate the need for accessibility and editorial review.
 
-**For George’s work:** Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow.
+**Original commentary:** Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow.
 
-**Source:** [Introducing ChatGPT Images 2.5](https://openai.com/index/introducing-chatgpt-images-2-5/)
+**Source:** <a href="https://openai.com/index/introducing-chatgpt-images-2-5/" data-item-id="dab-story-2026-09-09-7702638b" data-edition-date="2026-09-09" data-action="source_clicks">Introducing ChatGPT Images 2.5</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-7702638b">
   <span class="feedback-prompt">Was this useful?</span>

@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-04-a2c5e263
 
 **Why it matters:** This is a strong example of grounding AI in governed domain context instead of asking a general model to work from memory. The architecture combines enterprise data, authoritative external sources and user permissions inside a professional workflow. The stakes are high, so retrieval quality, provenance, access control, human clinical judgment and auditability remain essential even when the interface feels conversational.
 
-**For George’s work:** Use this as a concrete knowledge-worker grounding pattern: connect approved internal context, add authoritative external sources, require traceability to evidence and keep consequential judgment with the professional. The pattern generalizes well beyond healthcare.
+**Original commentary:** Use this as a concrete knowledge-worker grounding pattern: connect approved internal context, add authoritative external sources, require traceability to evidence and keep consequential judgment with the professional. The pattern generalizes well beyond healthcare.
 
-**Source:** [OpenAI — Healthcare organizations can now connect EHR and additional industry data to ChatGPT](https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/)
+**Source:** <a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/" data-item-id="dab-story-2026-09-04-a2c5e263" data-edition-date="2026-09-04" data-action="source_clicks">OpenAI — Healthcare organizations can now connect EHR and additional industry data to ChatGPT</a>
 
 ---
 

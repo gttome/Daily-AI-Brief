@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-02-d4186454
 
 **Why it matters:** The design attempts to reconcile privacy with frontier-model misuse monitoring. Because the system is not yet broadly deployed, customers still need to validate access controls, auditability, incident response and actual data handling in production.
 
-**For George’s work:** Use this as an example of separating control planes: providers can define safeguards while customers retain custody of sensitive operational data and audit evidence.
+**Original commentary:** Use this as an example of separating control planes: providers can define safeguards while customers retain custody of sensitive operational data and audit evidence.
 
-**Source:** [Anthropic — Enterprise Frontier Safeguards](https://www.anthropic.com/news/enterprise-frontier-safeguards)
+**Source:** <a href="https://www.anthropic.com/news/enterprise-frontier-safeguards" data-item-id="dab-story-2026-09-02-d4186454" data-edition-date="2026-09-02" data-action="source_clicks">Anthropic — Enterprise Frontier Safeguards</a>
 
 ---
 

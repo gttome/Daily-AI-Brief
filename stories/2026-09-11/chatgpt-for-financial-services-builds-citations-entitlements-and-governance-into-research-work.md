@@ -26,13 +26,17 @@ story_id: dab-story-2026-09-11-80fe8cea
 
 **Why it matters:** The notable pattern is governed synthesis: retrieval quality depends on source entitlements, and conclusions remain connected to citations and review. Availability is limited to eligible institutions, and the product announcement does not independently establish research accuracy or return on investment.
 
-**For George’s work:** Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.
+**Original commentary:** Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Extend the retrieval-governance example to show entitlement checks beside source citations. The financial-research workflow connects grounding with permission boundaries. Teaching asset: A comparison of a cited answer with an unauthorized-source answer.</p>
 
 ## What to do now
 
 **Teach governed synthesis:** Build a workshop exercise that traces every decision claim through entitlements, retrieval, citation, and human review.
 
-**Source:** [Introducing ChatGPT for Financial Services](https://openai.com/index/introducing-chatgpt-financial-services/)
+**Source:** <a href="https://openai.com/index/introducing-chatgpt-financial-services/" data-item-id="dab-story-2026-09-11-80fe8cea" data-edition-date="2026-09-11" data-action="source_clicks">Introducing ChatGPT for Financial Services</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-80fe8cea">
   <span class="feedback-prompt">How useful was this?</span>

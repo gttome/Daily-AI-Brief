@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-24-4517141d
 
 **Why it matters:** The work reinforces that long-horizon performance is a system property. Memory preserves useful state, tools make actions possible, external feedback grounds revisions, and supervision helps the loop recover from plateaus.
 
-**For George’s work:** This supports a strong lesson for books and courses: evaluate the complete loop—hypothesis → action → observation → state update → recovery—not only the model’s one-shot answer.
+**Original commentary:** This supports a strong lesson for books and courses: evaluate the complete loop—hypothesis → action → observation → state update → recovery—not only the model’s one-shot answer.
 
-**Source:** [NVIDIA AVO technical report](https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/)
+**Source:** <a href="https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/" data-item-id="dab-story-2026-08-24-4517141d" data-edition-date="2026-08-24" data-action="source_clicks">NVIDIA AVO technical report</a>
 
 ---
 

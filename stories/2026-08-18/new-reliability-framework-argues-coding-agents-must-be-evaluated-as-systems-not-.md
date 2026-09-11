@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-18-038bbe13
 
 **Why it matters:** Many apparent “model failures” are actually system failures. A coding model can be capable while the surrounding agent still fails because it received poor context, lost state, had the wrong permissions, used an unreliable tool, or was evaluated with a weak test. That reinforces the idea that reliable generative AI is fundamentally a systems-engineering problem.
 
-**For George’s work:** This is especially useful for the emerging **Generative AI Engineering Ecosystem** framing. Prompt, context, harness, loop, and evaluation practices can be taught as interacting layers rather than isolated techniques. A strong course exercise would ask learners to diagnose whether a failure originated in the model, context, harness, tool, state, verification, or review layer.
+**Original commentary:** This is especially useful for the emerging **Generative AI Engineering Ecosystem** framing. Prompt, context, harness, loop, and evaluation practices can be taught as interacting layers rather than isolated techniques. A strong course exercise would ask learners to diagnose whether a failure originated in the model, context, harness, tool, state, verification, or review layer.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.13867)
+**Source:** <a href="https://arxiv.org/abs/2608.13867" data-item-id="dab-story-2026-08-18-038bbe13" data-edition-date="2026-08-18" data-action="source_clicks">arXiv</a>
 
 ---
 
