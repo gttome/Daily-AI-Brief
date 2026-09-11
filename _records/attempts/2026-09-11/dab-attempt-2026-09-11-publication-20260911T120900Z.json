@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "attempt_id": "dab-attempt-2026-09-11-publication-20260911T120900Z",
+  "edition_id": "dab-edition-2026-09-11",
+  "started_at": "2026-09-11T12:09:00Z",
+  "ended_at": "2026-09-11T12:48:42Z",
+  "wall_seconds": 2382,
+  "scope": "fresh edition publication, independent live QA, privacy repair, and final verification",
+  "resource_policy": "Plus Work/Codex allowance and built-in image generation only; no paid API or additional credits",
+  "measured_work": {
+    "candidate_count": 20,
+    "selected_stories": 6,
+    "image_drafts": 6,
+    "image_rejects": 0,
+    "accepted_images": 6,
+    "publication_pull_requests": 1,
+    "repair_pull_requests": 1,
+    "local_tests_final": 70,
+    "contract_fixtures": 15
+  },
+  "failed_attempts": [
+    {
+      "stage": "local_test_wrapper",
+      "result": "unavailable",
+      "evidence": "The npm wrapper request was cancelled before execution; the exact underlying Node test and contract commands were run directly and passed."
+    },
+    {
+      "stage": "local_jekyll",
+      "result": "unavailable",
+      "evidence": "Bundler was not installed in the runner. Merge remained blocked until repository CI completed its deterministic Jekyll build successfully."
+    },
+    {
+      "stage": "first_live_qa",
+      "result": "fail",
+      "evidence": "The live browser found six public rating aggregate summaries. Repair PR #57 removed the read path and added regression coverage."
+    },
+    {
+      "stage": "live_http_transport",
+      "result": "recovered",
+      "evidence": "Several read-only Pages requests hit transient proxy-connect timeouts; retry and independent browser inspection verified the routes and exact image bytes."
+    }
+  ],
+  "publication": {
+    "baseline_sha": "4df75c21bdd0a614db2ceaba9695e9bda4cf9365",
+    "publication_pr": 56,
+    "publication_head": "99355d122cfe54a6a5cc0c60625e54e7e9c87651",
+    "publication_main": "aee24275bc9146b8fc436a5edf85d685c896b85d",
+    "publication_ci": 34599089826,
+    "publication_pages": 34599088692,
+    "repair_pr": 57,
+    "final_main": "d72cfc32140926a7265901ceb64d11819b408306",
+    "final_ci": 34600425212,
+    "final_pages": 34600424627
+  },
+  "usage": {
+    "exact_credits": null,
+    "dollars": null,
+    "coverage": "partial",
+    "reason": "The platform did not provide edition-attributed credit or dollar data to this run."
+  },
+  "outcome": "validated_after_repair"
+}
