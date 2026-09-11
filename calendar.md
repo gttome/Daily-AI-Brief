@@ -58,16 +58,4 @@ This creates your own editable repeating reminder, rather than a shared calendar
 
 To change the time, edit the saved event and apply the change to the series or all future events. To stop, delete the series. Add it only once to avoid duplicates. Changing the time on this page does not change an existing calendar event.
 
-## Prefer a shared calendar subscription?
-
-The optional shared calendar below uses **9:00 AM local calendar time**. It continues indefinitely until removed, is read-only, and cannot offer a separate time or duration for each subscriber. Use the personal reminder above if you want to choose or edit the time. Some apps suppress alerts for subscribed calendars.
-
-[Subscribe with Apple Calendar](webcal://gttome.github.io/Daily-AI-Brief/calendar.ics)
-
-For Outlook on the web use **Add calendar → Subscribe from web**. For Google Calendar, use **Other calendars → + → From URL** on a computer. Paste this address:
-
-<input class="rss-address" aria-label="Shared calendar address" readonly value="https://gttome.github.io/Daily-AI-Brief/calendar.ics">
-
-Subscribed calendars refresh on the app's schedule. Remove the subscription in your calendar to stop it. Choose either the shared subscription or the personal reminder to avoid duplicate events.
-
 [Google recurring-event help](https://support.google.com/calendar/answer/37115) · [Google notification help](https://support.google.com/calendar/answer/37242) · [Outlook import and subscription help](https://support.microsoft.com/en-us/outlook/import-or-subscribe-to-a-calendar-in-outlook-com-or-outlook-on-the-web)
