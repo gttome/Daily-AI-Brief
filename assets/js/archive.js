@@ -19,6 +19,7 @@
       unique(stories, 'evidence_type').forEach(value => option(controls.evidence, value));
       unique(stories, 'availability_status').forEach(value => option(controls.status, value));
       unique(stories, 'trends').forEach(value => option(controls.trend, value, value));
+      let searchTimer;const range=n=>n===0?'0':n<=5?'1-5':n<=20?'6-20':'21+';
       const render = () => {
         const q = controls.query.value.trim().toLowerCase();
         const filtered = stories.filter(story => {
@@ -32,11 +33,13 @@
           const summary = document.createElement('p'); summary.textContent = story.summary;
           article.append(meta, heading, summary); return article;
         }));
+        results.dataset.count=String(filtered.length);
         document.querySelector('#archive-result-count').textContent = `${filtered.length} ${filtered.length === 1 ? 'item' : 'items'}`;
       };
       Object.values(controls).forEach(control => control.addEventListener(control.type === 'search' ? 'input' : 'change', render));
-      document.querySelector('#archive-reset').addEventListener('click', () => { Object.values(controls).forEach(control => { control.value = ''; }); render(); controls.query.focus(); });
+      Object.entries(controls).forEach(([key,control])=>control.addEventListener(key==='query'?'input':'change',()=>{if(key==='query'){clearTimeout(searchTimer);searchTimer=setTimeout(()=>{window.dabTrack?.('archive_search_used',{range:range(Number(results.dataset.count))});if(results.dataset.count==='0')window.dabTrack?.('archive_zero_results');},700);}else{window.dabTrack?.('archive_filter_changed',{filter:key,value:control.value.replace(/[^a-zA-Z0-9_-]/g,'').slice(0,80)||'all',range:range(Number(results.dataset.count))});if(results.dataset.count==='0')window.dabTrack?.('archive_zero_results');}}));
+      document.querySelector('#archive-reset').addEventListener('click', () => { clearTimeout(searchTimer);window.dabTrack?.('archive_reset_click');Object.values(controls).forEach(control => { control.value = ''; }); render(); controls.query.focus(); });
       render();
     })
-    .catch(() => { document.querySelector('#archive-result-count').textContent = 'Search index unavailable; chronological archive remains below.'; });
+    .catch(() => {window.dabTrack?.('archive_load_failed',{result:'failed'}); document.querySelector('#archive-result-count').textContent = 'Search index unavailable; chronological archive remains below.'; });
 })();

@@ -52,12 +52,12 @@
     write(syncKey(storyId),JSON.stringify({briefDate,storyId,rating,operationId,createdAt:queued?.createdAt||Date.now()}));
     try {
       await send(briefDate, storyId, rating, operationId);
-      write(confirmedKey(storyId), 'true');
+      window.dabTrack?.('rating_submit_result',{item:storyId,edition:briefDate,result:'success'});write(confirmedKey(storyId), 'true');
       remove(syncKey(storyId));
       finish(story, rating, '✓ ' + selection(rating) + '\nThank you. Your anonymous rating was recorded.');
     } catch (_) {
 
-      finish(story, rating, selection(rating) + '\n' + pendingMessage);
+      window.dabTrack?.('rating_submit_failed',{item:storyId,edition:briefDate,result:'unconfirmed'});finish(story, rating, selection(rating) + '\n' + pendingMessage);
     }
   };
 

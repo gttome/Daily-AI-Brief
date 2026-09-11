@@ -222,7 +222,7 @@
   async function copyLink(item) {
     try {
       await navigator.clipboard.writeText(item.url);
-      toast('Daily Brief link copied');
+      window.dabTrack?.('share_copy_result',{item:item.counterKey,edition:briefDate,result:'success'});toast('Daily Brief link copied');
       return true;
     } catch (_) {
       const input = document.createElement('textarea');
@@ -235,9 +235,9 @@
       const ok = document.execCommand('copy');
       input.remove();
       if (ok) {
-        toast('Daily Brief link copied');
+        window.dabTrack?.('share_copy_result',{item:item.counterKey,edition:briefDate,result:'success'});toast('Daily Brief link copied');
       }
-      return ok;
+      if(!ok)window.dabTrack?.('share_copy_result',{item:item.counterKey,edition:briefDate,result:'failed'});return ok;
     }
   }
 
@@ -258,7 +258,7 @@
 
   function openFallback(item) {
     const dialog = document.createElement('dialog');
-    dialog.className = 'brief-share-dialog';
+    dialog.className = 'brief-share-dialog';dialog.dataset.itemId=item.counterKey;dialog.dataset.editionDate=briefDate;
 
     const panel = document.createElement('div');
     panel.className = 'brief-share-panel';
@@ -330,9 +330,9 @@
           text: shareText(item.title),
           url: item.url
         });
-        return;
+        window.dabTrack?.('native_share_result',{item:item.counterKey,edition:briefDate,result:'success',channel:'native'});return;
       } catch (error) {
-        if (error && error.name === 'AbortError') return;
+        window.dabTrack?.('native_share_result',{item:item.counterKey,edition:briefDate,result:error?.name==='AbortError'?'cancelled':'failed',channel:'native'});if (error && error.name === 'AbortError') return;
       }
     }
     openFallback(item);
