@@ -40,7 +40,6 @@ export function renderStarFeedback(story) {
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars">${meanings.map((meaning,i)=>`<button type="button" data-feedback-rating="${i+1}" title="${i+1} — ${meaning}" aria-label="${i+1} star${i?'s':''}: ${meaning}" aria-pressed="false">☆</button>`).join('')}</div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol>${meanings.map(meaning=>`<li>${meaning}</li>`).join('')}</ol></details>
-  <span class="star-summary" aria-live="polite">Loading ratings…</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>`;
 }

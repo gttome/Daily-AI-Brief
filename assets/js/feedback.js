@@ -55,21 +55,13 @@
       write(confirmedKey(storyId), 'true');
       remove(syncKey(storyId));
       finish(story, rating, '✓ ' + selection(rating) + '\nThank you. Your anonymous rating was recorded.');
-      refreshSummary(story);
     } catch (_) {
 
       finish(story, rating, selection(rating) + '\n' + pendingMessage);
     }
   };
 
-  async function refreshSummary(story){
-    const node=story.querySelector('.star-summary')||[...document.querySelectorAll('[data-share-counter-key]')].find(el=>el.dataset.shareCounterKey===story.dataset.feedbackStoryId)?.querySelector('.star-summary');if(!node)return;
-    try{const r=await fetch(endpoint+'?'+new URLSearchParams({brief_date:story.dataset.feedbackBriefDate,item_id:story.dataset.feedbackStoryId}),{credentials:'omit',cache:'no-store'});if(!r.ok)throw Error();const {stars}=await r.json();node.textContent=stars.count?`Reader average: ${stars.average.toFixed(2)}★ · ${stars.count} rating${stars.count===1?'':'s'}`:'No ratings yet';}catch{node.textContent='Ratings temporarily unavailable';}
-  }
   groups.forEach(story => {
-    const summary=story.querySelector('.star-summary');
-    if(summary){const share=[...document.querySelectorAll('[data-share-counter-key]')].find(node=>node.dataset.shareCounterKey===story.dataset.feedbackStoryId);if(share)share.appendChild(summary);}
-    refreshSummary(story);
     const storyId = story.dataset.feedbackStoryId;
     const briefDate = story.dataset.feedbackBriefDate;
     const prior = storedRating(storyId);
