@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-11",
+  "baseline_sha": "4df75c21bdd0a614db2ceaba9695e9bda4cf9365",
+  "rollback_target_sha": "4df75c21bdd0a614db2ceaba9695e9bda4cf9365",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-11-textbook.json",
+  "image_review_sha256": "8857336da1649c524072129d11f19ea21e812b8a77576a04be58e9bf92ac9f47",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-11/01-openai-agents-api.png",
+      "sha256": "939efd80f3b43aa08182d0a8add09dca216c6d1a2a212355b6abee4e7bebfdbc",
+      "bytes": 449608
+    },
+    {
+      "path": "briefs/images/2026-09-11/02-anthropic-misuse-loops.png",
+      "sha256": "fe29f1a7783aba7a0fc5457bd919801f4441d469cf50baa90565f636ffa6c554",
+      "bytes": 735554
+    },
+    {
+      "path": "briefs/images/2026-09-11/03-openai-financial-services.png",
+      "sha256": "f6ad03d6f0f4dd4c2f333493f529df940d172de9af23b002b5745b8266051b99",
+      "bytes": 751152
+    },
+    {
+      "path": "briefs/images/2026-09-11/04-github-copilot-review-loop.png",
+      "sha256": "d420c15ca2448725e9ff084606ed9cec59c84fc397ec7e73b683a87a61d52500",
+      "bytes": 688235
+    },
+    {
+      "path": "briefs/images/2026-09-11/05-gemini-slack-review.png",
+      "sha256": "6cb5f8e67f44f96433756eb93bfaab71ef0ea893c2dafed421587990e23d1ff0",
+      "bytes": 663052
+    },
+    {
+      "path": "briefs/images/2026-09-11/06-atlassian-agent-skills.png",
+      "sha256": "a1fff06c2cb1df76bffaeb1f84cb29f9057f8c5d64c1891541a7ea636fef5cc5",
+      "bytes": 502159
+    }
+  ],
+  "canonical_sha256": "edb030d6f04752807ead328b67d5aa7f13e6902944dc119adf6191863d9c01d4",
+  "candidate_digest": "sha256:67ac9129cd4df64db286a97b509d5b229b7986b7f90e456231848b95444e9009"
+}

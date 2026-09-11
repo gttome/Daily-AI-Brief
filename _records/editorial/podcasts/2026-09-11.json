@@ -1,0 +1,55 @@
+{
+  "brief_date": "2026-09-11",
+  "searched_at": "2026-09-11",
+  "selected_item_id": null,
+  "source_registry": "_data/podcast-sources.json",
+  "candidates": [
+    {
+      "title": "The AI Daily Brief",
+      "url": "https://www.aidailybrief.ai/",
+      "decision": "rejected",
+      "reason": "Core source checked; no September 10–11 episode with reliable page metadata and a strong selected-story connection was verified."
+    },
+    {
+      "title": "The TWIML AI Podcast",
+      "url": "https://twimlai.com/podcast/twimlai",
+      "decision": "rejected",
+      "reason": "Latest qualifying September 9 episode was already selected for the September 10 edition; no repeat without a material update."
+    },
+    {
+      "title": "Everyday AI",
+      "url": "https://www.youreverydayai.com/",
+      "decision": "rejected",
+      "reason": "Core source checked; accessible episode metadata showed inconsistent or older publication dates, preventing confident freshness verification."
+    },
+    {
+      "title": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/",
+      "decision": "rejected",
+      "reason": "Core source checked; no sufficiently current September 10–11 episode was verified."
+    },
+    {
+      "title": "AI for Humans",
+      "url": "https://www.aiforhumans.show/",
+      "decision": "rejected",
+      "reason": "Core source checked; no sufficiently current episode tied closely to today’s six developments was verified."
+    },
+    {
+      "title": "Latent Space",
+      "url": "https://www.latent.space/podcast",
+      "decision": "rejected",
+      "reason": "Core source checked; no new September 10–11 full episode was verified."
+    },
+    {
+      "title": "Practical AI",
+      "url": "https://practicalai.show/",
+      "decision": "rejected",
+      "reason": "Fallback source checked; no current episode met the date and editorial-fit thresholds."
+    }
+  ],
+  "limitations": [
+    "No podcast was included because identity, current date, and editorial relevance could not all be verified for a new item.",
+    "Podcast duration has no cap; duration was not the reason for any rejection.",
+    "The empty slot is visible and is not counted as an included media item."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "brief_date": "2026-09-11",
+  "searched_at": "2026-09-11",
+  "slots": {
+    "general": {
+      "status": "empty",
+      "queries": [
+        "OpenAI Agents API September 2026 YouTube",
+        "ChatGPT financial services September 2026 YouTube"
+      ],
+      "rejections": [
+        {
+          "url": "https://www.youtube.com/watch?v=Apow8hccwBU",
+          "reason": "Direct topical result found, but exact runtime and upload date were not independently accessible; rejected under the 20:00 hard limit."
+        }
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "queries": [
+        "Agent Skills September 2026 YouTube",
+        "reusable AI workflows Agent Skills YouTube"
+      ],
+      "rejections": [
+        {
+          "url": "https://www.youtube.com/watch?v=jchopNSEITQ",
+          "reason": "Relevant reusable-workflow result, but exact runtime and upload date could not be independently verified."
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=NU6wRAT9VQ0",
+          "reason": "Relevant Agent Skills primer, but exact runtime and upload date could not be independently verified."
+        }
+      ]
+    }
+  },
+  "included_count": 0
+}

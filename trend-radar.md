@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 10, 2026
+# Trend Radar — September 11, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,11 +13,14 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-20 supporting stories appeared in the latest 7 days and 59 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+21 supporting stories appeared in the latest 7 days and 61 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [September 10, 2026]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }})
+- [September 10, 2026]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/' | relative_url }})
 - [September 10, 2026]({{ '/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/' | relative_url }})
@@ -101,11 +104,14 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-12 supporting stories appeared in the latest 7 days and 35 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+12 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [September 10, 2026]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/' | relative_url }})
+- [September 10, 2026]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-pla/' | relative_url }})
@@ -157,14 +163,17 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-24 supporting stories appeared in the latest 7 days and 51 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+25 supporting stories appeared in the latest 7 days and 53 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 11, 2026]({{ '/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/' | relative_url }})
-- [September 10, 2026]({{ '/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/' | relative_url }})
+- [September 10, 2026]({{ '/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-ag/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-s/' | relative_url }})
@@ -239,17 +248,23 @@ Supporting stories:
 
 ## Accessible agents for knowledge work
 
-**ACCELERATING · high confidence**
+**STABLE · high confidence**
 
-40 supporting stories appeared in the latest 7 days and 83 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+40 supporting stories appeared in the latest 7 days and 89 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [September 10, 2026]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/' | relative_url }})
+- [September 11, 2026]({{ '/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/' | relative_url }})
+- [September 10, 2026]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/' | relative_url }})
-- [September 10, 2026]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/' | relative_url }})
+- [September 10, 2026]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/' | relative_url }})
-- [September 10, 2026]({{ '/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/' | relative_url }})
+- [September 10, 2026]({{ '/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-ag/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-gives-enterprises-central-control-over-copilot-s-jetbrains-sandbox/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-s/' | relative_url }})

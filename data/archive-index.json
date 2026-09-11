@@ -4,11 +4,168 @@
   "stories": [
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-415f8f1a",
+      "story_id": "dab-story-2026-09-11-8a71a280",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "OpenAI’s Agents API turns the Codex harness into a programmable platform",
+      "url": "/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent harnesses",
+        "context compaction",
+        "tool calling",
+        "multi-agent systems"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "beta",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "OpenAI introduced the Agents API in public beta for all developers, exposing the same managed Codex harness used by its coding products. The API supports long-running sessions with context compaction, tool search, programmatic tool calling, MCP and custom tools, multi-agent workflows, intermediate results, and execution in hosted, customer, or partner environments."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-11-d957d6c9",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "Anthropic’s latest misuse report shows AI orchestrating adaptive attack loops",
+      "url": "/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "threat intelligence",
+        "agentic misuse",
+        "guardrails",
+        "human review"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "research",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Anthropic’s September threat-intelligence report covers cases it disrupted from December 2025 through August 2026 across seven harm areas. It describes AI being used not only for isolated tasks but as an orchestrator across parts of the cyber kill chain, while human operators set targets and reviewed or redirected outputs."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-11-80fe8cea",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "ChatGPT for Financial Services builds citations, entitlements, and governance into research work",
+      "url": "/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "financial research",
+        "grounding",
+        "data entitlements",
+        "enterprise governance"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "limited_preview",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "OpenAI introduced ChatGPT for Financial Services, a tailored ChatGPT Work experience for eligible financial institutions. It combines premium datasets including Daloopa, PitchBook, LSEG News, and Crunchbase with firm data and more than 50 connectors, while preserving granular citations, access controls, retention settings, audit exports, and a commitment not to train on business data."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-11-53dc2a82",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default",
+      "url": "/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI-assisted development",
+        "diff review",
+        "testing",
+        "vibe coding"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub published a beginner workflow for the Copilot app built around three integrated verification surfaces: a diff for inspecting code changes, a terminal for running commands and tests, and a browser for previewing behavior. Its Pick & Polish flow supports targeted refinements before accepting changes or opening a pull request."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-11-0abd52ec",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "Gemini Enterprise in Slack adds a private review step before channel sharing",
+      "url": "/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Slack agents",
+        "private drafting",
+        "multi-turn context",
+        "human review"
+      ],
+      "companies": [
+        "Google",
+        "Slack"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google made new Gemini Enterprise for Slack interactions generally available: users can mention Gemini in a channel, receive a response privately for review, and deliberately share it back; direct messages can retain multi-turn context. Admins must reinstall the Slack app and users must reauthorize it to enable the update."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-11-bc8138fb",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
+      "url": "/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "SKILL.md",
+        "reusable workflows",
+        "cross-agent portability"
+      ],
+      "companies": [
+        "Atlassian",
+        "OpenAI",
+        "Google",
+        "GitHub"
+      ],
+      "evidence_type": "official_documentation",
+      "availability_status": "general_availability",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, and Rovo Dev, with a compatibility copy for Claude tooling. The package separates an operating contract, product semantics, workflow instructions, and references loaded when needed."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-10-3e9c6210",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations",
-      "url": "/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/",
+      "url": "/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/",
       "focus": "technical_ai_engineering",
       "topics": [
         "agent security",
@@ -17,11 +174,10 @@
         "failure analysis"
       ],
       "companies": [
-        "Anthropic",
-        "METR"
+        "Anthropic"
       ],
-      "evidence_type": "official_announcement",
-      "availability_status": "research",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Agent reliability and governance",
         "Accessible agents for knowledge work"
@@ -30,7 +186,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-fdde2a0c",
+      "story_id": "dab-story-2026-09-10-f9d75a59",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "GitHub adds centrally enforced permissions for Copilot agent operations",
@@ -45,8 +201,8 @@
       "companies": [
         "GitHub"
       ],
-      "evidence_type": "official_changelog",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -56,11 +212,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-061a7b54",
+      "story_id": "dab-story-2026-09-10-a0732e6e",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio",
-      "url": "/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/",
+      "url": "/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "document AI",
@@ -69,10 +225,10 @@
         "knowledge work"
       ],
       "companies": [
-        "Adobe"
+        "news.adobe.com"
       ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "Agent memory and context",
         "Accessible agents for knowledge work"
@@ -81,7 +237,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-c9c45c5e",
+      "story_id": "dab-story-2026-09-10-e2aa5736",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Microsoft argues AI value should be measured in completed work, not prompt volume",
@@ -96,8 +252,8 @@
       "companies": [
         "Microsoft"
       ],
-      "evidence_type": "practitioner_analysis",
-      "availability_status": "not_applicable",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "AI-assisted development"
       ],
@@ -105,7 +261,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-a622f43e",
+      "story_id": "dab-story-2026-09-10-f150d386",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Google expands prompt-built mini-apps and web errands for everyday users",
@@ -118,10 +274,10 @@
         "web errands"
       ],
       "companies": [
-        "Google"
+        "blog.google"
       ],
-      "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -130,11 +286,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-b2d6f046",
+      "story_id": "dab-story-2026-09-10-331d65bd",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools",
-      "url": "/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/",
+      "url": "/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-ag/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Agent Skills",
@@ -143,13 +299,10 @@
         "agent interoperability"
       ],
       "companies": [
-        "OpenAI",
-        "Anthropic",
-        "Google",
-        "Microsoft"
+        "codex.danielvaughan.com"
       ],
-      "evidence_type": "practitioner_analysis",
-      "availability_status": "not_applicable",
+      "evidence_type": "unspecified",
+      "availability_status": "unspecified",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
