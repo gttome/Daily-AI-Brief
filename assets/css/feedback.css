@@ -58,3 +58,8 @@ main#content img {
 .comment-dialog button,.subscription-card button,.subscription-card input{font:inherit;padding:.5rem .7rem}
 .subscription-card{padding:1.25rem;border:1px solid #c7d6e2;border-radius:.5rem;margin:2rem 0}
 @media(max-width:600px){.comment-open{margin-left:0;flex-basis:100%}.subscription-card input{max-width:100%;box-sizing:border-box}}
+
+.rss-dialog{box-sizing:border-box;width:min(36rem,calc(100% - 2rem));max-height:85vh;overflow:auto;border:1px solid #b7cad6;border-radius:.7rem;padding:1.5rem;color:#17334c;background:white;font:inherit}
+.rss-dialog::backdrop{background:rgba(10,30,48,.55)}
+.rss-dialog li{margin-bottom:1rem}.rss-dialog h2{margin-top:0}.rss-address{display:block;box-sizing:border-box;width:100%;padding:.65rem;font:inherit;margin:.5rem 0;color:#17334c;background:#f3f7fa;border:1px solid #b7cad6}
+.rss-actions{display:flex;flex-wrap:wrap;gap:.75rem}.rss-dialog button,.rss-copy,.rss-help-open{font:inherit;padding:.55rem .8rem;cursor:pointer}.rss-dialog :focus-visible,.rss-copy:focus-visible,.rss-help-open:focus-visible{outline:3px solid #1260b0;outline-offset:3px}
