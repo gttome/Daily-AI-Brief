@@ -49,3 +49,13 @@ Editorial learning remains article-only, inactive until existing evidence thresh
 Before promotion, any mandatory editorial/image/privacy/interaction failure preserves the prior live edition. Save a public-safe failure record and private usage evidence when available. An allowance-blocked run is not a successful fresh edition. Resume the same candidate when allowance and required tools are available, recheck source freshness and baseline, and avoid duplicate publication or repeated known-failing retries. Do not invent reset times. Existing GitHub freshness checks can report a missing edition but cannot replenish Plus allowance or guarantee an alert was delivered.
 
 Post-deployment critical failures restore the prior verified artifact through a reviewed restoration commit; never reset shared history, subtract reader totals or reintroduce a public private-data endpoint.
+
+## Usefulness stars — September 10, 2026 transition
+
+All rateable articles, included videos, and podcasts dated September 10 onward use native integer 1–5 usefulness stars. Definitions: 1 Not useful; 2 Slightly useful; 3 Useful; 4 Very useful; 5 Extremely useful. The renderer gates by brief date; earlier published pages retain their four-choice controls. Do not regenerate earlier historical pages during this migration.
+
+The ratings service preserves original `rating_totals` rows. Legacy text keys mean the legacy four-choice scale; numeric-string keys 1–5 mean native stars (the submission payload uses integers). Normalize legacy `most_useful:5, useful:4, neutral:3, not_useful:1`. Never copy legacy counts into native buckets: normalization is a read-time projection, so reruns cannot duplicate ratings. Public summaries expose only aggregate stars. Owner responses additionally retain original totals. Each summary reports native and legacy counts for provenance.
+
+On September 10, verified seven legacy Most useful responses across six articles and one podcast: 7 ratings, 5.00 average, distribution 5★=7. Empty video slots are not rateable and have Not applicable metrics. Existing share counts and operation receipts remain unchanged. Browser state is local; shared URLs carry no sender rating. Pending legacy submissions retain their original value and operation receipt during retries.
+
+The Command Center normalizes both scales for each selected date and sums counts before computing averages. Existing editorial-learning safeguards remain in force; this change grants no weighting approval. Older analytics snapshots are not rewritten or represented as fresh measurements.

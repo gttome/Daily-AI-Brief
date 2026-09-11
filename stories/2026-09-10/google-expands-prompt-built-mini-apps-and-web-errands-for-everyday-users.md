@@ -34,14 +34,11 @@ story_id: dab-story-2026-09-10-a622f43e
 
 **Source:** [Tackle your to-do list with new features in our Google AI plans](https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/)
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-a622f43e">
-  <span class="feedback-prompt">Was this useful?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate this story">
-    <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
-    <button type="button" data-feedback-rating="useful">Useful</button>
-    <button type="button" data-feedback-rating="neutral">Neutral</button>
-    <button type="button" data-feedback-rating="not_useful">Not useful</button>
-  </div>
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-a622f43e">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">★</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">★</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">★</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">★</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">★</button></div>
+  <span class="star-definition">1 Not useful · 2 Slightly useful · 3 Useful · 4 Very useful · 5 Extremely useful</span>
+  <span class="star-summary" aria-live="polite">Loading ratings…</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

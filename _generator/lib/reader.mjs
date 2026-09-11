@@ -17,6 +17,7 @@ const yamlString = value => JSON.stringify(String(value || ''));
 const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
 export function renderInlineFeedback(story, compact = true) {
+  if (story.brief_date >= '2026-09-10') return renderStarFeedback(story);
   const className = compact ? 'story-feedback story-feedback-compact' : 'story-feedback';
   const subject = ['video', 'podcast'].includes(story.feedback_subject) ? story.feedback_subject : 'story';
   const prompt = subject === 'story' ? 'Was this useful?' : `Was this ${subject} useful?`;
@@ -28,6 +29,17 @@ export function renderInlineFeedback(story, compact = true) {
     <button type="button" data-feedback-rating="neutral">Neutral</button>
     <button type="button" data-feedback-rating="not_useful">Not useful</button>
   </div>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>`;
+}
+
+export function renderStarFeedback(story) {
+  const meanings=['Not useful','Slightly useful','Useful','Very useful','Extremely useful'];
+  return `<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="${story.brief_date}" data-feedback-story-id="${story.story_id}">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars">${meanings.map((meaning,i)=>`<button type="button" data-feedback-rating="${i+1}" title="${i+1} — ${meaning}" aria-label="${i+1} star${i?'s':''}: ${meaning}" aria-pressed="false">★</button>`).join('')}</div>
+  <span class="star-definition">1 Not useful · 2 Slightly useful · 3 Useful · 4 Very useful · 5 Extremely useful</span>
+  <span class="star-summary" aria-live="polite">Loading ratings…</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>`;
 }

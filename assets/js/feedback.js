@@ -18,11 +18,12 @@
   };
   const storedRating = storyId => read(storageKey(storyId));
 
+  const legacyStars={most_useful:'5',useful:'4',neutral:'3',not_useful:'1'};
   const finish = (story, rating, message) => {
     delete story.dataset.feedbackPending;
     story.querySelectorAll('[data-feedback-rating]').forEach(button => {
       button.disabled = true;
-      button.setAttribute('aria-pressed', button.dataset.feedbackRating === rating ? 'true' : 'false');
+      button.setAttribute('aria-pressed', button.dataset.feedbackRating === (story.dataset.feedbackScale==='stars'?(legacyStars[rating]||rating):rating) ? 'true' : 'false');
     });
     story.querySelector('.feedback-status').textContent = message;
   };
@@ -31,7 +32,7 @@
     const response = await fetch(endpoint, {
       method: 'POST', mode: 'cors', cache: 'no-store', credentials: 'omit',
       headers: {'content-type': 'application/json','x-operation-id':operationId},
-      body: JSON.stringify({brief_date: briefDate, item_id: storyId, rating})
+      body: JSON.stringify({brief_date: briefDate, item_id: storyId, rating:/^[1-5]$/.test(rating)?Number(rating):rating})
     });
     if (!response.ok) throw new Error('feedback transport unavailable');
     const result = await response.json();
@@ -48,6 +49,7 @@
       await send(briefDate, storyId, rating, operationId);
       remove(syncKey(storyId));
       finish(story, rating, 'Thank you—your anonymous rating was recorded.');
+      refreshSummary(story);
     } catch (_) {
 
       finish(story, rating, quiet
@@ -56,7 +58,14 @@
     }
   };
 
+  async function refreshSummary(story){
+    const node=story.querySelector('.star-summary')||[...document.querySelectorAll('[data-share-counter-key]')].find(el=>el.dataset.shareCounterKey===story.dataset.feedbackStoryId)?.querySelector('.star-summary');if(!node)return;
+    try{const r=await fetch(endpoint+'?'+new URLSearchParams({brief_date:story.dataset.feedbackBriefDate,item_id:story.dataset.feedbackStoryId}),{credentials:'omit',cache:'no-store'});if(!r.ok)throw Error();const {stars}=await r.json();node.textContent=stars.count?`★ ${stars.average.toFixed(2)} · ${stars.count} rating${stars.count===1?'':'s'}`:'No ratings yet';}catch{node.textContent='Ratings temporarily unavailable';}
+  }
   groups.forEach(story => {
+    const summary=story.querySelector('.star-summary');
+    if(summary){const share=[...document.querySelectorAll('[data-share-counter-key]')].find(node=>node.dataset.shareCounterKey===story.dataset.feedbackStoryId);if(share)share.appendChild(summary);}
+    refreshSummary(story);
     const storyId = story.dataset.feedbackStoryId;
     const briefDate = story.dataset.feedbackBriefDate;
     const prior = storedRating(storyId);
