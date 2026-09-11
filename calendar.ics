@@ -10,10 +10,10 @@ DURATION:PT5M
 RRULE:FREQ=DAILY
 SUMMARY:Read the Daily AI Brief
 DESCRIPTION:A daily reading reminder. Open the latest available brief: htt
- ps://gttome.github.io/Daily-AI-Brief/ This reminder also appears if public
- ation is delayed. Edit or delete the series in your calendar to change or 
- stop it.
-URL:https://gttome.github.io/Daily-AI-Brief/
+ ps://gttome.github.io/Daily-AI-Brief/?dab_source=calendar_shared This remi
+ nder also appears if publication is delayed. Edit or delete the series in 
+ your calendar to change or stop it.
+URL:https://gttome.github.io/Daily-AI-Brief/?dab_source=calendar_shared
 TRANSP:TRANSPARENT
 STATUS:CONFIRMED
 BEGIN:VALARM

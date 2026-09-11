@@ -1,4 +1,4 @@
-const homepage = 'https://gttome.github.io/Daily-AI-Brief/';
+const homepage = 'https://gttome.github.io/Daily-AI-Brief/?dab_source=calendar_personal';
 const pad = n => String(n).padStart(2, '0');
 const localStamp = d => `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}T${pad(d.getHours())}${pad(d.getMinutes())}00`;
 export function reminder(time = '09:00', now = new Date()) {
@@ -19,16 +19,16 @@ export function reminder(time = '09:00', now = new Date()) {
 }
 if (typeof document !== 'undefined') {
   document.querySelectorAll('.calendar-reminder').forEach(root => {
-    const input=root.querySelector('input[type=time]'), google=root.querySelector('.calendar-google'), download=root.querySelector('.calendar-download'), status=root.querySelector('.calendar-status');
+    const input=root.querySelector('input[type=time]'), google=root.querySelector('.calendar-google'), downloads=[...root.querySelectorAll('.calendar-download')], status=root.querySelector('.calendar-status');
     let objectURL;
     function update(){
       if(objectURL) URL.revokeObjectURL(objectURL);
       try {
         const data=reminder(input.value);
         objectURL=URL.createObjectURL(new Blob([data.ics],{type:'text/calendar;charset=utf-8'}));
-        download.href=objectURL; google.href=data.google; download.hidden=false; google.hidden=false;
+        downloads.forEach(download=>{download.href=objectURL;download.hidden=false;}); google.href=data.google; google.hidden=false;
         status.textContent=`First reminder: ${data.start.toLocaleString(undefined,{dateStyle:'medium',timeStyle:'short'})}. Review and save in your calendar to finish.`;
-      } catch {download.hidden=true;google.hidden=true;status.textContent='Choose a valid reminder time to continue.';}
+      } catch {downloads.forEach(download=>download.hidden=true);google.hidden=true;window.dabTrack?.('calendar_generation_error',{result:'invalid'});status.textContent='Choose a valid reminder time to continue.';}
     }
     input.addEventListener('input',update); update();
   });

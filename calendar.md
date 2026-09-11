@@ -9,7 +9,7 @@ permalink: /calendar/
 Choose a time, add one repeating event, and let your calendar remind you to open the latest brief. No email address or phone number is collected by this site.
 
 <section class="subscription-card" aria-label="Set your reminder">
-<h3>Daily calendar reminder</h3><p>Choose when to read. Your calendar reminds you every day and links to the latest brief.</p><div class="calendar-reminder"><label for="calendar-time">Reminder time (your local time)</label> <input id="calendar-time" type="time" value="09:00" required><p class="calendar-actions"><a class="calendar-google" hidden target="_blank" rel="noopener noreferrer">Add to Google Calendar</a> <a class="calendar-download" hidden download="daily-ai-brief-reminder.ics">Download for Apple / Outlook</a></p><p class="calendar-status" role="status"></p><p><a href="{{ '/calendar/' | relative_url }}">Setup help for iPhone, Android and Windows</a></p><p class="calendar-note">Starts at the next occurrence of your chosen time. Save once, then check that the event repeats daily and its alert is set to “At time of event” (0 minutes before). This is a reading reminder, even if publication is late. Changing this picker does not update a reminder already saved; edit that series in your calendar.</p><noscript><p>To choose a time without JavaScript, follow the <a href="{{ '/calendar/' | relative_url }}">manual calendar setup steps</a>.</p></noscript></div>
+<h3>Daily calendar reminder</h3><p>Choose when to read. Your calendar reminds you every day and links to the latest brief.</p><div class="calendar-reminder"><label for="calendar-time">Reminder time (your local time)</label> <input id="calendar-time" type="time" value="09:00" required><p class="calendar-actions"><a class="calendar-google" hidden target="_blank" rel="noopener noreferrer">Add to Google Calendar</a> <a class="calendar-download" data-calendar="apple" hidden download="daily-ai-brief-reminder.ics">Apple Calendar</a> <a class="calendar-download" data-calendar="outlook" hidden download="daily-ai-brief-reminder.ics">Outlook</a></p><p class="calendar-status" role="status"></p><p><a href="{{ '/calendar/' | relative_url }}">Setup help for iPhone, Android and Windows</a></p><p class="calendar-note">Starts at the next occurrence of your chosen time. Save once, then check that the event repeats daily and its alert is set to “At time of event” (0 minutes before). This is a reading reminder, even if publication is late. Changing this picker does not update a reminder already saved; edit that series in your calendar.</p><noscript><p>To choose a time without JavaScript, follow the <a href="{{ '/calendar/' | relative_url }}">manual calendar setup steps</a>.</p></noscript></div>
 </section>
 
 ## Choose your device
@@ -27,7 +27,7 @@ If the button does not open a usable event editor, use the manual steps below. D
 <details markdown="1">
 <summary>Apple iPhone — Apple Calendar</summary>
 
-1. Choose your time and tap **Download for Apple / Outlook** in Safari.
+1. Choose your time and tap **Apple Calendar** in Safari.
 2. If an event preview opens, add the event to your calendar. If the file only downloads, or there is no Add option, use the manual steps below. You can also import the file using Calendar on a Mac that syncs with your iPhone.
 3. Open the saved event and check **Repeat: Every Day**, its time, and **Alert: At time of event**. Check that iPhone settings allow Calendar notifications.
 
