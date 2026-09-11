@@ -1,0 +1,207 @@
+{
+  "observed_at": "2026-09-11T17:06:03.770805+00:00",
+  "release_sha": "7603da2f6fa38ea345e8233ca7673988573cda49",
+  "results": [
+    {
+      "route": "/",
+      "ok": true,
+      "bytes": 40240,
+      "rating_controls": 35,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 15,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/briefs/2026-09-11/",
+      "ok": true,
+      "bytes": 39478,
+      "rating_controls": 35,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 15,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/briefs-archive/",
+      "ok": true,
+      "bytes": 146004,
+      "rating_controls": 0,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 154,
+      "new_series_heading": false,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/feedback/",
+      "ok": true,
+      "bytes": 6246,
+      "rating_controls": 0,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 0,
+      "new_series_heading": false,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/feed.json",
+      "ok": true,
+      "bytes": 169248,
+      "items": 154,
+      "unique_ids": 154
+    },
+    {
+      "route": "/feed.xml",
+      "ok": true,
+      "bytes": 124734,
+      "items": 154
+    },
+    {
+      "route": "/videos/2026-09-09/general/",
+      "ok": true,
+      "bytes": 7534,
+      "rating_controls": 4,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": false,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/videos/2026-09-09/agent-skills/",
+      "ok": true,
+      "bytes": 7663,
+      "rating_controls": 4,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": false,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/podcasts/2026-09-11/computer-use-agents/",
+      "ok": true,
+      "bytes": 10938,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 3,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/",
+      "ok": true,
+      "bytes": 11061,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/",
+      "ok": true,
+      "bytes": 11162,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/",
+      "ok": true,
+      "bytes": 11417,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
+      "ok": true,
+      "bytes": 11277,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/",
+      "ok": true,
+      "bytes": 11077,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
+      "ok": true,
+      "bytes": 11299,
+      "rating_controls": 5,
+      "has_home": true,
+      "comments_script": true,
+      "tracked_links": 1,
+      "new_series_heading": true,
+      "obsolete_four_button": false
+    },
+    {
+      "route": "/briefs/images/2026-09-11/01-openai-agents-api.png",
+      "ok": true,
+      "bytes": 449608,
+      "image_hash_match": true
+    },
+    {
+      "route": "/briefs/images/2026-09-11/02-anthropic-misuse-loops.png",
+      "ok": true,
+      "bytes": 735554,
+      "image_hash_match": true
+    },
+    {
+      "route": "/briefs/images/2026-09-11/03-openai-financial-services.png",
+      "ok": true,
+      "bytes": 751152,
+      "image_hash_match": true
+    },
+    {
+      "route": "/briefs/images/2026-09-11/04-github-copilot-review-loop.png",
+      "ok": true,
+      "bytes": 688235,
+      "image_hash_match": true
+    },
+    {
+      "route": "/briefs/images/2026-09-11/05-gemini-slack-review.png",
+      "ok": true,
+      "bytes": 663052,
+      "image_hash_match": true
+    },
+    {
+      "route": "/briefs/images/2026-09-11/06-atlassian-agent-skills.png",
+      "ok": true,
+      "bytes": 502159,
+      "image_hash_match": true
+    }
+  ],
+  "browser": {
+    "comment_dialog_open": "pass",
+    "escape_dismissal": "pass",
+    "focus_return": "pass",
+    "maxlength": 1000,
+    "archive_search_reset": "pass",
+    "mobile_viewport": "not_tested",
+    "live_form_submissions": 0
+  }
+}

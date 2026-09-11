@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "run_id": "dab-qa-20260911T170740Z-7603da2f",
+  "run_id": "dab-qa-20260911T124842Z-d72cfc32",
   "edition_id": "dab-edition-2026-09-11",
-  "publication_run_id": "dab-publication-20260911T165754Z-f75acf8e",
-  "executed_at": "2026-09-11T17:07:40Z",
+  "publication_run_id": "dab-publication-20260911T122500Z-4df75c21",
+  "executed_at": "2026-09-11T12:48:42Z",
   "initial_result": "fail",
   "final_result": "pass",
   "checks": [
@@ -76,23 +76,12 @@
       "result": "pass",
       "severity": "info",
       "evidence": "Edition-specific drafts, rejects, elapsed time, failed local attempts, repairs, and exact available CI evidence were recorded. Exact credits and dollars remain unavailable and were not fabricated; authenticated private usage POST was unavailable in this runner, so the detailed usage record was retained privately rather than published to Git."
-    },
-    {
-      "check_id": "eleven_item_recovery",
-      "class": "deterministic",
-      "result": "pass",
-      "severity": "high",
-      "evidence": "Authorized recovery verified: 154 archive/feed identities; 7 included items with 35 stars; private snapshot collected and stored for all 7 items; backend mock tests cover comments, idempotent clicks, confirmation, retry and unsubscribe. Public signup remains inactive until sender configuration. Browser-rendered mobile interaction QA was not performed in this runtime; HTTP/source checks and backend integration tests passed."
     }
   ],
   "repairs": [
     {
       "description": "Removed public rating-average/count reads from generated reader pages while preserving the privacy-minimized star-rating POST, retries, sharing, and private Command Center analytics; added a regression test and regenerated affected pages.",
       "commit_sha": "d72cfc32140926a7265901ceb64d11819b408306"
-    },
-    {
-      "description": "Eleven-item recovery: common media archive/feed collection, current privacy/rating wording, private evidence finalization, source discovery, short-first duration policy, book implications, click tracking, comments and prepared confirmed subscriptions. Verified podcast added without changing approved story images.",
-      "commit_sha": "7603da2f6fa38ea345e8233ca7673988573cda49"
     }
   ],
   "defects": [
@@ -104,8 +93,8 @@
     }
   ],
   "deployment_evidence": {
-    "pages_run_id": 34625534296,
-    "head_sha": "7603da2f6fa38ea345e8233ca7673988573cda49",
+    "pages_run_id": 34600424627,
+    "head_sha": "d72cfc32140926a7265901ceb64d11819b408306",
     "conclusion": "success"
   },
   "record_path": "_records/qa/2026-09-11.json",
