@@ -30,6 +30,6 @@ One entry per daily edition, with available past editions included. Your reader 
 
 No email address or account on this site is required. To stop following, remove the feed from your reader.
 
-[Open RSS feed]({{ '/daily-feed.xml' | relative_url }}) · [Latest brief]({{ '/' | relative_url }}) · [Browse archive]({{ '/briefs-archive/' | relative_url }})
+[Latest brief]({{ '/' | relative_url }}) · [Browse archive]({{ '/briefs-archive/' | relative_url }})
 
 If opening the feed shows technical-looking text, copy its address into your feed reader. That is normal.

@@ -65,6 +65,6 @@ Usefulness ratings and optional comments are sent privately to the editor. Ratin
 
 Click counts describe link activations, not unique readers. Detailed click and rating aggregates remain private. Event-day counting began with the September 11, 2026 update; earlier lifetime counters cannot reconstruct activity on a particular day.
 
-Follow the daily edition with [RSS]({{ '/daily-feed.xml' | relative_url }}) or [set a calendar reminder]({{ '/calendar/' | relative_url }}). Calendar reminders run at your chosen time even if publication is delayed. Email signup is inactive.
+Follow the daily edition with [RSS subscription instructions]({{ '/subscribe/' | relative_url }}) or [set a calendar reminder]({{ '/calendar/' | relative_url }}). Calendar reminders run at your chosen time even if publication is delayed. Email signup is inactive.
 
 We collect aggregate page and interaction counts, including subscription choices, reminder times selected during setup, help usage, and broad browser, device, language and time-zone information. Approximate country/region is used only when the hosting service supplies it. We do not store raw IP addresses, precise location, raw search text, draft comments or persistent reader identifiers in these analytics. A temporary channel label in this browser tab helps attribute visits from calendar or RSS links for up to 30 minutes. Event receipts are kept briefly to prevent duplicate counting; private aggregate counts do not identify subscribers. Clicks and downloads do not confirm a completed subscription or delivered notification.
