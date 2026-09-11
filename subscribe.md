@@ -10,7 +10,7 @@ Receive one entry per daily edition in your RSS reader, then choose a date to op
 
 ## Prefer a calendar reminder?
 
-[Choose your daily reminder time]({{ '/calendar/' | relative_url }}). Start with 9:00 AM in your local time, or choose another time. Includes setup help for iPhone, Android and Windows.
+[Choose your daily reminder time]({{ '/calendar/' | relative_url }}). Start with 9:00 AM in your local time, or choose another time. Select how long to receive daily reminders using a quantity and days, weeks, months or years. Includes setup help for iPhone, Android and Windows.
 
 ## Follow in an RSS reader
 
