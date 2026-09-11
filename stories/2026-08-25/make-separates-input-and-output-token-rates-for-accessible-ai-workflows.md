@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-25-b3b680ed
 
 **Why it matters:** Non-technical builders can now see more clearly that large source packets and long generated responses have different economic effects. This makes context selection, output limits, summarization stages, and model choice part of responsible workflow design rather than invisible technical details.
 
-**For George’s work:** A useful exercise could compare three versions of the same research workflow: indiscriminate context loading, selective retrieval, and staged summarization. Learners can evaluate quality, review burden, and credits consumed together.
+**Original commentary:** A useful exercise could compare three versions of the same research workflow: indiscriminate context loading, selective retrieval, and staged summarization. Learners can evaluate quality, review burden, and credits consumed together.
 
-**Source:** [Make 2026 product updates](https://help.make.com/2026)
+**Source:** <a href="https://help.make.com/2026" data-item-id="dab-story-2026-08-25-b3b680ed" data-edition-date="2026-08-25" data-action="source_clicks">Make 2026 product updates</a>
 
 ---
 

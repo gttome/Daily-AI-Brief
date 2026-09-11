@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-01-f20296c3
 
 **Why it matters:** This is accessible prompt engineering applied to information governance: administrators define classification intent in natural language, while people retain correction authority. It can help ground downstream AI and agent permissions in file sensitivity. It remains a beta limited to selected Workspace editions, and classification errors can misroute protection, so sampling, exception review and measured false-positive and false-negative rates are essential.
 
-**For George’s work:** Use it as a practical evaluation exercise for consultants and managers: write label instructions, assemble a boundary-case test set, compare Gemini labels with human judgments, document disagreements and refine the policy before enforcement.
+**Original commentary:** Use it as a practical evaluation exercise for consultants and managers: write label instructions, assemble a boundary-case test set, compare Gemini labels with human judgments, document disagreements and refine the policy before enforcement.
 
-**Source:** [Google Workspace Updates — Gemini-based Drive classification open beta](https://workspaceupdates.googleblog.com/2026/08/gemini-based-data-classification-in-Google-Drive-is-now-available-in-open-beta.html)
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/08/gemini-based-data-classification-in-Google-Drive-is-now-available-in-open-beta.html" data-item-id="dab-story-2026-09-01-f20296c3" data-edition-date="2026-09-01" data-action="source_clicks">Google Workspace Updates — Gemini-based Drive classification open beta</a>
 
 ---
 

@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-02-ad704042
 
 **Why it matters:** This turns context engineering into a permissioned product capability with source identity and provenance. In a high-stakes domain, grounded context improves reliability but does not remove the need for clinician review, local validation and organizational controls.
 
-**For George’s work:** Use this as a knowledge-worker grounding pattern: define trusted source classes, preserve provenance, limit access by role and require humans to validate consequential conclusions against source records.
+**Original commentary:** Use this as a knowledge-worker grounding pattern: define trusted source classes, preserve provenance, limit access by role and require humans to validate consequential conclusions against source records.
 
-**Source:** [OpenAI — Healthcare organizations can connect EHR and industry data to ChatGPT](https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/)
+**Source:** <a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/" data-item-id="dab-story-2026-09-02-ad704042" data-edition-date="2026-09-02" data-action="source_clicks">OpenAI — Healthcare organizations can connect EHR and industry data to ChatGPT</a>
 
 ---
 

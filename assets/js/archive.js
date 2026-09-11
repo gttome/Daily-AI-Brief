@@ -28,7 +28,7 @@
         results.replaceChildren(...filtered.map(story => {
           const article = document.createElement('article'); article.className = 'archive-story';
           const meta = document.createElement('p'); meta.className = 'archive-story-meta'; meta.textContent = `${story.brief_date} · ${story.content_type || "Article"} · ${pretty(story.focus)}`;
-          const heading = document.createElement('h2'); const link = document.createElement('a'); link.href = `${base}${story.url}`; link.textContent = story.headline; heading.appendChild(link);
+          const heading = document.createElement('h2'); const link = document.createElement('a'); link.href = /^https:\/\//.test(story.url)?story.url:`${base}${story.url}`; Object.assign(link.dataset,{itemId:story.story_id,editionDate:story.brief_date,action:'permanent_page_clicks'}); link.textContent = story.headline; heading.appendChild(link);
           const summary = document.createElement('p'); summary.textContent = story.summary;
           article.append(meta, heading, summary); return article;
         }));

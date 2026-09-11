@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-30-7712bd8b
 
 **Why it matters:** This moves agent governance below the application harness. A durable process identity can support attribution across subprocesses, while policy-based containment can reduce the blast radius of generated code. Important limits remain: the identity support is explicitly a preview whose format may change, the update rolls out gradually, and Microsoft does not describe it as a complete security boundary for every agent threat.
 
-**For George’s work:** This is a useful architecture case study for explaining the stack beneath an agent: model, harness, process identity, containment policy, authentication, and audit evidence.
+**Original commentary:** This is a useful architecture case study for explaining the stack beneath an agent: model, harness, process identity, containment policy, authentication, and audit evidence.
 
-**Source:** [Microsoft Support — KB5120998 Windows 11 preview update](https://support.microsoft.com/en-us/servicing/os/windows-11/2026/08/kb5120998-windows-11-24h2-25h2-update)
+**Source:** <a href="https://support.microsoft.com/en-us/servicing/os/windows-11/2026/08/kb5120998-windows-11-24h2-25h2-update" data-item-id="dab-story-2026-08-30-7712bd8b" data-edition-date="2026-08-30" data-action="source_clicks">Microsoft Support — KB5120998 Windows 11 preview update</a>
 
 ---
 

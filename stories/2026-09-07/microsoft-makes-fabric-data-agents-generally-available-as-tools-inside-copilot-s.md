@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-07-db445689
 
 **Why it matters:** This is a practical low-code agent architecture: the orchestrating agent delegates data questions to a governed specialist tool instead of flattening every dataset into its prompt, reducing context bloat and preserving a clearer permission boundary.
 
-**For George’s work:** Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system.
+**Original commentary:** Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system.
 
-**Source:** [Microsoft Fabric Community — Fabric Data Agents in Microsoft Copilot Studio (Generally Available)](https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882)
+**Source:** <a href="https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882" data-item-id="dab-story-2026-09-07-db445689" data-edition-date="2026-09-07" data-action="source_clicks">Microsoft Fabric Community — Fabric Data Agents in Microsoft Copilot Studio (Generally Available)</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-db445689">
   <span class="feedback-prompt">Was this useful?</span>

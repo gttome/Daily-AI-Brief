@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-31-5f4981c9
 
 **Why it matters:** Accessible agents need findability as much as creation. When a recurring workflow publishes the wrong result, the operator must quickly locate both the procedure and the exact run that produced it. Search improves that control surface, although it does not itself validate outputs or resolve errors; naming standards, retained run data and human review still matter.
 
-**For George’s work:** Treat “find the procedure, find the run, inspect the evidence” as a basic operating skill for non-technical agent owners—and include a run-naming and review convention in workshop templates.
+**Original commentary:** Treat “find the procedure, find the run, inspect the evidence” as a basic operating skill for non-technical agent owners—and include a run-naming and review convention in workshop templates.
 
-**Source:** [Make — 2026 release notes](https://help.make.com/2026)
+**Source:** <a href="https://help.make.com/2026" data-item-id="dab-story-2026-08-31-5f4981c9" data-edition-date="2026-08-31" data-action="source_clicks">Make — 2026 release notes</a>
 
 ---
 

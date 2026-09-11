@@ -58,3 +58,11 @@ Adaptation is deliberate. Popularity alone does not determine coverage, and chan
 Browse earlier editions to follow developments over time. Use an item’s share button to send it to someone who might find it useful.
 
 [Read Today’s Brief]({{ '/' | relative_url }}) · [Browse the Archive]({{ '/briefs-archive/' | relative_url }})
+
+## Reader feedback and subscriptions
+
+Usefulness ratings and optional comments are sent privately to the editor. Rating controls do not ask for a name or email. Comments are limited to 1,000 characters and retained for 90 days; please avoid personal or confidential information. Shared links do not carry the sender’s rating.
+
+Click counts describe link activations, not unique readers. Detailed click and rating aggregates remain private. Event-day counting began with the September 11, 2026 update; earlier lifetime counters cannot reconstruct activity on a particular day.
+
+Email subscriptions are not active until a sender is configured. The planned service stores your email in a private database, confirms your subscription, sends one homepage link after successful publication, and supports unsubscribe without a login. The prepared delivery integration uses Resend; activation requires verified sender setup. No tracking pixels or subscriber-specific editorial links are used. [Resend privacy information](https://resend.com/legal/privacy-policy). You can use the [RSS feed]({{ '/feed.xml' | relative_url }}) now.

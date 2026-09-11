@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-25-ae2e6fb8
 
 **Why it matters:** Knowledge workers often struggle less with whether an integration exists than with choosing one that will remain useful after the initial experiment. Continued use is an imperfect but more meaningful signal than installation alone.
 
-**For George’s work:** This supports a practical plugin-selection rubric for workshops: recurring need → permission fit → source quality → action boundaries → evidence and review → continued value. Popularity should inform discovery, not replace evaluation.
+**Original commentary:** This supports a practical plugin-selection rubric for workshops: recurring need → permission fit → source quality → action boundaries → evidence and review → continued value. Popularity should inform discovery, not replace evaluation.
 
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+**Source:** <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" data-item-id="dab-story-2026-08-25-ae2e6fb8" data-edition-date="2026-08-25" data-action="source_clicks">OpenAI ChatGPT release notes</a>
 
 ---
 

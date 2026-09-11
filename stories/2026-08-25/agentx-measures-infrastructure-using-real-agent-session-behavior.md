@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-25-a653e831
 
 **Why it matters:** Agent infrastructure cannot be evaluated realistically with a single fixed context length. Long-running agents create irregular bursts of model calls, tool waits, subagent work, and repeated context. A benchmark that preserves those trajectories is closer to measuring the actual cost and responsiveness of an agent harness.
 
-**For George’s work:** This offers a valuable evaluation distinction for books and courses: measure not only output quality, but also completed-work latency, context growth, cache reuse, tool-wait time, concurrency, energy, and cost across the full loop.
+**Original commentary:** This offers a valuable evaluation distinction for books and courses: measure not only output quality, but also completed-work latency, context growth, cache reuse, tool-wait time, concurrency, energy, and cost across the full loop.
 
-**Source:** [NVIDIA AgentX and Vera Rubin analysis](https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/)
+**Source:** <a href="https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/" data-item-id="dab-story-2026-08-25-a653e831" data-edition-date="2026-08-25" data-action="source_clicks">NVIDIA AgentX and Vera Rubin analysis</a>
 
 ---
 

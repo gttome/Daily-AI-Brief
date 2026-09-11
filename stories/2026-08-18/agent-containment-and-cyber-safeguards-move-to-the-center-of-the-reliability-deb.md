@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-18-90367aa5
 
 **Why it matters:** This is a concrete shift in reliable-agent engineering. The safety question is moving from “Will the model follow instructions?” to “What is the maximum damage the surrounding system allows even when the model behaves unexpectedly?” For tool-using agents, containment, least privilege, observability, and fail-safe execution are becoming first-class parts of the harness.
 
-**For George’s work:** Reliability material should distinguish **behavioral guardrails** from **environmental containment**. A practical teaching model is: constrain what the agent is asked to do, constrain what it can access, independently monitor what it actually does, and preserve human escalation for consequential actions. This is directly useful for books, workshops, application design guidance, and agent-safety diagrams.
+**Original commentary:** Reliability material should distinguish **behavioral guardrails** from **environmental containment**. A practical teaching model is: constrain what the agent is asked to do, constrain what it can access, independently monitor what it actually does, and preserve human escalation for consequential actions. This is directly useful for books, workshops, application design guidance, and agent-safety diagrams.
 
-**Source:** [ft.com](https://www.ft.com/content/a9947be4-5c0c-47ee-acae-a2aeaf01a0a0)
+**Source:** <a href="https://www.ft.com/content/a9947be4-5c0c-47ee-acae-a2aeaf01a0a0" data-item-id="dab-story-2026-08-18-90367aa5" data-edition-date="2026-08-18" data-action="source_clicks">ft.com</a>
 
 ---
 

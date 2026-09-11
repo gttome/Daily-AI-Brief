@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-09-9558fc40
 
 **Why it matters:** For non-technical users, an AI search layer can reduce the navigation burden across fragmented help systems. It should still be treated as a retrieval aid: confirm consequential account or billing guidance in the cited source and escalate unresolved cases to human support.
 
-**For George’s work:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
+**Original commentary:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
 
-**Source:** [New customer portal help.github.com](https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/)
+**Source:** <a href="https://github.blog/changelog/2026-09-08-new-customer-portal-help-github-com/" data-item-id="dab-story-2026-09-09-9558fc40" data-edition-date="2026-09-09" data-action="source_clicks">New customer portal help.github.com</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-9558fc40">
   <span class="feedback-prompt">Was this useful?</span>

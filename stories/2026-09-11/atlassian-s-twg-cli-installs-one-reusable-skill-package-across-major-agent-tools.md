@@ -26,13 +26,17 @@ story_id: dab-story-2026-09-11-bc8138fb
 
 **Why it matters:** This is a concrete distribution pattern for reusable procedural knowledge: one reviewed package can serve several compatible runtimes without pasting a long prompt each time. Compatibility does not guarantee identical behavior, permissions, or tool access, and Atlassian documents network allowlisting requirements that administrators must assess.
 
-**For George’s work:** Package one recurring book, workshop, or consulting workflow as a small reviewed skill. Keep references modular, test it in two runtimes, compare outputs and permissions, and version the package before sharing it.
+**Original commentary:** Package one recurring book, workshop, or consulting workflow as a small reviewed skill. Keep references modular, test it in two runtimes, compare outputs and permissions, and version the package before sharing it.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Add a portable skill-package example with version, scope, permissions and review ownership. The TWG CLI story distinguishes a reusable method from a one-off prompt. Teaching asset: A diagram and exercise comparing skill instructions across two agent environments.</p>
 
 ## What to do now
 
 **Build one reusable skill:** Package a bounded workflow with concise instructions, modular references, explicit review, and cross-runtime tests.
 
-**Source:** [Agent Skills](https://developer.atlassian.com/cloud/twg-cli/agents/skills/)
+**Source:** <a href="https://developer.atlassian.com/cloud/twg-cli/agents/skills/" data-item-id="dab-story-2026-09-11-bc8138fb" data-edition-date="2026-09-11" data-action="source_clicks">Agent Skills</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-bc8138fb">
   <span class="feedback-prompt">How useful was this?</span>

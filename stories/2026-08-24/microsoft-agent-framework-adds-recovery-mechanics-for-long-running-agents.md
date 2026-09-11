@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-24-f58c2c99
 
 **Why it matters:** The release treats failure recovery, approvals, state restoration, and trace continuity as core harness responsibilities. Those mechanics determine whether an agent can resume safely after interruption instead of repeating work, losing context, or silently diverging.
 
-**For George’s work:** This is a concrete teaching example for distinguishing the model from the harness around it. A useful workshop exercise could deliberately interrupt an agent at a checkpoint and verify that state, approvals, tools, and audit evidence resume correctly.
+**Original commentary:** This is a concrete teaching example for distinguishing the model from the harness around it. A useful workshop exercise could deliberately interrupt an agent at a checkpoint and verify that state, approvals, tools, and audit evidence resume correctly.
 
-**Source:** [Microsoft Agent Framework 1.15.0 release](https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0)
+**Source:** <a href="https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0" data-item-id="dab-story-2026-08-24-f58c2c99" data-edition-date="2026-08-24" data-action="source_clicks">Microsoft Agent Framework 1.15.0 release</a>
 
 ---
 

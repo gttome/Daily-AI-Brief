@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-23-e8deab9a
 
 **Why it matters:** More stored procedures are not automatically better context. Large, overfitted recipes can interfere with new work, while compact procedural components are easier for a harness to retrieve, compose, inspect, and revise.
 
-**For George’s work:** For books and workshops, teach reusable AI procedures at the **subtask** level—such as gather evidence, check dates, challenge a claim, or format citations—then let the workflow compose them. Natural-language skills may also be more accessible and adaptable for non-software developers than executable code bundles.
+**Original commentary:** For books and workshops, teach reusable AI procedures at the **subtask** level—such as gather evidence, check dates, challenge a claim, or format citations—then let the workflow compose them. Natural-language skills may also be more accessible and adaptable for non-software developers than executable code bundles.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.20274)
+**Source:** <a href="https://arxiv.org/abs/2608.20274" data-item-id="dab-story-2026-08-23-e8deab9a" data-edition-date="2026-08-23" data-action="source_clicks">arXiv</a>
 
 ---
 

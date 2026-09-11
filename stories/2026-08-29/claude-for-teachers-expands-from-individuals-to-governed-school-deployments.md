@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-29-74777276
 
 **Why it matters:** The important move is not simply free access. Claude is being packaged with domain context, reusable teaching procedures, privacy terms, and organizational governance—the components that turn generic prompting into a repeatable professional workflow. Anthropic says teacher data is not used for model training and plans a Detroit district evaluation this fall; outcome evidence is therefore still forthcoming.
 
-**For George’s work:** Educator workshops can model the same pattern: ground a task in standards, expose the teacher’s review point, and evaluate whether the output improves practice rather than merely saving time.
+**Original commentary:** Educator workshops can model the same pattern: ground a task in standards, expose the teacher’s review point, and evaluate whether the output improves practice rather than merely saving time.
 
-**Source:** [Anthropic — Claude for Teachers, now available for U.S. K–12 schools and districts](https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts)
+**Source:** <a href="https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts" data-item-id="dab-story-2026-08-29-74777276" data-edition-date="2026-08-29" data-action="source_clicks">Anthropic — Claude for Teachers, now available for U.S. K–12 schools and districts</a>
 
 ---
 

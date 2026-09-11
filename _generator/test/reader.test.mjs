@@ -61,7 +61,7 @@ test('retired feedback route points readers to article-local ratings without dup
   assert.match(page, /separate Daily Reader Feedback form has been retired/);
   assert.match(page, /Open today’s brief and rate its stories/);
   assert.match(page, /permanent shared-story page/);
-  assert.match(page, /Ratings are browser-local and are never included in a shared link/);
+  assert.match(page, /submissions are sent for private aggregation/);
 });
 
 test('permanent story sharing strips query and hash state from the shared URL', () => {

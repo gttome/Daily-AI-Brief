@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-31-f5d21908
 
 **Why it matters:** This shifts executive AI literacy from “Can the model do the task?” to “Can the organization contain and recover from what the system enables?” The letter is a supervisory warning, not an empirical forecast of a specific incident. Its practical value is the operating agenda: map shared providers, test recovery, shorten patch cycles safely and retain accountable human decisions.
 
-**For George’s work:** Build a leadership exercise around a dependency map: which AI, cloud, identity and data providers are shared across critical workflows, and what human-approved fallback works when one becomes unavailable or compromised?
+**Original commentary:** Build a leadership exercise around a dependency map: which AI, cloud, identity and data providers are shared across critical workflows, and what human-approved fallback works when one becomes unavailable or compromised?
 
-**Source:** [Financial Stability Board — August 2026 letter to the G20](https://www.fsb.org/2026/08/fsb-chairs-letter-to-g20-finance-ministers-and-central-bank-governors-august-2026/)
+**Source:** <a href="https://www.fsb.org/2026/08/fsb-chairs-letter-to-g20-finance-ministers-and-central-bank-governors-august-2026/" data-item-id="dab-story-2026-08-31-f5d21908" data-edition-date="2026-08-31" data-action="source_clicks">Financial Stability Board — August 2026 letter to the G20</a>
 
 ---
 

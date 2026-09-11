@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-25-b52263f4
 
 **Why it matters:** A prompt telling an agent to behave safely is not a security control. Reliable systems need restrictions the model cannot rewrite, ignore, or route around.
 
-**For George’s work:** The article strongly supports the principle **Capability does not confer authority**. It can connect the AI Authority Ladder to a concrete technical architecture: the harness guides behavior, while infrastructure enforces the approved authority ceiling.
+**Original commentary:** The article strongly supports the principle **Capability does not confer authority**. It can connect the AI Authority Ladder to a concrete technical architecture: the harness guides behavior, while infrastructure enforces the approved authority ceiling.
 
-**Source:** [NVIDIA: Where Security Fits in an AI Agent Stack](https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/)
+**Source:** <a href="https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/" data-item-id="dab-story-2026-08-25-b52263f4" data-edition-date="2026-08-25" data-action="source_clicks">NVIDIA: Where Security Fits in an AI Agent Stack</a>
 
 ---
 

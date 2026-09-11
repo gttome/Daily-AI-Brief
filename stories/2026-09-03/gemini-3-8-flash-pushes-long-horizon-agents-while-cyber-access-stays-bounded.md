@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-03-9e81e5ce
 
 **Why it matters:** The release reinforces two reliability lessons. First, long-horizon performance depends on orchestration and recursive checking, not model intelligence alone. Second, capability and authority should be separated: the more permissive cyber model is deliberately restricted. Google also notes that harder problems can make 3.8 Flash work longer and consume more tokens, so teams should evaluate total task cost, not token price alone. Vendor benchmark and robustness claims still need workload-specific validation.
 
-**For George’s work:** Use this as a current example of bounded agentic delegation: select models by outcome quality and total execution cost, define tool and domain authority separately from model capability, and test prompt-injection resistance, recovery behavior and escalation before unattended use.
+**Original commentary:** Use this as a current example of bounded agentic delegation: select models by outcome quality and total execution cost, define tool and domain authority separately from model capability, and test prompt-injection resistance, recovery behavior and escalation before unattended use.
 
-**Source:** [Google — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber](https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/)
+**Source:** <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/" data-item-id="dab-story-2026-09-03-9e81e5ce" data-edition-date="2026-09-03" data-action="source_clicks">Google — Introducing Gemini 3.8 Flash and 3.8 Flash Cyber</a>
 
 ---
 

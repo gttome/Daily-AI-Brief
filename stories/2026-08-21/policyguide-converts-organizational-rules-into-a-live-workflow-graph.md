@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-21-92a6e1fe
 
 **Why it matters:** Most runtime guardrails judge one proposed action. PolicyGuide addresses a harder problem: whether the **whole sequence** followed the policy. Its graph makes open requests, completed requirements, and permitted next steps explicit, which is useful for long-running agents and auditable human escalation.
 
-**For George’s work:** This is a direct bridge between graph engineering and reliable Generative AI. Training material can show how policy text becomes nodes, conditions, state transitions, verification gates, and human-review points—turning “follow policy” from a prompt into an inspectable system.
+**Original commentary:** This is a direct bridge between graph engineering and reliable Generative AI. Training material can show how policy text becomes nodes, conditions, state transitions, verification gates, and human-review points—turning “follow policy” from a prompt into an inspectable system.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.19861)
+**Source:** <a href="https://arxiv.org/abs/2608.19861" data-item-id="dab-story-2026-08-21-92a6e1fe" data-edition-date="2026-08-21" data-action="source_clicks">arXiv</a>
 
 ---
 

@@ -26,13 +26,17 @@ story_id: dab-story-2026-09-11-0abd52ec
 
 **Why it matters:** The private draft is a useful human-review boundary inside a familiar collaboration tool, reducing accidental channel publication. It does not verify the answer, and retained conversational context can carry forward errors or sensitive assumptions, so review and context-reset habits remain essential.
 
-**For George’s work:** Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.
+**Original commentary:** Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Generative AI Professional Prompt Engineering Guide</strong> — Proposed update: Add a private-draft-to-approved-share prompt pattern. The Slack workflow puts review before channel publication. Teaching asset: A reusable prompt and checklist for deciding what may be shared.</p>
 
 ## What to do now
 
 **Test private-to-public review:** Pilot one low-risk channel workflow and document when to verify, revise, share, or clear context.
 
-**Source:** [Gemini Enterprise release notes](https://docs.cloud.google.com/gemini/enterprise/docs/release-notes)
+**Source:** <a href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" data-item-id="dab-story-2026-09-11-0abd52ec" data-edition-date="2026-09-11" data-action="source_clicks">Gemini Enterprise release notes</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-0abd52ec">
   <span class="feedback-prompt">How useful was this?</span>

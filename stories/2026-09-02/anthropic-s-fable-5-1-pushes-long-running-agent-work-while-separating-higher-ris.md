@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-02-ad64fbde
 
 **Why it matters:** The release separates raw model capability from deployable authority. Long-running agents need recovery, verification loops, bounded permissions and explicit escalation. Vendor benchmark claims still require independent validation on real workloads.
 
-**For George’s work:** Use this as a case study for “capability does not confer authority”: define what the model can do separately from what the user or organization permits, then require evidence and checkpoints for delegated work.
+**Original commentary:** Use this as a case study for “capability does not confer authority”: define what the model can do separately from what the user or organization permits, then require evidence and checkpoints for delegated work.
 
-**Source:** [Anthropic — Claude Fable 5.1](https://www.anthropic.com/claude/fable)
+**Source:** <a href="https://www.anthropic.com/claude/fable" data-item-id="dab-story-2026-09-02-ad64fbde" data-edition-date="2026-09-02" data-action="source_clicks">Anthropic — Claude Fable 5.1</a>
 
 ---
 

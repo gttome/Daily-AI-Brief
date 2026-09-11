@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-05-9c2ab12f
 
 **Why it matters:** The agent market is moving from isolated assistants toward integrated operating environments that combine context, action, collaboration, analytics, identity, and governance. For non-technical users, packaging can lower organizational friction and make agents feel like part of normal CRM and service work. Vendor packaging claims do not by themselves establish ROI, and enterprises still need explicit permissions, process redesign, evaluation, and accountability before increasing agent authority.
 
-**For George’s work:** This is a strong example of agents becoming an enterprise capability rather than a standalone tool. Use it to explain why successful adoption depends on the surrounding system—data, roles, collaboration, analytics, review, and governance—not only the model that generates the next action.
+**Original commentary:** This is a strong example of agents becoming an enterprise capability rather than a standalone tool. Use it to explain why successful adoption depends on the surrounding system—data, roles, collaboration, analytics, review, and governance—not only the model that generates the next action.
 
-**Source:** [Salesforce — New Salesforce Editions Bundle Everything Businesses Need for Agentic Transformation](https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/)
+**Source:** <a href="https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/" data-item-id="dab-story-2026-09-05-9c2ab12f" data-edition-date="2026-09-05" data-action="source_clicks">Salesforce — New Salesforce Editions Bundle Everything Businesses Need for Agentic Transformation</a>
 
 ---
 

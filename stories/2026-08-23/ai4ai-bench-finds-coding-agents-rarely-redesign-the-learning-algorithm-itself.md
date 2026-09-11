@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-23-b2a17ab9
 
 **Why it matters:** Longer agent loops and more compute can increase willingness to attempt a deeper change, but they do not guarantee a good one. The benchmark also makes the harness visible: frozen repositories, bounded compute, clean reruns, and hidden evaluators are part of the evidence—not implementation details.
 
-**For George’s work:** This is a strong case study for separating **activity from verified improvement**. A useful teaching loop is: propose a change → rebuild from a clean state → run a hidden acceptance test → compare against a fixed baseline → preserve the full evidence trail.
+**Original commentary:** This is a strong case study for separating **activity from verified improvement**. A useful teaching loop is: propose a change → rebuild from a clean state → run a hidden acceptance test → compare against a fixed baseline → preserve the full evidence trail.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.20318)
+**Source:** <a href="https://arxiv.org/abs/2608.20318" data-item-id="dab-story-2026-08-23-b2a17ab9" data-edition-date="2026-08-23" data-action="source_clicks">arXiv</a>
 
 ---
 

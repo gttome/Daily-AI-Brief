@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-30-4faf2d80
 
 **Why it matters:** Knowledge-work reliability includes tool continuity and record retention, not just answer quality. Users who depend on a research feature need an export plan, a replacement procedure, and clarity about which account owns each source and artifact. Microsoft says most data migrates, but retired features are handled differently and some functionality may be temporarily unavailable during rollout.
 
-**For George’s work:** This is a practical lesson for books and workshops: design research workflows around portable sources, files, citations, and review checklists rather than around one product mode that may disappear.
+**Original commentary:** This is a practical lesson for books and workshops: design research workflows around portable sources, files, citations, and review checklists rather than around one product mode that may disappear.
 
-**Source:** [Microsoft Support — Updates to Copilot and the Microsoft Copilot app](https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app)
+**Source:** <a href="https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app" data-item-id="dab-story-2026-08-30-4faf2d80" data-edition-date="2026-08-30" data-action="source_clicks">Microsoft Support — Updates to Copilot and the Microsoft Copilot app</a>
 
 ---
 

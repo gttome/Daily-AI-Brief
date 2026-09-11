@@ -256,6 +256,37 @@
                   }
                 }
               }
+            },
+            "series_implications": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "book_title",
+                  "proposed_change",
+                  "evidence_reason",
+                  "teaching_asset"
+                ],
+                "properties": {
+                  "book_title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "proposed_change": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence_reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "teaching_asset": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
             }
           }
         },
@@ -615,6 +646,37 @@
               "format": "uri"
             }
           }
+        },
+        "series_implications": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "book_title",
+              "proposed_change",
+              "evidence_reason",
+              "teaching_asset"
+            ],
+            "properties": {
+              "book_title": {
+                "type": "string",
+                "minLength": 1
+              },
+              "proposed_change": {
+                "type": "string",
+                "minLength": 1
+              },
+              "evidence_reason": {
+                "type": "string",
+                "minLength": 1
+              },
+              "teaching_asset": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
         }
       }
     },
@@ -682,6 +744,53 @@
             "url": {
               "type": "string",
               "format": "uri"
+            },
+            "duration_tier": {
+              "enum": [
+                "short",
+                "fallback"
+              ]
+            },
+            "fallback_reason": {
+              "type": "string"
+            },
+            "short_search_evidence": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1
+            },
+            "series_implications": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "book_title",
+                  "proposed_change",
+                  "evidence_reason",
+                  "teaching_asset"
+                ],
+                "properties": {
+                  "book_title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "proposed_change": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "evidence_reason": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "teaching_asset": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              }
             }
           }
         }

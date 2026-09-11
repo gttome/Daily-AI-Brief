@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-24-4c295f61
 
 **Why it matters:** Context engineering for everyday work is increasingly a boundary-management problem. Authors, educators, consultants, and analysts can keep a book, course, client, or research stream internally coherent without allowing unrelated conversations to influence the work.
 
-**For George’s work:** This is a useful no-code pattern for separating each book, course, workshop, or application into its own governed context space, with explicit rules for what information may enter or leave.
+**Original commentary:** This is a useful no-code pattern for separating each book, course, workshop, or application into its own governed context space, with explicit rules for what information may enter or leave.
 
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+**Source:** <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" data-item-id="dab-story-2026-08-24-4c295f61" data-edition-date="2026-08-24" data-action="source_clicks">OpenAI ChatGPT release notes</a>
 
 ---
 

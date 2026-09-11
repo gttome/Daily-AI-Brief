@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-29-363c6a4d
 
 **Why it matters:** This is harness engineering arriving in the IDE as explicit controls. Teams can match reasoning spend to task difficulty, distribute specialized procedures as named agents, and insert review before code leaves the workstation. The Git-agent pass is useful, but it remains a second machine review—not evidence that tests, security checks, or human review can be removed.
 
-**For George’s work:** A workshop can turn these controls into a concrete “delegate → inspect → test → review” loop, showing why agent quality depends on the surrounding process as much as the model.
+**Original commentary:** A workshop can turn these controls into a concrete “delegate → inspect → test → review” loop, showing why agent quality depends on the surrounding process as much as the model.
 
-**Source:** [GitHub Copilot in Visual Studio — August update](https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/)
+**Source:** <a href="https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/" data-item-id="dab-story-2026-08-29-363c6a4d" data-edition-date="2026-08-29" data-action="source_clicks">GitHub Copilot in Visual Studio — August update</a>
 
 ---
 

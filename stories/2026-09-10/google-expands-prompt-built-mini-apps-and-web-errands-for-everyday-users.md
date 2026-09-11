@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-10-f150d386
 
 **Why it matters:** These features lower the implementation barrier for agent-like work. Non-technical users increasingly define the outcome in natural language while the product handles orchestration across documents, spreadsheets, browsing, and media behind the interface.
 
-**For George’s work:** Use this as an accessible example of the shift from chat to delegated work. It is especially useful for showing knowledge workers that agentic AI can be introduced through familiar productivity surfaces without requiring them to build software.
+**Original commentary:** Use this as an accessible example of the shift from chat to delegated work. It is especially useful for showing knowledge workers that agentic AI can be introduced through familiar productivity surfaces without requiring them to build software.
 
-**Source:** [Tackle your to-do list with new features in our Google AI plans](https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/)
+**Source:** <a href="https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/" data-item-id="dab-story-2026-09-10-f150d386" data-edition-date="2026-09-10" data-action="source_clicks">Tackle your to-do list with new features in our Google AI plans</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-f150d386">
   <span class="feedback-prompt">How useful was this?</span>

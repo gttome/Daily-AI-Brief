@@ -160,6 +160,30 @@
       "summary": "Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, and Rovo Dev, with a compatibility copy for Claude tooling. The package separates an operating contract, product semantics, workflow instructions, and references loaded when needed."
     },
     {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-11-computer-use-agents",
+      "brief_date": "2026-09-11",
+      "event_date": "2026-09-10",
+      "headline": "Computer-Use Agents and the Future of the Agentic Internet",
+      "url": "/podcasts/2026-09-11/computer-use-agents/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "computer-use agents",
+        "MCP",
+        "agent harnesses",
+        "human review"
+      ],
+      "companies": [
+        "Practical AI"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Chris Benson and Demetrios Brinkmann discuss computer-use workflows, MCP, and the relationship between models and agent harnesses. Their examples span personal tasks and workplace adoption. Predictions about agent-led commerce are discussion, not established outcomes."
+    },
+    {
       "content_type": "Article",
       "story_id": "dab-story-2026-09-10-3e9c6210",
       "brief_date": "2026-09-10",
@@ -485,6 +509,44 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "GitHub moved its customer portal to help.github.com and combined support, documentation, learning, community, and account resources with Copilot-powered search across them. The portal creates one retrieval surface for self-service questions and support escalation."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-09-general",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-04-22",
+      "headline": "Introducing workspace agents in ChatGPT",
+      "url": "/videos/2026-09-09/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A concise official overview of shared agents that can handle longer-running work across team tools."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-09-agent-skills",
+      "brief_date": "2026-09-09",
+      "event_date": "2026-07-24",
+      "headline": "ChatGPT Projects vs Skills Explained in 2 Minutes",
+      "url": "/videos/2026-09-09/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "AI with Kyle"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context"
+      ],
+      "summary": "A short, plain-language distinction between project context and reusable skills for repeated work."
     },
     {
       "content_type": "Podcast",
@@ -3961,38 +4023,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "The survey *Self-Evolving Coding Agents* synthesizes an emerging class of coding agents that improve future behavior using prior software-development experience. The authors organize the field around what can evolve—frameworks, memory, skills, tools, models, and collaboration structures—and around the feedback signals that drive change, including executable test results, repository context, and prior coding trajectories."
-    },
-    {
-      "content_type": "Video",
-      "story_id": "dab-video-2026-09-09-general",
-      "brief_date": "2026-09-09",
-      "event_date": "2026-09-09",
-      "headline": "Introducing workspace agents in ChatGPT",
-      "url": "https://www.youtube.com/watch?v=yyvVUEPSCu0",
-      "focus": "general_video",
-      "topics": [],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "youtube_video",
-      "availability_status": "public",
-      "summary": "A concise official overview of shared agents that can handle longer-running work across team tools."
-    },
-    {
-      "content_type": "Video",
-      "story_id": "dab-video-2026-09-09-agent-skills",
-      "brief_date": "2026-09-09",
-      "event_date": "2026-09-09",
-      "headline": "ChatGPT Projects vs Skills Explained in 2 Minutes",
-      "url": "https://www.youtube.com/watch?v=GRWChm0sYHE",
-      "focus": "agent_skills_video",
-      "topics": [],
-      "companies": [
-        "AI with Kyle"
-      ],
-      "evidence_type": "youtube_video",
-      "availability_status": "public",
-      "summary": "A short, plain-language distinction between project context and reusable skills for repeated work."
     }
   ]
 }

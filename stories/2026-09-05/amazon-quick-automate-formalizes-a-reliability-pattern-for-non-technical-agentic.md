@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-05-d26b77c9
 
 **Why it matters:** This is a useful mainstream pattern for moving agentic automation beyond demos. The key design idea is that reliable automation is hybrid: agents handle ambiguous inputs and contextual judgment, while fixed rules handle calculations, thresholds, routing, and situations where improvisation is undesirable. That combination makes business automation easier to test, explain, govern, and maintain.
 
-**For George’s work:** This maps almost directly to Bounded Agentic Delegation and the AI Authority Ladder. Use an invoice or onboarding example to show when to let an agent interpret, when to force a deterministic step, where to add human approval, and how to evaluate the workflow after deployment.
+**Original commentary:** This maps almost directly to Bounded Agentic Delegation and the AI Authority Ladder. Use an invoice or onboarding example to show when to let an agent interpret, when to force a deterministic step, where to add human approval, and how to evaluate the workflow after deployment.
 
-**Source:** [AWS — Best practices for building agentic automations with Amazon Quick Automate](https://aws.amazon.com/blogs/machine-learning/best-practices-for-building-agentic-automations-with-amazon-quick-automate/)
+**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/best-practices-for-building-agentic-automations-with-amazon-quick-automate/" data-item-id="dab-story-2026-09-05-d26b77c9" data-edition-date="2026-09-05" data-action="source_clicks">AWS — Best practices for building agentic automations with Amazon Quick Automate</a>
 
 ---
 

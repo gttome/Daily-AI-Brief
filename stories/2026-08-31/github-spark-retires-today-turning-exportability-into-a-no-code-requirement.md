@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-31-7b2aa975
 
 **Why it matters:** For non-developers, “the app still runs” can conceal a partial failure: the interface survives while the AI dependency disappears. No-code and vibe-coded projects need an exit plan covering source export, data, authentication, model access and operating cost—not merely a download button.
 
-**For George’s work:** Add a portability checklist to courses and application templates: repository ownership, replaceable model calls, documented secrets, exportable content and a tested recovery path.
+**Original commentary:** Add a portability checklist to courses and application templates: repository ownership, replaceable model calls, documented secrets, exportable content and a tested recovery path.
 
-**Source:** [GitHub Changelog — upcoming deprecation of GitHub Spark](https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/)
+**Source:** <a href="https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/" data-item-id="dab-story-2026-08-31-7b2aa975" data-edition-date="2026-08-31" data-action="source_clicks">GitHub Changelog — upcoming deprecation of GitHub Spark</a>
 
 ---
 

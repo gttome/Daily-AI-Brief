@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-27-4ee28ff1
 
 **Why it matters:** The strongest use pattern is not answer generation but an iterative loop: attempt, feedback, clarification, and another attempt. OpenAI also states that AI cannot replace teacher judgment or the work students must do to learn, an important limit when interpreting company-produced usage research.
 
-**For George’s work:** This is directly useful for courses and learning tools. Design activities around retrieval practice, explanation, error diagnosis, and escalating hints—then require the learner or instructor to verify mastery instead of treating a fluent response as proof of learning.
+**Original commentary:** This is directly useful for courses and learning tools. Design activities around retrieval practice, explanation, error diagnosis, and escalating hints—then require the learner or instructor to verify mastery instead of treating a fluent response as proof of learning.
 
-**Source:** [OpenAI report summary](https://openai.com/index/learning-never-stops/)
+**Source:** <a href="https://openai.com/index/learning-never-stops/" data-item-id="dab-story-2026-08-27-4ee28ff1" data-edition-date="2026-08-27" data-action="source_clicks">OpenAI report summary</a>
 
 ---
 

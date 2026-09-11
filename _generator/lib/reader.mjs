@@ -67,6 +67,7 @@ function canonicalStory(story, edition) {
     summary: story.summary,
     why_it_matters: story.why_it_matters,
     george_implication: story.george_implication,
+    series_implications: story.series_implications,
     what_to_do_now: story.what_to_do_now || null,
     social: story.social,
     trends: []
@@ -93,7 +94,13 @@ export function readerStories(repoRoot, edition, days = 30) {
   if (fs.existsSync(canonicalDir)) for (const name of fs.readdirSync(canonicalDir).filter(n => n.endsWith('.json'))) {
     const record = name === `${edition.brief_date}.json` ? edition : JSON.parse(fs.readFileSync(path.join(canonicalDir, name), 'utf8'));
     const age = (Date.parse(edition.brief_date) - Date.parse(record.brief_date)) / 86400000;
-    if (age >= 0 && age < days && record.podcast?.status === 'included') byEditionPosition.set(`${record.brief_date}:9`, podcastStory(record.podcast, record));
+    if (age >= 0 && age < days) {
+      if (record.podcast?.status === 'included') byEditionPosition.set(`${record.brief_date}:9`, podcastStory(record.podcast, record));
+      for (const [key, suffix, ordinal] of [['general','general',7],['agents_non_technical_people','agent-skills',8]]) {
+        const slot=record.worth_watching?.[key];
+        if(slot?.status==='included') byEditionPosition.set(`${record.brief_date}:${ordinal}`,videoStory(slot,record,suffix,ordinal));
+      }
+    }
   }
   if (edition.podcast?.status === 'included') byEditionPosition.set(`${edition.brief_date}:9`, podcastStory(edition.podcast, edition));
   return [...byEditionPosition.values()].sort((a, b) => b.brief_date.localeCompare(a.brief_date) || a.ordinal - b.ordinal);
@@ -129,9 +136,9 @@ ${image ? `![${story.image.alt}](${image})\n\n` : ''}**Summary:** ${story.summar
 
 **Why it matters:** ${story.why_it_matters || 'See the dated edition for the original analysis.'}
 
-**For George’s work:** ${story.george_implication || 'See the dated edition for the original implication.'}${action}
+${renderSeriesImplications(story)}${action}
 
-**Source:** ${source ? `[${story.source_title || story.source_organization || 'Original source'}](${source})` : 'Source retained in the dated edition.'}${feedbackEnabled ? `
+**Source:** ${source ? trackedLink(source,story.source_title || story.source_organization || 'Original source',story.story_id,story.brief_date,'source_clicks') : 'Source retained in the dated edition.'}${feedbackEnabled ? `
 
 ${renderInlineFeedback(story)}` : ''}
 
@@ -152,10 +159,10 @@ brief_date: ${briefDate}
 
 # Reader ratings are built into each daily brief
 
-The separate Daily Reader Feedback form has been retired. Each story has its own four-button rating scale on the homepage, dated daily brief, and permanent shared-story page, so every reader can rate the article from the page they receive. Ratings are browser-local and are never included in a shared link.
+The separate Daily Reader Feedback form has been retired. Rate each item directly on the homepage, dated brief or permanent shared-story page. Editions from September 10, 2026 use five usefulness stars; earlier editions retain their original rating choices. Shared links never include the sender’s selection. This browser remembers your selection, while submissions are sent for private aggregation.
 
 <div class="feedback-notice">
-  <strong>Privacy and editorial control:</strong> The inline controls collect only the brief date, stable story ID, and selected rating. No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One selection per story is retained only in this browser to prevent accidental duplicate votes.
+  <strong>Privacy and editorial control:</strong> The inline controls collect only the brief date, stable story ID, and selected rating. Ratings collect no name, email, cookie, persistent reader identifier or browsing history. Optional comments are sent privately to the editor and retained for 90 days; please avoid personal or confidential information. One selection per story is retained only in this browser to prevent accidental duplicate votes.
 </div>
 
 [Open today’s brief and rate its stories]({{ '/' | relative_url }})
@@ -211,7 +218,7 @@ Search ${stories.length} items across ${editions} recent editions. Existing date
 <p id="archive-result-count" role="status" aria-live="polite">${stories.length} items</p>
 
 <div id="archive-results" class="archive-results">
-${stories.map(story => `<article class="archive-story"><p class="archive-story-meta">${formatDate(story.brief_date)} · ${story.content_type || 'Article'} · ${focusLabels[story.focus] || label(story.focus)}</p><h2><a href="{{ '${story.permanent_url}' | relative_url }}">${xml(story.headline)}</a></h2><p>${xml(story.summary || '')}</p></article>`).join('\n')}
+${stories.map(story => `<article class="archive-story"><p class="archive-story-meta">${formatDate(story.brief_date)} · ${story.content_type || 'Article'} · ${focusLabels[story.focus] || label(story.focus)}</p><h2>${trackedLink(story.permanent_url,story.headline,story.story_id,story.brief_date,'permanent_page_clicks')}</h2><p>${xml(story.summary || '')}</p></article>`).join('\n')}
 </div>
 
 <noscript><p>Search and filters require JavaScript. The complete chronological archive remains listed below.</p></noscript>
@@ -233,7 +240,7 @@ export function renderJsonFeed(stories) {
     description: 'Six AI articles, two videos, and one podcast selected daily for George Tome.',
     items: stories.map(story => ({
       id: story.story_id,
-      url: `${PUBLIC_BASE}${story.permanent_url}`,
+      url: absoluteItemUrl(story.permanent_url),
       title: story.headline,
       summary: story.summary || story.why_it_matters || story.headline,
       image: story.image?.url || undefined,
@@ -254,7 +261,7 @@ export function renderAtomFeed(stories, updatedAt) {
 ${stories.map(story => `  <entry>
     <title>${xml(story.headline)}</title>
     <id>${xml(story.story_id)}</id>
-    <link href="${PUBLIC_BASE}${xml(story.permanent_url)}" />
+    <link href="${xml(absoluteItemUrl(story.permanent_url))}" />
     <updated>${story.brief_date}T18:00:00Z</updated>
     <summary>${xml(story.summary || story.why_it_matters || story.headline)}</summary>
   </entry>`).join('\n')}
@@ -269,20 +276,15 @@ export function readerFoundationFiles(edition, repoRoot) {
   const feedbackDates = new Set(fs.existsSync(editionDir) ? fs.readdirSync(editionDir).filter(name => name.endsWith('.json')).map(name => name.slice(0, -5)) : [edition.brief_date]);
   const files = new Map();
   for (const story of stories) {
-    if (story.content_type === 'Podcast') {
+    if (story.content_type === 'Video') {
+      files.set(`videos/${story.brief_date}/${story.slug}.md`,renderStoryPage(story, true));
+    } else if (story.content_type === 'Podcast') {
       const header = renderStoryPage(story, false).split('---\n\n')[0] + '---\n\n';
       files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + renderPodcast(story.podcast, story.brief_date).replace(/^## Worth Listening — Podcast\n\n### 9\. [^\n]+\n\n/, '') + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);
     } else files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
   }
   files.set('archive.md', renderArchiveSearch(stories));
   const index=archiveIndex(stories);
-  for(const name of fs.readdirSync(editionDir).filter(n=>n.endsWith('.json'))){
-    const record=name===`${edition.brief_date}.json`?edition:JSON.parse(fs.readFileSync(path.join(editionDir,name),'utf8'));
-    for(const [key,role,suffix] of [['general','general_video','general'],['agents_non_technical_people','agent_skills_video','agent-skills']]){
-      const slot=record.worth_watching?.[key];if(slot?.status!=='included')continue;
-      index.stories.push({content_type:'Video',story_id:`dab-video-${record.brief_date}-${suffix}`,brief_date:record.brief_date,event_date:slot.publication_date||record.brief_date,headline:slot.title,url:slot.url,focus:role,topics:[],companies:[slot.channel].filter(Boolean),evidence_type:'youtube_video',availability_status:'public',summary:slot.why_useful||''});
-    }
-  }
   files.set('data/archive-index.json', JSON.stringify(index, null, 2));
   files.set('feed.json', renderJsonFeed(stories));
   files.set('feed.xml', renderAtomFeed(stories, edition.published_at));
@@ -312,7 +314,7 @@ export function podcastStory(slot, edition) {
     companies: [slot.show], normalized_urls: [slot.url], source_title: slot.show,
     source_organization: slot.show, source_url: slot.url, evidence_type: 'practitioner_analysis',
     availability_status: 'not_applicable', summary: slot.summary, why_it_matters: slot.why_useful,
-    george_implication: slot.george_implication, trends: [], podcast: slot
+    george_implication: slot.george_implication, series_implications: slot.series_implications, trends: [], podcast: slot
   };
 }
 
@@ -325,7 +327,7 @@ export function renderPodcast(slot, briefDate) {
 
 <span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
 
-[Open the permanent podcast page]({{ '${slot.permanent_url}' | relative_url }})
+${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,briefDate,'permanent_page_clicks')}
 
 **Show:** ${slot.show}  
 **Host / guest:** ${slot.host}  
@@ -340,13 +342,33 @@ export function renderPodcast(slot, briefDate) {
 
 **Connection to the brief:** ${slot.connection}
 
-**For George’s work:** ${slot.george_implication}
+${renderSeriesImplications(slot)}
 
 **Coverage:** ${slot.coverage_note}
 
 **Evidence:** Practitioner analysis. ${slot.verification_note}
 
-**Listen / watch:** ${slot.platforms.map(p => `[${p.name}](${p.url})`).join(' · ')}
+**Listen / watch:** ${slot.platforms.map(p => trackedLink(p.url,p.name,slot.item_id,briefDate,'source_clicks')).join(' · ')}
 
 ${renderInlineFeedback({brief_date:briefDate,story_id:slot.item_id,feedback_subject:'podcast'})}`;
+}
+
+export const absoluteItemUrl = url => /^https:\/\//.test(url) ? url : `${PUBLIC_BASE}${url}`;
+export function trackedLink(url,title,id,date,action) {
+  const href=/^https:\/\//.test(url)?xml(url):`{{ '${url}' | relative_url }}`;
+  return `<a href="${href}" data-item-id="${xml(id)}" data-edition-date="${xml(date)}" data-action="${action}">${xml(title)}</a>`;
+}
+export function renderSeriesImplications(item) {
+  const rows=item.series_implications || [];
+  if(!rows.length)return `**Original commentary:** ${item.george_implication || 'See the dated edition for the original commentary.'}`;
+  const entry=x=>`<p><strong>${xml(x.book_title)}</strong> — Proposed update: ${xml(x.proposed_change)} ${xml(x.evidence_reason)} Teaching asset: ${xml(x.teaching_asset)}</p>`;
+  return `**Original commentary:** ${item.george_implication || ''}\n\n### Evolving the Generative AI Professional Series\n\n${rows.slice(0,2).map(entry).join('\n')}${rows.length>2?`<details><summary>More proposed book updates</summary>${rows.slice(2).map(entry).join('')}</details>`:''}`;
+}
+export function videoStory(slot, edition, suffix, ordinal) {
+ return {story_id:`dab-video-${edition.brief_date}-${suffix}`,edition_id:edition.edition_id,brief_date:edition.brief_date,
+ ordinal,content_type:'Video',feedback_subject:'video',headline:slot.title,slug:suffix,
+ permanent_url:`/videos/${edition.brief_date}/${suffix}/`,event_date:slot.upload_date || edition.brief_date,
+ focus:ordinal===7?'general_video':'agents_non_technical_people',topics:[],companies:[slot.channel],source_url:slot.url,
+ source_title:slot.channel,source_organization:slot.channel,evidence_type:'practitioner_analysis',availability_status:'not_applicable',
+ summary:slot.why_useful,why_it_matters:slot.connection,series_implications:slot.series_implications,trends:[]};
 }

@@ -14,7 +14,7 @@ story_id: dab-podcast-2026-09-10-twiml-tokenomics
 
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-09-10-twiml-tokenomics" data-podcast-title="Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts" data-podcast-url="/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/" hidden></span>
 
-[Open the permanent podcast page]({{ '/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/' | relative_url }})
+<a href="{{ '/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/' | relative_url }}" data-item-id="dab-podcast-2026-09-10-twiml-tokenomics" data-edition-date="2026-09-10" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
 **Show:** The TWIML AI Podcast  
 **Host / guest:** Sam Charrington  
@@ -29,13 +29,13 @@ story_id: dab-podcast-2026-09-10-twiml-tokenomics
 
 **Connection to the brief:** The episode complements today’s Microsoft measurement story by connecting outcome measurement to model economics, token use, and the limits of benchmark-only comparisons.
 
-**For George’s work:** Useful for consulting and training on AI ROI: add token/compute efficiency as a cost dimension alongside task completion, output quality, human review effort, and business outcomes.
+**Original commentary:** Useful for consulting and training on AI ROI: add token/compute efficiency as a cost dimension alongside task completion, output quality, human review effort, and business outcomes.
 
 **Coverage:** Selected in the preferred preceding-48-hour window; no older fallback was required.
 
 **Evidence:** Practitioner analysis. Publisher page and Apple Podcasts confirm episode identity and September 9 release. Apple lists 59m; a podcast directory reports 3,569 seconds, used here as the exact runtime. Podcast duration is not capped.
 
-**Listen / watch:** [TWIML](https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks) · [Apple Podcasts](https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051)
+**Listen / watch:** <a href="https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks" data-item-id="dab-podcast-2026-09-10-twiml-tokenomics" data-edition-date="2026-09-10" data-action="source_clicks">TWIML</a> · <a href="https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051" data-item-id="dab-podcast-2026-09-10-twiml-tokenomics" data-edition-date="2026-09-10" data-action="source_clicks">Apple Podcasts</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-podcast-2026-09-10-twiml-tokenomics">
   <span class="feedback-prompt">How useful was this?</span>

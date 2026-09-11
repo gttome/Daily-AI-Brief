@@ -62,6 +62,11 @@ export function validateEdition(edition) {
     if (!video) errors.push(`worth_watching.${slot} is required`);
     else if (video.status === 'empty') requireText(video.exception, `worth_watching.${slot}.exception`);
     else if (video.status === 'included' && (!Number.isInteger(video.runtime_seconds) || video.runtime_seconds < 1 || video.runtime_seconds > 1200)) errors.push(`worth_watching.${slot}.runtime_seconds must be 1-1200`);
+    else if (video.status==='included' && edition.brief_date>='2026-09-11') {
+      const age=(Date.parse(edition.brief_date)-Date.parse(video.upload_date))/86400000;
+      if(!Number.isFinite(age)||age<0||age>30)errors.push(`worth_watching.${slot} requires a verified upload date within 30 days`);
+      if(video.runtime_seconds>600 && (!video.short_search_evidence?.length || video.duration_tier!=='fallback' || !video.fallback_reason?.trim()))errors.push(`worth_watching.${slot} requires documented short-video search and fallback reason`);
+    }
     else if (!['empty', 'included'].includes(video.status)) errors.push(`worth_watching.${slot}.status is invalid`);
   }
   const podcast = edition.podcast;

@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-17-b7974d43
 
 **Why it matters:** This gives a concrete mechanism for a problem often described more loosely as context rot or context overload. More retrieval is not automatically better. In iterative RAG and search-agent loops, reliability depends on continuously curating the working context rather than simply appending every retrieved artifact to the prompt history.
 
-**For George’s work:** This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.
+**Original commentary:** This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.10743)
+**Source:** <a href="https://arxiv.org/abs/2608.10743" data-item-id="dab-story-2026-08-17-b7974d43" data-edition-date="2026-08-17" data-action="source_clicks">arXiv</a>
 
 ---
 

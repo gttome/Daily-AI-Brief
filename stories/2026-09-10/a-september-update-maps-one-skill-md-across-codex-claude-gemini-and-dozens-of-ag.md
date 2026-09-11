@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-10-331d65bd
 
 **Why it matters:** For knowledge workers, the important idea is portability: a repeatable report, review, research, publishing, or client-delivery method can be documented once as a reusable skill instead of being rebuilt as a long prompt every time. Portability reduces lock-in, but tool permissions and runtime behavior still differ and must be reviewed.
 
-**For George’s work:** Create one plain-language SKILL.md for a recurring knowledge-work outcome, keep tool permissions outside the skill where possible, require a human checkpoint before irreversible actions, and test the same skill in two supported runtimes. Share the skill only after reviewing the full instructions and bundled resources.
+**Original commentary:** Create one plain-language SKILL.md for a recurring knowledge-work outcome, keep tool permissions outside the skill where possible, require a human checkpoint before irreversible actions, and test the same skill in two supported runtimes. Share the skill only after reviewing the full instructions and bundled resources.
 
-**Source:** [The Agent Skills Open Standard: Writing Portable SKILL.md Files That Work Across Codex CLI, Claude Code, and 30+ Tools](https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/)
+**Source:** <a href="https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/" data-item-id="dab-story-2026-09-10-331d65bd" data-edition-date="2026-09-10" data-action="source_clicks">The Agent Skills Open Standard: Writing Portable SKILL.md Files That Work Across Codex CLI, Claude Code, and 30+ Tools</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-331d65bd">
   <span class="feedback-prompt">How useful was this?</span>

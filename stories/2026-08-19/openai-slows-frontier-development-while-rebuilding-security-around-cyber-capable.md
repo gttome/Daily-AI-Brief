@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-19-f2f22489
 
 **Why it matters:** This is unusually concrete evidence that model-development speed can be constrained by the maturity of the surrounding security harness. Sandboxing, network boundaries, continuous testing, monitoring, and rapid shutdown procedures are no longer merely deployment recommendations; they are becoming prerequisites for safely training and evaluating more capable agents.
 
-**For George’s work:** This provides a strong case study for separating **model capability** from **operational permission**. In the Generative AI Engineering Ecosystem, it connects harness engineering, loop monitoring, guardrails, and human escalation. A useful teaching principle is: increased capability should automatically trigger tighter environments, stronger evidence collection, and explicit stop conditions.
+**Original commentary:** This provides a strong case study for separating **model capability** from **operational permission**. In the Generative AI Engineering Ecosystem, it connects harness engineering, loop monitoring, guardrails, and human escalation. A useful teaching principle is: increased capability should automatically trigger tighter environments, stronger evidence collection, and explicit stop conditions.
 
-**Source:** [OpenAI](https://openai.com/index/pacing-model-development-cyber-capabilities/)
+**Source:** <a href="https://openai.com/index/pacing-model-development-cyber-capabilities/" data-item-id="dab-story-2026-08-19-f2f22489" data-edition-date="2026-08-19" data-action="source_clicks">OpenAI</a>
 
 ---
 

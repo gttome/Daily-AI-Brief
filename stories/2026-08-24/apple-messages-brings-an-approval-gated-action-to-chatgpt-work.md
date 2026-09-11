@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-24-fb9e9c08
 
 **Why it matters:** This is a clear example of an agentic workflow available through a mainstream interface: gather context from a communication tool, draft an action, and pause at a consequential boundary for human confirmation. It moves beyond text generation without handing the agent unrestricted authority.
 
-**For George’s work:** This provides a simple pattern for non-technical agent design: define what the agent may read, what it may prepare, and exactly which action must stop for approval. The same pattern applies to email, calendar, document updates, and publication workflows.
+**Original commentary:** This provides a simple pattern for non-technical agent design: define what the agent may read, what it may prepare, and exactly which action must stop for approval. The same pattern applies to email, calendar, document updates, and publication workflows.
 
-**Source:** [OpenAI ChatGPT release notes](https://help.openai.com/en/articles/6825453-chatgpt-release-notes)
+**Source:** <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" data-item-id="dab-story-2026-08-24-fb9e9c08" data-edition-date="2026-08-24" data-action="source_clicks">OpenAI ChatGPT release notes</a>
 
 ---
 

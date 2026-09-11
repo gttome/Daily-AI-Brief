@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-02-b368145c
 
 **Why it matters:** Bringing visual generation closer to Docs, Slides and Drive reduces tool switching for non-technical knowledge workers. Users still need to inspect factual imagery, rendered text, brand use and rights-sensitive material.
 
-**For George’s work:** Apply a repeatable visual-production loop: prompt → generate → inspect → correct → place in context → inspect again on the final page or slide.
+**Original commentary:** Apply a repeatable visual-production loop: prompt → generate → inspect → correct → place in context → inspect again on the final page or slide.
 
-**Source:** [Google — Try Google Pics](https://blog.google/products-and-platforms/products/workspace/google-pics/)
+**Source:** <a href="https://blog.google/products-and-platforms/products/workspace/google-pics/" data-item-id="dab-story-2026-09-02-b368145c" data-edition-date="2026-09-02" data-action="source_clicks">Google — Try Google Pics</a>
 
 ---
 

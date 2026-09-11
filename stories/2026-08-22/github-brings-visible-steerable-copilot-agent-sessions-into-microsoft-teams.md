@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-22-fe121e20
 
 **Why it matters:** Agentic coding is moving out of a private developer session and into shared work conversations. That makes delegation more observable—discussion, assignment, agent investigation, review, and approval—but it also makes identity, permissions, sandboxing, cost controls, and responsibility for final changes more important.
 
-**For George’s work:** This is a strong practical example of **Bounded Agentic Delegation**. The AI can perform substantial work, but capability does not confer authority: permissions determine who may initiate changes, the sandbox constrains execution, and a human-controlled merge gate can remain in place.
+**Original commentary:** This is a strong practical example of **Bounded Agentic Delegation**. The AI can perform substantial work, but capability does not confer authority: permissions determine who may initiate changes, the sandbox constrains execution, and a human-controlled merge gate can remain in place.
 
-**Source:** [GitHub](https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/)
+**Source:** <a href="https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/" data-item-id="dab-story-2026-08-22-fe121e20" data-edition-date="2026-08-22" data-action="source_clicks">GitHub</a>
 
 ---
 

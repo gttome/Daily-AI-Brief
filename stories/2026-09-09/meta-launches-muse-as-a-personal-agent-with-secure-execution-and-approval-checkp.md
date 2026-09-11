@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-09-6013a2a8
 
 **Why it matters:** Muse brings broad, action-taking agents closer to ordinary consumers, making permissions, prompt-injection defenses, and confirmation design practical adoption issues. Security and reliability claims are vendor-provided at launch; users should begin with reversible, low-consequence tasks and narrow access.
 
-**For George’s work:** Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history.
+**Original commentary:** Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history.
 
-**Source:** [Introducing Muse: The World’s First Personal AI Agent Built for Everyone](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/)
+**Source:** <a href="https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/" data-item-id="dab-story-2026-09-09-6013a2a8" data-edition-date="2026-09-09" data-action="source_clicks">Introducing Muse: The World’s First Personal AI Agent Built for Everyone</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-6013a2a8">
   <span class="feedback-prompt">Was this useful?</span>

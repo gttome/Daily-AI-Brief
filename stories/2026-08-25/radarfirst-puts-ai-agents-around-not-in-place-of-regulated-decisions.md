@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-25-a2eb5c74
 
 **Why it matters:** This is a substantive example of agentic work for legal, privacy, risk, and compliance professionals rather than software engineers. The system delegates preparation and coordination while keeping consequential interpretation and decision authority with qualified people.
 
-**For George’s work:** RadarFirst maps cleanly to Bounded Agentic Delegation: the agent prepares, identifies gaps, and recommends; deterministic controls structure the case; a human decides. It is a strong case study for **Prepare** and **Recommend** on the AI Authority Ladder.
+**Original commentary:** RadarFirst maps cleanly to Bounded Agentic Delegation: the agent prepares, identifies gaps, and recommends; deterministic controls structure the case; a human decides. It is a strong case study for **Prepare** and **Recommend** on the AI Authority Ladder.
 
-**Source:** [RadarFirst Agentic Layer announcement](https://www.radarfirst.com/news/radarfirst-agentic-layer-privacy-ai-compliance/)
+**Source:** <a href="https://www.radarfirst.com/news/radarfirst-agentic-layer-privacy-ai-compliance/" data-item-id="dab-story-2026-08-25-a2eb5c74" data-edition-date="2026-08-25" data-action="source_clicks">RadarFirst Agentic Layer announcement</a>
 
 ---
 

@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-21-2e9487fe
 
 **Why it matters:** Iterative agents and self-improving systems are especially vulnerable to mistaking stochastic variation for learning. A trustworthy loop needs a measured null, repeated baselines, held-out evaluation, and controls that experience the same pipeline—not just a higher average score after another round.
 
-**For George’s work:** This supports a powerful workshop exercise: run an unchanged baseline through the same generation, batching, scoring, and reporting loop as the “improved” system. If the control also appears to learn, the evaluation is measuring the harness—not the improvement.
+**Original commentary:** This supports a powerful workshop exercise: run an unchanged baseline through the same generation, batching, scoring, and reporting loop as the “improved” system. If the control also appears to learn, the evaluation is measuring the harness—not the improvement.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.20290)
+**Source:** <a href="https://arxiv.org/abs/2608.20290" data-item-id="dab-story-2026-08-21-2e9487fe" data-edition-date="2026-08-21" data-action="source_clicks">arXiv</a>
 
 ---
 

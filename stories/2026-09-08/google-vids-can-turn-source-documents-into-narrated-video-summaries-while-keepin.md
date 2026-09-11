@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-08-47284df4
 
 **Why it matters:** The feature lowers the effort required to repurpose reports and training documents into multimedia. Generated narration and visuals can omit qualifications or overstate source content, so factual and accessibility review remain necessary before publishing.
 
-**For George’s work:** Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse.
+**Original commentary:** Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse.
 
-**Source:** [Turn Google Docs, PDFs, and Word files into video summaries in Google Vids](https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html)
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/09/turn-google-docs-pdfs-and-word-files-into-video-summaries-in-Google-Vids.html" data-item-id="dab-story-2026-09-08-47284df4" data-edition-date="2026-09-08" data-action="source_clicks">Turn Google Docs, PDFs, and Word files into video summaries in Google Vids</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-47284df4">
   <span class="feedback-prompt">Was this useful?</span>

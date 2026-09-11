@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-09-be5f728f
 
 **Why it matters:** Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.
 
-**For George’s work:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
+**Original commentary:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
 
-**Source:** [Skills CLI 1.0: Bundle and distribute AI agent skills for your packages](https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages)
+**Source:** <a href="https://dart.dev/blog/skills-cli-1-0-bundle-and-distribute-ai-agent-skills-for-your-packages" data-item-id="dab-story-2026-09-09-be5f728f" data-edition-date="2026-09-09" data-action="source_clicks">Skills CLI 1.0: Bundle and distribute AI agent skills for your packages</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-be5f728f">
   <span class="feedback-prompt">Was this useful?</span>

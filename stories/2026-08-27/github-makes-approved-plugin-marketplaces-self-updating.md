@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-27-5e4d5095
 
 **Why it matters:** Agent infrastructure is moving from one-off local customization to managed distribution. Automatic updates reduce drift and manual maintenance, but they also make publisher trust, change review, rollback planning, and version compatibility part of the harness-security model.
 
-**For George’s work:** This supports a useful distinction for courses: reusable agent procedures need both a packaging layer and a governance layer. A workshop exercise could define who may publish a skill or plugin, how changes are reviewed, and when automatic adoption is acceptable.
+**Original commentary:** This supports a useful distinction for courses: reusable agent procedures need both a packaging layer and a governance layer. A workshop exercise could define who may publish a skill or plugin, how changes are reviewed, and when automatic adoption is acceptable.
 
-**Source:** [GitHub changelog](https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces/)
+**Source:** <a href="https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces/" data-item-id="dab-story-2026-08-27-5e4d5095" data-edition-date="2026-08-27" data-action="source_clicks">GitHub changelog</a>
 
 ---
 

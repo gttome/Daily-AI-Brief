@@ -168,6 +168,42 @@
           }
         }
       }
+    },
+    "observed_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "edition_id": {
+      "type": "string"
+    },
+    "private_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "reference",
+        "metric_basis",
+        "public_metric_status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "not_collected",
+            "available",
+            "partial",
+            "unavailable"
+          ]
+        },
+        "reference": {
+          "type": "string"
+        },
+        "metric_basis": {
+          "const": "lifetime_observed"
+        },
+        "public_metric_status": {
+          "const": "suppressed"
+        }
+      }
     }
   },
   "$defs": {
@@ -239,6 +275,13 @@
           "minimum": 0
         },
         "feedback_not_useful": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "permanent_page_clicks": {
           "type": [
             "integer",
             "null"

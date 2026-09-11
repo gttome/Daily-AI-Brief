@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-27-67f78ae1
 
 **Why it matters:** Authors, educators, and reviewers should not treat watermark detection as proof of authorship, originality, misconduct, or factual accuracy. It can indicate likely model involvement, but it cannot distinguish fully generated text from heavy editing, identify a user, or reliably detect every transformed passage.
 
-**For George’s work:** Add a provenance lesson to publishing and training materials: disclose material AI assistance when appropriate, preserve source and revision records, verify claims independently, and never use a detector score as the sole basis for a consequential judgment.
+**Original commentary:** Add a provenance lesson to publishing and training materials: disclose material AI assistance when appropriate, preserve source and revision records, verify claims independently, and never use a detector score as the sole basis for a consequential judgment.
 
-**Source:** [Anthropic explainer](https://www.anthropic.com/news/claude-text-watermark)
+**Source:** <a href="https://www.anthropic.com/news/claude-text-watermark" data-item-id="dab-story-2026-08-27-67f78ae1" data-edition-date="2026-08-27" data-action="source_clicks">Anthropic explainer</a>
 
 ---
 

@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-09-05642543
 
 **Why it matters:** Agentic coding tools increasingly operate across files, terminals, and external services. Central policy converts safety from a developer preference into an enforceable organizational boundary. The sandbox controls are in public preview, and the broader release also includes preview features, so teams should validate behavior on their own platforms before relying on it.
 
-**For George’s work:** Use this as a concrete governance example in agent training: define allowed resources centrally, lock high-risk controls, and verify enforcement with diagnostics rather than trusting written instructions alone.
+**Original commentary:** Use this as a concrete governance example in agent training: define allowed resources centrally, lock high-risk controls, and verify enforcement with diagnostics rather than trusting written instructions alone.
 
-**Source:** [Enterprise-managed sandbox in Copilot for JetBrains](https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/)
+**Source:** <a href="https://github.blog/changelog/2026-09-08-enterprise-managed-sandbox-in-copilot-for-jetbrains/" data-item-id="dab-story-2026-09-09-05642543" data-edition-date="2026-09-09" data-action="source_clicks">Enterprise-managed sandbox in Copilot for JetBrains</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-05642543">
   <span class="feedback-prompt">Was this useful?</span>

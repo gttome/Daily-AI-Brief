@@ -26,9 +26,9 @@ story_id: dab-story-2026-08-22-0a66eadf
 
 **Why it matters:** Retrieval systems often optimize for finding a relevant past statement even when that statement is no longer valid. Reliable long-running agents need memory that can represent relationships such as **replaced by**, **depends on**, and **currently active**.
 
-**For George’s work:** This directly strengthens the distinction among session, project, and memory context. A practical rule is: do not merely append a changed decision—mark the prior decision as superseded, record the active replacement, and verify which state the AI used before it acts.
+**Original commentary:** This directly strengthens the distinction among session, project, and memory context. A practical rule is: do not merely append a changed decision—mark the prior decision as superseded, record the active replacement, and verify which state the AI used before it acts.
 
-**Source:** [arXiv](https://arxiv.org/abs/2608.19652)
+**Source:** <a href="https://arxiv.org/abs/2608.19652" data-item-id="dab-story-2026-08-22-0a66eadf" data-edition-date="2026-08-22" data-action="source_clicks">arXiv</a>
 
 ---
 

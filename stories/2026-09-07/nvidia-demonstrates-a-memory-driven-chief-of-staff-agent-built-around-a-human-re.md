@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-07-2b73e189
 
 **Why it matters:** Persistent memory helps turn a chatbot into a reusable work agent, but opaque memory creates governance and correctness risk. A readable memory layer supports inspection, correction, and scoping.
 
-**For George’s work:** Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory.
+**Original commentary:** Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory.
 
-**Source:** [NVIDIA Technical Blog — Building a Memory-Driven Agent with NVIDIA NemoClaw](https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/)
+**Source:** <a href="https://developer.nvidia.com/blog/building-a-memory-driven-agent-with-nvidia-nemoclaw/" data-item-id="dab-story-2026-09-07-2b73e189" data-edition-date="2026-09-07" data-action="source_clicks">NVIDIA Technical Blog — Building a Memory-Driven Agent with NVIDIA NemoClaw</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-2b73e189">
   <span class="feedback-prompt">Was this useful?</span>

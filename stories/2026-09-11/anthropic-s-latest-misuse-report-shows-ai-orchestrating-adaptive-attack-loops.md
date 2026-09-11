@@ -26,13 +26,17 @@ story_id: dab-story-2026-09-11-d957d6c9
 
 **Why it matters:** The practical threat model is a human-agent loop that observes results and rebuilds its next step, not an autonomous system acting alone. The report is vendor-authored and case-based rather than a prevalence estimate, so teams should use it to improve controls without generalizing its examples into population-wide rates.
 
-**For George’s work:** Add adaptive misuse loops to guardrail and agent-governance teaching: monitor the sequence, constrain tools and egress, preserve review evidence, and design containment for repeated attempts rather than filtering one prompt.
+**Original commentary:** Add adaptive misuse loops to guardrail and agent-governance teaching: monitor the sequence, constrain tools and egress, preserve review evidence, and design containment for repeated attempts rather than filtering one prompt.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI</strong> — Proposed update: Add an adaptive-loop misuse case with monitoring, stopping conditions and human escalation. The incident analysis illustrates how repeated tool use changes the risk beyond a single prompt. Teaching asset: A trace-review worksheet that distinguishes observation from inference.</p>
 
 ## What to do now
 
 **Model the adaptive loop:** Update agent risk reviews to cover observation, retry, tool substitution, containment, and escalation.
 
-**Source:** [Threat Intelligence Report: September 2026](https://www.anthropic.com/threat-intelligence-report-september-2026)
+**Source:** <a href="https://www.anthropic.com/threat-intelligence-report-september-2026" data-item-id="dab-story-2026-09-11-d957d6c9" data-edition-date="2026-09-11" data-action="source_clicks">Threat Intelligence Report: September 2026</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-d957d6c9">
   <span class="feedback-prompt">How useful was this?</span>

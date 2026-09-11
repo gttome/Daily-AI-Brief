@@ -104,7 +104,7 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-12 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+13 supporting stories appeared in the latest 7 days and 38 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -114,6 +114,7 @@ Supporting stories:
 - [September 10, 2026]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/dart-s-skills-cli-1-0-makes-agent-instructions-portable-with-software-packages/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
+- [September 9, 2026]({{ '/videos/2026-09-09/agent-skills/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-pla/' | relative_url }})
 - [September 7, 2026]({{ '/stories/2026-09-07/gpt-6-astra-launches-with-stronger-computer-use-and-professional-work-performanc/' | relative_url }})
 - [September 7, 2026]({{ '/stories/2026-09-07/nvidia-demonstrates-a-memory-driven-chief-of-staff-agent-built-around-a-human-re/' | relative_url }})
@@ -248,9 +249,9 @@ Supporting stories:
 
 ## Accessible agents for knowledge work
 
-**STABLE · high confidence**
+**ACCELERATING · high confidence**
 
-40 supporting stories appeared in the latest 7 days and 89 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+42 supporting stories appeared in the latest 7 days and 89 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -260,6 +261,7 @@ Supporting stories:
 - [September 11, 2026]({{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }})
 - [September 11, 2026]({{ '/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/' | relative_url }})
 - [September 11, 2026]({{ '/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/' | relative_url }})
+- [September 11, 2026]({{ '/podcasts/2026-09-11/computer-use-agents/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/' | relative_url }})
 - [September 10, 2026]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides/' | relative_url }})
@@ -271,6 +273,7 @@ Supporting stories:
 - [September 9, 2026]({{ '/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-sci/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkp/' | relative_url }})
 - [September 9, 2026]({{ '/stories/2026-09-09/github-unifies-support-resources-behind-copilot-powered-search/' | relative_url }})
+- [September 9, 2026]({{ '/videos/2026-09-09/general/' | relative_url }})
 - [September 9, 2026]({{ '/podcasts/2026-09-09/agentic-loops-for-knowledge-workers/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/' | relative_url }})
 - [September 8, 2026]({{ '/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-in/' | relative_url }})

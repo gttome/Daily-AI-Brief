@@ -19,7 +19,7 @@ brief_date: 2026-09-11
 
 <span class="story-data" data-story-id="dab-story-2026-09-11-8a71a280" data-story-url="/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/' | relative_url }})
+<a href="{{ '/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/' | relative_url }}" data-item-id="dab-story-2026-09-11-8a71a280" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Beta
@@ -30,11 +30,15 @@ brief_date: 2026-09-11
 
 **Why it matters:** This separates agent reliability work from a one-shot model call: context, tools, environments, delegation, evidence, and failure handling become explicit harness components. Public beta still warrants staged evaluation; the announcement describes capabilities, not independent reliability results.
 
-**For George’s work:** Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.
+**Original commentary:** Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Add a layered diagram separating model, harness, tool access and evidence handoff. The reported Agents API makes the harness an explicit part of the workflow. Teaching asset: A failure-injection exercise in which a tool result or context handoff is missing.</p>
 
 **What to do now — Evaluate one bounded workflow:** Test a real multi-step workflow with evidence capture, tool-failure handling, and a human release gate.
 
-**Source:** [Introducing the Agents API](https://openai.com/index/introducing-the-agents-api/)
+**Source:** <a href="https://openai.com/index/introducing-the-agents-api/" data-item-id="dab-story-2026-09-11-8a71a280" data-edition-date="2026-09-11" data-action="source_clicks">Introducing the Agents API</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-8a71a280">
   <span class="feedback-prompt">How useful was this?</span>
@@ -54,7 +58,7 @@ brief_date: 2026-09-11
 
 <span class="story-data" data-story-id="dab-story-2026-09-11-d957d6c9" data-story-url="/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/' | relative_url }})
+<a href="{{ '/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/' | relative_url }}" data-item-id="dab-story-2026-09-11-d957d6c9" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Research
@@ -65,11 +69,15 @@ brief_date: 2026-09-11
 
 **Why it matters:** The practical threat model is a human-agent loop that observes results and rebuilds its next step, not an autonomous system acting alone. The report is vendor-authored and case-based rather than a prevalence estimate, so teams should use it to improve controls without generalizing its examples into population-wide rates.
 
-**For George’s work:** Add adaptive misuse loops to guardrail and agent-governance teaching: monitor the sequence, constrain tools and egress, preserve review evidence, and design containment for repeated attempts rather than filtering one prompt.
+**Original commentary:** Add adaptive misuse loops to guardrail and agent-governance teaching: monitor the sequence, constrain tools and egress, preserve review evidence, and design containment for repeated attempts rather than filtering one prompt.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI</strong> — Proposed update: Add an adaptive-loop misuse case with monitoring, stopping conditions and human escalation. The incident analysis illustrates how repeated tool use changes the risk beyond a single prompt. Teaching asset: A trace-review worksheet that distinguishes observation from inference.</p>
 
 **What to do now — Model the adaptive loop:** Update agent risk reviews to cover observation, retry, tool substitution, containment, and escalation.
 
-**Source:** [Threat Intelligence Report: September 2026](https://www.anthropic.com/threat-intelligence-report-september-2026)
+**Source:** <a href="https://www.anthropic.com/threat-intelligence-report-september-2026" data-item-id="dab-story-2026-09-11-d957d6c9" data-edition-date="2026-09-11" data-action="source_clicks">Threat Intelligence Report: September 2026</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-d957d6c9">
   <span class="feedback-prompt">How useful was this?</span>
@@ -89,7 +97,7 @@ brief_date: 2026-09-11
 
 <span class="story-data" data-story-id="dab-story-2026-09-11-80fe8cea" data-story-url="/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/' | relative_url }})
+<a href="{{ '/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/' | relative_url }}" data-item-id="dab-story-2026-09-11-80fe8cea" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Limited Preview
@@ -100,11 +108,15 @@ brief_date: 2026-09-11
 
 **Why it matters:** The notable pattern is governed synthesis: retrieval quality depends on source entitlements, and conclusions remain connected to citations and review. Availability is limited to eligible institutions, and the product announcement does not independently establish research accuracy or return on investment.
 
-**For George’s work:** Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.
+**Original commentary:** Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Extend the retrieval-governance example to show entitlement checks beside source citations. The financial-research workflow connects grounding with permission boundaries. Teaching asset: A comparison of a cited answer with an unauthorized-source answer.</p>
 
 **What to do now — Teach governed synthesis:** Build a workshop exercise that traces every decision claim through entitlements, retrieval, citation, and human review.
 
-**Source:** [Introducing ChatGPT for Financial Services](https://openai.com/index/introducing-chatgpt-financial-services/)
+**Source:** <a href="https://openai.com/index/introducing-chatgpt-financial-services/" data-item-id="dab-story-2026-09-11-80fe8cea" data-edition-date="2026-09-11" data-action="source_clicks">Introducing ChatGPT for Financial Services</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-80fe8cea">
   <span class="feedback-prompt">How useful was this?</span>
@@ -124,7 +136,7 @@ brief_date: 2026-09-11
 
 <span class="story-data" data-story-id="dab-story-2026-09-11-53dc2a82" data-story-url="/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }})
+<a href="{{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }}" data-item-id="dab-story-2026-09-11-53dc2a82" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
@@ -135,11 +147,15 @@ brief_date: 2026-09-11
 
 **Why it matters:** This reframes vibe coding as a review loop rather than prompt-and-ship. The guidance is instructional, not evidence that every generated change is safe; beginners still need appropriate tests, security review, and judgment about whether the preview proves the intended behavior.
 
-**For George’s work:** Turn this into a practical workshop checklist: inspect the diff, run tests, preview the result, repair failures, and only then accept or open a PR. It is a clear bridge from conversational building to accountable software change.
+**Original commentary:** Turn this into a practical workshop checklist: inspect the diff, run tests, preview the result, repair failures, and only then accept or open a PR. It is a clear bridge from conversational building to accountable software change.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Generative AI Prompt Engineering Learning Ecosystem</strong> — Proposed update: Add a beginner exercise that alternates generation, inspection, tests and preview. The reported Copilot review workflow gives learners concrete checkpoints. Teaching asset: A short screen-based practice activity with acceptance criteria.</p>
 
 **What to do now — Adopt the review loop:** Require diff inspection, executable checks, and a preview before accepting AI-assisted changes.
 
-**Source:** [GitHub Copilot app for beginners: Using the diff, terminal, and browser](https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/)
+**Source:** <a href="https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/" data-item-id="dab-story-2026-09-11-53dc2a82" data-edition-date="2026-09-11" data-action="source_clicks">GitHub Copilot app for beginners: Using the diff, terminal, and browser</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-53dc2a82">
   <span class="feedback-prompt">How useful was this?</span>
@@ -159,7 +175,7 @@ brief_date: 2026-09-11
 
 <span class="story-data" data-story-id="dab-story-2026-09-11-0abd52ec" data-story-url="/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/' | relative_url }})
+<a href="{{ '/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/' | relative_url }}" data-item-id="dab-story-2026-09-11-0abd52ec" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Changelog  
 **Availability:** General Availability
@@ -170,11 +186,15 @@ brief_date: 2026-09-11
 
 **Why it matters:** The private draft is a useful human-review boundary inside a familiar collaboration tool, reducing accidental channel publication. It does not verify the answer, and retained conversational context can carry forward errors or sensitive assumptions, so review and context-reset habits remain essential.
 
-**For George’s work:** Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.
+**Original commentary:** Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Generative AI Professional Prompt Engineering Guide</strong> — Proposed update: Add a private-draft-to-approved-share prompt pattern. The Slack workflow puts review before channel publication. Teaching asset: A reusable prompt and checklist for deciding what may be shared.</p>
 
 **What to do now — Test private-to-public review:** Pilot one low-risk channel workflow and document when to verify, revise, share, or clear context.
 
-**Source:** [Gemini Enterprise release notes](https://docs.cloud.google.com/gemini/enterprise/docs/release-notes)
+**Source:** <a href="https://docs.cloud.google.com/gemini/enterprise/docs/release-notes" data-item-id="dab-story-2026-09-11-0abd52ec" data-edition-date="2026-09-11" data-action="source_clicks">Gemini Enterprise release notes</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-0abd52ec">
   <span class="feedback-prompt">How useful was this?</span>
@@ -194,7 +214,7 @@ brief_date: 2026-09-11
 
 <span class="story-data" data-story-id="dab-story-2026-09-11-bc8138fb" data-story-url="/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/' | relative_url }})
+<a href="{{ '/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/' | relative_url }}" data-item-id="dab-story-2026-09-11-bc8138fb" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Documentation  
 **Availability:** General Availability
@@ -205,11 +225,15 @@ brief_date: 2026-09-11
 
 **Why it matters:** This is a concrete distribution pattern for reusable procedural knowledge: one reviewed package can serve several compatible runtimes without pasting a long prompt each time. Compatibility does not guarantee identical behavior, permissions, or tool access, and Atlassian documents network allowlisting requirements that administrators must assess.
 
-**For George’s work:** Package one recurring book, workshop, or consulting workflow as a small reviewed skill. Keep references modular, test it in two runtimes, compare outputs and permissions, and version the package before sharing it.
+**Original commentary:** Package one recurring book, workshop, or consulting workflow as a small reviewed skill. Keep references modular, test it in two runtimes, compare outputs and permissions, and version the package before sharing it.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Add a portable skill-package example with version, scope, permissions and review ownership. The TWG CLI story distinguishes a reusable method from a one-off prompt. Teaching asset: A diagram and exercise comparing skill instructions across two agent environments.</p>
 
 **What to do now — Build one reusable skill:** Package a bounded workflow with concise instructions, modular references, explicit review, and cross-runtime tests.
 
-**Source:** [Agent Skills](https://developer.atlassian.com/cloud/twg-cli/agents/skills/)
+**Source:** <a href="https://developer.atlassian.com/cloud/twg-cli/agents/skills/" data-item-id="dab-story-2026-09-11-bc8138fb" data-edition-date="2026-09-11" data-action="source_clicks">Agent Skills</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-bc8138fb">
   <span class="feedback-prompt">How useful was this?</span>
@@ -223,16 +247,55 @@ brief_date: 2026-09-11
 
 ### General
 
-No General YouTube item was included. Current searches found topical videos, but the accessible primary evidence did not establish both an exact runtime of 20:00 or less and a sufficiently substantive connection to today’s selected developments; unverified items were rejected.
+No qualifying video could be verified: the broader recovery search checked eight channel catalogs and publisher video links, but current upload dates or exact runtimes were inaccessible. Videos of 10 minutes or less remain preferred; the 20-minute fallback also requires verified metadata.
 
 ### Agents for Non-Technical People
 
-No non-technical agent video was included after checking current Agent Skills and reusable-agent-workflow results. Candidate YouTube pages did not provide independently accessible exact runtime and upload-date evidence, so the slot remains empty rather than relaxing the 20:00 verification limit.
+No qualifying video could be verified: the broader recovery search checked eight channel catalogs and publisher video links, but current upload dates or exact runtimes were inaccessible. Videos of 10 minutes or less remain preferred; the 20-minute fallback also requires verified metadata.
 
 ## Worth Listening — Podcast
 
-**Slot 9:** Podcast slot 9 is empty after checking every registered core source and the designated fallbacks. No new September 10–11 episode with reliable date metadata and a strong connection to today’s brief was verified; the September 9 TWIML episode was already selected for the prior edition and was not repeated.
+### 9. Computer-Use Agents and the Future of the Agentic Internet
+
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-11-computer-use-agents" data-podcast-title="Computer-Use Agents and the Future of the Agentic Internet" data-podcast-url="/podcasts/2026-09-11/computer-use-agents/" hidden></span>
+
+<a href="{{ '/podcasts/2026-09-11/computer-use-agents/' | relative_url }}" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
+**Show:** Practical AI  
+**Host / guest:** Chris Benson; guest Demetrios Brinkmann  
+**Focus:** Agents for Non-Technical People  
+**Date:** September 10, 2026  
+**Duration:** 56:01 · No episode time limit  
+**Topics:** computer-use agents, MCP, agent harnesses, human review
+
+**Summary:** Chris Benson and Demetrios Brinkmann discuss computer-use workflows, MCP, and the relationship between models and agent harnesses. Their examples span personal tasks and workplace adoption. Predictions about agent-led commerce are discussion, not established outcomes.
+
+**Why it matters:** A practical conversation about opportunities and control gaps when agents operate existing software.
+
+**Connection to the brief:** Relevant to the brief’s agent authority, context and human-review themes.
+
+**Original commentary:** Consider a worked example comparing computer use with a structured tool connection.
+
+### Evolving the Generative AI Professional Series
+
+<p><strong>Reliable Generative AI</strong> — Proposed update: Add a comparison of computer-use and structured-tool workflows. The discussion raises practical permission and reliability questions. Teaching asset: A proposed exercise identifying approval and verification checkpoints.</p>
+
+**Coverage:** Added during the September 11 recovery after broader source discovery.
+
+**Evidence:** Practitioner analysis. Publisher page and transcript checked during the September 11 recovery. Date and 56:01 runtime are publisher-reported; anecdotes are not independent reliability evidence.
+
+**Listen / watch:** <a href="https://practicalai.show/371" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="source_clicks">Publisher episode and show notes</a> · <a href="https://practicalai.show/371/transcript" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="source_clicks">Transcript</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-podcast-2026-09-11-computer-use-agents">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
 
 ## Editorial takeaway
 
 The common thread is a maturing control plane around generative AI: programmable harnesses, adaptive-threat defenses, governed retrieval, explicit review loops, private collaboration gates, and reusable skills that remain subject to runtime-specific permissions and verification.
+
+<section class="subscription-card" aria-labelledby="subscribe-title"><h2 id="subscribe-title">Get the Daily AI Brief</h2><p>Get one short email linking to the homepage after each daily brief is published.</p><p id="subscription-availability">Email subscriptions are being prepared.</p><form id="subscription-form" hidden><label for="subscription-email">Email</label> <input id="subscription-email" type="email" autocomplete="email" required maxlength="254"> <button type="submit">Subscribe</button><p>We store your email to send the daily brief link. Unsubscribe anytime.</p></form><p id="subscription-status" role="status"></p><details><summary>Preview the daily email</summary><p>Daily AI Brief — [edition date]</p><p>Today’s Daily AI Brief is ready.</p><p><a href="{{ '/' | relative_url }}">Open the Daily AI Brief</a></p><p>You subscribed to daily notifications. Unsubscribe.</p></details><p><a href="{{ '/feed.xml' | relative_url }}">Prefer RSS?</a> Subscribe through a feed reader to receive individual items.</p></section>

@@ -26,9 +26,9 @@ story_id: dab-story-2026-09-06-adb097bb
 
 **Why it matters:** This is the practical shift from “copy information into a chatbot” toward AI working directly with the systems knowledge workers already use. The value comes from reducing retrieval and handoff friction while preserving provider permissions. Organizations still need clear approval rules for write actions and a way to verify that the model found the correct record or destination before changing anything.
 
-**For George’s work:** These are strong mainstream examples for consulting and training: pre-meeting synthesis from OneNote, post-meeting action capture, and support-ticket analysis in Zendesk. They also illustrate a useful operating rule—read, verify, then write.
+**Original commentary:** These are strong mainstream examples for consulting and training: pre-meeting synthesis from OneNote, post-meeting action capture, and support-ticket analysis in Zendesk. They also illustrate a useful operating rule—read, verify, then write.
 
-**Source:** [OpenAI — ChatGPT Business release notes](https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes)
+**Source:** <a href="https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" data-item-id="dab-story-2026-09-06-adb097bb" data-edition-date="2026-09-06" data-action="source_clicks">OpenAI — ChatGPT Business release notes</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-adb097bb">
   <span class="feedback-prompt">Was this useful?</span>
