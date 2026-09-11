@@ -8,6 +8,10 @@ permalink: /subscribe/
 
 Receive one entry per daily edition in your RSS reader, then choose a date to open its complete archived brief.
 
+## Prefer a calendar reminder?
+
+[Choose your daily reminder time]({{ '/calendar/' | relative_url }}). Start with 9:00 AM in your local time, or choose another time. Includes setup help for iPhone, Android and Windows.
+
 ## Follow in an RSS reader
 
 1. **Choose a feed reader.** Use an RSS reader app to keep your favorite publications together.

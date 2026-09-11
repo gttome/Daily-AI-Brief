@@ -1,0 +1,25 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Daily AI Brief//Reading reminder//EN
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:daily-reading-0900@gttome.github.io
+DTSTAMP:20260911T040000Z
+DTSTART:20260911T090000
+DURATION:PT5M
+RRULE:FREQ=DAILY
+SUMMARY:Read the Daily AI Brief
+DESCRIPTION:A daily reading reminder. Open the latest available brief: htt
+ ps://gttome.github.io/Daily-AI-Brief/ This reminder also appears if public
+ ation is delayed. Edit or delete the series in your calendar to change or 
+ stop it.
+URL:https://gttome.github.io/Daily-AI-Brief/
+TRANSP:TRANSPARENT
+STATUS:CONFIRMED
+BEGIN:VALARM
+TRIGGER:PT0S
+ACTION:DISPLAY
+DESCRIPTION:Read the Daily AI Brief
+END:VALARM
+END:VEVENT
+END:VCALENDAR
