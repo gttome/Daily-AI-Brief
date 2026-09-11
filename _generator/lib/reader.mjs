@@ -37,8 +37,9 @@ export function renderStarFeedback(story) {
   const meanings=['Not useful','Slightly useful','Useful','Very useful','Extremely useful'];
   return `<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="${story.brief_date}" data-feedback-story-id="${story.story_id}">
   <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars">${meanings.map((meaning,i)=>`<button type="button" data-feedback-rating="${i+1}" title="${i+1} — ${meaning}" aria-label="${i+1} star${i?'s':''}: ${meaning}" aria-pressed="false">★</button>`).join('')}</div>
-  <span class="star-definition">1 Not useful · 2 Slightly useful · 3 Useful · 4 Very useful · 5 Extremely useful</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars">${meanings.map((meaning,i)=>`<button type="button" data-feedback-rating="${i+1}" title="${i+1} — ${meaning}" aria-label="${i+1} star${i?'s':''}: ${meaning}" aria-pressed="false">☆</button>`).join('')}</div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol>${meanings.map(meaning=>`<li>${meaning}</li>`).join('')}</ol></details>
   <span class="star-summary" aria-live="polite">Loading ratings…</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>`;

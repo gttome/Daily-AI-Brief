@@ -6,6 +6,7 @@
 
   const endpoint = 'https://daily-ai-brief-ratings.gtome.chatgpt.site/api/ratings';
   const storageKey = storyId => 'dab-feedback:' + storyId;
+  const confirmedKey = storyId => 'dab-feedback-confirmed:' + storyId;
   const syncKey = storyId => 'dab-feedback-sync:' + storyId;
   const read = key => {
     try { return localStorage.getItem(key); } catch (_) { return null; }
@@ -19,10 +20,14 @@
   const storedRating = storyId => read(storageKey(storyId));
 
   const legacyStars={most_useful:'5',useful:'4',neutral:'3',not_useful:'1'};
+  const meanings=['Not useful','Slightly useful','Useful','Very useful','Extremely useful'];
+  const selection = rating => {const star=Number(legacyStars[rating]||rating);return star>=1&&star<=5?`Your rating: ${star}★ · ${meanings[star-1]}`:`Your rating: ${rating}`;};
+  const pendingMessage = "Your rating hasn’t reached us yet. We’ll retry when you reopen this page.";
   const finish = (story, rating, message) => {
     delete story.dataset.feedbackPending;
     story.querySelectorAll('[data-feedback-rating]').forEach(button => {
       button.disabled = true;
+      if(story.dataset.feedbackScale==='stars'){button.textContent=Number(button.dataset.feedbackRating)<=Number(legacyStars[rating]||rating)?'★':'☆';}
       button.setAttribute('aria-pressed', button.dataset.feedbackRating === (story.dataset.feedbackScale==='stars'?(legacyStars[rating]||rating):rating) ? 'true' : 'false');
     });
     story.querySelector('.feedback-status').textContent = message;
@@ -42,25 +47,24 @@
   const synchronize = async (story, briefDate, storyId, rating, quiet = false) => {
     let queued;
     try {queued=JSON.parse(read(syncKey(storyId))||'null');}catch{}
-    if(queued?.createdAt && Date.now()-queued.createdAt>29*86400000){finish(story,rating,'Saved locally; automatic retry window expired.');return;}
+    if(queued?.createdAt && Date.now()-queued.createdAt>29*86400000){finish(story,rating,selection(rating) + ' · Delivery could not be confirmed. Automatic retries have ended.');return;}
     const operationId=queued?.operationId || crypto.randomUUID();
     write(syncKey(storyId),JSON.stringify({briefDate,storyId,rating,operationId,createdAt:queued?.createdAt||Date.now()}));
     try {
       await send(briefDate, storyId, rating, operationId);
+      write(confirmedKey(storyId), 'true');
       remove(syncKey(storyId));
-      finish(story, rating, 'Thank you—your anonymous rating was recorded.');
+      finish(story, rating, '✓ ' + selection(rating) + '\nThank you. Your anonymous rating was recorded.');
       refreshSummary(story);
     } catch (_) {
 
-      finish(story, rating, quiet
-        ? 'Your rating is saved on this device; synchronization is pending.'
-        : 'Rating saved on this device; synchronization pending.');
+      finish(story, rating, selection(rating) + '\n' + pendingMessage);
     }
   };
 
   async function refreshSummary(story){
     const node=story.querySelector('.star-summary')||[...document.querySelectorAll('[data-share-counter-key]')].find(el=>el.dataset.shareCounterKey===story.dataset.feedbackStoryId)?.querySelector('.star-summary');if(!node)return;
-    try{const r=await fetch(endpoint+'?'+new URLSearchParams({brief_date:story.dataset.feedbackBriefDate,item_id:story.dataset.feedbackStoryId}),{credentials:'omit',cache:'no-store'});if(!r.ok)throw Error();const {stars}=await r.json();node.textContent=stars.count?`★ ${stars.average.toFixed(2)} · ${stars.count} rating${stars.count===1?'':'s'}`:'No ratings yet';}catch{node.textContent='Ratings temporarily unavailable';}
+    try{const r=await fetch(endpoint+'?'+new URLSearchParams({brief_date:story.dataset.feedbackBriefDate,item_id:story.dataset.feedbackStoryId}),{credentials:'omit',cache:'no-store'});if(!r.ok)throw Error();const {stars}=await r.json();node.textContent=stars.count?`Reader average: ${stars.average.toFixed(2)}★ · ${stars.count} rating${stars.count===1?'':'s'}`:'No ratings yet';}catch{node.textContent='Ratings temporarily unavailable';}
   }
   groups.forEach(story => {
     const summary=story.querySelector('.star-summary');
@@ -73,8 +77,8 @@
 
     if (prior) {
       finish(story, prior, queued
-        ? 'Your rating is saved on this device; synchronization is pending.'
-        : 'Your rating is saved in this browser.');
+        ? selection(prior) + '\n' + pendingMessage
+        : (read(confirmedKey(storyId)) ? '✓ ' : '') + selection(prior) + (read(confirmedKey(storyId)) ? '\nThank you. Your anonymous rating was recorded.' : ''));
       if (queued) synchronize(story, briefDate, storyId, prior, true);
     }
 
@@ -84,7 +88,7 @@
       const rating = button.dataset.feedbackRating;
       story.dataset.feedbackPending = 'true';
       story.querySelectorAll('[data-feedback-rating]').forEach(item => { item.disabled = true; });
-      story.querySelector('.feedback-status').textContent = 'Saving…';
+      story.querySelector('.feedback-status').textContent = 'Recording your rating…';
 
       if (!write(storageKey(storyId), rating)) {
         delete story.dataset.feedbackPending;
@@ -93,7 +97,7 @@
         return;
       }
 
-      finish(story, rating, 'Rating saved on this device; synchronizing…');
+      finish(story, rating, 'Recording your rating…');
       await synchronize(story, briefDate, storyId, rating);
     });
   });
