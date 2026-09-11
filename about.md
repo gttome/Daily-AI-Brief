@@ -1,0 +1,60 @@
+---
+layout: default
+title: About the Daily AI Brief
+description: Useful AI developments, explained in context.
+permalink: /about/
+---
+
+**Curated by George Tome with AI-assisted research and publishing.**
+
+The Daily AI Brief helps knowledge workers, educators, consultants, and technical practitioners understand what is changing in generative AI and decide what deserves their attention.
+
+Each edition connects selected developments to practical work: building more reliable systems, improving everyday workflows, and using AI agents effectively.
+
+## What you’ll find
+
+The brief covers three areas:
+
+- **AI engineering:** Context and prompt engineering, grounding, evaluation, reliability, and agent design.
+- **AI for knowledge workers:** Practical tools and approaches for research, writing, analysis, and other everyday tasks.
+- **Agents for nontechnical people:** Accessible ways to use, guide, and supervise AI agents.
+
+Selected videos and podcasts provide opportunities to explore further. When a video slot has no qualifying selection, the brief explains why.
+
+## How the brief is prepared
+
+AI assists with research, selection, writing, and publication, guided by George’s editorial priorities.
+
+The editorial process prioritizes authoritative sources, substantive developments, and practical relevance. Items include source links so you can examine the original material and form your own conclusions.
+
+AI-assisted research can make mistakes, and announcements may describe capabilities that are still rolling out. Check the linked source for availability, limitations, and details before relying on a claim.
+
+## Your feedback helps
+
+Use the stars to answer one question: **How useful was this to you?**
+
+| Rating | Meaning |
+|---|---|
+| 5★ | Extremely useful |
+| 4★ | Very useful |
+| 3★ | Useful |
+| 2★ | Slightly useful |
+| 1★ | Not useful |
+
+Rate the item’s usefulness, regardless of whether you agree with it or consider the news positive.
+
+**Feedback is anonymous. No name or email is collected with your rating.** Your selection is remembered in your browser. Other readers see aggregate results, and shared links do not include your personal selection.
+
+## A brief that evolves with its readers
+
+The Daily AI Brief is designed to improve gradually over time. Star ratings, sharing activity, emerging topic trends, and other available quality and engagement measures help reveal what readers find useful, which subjects deserve closer attention, and where coverage could improve.
+
+These signals inform small, considered adjustments to topic emphasis, content selection, and presentation. The aim is to deliver increasingly relevant, practical value while maintaining breadth, source quality, and editorial judgment.
+
+Adaptation is deliberate. Popularity alone does not determine coverage, and changes to automated editorial weighting require sufficient evidence and human approval.
+
+## Explore and share
+
+Browse earlier editions to follow developments over time. Use an item’s share button to send it to someone who might find it useful.
+
+[Read Today’s Brief]({{ '/' | relative_url }}) · [Browse the Archive]({{ '/briefs-archive/' | relative_url }})
