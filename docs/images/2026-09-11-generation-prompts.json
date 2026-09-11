@@ -1,0 +1,99 @@
+{
+  "brief_date": "2026-09-11",
+  "mode": "built_in",
+  "policy": "docs/images/publisher-policy.md",
+  "attempts": [
+    {
+      "ordinal": 1,
+      "story_id": "dab-story-2026-09-11-8a71a280",
+      "accepted": true,
+      "output": "briefs/images/2026-09-11/01-openai-agents-api.png",
+      "composition": "layered harness cutaway",
+      "requirements": [
+        "dominant white background",
+        "professional textbook diagram",
+        "1200x630 final PNG",
+        "story-specific components",
+        "short readable labels",
+        "no photorealism or realistic people"
+      ]
+    },
+    {
+      "ordinal": 2,
+      "story_id": "dab-story-2026-09-11-d957d6c9",
+      "accepted": true,
+      "output": "briefs/images/2026-09-11/02-anthropic-misuse-loops.png",
+      "composition": "paired adaptive loops",
+      "requirements": [
+        "dominant white background",
+        "professional textbook diagram",
+        "1200x630 final PNG",
+        "story-specific components",
+        "short readable labels",
+        "no photorealism or realistic people"
+      ]
+    },
+    {
+      "ordinal": 3,
+      "story_id": "dab-story-2026-09-11-80fe8cea",
+      "accepted": true,
+      "output": "briefs/images/2026-09-11/03-openai-financial-services.png",
+      "composition": "horizontal provenance system",
+      "requirements": [
+        "dominant white background",
+        "professional textbook diagram",
+        "1200x630 final PNG",
+        "story-specific components",
+        "short readable labels",
+        "no photorealism or realistic people"
+      ]
+    },
+    {
+      "ordinal": 4,
+      "story_id": "dab-story-2026-09-11-53dc2a82",
+      "accepted": true,
+      "output": "briefs/images/2026-09-11/04-github-copilot-review-loop.png",
+      "composition": "triangular review loop",
+      "requirements": [
+        "dominant white background",
+        "professional textbook diagram",
+        "1200x630 final PNG",
+        "story-specific components",
+        "short readable labels",
+        "no photorealism or realistic people"
+      ]
+    },
+    {
+      "ordinal": 5,
+      "story_id": "dab-story-2026-09-11-0abd52ec",
+      "accepted": true,
+      "output": "briefs/images/2026-09-11/05-gemini-slack-review.png",
+      "composition": "collaboration thread topology",
+      "requirements": [
+        "dominant white background",
+        "professional textbook diagram",
+        "1200x630 final PNG",
+        "story-specific components",
+        "short readable labels",
+        "no photorealism or realistic people"
+      ]
+    },
+    {
+      "ordinal": 6,
+      "story_id": "dab-story-2026-09-11-bc8138fb",
+      "accepted": true,
+      "output": "briefs/images/2026-09-11/06-atlassian-agent-skills.png",
+      "composition": "exploded reusable package",
+      "requirements": [
+        "dominant white background",
+        "professional textbook diagram",
+        "1200x630 final PNG",
+        "story-specific components",
+        "short readable labels",
+        "no photorealism or realistic people"
+      ]
+    }
+  ],
+  "failed_attempts": [],
+  "note": "Six built-in generations were individually inspected and then reviewed together as a contact sheet; transparent regions were composited onto white during full-canvas downsampling."
+}

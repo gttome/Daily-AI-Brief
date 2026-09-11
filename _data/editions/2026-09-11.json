@@ -1,0 +1,427 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "full_v1",
+  "edition_id": "dab-edition-2026-09-11",
+  "brief_date": "2026-09-11",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 11, 2026",
+  "published_at": "2026-09-11T12:20:00Z",
+  "coverage_period": "Primary-source developments published September 10, 2026.",
+  "status": "published",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-11-8a71a280",
+      "ordinal": 1,
+      "slug": "openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform",
+      "permanent_url": "/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/",
+      "focus": "technical_ai_engineering",
+      "headline": "OpenAI’s Agents API turns the Codex harness into a programmable platform",
+      "event_date": "2026-09-10",
+      "topics": [
+        "agent harnesses",
+        "context compaction",
+        "tool calling",
+        "multi-agent systems"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-11/01-openai-agents-api.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/01-openai-agents-api.png?v=20260911textbook",
+        "alt": "Layered Agents API system view connecting a task, compacted context, tool search, MCP, subagents, deployment environments, evidence and reviewed output.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260911textbook"
+      },
+      "summary": "OpenAI introduced the Agents API in public beta for all developers, exposing the same managed Codex harness used by its coding products. The API supports long-running sessions with context compaction, tool search, programmatic tool calling, MCP and custom tools, multi-agent workflows, intermediate results, and execution in hosted, customer, or partner environments.",
+      "why_it_matters": "This separates agent reliability work from a one-shot model call: context, tools, environments, delegation, evidence, and failure handling become explicit harness components. Public beta still warrants staged evaluation; the announcement describes capabilities, not independent reliability results.",
+      "george_implication": "Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.",
+      "source": {
+        "title": "Introducing the Agents API",
+        "organization": "OpenAI",
+        "url": "https://openai.com/index/introducing-the-agents-api/",
+        "publication_date": "2026-09-10",
+        "evidence_type": "official_announcement",
+        "availability_status": "beta",
+        "normalized_url": "https://openai.com/index/introducing-the-agents-api/"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "Selected after primary-source verification, 30-day identity and concept review, practical-value scoring, and exact 2/2/2 allocation."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Evaluate one bounded workflow",
+        "rationale": "Test a real multi-step workflow with evidence capture, tool-failure handling, and a human release gate."
+      },
+      "social": {
+        "title": "OpenAI’s Agents API turns the Codex harness into a programmable platform",
+        "description": "OpenAI introduced the Agents API in public beta for all developers, exposing the same managed Codex harness used by its coding products. The API supports long-running sessions with context c",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/01-openai-agents-api.png?v=20260911textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-d957d6c9",
+      "ordinal": 2,
+      "slug": "anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops",
+      "permanent_url": "/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/",
+      "focus": "technical_ai_engineering",
+      "headline": "Anthropic’s latest misuse report shows AI orchestrating adaptive attack loops",
+      "event_date": "2026-09-10",
+      "topics": [
+        "threat intelligence",
+        "agentic misuse",
+        "guardrails",
+        "human review"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-11/02-anthropic-misuse-loops.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/02-anthropic-misuse-loops.png?v=20260911textbook",
+        "alt": "Paired threat and defensive-response loops mapping reconnaissance, access, tooling, execution, collection, adaptation and exfiltration against monitoring, containment and review.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260911textbook"
+      },
+      "summary": "Anthropic’s September threat-intelligence report covers cases it disrupted from December 2025 through August 2026 across seven harm areas. It describes AI being used not only for isolated tasks but as an orchestrator across parts of the cyber kill chain, while human operators set targets and reviewed or redirected outputs.",
+      "why_it_matters": "The practical threat model is a human-agent loop that observes results and rebuilds its next step, not an autonomous system acting alone. The report is vendor-authored and case-based rather than a prevalence estimate, so teams should use it to improve controls without generalizing its examples into population-wide rates.",
+      "george_implication": "Add adaptive misuse loops to guardrail and agent-governance teaching: monitor the sequence, constrain tools and egress, preserve review evidence, and design containment for repeated attempts rather than filtering one prompt.",
+      "source": {
+        "title": "Threat Intelligence Report: September 2026",
+        "organization": "Anthropic",
+        "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+        "publication_date": "2026-09-10",
+        "evidence_type": "official_announcement",
+        "availability_status": "research",
+        "normalized_url": "https://www.anthropic.com/threat-intelligence-report-september-2026"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected after primary-source verification, 30-day identity and concept review, practical-value scoring, and exact 2/2/2 allocation."
+      },
+      "what_to_do_now": {
+        "action": "update_policy",
+        "label": "Model the adaptive loop",
+        "rationale": "Update agent risk reviews to cover observation, retry, tool substitution, containment, and escalation."
+      },
+      "social": {
+        "title": "Anthropic’s latest misuse report shows AI orchestrating adaptive attack loops",
+        "description": "Anthropic’s September threat-intelligence report covers cases it disrupted from December 2025 through August 2026 across seven harm areas. It describes AI being used not only for isolated ta",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/02-anthropic-misuse-loops.png?v=20260911textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-80fe8cea",
+      "ordinal": 3,
+      "slug": "chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work",
+      "permanent_url": "/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "ChatGPT for Financial Services builds citations, entitlements, and governance into research work",
+      "event_date": "2026-09-10",
+      "topics": [
+        "financial research",
+        "grounding",
+        "data entitlements",
+        "enterprise governance"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-11/03-openai-financial-services.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/03-openai-financial-services.png?v=20260911textbook",
+        "alt": "Horizontal provenance diagram linking premium, firm and connected data through entitlements and retrieval to financial reasoning, citations, reviewed artifacts and audit controls.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260911textbook"
+      },
+      "summary": "OpenAI introduced ChatGPT for Financial Services, a tailored ChatGPT Work experience for eligible financial institutions. It combines premium datasets including Daloopa, PitchBook, LSEG News, and Crunchbase with firm data and more than 50 connectors, while preserving granular citations, access controls, retention settings, audit exports, and a commitment not to train on business data.",
+      "why_it_matters": "The notable pattern is governed synthesis: retrieval quality depends on source entitlements, and conclusions remain connected to citations and review. Availability is limited to eligible institutions, and the product announcement does not independently establish research accuracy or return on investment.",
+      "george_implication": "Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.",
+      "source": {
+        "title": "Introducing ChatGPT for Financial Services",
+        "organization": "OpenAI",
+        "url": "https://openai.com/index/introducing-chatgpt-financial-services/",
+        "publication_date": "2026-09-10",
+        "evidence_type": "official_announcement",
+        "availability_status": "limited_preview",
+        "normalized_url": "https://openai.com/index/introducing-chatgpt-financial-services/"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "Selected after primary-source verification, 30-day identity and concept review, practical-value scoring, and exact 2/2/2 allocation."
+      },
+      "what_to_do_now": {
+        "action": "teach",
+        "label": "Teach governed synthesis",
+        "rationale": "Build a workshop exercise that traces every decision claim through entitlements, retrieval, citation, and human review."
+      },
+      "social": {
+        "title": "ChatGPT for Financial Services builds citations, entitlements, and governance into research work",
+        "description": "OpenAI introduced ChatGPT for Financial Services, a tailored ChatGPT Work experience for eligible financial institutions. It combines premium datasets including Daloopa, PitchBook, LSEG News",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/03-openai-financial-services.png?v=20260911textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-53dc2a82",
+      "ordinal": 4,
+      "slug": "github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default",
+      "permanent_url": "/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default",
+      "event_date": "2026-09-10",
+      "topics": [
+        "AI-assisted development",
+        "diff review",
+        "testing",
+        "vibe coding"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-11/04-github-copilot-review-loop.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/04-github-copilot-review-loop.png?v=20260911textbook",
+        "alt": "Triangular review loop connecting code diff, terminal tests, browser preview, edit retries, Pick and Polish, and an explicit accept or pull-request gate.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260911textbook"
+      },
+      "summary": "GitHub published a beginner workflow for the Copilot app built around three integrated verification surfaces: a diff for inspecting code changes, a terminal for running commands and tests, and a browser for previewing behavior. Its Pick & Polish flow supports targeted refinements before accepting changes or opening a pull request.",
+      "why_it_matters": "This reframes vibe coding as a review loop rather than prompt-and-ship. The guidance is instructional, not evidence that every generated change is safe; beginners still need appropriate tests, security review, and judgment about whether the preview proves the intended behavior.",
+      "george_implication": "Turn this into a practical workshop checklist: inspect the diff, run tests, preview the result, repair failures, and only then accept or open a PR. It is a clear bridge from conversational building to accountable software change.",
+      "source": {
+        "title": "GitHub Copilot app for beginners: Using the diff, terminal, and browser",
+        "organization": "GitHub",
+        "url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/",
+        "publication_date": "2026-09-10",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "not_applicable",
+        "normalized_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "Selected after primary-source verification, 30-day identity and concept review, practical-value scoring, and exact 2/2/2 allocation."
+      },
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Adopt the review loop",
+        "rationale": "Require diff inspection, executable checks, and a preview before accepting AI-assisted changes."
+      },
+      "social": {
+        "title": "GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default",
+        "description": "GitHub published a beginner workflow for the Copilot app built around three integrated verification surfaces: a diff for inspecting code changes, a terminal for running commands and tests, a",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/04-github-copilot-review-loop.png?v=20260911textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-0abd52ec",
+      "ordinal": 5,
+      "slug": "gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing",
+      "permanent_url": "/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/",
+      "focus": "agents_non_technical_people",
+      "headline": "Gemini Enterprise in Slack adds a private review step before channel sharing",
+      "event_date": "2026-09-10",
+      "topics": [
+        "Slack agents",
+        "private drafting",
+        "multi-turn context",
+        "human review"
+      ],
+      "companies": [
+        "Google",
+        "Slack"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-11/05-gemini-slack-review.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/05-gemini-slack-review.png?v=20260911textbook",
+        "alt": "Conversation-topology diagram showing a channel mention entering a private ask-review-revise capsule before deliberate sharing, plus a separate multi-turn direct-message context loop and authorization prerequisites.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260911textbook"
+      },
+      "summary": "Google made new Gemini Enterprise for Slack interactions generally available: users can mention Gemini in a channel, receive a response privately for review, and deliberately share it back; direct messages can retain multi-turn context. Admins must reinstall the Slack app and users must reauthorize it to enable the update.",
+      "why_it_matters": "The private draft is a useful human-review boundary inside a familiar collaboration tool, reducing accidental channel publication. It does not verify the answer, and retained conversational context can carry forward errors or sensitive assumptions, so review and context-reset habits remain essential.",
+      "george_implication": "Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.",
+      "source": {
+        "title": "Gemini Enterprise release notes",
+        "organization": "Google Cloud",
+        "url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes",
+        "publication_date": "2026-09-10",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability",
+        "normalized_url": "https://docs.cloud.google.com/gemini/enterprise/docs/release-notes"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected after primary-source verification, 30-day identity and concept review, practical-value scoring, and exact 2/2/2 allocation."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test private-to-public review",
+        "rationale": "Pilot one low-risk channel workflow and document when to verify, revise, share, or clear context."
+      },
+      "social": {
+        "title": "Gemini Enterprise in Slack adds a private review step before channel sharing",
+        "description": "Google made new Gemini Enterprise for Slack interactions generally available: users can mention Gemini in a channel, receive a response privately for review, and deliberately share it back; ",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/05-gemini-slack-review.png?v=20260911textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-11-bc8138fb",
+      "ordinal": 6,
+      "slug": "atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools",
+      "permanent_url": "/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
+      "focus": "agents_non_technical_people",
+      "headline": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
+      "event_date": "2026-09-10",
+      "topics": [
+        "Agent Skills",
+        "SKILL.md",
+        "reusable workflows",
+        "cross-agent portability"
+      ],
+      "companies": [
+        "Atlassian",
+        "OpenAI",
+        "Google",
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-11/06-atlassian-agent-skills.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/06-atlassian-agent-skills.png?v=20260911textbook",
+        "alt": "Exploded reusable skill package containing SKILL.md, product semantics, workflows and on-demand references, installed through a universal directory and routed to several compatible agent runtimes with review controls.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260911textbook"
+      },
+      "summary": "Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, and Rovo Dev, with a compatibility copy for Claude tooling. The package separates an operating contract, product semantics, workflow instructions, and references loaded when needed.",
+      "why_it_matters": "This is a concrete distribution pattern for reusable procedural knowledge: one reviewed package can serve several compatible runtimes without pasting a long prompt each time. Compatibility does not guarantee identical behavior, permissions, or tool access, and Atlassian documents network allowlisting requirements that administrators must assess.",
+      "george_implication": "Package one recurring book, workshop, or consulting workflow as a small reviewed skill. Keep references modular, test it in two runtimes, compare outputs and permissions, and version the package before sharing it.",
+      "source": {
+        "title": "Agent Skills",
+        "organization": "Atlassian",
+        "url": "https://developer.atlassian.com/cloud/twg-cli/agents/skills/",
+        "publication_date": "2026-09-10",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability",
+        "normalized_url": "https://developer.atlassian.com/cloud/twg-cli/agents/skills/"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "Selected after primary-source verification, 30-day identity and concept review, practical-value scoring, and exact 2/2/2 allocation."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Build one reusable skill",
+        "rationale": "Package a bounded workflow with concise instructions, modular references, explicit review, and cross-runtime tests."
+      },
+      "social": {
+        "title": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
+        "description": "Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, ",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/06-atlassian-agent-skills.png?v=20260911textbook"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "empty",
+      "exception": "No General YouTube item was included. Current searches found topical videos, but the accessible primary evidence did not establish both an exact runtime of 20:00 or less and a sufficiently substantive connection to today’s selected developments; unverified items were rejected."
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "exception": "No non-technical agent video was included after checking current Agent Skills and reusable-agent-workflow results. Candidate YouTube pages did not provide independently accessible exact runtime and upload-date evidence, so the slot remains empty rather than relaxing the 20:00 verification limit."
+    }
+  },
+  "podcast": {
+    "status": "empty",
+    "exception": "Podcast slot 9 is empty after checking every registered core source and the designated fallbacks. No new September 10–11 episode with reliable date metadata and a strong connection to today’s brief was verified; the September 9 TWIML episode was already selected for the prior edition and was not repeated."
+  },
+  "editorial_takeaway": "The common thread is a maturing control plane around generative AI: programmable harnesses, adaptive-threat defenses, governed retrieval, explicit review loops, private collaboration gates, and reusable skills that remain subject to runtime-specific permissions and verification.",
+  "provenance": {
+    "created_by": "Daily AI Brief automation",
+    "created_at": "2026-09-11T12:20:00Z",
+    "source_commit": "4df75c21bdd0a614db2ceaba9695e9bda4cf9365"
+  }
+}

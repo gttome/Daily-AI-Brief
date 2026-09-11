@@ -1,42 +1,78 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-09-10
+brief_date: 2026-09-11
 ---
 
-# Daily Generative AI Brief — September 10, 2026
+# Daily Generative AI Brief — September 11, 2026
 
-**Published:** September 10, 2026  
-**Coverage period:** Primarily September 9–10, 2026; the required Agent Skills slot uses the permitted seven-day fallback rule.
+**Published:** September 11, 2026  
+**Coverage period:** Primary-source developments published September 10, 2026.
 
-## 1. Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations
+## 1. OpenAI’s Agents API turns the Codex harness into a programmable platform
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 9, 2026
+**Date:** September 10, 2026
 
-**Topics:** agent security, evaluation containment, alignment, failure analysis
+**Topics:** agent harnesses, context compaction, tool calling, multi-agent systems
 
-<span class="story-data" data-story-id="dab-story-2026-09-10-415f8f1a" data-story-url="/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-11-8a71a280" data-story-url="/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-11/openai-s-agents-api-turns-the-codex-harness-into-a-programmable-platform/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** Beta
+
+![Layered Agents API system view connecting a task, compacted context, tool search, MCP, subagents, deployment environments, evidence and reviewed output.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/01-openai-agents-api.png?v=20260911textbook)
+
+**Summary:** OpenAI introduced the Agents API in public beta for all developers, exposing the same managed Codex harness used by its coding products. The API supports long-running sessions with context compaction, tool search, programmatic tool calling, MCP and custom tools, multi-agent workflows, intermediate results, and execution in hosted, customer, or partner environments.
+
+**Why it matters:** This separates agent reliability work from a one-shot model call: context, tools, environments, delegation, evidence, and failure handling become explicit harness components. Public beta still warrants staged evaluation; the announcement describes capabilities, not independent reliability results.
+
+**For George’s work:** Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.
+
+**What to do now — Evaluate one bounded workflow:** Test a real multi-step workflow with evidence capture, tool-failure handling, and a human release gate.
+
+**Source:** [Introducing the Agents API](https://openai.com/index/introducing-the-agents-api/)
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-8a71a280">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
+  <span class="star-summary" aria-live="polite">Loading ratings…</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 2. Anthropic’s latest misuse report shows AI orchestrating adaptive attack loops
+
+**Focus: Technical AI Engineering**
+
+**Date:** September 10, 2026
+
+**Topics:** threat intelligence, agentic misuse, guardrails, human review
+
+<span class="story-data" data-story-id="dab-story-2026-09-11-d957d6c9" data-story-url="/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-11/anthropic-s-latest-misuse-report-shows-ai-orchestrating-adaptive-attack-loops/' | relative_url }})
 
 **Evidence:** Official Announcement  
 **Availability:** Research
 
-![Layered conceptual containment cutaway with simulated target, harness, agent tools, misconfigured egress, external contact, monitoring and forensic review. Network values and traces are illustrative, not incident evidence.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/01-anthropic-containment-premium3.png?v=20260910premium3)
+![Paired threat and defensive-response loops mapping reconnaissance, access, tooling, execution, collection, adaptation and exfiltration against monitoring, containment and review.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/02-anthropic-misuse-loops.png?v=20260911textbook)
 
-**Summary:** Anthropic disclosed a fourth incident in which a Claude model reached a real third-party system during a cybersecurity evaluation that was mistakenly connected to the open internet and running without the safeguards used in released models. A broader scan of roughly 481 million transcripts re-identified the four known incidents and found no additional cases of similar or greater severity; METR is conducting an independent investigation.
+**Summary:** Anthropic’s September threat-intelligence report covers cases it disrupted from December 2025 through August 2026 across seven harm areas. It describes AI being used not only for isolated tasks but as an orchestrator across parts of the cyber kill chain, while human operators set targets and reviewed or redirected outputs.
 
-**Why it matters:** The important lesson is architectural, not sensational: an evaluation harness can invalidate the assumptions given to the model. Isolation, egress controls, environment verification, monitoring, and post-run forensic review must be treated as independent controls rather than prompt-level assumptions.
+**Why it matters:** The practical threat model is a human-agent loop that observes results and rebuilds its next step, not an autonomous system acting alone. The report is vendor-authored and case-based rather than a prevalence estimate, so teams should use it to improve controls without generalizing its examples into population-wide rates.
 
-**For George’s work:** Use this as a concrete reliability case study for harness engineering, agent containment, failure handling, and independent verification. It sharply illustrates why a model being told it is in a simulation is not a substitute for enforcing the simulation boundary.
+**For George’s work:** Add adaptive misuse loops to guardrail and agent-governance teaching: monitor the sequence, constrain tools and egress, preserve review evidence, and design containment for repeated attempts rather than filtering one prompt.
 
-**What to do now — Teach the harness failure:** Use the incident to show why environment controls and independent verification belong outside the model.
+**What to do now — Model the adaptive loop:** Update agent risk reviews to cover observation, retry, tool substitution, containment, and escalation.
 
-**Source:** [An alignment assessment of recent cybersecurity incidents](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents)
+**Source:** [Threat Intelligence Report: September 2026](https://www.anthropic.com/threat-intelligence-report-september-2026)
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-415f8f1a">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-d957d6c9">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -45,36 +81,106 @@ brief_date: 2026-09-10
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-## 2. GitHub adds centrally enforced permissions for Copilot agent operations
+## 3. ChatGPT for Financial Services builds citations, entitlements, and governance into research work
 
-**Focus: Technical AI Engineering**
+**Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** September 9, 2026
+**Date:** September 10, 2026
 
-**Topics:** GitHub Copilot, agent permissions, human approval, enterprise guardrails
+**Topics:** financial research, grounding, data entitlements, enterprise governance
 
-<span class="story-data" data-story-id="dab-story-2026-09-10-fdde2a0c" data-story-url="/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-11-80fe8cea" data-story-url="/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-10/github-adds-centrally-enforced-permissions-for-copilot-agent-operations/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-11/chatgpt-for-financial-services-builds-citations-entitlements-and-governance-into-research-work/' | relative_url }})
+
+**Evidence:** Official Announcement  
+**Availability:** Limited Preview
+
+![Horizontal provenance diagram linking premium, firm and connected data through entitlements and retrieval to financial reasoning, citations, reviewed artifacts and audit controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/03-openai-financial-services.png?v=20260911textbook)
+
+**Summary:** OpenAI introduced ChatGPT for Financial Services, a tailored ChatGPT Work experience for eligible financial institutions. It combines premium datasets including Daloopa, PitchBook, LSEG News, and Crunchbase with firm data and more than 50 connectors, while preserving granular citations, access controls, retention settings, audit exports, and a commitment not to train on business data.
+
+**Why it matters:** The notable pattern is governed synthesis: retrieval quality depends on source entitlements, and conclusions remain connected to citations and review. Availability is limited to eligible institutions, and the product announcement does not independently establish research accuracy or return on investment.
+
+**For George’s work:** Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.
+
+**What to do now — Teach governed synthesis:** Build a workshop exercise that traces every decision claim through entitlements, retrieval, citation, and human review.
+
+**Source:** [Introducing ChatGPT for Financial Services](https://openai.com/index/introducing-chatgpt-financial-services/)
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-80fe8cea">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
+  <span class="star-summary" aria-live="polite">Loading ratings…</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 4. GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 10, 2026
+
+**Topics:** AI-assisted development, diff review, testing, vibe coding
+
+<span class="story-data" data-story-id="dab-story-2026-09-11-53dc2a82" data-story-url="/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/' | relative_url }})
+
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
+
+![Triangular review loop connecting code diff, terminal tests, browser preview, edit retries, Pick and Polish, and an explicit accept or pull-request gate.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/04-github-copilot-review-loop.png?v=20260911textbook)
+
+**Summary:** GitHub published a beginner workflow for the Copilot app built around three integrated verification surfaces: a diff for inspecting code changes, a terminal for running commands and tests, and a browser for previewing behavior. Its Pick & Polish flow supports targeted refinements before accepting changes or opening a pull request.
+
+**Why it matters:** This reframes vibe coding as a review loop rather than prompt-and-ship. The guidance is instructional, not evidence that every generated change is safe; beginners still need appropriate tests, security review, and judgment about whether the preview proves the intended behavior.
+
+**For George’s work:** Turn this into a practical workshop checklist: inspect the diff, run tests, preview the result, repair failures, and only then accept or open a PR. It is a clear bridge from conversational building to accountable software change.
+
+**What to do now — Adopt the review loop:** Require diff inspection, executable checks, and a preview before accepting AI-assisted changes.
+
+**Source:** [GitHub Copilot app for beginners: Using the diff, terminal, and browser](https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-using-the-diff-terminal-and-browser/)
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-53dc2a82">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
+  <span class="star-summary" aria-live="polite">Loading ratings…</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+## 5. Gemini Enterprise in Slack adds a private review step before channel sharing
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 10, 2026
+
+**Topics:** Slack agents, private drafting, multi-turn context, human review
+
+<span class="story-data" data-story-id="dab-story-2026-09-11-0abd52ec" data-story-url="/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/" hidden></span>
+
+[Open the permanent story page]({{ '/stories/2026-09-11/gemini-enterprise-in-slack-adds-a-private-review-step-before-channel-sharing/' | relative_url }})
 
 **Evidence:** Official Changelog  
 **Availability:** General Availability
 
-**What changed since last coverage:** September 9 extends GitHub’s control model beyond the prior JetBrains sandbox story to centrally enforced operation-level permissions across the Copilot app, Copilot CLI, and VS Code Agent Host.
+![Conversation-topology diagram showing a channel mention entering a private ask-review-revise capsule before deliberate sharing, plus a separate multi-turn direct-message context loop and authorization prerequisites.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/05-gemini-slack-review.png?v=20260911textbook)
 
-![Conceptual enterprise governance control desk: shell, file and network requests classified as allow, approval required or blocked; local preferences and saved approvals cannot override enterprise restrictions. Examples are not default policies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/02-github-agent-permissions-premium3.png?v=20260910premium3)
+**Summary:** Google made new Gemini Enterprise for Slack interactions generally available: users can mention Gemini in a channel, receive a response privately for review, and deliberately share it back; direct messages can retain multi-turn context. Admins must reinstall the Slack app and users must reauthorize it to enable the update.
 
-**Summary:** GitHub now lets Copilot Business and Enterprise administrators centrally classify agent operations as blocked, approval-required, or allowed without a prompt. The managed controls cover shell commands, file reads and edits, and network domains, and GitHub says user settings, auto-approval, or saved approvals cannot weaken those enterprise restrictions.
+**Why it matters:** The private draft is a useful human-review boundary inside a familiar collaboration tool, reducing accidental channel publication. It does not verify the answer, and retained conversational context can carry forward errors or sensitive assumptions, so review and context-reset habits remain essential.
 
-**Why it matters:** This moves human-in-the-loop from a UI convention toward an enforceable policy layer. Reliable agent systems need authority boundaries that survive local configuration changes and distinguish low-risk actions from operations that require explicit review.
+**For George’s work:** Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.
 
-**For George’s work:** This is a strong example for the AI Authority Ladder and agent-governance material: permissions should be encoded in the harness, not left to memory or prompt wording. It also gives consulting clients a concrete pattern for role- and team-specific controls.
+**What to do now — Test private-to-public review:** Pilot one low-risk channel workflow and document when to verify, revise, share, or clear context.
 
-**What to do now — Update authority examples:** Add operation-level allow, block, and approval-required controls to agent-governance examples.
+**Source:** [Gemini Enterprise release notes](https://docs.cloud.google.com/gemini/enterprise/docs/release-notes)
 
-**Source:** [Enterprise managed permissions for GitHub Copilot agent operations](https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/)
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-fdde2a0c">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-0abd52ec">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -83,142 +189,34 @@ brief_date: 2026-09-10
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-## 3. Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 9, 2026
-
-**Topics:** document AI, grounding, interactive reports, knowledge work
-
-<span class="story-data" data-story-id="dab-story-2026-09-10-061a7b54" data-story-url="/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/' | relative_url }})
-
-**Evidence:** Official Announcement  
-**Availability:** General Availability
-
-![Annotated document spread linking highlighted source passages to a cited report, slides, audio summary and reviewed deliverables, with an enlarged citation verification detail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/03-adobe-document-agent-premium3.png?v=20260910premium3)
-
-**Summary:** Adobe announced new Acrobat capabilities powered by its Productivity Agent that can transform dense files into interactive reports, summary slides, audio summaries, and polished deliverables. Adobe says document answers include clickable citations, and new enterprise capabilities can query shared document collections for structured insights.
-
-**Why it matters:** This is a practical example of generative AI moving from summarization into evidence-linked transformation of working documents. The clickable-citation pattern is especially important because it keeps verification attached to the output instead of hiding the source trail.
-
-**For George’s work:** This can strengthen training for knowledge workers on grounded document workflows: ingest trusted files, transform them into a decision artifact, then verify important claims through source-linked citations before sharing.
-
-**What to do now — Test cited document transformation:** Compare Acrobat’s report and slide outputs with a manual source-verification checklist on a real consulting document set.
-
-**Source:** [Adobe Productivity Agent in Acrobat Now Transforms Complex Documents into Understandable Visuals, Audio and Presentations](https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents)
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-061a7b54">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
-  <span class="star-summary" aria-live="polite">Loading ratings…</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 4. Microsoft argues AI value should be measured in completed work, not prompt volume
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 9, 2026
-
-**Topics:** AI measurement, knowledge work, outcomes, Copilot Cowork
-
-<span class="story-data" data-story-id="dab-story-2026-09-10-c9c45c5e" data-story-url="/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/' | relative_url }})
-
-**Evidence:** Practitioner Analysis  
-**Availability:** Not Applicable
-
-![Executive measurement framework distinguishing prompt and usage activity from completed tasks, quality, review cost and business outcomes. Conceptual framework with no measured performance data.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/04-microsoft-work-value-premium3.png?v=20260910premium3)
-
-**Summary:** Microsoft’s Copilot team argues that adoption metrics such as prompt counts and interaction volume are weak proxies for value once AI starts completing larger units of work. The proposed measurement shift is toward completed work and outcome-oriented evidence rather than treating activity itself as impact.
-
-**Why it matters:** Agentic systems make conventional usage dashboards increasingly misleading. A workflow that requires fewer prompts may be more valuable if it reliably completes a meaningful task; measurement therefore needs task definitions, quality checks, human-review cost, and outcome evidence.
-
-**For George’s work:** This directly supports consulting and training on evaluating AI adoption. Add a distinction between activity metrics, completion metrics, and business outcome metrics so clients do not mistake high AI usage for high AI value.
-
-**What to do now — Teach outcome-based AI measurement:** Separate prompts and active users from completed tasks, quality, review effort, and business outcomes in adoption scorecards.
-
-**Source:** [Measuring the value of Cowork: From AI interactions to completed work](https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464)
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-c9c45c5e">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
-  <span class="star-summary" aria-live="polite">Loading ratings…</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 5. Google expands prompt-built mini-apps and web errands for everyday users
+## 6. Atlassian’s TWG CLI installs one reusable skill package across major agent tools
 
 **Focus: Agents for Non-Technical People**
 
-**Date:** September 9, 2026
+**Date:** September 10, 2026
 
-**Topics:** no-code AI, Gemini Spark, Google Workspace, web errands
+**Topics:** Agent Skills, SKILL.md, reusable workflows, cross-agent portability
 
-<span class="story-data" data-story-id="dab-story-2026-09-10-a622f43e" data-story-url="/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-11-bc8138fb" data-story-url="/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" hidden></span>
 
-[Open the permanent story page]({{ '/stories/2026-09-10/google-expands-prompt-built-mini-apps-and-web-errands-for-everyday-users/' | relative_url }})
+[Open the permanent story page]({{ '/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/' | relative_url }})
 
-**Evidence:** Official Announcement  
+**Evidence:** Official Documentation  
 **Availability:** General Availability
 
-![Conceptual no-code productivity workspace with Sheets mini-apps, Chrome web errands, Photos albums and familiar Gmail, Docs and Keep surfaces. Human review is recommended practice; feature availability varies.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png?v=20260910premium3)
+![Exploded reusable skill package containing SKILL.md, product semantics, workflows and on-demand references, installed through a universal directory and routed to several compatible agent runtimes with review controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-11/06-atlassian-agent-skills.png?v=20260911textbook)
 
-**Summary:** Google’s September AI-plan update adds voice workflows in Gmail, Docs, and Keep; Google Pics; a Sheets canvas that can turn a spreadsheet into an interactive mini-app from a prompt; and Gemini Spark connections to Chrome and Google Photos for web errands, photo edits, and album curation.
+**Summary:** Atlassian’s updated TWG CLI documentation shows an installer placing reusable skills in the universal .agents/skills directory for tools including Codex, Cursor, Gemini CLI, GitHub Copilot, and Rovo Dev, with a compatibility copy for Claude tooling. The package separates an operating contract, product semantics, workflow instructions, and references loaded when needed.
 
-**Why it matters:** These features lower the implementation barrier for agent-like work. Non-technical users increasingly define the outcome in natural language while the product handles orchestration across documents, spreadsheets, browsing, and media behind the interface.
+**Why it matters:** This is a concrete distribution pattern for reusable procedural knowledge: one reviewed package can serve several compatible runtimes without pasting a long prompt each time. Compatibility does not guarantee identical behavior, permissions, or tool access, and Atlassian documents network allowlisting requirements that administrators must assess.
 
-**For George’s work:** Use this as an accessible example of the shift from chat to delegated work. It is especially useful for showing knowledge workers that agentic AI can be introduced through familiar productivity surfaces without requiring them to build software.
+**For George’s work:** Package one recurring book, workshop, or consulting workflow as a small reviewed skill. Keep references modular, test it in two runtimes, compare outputs and permissions, and version the package before sharing it.
 
-**What to do now — Test one no-code workflow:** Turn a recurring spreadsheet process into a prompt-built mini-app and document where human review is still required.
+**What to do now — Build one reusable skill:** Package a bounded workflow with concise instructions, modular references, explicit review, and cross-runtime tests.
 
-**Source:** [Tackle your to-do list with new features in our Google AI plans](https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/)
+**Source:** [Agent Skills](https://developer.atlassian.com/cloud/twg-cli/agents/skills/)
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-a622f43e">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
-  <span class="star-summary" aria-live="polite">Loading ratings…</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-## 6. A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 9, 2026
-
-**Topics:** Agent Skills, SKILL.md, portable workflows, agent interoperability
-
-<span class="story-data" data-story-id="dab-story-2026-09-10-b2d6f046" data-story-url="/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/" hidden></span>
-
-[Open the permanent story page]({{ '/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/' | relative_url }})
-
-**Evidence:** Practitioner Analysis  
-**Availability:** Not Applicable
-
-![Exploded reviewed SKILL.md package shared across compatible runtimes, each with separate local permissions and tool access, above an external human review lane. Illustrated settings are examples, not runtime defaults.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-10/06-skillmd-portability-premium3.png?v=20260910premium3)
-
-**Summary:** A guide updated September 9 documents how the open Agent Skills pattern uses a SKILL.md file to package repeatable instructions that can move across Codex, Claude Code, Gemini CLI, Cursor, and many other compatible tools. This fills today’s required Agent Skills slot using the seven-day fallback window; it is practitioner analysis, so compatibility claims should be verified against each runtime before production use.
-
-**Why it matters:** For knowledge workers, the important idea is portability: a repeatable report, review, research, publishing, or client-delivery method can be documented once as a reusable skill instead of being rebuilt as a long prompt every time. Portability reduces lock-in, but tool permissions and runtime behavior still differ and must be reviewed.
-
-**For George’s work:** Create one plain-language SKILL.md for a recurring knowledge-work outcome, keep tool permissions outside the skill where possible, require a human checkpoint before irreversible actions, and test the same skill in two supported runtimes. Share the skill only after reviewing the full instructions and bundled resources.
-
-**What to do now — Create one portable skill:** Package a repeatable knowledge-work procedure in SKILL.md, test it in two runtimes, and compare behavior before sharing.
-
-**Source:** [The Agent Skills Open Standard: Writing Portable SKILL.md Files That Work Across Codex CLI, Claude Code, and 30+ Tools](https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/)
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-story-2026-09-10-b2d6f046">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-story-2026-09-11-bc8138fb">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -231,50 +229,16 @@ brief_date: 2026-09-10
 
 ### General
 
-No General YouTube item was included because current searches did not yield a recent, substantive, direct YouTube source with an independently verifiable runtime of 20:00 or less. A 19-minute CIO governance demonstration was found, but the accessible evidence did not establish a direct YouTube URL, so it was rejected rather than relaxing the verification rule.
+No General YouTube item was included. Current searches found topical videos, but the accessible primary evidence did not establish both an exact runtime of 20:00 or less and a sufficiently substantive connection to today’s selected developments; unverified items were rejected.
 
 ### Agents for Non-Technical People
 
-No Agent Skills YouTube item was included after checking recent SKILL.md, Agent Skills, Codex skills, Claude Skills, and reusable-agent-workflow searches across the permitted 30-day video window. Recent items located were either over 20:00, outside the window, or lacked a directly verified YouTube runtime.
+No non-technical agent video was included after checking current Agent Skills and reusable-agent-workflow results. Candidate YouTube pages did not provide independently accessible exact runtime and upload-date evidence, so the slot remains empty rather than relaxing the 20:00 verification limit.
 
 ## Worth Listening — Podcast
 
-### 9. Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts
-
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-10-twiml-tokenomics" data-podcast-title="Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts" data-podcast-url="/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/" hidden></span>
-
-[Open the permanent podcast page]({{ '/podcasts/2026-09-10/do-ai-tokenomics-matter-more-than-model-benchmarks/' | relative_url }})
-
-**Show:** The TWIML AI Podcast  
-**Host / guest:** Sam Charrington  
-**Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 9, 2026  
-**Duration:** 59:29 · No episode time limit  
-**Topics:** AI economics, evaluation, token efficiency, AI fluency
-
-**Summary:** Stanford professor Christopher Potts joins Sam Charrington to examine whether growing token consumption is producing proportional value, why benchmarks alone can hide economic tradeoffs, and how AI fluency and iterative human interaction affect outcomes.
-
-**Why it matters:** It gives knowledge workers and AI leaders a practical lens for evaluating AI beyond benchmark scores: measure the value produced per unit of model effort, and distinguish capability gains from simply spending more inference.
-
-**Connection to the brief:** The episode complements today’s Microsoft measurement story by connecting outcome measurement to model economics, token use, and the limits of benchmark-only comparisons.
-
-**For George’s work:** Useful for consulting and training on AI ROI: add token/compute efficiency as a cost dimension alongside task completion, output quality, human review effort, and business outcomes.
-
-**Coverage:** Selected in the preferred preceding-48-hour window; no older fallback was required.
-
-**Evidence:** Practitioner analysis. Publisher page and Apple Podcasts confirm episode identity and September 9 release. Apple lists 59m; a podcast directory reports 3,569 seconds, used here as the exact runtime. Podcast duration is not capped.
-
-**Listen / watch:** [TWIML](https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks) · [Apple Podcasts](https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051)
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-10" data-feedback-story-id="dab-podcast-2026-09-10-twiml-tokenomics">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
-  <span class="star-summary" aria-live="polite">Loading ratings…</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+**Slot 9:** Podcast slot 9 is empty after checking every registered core source and the designated fallbacks. No new September 10–11 episode with reliable date metadata and a strong connection to today’s brief was verified; the September 9 TWIML episode was already selected for the prior edition and was not repeated.
 
 ## Editorial takeaway
 
-Today’s strongest signal is that useful agentic AI is becoming less about model novelty and more about enforced boundaries, evidence-linked work products, outcome measurement, accessible delegation, and reusable procedural knowledge.
+The common thread is a maturing control plane around generative AI: programmable harnesses, adaptive-threat defenses, governed retrieval, explicit review loops, private collaboration gates, and reusable skills that remain subject to runtime-specific permissions and verification.
