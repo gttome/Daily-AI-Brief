@@ -63,3 +63,6 @@ main#content img {
 .rss-dialog::backdrop{background:rgba(10,30,48,.55)}
 .rss-dialog li{margin-bottom:1rem}.rss-dialog h2{margin-top:0}.rss-address{display:block;box-sizing:border-box;width:100%;padding:.65rem;font:inherit;margin:.5rem 0;color:#17334c;background:#f3f7fa;border:1px solid #b7cad6}
 .rss-actions{display:flex;flex-wrap:wrap;gap:.75rem}.rss-dialog button,.rss-copy,.rss-help-open{font:inherit;padding:.55rem .8rem;cursor:pointer}.rss-dialog :focus-visible,.rss-copy:focus-visible,.rss-help-open:focus-visible{outline:3px solid #1260b0;outline-offset:3px}
+
+#subscribe{scroll-margin-top:1.5rem}
+@media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
