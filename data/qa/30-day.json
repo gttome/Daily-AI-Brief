@@ -12,17 +12,17 @@
     "runs": 5,
     "first_pass_rate": 60,
     "final_pass_rate": 100,
-    "repairs": 6,
+    "repairs": 7,
     "average_deployment_latency_seconds": 47
   },
   "runs": [
     {
-      "run_id": "dab-qa-20260911T124842Z-d72cfc32",
+      "run_id": "dab-qa-20260911T170740Z-7603da2f",
       "edition_id": "dab-edition-2026-09-11",
-      "executed_at": "2026-09-11T12:48:42Z",
+      "executed_at": "2026-09-11T17:07:40Z",
       "initial_result": "fail",
       "final_result": "pass",
-      "repairs": 1,
+      "repairs": 2,
       "deployment_latency_seconds": null
     },
     {

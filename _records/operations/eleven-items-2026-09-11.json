@@ -1,20 +1,76 @@
 {
- "schema_version":"1.0.0",
- "authorized_by":"Owner instruction: proceed, implement all eleven items",
- "starting_sha":"ff64af2fa87e6e8065103014c173cead9de0d4be",
- "status":"Implemented; release verification in progress",
- "action_needed":"Email sender setup is required before signup can be activated. Other repairs are authorized and in release verification.",
- "items":[
-  {"item":1,"status":"implemented","evidence":"Archive and feeds: identical 154 IDs, including both September 9 videos; 149 Article, 3 Podcast, 2 Video."},
-  {"item":2,"status":"implemented","evidence":"Current generator/privacy/runbook text corrected; legacy ratings preserved."},
-  {"item":3,"status":"implemented","evidence":"Dated public availability record created; private collection/finalization follows deployment."},
-  {"item":4,"status":"implemented","evidence":"Prior successful Pages release re-fetched and linked in immutable reconciliation event; final release completion follows CI."},
-  {"item":5,"status":"implemented","evidence":"Command Center shows owner-authorized implementation state and specific action needed."},
-  {"item":6,"status":"sender_setup_required","evidence":"Private email storage, confirmation, daily receipt protection, unsubscribe and signed bounce/complaint handling implemented; mock integration passed. RSS available; no active signup until configured."},
-  {"item":7,"status":"implemented","evidence":"Short-first per-slot policy and duration boundary tests; broader current search added verified podcast. Both video slots remain empty because runtime/date evidence was inaccessible."},
-  {"item":8,"status":"implemented","evidence":"Six current stories and podcast have structured proposed book changes; historical original commentary preserved."},
-  {"item":9,"status":"implemented","evidence":"Explicit link attribution, retry deduplication, event-day and lifetime counts, owner-only item table."},
-  {"item":10,"status":"implemented","evidence":"Accessible native comment dialog, private storage/review states, plain-text output, deduplication, bounded retention."},
-  {"item":11,"status":"implemented_with_coverage_limits","evidence":"43 registry entries; 21 active verified catalog routes; limited routes explicitly inactive. Deduplicated discovery queue and 14-edition measurement instructions added."}
- ]
+  "schema_version": "1.0.0",
+  "authorized_by": "Owner instruction: proceed, implement all eleven items",
+  "starting_sha": "ff64af2fa87e6e8065103014c173cead9de0d4be",
+  "status": "Released and verified; email sender setup pending",
+  "action_needed": "Configure an authorized Resend sender/domain, API credential and signed bounce/complaint webhook before enabling email. RSS is available now.",
+  "items": [
+    {
+      "item": 1,
+      "status": "released_verified",
+      "evidence": "Archive and feeds: identical 154 IDs, including both September 9 videos; 149 Article, 3 Podcast, 2 Video."
+    },
+    {
+      "item": 2,
+      "status": "released_verified",
+      "evidence": "Current generator/privacy/runbook text corrected; legacy ratings preserved."
+    },
+    {
+      "item": 3,
+      "status": "released_verified",
+      "evidence": "Private snapshot collected and saved for all seven included items; public record exposes availability metadata only."
+    },
+    {
+      "item": 4,
+      "status": "released_verified",
+      "evidence": "Completion projection and immutable pages_verified event reference verified content SHA and successful CI/Pages runs; earlier evidence retained."
+    },
+    {
+      "item": 5,
+      "status": "released_verified",
+      "evidence": "Command Center shows owner-authorized implementation state and specific action needed."
+    },
+    {
+      "item": 6,
+      "status": "sender_setup_required",
+      "evidence": "Private email storage, confirmation, daily receipt protection, unsubscribe and signed bounce/complaint handling implemented; mock integration passed. RSS available; no active signup until configured."
+    },
+    {
+      "item": 7,
+      "status": "released_verified",
+      "evidence": "Short-first per-slot policy and duration boundary tests; broader current search added verified podcast. Both video slots remain empty because runtime/date evidence was inaccessible."
+    },
+    {
+      "item": 8,
+      "status": "released_verified",
+      "evidence": "Six current stories and podcast have structured proposed book changes; historical original commentary preserved."
+    },
+    {
+      "item": 9,
+      "status": "released_verified",
+      "evidence": "Explicit link attribution, retry deduplication, event-day and lifetime counts, owner-only item table."
+    },
+    {
+      "item": 10,
+      "status": "released_verified",
+      "evidence": "Accessible native comment dialog, private storage/review states, plain-text output, deduplication, bounded retention."
+    },
+    {
+      "item": 11,
+      "status": "implemented_with_coverage_limits",
+      "evidence": "43 registry entries; 21 active verified catalog routes; limited routes explicitly inactive. Deduplicated discovery queue and 14-edition measurement instructions added."
+    }
+  ],
+  "public_release_sha": "7603da2f6fa38ea345e8233ca7673988573cda49",
+  "public_pr": "https://github.com/gttome/Daily-AI-Brief/pull/59",
+  "verified_at": "2026-09-11T17:07:40Z",
+  "sites": {
+    "command_center_version": 20,
+    "ratings_version": 10
+  },
+  "limitations": [
+    "Email delivery inactive pending provider setup.",
+    "Both video slots remain empty because current date/runtime evidence was inaccessible.",
+    "Browser comment open/Escape/focus and archive search/reset passed; mobile viewport interaction was not tested."
+  ]
 }

@@ -116,12 +116,13 @@
     "Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.",
     "Exact credit usage is unavailable without an attributable platform usage record.",
     "A later observation must not be represented as reconstructed event-day activity.",
-    "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."
+    "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity.",
+    "Private snapshot successfully collected for seven included items; public null metrics are deliberately withheld."
   ],
-  "observed_at": "2026-09-11T16:52:12.181Z",
+  "observed_at": "2026-09-11T17:04:43.841020+00:00",
   "edition_id": "dab-edition-2026-09-11",
   "private_evidence": {
-    "status": "not_collected",
+    "status": "available",
     "reference": "owner-only:/api/snapshot?key=_records/analytics/2026-09-11.json",
     "metric_basis": "lifetime_observed",
     "public_metric_status": "suppressed"
