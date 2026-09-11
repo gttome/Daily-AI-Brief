@@ -1,0 +1,11 @@
+(()=>{
+ const triggers=[...document.querySelectorAll('.rss-help-open,.rss-follow')];
+ if(!triggers.length)return;
+ const address='https://gttome.github.io/Daily-AI-Brief/daily-feed.xml';
+ const dialog=document.createElement('dialog');dialog.className='rss-dialog';dialog.setAttribute('aria-labelledby','rss-help-title');
+ dialog.innerHTML=`<h2 id="rss-help-title">How to subscribe</h2><ol><li><strong>Choose a feed reader.</strong> Use an RSS reader app to keep your favorite publications together.</li><li><strong>Add this brief.</strong> Copy the feed address and paste it into your reader’s “Add feed” or “Follow” option.</li><li><strong>Read when you’re ready.</strong> Your reader checks for new editions. Select a date to open that day’s complete archived brief.</li></ol><h3>What to expect</h3><p>One entry per daily edition. Available past editions are included; your reader controls how much history appears and when updates arrive. No email address or account on this site is required. To stop following, remove the feed from your reader.</p><label for="rss-dialog-address">Feed address</label><input class="rss-address" id="rss-dialog-address" readonly value="${address}"><p class="rss-copy-status" role="status"></p><div class="rss-actions"><button type="button" class="rss-copy">Copy feed address</button><button type="button" class="rss-done">Done</button></div>`;
+ document.body.append(dialog);let opener;
+ triggers.forEach(el=>{if(el.tagName==='BUTTON')el.hidden=false;el.addEventListener('click',e=>{if(typeof dialog.showModal!=='function')return;e.preventDefault();opener=el;dialog.showModal();});});
+ dialog.querySelector('.rss-done').onclick=()=>dialog.close();dialog.addEventListener('close',()=>opener?.focus());
+ document.querySelectorAll('.rss-copy').forEach(button=>{button.hidden=false;button.onclick=async()=>{const scope=button.closest('dialog')||document.querySelector('main');const status=scope.querySelector('.rss-copy-status');try{await navigator.clipboard.writeText(address);status.textContent='Copied! Paste the address into your feed reader.';}catch{const input=scope.querySelector('.rss-address');input.focus();input.select();status.textContent='Select and copy the feed address above.';}};});
+})();

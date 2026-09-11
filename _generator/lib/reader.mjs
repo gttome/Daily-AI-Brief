@@ -1,3 +1,4 @@
+import {editionFeed} from './edition-feed.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {PUBLIC_BASE} from './constants.mjs';
@@ -286,6 +287,7 @@ export function readerFoundationFiles(edition, repoRoot) {
   files.set('archive.md', renderArchiveSearch(stories));
   const index=archiveIndex(stories);
   files.set('data/archive-index.json', JSON.stringify(index, null, 2));
+  files.set('daily-feed.xml', editionFeed(repoRoot, edition.brief_date));
   files.set('feed.json', renderJsonFeed(stories));
   files.set('feed.xml', renderAtomFeed(stories, edition.published_at));
   files.set('feedback/index.md', renderFeedbackPage(stories, edition.brief_date));

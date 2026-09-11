@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
 
 {% seo %}
+    <link rel="alternate" type="application/rss+xml" title="Daily AI Brief — Daily editions" href="{{ '/daily-feed.xml' | absolute_url }}">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -45,6 +46,7 @@
     <script defer src="{{ '/assets/js/analytics.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/feedback.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/comments.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script defer src="{{ '/assets/js/rss-help.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/subscriptions.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
