@@ -69,3 +69,13 @@ test('permanent story sharing strips query and hash state from the shared URL', 
   assert.match(script, /url: window\.location\.origin \+ window\.location\.pathname/);
   assert.doesNotMatch(script, /url: window\.location\.href\.split\('#'\)\[0\]/);
 });
+
+test('public rating client writes privately without fetching aggregate ratings', () => {
+  const script = fs.readFileSync(path.join(root, 'assets/js/feedback.js'), 'utf8');
+  assert.match(script, /method: 'POST'/);
+  assert.match(script, /'x-operation-id':operationId/);
+  assert.match(script, /JSON\.stringify\(\{brief_date: briefDate, item_id: storyId, rating:/);
+  assert.match(script, /result\.recorded !== true/);
+  assert.match(script, />29\*86400000/);
+  assert.doesNotMatch(script, /method: 'GET'|refreshSummary|star-summary|Reader average|ratings temporarily unavailable/i);
+});
