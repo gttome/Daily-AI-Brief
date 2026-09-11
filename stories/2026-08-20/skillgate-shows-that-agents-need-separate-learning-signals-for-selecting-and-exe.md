@@ -8,7 +8,7 @@ brief_date: 2026-08-20
 story_id: dab-story-2026-08-20-89c66468
 ---
 
-[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }})
 
 # SkillGate shows that agents need separate learning signals for selecting and executing skills
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-20-89c66468
 
 ---
 
-[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }})

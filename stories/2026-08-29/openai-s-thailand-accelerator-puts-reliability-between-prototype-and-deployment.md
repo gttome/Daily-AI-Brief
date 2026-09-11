@@ -8,7 +8,7 @@ brief_date: 2026-08-29
 story_id: dab-story-2026-08-29-67aff0e3
 ---
 
-[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }})
 
 # OpenAI’s Thailand accelerator puts reliability between prototype and deployment
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-29-67aff0e3
 
 ---
 
-[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }})

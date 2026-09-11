@@ -8,7 +8,7 @@ brief_date: 2026-08-29
 story_id: dab-story-2026-08-29-ebf7f693
 ---
 
-[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }})
 
 # Anthropic publishes copyable Claude Tag workflows for real team work
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-29-ebf7f693
 
 ---
 
-[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 29, 2026]({{ '/briefs/2026-08-29/' | relative_url }})

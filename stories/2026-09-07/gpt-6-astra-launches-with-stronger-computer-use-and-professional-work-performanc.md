@@ -8,7 +8,7 @@ brief_date: 2026-09-07
 story_id: dab-story-2026-09-07-d43124d3
 ---
 
-[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }})
 
 # GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-07-d43124d3
 
 ---
 
-[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }})

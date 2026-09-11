@@ -8,7 +8,7 @@ brief_date: 2026-09-04
 story_id: dab-story-2026-09-04-a2c5e263
 ---
 
-[← Daily Brief for September 4, 2026]({{ '/briefs/2026-09-04/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 4, 2026]({{ '/briefs/2026-09-04/' | relative_url }})
 
 # ChatGPT for Healthcare connects authorized Epic context with official public data
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-04-a2c5e263
 
 ---
 
-[← Daily Brief for September 4, 2026]({{ '/briefs/2026-09-04/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 4, 2026]({{ '/briefs/2026-09-04/' | relative_url }})

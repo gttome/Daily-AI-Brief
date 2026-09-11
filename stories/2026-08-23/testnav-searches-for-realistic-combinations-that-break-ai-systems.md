@@ -8,7 +8,7 @@ brief_date: 2026-08-23
 story_id: dab-story-2026-08-23-dbdd1c3a
 ---
 
-[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }})
 
 # TESTNAV searches for realistic combinations that break AI systems
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-23-dbdd1c3a
 
 ---
 
-[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }})

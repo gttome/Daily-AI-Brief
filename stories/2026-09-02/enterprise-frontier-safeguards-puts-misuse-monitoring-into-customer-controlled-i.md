@@ -8,7 +8,7 @@ brief_date: 2026-09-02
 story_id: dab-story-2026-09-02-d4186454
 ---
 
-[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }})
 
 # Enterprise Frontier Safeguards puts misuse monitoring into customer-controlled infrastructure
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-02-d4186454
 
 ---
 
-[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }})

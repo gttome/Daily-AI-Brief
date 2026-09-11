@@ -8,7 +8,7 @@ brief_date: 2026-09-03
 story_id: dab-story-2026-09-03-98cf7178
 ---
 
-[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }})
 
 # Google’s AI-adoption playbook moves the target from licenses to redesigned workflows
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-03-98cf7178
 
 ---
 
-[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }})

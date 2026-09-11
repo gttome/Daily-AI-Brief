@@ -8,7 +8,7 @@ brief_date: 2026-08-19
 story_id: dab-story-2026-08-19-f2f22489
 ---
 
-[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }})
 
 # OpenAI slows frontier development while rebuilding security around cyber-capable models
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-19-f2f22489
 
 ---
 
-[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }})

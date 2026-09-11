@@ -8,7 +8,7 @@ brief_date: 2026-08-25
 story_id: dab-story-2026-08-25-ae2e6fb8
 ---
 
-[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }})
 
 # ChatGPT plugin discovery now prioritizes tools people continue using
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-25-ae2e6fb8
 
 ---
 
-[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }})

@@ -8,7 +8,7 @@ brief_date: 2026-09-05
 story_id: dab-story-2026-09-05-a3bb0c7b
 ---
 
-[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }})
 
 # ChatGPT Sites can now be shared privately with named people outside a workspace
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-05-a3bb0c7b
 
 ---
 
-[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }})

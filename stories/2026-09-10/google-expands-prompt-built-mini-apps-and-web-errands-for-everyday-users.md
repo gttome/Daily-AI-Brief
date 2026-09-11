@@ -8,7 +8,7 @@ brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-a622f43e
 ---
 
-[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }})
 
 # Google expands prompt-built mini-apps and web errands for everyday users
 
@@ -45,4 +45,4 @@ story_id: dab-story-2026-09-10-a622f43e
 
 ---
 
-[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }})

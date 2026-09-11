@@ -8,7 +8,7 @@ brief_date: 2026-09-05
 story_id: dab-story-2026-09-05-7e9d8187
 ---
 
-[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }})
 
 # Google Translate makes long live-translation sessions easier to use during real work
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-05-7e9d8187
 
 ---
 
-[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 5, 2026]({{ '/briefs/2026-09-05/' | relative_url }})

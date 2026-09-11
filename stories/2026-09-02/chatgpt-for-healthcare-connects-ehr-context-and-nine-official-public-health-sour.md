@@ -8,7 +8,7 @@ brief_date: 2026-09-02
 story_id: dab-story-2026-09-02-ad704042
 ---
 
-[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }})
 
 # ChatGPT for Healthcare connects EHR context and nine official public-health sources
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-02-ad704042
 
 ---
 
-[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 2, 2026]({{ '/briefs/2026-09-02/' | relative_url }})

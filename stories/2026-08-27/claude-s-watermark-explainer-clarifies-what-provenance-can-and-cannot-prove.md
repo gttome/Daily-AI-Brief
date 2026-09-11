@@ -8,7 +8,7 @@ brief_date: 2026-08-27
 story_id: dab-story-2026-08-27-67f78ae1
 ---
 
-[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }})
 
 # Claude’s watermark explainer clarifies what provenance can—and cannot—prove
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-27-67f78ae1
 
 ---
 
-[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }})

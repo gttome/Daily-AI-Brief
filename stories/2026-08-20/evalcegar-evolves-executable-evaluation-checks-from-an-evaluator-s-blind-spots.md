@@ -8,7 +8,7 @@ brief_date: 2026-08-20
 story_id: dab-story-2026-08-20-6364926f
 ---
 
-[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }})
 
 # EvalCEGAR evolves executable evaluation checks from an evaluator’s blind spots
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-20-6364926f
 
 ---
 
-[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }})

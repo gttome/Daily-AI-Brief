@@ -8,7 +8,7 @@ brief_date: 2026-08-24
 story_id: dab-story-2026-08-24-f58c2c99
 ---
 
-[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }})
 
 # Microsoft Agent Framework adds recovery mechanics for long-running agents
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-24-f58c2c99
 
 ---
 
-[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }})

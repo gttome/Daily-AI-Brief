@@ -8,7 +8,7 @@ brief_date: 2026-08-23
 story_id: dab-story-2026-08-23-40885c98
 ---
 
-[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }})
 
 # ReguSim separates an agent’s explanation from the action it actually attempted
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-23-40885c98
 
 ---
 
-[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 23, 2026]({{ '/briefs/2026-08-23/' | relative_url }})

@@ -8,7 +8,7 @@ brief_date: 2026-09-07
 story_id: dab-story-2026-09-07-2b73e189
 ---
 
-[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }})
 
 # NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-07-2b73e189
 
 ---
 
-[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }})

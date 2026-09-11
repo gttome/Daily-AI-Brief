@@ -8,7 +8,7 @@ brief_date: 2026-08-18
 story_id: dab-story-2026-08-18-195439db
 ---
 
-[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }})
 
 # Claude Code makes guarded autonomy the default for more users
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-18-195439db
 
 ---
 
-[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }})

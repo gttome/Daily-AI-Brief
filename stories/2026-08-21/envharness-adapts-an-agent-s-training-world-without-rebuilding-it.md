@@ -8,7 +8,7 @@ brief_date: 2026-08-21
 story_id: dab-story-2026-08-21-eeb92c90
 ---
 
-[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }})
 
 # EnvHarness adapts an agent’s training world without rebuilding it
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-21-eeb92c90
 
 ---
 
-[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }})

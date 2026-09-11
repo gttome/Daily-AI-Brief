@@ -8,7 +8,7 @@ brief_date: 2026-09-06
 story_id: dab-story-2026-09-06-2d659eea
 ---
 
-[← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }})
 
 # GPT-6 Astra is now generally available inside GitHub Copilot
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-06-2d659eea
 
 ---
 
-[← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }})

@@ -8,7 +8,7 @@ brief_date: 2026-09-09
 story_id: dab-story-2026-09-09-a02b9db1
 ---
 
-[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }})
 
 # Meta launches Muse as a personal agent with secure execution and approval checkpoints
 
@@ -47,4 +47,4 @@ story_id: dab-story-2026-09-09-a02b9db1
 
 ---
 
-[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }})

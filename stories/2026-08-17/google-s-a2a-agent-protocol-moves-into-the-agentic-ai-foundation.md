@@ -8,7 +8,7 @@ brief_date: 2026-08-17
 story_id: dab-story-2026-08-17-cdb22c68
 ---
 
-[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }})
 
 # Google’s A2A agent protocol moves into the Agentic AI Foundation
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-17-cdb22c68
 
 ---
 
-[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }})

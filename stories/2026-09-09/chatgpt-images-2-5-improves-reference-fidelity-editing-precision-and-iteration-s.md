@@ -8,7 +8,7 @@ brief_date: 2026-09-09
 story_id: dab-story-2026-09-09-7702638b
 ---
 
-[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }})
 
 # ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-09-7702638b
 
 ---
 
-[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }})

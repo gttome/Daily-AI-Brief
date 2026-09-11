@@ -8,7 +8,7 @@ brief_date: 2026-09-03
 story_id: dab-story-2026-09-03-acfceabb
 ---
 
-[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }})
 
 # Empower Work uses AI for retrieval and handoffs while counselors retain judgment
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-03-acfceabb
 
 ---
 
-[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }})

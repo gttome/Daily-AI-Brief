@@ -8,7 +8,7 @@ brief_date: 2026-08-22
 story_id: dab-story-2026-08-22-d6deaef1
 ---
 
-[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }})
 
 # Pandora’s Router asks whether a better routing decision is worth the cost of making it
 
@@ -30,4 +30,4 @@ story_id: dab-story-2026-08-22-d6deaef1
 
 ---
 
-[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }})

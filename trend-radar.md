@@ -369,4 +369,4 @@ Supporting stories:
 - [August 17, 2026]({{ '/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/' | relative_url }})
 - [August 17, 2026]({{ '/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/' | relative_url }})
 
-[Search the Archive]({{ '/briefs-archive/' | relative_url }}) · [← Home]({{ '/' | relative_url }})
+[← Home]({{ '/' | relative_url }})

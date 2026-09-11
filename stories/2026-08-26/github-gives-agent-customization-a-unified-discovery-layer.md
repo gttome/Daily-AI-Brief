@@ -8,7 +8,7 @@ brief_date: 2026-08-26
 story_id: dab-story-2026-08-26-47742631
 ---
 
-[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }})
 
 # GitHub gives agent customization a unified discovery layer
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-26-47742631
 
 ---
 
-[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }})

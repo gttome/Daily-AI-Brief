@@ -8,7 +8,7 @@ brief_date: 2026-08-24
 story_id: dab-story-2026-08-24-fb9e9c08
 ---
 
-[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }})
 
 # Apple Messages brings an approval-gated action to ChatGPT Work
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-24-fb9e9c08
 
 ---
 
-[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }})

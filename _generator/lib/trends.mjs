@@ -73,7 +73,7 @@ Supporting stories:
 
 ${trend.supporting_stories.map(story => `- [${formatDate(story.brief_date)}]({{ '${story.url}' | relative_url }})`).join('\n')}`).join('\n\n')}
 
-[Search the Archive]({{ '/briefs-archive/' | relative_url }}) · [← Home]({{ '/' | relative_url }})
+[← Home]({{ '/' | relative_url }})
 `;
 }
 

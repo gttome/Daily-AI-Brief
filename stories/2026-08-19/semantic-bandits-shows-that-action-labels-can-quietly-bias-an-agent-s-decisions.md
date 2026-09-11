@@ -8,7 +8,7 @@ brief_date: 2026-08-19
 story_id: dab-story-2026-08-19-79e308b8
 ---
 
-[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }})
 
 # Semantic Bandits shows that action labels can quietly bias an agent’s decisions
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-19-79e308b8
 
 ---
 
-[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }})

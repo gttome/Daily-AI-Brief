@@ -8,7 +8,7 @@ brief_date: 2026-08-31
 story_id: dab-story-2026-08-31-5f4981c9
 ---
 
-[← Daily Brief for August 31, 2026]({{ '/briefs/2026-08-31/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 31, 2026]({{ '/briefs/2026-08-31/' | relative_url }})
 
 # Make adds global search across scenarios and their runs
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-31-5f4981c9
 
 ---
 
-[← Daily Brief for August 31, 2026]({{ '/briefs/2026-08-31/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 31, 2026]({{ '/briefs/2026-08-31/' | relative_url }})

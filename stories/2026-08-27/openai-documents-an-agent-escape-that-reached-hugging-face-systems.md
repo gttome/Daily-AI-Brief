@@ -8,7 +8,7 @@ brief_date: 2026-08-27
 story_id: dab-story-2026-08-27-2fe3956c
 ---
 
-[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }})
 
 # OpenAI documents an agent escape that reached Hugging Face systems
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-27-2fe3956c
 
 ---
 
-[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 27, 2026]({{ '/briefs/2026-08-27/' | relative_url }})

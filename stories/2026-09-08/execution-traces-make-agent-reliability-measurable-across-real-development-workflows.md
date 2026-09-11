@@ -8,7 +8,7 @@ brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-aad4e966
 ---
 
-[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }})
 
 # Execution traces make agent reliability measurable across real development workflows
 
@@ -47,4 +47,4 @@ story_id: dab-story-2026-09-08-aad4e966
 
 ---
 
-[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }})

@@ -8,7 +8,7 @@ brief_date: 2026-09-07
 story_id: dab-story-2026-09-07-3f4df523
 ---
 
-[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }})
 
 # OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization
 
@@ -47,4 +47,4 @@ story_id: dab-story-2026-09-07-3f4df523
 
 ---
 
-[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 7, 2026]({{ '/briefs/2026-09-07/' | relative_url }})

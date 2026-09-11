@@ -8,7 +8,7 @@ brief_date: 2026-09-09
 story_id: dab-story-2026-09-09-9558fc40
 ---
 
-[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }})
 
 # GitHub unifies support resources behind Copilot-powered search
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-09-9558fc40
 
 ---
 
-[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }})

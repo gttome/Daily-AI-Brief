@@ -8,7 +8,7 @@ brief_date: 2026-08-25
 story_id: dab-story-2026-08-25-a2eb5c74
 ---
 
-[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }})
 
 # RadarFirst puts AI agents around—not in place of—regulated decisions
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-25-a2eb5c74
 
 ---
 
-[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 25, 2026]({{ '/briefs/2026-08-25/' | relative_url }})

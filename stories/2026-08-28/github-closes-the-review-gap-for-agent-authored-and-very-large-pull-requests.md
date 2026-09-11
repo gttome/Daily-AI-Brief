@@ -8,7 +8,7 @@ brief_date: 2026-08-28
 story_id: dab-story-2026-08-28-00afae1b
 ---
 
-[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }})
 
 # GitHub closes the review gap for agent-authored and very large pull requests
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-28-00afae1b
 
 ---
 
-[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }})

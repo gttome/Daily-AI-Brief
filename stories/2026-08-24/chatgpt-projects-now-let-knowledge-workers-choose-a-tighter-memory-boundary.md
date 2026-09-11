@@ -8,7 +8,7 @@ brief_date: 2026-08-24
 story_id: dab-story-2026-08-24-4c295f61
 ---
 
-[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }})
 
 # ChatGPT Projects now let knowledge workers choose a tighter memory boundary
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-24-4c295f61
 
 ---
 
-[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 24, 2026]({{ '/briefs/2026-08-24/' | relative_url }})

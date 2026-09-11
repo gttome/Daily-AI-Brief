@@ -8,7 +8,7 @@ brief_date: 2026-08-22
 story_id: dab-story-2026-08-22-24c74a86
 ---
 
-[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }})
 
 # MidTool teaches models the structure of real tool workflows before post-training
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-22-24c74a86
 
 ---
 
-[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 22, 2026]({{ '/briefs/2026-08-22/' | relative_url }})

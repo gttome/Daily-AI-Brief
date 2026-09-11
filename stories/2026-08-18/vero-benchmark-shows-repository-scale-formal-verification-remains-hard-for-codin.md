@@ -8,7 +8,7 @@ brief_date: 2026-08-18
 story_id: dab-story-2026-08-18-9acc47c5
 ---
 
-[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }})
 
 # Vero benchmark shows repository-scale formal verification remains hard for coding agents
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-18-9acc47c5
 
 ---
 
-[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 18, 2026]({{ '/briefs/2026-08-18/' | relative_url }})

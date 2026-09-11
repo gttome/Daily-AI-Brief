@@ -8,7 +8,7 @@ brief_date: 2026-08-19
 story_id: dab-story-2026-08-19-c4d5a830
 ---
 
-[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }})
 
 # HarnessEval-W turns evaluation into a transparent graph of evidence
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-19-c4d5a830
 
 ---
 
-[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 19, 2026]({{ '/briefs/2026-08-19/' | relative_url }})

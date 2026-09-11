@@ -8,7 +8,7 @@ brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-c1fc056c
 ---
 
-[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }})
 
 # Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-08-c1fc056c
 
 ---
 
-[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }})

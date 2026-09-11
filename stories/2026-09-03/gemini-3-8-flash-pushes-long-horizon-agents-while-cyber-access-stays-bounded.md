@@ -8,7 +8,7 @@ brief_date: 2026-09-03
 story_id: dab-story-2026-09-03-9e81e5ce
 ---
 
-[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }})
 
 # Gemini 3.8 Flash pushes long-horizon agents while Cyber access stays bounded
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-03-9e81e5ce
 
 ---
 
-[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 3, 2026]({{ '/briefs/2026-09-03/' | relative_url }})

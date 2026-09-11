@@ -8,7 +8,7 @@ brief_date: 2026-08-26
 story_id: dab-story-2026-08-26-3128a73a
 ---
 
-[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }})
 
 # Google Meet puts AI note-taking control in the room
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-26-3128a73a
 
 ---
 
-[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 26, 2026]({{ '/briefs/2026-08-26/' | relative_url }})

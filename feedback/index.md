@@ -14,4 +14,4 @@ The separate Daily Reader Feedback form has been retired. Each story has its own
   <strong>Privacy and editorial control:</strong> The inline controls collect only the brief date, stable story ID, and selected rating. No name, email, cookie, persistent reader identifier, free text, or browsing history is collected. One selection per story is retained only in this browser to prevent accidental duplicate votes.
 </div>
 
-[Open today’s brief and rate its stories]({{ '/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[Open today’s brief and rate its stories]({{ '/' | relative_url }})

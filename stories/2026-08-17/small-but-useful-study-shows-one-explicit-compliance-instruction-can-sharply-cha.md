@@ -8,7 +8,7 @@ brief_date: 2026-08-17
 story_id: dab-story-2026-08-17-8c5a5979
 ---
 
-[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }})
 
 # Small but useful study shows one explicit compliance instruction can sharply change AI-generated code
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-17-8c5a5979
 
 ---
 
-[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 17, 2026]({{ '/briefs/2026-08-17/' | relative_url }})

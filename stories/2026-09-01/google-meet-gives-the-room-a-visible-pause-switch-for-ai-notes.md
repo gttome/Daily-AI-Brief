@@ -8,7 +8,7 @@ brief_date: 2026-09-01
 story_id: dab-story-2026-09-01-5005fc67
 ---
 
-[← Daily Brief for September 1, 2026]({{ '/briefs/2026-09-01/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 1, 2026]({{ '/briefs/2026-09-01/' | relative_url }})
 
 # Google Meet gives the room a visible pause switch for AI notes
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-09-01-5005fc67
 
 ---
 
-[← Daily Brief for September 1, 2026]({{ '/briefs/2026-09-01/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 1, 2026]({{ '/briefs/2026-09-01/' | relative_url }})

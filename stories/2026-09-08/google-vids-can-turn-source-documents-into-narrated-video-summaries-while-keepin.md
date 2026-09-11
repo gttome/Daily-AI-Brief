@@ -8,7 +8,7 @@ brief_date: 2026-09-08
 story_id: dab-story-2026-09-08-47284df4
 ---
 
-[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }})
 
 # Google Vids can turn source documents into narrated video summaries while keeping human review in the loop
 
@@ -43,4 +43,4 @@ story_id: dab-story-2026-09-08-47284df4
 
 ---
 
-[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 8, 2026]({{ '/briefs/2026-09-08/' | relative_url }})

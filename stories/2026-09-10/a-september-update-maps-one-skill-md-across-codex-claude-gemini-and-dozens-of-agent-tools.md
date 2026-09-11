@@ -8,7 +8,7 @@ brief_date: 2026-09-10
 story_id: dab-story-2026-09-10-b2d6f046
 ---
 
-[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }})
 
 # A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools
 
@@ -45,4 +45,4 @@ story_id: dab-story-2026-09-10-b2d6f046
 
 ---
 
-[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }})

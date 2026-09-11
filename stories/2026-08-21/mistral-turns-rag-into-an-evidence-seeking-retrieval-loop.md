@@ -8,7 +8,7 @@ brief_date: 2026-08-21
 story_id: dab-story-2026-08-21-f1184b97
 ---
 
-[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }})
 
 # Mistral turns RAG into an evidence-seeking retrieval loop
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-21-f1184b97
 
 ---
 
-[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 21, 2026]({{ '/briefs/2026-08-21/' | relative_url }})

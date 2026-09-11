@@ -8,7 +8,7 @@ brief_date: 2026-08-20
 story_id: dab-story-2026-08-20-396b7ecc
 ---
 
-[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }})
 
 # OpenAI previews cross-session safety monitoring that preserves Zero Data Retention
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-20-396b7ecc
 
 ---
 
-[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 20, 2026]({{ '/briefs/2026-08-20/' | relative_url }})

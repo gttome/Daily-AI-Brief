@@ -8,7 +8,7 @@ brief_date: 2026-08-28
 story_id: dab-story-2026-08-28-633f53c9
 ---
 
-[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }})
 
 # Randomized study separates ChatGPT’s quality gains from critical thinking’s originality gains
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-28-633f53c9
 
 ---
 
-[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 28, 2026]({{ '/briefs/2026-08-28/' | relative_url }})

@@ -8,7 +8,7 @@ brief_date: 2026-08-30
 story_id: dab-story-2026-08-30-6c8007e6
 ---
 
-[← Daily Brief for August 30, 2026]({{ '/briefs/2026-08-30/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 30, 2026]({{ '/briefs/2026-08-30/' | relative_url }})
 
 # Notion lets an AI agent propose edits without taking authorship control
 
@@ -32,4 +32,4 @@ story_id: dab-story-2026-08-30-6c8007e6
 
 ---
 
-[← Daily Brief for August 30, 2026]({{ '/briefs/2026-08-30/' | relative_url }}) · [Search the Archive]({{ '/briefs-archive/' | relative_url }})
+[← Daily Brief for August 30, 2026]({{ '/briefs/2026-08-30/' | relative_url }})
