@@ -1,0 +1,596 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-12",
+  "updated_at": "2026-09-12T02:08:04.109758Z",
+  "baseline_note": "Initial researched baseline. Topics are early signals, not confirmed accelerating trends. Some concepts predate this watchlist.",
+  "topics": [
+    {
+      "topic_id": "dab-topic-collaborative-vibe-coding",
+      "name": "Collaborative vibe coding",
+      "audience": "Knowledge workers and teams",
+      "summary": "Teams building tools together through conversation with AI.",
+      "why_now": "Google Labs lists Play with Putty as a collaborative vibe-coding experiment with a waitlist.",
+      "practical_value": "Could turn individual prompt-built prototypes into shared team workflows.",
+      "limitations": "A listed experiment is not proof of general availability, adoption, or production readiness.",
+      "next_action": "Check access, collaboration controls and independent hands-on reports.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Google Labs — Play with Putty",
+          "url": "https://labs.google/",
+          "publisher": "Google Labs",
+          "kind": "primary",
+          "publication_date": null,
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "collaborative-vibe-coding",
+          "review_depth": "publisher description"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Google Labs lists Play with Putty as a collaborative vibe-coding experiment with a waitlist."
+        },
+        "evidence": {
+          "score": 4,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 4,
+          "reason": "Could turn individual prompt-built prototypes into shared team workflows."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-repairable-generative-design",
+      "name": "Repairable AI-generated 3D designs",
+      "audience": "Knowledge workers and creators",
+      "summary": "Generate a design, inspect its flaws, and guide repairs before fabrication.",
+      "why_now": "MIT describes InstructMesh as an editable generation-and-repair workflow for 3D models.",
+      "practical_value": "A useful example of human review connecting generative output to physical constraints.",
+      "limitations": "Research prototype evidence; fabrication success and novice usability need closer assessment. The full news article was not retrievable; the dated lab research summary was checked.",
+      "next_action": "Review the underlying study and whether the repair process transfers to other creative tasks.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "MIT — Repair AI-generated 3D models",
+          "url": "https://www.csail.mit.edu/person/stefanie-mueller",
+          "publisher": "MIT CSAIL",
+          "kind": "primary",
+          "publication_date": "2026-09-09",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "repairable-generative-design",
+          "review_depth": "Primary lab researcher page and dated research summary; full news article retrieval unavailable"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "MIT describes InstructMesh as an editable generation-and-repair workflow for 3D models."
+        },
+        "evidence": {
+          "score": 4,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 4,
+          "reason": "A useful example of human review connecting generative output to physical constraints."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-image-edit-restoration",
+      "name": "Restoring images after repeated AI edits",
+      "audience": "Creators and knowledge workers",
+      "summary": "Detect and repair unwanted textures that accumulate across AI image-editing rounds.",
+      "why_now": "Mi-Ripple proposes a workflow for diagnosing and reducing these editing artifacts.",
+      "practical_value": "Potentially useful for illustrations, teaching visuals and iterative creative work.",
+      "limitations": "Authors’ reported results are early evidence; no independent replication was established in this review.",
+      "next_action": "Inspect examples and independent tests before recommending a production workflow.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Mi-Ripple: Restoring Images Degraded by Iterative AI Editing",
+          "url": "https://arxiv.org/abs/2609.11317",
+          "publisher": "Mi-Ripple authors",
+          "kind": "primary",
+          "publication_date": "2026-09-10",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.11317",
+          "review_depth": "original abstract and source metadata"
+        },
+        {
+          "title": "Community discussion of Mi-Ripple: Restoring Images Degraded by Iterative AI Editing",
+          "url": "https://huggingface.co/papers/2609.11317",
+          "publisher": "Hugging Face community",
+          "kind": "discussion",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.11317",
+          "review_depth": "community listing and discussion"
+        }
+      ],
+      "external_attention": [
+        {
+          "platform": "Hugging Face",
+          "metric": "paper upvotes",
+          "value": 20,
+          "observed_at": "2026-09-12T02:08:04.109758Z",
+          "url": "https://huggingface.co/papers/2609.11317"
+        }
+      ],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Mi-Ripple proposes a workflow for diagnosing and reducing these editing artifacts."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Potentially useful for illustrations, teaching visuals and iterative creative work."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "name": "Agent safeguards tailored to the task",
+      "audience": "Agent builders and consultants",
+      "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
+      "why_now": "EvoSafeHarness studies adapting safety enforcement to a model and domain.",
+      "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
+      "limitations": "A preprint and its benchmarks do not establish protection against all real-world attacks.",
+      "next_action": "Compare independent evaluations and inspect failure cases before trial coverage.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses",
+          "url": "https://arxiv.org/abs/2609.05903",
+          "publisher": "EvoSafeHarness authors",
+          "kind": "primary",
+          "publication_date": "2026-09-05",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.05903",
+          "review_depth": "original abstract and source metadata"
+        },
+        {
+          "title": "Community discussion of EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses",
+          "url": "https://huggingface.co/papers/2609.05903",
+          "publisher": "Hugging Face community",
+          "kind": "discussion",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.05903",
+          "review_depth": "community listing and discussion"
+        }
+      ],
+      "external_attention": [
+        {
+          "platform": "Hugging Face",
+          "metric": "paper upvotes",
+          "value": 36,
+          "observed_at": "2026-09-12T02:08:04.109758Z",
+          "url": "https://huggingface.co/papers/2609.05903"
+        }
+      ],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "EvoSafeHarness studies adapting safety enforcement to a model and domain."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-concept-level-language-models",
+      "name": "Language models that also predict concepts",
+      "audience": "Technical AI and educators",
+      "summary": "Train models to predict representations spanning multiple tokens alongside predicting individual tokens.",
+      "why_now": "NCP-ArchPreview reports experiments combining next-token and next-concept objectives.",
+      "practical_value": "May change explanations of how language models learn and where efficiency improvements come from.",
+      "limitations": "Single-team preprint evidence; reported comparisons need independent replication.",
+      "next_action": "Research earlier concept-prediction methods and independent reproductions.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "NCP-ArchPreview: Next Concept Prediction",
+          "url": "https://arxiv.org/abs/2609.10715",
+          "publisher": "Intern-NCP Team",
+          "kind": "primary",
+          "publication_date": "2026-09-09",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.10715",
+          "review_depth": "original abstract and source metadata"
+        },
+        {
+          "title": "Community discussion of NCP-ArchPreview: Next Concept Prediction",
+          "url": "https://huggingface.co/papers/2609.10715",
+          "publisher": "Hugging Face community",
+          "kind": "discussion",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.10715",
+          "review_depth": "community listing and discussion"
+        }
+      ],
+      "external_attention": [
+        {
+          "platform": "Hugging Face",
+          "metric": "paper upvotes",
+          "value": 177,
+          "observed_at": "2026-09-12T02:08:04.109758Z",
+          "url": "https://huggingface.co/papers/2609.10715"
+        }
+      ],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "NCP-ArchPreview reports experiments combining next-token and next-concept objectives."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 4,
+          "reason": "May change explanations of how language models learn and where efficiency improvements come from."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-memory-guided-planning",
+      "name": "Turning agent memory into compact plans",
+      "audience": "Technical AI and agent designers",
+      "summary": "Use remembered episodes when planning, then give the executor a compact plan instead of the full history.",
+      "why_now": "MaP-WAM studies this separation in memory-dependent robotic tasks.",
+      "practical_value": "A possible teaching example for separating memory, planning and execution; transfer to office agents remains unproven.",
+      "limitations": "Robotics results cannot be assumed to apply to general knowledge-work agents.",
+      "next_action": "Check the experimental setup and search for independent applications outside robotics.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+          "url": "https://arxiv.org/abs/2609.11561",
+          "publisher": "MaP-WAM authors",
+          "kind": "primary",
+          "publication_date": "2026-09-10",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.11561",
+          "review_depth": "original abstract and source metadata"
+        },
+        {
+          "title": "Community discussion of Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
+          "url": "https://huggingface.co/papers/2609.11561",
+          "publisher": "Hugging Face community",
+          "kind": "discussion",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.11561",
+          "review_depth": "community listing and discussion"
+        }
+      ],
+      "external_attention": [
+        {
+          "platform": "Hugging Face",
+          "metric": "paper upvotes",
+          "value": 10,
+          "observed_at": "2026-09-12T02:08:04.109758Z",
+          "url": "https://huggingface.co/papers/2609.11561"
+        }
+      ],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "MaP-WAM studies this separation in memory-dependent robotic tasks."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 3,
+          "reason": "A possible teaching example for separating memory, planning and execution; transfer to office agents remains unproven."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-recursive-scene-programs",
+      "name": "Building 3D worlds through recursive code",
+      "audience": "Creators and technical builders",
+      "summary": "Represent scenes as editable programs and refine their parts through repeated visual comparison.",
+      "why_now": "Recursive Code World Models studies reconstructing complex scenes from a reference image.",
+      "practical_value": "Could inform future interactive educational environments and editable generative media.",
+      "limitations": "Early research; scene reconstruction is not proof of general physical simulation or broad deployment.",
+      "next_action": "Inspect demonstrations and compare with other image-to-scene approaches.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Recursive Code World Models: Recursive Scene Programs",
+          "url": "https://arxiv.org/abs/2609.11499",
+          "publisher": "RCWM authors",
+          "kind": "primary",
+          "publication_date": "2026-09-10",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.11499",
+          "review_depth": "original abstract and source metadata"
+        },
+        {
+          "title": "Community discussion of Recursive Code World Models: Recursive Scene Programs",
+          "url": "https://huggingface.co/papers/2609.11499",
+          "publisher": "Hugging Face community",
+          "kind": "discussion",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2609.11499",
+          "review_depth": "community listing and discussion"
+        }
+      ],
+      "external_attention": [
+        {
+          "platform": "Hugging Face",
+          "metric": "paper upvotes",
+          "value": 7,
+          "observed_at": "2026-09-12T02:08:04.109758Z",
+          "url": "https://huggingface.co/papers/2609.11499"
+        }
+      ],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Recursive Code World Models studies reconstructing complex scenes from a reference image."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 3,
+          "reason": "Could inform future interactive educational environments and editable generative media."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    },
+    {
+      "topic_id": "dab-topic-selective-precision-attention",
+      "name": "Smaller model memory through selective precision",
+      "audience": "Technical AI and local-model users",
+      "summary": "Compress most attention data while retaining higher precision where it matters most.",
+      "why_now": "HyQuant’s August preprint appeared in the September 11 community paper list.",
+      "practical_value": "Could help explain efficiency trade-offs when running language models with constrained hardware.",
+      "limitations": "The paper is older than the launch date; community resurfacing is not a new publication or evidence of acceleration.",
+      "next_action": "Check implementation requirements and independently measured accuracy and memory use.",
+      "first_detected": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "HyQuant: Hybrid-Precision Quantization for LLM Attention",
+          "url": "https://arxiv.org/abs/2608.27875",
+          "publisher": "HyQuant authors",
+          "kind": "primary",
+          "publication_date": "2026-08-28",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2608.27875",
+          "review_depth": "original abstract and source metadata"
+        },
+        {
+          "title": "Community discussion of HyQuant: Hybrid-Precision Quantization for LLM Attention",
+          "url": "https://huggingface.co/papers/2608.27875",
+          "publisher": "Hugging Face community",
+          "kind": "discussion",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-12T02:08:04.109758Z",
+          "development_id": "2608.27875",
+          "review_depth": "community listing and discussion"
+        }
+      ],
+      "external_attention": [
+        {
+          "platform": "Hugging Face",
+          "metric": "paper upvotes",
+          "value": 4,
+          "observed_at": "2026-09-12T02:08:04.109758Z",
+          "url": "https://huggingface.co/papers/2608.27875"
+        }
+      ],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 3,
+          "reason": "HyQuant’s August preprint appeared in the September 11 community paper list."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development; a community repost is not independent corroboration."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier watchlist observation."
+        },
+        "relevance": {
+          "score": 3,
+          "reason": "Could help explain efficiency trade-offs when running language models with constrained hardware."
+        },
+        "durability": {
+          "score": 3,
+          "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
+        }
+      },
+      "trial_story_ids": []
+    }
+  ]
+}
