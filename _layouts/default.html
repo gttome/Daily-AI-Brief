@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" as="style" type="text/css" crossorigin>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#157878">
+    <meta name="theme-color" content="#f3f0e8">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/share.css?v=' | append: site.github.build_revision | relative_url }}">
@@ -16,21 +16,45 @@
     <link rel="stylesheet" href="{{ '/assets/css/feedback.css?v=' | append: site.github.build_revision | relative_url }}">
     <style>.reader-footer-links{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem}.site-footer-owner{margin:0 0 .6rem}.reader-footer-links a:focus-visible{outline:3px solid #1260b0;outline-offset:4px}</style>
     <link rel="stylesheet" href="{{ '/assets/css/watchlist.css?v=1' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/header.css?v=1' | relative_url }}">
     {% include head-custom.html %}
   </head>
   <body data-brief-date="{{ page.brief_date | default: '' }}" data-story-id="{{ page.story_id | default: '' }}" data-baseurl="{{ site.baseurl }}">
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
-    <header class="page-header" role="banner">
-      <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-      <h2 class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</h2>
-      <a href="{{ '/' | relative_url }}" class="btn">Home</a>
-      <a href="{{ '/briefs-archive/' | relative_url }}" class="btn">Briefs Archive</a>
-      <a href="{{ '/' | relative_url }}#subscribe" class="btn">Subscribe</a>
-      <a href="{{ site.series_url }}" class="btn" target="_blank" rel="noopener noreferrer">{{ site.series_name }}</a>
-      <a href="{{ '/watchlist/' | relative_url }}" class="btn">Emerging AI Watchlist</a>
-      <a href="{{ '/sources/' | relative_url }}" class="btn">Sources</a>
-      <a href="{{ '/about/' | relative_url }}" class="btn">About This Brief</a>
+    <header class="page-header research-ledger-header" role="banner">
+      <div class="ledger-navigation">
+        <a href="{{ '/' | relative_url }}" class="ledger-brand">The Daily AI Brief</a>
+        <nav class="ledger-primary-nav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="{{ '/' | relative_url }}">Home</a></li>
+            <li><a href="{{ '/briefs-archive/' | relative_url }}">Briefs Archive</a></li>
+            <li><a href="{{ '/' | relative_url }}#subscribe">Subscribe</a></li>
+            <li><a href="{{ site.series_url }}" target="_blank" rel="noopener noreferrer">{{ site.series_name }}</a></li>
+            <li><a href="{{ '/watchlist/' | relative_url }}">Emerging AI Watchlist</a></li>
+            <li><a href="{{ '/sources/' | relative_url }}">Sources</a></li>
+            <li><a href="{{ '/about/' | relative_url }}">About This Brief</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="ledger-masthead">
+        <div class="ledger-title-block">
+          <p class="ledger-kicker">Independent curation · Primary-source evidence</p>
+          <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
+          <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+        </div>
+        <div class="ledger-edition" aria-label="Publication context">
+          {% if page.brief_date %}
+          <span>Edition date</span>
+          <strong>{{ page.brief_date | date: "%B %-d" }}</strong>
+          <span>{{ page.brief_date | date: "%Y" }}</span>
+          {% else %}
+          <span>Daily publication</span>
+          <strong>Research ledger</strong>
+          <span>Curated by George Tome</span>
+          {% endif %}
+        </div>
+      </div>
     </header>
 
     <main id="content" class="main-content" role="main">

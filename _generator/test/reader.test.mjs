@@ -38,7 +38,8 @@ test('reader foundation preserves canonical IDs and evidence on prior-edition pa
 
 test('every permanent story page inherits a visible Home link', () => {
   const layout = fs.readFileSync(path.join(root, '_layouts', 'default.html'), 'utf8');
-  assert.match(layout, /href="{{ '\/' \| relative_url }}" class="btn">Home<\/a>/);
+  const primaryNavigation = layout.match(/<nav class="ledger-primary-nav"[\s\S]*?<\/nav>/)?.[0] || '';
+  assert.match(primaryNavigation, /href="{{ '\/' \| relative_url }}">Home<\/a>/);
   const storiesRoot = path.join(root, 'stories');
   const storyPages = fs.readdirSync(storiesRoot, {recursive:true})
     .filter(name => name.endsWith('.md'));
