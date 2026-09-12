@@ -314,7 +314,7 @@
 
 **Evidence:** Practitioner analysis. Publisher episode page, show notes, transcript markers, host, and date were checked. The page did not expose a reliable exact total runtime, and podcast duration has no cap; discussion and cited opinions are not treated as empirical prevalence evidence.
 
-**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-10" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="source_clicks">Publisher episode and transcript</a> · <a href="https://open.spotify.com/episode/4xD9AhlhIpzg6phdhS65qJJ" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="source_clicks">Spotify</a>
+**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-10" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="source_clicks">Publisher episode and transcript</a> · <a href="https://open.spotify.com/episode/4xD9AhlhIpzg6phdhS65qJ" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="source_clicks">Spotify</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-podcast-2026-09-12-ai-risk-specificity">
   <span class="feedback-prompt">How useful was this?</span>
