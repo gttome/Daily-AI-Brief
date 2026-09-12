@@ -19,6 +19,20 @@
   "rollback_target_sha": "2217db6bfd4262772ba31d81980da9b00a983cb7",
   "prepublication_checks": {"generator_tests": "81/81 pass", "contract_examples": "15/15 pass", "repository_validation": "pass", "integrated_parity": "pass after canonical-overlay repair", "accessibility": "pass", "edition_semantics_preserved": "pass", "candidate_jekyll_build": "deferred to repository CI because the local bundle executable is unavailable", "image_replacements": 6, "rejected_drafts": 0},
   "deployment_repairs": [],
-  "final_qa": "pending",
-  "live_verification": {"verified_at": null, "result": "not_run", "pages": []}
+  "final_qa": "pass",
+  "live_verification": {
+    "verified_at": "2026-09-12T12:42:11Z",
+    "result": "pass",
+    "pages": [
+      "https://gttome.github.io/Daily-AI-Brief/",
+      "https://gttome.github.io/Daily-AI-Brief/briefs/2026-09-12/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/"
+    ],
+    "evidence": "All six live PNGs are exact 1200x630 and their downloaded SHA-256 bytes match the approved replacement_sha256 values. Browser rendering confirmed the six distinct textbook diagrams on the homepage, dated brief, and permanent pages."
+  }
 }

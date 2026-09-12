@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "attempt_id": "dab-attempt-2026-09-12-publication-20260912T115736Z",
+  "edition_id": "dab-edition-2026-09-12",
+  "started_at": "2026-09-12T11:57:36Z",
+  "ended_at": "2026-09-12T12:42:11Z",
+  "wall_seconds": 2675,
+  "scope": "fresh edition publication, Emerging AI Watchlist refresh, independent live QA, link repair and final verification",
+  "resource_policy": "Plus Work/Codex allowance and built-in premium image generation only; no paid API, added credits, overage, top-up, upgrade or alternate account",
+  "measured_work": {
+    "candidate_count": 20,
+    "selected_stories": 6,
+    "image_drafts": 6,
+    "image_rejects": 0,
+    "accepted_images": 6,
+    "publication_pull_requests": 1,
+    "repair_pull_requests": 1,
+    "local_tests_final": 82,
+    "contract_fixtures": 15,
+    "article_sources_checked": 21,
+    "article_sources_retrieved": 20,
+    "watchlist_sources_checked": 20,
+    "watchlist_sources_retrieved": 13,
+    "watchlist_topics": 8,
+    "video_fill": "2/2",
+    "podcast_fill": "1/1"
+  },
+  "failed_attempts": [
+    {
+      "stage": "image_review_contract",
+      "result": "recovered",
+      "evidence": "The first generation attempt correctly rejected image-review records using sha256 rather than replacement_sha256; the evidence field was corrected before publication."
+    },
+    {
+      "stage": "candidate_integration",
+      "result": "recovered",
+      "evidence": "The first full audit found canonical permanent-page identity regression and omitted media in public analytics availability. Both generator defects were repaired with regression tests before publication."
+    },
+    {
+      "stage": "local_jekyll",
+      "result": "unavailable",
+      "evidence": "The local bundle executable was unavailable. Promotion remained blocked until repository CI completed its deterministic Jekyll build successfully."
+    },
+    {
+      "stage": "first_live_link_qa",
+      "result": "recovered",
+      "evidence": "The optional Spotify platform URL returned HTTP 400 because of one duplicated character. Repair PR #75 corrected canonical and derived views; the final URL returned HTTP 200."
+    },
+    {
+      "stage": "watchlist_discovery",
+      "result": "degraded",
+      "evidence": "Thirteen of twenty registered watchlist sources returned candidate links; seven timed out, returned HTTP 502, or yielded no candidates. Eight verified topics were retained with original dates."
+    },
+    {
+      "stage": "private_sites_operations",
+      "result": "unavailable",
+      "evidence": "No supported owner-authenticated Sites connection was exposed for usage recording, private aggregates, priorities, or comments cleanup. No public or indirect fallback was attempted."
+    }
+  ],
+  "publication": {
+    "baseline_sha": "2217db6bfd4262772ba31d81980da9b00a983cb7",
+    "publication_pr": 74,
+    "publication_head": "2bdf7cbde8dc987be72c718032cd035492ccb6c4",
+    "publication_main": "49d5e9cbfbcb19585c7823343cec1d1d873af7ca",
+    "publication_ci": 34693765517,
+    "publication_pages": 34693765210,
+    "repair_pr": 75,
+    "repair_ci": 34694258642,
+    "final_main": "2aa8bd0bc56cfdf1783be61dbe9c655b88b3f107",
+    "final_ci": 34694306713,
+    "final_pages": 34694306432
+  },
+  "usage": {
+    "exact_credits": null,
+    "dollars": null,
+    "coverage": "partial",
+    "reason": "The platform did not provide edition-attributed credit or dollar data and the authenticated private usage endpoint was unavailable."
+  },
+  "outcome": "validated_after_repair_with_degraded_private_telemetry_and_watchlist_discovery"
+}
