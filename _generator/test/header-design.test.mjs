@@ -27,3 +27,7 @@ test('Research Ledger remains responsive and keyboard visible',()=>{
   assert.match(css,/grid-template-columns: 1fr/);
   assert.match(css,/font-family: Georgia/);
 });
+
+test('Research Ledger replaces Cayman green headings with Editorial Rust',()=>{
+  assert.match(css,/\.main-content h1,[\s\S]*?\.main-content h6 \{\s*color: #8b432d;/);
+});

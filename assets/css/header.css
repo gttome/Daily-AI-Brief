@@ -6,6 +6,15 @@
   background-image: none;
 }
 
+.main-content h1,
+.main-content h2,
+.main-content h3,
+.main-content h4,
+.main-content h5,
+.main-content h6 {
+  color: #8b432d;
+}
+
 .ledger-navigation,
 .ledger-masthead {
   width: min(100% - 3rem, 76rem);
