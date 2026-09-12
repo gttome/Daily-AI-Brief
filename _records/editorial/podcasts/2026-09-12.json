@@ -1,0 +1,23 @@
+{
+  "brief_date": "2026-09-12",
+  "searched_at": "2026-09-12",
+  "selected_item_id": "dab-podcast-2026-09-12-ai-risk-specificity",
+  "source_registry": "_data/podcast-sources.json",
+  "candidates": [
+    {"title": "Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans", "show": "The AI Daily Brief", "url": "https://aidailybrief.ai/e/2026-09-10", "publication_date": "2026-09-10", "decision": "selected", "reason": "Publisher page, transcript, host and date verified; inside the preferred preceding 48-hour window; strong evidence-calibration connection; no archive duplicate."},
+    {"title": "Computer-Use Agents and the Future of the Agentic Internet", "show": "Practical AI", "url": "https://practicalai.show/371", "decision": "rejected", "reason": "Already selected for the September 11 edition; no material update."},
+    {"title": "The TWIML AI Podcast", "show": "The TWIML AI Podcast", "url": "https://twimlai.com/podcast/twimlai", "decision": "rejected", "reason": "Latest qualifying item had already been used; no new episode with stronger date and story fit was verified."},
+    {"title": "Everyday AI", "show": "Everyday AI", "url": "https://www.youreverydayai.com/", "decision": "rejected", "reason": "Current identity and date evidence were weaker than the selected publisher page."},
+    {"title": "The Artificial Intelligence Show", "show": "The Artificial Intelligence Show", "url": "https://podcast.smarterx.ai/", "decision": "rejected", "reason": "No September 10–12 episode with a stronger selected-story connection was verified."},
+    {"title": "AI for Humans", "show": "AI for Humans", "url": "https://www.aiforhumans.show/", "decision": "rejected", "reason": "No sufficiently current episode with better editorial fit was verified."},
+    {"title": "Latent Space", "show": "Latent Space", "url": "https://www.latent.space/podcast", "decision": "rejected", "reason": "No new September 10–12 full episode was verified."}
+  ],
+  "verification": {
+    "publication_date": "Publisher page states Thursday, September 10, 2026.",
+    "host": "Publisher page identifies host Nathaniel Whittemore.",
+    "runtime": "A reliable exact total runtime was not exposed on the publisher page; runtime remains null because podcasts have no duration cap.",
+    "platform_url": "Spotify link was followed from the publisher page to https://open.spotify.com/episode/4xD9AhlhIpzg6phdhS65qJ.",
+    "novelty": "Title and canonical URL were not found in prior editions or podcast records."
+  },
+  "limitations": ["The episode is commentary and synthesis, not independent empirical evidence for any quoted probability.", "No duration cap applies to podcast slot 9."]
+}

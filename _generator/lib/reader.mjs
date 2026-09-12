@@ -96,6 +96,9 @@ export function readerStories(repoRoot, edition, days = 30) {
     const record = name === `${edition.brief_date}.json` ? edition : JSON.parse(fs.readFileSync(path.join(canonicalDir, name), 'utf8'));
     const age = (Date.parse(edition.brief_date) - Date.parse(record.brief_date)) / 86400000;
     if (age >= 0 && age < days) {
+      for (const story of record.stories || []) {
+        byEditionPosition.set(`${record.brief_date}:${story.ordinal}`, canonicalStory(story, record));
+      }
       if (record.podcast?.status === 'included') byEditionPosition.set(`${record.brief_date}:9`, podcastStory(record.podcast, record));
       for (const [key, suffix, ordinal] of [['general','general',7],['agents_non_technical_people','agent-skills',8]]) {
         const slot=record.worth_watching?.[key];

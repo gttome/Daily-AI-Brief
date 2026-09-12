@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-09-1f112fc7
 
 **Why it matters:** This is a strong example of a bounded closed loop: the agent handles repetitive, software-controlled experiments while the researcher designs goals and interprets ambiguous physics. It is a case study rather than an independent evaluation; weak or noisy signals still required expert guidance.
 
-**For George’s work:** Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.
+**Original commentary:** Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.
 
 ## What to do now
 
 **Teach:** Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.
 
-**Source:** [How GPT-5.6 Sol helps run quantum computing experiments](https://openai.com/index/codex-quantum-computing-experiments/)
+**Source:** <a href="https://openai.com/index/codex-quantum-computing-experiments/" data-item-id="dab-story-2026-09-09-1f112fc7" data-edition-date="2026-09-09" data-action="source_clicks">How GPT-5.6 Sol helps run quantum computing experiments</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-story-2026-09-09-1f112fc7">
   <span class="feedback-prompt">Was this useful?</span>

@@ -1,18 +1,18 @@
 ---
 layout: default
 title: "Claude Cowork now formalizes a connector → browser → computer-use escalation path"
-description: "Anthropic’s Cowork documentation, updated this week, describes a practical tool-selection hierarchy for delegated work. Cowork prefers direct connectors when available, falls back to browser interaction when needed, and can use direct computer interaction—clicking, typing, opening apps, and navigating the screen—when no more precise tool is available. Anthropic explicitly notes that screen interaction is slower and more error-prone than connectors and recommends monitoring computer-use tasks, especially early on."
+description: "Anthropic’s Cowork documentation, updated this week, describes a practical tool-selection hierarchy for delegated work. Cowork prefers direct connectors when available, falls back to browser interacti"
 image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-06/06-cowork-computer-use.svg?v=20260906-1"
 permalink: /stories/2026-09-06/claude-cowork-now-formalizes-a-connector-browser-computer-use-escalation-path/
 brief_date: 2026-09-06
-story_id: dab-story-2026-09-06-0532fd4e
+story_id: dab-story-2026-09-06-fcc3f409
 ---
 
 [← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }})
 
 # Claude Cowork now formalizes a connector → browser → computer-use escalation path
 
-<span class="story-data" data-story-id="dab-story-2026-09-06-0532fd4e" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-06-fcc3f409" hidden></span>
 
 **Focus:** Agents for Non-Technical People  
 **Date:** September 5, 2026  
@@ -28,9 +28,9 @@ story_id: dab-story-2026-09-06-0532fd4e
 
 **Original commentary:** Incorporate “least-flexible sufficient tool” into agent governance. It maps cleanly to the AI Authority Ladder: connector actions can be tightly bounded, browser actions need more observation, and direct computer use warrants still stronger review for consequential workflows.
 
-**Source:** <a href="https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork" data-item-id="dab-story-2026-09-06-0532fd4e" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic Help Center — Let Claude use your computer in Cowork</a>
+**Source:** <a href="https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork" data-item-id="dab-story-2026-09-06-fcc3f409" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic Help Center — Let Claude use your computer in Cowork</a>
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-0532fd4e">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-fcc3f409">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-12",
+  "baseline_sha": "2217db6bfd4262772ba31d81980da9b00a983cb7",
+  "rollback_target_sha": "2217db6bfd4262772ba31d81980da9b00a983cb7",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-12-textbook.json",
+  "image_review_sha256": "912b9ccb0bde3bcec8a03e867b6f57cbe590932e1f97b98368e7ac7a3c91aa1f",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-12/01-copilot-review-verification.png",
+      "sha256": "d11c56d9e6b968bfe803931eb874356819f47723620d1249088e53cdd613a1bd",
+      "bytes": 365991
+    },
+    {
+      "path": "briefs/images/2026-09-12/02-vscode-agent-metrics.png",
+      "sha256": "7799def69212696ff279d5874f33590eba2f651353b63bd37d480fb6ddfeab91",
+      "bytes": 668411
+    },
+    {
+      "path": "briefs/images/2026-09-12/03-gemini-windows-workflow.png",
+      "sha256": "a70a467cef91a918dfb1c2595b67270fe958c6c7c48340c8dc050594d58e2b5d",
+      "bytes": 448861
+    },
+    {
+      "path": "briefs/images/2026-09-12/04-cross-platform-grounding.png",
+      "sha256": "108925ab04a4e52c117e79ad1fa91b89fc6a786036e9cfde91c4df50ede4900f",
+      "bytes": 698449
+    },
+    {
+      "path": "briefs/images/2026-09-12/05-mastra-filesystem-skills.png",
+      "sha256": "4300a2358adf7ebaacefd070d9d217b0092413eb76fe5355f6b4a973b8b14fc6",
+      "bytes": 772014
+    },
+    {
+      "path": "briefs/images/2026-09-12/06-no-code-agent-fit-test.png",
+      "sha256": "bc90d6562ad76baad66200f81d64bb24b65a8351493a47ad7b8f95198236c184",
+      "bytes": 683606
+    }
+  ],
+  "canonical_sha256": "0249b1f130187bfa45ce7314cd2a1568febaea39ea9c63966aea43e3cb8a66e8",
+  "candidate_digest": "sha256:7d3bfc029c01de43b83f1643b083928a1034060125dca51d696beab293b2af81"
+}

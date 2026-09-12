@@ -23,6 +23,19 @@ test('reader foundation creates six stable shared story pages with a fresh ratin
   }
 });
 
+test('reader foundation preserves canonical IDs and evidence on prior-edition pages', () => {
+  const prior = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-10.json'), 'utf8'));
+  const current = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-11.json'), 'utf8'));
+  const files = readerFoundationFiles(current, root);
+  const story = prior.stories[0];
+  const page = files.get(`stories/${prior.brief_date}/${story.slug}.md`);
+  const evidenceLabel = story.source.evidence_type.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+  assert.ok(page);
+  assert.match(page, new RegExp(`story_id: ${story.story_id}`));
+  assert.match(page, new RegExp(`\\*\\*Evidence:\\*\\* ${evidenceLabel}`));
+  assert.ok(page.includes(story.source.url));
+});
+
 test('every permanent story page inherits a visible Home link', () => {
   const layout = fs.readFileSync(path.join(root, '_layouts', 'default.html'), 'utf8');
   assert.match(layout, /href="{{ '\/' \| relative_url }}" class="btn">Home<\/a>/);

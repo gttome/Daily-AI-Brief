@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-08-08eab2e3
 
 **Why it matters:** This turns a prompt habit into reusable context infrastructure for ordinary knowledge work. Persistent instructions can also spread an outdated or overly broad rule, so users should keep them concise, inspectable, and scoped to appropriate work.
 
-**For George’s work:** Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.
+**Original commentary:** Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.
 
 ## What to do now
 
 **Adopt:** Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.
 
-**Source:** [Custom instructions for Gemini in Workspace now available in more apps](https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html)
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/09/custom-instructions-for-gemini-in-Workspace-now-available-in-more-apps.html" data-item-id="dab-story-2026-09-08-08eab2e3" data-edition-date="2026-09-08" data-action="source_clicks">Custom instructions for Gemini in Workspace now available in more apps</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-08eab2e3">
   <span class="feedback-prompt">Was this useful?</span>

@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-07-379d301c
 
 **Why it matters:** For non-technical users, this moves agentic work from one-off instructions toward reusable capabilities that can be measured and improved. Repeatability becomes more valuable when it includes evaluation.
 
-**For George’s work:** Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures.
+**Original commentary:** Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures.
 
 ## What to do now
 
 **Test:** Turn one repeated SharePoint task into a reusable skill and define an evaluation before expanding it.
 
-**Source:** [Microsoft SharePoint Blog — What's New in Copilot in SharePoint: September 2026](https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422)
+**Source:** <a href="https://techcommunity.microsoft.com/blog/spblog/whats-new-in-copilot-in-sharepoint-september-2026/4535422" data-item-id="dab-story-2026-09-07-379d301c" data-edition-date="2026-09-07" data-action="source_clicks">Microsoft SharePoint Blog — What&apos;s New in Copilot in SharePoint: September 2026</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-379d301c">
   <span class="feedback-prompt">Was this useful?</span>

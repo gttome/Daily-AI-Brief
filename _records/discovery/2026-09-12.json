@@ -1,0 +1,153 @@
+{
+  "date": "2026-09-12",
+  "sources": [
+    {
+      "source_id": "stanford-hai",
+      "status": "retrieved",
+      "candidate_links": 11
+    },
+    {
+      "source_id": "langchain",
+      "status": "retrieved",
+      "candidate_links": 11
+    },
+    {
+      "source_id": "anthropic-engineering",
+      "status": "retrieved",
+      "candidate_links": 28
+    },
+    {
+      "source_id": "hugging-face",
+      "status": "retrieved",
+      "candidate_links": 29
+    },
+    {
+      "source_id": "microsoft-research",
+      "status": "retrieved",
+      "candidate_links": 8
+    },
+    {
+      "source_id": "microsoft-365",
+      "status": "retrieved",
+      "candidate_links": 23
+    },
+    {
+      "source_id": "llamaindex",
+      "status": "retrieved",
+      "candidate_links": 329
+    },
+    {
+      "source_id": "google-workspace",
+      "status": "retrieved",
+      "candidate_links": 14
+    },
+    {
+      "source_id": "nvidia-ai-podcast",
+      "status": "retrieved",
+      "candidate_links": 159
+    },
+    {
+      "source_id": "ibm-technology",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout"
+    },
+    {
+      "source_id": "everyday-ai",
+      "status": "retrieved",
+      "candidate_links": 17
+    },
+    {
+      "source_id": "ai-for-humans",
+      "status": "retrieved",
+      "candidate_links": 0
+    },
+    {
+      "source_id": "google-deepmind",
+      "status": "retrieved",
+      "candidate_links": 0
+    },
+    {
+      "source_id": "practical-ai",
+      "status": "retrieved",
+      "candidate_links": 4
+    },
+    {
+      "source_id": "github-changelog",
+      "status": "retrieved",
+      "candidate_links": 21
+    },
+    {
+      "source_id": "microsoft-learn",
+      "status": "retrieved",
+      "candidate_links": 1
+    },
+    {
+      "source_id": "atlassian",
+      "status": "retrieved",
+      "candidate_links": 2
+    },
+    {
+      "source_id": "nvidia-developer",
+      "status": "retrieved",
+      "candidate_links": 65
+    },
+    {
+      "source_id": "salesforce",
+      "status": "retrieved",
+      "candidate_links": 17
+    },
+    {
+      "source_id": "zapier",
+      "status": "retrieved",
+      "candidate_links": 22
+    },
+    {
+      "source_id": "simon-willison",
+      "status": "retrieved",
+      "candidate_links": 35
+    }
+  ],
+  "queue_size": 664,
+  "measurement_window": {
+    "edition_number": 1,
+    "planned_editions": 14,
+    "review_after_complete_edition": 14,
+    "weights_activated": false
+  },
+  "editorial_funnel": {
+    "registered_sources_checked": 21,
+    "registered_sources_retrieved": 20,
+    "registered_source_failures": 1,
+    "retrieved_candidate_links": 796,
+    "rolling_queue_size": 664,
+    "candidates_reviewed": 20,
+    "candidates_verified_to_selection_standard": 6,
+    "selected": 6,
+    "selected_source_organizations": 5,
+    "selected_evidence_types": {"official_changelog": 2, "official_announcement": 1, "official_documentation": 1, "practitioner_analysis": 2},
+    "rejection_causes": {"overlap_or_novelty": 5, "insufficient_primary_evidence": 3, "category_mismatch": 2, "lower_evidence_or_practical_value": 4},
+    "video_fill_rate": "2/2",
+    "podcast_fill_rate": "1/1",
+    "image_fill_rate": "6/6"
+  },
+  "watchlist_discovery": {
+    "registered_sources_checked": 20,
+    "retrieved": 13,
+    "failed_or_no_candidates": 7,
+    "coverage_status": "degraded",
+    "retained_verified_topics": 8,
+    "discovery_record": "_records/watchlist-discovery/2026-09-12-20260912115955276.json",
+    "failed_sources": ["AlphaSignal: no candidate links", "Berkeley BAIR: HTTP 502", "Hugging Face Papers: timeout", "Import AI: timeout", "LocalLLaMA: no candidate links", "The Median: timeout", "TLDR AI: no candidate links"]
+  },
+  "usage_evidence": {
+    "elapsed_time": "Measured from the first repository materialization through final live QA; finalized in the dated QA trail.",
+    "image_drafts": 6,
+    "image_rejects": 0,
+    "failed_generation_attempts": 1,
+    "failed_generation_reason": "The first staging attempt correctly rejected image-review records that used the wrong hash field name; the records were repaired before publication.",
+    "exact_credits": null,
+    "exact_cost": null,
+    "coverage": "partial"
+  },
+  "note": "Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Watchlist source coverage is degraded, while the ordinary six-story editorial gate passed."
+}

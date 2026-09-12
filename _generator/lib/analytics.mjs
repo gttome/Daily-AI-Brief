@@ -121,7 +121,12 @@ export async function refreshFeedbackAnalytics(existing, date, stories, getCount
 }
 
 export function publicAnalyticsEvidence(edition, observedAt=new Date().toISOString(), privateStatus='not_collected') {
- const record=aggregateAnalytics({date:edition.brief_date,stories:edition.stories,counts:{},collectionStatus:'partial',limitations:[
+ const videos=[
+  ['general','general'],
+  ['agents_non_technical_people','agent-skills']
+ ].flatMap(([key,suffix])=>edition.worth_watching?.[key]?.status==='included' ? [{story_id:`dab-video-${edition.brief_date}-${suffix}`,...edition.worth_watching[key]}] : []);
+ const podcasts=edition.podcast?.status==='included' ? [{story_id:edition.podcast.item_id,...edition.podcast}] : [];
+ const record=aggregateAnalytics({date:edition.brief_date,stories:edition.stories,videos,podcasts,counts:{},collectionStatus:'partial',limitations:[
   'Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.',
   'Exact credit usage is unavailable without an attributable platform usage record.',
   'A later observation must not be represented as reconstructed event-day activity.'

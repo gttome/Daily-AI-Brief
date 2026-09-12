@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-12T02:08:04.109758Z",
+  "updated_at": "2026-09-12T11:59:55.276Z",
   "sources": [
     {
       "source_id": "rundown",
@@ -13,7 +13,7 @@
         "source_id": "rundown",
         "status": "retrieved",
         "candidate_links": 33,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -27,7 +27,7 @@
         "source_id": "tldr-ai",
         "status": "no_candidate_links",
         "candidate_links": 0,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -41,7 +41,7 @@
         "source_id": "explainx",
         "status": "retrieved",
         "candidate_links": 61,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -53,9 +53,9 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "the-batch",
-        "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "status": "retrieved",
+        "candidate_links": 1,
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -69,7 +69,7 @@
         "source_id": "import-ai",
         "status": "unavailable",
         "reason": "The operation was aborted due to timeout",
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -83,7 +83,7 @@
         "source_id": "superhuman",
         "status": "retrieved",
         "candidate_links": 19,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -97,12 +97,12 @@
         "source_id": "neuron",
         "status": "retrieved",
         "candidate_links": 10,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
       "source_id": "bens-bites",
-      "name": "Ben\u2019s Bites",
+      "name": "Ben’s Bites",
       "kind": "aggregator",
       "endpoint": "https://www.bensbites.com/",
       "check_cadence": "daily",
@@ -111,7 +111,7 @@
         "source_id": "bens-bites",
         "status": "retrieved",
         "candidate_links": 1,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -125,12 +125,12 @@
         "source_id": "alphasignal",
         "status": "no_candidate_links",
         "candidate_links": 0,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
       "source_id": "the-median",
-      "name": "The Median \u2014 DataCamp",
+      "name": "The Median — DataCamp",
       "kind": "aggregator",
       "endpoint": "https://dcthemedian.substack.com/",
       "check_cadence": "daily",
@@ -139,7 +139,7 @@
         "source_id": "the-median",
         "status": "unavailable",
         "reason": "The operation was aborted due to timeout",
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -153,7 +153,7 @@
         "source_id": "stanford-hai",
         "status": "retrieved",
         "candidate_links": 22,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -166,8 +166,8 @@
       "last_check": {
         "source_id": "berkeley-bair",
         "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "reason": "HTTP 502",
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -181,7 +181,7 @@
         "source_id": "mit-csail",
         "status": "retrieved",
         "candidate_links": 6,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -195,7 +195,7 @@
         "source_id": "openai",
         "status": "retrieved",
         "candidate_links": 24,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -209,7 +209,7 @@
         "source_id": "anthropic",
         "status": "retrieved",
         "candidate_links": 30,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -223,7 +223,7 @@
         "source_id": "deepmind",
         "status": "retrieved",
         "candidate_links": 7,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -235,9 +235,9 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "huggingface-papers",
-        "status": "retrieved",
-        "candidate_links": 33,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -250,8 +250,8 @@
       "last_check": {
         "source_id": "hacker-news",
         "status": "retrieved",
-        "candidate_links": 34,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "candidate_links": 32,
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -265,7 +265,7 @@
         "source_id": "localllama",
         "status": "no_candidate_links",
         "candidate_links": 0,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     },
     {
@@ -278,8 +278,8 @@
       "last_check": {
         "source_id": "github-trending",
         "status": "retrieved",
-        "candidate_links": 48,
-        "checked_at": "2026-09-12T02:08:04.186Z"
+        "candidate_links": 52,
+        "checked_at": "2026-09-12T11:59:55.276Z"
       }
     }
   ]

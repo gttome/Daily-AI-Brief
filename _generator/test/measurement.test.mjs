@@ -4,7 +4,7 @@ import path from 'node:path';
 import test from 'node:test';
 import {fileURLToPath} from 'node:url';
 import {accessibilityReview, auditEditionAccessibility, contrastRatio} from '../lib/accessibility.mjs';
-import {ANALYTICS_METRICS, aggregateAnalytics, analyticsKey, collectAnalytics, refreshFeedbackAnalytics} from '../lib/analytics.mjs';
+import {ANALYTICS_METRICS, aggregateAnalytics, analyticsKey, collectAnalytics, publicAnalyticsEvidence, refreshFeedbackAnalytics} from '../lib/analytics.mjs';
 import {loadQaRecords, qaMetrics, renderQaDashboard} from '../lib/quality.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
@@ -33,6 +33,15 @@ test('video shares and ratings are included without entering story-learning inpu
   assert.equal(record.videos[0].metrics.share_initiations, 1);
   assert.equal(record.videos[0].metrics.feedback_most_useful, 1);
   assert.equal(record.stories.length, 1);
+});
+
+test('public analytics availability includes every rateable media item with withheld counts', () => {
+  const record = publicAnalyticsEvidence(JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-12.json'), 'utf8')), '2026-09-12T13:00:00Z');
+  assert.equal(record.stories.length, 6);
+  assert.equal(record.videos.length, 2);
+  assert.equal(record.podcasts.length, 1);
+  assert.equal(record.videos.every(item => Object.values(item.metrics).every(value => value === null)), true);
+  assert.equal(record.podcasts.every(item => Object.values(item.metrics).every(value => value === null)), true);
 });
 
 test('analytics outage is explicit and never becomes a zero-count success', async () => {

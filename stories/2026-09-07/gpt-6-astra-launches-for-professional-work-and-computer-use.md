@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-07-8053a573
 
 **Why it matters:** For knowledge workers, the change is the combination of stronger reasoning, direct computer use, and production of documents, spreadsheets, presentations, and multi-step work. Availability is staged, so teams should verify access and evaluate the model in real workflows.
 
-**For George’s work:** Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification.
+**Original commentary:** Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification.
 
 ## What to do now
 
 **Evaluate:** Test Astra on one bounded professional workflow and verify access, outputs, and approval boundaries before broader use.
 
-**Source:** [OpenAI — GPT-6 Astra: A new generation of intelligence](https://openai.com/index/gpt-6-astra/)
+**Source:** <a href="https://openai.com/index/gpt-6-astra/" data-item-id="dab-story-2026-09-07-8053a573" data-edition-date="2026-09-07" data-action="source_clicks">OpenAI — GPT-6 Astra: A new generation of intelligence</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-8053a573">
   <span class="feedback-prompt">Was this useful?</span>

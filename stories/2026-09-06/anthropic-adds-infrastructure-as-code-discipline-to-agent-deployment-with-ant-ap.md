@@ -1,18 +1,18 @@
 ---
 layout: default
 title: "Anthropic adds infrastructure-as-code discipline to agent deployment with `ant apply`"
-description: "Anthropic’s September 3 platform release added `ant apply` to the `ant` CLI. Developers can describe agents, environments, skills, memory stores, and deployments in repository files, generate a proposed change plan, approve it, and commit a lockfile so later runs update the same resources instead of silently creating new ones. The pattern imports familiar infrastructure-as-code ideas into agent engineering."
+description: "Anthropic’s September 3 platform release added ant apply to the ant CLI. Developers can describe agents, environments, skills, memory stores, and deployments in repository files, generate a proposed c"
 image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-06/02-ant-apply.svg?v=20260906-1"
 permalink: /stories/2026-09-06/anthropic-adds-infrastructure-as-code-discipline-to-agent-deployment-with-ant-ap/
 brief_date: 2026-09-06
-story_id: dab-story-2026-09-06-679de9b0
+story_id: dab-story-2026-09-06-4426ca30
 ---
 
 [← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }})
 
 # Anthropic adds infrastructure-as-code discipline to agent deployment with `ant apply`
 
-<span class="story-data" data-story-id="dab-story-2026-09-06-679de9b0" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-06-4426ca30" hidden></span>
 
 **Focus:** Technical AI Engineering  
 **Date:** September 3, 2026  
@@ -28,9 +28,9 @@ story_id: dab-story-2026-09-06-679de9b0
 
 **Original commentary:** Add “agent resources as code” to harness-engineering material. It provides a strong bridge from prompts and context into operational reliability: version the agent, its skills, memory resources, and environment together, then review proposed changes before deployment.
 
-**Source:** <a href="https://docs.anthropic.com/en/release-notes/api" data-item-id="dab-story-2026-09-06-679de9b0" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic — Claude Platform release notes</a>
+**Source:** <a href="https://docs.anthropic.com/en/release-notes/api" data-item-id="dab-story-2026-09-06-4426ca30" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic — Claude Platform release notes</a>
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-679de9b0">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-4426ca30">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>
