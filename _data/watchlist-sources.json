@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-09-12T02:08:04.109758Z",
+  "sources": [
+    {
+      "source_id": "rundown",
+      "name": "The Rundown AI",
+      "kind": "aggregator",
+      "endpoint": "https://www.therundown.ai/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "rundown",
+        "status": "retrieved",
+        "candidate_links": 33,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "tldr-ai",
+      "name": "TLDR AI",
+      "kind": "aggregator",
+      "endpoint": "https://tldr.tech/ai",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "tldr-ai",
+        "status": "no_candidate_links",
+        "candidate_links": 0,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "explainx",
+      "name": "explainx.ai",
+      "kind": "aggregator",
+      "endpoint": "https://explainx.ai/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "explainx",
+        "status": "retrieved",
+        "candidate_links": 61,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "the-batch",
+      "name": "The Batch",
+      "kind": "aggregator",
+      "endpoint": "https://www.deeplearning.ai/the-batch/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "the-batch",
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "import-ai",
+      "name": "Import AI",
+      "kind": "aggregator",
+      "endpoint": "https://importai.substack.com/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "import-ai",
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "superhuman",
+      "name": "Superhuman AI",
+      "kind": "aggregator",
+      "endpoint": "https://www.superhuman.ai/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "superhuman",
+        "status": "retrieved",
+        "candidate_links": 19,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "neuron",
+      "name": "The Neuron",
+      "kind": "aggregator",
+      "endpoint": "https://www.theneurondaily.com/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "neuron",
+        "status": "retrieved",
+        "candidate_links": 10,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "bens-bites",
+      "name": "Ben\u2019s Bites",
+      "kind": "aggregator",
+      "endpoint": "https://www.bensbites.com/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "bens-bites",
+        "status": "retrieved",
+        "candidate_links": 1,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "alphasignal",
+      "name": "AlphaSignal",
+      "kind": "aggregator",
+      "endpoint": "https://alphasignal.ai/archive",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "alphasignal",
+        "status": "no_candidate_links",
+        "candidate_links": 0,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "the-median",
+      "name": "The Median \u2014 DataCamp",
+      "kind": "aggregator",
+      "endpoint": "https://dcthemedian.substack.com/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "the-median",
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "stanford-hai",
+      "name": "Stanford HAI",
+      "kind": "university",
+      "endpoint": "https://hai.stanford.edu/news",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "stanford-hai",
+        "status": "retrieved",
+        "candidate_links": 22,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "berkeley-bair",
+      "name": "Berkeley BAIR",
+      "kind": "university",
+      "endpoint": "https://bair.berkeley.edu/blog/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "berkeley-bair",
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "mit-csail",
+      "name": "MIT CSAIL",
+      "kind": "university",
+      "endpoint": "https://www.csail.mit.edu/news",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "mit-csail",
+        "status": "retrieved",
+        "candidate_links": 6,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "openai",
+      "name": "OpenAI",
+      "kind": "company",
+      "endpoint": "https://openai.com/news/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "openai",
+        "status": "retrieved",
+        "candidate_links": 24,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "anthropic",
+      "name": "Anthropic Engineering",
+      "kind": "company",
+      "endpoint": "https://www.anthropic.com/engineering",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "anthropic",
+        "status": "retrieved",
+        "candidate_links": 30,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "deepmind",
+      "name": "Google DeepMind",
+      "kind": "company",
+      "endpoint": "https://deepmind.google/blog/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "deepmind",
+        "status": "retrieved",
+        "candidate_links": 7,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "huggingface-papers",
+      "name": "Hugging Face Daily Papers",
+      "kind": "community",
+      "endpoint": "https://huggingface.co/papers",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "huggingface-papers",
+        "status": "retrieved",
+        "candidate_links": 33,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "hacker-news",
+      "name": "Hacker News / Show HN",
+      "kind": "community",
+      "endpoint": "https://news.ycombinator.com/show",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "hacker-news",
+        "status": "retrieved",
+        "candidate_links": 34,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "localllama",
+      "name": "LocalLLaMA",
+      "kind": "community",
+      "endpoint": "https://www.reddit.com/r/LocalLLaMA/",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "localllama",
+        "status": "no_candidate_links",
+        "candidate_links": 0,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    },
+    {
+      "source_id": "github-trending",
+      "name": "GitHub Trending",
+      "kind": "community",
+      "endpoint": "https://github.com/trending",
+      "check_cadence": "daily",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "last_check": {
+        "source_id": "github-trending",
+        "status": "retrieved",
+        "candidate_links": 48,
+        "checked_at": "2026-09-12T02:08:04.186Z"
+      }
+    }
+  ]
+}

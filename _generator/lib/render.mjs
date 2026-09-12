@@ -1,3 +1,4 @@
+import {watchlistPreview} from './watchlist.mjs';
 import {publicAnalyticsEvidence} from './analytics.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -71,7 +72,7 @@ export function renderBody(edition) {
 **Published:** ${formatDate(edition.brief_date)}  
 **Coverage period:** ${edition.coverage_period}
 
-${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\n')}
+${watchlistPreview(edition.brief_date)}${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\n')}
 
 ## Worth Watching
 
