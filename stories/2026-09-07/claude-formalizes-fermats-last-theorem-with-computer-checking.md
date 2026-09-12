@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-07-dab4bc85
 
 **Why it matters:** The important pattern is generative exploration paired with an external deterministic verifier. Agents can search and construct at scale while Lean provides a correctness gate that fluent text cannot bypass.
 
-**For George’s work:** Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking.
+**Original commentary:** Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking.
 
 ## What to do now
 
 **Teach:** Show how a deterministic verifier can bound generative exploration in reliability training.
 
-**Source:** [Anthropic — Formalizing Fermat's Last Theorem](https://www.anthropic.com/news/formalizing-fermats-last-theorem)
+**Source:** <a href="https://www.anthropic.com/news/formalizing-fermats-last-theorem" data-item-id="dab-story-2026-09-07-dab4bc85" data-edition-date="2026-09-07" data-action="source_clicks">Anthropic — Formalizing Fermat&apos;s Last Theorem</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-07" data-feedback-story-id="dab-story-2026-09-07-dab4bc85">
   <span class="feedback-prompt">Was this useful?</span>

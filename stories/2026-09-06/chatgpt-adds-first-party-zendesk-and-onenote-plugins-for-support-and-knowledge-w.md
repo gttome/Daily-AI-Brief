@@ -1,18 +1,18 @@
 ---
 layout: default
 title: "ChatGPT adds first-party Zendesk and OneNote plugins for support and knowledge workflows"
-description: "OpenAI added Zendesk and OneNote plugins in beta to supported ChatGPT and Codex experiences. Zendesk can help review permitted tickets, customer history, and knowledge and prepare replies. OneNote can find and summarize notes, collect decisions and action items, and perform supported create or update actions. Access remains bounded by the connected account’s permissions, workspace policy, and supported actions."
+description: "OpenAI added Zendesk and OneNote plugins in beta to supported ChatGPT and Codex experiences. Zendesk can help review permitted tickets, customer history, and knowledge and prepare replies. OneNote can"
 image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-06/03-plugins.svg?v=20260906-1"
 permalink: /stories/2026-09-06/chatgpt-adds-first-party-zendesk-and-onenote-plugins-for-support-and-knowledge-w/
 brief_date: 2026-09-06
-story_id: dab-story-2026-09-06-adb097bb
+story_id: dab-story-2026-09-06-9839a69b
 ---
 
 [← Daily Brief for September 6, 2026]({{ '/briefs/2026-09-06/' | relative_url }})
 
 # ChatGPT adds first-party Zendesk and OneNote plugins for support and knowledge workflows
 
-<span class="story-data" data-story-id="dab-story-2026-09-06-adb097bb" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-06-9839a69b" hidden></span>
 
 **Focus:** Applied Generative AI for Knowledge Workers  
 **Date:** September 3, 2026  
@@ -28,9 +28,9 @@ story_id: dab-story-2026-09-06-adb097bb
 
 **Original commentary:** These are strong mainstream examples for consulting and training: pre-meeting synthesis from OneNote, post-meeting action capture, and support-ticket analysis in Zendesk. They also illustrate a useful operating rule—read, verify, then write.
 
-**Source:** <a href="https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" data-item-id="dab-story-2026-09-06-adb097bb" data-edition-date="2026-09-06" data-action="source_clicks">OpenAI — ChatGPT Business release notes</a>
+**Source:** <a href="https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes" data-item-id="dab-story-2026-09-06-9839a69b" data-edition-date="2026-09-06" data-action="source_clicks">OpenAI — ChatGPT Business release notes</a>
 
-<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-adb097bb">
+<div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-06" data-feedback-story-id="dab-story-2026-09-06-9839a69b">
   <span class="feedback-prompt">Was this useful?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate this story">
     <button type="button" data-feedback-rating="most_useful" aria-label="Most useful">Very useful</button>

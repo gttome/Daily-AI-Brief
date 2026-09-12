@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_set_id": "dab-candidates-2026-09-12-7c4e91a2",
+  "brief_date": "2026-09-12",
+  "generated_at": "2026-09-12T12:00:00Z",
+  "candidates": [
+    {
+      "candidate_id": "dab-candidate-2026-09-12-01", "focus": "technical_ai_engineering", "headline": "Copilot code review adds tool-backed verification and an agent ensemble", "selected": true, "selected_ordinal": 1,
+      "source": {"url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/", "normalized_url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/", "evidence_type": "official_changelog", "availability_status": "general_availability"},
+      "score": {"significance": 5, "freshness": 5, "authority": 5, "evidence_quality": 4, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 34, "rationale": "Fresh primary release with a concrete harness pattern and specific vendor experiment results, qualified as non-independent evidence."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Best current technical story on tool-backed verification, ensemble review, and visible failure handling.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-02", "focus": "technical_ai_engineering", "headline": "GitHub separates VS Code agent activity from generic Copilot usage", "selected": true, "selected_ordinal": 2,
+      "source": {"url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/", "normalized_url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/", "evidence_type": "official_changelog", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 5, "authority": 5, "evidence_quality": 5, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 34, "rationale": "Primary documentation defines observability boundaries, access policy, time windows, and unavailable-data semantics."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Pairs agent telemetry with a strong warning against treating activity as quality or value.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-03", "focus": "applied_genai_knowledge_workers", "headline": "Gemini for Windows brings a keyboard-first AI layer to desktop work", "selected": true, "selected_ordinal": 3,
+      "source": {"url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/", "normalized_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 32, "rationale": "Broad-access official release with immediate knowledge-worker relevance and clear context-boundary implications."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Strongest current desktop-workflow item after availability and capability verification.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-04", "focus": "applied_genai_knowledge_workers", "headline": "Cross-platform grounding is the hidden requirement for workplace AI", "selected": true, "selected_ordinal": 4,
+      "source": {"url": "https://www.zoom.com/en/blog/why-ai-driven-work-requires-cross-platform-collaboration-insight/", "normalized_url": "https://www.zoom.com/en/blog/why-ai-driven-work-requires-cross-platform-collaboration-insight/", "evidence_type": "practitioner_analysis", "availability_status": "not_applicable"},
+      "score": {"significance": 4, "freshness": 5, "authority": 4, "evidence_quality": 3, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 31, "rationale": "Fresh vendor analysis makes silent retrieval incompleteness concrete, but does not offer independent comparative accuracy results."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Selected for a high-value grounding and provenance lesson with evidence limitations stated.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-05", "focus": "agents_non_technical_people", "headline": "Mastra moves reusable Agent Skills into shared filesystem workspaces", "selected": true, "selected_ordinal": 5,
+      "source": {"url": "https://mastra.ai/blog/introducing-filesystem-skills", "normalized_url": "https://mastra.ai/blog/introducing-filesystem-skills", "evidence_type": "official_documentation", "availability_status": "general_availability"},
+      "score": {"significance": 5, "freshness": 5, "authority": 5, "evidence_quality": 5, "novelty": 4, "practical_value": 5, "category_fit": 5, "total": 34, "rationale": "Official release materially extends reusable skills into shared stores, retrieval, mounts, and sandbox boundaries."},
+      "novelty_check": {"disposition": "material_update", "matches": [{"story_id": "dab-story-2026-09-11-bc8138fb", "match_type": "story_concept"}], "prior_story_ids": ["dab-story-2026-09-11-bc8138fb"], "what_changed": "Mastra adds shared and remotely mounted skill stores with on-demand search and a separate sandbox requirement for scripts."}, "selection_rationale": "Selected as the edition’s exactly one reusable Agent Skills story and a material update to yesterday’s portability coverage.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-06", "focus": "agents_non_technical_people", "headline": "A hands-on no-code agent comparison shows that fit depends on the whole workflow", "selected": true, "selected_ordinal": 6,
+      "source": {"url": "https://aimultiple.com/no-code-ai-agent-builders", "normalized_url": "https://aimultiple.com/no-code-ai-agent-builders", "evidence_type": "practitioner_analysis", "availability_status": "not_applicable"},
+      "score": {"significance": 4, "freshness": 5, "authority": 3, "evidence_quality": 3, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 30, "rationale": "Hands-on configuration evidence is useful, though mixed with vendor documentation and older table timestamps."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Selected for immediate non-technical evaluation value across debugging, failure handling, hosting, and cost.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-07", "focus": "technical_ai_engineering", "headline": "RubyGems account compromise renews interest in agent-era package controls", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.reuters.com/technology/", "normalized_url": "https://www.reuters.com/technology/", "evidence_type": "authoritative_reporting", "availability_status": "reported"},
+      "score": {"significance": 5, "freshness": 5, "authority": 4, "evidence_quality": 3, "novelty": 4, "practical_value": 4, "category_fit": 4, "total": 29, "rationale": "Potentially important supply-chain incident, but the discovery did not yield a direct affected-party disclosure or sufficiently specific canonical report URL."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because original incident evidence and a stable direct article identity were not verified.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-08", "focus": "technical_ai_engineering", "headline": "Oracle lists Grok 4.6 for on-demand generative AI inference", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm", "normalized_url": "https://docs.oracle.com/en-us/iaas/Content/generative-ai/home.htm", "evidence_type": "official_documentation", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 5, "authority": 5, "evidence_quality": 5, "novelty": 3, "practical_value": 3, "category_fit": 4, "total": 28, "rationale": "Primary availability evidence is strong, but the item offers limited new reliability or workflow insight."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected as a routine model-availability update with lower practical differentiation.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-09", "focus": "technical_ai_engineering", "headline": "Mastra adds keyword and semantic search across workspace filesystems", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://mastra.ai/blog", "normalized_url": "https://mastra.ai/blog", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 4, "practical_value": 4, "category_fit": 5, "total": 30, "rationale": "Useful retrieval feature, but it is tightly coupled to the selected filesystem-skills development."},
+      "novelty_check": {"disposition": "material_update", "matches": [{"candidate_id": "dab-candidate-2026-09-12-05", "match_type": "underlying_capability"}], "prior_story_ids": ["dab-story-2026-09-12-6ae3c942"], "what_changed": "Adds BM25, vector, or hybrid retrieval over mounted workspace content."}, "selection_rationale": null, "rejection_reason": "Rejected as overlapping evidence for the selected Mastra story rather than an independent development.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-10", "focus": "technical_ai_engineering", "headline": "DeepSeek V4.1 Flash claims faster agentic inference", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://github.com/deepseek-ai", "normalized_url": "https://github.com/deepseek-ai", "evidence_type": "official_repository", "availability_status": "announced"},
+      "score": {"significance": 4, "freshness": 5, "authority": 4, "evidence_quality": 2, "novelty": 4, "practical_value": 3, "category_fit": 5, "total": 27, "rationale": "The topic appeared in discovery and video metadata, but an exact primary model card or release artifact was not verified."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because the precise primary release evidence needed for performance claims was unavailable.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-11", "focus": "technical_ai_engineering", "headline": "Google AlphaGenome Atlas predicts variant effects at population scale", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://deepmind.google/discover/blog/", "normalized_url": "https://deepmind.google/discover/blog/", "evidence_type": "official_announcement", "availability_status": "research"},
+      "score": {"significance": 5, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 5, "practical_value": 2, "category_fit": 1, "total": 26, "rationale": "Substantive science development with official evidence, but it is predictive biology rather than the brief’s generative-AI focus."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected as outside the standing generative-AI and agent workflow focus.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-12", "focus": "technical_ai_engineering", "headline": "Google WeatherNext 3 expands global forecasting availability", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://deepmind.google/discover/blog/", "normalized_url": "https://deepmind.google/discover/blog/", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 5, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 4, "practical_value": 2, "category_fit": 1, "total": 25, "rationale": "Important forecasting update but outside the brief’s core generative-AI and knowledge-work scope."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected for category mismatch despite scientific significance.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-13", "focus": "applied_genai_knowledge_workers", "headline": "Google demonstrates AI-assisted recreation of an unrecorded family history", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://blog.google/", "normalized_url": "https://blog.google/", "evidence_type": "official_announcement", "availability_status": "not_applicable"},
+      "score": {"significance": 3, "freshness": 4, "authority": 5, "evidence_quality": 3, "novelty": 4, "practical_value": 2, "category_fit": 3, "total": 24, "rationale": "Interesting creative case, but promotional framing and limited transferable operating evidence reduce utility."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected in favor of developments with clearer repeatable work and control patterns.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-14", "focus": "applied_genai_knowledge_workers", "headline": "Salesforce reports gains from redesigned AI-assisted work", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.salesforce.com/news/stories/", "normalized_url": "https://www.salesforce.com/news/stories/", "evidence_type": "practitioner_analysis", "availability_status": "reported"},
+      "score": {"significance": 4, "freshness": 4, "authority": 3, "evidence_quality": 2, "novelty": 3, "practical_value": 4, "category_fit": 4, "total": 24, "rationale": "Potentially useful adoption evidence, but discovery surfaced promotional and self-reported claims without an independent study artifact."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because evidence quality and independent verification were insufficient.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-15", "focus": "applied_genai_knowledge_workers", "headline": "GitHub’s weekly Copilot bundle consolidates recent agent and review changes", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/", "normalized_url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7/", "evidence_type": "official_changelog", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 4, "authority": 5, "evidence_quality": 5, "novelty": 2, "practical_value": 4, "category_fit": 4, "total": 28, "rationale": "Strong official bundle but overlaps both selected GitHub items and previous daily coverage."},
+      "novelty_check": {"disposition": "material_update", "matches": [{"candidate_id": "dab-candidate-2026-09-12-01", "match_type": "source_bundle"}], "prior_story_ids": ["dab-story-2026-09-08-d0f5ce8c"], "what_changed": "The weekly bundle consolidates newer review and session changes."}, "selection_rationale": null, "rejection_reason": "Rejected to avoid double-counting individual developments already covered directly.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-16", "focus": "applied_genai_knowledge_workers", "headline": "Zapier updates its guide to AI operations platforms", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://zapier.com/blog/aiops-platforms/", "normalized_url": "https://zapier.com/blog/aiops-platforms/", "evidence_type": "practitioner_analysis", "availability_status": "not_applicable"},
+      "score": {"significance": 3, "freshness": 4, "authority": 3, "evidence_quality": 2, "novelty": 3, "practical_value": 4, "category_fit": 3, "total": 22, "rationale": "Accessible list content, but it is broad, commercially adjacent, and weaker than the hands-on workflow comparison."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected as lower-evidence list content with limited story-specific novelty.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-17", "focus": "agents_non_technical_people", "headline": "Sysdig explains how Agent Skills package reusable security procedures", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.sysdig.com/learn-cloud-native/what-are-agent-skills", "normalized_url": "https://www.sysdig.com/learn-cloud-native/what-are-agent-skills", "evidence_type": "practitioner_analysis", "availability_status": "not_applicable"},
+      "score": {"significance": 3, "freshness": 4, "authority": 3, "evidence_quality": 3, "novelty": 2, "practical_value": 4, "category_fit": 5, "total": 24, "rationale": "Useful explainer but not a distinct release, study, or material capability change."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": [{"candidate_id": "dab-candidate-2026-09-12-05", "match_type": "story_concept"}], "prior_story_ids": ["dab-story-2026-09-11-bc8138fb"], "what_changed": "The explainer applies the pattern to security procedures but adds no verified platform change."}, "selection_rationale": null, "rejection_reason": "Rejected because the edition permits exactly one Agent Skills story and Mastra provides stronger new evidence.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-18", "focus": "agents_non_technical_people", "headline": "Databricks documents workspace-local Agent Skills", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://docs.databricks.com/en/generative-ai/agent-framework/", "normalized_url": "https://docs.databricks.com/en/generative-ai/agent-framework/", "evidence_type": "official_documentation", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 2, "practical_value": 3, "category_fit": 4, "total": 26, "rationale": "Authoritative documentation but conceptually overlaps the selected skills item and is more technical for the target category."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": [{"candidate_id": "dab-candidate-2026-09-12-05", "match_type": "story_concept"}], "prior_story_ids": ["dab-story-2026-09-11-bc8138fb"], "what_changed": "Applies reusable skill packaging inside the Databricks agent framework."}, "selection_rationale": null, "rejection_reason": "Rejected under the exactly-one Agent Skills rule and lower non-technical accessibility.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-19", "focus": "agents_non_technical_people", "headline": "AI UX Playground offers an Agent Skills field guide", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://aiuxplayground.com/", "normalized_url": "https://aiuxplayground.com/", "evidence_type": "practitioner_analysis", "availability_status": "not_applicable"},
+      "score": {"significance": 2, "freshness": 4, "authority": 2, "evidence_quality": 2, "novelty": 2, "practical_value": 4, "category_fit": 5, "total": 21, "rationale": "Accessible tutorial material, but weaker authority and no distinct underlying development."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": [{"candidate_id": "dab-candidate-2026-09-12-05", "match_type": "story_concept"}], "prior_story_ids": ["dab-story-2026-09-10-331d65bd"], "what_changed": "Adds a practitioner-oriented explanation but no material release."}, "selection_rationale": null, "rejection_reason": "Rejected as tutorial repetition and under the exactly-one Agent Skills limit.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-12-20", "focus": "agents_non_technical_people", "headline": "Base44 promotes prompt-built applications for business teams", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://base44.com/", "normalized_url": "https://base44.com/", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 3, "authority": 4, "evidence_quality": 2, "novelty": 3, "practical_value": 4, "category_fit": 4, "total": 23, "rationale": "Relevant accessible building platform, but no sufficiently current story-specific release or evaluation was verified."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because discovery found a product surface rather than a current evidence-backed development.", "learning_adjustment": null
+    }
+  ]
+}

@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-08-3444f489
 
 **Why it matters:** Lower setup friction can make document-grounded agent workflows accessible to more non-technical workers. Added by default does not remove governance responsibility: administrators should still review access, approved use cases, data boundaries, and user training.
 
-**For George’s work:** Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.
+**Original commentary:** Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.
 
 ## What to do now
 
 **Update Policy:** Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.
 
-**Source:** [ChatGPT and Claude moving to Added by Default on September 8](https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8)
+**Source:** <a href="https://support.box.com/hc/en-us/articles/54344125154067-ChatGPT-and-Claude-moving-to-Added-by-Default-on-September-8" data-item-id="dab-story-2026-09-08-3444f489" data-edition-date="2026-09-08" data-action="source_clicks">ChatGPT and Claude moving to Added by Default on September 8</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-3444f489">
   <span class="feedback-prompt">Was this useful?</span>

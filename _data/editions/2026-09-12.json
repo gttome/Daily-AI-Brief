@@ -1,0 +1,543 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "full_v1",
+  "edition_id": "dab-edition-2026-09-12",
+  "brief_date": "2026-09-12",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 12, 2026",
+  "published_at": "2026-09-12T12:00:00Z",
+  "coverage_period": "Primary-source and practitioner developments published September 10–11, 2026.",
+  "status": "published",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-12-4f7c9a21",
+      "ordinal": 1,
+      "slug": "copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble",
+      "permanent_url": "/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot code review adds tool-backed verification and an agent ensemble",
+      "event_date": "2026-09-11",
+      "topics": [
+        "AI-assisted code review",
+        "tool use",
+        "agent ensembles",
+        "verification"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-12/01-copilot-review-verification.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/01-copilot-review-verification.png?v=20260912textbook",
+        "alt": "Radial code-review verification diagram in which specialist review agents use shell tools behind a firewall, merge findings into a review ledger, and separate addressed comments from still-open work.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260912textbook"
+      },
+      "summary": "GitHub expanded Copilot code review so its review agent can use the Copilot SDK’s shell tools behind the Copilot agent firewall to run builds, tests, targeted scripts, and available APIs. Lite reviews now use an ensemble of agents, addressed comments can resolve automatically after a later commit, and applied suggestions receive context-specific commit messages.",
+      "why_it_matters": "The engineering pattern is verification inside the review harness: several perspectives can inspect a change and execute checks before presenting one consolidated result. GitHub reports that its ensemble experiment increased addressed comments per review by 47% for high-severity findings, 31% for medium, and 11% for low while reducing cost about 8%; these are vendor experiments, not independent measures of defect-removal accuracy.",
+      "george_implication": "Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof.",
+      "source": {
+        "title": "Auto-resolution and analysis updates in Copilot code review",
+        "organization": "GitHub",
+        "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/",
+        "normalized_url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/",
+        "publication_date": "2026-09-11",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected for fresh primary evidence, a concrete harness-engineering pattern, and unusually specific—though vendor-reported—experimental results."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test the verification loop",
+        "rationale": "Compare a bounded pull-request set with and without executable checks, then inspect false positives and missed defects."
+      },
+      "social": {
+        "title": "Copilot code review adds tool-backed verification and an agent ensemble",
+        "description": "GitHub added firewall-bounded shell checks, multiple reviewing agents, and automatic resolution of addressed comments to Copilot code review.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/01-copilot-review-verification.png?v=20260912textbook"
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI",
+          "proposed_change": "Add an agent-review architecture that separates tool evidence, ensemble synthesis, unresolved findings, and human acceptance.",
+          "evidence_reason": "GitHub’s release makes executable verification a visible part of the review harness.",
+          "teaching_asset": "A pull-request exercise comparing prose review with test-backed review evidence."
+        }
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-12-8b2e61d4",
+      "ordinal": 2,
+      "slug": "github-separates-vs-code-agent-activity-from-generic-copilot-usage",
+      "permanent_url": "/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub separates VS Code agent activity from generic Copilot usage",
+      "event_date": "2026-09-11",
+      "topics": [
+        "agent observability",
+        "usage metrics",
+        "adoption measurement",
+        "data availability"
+      ],
+      "companies": [
+        "GitHub",
+        "Microsoft"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-12/02-vscode-agent-metrics.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/02-vscode-agent-metrics.png?v=20260912textbook",
+        "alt": "Isometric observability cutaway tracing VS Code agent-window activity through a policy gate into one-day, twenty-eight-day, aggregate, and per-user reports, with unavailable fields explicitly marked null.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260912textbook"
+      },
+      "summary": "GitHub added generally available VS Code Agents-window fields to Copilot usage reports for one-day and 28-day periods. Aggregate reports can expose active users, sessions, and user messages; user-level reports can expose whether the window was used plus session and message totals. The optional fields remain absent or null when data is unavailable.",
+      "why_it_matters": "Agent adoption needs a defined measurement boundary. GitHub explicitly separates the dedicated Agents window from editor Agent Mode and generic usage rollups, which reduces misleading comparisons. These fields measure activity, not task quality, business value, safety, or correctness, and access depends on enabled policy and authorized roles.",
+      "george_implication": "For consulting dashboards, label the surface, time window, population, and missing-data semantics. Pair adoption counts with completed-work evidence, review outcomes, and qualitative failure notes before drawing an ROI conclusion.",
+      "source": {
+        "title": "Add VS Code Agents to Copilot usage metrics",
+        "organization": "GitHub",
+        "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/",
+        "normalized_url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/",
+        "publication_date": "2026-09-11",
+        "evidence_type": "official_changelog",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected because it defines agent telemetry boundaries and missing-data behavior that engineering and governance teams can apply immediately."
+      },
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Separate activity from outcomes",
+        "rationale": "Instrument agent surfaces distinctly and add task-quality measures before interpreting adoption."
+      },
+      "social": {
+        "title": "GitHub separates VS Code agent activity from generic Copilot usage",
+        "description": "New Copilot metrics distinguish VS Code Agents-window activity, time windows, access policy, and unavailable data from broader usage rollups.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/02-vscode-agent-metrics.png?v=20260912textbook"
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI",
+          "proposed_change": "Extend the measurement chapter with a four-layer model: surface activity, task completion, quality, and business outcome.",
+          "evidence_reason": "GitHub’s fields show why agent-window usage must not be conflated with value.",
+          "teaching_asset": "A metric-classification worksheet with null and missing-data cases."
+        }
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-12-c16a53ef",
+      "ordinal": 3,
+      "slug": "gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work",
+      "permanent_url": "/stories/2026-09-12/gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Gemini for Windows brings a keyboard-first AI layer to desktop work",
+      "event_date": "2026-09-10",
+      "topics": [
+        "desktop AI",
+        "knowledge work",
+        "context retrieval",
+        "human review"
+      ],
+      "companies": [
+        "Google",
+        "Microsoft"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-12/03-gemini-windows-workflow.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/03-gemini-windows-workflow.png?v=20260912textbook",
+        "alt": "Keyboard-first desktop workflow ribbon branching from Alt plus Space into quick questions, connected context, multi-step tasks, and media creation before converging on a reviewed result.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260912textbook"
+      },
+      "summary": "Google launched a Gemini desktop app globally for Windows 10 and 11. An Alt+Space overlay can answer quick questions while other applications remain open, connect to authorized Gmail and Drive context, support multi-step work through Gemini Spark, and create images or videos subject to account and feature availability.",
+      "why_it_matters": "A system-level shortcut reduces the friction of moving work into an AI interface, making context selection and review habits more important. The announcement establishes features and availability, not independent evidence of productivity or accuracy; users should also distinguish content they intentionally share from context available through connected services.",
+      "george_implication": "Prototype one repeatable book-research or workshop-preparation task with a narrow source set. Record what context was used, verify citations and claims, and keep the final publishing decision outside the assistant.",
+      "source": {
+        "title": "The Gemini app is now available for Windows",
+        "organization": "Google",
+        "url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
+        "normalized_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/",
+        "publication_date": "2026-09-10",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 32,
+        "selection_rationale": "Selected as a broad-access knowledge-worker release with a concrete context-and-review workflow and clear availability caveats."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Pilot one desktop workflow",
+        "rationale": "Use a bounded task and document context, verification, and final approval before expanding use."
+      },
+      "social": {
+        "title": "Gemini for Windows brings a keyboard-first AI layer to desktop work",
+        "description": "Google’s Windows app adds an Alt+Space overlay, authorized Gmail and Drive context, multi-step tasks, and media creation.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/03-gemini-windows-workflow.png?v=20260912textbook"
+      },
+      "series_implications": [
+        {
+          "book_title": "Generative AI Professional Prompt Engineering Guide",
+          "proposed_change": "Add a desktop-assistant pattern that begins with deliberate context selection and ends with verification and approval.",
+          "evidence_reason": "The Windows release places AI beside everyday applications rather than inside a single document.",
+          "teaching_asset": "A short context-boundary checklist for desktop prompts."
+        }
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-12-2d8f70b6",
+      "ordinal": 4,
+      "slug": "cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai",
+      "permanent_url": "/stories/2026-09-12/cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Cross-platform grounding is the hidden requirement for workplace AI",
+      "event_date": "2026-09-11",
+      "topics": [
+        "cross-platform context",
+        "grounding",
+        "provenance",
+        "shadow AI"
+      ],
+      "companies": [
+        "Zoom",
+        "Microsoft",
+        "Google",
+        "Cisco"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-12/04-cross-platform-grounding.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/04-cross-platform-grounding.png?v=20260912textbook",
+        "alt": "Five collaboration-source islands flow through permission checks into a provenance spine, synthesis stage, and human completeness check, with a visible blind-spot branch for inaccessible context.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260912textbook"
+      },
+      "summary": "Zoom’s September 11 practitioner analysis describes a common workplace failure: an assistant can produce a responsive answer from one platform while missing decisive meeting, chat, document, or task context stored elsewhere. Zoom argues for an intelligence layer that can connect authorized context across Zoom, Microsoft Teams, Google Meet, Cisco Webex, and in-person conversations rather than forcing a platform consolidation.",
+      "why_it_matters": "Incomplete retrieval can look comprehensive, so cross-platform grounding is both an architecture and user-interface problem: permissions, provenance, missing-source signals, and human completeness checks must travel with the answer. The article is vendor-authored product analysis and provides scenarios, not independent comparative accuracy evidence.",
+      "george_implication": "In consulting and education, ask teams to map where decisions, commitments, and source documents actually live. A useful agent design should show what it searched, what it could not access, and what a reviewer must still check.",
+      "source": {
+        "title": "AI that only sees one platform is guessing about the rest",
+        "organization": "Zoom",
+        "url": "https://www.zoom.com/en/blog/why-ai-driven-work-requires-cross-platform-collaboration-insight/",
+        "normalized_url": "https://www.zoom.com/en/blog/why-ai-driven-work-requires-cross-platform-collaboration-insight/",
+        "publication_date": "2026-09-11",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "not_applicable"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 4,
+        "evidence_quality": 3,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 31,
+        "selection_rationale": "Selected for a high-value grounding failure pattern that knowledge workers can recognize and audit, with vendor-evidence limitations made explicit."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Map the missing context",
+        "rationale": "Inventory source systems, permissions, provenance, and blind-spot disclosures before trusting cross-work summaries."
+      },
+      "social": {
+        "title": "Cross-platform grounding is the hidden requirement for workplace AI",
+        "description": "Zoom’s analysis shows how apparently complete AI answers can miss decisive context stored in another collaboration platform.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/04-cross-platform-grounding.png?v=20260912textbook"
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI Context Engineering",
+          "proposed_change": "Add a cross-platform grounding diagram with accessible, inaccessible, and provenance-carrying context paths.",
+          "evidence_reason": "The practitioner scenarios make silent retrieval incompleteness concrete.",
+          "teaching_asset": "A source-map exercise for one recurring executive briefing."
+        }
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-12-6ae3c942",
+      "ordinal": 5,
+      "slug": "mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces",
+      "permanent_url": "/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/",
+      "focus": "agents_non_technical_people",
+      "headline": "Mastra moves reusable Agent Skills into shared filesystem workspaces",
+      "event_date": "2026-09-11",
+      "topics": [
+        "Agent Skills",
+        "SKILL.md",
+        "shared workspaces",
+        "sandbox permissions"
+      ],
+      "companies": [
+        "Mastra"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-12/05-mastra-filesystem-skills.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/05-mastra-filesystem-skills.png?v=20260912textbook",
+        "alt": "Layered filesystem-skills cutaway separating per-agent, shared, and isolated skill stores, SKILL.md instructions, references and scripts, mount boundaries, on-demand retrieval, sandbox execution, and human review.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260912textbook"
+      },
+      "summary": "Mastra added filesystem skills to Workspaces in core version 1.66.0 or later. Teams can store SKILL.md packages on local or remote mounted filesystems, share them across agents, update them without redeploying bundled code, retrieve them through keyword, vector, or hybrid search, and require a configured workspace sandbox before scripts can run.",
+      "why_it_matters": "This separates reusable procedure from the model and from application deployment, while keeping storage mounts and executable authority explicit. It also introduces operational obligations: version and review skill changes, restrict mounts, control who may edit shared stores, and treat script execution as a higher-risk capability. The evidence is product documentation, not an independent reliability evaluation.",
+      "george_implication": "Package one stable research or publishing procedure as a small skill with instructions, references, and an optional reviewed script. Test the same skill with two agents, keep the writable scope narrow, and assign a human owner for updates.",
+      "source": {
+        "title": "Introducing Filesystem Skills for Mastra Workspaces",
+        "organization": "Mastra",
+        "url": "https://mastra.ai/blog/introducing-filesystem-skills",
+        "normalized_url": "https://mastra.ai/blog/introducing-filesystem-skills",
+        "publication_date": "2026-09-11",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability"
+      },
+      "novelty": {
+        "disposition": "material_update",
+        "prior_story_ids": [
+          "dab-story-2026-09-11-bc8138fb"
+        ],
+        "what_changed": "Since the September 11 portability story, Mastra has documented shared and remotely mounted skill stores, searchable on demand across agents, with a separate sandbox requirement for executing skill scripts."
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Selected as today’s single Agent Skills item because it materially advances the previous portability theme into governed shared storage, discovery, and execution boundaries."
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Share one bounded skill",
+        "rationale": "Mount one reviewed skill read-only, test search behavior, and require approval before any script execution."
+      },
+      "social": {
+        "title": "Mastra moves reusable Agent Skills into shared filesystem workspaces",
+        "description": "Mastra now supports shared, searchable filesystem skills with explicit mount and sandbox boundaries for multi-agent use.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/05-mastra-filesystem-skills.png?v=20260912textbook"
+      },
+      "series_implications": [
+        {
+          "book_title": "Reliable Generative AI Context Engineering",
+          "proposed_change": "Extend the reusable-skill pattern from portable packages to governed shared stores with discovery, mounts, version ownership, and sandboxed scripts.",
+          "evidence_reason": "Mastra’s implementation exposes the operational boundary between reading a skill and executing its code.",
+          "teaching_asset": "A permission-mapping lab for a shared research skill."
+        }
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-12-f0397b5d",
+      "ordinal": 6,
+      "slug": "a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow",
+      "permanent_url": "/stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/",
+      "focus": "agents_non_technical_people",
+      "headline": "A hands-on no-code agent comparison shows that fit depends on the whole workflow",
+      "event_date": "2026-09-11",
+      "topics": [
+        "no-code agents",
+        "workflow evaluation",
+        "debugging",
+        "failure handling"
+      ],
+      "companies": [
+        "n8n",
+        "Make",
+        "Zapier",
+        "Creatio",
+        "OpenAI",
+        "Google"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-12/06-no-code-agent-fit-test.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/06-no-code-agent-fit-test.png?v=20260912textbook",
+        "alt": "Three materially different no-code agent workflow lanes pass through trigger, condition, tool call, webhook, error path, human review, and operating-cost criteria before a balanced fit decision.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260912textbook"
+      },
+      "summary": "AIMultiple updated its hands-on comparison after spending three days configuring agent workflows across n8n, Make, Zapier, and a Creatio trial, while evaluating OpenAI AgentKit from documentation. The comparison examines triggers, conditional steps, tool calls, webhooks, debugging visibility, self-hosting, integrations, and different execution-, operation-, task-, or model-consumption cost structures.",
+      "why_it_matters": "A low-code canvas does not remove engineering tradeoffs: the meaningful unit is an end-to-end workflow with permissions, observability, error paths, review, and a cost model. The article mixes direct testing with vendor documentation, was updated September 11 while some tabular data carries older timestamps, and should guide a proof-of-concept rather than declare a universal winner.",
+      "george_implication": "Choose one realistic consulting or publishing workflow and run it through two builders with the same acceptance test. Compare setup effort, visible traces, recovery from a failed tool, human approval, portability, and operating cost before selecting a platform.",
+      "source": {
+        "title": "Low/No-Code AI Agent Builders: n8n, make, Zapier",
+        "organization": "AIMultiple",
+        "url": "https://aimultiple.com/no-code-ai-agent-builders",
+        "normalized_url": "https://aimultiple.com/no-code-ai-agent-builders",
+        "publication_date": "2026-09-11",
+        "evidence_type": "practitioner_analysis",
+        "availability_status": "not_applicable"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 3,
+        "evidence_quality": 3,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 30,
+        "selection_rationale": "Selected for direct practical value to non-technical builders and transparent caveats about mixed evidence and timestamped data."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a two-builder fit test",
+        "rationale": "Use one workflow, identical acceptance criteria, an injected failure, and total operating effort to compare platforms."
+      },
+      "social": {
+        "title": "A hands-on no-code agent comparison shows that fit depends on the whole workflow",
+        "description": "AIMultiple’s workflow tests highlight debugging, recovery, hosting, integration, and cost tradeoffs across accessible agent builders.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/06-no-code-agent-fit-test.png?v=20260912textbook"
+      },
+      "series_implications": [
+        {
+          "book_title": "Generative AI Prompt Engineering Learning Ecosystem",
+          "proposed_change": "Add a platform-selection lab based on one identical workflow and explicit acceptance criteria.",
+          "evidence_reason": "The comparison shows that visual ease is only one part of agent-system fit.",
+          "teaching_asset": "A two-builder scorecard covering setup, traceability, failure recovery, review, portability, and cost."
+        }
+      ]
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Friday, September 11, 2026 - 5 Minute AI News",
+      "channel": "5-Minute-AI-News",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 293,
+      "why_useful": "A compact scan of the previous day’s AI developments that can help a reader identify which claims merit direct-source follow-up.",
+      "connection": "It complements the brief’s emphasis on separating rapid awareness from primary-evidence verification.",
+      "url": "https://www.youtube.com/watch?v=BKq1NquBDa4",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "YouTube player metadata reported 293 seconds (4:53), below the independently preferred ten-minute ceiling."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)",
+      "channel": "ErrorFixer",
+      "upload_date": "2026-08-31",
+      "runtime_seconds": 429,
+      "why_useful": "A concise introduction to SKILL.md structure and progressive disclosure for readers who want a practical starting point.",
+      "connection": "It provides background for the Mastra filesystem-skills story without requiring software-framework expertise.",
+      "url": "https://www.youtube.com/watch?v=5vTdpYVPUyI",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "YouTube player metadata reported 429 seconds (7:09); no stronger current short tutorial was verified in the fresh search, so this unused 12-day-old item was selected within the 30-day media window."
+      ]
+    }
+  },
+  "podcast": {
+    "status": "included",
+    "ordinal": 9,
+    "item_id": "dab-podcast-2026-09-12-ai-risk-specificity",
+    "title": "Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans",
+    "show": "The AI Daily Brief",
+    "host": "Nathaniel Whittemore",
+    "publication_date": "2026-09-10",
+    "runtime_seconds": null,
+    "focus": "applied_genai_knowledge_workers",
+    "topics": [
+      "AI risk",
+      "evidence quality",
+      "incentives",
+      "policy specificity"
+    ],
+    "url": "https://aidailybrief.ai/e/2026-09-10",
+    "permanent_url": "/podcasts/2026-09-12/ai-risk-specificity/",
+    "summary": "Nathaniel Whittemore examines a viral AI-extinction claim through incentives, media dynamics, uncertainty, and the demand for specific causal pathways and interventions. The episode contrasts highly visible extreme positions with a larger middle ground for capability progress and concrete safeguards.",
+    "why_useful": "It offers a practical method for reading dramatic AI claims: separate attention from novelty, identify incentives, and ask what evidence and intervention path would change the decision.",
+    "connection": "That evidence discipline matches today’s vendor-experiment cautions, incomplete-context risks, and agent-control themes.",
+    "george_implication": "Use a short segment in executive education to practice turning a sweeping risk statement into testable assumptions, affected decisions, and proportionate controls.",
+    "selection_rationale": "Verified publisher episode dated September 10, within the preferred preceding 48-hour window, with strong cross-brief relevance and no archive duplicate.",
+    "verification_note": "Publisher episode page, show notes, transcript markers, host, and date were checked. The page did not expose a reliable exact total runtime, and podcast duration has no cap; discussion and cited opinions are not treated as empirical prevalence evidence.",
+    "coverage_note": "Selected from the registered podcast-source review after identity, freshness, relevance, and novelty checks.",
+    "platforms": [
+      {
+        "name": "Publisher episode and transcript",
+        "url": "https://aidailybrief.ai/e/2026-09-10"
+      },
+      {
+        "name": "Spotify",
+        "url": "https://open.spotify.com/episode/4xD9AhlhIpzg6phdhS65qJJ"
+      }
+    ],
+    "series_implications": [
+      {
+        "book_title": "Reliable Generative AI",
+        "proposed_change": "Add an evidence-calibration exercise for dramatic future-risk claims.",
+        "evidence_reason": "The episode distinguishes attention, incentives, mechanisms, uncertainty, and actionable interventions.",
+        "teaching_asset": "A worksheet that rewrites one sweeping claim as testable assumptions and safeguards."
+      }
+    ]
+  },
+  "editorial_takeaway": "Today’s useful pattern is boundary clarity: reviews need executable evidence, metrics need named surfaces, desktop assistants need deliberate context, workplace synthesis needs visible blind spots, shared skills need mount and sandbox controls, and no-code agents need end-to-end acceptance tests.",
+  "provenance": {
+    "created_by": "Daily AI Brief automation",
+    "created_at": "2026-09-12T12:00:00Z",
+    "source_commit": "2217db6bfd4262772ba31d81980da9b00a983cb7"
+  }
+}

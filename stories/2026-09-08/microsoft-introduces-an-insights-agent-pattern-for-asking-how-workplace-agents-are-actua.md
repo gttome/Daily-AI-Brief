@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-08-9061ff44
 
 **Why it matters:** Non-technical makers need evidence about adoption, failure, and value after an agent is launched. A conversational analytics layer may simplify that review, but this is an early community demonstration and available metrics and controls must be verified before relying on it.
 
-**For George’s work:** Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.
+**Original commentary:** Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.
 
 ## What to do now
 
 **Monitor:** Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.
 
-**Source:** [Copilot, Microsoft 365 & Power Platform product updates call — September 8, 2026](https://techcommunity.microsoft.com/event/sharepoint-events/copilot-microsoft-365--power-platform-product-updates-call/4553894)
+**Source:** <a href="https://techcommunity.microsoft.com/event/sharepoint-events/copilot-microsoft-365--power-platform-product-updates-call/4553894" data-item-id="dab-story-2026-09-08-9061ff44" data-edition-date="2026-09-08" data-action="source_clicks">Copilot, Microsoft 365 &amp; Power Platform product updates call — September 8, 2026</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-9061ff44">
   <span class="feedback-prompt">Was this useful?</span>

@@ -26,13 +26,13 @@ story_id: dab-story-2026-09-08-aad4e966
 
 **Why it matters:** Trace-level evidence makes loop and harness defects diagnosable and supports safer regression testing. The article is practitioner analysis rather than a peer-reviewed benchmark, so its recommendations should be validated on each organization’s own workflows.
 
-**For George’s work:** Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.
+**Original commentary:** Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.
 
 ## What to do now
 
 **Teach:** Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.
 
-**Source:** [Using Execution Traces to Evaluate AI Agent Behavior](https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior)
+**Source:** <a href="https://huggingface.co/blog/phranzia/using-execution-traces-to-evaluate-agent-behavior" data-item-id="dab-story-2026-09-08-aad4e966" data-edition-date="2026-09-08" data-action="source_clicks">Using Execution Traces to Evaluate AI Agent Behavior</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-08" data-feedback-story-id="dab-story-2026-09-08-aad4e966">
   <span class="feedback-prompt">Was this useful?</span>

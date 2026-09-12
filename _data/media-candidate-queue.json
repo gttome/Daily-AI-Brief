@@ -1,1646 +1,6 @@
 {
-  "updated_at": "2026-09-11T16:56:16.914Z",
+  "updated_at": "2026-09-12T11:59:54.987Z",
   "candidates": [
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-02",
-      "title": "LlamaIndex Newsletter 2025-12-02",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.800Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-25",
-      "title": "LlamaIndex Newsletter 2025-11-25",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/announcing-llamasheets-turn-messy-spreadsheets-into-ai-ready-data-beta",
-      "title": "Announcing LlamaSheets: Turn Messy Spreadsheets into AI-Ready Data (Beta)",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/ai-document-parsing-llms-are-redefining-how-machines-read-and-understand-documents",
-      "title": "AI Document Parsing: LLMs Are Redefining How Machines Read and Understand Documents",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/observability-in-agentic-document-workflows",
-      "title": "Observability in Agentic Document Workflows",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaagents-build-serve-and-deploy-document-agents",
-      "title": "Announcing LlamaAgents Open Preview: Build, Serve &amp; Deploy Document Agents",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-18",
-      "title": "LlamaIndex Newsletter 2025-11-18",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/document-ai-the-next-evolution-of-intelligent-document-processing",
-      "title": "Document AI: The Next Evolution of Intelligent Document Processing",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-11",
-      "title": "LlamaIndex Newsletter 2025-11-11",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-04",
-      "title": "LlamaIndex Newsletter 2025-11-04",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/adding-native-mcp-to-llamaindex-docs",
-      "title": "Adding Native MCP to LlamaIndex Docs",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-28",
-      "title": "LlamaIndex Newsletter 2025-10-28",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/beyond-ocr",
-      "title": "Beyond OCR: DeepSeek&#39;s New Vision Compression and How it Serves Document AI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-21",
-      "title": "LlamaIndex Newsletter 2025-10-21",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-14",
-      "title": "LlamaIndex Newsletter 2025-10-14",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-07",
-      "title": "LlamaIndex Newsletter 2025-10-07",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-30",
-      "title": "LlamaIndex Newsletter 2025-09-30",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.802Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-23",
-      "title": "LlamaIndex Newsletter 2025-09-23",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/adding-document-understanding-to-claude-code",
-      "title": "Adding Document Understanding to Claude Code",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-09",
-      "title": "LlamaIndex Newsletter 2025-09-09",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/semtools-are-coding-agents-all-you-need",
-      "title": "SemTools: Are Coding Agents all you Need?",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-02",
-      "title": "LlamaIndex Newsletter 2025-09-02",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-26",
-      "title": "LlamaIndex Newsletter 2025-08-26",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/the-future-of-vibe-coding-agents",
-      "title": "The Future of Vibe-Coding Agents",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/stackai-uses-llamacloud-to-power-high-accuracy-retrieval-for-its-enterprise-document-agents",
-      "title": "StackAI Uses LlamaParse to Power High-Accuracy Retrieval for its Enterprise Document Agents",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-19",
-      "title": "LlamaIndex Newsletter 2025-08-19",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/give-ai-agents-web-access-with-bright-data-and-llamaindex",
-      "title": "Give AI Agents Web Access with Bright Data and LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-12",
-      "title": "LlamaIndex Newsletter 2025-08-12",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/how-skysql-enables-smarter-text-to-sql-agents-with-llamaindex",
-      "title": "How SkySQL Enables Smarter Text-to-SQL Agents with LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/automate-workflows-with-document-agents-a-complete-tutorial-to-building-context-aware-AI",
-      "title": "Automate Workflows with Document Agents: A Complete Tutorial to Building Context-Aware AI with LlamaParse",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-05",
-      "title": "LlamaIndex Newsletter 2025-08-05",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/automating-invoice-processing-with-document-agents",
-      "title": "Automating Invoice Processing with Document Agents: The Complete Guide to AI-Powered Financial Workflows",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/the-future-of-autonomous-agents-needs-to-be-reliable-mongodb",
-      "title": "The Future of Autonomous Agents Needs to Be Reliable",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-29",
-      "title": "LlamaIndex Newsletter 2025-07-29",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/build-smarter-ai-agents-with-oxylabs-and-llamaindex",
-      "title": "Build Smarter AI Agents with Oxylabs and LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llm-apis-are-not-complete-document-parsers",
-      "title": "LLM APIs Are Not Complete Document Parsers",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-22",
-      "title": "LlamaIndex Newsletter 2025-07-22",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/beyond-ocr-how-llms-are-revolutionizing-pdf-parsing",
-      "title": "Beyond OCR: How LLMs Are Revolutionizing PDF Parsing for Enterprise Document Processing",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-15",
-      "title": "LlamaIndex Newsletter 2025-07-15",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-08",
-      "title": "LlamaIndex Newsletter 2025-07-08",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/evaluating-rag-with-deepeval-and-llamaindex",
-      "title": "Evaluating RAG with DeepEval and LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/context-engineering-what-it-is-and-techniques-to-consider",
-      "title": "Context Engineering - What it is, and techniques to consider",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-01",
-      "title": "LlamaIndex Newsletter 2025-07-01",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/announcing-workflows-1-0-a-lightweight-framework-for-agentic-systems",
-      "title": "Announcing Workflows 1.0: A Lightweight Framework for Agentic systems",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/create-a-meeting-notetaker-agent-for-notion-with-llamaindex-and-zoom-rtms",
-      "title": "Create a Meeting Notetaker Agent for Notion with LlamaIndex and Zoom RTMS",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-24",
-      "title": "LlamaIndex Newsletter 2025-06-24",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/announcing-easy-agentic-frontends-with-ag-ui-and-copilotkit",
-      "title": "Announcing easy agentic frontends with AG-UI and CopilotKit",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-17",
-      "title": "LlamaIndex Newsletter 2025-06-17",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-10",
-      "title": "LlamaIndex Newsletter 2025-06-10",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-the-spreadsheet-agent-in-private-preview",
-      "title": "Introducing the Spreadsheet Agent, in private preview",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-06-03",
-      "title": "LlamaIndex Newsletter 2025-06-03",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/rag-is-dead-long-live-agentic-retrieval",
-      "title": "RAG is dead, long live agentic retrieval",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-05-27",
-      "title": "LlamaIndex Newsletter 2025-05-27",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/python-tooling-at-scale-llamaindex-s-monorepo-overhaul",
-      "title": "Python Tooling at Scale: LlamaIndex’s Monorepo Overhaul",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-05-20",
-      "title": "LlamaIndex Newsletter 2025-05-20",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/improved-long-and-short-term-memory-for-llamaindex-agents",
-      "title": "Improved Long &amp; Short-Term Memory for LlamaIndex Agents",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-05-13",
-      "title": "LlamaIndex Newsletter 2025-05-13",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-05-06",
-      "title": "LlamaIndex Newsletter 2025-05-06",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/building-smarter-ai-sdrs-with-llamaparse-how-11x-ai-shrinks-ramp-time-to-days",
-      "title": "Building Smarter AI SDRs with LlamaParse: How 11x.ai Shrinks Ramp Time to Days",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-welcomes-investments-from-databricks-and-kpmg",
-      "title": "LlamaIndex Welcomes Investments from Databricks and KPMG",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-04-29",
-      "title": "LlamaIndex Newsletter 2025-04-29",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/bending-without-breaking-optimal-design-patterns-for-effective-agents",
-      "title": "Bending without breaking: optimal design patterns for effective agents",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-how-condoscan-is-simplifying-condo-purchases-with-llamaindex-and-llamaparse",
-      "title": "Case Study: How CondoScan is simplifying Condo Purchases with LlamaIndex and LlamaParse",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/beyond-chatbots-adopting-agentic-document-workflows-for-enterprises",
-      "title": "Beyond chatbots: adopting Agentic Document Workflows for enterprises",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-04-22",
-      "title": "LlamaIndex Newsletter 2025-04-22",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-04-15",
-      "title": "LlamaIndex Newsletter 2025-04-15",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-03-25",
-      "title": "LlamaIndex Newsletter 2025-03-25",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-03-18",
-      "title": "LlamaIndex Newsletter 2025-03-18",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-03-11",
-      "title": "LlamaIndex Newsletter 2025-03-11",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-03-04",
-      "title": "LlamaIndex Newsletter 2025-03-04",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/announcing-our-series-a-and-llamacloud-general-availability",
-      "title": "Announcing our Series A and LlamaParse General Availability",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-02-25",
-      "title": "LlamaIndex Newsletter 2025-02-25",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-02-18",
-      "title": "LlamaIndex Newsletter 2025-02-18",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-how-caidera-ai-accelerates-life-sciences-marketing-with-llamaindex",
-      "title": "Case Study: How Caidera.ai Accelerates Life Sciences Marketing with LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-02-11",
-      "title": "LlamaIndex Newsletter 2025-02-11",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-02-04",
-      "title": "LlamaIndex Newsletter 2025-02-04",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-tender-rfp-agent-for-construction-sector-with-softiq",
-      "title": "Case study: Tender RFP agent for Construction Sector with SoftIQ",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-01-28",
-      "title": "LlamaIndex Newsletter 2025-01-28",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/revolutionizing-medical-insurance-analysis-with-agentic-claim-estimation",
-      "title": "Revolutionizing Medical Insurance Analysis with Agentic claim estimation",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-agentworkflow-a-powerful-system-for-building-ai-agent-systems",
-      "title": "Introducing AgentWorkflow: A Powerful System for Building AI Agent Systems",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-01-21",
-      "title": "LlamaIndex Newsletter 2025-01-21",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/building-knowledge-graph-agents-with-llamaindex-workflows",
-      "title": "Building knowledge graph agents with LlamaIndex Workflows",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-01-14",
-      "title": "LlamaIndex Newsletter 2025-01-14",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-agentic-document-workflows",
-      "title": "Introducing Agentic Document Workflows",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-01-07",
-      "title": "LlamaIndex Newsletter 2024-01-07",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-12-24",
-      "title": "LlamaIndex Newsletter 2024-12-24",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/the-year-in-llamaindex-2024",
-      "title": "The Year in LlamaIndex: 2024",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-12-17",
-      "title": "LlamaIndex Newsletter 2024-12-17",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-12-10",
-      "title": "LlamaIndex Newsletter 2024-12-10",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/permissions-aware-content-retrieval-with-sharepoint-and-llamacloud",
-      "title": "Permissions-aware content retrieval with SharePoint and LlamaParse",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-12-03",
-      "title": "LlamaIndex Newsletter 2024-12-03",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-11-26",
-      "title": "LlamaIndex Newsletter 2024-11-26",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-streamlined-research-paper-analysis-with-llamaparse-at-arcee-ai",
-      "title": "Case study: Streamlined Research Paper Analysis with LlamaParse at Arcee AI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/constructing-a-knowledge-graph-with-llamaindex-and-memgraph",
-      "title": "Constructing a Knowledge Graph with LlamaIndex and Memgraph",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/announcing-the-llamaindex-integration-with-azure-ai",
-      "title": "Announcing the LlamaIndex integration with Azure AI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-11-19",
-      "title": "LlamaIndex Newsletter 2024-11-19",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/using-nvidia-nim-for-agent-enhanced-ai-query-engines-with-llamaindex",
-      "title": "Using NVIDIA NIM for Agent-Enhanced AI Query Engines with LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/rag-context-refinement-agent",
-      "title": "RAG Context Refinement Agent",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/building-blocks-of-llm-report-generation-beyond-basic-rag",
-      "title": "Building Blocks of LLM Report Generation: Beyond Basic RAG",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-11-05",
-      "title": "LlamaIndex Newsletter 2024-11-05",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/oilyrags-building-a-rag-powered-mechanic-assistant-with-ai",
-      "title": "OilyRAGs: Building a RAG-powered mechanic&#39;s assistant with AI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-10-29",
-      "title": "LlamaIndex Newsletter 2024-10-29",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-building-an-ai-sales-assistant-with-llamaindex-and-nvidia-nim",
-      "title": "Developer Project Spotlight: Building an AI Sales Assistant with LlamaIndex and NVIDIA NIM",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/hackathon-winner-gift-genie-an-agent-that-doesn-t-save-you-time",
-      "title": "Gift Genie: an agent that doesn&#39;t save you time",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-10-22",
-      "title": "LlamaIndex Newsletter 2024-10-22",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/agentic-rag-a-thon-2-winners-and-recap",
-      "title": "Agentic RAG-a-thon 2: winners and recap",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-10-15",
-      "title": "LlamaIndex Newsletter 2024-10-15",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-10-08",
-      "title": "LlamaIndex Newsletter 2024-10-08",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-10-01",
-      "title": "LlamaIndex Newsletter 2024-10-01",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-09-24",
-      "title": "LlamaIndex Newsletter 2024-09-24",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-09-18",
-      "title": "LlamaIndex Newsletter 2024-09-18",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-09-10",
-      "title": "LlamaIndex Newsletter 2024-09-10",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-llama-deploy-a-microservice-based-way-to-deploy-llamaindex-workflows",
-      "title": "Introducing llama-deploy, a microservice-based way to deploy LlamaIndex Workflows",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-netchex-more-efficient-hr-operations-with-llamaindex-powered-askhr-netchex-ai",
-      "title": "Case Study: Netchex: More Efficient HR Operations with LlamaIndex Powered AskHR + Netchex AI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-09-03",
-      "title": "LlamaIndex Newsletter 2024-09-03",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-gymnation-revolutionizes-fitness-with-ai-agents-powering-member-experiences",
-      "title": "Case Study: GymNation Revolutionizes Fitness with AI Agents Powering Member Experiences",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/building-a-serverless-rag-application-with-llamaindex-and-azure-openai",
-      "title": "Building a serverless RAG application with LlamaIndex and Azure OpenAI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-08-27",
-      "title": "LlamaIndex Newsletter 2024-08-27",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-llamaindex-0-11",
-      "title": "Introducing LlamaIndex 0.11",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-08-20",
-      "title": "LlamaIndex Newsletter 2024-08-20",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-08-13",
-      "title": "LlamaIndex Newsletter 2024-08-13",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-08-06",
-      "title": "LlamaIndex Newsletter 2024-08-06",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-workflows-beta-a-new-way-to-create-complex-ai-applications-with-llamaindex",
-      "title": "Introducing workflows beta: a new way to create complex AI applications with LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/jamba-instruct-s-256k-context-window-on-llamaindex",
-      "title": "Jamba-Instruct&#39;s 256k context window on LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-07-30",
-      "title": "LlamaIndex Newsletter 2024-07-30",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/dynamic-retrieval-with-llamacloud",
-      "title": "Dynamic Retrieval with LlamaParse",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-07-23",
-      "title": "LlamaIndex Newsletter 2024-07-23",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/improving-vector-search-reranking-with-postgresml-and-llamaindex",
-      "title": "Improving Vector Search - Reranking with PostgresML and LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-how-scaleport-ai-accelerated-development-and-improved-sales-with-llamacloud",
-      "title": "Case Study: How Scaleport.ai Accelerated Development and Improved Sales with LlamaParse",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/building-a-multi-agent-concierge-system",
-      "title": "Building a multi-agent concierge system",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-07-16",
-      "title": "LlamaIndex Newsletter 2024-07-16",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/arize-ai-and-llamaindex-roll-out-joint-platform-for-evaluating-llm-applications",
-      "title": "Arize AI and LlamaIndex Roll Out Joint Platform for Evaluating LLM Applications",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/case-study-lyzr-taking-autonomous-ai-agents-to-usd1m-arr-with-llamaindex",
-      "title": "Case study: Lyzr: Taking autonomous AI agents to $1M+ ARR with LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-07-09",
-      "title": "LlamaIndex Newsletter 2024-07-09",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamacloud-built-for-enterprise-llm-app-builders",
-      "title": "LlamaParse - Built for Enterprise LLM App Builders",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-07-02",
-      "title": "LlamaIndex Newsletter 2024-07-02",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-llama-agents-a-powerful-framework-for-building-production-multi-agent-ai-systems",
-      "title": "Introducing llama-agents: A Powerful Framework for Building Production Multi-Agent AI Systems",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-06-25",
-      "title": "LlamaIndex Newsletter 2024-06-25",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-06-18",
-      "title": "LlamaIndex Newsletter 2024-06-18",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/customizing-property-graph-index-in-llamaindex",
-      "title": "Customizing property graph index in LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-06-11",
-      "title": "LlamaIndex Newsletter 2024-06-11",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-06-04",
-      "title": "LlamaIndex Newsletter 2024-06-04",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/introducing-the-property-graph-index-a-powerful-new-way-to-build-knowledge-graphs-with-llms",
-      "title": "Introducing the Property Graph Index: A Powerful New Way to Build Knowledge Graphs with LLMs",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/simplify-your-rag-application-architecture-with-llamaindex-postgresml",
-      "title": "Simplify your RAG application architecture with LlamaIndex + PostgresML",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-05-28",
-      "title": "LlamaIndex Newsletter 2024-05-28",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/automate-online-tasks-with-multion-and-llamaindex",
-      "title": "Automate online tasks with MultiOn and LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/batch-inference-with-mymagic-ai-and-llamaindex",
-      "title": "Batch inference with MyMagic AI and LlamaIndex",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-05-21",
-      "title": "LlamaIndex Newsletter 2024-05-21",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/secure-code-execution-in-llamaindex-with-azure-container-apps-dynamic-sessions",
-      "title": "Secure code execution in LlamaIndex with Azure Container Apps dynamic sessions",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/using-llamaindex-and-llamafile-to-build-a-local-private-research-assistant",
-      "title": "Using LlamaIndex and llamafile to build a local, private research assistant",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-05-14",
-      "title": "LlamaIndex Newsletter 2024-05-14",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-05-07",
-      "title": "LlamaIndex Newsletter 2024-05-07",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-04-30",
-      "title": "LlamaIndex Newsletter 2024-04-30",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/streamlining-knowledge-work-with-llamaindex-fireworks-and-mongodb",
-      "title": "Streamlining knowledge work with LlamaIndex, Fireworks and MongoDB",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-04-23",
-      "title": "LlamaIndex Newsletter 2024-04-23",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-04-16",
-      "title": "LlamaIndex Newsletter 2024-04-16",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-04-09",
-      "title": "LlamaIndex Newsletter 2024-04-09",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-04-02",
-      "title": "LlamaIndex Newsletter 2024-04-02",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-03-26",
-      "title": "LlamaIndex Newsletter 2024-03-26",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/secure-rag-with-llamaindex-and-llm-guard-by-protect-ai",
-      "title": "Secure RAG with LlamaIndex and LLM Guard by Protect AI",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/supercharge-your-llamaindex-rag-pipeline-with-uptrain-evaluations",
-      "title": "Supercharge your LlamaIndex RAG Pipeline with UpTrain Evaluations",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-03-19",
-      "title": "LlamaIndex Newsletter 2024-03-19",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/llamaindex-accelerates-enterprise-generative-ai-with-nvidia-nim",
-      "title": "LlamaIndex Accelerates Enterprise Generative AI with NVIDIA NIM",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
-    {
-      "url": "https://www.llamaindex.ai/blog/launching-the-first-genai-native-document-parsing-platform",
-      "title": "Launching the first GenAI-native document parsing platform",
-      "source_id": "llamaindex",
-      "format": "article",
-      "discovered_at": "2026-09-11T16:55:37.803Z",
-      "publication_date": null,
-      "runtime_seconds": null,
-      "status": "needs_editorial_and_metadata_review"
-    },
     {
       "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2024-03-12",
       "title": "LlamaIndex Newsletter 2024-03-12",
@@ -4997,6 +3357,1646 @@
       "source_id": "simon-willison",
       "format": "article",
       "discovered_at": "2026-09-11T16:56:16.914Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/about/get-involved",
+      "title": "Get Involved with HAI",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.160Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/how-ai-is-accelerating-scientific-discovery",
+      "title": "How AI Is Accelerating Scientific Discovery",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/ai-companions-may-worsen-loneliness-for-vulnerable-users-stanford-study-finds",
+      "title": "AI Companions May Worsen Loneliness for Vulnerable Users, Stanford Study Finds",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/open-weight-models-arent-enough-we-need-truly-open-source-ai-models-for-science-and-society",
+      "title": "Open-Weight Models Aren’t Enough. We Need Truly Open Source AI Models for Science and Society.",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/why-governing-world-models-is-ais-next-big-policy-challenge",
+      "title": "Why Governing World Models Is AI&#x27;s Next Big Policy Challenge",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/the-complexities-of-governing-mental-health-ai",
+      "title": "The Complexities of Governing Mental Health AI",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/how-ai-is-helping-states-cut-through-decades-of-red-tape",
+      "title": "How AI Is Helping States Cut Through Decades of Red Tape",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/legal-ais-legibility-problem",
+      "title": "Legal AI’s Legibility Problem",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/ai-legal-review-says-millions-live-under-discriminatory-local-laws",
+      "title": "AI Legal Review Says Millions Live Under Discriminatory Local Laws",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/new-stanford-grants-tackle-ais-impact-on-global-security-and-geopolitics",
+      "title": "New Stanford Grants Tackle AI&#x27;s Impact on Global Security and Geopolitics",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://hai.stanford.edu/topics/international-affairs-international-security-international-development",
+      "title": "International Affairs, International Security, International Development",
+      "source_id": "stanford-hai",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.161Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/engine",
+      "title": "Engine Improve agents autonomously",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/observability",
+      "title": "Observability See exactly what your agents are doing",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/evaluation",
+      "title": "Evaluation Score and improve agent performance",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/deployment",
+      "title": "Deployment Ship and scale agents in production",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/sandboxes",
+      "title": "Sandboxes Run agent-generated code safely",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/llm-gateway",
+      "title": "LLM Gateway Control agent model calls",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/fleet",
+      "title": "Fleet Agents for the whole company",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/deep-agents",
+      "title": "deepagents Build long-running agents for complex tasks",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langgraph",
+      "title": "langgraph Build agents with low-level control",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.langchain.com/langchain",
+      "title": "langchain Quick start agents with any model provider",
+      "source_id": "langchain",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.251Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering",
+      "title": "Skip to main content",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/april-23-postmortem",
+      "title": "An update on recent Claude Code quality reports Apr 23, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/managed-agents",
+      "title": "Scaling Managed Agents: Decoupling the brain from the hands Apr 08, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/claude-code-auto-mode",
+      "title": "How we built Claude Code auto mode: a safer way to skip permissions Mar 25, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/eval-awareness-browsecomp",
+      "title": "Eval awareness in Claude Opus 4.6’s BrowseComp performance Mar 06, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+      "title": "Quantifying infrastructure noise in agentic coding evals Feb 05, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/building-c-compiler",
+      "title": "Building a C compiler with a team of parallel Claudes Feb 05, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations",
+      "title": "Designing AI-resistant technical evaluations Jan 21, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "title": "Demystifying evals for AI agents Jan 09, 2026",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "title": "Effective harnesses for long-running agents Nov 26, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/advanced-tool-use",
+      "title": "Introducing advanced tool use on the Claude Developer Platform Nov 24, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "title": "Code execution with MCP: Building more efficient agents Nov 04, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/claude-code-sandboxing",
+      "title": "Beyond permission prompts: making Claude Code more secure and autonomous Oct 20, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "title": "Equipping agents for the real world with Agent Skills Oct 16, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "title": "Effective context engineering for AI agents Sep 29, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "title": "Writing effective tools for agents — with agents Sep 11, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/desktop-extensions",
+      "title": "Desktop Extensions: One-click MCP server installation for Claude Desktop Jun 26, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "title": "How we built our multi-agent research system Jun 13, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/claude-code-best-practices",
+      "title": "Claude Code: Best practices for agentic coding Apr 18, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/claude-think-tool",
+      "title": "The &quot;think&quot; tool: Enabling Claude to stop and think in complex tool use situations Mar 20, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/swe-bench-sonnet",
+      "title": "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet Jan 06, 2025",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "title": "Building effective agents Dec 19, 2024",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/contextual-retrieval",
+      "title": "Introducing Contextual Retrieval Sep 19, 2024",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://claude.com/product/claude-code/enterprise",
+      "title": "Claude Code Enterprise",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://claude.com/claude-for-microsoft-365",
+      "title": "Claude for Microsoft 365",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://claude.com/partners",
+      "title": "Claude partner network",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/constitution",
+      "title": "Claude’s Constitution",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.anthropic.com/policy-on-the-ai-exponential",
+      "title": "Policy on the AI Exponential",
+      "source_id": "anthropic-engineering",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:13.859Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/hugging-science/earthmover-hf",
+      "title": "Making open-source AI weather forecasting models easy to run hugging-science • 4 days ago • 29",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/not-lain/kv-caching",
+      "title": "KV Caching Explained: Optimizing Transformer Inference Efficiency not-lain • Jan 30, 2025 • 412",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/TheAgenticDataCompany/open-yap-1k",
+      "title": "Open Yap 1K: 1,000 hours of full-duplex natural conversation, free for commercial use TheAgenticDataCompany • 9 days ago • 13",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/Agenten/was-sind-ki-agenten",
+      "title": "Was sind KI-Agenten? So funktioniert Agentic AI Agenten • 3 days ago • 6",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/mlabonne/abliteration",
+      "title": "Uncensor any LLM with abliteration mlabonne • Jun 13, 2024 • 918",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/lucifertrj/turboquant-quantization-explained",
+      "title": "TurboQuant Quantization Explained lucifertrj • 6 days ago • 5",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/ivanmikhnenkov/tinydit-text-to-image-from-scratch-one-gpu",
+      "title": "Trained 210M text-to-image model from scratch on one GPU: what actually mattered ivanmikhnenkov • 3 days ago • 4",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/sergiopaniego/rl-environments-2026",
+      "title": "One sandbox per rollout, or how labs run RL for agents in 2026 sergiopaniego • about 22 hours ago • 3",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/ARTPARK-IISc/a-real-world-dataset-for-noise-robust-speech-ai",
+      "title": "A Real-World Dataset for Noise-Robust Speech AI: 100+ Timestamped Noise Types Across 58 Indian Languages ARTPARK-IISc • 5 days ago • 3",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/karina-zadorozhny/guide-to-llm-post-training-algorithms",
+      "title": "A Guide to Reinforcement Learning Post-Training for LLMs: PPO, DPO, GRPO, and Beyond karina-zadorozhny • Jan 19 • 47",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/qvac/translatepsy-nano",
+      "title": "TranslatePsy-Nano: Compact Multilingual Machine Translation for Resource-Constrained Edge Deployment qvac • 10 days ago • 2",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/funes",
+      "title": "agents open-source datasets Give Your Coding Agents a Memory You Own 74 September 3, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/train-to-paint-with-code",
+      "title": "rl grpo trl Training a coding model to paint watercolours with TRL and OpenEnv 65 September 3, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/allenai/benchmirt",
+      "title": "BenchMIRT: What are LLM benchmarks actually measuring? 19 September 1, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/webgpu-kernels",
+      "title": "inference javascript webgpu Introducing @huggingface/kernels: 200+ WebGPU Kernels for Local AI 64 September 1, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/train-multi-vector-encoder",
+      "title": "nlp guide community Training and Finetuning Multi-Vector Embedding Models with Sentence Transformers 126 August 26, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/ibm-granite/granite-4-2",
+      "title": "Granite 4.2 LLMs: How They're Built 109 August 25, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://huggingface.co/blog/gradio-workflow-guide",
+      "title": "gradio workflows tutorial Wire It, Run It, Deploy It: AI Workflows in Gradio 45 August 25, 2026",
+      "source_id": "hugging-face",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:14.440Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/research-area/search-information-retrieval/",
+      "title": "Search &amp; information retrieval",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-lab-cambridge/",
+      "title": "Mixed Reality &amp; AI - Cambridge",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/lab/mixed-reality-ai-zurich/",
+      "title": "Mixed Reality &amp; AI - Zurich",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/",
+      "title": "Orchard: An open framework for scalable agentic AI &nbsp;",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/blog/echoverse-deep-evolving-environments-for-computer-use-agents/",
+      "title": "Echoverse: Deep, evolving environments for computer-use agents &nbsp;",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/blog/flint-a-visualization-language-for-the-ai-era/",
+      "title": "Flint: A visualization language for the AI era &nbsp;",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/",
+      "title": "SkillOpt: Agent skills as trainable parameters &nbsp;",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://education.microsoft.com/",
+      "title": "Educator training and development",
+      "source_id": "microsoft-research",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.094Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/",
+      "title": "Skip to main content",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365-copilot/learn-copilot-today",
+      "title": "Learn to use Copilot",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot-learning-center",
+      "title": "Copilot learning center",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/07/30/the-next-measure-of-ai-momentum-is-work-transformed/",
+      "title": "The next measure of AI momentum is work transformed",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/09/03/ppcc-2026-bringing-ai-and-your-business-processes-together/",
+      "title": "PPCC 2026: Bringing AI and your business processes together",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/25/copilot-in-excel-built-for-the-era-of-frontier-finance/",
+      "title": "Copilot in Excel: Built for the era of Frontier Finance",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/",
+      "title": "Copilot Cowork is now generally available",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/02/introducing-microsoft-scout-your-always-on-personal-agent/",
+      "title": "Introducing Microsoft Scout: Your always-on personal agent",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/",
+      "title": "Build apps in Copilot Cowork and Copilot Studio",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/copilot-cowork-from-conversation-to-action-across-skills-integrations-and-devices/",
+      "title": "Copilot Cowork: From conversation to action across skills, integrations, and devices",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/05/05/microsoft-365-copilot-human-agency-and-the-opportunity-for-every-organization/",
+      "title": "Microsoft 365 Copilot, human agency, and the opportunity for every organization",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/security/blog/2026/05/01/microsoft-agent-365-now-generally-available-expands-capabilities-and-integrations/",
+      "title": "Microsoft Agent 365, now generally available, expands capabilities and integrations",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/13/bring-your-everyday-business-apps-into-the-flow-of-work-with-agents-in-microsoft-365-copilot/",
+      "title": "Bring your everyday business apps into the flow of work with agents in Microsoft 365 Copilot",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/",
+      "title": "Powering Frontier Transformation with Copilot and agents",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.236Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-computer-using-agents-a-new-workflows-experience-and-real-time-voice-experiences/",
+      "title": "New and improved: Computer-using agents, a new workflows experience, and real-time voice experiences",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.237Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-agent-governance-intelligent-workflows-and-connected-app-experiences/",
+      "title": "New and improved: Agent governance, intelligent workflows, and connected app experiences",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.237Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/04/22/copilots-agentic-capabilities-in-word-excel-and-powerpoint-are-generally-available/",
+      "title": "Copilot&#8217;s agentic capabilities in Word, Excel, and PowerPoint are generally available",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.237Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/30/copilot-cowork-now-available-in-frontier/",
+      "title": "Copilot Cowork: Now available in Frontier",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.237Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/",
+      "title": "Copilot Cowork: A new way of getting work done",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.237Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/microsoft-365/copilot/copilot-for-work",
+      "title": "Learn more about Microsoft 365 Copilot Work",
+      "source_id": "microsoft-365",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:15.237Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/solutions/finance",
+      "title": "Financial Analysts Build AI-powered financial models",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.792Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/industry/insurance",
+      "title": "Insurance Automate claims and underwriting",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/careers",
+      "title": "View open roles at LlamaIndex",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/deep-extraction",
+      "title": "Why Single-Pass Extraction Fails and What Deep Extraction Actually Solves",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/ai-document-classification",
+      "title": "AI Document Classification: A Practical Guide to Automated Sorting and Tagging",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/ocr-accuracy",
+      "title": "OCR Accuracy Explained: What Impacts Performance and How to Improve It",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/agentic-document-extraction",
+      "title": "How Agentic AI Improves Document Extraction Accuracy and Automation",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/agentic-document-processing",
+      "title": "Agentic Document Processing: How AI Agents Are Automating Complex Workflows",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/ocr-for-receipts",
+      "title": "Agentic OCR for Receipts: Why Traditional Pipelines Break",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/ocr-for-images",
+      "title": "OCR for Images: Top AI Software for Image-to-Text Conversion",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/agentic-ocr",
+      "title": "What Is Agentic OCR? The Next Evolution of Intelligent Document Automation",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/just-in-time-agentic-ocr",
+      "title": "Just-in-Time Agentic OCR",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/au-revoir-stainless",
+      "title": "Au Revoir, Stainless",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-and-kaggle-launch-a-document-extraction-leaderboard-for-ai-agents",
+      "title": "LlamaIndex and Kaggle Launch a Document Extraction Leaderboard for AI Agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/exploring-static-embedding-retrieval",
+      "title": "Exploring Static Embedding Retrieval",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/temporal-scale-document-orchestration",
+      "title": "How LlamaIndex Uses Temporal to Scale Reliable Document Orchestration",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llm-ocr",
+      "title": "LLM OCR: The Error Got Quieter, Not Rarer",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-26-07-15",
+      "title": "LlamaIndex Newsletter 7-15-26",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-26-07-08",
+      "title": "LlamaIndex Newsletter 7-8-26",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/announcing-retrieval-harness",
+      "title": "Announcing Retrieval Harness",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/building-a-better-liteparse-skill-with-evals",
+      "title": "Building a Better LiteParse Skill with Evals",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-6-10-26",
+      "title": "LlamaIndex Newsletter 6-10-26",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-5-26-26",
+      "title": "LlamaIndex Newsletter 5-26-26",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/is-grep-all-you-need-lexical-vs-sematic-search-for-agents",
+      "title": "Is grep all you need? Lexical VS Sematic Search for Agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/ocr-for-insurance-documents",
+      "title": "OCR for Insurance Documents: Transforming Claims Processing",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/ai-powered-document-analysis",
+      "title": "AI-Powered Document Analysis for Financial Compliance in Fintech",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/medical-claims-processing-systems",
+      "title": "Medical Claims Processing Systems: Why Most Claim Denials Start at Document Intake",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-5-19-26",
+      "title": "LlamaIndex Newsletter 5-19-26",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/building-a-financial-due-diligence-agent-with-liteparse",
+      "title": "Building a Financial Due Diligence Agent with LiteParse",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaparse-mcp-the-tooling-layer-for-your-document-agents",
+      "title": "LlamaParse MCP: Agentic OCR tools for your AI agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/build-automated-loan-income-verification-with-llamaparse-claude-agent-sdk",
+      "title": "Build Automated Loan Income Verification with LlamaParse + Claude Agent SDK",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-and-kaggle-launch-a-new-document-ocr-leaderboard-for-ai-agents",
+      "title": "LlamaIndex and Kaggle launch a new Document OCR leaderboard for AI agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-04-21",
+      "title": "LlamaIndex Newsletter 2026-04-21",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-04-14",
+      "title": "LlamaIndex Newsletter 2026-04-14",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/parsebench",
+      "title": "Introducing ParseBench: The First Document Parsing Benchmark for AI Agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/beyond-raw-text-how-llamaparse-and-liteparse-give-agents-real-document-understanding",
+      "title": "Beyond Raw Text: How LlamaParse and LiteParse Give Agents Real Document Understanding",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/engineering-insights-failure-modes-that-break-vlm-powered-ocr-in-production",
+      "title": "Engineering Insights: Failure Modes That Break VLM-Powered OCR in Production",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-31",
+      "title": "LlamaIndex Newsletter 2026-03-31",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-24",
+      "title": "LlamaIndex Newsletter 2026-03-24",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/liteparse-local-document-parsing-for-ai-agents",
+      "title": "LiteParse: Local Document Parsing for AI Agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-17",
+      "title": "LlamaIndex Newsletter 2026-03-17",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/build-a-searchable-audio-knowledge-base-with-gemini-embedding-2-and-llamaparse",
+      "title": "Build a Searchable Audio Knowledge Base with Gemini Embedding 2 and LlamaParse",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-10",
+      "title": "LlamaIndex Newsletter 2026-03-10",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-is-more-than-a-rag-framework",
+      "title": "LlamaIndex is more than a RAG Framework. It is Agentic Document Processing.",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/creating-a-deal-sourcing-agent-with-llamaagents-builder",
+      "title": "Creating a Deal Sourcing Agent with LlamaAgents Builder",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-02-24",
+      "title": "LlamaIndex Newsletter 2026-02-24",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/the-cost-of-overthinking-why-reasoning-models-fail-at-document-parsing",
+      "title": "The Cost of Overthinking: Why Reasoning Models Fail at Document Parsing",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-02-17",
+      "title": "LlamaIndex Newsletter 2026-02-17",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/long-horizon-document-agents",
+      "title": "Long Horizon Document Agents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-02-10",
+      "title": "LlamaIndex Newsletter 2026-02-10",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/skills-vs-mcp-tools-for-agents-when-to-use-what",
+      "title": "Skills vs MCP tools for agents: when to use what",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaidnex-newsletter-2026-02-03",
+      "title": "LlamaIdnex Newsletter 2026-02-03",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaagents-builder-idea-to-deployed-agent-in-minutes",
+      "title": "LlamaAgents Builder: Idea To Deployed Agent in Minutes",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-27",
+      "title": "LlamaIndex Newsletter 2026-01-27",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/building-back-office-agents-with-llamacloud-and-llamaagents",
+      "title": "Building Back Office Agents with LlamaParse &amp; LlamaAgents",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-20",
+      "title": "LlamaIndex Newsletter 2026-01-20",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-13",
+      "title": "LlamaIndex Newsletter 2026-01-13",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-06",
+      "title": "LlamaIndex Newsletter 2026-01-06",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-30",
+      "title": "LlamaIndex Newsletter - Looking Back on 2025",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-23",
+      "title": "LlamaIndex Newsletter 2025-12-23",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-16",
+      "title": "LlamaIndex Newsletter 2025-12-16",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/making-coding-agents-safe-using-llamaindex",
+      "title": "Making Coding Agents Safe: Using LlamaIndex to Secure Filesystem Access",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-09",
+      "title": "LlamaIndex Newsletter 2025-12-09",
+      "source_id": "llamaindex",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:20.793Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
+      "title": "Add VS Code Agents to Copilot usage metrics",
+      "source_id": "github-changelog",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:38.347Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
+      "title": "Auto-resolution and analysis updates in Copilot code review",
+      "source_id": "github-changelog",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:38.347Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://zapier.com/solutions/marketing-campaigns",
+      "title": "Marketing campaigns Boost your marketing campaign&#x27;s impact",
+      "source_id": "zapier",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:47.517Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+      "title": "OpenAI agents attacked RubyGems back in May",
+      "source_id": "simon-willison",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:54.986Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://www.rubyhack.ai/",
+      "title": "OpenAI agents carried out an undisclosed attack on RubyGems",
+      "source_id": "simon-willison",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:54.986Z",
+      "publication_date": null,
+      "runtime_seconds": null,
+      "status": "needs_editorial_and_metadata_review"
+    },
+    {
+      "url": "https://simonwillison.net/tags/ai-assisted-programming/",
+      "title": "ai-assisted-programming",
+      "source_id": "simon-willison",
+      "format": "article",
+      "discovered_at": "2026-09-12T11:59:54.986Z",
       "publication_date": null,
       "runtime_seconds": null,
       "status": "needs_editorial_and_metadata_review"

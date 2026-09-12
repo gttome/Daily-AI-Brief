@@ -1,0 +1,39 @@
+{
+  "brief_date": "2026-09-12",
+  "searched_at": "2026-09-12",
+  "policy": "docs/operations/publisher-runbook.md",
+  "slots": {
+    "general": {
+      "status": "included",
+      "title": "Friday, September 11, 2026 - 5 Minute AI News",
+      "channel": "5-Minute-AI-News",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 293,
+      "url": "https://www.youtube.com/watch?v=BKq1NquBDa4",
+      "duration_tier": "short",
+      "queries": ["September 11 2026 AI news YouTube under 10 minutes", "GitHub Copilot agent review September 2026 YouTube", "Gemini Windows September 2026 YouTube"],
+      "verification": "YouTube player metadata reported 293 seconds (4:53) and an upload date of September 11, 2026. A second serialized metadata field showed 292 seconds, so the larger player value was retained conservatively.",
+      "selection_rationale": "Current, unused, directly relevant daily overview with independently checked runtime below ten minutes. Claims remain a discovery aid and require primary-source verification.",
+      "short_search_evidence": ["The selected item itself satisfies the independently preferred short tier at 4:53."]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)",
+      "channel": "ErrorFixer",
+      "upload_date": "2026-08-31",
+      "runtime_seconds": 429,
+      "url": "https://www.youtube.com/watch?v=5vTdpYVPUyI",
+      "duration_tier": "short",
+      "queries": ["Agent Skills SKILL.md YouTube September 2026 under 10 minutes", "filesystem agent skills tutorial YouTube", "reusable AI agent skills progressive disclosure YouTube"],
+      "verification": "YouTube player metadata reported 429 seconds (7:09) and an upload date of August 31, 2026; repository history contained no prior use of the video URL.",
+      "selection_rationale": "No stronger current short tutorial was verified; this unused 12-day-old item remains within the 30-day window and directly explains today’s single Agent Skills story.",
+      "short_search_evidence": ["The selected item itself satisfies the independently preferred short tier at 7:09."]
+    }
+  },
+  "rejections": [
+    {"url": "https://www.youtube.com/watch?v=Apow8hccwBU", "reason": "Rejected because exact runtime and upload date were not independently available."},
+    {"url": "https://www.youtube.com/watch?v=jchopNSEITQ", "reason": "Rejected because exact runtime and upload date remained unverified."},
+    {"url": "https://www.youtube.com/watch?v=NU6wRAT9VQ0", "reason": "Rejected because exact runtime and upload date remained unverified."}
+  ],
+  "included_count": 2
+}

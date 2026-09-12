@@ -4,6 +4,227 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-12-4f7c9a21",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-11",
+      "headline": "Copilot code review adds tool-backed verification and an agent ensemble",
+      "url": "/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "AI-assisted code review",
+        "tool use",
+        "agent ensembles",
+        "verification"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub expanded Copilot code review so its review agent can use the Copilot SDK’s shell tools behind the Copilot agent firewall to run builds, tests, targeted scripts, and available APIs. Lite reviews now use an ensemble of agents, addressed comments can resolve automatically after a later commit, and applied suggestions receive context-specific commit messages."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-12-8b2e61d4",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-11",
+      "headline": "GitHub separates VS Code agent activity from generic Copilot usage",
+      "url": "/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent observability",
+        "usage metrics",
+        "adoption measurement",
+        "data availability"
+      ],
+      "companies": [
+        "GitHub",
+        "Microsoft"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub added generally available VS Code Agents-window fields to Copilot usage reports for one-day and 28-day periods. Aggregate reports can expose active users, sessions, and user messages; user-level reports can expose whether the window was used plus session and message totals. The optional fields remain absent or null when data is unavailable."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-12-c16a53ef",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-10",
+      "headline": "Gemini for Windows brings a keyboard-first AI layer to desktop work",
+      "url": "/stories/2026-09-12/gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "desktop AI",
+        "knowledge work",
+        "context retrieval",
+        "human review"
+      ],
+      "companies": [
+        "Google",
+        "Microsoft"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent memory and context"
+      ],
+      "summary": "Google launched a Gemini desktop app globally for Windows 10 and 11. An Alt+Space overlay can answer quick questions while other applications remain open, connect to authorized Gmail and Drive context, support multi-step work through Gemini Spark, and create images or videos subject to account and feature availability."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-12-2d8f70b6",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-11",
+      "headline": "Cross-platform grounding is the hidden requirement for workplace AI",
+      "url": "/stories/2026-09-12/cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "cross-platform context",
+        "grounding",
+        "provenance",
+        "shadow AI"
+      ],
+      "companies": [
+        "Zoom",
+        "Microsoft",
+        "Google",
+        "Cisco"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context"
+      ],
+      "summary": "Zoom’s September 11 practitioner analysis describes a common workplace failure: an assistant can produce a responsive answer from one platform while missing decisive meeting, chat, document, or task context stored elsewhere. Zoom argues for an intelligence layer that can connect authorized context across Zoom, Microsoft Teams, Google Meet, Cisco Webex, and in-person conversations rather than forcing a platform consolidation."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-12-6ae3c942",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-11",
+      "headline": "Mastra moves reusable Agent Skills into shared filesystem workspaces",
+      "url": "/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "SKILL.md",
+        "shared workspaces",
+        "sandbox permissions"
+      ],
+      "companies": [
+        "Mastra"
+      ],
+      "evidence_type": "official_documentation",
+      "availability_status": "general_availability",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Mastra added filesystem skills to Workspaces in core version 1.66.0 or later. Teams can store SKILL.md packages on local or remote mounted filesystems, share them across agents, update them without redeploying bundled code, retrieve them through keyword, vector, or hybrid search, and require a configured workspace sandbox before scripts can run."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-12-f0397b5d",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-11",
+      "headline": "A hands-on no-code agent comparison shows that fit depends on the whole workflow",
+      "url": "/stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code agents",
+        "workflow evaluation",
+        "debugging",
+        "failure handling"
+      ],
+      "companies": [
+        "n8n",
+        "Make",
+        "Zapier",
+        "Creatio",
+        "OpenAI",
+        "Google"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AIMultiple updated its hands-on comparison after spending three days configuring agent workflows across n8n, Make, Zapier, and a Creatio trial, while evaluating OpenAI AgentKit from documentation. The comparison examines triggers, conditional steps, tool calls, webhooks, debugging visibility, self-hosting, integrations, and different execution-, operation-, task-, or model-consumption cost structures."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-12-general",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-11",
+      "headline": "Friday, September 11, 2026 - 5 Minute AI News",
+      "url": "/videos/2026-09-12/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "5-Minute-AI-News"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "A compact scan of the previous day’s AI developments that can help a reader identify which claims merit direct-source follow-up."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-12-agent-skills",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-08-31",
+      "headline": "Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)",
+      "url": "/videos/2026-09-12/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "ErrorFixer"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A concise introduction to SKILL.md structure and progressive disclosure for readers who want a practical starting point."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-12-ai-risk-specificity",
+      "brief_date": "2026-09-12",
+      "event_date": "2026-09-10",
+      "headline": "Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans",
+      "url": "/podcasts/2026-09-12/ai-risk-specificity/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI risk",
+        "evidence quality",
+        "incentives",
+        "policy specificity"
+      ],
+      "companies": [
+        "The AI Daily Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance"
+      ],
+      "summary": "Nathaniel Whittemore examines a viral AI-extinction claim through incentives, media dynamics, uncertainty, and the demand for specific causal pathways and interventions. The episode contrasts highly visible extreme positions with a larger middle ground for capability progress and concrete safeguards."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-11-8a71a280",
       "brief_date": "2026-09-11",
       "event_date": "2026-09-10",
@@ -185,11 +406,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-3e9c6210",
+      "story_id": "dab-story-2026-09-10-415f8f1a",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Anthropic’s cyber-incident review exposes a failure mode for supposedly isolated agent evaluations",
-      "url": "/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated/",
+      "url": "/stories/2026-09-10/anthropic-s-cyber-incident-review-exposes-a-failure-mode-for-supposedly-isolated-agent-eva/",
       "focus": "technical_ai_engineering",
       "topics": [
         "agent security",
@@ -198,10 +419,11 @@
         "failure analysis"
       ],
       "companies": [
-        "Anthropic"
+        "Anthropic",
+        "METR"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "research",
       "trends": [
         "Agent reliability and governance",
         "Accessible agents for knowledge work"
@@ -210,7 +432,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-f9d75a59",
+      "story_id": "dab-story-2026-09-10-fdde2a0c",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "GitHub adds centrally enforced permissions for Copilot agent operations",
@@ -225,8 +447,8 @@
       "companies": [
         "GitHub"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -236,11 +458,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-a0732e6e",
+      "story_id": "dab-story-2026-09-10-061a7b54",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Adobe turns Acrobat into a document productivity agent with cited reports, slides, and audio",
-      "url": "/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides/",
+      "url": "/stories/2026-09-10/adobe-turns-acrobat-into-a-document-productivity-agent-with-cited-reports-slides-and-audio/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "document AI",
@@ -249,10 +471,10 @@
         "knowledge work"
       ],
       "companies": [
-        "news.adobe.com"
+        "Adobe"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "Agent memory and context",
         "Accessible agents for knowledge work"
@@ -261,7 +483,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-e2aa5736",
+      "story_id": "dab-story-2026-09-10-c9c45c5e",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Microsoft argues AI value should be measured in completed work, not prompt volume",
@@ -276,8 +498,8 @@
       "companies": [
         "Microsoft"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
       "trends": [
         "AI-assisted development"
       ],
@@ -285,7 +507,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-f150d386",
+      "story_id": "dab-story-2026-09-10-a622f43e",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "Google expands prompt-built mini-apps and web errands for everyday users",
@@ -298,10 +520,10 @@
         "web errands"
       ],
       "companies": [
-        "blog.google"
+        "Google"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -310,11 +532,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-10-331d65bd",
+      "story_id": "dab-story-2026-09-10-b2d6f046",
       "brief_date": "2026-09-10",
       "event_date": "2026-09-09",
       "headline": "A September update maps one SKILL.md across Codex, Claude, Gemini, and dozens of agent tools",
-      "url": "/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-ag/",
+      "url": "/stories/2026-09-10/a-september-update-maps-one-skill-md-across-codex-claude-gemini-and-dozens-of-agent-tools/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Agent Skills",
@@ -323,10 +545,13 @@
         "agent interoperability"
       ],
       "companies": [
-        "codex.danielvaughan.com"
+        "OpenAI",
+        "Anthropic",
+        "Google",
+        "Microsoft"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -359,7 +584,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-09-05642543",
+      "story_id": "dab-story-2026-09-09-e9be6ec5",
       "brief_date": "2026-09-09",
       "event_date": "2026-09-08",
       "headline": "GitHub gives enterprises central control over Copilot’s JetBrains sandbox",
@@ -374,8 +599,8 @@
       "companies": [
         "GitHub"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_changelog",
+      "availability_status": "public_preview",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -385,7 +610,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-09-be5f728f",
+      "story_id": "dab-story-2026-09-09-0b6b1021",
       "brief_date": "2026-09-09",
       "event_date": "2026-09-08",
       "headline": "Dart’s Skills CLI 1.0 makes agent instructions portable with software packages",
@@ -398,10 +623,11 @@
         "progressive disclosure"
       ],
       "companies": [
-        "dart.dev"
+        "Google",
+        "Dart"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "Agent memory and context",
         "AI-assisted development",
@@ -411,11 +637,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-09-7702638b",
+      "story_id": "dab-story-2026-09-09-259c8fd8",
       "brief_date": "2026-09-09",
       "event_date": "2026-09-08",
       "headline": "ChatGPT Images 2.5 improves reference fidelity, editing precision, and iteration speed",
-      "url": "/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-s/",
+      "url": "/stories/2026-09-09/chatgpt-images-2-5-improves-reference-fidelity-editing-precision-and-iteration-speed/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "image generation",
@@ -426,8 +652,8 @@
       "companies": [
         "OpenAI"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -436,11 +662,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-09-5ad5de16",
+      "story_id": "dab-story-2026-09-09-1f112fc7",
       "brief_date": "2026-09-09",
       "event_date": "2026-09-08",
       "headline": "GPT-5.6 Sol runs adaptive quantum-chip measurements while researchers retain scientific judgment",
-      "url": "/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-sci/",
+      "url": "/stories/2026-09-09/gpt-5-6-sol-runs-adaptive-quantum-chip-measurements-while-researchers-retain-scientific-judg/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "scientific agents",
@@ -449,10 +675,11 @@
         "human review"
       ],
       "companies": [
-        "OpenAI"
+        "OpenAI",
+        "MIT"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "research",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -461,11 +688,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-09-6013a2a8",
+      "story_id": "dab-story-2026-09-09-a02b9db1",
       "brief_date": "2026-09-09",
       "event_date": "2026-09-08",
       "headline": "Meta launches Muse as a personal agent with secure execution and approval checkpoints",
-      "url": "/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkp/",
+      "url": "/stories/2026-09-09/meta-launches-muse-as-a-personal-agent-with-secure-execution-and-approval-checkpoints/",
       "focus": "agents_non_technical_people",
       "topics": [
         "personal agents",
@@ -474,10 +701,10 @@
         "human approval"
       ],
       "companies": [
-        "about.fb.com"
+        "Meta"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "Agent reliability and governance",
         "Accessible agents for knowledge work"
@@ -486,7 +713,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-09-9558fc40",
+      "story_id": "dab-story-2026-09-09-81d2a78e",
       "brief_date": "2026-09-09",
       "event_date": "2026-09-08",
       "headline": "GitHub unifies support resources behind Copilot-powered search",
@@ -501,8 +728,8 @@
       "companies": [
         "GitHub"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
       "trends": [
         "Agent memory and context",
         "AI-assisted development",
@@ -577,11 +804,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-08-a6856793",
+      "story_id": "dab-story-2026-09-08-aad4e966",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-04",
       "headline": "Execution traces make agent reliability measurable across real development workflows",
-      "url": "/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workf/",
+      "url": "/stories/2026-09-08/execution-traces-make-agent-reliability-measurable-across-real-development-workflows/",
       "focus": "technical_ai_engineering",
       "topics": [
         "agent evaluation",
@@ -592,8 +819,8 @@
       "companies": [
         "Hugging Face"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "research",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -603,11 +830,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-08-abf16e3a",
+      "story_id": "dab-story-2026-09-08-4a71e714",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-04",
       "headline": "GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
-      "url": "/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-in/",
+      "url": "/stories/2026-09-08/github-s-weekly-copilot-release-bundles-agent-session-and-review-improvements-into-one-o/",
       "focus": "technical_ai_engineering",
       "topics": [
         "GitHub Copilot",
@@ -618,8 +845,8 @@
       "companies": [
         "GitHub"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -628,11 +855,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-08-0b136de8",
+      "story_id": "dab-story-2026-09-08-08eab2e3",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-02",
       "headline": "Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
-      "url": "/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-pla/",
+      "url": "/stories/2026-09-08/gemini-custom-instructions-expand-across-workspace-making-reusable-context-a-platform-le/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "Google Workspace",
@@ -643,8 +870,8 @@
       "companies": [
         "Google"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "Agent memory and context",
         "Accessible agents for knowledge work"
@@ -653,11 +880,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-08-47284df4",
+      "story_id": "dab-story-2026-09-08-b9c617e3",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-02",
       "headline": "Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
-      "url": "/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keepin/",
+      "url": "/stories/2026-09-08/google-vids-can-turn-source-documents-into-narrated-video-summaries-while-keeping-human/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "Google Vids",
@@ -668,8 +895,8 @@
       "companies": [
         "Google"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "Accessible agents for knowledge work"
       ],
@@ -677,11 +904,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-08-c1333b8f",
+      "story_id": "dab-story-2026-09-08-3444f489",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-08",
       "headline": "Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
-      "url": "/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-fr/",
+      "url": "/stories/2026-09-08/box-makes-chatgpt-and-claude-integrations-available-by-default-reducing-setup-friction-w/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Box",
@@ -691,20 +918,20 @@
         "administration"
       ],
       "companies": [
-        "support.box.com"
+        "Box"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [],
       "summary": "Beginning September 8, Box changes its ChatGPT and Claude integrations from “Available” to “Added by Default” in the Admin Console. The change removes an installation step and places the integrations alongside other commonly connected workplace apps."
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-08-c1fc056c",
+      "story_id": "dab-story-2026-09-08-9061ff44",
       "brief_date": "2026-09-08",
       "event_date": "2026-09-08",
       "headline": "Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
-      "url": "/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-a/",
+      "url": "/stories/2026-09-08/microsoft-introduces-an-insights-agent-pattern-for-asking-how-workplace-agents-are-actua/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Copilot Studio",
@@ -715,8 +942,8 @@
       "companies": [
         "Microsoft"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_documentation",
+      "availability_status": "public_preview",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -726,11 +953,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-3d813834",
+      "story_id": "dab-story-2026-09-07-3f4df523",
       "brief_date": "2026-09-07",
       "event_date": "2026-09-06",
       "headline": "OpenAI says coding agents now deliver more agent-workdays than human workdays inside its research organization",
-      "url": "/stories/2026-09-07/openai-says-coding-agents-now-deliver-more-agent-workdays-than-human-workdays-in/",
+      "url": "/stories/2026-09-07/openai-coding-agents-deliver-more-agent-workdays-than-human-workdays/",
       "focus": "technical_ai_engineering",
       "topics": [
         "coding agents",
@@ -742,8 +969,8 @@
       "companies": [
         "OpenAI"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "research",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -753,11 +980,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-6043a1d0",
+      "story_id": "dab-story-2026-09-07-dab4bc85",
       "brief_date": "2026-09-07",
       "event_date": "2026-09-04",
       "headline": "Claude completes a computer-checked formalization of Fermat’s Last Theorem with dozens of collaborating agents",
-      "url": "/stories/2026-09-07/claude-completes-a-computer-checked-formalization-of-fermat-s-last-theorem-with-/",
+      "url": "/stories/2026-09-07/claude-formalizes-fermats-last-theorem-with-computer-checking/",
       "focus": "technical_ai_engineering",
       "topics": [
         "formal verification",
@@ -769,8 +996,8 @@
       "companies": [
         "Anthropic"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "research",
       "trends": [
         "Agent reliability and governance",
         "Accessible agents for knowledge work"
@@ -779,11 +1006,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-d43124d3",
+      "story_id": "dab-story-2026-09-07-8053a573",
       "brief_date": "2026-09-07",
       "event_date": "2026-09-07",
       "headline": "GPT-6 Astra launches with stronger computer use and professional-work performance, initially through a limited rollout",
-      "url": "/stories/2026-09-07/gpt-6-astra-launches-with-stronger-computer-use-and-professional-work-performanc/",
+      "url": "/stories/2026-09-07/gpt-6-astra-launches-for-professional-work-and-computer-use/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "GPT-6 Astra",
@@ -795,8 +1022,8 @@
       "companies": [
         "OpenAI"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "limited_preview",
       "trends": [
         "Agent reliability and governance",
         "Agent memory and context",
@@ -807,11 +1034,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-2b73e189",
+      "story_id": "dab-story-2026-09-07-968c0cd8",
       "brief_date": "2026-09-07",
       "event_date": "2026-09-04",
       "headline": "NVIDIA demonstrates a memory-driven ‘chief of staff’ agent built around a human-readable self model",
-      "url": "/stories/2026-09-07/nvidia-demonstrates-a-memory-driven-chief-of-staff-agent-built-around-a-human-re/",
+      "url": "/stories/2026-09-07/nvidia-memory-driven-agent-uses-human-readable-self-model/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
         "agent memory",
@@ -822,8 +1049,8 @@
       "companies": [
         "NVIDIA"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_documentation",
+      "availability_status": "general_availability",
       "trends": [
         "Agent memory and context",
         "Accessible agents for knowledge work"
@@ -832,11 +1059,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-712cf271",
+      "story_id": "dab-story-2026-09-07-379d301c",
       "brief_date": "2026-09-07",
       "event_date": "2026-09-02",
       "headline": "Copilot in SharePoint adds reusable skills and evaluations, turning natural-language work into an improvable agent asset",
-      "url": "/stories/2026-09-07/copilot-in-sharepoint-adds-reusable-skills-and-evaluations-turning-natural-langu/",
+      "url": "/stories/2026-09-07/sharepoint-copilot-adds-reusable-skills-and-evaluations/",
       "focus": "agents_non_technical_people",
       "topics": [
         "SharePoint Copilot",
@@ -847,8 +1074,8 @@
       "companies": [
         "Microsoft"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "Agent reliability and governance",
         "AI-assisted development",
@@ -858,11 +1085,11 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-07-db445689",
+      "story_id": "dab-story-2026-09-07-fdefded2",
       "brief_date": "2026-09-07",
       "event_date": "2026-09-02",
       "headline": "Microsoft makes Fabric Data Agents generally available as tools inside Copilot Studio agents",
-      "url": "/stories/2026-09-07/microsoft-makes-fabric-data-agents-generally-available-as-tools-inside-copilot-s/",
+      "url": "/stories/2026-09-07/fabric-data-agents-become-tools-inside-copilot-studio/",
       "focus": "agents_non_technical_people",
       "topics": [
         "Copilot Studio",
@@ -874,8 +1101,8 @@
       "companies": [
         "Microsoft"
       ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
@@ -884,7 +1111,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-2d659eea",
+      "story_id": "dab-story-2026-09-06-0b55fd52",
       "brief_date": "2026-09-06",
       "event_date": "2026-09-04",
       "headline": "GPT-6 Astra is now generally available inside GitHub Copilot",
@@ -898,9 +1125,7 @@
         "model integration",
         "agentic development"
       ],
-      "companies": [
-        "GitHub"
-      ],
+      "companies": [],
       "evidence_type": "unspecified",
       "availability_status": "unspecified",
       "trends": [
@@ -912,7 +1137,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-679de9b0",
+      "story_id": "dab-story-2026-09-06-4426ca30",
       "brief_date": "2026-09-06",
       "event_date": "2026-09-03",
       "headline": "Anthropic adds infrastructure-as-code discipline to agent deployment with `ant apply`",
@@ -927,9 +1152,7 @@
         "environments",
         "approval plans"
       ],
-      "companies": [
-        "Anthropic"
-      ],
+      "companies": [],
       "evidence_type": "unspecified",
       "availability_status": "unspecified",
       "trends": [
@@ -942,7 +1165,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-adb097bb",
+      "story_id": "dab-story-2026-09-06-9839a69b",
       "brief_date": "2026-09-06",
       "event_date": "2026-09-03",
       "headline": "ChatGPT adds first-party Zendesk and OneNote plugins for support and knowledge workflows",
@@ -957,9 +1180,7 @@
         "knowledge work",
         "permissions"
       ],
-      "companies": [
-        "OpenAI"
-      ],
+      "companies": [],
       "evidence_type": "unspecified",
       "availability_status": "unspecified",
       "trends": [
@@ -971,7 +1192,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-d73ebecb",
+      "story_id": "dab-story-2026-09-06-3f824b7a",
       "brief_date": "2026-09-06",
       "event_date": "2026-09-01",
       "headline": "Claude Fable 5.1 raises the bar for research and difficult professional knowledge work",
@@ -985,9 +1206,7 @@
         "professional reasoning",
         "model evaluation"
       ],
-      "companies": [
-        "Anthropic"
-      ],
+      "companies": [],
       "evidence_type": "unspecified",
       "availability_status": "unspecified",
       "trends": [
@@ -999,7 +1218,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-4819d1f6",
+      "story_id": "dab-story-2026-09-06-30dde95b",
       "brief_date": "2026-09-06",
       "event_date": "2026-09-04",
       "headline": "OpenAI’s workspace-agent guidance emphasizes reusable workflows rather than one-off prompting",
@@ -1014,9 +1233,7 @@
         "safeguards",
         "delegation"
       ],
-      "companies": [
-        "OpenAI"
-      ],
+      "companies": [],
       "evidence_type": "unspecified",
       "availability_status": "unspecified",
       "trends": [
@@ -1026,7 +1243,7 @@
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-06-0532fd4e",
+      "story_id": "dab-story-2026-09-06-fcc3f409",
       "brief_date": "2026-09-06",
       "event_date": "2026-09-05",
       "headline": "Claude Cowork now formalizes a connector → browser → computer-use escalation path",
@@ -1041,9 +1258,7 @@
         "human oversight",
         "permissions"
       ],
-      "companies": [
-        "Anthropic"
-      ],
+      "companies": [],
       "evidence_type": "unspecified",
       "availability_status": "unspecified",
       "trends": [
