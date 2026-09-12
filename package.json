@@ -17,7 +17,8 @@
     "validate-personal-feedback": "node _generator/cli.mjs validate-personal-feedback",
     "evaluate-personal-learning": "node _generator/cli.mjs evaluate-personal-learning",
     "learning-status": "node _generator/cli.mjs learning-status",
-    "integration-check": "node _generator/cli.mjs integration-check"
+    "integration-check": "node _generator/cli.mjs integration-check",
+    "build-source-directory": "node _tools/build-early-signal-sources.mjs"
   },
   "engines": {
     "node": ">=20"

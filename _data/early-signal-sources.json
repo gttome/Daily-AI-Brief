@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-09-12",
+  "purpose": "Ranked primary-origin and early-signal channels used by Daily AI Brief content discovery and Emerging AI Watch.",
+  "policy": {
+    "primary_origin_priority": true,
+    "aggregators_are_discovery_only": true,
+    "community_posts_are_discovery_only": true,
+    "verification_required": "Trace consequential claims to an original paper, model card, repository, official release, system card, or other authoritative evidence before selection.",
+    "preprint_treatment": "Label preprints and author-reported results as preliminary unless independent validation exists.",
+    "restricted_channels": "X and specialized Discord communities require assisted review; a login page, inaccessible post, or secondhand quotation is not evidence."
+  },
+  "channels": [
+    {
+      "rank": 1,
+      "channel_id": "arxiv",
+      "name": "arXiv — cs.AI, cs.LG, and cs.CL",
+      "kind": "preprint_server",
+      "automation_mode": "public_retrieval",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "High-volume first public posting point for AI and language-model research.",
+      "evidence_treatment": "Primary research lead. Verify the paper, authors, submission date, methods, limitations, and later versions; preprint status is not peer review.",
+      "entry_url": "https://arxiv.org/",
+      "endpoints": [
+        {"source_id": "arxiv-cs-ai", "name": "arXiv cs.AI recent submissions", "url": "https://arxiv.org/list/cs.AI/recent", "format": "article", "automated": true},
+        {"source_id": "arxiv-cs-lg", "name": "arXiv cs.LG recent submissions", "url": "https://arxiv.org/list/cs.LG/recent", "format": "article", "automated": true},
+        {"source_id": "arxiv-cs-cl", "name": "arXiv cs.CL recent submissions", "url": "https://arxiv.org/list/cs.CL/recent", "format": "article", "automated": true}
+      ]
+    },
+    {
+      "rank": 2,
+      "channel_id": "x-research-feeds",
+      "name": "X — verified researchers and AI labs",
+      "kind": "researcher_social_feed",
+      "automation_mode": "assisted_review",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Fast release signals, demonstrations, replication notes, and early critiques from named researchers and labs.",
+      "evidence_treatment": "Discovery signal only. Confirm account identity, follow every claim to original evidence, and do not treat screenshots, engagement, or reposts as validation.",
+      "entry_url": "https://x.com/",
+      "endpoints": []
+    },
+    {
+      "rank": 3,
+      "channel_id": "hugging-face-hub",
+      "name": "Hugging Face Hub and Daily Papers",
+      "kind": "model_dataset_demo_hub",
+      "automation_mode": "public_retrieval",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Open models, datasets, demos, model cards, and community discussion often appear with or before written coverage.",
+      "evidence_treatment": "Verify the uploader, license, model or dataset card, version, linked paper or repository, and independently relevant limitations. Popularity is not quality evidence.",
+      "entry_url": "https://huggingface.co/",
+      "endpoints": [
+        {"source_id": "hugging-face-models", "name": "Hugging Face Models", "url": "https://huggingface.co/models?sort=trending", "format": "model", "automated": true},
+        {"source_id": "hugging-face-datasets", "name": "Hugging Face Datasets", "url": "https://huggingface.co/datasets?sort=trending", "format": "dataset", "automated": true},
+        {"source_id": "hugging-face-spaces", "name": "Hugging Face Spaces", "url": "https://huggingface.co/spaces?sort=trending", "format": "demo", "automated": true},
+        {"source_id": "hugging-face-daily-papers", "name": "Hugging Face Daily Papers", "url": "https://huggingface.co/papers", "format": "article", "automated": true}
+      ]
+    },
+    {
+      "rank": 4,
+      "channel_id": "frontier-lab-releases",
+      "name": "Official frontier-lab research and newsrooms",
+      "kind": "official_lab_release",
+      "automation_mode": "public_retrieval",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "First-party model releases, capability updates, technical reports, API changes, and system cards.",
+      "evidence_treatment": "Primary evidence for what a lab announces, not independent proof of comparative performance, safety, adoption, or availability.",
+      "entry_url": "https://openai.com/news/",
+      "endpoints": [
+        {"source_id": "openai-news", "name": "OpenAI News and Research", "url": "https://openai.com/news/", "format": "article", "automated": true},
+        {"source_id": "anthropic-news", "name": "Anthropic News", "url": "https://www.anthropic.com/news", "format": "article", "automated": true},
+        {"source_id": "google-deepmind-blog", "name": "Google DeepMind Blog", "url": "https://deepmind.google/discover/blog/", "format": "article", "automated": true},
+        {"source_id": "meta-ai-blog", "name": "Meta AI Blog", "url": "https://ai.meta.com/blog/", "format": "article", "automated": true},
+        {"source_id": "xai-news", "name": "xAI News", "url": "https://x.ai/news", "format": "article", "automated": false},
+        {"source_id": "mistral-news", "name": "Mistral AI News", "url": "https://mistral.ai/news/", "format": "article", "automated": true},
+        {"source_id": "qwen-blog", "name": "Qwen Blog", "url": "https://qwenlm.github.io/blog/", "format": "article", "automated": true},
+        {"source_id": "deepseek-news", "name": "DeepSeek News", "url": "https://api-docs.deepseek.com/news", "format": "article", "automated": true}
+      ]
+    },
+    {
+      "rank": 5,
+      "channel_id": "github",
+      "name": "GitHub repositories and releases",
+      "kind": "code_repository",
+      "automation_mode": "public_retrieval",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Code, evaluations, training recipes, inference tools, agent frameworks, and implementation evidence often appear before broad coverage.",
+      "evidence_treatment": "Inspect repository ownership, release or commit history, documentation, license, tests, linked paper, and reproducibility evidence. Stars are not validation.",
+      "entry_url": "https://github.com/",
+      "endpoints": [
+        {"source_id": "github-trending", "name": "GitHub Trending", "url": "https://github.com/trending", "format": "repository", "automated": true},
+        {"source_id": "github-generative-ai", "name": "GitHub generative-ai topic", "url": "https://github.com/topics/generative-ai", "format": "repository", "automated": true},
+        {"source_id": "github-llm", "name": "GitHub llm topic", "url": "https://github.com/topics/llm", "format": "repository", "automated": true},
+        {"source_id": "github-ai-agents", "name": "GitHub ai-agents topic", "url": "https://github.com/topics/ai-agents", "format": "repository", "automated": true}
+      ]
+    },
+    {
+      "rank": 6,
+      "channel_id": "reddit-ai-communities",
+      "name": "Reddit — r/MachineLearning and r/LocalLLaMA",
+      "kind": "practitioner_community",
+      "automation_mode": "public_retrieval",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Early practitioner discussion, replication reports, open-model tests, local inference techniques, and practical failure reports.",
+      "evidence_treatment": "Discovery and critique signal only. Distinguish direct testing from opinion or rumor; verify releases, benchmarks, and claims at their origin.",
+      "entry_url": "https://www.reddit.com/",
+      "endpoints": [
+        {"source_id": "reddit-machinelearning", "name": "r/MachineLearning", "url": "https://www.reddit.com/r/MachineLearning/new/", "format": "community", "automated": true},
+        {"source_id": "reddit-localllama", "name": "r/LocalLLaMA", "url": "https://www.reddit.com/r/LocalLLaMA/new/", "format": "community", "automated": true}
+      ]
+    },
+    {
+      "rank": 7,
+      "channel_id": "hacker-news",
+      "name": "Hacker News",
+      "kind": "technical_community",
+      "automation_mode": "public_retrieval",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Early technical discussion of papers, releases, repositories, and new tools, often with useful implementation caveats.",
+      "evidence_treatment": "Discovery and critique signal only. Trace submissions and factual claims to original evidence; comments can supply questions, not confirmation.",
+      "entry_url": "https://news.ycombinator.com/",
+      "endpoints": [
+        {"source_id": "hacker-news-newest", "name": "Hacker News Newest", "url": "https://news.ycombinator.com/newest", "format": "community", "automated": true},
+        {"source_id": "hacker-news-show", "name": "Show HN", "url": "https://news.ycombinator.com/show", "format": "community", "automated": true}
+      ]
+    },
+    {
+      "rank": 8,
+      "channel_id": "specialized-discords",
+      "name": "Specialized AI Discord communities",
+      "kind": "specialized_community",
+      "automation_mode": "assisted_review",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Real-time implementation discussion around research groups and model families can reveal early working examples and limitations.",
+      "evidence_treatment": "Discovery signal only. Use only official or verified community access, never expose private discussion, and require public original evidence before selection.",
+      "entry_url": "https://discord.com/discovery",
+      "endpoints": []
+    },
+    {
+      "rank": 9,
+      "channel_id": "youtube-ai-research",
+      "name": "YouTube — official labs and researchers",
+      "kind": "video_channel",
+      "automation_mode": "assisted_review",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Official demonstrations, paper walkthroughs, research talks, and early technical explanations can precede written coverage.",
+      "evidence_treatment": "Verify channel identity, upload date, runtime, claims, and linked original evidence. Demonstrations and commentary are not independent validation.",
+      "entry_url": "https://www.youtube.com/",
+      "endpoints": [
+        {"source_id": "youtube-openai", "name": "OpenAI on YouTube", "url": "https://www.youtube.com/@OpenAI", "format": "video", "automated": false},
+        {"source_id": "youtube-anthropic", "name": "Anthropic on YouTube", "url": "https://www.youtube.com/@anthropic-ai", "format": "video", "automated": false},
+        {"source_id": "youtube-google-deepmind", "name": "Google DeepMind on YouTube", "url": "https://www.youtube.com/@googledeepmind", "format": "video", "automated": false}
+      ]
+    },
+    {
+      "rank": 10,
+      "channel_id": "conferences-openreview",
+      "name": "AI conference sites and OpenReview",
+      "kind": "conference_and_peer_review",
+      "automation_mode": "public_and_assisted_review",
+      "targets": ["brief", "watchlist"],
+      "why_monitored": "Conference programs, camera-ready papers, public reviews, and author responses add scrutiny and revisions to earlier preprints.",
+      "evidence_treatment": "Record review stage and version. Separate accepted or camera-ready work from submissions, workshop papers, reviews, and author responses.",
+      "entry_url": "https://openreview.net/",
+      "endpoints": [
+        {"source_id": "openreview", "name": "OpenReview", "url": "https://openreview.net/", "format": "article", "automated": false},
+        {"source_id": "neurips", "name": "NeurIPS", "url": "https://neurips.cc/", "format": "article", "automated": true},
+        {"source_id": "icml", "name": "ICML", "url": "https://icml.cc/", "format": "article", "automated": true},
+        {"source_id": "iclr", "name": "ICLR", "url": "https://iclr.cc/", "format": "article", "automated": true},
+        {"source_id": "acl-anthology", "name": "ACL Anthology", "url": "https://aclanthology.org/", "format": "article", "automated": true}
+      ]
+    }
+  ]
+}

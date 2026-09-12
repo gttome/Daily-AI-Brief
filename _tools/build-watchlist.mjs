@@ -3,6 +3,7 @@ import {publicWatchlist} from '../_generator/lib/watchlist.mjs';
 const data=publicWatchlist(JSON.parse(fs.readFileSync('_data/watchlist.json','utf8')));
 fs.mkdirSync('data',{recursive:true});fs.writeFileSync('data/watchlist.json',JSON.stringify(data,null,2)+'\n');
 fs.copyFileSync('_data/watchlist-sources.json','data/watchlist-sources.json');
+fs.copyFileSync('_data/early-signal-sources.json','data/early-signal-sources.json');
 fs.mkdirSync('_records/watchlist',{recursive:true});
 // Unique timestamped observations retain prior evaluations, including same-day revisions.
 const file=`_records/watchlist/${data.edition_date}-${data.updated_at.replace(/[^0-9]/g,'')}.json`;

@@ -25,7 +25,7 @@ Selected videos and podcasts provide opportunities to explore further. When a vi
 
 AI assists with research, selection, writing, and publication, guided by George’s editorial priorities.
 
-The editorial process prioritizes authoritative sources, substantive developments, and practical relevance. Items include source links so you can examine the original material and form your own conclusions.
+The editorial process prioritizes authoritative sources, substantive developments, and practical relevance. It monitors [ranked primary-origin and early-signal sources]({{ '/sources/' | relative_url }}) before using newsletters and aggregators as secondary discovery aids. Items include source links so you can examine the original material and form your own conclusions.
 
 AI-assisted research can make mistakes, and announcements may describe capabilities that are still rolling out. Check the linked source for availability, limitations, and details before relying on a claim.
 
