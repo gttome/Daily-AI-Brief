@@ -4,6 +4,7 @@ import test from 'node:test';
 
 const layout=fs.readFileSync('_layouts/default.html','utf8');
 const css=fs.readFileSync('assets/css/header.css','utf8');
+const about=fs.readFileSync('about.md','utf8');
 
 test('Research Ledger header replaces the basic button masthead',()=>{
   assert.match(layout,/page-header research-ledger-header/);
@@ -30,4 +31,11 @@ test('Research Ledger remains responsive and keyboard visible',()=>{
 
 test('Research Ledger replaces Cayman green headings with Editorial Rust',()=>{
   assert.match(css,/\.main-content h1,[\s\S]*?\.main-content h6 \{\s*color: #8b432d;/);
+});
+
+test('About page uses the complete Daily Generative AI Brief name',()=>{
+  assert.match(about,/^title: About the Daily Generative AI Brief$/m);
+  assert.match(about,/The Daily Generative AI Brief helps knowledge workers/);
+  assert.match(about,/The Daily Generative AI Brief is designed to improve gradually over time/);
+  assert.doesNotMatch(about,/The Daily AI Brief/);
 });

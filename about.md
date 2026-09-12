@@ -1,13 +1,13 @@
 ---
 layout: default
-title: About the Daily AI Brief
+title: About the Daily Generative AI Brief
 description: Useful AI developments, explained in context.
 permalink: /about/
 ---
 
 **Curated by George Tome with AI-assisted research and publishing.**
 
-The Daily AI Brief helps knowledge workers, educators, consultants, and technical practitioners understand what is changing in generative AI and decide what deserves their attention.
+The Daily Generative AI Brief helps knowledge workers, educators, consultants, and technical practitioners understand what is changing in generative AI and decide what deserves their attention.
 
 Each edition connects selected developments to practical work: building more reliable systems, improving everyday workflows, and using AI agents effectively.
 
@@ -47,7 +47,7 @@ Rate the item’s usefulness, regardless of whether you agree with it or conside
 
 ## A brief that evolves with its readers
 
-The Daily AI Brief is designed to improve gradually over time. Star ratings, sharing activity, emerging topic trends, and other available quality and engagement measures help reveal what readers find useful, which subjects deserve closer attention, and where coverage could improve.
+The Daily Generative AI Brief is designed to improve gradually over time. Star ratings, sharing activity, emerging topic trends, and other available quality and engagement measures help reveal what readers find useful, which subjects deserve closer attention, and where coverage could improve.
 
 These signals inform small, considered adjustments to topic emphasis, content selection, and presentation. The aim is to deliver increasingly relevant, practical value while maintaining breadth, source quality, and editorial judgment.
 
