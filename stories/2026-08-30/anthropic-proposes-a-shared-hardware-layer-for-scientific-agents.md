@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-30-3ea4c141
 
 **Why it matters:** Physical-agent systems currently accumulate device-specific adapters, so a shared control layer could make scientific workflows more portable and easier to inspect. The evidence is still preliminary: MHS is a research preview, the integration-time figures come from Anthropic and collaborators, and the specification is not yet open source. Anthropic says it will first evaluate safety and publish best practices.
 
-**Original commentary:** It broadens “tool use” beyond software APIs and offers a strong graph-and-harness example: one agent plan can fan out through a common protocol to multiple physical instruments, but every edge needs authority and safety constraints.
+<span class="story-editorial-note" data-george-implication="It broadens “tool use” beyond software APIs and offers a strong graph-and-harness example: one agent plan can fan out through a common protocol to multiple physical instruments, but every edge needs authority and safety constraints." hidden></span>
 
 **Source:** <a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" data-item-id="dab-story-2026-08-30-3ea4c141" data-edition-date="2026-08-30" data-action="source_clicks">Anthropic — Previewing the Model Hardware Standard</a>
 

@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-28-04a6435b
 
 **Why it matters:** The emphasis is moving from generic access toward role-specific use, critical evaluation, safety, and practical workflows. The programs are newly announced, so their reach, curriculum quality, completion rates, and workplace outcomes remain to be measured.
 
-**Original commentary:** This supports localized versions of courses and workshops. The strongest design would use domain examples, explicit verification practices, mobile-friendly exercises, and outcome measures—not a translated generic prompt guide.
+<span class="story-editorial-note" data-george-implication="This supports localized versions of courses and workshops. The strongest design would use domain examples, explicit verification practices, mobile-friendly exercises, and outcome measures—not a translated generic prompt guide." hidden></span>
 
 **Source:** <a href="https://openai.com/index/expanding-our-presence-in-brazil/" data-item-id="dab-story-2026-08-28-04a6435b" data-edition-date="2026-08-28" data-action="source_clicks">OpenAI announcement</a>
 

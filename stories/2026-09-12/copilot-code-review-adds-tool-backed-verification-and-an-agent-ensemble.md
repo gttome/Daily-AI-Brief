@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-12-4f7c9a21
 
 **Why it matters:** The engineering pattern is verification inside the review harness: several perspectives can inspect a change and execute checks before presenting one consolidated result. GitHub reports that its ensemble experiment increased addressed comments per review by 47% for high-severity findings, 31% for medium, and 11% for low while reducing cost about 8%; these are vendor experiments, not independent measures of defect-removal accuracy.
 
-**Original commentary:** Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof.
+<span class="story-editorial-note" data-george-implication="Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof." hidden></span>
 
 ### Evolving the Generative AI Professional Series
 
@@ -42,7 +42,6 @@ story_id: dab-story-2026-09-12-4f7c9a21
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

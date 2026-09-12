@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-31-a3f5c0f6
 
 **Why it matters:** Multi-agent systems hide cost and authority in branches. Rolling child-agent usage into the parent goal improves budget attribution, while preserving and surfacing permissions reduces ambiguity after a session is restored. This is a maintenance release, not a model-capability leap, and telemetry is useful only if teams review it and set thresholds.
 
-**Original commentary:** Use it as a compact example of harness engineering: an agent loop is not production-ready until delegated work, restored authority and external capabilities are visible to the operator.
+<span class="story-editorial-note" data-george-implication="Use it as a compact example of harness engineering: an agent loop is not production-ready until delegated work, restored authority and external capabilities are visible to the operator." hidden></span>
 
 **Source:** <a href="https://github.com/openai/codex/releases" data-item-id="dab-story-2026-08-31-a3f5c0f6" data-edition-date="2026-08-31" data-action="source_clicks">OpenAI Codex releases on GitHub</a>
 

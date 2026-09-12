@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-17-c5282e0d
 
 **Why it matters:** The competitive frontier is moving from isolated code generation toward models that can operate inside longer-running software and business workflows. That makes model quality only one part of the equation; orchestration, context, tools, checkpoints, review, and verification increasingly determine whether an agentic coding system is dependable.
 
-**Original commentary:** This is directly relevant to vibe coding, practical coding for non-software developers, loop engineering, and harness engineering. Training materials should continue shifting from “how to ask an AI to write code” toward **how to structure, constrain, test, and review an AI-driven build workflow**.
+<span class="story-editorial-note" data-george-implication="This is directly relevant to vibe coding, practical coding for non-software developers, loop engineering, and harness engineering. Training materials should continue shifting from “how to ask an AI to write code” toward **how to structure, constrain, test, and review an AI-driven build workflow**." hidden></span>
 
 **Source:** <a href="https://www.reuters.com/business/google-unveils-gemini-37-flash-ai-model-coding-agent-workflows-2026-08-13/" data-item-id="dab-story-2026-08-17-c5282e0d" data-edition-date="2026-08-17" data-action="source_clicks">reuters.com</a>
 

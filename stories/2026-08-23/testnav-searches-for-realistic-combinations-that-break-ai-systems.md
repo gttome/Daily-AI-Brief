@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-23-dbdd1c3a
 
 **Why it matters:** Real failures often emerge from interactions that single-variable tests miss: wording plus formatting, a refactor plus renamed identifiers, or image noise plus compression. A useful evaluator must find hard cases while rejecting unrealistic corruption.
 
-**Original commentary:** This provides a practical extension to vibe-coding review: generate meaning-preserving combinations of changes, run them against the application, and inspect the Pareto frontier between realism and failure severity. It also reinforces that evaluation is a search process, not a single benchmark score.
+<span class="story-editorial-note" data-george-implication="This provides a practical extension to vibe-coding review: generate meaning-preserving combinations of changes, run them against the application, and inspect the Pareto frontier between realism and failure severity. It also reinforces that evaluation is a search process, not a single benchmark score." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.19882" data-item-id="dab-story-2026-08-23-dbdd1c3a" data-edition-date="2026-08-23" data-action="source_clicks">arXiv</a>
 

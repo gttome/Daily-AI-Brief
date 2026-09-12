@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-04-f5563221
 
 **Why it matters:** This moves agentic delegation closer to ordinary project and work-management software rather than requiring a developer framework. Non-technical teams can increasingly assign work to agents within systems that already contain tasks, owners, dependencies and business context. The vendor’s adoption and business-impact claims should still be treated as company-reported evidence, and organizations will need clear responsibility, permission and review rules for AI Teammates.
 
-**Original commentary:** This is an excellent mainstream example for Bounded Agentic Delegation. A user can define the outcome in the work system, provide shared context, assign an AI teammate, retain human ownership and review results without writing code or managing an API.
+<span class="story-editorial-note" data-george-implication="This is an excellent mainstream example for Bounded Agentic Delegation. A user can define the outcome in the work system, provide shared context, assign an AI teammate, retain human ownership and review results without writing code or managing an API." hidden></span>
 
 **Source:** <a href="https://investors.asana.com/news-releases/news-release-details/asana-announces-second-quarter-fiscal-2027-results/" data-item-id="dab-story-2026-09-04-f5563221" data-edition-date="2026-09-04" data-action="source_clicks">Asana — Second Quarter Fiscal 2027 Results</a>
 

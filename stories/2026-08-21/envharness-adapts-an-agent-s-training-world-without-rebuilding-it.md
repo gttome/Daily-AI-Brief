@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-21-eeb92c90
 
 **Why it matters:** Static benchmarks stop being informative when agents learn their quirks. EnvHarness treats the environment itself as an adaptive part of the evaluation loop while preserving a trusted acceptance test. That is a useful architecture for targeted practice, regression testing, and adversarial scenario generation.
 
-**Original commentary:** It gives harness engineering a second meaning beyond connecting tools: the harness can also shape the world in which an agent learns and is evaluated. George can use this to teach the loop **observe failure → generate targeted scenario → rerun → verify on fresh cases**.
+<span class="story-editorial-note" data-george-implication="It gives harness engineering a second meaning beyond connecting tools: the harness can also shape the world in which an agent learns and is evaluated. George can use this to teach the loop **observe failure → generate targeted scenario → rerun → verify on fresh cases**." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.19880" data-item-id="dab-story-2026-08-21-eeb92c90" data-edition-date="2026-08-21" data-action="source_clicks">arXiv</a>
 

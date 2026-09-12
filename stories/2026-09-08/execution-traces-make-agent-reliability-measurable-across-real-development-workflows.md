@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-08-aad4e966
 
 **Why it matters:** Trace-level evidence makes loop and harness defects diagnosable and supports safer regression testing. The article is practitioner analysis rather than a peer-reviewed benchmark, so its recommendations should be validated on each organization’s own workflows.
 
-**Original commentary:** Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result.
+<span class="story-editorial-note" data-george-implication="Add trace inspection to the evaluation chapter and training exercises: require learners to review decisions, tool use, retries, and side effects before accepting an agent result." hidden></span>
 
 ## What to do now
 

@@ -24,9 +24,9 @@ story_id: dab-video-2026-09-09-agent-skills
 
 **Why it matters:** Directly supports today’s SKILL.md focus by helping non-technical users decide when to package a method as a reusable skill.
 
-**Original commentary:** See the dated edition for the original commentary.
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
-**Source:** <a href="https://www.youtube.com/watch?v=GRWChm0sYHE" data-item-id="dab-video-2026-09-09-agent-skills" data-edition-date="2026-09-09" data-action="source_clicks">AI with Kyle</a>
+**Source:** <a href="https://www.youtube.com/watch?v=GRWChm0sYHE" data-item-id="dab-video-2026-09-09-agent-skills" data-edition-date="2026-09-09" data-action="source_clicks" target="_blank" rel="noopener noreferrer">AI with Kyle</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-video-2026-09-09-agent-skills">
   <span class="feedback-prompt">Was this video useful?</span>

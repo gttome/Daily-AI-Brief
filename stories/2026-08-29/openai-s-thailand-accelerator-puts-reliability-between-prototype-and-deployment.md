@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-29-67aff0e3
 
 **Why it matters:** That framing is useful well beyond startups. Authors, consultants, educators, and entrepreneurs often evaluate AI by the first impressive output; deployment requires a loop that tests the result with real users, records failure modes, and decides who approves consequential actions. The accelerator is a program announcement, not evidence that the cohort’s products are effective yet.
 
-**Original commentary:** It offers a strong teaching structure for applied-AI courses: prototype → user test → safeguard → business/process fit → measured deployment.
+<span class="story-editorial-note" data-george-implication="It offers a strong teaching structure for applied-AI courses: prototype → user test → safeguard → business/process fit → measured deployment." hidden></span>
 
 **Source:** <a href="https://openai.com/index/supporting-next-generation-ai-startups-thailand/" data-item-id="dab-story-2026-08-29-67aff0e3" data-edition-date="2026-08-29" data-action="source_clicks">OpenAI — Supporting Thailand’s next generation of AI startups</a>
 

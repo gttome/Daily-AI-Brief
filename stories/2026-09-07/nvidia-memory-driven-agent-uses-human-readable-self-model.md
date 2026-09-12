@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-07-968c0cd8
 
 **Why it matters:** Persistent memory helps turn a chatbot into a reusable work agent, but opaque memory creates governance and correctness risk. A readable memory layer supports inspection, correction, and scoping.
 
-**Original commentary:** Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory.
+<span class="story-editorial-note" data-george-implication="Use this as a context-engineering pattern: durable context should be explicit, inspectable, scoped, and correctable rather than treated as unlimited hidden memory." hidden></span>
 
 ## What to do now
 

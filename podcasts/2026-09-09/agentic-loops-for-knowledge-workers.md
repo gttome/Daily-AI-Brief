@@ -29,13 +29,13 @@ story_id: dab-podcast-2026-09-09-agentic-loops
 
 **Connection to the brief:** Directly supports the brief’s loop, graph, context, agent-workflow, evaluation, and human-review focus areas.
 
-**Original commentary:** Use the episode to develop a workshop exercise: define a work outcome, a checkable acceptance test, a turn limit, and a human review checkpoint.
+<span class="story-editorial-note" data-george-implication="Use the episode to develop a workshop exercise: define a work outcome, a checkable acceptance test, a turn limit, and a human review checkpoint." hidden></span>
 
 **Coverage:** September 3 episode selected from the preceding seven days; added to the September 9 edition with the podcast launch.
 
 **Evidence:** Practitioner analysis. Episode identity and content checked against the publisher’s dated notes and Spotify episode. Publisher lists approximately 57 minutes; an exact matching runtime was not independently verified. The YouTube channel was checked, but a direct episode URL could not be verified.
 
-**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-03" data-item-id="dab-podcast-2026-09-09-agentic-loops" data-edition-date="2026-09-09" data-action="source_clicks">Episode website and notes</a> · <a href="https://open.spotify.com/episode/1vbROFe80yIFRPLTI2Krg4" data-item-id="dab-podcast-2026-09-09-agentic-loops" data-edition-date="2026-09-09" data-action="source_clicks">Spotify episode</a>
+**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-03" data-item-id="dab-podcast-2026-09-09-agentic-loops" data-edition-date="2026-09-09" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Episode website and notes</a> · <a href="https://open.spotify.com/episode/1vbROFe80yIFRPLTI2Krg4" data-item-id="dab-podcast-2026-09-09-agentic-loops" data-edition-date="2026-09-09" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Spotify episode</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-podcast-2026-09-09-agentic-loops">
   <span class="feedback-prompt">Was this podcast useful?</span>

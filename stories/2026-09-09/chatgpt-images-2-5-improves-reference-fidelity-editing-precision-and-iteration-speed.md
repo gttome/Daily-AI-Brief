@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-09-259c8fd8
 
 **Why it matters:** Faster, more controllable iteration can improve textbook diagrams, course graphics, and marketing assets. The performance figures are vendor-reported, and stronger visual fidelity does not verify factual labels or eliminate the need for accessibility and editorial review.
 
-**Original commentary:** Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow.
+<span class="story-editorial-note" data-george-implication="Run a controlled comparison on one existing textbook diagram: test label accuracy, composition control, revision consistency, mobile legibility, and total review time before changing the production image workflow." hidden></span>
 
 ## What to do now
 

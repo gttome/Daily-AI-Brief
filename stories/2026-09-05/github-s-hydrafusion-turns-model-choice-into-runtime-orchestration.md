@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-05-a956fc27
 
 **Why it matters:** This is a meaningful step from model selection toward compound AI systems that dynamically construct the execution strategy for each task. It makes routing, independent review, escalation, failure handling, and cost-aware orchestration first-class engineering concerns. The reported benchmark gains are vendor-run, configuration-specific, and from a research preview, so production reliability, latency, and generalization still need independent evidence.
 
-**Original commentary:** This is a strong current example for graph, loop, and harness engineering. Use it to show how an AI system can choose among direct execution, escalation, and independent critique while preserving a permission-aware outer loop and an auditable result.
+<span class="story-editorial-note" data-george-implication="This is a strong current example for graph, loop, and harness engineering. Use it to show how an AI system can choose among direct execution, escalation, and independent critique while preserving a permission-aware outer loop and an auditable result." hidden></span>
 
 **Source:** <a href="https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/" data-item-id="dab-story-2026-09-05-a956fc27" data-edition-date="2026-09-05" data-action="source_clicks">GitHub — Project HydraFusion: Frontier quality via multi-model orchestration</a>
 

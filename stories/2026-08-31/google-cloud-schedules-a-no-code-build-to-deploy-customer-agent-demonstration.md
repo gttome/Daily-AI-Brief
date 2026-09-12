@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-31-f97bd21f
 
 **Why it matters:** A short visual build lowers the entry barrier, but deployment speed is not evidence of production reliability. The substantive lesson for non-technical owners is the governance work around the canvas: select grounded sources, define what the agent may do, create escalation triggers, review conversation traces and test failure cases before exposing it to customers.
 
-**Original commentary:** Recreate the demonstration as a two-part exercise: first build the workflow, then spend equal time on boundaries, approval points, an evaluation set and a rollback procedure.
+<span class="story-editorial-note" data-george-implication="Recreate the demonstration as a two-part exercise: first build the workflow, then spend equal time on boundaries, approval points, an evaluation set and a rollback procedure." hidden></span>
 
 **Source:** <a href="https://cloudonair.withgoogle.com/events/develop-proactive-customer-agents-in-minutes" data-item-id="dab-story-2026-08-31-f97bd21f" data-edition-date="2026-08-31" data-action="source_clicks">Google Cloud OnAir — Develop proactive customer agents in minutes</a>
 

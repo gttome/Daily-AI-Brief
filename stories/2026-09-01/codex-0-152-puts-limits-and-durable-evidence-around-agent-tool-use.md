@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-01-4df260d4
 
 **Why it matters:** These changes address common harness failure points: tools can flood context, long-running work can outlive default timeouts, compaction can erase approval evidence, and saved credentials can be exposed through unsafe routing. The release improves control surfaces rather than model intelligence, and teams still need local policies for tool budgets, trusted origins, timeout escalation and review retention.
 
-**Original commentary:** Use this release as a checklist for “production harness” training: bound every tool’s output, preserve authorization evidence through summarization, restore execution context deliberately, and treat URLs that receive credentials as policy-controlled resources.
+<span class="story-editorial-note" data-george-implication="Use this release as a checklist for “production harness” training: bound every tool’s output, preserve authorization evidence through summarization, restore execution context deliberately, and treat URLs that receive credentials as policy-controlled resources." hidden></span>
 
 **Source:** <a href="https://github.com/openai/codex/releases/tag/rust-v0.152.0" data-item-id="dab-story-2026-09-01-4df260d4" data-edition-date="2026-09-01" data-action="source_clicks">OpenAI Codex 0.152 release</a>
 

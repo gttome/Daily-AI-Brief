@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-09-a02b9db1
 
 **Why it matters:** Muse brings broad, action-taking agents closer to ordinary consumers, making permissions, prompt-injection defenses, and confirmation design practical adoption issues. Security and reliability claims are vendor-provided at launch; users should begin with reversible, low-consequence tasks and narrow access.
 
-**Original commentary:** Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history.
+<span class="story-editorial-note" data-george-implication="Add Muse to the AI Authority Ladder as a current example: start with plan-only work, enable one connector at a time, require approval before messages, purchases, or commitments, and review the action history." hidden></span>
 
 ## What to do now
 

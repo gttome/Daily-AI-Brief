@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-10-fdde2a0c
 
 **Why it matters:** This moves human-in-the-loop from a UI convention toward an enforceable policy layer. Reliable agent systems need authority boundaries that survive local configuration changes and distinguish low-risk actions from operations that require explicit review.
 
-**Original commentary:** This is a strong example for the AI Authority Ladder and agent-governance material: permissions should be encoded in the harness, not left to memory or prompt wording. It also gives consulting clients a concrete pattern for role- and team-specific controls.
+<span class="story-editorial-note" data-george-implication="This is a strong example for the AI Authority Ladder and agent-governance material: permissions should be encoded in the harness, not left to memory or prompt wording. It also gives consulting clients a concrete pattern for role- and team-specific controls." hidden></span>
 
 ## What to do now
 
@@ -38,7 +38,6 @@ story_id: dab-story-2026-09-10-fdde2a0c
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

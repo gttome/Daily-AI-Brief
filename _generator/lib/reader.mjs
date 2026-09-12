@@ -40,7 +40,6 @@ export function renderStarFeedback(story) {
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars">${meanings.map((meaning,i)=>`<button type="button" data-feedback-rating="${i+1}" title="${i+1} — ${meaning}" aria-label="${i+1} star${i?'s':''}: ${meaning}" aria-pressed="false">☆</button>`).join('')}</div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol>${meanings.map(meaning=>`<li>${meaning}</li>`).join('')}</ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>`;
 }
@@ -142,7 +141,7 @@ ${image ? `![${story.image.alt}](${image})\n\n` : ''}**Summary:** ${story.summar
 
 ${renderSeriesImplications(story)}${action}
 
-**Source:** ${source ? trackedLink(source,story.source_title || story.source_organization || 'Original source',story.story_id,story.brief_date,'source_clicks') : 'Source retained in the dated edition.'}${feedbackEnabled ? `
+**Source:** ${source ? trackedLink(source,story.source_title || story.source_organization || 'Original source',story.story_id,story.brief_date,'source_clicks',story.content_type === 'Video') : 'Source retained in the dated edition.'}${feedbackEnabled ? `
 
 ${renderInlineFeedback(story)}` : ''}
 
@@ -353,21 +352,22 @@ ${renderSeriesImplications(slot)}
 
 **Evidence:** Practitioner analysis. ${slot.verification_note}
 
-**Listen / watch:** ${slot.platforms.map(p => trackedLink(p.url,p.name,slot.item_id,briefDate,'source_clicks')).join(' · ')}
+**Listen / watch:** ${slot.platforms.map(p => trackedLink(p.url,p.name,slot.item_id,briefDate,'source_clicks',true)).join(' · ')}
 
 ${renderInlineFeedback({brief_date:briefDate,story_id:slot.item_id,feedback_subject:'podcast'})}`;
 }
 
 export const absoluteItemUrl = url => /^https:\/\//.test(url) ? url : `${PUBLIC_BASE}${url}`;
-export function trackedLink(url,title,id,date,action) {
+export function trackedLink(url,title,id,date,action,newTab=false) {
   const href=/^https:\/\//.test(url)?xml(url):`{{ '${url}' | relative_url }}`;
-  return `<a href="${href}" data-item-id="${xml(id)}" data-edition-date="${xml(date)}" data-action="${action}">${xml(title)}</a>`;
+  return `<a href="${href}" data-item-id="${xml(id)}" data-edition-date="${xml(date)}" data-action="${action}"${newTab?' target="_blank" rel="noopener noreferrer"':''}>${xml(title)}</a>`;
 }
 export function renderSeriesImplications(item) {
   const rows=item.series_implications || [];
-  if(!rows.length)return `**Original commentary:** ${item.george_implication || 'See the dated edition for the original commentary.'}`;
+  const metadata=`<span class="story-editorial-note" data-george-implication="${xml(item.george_implication || '')}" hidden></span>`;
+  if(!rows.length)return metadata;
   const entry=x=>`<p><strong>${xml(x.book_title)}</strong> — Proposed update: ${xml(x.proposed_change)} ${xml(x.evidence_reason)} Teaching asset: ${xml(x.teaching_asset)}</p>`;
-  return `**Original commentary:** ${item.george_implication || ''}\n\n### Evolving the Generative AI Professional Series\n\n${rows.slice(0,2).map(entry).join('\n')}${rows.length>2?`<details><summary>More proposed book updates</summary>${rows.slice(2).map(entry).join('')}</details>`:''}`;
+  return `${metadata}\n\n### Evolving the Generative AI Professional Series\n\n${rows.slice(0,2).map(entry).join('\n')}${rows.length>2?`<details><summary>More proposed book updates</summary>${rows.slice(2).map(entry).join('')}</details>`:''}`;
 }
 export function videoStory(slot, edition, suffix, ordinal) {
  return {story_id:`dab-video-${edition.brief_date}-${suffix}`,edition_id:edition.edition_id,brief_date:edition.brief_date,
@@ -375,5 +375,5 @@ export function videoStory(slot, edition, suffix, ordinal) {
  permanent_url:`/videos/${edition.brief_date}/${suffix}/`,event_date:slot.upload_date || edition.brief_date,
  focus:ordinal===7?'general_video':'agents_non_technical_people',topics:[],companies:[slot.channel],source_url:slot.url,
  source_title:slot.channel,source_organization:slot.channel,evidence_type:'practitioner_analysis',availability_status:'not_applicable',
- summary:slot.why_useful,why_it_matters:slot.connection,series_implications:slot.series_implications,trends:[]};
+ summary:slot.why_useful,why_it_matters:slot.connection,series_implications:slot.series_implications,trends:[],runtime_seconds:slot.runtime_seconds};
 }

@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-09-81d2a78e
 
 **Why it matters:** For non-technical users, an AI search layer can reduce the navigation burden across fragmented help systems. It should still be treated as a retrieval aid: confirm consequential account or billing guidance in the cited source and escalate unresolved cases to human support.
 
-**Original commentary:** Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary.
+<span class="story-editorial-note" data-george-implication="Use the portal as a small case study in grounded assistance: ask a real setup question, inspect the sources returned, compare the answer with official documentation, and record when human escalation is necessary." hidden></span>
 
 ## What to do now
 

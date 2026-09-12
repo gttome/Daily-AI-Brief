@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-02-6dc5626e
 
 **Why it matters:** Sustainable agent adoption requires decision rights, acceptable-use rules, review responsibility, training and measurable workflows—not merely tool access. Because this is a vendor case study, usage metrics should not be treated as independent evidence of business value.
 
-**Original commentary:** For Legal AI Brief and consulting material, distinguish adoption from value realization and track cycle time, quality, review burden, risk events and customer outcomes alongside usage.
+<span class="story-editorial-note" data-george-implication="For Legal AI Brief and consulting material, distinguish adoption from value realization and track cycle time, quality, review burden, risk events and customer outcomes alongside usage." hidden></span>
 
 **Source:** <a href="https://openai.com/index/gilbert-tobin/" data-item-id="dab-story-2026-09-02-6dc5626e" data-edition-date="2026-09-02" data-action="source_clicks">OpenAI — How Gilbert + Tobin governs and scales AI</a>
 

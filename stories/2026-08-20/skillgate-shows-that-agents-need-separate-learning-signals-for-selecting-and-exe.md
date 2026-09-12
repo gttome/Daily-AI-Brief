@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-20-89c66468
 
 **Why it matters:** Skill retrieval is not ordinary document retrieval. The agent must choose a procedure whose value may be obscured by everything that happens afterward. Reliable harnesses therefore need to evaluate **which skill was selected** separately from **how well it was executed**.
 
-**Original commentary:** This sharpens the Generative AI Engineering Ecosystem: - **Context engineering** determines which skill candidates are visible. - **Harness engineering** retrieves and loads the selected skill. - **Loop engineering** evaluates selection and execution with different feedback. - **Human review** examines high-impact or ambiguous selections. It also supports a practical lesson for non-experts: do not judge a procedure only by the final outcome; diagnose whether the AI chose the right method before assessing how it carried it out.
+<span class="story-editorial-note" data-george-implication="This sharpens the Generative AI Engineering Ecosystem: - **Context engineering** determines which skill candidates are visible. - **Harness engineering** retrieves and loads the selected skill. - **Loop engineering** evaluates selection and execution with different feedback. - **Human review** examines high-impact or ambiguous selections. It also supports a practical lesson for non-experts: do not judge a procedure only by the final outcome; diagnose whether the AI chose the right method before assessing how it carried it out." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.18852" data-item-id="dab-story-2026-08-20-89c66468" data-edition-date="2026-08-20" data-action="source_clicks">arXiv</a>
 

@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-04-2c938c91
 
 **Why it matters:** This is a practical pattern for non-technical agent orchestration: a general business agent can call a specialized, governed data agent instead of receiving unrestricted access to an entire data estate. Microsoft’s guidance emphasizes tool descriptions, instructions, testing and evaluation because the orchestrator must decide when to invoke the specialist capability. Licensing and Fabric capacity requirements mean this is low-code, not necessarily low-cost.
 
-**Original commentary:** Use this to illustrate composable agents for knowledge workers. A business user can assemble a broader agent from bounded specialist capabilities while preserving permissions and grounding. It maps cleanly to outcome, context, authority, evaluation and reusable-agent concepts in your training material.
+<span class="story-editorial-note" data-george-implication="Use this to illustrate composable agents for knowledge workers. A business user can assemble a broader agent from bounded specialist capabilities while preserving permissions and grounding. It maps cleanly to outcome, context, authority, evaluation and reusable-agent concepts in your training material." hidden></span>
 
 **Source:** <a href="https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-copilot-studio-tool" data-item-id="dab-story-2026-09-04-2c938c91" data-edition-date="2026-09-04" data-action="source_clicks">Microsoft Learn — Add a Fabric data agent as a tool in Microsoft Copilot Studio</a>
 

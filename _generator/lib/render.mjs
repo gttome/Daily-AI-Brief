@@ -46,18 +46,24 @@ function runtime(value) {
 }
 
 function renderVideo(name, slot, briefDate, slotId) {
-  const heading = `### ${name}`;
+  const ordinal = slotId === 'general' ? 7 : 8;
+  const heading = `## ${ordinal}. ${name}`;
   if (slot.status === 'empty') return `${heading}\n\n${slot.exception}`;
   return `${heading}
 
-**Title:** ${trackedLink(slot.url,slot.title,`dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks')}
+### ${slot.title}
 
 ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
 **Channel:** ${slot.channel}  
-**Upload date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
+**Date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
 **Runtime:** ${runtime(slot.runtime_seconds)}${slot.runtime_seconds>600 && briefDate>='2026-09-11'?' · Longer selection today: no suitable video of 10 minutes or less was found.':''}  
-**Why it is useful:** ${slot.why_useful}  
-**Connection to the brief:** ${slot.connection}
+**Format:** Video
+
+**Summary:** ${slot.why_useful}
+
+**Why it matters:** ${slot.connection}
+
+${renderSeriesImplications(slot)}${slot.series_implications?.length ? '\n\n' : ''}**Source:** ${trackedLink(slot.url,'Watch on YouTube',`dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
 
 ${renderInlineFeedback({
     brief_date: briefDate,
@@ -153,4 +159,3 @@ export function generatedFiles(edition, repoRoot) {
 }
 
 export function renderSubscriptionCard(){return `<section class="subscription-card" id="subscribe" aria-labelledby="subscribe-title"><h2 id="subscribe-title">Follow the daily brief</h2><h3>Daily calendar reminder</h3><p>Choose when to read. Your calendar reminds you every day and links to the latest brief.</p><div class="calendar-reminder"><label for="calendar-time">Reminder time (your local time)</label> <input id="calendar-time" type="time" value="09:00" required><div class="calendar-period"><label for="calendar-quantity">Remind me for</label> <input id="calendar-quantity" type="number" min="1" max="999" step="1" value="1" required aria-label="Reminder quantity"> <label class="sr-only" for="calendar-period">Period</label><select id="calendar-period" aria-label="Reminder period"><option value="days">days</option><option value="weeks">weeks</option><option value="months" selected>months</option><option value="years">years</option></select><p>1 week = 7 days · 1 month = 30 days · 1 year = 365 days. Reminders are daily for the selected duration, then stop.</p></div><p class="calendar-actions"><a class="calendar-google" hidden target="_blank" rel="noopener noreferrer">Add to Google Calendar</a> <a class="calendar-download" data-calendar="apple" hidden download="daily-ai-brief-reminder.ics">Apple Calendar</a> <a class="calendar-download" data-calendar="outlook" hidden download="daily-ai-brief-reminder.ics">Outlook</a></p><p class="calendar-status" role="status"></p><p><a href="{{ '/calendar/' | relative_url }}">Setup help for iPhone, Android and Windows</a></p><p class="calendar-note">Starts at the next occurrence of your chosen time. Save once, then check that the event repeats daily until the final date shown in the preview and its alert is set to “At time of event” (0 minutes before). This is a reading reminder, even if publication is late. Changing this picker does not update a reminder already saved; edit that series in your calendar.</p><noscript><p>To choose a time without JavaScript, follow the <a href="{{ '/calendar/' | relative_url }}">manual calendar setup steps</a>.</p></noscript></div><h3>Follow in an RSS reader</h3><p>Get one entry per daily edition in your feed reader. Choose any date to read its complete archived brief.</p><label for="rss-home-address">Daily edition feed address</label><input id="rss-home-address" class="rss-address" readonly value="https://gttome.github.io/Daily-AI-Brief/daily-feed.xml"><p><button type="button" class="rss-copy" hidden>Copy feed address</button> <button type="button" class="rss-help-open" hidden>How to subscribe</button></p><p class="rss-copy-status" role="status"></p><p>RSS needs no email address or account on this site.</p><p><a href="{{ '/subscribe/' | relative_url }}">Subscription instructions</a></p></section>`;}
-

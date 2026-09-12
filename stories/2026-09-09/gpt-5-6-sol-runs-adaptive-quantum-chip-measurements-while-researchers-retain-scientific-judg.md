@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-09-1f112fc7
 
 **Why it matters:** This is a strong example of a bounded closed loop: the agent handles repetitive, software-controlled experiments while the researcher designs goals and interprets ambiguous physics. It is a case study rather than an independent evaluation; weak or noisy signals still required expert guidance.
 
-**Original commentary:** Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts.
+<span class="story-editorial-note" data-george-implication="Use the case to teach Bounded Agentic Delegation: automate repeatable loops, expose evidence after every run, and reserve ambiguous interpretation, safety decisions, and acceptance for domain experts." hidden></span>
 
 ## What to do now
 

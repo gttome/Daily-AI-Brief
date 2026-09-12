@@ -87,8 +87,27 @@ test('public rating client writes privately without fetching aggregate ratings',
   const script = fs.readFileSync(path.join(root, 'assets/js/feedback.js'), 'utf8');
   assert.match(script, /method: 'POST'/);
   assert.match(script, /'x-operation-id':operationId/);
+  assert.match(script, /'x-rating-revision':String\(revision\)/);
+  assert.match(script, /sessionStorage\.setItem/);
+  assert.match(script, /You can change this rating while this page session stays open/);
   assert.match(script, /JSON\.stringify\(\{brief_date: briefDate, item_id: storyId, rating:/);
   assert.match(script, /result\.recorded !== true/);
   assert.match(script, />29\*86400000/);
   assert.doesNotMatch(script, /method: 'GET'|refreshSummary|star-summary|Reader average|ratings temporarily unavailable/i);
+});
+
+test('current reader surfaces omit original commentary and the redundant star guide', () => {
+  const current = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-12.json'), 'utf8'));
+  const files = readerFoundationFiles(current, root);
+  const generated = [files.get('feedback/index.md'), ...[...files.entries()].filter(([name])=>/^(stories|videos|podcasts)\/2026-09-12\//.test(name)).map(([,content])=>content)].join('\n');
+  assert.doesNotMatch(generated, /Original commentary|What do the stars mean/i);
+});
+
+test('current video and podcast sources open in a new tab', () => {
+  const current = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-12.json'), 'utf8'));
+  const files = readerFoundationFiles(current, root);
+  for (const name of ['videos/2026-09-12/general.md','videos/2026-09-12/agent-skills.md','podcasts/2026-09-12/ai-risk-specificity.md']) {
+    const page=files.get(name);
+    assert.match(page, /target="_blank" rel="noopener noreferrer"/);
+  }
 });

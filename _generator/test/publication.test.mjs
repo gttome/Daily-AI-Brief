@@ -53,6 +53,15 @@ test('homepage and dated brief place compact feedback controls under six stories
   }
 });
 
+test('current video slots use the same numbered editorial structure as articles and podcasts', () => {
+  const currentEdition = JSON.parse(fs.readFileSync(path.join(root, '_data', 'editions', '2026-09-12.json'), 'utf8'));
+  const page = generatedFiles(currentEdition, root).get('index.md');
+  assert.match(page, /## 7\. General[\s\S]*\*\*Summary:\*\*[\s\S]*\*\*Why it matters:\*\*[\s\S]*\*\*Source:\*\*/);
+  assert.match(page, /## 8\. Agents for Non-Technical People[\s\S]*\*\*Summary:\*\*[\s\S]*\*\*Why it matters:\*\*[\s\S]*\*\*Source:\*\*/);
+  assert.doesNotMatch(page, /Original commentary|What do the stars mean/i);
+  assert.equal((page.match(/target="_blank" rel="noopener noreferrer"/g)||[]).length>=4,true);
+});
+
 test('a Share click records exactly one article or video initiation', () => {
   const script = fs.readFileSync(path.join(root, 'assets', 'js', 'share.js'), 'utf8');
   const analytics = fs.readFileSync(path.join(root, 'assets', 'js', 'analytics.js'), 'utf8');

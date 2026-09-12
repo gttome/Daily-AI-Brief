@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-27-20c9ba69
 
 **Why it matters:** A built-in browser lowers the friction for non-technical users to delegate real multi-step web work, but it also expands the action surface. Separate browser state and selective login transfer are meaningful boundaries; users still need clear authority limits, confirmation before consequential actions, and verification of submitted data.
 
-**Original commentary:** This enables a concrete workshop pattern: delegate research or form preparation, require the agent to stop before submission, inspect evidence and entries, then approve the final action. It maps cleanly to Outcome → Context → Authority → Human Gate → Evaluation.
+<span class="story-editorial-note" data-george-implication="This enables a concrete workshop pattern: delegate research or form preparation, require the agent to stop before submission, inspect evidence and entries, then approve the final action. It maps cleanly to Outcome → Context → Authority → Human Gate → Evaluation." hidden></span>
 
 **Source:** <a href="https://claude.com/blog/cowork-built-in-browser" data-item-id="dab-story-2026-08-27-20c9ba69" data-edition-date="2026-08-27" data-action="source_clicks">Anthropic announcement</a>
 

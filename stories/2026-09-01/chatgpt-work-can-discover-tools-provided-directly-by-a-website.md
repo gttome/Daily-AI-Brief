@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-01-2881d03e
 
 **Why it matters:** Non-technical users can delegate through a site’s structured actions instead of relying only on fragile visual clicking. That can make multi-step work more legible and reliable, because the website defines named capabilities. Availability is constrained: it requires a supported account, model and page, runs in the built-in desktop browser rather than the Chrome extension, and does not make consequential actions automatically safe.
 
-**Original commentary:** This supports a new workshop pattern: inspect the tools a site offers, select only the actions required for the outcome, state approval boundaries and review the resulting artifact or audit evidence before accepting completion.
+<span class="story-editorial-note" data-george-implication="This supports a new workshop pattern: inspect the tools a site offers, select only the actions required for the outcome, state approval boundaries and review the resulting artifact or audit evidence before accepting completion." hidden></span>
 
 **Source:** <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" data-item-id="dab-story-2026-09-01-2881d03e" data-edition-date="2026-09-01" data-action="source_clicks">OpenAI ChatGPT release notes</a>
 

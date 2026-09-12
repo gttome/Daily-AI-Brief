@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-29-b98b5a80
 
 **Why it matters:** A non-technical user can invoke a governed, reusable procedure without opening a workflow editor. The constraints are important: a Slack admin must install the app; a playbook must be published and shared; and a playbook cannot yet be triggered directly from an existing thread. Those limits make the authority boundary visible instead of implying unrestricted autonomy.
 
-**Original commentary:** A course exercise could turn a briefing procedure into a published playbook, define required inputs and approval points, and compare one-off chat with a repeatable agent workflow.
+<span class="story-editorial-note" data-george-implication="A course exercise could turn a briefing procedure into a published playbook, define required inputs and approval points, and compare one-off chat with a repeatable agent workflow." hidden></span>
 
 **Source:** <a href="https://support.writer.com/articles/1313908954-what-s-new-at-writer" data-item-id="dab-story-2026-08-29-b98b5a80" data-edition-date="2026-08-29" data-action="source_clicks">WRITER changelog</a>
 

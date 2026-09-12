@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-24-c688328c
 
 **Why it matters:** The update makes grounded knowledge work more accessible to people who do not use APIs or build RAG infrastructure. Source materials remain linked to their original location, reducing copy-and-paste friction and making it easier to inspect the documents behind a summary or draft.
 
-**Original commentary:** A practical workshop can teach a source-first workflow: select an approved folder → ask for a dated synthesis → require document-level citations → review the originals beside the draft → write back only after human approval.
+<span class="story-editorial-note" data-george-implication="A practical workshop can teach a source-first workflow: select an approved folder → ask for a dated synthesis → require document-level citations → review the originals beside the draft → write back only after human approval." hidden></span>
 
 **Source:** <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" data-item-id="dab-story-2026-08-24-c688328c" data-edition-date="2026-08-24" data-action="source_clicks">OpenAI ChatGPT release notes</a>
 

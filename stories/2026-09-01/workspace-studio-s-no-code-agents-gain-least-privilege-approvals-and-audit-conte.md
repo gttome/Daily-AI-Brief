@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-01-c324f577
 
 **Why it matters:** This is the governance layer that no-code agent adoption has been missing: identity, authority, human approval, data rules and evidence are configured around the visual workflow. The current limitation is important—several protections initially apply only to newly created flows, with existing-flow support promised later—and DLP availability varies by Workspace edition.
 
-**Original commentary:** Convert the control set into a reusable “bounded delegation” worksheet for non-technical builders: name the agent owner, minimize scopes, identify external-sharing steps, require approval at irreversible boundaries and specify which audit events prove the run behaved as intended.
+<span class="story-editorial-note" data-george-implication="Convert the control set into a reusable “bounded delegation” worksheet for non-technical builders: name the agent owner, minimize scopes, identify external-sharing steps, require approval at irreversible boundaries and specify which audit events prove the run behaved as intended." hidden></span>
 
 **Source:** <a href="https://workspaceupdates.googleblog.com/2026/08/new-enterprise-security-controls-for-Workspace-Studio-enable-expanded-collaboration-use-cases.html" data-item-id="dab-story-2026-09-01-c324f577" data-edition-date="2026-09-01" data-action="source_clicks">Google Workspace Updates — enterprise security controls for Workspace Studio</a>
 

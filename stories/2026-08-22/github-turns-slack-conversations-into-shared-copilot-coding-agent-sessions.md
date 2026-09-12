@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-22-88a696d2
 
 **Why it matters:** This pushes agent orchestration into the collaboration layer. Instead of one person privately prompting a coding agent and later showing the result, a team can contribute context, observe progress, redirect the agent, and review the resulting work in a shared conversational surface.
 
-**Original commentary:** This is especially useful for explaining agentic work to knowledge workers because the interaction model is familiar: a team conversation becomes the place where a task is delegated, context is supplied, work is observed, and authority is constrained. It illustrates why **context, tools, permissions, human gates, and evaluation** belong together.
+<span class="story-editorial-note" data-george-implication="This is especially useful for explaining agentic work to knowledge workers because the interaction model is familiar: a team conversation becomes the place where a task is delegated, context is supplied, work is observed, and authority is constrained. It illustrates why **context, tools, permissions, human gates, and evaluation** belong together." hidden></span>
 
 **Source:** <a href="https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/" data-item-id="dab-story-2026-08-22-88a696d2" data-edition-date="2026-08-22" data-action="source_clicks">GitHub</a>
 

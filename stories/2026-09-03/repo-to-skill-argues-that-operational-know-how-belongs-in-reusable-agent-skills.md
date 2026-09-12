@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-03-a001445a
 
 **Why it matters:** The work is evidence for a core context-engineering proposition: system performance can change materially without changing the model when useful operating knowledge is packaged, retrieved and verified well. But this is a preprint with author-reported evaluations, so the reported gains should not be treated as independently reproduced results. Skill quality, provenance, staleness, conflicts and malicious repository content become governance concerns as libraries scale.
 
-**Original commentary:** This provides a strong research case for treating instructions, procedures and operating knowledge as managed reusable assets rather than repeatedly rebuilding context in prompts. Add skill-level provenance, versioning, evaluation and retirement criteria to the context-engineering lifecycle.
+<span class="story-editorial-note" data-george-implication="This provides a strong research case for treating instructions, procedures and operating knowledge as managed reusable assets rather than repeatedly rebuilding context in prompts. Add skill-level provenance, versioning, evaluation and retirement criteria to the context-engineering lifecycle." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2609.02749" data-item-id="dab-story-2026-09-03-a001445a" data-edition-date="2026-09-03" data-action="source_clicks">arXiv — Repo-To-Skill: Distilling GitHub Repositories Into AI4AI Skills</a>
 

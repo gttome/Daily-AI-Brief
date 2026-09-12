@@ -24,9 +24,9 @@ story_id: dab-video-2026-09-09-general
 
 **Why it matters:** Shows the broader workspace-agent model behind today’s themes of reusable workflows, permissions, and human oversight.
 
-**Original commentary:** See the dated edition for the original commentary.
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
-**Source:** <a href="https://www.youtube.com/watch?v=yyvVUEPSCu0" data-item-id="dab-video-2026-09-09-general" data-edition-date="2026-09-09" data-action="source_clicks">OpenAI</a>
+**Source:** <a href="https://www.youtube.com/watch?v=yyvVUEPSCu0" data-item-id="dab-video-2026-09-09-general" data-edition-date="2026-09-09" data-action="source_clicks" target="_blank" rel="noopener noreferrer">OpenAI</a>
 
 <div class="story-feedback story-feedback-compact" data-feedback-brief-date="2026-09-09" data-feedback-story-id="dab-video-2026-09-09-general">
   <span class="feedback-prompt">Was this video useful?</span>

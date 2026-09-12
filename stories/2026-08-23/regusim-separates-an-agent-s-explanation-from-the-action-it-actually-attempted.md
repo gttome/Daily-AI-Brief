@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-23-40885c98
 
 **Why it matters:** A plausible rationale is not reliable proof that an agent followed a rule. Operational assurance requires observation at the tool and enforcement layer, where attempted actions, rejected calls, changed state, and policy decisions can be audited.
 
-**Original commentary:** This offers a clean architecture for reliable agents: **policy context → proposed action → deterministic enforcement → execution evidence → independent review**. Courses can use it to show why chain-of-thought-style explanations should never substitute for logs, validators, permissions, and receipts.
+<span class="story-editorial-note" data-george-implication="This offers a clean architecture for reliable agents: **policy context → proposed action → deterministic enforcement → execution evidence → independent review**. Courses can use it to show why chain-of-thought-style explanations should never substitute for logs, validators, permissions, and receipts." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.19974" data-item-id="dab-story-2026-08-23-40885c98" data-edition-date="2026-08-23" data-action="source_clicks">arXiv</a>
 

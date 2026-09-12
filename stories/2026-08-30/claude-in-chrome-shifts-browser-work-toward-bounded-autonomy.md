@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-30-71d505c2
 
 **Why it matters:** This puts multi-step delegation inside a familiar subscription product without code or API keys. It also raises the stakes: browser content can contain prompt injection, and a logged-in browser carries real authority. Anthropic reports improved detection in its evaluations, but those are vendor-run tests, not a guarantee against unseen attacks. Users should begin with low-stakes, reversible tasks and keep approval enabled for consequential actions.
 
-**Original commentary:** A workshop can teach an explicit browser-agent contract: desired outcome, permitted sites, prohibited actions, stop conditions, approval points, and a final evidence check before submission or purchase.
+<span class="story-editorial-note" data-george-implication="A workshop can teach an explicit browser-agent contract: desired outcome, permitted sites, prohibited actions, stop conditions, approval points, and a final evidence check before submission or purchase." hidden></span>
 
 **Source:** <a href="https://claude.com/blog/claude-in-chrome-generally-available" data-item-id="dab-story-2026-08-30-71d505c2" data-edition-date="2026-08-30" data-action="source_clicks">Anthropic — Claude in Chrome is generally available</a>
 

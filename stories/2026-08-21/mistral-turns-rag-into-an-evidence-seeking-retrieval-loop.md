@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-21-f1184b97
 
 **Why it matters:** This is a practical shift from one-shot RAG to **retrieve → inspect → refine → verify**. The tool surface is deliberately small, but it gives the model enough control to follow references, inspect tables, and recover from weak first results. It also makes the retrieval trace easier to inspect than an opaque, single-pass answer.
 
-**Original commentary:** This provides a clean teaching contrast between **traditional RAG** and **agentic retrieval**. A workshop can have learners diagnose when a direct lookup is sufficient and when a bounded search loop is justified. Because Libraries exposes the feature in Studio and Vibe, it is also relevant to non-software developers building grounded assistants.
+<span class="story-editorial-note" data-george-implication="This provides a clean teaching contrast between **traditional RAG** and **agentic retrieval**. A workshop can have learners diagnose when a direct lookup is sufficient and when a bounded search loop is justified. Because Libraries exposes the feature in Studio and Vibe, it is also relevant to non-software developers building grounded assistants." hidden></span>
 
 **Source:** <a href="https://mistral.ai/news/agentic-search/" data-item-id="dab-story-2026-08-21-f1184b97" data-edition-date="2026-08-21" data-action="source_clicks">mistral.ai</a>
 

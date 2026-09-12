@@ -16,11 +16,12 @@ function stripFrontmatter(markdown) {
 }
 
 function storyBlocks(markdown) {
-  const positions = [...markdown.matchAll(/^##\s+(\d+)\.\s+(.+)$/gm)];
+  const articleMarkdown = markdown.split('\n## Worth Watching\n')[0];
+  const positions = [...articleMarkdown.matchAll(/^##\s+([1-6])\.\s+(.+)$/gm)];
   return positions.map((match, index) => ({
     ordinal: Number(match[1]),
     headline: match[2].trim(),
-    content: markdown.slice(match.index + match[0].length, positions[index + 1]?.index ?? markdown.indexOf('\n## Worth Watching', match.index)).trim()
+    content: articleMarkdown.slice(match.index + match[0].length, positions[index + 1]?.index ?? articleMarkdown.length).trim()
   }));
 }
 
@@ -77,8 +78,8 @@ function parseStory(block, briefDate, repoRoot) {
       cache_key: new URL(imageUrl).searchParams.get('v')
     },
     summary: capture(block.content, /\*\*Summary:\*\*\s*([\s\S]*?)(?=\n\n\*\*Why it matters:\*\*)/i, `story ${block.ordinal} summary`),
-    why_it_matters: capture(block.content, /\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\n\*\*For George(?:’s|'s) work:\*\*)/i, `story ${block.ordinal} why it matters`),
-    george_implication: capture(block.content, /\*\*For George(?:’s|'s) work:\*\*\s*([\s\S]*?)(?=\n\n\*\*Source:\*\*)/i, `story ${block.ordinal} George implication`),
+    why_it_matters: capture(block.content, /\*\*Why it matters:\*\*\s*([\s\S]*?)(?=\n\n(?:<span class="story-editorial-note"|\*\*For George(?:’s|'s) work:\*\*|### Evolving the Generative AI Professional Series|\*\*What to do now|\*\*Source:\*\*))/i, `story ${block.ordinal} why it matters`),
+    george_implication: capture(block.content, /data-george-implication="([^"]+)"/i, `story ${block.ordinal} George implication`, true) || capture(block.content, /\*\*For George(?:’s|'s) work:\*\*\s*([\s\S]*?)(?=\n\n(?:### Evolving the Generative AI Professional Series|\*\*What to do now|\*\*Source:\*\*))/i, `story ${block.ordinal} George implication`, true),
     source: {
       title: source[1].trim(),
       organization: sourceOrganization(source[1], source[2]),
@@ -95,26 +96,29 @@ function parseStory(block, briefDate, repoRoot) {
 }
 
 function parseVideoSlot(section, name) {
-  const normalizedSection = section.trim().replace(/^###.*\n+/, '');
+  const normalizedSection = section.trim().replace(/^##.*\n+/, '').replace(/^###.*\n+/, '');
   const link = section.match(/\[([^\]]+)\]\((https?:\/\/(?:www\.)?youtube\.com\/[^)]+)\)/i);
   if (!link) return {status: 'empty', exception: normalizedSection || `No qualifying ${name} video was available.`};
   const runtime = section.match(/\b(\d{1,2}):(\d{2})\b/);
+  const headingTitle = section.match(/^###\s+(.+)$/m)?.[1]?.trim();
   return {
     status: 'included',
-    title: link[1],
+    title: headingTitle || link[1],
     channel: capture(section, /\*\*(?:Presenter|Channel):\*\*\s*([^\n]+)/i, `${name} channel`, true) || 'Unknown',
-    upload_date: capture(section, /\*\*Upload date:\*\*\s*([^\n]+)/i, `${name} upload date`, true) || null,
+    upload_date: capture(section, /\*\*(?:Upload date|Date):\*\*\s*([^\n]+)/i, `${name} upload date`, true) || null,
     runtime_seconds: runtime ? Number(runtime[1]) * 60 + Number(runtime[2]) : null,
-    why_useful: capture(section, /\*\*Why it is useful:\*\*\s*([^\n]+)/i, `${name} why useful`, true) || 'See the editorial note.',
-    connection: capture(section, /\*\*Connection to the brief:\*\*\s*([^\n]+)/i, `${name} connection`, true) || 'Related to this edition.',
+    why_useful: capture(section, /\*\*(?:Why it is useful|Summary):\*\*\s*([^\n]+)/i, `${name} why useful`, true) || 'See the editorial note.',
+    connection: capture(section, /\*\*(?:Connection to the brief|Why it matters):\*\*\s*([^\n]+)/i, `${name} connection`, true) || 'Related to this edition.',
     url: link[2]
   };
 }
 
 function parseWorthWatching(markdown) {
   const section = markdown.split('\n## Worth Watching\n')[1]?.split('\n## Editorial takeaway\n')[0] || '';
-  const general = section.split(/^### Agents for Non-Technical People\s*$/m)[0] || '';
-  const agents = section.split(/^### Agents for Non-Technical People\s*$/m)[1] || '';
+  const parts = section.split(/^## 8\. Agents for Non-Technical People\s*$/m);
+  const legacyParts = section.split(/^### Agents for Non-Technical People\s*$/m);
+  const general = parts.length>1 ? parts[0] : legacyParts[0] || '';
+  const agents = parts.length>1 ? parts[1] : legacyParts[1] || '';
   return {
     general: parseVideoSlot(general, 'general'),
     agents_non_technical_people: parseVideoSlot(agents, 'agents')

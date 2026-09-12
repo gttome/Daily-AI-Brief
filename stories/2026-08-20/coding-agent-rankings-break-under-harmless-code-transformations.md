@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-20-5d1fe565
 
 **Why it matters:** A coding agent that solves one textual form of a repository may fail on an equivalent form. That undermines the idea that a single benchmark score measures stable engineering ability. It also shows that model rankings can reverse when the scaffold changes.
 
-**Original commentary:** For vibe coding and tools aimed at non-developers, this reinforces the need for deterministic tests, multiple runs, small changes, and human review of architecture—not confidence based on one successful generation. It also supports teaching **metamorphic testing**: change irrelevant surface details and verify that the outcome remains stable.
+<span class="story-editorial-note" data-george-implication="For vibe coding and tools aimed at non-developers, this reinforces the need for deterministic tests, multiple runs, small changes, and human review of architecture—not confidence based on one successful generation. It also supports teaching **metamorphic testing**: change irrelevant surface details and verify that the outcome remains stable." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.18389" data-item-id="dab-story-2026-08-20-5d1fe565" data-edition-date="2026-08-20" data-action="source_clicks">arXiv</a>
 

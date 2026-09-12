@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-04-dfb80844
 
 **Why it matters:** The important change is not simply a higher benchmark score. Astra combines stronger reasoning with computer control and artifact production, pushing frontier models further from answer generation toward end-to-end execution. That makes evaluation of task boundaries, tool permissions, escalation and real-world completion quality more important. Most launch figures are vendor-run evaluations, and limited rollout means broad production evidence is still immature.
 
-**Original commentary:** This is a strong current example for the distinction between model capability and delegated authority. Update agentic-work material to show that better computer use increases the need for explicit outcome definitions, permission boundaries, review gates and workload-specific evaluation.
+<span class="story-editorial-note" data-george-implication="This is a strong current example for the distinction between model capability and delegated authority. Update agentic-work material to show that better computer use increases the need for explicit outcome definitions, permission boundaries, review gates and workload-specific evaluation." hidden></span>
 
 **Source:** <a href="https://openai.com/index/gpt-6-astra/" data-item-id="dab-story-2026-09-04-dfb80844" data-edition-date="2026-09-04" data-action="source_clicks">OpenAI — GPT-6 Astra: A new generation of intelligence</a>
 

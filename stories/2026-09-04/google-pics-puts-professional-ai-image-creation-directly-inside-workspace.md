@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-04-af83f986
 
 **Why it matters:** For knowledge workers, the significant shift is workflow consolidation. Visual generation is moving from a specialist side tool into the same suite used for documents, presentations and collaboration. That reduces friction for marketing, training, education and internal communications, but professional use still requires review for factual accuracy, brand consistency, rights, accessibility and misleading synthetic content.
 
-**Original commentary:** This is directly relevant to publishing and training production. It provides a mainstream example of generating and refining infographics, slide visuals and promotional assets inside an existing office suite rather than teaching users a separate creative application.
+<span class="story-editorial-note" data-george-implication="This is directly relevant to publishing and training production. It provides a mainstream example of generating and refining infographics, slide visuals and promotional assets inside an existing office suite rather than teaching users a separate creative application." hidden></span>
 
 **Source:** <a href="https://workspace.google.com/blog/product-announcements/google-pics-brings-pro-level-ai-image-creation-and-editing-to-google-workspace" data-item-id="dab-story-2026-09-04-af83f986" data-edition-date="2026-09-04" data-action="source_clicks">Google Workspace — Google Pics brings pro-level AI image creation and editing to Google Workspace</a>
 

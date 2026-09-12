@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-05-9cfd0663
 
 **Why it matters:** Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.
 
-**Original commentary:** Add a memory-lifecycle dimension to context-engineering material: decide what an agent should remember, how long it should remain valid, how conflicting memories are resolved, and when information must be removed. This is especially useful for recurring agents and long-running customer, sales, and support workflows.
+<span class="story-editorial-note" data-george-implication="Add a memory-lifecycle dimension to context-engineering material: decide what an agent should remember, how long it should remain valid, how conflicting memories are resolved, and when information must be removed. This is especially useful for recurring agents and long-running customer, sales, and support workflows." hidden></span>
 
 **Source:** <a href="https://aws.amazon.com/blogs/machine-learning/designing-lifecycle-policies-for-agentcore-memory/" data-item-id="dab-story-2026-09-05-9cfd0663" data-edition-date="2026-09-05" data-action="source_clicks">AWS — Designing lifecycle policies for AgentCore memory</a>
 

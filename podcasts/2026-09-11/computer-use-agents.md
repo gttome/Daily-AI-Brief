@@ -29,7 +29,7 @@ story_id: dab-podcast-2026-09-11-computer-use-agents
 
 **Connection to the brief:** Relevant to the brief’s agent authority, context and human-review themes.
 
-**Original commentary:** Consider a worked example comparing computer use with a structured tool connection.
+<span class="story-editorial-note" data-george-implication="Consider a worked example comparing computer use with a structured tool connection." hidden></span>
 
 ### Evolving the Generative AI Professional Series
 
@@ -39,13 +39,12 @@ story_id: dab-podcast-2026-09-11-computer-use-agents
 
 **Evidence:** Practitioner analysis. Publisher page and transcript checked during the September 11 recovery. Date and 56:01 runtime are publisher-reported; anecdotes are not independent reliability evidence.
 
-**Listen / watch:** <a href="https://practicalai.show/371" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="source_clicks">Publisher episode and show notes</a> · <a href="https://practicalai.show/371/transcript" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="source_clicks">Transcript</a>
+**Listen / watch:** <a href="https://practicalai.show/371" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher episode and show notes</a> · <a href="https://practicalai.show/371/transcript" data-item-id="dab-podcast-2026-09-11-computer-use-agents" data-edition-date="2026-09-11" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Transcript</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-11" data-feedback-story-id="dab-podcast-2026-09-11-computer-use-agents">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

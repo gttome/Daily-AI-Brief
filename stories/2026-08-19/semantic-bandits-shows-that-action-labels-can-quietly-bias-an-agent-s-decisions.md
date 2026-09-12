@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-19-79e308b8
 
 **Why it matters:** Names are not neutral metadata for language-model agents. Tool names, menu labels, state descriptions, reward messages, and prompt wording can inject pretrained associations into a decision loop and alter behavior independently of the actual evidence. This is a subtle source of prompt- and context-induced bias.
 
-**Original commentary:** This supports a practical testing rule: evaluate agent choices under **semantically varied but functionally equivalent labels**. If behavior changes materially, the workflow is relying on wording priors rather than the intended decision logic. That makes a strong exercise for prompt testing, context design, and guardrail evaluation.
+<span class="story-editorial-note" data-george-implication="This supports a practical testing rule: evaluate agent choices under **semantically varied but functionally equivalent labels**. If behavior changes materially, the workflow is relying on wording priors rather than the intended decision logic. That makes a strong exercise for prompt testing, context design, and guardrail evaluation." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.16707" data-item-id="dab-story-2026-08-19-79e308b8" data-edition-date="2026-08-19" data-action="source_clicks">arXiv</a>
 

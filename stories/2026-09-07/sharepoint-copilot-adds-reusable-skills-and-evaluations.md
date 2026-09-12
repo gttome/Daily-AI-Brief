@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-07-379d301c
 
 **Why it matters:** For non-technical users, this moves agentic work from one-off instructions toward reusable capabilities that can be measured and improved. Repeatability becomes more valuable when it includes evaluation.
 
-**Original commentary:** Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures.
+<span class="story-editorial-note" data-george-implication="Teach the progression prompt → reusable skill → evaluated workflow, with explicit success criteria and improvement based on observed failures." hidden></span>
 
 ## What to do now
 

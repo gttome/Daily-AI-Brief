@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-23-be5593e7
 
 **Why it matters:** A fluent answer can be wrong before reasoning begins because the task definition is incomplete. Reliability therefore needs a pre-answer gate that asks whether the available facts are sufficient, not just a post-answer fact check.
 
-**Original commentary:** Add an explicit **sufficiency check** to high-consequence prompt and agent patterns: identify decision-changing unknowns → ask targeted questions → state remaining assumptions → escalate to a qualified human when needed. This applies well beyond law to finance, health, policy, and business analysis.
+<span class="story-editorial-note" data-george-implication="Add an explicit **sufficiency check** to high-consequence prompt and agent patterns: identify decision-changing unknowns → ask targeted questions → state remaining assumptions → escalate to a qualified human when needed. This applies well beyond law to finance, health, policy, and business analysis." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.20220" data-item-id="dab-story-2026-08-23-be5593e7" data-edition-date="2026-08-23" data-action="source_clicks">arXiv</a>
 

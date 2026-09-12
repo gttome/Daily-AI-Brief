@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-11-80fe8cea
 
 **Why it matters:** The notable pattern is governed synthesis: retrieval quality depends on source entitlements, and conclusions remain connected to citations and review. Availability is limited to eligible institutions, and the product announcement does not independently establish research accuracy or return on investment.
 
-**Original commentary:** Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision.
+<span class="story-editorial-note" data-george-implication="Use this as a case study for grounded executive research. Teach clients to map source authority, access rights, citations, review checkpoints, and audit evidence before turning a polished answer into a decision." hidden></span>
 
 ### Evolving the Generative AI Professional Series
 
@@ -42,7 +42,6 @@ story_id: dab-story-2026-09-11-80fe8cea
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

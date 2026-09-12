@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-18-4bb94882
 
 **Why it matters:** The coding-agent market is increasingly competing on the **whole workflow**, not just code completion quality. Long-running execution, parallel sub-agents, verification, durable state, and recovery after interruption are all harness-level capabilities. This is another sign that coding assistants are evolving into persistent software-development agents.
 
-**Original commentary:** For vibe coding and practical AI-assisted development, the important comparison is shifting from “Which model writes the best code?” to “Which agent environment best manages planning, context, parallel work, tests, recovery, review, and cost?” That is a more durable framework for books, courses, and tool-selection guidance than model leaderboard comparisons alone.
+<span class="story-editorial-note" data-george-implication="For vibe coding and practical AI-assisted development, the important comparison is shifting from “Which model writes the best code?” to “Which agent environment best manages planning, context, parallel work, tests, recovery, review, and cost?” That is a more durable framework for books, courses, and tool-selection guidance than model leaderboard comparisons alone." hidden></span>
 
 **Source:** <a href="https://www.reuters.com/technology/meta-launches-new-ai-coding-tool-powered-by-muse-spark-12-2026-08-05/" data-item-id="dab-story-2026-08-18-4bb94882" data-edition-date="2026-08-18" data-action="source_clicks">reuters.com</a>
 

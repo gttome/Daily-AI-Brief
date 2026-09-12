@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-12-f0397b5d
 
 **Why it matters:** A low-code canvas does not remove engineering tradeoffs: the meaningful unit is an end-to-end workflow with permissions, observability, error paths, review, and a cost model. The article mixes direct testing with vendor documentation, was updated September 11 while some tabular data carries older timestamps, and should guide a proof-of-concept rather than declare a universal winner.
 
-**Original commentary:** Choose one realistic consulting or publishing workflow and run it through two builders with the same acceptance test. Compare setup effort, visible traces, recovery from a failed tool, human approval, portability, and operating cost before selecting a platform.
+<span class="story-editorial-note" data-george-implication="Choose one realistic consulting or publishing workflow and run it through two builders with the same acceptance test. Compare setup effort, visible traces, recovery from a failed tool, human approval, portability, and operating cost before selecting a platform." hidden></span>
 
 ### Evolving the Generative AI Professional Series
 
@@ -42,7 +42,6 @@ story_id: dab-story-2026-09-12-f0397b5d
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

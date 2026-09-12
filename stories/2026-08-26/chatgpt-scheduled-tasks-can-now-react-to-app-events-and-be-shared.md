@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-26-893a3c2c
 
 **Why it matters:** This moves accessible agent-building from “run this every morning” to “begin when something meaningful happens.” A non-technical user can define a trigger, desired outcome, evidence requirements, approval points, and delivery format in ordinary language.
 
-**Original commentary:** The Daily AI Brief is a time-triggered workflow; this release enables a companion teaching example built around events—such as preparing a response plan when client feedback arrives—while preserving human approval for consequential actions. Task sharing also creates a simple way to distribute reusable workflow recipes without sharing account access.
+<span class="story-editorial-note" data-george-implication="The Daily AI Brief is a time-triggered workflow; this release enables a companion teaching example built around events—such as preparing a response plan when client feedback arrives—while preserving human approval for consequential actions. Task sharing also creates a simple way to distribute reusable workflow recipes without sharing account access." hidden></span>
 
 **Source:** <a href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes" data-item-id="dab-story-2026-08-26-893a3c2c" data-edition-date="2026-08-26" data-action="source_clicks">ChatGPT release notes</a>
 

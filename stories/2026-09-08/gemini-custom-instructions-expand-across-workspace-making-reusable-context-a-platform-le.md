@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-08-08eab2e3
 
 **Why it matters:** This turns a prompt habit into reusable context infrastructure for ordinary knowledge work. Persistent instructions can also spread an outdated or overly broad rule, so users should keep them concise, inspectable, and scoped to appropriate work.
 
-**Original commentary:** Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work.
+<span class="story-editorial-note" data-george-implication="Add an accessible context-engineering exercise that separates durable personal instructions from task-specific evidence and asks learners to review both before important work." hidden></span>
 
 ## What to do now
 

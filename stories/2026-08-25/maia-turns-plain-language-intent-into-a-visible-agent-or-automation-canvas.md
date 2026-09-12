@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-25-66cea67b
 
 **Why it matters:** Many no-code builders hide the construction process and present a finished result that users may not understand. Maia’s visible canvas gives a non-software-engineer an opportunity to inspect the graph, question decisions, test modules, and learn enough to maintain the workflow.
 
-**Original commentary:** Maia is a practical example for teaching the difference between opaque vibe building and human-gated agent development. A Daily Brief exercise could have learners build the collection and drafting workflow visually, then add source-quality checks and a mandatory publication approval.
+<span class="story-editorial-note" data-george-implication="Maia is a practical example for teaching the difference between opaque vibe building and human-gated agent development. A Daily Brief exercise could have learners build the collection and drafting workflow visually, then add source-quality checks and a mandatory publication approval." hidden></span>
 
 **Source:** <a href="https://www.make.com/en/blog/maia-conversational-ai-coworker-for-ai-agents-and-automation" data-item-id="dab-story-2026-08-25-66cea67b" data-edition-date="2026-08-25" data-action="source_clicks">Make: Introducing Maia</a>
 

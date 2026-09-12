@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-22-24c74a86
 
 **Why it matters:** Tool competence cannot always be added reliably through a prompt or a thin orchestration layer. MidTool suggests that models benefit when concepts such as API use, MCP skills, tool sequencing, and recovery are represented earlier in training.
 
-**Original commentary:** For a knowledge-worker audience, this helps separate three layers: the **model’s learned tool literacy**, the **context describing available tools**, and the **harness controlling access and execution**. A model becoming better at tools does not eliminate the need for permissions, approval gates, or verification.
+<span class="story-editorial-note" data-george-implication="For a knowledge-worker audience, this helps separate three layers: the **model’s learned tool literacy**, the **context describing available tools**, and the **harness controlling access and execution**. A model becoming better at tools does not eliminate the need for permissions, approval gates, or verification." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.20314" data-item-id="dab-story-2026-08-22-24c74a86" data-edition-date="2026-08-22" data-action="source_clicks">arXiv</a>
 

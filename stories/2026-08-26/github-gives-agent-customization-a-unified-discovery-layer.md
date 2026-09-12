@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-26-47742631
 
 **Why it matters:** Agent extensibility is becoming a discoverable product surface rather than a collection of configuration files and disconnected catalogs. That can lower integration friction, but it also makes provenance, permissions, compatibility, and review signals more important because teams can add capabilities faster.
 
-**Original commentary:** The four customization types provide a clean teaching distinction: MCP connects tools and data; skills encode repeatable procedures; plugins package capabilities; and canvases organize context and action around visible work.
+<span class="story-editorial-note" data-george-implication="The four customization types provide a clean teaching distinction: MCP connects tools and data; skills encode repeatable procedures; plugins package capabilities; and canvases organize context and action around visible work." hidden></span>
 
 **Source:** <a href="https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/" data-item-id="dab-story-2026-08-26-47742631" data-edition-date="2026-08-26" data-action="source_clicks">GitHub announcement</a>
 

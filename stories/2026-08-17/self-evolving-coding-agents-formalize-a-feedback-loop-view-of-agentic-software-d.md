@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-17-f72cbc5e
 
 **Why it matters:** This is a useful formalization of loop engineering. The agent is no longer just executing a prompt-test-fix loop within one task; the surrounding system can retain experience and modify how future tasks are approached. That creates compounding potential, but also introduces risks involving bad feedback, benchmark overfitting, safety, maintainability, cost, and uncontrolled behavioral drift.
 
-**Original commentary:** This provides a strong conceptual bridge between loop engineering and harness engineering. A mature agent workflow can be taught as a system with multiple feedback horizons: **within-task iteration, cross-task memory, skill/tool adaptation, and human-governed improvement of the harness itself.** That framing would work well in books, courses, diagrams, workshops, and application architecture examples.
+<span class="story-editorial-note" data-george-implication="This provides a strong conceptual bridge between loop engineering and harness engineering. A mature agent workflow can be taught as a system with multiple feedback horizons: **within-task iteration, cross-task memory, skill/tool adaptation, and human-governed improvement of the harness itself.** That framing would work well in books, courses, diagrams, workshops, and application architecture examples." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.03392" data-item-id="dab-story-2026-08-17-f72cbc5e" data-edition-date="2026-08-17" data-action="source_clicks">arXiv</a>
 

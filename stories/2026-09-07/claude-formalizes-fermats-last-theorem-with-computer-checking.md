@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-07-dab4bc85
 
 **Why it matters:** The important pattern is generative exploration paired with an external deterministic verifier. Agents can search and construct at scale while Lean provides a correctness gate that fluent text cannot bypass.
 
-**Original commentary:** Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking.
+<span class="story-editorial-note" data-george-implication="Use this as a high-value reliability example: let agents explore, but anchor acceptance in a verifier wherever the domain permits deterministic checking." hidden></span>
 
 ## What to do now
 

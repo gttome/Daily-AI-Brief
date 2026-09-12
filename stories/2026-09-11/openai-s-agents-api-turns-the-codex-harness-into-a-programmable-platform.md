@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-11-8a71a280
 
 **Why it matters:** This separates agent reliability work from a one-shot model call: context, tools, environments, delegation, evidence, and failure handling become explicit harness components. Public beta still warrants staged evaluation; the announcement describes capabilities, not independent reliability results.
 
-**Original commentary:** Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use.
+<span class="story-editorial-note" data-george-implication="Use the diagram as a reference architecture for workshops and consulting. Prototype one bounded research or publishing workflow, log intermediate evidence, and test compaction and tool failures before considering production use." hidden></span>
 
 ### Evolving the Generative AI Professional Series
 
@@ -42,7 +42,6 @@ story_id: dab-story-2026-09-11-8a71a280
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

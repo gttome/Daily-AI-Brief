@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-06-3f824b7a
 
 **Why it matters:** Better frontier models can compress complex research and drafting workflows, but the higher the stakes, the more important source grounding and human verification become. Model capability should therefore be paired with explicit evidence requirements, review criteria, and task-level evaluation rather than treated as a substitute for domain expertise.
 
-**Original commentary:** This supports updating examples where AI performs substantial research or professional analysis. Frame the lesson around reliable delegation: stronger models increase the size of the task you can hand off, while verification and authority boundaries still determine what can be trusted or acted upon.
+<span class="story-editorial-note" data-george-implication="This supports updating examples where AI performs substantial research or professional analysis. Frame the lesson around reliable delegation: stronger models increase the size of the task you can hand off, while verification and authority boundaries still determine what can be trusted or acted upon." hidden></span>
 
 **Source:** <a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" data-item-id="dab-story-2026-09-06-3f824b7a" data-edition-date="2026-09-06" data-action="source_clicks">Anthropic — Introducing Claude Fable 5.1 and Claude Mythos 5.1</a>
 

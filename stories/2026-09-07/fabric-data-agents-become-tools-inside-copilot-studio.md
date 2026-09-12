@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-07-fdefded2
 
 **Why it matters:** This is a practical low-code agent architecture: the orchestrating agent delegates data questions to a governed specialist tool instead of flattening every dataset into its prompt, reducing context bloat and preserving a clearer permission boundary.
 
-**Original commentary:** Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system.
+<span class="story-editorial-note" data-george-implication="Use this to teach tool delegation to non-developers: one agent orchestrates, a specialist data agent answers governed questions, and existing permissions remain part of the control system." hidden></span>
 
 ## What to do now
 

@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-24-db55e747
 
 **Why it matters:** The guidance directly shows how a non-software-engineer can turn a recurring manual process—such as this Daily AI Brief—into a governed agent workflow without writing an SDK integration or managing API keys.
 
-**Original commentary:** This can anchor a practical “Agents for Non-Technical People” module: define the outcome → specify sources and selection rules → set a schedule → add quality gates → require approval for publication → test failures → improve the reusable procedure.
+<span class="story-editorial-note" data-george-implication="This can anchor a practical “Agents for Non-Technical People” module: define the outcome → specify sources and selection rules → set a schedule → add quality gates → require approval for publication → test failures → improve the reusable procedure." hidden></span>
 
 **Source:** <a href="https://openai.com/academy/workspace-agents/" data-item-id="dab-story-2026-08-24-db55e747" data-edition-date="2026-08-24" data-action="source_clicks">OpenAI Academy: Workspace agents</a>
 

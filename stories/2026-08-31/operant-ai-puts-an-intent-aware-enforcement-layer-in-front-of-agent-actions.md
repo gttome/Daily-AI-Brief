@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-31-ae8493a1
 
 **Why it matters:** Agent security is moving from keyword filtering toward contextual authorization: *what is this action trying to do, with which tool and data, inside what boundary?* That is a useful harness pattern even for teams that do not buy this product. The claims are vendor-reported, however; semantic classifiers can still miss attacks or interrupt legitimate work, so least privilege, deterministic controls, audit logs and adversarial testing remain necessary.
 
-**Original commentary:** A workshop can turn the four-guard structure into a practical threat-modeling exercise: define prohibited intent, sensitive data, allowed tools and scope before connecting an agent to real systems.
+<span class="story-editorial-note" data-george-implication="A workshop can turn the four-guard structure into a practical threat-modeling exercise: define prohibited intent, sensitive data, allowed tools and scope before connecting an agent to real systems." hidden></span>
 
 **Source:** <a href="https://www.operant.ai/platform/semantic-firewall" data-item-id="dab-story-2026-08-31-ae8493a1" data-edition-date="2026-08-31" data-action="source_clicks">Operant AI — Semantic Firewall</a>
 

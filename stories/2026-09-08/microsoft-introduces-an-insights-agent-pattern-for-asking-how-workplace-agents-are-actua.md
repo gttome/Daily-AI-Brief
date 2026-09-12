@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-08-9061ff44
 
 **Why it matters:** Non-technical makers need evidence about adoption, failure, and value after an agent is launched. A conversational analytics layer may simplify that review, but this is an early community demonstration and available metrics and controls must be verified before relying on it.
 
-**Original commentary:** Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote.
+<span class="story-editorial-note" data-george-implication="Add a post-launch checklist for citizen agent builders: inspect usage evidence, identify failed or abandoned tasks, review approvals, and revise the workflow rather than judging success from anecdote." hidden></span>
 
 ## What to do now
 

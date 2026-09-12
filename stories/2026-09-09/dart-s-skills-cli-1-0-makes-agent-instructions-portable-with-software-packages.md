@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-09-0b6b1021
 
 **Why it matters:** Knowledge workers can move from repeatedly explaining a process in prompts to maintaining one reviewable, shareable skill that captures the steps, examples, quality checks, and stopping points. Portability does not guarantee safety or accuracy: inspect the source, limit permissions, test on reversible work, and keep human approval for consequential outputs.
 
-**Original commentary:** Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it.
+<span class="story-editorial-note" data-george-implication="Create one plain-language SKILL.md for a recurring consulting or publishing workflow. State the outcome, required inputs, ordered steps, evidence checks, approval points, and examples; test it with a non-technical user before sharing it." hidden></span>
 
 ## What to do now
 

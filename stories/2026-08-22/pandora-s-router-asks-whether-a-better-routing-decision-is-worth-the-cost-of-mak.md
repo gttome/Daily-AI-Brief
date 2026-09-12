@@ -24,7 +24,7 @@ story_id: dab-story-2026-08-22-d6deaef1
 
 **Why it matters:** “Use the best model for each task” is incomplete advice if deciding which model is best consumes much of the savings. Routing therefore becomes a two-stage decision: choose the likely specialist and determine how much evidence is worth acquiring before committing.
 
-**Original commentary:** This supports an accessible escalation pattern: **start economical → estimate difficulty and consequence → acquire more evidence only when justified → escalate capability when the expected improvement exceeds the added cost**.
+<span class="story-editorial-note" data-george-implication="This supports an accessible escalation pattern: **start economical → estimate difficulty and consequence → acquire more evidence only when justified → escalate capability when the expected improvement exceeds the added cost**." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.20316" data-item-id="dab-story-2026-08-22-d6deaef1" data-edition-date="2026-08-22" data-action="source_clicks">arXiv</a>
 

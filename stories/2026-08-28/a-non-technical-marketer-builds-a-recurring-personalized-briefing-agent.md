@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-28-239cf04c
 
 **Why it matters:** This is closely analogous to the Daily AI Brief: recurring inputs, audience-specific selection, a scheduled output, human feedback, and a procedure that improves over time. The value comes from the workflow and domain context—not merely generating a summary.
 
-**Original commentary:** This could become a practical workshop project: define source inputs, recipient profiles, selection criteria, output template, factual checks, feedback capture, and a human approval gate before distribution.
+<span class="story-editorial-note" data-george-implication="This could become a practical workshop project: define source inputs, recipient profiles, selection criteria, output template, factual checks, feedback capture, and a human approval gate before distribution." hidden></span>
 
 **Source:** <a href="https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep" data-item-id="dab-story-2026-08-28-239cf04c" data-edition-date="2026-08-28" data-action="source_clicks">Anthropic practitioner guide</a>
 

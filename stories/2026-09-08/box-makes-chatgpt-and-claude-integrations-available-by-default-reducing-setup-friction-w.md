@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-08-3444f489
 
 **Why it matters:** Lower setup friction can make document-grounded agent workflows accessible to more non-technical workers. Added by default does not remove governance responsibility: administrators should still review access, approved use cases, data boundaries, and user training.
 
-**Original commentary:** Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents.
+<span class="story-editorial-note" data-george-implication="Use this as a case study for the difference between technical availability and authorized use, especially when teaching knowledge workers to connect agents to organizational documents." hidden></span>
 
 ## What to do now
 

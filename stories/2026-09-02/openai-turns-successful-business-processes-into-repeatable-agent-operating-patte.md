@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-02-097ae25d
 
 **Why it matters:** This frames agent adoption as workflow design rather than repeated prompting. The examples are vendor-selected case studies, so reported gains are illustrative rather than universal benchmarks.
 
-**Original commentary:** The pattern maps directly to a Daily AI Brief-style agent: define the recurring outcome, maintain persistent sources and instructions, automate evidence collection and drafting, and keep explicit human approval at publication.
+<span class="story-editorial-note" data-george-implication="The pattern maps directly to a Daily AI Brief-style agent: define the recurring outcome, maintain persistent sources and instructions, automate evidence collection and drafting, and keep explicit human approval at publication." hidden></span>
 
 **Source:** <a href="https://openai.com/index/ai-native-company-workflows/" data-item-id="dab-story-2026-09-02-097ae25d" data-edition-date="2026-09-02" data-action="source_clicks">OpenAI — How AI-native companies turn workflows into operating capability</a>
 

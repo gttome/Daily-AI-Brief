@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-06-0b55fd52
 
 **Why it matters:** Frontier-model gains are increasingly realized through the system around the model. In practice, reliability depends on the harness that supplies context, constrains tools, validates changes, and preserves human review. Teams should evaluate Astra inside their actual repositories rather than assume benchmark or launch claims translate directly into production quality.
 
-**Original commentary:** Use this as a current example of the distinction between model capability and harness engineering. The model may reason better, but the surrounding context, permissions, checks, and review loop determine whether its work is safe and useful.
+<span class="story-editorial-note" data-george-implication="Use this as a current example of the distinction between model capability and harness engineering. The model may reason better, but the surrounding context, permissions, checks, and review loop determine whether its work is safe and useful." hidden></span>
 
 **Source:** <a href="https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot/" data-item-id="dab-story-2026-09-06-0b55fd52" data-edition-date="2026-09-06" data-action="source_clicks">GitHub Changelog — GPT-6 Astra is generally available in GitHub Copilot</a>
 

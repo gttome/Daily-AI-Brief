@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-18-195439db
 
 **Why it matters:** Human-in-the-loop control does not automatically create safety. If users approve nearly every repetitive permission prompt, the review step can become ceremonial rather than meaningful. Anthropic’s approach illustrates a broader pattern: automate low-risk approvals, reserve human attention for consequential boundaries, and use layered controls around tool execution.
 
-**Original commentary:** This provides a practical case study for **human review design**. Training should emphasize that the right question is not “human or AI approval?” but “which decisions require human judgment, which can be policy-gated automatically, and what evidence should trigger escalation?” That distinction is valuable in reliable-AI workshops and coding-agent guidance.
+<span class="story-editorial-note" data-george-implication="This provides a practical case study for **human review design**. Training should emphasize that the right question is not “human or AI approval?” but “which decisions require human judgment, which can be policy-gated automatically, and what evidence should trigger escalation?” That distinction is valuable in reliable-AI workshops and coding-agent guidance." hidden></span>
 
 **Source:** <a href="https://claude.com/blog/auto-mode-default-in-claude-code" data-item-id="dab-story-2026-08-18-195439db" data-edition-date="2026-08-18" data-action="source_clicks">Anthropic</a>
 

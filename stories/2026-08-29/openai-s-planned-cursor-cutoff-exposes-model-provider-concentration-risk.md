@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-29-da2869d0
 
 **Why it matters:** AI-assisted development products inherit availability, policy, and commercial risk from upstream model providers. A strong coding harness should therefore separate model-specific features from core workflow logic, maintain tested alternatives, and document what degrades when a provider disappears. “Multi-model” only counts as resilience if fallback paths are exercised before an incident.
 
-**Original commentary:** This is a timely architecture case study for courses on harness engineering: treat model access as a replaceable dependency, and evaluate migration costs alongside benchmark quality.
+<span class="story-editorial-note" data-george-implication="This is a timely architecture case study for courses on harness engineering: treat model access as a replaceable dependency, and evaluate migration costs alongside benchmark quality." hidden></span>
 
 **Source:** <a href="https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/" data-item-id="dab-story-2026-08-29-da2869d0" data-edition-date="2026-08-29" data-action="source_clicks">OpenAI — Our decision on Cursor following its acquisition by SpaceX</a>
 

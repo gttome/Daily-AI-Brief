@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-26-9271a92d
 
 **Why it matters:** Knowledge workers can apply a technical analysis language without leaving a familiar spreadsheet interface or manually assembling an execution environment. The important reliability shift is that generated analysis becomes an inspectable workbook artifact rather than a prose-only answer.
 
-**Original commentary:** This supports a practical lesson on reviewable AI output: ask for the analysis, inspect the inputs and resulting cells or charts, test edge cases, and record assumptions before using the result for a decision.
+<span class="story-editorial-note" data-george-implication="This supports a practical lesson on reviewable AI output: ask for the analysis, inspect the inputs and resulting cells or charts, test edge cases, and record assumptions before using the result for a decision." hidden></span>
 
 **Source:** <a href="https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes" data-item-id="dab-story-2026-08-26-9271a92d" data-edition-date="2026-08-26" data-action="source_clicks">Microsoft 365 Copilot release notes</a>
 

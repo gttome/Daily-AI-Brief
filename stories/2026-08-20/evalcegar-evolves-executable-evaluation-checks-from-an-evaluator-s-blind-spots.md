@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-20-6364926f
 
 **Why it matters:** Many Generative AI applications fail because teams cannot define a complete metric in advance. EvalCEGAR treats evaluator development as a diagnostic loop: find a blind spot, express it as a counterexample, add a narrow executable check, and test whether it generalizes. This can complement rather than replace human rubrics or LLM judges.
 
-**Original commentary:** This offers a concrete evaluation-engineering pattern for books and workshops: **baseline rubric → find indistinguishable good/bad examples → add one narrow check → regression test → retain only if it helps unseen cases**. It makes evaluation iteration more tangible for knowledge workers than asking an AI to “improve the rubric” generically.
+<span class="story-editorial-note" data-george-implication="This offers a concrete evaluation-engineering pattern for books and workshops: **baseline rubric → find indistinguishable good/bad examples → add one narrow check → regression test → retain only if it helps unseen cases**. It makes evaluation iteration more tangible for knowledge workers than asking an AI to “improve the rubric” generically." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.18744" data-item-id="dab-story-2026-08-20-6364926f" data-edition-date="2026-08-20" data-action="source_clicks">arXiv</a>
 

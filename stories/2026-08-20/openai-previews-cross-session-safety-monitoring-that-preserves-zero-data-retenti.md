@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-20-396b7ecc
 
 **Why it matters:** Longer agent workflows create a genuine tension: serious misuse or loss of authority may emerge only across multiple interactions, but retaining complete conversations can violate privacy, security, or regulatory requirements. Private Safety Processing is an architectural attempt to separate **content custody** from **cross-session risk detection**.
 
-**Original commentary:** This is a strong context-engineering and reliable-AI case study. Context is useful not only for answering the task; it can also help determine whether an agent remains within scope over time. Training material can distinguish **task context**, **safety context**, and **retention policy**, then ask who controls each and what evidence is exposed during escalation.
+<span class="story-editorial-note" data-george-implication="This is a strong context-engineering and reliable-AI case study. Context is useful not only for answering the task; it can also help determine whether an agent remains within scope over time. Training material can distinguish **task context**, **safety context**, and **retention policy**, then ask who controls each and what evidence is exposed during escalation." hidden></span>
 
 **Source:** <a href="https://openai.com/index/offering-zero-data-retention-for-frontier-models/" data-item-id="dab-story-2026-08-20-396b7ecc" data-edition-date="2026-08-20" data-action="source_clicks">OpenAI</a>
 

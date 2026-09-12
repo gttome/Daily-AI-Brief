@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-08-b9c617e3
 
 **Why it matters:** The feature lowers the effort required to repurpose reports and training documents into multimedia. Generated narration and visuals can omit qualifications or overstate source content, so factual and accessibility review remain necessary before publishing.
 
-**Original commentary:** Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse.
+<span class="story-editorial-note" data-george-implication="Test one book or workshop section as a source-controlled video draft, then compare the script, visuals, citations, and learning objective against the original before reuse." hidden></span>
 
 ## What to do now
 

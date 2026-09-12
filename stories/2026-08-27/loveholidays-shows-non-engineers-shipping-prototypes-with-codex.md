@@ -26,7 +26,7 @@ story_id: dab-story-2026-08-27-ef414dd5
 
 **Why it matters:** This is a substantive example of agentic delegation by domain experts: people specify the outcome and context, the coding agent performs multi-step implementation, and the organization supplies design systems, environments, review, and deployment controls. The performance figures are company-reported and should not be assumed to generalize.
 
-**Original commentary:** The Search Playground is a strong model for teaching non-technical builders safely: constrain the environment, provide approved components, make prototypes reviewable, and keep production release behind human and technical gates.
+<span class="story-editorial-note" data-george-implication="The Search Playground is a strong model for teaching non-technical builders safely: constrain the environment, provide approved components, make prototypes reviewable, and keep production release behind human and technical gates." hidden></span>
 
 **Source:** <a href="https://openai.com/index/loveholidays/" data-item-id="dab-story-2026-08-27-ef414dd5" data-edition-date="2026-08-27" data-action="source_clicks">OpenAI customer story</a>
 

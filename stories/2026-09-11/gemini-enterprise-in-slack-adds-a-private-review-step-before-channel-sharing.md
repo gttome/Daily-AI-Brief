@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-11-0abd52ec
 
 **Why it matters:** The private draft is a useful human-review boundary inside a familiar collaboration tool, reducing accidental channel publication. It does not verify the answer, and retained conversational context can carry forward errors or sensitive assumptions, so review and context-reset habits remain essential.
 
-**Original commentary:** Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists.
+<span class="story-editorial-note" data-george-implication="Use this in non-technical agent workshops to demonstrate a safe delegation pattern: ask in context, review privately, revise, verify, then share. Include the admin and user authorization steps in rollout checklists." hidden></span>
 
 ### Evolving the Generative AI Professional Series
 
@@ -42,7 +42,6 @@ story_id: dab-story-2026-09-11-0abd52ec
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <details class="rating-guide"><summary>What do the stars mean?</summary><p>Rate how useful this was to you.</p><ol><li>Not useful</li><li>Slightly useful</li><li>Useful</li><li>Very useful</li><li>Extremely useful</li></ol></details>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 

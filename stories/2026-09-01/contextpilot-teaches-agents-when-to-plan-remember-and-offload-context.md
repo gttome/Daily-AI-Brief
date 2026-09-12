@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-01-09eff21b
 
 **Why it matters:** Long-running agents need to decide not only what to retrieve, but what to retain, transform or move out of active context. ContextPilot treats those choices as trainable actions, making context engineering part of the loop rather than a static prompt-construction step. This is a new arXiv preprint, not peer reviewed; results come from the authors’ selected models, tasks and baselines and need independent replication.
 
-**Original commentary:** It provides a useful teaching model for research and publishing agents: plan the evidence map, promote durable facts into structured memory, offload completed branches, and evaluate whether each context edit improved the final artifact.
+<span class="story-editorial-note" data-george-implication="It provides a useful teaching model for research and publishing agents: plan the evidence map, promote durable facts into structured memory, offload completed branches, and evaluate whether each context edit improved the final artifact." hidden></span>
 
 **Source:** <a href="https://arxiv.org/abs/2608.28476" data-item-id="dab-story-2026-09-01-09eff21b" data-edition-date="2026-09-01" data-action="source_clicks">ContextPilot preprint on arXiv</a>
 

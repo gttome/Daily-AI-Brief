@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-05-7e9d8187
 
 **Why it matters:** The practical value is less about a new model and more about embedding AI into the flow of work. Persistent background operation turns translation from a short foreground interaction into a continuous support layer for travel, multilingual meetings, tours, field work, and other situations where users need to keep doing something else. As with any automated translation, consequential interpretation still warrants human verification when nuance or accuracy is critical.
 
-**Original commentary:** Use this as a knowledge-worker example of AI becoming ambient rather than prompt-centric. It is useful for teaching that adoption often depends on workflow integration, mobile behavior, and reduced friction as much as on raw model capability.
+<span class="story-editorial-note" data-george-implication="Use this as a knowledge-worker example of AI becoming ambient rather than prompt-centric. It is useful for teaching that adoption often depends on workflow integration, mobile behavior, and reduced friction as much as on raw model capability." hidden></span>
 
 **Source:** <a href="https://blog.google/products-and-platforms/products/translate/google-translate-ios-android-upgrades/" data-item-id="dab-story-2026-09-05-7e9d8187" data-edition-date="2026-09-05" data-action="source_clicks">Google — Google Translate rolls out new upgrades for iOS and Android</a>
 

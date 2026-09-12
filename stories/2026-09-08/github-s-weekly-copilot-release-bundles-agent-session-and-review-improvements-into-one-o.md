@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-08-4a71e714
 
 **Why it matters:** Agent products now change faster than many teams’ validation cycles. A recurring release checkpoint helps teams retest prompts, permissions, review rules, and repository safeguards instead of assuming stable behavior. Individual features still need separate verification before production use.
 
-**Original commentary:** Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow.
+<span class="story-editorial-note" data-george-implication="Use this as a practical example of harness maintenance: pair vendor release notes with a small repeatable regression suite for every important AI-assisted workflow." hidden></span>
 
 ## What to do now
 

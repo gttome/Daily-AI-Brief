@@ -26,7 +26,7 @@ story_id: dab-story-2026-09-07-8053a573
 
 **Why it matters:** For knowledge workers, the change is the combination of stronger reasoning, direct computer use, and production of documents, spreadsheets, presentations, and multi-step work. Availability is staged, so teams should verify access and evaluate the model in real workflows.
 
-**Original commentary:** Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification.
+<span class="story-editorial-note" data-george-implication="Update training examples to distinguish model capability from authority: stronger computer use increases the need for explicit approval boundaries and verification." hidden></span>
 
 ## What to do now
 
