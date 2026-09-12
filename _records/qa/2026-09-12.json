@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260912T124211Z-2aa8bd0b",
+  "edition_id": "dab-edition-2026-09-12",
+  "publication_run_id": "dab-publication-20260912T125000Z-7c4e91a2",
+  "executed_at": "2026-09-12T12:42:11Z",
+  "initial_result": "fail",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "freshness_schema_allocation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The final canonical and live edition is dated September 12, 2026, uses full_v1, validates against the active schema, and contains exactly six stable stories ordered 2 Technical, 2 Applied, and 2 Agents."
+    },
+    {
+      "check_id": "candidate_memory_novelty_evidence",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Twenty candidates contain all seven score dimensions, totals, rationales and rejection reasons; the 30-day memory includes today's selections. Five stories are new and the Mastra Agent Skills story is a documented material update with prior-story lineage."
+    },
+    {
+      "check_id": "agent_skills_allocation",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Exactly one selected story is the reusable Agent Skills item: Mastra filesystem skills, supported by official documentation dated September 11, 2026."
+    },
+    {
+      "check_id": "media_slots",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Both video slots are included with independently verified runtimes of 4:53 and 7:09, each inside the preferred ten-minute limit. Podcast slot 9 uses a verified September 10 publisher episode within the preferred 48-hour window; no podcast duration cap applies and the unavailable exact runtime is disclosed."
+    },
+    {
+      "check_id": "images_textbook_quality",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six custom built-in images were inspected individually and as a set. All are exact 1200x630 dominant-white textbook PNGs with distinct radial, isometric, branching-ribbon, source-island, layered-cutaway and comparative-swimlane compositions. Live SHA-256 bytes match all six approved hashes."
+    },
+    {
+      "check_id": "canonical_reader_parity",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Final repository integration reports no semantic differences among canonical, homepage, latest, dated brief, six permanent story pages, two video pages, podcast page, archive, Atom feed and JSON feed."
+    },
+    {
+      "check_id": "ratings_sharing_privacy",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Rendered homepage and dated brief each contain nine rating groups, 45 star controls, nine Share buttons and nine visible share counts. Each of the nine permanent item pages contains five stars, one Share button and one visible share count. POST uses exactly brief_date, item_id and rating plus x-operation-id, preserves the operation ID across retry, expires retries after 29 days and accepts recorded=true without exposing rating counts."
+    },
+    {
+      "check_id": "feedback_retirement_navigation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "The live /feedback/ route contains no form or rating controls and directs readers to article-local ratings. Homepage, dated brief, archive, QA, watchlist, readable watchlist research fallback, feeds and permanent pages returned HTTP 200 with expected navigation."
+    },
+    {
+      "check_id": "watchlist_release",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "medium",
+      "evidence": "The live watchlist contains eight substantive topics, its readable research fallback resolves, and the September 12 homepage and dated brief include the preview. All 20 registered sources were checked; 13 returned candidates and seven failed or returned no candidate links, so discovery coverage remains explicitly degraded."
+    },
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #74 and its production CI/Pages runs succeeded. Repair PR #75 passed deterministic CI 34694258642; final production CI 34694306713 and Pages 34694306432 succeeded for final content SHA 2aa8bd0bc56cfdf1783be61dbe9c655b88b3f107."
+    },
+    {
+      "check_id": "usage_private_operations",
+      "class": "deterministic",
+      "result": "not_run",
+      "severity": "info",
+      "evidence": "Edition-specific drafts, rejects, failures, repairs and measured elapsed time are recorded. Exact credits and dollars were unavailable and were not fabricated. Owner-authenticated usage recording, private aggregate snapshot, owner priorities and 90-day comment cleanup could not be invoked because the authenticated Sites connection was unavailable; no indirect transfer was attempted."
+    },
+    {
+      "check_id": "subscriber_delivery",
+      "class": "deterministic",
+      "result": "not_run",
+      "severity": "info",
+      "evidence": "Confirmed-subscriber delivery was not invoked because sender setup remains unavailable. Signup remains inactive and no same-day duplicate mail was sent."
+    }
+  ],
+  "repairs": [
+    {
+      "description": "Corrected prepublication generator handling so recent permanent pages retain canonical IDs and evidence, and public analytics availability includes every rateable media item; added regression tests and regenerated the complete release.",
+      "commit_sha": "49d5e9cbfbcb19585c7823343cec1d1d873af7ca"
+    },
+    {
+      "description": "Removed one duplicated character from the canonical Spotify episode URL and regenerated the homepage, dated, latest and permanent podcast views through repair PR #75.",
+      "commit_sha": "2aa8bd0bc56cfdf1783be61dbe9c655b88b3f107"
+    }
+  ],
+  "defects": [
+    {
+      "severity": "high",
+      "code": "historical_story_identity_regression",
+      "status": "resolved",
+      "description": "The first candidate audit found recent permanent story pages could be rebuilt from legacy imports and lose canonical identity/evidence. The renderer now overlays all recent canonical editions, with regression coverage."
+    },
+    {
+      "severity": "high",
+      "code": "analytics_media_omission",
+      "status": "resolved",
+      "description": "The first candidate audit found the public analytics availability record omitted included videos and podcast. Generation now emits all rateable media with null withheld metrics, with regression coverage."
+    },
+    {
+      "severity": "medium",
+      "code": "spotify_platform_url_typo",
+      "status": "resolved",
+      "description": "Initial live link QA found an extra character in the optional Spotify platform URL. Repair PR #75 corrected canonical first and regenerated all affected reader views."
+    },
+    {
+      "severity": "medium",
+      "code": "watchlist_discovery_partial",
+      "status": "accepted",
+      "description": "Thirteen of twenty watchlist discovery sources returned candidate links; seven timed out, returned HTTP 502, or yielded no candidate links. Eight previously verified topics were retained with real dates and transparent source health."
+    },
+    {
+      "severity": "info",
+      "code": "private_telemetry_unavailable",
+      "status": "accepted",
+      "description": "The runner had no supported owner-authenticated Sites connection for private usage, aggregate snapshot, priorities or comment-retention operations. Public analytics availability remains truthful and contains no private counts."
+    }
+  ],
+  "deployment_evidence": {
+    "pages_run_id": 34694306432,
+    "head_sha": "2aa8bd0bc56cfdf1783be61dbe9c655b88b3f107",
+    "conclusion": "success"
+  },
+  "record_path": "_records/qa/2026-09-12.json",
+  "deployment_latency_seconds": null
+}

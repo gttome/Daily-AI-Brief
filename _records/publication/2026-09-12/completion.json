@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20260912T124211Z-2aa8bd0b",
+  "run_id": "dab-publication-20260912T125000Z-7c4e91a2",
+  "phase": "pages_verified",
+  "edition_id": "dab-edition-2026-09-12",
+  "observed_at": "2026-09-12T12:42:11Z",
+  "baseline_main_sha": "2217db6bfd4262772ba31d81980da9b00a983cb7",
+  "staged_tree_digest": "sha256:64b98a60acd564911deb15d1ba874e176a98703c1a8ded12f8fc4f7e4c489ad5",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "edition_validation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The final canonical edition and candidate pool passed active contracts, repository validation and semantic integration checks."
+    },
+    {
+      "check_id": "atomic_file_set",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #74 promoted the complete canonical, derived, asset, discovery, watchlist and release transaction from verified baseline 2217db6bfd4262772ba31d81980da9b00a983cb7."
+    },
+    {
+      "check_id": "live_reader_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "After repair PR #75, final CI 34694306713 and Pages 34694306432 succeeded for content SHA 2aa8bd0bc56cfdf1783be61dbe9c655b88b3f107. Live homepage, dated brief, archive, QA, feedback, watchlist, research fallback, feeds, six stories, two videos and podcast resolve; controls render; six image hashes match."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-09-12.json",
+      "_records/editorial/candidates/2026-09-12.json",
+      "_data/story-memory/2026-09-12.json"
+    ],
+    "assets": [
+      "briefs/images/2026-09-12/01-copilot-review-verification.png",
+      "briefs/images/2026-09-12/02-vscode-agent-metrics.png",
+      "briefs/images/2026-09-12/03-gemini-windows-workflow.png",
+      "briefs/images/2026-09-12/04-cross-platform-grounding.png",
+      "briefs/images/2026-09-12/05-mastra-filesystem-skills.png",
+      "briefs/images/2026-09-12/06-no-code-agent-fit-test.png"
+    ],
+    "derived_outputs": [
+      "briefs/2026-09-12.md",
+      "latest.md",
+      "index.md",
+      "archive.md",
+      "README.md",
+      "feed.json",
+      "feed.xml",
+      "watchlist/index.md",
+      "watchlist/research.md"
+    ],
+    "operational_records": [
+      "_records/publication/2026-09-12/dab-publication-20260912T125000Z-7c4e91a2.validated.json",
+      "_records/qa/2026-09-12.json",
+      "_records/analytics/2026-09-12.json",
+      "_records/discovery/2026-09-12.json"
+    ]
+  },
+  "commit_sha": "2aa8bd0bc56cfdf1783be61dbe9c655b88b3f107",
+  "pages": {
+    "run_id": 34694306432,
+    "conclusion": "success",
+    "verified_at": "2026-09-12T12:42:11Z"
+  },
+  "rollback_target_sha": "2217db6bfd4262772ba31d81980da9b00a983cb7",
+  "supersedes_event_id": "dab-publication-event-20260912T125000Z-47392433"
+}
