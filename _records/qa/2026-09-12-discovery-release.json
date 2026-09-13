@@ -1,0 +1,40 @@
+{
+  "checks": [
+    {
+      "check_id": "approved_discovery_reader_release",
+      "class": "deterministic",
+      "evidence": "Owner explicitly approved the second private visual comparison. PR #79 merged after 101 generator tests, 15 contract fixtures, repository, integration, atomic, append-only and Jekyll checks passed. Main CI 34732004430 and Pages 34732004288 succeeded for 3e43433485284aba04dfe27047526bb1be497ef4.",
+      "result": "pass",
+      "severity": "high"
+    },
+    {
+      "check_id": "isolated_interaction_checks",
+      "class": "deterministic",
+      "evidence": "Production scripts checked in isolated browser fixtures without production collectors: September 12 yielded two videos; edition view yielded one matching date; edition-to-items restored six articles, two videos and a podcast. Empty search and invalid-date states passed. Watchlist rendered eight source/evidence cards, 24 vote buttons and eight copy controls; expanding the score explanation worked. No test votes, shares or subscriptions were submitted.",
+      "result": "pass",
+      "severity": "high"
+    },
+    {
+      "check_id": "live_release_bytes",
+      "class": "deterministic",
+      "evidence": "Thirteen public routes returned HTTP 200. Served JS, CSS and public data exactly matched the candidate. Archive retained 163 item-to-edition links and 27 edition links. No-JavaScript research page exposed evidence for all eight topics. Homepage and September 12 page retained 45 rating controls. Source-check dates and research scores were preserved, not represented as fresh research.",
+      "result": "pass",
+      "severity": "high"
+    }
+  ],
+  "defects": [],
+  "deployment_evidence": {
+    "conclusion": "success",
+    "head_sha": "3e43433485284aba04dfe27047526bb1be497ef4",
+    "pages_run_id": 34732004288
+  },
+  "edition_id": "dab-edition-2026-09-12",
+  "executed_at": "2026-09-13T02:03:42.642647+00:00",
+  "final_result": "pass",
+  "initial_result": "pass",
+  "record_path": "_records/qa/2026-09-12-discovery-release.json",
+  "repairs": [],
+  "run_id": "dab-qa-20260913T020342Z-3e434334",
+  "schema_version": "1.0.0",
+  "publication_run_id": null
+}
