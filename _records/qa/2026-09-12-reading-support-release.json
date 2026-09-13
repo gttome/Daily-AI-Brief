@@ -18,5 +18,18 @@
   "limitations": [
     "Reading estimates exclude linked reading and media playback.",
     "Future context, labels and related items require editorial entries; no associations are invented."
-  ]
+  ],
+  "run_id": "dab-qa-reading-support-20260913",
+  "initial_result": "pass",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "approved_reading_support",
+      "class": "deterministic",
+      "severity": "high",
+      "result": "pass",
+      "evidence": "Generator, contract, repository, atomic and control-preservation checks passed locally. Publication checks are pending."
+    }
+  ],
+  "defects": []
 }
