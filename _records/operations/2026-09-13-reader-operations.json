@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-13",
+  "scope": "Owner-approved nine-item assessment implementation",
+  "baseline_sha": "1cd404e08d434aec481bc2ef0ffd26b5c2db64a4",
+  "email_delivery": "Disabled by choice / Not applicable",
+  "private_operations": {
+    "authentication": "Supported existing Sites dispatch bearer credential, without interactive sign-in",
+    "collection": "Analytics and publication usage saved and read back; priorities retrieved; 90-day retention completed",
+    "credential_handling": "Replaced after local diagnostic exposure; no credential stored in public Git",
+    "credit_measurement": "Unavailable: no edition-attributable platform measurement"
+  },
+  "reading": "All six source main texts reviewed and estimated at 200 words/minute. Metadata retains source identity, word count, method and observation date.",
+  "watchlist": "Retry evidence retained. Retrieval health, link yield and assisted review now reported separately. Official Qwen migration to qwen.ai/blog verified; its client-rendered index requires assisted review.",
+  "source_followup": [
+    {"source_id":"import-ai","evidence":"Homepage and feed retries timed out in direct retrieval; web homepage returned no extractable text. Retain unavailable, do not infer no news."},
+    {"source_id":"the-median","evidence":"Homepage and feed retries timed out; web homepage returned no extractable text. Retain unavailable."},
+    {"source_id":"berkeley-bair","evidence":"Direct blog/feed returned HTTP 502; web retrieval timed out. Retain unavailable."},
+    {"source_id":"qwen-blog","evidence":"Official old index announces qwen.ai migration. New endpoint returned HTTP 200 but no extractable static links; now assisted review rather than false quiet-source classification."},
+    {"source_id":"community-and-assisted-channels","evidence":"Reddit pages returned no links; OpenReview, X, Discord and selected video channels still need assisted review. No private discussion or unverified claims imported."}
+  ],
+  "historical_qa": "Earlier failures and original QA remain immutable; follow-up QA will record live verification."
+}

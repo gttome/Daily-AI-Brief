@@ -14,7 +14,7 @@ reader_release: true
 # Shopify says coding agents changed the economics of building twice
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-13-a62e9c74" hidden></span>
@@ -32,7 +32,7 @@ reader_release: true
 **Why it matters:** Generative AI can change architecture decisions by lowering duplication costs, but only when specifications and tests are stronger than the generated implementations. Shopify’s account is a single-company case study, not proof that native rewrites are generally cheaper, and migration cost and long-term maintenance still need measurement.
 
 <span class="story-editorial-note" data-george-implication="Use this as a consulting example of revisiting a previously rational decision when AI changes one cost term. For applications and publishing workflows, keep the shared specification and acceptance tests as the durable asset, then let agents produce channel-specific implementations." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 ## What to do now

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-13T12:04:06.512Z",
+  "updated_at": "2026-09-13T15:34:09.843Z",
   "sources": [
     {
       "source_id": "rundown",
@@ -15,12 +15,17 @@
         "candidate_links": 32,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:06.526Z",
+            "checked_at": "2026-09-13T15:34:09.860Z",
+            "status": "unavailable",
+            "reason": "The operation was aborted due to timeout"
+          },
+          {
+            "checked_at": "2026-09-13T15:34:21.863Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:04:13.619Z"
+        "checked_at": "2026-09-13T15:34:27.879Z"
       }
     },
     {
@@ -36,17 +41,17 @@
         "candidate_links": 20,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:06.535Z",
+            "checked_at": "2026-09-13T15:34:09.871Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-13T12:04:18.535Z",
+            "checked_at": "2026-09-13T15:34:21.870Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:04:26.570Z"
+        "checked_at": "2026-09-13T15:34:31.122Z"
       }
     },
     {
@@ -62,12 +67,12 @@
         "candidate_links": 28,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:06.537Z",
+            "checked_at": "2026-09-13T15:34:09.872Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:04:17.285Z"
+        "checked_at": "2026-09-13T15:34:17.464Z"
       }
     },
     {
@@ -79,21 +84,21 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "the-batch",
-        "status": "retrieved",
-        "candidate_links": 1,
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:06.537Z",
+            "checked_at": "2026-09-13T15:34:09.873Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-13T12:04:18.538Z",
-            "status": "retrieved",
-            "http_status": 200
+            "checked_at": "2026-09-13T15:34:21.872Z",
+            "status": "unavailable",
+            "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-13T12:04:26.145Z"
+        "checked_at": "2026-09-13T15:34:33.873Z"
       }
     },
     {
@@ -109,17 +114,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:26.570Z",
+            "checked_at": "2026-09-13T15:34:33.873Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-13T12:04:38.571Z",
+            "checked_at": "2026-09-13T15:34:45.875Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-13T12:04:50.572Z"
+        "checked_at": "2026-09-13T15:34:57.875Z"
       }
     },
     {
@@ -135,12 +140,12 @@
         "candidate_links": 13,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:26.571Z",
+            "checked_at": "2026-09-13T15:34:33.874Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:04:33.636Z"
+        "checked_at": "2026-09-13T15:34:42.330Z"
       }
     },
     {
@@ -156,12 +161,12 @@
         "candidate_links": 10,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:26.572Z",
+            "checked_at": "2026-09-13T15:34:33.874Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:04:38.335Z"
+        "checked_at": "2026-09-13T15:34:42.172Z"
       }
     },
     {
@@ -177,12 +182,12 @@
         "candidate_links": 1,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:26.572Z",
+            "checked_at": "2026-09-13T15:34:33.874Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:04:34.642Z"
+        "checked_at": "2026-09-13T15:34:41.964Z"
       }
     },
     {
@@ -198,17 +203,12 @@
         "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:50.572Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T12:05:02.573Z",
+            "checked_at": "2026-09-13T15:34:57.875Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:10.679Z"
+        "checked_at": "2026-09-13T15:35:07.227Z"
       }
     },
     {
@@ -224,17 +224,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:50.572Z",
+            "checked_at": "2026-09-13T15:34:57.876Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-13T12:05:02.574Z",
+            "checked_at": "2026-09-13T15:35:09.877Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-13T12:05:14.573Z"
+        "checked_at": "2026-09-13T15:35:21.877Z"
       }
     },
     {
@@ -246,21 +246,16 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "stanford-hai",
-        "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "status": "retrieved",
+        "candidate_links": 19,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:50.573Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T12:05:02.576Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "checked_at": "2026-09-13T15:34:57.876Z",
+            "status": "retrieved",
+            "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:14.577Z"
+        "checked_at": "2026-09-13T15:35:07.398Z"
       }
     },
     {
@@ -273,20 +268,20 @@
       "last_check": {
         "source_id": "berkeley-bair",
         "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "reason": "HTTP 502",
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:04:50.573Z",
+            "checked_at": "2026-09-13T15:34:57.876Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           },
           {
-            "checked_at": "2026-09-13T12:05:02.576Z",
+            "checked_at": "2026-09-13T15:35:07.069Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           }
         ],
-        "checked_at": "2026-09-13T12:05:14.577Z"
+        "checked_at": "2026-09-13T15:35:16.374Z"
       }
     },
     {
@@ -302,12 +297,12 @@
         "candidate_links": 6,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:14.577Z",
+            "checked_at": "2026-09-13T15:35:21.877Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:22.273Z"
+        "checked_at": "2026-09-13T15:35:27.683Z"
       }
     },
     {
@@ -323,12 +318,12 @@
         "candidate_links": 21,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:14.577Z",
+            "checked_at": "2026-09-13T15:35:21.878Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:22.295Z"
+        "checked_at": "2026-09-13T15:35:27.947Z"
       }
     },
     {
@@ -344,12 +339,12 @@
         "candidate_links": 30,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:14.578Z",
+            "checked_at": "2026-09-13T15:35:21.879Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:22.580Z"
+        "checked_at": "2026-09-13T15:35:27.208Z"
       }
     },
     {
@@ -365,17 +360,12 @@
         "candidate_links": 24,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:14.578Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T12:05:26.579Z",
+            "checked_at": "2026-09-13T15:35:21.879Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:37.849Z"
+        "checked_at": "2026-09-13T15:35:27.672Z"
       }
     },
     {
@@ -387,21 +377,21 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "huggingface-papers",
-        "status": "retrieved",
-        "candidate_links": 33,
+        "status": "unavailable",
+        "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:37.849Z",
+            "checked_at": "2026-09-13T15:35:27.947Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-13T12:05:49.850Z",
-            "status": "retrieved",
-            "http_status": 200
+            "checked_at": "2026-09-13T15:35:39.948Z",
+            "status": "unavailable",
+            "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-13T12:05:57.777Z"
+        "checked_at": "2026-09-13T15:35:51.949Z"
       }
     },
     {
@@ -417,12 +407,12 @@
         "candidate_links": 33,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:37.849Z",
+            "checked_at": "2026-09-13T15:35:27.947Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:45.542Z"
+        "checked_at": "2026-09-13T15:35:33.807Z"
       }
     },
     {
@@ -438,12 +428,12 @@
         "candidate_links": 0,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:37.850Z",
+            "checked_at": "2026-09-13T15:35:27.948Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:48.732Z"
+        "checked_at": "2026-09-13T15:35:33.122Z"
       }
     },
     {
@@ -459,12 +449,12 @@
         "candidate_links": 52,
         "attempts": [
           {
-            "checked_at": "2026-09-13T12:05:37.850Z",
+            "checked_at": "2026-09-13T15:35:27.948Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T12:05:47.017Z"
+        "checked_at": "2026-09-13T15:35:34.892Z"
       }
     }
   ]

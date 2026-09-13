@@ -19,7 +19,7 @@ reader_release: true
 ## 1. Ruby’s documentation pipeline exposes a containment gap for web-research agents
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 20 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
@@ -42,7 +42,7 @@ reader_release: true
 **Why it matters:** Browsing and package inspection are executable security boundaries, not passive research steps. Agent harnesses need sandboxing, least-privilege secrets, restricted egress, immutable traces, and rehearsed shutdown procedures. Attribution and intent remain partly uncertain, so the operational lesson is stronger than any claim about motive.
 
 <span class="story-editorial-note" data-george-implication="Use the incident in consulting and workshops to map every place an agent can cause server-side execution. Turn the map into a pre-deployment checklist for credentials, network egress, logging, kill switches, and human escalation." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 **What to do now — Audit agent-triggered builds:** Treat every fetched package and documentation build as untrusted code with explicit egress and secret boundaries.
@@ -61,7 +61,7 @@ reader_release: true
 ## 2. Bengio frames agent deception as a goal-optimization problem
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 14 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
@@ -101,7 +101,7 @@ reader_release: true
 ## 3. Shopify says coding agents changed the economics of building twice
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 11 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
@@ -124,7 +124,7 @@ reader_release: true
 **Why it matters:** Generative AI can change architecture decisions by lowering duplication costs, but only when specifications and tests are stronger than the generated implementations. Shopify’s account is a single-company case study, not proof that native rewrites are generally cheaper, and migration cost and long-term maintenance still need measurement.
 
 <span class="story-editorial-note" data-george-implication="Use this as a consulting example of revisiting a previously rational decision when AI changes one cost term. For applications and publishing workflows, keep the shared specification and acceptance tests as the durable asset, then let agents produce channel-specific implementations." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 **What to do now — Reprice one old constraint:** Identify a duplicated workflow whose economics may have changed, then compare agent-assisted delivery using one shared specification and acceptance suite.
@@ -143,7 +143,7 @@ reader_release: true
 ## 4. A route-planning experiment shows the practical ceiling of one-prompt AI work
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
@@ -183,7 +183,7 @@ reader_release: true
 ## 5. Boomi packages integration expertise as portable Agent Skills
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
@@ -206,7 +206,7 @@ reader_release: true
 **Why it matters:** Reusable skills can move domain knowledge from one-off prompts into inspectable packages that travel across agent hosts. Portability does not make generated integrations correct: permissions, test data, deployment gates, and human review remain essential, and Boomi’s speed claims are vendor-reported rather than independent benchmarks.
 
 <span class="story-editorial-note" data-george-implication="Package recurring book, workshop, and consulting methods as small skills with instructions, references, scripts, and tests. Keep each skill narrow enough to review and pair it with explicit permissions and acceptance evidence." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 **What to do now — Package one repeatable method:** Turn one frequently repeated workflow into a small skill with references, permissions, tests, and a human acceptance step.
@@ -225,7 +225,7 @@ reader_release: true
 ## 6. Microsoft offers three practical rungs into agent building
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
@@ -356,18 +356,20 @@ reader_release: true
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
+<!-- reader-release:start -->
+
+
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+
+
+<!-- reader-release:end -->
+
 ## Editorial takeaway
 
 Today’s strongest signal is that agent capability changes the surrounding system: security boundaries become execution boundaries, architecture economics shift, and useful outputs become interactive. The dependable response is the same across all three focus areas—strong specifications, constrained tools, observable checks, and explicit human acceptance.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning. Explore George Tome’s books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Written by the curator of this brief. Buying a book supports his work.</p></aside>
-<!-- reader-release:end --><!-- reader-release:start -->
-<details class="watchlist-fold"><summary>Emerging AI Watchlist · explore after the brief</summary>
-
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
-
-</details>
 <!-- reader-release:end -->
 
 <section class="subscription-card subscription-guidance" id="subscribe" aria-labelledby="subscribe-title">

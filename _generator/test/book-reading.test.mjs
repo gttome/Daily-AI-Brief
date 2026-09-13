@@ -11,6 +11,10 @@ test('approved reading appears in edition and permanent article, video and podca
  const files=readerFoundationFiles(edition,process.cwd());
  for(const name of [`stories/2026-09-12/${edition.stories[0].slug}.md`,'videos/2026-09-12/agent-skills.md','podcasts/2026-09-12/ai-risk-specificity.md']){assert.match(files.get(name),/class="book-bridge"/);assert.match(files.get(name),/data-feedback-rating="5"/);}
  assert.match(body,/Chapter 3, section 3.3.3/);assert.match(body,/Quick Reference: Context Quality Checklist/);assert.match(body,/does not validate/);
+ assert.match(body,/Get the book and explore contents ↗/);assert.match(body,/Leanpub.com book webpage/);
+ assert.doesNotMatch(body,/watchlist-fold|Emerging AI Watchlist · explore after the brief/);
+ assert.ok(body.indexOf('class="watchlist-preview"')>body.indexOf('### 9.'));
+ assert.ok(body.indexOf('class="watchlist-preview"')<body.indexOf('## Editorial takeaway'));
 });
 test('book selections reject fabricated IDs, unsupported practice references, and more than three placements',()=>{
  const bad=structuredClone(catalog);bad.editions['2026-09-12'][0].reference_id='imaginary-chapter';assert.throws(()=>validateBookReading(edition,bad));

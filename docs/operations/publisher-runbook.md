@@ -4,6 +4,16 @@ Effective September 10, 2026. This is the current operating procedure. Earlier i
 
 ## Authority and resources
 
+## September 13 approved reading and operations correction
+
+The owner approved implementation of the nine-item assessment and September 13 regeneration. This supersedes the older optional-watchlist placement: display the watchlist box openly after the podcast and before Editorial takeaway, with no disclosure heading or extra click. Book links read “Get the book and explore contents ↗”; disclose “By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.” Regenerate permanent shared-item pages with the same renderer and stable IDs.
+
+Article reading time measures the linked source, never the Brief summary. Record source_reading by stable item ID in _data/reading-support.json with matching source_url, reviewed main-text word_count, method and verified_at; use 200 words/minute and round upward. Exclude site navigation, forms and unrelated promotion. If reliable full text cannot be verified, show “Source reading time unavailable”. Verify this evidence during daily editorial research.
+
+Email delivery is Disabled by choice / Not applicable under _data/subscriber-delivery-policy.json. Do not invoke delivery or enable signup, even if sender credentials later become available, without new owner authorization. Calendar and RSS remain active.
+
+For unattended private operations, retrieve the existing Command Center via the supported Sites get_site capability and use its existing siwc_bypass_bearer_token only in the OAI-Sites-Authorization request header. Never print, commit, embed in a URL, or persist this credential. Do not rotate it during daily collection. The dispatcher authenticates API access; the Command Center restricts identity-less API calls to usage/snapshot recording, ratings/events/watchlist reads and comment retention. Browser owner actions remain separate. Use /api/comments and verify /api/maintenance; save dated snapshots and edition-specific usage through the existing endpoints and read them back. Historical migration remains outside this authorization. Missing platform credit data remains unavailable even when collection succeeds.
+
 Use current `gttome/Daily-AI-Brief` main and its contracts. Work/Codex supplies research, selection, writing, image generation and editorial review within the owner's Plus allowance. No paid AI API, extra credits, top-up, overage or subscription upgrade. GitHub performs deterministic checks, controlled promotion and live freshness checks. No trigger or alternate sign-in surface is an allowance bypass.
 
 Keep the observed daily 07:00 America/Chicago publisher and integrated QA cadence. The 07:40 Command Center validator remains read-only. Do not enable retired publishers or modify the separate Sites Command Center stage.
