@@ -29,15 +29,18 @@ if (typeof document !== 'undefined') {
   document.querySelectorAll('.calendar-reminder').forEach(root => {
     const input=root.querySelector('input[type=time]'), google=root.querySelector('.calendar-google'), downloads=[...root.querySelectorAll('.calendar-download')], status=root.querySelector('.calendar-status');
     let objectURL;
+    const provider=root.querySelector('#calendar-provider');
+    if(provider)root.querySelector('.calendar-picker').hidden=false;
     function update(){
       if(objectURL) URL.revokeObjectURL(objectURL);
       try {
         const data=reminder(input.value,new Date(),Number(root.querySelector('#calendar-quantity').value),root.querySelector('#calendar-period').value);
         objectURL=URL.createObjectURL(new Blob([data.ics],{type:'text/calendar;charset=utf-8'}));
-        downloads.forEach(download=>{download.href=objectURL;download.hidden=false;}); google.href=data.google; google.hidden=false;
+        downloads.forEach(download=>{download.href=objectURL;download.hidden=provider ? download.dataset.calendar!==provider.value : false;}); google.href=data.google; google.hidden=provider ? provider.value!=='google' : false;
         status.textContent=`Remind me daily at ${data.start.toLocaleTimeString(undefined,{hour:'numeric',minute:'2-digit'})} for ${data.days} ${data.days===1?'day':'days'}, then stop. First: ${data.start.toLocaleDateString(undefined,{dateStyle:'medium'})}. Final: ${data.last.toLocaleDateString(undefined,{dateStyle:'medium'})}. Review and save in your calendar to finish.`;
       } catch {downloads.forEach(download=>download.hidden=true);google.hidden=true;window.dabTrack?.('calendar_generation_error',{result:'invalid'});status.textContent='Choose a valid time, a whole number from 1 to 999, and a period to continue.';}
     }
+    provider?.addEventListener('change',update);
     input.addEventListener('input',update);root.querySelector('#calendar-quantity').addEventListener('input',update);root.querySelector('#calendar-period').addEventListener('change',update); update();
   });
 }
