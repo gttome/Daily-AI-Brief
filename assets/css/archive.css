@@ -12,3 +12,31 @@
 .qa-metrics div { display: grid; gap: .2rem; padding: .9rem; border: 1px solid #d8e1e7; border-radius: 10px; background: #f7fbfb; }
 .qa-metrics strong { color: #126a6a; font-size: 1.5rem; }
 .qa-metrics span { color: #536773; font-size: .86rem; font-weight: 700; }
+
+/* Approved September 13 archive reading design. */
+.archive-browser{color:#242d35;font-size:1rem;line-height:1.6}
+.archive-browser [hidden]{display:none!important}
+.archive-view-switch{display:flex;gap:.25rem;flex-wrap:wrap;background:#e9e4d9;padding:.3rem;width:fit-content;margin:1.2rem 0;border-radius:3px}
+.archive-view-switch button,.archive-browser button{font:inherit;font-size:.9rem;min-height:44px;cursor:pointer;padding:.55rem .8rem;border:1px solid #b7b1a5;border-radius:3px;background:#f3f0e8;color:#87432d}
+.archive-view-switch button{border-color:transparent;color:#242d35;background:transparent}
+.archive-view-switch button[aria-selected=true]{background:#fffefa;border-color:#d2ccc1;box-shadow:0 1px 3px #0001}
+.archive-controls{background:transparent;border:0;padding:0;gap:1rem;margin:1.2rem 0;border-radius:0}
+.archive-controls label{color:#242d35;font-size:.9rem}
+.archive-controls input,.archive-controls select{border:1px solid #b7b1a5;border-radius:3px;color:#242d35;background:#fffefa;min-width:0;width:100%}
+.archive-dates{grid-template-columns:minmax(130px,200px) minmax(130px,200px) auto;align-items:end}
+.archive-dates button{justify-self:start;background:#f3f0e8;color:#87432d;border-color:#b7b1a5}
+.archive-advanced{grid-column:1/-1;border:1px solid #d2ccc1;padding:.8rem 1rem}
+.archive-advanced summary{font-weight:bold;font-size:.95rem;cursor:pointer}
+.archive-advanced .archive-controls{margin-bottom:0}
+.archive-results{display:block}
+.archive-story{padding:1.4rem 0;border:0;border-top:1px solid #d2ccc1;border-radius:0;background:transparent;box-shadow:none;overflow-wrap:anywhere}
+.archive-story h2,.archive-story h3{font-family:Georgia,serif;font-size:1.5rem;margin:.65rem 0;line-height:1.25}
+.archive-story h2 a,.archive-story h3 a{color:#242d35}
+.archive-story p{margin:.7rem 0}
+.archive-story-meta{color:#555d60;font-size:.9rem;font-weight:normal}
+.archive-type{display:inline-block;background:#eee7da;color:#733820;border:1px solid #cdbda6;padding:.15rem .5rem;margin-right:.5rem}
+.archive-edition-link{display:inline-block;font-size:.9rem;margin:.6rem 0;color:#87432d}
+#archive-result-count,#archive-edition-count{font-weight:bold;font-size:.9rem}
+#archive-empty{padding:1rem;border-left:3px solid #87432d;background:#eee9de}
+.archive-browser :is(button,input,select,summary,a):focus-visible{outline:3px solid #87432d;outline-offset:3px}
+@media(max-width:640px){.archive-controls{grid-template-columns:1fr}.archive-dates{grid-template-columns:1fr 1fr}.archive-dates button{grid-column:1/-1}.archive-story h2,.archive-story h3{font-size:1.4rem}}
