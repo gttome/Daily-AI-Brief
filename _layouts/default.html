@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="{{ '/assets/css/header.css?v=1' | relative_url }}">
     {% if page.reader_release %}<link rel="stylesheet" href="{{ '/assets/css/reader-release.css?v=' | append: site.github.build_revision | relative_url }}">{% endif %}
     {% include head-custom.html %}
-  </head>
+  <link rel="stylesheet" href="{{ '/assets/css/subscription-guidance.css?v=' | append: site.github.build_revision | relative_url }}">
+</head>
   <body class="{% if page.reader_release %}reader-release{% endif %}" data-brief-date="{{ page.brief_date | default: '' }}" data-story-id="{{ page.story_id | default: '' }}" data-baseurl="{{ site.baseurl }}">
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
@@ -94,5 +95,6 @@
         });
       });
     </script>
-  </body>
+  <script defer src="{{ '/assets/js/subscription-guidance.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+</body>
 </html>
