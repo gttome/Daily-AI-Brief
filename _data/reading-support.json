@@ -15,7 +15,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
           "brief_date": "2026-09-11",
           "connection": "Earlier: inspect, test, and preview in a Copilot workflow. Here: verification tools inside code review."
-        }
+        },
+        "learning_outcome": "How agents can inspect code from several perspectives and use tests to check their findings."
       },
       {
         "item_id": "dab-story-2026-09-12-8b2e61d4",
@@ -29,7 +30,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
           "brief_date": "2026-09-10",
           "connection": "Earlier: measure completed work. Here: understand what activity fields can and cannot establish."
-        }
+        },
+        "learning_outcome": "What agent activity reports measure, why missing values matter, and why usage alone does not establish quality or value."
       },
       {
         "item_id": "dab-story-2026-09-12-c16a53ef",
@@ -43,7 +45,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
           "brief_date": "2026-08-28",
           "connection": "Earlier: documents as grounding sources. Here: choosing connected context in a desktop assistant."
-        }
+        },
+        "learning_outcome": "How a desktop AI assistant can use authorized context, and what to check before relying on its output."
       },
       {
         "item_id": "dab-story-2026-09-12-2d8f70b6",
@@ -57,7 +60,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
           "brief_date": "2026-08-28",
           "connection": "Earlier: files as grounding sources. Here: the gaps that remain when relevant context spans services."
-        }
+        },
+        "learning_outcome": "Why workplace AI can miss important information when it draws from only one platform."
       },
       {
         "item_id": "dab-story-2026-09-12-6ae3c942",
@@ -71,7 +75,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
           "brief_date": "2026-09-11",
           "connection": "Earlier: distribute reusable skills across tools. Here: store and govern skills in shared workspaces."
-        }
+        },
+        "learning_outcome": "How reusable agent skills can be shared across workspaces, and why running their scripts requires separate safeguards."
       },
       {
         "item_id": "dab-story-2026-09-12-f0397b5d",
@@ -85,7 +90,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/",
           "brief_date": "2026-08-30",
           "connection": "Earlier: permissions and review for no-code agents. Here: compare how a whole workflow behaves."
-        }
+        },
+        "learning_outcome": "How to compare no-code agent builders using a complete workflow, including permissions, errors, human review, and costs."
       },
       {
         "item_id": "dab-video-2026-09-12-general",
@@ -99,7 +105,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
           "brief_date": "2026-09-10",
           "connection": "A useful follow-up on the difference between AI activity and demonstrated value."
-        }
+        },
+        "learning_outcome": "A quick overview of the previous day\u2019s AI developments to help you decide which stories to investigate further."
       },
       {
         "item_id": "dab-video-2026-09-12-agent-skills",
@@ -113,7 +120,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
           "brief_date": "2026-09-11",
           "connection": "Earlier coverage gives a concrete example of reusable skill packaging."
-        }
+        },
+        "learning_outcome": "How to structure an agent skill and load detailed instructions only when they are needed."
       },
       {
         "item_id": "dab-podcast-2026-09-12-ai-risk-specificity",
@@ -127,7 +135,8 @@
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/",
           "brief_date": "2026-08-31",
           "connection": "Our August 31 coverage examines cybersecurity and resilience concerns. Read it for a different approach to assessing AI risk; it does not substantiate the probability quoted in this podcast\u2019s headline."
-        }
+        },
+        "learning_outcome": "How to examine dramatic AI risk claims by identifying assumptions, incentives, supporting evidence, and practical safeguards."
       }
     ]
   }
