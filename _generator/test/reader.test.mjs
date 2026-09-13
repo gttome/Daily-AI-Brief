@@ -88,9 +88,9 @@ test('public rating client writes privately without fetching aggregate ratings',
   const script = fs.readFileSync(path.join(root, 'assets/js/feedback.js'), 'utf8');
   assert.match(script, /method: 'POST'/);
   assert.match(script, /'x-operation-id':operationId/);
-  assert.match(script, /'x-rating-revision':String\(revision\)/);
-  assert.match(script, /sessionStorage\.setItem/);
-  assert.match(script, /You can change this rating while this page session stays open/);
+  assert.doesNotMatch(script, /x-rating-revision/);
+  assert.doesNotMatch(script, /sessionStorage\.setItem/);
+  assert.doesNotMatch(script, /You can change this rating while this page session stays open/);
   assert.match(script, /JSON\.stringify\(\{brief_date: briefDate, item_id: storyId, rating:/);
   assert.match(script, /result\.recorded !== true/);
   assert.match(script, />29\*86400000/);
