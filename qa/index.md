@@ -13,13 +13,13 @@ This public dashboard summarizes versioned QA records. It excludes credentials, 
   <div><strong>7</strong><span>QA runs</span></div>
   <div><strong>43%</strong><span>First-pass QA</span></div>
   <div><strong>100%</strong><span>Final pass</span></div>
-  <div><strong>11</strong><span>Recorded repairs</span></div>
+  <div><strong>13</strong><span>Recorded repairs</span></div>
   <div><strong>47s</strong><span>Average deploy latency</span></div>
 </div>
 
 | Edition | Initial | Final | Repairs | Deploy | Deterministic / Editorial |
 |---|---:|---:|---:|---:|---|
-| [September 13, 2026]({{ '/briefs/2026-09-13/' | relative_url }}) | FAIL | PASS | 2 | —s | 8 / 5 |
+| [September 13, 2026]({{ '/briefs/2026-09-13/' | relative_url }}) | FAIL | PASS | 4 | —s | 9 / 5 |
 | [September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }}) | FAIL | PASS | 2 | —s | 10 / 6 |
 | [September 11, 2026]({{ '/briefs/2026-09-11/' | relative_url }}) | FAIL | PASS | 2 | —s | 7 / 4 |
 | [September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) | FAIL | PASS | 3 | —s | 4 / 4 |
