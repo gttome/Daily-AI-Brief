@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "run_id": "dab-qa-20260913T154855Z-f0a2f062",
+  "run_id": "dab-qa-20260913T130128Z-23ea47d8",
   "edition_id": "dab-edition-2026-09-13",
-  "publication_run_id": "dab-reader-sharing-20260913T154300Z",
-  "executed_at": "2026-09-13T15:48:55Z",
+  "publication_run_id": "dab-publication-20260913T153600Z-71d3a6c2",
+  "executed_at": "2026-09-13T13:01:28Z",
   "initial_result": "fail",
   "final_result": "pass",
   "checks": [
@@ -47,7 +47,7 @@
       "class": "deterministic",
       "result": "pass",
       "severity": "critical",
-      "evidence": "Repository validation and integration pass. Independent HTTP 200 checks confirm six matching source-reading estimates on homepage, dated brief and all six stable permanent story pages; homepage and dated brief each retain 45 stars and each story retains five."
+      "evidence": "Repository validation and integration report no semantic differences among canonical, homepage, latest, dated brief, six permanent story pages, two video pages, podcast page, archive, daily RSS, Atom and JSON feeds."
     },
     {
       "check_id": "ratings_sharing_privacy",
@@ -75,35 +75,28 @@
       "class": "editorial",
       "result": "pass",
       "severity": "medium",
-      "evidence": "Eight verified topics and both live routes remain available. Latest retry checked all 49 sources: 36 retrieved successfully, 33 returned candidate links, 3 returned no links, 5 failed retrieval and 8 require assisted review. Qwen now uses its official migrated URL. Both retry records are retained; coverage remains partial."
+      "evidence": "The live watchlist contains eight substantive topics, the readable research fallback resolves, and the September 13 edition contains the optional preview. Forty-nine registered sources were checked; 33 returned candidates, five were unavailable, four yielded no candidates and seven require assisted review, so discovery coverage remains explicitly degraded."
     },
     {
       "check_id": "ci_pages_release",
       "class": "deterministic",
       "result": "pass",
       "severity": "critical",
-      "evidence": "Reader repair PR #91 and shared-page follow-up PR #92 passed CI. Content SHA f0a2f062ebd677422f6d7a085b168e256c90b22b passed production CI 34766470550 and Pages 34766470114; 108 tests and 15 contract fixtures passed."
+      "evidence": "Publication PR #88, repair PR #89 and all candidate/production CI passed. Final production CI 34758518843 and Pages 34758518528 succeeded for exact final main SHA 23ea47d808e979117e42bd40f44d3b867565561f."
     },
     {
       "check_id": "usage_private_operations",
       "class": "deterministic",
-      "result": "pass",
+      "result": "not_run",
       "severity": "info",
-      "evidence": "Supported Sites automation authentication successfully recorded and read back authorized private usage and the current observed aggregate snapshot, retrieved owner priorities, and completed comment retention cleanup. Retry preserved existing records. No private counts were published or historical analytics migrated. Exact credits and costs remain unavailable."
+      "evidence": "Edition-specific drafts, rejects, failures, repairs and elapsed time are recorded. Exact credits and dollars were unavailable and were not fabricated. The owner-only Command Center required an interactive ChatGPT sign-in, so usage recording, private aggregates, priorities and 90-day comment cleanup were not invoked; no indirect transfer was attempted."
     },
     {
       "check_id": "subscriber_delivery",
       "class": "deterministic",
-      "result": "not_applicable",
+      "result": "not_run",
       "severity": "info",
-      "evidence": "Disabled by choice / Not applicable. Owner-approved policy disables delivery and signup; the Command Center displays this state and blocks delivery. No email was sent."
-    },
-    {
-      "check_id": "reader_requested_corrections",
-      "class": "deterministic",
-      "result": "pass",
-      "severity": "high",
-      "evidence": "Live source estimates are 20, 14, 11, 3, 6 and 3 minutes, derived from reviewed source text at 200 words/minute. Exact approved book wording is present. The watchlist preview is expanded after the podcast and before Editorial takeaway; stable share URLs are retained."
+      "evidence": "Confirmed-subscriber delivery was not invoked because sender setup remains unavailable. Signup remains inactive and no same-day duplicate mail was sent."
     }
   ],
   "repairs": [
@@ -114,14 +107,6 @@
     {
       "description": "Removed the extra x-rating-revision header and same-session change path, added regression assertions, and deployed the exact rating contract through PR #89.",
       "commit_sha": "23ea47d808e979117e42bd40f44d3b867565561f"
-    },
-    {
-      "description": "Updated source reading metadata, book wording, expanded watchlist placement, source health reporting and disabled-by-choice subscriber policy in PR #91.",
-      "commit_sha": "c5dbb9e3bb3a2a361ad38c94be44613cac4f6bd4"
-    },
-    {
-      "description": "Resolved permanent-record source_url mapping after initial live QA detected unavailable source estimates; all six permanent pages now match the brief. PR #92 includes regression coverage.",
-      "commit_sha": "f0a2f062ebd677422f6d7a085b168e256c90b22b"
     }
   ],
   "defects": [
@@ -141,32 +126,26 @@
       "severity": "medium",
       "code": "watchlist_discovery_partial",
       "status": "accepted",
-      "description": "Eight verified topics and both live routes remain available. Latest retry checked all 49 sources: 36 retrieved successfully, 33 returned candidate links, 3 returned no links, 5 failed retrieval and 8 require assisted review. Qwen now uses its official migrated URL. Both retry records are retained; coverage remains partial."
+      "description": "Thirty-three of forty-nine registered watchlist sources returned candidate links; sixteen were unavailable, yielded no candidate links or require assisted review. Eight verified topics remain live with real dates and transparent source health."
     },
     {
       "severity": "info",
       "code": "private_telemetry_unavailable",
-      "status": "resolved",
-      "description": "Supported unattended Sites authentication now completes the authorized private operations. Private current snapshot and usage were saved and verified; no historical migration occurred."
+      "status": "accepted",
+      "description": "The owner-only Command Center required an interactive ChatGPT sign-in, preventing private usage, aggregate snapshot, priorities and comment-retention operations. Public analytics availability contains no private counts."
     },
     {
       "severity": "info",
       "code": "local_jekyll_unavailable",
       "status": "accepted",
       "description": "The local bundle executable was unavailable. Both candidate and production GitHub CI completed the deterministic Jekyll build successfully."
-    },
-    {
-      "severity": "medium",
-      "code": "permanent_source_reading_identity",
-      "status": "resolved",
-      "description": "First live check after PR #91 found permanent pages use source_url instead of source.url. PR #92 repaired the mapping; final live checks pass for all six pages."
     }
   ],
   "deployment_evidence": {
-    "pages_run_id": 34766470114,
-    "head_sha": "f0a2f062ebd677422f6d7a085b168e256c90b22b",
+    "pages_run_id": 34758518528,
+    "head_sha": "23ea47d808e979117e42bd40f44d3b867565561f",
     "conclusion": "success"
   },
-  "record_path": "_records/qa/2026-09-13.json",
+  "record_path": "_records/qa/2026-09-13-original-publication.json",
   "deployment_latency_seconds": null
 }
