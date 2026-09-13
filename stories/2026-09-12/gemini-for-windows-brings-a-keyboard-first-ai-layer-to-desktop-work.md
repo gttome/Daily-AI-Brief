@@ -6,6 +6,7 @@ image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/imag
 permalink: /stories/2026-09-12/gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work/
 brief_date: 2026-09-12
 story_id: dab-story-2026-09-12-c16a53ef
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -27,10 +28,6 @@ story_id: dab-story-2026-09-12-c16a53ef
 **Why it matters:** A system-level shortcut reduces the friction of moving work into an AI interface, making context selection and review habits more important. The announcement establishes features and availability, not independent evidence of productivity or accuracy; users should also distinguish content they intentionally share from context available through connected services.
 
 <span class="story-editorial-note" data-george-implication="Prototype one repeatable book-research or workshop-preparation task with a narrow source set. Record what context was used, verify citations and claims, and keep the final publishing decision outside the assistant." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Generative AI Professional Prompt Engineering Guide</strong> — Proposed update: Add a desktop-assistant pattern that begins with deliberate context selection and ends with verification and approval. The Windows release places AI beside everyday applications rather than inside a single document. Teaching asset: A short context-boundary checklist for desktop prompts.</p>
 
 ## What to do now
 

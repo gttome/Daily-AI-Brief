@@ -1,3 +1,4 @@
+import {readerRelease, renderBookReading} from './book-reading.mjs';
 import {editionFeed} from './edition-feed.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -121,7 +122,7 @@ image: ${yamlString(story.social?.image_url || image)}
 permalink: ${story.permanent_url}
 brief_date: ${story.brief_date}
 story_id: ${story.story_id}
----
+${readerRelease(story.brief_date)?'reader_release: true\n':''}---
 
 [← Daily Brief for ${formatDate(story.brief_date)}]({{ '/briefs/${story.brief_date}/' | relative_url }})
 
@@ -139,7 +140,7 @@ ${image ? `![${story.image.alt}](${image})\n\n` : ''}**Summary:** ${story.summar
 
 **Why it matters:** ${story.why_it_matters || 'See the dated edition for the original analysis.'}
 
-${renderSeriesImplications(story)}${action}
+${renderSeriesImplications(story,story.brief_date)}${renderBookReading(story.story_id,story.brief_date)}${action}
 
 **Source:** ${source ? trackedLink(source,story.source_title || story.source_organization || 'Original source',story.story_id,story.brief_date,'source_clicks',story.content_type === 'Video') : 'Source retained in the dated edition.'}${feedbackEnabled ? `
 
@@ -346,7 +347,7 @@ ${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,
 
 **Connection to the brief:** ${slot.connection}
 
-${renderSeriesImplications(slot)}
+${renderSeriesImplications(slot,briefDate)}
 
 **Coverage:** ${slot.coverage_note}
 
@@ -354,7 +355,7 @@ ${renderSeriesImplications(slot)}
 
 **Listen / watch:** ${slot.platforms.map(p => trackedLink(p.url,p.name,slot.item_id,briefDate,'source_clicks',true)).join(' · ')}
 
-${renderInlineFeedback({brief_date:briefDate,story_id:slot.item_id,feedback_subject:'podcast'})}`;
+${renderInlineFeedback({brief_date:briefDate,story_id:slot.item_id,feedback_subject:'podcast'})}${renderBookReading(slot.item_id,briefDate)}`;
 }
 
 export const absoluteItemUrl = url => /^https:\/\//.test(url) ? url : `${PUBLIC_BASE}${url}`;
@@ -362,10 +363,10 @@ export function trackedLink(url,title,id,date,action,newTab=false) {
   const href=/^https:\/\//.test(url)?xml(url):`{{ '${url}' | relative_url }}`;
   return `<a href="${href}" data-item-id="${xml(id)}" data-edition-date="${xml(date)}" data-action="${action}"${newTab?' target="_blank" rel="noopener noreferrer"':''}>${xml(title)}</a>`;
 }
-export function renderSeriesImplications(item) {
+export function renderSeriesImplications(item, briefDate = item.brief_date) {
   const rows=item.series_implications || [];
   const metadata=`<span class="story-editorial-note" data-george-implication="${xml(item.george_implication || '')}" hidden></span>`;
-  if(!rows.length)return metadata;
+  if(!rows.length || readerRelease(briefDate))return metadata;
   const entry=x=>`<p><strong>${xml(x.book_title)}</strong> — Proposed update: ${xml(x.proposed_change)} ${xml(x.evidence_reason)} Teaching asset: ${xml(x.teaching_asset)}</p>`;
   return `${metadata}\n\n### Evolving the Generative AI Professional Series\n\n${rows.slice(0,2).map(entry).join('\n')}${rows.length>2?`<details><summary>More proposed book updates</summary>${rows.slice(2).map(entry).join('')}</details>`:''}`;
 }

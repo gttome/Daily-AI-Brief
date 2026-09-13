@@ -6,6 +6,7 @@ image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/imag
 permalink: /stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/
 brief_date: 2026-09-12
 story_id: dab-story-2026-09-12-4f7c9a21
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -26,11 +27,9 @@ story_id: dab-story-2026-09-12-4f7c9a21
 
 **Why it matters:** The engineering pattern is verification inside the review harness: several perspectives can inspect a change and execute checks before presenting one consolidated result. GitHub reports that its ensemble experiment increased addressed comments per review by 47% for high-severity findings, 31% for medium, and 11% for low while reducing cost about 8%; these are vendor experiments, not independent measures of defect-removal accuracy.
 
-<span class="story-editorial-note" data-george-implication="Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI</strong> — Proposed update: Add an agent-review architecture that separates tool evidence, ensemble synthesis, unresolved findings, and human acceptance. GitHub’s release makes executable verification a visible part of the review harness. Teaching asset: A pull-request exercise comparing prose review with test-backed review evidence.</p>
+<span class="story-editorial-note" data-george-implication="Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof." hidden></span><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>For background on why a team of agents still needs a final verification step before its work is accepted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 

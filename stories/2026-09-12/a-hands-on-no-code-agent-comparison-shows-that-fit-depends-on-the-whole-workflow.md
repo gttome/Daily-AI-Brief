@@ -6,6 +6,7 @@ image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/imag
 permalink: /stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/
 brief_date: 2026-09-12
 story_id: dab-story-2026-09-12-f0397b5d
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -27,10 +28,6 @@ story_id: dab-story-2026-09-12-f0397b5d
 **Why it matters:** A low-code canvas does not remove engineering tradeoffs: the meaningful unit is an end-to-end workflow with permissions, observability, error paths, review, and a cost model. The article mixes direct testing with vendor documentation, was updated September 11 while some tabular data carries older timestamps, and should guide a proof-of-concept rather than declare a universal winner.
 
 <span class="story-editorial-note" data-george-implication="Choose one realistic consulting or publishing workflow and run it through two builders with the same acceptance test. Compare setup effort, visible traces, recovery from a failed tool, human approval, portability, and operating cost before selecting a platform." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Generative AI Prompt Engineering Learning Ecosystem</strong> — Proposed update: Add a platform-selection lab based on one identical workflow and explicit acceptance criteria. The comparison shows that visual ease is only one part of agent-system fit. Teaching asset: A two-builder scorecard covering setup, traceability, failure recovery, review, portability, and cost.</p>
 
 ## What to do now
 

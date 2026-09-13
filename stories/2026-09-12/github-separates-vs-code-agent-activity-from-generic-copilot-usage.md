@@ -6,6 +6,7 @@ image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/imag
 permalink: /stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/
 brief_date: 2026-09-12
 story_id: dab-story-2026-09-12-8b2e61d4
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -27,10 +28,6 @@ story_id: dab-story-2026-09-12-8b2e61d4
 **Why it matters:** Agent adoption needs a defined measurement boundary. GitHub explicitly separates the dedicated Agents window from editor Agent Mode and generic usage rollups, which reduces misleading comparisons. These fields measure activity, not task quality, business value, safety, or correctness, and access depends on enabled policy and authorized roles.
 
 <span class="story-editorial-note" data-george-implication="For consulting dashboards, label the surface, time window, population, and missing-data semantics. Pair adoption counts with completed-work evidence, review outcomes, and qualitative failure notes before drawing an ROI conclusion." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI</strong> — Proposed update: Extend the measurement chapter with a four-layer model: surface activity, task completion, quality, and business outcome. GitHub’s fields show why agent-window usage must not be conflated with value. Teaching asset: A metric-classification worksheet with null and missing-data cases.</p>
 
 ## What to do now
 
