@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="{{ '/assets/css/archive.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/feedback.css?v=' | append: site.github.build_revision | relative_url }}">
     <style>.reader-footer-links{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem}.site-footer-owner{margin:0 0 .6rem}.reader-footer-links a:focus-visible{outline:3px solid #1260b0;outline-offset:4px}</style>
-    <link rel="stylesheet" href="{{ '/assets/css/watchlist.css?v=1' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/watchlist.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/header.css?v=1' | relative_url }}">
     {% if page.reader_release %}<link rel="stylesheet" href="{{ '/assets/css/reader-release.css?v=' | append: site.github.build_revision | relative_url }}">{% endif %}
     {% include head-custom.html %}
@@ -71,10 +71,10 @@
         </nav>
       </footer>
     </main>
-    <script type="module" src="{{ '/assets/js/watchlist.js?v=1' | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/watchlist.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/audience.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/share.js?v=' | append: site.github.build_revision | relative_url }}"></script>
-    <script defer src="{{ '/assets/js/archive.js?v=' | append: site.github.build_revision | relative_url }}"></script>
+    <script type="module" src="{{ '/assets/js/archive.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/analytics.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/feedback.js?v=' | append: site.github.build_revision | relative_url }}"></script>
     <script defer src="{{ '/assets/js/comments.js?v=' | append: site.github.build_revision | relative_url }}"></script>

@@ -196,40 +196,47 @@ export function archiveIndex(stories) {
 }
 
 export function renderArchiveSearch(stories) {
-  const editions = [...new Set(stories.map(story => story.brief_date))].length;
+  const dates = [...new Set(stories.map(story => story.brief_date))].sort().reverse();
   return `---
 layout: default
-title: Briefs Archive
+title: Brief Archive
 permalink: /briefs-archive/
-description: Search and filter the Daily Generative AI Brief archive.
+description: Find a complete daily edition or an individual article, video, or podcast.
 ---
 
-# Search the Daily AI Brief Archive
-
-Search ${stories.length} items across ${editions} recent editions. Existing dated-brief URLs remain unchanged.
-
-<div class="archive-controls" role="search" aria-label="Daily AI Brief archive filters">
-  <label>Search <input id="archive-query" type="search" placeholder="Podcast, company, topic, or headline"></label>
-  <label>From <input id="archive-from" type="date"></label>
-  <label>To <input id="archive-to" type="date"></label>
-  <label>Focus <select id="archive-focus"><option value="">All focus areas</option></select></label>
-  <label>Evidence <select id="archive-evidence"><option value="">All evidence classes</option></select></label>
-  <label>Status <select id="archive-status"><option value="">All availability states</option></select></label>
-  <label>Trend <select id="archive-trend"><option value="">All trends</option></select></label>
-  <button id="archive-reset" type="button">Reset</button>
+<div class="archive-browser">
+<p>Find a complete daily edition or an individual article, video, or podcast.</p>
+<div class="archive-view-switch" role="tablist" aria-label="Archive view" hidden><button id="archive-items-tab" type="button" role="tab" aria-selected="true" aria-controls="archive-items-panel">Individual items</button><button id="archive-editions-tab" type="button" role="tab" aria-selected="false" aria-controls="archive-editions-panel" tabindex="-1">Complete editions</button></div>
+<div class="archive-controls archive-dates" hidden><label>From <input id="archive-from" type="date"></label><label>To <input id="archive-to" type="date"></label><button id="archive-reset" type="button">Reset filters</button></div>
+<p id="archive-date-error" role="alert" hidden>Choose a “To” date on or after the “From” date.</p>
+<section id="archive-items-panel" role="tabpanel" aria-labelledby="archive-items-tab">
+<div class="archive-controls archive-item-controls" role="search" aria-label="Daily AI Brief archive filters" hidden>
+  <label>Find an item <input id="archive-query" type="search" placeholder="Topic, company, or headline"></label>
+  <label>Content type <select id="archive-type"><option value="">All types</option><option value="Article">Articles</option><option value="Video">Videos</option><option value="Podcast">Podcasts</option></select></label>
+  <details class="archive-advanced"><summary>More filters<span id="archive-advanced-active"></span></summary><div class="archive-controls">
+    <label>Focus <select id="archive-focus"><option value="">All focus areas</option></select></label>
+    <label>Evidence <select id="archive-evidence"><option value="">All evidence classes</option></select></label>
+    <label>Availability <select id="archive-status"><option value="">All availability states</option></select></label>
+    <label>Trend <select id="archive-trend"><option value="">All trends</option></select></label>
+  </div></details>
 </div>
-
 <p id="archive-result-count" role="status" aria-live="polite">${stories.length} items</p>
-
+<div id="archive-empty" hidden><h2>No matching items</h2><p>Try a broader date range, a different content type, or fewer filters.</p><button id="archive-clear" type="button">Clear all filters</button></div>
 <div id="archive-results" class="archive-results">
-${stories.map(story => `<article class="archive-story"><p class="archive-story-meta">${formatDate(story.brief_date)} · ${story.content_type || 'Article'} · ${focusLabels[story.focus] || label(story.focus)}</p><h2>${trackedLink(story.permanent_url,story.headline,story.story_id,story.brief_date,'permanent_page_clicks')}</h2><p>${xml(story.summary || '')}</p></article>`).join('\n')}
+${stories.map(story => `<article class="archive-story"><p class="archive-story-meta"><span class="archive-type">${story.content_type || 'Article'}</span> ${formatDate(story.brief_date)} · ${focusLabels[story.focus] || label(story.focus)}</p><h2>${trackedLink(story.permanent_url,story.headline,story.story_id,story.brief_date,'permanent_page_clicks')}</h2><p>${xml(story.summary || '')}</p><a class="archive-edition-link" href="{{ '/briefs/${story.brief_date}/' | relative_url }}">Read the complete ${formatDate(story.brief_date)} edition →</a></article>`).join('\n')}
 </div>
-
-<noscript><p>Search and filters require JavaScript. The complete chronological archive remains listed below.</p></noscript>
-
-## Editions
-
-${[...new Set(stories.map(story => story.brief_date))].map(date => `- [Daily Generative AI Brief - ${formatDate(date)}]({{ '/briefs/${date}/' | relative_url }})`).join('\n')}
+</section>
+<noscript><p>Interactive filters require JavaScript. Individual items and complete editions remain available below and above.</p></noscript>
+<section id="archive-editions-panel" role="tabpanel" aria-labelledby="archive-editions-tab">
+<h2 id="editions">Complete editions</h2>
+<p id="archive-edition-count" role="status" aria-live="polite">${dates.length} complete editions</p>
+<p>Date filters apply here. Item search and type filters apply only to Individual items.</p>
+<div id="archive-editions">
+${dates.map(date => `<article class="archive-story" data-archive-edition="${date}"><h3><a href="{{ '/briefs/${date}/' | relative_url }}">${formatDate(date)}</a></h3><p>Open the full daily brief, including its editorial context and media availability notes.</p><button type="button" data-archive-show-date="${date}" hidden>Show archived items from this edition</button></article>`).join('\n')}
+</div>
+<p id="archive-editions-empty" hidden>No editions match these dates. Reset the filters to see all editions.</p>
+</section>
+</div>
 
 [← Back to Home]({{ '/' | relative_url }})
 `;

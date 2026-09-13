@@ -1,5 +1,6 @@
 import fs from 'node:fs';
-export const WEIGHTS={novelty:20,evidence:25,independence:15,momentum:15,relevance:15,durability:10};
+import {WEIGHTS} from '../../assets/js/watchlist-evidence.js';
+export {WEIGHTS};
 export function scoreTopic(t){return Math.round(Object.entries(WEIGHTS).reduce((n,[k,w])=>n+w*(t.rubric[k].score??0)/5,0));}
 export function validateWatchlist(data){
  const errors=[],ids=new Set();

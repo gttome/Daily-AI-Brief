@@ -92,3 +92,12 @@ The owner reviewed https://daily-ai-brief-review.gtome.chatgpt.site and explicit
 - Use one series invitation per edition and disclose that George Tome is the author and curator. Do not introduce prices, discount promises, paid API automation or extra services. Future book-update ideas remain in canonical `series_implications`; no Command Center queue or purchase attribution is implemented in this release.
 - Book-click measurement and sales attribution remain later decisions. Preserve existing analytics and never treat navigation counts as sales.
 - Generate and test the edition plus corresponding permanent article/media pages. Each later visible change still requires a frozen before/after comparison and owner approval before production. This approval covers the first reviewed release only.
+
+## Approved watchlist and archive release — September 13, 2026
+
+The owner reviewed the second private comparison at https://daily-ai-brief-review.gtome.chatgpt.site/next and approved production with “I love these changes they are approved.” This approval covers the watchlist evidence presentation and archive navigation shown there.
+
+- Keep watchlist topic IDs, weights, editorial scores, recorded evidence dates, interest choices, copy links, pagination, refresh and sorting. Source links, review scope and check dates are visible on each card; the expanded explanation shows the existing weighted calculation and unknown momentum. The shared evidence renderer also builds the no-JavaScript research page. Presentation changes are not a fresh source verification.
+- Generate the archive's individual-item and complete-edition views, content-type selector, retained advanced filters, date-range validation and per-item edition links. Keep stable item IDs and permanent URLs. Empty media slots are not manufactured into archive items; full editions retain their availability notes.
+- Preserve existing analytics semantics and transports. No new reader identity, purchase attribution, paid runner, subscription service, schedule, or Command Center change is part of this release.
+- Later visual changes continue through a new preview and owner approval. The original September 12 snapshots remain unchanged.
