@@ -6,6 +6,7 @@ image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/imag
 permalink: /stories/2026-09-12/cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai/
 brief_date: 2026-09-12
 story_id: dab-story-2026-09-12-2d8f70b6
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -27,10 +28,6 @@ story_id: dab-story-2026-09-12-2d8f70b6
 **Why it matters:** Incomplete retrieval can look comprehensive, so cross-platform grounding is both an architecture and user-interface problem: permissions, provenance, missing-source signals, and human completeness checks must travel with the answer. The article is vendor-authored product analysis and provides scenarios, not independent comparative accuracy evidence.
 
 <span class="story-editorial-note" data-george-implication="In consulting and education, ask teams to map where decisions, commitments, and source documents actually live. A useful agent design should show what it searched, what it could not access, and what a reviewer must still check." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Add a cross-platform grounding diagram with accessible, inaccessible, and provenance-carrying context paths. The practitioner scenarios make silent retrieval incompleteness concrete. Teaching asset: A source-map exercise for one recurring executive briefing.</p>
 
 ## What to do now
 

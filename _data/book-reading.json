@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "references": {
+    "reliable-verification": {
+      "id": "reliable-verification",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 3, section 3.3.3",
+      "section_title": "Verification as the Final Gate",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-13",
+      "full_text_reviewed": false
+    },
+    "context-quality-checklist": {
+      "id": "context-quality-checklist",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 3",
+      "section_title": "Designing High-Quality Contexts",
+      "practice_title": "Quick Reference: Context Quality Checklist",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-13",
+      "full_text_reviewed": false
+    },
+    "reliable-trust": {
+      "id": "reliable-trust",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 4, section 4.1.2",
+      "section_title": "Managing Expectations and Calibrating Trust",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-13",
+      "full_text_reviewed": false
+    }
+  },
+  "editions": {
+    "2026-09-12": [
+      {
+        "item_id": "dab-story-2026-09-12-4f7c9a21",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "For background on why a team of agents still needs a final verification step before its work is accepted."
+      },
+      {
+        "item_id": "dab-video-2026-09-12-agent-skills",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Use the context-quality framework as background for deciding what instructions and references an agent skill should contain.",
+        "practice": "Already own the book? Review your skill with “Quick Reference: Context Quality Checklist” in Chapter 3."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-12-ai-risk-specificity",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "A background reference for approaching confident AI claims with calibrated trust. This recommendation does not validate the episode’s numerical risk estimate."
+      }
+    ]
+  }
+}

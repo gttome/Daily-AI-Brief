@@ -17,14 +17,15 @@
     <style>.reader-footer-links{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem}.site-footer-owner{margin:0 0 .6rem}.reader-footer-links a:focus-visible{outline:3px solid #1260b0;outline-offset:4px}</style>
     <link rel="stylesheet" href="{{ '/assets/css/watchlist.css?v=1' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/header.css?v=1' | relative_url }}">
+    {% if page.reader_release %}<link rel="stylesheet" href="{{ '/assets/css/reader-release.css?v=' | append: site.github.build_revision | relative_url }}">{% endif %}
     {% include head-custom.html %}
   </head>
-  <body data-brief-date="{{ page.brief_date | default: '' }}" data-story-id="{{ page.story_id | default: '' }}" data-baseurl="{{ site.baseurl }}">
+  <body class="{% if page.reader_release %}reader-release{% endif %}" data-brief-date="{{ page.brief_date | default: '' }}" data-story-id="{{ page.story_id | default: '' }}" data-baseurl="{{ site.baseurl }}">
     <a id="skip-to-content" href="#content">Skip to the content.</a>
 
     <header class="page-header research-ledger-header" role="banner">
       <div class="ledger-navigation">
-        <a href="{{ '/' | relative_url }}" class="ledger-brand">The Daily AI Brief</a>
+        <a href="{{ '/' | relative_url }}" class="ledger-brand">The Daily Generative AI Brief</a>
         <nav class="ledger-primary-nav" aria-label="Primary navigation">
           <ul>
             <li><a href="{{ '/' | relative_url }}">Home</a></li>
@@ -40,8 +41,8 @@
       <div class="ledger-masthead">
         <div class="ledger-title-block">
           <p class="ledger-kicker">Independent curation · Primary-source evidence</p>
-          <h1 class="project-name">{{ page.title | default: site.title | default: site.github.repository_name }}</h1>
-          <p class="project-tagline">{{ page.description | default: site.description | default: site.github.project_tagline }}</p>
+          <h1 class="project-name">{% if page.reader_release and page.story_id == nil %}The Daily Generative AI Brief{% else %}{{ page.title | default: site.title | default: site.github.repository_name }}{% endif %}</h1>
+          <p class="project-tagline">{% if page.reader_release and page.story_id == nil %}Useful developments. Clear evidence. Practical next steps.{% else %}{{ page.description | default: site.description | default: site.github.project_tagline }}{% endif %}</p>
         </div>
         <div class="ledger-edition" aria-label="Publication context">
           {% if page.brief_date %}
@@ -61,7 +62,7 @@
       {{ content }}
 
       <footer class="site-footer">
-        <p class="site-footer-owner">Daily AI Brief · Curated by George Tome</p>
+        <p class="site-footer-owner">The Daily Generative AI Brief · Curated by George Tome</p>
         <nav aria-label="Publication footer" class="reader-footer-links">
           <a href="{{ '/' | relative_url }}">Today’s Brief</a>
           <a href="{{ '/briefs-archive/' | relative_url }}">Browse the Archive</a>

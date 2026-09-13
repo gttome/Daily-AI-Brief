@@ -6,6 +6,7 @@ image: ""
 permalink: /videos/2026-09-12/agent-skills/
 brief_date: 2026-09-12
 story_id: dab-video-2026-09-12-agent-skills
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -24,7 +25,9 @@ story_id: dab-video-2026-09-12-agent-skills
 
 **Why it matters:** It provides background for the Mastra filesystem-skills story without requiring software-framework expertise.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality framework as background for deciding what instructions and references an agent skill should contain.</p><p class="practice"><strong>Put it into practice:</strong> Already own the book? Review your skill with “Quick Reference: Context Quality Checklist” in Chapter 3.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **Source:** <a href="https://www.youtube.com/watch?v=5vTdpYVPUyI" data-item-id="dab-video-2026-09-12-agent-skills" data-edition-date="2026-09-12" data-action="source_clicks" target="_blank" rel="noopener noreferrer">ErrorFixer</a>
 

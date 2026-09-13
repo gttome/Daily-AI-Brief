@@ -127,6 +127,7 @@ function parseWorthWatching(markdown) {
 
 export function importLegacyMarkdown(markdown, repoRoot, sourceCommit = null) {
   const body = stripFrontmatter(markdown)
+    .replace(/<!-- reader-release:start -->[\s\S]*?<!-- reader-release:end -->/g, '')
     .replace(/<a\s+href="([^"]+)"[^>]*>([^<]*)<\/a>/g,(_,url,title)=>`[${title.replaceAll('&amp;','&')}](${url.replaceAll('&amp;','&')})`)
     .replaceAll('**Original commentary:**', '**For George’s work:**')
     .replace(/\n\n### Evolving the Generative AI Professional Series\n[\s\S]*?(?=\n\n\*\*(?:What to do now|Source):)/g,'')

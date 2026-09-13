@@ -3,9 +3,11 @@
 **Published:** September 12, 2026  
 **Coverage period:** Primary-source and practitioner developments published September 10–11, 2026.
 
+<!-- reader-release:start -->
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-12-4f7c9a21">Copilot: verification inside code review</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-8b2e61d4">GitHub: measure agent activity separately</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-c16a53ef">Gemini: AI beside your desktop work</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-2d8f70b6">Workplace AI: find missing context</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-6ae3c942">Mastra: shared skills and permissions</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-f0397b5d">No-code agents: test the whole workflow</a><span>Article</span></li><li><a href="#general">5 Minute AI News</a><span>Video · 4:53</span></li><li><a href="#agents-for-non-technical-people">Agent Skills: structure and progressive disclosure</a><span>Video · 7:09</span></li><li><a href="#worth-listening--podcast">AI risk claims and evidence quality</a><span>Podcast</span></li></ol></section>
+<!-- reader-release:end -->
 
-
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<span id="reading-dab-story-2026-09-12-4f7c9a21"></span>
 
 ## 1. Copilot code review adds tool-backed verification and an agent ensemble
 
@@ -28,11 +30,9 @@
 
 **Why it matters:** The engineering pattern is verification inside the review harness: several perspectives can inspect a change and execute checks before presenting one consolidated result. GitHub reports that its ensemble experiment increased addressed comments per review by 47% for high-severity findings, 31% for medium, and 11% for low while reducing cost about 8%; these are vendor experiments, not independent measures of defect-removal accuracy.
 
-<span class="story-editorial-note" data-george-implication="Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI</strong> — Proposed update: Add an agent-review architecture that separates tool evidence, ensemble synthesis, unresolved findings, and human acceptance. GitHub’s release makes executable verification a visible part of the review harness. Teaching asset: A pull-request exercise comparing prose review with test-backed review evidence.</p>
+<span class="story-editorial-note" data-george-implication="Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof." hidden></span><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>For background on why a team of agents still needs a final verification step before its work is accepted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Test the verification loop:** Compare a bounded pull-request set with and without executable checks, then inspect false positives and missed defects.
 
@@ -44,6 +44,8 @@
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
+
+<span id="reading-dab-story-2026-09-12-8b2e61d4"></span>
 
 ## 2. GitHub separates VS Code agent activity from generic Copilot usage
 
@@ -68,10 +70,6 @@
 
 <span class="story-editorial-note" data-george-implication="For consulting dashboards, label the surface, time window, population, and missing-data semantics. Pair adoption counts with completed-work evidence, review outcomes, and qualitative failure notes before drawing an ROI conclusion." hidden></span>
 
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI</strong> — Proposed update: Extend the measurement chapter with a four-layer model: surface activity, task completion, quality, and business outcome. GitHub’s fields show why agent-window usage must not be conflated with value. Teaching asset: A metric-classification worksheet with null and missing-data cases.</p>
-
 **What to do now — Separate activity from outcomes:** Instrument agent surfaces distinctly and add task-quality measures before interpreting adoption.
 
 **Source:** <a href="https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/" data-item-id="dab-story-2026-09-12-8b2e61d4" data-edition-date="2026-09-12" data-action="source_clicks">Add VS Code Agents to Copilot usage metrics</a>
@@ -82,6 +80,8 @@
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
+
+<span id="reading-dab-story-2026-09-12-c16a53ef"></span>
 
 ## 3. Gemini for Windows brings a keyboard-first AI layer to desktop work
 
@@ -106,10 +106,6 @@
 
 <span class="story-editorial-note" data-george-implication="Prototype one repeatable book-research or workshop-preparation task with a narrow source set. Record what context was used, verify citations and claims, and keep the final publishing decision outside the assistant." hidden></span>
 
-### Evolving the Generative AI Professional Series
-
-<p><strong>Generative AI Professional Prompt Engineering Guide</strong> — Proposed update: Add a desktop-assistant pattern that begins with deliberate context selection and ends with verification and approval. The Windows release places AI beside everyday applications rather than inside a single document. Teaching asset: A short context-boundary checklist for desktop prompts.</p>
-
 **What to do now — Pilot one desktop workflow:** Use a bounded task and document context, verification, and final approval before expanding use.
 
 **Source:** <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/" data-item-id="dab-story-2026-09-12-c16a53ef" data-edition-date="2026-09-12" data-action="source_clicks">The Gemini app is now available for Windows</a>
@@ -120,6 +116,8 @@
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
+
+<span id="reading-dab-story-2026-09-12-2d8f70b6"></span>
 
 ## 4. Cross-platform grounding is the hidden requirement for workplace AI
 
@@ -144,10 +142,6 @@
 
 <span class="story-editorial-note" data-george-implication="In consulting and education, ask teams to map where decisions, commitments, and source documents actually live. A useful agent design should show what it searched, what it could not access, and what a reviewer must still check." hidden></span>
 
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Add a cross-platform grounding diagram with accessible, inaccessible, and provenance-carrying context paths. The practitioner scenarios make silent retrieval incompleteness concrete. Teaching asset: A source-map exercise for one recurring executive briefing.</p>
-
 **What to do now — Map the missing context:** Inventory source systems, permissions, provenance, and blind-spot disclosures before trusting cross-work summaries.
 
 **Source:** <a href="https://www.zoom.com/en/blog/why-ai-driven-work-requires-cross-platform-collaboration-insight/" data-item-id="dab-story-2026-09-12-2d8f70b6" data-edition-date="2026-09-12" data-action="source_clicks">AI that only sees one platform is guessing about the rest</a>
@@ -158,6 +152,8 @@
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
+
+<span id="reading-dab-story-2026-09-12-6ae3c942"></span>
 
 ## 5. Mastra moves reusable Agent Skills into shared filesystem workspaces
 
@@ -184,10 +180,6 @@
 
 <span class="story-editorial-note" data-george-implication="Package one stable research or publishing procedure as a small skill with instructions, references, and an optional reviewed script. Test the same skill with two agents, keep the writable scope narrow, and assign a human owner for updates." hidden></span>
 
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Extend the reusable-skill pattern from portable packages to governed shared stores with discovery, mounts, version ownership, and sandboxed scripts. Mastra’s implementation exposes the operational boundary between reading a skill and executing its code. Teaching asset: A permission-mapping lab for a shared research skill.</p>
-
 **What to do now — Share one bounded skill:** Mount one reviewed skill read-only, test search behavior, and require approval before any script execution.
 
 **Source:** <a href="https://mastra.ai/blog/introducing-filesystem-skills" data-item-id="dab-story-2026-09-12-6ae3c942" data-edition-date="2026-09-12" data-action="source_clicks">Introducing Filesystem Skills for Mastra Workspaces</a>
@@ -198,6 +190,8 @@
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
+
+<span id="reading-dab-story-2026-09-12-f0397b5d"></span>
 
 ## 6. A hands-on no-code agent comparison shows that fit depends on the whole workflow
 
@@ -221,10 +215,6 @@
 **Why it matters:** A low-code canvas does not remove engineering tradeoffs: the meaningful unit is an end-to-end workflow with permissions, observability, error paths, review, and a cost model. The article mixes direct testing with vendor documentation, was updated September 11 while some tabular data carries older timestamps, and should guide a proof-of-concept rather than declare a universal winner.
 
 <span class="story-editorial-note" data-george-implication="Choose one realistic consulting or publishing workflow and run it through two builders with the same acceptance test. Compare setup effort, visible traces, recovery from a failed tool, human approval, portability, and operating cost before selecting a platform." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Generative AI Prompt Engineering Learning Ecosystem</strong> — Proposed update: Add a platform-selection lab based on one identical workflow and explicit acceptance criteria. The comparison shows that visual ease is only one part of agent-system fit. Teaching asset: A two-builder scorecard covering setup, traceability, failure recovery, review, portability, and cost.</p>
 
 **What to do now — Run a two-builder fit test:** Use one workflow, identical acceptance criteria, an injected failure, and total operating effort to compare platforms.
 
@@ -283,7 +273,9 @@
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
-</div>
+</div><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality framework as background for deciding what instructions and references an agent skill should contain.</p><p class="practice"><strong>Put it into practice:</strong> Already own the book? Review your skill with “Quick Reference: Context Quality Checklist” in Chapter 3.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## Worth Listening — Podcast
 
@@ -308,10 +300,6 @@
 
 <span class="story-editorial-note" data-george-implication="Use a short segment in executive education to practice turning a sweeping risk statement into testable assumptions, affected decisions, and proportionate controls." hidden></span>
 
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI</strong> — Proposed update: Add an evidence-calibration exercise for dramatic future-risk claims. The episode distinguishes attention, incentives, mechanisms, uncertainty, and actionable interventions. Teaching asset: A worksheet that rewrites one sweeping claim as testable assumptions and safeguards.</p>
-
 **Coverage:** Selected from the registered podcast-source review after identity, freshness, relevance, and novelty checks.
 
 **Evidence:** Practitioner analysis. Publisher episode page, show notes, transcript markers, host, and date were checked. The page did not expose a reliable exact total runtime, and podcast duration has no cap; discussion and cited opinions are not treated as empirical prevalence evidence.
@@ -323,8 +311,20 @@
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
-</div>
+</div><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>A background reference for approaching confident AI claims with calibrated trust. This recommendation does not validate the episode’s numerical risk estimate.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## Editorial takeaway
 
 Today’s useful pattern is boundary clarity: reviews need executable evidence, metrics need named surfaces, desktop assistants need deliberate context, workplace synthesis needs visible blind spots, shared skills need mount and sandbox controls, and no-code agents need end-to-end acceptance tests.
+
+<!-- reader-release:start -->
+<aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning. Explore George Tome’s books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Written by the curator of this brief. Buying a book supports his work.</p></aside>
+<!-- reader-release:end --><!-- reader-release:start -->
+<details class="watchlist-fold"><summary>Emerging AI Watchlist · explore after the brief</summary>
+
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+
+</details>
+<!-- reader-release:end -->

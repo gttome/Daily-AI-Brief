@@ -6,6 +6,7 @@ image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/imag
 permalink: /stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/
 brief_date: 2026-09-12
 story_id: dab-story-2026-09-12-6ae3c942
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -27,10 +28,6 @@ story_id: dab-story-2026-09-12-6ae3c942
 **Why it matters:** This separates reusable procedure from the model and from application deployment, while keeping storage mounts and executable authority explicit. It also introduces operational obligations: version and review skill changes, restrict mounts, control who may edit shared stores, and treat script execution as a higher-risk capability. The evidence is product documentation, not an independent reliability evaluation.
 
 <span class="story-editorial-note" data-george-implication="Package one stable research or publishing procedure as a small skill with instructions, references, and an optional reviewed script. Test the same skill with two agents, keep the writable scope narrow, and assign a human owner for updates." hidden></span>
-
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI Context Engineering</strong> — Proposed update: Extend the reusable-skill pattern from portable packages to governed shared stores with discovery, mounts, version ownership, and sandboxed scripts. Mastra’s implementation exposes the operational boundary between reading a skill and executing its code. Teaching asset: A permission-mapping lab for a shared research skill.</p>
 
 ## What to do now
 

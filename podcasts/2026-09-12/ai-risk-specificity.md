@@ -6,6 +6,7 @@ image: ""
 permalink: /podcasts/2026-09-12/ai-risk-specificity/
 brief_date: 2026-09-12
 story_id: dab-podcast-2026-09-12-ai-risk-specificity
+reader_release: true
 ---
 
 [← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/2026-09-12/' | relative_url }})
@@ -31,10 +32,6 @@ story_id: dab-podcast-2026-09-12-ai-risk-specificity
 
 <span class="story-editorial-note" data-george-implication="Use a short segment in executive education to practice turning a sweeping risk statement into testable assumptions, affected decisions, and proportionate controls." hidden></span>
 
-### Evolving the Generative AI Professional Series
-
-<p><strong>Reliable Generative AI</strong> — Proposed update: Add an evidence-calibration exercise for dramatic future-risk claims. The episode distinguishes attention, incentives, mechanisms, uncertainty, and actionable interventions. Teaching asset: A worksheet that rewrites one sweeping claim as testable assumptions and safeguards.</p>
-
 **Coverage:** Selected from the registered podcast-source review after identity, freshness, relevance, and novelty checks.
 
 **Evidence:** Practitioner analysis. Publisher episode page, show notes, transcript markers, host, and date were checked. The page did not expose a reliable exact total runtime, and podcast duration has no cap; discussion and cited opinions are not treated as empirical prevalence evidence.
@@ -46,6 +43,8 @@ story_id: dab-podcast-2026-09-12-ai-risk-specificity
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
-</div>
+</div><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>A background reference for approaching confident AI claims with calibrated trust. This recommendation does not validate the episode’s numerical risk estimate.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 [← Back to Home]({{ '/' | relative_url }})

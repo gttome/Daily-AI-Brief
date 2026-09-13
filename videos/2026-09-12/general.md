@@ -6,6 +6,7 @@ image: ""
 permalink: /videos/2026-09-12/general/
 brief_date: 2026-09-12
 story_id: dab-video-2026-09-12-general
+reader_release: true
 ---
 
 [← Daily Brief for September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }})

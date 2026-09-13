@@ -1,3 +1,4 @@
+import {readerRelease, readerAddition, renderBookReading, renderSeriesInvitation, renderEditionOverview, validateBookReading} from './book-reading.mjs';
 import {watchlistPreview} from './watchlist.mjs';
 import {publicAnalyticsEvidence} from './analytics.mjs';
 import fs from 'node:fs';
@@ -12,7 +13,7 @@ function label(value) {
 }
 
 function renderStory(story, briefDate) {
-  return `## ${story.ordinal}. ${story.headline}
+  return `${readerRelease(briefDate)?`<span id="reading-${story.story_id}"></span>\n\n`:""}## ${story.ordinal}. ${story.headline}
 
 **Focus: ${FOCUS[story.focus]}**
 
@@ -30,7 +31,7 @@ ${story.source.evidence_type ? `**Evidence:** ${label(story.source.evidence_type
 
 **Why it matters:** ${story.why_it_matters}
 
-${renderSeriesImplications(story)}${story.what_to_do_now ? `
+${renderSeriesImplications(story, briefDate)}${renderBookReading(story.story_id, briefDate)}${story.what_to_do_now ? `
 
 **What to do now — ${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : ''}
 
@@ -63,22 +64,23 @@ ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',
 
 **Why it matters:** ${slot.connection}
 
-${renderSeriesImplications(slot)}${slot.series_implications?.length ? '\n\n' : ''}**Source:** ${trackedLink(slot.url,'Watch on YouTube',`dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
+${renderSeriesImplications(slot, briefDate)}${slot.series_implications?.length ? '\n\n' : ''}**Source:** ${trackedLink(slot.url,'Watch on YouTube',`dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
 
 ${renderInlineFeedback({
     brief_date: briefDate,
     story_id: `dab-video-${briefDate}-${slotId}`,
     feedback_subject: 'video'
-  })}`;
+  })}${renderBookReading(`dab-video-${briefDate}-${slotId}`,briefDate)}`;
 }
 
 export function renderBody(edition) {
+  validateBookReading(edition);
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
 **Coverage period:** ${edition.coverage_period}
 
-${watchlistPreview(edition.brief_date)}${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\n')}
+${readerRelease(edition.brief_date)?renderEditionOverview(edition)+'\n\n':watchlistPreview(edition.brief_date)}${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\n')}
 
 ## Worth Watching
 
@@ -88,7 +90,9 @@ ${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_n
 
 ${edition.podcast ? renderPodcast(edition.podcast, edition.brief_date) + '\n\n' : ''}## Editorial takeaway
 
-${edition.editorial_takeaway}`;
+${edition.editorial_takeaway}
+
+${renderSeriesInvitation(edition.brief_date)}${readerRelease(edition.brief_date)?readerAddition(`<details class="watchlist-fold"><summary>Emerging AI Watchlist · explore after the brief</summary>${watchlistPreview(edition.brief_date)}</details>`):''}`;
 }
 
 export function renderDated(edition) {
@@ -97,7 +101,7 @@ layout: default
 title: "Daily Generative AI Brief - ${formatDate(edition.brief_date)}"
 permalink: /briefs/${edition.brief_date}/
 brief_date: ${edition.brief_date}
----`;
+${readerRelease(edition.brief_date)?'reader_release: true\n':''}---`;
   const body = renderBody(edition);
   const firstBreak = body.indexOf('\n\n## 1.');
   const withTopNavigation = `${body.slice(0, firstBreak)}\n\n[← Home]({{ '/' | relative_url }}) · [Briefs Archive]({{ '/briefs-archive/' | relative_url }})${body.slice(firstBreak)}`;
@@ -109,7 +113,7 @@ export function renderLatest(edition) {
 }
 
 export function renderIndex(edition) {
-  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n---\n\n${renderBody(edition)}\n\n${renderSubscriptionCard()}\n`;
+  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n${readerRelease(edition.brief_date)?'reader_release: true\n':''}---\n\n${renderBody(edition)}\n\n${renderSubscriptionCard()}\n`;
 }
 
 export function renderArchive(repoRoot, currentDate) {
