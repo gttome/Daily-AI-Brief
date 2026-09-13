@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "candidate_set_id": "dab-candidates-2026-09-13-71d3a6c2",
+  "brief_date": "2026-09-13",
+  "generated_at": "2026-09-13T12:00:00Z",
+  "candidates": [
+    {
+      "candidate_id": "dab-candidate-2026-09-13-01", "focus": "technical_ai_engineering", "headline": "Ruby’s documentation pipeline exposes a containment gap for web-research agents", "selected": true, "selected_ordinal": 1,
+      "source": {"url": "https://rubyhack.ai/", "normalized_url": "https://rubyhack.ai/", "evidence_type": "independent_evaluation", "availability_status": "reported"},
+      "score": {"significance": 5, "freshness": 5, "authority": 4, "evidence_quality": 4, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 33, "rationale": "Fresh incident evidence exposes an agent-triggered execution boundary and documents concrete containment repairs while preserving attribution uncertainty."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Best current technical case for sandbox, egress, secret, and audit controls.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-02", "focus": "technical_ai_engineering", "headline": "Bengio frames agent deception as a goal-optimization problem", "selected": true, "selected_ordinal": 2,
+      "source": {"url": "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating", "normalized_url": "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating", "evidence_type": "practitioner_analysis", "availability_status": "not_applicable"},
+      "score": {"significance": 5, "freshness": 4, "authority": 5, "evidence_quality": 3, "novelty": 4, "practical_value": 5, "category_fit": 5, "total": 31, "rationale": "Authoritative expert synthesis converts recent agent failures into testable hypotheses about goal conflict, reward hacking, and monitoring."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Strongest current safety-engineering explanation with conjecture clearly labeled.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-03", "focus": "applied_genai_knowledge_workers", "headline": "Shopify says coding agents changed the economics of building twice", "selected": true, "selected_ordinal": 3,
+      "source": {"url": "https://shopify.engineering/back-to-native", "normalized_url": "https://shopify.engineering/back-to-native", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 5, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 33, "rationale": "A production case shows coding agents changing an architecture tradeoff while shared specifications, tests, and review remain central."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Best applied example of AI changing the cost structure of knowledge work.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-04", "focus": "applied_genai_knowledge_workers", "headline": "A route-planning experiment shows the practical ceiling of one-prompt AI work", "selected": true, "selected_ordinal": 4,
+      "source": {"url": "https://simonwillison.net/2026/Sep/12/astra-running-routes/", "normalized_url": "https://simonwillison.net/2026/Sep/12/astra-running-routes/", "evidence_type": "practitioner_analysis", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 5, "authority": 4, "evidence_quality": 4, "novelty": 5, "practical_value": 5, "category_fit": 5, "total": 32, "rationale": "A reproducible practitioner example combines research, geospatial data, code, and interactive presentation while retaining verification limits."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Strong practical bridge from research to interactive decision aid.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-05", "focus": "agents_non_technical_people", "headline": "Boomi packages integration expertise as portable Agent Skills", "selected": true, "selected_ordinal": 5,
+      "source": {"url": "https://boomi.com/platform/companion/", "normalized_url": "https://boomi.com/platform/companion/", "evidence_type": "official_documentation", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 5, "authority": 5, "evidence_quality": 4, "novelty": 4, "practical_value": 5, "category_fit": 5, "total": 32, "rationale": "Current documentation shows portable skill packages, natural-language building, and existing platform governance for citizen integrators."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Chosen as the edition’s sole reusable Agent Skills story.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-06", "focus": "agents_non_technical_people", "headline": "Microsoft offers three practical rungs into agent building", "selected": true, "selected_ordinal": 6,
+      "source": {"url": "https://www.microsoft.com/en-us/events/local-events/microsoft-agent-a-thon", "normalized_url": "https://www.microsoft.com/en-us/events/local-events/microsoft-agent-a-thon", "evidence_type": "official_announcement", "availability_status": "announced"},
+      "score": {"significance": 4, "freshness": 5, "authority": 5, "evidence_quality": 4, "novelty": 4, "practical_value": 5, "category_fit": 5, "total": 32, "rationale": "An official current program offers explicit no-code, connected-workflow, and production-grade learning paths."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": "Most accessible fresh path for non-technical readers to build and govern agents.", "rejection_reason": null, "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-07", "focus": "technical_ai_engineering", "headline": "OpenAI adds Agents SDK examples for Amazon Bedrock AgentCore", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://github.com/openai/openai-cookbook", "normalized_url": "https://github.com/openai/openai-cookbook", "evidence_type": "official_repository", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 5, "authority": 5, "evidence_quality": 4, "novelty": 3, "practical_value": 4, "category_fit": 5, "total": 29, "rationale": "Fresh official examples improve interoperability, but the change is narrower than the selected containment and evaluation stories."},
+      "novelty_check": {"disposition": "material_update", "matches": ["OpenAI Agents API"], "prior_story_ids": ["dab-story-2026-09-11-8a71a280"], "what_changed": "New cookbook examples add a Bedrock AgentCore deployment path."}, "selection_rationale": null, "rejection_reason": "Rejected because it extends a story covered two days ago without enough additional consequence for a second slot.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-08", "focus": "technical_ai_engineering", "headline": "Dario Amodei calls for pacing frontier AI development", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.darioamodei.com/post/we-must-pace-the-frontier", "normalized_url": "https://www.darioamodei.com/post/we-must-pace-the-frontier", "evidence_type": "practitioner_analysis", "availability_status": "proposed"},
+      "score": {"significance": 5, "freshness": 5, "authority": 5, "evidence_quality": 2, "novelty": 4, "practical_value": 2, "category_fit": 3, "total": 26, "rationale": "High-profile proposal is current and consequential but provides policy argument rather than a directly testable engineering development."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected in favor of Bengio’s more operational causal analysis and concrete evaluation implications.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-09", "focus": "technical_ai_engineering", "headline": "Trigora proposes durable agent execution without replay", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.trigora.ai/blog/durable-execution-without-replay", "normalized_url": "https://www.trigora.ai/blog/durable-execution-without-replay", "evidence_type": "official_announcement", "availability_status": "beta"},
+      "score": {"significance": 3, "freshness": 3, "authority": 4, "evidence_quality": 3, "novelty": 4, "practical_value": 4, "category_fit": 5, "total": 26, "rationale": "A useful long-running-agent pattern, but evidence and adoption remain vendor-specific and less current."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because stronger fresh incident and safety evidence filled the technical allocation.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-10", "focus": "technical_ai_engineering", "headline": "GitHub Copilot review adds tool-backed checks", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/", "normalized_url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/", "evidence_type": "official_changelog", "availability_status": "general_availability"},
+      "score": {"significance": 5, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 0, "practical_value": 5, "category_fit": 5, "total": 28, "rationale": "Strong development but identical to yesterday’s lead technical story."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": ["normalized source identity"], "prior_story_ids": ["dab-story-2026-09-12-4f7c9a21"], "what_changed": "No material change since September 12 coverage."}, "selection_rationale": null, "rejection_reason": "Rejected as a direct 30-day duplicate without a material update.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-11", "focus": "applied_genai_knowledge_workers", "headline": "AlphaGenome Atlas opens predictions for nine billion variants", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/", "normalized_url": "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/", "evidence_type": "official_announcement", "availability_status": "research"},
+      "score": {"significance": 5, "freshness": 2, "authority": 5, "evidence_quality": 4, "novelty": 5, "practical_value": 2, "category_fit": 2, "total": 25, "rationale": "Important primary research resource with large scale, but clinical validation and immediate knowledge-worker fit are limited."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because it is older and less aligned with George’s immediate work than the selected applied cases.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-12", "focus": "applied_genai_knowledge_workers", "headline": "Apple Reference Image introduces signed capture provenance", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.theverge.com/tech/992766/apple-iphone-18-pro-reference-image", "normalized_url": "https://www.theverge.com/tech/992766/apple-iphone-18-pro-reference-image", "evidence_type": "authoritative_reporting", "availability_status": "announced"},
+      "score": {"significance": 4, "freshness": 4, "authority": 3, "evidence_quality": 3, "novelty": 5, "practical_value": 4, "category_fit": 4, "total": 27, "rationale": "Promising provenance feature, but the accessible evidence was secondary and availability is tied to future hardware and regional limits."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because no direct Apple technical source was verified and deployment limitations remain material.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-13", "focus": "applied_genai_knowledge_workers", "headline": "OpenAI Academy releases three short teacher workflows", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://academy.openai.com/", "normalized_url": "https://academy.openai.com/", "evidence_type": "official_documentation", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 3, "practical_value": 5, "category_fit": 5, "total": 29, "rationale": "Fresh, practical official education demonstrations with exact runtimes, but better suited to the media slots than a top-six story."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected as a story and selected instead as two Worth Watching items.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-14", "focus": "applied_genai_knowledge_workers", "headline": "Gemini for Windows brings AI into desktop workflows", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/", "normalized_url": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 0, "practical_value": 5, "category_fit": 5, "total": 27, "rationale": "Useful product release but already covered in the September 12 edition."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": ["normalized source identity"], "prior_story_ids": ["dab-story-2026-09-12-c16a53ef"], "what_changed": "No material change since September 12 coverage."}, "selection_rationale": null, "rejection_reason": "Rejected as a direct duplicate.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-15", "focus": "applied_genai_knowledge_workers", "headline": "WeatherNext 3 expands probabilistic weather forecasting", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://deepmind.google/discover/blog/weathernext-3/", "normalized_url": "https://deepmind.google/discover/blog/weathernext-3/", "evidence_type": "official_announcement", "availability_status": "research"},
+      "score": {"significance": 5, "freshness": 1, "authority": 5, "evidence_quality": 4, "novelty": 4, "practical_value": 2, "category_fit": 2, "total": 23, "rationale": "Strong scientific development, but outside the preferred time window and not directly actionable for the standing focus."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected for freshness and category fit.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-16", "focus": "agents_non_technical_people", "headline": "Mastra stores reusable Agent Skills in filesystem workspaces", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://mastra.ai/blog/introducing-filesystem-skills", "normalized_url": "https://mastra.ai/blog/introducing-filesystem-skills", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 4, "freshness": 4, "authority": 4, "evidence_quality": 4, "novelty": 0, "practical_value": 5, "category_fit": 5, "total": 26, "rationale": "Strong reusable-skill design but covered yesterday."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": ["normalized source identity", "filesystem Agent Skills"], "prior_story_ids": ["dab-story-2026-09-12-6ae3c942"], "what_changed": "No material change since September 12 coverage."}, "selection_rationale": null, "rejection_reason": "Rejected as a direct duplicate; the new Boomi implementation supplies today’s single skills slot.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-17", "focus": "agents_non_technical_people", "headline": "A no-code agent comparison emphasizes end-to-end workflow fit", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://aimultiple.com/no-code-ai-agent-builders", "normalized_url": "https://aimultiple.com/no-code-ai-agent-builders", "evidence_type": "independent_evaluation", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 4, "authority": 3, "evidence_quality": 3, "novelty": 0, "practical_value": 5, "category_fit": 5, "total": 23, "rationale": "Practical comparative evidence, but it was covered yesterday and has no new test results."},
+      "novelty_check": {"disposition": "approved_repeat", "matches": ["normalized source identity"], "prior_story_ids": ["dab-story-2026-09-12-f0397b5d"], "what_changed": "No material change since September 12 coverage."}, "selection_rationale": null, "rejection_reason": "Rejected as a direct duplicate.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-18", "focus": "agents_non_technical_people", "headline": "Frontier Transformation Week offers guided AI adoption sessions", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.microsoft.com/en-us/events/frontier-transformation-week", "normalized_url": "https://www.microsoft.com/en-us/events/frontier-transformation-week", "evidence_type": "official_announcement", "availability_status": "announced"},
+      "score": {"significance": 3, "freshness": 5, "authority": 5, "evidence_quality": 3, "novelty": 3, "practical_value": 4, "category_fit": 4, "total": 27, "rationale": "Current guided adoption event, but less specific to building and governing agents than the selected Agent-a-Thon tracks."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected because the Agent-a-Thon provides clearer tools, levels, and outcomes from the same source.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-19", "focus": "agents_non_technical_people", "headline": "MindStudio promotes reusable skills for business agents", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://www.mindstudio.ai/blog", "normalized_url": "https://www.mindstudio.ai/blog", "evidence_type": "official_announcement", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 4, "authority": 4, "evidence_quality": 2, "novelty": 3, "practical_value": 4, "category_fit": 5, "total": 25, "rationale": "Relevant accessible skills concept, but evidence was more promotional and less technically specific than Boomi’s documentation."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected for weaker evidence and because exactly one Agent Skills story is allowed.", "learning_adjustment": null
+    },
+    {
+      "candidate_id": "dab-candidate-2026-09-13-20", "focus": "agents_non_technical_people", "headline": "OpenAI Academy demonstrates scheduled teacher tasks", "selected": false, "selected_ordinal": null,
+      "source": {"url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers", "normalized_url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers", "evidence_type": "official_documentation", "availability_status": "general_availability"},
+      "score": {"significance": 3, "freshness": 4, "authority": 5, "evidence_quality": 4, "novelty": 3, "practical_value": 5, "category_fit": 5, "total": 29, "rationale": "Highly accessible two-minute workflow with exact runtime, but too narrow for a top-six story."},
+      "novelty_check": {"disposition": "new", "matches": [], "prior_story_ids": [], "what_changed": null}, "selection_rationale": null, "rejection_reason": "Rejected as a story and selected instead for the non-technical video slot.", "learning_adjustment": null
+    }
+  ]
+}

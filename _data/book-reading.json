@@ -54,6 +54,26 @@
         "label": "READ DEEPER",
         "why": "A background reference for approaching confident AI claims with calibrated trust. This recommendation does not validate the episode’s numerical risk estimate."
       }
+    ],
+    "2026-09-13": [
+      {
+        "item_id": "dab-story-2026-09-13-91c7e2a4",
+        "reference_id": "reliable-verification",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted."
+      },
+      {
+        "item_id": "dab-story-2026-09-13-a62e9c74",
+        "reference_id": "context-quality-checklist",
+        "label": "READ DEEPER",
+        "why": "The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations."
+      },
+      {
+        "item_id": "dab-story-2026-09-13-f7b1249e",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill."
+      }
     ]
   }
 }

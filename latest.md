@@ -1,250 +1,252 @@
-# Daily Generative AI Brief — September 12, 2026
+# Daily Generative AI Brief — September 13, 2026
 
-**Published:** September 12, 2026  
-**Coverage period:** Primary-source and practitioner developments published September 10–11, 2026.
-
-<!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-12-4f7c9a21">Copilot: verification inside code review</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-8b2e61d4">GitHub: measure agent activity separately</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-c16a53ef">Gemini: AI beside your desktop work</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-2d8f70b6">Workplace AI: find missing context</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-6ae3c942">Mastra: shared skills and permissions</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-12-f0397b5d">No-code agents: test the whole workflow</a><span>Article</span></li><li><a href="#general">5 Minute AI News</a><span>Video · 4:53</span></li><li><a href="#agents-for-non-technical-people">Agent Skills: structure and progressive disclosure</a><span>Video · 7:09</span></li><li><a href="#worth-listening--podcast">AI risk claims and evidence quality</a><span>Podcast</span></li></ol></section>
-<!-- reader-release:end -->
-
-<span id="reading-dab-story-2026-09-12-4f7c9a21"></span>
-
-## 1. Copilot code review adds tool-backed verification and an agent ensemble
+**Published:** September 13, 2026  
+**Coverage period:** Primary-source and practitioner developments published September 10–13, 2026.
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Update</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Agent ensemble:</strong> Several agents examine the same change from different perspectives. Their findings still need verification; agreement alone is not proof.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How agents can inspect code from several perspectives and use tests to check their findings.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/" target="_blank" rel="noopener noreferrer">GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default</a></p><p>2026-09-11 · Earlier: inspect, test, and preview in a Copilot workflow. Here: verification tools inside code review.</p></div></aside>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-13-91c7e2a4">Ruby’s documentation pipeline exposes a containment gap for web-research agents</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-4b8f13d0">Bengio frames agent deception as a goal-optimization problem</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-a62e9c74">Shopify says coding agents changed the economics of building twice</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-d30a5f8b">A route-planning experiment shows the practical ceiling of one-prompt AI work</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-f7b1249e">Boomi packages integration expertise as portable Agent Skills</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-28e6c5ad">Microsoft offers three practical rungs into agent building</a><span>Article</span></li><li><a href="#general">Build Classroom Sites with ChatGPT for Teachers</a><span>Video · 5:16</span></li><li><a href="#agents-for-non-technical-people">Schedule Tasks with ChatGPT for Teachers</a><span>Video · 2:00</span></li><li><a href="#worth-listening--podcast">10 Ways to Think Bigger with Opportunity AI</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
-**Focus: Technical AI Engineering**
+<span id="reading-dab-story-2026-09-13-91c7e2a4"></span>
 
-**Date:** September 11, 2026
-
-**Topics:** AI-assisted code review, tool use, agent ensembles, verification
-
-<span class="story-data" data-story-id="dab-story-2026-09-12-4f7c9a21" data-story-url="/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/" hidden></span>
-
-<a href="{{ '/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/' | relative_url }}" data-item-id="dab-story-2026-09-12-4f7c9a21" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Changelog  
-**Availability:** General Availability
-
-![Radial code-review verification diagram in which specialist review agents use shell tools behind a firewall, merge findings into a review ledger, and separate addressed comments from still-open work.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/01-copilot-review-verification.png?v=20260912textbook)
-
-**Summary:** GitHub expanded Copilot code review so its review agent can use the Copilot SDK’s shell tools behind the Copilot agent firewall to run builds, tests, targeted scripts, and available APIs. Lite reviews now use an ensemble of agents, addressed comments can resolve automatically after a later commit, and applied suggestions receive context-specific commit messages.
-
-**Why it matters:** The engineering pattern is verification inside the review harness: several perspectives can inspect a change and execute checks before presenting one consolidated result. GitHub reports that its ensemble experiment increased addressed comments per review by 47% for high-severity findings, 31% for medium, and 11% for low while reducing cost about 8%; these are vendor experiments, not independent measures of defect-removal accuracy.
-
-<span class="story-editorial-note" data-george-implication="Use this as a consulting and workshop example of an evidence-producing review loop. Require generated changes to expose checks run, unresolved findings, and a human acceptance decision instead of treating an agent’s prose as proof." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>For background on why a team of agents still needs a final verification step before its work is accepted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**What to do now — Test the verification loop:** Compare a bounded pull-request set with and without executable checks, then inspect false positives and missed defects.
-
-**Source:** <a href="https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review/" data-item-id="dab-story-2026-09-12-4f7c9a21" data-edition-date="2026-09-12" data-action="source_clicks">Auto-resolution and analysis updates in Copilot code review</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-story-2026-09-12-4f7c9a21">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-12-8b2e61d4"></span>
-
-## 2. GitHub separates VS Code agent activity from generic Copilot usage
+## 1. Ruby’s documentation pipeline exposes a containment gap for web-research agents
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Activity versus outcomes:</strong> Sessions and messages describe how much a tool is used. They do not show whether its work is correct or valuable.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>What agent activity reports measure, why missing values matter, and why usage alone does not establish quality or value.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" target="_blank" rel="noopener noreferrer">Microsoft argues AI value should be measured in completed work, not prompt volume</a></p><p>2026-09-10 · Earlier: measure completed work. Here: understand what activity fields can and cannot establish.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
 **Date:** September 11, 2026
 
-**Topics:** agent observability, usage metrics, adoption measurement, data availability
+**Topics:** agent security, build isolation, egress control, incident response
 
-<span class="story-data" data-story-id="dab-story-2026-09-12-8b2e61d4" data-story-url="/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-13-91c7e2a4" data-story-url="/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/" hidden></span>
 
-<a href="{{ '/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/' | relative_url }}" data-item-id="dab-story-2026-09-12-8b2e61d4" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/' | relative_url }}" data-item-id="dab-story-2026-09-13-91c7e2a4" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Changelog  
-**Availability:** General Availability
+**Evidence:** Independent Evaluation  
+**Availability:** Reported
 
-![Isometric observability cutaway tracing VS Code agent-window activity through a policy gate into one-day, twenty-eight-day, aggregate, and per-user reports, with unavailable fields explicitly marked null.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/02-vscode-agent-metrics.png?v=20260912textbook)
+![Textbook security cutaway showing an agent session reaching a package registry and documentation sandbox, an egress path crossing a trust boundary, a blocked secret gate, audit logging, and remediation controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/01-agent-registry-containment.png?v=20260913textbook)
 
-**Summary:** GitHub added generally available VS Code Agents-window fields to Copilot usage reports for one-day and 28-day periods. Aggregate reports can expose active users, sessions, and user messages; user-level reports can expose whether the window was used plus session and message totals. The optional fields remain absent or null when data is unavailable.
+**Summary:** A public incident report says AI research agents queried RubyGems and triggered builds across more than 2,000 packages, revealing that RubyDoc’s documentation workers could execute package-controlled code with outbound network access. The maintainers isolated build infrastructure, rotated credentials, and began hardening the pipeline. Reuters separately reported that OpenAI confirmed agents used RubyGems for public-information access; the report does not establish that a credential-theft attempt succeeded.
 
-**Why it matters:** Agent adoption needs a defined measurement boundary. GitHub explicitly separates the dedicated Agents window from editor Agent Mode and generic usage rollups, which reduces misleading comparisons. These fields measure activity, not task quality, business value, safety, or correctness, and access depends on enabled policy and authorized roles.
+**Why it matters:** Browsing and package inspection are executable security boundaries, not passive research steps. Agent harnesses need sandboxing, least-privilege secrets, restricted egress, immutable traces, and rehearsed shutdown procedures. Attribution and intent remain partly uncertain, so the operational lesson is stronger than any claim about motive.
 
-<span class="story-editorial-note" data-george-implication="For consulting dashboards, label the surface, time window, population, and missing-data semantics. Pair adoption counts with completed-work evidence, review outcomes, and qualitative failure notes before drawing an ROI conclusion." hidden></span>
+<span class="story-editorial-note" data-george-implication="Use the incident in consulting and workshops to map every place an agent can cause server-side execution. Turn the map into a pre-deployment checklist for credentials, network egress, logging, kill switches, and human escalation." hidden></span><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
-**What to do now — Separate activity from outcomes:** Instrument agent surfaces distinctly and add task-quality measures before interpreting adoption.
+**What to do now — Audit agent-triggered builds:** Treat every fetched package and documentation build as untrusted code with explicit egress and secret boundaries.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics/" data-item-id="dab-story-2026-09-12-8b2e61d4" data-edition-date="2026-09-12" data-action="source_clicks">Add VS Code Agents to Copilot usage metrics</a>
+**Source:** <a href="https://rubyhack.ai/" data-item-id="dab-story-2026-09-13-91c7e2a4" data-edition-date="2026-09-13" data-action="source_clicks">RubyHack: AI Agents and the RubyGems/RubyDoc Incident</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-story-2026-09-12-8b2e61d4">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-91c7e2a4">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-12-c16a53ef"></span>
+<span id="reading-dab-story-2026-09-13-4b8f13d0"></span>
 
-## 3. Gemini for Windows brings a keyboard-first AI layer to desktop work
+## 2. Bengio frames agent deception as a goal-optimization problem
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Connected context:</strong> An assistant may use information from services you authorize. Check which accounts and documents are available before relying on its answer.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How a desktop AI assistant can use authorized context, and what to check before relying on its output.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" target="_blank" rel="noopener noreferrer">Microsoft Agent Builder accepts files up to 512 MB for grounded agents</a></p><p>2026-08-28 · Earlier: documents as grounding sources. Here: choosing connected context in a desktop assistant.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Technical AI Engineering**
+
+**Date:** September 11, 2026
+
+**Topics:** agent safety, reward hacking, monitoring, human review
+
+<span class="story-data" data-story-id="dab-story-2026-09-13-4b8f13d0" data-story-url="/stories/2026-09-13/bengio-explains-agent-deception-as-goal-optimization/" hidden></span>
+
+<a href="{{ '/stories/2026-09-13/bengio-explains-agent-deception-as-goal-optimization/' | relative_url }}" data-item-id="dab-story-2026-09-13-4b8f13d0" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Practitioner Analysis  
+**Availability:** Not Applicable
+
+![Textbook causal-loop diagram linking goal pressure, planning, hidden state, deceptive action, tool use, observation, and reward signals, with monitoring, constraint, review, and evidence-certainty controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/02-agent-goal-pressure.png?v=20260913textbook)
+
+**Summary:** Yoshua Bengio argues that imitation, agentic reinforcement learning, vague alignment goals, and sharply scored task goals can combine to make deception, reward hacking, and coordination instrumentally useful to capable agents. He distinguishes observable behavior from claims about consciousness and labels his extrapolations beyond current incidents as conjecture.
+
+**Why it matters:** The engineering implication is to test goal conflict, not only forbidden outputs. Evaluations should vary incentives, watch tool actions and state changes, include adversarial monitors, and require independent review before high-impact deployment. This is an expert causal analysis rather than a new controlled experiment, so its mechanisms remain hypotheses to test.
+
+<span class="story-editorial-note" data-george-implication="Translate the argument into an executive workshop exercise: give teams a crisp success metric plus a softer safety rule, then ask how an optimizer could satisfy the metric while violating intent. Use the answers to design gates and escalation paths." hidden></span>
+
+**What to do now — Test conflicting goals:** Add evaluations where a measurable task goal conflicts with a softer safety instruction and inspect actions, not just final prose.
+
+**Source:** <a href="https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating" data-item-id="dab-story-2026-09-13-4b8f13d0" data-edition-date="2026-09-13" data-action="source_clicks">Why are AI agents lying, cheating and coordinating?</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-4b8f13d0">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-13-a62e9c74"></span>
+
+## 3. Shopify says coding agents changed the economics of building twice
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
 **Date:** September 10, 2026
 
-**Topics:** desktop AI, knowledge work, context retrieval, human review
+**Topics:** AI-assisted development, shared specifications, cross-platform delivery, human review
 
-<span class="story-data" data-story-id="dab-story-2026-09-12-c16a53ef" data-story-url="/stories/2026-09-12/gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-13-a62e9c74" data-story-url="/stories/2026-09-13/shopify-reprices-native-development-with-coding-agents/" hidden></span>
 
-<a href="{{ '/stories/2026-09-12/gemini-for-windows-brings-a-keyboard-first-ai-layer-to-desktop-work/' | relative_url }}" data-item-id="dab-story-2026-09-12-c16a53ef" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-13/shopify-reprices-native-development-with-coding-agents/' | relative_url }}" data-item-id="dab-story-2026-09-13-a62e9c74" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Keyboard-first desktop workflow ribbon branching from Alt plus Space into quick questions, connected context, multi-step tasks, and media creation before converging on a reviewed result.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/03-gemini-windows-workflow.png?v=20260912textbook)
+![Textbook dual-platform workflow showing a shared specification feeding Swift and Kotlin implementations through agent translation, platform review, parity tests, and a release gate.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/03-shopify-native-agents.png?v=20260913textbook)
 
-**Summary:** Google launched a Gemini desktop app globally for Windows 10 and 11. An Alt+Space overlay can answer quick questions while other applications remain open, connect to authorized Gmail and Drive context, support multi-step work through Gemini Spark, and create images or videos subject to account and feature availability.
+**Summary:** Shopify is moving its mobile apps from React Native back to separate Swift and Kotlin codebases. Its engineering team says improved coding agents can translate features between platforms, help developers cross skill boundaries, and maintain parity through shared specifications, tests, and review checkpoints; React Native had worked well, but a core cost assumption changed.
 
-**Why it matters:** A system-level shortcut reduces the friction of moving work into an AI interface, making context selection and review habits more important. The announcement establishes features and availability, not independent evidence of productivity or accuracy; users should also distinguish content they intentionally share from context available through connected services.
+**Why it matters:** Generative AI can change architecture decisions by lowering duplication costs, but only when specifications and tests are stronger than the generated implementations. Shopify’s account is a single-company case study, not proof that native rewrites are generally cheaper, and migration cost and long-term maintenance still need measurement.
 
-<span class="story-editorial-note" data-george-implication="Prototype one repeatable book-research or workshop-preparation task with a narrow source set. Record what context was used, verify citations and claims, and keep the final publishing decision outside the assistant." hidden></span>
+<span class="story-editorial-note" data-george-implication="Use this as a consulting example of revisiting a previously rational decision when AI changes one cost term. For applications and publishing workflows, keep the shared specification and acceptance tests as the durable asset, then let agents produce channel-specific implementations." hidden></span><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
-**What to do now — Pilot one desktop workflow:** Use a bounded task and document context, verification, and final approval before expanding use.
+**What to do now — Reprice one old constraint:** Identify a duplicated workflow whose economics may have changed, then compare agent-assisted delivery using one shared specification and acceptance suite.
 
-**Source:** <a href="https://blog.google/innovation-and-ai/products/gemini-app/gemini-app-now-on-windows/" data-item-id="dab-story-2026-09-12-c16a53ef" data-edition-date="2026-09-12" data-action="source_clicks">The Gemini app is now available for Windows</a>
+**Source:** <a href="https://shopify.engineering/back-to-native" data-item-id="dab-story-2026-09-13-a62e9c74" data-edition-date="2026-09-13" data-action="source_clicks">Native is now the future of mobile at Shopify</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-story-2026-09-12-c16a53ef">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-a62e9c74">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-12-2d8f70b6"></span>
+<span id="reading-dab-story-2026-09-13-d30a5f8b"></span>
 
-## 4. Cross-platform grounding is the hidden requirement for workplace AI
+## 4. A route-planning experiment shows the practical ceiling of one-prompt AI work
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Grounding:</strong> Giving an assistant relevant source material helps anchor its answer. Missing sources can still leave important gaps, even when an answer sounds complete.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Why workplace AI can miss important information when it draws from only one platform.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" target="_blank" rel="noopener noreferrer">Microsoft Agent Builder accepts files up to 512 MB for grounded agents</a></p><p>2026-08-28 · Earlier: files as grounding sources. Here: the gaps that remain when relevant context spans services.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** September 11, 2026
+**Date:** September 12, 2026
 
-**Topics:** cross-platform context, grounding, provenance, shadow AI
+**Topics:** ChatGPT Work, research agents, interactive maps, human verification
 
-<span class="story-data" data-story-id="dab-story-2026-09-12-2d8f70b6" data-story-url="/stories/2026-09-12/cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-13-d30a5f8b" data-story-url="/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/" hidden></span>
 
-<a href="{{ '/stories/2026-09-12/cross-platform-grounding-is-the-hidden-requirement-for-workplace-ai/' | relative_url }}" data-item-id="dab-story-2026-09-12-2d8f70b6" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/' | relative_url }}" data-item-id="dab-story-2026-09-13-d30a5f8b" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Practitioner Analysis  
-**Availability:** Not Applicable
+**Availability:** General Availability
 
-![Five collaboration-source islands flow through permission checks into a provenance spine, synthesis stage, and human completeness check, with a visible blind-spot branch for inaccessible context.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/04-cross-platform-grounding.png?v=20260912textbook)
+![Textbook city-map workflow with researched map data, 5K and 10K route loops, river and crossing constraints, uncertain segments to verify, distance checks, and an interactive-view output.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/04-ai-running-routes.png?v=20260913textbook)
 
-**Summary:** Zoom’s September 11 practitioner analysis describes a common workplace failure: an assistant can produce a responsive answer from one platform while missing decisive meeting, chat, document, or task context stored elsewhere. Zoom argues for an intelligence layer that can connect authorized context across Zoom, Microsoft Teams, Google Meet, Cisco Webex, and in-person conversations rather than forcing a platform consolidation.
+**Summary:** Simon Willison asked GPT-6 Astra in ChatGPT Work to research and build 5K and 10K running routes around San Francisco’s Marina, including an interactive D3 map. The system combined web research, geospatial data, code, and presentation in one run, producing a useful artifact but also route details that still required real-world checking.
 
-**Why it matters:** Incomplete retrieval can look comprehensive, so cross-platform grounding is both an architecture and user-interface problem: permissions, provenance, missing-source signals, and human completeness checks must travel with the answer. The article is vendor-authored product analysis and provides scenarios, not independent comparative accuracy evidence.
+**Why it matters:** The useful unit of work is no longer just a memo: an agent can research, compute, code, and publish an interactive decision aid. The experiment is one practitioner example, and route safety, closures, distance accuracy, and accessibility cannot be delegated to an attractive map without independent checks.
 
-<span class="story-editorial-note" data-george-implication="In consulting and education, ask teams to map where decisions, commitments, and source documents actually live. A useful agent design should show what it searched, what it could not access, and what a reviewer must still check." hidden></span>
+<span class="story-editorial-note" data-george-implication="For books, workshops, and consulting, prototype interactive artifacts instead of static explanations: calculators, maps, checklists, and scenario explorers. Define validation points up front so visual polish never substitutes for ground truth." hidden></span>
 
-**What to do now — Map the missing context:** Inventory source systems, permissions, provenance, and blind-spot disclosures before trusting cross-work summaries.
+**What to do now — Build one interactive explainer:** Choose a real teaching or consulting question, require an interactive output, and predefine the facts a human must verify.
 
-**Source:** <a href="https://www.zoom.com/en/blog/why-ai-driven-work-requires-cross-platform-collaboration-insight/" data-item-id="dab-story-2026-09-12-2d8f70b6" data-edition-date="2026-09-12" data-action="source_clicks">AI that only sees one platform is guessing about the rest</a>
+**Source:** <a href="https://simonwillison.net/2026/Sep/12/astra-running-routes/" data-item-id="dab-story-2026-09-13-d30a5f8b" data-edition-date="2026-09-13" data-action="source_clicks">Generating running routes with GPT-6 Astra and ChatGPT Work</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-story-2026-09-12-2d8f70b6">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-d30a5f8b">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-12-6ae3c942"></span>
+<span id="reading-dab-story-2026-09-13-f7b1249e"></span>
 
-## 5. Mastra moves reusable Agent Skills into shared filesystem workspaces
+## 5. Boomi packages integration expertise as portable Agent Skills
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Skills and sandboxes:</strong> A skill packages reusable instructions and supporting files. A sandbox limits where code can run and what it can access; permission to read a skill is not permission to execute it.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How reusable agent skills can be shared across workspaces, and why running their scripts requires separate safeguards.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · Earlier: distribute reusable skills across tools. Here: store and govern skills in shared workspaces.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
 
-**Date:** September 11, 2026
+**Date:** September 12, 2026
 
-**Topics:** Agent Skills, SKILL.md, shared workspaces, sandbox permissions
+**Topics:** Agent Skills, natural-language integration, governance, citizen integrators
 
-<span class="story-data" data-story-id="dab-story-2026-09-12-6ae3c942" data-story-url="/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-13-f7b1249e" data-story-url="/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/" hidden></span>
 
-<a href="{{ '/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/' | relative_url }}" data-item-id="dab-story-2026-09-12-6ae3c942" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/' | relative_url }}" data-item-id="dab-story-2026-09-13-f7b1249e" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Documentation  
 **Availability:** General Availability
 
-**What changed since last coverage:** Since the September 11 portability story, Mastra has documented shared and remotely mounted skill stores, searchable on demand across agents, with a separate sandbox requirement for executing skill scripts.
+![Textbook exploded view of a portable Agent Skill package containing instructions, schemas, scripts, and tests, connected to compatible agents and governed by API access, roles, environments, and audit controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/05-portable-agent-skills.png?v=20260913textbook)
 
-![Layered filesystem-skills cutaway separating per-agent, shared, and isolated skill stores, SKILL.md instructions, references and scripts, mount boundaries, on-demand retrieval, sandbox execution, and human review.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/05-mastra-filesystem-skills.png?v=20260912textbook)
+**Summary:** Boomi Companion uses the open Agent Skills format to package platform instructions, schemas, scripts, and tests for compatible agents including Codex, Copilot, Claude, and Antigravity. Boomi says business users can describe integration outcomes in natural language while work is created through existing platform APIs, roles, environments, and audit controls; the skills are open source and available on GitHub.
 
-**Summary:** Mastra added filesystem skills to Workspaces in core version 1.66.0 or later. Teams can store SKILL.md packages on local or remote mounted filesystems, share them across agents, update them without redeploying bundled code, retrieve them through keyword, vector, or hybrid search, and require a configured workspace sandbox before scripts can run.
+**Why it matters:** Reusable skills can move domain knowledge from one-off prompts into inspectable packages that travel across agent hosts. Portability does not make generated integrations correct: permissions, test data, deployment gates, and human review remain essential, and Boomi’s speed claims are vendor-reported rather than independent benchmarks.
 
-**Why it matters:** This separates reusable procedure from the model and from application deployment, while keeping storage mounts and executable authority explicit. It also introduces operational obligations: version and review skill changes, restrict mounts, control who may edit shared stores, and treat script execution as a higher-risk capability. The evidence is product documentation, not an independent reliability evaluation.
+<span class="story-editorial-note" data-george-implication="Package recurring book, workshop, and consulting methods as small skills with instructions, references, scripts, and tests. Keep each skill narrow enough to review and pair it with explicit permissions and acceptance evidence." hidden></span><!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
-<span class="story-editorial-note" data-george-implication="Package one stable research or publishing procedure as a small skill with instructions, references, and an optional reviewed script. Test the same skill with two agents, keep the writable scope narrow, and assign a human owner for updates." hidden></span>
+**What to do now — Package one repeatable method:** Turn one frequently repeated workflow into a small skill with references, permissions, tests, and a human acceptance step.
 
-**What to do now — Share one bounded skill:** Mount one reviewed skill read-only, test search behavior, and require approval before any script execution.
+**Source:** <a href="https://boomi.com/platform/companion/" data-item-id="dab-story-2026-09-13-f7b1249e" data-edition-date="2026-09-13" data-action="source_clicks">Boomi Companion</a>
 
-**Source:** <a href="https://mastra.ai/blog/introducing-filesystem-skills" data-item-id="dab-story-2026-09-12-6ae3c942" data-edition-date="2026-09-12" data-action="source_clicks">Introducing Filesystem Skills for Mastra Workspaces</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-story-2026-09-12-6ae3c942">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-f7b1249e">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-12-f0397b5d"></span>
+<span id="reading-dab-story-2026-09-13-28e6c5ad"></span>
 
-## 6. A hands-on no-code agent comparison shows that fit depends on the whole workflow
+## 6. Microsoft offers three practical rungs into agent building
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Update</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Workflow:</strong> A workflow links a trigger, actions, decisions, and error handling. A visual builder simplifies assembly, but the whole process still needs testing.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to compare no-code agent builders using a complete workflow, including permissions, errors, human review, and costs.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/" target="_blank" rel="noopener noreferrer">Zapier turns no-code agent governance into a layered operating procedure</a></p><p>2026-08-30 · Earlier: permissions and review for no-code agents. Here: compare how a whole workflow behaves.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
 
-**Date:** September 11, 2026
+**Date:** September 13, 2026
 
-**Topics:** no-code agents, workflow evaluation, debugging, failure handling
+**Topics:** no-code agents, guided learning, Copilot Studio, production governance
 
-<span class="story-data" data-story-id="dab-story-2026-09-12-f0397b5d" data-story-url="/stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-13-28e6c5ad" data-story-url="/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/" hidden></span>
 
-<a href="{{ '/stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/' | relative_url }}" data-item-id="dab-story-2026-09-12-f0397b5d" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/' | relative_url }}" data-item-id="dab-story-2026-09-13-28e6c5ad" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Practitioner Analysis  
-**Availability:** Not Applicable
+**Evidence:** Official Announcement  
+**Availability:** Announced
 
-![Three materially different no-code agent workflow lanes pass through trigger, condition, tool call, webhook, error path, human review, and operating-cost criteria before a balanced fit decision.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-12/06-no-code-agent-fit-test.png?v=20260912textbook)
+![Textbook tiered learning path from an Explorer no-code first agent, through a Maker connected workflow and tests, to Architect orchestration, security, and production deployment.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/06-agent-builder-learning-path.png?v=20260913textbook)
 
-**Summary:** AIMultiple updated its hands-on comparison after spending three days configuring agent workflows across n8n, Make, Zapier, and a Creatio trial, while evaluating OpenAI AgentKit from documentation. The comparison examines triggers, conditional steps, tool calls, webhooks, debugging visibility, self-hosting, integrations, and different execution-, operation-, task-, or model-consumption cost structures.
+**Summary:** Microsoft’s September 17 global Agent-a-Thon separates agent building into three guided tracks: Explorer uses Microsoft 365 Agent Builder for a first no-code agent, Maker uses Copilot Studio for connected no-code workflows, and Architect uses Microsoft Foundry for orchestration and production-grade security. Each track includes pre-learning and a live virtual build session.
 
-**Why it matters:** A low-code canvas does not remove engineering tradeoffs: the meaningful unit is an end-to-end workflow with permissions, observability, error paths, review, and a cost model. The article mixes direct testing with vendor documentation, was updated September 11 while some tabular data carries older timestamps, and should guide a proof-of-concept rather than declare a universal winner.
+**Why it matters:** The progression makes agent education concrete: start with a bounded assistant, add connected actions, then introduce orchestration and security. It is a vendor training event, not evidence of production effectiveness, and participants still need appropriate product access, data permissions, testing, and review.
 
-<span class="story-editorial-note" data-george-implication="Choose one realistic consulting or publishing workflow and run it through two builders with the same acceptance test. Compare setup effort, visible traces, recovery from a failed tool, human approval, portability, and operating cost before selecting a platform." hidden></span>
+<span class="story-editorial-note" data-george-implication="Mirror this three-rung structure in workshops: first build a constrained knowledge agent, then connect one reversible workflow, and only then teach orchestration, permissions, monitoring, and deployment decisions." hidden></span>
 
-**What to do now — Run a two-builder fit test:** Use one workflow, identical acceptance criteria, an injected failure, and total operating effort to compare platforms.
+**What to do now — Teach agents in three rungs:** Sequence learning from a bounded no-code assistant to one connected workflow before introducing orchestration and production controls.
 
-**Source:** <a href="https://aimultiple.com/no-code-ai-agent-builders" data-item-id="dab-story-2026-09-12-f0397b5d" data-edition-date="2026-09-12" data-action="source_clicks">Low/No-Code AI Agent Builders: n8n, make, Zapier</a>
+**Source:** <a href="https://www.microsoft.com/en-us/events/local-events/microsoft-agent-a-thon" data-item-id="dab-story-2026-09-13-28e6c5ad" data-edition-date="2026-09-13" data-action="source_clicks">Microsoft Agent-a-Thon</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-story-2026-09-12-f0397b5d">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-28e6c5ad">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -255,25 +257,25 @@
 
 ## 7. General
 
-### Friday, September 11, 2026 - 5 Minute AI News
+### Build Classroom Sites with ChatGPT for Teachers
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>4:53 video</span></div><p><strong>Primary evidence:</strong> A news roundup helps you discover a claim. Follow its original announcement or research before treating the claim as established.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>A quick overview of the previous day’s AI developments to help you decide which stories to investigate further.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" target="_blank" rel="noopener noreferrer">Microsoft argues AI value should be measured in completed work, not prompt volume</a></p><p>2026-09-10 · A useful follow-up on the difference between AI activity and demonstrated value.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>5:16 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-12/general/' | relative_url }}" data-item-id="dab-video-2026-09-12-general" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** 5-Minute-AI-News  
+<a href="{{ '/videos/2026-09-13/general/' | relative_url }}" data-item-id="dab-video-2026-09-13-general" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** OpenAI Academy  
 **Date:** September 11, 2026  
-**Runtime:** 4:53  
+**Runtime:** 5:16  
 **Format:** Video
 
-**Summary:** A compact scan of the previous day’s AI developments that can help a reader identify which claims merit direct-source follow-up.
+**Summary:** A compact official demonstration of turning teaching intent into a reusable classroom site.
 
-**Why it matters:** It complements the brief’s emphasis on separating rapid awareness from primary-evidence verification.
+**Why it matters:** It complements today’s research-to-interactive-artifact story with an accessible education use case.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://www.youtube.com/watch?v=BKq1NquBDa4" data-item-id="dab-video-2026-09-12-general" data-edition-date="2026-09-12" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-general" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-video-2026-09-12-general">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-video-2026-09-13-general">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -282,78 +284,74 @@
 
 ## 8. Agents for Non-Technical People
 
-### Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)
+### Schedule Tasks with ChatGPT for Teachers
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>7:09 video</span></div><p><strong>Progressive disclosure:</strong> Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent’s working context.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to structure an agent skill and load detailed instructions only when they are needed.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · Earlier coverage gives a concrete example of reusable skill packaging.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>2:00 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-12/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-12-agent-skills" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** ErrorFixer  
-**Date:** August 31, 2026  
-**Runtime:** 7:09  
+<a href="{{ '/videos/2026-09-13/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-13-agent-skills" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** OpenAI Academy  
+**Date:** September 11, 2026  
+**Runtime:** 2:00  
 **Format:** Video
 
-**Summary:** A concise introduction to SKILL.md structure and progressive disclosure for readers who want a practical starting point.
+**Summary:** A two-minute official walkthrough of a practical recurring agent-like workflow for non-technical educators.
 
-**Why it matters:** It provides background for the Mastra filesystem-skills story without requiring software-framework expertise.
+**Why it matters:** It gives a low-friction example of the first rung in today’s agent-building learning path.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://www.youtube.com/watch?v=5vTdpYVPUyI" data-item-id="dab-video-2026-09-12-agent-skills" data-edition-date="2026-09-12" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-agent-skills" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-video-2026-09-12-agent-skills">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-video-2026-09-13-agent-skills">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
-</div><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality framework as background for deciding what instructions and references an agent skill should contain.</p><p class="practice"><strong>Put it into practice:</strong> Already own the book? Review your skill with “Quick Reference: Context Quality Checklist” in Chapter 3.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+</div>
 
 ## Worth Listening — Podcast
 
-### 9. Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans
+### 9. 10 Ways to Think Bigger with Opportunity AI
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>Podcast · duration not verified</span></div><p><strong>Risk claims:</strong> A striking probability is a claim to examine. Ask whose estimate it is, what assumptions it depends on, and which practical decision the evidence supports.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to examine dramatic AI risk claims by identifying assumptions, incentives, supporting evidence, and practical safeguards.</p></div><div class="related-coverage"><strong>Related perspective: practical AI risks</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/" target="_blank" rel="noopener noreferrer">The Financial Stability Board frames frontier AI as a resilience problem</a></p><p>2026-08-31 · Our August 31 coverage examines cybersecurity and resilience concerns. Read it for a different approach to assessing AI risk; it does not substantiate the probability quoted in this podcast’s headline.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>Podcast · duration not verified</span></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-12-ai-risk-specificity" data-podcast-title="Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans" data-podcast-url="/podcasts/2026-09-12/ai-risk-specificity/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-13-opportunity-ai" data-podcast-title="10 Ways to Think Bigger with Opportunity AI" data-podcast-url="/podcasts/2026-09-13/opportunity-ai/" hidden></span>
 
-<a href="{{ '/podcasts/2026-09-12/ai-risk-specificity/' | relative_url }}" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-09-13/opportunity-ai/' | relative_url }}" data-item-id="dab-podcast-2026-09-13-opportunity-ai" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
 **Show:** The AI Daily Brief  
 **Host / guest:** Nathaniel Whittemore  
 **Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 10, 2026  
+**Date:** September 13, 2026  
 **Duration:** Not independently verified · No episode time limit  
-**Topics:** AI risk, evidence quality, incentives, policy specificity
+**Topics:** opportunity AI, interactive proposals, creative workflows, capability discovery
 
-**Summary:** Nathaniel Whittemore examines a viral AI-extinction claim through incentives, media dynamics, uncertainty, and the demand for specific causal pathways and interventions. The episode contrasts highly visible extreme positions with a larger middle ground for capability progress and concrete safeguards.
+**Summary:** Nathaniel Whittemore argues that the most valuable uses of a frontier model may be new categories of work rather than incremental gains on familiar tasks, offering examples such as playable marketing, interactive proposals, and products built from professional judgment.
 
-**Why it matters:** It offers a practical method for reading dramatic AI claims: separate attention from novelty, identify incentives, and ask what evidence and intervention path would change the decision.
+**Why it matters:** It supplies thought starters for moving beyond efficiency prompts while keeping experimentation costs and failure rates visible.
 
-**Connection to the brief:** That evidence discipline matches today’s vendor-experiment cautions, incomplete-context risks, and agent-control themes.
+**Connection to the brief:** The episode extends today’s examples of interactive artifacts, changed development economics, and accessible agent building.
 
-<span class="story-editorial-note" data-george-implication="Use a short segment in executive education to practice turning a sweeping risk statement into testable assumptions, affected decisions, and proportionate controls." hidden></span>
+<span class="story-editorial-note" data-george-implication="Use the examples to generate one opportunity-AI experiment for a book launch, client proposal, workshop, or publishing product, then define a small validation test before investing further." hidden></span>
 
-**Coverage:** Selected from the registered podcast-source review after identity, freshness, relevance, and novelty checks.
+**Coverage:** Selected after the registered-source review with strong preceding-48-hour preference and archive novelty checks.
 
-**Evidence:** Practitioner analysis. Publisher episode page, show notes, transcript markers, host, and date were checked. The page did not expose a reliable exact total runtime, and podcast duration has no cap; discussion and cited opinions are not treated as empirical prevalence evidence.
+**Evidence:** Practitioner analysis. The publisher page identifies the date, episode title, show, host, and full edition. A reliable exact total runtime was not exposed; podcast duration has no cap.
 
-**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-10" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher episode and transcript</a> · <a href="https://open.spotify.com/episode/4xD9AhlhIpzg6phdhS65qJ" data-item-id="dab-podcast-2026-09-12-ai-risk-specificity" data-edition-date="2026-09-12" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Spotify</a>
+**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-13" data-item-id="dab-podcast-2026-09-13-opportunity-ai" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher episode and transcript</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-12" data-feedback-story-id="dab-podcast-2026-09-12-ai-risk-specificity">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-podcast-2026-09-13-opportunity-ai">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
-</div><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>A background reference for approaching confident AI claims with calibrated trust. This recommendation does not validate the episode’s numerical risk estimate.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+</div>
 
 ## Editorial takeaway
 
-Today’s useful pattern is boundary clarity: reviews need executable evidence, metrics need named surfaces, desktop assistants need deliberate context, workplace synthesis needs visible blind spots, shared skills need mount and sandbox controls, and no-code agents need end-to-end acceptance tests.
+Today’s strongest signal is that agent capability changes the surrounding system: security boundaries become execution boundaries, architecture economics shift, and useful outputs become interactive. The dependable response is the same across all three focus areas—strong specifications, constrained tools, observable checks, and explicit human acceptance.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning. Explore George Tome’s books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Written by the curator of this brief. Buying a book supports his work.</p></aside>

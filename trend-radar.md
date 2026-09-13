@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 12, 2026
+# Trend Radar — September 13, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,15 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-21 supporting stories appeared in the latest 7 days and 64 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+23 supporting stories appeared in the latest 7 days and 67 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 13, 2026]({{ '/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/bengio-explains-agent-deception-as-goal-optimization/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/a-hands-on-no-code-agent-comparison-shows-that-fit-depends-on-the-whole-workflow/' | relative_url }})
 - [September 12, 2026]({{ '/podcasts/2026-09-12/ai-risk-specificity/' | relative_url }})
@@ -107,7 +112,7 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-15 supporting stories appeared in the latest 7 days and 39 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+13 supporting stories appeared in the latest 7 days and 41 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -170,10 +175,15 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-28 supporting stories appeared in the latest 7 days and 54 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+29 supporting stories appeared in the latest 7 days and 58 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 13, 2026]({{ '/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/shopify-reprices-native-development-with-coding-agents/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/' | relative_url }})
@@ -261,10 +271,18 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-42 supporting stories appeared in the latest 7 days and 94 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+44 supporting stories appeared in the latest 7 days and 100 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 13, 2026]({{ '/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/bengio-explains-agent-deception-as-goal-optimization/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/shopify-reprices-native-development-with-coding-agents/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/' | relative_url }})
+- [September 13, 2026]({{ '/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/' | relative_url }})
+- [September 13, 2026]({{ '/videos/2026-09-13/agent-skills/' | relative_url }})
+- [September 13, 2026]({{ '/podcasts/2026-09-13/opportunity-ai/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/copilot-code-review-adds-tool-backed-verification-and-an-agent-ensemble/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/' | relative_url }})
 - [September 12, 2026]({{ '/stories/2026-09-12/mastra-moves-reusable-agent-skills-into-shared-filesystem-workspaces/' | relative_url }})

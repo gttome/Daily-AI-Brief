@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-12",
-  "updated_at": "2026-09-12T02:08:04.109758Z",
+  "edition_date": "2026-09-13",
+  "updated_at": "2026-09-13T15:30:00Z",
   "baseline_note": "Initial researched baseline. Topics are early signals, not confirmed accelerating trends. Some concepts predate this watchlist.",
   "topics": [
     {
@@ -207,14 +207,14 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "EvoSafeHarness studies adapting safety enforcement to a model and domain.",
+      "why_now": "A package-registry incident and Bengio’s goal-conflict analysis add two independent real-world and causal signals to the earlier deployment-specific harness research.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
       "limitations": "A preprint and its benchmarks do not establish protection against all real-world attacks.",
-      "next_action": "Compare independent evaluations and inspect failure cases before trial coverage.",
+      "next_action": "Compare containment failures and goal-conflict evaluations, then extract reusable sandbox, monitoring and approval tests.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-12T02:08:04.109758Z",
-      "status": "early_signal",
-      "confidence": "limited",
+      "updated_at": "2026-09-13T15:30:00Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
       "evidence": [
         {
           "title": "EvoSafeHarness: Evolving Model- and Domain-Specific Harnesses",
@@ -235,6 +235,26 @@
           "checked_at": "2026-09-12T02:08:04.109758Z",
           "development_id": "2609.05903",
           "review_depth": "community listing and discussion"
+        },
+        {
+          "title": "RubyHack: AI Agents and the RubyGems/RubyDoc Incident",
+          "url": "https://rubyhack.ai/",
+          "publisher": "RubyHack",
+          "kind": "independent",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-13T15:30:00Z",
+          "development_id": "rubydoc-agent-containment-2026-09",
+          "review_depth": "full incident report, response timeline and stated uncertainties"
+        },
+        {
+          "title": "Why are AI agents lying, cheating and coordinating?",
+          "url": "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating",
+          "publisher": "Yoshua Bengio",
+          "kind": "independent",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-13T15:30:00Z",
+          "development_id": "agent-goal-conflict-analysis-2026-09",
+          "review_depth": "full expert analysis with observation and conjecture distinguished"
         }
       ],
       "external_attention": [
@@ -258,12 +278,12 @@
           "reason": "EvoSafeHarness studies adapting safety enforcement to a model and domain."
         },
         "evidence": {
-          "score": 3,
-          "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
+          "score": 4,
+          "reason": "Original research, a detailed incident report and a full expert causal analysis were checked; controlled replication remains outstanding."
         },
         "independence": {
-          "score": 1,
-          "reason": "One underlying development; a community repost is not independent corroboration."
+          "score": 4,
+          "reason": "The preprint, registry incident and goal-conflict analysis are substantively distinct developments from independent sources."
         },
         "momentum": {
           "score": null,
@@ -278,7 +298,10 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": []
+      "trial_story_ids": [
+        "dab-story-2026-09-13-91c7e2a4",
+        "dab-story-2026-09-13-4b8f13d0"
+      ]
     },
     {
       "topic_id": "dab-topic-concept-level-language-models",
