@@ -25,3 +25,21 @@ test('related future items and duplicate selections are rejected',()=>{
  const x={item_id:edition.stories[0].story_id,coverage_label:'Background',label_reason:'reason',learning_outcome:'Useful outcome',context_term:'term',context:'context',related:{title:'future',connection:'test',brief_date:'2026-09-13',url:'https://gttome.github.io/Daily-AI-Brief/stories/2026-09-13/test/'}};
  assert.throws(()=>validateReadingSupport(edition,{editions:{[edition.brief_date]:[x]}}),/earlier/);
 });
+test('edition overview resolves video anchors and reuses source reading estimates',async()=>{
+ const {renderBody}=await import('../lib/render.mjs');
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json'));
+ const body=renderBody(current);
+ const overview=body.match(/<section class="edition-overview"[\s\S]*?<\/section>/)[0];
+ for(const anchor of ['general','agents-for-non-technical-people']){
+  assert.ok(overview.includes(`href="#${anchor}"`));
+  assert.equal(body.split(`id="${anchor}"`).length-1,1);
+ }
+ assert.doesNotMatch(body,/Watch on YouTube/);
+ assert.equal((body.match(/>Watch on OpenAI Academy<\/a>/g)||[]).length,2);
+ for(const story of current.stories){
+  const minutes=renderReadingSupport(story,story.story_id,current.brief_date).match(/about (\d+) min read/)[1];
+  assert.ok(overview.includes(`Article · about ${minutes} min source read`));
+ }
+ const yt=structuredClone(current);yt.worth_watching.general.url='https://www.youtube.com/watch?v=example';
+ assert.match(renderBody(yt),/>Watch on YouTube<\/a>/);
+});

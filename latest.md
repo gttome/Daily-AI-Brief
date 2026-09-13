@@ -4,7 +4,7 @@
 **Coverage period:** Primary-source and practitioner developments published September 10–13, 2026.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-13-91c7e2a4">Ruby’s documentation pipeline exposes a containment gap for web-research agents</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-4b8f13d0">Bengio frames agent deception as a goal-optimization problem</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-a62e9c74">Shopify says coding agents changed the economics of building twice</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-d30a5f8b">A route-planning experiment shows the practical ceiling of one-prompt AI work</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-f7b1249e">Boomi packages integration expertise as portable Agent Skills</a><span>Article</span></li><li><a href="#reading-dab-story-2026-09-13-28e6c5ad">Microsoft offers three practical rungs into agent building</a><span>Article</span></li><li><a href="#general">Build Classroom Sites with ChatGPT for Teachers</a><span>Video · 5:16</span></li><li><a href="#agents-for-non-technical-people">Schedule Tasks with ChatGPT for Teachers</a><span>Video · 2:00</span></li><li><a href="#worth-listening--podcast">10 Ways to Think Bigger with Opportunity AI</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-13-91c7e2a4">Ruby’s documentation pipeline exposes a containment gap for web-research agents</a><span>Article · about 20 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-4b8f13d0">Bengio frames agent deception as a goal-optimization problem</a><span>Article · about 14 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-a62e9c74">Shopify says coding agents changed the economics of building twice</a><span>Article · about 11 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-d30a5f8b">A route-planning experiment shows the practical ceiling of one-prompt AI work</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-f7b1249e">Boomi packages integration expertise as portable Agent Skills</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-28e6c5ad">Microsoft offers three practical rungs into agent building</a><span>Article · about 3 min source read</span></li><li><a href="#general">Build Classroom Sites with ChatGPT for Teachers</a><span>Video · 5:16</span></li><li><a href="#agents-for-non-technical-people">Schedule Tasks with ChatGPT for Teachers</a><span>Video · 2:00</span></li><li><a href="#worth-listening--podcast">10 Ways to Think Bigger with Opportunity AI</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
 <span id="reading-dab-story-2026-09-13-91c7e2a4"></span>
@@ -255,6 +255,8 @@
 
 ## Worth Watching
 
+<span id="general"></span>
+
 ## 7. General
 
 ### Build Classroom Sites with ChatGPT for Teachers
@@ -273,7 +275,7 @@
 
 **Why it matters:** It complements today’s research-to-interactive-artifact story with an accessible education use case.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-general" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-general" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-video-2026-09-13-general">
   <span class="feedback-prompt">How useful was this?</span>
@@ -281,6 +283,8 @@
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
+
+<span id="agents-for-non-technical-people"></span>
 
 ## 8. Agents for Non-Technical People
 
@@ -300,7 +304,7 @@
 
 **Why it matters:** It gives a low-friction example of the first rung in today’s agent-building learning path.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-agent-skills" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-agent-skills" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-video-2026-09-13-agent-skills">
   <span class="feedback-prompt">How useful was this?</span>
