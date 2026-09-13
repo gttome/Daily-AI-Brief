@@ -18,9 +18,9 @@
   },
   "runs": [
     {
-      "run_id": "dab-qa-20260912T124211Z-2aa8bd0b",
+      "run_id": "dab-qa-20260913T012032Z-60f91cf0",
       "edition_id": "dab-edition-2026-09-12",
-      "executed_at": "2026-09-12T12:42:11Z",
+      "executed_at": "2026-09-13T01:20:32Z",
       "initial_result": "fail",
       "final_result": "pass",
       "repairs": 2,
