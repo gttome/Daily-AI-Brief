@@ -10,7 +10,7 @@
         "context": "Several agents examine the same change from different perspectives. Their findings still need verification; agreement alone is not proof.",
         "label_reason": "Extends the Brief\u2019s earlier Copilot review coverage with newly described verification capabilities.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "GitHub Copilot\u2019s new review loop makes inspect, test, and preview the beginner default",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
           "brief_date": "2026-09-11",
@@ -24,7 +24,7 @@
         "context": "Sessions and messages describe how much a tool is used. They do not show whether its work is correct or valuable.",
         "label_reason": "New reporting fields are the development; older measurement coverage supplies context.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
           "brief_date": "2026-09-10",
@@ -38,7 +38,7 @@
         "context": "An assistant may use information from services you authorize. Check which accounts and documents are available before relying on its answer.",
         "label_reason": "A product launch is the development; the related item explains grounding context.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Microsoft Agent Builder accepts files up to 512 MB for grounded agents",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
           "brief_date": "2026-08-28",
@@ -52,7 +52,7 @@
         "context": "Giving an assistant relevant source material helps anchor its answer. Missing sources can still leave important gaps, even when an answer sounds complete.",
         "label_reason": "Practitioner analysis explaining an enduring problem, rather than a verified new release.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Microsoft Agent Builder accepts files up to 512 MB for grounded agents",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
           "brief_date": "2026-08-28",
@@ -66,7 +66,7 @@
         "context": "A skill packages reusable instructions and supporting files. A sandbox limits where code can run and what it can access; permission to read a skill is not permission to execute it.",
         "label_reason": "New filesystem-skills capability; the earlier item concerns another tool\u2019s reusable skill packaging.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Atlassian\u2019s TWG CLI installs one reusable skill package across major agent tools",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
           "brief_date": "2026-09-11",
@@ -80,7 +80,7 @@
         "context": "A workflow links a trigger, actions, decisions, and error handling. A visual builder simplifies assembly, but the whole process still needs testing.",
         "label_reason": "An updated comparison, not a claim that every compared product is newly released.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Zapier turns no-code agent governance into a layered operating procedure",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/",
           "brief_date": "2026-08-30",
@@ -94,7 +94,7 @@
         "context": "A news roundup helps you discover a claim. Follow its original announcement or research before treating the claim as established.",
         "label_reason": "A roundup for orientation rather than a single new development.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
           "brief_date": "2026-09-10",
@@ -108,7 +108,7 @@
         "context": "Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent\u2019s working context.",
         "label_reason": "An instructional tutorial that supplies background for the skills story.",
         "related": {
-          "label": "Earlier in the Brief",
+          "label": "Earlier Brief",
           "title": "Atlassian\u2019s TWG CLI installs one reusable skill package across major agent tools",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
           "brief_date": "2026-09-11",
