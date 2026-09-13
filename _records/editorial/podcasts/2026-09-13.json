@@ -1,0 +1,17 @@
+{
+  "brief_date": "2026-09-13",
+  "searched_at": "2026-09-13",
+  "selected_item_id": "dab-podcast-2026-09-13-opportunity-ai",
+  "source_registry": "_data/podcast-sources.json",
+  "candidates": [
+    {"title": "10 Ways to Think Bigger with Opportunity AI", "show": "The AI Daily Brief", "url": "https://aidailybrief.ai/e/2026-09-13", "publication_date": "2026-09-13", "decision": "selected", "reason": "Publisher page, host, date, and full edition verified; published today; strong knowledge-worker and interactive-artifact fit; no archive duplicate."},
+    {"title": "Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans", "show": "The AI Daily Brief", "url": "https://aidailybrief.ai/e/2026-09-10", "decision": "rejected", "reason": "Already selected for the September 12 edition."},
+    {"title": "Computer-Use Agents and the Future of the Agentic Internet", "show": "Practical AI", "url": "https://practicalai.show/371", "decision": "rejected", "reason": "Already selected for the September 11 edition; no material update."},
+    {"title": "The TWIML AI Podcast", "show": "The TWIML AI Podcast", "url": "https://twimlai.com/podcast/twimlai", "decision": "rejected", "reason": "No September 11–13 episode with stronger freshness and editorial fit was verified."},
+    {"title": "Everyday AI", "show": "Everyday AI", "url": "https://www.youreverydayai.com/", "decision": "rejected", "reason": "Current episode identity and date evidence were weaker than the selected publisher page."},
+    {"title": "The Artificial Intelligence Show", "show": "The Artificial Intelligence Show", "url": "https://podcast.smarterx.ai/", "decision": "rejected", "reason": "No September 11–13 item with stronger direct connection was verified."},
+    {"title": "Latent Space", "show": "Latent Space", "url": "https://www.latent.space/podcast", "decision": "rejected", "reason": "No sufficiently current full episode was verified in the preferred window."}
+  ],
+  "verification": {"publication_date": "Publisher page identifies Sunday, September 13, 2026.", "host": "The publisher identifies Nathaniel Whittemore as host.", "runtime": "A reliable exact total runtime was not exposed; runtime remains null because podcasts have no duration cap.", "platform_url": "The stable publisher episode and transcript URL was verified.", "novelty": "Title and canonical URL were absent from prior edition and podcast records."},
+  "limitations": ["The episode is commentary and synthesis rather than independent empirical evidence.", "No duration cap applies to podcast slot 9."]
+}

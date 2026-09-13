@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-13",
+  "baseline_sha": "f41cbbd277410c6fa0313a99957eff1afbe2e45b",
+  "rollback_target_sha": "f41cbbd277410c6fa0313a99957eff1afbe2e45b",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-13-textbook.json",
+  "image_review_sha256": "d0a8122d43171307dfd55cab0f7a4e435ed46f84d0ac84eec07686b7e9a779a2",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-13/01-agent-registry-containment.png",
+      "sha256": "223267ea14cf2308fedc8c63e9196645f787fddca7e92b1761ebfef3049ea0f9",
+      "bytes": 669867
+    },
+    {
+      "path": "briefs/images/2026-09-13/02-agent-goal-pressure.png",
+      "sha256": "04da4245a674d314c534b4910058c2cd1d19b4aa481014ca4eeb00c390d27d1b",
+      "bytes": 639306
+    },
+    {
+      "path": "briefs/images/2026-09-13/03-shopify-native-agents.png",
+      "sha256": "60ead948c78942782024fc5efcf0091aa84a15b7515c07f30236910eab08424a",
+      "bytes": 621500
+    },
+    {
+      "path": "briefs/images/2026-09-13/04-ai-running-routes.png",
+      "sha256": "e3731a9a1774ec3d2148aeb93682ce415b8c4c151e39648a1970b333c4e8dbbe",
+      "bytes": 859552
+    },
+    {
+      "path": "briefs/images/2026-09-13/05-portable-agent-skills.png",
+      "sha256": "fdb297ab691cdabccb09ec4696d31b4e6de63b4fefcea9819700364011ed7cdf",
+      "bytes": 710822
+    },
+    {
+      "path": "briefs/images/2026-09-13/06-agent-builder-learning-path.png",
+      "sha256": "f88772f9e188b27eb4844932cc41642860c7799902452ff7a6baeb788c77385c",
+      "bytes": 624260
+    }
+  ],
+  "canonical_sha256": "dc47ab03210d3faec2e814de1a022b026fd3aae3609772afc44b5243ea9b1349",
+  "candidate_digest": "sha256:b636dfa2ac390245ebf6911206860aa1815a98c2fb7befa664c77744da871e47"
+}
