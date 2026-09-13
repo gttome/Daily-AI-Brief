@@ -20,9 +20,9 @@
       "source_id": "tldr-ai",
       "name": "TLDR AI",
       "kind": "aggregator",
-      "endpoint": "https://tldr.tech/ai",
+      "endpoint": "https://tldr.tech/api/latest/ai",
       "check_cadence": "daily",
-      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification. September 13 review: signup page links to this latest-edition redirect. Direct retrieval may time out; assisted research verified the destination. Do not interpret failed retrieval as no news.",
       "last_check": {
         "source_id": "tldr-ai",
         "status": "no_candidate_links",
@@ -118,9 +118,9 @@
       "source_id": "alphasignal",
       "name": "AlphaSignal",
       "kind": "aggregator",
-      "endpoint": "https://alphasignal.ai/archive",
+      "endpoint": "https://alphasignal.ai/",
       "check_cadence": "daily",
-      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
+      "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification. September 13 review: archive returned no article links; use publisher-linked Latest page. Paid items remain discovery leads only.",
       "last_check": {
         "source_id": "alphasignal",
         "status": "no_candidate_links",

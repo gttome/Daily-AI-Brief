@@ -1,0 +1,118 @@
+{
+  "scope": "Initial direct HTTP observations and candidate replacement checks. Later bounded recheck stored separately.",
+  "observations": [
+    {
+      "id": "ai-for-humans",
+      "url": "https://www.aiforhumans.show/",
+      "checked_at": "2026-09-13T05:23:09.454Z",
+      "status": 200,
+      "final_url": "https://www.aiforhumans.show/",
+      "bytes": 64506,
+      "anchors": 45,
+      "title": "AI for Humans \u2014 AI News, Tools &amp; Trends"
+    },
+    {
+      "id": "alpha-latest",
+      "url": "https://alphasignal.ai/",
+      "status": 200,
+      "final_url": "https://alphasignal.ai/",
+      "bytes": 85927,
+      "checked_at": "2026-09-13T05:24:03.723Z"
+    },
+    {
+      "id": "alphasignal",
+      "url": "https://alphasignal.ai/archive",
+      "checked_at": "2026-09-13T05:23:09.457Z",
+      "status": 200,
+      "final_url": "https://alphasignal.ai/archive",
+      "bytes": 37635,
+      "anchors": 30,
+      "title": "Archive | AlphaSignal"
+    },
+    {
+      "id": "berkeley-bair",
+      "url": "https://bair.berkeley.edu/blog/",
+      "checked_at": "2026-09-13T05:23:09.458Z",
+      "status": 502,
+      "final_url": "https://bair.berkeley.edu/blog/",
+      "bytes": 150,
+      "anchors": 0,
+      "title": "502 Bad Gateway"
+    },
+    {
+      "id": "deepmind",
+      "url": "https://deepmind.google/blog/",
+      "checked_at": "2026-09-13T05:23:09.458Z",
+      "status": 200,
+      "final_url": "https://deepmind.google/blog/",
+      "bytes": 195263,
+      "anchors": 185,
+      "title": "News \u2014 Google DeepMind"
+    },
+    {
+      "id": "google-deepmind",
+      "url": "https://deepmind.google/blog/",
+      "checked_at": "2026-09-13T05:23:09.455Z",
+      "status": 200,
+      "final_url": "https://deepmind.google/blog/",
+      "bytes": 195263,
+      "anchors": 185,
+      "title": "News \u2014 Google DeepMind"
+    },
+    {
+      "id": "huggingface-papers",
+      "url": "https://huggingface.co/papers",
+      "checked_at": "2026-09-13T05:23:09.459Z",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "id": "humans-episodes",
+      "url": "https://www.aiforhumans.show/episodes",
+      "status": 200,
+      "final_url": "https://www.aiforhumans.show/episodes",
+      "bytes": 38814,
+      "checked_at": "2026-09-13T05:24:02.620Z"
+    },
+    {
+      "id": "humans-feed",
+      "url": "https://feeds.libsyn.com/469701/rss",
+      "status": 200,
+      "final_url": "https://rss.libsyn.com/shows/469701/destinations/3976203.xml",
+      "bytes": 1645847,
+      "checked_at": "2026-09-13T05:24:08.257Z"
+    },
+    {
+      "id": "ibm-technology",
+      "url": "https://www.ibm.com/think/videos",
+      "checked_at": "2026-09-13T05:23:09.445Z",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "id": "import-ai",
+      "url": "https://importai.substack.com/",
+      "checked_at": "2026-09-13T05:23:09.457Z",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "id": "localllama",
+      "url": "https://www.reddit.com/r/LocalLLaMA/",
+      "checked_at": "2026-09-13T05:23:09.459Z",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "id": "the-median",
+      "url": "https://dcthemedian.substack.com/",
+      "checked_at": "2026-09-13T05:23:09.458Z",
+      "error": "The operation was aborted due to timeout"
+    },
+    {
+      "id": "tldr-ai",
+      "url": "https://tldr.tech/ai",
+      "checked_at": "2026-09-13T05:23:09.456Z",
+      "status": 200,
+      "final_url": "https://tldr.tech/ai",
+      "bytes": 36567,
+      "anchors": 2
+    }
+  ]
+}
