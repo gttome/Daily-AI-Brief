@@ -13,6 +13,10 @@ reader_release: true
 
 # Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>7:09 video</span></div><p><strong>Progressive disclosure:</strong> Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent’s working context.</p><details><summary>Why this coverage label?</summary><p>An instructional tutorial that supplies background for the skills story.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · Earlier coverage gives a concrete example of reusable skill packaging.</p></div></aside>
+<!-- reader-release:end -->
+
 <span class="story-data" data-story-id="dab-video-2026-09-12-agent-skills" hidden></span>
 
 **Focus:** Agents for Non-Technical People  

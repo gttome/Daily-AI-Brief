@@ -1,3 +1,4 @@
+import {renderReadingSupport} from './reading-support.mjs';
 import {readerRelease, renderBookReading} from './book-reading.mjs';
 import {editionFeed} from './edition-feed.mjs';
 import fs from 'node:fs';
@@ -128,7 +129,7 @@ ${readerRelease(story.brief_date)?'reader_release: true\n':''}---
 
 # ${story.headline}
 
-<span class="story-data" data-story-id="${story.story_id}" hidden></span>
+${story.brief_date >= "2026-09-12" ? renderReadingSupport(story,story.story_id,story.brief_date,story.content_type||"Article")+"\n\n" : ""}<span class="story-data" data-story-id="${story.story_id}" hidden></span>
 
 **Focus:** ${focusLabels[story.focus] || label(story.focus)}  
 **Date:** ${formatDate(story.event_date)}  
@@ -337,7 +338,7 @@ export function renderPodcast(slot, briefDate) {
 
 ### 9. ${slot.title}
 
-<span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
+${briefDate >= "2026-09-12" ? renderReadingSupport(slot,slot.item_id,briefDate,"Podcast")+"\n\n" : ""}<span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
 
 ${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,briefDate,'permanent_page_clicks')}
 

@@ -11,6 +11,10 @@
 
 ## 1. Copilot code review adds tool-backed verification and an agent ensemble
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Update</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Agent ensemble:</strong> Several agents examine the same change from different perspectives. Their findings still need verification; agreement alone is not proof.</p><details><summary>Why this coverage label?</summary><p>Extends the Brief’s earlier Copilot review coverage with newly described verification capabilities.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/" target="_blank" rel="noopener noreferrer">GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default</a></p><p>2026-09-11 · Earlier: inspect, test, and preview in a Copilot workflow. Here: verification tools inside code review.</p></div></aside>
+<!-- reader-release:end -->
+
 **Focus: Technical AI Engineering**
 
 **Date:** September 11, 2026
@@ -49,6 +53,10 @@
 
 ## 2. GitHub separates VS Code agent activity from generic Copilot usage
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Activity versus outcomes:</strong> Sessions and messages describe how much a tool is used. They do not show whether its work is correct or valuable.</p><details><summary>Why this coverage label?</summary><p>New reporting fields are the development; older measurement coverage supplies context.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" target="_blank" rel="noopener noreferrer">Microsoft argues AI value should be measured in completed work, not prompt volume</a></p><p>2026-09-10 · Earlier: measure completed work. Here: understand what activity fields can and cannot establish.</p></div></aside>
+<!-- reader-release:end -->
+
 **Focus: Technical AI Engineering**
 
 **Date:** September 11, 2026
@@ -84,6 +92,10 @@
 <span id="reading-dab-story-2026-09-12-c16a53ef"></span>
 
 ## 3. Gemini for Windows brings a keyboard-first AI layer to desktop work
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Connected context:</strong> An assistant may use information from services you authorize. Check which accounts and documents are available before relying on its answer.</p><details><summary>Why this coverage label?</summary><p>A product launch is the development; the related item explains grounding context.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" target="_blank" rel="noopener noreferrer">Microsoft Agent Builder accepts files up to 512 MB for grounded agents</a></p><p>2026-08-28 · Earlier: documents as grounding sources. Here: choosing connected context in a desktop assistant.</p></div></aside>
+<!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
@@ -121,6 +133,10 @@
 
 ## 4. Cross-platform grounding is the hidden requirement for workplace AI
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Grounding:</strong> Giving an assistant relevant source material helps anchor its answer. Missing sources can still leave important gaps, even when an answer sounds complete.</p><details><summary>Why this coverage label?</summary><p>Practitioner analysis explaining an enduring problem, rather than a verified new release.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" target="_blank" rel="noopener noreferrer">Microsoft Agent Builder accepts files up to 512 MB for grounded agents</a></p><p>2026-08-28 · Earlier: files as grounding sources. Here: the gaps that remain when relevant context spans services.</p></div></aside>
+<!-- reader-release:end -->
+
 **Focus: Applied Generative AI for Knowledge Workers**
 
 **Date:** September 11, 2026
@@ -156,6 +172,10 @@
 <span id="reading-dab-story-2026-09-12-6ae3c942"></span>
 
 ## 5. Mastra moves reusable Agent Skills into shared filesystem workspaces
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Skills and sandboxes:</strong> A skill packages reusable instructions and supporting files. A sandbox limits where code can run and what it can access; permission to read a skill is not permission to execute it.</p><details><summary>Why this coverage label?</summary><p>New filesystem-skills capability; the earlier item concerns another tool’s reusable skill packaging.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · Earlier: distribute reusable skills across tools. Here: store and govern skills in shared workspaces.</p></div></aside>
+<!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
 
@@ -195,6 +215,10 @@
 
 ## 6. A hands-on no-code agent comparison shows that fit depends on the whole workflow
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Update</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Workflow:</strong> A workflow links a trigger, actions, decisions, and error handling. A visual builder simplifies assembly, but the whole process still needs testing.</p><details><summary>Why this coverage label?</summary><p>An updated comparison, not a claim that every compared product is newly released.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/" target="_blank" rel="noopener noreferrer">Zapier turns no-code agent governance into a layered operating procedure</a></p><p>2026-08-30 · Earlier: permissions and review for no-code agents. Here: compare how a whole workflow behaves.</p></div></aside>
+<!-- reader-release:end -->
+
 **Focus: Agents for Non-Technical People**
 
 **Date:** September 11, 2026
@@ -233,6 +257,10 @@
 
 ### Friday, September 11, 2026 - 5 Minute AI News
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>4:53 video</span></div><p><strong>Primary evidence:</strong> A news roundup helps you discover a claim. Follow its original announcement or research before treating the claim as established.</p><details><summary>Why this coverage label?</summary><p>A roundup for orientation rather than a single new development.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" target="_blank" rel="noopener noreferrer">Microsoft argues AI value should be measured in completed work, not prompt volume</a></p><p>2026-09-10 · A useful follow-up on the difference between AI activity and demonstrated value.</p></div></aside>
+<!-- reader-release:end -->
+
 <a href="{{ '/videos/2026-09-12/general/' | relative_url }}" data-item-id="dab-video-2026-09-12-general" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent video page</a>  
 **Channel:** 5-Minute-AI-News  
 **Date:** September 11, 2026  
@@ -255,6 +283,10 @@
 ## 8. Agents for Non-Technical People
 
 ### Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>7:09 video</span></div><p><strong>Progressive disclosure:</strong> Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent’s working context.</p><details><summary>Why this coverage label?</summary><p>An instructional tutorial that supplies background for the skills story.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · Earlier coverage gives a concrete example of reusable skill packaging.</p></div></aside>
+<!-- reader-release:end -->
 
 <a href="{{ '/videos/2026-09-12/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-12-agent-skills" data-edition-date="2026-09-12" data-action="permanent_page_clicks">Open the permanent video page</a>  
 **Channel:** ErrorFixer  
@@ -280,6 +312,10 @@
 ## Worth Listening — Podcast
 
 ### 9. Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>Podcast · duration not verified</span></div><p><strong>Risk claims:</strong> A striking probability is a claim to examine. Ask whose estimate it is, what assumptions it depends on, and which practical decision the evidence supports.</p><details><summary>Why this coverage label?</summary><p>An interpretive discussion that supplies background for evaluating risk claims.</p></details><div class="related-coverage"><strong>Related perspective: practical AI risks</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/" target="_blank" rel="noopener noreferrer">The Financial Stability Board frames frontier AI as a resilience problem</a></p><p>2026-08-31 · Our August 31 coverage examines cybersecurity and resilience concerns. Read it for a different approach to assessing AI risk; it does not substantiate the probability quoted in this podcast’s headline.</p></div></aside>
+<!-- reader-release:end -->
 
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-09-12-ai-risk-specificity" data-podcast-title="Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans" data-podcast-url="/podcasts/2026-09-12/ai-risk-specificity/" hidden></span>
 

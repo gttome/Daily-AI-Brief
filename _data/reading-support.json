@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0.0",
+  "words_per_minute": 200,
+  "editions": {
+    "2026-09-12": [
+      {
+        "item_id": "dab-story-2026-09-12-4f7c9a21",
+        "coverage_label": "Update",
+        "context_term": "Agent ensemble",
+        "context": "Several agents examine the same change from different perspectives. Their findings still need verification; agreement alone is not proof.",
+        "label_reason": "Extends the Brief\u2019s earlier Copilot review coverage with newly described verification capabilities.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "GitHub Copilot\u2019s new review loop makes inspect, test, and preview the beginner default",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
+          "brief_date": "2026-09-11",
+          "connection": "Earlier: inspect, test, and preview in a Copilot workflow. Here: verification tools inside code review."
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-12-8b2e61d4",
+        "coverage_label": "New development",
+        "context_term": "Activity versus outcomes",
+        "context": "Sessions and messages describe how much a tool is used. They do not show whether its work is correct or valuable.",
+        "label_reason": "New reporting fields are the development; older measurement coverage supplies context.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
+          "brief_date": "2026-09-10",
+          "connection": "Earlier: measure completed work. Here: understand what activity fields can and cannot establish."
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-12-c16a53ef",
+        "coverage_label": "New development",
+        "context_term": "Connected context",
+        "context": "An assistant may use information from services you authorize. Check which accounts and documents are available before relying on its answer.",
+        "label_reason": "A product launch is the development; the related item explains grounding context.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Microsoft Agent Builder accepts files up to 512 MB for grounded agents",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
+          "brief_date": "2026-08-28",
+          "connection": "Earlier: documents as grounding sources. Here: choosing connected context in a desktop assistant."
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-12-2d8f70b6",
+        "coverage_label": "Background",
+        "context_term": "Grounding",
+        "context": "Giving an assistant relevant source material helps anchor its answer. Missing sources can still leave important gaps, even when an answer sounds complete.",
+        "label_reason": "Practitioner analysis explaining an enduring problem, rather than a verified new release.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Microsoft Agent Builder accepts files up to 512 MB for grounded agents",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
+          "brief_date": "2026-08-28",
+          "connection": "Earlier: files as grounding sources. Here: the gaps that remain when relevant context spans services."
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-12-6ae3c942",
+        "coverage_label": "New development",
+        "context_term": "Skills and sandboxes",
+        "context": "A skill packages reusable instructions and supporting files. A sandbox limits where code can run and what it can access; permission to read a skill is not permission to execute it.",
+        "label_reason": "New filesystem-skills capability; the earlier item concerns another tool\u2019s reusable skill packaging.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Atlassian\u2019s TWG CLI installs one reusable skill package across major agent tools",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
+          "brief_date": "2026-09-11",
+          "connection": "Earlier: distribute reusable skills across tools. Here: store and govern skills in shared workspaces."
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-12-f0397b5d",
+        "coverage_label": "Update",
+        "context_term": "Workflow",
+        "context": "A workflow links a trigger, actions, decisions, and error handling. A visual builder simplifies assembly, but the whole process still needs testing.",
+        "label_reason": "An updated comparison, not a claim that every compared product is newly released.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Zapier turns no-code agent governance into a layered operating procedure",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/",
+          "brief_date": "2026-08-30",
+          "connection": "Earlier: permissions and review for no-code agents. Here: compare how a whole workflow behaves."
+        }
+      },
+      {
+        "item_id": "dab-video-2026-09-12-general",
+        "coverage_label": "Background",
+        "context_term": "Primary evidence",
+        "context": "A news roundup helps you discover a claim. Follow its original announcement or research before treating the claim as established.",
+        "label_reason": "A roundup for orientation rather than a single new development.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
+          "brief_date": "2026-09-10",
+          "connection": "A useful follow-up on the difference between AI activity and demonstrated value."
+        }
+      },
+      {
+        "item_id": "dab-video-2026-09-12-agent-skills",
+        "coverage_label": "Background",
+        "context_term": "Progressive disclosure",
+        "context": "Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent\u2019s working context.",
+        "label_reason": "An instructional tutorial that supplies background for the skills story.",
+        "related": {
+          "label": "Earlier in the Brief",
+          "title": "Atlassian\u2019s TWG CLI installs one reusable skill package across major agent tools",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
+          "brief_date": "2026-09-11",
+          "connection": "Earlier coverage gives a concrete example of reusable skill packaging."
+        }
+      },
+      {
+        "item_id": "dab-podcast-2026-09-12-ai-risk-specificity",
+        "coverage_label": "Background",
+        "context_term": "Risk claims",
+        "context": "A striking probability is a claim to examine. Ask whose estimate it is, what assumptions it depends on, and which practical decision the evidence supports.",
+        "label_reason": "An interpretive discussion that supplies background for evaluating risk claims.",
+        "related": {
+          "label": "Related perspective: practical AI risks",
+          "title": "The Financial Stability Board frames frontier AI as a resilience problem",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/",
+          "brief_date": "2026-08-31",
+          "connection": "Our August 31 coverage examines cybersecurity and resilience concerns. Read it for a different approach to assessing AI risk; it does not substantiate the probability quoted in this podcast\u2019s headline."
+        }
+      }
+    ]
+  }
+}

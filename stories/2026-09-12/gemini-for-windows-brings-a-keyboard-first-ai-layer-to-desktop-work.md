@@ -13,6 +13,10 @@ reader_release: true
 
 # Gemini for Windows brings a keyboard-first AI layer to desktop work
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Connected context:</strong> An assistant may use information from services you authorize. Check which accounts and documents are available before relying on its answer.</p><details><summary>Why this coverage label?</summary><p>A product launch is the development; the related item explains grounding context.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" target="_blank" rel="noopener noreferrer">Microsoft Agent Builder accepts files up to 512 MB for grounded agents</a></p><p>2026-08-28 · Earlier: documents as grounding sources. Here: choosing connected context in a desktop assistant.</p></div></aside>
+<!-- reader-release:end -->
+
 <span class="story-data" data-story-id="dab-story-2026-09-12-c16a53ef" hidden></span>
 
 **Focus:** Applied Generative AI for Knowledge Workers  
