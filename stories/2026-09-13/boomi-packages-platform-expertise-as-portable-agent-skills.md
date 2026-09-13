@@ -14,7 +14,7 @@ reader_release: true
 # Boomi packages integration expertise as portable Agent Skills
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-13-f7b1249e" hidden></span>
