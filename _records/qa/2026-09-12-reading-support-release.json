@@ -14,7 +14,7 @@
     "Repository and integration checks passed",
     "All nine included item pages retain reading support and existing controls"
   ],
-  "publication_status": "pending",
+  "publication_status": "published",
   "limitations": [
     "Reading estimates exclude linked reading and media playback.",
     "Future context, labels and related items require editorial entries; no associations are invented."
@@ -29,7 +29,20 @@
       "severity": "high",
       "result": "pass",
       "evidence": "Generator, contract, repository, atomic and control-preservation checks passed locally. Publication checks are pending."
+    },
+    {
+      "check_id": "live_reading_support",
+      "class": "deterministic",
+      "severity": "high",
+      "result": "pass",
+      "evidence": "Ten live public pages checked: September 12 edition and nine permanent item pages. Nine edition reading blocks, 45 edition star buttons, one block and five stars per item, and clarified podcast wording verified."
     }
   ],
-  "defects": []
+  "defects": [],
+  "deployment_evidence": {
+    "head_sha": "18add5568d81ca8ccab6fcde71de6cbb821f6542",
+    "ci_run_id": 34735483181,
+    "pages_run_id": 34735482865,
+    "conclusion": "success"
+  }
 }
