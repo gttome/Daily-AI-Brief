@@ -19,7 +19,7 @@ This public dashboard summarizes versioned QA records. It excludes credentials, 
 
 | Edition | Initial | Final | Repairs | Deploy | Deterministic / Editorial |
 |---|---:|---:|---:|---:|---|
-| [September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }}) | FAIL | PASS | 2 | —s | 7 / 5 |
+| [September 12, 2026]({{ '/briefs/2026-09-12/' | relative_url }}) | FAIL | PASS | 2 | —s | 10 / 6 |
 | [September 11, 2026]({{ '/briefs/2026-09-11/' | relative_url }}) | FAIL | PASS | 2 | —s | 7 / 4 |
 | [September 10, 2026]({{ '/briefs/2026-09-10/' | relative_url }}) | FAIL | PASS | 3 | —s | 4 / 4 |
 | [September 9, 2026]({{ '/briefs/2026-09-09/' | relative_url }}) | PASS | PASS | 1 | 47s | 5 / 3 |
