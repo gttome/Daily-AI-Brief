@@ -1,117 +1,40 @@
 {
-  "schema_version": "1.0.0",
-  "run_id": "dab-qa-discovery-reader-20260913-3e434334",
-  "edition_id": "dab-edition-2026-09-12",
-  "executed_at": "2026-09-13T02:03:42.642647+00:00",
-  "initial_result": "pass",
-  "final_result": "pass",
   "checks": [
     {
       "check_id": "approved_discovery_reader_release",
       "class": "deterministic",
+      "evidence": "Owner explicitly approved the second private visual comparison. PR #79 merged after 101 generator tests, 15 contract fixtures, repository, integration, atomic, append-only and Jekyll checks passed. Main CI 34732004430 and Pages 34732004288 succeeded for 3e43433485284aba04dfe27047526bb1be497ef4.",
       "result": "pass",
-      "severity": "high",
-      "evidence": "Owner explicitly approved the second private visual comparison. PR #79 merged after 101 generator tests, 15 contract fixtures, repository, integration, atomic, append-only and Jekyll checks passed. Main CI 34732004430 and Pages 34732004288 succeeded for 3e43433485284aba04dfe27047526bb1be497ef4."
+      "severity": "high"
     },
     {
       "check_id": "isolated_interaction_checks",
       "class": "deterministic",
+      "evidence": "Production scripts checked in isolated browser fixtures without production collectors: September 12 yielded two videos; edition view yielded one matching date; edition-to-items restored six articles, two videos and a podcast. Empty search and invalid-date states passed. Watchlist rendered eight source/evidence cards, 24 vote buttons and eight copy controls; expanding the score explanation worked. No test votes, shares or subscriptions were submitted.",
       "result": "pass",
-      "severity": "high",
-      "evidence": "Production scripts checked in isolated browser fixtures without production collectors: September 12 yielded two videos; edition view yielded one matching date; edition-to-items restored six articles, two videos and a podcast. Empty search and invalid-date states passed. Watchlist rendered eight source/evidence cards, 24 vote buttons and eight copy controls; expanding the score explanation worked. No test votes, shares or subscriptions were submitted."
+      "severity": "high"
     },
     {
       "check_id": "live_release_bytes",
       "class": "deterministic",
+      "evidence": "Thirteen public routes returned HTTP 200. Served JS, CSS and public data exactly matched the candidate. Archive retained 163 item-to-edition links and 27 edition links. No-JavaScript research page exposed evidence for all eight topics. Homepage and September 12 page retained 45 rating controls. Source-check dates and research scores were preserved, not represented as fresh research.",
       "result": "pass",
-      "severity": "high",
-      "evidence": "Thirteen public routes returned HTTP 200. Served JS, CSS and public data exactly matched the candidate. Archive retained 163 item-to-edition links and 27 edition links. No-JavaScript research page exposed evidence for all eight topics. Homepage and September 12 page retained 45 rating controls. Source-check dates and research scores were preserved, not represented as fresh research."
+      "severity": "high"
     }
   ],
-  "repairs": [],
   "defects": [],
   "deployment_evidence": {
-    "pages_run_id": 34732004288,
+    "conclusion": "success",
     "head_sha": "3e43433485284aba04dfe27047526bb1be497ef4",
-    "conclusion": "success"
+    "pages_run_id": 34732004288
   },
+  "edition_id": "dab-edition-2026-09-12",
+  "executed_at": "2026-09-13T02:03:42.642647+00:00",
+  "final_result": "pass",
+  "initial_result": "pass",
   "record_path": "_records/qa/2026-09-12-discovery-release.json",
-  "live_checks": {
-    "checked_at": "2026-09-13T02:03:42.642647+00:00",
-    "head_sha": "3e43433485284aba04dfe27047526bb1be497ef4",
-    "routes": [
-      {
-        "path": "",
-        "status": 200,
-        "sha256": "0a63dc3307c797614936a9dc1fed0de429b9d6430497b86ca0098671ba4ffdd3"
-      },
-      {
-        "path": "briefs/2026-09-12/",
-        "status": 200,
-        "sha256": "6b2ac10b4756778d0c4c6505cf95dd7abd054864a877eb022cf71bfb7128f158"
-      },
-      {
-        "path": "briefs-archive/",
-        "status": 200,
-        "sha256": "f87d43e3a973797ed742504b26c3f571d5c01de6b1c257318a13ec2bf8cb6715"
-      },
-      {
-        "path": "watchlist/",
-        "status": 200,
-        "sha256": "e21891f23e46086f86986cc1c3c9c6b3bacc40921979667c1d941bf3de476e61"
-      },
-      {
-        "path": "watchlist/research/",
-        "status": 200,
-        "sha256": "0b58fbe92723dd24573c261af9b21f094924ae2aa1cd49dd52346369947bc355"
-      },
-      {
-        "path": "assets/js/archive.js",
-        "status": 200,
-        "sha256": "4a38e106f46b4609d5ab604b64e104e40f3539aaa16b09d092b5c856dad37bd7"
-      },
-      {
-        "path": "assets/js/archive-model.js",
-        "status": 200,
-        "sha256": "089828c5f24c10c64995a0ec1484377e536eeebaa038fb2fe257c4548babfdc5"
-      },
-      {
-        "path": "assets/js/watchlist.js",
-        "status": 200,
-        "sha256": "14a16dbf627d6f8db4dedea10f13a8f95ef2bb36c73c247320a834175ea32036"
-      },
-      {
-        "path": "assets/js/watchlist-evidence.js",
-        "status": 200,
-        "sha256": "533c2ed93c19ef3d3ffca9027731dc832363e8c7d077f1717bf42ec91cc29c13"
-      },
-      {
-        "path": "assets/css/archive.css",
-        "status": 200,
-        "sha256": "c0dc4b636d270df0ec16313a24ecddf997adb8e36a784a88bc1edb78e980dfba"
-      },
-      {
-        "path": "assets/css/watchlist.css",
-        "status": 200,
-        "sha256": "77f9e603e95611ad71bb1cb588cec195faf430670924df278bcef0f2c1a4ea55"
-      },
-      {
-        "path": "data/watchlist.json",
-        "status": 200,
-        "sha256": "fd59f8a5641413daadccf64132cc6292f09839d694411eec1f100ecbf5b7b9ca"
-      },
-      {
-        "path": "data/archive-index.json",
-        "status": 200,
-        "sha256": "c9af5fd82d9ae20420e38b0a939bcc1ac528bd958377444af5422cf8c3f06840"
-      }
-    ],
-    "checks": [
-      "27 edition links",
-      "163 permanent item edition links",
-      "8 evidence cards in no-JS research page",
-      "45 rating controls on homepage and dated brief",
-      "exact deployed JS/CSS/public data match candidate"
-    ]
-  }
+  "repairs": [],
+  "run_id": "dab-qa-20260913T020342Z-3e434334",
+  "schema_version": "1.0.0",
+  "publication_run_id": null
 }
