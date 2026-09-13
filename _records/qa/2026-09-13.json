@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260913T130128Z-23ea47d8",
+  "edition_id": "dab-edition-2026-09-13",
+  "publication_run_id": "dab-publication-20260913T153600Z-71d3a6c2",
+  "executed_at": "2026-09-13T13:01:28Z",
+  "initial_result": "fail",
+  "final_result": "pass",
+  "checks": [
+    {"check_id":"freshness_schema_allocation","class":"deterministic","result":"pass","severity":"critical","evidence":"The final canonical and live edition is dated September 13, 2026, uses full_v1, validates against the active schema, and contains exactly six stable stories ordered 2 Technical, 2 Applied, and 2 Agents."},
+    {"check_id":"candidate_memory_novelty_evidence","class":"editorial","result":"pass","severity":"high","evidence":"Twenty candidates contain all seven score dimensions, correct totals, rationales and rejection reasons; the 30-day memory contains 27 editions and 157 stories including today's six selections. All selected stories are new against normalized source and concept memory."},
+    {"check_id":"agent_skills_allocation","class":"editorial","result":"pass","severity":"high","evidence":"Exactly one selected story is the reusable Agent Skills item: Boomi portable Agent Skills, supported by the current official platform page."},
+    {"check_id":"media_slots","class":"editorial","result":"pass","severity":"high","evidence":"Both video slots are included with independently verified runtimes of 5:16 and 2:00, each inside the preferred ten-minute limit. Podcast slot 9 uses a verified September 13 publisher episode inside the preferred 48-hour window; no podcast duration cap applies and the unavailable exact runtime is disclosed."},
+    {"check_id":"images_textbook_quality","class":"editorial","result":"pass","severity":"high","evidence":"Six custom built-in images were inspected individually and together from final live bytes. All are exact 1200x630 dominant-white textbook PNGs with distinct containment cutaway, causal loop, dual-platform flow, cartographic overlay, exploded package and learning-terrace compositions. Live SHA-256 bytes match all approved hashes, with no clipping, crowding, distortion, people, robots, physical scenes or repeated template."},
+    {"check_id":"canonical_reader_parity","class":"deterministic","result":"pass","severity":"critical","evidence":"Repository validation and integration report no semantic differences among canonical, homepage, latest, dated brief, six permanent story pages, two video pages, podcast page, archive, daily RSS, Atom and JSON feeds."},
+    {"check_id":"ratings_sharing_privacy","class":"deterministic","result":"pass","severity":"high","evidence":"Homepage and dated brief each contain nine rating groups and 45 star controls; all nine permanent item pages contain five stars and retain share-script support. After repair PR #89, POST sends exactly brief_date, item_id and rating plus x-operation-id, preserves the operation ID across retry, expires retries after 29 days and accepts recorded=true without exposing rating counts or same-session revision transport."},
+    {"check_id":"feedback_retirement_navigation","class":"deterministic","result":"pass","severity":"high","evidence":"The live /feedback/ route contains no form or rating controls and directs readers to article-local ratings. Homepage, dated brief, archive, watchlist, readable research fallback, feeds and permanent pages returned HTTP 200 with expected navigation."},
+    {"check_id":"source_media_links","class":"deterministic","result":"pass","severity":"high","evidence":"All six selected source URLs, both official OpenAI Academy video URLs and the selected publisher podcast URL returned HTTP 200 during the final audit."},
+    {"check_id":"watchlist_release","class":"editorial","result":"pass","severity":"medium","evidence":"The live watchlist contains eight substantive topics, the readable research fallback resolves, and the September 13 edition contains the optional preview. Forty-nine registered sources were checked; 33 returned candidates, five were unavailable, four yielded no candidates and seven require assisted review, so discovery coverage remains explicitly degraded."},
+    {"check_id":"ci_pages_release","class":"deterministic","result":"pass","severity":"critical","evidence":"Publication PR #88, repair PR #89 and all candidate/production CI passed. Final production CI 34758518843 and Pages 34758518528 succeeded for exact final main SHA 23ea47d808e979117e42bd40f44d3b867565561f."},
+    {"check_id":"usage_private_operations","class":"deterministic","result":"not_run","severity":"info","evidence":"Edition-specific drafts, rejects, failures, repairs and elapsed time are recorded. Exact credits and dollars were unavailable and were not fabricated. The owner-only Command Center required an interactive ChatGPT sign-in, so usage recording, private aggregates, priorities and 90-day comment cleanup were not invoked; no indirect transfer was attempted."},
+    {"check_id":"subscriber_delivery","class":"deterministic","result":"not_run","severity":"info","evidence":"Confirmed-subscriber delivery was not invoked because sender setup remains unavailable. Signup remains inactive and no same-day duplicate mail was sent."}
+  ],
+  "repairs": [
+    {"description":"Replaced the daily-feed test's stale hard-coded edition date with the latest staged date before publication, then reran all 107 tests.","commit_sha":"6594089eaa6e99cd7c832647f917ef2433361f9d"},
+    {"description":"Removed the extra x-rating-revision header and same-session change path, added regression assertions, and deployed the exact rating contract through PR #89.","commit_sha":"23ea47d808e979117e42bd40f44d3b867565561f"}
+  ],
+  "defects": [
+    {"severity":"medium","code":"daily_feed_test_stale_date","status":"resolved","description":"The first post-commit suite used a hard-coded September 12 test date after the September 13 file existed. The test now derives the latest staged edition and passes."},
+    {"severity":"high","code":"rating_revision_header_contract","status":"resolved","description":"Initial live QA found an extra x-rating-revision header and a same-session change path outside the required one-rating-per-browser transport. Repair PR #89 removed both and final live JavaScript bytes match the tested repair."},
+    {"severity":"medium","code":"watchlist_discovery_partial","status":"accepted","description":"Thirty-three of forty-nine registered watchlist sources returned candidate links; sixteen were unavailable, yielded no candidate links or require assisted review. Eight verified topics remain live with real dates and transparent source health."},
+    {"severity":"info","code":"private_telemetry_unavailable","status":"accepted","description":"The owner-only Command Center required an interactive ChatGPT sign-in, preventing private usage, aggregate snapshot, priorities and comment-retention operations. Public analytics availability contains no private counts."},
+    {"severity":"info","code":"local_jekyll_unavailable","status":"accepted","description":"The local bundle executable was unavailable. Both candidate and production GitHub CI completed the deterministic Jekyll build successfully."}
+  ],
+  "deployment_evidence": {"pages_run_id":34758518528,"head_sha":"23ea47d808e979117e42bd40f44d3b867565561f","conclusion":"success"},
+  "record_path": "_records/qa/2026-09-13.json",
+  "deployment_latency_seconds": null
+}

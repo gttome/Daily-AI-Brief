@@ -22,7 +22,7 @@
   "publication_status": "validated",
   "rollback_target_sha": "f41cbbd277410c6fa0313a99957eff1afbe2e45b",
   "prepublication_checks": {"generator_tests": "107/107 pass", "contract_examples": "15/15 pass", "repository_validation": "pass", "integrated_parity": "pass", "accessibility": "pass", "candidate_jekyll_build": "deferred to repository CI because the local bundle executable is unavailable", "image_replacements": 6, "rejected_drafts": 3},
-  "deployment_repairs": [],
-  "final_qa": "pending live verification",
-  "live_verification": {"verified_at": null, "result": "pending", "pages": [], "evidence": "Pending publication and independent live asset-byte verification."}
+  "deployment_repairs": ["Independent live QA repaired the article-rating transport through PR #89; story image bytes were unchanged."],
+  "final_qa": "pass",
+  "live_verification": {"verified_at": "2026-09-13T13:01:28Z", "result": "pass", "pages": ["https://gttome.github.io/Daily-AI-Brief/", "https://gttome.github.io/Daily-AI-Brief/briefs/2026-09-13/", "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-13/01-agent-registry-containment.png", "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-13/02-agent-goal-pressure.png", "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-13/03-shopify-native-agents.png", "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-13/04-ai-running-routes.png", "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-13/05-portable-agent-skills.png", "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-13/06-agent-builder-learning-path.png"], "evidence": "All six final Pages assets returned successfully, matched the approved SHA-256 hashes, and were re-inspected individually and together from downloaded live bytes. White dominance, safe margins, label legibility, story fidelity and compositional differentiation passed."}
 }
