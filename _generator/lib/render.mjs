@@ -51,7 +51,8 @@ function runtime(value) {
 
 function renderVideo(name, slot, briefDate, slotId) {
   const ordinal = slotId === 'general' ? 7 : 8;
-  const heading = `## ${ordinal}. ${name}`;
+  const anchor = slotId === 'general' ? 'general' : 'agents-for-non-technical-people';
+  const heading = `${readerRelease(briefDate)?`<span id="${anchor}"></span>\n\n`:''}## ${ordinal}. ${name}`;
   if (slot.status === 'empty') return `${heading}\n\n${slot.exception}`;
   return `${heading}
 
@@ -69,7 +70,7 @@ ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',
 
 **Why it matters:** ${slot.connection}
 
-${renderSeriesImplications(slot, briefDate)}${slot.series_implications?.length ? '\n\n' : ''}**Source:** ${trackedLink(slot.url,'Watch on YouTube',`dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
+${renderSeriesImplications(slot, briefDate)}${slot.series_implications?.length ? '\n\n' : ''}**Source:** ${trackedLink(slot.url, /(^|\.)youtube\.com$|(^|\.)youtu\.be$/.test(new URL(slot.url).hostname) ? 'Watch on YouTube' : `Watch on ${slot.channel || new URL(slot.url).hostname}`, `dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
 
 ${renderInlineFeedback({
     brief_date: briefDate,

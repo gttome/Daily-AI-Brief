@@ -1,3 +1,4 @@
+import {sourceReadingMinutes} from './reading-support.mjs';
 import fs from 'node:fs';
 const catalog = JSON.parse(fs.readFileSync(new URL('../../_data/book-reading.json', import.meta.url), 'utf8'));
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -34,7 +35,7 @@ export function renderSeriesInvitation(date){
 export function renderEditionOverview(edition){
   if(!readerRelease(edition.brief_date))return '';
   const short=['Copilot: verification inside code review','GitHub: measure agent activity separately','Gemini: AI beside your desktop work','Workplace AI: find missing context','Mastra: shared skills and permissions','No-code agents: test the whole workflow'];
-  const items=edition.stories.map((s,i)=>({anchor:`reading-${s.story_id}`,title:edition.brief_date==='2026-09-12'?short[i]:s.headline,kind:'Article'}));
+  const items=edition.stories.map((s,i)=>({anchor:`reading-${s.story_id}`,title:edition.brief_date==='2026-09-12'?short[i]:s.headline,kind:sourceReadingMinutes(s)?`Article · about ${sourceReadingMinutes(s)} min source read`:'Article · Source reading time unavailable'}));
   for(const [key,anchor,name] of [['general','general','General video'],['agents_non_technical_people','agents-for-non-technical-people','Agent Skills video']]){
     const slot=edition.worth_watching[key];const duration=slot.status==='included'?`${Math.floor(slot.runtime_seconds/60)}:${String(slot.runtime_seconds%60).padStart(2,'0')}`:'No qualifying selection';
     items.push({anchor,title:slot.status==='included'?(edition.brief_date==='2026-09-12'?(key==='general'?'5 Minute AI News':'Agent Skills: structure and progressive disclosure'):slot.title):name,kind:`Video · ${duration}`});
