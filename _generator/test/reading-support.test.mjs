@@ -1,6 +1,12 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
 import {renderReadingSupport,readingMinutes,validateReadingSupport} from '../lib/reading-support.mjs';
+import {readerFoundationFiles} from '../lib/reader.mjs';
 const edition=JSON.parse(fs.readFileSync(new URL('../../_data/editions/2026-09-12.json',import.meta.url)));
+test('source estimates match the brief and all permanent shared article pages',()=>{
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json'));
+ const files=readerFoundationFiles(current,process.cwd());
+ for(const story of current.stories){const brief=renderReadingSupport(story,story.story_id,current.brief_date);const match=brief.match(/Source article · about \d+ min read/);assert.ok(match);assert.ok(files.get(`stories/2026-09-13/${story.slug}.md`).includes(match[0]));}
+});
 test('approved article and podcast context is safe and preserves uncertainty',()=>{
  validateReadingSupport(edition);
  const p=renderReadingSupport(edition.podcast,edition.podcast.item_id,edition.brief_date,'Podcast');
