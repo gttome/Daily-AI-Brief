@@ -13,6 +13,10 @@ reader_release: true
 
 # Copilot code review adds tool-backed verification and an agent ensemble
 
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Update</span><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div><p><strong>Agent ensemble:</strong> Several agents examine the same change from different perspectives. Their findings still need verification; agreement alone is not proof.</p><details><summary>Why this coverage label?</summary><p>Extends the Brief’s earlier Copilot review coverage with newly described verification capabilities.</p></details><div class="related-coverage"><strong>Earlier in the Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/" target="_blank" rel="noopener noreferrer">GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default</a></p><p>2026-09-11 · Earlier: inspect, test, and preview in a Copilot workflow. Here: verification tools inside code review.</p></div></aside>
+<!-- reader-release:end -->
+
 <span class="story-data" data-story-id="dab-story-2026-09-12-4f7c9a21" hidden></span>
 
 **Focus:** Technical AI Engineering  

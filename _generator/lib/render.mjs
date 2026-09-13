@@ -1,3 +1,4 @@
+import {renderReadingSupport,validateReadingSupport} from './reading-support.mjs';
 import {readerRelease, readerAddition, renderBookReading, renderSeriesInvitation, renderEditionOverview, validateBookReading} from './book-reading.mjs';
 import {watchlistPreview} from './watchlist.mjs';
 import {publicAnalyticsEvidence} from './analytics.mjs';
@@ -14,6 +15,8 @@ function label(value) {
 
 function renderStory(story, briefDate) {
   return `${readerRelease(briefDate)?`<span id="reading-${story.story_id}"></span>\n\n`:""}## ${story.ordinal}. ${story.headline}
+
+${renderReadingSupport(story,story.story_id,briefDate)}
 
 **Focus: ${FOCUS[story.focus]}**
 
@@ -54,6 +57,8 @@ function renderVideo(name, slot, briefDate, slotId) {
 
 ### ${slot.title}
 
+${renderReadingSupport(slot,`dab-video-${briefDate}-${slotId}`,briefDate,"Video")}
+
 ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
 **Channel:** ${slot.channel}  
 **Date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
@@ -75,6 +80,7 @@ ${renderInlineFeedback({
 
 export function renderBody(edition) {
   validateBookReading(edition);
+  validateReadingSupport(edition);
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
