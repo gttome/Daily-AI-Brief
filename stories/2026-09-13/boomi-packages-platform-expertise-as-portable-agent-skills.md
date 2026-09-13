@@ -14,7 +14,7 @@ reader_release: true
 # Boomi packages integration expertise as portable Agent Skills
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-13-f7b1249e" hidden></span>
@@ -32,7 +32,7 @@ reader_release: true
 **Why it matters:** Reusable skills can move domain knowledge from one-off prompts into inspectable packages that travel across agent hosts. Portability does not make generated integrations correct: permissions, test data, deployment gates, and human review remain essential, and Boomi’s speed claims are vendor-reported rather than independent benchmarks.
 
 <span class="story-editorial-note" data-george-implication="Package recurring book, workshop, and consulting methods as small skills with instructions, references, scripts, and tests. Keep each skill narrow enough to review and pair it with explicit permissions and acceptance evidence." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 ## What to do now

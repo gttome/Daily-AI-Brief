@@ -94,11 +94,11 @@ ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'ge
 
 ${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
-${edition.podcast ? renderPodcast(edition.podcast, edition.brief_date) + '\n\n' : ''}## Editorial takeaway
+${edition.podcast ? renderPodcast(edition.podcast, edition.brief_date) + '\n\n' : ''}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
 
 ${edition.editorial_takeaway}
 
-${renderSeriesInvitation(edition.brief_date)}${readerRelease(edition.brief_date)?readerAddition(`<details class="watchlist-fold"><summary>Emerging AI Watchlist · explore after the brief</summary>${watchlistPreview(edition.brief_date)}</details>`):''}`;
+${renderSeriesInvitation(edition.brief_date)}`;
 }
 
 export function renderDated(edition) {

@@ -73,7 +73,7 @@
         {"source_id": "meta-ai-blog", "name": "Meta AI Blog", "url": "https://ai.meta.com/blog/", "format": "article", "automated": true},
         {"source_id": "xai-news", "name": "xAI News", "url": "https://x.ai/news", "format": "article", "automated": false},
         {"source_id": "mistral-news", "name": "Mistral AI News", "url": "https://mistral.ai/news/", "format": "article", "automated": true},
-        {"source_id": "qwen-blog", "name": "Qwen Blog", "url": "https://qwenlm.github.io/blog/", "format": "article", "automated": true},
+        {"source_id": "qwen-blog", "name": "Qwen Blog", "url": "https://qwen.ai/blog", "format": "article", "automated": false},
         {"source_id": "deepseek-news", "name": "DeepSeek News", "url": "https://api-docs.deepseek.com/news", "format": "article", "automated": true}
       ]
     },

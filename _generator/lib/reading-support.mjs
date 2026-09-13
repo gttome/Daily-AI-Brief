@@ -2,9 +2,9 @@ import fs from 'node:fs';
 import {readerAddition} from './book-reading.mjs';
 const catalog=JSON.parse(fs.readFileSync(new URL('../../_data/reading-support.json',import.meta.url),'utf8'));
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-export function readingMinutes(item,context=''){
- const text=[item.summary||item.why_useful,item.why_it_matters||item.connection,item.what_to_do_now?.label,item.what_to_do_now?.rationale,context].filter(Boolean).join(' ');
- return Math.max(1,Math.ceil((text.match(/[\p{L}\p{N}’'-]+/gu)||[]).length/200));
+export function readingMinutes(evidence){
+ if(evidence?.status!=='verified'||!Number.isInteger(evidence.word_count)||evidence.word_count<1||!evidence.source_url||!evidence.verified_at||!evidence.method)return null;
+ return Math.max(1,Math.ceil(evidence.word_count/200));
 }
 export function validateReadingSupport(edition,data=catalog){
  const ids=new Set(edition.stories.map(x=>x.story_id));
@@ -21,7 +21,9 @@ export function renderReadingSupport(item,id,date,kind='Article'){
  if(date<'2026-09-12')return '';
  const x=(catalog.editions[date]||[]).find(x=>x.item_id===id);
  const seconds=item.runtime_seconds;
- const duration=kind==='Article'?`About ${readingMinutes(item,x?.context)} min read`:Number.isInteger(seconds)&&seconds>0?`${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')} ${kind.toLowerCase()}`:`${kind} · duration not verified`;
+ const sourceReading=catalog.source_reading?.[id];
+ const minutes=sourceReading?.source_url===item.source?.url?readingMinutes(sourceReading):null;
+ const duration=kind==='Article'?(minutes?`Source article · about ${minutes} min read`:'Source reading time unavailable'):Number.isInteger(seconds)&&seconds>0?`${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')} ${kind.toLowerCase()}`:`${kind} · duration not verified`;
  const r=x?.related;
- return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${x?`<span class="coverage-label">${esc(x.coverage_label)}</span>`:''}<span${kind==='Article'?' title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded."':''}>${esc(duration)}</span></div>${x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:''}${r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:''}</aside>`);
+ return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${x?`<span class="coverage-label">${esc(x.coverage_label)}</span>`:''}<span${kind==='Article'?' title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified."':''}>${esc(duration)}</span></div>${x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:''}${r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:''}</aside>`);
 }

@@ -14,7 +14,7 @@ reader_release: true
 # Ruby’s documentation pipeline exposes a containment gap for web-research agents
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated at 200 words per minute for the summary, significance, practical step, and context note; linked reading and media are excluded.">About 1 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-13-91c7e2a4" hidden></span>
@@ -32,7 +32,7 @@ reader_release: true
 **Why it matters:** Browsing and package inspection are executable security boundaries, not passive research steps. Agent harnesses need sandboxing, least-privilege secrets, restricted egress, immutable traces, and rehearsed shutdown procedures. Attribution and intent remain partly uncertain, so the operational lesson is stronger than any claim about motive.
 
 <span class="story-editorial-note" data-george-implication="Use the incident in consulting and workshops to map every place an agent can cause server-side execution. Turn the map into a pre-deployment checklist for credentials, network egress, logging, kill switches, and human escalation." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the book page; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
 ## What to do now

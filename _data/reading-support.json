@@ -1,4 +1,54 @@
 {
+  "source_reading": {
+    "dab-story-2026-09-13-91c7e2a4": {
+      "status": "verified",
+      "source_url": "https://rubyhack.ai/",
+      "word_count": 3918,
+      "verified_at": "2026-09-13T15:30:17.802Z",
+      "method": "Reviewed source main text; scripts, styles, navigation, forms and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-13-4b8f13d0": {
+      "status": "verified",
+      "source_url": "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating",
+      "word_count": 2668,
+      "verified_at": "2026-09-13T15:30:17.802Z",
+      "method": "Reviewed source main text; scripts, styles, navigation, forms and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-13-a62e9c74": {
+      "status": "verified",
+      "source_url": "https://shopify.engineering/back-to-native",
+      "word_count": 2085,
+      "verified_at": "2026-09-13T15:30:17.802Z",
+      "method": "Web-retrieved publisher article body, introduction through acknowledgements; navigation and footer excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-13-d30a5f8b": {
+      "status": "verified",
+      "source_url": "https://simonwillison.net/2026/Sep/12/astra-running-routes/",
+      "word_count": 436,
+      "verified_at": "2026-09-13T15:30:17.802Z",
+      "method": "Reviewed source main text; scripts, styles, navigation, forms and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-13-f7b1249e": {
+      "status": "verified",
+      "source_url": "https://boomi.com/platform/companion/",
+      "word_count": 1116,
+      "verified_at": "2026-09-13T15:30:17.802Z",
+      "method": "Reviewed source main text; scripts, styles, navigation, forms and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-13-28e6c5ad": {
+      "status": "verified",
+      "source_url": "https://www.microsoft.com/en-us/events/local-events/microsoft-agent-a-thon",
+      "word_count": 496,
+      "verified_at": "2026-09-13T15:30:17.802Z",
+      "method": "Reviewed source main text; scripts, styles, navigation, forms and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    }
+  },
   "schema_version": "1.0.0",
   "words_per_minute": 200,
   "editions": {
