@@ -47,6 +47,54 @@
       "verified_at": "2026-09-13T15:30:17.802Z",
       "method": "Reviewed source main text; scripts, styles, navigation, forms and unrelated promotional/footer sections excluded.",
       "words_per_minute": 200
+    },
+    "dab-story-2026-09-14-8c4f2a71": {
+      "status": "verified",
+      "source_url": "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+      "word_count": 2870,
+      "verified_at": "2026-09-14T12:15:00Z",
+      "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-14-2e7b9d40": {
+      "status": "verified",
+      "source_url": "https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents",
+      "word_count": 1050,
+      "verified_at": "2026-09-14T12:15:00Z",
+      "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-14-a13c6f85": {
+      "status": "verified",
+      "source_url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/",
+      "word_count": 1325,
+      "verified_at": "2026-09-14T12:15:00Z",
+      "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-14-f5d208be": {
+      "status": "verified",
+      "source_url": "https://openai.com/index/put-data-to-work/",
+      "word_count": 1510,
+      "verified_at": "2026-09-14T12:15:00Z",
+      "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-14-74b1ea3c": {
+      "status": "verified",
+      "source_url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/",
+      "word_count": 990,
+      "verified_at": "2026-09-14T12:15:00Z",
+      "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-14-c09e57d2": {
+      "status": "verified",
+      "source_url": "https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/",
+      "word_count": 1720,
+      "verified_at": "2026-09-14T12:15:00Z",
+      "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
+      "words_per_minute": 200
     }
   },
   "schema_version": "1.0.0",
@@ -58,10 +106,10 @@
         "coverage_label": "Update",
         "context_term": "Agent ensemble",
         "context": "Several agents examine the same change from different perspectives. Their findings still need verification; agreement alone is not proof.",
-        "label_reason": "Extends the Brief\u2019s earlier Copilot review coverage with newly described verification capabilities.",
+        "label_reason": "Extends the Brief’s earlier Copilot review coverage with newly described verification capabilities.",
         "related": {
           "label": "Earlier Brief",
-          "title": "GitHub Copilot\u2019s new review loop makes inspect, test, and preview the beginner default",
+          "title": "GitHub Copilot’s new review loop makes inspect, test, and preview the beginner default",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/github-copilot-s-new-review-loop-makes-inspect-test-and-preview-the-beginner-default/",
           "brief_date": "2026-09-11",
           "connection": "Earlier: inspect, test, and preview in a Copilot workflow. Here: verification tools inside code review."
@@ -118,10 +166,10 @@
         "coverage_label": "New development",
         "context_term": "Skills and sandboxes",
         "context": "A skill packages reusable instructions and supporting files. A sandbox limits where code can run and what it can access; permission to read a skill is not permission to execute it.",
-        "label_reason": "New filesystem-skills capability; the earlier item concerns another tool\u2019s reusable skill packaging.",
+        "label_reason": "New filesystem-skills capability; the earlier item concerns another tool’s reusable skill packaging.",
         "related": {
           "label": "Earlier Brief",
-          "title": "Atlassian\u2019s TWG CLI installs one reusable skill package across major agent tools",
+          "title": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
           "brief_date": "2026-09-11",
           "connection": "Earlier: distribute reusable skills across tools. Here: store and govern skills in shared workspaces."
@@ -156,17 +204,17 @@
           "brief_date": "2026-09-10",
           "connection": "A useful follow-up on the difference between AI activity and demonstrated value."
         },
-        "learning_outcome": "A quick overview of the previous day\u2019s AI developments to help you decide which stories to investigate further."
+        "learning_outcome": "A quick overview of the previous day’s AI developments to help you decide which stories to investigate further."
       },
       {
         "item_id": "dab-video-2026-09-12-agent-skills",
         "coverage_label": "Background",
         "context_term": "Progressive disclosure",
-        "context": "Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent\u2019s working context.",
+        "context": "Load a short skill description first, then bring in detailed instructions when needed. This keeps unrelated material out of the agent’s working context.",
         "label_reason": "An instructional tutorial that supplies background for the skills story.",
         "related": {
           "label": "Earlier Brief",
-          "title": "Atlassian\u2019s TWG CLI installs one reusable skill package across major agent tools",
+          "title": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
           "brief_date": "2026-09-11",
           "connection": "Earlier coverage gives a concrete example of reusable skill packaging."
@@ -184,9 +232,83 @@
           "title": "The Financial Stability Board frames frontier AI as a resilience problem",
           "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/",
           "brief_date": "2026-08-31",
-          "connection": "Our August 31 coverage examines cybersecurity and resilience concerns. Read it for a different approach to assessing AI risk; it does not substantiate the probability quoted in this podcast\u2019s headline."
+          "connection": "Our August 31 coverage examines cybersecurity and resilience concerns. Read it for a different approach to assessing AI risk; it does not substantiate the probability quoted in this podcast’s headline."
         },
         "learning_outcome": "How to examine dramatic AI risk claims by identifying assumptions, incentives, supporting evidence, and practical safeguards."
+      }
+    ],
+    "2026-09-14": [
+      {
+        "item_id": "dab-story-2026-09-14-8c4f2a71",
+        "coverage_label": "New development",
+        "context_term": "Control plane",
+        "context": "A control plane centralizes policy, routing and observation around a simpler data path. It must remain available and auditable because many products depend on it.",
+        "label_reason": "New primary-source development not found in the preceding 30-day story memory.",
+        "learning_outcome": "How centralized controls, constrained APIs and load-balancing feedback loops affect reliability at extreme scale."
+      },
+      {
+        "item_id": "dab-story-2026-09-14-2e7b9d40",
+        "coverage_label": "New development",
+        "context_term": "Portable Agent Skill",
+        "context": "A skill packages reusable instructions and supporting context. Portability does not remove the need to review files, permissions and tool behavior in each host.",
+        "label_reason": "New primary-source development not found in the preceding 30-day story memory.",
+        "learning_outcome": "What belongs in a portable Agent Skill and which controls remain local to the host and environment."
+      },
+      {
+        "item_id": "dab-story-2026-09-14-a13c6f85",
+        "coverage_label": "New development",
+        "context_term": "Ground-truth boundary",
+        "context": "AI can propose and prioritize candidates. A separate expert or experimental process must decide whether the claim is true in the real world.",
+        "label_reason": "New primary-source development not found in the preceding 30-day story memory.",
+        "learning_outcome": "Where generative AI contributes to scientific search and where empirical evidence must take over."
+      },
+      {
+        "item_id": "dab-story-2026-09-14-f5d208be",
+        "coverage_label": "New development",
+        "context_term": "Semantic grounding",
+        "context": "A semantic layer supplies agreed business definitions and relationships. It helps interpretation, but analysts still need to check evidence and assumptions.",
+        "label_reason": "New primary-source development not found in the preceding 30-day story memory.",
+        "learning_outcome": "How governed sources, business definitions, evidence review and approval fit into conversational analysis."
+      },
+      {
+        "item_id": "dab-story-2026-09-14-74b1ea3c",
+        "coverage_label": "New development",
+        "context_term": "Generated app",
+        "context": "Natural-language generation can create a working prototype. Production use still requires code, data, security, accessibility and ownership review.",
+        "label_reason": "New primary-source development not found in the preceding 30-day story memory.",
+        "learning_outcome": "How to move from an app prompt to a reviewed, governed and owned deployment."
+      },
+      {
+        "item_id": "dab-story-2026-09-14-c09e57d2",
+        "coverage_label": "New development",
+        "context_term": "Durable job",
+        "context": "A long-running agent needs durable state, checkpoints and a safe way for a person to pause, redirect or approve consequential steps.",
+        "label_reason": "New primary-source development not found in the preceding 30-day story memory.",
+        "learning_outcome": "Why job-level agents require state, steering, deterministic rules, audit trails and human approval."
+      },
+      {
+        "item_id": "dab-video-2026-09-14-general",
+        "coverage_label": "Background",
+        "context_term": "Source review",
+        "context": "A generated research report is a starting point for judgment. Open the cited sources and verify that they support the report’s key claims.",
+        "label_reason": "Short instructional video supporting today’s evidence theme.",
+        "learning_outcome": "How to request a research report, inspect its sources and export the result."
+      },
+      {
+        "item_id": "dab-video-2026-09-14-agent-skills",
+        "coverage_label": "Background",
+        "context_term": "Domain plugin",
+        "context": "A domain plugin packages a reusable capability. Confirm what materials it can access and review the result before reuse.",
+        "label_reason": "Short instructional companion to today’s Agent Skills story.",
+        "learning_outcome": "How a non-technical user can invoke a reusable education plugin for bounded tasks."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-14-bank-ai-transformation",
+        "coverage_label": "Background",
+        "context_term": "Transformation sequence",
+        "context": "Policies, training, data foundations, embedded champions and engineering capacity are prerequisites—not side effects—of reliable agent adoption.",
+        "label_reason": "Practitioner interview selected under the documented freshness fallback.",
+        "learning_outcome": "How one regulated organization sequenced AI adoption from chat access to internal apps and agents."
       }
     ]
   }

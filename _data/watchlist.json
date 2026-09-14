@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-13",
-  "updated_at": "2026-09-13T15:30:00Z",
-  "baseline_note": "Initial researched baseline. Topics are early signals, not confirmed accelerating trends. Some concepts predate this watchlist.",
+  "edition_date": "2026-09-14",
+  "updated_at": "2026-09-14T12:15:00Z",
+  "baseline_note": "Rolling researched watchlist. September 14 discovery retrieved candidates from 35 of 49 registered sources; unavailable, empty and assisted-review sources remain explicit coverage limits.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -14,9 +14,9 @@
       "limitations": "A listed experiment is not proof of general availability, adoption, or production readiness.",
       "next_action": "Check access, collaboration controls and independent hands-on reports.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-12T02:08:04.109758Z",
-      "status": "early_signal",
-      "confidence": "limited",
+      "updated_at": "2026-09-14T12:15:00Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
       "evidence": [
         {
           "title": "Google Labs — Play with Putty",
@@ -27,14 +27,30 @@
           "checked_at": "2026-09-12T02:08:04.109758Z",
           "development_id": "collaborative-vibe-coding",
           "review_depth": "publisher description"
+        },
+        {
+          "title": "Build business apps with Copilot Cowork and Copilot Studio",
+          "url": "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/",
+          "publisher": "Microsoft",
+          "kind": "primary",
+          "publication_date": "2026-09-10",
+          "checked_at": "2026-09-14T12:15:00Z",
+          "development_id": "microsoft-conversational-business-apps",
+          "review_depth": "full publisher announcement"
         }
       ],
       "external_attention": [],
       "momentum": {
-        "classification": "baseline",
+        "classification": "gaining_evidence",
         "score": null,
-        "observations": [],
-        "reason": "First watchlist observation; growth cannot yet be measured."
+        "observations": [
+          {
+            "observed_at": "2026-09-14T12:15:00Z",
+            "value": null,
+            "source": "Independent new primary development; comparable public attention metric unavailable."
+          }
+        ],
+        "reason": "A second independent primary development now supports the underlying capability; comparable popularity metrics remain unavailable."
       },
       "rubric": {
         "novelty": {
@@ -46,12 +62,12 @@
           "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
         },
         "independence": {
-          "score": 1,
-          "reason": "One underlying development; a community repost is not independent corroboration."
+          "score": 4,
+          "reason": "Two distinct primary developments from different organizations now support the underlying capability."
         },
         "momentum": {
-          "score": null,
-          "reason": "No comparable earlier watchlist observation."
+          "score": 3,
+          "reason": "Independent new development observed since the baseline; public popularity growth is not inferred."
         },
         "relevance": {
           "score": 4,
@@ -212,7 +228,7 @@
       "limitations": "A preprint and its benchmarks do not establish protection against all real-world attacks.",
       "next_action": "Compare containment failures and goal-conflict evaluations, then extract reusable sandbox, monitoring and approval tests.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-13T15:30:00Z",
+      "updated_at": "2026-09-14T12:15:00Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -255,6 +271,16 @@
           "checked_at": "2026-09-13T15:30:00Z",
           "development_id": "agent-goal-conflict-analysis-2026-09",
           "review_depth": "full expert analysis with observation and conjecture distinguished"
+        },
+        {
+          "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+          "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+          "publisher": "OpenAI",
+          "kind": "primary",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-14T12:15:00Z",
+          "development_id": "habitat-centralized-control-plane",
+          "review_depth": "full engineering article"
         }
       ],
       "external_attention": [
@@ -267,10 +293,16 @@
         }
       ],
       "momentum": {
-        "classification": "baseline",
+        "classification": "gaining_evidence",
         "score": null,
-        "observations": [],
-        "reason": "First watchlist observation; growth cannot yet be measured."
+        "observations": [
+          {
+            "observed_at": "2026-09-14T12:15:00Z",
+            "value": null,
+            "source": "Independent new primary development; comparable public attention metric unavailable."
+          }
+        ],
+        "reason": "A second independent primary development now supports the underlying capability; comparable popularity metrics remain unavailable."
       },
       "rubric": {
         "novelty": {
@@ -283,11 +315,11 @@
         },
         "independence": {
           "score": 4,
-          "reason": "The preprint, registry incident and goal-conflict analysis are substantively distinct developments from independent sources."
+          "reason": "Two distinct primary developments from different organizations now support the underlying capability."
         },
         "momentum": {
-          "score": null,
-          "reason": "No comparable earlier watchlist observation."
+          "score": 3,
+          "reason": "Independent new development observed since the baseline; public popularity growth is not inferred."
         },
         "relevance": {
           "score": 5,
@@ -391,9 +423,9 @@
       "limitations": "Robotics results cannot be assumed to apply to general knowledge-work agents.",
       "next_action": "Check the experimental setup and search for independent applications outside robotics.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-12T02:08:04.109758Z",
-      "status": "early_signal",
-      "confidence": "limited",
+      "updated_at": "2026-09-14T12:15:00Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
       "evidence": [
         {
           "title": "Memory as Plans: World-Action Modeling with Memory-Grounded Planning",
@@ -414,6 +446,16 @@
           "checked_at": "2026-09-12T02:08:04.109758Z",
           "development_id": "2609.11561",
           "review_depth": "community listing and discussion"
+        },
+        {
+          "title": "Salesforce expands Agentforce with new job-ready AI agents",
+          "url": "https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/",
+          "publisher": "Salesforce",
+          "kind": "primary",
+          "publication_date": "2026-09-11",
+          "checked_at": "2026-09-14T12:15:00Z",
+          "development_id": "agentforce-job-ready-agents",
+          "review_depth": "full publisher announcement"
         }
       ],
       "external_attention": [
@@ -426,10 +468,16 @@
         }
       ],
       "momentum": {
-        "classification": "baseline",
+        "classification": "gaining_evidence",
         "score": null,
-        "observations": [],
-        "reason": "First watchlist observation; growth cannot yet be measured."
+        "observations": [
+          {
+            "observed_at": "2026-09-14T12:15:00Z",
+            "value": null,
+            "source": "Independent new primary development; comparable public attention metric unavailable."
+          }
+        ],
+        "reason": "A second independent primary development now supports the underlying capability; comparable popularity metrics remain unavailable."
       },
       "rubric": {
         "novelty": {
@@ -441,12 +489,12 @@
           "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
         },
         "independence": {
-          "score": 1,
-          "reason": "One underlying development; a community repost is not independent corroboration."
+          "score": 4,
+          "reason": "Two distinct primary developments from different organizations now support the underlying capability."
         },
         "momentum": {
-          "score": null,
-          "reason": "No comparable earlier watchlist observation."
+          "score": 3,
+          "reason": "Independent new development observed since the baseline; public popularity growth is not inferred."
         },
         "relevance": {
           "score": 3,

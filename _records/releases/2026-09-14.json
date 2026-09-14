@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-14",
+  "baseline_sha": "026f00d41458ea1494c44587da930c22e209b030",
+  "rollback_target_sha": "026f00d41458ea1494c44587da930c22e209b030",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-14-textbook.json",
+  "image_review_sha256": "4be14a1a7f67cdd19c77ae8179a428dcec25cd618b9f434f26180d3deee3328b",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-14/01-habitat-storage-control-plane.png",
+      "sha256": "0f4a86b423d3eb9f8e22db36a1cc6d0482b0b5221626e1086d036e88cfe89154",
+      "bytes": 717497
+    },
+    {
+      "path": "briefs/images/2026-09-14/02-google-cloud-developer-plugin.png",
+      "sha256": "f312085f6545578e520bb69d2fb57e29d365b53bc7e85636218ee2be3d6b4f20",
+      "bytes": 670533
+    },
+    {
+      "path": "briefs/images/2026-09-14/03-antimicrobial-discovery-loop.png",
+      "sha256": "9b103c3084169e469f2fb948e0a73a5795f685d8ddba9e52a6988ef0f4c0a9eb",
+      "bytes": 679819
+    },
+    {
+      "path": "briefs/images/2026-09-14/04-data-agent-governed-analysis.png",
+      "sha256": "28588eaceeded70b84593820d2afc2be513635c83875eeb992ee52672ac5908c",
+      "bytes": 654779
+    },
+    {
+      "path": "briefs/images/2026-09-14/05-copilot-app-building.png",
+      "sha256": "64d1720ecbdac3c6e24beea0417a38e82732ffe32cb9cb3168c827d1386d6e73",
+      "bytes": 704991
+    },
+    {
+      "path": "briefs/images/2026-09-14/06-agentforce-job-ready-loop.png",
+      "sha256": "a5a2317dc78d41867458080dadfe95262ea0ba9a76dea464e0d72c8cc19013fa",
+      "bytes": 745875
+    }
+  ],
+  "canonical_sha256": "6308b7c7a6555d9a86b85b9b095455571a3f8c324bc3673e9af0460505525d1a",
+  "candidate_digest": "sha256:c43090688662a0772498274c6ef6d1a0e50354ce42ed34bb9faf1dc88cfab675"
+}
