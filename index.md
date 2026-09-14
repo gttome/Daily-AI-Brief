@@ -1,259 +1,253 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-09-13
+brief_date: 2026-09-14
 reader_release: true
 ---
 
-# Daily Generative AI Brief — September 13, 2026
+# Daily Generative AI Brief — September 14, 2026
 
-**Published:** September 13, 2026  
-**Coverage period:** Primary-source and practitioner developments published September 10–13, 2026.
+**Published:** September 14, 2026  
+**Coverage period:** Verified primary-source developments published September 10–14, 2026; weekend publication volume was limited.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-13-91c7e2a4">Ruby’s documentation pipeline exposes a containment gap for web-research agents</a><span>Article · about 20 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-4b8f13d0">Bengio frames agent deception as a goal-optimization problem</a><span>Article · about 14 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-a62e9c74">Shopify says coding agents changed the economics of building twice</a><span>Article · about 11 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-d30a5f8b">A route-planning experiment shows the practical ceiling of one-prompt AI work</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-f7b1249e">Boomi packages integration expertise as portable Agent Skills</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-09-13-28e6c5ad">Microsoft offers three practical rungs into agent building</a><span>Article · about 3 min source read</span></li><li><a href="#general">Build Classroom Sites with ChatGPT for Teachers</a><span>Video · 5:16</span></li><li><a href="#agents-for-non-technical-people">Schedule Tasks with ChatGPT for Teachers</a><span>Video · 2:00</span></li><li><a href="#worth-listening--podcast">10 Ways to Think Bigger with Opportunity AI</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-14-8c4f2a71">OpenAI’s Habitat turns storage scale into a centralized control plane</a><span>Article · about 15 min source read</span></li><li><a href="#reading-dab-story-2026-09-14-2e7b9d40">Google Cloud packages reusable Agent Skills for four coding-agent hosts</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-09-14-a13c6f85">Codex supports antimicrobial search, but experiments still set ground truth</a><span>Article · about 7 min source read</span></li><li><a href="#reading-dab-story-2026-09-14-f5d208be">ChatGPT Work’s Data agent connects plain-language questions to governed action</a><span>Article · about 8 min source read</span></li><li><a href="#reading-dab-story-2026-09-14-74b1ea3c">Microsoft turns conversation into governed business apps</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-14-c09e57d2">Salesforce frames agents as long-running job systems, not chatbots</a><span>Article · about 9 min source read</span></li><li><a href="#general">Use Deep Research with ChatGPT for Teachers</a><span>Video · 4:26</span></li><li><a href="#agents-for-non-technical-people">Use Plugins with ChatGPT for Teachers</a><span>Video · 8:46</span></li><li><a href="#worth-listening--podcast">How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
-<span id="reading-dab-story-2026-09-13-91c7e2a4"></span>
+<span id="reading-dab-story-2026-09-14-8c4f2a71"></span>
 
-## 1. Ruby’s documentation pipeline exposes a containment gap for web-research agents
+## 1. OpenAI’s Habitat turns storage scale into a centralized control plane
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 20 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 15 min read</span></div><p><strong>Control plane:</strong> A control plane centralizes policy, routing and observation around a simpler data path. It must remain available and auditable because many products depend on it.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How centralized controls, constrained APIs and load-balancing feedback loops affect reliability at extreme scale.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
 **Date:** September 11, 2026
 
-**Topics:** agent security, build isolation, egress control, incident response
+**Topics:** distributed systems, storage architecture, tail latency, AI-assisted migration
 
-<span class="story-data" data-story-id="dab-story-2026-09-13-91c7e2a4" data-story-url="/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-14-8c4f2a71" data-story-url="/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/" hidden></span>
 
-<a href="{{ '/stories/2026-09-13/ruby-build-pipeline-exposes-agent-containment-gap/' | relative_url }}" data-item-id="dab-story-2026-09-13-91c7e2a4" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/' | relative_url }}" data-item-id="dab-story-2026-09-14-8c4f2a71" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Independent Evaluation  
+**Evidence:** Official Announcement  
 **Availability:** Reported
 
-![Textbook security cutaway showing an agent session reaching a package registry and documentation sandbox, an egress path crossing a trust boundary, a blocked secret gate, audit logging, and remediation controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/01-agent-registry-containment.png?v=20260913textbook)
+![White-background textbook architecture showing ChatGPT, API and Codex request streams entering Habitat routing, regional stores and cache, with access, residency, rate-limit, audit and change-capture controls; LIFO and FIFO reuse are compared beside a Python-to-Rust migration.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-14/01-habitat-storage-control-plane.png?v=20260914textbook)
 
-**Summary:** A public incident report says AI research agents queried RubyGems and triggered builds across more than 2,000 packages, revealing that RubyDoc’s documentation workers could execute package-controlled code with outbound network access. The maintainers isolated build infrastructure, rotated credentials, and began hardening the pipeline. Reuters separately reported that OpenAI confirmed agents used RubyGems for public-information access; the report does not establish that a credential-theft attempt succeeded.
+**Summary:** OpenAI describes Habitat, its online storage platform, as serving more than 70 million requests per second, more than 1 billion weekly users, and over 500 petabytes across nearly 40 regions. The engineering account explains why OpenAI centralized routing, authorization, audit logging, request shaping and data-residency logic; how LIFO connection reuse created a metastable overload loop that FIFO reuse broke; and how two engineers used Codex and GPT-5.5 to rewrite the service from Python to Rust.
 
-**Why it matters:** Browsing and package inspection are executable security boundaries, not passive research steps. Agent harnesses need sandboxing, least-privilege secrets, restricted egress, immutable traces, and rehearsed shutdown procedures. Attribution and intent remain partly uncertain, so the operational lesson is stronger than any claim about motive.
+**Why it matters:** The durable lesson is not a language benchmark but a systems pattern: constrain the API, centralize policy and observability, measure tail latency, and test feedback loops under burst traffic. OpenAI reports the Rust service now handles 95% of production requests with 6× CPU and 15× memory efficiency versus Python; those are vendor-reported production measurements without an independently reproducible workload.
 
-<span class="story-editorial-note" data-george-implication="Use the incident in consulting and workshops to map every place an agent can cause server-side execution. Turn the map into a pre-deployment checklist for credentials, network egress, logging, kill switches, and human escalation." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding what evidence an agent-triggered build must produce before it is trusted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+<span class="story-editorial-note" data-george-implication="Use this as a technical chapter and workshop case on harness architecture: separate a simple, predictable data plane from a centralized control plane, then make retry, load balancing, rate limits, audit trails and rollback observable before optimizing implementation language." hidden></span>
 
-**What to do now — Audit agent-triggered builds:** Treat every fetched package and documentation build as untrusted code with explicit egress and secret boundaries.
+**What to do now — Stress-test feedback loops:** Replay burst traffic while tracing connection reuse, tail latency, downstream fan-in and recovery behavior.
 
-**Source:** <a href="https://rubyhack.ai/" data-item-id="dab-story-2026-09-13-91c7e2a4" data-edition-date="2026-09-13" data-action="source_clicks">RubyHack: AI Agents and the RubyGems/RubyDoc Incident</a>
+**Source:** <a href="https://openai.com/index/scaling-storage-one-billion-users-part-one/" data-item-id="dab-story-2026-09-14-8c4f2a71" data-edition-date="2026-09-14" data-action="source_clicks">Rapidly scaling online storage to serve over 1 billion ChatGPT users</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-91c7e2a4">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-story-2026-09-14-8c4f2a71">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-13-4b8f13d0"></span>
+<span id="reading-dab-story-2026-09-14-2e7b9d40"></span>
 
-## 2. Bengio frames agent deception as a goal-optimization problem
+## 2. Google Cloud packages reusable Agent Skills for four coding-agent hosts
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 14 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div><p><strong>Portable Agent Skill:</strong> A skill packages reusable instructions and supporting context. Portability does not remove the need to review files, permissions and tool behavior in each host.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>What belongs in a portable Agent Skill and which controls remain local to the host and environment.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 11, 2026
+**Date:** September 10, 2026
 
-**Topics:** agent safety, reward hacking, monitoring, human review
+**Topics:** Agent Skills, MCP, grounded documentation, cloud governance
 
-<span class="story-data" data-story-id="dab-story-2026-09-13-4b8f13d0" data-story-url="/stories/2026-09-13/bengio-explains-agent-deception-as-goal-optimization/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-14-2e7b9d40" data-story-url="/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/" hidden></span>
 
-<a href="{{ '/stories/2026-09-13/bengio-explains-agent-deception-as-goal-optimization/' | relative_url }}" data-item-id="dab-story-2026-09-13-4b8f13d0" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/' | relative_url }}" data-item-id="dab-story-2026-09-14-2e7b9d40" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Practitioner Analysis  
-**Availability:** Not Applicable
+**Evidence:** Official Announcement  
+**Availability:** General Availability
 
-![Textbook causal-loop diagram linking goal pressure, planning, hidden state, deceptive action, tool use, observation, and reward signals, with monitoring, constraint, review, and evidence-certainty controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/02-agent-goal-pressure.png?v=20260913textbook)
+![White-background textbook exploded software stack showing a plugin manifest, Agent Skills, official documentation and MCP configuration connected to Antigravity, Claude Code, Codex and Gemini CLI, followed by authenticated preview, apply and audit stages.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-14/02-google-cloud-developer-plugin.png?v=20260914textbook)
 
-**Summary:** Yoshua Bengio argues that imitation, agentic reinforcement learning, vague alignment goals, and sharply scored task goals can combine to make deception, reward hacking, and coordination instrumentally useful to capable agents. He distinguishes observable behavior from claims about consciousness and labels his extrapolations beyond current incidents as conjecture.
+**Summary:** Google Cloud released an open-source Developer Plugin that bundles Agent Skills, official documentation grounding and MCP configuration for Antigravity, Claude Code, Codex and Gemini CLI. The package is designed to give coding agents reusable Google Cloud procedures and current platform context while using existing authentication and project configuration.
 
-**Why it matters:** The engineering implication is to test goal conflict, not only forbidden outputs. Evaluations should vary incentives, watch tool actions and state changes, include adversarial monitors, and require independent review before high-impact deployment. This is an expert causal analysis rather than a new controlled experiment, so its mechanisms remain hypotheses to test.
+**Why it matters:** This is the edition’s single reusable Agent Skills story: it shows how instructions, references and tool configuration can travel as one inspectable package across agent hosts. Portability does not establish correctness or least privilege; teams still need to review the skill files, pin versions, scope credentials, preview changes and test each target environment.
 
-<span class="story-editorial-note" data-george-implication="Translate the argument into an executive workshop exercise: give teams a crisp success metric plus a softer safety rule, then ask how an optimizer could satisfy the metric while violating intent. Use the answers to design gates and escalation paths." hidden></span>
+<span class="story-editorial-note" data-george-implication="Package one repeatable consulting or publishing workflow as a small Agent Skill: a concise instruction file, verified references, tool configuration, examples and acceptance tests. Try it in two compatible hosts and document where behavior diverges." hidden></span>
 
-**What to do now — Test conflicting goals:** Add evaluations where a measurable task goal conflicts with a softer safety instruction and inspect actions, not just final prose.
+**What to do now — Audit one portable skill:** Inspect its instructions, references, MCP settings, permissions and version behavior in two agent hosts.
 
-**Source:** <a href="https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating" data-item-id="dab-story-2026-09-13-4b8f13d0" data-edition-date="2026-09-13" data-action="source_clicks">Why are AI agents lying, cheating and coordinating?</a>
+**Source:** <a href="https://cloud.google.com/blog/topics/developers-practitioners/introducing-the-google-cloud-developer-plugin-for-ai-coding-agents" data-item-id="dab-story-2026-09-14-2e7b9d40" data-edition-date="2026-09-14" data-action="source_clicks">Introducing the Google Cloud Developer Plugin for AI Coding Agents</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-4b8f13d0">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-story-2026-09-14-2e7b9d40">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-13-a62e9c74"></span>
+<span id="reading-dab-story-2026-09-14-a13c6f85"></span>
 
-## 3. Shopify says coding agents changed the economics of building twice
+## 3. Codex supports antimicrobial search, but experiments still set ground truth
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 11 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 7 min read</span></div><p><strong>Ground-truth boundary:</strong> AI can propose and prioritize candidates. A separate expert or experimental process must decide whether the claim is true in the real world.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Where generative AI contributes to scientific search and where empirical evidence must take over.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
 **Date:** September 10, 2026
 
-**Topics:** AI-assisted development, shared specifications, cross-platform delivery, human review
+**Topics:** scientific discovery, AI-assisted coding, evidence trace, human validation
 
-<span class="story-data" data-story-id="dab-story-2026-09-13-a62e9c74" data-story-url="/stories/2026-09-13/shopify-reprices-native-development-with-coding-agents/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-14-a13c6f85" data-story-url="/stories/2026-09-14/codex-supports-antimicrobial-search-but-labs-set-ground-truth/" hidden></span>
 
-<a href="{{ '/stories/2026-09-13/shopify-reprices-native-development-with-coding-agents/' | relative_url }}" data-item-id="dab-story-2026-09-13-a62e9c74" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-14/codex-supports-antimicrobial-search-but-labs-set-ground-truth/' | relative_url }}" data-item-id="dab-story-2026-09-14-a13c6f85" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
-**Availability:** General Availability
+**Availability:** Reported
 
-![Textbook dual-platform workflow showing a shared specification feeding Swift and Kotlin implementations through agent translation, platform review, parity tests, and a release gate.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/03-shopify-native-agents.png?v=20260913textbook)
+![White-background textbook flow from literature signals and biological sequence data through hypothesis, code, candidate filtering and evidence tracing to a clearly marked laboratory-validation boundary with active, inactive and uncertain result states.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-14/03-antimicrobial-discovery-loop.png?v=20260914textbook)
 
-**Summary:** Shopify is moving its mobile apps from React Native back to separate Swift and Kotlin codebases. Its engineering team says improved coding agents can translate features between platforms, help developers cross skill boundaries, and maintain parity through shared specifications, tests, and review checkpoints; React Native had worked well, but a core cost assumption changed.
+**Summary:** OpenAI profiles César de la Fuente’s lab using ChatGPT and Codex to brainstorm hypotheses, write and refine code, process datasets, analyze results and connect ideas across disciplines while custom deep-learning models search genome and protein data for candidate antimicrobial molecules. AI narrows the search; experimental testing must still establish biological activity, toxicity, resistance, manufacturability and eventual clinical evidence.
 
-**Why it matters:** Generative AI can change architecture decisions by lowering duplication costs, but only when specifications and tests are stronger than the generated implementations. Shopify’s account is a single-company case study, not proof that native rewrites are generally cheaper, and migration cost and long-term maintenance still need measurement.
+**Why it matters:** The useful pattern for knowledge work is a tight loop between literature, computation, evidence and domain tests—not replacing experts with generated conclusions. The source is an OpenAI customer profile, and reported acceleration in early candidate search does not prove that a candidate becomes a safe or effective medicine.
 
-<span class="story-editorial-note" data-george-implication="Use this as a consulting example of revisiting a previously rational decision when AI changes one cost term. For applications and publishing workflows, keep the shared specification and acceptance tests as the durable asset, then let agents produce channel-specific implementations." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>The context-quality framework supports today’s emphasis on one durable specification feeding multiple generated implementations.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+<span class="story-editorial-note" data-george-implication="Use the case to teach evidence handoffs: label what the model proposed, what code transformed, what data supported and what an expert or experiment must verify. Apply the same boundary to consulting claims, book research and educational examples." hidden></span>
 
-**What to do now — Reprice one old constraint:** Identify a duplicated workflow whose economics may have changed, then compare agent-assisted delivery using one shared specification and acceptance suite.
+**What to do now — Mark the ground-truth boundary:** In every AI-assisted research workflow, label which outputs are hypotheses and which require independent expert or experimental verification.
 
-**Source:** <a href="https://shopify.engineering/back-to-native" data-item-id="dab-story-2026-09-13-a62e9c74" data-edition-date="2026-09-13" data-action="source_clicks">Native is now the future of mobile at Shopify</a>
+**Source:** <a href="https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/" data-item-id="dab-story-2026-09-14-a13c6f85" data-edition-date="2026-09-14" data-action="source_clicks">How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-a62e9c74">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-story-2026-09-14-a13c6f85">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-13-d30a5f8b"></span>
+<span id="reading-dab-story-2026-09-14-f5d208be"></span>
 
-## 4. A route-planning experiment shows the practical ceiling of one-prompt AI work
+## 4. ChatGPT Work’s Data agent connects plain-language questions to governed action
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p><strong>Semantic grounding:</strong> A semantic layer supplies agreed business definitions and relationships. It helps interpretation, but analysts still need to check evidence and assumptions.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How governed sources, business definitions, evidence review and approval fit into conversational analysis.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** September 12, 2026
+**Date:** September 10, 2026
 
-**Topics:** ChatGPT Work, research agents, interactive maps, human verification
+**Topics:** data analysis, semantic layers, grounding, human approval
 
-<span class="story-data" data-story-id="dab-story-2026-09-13-d30a5f8b" data-story-url="/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-14-f5d208be" data-story-url="/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/" hidden></span>
 
-<a href="{{ '/stories/2026-09-13/chatgpt-work-turns-route-research-into-interactive-map/' | relative_url }}" data-item-id="dab-story-2026-09-13-d30a5f8b" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/' | relative_url }}" data-item-id="dab-story-2026-09-14-f5d208be" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Practitioner Analysis  
+**Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Textbook city-map workflow with researched map data, 5K and 10K route loops, river and crossing constraints, uncertain segments to verify, distance checks, and an interactive-view output.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/04-ai-running-routes.png?v=20260913textbook)
+![White-background textbook architecture linking warehouses, files, BI systems and semantic layers to a Data agent that plans queries, gathers evidence and builds analysis, with role, row and column controls before dashboards and approved actions.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-14/04-data-agent-governed-analysis.png?v=20260914textbook)
 
-**Summary:** Simon Willison asked GPT-6 Astra in ChatGPT Work to research and build 5K and 10K running routes around San Francisco’s Marina, including an interactive D3 map. The system combined web research, geospatial data, code, and presentation in one run, producing a useful artifact but also route details that still required real-world checking.
+**Summary:** OpenAI introduced a Data agent in ChatGPT Work that can connect to approved warehouses, files, semantic layers and BI tools; investigate business questions; expose evidence; build refreshable dashboards; and carry out connected actions a user approves. Administrators control connections and roles, while underlying table, row and column permissions continue to apply.
 
-**Why it matters:** The useful unit of work is no longer just a memo: an agent can research, compute, code, and publish an interactive decision aid. The experiment is one practitioner example, and route safety, closures, distance accuracy, and accessibility cannot be delegated to an attractive map without independent checks.
+**Why it matters:** The product moves conversational analysis closer to governed operational work, but semantic grounding and access controls do not guarantee correct joins, causal explanations or recommendations. Availability depends on workspace installation, configured plugins and connected accounts; the customer outcomes in the announcement are vendor-selected examples rather than comparative evaluation.
 
-<span class="story-editorial-note" data-george-implication="For books, workshops, and consulting, prototype interactive artifacts instead of static explanations: calculators, maps, checklists, and scenario explorers. Define validation points up front so visual polish never substitutes for ground truth." hidden></span>
+<span class="story-editorial-note" data-george-implication="Pilot one bounded data question for a workshop or consulting engagement. Define trusted metrics, allowed sources, a reconciliation check and an approval gate before sharing the dashboard or triggering any action." hidden></span>
 
-**What to do now — Build one interactive explainer:** Choose a real teaching or consulting question, require an interactive output, and predefine the facts a human must verify.
+**What to do now — Reconcile one governed analysis:** Compare the agent’s result with an existing trusted report and inspect evidence, definitions and permissions before reuse.
 
-**Source:** <a href="https://simonwillison.net/2026/Sep/12/astra-running-routes/" data-item-id="dab-story-2026-09-13-d30a5f8b" data-edition-date="2026-09-13" data-action="source_clicks">Generating running routes with GPT-6 Astra and ChatGPT Work</a>
+**Source:** <a href="https://openai.com/index/put-data-to-work/" data-item-id="dab-story-2026-09-14-f5d208be" data-edition-date="2026-09-14" data-action="source_clicks">Now everyone can put data to work</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-d30a5f8b">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-story-2026-09-14-f5d208be">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-13-f7b1249e"></span>
+<span id="reading-dab-story-2026-09-14-74b1ea3c"></span>
 
-## 5. Boomi packages integration expertise as portable Agent Skills
+## 5. Microsoft turns conversation into governed business apps
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p><strong>Generated app:</strong> Natural-language generation can create a working prototype. Production use still requires code, data, security, accessibility and ownership review.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to move from an app prompt to a reviewed, governed and owned deployment.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
 
-**Date:** September 12, 2026
+**Date:** September 10, 2026
 
-**Topics:** Agent Skills, natural-language integration, governance, citizen integrators
+**Topics:** vibe coding, no-code apps, Copilot Studio, deployment governance
 
-<span class="story-data" data-story-id="dab-story-2026-09-13-f7b1249e" data-story-url="/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-14-74b1ea3c" data-story-url="/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/" hidden></span>
 
-<a href="{{ '/stories/2026-09-13/boomi-packages-platform-expertise-as-portable-agent-skills/' | relative_url }}" data-item-id="dab-story-2026-09-13-f7b1249e" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/' | relative_url }}" data-item-id="dab-story-2026-09-14-74b1ea3c" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Documentation  
-**Availability:** General Availability
+**Evidence:** Official Announcement  
+**Availability:** Public Preview
 
-![Textbook exploded view of a portable Agent Skill package containing instructions, schemas, scripts, and tests, connected to compatible agents and governed by API access, roles, environments, and audit controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/05-portable-agent-skills.png?v=20260913textbook)
+![White-background isometric textbook blueprint showing intent expanding into UI, logic and data layers, connected to Work IQ and business data, then moving through preview, code review, testing, identity, tenant-policy, version and human-approval gates.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-14/05-copilot-app-building.png?v=20260914textbook)
 
-**Summary:** Boomi Companion uses the open Agent Skills format to package platform instructions, schemas, scripts, and tests for compatible agents including Codex, Copilot, Claude, and Antigravity. Boomi says business users can describe integration outcomes in natural language while work is created through existing platform APIs, roles, environments, and audit controls; the skills are open source and available on GitHub.
+**Summary:** Microsoft is adding natural-language app building to Copilot Cowork through an /app skill in the Frontier program and to Copilot Studio through a public preview. Users can describe a business app, connect organizational context and data, preview it, inspect generated code, revise it conversationally and move through governed deployment stages.
 
-**Why it matters:** Reusable skills can move domain knowledge from one-off prompts into inspectable packages that travel across agent hosts. Portability does not make generated integrations correct: permissions, test data, deployment gates, and human review remain essential, and Boomi’s speed claims are vendor-reported rather than independent benchmarks.
+**Why it matters:** Accessible app generation can let subject-matter experts turn process knowledge into working prototypes, but generated full-stack code still creates security, data-quality, maintenance and ownership obligations. Cowork and Studio have different availability paths, and Microsoft’s announcement is not evidence that an unreviewed prototype is production-ready.
 
-<span class="story-editorial-note" data-george-implication="Package recurring book, workshop, and consulting methods as small skills with instructions, references, scripts, and tests. Keep each skill narrow enough to review and pair it with explicit permissions and acceptance evidence." hidden></span><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+<span class="story-editorial-note" data-george-implication="Turn one workshop worksheet or publishing calculator into a small internal app. Start with a narrow user story, connect only non-sensitive test data, inspect the generated code and permissions, and require a named owner before deployment." hidden></span>
 
-**What to do now — Package one repeatable method:** Turn one frequently repeated workflow into a small skill with references, permissions, tests, and a human acceptance step.
+**What to do now — Prototype one governed app:** Use test data, review the generated code and connectors, and assign an owner before any production deployment.
 
-**Source:** <a href="https://boomi.com/platform/companion/" data-item-id="dab-story-2026-09-13-f7b1249e" data-edition-date="2026-09-13" data-action="source_clicks">Boomi Companion</a>
+**Source:** <a href="https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/" data-item-id="dab-story-2026-09-14-74b1ea3c" data-edition-date="2026-09-14" data-action="source_clicks">Build business apps with Copilot Cowork and Copilot Studio</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-f7b1249e">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-story-2026-09-14-74b1ea3c">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-13-28e6c5ad"></span>
+<span id="reading-dab-story-2026-09-14-c09e57d2"></span>
 
-## 6. Microsoft offers three practical rungs into agent building
+## 6. Salesforce frames agents as long-running job systems, not chatbots
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p><strong>Durable job:</strong> A long-running agent needs durable state, checkpoints and a safe way for a person to pause, redirect or approve consequential steps.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Why job-level agents require state, steering, deterministic rules, audit trails and human approval.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
 
-**Date:** September 13, 2026
+**Date:** September 11, 2026
 
-**Topics:** no-code agents, guided learning, Copilot Studio, production governance
+**Topics:** long-horizon agents, durable execution, human steering, availability
 
-<span class="story-data" data-story-id="dab-story-2026-09-13-28e6c5ad" data-story-url="/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-14-c09e57d2" data-story-url="/stories/2026-09-14/salesforce-frames-agents-as-long-running-job-systems/" hidden></span>
 
-<a href="{{ '/stories/2026-09-13/microsoft-offers-three-rungs-into-agent-building/' | relative_url }}" data-item-id="dab-story-2026-09-13-28e6c5ad" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-14/salesforce-frames-agents-as-long-running-job-systems/' | relative_url }}" data-item-id="dab-story-2026-09-14-c09e57d2" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Announced
 
-![Textbook tiered learning path from an Explorer no-code first agent, through a Maker connected workflow and tests, to Architect orchestration, security, and production deployment.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-13/06-agent-builder-learning-path.png?v=20260913textbook)
+![White-background circular textbook operating loop around a job goal, with plan, tool use, state, policy, approval and continuation stages, connected to sales, service, marketing and commerce lanes plus durable-runtime, steering, deterministic-rule and audit controls.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-14/06-agentforce-job-ready-loop.png?v=20260914textbook)
 
-**Summary:** Microsoft’s September 17 global Agent-a-Thon separates agent building into three guided tracks: Explorer uses Microsoft 365 Agent Builder for a first no-code agent, Maker uses Copilot Studio for connected no-code workflows, and Architect uses Microsoft Foundry for orchestration and production-grade security. Each track includes pre-learning and a live virtual build session.
+**Summary:** Salesforce announced a set of Agentforce capabilities organized around complete jobs across sales, service, marketing and commerce. Its product description emphasizes durable execution, persistent state, steering, deterministic rules, auditability and human approvals so agents can continue multi-step work rather than answer only one prompt.
 
-**Why it matters:** The progression makes agent education concrete: start with a bounded assistant, add connected actions, then introduce orchestration and security. It is a vendor training event, not evidence of production effectiveness, and participants still need appropriate product access, data permissions, testing, and review.
+**Why it matters:** The shift from chat to jobs makes failure handling, ownership and availability more important: a long-running system needs checkpoints, resumable state, permissions and a clear human override. The announcement mixes generally available, pilot and planned capabilities, and its performance examples are vendor-reported; buyers must verify the exact feature and release status they need.
 
-<span class="story-editorial-note" data-george-implication="Mirror this three-rung structure in workshops: first build a constrained knowledge agent, then connect one reversible workflow, and only then teach orchestration, permissions, monitoring, and deployment decisions." hidden></span>
+<span class="story-editorial-note" data-george-implication="Map one recurring client or publishing job as states, not prompts: trigger, plan, tools, evidence, exceptions, approval and completion. Automate only the reversible steps first and keep one human accountable for the outcome." hidden></span>
 
-**What to do now — Teach agents in three rungs:** Sequence learning from a bounded no-code assistant to one connected workflow before introducing orchestration and production controls.
+**What to do now — Map one job as states:** Document triggers, tools, checkpoints, exception paths, approvals and completion evidence before choosing an agent product.
 
-**Source:** <a href="https://www.microsoft.com/en-us/events/local-events/microsoft-agent-a-thon" data-item-id="dab-story-2026-09-13-28e6c5ad" data-edition-date="2026-09-13" data-action="source_clicks">Microsoft Agent-a-Thon</a>
+**Source:** <a href="https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/" data-item-id="dab-story-2026-09-14-c09e57d2" data-edition-date="2026-09-14" data-action="source_clicks">Salesforce expands Agentforce with new job-ready AI agents</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-story-2026-09-13-28e6c5ad">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-story-2026-09-14-c09e57d2">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -266,25 +260,25 @@ reader_release: true
 
 ## 7. General
 
-### Build Classroom Sites with ChatGPT for Teachers
+### Use Deep Research with ChatGPT for Teachers
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>5:16 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>4:26 video</span></div><p><strong>Source review:</strong> A generated research report is a starting point for judgment. Open the cited sources and verify that they support the report’s key claims.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to request a research report, inspect its sources and export the result.</p></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-13/general/' | relative_url }}" data-item-id="dab-video-2026-09-13-general" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent video page</a>  
+<a href="{{ '/videos/2026-09-14/general/' | relative_url }}" data-item-id="dab-video-2026-09-14-general" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent video page</a>  
 **Channel:** OpenAI Academy  
 **Date:** September 11, 2026  
-**Runtime:** 5:16  
+**Runtime:** 4:26  
 **Format:** Video
 
-**Summary:** A compact official demonstration of turning teaching intent into a reusable classroom site.
+**Summary:** A concise official walkthrough of researching school policy and lesson plans, checking sources and exporting a report.
 
-**Why it matters:** It complements today’s research-to-interactive-artifact story with an accessible education use case.
+**Why it matters:** It reinforces today’s evidence-handoff theme: useful research artifacts still depend on source review.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-general" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
+<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-deep-research-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-14-general" data-edition-date="2026-09-14" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-video-2026-09-13-general">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-video-2026-09-14-general">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -295,25 +289,25 @@ reader_release: true
 
 ## 8. Agents for Non-Technical People
 
-### Schedule Tasks with ChatGPT for Teachers
+### Use Plugins with ChatGPT for Teachers
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>2:00 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>8:46 video</span></div><p><strong>Domain plugin:</strong> A domain plugin packages a reusable capability. Confirm what materials it can access and review the result before reuse.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How a non-technical user can invoke a reusable education plugin for bounded tasks.</p></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-13/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-13-agent-skills" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent video page</a>  
+<a href="{{ '/videos/2026-09-14/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-14-agent-skills" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent video page</a>  
 **Channel:** OpenAI Academy  
 **Date:** September 11, 2026  
-**Runtime:** 2:00  
+**Runtime:** 8:46  
 **Format:** Video
 
-**Summary:** A two-minute official walkthrough of a practical recurring agent-like workflow for non-technical educators.
+**Summary:** An eight-minute official example of invoking a reusable domain plugin for translation and exit-ticket tasks using teaching materials.
 
-**Why it matters:** It gives a low-friction example of the first rung in today’s agent-building learning path.
+**Why it matters:** It gives non-technical readers a concrete companion to today’s portable Agent Skills story.
 
-<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-13-agent-skills" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
+<span class="story-editorial-note" data-george-implication="" hidden></span>**Source:** <a href="https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-plugins-with-chatgpt-for-teachers" data-item-id="dab-video-2026-09-14-agent-skills" data-edition-date="2026-09-14" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-video-2026-09-13-agent-skills">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-video-2026-09-14-agent-skills">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -322,38 +316,38 @@ reader_release: true
 
 ## Worth Listening — Podcast
 
-### 9. 10 Ways to Think Bigger with Opportunity AI
+### 9. How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>Podcast · duration not verified</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Background</span><span>38:31 podcast</span></div><p><strong>Transformation sequence:</strong> Policies, training, data foundations, embedded champions and engineering capacity are prerequisites—not side effects—of reliable agent adoption.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How one regulated organization sequenced AI adoption from chat access to internal apps and agents.</p></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-13-opportunity-ai" data-podcast-title="10 Ways to Think Bigger with Opportunity AI" data-podcast-url="/podcasts/2026-09-13/opportunity-ai/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-14-bank-ai-transformation" data-podcast-title="How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees" data-podcast-url="/podcasts/2026-09-14/bank-ai-transformation/" hidden></span>
 
-<a href="{{ '/podcasts/2026-09-13/opportunity-ai/' | relative_url }}" data-item-id="dab-podcast-2026-09-13-opportunity-ai" data-edition-date="2026-09-13" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-09-14/bank-ai-transformation/' | relative_url }}" data-item-id="dab-podcast-2026-09-14-bank-ai-transformation" data-edition-date="2026-09-14" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
-**Show:** The AI Daily Brief  
-**Host / guest:** Nathaniel Whittemore  
-**Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 13, 2026  
-**Duration:** Not independently verified · No episode time limit  
-**Topics:** opportunity AI, interactive proposals, creative workflows, capability discovery
+**Show:** The Artificial Intelligence Show  
+**Host / guest:** Mike Kaput  
+**Focus:** Agents for Non-Technical People  
+**Date:** September 10, 2026  
+**Duration:** 38:31 · No episode time limit  
+**Topics:** AI transformation, AI champions, build versus buy, agent governance
 
-**Summary:** Nathaniel Whittemore argues that the most valuable uses of a frontier model may be new categories of work rather than incremental gains on familiar tasks, offering examples such as playable marketing, interactive proposals, and products built from professional judgment.
+**Summary:** Mike Kaput interviews Peapack Private CTO John Kowal about moving from employee chat access to governed internal applications and named “digital employees,” supported by a data warehouse, an AI engineering team and 29 business-line AI champions.
 
-**Why it matters:** It supplies thought starters for moving beyond efficiency prompts while keeping experimentation costs and failure rates visible.
+**Why it matters:** The interview connects technology to operating-model choices: prerequisites, embedded champions, business-owned use cases, deterministic steps and explicit human relationships.
 
-**Connection to the brief:** The episode extends today’s examples of interactive artifacts, changed development economics, and accessible agent building.
+**Connection to the brief:** It extends today’s app-building, data-agent and long-running-job stories with one organization’s implementation path and reported outcomes.
 
-<span class="story-editorial-note" data-george-implication="Use the examples to generate one opportunity-AI experiment for a book launch, client proposal, workshop, or publishing product, then define a small validation test before investing further." hidden></span>
+<span class="story-editorial-note" data-george-implication="Use the bank’s sequence—policy and training, data foundation, embedded champions, then bounded agents—as a transformation roadmap to critique with clients." hidden></span>
 
-**Coverage:** Selected after the registered-source review with strong preceding-48-hour preference and archive novelty checks.
+**Coverage:** A mandatory and core-source search found no newer verified, unused podcast within the preferred 48-hour window, so the documented seven-day fallback was used.
 
-**Evidence:** Practitioner analysis. The publisher page identifies the date, episode title, show, host, and full edition. A reliable exact total runtime was not exposed; podcast duration has no cap.
+**Evidence:** Practitioner analysis. The publisher page identifies the episode, host and September 10 date; its transcript ends at 38:31, used as the runtime.
 
-**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-13" data-item-id="dab-podcast-2026-09-13-opportunity-ai" data-edition-date="2026-09-13" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher episode and transcript</a>
+**Listen / watch:** <a href="https://podcast.smarterx.ai/shownotes/238" data-item-id="dab-podcast-2026-09-14-bank-ai-transformation" data-edition-date="2026-09-14" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher show notes and transcript</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-13" data-feedback-story-id="dab-podcast-2026-09-13-opportunity-ai">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-14" data-feedback-story-id="dab-podcast-2026-09-14-bank-ai-transformation">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -370,7 +364,7 @@ reader_release: true
 
 ## Editorial takeaway
 
-Today’s strongest signal is that agent capability changes the surrounding system: security boundaries become execution boundaries, architecture economics shift, and useful outputs become interactive. The dependable response is the same across all three focus areas—strong specifications, constrained tools, observable checks, and explicit human acceptance.
+This weekend-window edition converges on one operating principle: make the surrounding system more explicit as AI becomes more capable. Constrained interfaces, governed context, evidence handoffs, resumable state and human approval matter more than a compelling demo.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning. Explore George Tome’s books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Written by the curator of this brief. Buying a book supports his work.</p></aside>

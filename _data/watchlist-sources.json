@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-13T15:34:09.843Z",
+  "updated_at": "2026-09-14T12:05:04.473Z",
   "sources": [
     {
       "source_id": "rundown",
@@ -15,17 +15,12 @@
         "candidate_links": 32,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:09.860Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T15:34:21.863Z",
+            "checked_at": "2026-09-14T12:05:04.489Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:27.879Z"
+        "checked_at": "2026-09-14T12:05:10.400Z"
       }
     },
     {
@@ -41,17 +36,12 @@
         "candidate_links": 20,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:09.871Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T15:34:21.870Z",
+            "checked_at": "2026-09-14T12:05:04.499Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:31.122Z"
+        "checked_at": "2026-09-14T12:05:15.383Z"
       }
     },
     {
@@ -67,12 +57,12 @@
         "candidate_links": 28,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:09.872Z",
+            "checked_at": "2026-09-14T12:05:04.502Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:17.464Z"
+        "checked_at": "2026-09-14T12:05:09.832Z"
       }
     },
     {
@@ -84,21 +74,16 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "the-batch",
-        "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "status": "retrieved",
+        "candidate_links": 1,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:09.873Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T15:34:21.872Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "checked_at": "2026-09-14T12:05:04.503Z",
+            "status": "retrieved",
+            "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:33.873Z"
+        "checked_at": "2026-09-14T12:05:15.948Z"
       }
     },
     {
@@ -114,17 +99,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:33.873Z",
+            "checked_at": "2026-09-14T12:05:15.948Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           },
           {
-            "checked_at": "2026-09-13T15:34:45.875Z",
+            "checked_at": "2026-09-14T12:05:24.831Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-13T15:34:57.875Z"
+        "checked_at": "2026-09-14T12:05:36.833Z"
       }
     },
     {
@@ -140,12 +125,12 @@
         "candidate_links": 13,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:33.874Z",
+            "checked_at": "2026-09-14T12:05:15.949Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:42.330Z"
+        "checked_at": "2026-09-14T12:05:25.506Z"
       }
     },
     {
@@ -158,15 +143,15 @@
       "last_check": {
         "source_id": "neuron",
         "status": "retrieved",
-        "candidate_links": 10,
+        "candidate_links": 11,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:33.874Z",
+            "checked_at": "2026-09-14T12:05:15.949Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:42.172Z"
+        "checked_at": "2026-09-14T12:05:25.478Z"
       }
     },
     {
@@ -182,12 +167,12 @@
         "candidate_links": 1,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:33.874Z",
+            "checked_at": "2026-09-14T12:05:15.949Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:34:41.964Z"
+        "checked_at": "2026-09-14T12:05:25.326Z"
       }
     },
     {
@@ -203,12 +188,12 @@
         "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:57.875Z",
+            "checked_at": "2026-09-14T12:05:36.833Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:07.227Z"
+        "checked_at": "2026-09-14T12:05:48.008Z"
       }
     },
     {
@@ -224,17 +209,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:57.876Z",
+            "checked_at": "2026-09-14T12:05:36.834Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-13T15:35:09.877Z",
+            "checked_at": "2026-09-14T12:05:48.835Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-13T15:35:21.877Z"
+        "checked_at": "2026-09-14T12:06:00.836Z"
       }
     },
     {
@@ -250,12 +235,12 @@
         "candidate_links": 19,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:57.876Z",
+            "checked_at": "2026-09-14T12:05:36.834Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:07.398Z"
+        "checked_at": "2026-09-14T12:05:47.754Z"
       }
     },
     {
@@ -271,17 +256,17 @@
         "reason": "HTTP 502",
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:34:57.876Z",
+            "checked_at": "2026-09-14T12:05:36.835Z",
             "status": "unavailable",
             "reason": "HTTP 502"
           },
           {
-            "checked_at": "2026-09-13T15:35:07.069Z",
+            "checked_at": "2026-09-14T12:05:47.745Z",
             "status": "unavailable",
             "reason": "HTTP 502"
           }
         ],
-        "checked_at": "2026-09-13T15:35:16.374Z"
+        "checked_at": "2026-09-14T12:05:56.355Z"
       }
     },
     {
@@ -297,12 +282,12 @@
         "candidate_links": 6,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:21.877Z",
+            "checked_at": "2026-09-14T12:06:00.836Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:27.683Z"
+        "checked_at": "2026-09-14T12:06:05.988Z"
       }
     },
     {
@@ -318,12 +303,12 @@
         "candidate_links": 21,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:21.878Z",
+            "checked_at": "2026-09-14T12:06:00.836Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:27.947Z"
+        "checked_at": "2026-09-14T12:06:06.119Z"
       }
     },
     {
@@ -339,12 +324,12 @@
         "candidate_links": 30,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:21.879Z",
+            "checked_at": "2026-09-14T12:06:00.836Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:27.208Z"
+        "checked_at": "2026-09-14T12:06:07.425Z"
       }
     },
     {
@@ -360,12 +345,12 @@
         "candidate_links": 24,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:21.879Z",
+            "checked_at": "2026-09-14T12:06:00.837Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:27.672Z"
+        "checked_at": "2026-09-14T12:06:06.581Z"
       }
     },
     {
@@ -377,21 +362,16 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "huggingface-papers",
-        "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "status": "retrieved",
+        "candidate_links": 15,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:27.947Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-13T15:35:39.948Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "checked_at": "2026-09-14T12:06:07.425Z",
+            "status": "retrieved",
+            "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:51.949Z"
+        "checked_at": "2026-09-14T12:06:13.149Z"
       }
     },
     {
@@ -404,15 +384,15 @@
       "last_check": {
         "source_id": "hacker-news",
         "status": "retrieved",
-        "candidate_links": 33,
+        "candidate_links": 28,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:27.947Z",
+            "checked_at": "2026-09-14T12:06:07.425Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:33.807Z"
+        "checked_at": "2026-09-14T12:06:12.449Z"
       }
     },
     {
@@ -428,12 +408,12 @@
         "candidate_links": 0,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:27.948Z",
+            "checked_at": "2026-09-14T12:06:07.426Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:33.122Z"
+        "checked_at": "2026-09-14T12:06:13.795Z"
       }
     },
     {
@@ -446,15 +426,15 @@
       "last_check": {
         "source_id": "github-trending",
         "status": "retrieved",
-        "candidate_links": 52,
+        "candidate_links": 51,
         "attempts": [
           {
-            "checked_at": "2026-09-13T15:35:27.948Z",
+            "checked_at": "2026-09-14T12:06:07.426Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-13T15:35:34.892Z"
+        "checked_at": "2026-09-14T12:06:14.319Z"
       }
     }
   ]

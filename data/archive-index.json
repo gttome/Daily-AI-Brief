@@ -4,6 +4,222 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-14-8c4f2a71",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-11",
+      "headline": "OpenAI’s Habitat turns storage scale into a centralized control plane",
+      "url": "/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "distributed systems",
+        "storage architecture",
+        "tail latency",
+        "AI-assisted migration"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "reported",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development"
+      ],
+      "summary": "OpenAI describes Habitat, its online storage platform, as serving more than 70 million requests per second, more than 1 billion weekly users, and over 500 petabytes across nearly 40 regions. The engineering account explains why OpenAI centralized routing, authorization, audit logging, request shaping and data-residency logic; how LIFO connection reuse created a metastable overload loop that FIFO reuse broke; and how two engineers used Codex and GPT-5.5 to rewrite the service from Python to Rust."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-14-2e7b9d40",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-10",
+      "headline": "Google Cloud packages reusable Agent Skills for four coding-agent hosts",
+      "url": "/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent Skills",
+        "MCP",
+        "grounded documentation",
+        "cloud governance"
+      ],
+      "companies": [
+        "Google Cloud"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google Cloud released an open-source Developer Plugin that bundles Agent Skills, official documentation grounding and MCP configuration for Antigravity, Claude Code, Codex and Gemini CLI. The package is designed to give coding agents reusable Google Cloud procedures and current platform context while using existing authentication and project configuration."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-14-a13c6f85",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-10",
+      "headline": "Codex supports antimicrobial search, but experiments still set ground truth",
+      "url": "/stories/2026-09-14/codex-supports-antimicrobial-search-but-labs-set-ground-truth/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "scientific discovery",
+        "AI-assisted coding",
+        "evidence trace",
+        "human validation"
+      ],
+      "companies": [
+        "OpenAI",
+        "University of Pennsylvania"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "reported",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "OpenAI profiles César de la Fuente’s lab using ChatGPT and Codex to brainstorm hypotheses, write and refine code, process datasets, analyze results and connect ideas across disciplines while custom deep-learning models search genome and protein data for candidate antimicrobial molecules. AI narrows the search; experimental testing must still establish biological activity, toxicity, resistance, manufacturability and eventual clinical evidence."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-14-f5d208be",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-10",
+      "headline": "ChatGPT Work’s Data agent connects plain-language questions to governed action",
+      "url": "/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "data analysis",
+        "semantic layers",
+        "grounding",
+        "human approval"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "OpenAI introduced a Data agent in ChatGPT Work that can connect to approved warehouses, files, semantic layers and BI tools; investigate business questions; expose evidence; build refreshable dashboards; and carry out connected actions a user approves. Administrators control connections and roles, while underlying table, row and column permissions continue to apply."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-14-74b1ea3c",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-10",
+      "headline": "Microsoft turns conversation into governed business apps",
+      "url": "/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "vibe coding",
+        "no-code apps",
+        "Copilot Studio",
+        "deployment governance"
+      ],
+      "companies": [
+        "Microsoft"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "public_preview",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Microsoft is adding natural-language app building to Copilot Cowork through an /app skill in the Frontier program and to Copilot Studio through a public preview. Users can describe a business app, connect organizational context and data, preview it, inspect generated code, revise it conversationally and move through governed deployment stages."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-14-c09e57d2",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-11",
+      "headline": "Salesforce frames agents as long-running job systems, not chatbots",
+      "url": "/stories/2026-09-14/salesforce-frames-agents-as-long-running-job-systems/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "long-horizon agents",
+        "durable execution",
+        "human steering",
+        "availability"
+      ],
+      "companies": [
+        "Salesforce"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "announced",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Salesforce announced a set of Agentforce capabilities organized around complete jobs across sales, service, marketing and commerce. Its product description emphasizes durable execution, persistent state, steering, deterministic rules, auditability and human approvals so agents can continue multi-step work rather than answer only one prompt."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-14-general",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-11",
+      "headline": "Use Deep Research with ChatGPT for Teachers",
+      "url": "/videos/2026-09-14/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "OpenAI Academy"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance"
+      ],
+      "summary": "A concise official walkthrough of researching school policy and lesson plans, checking sources and exporting a report."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-14-agent-skills",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-11",
+      "headline": "Use Plugins with ChatGPT for Teachers",
+      "url": "/videos/2026-09-14/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "OpenAI Academy"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "An eight-minute official example of invoking a reusable domain plugin for translation and exit-ticket tasks using teaching materials."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-14-bank-ai-transformation",
+      "brief_date": "2026-09-14",
+      "event_date": "2026-09-10",
+      "headline": "How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees",
+      "url": "/podcasts/2026-09-14/bank-ai-transformation/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "AI transformation",
+        "AI champions",
+        "build versus buy",
+        "agent governance"
+      ],
+      "companies": [
+        "The Artificial Intelligence Show"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Mike Kaput interviews Peapack Private CTO John Kowal about moving from employee chat access to governed internal applications and named “digital employees,” supported by a data warehouse, an AI engineering team and 29 business-line AI champions."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-13-91c7e2a4",
       "brief_date": "2026-09-13",
       "event_date": "2026-09-11",

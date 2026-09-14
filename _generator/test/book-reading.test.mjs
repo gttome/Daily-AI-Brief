@@ -22,5 +22,5 @@ test('book selections reject fabricated IDs, unsupported practice references, an
  const exercise=structuredClone(catalog);exercise.editions['2026-09-12'][0].practice='invented exercise';assert.throws(()=>validateBookReading(edition,exercise));
 });
 test('future editions have no forced chapter matches and empty media slots stay visible',()=>{
- const future=structuredClone(edition);future.brief_date='2026-09-14';future.worth_watching.general={status:'empty',exception:'No suitable verified video.'};const body=renderBody(future);assert.doesNotMatch(body,/class="book-bridge"/);assert.match(body,/Video · No qualifying selection/);assert.match(body,/No suitable verified video/);
+ const future=structuredClone(edition);future.brief_date='2099-01-01';future.worth_watching.general={status:'empty',exception:'No suitable verified video.'};const body=renderBody(future);assert.doesNotMatch(body,/class="book-bridge"/);assert.match(body,/Video · No qualifying selection/);assert.match(body,/No suitable verified video/);
 });

@@ -4,7 +4,70 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-13T12:00:00Z</updated>
+  <updated>2026-09-14T12:15:00Z</updated>
+  <entry>
+    <title>OpenAI’s Habitat turns storage scale into a centralized control plane</title>
+    <id>dab-story-2026-09-14-8c4f2a71</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>OpenAI describes Habitat, its online storage platform, as serving more than 70 million requests per second, more than 1 billion weekly users, and over 500 petabytes across nearly 40 regions. The engineering account explains why OpenAI centralized routing, authorization, audit logging, request shaping and data-residency logic; how LIFO connection reuse created a metastable overload loop that FIFO reuse broke; and how two engineers used Codex and GPT-5.5 to rewrite the service from Python to Rust.</summary>
+  </entry>
+  <entry>
+    <title>Google Cloud packages reusable Agent Skills for four coding-agent hosts</title>
+    <id>dab-story-2026-09-14-2e7b9d40</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>Google Cloud released an open-source Developer Plugin that bundles Agent Skills, official documentation grounding and MCP configuration for Antigravity, Claude Code, Codex and Gemini CLI. The package is designed to give coding agents reusable Google Cloud procedures and current platform context while using existing authentication and project configuration.</summary>
+  </entry>
+  <entry>
+    <title>Codex supports antimicrobial search, but experiments still set ground truth</title>
+    <id>dab-story-2026-09-14-a13c6f85</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/codex-supports-antimicrobial-search-but-labs-set-ground-truth/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>OpenAI profiles César de la Fuente’s lab using ChatGPT and Codex to brainstorm hypotheses, write and refine code, process datasets, analyze results and connect ideas across disciplines while custom deep-learning models search genome and protein data for candidate antimicrobial molecules. AI narrows the search; experimental testing must still establish biological activity, toxicity, resistance, manufacturability and eventual clinical evidence.</summary>
+  </entry>
+  <entry>
+    <title>ChatGPT Work’s Data agent connects plain-language questions to governed action</title>
+    <id>dab-story-2026-09-14-f5d208be</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>OpenAI introduced a Data agent in ChatGPT Work that can connect to approved warehouses, files, semantic layers and BI tools; investigate business questions; expose evidence; build refreshable dashboards; and carry out connected actions a user approves. Administrators control connections and roles, while underlying table, row and column permissions continue to apply.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft turns conversation into governed business apps</title>
+    <id>dab-story-2026-09-14-74b1ea3c</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>Microsoft is adding natural-language app building to Copilot Cowork through an /app skill in the Frontier program and to Copilot Studio through a public preview. Users can describe a business app, connect organizational context and data, preview it, inspect generated code, revise it conversationally and move through governed deployment stages.</summary>
+  </entry>
+  <entry>
+    <title>Salesforce frames agents as long-running job systems, not chatbots</title>
+    <id>dab-story-2026-09-14-c09e57d2</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/salesforce-frames-agents-as-long-running-job-systems/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>Salesforce announced a set of Agentforce capabilities organized around complete jobs across sales, service, marketing and commerce. Its product description emphasizes durable execution, persistent state, steering, deterministic rules, auditability and human approvals so agents can continue multi-step work rather than answer only one prompt.</summary>
+  </entry>
+  <entry>
+    <title>Use Deep Research with ChatGPT for Teachers</title>
+    <id>dab-video-2026-09-14-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-14/general/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>A concise official walkthrough of researching school policy and lesson plans, checking sources and exporting a report.</summary>
+  </entry>
+  <entry>
+    <title>Use Plugins with ChatGPT for Teachers</title>
+    <id>dab-video-2026-09-14-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-14/agent-skills/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>An eight-minute official example of invoking a reusable domain plugin for translation and exit-ticket tasks using teaching materials.</summary>
+  </entry>
+  <entry>
+    <title>How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees</title>
+    <id>dab-podcast-2026-09-14-bank-ai-transformation</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-14/bank-ai-transformation/" />
+    <updated>2026-09-14T18:00:00Z</updated>
+    <summary>Mike Kaput interviews Peapack Private CTO John Kowal about moving from employee chat access to governed internal applications and named “digital employees,” supported by a data warehouse, an AI engineering team and 29 business-line AI champions.</summary>
+  </entry>
   <entry>
     <title>Ruby’s documentation pipeline exposes a containment gap for web-research agents</title>
     <id>dab-story-2026-09-13-91c7e2a4</id>

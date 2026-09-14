@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-14",
+  "reviewed_at": "2026-09-14T12:45:00Z",
+  "severity_policy": {
+    "critical": "block",
+    "high": "block",
+    "medium": "degrade_and_repair",
+    "low": "record"
+  },
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {
+      "story_id": "dab-story-2026-09-14-8c4f2a71",
+      "result": "pass",
+      "alt": "White-background textbook architecture showing ChatGPT, API and Codex request streams entering Habitat routing, regional stores and cache, with access, residency, rate-limit, audit and change-capture controls; LIFO and FIFO reuse are compared beside a Python-to-Rust migration.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-14-2e7b9d40",
+      "result": "pass",
+      "alt": "White-background textbook exploded software stack showing a plugin manifest, Agent Skills, official documentation and MCP configuration connected to Antigravity, Claude Code, Codex and Gemini CLI, followed by authenticated preview, apply and audit stages.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-14-a13c6f85",
+      "result": "pass",
+      "alt": "White-background textbook flow from literature signals and biological sequence data through hypothesis, code, candidate filtering and evidence tracing to a clearly marked laboratory-validation boundary with active, inactive and uncertain result states.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-14-f5d208be",
+      "result": "pass",
+      "alt": "White-background textbook architecture linking warehouses, files, BI systems and semantic layers to a Data agent that plans queries, gathers evidence and builds analysis, with role, row and column controls before dashboards and approved actions.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-14-74b1ea3c",
+      "result": "pass",
+      "alt": "White-background isometric textbook blueprint showing intent expanding into UI, logic and data layers, connected to Work IQ and business data, then moving through preview, code review, testing, identity, tenant-policy, version and human-approval gates.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-14-c09e57d2",
+      "result": "pass",
+      "alt": "White-background circular textbook operating loop around a job goal, with plan, tool use, state, policy, approval and continuation stages, connected to sales, service, marketing and commerce lanes plus durable-runtime, steering, deterministic-rule and audit controls.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    }
+  ]
+}
