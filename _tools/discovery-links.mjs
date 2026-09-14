@@ -39,3 +39,34 @@ export async function retrieveSource(url,{fetcher=fetch,timeoutMs=12000}={}){
   }
  }
 }
+
+export function extractCandidateMetadata(text, base, source = {}) {
+ const candidates = new Map();
+ const field = (block, tag) => {
+   const match = block.match(new RegExp('<'+tag+'\\b[^>]*>([\\s\\S]*?)</'+tag+'\\s*>','i'));
+   return match ? cleanText(match[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,'$1')) : null;
+ };
+ const add = item => {
+   let url;try {url=new URL(item.url,base);}catch{return;}
+   if(url.protocol!=='https:'||url.username||url.password)return;
+   url.hash='';
+   for(const key of [...url.searchParams.keys()])if(/^utm_|^ref$/.test(key))url.searchParams.delete(key);
+   const parsed=Date.parse(item.published_at);
+   candidates.set(url.href,{source_id:source.source_id||null,publisher:source.owner||source.publisher||null,
+     headline:item.title,canonical_url:url.href,published_at:Number.isFinite(parsed)?new Date(parsed).toISOString():null,
+     snippet:item.snippet?item.snippet.slice(0,600):null,content_type:source.format||'article',
+     retrieval_status:'metadata_only',source_reliability:source.evidence_class||null});
+ };
+ for(const link of extractLinks(text,base))add(link);
+ for(const match of text.matchAll(/<(item|entry)\b[^>]*>([\s\S]*?)<\/\1\s*>/gi)){
+   const block=match[2],title=field(block,'title');if(!title)continue;
+   let url=field(block,'link');
+   if(!url)for(const link of block.matchAll(/<link\b([^>]*)\/?\s*>/gi)){
+     const rel=link[1].match(/\brel=["']([^"']+)["']/i)?.[1];
+     if(rel&&rel!=='alternate')continue;
+     url=link[1].match(/\bhref=["']([^"']+)["']/i)?.[1];if(url)break;
+   }
+   if(url)add({url:cleanText(url),title,published_at:field(block,'pubDate')||field(block,'published'),snippet:field(block,'description')||field(block,'summary')});
+ }
+ return [...candidates.values()];
+}

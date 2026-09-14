@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
 import {editionFeed} from '../lib/edition-feed.mjs';
 test('daily RSS keeps one permanent identity per edition and includes the next staged edition',()=>{
- const root=new URL('../../',import.meta.url).pathname;
+ const root=fileURLToPath(new URL('../../',import.meta.url));
  const existing=fs.readdirSync(root+'briefs').filter(n=>/^\d{4}-\d{2}-\d{2}\.md$/.test(n));
  const stagedDate=existing.map(n=>n.slice(0,10)).sort().at(-1);
  const output=editionFeed(root,stagedDate);
