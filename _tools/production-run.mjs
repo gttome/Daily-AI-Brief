@@ -5,6 +5,8 @@ import {RUN_VERSION,assertRunManifest,assertPrivateRoot,evidenceViews,saveJson} 
 import {CheckpointStore} from '../_generator/lib/checkpoints.mjs';
 import {compactMemory} from '../_generator/lib/compact-memory.mjs';
 import {createEvidencePacket} from '../_generator/lib/research.mjs';
+import {mergeMediaCatalog} from '../_generator/lib/media-evidence.mjs';
+import {visualPreflight,saveApprovedImages,imageRecovery} from '../_generator/lib/visual-recovery.mjs';
 const [command,...rest]=process.argv.slice(2),args=parseArgs(rest),repo=process.cwd();
 const manifestPath=path.resolve(args.manifest||'');
 if(!args.manifest)throw Error('Requires --manifest <private attempt manifest path>');
@@ -18,7 +20,7 @@ if(command==='init'){
  const m=assertRunManifest(JSON.parse(fs.readFileSync(manifestPath))),root=path.join(m.private_root,m.attempt_id);
  assertPrivateRoot(repo,m.private_root,manifestPath);
  fs.mkdirSync(root,{recursive:true});
- const inputs=['_tools/production-run.mjs','_tools/discover-sources.mjs','_tools/discover-watchlist.mjs','_tools/discovery-context.mjs','_tools/discovery-links.mjs','_generator/lib/research.mjs','_generator/lib/incremental-watchlist.mjs','_generator/lib/discovery-queue.mjs','_generator/lib/production-run.mjs','_generator/lib/compact-memory.mjs','_generator/lib/historical.mjs','_generator/lib/checkpoints.mjs','_generator/lib/util.mjs','_data/watchlist-sources.json','docs/operations/publisher-runbook.md','_data/source-registry.json','_data/early-signal-sources.json'];
+ const inputs=['_tools/production-run.mjs','_tools/discover-sources.mjs','_tools/discover-watchlist.mjs','_tools/discovery-context.mjs','_tools/discovery-links.mjs','_generator/lib/research.mjs','_generator/lib/incremental-watchlist.mjs','_generator/lib/discovery-queue.mjs','_generator/lib/production-run.mjs','_generator/lib/media-evidence.mjs','_generator/lib/visual-recovery.mjs','_generator/lib/image-gate.mjs','docs/images/publisher-policy.md','docs/podcasts/publisher-policy.md','_generator/lib/compact-memory.mjs','_generator/lib/historical.mjs','_generator/lib/checkpoints.mjs','_generator/lib/util.mjs','_data/watchlist-sources.json','docs/operations/publisher-runbook.md','_data/source-registry.json','_data/early-signal-sources.json'];
  for(const dir of ['_data/editions','briefs'])for(const entry of fs.readdirSync(path.join(repo,dir)).sort())if(/\.(json|md)$/.test(entry))inputs.push(dir+'/'+entry);
  const runtime={manifest:sha256(JSON.stringify(m)),code:Object.fromEntries(inputs.map(p=>[p,sha256(p==='_data/watchlist-sources.json'?JSON.stringify(JSON.parse(fs.readFileSync(p)),(k,v)=>['last_check','last_checked_at','last_success_at','next_check_at','updated_at'].includes(k)?undefined:v):fs.readFileSync(p))]))};
  const priorRuntime=path.join(root,'inputs/runtime.json');saveJson(priorRuntime,runtime);
@@ -50,5 +52,24 @@ if(command==='init'){
    saveJson(path.join(root,'outputs/context-metrics.json'),telemetry);
    return ['outputs/evidence-packets.json',...Object.keys(views).map(x=>'outputs/'+x+'.json'),'outputs/context-metrics.json'];
   }});console.log(JSON.stringify({reused:result.reused,private_artifacts:root,selection_status:'requires_full_candidate_scoring_and_editorial_gates'}));
- }else throw Error('Expected init, discover or packets');
+ }else if(command==='media'){
+  if(!args.file)throw Error('Requires --file reviewed media evidence');
+  const input=JSON.parse(fs.readFileSync(path.resolve(args.file))),file=path.join(m.private_root,'media-catalog.json');let records=[];
+  if(fs.existsSync(file)){const old=JSON.parse(fs.readFileSync(file));if(old.records_hash!==sha256(JSON.stringify(old.records)))throw Error('Media catalog integrity failed');records=old.records;}
+  saveJson(path.join(m.private_root,'media-evidence',sha256(JSON.stringify(input))+'.json'),input);
+  const updated=mergeMediaCatalog(records,input);saveJson(file,{schema_version:'1.0.0',records:updated,records_hash:sha256(JSON.stringify(updated))});
+  console.log(JSON.stringify({records:updated.length,unresolved:updated.filter(x=>x.metadata_status!=='reviewed').length,selection:'Apply existing runtime, age, source coverage and editorial gates; catalog presence is not selection.'}));
+ }else if(['preflight','save-images','recover-images'].includes(command)){
+  if(!args.file)throw Error('Requires --file story packet and visual-brief inputs');
+  const input=JSON.parse(fs.readFileSync(path.resolve(args.file)));
+  const preflights=input.map(x=>({story_id:x.story_id,packet:x.packet,preflight:visualPreflight(x.packet,x.spec)}));
+  const edition=JSON.parse(fs.readFileSync(path.join(repo,'_data/editions',m.edition_date+'.json')));
+  if(preflights.length!==6||new Set(preflights.map(x=>x.story_id)).size!==6||edition.stories.some(s=>!preflights.some(x=>x.story_id===s.story_id)))throw Error('Exactly six matching story preflights required');
+  saveJson(path.join(root,'outputs/visual-preflights.json'),preflights);
+  if(command==='save-images')console.log(JSON.stringify({saved:saveApprovedImages({edition,repo,root,preflights}),image_generation_calls:0}));
+  else if(command==='recover-images'){
+   const results=preflights.map(x=>({story_id:x.story_id,...imageRecovery({edition,story:edition.stories.find(s=>s.story_id===x.story_id),packet:x.packet,preflight:x.preflight,repo,root,restore:args.restore===true})}));
+   console.log(JSON.stringify({results,image_generation_calls:0,publication_gates:'Still required'}));if(results.some(x=>x.state!=='reusable'))process.exitCode=1;
+  }else console.log(JSON.stringify({preflights:preflights.length,image_approval:'not_granted_by_preflight',next:'Generate and visually review images under the existing policy, then save-images with the same reviewed input.'}));
+ }else throw Error('Expected init, discover, packets, media, preflight, save-images or recover-images');
 }

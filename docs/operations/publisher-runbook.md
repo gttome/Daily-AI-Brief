@@ -125,3 +125,8 @@ After human/agent evidence verification, `packets --manifest <same-path> --file 
 `monitor-completion.mjs --date <edition> --completion <file> --state <private-state>` reports whether a matching Pages-verified revision needs collection. Acknowledge only after successful private collection. Duplicate acknowledgments are inert. This helper neither researches nor publishes and is not yet connected to a live schedule. Verify matching passing editorial QA before collection.
 
 Record actual stage inputs and attributable usage when available. Packet character counts and synthetic retrieval tests are engineering proxies, not measured token or credit savings. Pilot ordinary editions without rerunning paid image generation solely for comparison.
+
+
+### Reviewed media and approved-image recovery
+
+Use `docs/operations/media-image-recovery.md` for the preparation runner's media, preflight, save-images and recover-images commands. Keep their full evidence in the verified private directory. A matching checkpoint can restore a missing same-edition approved image during an unrelated repair; it never waives the full visual/publication gate or authorizes cross-edition image reuse. Unverified cloud storage and schedules remain rollout prerequisites. Media date/runtime conflicts stay unresolved until explicitly reconciled.
