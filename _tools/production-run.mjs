@@ -7,6 +7,7 @@ import {compactMemory} from '../_generator/lib/compact-memory.mjs';
 import {createEvidencePacket} from '../_generator/lib/research.mjs';
 import {mergeMediaCatalog} from '../_generator/lib/media-evidence.mjs';
 import {visualPreflight,saveApprovedImages,imageRecovery} from '../_generator/lib/visual-recovery.mjs';
+import {privateDraftPath,saveDraft,recoverDraft} from '../_generator/lib/draft-recovery.mjs';
 const [command,...rest]=process.argv.slice(2),args=parseArgs(rest),repo=process.cwd();
 const manifestPath=path.resolve(args.manifest||'');
 if(!args.manifest)throw Error('Requires --manifest <private attempt manifest path>');
@@ -59,6 +60,13 @@ if(command==='init'){
   saveJson(path.join(m.private_root,'media-evidence',sha256(JSON.stringify(input))+'.json'),input);
   const updated=mergeMediaCatalog(records,input);saveJson(file,{schema_version:'1.0.0',records:updated,records_hash:sha256(JSON.stringify(updated))});
   console.log(JSON.stringify({records:updated.length,unresolved:updated.filter(x=>x.metadata_status!=='reviewed').length,selection:'Apply existing runtime, age, source coverage and editorial gates; catalog presence is not selection.'}));
+ }else if(['save-draft','recover-draft'].includes(command)){
+  if(!args.file)throw Error('Private draft descriptor required');
+  const file=privateDraftPath({repo,manifest:m,file:path.resolve(args.file)}),draft=JSON.parse(fs.readFileSync(file,'utf8'));
+  const options={repo,manifest:m,draft,checkpoint:args.checkpoint,restore:args.restore===true};
+  const result=command==='save-draft'?saveDraft(options):recoverDraft(options);
+  console.log(JSON.stringify({...result,image_generation_calls:0,publication:false}));
+  if(result.state==='requires_review')process.exitCode=1;
  }else if(['preflight','save-images','recover-images'].includes(command)){
   if(!args.file)throw Error('Requires --file story packet and visual-brief inputs');
   const input=JSON.parse(fs.readFileSync(path.resolve(args.file)));
@@ -71,5 +79,5 @@ if(command==='init'){
    const results=preflights.map(x=>({story_id:x.story_id,...imageRecovery({edition,story:edition.stories.find(s=>s.story_id===x.story_id),packet:x.packet,preflight:x.preflight,repo,root,restore:args.restore===true})}));
    console.log(JSON.stringify({results,image_generation_calls:0,publication_gates:'Still required'}));if(results.some(x=>x.state!=='reusable'))process.exitCode=1;
   }else console.log(JSON.stringify({preflights:preflights.length,image_approval:'not_granted_by_preflight',next:'Generate and visually review images under the existing policy, then save-images with the same reviewed input.'}));
- }else throw Error('Expected init, discover, packets, media, preflight, save-images or recover-images');
+ }else throw Error('Expected init, discover, packets, media, save-draft, recover-draft, preflight, save-images or recover-images');
 }
