@@ -20,7 +20,7 @@ After the existing final six-image approval passes, `save-images --manifest <sam
 
 `recover-images --manifest <same-manifest> --file <same-inputs>` checks reuse without changing files. Add `--restore` to restore missing approved image files in the same edition. It never overwrites a different working image. Changed story evidence, preflight, policy or saved bytes require review; unaffected stories can still be reused. All final publication and live image gates remain mandatory, including the approval record. Recovery does not regenerate images, silently approve a changed story, or carry an image into another edition.
 
-These boundaries cover media normalization, image preflight and recovery after final image approval. They do not yet checkpoint partially reviewed image drafts or automatically orchestrate writing/generation in cloud runs. Validate those remaining stages in the scheduled environment before claiming complete unattended recovery.
+These boundaries cover media normalization, image preflight and recovery after final image approval. Use `docs/operations/draft-recovery.md` to explicitly save and recover unfinished writing and image drafts privately. That separate path never grants approval. Automatic writing/generation orchestration and actual scheduled storage access remain unverified; validate them before claiming complete unattended recovery.
 
 ## Validation
 
