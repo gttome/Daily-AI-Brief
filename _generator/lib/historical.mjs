@@ -96,6 +96,28 @@ export function parseHistoricalBrief(markdown, briefDate) {
   });
 }
 
+export function historicalEditionSource(repoRoot, date) {
+  const canonical = path.join(repoRoot, '_data', 'editions', date + '.json');
+  const evidence_ref = fs.existsSync(canonical) ? '_data/editions/' + date + '.json' : 'briefs/' + date + '.md';
+  return {evidence_ref, text: fs.readFileSync(path.join(repoRoot, evidence_ref), 'utf8')};
+}
+
+export function historicalEditionStories(source, date) {
+  if (!source.evidence_ref.endsWith('.json')) return parseHistoricalBrief(source.text, date);
+  const edition = JSON.parse(source.text);
+  if (edition.brief_date !== date || !Array.isArray(edition.stories)) throw Error('Invalid canonical history: ' + date);
+  return edition.stories.map(s => {
+    if (!s.story_id || !s.source?.url || !s.headline) throw Error('Incomplete canonical history: ' + date);
+    return {story_id:s.story_id, edition_id:edition.edition_id, brief_date:date,
+      ordinal:s.ordinal, headline:s.headline, slug:s.slug, permanent_url:s.permanent_url,
+      event_date:s.event_date, focus:s.focus, topics:s.topics || [],
+      normalized_urls:[normalizeUrl(s.source.url)], source_title:s.source.title,
+      source_organization:s.source.organization, image:s.image ? {url:s.image.public_url,alt:s.image.alt}:null,
+      summary:s.summary || '', why_it_matters:s.why_it_matters || '', george_implication:s.george_implication || '',
+      concept_tokens:conceptTokens(s.headline)};
+  });
+}
+
 export function scanHistoricalBriefs(repoRoot, endDate, days = 30) {
   const end = new Date(`${endDate}T00:00:00Z`);
   const start = new Date(end);
@@ -103,7 +125,7 @@ export function scanHistoricalBriefs(repoRoot, endDate, days = 30) {
   const startDate = start.toISOString().slice(0, 10);
   const briefDir = path.join(repoRoot, 'briefs');
   const dates = fs.readdirSync(briefDir).map(name => name.match(/^(\d{4}-\d{2}-\d{2})\.md$/)?.[1]).filter(date => date && date >= startDate && date <= endDate).sort();
-  const stories = dates.flatMap(date => parseHistoricalBrief(fs.readFileSync(path.join(briefDir, `${date}.md`), 'utf8'), date));
+  const stories = dates.flatMap(date => historicalEditionStories(historicalEditionSource(repoRoot, date), date));
   return {
     schema_version: '1.0.0',
     window: {start_date: startDate, end_date: endDate, days},

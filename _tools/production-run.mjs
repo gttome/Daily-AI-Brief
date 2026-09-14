@@ -1,0 +1,54 @@
+#!/usr/bin/env node
+import fs from 'node:fs';import path from 'node:path';import {execFileSync} from 'node:child_process';
+import {parseArgs,sha256} from '../_generator/lib/util.mjs';
+import {RUN_VERSION,assertRunManifest,assertPrivateRoot,evidenceViews,saveJson} from '../_generator/lib/production-run.mjs';
+import {CheckpointStore} from '../_generator/lib/checkpoints.mjs';
+import {compactMemory} from '../_generator/lib/compact-memory.mjs';
+import {createEvidencePacket} from '../_generator/lib/research.mjs';
+const [command,...rest]=process.argv.slice(2),args=parseArgs(rest),repo=process.cwd();
+const manifestPath=path.resolve(args.manifest||'');
+if(!args.manifest)throw Error('Requires --manifest <private attempt manifest path>');
+if(command==='init'){
+ if(fs.existsSync(manifestPath))throw Error('Manifest exists; resume it');
+ if(!args['private-root'])throw Error('Requires durable --private-root outside the Git repository');
+ const privateRoot=assertPrivateRoot(repo,args['private-root'],manifestPath);
+ const m=assertRunManifest({schema_version:'1.0.0',pipeline_version:RUN_VERSION,attempt_id:args.attempt,edition_date:args.date,cutoff:args.cutoff,timezone:'America/Chicago',article_window_hours:Number(args['max-age-hours']),window_reason:args['window-reason']||null,baseline_sha:execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim(),private_root:privateRoot,created_at:new Date().toISOString(),scope:'publication_preparation',scheduled_environment_access:'not_yet_verified',exact_tokens:null,exact_credits:null});
+ saveJson(manifestPath,m);console.log(JSON.stringify({manifest:manifestPath,attempt_id:m.attempt_id,next:'discover',scheduled_environment_access:m.scheduled_environment_access}));
+}else{
+ const m=assertRunManifest(JSON.parse(fs.readFileSync(manifestPath))),root=path.join(m.private_root,m.attempt_id);
+ assertPrivateRoot(repo,m.private_root,manifestPath);
+ fs.mkdirSync(root,{recursive:true});
+ const inputs=['_tools/production-run.mjs','_tools/discover-sources.mjs','_tools/discover-watchlist.mjs','_tools/discovery-context.mjs','_tools/discovery-links.mjs','_generator/lib/research.mjs','_generator/lib/incremental-watchlist.mjs','_generator/lib/discovery-queue.mjs','_generator/lib/production-run.mjs','_generator/lib/compact-memory.mjs','_generator/lib/historical.mjs','_generator/lib/checkpoints.mjs','_generator/lib/util.mjs','_data/watchlist-sources.json','docs/operations/publisher-runbook.md','_data/source-registry.json','_data/early-signal-sources.json'];
+ for(const dir of ['_data/editions','briefs'])for(const entry of fs.readdirSync(path.join(repo,dir)).sort())if(/\.(json|md)$/.test(entry))inputs.push(dir+'/'+entry);
+ const runtime={manifest:sha256(JSON.stringify(m)),code:Object.fromEntries(inputs.map(p=>[p,sha256(p==='_data/watchlist-sources.json'?JSON.stringify(JSON.parse(fs.readFileSync(p)),(k,v)=>['last_check','last_checked_at','last_success_at','next_check_at','updated_at'].includes(k)?undefined:v):fs.readFileSync(p))]))};
+ const priorRuntime=path.join(root,'inputs/runtime.json');saveJson(priorRuntime,runtime);
+ const checkpoints=new CheckpointStore({directory:path.join(root,'checkpoints'),root,attemptId:m.attempt_id,pipelineVersion:RUN_VERSION,dependencies:{discovery:[],evidence:['discovery']}});
+ if(command==='discover'){
+  const localDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date());
+  if(localDate!==m.edition_date)throw Error('Fresh discovery requires current Chicago edition date; use frozen fixtures for replay');
+  process.env.DAB_RETRIEVAL_CACHE=path.join(m.private_root,'retrieval-cache');
+  const existing=checkpoints.read('discovery'),expired=!existing||Date.now()-Date.parse(existing.recorded_at)>=3600000;
+  const result=await checkpoints.run('discovery',{inputs:['inputs/runtime.json'],alwaysRun:expired||['media-candidate-queue','watchlist-discoveries','watchlist-source-state'].some(name=>{const live=path.join(repo,'_data',name+'.json'),saved=path.join(root,'outputs',name+'.json');return fs.existsSync(live)&&fs.existsSync(saved)&&sha256(fs.readFileSync(live))!==sha256(fs.readFileSync(saved));}),execute:async()=>{
+   await Promise.all([import('./discover-sources.mjs'),import('./discover-watchlist.mjs')]);
+   const memory=compactMemory(repo,new Date(Date.parse(m.edition_date+'T00:00:00Z')-86400000).toISOString().slice(0,10),{cacheFile:path.join(m.private_root,'novelty-index.json')});
+   saveJson(path.join(root,'outputs/novelty.json'),memory);
+   for(const name of ['media-candidate-queue','watchlist-discoveries','watchlist-source-state']){fs.mkdirSync(path.join(root,'outputs'),{recursive:true});fs.copyFileSync(path.join(repo,'_data',name+'.json'),path.join(root,'outputs',name+'.json'));}
+   const {acquisition}=await import('./discovery-context.mjs');saveJson(path.join(root,'outputs/retrieval-metrics.json'),{...acquisition.cache.metrics,observed_at:new Date().toISOString()});
+   return ['outputs/novelty.json','outputs/media-candidate-queue.json','outputs/watchlist-discoveries.json','outputs/watchlist-source-state.json','outputs/retrieval-metrics.json'];
+  }});
+  // Restore the validated discovery outputs on resume, including durable cadence state.
+  if(result.reused)for(const name of ['media-candidate-queue','watchlist-discoveries','watchlist-source-state'])fs.copyFileSync(path.join(root,'outputs',name+'.json'),path.join(repo,'_data',name+'.json'));
+  console.log(JSON.stringify({attempt_id:m.attempt_id,reused:result.reused,private_artifacts:root,next:'Review unresolved metadata and candidates; supply reviewed packet inputs with packets --file. Preserve full candidate scoring and publication gates.'}));
+ }else if(command==='packets'){
+  if(!args.file)throw Error('Requires --file reviewed evidence inputs');
+  const input=JSON.parse(fs.readFileSync(path.resolve(args.file)));
+  saveJson(path.join(root,'inputs/reviewed-evidence.json'),input);
+  const result=await checkpoints.run('evidence',{inputs:['inputs/runtime.json','inputs/reviewed-evidence.json'],execute:async()=>{
+   const packets=input.map(x=>createEvidencePacket(x.candidate,x.source,x.review));
+   saveJson(path.join(root,'outputs/evidence-packets.json'),packets);
+   const {views,telemetry}=evidenceViews(packets);for(const [stage,view]of Object.entries(views))saveJson(path.join(root,'outputs',stage+'.json'),view);
+   saveJson(path.join(root,'outputs/context-metrics.json'),telemetry);
+   return ['outputs/evidence-packets.json',...Object.keys(views).map(x=>'outputs/'+x+'.json'),'outputs/context-metrics.json'];
+  }});console.log(JSON.stringify({reused:result.reused,private_artifacts:root,selection_status:'requires_full_candidate_scoring_and_editorial_gates'}));
+ }else throw Error('Expected init, discover or packets');
+}

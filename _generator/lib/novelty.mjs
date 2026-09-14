@@ -13,7 +13,7 @@ export function noveltyMatches(candidate, priorStories, {conceptThreshold = 0.55
   return priorStories.map(prior => {
     const conceptSimilarity = jaccard(candidate.concept_tokens, prior.concept_tokens);
     const sharedUrl = (prior.normalized_urls || []).find(url => urls.has(url)) || null;
-    const reason = conceptSimilarity >= conceptThreshold ? 'concept_similarity' : sharedUrl && conceptSimilarity >= sourceContextThreshold ? 'source_and_concept' : null;
+    const reason = conceptSimilarity >= conceptThreshold ? 'concept_similarity' : sharedUrl && conceptSimilarity >= sourceContextThreshold ? 'source_and_concept' : sharedUrl ? 'exact_source_requires_review' : null;
     return reason ? {prior_story_id: prior.story_id, prior_brief_date: prior.brief_date, reason, shared_url: sharedUrl, concept_similarity: Number(conceptSimilarity.toFixed(3))} : null;
   }).filter(Boolean).sort((a, b) => b.concept_similarity - a.concept_similarity || a.prior_story_id.localeCompare(b.prior_story_id));
 }
