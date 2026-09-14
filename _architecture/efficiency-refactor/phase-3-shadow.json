@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "local_deterministic_qa_shadow",
+  "initial_wall_seconds": 8.043,
+  "replay": {
+    "result": "PASS",
+    "scope": "local_deterministic_qa_only",
+    "wall_seconds": 3.359,
+    "checkpoint_hits": 4,
+    "resumed_stages": [
+      "tests",
+      "contracts",
+      "repository",
+      "integration"
+    ],
+    "invalidated_stages": [],
+    "executed_stages": [],
+    "publication_authorized": false,
+    "note": "Required candidate Jekyll CI, atomic publisher, Pages and live verification remain mandatory."
+  },
+  "failure_injection": {
+    "research_executions": 1,
+    "generation_executions": 1,
+    "qa_executions": 2,
+    "checkpoint_hits": 2,
+    "test": "_generator/test/checkpoints.test.mjs"
+  },
+  "tests": 123,
+  "contracts": 15,
+  "production_runtime_improvement": null
+}
