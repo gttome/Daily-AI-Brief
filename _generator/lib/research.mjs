@@ -30,7 +30,7 @@ export function filterCandidates(candidates, {now, maxAgeHours = 120, coveredEve
     else if (item.event_fingerprint && events.has(item.event_fingerprint) && item.material_update !== true) reason = 'covered_event_requires_material_update';
     else if (Number.isFinite(published) && (published > time(now) || time(now)-published > maxAgeHours*3600000)) reason = 'outside_freshness_window';
     if (reason) { rejected.push({candidate:item,reason}); continue; }
-    if (!Number.isFinite(published) || !FOCUSES.includes(item.focus) || !item.source_reliability) {
+    if ((item.date_conflict && item.date_reviewed !== true) || !Number.isFinite(published) || !FOCUSES.includes(item.focus) || !item.source_reliability) {
       needs_review.push({candidate:item,reason:'date_category_or_reliability_unverified'});
     } else accepted.push(item);
   }
@@ -60,6 +60,7 @@ export function createEvidencePacket(candidate, source, review) {
   if (researchUrl(source.canonical_url)!==url || typeof source.text!=='string' || !source.text.trim()) throw Error('Matching source text required');
   if (!review || review.status!=='reviewed' || !review.reviewer || !Number.isFinite(time(review.reviewed_at))) throw Error('Explicit completed evidence review required');
   if (review.source_content_hash!==sha256(source.text)) throw Error('Review does not match source content hash');
+  if (candidate.date_conflict && review.date_reviewed !== true) throw Error('Conflicting publication dates require explicit date review');
   if (!Number.isFinite(time(candidate.published_at)) || !FOCUSES.includes(candidate.focus) || !candidate.source_reliability) throw Error('Verified date, category and source reliability required');
   if (!Array.isArray(review.claims) || !review.claims.length) throw Error('At least one reviewed claim required');
   const claims=review.claims.map(c=>{
@@ -72,6 +73,7 @@ export function createEvidencePacket(candidate, source, review) {
     headline:candidate.headline,publisher:candidate.publisher || null,published_at:candidate.published_at,
     canonical_url:url,category:candidate.focus,source_reliability:candidate.source_reliability,
     verified_claims:claims,why_it_matters:review.why_it_matters || null,
+    limitations:review.limitations || [],availability:review.availability || null,
     novelty_fingerprint:review.novelty_fingerprint || null,novelty_status:review.novelty_status,
     entities:review.entities || [],event_type:review.event_type || null,confidence:review.confidence,
     agent_skill_relevance:review.agent_skill_relevance === true,

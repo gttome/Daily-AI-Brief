@@ -111,3 +111,17 @@ The owner reviewed the second private comparison at https://daily-ai-brief-revie
 - Generate the archive's individual-item and complete-edition views, content-type selector, retained advanced filters, date-range validation and per-item edition links. Keep stable item IDs and permanent URLs. Empty media slots are not manufactured into archive items; full editions retain their availability notes.
 - Preserve existing analytics semantics and transports. No new reader identity, purchase attribution, paid runner, subscription service, schedule, or Command Center change is part of this release.
 - Later visual changes continue through a new preview and owner approval. The original September 12 snapshots remain unchanged.
+
+## September 14 efficiency preparation and resume
+
+Use `_tools/production-run.mjs` for shared discovery after rebuilding the source directory. Initialize one private attempt manifest with `init --manifest <private-path> --private-root <durable-private-directory> --attempt dab-attempt-<unique-id> --date YYYY-MM-DD --cutoff <timestamp-with-offset> --max-age-hours 24`. Evidence must remain outside public Git. Verify the scheduled environment can read this location before adopting unattended execution. A wider article window requires `--window-reason`; existing Agent Skills and media exceptions still apply independently.
+
+Run `discover --manifest <same-path>` once instead of separate Brief and Watchlist acquisition. A warm, validated checkpoint restores its queues and Watchlist state; expired or changed evidence triggers retrieval again. Persist `_data/watchlist-source-state.json` with the candidate's public-safe discovery outputs so cadence survives the next checkout. Preserve public-safe outcomes and all rejected/unresolved metadata; raw pages and private telemetry stay in the private directory. Reuse the attempt on interruption. Never infer that a missing state file means sources were reviewed.
+
+Use bounded `research.mjs metadata --file <candidates> --cache <private-cache> --limit <count>` for unresolved publication dates. Page update dates are not publication dates. Conflicting dates require explicit review; exact-source history matches require review even when headlines change. Queue capacity overflow is not an editorial rejection.
+
+After human/agent evidence verification, `packets --manifest <same-path> --file <reviewed-inputs>` produces stage-specific selection, writing, image-preflight and QA views. Preserve exact excerpts, limitations and current/planned availability. Image preflight remains pending until reviewed; this command does not approve an image, score the candidate pool, write an edition or publish. Preserve all existing publication gates. Media normalization, generation/image checkpoints and live schedule integration remain separate rollout work.
+
+`monitor-completion.mjs --date <edition> --completion <file> --state <private-state>` reports whether a matching Pages-verified revision needs collection. Acknowledge only after successful private collection. Duplicate acknowledgments are inert. This helper neither researches nor publishes and is not yet connected to a live schedule. Verify matching passing editorial QA before collection.
+
+Record actual stage inputs and attributable usage when available. Packet character counts and synthetic retrieval tests are engineering proxies, not measured token or credit savings. Pilot ordinary editions without rerunning paid image generation solely for comparison.

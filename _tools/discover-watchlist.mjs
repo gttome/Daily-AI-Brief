@@ -1,5 +1,7 @@
 
-import {extractLinks,retrieveSource} from './discovery-links.mjs';
+import {extractCandidateMetadata} from './discovery-links.mjs';
+import {acquisition} from './discovery-context.mjs';
+import {retainCandidates} from '../_generator/lib/discovery-queue.mjs';
 import {watchlistDue,recordWatchlistCheck,incrementalCoverage} from '../_generator/lib/incremental-watchlist.mjs';
 import {sha256} from '../_generator/lib/util.mjs';
 import fs from 'node:fs';
@@ -25,20 +27,18 @@ for(let i=0;i<monitored.length;i+=4)await Promise.all(monitored.slice(i,i+4).map
    checks.push({source_id:s.source_id,status:'assisted_review_required',reason:'Requires identity, access, and original-evidence review.',checked_at:now});return;
  }
  try{
-   const result=await retrieveSource(s.endpoint),fingerprint=sha256(result.text);
-   let leads;
+   const result=await acquisition.retrieve(s.endpoint);
+   const leads=extractCandidateMetadata(result.text,result.resolved_url,s).map(x=>({...x,url:x.canonical_url,title:x.headline})).filter(link=>link.title.length>=24&&link.title.length<=220&&!/login|signup|privacy|terms|subscribe|javascript/i.test(new URL(link.url).pathname));
+   const fingerprint=sha256(JSON.stringify(leads.map(x=>({url:x.url,title:x.title,published_at:x.published_at})).sort((a,b)=>a.url.localeCompare(b.url))));
    const unchanged=previous?.endpoint===s.endpoint&&previous.last_content_fingerprint===fingerprint;
-   if(unchanged&&previous.candidate_urls?.every(url=>candidates.has(url)))leads=previous.candidate_urls.map(url=>({url}));
-   else{
-     leads=extractLinks(result.text,result.url).filter(link=>link.title.length>=24&&link.title.length<=220&&!/login|signup|privacy|terms|subscribe|javascript/i.test(new URL(link.url).pathname));
-     for(const link of leads){
-       const existing=candidates.get(link.url);
-       if(existing){existing.last_seen=now;existing.source_ids=[...new Set([...existing.source_ids,s.source_id])];}
-       else candidates.set(link.url,{id:'lead-'+sha256(link.url).slice(0,16),url:link.url,title:link.title,source_ids:[s.source_id],first_seen:now,last_seen:now,publication_date:null,disposition:'needs_research'});
-     }
+   for(const link of leads){
+     const existing=candidates.get(link.url);
+     candidates.set(link.url,{...existing,...link,id:existing?.id||'lead-'+sha256(link.url).slice(0,16),
+       source_ids:[...new Set([...(existing?.source_ids||[]),s.source_id])],first_seen:existing?.first_seen||now,last_seen:now,
+       publication_date:link.published_at,disposition:existing?.disposition||'needs_research'});
    }
    const status=leads.length?'retrieved':'no_candidate_links';
-   nextState[s.source_id]=recordWatchlistCheck(s,previous,{now,text:result.text,candidates:leads,status});
+   nextState[s.source_id]=recordWatchlistCheck(s,previous,{now,text:result.text,fingerprint,candidates:leads,status});
    checks.push({source_id:s.source_id,status,unchanged,candidate_links:leads.length,attempts:result.attempts,checked_at:new Date().toISOString()});
  }catch(e){
    nextState[s.source_id]=recordWatchlistCheck(s,previous,{now,status:'unavailable',reason:e.message});
@@ -47,7 +47,8 @@ for(let i=0;i<monitored.length;i+=4)await Promise.all(monitored.slice(i,i+4).map
 }));
 const incremental=incrementalCoverage(checks);
 const coverage={checked:incremental.sources_checked,retrieval_success:checks.filter(x=>['retrieved','no_candidate_links'].includes(x.status)).length,with_candidate_links:incremental.sources_returning_candidate_links,no_candidate_links:checks.filter(x=>x.status==='no_candidate_links').length,retrieval_failures:incremental.unavailable,assisted_review_required:incremental.assisted_review_required,...incremental};
-const data={updated_at:now,coverage,candidates:[...candidates.values()].sort((a,b)=>b.last_seen.localeCompare(a.last_seen)).slice(0,2000),sources:checks.sort((a,b)=>a.source_id.localeCompare(b.source_id)),early_signal_channels:early.channels.length,efficiency:{...incremental,watchlist_seconds:(Date.now()-started)/1000},note:'Incremental discovery leads only. Not-due checks retain prior evidence and original timestamps. No links, assisted review and unavailable sources remain distinct. Work must verify original evidence, group related developments and update only affected topics. Verified public topic state is retained independently.'};
+const retained=retainCandidates([...candidates.values()],{limit:2000});
+const data={updated_at:now,coverage,...retained,sources:checks.sort((a,b)=>a.source_id.localeCompare(b.source_id)),early_signal_channels:early.channels.length,efficiency:{...incremental,watchlist_seconds:(Date.now()-started)/1000},note:'Incremental discovery leads only. Not-due checks retain prior evidence and original timestamps. No links, assisted review and unavailable sources remain distinct. Work must verify original evidence, group related developments and update only affected topics. Verified public topic state is retained independently.'};
 fs.writeFileSync('_data/watchlist-discoveries.json',JSON.stringify(data,null,2)+'\n');
 fs.writeFileSync(stateFile,JSON.stringify({schema_version:'1.0.0',updated_at:now,sources:nextState},null,2)+'\n');
 fs.mkdirSync('_records/watchlist-discovery',{recursive:true});

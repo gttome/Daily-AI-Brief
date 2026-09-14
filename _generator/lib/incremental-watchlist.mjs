@@ -7,7 +7,7 @@ export function watchlistDue(source,previous,now,{force=false}={}){
  if(!Number.isFinite(next)||Date.parse(previous.last_attempt_at)>stamp)return true;
  return stamp>=next;
 }
-export function recordWatchlistCheck(source,previous,{now,text=null,candidates=[],status,reason=null}){
+export function recordWatchlistCheck(source,previous,{now,text=null,fingerprint:semanticFingerprint=null,candidates=[],status,reason=null}){
  const stamp=Date.parse(now);if(!Number.isFinite(stamp))throw Error('Valid check time required');
  if(!['retrieved','no_candidate_links','unavailable','assisted_review_required'].includes(status))throw Error('Unknown Watchlist outcome');
  const success=['retrieved','no_candidate_links'].includes(status);
@@ -17,7 +17,7 @@ export function recordWatchlistCheck(source,previous,{now,text=null,candidates=[
  const failures=success?0:(prior?.consecutive_failures||0)+1;
  const cadence=source.high_velocity===true?6*hour:source.check_cadence==='weekly'?7*24*hour:24*hour;
  const retry=status==='assisted_review_required'?7*24*hour:Math.min(24*hour,Math.pow(2,Math.min(failures,5))*hour);
- const fingerprint=success?sha256(text):prior?.last_content_fingerprint||null;
+ const fingerprint=success?(semanticFingerprint||sha256(text)):prior?.last_content_fingerprint||null;
  return {schema_version:'1.0.0',source_id:source.source_id,endpoint:source.endpoint,last_attempt_at:now,
    last_successful_check:success?now:prior?.last_successful_check||null,
    last_content_fingerprint:fingerprint,
@@ -25,6 +25,8 @@ export function recordWatchlistCheck(source,previous,{now,text=null,candidates=[
    latest_known_item_date:success?(candidates.map(c=>c.published_at).filter(Boolean).sort().at(-1)||prior?.latest_known_item_date||null):prior?.latest_known_item_date||null,
    candidate_urls:success?candidates.map(c=>c.url||c.canonical_url):prior?.candidate_urls||[],
    status,reason,consecutive_failures:failures,assisted_review:status==='assisted_review_required',
+   review_state:status==='assisted_review_required'?'pending':prior?.review_state||null,
+   review_due_at:status==='assisted_review_required'?(prior?.review_due_at||now):prior?.review_due_at||null,
    next_check_at:new Date(stamp+(success?cadence:retry)).toISOString()};
 }
 export function incrementalCoverage(checks){
