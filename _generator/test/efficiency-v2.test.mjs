@@ -51,3 +51,18 @@ test('compact stage views retain claim excerpts and limitations without claiming
  const packets=[{candidate_id:'a',verification_status:'reviewed',source_content_hash:'hash',verified_claims:[{claim:'A bounded result',evidence:'In a synthetic test only.'}],limitations:['Not independently replicated'],availability:'preview'}];
  const r=evidenceViews(packets);assert.deepEqual(r.views.writing[0].limitations,packets[0].limitations);assert.equal(r.views.editorial_qa[0].claims[0].evidence,'In a synthetic test only.');assert.equal(r.telemetry.actual_model_input_chars,null);assert.equal(r.views.images[0].review_status,'pending_visual_brief_review');
 });
+
+import os from 'node:os';import {assertPrivateRoot} from '../lib/production-run.mjs';
+test('private evidence cannot use the repository, its ancestor, or a public manifest',()=>{
+ const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dab-private-'));
+ try{const repo=path.join(dir,'repo'),privateRoot=path.join(dir,'private');fs.mkdirSync(repo);fs.mkdirSync(privateRoot);
+ assert.equal(assertPrivateRoot(repo,privateRoot,path.join(privateRoot,'run.json')),fs.realpathSync(privateRoot));
+ assert.throws(()=>assertPrivateRoot(repo,repo,path.join(repo,'run.json')));
+ assert.throws(()=>assertPrivateRoot(repo,dir,path.join(dir,'run.json')));
+ assert.throws(()=>assertPrivateRoot(repo,privateRoot,path.join(repo,'run.json')));
+ }finally{fs.rmSync(dir,{recursive:true,force:true});}
+});
+test('a successful forced retry clears the prior in-process retrieval failure',async()=>{
+ let denied=true,calls=0;const a=new DiscoveryAcquisition({fetcher:async url=>{calls++;if(denied)throw Error('HTTP 403');return {url,text:'Evidence'};}});
+ await assert.rejects(a.retrieve('https://example.org/retry'));denied=false;await a.retrieve('https://example.org/retry',{force:true});await a.retrieve('https://example.org/retry');assert.equal(calls,2);
+});

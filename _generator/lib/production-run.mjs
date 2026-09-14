@@ -32,6 +32,6 @@ export function assertPrivateRoot(repo,privateRoot,manifestPath){
  const resolved=p=>{let cursor=path.resolve(p),tail=[];while(!fs.existsSync(cursor)){tail.unshift(path.basename(cursor));const parent=path.dirname(cursor);if(parent===cursor)throw Error('Cannot resolve private path');cursor=parent;}return path.join(fs.realpathSync(cursor),...tail);};
  const base=resolved(repo),root=resolved(privateRoot),manifest=resolved(manifestPath);
  const inside=(parent,child)=>{const rel=path.relative(parent,child);return rel===''||(!rel.startsWith('..'+path.sep)&&!path.isAbsolute(rel));};
- if(inside(base,root)||!inside(root,manifest)||root===manifest)throw Error('Evidence root must remain outside public Git and contain its manifest');
+ if(inside(base,root)||inside(root,base)||inside(base,manifest)||!inside(root,manifest)||root===manifest)throw Error('Evidence root must remain outside public Git and contain its manifest');
  return root;
 }
