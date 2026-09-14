@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "attempt_id": "dab-attempt-2026-09-14-publication-20260914T120219Z",
+  "edition_id": "dab-edition-2026-09-14",
+  "started_at": "2026-09-14T12:02:19Z",
+  "ended_at": "2026-09-14T12:54:00Z",
+  "wall_seconds": 3101,
+  "scope": "fresh edition publication, source and watchlist discovery, independent live QA and owner-only operations",
+  "resource_policy": "Plus Work/Codex allowance and built-in premium image generation only; no paid API, added credits, overage, top-up, upgrade or alternate account",
+  "measured_work": {
+    "candidate_count": 20,
+    "selected_stories": 6,
+    "image_drafts": 9,
+    "image_rejects": 3,
+    "accepted_images": 6,
+    "publication_pull_requests": 1,
+    "qa_pull_requests": 1,
+    "local_tests_final": 109,
+    "contract_fixtures": 15,
+    "article_sources_checked": 55,
+    "article_sources_retrieved": 45,
+    "watchlist_sources_checked": 49,
+    "watchlist_sources_retrieved": 35,
+    "watchlist_topics": 8,
+    "video_fill": "2/2",
+    "podcast_fill": "1/1"
+  },
+  "failed_attempts": [
+    {"stage":"local_jekyll","result":"unavailable","evidence":"The local bundle executable was unavailable. Candidate and production GitHub CI completed the deterministic Jekyll build successfully before success was reported."},
+    {"stage":"prepublication_tests","result":"recovered","evidence":"Two inherited fixtures assumed a future date that became current and a multi-evidence watchlist topic. The fixtures were made date- and evidence-independent; all 109 tests pass."},
+    {"stage":"watchlist_discovery","result":"degraded","evidence":"Thirty-five of 49 registered watchlist sources returned candidate links; eight require assisted review, three returned no candidate links and three were unavailable."},
+    {"stage":"direct_link_probe","result":"degraded","evidence":"Independent command-line probes returned 403 for Microsoft and timed out for Google Cloud, while their normalized official links and previously reviewed primary evidence remain intact. No false availability claim was made."}
+  ],
+  "publication": {
+    "baseline_sha": "026f00d41458ea1494c44587da930c22e209b030",
+    "publication_pr": 95,
+    "publication_head": "fc824d2226bc015878d9e511025051a9d6d292db",
+    "publication_ci": 34844236454,
+    "publication_main": "4cdb3a6deda143ee0bfbb0d1d10926b59fc91ff0",
+    "publication_main_ci": 34844342020,
+    "publication_pages": 34844341092
+  },
+  "private_operations": {
+    "aggregate_items": 9,
+    "snapshot_saved_and_read_back": true,
+    "usage_saved_and_read_back": true,
+    "owner_priorities_retrieved": true,
+    "comment_retention_cleanup": "completed",
+    "subscriber_delivery": "Disabled by choice / Not applicable",
+    "historical_analytics_migration": "not attempted"
+  },
+  "usage": {
+    "exact_credits": null,
+    "dollars": null,
+    "coverage": "partial",
+    "reason": "The platform did not provide edition-attributed credit or dollar data. Drafts, rejects and elapsed time were measured and saved privately."
+  },
+  "outcome": "public_pass_with_degraded_discovery_coverage"
+}

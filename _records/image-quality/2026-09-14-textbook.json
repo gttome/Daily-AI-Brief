@@ -208,11 +208,20 @@
     "rejected_drafts": 3
   },
   "deployment_repairs": [],
-  "final_qa": "pending",
+  "final_qa": "pass",
   "live_verification": {
-    "verified_at": null,
-    "result": "pending",
-    "pages": [],
-    "evidence": "Pending merge and live Pages deployment."
+    "verified_at": "2026-09-14T12:54:00Z",
+    "result": "pass",
+    "pages": [
+      "https://gttome.github.io/Daily-AI-Brief/",
+      "https://gttome.github.io/Daily-AI-Brief/briefs/2026-09-14/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/codex-supports-antimicrobial-search-but-labs-set-ground-truth/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/",
+      "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/salesforce-frames-agents-as-long-running-job-systems/"
+    ],
+    "evidence": "All six live image responses match the exact approved SHA-256 hashes. Independent browser and HTTP inspection found correct 1200x630 rendering, white-background textbook styling, distinct compositions, safe margins and no clipping, crowding, physical scenes or invented claims."
   }
 }

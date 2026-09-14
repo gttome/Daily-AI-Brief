@@ -5,7 +5,7 @@
   "rollback_target_sha": "026f00d41458ea1494c44587da930c22e209b030",
   "policy_profile": "full_v1",
   "image_review": "_records/image-quality/2026-09-14-textbook.json",
-  "image_review_sha256": "4be14a1a7f67cdd19c77ae8179a428dcec25cd618b9f434f26180d3deee3328b",
+  "image_review_sha256": "004967ad61066fb3fe6d6d5d7aa441e7485a71308d2fe646bdf50020525aae5a",
   "assets": [
     {
       "path": "briefs/images/2026-09-14/01-habitat-storage-control-plane.png",
