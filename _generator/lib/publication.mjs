@@ -1,3 +1,4 @@
+import {newEfficiency,assertEfficiency,efficiencyPath,publicEfficiency,readEfficiencyRecords} from './efficiency.mjs';
 import path from 'node:path';
 import fs from 'node:fs';
 import {reviewedImages} from './image-gate.mjs';
@@ -63,7 +64,17 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   if(review.review_path)files.set(review.review_path,fs.readFileSync(path.join(repoRoot,review.review_path),'utf8'));
   const manifest={schema_version:'1.0.0',edition_id:edition.edition_id,baseline_sha:options.baselineSha,rollback_target_sha:options.baselineSha,policy_profile:edition.policy_profile,image_review:review.review_path||null,image_review_sha256:review.review_sha256||null,assets:review.assets,canonical_sha256:sha256(files.get(`_data/editions/${edition.brief_date}.json`)),candidate_digest:stagedDigest(files)};
   files.set(`_records/releases/${edition.brief_date}.json`,JSON.stringify(manifest,null,2)+'\n');
+  const originalBaseline=path.join(repoRoot,'_architecture/efficiency-refactor/baseline.json');
+  const efficiency=options.efficiency||newEfficiency({editionId:edition.edition_id,attemptId:options.runId||'generation-'+options.observedAt.replace(/[^a-zA-Z0-9]/g,''),baselineSha:fs.existsSync(originalBaseline)?JSON.parse(fs.readFileSync(originalBaseline,'utf8')).baseline_sha:options.baselineSha});
+  if(efficiency.edition_id!==edition.edition_id)throw Error('Efficiency edition mismatch');
+  publicEfficiency(efficiency);
+  files.set(efficiencyPath(efficiency),JSON.stringify(efficiency,null,2)+'\n');
+  const existingIndexFile=path.join(repoRoot,'data/efficiency/index.json');
+  const existingIndex=fs.existsSync(existingIndexFile)?JSON.parse(fs.readFileSync(existingIndexFile,'utf8')):{schema_version:'1.0.0',historical:[]};
+  const efficiencyRecords=readEfficiencyRecords(repoRoot).filter(r=>efficiencyPath(r)!==efficiencyPath(efficiency));
+  files.set('data/efficiency/index.json',JSON.stringify({...existingIndex,records:[...efficiencyRecords,efficiency]},null,2)+'\n');
   const event = createValidatedEvent(edition, files, {...options, checks});
+  event.value.file_set.operational_records.push(efficiencyPath(efficiency));
   files.set(event.path, `${JSON.stringify(event.value, null, 2)}\n`);
   for (const [name, content] of files) { if(Buffer.isBuffer(content)){fs.mkdirSync(path.dirname(path.join(outDir,name)),{recursive:true});fs.writeFileSync(path.join(outDir,name),content);}else writeText(path.join(outDir, name), content); }
   return {files: [...files.keys()].sort(), digest: stagedDigest(files), event: event.value};

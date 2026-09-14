@@ -31,3 +31,9 @@ Personal Editorial Learning uses explicit anonymous daily ratings from compact c
 - Legacy briefs lack some evidence/status fields and show `Unspecified` in the archive.
 - Client-side aggregate analytics is directional, not audited audience measurement.
 - Jekyll build evidence is produced in GitHub CI rather than the local Work runtime.
+
+
+## Efficiency workflow
+For new editions, follow _architecture/efficiency-refactor/research-workflow.md and the phase checkpoint instructions. Discover metadata broadly, review uncertain dates and novelty, deep-read serious candidates, and reuse traceable evidence packets. Use the compact 30-day index, incremental Watchlist checks, and durable checkpoints without bypassing editorial or publication gates.
+Publication staging emits a generation-only efficiency record. Supply measured research telemetry through generate --efficiency when available. After the actual publication and live QA finish, record a new publication_complete efficiency record with actual start/end boundaries and independent public QA, overall coverage, private operations and delivery statuses using _tools/efficiency-report.mjs record --file. Do not relabel the staged record complete or overwrite it.
+Raw account allowance readings remain private. Unknown fields remain null. Never infer full-text retrieval from catalog-link discovery, exact tokens from characters, or delivery failure when delivery is disabled by choice.

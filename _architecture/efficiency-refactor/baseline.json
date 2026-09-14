@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "captured_at": "2026-09-14T18:21:42.051Z",
+  "repository": "gttome/Daily-AI-Brief",
+  "baseline_sha": "580b34dd4082d5de22240652ead2e3ecf50fa557",
+  "tree_sha": "a091bd883bd7cd7dc322ac44be23db4df1fc79b1",
+  "original_reference_sha": "026f00d41458ea1494c44587da930c22e209b030",
+  "production_content_sha": "4cdb3a6deda143ee0bfbb0d1d10926b59fc91ff0",
+  "marker": "efficiency-baseline-2026-09-14",
+  "implementation_branch": "refactor/daily-brief-efficiency-v1",
+  "baseline_tests": {
+    "native_windows_original": "failed: URL pathname paths; checkout CRLF normalization",
+    "portable_tests": 109,
+    "contracts": 15,
+    "repository": "PASS",
+    "integration": "PASS",
+    "test_only_changes": [
+      "edition-feed.test.mjs",
+      "podcast.test.mjs"
+    ]
+  },
+  "pages": {
+    "recorded_run": 34844341092,
+    "recorded_conclusion": "success",
+    "recorded_sha": "4cdb3a6deda143ee0bfbb0d1d10926b59fc91ff0",
+    "current_head_workflow_lookup": [],
+    "current_live_checks": [
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/",
+        "status": 200,
+        "has_september_14": true,
+        "checked_at": "2026-09-14T18:21:42.714Z"
+      },
+      {
+        "url": "https://gttome.github.io/Daily-AI-Brief/qa/2026-09-14/",
+        "status": 200,
+        "has_september_14": true,
+        "checked_at": "2026-09-14T18:21:42.883Z"
+      }
+    ]
+  },
+  "command_center": {
+    "version": 34,
+    "commit_sha": "150dea45f390c1f2daa1f60740835347e9bd63a3",
+    "access": "owner-only",
+    "maintenance_receipt": {
+      "operation": "comment_retention",
+      "last_success": "2026-09-14T14:09:40.379Z",
+      "result": "completed"
+    },
+    "private_usage_record": null,
+    "private_usage_note": "Database connector exposes book_reviews and maintenance_receipts only. Snapshot/KV usage still requires supported authenticated endpoint retrieval."
+  },
+  "subscriber_delivery": "Disabled by choice / Not applicable",
+  "comparison_notes": [
+    "September 13 remains primary performance reference; September 12 secondary.",
+    "September 14 timing is recorded publication scope, not stage telemetry; later maintenance receipt is outside that interval.",
+    "Historical sources_retrieved means discovery endpoint retrieval; do not reinterpret as full-text article retrieval.",
+    "No optimized edition has run; no historical token or allowance readings reconstructed."
+  ]
+}

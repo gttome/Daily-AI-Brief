@@ -1,10 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {fileURLToPath} from 'node:url';
 import {validateEdition} from '../lib/validate.mjs';
 import {generatedFiles} from '../lib/render.mjs';
 import {aggregateAnalytics,refreshFeedbackAnalytics} from '../lib/analytics.mjs';
-const root = new URL('../../',import.meta.url).pathname;
+const root = fileURLToPath(new URL('../../',import.meta.url));
 const edition = JSON.parse(fs.readFileSync(root+'_data/editions/2026-09-09.json'));
 test('podcast permits long episodes while video limits stay enforced',()=>{
  const e=structuredClone(edition);e.podcast.runtime_seconds=14400;assert.deepEqual(validateEdition(e),[]);
