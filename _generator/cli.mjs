@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import {compactMemory,queryCompactMemory} from './lib/compact-memory.mjs';
 import {publicAnalyticsEvidence} from './lib/analytics.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -30,7 +31,11 @@ function chicagoDate() {
   return new Intl.DateTimeFormat('en-CA', {timeZone: 'America/Chicago', year: 'numeric', month: '2-digit', day: '2-digit'}).format(new Date());
 }
 
-if (command === 'import') {
+if (command === 'novelty-index' || command === 'novelty-query') {
+  const result=compactMemory(repoRoot,args.date||latestBriefDate(repoRoot),{cacheFile:args.cache?path.resolve(args.cache):null});
+  const output=command==='novelty-query'?{...queryCompactMemory(readJson(path.resolve(args.file)),result.memory),telemetry:result.telemetry}:result;
+  if(args.out)writeText(path.resolve(args.out),JSON.stringify(output,null,2));else console.log(JSON.stringify(output,null,2));
+} else if (command === 'import') {
   const date = args.date || latestBriefDate(repoRoot);
   const edition = importLegacyFile(path.join(repoRoot, 'briefs', `${date}.md`), repoRoot, args.commit || null);
   assertValidEdition(edition);

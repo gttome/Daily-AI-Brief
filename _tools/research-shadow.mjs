@@ -40,4 +40,3 @@ fs.mkdirSync(dir,{recursive:true});
 fs.writeFileSync(path.join(dir,'phase-1-shadow.json'),JSON.stringify(result,null,2)+'\n');
 console.log(JSON.stringify(result,null,2));
 if(errors.length)process.exitCode=1;
-
