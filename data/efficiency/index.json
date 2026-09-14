@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "records": [],
+  "historical": [
+    {
+      "date": "2026-09-12",
+      "wall_seconds": 2675,
+      "source_record": "_records/attempts/2026-09-12/dab-attempt-2026-09-12-publication-20260912T115736Z.json",
+      "role": "secondary"
+    },
+    {
+      "date": "2026-09-13",
+      "wall_seconds": 3688,
+      "source_record": "_records/attempts/2026-09-13/dab-attempt-2026-09-13-publication-20260913T120000Z.json",
+      "role": "primary"
+    },
+    {
+      "date": "2026-09-14",
+      "wall_seconds": 3101,
+      "source_record": "_records/attempts/2026-09-14/dab-attempt-2026-09-14-publication-20260914T120219Z.json",
+      "role": "supplementary"
+    }
+  ],
+  "note": "No completed optimized publication has been observed."
+}

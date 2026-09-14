@@ -91,7 +91,7 @@ if (command === 'novelty-index' || command === 'novelty-query') {
   if (!args.edition || !args.out || !args['baseline-sha']) throw new Error('generate requires --edition, --out, and --baseline-sha');
   const edition = readJson(path.resolve(args.edition));
   const observedAt = args['observed-at'] || new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
-  const result = buildPublicationStage(edition, repoRoot, path.resolve(args.out), {baselineSha: args['baseline-sha'], observedAt, runId: args['run-id']});
+  const result = buildPublicationStage(edition, repoRoot, path.resolve(args.out), {baselineSha: args['baseline-sha'], observedAt, runId: args['run-id'], efficiency:args.efficiency?readJson(path.resolve(args.efficiency)):null});
   console.log(JSON.stringify(result, null, 2));
 } else if (command === 'refresh-derived') {
   const date = args.date || latestBriefDate(repoRoot);
