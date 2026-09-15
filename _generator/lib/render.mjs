@@ -30,6 +30,10 @@ function readerSafeEdition(edition) {
   return copy;
 }
 
+function stripEditorOnlyMarkup(content) {
+  return String(content || '').replace(/<span class="story-editorial-note" data-george-implication="[^"]*" hidden><\/span>/g, '');
+}
+
 function renderStory(story, briefDate) {
   return `${readerRelease(briefDate)?`<span id="reading-${story.story_id}"></span>\n\n`:""}## ${story.ordinal}. ${story.headline}
 
@@ -102,6 +106,7 @@ export function renderBody(edition) {
   validateBookReading(edition);
   validateReadingSupport(edition);
   const publicPodcast = edition.podcast ? readerSafeItem(edition.podcast) : null;
+  const podcastBlock = publicPodcast ? stripEditorOnlyMarkup(renderPodcast(publicPodcast, edition.brief_date)) + '\n\n' : '';
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
@@ -115,7 +120,7 @@ ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'ge
 
 ${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
-${publicPodcast ? renderPodcast(publicPodcast, edition.brief_date) + '\n\n' : ''}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
+${podcastBlock}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
 
 ${edition.editorial_takeaway}
 
@@ -182,7 +187,7 @@ export function generatedFiles(edition, repoRoot) {
     ['README.md', renderReadme(repoRoot, edition.brief_date)]
   ]);
   const publicEdition = readerSafeEdition(edition);
-  for (const [name, content] of readerFoundationFiles(publicEdition, repoRoot)) files.set(name, content);
+  for (const [name, content] of readerFoundationFiles(publicEdition, repoRoot)) files.set(name, stripEditorOnlyMarkup(content));
   const analyticsPath=`_records/analytics/${edition.brief_date}.json`;
   if(!fs.existsSync(path.join(repoRoot,analyticsPath)))files.set(analyticsPath,JSON.stringify(publicAnalyticsEvidence(edition),null,2));
   const bookProposalPath=`_records/book-change-proposals/${edition.brief_date}.json`;
