@@ -40,3 +40,8 @@ Keep completed image approval separate: only `save-images` and `recover-images` 
 ## Validation evidence
 
 Automated fixtures cover interrupted writing restoration, preserved rejected-image status, changed-input/policy invalidation, corruption, retained old versions, traversal and link escapes, archive protection and the real preparation CLI. They use fixture prose and PNG draft bytes, generate no images and do not establish production token or credit savings.
+
+
+## Durable cloud transport
+
+After each useful draft save, follow `docs/operations/cloud-checkpoint-transport.md` to preserve the private evidence root and receipt in owner-only durable storage. The bundle is transport only: its restoration cannot approve a draft or replace the existing recover-draft validation. Actual scheduled recovery requires a later scheduled run's receipt; a local test or same-session upload/readback is insufficient.
