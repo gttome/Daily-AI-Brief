@@ -2,6 +2,16 @@ import fs from 'node:fs';
 import {WEIGHTS} from '../../assets/js/watchlist-evidence.js';
 export {WEIGHTS};
 export function scoreTopic(t){return Math.round(Object.entries(WEIGHTS).reduce((n,[k,w])=>n+w*(t.rubric[k].score??0)/5,0));}
+export function watchlistDailyState(topic,editionDate){
+ if(String(topic.first_detected||'').slice(0,10)===editionDate)return 'new_today';
+ if(String(topic.updated_at||'').slice(0,10)===editionDate)return 'updated_today';
+ return 'carried_forward';
+}
+export function watchlistDailySummary(data){
+ const counts={new_today:0,updated_today:0,carried_forward:0};
+ for(const topic of data.topics||[])if(topic.status!=='archived')counts[watchlistDailyState(topic,data.edition_date)]++;
+ return counts;
+}
 export function validateWatchlist(data){
  const errors=[],ids=new Set();
  if(data.schema_version!=='1.0.0'||!/^\d{4}-\d{2}-\d{2}$/.test(data.edition_date))errors.push('Invalid watchlist version/date');
