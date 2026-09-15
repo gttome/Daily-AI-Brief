@@ -9,11 +9,38 @@ import {formatDate, listBriefDates} from './util.mjs';
 import {readerFoundationFiles, renderInlineFeedback, renderPodcast, renderSeriesImplications, trackedLink} from './reader.mjs';
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
+const SERIES_SEPARATION_DATE='2026-09-16';
+
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 }
 
+function readerSafeItem(item) {
+  if (!item || typeof item !== 'object') return item;
+  const copy = structuredClone(item);
+  delete copy.george_implication;
+  delete copy.series_implications;
+  return copy;
+}
+
+function readerSafeEdition(edition) {
+  const copy = structuredClone(edition);
+  copy.stories = (copy.stories || []).map(readerSafeItem);
+  for (const key of ['general','agents_non_technical_people']) if (copy.worth_watching?.[key]) copy.worth_watching[key] = readerSafeItem(copy.worth_watching[key]);
+  if (copy.podcast) copy.podcast = readerSafeItem(copy.podcast);
+  return copy;
+}
+
+function stripEditorOnlyMarkup(content) {
+  return String(content || '').replace(/<span class="story-editorial-note" data-george-implication="[^"]*" hidden><\/span>/g, '');
+}
+
+function currentEditionReaderPath(name,date){
+  return name.startsWith(`stories/${date}/`)||name.startsWith(`videos/${date}/`)||name.startsWith(`podcasts/${date}/`);
+}
+
 function renderStory(story, briefDate) {
+  const separated=briefDate>=SERIES_SEPARATION_DATE;
   return `${readerRelease(briefDate)?`<span id="reading-${story.story_id}"></span>\n\n`:""}## ${story.ordinal}. ${story.headline}
 
 ${renderReadingSupport(story,story.story_id,briefDate)}
@@ -34,7 +61,7 @@ ${story.source.evidence_type ? `**Evidence:** ${label(story.source.evidence_type
 
 **Why it matters:** ${story.why_it_matters}
 
-${renderSeriesImplications(story, briefDate)}${renderBookReading(story.story_id, briefDate)}${story.what_to_do_now ? `
+${separated?'':renderSeriesImplications(story, briefDate)}${renderBookReading(story.story_id, briefDate)}${story.what_to_do_now ? `
 
 **What to do now — ${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : ''}
 
@@ -54,7 +81,7 @@ function renderVideo(name, slot, briefDate, slotId) {
   const anchor = slotId === 'general' ? 'general' : 'agents-for-non-technical-people';
   const heading = `${readerRelease(briefDate)?`<span id="${anchor}"></span>\n\n`:''}## ${ordinal}. ${name}`;
   if (slot.status === 'empty') return `${heading}\n\n${slot.exception}`;
-  return `${heading}
+  if(briefDate<SERIES_SEPARATION_DATE)return `${heading}
 
 ### ${slot.title}
 
@@ -77,11 +104,39 @@ ${renderInlineFeedback({
     story_id: `dab-video-${briefDate}-${slotId}`,
     feedback_subject: 'video'
   })}${renderBookReading(`dab-video-${briefDate}-${slotId}`,briefDate)}`;
+  return `${heading}
+
+### ${slot.title}
+
+${renderReadingSupport(slot,`dab-video-${briefDate}-${slotId}`,briefDate,"Video")}
+
+${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
+**Channel:** ${slot.channel}  
+**Date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
+**Runtime:** ${runtime(slot.runtime_seconds)}${slot.runtime_seconds>600?' · Longer selection today: no suitable video of 10 minutes or less was found.':''}  
+**Format:** Video
+
+**Summary:** ${slot.why_useful}
+
+**Why it matters:** ${slot.connection}
+
+${renderBookReading(`dab-video-${briefDate}-${slotId}`,briefDate)}
+
+**Source:** ${trackedLink(slot.url, /(^|\.)youtube\.com$|(^|\.)youtu\.be$/.test(new URL(slot.url).hostname) ? 'Watch on YouTube' : `Watch on ${slot.channel || new URL(slot.url).hostname}`, `dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
+
+${renderInlineFeedback({
+    brief_date: briefDate,
+    story_id: `dab-video-${briefDate}-${slotId}`,
+    feedback_subject: 'video'
+  })}`;
 }
 
 export function renderBody(edition) {
   validateBookReading(edition);
   validateReadingSupport(edition);
+  const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
+  const podcast=separated&&edition.podcast?readerSafeItem(edition.podcast):edition.podcast;
+  const podcastBlock=podcast?(separated?stripEditorOnlyMarkup(renderPodcast(podcast,edition.brief_date)):renderPodcast(podcast,edition.brief_date))+'\n\n':'';
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
@@ -95,7 +150,7 @@ ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'ge
 
 ${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
-${edition.podcast ? renderPodcast(edition.podcast, edition.brief_date) + '\n\n' : ''}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
+${podcastBlock}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
 
 ${edition.editorial_takeaway}
 
@@ -161,7 +216,9 @@ export function generatedFiles(edition, repoRoot) {
     ['index.md', renderIndex(edition)],
     ['README.md', renderReadme(repoRoot, edition.brief_date)]
   ]);
-  for (const [name, content] of readerFoundationFiles(edition, repoRoot)) files.set(name, content);
+  const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
+  const foundationEdition=separated?readerSafeEdition(edition):edition;
+  for (const [name, content] of readerFoundationFiles(foundationEdition, repoRoot)) files.set(name,separated&&currentEditionReaderPath(name,edition.brief_date)?stripEditorOnlyMarkup(content):content);
   const analyticsPath=`_records/analytics/${edition.brief_date}.json`;
   if(!fs.existsSync(path.join(repoRoot,analyticsPath)))files.set(analyticsPath,JSON.stringify(publicAnalyticsEvidence(edition),null,2));
   files.set('data/operations/current-edition.json', JSON.stringify({schema_version:'1.0.0',edition_id:edition.edition_id,brief_date:edition.brief_date,completion_path:'_records/publication/'+edition.brief_date+'/completion.json'},null,2));

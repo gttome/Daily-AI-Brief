@@ -6,7 +6,7 @@ import {readerFoundationFiles} from '../lib/reader.mjs';
 import {validateBookReading} from '../lib/book-reading.mjs';
 const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-12.json'));
 const catalog=JSON.parse(fs.readFileSync('_data/book-reading.json'));
-test('approved reading appears in edition and permanent article, video and podcast without losing interactions',()=>{
+test('historical approved reading remains byte-compatible in edition and permanent article, video and podcast',()=>{
  const body=renderBody(edition);assert.equal((body.match(/class="book-bridge"/g)||[]).length,3);assert.equal((body.match(/class="series-invitation"/g)||[]).length,1);assert.doesNotMatch(body,/Proposed update:/);assert.equal((body.match(/data-feedback-rating=/g)||[]).length,45);
  const files=readerFoundationFiles(edition,process.cwd());
  for(const name of [`stories/2026-09-12/${edition.stories[0].slug}.md`,'videos/2026-09-12/agent-skills.md','podcasts/2026-09-12/ai-risk-specificity.md']){assert.match(files.get(name),/class="book-bridge"/);assert.match(files.get(name),/data-feedback-rating="5"/);}
@@ -16,11 +16,19 @@ test('approved reading appears in edition and permanent article, video and podca
  assert.ok(body.indexOf('class="watchlist-preview"')>body.indexOf('### 9.'));
  assert.ok(body.indexOf('class="watchlist-preview"')<body.indexOf('## Editorial takeaway'));
 });
-test('book selections reject fabricated IDs, unsupported practice references, and more than three placements',()=>{
+test('historical selections retain the three-placement limit',()=>{
  const bad=structuredClone(catalog);bad.editions['2026-09-12'][0].reference_id='imaginary-chapter';assert.throws(()=>validateBookReading(edition,bad));
  const extra=structuredClone(catalog);extra.editions['2026-09-12'].push({...extra.editions['2026-09-12'][0]});assert.throws(()=>validateBookReading(edition,extra));
  const exercise=structuredClone(catalog);exercise.editions['2026-09-12'][0].practice='invented exercise';assert.throws(()=>validateBookReading(edition,exercise));
 });
-test('future editions have no forced chapter matches and empty media slots stay visible',()=>{
- const future=structuredClone(edition);future.brief_date='2099-01-01';future.worth_watching.general={status:'empty',exception:'No suitable verified video.'};const body=renderBody(future);assert.doesNotMatch(body,/class="book-bridge"/);assert.match(body,/Video · No qualifying selection/);assert.match(body,/No suitable verified video/);
+test('September 16 forward permits one verified bridge per Brief item',()=>{
+ const future=structuredClone(edition);future.brief_date='2026-09-16';
+ const ids=[...future.stories.map(story=>story.story_id),'dab-video-2026-09-16-general','dab-video-2026-09-16-agent-skills',future.podcast.item_id];
+ const full=structuredClone(catalog);full.editions['2026-09-16']=ids.map(item_id=>({item_id,reference_id:'reliable-verification',label:'READ DEEPER',why:'This verified chapter provides useful background for the selected Brief item.'}));
+ assert.equal(full.editions['2026-09-16'].length,9);assert.doesNotThrow(()=>validateBookReading(future,full));
+ full.editions['2026-09-16'].push({...full.editions['2026-09-16'][0]});assert.throws(()=>validateBookReading(future,full));
+});
+test('September 16 forward public body removes owner-only editorial metadata and does not force book matches',()=>{
+ const future=structuredClone(edition);future.brief_date='2026-09-16';future.worth_watching.general={status:'empty',exception:'No suitable verified video.'};const body=renderBody(future);
+ assert.doesNotMatch(body,/class="book-bridge"/);assert.doesNotMatch(body,/data-george-implication|Proposed update:|George Tome/);assert.match(body,/Video · No qualifying selection/);assert.match(body,/No suitable verified video/);assert.match(body,/Purchasing a book supports continued development/);
 });
