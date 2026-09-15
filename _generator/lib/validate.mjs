@@ -1,4 +1,8 @@
 import {EXPECTED_FOCUS_ORDER, TIMEZONE} from './constants.mjs';
+import {PRIMARY_FRESHNESS_HOURS, DEFAULT_FALLBACK_HOURS, AGENT_SKILLS_FALLBACK_HOURS} from './research.mjs';
+
+const time=value=>typeof value==='string'&&value.trim()?Date.parse(value):NaN;
+const agentSkillsStory=story=>/agent skills?/i.test([story.headline,...(story.topics||[])].join(' '));
 
 export function validateEdition(edition) {
   const errors = [];
@@ -14,10 +18,18 @@ export function validateEdition(edition) {
   if (edition.timezone !== TIMEZONE) errors.push(`timezone must be ${TIMEZONE}`);
   if (edition.edition_id !== `dab-edition-${edition.brief_date}`) errors.push('edition_id must match brief_date');
   if (!Array.isArray(edition.stories) || edition.stories.length !== 6) errors.push('edition must contain exactly six stories');
+  const freshnessRequired=edition.brief_date>='2026-09-16';
+  const cutoff=time(edition.research_cutoff_at);
+  if(freshnessRequired){
+    requireText(edition.research_cutoff_at,'research_cutoff_at');
+    if(!Number.isFinite(cutoff)||!edition.research_cutoff_at.startsWith(edition.brief_date))errors.push('research_cutoff_at must be a valid same-edition-date timestamp');
+    if(!/24-hour primary window/i.test(edition.coverage_period||''))errors.push('coverage_period must state the 24-hour primary window');
+  }
   const ids = new Set();
   const slugs = new Set();
   const sourceUrls = new Set();
   const editorialProfiles = new Set(['editorial_intelligence_v1', 'reader_foundation_v1', 'measurement_accessibility_v1', 'full_v1']);
+  let fallbackCount=0;
   (edition.stories || []).forEach((story, index) => {
     const label = `stories[${index}]`;
     if (story.ordinal !== index + 1) errors.push(`${label}.ordinal must equal ${index + 1}`);
@@ -41,6 +53,24 @@ export function validateEdition(edition) {
       if (sourceUrls.has(story.source.normalized_url)) errors.push(`${label}.source.normalized_url is duplicated`);
       sourceUrls.add(story.source.normalized_url);
     }
+    if(freshnessRequired){
+      const f=story.freshness;
+      if(!f||!['primary','fallback'].includes(f.tier))errors.push(`${label}.freshness.tier must be primary or fallback`);
+      const published=time(f?.source_published_at);
+      if(!Number.isFinite(published))errors.push(`${label}.freshness.source_published_at must be a verified timestamp`);
+      else if(Number.isFinite(cutoff)){
+        const ageHours=(cutoff-published)/3600000;
+        if(ageHours<0)errors.push(`${label}.freshness source timestamp is after the research cutoff`);
+        if(f?.tier==='primary'&&ageHours>PRIMARY_FRESHNESS_HOURS)errors.push(`${label}.freshness primary story exceeds ${PRIMARY_FRESHNESS_HOURS} hours`);
+        if(f?.tier==='fallback'){
+          fallbackCount++;
+          requireText(f.fallback_reason,`${label}.freshness.fallback_reason`);
+          if(ageHours<=PRIMARY_FRESHNESS_HOURS)errors.push(`${label}.freshness fallback is still inside the primary window`);
+          const maxHours=agentSkillsStory(story)?AGENT_SKILLS_FALLBACK_HOURS:DEFAULT_FALLBACK_HOURS;
+          if(ageHours>maxHours)errors.push(`${label}.freshness fallback exceeds ${maxHours} hours`);
+        }
+      }
+    }
     if (story.candidate_score) {
       const dimensions = ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty', 'practical_value', 'category_fit'];
       const sum = dimensions.reduce((total, key) => total + story.candidate_score[key], 0);
@@ -57,6 +87,7 @@ export function validateEdition(edition) {
       if (!story.what_to_do_now) errors.push(`${label}.what_to_do_now is required by full_v1`);
     }
   });
+  if(freshnessRequired&&fallbackCount>0&&!/recency fallback/i.test(edition.coverage_period||''))errors.push('coverage_period must disclose recency fallback use');
   for (const slot of ['general', 'agents_non_technical_people']) {
     const video = edition.worth_watching?.[slot];
     if (!video) errors.push(`worth_watching.${slot} is required`);
