@@ -4,6 +4,214 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-15-a1c3f9e2",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-14",
+      "headline": "GitHub lets Copilot Auto balance cost, speed, and quality per prompt",
+      "url": "/stories/2026-09-15/github-lets-copilot-auto-balance-cost-speed-and-quality/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "model routing",
+        "cost controls",
+        "latency",
+        "AI-assisted development"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "GitHub Copilot Auto now offers Efficiency, Balance, and Intelligence tiers. Auto evaluates each prompt and chooses from the same available model pool while weighting cost, quality, and response time differently. The feature is rolling out in Visual Studio Code, Copilot CLI, and the Copilot app."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-15-b7d4e8a1",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-14",
+      "headline": "Microsoft publishes a draft control contract for MAI models",
+      "url": "/stories/2026-09-15/microsoft-publishes-a-draft-control-contract-for-mai-models/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "model behavior",
+        "guardrails",
+        "human control",
+        "public consultation"
+      ],
+      "companies": [
+        "Microsoft"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "proposed",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development"
+      ],
+      "summary": "Microsoft AI published a draft Humanist AI Code of Conduct for a six-week public consultation. It describes intended model behavior, absolute constraints, operator-configurable defaults, uncertainty handling, evaluation, monitoring, and a requirement that MAI models remain subject to human interruption, correction, and shutdown."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-15-c2f6a9d4",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-14",
+      "headline": "Anthropic connects Claude to financial-advisor workflows",
+      "url": "/stories/2026-09-15/anthropic-connects-claude-to-financial-advisor-workflows/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "financial advice",
+        "data connectors",
+        "meeting preparation",
+        "human review"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "evidence_type": "authoritative_reporting",
+      "availability_status": "announced",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Anthropic launched Claude for Financial Advisors, a package that connects Claude to wealth-management data and software for tasks such as meeting preparation, portfolio review, and follow-up. Reuters reports that the offering is aimed at advisors rather than autonomous client-facing decision-making."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-15-d8e1b5c7",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-11",
+      "headline": "GitHub shows how marketing operations can run as reviewed code",
+      "url": "/stories/2026-09-15/github-shows-how-marketing-operations-can-run-as-reviewed-code/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "marketing operations",
+        "workflow automation",
+        "human approval",
+        "failure handling"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "reported",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A GitHub marketing lead documents an event-operations system that treats an Issue as the unit of work, structured issue forms as inputs, labels as triggers, and GitHub Actions as the machinery. The workflow stages landing pages, tracking links, invitations, boards, registrant checks, follow-up, and reporting while retaining human and platform guardrails."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-15-e3a7d2f9",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-11",
+      "headline": "An open Agent Skills library adds verification gates and restartable workflows",
+      "url": "/stories/2026-09-15/an-open-agent-skills-library-adds-verification-gates-and-restartable-workflows/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "verification",
+        "restartable work",
+        "portable instructions"
+      ],
+      "companies": [],
+      "evidence_type": "official_repository",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Addy Osmani’s open agent-skills repository packages 25 engineering skills and nine lifecycle commands for compatible coding agents. Recent updates added restartable task boundaries, native adapters, double-routing avoidance, and setup guidance for existing projects, while the repository emphasizes verification gates rather than treating generated work as complete by default."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-15-f4b8c1e6",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-14",
+      "headline": "Salesforce’s Campaign Agent turns a marketing goal into a reviewed plan",
+      "url": "/stories/2026-09-15/salesforce-campaign-agent-turns-a-marketing-goal-into-a-reviewed-plan/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "campaign planning",
+        "personalization",
+        "human approval",
+        "marketing agents"
+      ],
+      "companies": [
+        "Salesforce"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "announced",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Salesforce announced Campaign Agent for Marketing Cloud Next. It is designed to turn a stated campaign goal into coordinated audience, content, channel, and send-priority work, with marketers reviewing and approving before launch. Salesforce describes coworking and decisioning phases and says general availability is planned for October."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-15-general",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-11",
+      "headline": "Use Writing Blocks with ChatGPT for Teachers",
+      "url": "/videos/2026-09-15/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "OpenAI Academy"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "A three-minute official example of turning source material into a structured handout, revising passages, and translating the result."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-15-agent-skills",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-11",
+      "headline": "Connect Apps with ChatGPT for Teachers",
+      "url": "/videos/2026-09-15/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "OpenAI Academy"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "A concise official demonstration of connecting Gmail, reviewing unread messages, and drafting replies for human review."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-15-ai-show-237",
+      "brief_date": "2026-09-15",
+      "event_date": "2026-09-08",
+      "headline": "GPT-6 Astra, NYC Bans AI in Schools, Trump Goes All-In on Data Centers & Lawyers Under Pressure to Pass on AI Savings",
+      "url": "/podcasts/2026-09-15/ai-show-237/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "professional work",
+        "AI literacy",
+        "services pricing",
+        "agent oversight"
+      ],
+      "companies": [
+        "The Artificial Intelligence Show"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Paul Roetzer and Mike Kaput discuss GPT-6 Astra, school AI policy, professional-services pricing, education assessment, and practical agent use, with chapter timestamps and a full transcript."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-14-8c4f2a71",
       "brief_date": "2026-09-14",
       "event_date": "2026-09-11",

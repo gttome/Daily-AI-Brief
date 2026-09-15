@@ -1,0 +1,5398 @@
+{
+  "date": "2026-09-15",
+  "sources": [
+    {
+      "source_id": "acl-anthology",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:29.323Z",
+      "candidate_links": 100,
+      "checked_at": "2026-09-15T12:02:29.417Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:24.234Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "ai-for-humans",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:29.634Z",
+      "candidate_links": 0,
+      "checked_at": "2026-09-15T12:01:29.636Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:24.257Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "anthropic-engineering",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:00:59.406Z",
+      "candidate_links": 27,
+      "checked_at": "2026-09-15T12:00:59.413Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:00:53.223Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "anthropic-news",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:54.310Z",
+      "candidate_links": 23,
+      "checked_at": "2026-09-15T12:01:54.321Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:44.215Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv-cs-ai",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:44.072Z",
+      "candidate_links": 4,
+      "checked_at": "2026-09-15T12:01:44.081Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:36.290Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv-cs-cl",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:44.144Z",
+      "candidate_links": 22,
+      "checked_at": "2026-09-15T12:01:44.154Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:36.291Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv-cs-lg",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:44.019Z",
+      "candidate_links": 16,
+      "checked_at": "2026-09-15T12:01:44.028Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:36.291Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "atlassian",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:36.274Z",
+      "candidate_links": 1,
+      "checked_at": "2026-09-15T12:01:36.289Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:30.044Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "deepseek-news",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:11.793Z",
+      "candidate_links": 7,
+      "checked_at": "2026-09-15T12:02:11.794Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:06.417Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "everyday-ai",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:29.838Z",
+      "candidate_links": 13,
+      "checked_at": "2026-09-15T12:01:29.846Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:24.257Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-ai-agents",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:11.114Z",
+      "candidate_links": 27,
+      "checked_at": "2026-09-15T12:02:11.141Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:06.418Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-changelog",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:29.252Z",
+      "candidate_links": 22,
+      "checked_at": "2026-09-15T12:01:29.258Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:24.258Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-generative-ai",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:10.861Z",
+      "candidate_links": 34,
+      "checked_at": "2026-09-15T12:02:10.888Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:06.417Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-llm",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:11.085Z",
+      "candidate_links": 24,
+      "checked_at": "2026-09-15T12:02:11.100Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:06.418Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-trending",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:11.145Z",
+      "candidate_links": 72,
+      "checked_at": "2026-09-15T12:02:11.240Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:04.181Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "google-deepmind",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:30.038Z",
+      "candidate_links": 15,
+      "checked_at": "2026-09-15T12:01:30.043Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:24.258Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "google-deepmind-blog",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:06.412Z",
+      "candidate_links": 27,
+      "checked_at": "2026-09-15T12:02:06.416Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:55.009Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "google-workspace",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:06.796Z",
+      "candidate_links": 10,
+      "checked_at": "2026-09-15T12:01:06.801Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:00.254Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hacker-news-newest",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:11.987Z",
+      "candidate_links": 34,
+      "checked_at": "2026-09-15T12:02:11.992Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:11.796Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hacker-news-show",
+      "status": "cached_metadata",
+      "cache_status": "hit",
+      "fetched_at": "2026-09-15T12:02:09.606Z",
+      "candidate_links": 40,
+      "checked_at": "2026-09-15T12:02:11.798Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:04.180Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:00.139Z",
+      "candidate_links": 18,
+      "checked_at": "2026-09-15T12:01:00.153Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:00:53.223Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-daily-papers",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:54.720Z",
+      "candidate_links": 30,
+      "checked_at": "2026-09-15T12:01:54.726Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:44.215Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-datasets",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:44.686Z",
+      "candidate_links": 30,
+      "checked_at": "2026-09-15T12:01:44.694Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:44.214Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-models",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:44.205Z",
+      "candidate_links": 31,
+      "checked_at": "2026-09-15T12:01:44.213Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:36.291Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-spaces",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:54.997Z",
+      "candidate_links": 24,
+      "checked_at": "2026-09-15T12:01:55.009Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:44.214Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-technology",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-15T12:01:24.256Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:00.255Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-15T12:01:12.255Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "source_id": "iclr",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:29.668Z",
+      "candidate_links": 9,
+      "checked_at": "2026-09-15T12:02:29.670Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:24.234Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "icml",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:25.439Z",
+      "candidate_links": 23,
+      "checked_at": "2026-09-15T12:02:25.441Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:18.985Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "langchain",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:00.171Z",
+      "candidate_links": 10,
+      "checked_at": "2026-09-15T12:01:00.176Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:00:53.225Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "llamaindex",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:06.384Z",
+      "candidate_links": 100,
+      "checked_at": "2026-09-15T12:01:06.411Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:00.253Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "meta-ai-blog",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:01.307Z",
+      "candidate_links": 3,
+      "checked_at": "2026-09-15T12:02:01.313Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:55.010Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-365",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:01.240Z",
+      "candidate_links": 26,
+      "checked_at": "2026-09-15T12:01:01.255Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:00.255Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-learn",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:36.181Z",
+      "candidate_links": 0,
+      "checked_at": "2026-09-15T12:01:36.183Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:30.044Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-research",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:00.238Z",
+      "candidate_links": 12,
+      "checked_at": "2026-09-15T12:01:00.253Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:00:53.224Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "mistral-news",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:01.036Z",
+      "candidate_links": 89,
+      "checked_at": "2026-09-15T12:02:01.084Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:55.011Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "neurips",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:24.227Z",
+      "candidate_links": 27,
+      "checked_at": "2026-09-15T12:02:24.231Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:18.985Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "nvidia-ai-podcast",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:07.471Z",
+      "candidate_links": 59,
+      "checked_at": "2026-09-15T12:01:07.484Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:00.256Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "nvidia-developer",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:36.012Z",
+      "candidate_links": 62,
+      "checked_at": "2026-09-15T12:01:36.021Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:30.043Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "openai-news",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:49.647Z",
+      "candidate_links": 30,
+      "checked_at": "2026-09-15T12:01:49.654Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:44.215Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "openreview",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "practical-ai",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:29.186Z",
+      "candidate_links": 4,
+      "checked_at": "2026-09-15T12:01:29.188Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:24.256Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "qwen-blog",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "reddit-localllama",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:18.875Z",
+      "candidate_links": 0,
+      "checked_at": "2026-09-15T12:02:18.875Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:11.795Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "reddit-machinelearning",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:02:18.984Z",
+      "candidate_links": 0,
+      "checked_at": "2026-09-15T12:02:18.985Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:02:11.795Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "salesforce",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:34.916Z",
+      "candidate_links": 16,
+      "checked_at": "2026-09-15T12:01:34.921Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:30.045Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "simon-willison",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:43.947Z",
+      "candidate_links": 30,
+      "checked_at": "2026-09-15T12:01:43.953Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:36.290Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "specialized-discords",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Use only official or verified community access, never expose private discussion, and require public original evidence before selection."
+    },
+    {
+      "source_id": "stanford-hai",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:00:59.168Z",
+      "candidate_links": 11,
+      "checked_at": "2026-09-15T12:00:59.188Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:00:53.225Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "x-research-feeds",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Confirm account identity, follow every claim to original evidence, and do not treat screenshots, engagement, or reposts as validation."
+    },
+    {
+      "source_id": "xai-news",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-ai-research",
+      "status": "assisted_review_required",
+      "reason": "Verify channel identity, upload date, runtime, claims, and linked original evidence. Demonstrations and commentary are not independent validation."
+    },
+    {
+      "source_id": "youtube-anthropic",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-google-deepmind",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-openai",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "zapier",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-15T12:01:35.300Z",
+      "candidate_links": 22,
+      "checked_at": "2026-09-15T12:01:35.309Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-15T12:01:30.045Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    }
+  ],
+  "queue_size": 500,
+  "queue_discovered": 1162,
+  "retention": {
+    "policy": "source_round_robin_priority_recency_url_v1",
+    "discovered_unique": 1162,
+    "retained": 500,
+    "overflow": [
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/copilot-cowork-a-new-way-of-getting-work-done/",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/2026/03/09/powering-frontier-transformation-with-copilot-and-agents/",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/aielpl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/aimecon/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/aisd/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/aiwolfdial/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/akbc/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alnlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alr/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alta/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alvr/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/alw/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/americasnlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/amta/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/analogyangle/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/anlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/arabicnlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/bcs/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/ccl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/cl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/clasp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/clib/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/clicit/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/coling/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/conll/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/depling/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/dnd/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/eacl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/eamt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/earlymt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/emnlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/evalita/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/findings/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/fsmnlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/gl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/gwc/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/hlt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/icnlsp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/icon/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/ijclclp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/ijcnlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/inlg/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/iscls/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/iwcs/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/iwpt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/iwslt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/jclib/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/jeptalnrecital/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/jlcl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/konvens/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/ldk/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/lilt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/lrec/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/mol/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/mtsummit/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/muc/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/naacl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/nejlt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/nlpaics/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/nlpsi/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/nodalida/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/paclic/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/pam/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/propor/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/ranlp/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/reinact/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/retroeval/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/rocling/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/scil/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/semeval/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/sigdial/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/starsem/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/step/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/stil/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/swisstext/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/tacl/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/tal/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/tc/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/tinlap/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/tmi/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/triton/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/wmt/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://aclanthology.org/venues/wsc/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://arxiv.org/search/cs?query=Pinheiro%2C+G+G&searchtype=author",
+        "source_ids": [
+          "arxiv-cs-cl"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://arxiv.org/search/cs?query=Radhakrishnan%2C+R&searchtype=author",
+        "source_ids": [
+          "arxiv-cs-cl"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://arxiv.org/search/cs?query=Shadravan%2C+D+L&searchtype=author",
+        "source_ids": [
+          "arxiv-cs-cl"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://arxiv.org/search/cs?query=Sirichotedumrong%2C+W&searchtype=author",
+        "source_ids": [
+          "arxiv-cs-cl"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://arxiv.org/search/cs?query=Sittipong&searchtype=author",
+        "source_ids": [
+          "arxiv-cs-cl"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://arxiv.org/search/cs?query=Truic%C4%83%2C+C&searchtype=author",
+        "source_ids": [
+          "arxiv-cs-cl"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/building-an-analysis-ai-agent-for-industrial-alarm-management-with-nvidia-nemotron/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/building-federated-multimodal-ai-workflows-with-nvidia-flare/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/category/cybersecurity/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/category/generative-ai/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/co-designing-ai-model-attention-for-fast-interactive-long-context-inference/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/co-designing-ai-models-using-speculative-decoding-for-faster-llm-inference/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/develop-lightweight-usd-runtimes-faster-with-ai-agents/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/developing-nvidia-holoscan-applications-with-cli-skills-and-ai-coding-agents/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/enable-real-time-ai-for-high-speed-data-acquisition-with-daqiri/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/evaluating-ai-agent-skill-performance-with-nvidia-skillevaluator/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/experiment-with-qwen3-8-flash-next-on-nvidia-gb300-nvl72-for-agentic-coding/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/from-wafer-out-to-first-token-codifying-supply-chain-expertise-with-nemotron-and-palantir-foundry/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/full-stack-optimizations-for-agentic-inference-with-nvidia-dynamo/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/giga-scale-ai-ethernet-evolution-spectrum-x-ethernet-rewrites-rules/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/hardware-rooted-ai-security-that-wont-slow-you-down/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-ai-coding-agents-can-unlock-materials-simulation-with-nvidia-alchemi-toolkit/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-nvidia-groq-3-lpx-unlocks-ultrafast-interactivity-at-long-context-on-nvidia-vera-rubin/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-telcos-build-autonomous-networks-with-agentic-ai/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-to-build-vision-ai-pipelines-using-deepstream-coding-agents/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-to-carry-user-identity-across-federated-kubernetes-and-ai-platforms/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-to-choose-full-stack-observability-for-nvidia-ai-factories/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-to-eliminate-pipeline-friction-in-ai-model-serving/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-to-size-gpus-for-ai-inference-and-tco-without-overspending/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/how-to-train-a-cross-embodiment-robot-navigation-policy-with-ai-agents/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/inside-nvidia-halos-for-robotics-a-full-stack-functional-safety-system-for-physical-ai/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/integrating-context-aware-video-ai-agents-into-enterprise-workflows/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/maximize-spectral-efficiency-with-ai-native-ran-and-nvidia-ai-aerial/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/maximizing-ai-factory-performance-per-watt-with-nvidia-dsx-maxlps/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-bluefield-4-powers-new-scale-in-network-infrastructure-for-agentic-ai-factories/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-ising-enables-fully-automated-quantum-computer-calibration-with-enhanced-in-context-learning/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-jetpack-7-2-1-adds-agentic-video-skills-and-t3000-emulation/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-nvlink-fusion-brings-nvhbm-to-next-generation-ai-infrastructure/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-pair-virtual-inference-router-expands-available-compute-on-your-local-network/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-vera-storage-benchmarks-faster-encryption-compression-integrity-checking-and-recovery-for-ai-native-storage/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/nvidia-verified-agent-skills-provide-capability-governance-for-ai-agents/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-edge-for-on-device-robot-control/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/post-train-nvidia-cosmos-3-in-one-day-using-agent-skills/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/reducing-high-bandwidth-memory-bottlenecks-in-jax-based-llm-training-with-host-offloading/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/restore-llm-inference-capacity-in-seconds-with-shadow-engine-recovery-in-nvidia-dynamo/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/run-local-agentic-ai-workflows-with-metas-muse-glimmer-on-nvidia/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/run-nvidia-bionemo-nim-microservices-for-protein-structure-prediction-in-claude-science/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/scaling-agentic-ai-factories-through-extreme-co-design-with-nvidia-bluefield/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/scaling-ai-inference-across-multiple-gpus-using-nvidia-tensorrt-with-multi-device-inference-support/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/solving-agentic-ai-fleet-challenges-with-nvidia-vera-cpu/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/synthetic-data-generation-for-financial-ai-research-with-nvidia-nemo/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/transform-video-into-instantly-searchable-actionable-intelligence-with-ai-agents-and-skills/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://developer.nvidia.com/blog/whats-new-for-game-developers-in-nvidia-rtx-dlss-4-5-for-ue5-and-multilingual-ai-characters/",
+        "source_ids": [
+          "nvidia-developer"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-09-10-github-copilot-weekly-releases-september-7",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-09-10-mai-code-1-flash-deprecated",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-09-11-add-vs-code-agents-to-copilot-usage-metrics",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-09-11-auto-resolution-and-analysis-updates-in-copilot-code-review",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.blog/changelog/2026/?label=supply-chain-security",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/features/ai/github-app",
+        "source_ids": [
+          "github-changelog"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/mukundzha/hazzel",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/nimabeh/helical-time",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/peter941221/Kairo",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/resources/articles?topic=software-development",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/security/advanced-security",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/security/advanced-security/code-security",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/security/advanced-security/secret-protection",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/swobuforge/swobu",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/TauricResearch/TradingAgents",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/team",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/artificial-intelligence",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/generative-ai?l=jupyter+notebook",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/generative-ai?o=asc&s=updated",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/information-retrieval",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/large-language-models",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/microsoft-for-beginners",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/midjourney-alternative",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/model-context-protocol",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/natural-language-processing",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/reinforcement-learning",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/topics/retrieval-augmented-generation",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=cu",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=dv",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=gd",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=ht",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=ia",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=ie",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=kl",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=lb",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=li",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=ny",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=ro",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending?spoken_language_code=to",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/answer-set-programming?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/apollo-guidance-computer?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/cloud-firestore-security-rules?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/common-workflow-language?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/debian-package-control-file?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/digital-command-language?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/edje-data-collection?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/gcc-machine-description?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/glyph-bitmap-distribution-format?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/grammatical-framework?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/graph-modeling-language?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/imhex-pattern-language?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/java-template-engine?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/literate-coffeescript?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/mathematical-programming-system?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/microsoft-developer-studio-project?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/microsoft-visual-studio-solution?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/module-management-system?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/motorola-68k-assembly?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/object-data-instance-notation?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/openapi-specification-v2?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/openapi-specification-v3?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/openstep-property-list?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/opentype-feature-file?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/parrot-internal-representation?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/protocol-buffer-text-format?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/robots-exclusion-rules?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/simple-file-verification?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/spline-font-database?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/velocity-template-language?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/web-ontology-language?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/webassembly-interface-type?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/windows-registry-entries?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/world-of-warcraft-addon-data?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/trending/x-font-directory-index?since=daily",
+        "source_ids": [
+          "github-trending"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://github.com/vstorm-co/agenticos",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/blog/train-multi-vector-encoder",
+        "source_ids": [
+          "hugging-face"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/blog/train-to-paint-with-code",
+        "source_ids": [
+          "hugging-face"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/blog/webgpu-kernels",
+        "source_ids": [
+          "hugging-face"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/nyu-mll/glue",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/openai/gsm8k",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/openbmb/UltraData-Code",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/openbmb/UltraData-RL-2609",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/openbmb/UltraData-SFT-Agent-2609",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/OpenDataArena/Spark-234K",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/rajpurkar/squad",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/saidutta69/fable-5-premium",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/stablediffusiontutorials/Minimax-H3",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/stanfordnlp/imdb",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/TheAgenticDataCompany/open-yap-1k",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/venvoo/china-a-share-l2-level2-limit-order-book-tick-data",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/wikimedia/wikipedia",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/Yootta/WorldSimReady-Home",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/datasets/zouhar/last-translation-benchmark",
+        "source_ids": [
+          "hugging-face-datasets"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/models?library=tf",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/nex-agi/Nex-N2.5-mini",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/nex-agi/Nex-N2.5-Pro",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/openai-community/gpt2",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/openai/clip-vit-base-patch32",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/openbmb/MiniCPM5-2B",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.12419",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.12541",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.12641",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.12945",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13053",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13058",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13141",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13146",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13285",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13287",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13318",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13356",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.13498",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.14462",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.14858",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.14973",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15029",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15051",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15078",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15128",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15134",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15309",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15364",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15478",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15504",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15635",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15659",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15818",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15863",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/papers/2609.15973",
+        "source_ids": [
+          "hugging-face-daily-papers"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/Qwen/Qwen3.8-Flash-Next",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/ravenrose996688/Krea-2-Turbo_I2I",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/sdfdsfsf32e3/wan2-2-i2v-v3",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/selfit-camera/Omni-Image-Editor",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/STCM/wan2-2-fp8da-aoti-preview-2c-finishing",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/suvadityamuk/3d-representations-guide",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/tencent/AuK",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/toshas/Marigold-V2",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/Viggle/viggle-animate",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/spaces/Xenova/fruit-fly-simulation",
+        "source_ids": [
+          "hugging-face-spaces"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/tencent/AuK",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/TokenRhythm/NeoHorse-1-4B",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/ukisai/Swift-Qwen3.8-27b",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/WarmBloodAban/Minimax-h3_Singularity",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/XHToken/Spark-X2.5-4B",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+        "source_ids": [
+          "hugging-face-models"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/Conferences/2026/FinancialAid",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/Conferences/2026/LLM-Policy",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/Conferences/2026/ReviewerInstructions",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/Conferences/2026/SeniorAreaChairInstructions",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/Expo/applications",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/public/blog",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/public/JournalToConference",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://icml.cc/sponsors/sponsors-list?year=2026",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://inflightsimulator.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://johnoestmannmusic.com/1000-SOS/0007/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://kendell.dev/blog/crofaifalse/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://kubernetes.io/blog/2026/09/03/kubernetes-v1-37-dra-updates/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/recommended-resources-for-mvc",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://lemire.me/blog/2026/08/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://maintainers.github.com/",
+        "source_ids": [
+          "github-generative-ai"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mega.dev/autonomous-product-development",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/codestral-25-08/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/codestral-2501/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/codestral-embed/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/codestral-mamba/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/codestral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/customization/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/debugging-memory-leak-in-vllm/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/devstral-2-vibe-cli/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/devstral-2507/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/devstral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/forge/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/ki-fur-deutschland/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/la-plateforme/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/le-chat-dives-deep/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/le-chat-enterprise/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/le-chat-mcp-connectors-memories/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/le-chat-mistral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/leanstral-1-5/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/leanstral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/legacy-code-modernization",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/legacy-code-modernization/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/llm-as-rag-judge/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/magistral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/manage-prompts-and-skills-in-studio/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mathstral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/memory/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/ministraux/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-3/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-afp/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-ai-and-nvidia-partner-to-accelerate-open-frontier-models/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-ai-non-production-license-mnpl/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-ai-raises-1-7-b-to-accelerate-technological-progress-with-ai/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-chat/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-code/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-compute/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-large-2407/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-large/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-medium-3/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-moderation/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-nemo/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-ocr-3/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-ocr/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-saba/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-small-3-1/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-small-3/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-vibe-2-0/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-x-cloudera",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-x-cloudera/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mistral-x-humain/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mixtral-8x22b/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/mixtral-of-experts/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/more-control-over-connectors/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/our-contribution-to-a-global-environmental-standard-for-ai/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/physics-ai-research/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/pixtral-12b/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/pixtral-large/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/rails-testing-on-autopilot-building-an-agent-that-writes-what-developers-wont/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/robostral-navigate/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/search-toolkit/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/september-24-release/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/shieldstral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/spaces/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/unlocking-potential-vision-language-models-satellite-imagery-fine-tuning/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/vibe-agent/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/voxtral-transcribe-2/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/voxtral/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/news/workflows/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/products/aicloud/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/products/forge/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/products/studio/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/products/vibe/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/products/vibe/code/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/services/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://mistral.ai/solutions/document-ai/",
+        "source_ids": [
+          "mistral-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://musecases.netlify.app/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://narilabs.com/blog/nari-labs-leads-coval-voice-ai-benchmarks/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/Children",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/Committees",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/CompetitionReviewerGuidelines",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/EvaluationsDatasetsFAQ",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/EvaluationsDatasetsReviewerGuidelines",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/FinancialAssistance",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Conferences/2026/ReviewerGuidelines",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/Exhibitors/exhibitorinfo",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/public/DiversityInclusion",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/public/JournalToConference",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/set_timezone?nextp=%2F",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://neurips.cc/sponsors/prospectus",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.gallup.com/poll/714368/workers-fear-losing-jobs-technology.aspx",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=algorithm-archive.org",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=calljordanmygrandsonjordan.com",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=fooledbyrandomness.com",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fargonautlabsai",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fcallbacked",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fcoderexpert123",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fibtisam-mohammad",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fjamesryanatx",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fkeydrislabs",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fmirza-rizvi",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fmukundzha",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fnoizefield",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=github.com%2Fvstorm-co",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=inflightsimulator.com",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=musecases.netlify.app",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://news.ycombinator.com/from?site=whatjustpingedme.com",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://newsletter.platypuseconomics.com/p/the-rules-changed-the-numbers-didnt",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/gpt-6-astra-next-generation-work/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/introducing-chatgpt-financial-services/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/introducing-the-agents-api/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/put-data-to-work/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openai.com/trust-and-transparency/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://openaifoundation.org/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://people.iith.ac.in/vineethnb/",
+        "source_ids": [
+          "neurips"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://petewarden.com/2026/09/10/why-the-software-industry-needs-a-lot-of-regulation/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://petrelvoyage.com/app",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://pgskiff.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://platform.openai.com/login",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://pointlessramblings.com/posts/when-did-our-definition-of-agi-become-so-piss-weak/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://poltora.dev/redis",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://proceedings.mlr.press/",
+        "source_ids": [
+          "icml"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://pushie.net/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://pyrefly.org/blog/v1.3/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://qxotic.ai/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://redskyforge.com/fremont/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://restarted.io/?z=477799172922",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://screensize.net/reports/viewport-stats",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://sentralis.io/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://sftitlealert.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/19/5-minute-llms/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/19/gemini-35-flash/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/25/encyclical-on-ai/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/27/product-market-fit/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/28/claude-opus-4-8/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/6/code-w-claude-2026/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/6/vibe-coding-and-agentic-engineering/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/May/7/xai-anthropic/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/Sep/1/claude-fable-5-1/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/Sep/12/openai-agents-rubygems/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/2026/Sep/2/claudes-new-system-prompt/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/tags/agentic-engineering/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/tags/ai-assisted-programming/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/tags/ai-security-research/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://simonwillison.net/tags/openai-hugging-face-incident/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://status.arxiv.org/",
+        "source_ids": [
+          "arxiv-cs-lg"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://stemjson.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://suchir.net/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://sw-ml-study.github.io/moe-microscope/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://techcrunch.com/2026/09/14/openai-buys-smartphone-camera-maker-glass-imaging-for-300-million-report-says/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://telox.dev/app/scratchpad/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://thecriticalreaderp.blogspot.com/2026/09/something-strange-is-happening-with.html",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://threshyr.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://triangllabs.ai/otis",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://v8.dev/blog/high-performance-cpp-gc",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://vehla.app/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://velvetnoise.substack.com/p/notes-on-catch-up-conversations",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://vester.si/bodily-oddities/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://waspdev.com/articles/2026-08-28/browsers-are-becoming-more-bloated",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://whatjustpingedme.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.aclweb.org/",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.aclweb.org/portal/what-is-cl",
+        "source_ids": [
+          "acl-anthology"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/desktop-extensions",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/eval-awareness-browsecomp",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/infrastructure-noise",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/managed-agents",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/swe-bench-sonnet",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/news/tino-cuellar",
+        "source_ids": [
+          "anthropic-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/news/wellbeing-research-grants",
+        "source_ids": [
+          "anthropic-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/policy-on-the-ai-exponential",
+        "source_ids": [
+          "anthropic-engineering"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.anthropic.com/responsible-disclosure-policy",
+        "source_ids": [
+          "anthropic-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.bbc.com/news/articles/cn8me133119o",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.bbc.com/news/live/cm70d91rg7l4t",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.benjoffe.com/map",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.cnbc.com/2026/09/14/china-ai-slowdown-us-tech-ceos.html",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.computerweekly.com/news/366650387/Data-dive-The-revolving-door-between-Whitehall-and-big-tech",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.cubespotting.com/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.esa.int/Space_Safety/Space_Debris/ESA_Space_Environment_Report_2026",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.fooledbyrandomness.com/education.pdf",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.ft.com/content/8b704ae0-1fa2-4303-925f-170fa5d935b3",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.hydrogen18.com/blog/prompting-tricks-for-claude-opus-5.html",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.instagram.com/openai/",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.japantimes.co.jp/news/2026/09/15/japan/japan-centenarians-top-100000/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.linkedin.com/company/openai",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/beyond-ocr-how-llms-are-revolutionizing-pdf-parsing",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/beyond-raw-text-how-llamaparse-and-liteparse-give-agents-real-document-understanding",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/build-a-searchable-audio-knowledge-base-with-gemini-embedding-2-and-llamaparse",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/build-automated-loan-income-verification-with-llamaparse-claude-agent-sdk",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/build-smarter-ai-agents-with-oxylabs-and-llamaindex",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/building-a-better-liteparse-skill-with-evals",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/building-a-financial-due-diligence-agent-with-liteparse",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/building-back-office-agents-with-llamacloud-and-llamaagents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/creating-a-deal-sourcing-agent-with-llamaagents-builder",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/deep-extraction",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/document-ai-the-next-evolution-of-intelligent-document-processing",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/engineering-insights-failure-modes-that-break-vlm-powered-ocr-in-production",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/exploring-static-embedding-retrieval",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/give-ai-agents-web-access-with-bright-data-and-llamaindex",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/how-skysql-enables-smarter-text-to-sql-agents-with-llamaindex",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/is-grep-all-you-need-lexical-vs-sematic-search-for-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/just-in-time-agentic-ocr",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/liteparse-local-document-parsing-for-ai-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaagents-build-serve-and-deploy-document-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaagents-builder-idea-to-deployed-agent-in-minutes",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaidnex-newsletter-2026-02-03",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-and-kaggle-launch-a-document-extraction-leaderboard-for-ai-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-and-kaggle-launch-a-new-document-ocr-leaderboard-for-ai-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-is-more-than-a-rag-framework",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-22",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-07-29",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-05",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-12",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-19",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-08-26",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-02",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-09",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-23",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-09-30",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-07",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-14",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-21",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-10-28",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-04",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-11",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-18",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-11-25",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-02",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-09",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-16",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-23",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2025-12-30",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-06",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-13",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-20",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-01-27",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-02-10",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-02-17",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-02-24",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-10",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-17",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-24",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-03-31",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-04-14",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-2026-04-21",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-26-07-08",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-26-07-15",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-5-19-26",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-5-26-26",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaindex-newsletter-6-10-26",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llamaparse-mcp-the-tooling-layer-for-your-document-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llm-apis-are-not-complete-document-parsers",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/llm-ocr",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/long-horizon-document-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/making-coding-agents-safe-using-llamaindex",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/medical-claims-processing-systems",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/observability-in-agentic-document-workflows",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/ocr-accuracy",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/ocr-for-images",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/ocr-for-insurance-documents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/ocr-for-receipts",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/parsebench",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/semtools-are-coding-agents-all-you-need",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/skills-vs-mcp-tools-for-agents-when-to-use-what",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/stackai-uses-llamacloud-to-power-high-accuracy-retrieval-for-its-enterprise-document-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/temporal-scale-document-orchestration",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/the-cost-of-overthinking-why-reasoning-models-fail-at-document-parsing",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/the-future-of-autonomous-agents-needs-to-be-reliable-mongodb",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/blog/the-future-of-vibe-coding-agents",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/industry/insurance",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.llamaindex.ai/solutions/finance",
+        "source_ids": [
+          "llamaindex"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.macrumors.com/2026/09/14/siri-can-be-swapped-out-for-chatgpt-claude/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/product/microsoft-365-copilot/?sort-by=newest-oldest",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/blog/product/microsoft-copilot-studio/?sort-by=newest-oldest",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-premium-with-copilot",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/business/microsoft-365-business-standard-with-copilot",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.microsoft.com/en-us/microsoft-365/copilot-learning-center",
+        "source_ids": [
+          "microsoft-365"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.neobrutalism.dev/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.npmjs.com/package/dep-radius",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/hgx/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/products/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/products/ai-enterprise-suite/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/products/dsx/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/products/ovx/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/deep-learning-ai/solutions/data-science/workbench/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/design-visualization/software/broadcast-app/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/edge-computing/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/edge-computing/products/igx/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/geforce/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/geforce/broadcasting/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/geforce/rtx-remix/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/geforce/technologies/reflex/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/gpu-cloud/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/high-performance-computing/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/high-performance-computing/hpc-and-ai/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/industries/media-and-entertainment/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/industries/robotics/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/industries/telecommunications/ai-grid/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/networking/products/ethernet/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/networking/products/infiniband/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/omniverse/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/rtx-spark/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/dgx-station-for-windows/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/dgx-station/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/professional-laptops/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/software/nvidia-app/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/software/nvidia-app/g-assist/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/ai-factories/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/ai/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/ai/agentic-ai/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/ai/conversational-ai/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/ai/cybersecurity/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/ai/inference/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/autonomous-vehicles/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/autonomous-vehicles/in-vehicle-computing/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/cae/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/solutions/data-processing/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/studio/creative-apps/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/sustainability/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/technologies/cuda-x/",
+        "source_ids": [
+          "nvidia-ai-podcast"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.nytimes.com/2026/09/13/science/most-people-dont-think-about-culverts-their-failure-can-be-deadly.html",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.phoronix.com/news/GNU-Coreutils-9.12",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.reddit.com/r/MaliciousCompliance/comments/1vrf25w/least_lines_of_code_contest_okay",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.rockpapershotgun.com/rockstar-had-a-mole-in-the-union-worker-discord-server-for-over-two-and-a-half-years-gta-6-company-reveals-during-legal-battle",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.rubyhack.ai/",
+        "source_ids": [
+          "simon-willison"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.salesforce.com/blog/small-business/five-steps-to-marketing-a-startup/",
+        "source_ids": [
+          "salesforce"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.salesforce.com/blog/tips-to-win-agentic-commerce/",
+        "source_ids": [
+          "salesforce"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.salesforce.com/blog/what-is-trailhead/",
+        "source_ids": [
+          "salesforce"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.servethehome.com/d-matrix-raptor-3d-dram-accelerator-for-generative-inference-at-hot-chips-2026/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.thevidmarket.com/",
+        "source_ids": [
+          "hacker-news-show"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.tiktok.com/@openai",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.visualcapitalist.com/ranked-number-of-taxes-by-european-country/",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.wsj.com/tech/openai-buys-startup-developing-smartphone-camera-63590370",
+        "source_ids": [
+          "hacker-news-newest"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://www.youtube.com/OpenAI",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://x.com/OpenAI",
+        "source_ids": [
+          "openai-news"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/blog/zapier-copilot-guide/",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/blog/zapier-mcp-guide/",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/canvas",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/mcp",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/resources/guides/how-to-implement-ai-orchestration-in-3-phases",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/sdk",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/solutions/hr",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/solutions/marketing",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      },
+      {
+        "url": "https://zapier.com/solutions/marketing-campaigns",
+        "source_ids": [
+          "zapier"
+        ],
+        "reason": "queue_capacity_not_editorial_rejection"
+      }
+    ]
+  },
+  "early_signal_channels": 10,
+  "efficiency": {
+    "cache_hits": 20,
+    "cache_misses": 59,
+    "source_text_chars_retrieved": 15673329,
+    "fulltext_retrievals": 0,
+    "metadata_retrievals": 55,
+    "failed_retrievals": 4,
+    "article_sources_fulltext_retrieved": 0,
+    "scope": "catalog_metadata_discovery_only"
+  },
+  "note": "Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Community and aggregator leads require an original-source check."
+}
