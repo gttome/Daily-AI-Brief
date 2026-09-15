@@ -6,8 +6,16 @@ import {buildBookChangeProposalBacklog,validateBookChangeProposalBacklog} from '
 const base=JSON.parse(fs.readFileSync('_data/editions/2026-09-12.json'));
 const implication={book_title:'Reliable Generative AI',proposed_change:'Add a verification example.',evidence_reason:'The selected item adds concrete evidence for tool-backed verification.',teaching_asset:'A short verification checklist.'};
 
-test('book proposal backlog captures article, video and podcast proposals without reader presentation fields',()=>{
+function cleanEdition(){
  const edition=structuredClone(base);
+ for(const story of edition.stories)delete story.series_implications;
+ for(const slot of Object.values(edition.worth_watching || {}))delete slot.series_implications;
+ if(edition.podcast)delete edition.podcast.series_implications;
+ return edition;
+}
+
+test('book proposal backlog captures article, video and podcast proposals without reader presentation fields',()=>{
+ const edition=cleanEdition();
  edition.stories[0].series_implications=[implication];
  edition.worth_watching.general.series_implications=[{...implication,proposed_change:'Add a video-based verification exercise.'}];
  edition.podcast.series_implications=[{...implication,proposed_change:'Add a podcast evidence-calibration example.'}];
@@ -20,7 +28,7 @@ test('book proposal backlog captures article, video and podcast proposals withou
 });
 
 test('book proposal backlog uses stable dedupe keys for the same proposed change',()=>{
- const edition=structuredClone(base);
+ const edition=cleanEdition();
  edition.stories[0].series_implications=[implication];
  edition.stories[1].series_implications=[implication];
  const record=buildBookChangeProposalBacklog(edition);
