@@ -1,0 +1,58 @@
+{
+  "brief_date": "2026-09-15",
+  "searched_at": "2026-09-15",
+  "policy": "docs/operations/publisher-runbook.md",
+  "slots": {
+    "general": {
+      "status": "included",
+      "title": "Use Writing Blocks with ChatGPT for Teachers",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 201,
+      "why_useful": "A three-minute official example of turning source material into a structured handout, revising passages, and translating the result.",
+      "connection": "It complements today’s operations-as-code story by showing a small, reviewable content transformation for knowledge workers.",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-writing-blocks-with-chatgpt-for-teachers",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "The official OpenAI Academy catalog displays 3:21, independently satisfying the preferred ten-minute tier."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Connect Apps with ChatGPT for Teachers",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 224,
+      "why_useful": "A concise official demonstration of connecting Gmail, reviewing unread messages, and drafting replies for human review.",
+      "connection": "It gives non-technical readers a bounded example of permissioned context and an approval-before-action workflow.",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/connect-apps-with-chatgpt-for-teachers",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "The official OpenAI Academy catalog displays 3:44, independently satisfying the preferred ten-minute tier."
+      ]
+    }
+  },
+  "rejections": [
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers",
+      "reason": "Archive duplicate from September 13."
+    },
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers",
+      "reason": "Archive duplicate from September 13."
+    },
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-deep-research-with-chatgpt-for-teachers",
+      "reason": "Archive duplicate from September 14."
+    },
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-plugins-with-chatgpt-for-teachers",
+      "reason": "Archive duplicate from September 14."
+    },
+    {
+      "url": "https://academy.openai.com/public/videos/builder-bootcamp-rag-2026-09-10",
+      "reason": "Displayed runtime 59:20 exceeds the 20-minute ceiling."
+    }
+  ],
+  "included_count": 2
+}

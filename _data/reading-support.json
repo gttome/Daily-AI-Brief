@@ -95,6 +95,54 @@
       "verified_at": "2026-09-14T12:15:00Z",
       "method": "Reviewed publisher main article text; navigation, scripts, duplicate captions, quotations, related links and unrelated promotional/footer sections excluded.",
       "words_per_minute": 200
+    },
+    "dab-story-2026-09-15-a1c3f9e2": {
+      "status": "verified",
+      "source_url": "https://github.blog/changelog/2026-09-14-configure-cost-and-quality-in-copilot-auto-model-selection/",
+      "word_count": 180,
+      "verified_at": "2026-09-15T12:55:00Z",
+      "method": "Publisher displays a one-minute source reading estimate.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-15-b7d4e8a1": {
+      "status": "verified",
+      "source_url": "https://microsoft.ai/news/mai-code-of-conduct/",
+      "word_count": 1200,
+      "verified_at": "2026-09-15T12:55:00Z",
+      "method": "Publisher displays a six-minute source reading estimate.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-15-c2f6a9d4": {
+      "status": "verified",
+      "source_url": "https://www.reuters.com/business/anthropic-targets-financial-advisers-with-new-claude-tool-2026-09-14/",
+      "word_count": 900,
+      "verified_at": "2026-09-15T12:55:00Z",
+      "method": "Reviewed available publisher or authoritative-reporting main text; navigation, scripts, related links, and footer material excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-15-d8e1b5c7": {
+      "status": "verified",
+      "source_url": "https://github.blog/ai-and-ml/github-copilot/marketing-ops-as-code-automating-events-from-planning-to-follow-up-on-github/",
+      "word_count": 2200,
+      "verified_at": "2026-09-15T12:55:00Z",
+      "method": "Publisher displays an eleven-minute source reading estimate.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-15-e3a7d2f9": {
+      "status": "verified",
+      "source_url": "https://github.com/addyosmani/agent-skills",
+      "word_count": 2891,
+      "verified_at": "2026-09-15T12:55:00Z",
+      "method": "Reviewed repository README main text; navigation, code samples, badges, and unrelated metadata excluded where appropriate.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-15-f4b8c1e6": {
+      "status": "verified",
+      "source_url": "https://www.salesforce.com/blog/introducing-the-campaign-agent-that-turns-goals-into-growth/",
+      "word_count": 800,
+      "verified_at": "2026-09-15T12:55:00Z",
+      "method": "Reviewed available publisher or authoritative-reporting main text; navigation, scripts, related links, and footer material excluded.",
+      "words_per_minute": 200
     }
   },
   "schema_version": "1.0.0",
@@ -309,6 +357,87 @@
         "context": "Policies, training, data foundations, embedded champions and engineering capacity are prerequisites—not side effects—of reliable agent adoption.",
         "label_reason": "Practitioner interview selected under the documented freshness fallback.",
         "learning_outcome": "How one regulated organization sequenced AI adoption from chat access to internal apps and agents."
+      }
+    ],
+    "2026-09-15": [
+      {
+        "item_id": "dab-story-2026-09-15-a1c3f9e2",
+        "coverage_label": "New development",
+        "context_term": "Routing tier",
+        "context": "A routing tier changes how an orchestrator weighs cost, latency, and quality. It does not promise one fixed model or outcome.",
+        "label_reason": "New official changelog not found in the preceding 30-day story memory.",
+        "learning_outcome": "How to evaluate prompt-level model routing as a cost, speed, and review control."
+      },
+      {
+        "item_id": "dab-story-2026-09-15-b7d4e8a1",
+        "coverage_label": "New development",
+        "context_term": "Control contract",
+        "context": "A control contract states intended behavior and boundaries. It becomes operational only when paired with training, tests, monitoring, and enforcement.",
+        "label_reason": "New official draft and consultation not found in prior coverage.",
+        "learning_outcome": "How to separate absolute constraints, configurable defaults, monitoring, and human interruption."
+      },
+      {
+        "item_id": "dab-story-2026-09-15-c2f6a9d4",
+        "coverage_label": "New development",
+        "context_term": "Professional review",
+        "context": "Connected context can improve preparation, but a licensed or accountable professional still owns regulated judgment and client action.",
+        "label_reason": "New advisor-specific launch reporting not found in prior coverage.",
+        "learning_outcome": "Where connected AI assistance ends and professional accountability begins."
+      },
+      {
+        "item_id": "dab-story-2026-09-15-d8e1b5c7",
+        "coverage_label": "New development",
+        "context_term": "Operations as code",
+        "context": "Structured inputs, visible state, guarded triggers, logs, and retries make a workflow easier to review and repair.",
+        "label_reason": "New practitioner implementation not found in prior coverage.",
+        "learning_outcome": "How to convert a repetitive knowledge-work process into a visible, restartable automation."
+      },
+      {
+        "item_id": "dab-story-2026-09-15-e3a7d2f9",
+        "coverage_label": "Update",
+        "context_term": "Restartable skill",
+        "context": "A reusable skill should define what can be resumed, what evidence is durable, and which checks prove that work is complete.",
+        "label_reason": "Approved repeat coverage with material additions to the Agent Skills lifecycle pattern.",
+        "related": {
+          "label": "Earlier Brief",
+          "title": "Google Cloud packages reusable Agent Skills for four coding-agent hosts",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/",
+          "brief_date": "2026-09-14",
+          "connection": "Earlier: one vendor plugin across hosts. Here: a broader open skill library adds lifecycle commands, restartable boundaries, and verification gates."
+        },
+        "learning_outcome": "How restartable boundaries, adapters, tests, and rollback improve reusable skill operations."
+      },
+      {
+        "item_id": "dab-story-2026-09-15-f4b8c1e6",
+        "coverage_label": "New development",
+        "context_term": "Campaign orchestration",
+        "context": "An agent can coordinate campaign workstreams, but approved data, brand rules, channel ownership, and human approval still bound the process.",
+        "label_reason": "New announced product not found in prior coverage.",
+        "learning_outcome": "How a goal becomes reviewed audience, content, channel, timing, and outcome decisions."
+      },
+      {
+        "item_id": "dab-video-2026-09-15-general",
+        "coverage_label": "Background",
+        "context_term": "Writing block",
+        "context": "A bounded writing workspace can make a transformation easier to review than a long conversational thread.",
+        "label_reason": "Short official tutorial supporting structured knowledge work.",
+        "learning_outcome": "How to transform source material, revise passages, and translate a reviewed artifact."
+      },
+      {
+        "item_id": "dab-video-2026-09-15-agent-skills",
+        "coverage_label": "Background",
+        "context_term": "Connected app",
+        "context": "A connector provides authorized context. Review access scope and generated drafts before sending or acting.",
+        "label_reason": "Short official tutorial supporting permissioned non-technical agent use.",
+        "learning_outcome": "How to use connected context for a bounded email-review and drafting workflow."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-15-ai-show-237",
+        "coverage_label": "Background",
+        "context_term": "Evidence layers",
+        "context": "Vendor claims, host interpretation, anecdotes, and verified operating results carry different evidentiary weight.",
+        "label_reason": "Registered-source podcast selected under the documented recency fallback.",
+        "learning_outcome": "How to separate product claims from interpretation and operational proof across a broad AI discussion."
       }
     ]
   }

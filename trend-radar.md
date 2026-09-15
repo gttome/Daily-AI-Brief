@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 14, 2026
+# Trend Radar — September 15, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,15 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-25 supporting stories appeared in the latest 7 days and 71 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+28 supporting stories appeared in the latest 7 days and 73 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 15, 2026]({{ '/stories/2026-09-15/microsoft-publishes-a-draft-control-contract-for-mai-models/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/github-shows-how-marketing-operations-can-run-as-reviewed-code/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/an-open-agent-skills-library-adds-verification-gates-and-restartable-workflows/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/salesforce-campaign-agent-turns-a-marketing-goal-into-a-reviewed-plan/' | relative_url }})
+- [September 15, 2026]({{ '/podcasts/2026-09-15/ai-show-237/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/' | relative_url }})
@@ -118,7 +123,7 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-15 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+14 supporting stories appeared in the latest 7 days and 44 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -185,10 +190,15 @@ Supporting stories:
 
 **ACCELERATING · high confidence**
 
-29 supporting stories appeared in the latest 7 days and 62 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+31 supporting stories appeared in the latest 7 days and 65 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 15, 2026]({{ '/stories/2026-09-15/github-lets-copilot-auto-balance-cost-speed-and-quality/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/microsoft-publishes-a-draft-control-contract-for-mai-models/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/anthropic-connects-claude-to-financial-advisor-workflows/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/github-shows-how-marketing-operations-can-run-as-reviewed-code/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/an-open-agent-skills-library-adds-verification-gates-and-restartable-workflows/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/codex-supports-antimicrobial-search-but-labs-set-ground-truth/' | relative_url }})
@@ -285,10 +295,15 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-43 supporting stories appeared in the latest 7 days and 106 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+43 supporting stories appeared in the latest 7 days and 111 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 15, 2026]({{ '/stories/2026-09-15/anthropic-connects-claude-to-financial-advisor-workflows/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/github-shows-how-marketing-operations-can-run-as-reviewed-code/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/an-open-agent-skills-library-adds-verification-gates-and-restartable-workflows/' | relative_url }})
+- [September 15, 2026]({{ '/stories/2026-09-15/salesforce-campaign-agent-turns-a-marketing-goal-into-a-reviewed-plan/' | relative_url }})
+- [September 15, 2026]({{ '/podcasts/2026-09-15/ai-show-237/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/microsoft-turns-conversation-into-governed-business-apps/' | relative_url }})
