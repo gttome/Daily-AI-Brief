@@ -1,16 +1,33 @@
 import {renderReadingSupport,validateReadingSupport} from './reading-support.mjs';
 import {readerRelease, readerAddition, renderBookReading, renderSeriesInvitation, renderEditionOverview, validateBookReading} from './book-reading.mjs';
+import {buildBookChangeProposalBacklog} from './book-proposals.mjs';
 import {watchlistPreview} from './watchlist.mjs';
 import {publicAnalyticsEvidence} from './analytics.mjs';
 import fs from 'node:fs';
 import path from 'node:path';
 import {FOCUS} from './constants.mjs';
 import {formatDate, listBriefDates} from './util.mjs';
-import {readerFoundationFiles, renderInlineFeedback, renderPodcast, renderSeriesImplications, trackedLink} from './reader.mjs';
+import {readerFoundationFiles, renderInlineFeedback, renderPodcast, trackedLink} from './reader.mjs';
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+}
+
+function readerSafeItem(item) {
+  if (!item || typeof item !== 'object') return item;
+  const copy = structuredClone(item);
+  delete copy.george_implication;
+  delete copy.series_implications;
+  return copy;
+}
+
+function readerSafeEdition(edition) {
+  const copy = structuredClone(edition);
+  copy.stories = (copy.stories || []).map(readerSafeItem);
+  for (const key of ['general','agents_non_technical_people']) if (copy.worth_watching?.[key]) copy.worth_watching[key] = readerSafeItem(copy.worth_watching[key]);
+  if (copy.podcast) copy.podcast = readerSafeItem(copy.podcast);
+  return copy;
 }
 
 function renderStory(story, briefDate) {
@@ -34,7 +51,7 @@ ${story.source.evidence_type ? `**Evidence:** ${label(story.source.evidence_type
 
 **Why it matters:** ${story.why_it_matters}
 
-${renderSeriesImplications(story, briefDate)}${renderBookReading(story.story_id, briefDate)}${story.what_to_do_now ? `
+${renderBookReading(story.story_id, briefDate)}${story.what_to_do_now ? `
 
 **What to do now — ${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : ''}
 
@@ -70,18 +87,21 @@ ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',
 
 **Why it matters:** ${slot.connection}
 
-${renderSeriesImplications(slot, briefDate)}${slot.series_implications?.length ? '\n\n' : ''}**Source:** ${trackedLink(slot.url, /(^|\.)youtube\.com$|(^|\.)youtu\.be$/.test(new URL(slot.url).hostname) ? 'Watch on YouTube' : `Watch on ${slot.channel || new URL(slot.url).hostname}`, `dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
+${renderBookReading(`dab-video-${briefDate}-${slotId}`,briefDate)}
+
+**Source:** ${trackedLink(slot.url, /(^|\.)youtube\.com$|(^|\.)youtu\.be$/.test(new URL(slot.url).hostname) ? 'Watch on YouTube' : `Watch on ${slot.channel || new URL(slot.url).hostname}`, `dab-video-${briefDate}-${slotId}`,briefDate,'source_clicks',true)}
 
 ${renderInlineFeedback({
     brief_date: briefDate,
     story_id: `dab-video-${briefDate}-${slotId}`,
     feedback_subject: 'video'
-  })}${renderBookReading(`dab-video-${briefDate}-${slotId}`,briefDate)}`;
+  })}`;
 }
 
 export function renderBody(edition) {
   validateBookReading(edition);
   validateReadingSupport(edition);
+  const publicPodcast = edition.podcast ? readerSafeItem(edition.podcast) : null;
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
@@ -95,7 +115,7 @@ ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'ge
 
 ${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
-${edition.podcast ? renderPodcast(edition.podcast, edition.brief_date) + '\n\n' : ''}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
+${publicPodcast ? renderPodcast(publicPodcast, edition.brief_date) + '\n\n' : ''}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
 
 ${edition.editorial_takeaway}
 
@@ -161,9 +181,12 @@ export function generatedFiles(edition, repoRoot) {
     ['index.md', renderIndex(edition)],
     ['README.md', renderReadme(repoRoot, edition.brief_date)]
   ]);
-  for (const [name, content] of readerFoundationFiles(edition, repoRoot)) files.set(name, content);
+  const publicEdition = readerSafeEdition(edition);
+  for (const [name, content] of readerFoundationFiles(publicEdition, repoRoot)) files.set(name, content);
   const analyticsPath=`_records/analytics/${edition.brief_date}.json`;
   if(!fs.existsSync(path.join(repoRoot,analyticsPath)))files.set(analyticsPath,JSON.stringify(publicAnalyticsEvidence(edition),null,2));
+  const bookProposalPath=`_records/book-change-proposals/${edition.brief_date}.json`;
+  if(!fs.existsSync(path.join(repoRoot,bookProposalPath)))files.set(bookProposalPath,JSON.stringify(buildBookChangeProposalBacklog(edition),null,2));
   files.set('data/operations/current-edition.json', JSON.stringify({schema_version:'1.0.0',edition_id:edition.edition_id,brief_date:edition.brief_date,completion_path:'_records/publication/'+edition.brief_date+'/completion.json'},null,2));
   files.set('qa/index.md', renderQaDashboard(repoRoot));
   files.set('data/qa/30-day.json', JSON.stringify(qaAggregate(loadQaRecords(repoRoot)), null, 2));
