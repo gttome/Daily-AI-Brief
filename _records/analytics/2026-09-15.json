@@ -168,11 +168,11 @@
     "A later observation must not be represented as reconstructed event-day activity.",
     "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."
   ],
-  "observed_at": "2026-09-15T12:20:27.488Z",
+  "observed_at": "2026-09-15T12:37:00.000Z",
   "edition_id": "dab-edition-2026-09-15",
   "private_evidence": {
-    "status": "not_collected",
-    "reference": "owner-only:/api/snapshot?key=_records/analytics/2026-09-15.json",
+    "status": "partial",
+    "reference": "owner-only:/api/usage/record#dab-attempt-20260915T115748Z",
     "metric_basis": "lifetime_observed",
     "public_metric_status": "suppressed"
   }
