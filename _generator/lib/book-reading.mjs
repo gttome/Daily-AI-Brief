@@ -2,6 +2,7 @@ import {sourceReadingMinutes} from './reading-support.mjs';
 import fs from 'node:fs';
 const catalog = JSON.parse(fs.readFileSync(new URL('../../_data/book-reading.json', import.meta.url), 'utf8'));
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SERIES_SEPARATION_DATE='2026-09-16';
 export const readerRelease = date => date >= '2026-09-12';
 export const readerAddition = content => content ? `<!-- reader-release:start -->\n${content}\n<!-- reader-release:end -->` : '';
 export function validateBookReading(edition, data = catalog) {
@@ -9,13 +10,14 @@ export function validateBookReading(edition, data = catalog) {
   const ids=new Set(edition.stories.map(s=>s.story_id));
   for(const [key,suffix] of [['general','general'],['agents_non_technical_people','agent-skills']])if(edition.worth_watching?.[key]?.status==='included')ids.add(`dab-video-${edition.brief_date}-${suffix}`);
   if(edition.podcast?.status==='included')ids.add(edition.podcast.item_id);
-  if(selections.length>9)throw Error('Use at most one book reference per Brief item');
+  const maxReferences=edition.brief_date>=SERIES_SEPARATION_DATE?9:3;
+  if(selections.length>maxReferences)throw Error(edition.brief_date>=SERIES_SEPARATION_DATE?'Use at most one book reference per Brief item':'Use at most three book references per edition');
   const seen=new Set();
   for(const s of selections){
     const r=data.references[s.reference_id];
     if(!ids.has(s.item_id)||seen.has(s.item_id))throw Error('Book reference has an unknown or duplicate item');
     seen.add(s.item_id);
-    if(!['READ DEEPER','PUT IT INTO PRACTICE'].includes(s.label))throw Error('Book reference label must be READ DEEPER or PUT IT INTO PRACTICE');
+    if(edition.brief_date>=SERIES_SEPARATION_DATE&&!['READ DEEPER','PUT IT INTO PRACTICE'].includes(s.label))throw Error('Book reference label must be READ DEEPER or PUT IT INTO PRACTICE');
     if(!r?.book||!r.locator||!r.section_title||!r.verified_date||r.evidence_level!=='public table of contents'||!s.why)throw Error('Book reference requires verified source, exact locator, and reader benefit');
     if(new URL(r.url).origin!=='https://leanpub.com')throw Error('Book reference destination must be the verified Leanpub page');
     if(s.practice&&!r.practice_title)throw Error('Practice recommendation requires a verified exercise or checklist');
@@ -27,10 +29,12 @@ export function renderBookReading(itemId,date){
   if(!s)return '';
   const r=catalog.references[s.reference_id];
   if(!r)throw Error(`Unknown book reference: ${s.reference_id}`);
+  if(date<SERIES_SEPARATION_DATE)return readerAddition(`<aside class="book-bridge"><p class="book-kicker">${html(s.label)} · GENERATIVE AI PROFESSIONAL SERIES</p><h3>${html(r.book)}</h3><p class="chapter">${html(r.locator)} — ${html(r.section_title)}</p><p>${html(s.why)}</p>${s.practice?`<p class="practice"><strong>Put it into practice:</strong> ${html(s.practice)}</p>`:''}<p><a class="book-cta" href="${html(r.url)}" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">By George Tome, curator of this brief. The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>`);
   return readerAddition(`<aside class="book-bridge"><p class="book-kicker">${html(s.label)} · GENERATIVE AI PROFESSIONAL SERIES</p><h3>${html(r.book)}</h3><p class="chapter">${html(r.locator)} — ${html(r.section_title)}</p><p>${html(s.why)}</p>${s.practice?`<p class="practice"><strong>Put it into practice:</strong> ${html(s.practice)}</p>`:''}<p><a class="book-cta" href="${html(r.url)}" target="_blank" rel="noopener noreferrer">Explore contents &amp; buy the book ↗</a></p><p class="small-note">The link opens the Leanpub book page; chapter access requires the book.</p></aside>`);
 }
 export function renderSeriesInvitation(date){
   if(!readerRelease(date))return '';
+  if(date<SERIES_SEPARATION_DATE)return readerAddition(`<aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning. Explore George Tome’s books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Written by the curator of this brief. Buying a book supports his work.</p></aside>`);
   return readerAddition(`<aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>`);
 }
 export function renderEditionOverview(edition){
