@@ -4,17 +4,29 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {sha256} from '../lib/util.mjs';
-import {RetrievalCache,filterCandidates,createEvidencePacket,researchSufficiency,FOCUSES,researchTelemetry} from '../lib/research.mjs';
+import {RetrievalCache,filterCandidates,createEvidencePacket,researchSufficiency,FOCUSES,researchTelemetry,runSelectiveResearch,PRIMARY_FRESHNESS_HOURS,DEFAULT_FALLBACK_HOURS,AGENT_SKILLS_FALLBACK_HOURS} from '../lib/research.mjs';
 const now='2026-09-14T12:00:00Z';
 const candidate={candidate_id:'candidate-1',headline:'A reviewed development',canonical_url:'https://example.org/news',published_at:'2026-09-14T10:00:00Z',focus:FOCUSES[0],source_reliability:'primary',publisher:'Example'};
 const source={canonical_url:candidate.canonical_url,text:'The evaluated system completed 12 tasks. This is a controlled test.',fetched_at:now};
 const review={status:'reviewed',reviewer:'editorial-review',reviewed_at:now,source_content_hash:sha256(source.text),claims:[{claim:'Twelve tasks completed in the evaluation.',excerpt:'The evaluated system completed 12 tasks.'}],novelty_status:'pass',confidence:'high',agent_skill_relevance:true};
 
+test('freshness constants preserve a 24-hour primary window and bounded fallbacks',()=>{
+ assert.equal(PRIMARY_FRESHNESS_HOURS,24);assert.equal(DEFAULT_FALLBACK_HOURS,72);assert.equal(AGENT_SKILLS_FALLBACK_HOURS,168);
+});
 test('prefilter retains missing metadata for review and never caps categories',()=>{
  const list=Array.from({length:25},(_,i)=>({...candidate,canonical_url:'https://example.org/'+i}));
  const result=filterCandidates([...list,{...candidate,published_at:null}],{now});
- assert.equal(result.accepted.length,25);assert.equal(result.needs_review.length,1);
+ assert.equal(result.accepted.length,25);assert.equal(result.fresh.length,25);assert.equal(result.fallback.length,0);assert.equal(result.needs_review.length,1);
  assert.throws(()=>filterCandidates(list,{}),/time/);
+});
+test('prefilter marks older eligible candidates as fallback and rejects beyond the outer window',()=>{
+ const result=filterCandidates([
+  candidate,
+  {...candidate,candidate_id:'fallback',canonical_url:'https://example.org/fallback',published_at:'2026-09-13T10:00:00Z'},
+  {...candidate,candidate_id:'too-old',canonical_url:'https://example.org/too-old',published_at:'2026-09-06T10:00:00Z'}
+ ],{now});
+ assert.equal(result.fresh.length,1);assert.equal(result.fallback.length,1);assert.equal(result.fallback[0].freshness_tier,'fallback');
+ assert.equal(result.rejected[0].reason,'outside_freshness_window');
 });
 test('prefilter separates stale, tracking duplicate, unsupported and reviewed covered events',()=>{
  const result=filterCandidates([candidate,{...candidate,canonical_url:candidate.canonical_url+'?utm_source=x'},
@@ -31,12 +43,13 @@ test('evidence packets reject unsupported excerpts, changed source bytes and unr
  assert.throws(()=>createEvidencePacket(candidate,{...source,text:source.text+' update'},review),/hash/);
  assert.throws(()=>createEvidencePacket(candidate,source,{...review,status:'pending'}),/review/);
 });
-test('early stop needs unique reviewed current finalists plus backups in every category and skill coverage',()=>{
+test('early stop needs unique reviewed primary-window finalists plus backups in every category and skill coverage',()=>{
  const p=createEvidencePacket(candidate,source,review);
  const packets=FOCUSES.flatMap((category,i)=>Array.from({length:3},(_,j)=>({...p,canonical_url:'https://example.org/'+i+'/'+j,category})));
  assert.equal(researchSufficiency(packets,{now}).sufficient,true);
  assert.equal(researchSufficiency(packets.slice(1),{now}).sufficient,false);
  assert.equal(researchSufficiency(packets.map(x=>({...x,agent_skill_relevance:false})),{now}).sufficient,false);
+ assert.equal(researchSufficiency(packets.map(x=>({...x,published_at:'2026-09-13T10:00:00Z'})),{now}).sufficient,false);
  assert.equal(researchSufficiency(packets.map(x=>({...x,published_at:'2026-08-01'})),{now}).sufficient,false);
  assert.equal(researchSufficiency(packets.map(x=>({...x,canonical_url:p.canonical_url})),{now}).sufficient,false);
  assert.equal(researchSufficiency(packets.map(x=>({...x,novelty_status:'review_required'})),{now}).sufficient,false);
@@ -84,7 +97,6 @@ test('metadata discovery parses RSS and Atom without inventing missing dates',()
  assert.equal(h.published_at,null);assert.equal(h.retrieval_status,'metadata_only');
 });
 
-import {runSelectiveResearch} from '../lib/research.mjs';
 test('selective research has no rigid cap when reviewed category backups are insufficient',async()=>{
  const candidates=FOCUSES.flatMap((focus,i)=>Array.from({length:7},(_,j)=>({...candidate,candidate_id:i+'-'+j,canonical_url:'https://example.org/'+i+'/'+j,focus})));
  const fetcher=async()=>({text:source.text});
@@ -93,4 +105,12 @@ test('selective research has no rigid cap when reviewed category backups are ins
  assert.equal(result.processed.length,12);assert.equal(result.deferred.length,9);assert.equal(result.telemetry.research.early_stop_triggered,true);
  result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer:async(c)=>({...review,confidence:c.focus===FOCUSES[2]?'low':'high'})});
  assert.equal(result.processed.length,21);assert.equal(result.sufficiency.sufficient,false);
+});
+test('selective research processes primary-window candidates before fallback leads in every focus',async()=>{
+ const candidates=FOCUSES.flatMap((focus,i)=>[
+  {...candidate,candidate_id:i+'-fallback',canonical_url:'https://example.org/'+i+'/fallback',published_at:'2026-09-13T10:00:00Z',focus},
+  ...Array.from({length:4},(_,j)=>({...candidate,candidate_id:i+'-fresh-'+j,canonical_url:'https://example.org/'+i+'/fresh/'+j,focus}))
+ ]);
+ const result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher:async()=>({text:source.text}),reviewer:async()=>review});
+ assert.equal(result.processed.length,12);assert.ok(result.processed.every(id=>id.includes('-fresh-')));assert.equal(result.plan.fallback.length,3);
 });
