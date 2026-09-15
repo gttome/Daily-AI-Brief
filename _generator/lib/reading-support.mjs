@@ -11,13 +11,17 @@ export function sourceReadingMinutes(item,id=item.story_id){
  return evidence?.source_url===(item.source?.url||item.source_url)?readingMinutes(evidence):null;
 }
 export function validateReadingSupport(edition,data=catalog){
- const ids=new Set(edition.stories.map(x=>x.story_id));
+ const stories=new Map(edition.stories.map(x=>[x.story_id,x]));
+ const ids=new Set(stories.keys());
  for(const [key,suffix] of [['general','general'],['agents_non_technical_people','agent-skills']])if(edition.worth_watching?.[key]?.status==='included')ids.add(`dab-video-${edition.brief_date}-${suffix}`);
  if(edition.podcast?.status==='included')ids.add(edition.podcast.item_id);
  const seen=new Set();
  for(const x of data.editions[edition.brief_date]||[]){
   if(!ids.has(x.item_id)||seen.has(x.item_id))throw Error('Reading support has unknown or duplicate item');seen.add(x.item_id);
-  if(!['New development','Update','Background'].includes(x.coverage_label)||!x.label_reason||!x.learning_outcome?.trim()||!x.context_term||!x.context)throw Error('Reading support requires reviewed labels, learning outcomes and context');
+  if(!['New development','Update','Background','Recency fallback'].includes(x.coverage_label)||!x.label_reason||!x.learning_outcome?.trim()||!x.context_term||!x.context)throw Error('Reading support requires reviewed labels, learning outcomes and context');
+  const story=stories.get(x.item_id);
+  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='fallback'&&x.coverage_label!=='Recency fallback')throw Error(`${x.item_id}: fallback stories must use the Recency fallback label`);
+  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='primary'&&x.coverage_label==='Recency fallback')throw Error(`${x.item_id}: primary-window stories cannot use the Recency fallback label`);
   if(x.related&&(!x.related.title||!x.related.connection||!x.related.brief_date||x.related.brief_date>=edition.brief_date||!/^https:\/\/gttome.github.io\/Daily-AI-Brief\/(stories|videos|podcasts)\//.test(x.related.url)))throw Error('Related coverage must identify an earlier Brief item and explain its connection');
  }
 }

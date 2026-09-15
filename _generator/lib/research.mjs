@@ -4,6 +4,9 @@ import {normalizeUrl, sha256} from './util.mjs';
 
 export const RESEARCH_VERSION = 'efficiency-phase-1-v1';
 export const FOCUSES = ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
+export const PRIMARY_FRESHNESS_HOURS = 24;
+export const DEFAULT_FALLBACK_HOURS = 72;
+export const AGENT_SKILLS_FALLBACK_HOURS = 168;
 const time = value => typeof value === 'string' && value.trim() ? Date.parse(value) : NaN;
 
 export function researchUrl(value) {
@@ -12,8 +15,16 @@ export function researchUrl(value) {
   return normalizeUrl(url.href);
 }
 
-export function filterCandidates(candidates, {now, maxAgeHours = 120, coveredEvents = []} = {}) {
-  if (!Number.isFinite(time(now)) || !Number.isFinite(maxAgeHours) || maxAgeHours <= 0) throw Error('Explicit valid research time/window required');
+export function freshnessTier(publishedAt, now, {primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS}={}) {
+  const published=time(publishedAt),stamp=time(now);
+  if(!Number.isFinite(published)||!Number.isFinite(stamp)||!Number.isFinite(primaryAgeHours)||primaryAgeHours<=0||!Number.isFinite(maxAgeHours)||maxAgeHours<primaryAgeHours) return null;
+  const ageHours=(stamp-published)/3600000;
+  if(ageHours<0||ageHours>maxAgeHours)return null;
+  return {tier:ageHours<=primaryAgeHours?'primary':'fallback',age_hours:Number(ageHours.toFixed(3))};
+}
+
+export function filterCandidates(candidates, {now, primaryAgeHours = PRIMARY_FRESHNESS_HOURS, maxAgeHours = AGENT_SKILLS_FALLBACK_HOURS, coveredEvents = []} = {}) {
+  if (!Number.isFinite(time(now)) || !Number.isFinite(primaryAgeHours) || primaryAgeHours <= 0 || !Number.isFinite(maxAgeHours) || maxAgeHours < primaryAgeHours) throw Error('Explicit valid research time/windows required');
   const seen = new Set(), events = new Set(coveredEvents), accepted = [], rejected = [], needs_review = [];
   for (const candidate of candidates) {
     let url;
@@ -32,19 +43,24 @@ export function filterCandidates(candidates, {now, maxAgeHours = 120, coveredEve
     if (reason) { rejected.push({candidate:item,reason}); continue; }
     if ((item.date_conflict && item.date_reviewed !== true) || !Number.isFinite(published) || !FOCUSES.includes(item.focus) || !item.source_reliability) {
       needs_review.push({candidate:item,reason:'date_category_or_reliability_unverified'});
-    } else accepted.push(item);
+    } else {
+      const freshness=freshnessTier(item.published_at,now,{primaryAgeHours,maxAgeHours});
+      accepted.push({...item,freshness_tier:freshness.tier,freshness_age_hours:freshness.age_hours});
+    }
   }
-  return {accepted,needs_review,rejected,note:'No category cap or unknown-metadata rejection. Review unresolved candidates before selection.'};
+  const fresh=accepted.filter(item=>item.freshness_tier==='primary');
+  const fallback=accepted.filter(item=>item.freshness_tier==='fallback');
+  return {accepted,fresh,fallback,needs_review,rejected,note:'Primary research window is the previous 24 hours. Older candidates are retained only as bounded fallback leads and must not outrank qualifying primary-window candidates.'};
 }
 
-export function researchSufficiency(packets, {now, maxAgeHours=120} = {}) {
-  if (!Number.isFinite(time(now))) throw Error('Explicit valid time required');
+export function researchSufficiency(packets, {now, primaryAgeHours=PRIMARY_FRESHNESS_HOURS} = {}) {
+  if (!Number.isFinite(time(now)) || !Number.isFinite(primaryAgeHours) || primaryAgeHours<=0) throw Error('Explicit valid time/primary freshness window required');
   const unique = new Map();
   for (const p of packets) {
     const published=time(p.published_at);
     if (p.schema_version !== '1.0.0' || p.verification_status !== 'reviewed' || p.novelty_status !== 'pass' ||
         p.confidence !== 'high' || !p.verified_claims?.length || !Number.isFinite(published) ||
-        published > time(now) || time(now)-published > maxAgeHours*3600000 || !FOCUSES.includes(p.category)) continue;
+        published > time(now) || time(now)-published > primaryAgeHours*3600000 || !FOCUSES.includes(p.category)) continue;
     let url; try { url=researchUrl(p.canonical_url); } catch { continue; }
     if (!unique.has(url)) unique.set(url,p);
   }
@@ -52,7 +68,7 @@ export function researchSufficiency(packets, {now, maxAgeHours=120} = {}) {
   const counts=Object.fromEntries(FOCUSES.map(f=>[f,values.filter(p=>p.category===f).length]));
   const skill=values.some(p=>p.agent_skill_relevance === true);
   return {sufficient:FOCUSES.every(f=>counts[f]>=3)&&skill,counts,qualifying_agent_skill:skill,
-    rule:'Three reviewed high-confidence novel candidates per category (two finalists plus a backup), including a qualifying Agent Skills candidate. Existing editorial gates still apply.'};
+    rule:'Three reviewed high-confidence novel primary-window candidates per category (two finalists plus a backup), including a qualifying Agent Skills candidate. Older fallback candidates never satisfy the fresh early-stop gate.'};
 }
 
 export function createEvidencePacket(candidate, source, review) {
@@ -72,6 +88,7 @@ export function createEvidencePacket(candidate, source, review) {
     schema_version:'1.0.0',pipeline_version:RESEARCH_VERSION,candidate_id:candidate.candidate_id,
     headline:candidate.headline,publisher:candidate.publisher || null,published_at:candidate.published_at,
     canonical_url:url,category:candidate.focus,source_reliability:candidate.source_reliability,
+    freshness_tier:candidate.freshness_tier||null,freshness_age_hours:Number.isFinite(candidate.freshness_age_hours)?candidate.freshness_age_hours:null,
     verified_claims:claims,why_it_matters:review.why_it_matters || null,
     limitations:review.limitations || [],availability:review.availability || null,
     novelty_fingerprint:review.novelty_fingerprint || null,novelty_status:review.novelty_status,
@@ -147,17 +164,17 @@ export function researchTelemetry({startedAt,endedAt,cache,packets=[],metadataSo
     usage:{exact_platform_tokens:null,exact_platform_credits:null,weekly_usage_measurement_status:'unavailable'}};
 }
 
-export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,maxAgeHours=120,minDeepCandidates=12}={}) {
+export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=12}={}) {
   if(!cache || typeof fetcher!=='function' || typeof reviewer!=='function') throw Error('Cache, retriever and explicit editorial reviewer required');
   if(!Number.isInteger(minDeepCandidates)||minDeepCandidates<9) throw Error('Deep target must preserve category backups');
-  const startedAt=new Date().toISOString(),plan=filterCandidates(candidates,{now,maxAgeHours});
-  const queues=FOCUSES.map(f=>plan.accepted.filter(c=>c.focus===f));
+  const startedAt=new Date().toISOString(),plan=filterCandidates(candidates,{now,primaryAgeHours,maxAgeHours});
+  const queues=FOCUSES.map(f=>[...plan.fresh.filter(c=>c.focus===f),...plan.fallback.filter(c=>c.focus===f)]);
   const ordered=[];
   while(queues.some(q=>q.length))for(const queue of queues)if(queue.length)ordered.push(queue.shift());
   const packets=[],failures=[],pending_review=[],processed=[];
   let earlyStop=false;
   for(const candidate of ordered) {
-    if(processed.length>=minDeepCandidates&&researchSufficiency(packets,{now,maxAgeHours}).sufficient){earlyStop=true;break;}
+    if(processed.length>=minDeepCandidates&&researchSufficiency(packets,{now,primaryAgeHours}).sufficient){earlyStop=true;break;}
     processed.push(candidate.candidate_id);
     try{
       const source=await cache.retrieve(candidate.canonical_url,fetcher,{kind:'fulltext'});
@@ -166,7 +183,7 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
       packets.push(createEvidencePacket(candidate,{...source,evidence_kind:'retrieved_source_text'},review));
     }catch(e){failures.push({candidate_id:candidate.candidate_id,reason:e.message});}
   }
-  const sufficiency=researchSufficiency(packets,{now,maxAgeHours});
+  const sufficiency=researchSufficiency(packets,{now,primaryAgeHours});
   const telemetry=researchTelemetry({startedAt,endedAt:new Date().toISOString(),cache,packets,scope:'selective_research'});
   telemetry.research.deep_candidates=processed.length;
   telemetry.research.early_stop_triggered=earlyStop;
