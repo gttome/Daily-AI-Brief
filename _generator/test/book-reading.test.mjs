@@ -1,15 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {renderBody} from '../lib/render.mjs';
-import {readerFoundationFiles} from '../lib/reader.mjs';
+import {renderBody,generatedFiles} from '../lib/render.mjs';
 import {validateBookReading} from '../lib/book-reading.mjs';
 const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-12.json'));
 const catalog=JSON.parse(fs.readFileSync('_data/book-reading.json'));
 test('approved reading appears in edition and permanent article, video and podcast without editor-only details',()=>{
  const body=renderBody(edition);assert.equal((body.match(/class="book-bridge"/g)||[]).length,3);assert.equal((body.match(/class="series-invitation"/g)||[]).length,1);assert.doesNotMatch(body,/Proposed update:|data-george-implication|George Tome/);assert.equal((body.match(/data-feedback-rating=/g)||[]).length,45);
- const files=readerFoundationFiles(edition,process.cwd());
- for(const name of [`stories/2026-09-12/${edition.stories[0].slug}.md`,'videos/2026-09-12/agent-skills.md','podcasts/2026-09-12/ai-risk-specificity.md']){assert.match(files.get(name),/class="book-bridge"/);assert.match(files.get(name),/data-feedback-rating="5"/);}
+ const files=generatedFiles(edition,process.cwd());
+ for(const name of [`stories/2026-09-12/${edition.stories[0].slug}.md`,'videos/2026-09-12/agent-skills.md','podcasts/2026-09-12/ai-risk-specificity.md']){assert.match(files.get(name),/class="book-bridge"/);assert.match(files.get(name),/data-feedback-rating="5"/);assert.doesNotMatch(files.get(name),/Proposed update:|data-george-implication|George Tome/);}
  assert.match(body,/Chapter 3, section 3.3.3/);assert.match(body,/Quick Reference: Context Quality Checklist/);assert.match(body,/does not validate/);
  assert.match(body,/Explore contents &amp; buy the book ↗/);assert.match(body,/Leanpub book page/);
  assert.doesNotMatch(body,/watchlist-fold|Emerging AI Watchlist · explore after the brief/);
