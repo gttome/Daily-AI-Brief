@@ -134,3 +134,8 @@ Use `docs/operations/media-image-recovery.md` for the preparation runner's media
 ### Unfinished writing and image drafts
 
 Follow `docs/operations/draft-recovery.md` for `save-draft` and `recover-draft`. Save useful partial work privately as it is produced or revised, retain the checkpoint identifier, and consult its evidence and review notes on interruption. Recovery restores only a missing private working draft with matching inputs; it neither grants approval nor replaces final publication gates. Rejected drafts stay rejected. Do not repeat generation solely to test this path.
+
+
+### Durable cloud transport and observation
+
+Follow `docs/operations/cloud-checkpoint-transport.md` during ordinary runs for owner-only Library checkpoint bundles, upload/readback receipts, later recovery, exact Sites Bearer-header syntax and the first three completed optimized-edition measurements (extend to seven only when inconclusive). Explicitly save each useful draft before cloud packaging. A local path or same-session cloud readback is not proof of scheduled persistence. Keep the validator read-only and all existing publication gates and schedules unchanged.
