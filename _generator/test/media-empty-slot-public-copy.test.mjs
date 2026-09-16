@@ -7,6 +7,7 @@ const baseEdition=JSON.parse(fs.readFileSync('_data/editions/2026-09-16.json','u
 
 function editionWithPrivateMediaDiagnostics(){
   const edition=structuredClone(baseEdition);
+  edition.brief_date='2026-09-17';
   edition.worth_watching.general={status:'empty',exception:'PRIVATE_VIDEO_GENERAL_DIAGNOSTIC: HTTP 404 after three retries'};
   edition.worth_watching.agents_non_technical_people={status:'empty',exception:'PRIVATE_VIDEO_AGENT_DIAGNOSTIC: source coverage exhausted'};
   edition.podcast={status:'empty',exception:'PRIVATE_PODCAST_DIAGNOSTIC: runtime mismatch after preflight'};
