@@ -23,9 +23,13 @@ export function evidenceViews(packets){
 }
 export function saveJson(file,value){fs.mkdirSync(path.dirname(file),{recursive:true});const text=JSON.stringify(value,null,2)+'\n',temp=file+'.'+process.pid+'.tmp';fs.writeFileSync(temp,text);fs.renameSync(temp,file);return sha256(text);}
 export function completionDecision({editionDate,completion,lastProcessed=null}){
- if(completion?.edition_id!=='dab-edition-'+editionDate||completion.phase!=='pages_verified'||completion.pages?.conclusion!=='success'||!/^[a-f0-9]{40}$/.test(completion.commit_sha||''))return {state:'pending',research:false,publish:false,collect:false};
+ const expected='dab-edition-'+editionDate;
+ if(completion?.edition_id===expected&&/^[a-f0-9]{40}$/.test(completion.commit_sha||'')&&completion.phase!=='pages_verified'){
+  return {state:'published_qa_pending',label:'Published — final QA in progress',research:false,publish:false,collect:false};
+ }
+ if(completion?.edition_id!==expected||completion.phase!=='pages_verified'||completion.pages?.conclusion!=='success'||!/^[a-f0-9]{40}$/.test(completion.commit_sha||''))return {state:'pending',label:'Publication in progress',research:false,publish:false,collect:false};
  const key=editionDate+':'+completion.commit_sha;
- return {state:key===lastProcessed?'unchanged':'completed',key,research:false,publish:false,collect:key!==lastProcessed};
+ return {state:key===lastProcessed?'unchanged':'completed',label:'Published — final QA complete',key,research:false,publish:false,collect:key!==lastProcessed};
 }
 
 export function assertPrivateRoot(repo,privateRoot,manifestPath){
