@@ -39,7 +39,7 @@ reader_release: true
 
 **Test metadata before data:** Ask the skill for one asset’s owner, certification, sensitivity and policy; compare every field with the catalog before allowing any downstream query.
 
-**Source:** <a href="https://claude.com/connectors/informatica-catalog-discovery" data-item-id="dab-story-2026-09-16-5bc218ad" data-edition-date="2026-09-16" data-action="source_clicks">Informatica Catalog Discovery</a>
+**Source:** <a href="https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec" data-item-id="dab-story-2026-09-16-5bc218ad" data-edition-date="2026-09-16" data-action="source_clicks">Add Informatica plugin (informatica-for-claude-platform)</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-16" data-feedback-story-id="dab-story-2026-09-16-5bc218ad">
   <span class="feedback-prompt">How useful was this?</span>
