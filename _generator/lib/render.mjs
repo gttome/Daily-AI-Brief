@@ -10,6 +10,7 @@ import {readerFoundationFiles, renderInlineFeedback, renderPodcast, renderSeries
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 const SERIES_SEPARATION_DATE='2026-09-16';
+const EMPTY_MEDIA_COPY_EFFECTIVE_DATE='2026-09-17';
 const EMPTY_MEDIA_PUBLIC_COPY=Object.freeze({
   video:'No video met today’s editorial quality standards.',
   podcast:'No podcast met today’s editorial quality standards.'
@@ -35,8 +36,8 @@ function readerSafeEdition(edition) {
   return copy;
 }
 
-function publicPodcast(slot) {
-  if (!slot || slot.status !== 'empty') return slot;
+function publicPodcast(slot, briefDate) {
+  if (!slot || slot.status !== 'empty' || briefDate<EMPTY_MEDIA_COPY_EFFECTIVE_DATE) return slot;
   return {...slot, exception: EMPTY_MEDIA_PUBLIC_COPY.podcast};
 }
 
@@ -89,7 +90,7 @@ function renderVideo(name, slot, briefDate, slotId) {
   const ordinal = slotId === 'general' ? 7 : 8;
   const anchor = slotId === 'general' ? 'general' : 'agents-for-non-technical-people';
   const heading = `${readerRelease(briefDate)?`<span id="${anchor}"></span>\n\n`:''}## ${ordinal}. ${name}`;
-  if (slot.status === 'empty') return `${heading}\n\n${EMPTY_MEDIA_PUBLIC_COPY.video}`;
+  if (slot.status === 'empty') return `${heading}\n\n${briefDate>=EMPTY_MEDIA_COPY_EFFECTIVE_DATE?EMPTY_MEDIA_PUBLIC_COPY.video:slot.exception}`;
   if(briefDate<SERIES_SEPARATION_DATE)return `${heading}
 
 ### ${slot.title}
@@ -145,7 +146,7 @@ export function renderBody(edition) {
   validateReadingSupport(edition);
   const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
   const podcastSource=separated&&edition.podcast?readerSafeItem(edition.podcast):edition.podcast;
-  const podcast=publicPodcast(podcastSource);
+  const podcast=publicPodcast(podcastSource,edition.brief_date);
   const podcastBlock=podcast?(separated?stripEditorOnlyMarkup(renderPodcast(podcast,edition.brief_date)):renderPodcast(podcast,edition.brief_date))+'\n\n':'';
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
