@@ -6,6 +6,7 @@ import {COMPATIBILITY_OUTPUTS} from './constants.mjs';
 import {generatedFiles} from './render.mjs';
 import {sha256, stableSuffix, writeText} from './util.mjs';
 import {assertValidEdition} from './validate.mjs';
+import {applyProductionTelemetryHealth,assertMediaPreflight} from './production-guardrails.mjs';
 
 export function stagedDigest(files) {
   const canonical = [...files.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, content]) => `${name}\0${sha256(content)}`).join('\n');
@@ -50,6 +51,7 @@ export function createValidatedEvent(edition, files, options) {
 
 export function buildPublicationStage(edition, repoRoot, outDir, options) {
   assertValidEdition(edition);
+  if (edition.brief_date >= '2026-09-17') assertMediaPreflight(edition, options.mediaPreflight, {observedAt: options.observedAt});
   const files = generatedFiles(edition, repoRoot);
   const expected = new Set([`briefs/${edition.brief_date}.md`, ...COMPATIBILITY_OUTPUTS]);
   for (const name of expected) if (!files.has(name)) throw new Error(`Atomic publication plan is missing ${name}`);
@@ -57,6 +59,7 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
     {check_id: 'edition_validation', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'Canonical edition passed structural and semantic validation.'},
     {check_id: 'atomic_file_set', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'All five compatibility outputs are present in the staged transaction.'}
   ];
+  if (edition.brief_date >= '2026-09-17') checks.push({check_id:'selected_media_preflight',class:'live_prepublication',result:'pass',severity:'critical',evidence:'Every included video and podcast URL, date, and runtime matched a fresh independent prepublication observation.'});
   files.set(`_data/editions/${edition.brief_date}.json`, `${JSON.stringify(edition, null, 2)}\n`);
   const review=reviewedImages(edition,repoRoot);
   if(review.errors.length)throw new Error(review.errors.join('; '));
@@ -65,8 +68,10 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   const manifest={schema_version:'1.0.0',edition_id:edition.edition_id,baseline_sha:options.baselineSha,rollback_target_sha:options.baselineSha,policy_profile:edition.policy_profile,image_review:review.review_path||null,image_review_sha256:review.review_sha256||null,assets:review.assets,canonical_sha256:sha256(files.get(`_data/editions/${edition.brief_date}.json`)),candidate_digest:stagedDigest(files)};
   files.set(`_records/releases/${edition.brief_date}.json`,JSON.stringify(manifest,null,2)+'\n');
   const originalBaseline=path.join(repoRoot,'_architecture/efficiency-refactor/baseline.json');
-  const efficiency=options.efficiency||newEfficiency({editionId:edition.edition_id,attemptId:options.runId||'generation-'+options.observedAt.replace(/[^a-zA-Z0-9]/g,''),baselineSha:fs.existsSync(originalBaseline)?JSON.parse(fs.readFileSync(originalBaseline,'utf8')).baseline_sha:options.baselineSha});
-  if(efficiency.edition_id!==edition.edition_id)throw Error('Efficiency edition mismatch');
+  const rawEfficiency=options.efficiency||newEfficiency({editionId:edition.edition_id,attemptId:options.runId||'generation-'+options.observedAt.replace(/[^a-zA-Z0-9]/g,''),baselineSha:fs.existsSync(originalBaseline)?JSON.parse(fs.readFileSync(originalBaseline,'utf8')).baseline_sha:options.baselineSha});
+  if(rawEfficiency.edition_id!==edition.edition_id)throw Error('Efficiency edition mismatch');
+  const efficiency=edition.brief_date>='2026-09-17'?applyProductionTelemetryHealth(rawEfficiency):rawEfficiency;
+  assertEfficiency(efficiency);
   publicEfficiency(efficiency);
   files.set(efficiencyPath(efficiency),JSON.stringify(efficiency,null,2)+'\n');
   const existingIndexFile=path.join(repoRoot,'data/efficiency/index.json');
@@ -77,7 +82,7 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   event.value.file_set.operational_records.push(efficiencyPath(efficiency));
   files.set(event.path, `${JSON.stringify(event.value, null, 2)}\n`);
   for (const [name, content] of files) { if(Buffer.isBuffer(content)){fs.mkdirSync(path.dirname(path.join(outDir,name)),{recursive:true});fs.writeFileSync(path.join(outDir,name),content);}else writeText(path.join(outDir, name), content); }
-  return {files: [...files.keys()].sort(), digest: stagedDigest(files), event: event.value};
+  return {files: [...files.keys()].sort(), digest: stagedDigest(files), event: event.value, telemetry_health:efficiency.telemetry_health||null};
 }
 
 export function validateAtomicChangedPaths(paths, date, {policyProfile = 'publication_reliability_v1'} = {}) {
@@ -105,7 +110,5 @@ export function validateAtomicChangedPaths(paths, date, {policyProfile = 'public
   const missing = [...required].filter(name => !paths.includes(name));
   const imagePrefix = `briefs/images/${date}/`;
   const imageCount = new Set(paths.filter(name => name.startsWith(imagePrefix))).size;
-  // Final referenced assets and approval are checked against the full candidate tree.
-  // Unchanged approved assets and additional retained recovery files are valid.
   return missing;
 }
