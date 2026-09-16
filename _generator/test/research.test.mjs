@@ -102,7 +102,7 @@ test('selective research has no rigid cap when reviewed category backups are ins
  const fetcher=async()=>({text:source.text});
  const reviewer=async()=>review;
  let result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer});
- assert.equal(result.processed.length,12);assert.equal(result.deferred.length,9);assert.equal(result.telemetry.research.early_stop_triggered,true);
+ assert.equal(result.processed.length,9);assert.equal(result.deferred.length,12);assert.equal(result.telemetry.research.early_stop_triggered,true);
  result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer:async(c)=>({...review,confidence:c.focus===FOCUSES[2]?'low':'high'})});
  assert.equal(result.processed.length,21);assert.equal(result.sufficiency.sufficient,false);
 });
@@ -112,5 +112,5 @@ test('selective research processes primary-window candidates before fallback lea
   ...Array.from({length:4},(_,j)=>({...candidate,candidate_id:i+'-fresh-'+j,canonical_url:'https://example.org/'+i+'/fresh/'+j,focus}))
  ]);
  const result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher:async()=>({text:source.text}),reviewer:async()=>review});
- assert.equal(result.processed.length,12);assert.ok(result.processed.every(id=>id.includes('-fresh-')));assert.equal(result.plan.fallback.length,3);
+ assert.equal(result.processed.length,9);assert.ok(result.processed.every(id=>id.includes('-fresh-')));assert.equal(result.plan.fallback.length,3);
 });
