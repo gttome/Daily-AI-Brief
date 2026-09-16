@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 15, 2026
+# Trend Radar — September 16, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,15 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-28 supporting stories appeared in the latest 7 days and 73 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+30 supporting stories appeared in the latest 7 days and 73 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 16, 2026]({{ '/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/cloudflare-scopes-access-to-individual-workers/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/anthropic-marketplace-adds-informatica-governed-catalog-skill/' | relative_url }})
+- [September 16, 2026]({{ '/podcasts/2026-09-16/frontier-pacing/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/microsoft-publishes-a-draft-control-contract-for-mai-models/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/github-shows-how-marketing-operations-can-run-as-reviewed-code/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/an-open-agent-skills-library-adds-verification-gates-and-restartable-workflows/' | relative_url }})
@@ -115,18 +120,17 @@ Supporting stories:
 - [August 18, 2026]({{ '/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/small-but-useful-study-shows-one-explicit-compliance-instruction-can-sharply-cha/' | relative_url }})
 
 ## Agent memory and context
 
 **STABLE · high confidence**
 
-14 supporting stories appeared in the latest 7 days and 44 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+13 supporting stories appeared in the latest 7 days and 44 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 16, 2026]({{ '/stories/2026-09-16/salesforce-aiforce-brings-governed-actions-to-any-interface/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/anthropic-marketplace-adds-informatica-governed-catalog-skill/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/openai-habitat-turns-storage-scale-into-a-control-plane/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/google-cloud-plugin-packages-reusable-agent-skills/' | relative_url }})
 - [September 14, 2026]({{ '/stories/2026-09-14/chatgpt-work-data-agent-connects-questions-to-governed-action/' | relative_url }})
@@ -182,18 +186,18 @@ Supporting stories:
 - [August 19, 2026]({{ '/stories/2026-08-19/harnesseval-w-turns-evaluation-into-a-transparent-graph-of-evidence/' | relative_url }})
 - [August 19, 2026]({{ '/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/' | relative_url }})
 
 ## AI-assisted development
 
-**ACCELERATING · high confidence**
+**STABLE · high confidence**
 
-31 supporting stories appeared in the latest 7 days and 65 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+28 supporting stories appeared in the latest 7 days and 68 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 16, 2026]({{ '/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/salesforce-aiforce-brings-governed-actions-to-any-interface/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/github-lets-copilot-auto-balance-cost-speed-and-quality/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/microsoft-publishes-a-draft-control-contract-for-mai-models/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/anthropic-connects-claude-to-financial-advisor-workflows/' | relative_url }})
@@ -287,18 +291,21 @@ Supporting stories:
 - [August 18, 2026]({{ '/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/google-unveils-gemini-3-7-flash-for-coding-and-agent-workflows/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/small-but-useful-study-shows-one-explicit-compliance-instruction-can-sharply-cha/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-43 supporting stories appeared in the latest 7 days and 111 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+41 supporting stories appeared in the latest 7 days and 115 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 16, 2026]({{ '/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/cloudflare-scopes-access-to-individual-workers/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/gemini-3-8-live-keeps-reasoning-while-conversation-continues/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/salesforce-aiforce-brings-governed-actions-to-any-interface/' | relative_url }})
+- [September 16, 2026]({{ '/stories/2026-09-16/anthropic-marketplace-adds-informatica-governed-catalog-skill/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/anthropic-connects-claude-to-financial-advisor-workflows/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/github-shows-how-marketing-operations-can-run-as-reviewed-code/' | relative_url }})
 - [September 15, 2026]({{ '/stories/2026-09-15/an-open-agent-skills-library-adds-verification-gates-and-restartable-workflows/' | relative_url }})
@@ -449,9 +456,5 @@ Supporting stories:
 - [August 18, 2026]({{ '/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/' | relative_url }})
 - [August 18, 2026]({{ '/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/google-unveils-gemini-3-7-flash-for-coding-and-agent-workflows/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/' | relative_url }})
-- [August 17, 2026]({{ '/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

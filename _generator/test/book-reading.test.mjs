@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {renderBody} from '../lib/render.mjs';
 import {readerFoundationFiles} from '../lib/reader.mjs';
-import {validateBookReading} from '../lib/book-reading.mjs';
+import {renderBookReading,validateBookReading} from '../lib/book-reading.mjs';
 const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-12.json'));
 const catalog=JSON.parse(fs.readFileSync('_data/book-reading.json'));
 test('historical approved reading remains byte-compatible in edition and permanent article, video and podcast',()=>{
@@ -29,6 +29,21 @@ test('September 16 forward permits one verified bridge per Brief item',()=>{
  full.editions['2026-09-16'].push({...full.editions['2026-09-16'][0]});assert.throws(()=>validateBookReading(future,full));
 });
 test('September 16 forward public body removes owner-only editorial metadata and does not force book matches',()=>{
- const future=structuredClone(edition);future.brief_date='2026-09-16';future.worth_watching.general={status:'empty',exception:'No suitable verified video.'};const body=renderBody(future);
+ const future=structuredClone(edition);future.brief_date='2026-09-17';future.worth_watching.general={status:'empty',exception:'No suitable verified video.'};const body=renderBody(future);
  assert.doesNotMatch(body,/class="book-bridge"/);assert.doesNotMatch(body,/data-george-implication|Proposed update:|George Tome/);assert.match(body,/Video · No qualifying selection/);assert.match(body,/No suitable verified video/);assert.match(body,/Purchasing a book supports continued development/);
+});
+test('September 16 forward bridges use the approved Leanpub wording',()=>{
+ const selection=catalog.editions['2026-09-16'][0];
+ const bridge=renderBookReading(selection.item_id,'2026-09-16');
+ assert.match(bridge,/Get the book and explore contents ↗/);
+ assert.match(bridge,/Leanpub\.com book webpage/);
+ assert.doesNotMatch(bridge,/Explore contents &amp; buy the book|Leanpub book page/);
+});
+test('September 16 public canonical and reader files contain no owner-only book-change metadata',()=>{
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-16.json'));
+ assert.doesNotMatch(JSON.stringify(current),/george_implication|series_implications|proposed book/i);
+ for(const file of ['briefs/2026-09-16.md','latest.md','index.md']){
+  const text=fs.readFileSync(file,'utf8');
+  assert.doesNotMatch(text,/data-george-implication|Proposed update:|owner-only book/i);
+ }
 });

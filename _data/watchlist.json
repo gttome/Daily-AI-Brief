@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-15",
-  "updated_at": "2026-09-15T12:55:00Z",
-  "baseline_note": "Rolling researched watchlist. September 15 shared discovery considered 49 registered watchlist sources: 41 were due and checked, 38 retrievals succeeded, 35 returned candidate links, three yielded no links, three retrievals failed, and eight required assisted review. No new evidence cleared the established topic-level verification gates, so the eight previously verified topics and their real evidence dates are retained without invented momentum.",
+  "edition_date": "2026-09-16",
+  "updated_at": "2026-09-16T12:15:27Z",
+  "baseline_note": "Rolling researched watchlist. September 16 due-source discovery attempted three registered sources and all three retrievals failed; 44 validated sources were retained as not due and eight require assisted review. No newly verified or materially updated topic cleared the evidence gates, so all eight topics are carried forward with their real first-detection, evidence and topic-update dates; no momentum is inferred.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",

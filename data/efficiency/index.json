@@ -106,8 +106,8 @@
     },
     {
       "schema_version": "1.0.0",
-      "edition_id": "dab-edition-2026-09-15",
-      "attempt_id": "20260915t1325z",
+      "edition_id": "dab-edition-2026-09-16",
+      "attempt_id": "20260916t1220z",
       "pipeline_version": "efficiency-v1",
       "baseline_sha": "580b34dd4082d5de22240652ead2e3ecf50fa557",
       "scope": "publication_generation",

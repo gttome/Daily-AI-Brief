@@ -4,7 +4,56 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-15T12:55:00Z</updated>
+  <updated>2026-09-16T12:15:27Z</updated>
+  <entry>
+    <title>Google moves agent security from syntax checks to runtime intent controls</title>
+    <id>dab-story-2026-09-16-9f13a2c7</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>Google published a reference architecture for moving agent safeguards outside application code and into the Gemini Enterprise Agent Platform. Agent Gateway combines Model Armor at ingress and egress, natural-language Semantic Governance Policies before tool execution, and Agent Anomaly Detection across sessions; the companion repository includes local simulators and deterministic tests.</summary>
+  </entry>
+  <entry>
+    <title>Cloudflare scopes teammate, CI, and agent access to individual Workers</title>
+    <id>dab-story-2026-09-16-c4b86e10</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/cloudflare-scopes-access-to-individual-workers/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>Cloudflare introduced Worker-scoped authorization so account owners can grant a teammate, CI system or AI agent access to specific Workers instead of the whole account. The model separates account-wide and Worker-scoped roles and supports narrower build, deploy and management paths.</summary>
+  </entry>
+  <entry>
+    <title>Gemini 3.8 Live keeps reasoning and using tools while conversation continues</title>
+    <id>dab-story-2026-09-16-2a7d5f91</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/gemini-3-8-live-keeps-reasoning-while-conversation-continues/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>Google released Gemini 3.8 Live for low-latency dialogue and Gemini 3.8 Live Extended Thinking for more complex, multi-step work. The models accept audio, images, video and text; Extended Thinking can continue background reasoning and asynchronous tool calls while maintaining spoken interaction. Google lists API, app, AI Studio, Cloud, Search and Workspace distribution paths.</summary>
+  </entry>
+  <entry>
+    <title>Copilot now suggests values for repository governance taxonomies</title>
+    <id>dab-story-2026-09-16-7e31bc48</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>GitHub Copilot can now suggest allowed values while enterprise and organization owners define repository custom properties. Accepted values become governance metadata that can scope repository rulesets; owners can control the feature with a dedicated Copilot policy. The feature is a public preview for Copilot Business and Enterprise.</summary>
+  </entry>
+  <entry>
+    <title>Salesforce AIforce brings governed data and actions to conversational interfaces</title>
+    <id>dab-story-2026-09-16-d9a40f62</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/salesforce-aiforce-brings-governed-actions-to-any-interface/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>Salesforce announced AIforce, an interface layer intended to expose Salesforce data, workflows, business logic, semantics, permissions and actions inside Claude, Slack, Lightning and custom interfaces. Users can ask questions, update records, trigger workflows or describe a live interface while requests remain subject to existing Salesforce permissions and rules.</summary>
+  </entry>
+  <entry>
+    <title>Anthropic’s skills marketplace adds governed Informatica catalog discovery</title>
+    <id>dab-story-2026-09-16-5bc218ad</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/anthropic-marketplace-adds-informatica-governed-catalog-skill/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>A verified Anthropic repository commit added Informatica’s plugin to the knowledge-work marketplace. The Agent Skill is designed to find tables, columns, files, glossary terms and policies in Informatica’s enterprise catalog, then report ownership, certification, sensitivity and applicable policy before data is queried. It requires an Informatica IDMC tenant and Catalog Discovery connector.</summary>
+  </entry>
+  <entry>
+    <title>Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal</title>
+    <id>dab-podcast-2026-09-16-frontier-pacing</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-16/frontier-pacing/" />
+    <updated>2026-09-16T18:00:00Z</updated>
+    <summary>Nathaniel Whittemore examines the emerging debate over frontier-model pacing and third-party evaluation, including public reactions from major AI leaders and competing safety, competition and incentive arguments.</summary>
+  </entry>
   <entry>
     <title>GitHub lets Copilot Auto balance cost, speed, and quality per prompt</title>
     <id>dab-story-2026-09-15-a1c3f9e2</id>
@@ -1299,40 +1348,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/" />
     <updated>2026-08-18T18:00:00Z</updated>
     <summary>Meta launched Muse Code in beta, powered by Muse Spark 1.2, as a coding agent designed to write and debug software, verify results, handle long and complex development tasks, and run multiple sub-agents in parallel. Reuters also reported that Muse Code keeps a persistent activity log so work can resume after a crash rather than restart from scratch.</summary>
-  </entry>
-  <entry>
-    <title>Google’s A2A agent protocol moves into the Agentic AI Foundation</title>
-    <id>dab-story-2026-08-17-cdb22c68</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/" />
-    <updated>2026-08-17T18:00:00Z</updated>
-    <summary>Google’s Agent2Agent (A2A) protocol is moving into the Agentic AI Foundation, placing it alongside other open agent-infrastructure efforts under a more focused governance structure. A2A is designed for communication between independent AI agents, while MCP is primarily aimed at connecting AI applications to tools and data. The move is significant because it pushes agent-to-agent interoperability toward neutral, cross-vendor governance rather than provider-specific integrations.</summary>
-  </entry>
-  <entry>
-    <title>Google unveils Gemini 3.7 Flash for coding and agent workflows</title>
-    <id>dab-story-2026-08-17-c5282e0d</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-17/google-unveils-gemini-3-7-flash-for-coding-and-agent-workflows/" />
-    <updated>2026-08-17T18:00:00Z</updated>
-    <summary>Google unveiled Gemini 3.7 Flash, positioning the model for software coding and automation of business workflows. The release extends Google’s push toward models that are not only conversational but are optimized for action-oriented, agentic work. Reuters reported that the model is available while Google continues work on its higher-end Gemini model roadmap.</summary>
-  </entry>
-  <entry>
-    <title>New research isolates “context interference” as a reliability problem in multi-turn search agents</title>
-    <id>dab-story-2026-08-17-b7974d43</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/" />
-    <updated>2026-08-17T18:00:00Z</updated>
-    <summary>The paper *Mitigating Context Interference for Reliable and Efficient Search Agents* studies how long, multi-turn retrieval workflows accumulate distracting information. The authors report that interference is driven especially by the most recently retrieved documents, then introduce a distillation-based context refiner that filters the working context before the agent generates its next step. They also report additional gains when context refinement is incorporated into reinforcement-learning training for search agents.</summary>
-  </entry>
-  <entry>
-    <title>Small but useful study shows one explicit compliance instruction can sharply change AI-generated code</title>
-    <id>dab-story-2026-08-17-8c5a5979</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-17/small-but-useful-study-shows-one-explicit-compliance-instruction-can-sharply-cha/" />
-    <updated>2026-08-17T18:00:00Z</updated>
-    <summary>A study evaluating three Claude-family models across four SOC 2-related coding tasks found that unprompted compliance varied substantially, with reported conformance ranging from 47% to 88%. Adding a single sentence explicitly requiring SOC 2 compliance raised reported scores to 86%–100% across the tested cases and removed the insecure constructions identified in the neutral-prompt runs. The authors also found that an initial checklist-based evaluator missed real defects, underscoring the limits of simplistic automated grading.</summary>
-  </entry>
-  <entry>
-    <title>“Self-evolving coding agents” formalize a feedback-loop view of agentic software development</title>
-    <id>dab-story-2026-08-17-f72cbc5e</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/" />
-    <updated>2026-08-17T18:00:00Z</updated>
-    <summary>The survey *Self-Evolving Coding Agents* synthesizes an emerging class of coding agents that improve future behavior using prior software-development experience. The authors organize the field around what can evolve—frameworks, memory, skills, tools, models, and collaboration structures—and around the feedback signals that drive change, including executable test results, repository context, and prior coding trajectories.</summary>
   </entry>
 </feed>
