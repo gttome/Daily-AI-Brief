@@ -74,6 +74,38 @@
         "label": "PUT IT INTO PRACTICE",
         "why": "Apply the checklist when deciding which instructions, schemas, references and tests belong inside a reusable Agent Skill."
       }
+    ],
+    "2026-09-16": [
+      {
+        "item_id": "dab-story-2026-09-16-9f13a2c7",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the verification gate to translate runtime security signals into an explicit stop, escalate or proceed decision."
+      },
+      {
+        "item_id": "dab-story-2026-09-16-2a7d5f91",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Calibrated trust helps separate a fluid live interface from evidence that its background reasoning and actions are reliable."
+      },
+      {
+        "item_id": "dab-story-2026-09-16-7e31bc48",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the context-quality checklist before accepting AI-suggested governance labels into a shared taxonomy."
+      },
+      {
+        "item_id": "dab-story-2026-09-16-5bc218ad",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Use the checklist to test whether catalog metadata is complete enough to ground a safe downstream decision."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-16-frontier-pacing",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Trust calibration provides a practical frame for weighing frontier-risk claims, evaluator access and evidence limits."
+      }
     ]
   }
 }

@@ -55,6 +55,10 @@
       "type": "string",
       "minLength": 1
     },
+    "research_cutoff_at": {
+      "type": "string",
+      "format": "date-time"
+    },
     "status": {
       "enum": [
         "draft",
@@ -134,7 +138,6 @@
             "summary",
             "why_useful",
             "connection",
-            "george_implication",
             "selection_rationale",
             "verification_note",
             "coverage_note",
@@ -326,7 +329,6 @@
         "image",
         "summary",
         "why_it_matters",
-        "george_implication",
         "source",
         "social"
       ],

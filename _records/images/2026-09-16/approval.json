@@ -1,0 +1,68 @@
+{
+  "brief_date": "2026-09-16",
+  "reviewed_at": "2026-09-16T12:15:27Z",
+  "status": "approved",
+  "set_review": {
+    "distinct_compositions": true,
+    "dominant_white_backgrounds": true,
+    "mobile_readable": true,
+    "no_people_devices_or_photorealism": true,
+    "no_clipping_or_overlap": true
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-09-16-9f13a2c7",
+      "path": "briefs/images/2026-09-16/01-zero-trust-agent-runtime.png",
+      "sha256": "5e36f5fdb149b25af39f1017dd36057a66ead2374330bebc31c6a15d73aa44a3",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "layered defensive cutaway",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-16-c4b86e10",
+      "path": "briefs/images/2026-09-16/02-workers-granular-authorization.png",
+      "sha256": "4a8d7f39620022f92f986df5b437e3e9ae38e7c63ecdbea69c673eeeb460154f",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "isometric permission map",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-16-2a7d5f91",
+      "path": "briefs/images/2026-09-16/03-gemini-live-extended-thinking.png",
+      "sha256": "2b43ffd2b36075d7cfda68425cb95b0597a9d8b4614cb2c86609528221295684",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "split radial conversation system",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-16-7e31bc48",
+      "path": "briefs/images/2026-09-16/04-copilot-property-taxonomy.png",
+      "sha256": "ed67e14c883ae52b1bc08b1b55550bc4f32cde690a02c44e32b2cb69f266bcaf",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "taxonomy workbench",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-16-d9a40f62",
+      "path": "briefs/images/2026-09-16/05-aiforce-governed-interface.png",
+      "sha256": "fe5ab65afa2f0b64bc9aec8f245280453757cac97d3e6964822a44b603007fa2",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "vertical enterprise cutaway",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-16-5bc218ad",
+      "path": "briefs/images/2026-09-16/06-informatica-agent-skill.png",
+      "sha256": "84932139259e97d0b8384e423ebc1789c4c07777b99694a437dcbc91185d4606",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "library and catalog map",
+      "approval": "approved"
+    }
+  ]
+}

@@ -158,7 +158,17 @@ export function importLegacyMarkdown(markdown, repoRoot, sourceCommit = null) {
 }
 
 export function importLegacyFile(filePath, repoRoot, sourceCommit = null) {
-  return importLegacyMarkdown(fs.readFileSync(filePath, 'utf8'), repoRoot, sourceCommit);
+  const imported=importLegacyMarkdown(fs.readFileSync(filePath, 'utf8'), repoRoot, sourceCommit);
+  if(imported.brief_date>='2026-09-16'){
+    const canonicalPath=path.join(repoRoot,'_data','editions',`${imported.brief_date}.json`);
+    if(fs.existsSync(canonicalPath)){
+      const canonical=JSON.parse(fs.readFileSync(canonicalPath,'utf8'));
+      imported.research_cutoff_at=canonical.research_cutoff_at;
+      const bySource=new Map((canonical.stories||[]).map(story=>[story.source?.normalized_url,story.freshness]));
+      imported.stories=imported.stories.map(story=>({...story,freshness:bySource.get(story.source.normalized_url)}));
+    }
+  }
+  return imported;
 }
 
 export function semanticEditionView(edition) {

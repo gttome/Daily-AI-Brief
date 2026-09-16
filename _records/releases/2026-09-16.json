@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-16",
+  "baseline_sha": "30ce9d8f8414d66d43ae2cb7b78646fa97c453ce",
+  "rollback_target_sha": "30ce9d8f8414d66d43ae2cb7b78646fa97c453ce",
+  "policy_profile": "full_v1",
+  "image_review": "_records/image-quality/2026-09-16-textbook.json",
+  "image_review_sha256": "53bfedba619682dcd672a0d7edd070f4a7cb658d9e6fe6c9565e2d912bc7bbd1",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-16/01-zero-trust-agent-runtime.png",
+      "sha256": "5e36f5fdb149b25af39f1017dd36057a66ead2374330bebc31c6a15d73aa44a3",
+      "bytes": 587114
+    },
+    {
+      "path": "briefs/images/2026-09-16/02-workers-granular-authorization.png",
+      "sha256": "4a8d7f39620022f92f986df5b437e3e9ae38e7c63ecdbea69c673eeeb460154f",
+      "bytes": 776536
+    },
+    {
+      "path": "briefs/images/2026-09-16/03-gemini-live-extended-thinking.png",
+      "sha256": "2b43ffd2b36075d7cfda68425cb95b0597a9d8b4614cb2c86609528221295684",
+      "bytes": 639545
+    },
+    {
+      "path": "briefs/images/2026-09-16/04-copilot-property-taxonomy.png",
+      "sha256": "ed67e14c883ae52b1bc08b1b55550bc4f32cde690a02c44e32b2cb69f266bcaf",
+      "bytes": 714509
+    },
+    {
+      "path": "briefs/images/2026-09-16/05-aiforce-governed-interface.png",
+      "sha256": "fe5ab65afa2f0b64bc9aec8f245280453757cac97d3e6964822a44b603007fa2",
+      "bytes": 710783
+    },
+    {
+      "path": "briefs/images/2026-09-16/06-informatica-agent-skill.png",
+      "sha256": "84932139259e97d0b8384e423ebc1789c4c07777b99694a437dcbc91185d4606",
+      "bytes": 719333
+    }
+  ],
+  "canonical_sha256": "e12042c513e23172dd25ccf6ea96c29f0d25770b1c70a640d871179d614bf80e",
+  "candidate_digest": "sha256:18e85e6b86bf32cbb5e5c00516a4475bc12bc71d34e216ab808fbabf5ddb37be"
+}

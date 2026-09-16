@@ -4,6 +4,186 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-16-9f13a2c7",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-15",
+      "headline": "Google moves agent security from syntax checks to runtime intent controls",
+      "url": "/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent security",
+        "runtime governance",
+        "semantic policy",
+        "anomaly detection"
+      ],
+      "companies": [
+        "Google Cloud"
+      ],
+      "evidence_type": "official_documentation",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google published a reference architecture for moving agent safeguards outside application code and into the Gemini Enterprise Agent Platform. Agent Gateway combines Model Armor at ingress and egress, natural-language Semantic Governance Policies before tool execution, and Agent Anomaly Detection across sessions; the companion repository includes local simulators and deterministic tests."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-16-c4b86e10",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-15",
+      "headline": "Cloudflare scopes teammate, CI, and agent access to individual Workers",
+      "url": "/stories/2026-09-16/cloudflare-scopes-access-to-individual-workers/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "least privilege",
+        "agent deployment",
+        "CI security",
+        "serverless governance"
+      ],
+      "companies": [
+        "Cloudflare"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Cloudflare introduced Worker-scoped authorization so account owners can grant a teammate, CI system or AI agent access to specific Workers instead of the whole account. The model separates account-wide and Worker-scoped roles and supports narrower build, deploy and management paths."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-16-2a7d5f91",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-15",
+      "headline": "Gemini 3.8 Live keeps reasoning and using tools while conversation continues",
+      "url": "/stories/2026-09-16/gemini-3-8-live-keeps-reasoning-while-conversation-continues/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "live voice",
+        "multimodal work",
+        "background reasoning",
+        "tool use"
+      ],
+      "companies": [
+        "Google",
+        "Google DeepMind"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google released Gemini 3.8 Live for low-latency dialogue and Gemini 3.8 Live Extended Thinking for more complex, multi-step work. The models accept audio, images, video and text; Extended Thinking can continue background reasoning and asynchronous tool calls while maintaining spoken interaction. Google lists API, app, AI Studio, Cloud, Search and Workspace distribution paths."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-16-7e31bc48",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-15",
+      "headline": "Copilot now suggests values for repository governance taxonomies",
+      "url": "/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "metadata governance",
+        "repository rulesets",
+        "taxonomy design",
+        "human review"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "public_preview",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub Copilot can now suggest allowed values while enterprise and organization owners define repository custom properties. Accepted values become governance metadata that can scope repository rulesets; owners can control the feature with a dedicated Copilot policy. The feature is a public preview for Copilot Business and Enterprise."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-16-d9a40f62",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-15",
+      "headline": "Salesforce AIforce brings governed data and actions to conversational interfaces",
+      "url": "/stories/2026-09-16/salesforce-aiforce-brings-governed-actions-to-any-interface/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code interfaces",
+        "enterprise context",
+        "permissions",
+        "agent actions"
+      ],
+      "companies": [
+        "Salesforce"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "announced",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Salesforce announced AIforce, an interface layer intended to expose Salesforce data, workflows, business logic, semantics, permissions and actions inside Claude, Slack, Lightning and custom interfaces. Users can ask questions, update records, trigger workflows or describe a live interface while requests remain subject to existing Salesforce permissions and rules."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-16-5bc218ad",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-16",
+      "headline": "Anthropic’s skills marketplace adds governed Informatica catalog discovery",
+      "url": "/stories/2026-09-16/anthropic-marketplace-adds-informatica-governed-catalog-skill/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "catalog grounding",
+        "data governance",
+        "safe use"
+      ],
+      "companies": [
+        "Anthropic",
+        "Informatica",
+        "Salesforce"
+      ],
+      "evidence_type": "official_repository",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A verified Anthropic repository commit added Informatica’s plugin to the knowledge-work marketplace. The Agent Skill is designed to find tables, columns, files, glossary terms and policies in Informatica’s enterprise catalog, then report ownership, certification, sensitivity and applicable policy before data is queried. It requires an Informatica IDMC tenant and Catalog Discovery connector."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-16-frontier-pacing",
+      "brief_date": "2026-09-16",
+      "event_date": "2026-09-16",
+      "headline": "Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal",
+      "url": "/podcasts/2026-09-16/frontier-pacing/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "frontier model pacing",
+        "independent evaluation",
+        "AI governance",
+        "evidence quality"
+      ],
+      "companies": [
+        "The AI Daily Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance"
+      ],
+      "summary": "Nathaniel Whittemore examines the emerging debate over frontier-model pacing and third-party evaluation, including public reactions from major AI leaders and competing safety, competition and incentive arguments."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-15-a1c3f9e2",
       "brief_date": "2026-09-15",
       "event_date": "2026-09-14",
@@ -4743,140 +4923,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "Meta launched Muse Code in beta, powered by Muse Spark 1.2, as a coding agent designed to write and debug software, verify results, handle long and complex development tasks, and run multiple sub-agents in parallel. Reuters also reported that Muse Code keeps a persistent activity log so work can resume after a crash rather than restart from scratch."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-17-cdb22c68",
-      "brief_date": "2026-08-17",
-      "event_date": "2026-08-17",
-      "headline": "Google’s A2A agent protocol moves into the Agentic AI Foundation",
-      "url": "/stories/2026-08-17/google-s-a2a-agent-protocol-moves-into-the-agentic-ai-foundation/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Agent infrastructure",
-        "harness engineering",
-        "multi-agent systems",
-        "interoperability",
-        "context/tool standards"
-      ],
-      "companies": [
-        "axios.com"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Google’s Agent2Agent (A2A) protocol is moving into the Agentic AI Foundation, placing it alongside other open agent-infrastructure efforts under a more focused governance structure. A2A is designed for communication between independent AI agents, while MCP is primarily aimed at connecting AI applications to tools and data. The move is significant because it pushes agent-to-agent interoperability toward neutral, cross-vendor governance rather than provider-specific integrations."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-17-c5282e0d",
-      "brief_date": "2026-08-17",
-      "event_date": "2026-08-13",
-      "headline": "Google unveils Gemini 3.7 Flash for coding and agent workflows",
-      "url": "/stories/2026-08-17/google-unveils-gemini-3-7-flash-for-coding-and-agent-workflows/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "AI-assisted coding",
-        "coding agents",
-        "vibe coding",
-        "agent workflows",
-        "major AI-company developments"
-      ],
-      "companies": [
-        "reuters.com"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Google unveiled Gemini 3.7 Flash, positioning the model for software coding and automation of business workflows. The release extends Google’s push toward models that are not only conversational but are optimized for action-oriented, agentic work. Reuters reported that the model is available while Google continues work on its higher-end Gemini model roadmap."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-17-b7974d43",
-      "brief_date": "2026-08-17",
-      "event_date": "2026-08-11",
-      "headline": "New research isolates “context interference” as a reliability problem in multi-turn search agents",
-      "url": "/stories/2026-08-17/new-research-isolates-context-interference-as-a-reliability-problem-in-multi-tur/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Context engineering",
-        "RAG",
-        "grounding",
-        "iterative search agents",
-        "reliability"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "The paper *Mitigating Context Interference for Reliable and Efficient Search Agents* studies how long, multi-turn retrieval workflows accumulate distracting information. The authors report that interference is driven especially by the most recently retrieved documents, then introduce a distillation-based context refiner that filters the working context before the agent generates its next step. They also report additional gains when context refinement is incorporated into reinforcement-learning training for search agents."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-17-8c5a5979",
-      "brief_date": "2026-08-17",
-      "event_date": "2026-08-07",
-      "headline": "Small but useful study shows one explicit compliance instruction can sharply change AI-generated code",
-      "url": "/stories/2026-08-17/small-but-useful-study-shows-one-explicit-compliance-instruction-can-sharply-cha/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Prompt engineering",
-        "guardrails",
-        "coding reliability",
-        "evaluation",
-        "human review"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development"
-      ],
-      "summary": "A study evaluating three Claude-family models across four SOC 2-related coding tasks found that unprompted compliance varied substantially, with reported conformance ranging from 47% to 88%. Adding a single sentence explicitly requiring SOC 2 compliance raised reported scores to 86%–100% across the tested cases and removed the insecure constructions identified in the neutral-prompt runs. The authors also found that an initial checklist-based evaluator missed real defects, underscoring the limits of simplistic automated grading."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-17-f72cbc5e",
-      "brief_date": "2026-08-17",
-      "event_date": "2026-08-04",
-      "headline": "“Self-evolving coding agents” formalize a feedback-loop view of agentic software development",
-      "url": "/stories/2026-08-17/self-evolving-coding-agents-formalize-a-feedback-loop-view-of-agentic-software-d/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Loop engineering",
-        "coding agents",
-        "harness engineering",
-        "memory",
-        "tools",
-        "agent adaptation"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "The survey *Self-Evolving Coding Agents* synthesizes an emerging class of coding agents that improve future behavior using prior software-development experience. The authors organize the field around what can evolve—frameworks, memory, skills, tools, models, and collaboration structures—and around the feedback signals that drive change, including executable test results, repository context, and prior coding trajectories."
     }
   ]
 }

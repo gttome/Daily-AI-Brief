@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-15T12:00:53.202Z",
+  "updated_at": "2026-09-16T11:59:38.571Z",
   "sources": [
     {
       "source_id": "rundown",
@@ -113,17 +113,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:10.799Z",
+            "checked_at": "2026-09-16T11:59:38.604Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-15T12:01:22.799Z",
+            "checked_at": "2026-09-16T11:59:50.607Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-15T12:01:34.800Z"
+        "checked_at": "2026-09-16T12:00:02.608Z"
       }
     },
     {
@@ -227,17 +227,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:34.801Z",
+            "checked_at": "2026-09-16T12:00:02.608Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-15T12:01:46.802Z",
+            "checked_at": "2026-09-16T12:00:14.609Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-15T12:01:58.803Z"
+        "checked_at": "2026-09-16T12:00:26.610Z"
       }
     },
     {
@@ -272,20 +272,20 @@
       "last_check": {
         "source_id": "berkeley-bair",
         "status": "unavailable",
-        "reason": "HTTP 502",
+        "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:34.802Z",
+            "checked_at": "2026-09-16T12:00:02.609Z",
             "status": "unavailable",
-            "reason": "HTTP 502"
+            "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-15T12:01:43.628Z",
+            "checked_at": "2026-09-16T12:00:14.611Z",
             "status": "unavailable",
-            "reason": "HTTP 502"
+            "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-15T12:01:54.283Z"
+        "checked_at": "2026-09-16T12:00:26.612Z"
       }
     },
     {

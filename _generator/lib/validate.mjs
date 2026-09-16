@@ -34,7 +34,9 @@ export function validateEdition(edition) {
     const label = `stories[${index}]`;
     if (story.ordinal !== index + 1) errors.push(`${label}.ordinal must equal ${index + 1}`);
     if (story.focus !== EXPECTED_FOCUS_ORDER[index]) errors.push(`${label}.focus violates ordered 2/2/2 allocation`);
-    for (const field of ['story_id', 'slug', 'permanent_url', 'headline', 'event_date', 'summary', 'why_it_matters', 'george_implication']) requireText(story[field], `${label}.${field}`);
+    const storyFields=['story_id', 'slug', 'permanent_url', 'headline', 'event_date', 'summary', 'why_it_matters'];
+    if(!freshnessRequired)storyFields.push('george_implication');
+    for (const field of storyFields) requireText(story[field], `${label}.${field}`);
     if (!story.story_id?.startsWith(`dab-story-${edition.brief_date}-`)) errors.push(`${label}.story_id must match brief_date`);
     if (story.permanent_url !== `/stories/${edition.brief_date}/${story.slug}/`) errors.push(`${label}.permanent_url must match date and slug`);
     if (ids.has(story.story_id)) errors.push(`${label}.story_id is duplicated`);
@@ -103,7 +105,9 @@ export function validateEdition(edition) {
   const podcast = edition.podcast;
   if (edition.policy_profile === 'full_v1' && edition.brief_date >= '2026-09-10' && !podcast) errors.push('podcast slot 9 is required');
   if (podcast?.status === 'included') {
-    for (const field of ['item_id','title','show','host','publication_date','summary','why_useful','connection','george_implication','selection_rationale','verification_note','coverage_note']) requireText(podcast[field], `podcast.${field}`);
+    const podcastFields=['item_id','title','show','host','publication_date','summary','why_useful','connection','selection_rationale','verification_note','coverage_note'];
+    if(!freshnessRequired)podcastFields.push('george_implication');
+    for (const field of podcastFields) requireText(podcast[field], `podcast.${field}`);
     if (!podcast.item_id?.startsWith(`dab-podcast-${edition.brief_date}-`)) errors.push('podcast.item_id must match brief_date');
     if (podcast.ordinal !== 9) errors.push('podcast.ordinal must be 9');
     if (!podcast.permanent_url?.startsWith(`/podcasts/${edition.brief_date}/`)) errors.push('podcast.permanent_url must match brief_date');

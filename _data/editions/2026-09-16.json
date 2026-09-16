@@ -1,0 +1,545 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "full_v1",
+  "edition_id": "dab-edition-2026-09-16",
+  "brief_date": "2026-09-16",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 16, 2026",
+  "published_at": "2026-09-16T12:15:27Z",
+  "research_cutoff_at": "2026-09-16T12:15:27Z",
+  "coverage_period": "24-hour primary window ending September 16, 2026 at 07:15 America/Chicago; five selected stories are inside the primary window. One Recency fallback missed the cutoff by 15 minutes after no second qualifying fresh non-technical-agent candidate survived the gates.",
+  "status": "validated",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-16-9f13a2c7",
+      "ordinal": 1,
+      "slug": "google-moves-agent-security-to-runtime-intent-controls",
+      "permanent_url": "/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/",
+      "focus": "technical_ai_engineering",
+      "headline": "Google moves agent security from syntax checks to runtime intent controls",
+      "event_date": "2026-09-15",
+      "topics": [
+        "agent security",
+        "runtime governance",
+        "semantic policy",
+        "anomaly detection"
+      ],
+      "companies": [
+        "Google Cloud"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-16/01-zero-trust-agent-runtime.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/01-zero-trust-agent-runtime.png?v=20260916textbook",
+        "alt": "White-background layered security diagram showing input passing through Model Armor, an agent, semantic intent policy, allow or deny gates and tools, with session telemetry feeding anomaly detection and human remediation.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260916textbook"
+      },
+      "summary": "Google published a reference architecture for moving agent safeguards outside application code and into the Gemini Enterprise Agent Platform. Agent Gateway combines Model Armor at ingress and egress, natural-language Semantic Governance Policies before tool execution, and Agent Anomaly Detection across sessions; the companion repository includes local simulators and deterministic tests.",
+      "why_it_matters": "The design separates payload screening, intent authorization and multi-turn behavior monitoring instead of treating prompt injection as the only failure mode. Google’s examples and detector confidence values are explicitly illustrative, so teams still need their own threat models, policy tests, false-positive review and human escalation paths before production use.",
+      "source": {
+        "title": "Build zero-trust AI agents that judge intent, not just syntax",
+        "organization": "Google Developers",
+        "url": "https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/",
+        "publication_date": "2026-09-15",
+        "evidence_type": "official_documentation",
+        "availability_status": "general_availability",
+        "normalized_url": "https://developers.googleblog.com/build-zero-trust-ai-agents-that-judge-intent-not-just-syntax/"
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-15T17:15:00Z"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35
+      },
+      "selection_rationale": "The strongest fresh technical item: authoritative, runnable guidance for prompt, policy, tool and session-level controls.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Threat-model one tool action",
+        "rationale": "Choose one irreversible tool call, then specify ingress screening, intent policy, session anomaly signals and a human escalation before testing the reference pattern."
+      },
+      "social_description": "Google’s reference architecture layers payload screening, semantic authorization and multi-turn anomaly detection around agent tool use.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "The strongest fresh technical item: authoritative, runnable guidance for prompt, policy, tool and session-level controls."
+      },
+      "social": {
+        "title": "Google moves agent security from syntax checks to runtime intent controls",
+        "description": "Google’s reference architecture layers payload screening, semantic authorization and multi-turn anomaly detection around agent tool use.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/01-zero-trust-agent-runtime.png?v=20260916textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-16-c4b86e10",
+      "ordinal": 2,
+      "slug": "cloudflare-scopes-access-to-individual-workers",
+      "permanent_url": "/stories/2026-09-16/cloudflare-scopes-access-to-individual-workers/",
+      "focus": "technical_ai_engineering",
+      "headline": "Cloudflare scopes teammate, CI, and agent access to individual Workers",
+      "event_date": "2026-09-15",
+      "topics": [
+        "least privilege",
+        "agent deployment",
+        "CI security",
+        "serverless governance"
+      ],
+      "companies": [
+        "Cloudflare"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-16/02-workers-granular-authorization.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/02-workers-granular-authorization.png?v=20260916textbook",
+        "alt": "White-background isometric authorization map showing teammate, CI pipeline and AI agent roles reaching only their permitted serverless Workers while blocked paths stop at explicit denial markers.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260916textbook"
+      },
+      "summary": "Cloudflare introduced Worker-scoped authorization so account owners can grant a teammate, CI system or AI agent access to specific Workers instead of the whole account. The model separates account-wide and Worker-scoped roles and supports narrower build, deploy and management paths.",
+      "why_it_matters": "Deployment agents are safer when their credentials cannot reach unrelated applications. This reduces blast radius and makes separation of duties easier to audit, but least privilege still depends on correct role design, token handling, logs and periodic access review; scoped authorization does not validate the code an agent deploys.",
+      "source": {
+        "title": "Give every teammate and agent the right level of access to your Workers",
+        "organization": "Cloudflare",
+        "url": "https://blog.cloudflare.com/workers-granular-authorization/",
+        "publication_date": "2026-09-15",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability",
+        "normalized_url": "https://blog.cloudflare.com/workers-granular-authorization/"
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-15T13:00:00Z"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33
+      },
+      "selection_rationale": "A concrete fresh least-privilege control with direct value for coding-agent and deployment harnesses.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Narrow one deployment credential",
+        "rationale": "Inventory the Workers reachable by one CI or agent token, then replace account-wide access with the smallest Worker-scoped role that still completes the job."
+      },
+      "social_description": "Cloudflare’s Worker-scoped roles let teams constrain CI and AI-agent credentials to the applications they actually manage.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "A concrete fresh least-privilege control with direct value for coding-agent and deployment harnesses."
+      },
+      "social": {
+        "title": "Cloudflare scopes teammate, CI, and agent access to individual Workers",
+        "description": "Cloudflare’s Worker-scoped roles let teams constrain CI and AI-agent credentials to the applications they actually manage.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/02-workers-granular-authorization.png?v=20260916textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-16-2a7d5f91",
+      "ordinal": 3,
+      "slug": "gemini-3-8-live-keeps-reasoning-while-conversation-continues",
+      "permanent_url": "/stories/2026-09-16/gemini-3-8-live-keeps-reasoning-while-conversation-continues/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Gemini 3.8 Live keeps reasoning and using tools while conversation continues",
+      "event_date": "2026-09-15",
+      "topics": [
+        "live voice",
+        "multimodal work",
+        "background reasoning",
+        "tool use"
+      ],
+      "companies": [
+        "Google",
+        "Google DeepMind"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-16/03-gemini-live-extended-thinking.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/03-gemini-live-extended-thinking.png?v=20260916textbook",
+        "alt": "White-background radial diagram showing audio, image, text and video entering continuous conversation, with separate low-latency Live and background Extended Thinking paths, parallel tool calls, progress narration and audio or text outputs.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260916textbook"
+      },
+      "summary": "Google released Gemini 3.8 Live for low-latency dialogue and Gemini 3.8 Live Extended Thinking for more complex, multi-step work. The models accept audio, images, video and text; Extended Thinking can continue background reasoning and asynchronous tool calls while maintaining spoken interaction. Google lists API, app, AI Studio, Cloud, Search and Workspace distribution paths.",
+      "why_it_matters": "Continuous voice plus visual context could make coaching, live research, troubleshooting and iterative creation less stop-and-start. The model card documents broad distribution and safety work, but Google-reported benchmarks do not substitute for testing interruption handling, tool state, privacy, latency, cost and factual reliability in the actual workflow.",
+      "source": {
+        "title": "Introducing Gemini 3.8 Live and 3.8 Live Extended Thinking",
+        "organization": "Google",
+        "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/",
+        "publication_date": "2026-09-15",
+        "evidence_type": "official_announcement",
+        "availability_status": "general_availability",
+        "normalized_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-8-live-gemini-3-8-live-extended-thinking/"
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-15T17:00:00Z"
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34
+      },
+      "selection_rationale": "The strongest fresh knowledge-worker interface development, with primary announcement and model-card limitations.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Pilot one live review loop",
+        "rationale": "Try a bounded task where voice, a shared visual and one reversible tool call interact; record interruptions, state errors and review effort before expanding scope."
+      },
+      "social_description": "Gemini 3.8 Live adds continuous multimodal dialogue, while Extended Thinking keeps background reasoning and tool calls moving.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "The strongest fresh knowledge-worker interface development, with primary announcement and model-card limitations."
+      },
+      "social": {
+        "title": "Gemini 3.8 Live keeps reasoning and using tools while conversation continues",
+        "description": "Gemini 3.8 Live adds continuous multimodal dialogue, while Extended Thinking keeps background reasoning and tool calls moving.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/03-gemini-live-extended-thinking.png?v=20260916textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-16-7e31bc48",
+      "ordinal": 4,
+      "slug": "copilot-suggests-repository-governance-taxonomies",
+      "permanent_url": "/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Copilot now suggests values for repository governance taxonomies",
+      "event_date": "2026-09-15",
+      "topics": [
+        "metadata governance",
+        "repository rulesets",
+        "taxonomy design",
+        "human review"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-16/04-copilot-property-taxonomy.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/04-copilot-property-taxonomy.png?v=20260916textbook",
+        "alt": "White-background taxonomy workbench showing repository custom-property definitions, Copilot suggestions, a human accept step, consistent metadata across repository tiles and a ruleset targeting funnel.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260916textbook"
+      },
+      "summary": "GitHub Copilot can now suggest allowed values while enterprise and organization owners define repository custom properties. Accepted values become governance metadata that can scope repository rulesets; owners can control the feature with a dedicated Copilot policy. The feature is a public preview for Copilot Business and Enterprise.",
+      "why_it_matters": "A consistent taxonomy is prerequisite infrastructure for fleet-wide governance, reporting and automation. Suggestions may accelerate the blank-page step, but administrators remain responsible for semantics, duplicates, compliance meaning and downstream rules; accepting plausible values without review can standardize the wrong categories faster.",
+      "source": {
+        "title": "GitHub Copilot suggests custom properties definitions",
+        "organization": "GitHub",
+        "url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/",
+        "publication_date": "2026-09-15",
+        "evidence_type": "official_changelog",
+        "availability_status": "public_preview",
+        "normalized_url": "https://github.blog/changelog/2026-09-15-github-copilot-suggests-custom-properties-definitions/"
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-15T19:07:47Z"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 32
+      },
+      "selection_rationale": "A compact, immediately usable example of AI-assisted information architecture with explicit human acceptance and policy control.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Review a five-property taxonomy",
+        "rationale": "Draft five properties, compare Copilot’s proposed values with existing policy language, and approve only definitions that have a clear owner and downstream rule."
+      },
+      "social_description": "GitHub is using Copilot to help administrators draft consistent repository metadata before humans accept it into governance rules.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 32,
+        "selection_rationale": "A compact, immediately usable example of AI-assisted information architecture with explicit human acceptance and policy control."
+      },
+      "social": {
+        "title": "Copilot now suggests values for repository governance taxonomies",
+        "description": "GitHub is using Copilot to help administrators draft consistent repository metadata before humans accept it into governance rules.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/04-copilot-property-taxonomy.png?v=20260916textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-16-d9a40f62",
+      "ordinal": 5,
+      "slug": "salesforce-aiforce-brings-governed-actions-to-any-interface",
+      "permanent_url": "/stories/2026-09-16/salesforce-aiforce-brings-governed-actions-to-any-interface/",
+      "focus": "agents_non_technical_people",
+      "headline": "Salesforce AIforce brings governed data and actions to conversational interfaces",
+      "event_date": "2026-09-15",
+      "topics": [
+        "no-code interfaces",
+        "enterprise context",
+        "permissions",
+        "agent actions"
+      ],
+      "companies": [
+        "Salesforce"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-16/05-aiforce-governed-interface.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/05-aiforce-governed-interface.png?v=20260916textbook",
+        "alt": "White-background architectural cutaway showing enterprise data, workflows, logic, permissions and governance feeding an AIforce identity and policy layer that serves Claude, Slack and custom live interfaces.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260916textbook"
+      },
+      "summary": "Salesforce announced AIforce, an interface layer intended to expose Salesforce data, workflows, business logic, semantics, permissions and actions inside Claude, Slack, Lightning and custom interfaces. Users can ask questions, update records, trigger workflows or describe a live interface while requests remain subject to existing Salesforce permissions and rules.",
+      "why_it_matters": "For non-technical users, the important shift is from navigating fixed screens to describing the view or action they need. The announcement is vendor-reported and availability varies by surface, so teams should verify product access, permission inheritance, auditability, data-retention terms and human approval for consequential writes before treating the interface as production-ready.",
+      "source": {
+        "title": "Salesforce Unveils AIforce, Bringing the Full Power of Its Platform to Any Interface",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/news/stories/aiforce-announcement/",
+        "publication_date": "2026-09-15",
+        "evidence_type": "official_announcement",
+        "availability_status": "announced",
+        "normalized_url": "https://www.salesforce.com/news/stories/aiforce-announcement/"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-15T12:00:00Z",
+        "fallback_reason": "No second qualifying primary-window non-technical-agent candidate survived the authority, availability and practical-value gates; AIforce missed the 24-hour cutoff by 15 minutes and remains within the ordinary 72-hour ceiling."
+      },
+      "score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33
+      },
+      "selection_rationale": "The highest-value accessible-agent candidate after primary-window options failed the category gates; fallback is explicit and tightly bounded.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Map one governed action",
+        "rationale": "Choose one read and one reversible update, identify the Salesforce permission and business rule behind each, and require an audit trail plus confirmation before wider use."
+      },
+      "social_description": "AIforce aims to bring Salesforce context, permissions and actions into conversational interfaces without replacing the governed core.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "The highest-value accessible-agent candidate after primary-window options failed the category gates; fallback is explicit and tightly bounded."
+      },
+      "social": {
+        "title": "Salesforce AIforce brings governed data and actions to conversational interfaces",
+        "description": "AIforce aims to bring Salesforce context, permissions and actions into conversational interfaces without replacing the governed core.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/05-aiforce-governed-interface.png?v=20260916textbook"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-16-5bc218ad",
+      "ordinal": 6,
+      "slug": "anthropic-marketplace-adds-informatica-governed-catalog-skill",
+      "permanent_url": "/stories/2026-09-16/anthropic-marketplace-adds-informatica-governed-catalog-skill/",
+      "focus": "agents_non_technical_people",
+      "headline": "Anthropic’s skills marketplace adds governed Informatica catalog discovery",
+      "event_date": "2026-09-16",
+      "topics": [
+        "Agent Skills",
+        "catalog grounding",
+        "data governance",
+        "safe use"
+      ],
+      "companies": [
+        "Anthropic",
+        "Informatica",
+        "Salesforce"
+      ],
+      "image": {
+        "path": "briefs/images/2026-09-16/06-informatica-agent-skill.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/06-informatica-agent-skill.png?v=20260916textbook",
+        "alt": "White-background system map showing an Agent Skill and connector retrieving enterprise catalog metadata for tables, columns, files, glossary terms and policies, then checking owner, certification, sensitivity and safe-use guidance before any data query.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "20260916textbook"
+      },
+      "summary": "A verified Anthropic repository commit added Informatica’s plugin to the knowledge-work marketplace. The Agent Skill is designed to find tables, columns, files, glossary terms and policies in Informatica’s enterprise catalog, then report ownership, certification, sensitivity and applicable policy before data is queried. It requires an Informatica IDMC tenant and Catalog Discovery connector.",
+      "why_it_matters": "This is a concrete reusable-skill pattern for grounding an agent in governance metadata before it touches enterprise data. The commit verifies marketplace inclusion, not deployment quality or universal access; organizations still need connector configuration, permission review, catalog quality checks and human judgment about whether the returned guidance authorizes use.",
+      "source": {
+        "title": "Add Informatica plugin (informatica-for-claude-platform)",
+        "organization": "Anthropic",
+        "url": "https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec",
+        "publication_date": "2026-09-16",
+        "evidence_type": "official_repository",
+        "availability_status": "general_availability",
+        "normalized_url": "https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec"
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-16T02:15:39Z"
+      },
+      "score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34
+      },
+      "selection_rationale": "Exactly one fresh reusable Agent Skills story, backed by a signed first-party marketplace commit with explicit capabilities and prerequisites.",
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test metadata before data",
+        "rationale": "Ask the skill for one asset’s owner, certification, sensitivity and policy; compare every field with the catalog before allowing any downstream query."
+      },
+      "social_description": "A new Informatica Agent Skill grounds discovery in ownership, certification, sensitivity and policy metadata before any data query.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Exactly one fresh reusable Agent Skills story, backed by a signed first-party marketplace commit with explicit capabilities and prerequisites."
+      },
+      "social": {
+        "title": "Anthropic’s skills marketplace adds governed Informatica catalog discovery",
+        "description": "A new Informatica Agent Skill grounds discovery in ownership, certification, sensitivity and policy metadata before any data query.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/06-informatica-agent-skill.png?v=20260916textbook"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "empty",
+      "exception": "No unused, directly relevant general AI video with an independently verified runtime of 10:00 or less was found. Official searches surfaced long replays, previously used clips, or pages without exact runtime evidence; no 10:01–20:00 fallback was needed."
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "exception": "No unused, directly relevant non-technical-agent video with an independently verified runtime of 10:00 or less was found. Searches of official OpenAI, Google, Salesforce and YouTube surfaces produced unverified clips, previously used items, or long sessions, so the slot remains empty."
+    }
+  },
+  "podcast": {
+    "status": "included",
+    "ordinal": 9,
+    "item_id": "dab-podcast-2026-09-16-frontier-pacing",
+    "title": "Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal",
+    "show": "The AI Daily Brief",
+    "host": "Nathaniel Whittemore",
+    "publication_date": "2026-09-16",
+    "runtime_seconds": null,
+    "focus": "applied_genai_knowledge_workers",
+    "topics": [
+      "frontier model pacing",
+      "independent evaluation",
+      "AI governance",
+      "evidence quality"
+    ],
+    "url": "https://aidailybrief.ai/e/2026-09-16",
+    "permanent_url": "/podcasts/2026-09-16/frontier-pacing/",
+    "summary": "Nathaniel Whittemore examines the emerging debate over frontier-model pacing and third-party evaluation, including public reactions from major AI leaders and competing safety, competition and incentive arguments.",
+    "why_useful": "The episode offers a current map of the governance debate and makes it easier to separate concrete proposals—such as independent evaluators with privileged access—from broader rhetoric.",
+    "connection": "It complements today’s technical controls by asking who should verify frontier systems and how operational evidence should inform governance beyond product-level safeguards.",
+    "selection_rationale": "Selected from the registered always-check source because it was published today, is unused, and directly connects evidence, evaluation and AI governance.",
+    "verification_note": "The publisher’s September 16 edition identifies the title, show context and current publication date. The publisher did not expose a reliable exact runtime at selection time; podcast duration is uncapped.",
+    "coverage_note": "Selected inside the preferred preceding-48-hour window after checking registered publisher catalogs and prior podcast identities.",
+    "platforms": [
+      {
+        "name": "Publisher episode and transcript",
+        "url": "https://aidailybrief.ai/e/2026-09-16"
+      }
+    ]
+  },
+  "editorial_takeaway": "The common thread is governed reach: the best new systems do more only when identity, context, policy, telemetry and human review remain attached to the action. Treat conversational convenience as an interface improvement—not permission to skip verification.",
+  "provenance": {
+    "created_by": "Daily AI Brief automated publisher",
+    "created_at": "2026-09-16T12:15:27Z",
+    "source_commit": "30ce9d8f8414d66d43ae2cb7b78646fa97c453ce"
+  }
+}
