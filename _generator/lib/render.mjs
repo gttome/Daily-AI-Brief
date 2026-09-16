@@ -10,6 +10,10 @@ import {readerFoundationFiles, renderInlineFeedback, renderPodcast, renderSeries
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 const SERIES_SEPARATION_DATE='2026-09-16';
+const EMPTY_MEDIA_PUBLIC_COPY=Object.freeze({
+  video:'No video met today’s editorial quality standards.',
+  podcast:'No podcast met today’s editorial quality standards.'
+});
 
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -29,6 +33,11 @@ function readerSafeEdition(edition) {
   for (const key of ['general','agents_non_technical_people']) if (copy.worth_watching?.[key]) copy.worth_watching[key] = readerSafeItem(copy.worth_watching[key]);
   if (copy.podcast) copy.podcast = readerSafeItem(copy.podcast);
   return copy;
+}
+
+function publicPodcast(slot) {
+  if (!slot || slot.status !== 'empty') return slot;
+  return {...slot, exception: EMPTY_MEDIA_PUBLIC_COPY.podcast};
 }
 
 function stripEditorOnlyMarkup(content) {
@@ -80,7 +89,7 @@ function renderVideo(name, slot, briefDate, slotId) {
   const ordinal = slotId === 'general' ? 7 : 8;
   const anchor = slotId === 'general' ? 'general' : 'agents-for-non-technical-people';
   const heading = `${readerRelease(briefDate)?`<span id="${anchor}"></span>\n\n`:''}## ${ordinal}. ${name}`;
-  if (slot.status === 'empty') return `${heading}\n\n${slot.exception}`;
+  if (slot.status === 'empty') return `${heading}\n\n${EMPTY_MEDIA_PUBLIC_COPY.video}`;
   if(briefDate<SERIES_SEPARATION_DATE)return `${heading}
 
 ### ${slot.title}
@@ -135,7 +144,8 @@ export function renderBody(edition) {
   validateBookReading(edition);
   validateReadingSupport(edition);
   const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
-  const podcast=separated&&edition.podcast?readerSafeItem(edition.podcast):edition.podcast;
+  const podcastSource=separated&&edition.podcast?readerSafeItem(edition.podcast):edition.podcast;
+  const podcast=publicPodcast(podcastSource);
   const podcastBlock=podcast?(separated?stripEditorOnlyMarkup(renderPodcast(podcast,edition.brief_date)):renderPodcast(podcast,edition.brief_date))+'\n\n':'';
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
