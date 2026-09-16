@@ -14,7 +14,7 @@ reader_release: true
 # Anthropic’s skills marketplace adds governed Informatica catalog discovery
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 2 min read</span></div><p><strong>Catalog grounding:</strong> Catalog metadata should answer ownership, certification, sensitivity and policy questions before an agent queries data.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How a reusable Agent Skill grounds data discovery in governance metadata.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Catalog grounding:</strong> Catalog metadata should answer ownership, certification, sensitivity and policy questions before an agent queries data.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How a reusable Agent Skill grounds data discovery in governance metadata.</p></div></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-16-5bc218ad" hidden></span>
@@ -22,7 +22,7 @@ reader_release: true
 **Focus:** Agents for Non-Technical People  
 **Date:** September 16, 2026  
 **Topics:** Agent Skills, catalog grounding, data governance, safe use  
-**Evidence:** Official Repository  
+**Evidence:** Official Documentation  
 **Availability:** General Availability
 
 ![White-background system map showing an Agent Skill and connector retrieving enterprise catalog metadata for tables, columns, files, glossary terms and policies, then checking owner, certification, sensitivity and safe-use guidance before any data query.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-16/06-informatica-agent-skill.png?v=20260916textbook)
@@ -39,7 +39,7 @@ reader_release: true
 
 **Test metadata before data:** Ask the skill for one asset’s owner, certification, sensitivity and policy; compare every field with the catalog before allowing any downstream query.
 
-**Source:** <a href="https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec" data-item-id="dab-story-2026-09-16-5bc218ad" data-edition-date="2026-09-16" data-action="source_clicks">Add Informatica plugin (informatica-for-claude-platform)</a>
+**Source:** <a href="https://claude.com/connectors/informatica-catalog-discovery" data-item-id="dab-story-2026-09-16-5bc218ad" data-edition-date="2026-09-16" data-action="source_clicks">Informatica Catalog Discovery</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-16" data-feedback-story-id="dab-story-2026-09-16-5bc218ad">
   <span class="feedback-prompt">How useful was this?</span>
