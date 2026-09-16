@@ -443,13 +443,13 @@
       "summary": "A verified Anthropic repository commit added Informatica’s plugin to the knowledge-work marketplace. The Agent Skill is designed to find tables, columns, files, glossary terms and policies in Informatica’s enterprise catalog, then report ownership, certification, sensitivity and applicable policy before data is queried. It requires an Informatica IDMC tenant and Catalog Discovery connector.",
       "why_it_matters": "This is a concrete reusable-skill pattern for grounding an agent in governance metadata before it touches enterprise data. The commit verifies marketplace inclusion, not deployment quality or universal access; organizations still need connector configuration, permission review, catalog quality checks and human judgment about whether the returned guidance authorizes use.",
       "source": {
-        "title": "Add Informatica plugin (informatica-for-claude-platform)",
-        "organization": "Anthropic",
-        "url": "https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec",
+        "title": "Informatica Catalog Discovery",
+        "organization": "Informatica",
+        "url": "https://claude.com/connectors/informatica-catalog-discovery",
         "publication_date": "2026-09-16",
-        "evidence_type": "official_repository",
+        "evidence_type": "official_documentation",
         "availability_status": "general_availability",
-        "normalized_url": "https://github.com/anthropics/knowledge-work-plugins/commit/60eb554184003b8553eea733cce13c6e312cbeec"
+        "normalized_url": "https://claude.com/connectors/informatica-catalog-discovery"
       },
       "freshness": {
         "tier": "primary",

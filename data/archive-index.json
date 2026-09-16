@@ -149,7 +149,7 @@
         "Informatica",
         "Salesforce"
       ],
-      "evidence_type": "official_repository",
+      "evidence_type": "official_documentation",
       "availability_status": "general_availability",
       "trends": [
         "Agent reliability and governance",
