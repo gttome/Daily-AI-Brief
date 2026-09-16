@@ -51,7 +51,13 @@ export function createValidatedEvent(edition, files, options) {
 
 export function buildPublicationStage(edition, repoRoot, outDir, options) {
   assertValidEdition(edition);
-  if (edition.brief_date >= '2026-09-17') assertMediaPreflight(edition, options.mediaPreflight, {observedAt: options.observedAt});
+  const mediaPreflightPath=`_records/editorial/media-preflight/${edition.brief_date}.json`;
+  let mediaPreflight=options.mediaPreflight||null;
+  if(edition.brief_date>='2026-09-17'){
+    const diskPath=path.join(repoRoot,mediaPreflightPath);
+    if(!mediaPreflight&&fs.existsSync(diskPath))mediaPreflight=JSON.parse(fs.readFileSync(diskPath,'utf8'));
+    assertMediaPreflight(edition,mediaPreflight,{observedAt:options.observedAt});
+  }
   const files = generatedFiles(edition, repoRoot);
   const expected = new Set([`briefs/${edition.brief_date}.md`, ...COMPATIBILITY_OUTPUTS]);
   for (const name of expected) if (!files.has(name)) throw new Error(`Atomic publication plan is missing ${name}`);
@@ -59,7 +65,10 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
     {check_id: 'edition_validation', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'Canonical edition passed structural and semantic validation.'},
     {check_id: 'atomic_file_set', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'All five compatibility outputs are present in the staged transaction.'}
   ];
-  if (edition.brief_date >= '2026-09-17') checks.push({check_id:'selected_media_preflight',class:'live_prepublication',result:'pass',severity:'critical',evidence:'Every included video and podcast URL, date, and runtime matched a fresh independent prepublication observation.'});
+  if (edition.brief_date >= '2026-09-17') {
+    checks.push({check_id:'selected_media_preflight',class:'live_prepublication',result:'pass',severity:'critical',evidence:'Every included video and podcast URL, date, and runtime matched a fresh independent prepublication observation.'});
+    files.set(mediaPreflightPath,JSON.stringify(mediaPreflight,null,2)+'\n');
+  }
   files.set(`_data/editions/${edition.brief_date}.json`, `${JSON.stringify(edition, null, 2)}\n`);
   const review=reviewedImages(edition,repoRoot);
   if(review.errors.length)throw new Error(review.errors.join('; '));
@@ -80,6 +89,7 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   files.set('data/efficiency/index.json',JSON.stringify({...existingIndex,records:[...efficiencyRecords,efficiency]},null,2)+'\n');
   const event = createValidatedEvent(edition, files, {...options, checks});
   event.value.file_set.operational_records.push(efficiencyPath(efficiency));
+  if(edition.brief_date>='2026-09-17')event.value.file_set.operational_records.push(mediaPreflightPath);
   files.set(event.path, `${JSON.stringify(event.value, null, 2)}\n`);
   for (const [name, content] of files) { if(Buffer.isBuffer(content)){fs.mkdirSync(path.dirname(path.join(outDir,name)),{recursive:true});fs.writeFileSync(path.join(outDir,name),content);}else writeText(path.join(outDir, name), content); }
   return {files: [...files.keys()].sort(), digest: stagedDigest(files), event: event.value, telemetry_health:efficiency.telemetry_health||null};
@@ -107,8 +117,7 @@ export function validateAtomicChangedPaths(paths, date, {policyProfile = 'public
     required.add(`_records/editorial-feedback/${date.slice(0, 7)}.json`);
   }
   if (date >= '2026-09-10' && policyProfile === 'full_v1') required.add(`_records/editorial/podcasts/${date}.json`);
+  if (date >= '2026-09-17') required.add(`_records/editorial/media-preflight/${date}.json`);
   const missing = [...required].filter(name => !paths.includes(name));
-  const imagePrefix = `briefs/images/${date}/`;
-  const imageCount = new Set(paths.filter(name => name.startsWith(imagePrefix))).size;
   return missing;
 }
