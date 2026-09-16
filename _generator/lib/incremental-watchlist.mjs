@@ -1,5 +1,7 @@
 import {sha256} from './util.mjs';
 const hour=3600000;
+export const WATCHLIST_MINIMUM_FRESH_OBSERVATIONS=3;
+export const WATCHLIST_MAX_FALLBACK_CHECKS=5;
 export function watchlistDue(source,previous,now,{force=false}={}){
  const stamp=Date.parse(now);if(!Number.isFinite(stamp))throw Error('Valid check time required');
  if(force||!previous||previous.endpoint!==source.endpoint)return true;
@@ -29,14 +31,39 @@ export function recordWatchlistCheck(source,previous,{now,text=null,fingerprint:
    review_due_at:status==='assisted_review_required'?(prior?.review_due_at||now):prior?.review_due_at||null,
    next_check_at:new Date(stamp+(success?cadence:retry)).toISOString()};
 }
-export function incrementalCoverage(checks){
+export function freshWatchlistSuccesses(checks){
+ return checks.filter(c=>['retrieved','no_candidate_links'].includes(c.status)).length;
+}
+export function watchlistFallbackPlan(sources,checks,{minimumFresh=WATCHLIST_MINIMUM_FRESH_OBSERVATIONS,maxFallbackChecks=WATCHLIST_MAX_FALLBACK_CHECKS}={}){
+ if(!Number.isInteger(minimumFresh)||minimumFresh<1||!Number.isInteger(maxFallbackChecks)||maxFallbackChecks<1)throw Error('Positive Watchlist coverage floor and fallback bound required');
+ const fresh=freshWatchlistSuccesses(checks);
+ if(fresh>=minimumFresh)return {needed:false,fresh_successes:fresh,minimum_fresh:minimumFresh,max_fallback_checks:maxFallbackChecks,sources:[]};
+ const byId=new Map(checks.map(c=>[c.source_id,c]));
+ const rank=source=>{
+   if(Number.isFinite(source.priority_rank))return source.priority_rank;
+   if(source.high_velocity===true)return 10;
+   if(source.check_cadence==='daily')return 20;
+   if(source.check_cadence==='weekly')return 40;
+   return 30;
+ };
+ const eligible=sources.map((source,index)=>({source,index,check:byId.get(source.source_id)})).filter(({source,check})=>
+   source.automated!==false&&source.endpoint&&check?.status==='not_due'&&check.previous_status!=='assisted_review_required'
+ ).sort((a,b)=>rank(a.source)-rank(b.source)||a.index-b.index).slice(0,maxFallbackChecks).map(({source})=>({source_id:source.source_id,endpoint:source.endpoint,force:true,reason:'bounded_minimum_daily_coverage'}));
+ return {needed:true,fresh_successes:fresh,minimum_fresh:minimumFresh,max_fallback_checks:maxFallbackChecks,sources:eligible};
+}
+export function incrementalCoverage(checks,{minimumFresh=WATCHLIST_MINIMUM_FRESH_OBSERVATIONS}={}){
+ const fresh=freshWatchlistSuccesses(checks);
+ const hasIssues=checks.some(c=>['unavailable','assisted_review_required'].includes(c.status)||['unavailable','assisted_review_required'].includes(c.previous_status));
  return {sources_considered:checks.length,sources_checked:checks.filter(c=>!['not_due','assisted_review_required'].includes(c.status)).length,
    retained_not_due:checks.filter(c=>c.status==='not_due').length,
    unchanged_sources:checks.filter(c=>c.unchanged).length,
    sources_returning_candidate_links:checks.filter(c=>c.status==='retrieved').length,
+   fresh_successful_observations:fresh,
+   minimum_fresh_observations:minimumFresh,
+   coverage_floor_met:fresh>=minimumFresh,
    assisted_review_required:checks.filter(c=>c.status==='assisted_review_required'||c.previous_status==='assisted_review_required').length,
    unavailable:checks.filter(c=>c.status==='unavailable'||c.previous_status==='unavailable').length,
    fulltext_retrievals:0,
-   coverage_status:checks.some(c=>['unavailable','assisted_review_required','no_candidate_links'].includes(c.status)||['unavailable','assisted_review_required','no_candidate_links'].includes(c.previous_status))?'degraded':'incremental',
-   note:'Catalog discovery only. Retained state is not a new source check. No links does not establish no news.'};
+   coverage_status:fresh<minimumFresh||hasIssues?'degraded':'incremental',
+   note:'Catalog discovery only. Retained state is not a new source check. If fresh successful observations are below the floor, run only the bounded high-value fallback plan; never sweep the whole registry. No links does not establish no news.'};
 }
