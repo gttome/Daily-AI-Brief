@@ -281,7 +281,7 @@ No unused, directly relevant non-technical-agent video with an independently ver
 ### 9. Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span>Podcast · duration not verified</span></div><p><strong>Independent evaluation:</strong> A governance proposal is stronger when it specifies who evaluates, what access they receive and how findings affect deployment decisions.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to distinguish concrete evaluator access proposals from general calls to slow AI.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span>37:00 podcast</span></div><p><strong>Independent evaluation:</strong> A governance proposal is stronger when it specifies who evaluates, what access they receive and how findings affect deployment decisions.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How to distinguish concrete evaluator access proposals from general calls to slow AI.</p></div></aside>
 <!-- reader-release:end -->
 
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-09-16-frontier-pacing" data-podcast-title="Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal" data-podcast-url="/podcasts/2026-09-16/frontier-pacing/" hidden></span>
@@ -291,8 +291,8 @@ No unused, directly relevant non-technical-agent video with an independently ver
 **Show:** The AI Daily Brief  
 **Host / guest:** Nathaniel Whittemore  
 **Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 16, 2026  
-**Duration:** Not independently verified · No episode time limit  
+**Date:** September 14, 2026  
+**Duration:** 37:00 · No episode time limit  
 **Topics:** frontier model pacing, independent evaluation, AI governance, evidence quality
 
 **Summary:** Nathaniel Whittemore examines the emerging debate over frontier-model pacing and third-party evaluation, including public reactions from major AI leaders and competing safety, competition and incentive arguments.
@@ -305,9 +305,9 @@ No unused, directly relevant non-technical-agent video with an independently ver
 
 **Coverage:** Selected inside the preferred preceding-48-hour window after checking registered publisher catalogs and prior podcast identities.
 
-**Evidence:** Practitioner analysis. The publisher’s September 16 edition identifies the title, show context and current publication date. The publisher did not expose a reliable exact runtime at selection time; podcast duration is uncapped.
+**Evidence:** Practitioner analysis. The publisher’s September 14 episode page verifies the title, show context and publication date; Apple Podcasts independently lists a 37-minute runtime.
 
-**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-16" data-item-id="dab-podcast-2026-09-16-frontier-pacing" data-edition-date="2026-09-16" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher episode and transcript</a>
+**Listen / watch:** <a href="https://aidailybrief.ai/e/2026-09-14" data-item-id="dab-podcast-2026-09-16-frontier-pacing" data-edition-date="2026-09-16" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Publisher episode and transcript</a> · <a href="https://podcasts.apple.com/us/podcast/even-other-ai-labs-are-rallying-around-anthropics-slowdown/id1680633614?i=1000789646778" data-item-id="dab-podcast-2026-09-16-frontier-pacing" data-edition-date="2026-09-16" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-16" data-feedback-story-id="dab-podcast-2026-09-16-frontier-pacing">
   <span class="feedback-prompt">How useful was this?</span>
