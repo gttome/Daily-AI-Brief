@@ -1,0 +1,74 @@
+name: Sep 16 Informatica canonical source repair
+
+on:
+  push:
+    branches:
+      - fix/sep16-informatica-canonical
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sep16-informatica-canonical-repair
+  cancel-in-progress: false
+
+jobs:
+  repair:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repair branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: fix/sep16-informatica-canonical
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Correct canonical reader source
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          const file='_data/editions/2026-09-16.json';
+          const edition=JSON.parse(fs.readFileSync(file,'utf8'));
+          const story=edition.stories.find(item=>item.story_id==='dab-story-2026-09-16-5bc218ad');
+          if(!story) throw new Error('Sep 16 Informatica story not found');
+          story.source={
+            ...story.source,
+            title:'Informatica Catalog Discovery',
+            organization:'Informatica',
+            url:'https://claude.com/connectors/informatica-catalog-discovery',
+            evidence_type:'official_documentation',
+            normalized_url:'https://claude.com/connectors/informatica-catalog-discovery'
+          };
+          fs.writeFileSync(file,JSON.stringify(edition,null,2)+'\n');
+
+          const layout='_layouts/default.html';
+          let html=fs.readFileSync(layout,'utf8');
+          const hotfix=`\n        document.querySelectorAll('a[data-item-id="dab-story-2026-09-16-5bc218ad"][data-action="source_clicks"]').forEach(function (link) {\n          link.setAttribute('href', 'https://claude.com/connectors/informatica-catalog-discovery');\n          link.textContent = 'Informatica Catalog Discovery';\n        });`;
+          if(!html.includes(hotfix)) throw new Error('Expected temporary reader hotfix not found');
+          html=html.replace(hotfix,'');
+          fs.writeFileSync(layout,html);
+          NODE
+
+      - name: Regenerate all derived reader surfaces
+        run: node _generator/cli.mjs refresh-derived --date 2026-09-16
+
+      - name: Validate repaired repository
+        run: |
+          node --test _generator/test/*.test.mjs
+          node _tools/validate-contracts.mjs
+          node _generator/cli.mjs validate-repo --commit "$GITHUB_SHA"
+          node _generator/cli.mjs integration-check
+
+      - name: Remove one-time workflow and commit repair
+        run: |
+          git config user.name "Daily AI Brief Automation"
+          git config user.email "130812356+gttome@users.noreply.github.com"
+          git rm .github/workflows/sep16-informatica-canonical-repair.yml
+          git add -A
+          git diff --cached --stat
+          git commit -m "Correct Sep 16 Informatica canonical source"
+          git push origin HEAD:fix/sep16-informatica-canonical
