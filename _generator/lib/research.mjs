@@ -7,6 +7,7 @@ export const FOCUSES = ['technical_ai_engineering','applied_genai_knowledge_work
 export const PRIMARY_FRESHNESS_HOURS = 24;
 export const DEFAULT_FALLBACK_HOURS = 72;
 export const AGENT_SKILLS_FALLBACK_HOURS = 168;
+export const DEFAULT_DEEP_CANDIDATE_TARGET = 9;
 const time = value => typeof value === 'string' && value.trim() ? Date.parse(value) : NaN;
 
 export function researchUrl(value) {
@@ -148,7 +149,6 @@ export class RetrievalCache {
         return {...entry,cache_status:'miss'};
       } catch(error) {this.metrics.failed_retrievals++;throw error;}
     })();
-    // Forced verification is independent and must not remove another in-flight request.
     if(!force)this.pending.set(key,task);
     try {return await task;} finally {if(this.pending.get(key)===task)this.pending.delete(key);}
   }
@@ -164,11 +164,15 @@ export function researchTelemetry({startedAt,endedAt,cache,packets=[],metadataSo
     usage:{exact_platform_tokens:null,exact_platform_credits:null,weekly_usage_measurement_status:'unavailable'}};
 }
 
-export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=12}={}) {
+export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=DEFAULT_DEEP_CANDIDATE_TARGET}={}) {
   if(!cache || typeof fetcher!=='function' || typeof reviewer!=='function') throw Error('Cache, retriever and explicit editorial reviewer required');
   if(!Number.isInteger(minDeepCandidates)||minDeepCandidates<9) throw Error('Deep target must preserve category backups');
   const startedAt=new Date().toISOString(),plan=filterCandidates(candidates,{now,primaryAgeHours,maxAgeHours});
-  const queues=FOCUSES.map(f=>[...plan.fresh.filter(c=>c.focus===f),...plan.fallback.filter(c=>c.focus===f)]);
+  const score=c=>Number.isFinite(c.preliminary_score)?c.preliminary_score:Number.isFinite(c.candidate_score?.total)?c.candidate_score.total:Number.isFinite(c.score)?c.score:0;
+  const queues=FOCUSES.map(f=>[
+    ...plan.fresh.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a)),
+    ...plan.fallback.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a))
+  ]);
   const ordered=[];
   while(queues.some(q=>q.length))for(const queue of queues)if(queue.length)ordered.push(queue.shift());
   const packets=[],failures=[],pending_review=[],processed=[];
