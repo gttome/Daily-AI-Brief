@@ -512,8 +512,8 @@
     "title": "Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal",
     "show": "The AI Daily Brief",
     "host": "Nathaniel Whittemore",
-    "publication_date": "2026-09-16",
-    "runtime_seconds": null,
+    "publication_date": "2026-09-14",
+    "runtime_seconds": 2220,
     "focus": "applied_genai_knowledge_workers",
     "topics": [
       "frontier model pacing",
@@ -521,18 +521,22 @@
       "AI governance",
       "evidence quality"
     ],
-    "url": "https://aidailybrief.ai/e/2026-09-16",
+    "url": "https://aidailybrief.ai/e/2026-09-14",
     "permanent_url": "/podcasts/2026-09-16/frontier-pacing/",
     "summary": "Nathaniel Whittemore examines the emerging debate over frontier-model pacing and third-party evaluation, including public reactions from major AI leaders and competing safety, competition and incentive arguments.",
     "why_useful": "The episode offers a current map of the governance debate and makes it easier to separate concrete proposals—such as independent evaluators with privileged access—from broader rhetoric.",
     "connection": "It complements today’s technical controls by asking who should verify frontier systems and how operational evidence should inform governance beyond product-level safeguards.",
-    "selection_rationale": "Selected from the registered always-check source because it was published today, is unused, and directly connects evidence, evaluation and AI governance.",
-    "verification_note": "The publisher’s September 16 edition identifies the title, show context and current publication date. The publisher did not expose a reliable exact runtime at selection time; podcast duration is uncapped.",
+    "selection_rationale": "Selected from the registered always-check source because it was published within the preferred preceding-48-hour window, is unused, and directly connects evidence, evaluation and AI governance.",
+    "verification_note": "The publisher’s September 14 episode page verifies the title, show context and publication date; Apple Podcasts independently lists a 37-minute runtime.",
     "coverage_note": "Selected inside the preferred preceding-48-hour window after checking registered publisher catalogs and prior podcast identities.",
     "platforms": [
       {
         "name": "Publisher episode and transcript",
-        "url": "https://aidailybrief.ai/e/2026-09-16"
+        "url": "https://aidailybrief.ai/e/2026-09-14"
+      },
+      {
+        "name": "Apple Podcasts",
+        "url": "https://podcasts.apple.com/us/podcast/even-other-ai-labs-are-rallying-around-anthropics-slowdown/id1680633614?i=1000789646778"
       }
     ]
   },
