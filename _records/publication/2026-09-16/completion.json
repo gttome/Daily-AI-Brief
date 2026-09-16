@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20260916T131126Z-659df209",
+  "run_id": "20260916t1220z",
+  "phase": "pages_verified",
+  "edition_id": "dab-edition-2026-09-16",
+  "observed_at": "2026-09-16T13:11:26Z",
+  "baseline_main_sha": "30ce9d8f8414d66d43ae2cb7b78646fa97c453ce",
+  "staged_tree_digest": "sha256:561790160b3000ae2c6eba9bb2d71b9c8ed81a3a31795f9a3b55034e3682c9f9",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #108 passed candidate CI 35096339676. Repaired production SHA 659df209e5529ed4fbbb5a47e0befc541b8f4fdd passed CI 35098452169 and Pages 35098450625."
+    },
+    {
+      "check_id": "live_reader_routes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Homepage, dated brief, archive, both watchlist routes, six story pages, podcast page, RSS, JSON feed and calendar returned HTTP 200. Both corrected podcast links returned HTTP 200."
+    },
+    {
+      "check_id": "live_images_interactions",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six live PNG hashes match the approved release manifest. Browser execution confirmed one canonical article Share control, a visible share count and five-star controls; homepage and dated brief each contain seven groups and 35 stars because both video slots are empty."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-09-16.json",
+      "_data/book-reading.json"
+    ],
+    "assets": [
+      "briefs/images/2026-09-16/01-zero-trust-agent-runtime.png",
+      "briefs/images/2026-09-16/02-workers-granular-authorization.png",
+      "briefs/images/2026-09-16/03-gemini-live-extended-thinking.png",
+      "briefs/images/2026-09-16/04-copilot-property-taxonomy.png",
+      "briefs/images/2026-09-16/05-aiforce-governed-interface.png",
+      "briefs/images/2026-09-16/06-informatica-agent-skill.png"
+    ],
+    "derived_outputs": [
+      "briefs/2026-09-16.md",
+      "latest.md",
+      "index.md",
+      "archive.md",
+      "README.md",
+      "feed.xml",
+      "daily-feed.xml",
+      "feed.json",
+      "qa/2026-09-16.md",
+      "qa/index.md"
+    ],
+    "operational_records": [
+      "_records/publication/2026-09-16/20260916t1220z.validated.json",
+      "_records/publication/2026-09-16/completion.json",
+      "_records/qa/2026-09-16.json",
+      "_records/analytics/2026-09-16.json",
+      "_records/attempts/2026-09-16/dab-attempt-2026-09-16-publication-20260916T115724Z.json"
+    ]
+  },
+  "commit_sha": "659df209e5529ed4fbbb5a47e0befc541b8f4fdd",
+  "pages": {
+    "run_id": 35098450625,
+    "conclusion": "success",
+    "verified_at": "2026-09-16T13:11:26Z"
+  },
+  "rollback_target_sha": "30ce9d8f8414d66d43ae2cb7b78646fa97c453ce",
+  "supersedes_event_id": "dab-publication-event-20260916T122000Z-7a771a5f"
+}
