@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {FOCUS} from './constants.mjs';
 import {formatDate, listBriefDates} from './util.mjs';
-import {readerFoundationFiles, renderInlineFeedback, renderPodcast, renderSeriesImplications, trackedLink} from './reader.mjs';
+import {readerFoundationFiles, renderInlineFeedback, renderPodcast, renderPodcastCollection, renderSeriesImplications, trackedLink} from './reader.mjs';
 import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 const SERIES_SEPARATION_DATE='2026-09-16';
@@ -40,6 +40,7 @@ function readerSafeEdition(edition) {
   copy.stories = (copy.stories || []).map(readerSafeItem);
   for (const key of ['general','agents_non_technical_people']) if (copy.worth_watching?.[key]) copy.worth_watching[key] = readerSafeItem(copy.worth_watching[key]);
   if (copy.podcast) copy.podcast = readerSafeItem(copy.podcast);
+  if (Array.isArray(copy.podcasts)) copy.podcasts = copy.podcasts.map(readerSafeItem);
   return copy;
 }
 
@@ -152,9 +153,10 @@ export function renderBody(edition) {
   validateBookReading(edition);
   validateReadingSupport(edition);
   const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
-  const podcastSource=separated&&edition.podcast?readerSafeItem(edition.podcast):edition.podcast;
-  const podcast=publicPodcast(podcastSource,edition.brief_date);
-  const podcastBlock=podcast?(separated?stripEditorOnlyMarkup(renderPodcast(podcast,edition.brief_date)):renderPodcast(podcast,edition.brief_date))+'\n\n':'';
+  const mediaEdition=separated?readerSafeEdition(edition):edition;
+  if(mediaEdition.podcast) mediaEdition.podcast=publicPodcast(mediaEdition.podcast,edition.brief_date);
+  const renderedPodcasts=renderPodcastCollection(mediaEdition);
+  const podcastBlock=renderedPodcasts?(separated?stripEditorOnlyMarkup(renderedPodcasts):renderedPodcasts)+'\n\n':'';
   const readerStories=readerOrderedStories(edition.stories,edition.brief_date);
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
