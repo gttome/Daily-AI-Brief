@@ -7,6 +7,7 @@ import {PUBLIC_BASE} from './constants.mjs';
 import {scanHistoricalBriefs} from './historical.mjs';
 import {formatDate} from './util.mjs';
 import {trendFiles} from './trends.mjs';
+import {editionPodcasts,EMPTY_PODCAST_COPY,MULTI_PODCAST_EFFECTIVE_DATE} from './podcasts.mjs';
 
 const focusLabels = {
   technical_ai_engineering: 'Technical AI Engineering',
@@ -88,6 +89,17 @@ function historicalStory(story) {
   };
 }
 
+function addEditionMedia(map, record){
+  for (const [key, suffix, ordinal] of [['general','general',7],['agents_non_technical_people','agent-skills',8]]) {
+    const slot=record.worth_watching?.[key];
+    if(slot?.status==='included') map.set(`${record.brief_date}:${ordinal}`,videoStory(slot,record,suffix,ordinal));
+  }
+  editionPodcasts(record).forEach((slot,index)=>{
+    const ordinal=slot.ordinal||9+index;
+    map.set(`${record.brief_date}:${ordinal}`,podcastStory(slot,record,ordinal));
+  });
+}
+
 export function readerStories(repoRoot, edition, days = 30) {
   const historical = scanHistoricalBriefs(repoRoot, edition.brief_date, days).stories.map(historicalStory);
   const byEditionPosition = new Map(historical.map(story => [`${story.brief_date}:${story.ordinal}`, story]));
@@ -97,17 +109,11 @@ export function readerStories(repoRoot, edition, days = 30) {
     const record = name === `${edition.brief_date}.json` ? edition : JSON.parse(fs.readFileSync(path.join(canonicalDir, name), 'utf8'));
     const age = (Date.parse(edition.brief_date) - Date.parse(record.brief_date)) / 86400000;
     if (age >= 0 && age < days) {
-      for (const story of record.stories || []) {
-        byEditionPosition.set(`${record.brief_date}:${story.ordinal}`, canonicalStory(story, record));
-      }
-      if (record.podcast?.status === 'included') byEditionPosition.set(`${record.brief_date}:9`, podcastStory(record.podcast, record));
-      for (const [key, suffix, ordinal] of [['general','general',7],['agents_non_technical_people','agent-skills',8]]) {
-        const slot=record.worth_watching?.[key];
-        if(slot?.status==='included') byEditionPosition.set(`${record.brief_date}:${ordinal}`,videoStory(slot,record,suffix,ordinal));
-      }
+      for (const story of record.stories || []) byEditionPosition.set(`${record.brief_date}:${story.ordinal}`, canonicalStory(story, record));
+      addEditionMedia(byEditionPosition,record);
     }
   }
-  if (edition.podcast?.status === 'included') byEditionPosition.set(`${edition.brief_date}:9`, podcastStory(edition.podcast, edition));
+  addEditionMedia(byEditionPosition,edition);
   return [...byEditionPosition.values()].sort((a, b) => b.brief_date.localeCompare(a.brief_date) || a.ordinal - b.ordinal);
 }
 
@@ -249,7 +255,7 @@ export function renderJsonFeed(stories) {
     title: 'Daily Generative AI Brief',
     home_page_url: `${PUBLIC_BASE}/`,
     feed_url: `${PUBLIC_BASE}/feed.json`,
-    description: 'Six AI articles, two videos, and one podcast selected daily for George Tome.',
+    description: 'Six AI articles, up to two videos, and up to two podcasts selected daily.',
     items: stories.map(story => ({
       id: story.story_id,
       url: absoluteItemUrl(story.permanent_url),
@@ -292,7 +298,7 @@ export function readerFoundationFiles(edition, repoRoot) {
       files.set(`videos/${story.brief_date}/${story.slug}.md`,renderStoryPage(story, true));
     } else if (story.content_type === 'Podcast') {
       const header = renderStoryPage(story, false).split('---\n\n')[0] + '---\n\n';
-      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + renderPodcast(story.podcast, story.brief_date).replace(/^## Worth Listening — Podcast\n\n### 9\. [^\n]+\n\n/, '') + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);
+      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + renderPodcastItem(story.podcast, story.brief_date, story.ordinal) + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);
     } else files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
   }
   files.set('archive.md', renderArchiveSearch(stories));
@@ -318,10 +324,10 @@ export function validateFeeds(atom, json) {
   return errors;
 }
 
-export function podcastStory(slot, edition) {
+export function podcastStory(slot, edition, ordinal=slot.ordinal||9) {
   return {
     story_id: slot.item_id, edition_id: edition.edition_id, brief_date: edition.brief_date,
-    ordinal: 9, content_type: 'Podcast', feedback_subject: 'podcast', headline: slot.title,
+    ordinal, content_type: 'Podcast', feedback_subject: 'podcast', headline: slot.title,
     slug: slot.permanent_url.split('/').filter(Boolean).at(-1), permanent_url: slot.permanent_url,
     event_date: slot.publication_date, focus: slot.focus, topics: slot.topics,
     companies: [slot.show], normalized_urls: [slot.url], source_title: slot.show,
@@ -331,12 +337,9 @@ export function podcastStory(slot, edition) {
   };
 }
 
-export function renderPodcast(slot, briefDate) {
-  if (!slot) return '';
-  if (slot.status === 'empty') return `## Worth Listening — Podcast\n\n**Slot 9:** ${slot.exception}`;
-  return `## Worth Listening — Podcast
-
-### 9. ${slot.title}
+export function renderPodcastItem(slot, briefDate, ordinal=slot?.ordinal||9) {
+  if (!slot || slot.status !== 'included') return '';
+  return `### ${ordinal}. ${slot.title}
 
 ${briefDate >= "2026-09-12" ? renderReadingSupport(slot,slot.item_id,briefDate,"Podcast")+"\n\n" : ""}<span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
 
@@ -364,6 +367,19 @@ ${renderSeriesImplications(slot,briefDate)}
 **Listen / watch:** ${slot.platforms.map(p => trackedLink(p.url,p.name,slot.item_id,briefDate,'source_clicks',true)).join(' · ')}
 
 ${renderInlineFeedback({brief_date:briefDate,story_id:slot.item_id,feedback_subject:'podcast'})}${renderBookReading(slot.item_id,briefDate)}`;
+}
+
+export function renderPodcast(slot, briefDate) {
+  if (!slot) return '';
+  if (slot.status === 'empty') return `## Worth Listening — Podcast\n\n**Slot 9:** ${slot.exception}`;
+  return `## Worth Listening — Podcast\n\n${renderPodcastItem(slot,briefDate,slot.ordinal||9)}`;
+}
+
+export function renderPodcastCollection(edition){
+  if(edition.brief_date<MULTI_PODCAST_EFFECTIVE_DATE)return edition.podcast?renderPodcast(edition.podcast,edition.brief_date):'';
+  const items=editionPodcasts(edition);
+  if(!items.length)return `## Worth Listening — Podcasts\n\n${EMPTY_PODCAST_COPY}`;
+  return `## Worth Listening — Podcasts\n\n${items.map((slot,index)=>renderPodcastItem(slot,edition.brief_date,slot.ordinal||9+index)).join('\n\n')}`;
 }
 
 export const absoluteItemUrl = url => /^https:\/\//.test(url) ? url : `${PUBLIC_BASE}${url}`;
