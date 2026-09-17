@@ -12,17 +12,18 @@ function crc32(buffer){let c=0xffffffff;const t=table();for(const byte of buffer
 export function inspectPng(buffer,{minimumWidth=VISUAL_CANVAS.width,minimumHeight=VISUAL_CANVAS.height}={}){
  const errors=[];if(!Buffer.isBuffer(buffer))buffer=Buffer.from(buffer||[]);
  if(buffer.length<33||buffer.subarray(0,8).toString('hex')!==PNG_SIGNATURE)return {pass:false,errors:['invalid_png_signature_or_truncated'],width:null,height:null,bytes:buffer.length,sha256:createHash('sha256').update(buffer).digest('hex')};
- let offset=8,width=null,height=null,seenIHDR=false,seenIEND=false,chunks=0;
+ let offset=8,width=null,height=null,seenIHDR=false,seenIDAT=false,seenIEND=false,chunks=0;
  while(offset+12<=buffer.length){
   const length=buffer.readUInt32BE(offset),type=buffer.subarray(offset+4,offset+8).toString('ascii'),dataStart=offset+8,dataEnd=dataStart+length,crcOffset=dataEnd;
   if(crcOffset+4>buffer.length){errors.push(`truncated_chunk:${type||'unknown'}`);break;}
   const stored=buffer.readUInt32BE(crcOffset),actual=crc32(buffer.subarray(offset+4,dataEnd));if(stored!==actual)errors.push(`crc_mismatch:${type}`);
   chunks++;
   if(type==='IHDR'){if(seenIHDR||length!==13)errors.push('invalid_ihdr');else{seenIHDR=true;width=buffer.readUInt32BE(dataStart);height=buffer.readUInt32BE(dataStart+4);}}
+  if(type==='IDAT')seenIDAT=true;
   if(type==='IEND'){seenIEND=true;offset=crcOffset+4;if(offset!==buffer.length)errors.push('bytes_after_iend');break;}
   offset=crcOffset+4;
  }
- if(!seenIHDR)errors.push('missing_ihdr');if(!seenIEND)errors.push('missing_iend');
+ if(!seenIHDR)errors.push('missing_ihdr');if(!seenIDAT)errors.push('missing_idat');if(!seenIEND)errors.push('missing_iend');
  if(Number.isInteger(width)&&width<minimumWidth)errors.push(`width_below_minimum:${width}<${minimumWidth}`);
  if(Number.isInteger(height)&&height<minimumHeight)errors.push(`height_below_minimum:${height}<${minimumHeight}`);
  return {pass:errors.length===0,errors,width,height,bytes:buffer.length,chunks,sha256:createHash('sha256').update(buffer).digest('hex')};
