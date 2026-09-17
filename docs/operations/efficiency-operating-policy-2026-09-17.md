@@ -1,6 +1,6 @@
 # Daily Generative AI Brief — Efficiency Operating Policy
 
-Effective for new editions beginning September 18, 2026. September 17 remains the visual and measurement baseline. This file supersedes older efficiency instructions where they conflict; detailed machine-readable budgets are in `_data/efficiency-operating-policy.json`.
+Effective for new editions beginning September 18, 2026. September 17 remains the visual and measurement baseline. This file supersedes older efficiency instructions where they conflict; detailed machine-readable budgets are in `docs/operations/efficiency-operating-policy.json`.
 
 ## Normal path
 
