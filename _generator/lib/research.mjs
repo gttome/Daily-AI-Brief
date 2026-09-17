@@ -2,13 +2,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {normalizeUrl, sha256} from './util.mjs';
 
-export const RESEARCH_VERSION = 'efficiency-phase-1-v1';
+export const RESEARCH_VERSION = 'efficiency-phase-2-v1';
 export const FOCUSES = ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
 export const PRIMARY_FRESHNESS_HOURS = 24;
 export const DEFAULT_FALLBACK_HOURS = 72;
 export const AGENT_SKILLS_FALLBACK_HOURS = 168;
+export const DEFAULT_METADATA_CANDIDATE_LIMIT = 20;
 export const DEFAULT_DEEP_CANDIDATE_TARGET = 9;
+export const MAX_DEEP_CANDIDATE_EXCEPTION = 12;
+export const NORMAL_RETRIEVED_CHAR_BUDGET = 1500000;
+export const ABSOLUTE_RETRIEVED_CHAR_BUDGET = 2500000;
 const time = value => typeof value === 'string' && value.trim() ? Date.parse(value) : NaN;
+const compactText=(value,max)=>typeof value==='string'?value.normalize('NFC').replace(/\u0000/g,'').replace(/[\u0001-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'').slice(0,max):value;
 
 export function researchUrl(value) {
   const url = new URL(value);
@@ -103,22 +108,31 @@ export function createEvidencePacket(candidate, source, review) {
 }
 
 export class RetrievalCache {
-  constructor({directory=null, now=()=>new Date().toISOString(), ttlMs=3600000}={}) {
+  constructor({directory=null, now=()=>new Date().toISOString(), ttlMs=3600000, normalCharBudget=NORMAL_RETRIEVED_CHAR_BUDGET, absoluteCharBudget=ABSOLUTE_RETRIEVED_CHAR_BUDGET}={}) {
     if (!Number.isFinite(ttlMs)||ttlMs<=0) throw Error('Positive finite cache TTL required');
-    this.directory=directory;this.now=now;this.ttlMs=ttlMs;this.entries=new Map();this.pending=new Map();
-    this.metrics={cache_hits:0,cache_misses:0,source_text_chars_retrieved:0,fulltext_retrievals:0,metadata_retrievals:0,failed_retrievals:0};
+    if(!Number.isInteger(normalCharBudget)||normalCharBudget<1||!Number.isInteger(absoluteCharBudget)||absoluteCharBudget<normalCharBudget)throw Error('Valid retrieval character budgets required');
+    this.directory=directory;this.now=now;this.ttlMs=ttlMs;this.normalCharBudget=normalCharBudget;this.absoluteCharBudget=absoluteCharBudget;this.entries=new Map();this.pending=new Map();
+    this.metrics={cache_hits:0,cache_misses:0,conditional_revalidations:0,not_modified_304:0,source_text_chars_retrieved:0,fulltext_retrievals:0,metadata_retrievals:0,failed_retrievals:0,normal_char_budget:normalCharBudget,absolute_char_budget:absoluteCharBudget,normal_char_budget_exceeded:false};
   }
   file(key) { return path.join(this.directory,sha256(key)+'.json'); }
   key(url,kind) { if(!['metadata','fulltext'].includes(kind)) throw Error('Explicit retrieval kind required'); return kind+':'+researchUrl(url); }
-  load(key) {
+  readStored(key){
     let entry=this.entries.get(key);
-    if (!entry && this.directory) { try {entry=JSON.parse(fs.readFileSync(this.file(key),'utf8'));} catch {return null;} }
-    if (!entry) return null;
-    const now=time(this.now()),fetched=time(entry.fetched_at),expires=time(entry.expires_at);
-    if(entry.key!==key || typeof entry.text!=='string' || sha256(entry.text)!==entry.content_hash ||
-      !Number.isFinite(now)||!Number.isFinite(fetched)||!Number.isFinite(expires) || fetched>now || expires<=now ||
-      now-fetched>=this.ttlMs || expires-fetched>this.ttlMs) return null;
+    if(!entry&&this.directory){try{entry=JSON.parse(fs.readFileSync(this.file(key),'utf8'));}catch{return null;}}
+    if(!entry)return null;
+    const fetched=time(entry.fetched_at);
+    if(entry.key!==key||typeof entry.text!=='string'||sha256(entry.text)!==entry.content_hash||!Number.isFinite(fetched))return null;
     return entry;
+  }
+  load(key) {
+    const entry=this.readStored(key);if(!entry)return null;
+    const now=time(this.now()),fetched=time(entry.fetched_at),expires=time(entry.expires_at);
+    if(!Number.isFinite(now)||!Number.isFinite(expires)||fetched>now||expires<=now||now-fetched>=this.ttlMs||expires-fetched>this.ttlMs)return null;
+    return entry;
+  }
+  persist(key,entry){
+    this.entries.set(key,entry);
+    if(this.directory){fs.mkdirSync(this.directory,{recursive:true});const temp=this.file(key)+'.'+process.pid+'.'+Math.random().toString(16).slice(2)+'.tmp';fs.writeFileSync(temp,JSON.stringify(entry));fs.renameSync(temp,this.file(key));}
   }
   async retrieve(url,fetcher,{kind='fulltext',force=false}={}) {
     const normalized=researchUrl(url),key=this.key(url,kind);
@@ -128,24 +142,29 @@ export class RetrievalCache {
       if(this.pending.has(key)) {this.metrics.cache_hits++;return {...await this.pending.get(key),cache_status:'coalesced'};}
     }
     this.metrics.cache_misses++;
+    const stale=!force?this.readStored(key):null;
+    const conditional=stale?{etag:stale.etag||null,last_modified:stale.last_modified||null}:null;
+    if(conditional?.etag||conditional?.last_modified)this.metrics.conditional_revalidations++;
     const task=(async()=>{
       try {
-        const result=await fetcher(normalized);
-        if(typeof result.text!=='string'||!result.text.trim()) throw Error('Empty retrieved source');
+        const result=await fetcher(normalized,{kind,conditional});
         const fetched_at=this.now(),stamp=time(fetched_at);
         if(!Number.isFinite(stamp)) throw Error('Invalid cache clock');
-        const entry={schema_version:'1.0.0',key,canonical_url:normalized,resolved_url:result.url||normalized,
-          fetched_at,expires_at:new Date(stamp+this.ttlMs).toISOString(),content_hash:sha256(result.text),
-          published_at:result.published_at||null,metadata:result.metadata||null,attempts:result.attempts||[],text:result.text};
-        this.metrics[kind==='fulltext'?'fulltext_retrievals':'metadata_retrievals']++;
-        this.metrics.source_text_chars_retrieved+=result.text.length;
-        this.entries.set(key,entry);
-        if(this.directory) {
-          fs.mkdirSync(this.directory,{recursive:true});
-          const temp=this.file(key)+'.'+process.pid+'.'+Math.random().toString(16).slice(2)+'.tmp';
-          fs.writeFileSync(temp,JSON.stringify(entry));
-          fs.renameSync(temp,this.file(key));
+        if(result?.not_modified===true){
+          if(!stale)throw Error('304 revalidation requires a prior cached representation');
+          const entry={...stale,fetched_at,expires_at:new Date(stamp+this.ttlMs).toISOString(),attempts:result.attempts||stale.attempts||[]};
+          this.metrics.not_modified_304++;this.persist(key,entry);return {...entry,cache_status:'not_modified'};
         }
+        if(typeof result?.text!=='string'||!result.text.trim()) throw Error('Empty retrieved source');
+        const text=compactText(result.text,Math.max(result.text.length,1));
+        const next=this.metrics.source_text_chars_retrieved+text.length;
+        if(next>this.absoluteCharBudget)throw Error(`retrieval_character_budget_exceeded:${next}>${this.absoluteCharBudget}`);
+        this.metrics.normal_char_budget_exceeded=next>this.normalCharBudget;
+        const entry={schema_version:'1.0.0',key,canonical_url:normalized,resolved_url:result.url||normalized,
+          fetched_at,expires_at:new Date(stamp+this.ttlMs).toISOString(),content_hash:sha256(text),
+          published_at:result.published_at||null,metadata:result.metadata||null,etag:result.etag||null,last_modified:result.last_modified||null,attempts:result.attempts||[],text};
+        this.metrics[kind==='fulltext'?'fulltext_retrievals':'metadata_retrievals']++;
+        this.metrics.source_text_chars_retrieved=next;this.persist(key,entry);
         return {...entry,cache_status:'miss'};
       } catch(error) {this.metrics.failed_retrievals++;throw error;}
     })();
@@ -164,21 +183,24 @@ export function researchTelemetry({startedAt,endedAt,cache,packets=[],metadataSo
     usage:{exact_platform_tokens:null,exact_platform_credits:null,weekly_usage_measurement_status:'unavailable'}};
 }
 
-export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=DEFAULT_DEEP_CANDIDATE_TARGET}={}) {
+export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=DEFAULT_DEEP_CANDIDATE_TARGET,metadataCandidateLimit=DEFAULT_METADATA_CANDIDATE_LIMIT,maxDeepCandidates=MAX_DEEP_CANDIDATE_EXCEPTION}={}) {
   if(!cache || typeof fetcher!=='function' || typeof reviewer!=='function') throw Error('Cache, retriever and explicit editorial reviewer required');
-  if(!Number.isInteger(minDeepCandidates)||minDeepCandidates<9) throw Error('Deep target must preserve category backups');
+  if(!Number.isInteger(minDeepCandidates)||minDeepCandidates!==DEFAULT_DEEP_CANDIDATE_TARGET) throw Error(`Normal deep target must be ${DEFAULT_DEEP_CANDIDATE_TARGET}`);
+  if(!Number.isInteger(metadataCandidateLimit)||metadataCandidateLimit<minDeepCandidates)throw Error('Metadata candidate limit must cover the normal deep target');
+  if(!Number.isInteger(maxDeepCandidates)||maxDeepCandidates<minDeepCandidates||maxDeepCandidates>MAX_DEEP_CANDIDATE_EXCEPTION)throw Error(`Deep exception ceiling cannot exceed ${MAX_DEEP_CANDIDATE_EXCEPTION}`);
   const startedAt=new Date().toISOString(),plan=filterCandidates(candidates,{now,primaryAgeHours,maxAgeHours});
   const score=c=>Number.isFinite(c.preliminary_score)?c.preliminary_score:Number.isFinite(c.candidate_score?.total)?c.candidate_score.total:Number.isFinite(c.score)?c.score:0;
   const queues=FOCUSES.map(f=>[
     ...plan.fresh.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a)),
     ...plan.fallback.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a))
   ]);
-  const ordered=[];
-  while(queues.some(q=>q.length))for(const queue of queues)if(queue.length)ordered.push(queue.shift());
-  const packets=[],failures=[],pending_review=[],processed=[];
-  let earlyStop=false;
+  const ranked=[];
+  while(queues.some(q=>q.length))for(const queue of queues)if(queue.length)ranked.push(queue.shift());
+  const ordered=ranked.slice(0,metadataCandidateLimit),packets=[],failures=[],pending_review=[],processed=[];
+  let earlyStop=false,hardStopReason=null;
   for(const candidate of ordered) {
-    if(processed.length>=minDeepCandidates&&researchSufficiency(packets,{now,primaryAgeHours}).sufficient){earlyStop=true;break;}
+    if(processed.length>=minDeepCandidates&&researchSufficiency(packets,{now,primaryAgeHours}).sufficient){earlyStop=true;hardStopReason='fresh_sufficiency_met';break;}
+    if(processed.length>=maxDeepCandidates){hardStopReason='deep_exception_ceiling';break;}
     processed.push(candidate.candidate_id);
     try{
       const source=await cache.retrieve(candidate.canonical_url,fetcher,{kind:'fulltext'});
@@ -188,10 +210,14 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
     }catch(e){failures.push({candidate_id:candidate.candidate_id,reason:e.message});}
   }
   const sufficiency=researchSufficiency(packets,{now,primaryAgeHours});
+  if(!hardStopReason&&processed.length>=maxDeepCandidates&&!sufficiency.sufficient)hardStopReason='deep_exception_ceiling';
   const telemetry=researchTelemetry({startedAt,endedAt:new Date().toISOString(),cache,packets,scope:'selective_research'});
+  telemetry.research.metadata_candidates_considered=ordered.length;
+  telemetry.research.metadata_candidates_deferred=Math.max(0,ranked.length-ordered.length);
   telemetry.research.deep_candidates=processed.length;
   telemetry.research.early_stop_triggered=earlyStop;
+  telemetry.research.hard_stop_reason=hardStopReason;
   return {plan,packets,failures,pending_review,processed,
-    deferred:ordered.filter(c=>!processed.includes(c.candidate_id)),sufficiency,telemetry,
-    selection_status:'requires_existing_candidate_scoring_and_canonical_gates'};
+    deferred:[...ordered.filter(c=>!processed.includes(c.candidate_id)),...ranked.slice(metadataCandidateLimit)],sufficiency,telemetry,
+    selection_status:sufficiency.sufficient?'ready_for_single_editorial_pass':'requires_targeted_exception_or_additional_evidence'};
 }
