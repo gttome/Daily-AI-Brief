@@ -4,7 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {sha256} from '../lib/util.mjs';
-import {RetrievalCache,filterCandidates,createEvidencePacket,researchSufficiency,FOCUSES,researchTelemetry,runSelectiveResearch,PRIMARY_FRESHNESS_HOURS,DEFAULT_FALLBACK_HOURS,AGENT_SKILLS_FALLBACK_HOURS} from '../lib/research.mjs';
+import {RetrievalCache,filterCandidates,createEvidencePacket,researchSufficiency,FOCUSES,researchTelemetry,runSelectiveResearch,PRIMARY_FRESHNESS_HOURS,DEFAULT_FALLBACK_HOURS,AGENT_SKILLS_FALLBACK_HOURS,DEFAULT_METADATA_CANDIDATE_LIMIT,MAX_DEEP_CANDIDATE_EXCEPTION} from '../lib/research.mjs';
 const now='2026-09-14T12:00:00Z';
 const candidate={candidate_id:'candidate-1',headline:'A reviewed development',canonical_url:'https://example.org/news',published_at:'2026-09-14T10:00:00Z',focus:FOCUSES[0],source_reliability:'primary',publisher:'Example'};
 const source={canonical_url:candidate.canonical_url,text:'The evaluated system completed 12 tasks. This is a controlled test.',fetched_at:now};
@@ -12,6 +12,7 @@ const review={status:'reviewed',reviewer:'editorial-review',reviewed_at:now,sour
 
 test('freshness constants preserve a 24-hour primary window and bounded fallbacks',()=>{
  assert.equal(PRIMARY_FRESHNESS_HOURS,24);assert.equal(DEFAULT_FALLBACK_HOURS,72);assert.equal(AGENT_SKILLS_FALLBACK_HOURS,168);
+ assert.equal(DEFAULT_METADATA_CANDIDATE_LIMIT,20);assert.equal(MAX_DEEP_CANDIDATE_EXCEPTION,12);
 });
 test('prefilter retains missing metadata for review and never caps categories',()=>{
  const list=Array.from({length:25},(_,i)=>({...candidate,canonical_url:'https://example.org/'+i}));
@@ -76,6 +77,20 @@ test('persistent cache rejects expiry, future clocks, corruption and honors fres
  await cache.retrieve(candidate.canonical_url,fetcher,{force:true});assert.equal(count,5);
  }finally{fs.rmSync(directory,{recursive:true,force:true});}
 });
+test('expired persistent cache conditionally revalidates and 304 carries prior bytes without reacquisition',async()=>{
+ const directory=fs.mkdtempSync(path.join(os.tmpdir(),'dab-cache-conditional-'));
+ try{
+  let current=now,calls=0,seenConditional=null;
+  const cache1=new RetrievalCache({directory,now:()=>current,ttlMs:1000});
+  await cache1.retrieve(candidate.canonical_url,async()=>({text:'stable evidence',etag:'"v1"',last_modified:'Mon, 14 Sep 2026 11:00:00 GMT'}),{kind:'metadata'});
+  assert.equal(cache1.metrics.source_text_chars_retrieved,'stable evidence'.length);
+  current='2026-09-14T12:00:02Z';
+  const cache2=new RetrievalCache({directory,now:()=>current,ttlMs:1000});
+  const result=await cache2.retrieve(candidate.canonical_url,async(url,options)=>{calls++;seenConditional=options.conditional;return {not_modified:true};},{kind:'metadata'});
+  assert.equal(calls,1);assert.equal(seenConditional.etag,'"v1"');assert.equal(result.cache_status,'not_modified');
+  assert.equal(cache2.metrics.not_modified_304,1);assert.equal(cache2.metrics.source_text_chars_retrieved,0);
+ }finally{fs.rmSync(directory,{recursive:true,force:true});}
+});
 test('failed retrieval is not cached or labeled successful; missing telemetry is null',async()=>{
  const cache=new RetrievalCache({now:()=>now});
  await assert.rejects(cache.retrieve(candidate.canonical_url,async()=>{throw Error('403');}),/403/);
@@ -97,14 +112,18 @@ test('metadata discovery parses RSS and Atom without inventing missing dates',()
  assert.equal(h.published_at,null);assert.equal(h.retrieval_status,'metadata_only');
 });
 
-test('selective research has no rigid cap when reviewed category backups are insufficient',async()=>{
+test('selective research stops at the 9 normal target when fresh category backups are sufficient',async()=>{
  const candidates=FOCUSES.flatMap((focus,i)=>Array.from({length:7},(_,j)=>({...candidate,candidate_id:i+'-'+j,canonical_url:'https://example.org/'+i+'/'+j,focus})));
  const fetcher=async()=>({text:source.text});
  const reviewer=async()=>review;
- let result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer});
- assert.equal(result.processed.length,9);assert.equal(result.deferred.length,12);assert.equal(result.telemetry.research.early_stop_triggered,true);
- result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer:async(c)=>({...review,confidence:c.focus===FOCUSES[2]?'low':'high'})});
- assert.equal(result.processed.length,21);assert.equal(result.sufficiency.sufficient,false);
+ const result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer});
+ assert.equal(result.processed.length,9);assert.equal(result.telemetry.research.early_stop_triggered,true);assert.equal(result.selection_status,'ready_for_single_editorial_pass');
+});
+test('selective research permits only a targeted +3 deep-review exception before escalation',async()=>{
+ const candidates=FOCUSES.flatMap((focus,i)=>Array.from({length:7},(_,j)=>({...candidate,candidate_id:i+'-'+j,canonical_url:'https://example.org/'+i+'/'+j,focus})));
+ const result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher:async()=>({text:source.text}),reviewer:async(c)=>({...review,confidence:c.focus===FOCUSES[2]?'low':'high'})});
+ assert.equal(result.processed.length,12);assert.equal(result.sufficiency.sufficient,false);assert.equal(result.telemetry.research.hard_stop_reason,'deep_exception_ceiling');
+ assert.equal(result.selection_status,'requires_targeted_exception_or_additional_evidence');assert.ok(result.deferred.length>0);
 });
 test('selective research processes primary-window candidates before fallback leads in every focus',async()=>{
  const candidates=FOCUSES.flatMap((focus,i)=>[
