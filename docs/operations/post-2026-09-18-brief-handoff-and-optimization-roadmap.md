@@ -237,7 +237,6 @@ The exact schedule must be treated as a production change and validated independ
 - **Largest avoidable wall-time consumer:** `TBD`
 - **Prewarm handoff priority:** `TBD`
 - **Next optimization iteration selected:** `TBD`
-
 ---
 
 ## 7. Ultimate optimization goal
@@ -298,6 +297,19 @@ Implement or complete:
 - append-only per-edition efficiency assessment record;
 - Command Center trend view for credits, runtime, cache efficiency, repairs and quality.
 
+#### How
+
+1. Add a small **stage-telemetry wrapper** around each publisher stage rather than scattering timing code through business logic. Each wrapper should emit `stage_id`, start/end timestamps, elapsed seconds, input/output hashes, retry count, model-call count, context characters, and status.
+2. Extend the existing attempt/efficiency receipt schema so every stage writes into one append-only attempt record. Use `null` plus an explicit `unavailable_reason` whenever the platform does not expose a metric.
+3. Instrument retrieval at the shared acquisition/cache layer so bytes, normalized characters, cache hits/misses, conditional requests, `304` responses, timeouts, and failures are captured once and inherited by Brief and Watchlist consumers.
+4. Add counters at the semantic boundary rather than trying to infer model usage later. Record the number and purpose of editorial calls, escalation calls, and any image/media semantic calls.
+5. Link owner-observed credit measurements to the exact attempt ID and observation timestamp in the private Command Center; do not place private account balances or screenshots in public Git.
+6. Build a deterministic aggregation step that computes comparable derived metrics—credits/story, credits/minute, cache-hit rate, compression ratio, repair share, and stage share—only from recorded raw fields.
+7. Add regression tests for receipt completeness, metric provenance, null handling, append-only history, and stable definitions across editions.
+8. Surface a compact Command Center trend panel only after the underlying receipt is authoritative, so the dashboard is a view over evidence rather than a second source of truth.
+
+**Proof / acceptance:** one complete production attempt can be reconstructed stage by stage from its receipts; every reported metric has provenance; unavailable metrics state why; and the September 17/18 comparison can be recomputed without manual interpretation.
+
 **Value:** without this, sub-100 work becomes guesswork.  
 **Reliability impact:** high positive.  
 **Expected Work-credit leverage:** indirect but foundational.
@@ -317,6 +329,19 @@ Implement:
 - prewarm receipt linked to publisher attempt receipt;
 - daily 06:15–06:30 America/Chicago prewarm only after the handoff is proven;
 - failure isolation so a failed prewarm never blocks the publisher.
+
+#### How
+
+1. Define a **portable cache manifest** independent of a particular runner. Each entry should include normalized URL, retrieval kind, content hash, fetched time, expiry/TTL, ETag, Last-Modified, response size, source ID, and schema/version identifiers.
+2. Store cache payloads by content hash and keep the manifest small. The publisher should validate the manifest and hashes before trusting any warmed entry.
+3. Change the prewarm workflow to publish a bounded cache artifact/manifest that the publisher can actually consume; do not assume the GitHub Actions cache namespace is visible to ChatGPT Work.
+4. Add a publisher bootstrap step that attempts to load the prewarm package, records `prewarm_loaded=true/false`, validates freshness/integrity, and falls back safely to normal acquisition when the package is absent or invalid.
+5. Preserve conditional revalidation: a warmed item inside TTL may be a direct hit; an expired/stale item should supply ETag/Last-Modified and be revalidated rather than blindly reused.
+6. Run a controlled experiment after the September 18 baseline: first without prewarm, then with a manually produced prewarm package close to publisher start. Compare cache hits, conditional requests, retrieved chars/bytes, acquisition time, total wall time, and owner-observed credits.
+7. Verify prewarm contains only public acquisition data and no owner identity, private ratings, credentials, or Command Center private records.
+8. If reuse is proven, schedule the prewarm around **06:15–06:30 America/Chicago**, add DST-safe scheduling, and make prewarm failure non-blocking. The publisher must still be able to complete from a cold cache.
+
+**Proof / acceptance:** the publisher receipt cites the exact prewarm manifest/artifact, shows warmed entries becoming cache hits or conditional revalidations, and demonstrates measurable acquisition benefit without stale-content or privacy regressions.
 
 **Value:** lower cold-source latency and fewer duplicate network fetches.  
 **Reliability impact:** positive if stale/failure handling remains explicit.  
@@ -348,6 +373,19 @@ Candidates for deterministic/offloaded execution:
 
 Work should receive a compact, validated evidence contract rather than raw repository state plus raw source payloads.
 
+#### How
+
+1. Draw a hard boundary between **deterministic orchestration** and **semantic judgment**. Anything whose output is fully determined by validated inputs and policy should run in code, not in a Work/model turn.
+2. Create a deterministic pre-editorial package that performs registry loading, source planning, normalization, date/category checks, duplicate/event filtering, preliminary scoring, Watchlist unchanged-state detection, and policy-safe novelty prechecks.
+3. Emit one compact, schema-validated **editorial evidence contract** containing only the finalist evidence and fields that truly require judgment. Do not send raw repository files, full historical policies, or already-derived presentation fields to Work.
+4. After the editorial response, run a deterministic post-editorial kernel for route generation, reading time, labels, archive/feed entries, page assembly, accessibility checks, receipt generation, and routine QA.
+5. Move standard live-route comparison and unchanged-state validation to deterministic scripts; allow a model escalation only when a named failure cannot be classified or repaired deterministically.
+6. Add contract tests that compare old and new deterministic outputs for identical approved editorial inputs, including immutable historical fixtures.
+7. Measure Work context size and model-call count before/after the boundary change, not just total runtime.
+8. Promote components incrementally so a failure can be attributed to a specific moved stage; retain a compatibility path only until live equivalence is proven.
+
+**Proof / acceptance:** a normal run performs acquisition, filtering, rendering, QA, and publication mechanics with zero routine model calls; Work receives only the compact editorial contract; and public output remains byte/semantic equivalent where identity is expected.
+
 **Value:** likely one of the largest paths to the <100-credit target.  
 **Reliability impact:** positive because deterministic contracts are repeatable and testable.
 
@@ -366,6 +404,19 @@ Implement:
 - source delta detection so only changed content re-enters semantic review;
 - compact 30-day novelty/event index rather than broad historical rereads;
 - explicit invalidation when source content, policy, or review version changes.
+
+#### How
+
+1. Introduce a **content-addressed evidence record** keyed by normalized URL + evidence kind + source-content hash + review/policy version. A changed URL alone should not force semantic work if content is identical; changed content must invalidate prior semantic conclusions.
+2. Persist reviewed claims, evidence excerpts, novelty/event fingerprints, category, confidence, limitations, review version, and source provenance in a compact capsule.
+3. Before any semantic review, compute the current source hash and check for a reusable capsule that is still valid under the current freshness and policy versions.
+4. Share the same capsule across Brief selection, Watchlist delta evaluation, media screening where applicable, and later validation instead of re-retrieving/re-summarizing the same source.
+5. Build a compact rolling novelty/event index for the previous 30 days using stable fingerprints and selected metadata; avoid loading entire prior briefs or raw source text into each run.
+6. Add explicit invalidation rules for source-content change, policy/reviewer version change, corrected publication date, changed category, novelty conflict, or expired freshness window.
+7. Record reuse telemetry: evidence capsules reused, invalidated, rebuilt, and semantic calls avoided.
+8. Test adversarial cases such as same URL with changed article body, mirrored URLs with same content, corrected dates, and policy-version changes.
+
+**Proof / acceptance:** unchanged evidence is reused without semantic reprocessing, changed evidence is reliably invalidated, every reused claim remains traceable to the current source hash, and the run records how much retrieval/semantic work reuse avoided.
 
 **Value:** reduces repeated retrieval, repeated summarization and repeated semantic reasoning.  
 **Reliability impact:** positive if invalidation rules are strict.
@@ -388,6 +439,19 @@ Candidate improvements:
 - dynamically lower candidate ceilings on high-signal days;
 - preserve the exception path for thin-news days.
 
+#### How
+
+1. Replace fixed “process up to the ceiling” behavior with a **sufficiency-driven planner**. Track, per category, how many fresh high-confidence candidates, finalists, and backups have been verified.
+2. Rank metadata candidates using deterministic source reliability, freshness, category fit, novelty/event fingerprint, and preliminary signal score before any full-text retrieval.
+3. Reject candidates on metadata-only grounds whenever possible: stale date, duplicate URL/content, already-covered event without material update, unsupported source, promotional filler, category mismatch, or missing required metadata.
+4. Deep-retrieve in small batches (for example 2–3 at a time) rather than all 9 immediately. After each batch, recompute whether all three categories have enough qualifying candidates plus Agent Skills coverage.
+5. Stop deep retrieval as soon as the existing editorial sufficiency contract is satisfied; use the 10–12 exception range only when a named category/skill insufficiency remains.
+6. On high-signal days, experiment with a lower metadata ceiling and/or lower normal deep target on a shadow branch. On thin-news days, preserve the current bounded fallback so freshness/quality do not degrade.
+7. Record why discovery stopped (`sufficiency_met`, `candidate_ceiling`, `freshness_shortfall`, etc.) and how many retrievals/model evaluations were avoided.
+8. Compare final story quality, backup depth, source diversity, and novelty performance against September 18 before lowering any production ceiling.
+
+**Proof / acceptance:** the planner exits early on representative strong-news days while still producing the full 2/2/2 + Agent Skills contract, and the measured deep-retrieval/context volume falls without increased repair or quality failures.
+
 **Value:** directly reduces retrieval, context, semantic evaluation and wall time.  
 **Guardrail:** never let the efficiency stop condition override freshness, 2/2/2 allocation or evidence quality.
 
@@ -406,6 +470,19 @@ Implement/test:
 - derive reading time, links, route metadata, archive entries, labels and layout deterministically;
 - no routine “review your answer,” re-summarization, or second editorial rewrite pass;
 - semantic escalation only for named unresolved conflicts.
+
+#### How
+
+1. Define a strict **editorial input schema** containing only candidate/evidence capsules, compact novelty context, current editorial rules that require semantic judgment, and explicit output requirements.
+2. Replace repeated prose policies with stable policy IDs, hashes, or compact rule summaries when the full text is unchanged and already enforced deterministically.
+3. Order the input by decision utility: category sufficiency, candidate facts/evidence, novelty conflicts, limitations, then required output schema. Exclude HTML, route boilerplate, archive state, and fields the deterministic kernel can derive.
+4. Require one structured editorial response that includes selection, story title/summary/why-it-matters text, rationale, confidence/uncertainty, and any named unresolved exception. Avoid a second “review/rewrite” turn on the normal path.
+5. Validate the response against a schema before accepting it. Missing or malformed fields should trigger targeted repair of the response contract, not a full research rerun.
+6. Generate reading time, labels, IDs/routes, page metadata, related links, archive entries, and layout fields deterministically after the editorial pass.
+7. Establish explicit escalation predicates—e.g., conflicting publication evidence, unresolved novelty identity, insufficient category coverage—so extra semantic calls occur only for those named conditions.
+8. Track editorial input characters, output characters, call count, and escalation reason across runs; use September 18 as the first comparison anchor.
+
+**Proof / acceptance:** normal editions complete with one editorial semantic call, materially smaller input/output context, no routine second-pass rewrite, and no reduction in factual traceability or editorial quality.
 
 **Value:** direct reduction in Work/model context and output volume.  
 **Reliability impact:** positive if schema validation rejects malformed outputs before publication.
@@ -426,6 +503,19 @@ Implement/test:
 - content-address approved images so retry/recovery never regenerates an already accepted image;
 - checkpoint each accepted image independently.
 
+#### How
+
+1. Classify each selected story into a deterministic visual grammar (process, layered architecture, hub/spoke, lifecycle, comparison, pipeline, control/approval, evidence verification, annotated system, composite) using structured story features.
+2. Generate a story-specific diagram specification from the approved editorial facts: title, explanatory nodes, relationships, annotations, hierarchy, and emphasis. The spec—not a free-form image prompt—becomes the durable checkpoint.
+3. Render the spec through the deterministic visual renderer at **1200×630** with the required white-background textbook style and run automated checks for clipping, text overflow, contrast, node count, whitespace, and output dimensions.
+4. Add a semantic/visual quality gate comparing deterministic output against the September 17 baseline criteria: explanatory specificity, information density, legibility, professional composition, and no generic placeholder behavior.
+5. If a deterministic diagram fails that gate, route only that story to the high-quality generative image path; do not degrade the public image to save credits.
+6. Hash the accepted visual spec and final PNG so retries and downstream repairs reuse an already accepted image instead of regenerating it.
+7. Record per-story path (`deterministic` vs `generative_fallback`), attempts, rejects, elapsed time, and any Work/model usage associated with visual production.
+8. Promote deterministic layouts category by category only after repeated parity evidence, rather than switching all six images at once.
+
+**Proof / acceptance:** an increasing share of stories use deterministic diagrams that meet the visual baseline on first attempt, accepted images are reusable across retries, and generative fallbacks remain isolated to stories that need them.
+
 **Value:** potentially large wall-time and Work reduction on image-heavy runs.  
 **Guardrail:** no low-information placeholders and no quality downgrade to satisfy a cost target.
 
@@ -445,6 +535,19 @@ Implement/test:
 - podcast source-diversity enforcement deterministically;
 - cache media metadata independently of story evidence;
 - no model call when a candidate can be accepted/rejected by policy metadata alone.
+
+#### How
+
+1. Build separate **video and podcast metadata candidate tables** before any semantic review. Capture title, publisher/show, canonical URL, publish time, duration where applicable, source trust, description, and duplicate fingerprint.
+2. Apply deterministic policy filters first: approved/trusted source, freshness window, duration ladder for video, podcast source diversity, maximum one _AI Daily Brief_ selection, URL validity, and duplicate detection.
+3. Rank surviving candidates with transparent metadata heuristics (freshness, trusted source, title/description relevance, desired intent coverage) and retain only a small finalist set.
+4. Retrieve/deep-review only the top 3–5 video finalists and the minimum podcast finalists needed to verify topical relevance; avoid full transcript/content retrieval unless metadata is insufficient.
+5. Cache media metadata independently with ETag/Last-Modified support so the next day's discovery can cheaply revalidate known feeds/channels.
+6. Encode acceptance/rejection reasons in the media receipt so a zero/one-slot result can prove bounded discovery without re-running broad search.
+7. Keep media semantic work separate from the six-story editorial pass so a media failure or replacement does not invalidate story selection/writing.
+8. Measure metadata candidates, deep-reviewed finalists, selected slots, retrieval volume, semantic calls, and media-stage wall time before/after.
+
+**Proof / acceptance:** most media candidates are accepted/rejected deterministically, only a handful receive deep review, the 2-video/2-podcast policies remain satisfied when qualifying media exists, and media repair never forces a Brief rerun.
 
 **Value:** lower retrieval/context cost and faster media fill.
 
@@ -477,6 +580,19 @@ Examples:
 - Command Center sync failure → retry sync only;
 - Pages deployment failure → retry deployment/live verification, not content generation.
 
+#### How
+
+1. Define a checkpoint schema with `stage_id`, attempt ID, input hash(es), output artifact hash(es), dependency hashes, completion status, timestamp, pipeline version, and repair provenance.
+2. Persist checkpoints immediately after each expensive/meaningful stage: acquisition, filtering, evidence, editorial, each image, media, Watchlist, generation, QA, publication, and live verification.
+3. Build a dependency graph that states exactly which downstream stages depend on each artifact. Example: changing one image should invalidate page generation/QA for affected routes, not acquisition or editorial selection.
+4. On restart or repair, load the latest valid checkpoints, recompute current input hashes, and skip stages whose dependency hashes still match.
+5. Make each stage idempotent: rerunning with the same validated inputs should either produce the same artifact or detect/reuse the existing one without creating duplicate publication state.
+6. Add targeted repair commands/workflows for common failures (single image, media slot, route set, Command Center sync, Pages deploy) instead of exposing only a full-pipeline rerun.
+7. Preserve all failed checkpoints and repair receipts append-only so reliability analysis can distinguish first-pass success from recovered success.
+8. Test failure injection at every checkpoint boundary and prove that recovery reruns only the necessary dependency chain.
+
+**Proof / acceptance:** simulated and real failures resume from the last valid checkpoint, unaffected expensive stages are skipped, no duplicate publication artifacts are created, and recovery cost/time is attributable.
+
 **Value:** major reliability gain and potentially very large savings on failure days.
 
 ---
@@ -497,6 +613,19 @@ Implement a policy-driven governor with:
 - owner-visible reason when the run legitimately needs an exception.
 
 The governor must **not** publish a low-quality edition merely to remain under budget.
+
+#### How
+
+1. Convert the provisional credit plan into a **policy-driven budget envelope** with stage-level soft targets and hard structural ceilings (candidate count, retrieval chars, context chars, semantic-call count, retry count).
+2. Because exact credits may not be observable in real time, enforce what is observable during the run—calls, context size, retrieval volume, image attempts, retries—and use owner-observed credits after the run to recalibrate those proxy ceilings.
+3. Add a running budget state to the attempt receipt: `normal`, `approaching_limit`, `exception_required`, or `halted_for_owner_review`, with the specific stage/reason that caused escalation.
+4. Before any extra semantic call, deep-review expansion, generative image retry, or full-stage retry, require a named exception reason and verify that a cheaper deterministic/targeted repair path is unavailable.
+5. Prohibit automatic full-pipeline reruns after a budget exception. Resume from checkpoints or stop in a recoverable state when quality cannot be met inside the normal envelope.
+6. Distinguish **quality exceptions** from waste: thin-news days, source conflicts, or necessary visual fallback may legitimately exceed the normal budget; repeated orchestration, duplicate retrieval, or avoidable reruns should not.
+7. Surface the exception reason and estimated/observed budget impact in the owner Command Center after each run, preserving private credit provenance.
+8. Tune budgets over at least three representative production runs; only tighten a ceiling when quality, reliability, and recovery behavior remain stable.
+
+**Proof / acceptance:** normal runs stay inside the defined call/context/retrieval/retry envelope, exceptions are explicit and diagnosable, runaway reruns are prevented, and three representative quality-passing runs eventually demonstrate <100 owner-observed credits.
 
 **Value:** prevents runaway usage and makes exception runs diagnosable.
 
