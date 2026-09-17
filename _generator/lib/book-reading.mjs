@@ -1,5 +1,6 @@
 import {sourceReadingMinutes} from './reading-support.mjs';
 import fs from 'node:fs';
+import {editionPodcasts} from './podcasts.mjs';
 const catalog = JSON.parse(fs.readFileSync(new URL('../../_data/book-reading.json', import.meta.url), 'utf8'));
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SERIES_SEPARATION_DATE='2026-09-16';
@@ -9,8 +10,8 @@ export function validateBookReading(edition, data = catalog) {
   const selections=data.editions[edition.brief_date] || [];
   const ids=new Set(edition.stories.map(s=>s.story_id));
   for(const [key,suffix] of [['general','general'],['agents_non_technical_people','agent-skills']])if(edition.worth_watching?.[key]?.status==='included')ids.add(`dab-video-${edition.brief_date}-${suffix}`);
-  if(edition.podcast?.status==='included')ids.add(edition.podcast.item_id);
-  const maxReferences=edition.brief_date>=SERIES_SEPARATION_DATE?9:3;
+  for(const podcast of editionPodcasts(edition))ids.add(podcast.item_id);
+  const maxReferences=edition.brief_date>=SERIES_SEPARATION_DATE?Math.max(9,edition.stories.length+Object.values(edition.worth_watching||{}).filter(x=>x.status==='included').length+editionPodcasts(edition).length):3;
   if(selections.length>maxReferences)throw Error(edition.brief_date>=SERIES_SEPARATION_DATE?'Use at most one book reference per Brief item':'Use at most three book references per edition');
   const seen=new Set();
   for(const s of selections){
@@ -45,8 +46,9 @@ export function renderEditionOverview(edition){
     const slot=edition.worth_watching[key];const duration=slot.status==='included'?`${Math.floor(slot.runtime_seconds/60)}:${String(slot.runtime_seconds%60).padStart(2,'0')}`:'No qualifying selection';
     items.push({anchor,title:slot.status==='included'?(edition.brief_date==='2026-09-12'?(key==='general'?'5 Minute AI News':'Agent Skills: structure and progressive disclosure'):slot.title):name,kind:`Video · ${duration}`});
   }
-  if(edition.podcast)items.push({anchor:'worth-listening--podcast',title:edition.podcast.status==='included'?(edition.brief_date==='2026-09-12'?'AI risk claims and evidence quality':edition.podcast.title):'Podcast',kind:edition.podcast.status==='included'?'Podcast':'Podcast · No qualifying selection'});
+  const podcasts=editionPodcasts(edition);
+  if(podcasts.length)podcasts.forEach((podcast,index)=>items.push({anchor:`podcast-${podcast.item_id}`,title:edition.brief_date==='2026-09-12'&&index===0?'AI risk claims and evidence quality':podcast.title,kind:'Podcast'}));
+  else if(edition.brief_date>='2026-09-10')items.push({anchor:'worth-listening--podcast',title:'Podcast',kind:'Podcast · No qualifying selection'});
   const videos=Object.values(edition.worth_watching).filter(x=>x.status==='included').length;
-  const podcasts=edition.podcast?.status==='included'?1:0;
-  return readerAddition(`<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · ${edition.stories.length} ARTICLES / ${videos} VIDEOS / ${podcasts} PODCAST</p><h2>Choose what matters to your work</h2><ol>${items.map(x=>`<li><a href="#${html(x.anchor)}">${html(x.title)}</a><span>${html(x.kind)}</span></li>`).join('')}</ol></section>`);
+  return readerAddition(`<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · ${edition.stories.length} ARTICLES / ${videos} VIDEOS / ${podcasts.length} PODCAST${podcasts.length===1?'':'S'}</p><h2>Choose what matters to your work</h2><ol>${items.map(x=>`<li><a href="#${html(x.anchor)}">${html(x.title)}</a><span>${html(x.kind)}</span></li>`).join('')}</ol></section>`);
 }
