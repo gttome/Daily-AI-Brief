@@ -10,15 +10,16 @@ description: A privacy-safe 30-day view of Daily AI Brief publication quality.
 This public dashboard summarizes versioned QA records. It excludes credentials, identities, raw headers, and private operational details.
 
 <div class="qa-metrics" aria-label="Quality metrics">
-  <div><strong>10</strong><span>QA runs</span></div>
-  <div><strong>30%</strong><span>First-pass QA</span></div>
+  <div><strong>11</strong><span>QA runs</span></div>
+  <div><strong>27%</strong><span>First-pass QA</span></div>
   <div><strong>100%</strong><span>Final pass</span></div>
-  <div><strong>19</strong><span>Recorded repairs</span></div>
-  <div><strong>47s</strong><span>Average deploy latency</span></div>
+  <div><strong>21</strong><span>Recorded repairs</span></div>
+  <div><strong>49s</strong><span>Average deploy latency</span></div>
 </div>
 
 | Edition | Initial | Final | Repairs | Deploy | Deterministic / Editorial |
 |---|---:|---:|---:|---:|---|
+| [September 17, 2026]({{ '/briefs/2026-09-17/' | relative_url }}) | FAIL | PASS | 2 | 56s | 9 / 7 |
 | [September 16, 2026]({{ '/briefs/2026-09-16/' | relative_url }}) | FAIL | PASS | 2 | —s | 9 / 7 |
 | [September 15, 2026]({{ '/briefs/2026-09-15/' | relative_url }}) | FAIL | PASS | 2 | —s | 9 / 5 |
 | [September 14, 2026]({{ '/briefs/2026-09-14/' | relative_url }}) | FAIL | PASS | 2 | 47s | 8 / 5 |
