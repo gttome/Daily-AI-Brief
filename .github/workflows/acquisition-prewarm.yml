@@ -1,0 +1,68 @@
+name: Daily AI Brief acquisition prewarm
+
+on:
+  schedule:
+    # GitHub cron is UTC. Trigger both DST possibilities; the Chicago gate executes only at 06:35 local.
+    - cron: '35 11,12 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-ai-brief-acquisition-prewarm
+  cancel-in-progress: true
+
+jobs:
+  prewarm:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gate scheduled run to 06:35 America/Chicago
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H:%M)" = "06:35" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out main
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Restore bounded retrieval cache
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: .cache/dab-retrieval
+          key: dab-retrieval-${{ runner.os }}-${{ hashFiles('_data/source-registry.json', '_data/early-signal-sources.json', '_data/watchlist-sources.json') }}-${{ github.run_id }}
+          restore-keys: |
+            dab-retrieval-${{ runner.os }}-${{ hashFiles('_data/source-registry.json', '_data/early-signal-sources.json', '_data/watchlist-sources.json') }}-
+            dab-retrieval-${{ runner.os }}-
+
+      - name: Prewarm metadata acquisition only
+        if: steps.gate.outputs.run == 'true'
+        env:
+          DAB_RETRIEVAL_CACHE: .cache/dab-retrieval
+          DAB_PREWARM_RECEIPT: /tmp/dab-prewarm.json
+        run: node _tools/prewarm-acquisition.mjs
+
+      - name: Upload prewarm receipt
+        if: steps.gate.outputs.run == 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: acquisition-prewarm-${{ github.run_id }}
+          path: /tmp/dab-prewarm.json
+          retention-days: 7
+          if-no-files-found: error
