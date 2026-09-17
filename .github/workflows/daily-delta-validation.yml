@@ -67,8 +67,12 @@ jobs:
         id: validation
         continue-on-error: true
         run: |
+          set +e
           node _tools/daily-validation.mjs --date "${{ steps.date.outputs.value }}" --out /tmp/daily-validation.json
-          echo "exit_code=$?" >> "$GITHUB_OUTPUT"
+          exit_code="$?"
+          set -e
+          echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+          exit "$exit_code"
 
       - name: Publish compact receipt to job summary
         if: steps.gate.outputs.run == 'true' && always()
