@@ -20,6 +20,7 @@ import {readerStories} from './lib/reader.mjs';
 import {renderQaDashboard} from './lib/quality.mjs';
 import {validateIntegratedRepository} from './lib/integrity.mjs';
 import {activationState, buildPersonalLearning, loadInlineFeedback, loadPersonalFeedback, mergeLearningFeedback, validatePersonalFeedback} from './lib/personal-learning.mjs';
+import {editionPodcasts} from './lib/podcasts.mjs';
 
 const generatorDir = path.dirname(fileURLToPath(import.meta.url));
 const defaultRoot = path.resolve(generatorDir, '..');
@@ -129,7 +130,7 @@ if (command === 'novelty-index' || command === 'novelty-query') {
       {story_id: `dab-video-${edition.brief_date}-general`, ...edition.worth_watching?.general},
       {story_id: `dab-video-${edition.brief_date}-agent-skills`, ...edition.worth_watching?.agents_non_technical_people}
     ].filter(video => video.status === 'included');
-    const podcasts = edition.podcast?.status === 'included' ? [{...edition.podcast,story_id:edition.podcast.item_id}] : [];
+    const podcasts = editionPodcasts(edition).map(podcast=>({...podcast,story_id:podcast.item_id}));
     const items = [...edition.stories, ...videos, ...podcasts];
     const outputPath = path.join(repoRoot, '_records', 'analytics', name);
     const existing = fs.existsSync(outputPath) ? readJson(outputPath) : null;
