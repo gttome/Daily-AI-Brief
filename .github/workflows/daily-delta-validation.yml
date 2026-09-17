@@ -86,10 +86,24 @@ jobs:
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
           exit "$exit_code"
 
+      - name: Build public-safe Command Center delta handoff
+        if: steps.gate.outputs.run == 'true' && always()
+        run: |
+          set -euo pipefail
+          if [ -f /tmp/daily-validation.json ] && [ -f /tmp/watchlist-delta.json ]; then
+            node _tools/command-center-delta.mjs \
+              --validation /tmp/daily-validation.json \
+              --watchlist /tmp/watchlist-delta.json \
+              --policy docs/operations/efficiency-operating-policy.json \
+              --out /tmp/command-center-delta.json
+          else
+            echo 'Validation inputs unavailable; Command Center handoff packet not generated.'
+          fi
+
       - name: Publish compact receipts to job summary
         if: steps.gate.outputs.run == 'true' && always()
         run: |
-          for receipt in /tmp/watchlist-delta.json /tmp/daily-validation.json; do
+          for receipt in /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
             if [ -f "$receipt" ]; then
               echo "#### $(basename "$receipt")" >> "$GITHUB_STEP_SUMMARY"
               echo '```json' >> "$GITHUB_STEP_SUMMARY"
@@ -106,6 +120,7 @@ jobs:
           path: |
             /tmp/daily-validation.json
             /tmp/watchlist-delta.json
+            /tmp/command-center-delta.json
           retention-days: 30
           if-no-files-found: error
 
