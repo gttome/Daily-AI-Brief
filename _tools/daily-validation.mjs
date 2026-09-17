@@ -36,7 +36,7 @@ function includedMedia(edition){
 }
 function semanticPacket(failures){return failures.map(x=>({artifact_id:x.affected_item||date,failed_rule:x.check_id,affected_item:x.affected_item||null,expected_value:'deterministic contract pass',observed_value:x.evidence,minimal_evidence:x.evidence,repair_scope:'failed_item_only'}));}
 
-let completion,edition;
+let completion,edition,routeCount=0;
 try{completion=readJson(`_records/publication/${date}/completion.json`);edition=readJson(`_data/editions/${date}.json`);}catch(error){
  check('publication_receipt','fail','critical',`Required current-edition evidence is missing: ${error.message}`);
 }
@@ -56,7 +56,7 @@ if(completion&&edition){
  for(const image of images){if(!exists(image)){imageProblems.push(`${image}:missing`);continue;}const info=pngDimensions(image);if(!info||info.width<1200||info.height<630)imageProblems.push(`${image}:${info?`${info.width}x${info.height}`:'not_png'}`);}
  check('image_integrity_dimensions',images.length===6&&!imageProblems.length?'pass':'fail','high',images.length!==6?`Expected six story images; found ${images.length}.`:imageProblems.length?imageProblems.join('; '):`Six PNG assets exist at >=1200x630; hashes computed deterministically (${images.map(hashFile).join(',')}).`);
  const routes=[`${base}/`,`${base}/briefs/${date}/`,`${base}/briefs-archive/`,`${base}/watchlist/`,`${base}/watchlist/research/`,`${base}/feed.xml`,`${base}/daily-feed.xml`,`${base}/feed.json`,...stories.map(s=>base+s.permanent_url),...media.videos.filter(x=>x.permanent_url).map(x=>base+x.permanent_url),...media.podcasts.filter(x=>x.permanent_url).map(x=>base+x.permanent_url)];
- const unique=[...new Set(routes)];
+ const unique=[...new Set(routes)];routeCount=unique.length;
  const sourceUrls=[...new Set(stories.map(s=>s.source?.url).filter(Boolean).map(url=>{try{return normalizeUrl(url);}catch{return url;}}))];
  if(args.offline===true){
   check('live_changed_routes','not_applicable','high','Offline deterministic test mode; live route probes intentionally skipped.');
@@ -68,8 +68,11 @@ if(completion&&edition){
   check('source_http_state',failedSources.length?'fail':'pass','high',failedSources.length?JSON.stringify(failedSources):`${sources.length} selected source URLs returned successful HTTP responses.`);
  }
  const rendered=exists(`briefs/${date}.md`)?fs.readFileSync(path.join(root,`briefs/${date}.md`),'utf8'):'';
- const controlsOk=stories.every(s=>rendered.includes(s.story_id))&&/share/i.test(rendered)&&/(five-star|rating|stars?)/i.test(rendered);
- check('rating_share_generated_ids',controlsOk?'pass':'fail','high',controlsOk?'All six story IDs are rendered and rating/share controls are present.':'Rendered Brief is missing a story ID or rating/share control marker.');
+ const layout=exists('_layouts/default.html')?fs.readFileSync(path.join(root,'_layouts/default.html'),'utf8'):'';
+ const ratingIdsOk=stories.every(s=>rendered.includes(s.story_id))&&((rendered.match(/class="[^"]*star-feedback/g)||[]).length>=6||(rendered.match(/data-feedback-story-id=/g)||[]).length>=6);
+ const shareFoundationOk=exists('assets/js/share.js')&&exists('assets/css/share.css')&&layout.includes('/assets/js/share.js')&&layout.includes('/assets/css/share.css')&&stories.every(s=>s.permanent_url?.startsWith(`/stories/${date}/`));
+ const controlsOk=ratingIdsOk&&shareFoundationOk;
+ check('rating_share_generated_ids',controlsOk?'pass':'fail','high',controlsOk?'Six story identities/rating controls are generated and the canonical share JS/CSS foundation is wired through the default layout.':`Reader interaction contract mismatch: rating_ids=${ratingIdsOk}, share_foundation=${shareFoundationOk}.`);
  const accessibilityOk=stories.every(s=>typeof s.image?.alt==='string'&&s.image.alt.trim().length>=20);
  check('accessibility_assertions',accessibilityOk?'pass':'fail','high',accessibilityOk?'All six story images have substantive alt text.':'One or more story images lack substantive alt text.');
  const canonicalOk=stories.every(s=>s.permanent_url?.startsWith(`/stories/${date}/`)&&s.source?.url);
@@ -85,7 +88,7 @@ const protectedObservation=classifyCommandCenterObservation('signed_out_owner_op
 check('command_center_owner_operations',protectedObservation.result.toLowerCase(),'medium',protectedObservation.reason);
 
 const failures=checks.filter(x=>x.result==='fail'),ended=new Date().toISOString();
-const record={schema_version:'1.1.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:checks.find(x=>x.check_id==='live_changed_routes')?.evidence?.length||null,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,checks,final_result:failures.some(x=>['critical','high'].includes(x.severity))?'fail':failures.length?'degraded':'pass',semantic_escalation_required:failures.length>0,semantic_escalation_packet:semanticPacket(failures)};
+const record={schema_version:'1.1.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:routeCount,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,checks,final_result:failures.some(x=>['critical','high'].includes(x.severity))?'fail':failures.length?'degraded':'pass',semantic_escalation_required:failures.length>0,semantic_escalation_packet:semanticPacket(failures)};
 const out=path.resolve(args.out||`/tmp/dab-validation-${date}.json`);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(record,null,2)+'\n');
 console.log(JSON.stringify(record,null,2));
 if(record.final_result==='fail')process.exitCode=1;
