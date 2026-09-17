@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "attempt_id": "dab-attempt-20260917T120053Z",
+  "edition_id": "dab-edition-2026-09-17",
+  "started_at": "2026-09-17T12:00:53Z",
+  "ended_at": "2026-09-17T12:51:12Z",
+  "wall_seconds": 3019,
+  "initial_publication_seconds": 2532,
+  "post_publication_qa_repair_seconds": 487,
+  "scope": "fresh edition publication, shared Brief/Watchlist discovery, efficiency guardrails, independent live QA and owner-only operation attempts",
+  "resource_policy": "Plus Work/Codex allowance and built-in premium image generation only; no paid API, added credits, overage, top-up, upgrade or alternate account",
+  "measured_work": {
+    "candidate_count": 20,
+    "deep_candidates": 9,
+    "selected_stories": 6,
+    "rejected_candidates": 14,
+    "image_drafts": 6,
+    "image_rejects": 0,
+    "accepted_images": 6,
+    "publication_pull_requests": 1,
+    "repair_pull_requests": 0,
+    "qa_pull_requests": 1,
+    "local_tests_final": 174,
+    "contract_fixtures": 16,
+    "article_sources_registered": 55,
+    "metadata_sources_scanned": 54,
+    "article_fulltext_retrieved": 9,
+    "watchlist_registry_sources": 49,
+    "watchlist_sources_checked": 41,
+    "watchlist_fresh_successes": 37,
+    "watchlist_sources_with_candidate_links": 33,
+    "watchlist_sources_no_links": 4,
+    "watchlist_sources_unavailable": 4,
+    "watchlist_sources_assisted": 8,
+    "watchlist_topics": 8,
+    "video_fill": "0/2",
+    "podcast_fill": "1/1",
+    "reader_book_bridges": 5,
+    "cache_hits": 15,
+    "cache_misses": 59,
+    "early_stop_triggered": true
+  },
+  "failed_attempts": [
+    {
+      "stage": "initial_local_qa",
+      "result": "recovered",
+      "evidence": "Two stale synthetic fixtures used the live September 17 date and conflicted with the new reader records. They were moved to a nonproduction date; 174 tests and 16 contract fixtures then passed."
+    },
+    {
+      "stage": "candidate_ci_integration",
+      "result": "recovered",
+      "evidence": "CI run 35221810763 detected one truncated approved PNG. Exact chunked transfer restored the approved SHA-256 bytes."
+    },
+    {
+      "stage": "candidate_ci_atomicity",
+      "result": "recovered",
+      "evidence": "CI run 35222034715 detected the missing September 17 story-memory snapshot. The generated 30-day, 175-story snapshot was added and validated."
+    },
+    {
+      "stage": "candidate_ci_jekyll",
+      "result": "recovered",
+      "evidence": "CI run 35222241975 detected invalid UTF-8 caused by four truncated large discovery blobs. Exact chunked transfers restored all four records; CI run 35222462213 then passed, including Jekyll."
+    },
+    {
+      "stage": "watchlist_discovery",
+      "result": "degraded",
+      "evidence": "The cadence-aware pass checked 41 sources and recorded 37 fresh successes, four retrieval failures, four no-link results and eight assisted-review sources. The required three-success floor passed, but coverage remains partial."
+    },
+    {
+      "stage": "efficiency_telemetry",
+      "result": "degraded",
+      "evidence": "Filtering, deep-retrieval, selection/writing, media and live-verification seconds and observable model-call/input-token/output-token counts were unavailable. They remain null and the optimization target is not claimed."
+    },
+    {
+      "stage": "private_owner_operations",
+      "result": "degraded",
+      "evidence": "The existing unrotated Sites credential returned owner_identity_required for usage, snapshot, comments and daily retention. The maintenance receipt remained dated September 16. No private totals or costs were inferred."
+    },
+    {
+      "stage": "private_checkpoint_readback",
+      "result": "degraded",
+      "evidence": "The local owner-only attempt directory remained readable, but durable remote readback was unavailable. No remote persistence or observed evidence reuse is claimed."
+    },
+    {
+      "stage": "local_jekyll",
+      "result": "unavailable",
+      "evidence": "The local bundle executable was unavailable. Exact-head candidate and production CI completed the required Jekyll build successfully."
+    }
+  ],
+  "publication": {
+    "baseline_sha": "c9bc22b3be8ed13f5fa4913c494aacb97983ea92",
+    "publication_pr": 115,
+    "publication_head": "2cbc9aabf9cc0784b8843c5c94eedacdc7b8a5af",
+    "publication_ci": 35222462213,
+    "publication_main": "d92903c10c489557d1acfee4b0496aacd0ef85ea",
+    "publication_main_ci": 35222624397,
+    "publication_pages": 35222623606,
+    "final_main": "d92903c10c489557d1acfee4b0496aacd0ef85ea"
+  },
+  "private_operations": {
+    "aggregate_items": 7,
+    "snapshot_saved_and_read_back": false,
+    "usage_saved_and_read_back": false,
+    "comment_retention_cleanup": "owner_identity_required_not_completed",
+    "subscriber_delivery": "Disabled by choice / Not applicable",
+    "historical_analytics_migration": "not attempted"
+  },
+  "usage": {
+    "exact_model_calls": null,
+    "exact_input_tokens": null,
+    "exact_output_tokens": null,
+    "exact_credits": null,
+    "dollars": null,
+    "coverage": "partial",
+    "reason": "The platform did not provide edition-attributed model-call, token, credit or dollar data. Available stage timings, drafts, rejects, cache observations, repair attempts and elapsed time were measured without inference."
+  },
+  "outcome": "public_pass_with_degraded_efficiency_measurement_discovery_checkpoint_and_private_operations"
+}

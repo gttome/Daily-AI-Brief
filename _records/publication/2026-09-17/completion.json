@@ -1,0 +1,78 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20260917T125112Z-d92903c1",
+  "run_id": "20260917t1222z",
+  "phase": "pages_verified",
+  "edition_id": "dab-edition-2026-09-17",
+  "observed_at": "2026-09-17T12:51:12Z",
+  "baseline_main_sha": "c9bc22b3be8ed13f5fa4913c494aacb97983ea92",
+  "staged_tree_digest": "sha256:2f2d89349ca3f0dc6e0260ecfab94eb43286eec7e5e9b836dab39637d8eee34b",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #115 passed candidate CI 35222462213. Production SHA d92903c10c489557d1acfee4b0496aacd0ef85ea passed CI 35222624397 and Pages 35222623606."
+    },
+    {
+      "check_id": "live_reader_routes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Homepage, dated brief, archive, both Watchlist routes, six story pages, podcast page, RSS, JSON feed and daily feed returned HTTP 200."
+    },
+    {
+      "check_id": "live_images_interactions",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six live PNG hashes match the approved release manifest. Browser execution confirmed a canonical article Share control, visible count transition and five-star controls; homepage and dated brief each contain seven groups and 35 stars."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-09-17.json",
+      "_data/book-reading.json",
+      "_data/story-memory/2026-09-17.json"
+    ],
+    "assets": [
+      "briefs/images/2026-09-17/01-misalignment-disclosure-workflow.png",
+      "briefs/images/2026-09-17/02-extraction-schema-contract.png",
+      "briefs/images/2026-09-17/03-unified-ai-workspace.png",
+      "briefs/images/2026-09-17/04-copilot-budget-request.png",
+      "briefs/images/2026-09-17/05-zocks-agent-skill.png",
+      "briefs/images/2026-09-17/06-quickbooks-conversational-agent.png"
+    ],
+    "derived_outputs": [
+      "briefs/2026-09-17.md",
+      "latest.md",
+      "index.md",
+      "archive.md",
+      "README.md",
+      "feed.xml",
+      "daily-feed.xml",
+      "feed.json",
+      "qa/2026-09-17.md",
+      "qa/index.md"
+    ],
+    "operational_records": [
+      "_records/publication/2026-09-17/20260917t1222z.validated.json",
+      "_records/publication/2026-09-17/completion.json",
+      "_records/qa/2026-09-17.json",
+      "_records/analytics/2026-09-17.json",
+      "_records/attempts/2026-09-17/dab-attempt-2026-09-17-publication-20260917T120053Z.json",
+      "_records/efficiency/2026-09-17/dab-efficiency-2026-09-17-20260917t1222z-publication_generation.json"
+    ]
+  },
+  "commit_sha": "d92903c10c489557d1acfee4b0496aacd0ef85ea",
+  "pages": {
+    "run_id": 35222623606,
+    "conclusion": "success",
+    "verified_at": "2026-09-17T12:51:12Z"
+  },
+  "rollback_target_sha": "c9bc22b3be8ed13f5fa4913c494aacb97983ea92",
+  "supersedes_event_id": "dab-publication-event-20260917T122220Z-d96ebeff"
+}

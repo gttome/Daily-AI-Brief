@@ -215,8 +215,8 @@
       "baseline_sha": "c9bc22b3be8ed13f5fa4913c494aacb97983ea92",
       "scope": "publication_generation",
       "start_time": "2026-09-17T12:00:00Z",
-      "end_time": null,
-      "wall_seconds": null,
+      "end_time": "2026-09-17T12:51:12Z",
+      "wall_seconds": 3072,
       "stages": {
         "discovery_seconds": 147,
         "filtering_seconds": null,
@@ -228,7 +228,7 @@
         "watchlist_seconds": 0,
         "generation_seconds": 0,
         "qa_seconds": 3,
-        "publication_seconds": null,
+        "publication_seconds": 563,
         "live_verification_seconds": null
       },
       "research": {
@@ -270,10 +270,10 @@
         "deterministic_tests_run": 174,
         "contract_fixtures_run": 16,
         "semantic_checks_run": 2,
-        "live_routes_checked": null,
-        "targeted_repair_cycles": 1,
+        "live_routes_checked": 15,
+        "targeted_repair_cycles": 4,
         "full_pipeline_restarts": 0,
-        "publication_prs": 0,
+        "publication_prs": 1,
         "repair_prs": 0
       },
       "quality": {
@@ -285,13 +285,13 @@
         "videos": "PASS",
         "podcast": "PASS",
         "watchlist": "DEGRADED",
-        "ratings_sharing": "PENDING",
-        "feeds_archive_parity": "PENDING",
-        "accessibility": "PENDING",
-        "private_operations": "PENDING",
+        "ratings_sharing": "PASS",
+        "feeds_archive_parity": "PASS",
+        "accessibility": "PASS",
+        "private_operations": "DEGRADED",
         "subscriber_delivery": "NOT_APPLICABLE",
         "initial_local_qa": "FAIL",
-        "final_public_qa": "PENDING",
+        "final_public_qa": "PASS",
         "overall_run_status": "DEGRADED",
         "critical_high_defects": 0
       },
@@ -316,7 +316,6 @@
           "stages.deep_retrieval_seconds",
           "stages.selection_writing_seconds",
           "stages.media_seconds",
-          "stages.publication_seconds",
           "stages.live_verification_seconds",
           "context.model_calls_observable",
           "context.input_tokens_observable",
@@ -332,20 +331,73 @@
       "date": "2026-09-12",
       "wall_seconds": 2675,
       "source_record": "_records/attempts/2026-09-12/dab-attempt-2026-09-12-publication-20260912T115736Z.json",
+      "metrics": {
+        "candidate_count": 20,
+        "selected_stories": 6,
+        "image_drafts": 6,
+        "image_rejects": 0,
+        "accepted_images": 6,
+        "publication_pull_requests": 1,
+        "repair_pull_requests": 1,
+        "local_tests_final": 82,
+        "contract_fixtures": 15,
+        "article_sources_checked": 21,
+        "article_sources_retrieved": 20,
+        "watchlist_sources_checked": 20,
+        "watchlist_sources_retrieved": 13,
+        "watchlist_topics": 8,
+        "video_fill": "2/2",
+        "podcast_fill": "1/1"
+      },
       "role": "secondary"
     },
     {
       "date": "2026-09-13",
       "wall_seconds": 3688,
       "source_record": "_records/attempts/2026-09-13/dab-attempt-2026-09-13-publication-20260913T120000Z.json",
+      "metrics": {
+        "candidate_count": 20,
+        "selected_stories": 6,
+        "image_drafts": 9,
+        "image_rejects": 3,
+        "accepted_images": 6,
+        "publication_pull_requests": 1,
+        "repair_pull_requests": 1,
+        "local_tests_final": 107,
+        "contract_fixtures": 15,
+        "article_sources_checked": 55,
+        "article_sources_retrieved": 44,
+        "watchlist_sources_checked": 49,
+        "watchlist_sources_retrieved": 33,
+        "watchlist_topics": 8,
+        "video_fill": "2/2",
+        "podcast_fill": "1/1"
+      },
       "role": "primary"
     },
     {
       "date": "2026-09-14",
       "wall_seconds": 3101,
       "source_record": "_records/attempts/2026-09-14/dab-attempt-2026-09-14-publication-20260914T120219Z.json",
+      "metrics": {
+        "candidate_count": 20,
+        "selected_stories": 6,
+        "image_drafts": 9,
+        "image_rejects": 3,
+        "accepted_images": 6,
+        "publication_pull_requests": 1,
+        "qa_pull_requests": 1,
+        "local_tests_final": 109,
+        "contract_fixtures": 15,
+        "article_sources_checked": 55,
+        "article_sources_retrieved": 45,
+        "watchlist_sources_checked": 49,
+        "watchlist_sources_retrieved": 35,
+        "watchlist_topics": 8,
+        "video_fill": "2/2",
+        "podcast_fill": "1/1"
+      },
       "role": "supplementary"
     }
-  ],
-  "note": "No completed optimized publication has been observed."
+  ]
 }
