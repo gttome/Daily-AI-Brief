@@ -11,10 +11,17 @@ import {loadQaRecords, qaAggregate, renderQaDashboard} from './quality.mjs';
 
 const SERIES_SEPARATION_DATE='2026-09-16';
 const EMPTY_MEDIA_COPY_EFFECTIVE_DATE='2026-09-17';
+const READER_ORDER_EFFECTIVE_DATE='2026-09-18';
+const READER_FOCUS_ORDER=Object.freeze({agents_non_technical_people:0,applied_genai_knowledge_workers:1,technical_ai_engineering:2});
 const EMPTY_MEDIA_PUBLIC_COPY=Object.freeze({
   video:'No video met today’s editorial quality standards.',
   podcast:'No podcast met today’s editorial quality standards.'
 });
+
+export function readerOrderedStories(stories,briefDate){
+  if(briefDate<READER_ORDER_EFFECTIVE_DATE)return stories;
+  return [...stories].sort((a,b)=>(READER_FOCUS_ORDER[a.focus]??99)-(READER_FOCUS_ORDER[b.focus]??99)||a.ordinal-b.ordinal);
+}
 
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
@@ -49,9 +56,9 @@ function currentEditionReaderPath(name,date){
   return name.startsWith(`stories/${date}/`)||name.startsWith(`videos/${date}/`)||name.startsWith(`podcasts/${date}/`);
 }
 
-function renderStory(story, briefDate) {
+function renderStory(story, briefDate, displayOrdinal=story.ordinal) {
   const separated=briefDate>=SERIES_SEPARATION_DATE;
-  return `${readerRelease(briefDate)?`<span id="reading-${story.story_id}"></span>\n\n`:""}## ${story.ordinal}. ${story.headline}
+  return `${readerRelease(briefDate)?`<span id="reading-${story.story_id}"></span>\n\n`:""}## ${displayOrdinal}. ${story.headline}
 
 ${renderReadingSupport(story,story.story_id,briefDate)}
 
@@ -148,12 +155,13 @@ export function renderBody(edition) {
   const podcastSource=separated&&edition.podcast?readerSafeItem(edition.podcast):edition.podcast;
   const podcast=publicPodcast(podcastSource,edition.brief_date);
   const podcastBlock=podcast?(separated?stripEditorOnlyMarkup(renderPodcast(podcast,edition.brief_date)):renderPodcast(podcast,edition.brief_date))+'\n\n':'';
+  const readerStories=readerOrderedStories(edition.stories,edition.brief_date);
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
 **Coverage period:** ${edition.coverage_period}
 
-${readerRelease(edition.brief_date)?renderEditionOverview(edition)+'\n\n':watchlistPreview(edition.brief_date)}${edition.stories.map(story => renderStory(story, edition.brief_date)).join('\n\n')}
+${readerRelease(edition.brief_date)?renderEditionOverview(edition)+'\n\n':watchlistPreview(edition.brief_date)}${readerStories.map((story,index) => renderStory(story, edition.brief_date,index+1)).join('\n\n')}
 
 ## Worth Watching
 
