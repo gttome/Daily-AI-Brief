@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "minimum_baseline": "2026-09-17",
+  "sep17_parity_approved": false,
+  "deterministic_png_enabled": true,
+  "minimum_width": 1200,
+  "minimum_height": 630,
+  "minimum_font_px": 12,
+  "fallback": "approved_story_scoped_generative_asset",
+  "note": "The renderer is implemented but may not replace the September 17-quality path until visual parity has been explicitly reviewed. Until then, the workflow automatically selects the approved story-scoped generative fallback. Do not flip sep17_parity_approved without visual evidence."
+}
