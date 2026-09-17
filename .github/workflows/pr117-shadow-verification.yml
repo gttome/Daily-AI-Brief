@@ -6,6 +6,18 @@ on:
       - .github/workflows/pr117-shadow-verification.yml
       - _tools/pr117-shadow-verification.mjs
       - _generator/test/pr117-prospective-handoff.test.mjs
+      - _generator/test/acquisition-limits.test.mjs
+      - _generator/test/daily-validation.test.mjs
+      - _generator/test/visual-output.test.mjs
+      - _generator/test/watchlist-delta.test.mjs
+      - _generator/test/watchlist-delta-cli.test.mjs
+      - _generator/test/command-center-delta.test.mjs
+      - _generator/lib/command-center-delta.mjs
+      - _tools/command-center-delta.mjs
+      - _tools/watchlist-delta-plan.mjs
+      - _tools/daily-validation.mjs
+      - _tools/discovery-links.mjs
+      - _generator/lib/visual-output.mjs
 permissions:
   contents: read
 jobs:
@@ -24,10 +36,18 @@ jobs:
         run: |
           test "$GITHUB_REF" = refs/heads/efficiency-revision-2026-09-17
           git worktree add --detach /tmp/dab-baseline 1df531897edb50406b1d4bf2cf8089f69a797a92
-      - name: Verify prospective synthetic handoff contract
+      - name: Verify prospective and focused deterministic contracts
         run: |
           mkdir -p /tmp/dab-shadow-evidence
-          node --test _generator/test/pr117-prospective-handoff.test.mjs | tee /tmp/dab-shadow-evidence/prospective-handoff.tap
+          node --test \
+            _generator/test/pr117-prospective-handoff.test.mjs \
+            _generator/test/acquisition-limits.test.mjs \
+            _generator/test/daily-validation.test.mjs \
+            _generator/test/visual-output.test.mjs \
+            _generator/test/watchlist-delta.test.mjs \
+            _generator/test/watchlist-delta-cli.test.mjs \
+            _generator/test/command-center-delta.test.mjs \
+            | tee /tmp/dab-shadow-evidence/focused-contracts.tap
       - name: Replay without publication
         run: node _tools/pr117-shadow-verification.mjs /tmp/dab-baseline /tmp/dab-shadow-evidence
       - name: Preserve shadow evidence
