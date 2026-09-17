@@ -55,6 +55,18 @@ run('kernel_to_stage_replay',()=>{
 report.current_media_preflight_errors=validateMediaPreflight(edition,JSON.parse(fs.readFileSync('_records/editorial/media-preflight/2026-09-17.json')),{observedAt:report.executed_at});
 run('checkout_unchanged',()=>{if(git('status','--porcelain')!==before)throw Error('Checkout changed');return 'All generated files are outside checkout';});
 run('restoration_target_available',()=>{git('cat-file','-e',baseline+'^{commit}');return {target:baseline,method:'Reviewed restoration commit; no reset or force push',live_restore_executed:false};});
+report.live_anonymous_probes=[];
+const origin='https://daily-ai-brief-command-center.gtome.chatgpt.site';
+for(const [method,route] of [['GET','/api/access'],['GET','/api/comments?retain=false'],['GET','/api/usage'],['GET','/api/snapshot'],['GET','/api/audience'],['GET','/api/book-updates'],['POST','/api/usage/record'],['POST','/api/snapshot/record'],['POST','/api/watchlist/review'],['POST','/api/comments/review']]){
+ try{
+  const response=await fetch(origin+route,{method,redirect:'manual',signal:AbortSignal.timeout(15000),headers:{'content-type':'application/json'},...(method==='POST'?{body:'{}'}:{})});
+  let data;try{data=await response.json();}catch{}
+  // Never persist private response content. Invalid empty mutation bodies cannot create valid records.
+  const expected=route==='/api/access'?response.status===200&&data?.owner===false:response.status===403&&data?.error==='owner_identity_required';
+  report.live_anonymous_probes.push({method,route,status:response.status,expected_owner_denial:data?.error==='owner_identity_required',signed_out:data?.owner===false,result:expected?'PASS':'FAIL'});
+ }catch(e){report.live_anonymous_probes.push({method,route,result:'FAIL',error:e.name});}
+}
+report.checks.live_anonymous_access={result:report.live_anonymous_probes.every(p=>p.result==='PASS')?'PASS':'FAIL',details:'No cookies, bearer tokens, or identity headers used. Private response bodies not retained.'};
 report.result=Object.values(report.checks).every(x=>x.result==='PASS')?'PASS':'FAIL';
 write('report.json',report);console.log(JSON.stringify(report,null,2));
 if(report.result!=='PASS')process.exitCode=1;
