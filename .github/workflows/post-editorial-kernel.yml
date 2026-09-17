@@ -92,6 +92,13 @@ jobs:
           set -euo pipefail
           git fetch --no-tags origin main
           baseline="$(git rev-parse origin/main)"
+          kernel_baseline="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.baseline_sha||''));" "$KERNEL_PATH")"
+          if [ "$kernel_baseline" != "$baseline" ]; then
+            echo "Editorial kernel baseline does not match trusted origin/main."
+            echo "kernel baseline: $kernel_baseline"
+            echo "trusted main:    $baseline"
+            exit 1
+          fi
           echo "sha=$baseline" >> "$GITHUB_OUTPUT"
           node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
 
