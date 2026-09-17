@@ -41,7 +41,7 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           ref: main
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Set up Node.js
         if: steps.gate.outputs.run == 'true'
@@ -62,6 +62,18 @@ jobs:
           fi
           echo "value=$value" >> "$GITHUB_OUTPUT"
 
+      - name: Build deterministic Watchlist delta receipt
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          set -euo pipefail
+          prior_commit="$(git log --format=%H -- _data/watchlist.json | sed -n '2p')"
+          args=(--next _data/watchlist.json --out /tmp/watchlist-delta.json)
+          if [ -n "$prior_commit" ]; then
+            git show "$prior_commit:_data/watchlist.json" > /tmp/prior-watchlist.json
+            args+=(--prior /tmp/prior-watchlist.json)
+          fi
+          node _tools/watchlist-delta-plan.mjs "${args[@]}"
+
       - name: Run deterministic delta validation
         if: steps.gate.outputs.run == 'true'
         id: validation
@@ -74,21 +86,26 @@ jobs:
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
           exit "$exit_code"
 
-      - name: Publish compact receipt to job summary
+      - name: Publish compact receipts to job summary
         if: steps.gate.outputs.run == 'true' && always()
         run: |
-          if [ -f /tmp/daily-validation.json ]; then
-            echo '```json' >> "$GITHUB_STEP_SUMMARY"
-            cat /tmp/daily-validation.json >> "$GITHUB_STEP_SUMMARY"
-            echo '```' >> "$GITHUB_STEP_SUMMARY"
-          fi
+          for receipt in /tmp/watchlist-delta.json /tmp/daily-validation.json; do
+            if [ -f "$receipt" ]; then
+              echo "#### $(basename "$receipt")" >> "$GITHUB_STEP_SUMMARY"
+              echo '```json' >> "$GITHUB_STEP_SUMMARY"
+              cat "$receipt" >> "$GITHUB_STEP_SUMMARY"
+              echo '```' >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
 
-      - name: Upload validation receipt
+      - name: Upload validation receipts
         if: steps.gate.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: daily-validation-${{ steps.date.outputs.value }}-${{ github.run_id }}
-          path: /tmp/daily-validation.json
+          path: |
+            /tmp/daily-validation.json
+            /tmp/watchlist-delta.json
           retention-days: 30
           if-no-files-found: error
 
