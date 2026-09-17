@@ -1,0 +1,34 @@
+{
+  "brief_date": "2026-09-17",
+  "searched_at": "2026-09-17T12:22:20Z",
+  "selected_item_id": "dab-podcast-2026-09-17-judgment-models",
+  "source_registry": "_data/podcast-sources.json",
+  "candidates": [
+    {
+      "title": "Why a New Class of AI “Judgment Models” Could Have Big Business Implications",
+      "show": "The AI Daily Brief",
+      "url": "https://podcasts.apple.com/us/podcast/why-a-new-class-of-ai-judgment-models-could-have/id1680633614?i=1000790088532",
+      "publication_date": "2026-09-16",
+      "decision": "selected",
+      "reason": "Fresh registered-source episode inside the preferred 48-hour window with verified title, date, runtime and direct URL."
+    },
+    {
+      "title": "The Artificial Intelligence Show latest episode",
+      "show": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/",
+      "publication_date": null,
+      "decision": "rejected",
+      "reason": "No newer unused episode displaced the fully verified 48-hour selection."
+    }
+  ],
+  "verification": {
+    "publication_date": "Apple Podcasts structured episode metadata identifies September 16, 2026.",
+    "host": "Registered publisher identity names Nathaniel Whittemore.",
+    "runtime": "Apple Podcasts structured metadata reports PT25M19S (1,519 seconds).",
+    "platform_url": "Direct Apple episode URL returned HTTP 200.",
+    "novelty": "Title and direct episode identity are absent from prior podcast records."
+  },
+  "limitations": [
+    "The host provides practitioner analysis rather than an independent technical evaluation."
+  ]
+}

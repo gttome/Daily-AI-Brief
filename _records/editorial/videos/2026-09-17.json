@@ -1,0 +1,27 @@
+{
+  "brief_date": "2026-09-17",
+  "searched_at": "2026-09-17T12:22:20Z",
+  "selected_general": null,
+  "selected_agents_non_technical_people": null,
+  "candidates": [
+    {
+      "title": "OpenAI Academy current short tutorials",
+      "url": "https://academy.openai.com/",
+      "decision": "rejected",
+      "reason": "No fresh unused directly relevant clip exposed a stable direct URL, date and exact runtime within the short-video preference."
+    },
+    {
+      "title": "GitHub official video catalog",
+      "url": "https://www.youtube.com/@GitHub",
+      "decision": "rejected",
+      "reason": "No unused directly relevant September 16–17 clip with independently verified runtime of 10:00 or less qualified."
+    },
+    {
+      "title": "Anthropic official video catalog",
+      "url": "https://www.youtube.com/@anthropic-ai",
+      "decision": "rejected",
+      "reason": "No fresh unused short clip matched the selected agent stories with complete date and runtime evidence."
+    }
+  ],
+  "result": "Both slots empty after short-video-first search; operational diagnostics remain in the private editorial record and empty slots are not counted as included items."
+}

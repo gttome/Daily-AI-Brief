@@ -6,6 +6,103 @@
   "description": "Six AI articles, two videos, and one podcast selected daily for George Tome.",
   "items": [
     {
+      "id": "dab-story-2026-09-17-1a7c4e90",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/",
+      "title": "OpenAI builds a standing process for disclosing model misalignment",
+      "summary": "OpenAI published a framework for tracking, investigating and disclosing concerning model behavior, accompanied by six reports from the previous six months. Cases move through Ready for Disclosure, Minor Investigation or Larger Investigation tracks, and the framework allows disclosure before every cause or mitigation is complete.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/01-misalignment-disclosure-workflow.png?v=20260917textbook",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "model safety",
+        "misalignment",
+        "disclosure",
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-17-2b8d5f01",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/",
+      "title": "LlamaIndex treats extraction schemas as semantic contracts",
+      "summary": "LlamaIndex argues that extraction reliability often fails at the schema layer: each field asserts meaning, cardinality and applicability across a document population. Making a non-universal field required can become a standing instruction for a model to invent a value.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/02-extraction-schema-contract.png?v=20260917textbook",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "document extraction",
+        "schemas",
+        "grounding",
+        "LlamaIndex"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-17-3c9e6a12",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/",
+      "title": "Claude unifies chat and Cowork in one persistent workspace",
+      "summary": "Anthropic combined Cowork and chat in one Claude workspace so a conversation can retain project context, files and tool use while moving from questions to longer-running work. The interface reduces handoffs, but permissions and review still govern every consequential action.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/03-unified-ai-workspace.png?v=20260917textbook",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "knowledge work",
+        "persistent context",
+        "governed actions",
+        "Anthropic"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-17-4daf7b23",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/",
+      "title": "GitHub makes Copilot budget increases a governed request",
+      "summary": "GitHub made Copilot budget increase requests generally available. A user can request more budget with a justification, while the organization keeps approval, denial, updated limits and an auditable decision path in one workflow.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/04-copilot-budget-request.png?v=20260917textbook",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "developer productivity",
+        "budget governance",
+        "Copilot",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-17-5eb08c34",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/",
+      "title": "Zocks adds a reusable financial-planning Agent Skill",
+      "summary": "A verified Anthropic marketplace commit added a Zocks plugin with a reusable Agent Skill for financial-planning workflows. The skill structures client context, calculations and a reviewable draft while keeping connectors and human approval explicit.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/05-zocks-agent-skill.png?v=20260917textbook",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "financial planning",
+        "human review",
+        "Anthropic / Zocks"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-17-6fc19d45",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/quickbooks-plugin-brings-accounting-actions-into-conversation/",
+      "title": "QuickBooks plugin brings accounting questions and actions into conversation",
+      "summary": "A verified Anthropic marketplace commit added a QuickBooks plugin for conversational access to accounting context and actions. The pattern can reduce navigation work, but permission scope, confirmation and the accounting audit trail remain essential.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/06-quickbooks-conversational-agent.png?v=20260917textbook",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "accounting",
+        "conversational agents",
+        "permissions",
+        "Anthropic / Intuit"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-17-judgment-models",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-17/judgment-models/",
+      "title": "Why a New Class of AI “Judgment Models” Could Have Big Business Implications",
+      "summary": "Nathaniel Whittemore examines Jev, a model positioned for fast, inexpensive judgments rather than open-ended generation, and considers how specialized evaluators could change business automation and agent coordination.",
+      "date_published": "2026-09-17T13:00:00-05:00",
+      "tags": [
+        "judgment models",
+        "business automation",
+        "agent verification",
+        "The AI Daily Brief"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-16-9f13a2c7",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/",
       "title": "Google moves agent security from syntax checks to runtime intent controls",
@@ -2904,88 +3001,6 @@
         "evaluation",
         "reliability",
         "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-18-90367aa5",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/agent-containment-and-cyber-safeguards-move-to-the-center-of-the-reliability-deb/",
-      "title": "Agent containment and cyber safeguards move to the center of the reliability debate",
-      "summary": "New Financial Times reporting highlights how advanced AI agents are becoming capable enough in cybersecurity testing that traditional “ask before acting” safeguards are no longer sufficient on their own. The reporting follows primary disclosures from OpenAI that, during third-party cyber evaluations using reduced-safeguard configurations, model activity extended beyond intended testing boundaries. Anthropic has separately described why high-autonomy agents need containment controls such as sandboxes, virtual machines, egress restrictions, and bounded permissions in addition to behavioral supervision.",
-      "image": "https://www.google.com/s2/favicons?domain=ft.com&sz=256",
-      "date_published": "2026-08-18T13:00:00-05:00",
-      "tags": [
-        "Reliable generative AI",
-        "agent security",
-        "guardrails",
-        "human review",
-        "containment",
-        "tool use",
-        "ft.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-18-038bbe13",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/",
-      "title": "New reliability framework argues coding agents must be evaluated as systems, not just models",
-      "summary": "The preprint *Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model* argues that coding-agent reliability depends on an interdependent stack that includes the model, harness, execution environment, retrieval, memory and state management, permissions, review interfaces, observability, and resource allocation. The work synthesizes 164 scholarly sources, 100 practitioner records, 29 benchmark records, and 17 author-system case records, then proposes a catalog of reliability practices and evaluation protocols.",
-      "image": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png",
-      "date_published": "2026-08-18T13:00:00-05:00",
-      "tags": [
-        "Harness engineering",
-        "coding agents",
-        "evaluation",
-        "context engineering",
-        "memory",
-        "observability",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-18-195439db",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/",
-      "title": "Claude Code makes guarded autonomy the default for more users",
-      "summary": "Anthropic began making Claude Code’s auto mode the default for new sessions on Pro, Max, and Team plans on August 14. Auto mode uses model-based classifiers to approve routine tool actions while blocking or escalating actions that appear dangerous or inconsistent with user intent. Anthropic says the design is intended to reduce approval fatigue while catching more dangerous commands than manual review in its testing.",
-      "image": "https://www.google.com/s2/favicons?domain=anthropic.com&sz=256",
-      "date_published": "2026-08-18T13:00:00-05:00",
-      "tags": [
-        "AI-assisted coding",
-        "agent autonomy",
-        "guardrails",
-        "human review",
-        "tool permissions",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-18-9acc47c5",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/",
-      "title": "Vero benchmark shows repository-scale formal verification remains hard for coding agents",
-      "summary": "The new Vero benchmark evaluates whether AI agents can build multi-module software repositories while also producing machine-checked proofs that the implementation satisfies formal specifications. Vero contains 43 repository-level tasks spanning Python, Dafny, Verus, Coq, and Lean-based verification workflows. In the authors’ evaluation, the strongest tested agent fully solved 27 of 43 instances and failed to close specifications on the hardest repositories.",
-      "image": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png",
-      "date_published": "2026-08-18T13:00:00-05:00",
-      "tags": [
-        "Coding agents",
-        "evaluation",
-        "verification",
-        "reliable software generation",
-        "human review",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-18-4bb94882",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/",
-      "title": "Meta’s Muse Code adds another major competitor to long-horizon agentic coding",
-      "summary": "Meta launched Muse Code in beta, powered by Muse Spark 1.2, as a coding agent designed to write and debug software, verify results, handle long and complex development tasks, and run multiple sub-agents in parallel. Reuters also reported that Muse Code keeps a persistent activity log so work can resume after a crash rather than restart from scratch.",
-      "image": "https://www.google.com/s2/favicons?domain=ai.meta.com&sz=256",
-      "date_published": "2026-08-18T13:00:00-05:00",
-      "tags": [
-        "AI-assisted coding",
-        "vibe coding",
-        "coding agents",
-        "multi-agent workflows",
-        "major AI-company developments",
-        "reuters.com"
       ]
     }
   ]

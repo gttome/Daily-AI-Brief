@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** For non-technical users, the important shift is from navigating fixed screens to describing the view or action they need. The announcement is vendor-reported and availability varies by surface, so teams should verify product access, permission inheritance, auditability, data-retention terms and human approval for consequential writes before treating the interface as production-ready.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

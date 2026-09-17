@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Deployment agents are safer when their credentials cannot reach unrelated applications. This reduces blast radius and makes separation of duties easier to audit, but least privilege still depends on correct role design, token handling, logs and periodic access review; scoped authorization does not validate the code an agent deploys.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

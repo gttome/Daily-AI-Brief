@@ -29,7 +29,7 @@ test('September 16 forward permits one verified bridge per Brief item',()=>{
  full.editions['2026-09-16'].push({...full.editions['2026-09-16'][0]});assert.throws(()=>validateBookReading(future,full));
 });
 test('September 16 forward public body removes owner-only editorial metadata and does not force book matches',()=>{
- const future=structuredClone(edition);future.brief_date='2026-09-17';future.worth_watching.general={status:'empty',exception:'PRIVATE VIDEO DIAGNOSTIC'};const body=renderBody(future);
+ const future=structuredClone(edition);future.brief_date='2099-09-17';future.worth_watching.general={status:'empty',exception:'PRIVATE VIDEO DIAGNOSTIC'};const body=renderBody(future);
  assert.doesNotMatch(body,/class="book-bridge"/);assert.doesNotMatch(body,/data-george-implication|Proposed update:|George Tome/);assert.match(body,/Video · No qualifying selection/);assert.match(body,/No video met today’s editorial quality standards\./);assert.doesNotMatch(body,/PRIVATE VIDEO DIAGNOSTIC/);assert.match(body,/Purchasing a book supports continued development/);
 });
 test('September 16 forward bridges use the approved Leanpub wording',()=>{

@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** This is a concrete reusable-skill pattern for grounding an agent in governance metadata before it touches enterprise data. The commit verifies marketplace inclusion, not deployment quality or universal access; organizations still need connector configuration, permission review, catalog quality checks and human judgment about whether the returned guidance authorizes use.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the checklist to test whether catalog metadata is complete enough to ground a safe downstream decision.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
