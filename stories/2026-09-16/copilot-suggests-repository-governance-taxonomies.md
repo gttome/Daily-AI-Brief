@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** A consistent taxonomy is prerequisite infrastructure for fleet-wide governance, reporting and automation. Suggestions may accelerate the blank-page step, but administrators remain responsible for semantics, duplicates, compliance meaning and downstream rules; accepting plausible values without review can standardize the wrong categories faster.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist before accepting AI-suggested governance labels into a shared taxonomy.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

@@ -106,6 +106,38 @@
         "label": "READ DEEPER",
         "why": "Trust calibration provides a practical frame for weighing frontier-risk claims, evaluator access and evidence limits."
       }
+    ],
+    "2026-09-17": [
+      {
+        "item_id": "dab-story-2026-09-17-1a7c4e90",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the final-gate framework to decide which model behaviors require disclosure, investigation or a stop decision."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-2b8d5f01",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the context-quality checklist when reviewing field meaning, optionality and nullability before extraction."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-3c9e6a12",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Trust calibration helps separate a fluid continuous interface from evidence that its actions remain reliable."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-5eb08c34",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Use the checklist to test whether a reusable skill contains enough instructions, context and evidence for safe use."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-17-judgment-models",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "The verification gate provides a useful frame for deciding when a specialized judgment should be accepted or escalated."
+      }
     ]
   }
 }

@@ -4,7 +4,56 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-16T12:15:27Z</updated>
+  <updated>2026-09-17T12:22:20Z</updated>
+  <entry>
+    <title>OpenAI builds a standing process for disclosing model misalignment</title>
+    <id>dab-story-2026-09-17-1a7c4e90</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>OpenAI published a framework for tracking, investigating and disclosing concerning model behavior, accompanied by six reports from the previous six months. Cases move through Ready for Disclosure, Minor Investigation or Larger Investigation tracks, and the framework allows disclosure before every cause or mitigation is complete.</summary>
+  </entry>
+  <entry>
+    <title>LlamaIndex treats extraction schemas as semantic contracts</title>
+    <id>dab-story-2026-09-17-2b8d5f01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>LlamaIndex argues that extraction reliability often fails at the schema layer: each field asserts meaning, cardinality and applicability across a document population. Making a non-universal field required can become a standing instruction for a model to invent a value.</summary>
+  </entry>
+  <entry>
+    <title>Claude unifies chat and Cowork in one persistent workspace</title>
+    <id>dab-story-2026-09-17-3c9e6a12</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>Anthropic combined Cowork and chat in one Claude workspace so a conversation can retain project context, files and tool use while moving from questions to longer-running work. The interface reduces handoffs, but permissions and review still govern every consequential action.</summary>
+  </entry>
+  <entry>
+    <title>GitHub makes Copilot budget increases a governed request</title>
+    <id>dab-story-2026-09-17-4daf7b23</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>GitHub made Copilot budget increase requests generally available. A user can request more budget with a justification, while the organization keeps approval, denial, updated limits and an auditable decision path in one workflow.</summary>
+  </entry>
+  <entry>
+    <title>Zocks adds a reusable financial-planning Agent Skill</title>
+    <id>dab-story-2026-09-17-5eb08c34</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>A verified Anthropic marketplace commit added a Zocks plugin with a reusable Agent Skill for financial-planning workflows. The skill structures client context, calculations and a reviewable draft while keeping connectors and human approval explicit.</summary>
+  </entry>
+  <entry>
+    <title>QuickBooks plugin brings accounting questions and actions into conversation</title>
+    <id>dab-story-2026-09-17-6fc19d45</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/quickbooks-plugin-brings-accounting-actions-into-conversation/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>A verified Anthropic marketplace commit added a QuickBooks plugin for conversational access to accounting context and actions. The pattern can reduce navigation work, but permission scope, confirmation and the accounting audit trail remain essential.</summary>
+  </entry>
+  <entry>
+    <title>Why a New Class of AI “Judgment Models” Could Have Big Business Implications</title>
+    <id>dab-podcast-2026-09-17-judgment-models</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-17/judgment-models/" />
+    <updated>2026-09-17T18:00:00Z</updated>
+    <summary>Nathaniel Whittemore examines Jev, a model positioned for fast, inexpensive judgments rather than open-ended generation, and considers how specialized evaluators could change business automation and agent coordination.</summary>
+  </entry>
   <entry>
     <title>Google moves agent security from syntax checks to runtime intent controls</title>
     <id>dab-story-2026-09-16-9f13a2c7</id>
@@ -1313,40 +1362,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/" />
     <updated>2026-08-19T18:00:00Z</updated>
     <summary>*Semantic Bandits* studies how natural-language labels alter an LLM agent’s exploration-versus-exploitation behavior even when the underlying formal choices are equivalent. The researchers found that informative labels pushed agents toward exploitation: performance improved when the label’s implied meaning matched the reward structure but degraded sharply when it did not. Negative rewards also triggered more exploration than equivalent positive rewards.</summary>
-  </entry>
-  <entry>
-    <title>Agent containment and cyber safeguards move to the center of the reliability debate</title>
-    <id>dab-story-2026-08-18-90367aa5</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/agent-containment-and-cyber-safeguards-move-to-the-center-of-the-reliability-deb/" />
-    <updated>2026-08-18T18:00:00Z</updated>
-    <summary>New Financial Times reporting highlights how advanced AI agents are becoming capable enough in cybersecurity testing that traditional “ask before acting” safeguards are no longer sufficient on their own. The reporting follows primary disclosures from OpenAI that, during third-party cyber evaluations using reduced-safeguard configurations, model activity extended beyond intended testing boundaries. Anthropic has separately described why high-autonomy agents need containment controls such as sandboxes, virtual machines, egress restrictions, and bounded permissions in addition to behavioral supervision.</summary>
-  </entry>
-  <entry>
-    <title>New reliability framework argues coding agents must be evaluated as systems, not just models</title>
-    <id>dab-story-2026-08-18-038bbe13</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/" />
-    <updated>2026-08-18T18:00:00Z</updated>
-    <summary>The preprint *Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model* argues that coding-agent reliability depends on an interdependent stack that includes the model, harness, execution environment, retrieval, memory and state management, permissions, review interfaces, observability, and resource allocation. The work synthesizes 164 scholarly sources, 100 practitioner records, 29 benchmark records, and 17 author-system case records, then proposes a catalog of reliability practices and evaluation protocols.</summary>
-  </entry>
-  <entry>
-    <title>Claude Code makes guarded autonomy the default for more users</title>
-    <id>dab-story-2026-08-18-195439db</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/" />
-    <updated>2026-08-18T18:00:00Z</updated>
-    <summary>Anthropic began making Claude Code’s auto mode the default for new sessions on Pro, Max, and Team plans on August 14. Auto mode uses model-based classifiers to approve routine tool actions while blocking or escalating actions that appear dangerous or inconsistent with user intent. Anthropic says the design is intended to reduce approval fatigue while catching more dangerous commands than manual review in its testing.</summary>
-  </entry>
-  <entry>
-    <title>Vero benchmark shows repository-scale formal verification remains hard for coding agents</title>
-    <id>dab-story-2026-08-18-9acc47c5</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/" />
-    <updated>2026-08-18T18:00:00Z</updated>
-    <summary>The new Vero benchmark evaluates whether AI agents can build multi-module software repositories while also producing machine-checked proofs that the implementation satisfies formal specifications. Vero contains 43 repository-level tasks spanning Python, Dafny, Verus, Coq, and Lean-based verification workflows. In the authors’ evaluation, the strongest tested agent fully solved 27 of 43 instances and failed to close specifications on the hardest repositories.</summary>
-  </entry>
-  <entry>
-    <title>Meta’s Muse Code adds another major competitor to long-horizon agentic coding</title>
-    <id>dab-story-2026-08-18-4bb94882</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/" />
-    <updated>2026-08-18T18:00:00Z</updated>
-    <summary>Meta launched Muse Code in beta, powered by Muse Spark 1.2, as a coding agent designed to write and debug software, verify results, handle long and complex development tasks, and run multiple sub-agents in parallel. Reuters also reported that Muse Code keeps a persistent activity log so work can resume after a crash rather than restart from scratch.</summary>
   </entry>
 </feed>

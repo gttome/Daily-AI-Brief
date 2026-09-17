@@ -4,6 +4,175 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-17-1a7c4e90",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-16",
+      "headline": "OpenAI builds a standing process for disclosing model misalignment",
+      "url": "/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "model safety",
+        "misalignment",
+        "disclosure"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "proposed",
+      "trends": [
+        "Agent reliability and governance"
+      ],
+      "summary": "OpenAI published a framework for tracking, investigating and disclosing concerning model behavior, accompanied by six reports from the previous six months. Cases move through Ready for Disclosure, Minor Investigation or Larger Investigation tracks, and the framework allows disclosure before every cause or mitigation is complete."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-17-2b8d5f01",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-17",
+      "headline": "LlamaIndex treats extraction schemas as semantic contracts",
+      "url": "/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "document extraction",
+        "schemas",
+        "grounding"
+      ],
+      "companies": [
+        "LlamaIndex"
+      ],
+      "evidence_type": "official_documentation",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context"
+      ],
+      "summary": "LlamaIndex argues that extraction reliability often fails at the schema layer: each field asserts meaning, cardinality and applicability across a document population. Making a non-universal field required can become a standing instruction for a model to invent a value."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-17-3c9e6a12",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-16",
+      "headline": "Claude unifies chat and Cowork in one persistent workspace",
+      "url": "/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "knowledge work",
+        "persistent context",
+        "governed actions"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Anthropic combined Cowork and chat in one Claude workspace so a conversation can retain project context, files and tool use while moving from questions to longer-running work. The interface reduces handoffs, but permissions and review still govern every consequential action."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-17-4daf7b23",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-16",
+      "headline": "GitHub makes Copilot budget increases a governed request",
+      "url": "/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "developer productivity",
+        "budget governance",
+        "Copilot"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_changelog",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub made Copilot budget increase requests generally available. A user can request more budget with a justification, while the organization keeps approval, denial, updated limits and an auditable decision path in one workflow."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-17-5eb08c34",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-16",
+      "headline": "Zocks adds a reusable financial-planning Agent Skill",
+      "url": "/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "financial planning",
+        "human review"
+      ],
+      "companies": [
+        "Anthropic / Zocks"
+      ],
+      "evidence_type": "official_repository",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A verified Anthropic marketplace commit added a Zocks plugin with a reusable Agent Skill for financial-planning workflows. The skill structures client context, calculations and a reviewable draft while keeping connectors and human approval explicit."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-17-6fc19d45",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-16",
+      "headline": "QuickBooks plugin brings accounting questions and actions into conversation",
+      "url": "/stories/2026-09-17/quickbooks-plugin-brings-accounting-actions-into-conversation/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "accounting",
+        "conversational agents",
+        "permissions"
+      ],
+      "companies": [
+        "Anthropic / Intuit"
+      ],
+      "evidence_type": "official_repository",
+      "availability_status": "general_availability",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A verified Anthropic marketplace commit added a QuickBooks plugin for conversational access to accounting context and actions. The pattern can reduce navigation work, but permission scope, confirmation and the accounting audit trail remain essential."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-17-judgment-models",
+      "brief_date": "2026-09-17",
+      "event_date": "2026-09-16",
+      "headline": "Why a New Class of AI “Judgment Models” Could Have Big Business Implications",
+      "url": "/podcasts/2026-09-17/judgment-models/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "judgment models",
+        "business automation",
+        "agent verification"
+      ],
+      "companies": [
+        "The AI Daily Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Nathaniel Whittemore examines Jev, a model positioned for fast, inexpensive judgments rather than open-ended generation, and considers how specialized evaluators could change business automation and agent coordination."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-16-9f13a2c7",
       "brief_date": "2026-09-16",
       "event_date": "2026-09-15",
@@ -4787,142 +4956,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "*Semantic Bandits* studies how natural-language labels alter an LLM agent’s exploration-versus-exploitation behavior even when the underlying formal choices are equivalent. The researchers found that informative labels pushed agents toward exploitation: performance improved when the label’s implied meaning matched the reward structure but degraded sharply when it did not. Negative rewards also triggered more exploration than equivalent positive rewards."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-18-90367aa5",
-      "brief_date": "2026-08-18",
-      "event_date": "2026-08-18",
-      "headline": "Agent containment and cyber safeguards move to the center of the reliability debate",
-      "url": "/stories/2026-08-18/agent-containment-and-cyber-safeguards-move-to-the-center-of-the-reliability-deb/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Reliable generative AI",
-        "agent security",
-        "guardrails",
-        "human review",
-        "containment",
-        "tool use"
-      ],
-      "companies": [
-        "ft.com"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "New Financial Times reporting highlights how advanced AI agents are becoming capable enough in cybersecurity testing that traditional “ask before acting” safeguards are no longer sufficient on their own. The reporting follows primary disclosures from OpenAI that, during third-party cyber evaluations using reduced-safeguard configurations, model activity extended beyond intended testing boundaries. Anthropic has separately described why high-autonomy agents need containment controls such as sandboxes, virtual machines, egress restrictions, and bounded permissions in addition to behavioral supervision."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-18-038bbe13",
-      "brief_date": "2026-08-18",
-      "event_date": "2026-08-14",
-      "headline": "New reliability framework argues coding agents must be evaluated as systems, not just models",
-      "url": "/stories/2026-08-18/new-reliability-framework-argues-coding-agents-must-be-evaluated-as-systems-not-/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Harness engineering",
-        "coding agents",
-        "evaluation",
-        "context engineering",
-        "memory",
-        "observability"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "The preprint *Engineering Reliable Coding Agents: Evaluating and Operating the System Around the Model* argues that coding-agent reliability depends on an interdependent stack that includes the model, harness, execution environment, retrieval, memory and state management, permissions, review interfaces, observability, and resource allocation. The work synthesizes 164 scholarly sources, 100 practitioner records, 29 benchmark records, and 17 author-system case records, then proposes a catalog of reliability practices and evaluation protocols."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-18-195439db",
-      "brief_date": "2026-08-18",
-      "event_date": "2026-08-14",
-      "headline": "Claude Code makes guarded autonomy the default for more users",
-      "url": "/stories/2026-08-18/claude-code-makes-guarded-autonomy-the-default-for-more-users/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "AI-assisted coding",
-        "agent autonomy",
-        "guardrails",
-        "human review",
-        "tool permissions"
-      ],
-      "companies": [
-        "Anthropic"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Anthropic began making Claude Code’s auto mode the default for new sessions on Pro, Max, and Team plans on August 14. Auto mode uses model-based classifiers to approve routine tool actions while blocking or escalating actions that appear dangerous or inconsistent with user intent. Anthropic says the design is intended to reduce approval fatigue while catching more dangerous commands than manual review in its testing."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-18-9acc47c5",
-      "brief_date": "2026-08-18",
-      "event_date": "2026-08-13",
-      "headline": "Vero benchmark shows repository-scale formal verification remains hard for coding agents",
-      "url": "/stories/2026-08-18/vero-benchmark-shows-repository-scale-formal-verification-remains-hard-for-codin/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Coding agents",
-        "evaluation",
-        "verification",
-        "reliable software generation",
-        "human review"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "The new Vero benchmark evaluates whether AI agents can build multi-module software repositories while also producing machine-checked proofs that the implementation satisfies formal specifications. Vero contains 43 repository-level tasks spanning Python, Dafny, Verus, Coq, and Lean-based verification workflows. In the authors’ evaluation, the strongest tested agent fully solved 27 of 43 instances and failed to close specifications on the hardest repositories."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-18-4bb94882",
-      "brief_date": "2026-08-18",
-      "event_date": "2026-08-05",
-      "headline": "Meta’s Muse Code adds another major competitor to long-horizon agentic coding",
-      "url": "/stories/2026-08-18/meta-s-muse-code-adds-another-major-competitor-to-long-horizon-agentic-coding/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "AI-assisted coding",
-        "vibe coding",
-        "coding agents",
-        "multi-agent workflows",
-        "major AI-company developments"
-      ],
-      "companies": [
-        "reuters.com"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Meta launched Muse Code in beta, powered by Muse Spark 1.2, as a coding agent designed to write and debug software, verify results, handle long and complex development tasks, and run multiple sub-agents in parallel. Reuters also reported that Muse Code keeps a persistent activity log so work can resume after a crash rather than restart from scratch."
     }
   ]
 }

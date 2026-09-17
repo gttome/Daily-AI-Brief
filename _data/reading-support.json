@@ -185,6 +185,54 @@
       "word_count": 260,
       "verified_at": "2026-09-16T12:15:27Z",
       "method": "Publisher main article text; navigation and unrelated promotional material excluded; estimated at 200 words per minute."
+    },
+    "dab-story-2026-09-17-1a7c4e90": {
+      "status": "verified",
+      "source_url": "https://openai.com/index/model-misalignment-reporting-framework/",
+      "word_count": 1200,
+      "verified_at": "2026-09-17T12:22:20Z",
+      "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-17-2b8d5f01": {
+      "status": "verified",
+      "source_url": "https://www.llamaindex.ai/blog/ai-document-extraction-schema",
+      "word_count": 1800,
+      "verified_at": "2026-09-17T12:22:20Z",
+      "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-17-3c9e6a12": {
+      "status": "verified",
+      "source_url": "https://claude.com/blog/cowork-is-now-claude",
+      "word_count": 1000,
+      "verified_at": "2026-09-17T12:22:20Z",
+      "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-17-4daf7b23": {
+      "status": "verified",
+      "source_url": "https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available/",
+      "word_count": 420,
+      "verified_at": "2026-09-17T12:22:20Z",
+      "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-17-5eb08c34": {
+      "status": "verified",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins/commit/b0a18aeebc13617365095537e51997616b610739",
+      "word_count": 900,
+      "verified_at": "2026-09-17T12:22:20Z",
+      "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
+      "words_per_minute": 200
+    },
+    "dab-story-2026-09-17-6fc19d45": {
+      "status": "verified",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins/commit/c55597c2697c8efe274b3f6110813c13e04885d5",
+      "word_count": 700,
+      "verified_at": "2026-09-17T12:22:20Z",
+      "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
+      "words_per_minute": 200
     }
   },
   "schema_version": "1.0.0",
@@ -538,6 +586,56 @@
         "context": "A governance proposal is stronger when it specifies who evaluates, what access they receive and how findings affect deployment decisions.",
         "label_reason": "Current registered-source episode selected inside the preferred 48-hour window.",
         "learning_outcome": "How to distinguish concrete evaluator access proposals from general calls to slow AI."
+      }
+    ],
+    "2026-09-17": [
+      {
+        "item_id": "dab-story-2026-09-17-1a7c4e90",
+        "coverage_label": "New development",
+        "label_reason": "Primary-window original evidence published within the rolling previous 24 hours.",
+        "learning_outcome": "How a standing disclosure workflow can separate fast publication from deeper investigation.",
+        "context_term": "Misalignment disclosure",
+        "context": "A repeatable process for publishing concerning model behavior with explicit investigation tracks."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-2b8d5f01",
+        "coverage_label": "New development",
+        "label_reason": "Primary-window original evidence published within the rolling previous 24 hours.",
+        "learning_outcome": "Why field semantics and optionality determine whether extraction stays grounded.",
+        "context_term": "Semantic schema",
+        "context": "A data contract whose fields encode meaning, cardinality and applicability, not only output syntax."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-3c9e6a12",
+        "coverage_label": "New development",
+        "label_reason": "Primary-window original evidence published within the rolling previous 24 hours.",
+        "learning_outcome": "How persistent context changes workflow continuity without removing permission boundaries.",
+        "context_term": "Persistent workspace",
+        "context": "A work surface that keeps conversation, files, tools and project context together across tasks."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-4daf7b23",
+        "coverage_label": "New development",
+        "label_reason": "Primary-window original evidence published within the rolling previous 24 hours.",
+        "learning_outcome": "How an approval path can govern AI-assistance budgets without hiding demand.",
+        "context_term": "Budget governance",
+        "context": "An explicit request, decision and audit process for changing an AI-assistance spending limit."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-5eb08c34",
+        "coverage_label": "New development",
+        "label_reason": "Primary-window original evidence published within the rolling previous 24 hours.",
+        "learning_outcome": "How a reusable Agent Skill packages domain instructions around governed tools and review.",
+        "context_term": "Agent Skill",
+        "context": "A reusable package of domain instructions and tool-use procedures for an agent."
+      },
+      {
+        "item_id": "dab-story-2026-09-17-6fc19d45",
+        "coverage_label": "New development",
+        "label_reason": "Primary-window original evidence published within the rolling previous 24 hours.",
+        "learning_outcome": "How conversational accounting requires permissions, confirmation and an audit trail.",
+        "context_term": "Conversational accounting",
+        "context": "Plain-language access to accounting context and actions under existing roles and controls."
       }
     ]
   }

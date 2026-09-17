@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-16",
-  "updated_at": "2026-09-16T12:15:27Z",
-  "baseline_note": "Rolling researched watchlist. September 16 due-source discovery attempted three registered sources and all three retrievals failed; 44 validated sources were retained as not due and eight require assisted review. No newly verified or materially updated topic cleared the evidence gates, so all eight topics are carried forward with their real first-detection, evidence and topic-update dates; no momentum is inferred.",
+  "edition_date": "2026-09-17",
+  "updated_at": "2026-09-17T12:22:20Z",
+  "baseline_note": "Rolling researched watchlist. The due-source pass produced 37 fresh successful automated observations, including 33 sources with candidate links; four automated sources failed, four returned no links and eight require assisted review. One topic gained new primary evidence; seven are carried forward with original evidence dates and no inferred popularity.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -223,12 +223,12 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "A package-registry incident and Bengio’s goal-conflict analysis add two independent real-world and causal signals to the earlier deployment-specific harness research.",
+      "why_now": "OpenAI published a standing framework for tracking, investigating and disclosing observed model misalignment, adding a new primary development to the broader move from static safeguards toward runtime evidence and response.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
       "limitations": "A preprint and its benchmarks do not establish protection against all real-world attacks.",
       "next_action": "Compare containment failures and goal-conflict evaluations, then extract reusable sandbox, monitoring and approval tests.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-14T12:15:00Z",
+      "updated_at": "2026-09-17T12:22:20Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -281,6 +281,16 @@
           "checked_at": "2026-09-14T12:15:00Z",
           "development_id": "habitat-centralized-control-plane",
           "review_depth": "full engineering article"
+        },
+        {
+          "title": "Model Misalignment Reporting Framework",
+          "url": "https://openai.com/index/model-misalignment-reporting-framework/",
+          "publisher": "OpenAI",
+          "kind": "primary",
+          "publication_date": "2026-09-16",
+          "checked_at": "2026-09-17T12:22:20Z",
+          "development_id": "openai-standing-misalignment-disclosure",
+          "review_depth": "full publisher framework and six linked reports"
         }
       ],
       "external_attention": [
@@ -300,9 +310,14 @@
             "observed_at": "2026-09-14T12:15:00Z",
             "value": null,
             "source": "Independent new primary development; comparable public attention metric unavailable."
+          },
+          {
+            "observed_at": "2026-09-17T12:22:20Z",
+            "value": null,
+            "source": "Independent new primary development; comparable public attention metric unavailable."
           }
         ],
-        "reason": "A second independent primary development now supports the underlying capability; comparable popularity metrics remain unavailable."
+        "reason": "A new independent primary development adds an operational disclosure loop; comparable popularity metrics remain unavailable."
       },
       "rubric": {
         "novelty": {
@@ -310,8 +325,8 @@
           "reason": "EvoSafeHarness studies adapting safety enforcement to a model and domain."
         },
         "evidence": {
-          "score": 4,
-          "reason": "Original research, a detailed incident report and a full expert causal analysis were checked; controlled replication remains outstanding."
+          "score": 5,
+          "reason": "Multiple original sources now document runtime safeguards and a standing disclosure process."
         },
         "independence": {
           "score": 4,

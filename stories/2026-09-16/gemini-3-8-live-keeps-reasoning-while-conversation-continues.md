@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Continuous voice plus visual context could make coaching, live research, troubleshooting and iterative creation less stop-and-start. The model card documents broad distribution and safety work, but Google-reported benchmarks do not substitute for testing interruption handling, tool state, privacy, latency, cost and factual reliability in the actual workflow.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust helps separate a fluid live interface from evidence that its background reasoning and actions are reliable.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

@@ -34,7 +34,7 @@ reader_release: true
 
 **Connection to the brief:** It complements today’s technical controls by asking who should verify frontier systems and how operational evidence should inform governance beyond product-level safeguards.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Selected inside the preferred preceding-48-hour window after checking registered publisher catalogs and prior podcast identities.
 

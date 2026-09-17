@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-16T11:59:38.571Z",
+  "updated_at": "2026-09-17T12:06:49.732Z",
   "sources": [
     {
       "source_id": "rundown",
@@ -16,12 +16,12 @@
         "candidate_links": 32,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:00:53.206Z",
+            "checked_at": "2026-09-17T12:05:28.818Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:00:59.581Z"
+        "checked_at": "2026-09-17T12:06:49.798Z"
       }
     },
     {
@@ -35,20 +35,20 @@
         "source_id": "tldr-ai",
         "status": "retrieved",
         "unchanged": false,
-        "candidate_links": 24,
+        "candidate_links": 19,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:00:53.216Z",
+            "checked_at": "2026-09-17T12:05:28.827Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-15T12:01:05.217Z",
+            "checked_at": "2026-09-17T12:05:40.827Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:10.799Z"
+        "checked_at": "2026-09-17T12:06:49.800Z"
       }
     },
     {
@@ -65,12 +65,17 @@
         "candidate_links": 28,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:00:53.218Z",
+            "checked_at": "2026-09-17T12:05:28.828Z",
+            "status": "unavailable",
+            "reason": "The operation was aborted due to timeout"
+          },
+          {
+            "checked_at": "2026-09-17T12:05:40.828Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:00.302Z"
+        "checked_at": "2026-09-17T12:06:49.810Z"
       }
     },
     {
@@ -82,22 +87,22 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "the-batch",
-        "status": "retrieved",
+        "status": "no_candidate_links",
         "unchanged": false,
-        "candidate_links": 1,
+        "candidate_links": 0,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:00:53.219Z",
+            "checked_at": "2026-09-17T12:05:28.829Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-15T12:01:05.218Z",
+            "checked_at": "2026-09-17T12:05:40.829Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:10.664Z"
+        "checked_at": "2026-09-17T12:06:49.814Z"
       }
     },
     {
@@ -113,17 +118,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-16T11:59:38.604Z",
+            "checked_at": "2026-09-17T12:06:49.848Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-16T11:59:50.607Z",
+            "checked_at": "2026-09-17T12:07:01.852Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-16T12:00:02.608Z"
+        "checked_at": "2026-09-17T12:07:13.857Z"
       }
     },
     {
@@ -140,12 +145,12 @@
         "candidate_links": 13,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:10.799Z",
+            "checked_at": "2026-09-17T12:05:46.895Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:16.323Z"
+        "checked_at": "2026-09-17T12:06:49.909Z"
       }
     },
     {
@@ -162,12 +167,12 @@
         "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:10.800Z",
+            "checked_at": "2026-09-17T12:05:46.896Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:16.521Z"
+        "checked_at": "2026-09-17T12:06:49.911Z"
       }
     },
     {
@@ -180,16 +185,16 @@
       "last_check": {
         "source_id": "bens-bites",
         "status": "retrieved",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 1,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:10.800Z",
+            "checked_at": "2026-09-17T12:05:46.896Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:15.468Z"
+        "checked_at": "2026-09-17T12:06:49.911Z"
       }
     },
     {
@@ -206,12 +211,12 @@
         "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:34.800Z",
+            "checked_at": "2026-09-17T12:06:10.898Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:43.638Z"
+        "checked_at": "2026-09-17T12:07:13.864Z"
       }
     },
     {
@@ -227,17 +232,17 @@
         "reason": "The operation was aborted due to timeout",
         "attempts": [
           {
-            "checked_at": "2026-09-16T12:00:02.608Z",
+            "checked_at": "2026-09-17T12:07:13.859Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-16T12:00:14.609Z",
+            "checked_at": "2026-09-17T12:07:25.860Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           }
         ],
-        "checked_at": "2026-09-16T12:00:26.610Z"
+        "checked_at": "2026-09-17T12:07:37.862Z"
       }
     },
     {
@@ -250,16 +255,16 @@
       "last_check": {
         "source_id": "stanford-hai",
         "status": "retrieved",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 19,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:00:53.225Z",
+            "checked_at": "2026-09-17T12:05:28.835Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:34.806Z"
+        "checked_at": "2026-09-17T12:07:13.866Z"
       }
     },
     {
@@ -272,20 +277,20 @@
       "last_check": {
         "source_id": "berkeley-bair",
         "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "reason": "HTTP 502",
         "attempts": [
           {
-            "checked_at": "2026-09-16T12:00:02.609Z",
+            "checked_at": "2026-09-17T12:07:13.862Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           },
           {
-            "checked_at": "2026-09-16T12:00:14.611Z",
+            "checked_at": "2026-09-17T12:07:22.633Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           }
         ],
-        "checked_at": "2026-09-16T12:00:26.612Z"
+        "checked_at": "2026-09-17T12:07:32.271Z"
       }
     },
     {
@@ -298,16 +303,16 @@
       "last_check": {
         "source_id": "mit-csail",
         "status": "retrieved",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 6,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:58.803Z",
+            "checked_at": "2026-09-17T12:06:34.901Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:02:04.179Z"
+        "checked_at": "2026-09-17T12:07:37.867Z"
       }
     },
     {
@@ -319,17 +324,16 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "openai",
-        "status": "retrieved",
-        "unchanged": false,
-        "candidate_links": 21,
+        "status": "unavailable",
+        "reason": "HTTP 403",
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:44.215Z",
-            "status": "retrieved",
-            "http_status": 200
+            "checked_at": "2026-09-17T12:07:10.926Z",
+            "status": "unavailable",
+            "reason": "HTTP 403"
           }
         ],
-        "checked_at": "2026-09-15T12:01:58.811Z"
+        "checked_at": "2026-09-17T12:07:37.866Z"
       }
     },
     {
@@ -342,16 +346,21 @@
       "last_check": {
         "source_id": "anthropic",
         "status": "retrieved",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 30,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:00:53.223Z",
+            "checked_at": "2026-09-17T12:05:28.833Z",
+            "status": "unavailable",
+            "reason": "The operation was aborted due to timeout"
+          },
+          {
+            "checked_at": "2026-09-17T12:05:40.835Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:58.816Z"
+        "checked_at": "2026-09-17T12:07:37.869Z"
       }
     },
     {
@@ -364,16 +373,16 @@
       "last_check": {
         "source_id": "deepmind",
         "status": "retrieved",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 24,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:24.258Z",
+            "checked_at": "2026-09-17T12:06:05.351Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:01:58.821Z"
+        "checked_at": "2026-09-17T12:07:37.872Z"
       }
     },
     {
@@ -387,15 +396,15 @@
         "source_id": "huggingface-papers",
         "status": "retrieved",
         "unchanged": false,
-        "candidate_links": 29,
+        "candidate_links": 23,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:01:44.215Z",
+            "checked_at": "2026-09-17T12:06:30.155Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:02:04.185Z"
+        "checked_at": "2026-09-17T12:07:37.881Z"
       }
     },
     {
@@ -412,12 +421,12 @@
         "candidate_links": 32,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:02:04.180Z",
+            "checked_at": "2026-09-17T12:06:40.209Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:02:09.610Z"
+        "checked_at": "2026-09-17T12:07:37.883Z"
       }
     },
     {
@@ -430,16 +439,16 @@
       "last_check": {
         "source_id": "localllama",
         "status": "no_candidate_links",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 0,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:02:04.180Z",
+            "checked_at": "2026-09-17T12:06:40.209Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:02:11.877Z"
+        "checked_at": "2026-09-17T12:07:37.883Z"
       }
     },
     {
@@ -453,15 +462,15 @@
         "source_id": "github-trending",
         "status": "retrieved",
         "unchanged": false,
-        "candidate_links": 45,
+        "candidate_links": 47,
         "attempts": [
           {
-            "checked_at": "2026-09-15T12:02:04.181Z",
+            "checked_at": "2026-09-17T12:06:40.210Z",
             "status": "retrieved",
             "http_status": 200
           }
         ],
-        "checked_at": "2026-09-15T12:02:11.211Z"
+        "checked_at": "2026-09-17T12:07:37.903Z"
       }
     }
   ]
