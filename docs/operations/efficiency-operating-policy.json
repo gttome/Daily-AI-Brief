@@ -37,5 +37,5 @@
     "maximum_duration_seconds": null
   },
   "autonomous_main_merge_enabled": false,
-  "reason": "No enforceable main-branch ruleset was present when this policy was recorded."
+  "reason": "Protected main ruleset 23615327 is active. Autonomous merge remains disabled pending successful live-run, rollback, and zero-Critical/High promotion evidence plus explicit merge authorization."
 }
