@@ -1,0 +1,140 @@
+name: Daily AI Brief deterministic delta validation
+
+on:
+  schedule:
+    # GitHub cron is UTC. Trigger both DST possibilities; the Chicago-hour gate runs exactly one.
+    - cron: '0 14,15 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: Edition date (YYYY-MM-DD). Defaults to current Chicago date.
+        required: false
+        type: string
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: daily-ai-brief-delta-validation
+  cancel-in-progress: false
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Gate scheduled run to 09:00 America/Chicago
+        id: gate
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$(TZ=America/Chicago date +%H)" = "09" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Check out main
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Resolve edition date
+        if: steps.gate.outputs.run == 'true'
+        id: date
+        env:
+          REQUESTED_DATE: ${{ inputs.date }}
+        run: |
+          if [ -n "$REQUESTED_DATE" ]; then
+            value="$REQUESTED_DATE"
+          else
+            value="$(TZ=America/Chicago date +%F)"
+          fi
+          echo "value=$value" >> "$GITHUB_OUTPUT"
+
+      - name: Build deterministic Watchlist delta receipt
+        if: steps.gate.outputs.run == 'true'
+        run: |
+          set -euo pipefail
+          prior_commit="$(git log --format=%H -- _data/watchlist.json | sed -n '2p')"
+          args=(--next _data/watchlist.json --out /tmp/watchlist-delta.json)
+          if [ -n "$prior_commit" ]; then
+            git show "$prior_commit:_data/watchlist.json" > /tmp/prior-watchlist.json
+            args+=(--prior /tmp/prior-watchlist.json)
+          fi
+          node _tools/watchlist-delta-plan.mjs "${args[@]}"
+
+      - name: Run deterministic delta validation
+        if: steps.gate.outputs.run == 'true'
+        id: validation
+        continue-on-error: true
+        run: |
+          set +e
+          node _tools/daily-validation.mjs --date "${{ steps.date.outputs.value }}" --out /tmp/daily-validation.json
+          exit_code="$?"
+          set -e
+          echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
+          exit "$exit_code"
+
+      - name: Build public-safe Command Center delta handoff
+        if: steps.gate.outputs.run == 'true' && always()
+        run: |
+          set -euo pipefail
+          if [ -f /tmp/daily-validation.json ] && [ -f /tmp/watchlist-delta.json ]; then
+            node _tools/command-center-delta.mjs \
+              --validation /tmp/daily-validation.json \
+              --watchlist /tmp/watchlist-delta.json \
+              --policy docs/operations/efficiency-operating-policy.json \
+              --out /tmp/command-center-delta.json
+          else
+            echo 'Validation inputs unavailable; Command Center handoff packet not generated.'
+          fi
+
+      - name: Publish compact receipts to job summary
+        if: steps.gate.outputs.run == 'true' && always()
+        run: |
+          for receipt in /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
+            if [ -f "$receipt" ]; then
+              echo "#### $(basename "$receipt")" >> "$GITHUB_STEP_SUMMARY"
+              echo '```json' >> "$GITHUB_STEP_SUMMARY"
+              cat "$receipt" >> "$GITHUB_STEP_SUMMARY"
+              echo '```' >> "$GITHUB_STEP_SUMMARY"
+            fi
+          done
+
+      - name: Upload validation receipts
+        if: steps.gate.outputs.run == 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-validation-${{ steps.date.outputs.value }}-${{ github.run_id }}
+          path: |
+            /tmp/daily-validation.json
+            /tmp/watchlist-delta.json
+            /tmp/command-center-delta.json
+          retention-days: 30
+          if-no-files-found: error
+
+      - name: Create deduplicated failure alert
+        if: steps.gate.outputs.run == 'true' && steps.validation.outcome == 'failure'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
+        with:
+          script: |
+            const title = 'Daily AI Brief alert: deterministic validation failure';
+            const {data: issues} = await github.rest.issues.listForRepo({owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100});
+            if (!issues.some(issue => issue.title === title)) {
+              await github.rest.issues.create({owner: context.repo.owner, repo: context.repo.repo, title, body: `Deterministic validation failed for ${{ steps.date.outputs.value }}. Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
+            }
+
+      - name: Enforce deterministic validation result
+        if: steps.gate.outputs.run == 'true' && steps.validation.outcome == 'failure'
+        run: exit 1

@@ -1,7 +1,41 @@
 import {normalizeUrl} from '../_generator/lib/util.mjs';
+
+export const DEFAULT_SOURCE_TIMEOUT_MS=12000;
+export const MAX_RESPONSE_BYTES=1500000;
+export const MAX_NORMALIZED_BODY_CHARS=500000;
+
+export function sanitizeRetrievedText(value){
+ return String(value??'').normalize('NFC').replace(/\u0000/g,'').replace(/[\u0001-\u0008\u000B\u000C\u000E-\u001F\u007F]/g,'');
+}
+
+export async function readBoundedText(response,{maxResponseBytes=MAX_RESPONSE_BYTES,maxNormalizedChars=MAX_NORMALIZED_BODY_CHARS}={}){
+ if(!Number.isInteger(maxResponseBytes)||maxResponseBytes<1||!Number.isInteger(maxNormalizedChars)||maxNormalizedChars<1)throw Error('Positive acquisition limits required');
+ const declared=Number(response.headers?.get?.('content-length'));
+ if(Number.isFinite(declared)&&declared>maxResponseBytes)throw Error(`response_too_large:${declared}>${maxResponseBytes}`);
+ const decoder=new TextDecoder('utf-8',{fatal:false});let bytes=0,text='';
+ if(response.body?.getReader){
+  const reader=response.body.getReader();
+  try{
+   while(true){
+    const {done,value}=await reader.read();if(done)break;
+    bytes+=value.byteLength;if(bytes>maxResponseBytes)throw Error(`response_too_large:${bytes}>${maxResponseBytes}`);
+    text+=decoder.decode(value,{stream:true});
+    if(text.length>maxNormalizedChars*2)throw Error(`normalized_body_too_large:${text.length}>${maxNormalizedChars}`);
+   }
+   text+=decoder.decode();
+  }finally{try{reader.releaseLock();}catch{}}
+ }else{
+  const raw=await response.text();bytes=new TextEncoder().encode(raw).byteLength;
+  if(bytes>maxResponseBytes)throw Error(`response_too_large:${bytes}>${maxResponseBytes}`);text=raw;
+ }
+ const normalized=sanitizeRetrievedText(text);
+ if(normalized.length>maxNormalizedChars)throw Error(`normalized_body_too_large:${normalized.length}>${maxNormalizedChars}`);
+ return {text:normalized,response_bytes:bytes,normalized_chars:normalized.length};
+}
+
 // Candidate extraction only: every result still needs editorial and metadata review.
 export function cleanText(value){
- return value.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]*>/g,' ').replace(/&(?:amp|quot|apos|lt|gt|nbsp);|&#(?:x[0-9a-f]+|\d+);/gi,entity=>{
+ return String(value??'').replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]*>/g,' ').replace(/&(?:amp|quot|apos|lt|gt|nbsp);|&#(?:x[0-9a-f]+|\d+);/gi,entity=>{
   const named={'&amp;':'&','&quot;':'"','&apos;':"'",'&lt;':'<','&gt;':'>','&nbsp;':' '};
   if(named[entity.toLowerCase()])return named[entity.toLowerCase()];
   const n=entity.toLowerCase().startsWith('&#x')?parseInt(entity.slice(3),16):parseInt(entity.slice(2),10);
@@ -23,19 +57,24 @@ export function extractLinks(html,base){
  }
  return [...links.values()];
 }
-export async function retrieveSource(url,{fetcher=fetch,timeoutMs=12000}={}){
+export async function retrieveSource(url,{fetcher=fetch,timeoutMs=DEFAULT_SOURCE_TIMEOUT_MS,conditional=null,maxResponseBytes=MAX_RESPONSE_BYTES,maxNormalizedChars=MAX_NORMALIZED_BODY_CHARS}={}){
  const attempts=[];
  for(let i=0;i<2;i++){
   const checked_at=new Date().toISOString();
   try{
-   const response=await fetcher(url,{signal:AbortSignal.timeout(timeoutMs),headers:{'user-agent':'DailyAIBriefDiscovery/1.0'}});
+   const headers={'user-agent':'DailyAIBriefDiscovery/2.1','accept':'text/html,application/atom+xml,application/rss+xml,application/xml,text/xml;q=0.9,text/plain;q=0.8,*/*;q=0.1'};
+   if(conditional?.etag)headers['if-none-match']=conditional.etag;
+   if(conditional?.last_modified)headers['if-modified-since']=conditional.last_modified;
+   const response=await fetcher(url,{signal:AbortSignal.timeout(timeoutMs),headers});
+   if(response.status===304){attempts.push({checked_at,status:'not_modified',http_status:304});return {not_modified:true,url:response.url||url,attempts};}
    if(!response.ok){const error=new Error(`HTTP ${response.status}`);error.status=response.status;throw error;}
-   const text=await response.text();attempts.push({checked_at,status:'retrieved',http_status:response.status});
-   return {text,url:response.url||url,attempts};
+   const body=await readBoundedText(response,{maxResponseBytes,maxNormalizedChars});
+   attempts.push({checked_at,status:'retrieved',http_status:response.status,response_bytes:body.response_bytes,normalized_chars:body.normalized_chars});
+   return {text:body.text,url:response.url||url,attempts,etag:response.headers?.get?.('etag')||null,last_modified:response.headers?.get?.('last-modified')||null,response_bytes:body.response_bytes,normalized_chars:body.normalized_chars};
   }catch(error){
    attempts.push({checked_at,status:'unavailable',reason:error.message});
-   // One bounded retry for transport/timeouts and server errors. Do not retry access denials.
-   if(i===0&&(!error.status||error.status>=500))continue;
+   // One bounded retry for transport/timeouts and server errors. Do not retry access denials or deterministic size-policy failures.
+   if(i===0&&!/^response_too_large|^normalized_body_too_large/.test(error.message)&&(!error.status||error.status>=500))continue;
    error.attempts=attempts;throw error;
   }
  }

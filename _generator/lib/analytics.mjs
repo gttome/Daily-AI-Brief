@@ -1,4 +1,5 @@
 import {TIMEZONE} from './constants.mjs';
+import {editionPodcasts} from './podcasts.mjs';
 
 export const ANALYTICS_METRICS = [
   'views',
@@ -125,7 +126,7 @@ export function publicAnalyticsEvidence(edition, observedAt=new Date().toISOStri
   ['general','general'],
   ['agents_non_technical_people','agent-skills']
  ].flatMap(([key,suffix])=>edition.worth_watching?.[key]?.status==='included' ? [{story_id:`dab-video-${edition.brief_date}-${suffix}`,...edition.worth_watching[key]}] : []);
- const podcasts=edition.podcast?.status==='included' ? [{story_id:edition.podcast.item_id,...edition.podcast}] : [];
+ const podcasts=editionPodcasts(edition).map(podcast=>({story_id:podcast.item_id,...podcast}));
  const record=aggregateAnalytics({date:edition.brief_date,stories:edition.stories,videos,podcasts,counts:{},collectionStatus:'partial',limitations:[
   'Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.',
   'Exact credit usage is unavailable without an attributable platform usage record.',

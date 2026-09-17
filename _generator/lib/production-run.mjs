@@ -1,6 +1,11 @@
 import fs from 'node:fs';import path from 'node:path';
 import {sha256} from './util.mjs';
+// Keep the existing manifest version so in-progress private attempts remain resumable.
+// Behavioral efficiency changes are guarded by code hashes/checkpoints rather than invalidating manifests.
 export const RUN_VERSION='efficiency-production-v2';
+export const RESEARCH_CAPSULE_CHAR_BUDGET=9000;
+export const WORK_CONTEXT_CHAR_BUDGET=6500;
+const compact=(value,max)=>typeof value==='string'?value.replace(/\s+/g,' ').trim().slice(0,max):value;
 export function assertRunManifest(m){
  if(m?.schema_version!=='1.0.0'||m.pipeline_version!==RUN_VERSION||!/^dab-attempt-[\w.-]+$/.test(m.attempt_id))throw Error('Valid versioned attempt required');
  if(!/^\d{4}-\d{2}-\d{2}$/.test(m.edition_date)||!Number.isFinite(Date.parse(m.edition_date))||new Date(m.edition_date).toISOString().slice(0,10)!==m.edition_date||!/(?:Z|[+-]\d{2}:\d{2})$/.test(m.cutoff)||!Number.isFinite(Date.parse(m.cutoff))||m.timezone!=='America/Chicago')throw Error('Explicit edition date, cutoff and timezone required');
@@ -8,18 +13,27 @@ export function assertRunManifest(m){
  if(!/^[a-f0-9]{40}$/.test(m.baseline_sha)||!m.private_root)throw Error('Baseline and private evidence root required');
  return m;
 }
+function compactPacket(p){
+ return {candidate_id:p.candidate_id,headline:compact(p.headline,180),publisher:compact(p.publisher,100)||null,canonical_url:p.canonical_url,category:p.category,published_at:p.published_at,source_reliability:p.source_reliability,freshness_tier:p.freshness_tier,freshness_age_hours:p.freshness_age_hours,novelty_status:p.novelty_status,confidence:p.confidence,agent_skill_relevance:p.agent_skill_relevance===true,evidence:(p.verified_claims||[]).slice(0,4).map(x=>compact(x.claim,300)),limitation:(p.limitations||[]).slice(0,1).map(x=>compact(x,240))[0]||null,availability:compact(p.availability,120)||null,why_candidate_matters:compact(p.why_it_matters,320)||null};
+}
 export function evidenceViews(packets){
  if(packets.some(p=>p.verification_status!=='reviewed'||!p.source_content_hash||!p.verified_claims?.length))throw Error('Reviewed evidence packets required');
- const views={selection:[],writing:[],images:[],editorial_qa:[]};
+ const views={research_capsule:[],editorial:[],selection:[],writing:[],images:[],editorial_qa:[]};
  for(const p of packets){
   const identity={candidate_id:p.candidate_id,headline:p.headline,canonical_url:p.canonical_url,source_content_hash:p.source_content_hash};
   const facts=p.verified_claims.map(x=>({claim:x.claim,evidence:x.evidence}));
+  const capsule=compactPacket(p);views.research_capsule.push(capsule);
+  views.editorial.push({candidate_id:capsule.candidate_id,headline:capsule.headline,canonical_url:capsule.canonical_url,category:capsule.category,published_at:capsule.published_at,source_reliability:capsule.source_reliability,freshness_tier:capsule.freshness_tier,novelty_status:capsule.novelty_status,confidence:capsule.confidence,agent_skill_relevance:capsule.agent_skill_relevance,evidence:capsule.evidence,limitation:capsule.limitation,availability:capsule.availability,why_candidate_matters:capsule.why_candidate_matters});
+  // The following views remain as traceable compatibility artifacts, not normal Work inputs.
   views.selection.push({...identity,category:p.category,published_at:p.published_at,novelty_status:p.novelty_status,confidence:p.confidence,agent_skill_relevance:p.agent_skill_relevance,claims:facts});
   views.writing.push({...identity,published_at:p.published_at,why_it_matters:p.why_it_matters,claims:facts,limitations:p.limitations||[],availability:p.availability||null});
   views.images.push({...identity,verified_relationships:facts.map(x=>x.claim),limitations:p.limitations||[],availability:p.availability||null,required_preflight:['verified mechanism and labels','current versus planned status','distinct composition','no invented settings or measurements'],review_status:'pending_visual_brief_review'});
   views.editorial_qa.push({...identity,claims:facts,limitations:p.limitations||[],availability:p.availability||null,novelty_status:p.novelty_status});
  }
- return {views,telemetry:{archive_chars:JSON.stringify(packets).length,stage_chars:Object.fromEntries(Object.entries(views).map(([k,v])=>[k,JSON.stringify(v).length])),actual_model_input_chars:null,note:'Artifact sizes only; record actual stage input separately. No evidence was truncated.'}};
+ const researchCapsuleChars=JSON.stringify(views.research_capsule).length,workContextChars=JSON.stringify(views.editorial).length;
+ if(researchCapsuleChars>RESEARCH_CAPSULE_CHAR_BUDGET)throw Error(`research_capsule_budget_exceeded:${researchCapsuleChars}>${RESEARCH_CAPSULE_CHAR_BUDGET}`);
+ if(workContextChars>WORK_CONTEXT_CHAR_BUDGET)throw Error(`work_context_budget_exceeded:${workContextChars}>${WORK_CONTEXT_CHAR_BUDGET}`);
+ return {views,telemetry:{archive_chars:JSON.stringify(packets).length,research_capsule_chars:researchCapsuleChars,work_context_chars:workContextChars,stage_chars:Object.fromEntries(Object.entries(views).map(([k,v])=>[k,JSON.stringify(v).length])),actual_model_input_chars:null,note:'Full reviewed excerpts remain in the private packet archive. The normal Work path consumes only research_capsule/editorial views; compatibility views are not normal model inputs.'}};
 }
 export function saveJson(file,value){fs.mkdirSync(path.dirname(file),{recursive:true});const text=JSON.stringify(value,null,2)+'\n',temp=file+'.'+process.pid+'.tmp';fs.writeFileSync(temp,text);fs.renameSync(temp,file);return sha256(text);}
 export function completionDecision({editionDate,completion,lastProcessed=null}){

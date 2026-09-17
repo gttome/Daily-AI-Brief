@@ -1,4 +1,5 @@
 import {METRICS} from './efficiency-core.mjs';
+import {editionPodcasts} from './podcasts.mjs';
 import {normalizeUrl} from './util.mjs';
 
 const numeric = value => typeof value === 'number' && Number.isFinite(value) && value >= 0;
@@ -68,9 +69,9 @@ function selectedMedia(edition) {
       published_date: dateOnly(item.upload_date), runtime_seconds: item.runtime_seconds
     });
   }
-  if (edition.podcast?.status === 'included') items.push({
-    item_id: edition.podcast.item_id, kind: 'podcast', url: edition.podcast.url,
-    published_date: dateOnly(edition.podcast.publication_date), runtime_seconds: edition.podcast.runtime_seconds
+  for (const podcast of editionPodcasts(edition)) items.push({
+    item_id: podcast.item_id, kind: 'podcast', url: podcast.url,
+    published_date: dateOnly(podcast.publication_date), runtime_seconds: podcast.runtime_seconds
   });
   return items;
 }
@@ -99,8 +100,13 @@ export function validateMediaPreflight(edition, record, {observedAt=null,maxAgeM
     if (observation.reachable !== true || !Number.isInteger(observation.http_status) || observation.http_status < 200 || observation.http_status >= 400) errors.push(`${item.item_id} URL was not successfully reached before publication`);
     const observedDate = dateOnly(observation.observed_date);
     if (!item.published_date || !observedDate || observedDate !== item.published_date) errors.push(`${item.item_id} publication/upload date was not independently matched`);
-    if (!Number.isInteger(item.runtime_seconds) || item.runtime_seconds < 1) errors.push(`${item.item_id} requires a verified runtime before publication`);
-    if (!Number.isInteger(observation.observed_runtime_seconds) || observation.observed_runtime_seconds !== item.runtime_seconds) errors.push(`${item.item_id} runtime was not independently matched`);
+    if (item.kind === 'video') {
+      if (!Number.isInteger(item.runtime_seconds) || item.runtime_seconds < 1) errors.push(`${item.item_id} requires a verified runtime before publication`);
+      if (!Number.isInteger(observation.observed_runtime_seconds) || observation.observed_runtime_seconds !== item.runtime_seconds) errors.push(`${item.item_id} runtime was not independently matched`);
+    } else if (item.runtime_seconds !== null && item.runtime_seconds !== undefined) {
+      if (!Number.isInteger(item.runtime_seconds) || item.runtime_seconds < 1) errors.push(`${item.item_id} podcast runtime must be positive or unknown`);
+      if (!Number.isInteger(observation.observed_runtime_seconds) || observation.observed_runtime_seconds !== item.runtime_seconds) errors.push(`${item.item_id} podcast runtime was not independently matched`);
+    }
   }
   return errors;
 }

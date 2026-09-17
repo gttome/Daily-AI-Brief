@@ -1,0 +1,55 @@
+const POLICY_KEYS=new Set([
+ 'metadata_candidate_limit','normal_deep_review_limit','exception_deep_review_limit',
+ 'normal_retrieved_char_limit','absolute_retrieved_char_limit','research_capsule_char_limit',
+ 'work_context_char_limit','normal_editorial_model_passes','normal_post_editorial_model_passes',
+ 'normal_validation_model_passes','reader_focus_order','canonical_focus_order_unchanged',
+ 'visual_quality_baseline','video','podcast','autonomous_main_merge_enabled'
+]);
+
+function publicPolicy(policy={}){
+ const safe={};
+ for(const [key,value] of Object.entries(policy))if(POLICY_KEYS.has(key))safe[key]=value;
+ return safe;
+}
+
+export function commandCenterDeltaPacket({validation={},watchlist={},policy={},generatedAt=new Date().toISOString()}={}){
+ const checks=Array.isArray(validation.checks)?validation.checks.map(check=>({
+  check_id:String(check.check_id||''),
+  result:String(check.result||'unknown'),
+  severity:String(check.severity||'unknown')
+ })).filter(check=>check.check_id):[];
+ const changed=Array.isArray(watchlist.changed_topics)?watchlist.changed_topics.map(String):[];
+ const carried=Array.isArray(watchlist.carried_topics)?watchlist.carried_topics.map(String):[];
+ const removed=Array.isArray(watchlist.removed_topics)?watchlist.removed_topics.map(String):[];
+ return {
+  schema_version:'1.0.0',
+  mode:'public_safe_command_center_delta_handoff',
+  generated_at:generatedAt,
+  edition_date:validation.date||watchlist.next_edition_date||null,
+  publication_sha:validation.publication_sha||null,
+  validation:{
+   final_result:validation.final_result||'unavailable',
+   model_calls:Number.isInteger(validation.model_calls)?validation.model_calls:null,
+   semantic_escalation_required:validation.semantic_escalation_required===true,
+   checks
+  },
+  watchlist:{
+   changed_topics:changed,
+   carried_topics:carried,
+   removed_topics:removed,
+   semantic_refresh_topic_ids:Array.isArray(watchlist.normal_semantic_input_topic_ids)?watchlist.normal_semantic_input_topic_ids.map(String):[],
+   model_calls:Number.isInteger(watchlist.model_calls)?watchlist.model_calls:null
+  },
+  operating_policy:publicPolicy(policy),
+  transport:{
+   repository_packet:'available',
+   live_command_center_owner_state_mutation:'not_configured',
+   reason:'No authorized repository-side Command Center owner-state mutation endpoint or credential is part of this repository contract.'
+  },
+  privacy:{
+   private_reader_records_included:false,
+   owner_identity_included:false,
+   arbitrary_input_fields_copied:false
+  }
+ };
+}

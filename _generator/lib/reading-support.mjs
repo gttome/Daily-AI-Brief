@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import {readerAddition} from './book-reading.mjs';
+import {editionPodcasts} from './podcasts.mjs';
 const catalog=JSON.parse(fs.readFileSync(new URL('../../_data/reading-support.json',import.meta.url),'utf8'));
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export function readingMinutes(evidence){
@@ -14,7 +15,7 @@ export function validateReadingSupport(edition,data=catalog){
  const stories=new Map(edition.stories.map(x=>[x.story_id,x]));
  const ids=new Set(stories.keys());
  for(const [key,suffix] of [['general','general'],['agents_non_technical_people','agent-skills']])if(edition.worth_watching?.[key]?.status==='included')ids.add(`dab-video-${edition.brief_date}-${suffix}`);
- if(edition.podcast?.status==='included')ids.add(edition.podcast.item_id);
+ for(const podcast of editionPodcasts(edition))ids.add(podcast.item_id);
  const seen=new Set();
  for(const x of data.editions[edition.brief_date]||[]){
   if(!ids.has(x.item_id)||seen.has(x.item_id))throw Error('Reading support has unknown or duplicate item');seen.add(x.item_id);
