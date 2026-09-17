@@ -1,6 +1,8 @@
 import fs from 'node:fs';import path from 'node:path';
 import {sha256} from './util.mjs';
-export const RUN_VERSION='efficiency-production-v3';
+// Keep the existing manifest version so in-progress private attempts remain resumable.
+// Behavioral efficiency changes are guarded by code hashes/checkpoints rather than invalidating manifests.
+export const RUN_VERSION='efficiency-production-v2';
 export const RESEARCH_CAPSULE_CHAR_BUDGET=9000;
 export const WORK_CONTEXT_CHAR_BUDGET=6500;
 const compact=(value,max)=>typeof value==='string'?value.replace(/\s+/g,' ').trim().slice(0,max):value;
