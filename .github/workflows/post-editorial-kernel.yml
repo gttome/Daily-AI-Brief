@@ -16,8 +16,8 @@ on:
         required: true
         type: string
       images_path:
-        description: Repository-relative approved image manifest JSON path keyed by candidate ID
-        required: true
+        description: Optional repository-relative approved generative fallback image manifest keyed by candidate ID
+        required: false
         type: string
       media_path:
         description: Optional repository-relative selected media JSON path
@@ -65,6 +65,12 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Install deterministic SVG rasterizer
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends librsvg2-bin
+          rsvg-convert --version
+
       - name: Validate repository-relative inputs
         env:
           KERNEL_PATH: ${{ inputs.kernel_path }}
@@ -73,16 +79,18 @@ jobs:
           MEDIA_PATH: ${{ inputs.media_path }}
         run: |
           set -euo pipefail
-          for p in "$KERNEL_PATH" "$FACTS_PATH" "$IMAGES_PATH"; do
+          for p in "$KERNEL_PATH" "$FACTS_PATH"; do
             if [ -z "$p" ] || [[ "$p" == /* ]] || [[ "$p" == *".."* ]] || [ ! -f "$p" ]; then
               echo "Invalid or missing repository-relative input: $p"
               exit 1
             fi
           done
-          if [ -n "$MEDIA_PATH" ] && { [[ "$MEDIA_PATH" == /* ]] || [[ "$MEDIA_PATH" == *".."* ]] || [ ! -f "$MEDIA_PATH" ]; }; then
-            echo "Invalid media input: $MEDIA_PATH"
-            exit 1
-          fi
+          for p in "$IMAGES_PATH" "$MEDIA_PATH"; do
+            if [ -n "$p" ] && { [[ "$p" == /* ]] || [[ "$p" == *".."* ]] || [ ! -f "$p" ]; }; then
+              echo "Invalid optional repository-relative input: $p"
+              exit 1
+            fi
+          done
 
       - name: Resolve trusted main baseline and validate kernel
         id: baseline
@@ -102,17 +110,26 @@ jobs:
           echo "sha=$baseline" >> "$GITHUB_OUTPUT"
           node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
 
+      - name: Render or select six guarded visual assets
+        env:
+          KERNEL_PATH: ${{ inputs.kernel_path }}
+          IMAGES_PATH: ${{ inputs.images_path }}
+        run: |
+          set -euo pipefail
+          args=(--kernel "$KERNEL_PATH" --policy _data/visual-renderer-policy.json --out /tmp/images.json --receipt /tmp/visual-receipt.json)
+          if [ -n "$IMAGES_PATH" ]; then args+=(--fallback "$IMAGES_PATH"); fi
+          node _tools/render-visual-assets.mjs "${args[@]}"
+
       - name: Deterministically expand canonical edition
         env:
           KERNEL_PATH: ${{ inputs.kernel_path }}
           FACTS_PATH: ${{ inputs.facts_path }}
-          IMAGES_PATH: ${{ inputs.images_path }}
           MEDIA_PATH: ${{ inputs.media_path }}
           COVERAGE_PERIOD: ${{ inputs.coverage_period }}
         run: |
           set -euo pipefail
           published_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --images "$IMAGES_PATH" --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
+          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --images /tmp/images.json --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
           if [ -n "$MEDIA_PATH" ]; then args+=(--media "$MEDIA_PATH"); fi
           node _tools/editorial-kernel.mjs "${args[@]}"
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
@@ -152,7 +169,7 @@ jobs:
           git commit -m "Generate post-editorial Daily AI Brief publication stage"
           git push origin "HEAD:$STAGING_REF"
 
-      - name: Open or reuse reviewable PR; never merge
+      - name: Open or reuse reviewable publication PR; never bypass required gates
         env:
           STAGING_REF: ${{ inputs.staging_ref }}
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
@@ -160,9 +177,26 @@ jobs:
           script: |
             const head=process.env.STAGING_REF;
             const {data: prs}=await github.rest.pulls.list({...context.repo,head:`${context.repo.owner}:${head}`,base:'main',state:'open'});
-            if(!prs.length){
-              await github.rest.pulls.create({...context.repo,head,base:'main',title:'Publish deterministic Daily AI Brief candidate',body:'Generated from one approved editorial kernel. Deterministic expansion/tests completed on the staging branch. This workflow never merges to main; required repository gates and human review remain in control.'});
+            let pr=prs[0];
+            if(!pr){
+              const created=await github.rest.pulls.create({...context.repo,head,base:'main',title:'Publish deterministic Daily AI Brief candidate',body:'Generated from one approved editorial kernel. Deterministic expansion, guarded visual selection, tests and contracts completed on the staging branch. Required main rules and human/editorial gates remain authoritative.'});
+              pr=created.data;
             }
+            await github.rest.issues.addLabels({...context.repo,issue_number:pr.number,labels:['publication-candidate']}).catch(()=>{});
+            core.info(`Publication PR #${pr.number} ready for required CI and protected promotion.`);
+
+      - name: Upload deterministic handoff evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: post-editorial-evidence-${{ github.run_id }}
+          path: |
+            /tmp/kernel-receipt.json
+            /tmp/visual-receipt.json
+            /tmp/images.json
+            /tmp/staged-edition.json
+          retention-days: 30
+          if-no-files-found: warn
 
       - name: Record handoff summary
         if: always()
@@ -170,8 +204,9 @@ jobs:
           echo '### Post-editorial deterministic handoff' >> "$GITHUB_STEP_SUMMARY"
           echo '- Model calls in this workflow: **0**' >> "$GITHUB_STEP_SUMMARY"
           echo '- Direct writes to main: **prohibited**' >> "$GITHUB_STEP_SUMMARY"
-          echo '- Automatic merge: **disabled**' >> "$GITHUB_STEP_SUMMARY"
-          echo '- Kernel receipt:' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Protected publication PR: **required**' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Visual path: deterministic only after Sep-17 parity + PNG integrity; otherwise story-scoped approved fallback' >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"
-          cat /tmp/kernel-receipt.json 2>/dev/null || true >> "$GITHUB_STEP_SUMMARY"
+          cat /tmp/kernel-receipt.json 2>/dev/null || true
+          cat /tmp/visual-receipt.json 2>/dev/null || true
           echo '```' >> "$GITHUB_STEP_SUMMARY"
