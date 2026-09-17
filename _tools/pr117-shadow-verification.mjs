@@ -1,4 +1,6 @@
 import fs from 'node:fs';
+import assert from 'node:assert/strict';
+import {replayHistoricalKernel} from './pr117-historical-replay.mjs';
 import path from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
@@ -14,7 +16,9 @@ const baseline='1df531897edb50406b1d4bf2cf8089f69a797a92';
 const source=git('rev-parse','HEAD'),before=git('status','--porcelain');
 fs.mkdirSync(out,{recursive:true});
 const write=(name,data)=>fs.writeFileSync(path.join(out,name),JSON.stringify(data,null,2)+'\n');
-const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-17.json'));
+assert.equal(execFileSync('git',['-C',baselineRoot,'rev-parse','HEAD'],{encoding:'utf8'}).trim(),baseline,'Immutable baseline checkout required');
+const edition=JSON.parse(fs.readFileSync(path.join(baselineRoot,'_data/editions/2026-09-17.json')));
+assert.deepEqual(JSON.parse(fs.readFileSync('_data/editions/2026-09-17.json')),edition,'Historical edition differs from baseline');
 const report={executed_at:new Date().toISOString(),source_sha:source,baseline_sha:baseline,mode:'isolated historical replay; source observations retain September 17 timestamps; no live-source revalidation',production_writes:false,production_deployment:false,checks:{}};
 const run=(name,fn)=>{try{report.checks[name]={result:'PASS',details:fn()};}catch(e){report.checks[name]={result:'FAIL',error:e.message};}};
 run('historical_tree_unchanged',()=>{
@@ -45,12 +49,43 @@ run('expected_routes',()=>{
 });
 const kernel={schema_version:'1.0.0',brief_date:edition.brief_date,edition_id:edition.edition_id,baseline_sha:baseline,normal_model_passes:1,normal_post_editorial_model_passes:0,editorial_takeaway:edition.editorial_takeaway,stories:edition.stories.map(s=>({canonical_ordinal:s.ordinal,story_id:s.story_id,candidate_id:s.story_id,focus:s.focus,headline:s.headline,summary:s.summary,why_it_matters:s.why_it_matters,what_to_do_now:s.what_to_do_now,topic_labels:s.topics,editorial_limitation:'Historical diagnostic reconstruction; no new editorial approval asserted.',source_url:s.source.normalized_url,agent_skill:/agent skill/i.test(s.headline),visual:{description:s.image.alt}})),media_decisions:{replay:true},changed_watchlist_topics:[]};
 write('diagnostic-kernel.json',kernel);
+run('focused_regressions',()=>{
+ const log=execFileSync(process.execPath,['--test','_generator/test/pr117-historical-replay.test.mjs','_generator/test/editorial-kernel.test.mjs'],{encoding:'utf8'});
+ fs.writeFileSync(path.join(out,'focused-regressions.tap'),log);return log;
+});
+run('unadapted_reconstruction_rejected',()=>{
+ const raw=expandEditorialKernel(kernel,{candidateFacts:Object.fromEntries(edition.stories.map(s=>[s.story_id,s])),imageAssets:Object.fromEntries(edition.stories.map(s=>[s.story_id,s.image])),media:{worth_watching:edition.worth_watching,podcast:edition.podcast},publishedAt:edition.published_at,coveragePeriod:edition.coverage_period});
+ write('unadapted-expanded-edition.json',raw);
+ const comparison=edition.stories.map((s,i)=>({old_id:s.story_id,new_id:raw.stories[i].story_id,old_route:s.permanent_url,new_route:raw.stories[i].permanent_url}));
+ write('unadapted-identity-comparison.json',comparison);
+ assert.equal(comparison.filter(s=>s.old_id!==s.new_id).length,6);
+ assert.equal(comparison.filter(s=>s.old_route!==s.new_route).length,3);
+ let error;
+ try{buildPublicationStage(raw,process.cwd(),path.join(out,'unadapted-stage'),{baselineSha:baseline,observedAt:edition.published_at,runId:'pr117-unadapted-'+source.slice(0,12)});}catch(e){error=e.message;}
+ assert.match(error||'',/Book reference has an unknown or duplicate item/);
+ write('unadapted-failure.json',{result:'EXPECTED_FAILURE',error});
+ return {result:'Expected historical diagnostic failure reproduced',error};
+});
 run('kernel_to_stage_replay',()=>{
- const expanded=expandEditorialKernel(kernel,{candidateFacts:Object.fromEntries(edition.stories.map(s=>[s.story_id,s])),imageAssets:Object.fromEntries(edition.stories.map(s=>[s.story_id,s.image])),media:{worth_watching:edition.worth_watching,podcast:edition.podcast},publishedAt:edition.published_at,coveragePeriod:edition.coverage_period});
- write('kernel-receipt.json',kernelReceipt(kernel));write('expanded-edition.json',expanded);
+ const expanded=replayHistoricalKernel(kernel,edition,baseline);
+ write('kernel-receipt.json',{...kernelReceipt(kernel),scope:'Reconstructed historical diagnostic only; not original editorial approval or fresh source verification'});
+ write('expanded-edition.json',expanded);
  write('identity-comparison.json',edition.stories.map((s,i)=>({old_id:s.story_id,new_id:expanded.stories[i].story_id,old_route:s.permanent_url,new_route:expanded.stories[i].permanent_url})));
  const errors=validateEdition(expanded);if(errors.length)throw Error(errors.join('\n'));
- return buildPublicationStage(expanded,process.cwd(),path.join(out,'kernel-stage'),{baselineSha:baseline,observedAt:edition.published_at,runId:'pr117-kernel-shadow-'+source.slice(0,12)});
+ const original=baselineGenerated(edition,baselineRoot),replayed=generatedFiles(expanded,process.cwd());
+ const publicFiles=[...new Set([...original.keys(),...replayed.keys()])].filter(p=>!p.startsWith('_records/'));
+ const changed=publicFiles.filter(p=>original.get(p)!==replayed.get(p));
+ write('kernel-public-output-parity.json',{public_outputs:publicFiles.length,changed});
+ assert.deepEqual(changed,[],'Historical replay public output changed');
+ const stage=buildPublicationStage(expanded,process.cwd(),path.join(out,'kernel-stage'),{baselineSha:baseline,observedAt:edition.published_at,runId:'pr117-kernel-shadow-'+source.slice(0,12)});
+ const unchangedBindings=['_data/book-reading.json','_data/reading-support.json',...edition.stories.map(s=>s.image.path),'_records/editorial/media-preflight/2026-09-17.json','_records/image-quality/2026-09-17-textbook.json','_records/images/2026-09-17/approval.json'];
+ for(const file of unchangedBindings){
+  assert.deepEqual(fs.readFileSync(file),fs.readFileSync(path.join(baselineRoot,file)),'Historical binding/asset changed: '+file);
+  if(fs.existsSync(path.join(out,'kernel-stage',file)))assert.deepEqual(fs.readFileSync(path.join(out,'kernel-stage',file)),fs.readFileSync(path.join(baselineRoot,file)),'Replayed evidence/asset changed: '+file);
+ }
+ write('historical-bindings.json',{files:unchangedBindings,result:'PASS',new_review_claimed:false});
+ write('kernel-stage-manifest.json',stage);
+ return {file_count:stage.files.length,public_outputs:publicFiles.length,changed:0,approved_images_reused:6,rollback_target:stage.event.rollback_target_sha,scope:'Historical adapter replay only; prospective new-edition publication not executed'};
 });
 report.current_media_preflight_errors=validateMediaPreflight(edition,JSON.parse(fs.readFileSync('_records/editorial/media-preflight/2026-09-17.json')),{observedAt:report.executed_at});
 run('checkout_unchanged',()=>{if(git('status','--porcelain')!==before)throw Error('Checkout changed');return 'All generated files are outside checkout';});
