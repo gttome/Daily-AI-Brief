@@ -250,12 +250,13 @@ ${dates.map(date => `<article class="archive-story" data-archive-edition="${date
 }
 
 export function renderJsonFeed(stories) {
+  const multiPodcastPolicyActive=(stories[0]?.brief_date||'')>=MULTI_PODCAST_EFFECTIVE_DATE;
   return JSON.stringify({
     version: 'https://jsonfeed.org/version/1.1',
     title: 'Daily Generative AI Brief',
     home_page_url: `${PUBLIC_BASE}/`,
     feed_url: `${PUBLIC_BASE}/feed.json`,
-    description: 'Six AI articles, up to two videos, and up to two podcasts selected daily.',
+    description: multiPodcastPolicyActive ? 'Six AI articles, up to two videos, and up to two podcasts selected daily.' : 'Six AI articles, two videos, and one podcast selected daily for George Tome.',
     items: stories.map(story => ({
       id: story.story_id,
       url: absoluteItemUrl(story.permanent_url),
@@ -298,7 +299,10 @@ export function readerFoundationFiles(edition, repoRoot) {
       files.set(`videos/${story.brief_date}/${story.slug}.md`,renderStoryPage(story, true));
     } else if (story.content_type === 'Podcast') {
       const header = renderStoryPage(story, false).split('---\n\n')[0] + '---\n\n';
-      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + renderPodcastItem(story.podcast, story.brief_date, story.ordinal) + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);
+      const podcastBody=story.brief_date<MULTI_PODCAST_EFFECTIVE_DATE
+      ? renderPodcast(story.podcast, story.brief_date).replace(/^## Worth Listening — Podcast\n\n### 9\. [^\n]+\n\n/, '')
+      : renderPodcastItem(story.podcast, story.brief_date, story.ordinal);
+    files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + podcastBody + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);
     } else files.set(`stories/${story.brief_date}/${story.slug}.md`, renderStoryPage(story, feedbackDates.has(story.brief_date)));
   }
   files.set('archive.md', renderArchiveSearch(stories));
