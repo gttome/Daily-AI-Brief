@@ -33,7 +33,7 @@ if(completion&&edition){
  const required=[`briefs/${date}.md`,'latest.md','index.md','feed.xml','daily-feed.xml','feed.json',...(completion.file_set?.assets||[])];
  const missing=required.filter(x=>!exists(x));
  check('local_release_artifacts',missing.length?'fail':'pass','critical',missing.length?`Missing: ${missing.join(', ')}`:`${required.length} current release artifacts exist locally.`);
- const routes=[`${base}/`,`${base}/briefs/${date}/`,`${base}/briefs-archive/`,`${base}/emerging-ai-watchlist/`,`${base}/watchlist/`,...(edition.stories||[]).map(s=>base+s.permanent_url)];
+ const routes=[`${base}/`,`${base}/briefs/${date}/`,`${base}/briefs-archive/`,`${base}/watchlist/`,`${base}/watchlist/research/`,...(edition.stories||[]).map(s=>base+s.permanent_url)];
  for(const video of Object.values(edition.worth_watching||{}))if(video?.status==='included'&&video.permanent_url)routes.push(base+video.permanent_url);
  if(edition.podcast?.status==='included'&&edition.podcast.permanent_url)routes.push(base+edition.podcast.permanent_url);
  const unique=[...new Set(routes)];
