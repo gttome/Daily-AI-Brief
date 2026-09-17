@@ -39,8 +39,11 @@ jobs:
               if old_desc not in text:
                   raise SystemExit('feed description anchor not found')
               text = text.replace(old_desc, new_desc, 1)
-              old_page = "      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\\n\\n# ${story.headline}\\n\\n` + renderPodcastItem(story.podcast, story.brief_date, story.ordinal) + `\\n\\n[← Back to Home]({{ '/' | relative_url }})\\n`);"
-              new_page = "      const podcastBody=story.brief_date<MULTI_PODCAST_EFFECTIVE_DATE\\n        ? renderPodcast(story.podcast, story.brief_date).replace(/^## Worth Listening — Podcast\\n\\n### 9\\. [^\\n]+\\n\\n/, '')\\n        : renderPodcastItem(story.podcast, story.brief_date, story.ordinal);\\n      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\\n\\n# ${story.headline}\\n\\n` + podcastBody + `\\n\\n[← Back to Home]({{ '/' | relative_url }})\\n`);"
+              old_page = r"""      files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + renderPodcastItem(story.podcast, story.brief_date, story.ordinal) + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);"""
+              new_page = r"""      const podcastBody=story.brief_date<MULTI_PODCAST_EFFECTIVE_DATE
+                ? renderPodcast(story.podcast, story.brief_date).replace(/^## Worth Listening — Podcast\n\n### 9\. [^\n]+\n\n/, '')
+                : renderPodcastItem(story.podcast, story.brief_date, story.ordinal);
+              files.set(`podcasts/${story.brief_date}/${story.slug}.md`, header + `[← Home]({{ '/' | relative_url }}) · [Daily Brief]({{ '/briefs/${story.brief_date}/' | relative_url }})\n\n# ${story.headline}\n\n` + podcastBody + `\n\n[← Back to Home]({{ '/' | relative_url }})\n`);"""
               if old_page not in text:
                   raise SystemExit('podcast page anchor not found')
               text = text.replace(old_page, new_page, 1)
