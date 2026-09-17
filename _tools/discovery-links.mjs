@@ -23,15 +23,19 @@ export function extractLinks(html,base){
  }
  return [...links.values()];
 }
-export async function retrieveSource(url,{fetcher=fetch,timeoutMs=12000}={}){
+export async function retrieveSource(url,{fetcher=fetch,timeoutMs=12000,conditional=null}={}){
  const attempts=[];
  for(let i=0;i<2;i++){
   const checked_at=new Date().toISOString();
   try{
-   const response=await fetcher(url,{signal:AbortSignal.timeout(timeoutMs),headers:{'user-agent':'DailyAIBriefDiscovery/1.0'}});
+   const headers={'user-agent':'DailyAIBriefDiscovery/2.0'};
+   if(conditional?.etag)headers['if-none-match']=conditional.etag;
+   if(conditional?.last_modified)headers['if-modified-since']=conditional.last_modified;
+   const response=await fetcher(url,{signal:AbortSignal.timeout(timeoutMs),headers});
+   if(response.status===304){attempts.push({checked_at,status:'not_modified',http_status:304});return {not_modified:true,url:response.url||url,attempts};}
    if(!response.ok){const error=new Error(`HTTP ${response.status}`);error.status=response.status;throw error;}
    const text=await response.text();attempts.push({checked_at,status:'retrieved',http_status:response.status});
-   return {text,url:response.url||url,attempts};
+   return {text,url:response.url||url,attempts,etag:response.headers?.get?.('etag')||null,last_modified:response.headers?.get?.('last-modified')||null};
   }catch(error){
    attempts.push({checked_at,status:'unavailable',reason:error.message});
    // One bounded retry for transport/timeouts and server errors. Do not retry access denials.
