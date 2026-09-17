@@ -1,5 +1,7 @@
 import {EXPECTED_FOCUS_ORDER, TIMEZONE} from './constants.mjs';
 import {PRIMARY_FRESHNESS_HOURS, DEFAULT_FALLBACK_HOURS, AGENT_SKILLS_FALLBACK_HOURS} from './research.mjs';
+import {editionPodcasts,MULTI_PODCAST_EFFECTIVE_DATE,validatePodcastDiversity} from './podcasts.mjs';
+import {VIDEO_MAX_AGE_HOURS,PODCAST_PRIMARY_AGE_DAYS,PODCAST_FALLBACK_AGE_DAYS,PODCAST_EXCEPTION_AGE_DAYS} from './media-selection.mjs';
 
 const time=value=>typeof value==='string'&&value.trim()?Date.parse(value):NaN;
 const agentSkillsStory=story=>/agent skills?/i.test([story.headline,...(story.topics||[])].join(' '));
@@ -85,42 +87,63 @@ export function validateEdition(edition) {
       for (const field of ['novelty', 'candidate_score']) if (!story[field]) errors.push(`${label}.${field} is required by ${edition.policy_profile}`);
       for (const field of ['evidence_type', 'availability_status']) if (!story.source?.[field]) errors.push(`${label}.source.${field} is required by ${edition.policy_profile}`);
     }
-    if (edition.policy_profile === 'full_v1') {
-      if (!story.what_to_do_now) errors.push(`${label}.what_to_do_now is required by full_v1`);
-    }
+    if (edition.policy_profile === 'full_v1' && !story.what_to_do_now) errors.push(`${label}.what_to_do_now is required by full_v1`);
   });
   if(freshnessRequired&&fallbackCount>0&&!/recency fallback/i.test(edition.coverage_period||''))errors.push('coverage_period must disclose recency fallback use');
+
   for (const slot of ['general', 'agents_non_technical_people']) {
     const video = edition.worth_watching?.[slot];
     if (!video) errors.push(`worth_watching.${slot} is required`);
     else if (video.status === 'empty') requireText(video.exception, `worth_watching.${slot}.exception`);
     else if (video.status === 'included' && (!Number.isInteger(video.runtime_seconds) || video.runtime_seconds < 1 || video.runtime_seconds > 1200)) errors.push(`worth_watching.${slot}.runtime_seconds must be 1-1200`);
     else if (video.status==='included' && edition.brief_date>='2026-09-11') {
-      const age=(Date.parse(edition.brief_date)-Date.parse(video.upload_date))/86400000;
-      if(!Number.isFinite(age)||age<0||age>30)errors.push(`worth_watching.${slot} requires a verified upload date within 30 days`);
-      if(video.runtime_seconds>600 && (!video.short_search_evidence?.length || video.duration_tier!=='fallback' || !video.fallback_reason?.trim()))errors.push(`worth_watching.${slot} requires documented short-video search and fallback reason`);
+      const ageHours=(Date.parse(edition.brief_date)-Date.parse(video.upload_date))/3600000;
+      const maxAge=edition.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE?VIDEO_MAX_AGE_HOURS:30*24;
+      if(!Number.isFinite(ageHours)||ageHours<0||ageHours>maxAge)errors.push(`worth_watching.${slot} requires a verified upload date within ${maxAge} hours`);
+      if(video.runtime_seconds>600 && (!video.short_search_evidence?.length || !['fallback','last_resort'].includes(video.duration_tier)||!video.fallback_reason?.trim()))errors.push(`worth_watching.${slot} requires documented short-video search and fallback reason`);
+      if(video.runtime_seconds>900 && video.duration_tier!=='last_resort')errors.push(`worth_watching.${slot} requires last_resort duration tier above 15 minutes`);
     }
     else if (!['empty', 'included'].includes(video.status)) errors.push(`worth_watching.${slot}.status is invalid`);
   }
-  const podcast = edition.podcast;
-  if (edition.policy_profile === 'full_v1' && edition.brief_date >= '2026-09-10' && !podcast) errors.push('podcast slot 9 is required');
-  if (podcast?.status === 'included') {
+
+  const multiPodcast=edition.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE;
+  if(multiPodcast&&edition.podcasts!==undefined&&!Array.isArray(edition.podcasts))errors.push('podcasts must be an array for new editions');
+  if(multiPodcast&&edition.policy_profile==='full_v1'&&!Array.isArray(edition.podcasts))errors.push('podcasts collection is required for full_v1 editions beginning 2026-09-18');
+  const podcasts=editionPodcasts(edition);
+  errors.push(...validatePodcastDiversity(edition));
+  if(multiPodcast&&podcasts.length!==edition.podcasts?.length)errors.push('podcasts collection may contain only included podcast items');
+  if(!multiPodcast&&edition.policy_profile==='full_v1'&&edition.brief_date>='2026-09-10'&&!edition.podcast)errors.push('podcast slot 9 is required');
+
+  const validatePodcast=(podcast,index)=>{
+    const label=multiPodcast?`podcasts[${index}]`:'podcast';
     const podcastFields=['item_id','title','show','host','publication_date','summary','why_useful','connection','selection_rationale','verification_note','coverage_note'];
     if(!freshnessRequired)podcastFields.push('george_implication');
-    for (const field of podcastFields) requireText(podcast[field], `podcast.${field}`);
-    if (!podcast.item_id?.startsWith(`dab-podcast-${edition.brief_date}-`)) errors.push('podcast.item_id must match brief_date');
-    if (podcast.ordinal !== 9) errors.push('podcast.ordinal must be 9');
-    if (!podcast.permanent_url?.startsWith(`/podcasts/${edition.brief_date}/`)) errors.push('podcast.permanent_url must match brief_date');
-    if (!EXPECTED_FOCUS_ORDER.includes(podcast.focus)) errors.push('podcast.focus is invalid');
-    if (podcast.runtime_seconds !== null && (!Number.isInteger(podcast.runtime_seconds) || podcast.runtime_seconds < 1)) errors.push('podcast runtime must be positive or unknown; no maximum');
-    if (!podcast.platforms?.length || !podcast.topics?.length) errors.push('podcast platforms and topics are required');
+    for (const field of podcastFields) requireText(podcast[field], `${label}.${field}`);
+    if (!podcast.item_id?.startsWith(`dab-podcast-${edition.brief_date}-`)) errors.push(`${label}.item_id must match brief_date`);
+    const expectedOrdinal=multiPodcast?9+index:9;
+    if (podcast.ordinal !== expectedOrdinal) errors.push(`${label}.ordinal must be ${expectedOrdinal}`);
+    if (!podcast.permanent_url?.startsWith(`/podcasts/${edition.brief_date}/`)) errors.push(`${label}.permanent_url must match brief_date`);
+    if (!EXPECTED_FOCUS_ORDER.includes(podcast.focus)) errors.push(`${label}.focus is invalid`);
+    if (podcast.runtime_seconds !== null && (!Number.isInteger(podcast.runtime_seconds) || podcast.runtime_seconds < 1)) errors.push(`${label} runtime must be positive or unknown; no maximum`);
+    if (!podcast.platforms?.length || !podcast.topics?.length) errors.push(`${label} platforms and topics are required`);
     for (const url of [podcast.url, ...(podcast.platforms || []).map(p => p.url)]) {
-      try { if (new URL(url).protocol !== 'https:') throw Error(); } catch { errors.push('podcast URL must be HTTPS'); }
+      try { if (new URL(url).protocol !== 'https:') throw Error(); } catch { errors.push(`${label} URL must be HTTPS`); }
     }
-    const otherUrls = [...sourceUrls, ...Object.values(edition.worth_watching || {}).map(v => v.url)];
-    if ([podcast.url,...(podcast.platforms || []).map(p => p.url)].some(url => otherUrls.includes(url))) errors.push('podcast duplicates another edition item');
-  } else if (podcast?.status === 'empty') requireText(podcast.exception, 'podcast.exception');
-  else if (podcast) errors.push('podcast.status is invalid');
+    const otherUrls=[...sourceUrls,...Object.values(edition.worth_watching||{}).map(v=>v.url),...podcasts.filter((_,i)=>i!==index).flatMap(p=>[p.url,...(p.platforms||[]).map(x=>x.url)])];
+    if ([podcast.url,...(podcast.platforms || []).map(p => p.url)].some(url => otherUrls.includes(url))) errors.push(`${label} duplicates another edition item`);
+    if(multiPodcast){
+      const age=(Date.parse(edition.brief_date)-Date.parse(podcast.publication_date))/86400000;
+      if(!Number.isFinite(age)||age<0||age>PODCAST_EXCEPTION_AGE_DAYS)errors.push(`${label} exceeds the ${PODCAST_EXCEPTION_AGE_DAYS}-day absolute freshness ceiling`);
+      else if(age>PODCAST_PRIMARY_AGE_DAYS){
+        requireText(podcast.freshness_exception_reason,`${label}.freshness_exception_reason`);
+        const expectedTier=age<=PODCAST_FALLBACK_AGE_DAYS?'fallback_7d':'exception_30d';
+        if(podcast.freshness_tier!==expectedTier)errors.push(`${label}.freshness_tier must be ${expectedTier}`);
+      }else if(podcast.freshness_tier&&podcast.freshness_tier!=='primary_48h')errors.push(`${label}.freshness_tier must be primary_48h inside the primary window`);
+    }
+  };
+  podcasts.forEach(validatePodcast);
+  if(!multiPodcast&&edition.podcast?.status==='empty')requireText(edition.podcast.exception,'podcast.exception');
+  else if(!multiPodcast&&edition.podcast&&!['empty','included'].includes(edition.podcast.status))errors.push('podcast.status is invalid');
   return errors;
 }
 
