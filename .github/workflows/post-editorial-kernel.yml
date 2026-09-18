@@ -105,7 +105,7 @@ jobs:
           const fs=require('fs');
           const [manifestPath,stagingRef,outputPath]=process.argv.slice(2);
           const m=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
-          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','metadata_candidates_path','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
+          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','metadata_candidates_path','article_evidence_path','image_transport_method','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
           for(const key of required) if(!(key in m)) throw new Error('handoff_manifest_missing_'+key);
           if(m.staging_ref!==stagingRef) throw new Error('handoff_manifest_staging_ref_mismatch');
           if(!['production','qualification_nonproduction'].includes(m.execution_mode)) throw new Error('handoff_manifest_execution_mode_invalid');
@@ -114,6 +114,7 @@ jobs:
           if(m.editorial_model_passes!==1) throw new Error('handoff_manifest_editorial_pass_count_invalid');
           if(m.post_editorial_model_passes!==0) throw new Error('handoff_manifest_post_editorial_pass_count_invalid');
           if(m.deterministic_validation_model_calls!==0) throw new Error('handoff_manifest_validation_model_calls_invalid');
+          if(m.image_transport_method!=='native_git') throw new Error('handoff_manifest_native_git_image_transport_required');
           for(const key of ['kernel_path','facts_path','images_path','media_path','coverage_period']) {
             if(typeof m[key]!=='string'||m[key].includes('\n')||m[key].includes('\r')) throw new Error('handoff_manifest_invalid_'+key);
           }
@@ -123,6 +124,8 @@ jobs:
             'images_path='+m.images_path+'\n'+
             'media_path='+m.media_path+'\n'+
             'metadata_candidates_path='+m.metadata_candidates_path+'\n'+
+            'article_evidence_path='+m.article_evidence_path+'\n'+
+            'image_transport_method='+m.image_transport_method+'\n'+
             'coverage_period='+m.coverage_period+'\n'+
             'execution_mode='+m.execution_mode+'\n');
           NODE
@@ -133,6 +136,8 @@ jobs:
               echo "images_path=$INPUT_IMAGES_PATH"
               echo "media_path=$INPUT_MEDIA_PATH"
               echo "metadata_candidates_path=_records/editorial-handoff/metadata-candidates.json"
+              echo "article_evidence_path=_records/editorial-handoff/article-evidence.json"
+              echo "image_transport_method=native_git"
               echo "coverage_period=$INPUT_COVERAGE_PERIOD"
               echo "execution_mode=production"
             } >> "$GITHUB_OUTPUT"
@@ -145,9 +150,10 @@ jobs:
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
           MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
           METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
+          ARTICLE_EVIDENCE_PATH: ${{ steps.handoff.outputs.article_evidence_path }}
         run: |
           set -euo pipefail
-          for p in "$KERNEL_PATH" "$FACTS_PATH" "$METADATA_CANDIDATES_PATH"; do
+          for p in "$KERNEL_PATH" "$FACTS_PATH" "$METADATA_CANDIDATES_PATH" "$ARTICLE_EVIDENCE_PATH"; do
             if [ -z "$p" ] || [[ "$p" == /* ]] || [[ "$p" == *".."* ]] || [ ! -f "$p" ]; then
               echo "Invalid or missing repository-relative input: $p"
               exit 1
@@ -180,6 +186,24 @@ jobs:
           if(d.candidates.some(x=>x.date_status!=='resolved_metadata_date'||!x.metadata_event_at)) throw new Error('metadata_gate_unresolved_date_present');
           NODE
 
+      - name: Validate precomputed article evidence packet
+        env:
+          ARTICLE_EVIDENCE_PATH: ${{ steps.handoff.outputs.article_evidence_path }}
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+        run: |
+          set -euo pipefail
+          node - "$ARTICLE_EVIDENCE_PATH" "$KERNEL_PATH" <<'NODE'
+          const fs=require('fs');
+          const [evidencePath,kernelPath]=process.argv.slice(2);
+          const e=JSON.parse(fs.readFileSync(evidencePath,'utf8'));
+          const k=JSON.parse(fs.readFileSync(kernelPath,'utf8'));
+          if(e.profile_id!=='under80-v1'||e.execution_owner!=='github_actions'||e.model_calls!==0) throw new Error('article_evidence_provenance_invalid');
+          if(e.review_plan_count!==9||!Array.isArray(e.model_visible)||e.model_visible.length!==9) throw new Error('article_evidence_review_plan_invalid');
+          if(!Number.isInteger(e.model_visible_chars)||e.model_visible_chars>12000) throw new Error('article_evidence_char_limit_exceeded');
+          const ids=new Set(e.model_visible.map(x=>x.candidate_id));
+          for(const story of k.stories||[]) if(!ids.has(story.candidate_id)) throw new Error('selected_story_missing_from_precomputed_evidence:'+story.candidate_id);
+          NODE
+
       - name: Resolve trusted main baseline and validate kernel
         id: baseline
         env:
@@ -197,6 +221,14 @@ jobs:
           fi
           echo "sha=$baseline" >> "$GITHUB_OUTPUT"
           node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
+
+      - name: Validate six native-git handoff PNGs
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
+        run: |
+          set -euo pipefail
+          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGES_PATH"
 
       - name: Render or select six guarded visual assets
         env:
