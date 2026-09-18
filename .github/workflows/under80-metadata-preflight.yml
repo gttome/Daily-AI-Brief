@@ -1,0 +1,133 @@
+name: Under-80 metadata preflight
+
+on:
+  push:
+    branches:
+      - 'preflight-request/**'
+    paths:
+      - '_records/preflight-request/request.json'
+  schedule:
+    - cron: '40 11 * * *'
+    - cron: '40 12 * * *'
+  workflow_dispatch:
+    inputs:
+      edition_date:
+        description: America/Chicago edition date
+        required: false
+        type: string
+      cutoff:
+        description: ISO-8601 research cutoff
+        required: false
+        type: string
+      execution_mode:
+        description: production or qualification_nonproduction
+        required: false
+        default: qualification_nonproduction
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: under80-preflight-${{ github.ref }}-${{ github.event_name }}
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out triggering ref
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Resolve request
+        id: request
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_DATE: ${{ inputs.edition_date }}
+          INPUT_CUTOFF: ${{ inputs.cutoff }}
+          INPUT_MODE: ${{ inputs.execution_mode }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "push" ]; then
+            cp _records/preflight-request/request.json /tmp/preflight-request.json
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            node - <<'NODE' > /tmp/scheduled.json
+          const now=new Date();
+          const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(now).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+          const date=parts.year+'-'+parts.month+'-'+parts.day;
+          const shouldRun=Number(parts.hour)===6;
+          console.log(JSON.stringify({shouldRun,date,cutoff:now.toISOString()}));
+          NODE
+            should="$(node -e "const x=require('/tmp/scheduled.json');process.stdout.write(String(x.shouldRun))")"
+            if [ "$should" != "true" ]; then
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            node - <<'NODE' > /tmp/preflight-request.json
+          const x=require('/tmp/scheduled.json');
+          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:x.date,cutoff:x.cutoff,execution_mode:'production',metadata_candidate_limit:20,ordinary_max_age_hours:72,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+x.date},null,2));
+          NODE
+            echo "should_run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          date="$INPUT_DATE"
+          cutoff="$INPUT_CUTOFF"
+          mode="${INPUT_MODE:-qualification_nonproduction}"
+          if [ -z "$date" ]; then date="$(TZ=America/Chicago date +%F)"; fi
+          if [ -z "$cutoff" ]; then cutoff="$(date -u +%Y-%m-%dT%H:%M:%SZ)"; fi
+          node - "$date" "$cutoff" "$mode" <<'NODE' > /tmp/preflight-request.json
+          const [date,cutoff,mode]=process.argv.slice(2);
+          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:date,cutoff,execution_mode:mode,metadata_candidate_limit:20,ordinary_max_age_hours:72,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+date},null,2));
+          NODE
+          echo "should_run=true" >> "$GITHUB_OUTPUT"
+
+      - name: Run zero-model discovery and metadata gate
+        if: steps.request.outputs.should_run == 'true'
+        run: |
+          set -euo pipefail
+          node _tools/run-under80-preflight.mjs --request /tmp/preflight-request.json
+
+      - name: Commit preflight result to isolated branch
+        if: steps.request.outputs.should_run == 'true'
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          date="$(node -e "const x=require('/tmp/preflight-request.json');process.stdout.write(x.edition_date)")"
+          if [ "$EVENT_NAME" = "schedule" ] || [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            target="preflight/$date"
+            git checkout -B "$target"
+          else
+            target="${GITHUB_REF_NAME}"
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "_records/preflight/$date/metadata-candidates.json" "_records/preflight/$date/receipt.json" "_records/discovery/$date.json"
+          if git diff --cached --quiet; then
+            echo "No preflight changes to commit."
+          else
+            git commit -m "Prepare bounded metadata preflight for $date"
+            git push --force-with-lease origin "HEAD:$target"
+          fi
+
+      - name: Summarize readiness
+        if: steps.request.outputs.should_run == 'true'
+        run: |
+          date="$(node -e "const x=require('/tmp/preflight-request.json');process.stdout.write(x.edition_date)")"
+          node - "$date" <<'NODE'
+          const fs=require('fs');
+          const date=process.argv[2],r=JSON.parse(fs.readFileSync('_records/preflight/'+date+'/receipt.json','utf8'));
+          console.log('ready='+r.ready);
+          console.log('model_calls='+r.model_calls);
+          console.log(JSON.stringify(r.gate));
+          NODE
