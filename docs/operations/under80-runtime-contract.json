@@ -50,8 +50,9 @@
     "gate_must_report_coverage_ready": true,
     "discovery_sequence": [
       "GitHub Actions runs fresh zero-model metadata discovery outside Work with the edition cutoff.",
+      "GitHub Actions performs bounded deterministic article-page date enrichment on at most 48 unresolved high-value links.",
       "GitHub Actions applies the deterministic under-80 metadata gate and commits only the bounded preflight result/receipt to preflight/YYYY-MM-DD.",
-      "Work reads only the committed preflight receipt and metadata-candidates file. Work never runs metadata catalog discovery and never opens the raw queue."
+      "Work reads only the committed preflight receipt and metadata-candidates file. Work never runs metadata discovery/date enrichment and never opens the raw queue."
     ],
     "prework_owner": "github_actions",
     "preflight_workflow": ".github/workflows/under80-metadata-preflight.yml",
@@ -59,7 +60,10 @@
     "preflight_receipt_path_pattern": "_records/preflight/YYYY-MM-DD/receipt.json",
     "preflight_candidates_path_pattern": "_records/preflight/YYYY-MM-DD/metadata-candidates.json",
     "work_must_not_run_metadata_discovery": true,
-    "work_entry_condition": "Start semantic Work only from a committed preflight receipt with ready=true, model_calls=0, <=20 candidates, resolved dates, >=3 metadata candidates per focus, and >=1 Agent Skills signal."
+    "work_entry_condition": "Start semantic Work only from a committed preflight receipt with ready=true, model_calls=0, <=20 candidates, resolved dates, >=3 metadata candidates per focus, and >=1 Agent Skills signal.",
+    "metadata_date_enrichment_tool": "_tools/enrich-metadata-dates.mjs",
+    "metadata_date_enrichment_limit": 48,
+    "metadata_date_enrichment_owner": "github_actions"
   },
   "semantic_work": {
     "editorial_model_passes": 1,
