@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "updated_at": "2026-09-17T12:06:49.732Z",
+  "updated_at": "2026-09-18T14:31:07.655Z",
   "sources": [
     {
       "source_id": "rundown",
@@ -16,12 +16,16 @@
         "candidate_links": 32,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:28.818Z",
+            "checked_at": "2026-09-18T14:31:07.681Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 208286,
+            "normalized_chars": 208167
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.798Z"
+        "checked_at": "2026-09-18T14:31:14.102Z",
+        "check_started_at": "2026-09-18T14:31:07.680Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -35,20 +39,19 @@
         "source_id": "tldr-ai",
         "status": "retrieved",
         "unchanged": false,
-        "candidate_links": 19,
+        "candidate_links": 21,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:28.827Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-17T12:05:40.827Z",
+            "checked_at": "2026-09-18T14:31:07.690Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 79997,
+            "normalized_chars": 79686
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.800Z"
+        "checked_at": "2026-09-18T14:31:19.264Z",
+        "check_started_at": "2026-09-18T14:31:07.690Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -65,17 +68,16 @@
         "candidate_links": 28,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:28.828Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-17T12:05:40.828Z",
+            "checked_at": "2026-09-18T14:31:07.692Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 418731,
+            "normalized_chars": 418282
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.810Z"
+        "checked_at": "2026-09-18T14:31:14.428Z",
+        "check_started_at": "2026-09-18T14:31:07.691Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -88,21 +90,25 @@
       "last_check": {
         "source_id": "the-batch",
         "status": "no_candidate_links",
-        "unchanged": false,
+        "unchanged": true,
         "candidate_links": 0,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:28.829Z",
+            "checked_at": "2026-09-18T14:31:07.692Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-17T12:05:40.829Z",
+            "checked_at": "2026-09-18T14:31:19.698Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 186918,
+            "normalized_chars": 186732
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.814Z"
+        "checked_at": "2026-09-18T14:31:26.974Z",
+        "check_started_at": "2026-09-18T14:31:07.692Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -115,20 +121,20 @@
       "last_check": {
         "source_id": "import-ai",
         "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "reason": "HTTP 502",
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:49.848Z",
+            "checked_at": "2026-09-18T14:31:26.977Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-17T12:07:01.852Z",
+            "checked_at": "2026-09-18T14:31:38.978Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           }
         ],
-        "checked_at": "2026-09-17T12:07:13.857Z"
+        "checked_at": "2026-09-18T14:31:49.235Z"
       }
     },
     {
@@ -140,17 +146,16 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "superhuman",
-        "status": "retrieved",
-        "unchanged": false,
-        "candidate_links": 13,
+        "status": "unavailable",
+        "reason": "normalized_body_too_large:825072>500000",
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:46.895Z",
-            "status": "retrieved",
-            "http_status": 200
+            "checked_at": "2026-09-18T14:31:26.978Z",
+            "status": "unavailable",
+            "reason": "normalized_body_too_large:825072>500000"
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.909Z"
+        "checked_at": "2026-09-18T14:31:34.172Z"
       }
     },
     {
@@ -167,12 +172,16 @@
         "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:46.896Z",
+            "checked_at": "2026-09-18T14:31:26.979Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 384360,
+            "normalized_chars": 384185
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.911Z"
+        "checked_at": "2026-09-18T14:31:34.374Z",
+        "check_started_at": "2026-09-18T14:31:26.979Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -189,12 +198,16 @@
         "candidate_links": 1,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:46.896Z",
+            "checked_at": "2026-09-18T14:31:26.979Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 75392,
+            "normalized_chars": 75390
           }
         ],
-        "checked_at": "2026-09-17T12:06:49.911Z"
+        "checked_at": "2026-09-18T14:31:34.080Z",
+        "check_started_at": "2026-09-18T14:31:26.979Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -211,12 +224,16 @@
         "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:10.898Z",
+            "checked_at": "2026-09-18T14:31:49.235Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 101582,
+            "normalized_chars": 101522
           }
         ],
-        "checked_at": "2026-09-17T12:07:13.864Z"
+        "checked_at": "2026-09-18T14:31:54.001Z",
+        "check_started_at": "2026-09-18T14:31:49.235Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -229,20 +246,20 @@
       "last_check": {
         "source_id": "the-median",
         "status": "unavailable",
-        "reason": "The operation was aborted due to timeout",
+        "reason": "HTTP 502",
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:07:13.859Z",
+            "checked_at": "2026-09-18T14:31:49.236Z",
             "status": "unavailable",
             "reason": "The operation was aborted due to timeout"
           },
           {
-            "checked_at": "2026-09-17T12:07:25.860Z",
+            "checked_at": "2026-09-18T14:32:01.237Z",
             "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
+            "reason": "HTTP 502"
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.862Z"
+        "checked_at": "2026-09-18T14:32:09.541Z"
       }
     },
     {
@@ -255,16 +272,20 @@
       "last_check": {
         "source_id": "stanford-hai",
         "status": "retrieved",
-        "unchanged": true,
-        "candidate_links": 19,
+        "unchanged": false,
+        "candidate_links": 21,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:28.835Z",
+            "checked_at": "2026-09-18T14:31:49.236Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 307742,
+            "normalized_chars": 307678
           }
         ],
-        "checked_at": "2026-09-17T12:07:13.866Z"
+        "checked_at": "2026-09-18T14:31:54.221Z",
+        "check_started_at": "2026-09-18T14:31:49.236Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -276,21 +297,21 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "berkeley-bair",
-        "status": "unavailable",
-        "reason": "HTTP 502",
+        "status": "retrieved",
+        "unchanged": false,
+        "candidate_links": 12,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:07:13.862Z",
-            "status": "unavailable",
-            "reason": "HTTP 502"
-          },
-          {
-            "checked_at": "2026-09-17T12:07:22.633Z",
-            "status": "unavailable",
-            "reason": "HTTP 502"
+            "checked_at": "2026-09-18T14:31:49.238Z",
+            "status": "retrieved",
+            "http_status": 200,
+            "response_bytes": 39359,
+            "normalized_chars": 39317
           }
         ],
-        "checked_at": "2026-09-17T12:07:32.271Z"
+        "checked_at": "2026-09-18T14:31:54.227Z",
+        "check_started_at": "2026-09-18T14:31:49.238Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -307,12 +328,16 @@
         "candidate_links": 6,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:34.901Z",
+            "checked_at": "2026-09-18T14:32:09.541Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 26208,
+            "normalized_chars": 26194
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.867Z"
+        "checked_at": "2026-09-18T14:32:14.196Z",
+        "check_started_at": "2026-09-18T14:32:09.541Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -328,12 +353,12 @@
         "reason": "HTTP 403",
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:07:10.926Z",
+            "checked_at": "2026-09-18T14:32:09.542Z",
             "status": "unavailable",
             "reason": "HTTP 403"
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.866Z"
+        "checked_at": "2026-09-18T14:32:14.614Z"
       }
     },
     {
@@ -350,17 +375,16 @@
         "candidate_links": 30,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:05:28.833Z",
-            "status": "unavailable",
-            "reason": "The operation was aborted due to timeout"
-          },
-          {
-            "checked_at": "2026-09-17T12:05:40.835Z",
+            "checked_at": "2026-09-18T14:32:09.542Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 178152,
+            "normalized_chars": 178105
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.869Z"
+        "checked_at": "2026-09-18T14:32:13.819Z",
+        "check_started_at": "2026-09-18T14:32:09.542Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -377,12 +401,16 @@
         "candidate_links": 24,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:05.351Z",
+            "checked_at": "2026-09-18T14:32:09.543Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 197420,
+            "normalized_chars": 197388
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.872Z"
+        "checked_at": "2026-09-18T14:32:14.652Z",
+        "check_started_at": "2026-09-18T14:32:09.542Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -396,15 +424,19 @@
         "source_id": "huggingface-papers",
         "status": "retrieved",
         "unchanged": false,
-        "candidate_links": 23,
+        "candidate_links": 26,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:30.155Z",
+            "checked_at": "2026-09-18T14:32:14.658Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 411535,
+            "normalized_chars": 411520
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.881Z"
+        "checked_at": "2026-09-18T14:32:19.134Z",
+        "check_started_at": "2026-09-18T14:32:14.657Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -421,12 +453,16 @@
         "candidate_links": 32,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:40.209Z",
+            "checked_at": "2026-09-18T14:32:14.658Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 33204,
+            "normalized_chars": 33184
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.883Z"
+        "checked_at": "2026-09-18T14:32:18.970Z",
+        "check_started_at": "2026-09-18T14:32:14.658Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -443,12 +479,16 @@
         "candidate_links": 0,
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:40.209Z",
+            "checked_at": "2026-09-18T14:32:14.659Z",
             "status": "retrieved",
-            "http_status": 200
+            "http_status": 200,
+            "response_bytes": 8410,
+            "normalized_chars": 8410
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.883Z"
+        "checked_at": "2026-09-18T14:32:18.776Z",
+        "check_started_at": "2026-09-18T14:32:14.659Z",
+        "cache_status": "miss"
       }
     },
     {
@@ -460,17 +500,16 @@
       "access_note": "Public source; automated collection is checked separately from research verification. Original claims require verification.",
       "last_check": {
         "source_id": "github-trending",
-        "status": "retrieved",
-        "unchanged": false,
-        "candidate_links": 47,
+        "status": "unavailable",
+        "reason": "normalized_body_too_large:646925>500000",
         "attempts": [
           {
-            "checked_at": "2026-09-17T12:06:40.210Z",
-            "status": "retrieved",
-            "http_status": 200
+            "checked_at": "2026-09-18T14:32:14.659Z",
+            "status": "unavailable",
+            "reason": "normalized_body_too_large:646925>500000"
           }
         ],
-        "checked_at": "2026-09-17T12:07:37.903Z"
+        "checked_at": "2026-09-18T14:32:18.944Z"
       }
     }
   ]

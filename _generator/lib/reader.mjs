@@ -293,6 +293,7 @@ export function readerFoundationFiles(edition, repoRoot) {
   const stories = trends.tagged;
   const editionDir = path.join(repoRoot, '_data', 'editions');
   const feedbackDates = new Set(fs.existsSync(editionDir) ? fs.readdirSync(editionDir).filter(name => name.endsWith('.json')).map(name => name.slice(0, -5)) : [edition.brief_date]);
+  feedbackDates.add(edition.brief_date);
   const files = new Map();
   for (const story of stories) {
     if (story.content_type === 'Video') {

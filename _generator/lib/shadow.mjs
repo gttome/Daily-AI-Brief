@@ -3,6 +3,7 @@ import path from 'node:path';
 import {importLegacyFile, semanticEditionView} from './import-legacy.mjs';
 import {deepEqualJson, sha256} from './util.mjs';
 import {validateEdition} from './validate.mjs';
+import {renderDated,renderLatest,renderIndex} from './render.mjs';
 
 export function runShadowCheck(repoRoot, date, sourceCommit = null) {
   const checks = [];
@@ -13,6 +14,9 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
     {name: 'homepage', path: path.join(repoRoot, 'index.md')}
   ];
   const editions = {};
+  const canonicalPath=path.join(repoRoot,'_data','editions',`${date}.json`);
+  const modern=date>='2026-09-18'&&fs.existsSync(canonicalPath)?JSON.parse(fs.readFileSync(canonicalPath,'utf8')):null;
+  const renderers={dated:renderDated,latest:renderLatest,homepage:renderIndex};
   for (const location of locations) {
     if (!fs.existsSync(location.path)) {
       errors.push(`${location.name} file is missing`);
@@ -20,8 +24,15 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
       continue;
     }
     try {
-      editions[location.name] = importLegacyFile(location.path, repoRoot, sourceCommit);
+      // New reader order and podcast collections are native canonical formats.
+      // Compare actual complete reader output, rather than adapting it as legacy.
+      editions[location.name] = modern||importLegacyFile(location.path, repoRoot, sourceCommit);
       const validation = validateEdition(editions[location.name]);
+      if(modern){
+        const actual=fs.readFileSync(location.path,'utf8');
+        const expected=renderers[location.name](modern);
+        if(actual.trimEnd()!==expected.trimEnd())validation.push('reader output differs from canonical rendering');
+      }
       checks.push({check_id: `${location.name}_canonical_import`, result: validation.length ? 'fail' : 'pass', evidence: validation.length ? validation.join('; ') : 'Imported and validated.'});
       errors.push(...validation.map(item => `${location.name}: ${item}`));
     } catch (error) {

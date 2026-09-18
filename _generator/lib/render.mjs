@@ -239,7 +239,14 @@ export function generatedFiles(edition, repoRoot) {
   ]);
   const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
   const foundationEdition=separated?readerSafeEdition(edition):edition;
-  for (const [name, content] of readerFoundationFiles(foundationEdition, repoRoot)) files.set(name,separated&&currentEditionReaderPath(name,edition.brief_date)?stripEditorOnlyMarkup(content):content);
+  for (const [name, content] of readerFoundationFiles(foundationEdition, repoRoot)) {
+    const itemDate=name.match(/^(?:stories|videos|podcasts)\/(\d{4}-\d{2}-\d{2})\//)?.[1];
+    const existing=path.join(repoRoot,name);
+    // Ordinary publication preserves already-published historical item bytes.
+    // A historical correction must target that edition explicitly.
+    if(itemDate&&itemDate<edition.brief_date&&fs.existsSync(existing))files.set(name,fs.readFileSync(existing,'utf8'));
+    else files.set(name,separated&&currentEditionReaderPath(name,edition.brief_date)?stripEditorOnlyMarkup(content):content);
+  }
   const analyticsPath=`_records/analytics/${edition.brief_date}.json`;
   if(!fs.existsSync(path.join(repoRoot,analyticsPath)))files.set(analyticsPath,JSON.stringify(publicAnalyticsEvidence(edition),null,2));
   files.set('data/operations/current-edition.json', JSON.stringify({schema_version:'1.0.0',edition_id:edition.edition_id,brief_date:edition.brief_date,completion_path:'_records/publication/'+edition.brief_date+'/completion.json'},null,2));

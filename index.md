@@ -1,261 +1,259 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-09-17
+brief_date: 2026-09-18
 reader_release: true
 ---
 
-# Daily Generative AI Brief — September 17, 2026
+# Daily Generative AI Brief — September 18, 2026
 
-**Published:** September 17, 2026  
-**Coverage period:** Rolling 24-hour primary window ending September 17, 2026 at 07:22 America/Chicago; all six selected stories are verified inside the primary window.
-
-<!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 1 PODCAST</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-17-1a7c4e90">OpenAI builds a standing process for disclosing model misalignment</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-09-17-2b8d5f01">LlamaIndex treats extraction schemas as semantic contracts</a><span>Article · about 9 min source read</span></li><li><a href="#reading-dab-story-2026-09-17-3c9e6a12">Claude unifies chat and Cowork in one persistent workspace</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-17-4daf7b23">GitHub makes Copilot budget increases a governed request</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-17-5eb08c34">Zocks adds a reusable financial-planning Agent Skill</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-17-6fc19d45">QuickBooks plugin brings accounting questions and actions into conversation</a><span>Article · about 4 min source read</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#worth-listening--podcast">Why a New Class of AI “Judgment Models” Could Have Big Business Implications</a><span>Podcast</span></li></ol></section>
-<!-- reader-release:end -->
-
-<span id="reading-dab-story-2026-09-17-1a7c4e90"></span>
-
-## 1. OpenAI builds a standing process for disclosing model misalignment
+**Published:** September 18, 2026  
+**Coverage period:** September 17 sources reviewed for the September 18 edition. Recency fallback: exact posting times were unavailable; date-only sources are conservatively normalized and not asserted inside the exact 24-hour primary window.
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div><p><strong>Misalignment disclosure:</strong> A repeatable process for publishing concerning model behavior with explicit investigation tracks.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How a standing disclosure workflow can separate fast publication from deeper investigation.</p></div></aside>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-18-2cda8d5e">Anthropic proposes three measurements for AI self-acceleration inside frontier labs</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-3ac3c725">GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-87612b7e">Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-c5d22f27">Salesforce makes Builder Central a natural-language front door for governed apps and agents</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-bc42dd44">Rovo lets teams teach repeatable work as custom skills in ordinary language</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-062b5025">Google gives a household agent its own identity, permissions, shared memory, and isolated computer</a><span>Article · Source reading time unavailable</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#podcast-dab-podcast-2026-09-18-personal-ai-agents">Why Everyone Is Getting Excited About Personal AI Agents</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-18-ai-search-discovery">How to get discovered in AI search</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
-**Focus: Technical AI Engineering**
+<span id="reading-dab-story-2026-09-18-bc42dd44"></span>
 
-**Date:** September 16, 2026
+## 1. Rovo lets teams teach repeatable work as custom skills in ordinary language
 
-**Topics:** model safety, misalignment, disclosure
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Reusable Agent Skill:</strong> A reusable skill packages a repeated procedure, expected output and review responsibility for repeated use. The feature is rolling out rather than universally available, and Atlassian’s announcement does not provide independent evidence that automatically authored skills are complete, correct, or appropriately governed.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations.</p></div></aside>
+<!-- reader-release:end -->
 
-<span class="story-data" data-story-id="dab-story-2026-09-17-1a7c4e90" data-story-url="/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/" hidden></span>
+**Focus: Agents for Non-Technical People**
 
-<a href="{{ '/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/' | relative_url }}" data-item-id="dab-story-2026-09-17-1a7c4e90" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent story page</a>
+**Date:** September 17, 2026
+
+**Topics:** Agent Skills, reusable workflows, Rovo, team context, no-code agents
+
+<span class="story-data" data-story-id="dab-story-2026-09-18-bc42dd44" data-story-url="/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/" hidden></span>
+
+<a href="{{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }}" data-item-id="dab-story-2026-09-18-bc42dd44" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
-**Availability:** Proposed
+**Availability:** Rolling Out
 
-![Textbook workflow diagram showing an observed concerning model behavior moving through triage, three investigation tracks, public disclosure and a feedback loop.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/01-misalignment-disclosure-workflow.png?v=20260917textbook)
+**What changed since last coverage:** The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations.
 
-**Summary:** OpenAI published a framework for tracking, investigating and disclosing concerning model behavior, accompanied by six reports from the previous six months. Cases move through Ready for Disclosure, Minor Investigation or Larger Investigation tracks, and the framework allows disclosure before every cause or mitigation is complete.
+![Textbook workflow showing a repeated team process converted into a reviewed Rovo custom skill and reused across shared conversations with memory and agent handoffs.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2)
 
-**Why it matters:** A repeatable disclosure channel makes safety evidence inspectable sooner and gives teams a clearer vocabulary for triage. The six reports are examples, not an incident-rate estimate, and a voluntary process still needs external scrutiny.
+**Summary:** Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework to decide which model behaviors require disclosure, investigation or a stop decision.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
+**Why it matters:** This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to colleagues, and combine it with shared conversational context without writing code.
 
-**What to do now — Define a disclosure track:** Take one recent model anomaly and document what would qualify it for immediate disclosure, minor investigation or a slow-track investigation.
 
-**Source:** <a href="https://openai.com/index/model-misalignment-reporting-framework/" data-item-id="dab-story-2026-09-17-1a7c4e90" data-edition-date="2026-09-17" data-action="source_clicks">Model Misalignment Reporting Framework</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-story-2026-09-17-1a7c4e90">
+**What to do now — Turn one repeated team process into a reviewed skill:** Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy.
+
+**Source:** <a href="https://www.atlassian.com/blog/company-news/rovo-chat-new-features-september-2026" data-item-id="dab-story-2026-09-18-bc42dd44" data-edition-date="2026-09-18" data-action="source_clicks">New in Rovo Chat: Where context shapes your work</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-bc42dd44">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-17-2b8d5f01"></span>
+<span id="reading-dab-story-2026-09-18-062b5025"></span>
 
-## 2. LlamaIndex treats extraction schemas as semantic contracts
+## 2. Google gives a household agent its own identity, permissions, shared memory, and isolated computer
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p><strong>Semantic schema:</strong> A data contract whose fields encode meaning, cardinality and applicability, not only output syntax.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Why field semantics and optionality determine whether extraction stays grounded.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Agent identity and memory:</strong> A shared agent needs a distinct identity, explicit sharing boundaries and clear treatment of shared versus person-specific context. CC is an early U.S.-only Google Labs experiment for adults with personal Google accounts, with existing-user upgrades and a waitlist. The announcement does not establish reliability for consequential household actions.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated.</p></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 17, 2026
+
+**Topics:** consumer agents, identity, permissions, shared memory, isolated execution, Gemini
+
+<span class="story-data" data-story-id="dab-story-2026-09-18-062b5025" data-story-url="/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/" hidden></span>
+
+<a href="{{ '/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/' | relative_url }}" data-item-id="dab-story-2026-09-18-062b5025" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Official Announcement  
+**Availability:** Experimental Waitlist
+
+![Textbook architecture diagram showing household members selectively sharing data with a distinct CC agent identity, separate memory scopes, permission gates, and an isolated cloud computer.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/06-household-agent-boundaries.png?v=5b4ff0fd59a81b50)
+
+**Summary:** Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.
+
+**Why it matters:** The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and isolated execution. Those are useful patterns for any multi-user agent, not just household logistics.
+
+
+
+**What to do now — Use CC’s controls as an agent design checklist:** For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated.
+
+**Source:** <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/" data-item-id="dab-story-2026-09-18-062b5025" data-edition-date="2026-09-18" data-action="source_clicks">The new CC, an AI agent built for families</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-062b5025">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-18-87612b7e"></span>
+
+## 3. Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Workflow redesign:</strong> Start with a business outcome, map the process, then change the work and measure the result. The performance figures are Microsoft-reported internal case studies with different scopes and time periods. They do not establish causal effects across organizations, and the playbook reflects Microsoft’s products and operating environment.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" target="_blank" rel="noopener noreferrer">Microsoft argues AI value should be measured in completed work, not prompt volume</a></p><p>2026-09-10 · The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples.</p></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 17, 2026
+
+**Topics:** AI adoption, workflow redesign, knowledge work, outcome measurement, change management
+
+<span class="story-data" data-story-id="dab-story-2026-09-18-87612b7e" data-story-url="/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/" hidden></span>
+
+<a href="{{ '/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/' | relative_url }}" data-item-id="dab-story-2026-09-18-87612b7e" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Official Case Study  
+**Availability:** Published Guidance
+
+**What changed since last coverage:** The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples.
+
+![Conceptual before-and-after illustration of fragmented AI tool adoption becoming a redesigned workflow with shared data and outcome measurement.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665)
+
+**Summary:** Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.
+
+**Why it matters:** The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measure completed work. That is a more durable adoption model than distributing AI tools and tracking logins or prompts.
+
+
+
+**What to do now — Start from one measurable business outcome:** Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task.
+
+**Source:** <a href="https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/" data-item-id="dab-story-2026-09-18-87612b7e" data-edition-date="2026-09-18" data-action="source_clicks">What we’ve learned from Microsoft&apos;s own AI transformation</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-87612b7e">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-18-c5d22f27"></span>
+
+## 4. Salesforce makes Builder Central a natural-language front door for governed apps and agents
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Governed no-code building:</strong> Natural-language building should still respect the data model, permissions and review controls of the host system. Builder Central was announced for beta rather than broad general availability, and Salesforce’s article does not provide independent evidence of reliability, adoption, or long-term governance outcomes.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access.</p></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 17, 2026
+
+**Topics:** no-code AI, vibe building, enterprise apps, Agentforce, governance
+
+<span class="story-data" data-story-id="dab-story-2026-09-18-c5d22f27" data-story-url="/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/" hidden></span>
+
+<a href="{{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }}" data-item-id="dab-story-2026-09-18-c5d22f27" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Official Announcement  
+**Availability:** Beta Announced
+
+![Textbook diagram showing natural-language app and agent building passing through Salesforce data, metadata, security, and governance controls before deployment.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/04-governed-building.png?v=f97e426828ea5af6)
+
+**Summary:** Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.
+
+**Why it matters:** Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers a simpler path from intent to working application while retaining administrator controls and existing data boundaries.
+
+
+
+**What to do now — Pilot one governed no-code workflow:** Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access.
+
+**Source:** <a href="https://admin.salesforce.com/blog/2026/dreamforce-2026-product-highlights-for-admins" data-item-id="dab-story-2026-09-18-c5d22f27" data-edition-date="2026-09-18" data-action="source_clicks">Dreamforce 2026 Product Highlights for Admins</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-c5d22f27">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-18-2cda8d5e"></span>
+
+## 5. Anthropic proposes three measurements for AI self-acceleration inside frontier labs
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Measurement framework:</strong> Automation, oversight and compute answer different questions; vendor-defined measures need methodology before cross-lab comparison. These are Anthropic-defined measurements from Anthropic systems. Cross-lab methodology is not standardized, some evaluation relies on Anthropic models, and the published figures should not be generalized to the industry.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention.</p></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
 **Date:** September 17, 2026
 
-**Topics:** document extraction, schemas, grounding
+**Topics:** frontier AI, R&D automation, agent oversight, evaluation, compute governance
 
-<span class="story-data" data-story-id="dab-story-2026-09-17-2b8d5f01" data-story-url="/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-18-2cda8d5e" data-story-url="/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/" hidden></span>
 
-<a href="{{ '/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/' | relative_url }}" data-item-id="dab-story-2026-09-17-2b8d5f01" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }}" data-item-id="dab-story-2026-09-18-2cda8d5e" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Documentation  
-**Availability:** General Availability
+**Evidence:** Official Research  
+**Availability:** Published Research
 
-![Textbook diagram showing documents flowing through schema meaning, cardinality, required or optional and nullability decisions into grounded or invented values.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/02-extraction-schema-contract.png?v=20260917textbook)
+![Conceptual textbook illustration of AI-driven research, agent oversight, and compute allocation as three measurement lenses.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82)
 
-**Summary:** LlamaIndex argues that extraction reliability often fails at the schema layer: each field asserts meaning, cardinality and applicability across a document population. Making a non-universal field required can become a standing instruction for a model to invent a value.
+**Summary:** Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.
 
-**Why it matters:** Teams can improve extraction by reviewing field meaning, optionality and nullability as carefully as prompts or model choice. The guidance is practitioner analysis, so every schema still needs evaluation on its own document population.
+**Why it matters:** The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that automation. Comparable, independently checked operational metrics could make acceleration and control more inspectable.
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when reviewing field meaning, optionality and nullability before extraction.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
 
-**What to do now — Audit one extraction schema:** For every required field, ask whether all source documents contain exactly one grounded answer; make exceptions optional before evaluating the model.
 
-**Source:** <a href="https://www.llamaindex.ai/blog/ai-document-extraction-schema" data-item-id="dab-story-2026-09-17-2b8d5f01" data-edition-date="2026-09-17" data-action="source_clicks">AI Document Extraction Schema</a>
+**What to do now — Track operational capability and control together:** When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention.
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-story-2026-09-17-2b8d5f01">
+**Source:** <a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development" data-item-id="dab-story-2026-09-18-2cda8d5e" data-edition-date="2026-09-18" data-action="source_clicks">Measurements for understanding the pace of AI development inside frontier labs</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-2cda8d5e">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-17-3c9e6a12"></span>
+<span id="reading-dab-story-2026-09-18-3ac3c725"></span>
 
-## 3. Claude unifies chat and Cowork in one persistent workspace
+## 6. GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p><strong>Persistent workspace:</strong> A work surface that keeps conversation, files, tools and project context together across tasks.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How persistent context changes workflow continuity without removing permission boundaries.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Usage telemetry:</strong> Invocation counts describe adoption and tool mix. They need separate quality and outcome checks to assess value. Interaction counts do not measure quality or business value. MCP counts include connection attempts rather than tool calls, plugin totals overlap skill totals, and customer-defined names are intentionally grouped.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/" target="_blank" rel="noopener noreferrer">GitHub separates VS Code agent activity from generic Copilot usage</a></p><p>2026-09-12 · The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.</p></div></aside>
 <!-- reader-release:end -->
 
-**Focus: Applied Generative AI for Knowledge Workers**
+**Focus: Technical AI Engineering**
 
-**Date:** September 16, 2026
+**Date:** September 17, 2026
 
-**Topics:** knowledge work, persistent context, governed actions
+**Topics:** agent observability, Copilot CLI, Agent Skills, MCP, plugins, usage metrics
 
-<span class="story-data" data-story-id="dab-story-2026-09-17-3c9e6a12" data-story-url="/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-18-3ac3c725" data-story-url="/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/" hidden></span>
 
-<a href="{{ '/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/' | relative_url }}" data-item-id="dab-story-2026-09-17-3c9e6a12" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }}" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Textbook radial diagram showing chat, project context, tools and files converging on a persistent workspace with governed actions and human review.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/03-unified-ai-workspace.png?v=20260917textbook)
+**What changed since last coverage:** The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.
 
-**Summary:** Anthropic combined Cowork and chat in one Claude workspace so a conversation can retain project context, files and tool use while moving from questions to longer-running work. The interface reduces handoffs, but permissions and review still govern every consequential action.
+![Textbook diagram of Copilot CLI skills, agents, MCP servers, commands, and plugins flowing into usage and distinct-use telemetry with privacy grouping.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/02-cli-telemetry.png?v=e69696eeaa07df9f)
 
-**Why it matters:** A continuous workspace can make AI-assisted work less fragmented, especially when context persists across questions and tasks. Interface continuity is not authorization: teams should still test tool state, data boundaries and human checkpoints.
+**Summary:** GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Trust calibration helps separate a fluid continuous interface from evidence that its actions remain reliable.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**What to do now — Map one persistent workspace:** Choose a real project and identify which files, tools and actions Claude may access, then place confirmation before any irreversible step.
-
-**Source:** <a href="https://claude.com/blog/cowork-is-now-claude" data-item-id="dab-story-2026-09-17-3c9e6a12" data-edition-date="2026-09-17" data-action="source_clicks">Cowork is now Claude</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-story-2026-09-17-3c9e6a12">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-17-4daf7b23"></span>
-
-## 4. GitHub makes Copilot budget increases a governed request
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div><p><strong>Budget governance:</strong> An explicit request, decision and audit process for changing an AI-assistance spending limit.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How an approval path can govern AI-assistance budgets without hiding demand.</p></div></aside>
-<!-- reader-release:end -->
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 16, 2026
-
-**Topics:** developer productivity, budget governance, Copilot
-
-<span class="story-data" data-story-id="dab-story-2026-09-17-4daf7b23" data-story-url="/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/" hidden></span>
-
-<a href="{{ '/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/' | relative_url }}" data-item-id="dab-story-2026-09-17-4daf7b23" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Changelog  
-**Availability:** General Availability
-
-![Textbook workflow showing Copilot usage, a budget request with justification, manager approval, updated budget and an audit trail.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/04-copilot-budget-request.png?v=20260917textbook)
-
-**Summary:** GitHub made Copilot budget increase requests generally available. A user can request more budget with a justification, while the organization keeps approval, denial, updated limits and an auditable decision path in one workflow.
-
-**Why it matters:** This turns AI-assistance spending into an explicit operating control instead of an informal exception. Managers gain context and an audit trail, while organizations still need budget policy and review criteria that do not punish useful experimentation.
+**Why it matters:** Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from the smaller set people actually invoke, identify enablement gaps, and measure whether reusable agent components are spreading.
 
 
 
-**What to do now — Write a budget request rule:** Define the evidence, approver and turnaround expected when a developer requests more Copilot budget.
+**What to do now — Measure reuse before expanding the catalog:** Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-16-copilot-budget-increase-requests-are-generally-available/" data-item-id="dab-story-2026-09-17-4daf7b23" data-edition-date="2026-09-17" data-action="source_clicks">Copilot budget increase requests are generally available</a>
+**Source:** <a href="https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="source_clicks">Agentic CLI customizations now in the usage metrics API</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-story-2026-09-17-4daf7b23">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-17-5eb08c34"></span>
-
-## 5. Zocks adds a reusable financial-planning Agent Skill
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p><strong>Agent Skill:</strong> A reusable package of domain instructions and tool-use procedures for an agent.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How a reusable Agent Skill packages domain instructions around governed tools and review.</p></div></aside>
-<!-- reader-release:end -->
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 16, 2026
-
-**Topics:** Agent Skills, financial planning, human review
-
-<span class="story-data" data-story-id="dab-story-2026-09-17-5eb08c34" data-story-url="/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/" hidden></span>
-
-<a href="{{ '/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/' | relative_url }}" data-item-id="dab-story-2026-09-17-5eb08c34" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Repository  
-**Availability:** General Availability
-
-![Textbook architecture diagram showing a reusable financial-planning Agent Skill, governed connectors, client and market context, a cited draft and human approval.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/05-zocks-agent-skill.png?v=20260917textbook)
-
-**Summary:** A verified Anthropic marketplace commit added a Zocks plugin with a reusable Agent Skill for financial-planning workflows. The skill structures client context, calculations and a reviewable draft while keeping connectors and human approval explicit.
-
-**Why it matters:** This is exactly one reusable Agent Skills story: a portable procedure that packages domain instructions around governed tools. Marketplace inclusion does not prove advisory quality, and firms must validate calculations, suitability boundaries and client-data controls.
-
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the checklist to test whether a reusable skill contains enough instructions, context and evidence for safe use.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**What to do now — Validate one planning draft:** Run a de-identified case through the skill and verify every calculation, source and recommendation before sharing.
-
-**Source:** <a href="https://github.com/anthropics/knowledge-work-plugins/commit/b0a18aeebc13617365095537e51997616b610739" data-item-id="dab-story-2026-09-17-5eb08c34" data-edition-date="2026-09-17" data-action="source_clicks">Add Zocks plugin and Agent Skill</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-story-2026-09-17-5eb08c34">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-17-6fc19d45"></span>
-
-## 6. QuickBooks plugin brings accounting questions and actions into conversation
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div><p><strong>Conversational accounting:</strong> Plain-language access to accounting context and actions under existing roles and controls.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>How conversational accounting requires permissions, confirmation and an audit trail.</p></div></aside>
-<!-- reader-release:end -->
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 16, 2026
-
-**Topics:** accounting, conversational agents, permissions
-
-<span class="story-data" data-story-id="dab-story-2026-09-17-6fc19d45" data-story-url="/stories/2026-09-17/quickbooks-plugin-brings-accounting-actions-into-conversation/" hidden></span>
-
-<a href="{{ '/stories/2026-09-17/quickbooks-plugin-brings-accounting-actions-into-conversation/' | relative_url }}" data-item-id="dab-story-2026-09-17-6fc19d45" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Repository  
-**Availability:** General Availability
-
-![Textbook hub-and-spoke diagram showing plain-language accounting questions, permission-aware books and invoices, proposed actions, confirmation and an audit log.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-17/06-quickbooks-conversational-agent.png?v=20260917textbook)
-
-**Summary:** A verified Anthropic marketplace commit added a QuickBooks plugin for conversational access to accounting context and actions. The pattern can reduce navigation work, but permission scope, confirmation and the accounting audit trail remain essential.
-
-**Why it matters:** Conversational accounting is useful only when the underlying books, permissions and confirmations remain visible. The commit verifies plugin availability, not the accuracy of every answer or action in a real company file.
-
-
-
-**What to do now — Confirm before posting:** Try one read-only accounting question, then one reversible action, and verify role permissions, confirmation text and the audit entry.
-
-**Source:** <a href="https://github.com/anthropics/knowledge-work-plugins/commit/c55597c2697c8efe274b3f6110813c13e04885d5" data-item-id="dab-story-2026-09-17-6fc19d45" data-edition-date="2026-09-17" data-action="source_clicks">Add QuickBooks plugin</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-story-2026-09-17-6fc19d45">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-3ac3c725">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -276,47 +274,83 @@ No video met today’s editorial quality standards.
 
 No video met today’s editorial quality standards.
 
-## Worth Listening — Podcast
+## Worth Listening — Podcasts
 
-### 9. Why a New Class of AI “Judgment Models” Could Have Big Business Implications
+### 9. Why Everyone Is Getting Excited About Personal AI Agents
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>25:19 podcast</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span>29:56 podcast</span></div><p><strong>Listening context:</strong> Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation.</p></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-17-judgment-models" data-podcast-title="Why a New Class of AI “Judgment Models” Could Have Big Business Implications" data-podcast-url="/podcasts/2026-09-17/judgment-models/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-18-personal-ai-agents" data-podcast-title="Why Everyone Is Getting Excited About Personal AI Agents" data-podcast-url="/podcasts/2026-09-18/personal-ai-agents/" hidden></span>
 
-<a href="{{ '/podcasts/2026-09-17/judgment-models/' | relative_url }}" data-item-id="dab-podcast-2026-09-17-judgment-models" data-edition-date="2026-09-17" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-09-18/personal-ai-agents/' | relative_url }}" data-item-id="dab-podcast-2026-09-18-personal-ai-agents" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
 **Show:** The AI Daily Brief  
 **Host / guest:** Nathaniel Whittemore  
-**Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 16, 2026  
-**Duration:** 25:19 · No episode time limit  
-**Topics:** judgment models, business automation, agent verification
+**Focus:** Agents for Non-Technical People  
+**Date:** September 17, 2026  
+**Duration:** 29:56 · No episode time limit  
+**Topics:** personal AI agents, consumer agents, delegation
 
-**Summary:** Nathaniel Whittemore examines Jev, a model positioned for fast, inexpensive judgments rather than open-ended generation, and considers how specialized evaluators could change business automation and agent coordination.
+**Summary:** Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.
 
-**Why it matters:** The episode offers a practical frame for deciding when a bounded judgment model may be more appropriate than a general generator.
+**Why it matters:** It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation.
 
-**Connection to the brief:** It complements today’s disclosure, extraction and agent-control stories by asking how systems can make and check smaller decisions.
+**Connection to the brief:** Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.
 
 
 
-**Coverage:** Selected inside the preferred preceding-48-hour window after registered-source review.
+**Coverage:** Primary 48-hour podcast window; one of two source-diverse selections.
 
-**Evidence:** Practitioner analysis. Apple Podcasts identifies the September 16, 2026 episode and exact 25:19 runtime; the direct episode URL returned HTTP 200 during preflight.
+**Evidence:** Practitioner analysis. Apple Podcasts lists September 17, 2026, Nathaniel Whittemore, and a 29:56 runtime.
 
-**Listen / watch:** <a href="https://podcasts.apple.com/us/podcast/why-a-new-class-of-ai-judgment-models-could-have/id1680633614?i=1000790088532" data-item-id="dab-podcast-2026-09-17-judgment-models" data-edition-date="2026-09-17" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+**Listen / watch:** <a href="https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942" data-item-id="dab-podcast-2026-09-18-personal-ai-agents" data-edition-date="2026-09-18" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-17" data-feedback-story-id="dab-podcast-2026-09-17-judgment-models">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-podcast-2026-09-18-personal-ai-agents">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
-</div><!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>The verification gate provides a useful frame for deciding when a specialized judgment should be accepted or escalated.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+</div>
+
+### 10. How to get discovered in AI search
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span>55:14 podcast</span></div><p><strong>Listening context:</strong> It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers.</p></div></aside>
 <!-- reader-release:end -->
+
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-18-ai-search-discovery" data-podcast-title="How to get discovered in AI search" data-podcast-url="/podcasts/2026-09-18/ai-search-discovery/" hidden></span>
+
+<a href="{{ '/podcasts/2026-09-18/ai-search-discovery/' | relative_url }}" data-item-id="dab-podcast-2026-09-18-ai-search-discovery" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
+**Show:** Practical AI  
+**Host / guest:** Daniel Whitenack and Chris Benson  
+**Focus:** Applied Generative AI for Knowledge Workers  
+**Date:** September 17, 2026  
+**Duration:** 55:14 · No episode time limit  
+**Topics:** AI search, retrieval, citations, agent discovery
+
+**Summary:** Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.
+
+**Why it matters:** The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers.
+
+**Connection to the brief:** It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.
+
+
+
+**Coverage:** Primary 48-hour podcast window; source-diverse from The AI Daily Brief.
+
+**Evidence:** Practitioner analysis. Practical AI’s publisher page identifies episode E372, September 17, 2026, hosted by Daniel Whitenack and Chris Benson, runtime 55:14.
+
+**Listen / watch:** <a href="https://practicalai.show/372" data-item-id="dab-podcast-2026-09-18-ai-search-discovery" data-edition-date="2026-09-18" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Practical AI</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-podcast-2026-09-18-ai-search-discovery">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
 
 <!-- reader-release:start -->
 
@@ -328,7 +362,7 @@ No video met today’s editorial quality standards.
 
 ## Editorial takeaway
 
-The durable pattern is explicit control around AI judgment: define what a field means, what an agent may reach, who approves added capacity, and what evidence must be disclosed when behavior departs from intent.
+The strongest September 18 signal is not a single model release but a shift toward operationalizing agents: measure what they automate, govern how they act, redesign work around outcomes, and package repeatable procedures so people can reuse them safely.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>

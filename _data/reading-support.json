@@ -233,6 +233,54 @@
       "verified_at": "2026-09-17T12:22:20Z",
       "method": "Reviewed publisher main text or first-party repository evidence; navigation, scripts, code metadata and unrelated promotional material excluded.",
       "words_per_minute": 200
+    },
+    "dab-story-2026-09-18-2cda8d5e": {
+      "status": "unavailable",
+      "source_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "word_count": null,
+      "verified_at": null,
+      "method": null,
+      "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
+    },
+    "dab-story-2026-09-18-3ac3c725": {
+      "status": "unavailable",
+      "source_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/",
+      "word_count": null,
+      "verified_at": null,
+      "method": null,
+      "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
+    },
+    "dab-story-2026-09-18-87612b7e": {
+      "status": "unavailable",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "word_count": null,
+      "verified_at": null,
+      "method": null,
+      "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
+    },
+    "dab-story-2026-09-18-c5d22f27": {
+      "status": "unavailable",
+      "source_url": "https://admin.salesforce.com/blog/2026/dreamforce-2026-product-highlights-for-admins",
+      "word_count": null,
+      "verified_at": null,
+      "method": null,
+      "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
+    },
+    "dab-story-2026-09-18-bc42dd44": {
+      "status": "unavailable",
+      "source_url": "https://www.atlassian.com/blog/company-news/rovo-chat-new-features-september-2026",
+      "word_count": null,
+      "verified_at": null,
+      "method": null,
+      "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
+    },
+    "dab-story-2026-09-18-062b5025": {
+      "status": "unavailable",
+      "source_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+      "word_count": null,
+      "verified_at": null,
+      "method": null,
+      "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
     }
   },
   "schema_version": "1.0.0",
@@ -636,6 +684,93 @@
         "learning_outcome": "How conversational accounting requires permissions, confirmation and an audit trail.",
         "context_term": "Conversational accounting",
         "context": "Plain-language access to accounting context and actions under existing roles and controls."
+      }
+    ],
+    "2026-09-18": [
+      {
+        "item_id": "dab-story-2026-09-18-2cda8d5e",
+        "coverage_label": "Recency fallback",
+        "label_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window.",
+        "context_term": "Measurement framework",
+        "context": "Automation, oversight and compute answer different questions; vendor-defined measures need methodology before cross-lab comparison. These are Anthropic-defined measurements from Anthropic systems. Cross-lab methodology is not standardized, some evaluation relies on Anthropic models, and the published figures should not be generalized to the industry.",
+        "learning_outcome": "When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention."
+      },
+      {
+        "item_id": "dab-story-2026-09-18-3ac3c725",
+        "coverage_label": "Recency fallback",
+        "label_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window.",
+        "context_term": "Usage telemetry",
+        "context": "Invocation counts describe adoption and tool mix. They need separate quality and outcome checks to assess value. Interaction counts do not measure quality or business value. MCP counts include connection attempts rather than tool calls, plugin totals overlap skill totals, and customer-defined names are intentionally grouped.",
+        "learning_outcome": "Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.",
+        "related": {
+          "title": "GitHub separates VS Code agent activity from generic Copilot usage",
+          "brief_date": "2026-09-12",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/",
+          "connection": "The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.",
+          "label": "Earlier Brief"
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-18-87612b7e",
+        "coverage_label": "Recency fallback",
+        "label_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window.",
+        "context_term": "Workflow redesign",
+        "context": "Start with a business outcome, map the process, then change the work and measure the result. The performance figures are Microsoft-reported internal case studies with different scopes and time periods. They do not establish causal effects across organizations, and the playbook reflects Microsoft’s products and operating environment.",
+        "learning_outcome": "Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task.",
+        "related": {
+          "title": "Microsoft argues AI value should be measured in completed work, not prompt volume",
+          "brief_date": "2026-09-10",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/",
+          "connection": "The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples.",
+          "label": "Earlier Brief"
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-18-c5d22f27",
+        "coverage_label": "Recency fallback",
+        "label_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window.",
+        "context_term": "Governed no-code building",
+        "context": "Natural-language building should still respect the data model, permissions and review controls of the host system. Builder Central was announced for beta rather than broad general availability, and Salesforce’s article does not provide independent evidence of reliability, adoption, or long-term governance outcomes.",
+        "learning_outcome": "Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access."
+      },
+      {
+        "item_id": "dab-story-2026-09-18-bc42dd44",
+        "coverage_label": "Recency fallback",
+        "label_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window.",
+        "context_term": "Reusable Agent Skill",
+        "context": "A reusable skill packages a repeated procedure, expected output and review responsibility for repeated use. The feature is rolling out rather than universally available, and Atlassian’s announcement does not provide independent evidence that automatically authored skills are complete, correct, or appropriately governed.",
+        "learning_outcome": "Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy.",
+        "related": {
+          "title": "Atlassian’s TWG CLI installs one reusable skill package across major agent tools",
+          "brief_date": "2026-09-11",
+          "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/",
+          "connection": "The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations.",
+          "label": "Earlier Brief"
+        }
+      },
+      {
+        "item_id": "dab-story-2026-09-18-062b5025",
+        "coverage_label": "Recency fallback",
+        "label_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window.",
+        "context_term": "Agent identity and memory",
+        "context": "A shared agent needs a distinct identity, explicit sharing boundaries and clear treatment of shared versus person-specific context. CC is an early U.S.-only Google Labs experiment for adults with personal Google accounts, with existing-user upgrades and a waitlist. The announcement does not establish reliability for consequential household actions.",
+        "learning_outcome": "For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-18-personal-ai-agents",
+        "coverage_label": "New development",
+        "label_reason": "September 17 episode inside the preferred 48-hour podcast window.",
+        "context_term": "Listening context",
+        "context": "Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.",
+        "learning_outcome": "It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation."
+      },
+      {
+        "item_id": "dab-podcast-2026-09-18-ai-search-discovery",
+        "coverage_label": "New development",
+        "label_reason": "September 17 episode inside the preferred 48-hour podcast window.",
+        "context_term": "Listening context",
+        "context": "It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.",
+        "learning_outcome": "The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers."
       }
     ]
   }
