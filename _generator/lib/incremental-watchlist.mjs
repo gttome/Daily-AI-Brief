@@ -51,6 +51,20 @@ export function watchlistFallbackPlan(sources,checks,{minimumFresh=WATCHLIST_MIN
  ).sort((a,b)=>rank(a.source)-rank(b.source)||a.index-b.index).slice(0,maxFallbackChecks).map(({source})=>({source_id:source.source_id,endpoint:source.endpoint,force:true,reason:'bounded_minimum_daily_coverage'}));
  return {needed:true,fresh_successes:fresh,minimum_fresh:minimumFresh,max_fallback_checks:maxFallbackChecks,sources:eligible};
 }
+// Execute fallback sequentially; a successful observation can end the plan early.
+export async function runWatchlistFallback(sources,checks,checkSource,options={}){
+ const plan=watchlistFallbackPlan(sources,checks,options),outcomes=[];
+ for(const selected of plan.sources){
+  if(freshWatchlistSuccesses(checks)>=plan.minimum_fresh)break;
+  const index=checks.findIndex(c=>c.source_id===selected.source_id);
+  const previous=checks[index];
+  const result=await checkSource(sources.find(s=>s.source_id===selected.source_id),true);
+  if(result?.source_id!==selected.source_id||!['retrieved','no_candidate_links','unavailable'].includes(result.status))throw Error('Forced automated check must return a matching observation');
+  checks.splice(index,1,result);
+  outcomes.push({source_id:selected.source_id,previous_disposition:previous,result});
+ }
+ return {plan,checks:outcomes};
+}
 export function incrementalCoverage(checks,{minimumFresh=WATCHLIST_MINIMUM_FRESH_OBSERVATIONS}={}){
  const fresh=freshWatchlistSuccesses(checks);
  const hasIssues=checks.some(c=>['unavailable','assisted_review_required'].includes(c.status)||['unavailable','assisted_review_required'].includes(c.previous_status));

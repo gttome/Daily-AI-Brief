@@ -42,6 +42,23 @@ export function cleanText(value){
   return n>0&&n<=0x10ffff?String.fromCodePoint(n):'';
  }).replace(/\s+/g,' ').trim();
 }
+// Preserve article/date associations and JSON-LD while dropping executable page furniture.
+export function compactDiscoveryHtml(html){
+ const structured=[];
+ return sanitizeRetrievedText(html)
+  .replace(/<script\b([^>]*)>[\s\S]*?<\/script\s*>/gi,(block,attrs)=>/\btype\s*=\s*["']application\/ld\+json["']/i.test(attrs)?`DAB_JSONLD_${structured.push(block)-1}_END`:' ')
+  .replace(/<style\b[^>]*>[\s\S]*?<\/style\s*>/gi,' ')
+  .replace(/<svg\b[^>]*>[\s\S]*?<\/svg\s*>/gi,block=>cleanText(block))
+  .replace(/<!--[\s\S]*?-->/g,' ')
+  .replace(/<([a-z][\w:-]*)\b([^>]*)>/gi,(tag,name,attrs)=>{
+   if(name.toLowerCase()==='script')return tag;
+   const kept=[...attrs.matchAll(/(?:^|\s)(href|datetime|property|name|content|rel|type)\s*=\s*(?:"[^"]*"|'[^']*'|[^\s>]+)/gi)].map(m=>m[0].trim());
+   return '<'+name+(kept.length?' '+kept.join(' '):'')+'>';
+  })
+  .replace(/>\s+</g,'><').trim()
+  .replace(/DAB_JSONLD_(\d+)_END/g,(_,index)=>structured[Number(index)]||'');
+}
+
 export function extractLinks(html,base){
  const links=new Map();
  const source=html.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,'').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,'');

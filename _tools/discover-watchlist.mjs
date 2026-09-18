@@ -2,7 +2,7 @@
 import {extractCandidateMetadata} from './discovery-links.mjs';
 import {acquisition} from './discovery-context.mjs';
 import {retainCandidates} from '../_generator/lib/discovery-queue.mjs';
-import {watchlistDue,recordWatchlistCheck,incrementalCoverage} from '../_generator/lib/incremental-watchlist.mjs';
+import {watchlistDue,recordWatchlistCheck,incrementalCoverage,runWatchlistFallback} from '../_generator/lib/incremental-watchlist.mjs';
 import {sha256} from '../_generator/lib/util.mjs';
 import fs from 'node:fs';
 const started=Date.now(),registry=JSON.parse(fs.readFileSync('_data/watchlist-sources.json','utf8'));
@@ -15,8 +15,9 @@ const candidates=new Map(prior.map(x=>[x.url,x])),checks=[],nextState={};
 const earlySources=early.channels.flatMap(channel=>channel.endpoints.map(endpoint=>({source_id:endpoint.source_id,name:endpoint.name,endpoint:endpoint.url,automated:endpoint.automated,channel_id:channel.channel_id})));
 for(const channel of early.channels.filter(channel=>channel.endpoints.length===0))checks.push({source_id:channel.channel_id,status:'assisted_review_required',reason:channel.evidence_treatment,checked_at:now});
 const monitored=[...registry.sources,...earlySources].filter((source,index,all)=>source.endpoint&&all.findIndex(candidate=>candidate.endpoint===source.endpoint)===index);
-for(let i=0;i<monitored.length;i+=4)await Promise.all(monitored.slice(i,i+4).map(async s=>{
- const previous=stored[s.source_id],force=process.argv.includes('--full-sweep');
+async function checkSource(s,force=false){
+ const checkStarted=new Date().toISOString();
+ const previous=stored[s.source_id];
  if(!watchlistDue(s,previous,now,{force})){
    nextState[s.source_id]=previous;
    checks.push({source_id:s.source_id,status:'not_due',previous_status:previous.status,last_successful_check:previous.last_successful_check,next_check_at:previous.next_check_at,checked_at:null});
@@ -27,28 +28,33 @@ for(let i=0;i<monitored.length;i+=4)await Promise.all(monitored.slice(i,i+4).map
    checks.push({source_id:s.source_id,status:'assisted_review_required',reason:'Requires identity, access, and original-evidence review.',checked_at:now});return;
  }
  try{
-   const result=await acquisition.retrieve(s.endpoint);
+   const result=await acquisition.retrieve(s.endpoint,{force});
    const leads=extractCandidateMetadata(result.text,result.resolved_url,s).map(x=>({...x,url:x.canonical_url,title:x.headline})).filter(link=>link.title.length>=24&&link.title.length<=220&&!/login|signup|privacy|terms|subscribe|javascript/i.test(new URL(link.url).pathname));
    const fingerprint=sha256(JSON.stringify(leads.map(x=>({url:x.url,title:x.title,published_at:x.published_at})).sort((a,b)=>a.url.localeCompare(b.url))));
    const unchanged=previous?.endpoint===s.endpoint&&previous.last_content_fingerprint===fingerprint;
    for(const link of leads){
      const existing=candidates.get(link.url);
      candidates.set(link.url,{...existing,...link,id:existing?.id||'lead-'+sha256(link.url).slice(0,16),
-       source_ids:[...new Set([...(existing?.source_ids||[]),s.source_id])],first_seen:existing?.first_seen||now,last_seen:now,
+       source_ids:[...new Set([...(existing?.source_ids||[]),s.source_id])],first_seen:existing?.first_seen||result.fetched_at,last_seen:result.fetched_at,
        publication_date:link.published_at,disposition:existing?.disposition||'needs_research'});
    }
    const status=leads.length?'retrieved':'no_candidate_links';
-   nextState[s.source_id]=recordWatchlistCheck(s,previous,{now,text:result.text,fingerprint,candidates:leads,status});
-   checks.push({source_id:s.source_id,status,unchanged,candidate_links:leads.length,attempts:result.attempts,checked_at:new Date().toISOString()});
+   nextState[s.source_id]=recordWatchlistCheck(s,previous,{now:result.fetched_at,text:result.text,fingerprint,candidates:leads,status});
+   checks.push({source_id:s.source_id,status,unchanged,candidate_links:leads.length,attempts:result.attempts,checked_at:result.fetched_at,check_started_at:checkStarted,cache_status:result.cache_status});
  }catch(e){
-   nextState[s.source_id]=recordWatchlistCheck(s,previous,{now,status:'unavailable',reason:e.message});
+   nextState[s.source_id]=recordWatchlistCheck(s,previous,{now:new Date().toISOString(),status:'unavailable',reason:e.message});
    checks.push({source_id:s.source_id,status:'unavailable',reason:e.message,attempts:e.attempts||[],checked_at:new Date().toISOString()});
  }
-}));
+}
+for(let i=0;i<monitored.length;i+=4)await Promise.all(monitored.slice(i,i+4).map(s=>checkSource(s,process.argv.includes('--full-sweep'))));
+const boundedFallback=await runWatchlistFallback(monitored,checks,async(s,force)=>{
+ await checkSource(s,force);
+ return checks.pop();
+});
 const incremental=incrementalCoverage(checks);
 const coverage={checked:incremental.sources_checked,retrieval_success:checks.filter(x=>['retrieved','no_candidate_links'].includes(x.status)).length,with_candidate_links:incremental.sources_returning_candidate_links,no_candidate_links:checks.filter(x=>x.status==='no_candidate_links').length,retrieval_failures:incremental.unavailable,assisted_review_required:incremental.assisted_review_required,...incremental};
 const retained=retainCandidates([...candidates.values()],{limit:2000});
-const data={updated_at:now,coverage,...retained,sources:checks.sort((a,b)=>a.source_id.localeCompare(b.source_id)),early_signal_channels:early.channels.length,efficiency:{...incremental,watchlist_seconds:(Date.now()-started)/1000},note:'Incremental discovery leads only. Not-due checks retain prior evidence and original timestamps. No links, assisted review and unavailable sources remain distinct. Work must verify original evidence, group related developments and update only affected topics. Verified public topic state is retained independently.'};
+const data={updated_at:now,coverage,bounded_fallback:boundedFallback,...retained,sources:checks.sort((a,b)=>a.source_id.localeCompare(b.source_id)),early_signal_channels:early.channels.length,efficiency:{...incremental,watchlist_seconds:(Date.now()-started)/1000},note:'Incremental discovery leads only. Not-due checks retain prior evidence and original timestamps. No links, assisted review and unavailable sources remain distinct. Work must verify original evidence, group related developments and update only affected topics. Verified public topic state is retained independently.'};
 fs.writeFileSync('_data/watchlist-discoveries.json',JSON.stringify(data,null,2)+'\n');
 fs.writeFileSync(stateFile,JSON.stringify({schema_version:'1.0.0',updated_at:now,sources:nextState},null,2)+'\n');
 fs.mkdirSync('_records/watchlist-discovery',{recursive:true});

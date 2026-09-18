@@ -139,3 +139,11 @@ Follow `docs/operations/draft-recovery.md` for `save-draft` and `recover-draft`.
 ### Durable cloud transport and observation
 
 Follow `docs/operations/cloud-checkpoint-transport.md` during ordinary runs for owner-only Library checkpoint bundles, upload/readback receipts, later recovery, exact Sites Bearer-header syntax and the first three completed optimized-edition measurements (extend to seven only when inconclusive). Explicitly save each useful draft before cloud packaging. A local path or same-session cloud readback is not proof of scheduled persistence. Keep the validator read-only and all existing publication gates and schedules unchanged.
+
+## September 18 discovery recovery clarification
+
+Catalog acquisition stores a compact, non-executable HTML representation that preserves links, article/date associations, feed fields and structured article metadata. Network response byte/character limits still apply before compaction; raw response sizes remain in retrieval attempt evidence. The research character budget measures the retained catalog representation and must not be presented as network-byte, model-token or credit savings. Cache representations are versioned so old raw catalog bodies do not silently consume the new representation budget.
+
+A dated URL may prioritize queue retention, but is never a verified publication timestamp or a freshness approval. Zero dates extracted from catalogs means unresolved metadata. Run the existing bounded `research.mjs metadata` review for promising retained leads before drawing freshness conclusions. Budget exhaustion is not the successful nine-candidate research early-stop condition; record them separately.
+
+The Watchlist runner executes its bounded fallback sequentially, forces an actual recheck of eligible not-due public sources, and stops as soon as the floor is met or five extra checks have been attempted. Keep the preceding not-due disposition and the actual returned observation. A failed floor remains degraded coverage and does not establish no news. Retain original failed attempt records and append corrections when their conclusions or measurements were overstated.
