@@ -28,6 +28,12 @@ on:
         required: true
         type: string
 
+  push:
+    branches: ['editorial-handoff/**']
+    paths:
+      - '_records/editorial-handoff/handoff.json'
+      - 'briefs/images/**'
+
   workflow_run:
     workflows: ["Deterministic publication CI"]
     types: [completed]
@@ -38,17 +44,17 @@ permissions:
   issues: write
 
 concurrency:
-  group: post-editorial-${{ inputs.staging_ref }}
+  group: post-editorial-${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
   cancel-in-progress: false
 
 jobs:
   expand-validate-stage:
-    if: github.event_name == 'workflow_dispatch'
+    if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
     steps:
       - name: Refuse direct-main operation
         env:
-          STAGING_REF: ${{ inputs.staging_ref }}
+          STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         run: |
           set -euo pipefail
           if [ "$STAGING_REF" = "main" ] || [ "$STAGING_REF" = "refs/heads/main" ]; then
@@ -63,7 +69,7 @@ jobs:
       - name: Check out staging branch
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ inputs.staging_ref }}
+          ref: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -77,12 +83,60 @@ jobs:
           sudo apt-get install -y --no-install-recommends librsvg2-bin
           rsvg-convert --version
 
+      - name: Resolve editorial handoff inputs
+        id: handoff
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
+          INPUT_KERNEL_PATH: ${{ inputs.kernel_path }}
+          INPUT_FACTS_PATH: ${{ inputs.facts_path }}
+          INPUT_IMAGES_PATH: ${{ inputs.images_path }}
+          INPUT_MEDIA_PATH: ${{ inputs.media_path }}
+          INPUT_COVERAGE_PERIOD: ${{ inputs.coverage_period }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "push" ]; then
+            manifest="_records/editorial-handoff/handoff.json"
+            if [ ! -f "$manifest" ]; then
+              echo "Required editorial handoff manifest is missing: $manifest"
+              exit 1
+            fi
+            node - "$manifest" "$STAGING_REF" "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs');
+          const [manifestPath,stagingRef,outputPath]=process.argv.slice(2);
+          const m=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
+          const required=['schema_version','staging_ref','kernel_path','facts_path','images_path','media_path','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
+          for(const key of required) if(!(key in m)) throw new Error('handoff_manifest_missing_'+key);
+          if(m.staging_ref!==stagingRef) throw new Error('handoff_manifest_staging_ref_mismatch');
+          if(m.editorial_model_passes!==1) throw new Error('handoff_manifest_editorial_pass_count_invalid');
+          if(m.post_editorial_model_passes!==0) throw new Error('handoff_manifest_post_editorial_pass_count_invalid');
+          if(m.deterministic_validation_model_calls!==0) throw new Error('handoff_manifest_validation_model_calls_invalid');
+          for(const key of ['kernel_path','facts_path','images_path','media_path','coverage_period']) {
+            if(typeof m[key]!=='string'||m[key].includes('\n')||m[key].includes('\r')) throw new Error('handoff_manifest_invalid_'+key);
+          }
+          fs.appendFileSync(outputPath,
+            'kernel_path='+m.kernel_path+'\n'+
+            'facts_path='+m.facts_path+'\n'+
+            'images_path='+m.images_path+'\n'+
+            'media_path='+m.media_path+'\n'+
+            'coverage_period='+m.coverage_period+'\n');
+          NODE
+          else
+            {
+              echo "kernel_path=$INPUT_KERNEL_PATH"
+              echo "facts_path=$INPUT_FACTS_PATH"
+              echo "images_path=$INPUT_IMAGES_PATH"
+              echo "media_path=$INPUT_MEDIA_PATH"
+              echo "coverage_period=$INPUT_COVERAGE_PERIOD"
+            } >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Validate repository-relative inputs
         env:
-          KERNEL_PATH: ${{ inputs.kernel_path }}
-          FACTS_PATH: ${{ inputs.facts_path }}
-          IMAGES_PATH: ${{ inputs.images_path }}
-          MEDIA_PATH: ${{ inputs.media_path }}
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
+          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
+          MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
         run: |
           set -euo pipefail
           for p in "$KERNEL_PATH" "$FACTS_PATH"; do
@@ -101,7 +155,7 @@ jobs:
       - name: Resolve trusted main baseline and validate kernel
         id: baseline
         env:
-          KERNEL_PATH: ${{ inputs.kernel_path }}
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
         run: |
           set -euo pipefail
           git fetch --no-tags origin main
@@ -119,7 +173,7 @@ jobs:
       - name: Render or select six guarded visual assets
         env:
           KERNEL_PATH: ${{ inputs.kernel_path }}
-          IMAGES_PATH: ${{ inputs.images_path }}
+          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
         run: |
           set -euo pipefail
           args=(--kernel "$KERNEL_PATH" --policy _data/visual-renderer-policy.json --out /tmp/images.json --receipt /tmp/visual-receipt.json)
@@ -130,8 +184,8 @@ jobs:
         env:
           KERNEL_PATH: ${{ inputs.kernel_path }}
           FACTS_PATH: ${{ inputs.facts_path }}
-          MEDIA_PATH: ${{ inputs.media_path }}
-          COVERAGE_PERIOD: ${{ inputs.coverage_period }}
+          MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
+          COVERAGE_PERIOD: ${{ steps.handoff.outputs.coverage_period }}
         run: |
           set -euo pipefail
           published_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
@@ -162,7 +216,7 @@ jobs:
 
       - name: Commit deterministic outputs to staging only
         env:
-          STAGING_REF: ${{ inputs.staging_ref }}
+          STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         run: |
           set -euo pipefail
           if git diff --quiet -- .; then
@@ -177,7 +231,7 @@ jobs:
 
       - name: Open or reuse reviewable publication PR; never bypass required gates
         env:
-          STAGING_REF: ${{ inputs.staging_ref }}
+          STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
         with:
           script: |

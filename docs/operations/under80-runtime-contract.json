@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
+  "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
+  "repository": "gttome/Daily-AI-Brief",
+  "production_branch": "main",
+  "timezone": "America/Chicago",
+  "output": {
+    "stories": 6,
+    "ordered_focus_allocation": [
+      "technical_ai_engineering",
+      "technical_ai_engineering",
+      "applied_genai_knowledge_workers",
+      "applied_genai_knowledge_workers",
+      "agents_non_technical_people",
+      "agents_non_technical_people"
+    ],
+    "reusable_agent_skills_stories": 1,
+    "videos_target": 2,
+    "podcast_target": 2
+  },
+  "freshness": {
+    "prefer_hours": 24,
+    "ordinary_fallback_hours": 72,
+    "agent_skills_exception_days": 7,
+    "novelty_window_days": 30,
+    "authoritative_primary_sources_preferred": true
+  },
+  "research": {
+    "metadata_candidates_max": 20,
+    "deep_reviews_max": 9,
+    "expansion_allowed": false,
+    "model_visible_evidence_chars_max": 12000,
+    "research_capsule_chars_max": 6500,
+    "method": "metadata-first; deterministic filtering before deep retrieval; stop when six compliant finalists plus bounded reserves are supported",
+    "failure": "If bounded evidence cannot support six compliant stories, preserve the last valid edition and stop."
+  },
+  "semantic_work": {
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "watchlist_in_same_pass": true,
+    "media_in_same_pass": true,
+    "book_relevance_in_same_pass": true,
+    "source_word_counts_capture_on_first_review": true,
+    "separate_ai_validator": false,
+    "automatic_ai_recovery": false
+  },
+  "images": {
+    "required": 6,
+    "method": "current OpenAI image generation",
+    "quality_baseline": "2026-09-17",
+    "style": "Detailed professional story-specific textbook illustration; dominant white/near-white background; approximately 1200x630; precise instructional composition; short readable labels; safe margins; materially differentiated layouts.",
+    "quality_reduction_for_cost_prohibited": true,
+    "normal_attempts_per_story": 1,
+    "targeted_regeneration_only_on_actual_quality_failure": true,
+    "reuse_only_same_edition_accepted_assets_on_recovery": true,
+    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": true
+  },
+  "media": {
+    "video_duration_ladder_seconds": [
+      600,
+      900,
+      1200
+    ],
+    "video_deep_review_max": 5,
+    "podcasts_target": 2,
+    "podcasts_source_diverse_when_two": true,
+    "max_ai_daily_brief_podcasts": 1,
+    "bounded_omission_allowed": true
+  },
+  "work_owns": [
+    "load this compact runtime contract and the machine-readable efficiency policy",
+    "fresh metadata-first discovery and bounded source verification",
+    "one compact evidence package",
+    "one editorial semantic pass",
+    "six full-quality image generations and image acceptance",
+    "write editorial kernel/facts/media/image manifest",
+    "commit one editorial-handoff manifest on an isolated editorial-handoff/* branch"
+  ],
+  "github_actions_owns": [
+    "validate handoff and trusted main baseline",
+    "select the six accepted generative image assets without lowering quality",
+    "expand canonical edition deterministically",
+    "generate all derived views",
+    "run repository tests and contract validation",
+    "open or reuse protected publication PR",
+    "required CI and protected promotion",
+    "Pages completion",
+    "deterministic delta validation with zero model calls",
+    "public-safe Command Center delta"
+  ],
+  "handoff": {
+    "branch_prefix": "editorial-handoff/",
+    "manifest_path": "_records/editorial-handoff/handoff.json",
+    "manifest_required_fields": [
+      "schema_version",
+      "staging_ref",
+      "kernel_path",
+      "facts_path",
+      "images_path",
+      "media_path",
+      "coverage_period",
+      "editorial_model_passes",
+      "post_editorial_model_passes",
+      "deterministic_validation_model_calls"
+    ],
+    "required_values": {
+      "editorial_model_passes": 1,
+      "post_editorial_model_passes": 0,
+      "deterministic_validation_model_calls": 0
+    },
+    "hard_stop": "After the handoff commit is pushed, the daily AI task ends. It must not run generator/tests/build/PR/CI/merge/Pages/live validation or poll any release state."
+  },
+  "credits": {
+    "target_lt": 80,
+    "qualification_runs": 3,
+    "scoped_admission_threshold_if_available": 65,
+    "infer_from_tokens_or_time": false,
+    "external_before_after_measurement_when_no_scoped_meter": true
+  },
+  "exclusions": {
+    "email_text_delivery": "Disabled by choice / Not applicable",
+    "sites_command_center": "Never touch",
+    "added_paid_services": false,
+    "added_credentials": false
+  }
+}
