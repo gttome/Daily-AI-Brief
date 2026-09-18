@@ -63,7 +63,11 @@
     "work_entry_condition": "Start semantic Work only from a committed preflight receipt with ready=true, model_calls=0, <=20 candidates, resolved dates, >=3 metadata candidates per focus, and >=1 Agent Skills signal.",
     "metadata_date_enrichment_tool": "_tools/enrich-metadata-dates.mjs",
     "metadata_date_enrichment_limit": 48,
-    "metadata_date_enrichment_owner": "github_actions"
+    "metadata_date_enrichment_owner": "github_actions",
+    "preflight_source_plan": "_data/preflight-source-plan.json",
+    "preflight_source_strategy": "Use the small balanced first-party/primary-source preflight plan before broader registry rotation; source focus hints are deterministic routing hints only, never editorial selection.",
+    "metadata_enrichment_balanced_by_focus": true,
+    "metadata_enrichment_quota": "approximately one third per focus, with Agent Skills reserved first"
   },
   "semantic_work": {
     "editorial_model_passes": 1,
