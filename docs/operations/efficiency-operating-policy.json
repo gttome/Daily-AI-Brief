@@ -83,5 +83,15 @@
     "Command Center synchronization"
   ],
   "handoff_branch_prefix": "editorial-handoff/",
-  "handoff_manifest_path": "_records/editorial-handoff/handoff.json"
+  "handoff_manifest_path": "_records/editorial-handoff/handoff.json",
+  "qualification_nonproduction": {
+    "execution_mode": "qualification_nonproduction",
+    "branch_prefix": "editorial-handoff/qualification/",
+    "production_pr": false,
+    "publication_candidate_label": false,
+    "merge_to_main": false,
+    "pages_deployment": false,
+    "production_mutation": false,
+    "deterministic_branch_validation": true
+  }
 }
