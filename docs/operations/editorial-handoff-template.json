@@ -1,0 +1,172 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Shape-only template for the compact editorial-to-deterministic handoff. Replace every placeholder from fresh reviewed evidence; this file is not editorial evidence.",
+  "branch": "editorial-handoff/YYYY-MM-DD-<attempt>",
+  "files": {
+    "kernel_path": "_records/editorial-handoff/kernel.json",
+    "facts_path": "_records/editorial-handoff/facts.json",
+    "images_path": "_records/editorial-handoff/images.json",
+    "media_path": "_records/editorial-handoff/media.json",
+    "manifest_path": "_records/editorial-handoff/handoff.json"
+  },
+  "kernel_shape": {
+    "schema_version": "1.0.0",
+    "brief_date": "YYYY-MM-DD",
+    "edition_id": "dab-edition-YYYY-MM-DD",
+    "baseline_sha": "40-char-main-sha",
+    "normal_model_passes": 1,
+    "normal_post_editorial_model_passes": 0,
+    "stories": [
+      {
+        "candidate_id": "c01",
+        "story_id": "stable-editorial-story-id",
+        "canonical_ordinal": 1,
+        "focus": "technical_ai_engineering",
+        "headline": "Fresh reviewed headline",
+        "summary": "Fresh reviewed summary of at least twenty characters.",
+        "why_it_matters": "Fresh reviewed why-it-matters text of at least twenty characters.",
+        "editorial_limitation": "Evidence limitation or caution.",
+        "topic_labels": [
+          "topic"
+        ],
+        "source_url": "https://authoritative.example/source",
+        "agent_skill": false,
+        "what_to_do_now": {
+          "action": "evaluate",
+          "label": "Concise next step",
+          "rationale": "Concrete rationale of at least twenty characters."
+        },
+        "visual": {
+          "layout": "process",
+          "title": "Story-specific visual title",
+          "alt_text": "Substantive alt text describing the complete explanatory diagram.",
+          "nodes": [
+            {
+              "id": "n1",
+              "label": "Step 1",
+              "detail": "Specific verified mechanism detail."
+            },
+            {
+              "id": "n2",
+              "label": "Step 2",
+              "detail": "Specific verified mechanism detail."
+            },
+            {
+              "id": "n3",
+              "label": "Step 3",
+              "detail": "Specific verified mechanism detail."
+            },
+            {
+              "id": "n4",
+              "label": "Step 4",
+              "detail": "Specific verified mechanism detail."
+            }
+          ],
+          "edges": [
+            {
+              "from": "n1",
+              "to": "n2",
+              "label": "flow"
+            },
+            {
+              "from": "n2",
+              "to": "n3",
+              "label": "flow"
+            },
+            {
+              "from": "n3",
+              "to": "n4",
+              "label": "flow"
+            }
+          ],
+          "callouts": [
+            {
+              "anchor": "n3",
+              "text": "Short evidence-based annotation."
+            }
+          ]
+        }
+      }
+    ],
+    "editorial_takeaway": "Edition-level takeaway of at least twenty characters.",
+    "media_decisions": {},
+    "changed_watchlist_topics": []
+  },
+  "facts_shape": {
+    "c01": {
+      "event_date": "YYYY-MM-DD",
+      "source": {
+        "title": "Source title",
+        "organization": "Source organization",
+        "url": "https://authoritative.example/source",
+        "publication_date": "YYYY-MM-DD",
+        "evidence_type": "official_announcement",
+        "availability_status": "published"
+      },
+      "source_word_count": 1234,
+      "source_fetched_at": "ISO-8601 timestamp",
+      "source_word_count_method": "retrieved_source_text_word_count",
+      "freshness": {
+        "tier": "primary_24h"
+      },
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35
+      },
+      "selection_rationale": "Why this candidate belongs in the six-story edition."
+    }
+  },
+  "images_shape": {
+    "c01": {
+      "path": "briefs/images/YYYY-MM-DD/01-story.png",
+      "alt": "Substantive story-specific image alt text.",
+      "width": 1200,
+      "height": 630,
+      "kind": "editorial_explainer",
+      "cache_key": "accepted-image-hash-prefix",
+      "sha256": "accepted-image-sha256"
+    }
+  },
+  "media_shape": {
+    "worth_watching": {
+      "general": {
+        "status": "empty",
+        "exception": "No video met today’s editorial quality standards."
+      },
+      "agents_non_technical_people": {
+        "status": "empty",
+        "exception": "No video met today’s editorial quality standards."
+      }
+    },
+    "podcasts": []
+  },
+  "handoff_manifest_shape": {
+    "schema_version": "1.0.0",
+    "staging_ref": "editorial-handoff/YYYY-MM-DD-<attempt>",
+    "kernel_path": "_records/editorial-handoff/kernel.json",
+    "facts_path": "_records/editorial-handoff/facts.json",
+    "images_path": "_records/editorial-handoff/images.json",
+    "media_path": "_records/editorial-handoff/media.json",
+    "coverage_period": "Verified coverage-period sentence of at least twenty characters.",
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "deterministic_validation_model_calls": 0
+  },
+  "hard_rules": [
+    "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
+    "Facts and image manifests must contain every selected candidate_id.",
+    "All six PNGs must be fresh accepted full-quality images for a from-scratch qualification test.",
+    "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work."
+  ]
+}
