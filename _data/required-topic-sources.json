@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Small authoritative source set for mandatory editorial topics that require daily coverage even when broad catalog discovery is noisy. These are discovery inputs only; selection still requires date, novelty, evidence and editorial review.",
+  "topics": [
+    {
+      "topic_id": "agent_skills",
+      "required_slots": 1,
+      "fallback_days": 7,
+      "sources": [
+        {
+          "source_id": "openai-academy-skills",
+          "owner": "OpenAI",
+          "discovery_endpoint": "https://openai.com/academy/skills/",
+          "canonical_url": "https://openai.com/academy/skills/",
+          "format": "article",
+          "audience": [
+            "knowledge_worker"
+          ],
+          "evidence_class": "publisher_authored",
+          "status": "active"
+        },
+        {
+          "source_id": "anthropic-research-skills",
+          "owner": "Anthropic",
+          "discovery_endpoint": "https://www.anthropic.com/research/skills",
+          "canonical_url": "https://www.anthropic.com/research/skills",
+          "format": "article",
+          "audience": [
+            "knowledge_worker",
+            "technical"
+          ],
+          "evidence_class": "publisher_authored",
+          "status": "active"
+        },
+        {
+          "source_id": "anthropic-engineering-agent-skills",
+          "owner": "Anthropic",
+          "discovery_endpoint": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+          "canonical_url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+          "format": "article",
+          "audience": [
+            "knowledge_worker",
+            "technical"
+          ],
+          "evidence_class": "publisher_authored",
+          "status": "active"
+        }
+      ]
+    }
+  ]
+}
