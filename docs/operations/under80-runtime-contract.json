@@ -78,7 +78,23 @@
     "work_preflight_receipt": "_records/discovery-preflight/result/receipt.json",
     "work_start_rule": "Work begins only after a GitHub Actions discovery preflight has produced coverage_ready=true, agent_skill_story_ready_signals>=1, and preferred_agent_skill_candidate_id with zero model calls. Work deep-reviews that preferred Skills candidate first, then performs the remaining bounded deep reviews.",
     "metadata_agent_skill_story_ready_signals_minimum": 1,
-    "agent_skills_review_order": "Deep-review the preflight preferred_agent_skill_candidate_id first. It must be a story-ready, publication-fresh Agent Skills development; update-only background pages do not satisfy the slot."
+    "agent_skills_review_order": "Deep-review the preflight preferred_agent_skill_candidate_id first. It must be a story-ready, publication-fresh Agent Skills development; update-only background pages do not satisfy the slot.",
+    "article_evidence_preflight": {
+      "execution_owner": "github_actions",
+      "tool": "_tools/under80-evidence-preflight.mjs",
+      "candidate_review_plan": 9,
+      "focus_plan": {
+        "technical_ai_engineering": 3,
+        "applied_genai_knowledge_workers": 3,
+        "agents_non_technical_people": 3
+      },
+      "model_calls": 0,
+      "work_network_article_retrieval_allowed": false,
+      "evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+      "receipt_path": "_records/discovery-preflight/result/article-evidence-receipt.json",
+      "model_visible_chars_max": 12000,
+      "rule": "GitHub Actions retrieves original article sources and compacts evidence for exactly nine balanced candidates before Work. Work performs no article network retrieval and evaluates only the precomputed evidence in the single editorial semantic pass."
+    }
   },
   "semantic_work": {
     "editorial_model_passes": 1,
@@ -99,7 +115,14 @@
     "normal_attempts_per_story": 1,
     "targeted_regeneration_only_on_actual_quality_failure": true,
     "reuse_only_same_edition_accepted_assets_on_recovery": true,
-    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": true
+    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": true,
+    "binary_transport": {
+      "method": "native_git_working_tree_push",
+      "github_contents_api_for_png_prohibited": true,
+      "connector_create_or_update_file_for_png_prohibited": true,
+      "local_validator": "node _tools/validate-handoff-images.mjs --kernel _records/editorial-handoff/kernel.json --images _records/editorial-handoff/images.json",
+      "reason": "Binary PNGs larger than connector text/base64 limits can be truncated even when the local generation is valid. Preserve full accepted image bytes by committing and pushing from the working tree with native git."
+    }
   },
   "media": {
     "video_duration_ladder_seconds": [
@@ -114,16 +137,17 @@
     "bounded_omission_allowed": true
   },
   "work_owns": [
+    "read one precomputed <=12000-character article evidence packet for nine balanced candidates; do not retrieve article sources in Work",
     "read one precomputed coverage-ready metadata shortlist produced by GitHub Actions with zero model calls",
     "read one committed ready=true zero-model metadata preflight containing at most 20 candidates; do not execute metadata discovery in Work",
     "load this compact runtime contract and the machine-readable efficiency policy",
-    "one compact evidence package",
     "one editorial semantic pass",
     "six full-quality image generations and image acceptance",
     "write editorial kernel/facts/media/image manifest",
     "commit one editorial-handoff manifest on an isolated editorial-handoff/* branch"
   ],
   "github_actions_owns": [
+    "retrieve and compact the nine-candidate article evidence packet with zero model calls before Work",
     "run broad deterministic metadata discovery and <=20 coverage-ready prefilter before Work",
     "run scheduled zero-model metadata discovery and deterministic prefilter before Work begins",
     "validate handoff and trusted main baseline",
@@ -158,9 +182,10 @@
       "editorial_model_passes": 1,
       "post_editorial_model_passes": 0,
       "deterministic_validation_model_calls": 0,
-      "metadata_candidates_max": 20
+      "metadata_candidates_max": 20,
+      "image_transport_method": "native_git"
     },
-    "hard_stop": "After the handoff commit is pushed, the daily AI task ends. It must not run generator/tests/build/PR/CI/merge/Pages/live validation or poll any release state.",
+    "hard_stop": "After local image validation and a native git push of the complete handoff commit, the daily AI task ends. Do not upload PNG bytes through GitHub Contents API/connector file-write calls. GitHub Actions owns remote integrity validation and all deterministic downstream work.",
     "template_path": "docs/operations/editorial-handoff-template.json",
     "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
     "production_branch_prefix": "editorial-handoff/production/",
