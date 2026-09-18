@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "edition_date": "2026-09-18",
+  "cutoff": "2026-09-18T14:41:06Z",
+  "candidate_count": 20,
+  "coverage_counts": {
+    "technical_ai_engineering": 13,
+    "applied_genai_knowledge_workers": 3,
+    "agents_non_technical_people": 4
+  },
+  "agent_skill_signals": 2,
+  "agent_skill_story_ready_signals": 1,
+  "preferred_agent_skill_candidate_id": "m01",
+  "coverage_ready": true,
+  "metadata_candidates_sha256": "368ea980eee8e842e3c7c37d8964e7aa8d3cafa7b4cba7ea7bde889b36423430",
+  "production_changes": 0
+}
