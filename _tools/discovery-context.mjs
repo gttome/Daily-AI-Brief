@@ -1,7 +1,7 @@
 import {RetrievalCache} from '../_generator/lib/research.mjs';
-import {retrieveSource} from './discovery-links.mjs';
+import {retrieveSource,compactDiscoveryHtml} from './discovery-links.mjs';
 export class DiscoveryAcquisition {
- constructor({cache=new RetrievalCache({directory:process.env.DAB_RETRIEVAL_CACHE||null}),fetcher=retrieveSource}={}){this.cache=cache;this.fetcher=fetcher;this.failures=new Map();this.pending=new Map();}
+ constructor({cache=new RetrievalCache({directory:process.env.DAB_RETRIEVAL_CACHE?process.env.DAB_RETRIEVAL_CACHE+'/catalog-html-v2':null}),fetcher=async (url,options)=>{const result=await retrieveSource(url,options);return result.not_modified?result:{...result,text:compactDiscoveryHtml(result.text),metadata:{representation:'catalog-html-v2',raw_normalized_chars:result.normalized_chars,response_bytes:result.response_bytes}};}}={}){this.cache=cache;this.fetcher=fetcher;this.failures=new Map();this.pending=new Map();}
  async retrieve(url,{force=false}={}){
   const key=this.cache.key(url,'metadata');
   if(!force&&this.failures.has(key))throw this.failures.get(key);
