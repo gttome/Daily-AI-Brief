@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "edition_id": "dab-edition-2026-09-18",
-  "checked_at": "2026-09-18T14:40:47.358901Z",
+  "checked_at": "2026-09-18T17:55:00Z",
   "items": [
     {
       "item_id": "dab-podcast-2026-09-18-personal-ai-agents",
@@ -31,5 +31,5 @@
     }
   ],
   "status": "PASS",
-  "note": "Selected-podcast preflight passed. Video discovery remains degraded and no videos are included."
+  "note": "Fresh canary decision reused unchanged same-day verified podcast observations; no videos included. Production media record remains untouched."
 }
