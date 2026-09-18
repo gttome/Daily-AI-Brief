@@ -115,7 +115,14 @@
     "work_entry_requires_ready_preflight": true,
     "preflight_branch_prefix": "preflight/",
     "model_calls": 0,
-    "credit_goal": "zero Work/Codex credits for metadata discovery and prefilter"
+    "credit_goal": "zero Work/Codex credits for metadata discovery and prefilter",
+    "date_enrichment": {
+      "owner": "github_actions",
+      "tool": "_tools/enrich-metadata-dates.mjs",
+      "attempt_limit": 48,
+      "model_calls": 0,
+      "work_credits_expected": 0
+    }
   },
   "work_forbidden_before_editorial": [
     "metadata catalog discovery",
