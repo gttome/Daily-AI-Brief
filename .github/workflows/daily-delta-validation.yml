@@ -2,7 +2,7 @@ name: Daily AI Brief deterministic delta validation
 
 on:
   workflow_run:
-    workflows: ["pages build and deployment"]
+    workflows: ["Deterministic publication CI"]
     types: [completed]
     branches: [main]
   schedule:
@@ -17,6 +17,7 @@ on:
 
 permissions:
   contents: read
+  actions: read
   issues: write
 
 concurrency:
@@ -32,11 +33,12 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
+          WORKFLOW_EVENT: ${{ github.event.workflow_run.event }}
         run: |
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           elif [ "$EVENT_NAME" = "workflow_run" ]; then
-            if [ "$WORKFLOW_CONCLUSION" = "success" ]; then
+            if [ "$WORKFLOW_CONCLUSION" = "success" ] && [ "$WORKFLOW_EVENT" = "push" ]; then
               echo "run=true" >> "$GITHUB_OUTPUT"
             else
               echo "run=false" >> "$GITHUB_OUTPUT"
@@ -84,6 +86,35 @@ jobs:
             args+=(--prior /tmp/prior-watchlist.json)
           fi
           node _tools/watchlist-delta-plan.mjs "${args[@]}"
+
+      - name: Wait for matching Pages deployment
+        if: steps.gate.outputs.run == 'true' && github.event_name == 'workflow_run'
+        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
+        with:
+          script: |
+            const expectedSha = context.payload.workflow_run.head_sha;
+            const attempts = 36;
+            for (let i = 0; i < attempts; i++) {
+              const {data} = await github.rest.actions.listWorkflowRunsForRepo({
+                ...context.repo,
+                head_sha: expectedSha,
+                per_page: 100
+              });
+              const pages = data.workflow_runs
+                .filter(run => run.name === 'pages build and deployment')
+                .sort((a,b) => Date.parse(b.created_at) - Date.parse(a.created_at));
+              const run = pages[0];
+              if (run?.status === 'completed') {
+                if (run.conclusion !== 'success') {
+                  core.setFailed(`Matching Pages deployment ${run.id} ended ${run.conclusion} for ${expectedSha}.`);
+                  return;
+                }
+                core.info(`Matching Pages deployment ${run.id} succeeded for ${expectedSha}.`);
+                return;
+              }
+              await new Promise(resolve => setTimeout(resolve, 10000));
+            }
+            core.setFailed(`No successful completed Pages deployment observed for ${expectedSha} within the bounded validation window.`);
 
       - name: Run deterministic delta validation
         if: steps.gate.outputs.run == 'true'
