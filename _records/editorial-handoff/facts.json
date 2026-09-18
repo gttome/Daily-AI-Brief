@@ -1,0 +1,206 @@
+{
+  "m02": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "Workflow execution protections in GitHub Actions generally available",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 472,
+    "source_word_count_method": "retrieved_article_text_word_count",
+    "source_fetched_at": "2026-09-18T20:23:28.448Z",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "No exact source URL match in available pre-September-18 story-memory files; not exhaustive semantic deduplication."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 31
+    },
+    "selection_rationale": "Teams can separate deployment authority from routine CI and observe policy effects before enforcing restrictions."
+  },
+  "m14": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+      "organization": "arXiv",
+      "url": "https://arxiv.org/abs/2609.20812v1",
+      "publication_date": "2026-09-17",
+      "evidence_type": "research_preprint",
+      "availability_status": "published"
+    },
+    "source_word_count": 162,
+    "source_word_count_method": "retrieved_abstract_text_word_count",
+    "source_fetched_at": "2026-09-18T20:23:28.449Z",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "No exact source URL match in available pre-September-18 story-memory files; not exhaustive semantic deduplication."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 31
+    },
+    "selection_rationale": "A final assurance is not a substitute for an action record. Compare requested scope with observed coverage."
+  },
+  "m06": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "What we’ve learned from Microsoft’s own AI transformation",
+      "organization": "Microsoft",
+      "url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 1962,
+    "source_word_count_method": "retrieved_article_text_word_count",
+    "source_fetched_at": "2026-09-18T20:23:28.449Z",
+    "freshness": {
+      "tier": "fallback_72h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "No exact source URL match in available pre-September-18 story-memory files; not exhaustive semantic deduplication."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 31
+    },
+    "selection_rationale": "A faster isolated task can move the bottleneck. Begin with the outcome, handoffs and human decision points."
+  },
+  "m05": {
+    "event_date": "2026-09-15",
+    "source": {
+      "title": "Salesforce and OpenAI Customers Are Putting AI to Work",
+      "organization": "Salesforce",
+      "url": "https://www.salesforce.com/blog/openai-agentforce/",
+      "publication_date": "2026-09-15",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 550,
+    "source_word_count_method": "retrieved_article_text_word_count",
+    "source_fetched_at": "2026-09-18T20:23:28.448Z",
+    "freshness": {
+      "tier": "fallback_72h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "No exact source URL match in available pre-September-18 story-memory files; not exhaustive semantic deduplication."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 31
+    },
+    "selection_rationale": "Useful assistance combines relevant context with a reviewable next action. Pilot one reporting or account-preparation workflow with explicit access boundaries."
+  },
+  "m01": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "Agentic CLI customizations now in the usage metrics API",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 446,
+    "source_word_count_method": "retrieved_article_text_word_count",
+    "source_fetched_at": "2026-09-18T20:26:52.561Z",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "No exact source URL match in available pre-September-18 story-memory files; not exhaustive semantic deduplication."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 31
+    },
+    "selection_rationale": "Use adoption data to find training gaps, then pair it with outcome checks. Activity alone does not establish whether a reusable skill works well."
+  },
+  "m09": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "What Does an AI Harness Have To Do With Growing Business?",
+      "organization": "Salesforce",
+      "url": "https://www.salesforce.com/blog/small-business/ai-harness-explained-for-smbs/",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 957,
+    "source_word_count_method": "retrieved_article_text_word_count",
+    "source_fetched_at": "2026-09-18T20:23:28.449Z",
+    "freshness": {
+      "tier": "fallback_72h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "No exact source URL match in available pre-September-18 story-memory files; not exhaustive semantic deduplication."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 31
+    },
+    "selection_rationale": "Before delegation, specify what the agent may read, what it may change and how a person will check the result."
+  }
+}
