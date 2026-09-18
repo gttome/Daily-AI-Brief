@@ -4,6 +4,213 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-2cda8d5e",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
+      "url": "/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "frontier AI",
+        "R&D automation",
+        "agent oversight",
+        "evaluation",
+        "compute governance"
+      ],
+      "companies": [
+        "Anthropic"
+      ],
+      "evidence_type": "official_research",
+      "availability_status": "published_research",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-3ac3c725",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used",
+      "url": "/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent observability",
+        "Copilot CLI",
+        "Agent Skills",
+        "MCP",
+        "plugins",
+        "usage metrics"
+      ],
+      "companies": [
+        "GitHub"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "general_availability",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-87612b7e",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
+      "url": "/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI adoption",
+        "workflow redesign",
+        "knowledge work",
+        "outcome measurement",
+        "change management"
+      ],
+      "companies": [
+        "Microsoft"
+      ],
+      "evidence_type": "official_case_study",
+      "availability_status": "published_guidance",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-c5d22f27",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
+      "url": "/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "no-code AI",
+        "vibe building",
+        "enterprise apps",
+        "Agentforce",
+        "governance"
+      ],
+      "companies": [
+        "Salesforce"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "beta_announced",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-bc42dd44",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
+      "url": "/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "reusable workflows",
+        "Rovo",
+        "team context",
+        "no-code agents"
+      ],
+      "companies": [
+        "Atlassian"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "rolling_out",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-062b5025",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
+      "url": "/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "consumer agents",
+        "identity",
+        "permissions",
+        "shared memory",
+        "isolated execution",
+        "Gemini"
+      ],
+      "companies": [
+        "Google Labs"
+      ],
+      "evidence_type": "official_announcement",
+      "availability_status": "experimental_waitlist",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-18-personal-ai-agents",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Why Everyone Is Getting Excited About Personal AI Agents",
+      "url": "/podcasts/2026-09-18/personal-ai-agents/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "personal AI agents",
+        "consumer agents",
+        "delegation"
+      ],
+      "companies": [
+        "The AI Daily Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-18-ai-search-discovery",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "How to get discovered in AI search",
+      "url": "/podcasts/2026-09-18/ai-search-discovery/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI search",
+        "retrieval",
+        "citations",
+        "agent discovery"
+      ],
+      "companies": [
+        "Practical AI"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-17-1a7c4e90",
       "brief_date": "2026-09-17",
       "event_date": "2026-09-16",
@@ -4820,142 +5027,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "*A Jagged Frontier* tests whether coding agents remain reliable when code is changed in ways that preserve its meaning, including identifier renaming, dead-code insertion, and control-flow rewrites. The researchers paired two agent scaffolds with four models across SWE-bench Verified and SWE-bench Pro. Most configurations showed small degradation, but the largest mean resolve-rate decline reached 6.7 percentage points, and six of 16 model–scaffold–dataset combinations degraded significantly. No model had a consistently best robustness ranking across scaffolds; the simpler mini-SWE-agent scaffold was generally more robust."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-19-f2f22489",
-      "brief_date": "2026-08-19",
-      "event_date": "2026-08-18",
-      "headline": "OpenAI slows frontier development while rebuilding security around cyber-capable models",
-      "url": "/stories/2026-08-19/openai-slows-frontier-development-while-rebuilding-security-around-cyber-capable/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Major AI-company developments",
-        "reliable generative AI",
-        "guardrails",
-        "harness engineering",
-        "monitoring",
-        "agent containment"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI disclosed that it temporarily slowed frontier-model scaling after an upcoming model, Astra, showed preliminary evidence of reaching the company’s “Critical” cybersecurity capability threshold and after a separate OpenAI–Hugging Face incident. OpenAI paused frontier-model workloads that could execute code or reach the internet, introduced stronger workload and network isolation, and expanded multistage monitoring of tool-using runs. The company says the monitoring system examines tool actions, available reasoning, and full activity sequences, aims to escalate serious concerns within 30 minutes, and currently adds roughly 20% inference-compute overhead to monitored workloads."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-19-973cfd13",
-      "brief_date": "2026-08-19",
-      "event_date": "2026-08-18",
-      "headline": "OpenAI and CodeAI put critical evaluation—not passive tool use—at the center of AI literacy",
-      "url": "/stories/2026-08-19/openai-and-codeai-put-critical-evaluation-not-passive-tool-use-at-the-center-of-/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "AI literacy",
-        "practical AI creation",
-        "non-software developers",
-        "human review",
-        "prompt and context judgment"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development"
-      ],
-      "summary": "OpenAI and CodeAI announced a partnership spanning the Hour of AI, a high-school Builders Challenge, educator support, career programs, and a joint advisory council focused on responsible AI. The initiative accompanies ChatGPT for Teens and emphasizes teaching students to question AI output, recognize limitations, catch mistakes, and know when not to trust a response—not simply how to operate the technology."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-19-a8e67241",
-      "brief_date": "2026-08-19",
-      "event_date": "2026-08-18",
-      "headline": "AdmitOR reduces the risk that self-improving agents learn from bad experience",
-      "url": "/stories/2026-08-19/admitor-reduces-the-risk-that-self-improving-agents-learn-from-bad-experience/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Loop engineering",
-        "agent memory",
-        "evaluation",
-        "human escalation",
-        "reliable self-improvement"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-19-c4d5a830",
-      "brief_date": "2026-08-19",
-      "event_date": "2026-08-17",
-      "headline": "HarnessEval-W turns evaluation into a transparent graph of evidence",
-      "url": "/stories/2026-08-19/harnesseval-w-turns-evaluation-into-a-transparent-graph-of-evidence/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Harness engineering",
-        "graph engineering",
-        "multi-agent evaluation",
-        "tool use",
-        "evidence and observability"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "HarnessEval-W proposes an agent-based evaluation pipeline for world-model rollouts. A parent agent interprets each evaluation, decomposes it into measurable subproblems, and assigns specialized sub-agents tailored context and diagnostic tools. The parent then validates the evidence and produces a verdict represented by a traceable evidence tree. The authors applied the system to 18 world models across 330 evaluation cases and report close alignment with human preferences."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-19-79e308b8",
-      "brief_date": "2026-08-19",
-      "event_date": "2026-08-17",
-      "headline": "Semantic Bandits shows that action labels can quietly bias an agent’s decisions",
-      "url": "/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Prompt engineering",
-        "context engineering",
-        "agent decision-making",
-        "evaluation",
-        "reliability"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "*Semantic Bandits* studies how natural-language labels alter an LLM agent’s exploration-versus-exploitation behavior even when the underlying formal choices are equivalent. The researchers found that informative labels pushed agents toward exploitation: performance improved when the label’s implied meaning matched the reward structure but degraded sharply when it did not. Negative rewards also triggered more exploration than equivalent positive rewards."
     }
   ]
 }

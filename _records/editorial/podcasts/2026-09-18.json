@@ -1,0 +1,28 @@
+{
+  "brief_date": "2026-09-18",
+  "searched_at": "2026-09-18T14:04:13Z",
+  "source_registry": "_data/podcast-sources.json",
+  "selected_item_ids": [
+    "dab-podcast-2026-09-18-personal-ai-agents",
+    "dab-podcast-2026-09-18-ai-search-discovery"
+  ],
+  "candidates": [
+    {
+      "title": "Why Everyone Is Getting Excited About Personal AI Agents",
+      "show": "The AI Daily Brief",
+      "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
+      "publication_date": "2026-09-17",
+      "decision": "selected",
+      "reason": "Fresh registered-source episode inside the preferred 48-hour window; exact title, publication date, host, direct URL, and runtime were verified on Apple Podcasts."
+    },
+    {
+      "title": "How to get discovered in AI search",
+      "show": "Practical AI",
+      "url": "https://practicalai.show/372",
+      "publication_date": "2026-09-17",
+      "decision": "selected",
+      "reason": "Fresh registered-source episode inside the preferred 48-hour window from a second show; title, date, hosts, direct episode URL, and 55:14 runtime were verified on the publisher site."
+    }
+  ],
+  "note": "Reused staged source-diverse editorial selections; current date/runtime/URL preflight recorded separately. Practitioner discussion, not independent validation of vendor claims."
+}

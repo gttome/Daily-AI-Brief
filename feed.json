@@ -3,8 +3,133 @@
   "title": "Daily Generative AI Brief",
   "home_page_url": "https://gttome.github.io/Daily-AI-Brief/",
   "feed_url": "https://gttome.github.io/Daily-AI-Brief/feed.json",
-  "description": "Six AI articles, two videos, and one podcast selected daily for George Tome.",
+  "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
+    {
+      "id": "dab-story-2026-09-18-2cda8d5e",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/",
+      "title": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
+      "summary": "Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "frontier AI",
+        "R&D automation",
+        "agent oversight",
+        "evaluation",
+        "compute governance",
+        "Anthropic"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-18-3ac3c725",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/",
+      "title": "GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used",
+      "summary": "GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/02-cli-telemetry.png?v=e69696eeaa07df9f",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "agent observability",
+        "Copilot CLI",
+        "Agent Skills",
+        "MCP",
+        "plugins",
+        "usage metrics",
+        "GitHub"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-18-87612b7e",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/",
+      "title": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
+      "summary": "Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "AI adoption",
+        "workflow redesign",
+        "knowledge work",
+        "outcome measurement",
+        "change management",
+        "Microsoft"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-18-c5d22f27",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/",
+      "title": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
+      "summary": "Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/04-governed-building.png?v=f97e426828ea5af6",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "no-code AI",
+        "vibe building",
+        "enterprise apps",
+        "Agentforce",
+        "governance",
+        "Salesforce"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-18-bc42dd44",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/",
+      "title": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
+      "summary": "Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "reusable workflows",
+        "Rovo",
+        "team context",
+        "no-code agents",
+        "Atlassian"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-18-062b5025",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/",
+      "title": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
+      "summary": "Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/06-household-agent-boundaries.png?v=5b4ff0fd59a81b50",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "consumer agents",
+        "identity",
+        "permissions",
+        "shared memory",
+        "isolated execution",
+        "Gemini",
+        "Google Labs"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-18-personal-ai-agents",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-18/personal-ai-agents/",
+      "title": "Why Everyone Is Getting Excited About Personal AI Agents",
+      "summary": "Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "personal AI agents",
+        "consumer agents",
+        "delegation",
+        "The AI Daily Brief"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-18-ai-search-discovery",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-18/ai-search-discovery/",
+      "title": "How to get discovered in AI search",
+      "summary": "Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.",
+      "date_published": "2026-09-18T13:00:00-05:00",
+      "tags": [
+        "AI search",
+        "retrieval",
+        "citations",
+        "agent discovery",
+        "Practical AI"
+      ]
+    },
     {
       "id": "dab-story-2026-09-17-1a7c4e90",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/",
@@ -2919,87 +3044,6 @@
         "agent evaluation",
         "robustness",
         "human review",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-19-f2f22489",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-19/openai-slows-frontier-development-while-rebuilding-security-around-cyber-capable/",
-      "title": "OpenAI slows frontier development while rebuilding security around cyber-capable models",
-      "summary": "OpenAI disclosed that it temporarily slowed frontier-model scaling after an upcoming model, Astra, showed preliminary evidence of reaching the company’s “Critical” cybersecurity capability threshold and after a separate OpenAI–Hugging Face incident. OpenAI paused frontier-model workloads that could execute code or reach the internet, introduced stronger workload and network isolation, and expanded multistage monitoring of tool-using runs. The company says the monitoring system examines tool actions, available reasoning, and full activity sequences, aims to escalate serious concerns within 30 minutes, and currently adds roughly 20% inference-compute overhead to monitored workloads.",
-      "image": "https://www.google.com/s2/favicons?domain=openai.com&sz=256",
-      "date_published": "2026-08-19T13:00:00-05:00",
-      "tags": [
-        "Major AI-company developments",
-        "reliable generative AI",
-        "guardrails",
-        "harness engineering",
-        "monitoring",
-        "agent containment",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-19-973cfd13",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-19/openai-and-codeai-put-critical-evaluation-not-passive-tool-use-at-the-center-of-/",
-      "title": "OpenAI and CodeAI put critical evaluation—not passive tool use—at the center of AI literacy",
-      "summary": "OpenAI and CodeAI announced a partnership spanning the Hour of AI, a high-school Builders Challenge, educator support, career programs, and a joint advisory council focused on responsible AI. The initiative accompanies ChatGPT for Teens and emphasizes teaching students to question AI output, recognize limitations, catch mistakes, and know when not to trust a response—not simply how to operate the technology.",
-      "image": "https://www.google.com/s2/favicons?domain=code.org&sz=256",
-      "date_published": "2026-08-19T13:00:00-05:00",
-      "tags": [
-        "AI literacy",
-        "practical AI creation",
-        "non-software developers",
-        "human review",
-        "prompt and context judgment",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-19-a8e67241",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-19/admitor-reduces-the-risk-that-self-improving-agents-learn-from-bad-experience/",
-      "title": "AdmitOR reduces the risk that self-improving agents learn from bad experience",
-      "summary": "The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.",
-      "image": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png",
-      "date_published": "2026-08-19T13:00:00-05:00",
-      "tags": [
-        "Loop engineering",
-        "agent memory",
-        "evaluation",
-        "human escalation",
-        "reliable self-improvement",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-19-c4d5a830",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-19/harnesseval-w-turns-evaluation-into-a-transparent-graph-of-evidence/",
-      "title": "HarnessEval-W turns evaluation into a transparent graph of evidence",
-      "summary": "HarnessEval-W proposes an agent-based evaluation pipeline for world-model rollouts. A parent agent interprets each evaluation, decomposes it into measurable subproblems, and assigns specialized sub-agents tailored context and diagnostic tools. The parent then validates the evidence and produces a verdict represented by a traceable evidence tree. The authors applied the system to 18 world models across 330 evaluation cases and report close alignment with human preferences.",
-      "image": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png",
-      "date_published": "2026-08-19T13:00:00-05:00",
-      "tags": [
-        "Harness engineering",
-        "graph engineering",
-        "multi-agent evaluation",
-        "tool use",
-        "evidence and observability",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-19-79e308b8",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-19/semantic-bandits-shows-that-action-labels-can-quietly-bias-an-agent-s-decisions/",
-      "title": "Semantic Bandits shows that action labels can quietly bias an agent’s decisions",
-      "summary": "*Semantic Bandits* studies how natural-language labels alter an LLM agent’s exploration-versus-exploitation behavior even when the underlying formal choices are equivalent. The researchers found that informative labels pushed agents toward exploitation: performance improved when the label’s implied meaning matched the reward structure but degraded sharply when it did not. Negative rewards also triggered more exploration than equivalent positive rewards.",
-      "image": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png",
-      "date_published": "2026-08-19T13:00:00-05:00",
-      "tags": [
-        "Prompt engineering",
-        "context engineering",
-        "agent decision-making",
-        "evaluation",
-        "reliability",
         "arXiv"
       ]
     }

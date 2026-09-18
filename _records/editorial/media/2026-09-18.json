@@ -5,11 +5,11 @@
   "worth_watching": {
     "general": {
       "status": "empty",
-      "exception": "Official video metadata remained retrieval-limited in the bounded resumed search; no qualifying <=72-hour item with verified upload date and runtime could be established without inventing evidence."
+      "exception": "No video met today’s editorial quality standards."
     },
     "agents_non_technical_people": {
       "status": "empty",
-      "exception": "Official video metadata remained retrieval-limited in the bounded resumed search; no qualifying <=72-hour agent-focused item with verified upload date and runtime could be established without inventing evidence."
+      "exception": "No video met today’s editorial quality standards."
     }
   },
   "podcasts": [
@@ -81,10 +81,33 @@
     "status": "degraded_retrieval",
     "bounded_search_completed": true,
     "metadata_gate_complete": false,
-    "note": "Registered official YouTube channels remained retrieval-limited. Zero-video exception is recorded as degraded rather than falsely presented as a successful complete-coverage result."
+    "note": "Registered official YouTube channels remained retrieval-limited. Zero-video exception is recorded as degraded rather than falsely presented as a successful complete-coverage result.",
+    "final_pass_checked_at": "2026-09-18T14:40:47.358901Z",
+    "evidence_path": "_records/editorial/videos/2026-09-18.json"
   },
   "watchlist": {
     "status": "degraded",
-    "note": "September 18 Watchlist refresh did not complete in the failed morning attempt. Prior verified state is preserved; no false freshness is asserted."
+    "checked_at": "2026-09-18T14:31:07.655Z",
+    "coverage": {
+      "checked": 41,
+      "retrieval_success": 28,
+      "with_candidate_links": 24,
+      "no_candidate_links": 4,
+      "retrieval_failures": 13,
+      "assisted_review_required": 8,
+      "sources_considered": 49,
+      "sources_checked": 41,
+      "retained_not_due": 6,
+      "unchanged_sources": 11,
+      "sources_returning_candidate_links": 24,
+      "fresh_successful_observations": 28,
+      "minimum_fresh_observations": 3,
+      "coverage_floor_met": true,
+      "unavailable": 13,
+      "fulltext_retrievals": 0,
+      "coverage_status": "degraded",
+      "note": "Catalog discovery only. Retained state is not a new source check. If fresh successful observations are below the floor, run only the bounded high-value fallback plan; never sweep the whole registry. No links does not establish no news."
+    },
+    "note": "Bounded catalog refresh completed. Prior semantic topic evidence and its original dates are preserved. Failed and assisted-review coverage remains incomplete."
   }
 }
