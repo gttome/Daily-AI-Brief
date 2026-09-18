@@ -1,0 +1,248 @@
+{
+  "schema_version": "1.0.0",
+  "cutoff": "2026-09-18T14:41:06.000Z",
+  "attempt_limit": 48,
+  "attempted": 48,
+  "resolved": 20,
+  "published_resolved": 20,
+  "updated_resolved": 10,
+  "failed": 4,
+  "details": [
+    {
+      "url": "https://academy.zapier.com/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-copilot-guide/",
+      "status": "resolved",
+      "published_at": "2024-05-07T00:00:00.000Z",
+      "updated_at": "2025-12-10T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/sdk",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/models/gemini/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://trailhead.salesforce.com/content/learn/modules/agentforce-agents-quick-look/discover-agentforce-agents",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "status": "resolved",
+      "published_at": "2026-01-09T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "status": "resolved",
+      "published_at": "2025-09-29T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://zapier.com/agents",
+      "status": "failed",
+      "reason": "response_too_large:1212416>1200000"
+    },
+    {
+      "url": "https://zapier.com/ai",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/blog/ai-agents-for-business/",
+      "status": "resolved",
+      "published_at": "2025-09-09T00:00:00.000Z",
+      "updated_at": "2026-09-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/ai-sales-assistant/",
+      "status": "failed",
+      "reason": "normalized_body_too_large:1051611>900000"
+    },
+    {
+      "url": "https://zapier.com/solutions/hr",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://claude.com/claude-for-microsoft-365",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://claude.com/product/claude-code/enterprise",
+      "status": "failed",
+      "reason": "normalized_body_too_large:988807>900000"
+    },
+    {
+      "url": "https://www.salesforce.com/products/resources/state-of-agentic-ai-in-enterprise/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/blog/ai-model-flexibility/",
+      "status": "resolved",
+      "published_at": "2026-03-06T00:00:00.000Z",
+      "updated_at": "2026-09-14T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/ai-models-on-zapier/",
+      "status": "resolved",
+      "published_at": "2026-03-17T00:00:00.000Z",
+      "updated_at": "2026-09-10T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/automate-claude/",
+      "status": "resolved",
+      "published_at": "2023-11-27T00:00:00.000Z",
+      "updated_at": "2026-09-04T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-ai-guide/",
+      "status": "resolved",
+      "published_at": "2024-05-07T00:00:00.000Z",
+      "updated_at": "2026-08-03T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-mcp-guide/",
+      "status": "resolved",
+      "published_at": "2025-04-03T00:00:00.000Z",
+      "updated_at": "2026-08-18T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/mcp",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://api-docs.deepseek.com/quick_start/agent_integrations/claude_code",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/",
+      "status": "resolved",
+      "published_at": "2025-11-13T18:55:00.000Z",
+      "updated_at": "2026-07-06T10:48:07.011Z"
+    },
+    {
+      "url": "https://github.com/microsoft/vibe-kit/tree/main/skills/msresearch-aurora",
+      "status": "resolved",
+      "published_at": "2025-11-14T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://nam06.safelinks.protection.outlook.com/?data=05%7C02%7Cv-amablack%40microsoft.com%7C8672491a049240e2d0cb08deecf33ea2%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C639208726637682797%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&reserved=0&sdata=4%2F8FD0oWevHazXLVAGUwE0XnoLqVfLDC2g5TPUB94V0%3D&url=https%3A%2F%2Fgithub.com%2Fmicrosoft%2FEchoverse",
+      "status": "failed",
+      "reason": "HTTP 400"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/building-effective-agents",
+      "status": "resolved",
+      "published_at": "2024-12-19T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/code-execution-with-mcp",
+      "status": "resolved",
+      "published_at": "2025-11-04T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents",
+      "status": "resolved",
+      "published_at": "2025-11-26T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "status": "resolved",
+      "published_at": "2025-10-16T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/managed-agents",
+      "status": "resolved",
+      "published_at": "2026-04-08T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/multi-agent-research-system",
+      "status": "resolved",
+      "published_at": "2025-06-13T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/writing-tools-for-agents",
+      "status": "resolved",
+      "published_at": "2025-09-11T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/research/publication/echoverse-deep-evolving-environments-for-training-computer-use-agents-at-scale/",
+      "status": "resolved",
+      "published_at": "2026-07-30T17:04:00.000Z",
+      "updated_at": "2026-08-04T10:13:12.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/marketing/agentic-marketing/ai-marketing-agents/",
+      "status": "resolved",
+      "published_at": "2025-11-13T00:00:00.000Z",
+      "updated_at": "2026-09-16T00:00:00.000Z"
+    },
+    {
+      "url": "https://ai.google/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://ai.meta.com/blog/genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://claude.com/partners",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/blog/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/models/gemini-audio/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/models/gemini-omni/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/models/gemini-robotics/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/models/gemma/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/national-partnerships-for-ai/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/science/alphagenome/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/science/weathernext/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/ai-companions-may-worsen-loneliness-for-vulnerable-users-stanford-study-finds",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://hai.stanford.edu/news/ai-legal-review-says-millions-live-under-discriminatory-local-laws",
+      "status": "unresolved"
+    }
+  ]
+}
