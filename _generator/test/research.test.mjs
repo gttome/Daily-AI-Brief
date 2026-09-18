@@ -40,6 +40,7 @@ test('prefilter separates stale, tracking duplicate, unsupported and reviewed co
 test('evidence packets reject unsupported excerpts, changed source bytes and unreviewed claims',()=>{
  const packet=createEvidencePacket(candidate,source,review);
  assert.equal(packet.source_content_hash,sha256(source.text));
+ assert.equal(packet.source_word_count,11);assert.equal(packet.source_word_count_method,'retrieved_source_text_whitespace_v1');assert.equal(packet.source_reading_minutes,1);
  assert.throws(()=>createEvidencePacket(candidate,source,{...review,claims:[{claim:'Unfounded',excerpt:'99 tasks'}]}),/traceable/);
  assert.throws(()=>createEvidencePacket(candidate,{...source,text:source.text+' update'},review),/hash/);
  assert.throws(()=>createEvidencePacket(candidate,source,{...review,status:'pending'}),/review/);
@@ -119,11 +120,11 @@ test('selective research stops at the 9 normal target when fresh category backup
  const result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher,reviewer});
  assert.equal(result.processed.length,9);assert.equal(result.telemetry.research.early_stop_triggered,true);assert.equal(result.selection_status,'ready_for_single_editorial_pass');
 });
-test('selective research permits only a targeted +3 deep-review exception before escalation',async()=>{
+test('selective research stops at the nine-review cost ceiling when evidence remains insufficient',async()=>{
  const candidates=FOCUSES.flatMap((focus,i)=>Array.from({length:7},(_,j)=>({...candidate,candidate_id:i+'-'+j,canonical_url:'https://example.org/'+i+'/'+j,focus})));
  const result=await runSelectiveResearch(candidates,{now,cache:new RetrievalCache({now:()=>now}),fetcher:async()=>({text:source.text}),reviewer:async(c)=>({...review,confidence:c.focus===FOCUSES[2]?'low':'high'})});
- assert.equal(result.processed.length,12);assert.equal(result.sufficiency.sufficient,false);assert.equal(result.telemetry.research.hard_stop_reason,'deep_exception_ceiling');
- assert.equal(result.selection_status,'requires_targeted_exception_or_additional_evidence');assert.ok(result.deferred.length>0);
+ assert.equal(result.processed.length,9);assert.equal(result.sufficiency.sufficient,false);assert.equal(result.telemetry.research.hard_stop_reason,'deep_review_ceiling');
+ assert.equal(result.selection_status,'insufficient_at_deep_review_ceiling');assert.ok(result.deferred.length>0);
 });
 test('selective research processes primary-window candidates before fallback leads in every focus',async()=>{
  const candidates=FOCUSES.flatMap((focus,i)=>[
