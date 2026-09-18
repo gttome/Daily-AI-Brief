@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-18",
+  "brief_date": "2026-09-18",
+  "reviewed_at": "2026-09-18T17:55:00Z",
+  "review_method": "Direct visual inspection of all six generated assets individually and as a set; confirmed readable labels, white background, story alignment, distinct composition, and no critical visual defects.",
+  "image_gate": "pass",
+  "images": [
+    {
+      "story_id": "dab-story-2026-09-18-2cda8d5e",
+      "asset": "briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png",
+      "original_asset": "generated_images/exec-0d32645b-b369-462c-965c-c5803df7170f.png",
+      "replacement_sha256": "53fe9c101076e161d7fc935b8fa32b5110361054f71921625dac99cf6e151f0b",
+      "result": "pass",
+      "composition": "three-lane measurement-to-audit",
+      "assessment": "Detailed professional textbook illustration; readable, materially aligned, distinct from the other five, and suitable for the canary quality baseline."
+    },
+    {
+      "story_id": "dab-story-2026-09-18-3ac3c725",
+      "asset": "briefs/images/2026-09-18/canary-under80-02-workflow-protections.png",
+      "original_asset": "generated_images/exec-576a647b-ff46-4d4e-abbb-321bad6c84b1.png",
+      "replacement_sha256": "1f4f3baa8738596e5455224f96db0624326f605c0d453a3c5a53ee89ffbd6f7b",
+      "result": "pass",
+      "composition": "six-gate horizontal protection pipeline",
+      "assessment": "Detailed professional textbook illustration; readable, materially aligned, distinct from the other five, and suitable for the canary quality baseline."
+    },
+    {
+      "story_id": "dab-story-2026-09-18-87612b7e",
+      "asset": "briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png",
+      "original_asset": "generated_images/exec-5a35177e-d2db-4d80-a55b-34f17e7a4252.png",
+      "replacement_sha256": "1e8b7acc5f9ab6c60a6ccb86703be60b3ca541fe7a1028c4e1afedaf95158c3e",
+      "result": "pass",
+      "composition": "before-after outcome redesign",
+      "assessment": "Detailed professional textbook illustration; readable, materially aligned, distinct from the other five, and suitable for the canary quality baseline."
+    },
+    {
+      "story_id": "dab-story-2026-09-18-c5d22f27",
+      "asset": "briefs/images/2026-09-18/canary-under80-04-governed-builder.png",
+      "original_asset": "generated_images/exec-8849a90a-0631-42a1-a2f2-58ee61d6cedf.png",
+      "replacement_sha256": "49b51fcb7f321591c7a0a55f1ca357748fbb0fe89bddc4a7984389d28bedf2db",
+      "result": "pass",
+      "composition": "governed enterprise funnel",
+      "assessment": "Detailed professional textbook illustration; readable, materially aligned, distinct from the other five, and suitable for the canary quality baseline."
+    },
+    {
+      "story_id": "dab-story-2026-09-18-bc42dd44",
+      "asset": "briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png",
+      "original_asset": "generated_images/exec-e0c8556c-4b10-46f3-b646-32c79ff297ab.png",
+      "replacement_sha256": "69d52eaf479dd011a7b24913d12ccd0ae4621e2b09cbb0d00429a9bca3b89bec",
+      "result": "pass",
+      "composition": "eight-step reusable skill loop",
+      "assessment": "Detailed professional textbook illustration; readable, materially aligned, distinct from the other five, and suitable for the canary quality baseline."
+    },
+    {
+      "story_id": "dab-story-2026-09-18-062b5025",
+      "asset": "briefs/images/2026-09-18/canary-under80-06-household-agent.png",
+      "original_asset": "generated_images/exec-e3f4ab2e-c47f-4b85-bdcb-fda1096ac94a.png",
+      "replacement_sha256": "482c59bddb801ec49404b75c316948b10a0a37f395749a5e3fd4f7c1c586bfc0",
+      "result": "pass",
+      "composition": "multi-user boundary architecture",
+      "assessment": "Detailed professional textbook illustration; readable, materially aligned, distinct from the other five, and suitable for the canary quality baseline."
+    }
+  ]
+}

@@ -2,7 +2,7 @@
 layout: default
 title: "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work"
 description: "The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measur"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=1e8b7acc5f9ab6c6"
 permalink: /stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/
 brief_date: 2026-09-18
 story_id: dab-story-2026-09-18-87612b7e
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Case Study  
 **Availability:** Published Guidance
 
-![Conceptual before-and-after illustration of fragmented AI tool adoption becoming a redesigned workflow with shared data and outcome measurement.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665)
+![Textbook before-and-after diagram contrasting fragmented prompt counting with outcome-first end-to-end workflow redesign.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=1e8b7acc5f9ab6c6)
 
 **Summary:** Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.
 

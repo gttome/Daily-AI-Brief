@@ -11,7 +11,7 @@ reader_release: true
 **Coverage period:** September 17 sources reviewed for the September 18 edition. Recency fallback: exact posting times were unavailable; date-only sources are conservatively normalized and not asserted inside the exact 24-hour primary window.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-18-2cda8d5e">Anthropic proposes three measurements for AI self-acceleration inside frontier labs</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-3ac3c725">GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-87612b7e">Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-c5d22f27">Salesforce makes Builder Central a natural-language front door for governed apps and agents</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-bc42dd44">Rovo lets teams teach repeatable work as custom skills in ordinary language</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-062b5025">Google gives a household agent its own identity, permissions, shared memory, and isolated computer</a><span>Article · Source reading time unavailable</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#podcast-dab-podcast-2026-09-18-personal-ai-agents">Why Everyone Is Getting Excited About Personal AI Agents</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-18-ai-search-discovery">How to get discovered in AI search</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-18-2cda8d5e">Anthropic proposes three measurements for AI self-acceleration inside frontier labs</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-3ac3c725">GitHub adds layered execution protections for organization-owned repository workflows</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-87612b7e">Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-c5d22f27">Salesforce makes Builder Central a natural-language front door for governed apps and agents</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-bc42dd44">Rovo lets teams teach repeatable work as custom skills in ordinary language</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-062b5025">Google gives a household agent its own identity, permissions, shared memory, and isolated computer</a><span>Article · Source reading time unavailable</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#podcast-dab-podcast-2026-09-18-personal-ai-agents">Why Everyone Is Getting Excited About Personal AI Agents</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-18-ai-search-discovery">How to get discovered in AI search</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
 <span id="reading-dab-story-2026-09-18-bc42dd44"></span>
@@ -37,7 +37,7 @@ reader_release: true
 
 **What changed since last coverage:** The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations.
 
-![Textbook workflow showing a repeated team process converted into a reviewed Rovo custom skill and reused across shared conversations with memory and agent handoffs.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2)
+![Textbook loop showing a repeated team task becoming a reviewed reusable Agent Skill with shared conversation, memory, handoff, and reuse.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=69d52eaf479dd011)
 
 **Summary:** Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.
 
@@ -77,7 +77,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Experimental Waitlist
 
-![Textbook architecture diagram showing household members selectively sharing data with a distinct CC agent identity, separate memory scopes, permission gates, and an isolated cloud computer.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/06-household-agent-boundaries.png?v=5b4ff0fd59a81b50)
+![Textbook architecture diagram of a shared household agent with separate identities, private memory, permissions, consent, approvals, and audit history.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=482c59bddb801ec4)
 
 **Summary:** Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.
 
@@ -119,7 +119,7 @@ reader_release: true
 
 **What changed since last coverage:** The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples.
 
-![Conceptual before-and-after illustration of fragmented AI tool adoption becoming a redesigned workflow with shared data and outcome measurement.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665)
+![Textbook before-and-after diagram contrasting fragmented prompt counting with outcome-first end-to-end workflow redesign.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=1e8b7acc5f9ab6c6)
 
 **Summary:** Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.
 
@@ -159,7 +159,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Beta Announced
 
-![Textbook diagram showing natural-language app and agent building passing through Salesforce data, metadata, security, and governance controls before deployment.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/04-governed-building.png?v=f97e426828ea5af6)
+![Textbook architecture diagram showing natural-language intent passing through data, metadata, security, governance, and testing into apps and agents.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=49b51fcb7f321591)
 
 **Summary:** Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.
 
@@ -199,7 +199,7 @@ reader_release: true
 **Evidence:** Official Research  
 **Availability:** Published Research
 
-![Conceptual textbook illustration of AI-driven research, agent oversight, and compute allocation as three measurement lenses.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82)
+![Textbook diagram of AI-led research, agent oversight, and compute allocation flowing through a verification ledger to independent audit.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=53fe9c101076e161)
 
 **Summary:** Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.
 
@@ -220,7 +220,7 @@ reader_release: true
 
 <span id="reading-dab-story-2026-09-18-3ac3c725"></span>
 
-## 6. GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used
+## 6. GitHub adds layered execution protections for organization-owned repository workflows
 
 <!-- reader-release:start -->
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Usage telemetry:</strong> Invocation counts describe adoption and tool mix. They need separate quality and outcome checks to assess value. Interaction counts do not measure quality or business value. MCP counts include connection attempts rather than tool calls, plugin totals overlap skill totals, and customer-defined names are intentionally grouped.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/" target="_blank" rel="noopener noreferrer">GitHub separates VS Code agent activity from generic Copilot usage</a></p><p>2026-09-12 · The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.</p></div></aside>
@@ -232,26 +232,24 @@ reader_release: true
 
 **Topics:** agent observability, Copilot CLI, Agent Skills, MCP, plugins, usage metrics
 
-<span class="story-data" data-story-id="dab-story-2026-09-18-3ac3c725" data-story-url="/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-18-3ac3c725" data-story-url="/stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/" hidden></span>
 
-<a href="{{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }}" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/' | relative_url }}" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-**What changed since last coverage:** The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.
+![Textbook pipeline diagram showing source, actor, workflow, environment, permission, and audit protection gates for organization-owned repository workflows.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=1f4f3baa8738596e)
 
-![Textbook diagram of Copilot CLI skills, agents, MCP servers, commands, and plugins flowing into usage and distinct-use telemetry with privacy grouping.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/02-cli-telemetry.png?v=e69696eeaa07df9f)
+**Summary:** GitHub introduced additional controls around who can start organization-owned repository workflows, which workflow definition is trusted, where it executes, what permissions it receives, and what evidence is retained. The useful engineering pattern is defense in depth: identity, source integrity, environment isolation, least privilege, and auditability work as one chain.
 
-**Summary:** GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.
-
-**Why it matters:** Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from the smaller set people actually invoke, identify enablement gaps, and measure whether reusable agent components are spreading.
+**Why it matters:** Agentic development makes workflow execution more frequent and more autonomous. A single approval switch is not enough; trustworthy automation needs independent gates that reduce the chance that an untrusted actor, altered definition, overpowered token, or weak runner can turn a routine workflow into a supply-chain incident.
 
 
 
-**What to do now — Measure reuse before expanding the catalog:** Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.
+**What to do now — Map every automation gate before expanding autonomy:** Document who can trigger a workflow, which revision runs, where it executes, which permissions it receives, and which immutable evidence remains after completion.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="source_clicks">Agentic CLI customizations now in the usage metrics API</a>
+**Source:** <a href="https://github.blog/changelog/2026-09-17-new-workflow-execution-protections-for-organization-owned-repositories/" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="source_clicks">New workflow execution protections for organization-owned repositories</a>
 
 <div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-3ac3c725">
   <span class="feedback-prompt">How useful was this?</span>
@@ -362,7 +360,7 @@ No video met today’s editorial quality standards.
 
 ## Editorial takeaway
 
-The strongest September 18 signal is not a single model release but a shift toward operationalizing agents: measure what they automate, govern how they act, redesign work around outcomes, and package repeatable procedures so people can reuse them safely.
+The strongest signal is not a single model release but a shared operating pattern: measure automation, place enforceable controls around it, redesign work around outcomes, and make reusable agent behavior inspectable before it spreads.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>

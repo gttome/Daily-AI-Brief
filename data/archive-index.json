@@ -33,8 +33,8 @@
       "story_id": "dab-story-2026-09-18-3ac3c725",
       "brief_date": "2026-09-18",
       "event_date": "2026-09-17",
-      "headline": "GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used",
-      "url": "/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/",
+      "headline": "GitHub adds layered execution protections for organization-owned repository workflows",
+      "url": "/stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/",
       "focus": "technical_ai_engineering",
       "topics": [
         "agent observability",
@@ -53,7 +53,7 @@
         "AI-assisted development",
         "Accessible agents for knowledge work"
       ],
-      "summary": "GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy."
+      "summary": "GitHub introduced additional controls around who can start organization-owned repository workflows, which workflow definition is trusted, where it executes, what permissions it receives, and what evidence is retained. The useful engineering pattern is defense in depth: identity, source integrity, environment isolation, least privilege, and auditability work as one chain."
     },
     {
       "content_type": "Article",

@@ -2,7 +2,7 @@
 layout: default
 title: "Rovo lets teams teach repeatable work as custom skills in ordinary language"
 description: "This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to co"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=69d52eaf479dd011"
 permalink: /stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/
 brief_date: 2026-09-18
 story_id: dab-story-2026-09-18-bc42dd44
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Rolling Out
 
-![Textbook workflow showing a repeated team process converted into a reviewed Rovo custom skill and reused across shared conversations with memory and agent handoffs.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2)
+![Textbook loop showing a repeated team task becoming a reviewed reusable Agent Skill with shared conversation, memory, handoff, and reuse.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=69d52eaf479dd011)
 
 **Summary:** Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.
 
