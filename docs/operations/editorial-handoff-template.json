@@ -167,6 +167,8 @@
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
   },
   "hard_rules": [
+    "Continue past metadata gating only when coverage_ready=true, every candidate has date_status=resolved_metadata_date, each focus_hint has at least three candidates, and agent_skill_signals>=1.",
+    "Run fresh deterministic discovery with DAB_RESEARCH_CUTOFF set to the original edition cutoff before the metadata gate.",
     "Before any model inspects article discovery candidates, run `_tools/under80-metadata-gate.mjs`; never open the raw discovery queue. The committed gate output must contain at most 20 candidates.",
     "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
     "Facts and image manifests must contain every selected candidate_id.",
