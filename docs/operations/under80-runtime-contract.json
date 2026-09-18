@@ -117,11 +117,28 @@
     "reuse_only_same_edition_accepted_assets_on_recovery": true,
     "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": true,
     "binary_transport": {
-      "method": "native_git_working_tree_push",
+      "method": "github_git_data_api",
+      "connector_tools": [
+        "create_blob",
+        "create_tree",
+        "create_commit",
+        "update_ref"
+      ],
+      "blob_encoding_for_png": "base64",
       "github_contents_api_for_png_prohibited": true,
-      "connector_create_or_update_file_for_png_prohibited": true,
+      "native_git_credentials_required": false,
       "local_validator": "node _tools/validate-handoff-images.mjs --kernel _records/editorial-handoff/kernel.json --images _records/editorial-handoff/images.json",
-      "reason": "Binary PNGs larger than connector text/base64 limits can be truncated even when the local generation is valid. Preserve full accepted image bytes by committing and pushing from the working tree with native git."
+      "atomic_commit_sequence": [
+        "fetch current main commit and tree SHA",
+        "create isolated editorial-handoff branch from that exact main SHA",
+        "create UTF-8 blobs for handoff JSON artifacts",
+        "create base64 blobs for the six accepted PNG files",
+        "create one tree over the trusted main tree using mode 100644/type blob entries",
+        "create one commit with trusted main as parent",
+        "advance only the isolated handoff branch with update_ref",
+        "stop Work immediately; GitHub Actions validates remote PNG integrity"
+      ],
+      "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that truncated prior PNGs."
     }
   },
   "media": {
@@ -144,7 +161,7 @@
     "one editorial semantic pass",
     "six full-quality image generations and image acceptance",
     "write editorial kernel/facts/media/image manifest",
-    "commit one editorial-handoff manifest on an isolated editorial-handoff/* branch"
+    "atomically create one editorial-handoff commit on an isolated editorial-handoff/* branch through authenticated GitHub Git Data API operations"
   ],
   "github_actions_owns": [
     "retrieve and compact the nine-candidate article evidence packet with zero model calls before Work",
@@ -185,9 +202,9 @@
       "post_editorial_model_passes": 0,
       "deterministic_validation_model_calls": 0,
       "metadata_candidates_max": 20,
-      "image_transport_method": "native_git"
+      "image_transport_method": "github_git_data_api"
     },
-    "hard_stop": "After local image validation and a native git push of the complete handoff commit, the daily AI task ends. Do not upload PNG bytes through GitHub Contents API/connector file-write calls. GitHub Actions owns remote integrity validation and all deterministic downstream work.",
+    "hard_stop": "After all six local images pass integrity validation, create the handoff atomically with authenticated GitHub Git Data API operations (create_blob/create_tree/create_commit/update_ref) and then end Work. Do not use native git authentication, GitHub Contents API, connector create_file/update_file, or text/base64 Contents writes for PNGs. GitHub Actions owns remote integrity validation and all deterministic downstream work.",
     "template_path": "docs/operations/editorial-handoff-template.json",
     "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
     "production_branch_prefix": "editorial-handoff/production/",
@@ -204,7 +221,21 @@
         "downstream": "GitHub Actions may run deterministic expansion/tests on the isolated branch but MUST NOT create a publication PR or label, merge to main, trigger Pages deployment, or promote production."
       }
     },
-    "article_evidence_copy_path": "_records/editorial-handoff/article-evidence.json"
+    "article_evidence_copy_path": "_records/editorial-handoff/article-evidence.json",
+    "git_data_transport": {
+      "branch_creation": "create_branch from exact trusted main SHA",
+      "png_blob_creation": "create_blob with encoding=base64 using the complete local PNG bytes",
+      "text_blob_creation": "create_blob with encoding=utf-8",
+      "tree_entry_shape": {
+        "mode": "100644",
+        "type": "blob"
+      },
+      "create_tree_base": "trusted main tree SHA",
+      "create_commit_parent": "trusted main commit SHA",
+      "finalize": "update_ref on the isolated handoff branch only; force=false",
+      "no_contents_api_for_binary": true,
+      "no_native_git_credentials": true
+    }
   },
   "credits": {
     "target_lt": 80,

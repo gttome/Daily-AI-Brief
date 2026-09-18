@@ -38,9 +38,17 @@
     "reuse_accepted_on_recovery": true,
     "batch_regeneration_on_unrelated_failure": false,
     "alternative_requires_side_by_side_equivalence": true,
-    "binary_transport": "native_git_working_tree_push",
+    "binary_transport": "github_git_data_api",
     "github_contents_api_for_png": false,
-    "prepush_integrity_validator": "_tools/validate-handoff-images.mjs"
+    "prepush_integrity_validator": "_tools/validate-handoff-images.mjs",
+    "github_git_data_blob_encoding": "base64",
+    "native_git_credentials_required": false,
+    "connector_git_data_tools": [
+      "create_blob",
+      "create_tree",
+      "create_commit",
+      "update_ref"
+    ]
   },
   "video": {
     "preferred_count": 2,
@@ -72,7 +80,7 @@
   "runtime_contract_path": "docs/operations/under80-runtime-contract.json",
   "daily_work_reads_historical_runbook": false,
   "post_editorial_execution_owner": "github_actions",
-  "work_stop_boundary": "after one accepted editorial bundle, six accepted full-quality images, and one committed editorial-handoff manifest on an isolated branch",
+  "work_stop_boundary": "after one accepted editorial bundle, six accepted full-quality images, local PNG integrity validation, and one atomic Git Data API handoff commit on an isolated branch",
   "work_forbidden_after_handoff": [
     "deterministic generator",
     "repository test suite",
@@ -157,5 +165,13 @@
     "focus_distribution": "3/3/3",
     "work_network_article_retrieval": false,
     "model_visible_chars_max": 12000
+  },
+  "handoff_transport": {
+    "method": "github_git_data_api",
+    "authenticated_by_existing_github_connector": true,
+    "added_credentials": false,
+    "contents_api_binary_writes": false,
+    "native_git_authentication": false,
+    "atomic_ref_update": true
   }
 }

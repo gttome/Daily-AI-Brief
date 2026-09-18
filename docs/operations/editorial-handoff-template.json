@@ -138,7 +138,9 @@
       "height": 630,
       "kind": "editorial_explainer",
       "cache_key": "accepted-image-hash-prefix",
-      "sha256": "accepted-image-sha256"
+      "sha256": "accepted-image-sha256",
+      "quality_accepted": true,
+      "generation_method": "openai_image_generation"
     }
   },
   "media_shape": {
@@ -168,10 +170,10 @@
     "execution_mode": "production",
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
     "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-    "image_transport_method": "native_git"
+    "image_transport_method": "github_git_data_api"
   },
   "hard_rules": [
-    "Before handoff, run `_tools/validate-handoff-images.mjs`, then commit and push PNG binaries with native git from the working tree. Never upload PNG bytes through GitHub Contents API or connector create/update-file calls.",
+    "Before handoff, run `_tools/validate-handoff-images.mjs`. Then create PNG blobs with the authenticated GitHub Git Data API (`create_blob` with `encoding=base64`), compose one tree/commit, and advance only the isolated handoff ref with `update_ref`. Do not use native git credentials or GitHub Contents API/create_file/update_file for PNG bytes.",
     "Do not perform article-source network retrieval in Work. Use only the committed nine-candidate GitHub Actions article-evidence packet.",
     "Work must not run `_tools/discover-sources.mjs` or the metadata gate. Those execute in GitHub Actions preflight with zero model calls. Work may read only the preflight `result/metadata-candidates.json` and `result/receipt.json` after `coverage_ready=true`.",
     "Continue past metadata gating only when coverage_ready=true, every candidate has date_status=resolved_metadata_date, each focus_hint has at least three candidates, and agent_skill_signals>=1.",
@@ -197,6 +199,17 @@
     "deterministic_validation_model_calls": 0,
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
     "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-    "image_transport_method": "native_git"
+    "image_transport_method": "github_git_data_api"
+  },
+  "transport_shape": {
+    "method": "github_git_data_api",
+    "png_blob_encoding": "base64",
+    "text_blob_encoding": "utf-8",
+    "tree_entry": {
+      "mode": "100644",
+      "type": "blob"
+    },
+    "commit_parent": "exact trusted main SHA",
+    "update_ref_force": false
   }
 }
