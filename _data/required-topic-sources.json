@@ -9,15 +9,16 @@
       "sources": [
         {
           "source_id": "openai-academy-skills",
-          "owner": "OpenAI",
-          "discovery_endpoint": "https://openai.com/academy/skills/",
-          "canonical_url": "https://openai.com/academy/skills/",
+          "owner": "OpenAI Academy",
+          "discovery_endpoint": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills",
+          "canonical_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills",
           "format": "article",
           "audience": [
             "knowledge_worker"
           ],
           "evidence_class": "publisher_authored",
-          "status": "active"
+          "status": "active",
+          "metadata_notes": "Public OpenAI Academy Skills resource; use page publication/last-updated metadata and require material-update review when the seven-day exception depends on updated_at."
         },
         {
           "source_id": "anthropic-research-skills",
