@@ -245,11 +245,12 @@ jobs:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
           MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
+          METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
           COVERAGE_PERIOD: ${{ steps.handoff.outputs.coverage_period }}
         run: |
           set -euo pipefail
           published_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --images /tmp/images.json --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
+          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --metadata "$METADATA_CANDIDATES_PATH" --images /tmp/images.json --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
           if [ -n "$MEDIA_PATH" ]; then args+=(--media "$MEDIA_PATH"); fi
           node _tools/editorial-kernel.mjs "${args[@]}"
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
