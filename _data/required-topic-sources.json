@@ -18,7 +18,10 @@
           ],
           "evidence_class": "publisher_authored",
           "status": "active",
-          "metadata_notes": "Public OpenAI Academy Skills resource; use page publication/last-updated metadata and require material-update review when the seven-day exception depends on updated_at."
+          "metadata_notes": "Public OpenAI Academy Skills resource; use page publication/last-updated metadata and require material-update review when the seven-day exception depends on updated_at.",
+          "known_publication_date": "2026-02-25T00:00:00Z",
+          "known_updated_at": "2026-09-17T00:00:00Z",
+          "date_source": "official_page_metadata"
         },
         {
           "source_id": "anthropic-research-skills",
