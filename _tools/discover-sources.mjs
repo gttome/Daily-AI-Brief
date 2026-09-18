@@ -37,7 +37,9 @@ const ordered=[...monitored].sort((a,b)=>sourceRank(b)-sourceRank(a)||a.source_i
 const preflightCore=ordered.filter(s=>s.preflight_priority),requiredCore=ordered.filter(s=>s.required_topic&&!s.preflight_priority),ordinary=ordered.filter(s=>!s.required_topic&&!s.preflight_priority),core=[...preflightCore,...requiredCore,...ordinary.slice(0,6)],rest=ordinary.slice(6),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
 const rotated=rest.length?[...rest.slice(rotation),...rest.slice(0,rotation)]:[];
 const scanPlan=[...core,...rotated].filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
-const MIN_SOURCES_SCANNED=12,MAX_SOURCES_SCANNED=24,FRESH_METADATA_TARGET=20,FRESH_HOURS=72;
+const MIN_SOURCES_SCANNED=Math.max(1,Math.min(24,Number(process.env.DAB_SOURCE_SCAN_MIN||12)));
+const MAX_SOURCES_SCANNED=Math.max(MIN_SOURCES_SCANNED,Math.min(64,Number(process.env.DAB_SOURCE_SCAN_MAX||24)));
+const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;
 let scanned=0,stopReason=null;
 const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
  const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
@@ -45,6 +47,28 @@ const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
  const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
  return ordinary||required;
 }).length;
+
+// Seed exact required-topic pages with authoritative registry dates so mandatory topics are not lost
+// merely because a single article page has weak catalog markup. These remain metadata-only candidates
+// and still require deep review before selection.
+for(const s of requiredSources){
+  if(!s.canonical_url)continue;
+  const title=s.source_id==='openai-academy-skills'?'Skills — OpenAI Academy':
+    s.source_id==='anthropic-research-skills'?'Claude Skills: Customize AI for your workflows':
+    s.source_id==='anthropic-engineering-agent-skills'?'Equipping agents for the real world with Agent Skills':s.source_id;
+  const published=s.known_publication_date||null,updated=s.known_updated_at||null;
+  const key=new URL(s.canonical_url).href;
+  if(!candidates.has(key))candidates.set(key,{
+    source_id:s.source_id,publisher:s.owner||null,headline:title,canonical_url:key,url:key,
+    published_at:published,publication_date:published,publication_dates:published?[published]:[],
+    date_conflict:false,updated_at:updated,date_source:s.date_source||'required_topic_registry',
+    snippet:'Authoritative required-topic source for reusable Agent Skills.',
+    content_type:'article',retrieval_status:'metadata_only',source_reliability:s.evidence_class||'publisher_authored',
+    format:'article',discovered_at:new Date().toISOString(),runtime_seconds:null,
+    required_topic:s.required_topic||'agent_skills',required_topic_fallback_days:s.required_topic_fallback_days||7,
+    status:'needs_editorial_and_metadata_review'
+  });
+}
 
 for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
  const batch=scanPlan.slice(i,Math.min(i+4,MAX_SOURCES_SCANNED));
