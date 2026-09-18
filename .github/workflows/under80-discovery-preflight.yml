@@ -117,17 +117,27 @@ jobs:
           if(!d.preferred_agent_skill_candidate_id) throw new Error('preferred_agent_skill_candidate_missing');
           NODE
 
+      - name: Pre-fetch bounded article evidence outside Work
+        if: steps.request.outputs.run_preflight == 'true'
+        run: |
+          set -euo pipefail
+          node _tools/under80-evidence-preflight.mjs \
+            --input _records/discovery-preflight/result/metadata-candidates.json \
+            --out _records/discovery-preflight/result/article-evidence.json \
+            --receipt _records/discovery-preflight/result/article-evidence-receipt.json
+
       - name: Create compact receipt and discard raw discovery mutations
         if: steps.request.outputs.run_preflight == 'true'
         run: |
           set -euo pipefail
-          node - _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json <<'NODE' > _records/discovery-preflight/result/receipt.json
+          node - _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence-receipt.json <<'NODE' > _records/discovery-preflight/result/receipt.json
           const fs=require('fs'),crypto=require('crypto');
-          const [requestPath,resultPath]=process.argv.slice(2);
+          const [requestPath,resultPath,evidenceReceiptPath]=process.argv.slice(2);
           const request=JSON.parse(fs.readFileSync(requestPath,'utf8'));
           const resultText=fs.readFileSync(resultPath,'utf8');
           const result=JSON.parse(resultText);
-          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,edition_date:request.edition_date,cutoff:request.cutoff,candidate_count:result.candidates.length,coverage_counts:result.coverage_counts,agent_skill_signals:result.agent_skill_signals,agent_skill_story_ready_signals:result.agent_skill_story_ready_signals,preferred_agent_skill_candidate_id:result.preferred_agent_skill_candidate_id,coverage_ready:result.coverage_ready,metadata_candidates_sha256:crypto.createHash('sha256').update(resultText).digest('hex'),production_changes:0},null,2)+'\n');
+          const evidence=JSON.parse(fs.readFileSync(evidenceReceiptPath,'utf8'));
+          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,edition_date:request.edition_date,cutoff:request.cutoff,candidate_count:result.candidates.length,coverage_counts:result.coverage_counts,agent_skill_signals:result.agent_skill_signals,agent_skill_story_ready_signals:result.agent_skill_story_ready_signals,preferred_agent_skill_candidate_id:result.preferred_agent_skill_candidate_id,coverage_ready:result.coverage_ready,article_evidence_ready:evidence.ready,article_evidence_count:evidence.retrieved,article_evidence_chars:evidence.model_visible_chars,article_evidence_path:'_records/discovery-preflight/result/article-evidence.json',article_evidence_receipt_path:'_records/discovery-preflight/result/article-evidence-receipt.json',metadata_candidates_sha256:crypto.createHash('sha256').update(resultText).digest('hex'),production_changes:0},null,2)+'\n');
           NODE
           git restore -- _data/media-candidate-queue.json || true
           discovery_file="_records/discovery/${{ steps.config.outputs.edition_date }}.json"
@@ -141,7 +151,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/receipt.json
+          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence.json _records/discovery-preflight/result/article-evidence-receipt.json _records/discovery-preflight/result/receipt.json
           git commit -m "Complete under-80 discovery preflight"
           git push origin "HEAD:$TARGET_REF"
 
@@ -151,6 +161,7 @@ jobs:
           echo '### Under-80 discovery preflight' >> "$GITHUB_STEP_SUMMARY"
           echo '- Model calls: **0**' >> "$GITHUB_STEP_SUMMARY"
           echo '- Work/Codex discovery execution: **0**' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Work/Codex article-source retrieval execution: **0**' >> "$GITHUB_STEP_SUMMARY"
           echo '- Raw discovery queue committed: **no**' >> "$GITHUB_STEP_SUMMARY"
           if [ -f _records/discovery-preflight/result/receipt.json ]; then
             echo '```json' >> "$GITHUB_STEP_SUMMARY"
