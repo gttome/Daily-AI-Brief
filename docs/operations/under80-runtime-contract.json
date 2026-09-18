@@ -34,7 +34,12 @@
     "model_visible_evidence_chars_max": 12000,
     "research_capsule_chars_max": 6500,
     "method": "metadata-first; deterministic filtering before deep retrieval; stop when six compliant finalists plus bounded reserves are supported",
-    "failure": "If bounded evidence cannot support six compliant stories, preserve the last valid edition and stop."
+    "failure": "If bounded evidence cannot support six compliant stories, preserve the last valid edition and stop.",
+    "metadata_prefilter_tool": "_tools/under80-metadata-gate.mjs",
+    "metadata_prefilter_command": "node _tools/under80-metadata-gate.mjs --input _data/media-candidate-queue.json --out _records/editorial-handoff/metadata-candidates.json --limit 20 --cutoff <original-cutoff>",
+    "raw_discovery_queue_model_visible": false,
+    "model_visible_discovery_rule": "Do not open or summarize the raw discovery queue. Run the deterministic metadata gate and use only its candidates array as model-visible article discovery input.",
+    "metadata_gate_output_path": "_records/editorial-handoff/metadata-candidates.json"
   },
   "semantic_work": {
     "editorial_model_passes": 1,
@@ -100,6 +105,7 @@
       "kernel_path",
       "facts_path",
       "images_path",
+      "metadata_candidates_path",
       "media_path",
       "coverage_period",
       "editorial_model_passes",
@@ -109,7 +115,8 @@
     "required_values": {
       "editorial_model_passes": 1,
       "post_editorial_model_passes": 0,
-      "deterministic_validation_model_calls": 0
+      "deterministic_validation_model_calls": 0,
+      "metadata_candidates_max": 20
     },
     "hard_stop": "After the handoff commit is pushed, the daily AI task ends. It must not run generator/tests/build/PR/CI/merge/Pages/live validation or poll any release state.",
     "template_path": "docs/operations/editorial-handoff-template.json",
