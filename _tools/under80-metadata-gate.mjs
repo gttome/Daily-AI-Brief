@@ -140,7 +140,8 @@ const candidates=selected.map((x,i)=>({...x,candidate_id:x.candidate_id||`m${Str
 if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_violation');
 const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
-const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillSignals>=1;
+const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
+const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillStoryReadySignals>=1;
 const result={
  schema_version:'1.1.0',
  profile_id:'under80-v1',
@@ -155,6 +156,7 @@ const result={
  deferred_count:Math.max(0,eligible.length-candidates.length),
  coverage_counts:coverageCounts,
  agent_skill_signals:agentSkillSignals,
+ agent_skill_story_ready_signals:agentSkillStoryReadySignals,
  coverage_ready:coverageReady,
  rejected,
  invariant:'Only the candidates array in this file is permitted as model-visible article discovery input. Every retained candidate has a resolved in-window metadata date. The raw discovery queue is traceability-only and must not be opened by the editorial model.',
@@ -162,4 +164,4 @@ const result={
 };
 fs.mkdirSync(path.dirname(path.resolve(args.out)),{recursive:true});
 fs.writeFileSync(path.resolve(args.out),JSON.stringify(result,null,2)+'\n');
-console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,coverage_ready:coverageReady,rejected}));
+console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,agent_skill_story_ready_signals:agentSkillStoryReadySignals,coverage_ready:coverageReady,rejected}));
