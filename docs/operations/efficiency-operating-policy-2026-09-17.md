@@ -1,39 +1,51 @@
 # Daily Generative AI Brief — Efficiency Operating Policy
 
-Effective for new editions beginning September 18, 2026. September 17 remains the visual and measurement baseline. This file supersedes older efficiency instructions where they conflict; detailed machine-readable budgets are in `docs/operations/efficiency-operating-policy.json`.
+**Current profile:** `under80-v1`  
+**Effective:** September 18, 2026  
+**Machine-readable authority:** `docs/operations/efficiency-operating-policy.json`
 
-## Normal path
+This policy supersedes older efficiency instructions where they conflict. September 17 remains the visual baseline and historical evidence remains unchanged.
 
-Use deterministic acquisition, cache reuse, evidence compilation, derived-field generation, validation, publication mechanics, and unchanged-state handling. Use one compact editorial intelligence pass for semantic judgment. Routine post-editorial processing and routine validation use no model.
+## Whole-cycle objective
 
-Normal limits are 20 retained metadata candidates, 9 deep reviews, at most 3 additional deep reviews for a named insufficiency, 1.5M normalized retrieved characters, a 9,000-character research capsule, and a 6,500-character normal editorial context. The absolute retrieval exception ceiling is 2.5M characters.
+A complete edition is qualified only when all attributable Work/Codex usage—publisher, failures, recovery, validation, Brief Command Center AI work, and edition-related maintenance—is below **80 credits**. The first three consecutive normal scheduled editions must each pass independently. Missing cost evidence is **unverified**, never zero. When a reliable scoped meter is available, 65 consumed credits is the no-new-AI-work admission threshold.
 
-## Reader order
+No new paid service, API runner, credential, account, model provider, permission expansion, or manual approval checkpoint is part of this profile.
 
-Canonical selection and validation stay 2 Technical + 2 Knowledge Worker + 2 Agents/Non-technical. Rendering alone presents new editions as Agents/Non-technical first, Knowledge Workers second, Technical last. Do not rewrite September 17 or earlier editions.
+## One bounded AI task
 
-## Visuals
+Use one daily editorial AI task. Normal operation has one semantic editorial pass, zero post-editorial model passes, zero validation model passes, zero automatic AI recovery runs, and zero AI polling of CI or deployment.
 
-September 17 quality is the minimum. Deterministic diagrams are acceptable only when they preserve or improve story-specific explanatory detail, information density, typography, composition, and professional textbook quality. Otherwise use the high-quality generative path for that story.
+Retain at most 20 metadata article candidates and deep-review **at most nine** candidates. There is no +3 deep-review exception in this profile. If nine reviews cannot support six compliant stories, preserve the last valid edition and record the insufficiency instead of broadening automatically. Aim for at most 18,000 model-visible evidence characters and 4,000 characters of semantic rule/context overhead. Full evidence remains outside normal model input.
 
-## Media
+Capture verified source word counts during the first retrieval/review so reading-time estimates can be derived without a second source pass.
 
-Prefer two qualifying videos and treat one as the minimum desirable result. A zero-video result requires bounded discovery evidence: approximately 15–20 metadata candidates, 8–10 trusted sources when available, both video intents, the <=10 / 10–15 / 15–20 minute duration ladder, and only the strongest 3–5 candidates deep-reviewed.
+## Images
 
-Target two qualifying podcasts when two are available. If two are selected, they must come from different approved shows/sources and no more than one may be from _The AI Daily Brief_. Podcasts retain no fixed duration ceiling.
+The existing high-quality OpenAI image-generation path remains the default. Preserve six story-specific 1200×630 white-background textbook illustrations with the established detail, information density, annotations, composition, hierarchy, and mobile legibility. Reuse an accepted image during recovery whenever its story evidence, visual brief, style version, and settings are unchanged. Repair only the invalidated image. Never regenerate the accepted set because another stage failed.
 
-## Command Center access expectation
+The deterministic renderer is not authorized to replace the current generative path unless same-story side-by-side evidence demonstrates equivalent or better quality. An uncertain or failed comparison keeps the current generator. Image quality is not a budget variable.
 
-The dashboard is link-accessible and read-only for viewers. Owner authentication remains required for administrative functions and changes to authoritative state. Signed-out inability to run an owner-only function is expected and is not a reader-access defect. The machine-readable classifier is `_data/command-center-access-policy.json`.
+## Media and Watchlist
 
-## Watchlist
+Target two verified videos under the current 10/15/20-minute ladder and two qualifying podcasts from distinct approved sources, with at most one from _The AI Daily Brief_. Empty positions use the current reason-coded, privacy-safe behavior.
 
-Share acquisition evidence with the Brief. Carry unchanged topics forward deterministically and refresh semantics only for materially changed evidence. Retry failed sources selectively instead of repeating a broad sweep.
+Articles, media, book relevance, and Watchlist semantic decisions share the same editorial package. There is no independent broad Watchlist AI research session or second semantic book-review pass.
 
-## Daily validation
+## Deterministic release and validation
 
-The normal 09:00 America/Chicago validation path reads the publication receipt, checks current-edition artifacts and current/changed routes, applies the Command Center access contract, and emits a compact receipt. It does not rerun discovery or resummarize the Brief. A semantic model call is permitted only for a failed item that cannot be resolved deterministically.
+After the accepted editorial bundle exists, ordinary software owns generation, tests, protected PR promotion, deployment verification, and the public-safe status packet. GitHub main protection remains authoritative: exact-head required CI must pass, strict main compatibility must hold, and no bypass or direct-main push is allowed.
 
-## Promotion
+A publication candidate may merge automatically only when it is a same-repository, open, non-draft PR to `main`, carries the trusted `publication-candidate` label, its exact head completed the required deterministic CI successfully, and the repository policy enables autonomous merge. A merge denied by GitHub protection is a release failure, not a reason to weaken protection.
 
-Do not enable autonomous production merging until an enforceable required-gate control exists for `main`. Preserve rollback evidence and stable public URLs. Record credits and tokens only when they are actually observable.
+Deterministic validation runs with zero model calls after Pages completion, with the existing 09:00 America/Chicago GitHub schedule as a fallback. The separate 09:00 **Work** validator may be disabled only after a successful live deterministic validation receipt proves parity. Validation failure may produce a bounded diagnostic packet; it must not automatically start an AI repair session.
+
+## Command Center and private domains
+
+The link-accessible dashboard is a read-only projection of canonical edition/deployment state. Owner authentication remains required for private mutation and private records. Publication, coverage, measurement, retention, learning, and book-backlog states remain independent; private owner-operation failure cannot erase a verified public release.
+
+## Failure behavior
+
+Failures stop cheaply. Preserve the last valid edition and all completed checkpoints. Retry only a permitted transient network failure once. Never broaden research indefinitely, regenerate unchanged accepted images, start an autonomous semantic repair, hide a cost in another session, or restore the old two-Work-task architecture as a cost workaround.
+
+The full image standard, editorial contract, privacy rules, stable URLs, ratings/sharing behavior, archive/feed/calendar parity, append-only corrections, and protected-main rules remain mandatory.

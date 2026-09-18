@@ -160,3 +160,23 @@ Use `begin --stage <name>` and `end --id <returned span ID>` around externally p
 Use `observe --field <group.field> --value <JSON value> --evidence <original receipt>` for actual candidate/deep-review counts, cache metrics, sufficiency early-stop result, and observable model calls/input/output tokens. Record the source-reported value only. Unobservable model or token usage remains null and keeps measurement status DEGRADED. Deep-review expansion requires an insufficiency reason in the editorial evidence.
 
 Record lifecycle `started` at initialization, `published` after the initial edition merge is verified, and `qa_complete` only after final live/Pages/QA verification. The journal exports initial-publication and post-publication QA durations separately. Export with `export --out <efficiency JSON>` and retain the private journal with the existing private checkpoint. No platform credits are inferred.
+
+
+## September 18 under-80 operating profile
+
+The active efficiency profile is `under80-v1` in `docs/operations/efficiency-operating-policy.json`. It supersedes older efficiency instructions in this runbook where they conflict; historical execution evidence above remains unchanged.
+
+For new production attempts:
+
+- Run one bounded editorial AI task. Do not start a separate AI validator, AI release monitor, second book-review pass, or automatic semantic repair.
+- Retain at most 20 metadata article candidates and deep-review no more than nine. There is no +3 exception in this profile. If the nine reviewed candidates cannot support a compliant six-story edition, preserve the last valid edition and record the insufficiency.
+- Feed only compact reviewed evidence to the editorial pass. Capture source word counts during initial evidence retrieval/review and carry them forward for reading-time derivation.
+- Keep the current high-quality OpenAI image-generation approach and established settings as the default. Reuse accepted same-edition images during recovery when evidence/brief/style dependencies match. Never regenerate the accepted set because a later stage failed.
+- Target two videos under the current duration ladder and two source-diverse podcasts under the current podcast policy. Watchlist, media, book relevance, and six-story selection share the same semantic editorial pass.
+- After the accepted bundle is saved, deterministic software owns rendering, tests, protected PR promotion, Pages completion, live validation, and public-safe Command Center status. No model polls CI.
+- A `publication-candidate` PR is eligible for unattended merge only under the exact rules in the current machine-readable policy and GitHub protection. Protection denial holds the release.
+- Deterministic validation performs zero model calls. A failure records a bounded diagnostic packet but does not automatically start AI recovery.
+- The separate 09:00 Work validator remains enabled until a live deterministic receipt proves the replacement path. After that proof, disable only that Brief validator and retain the 07:00 publisher as the sole daily AI task.
+- Do not claim the <80 target from prompt size, elapsed time, skipped work, or unobserved credits. Qualify only after three consecutive complete scheduled editions each measure below 80 credits with protected image quality and no manual intervention.
+
+If a reliable scoped credit meter is exposed, stop admitting new AI work after 65 consumed credits for that edition. If no supported scoped meter exists, enforce the structural ceilings and record cost as unverified.

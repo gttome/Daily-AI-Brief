@@ -37,6 +37,7 @@ function includedMedia(edition){
 function semanticPacket(failures){return failures.map(x=>({artifact_id:x.affected_item||date,failed_rule:x.check_id,affected_item:x.affected_item||null,expected_value:'deterministic contract pass',observed_value:x.evidence,minimal_evidence:x.evidence,repair_scope:'failed_item_only'}));}
 
 let completion,edition,routeCount=0;
+let coverage={articles:null,videos:null,podcasts:null,included_items:null,potential_positions:10,video_omissions:[],podcast_omissions:[]};
 try{completion=readJson(`_records/publication/${date}/completion.json`);edition=readJson(`_data/editions/${date}.json`);}catch(error){
  check('publication_receipt','fail','critical',`Required current-edition evidence is missing: ${error.message}`);
 }
@@ -48,6 +49,9 @@ if(completion&&edition){
  const editionOk=stories.length===6&&Object.values(counts).every(n=>n===2)&&new Set(stories.map(x=>x.story_id)).size===6&&new Set(stories.map(x=>x.permanent_url)).size===6;
  check('canonical_edition_contract',editionOk?'pass':'fail','critical',editionOk?`Six unique stories with 2/2/2 allocation: ${JSON.stringify(counts)}.`:`Canonical edition contract mismatch: stories=${stories.length}, allocation=${JSON.stringify(counts)}.`);
  const media=includedMedia(edition);
+ const videoSlots=Object.values(edition.worth_watching||{});
+ const podcastSlots=Array.isArray(edition.podcasts)?edition.podcasts:(edition.podcast?[edition.podcast]:[]);
+ coverage={articles:stories.length,videos:media.videos.length,podcasts:media.podcasts.length,included_items:stories.length+media.videos.length+media.podcasts.length,potential_positions:10,video_omissions:videoSlots.filter(x=>x?.status!=='included').map(x=>x?.reason_code||x?.status||'empty'),podcast_omissions:podcastSlots.filter(x=>x?.status==='empty').map(x=>x?.reason_code||x?.status||'empty')};
  if(date>='2026-09-18')check('podcast_collection_contract',media.podcasts.length<=2&&new Set(media.podcasts.map(x=>x.show||x.source?.organization||x.source?.title)).size===media.podcasts.length?'pass':'fail','high',`Included podcasts=${media.podcasts.length}; distinct sources=${new Set(media.podcasts.map(x=>x.show||x.source?.organization||x.source?.title)).size}.`);
  const required=[`briefs/${date}.md`,'latest.md','index.md','archive.md','feed.xml','daily-feed.xml','feed.json',...(completion.file_set?.assets||[]),...(completion.file_set?.derived_outputs||[])];
  const missing=[...new Set(required)].filter(x=>!exists(x));
@@ -88,7 +92,9 @@ const protectedObservation=classifyCommandCenterObservation('signed_out_owner_op
 check('command_center_owner_operations',protectedObservation.result.toLowerCase(),'medium',protectedObservation.reason);
 
 const failures=checks.filter(x=>x.result==='fail'),ended=new Date().toISOString();
-const record={schema_version:'1.1.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:routeCount,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,checks,final_result:failures.some(x=>['critical','high'].includes(x.severity))?'fail':failures.length?'degraded':'pass',semantic_escalation_required:failures.length>0,semantic_escalation_packet:semanticPacket(failures)};
+const finalResult=failures.some(x=>['critical','high'].includes(x.severity))?'fail':failures.length?'degraded':'pass';
+const domainStates={publication:completion?.phase==='pages_verified'&&completion?.pages?.conclusion==='success'?'verified':completion?'pending':'unavailable',coverage:coverage.included_items===10?'complete':coverage.included_items===null?'unavailable':'degraded',measurements:'credit_target_unverified',retention:'private_unverified',learning:'deferred',book_backlog:'private_unverified'};
+const record={schema_version:'1.2.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:routeCount,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,coverage,domain_states:domainStates,checks,final_result:finalResult,semantic_escalation_required:false,diagnostic_packet:semanticPacket(failures),automatic_ai_recovery_runs:0};
 const out=path.resolve(args.out||`/tmp/dab-validation-${date}.json`);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(record,null,2)+'\n');
 console.log(JSON.stringify(record,null,2));
 if(record.final_result==='fail')process.exitCode=1;

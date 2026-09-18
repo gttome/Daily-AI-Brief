@@ -3,7 +3,7 @@ const POLICY_KEYS=new Set([
  'normal_retrieved_char_limit','absolute_retrieved_char_limit','research_capsule_char_limit',
  'work_context_char_limit','normal_editorial_model_passes','normal_post_editorial_model_passes',
  'normal_validation_model_passes','reader_focus_order','canonical_focus_order_unchanged',
- 'visual_quality_baseline','video','podcast','autonomous_main_merge_enabled'
+ 'visual_quality_baseline','image','video','podcast','autonomous_main_merge_enabled','profile_id','daily_system_credit_target_lt','credit_admission_threshold','daily_ai_task_limit','daily_validation_ai_tasks','deep_review_expansion_enabled','model_visible_evidence_char_limit','semantic_rule_context_char_limit','broad_fallback_searches','automatic_ai_recovery_runs','ai_release_polling','deterministic_validation','failure_policy'
 ]);
 
 function publicPolicy(policy={}){
@@ -31,6 +31,9 @@ export function commandCenterDeltaPacket({validation={},watchlist={},policy={},g
    final_result:validation.final_result||'unavailable',
    model_calls:Number.isInteger(validation.model_calls)?validation.model_calls:null,
    semantic_escalation_required:validation.semantic_escalation_required===true,
+   coverage:validation.coverage&&typeof validation.coverage==='object'?validation.coverage:null,
+   domain_states:validation.domain_states&&typeof validation.domain_states==='object'?validation.domain_states:null,
+   automatic_ai_recovery_runs:Number.isInteger(validation.automatic_ai_recovery_runs)?validation.automatic_ai_recovery_runs:null,
    checks
   },
   watchlist:{

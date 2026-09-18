@@ -8,8 +8,11 @@ export function readingMinutes(evidence){
  return Math.max(1,Math.ceil(evidence.word_count/200));
 }
 export function sourceReadingMinutes(item,id=item.story_id){
+ const sourceUrl=item.source?.url||item.source_url;
+ const embedded=item.source?.reading_evidence;
+ if(embedded?.status==='verified'&&sourceUrl)return readingMinutes({...embedded,source_url:sourceUrl});
  const evidence=catalog.source_reading?.[id];
- return evidence?.source_url===(item.source?.url||item.source_url)?readingMinutes(evidence):null;
+ return evidence?.source_url===sourceUrl?readingMinutes(evidence):null;
 }
 export function validateReadingSupport(edition,data=catalog){
  const stories=new Map(edition.stories.map(x=>[x.story_id,x]));
