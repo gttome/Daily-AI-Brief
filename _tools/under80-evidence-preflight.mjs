@@ -13,7 +13,7 @@ const focuses=['technical_ai_engineering','applied_genai_knowledge_workers','age
 const preferred=gate.preferred_agent_skill_candidate_id||gate.candidates.find(x=>x.agent_skill_story_ready)?.candidate_id||null;
 if(!preferred)throw Error('preferred_agent_skill_candidate_required');
 
-const byFocus=new Map(focuses.map(f=>[f,gate.candidates.filter(x=>x.focus_hint===f).sort((a,b)=>(b.prefilter_score||0)-(a.prefilter_score||0)||String(a.candidate_id).localeCompare(String(b.candidate_id)))]));
+const byFocus=new Map(focuses.map(f=>[f,gate.candidates.filter(x=>x.focus_hint===f&&x.background_only!==true).sort((a,b)=>(b.prefilter_score||0)-(a.prefilter_score||0)||String(a.candidate_id).localeCompare(String(b.candidate_id)))]));
 const plan=[];
 for(const focus of focuses){
  const pool=byFocus.get(focus);
