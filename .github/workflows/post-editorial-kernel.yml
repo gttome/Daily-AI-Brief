@@ -176,7 +176,7 @@ jobs:
           if(d.retained_metadata_candidates!==d.candidates.length) throw new Error('metadata_gate_count_mismatch');
           if(d.coverage_ready!==true) throw new Error('metadata_gate_coverage_not_ready');
           if(!d.coverage_counts||!['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].every(k=>Number.isInteger(d.coverage_counts[k])&&d.coverage_counts[k]>=3)) throw new Error('metadata_gate_focus_coverage_invalid');
-          if(!Number.isInteger(d.agent_skill_signals)||d.agent_skill_signals<1) throw new Error('metadata_gate_agent_skill_signal_missing');
+          if(!Number.isInteger(d.agent_skill_story_ready_signals)||d.agent_skill_story_ready_signals<1) throw new Error('metadata_gate_agent_skill_story_ready_signal_missing');
           if(d.candidates.some(x=>x.date_status!=='resolved_metadata_date'||!x.metadata_event_at)) throw new Error('metadata_gate_unresolved_date_present');
           NODE
 
