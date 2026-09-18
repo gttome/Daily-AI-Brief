@@ -8,7 +8,9 @@
     "images_path": "_records/editorial-handoff/images.json",
     "media_path": "_records/editorial-handoff/media.json",
     "manifest_path": "_records/editorial-handoff/handoff.json",
-    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
+    "article_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "article_evidence_receipt_path": "_records/discovery-preflight/result/article-evidence-receipt.json"
   },
   "kernel_shape": {
     "schema_version": "1.0.0",
@@ -164,9 +166,13 @@
     "post_editorial_model_passes": 0,
     "deterministic_validation_model_calls": 0,
     "execution_mode": "production",
-    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
+    "article_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "image_transport_method": "native_git"
   },
   "hard_rules": [
+    "Before handoff, run `_tools/validate-handoff-images.mjs`, then commit and push PNG binaries with native git from the working tree. Never upload PNG bytes through GitHub Contents API or connector create/update-file calls.",
+    "Do not perform article-source network retrieval in Work. Use only the committed nine-candidate GitHub Actions article-evidence packet.",
     "Work must not run `_tools/discover-sources.mjs` or the metadata gate. Those execute in GitHub Actions preflight with zero model calls. Work may read only the preflight `result/metadata-candidates.json` and `result/receipt.json` after `coverage_ready=true`.",
     "Continue past metadata gating only when coverage_ready=true, every candidate has date_status=resolved_metadata_date, each focus_hint has at least three candidates, and agent_skill_signals>=1.",
     "Run fresh deterministic discovery with DAB_RESEARCH_CUTOFF set to the original edition cutoff before the metadata gate.",
@@ -189,6 +195,8 @@
     "editorial_model_passes": 1,
     "post_editorial_model_passes": 0,
     "deterministic_validation_model_calls": 0,
-    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
+    "article_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "image_transport_method": "native_git"
   }
 }
