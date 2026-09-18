@@ -39,12 +39,13 @@ test('under80 metadata gate removes navigation and unresolved-date entries',()=>
  assert.equal(result.rejected.unresolved_date,1);
 });
 
-test('agent skills may use a recent updated date within the seven-day exception',()=>{
+test('updated Agent Skills metadata is background until material change is verified',()=>{
  const result=runGate([
   {source_id:'skills',headline:'Using Agent Skills for reusable knowledge-worker workflows',canonical_url:'https://example.com/skills',published_at:'2026-04-10T12:00:00Z',updated_at:'2026-09-17T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'}
  ]);
  assert.equal(result.candidates.length,1);
  assert.equal(result.candidates[0].agent_skill_signal,true);
+ assert.equal(result.candidates[0].agent_skill_story_ready,false);
  assert.equal(result.candidates[0].date_basis,'updated_at_requires_material_update_review');
 });
 
