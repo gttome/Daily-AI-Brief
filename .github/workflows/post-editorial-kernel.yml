@@ -105,7 +105,7 @@ jobs:
           const fs=require('fs');
           const [manifestPath,stagingRef,outputPath]=process.argv.slice(2);
           const m=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
-          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
+          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','metadata_candidates_path','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
           for(const key of required) if(!(key in m)) throw new Error('handoff_manifest_missing_'+key);
           if(m.staging_ref!==stagingRef) throw new Error('handoff_manifest_staging_ref_mismatch');
           if(!['production','qualification_nonproduction'].includes(m.execution_mode)) throw new Error('handoff_manifest_execution_mode_invalid');
@@ -122,6 +122,7 @@ jobs:
             'facts_path='+m.facts_path+'\n'+
             'images_path='+m.images_path+'\n'+
             'media_path='+m.media_path+'\n'+
+            'metadata_candidates_path='+m.metadata_candidates_path+'\n'+
             'coverage_period='+m.coverage_period+'\n'+
             'execution_mode='+m.execution_mode+'\n');
           NODE
@@ -131,6 +132,7 @@ jobs:
               echo "facts_path=$INPUT_FACTS_PATH"
               echo "images_path=$INPUT_IMAGES_PATH"
               echo "media_path=$INPUT_MEDIA_PATH"
+              echo "metadata_candidates_path=_records/editorial-handoff/metadata-candidates.json"
               echo "coverage_period=$INPUT_COVERAGE_PERIOD"
               echo "execution_mode=production"
             } >> "$GITHUB_OUTPUT"
@@ -142,9 +144,10 @@ jobs:
           FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
           MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
+          METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
         run: |
           set -euo pipefail
-          for p in "$KERNEL_PATH" "$FACTS_PATH"; do
+          for p in "$KERNEL_PATH" "$FACTS_PATH" "$METADATA_CANDIDATES_PATH"; do
             if [ -z "$p" ] || [[ "$p" == /* ]] || [[ "$p" == *".."* ]] || [ ! -f "$p" ]; then
               echo "Invalid or missing repository-relative input: $p"
               exit 1
@@ -156,6 +159,22 @@ jobs:
               exit 1
             fi
           done
+
+      - name: Validate bounded metadata candidate gate
+        env:
+          METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
+        run: |
+          set -euo pipefail
+          node - "$METADATA_CANDIDATES_PATH" <<'NODE'
+          const fs=require('fs');
+          const p=process.argv[2];
+          const d=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(d.profile_id!=='under80-v1') throw new Error('metadata_gate_profile_mismatch');
+          if(d.gate!=='metadata_prefilter_before_model_exposure') throw new Error('metadata_gate_identity_mismatch');
+          if(!Number.isInteger(d.metadata_candidate_limit)||d.metadata_candidate_limit<1||d.metadata_candidate_limit>20) throw new Error('metadata_gate_limit_invalid');
+          if(!Array.isArray(d.candidates)||d.candidates.length>20) throw new Error('metadata_gate_candidate_count_exceeded');
+          if(d.retained_metadata_candidates!==d.candidates.length) throw new Error('metadata_gate_count_mismatch');
+          NODE
 
       - name: Resolve trusted main baseline and validate kernel
         id: baseline
