@@ -1,3 +1,4 @@
+import {openTelemetry} from './run-telemetry.mjs';
 import {newEfficiency,assertEfficiency,efficiencyPath,publicEfficiency,readEfficiencyRecords} from './efficiency.mjs';
 import path from 'node:path';
 import fs from 'node:fs';
@@ -50,6 +51,8 @@ export function createValidatedEvent(edition, files, options) {
 }
 
 export function buildPublicationStage(edition, repoRoot, outDir, options) {
+  const telemetry=options.telemetryFile?openTelemetry(options.telemetryFile):null;
+  const generationSpan=telemetry?.begin('generation');
   assertValidEdition(edition);
   const mediaPreflightPath=`_records/editorial/media-preflight/${edition.brief_date}.json`;
   let mediaPreflight=options.mediaPreflight||null;
@@ -77,7 +80,8 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   const manifest={schema_version:'1.0.0',edition_id:edition.edition_id,baseline_sha:options.baselineSha,rollback_target_sha:options.baselineSha,policy_profile:edition.policy_profile,image_review:review.review_path||null,image_review_sha256:review.review_sha256||null,assets:review.assets,canonical_sha256:sha256(files.get(`_data/editions/${edition.brief_date}.json`)),candidate_digest:stagedDigest(files)};
   files.set(`_records/releases/${edition.brief_date}.json`,JSON.stringify(manifest,null,2)+'\n');
   const originalBaseline=path.join(repoRoot,'_architecture/efficiency-refactor/baseline.json');
-  const rawEfficiency=options.efficiency||newEfficiency({editionId:edition.edition_id,attemptId:options.runId||'generation-'+options.observedAt.replace(/[^a-zA-Z0-9]/g,''),baselineSha:fs.existsSync(originalBaseline)?JSON.parse(fs.readFileSync(originalBaseline,'utf8')).baseline_sha:options.baselineSha});
+  if(telemetry)telemetry.end(generationSpan);
+  const rawEfficiency=options.efficiency||telemetry?.snapshot()||newEfficiency({editionId:edition.edition_id,attemptId:options.runId||'generation-'+options.observedAt.replace(/[^a-zA-Z0-9]/g,''),baselineSha:fs.existsSync(originalBaseline)?JSON.parse(fs.readFileSync(originalBaseline,'utf8')).baseline_sha:options.baselineSha});
   if(rawEfficiency.edition_id!==edition.edition_id)throw Error('Efficiency edition mismatch');
   const efficiency=edition.brief_date>='2026-09-17'?applyProductionTelemetryHealth(rawEfficiency):rawEfficiency;
   assertEfficiency(efficiency);
