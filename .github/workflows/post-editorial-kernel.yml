@@ -256,6 +256,8 @@ jobs:
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
 
       - name: Generate one atomic publication stage
+        env:
+          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
         run: |
           set -euo pipefail
           rm -rf /tmp/publication-stage
@@ -264,7 +266,8 @@ jobs:
             --out /tmp/publication-stage \
             --baseline-sha "${{ steps.baseline.outputs.sha }}" \
             --observed-at "$PUBLISHED_AT" \
-            --run-id "kernel-${GITHUB_RUN_ID}"
+            --run-id "kernel-${GITHUB_RUN_ID}" \
+            --image-review "$IMAGES_PATH"
 
       - name: Apply deterministic stage to staging branch
         run: |
