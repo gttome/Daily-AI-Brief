@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "brief_date": "2026-09-18",
+  "reviewed_at": "2026-09-18T14:04:13Z",
+  "worth_watching": {
+    "general": {
+      "status": "empty",
+      "exception": "Official video metadata remained retrieval-limited in the bounded resumed search; no qualifying <=72-hour item with verified upload date and runtime could be established without inventing evidence."
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "exception": "Official video metadata remained retrieval-limited in the bounded resumed search; no qualifying <=72-hour agent-focused item with verified upload date and runtime could be established without inventing evidence."
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-18-personal-ai-agents",
+      "title": "Why Everyone Is Getting Excited About Personal AI Agents",
+      "show": "The AI Daily Brief",
+      "host": "Nathaniel Whittemore",
+      "publication_date": "2026-09-17",
+      "runtime_seconds": 1796,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "personal AI agents",
+        "consumer agents",
+        "delegation"
+      ],
+      "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
+      "permanent_url": "/podcasts/2026-09-18/personal-ai-agents/",
+      "summary": "Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.",
+      "why_useful": "It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation.",
+      "connection": "Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.",
+      "selection_rationale": "Fresh registered-source episode inside the preferred 48-hour window; exact title, publication date, host, direct URL, and runtime were verified on Apple Podcasts.",
+      "verification_note": "Apple Podcasts lists September 17, 2026, Nathaniel Whittemore, and a 29:56 runtime.",
+      "coverage_note": "Primary 48-hour podcast window; one of two source-diverse selections.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942"
+        }
+      ]
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-18-ai-search-discovery",
+      "title": "How to get discovered in AI search",
+      "show": "Practical AI",
+      "host": "Daniel Whitenack and Chris Benson",
+      "publication_date": "2026-09-17",
+      "runtime_seconds": 3314,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI search",
+        "retrieval",
+        "citations",
+        "agent discovery"
+      ],
+      "url": "https://practicalai.show/372",
+      "permanent_url": "/podcasts/2026-09-18/ai-search-discovery/",
+      "summary": "Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.",
+      "why_useful": "The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers.",
+      "connection": "It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.",
+      "selection_rationale": "Fresh registered-source episode inside the preferred 48-hour window from a second show; title, date, hosts, direct episode URL, and 55:14 runtime were verified on the publisher site.",
+      "verification_note": "Practical AI’s publisher page identifies episode E372, September 17, 2026, hosted by Daniel Whitenack and Chris Benson, runtime 55:14.",
+      "coverage_note": "Primary 48-hour podcast window; source-diverse from The AI Daily Brief.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Practical AI",
+          "url": "https://practicalai.show/372"
+        }
+      ]
+    }
+  ],
+  "video_discovery": {
+    "status": "degraded_retrieval",
+    "bounded_search_completed": true,
+    "metadata_gate_complete": false,
+    "note": "Registered official YouTube channels remained retrieval-limited. Zero-video exception is recorded as degraded rather than falsely presented as a successful complete-coverage result."
+  },
+  "watchlist": {
+    "status": "degraded",
+    "note": "September 18 Watchlist refresh did not complete in the failed morning attempt. Prior verified state is preserved; no false freshness is asserted."
+  }
+}
