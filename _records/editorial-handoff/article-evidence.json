@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9465,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Workflow execution protections in GitHub Actions generally available",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T15:45:26.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 819,
+      "excerpt": "Workflow execution protections in GitHub Actions generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 17, 2026 • 2 minute read Workflow execution protections in GitHub Actions generally available Table of Contents What's new New secure defaults Menu. Currently selected: What's new What's new New secure defaults Workflow execution protections for GitHub Actions, previously in public preview, are now generally available for…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot impact dashboard now shows feature engagement",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T21:47:27.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 772,
+      "excerpt": "Copilot impact dashboard now shows feature engagement - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 17, 2026 • 2 minute read Copilot impact dashboard now shows feature engagement Table of Contents What's new Why this matters Important notes Menu. Currently selected: What's new What's new Why this matters Important notes The Copilot impact dashboard now shows how many active users regularly use key Copilot features. What&rsquo;s…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Ubuntu 26 generally available and latest migration",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-ubuntu-26-generally-available-and-latest-migration",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T16:27:16.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 656,
+      "excerpt": "Ubuntu 26 generally available and latest migration - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 17, 2026 • 1 minute read Ubuntu 26 generally available and latest migration Table of Contents Using Ubuntu 26.04 ubuntu-latest is migrating to Ubuntu 26.04 Learn more Menu. Currently selected: Using Ubuntu 26.04 Using Ubuntu 26.04 ubuntu-latest is migrating to Ubuntu 26.04 Learn more The Ubuntu 26.04 runner image for GitHub Actions is…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Salesforce and OpenAI Customers Are Putting AI to Work",
+      "canonical_url": "https://www.salesforce.com/blog/openai-agentforce/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-15T20:55:32.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1683,
+      "excerpt": "Salesforce and OpenAI Customers Are Putting AI to Work - Salesforce Skip to Content 0% Become an agentic enterprise with our refreshed step-by-step guide. Read it now Agentic AI Salesforce and OpenAI Customers Are Putting AI to Work See how shared customers pair OpenAI&#039;s frontier reasoning with Salesforce context, orchestration, and governance to turn good answers into finished work. Desiree Motamedi September 15, 2026 3 min read Share article Salesforce and OpenAI are bringing frontier intelligence into the tools enterprise teams use every day, helping them tackle harder problems and take on more complex work. What comes next From…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "What we’ve learned from Microsoft’s own AI transformation",
+      "canonical_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-17T14:00:05.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3082,
+      "excerpt": "At Microsoft, we believe the organizations that succeed will be what we call Frontier Firms: human-led, but increasingly AI-enabled. 3 As proven approaches emerged, we codified them into case studies so we could accelerate transformation, scale what worked and learn from what did not. We have been sharing Microsoft&#8217;s Frontier Playbook with customers as a practical guide to our AI transformation journey, including what we’ve learned, what has worked so far and where we’ve grown from failures. Drawing on hundreds of AI transformation efforts across the company, the playbook captures what we are learning as we redesign work, build new…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft’s commitment for AI in education: Protecting students, strengthening learning",
+      "canonical_url": "https://blogs.microsoft.com/blog/2026/09/16/microsofts-commitment-for-ai-in-education/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-16T18:59:58.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2188,
+      "excerpt": "Since the earliest days of this company, we have worked alongside educators, students, families and educational leaders through each new wave of technology — and we have learned what helps learning and what gets in the way. Safety, privacy, security and transparency by design Educators remain in control and at the center of AI use in the classroom AI designed to support students’ learning, not replace their thinking AI strengthens education systems, from learning to discovery Every student prepared for an AI powered future 1. Safety, privacy, security and transparency by design Every AI system used in education should be designed with robust…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Agentic CLI customizations now in the usage metrics API",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T21:08:50.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 807,
+      "excerpt": "Agentic CLI customizations now in the usage metrics API - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 17, 2026 • 2 minute read Agentic CLI customizations now in the usage metrics API Table of Contents What's new Why this matters Important notes Menu. Currently selected: What's new What's new Why this matters Important notes GitHub Copilot expands existing CLI report coverage with agentic activity metrics for skills, custom agents,…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "What Does an AI Harness Have To Do With Growing Business?",
+      "canonical_url": "https://www.salesforce.com/blog/small-business/ai-harness-explained-for-smbs/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-17T13:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2074,
+      "excerpt": "What Does an AI Harness Have To Do With Growing Business? Small Business What Does an AI Harness Have To Do With Growing Business? For a growing business, understanding what an AI harness actually does — and how it connects to your customer relationship management (CRM) — is the first step to using trusted AI that you can build your team around. Frequently Asked Questions (FAQs) What is an AI harness for small business, in simple terms? What&#8217;s the first step to setting up an AI harness for my small business?"
+    },
+    {
+      "candidate_id": "m11",
+      "focus": "agents_non_technical_people",
+      "headline": "Your Agent Can Sprint, But Can It Go the Distance?",
+      "canonical_url": "https://www.salesforce.com/blog/long-horizon-agents/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-16T13:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2116,
+      "excerpt": "Your Agent Can Sprint, But Can It Go the Distance? Read it now Agentic AI Your Agent Can Sprint, But Can It Go the Distance? Long-horizon agents work alongside users to achieve a goal over time and can adapt their behavior to changing circumstances. George Saines September 16, 2026 5 min read Share article AI agents have evolved by leaps and bounds this year, but while they&#8217;re smarter and more capable than ever, most are still focused on reactive tasks: make a request, the agent acts on it and returns a response. Ask an AI agent to perform a job that spans more than a single session — like rescuing your at-risk deals or optimizing…"
+    }
+  ]
+}
