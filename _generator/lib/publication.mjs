@@ -2,7 +2,7 @@ import {openTelemetry} from './run-telemetry.mjs';
 import {newEfficiency,assertEfficiency,efficiencyPath,publicEfficiency,readEfficiencyRecords} from './efficiency.mjs';
 import path from 'node:path';
 import fs from 'node:fs';
-import {reviewedImages} from './image-gate.mjs';
+import {reviewedHandoffImages,reviewedImages} from './image-gate.mjs';
 import {COMPATIBILITY_OUTPUTS} from './constants.mjs';
 import {generatedFiles} from './render.mjs';
 import {sha256, stableSuffix, writeText} from './util.mjs';
@@ -79,7 +79,7 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
     files.set(mediaPreflightPath,JSON.stringify(mediaPreflight,null,2)+'\n');
   }
   files.set(`_data/editions/${edition.brief_date}.json`, `${JSON.stringify(edition, null, 2)}\n`);
-  const review=reviewedImages(edition,repoRoot);
+  const review=options.imageReviewPath?reviewedHandoffImages(edition,repoRoot,options.imageReviewPath):reviewedImages(edition,repoRoot);
   if(review.errors.length)throw new Error(review.errors.join('; '));
   for(const asset of review.assets)files.set(asset.path,fs.readFileSync(path.join(repoRoot,asset.path)));
   if(review.review_path)files.set(review.review_path,fs.readFileSync(path.join(repoRoot,review.review_path),'utf8'));
