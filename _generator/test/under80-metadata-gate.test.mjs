@@ -53,18 +53,19 @@ test('coverage readiness requires three metadata candidates per focus and one Ag
  const technical=Array.from({length:3},(_,i)=>({source_id:'t'+i,headline:`AI model evaluation benchmark release ${i} for developer reliability`,canonical_url:`https://example.com/t/${i}`,published_at:'2026-09-18T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'}));
  const applied=Array.from({length:3},(_,i)=>({source_id:'k'+i,headline:`Enterprise workplace AI productivity update ${i} for knowledge workers`,canonical_url:`https://example.com/k/${i}`,published_at:'2026-09-18T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'}));
  const agents=[
-  {source_id:'s',headline:'Using Agent Skills for reusable knowledge-worker workflows',canonical_url:'https://example.com/a/skill',updated_at:'2026-09-17T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'},
+  {source_id:'s',headline:'Agentic CLI customizations now track skills and custom agents',snippet:'Copilot CLI reports count invocations for skills and plugin skills.',canonical_url:'https://example.com/a/skill',published_at:'2026-09-17T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
   {source_id:'a1',headline:'Agent workflow automation for business teams without coding',canonical_url:'https://example.com/a/1',published_at:'2026-09-18T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
   {source_id:'a2',headline:'AI assistant workflow automation for business users',canonical_url:'https://example.com/a/2',published_at:'2026-09-18T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'}
  ];
  const result=runGate([...technical,...applied,...agents]);
  assert.equal(result.coverage_ready,true);
  assert.equal(result.agent_skill_signals,1);
+ assert.equal(result.agent_skill_story_ready_signals,1);
  assert.ok(Object.values(result.coverage_counts).every(n=>n>=3));
 });
 
 
-test('required topic survives sparse title wording when updated inside the seven-day exception',()=>{
+test('required topic survives sparse title wording but does not satisfy freshness without verified material change',()=>{
  const result=runGate([
   {source_id:'openai-academy-skills',headline:'OpenAI Academy Skills for reusable ChatGPT workflows',canonical_url:'https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills',published_at:'2026-02-25T02:18:07Z',updated_at:'2026-09-17T15:25:07Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills',focus_hint:'agents_non_technical_people'}
  ]);
