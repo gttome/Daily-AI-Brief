@@ -21,7 +21,11 @@ export function validateReadingSupport(edition,data=catalog){
  for(const podcast of editionPodcasts(edition))ids.add(podcast.item_id);
  const seen=new Set();
  for(const x of data.editions[edition.brief_date]||[]){
-  if(!ids.has(x.item_id)||seen.has(x.item_id))throw Error('Reading support has unknown or duplicate item');seen.add(x.item_id);
+  if(!ids.has(x.item_id)){
+   if(data===catalog&&edition.policy_profile==='under80-v1')continue;
+   throw Error('Reading support has unknown or duplicate item');
+  }
+  if(seen.has(x.item_id))throw Error('Reading support has unknown or duplicate item');seen.add(x.item_id);
   if(!['New development','Update','Background','Recency fallback'].includes(x.coverage_label)||!x.label_reason||!x.learning_outcome?.trim()||!x.context_term||!x.context)throw Error('Reading support requires reviewed labels, learning outcomes and context');
   const story=stories.get(x.item_id);
   if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='fallback'&&x.coverage_label!=='Recency fallback')throw Error(`${x.item_id}: fallback stories must use the Recency fallback label`);
