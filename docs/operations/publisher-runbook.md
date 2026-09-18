@@ -180,3 +180,16 @@ For new production attempts:
 - Do not claim the <80 target from prompt size, elapsed time, skipped work, or unobserved credits. Qualify only after three consecutive complete scheduled editions each measure below 80 credits with protected image quality and no manual intervention.
 
 If a reliable scoped credit meter is exposed, stop admitting new AI work after 65 consumed credits for that edition. If no supported scoped meter exists, enforce the structural ceilings and record cost as unverified.
+
+
+## September 18 under-80 runtime capsule and hard handoff
+
+The September 18 full reproduction test established that keeping deterministic build/release orchestration inside the Work run is not an acceptable under-80 execution model. Normal daily execution now uses the compact machine-readable runtime contract at `docs/operations/under80-runtime-contract.json` plus `docs/operations/efficiency-operating-policy.json`. Historical sections of this runbook remain audit and recovery documentation; the daily Work task must not read the full historical runbook unless a specific current-runtime dependency is missing or contradictory.
+
+The daily AI task owns only bounded discovery/review, one compact evidence package, one semantic editorial pass, six full-quality OpenAI-generated story images, and creation of the editorial handoff. It must preserve the current September 17-or-better image quality baseline. No image-count, detail, resolution, or composition reduction is authorized for credit savings.
+
+After the editorial bundle and six accepted images are saved, create an isolated branch named `editorial-handoff/YYYY-MM-DD-<attempt>`. Commit the editorial kernel, public-safe facts, selected media, accepted-image manifest/assets, and `_records/editorial-handoff/handoff.json`. The manifest must declare exactly one editorial model pass, zero post-editorial model passes, and zero deterministic-validation model calls. Pushing that manifest is the hard Work stop boundary.
+
+The push-triggered `Post-editorial deterministic publication` GitHub Actions workflow owns canonical expansion, generated views, repository tests, contract validation, publication PR creation, protected CI/promotion, Pages completion, deterministic delta validation, and the public-safe Command Center delta. The Work task must not run those stages itself and must not poll CI, merge state, Pages, or live validation after handoff.
+
+The successful September 18 canary showed that 20 metadata candidates, nine deep reviews, one editorial pass, an 11,176-character evidence package, and six fresh accepted 1200x630 images can satisfy the structural editorial contract. Under the runtime capsule, model-visible editorial evidence is therefore capped at 12,000 characters and the research capsule at 6,500 characters. If those bounded inputs cannot support a compliant six-story edition, preserve the last valid edition rather than broadening the model context or starting a second semantic pass.
