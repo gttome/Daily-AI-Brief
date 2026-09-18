@@ -69,7 +69,7 @@ for(const item of source){
  else if(isSkill&&Number.isFinite(updated)&&ageHours(updated)>=0&&ageHours(updated)<=skillAgeHours){eventStamp=updated;dateBasis='updated_at_requires_material_update_review';}
  else if(!Number.isFinite(published)&&!(isSkill&&Number.isFinite(updated))){rejected.unresolved_date++;continue;}
  else {rejected.outside_window++;continue;}
- const relevance=relevanceRank(combined);
+ const relevance=relevanceRank(combined)+(item.required_topic==='agent_skills'?8:0);
  if(relevance<4){rejected.low_relevance++;continue;}
  const providedFocus=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].includes(item.focus_hint)?item.focus_hint:null;
  const focus=isSkill?'agents_non_technical_people':providedFocus||focusHint(combined,false);

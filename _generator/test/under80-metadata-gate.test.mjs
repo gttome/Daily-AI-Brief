@@ -61,3 +61,13 @@ test('coverage readiness requires three metadata candidates per focus and one Ag
  assert.equal(result.agent_skill_signals,1);
  assert.ok(Object.values(result.coverage_counts).every(n=>n>=3));
 });
+
+
+test('required topic survives sparse title wording when updated inside the seven-day exception',()=>{
+ const result=runGate([
+  {source_id:'openai-academy-skills',headline:'OpenAI Academy Skills for reusable ChatGPT workflows',canonical_url:'https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills',published_at:'2026-02-25T02:18:07Z',updated_at:'2026-09-17T15:25:07Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills',focus_hint:'agents_non_technical_people'}
+ ]);
+ assert.equal(result.candidates.length,1);
+ assert.equal(result.candidates[0].agent_skill_signal,true);
+ assert.equal(result.candidates[0].date_basis,'updated_at_requires_material_update_review');
+});
