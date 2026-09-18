@@ -47,10 +47,11 @@ if(command==='init'){
   }});
   if(result.reused){telemetry.reuse('discovery','checkpoints/discovery');telemetry.reuse('watchlist','checkpoints/discovery');}
   if(result.reused)for(const name of ['media-candidate-queue','watchlist-discoveries','watchlist-source-state'])fs.copyFileSync(path.join(root,'outputs',name+'.json'),path.join(repo,'_data',name+'.json'));
-  console.log(JSON.stringify({attempt_id:m.attempt_id,reused:result.reused,private_artifacts:root,next:'Review only unresolved metadata, retain at most 20 editorial metadata candidates, and deep-review 9 normally (+3 only for a named insufficiency). Supply reviewed packet inputs with packets --file.'}));
+  console.log(JSON.stringify({attempt_id:m.attempt_id,reused:result.reused,private_artifacts:root,next:'Review only unresolved metadata, retain at most 20 editorial metadata candidates, and deep-review no more than 9; insufficient evidence at that ceiling holds the edition rather than expanding automatically. Supply reviewed packet inputs with packets --file.'}));
  }else if(command==='packets'){
   if(!args.file)throw Error('Requires --file reviewed evidence inputs');
   const input=JSON.parse(fs.readFileSync(path.resolve(args.file)));
+  if(!Array.isArray(input)||input.length>9)throw Error('under80_deep_review_ceiling_exceeded: at most 9 reviewed evidence inputs are permitted');
   saveJson(path.join(root,'inputs/reviewed-evidence.json'),input);
   const result=await checkpoints.run('evidence',{inputs:['inputs/runtime.json','inputs/reviewed-evidence.json'],execute:async()=>{
    const packetSpan=telemetry.begin('evidence_packet');
