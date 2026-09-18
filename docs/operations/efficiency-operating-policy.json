@@ -125,7 +125,9 @@
     },
     "preflight_source_plan": "_data/preflight-source-plan.json",
     "balanced_source_hints": true,
-    "balanced_date_enrichment": true
+    "balanced_date_enrichment": true,
+    "agent_skill_story_ready_signals_minimum": 1,
+    "agent_skill_updated_at_requires_material_change_verification": true
   },
   "work_forbidden_before_editorial": [
     "metadata catalog discovery",
@@ -142,6 +144,7 @@
     "coverage_ready_required": true,
     "daily_branch_pattern": "discovery-preflight/daily/YYYY-MM-DD",
     "qualification_branch_pattern": "discovery-preflight/qualification/YYYY-MM-DD-<attempt>",
-    "rationale": "The September 18 qualification attempt consumed 58 Work credits before deep review while only running deterministic discovery/gating; moving this stage to GitHub Actions preserves quality while removing it from Work/Codex cost."
+    "rationale": "The September 18 qualification attempt consumed 58 Work credits before deep review while only running deterministic discovery/gating; moving this stage to GitHub Actions preserves quality while removing it from Work/Codex cost.",
+    "agent_skill_story_ready_required": true
   }
 }

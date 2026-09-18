@@ -66,6 +66,7 @@ for(const s of requiredSources){
     content_type:'article',retrieval_status:'metadata_only',source_reliability:s.evidence_class||'publisher_authored',
     format:'article',discovered_at:new Date().toISOString(),runtime_seconds:null,
     required_topic:s.required_topic||'agent_skills',required_topic_fallback_days:s.required_topic_fallback_days||7,
+    background_only:s.background_only===true,material_update_verified:s.material_update_verified===true,
     status:'needs_editorial_and_metadata_review'
   });
 }
@@ -81,14 +82,14 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
     const canonicalRequired=s.required_topic&&(()=>{try{return new URL(s.canonical_url||s.discovery_endpoint).hostname===url.hostname&&new URL(s.canonical_url||s.discovery_endpoint).pathname.replace(/\/$/,'')===url.pathname.replace(/\/$/,'');}catch{return false;}})();
     const topicalRequired=s.required_topic&&/agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?/i.test(title+' '+(link.snippet||''));
     const requiredTopic=canonicalRequired||topicalRequired?s.required_topic:null;
-    if(!candidates.has(url.href))candidates.set(url.href,{...link,url:url.href,title,source_id:s.source_id,format:s.format,discovered_at:new Date().toISOString(),publication_date:link.published_at,runtime_seconds:null,focus_hint:s.focus_hint||null,required_topic:requiredTopic,required_topic_fallback_days:requiredTopic?(s.required_topic_fallback_days||7):null,status:'needs_editorial_and_metadata_review'});else { const prior=candidates.get(url.href); if(s.focus_hint&&!prior.focus_hint)prior.focus_hint=s.focus_hint; if(requiredTopic){prior.required_topic=requiredTopic;prior.required_topic_fallback_days=s.required_topic_fallback_days||7;} for(const field of ['published_at','snippet','publisher','source_reliability','content_type','publication_dates','date_conflict','date_source','updated_at']) if(link[field]!=null) prior[field]=link[field]; if(link.published_at) prior.publication_date=link.published_at; if(link.date_conflict){prior.published_at=null;prior.publication_date=null;} }
+    if(!candidates.has(url.href))candidates.set(url.href,{...link,url:url.href,title,source_id:s.source_id,format:s.format,discovered_at:new Date().toISOString(),publication_date:link.published_at,runtime_seconds:null,focus_hint:s.focus_hint||null,required_topic:requiredTopic,required_topic_fallback_days:requiredTopic?(s.required_topic_fallback_days||7):null,background_only:s.background_only===true,material_update_verified:s.material_update_verified===true,status:'needs_editorial_and_metadata_review'});else { const prior=candidates.get(url.href); if(s.focus_hint&&!prior.focus_hint)prior.focus_hint=s.focus_hint; if(requiredTopic){prior.required_topic=requiredTopic;prior.required_topic_fallback_days=s.required_topic_fallback_days||7;} for(const field of ['published_at','snippet','publisher','source_reliability','content_type','publication_dates','date_conflict','date_source','updated_at']) if(link[field]!=null) prior[field]=link[field]; if(link.published_at) prior.publication_date=link.published_at; if(link.date_conflict){prior.published_at=null;prior.publication_date=null;} }
     found++;
    }
    if(s.required_topic&&s.canonical_url&&s.candidate_title){
     try{
      const direct=new URL(s.canonical_url).href;
      if(!candidates.has(direct)){
-      candidates.set(direct,{source_id:s.source_id,publisher:s.owner||s.publisher||null,headline:s.candidate_title,title:s.candidate_title,canonical_url:direct,url:direct,published_at:null,publication_date:null,publication_dates:[],date_conflict:false,updated_at:null,date_source:null,snippet:null,content_type:'article',source_reliability:s.evidence_class||'publisher_authored',format:'article',discovered_at:new Date().toISOString(),runtime_seconds:null,focus_hint:s.focus_hint||'agents_non_technical_people',required_topic:s.required_topic,required_topic_fallback_days:s.required_topic_fallback_days||7,status:'needs_editorial_and_metadata_review'});
+      candidates.set(direct,{source_id:s.source_id,publisher:s.owner||s.publisher||null,headline:s.candidate_title,title:s.candidate_title,canonical_url:direct,url:direct,published_at:null,publication_date:null,publication_dates:[],date_conflict:false,updated_at:null,date_source:null,snippet:null,content_type:'article',source_reliability:s.evidence_class||'publisher_authored',format:'article',discovered_at:new Date().toISOString(),runtime_seconds:null,focus_hint:s.focus_hint||'agents_non_technical_people',required_topic:s.required_topic,required_topic_fallback_days:s.required_topic_fallback_days||7,background_only:s.background_only===true,material_update_verified:s.material_update_verified===true,status:'needs_editorial_and_metadata_review'});
       found++;
      }
     }catch{}

@@ -30,7 +30,9 @@ const ageRank=(stamp,maxAge)=>{
 };
 const skillSignal=value=>{
  const v=text(value).toLowerCase();
- return /\b(agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?|custom skills?|build(?:ing)? skills?|create(?:ing)? skills?)\b/.test(v);
+ const explicit=/\b(agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?|custom skills?|build(?:ing)? skills?|create(?:ing)? skills?)\b/.test(v);
+ const contextual=/\bskills?\b/.test(v)&&/\b(agentic|agent|agents|copilot|plugin|plugins|cli|workflow|workflows|customization|customizations)\b/.test(v);
+ return explicit||contextual;
 };
 const relevanceRank=value=>{
  const v=text(value).toLowerCase();
@@ -73,6 +75,7 @@ for(const item of source){
  if(relevance<4){rejected.low_relevance++;continue;}
  const providedFocus=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].includes(item.focus_hint)?item.focus_hint:null;
  const focus=isSkill?'agents_non_technical_people':providedFocus||focusHint(combined,false);
+ const skillStoryReady=isSkill&&(dateBasis==='published_at'||(dateBasis==='updated_at_requires_material_update_review'&&item.material_update_verified===true));
  const normalized={
   candidate_id:text(item.candidate_id)||null,
   headline:title,
@@ -88,10 +91,13 @@ for(const item of source){
   snippet:text(item.snippet).slice(0,360)||null,
   focus_hint:focus,
   agent_skill_signal:isSkill,
+  agent_skill_story_ready:skillStoryReady,
+  material_update_verified:item.material_update_verified===true,
+  background_only:item.background_only===true,
   required_topic:item.required_topic||null,
   status:'metadata_prefiltered_not_deep_reviewed'
  };
- const score=reliabilityRank(normalized.source_reliability)+ageRank(eventStamp,maxAge)+relevance+Number(!!normalized.snippet)+(item.required_topic?8:0);
+ const score=reliabilityRank(normalized.source_reliability)+ageRank(eventStamp,maxAge)+relevance+Number(!!normalized.snippet)+(skillStoryReady?12:0)+(item.required_topic?4:0)-(item.background_only?8:0);
  const candidate={...normalized,prefilter_score:score};
  const prior=byUrl.get(url);
  if(!prior||candidate.prefilter_score>prior.prefilter_score)byUrl.set(url,candidate);else rejected.duplicate++;
@@ -102,7 +108,7 @@ const selected=[],selectedUrls=new Set();
 const add=item=>{if(item&&selected.length<limit&&!selectedUrls.has(item.canonical_url)){selected.push(item);selectedUrls.add(item.canonical_url);return true;}return false;};
 
 // Reserve the mandatory Agent Skills signal before general ranking.
-add(eligible.find(x=>x.agent_skill_signal));
+add(eligible.find(x=>x.agent_skill_story_ready));
 
 // Guarantee metadata breadth for the eventual 2/2/2 editorial allocation before filling by score.
 for(const focus of ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people']){
@@ -136,7 +142,8 @@ const candidates=selected.map((x,i)=>({...x,candidate_id:x.candidate_id||`m${Str
 if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_violation');
 const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
-const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillSignals>=1;
+const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
+const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillStoryReadySignals>=1;
 const result={
  schema_version:'1.1.0',
  profile_id:'under80-v1',
@@ -151,6 +158,7 @@ const result={
  deferred_count:Math.max(0,eligible.length-candidates.length),
  coverage_counts:coverageCounts,
  agent_skill_signals:agentSkillSignals,
+ agent_skill_story_ready_signals:agentSkillStoryReadySignals,
  coverage_ready:coverageReady,
  rejected,
  invariant:'Only the candidates array in this file is permitted as model-visible article discovery input. Every retained candidate has a resolved in-window metadata date. The raw discovery queue is traceability-only and must not be opened by the editorial model.',
@@ -158,4 +166,4 @@ const result={
 };
 fs.mkdirSync(path.dirname(path.resolve(args.out)),{recursive:true});
 fs.writeFileSync(path.resolve(args.out),JSON.stringify(result,null,2)+'\n');
-console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,coverage_ready:coverageReady,rejected}));
+console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,agent_skill_story_ready_signals:agentSkillStoryReadySignals,coverage_ready:coverageReady,rejected}));

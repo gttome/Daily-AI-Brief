@@ -25,7 +25,8 @@
     "ordinary_fallback_hours": 72,
     "agent_skills_exception_days": 7,
     "novelty_window_days": 30,
-    "authoritative_primary_sources_preferred": true
+    "authoritative_primary_sources_preferred": true,
+    "agent_skills_updated_at_requires_material_change_verification": true
   },
   "research": {
     "metadata_candidates_max": 20,
@@ -60,7 +61,7 @@
     "preflight_receipt_path_pattern": "_records/preflight/YYYY-MM-DD/receipt.json",
     "preflight_candidates_path_pattern": "_records/preflight/YYYY-MM-DD/metadata-candidates.json",
     "work_must_not_run_metadata_discovery": true,
-    "work_entry_condition": "Start semantic Work only from a committed preflight receipt with ready=true, model_calls=0, <=20 candidates, resolved dates, >=3 metadata candidates per focus, and >=1 Agent Skills signal.",
+    "work_entry_condition": "Start semantic Work only from a committed preflight receipt with ready=true/coverage_ready=true, model_calls=0, <=20 candidates, resolved dates, >=3 metadata candidates per focus, and >=1 story-ready Agent Skills signal. An updated_at-only Skills page does not count unless a material change is independently verified.",
     "metadata_date_enrichment_tool": "_tools/enrich-metadata-dates.mjs",
     "metadata_date_enrichment_limit": 48,
     "metadata_date_enrichment_owner": "github_actions",
@@ -75,7 +76,8 @@
     "work_must_not_run_catalog_discovery": true,
     "work_model_visible_discovery_input": "_records/discovery-preflight/result/metadata-candidates.json",
     "work_preflight_receipt": "_records/discovery-preflight/result/receipt.json",
-    "work_start_rule": "Work begins only after a GitHub Actions discovery preflight has produced coverage_ready=true with zero model calls. Work reads only the compact shortlist and receipt; it does not execute catalog discovery or inspect raw discovery queues."
+    "work_start_rule": "Work begins only after a GitHub Actions discovery preflight has produced coverage_ready=true and agent_skill_story_ready_signals>=1 with zero model calls. Work reads only the compact shortlist and receipt; it does not execute catalog discovery or inspect raw discovery queues.",
+    "metadata_agent_skill_story_ready_signals_minimum": 1
   },
   "semantic_work": {
     "editorial_model_passes": 1,
