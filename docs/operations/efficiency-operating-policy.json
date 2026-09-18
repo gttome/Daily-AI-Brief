@@ -122,7 +122,10 @@
       "attempt_limit": 48,
       "model_calls": 0,
       "work_credits_expected": 0
-    }
+    },
+    "preflight_source_plan": "_data/preflight-source-plan.json",
+    "balanced_source_hints": true,
+    "balanced_date_enrichment": true
   },
   "work_forbidden_before_editorial": [
     "metadata catalog discovery",
