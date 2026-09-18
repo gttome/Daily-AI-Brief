@@ -76,8 +76,9 @@
     "work_must_not_run_catalog_discovery": true,
     "work_model_visible_discovery_input": "_records/discovery-preflight/result/metadata-candidates.json",
     "work_preflight_receipt": "_records/discovery-preflight/result/receipt.json",
-    "work_start_rule": "Work begins only after a GitHub Actions discovery preflight has produced coverage_ready=true and agent_skill_story_ready_signals>=1 with zero model calls. Work reads only the compact shortlist and receipt; it does not execute catalog discovery or inspect raw discovery queues.",
-    "metadata_agent_skill_story_ready_signals_minimum": 1
+    "work_start_rule": "Work begins only after a GitHub Actions discovery preflight has produced coverage_ready=true, agent_skill_story_ready_signals>=1, and preferred_agent_skill_candidate_id with zero model calls. Work deep-reviews that preferred Skills candidate first, then performs the remaining bounded deep reviews.",
+    "metadata_agent_skill_story_ready_signals_minimum": 1,
+    "agent_skills_review_order": "Deep-review the preflight preferred_agent_skill_candidate_id first. It must be a story-ready, publication-fresh Agent Skills development; update-only background pages do not satisfy the slot."
   },
   "semantic_work": {
     "editorial_model_passes": 1,
