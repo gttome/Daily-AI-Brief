@@ -66,7 +66,8 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
  let fallbackUsed=false;
  const stories=normalized.stories.map(story=>{
   const fact=candidateFacts[story.candidate_id],image=imageAssets[story.candidate_id],metadata=metadataById.get(story.candidate_id);
-  if(!fact||!image||!metadata)throw Error(`Missing deterministic evidence, image asset, or metadata candidate for ${story.candidate_id}`);
+  if(!fact||!image)throw Error(`Missing deterministic evidence or image asset for ${story.candidate_id}`);
+  if(!metadata)throw Error(`Missing bounded metadata candidate for ${story.candidate_id}`);
   if(normalizeUrl(fact.source?.url)!==story.source_url)throw Error(`Kernel source does not match reviewed candidate evidence: ${story.candidate_id}`);
   if(normalizeUrl(metadata.canonical_url)!==story.source_url)throw Error(`Kernel source does not match bounded metadata candidate: ${story.candidate_id}`);
   if(!/^\d{4}-\d{2}-\d{2}$/.test(fact.event_date||''))throw Error(`Verified event date required: ${story.candidate_id}`);
