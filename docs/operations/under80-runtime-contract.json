@@ -110,7 +110,9 @@
       "post_editorial_model_passes": 0,
       "deterministic_validation_model_calls": 0
     },
-    "hard_stop": "After the handoff commit is pushed, the daily AI task ends. It must not run generator/tests/build/PR/CI/merge/Pages/live validation or poll any release state."
+    "hard_stop": "After the handoff commit is pushed, the daily AI task ends. It must not run generator/tests/build/PR/CI/merge/Pages/live validation or poll any release state.",
+    "template_path": "docs/operations/editorial-handoff-template.json",
+    "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence."
   },
   "credits": {
     "target_lt": 80,
