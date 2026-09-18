@@ -31,7 +31,7 @@ const ageRank=(stamp,maxAge)=>{
 const skillSignal=value=>{
  const v=text(value).toLowerCase();
  const explicit=/\b(agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?|custom skills?|build(?:ing)? skills?|create(?:ing)? skills?)\b/.test(v);
- const contextual=/\bskills?\b/.test(v)&&/\b(agentic|agent|agents|copilot|plugin|plugins|cli|workflow|workflows|customization|customizations)\b/.test(v);
+ const contextual=/\bskills?\b/.test(v)&&/\b(copilot|plugin|plugins|cli|workflow|workflows|customization|customizations|reusable|invocations?|skill totals?|custom agents?)\b/.test(v);
  return explicit||contextual;
 };
 const relevanceRank=value=>{
@@ -143,6 +143,7 @@ if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_vio
 const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
 const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
+const preferredAgentSkillCandidateId=candidates.find(x=>x.agent_skill_story_ready)?.candidate_id||null;
 const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillStoryReadySignals>=1;
 const result={
  schema_version:'1.1.0',
@@ -159,6 +160,7 @@ const result={
  coverage_counts:coverageCounts,
  agent_skill_signals:agentSkillSignals,
  agent_skill_story_ready_signals:agentSkillStoryReadySignals,
+ preferred_agent_skill_candidate_id:preferredAgentSkillCandidateId,
  coverage_ready:coverageReady,
  rejected,
  invariant:'Only the candidates array in this file is permitted as model-visible article discovery input. Every retained candidate has a resolved in-window metadata date. The raw discovery queue is traceability-only and must not be opened by the editorial model.',
@@ -166,4 +168,4 @@ const result={
 };
 fs.mkdirSync(path.dirname(path.resolve(args.out)),{recursive:true});
 fs.writeFileSync(path.resolve(args.out),JSON.stringify(result,null,2)+'\n');
-console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,agent_skill_story_ready_signals:agentSkillStoryReadySignals,coverage_ready:coverageReady,rejected}));
+console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,agent_skill_story_ready_signals:agentSkillStoryReadySignals,preferred_agent_skill_candidate_id:preferredAgentSkillCandidateId,coverage_ready:coverageReady,rejected}));

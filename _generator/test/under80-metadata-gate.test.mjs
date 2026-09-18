@@ -84,4 +84,15 @@ test('fresh GitHub skills metrics qualifies as a story-ready Agent Skills signal
  assert.equal(result.candidates[0].agent_skill_story_ready,true);
  assert.equal(result.candidates[0].focus_hint,'agents_non_technical_people');
  assert.equal(result.candidates[0].date_basis,'published_at');
+ assert.equal(result.preferred_agent_skill_candidate_id,result.candidates[0].candidate_id);
+});
+
+
+test('generic agentic research with incidental skills language is not an Agent Skills story',()=>{
+ const result=runGate([
+  {source_id:'paper',headline:'Self-Retiring Distillation for Agentic Reinforcement Learning',snippet:'The agent learns complex skills through reinforcement learning and improves policy optimization.',canonical_url:'https://example.com/paper',published_at:'2026-09-17T12:00:00Z',source_reliability:'preprint',content_type:'article'}
+ ]);
+ assert.equal(result.candidates.length,1);
+ assert.equal(result.candidates[0].agent_skill_signal,false);
+ assert.equal(result.candidates[0].agent_skill_story_ready,false);
 });
