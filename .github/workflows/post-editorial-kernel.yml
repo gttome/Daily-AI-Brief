@@ -88,8 +88,8 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
-          INPUT_KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
-          INPUT_FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
+          INPUT_KERNEL_PATH: ${{ inputs.kernel_path }}
+          INPUT_FACTS_PATH: ${{ inputs.facts_path }}
           INPUT_IMAGES_PATH: ${{ inputs.images_path }}
           INPUT_MEDIA_PATH: ${{ inputs.media_path }}
           INPUT_COVERAGE_PERIOD: ${{ inputs.coverage_period }}
