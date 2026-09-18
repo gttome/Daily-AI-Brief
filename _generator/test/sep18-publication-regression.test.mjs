@@ -6,6 +6,7 @@ import path from 'node:path';
 import {generatedFiles} from '../lib/render.mjs';
 import {runShadowCheck} from '../lib/shadow.mjs';
 const root=path.resolve(new URL('../../',import.meta.url).pathname);
+const qualificationNonproduction=process.env.DAB_QUALIFICATION_NONPRODUCTION==='1';
 const edition=JSON.parse(fs.readFileSync(path.join(root,'_data/editions/2026-09-18.json')));
 test('first generation includes stars before the canonical edition exists on disk',()=>{
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-first-stage-'));
@@ -18,7 +19,7 @@ test('first generation includes stars before the canonical edition exists on dis
   for(const [name,content] of files)if(/^(stories|podcasts)\/2026-09-(16|17)\//.test(name))assert.equal(content,fs.readFileSync(path.join(root,name),'utf8'));
  }finally{fs.rmSync(temp,{recursive:true,force:true});}
 });
-test('modern shadow supports reader order and two podcasts while detecting page corruption',()=>{
+test('modern shadow supports reader order and two podcasts while detecting page corruption',{skip:qualificationNonproduction?'production Sep18 fixture is intentionally replaced in qualification_nonproduction':false},()=>{
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-modern-shadow-'));
  try{
   for(const name of ['_data','briefs','latest.md','index.md','archive.md','README.md'])fs.cpSync(path.join(root,name),path.join(temp,name),{recursive:true});
