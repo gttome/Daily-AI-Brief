@@ -73,3 +73,15 @@ test('required topic survives sparse title wording but does not satisfy freshnes
  assert.equal(result.candidates[0].agent_skill_signal,true);
  assert.equal(result.candidates[0].date_basis,'updated_at_requires_material_update_review');
 });
+
+
+test('fresh GitHub skills metrics qualifies as a story-ready Agent Skills signal',()=>{
+ const result=runGate([
+  {source_id:'github-changelog-copilot',publisher:'GitHub Changelog',headline:'Agentic CLI customizations now in the usage metrics API',snippet:'GitHub Copilot expands CLI report coverage with activity metrics for skills, custom agents, MCP servers, slash commands, and plugins. Skill invocations and plugin skills are counted.',canonical_url:'https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/',published_at:'2026-09-17T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'technical_ai_engineering'}
+ ]);
+ assert.equal(result.candidates.length,1);
+ assert.equal(result.candidates[0].agent_skill_signal,true);
+ assert.equal(result.candidates[0].agent_skill_story_ready,true);
+ assert.equal(result.candidates[0].focus_hint,'agents_non_technical_people');
+ assert.equal(result.candidates[0].date_basis,'published_at');
+});
