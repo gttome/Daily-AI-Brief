@@ -95,6 +95,7 @@
     "manifest_path": "_records/editorial-handoff/handoff.json",
     "manifest_required_fields": [
       "schema_version",
+      "execution_mode",
       "staging_ref",
       "kernel_path",
       "facts_path",
@@ -112,7 +113,21 @@
     },
     "hard_stop": "After the handoff commit is pushed, the daily AI task ends. It must not run generator/tests/build/PR/CI/merge/Pages/live validation or poll any release state.",
     "template_path": "docs/operations/editorial-handoff-template.json",
-    "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence."
+    "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
+    "production_branch_prefix": "editorial-handoff/production/",
+    "qualification_branch_prefix": "editorial-handoff/qualification/",
+    "execution_modes": {
+      "production": {
+        "value": "production",
+        "branch_prefix": "editorial-handoff/production/",
+        "downstream": "GitHub Actions may create a publication-candidate PR and protected production promotion remains governed by policy."
+      },
+      "qualification_nonproduction": {
+        "value": "qualification_nonproduction",
+        "branch_prefix": "editorial-handoff/qualification/",
+        "downstream": "GitHub Actions may run deterministic expansion/tests on the isolated branch but MUST NOT create a publication PR or label, merge to main, trigger Pages deployment, or promote production."
+      }
+    }
   },
   "credits": {
     "target_lt": 80,
@@ -126,5 +141,14 @@
     "sites_command_center": "Never touch",
     "added_paid_services": false,
     "added_credentials": false
+  },
+  "qualification_test": {
+    "safe_nonproduction_mode": "qualification_nonproduction",
+    "production_changes_allowed": false,
+    "publication_pr_allowed": false,
+    "publication_candidate_label_allowed": false,
+    "merge_to_main_allowed": false,
+    "pages_deployment_allowed": false,
+    "purpose": "Allows a full scheduled-equivalent cost/structure test through the editorial handoff while deterministically proving the post-editorial stage without any production release path."
   }
 }

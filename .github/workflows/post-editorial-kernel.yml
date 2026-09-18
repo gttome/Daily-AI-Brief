@@ -88,8 +88,8 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
-          INPUT_KERNEL_PATH: ${{ inputs.kernel_path }}
-          INPUT_FACTS_PATH: ${{ inputs.facts_path }}
+          INPUT_KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          INPUT_FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
           INPUT_IMAGES_PATH: ${{ inputs.images_path }}
           INPUT_MEDIA_PATH: ${{ inputs.media_path }}
           INPUT_COVERAGE_PERIOD: ${{ inputs.coverage_period }}
@@ -105,9 +105,12 @@ jobs:
           const fs=require('fs');
           const [manifestPath,stagingRef,outputPath]=process.argv.slice(2);
           const m=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
-          const required=['schema_version','staging_ref','kernel_path','facts_path','images_path','media_path','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
+          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
           for(const key of required) if(!(key in m)) throw new Error('handoff_manifest_missing_'+key);
           if(m.staging_ref!==stagingRef) throw new Error('handoff_manifest_staging_ref_mismatch');
+          if(!['production','qualification_nonproduction'].includes(m.execution_mode)) throw new Error('handoff_manifest_execution_mode_invalid');
+          if(m.execution_mode==='production'&&!stagingRef.startsWith('editorial-handoff/production/')) throw new Error('production_handoff_branch_prefix_required');
+          if(m.execution_mode==='qualification_nonproduction'&&!stagingRef.startsWith('editorial-handoff/qualification/')) throw new Error('qualification_handoff_branch_prefix_required');
           if(m.editorial_model_passes!==1) throw new Error('handoff_manifest_editorial_pass_count_invalid');
           if(m.post_editorial_model_passes!==0) throw new Error('handoff_manifest_post_editorial_pass_count_invalid');
           if(m.deterministic_validation_model_calls!==0) throw new Error('handoff_manifest_validation_model_calls_invalid');
@@ -119,7 +122,8 @@ jobs:
             'facts_path='+m.facts_path+'\n'+
             'images_path='+m.images_path+'\n'+
             'media_path='+m.media_path+'\n'+
-            'coverage_period='+m.coverage_period+'\n');
+            'coverage_period='+m.coverage_period+'\n'+
+            'execution_mode='+m.execution_mode+'\n');
           NODE
           else
             {
@@ -128,6 +132,7 @@ jobs:
               echo "images_path=$INPUT_IMAGES_PATH"
               echo "media_path=$INPUT_MEDIA_PATH"
               echo "coverage_period=$INPUT_COVERAGE_PERIOD"
+              echo "execution_mode=production"
             } >> "$GITHUB_OUTPUT"
           fi
 
@@ -172,7 +177,7 @@ jobs:
 
       - name: Render or select six guarded visual assets
         env:
-          KERNEL_PATH: ${{ inputs.kernel_path }}
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
         run: |
           set -euo pipefail
@@ -182,8 +187,8 @@ jobs:
 
       - name: Deterministically expand canonical edition
         env:
-          KERNEL_PATH: ${{ inputs.kernel_path }}
-          FACTS_PATH: ${{ inputs.facts_path }}
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
           MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
           COVERAGE_PERIOD: ${{ steps.handoff.outputs.coverage_period }}
         run: |
@@ -229,7 +234,13 @@ jobs:
           git commit -m "Generate post-editorial Daily AI Brief publication stage"
           git push origin "HEAD:$STAGING_REF"
 
+      - name: Qualification mode production guard
+        if: steps.handoff.outputs.execution_mode == 'qualification_nonproduction'
+        run: |
+          echo "Qualification-only handoff: deterministic checks may run on the isolated branch, but no publication PR, label, merge, Pages deployment, or production promotion is authorized."
+
       - name: Open or reuse reviewable publication PR; never bypass required gates
+        if: steps.handoff.outputs.execution_mode == 'production'
         env:
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
@@ -264,7 +275,13 @@ jobs:
           echo '### Post-editorial deterministic handoff' >> "$GITHUB_STEP_SUMMARY"
           echo '- Model calls in this workflow: **0**' >> "$GITHUB_STEP_SUMMARY"
           echo '- Direct writes to main: **prohibited**' >> "$GITHUB_STEP_SUMMARY"
-          echo '- Protected publication PR: **required**' >> "$GITHUB_STEP_SUMMARY"
+          echo "- Execution mode: **${{ steps.handoff.outputs.execution_mode }}**" >> "$GITHUB_STEP_SUMMARY"
+          if [ "${{ steps.handoff.outputs.execution_mode }}" = "production" ]; then
+            echo '- Protected publication PR: **required**' >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo '- Protected publication PR: **prohibited for qualification_nonproduction**' >> "$GITHUB_STEP_SUMMARY"
+            echo '- Production merge / Pages deployment: **prohibited**' >> "$GITHUB_STEP_SUMMARY"
+          fi
           echo '- Visual path: deterministic only after Sep-17 parity + PNG integrity; otherwise story-scoped approved fallback' >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"
           cat /tmp/kernel-receipt.json 2>/dev/null || true
