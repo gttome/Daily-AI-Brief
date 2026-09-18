@@ -173,10 +173,12 @@
       "images_path",
       "metadata_candidates_path",
       "media_path",
+      "article_evidence_path",
       "coverage_period",
       "editorial_model_passes",
       "post_editorial_model_passes",
-      "deterministic_validation_model_calls"
+      "deterministic_validation_model_calls",
+      "image_transport_method"
     ],
     "required_values": {
       "editorial_model_passes": 1,
@@ -201,7 +203,8 @@
         "branch_prefix": "editorial-handoff/qualification/",
         "downstream": "GitHub Actions may run deterministic expansion/tests on the isolated branch but MUST NOT create a publication PR or label, merge to main, trigger Pages deployment, or promote production."
       }
-    }
+    },
+    "article_evidence_copy_path": "_records/editorial-handoff/article-evidence.json"
   },
   "credits": {
     "target_lt": 80,
