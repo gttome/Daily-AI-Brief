@@ -175,7 +175,7 @@ if (command === 'novelty-index' || command === 'novelty-query') {
 } else if (command === 'integration-check') {
   const date = args.date || latestBriefDate(repoRoot);
   const edition = readJson(path.join(repoRoot, '_data', 'editions', `${date}.json`));
-  const errors = validateIntegratedRepository(edition, repoRoot);
+  const errors = validateIntegratedRepository(edition, repoRoot, {imageReviewPath:args['image-review']||null});
   console.log(JSON.stringify({result: errors.length ? 'FAIL' : 'PASS', date, errors}, null, 2));
   if (errors.length) process.exitCode = 1;
 } else if (command === 'semantic') {

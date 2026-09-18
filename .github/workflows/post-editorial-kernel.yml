@@ -272,13 +272,14 @@ jobs:
       - name: Apply deterministic stage to staging branch
         env:
           DAB_QUALIFICATION_NONPRODUCTION: ${{ steps.handoff.outputs.execution_mode == 'qualification_nonproduction' && '1' || '0' }}
+          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
         run: |
           set -euo pipefail
           cp -a /tmp/publication-stage/. ./
           node --test _generator/test/*.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
-          node _generator/cli.mjs integration-check
+          node _generator/cli.mjs integration-check --image-review "$IMAGES_PATH"
 
       - name: Commit deterministic outputs to staging only
         env:

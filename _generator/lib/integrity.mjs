@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import {reviewedImages} from './image-gate.mjs';
+import {reviewedHandoffImages,reviewedImages} from './image-gate.mjs';
 import path from 'node:path';
 import {auditEditionAccessibility} from './accessibility.mjs';
 import {validateFeeds} from './reader.mjs';
@@ -91,8 +91,9 @@ export function validateDerivedParity(edition, repoRoot) {
   return errors;
 }
 
-export function validateIntegratedRepository(edition, repoRoot) {
-  const errors = [...reviewedImages(edition, repoRoot).errors, ...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...validateDerivedParity(edition, repoRoot), ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
+export function validateIntegratedRepository(edition, repoRoot, {imageReviewPath=null}={}) {
+  const imageReview=imageReviewPath?reviewedHandoffImages(edition,repoRoot,imageReviewPath):reviewedImages(edition,repoRoot);
+  const errors = [...imageReview.errors, ...validateEdition(edition), ...validateUrlContract(repoRoot), ...validateOperationalRecords(repoRoot), ...validateDerivedParity(edition, repoRoot), ...auditEditionAccessibility(edition, repoRoot).findings.filter(item => ['critical', 'high'].includes(item.severity)).map(item => `${item.code}: ${item.message}`)];
   const atom = fs.existsSync(path.join(repoRoot, 'feed.xml')) ? fs.readFileSync(path.join(repoRoot, 'feed.xml'), 'utf8') : '';
   const json = fs.existsSync(path.join(repoRoot, 'feed.json')) ? fs.readFileSync(path.join(repoRoot, 'feed.json'), 'utf8') : '';
   errors.push(...validateFeeds(atom, json));
