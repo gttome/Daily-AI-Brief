@@ -100,6 +100,14 @@
     "raw_discovery_queue_model_visible": false,
     "retained_candidate_limit": 20,
     "required_before_deep_review": true,
-    "rule": "Raw catalog/discovery results are traceability-only. The editorial model may inspect only the deterministic gate output containing at most 20 retained metadata candidates."
+    "rule": "Raw catalog/discovery results are traceability-only. The editorial model may inspect only the deterministic gate output containing at most 20 retained metadata candidates.",
+    "fresh_discovery_required": true,
+    "discovery_cutoff_env": "DAB_RESEARCH_CUTOFF",
+    "resolved_date_required": true,
+    "coverage_minimum_per_focus": 3,
+    "agent_skill_signals_minimum": 1,
+    "coverage_ready_required": true,
+    "prefer_publisher_feeds": true,
+    "required_topic_sources": "_data/required-topic-sources.json"
   }
 }
