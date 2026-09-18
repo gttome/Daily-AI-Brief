@@ -6,7 +6,9 @@ const retrievalCache=acquisition.cache;
 const registry=JSON.parse(fs.readFileSync('_data/source-registry.json'));
 const early=JSON.parse(fs.readFileSync('_data/early-signal-sources.json','utf8'));
 const requiredTopics=JSON.parse(fs.readFileSync('_data/required-topic-sources.json','utf8'));
-const date=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date());
+const cutoffMs=process.env.DAB_RESEARCH_CUTOFF?Date.parse(process.env.DAB_RESEARCH_CUTOFF):Date.now();
+if(!Number.isFinite(cutoffMs))throw Error('Invalid DAB_RESEARCH_CUTOFF');
+const date=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date(cutoffMs));
 const previous=fs.existsSync('_data/media-candidate-queue.json')?JSON.parse(fs.readFileSync('_data/media-candidate-queue.json')).candidates:[];
 const candidates=new Map(previous.filter(c=>(Date.now()-Date.parse(c.discovered_at))/86400000<=30).map(c=>[c.url,c]));const sources=[];
 const preferredRegistrySources=registry.sources.map(source=>{
@@ -37,7 +39,7 @@ let scanned=0,stopReason=null;
 const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
  const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
  const ordinary=Number.isFinite(published)&&Date.now()-published>=0&&Date.now()-published<=FRESH_HOURS*3600000;
- const required=c.required_topic&&Number.isFinite(updated)&&Date.now()-updated>=0&&Date.now()-updated<=(c.required_topic_fallback_days||7)*86400000;
+ const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
  return ordinary||required;
 }).length;
 
@@ -62,5 +64,5 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
 for(const s of scanPlan.slice(scanned,MAX_SOURCES_SCANNED))sources.push({source_id:s.source_id,status:'deferred',reason:stopReason||'source_scan_limit'});
 const retained=retainCandidates([...candidates.values()],{limit:500});
 fs.writeFileSync('_data/media-candidate-queue.json',JSON.stringify({updated_at:new Date().toISOString(),...retained},null,2)+'\n');
-fs.mkdirSync('_records/discovery',{recursive:true});fs.writeFileSync(`_records/discovery/${date}.json`,JSON.stringify({date,sources:sources.sort((a,b)=>a.source_id.localeCompare(b.source_id)),queue_size:retained.candidates.length,queue_discovered:candidates.size,retention:retained.retention,early_signal_channels:early.channels.length,efficiency:{...retrievalCache.metrics,article_sources_fulltext_retrieved:0,scope:'bounded_catalog_metadata_discovery',sources_scanned:scanned,source_scan_minimum:MIN_SOURCES_SCANNED,source_scan_maximum:MAX_SOURCES_SCANNED,fresh_metadata_candidates:freshMetadataCount(),fresh_metadata_target:FRESH_METADATA_TARGET,required_topic_sources:requiredSources.length,preferred_feed_sources:preferredRegistrySources.filter(x=>x.feed_preferred).length,stop_reason:stopReason||'source_scan_limit'},note:'Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Catalog acquisition stops after bounded breadth plus sufficient fresh metadata, or at the normal acquisition budget; later editorial research retains at most 20 metadata candidates.'},null,2)+'\n');
-console.log(JSON.stringify({date,sources:sources.length,scanned,queue:candidates.size,fresh_metadata:freshMetadataCount(),stop_reason:stopReason||'source_scan_limit'}));
+fs.mkdirSync('_records/discovery',{recursive:true});fs.writeFileSync(`_records/discovery/${date}.json`,JSON.stringify({date,research_cutoff_at:new Date(cutoffMs).toISOString(),sources:sources.sort((a,b)=>a.source_id.localeCompare(b.source_id)),queue_size:retained.candidates.length,queue_discovered:candidates.size,retention:retained.retention,early_signal_channels:early.channels.length,efficiency:{...retrievalCache.metrics,article_sources_fulltext_retrieved:0,scope:'bounded_catalog_metadata_discovery',sources_scanned:scanned,source_scan_minimum:MIN_SOURCES_SCANNED,source_scan_maximum:MAX_SOURCES_SCANNED,fresh_metadata_candidates:freshMetadataCount(),fresh_metadata_target:FRESH_METADATA_TARGET,required_topic_sources:requiredSources.length,preferred_feed_sources:preferredRegistrySources.filter(x=>x.feed_preferred).length,stop_reason:stopReason||'source_scan_limit'},note:'Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Catalog acquisition stops after bounded breadth plus sufficient fresh metadata, or at the normal acquisition budget; later editorial research retains at most 20 metadata candidates.'},null,2)+'\n');
+console.log(JSON.stringify({date,research_cutoff_at:new Date(cutoffMs).toISOString(),sources:sources.length,scanned,queue:candidates.size,fresh_metadata:freshMetadataCount(),stop_reason:stopReason||'source_scan_limit'}));
