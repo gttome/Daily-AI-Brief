@@ -8,6 +8,7 @@ import {generatedFiles} from './render.mjs';
 import {sha256, stableSuffix, writeText} from './util.mjs';
 import {assertValidEdition} from './validate.mjs';
 import {applyProductionTelemetryHealth,assertMediaPreflight} from './production-guardrails.mjs';
+import {editionPodcasts} from './podcasts.mjs';
 
 export function stagedDigest(files) {
   const canonical = [...files.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, content]) => `${name}\0${sha256(content)}`).join('\n');
