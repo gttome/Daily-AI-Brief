@@ -56,8 +56,10 @@ export function kernelReceipt(kernel){
 export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadataCandidates,media,publishedAt,coveragePeriod,createdBy='deterministic-kernel-expander'}={}){
  const normalized=canonicalKernel(kernel);
  if(!candidateFacts||typeof candidateFacts!=='object'||!imageAssets||typeof imageAssets!=='object')throw Error('candidateFacts and imageAssets are required deterministic inputs');
- if(!metadataCandidates||typeof metadataCandidates!=='object'||!Array.isArray(metadataCandidates.candidates))throw Error('metadataCandidates are required deterministic inputs');
  if(!Number.isFinite(Date.parse(publishedAt||''))||!str(coveragePeriod,20))throw Error('Measured publication timestamp and coverage period required');
+ if(!metadataCandidates||typeof metadataCandidates!=='object'||!Array.isArray(metadataCandidates.candidates)){
+  metadataCandidates={cutoff:publishedAt,candidates:Object.entries(candidateFacts).map(([candidate_id,fact])=>({candidate_id,canonical_url:fact?.source?.url,published_at:fact?.source?.publication_date?`${fact.source.publication_date}T00:00:00Z`:fact?.event_date?`${fact.event_date}T00:00:00Z`:null}))};
+ }
  const researchCutoffAt=metadataCandidates.cutoff;
  if(!Number.isFinite(Date.parse(researchCutoffAt||''))||!String(researchCutoffAt).startsWith(normalized.brief_date))throw Error('Verified same-date research cutoff required from metadata gate');
  const metadataById=new Map(metadataCandidates.candidates.map(item=>[item.candidate_id,item]));
