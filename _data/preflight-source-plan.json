@@ -104,7 +104,10 @@
       "required_topic": "agent_skills",
       "required_topic_fallback_days": 7,
       "status": "active",
-      "candidate_title": "OpenAI Academy Skills for reusable ChatGPT workflows"
+      "candidate_title": "OpenAI Academy Skills for reusable ChatGPT workflows",
+      "background_only": true,
+      "material_update_verified": false,
+      "metadata_notes": "Useful Agent Skills background, but an updated_at value alone does not establish a fresh story. Do not satisfy the mandatory Skills story slot unless a material update is independently verified."
     },
     {
       "source_id": "anthropic-agent-skills",
