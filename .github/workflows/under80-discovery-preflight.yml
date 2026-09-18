@@ -54,7 +54,7 @@ jobs:
             node - "$cutoff" "$date" <<'NODE' > _records/discovery-preflight/request.json
           const [cutoff,date]=process.argv.slice(2);
           process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',purpose:'daily_pre_work_discovery',edition_date:date,cutoff,source_scan_max:48,fresh_metadata_target:24},null,2)+'\n');
-NODE
+          NODE
             git add _records/discovery-preflight/request.json
             git config user.name "github-actions[bot]"
             git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
@@ -82,7 +82,7 @@ NODE
           const max=Math.max(24,Math.min(64,Number(r.source_scan_max||48)));
           const fresh=Math.max(20,Math.min(40,Number(r.fresh_metadata_target||24)));
           fs.appendFileSync(out,'cutoff='+r.cutoff+'\nedition_date='+r.edition_date+'\nsource_scan_max='+max+'\nfresh_metadata_target='+fresh+'\n');
-NODE
+          NODE
 
       - name: Run deterministic discovery outside Work
         if: steps.request.outputs.run_preflight == 'true'
@@ -114,7 +114,7 @@ NODE
           if(d.candidates.some(x=>x.date_status!=='resolved_metadata_date'||!x.metadata_event_at)) throw new Error('unresolved_metadata_date');
           if(!d.coverage_counts||!['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].every(k=>d.coverage_counts[k]>=3)) throw new Error('focus_coverage_invalid');
           if((d.agent_skill_signals||0)<1) throw new Error('agent_skill_signal_missing');
-NODE
+          NODE
 
       - name: Create compact receipt and discard raw discovery mutations
         if: steps.request.outputs.run_preflight == 'true'
@@ -127,7 +127,7 @@ NODE
           const resultText=fs.readFileSync(resultPath,'utf8');
           const result=JSON.parse(resultText);
           process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,edition_date:request.edition_date,cutoff:request.cutoff,candidate_count:result.candidates.length,coverage_counts:result.coverage_counts,agent_skill_signals:result.agent_skill_signals,coverage_ready:result.coverage_ready,metadata_candidates_sha256:crypto.createHash('sha256').update(resultText).digest('hex'),production_changes:0},null,2)+'\n');
-NODE
+          NODE
           git restore -- _data/media-candidate-queue.json || true
           discovery_file="_records/discovery/${{ steps.config.outputs.edition_date }}.json"
           if git ls-files --error-unmatch "$discovery_file" >/dev/null 2>&1; then git restore -- "$discovery_file"; else rm -f "$discovery_file"; fi
