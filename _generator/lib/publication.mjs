@@ -57,6 +57,11 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   const mediaPreflightPath=`_records/editorial/media-preflight/${edition.brief_date}.json`;
   let mediaPreflight=options.mediaPreflight||null;
   if(edition.brief_date>='2026-09-17'){
+    const selectedVideos=Object.values(edition.worth_watching||{}).filter(item=>item?.status==='included').length;
+    const selectedPodcasts=editionPodcasts(edition).length;
+    if(!mediaPreflight&&selectedVideos+selectedPodcasts===0){
+      mediaPreflight={schema_version:'1.0.0',edition_id:edition.edition_id,checked_at:options.observedAt,items:[],basis:'deterministic_empty_selected_media_set'};
+    }
     const diskPath=path.join(repoRoot,mediaPreflightPath);
     if(!mediaPreflight&&fs.existsSync(diskPath))mediaPreflight=JSON.parse(fs.readFileSync(diskPath,'utf8'));
     assertMediaPreflight(edition,mediaPreflight,{observedAt:options.observedAt});
