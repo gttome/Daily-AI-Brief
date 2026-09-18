@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "profile_id": "under80-v1",
   "effective_date": "2026-09-18",
   "baseline_date": "2026-09-17",
@@ -108,6 +108,18 @@
     "agent_skill_signals_minimum": 1,
     "coverage_ready_required": true,
     "prefer_publisher_feeds": true,
-    "required_topic_sources": "_data/required-topic-sources.json"
-  }
+    "required_topic_sources": "_data/required-topic-sources.json",
+    "prework_owner": "github_actions",
+    "preflight_workflow": ".github/workflows/under80-metadata-preflight.yml",
+    "work_executes_metadata_discovery": false,
+    "work_entry_requires_ready_preflight": true,
+    "preflight_branch_prefix": "preflight/",
+    "model_calls": 0,
+    "credit_goal": "zero Work/Codex credits for metadata discovery and prefilter"
+  },
+  "work_forbidden_before_editorial": [
+    "metadata catalog discovery",
+    "broad source scanning",
+    "raw discovery queue inspection"
+  ]
 }
