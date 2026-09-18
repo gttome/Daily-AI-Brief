@@ -147,3 +147,16 @@ Catalog acquisition stores a compact, non-executable HTML representation that pr
 A dated URL may prioritize queue retention, but is never a verified publication timestamp or a freshness approval. Zero dates extracted from catalogs means unresolved metadata. Run the existing bounded `research.mjs metadata` review for promising retained leads before drawing freshness conclusions. Budget exhaustion is not the successful nine-candidate research early-stop condition; record them separately.
 
 The Watchlist runner executes its bounded fallback sequentially, forces an actual recheck of eligible not-due public sources, and stops as soon as the floor is met or five extra checks have been attempted. Keep the preceding not-due disposition and the actual returned observation. A failed floor remains degraded coverage and does not establish no news. Retain original failed attempt records and append corrections when their conclusions or measurements were overstated.
+
+### Required measured telemetry (September 18 reconciliation)
+
+Do not reconstruct missing historical stage times. Initialize a private append-only journal before new work:
+`node _tools/run-telemetry.mjs init --file <private journal> --date YYYY-MM-DD --attempt <attempt> --sha <full baseline SHA>`.
+
+Use `begin --stage <name>` and `end --id <returned span ID>` around externally performed work. For deterministic commands, use `run --stage <name> -- <executable> <arguments>`. Stages are discovery, filtering, deep_retrieval, evidence_packet, selection_writing, images, media, watchlist, generation, qa, publication, and live_verification. Do not time a placeholder or substitute file-writing time for research or image work. Failed spans remain recorded. Use `reuse --stage <name> --checkpoint <original receipt>` for unchanged checkpoint work; it does not fabricate an original duration.
+
+`production-run discover` now measures the separate discovery and Watchlist passes and records acquisition cache observations; `packets` measures packet compilation and records the supplied deep-review count. Use the same attempt journal for remaining stages. Supply `--telemetry-file <journal>` to `cli.mjs generate` so generation includes the measured snapshot instead of an all-null placeholder. Existing `--efficiency` input remains supported; do not replace recorded evidence with an empty template.
+
+Use `observe --field <group.field> --value <JSON value> --evidence <original receipt>` for actual candidate/deep-review counts, cache metrics, sufficiency early-stop result, and observable model calls/input/output tokens. Record the source-reported value only. Unobservable model or token usage remains null and keeps measurement status DEGRADED. Deep-review expansion requires an insufficiency reason in the editorial evidence.
+
+Record lifecycle `started` at initialization, `published` after the initial edition merge is verified, and `qa_complete` only after final live/Pages/QA verification. The journal exports initial-publication and post-publication QA durations separately. Export with `export --out <efficiency JSON>` and retain the private journal with the existing private checkpoint. No platform credits are inferred.

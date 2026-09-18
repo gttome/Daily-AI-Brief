@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-17",
-  "updated_at": "2026-09-17T12:22:20Z",
+  "edition_date": "2026-09-18",
+  "updated_at": "2026-09-18T14:31:07.655Z",
   "baseline_note": "Rolling researched watchlist. The due-source pass produced 37 fresh successful automated observations, including 33 sources with candidate links; four automated sources failed, four returned no links and eight require assisted review. One topic gained new primary evidence; seven are carried forward with original evidence dates and no inferred popularity.",
   "topics": [
     {
