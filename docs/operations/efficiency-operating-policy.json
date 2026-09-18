@@ -131,5 +131,17 @@
     "metadata catalog discovery",
     "broad source scanning",
     "raw discovery queue inspection"
-  ]
+  ],
+  "discovery_preflight": {
+    "execution_owner": "github_actions",
+    "workflow": ".github/workflows/under80-discovery-preflight.yml",
+    "model_calls": 0,
+    "work_catalog_discovery_allowed": false,
+    "raw_discovery_queue_model_visible": false,
+    "max_retained_candidates": 20,
+    "coverage_ready_required": true,
+    "daily_branch_pattern": "discovery-preflight/daily/YYYY-MM-DD",
+    "qualification_branch_pattern": "discovery-preflight/qualification/YYYY-MM-DD-<attempt>",
+    "rationale": "The September 18 qualification attempt consumed 58 Work credits before deep review while only running deterministic discovery/gating; moving this stage to GitHub Actions preserves quality while removing it from Work/Codex cost."
+  }
 }

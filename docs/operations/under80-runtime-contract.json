@@ -67,7 +67,15 @@
     "preflight_source_plan": "_data/preflight-source-plan.json",
     "preflight_source_strategy": "Use the small balanced first-party/primary-source preflight plan before broader registry rotation; source focus hints are deterministic routing hints only, never editorial selection.",
     "metadata_enrichment_balanced_by_focus": true,
-    "metadata_enrichment_quota": "approximately one third per focus, with Agent Skills reserved first"
+    "metadata_enrichment_quota": "approximately one third per focus, with Agent Skills reserved first",
+    "discovery_execution_owner": "github_actions",
+    "discovery_preflight_workflow": ".github/workflows/under80-discovery-preflight.yml",
+    "discovery_preflight_daily_branch": "discovery-preflight/daily/YYYY-MM-DD",
+    "qualification_preflight_branch": "discovery-preflight/qualification/YYYY-MM-DD-<attempt>",
+    "work_must_not_run_catalog_discovery": true,
+    "work_model_visible_discovery_input": "_records/discovery-preflight/result/metadata-candidates.json",
+    "work_preflight_receipt": "_records/discovery-preflight/result/receipt.json",
+    "work_start_rule": "Work begins only after a GitHub Actions discovery preflight has produced coverage_ready=true with zero model calls. Work reads only the compact shortlist and receipt; it does not execute catalog discovery or inspect raw discovery queues."
   },
   "semantic_work": {
     "editorial_model_passes": 1,
@@ -103,6 +111,7 @@
     "bounded_omission_allowed": true
   },
   "work_owns": [
+    "read one precomputed coverage-ready metadata shortlist produced by GitHub Actions with zero model calls",
     "read one committed ready=true zero-model metadata preflight containing at most 20 candidates; do not execute metadata discovery in Work",
     "load this compact runtime contract and the machine-readable efficiency policy",
     "one compact evidence package",
@@ -112,6 +121,7 @@
     "commit one editorial-handoff manifest on an isolated editorial-handoff/* branch"
   ],
   "github_actions_owns": [
+    "run broad deterministic metadata discovery and <=20 coverage-ready prefilter before Work",
     "run scheduled zero-model metadata discovery and deterministic prefilter before Work begins",
     "validate handoff and trusted main baseline",
     "select the six accepted generative image assets without lowering quality",

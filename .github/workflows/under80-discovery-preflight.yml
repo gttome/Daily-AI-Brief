@@ -1,0 +1,158 @@
+name: Under-80 discovery preflight
+
+on:
+  push:
+    branches:
+      - 'discovery-preflight/**'
+    paths:
+      - '_records/discovery-preflight/request.json'
+  schedule:
+    - cron: '45 11 * * *'
+    - cron: '45 12 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: under80-discovery-preflight-${{ github.ref_name || github.run_id }}
+  cancel-in-progress: false
+
+jobs:
+  preflight:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out source ref
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Resolve scheduled or requested preflight
+        id: request
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            local_stamp="$(node -e "const d=new Date();const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d);const o=Object.fromEntries(p.map(x=>[x.type,x.value]));process.stdout.write(o.year+'-'+o.month+'-'+o.day+'T'+o.hour+':'+o.minute)")"
+            local_time="${local_stamp#*T}"
+            if [ "$local_time" != "06:45" ]; then
+              echo "run_preflight=false" >> "$GITHUB_OUTPUT"
+              echo "Second DST-covering cron skipped at local $local_stamp."
+              exit 0
+            fi
+            date="${local_stamp%%T*}"
+            target_ref="discovery-preflight/daily/$date"
+            git switch -c "$target_ref"
+            mkdir -p _records/discovery-preflight
+            cutoff="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            node - "$cutoff" "$date" <<'NODE' > _records/discovery-preflight/request.json
+          const [cutoff,date]=process.argv.slice(2);
+          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',purpose:'daily_pre_work_discovery',edition_date:date,cutoff,source_scan_max:48,fresh_metadata_target:24},null,2)+'\n');
+NODE
+            git add _records/discovery-preflight/request.json
+            git config user.name "github-actions[bot]"
+            git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Start under-80 discovery preflight for $date"
+            git push -u origin "$target_ref"
+          else
+            target_ref="$REF_NAME"
+            test -f _records/discovery-preflight/request.json
+          fi
+          echo "run_preflight=true" >> "$GITHUB_OUTPUT"
+          echo "target_ref=$target_ref" >> "$GITHUB_OUTPUT"
+
+      - name: Validate request
+        if: steps.request.outputs.run_preflight == 'true'
+        id: config
+        run: |
+          set -euo pipefail
+          node - _records/discovery-preflight/request.json "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs');
+          const [file,out]=process.argv.slice(2);
+          const r=JSON.parse(fs.readFileSync(file,'utf8'));
+          if(r.schema_version!=='1.0.0'||r.profile_id!=='under80-v1') throw new Error('invalid_preflight_request');
+          if(!/^\d{4}-\d{2}-\d{2}$/.test(r.edition_date)) throw new Error('invalid_edition_date');
+          if(!Number.isFinite(Date.parse(r.cutoff))) throw new Error('invalid_cutoff');
+          const max=Math.max(24,Math.min(64,Number(r.source_scan_max||48)));
+          const fresh=Math.max(20,Math.min(40,Number(r.fresh_metadata_target||24)));
+          fs.appendFileSync(out,'cutoff='+r.cutoff+'\nedition_date='+r.edition_date+'\nsource_scan_max='+max+'\nfresh_metadata_target='+fresh+'\n');
+NODE
+
+      - name: Run deterministic discovery outside Work
+        if: steps.request.outputs.run_preflight == 'true'
+        env:
+          DAB_RESEARCH_CUTOFF: ${{ steps.config.outputs.cutoff }}
+          DAB_SOURCE_SCAN_MIN: '12'
+          DAB_SOURCE_SCAN_MAX: ${{ steps.config.outputs.source_scan_max }}
+          DAB_FRESH_METADATA_TARGET: ${{ steps.config.outputs.fresh_metadata_target }}
+        run: |
+          set -euo pipefail
+          node _tools/discover-sources.mjs
+
+      - name: Build bounded model-visible shortlist
+        if: steps.request.outputs.run_preflight == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p _records/discovery-preflight/result
+          node _tools/under80-metadata-gate.mjs --input _data/media-candidate-queue.json --out _records/discovery-preflight/result/metadata-candidates.json --limit 20 --cutoff "${{ steps.config.outputs.cutoff }}"
+
+      - name: Verify readiness before Work may consume it
+        if: steps.request.outputs.run_preflight == 'true'
+        run: |
+          set -euo pipefail
+          node - _records/discovery-preflight/result/metadata-candidates.json <<'NODE'
+          const fs=require('fs');
+          const d=JSON.parse(fs.readFileSync(process.argv[2],'utf8'));
+          if(d.coverage_ready!==true) throw new Error('discovery_preflight_not_coverage_ready');
+          if(!Array.isArray(d.candidates)||d.candidates.length>20) throw new Error('candidate_limit_invalid');
+          if(d.candidates.some(x=>x.date_status!=='resolved_metadata_date'||!x.metadata_event_at)) throw new Error('unresolved_metadata_date');
+          if(!d.coverage_counts||!['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].every(k=>d.coverage_counts[k]>=3)) throw new Error('focus_coverage_invalid');
+          if((d.agent_skill_signals||0)<1) throw new Error('agent_skill_signal_missing');
+NODE
+
+      - name: Create compact receipt and discard raw discovery mutations
+        if: steps.request.outputs.run_preflight == 'true'
+        run: |
+          set -euo pipefail
+          node - _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json <<'NODE' > _records/discovery-preflight/result/receipt.json
+          const fs=require('fs'),crypto=require('crypto');
+          const [requestPath,resultPath]=process.argv.slice(2);
+          const request=JSON.parse(fs.readFileSync(requestPath,'utf8'));
+          const resultText=fs.readFileSync(resultPath,'utf8');
+          const result=JSON.parse(resultText);
+          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,edition_date:request.edition_date,cutoff:request.cutoff,candidate_count:result.candidates.length,coverage_counts:result.coverage_counts,agent_skill_signals:result.agent_skill_signals,coverage_ready:result.coverage_ready,metadata_candidates_sha256:crypto.createHash('sha256').update(resultText).digest('hex'),production_changes:0},null,2)+'\n');
+NODE
+          git restore -- _data/media-candidate-queue.json || true
+          discovery_file="_records/discovery/${{ steps.config.outputs.edition_date }}.json"
+          if git ls-files --error-unmatch "$discovery_file" >/dev/null 2>&1; then git restore -- "$discovery_file"; else rm -f "$discovery_file"; fi
+
+      - name: Commit compact preflight only
+        if: steps.request.outputs.run_preflight == 'true'
+        env:
+          TARGET_REF: ${{ steps.request.outputs.target_ref }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/receipt.json
+          git commit -m "Complete under-80 discovery preflight"
+          git push origin "HEAD:$TARGET_REF"
+
+      - name: Summary
+        if: always() && steps.request.outputs.run_preflight == 'true'
+        run: |
+          echo '### Under-80 discovery preflight' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Model calls: **0**' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Work/Codex discovery execution: **0**' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Raw discovery queue committed: **no**' >> "$GITHUB_STEP_SUMMARY"
+          if [ -f _records/discovery-preflight/result/receipt.json ]; then
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat _records/discovery-preflight/result/receipt.json >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
