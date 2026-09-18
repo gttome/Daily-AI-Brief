@@ -93,5 +93,13 @@
     "pages_deployment": false,
     "production_mutation": false,
     "deterministic_branch_validation": true
+  },
+  "metadata_gate": {
+    "tool": "_tools/under80-metadata-gate.mjs",
+    "output_path": "_records/editorial-handoff/metadata-candidates.json",
+    "raw_discovery_queue_model_visible": false,
+    "retained_candidate_limit": 20,
+    "required_before_deep_review": true,
+    "rule": "Raw catalog/discovery results are traceability-only. The editorial model may inspect only the deterministic gate output containing at most 20 retained metadata candidates."
   }
 }
