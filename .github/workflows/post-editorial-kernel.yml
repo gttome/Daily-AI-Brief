@@ -270,6 +270,8 @@ jobs:
             --image-review "$IMAGES_PATH"
 
       - name: Apply deterministic stage to staging branch
+        env:
+          DAB_QUALIFICATION_NONPRODUCTION: ${{ steps.handoff.outputs.execution_mode == 'qualification_nonproduction' && '1' || '0' }}
         run: |
           set -euo pipefail
           cp -a /tmp/publication-stage/. ./
