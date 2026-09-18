@@ -7,7 +7,8 @@
     "facts_path": "_records/editorial-handoff/facts.json",
     "images_path": "_records/editorial-handoff/images.json",
     "media_path": "_records/editorial-handoff/media.json",
-    "manifest_path": "_records/editorial-handoff/handoff.json"
+    "manifest_path": "_records/editorial-handoff/handoff.json",
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
   },
   "kernel_shape": {
     "schema_version": "1.0.0",
@@ -162,9 +163,11 @@
     "editorial_model_passes": 1,
     "post_editorial_model_passes": 0,
     "deterministic_validation_model_calls": 0,
-    "execution_mode": "production"
+    "execution_mode": "production",
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
   },
   "hard_rules": [
+    "Before any model inspects article discovery candidates, run `_tools/under80-metadata-gate.mjs`; never open the raw discovery queue. The committed gate output must contain at most 20 candidates.",
     "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
     "Facts and image manifests must contain every selected candidate_id.",
     "All six PNGs must be fresh accepted full-quality images for a from-scratch qualification test.",
@@ -182,6 +185,7 @@
     "coverage_period": "Verified coverage-period sentence of at least twenty characters.",
     "editorial_model_passes": 1,
     "post_editorial_model_passes": 0,
-    "deterministic_validation_model_calls": 0
+    "deterministic_validation_model_calls": 0,
+    "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json"
   }
 }
