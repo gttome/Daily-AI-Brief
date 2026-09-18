@@ -12,7 +12,7 @@ const review={status:'reviewed',reviewer:'editorial-review',reviewed_at:now,sour
 
 test('freshness constants preserve a 24-hour primary window and bounded fallbacks',()=>{
  assert.equal(PRIMARY_FRESHNESS_HOURS,24);assert.equal(DEFAULT_FALLBACK_HOURS,72);assert.equal(AGENT_SKILLS_FALLBACK_HOURS,168);
- assert.equal(DEFAULT_METADATA_CANDIDATE_LIMIT,20);assert.equal(MAX_DEEP_CANDIDATE_EXCEPTION,12);
+ assert.equal(DEFAULT_METADATA_CANDIDATE_LIMIT,20);assert.equal(MAX_DEEP_CANDIDATE_EXCEPTION,9);
 });
 test('prefilter retains missing metadata for review and never caps categories',()=>{
  const list=Array.from({length:25},(_,i)=>({...candidate,canonical_url:'https://example.org/'+i}));
