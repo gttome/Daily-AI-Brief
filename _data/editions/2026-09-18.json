@@ -1,453 +1,454 @@
 {
   "schema_version": "1.0.0",
-  "policy_profile": "full_v1",
+  "policy_profile": "under80-v1",
   "edition_id": "dab-edition-2026-09-18",
   "brief_date": "2026-09-18",
   "timezone": "America/Chicago",
   "title": "Daily Generative AI Brief — September 18, 2026",
-  "published_at": "2026-09-18T14:41:06Z",
-  "research_cutoff_at": "2026-09-18T14:41:06Z",
-  "coverage_period": "September 17 sources reviewed for the September 18 edition. Recency fallback: exact posting times were unavailable; date-only sources are conservatively normalized and not asserted inside the exact 24-hour primary window.",
+  "published_at": "2026-09-18T23:58:27Z",
+  "research_cutoff_at": "2026-09-18T14:41:06.000Z",
+  "coverage_period": "24-hour primary window ending at 2026-09-18T14:41:06.000Z; recency fallback used for reviewed items outside the primary window.",
   "status": "staged",
   "stories": [
     {
-      "story_id": "dab-story-2026-09-18-2cda8d5e",
+      "story_id": "dab-story-2026-09-18-3b4029a5",
       "ordinal": 1,
-      "slug": "anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs",
-      "permanent_url": "/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/",
+      "slug": "github-moves-workflow-execution-protections-to-general-availability",
+      "permanent_url": "/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/",
       "focus": "technical_ai_engineering",
-      "headline": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
+      "headline": "GitHub moves workflow execution protections to general availability",
       "event_date": "2026-09-17",
       "topics": [
-        "frontier AI",
-        "R&D automation",
-        "agent oversight",
-        "evaluation",
-        "compute governance"
+        "workflow-authority"
       ],
-      "companies": [
-        "Anthropic"
-      ],
+      "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-18/01-frontier-lab-measurements.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82",
-        "alt": "Conceptual textbook illustration of AI-driven research, agent oversight, and compute allocation as three measurement lenses.",
-        "width": 1200,
-        "height": 630,
+        "path": "briefs/images/2026-09-18/qualification-230421-01.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-01.png?v=94b8d3829c08f921",
+        "alt": "A detailed left-to-right control gateway with a workflow specification card, actor allowlist card, central policy gate and authorized execution lane. A separate lower review rail shows questions to resolve before configuration. No invented product settings.",
+        "width": 1730,
+        "height": 909,
         "kind": "editorial_explainer",
-        "cache_key": "6bff2de1e8782d82"
+        "cache_key": "94b8d3829c08f921"
       },
-      "summary": "Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.",
-      "why_it_matters": "The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that automation. Comparable, independently checked operational metrics could make acceleration and control more inspectable.",
+      "summary": "GitHub’s September 17 announcement moves Actions execution protections from public preview to general availability. The metadata describes an allowlist governing who can trigger workflows.",
+      "why_it_matters": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow.",
       "source": {
-        "title": "Measurements for understanding the pace of AI development inside frontier labs",
-        "organization": "Anthropic",
-        "url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
-        "normalized_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+        "title": "Workflow execution protections in GitHub Actions generally available",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+        "normalized_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
         "publication_date": "2026-09-17",
-        "evidence_type": "official_research",
-        "availability_status": "published_research"
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 819,
+          "verified_at": "2026-09-18T23:58:27Z",
+          "method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+          "words_per_minute": 200
+        }
       },
       "freshness": {
-        "tier": "fallback",
-        "source_published_at": "2026-09-17T00:00:00-05:00",
-        "fallback_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window."
+        "tier": "primary",
+        "source_published_at": "2026-09-17T15:45:26.000Z"
       },
-      "selection_rationale": "A fresh first-party measurement framework with concrete R&D automation, agent-oversight, and compute-allocation metrics that directly informs evaluation and governance.",
+      "selection_rationale": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow.",
       "novelty": {
         "disposition": "new",
         "prior_story_ids": [],
-        "what_changed": null
-      },
-      "candidate_score": {
-        "significance": 5,
-        "freshness": 4,
-        "authority": 5,
-        "evidence_quality": 5,
-        "novelty": 5,
-        "practical_value": 5,
-        "category_fit": 5,
-        "total": 34,
-        "selection_rationale": "A fresh first-party measurement framework with concrete R&D automation, agent-oversight, and compute-allocation metrics that directly informs evaluation and governance."
-      },
-      "what_to_do_now": {
-        "action": "evaluate",
-        "label": "Track operational capability and control together",
-        "rationale": "When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention."
-      },
-      "social_description": "The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that",
-      "social": {
-        "title": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
-        "description": "The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82"
-      }
-    },
-    {
-      "story_id": "dab-story-2026-09-18-3ac3c725",
-      "ordinal": 2,
-      "slug": "github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used",
-      "permanent_url": "/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/",
-      "focus": "technical_ai_engineering",
-      "headline": "GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used",
-      "event_date": "2026-09-17",
-      "topics": [
-        "agent observability",
-        "Copilot CLI",
-        "Agent Skills",
-        "MCP",
-        "plugins",
-        "usage metrics"
-      ],
-      "companies": [
-        "GitHub"
-      ],
-      "image": {
-        "path": "briefs/images/2026-09-18/02-cli-telemetry.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/02-cli-telemetry.png?v=e69696eeaa07df9f",
-        "alt": "Textbook diagram of Copilot CLI skills, agents, MCP servers, commands, and plugins flowing into usage and distinct-use telemetry with privacy grouping.",
-        "width": 1200,
-        "height": 630,
-        "kind": "editorial_explainer",
-        "cache_key": "e69696eeaa07df9f"
-      },
-      "summary": "GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.",
-      "why_it_matters": "Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from the smaller set people actually invoke, identify enablement gaps, and measure whether reusable agent components are spreading.",
-      "source": {
-        "title": "Agentic CLI customizations now in the usage metrics API",
-        "organization": "GitHub",
-        "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/",
-        "normalized_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/",
-        "publication_date": "2026-09-17",
-        "evidence_type": "official_announcement",
-        "availability_status": "general_availability"
-      },
-      "freshness": {
-        "tier": "fallback",
-        "source_published_at": "2026-09-17T00:00:00-05:00",
-        "fallback_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window."
-      },
-      "selection_rationale": "A concrete observability upgrade that turns agent customization from configuration inventory into measurable operating evidence.",
-      "novelty": {
-        "disposition": "material_update",
-        "prior_story_ids": [
-          "dab-story-2026-09-12-8b2e61d4"
-        ],
-        "what_changed": "The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts."
+        "what_changed": null,
+        "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
       },
       "candidate_score": {
         "significance": 4,
         "freshness": 4,
         "authority": 5,
-        "evidence_quality": 5,
-        "novelty": 4,
-        "practical_value": 5,
+        "evidence_quality": 3,
+        "novelty": 3,
+        "practical_value": 4,
         "category_fit": 5,
-        "total": 32,
-        "selection_rationale": "A concrete observability upgrade that turns agent customization from configuration inventory into measurable operating evidence."
+        "total": 28,
+        "selection_rationale": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow."
       },
       "what_to_do_now": {
-        "action": "monitor",
-        "label": "Measure reuse before expanding the catalog",
-        "rationale": "Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations."
+        "action": "evaluate",
+        "label": "Review workflow execution authority",
+        "rationale": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow."
       },
-      "social_description": "Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from th",
+      "social_description": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow.",
       "social": {
-        "title": "GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used",
-        "description": "Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from th",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/02-cli-telemetry.png?v=e69696eeaa07df9f"
+        "title": "GitHub moves workflow execution protections to general availability",
+        "description": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-01.png?v=94b8d3829c08f921"
       }
     },
     {
-      "story_id": "dab-story-2026-09-18-87612b7e",
-      "ordinal": 3,
-      "slug": "microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work",
-      "permanent_url": "/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/",
-      "focus": "applied_genai_knowledge_workers",
-      "headline": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
+      "story_id": "dab-story-2026-09-18-6dae2514",
+      "ordinal": 2,
+      "slug": "github-s-copilot-dashboard-adds-feature-engagement-visibility",
+      "permanent_url": "/stories/2026-09-18/github-s-copilot-dashboard-adds-feature-engagement-visibility/",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub’s Copilot dashboard adds feature-engagement visibility",
       "event_date": "2026-09-17",
       "topics": [
-        "AI adoption",
-        "workflow redesign",
-        "knowledge work",
-        "outcome measurement",
-        "change management"
+        "feature-engagement"
       ],
-      "companies": [
-        "Microsoft"
-      ],
+      "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-18/03-workflow-transformation.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665",
-        "alt": "Conceptual before-and-after illustration of fragmented AI tool adoption becoming a redesigned workflow with shared data and outcome measurement.",
-        "width": 1200,
-        "height": 630,
+        "path": "briefs/images/2026-09-18/qualification-230421-02.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-02.png?v=104733598e0f8e31",
+        "alt": "An editorial measurement workbook, not a product screenshot: two large adjacent panels titled Engagement signals and Outcome questions. Four detailed qualitative review cards, a bridge labeled Investigate, and a bottom caution strip. No numerical values, bars, rankings or fictional dashboard data.",
+        "width": 1730,
+        "height": 909,
         "kind": "editorial_explainer",
-        "cache_key": "9141c39f4a9a0665"
+        "cache_key": "104733598e0f8e31"
       },
-      "summary": "Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.",
-      "why_it_matters": "The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measure completed work. That is a more durable adoption model than distributing AI tools and tracking logins or prompts.",
+      "summary": "GitHub’s September 17 update says its Copilot impact dashboard now shows how many active users regularly use key Copilot features. The change gives administrators a more specific view than general activity alone.",
+      "why_it_matters": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes.",
       "source": {
-        "title": "What we’ve learned from Microsoft's own AI transformation",
+        "title": "Copilot impact dashboard now shows feature engagement",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+        "normalized_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+        "publication_date": "2026-09-17",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 772,
+          "verified_at": "2026-09-18T23:58:27Z",
+          "method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-17T21:47:27.000Z"
+      },
+      "selection_rationale": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null,
+        "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 3,
+        "novelty": 3,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 28,
+        "selection_rationale": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Separate engagement from outcomes",
+        "rationale": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes."
+      },
+      "social_description": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes.",
+      "social": {
+        "title": "GitHub’s Copilot dashboard adds feature-engagement visibility",
+        "description": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-02.png?v=104733598e0f8e31"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-18-b782b47e",
+      "ordinal": 3,
+      "slug": "microsoft-shares-a-playbook-built-from-its-ai-transformation-experience",
+      "permanent_url": "/stories/2026-09-18/microsoft-shares-a-playbook-built-from-its-ai-transformation-experience/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft shares a playbook built from its AI transformation experience",
+      "event_date": "2026-09-17",
+      "topics": [
+        "learning-playbook"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-18/qualification-230421-03.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-03.png?v=aa71715636655e15",
+        "alt": "A four-quadrant circular learning composition around a central reusable playbook. Each quadrant contains two small annotated conceptual cards. An outer feedback arrow closes the loop; a bottom strip distinguishes Observed experience from Transferable practice. No quantified outcome claims.",
+        "width": 1730,
+        "height": 909,
+        "kind": "editorial_explainer",
+        "cache_key": "aa71715636655e15"
+      },
+      "summary": "Microsoft describes codifying proven approaches into case studies and sharing a Frontier Playbook. Its September 17 account draws on transformation efforts across the company, including work redesign and learning from failure.",
+      "why_it_matters": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial.",
+      "source": {
+        "title": "What we’ve learned from Microsoft’s own AI transformation",
         "organization": "Microsoft",
         "url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
         "normalized_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
         "publication_date": "2026-09-17",
-        "evidence_type": "official_case_study",
-        "availability_status": "published_guidance"
-      },
-      "freshness": {
-        "tier": "fallback",
-        "source_published_at": "2026-09-17T00:00:00-05:00",
-        "fallback_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window."
-      },
-      "selection_rationale": "A first-party operating playbook with specific workflow results and a strong lesson for knowledge-worker adoption: redesign outcomes and work, not prompt volume.",
-      "novelty": {
-        "disposition": "material_update",
-        "prior_story_ids": [
-          "dab-story-2026-09-10-c9c45c5e"
-        ],
-        "what_changed": "The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples."
-      },
-      "candidate_score": {
-        "significance": 4,
-        "freshness": 4,
-        "authority": 5,
-        "evidence_quality": 5,
-        "novelty": 4,
-        "practical_value": 5,
-        "category_fit": 5,
-        "total": 32,
-        "selection_rationale": "A first-party operating playbook with specific workflow results and a strong lesson for knowledge-worker adoption: redesign outcomes and work, not prompt volume."
-      },
-      "what_to_do_now": {
-        "action": "adopt",
-        "label": "Start from one measurable business outcome",
-        "rationale": "Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task."
-      },
-      "social_description": "The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measur",
-      "social": {
-        "title": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
-        "description": "The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measur",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665"
-      }
-    },
-    {
-      "story_id": "dab-story-2026-09-18-c5d22f27",
-      "ordinal": 4,
-      "slug": "salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents",
-      "permanent_url": "/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/",
-      "focus": "applied_genai_knowledge_workers",
-      "headline": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
-      "event_date": "2026-09-17",
-      "topics": [
-        "no-code AI",
-        "vibe building",
-        "enterprise apps",
-        "Agentforce",
-        "governance"
-      ],
-      "companies": [
-        "Salesforce"
-      ],
-      "image": {
-        "path": "briefs/images/2026-09-18/04-governed-building.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/04-governed-building.png?v=f97e426828ea5af6",
-        "alt": "Textbook diagram showing natural-language app and agent building passing through Salesforce data, metadata, security, and governance controls before deployment.",
-        "width": 1200,
-        "height": 630,
-        "kind": "editorial_explainer",
-        "cache_key": "f97e426828ea5af6"
-      },
-      "summary": "Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.",
-      "why_it_matters": "Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers a simpler path from intent to working application while retaining administrator controls and existing data boundaries.",
-      "source": {
-        "title": "Dreamforce 2026 Product Highlights for Admins",
-        "organization": "Salesforce",
-        "url": "https://admin.salesforce.com/blog/2026/dreamforce-2026-product-highlights-for-admins",
-        "normalized_url": "https://admin.salesforce.com/blog/2026/dreamforce-2026-product-highlights-for-admins",
-        "publication_date": "2026-09-17",
         "evidence_type": "official_announcement",
-        "availability_status": "beta_announced"
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 3082,
+          "verified_at": "2026-09-18T23:58:27Z",
+          "method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+          "words_per_minute": 200
+        }
       },
       "freshness": {
         "tier": "fallback",
-        "source_published_at": "2026-09-17T00:00:00-05:00",
-        "fallback_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window."
+        "source_published_at": "2026-09-17T14:00:05.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented recency fallback after bounded review."
       },
-      "selection_rationale": "A fresh no-code building pattern that links natural-language creation to existing enterprise data, metadata, security, and governance instead of bypassing them.",
+      "selection_rationale": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial.",
       "novelty": {
         "disposition": "new",
         "prior_story_ids": [],
-        "what_changed": null
+        "what_changed": null,
+        "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
       },
       "candidate_score": {
         "significance": 4,
         "freshness": 4,
         "authority": 5,
-        "evidence_quality": 4,
-        "novelty": 5,
+        "evidence_quality": 3,
+        "novelty": 3,
         "practical_value": 4,
         "category_fit": 5,
-        "total": 31,
-        "selection_rationale": "A fresh no-code building pattern that links natural-language creation to existing enterprise data, metadata, security, and governance instead of bypassing them."
-      },
-      "what_to_do_now": {
-        "action": "test",
-        "label": "Pilot one governed no-code workflow",
-        "rationale": "Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access."
-      },
-      "social_description": "Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers ",
-      "social": {
-        "title": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
-        "description": "Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers ",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/04-governed-building.png?v=f97e426828ea5af6"
-      }
-    },
-    {
-      "story_id": "dab-story-2026-09-18-bc42dd44",
-      "ordinal": 5,
-      "slug": "rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language",
-      "permanent_url": "/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/",
-      "focus": "agents_non_technical_people",
-      "headline": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
-      "event_date": "2026-09-17",
-      "topics": [
-        "Agent Skills",
-        "reusable workflows",
-        "Rovo",
-        "team context",
-        "no-code agents"
-      ],
-      "companies": [
-        "Atlassian"
-      ],
-      "image": {
-        "path": "briefs/images/2026-09-18/05-rovo-skills.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2",
-        "alt": "Textbook workflow showing a repeated team process converted into a reviewed Rovo custom skill and reused across shared conversations with memory and agent handoffs.",
-        "width": 1200,
-        "height": 630,
-        "kind": "editorial_explainer",
-        "cache_key": "91a1b2c3efa2c3c2"
-      },
-      "summary": "Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.",
-      "why_it_matters": "This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to colleagues, and combine it with shared conversational context without writing code.",
-      "source": {
-        "title": "New in Rovo Chat: Where context shapes your work",
-        "organization": "Atlassian",
-        "url": "https://www.atlassian.com/blog/company-news/rovo-chat-new-features-september-2026",
-        "normalized_url": "https://www.atlassian.com/blog/company-news/rovo-chat-new-features-september-2026",
-        "publication_date": "2026-09-17",
-        "evidence_type": "official_announcement",
-        "availability_status": "rolling_out"
-      },
-      "freshness": {
-        "tier": "fallback",
-        "source_published_at": "2026-09-17T00:00:00-05:00",
-        "fallback_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window."
-      },
-      "selection_rationale": "The required reusable Agent Skills story: a nontechnical, natural-language path for codifying repeated team work with memory, agent handoffs, sharing, and permissions.",
-      "novelty": {
-        "disposition": "material_update",
-        "prior_story_ids": [
-          "dab-story-2026-09-11-bc8138fb"
-        ],
-        "what_changed": "The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations."
-      },
-      "candidate_score": {
-        "significance": 4,
-        "freshness": 4,
-        "authority": 5,
-        "evidence_quality": 5,
-        "novelty": 4,
-        "practical_value": 5,
-        "category_fit": 5,
-        "total": 32,
-        "selection_rationale": "The required reusable Agent Skills story: a nontechnical, natural-language path for codifying repeated team work with memory, agent handoffs, sharing, and permissions."
-      },
-      "what_to_do_now": {
-        "action": "teach",
-        "label": "Turn one repeated team process into a reviewed skill",
-        "rationale": "Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy."
-      },
-      "social_description": "This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to co",
-      "social": {
-        "title": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
-        "description": "This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to co",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2"
-      }
-    },
-    {
-      "story_id": "dab-story-2026-09-18-062b5025",
-      "ordinal": 6,
-      "slug": "google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer",
-      "permanent_url": "/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/",
-      "focus": "agents_non_technical_people",
-      "headline": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
-      "event_date": "2026-09-17",
-      "topics": [
-        "consumer agents",
-        "identity",
-        "permissions",
-        "shared memory",
-        "isolated execution",
-        "Gemini"
-      ],
-      "companies": [
-        "Google Labs"
-      ],
-      "image": {
-        "path": "briefs/images/2026-09-18/06-household-agent-boundaries.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/06-household-agent-boundaries.png?v=5b4ff0fd59a81b50",
-        "alt": "Textbook architecture diagram showing household members selectively sharing data with a distinct CC agent identity, separate memory scopes, permission gates, and an isolated cloud computer.",
-        "width": 1200,
-        "height": 630,
-        "kind": "editorial_explainer",
-        "cache_key": "5b4ff0fd59a81b50"
-      },
-      "summary": "Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.",
-      "why_it_matters": "The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and isolated execution. Those are useful patterns for any multi-user agent, not just household logistics.",
-      "source": {
-        "title": "The new CC, an AI agent built for families",
-        "organization": "Google Labs",
-        "url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
-        "normalized_url": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
-        "publication_date": "2026-09-17",
-        "evidence_type": "official_announcement",
-        "availability_status": "experimental_waitlist"
-      },
-      "freshness": {
-        "tier": "fallback",
-        "source_published_at": "2026-09-17T00:00:00-05:00",
-        "fallback_reason": "Publisher exposed a September 17 publication date but not an exact posting time. The date is normalized conservatively to the start of the publication date so the item is not falsely asserted inside the exact 24-hour primary window."
-      },
-      "selection_rationale": "A fresh consumer-agent architecture with unusually explicit identity, permission, memory, and isolation controls that generalize to multi-user agent design.",
-      "novelty": {
-        "disposition": "new",
-        "prior_story_ids": [],
-        "what_changed": null
-      },
-      "candidate_score": {
-        "significance": 4,
-        "freshness": 4,
-        "authority": 5,
-        "evidence_quality": 5,
-        "novelty": 5,
-        "practical_value": 4,
-        "category_fit": 5,
-        "total": 32,
-        "selection_rationale": "A fresh consumer-agent architecture with unusually explicit identity, permission, memory, and isolation controls that generalize to multi-user agent design."
+        "total": 28,
+        "selection_rationale": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial."
       },
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Use CC’s controls as an agent design checklist",
-        "rationale": "For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated."
+        "label": "Turn experience into a reusable playbook",
+        "rationale": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial."
       },
-      "social_description": "The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and ",
+      "social_description": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each ",
       "social": {
-        "title": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
-        "description": "The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and ",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/06-household-agent-boundaries.png?v=5b4ff0fd59a81b50"
+        "title": "Microsoft shares a playbook built from its AI transformation experience",
+        "description": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each ",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-03.png?v=aa71715636655e15"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-18-f947a943",
+      "ordinal": 4,
+      "slug": "microsoft-frames-education-ai-around-educator-control-and-student-thinking",
+      "permanent_url": "/stories/2026-09-18/microsoft-frames-education-ai-around-educator-control-and-student-thinking/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft frames education AI around educator control and student thinking",
+      "event_date": "2026-09-16",
+      "topics": [
+        "education-principles"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-18/qualification-230421-04.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-04.png?v=247104b29ba82e7b",
+        "alt": "A refined architectural composition of four abstract vertical pillars supporting a central learning goal. Each pillar has its exact heading and a clear sublabel. A horizontal foundation marked Transparency connects them, and an outer callout says Review principles, not proven outcomes. No people, school scenes or product logos.",
+        "width": 1731,
+        "height": 909,
+        "kind": "editorial_explainer",
+        "cache_key": "247104b29ba82e7b"
+      },
+      "summary": "Microsoft’s September 16 statement lists safety, privacy, security and transparency by design; educator control; support for learning rather than replacement of thinking; stronger education systems; and preparation for an AI-powered future.",
+      "why_it_matters": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved.",
+      "source": {
+        "title": "Microsoft’s commitment for AI in education: Protecting students, strengthening learning",
+        "organization": "Microsoft",
+        "url": "https://blogs.microsoft.com/blog/2026/09/16/microsofts-commitment-for-ai-in-education/",
+        "normalized_url": "https://blogs.microsoft.com/blog/2026/09/16/microsofts-commitment-for-ai-in-education/",
+        "publication_date": "2026-09-16",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 2188,
+          "verified_at": "2026-09-18T23:58:27Z",
+          "method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-16T18:59:58.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented recency fallback after bounded review."
+      },
+      "selection_rationale": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null,
+        "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 3,
+        "novelty": 3,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 28,
+        "selection_rationale": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Keep learning and educator judgment central",
+        "rationale": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved."
+      },
+      "social_description": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved.",
+      "social": {
+        "title": "Microsoft frames education AI around educator control and student thinking",
+        "description": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved.",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-04.png?v=247104b29ba82e7b"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-18-d2d912ae",
+      "ordinal": 5,
+      "slug": "github-adds-reusable-skill-activity-to-copilot-cli-reporting",
+      "permanent_url": "/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub adds reusable-skill activity to Copilot CLI reporting",
+      "event_date": "2026-09-17",
+      "topics": [
+        "skill-activity"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-18/qualification-230421-05.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-05.png?v=9a4239d11865c618",
+        "alt": "A taxonomy and observation composition: one prominent Skills card and a distinct cluster of four smaller category cards Custom agents, MCP servers, Slash commands, Plugins feed a central Reporting lens. A separate owner-review worksheet below asks Adoption? Training? Maintenance? Label Usage does not prove quality. No invented counts or relationships among metric totals.",
+        "width": 1730,
+        "height": 909,
+        "kind": "editorial_explainer",
+        "cache_key": "9a4239d11865c618"
+      },
+      "summary": "GitHub’s September 17 announcement extends CLI reporting with activity metrics for skills and custom agents. The accompanying metadata also names MCP servers, slash commands and plugins.",
+      "why_it_matters": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions.",
+      "source": {
+        "title": "Agentic CLI customizations now in the usage metrics API",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+        "normalized_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+        "publication_date": "2026-09-17",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 807,
+          "verified_at": "2026-09-18T23:58:27Z",
+          "method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-17T21:08:50.000Z"
+      },
+      "selection_rationale": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null,
+        "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 3,
+        "novelty": 3,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 28,
+        "selection_rationale": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Make reusable skill activity visible",
+        "rationale": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions."
+      },
+      "social_description": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and mainte",
+      "social": {
+        "title": "GitHub adds reusable-skill activity to Copilot CLI reporting",
+        "description": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and mainte",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-05.png?v=9a4239d11865c618"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-18-e696943b",
+      "ordinal": 6,
+      "slug": "salesforce-distinguishes-long-running-agent-work-from-single-request-responses",
+      "permanent_url": "/stories/2026-09-18/salesforce-distinguishes-long-running-agent-work-from-single-request-responses/",
+      "focus": "agents_non_technical_people",
+      "headline": "Salesforce distinguishes long-running agent work from single-request responses",
+      "event_date": "2026-09-16",
+      "topics": [
+        "long-horizon-work"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-18/qualification-230421-06.png",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-06.png?v=09a4a3cc4dc0b1fd",
+        "alt": "A detailed temporal map: an upper compact Request to Response comparison and a larger lower multi-session goal ribbon with Progress, Change, Review and Next step stations. A persistent Goal line spans the lower map. Label Conceptual planning guide. Use small abstract evidence cards, no time estimates or unsupported memory architecture.",
+        "width": 1730,
+        "height": 909,
+        "kind": "editorial_explainer",
+        "cache_key": "09a4a3cc4dc0b1fd"
+      },
+      "summary": "Salesforce’s September 16 article describes long-horizon agents working alongside users toward a goal over time and adapting to changing circumstances. Its introduction contrasts this with a request followed by a single response.",
+      "why_it_matters": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist.",
+      "source": {
+        "title": "Your Agent Can Sprint, But Can It Go the Distance?",
+        "organization": "Salesforce",
+        "url": "https://www.salesforce.com/blog/long-horizon-agents/",
+        "normalized_url": "https://www.salesforce.com/blog/long-horizon-agents/",
+        "publication_date": "2026-09-16",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 2116,
+          "verified_at": "2026-09-18T23:58:27Z",
+          "method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-16T13:00:00.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented recency fallback after bounded review."
+      },
+      "selection_rationale": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null,
+        "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 3,
+        "novelty": 3,
+        "practical_value": 4,
+        "category_fit": 5,
+        "total": 28,
+        "selection_rationale": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Plan for a goal that persists over time",
+        "rationale": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist."
+      },
+      "social_description": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capabil",
+      "social": {
+        "title": "Salesforce distinguishes long-running agent work from single-request responses",
+        "description": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capabil",
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/qualification-230421-06.png?v=09a4a3cc4dc0b1fd"
       }
     }
   ],
@@ -461,75 +462,11 @@
       "exception": "No video met today’s editorial quality standards."
     }
   },
-  "editorial_takeaway": "The strongest September 18 signal is not a single model release but a shift toward operationalizing agents: measure what they automate, govern how they act, redesign work around outcomes, and package repeatable procedures so people can reuse them safely.",
+  "editorial_takeaway": "Make AI work observable, keep human judgment explicit, and distinguish a vendor announcement from evidence of outcomes.",
   "provenance": {
     "created_by": "deterministic-kernel-expander",
-    "created_at": "2026-09-18T14:41:06Z",
-    "source_commit": "10f1b0cc397bdf2e46ec096c00dc129763781b7b"
+    "created_at": "2026-09-18T23:58:27Z",
+    "source_commit": "ee9b0ae231bb6c11f88dd8871054ebf8e208381f"
   },
-  "podcasts": [
-    {
-      "status": "included",
-      "ordinal": 9,
-      "item_id": "dab-podcast-2026-09-18-personal-ai-agents",
-      "title": "Why Everyone Is Getting Excited About Personal AI Agents",
-      "show": "The AI Daily Brief",
-      "host": "Nathaniel Whittemore",
-      "publication_date": "2026-09-17",
-      "runtime_seconds": 1796,
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "personal AI agents",
-        "consumer agents",
-        "delegation"
-      ],
-      "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
-      "permanent_url": "/podcasts/2026-09-18/personal-ai-agents/",
-      "summary": "Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.",
-      "why_useful": "It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation.",
-      "connection": "Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.",
-      "selection_rationale": "Fresh registered-source episode inside the preferred 48-hour window; exact title, publication date, host, direct URL, and runtime were verified on Apple Podcasts.",
-      "verification_note": "Apple Podcasts lists September 17, 2026, Nathaniel Whittemore, and a 29:56 runtime.",
-      "coverage_note": "Primary 48-hour podcast window; one of two source-diverse selections.",
-      "freshness_tier": "primary_48h",
-      "platforms": [
-        {
-          "name": "Apple Podcasts",
-          "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942"
-        }
-      ]
-    },
-    {
-      "status": "included",
-      "ordinal": 10,
-      "item_id": "dab-podcast-2026-09-18-ai-search-discovery",
-      "title": "How to get discovered in AI search",
-      "show": "Practical AI",
-      "host": "Daniel Whitenack and Chris Benson",
-      "publication_date": "2026-09-17",
-      "runtime_seconds": 3314,
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "AI search",
-        "retrieval",
-        "citations",
-        "agent discovery"
-      ],
-      "url": "https://practicalai.show/372",
-      "permanent_url": "/podcasts/2026-09-18/ai-search-discovery/",
-      "summary": "Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.",
-      "why_useful": "The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers.",
-      "connection": "It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.",
-      "selection_rationale": "Fresh registered-source episode inside the preferred 48-hour window from a second show; title, date, hosts, direct episode URL, and 55:14 runtime were verified on the publisher site.",
-      "verification_note": "Practical AI’s publisher page identifies episode E372, September 17, 2026, hosted by Daniel Whitenack and Chris Benson, runtime 55:14.",
-      "coverage_note": "Primary 48-hour podcast window; source-diverse from The AI Daily Brief.",
-      "freshness_tier": "primary_48h",
-      "platforms": [
-        {
-          "name": "Practical AI",
-          "url": "https://practicalai.show/372"
-        }
-      ]
-    }
-  ]
+  "podcasts": []
 }

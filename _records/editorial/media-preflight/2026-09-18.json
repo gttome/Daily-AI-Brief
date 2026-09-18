@@ -1,35 +1,7 @@
 {
   "schema_version": "1.0.0",
   "edition_id": "dab-edition-2026-09-18",
-  "checked_at": "2026-09-18T14:40:47.358901Z",
-  "items": [
-    {
-      "item_id": "dab-podcast-2026-09-18-personal-ai-agents",
-      "kind": "podcast",
-      "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
-      "reachable": true,
-      "http_status": 200,
-      "resolved_url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
-      "observed_date": "2026-09-17",
-      "observed_runtime_seconds": 1796,
-      "checked_at": "2026-09-18T14:38:53.908475+00:00",
-      "method": "Fetched direct publisher/platform HTML; matched visible/structured date and duration fields.",
-      "source_content_sha256": "0822e76bd9c1a1410293f643a52d14a10dc271b4b15449f7a382ce14fcd8a9a6"
-    },
-    {
-      "item_id": "dab-podcast-2026-09-18-ai-search-discovery",
-      "kind": "podcast",
-      "url": "https://practicalai.show/372",
-      "reachable": true,
-      "http_status": 200,
-      "resolved_url": "https://practicalai.show/372",
-      "observed_date": "2026-09-17",
-      "observed_runtime_seconds": 3314,
-      "checked_at": "2026-09-18T14:38:54.138560+00:00",
-      "method": "Fetched direct publisher/platform HTML; matched visible/structured date and duration fields.",
-      "source_content_sha256": "660f4a771019ae7f0a3b08f1f227af1af283044425b4a7e3628dd34048d7a9e2"
-    }
-  ],
-  "status": "PASS",
-  "note": "Selected-podcast preflight passed. Video discovery remains degraded and no videos are included."
+  "checked_at": "2026-09-18T23:58:27Z",
+  "items": [],
+  "basis": "deterministic_empty_selected_media_set"
 }
