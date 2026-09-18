@@ -30,7 +30,9 @@ const ageRank=(stamp,maxAge)=>{
 };
 const skillSignal=value=>{
  const v=text(value).toLowerCase();
- const explicit=/\b(agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?|custom skills?|build(?:ing)? skills?|create(?:ing)? skills?)\b/.test(v);\n const contextual=/\bskills?\b/.test(v)&&/\b(agentic|agent|agents|copilot|plugin|plugins|cli|workflow|workflows|customization|customizations)\b/.test(v);\n return explicit||contextual;
+ const explicit=/\b(agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?|custom skills?|build(?:ing)? skills?|create(?:ing)? skills?)\b/.test(v);
+ const contextual=/\bskills?\b/.test(v)&&/\b(agentic|agent|agents|copilot|plugin|plugins|cli|workflow|workflows|customization|customizations)\b/.test(v);
+ return explicit||contextual;
 };
 const relevanceRank=value=>{
  const v=text(value).toLowerCase();
