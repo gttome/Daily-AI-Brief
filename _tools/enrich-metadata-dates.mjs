@@ -53,17 +53,34 @@ const structuredDates=html=>{
  return {published:publishedValues.find(Boolean)||null,updated:updatedValues.find(Boolean)||null};
 };
 
-const unresolved=raw.candidates.filter(item=>{
+const candidateFocus=item=>{
+ if(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].includes(item.focus_hint))return item.focus_hint;
+ const v=(text(item.headline||item.title)+' '+text(item.snippet)).toLowerCase();
+ if(item.required_topic==='agent_skills'||/\b(agent skills?|skill\.md|skills\.md|reusable agent workflows?)\b/.test(v))return 'agents_non_technical_people';
+ if(/\b(workplace|knowledge worker|enterprise|productivity|microsoft 365|workspace|salesforce|no-code|low-code)\b/.test(v))return 'applied_genai_knowledge_workers';
+ return 'technical_ai_engineering';
+};
+const scoreItem=item=>(item.required_topic?100:0)+reliability(item.source_reliability)+relevance((item.headline||item.title)+' '+text(item.snippet));
+const pool=raw.candidates.filter(item=>{
  if(item.date_conflict===true)return false;
  if(item.published_at||item.publication_date)return false;
  const title=text(item.headline||item.title),url=text(item.canonical_url||item.url);
  if(title.length<20||title.length>200||!url.startsWith('https://')||badUrl(url))return false;
  return relevance(title+' '+text(item.snippet)+' '+text(item.required_topic))>=4;
-}).sort((a,b)=>{
- const sa=(a.required_topic?100:0)+reliability(a.source_reliability)+relevance((a.headline||a.title)+' '+text(a.snippet));
- const sb=(b.required_topic?100:0)+reliability(b.source_reliability)+relevance((b.headline||b.title)+' '+text(b.snippet));
- return sb-sa||text(a.canonical_url||a.url).localeCompare(text(b.canonical_url||b.url));
-}).slice(0,limit);
+}).sort((a,b)=>scoreItem(b)-scoreItem(a)||text(a.canonical_url||a.url).localeCompare(text(b.canonical_url||b.url)));
+
+const unresolved=[],chosen=new Set();
+const add=item=>{if(item&&unresolved.length<limit&&!chosen.has(item.canonical_url||item.url)){unresolved.push(item);chosen.add(item.canonical_url||item.url);return true;}return false;};
+add(pool.find(x=>x.required_topic==='agent_skills'));
+const quota=Math.max(1,Math.floor(limit/3));
+for(const focus of ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people']){
+ let count=unresolved.filter(x=>candidateFocus(x)===focus).length;
+ for(const item of pool){
+  if(count>=quota||unresolved.length>=limit)break;
+  if(candidateFocus(item)===focus&&add(item))count++;
+ }
+}
+for(const item of pool){if(unresolved.length>=limit)break;add(item);}
 
 let attempted=0,resolved=0,failed=0,publishedResolved=0,updatedResolved=0;
 const details=[];
