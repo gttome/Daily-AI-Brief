@@ -195,7 +195,7 @@ Supporting stories:
 
 Supporting stories:
 
-- [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/' | relative_url }})
@@ -299,7 +299,7 @@ Supporting stories:
 Supporting stories:
 
 - [September 18, 2026]({{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})

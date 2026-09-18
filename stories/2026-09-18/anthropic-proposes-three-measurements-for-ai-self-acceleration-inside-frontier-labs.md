@@ -2,7 +2,7 @@
 layout: default
 title: "Anthropic proposes three measurements for AI self-acceleration inside frontier labs"
 description: "The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=a6472717ce81431e"
 permalink: /stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/
 brief_date: 2026-09-18
 story_id: dab-story-2026-09-18-2cda8d5e
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Research  
 **Availability:** Published Research
 
-![Conceptual textbook illustration of AI-driven research, agent oversight, and compute allocation as three measurement lenses.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82)
+![Textbook diagram of AI-led research, agent oversight, and compute allocation flowing through a verification ledger to independent audit.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=a6472717ce81431e)
 
 **Summary:** Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.
 

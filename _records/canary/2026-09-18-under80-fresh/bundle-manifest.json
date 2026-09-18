@@ -1,43 +1,51 @@
 {
   "schema_version": "1.0.0",
-  "edition_id": "dab-edition-2026-09-18",
+  "canary_id": "under80-2026-09-18-fresh-1243",
   "baseline_sha": "d5bf6633f252694caef46e89ecaa37a18bfb121e",
-  "rollback_target_sha": "d5bf6633f252694caef46e89ecaa37a18bfb121e",
-  "policy_profile": "under80-v1",
-  "image_review": "_records/image-quality/2026-09-18-canary-under80-fresh.json",
-  "image_review_sha256": "b750d4cdd6960b9f304adc534c6594afc6fb4ab60d25ec0c5fed536f2fb4f36d",
-  "assets": [
+  "production_main_sha_verified": "d5bf6633f252694caef46e89ecaa37a18bfb121e",
+  "production_changes": 0,
+  "metadata_candidates": 20,
+  "deep_reviews": 9,
+  "stories": 6,
+  "allocation": "2/2/2",
+  "agent_skills_count": 1,
+  "images": [
     {
       "path": "briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png",
       "sha256": "a6472717ce81431e5ecf4c353d5b3fd613e5e6c10cb8a930f29ed1bca7a6824a",
-      "bytes": 753510
+      "composition": "three-lane measurement-to-audit"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-02-workflow-protections.png",
       "sha256": "e7efa3f810dff7d7fe69a0a9e214d98e909c0fb49c885c588b4fd22f4aad007e",
-      "bytes": 814929
+      "composition": "six-gate horizontal protection pipeline"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png",
       "sha256": "da31a10f1ea3a40f60d938ebfbf48cc52d289b1cc52214d603ad07425504b4ef",
-      "bytes": 788291
+      "composition": "before-after outcome redesign"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-04-governed-builder.png",
       "sha256": "cfdd3cf44719e5ccbe51e6a60926e20b4fdad0b80df95534063e2c154a6fcbba",
-      "bytes": 772314
+      "composition": "governed enterprise funnel"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png",
       "sha256": "d2deb8dade9785860e354d944a2ab4ebd503bbbccd8dc830b4b5e8dfa9b11c96",
-      "bytes": 788360
+      "composition": "eight-step reusable skill loop"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-06-household-agent.png",
       "sha256": "d40602ea7f9a795ab0f7024215a9129948c69f1f87b359616dff6bade5590ed6",
-      "bytes": 828405
+      "composition": "multi-user boundary architecture"
     }
   ],
-  "canonical_sha256": "aa3968e9e5805509fcef10e0802ce26d54a1c69494f17f04c7adfd76a93325cd",
-  "candidate_digest": "sha256:13361eff80966431095fc88699e30af73666f0add06655f3f296527ed04464e3"
+  "videos_selected": 0,
+  "podcasts_selected": 2,
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "deterministic_validation_model_calls": 0,
+  "evidence_package_chars": 11176,
+  "credit_measurement": "credit target externally measured"
 }

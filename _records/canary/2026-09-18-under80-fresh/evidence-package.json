@@ -1,0 +1,239 @@
+{
+  "schema_version": "1.0.0",
+  "canary_id": "under80-2026-09-18-fresh-1243",
+  "policy_profile": "under80-v1",
+  "baseline_sha": "d5bf6633f252694caef46e89ecaa37a18bfb121e",
+  "production_change_authorized": false,
+  "override": {
+    "legacy_candidate_minimum": 20,
+    "active_candidate_maximum": 20,
+    "disposition": "exactly 20 satisfies both; historical 22-candidate pool was not read as editorial input"
+  },
+  "limits": {
+    "metadata_candidates": 20,
+    "deep_reviews": 9,
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "deterministic_validation_model_calls": 0
+  },
+  "allocation": [
+    "technical_ai_engineering",
+    "technical_ai_engineering",
+    "applied_genai_knowledge_workers",
+    "applied_genai_knowledge_workers",
+    "agents_non_technical_people",
+    "agents_non_technical_people"
+  ],
+  "agent_skills": {
+    "count": 1,
+    "candidate_id": "05"
+  },
+  "deep_reviews": [
+    {
+      "candidate_id": "01",
+      "status": "reviewed",
+      "source_word_count": 4799,
+      "count_method": "fresh retrieved text count",
+      "result": "selected"
+    },
+    {
+      "candidate_id": "02",
+      "status": "reviewed",
+      "source_word_count": 1010,
+      "count_method": "first successful retrieved evidence response",
+      "result": "selected"
+    },
+    {
+      "candidate_id": "03",
+      "status": "reviewed",
+      "source_word_count": 3452,
+      "count_method": "fresh retrieved text count",
+      "result": "selected"
+    },
+    {
+      "candidate_id": "04",
+      "status": "reviewed",
+      "source_word_count": 2122,
+      "count_method": "fresh retrieved text count",
+      "result": "selected"
+    },
+    {
+      "candidate_id": "05",
+      "status": "reviewed",
+      "source_word_count": 2230,
+      "count_method": "fresh retrieved text count",
+      "result": "selected_agent_skills"
+    },
+    {
+      "candidate_id": "06",
+      "status": "reviewed",
+      "source_word_count": 1864,
+      "count_method": "fresh retrieved text count",
+      "result": "selected"
+    },
+    {
+      "candidate_id": "07",
+      "status": "reviewed",
+      "source_word_count": null,
+      "count_method": "retrieval unavailable",
+      "result": "reserve"
+    },
+    {
+      "candidate_id": "08",
+      "status": "reviewed",
+      "source_word_count": null,
+      "count_method": "retrieval unavailable",
+      "result": "reserve"
+    },
+    {
+      "candidate_id": "09",
+      "status": "reviewed",
+      "source_word_count": 4655,
+      "count_method": "fresh retrieved text count",
+      "result": "reserve"
+    }
+  ],
+  "watchlist": {
+    "decision": "no canary topic mutation",
+    "reason": "The bounded semantic pass found no independently stronger topic change requiring replacement; production Watchlist remains untouched."
+  },
+  "book_relevance": {
+    "bridges": 0,
+    "reason": "No new bridge was added because a verified existing locator was not needed to understand the six canary stories."
+  },
+  "media": {
+    "videos": {
+      "selected": 0,
+      "decision": "bounded omission",
+      "public_copy": "No video met today’s editorial quality standards."
+    },
+    "podcasts": {
+      "selected": 2,
+      "source_diverse": true,
+      "items": [
+        {
+          "item_id": "dab-podcast-2026-09-18-personal-ai-agents",
+          "show": "The AI Daily Brief",
+          "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
+          "runtime_seconds": 1796,
+          "publication_date": "2026-09-17"
+        },
+        {
+          "item_id": "dab-podcast-2026-09-18-ai-search-discovery",
+          "show": "Practical AI",
+          "url": "https://practicalai.show/372",
+          "runtime_seconds": 3314,
+          "publication_date": "2026-09-17"
+        }
+      ]
+    }
+  },
+  "image_briefs": [
+    {
+      "ordinal": 1,
+      "asset": "briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png",
+      "composition": "three-lane measurement-to-audit",
+      "review": "accepted"
+    },
+    {
+      "ordinal": 2,
+      "asset": "briefs/images/2026-09-18/canary-under80-02-workflow-protections.png",
+      "composition": "six-gate horizontal protection pipeline",
+      "review": "accepted"
+    },
+    {
+      "ordinal": 3,
+      "asset": "briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png",
+      "composition": "before-after outcome redesign",
+      "review": "accepted"
+    },
+    {
+      "ordinal": 4,
+      "asset": "briefs/images/2026-09-18/canary-under80-04-governed-builder.png",
+      "composition": "governed enterprise funnel",
+      "review": "accepted"
+    },
+    {
+      "ordinal": 5,
+      "asset": "briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png",
+      "composition": "eight-step reusable skill loop",
+      "review": "accepted"
+    },
+    {
+      "ordinal": 6,
+      "asset": "briefs/images/2026-09-18/canary-under80-06-household-agent.png",
+      "composition": "multi-user boundary architecture",
+      "review": "accepted"
+    }
+  ],
+  "claims": [
+    {
+      "candidate_id": "01",
+      "headline": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
+      "source": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+      "summary": "Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.",
+      "action": {
+        "action": "evaluate",
+        "label": "Track operational capability and control together",
+        "rationale": "When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention."
+      }
+    },
+    {
+      "candidate_id": "02",
+      "headline": "GitHub adds layered execution protections for organization-owned repository workflows",
+      "source": "https://github.blog/changelog/2026-09-17-new-workflow-execution-protections-for-organization-owned-repositories/",
+      "summary": "GitHub introduced additional controls around who can start organization-owned repository workflows, which workflow definition is trusted, where it executes, what permissions it receives, and what evidence is retained. The useful engineering pattern is defense in depth: identity, source integrity, environment isolation, least privilege, and auditability work as one chain.",
+      "action": {
+        "action": "evaluate",
+        "label": "Map every automation gate before expanding autonomy",
+        "rationale": "Document who can trigger a workflow, which revision runs, where it executes, which permissions it receives, and which immutable evidence remains after completion."
+      }
+    },
+    {
+      "candidate_id": "03",
+      "headline": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
+      "source": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "summary": "Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.",
+      "action": {
+        "action": "adopt",
+        "label": "Start from one measurable business outcome",
+        "rationale": "Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task."
+      }
+    },
+    {
+      "candidate_id": "04",
+      "headline": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
+      "source": "https://admin.salesforce.com/blog/2026/dreamforce-2026-product-highlights-for-admins",
+      "summary": "Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.",
+      "action": {
+        "action": "test",
+        "label": "Pilot one governed no-code workflow",
+        "rationale": "Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access."
+      }
+    },
+    {
+      "candidate_id": "05",
+      "headline": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
+      "source": "https://www.atlassian.com/blog/company-news/rovo-chat-new-features-september-2026",
+      "summary": "Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.",
+      "action": {
+        "action": "teach",
+        "label": "Turn one repeated team process into a reviewed skill",
+        "rationale": "Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy."
+      }
+    },
+    {
+      "candidate_id": "06",
+      "headline": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
+      "source": "https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/",
+      "summary": "Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.",
+      "action": {
+        "action": "evaluate",
+        "label": "Use CC’s controls as an agent design checklist",
+        "rationale": "For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated."
+      }
+    }
+  ],
+  "created_at": "2026-09-18T17:55:00Z",
+  "evidence_package_chars": 11176
+}

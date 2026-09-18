@@ -13,11 +13,11 @@
     <summary>Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&amp;D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&amp;D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.</summary>
   </entry>
   <entry>
-    <title>GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used</title>
+    <title>GitHub adds layered execution protections for organization-owned repository workflows</title>
     <id>dab-story-2026-09-18-3ac3c725</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/" />
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.</summary>
+    <summary>GitHub introduced additional controls around who can start organization-owned repository workflows, which workflow definition is trusted, where it executes, what permissions it receives, and what evidence is retained. The useful engineering pattern is defense in depth: identity, source integrity, environment isolation, least privilege, and auditability work as one chain.</summary>
   </entry>
   <entry>
     <title>Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work</title>

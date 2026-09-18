@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "nonproduction_deterministic_delta_validation",
+  "canary_id": "under80-2026-09-18-fresh-1243",
+  "baseline_sha": "d5bf6633f252694caef46e89ecaa37a18bfb121e",
+  "checked_at": "2026-09-18T18:01:56.008Z",
+  "model_calls": 0,
+  "input_tokens": null,
+  "output_tokens": null,
+  "checks": [
+    {
+      "name": "production_baseline",
+      "result": "PASS",
+      "detail": "origin/main remains the verified baseline"
+    },
+    {
+      "name": "candidate_ceiling",
+      "result": "PASS",
+      "detail": "20 metadata candidates"
+    },
+    {
+      "name": "deep_review_ceiling",
+      "result": "PASS",
+      "detail": "9 reviewed candidates"
+    },
+    {
+      "name": "story_allocation",
+      "result": "PASS",
+      "detail": "{\"technical_ai_engineering\":2,\"applied_genai_knowledge_workers\":2,\"agents_non_technical_people\":2}"
+    },
+    {
+      "name": "agent_skills_exactly_one",
+      "result": "PASS",
+      "detail": "one reusable Agent Skills story"
+    },
+    {
+      "name": "image_hashes",
+      "result": "PASS",
+      "detail": "six fixed 1200x630 image hashes"
+    },
+    {
+      "name": "podcast_coverage",
+      "result": "PASS",
+      "detail": "two source-diverse podcasts"
+    },
+    {
+      "name": "video_decision",
+      "result": "PASS",
+      "detail": "bounded omission evidence retained"
+    },
+    {
+      "name": "model_pass_limits",
+      "result": "PASS",
+      "detail": "1 editorial / 0 post-editorial / 0 deterministic"
+    },
+    {
+      "name": "staged_canonical_parity",
+      "result": "PASS",
+      "detail": "staged canonical edition matches accepted bundle"
+    },
+    {
+      "name": "production_unchanged",
+      "result": "PASS",
+      "detail": "no production merge or publication"
+    }
+  ],
+  "final_result": "PASS",
+  "failures": []
+}
