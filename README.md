@@ -3,7 +3,7 @@ Daily briefings covering important Generative AI developments, tools, concepts, 
 
 ## Podcasts
 
-Each new edition includes slot 9 after the videos: one relevant podcast with no duration cap, a permanent shareable page, and usefulness ratings. See [source research and selection policy](docs/podcasts/source-research.md) and the [source registry](_data/podcast-sources.json).
+Beginning September 18, 2026, each new edition targets up to two qualifying podcasts after the video positions, with no duration cap, permanent shareable pages, and usefulness ratings. When two are included, they come from distinct approved shows/sources and no more than one may be from _The AI Daily Brief_. See [publisher policy](docs/podcasts/publisher-policy.md), [source research and selection policy](docs/podcasts/source-research.md), and the [source registry](_data/podcast-sources.json).
 
 ## Reader sharing
 
