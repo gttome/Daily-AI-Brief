@@ -29,9 +29,17 @@ const env={...process.env,
  DAB_RETRIEVAL_CACHE:process.env.DAB_RETRIEVAL_CACHE||path.join(os.tmpdir(),'dab-preflight-cache')
 };
 const startedAt=new Date().toISOString();
-let discoveryStdout='',gateStdout='',error=null;
+let discoveryStdout='',enrichmentStdout='',gateStdout='',error=null;
 try{
  discoveryStdout=execFileSync(process.execPath,['_tools/discover-sources.mjs'],{cwd:process.cwd(),env,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
+ const enrichmentPath=path.join(outDir,'date-enrichment.json');
+ enrichmentStdout=execFileSync(process.execPath,[
+  '_tools/enrich-metadata-dates.mjs',
+  '--input','_data/media-candidate-queue.json',
+  '--receipt',enrichmentPath,
+  '--limit',String(request.metadata_enrichment_limit||48),
+  '--cutoff',new Date(cutoff).toISOString()
+ ],{cwd:process.cwd(),env,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
  gateStdout=execFileSync(process.execPath,[
   '_tools/under80-metadata-gate.mjs',
   '--input','_data/media-candidate-queue.json',
@@ -45,6 +53,8 @@ try{
  error={message:e.message,stderr:String(e.stderr||'').slice(0,4000),stdout:String(e.stdout||'').slice(0,4000)};
 }
 const gate=fs.existsSync(metadataPath)?JSON.parse(fs.readFileSync(metadataPath,'utf8')):null;
+const enrichmentPath=path.join(outDir,'date-enrichment.json');
+const enrichment=fs.existsSync(enrichmentPath)?JSON.parse(fs.readFileSync(enrichmentPath,'utf8')):null;
 const discovery=fs.existsSync(discoveryPath)?JSON.parse(fs.readFileSync(discoveryPath,'utf8')):null;
 const receipt={
  schema_version:'1.0.0',
@@ -69,6 +79,13 @@ const receipt={
   preferred_feed_sources:discovery?.efficiency?.preferred_feed_sources??null,
   required_topic_sources:discovery?.efficiency?.required_topic_sources??null
  },
+ enrichment:enrichment?{
+  attempted:enrichment.attempted,
+  resolved:enrichment.resolved,
+  published_resolved:enrichment.published_resolved,
+  updated_resolved:enrichment.updated_resolved,
+  failed:enrichment.failed
+ }:null,
  gate:gate?{
   retained_metadata_candidates:gate.retained_metadata_candidates,
   coverage_counts:gate.coverage_counts,
@@ -78,7 +95,7 @@ const receipt={
  }:null,
  ready:gate?.coverage_ready===true&&!error,
  error,
- stdout:{discovery:discoveryStdout.slice(-2000),gate:gateStdout.slice(-2000)},
+ stdout:{discovery:discoveryStdout.slice(-2000),enrichment:enrichmentStdout.slice(-2000),gate:gateStdout.slice(-2000)},
  invariant:'This deterministic preflight runs outside the daily Work semantic task. Work may read only the committed metadata-candidates.json and receipt.json, never the raw discovery queue.'
 };
 fs.writeFileSync(receiptPath,JSON.stringify(receipt,null,2)+'\n');
