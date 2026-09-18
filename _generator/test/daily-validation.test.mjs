@@ -4,6 +4,7 @@ import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
+const qualificationNonproduction=process.env.DAB_QUALIFICATION_NONPRODUCTION==='1';
 
 test('deterministic daily validation can validate September 17 offline without a model',()=>{
  const out=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'dab-validation-')),'receipt.json');
@@ -19,7 +20,7 @@ test('deterministic daily validation can validate September 17 offline without a
 });
 
 
-test('deterministic validation projects September 18 dynamic coverage without an AI repair pass',()=>{
+test('deterministic validation projects September 18 dynamic coverage without an AI repair pass',{skip:qualificationNonproduction?'production Sep18 fixture is intentionally replaced in qualification_nonproduction':false},()=>{
  const out=path.join(fs.mkdtempSync(path.join(os.tmpdir(),'dab-validation-')),'receipt.json');
  try{
   execFileSync(process.execPath,['_tools/daily-validation.mjs','--date','2026-09-18','--offline','--out',out],{cwd:process.cwd(),stdio:'pipe'});
