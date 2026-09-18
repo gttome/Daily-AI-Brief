@@ -37,7 +37,10 @@
     "required_story_images": 6,
     "reuse_accepted_on_recovery": true,
     "batch_regeneration_on_unrelated_failure": false,
-    "alternative_requires_side_by_side_equivalence": true
+    "alternative_requires_side_by_side_equivalence": true,
+    "binary_transport": "native_git_working_tree_push",
+    "github_contents_api_for_png": false,
+    "prepush_integrity_validator": "_tools/validate-handoff-images.mjs"
   },
   "video": {
     "preferred_count": 2,
@@ -146,5 +149,13 @@
     "qualification_branch_pattern": "discovery-preflight/qualification/YYYY-MM-DD-<attempt>",
     "rationale": "The September 18 qualification attempt consumed 58 Work credits before deep review while only running deterministic discovery/gating; moving this stage to GitHub Actions preserves quality while removing it from Work/Codex cost.",
     "agent_skill_story_ready_required": true
+  },
+  "article_evidence_preflight": {
+    "execution_owner": "github_actions",
+    "model_calls": 0,
+    "candidate_count": 9,
+    "focus_distribution": "3/3/3",
+    "work_network_article_retrieval": false,
+    "model_visible_chars_max": 12000
   }
 }
