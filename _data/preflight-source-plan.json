@@ -9,7 +9,8 @@
       "format": "atom",
       "evidence_class": "preprint",
       "focus_hint": "technical_ai_engineering",
-      "status": "active"
+      "status": "active",
+      "broad_discovery": true
     },
     {
       "source_id": "arxiv-cs-lg-api",
@@ -18,7 +19,8 @@
       "format": "atom",
       "evidence_class": "preprint",
       "focus_hint": "technical_ai_engineering",
-      "status": "active"
+      "status": "active",
+      "broad_discovery": true
     },
     {
       "source_id": "github-changelog-copilot",
@@ -89,7 +91,6 @@
       "discovery_endpoint": "https://www.salesforce.com/blog/feed/",
       "format": "rss",
       "evidence_class": "publisher_authored",
-      "focus_hint": "applied_genai_knowledge_workers",
       "status": "active"
     },
     {
@@ -102,7 +103,8 @@
       "focus_hint": "agents_non_technical_people",
       "required_topic": "agent_skills",
       "required_topic_fallback_days": 7,
-      "status": "active"
+      "status": "active",
+      "candidate_title": "OpenAI Academy Skills for reusable ChatGPT workflows"
     },
     {
       "source_id": "anthropic-agent-skills",
@@ -114,16 +116,8 @@
       "focus_hint": "agents_non_technical_people",
       "required_topic": "agent_skills",
       "required_topic_fallback_days": 7,
-      "status": "active"
-    },
-    {
-      "source_id": "salesforce-agentforce-feed",
-      "owner": "Salesforce",
-      "discovery_endpoint": "https://www.salesforce.com/blog/feed/",
-      "format": "rss",
-      "evidence_class": "publisher_authored",
-      "focus_hint": "agents_non_technical_people",
-      "status": "active"
+      "status": "active",
+      "candidate_title": "Anthropic Agent Skills for reusable real-world agent workflows"
     }
   ]
 }
