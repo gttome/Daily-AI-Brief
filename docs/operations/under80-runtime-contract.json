@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -49,10 +49,17 @@
     "metadata_agent_skill_signals_minimum": 1,
     "gate_must_report_coverage_ready": true,
     "discovery_sequence": [
-      "Run fresh deterministic catalog discovery once with the original research cutoff supplied through DAB_RESEARCH_CUTOFF. Do not inspect the raw queue.",
-      "Run the deterministic under-80 metadata gate.",
-      "Inspect only the gate output. Continue only when coverage_ready is true, every retained candidate has a resolved in-window metadata date, all three focus hints have at least three candidates, and at least one Agent Skills signal exists."
-    ]
+      "GitHub Actions runs fresh zero-model metadata discovery outside Work with the edition cutoff.",
+      "GitHub Actions applies the deterministic under-80 metadata gate and commits only the bounded preflight result/receipt to preflight/YYYY-MM-DD.",
+      "Work reads only the committed preflight receipt and metadata-candidates file. Work never runs metadata catalog discovery and never opens the raw queue."
+    ],
+    "prework_owner": "github_actions",
+    "preflight_workflow": ".github/workflows/under80-metadata-preflight.yml",
+    "preflight_branch_prefix": "preflight/",
+    "preflight_receipt_path_pattern": "_records/preflight/YYYY-MM-DD/receipt.json",
+    "preflight_candidates_path_pattern": "_records/preflight/YYYY-MM-DD/metadata-candidates.json",
+    "work_must_not_run_metadata_discovery": true,
+    "work_entry_condition": "Start semantic Work only from a committed preflight receipt with ready=true, model_calls=0, <=20 candidates, resolved dates, >=3 metadata candidates per focus, and >=1 Agent Skills signal."
   },
   "semantic_work": {
     "editorial_model_passes": 1,
@@ -88,8 +95,8 @@
     "bounded_omission_allowed": true
   },
   "work_owns": [
+    "read one committed ready=true zero-model metadata preflight containing at most 20 candidates; do not execute metadata discovery in Work",
     "load this compact runtime contract and the machine-readable efficiency policy",
-    "fresh metadata-first discovery and bounded source verification",
     "one compact evidence package",
     "one editorial semantic pass",
     "six full-quality image generations and image acceptance",
@@ -97,6 +104,7 @@
     "commit one editorial-handoff manifest on an isolated editorial-handoff/* branch"
   ],
   "github_actions_owns": [
+    "run scheduled zero-model metadata discovery and deterministic prefilter before Work begins",
     "validate handoff and trusted main baseline",
     "select the six accepted generative image assets without lowering quality",
     "expand canonical edition deterministically",
@@ -169,6 +177,7 @@
     "publication_candidate_label_allowed": false,
     "merge_to_main_allowed": false,
     "pages_deployment_allowed": false,
-    "purpose": "Allows a full scheduled-equivalent cost/structure test through the editorial handoff while deterministically proving the post-editorial stage without any production release path."
+    "purpose": "Allows a full scheduled-equivalent cost/structure test through the editorial handoff while deterministically proving the post-editorial stage without any production release path.",
+    "prework": "Prepare the historical qualification metadata preflight outside Work through the zero-model GitHub Actions preflight workflow; begin Work only after the isolated preflight branch has ready=true."
   }
 }
