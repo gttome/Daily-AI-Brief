@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "purpose": "Shape-only template for the compact editorial-to-deterministic handoff. Replace every placeholder from fresh reviewed evidence; this file is not editorial evidence.",
-  "branch": "editorial-handoff/YYYY-MM-DD-<attempt>",
+  "branch": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
   "files": {
     "kernel_path": "_records/editorial-handoff/kernel.json",
     "facts_path": "_records/editorial-handoff/facts.json",
@@ -153,7 +153,28 @@
   },
   "handoff_manifest_shape": {
     "schema_version": "1.0.0",
-    "staging_ref": "editorial-handoff/YYYY-MM-DD-<attempt>",
+    "staging_ref": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
+    "kernel_path": "_records/editorial-handoff/kernel.json",
+    "facts_path": "_records/editorial-handoff/facts.json",
+    "images_path": "_records/editorial-handoff/images.json",
+    "media_path": "_records/editorial-handoff/media.json",
+    "coverage_period": "Verified coverage-period sentence of at least twenty characters.",
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "deterministic_validation_model_calls": 0,
+    "execution_mode": "production"
+  },
+  "hard_rules": [
+    "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
+    "Facts and image manifests must contain every selected candidate_id.",
+    "All six PNGs must be fresh accepted full-quality images for a from-scratch qualification test.",
+    "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work.",
+    "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation."
+  ],
+  "qualification_handoff_manifest_shape": {
+    "schema_version": "1.0.0",
+    "execution_mode": "qualification_nonproduction",
+    "staging_ref": "editorial-handoff/qualification/YYYY-MM-DD-runtime-test-<attempt>",
     "kernel_path": "_records/editorial-handoff/kernel.json",
     "facts_path": "_records/editorial-handoff/facts.json",
     "images_path": "_records/editorial-handoff/images.json",
@@ -162,11 +183,5 @@
     "editorial_model_passes": 1,
     "post_editorial_model_passes": 0,
     "deterministic_validation_model_calls": 0
-  },
-  "hard_rules": [
-    "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
-    "Facts and image manifests must contain every selected candidate_id.",
-    "All six PNGs must be fresh accepted full-quality images for a from-scratch qualification test.",
-    "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work."
-  ]
+  }
 }
