@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0.0",
+  "purpose": "Small deterministic zero-model source plan used by the under80 preflight before the broader registry rotation. It uses only public first-party or primary research endpoints and supplies focus hints, not editorial selection.",
+  "sources": [
+    {
+      "source_id": "arxiv-cs-ai-api",
+      "owner": "arXiv",
+      "discovery_endpoint": "https://export.arxiv.org/api/query?search_query=cat%3Acs.AI&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "format": "atom",
+      "evidence_class": "preprint",
+      "focus_hint": "technical_ai_engineering",
+      "status": "active",
+      "broad_discovery": true
+    },
+    {
+      "source_id": "arxiv-cs-lg-api",
+      "owner": "arXiv",
+      "discovery_endpoint": "https://export.arxiv.org/api/query?search_query=cat%3Acs.LG&start=0&max_results=20&sortBy=submittedDate&sortOrder=descending",
+      "format": "atom",
+      "evidence_class": "preprint",
+      "focus_hint": "technical_ai_engineering",
+      "status": "active",
+      "broad_discovery": true
+    },
+    {
+      "source_id": "github-changelog-copilot",
+      "owner": "GitHub Changelog",
+      "discovery_endpoint": "https://github.blog/changelog/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "technical_ai_engineering",
+      "status": "active"
+    },
+    {
+      "source_id": "nvidia-generative-ai",
+      "owner": "NVIDIA Developer",
+      "discovery_endpoint": "https://developer.nvidia.com/blog/category/generative-ai/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "technical_ai_engineering",
+      "status": "active"
+    },
+    {
+      "source_id": "hugging-face-feed",
+      "owner": "Hugging Face",
+      "discovery_endpoint": "https://huggingface.co/blog/feed.xml",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "technical_ai_engineering",
+      "status": "active"
+    },
+    {
+      "source_id": "microsoft-research-feed",
+      "owner": "Microsoft Research",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/research/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "technical_ai_engineering",
+      "status": "active"
+    },
+    {
+      "source_id": "microsoft-official-blog",
+      "owner": "Microsoft",
+      "discovery_endpoint": "https://blogs.microsoft.com/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active"
+    },
+    {
+      "source_id": "google-workspace-feed",
+      "owner": "Google Workspace",
+      "discovery_endpoint": "https://workspaceupdates.googleblog.com/atom.xml",
+      "format": "atom",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active"
+    },
+    {
+      "source_id": "microsoft-365-feed",
+      "owner": "Microsoft 365",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/microsoft-365/blog/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active"
+    },
+    {
+      "source_id": "salesforce-feed",
+      "owner": "Salesforce",
+      "discovery_endpoint": "https://www.salesforce.com/blog/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "status": "active"
+    },
+    {
+      "source_id": "openai-academy-skills",
+      "owner": "OpenAI Academy",
+      "discovery_endpoint": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills",
+      "canonical_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "required_topic": "agent_skills",
+      "required_topic_fallback_days": 7,
+      "status": "active",
+      "candidate_title": "OpenAI Academy Skills for reusable ChatGPT workflows"
+    },
+    {
+      "source_id": "anthropic-agent-skills",
+      "owner": "Anthropic",
+      "discovery_endpoint": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "canonical_url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "required_topic": "agent_skills",
+      "required_topic_fallback_days": 7,
+      "status": "active",
+      "candidate_title": "Anthropic Agent Skills for reusable real-world agent workflows"
+    }
+  ]
+}
