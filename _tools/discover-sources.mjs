@@ -5,27 +5,43 @@ import fs from 'node:fs';
 const retrievalCache=acquisition.cache;
 const registry=JSON.parse(fs.readFileSync('_data/source-registry.json'));
 const early=JSON.parse(fs.readFileSync('_data/early-signal-sources.json','utf8'));
-const date=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date());
+const requiredTopics=JSON.parse(fs.readFileSync('_data/required-topic-sources.json','utf8'));
+const cutoffMs=process.env.DAB_RESEARCH_CUTOFF?Date.parse(process.env.DAB_RESEARCH_CUTOFF):Date.now();
+if(!Number.isFinite(cutoffMs))throw Error('Invalid DAB_RESEARCH_CUTOFF');
+const date=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date(cutoffMs));
 const previous=fs.existsSync('_data/media-candidate-queue.json')?JSON.parse(fs.readFileSync('_data/media-candidate-queue.json')).candidates:[];
 const candidates=new Map(previous.filter(c=>(Date.now()-Date.parse(c.discovered_at))/86400000<=30).map(c=>[c.url,c]));const sources=[];
+const preferredRegistrySources=registry.sources.map(source=>{
+ const feed=(source.publisher_linked_feed_leads||[]).find(url=>typeof url==='string'&&url.startsWith('https://'));
+ if(!feed)return source;
+ return {...source,discovery_endpoint:feed,format:/atom/i.test(feed)?'atom':'rss',catalog_endpoint:source.discovery_endpoint,feed_preferred:true};
+});
+const requiredSources=requiredTopics.topics.flatMap(topic=>topic.sources.map(source=>({
+ ...source,required_topic:topic.topic_id,required_topic_fallback_days:topic.fallback_days,required_topic_slot:topic.required_slots
+})));
 const earlySources=early.channels.flatMap(channel=>channel.endpoints.map(endpoint=>({
  source_id:endpoint.source_id,discovery_endpoint:endpoint.url,status:endpoint.automated?'active':'assisted_review',
  format:endpoint.format,channel_id:channel.channel_id,broad_discovery:true,evidence_class:/preprint/.test(channel.kind)?'preprint':/official_lab/.test(channel.kind)?'publisher_authored':'discovery_signal'
 })));
 for(const channel of early.channels.filter(channel=>channel.endpoints.length===0||channel.endpoints.every(endpoint=>!endpoint.automated)))sources.push({source_id:channel.channel_id,status:'assisted_review_required',reason:channel.evidence_treatment});
 for(const source of earlySources.filter(source=>source.status==='assisted_review'))sources.push({source_id:source.source_id,status:'assisted_review_required',reason:'This endpoint requires identity, access, runtime, and original-evidence review.'});
-const monitored=[...registry.sources,...earlySources].filter((source,index,all)=>source.discovery_endpoint&&source.status==='active'&&all.findIndex(candidate=>candidate.discovery_endpoint===source.discovery_endpoint)===index);
+const monitored=[...requiredSources,...preferredRegistrySources,...earlySources].filter((source,index,all)=>source.discovery_endpoint&&source.status==='active'&&all.findIndex(candidate=>candidate.discovery_endpoint===source.discovery_endpoint)===index);
 
 // Keep a small high-authority core on every run and rotate the remaining source budget daily.
 // This preserves breadth without paying to sweep every registered catalog before enough fresh evidence exists.
-const sourceRank=s=>(s.evidence_class==='publisher_authored'?30:s.evidence_class==='preprint'?20:10)+(s.format==='rss'||s.format==='atom'?5:0)+(s.broad_discovery?0:2);
+const sourceRank=s=>(s.required_topic?60:0)+(s.evidence_class==='publisher_authored'?30:s.evidence_class==='preprint'?20:10)+(s.format==='rss'||s.format==='atom'?8:0)+(s.broad_discovery?0:2);
 const ordered=[...monitored].sort((a,b)=>sourceRank(b)-sourceRank(a)||a.source_id.localeCompare(b.source_id));
-const core=ordered.slice(0,8),rest=ordered.slice(8),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
+const requiredCore=ordered.filter(s=>s.required_topic),ordinary=ordered.filter(s=>!s.required_topic),core=[...requiredCore,...ordinary.slice(0,8)],rest=ordinary.slice(8),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
 const rotated=rest.length?[...rest.slice(rotation),...rest.slice(0,rotation)]:[];
 const scanPlan=[...core,...rotated].filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
-const MIN_SOURCES_SCANNED=12,MAX_SOURCES_SCANNED=20,FRESH_METADATA_TARGET=20,FRESH_HOURS=72;
+const MIN_SOURCES_SCANNED=12,MAX_SOURCES_SCANNED=24,FRESH_METADATA_TARGET=20,FRESH_HOURS=72;
 let scanned=0,stopReason=null;
-const freshMetadataCount=()=>[...candidates.values()].filter(c=>{const stamp=Date.parse(c.published_at||c.publication_date);return Number.isFinite(stamp)&&Date.now()-stamp>=0&&Date.now()-stamp<=FRESH_HOURS*3600000;}).length;
+const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
+ const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
+ const ordinary=Number.isFinite(published)&&Date.now()-published>=0&&Date.now()-published<=FRESH_HOURS*3600000;
+ const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
+ return ordinary||required;
+}).length;
 
 for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
  const batch=scanPlan.slice(i,Math.min(i+4,MAX_SOURCES_SCANNED));
@@ -35,7 +51,10 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
    for(const link of extractCandidateMetadata(result.text,result.resolved_url,s)){
     const title=link.headline;if(title.length<20||title.length>200||(!s.broad_discovery&&!/agent|AI|context|retrieval|evaluation|copilot|gemini|claude|skill|prompt|LLM/i.test(title))||found>=100)continue;
     const url=new URL(link.canonical_url);
-    if(!candidates.has(url.href))candidates.set(url.href,{...link,url:url.href,title,source_id:s.source_id,format:s.format,discovered_at:new Date().toISOString(),publication_date:link.published_at,runtime_seconds:null,status:'needs_editorial_and_metadata_review'});else { const prior=candidates.get(url.href); for(const field of ['published_at','snippet','publisher','source_reliability','content_type','publication_dates','date_conflict','date_source','updated_at']) if(link[field]!=null) prior[field]=link[field]; if(link.published_at) prior.publication_date=link.published_at; if(link.date_conflict){prior.published_at=null;prior.publication_date=null;} }
+    const canonicalRequired=s.required_topic&&(()=>{try{return new URL(s.canonical_url||s.discovery_endpoint).hostname===url.hostname&&new URL(s.canonical_url||s.discovery_endpoint).pathname.replace(/\/$/,'')===url.pathname.replace(/\/$/,'');}catch{return false;}})();
+    const topicalRequired=s.required_topic&&/agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?/i.test(title+' '+(link.snippet||''));
+    const requiredTopic=canonicalRequired||topicalRequired?s.required_topic:null;
+    if(!candidates.has(url.href))candidates.set(url.href,{...link,url:url.href,title,source_id:s.source_id,format:s.format,discovered_at:new Date().toISOString(),publication_date:link.published_at,runtime_seconds:null,required_topic:requiredTopic,required_topic_fallback_days:requiredTopic?(s.required_topic_fallback_days||7):null,status:'needs_editorial_and_metadata_review'});else { const prior=candidates.get(url.href); if(requiredTopic){prior.required_topic=requiredTopic;prior.required_topic_fallback_days=s.required_topic_fallback_days||7;} for(const field of ['published_at','snippet','publisher','source_reliability','content_type','publication_dates','date_conflict','date_source','updated_at']) if(link[field]!=null) prior[field]=link[field]; if(link.published_at) prior.publication_date=link.published_at; if(link.date_conflict){prior.published_at=null;prior.publication_date=null;} }
     found++;
    }
    sources.push({source_id:s.source_id,status:result.cache_status==='hit'||result.cache_status==='not_modified'?'cached_metadata':'retrieved',cache_status:result.cache_status,fetched_at:result.fetched_at,candidate_links:found,checked_at:new Date().toISOString(),attempts:result.attempts});
@@ -48,5 +67,5 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
 for(const s of scanPlan.slice(scanned,MAX_SOURCES_SCANNED))sources.push({source_id:s.source_id,status:'deferred',reason:stopReason||'source_scan_limit'});
 const retained=retainCandidates([...candidates.values()],{limit:500});
 fs.writeFileSync('_data/media-candidate-queue.json',JSON.stringify({updated_at:new Date().toISOString(),...retained},null,2)+'\n');
-fs.mkdirSync('_records/discovery',{recursive:true});fs.writeFileSync(`_records/discovery/${date}.json`,JSON.stringify({date,sources:sources.sort((a,b)=>a.source_id.localeCompare(b.source_id)),queue_size:retained.candidates.length,queue_discovered:candidates.size,retention:retained.retention,early_signal_channels:early.channels.length,efficiency:{...retrievalCache.metrics,article_sources_fulltext_retrieved:0,scope:'bounded_catalog_metadata_discovery',sources_scanned:scanned,source_scan_minimum:MIN_SOURCES_SCANNED,source_scan_maximum:MAX_SOURCES_SCANNED,fresh_metadata_candidates:freshMetadataCount(),fresh_metadata_target:FRESH_METADATA_TARGET,stop_reason:stopReason||'source_scan_limit'},note:'Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Catalog acquisition stops after bounded breadth plus sufficient fresh metadata, or at the normal acquisition budget; later editorial research retains at most 20 metadata candidates.'},null,2)+'\n');
-console.log(JSON.stringify({date,sources:sources.length,scanned,queue:candidates.size,fresh_metadata:freshMetadataCount(),stop_reason:stopReason||'source_scan_limit'}));
+fs.mkdirSync('_records/discovery',{recursive:true});fs.writeFileSync(`_records/discovery/${date}.json`,JSON.stringify({date,research_cutoff_at:new Date(cutoffMs).toISOString(),sources:sources.sort((a,b)=>a.source_id.localeCompare(b.source_id)),queue_size:retained.candidates.length,queue_discovered:candidates.size,retention:retained.retention,early_signal_channels:early.channels.length,efficiency:{...retrievalCache.metrics,article_sources_fulltext_retrieved:0,scope:'bounded_catalog_metadata_discovery',sources_scanned:scanned,source_scan_minimum:MIN_SOURCES_SCANNED,source_scan_maximum:MAX_SOURCES_SCANNED,fresh_metadata_candidates:freshMetadataCount(),fresh_metadata_target:FRESH_METADATA_TARGET,required_topic_sources:requiredSources.length,preferred_feed_sources:preferredRegistrySources.filter(x=>x.feed_preferred).length,stop_reason:stopReason||'source_scan_limit'},note:'Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Catalog acquisition stops after bounded breadth plus sufficient fresh metadata, or at the normal acquisition budget; later editorial research retains at most 20 metadata candidates.'},null,2)+'\n');
+console.log(JSON.stringify({date,research_cutoff_at:new Date(cutoffMs).toISOString(),sources:sources.length,scanned,queue:candidates.size,fresh_metadata:freshMetadataCount(),stop_reason:stopReason||'source_scan_limit'}));

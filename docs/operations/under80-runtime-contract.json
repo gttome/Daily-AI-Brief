@@ -39,7 +39,20 @@
     "metadata_prefilter_command": "node _tools/under80-metadata-gate.mjs --input _data/media-candidate-queue.json --out _records/editorial-handoff/metadata-candidates.json --limit 20 --cutoff <original-cutoff>",
     "raw_discovery_queue_model_visible": false,
     "model_visible_discovery_rule": "Do not open or summarize the raw discovery queue. Run the deterministic metadata gate and use only its candidates array as model-visible article discovery input.",
-    "metadata_gate_output_path": "_records/editorial-handoff/metadata-candidates.json"
+    "metadata_gate_output_path": "_records/editorial-handoff/metadata-candidates.json",
+    "fresh_discovery_required_before_gate": true,
+    "discovery_command": "DAB_RESEARCH_CUTOFF=<original-cutoff> node _tools/discover-sources.mjs",
+    "required_topic_sources_path": "_data/required-topic-sources.json",
+    "prefer_publisher_feeds": true,
+    "resolved_metadata_date_required": true,
+    "metadata_coverage_minimum_per_focus": 3,
+    "metadata_agent_skill_signals_minimum": 1,
+    "gate_must_report_coverage_ready": true,
+    "discovery_sequence": [
+      "Run fresh deterministic catalog discovery once with the original research cutoff supplied through DAB_RESEARCH_CUTOFF. Do not inspect the raw queue.",
+      "Run the deterministic under-80 metadata gate.",
+      "Inspect only the gate output. Continue only when coverage_ready is true, every retained candidate has a resolved in-window metadata date, all three focus hints have at least three candidates, and at least one Agent Skills signal exists."
+    ]
   },
   "semantic_work": {
     "editorial_model_passes": 1,
