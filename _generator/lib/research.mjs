@@ -9,7 +9,7 @@ export const DEFAULT_FALLBACK_HOURS = 72;
 export const AGENT_SKILLS_FALLBACK_HOURS = 168;
 export const DEFAULT_METADATA_CANDIDATE_LIMIT = 20;
 export const DEFAULT_DEEP_CANDIDATE_TARGET = 9;
-export const MAX_DEEP_CANDIDATE_EXCEPTION = 12;
+export const MAX_DEEP_CANDIDATE_EXCEPTION = 9; // Compatibility name; under80-v1 has no expansion above the nine-review ceiling.
 export const NORMAL_RETRIEVED_CHAR_BUDGET = 1500000;
 export const ABSOLUTE_RETRIEVED_CHAR_BUDGET = 2500000;
 const time = value => typeof value === 'string' && value.trim() ? Date.parse(value) : NaN;
@@ -90,6 +90,7 @@ export function createEvidencePacket(candidate, source, review) {
     return {claim:c.claim.trim(),evidence:c.excerpt,source_url:url};
   });
   if (!['pass','review_required','fail'].includes(review.novelty_status) || !['high','medium','low'].includes(review.confidence)) throw Error('Explicit novelty and confidence required');
+  const sourceWordCount=source.text.trim().split(/\s+/u).filter(Boolean).length;
   return {
     schema_version:'1.0.0',pipeline_version:RESEARCH_VERSION,candidate_id:candidate.candidate_id,
     headline:candidate.headline,publisher:candidate.publisher || null,published_at:candidate.published_at,
@@ -100,7 +101,9 @@ export function createEvidencePacket(candidate, source, review) {
     novelty_fingerprint:review.novelty_fingerprint || null,novelty_status:review.novelty_status,
     entities:review.entities || [],event_type:review.event_type || null,confidence:review.confidence,
     agent_skill_relevance:review.agent_skill_relevance === true,
-    source_reading_minutes:Number.isFinite(review.source_reading_minutes)&&review.source_reading_minutes>0?review.source_reading_minutes:null,
+    source_word_count:sourceWordCount,
+    source_word_count_method:'retrieved_source_text_whitespace_v1',
+    source_reading_minutes:Number.isFinite(review.source_reading_minutes)&&review.source_reading_minutes>0?review.source_reading_minutes:Math.max(1,Math.ceil(sourceWordCount/200)),
     verification_status:'reviewed',reviewer:review.reviewer,reviewed_at:review.reviewed_at,
     source_content_hash:sha256(source.text),source_fetched_at:source.fetched_at,
     evidence_kind:source.evidence_kind || 'retrieved_source_text'
@@ -200,7 +203,7 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
   let earlyStop=false,hardStopReason=null;
   for(const candidate of ordered) {
     if(processed.length>=minDeepCandidates&&researchSufficiency(packets,{now,primaryAgeHours}).sufficient){earlyStop=true;hardStopReason='fresh_sufficiency_met';break;}
-    if(processed.length>=maxDeepCandidates){hardStopReason='deep_exception_ceiling';break;}
+    if(processed.length>=maxDeepCandidates){hardStopReason='deep_review_ceiling';break;}
     processed.push(candidate.candidate_id);
     try{
       const source=await cache.retrieve(candidate.canonical_url,fetcher,{kind:'fulltext'});
@@ -210,7 +213,7 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
     }catch(e){failures.push({candidate_id:candidate.candidate_id,reason:e.message});}
   }
   const sufficiency=researchSufficiency(packets,{now,primaryAgeHours});
-  if(!hardStopReason&&processed.length>=maxDeepCandidates&&!sufficiency.sufficient)hardStopReason='deep_exception_ceiling';
+  if(!hardStopReason&&processed.length>=maxDeepCandidates&&!sufficiency.sufficient)hardStopReason='deep_review_ceiling';
   const telemetry=researchTelemetry({startedAt,endedAt:new Date().toISOString(),cache,packets,scope:'selective_research'});
   telemetry.research.metadata_candidates_considered=ordered.length;
   telemetry.research.metadata_candidates_deferred=Math.max(0,ranked.length-ordered.length);
@@ -219,5 +222,5 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
   telemetry.research.hard_stop_reason=hardStopReason;
   return {plan,packets,failures,pending_review,processed,
     deferred:[...ordered.filter(c=>!processed.includes(c.candidate_id)),...ranked.slice(metadataCandidateLimit)],sufficiency,telemetry,
-    selection_status:sufficiency.sufficient?'ready_for_single_editorial_pass':'requires_targeted_exception_or_additional_evidence'};
+    selection_status:sufficiency.sufficient?'ready_for_single_editorial_pass':'insufficient_at_deep_review_ceiling'};
 }
