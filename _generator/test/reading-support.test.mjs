@@ -43,3 +43,10 @@ test('edition overview resolves video anchors and reuses source reading estimate
  const yt=structuredClone(current);yt.worth_watching.general.url='https://www.youtube.com/watch?v=example';
  assert.match(renderBody(yt),/>Watch on YouTube<\/a>/);
 });
+
+test('under80 replacement editions ignore stale same-date catalog items but custom validation stays strict',()=>{
+ const replacement=structuredClone(edition);replacement.policy_profile='under80-v1';replacement.stories=replacement.stories.map((story,i)=>({...story,story_id:`replacement-story-${i+1}`}));
+ assert.doesNotThrow(()=>validateReadingSupport(replacement));
+ const stale={item_id:'stale-item',coverage_label:'Background',label_reason:'stale',learning_outcome:'stale',context_term:'Context',context:'stale'};
+ assert.throws(()=>validateReadingSupport(replacement,{editions:{[replacement.brief_date]:[stale]}}),/unknown or duplicate/);
+});
