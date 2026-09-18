@@ -1,6 +1,10 @@
 name: Daily AI Brief deterministic delta validation
 
 on:
+  workflow_run:
+    workflows: ["pages build and deployment"]
+    types: [completed]
+    branches: [main]
   schedule:
     # GitHub cron is UTC. Trigger both DST possibilities; the Chicago-hour gate runs exactly one.
     - cron: '0 14,15 * * *'
@@ -27,9 +31,16 @@ jobs:
         id: gate
         env:
           EVENT_NAME: ${{ github.event_name }}
+          WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
         run: |
           if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
+          elif [ "$EVENT_NAME" = "workflow_run" ]; then
+            if [ "$WORKFLOW_CONCLUSION" = "success" ]; then
+              echo "run=true" >> "$GITHUB_OUTPUT"
+            else
+              echo "run=false" >> "$GITHUB_OUTPUT"
+            fi
           elif [ "$(TZ=America/Chicago date +%H)" = "09" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
