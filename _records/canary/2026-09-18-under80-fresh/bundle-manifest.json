@@ -12,32 +12,32 @@
   "images": [
     {
       "path": "briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png",
-      "sha256": "a6472717ce81431e5ecf4c353d5b3fd613e5e6c10cb8a930f29ed1bca7a6824a",
+      "sha256": "53fe9c101076e161d7fc935b8fa32b5110361054f71921625dac99cf6e151f0b",
       "composition": "three-lane measurement-to-audit"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-02-workflow-protections.png",
-      "sha256": "e7efa3f810dff7d7fe69a0a9e214d98e909c0fb49c885c588b4fd22f4aad007e",
+      "sha256": "1f4f3baa8738596e5455224f96db0624326f605c0d453a3c5a53ee89ffbd6f7b",
       "composition": "six-gate horizontal protection pipeline"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png",
-      "sha256": "da31a10f1ea3a40f60d938ebfbf48cc52d289b1cc52214d603ad07425504b4ef",
+      "sha256": "1e8b7acc5f9ab6c60a6ccb86703be60b3ca541fe7a1028c4e1afedaf95158c3e",
       "composition": "before-after outcome redesign"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-04-governed-builder.png",
-      "sha256": "cfdd3cf44719e5ccbe51e6a60926e20b4fdad0b80df95534063e2c154a6fcbba",
+      "sha256": "49b51fcb7f321591c7a0a55f1ca357748fbb0fe89bddc4a7984389d28bedf2db",
       "composition": "governed enterprise funnel"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png",
-      "sha256": "d2deb8dade9785860e354d944a2ab4ebd503bbbccd8dc830b4b5e8dfa9b11c96",
+      "sha256": "69d52eaf479dd011a7b24913d12ccd0ae4621e2b09cbb0d00429a9bca3b89bec",
       "composition": "eight-step reusable skill loop"
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-06-household-agent.png",
-      "sha256": "d40602ea7f9a795ab0f7024215a9129948c69f1f87b359616dff6bade5590ed6",
+      "sha256": "482c59bddb801ec49404b75c316948b10a0a37f395749a5e3fd4f7c1c586bfc0",
       "composition": "multi-user boundary architecture"
     }
   ],

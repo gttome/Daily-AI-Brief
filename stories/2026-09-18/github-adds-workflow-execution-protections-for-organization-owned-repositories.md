@@ -2,7 +2,7 @@
 layout: default
 title: "GitHub adds layered execution protections for organization-owned repository workflows"
 description: "Agentic delivery needs linked controls for identity, source integrity, execution environment, least privilege, and auditability."
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=e7efa3f810dff7d7"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=1f4f3baa8738596e"
 permalink: /stories/2026-09-18/github-adds-workflow-execution-protections-for-organization-owned-repositories/
 brief_date: 2026-09-18
 story_id: dab-story-2026-09-18-3ac3c725
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** General Availability
 
-![Textbook pipeline diagram showing source, actor, workflow, environment, permission, and audit protection gates for organization-owned repository workflows.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=e7efa3f810dff7d7)
+![Textbook pipeline diagram showing source, actor, workflow, environment, permission, and audit protection gates for organization-owned repository workflows.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=1f4f3baa8738596e)
 
 **Summary:** GitHub introduced additional controls around who can start organization-owned repository workflows, which workflow definition is trusted, where it executes, what permissions it receives, and what evidence is retained. The useful engineering pattern is defense in depth: identity, source integrity, environment isolation, least privilege, and auditability work as one chain.
 

@@ -5,39 +5,39 @@
   "rollback_target_sha": "d5bf6633f252694caef46e89ecaa37a18bfb121e",
   "policy_profile": "under80-v1",
   "image_review": "_records/image-quality/2026-09-18-canary-under80-fresh.json",
-  "image_review_sha256": "b750d4cdd6960b9f304adc534c6594afc6fb4ab60d25ec0c5fed536f2fb4f36d",
+  "image_review_sha256": "5bd1431d745d3d4f79e8961a68ac968e0e15e353b97a286812d67dbba47274e0",
   "assets": [
     {
       "path": "briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png",
-      "sha256": "a6472717ce81431e5ecf4c353d5b3fd613e5e6c10cb8a930f29ed1bca7a6824a",
-      "bytes": 753510
+      "sha256": "53fe9c101076e161d7fc935b8fa32b5110361054f71921625dac99cf6e151f0b",
+      "bytes": 148669
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-02-workflow-protections.png",
-      "sha256": "e7efa3f810dff7d7fe69a0a9e214d98e909c0fb49c885c588b4fd22f4aad007e",
-      "bytes": 814929
+      "sha256": "1f4f3baa8738596e5455224f96db0624326f605c0d453a3c5a53ee89ffbd6f7b",
+      "bytes": 155889
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png",
-      "sha256": "da31a10f1ea3a40f60d938ebfbf48cc52d289b1cc52214d603ad07425504b4ef",
-      "bytes": 788291
+      "sha256": "1e8b7acc5f9ab6c60a6ccb86703be60b3ca541fe7a1028c4e1afedaf95158c3e",
+      "bytes": 163665
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-04-governed-builder.png",
-      "sha256": "cfdd3cf44719e5ccbe51e6a60926e20b4fdad0b80df95534063e2c154a6fcbba",
-      "bytes": 772314
+      "sha256": "49b51fcb7f321591c7a0a55f1ca357748fbb0fe89bddc4a7984389d28bedf2db",
+      "bytes": 161996
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png",
-      "sha256": "d2deb8dade9785860e354d944a2ab4ebd503bbbccd8dc830b4b5e8dfa9b11c96",
-      "bytes": 788360
+      "sha256": "69d52eaf479dd011a7b24913d12ccd0ae4621e2b09cbb0d00429a9bca3b89bec",
+      "bytes": 148798
     },
     {
       "path": "briefs/images/2026-09-18/canary-under80-06-household-agent.png",
-      "sha256": "d40602ea7f9a795ab0f7024215a9129948c69f1f87b359616dff6bade5590ed6",
-      "bytes": 828405
+      "sha256": "482c59bddb801ec49404b75c316948b10a0a37f395749a5e3fd4f7c1c586bfc0",
+      "bytes": 160561
     }
   ],
-  "canonical_sha256": "aa3968e9e5805509fcef10e0802ce26d54a1c69494f17f04c7adfd76a93325cd",
-  "candidate_digest": "sha256:13361eff80966431095fc88699e30af73666f0add06655f3f296527ed04464e3"
+  "canonical_sha256": "7b00cf3bde873622e73b401c83156baf13c45ea1943722ae09b88396874ec2f2",
+  "candidate_digest": "sha256:2c63477dcb0efcd5eb086855ce7d63630136c40c26db7c452b03d1e3e5c3433c"
 }

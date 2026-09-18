@@ -30,12 +30,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=a6472717ce81431e",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=53fe9c101076e161",
         "alt": "Textbook diagram of AI-led research, agent oversight, and compute allocation flowing through a verification ledger to independent audit.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "a6472717ce81431e"
+        "cache_key": "53fe9c101076e161"
       },
       "summary": "Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.",
       "why_it_matters": "The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that automation. Comparable, independently checked operational metrics could make acceleration and control more inspectable.",
@@ -79,7 +79,7 @@
       "social": {
         "title": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
         "description": "The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=a6472717ce81431e"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-01-frontier-measurements.png?v=53fe9c101076e161"
       }
     },
     {
@@ -103,12 +103,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-18/canary-under80-02-workflow-protections.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=e7efa3f810dff7d7",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=1f4f3baa8738596e",
         "alt": "Textbook pipeline diagram showing source, actor, workflow, environment, permission, and audit protection gates for organization-owned repository workflows.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "e7efa3f810dff7d7"
+        "cache_key": "1f4f3baa8738596e"
       },
       "summary": "GitHub introduced additional controls around who can start organization-owned repository workflows, which workflow definition is trusted, where it executes, what permissions it receives, and what evidence is retained. The useful engineering pattern is defense in depth: identity, source integrity, environment isolation, least privilege, and auditability work as one chain.",
       "why_it_matters": "Agentic development makes workflow execution more frequent and more autonomous. A single approval switch is not enough; trustworthy automation needs independent gates that reduce the chance that an untrusted actor, altered definition, overpowered token, or weak runner can turn a routine workflow into a supply-chain incident.",
@@ -152,7 +152,7 @@
       "social": {
         "title": "GitHub adds layered execution protections for organization-owned repository workflows",
         "description": "Agentic delivery needs linked controls for identity, source integrity, execution environment, least privilege, and auditability.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=e7efa3f810dff7d7"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-02-workflow-protections.png?v=1f4f3baa8738596e"
       }
     },
     {
@@ -175,12 +175,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=da31a10f1ea3a40f",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=1e8b7acc5f9ab6c6",
         "alt": "Textbook before-and-after diagram contrasting fragmented prompt counting with outcome-first end-to-end workflow redesign.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "da31a10f1ea3a40f"
+        "cache_key": "1e8b7acc5f9ab6c6"
       },
       "summary": "Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.",
       "why_it_matters": "The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measure completed work. That is a more durable adoption model than distributing AI tools and tracking logins or prompts.",
@@ -226,7 +226,7 @@
       "social": {
         "title": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
         "description": "The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measur",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=da31a10f1ea3a40f"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-03-outcome-workflow.png?v=1e8b7acc5f9ab6c6"
       }
     },
     {
@@ -249,12 +249,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-18/canary-under80-04-governed-builder.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=cfdd3cf44719e5cc",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=49b51fcb7f321591",
         "alt": "Textbook architecture diagram showing natural-language intent passing through data, metadata, security, governance, and testing into apps and agents.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "cfdd3cf44719e5cc"
+        "cache_key": "49b51fcb7f321591"
       },
       "summary": "Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.",
       "why_it_matters": "Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers a simpler path from intent to working application while retaining administrator controls and existing data boundaries.",
@@ -298,7 +298,7 @@
       "social": {
         "title": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
         "description": "Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers ",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=cfdd3cf44719e5cc"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=49b51fcb7f321591"
       }
     },
     {
@@ -321,12 +321,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=d2deb8dade978586",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=69d52eaf479dd011",
         "alt": "Textbook loop showing a repeated team task becoming a reviewed reusable Agent Skill with shared conversation, memory, handoff, and reuse.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "d2deb8dade978586"
+        "cache_key": "69d52eaf479dd011"
       },
       "summary": "Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.",
       "why_it_matters": "This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to colleagues, and combine it with shared conversational context without writing code.",
@@ -372,7 +372,7 @@
       "social": {
         "title": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
         "description": "This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to co",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=d2deb8dade978586"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-05-reusable-agent-skills.png?v=69d52eaf479dd011"
       }
     },
     {
@@ -396,12 +396,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-09-18/canary-under80-06-household-agent.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=d40602ea7f9a795a",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=482c59bddb801ec4",
         "alt": "Textbook architecture diagram of a shared household agent with separate identities, private memory, permissions, consent, approvals, and audit history.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "d40602ea7f9a795a"
+        "cache_key": "482c59bddb801ec4"
       },
       "summary": "Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.",
       "why_it_matters": "The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and isolated execution. Those are useful patterns for any multi-user agent, not just household logistics.",
@@ -445,7 +445,7 @@
       "social": {
         "title": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
         "description": "The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and ",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=d40602ea7f9a795a"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=482c59bddb801ec4"
       }
     }
   ],

@@ -2,7 +2,7 @@
 layout: default
 title: "Google gives a household agent its own identity, permissions, shared memory, and isolated computer"
 description: "The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and "
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=d40602ea7f9a795a"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=482c59bddb801ec4"
 permalink: /stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/
 brief_date: 2026-09-18
 story_id: dab-story-2026-09-18-062b5025
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Experimental Waitlist
 
-![Textbook architecture diagram of a shared household agent with separate identities, private memory, permissions, consent, approvals, and audit history.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=d40602ea7f9a795a)
+![Textbook architecture diagram of a shared household agent with separate identities, private memory, permissions, consent, approvals, and audit history.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-06-household-agent.png?v=482c59bddb801ec4)
 
 **Summary:** Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.
 

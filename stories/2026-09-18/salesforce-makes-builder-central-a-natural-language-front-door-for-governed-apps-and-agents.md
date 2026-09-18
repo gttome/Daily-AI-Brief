@@ -2,7 +2,7 @@
 layout: default
 title: "Salesforce makes Builder Central a natural-language front door for governed apps and agents"
 description: "Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers "
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=cfdd3cf44719e5cc"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=49b51fcb7f321591"
 permalink: /stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/
 brief_date: 2026-09-18
 story_id: dab-story-2026-09-18-c5d22f27
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Beta Announced
 
-![Textbook architecture diagram showing natural-language intent passing through data, metadata, security, governance, and testing into apps and agents.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=cfdd3cf44719e5cc)
+![Textbook architecture diagram showing natural-language intent passing through data, metadata, security, governance, and testing into apps and agents.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/canary-under80-fresh-2026-09-18-1243/briefs/images/2026-09-18/canary-under80-04-governed-builder.png?v=49b51fcb7f321591)
 
 **Summary:** Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.
 
