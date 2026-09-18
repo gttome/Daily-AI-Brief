@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "stage": "deterministic_prework_metadata_preflight",
+  "execution_mode": "qualification_nonproduction",
+  "edition_date": "2026-09-18",
+  "cutoff": "2026-09-18T14:41:06.000Z",
+  "started_at": "2026-09-18T19:27:54.693Z",
+  "completed_at": "2026-09-18T19:28:08.587Z",
+  "model_calls": 0,
+  "work_credits_expected": 0,
+  "fresh_discovery": true,
+  "raw_queue_model_visible": false,
+  "metadata_candidates_path": "_records/preflight/2026-09-18/metadata-candidates.json",
+  "discovery_receipt_path": "_records/discovery/2026-09-18.json",
+  "discovery": {
+    "sources_scanned": 24,
+    "fresh_metadata_candidates": 4,
+    "stop_reason": "source_scan_limit",
+    "source_text_chars_retrieved": 1146698,
+    "preferred_feed_sources": 11,
+    "required_topic_sources": 3
+  },
+  "gate": {
+    "retained_metadata_candidates": 4,
+    "coverage_counts": {
+      "technical_ai_engineering": 0,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 3
+    },
+    "agent_skill_signals": 0,
+    "coverage_ready": false,
+    "rejected": {
+      "invalid_title": 1,
+      "nonstory_url": 49,
+      "nonarticle_content": 0,
+      "date_conflict": 0,
+      "unresolved_date": 127,
+      "outside_window": 111,
+      "low_relevance": 0,
+      "duplicate": 0
+    }
+  },
+  "ready": false,
+  "error": null,
+  "stdout": {
+    "discovery": "{\"date\":\"2026-09-18\",\"research_cutoff_at\":\"2026-09-18T14:41:06.000Z\",\"fresh_discovery\":true,\"sources\":33,\"scanned\":24,\"queue\":292,\"fresh_metadata\":4,\"stop_reason\":\"source_scan_limit\"}",
+    "gate": "{\"out\":\"/home/runner/work/Daily-AI-Brief/Daily-AI-Brief/_records/preflight/2026-09-18/metadata-candidates.json\",\"raw_queue_count\":292,\"eligible\":4,\"retained\":4,\"limit\":20,\"coverage_counts\":{\"technical_ai_engineering\":0,\"applied_genai_knowledge_workers\":1,\"agents_non_technical_people\":3},\"agent_skill_signals\":0,\"coverage_ready\":false,\"rejected\":{\"invalid_title\":1,\"nonstory_url\":49,\"nonarticle_content\":0,\"date_conflict\":0,\"unresolved_date\":127,\"outside_window\":111,\"low_relevance\":0,\"duplicate\":0}}"
+  },
+  "invariant": "This deterministic preflight runs outside the daily Work semantic task. Work may read only the committed metadata-candidates.json and receipt.json, never the raw discovery queue."
+}
