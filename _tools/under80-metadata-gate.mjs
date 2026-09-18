@@ -71,7 +71,8 @@ for(const item of source){
  else {rejected.outside_window++;continue;}
  const relevance=relevanceRank(combined);
  if(relevance<4){rejected.low_relevance++;continue;}
- const focus=focusHint(combined,isSkill);
+ const providedFocus=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].includes(item.focus_hint)?item.focus_hint:null;
+ const focus=isSkill?'agents_non_technical_people':providedFocus||focusHint(combined,false);
  const normalized={
   candidate_id:text(item.candidate_id)||null,
   headline:title,
