@@ -12,7 +12,7 @@ import {editionPodcasts,EMPTY_PODCAST_COPY,MULTI_PODCAST_EFFECTIVE_DATE} from '.
 const focusLabels = {
   technical_ai_engineering: 'Technical AI Engineering',
   applied_genai_knowledge_workers: 'Applied Generative AI for Knowledge Workers',
-  agents_non_technical_people: 'Agents for Non-Technical People',
+  agents_non_technical_people: 'Agents for Everyone',
   historical_unspecified: 'Earlier edition'
 };
 
