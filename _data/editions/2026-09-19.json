@@ -5,7 +5,7 @@
   "brief_date": "2026-09-19",
   "timezone": "America/Chicago",
   "title": "Daily Generative AI Brief — September 19, 2026",
-  "published_at": "2026-09-19T17:11:51Z",
+  "published_at": "2026-09-19T17:42:07Z",
   "research_cutoff_at": "2026-09-19T12:03:00.000Z",
   "coverage_period": "24-hour primary window ending at 2026-09-19T12:03:00.000Z; recency fallback used for reviewed items outside the primary window.",
   "status": "staged",
@@ -26,7 +26,7 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-19/01-copilot-code-review.webp",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea",
         "alt": "Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.",
         "width": 1200,
         "height": 630,
@@ -81,7 +81,7 @@
       "social": {
         "title": "Copilot code review adds clearer progress and smarter batch suggestions",
         "description": "The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea"
       }
     },
     {
@@ -100,7 +100,7 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.webp",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176",
         "alt": "Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.",
         "width": 1200,
         "height": 630,
@@ -155,7 +155,7 @@
       "social": {
         "title": "GitHub schedules selected Copilot model deprecations for October 19",
         "description": "Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176"
       }
     },
     {
@@ -174,7 +174,7 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.webp",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87",
         "alt": "Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.",
         "width": 1200,
         "height": 630,
@@ -230,7 +230,7 @@
       "social": {
         "title": "Copilot impact dashboard now exposes feature engagement",
         "description": "AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87"
       }
     },
     {
@@ -249,7 +249,7 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.webp",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57",
         "alt": "Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.",
         "width": 1200,
         "height": 630,
@@ -305,7 +305,7 @@
       "social": {
         "title": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
         "description": "The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workfl",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57"
       }
     },
     {
@@ -324,7 +324,7 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.webp",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f",
         "alt": "Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.",
         "width": 1200,
         "height": 630,
@@ -380,7 +380,7 @@
       "social": {
         "title": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
         "description": "Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f"
       }
     },
     {
@@ -399,7 +399,7 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-19/06-long-horizon-agents.webp",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44",
         "alt": "Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.",
         "width": 1200,
         "height": 630,
@@ -455,7 +455,7 @@
       "social": {
         "title": "Salesforce explains why long-horizon agents need persistence across sessions",
         "description": "For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44"
       }
     }
   ],
@@ -492,8 +492,8 @@
   "editorial_takeaway": "Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.",
   "provenance": {
     "created_by": "deterministic-kernel-expander",
-    "created_at": "2026-09-19T17:11:51Z",
-    "source_commit": "c3cf5cdb1749275d94896ee48c92a55c6bd86821"
+    "created_at": "2026-09-19T17:42:07Z",
+    "source_commit": "a4213adc0458519fc1352303b80bfdf7b072cd6f"
   },
   "podcasts": [
     {

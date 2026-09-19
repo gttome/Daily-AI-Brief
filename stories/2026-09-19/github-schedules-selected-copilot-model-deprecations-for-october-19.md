@@ -2,7 +2,7 @@
 layout: default
 title: "GitHub schedules selected Copilot model deprecations for October 19"
 description: "Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff."
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176"
 permalink: /stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/
 brief_date: 2026-09-19
 story_id: dab-story-2026-09-19-49a474f5
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176)
+![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176)
 
 **Summary:** GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.
 

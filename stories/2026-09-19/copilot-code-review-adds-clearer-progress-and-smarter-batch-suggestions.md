@@ -2,7 +2,7 @@
 layout: default
 title: "Copilot code review adds clearer progress and smarter batch suggestions"
 description: "The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code."
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea"
 permalink: /stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/
 brief_date: 2026-09-19
 story_id: dab-story-2026-09-19-807056d1
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea)
+![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea)
 
 **Summary:** GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.
 

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "edition_id": "dab-edition-2026-09-19",
-  "baseline_sha": "c3cf5cdb1749275d94896ee48c92a55c6bd86821",
-  "rollback_target_sha": "c3cf5cdb1749275d94896ee48c92a55c6bd86821",
+  "baseline_sha": "a4213adc0458519fc1352303b80bfdf7b072cd6f",
+  "rollback_target_sha": "a4213adc0458519fc1352303b80bfdf7b072cd6f",
   "policy_profile": "under80-v1",
   "image_review": "_records/editorial-handoff/images.json",
   "image_review_sha256": "f64d297ebb3c49b628eab894cba68172aca73446b4e5f365e72a47243cf0868f",
@@ -38,6 +38,6 @@
       "bytes": 33080
     }
   ],
-  "canonical_sha256": "b5c129b1b222354f3fd3e016d9fcbf83710b7713dd1163259758eabe8350c385",
-  "candidate_digest": "sha256:e03ada79369a4b7202337873ce2c09460c082684d521268b5583e78fff0f681d"
+  "canonical_sha256": "11f54a05863980607f7e9547ff73049f18e260e09073cc7669005fa06bba4684",
+  "candidate_digest": "sha256:87ab4677b34f4a631c51aa285d768987cd307089ffbd86b74a26f6c21d76b15c"
 }

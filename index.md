@@ -35,7 +35,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f)
+![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f)
 
 **Summary:** GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.
 
@@ -75,7 +75,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44)
+![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44)
 
 **Summary:** Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.
 
@@ -115,7 +115,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87)
+![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87)
 
 **Summary:** GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.
 
@@ -155,7 +155,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57)
+![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57)
 
 **Summary:** Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.
 
@@ -195,7 +195,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea)
+![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea)
 
 **Summary:** GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.
 
@@ -235,7 +235,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176)
+![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176)
 
 **Summary:** GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.
 
