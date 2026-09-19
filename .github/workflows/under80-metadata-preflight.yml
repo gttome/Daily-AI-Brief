@@ -7,8 +7,8 @@ on:
     paths:
       - '_records/preflight-request/request.json'
   schedule:
-    - cron: '40 11 * * *'
-    - cron: '40 12 * * *'
+    - cron: '30 11 * * *'
+    - cron: '30 12 * * *'
   workflow_dispatch:
     inputs:
       edition_date:
