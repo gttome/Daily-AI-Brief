@@ -4,6 +4,7 @@ import {FOCUS, PUBLIC_BASE} from './constants.mjs';
 import {formatDate, normalizeUrl, slugify, stableSuffix} from './util.mjs';
 
 const FOCUS_KEY = Object.fromEntries(Object.entries(FOCUS).map(([key, value]) => [value, key]));
+FOCUS_KEY['Agents for Everyone']='agents_non_technical_people';
 
 function capture(text, pattern, label, optional = false) {
   const value = text.match(pattern)?.[1]?.trim();
@@ -115,8 +116,8 @@ function parseVideoSlot(section, name) {
 
 function parseWorthWatching(markdown) {
   const section = markdown.split('\n## Worth Watching\n')[1]?.split('\n## Editorial takeaway\n')[0] || '';
-  const parts = section.split(/^## 8\. Agents for Non-Technical People\s*$/m);
-  const legacyParts = section.split(/^### Agents for Non-Technical People\s*$/m);
+  const parts = section.split(/^## 8\. Agents for (?:Non-Technical People|Everyone)\s*$/m);
+  const legacyParts = section.split(/^### Agents for (?:Non-Technical People|Everyone)\s*$/m);
   const general = parts.length>1 ? parts[0] : legacyParts[0] || '';
   const agents = parts.length>1 ? parts[1] : legacyParts[1] || '';
   return {
