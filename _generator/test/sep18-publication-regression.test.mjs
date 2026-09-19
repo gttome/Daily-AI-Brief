@@ -23,6 +23,8 @@ test('modern shadow supports reader order and two podcasts while detecting page 
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-modern-shadow-'));
  try{
   for(const name of ['_data','briefs','latest.md','index.md','archive.md','README.md'])fs.cpSync(path.join(root,name),path.join(temp,name),{recursive:true});
+  // Pin the historical shadow fixture to Sep 18 even when a newer edition has been staged.
+  fs.copyFileSync(path.join(temp,'briefs/2026-09-18.md'),path.join(temp,'latest.md'));
   assert.equal(runShadowCheck(temp,'2026-09-18').result,'pass');
   const file=path.join(temp,'latest.md');fs.writeFileSync(file,fs.readFileSync(file,'utf8').replace('How to get discovered in AI search','CORRUPTED PODCAST TITLE'));
   const check=runShadowCheck(temp,'2026-09-18');assert.equal(check.result,'fail');assert.ok(check.errors.some(x=>x.includes('latest: reader output differs')));
