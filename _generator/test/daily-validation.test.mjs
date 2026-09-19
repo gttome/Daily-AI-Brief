@@ -44,3 +44,21 @@ test('deterministic validation verifies hardened September 19 completeness and l
   assert.equal(receipt.checks.find(x=>x.check_id==='image_asset_lock').result,'pass');
  }finally{fs.rmSync(path.dirname(out),{recursive:true,force:true});}
 });
+
+
+test('daily validation accepts runtime Pages completion evidence without requiring a new repository completion commit',()=>{ 
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-runtime-completion-'));
+ const out=path.join(temp,'receipt.json'),completionFile=path.join(temp,'completion.json');
+ try{
+  const completion=JSON.parse(fs.readFileSync('_records/publication/2026-09-19/completion.json','utf8'));
+  completion.commit_sha='a'.repeat(40);
+  completion.pages={...completion.pages,run_id:123456789,conclusion:'success',verified_at:'2026-09-19T18:00:00Z'};
+  fs.writeFileSync(completionFile,JSON.stringify(completion,null,2)+'\n');
+  execFileSync(process.execPath,['_tools/daily-validation.mjs','--date','2026-09-19','--offline','--completion',completionFile,'--out',out],{cwd:process.cwd(),stdio:'pipe'});
+  const receipt=JSON.parse(fs.readFileSync(out,'utf8'));
+  assert.equal(receipt.final_result,'pass');
+  assert.equal(receipt.publication_sha,'a'.repeat(40));
+  assert.equal(receipt.checks.find(x=>x.check_id==='publication_receipt').result,'pass');
+  assert.equal(receipt.checks.find(x=>x.check_id==='pages_deployment').result,'pass');
+ }finally{fs.rmSync(temp,{recursive:true,force:true});}
+});
