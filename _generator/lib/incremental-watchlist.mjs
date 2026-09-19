@@ -1,7 +1,7 @@
 import {sha256} from './util.mjs';
 const hour=3600000;
-export const WATCHLIST_MINIMUM_FRESH_OBSERVATIONS=3;
-export const WATCHLIST_MAX_FALLBACK_CHECKS=5;
+export const WATCHLIST_MINIMUM_FRESH_OBSERVATIONS=12;
+export const WATCHLIST_MAX_FALLBACK_CHECKS=20;
 export function watchlistDue(source,previous,now,{force=false}={}){
  const stamp=Date.parse(now);if(!Number.isFinite(stamp))throw Error('Valid check time required');
  if(force||!previous||previous.endpoint!==source.endpoint)return true;
