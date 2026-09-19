@@ -22,7 +22,7 @@ reader_release: true
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div></aside>
 <!-- reader-release:end -->
 
-**Focus: Agents for Non-Technical People**
+**Focus: Agents for Everyone**
 
 **Date:** September 17, 2026
 
@@ -62,7 +62,7 @@ reader_release: true
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 11 min read</span></div></aside>
 <!-- reader-release:end -->
 
-**Focus: Agents for Non-Technical People**
+**Focus: Agents for Everyone**
 
 **Date:** September 16, 2026
 
@@ -289,7 +289,7 @@ reader_release: true
 
 <span id="agents-for-non-technical-people"></span>
 
-## 8. Agents for Non-Technical People
+## 8. Agents for Everyone
 
 ### Control AI Agents from Anywhere: 7 Open-Source Tools
 
@@ -332,7 +332,7 @@ reader_release: true
 
 **Show:** The AI Daily Brief  
 **Host / guest:** Nathaniel Whittemore  
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 18, 2026  
 **Duration:** 30:06 · No episode time limit  
 **Topics:** agent security, model choice, data control, enterprise AI
