@@ -1,0 +1,212 @@
+{
+  "m02": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "Workflow execution protections in GitHub Actions generally available",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 819,
+    "source_fetched_at": null,
+    "source_word_count_method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 3,
+      "novelty": 3,
+      "practical_value": 4,
+      "category_fit": 5,
+      "total": 28
+    },
+    "selection_rationale": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow.",
+    "evidence_reference": "_records/editorial-handoff/article-evidence.json#m02"
+  },
+  "m03": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "Copilot impact dashboard now shows feature engagement",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 772,
+    "source_fetched_at": null,
+    "source_word_count_method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 3,
+      "novelty": 3,
+      "practical_value": 4,
+      "category_fit": 5,
+      "total": 28
+    },
+    "selection_rationale": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes.",
+    "evidence_reference": "_records/editorial-handoff/article-evidence.json#m03"
+  },
+  "m06": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "What we’ve learned from Microsoft’s own AI transformation",
+      "organization": "Microsoft",
+      "url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 3082,
+    "source_fetched_at": null,
+    "source_word_count_method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+    "freshness": {
+      "tier": "fallback_72h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 3,
+      "novelty": 3,
+      "practical_value": 4,
+      "category_fit": 5,
+      "total": 28
+    },
+    "selection_rationale": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial.",
+    "evidence_reference": "_records/editorial-handoff/article-evidence.json#m06"
+  },
+  "m07": {
+    "event_date": "2026-09-16",
+    "source": {
+      "title": "Microsoft’s commitment for AI in education: Protecting students, strengthening learning",
+      "organization": "Microsoft",
+      "url": "https://blogs.microsoft.com/blog/2026/09/16/microsofts-commitment-for-ai-in-education/",
+      "publication_date": "2026-09-16",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 2188,
+    "source_fetched_at": null,
+    "source_word_count_method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+    "freshness": {
+      "tier": "fallback_72h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 3,
+      "novelty": 3,
+      "practical_value": 4,
+      "category_fit": 5,
+      "total": 28
+    },
+    "selection_rationale": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved.",
+    "evidence_reference": "_records/editorial-handoff/article-evidence.json#m07"
+  },
+  "m01": {
+    "event_date": "2026-09-17",
+    "source": {
+      "title": "Agentic CLI customizations now in the usage metrics API",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "publication_date": "2026-09-17",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 807,
+    "source_fetched_at": null,
+    "source_word_count_method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 3,
+      "novelty": 3,
+      "practical_value": 4,
+      "category_fit": 5,
+      "total": 28
+    },
+    "selection_rationale": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions.",
+    "evidence_reference": "_records/editorial-handoff/article-evidence.json#m01"
+  },
+  "m11": {
+    "event_date": "2026-09-16",
+    "source": {
+      "title": "Your Agent Can Sprint, But Can It Go the Distance?",
+      "organization": "Salesforce",
+      "url": "https://www.salesforce.com/blog/long-horizon-agents/",
+      "publication_date": "2026-09-16",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 2116,
+    "source_fetched_at": null,
+    "source_word_count_method": "precomputed_github_actions_source_word_count; includes retrieved page text; exact retrieval timestamp not provided",
+    "freshness": {
+      "tier": "fallback_72h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null,
+      "verification_note": "New publication event in supplied preflight; independent 30-day semantic novelty verification is not included in the packet."
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 3,
+      "novelty": 3,
+      "practical_value": 4,
+      "category_fit": 5,
+      "total": 28
+    },
+    "selection_rationale": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist.",
+    "evidence_reference": "_records/editorial-handoff/article-evidence.json#m11"
+  }
+}

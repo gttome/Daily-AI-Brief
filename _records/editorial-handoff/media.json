@@ -1,0 +1,32 @@
+{
+  "worth_watching": {
+    "general": {
+      "status": "empty",
+      "exception": "No video met today’s editorial quality standards."
+    },
+    "agents_non_technical_people": {
+      "status": "empty",
+      "exception": "No video met today’s editorial quality standards."
+    }
+  },
+  "podcasts": [
+    {
+      "id": "practical-ai-372",
+      "title": "How to get discovered in AI search",
+      "show": "Practical AI",
+      "source": "Practical AI",
+      "source_url": "https://practicalai.show/372",
+      "url": "https://practicalai.show/372",
+      "publication_date": "2026-09-17",
+      "duration_seconds": 3314,
+      "summary": "A discussion with Discovered Labs co-founders about AI search visibility, retrieval and citations.",
+      "why_it_matters": "Helps knowledge workers distinguish discovery through AI from traditional search.",
+      "verification_basis": "Publisher show notes and episode metadata; not an independent audio transcript review.",
+      "status": "verified"
+    }
+  ],
+  "omissions": {
+    "videos": "One bounded known video lead was throttled; duration and publication date could not be verified against the 10/15/20-minute ladder. Both slots omitted; no research expansion.",
+    "second_podcast": "The AI Daily Brief September 17 episode URL was inaccessible in this attempt. A second source-diverse podcast was not verified; no expansion."
+  }
+}

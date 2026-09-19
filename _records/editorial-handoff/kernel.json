@@ -1,0 +1,527 @@
+{
+  "schema_version": "1.0.0",
+  "brief_date": "2026-09-18",
+  "edition_id": "dab-edition-2026-09-18",
+  "baseline_sha": "12998a89bd33c7eba337b48efe0c4ea5d291e26e",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "stories": [
+    {
+      "candidate_id": "m02",
+      "story_id": "workflow-authority",
+      "canonical_ordinal": 1,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub moves workflow execution protections to general availability",
+      "summary": "GitHub’s September 17 announcement moves Actions execution protections from public preview to general availability. The metadata describes an allowlist governing who can trigger workflows.",
+      "why_it_matters": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow.",
+      "editorial_limitation": "The supplied excerpt is truncated. Detailed configuration, exceptions and rollout mechanics are not verified in this packet.",
+      "topic_labels": [
+        "workflow-authority"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Review workflow execution authority",
+        "rationale": "For teams using AI-generated automation, execution authority deserves an explicit review. Practical next step: identify who may initiate each sensitive workflow."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Review workflow execution authority",
+        "alt_text": "A detailed left-to-right control gateway with a workflow specification card, actor allowlist card, central policy gate and authorized execution lane. A separate lower review rail shows questions to resolve before configuration. No invented product settings.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Workflow",
+            "detail": "Identify the automation"
+          },
+          {
+            "id": "n2",
+            "label": "Actor",
+            "detail": "Define permitted initiators"
+          },
+          {
+            "id": "n3",
+            "label": "Policy",
+            "detail": "Check the allowlist"
+          },
+          {
+            "id": "n4",
+            "label": "Execution",
+            "detail": "Review the authorized run"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "consider"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "assess"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "Illustrative guidance; check implementation details"
+          }
+        ]
+      },
+      "book_relevance": {
+        "status": "conceptual",
+        "topics": [
+          "professional generative AI",
+          "human review",
+          "workflow design"
+        ],
+        "note": "Conceptual relevance only; no book title, chapter or edition claims verified in the provided packet."
+      }
+    },
+    {
+      "candidate_id": "m03",
+      "story_id": "feature-engagement",
+      "canonical_ordinal": 2,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub’s Copilot dashboard adds feature-engagement visibility",
+      "summary": "GitHub’s September 17 update says its Copilot impact dashboard now shows how many active users regularly use key Copilot features. The change gives administrators a more specific view than general activity alone.",
+      "why_it_matters": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes.",
+      "editorial_limitation": "The compact evidence does not specify metric definitions, time windows or causality. Engagement is not proof of business impact.",
+      "topic_labels": [
+        "feature-engagement"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Separate engagement from outcomes",
+        "rationale": "Use engagement signals to choose where to investigate adoption. Practical guidance: pair activity with a separate assessment of work quality and outcomes."
+      },
+      "visual": {
+        "layout": "comparison",
+        "title": "Separate engagement from outcomes",
+        "alt_text": "An editorial measurement workbook, not a product screenshot: two large adjacent panels titled Engagement signals and Outcome questions. Four detailed qualitative review cards, a bridge labeled Investigate, and a bottom caution strip. No numerical values, bars, rankings or fictional dashboard data.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Active users",
+            "detail": "Who is using features?"
+          },
+          {
+            "id": "n2",
+            "label": "Feature use",
+            "detail": "Which experiences recur?"
+          },
+          {
+            "id": "n3",
+            "label": "Follow-up",
+            "detail": "Investigate adoption gaps"
+          },
+          {
+            "id": "n4",
+            "label": "Outcomes",
+            "detail": "Assess quality separately"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "consider"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "assess"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "Illustrative guidance; check implementation details"
+          }
+        ]
+      },
+      "book_relevance": {
+        "status": "conceptual",
+        "topics": [
+          "professional generative AI",
+          "human review",
+          "workflow design"
+        ],
+        "note": "Conceptual relevance only; no book title, chapter or edition claims verified in the provided packet."
+      }
+    },
+    {
+      "candidate_id": "m06",
+      "story_id": "learning-playbook",
+      "canonical_ordinal": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft shares a playbook built from its AI transformation experience",
+      "summary": "Microsoft describes codifying proven approaches into case studies and sharing a Frontier Playbook. Its September 17 account draws on transformation efforts across the company, including work redesign and learning from failure.",
+      "why_it_matters": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial.",
+      "editorial_limitation": "This is Microsoft’s account of its own experience. The excerpt does not establish independent causal evidence or transferable performance gains.",
+      "topic_labels": [
+        "learning-playbook"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Turn experience into a reusable playbook",
+        "rationale": "Teams can capture repeatable practices instead of treating every AI experiment as an isolated project. Practical guidance: document the outcome, context, result and limits of each trial."
+      },
+      "visual": {
+        "layout": "cycle",
+        "title": "Turn experience into a reusable playbook",
+        "alt_text": "A four-quadrant circular learning composition around a central reusable playbook. Each quadrant contains two small annotated conceptual cards. An outer feedback arrow closes the loop; a bottom strip distinguishes Observed experience from Transferable practice. No quantified outcome claims.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Experience",
+            "detail": "Observe real work"
+          },
+          {
+            "id": "n2",
+            "label": "Case study",
+            "detail": "Record context and results"
+          },
+          {
+            "id": "n3",
+            "label": "Playbook",
+            "detail": "Capture repeatable practice"
+          },
+          {
+            "id": "n4",
+            "label": "Learning",
+            "detail": "Revise after feedback"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "consider"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "assess"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "Illustrative guidance; check implementation details"
+          }
+        ]
+      },
+      "book_relevance": {
+        "status": "conceptual",
+        "topics": [
+          "professional generative AI",
+          "human review",
+          "workflow design"
+        ],
+        "note": "Conceptual relevance only; no book title, chapter or edition claims verified in the provided packet."
+      }
+    },
+    {
+      "candidate_id": "m07",
+      "story_id": "education-principles",
+      "canonical_ordinal": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft frames education AI around educator control and student thinking",
+      "summary": "Microsoft’s September 16 statement lists safety, privacy, security and transparency by design; educator control; support for learning rather than replacement of thinking; stronger education systems; and preparation for an AI-powered future.",
+      "why_it_matters": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved.",
+      "editorial_limitation": "The packet contains commitments, not evidence that every product implements each principle or that learning outcomes have improved.",
+      "topic_labels": [
+        "education-principles"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/16/microsofts-commitment-for-ai-in-education/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Keep learning and educator judgment central",
+        "rationale": "Educators can use these principles as questions for reviewing a proposed AI activity, including who directs it and how students remain intellectually involved."
+      },
+      "visual": {
+        "layout": "layers",
+        "title": "Keep learning and educator judgment central",
+        "alt_text": "A refined architectural composition of four abstract vertical pillars supporting a central learning goal. Each pillar has its exact heading and a clear sublabel. A horizontal foundation marked Transparency connects them, and an outer callout says Review principles, not proven outcomes. No people, school scenes or product logos.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Protection",
+            "detail": "Safety, privacy and security"
+          },
+          {
+            "id": "n2",
+            "label": "Educator control",
+            "detail": "Keep teachers in charge"
+          },
+          {
+            "id": "n3",
+            "label": "Student thinking",
+            "detail": "Support rather than replace"
+          },
+          {
+            "id": "n4",
+            "label": "Readiness",
+            "detail": "Prepare for an AI future"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "consider"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "assess"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "Illustrative guidance; check implementation details"
+          }
+        ]
+      },
+      "book_relevance": {
+        "status": "conceptual",
+        "topics": [
+          "professional generative AI",
+          "human review",
+          "workflow design"
+        ],
+        "note": "Conceptual relevance only; no book title, chapter or edition claims verified in the provided packet."
+      }
+    },
+    {
+      "candidate_id": "m01",
+      "story_id": "skill-activity",
+      "canonical_ordinal": 5,
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub adds reusable-skill activity to Copilot CLI reporting",
+      "summary": "GitHub’s September 17 announcement extends CLI reporting with activity metrics for skills and custom agents. The accompanying metadata also names MCP servers, slash commands and plugins.",
+      "why_it_matters": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions.",
+      "editorial_limitation": "The supplied packet does not include detailed field semantics, counting rules or privacy behavior. No such details are inferred here.",
+      "topic_labels": [
+        "skill-activity"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "agent_skill": true,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Make reusable skill activity visible",
+        "rationale": "Owners of reusable agent workflows can ask whether their skills are being used, then evaluate results separately. Practical guidance: connect adoption review to training and maintenance decisions."
+      },
+      "visual": {
+        "layout": "hub",
+        "title": "Make reusable skill activity visible",
+        "alt_text": "A taxonomy and observation composition: one prominent Skills card and a distinct cluster of four smaller category cards Custom agents, MCP servers, Slash commands, Plugins feed a central Reporting lens. A separate owner-review worksheet below asks Adoption? Training? Maintenance? Label Usage does not prove quality. No invented counts or relationships among metric totals.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Skills",
+            "detail": "Reusable workflow activity"
+          },
+          {
+            "id": "n2",
+            "label": "Other customizations",
+            "detail": "Agents, MCP, commands, plugins"
+          },
+          {
+            "id": "n3",
+            "label": "Reporting",
+            "detail": "Observe recorded usage"
+          },
+          {
+            "id": "n4",
+            "label": "Owner review",
+            "detail": "Assess value separately"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "consider"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "assess"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "Illustrative guidance; check implementation details"
+          }
+        ]
+      },
+      "book_relevance": {
+        "status": "conceptual",
+        "topics": [
+          "professional generative AI",
+          "human review",
+          "workflow design"
+        ],
+        "note": "Conceptual relevance only; no book title, chapter or edition claims verified in the provided packet."
+      }
+    },
+    {
+      "candidate_id": "m11",
+      "story_id": "long-horizon-work",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "Salesforce distinguishes long-running agent work from single-request responses",
+      "summary": "Salesforce’s September 16 article describes long-horizon agents working alongside users toward a goal over time and adapting to changing circumstances. Its introduction contrasts this with a request followed by a single response.",
+      "why_it_matters": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist.",
+      "editorial_limitation": "Only the introductory passage is available in the packet. Specific persistence, memory, recovery and approval implementations are not verified.",
+      "topic_labels": [
+        "long-horizon-work"
+      ],
+      "source_url": "https://www.salesforce.com/blog/long-horizon-agents/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Plan for a goal that persists over time",
+        "rationale": "When planning an ongoing agent workflow, define the enduring goal and the circumstances that should prompt review. That is practical design guidance, not a verified product capability checklist."
+      },
+      "visual": {
+        "layout": "timeline",
+        "title": "Plan for a goal that persists over time",
+        "alt_text": "A detailed temporal map: an upper compact Request to Response comparison and a larger lower multi-session goal ribbon with Progress, Change, Review and Next step stations. A persistent Goal line spans the lower map. Label Conceptual planning guide. Use small abstract evidence cards, no time estimates or unsupported memory architecture.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Goal",
+            "detail": "Define the enduring objective"
+          },
+          {
+            "id": "n2",
+            "label": "Progress",
+            "detail": "Review work over time"
+          },
+          {
+            "id": "n3",
+            "label": "Change",
+            "detail": "Recognize new circumstances"
+          },
+          {
+            "id": "n4",
+            "label": "Review",
+            "detail": "Decide the next step"
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "consider"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "review"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "assess"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "Illustrative guidance; check implementation details"
+          }
+        ]
+      },
+      "book_relevance": {
+        "status": "conceptual",
+        "topics": [
+          "professional generative AI",
+          "human review",
+          "workflow design"
+        ],
+        "note": "Conceptual relevance only; no book title, chapter or edition claims verified in the provided packet."
+      }
+    }
+  ],
+  "editorial_takeaway": "Make AI work observable, keep human judgment explicit, and distinguish a vendor announcement from evidence of outcomes.",
+  "media_decisions": {
+    "videos": "One bounded known video lead was throttled; duration and publication date could not be verified against the 10/15/20-minute ladder. Both slots omitted; no research expansion.",
+    "second_podcast": "The AI Daily Brief September 17 episode URL was inaccessible in this attempt. A second source-diverse podcast was not verified; no expansion."
+  },
+  "changed_watchlist_topics": [],
+  "watchlist_review": {
+    "status": "bounded_same_pass",
+    "note": "Governance, adoption, learning and persistent-agent signals considered. No verified change to a tracked Watchlist entry supplied, so no topic delta authored."
+  },
+  "research_capsule": [
+    {
+      "candidate_id": "m02",
+      "summary": "GitHub’s September 17 announcement moves Actions execution protections from public preview to general availability. The metadata describes an allowlist governing who can trigger workflows.",
+      "limitation": "The supplied excerpt is truncated. Detailed configuration, exceptions and rollout mechanics are not verified in this packet."
+    },
+    {
+      "candidate_id": "m03",
+      "summary": "GitHub’s September 17 update says its Copilot impact dashboard now shows how many active users regularly use key Copilot features. The change gives administrators a more specific view than general activity alone.",
+      "limitation": "The compact evidence does not specify metric definitions, time windows or causality. Engagement is not proof of business impact."
+    },
+    {
+      "candidate_id": "m06",
+      "summary": "Microsoft describes codifying proven approaches into case studies and sharing a Frontier Playbook. Its September 17 account draws on transformation efforts across the company, including work redesign and learning from failure.",
+      "limitation": "This is Microsoft’s account of its own experience. The excerpt does not establish independent causal evidence or transferable performance gains."
+    },
+    {
+      "candidate_id": "m07",
+      "summary": "Microsoft’s September 16 statement lists safety, privacy, security and transparency by design; educator control; support for learning rather than replacement of thinking; stronger education systems; and preparation for an AI-powered future.",
+      "limitation": "The packet contains commitments, not evidence that every product implements each principle or that learning outcomes have improved."
+    },
+    {
+      "candidate_id": "m01",
+      "summary": "GitHub’s September 17 announcement extends CLI reporting with activity metrics for skills and custom agents. The accompanying metadata also names MCP servers, slash commands and plugins.",
+      "limitation": "The supplied packet does not include detailed field semantics, counting rules or privacy behavior. No such details are inferred here."
+    },
+    {
+      "candidate_id": "m11",
+      "summary": "Salesforce’s September 16 article describes long-horizon agents working alongside users toward a goal over time and adapting to changing circumstances. Its introduction contrasts this with a request followed by a single response.",
+      "limitation": "Only the introductory passage is available in the packet. Specific persistence, memory, recovery and approval implementations are not verified."
+    }
+  ],
+  "article_evidence_path": "_records/editorial-handoff/article-evidence.json"
+}
