@@ -36,7 +36,12 @@ jobs:
         run: node _generator/cli.mjs validate-repo --commit "${GITHUB_SHA}"
 
       - name: Validate integrated system state
-        run: node _generator/cli.mjs integration-check
+        run: |
+          args=(integration-check)
+          if [ -f _records/editorial-handoff/images.json ]; then
+            args+=(--image-review _records/editorial-handoff/images.json)
+          fi
+          node _generator/cli.mjs "${args[@]}"
 
       - name: Validate atomic publication change set
         env:
