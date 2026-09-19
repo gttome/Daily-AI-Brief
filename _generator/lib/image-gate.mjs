@@ -22,10 +22,12 @@ export function reviewedImages(edition, root) {
     const filename=path.resolve(root,i.asset);
     if(!filename.startsWith(path.resolve(root)+path.sep)||!i.asset.startsWith(`briefs/images/${edition.brief_date}/`)){errors.push('Unsafe or cross-edition asset path');continue;}
     try{
-      const bytes=fs.readFileSync(filename),hash=sha256(bytes);
-      if(bytes.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||bytes.readUInt32BE(16)!==1200||bytes.readUInt32BE(20)!==630)errors.push(`Invalid final PNG canvas: ${i.asset}`);
+      const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.asset).toLowerCase();
+      const inspection=ext==='.webp'?inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630}):inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
+      const width=inspection.width||0,height=inspection.height||0;
+      if(!['.png','.webp'].includes(ext)||!inspection.pass||width!==1200||height!==630)errors.push(`Invalid final image canvas: ${i.asset}`);
       if(hash!==i.replacement_sha256)errors.push(`Reviewed image bytes changed: ${i.asset}`);
-      hashes.add(hash);assets.push({path:i.asset,sha256:hash,bytes:bytes.length});
+      hashes.add(hash);assets.push({path:i.asset,sha256:hash,bytes:bytes.length,width,height,format:ext.slice(1)});
     }catch{errors.push(`Missing or unreadable image: ${i.asset}`);}
   }
   if(compositions.size!==6||hashes.size!==6)errors.push('Repeated image or repeated composition evidence requires renewed visual review');
