@@ -7,7 +7,7 @@ import {COMPATIBILITY_OUTPUTS} from './constants.mjs';
 import {generatedFiles} from './render.mjs';
 import {sha256, stableSuffix, writeText} from './util.mjs';
 import {assertValidEdition} from './validate.mjs';
-import {applyProductionTelemetryHealth,assertMediaPreflight} from './production-guardrails.mjs';
+import {applyProductionTelemetryHealth,assertMediaPreflight,assertWatchlistFreshness} from './production-guardrails.mjs';
 import {editionPodcasts} from './podcasts.mjs';
 
 export function stagedDigest(files) {
@@ -67,6 +67,13 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
     if(!mediaPreflight&&fs.existsSync(diskPath))mediaPreflight=JSON.parse(fs.readFileSync(diskPath,'utf8'));
     assertMediaPreflight(edition,mediaPreflight,{observedAt:options.observedAt});
   }
+  let watchlistFresh=false;
+  if(edition.brief_date>='2026-09-19'){
+    const watchlistPath=path.join(repoRoot,'_data/watchlist.json');
+    if(!fs.existsSync(watchlistPath))throw new Error('Current-edition Watchlist is required');
+    assertWatchlistFreshness(edition,JSON.parse(fs.readFileSync(watchlistPath,'utf8')));
+    watchlistFresh=true;
+  }
   const files = generatedFiles(edition, repoRoot);
   const expected = new Set([`briefs/${edition.brief_date}.md`, ...COMPATIBILITY_OUTPUTS]);
   for (const name of expected) if (!files.has(name)) throw new Error(`Atomic publication plan is missing ${name}`);
@@ -74,6 +81,7 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
     {check_id: 'edition_validation', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'Canonical edition passed structural and semantic validation.'},
     {check_id: 'atomic_file_set', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'All five compatibility outputs are present in the staged transaction.'}
   ];
+  if(watchlistFresh)checks.push({check_id:'watchlist_freshness',class:'deterministic',result:'pass',severity:'critical',evidence:'Watchlist edition date and update timestamp match the publication date and every topic carries evidence.'});
   if (edition.brief_date >= '2026-09-17') {
     checks.push({check_id:'selected_media_preflight',class:'live_prepublication',result:'pass',severity:'critical',evidence:'Every included video and podcast URL, date, and runtime matched a fresh independent prepublication observation.'});
     files.set(mediaPreflightPath,JSON.stringify(mediaPreflight,null,2)+'\n');
