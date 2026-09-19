@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "stage": "deterministic_prework_metadata_preflight",
+  "execution_mode": "production",
+  "edition_date": "2026-09-19",
+  "cutoff": "2026-09-19T12:03:00.000Z",
+  "started_at": "2026-09-19T12:09:38.535Z",
+  "completed_at": "2026-09-19T12:09:45.804Z",
+  "model_calls": 0,
+  "work_credits_expected": 0,
+  "fresh_discovery": true,
+  "raw_queue_model_visible": false,
+  "metadata_candidates_path": "_records/preflight/2026-09-19/metadata-candidates.json",
+  "discovery_receipt_path": "_records/discovery/2026-09-19.json",
+  "discovery": {
+    "sources_scanned": 12,
+    "fresh_metadata_candidates": 50,
+    "stop_reason": "fresh_metadata_sufficiency",
+    "source_text_chars_retrieved": 1190525,
+    "preferred_feed_sources": 11,
+    "required_topic_sources": 3
+  },
+  "enrichment": {
+    "attempted": 28,
+    "resolved": 16,
+    "published_resolved": 16,
+    "updated_resolved": 8,
+    "failed": 2
+  },
+  "gate": {
+    "retained_metadata_candidates": 20,
+    "coverage_counts": {
+      "technical_ai_engineering": 11,
+      "applied_genai_knowledge_workers": 5,
+      "agents_non_technical_people": 4
+    },
+    "agent_skill_signals": 2,
+    "coverage_ready": true,
+    "rejected": {
+      "invalid_title": 0,
+      "nonstory_url": 1,
+      "nonarticle_content": 0,
+      "date_conflict": 0,
+      "unresolved_date": 17,
+      "outside_window": 209,
+      "low_relevance": 13,
+      "duplicate": 0
+    }
+  },
+  "ready": true,
+  "error": null,
+  "stdout": {
+    "discovery": "{\"date\":\"2026-09-19\",\"research_cutoff_at\":\"2026-09-19T12:03:00.000Z\",\"fresh_discovery\":true,\"sources\":33,\"scanned\":12,\"queue\":277,\"fresh_metadata\":50,\"stop_reason\":\"fresh_metadata_sufficiency\"}",
+    "enrichment": "{\"attempted\":28,\"resolved\":16,\"published_resolved\":16,\"updated_resolved\":8,\"failed\":2}",
+    "gate": "{\"out\":\"/home/runner/work/Daily-AI-Brief/Daily-AI-Brief/_records/preflight/2026-09-19/metadata-candidates.json\",\"raw_queue_count\":277,\"eligible\":37,\"retained\":20,\"limit\":20,\"coverage_counts\":{\"technical_ai_engineering\":11,\"applied_genai_knowledge_workers\":5,\"agents_non_technical_people\":4},\"agent_skill_signals\":2,\"agent_skill_story_ready_signals\":1,\"preferred_agent_skill_candidate_id\":\"m01\",\"coverage_ready\":true,\"rejected\":{\"invalid_title\":0,\"nonstory_url\":1,\"nonarticle_content\":0,\"date_conflict\":0,\"unresolved_date\":17,\"outside_window\":209,\"low_relevance\":13,\"duplicate\":0}}"
+  },
+  "invariant": "This deterministic preflight runs outside the daily Work semantic task. Work may read only the committed metadata-candidates.json and receipt.json, never the raw discovery queue."
+}
