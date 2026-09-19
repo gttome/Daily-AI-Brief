@@ -256,6 +256,8 @@ jobs:
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
 
       - name: Generate one atomic publication stage
+        env:
+          DAB_EXECUTION_MODE: ${{ steps.handoff.outputs.execution_mode }}
         run: |
           set -euo pipefail
           rm -rf /tmp/publication-stage
