@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "execution_mode": "production",
+  "staging_ref": "editorial-handoff/production/2026-09-19-recovery-0811",
+  "kernel_path": "_records/editorial-handoff/kernel.json",
+  "facts_path": "_records/editorial-handoff/facts.json",
+  "images_path": "_records/editorial-handoff/images.json",
+  "media_path": "_records/editorial-handoff/media.json",
+  "coverage_period": "Coverage reviewed through the committed September 19, 2026 preflight cutoff at 12:03 UTC using the bounded zero-model evidence packet.",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "deterministic_validation_model_calls": 0,
+  "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
+  "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
+  "image_transport_method": "github_git_data_api"
+}

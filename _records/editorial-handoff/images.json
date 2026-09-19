@@ -1,0 +1,62 @@
+{
+  "m04": {
+    "path": "briefs/images/2026-09-19/01-copilot-code-review.png",
+    "alt": "Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "e7efb6c24bd86705",
+    "quality_accepted": true,
+    "generation_method": "deterministic_editorial_diagram"
+  },
+  "m03": {
+    "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.png",
+    "alt": "Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "08aa57e524cd6658",
+    "quality_accepted": true,
+    "generation_method": "deterministic_editorial_diagram"
+  },
+  "m06": {
+    "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.png",
+    "alt": "Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "647a798e25d48500",
+    "quality_accepted": true,
+    "generation_method": "deterministic_editorial_diagram"
+  },
+  "m07": {
+    "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.png",
+    "alt": "Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "263cdc6b597da6b7",
+    "quality_accepted": true,
+    "generation_method": "deterministic_editorial_diagram"
+  },
+  "m01": {
+    "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.png",
+    "alt": "Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "db8c2461e421ce10",
+    "quality_accepted": true,
+    "generation_method": "deterministic_editorial_diagram"
+  },
+  "m13": {
+    "path": "briefs/images/2026-09-19/06-long-horizon-agents.png",
+    "alt": "Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.",
+    "width": 1200,
+    "height": 630,
+    "kind": "editorial_explainer",
+    "cache_key": "89bea6483437aa67",
+    "quality_accepted": true,
+    "generation_method": "deterministic_editorial_diagram"
+  }
+}
