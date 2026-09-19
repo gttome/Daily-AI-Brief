@@ -141,7 +141,14 @@
       "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that truncated prior PNGs."
     },
     "generation_scope": "Generate each story image in its own independent image-generation request. Never request or accept a multi-story collage, newsletter panel, contact sheet, or combined six-story graphic as a story asset.",
-    "acceptance_scope": "Each accepted PNG must illustrate exactly one selected story and its verified evidence. A graphic that depicts multiple Brief stories or a generic unrelated concept fails the image gate."
+    "acceptance_scope": "Each accepted PNG must illustrate exactly one selected story and its verified evidence. A graphic that depicts multiple Brief stories or a generic unrelated concept fails the image gate.",
+    "emergency_deterministic_fallback": {
+      "allowed": true,
+      "condition": "OpenAI image generation repeatedly returns multi-story/collage output that fails generation_scope and blocks same-day publication",
+      "method": "deterministic_editorial_diagram",
+      "quality_requirements": "story-specific, evidence-grounded, 1200x630 minimum, readable labels, white/near-white background, safe margins; never reuse a combined image",
+      "audit_required": true
+    }
   },
   "media": {
     "video_duration_ladder_seconds": [
