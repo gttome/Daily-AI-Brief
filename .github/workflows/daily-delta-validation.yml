@@ -87,12 +87,15 @@ jobs:
           fi
           node _tools/watchlist-delta-plan.mjs "${args[@]}"
 
-      - name: Wait for matching Pages deployment
-        if: steps.gate.outputs.run == 'true' && github.event_name == 'workflow_run'
+      - name: Resolve matching Pages deployment
+        id: pages
+        if: steps.gate.outputs.run == 'true'
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
         with:
           script: |
-            const expectedSha = context.payload.workflow_run.head_sha;
+            const expectedSha = context.eventName === 'workflow_run'
+              ? context.payload.workflow_run.head_sha
+              : context.sha;
             const attempts = 36;
             for (let i = 0; i < attempts; i++) {
               const {data} = await github.rest.actions.listWorkflowRunsForRepo({
@@ -109,6 +112,10 @@ jobs:
                   core.setFailed(`Matching Pages deployment ${run.id} ended ${run.conclusion} for ${expectedSha}.`);
                   return;
                 }
+                core.setOutput('run_id', String(run.id));
+                core.setOutput('verified_at', run.updated_at || new Date().toISOString());
+                core.setOutput('expected_sha', expectedSha);
+                core.setOutput('deployment_url', 'https://gttome.github.io/Daily-AI-Brief/');
                 core.info(`Matching Pages deployment ${run.id} succeeded for ${expectedSha}.`);
                 return;
               }
@@ -116,13 +123,53 @@ jobs:
             }
             core.setFailed(`No successful completed Pages deployment observed for ${expectedSha} within the bounded validation window.`);
 
+      - name: Build runtime Pages completion evidence
+        if: steps.gate.outputs.run == 'true' && steps.pages.outputs.run_id != ''
+        env:
+          EDITION_DATE: ${{ steps.date.outputs.value }}
+          PAGES_RUN_ID: ${{ steps.pages.outputs.run_id }}
+          PAGES_VERIFIED_AT: ${{ steps.pages.outputs.verified_at }}
+          EXPECTED_SHA: ${{ steps.pages.outputs.expected_sha }}
+          DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment_url }}
+        run: |
+          set -euo pipefail
+          node - <<'NODE'
+          const fs=require('fs');
+          const path=require('path');
+          const date=process.env.EDITION_DATE;
+          const dir=path.join('_records','publication',date);
+          const candidates=fs.readdirSync(dir)
+            .filter(name=>name.endsWith('.validated.json'))
+            .map(name=>JSON.parse(fs.readFileSync(path.join(dir,name),'utf8')))
+            .filter(record=>record.edition_id===`dab-edition-${date}`)
+            .sort((a,b)=>Date.parse(b.observed_at||0)-Date.parse(a.observed_at||0));
+          if(!candidates.length)throw new Error(`No validated publication event found for ${date}`);
+          const validated=candidates[0];
+          const verifiedAt=process.env.PAGES_VERIFIED_AT||new Date().toISOString();
+          const completion={
+            ...validated,
+            phase:'pages_verified',
+            observed_at:verifiedAt,
+            commit_sha:process.env.EXPECTED_SHA,
+            pages:{
+              run_id:Number(process.env.PAGES_RUN_ID),
+              conclusion:'success',
+              verified_at:verifiedAt,
+              deployment_url:process.env.DEPLOYMENT_URL
+            },
+            supersedes_event_id:validated.event_id
+          };
+          fs.writeFileSync('/tmp/completion-evidence.json',JSON.stringify(completion,null,2)+'\n');
+          NODE
       - name: Run deterministic delta validation
         if: steps.gate.outputs.run == 'true'
         id: validation
         continue-on-error: true
         run: |
           set +e
-          node _tools/daily-validation.mjs --date "${{ steps.date.outputs.value }}" --out /tmp/daily-validation.json
+          args=(--date "${{ steps.date.outputs.value }}" --out /tmp/daily-validation.json)
+          if [ -f /tmp/completion-evidence.json ]; then args+=(--completion /tmp/completion-evidence.json); fi
+          node _tools/daily-validation.mjs "${args[@]}"
           exit_code="$?"
           set -e
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
@@ -145,7 +192,7 @@ jobs:
       - name: Publish compact receipts to job summary
         if: steps.gate.outputs.run == 'true' && always()
         run: |
-          for receipt in /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
+          for receipt in /tmp/completion-evidence.json /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
             if [ -f "$receipt" ]; then
               echo "#### $(basename "$receipt")" >> "$GITHUB_STEP_SUMMARY"
               echo '```json' >> "$GITHUB_STEP_SUMMARY"
@@ -160,6 +207,7 @@ jobs:
         with:
           name: daily-validation-${{ steps.date.outputs.value }}-${{ github.run_id }}
           path: |
+            /tmp/completion-evidence.json
             /tmp/daily-validation.json
             /tmp/watchlist-delta.json
             /tmp/command-center-delta.json
