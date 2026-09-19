@@ -32,6 +32,7 @@ export function commandCenterDeltaPacket({validation={},watchlist={},policy={},g
    model_calls:Number.isInteger(validation.model_calls)?validation.model_calls:null,
    semantic_escalation_required:validation.semantic_escalation_required===true,
    coverage:validation.coverage&&typeof validation.coverage==='object'?validation.coverage:null,
+   image_readiness:validation.image_readiness&&typeof validation.image_readiness==='object'?validation.image_readiness:null,
    domain_states:validation.domain_states&&typeof validation.domain_states==='object'?validation.domain_states:null,
    automatic_ai_recovery_runs:Number.isInteger(validation.automatic_ai_recovery_runs)?validation.automatic_ai_recovery_runs:null,
    checks
