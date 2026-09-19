@@ -14,6 +14,9 @@ test('Command Center delta packet is allowlisted and excludes private/arbitrary 
  assert.equal(packet.validation.coverage.included_items,8);assert.equal(packet.validation.image_readiness.accepted_locked,6);assert.equal(packet.validation.image_readiness.status,'pass');assert.equal(packet.validation.domain_states.coverage,'degraded');assert.equal(packet.validation.automatic_ai_recovery_runs,0);
  assert.deepEqual(packet.validation.checks,[{check_id:'routes',result:'pass',severity:'critical'}]);
  assert.deepEqual(packet.watchlist.changed_topics,['topic-a']);
+ assert.equal(packet.presentation.focus_labels.agents_non_technical_people,'Agents for Everyone');
+ assert.equal(packet.presentation.github_startup_gate.required,true);
+ assert.equal(packet.presentation.book_series.mapping_source,'_data/book-reading.json');
  assert.equal(packet.operating_policy.metadata_candidate_limit,20);
  assert.equal(packet.operating_policy.normal_deep_review_limit,9);assert.equal(packet.operating_policy.profile_id,'under80-v1');assert.equal(packet.operating_policy.daily_system_credit_target_lt,80);assert.equal(packet.operating_policy.image.quality_protected,true);
  assert.equal(packet.privacy.private_reader_records_included,false);
