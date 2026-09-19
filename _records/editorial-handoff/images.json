@@ -7,7 +7,8 @@
     "kind": "editorial_explainer",
     "cache_key": "78ce6ac61f3922e",
     "quality_accepted": true,
-    "generation_method": "deterministic_editorial_diagram"
+    "generation_method": "deterministic_editorial_diagram",
+    "sha256": "e81ba118f0324ca0fd9b19d2efd702bc79423d92d65128f71af018bba457c224"
   },
   "m03": {
     "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.png",
@@ -17,7 +18,8 @@
     "kind": "editorial_explainer",
     "cache_key": "08aa57e524cd6658",
     "quality_accepted": true,
-    "generation_method": "deterministic_editorial_diagram"
+    "generation_method": "deterministic_editorial_diagram",
+    "sha256": "7b9455394858aa6c97ec5abaf1b03e5a995cd4bb20c45ce2775f100a242adf99"
   },
   "m06": {
     "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.png",
@@ -27,7 +29,8 @@
     "kind": "editorial_explainer",
     "cache_key": "faf3cb9c4a230fde",
     "quality_accepted": true,
-    "generation_method": "deterministic_editorial_diagram"
+    "generation_method": "deterministic_editorial_diagram",
+    "sha256": "6c5ca8c4a12c49e8511bf9c0c94b7ca68264513320a3530c1fa11f2869402c88"
   },
   "m07": {
     "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.png",
@@ -37,7 +40,8 @@
     "kind": "editorial_explainer",
     "cache_key": "23a9427adac462b7",
     "quality_accepted": true,
-    "generation_method": "deterministic_editorial_diagram"
+    "generation_method": "deterministic_editorial_diagram",
+    "sha256": "9e896d2073c5a885c3252f26bda0c57a71774ee8b6371161439e1196379c5683"
   },
   "m01": {
     "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.png",
@@ -47,7 +51,8 @@
     "kind": "editorial_explainer",
     "cache_key": "db8c2461e421ce10",
     "quality_accepted": true,
-    "generation_method": "deterministic_editorial_diagram"
+    "generation_method": "deterministic_editorial_diagram",
+    "sha256": "fdd1c4db6dc154a58068ef98a0fe1bbbcb7666334581095900d7fd2afea18567"
   },
   "m13": {
     "path": "briefs/images/2026-09-19/06-long-horizon-agents.png",
@@ -57,6 +62,7 @@
     "kind": "editorial_explainer",
     "cache_key": "89bea6483437aa67",
     "quality_accepted": true,
-    "generation_method": "deterministic_editorial_diagram"
+    "generation_method": "deterministic_editorial_diagram",
+    "sha256": "218d74f529eb7dc241db3c764c92b52b380a2632b4d49231aff75e6a712b0038"
   }
 }

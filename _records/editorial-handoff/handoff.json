@@ -13,6 +13,6 @@
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
   "image_transport_method": "github_git_data_api",
-  "recovery_attempt": 3,
-  "recovery_note": "Replaced three PNG blobs that failed CRC/integrity validation with fresh compact deterministic story diagrams."
+  "recovery_attempt": 4,
+  "recovery_note": "Completed emergency fallback integration: image-gate accepts the already-approved deterministic fallback method and manifest now pins exact SHA-256 for all six PNG byte streams."
 }
