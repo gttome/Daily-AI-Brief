@@ -19,7 +19,7 @@ reader_release: true
 
 <span class="story-data" data-story-id="dab-story-2026-09-19-5b233997" hidden></span>
 
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 17, 2026  
 **Topics:** Agent Skills, Copilot CLI, agent metrics  
 **Evidence:** Official Announcement  
