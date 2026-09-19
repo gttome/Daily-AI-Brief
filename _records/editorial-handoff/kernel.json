@@ -95,7 +95,7 @@
       "source_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "prepare",
+        "action": "update_policy",
         "label": "Audit Copilot model policies",
         "rationale": "Identify affected model choices and enable suitable alternatives before the October 19 deprecation date."
       },
@@ -167,7 +167,7 @@
       "source_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "measure",
+        "action": "monitor",
         "label": "Review feature-level engagement",
         "rationale": "Use engagement data to distinguish widely adopted Copilot experiences from features that need targeted enablement."
       },
@@ -239,7 +239,7 @@
       "source_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "adapt",
+        "action": "teach",
         "label": "Build an internal AI playbook",
         "rationale": "Capture successful and failed workflow experiments so proven patterns can be reused across teams."
       },
@@ -311,7 +311,7 @@
       "source_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
       "agent_skill": true,
       "what_to_do_now": {
-        "action": "instrument",
+        "action": "monitor",
         "label": "Track reusable agent skills",
         "rationale": "Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used."
       },
@@ -383,7 +383,7 @@
       "source_url": "https://www.salesforce.com/blog/long-horizon-agents/",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "design",
+        "action": "adopt",
         "label": "Define persistent agent goals",
         "rationale": "For recurring work, specify the goal, checkpoints, changing inputs, and conditions that require human review."
       },

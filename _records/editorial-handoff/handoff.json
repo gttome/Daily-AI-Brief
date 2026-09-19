@@ -12,5 +12,7 @@
   "deterministic_validation_model_calls": 0,
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-  "image_transport_method": "github_git_data_api"
+  "image_transport_method": "github_git_data_api",
+  "recovery_attempt": 2,
+  "recovery_note": "Corrected what_to_do_now actions to the deterministic kernel's allowed action vocabulary after first validation failure."
 }
