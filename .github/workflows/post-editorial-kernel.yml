@@ -257,6 +257,7 @@ jobs:
 
       - name: Generate one atomic publication stage
         env:
+          DAB_QUALIFICATION_NONPRODUCTION: ${{ steps.handoff.outputs.execution_mode == 'qualification_nonproduction' && '1' || '0' }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
         run: |
           set -euo pipefail
