@@ -85,3 +85,19 @@ test('catalog stale entries are tolerated only for qualification replay',()=>{
   if(previous===undefined) delete process.env.DAB_EXECUTION_MODE; else process.env.DAB_EXECUTION_MODE=previous;
  }
 });
+
+
+test('stale reading-support entries from a prior edition snapshot are ignored for a replayed candidate set',()=>{
+ const current=structuredClone(edition);
+ const replacementId='dab-story-2026-09-12-replayed';
+ current.stories[0]={...current.stories[0],story_id:replacementId};
+ const valid={item_id:replacementId,coverage_label:'Background',label_reason:'reason',learning_outcome:'Useful outcome',context_term:'term',context:'context'};
+ const stale={item_id:edition.stories[0].story_id,coverage_label:'Background',label_reason:'reason',learning_outcome:'Old outcome',context_term:'term',context:'old context'};
+ assert.doesNotThrow(()=>validateReadingSupport(current,{editions:{[current.brief_date]:[stale,valid]}}));
+});
+
+test('duplicate reading-support entries that both match the staged edition are still rejected',()=>{
+ const current=structuredClone(edition);
+ const item={item_id:current.stories[0].story_id,coverage_label:'Background',label_reason:'reason',learning_outcome:'Useful outcome',context_term:'term',context:'context'};
+ assert.throws(()=>validateReadingSupport(current,{editions:{[current.brief_date]:[item,{...item}]}}),/unknown or duplicate item/);
+});
