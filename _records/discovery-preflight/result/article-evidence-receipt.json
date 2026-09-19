@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "stage": "deterministic_article_evidence_preflight",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "network_retrievals": 9,
+  "retrieved": 9,
+  "focus_counts": {
+    "technical_ai_engineering": 3,
+    "applied_genai_knowledge_workers": 3,
+    "agents_non_technical_people": 3
+  },
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9494,
+  "evidence_sha256": "7f45039fc1194b53d0b85a3b652a98e88d73b02e0e2ee8a2f91b6c60c2c0a932",
+  "ready": true,
+  "failures": []
+}

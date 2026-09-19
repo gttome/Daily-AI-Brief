@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9494,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Copilot weekly releases — September 14",
+      "canonical_url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-18T19:21:22.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 853,
+      "excerpt": "GitHub Copilot weekly releases — September 14 - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 18, 2026 • 2 minute read GitHub Copilot weekly releases — September 14 Table of Contents GitHub Copilot GitHub Copilot Business and Enterprise users GitHub Copilot app VS Code 1.138 release updates Menu. Currently selected: GitHub Copilot GitHub Copilot GitHub Copilot Business and Enterprise users GitHub Copilot app VS Code 1.138 release…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+      "canonical_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-18T19:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 544,
+      "excerpt": "If you&rsquo;ve turned off the global default, you can enable access to the alternative models through their model policies in Copilot settings. Once enabled, users will see the model in the Copilot Chat model selector in supported GitHub Copilot experiences. Share your feedback To learn more about the models available in Copilot, see our documentation on supported models . copilot Share Copied Shared Back to changelog Related Posts Sep.18 Improvement Copilot code review: An improved review experience copilot Sep.18 Release GitHub Copilot weekly releases — September 14 copilot Sep.17 Improvement Copilot impact dashboard now shows feature…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot code review: An improved review experience",
+      "canonical_url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-18T20:17:22.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 806,
+      "excerpt": "Copilot code review: An improved review experience - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 18, 2026 • 2 minute read Copilot code review: An improved review experience Table of Contents 🔍 Clearer review progress at a glance ✍️ Smart commit messages for batch suggestions Menu. Currently selected: 🔍 Clearer review progress at a glance 🔍 Clearer review progress at a glance ✍️ Smart commit messages for batch suggestions…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Workflow execution protections in GitHub Actions generally available",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T15:45:26.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 819,
+      "excerpt": "Workflow execution protections in GitHub Actions generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 17, 2026 • 2 minute read Workflow execution protections in GitHub Actions generally available Table of Contents What's new New secure defaults Menu. Currently selected: What's new What's new New secure defaults Workflow execution protections for GitHub Actions, previously in public preview, are now generally available for…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Copilot impact dashboard now shows feature engagement",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T21:47:27.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 765,
+      "excerpt": "Copilot impact dashboard now shows feature engagement - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 17, 2026 • 2 minute read Copilot impact dashboard now shows feature engagement Table of Contents What's new Why this matters Important notes Menu. Currently selected: What's new What's new Why this matters Important notes The Copilot impact dashboard now shows how many active users regularly use key Copilot features. What&rsquo;s…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "What we’ve learned from Microsoft’s own AI transformation",
+      "canonical_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-17T14:00:05.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3082,
+      "excerpt": "At Microsoft, we believe the organizations that succeed will be what we call Frontier Firms: human-led, but increasingly AI-enabled. 3 As proven approaches emerged, we codified them into case studies so we could accelerate transformation, scale what worked and learn from what did not. We have been sharing Microsoft&#8217;s Frontier Playbook with customers as a practical guide to our AI transformation journey, including what we’ve learned, what has worked so far and where we’ve grown from failures. Drawing on hundreds of AI transformation efforts across the company, the playbook captures what we are learning as we redesign work, build new…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Agentic CLI customizations now in the usage metrics API",
+      "canonical_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-17T21:08:50.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 800,
+      "excerpt": "Agentic CLI customizations now in the usage metrics API - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 17, 2026 • 2 minute read Agentic CLI customizations now in the usage metrics API Table of Contents What's new Why this matters Important notes Menu. Currently selected: What's new What's new Why this matters Important notes GitHub Copilot expands existing CLI report coverage with agentic activity metrics for skills, custom agents,…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "What Does an AI Harness Have To Do With Growing Business?",
+      "canonical_url": "https://www.salesforce.com/blog/small-business/ai-harness-explained-for-smbs/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-17T13:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2074,
+      "excerpt": "What Does an AI Harness Have To Do With Growing Business? Small Business What Does an AI Harness Have To Do With Growing Business? For a growing business, understanding what an AI harness actually does — and how it connects to your customer relationship management (CRM) — is the first step to using trusted AI that you can build your team around. Frequently Asked Questions (FAQs) What is an AI harness for small business, in simple terms? What&#8217;s the first step to setting up an AI harness for my small business?"
+    },
+    {
+      "candidate_id": "m13",
+      "focus": "agents_non_technical_people",
+      "headline": "Your Agent Can Sprint, But Can It Go the Distance?",
+      "canonical_url": "https://www.salesforce.com/blog/long-horizon-agents/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-16T13:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2116,
+      "excerpt": "Your Agent Can Sprint, But Can It Go the Distance? Read it now Agentic AI Your Agent Can Sprint, But Can It Go the Distance? Long-horizon agents work alongside users to achieve a goal over time and can adapt their behavior to changing circumstances. George Saines September 16, 2026 5 min read Share article AI agents have evolved by leaps and bounds this year, but while they&#8217;re smarter and more capable than ever, most are still focused on reactive tasks: make a request, the agent acts on it and returns a response. Ask an AI agent to perform a job that spans more than a single session — like rescuing your at-risk deals or optimizing…"
+    }
+  ]
+}
