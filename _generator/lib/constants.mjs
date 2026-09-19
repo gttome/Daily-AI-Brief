@@ -1,7 +1,7 @@
 export const FOCUS = Object.freeze({
   technical_ai_engineering: 'Technical AI Engineering',
   applied_genai_knowledge_workers: 'Applied Generative AI for Knowledge Workers',
-  agents_non_technical_people: 'Agents for Everyone'
+  agents_non_technical_people: 'Agents for Non-Technical People'
 });
 
 export const EXPECTED_FOCUS_ORDER = Object.freeze([
