@@ -2,7 +2,7 @@
 layout: default
 title: "Copilot impact dashboard now exposes feature engagement"
 description: "AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions."
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87"
 permalink: /stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/
 brief_date: 2026-09-19
 story_id: dab-story-2026-09-19-a4a2b339
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde)
+![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87)
 
 **Summary:** GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.
 

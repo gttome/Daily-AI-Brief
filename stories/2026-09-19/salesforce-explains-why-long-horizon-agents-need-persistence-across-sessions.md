@@ -2,7 +2,7 @@
 layout: default
 title: "Salesforce explains why long-horizon agents need persistence across sessions"
 description: "For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives."
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67"
+image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44"
 permalink: /stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/
 brief_date: 2026-09-19
 story_id: dab-story-2026-09-19-0a581a31
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67)
+![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44)
 
 **Summary:** Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.
 

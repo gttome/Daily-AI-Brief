@@ -13,13 +13,15 @@
       "name": "Agent reliability and governance",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "28 supporting stories appeared in the latest 7 days and 69 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "30 supporting stories appeared in the latest 7 days and 69 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 28,
+        "recent_7_days": 30,
         "preceding_days": 69,
-        "total": 97
+        "total": 99
       },
       "supporting_story_ids": [
+        "dab-video-2026-09-19-agent-skills",
+        "dab-podcast-2026-09-19-business-ai-challenges",
         "dab-story-2026-09-18-2cda8d5e",
         "dab-story-2026-09-18-c5d22f27",
         "dab-story-2026-09-17-1a7c4e90",
@@ -119,6 +121,16 @@
         "dab-story-2026-08-21-6877cf6f"
       ],
       "supporting_stories": [
+        {
+          "story_id": "dab-video-2026-09-19-agent-skills",
+          "brief_date": "2026-09-19",
+          "url": "/videos/2026-09-19/agent-skills/"
+        },
+        {
+          "story_id": "dab-podcast-2026-09-19-business-ai-challenges",
+          "brief_date": "2026-09-19",
+          "url": "/podcasts/2026-09-19/business-ai-challenges/"
+        },
         {
           "story_id": "dab-story-2026-09-18-2cda8d5e",
           "brief_date": "2026-09-18",
@@ -611,13 +623,14 @@
       "name": "Agent memory and context",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "13 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "14 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 13,
+        "recent_7_days": 14,
         "preceding_days": 45,
-        "total": 58
+        "total": 59
       },
       "supporting_story_ids": [
+        "dab-video-2026-09-19-agent-skills",
         "dab-story-2026-09-18-bc42dd44",
         "dab-story-2026-09-18-062b5025",
         "dab-podcast-2026-09-18-ai-search-discovery",
@@ -678,6 +691,11 @@
         "dab-story-2026-08-21-f1184b97"
       ],
       "supporting_stories": [
+        {
+          "story_id": "dab-video-2026-09-19-agent-skills",
+          "brief_date": "2026-09-19",
+          "url": "/videos/2026-09-19/agent-skills/"
+        },
         {
           "story_id": "dab-story-2026-09-18-bc42dd44",
           "brief_date": "2026-09-18",
@@ -1573,16 +1591,19 @@
       "name": "Accessible agents for knowledge work",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "40 supporting stories appeared in the latest 7 days and 119 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "43 supporting stories appeared in the latest 7 days and 119 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 40,
+        "recent_7_days": 43,
         "preceding_days": 119,
-        "total": 159
+        "total": 162
       },
       "supporting_story_ids": [
         "dab-story-2026-09-19-807056d1",
         "dab-story-2026-09-19-5b233997",
         "dab-story-2026-09-19-0a581a31",
+        "dab-video-2026-09-19-agent-skills",
+        "dab-podcast-2026-09-19-business-ai-challenges",
+        "dab-podcast-2026-09-19-open-source-ai-101",
         "dab-story-2026-09-18-2cda8d5e",
         "dab-story-2026-09-18-3ac3c725",
         "dab-story-2026-09-18-87612b7e",
@@ -1755,6 +1776,21 @@
           "story_id": "dab-story-2026-09-19-0a581a31",
           "brief_date": "2026-09-19",
           "url": "/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/"
+        },
+        {
+          "story_id": "dab-video-2026-09-19-agent-skills",
+          "brief_date": "2026-09-19",
+          "url": "/videos/2026-09-19/agent-skills/"
+        },
+        {
+          "story_id": "dab-podcast-2026-09-19-business-ai-challenges",
+          "brief_date": "2026-09-19",
+          "url": "/podcasts/2026-09-19/business-ai-challenges/"
+        },
+        {
+          "story_id": "dab-podcast-2026-09-19-open-source-ai-101",
+          "brief_date": "2026-09-19",
+          "url": "/podcasts/2026-09-19/open-source-ai-101/"
         },
         {
           "story_id": "dab-story-2026-09-18-2cda8d5e",

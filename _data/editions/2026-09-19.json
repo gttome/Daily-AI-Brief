@@ -5,7 +5,7 @@
   "brief_date": "2026-09-19",
   "timezone": "America/Chicago",
   "title": "Daily Generative AI Brief — September 19, 2026",
-  "published_at": "2026-09-19T14:46:05Z",
+  "published_at": "2026-09-19T17:11:51Z",
   "research_cutoff_at": "2026-09-19T12:03:00.000Z",
   "coverage_period": "24-hour primary window ending at 2026-09-19T12:03:00.000Z; recency fallback used for reviewed items outside the primary window.",
   "status": "staged",
@@ -25,13 +25,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-19/01-copilot-code-review.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.png?v=78ce6ac61f3922e",
+        "path": "briefs/images/2026-09-19/01-copilot-code-review.webp",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea",
         "alt": "Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "78ce6ac61f3922e"
+        "cache_key": "50f36b3149b16bea"
       },
       "summary": "GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.",
       "why_it_matters": "The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.",
@@ -81,7 +81,7 @@
       "social": {
         "title": "Copilot code review adds clearer progress and smarter batch suggestions",
         "description": "The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.png?v=78ce6ac61f3922e"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea"
       }
     },
     {
@@ -99,13 +99,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.png?v=08aa57e524cd6658",
+        "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.webp",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176",
         "alt": "Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "08aa57e524cd6658"
+        "cache_key": "9c402784fe974176"
       },
       "summary": "GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.",
       "why_it_matters": "Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.",
@@ -155,7 +155,7 @@
       "social": {
         "title": "GitHub schedules selected Copilot model deprecations for October 19",
         "description": "Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.png?v=08aa57e524cd6658"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176"
       }
     },
     {
@@ -173,13 +173,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde",
+        "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.webp",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87",
         "alt": "Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "faf3cb9c4a230fde"
+        "cache_key": "bba4e5aae3a99d87"
       },
       "summary": "GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.",
       "why_it_matters": "AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.",
@@ -230,7 +230,7 @@
       "social": {
         "title": "Copilot impact dashboard now exposes feature engagement",
         "description": "AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87"
       }
     },
     {
@@ -248,13 +248,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.png?v=23a9427adac462b7",
+        "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.webp",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57",
         "alt": "Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "23a9427adac462b7"
+        "cache_key": "7034564edc388e57"
       },
       "summary": "Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.",
       "why_it_matters": "The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workflows rather than treating AI as a one-time tool rollout.",
@@ -305,7 +305,7 @@
       "social": {
         "title": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
         "description": "The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workfl",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.png?v=23a9427adac462b7"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57"
       }
     },
     {
@@ -323,13 +323,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.png?v=db8c2461e421ce10",
+        "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.webp",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f",
         "alt": "Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "db8c2461e421ce10"
+        "cache_key": "1e74ae7976afd50f"
       },
       "summary": "GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.",
       "why_it_matters": "Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.",
@@ -380,7 +380,7 @@
       "social": {
         "title": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
         "description": "Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.png?v=db8c2461e421ce10"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f"
       }
     },
     {
@@ -398,13 +398,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-19/06-long-horizon-agents.png",
-        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67",
+        "path": "briefs/images/2026-09-19/06-long-horizon-agents.webp",
+        "public_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44",
         "alt": "Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "89bea6483437aa67"
+        "cache_key": "3e3fa605eee0ae44"
       },
       "summary": "Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.",
       "why_it_matters": "For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.",
@@ -455,25 +455,110 @@
       "social": {
         "title": "Salesforce explains why long-horizon agents need persistence across sessions",
         "description": "For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.",
-        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67"
+        "image_url": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44"
       }
     }
   ],
   "worth_watching": {
     "general": {
-      "status": "empty",
-      "exception": "No video candidate was present in the bounded precomputed editorial evidence; broader research was prohibited."
+      "status": "included",
+      "title": "ChatGPT Privacy: What Not to Share and When to Double-Check",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-17",
+      "runtime_seconds": 100,
+      "why_useful": "A concise official tutorial on minimizing sensitive data exposure and recognizing when an AI answer needs independent checking.",
+      "connection": "It reinforces the brief’s operational-maturity theme: useful AI workflows need explicit review boundaries, not just faster output.",
+      "url": "https://academy.openai.com/public/videos/privacy-and-double-checking-older-adults",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "OpenAI Academy lists the video as posted September 17, 2026 with a 1:40 runtime."
+      ]
     },
     "agents_non_technical_people": {
-      "status": "empty",
-      "exception": "No agent video candidate was present in the bounded precomputed editorial evidence; broader research was prohibited."
+      "status": "included",
+      "title": "Control AI Agents from Anywhere: 7 Open-Source Tools",
+      "channel": "HubMesh",
+      "upload_date": "2026-09-18",
+      "runtime_seconds": 316,
+      "why_useful": "A five-minute scan of current open-source agent tools, including persistent-context, desktop-automation, verification, and multi-agent projects.",
+      "connection": "It gives readers concrete examples of the agent-control, context, and verification patterns behind today’s Agent Skills and long-horizon-agent stories.",
+      "url": "https://hubmesh.dev/posts/2026-09-18-hubmesh-open-cowork-osir_9/",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "HubMesh lists the episode as September 18, 2026 with a 5:16 runtime and links to the underlying repositories."
+      ]
     }
   },
   "editorial_takeaway": "Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.",
   "provenance": {
     "created_by": "deterministic-kernel-expander",
-    "created_at": "2026-09-19T14:46:05Z",
-    "source_commit": "90e138198a47732b05fc44d07a62f6abe3a64662"
+    "created_at": "2026-09-19T17:11:51Z",
+    "source_commit": "c3cf5cdb1749275d94896ee48c92a55c6bd86821"
   },
-  "podcasts": []
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-19-business-ai-challenges",
+      "title": "The AI Challenges Businesses Are Actually Focused On Right Now",
+      "show": "The AI Daily Brief",
+      "host": "Nathaniel Whittemore",
+      "publication_date": "2026-09-18",
+      "runtime_seconds": 1806,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent security",
+        "model choice",
+        "data control",
+        "enterprise AI"
+      ],
+      "url": "https://podcasts.apple.com/au/podcast/the-ai-challenges-businesses-are-actually-focused-on/id1680633614?i=1000790595438",
+      "permanent_url": "/podcasts/2026-09-19/business-ai-challenges/",
+      "summary": "Nathaniel Whittemore examines the AI concerns businesses are prioritizing in practice, including agent security, changing model choices, and control over enterprise data.",
+      "why_useful": "It provides a current business-side view of the governance and control issues that become more important as agents gain more autonomy and persistence.",
+      "connection": "Pairs with today’s Agent Skills metrics and long-horizon-agent stories by focusing on the organizational controls around agent deployment.",
+      "selection_rationale": "Fresh September 18 episode from a registered priority source; title, publication date, host, and 30:06 runtime were independently matched.",
+      "verification_note": "Apple Podcasts and independent podcast listings identify the episode as September 18, 2026, hosted by Nathaniel Whittemore, with a 30:06 runtime.",
+      "coverage_note": "Primary 48-hour podcast window; source-diverse from Everyday AI.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/au/podcast/the-ai-challenges-businesses-are-actually-focused-on/id1680633614?i=1000790595438"
+        }
+      ]
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-19-open-source-ai-101",
+      "title": "Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything",
+      "show": "Everyday AI",
+      "host": "Jordan Wilson",
+      "publication_date": "2026-09-18",
+      "runtime_seconds": 2270,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "open-source AI",
+        "local models",
+        "AI agents",
+        "model economics"
+      ],
+      "url": "https://www.buzzsprout.com/2175779/episodes/19733545-ep-865-open-source-ai-101-why-local-models-cheap-apis-and-ai-agents-change-everything-start-here-series-vol-24?t=0",
+      "permanent_url": "/podcasts/2026-09-19/open-source-ai-101/",
+      "summary": "Jordan Wilson surveys the changing trade-offs between open and closed models, local deployment, API economics, and always-on agentic systems.",
+      "why_useful": "The episode gives knowledge workers and AI leaders a practical framework for deciding where local or open models may fit alongside frontier hosted models.",
+      "connection": "It complements today’s model-lifecycle and enterprise-transformation stories by framing model choice as an operating and cost decision rather than a one-time vendor choice.",
+      "selection_rationale": "Fresh September 18 episode from a registered core source; the publisher page verifies episode 865 and a 37:50 runtime.",
+      "verification_note": "Buzzsprout lists September 18, 2026, Everyday AI episode 865, hosted by Jordan Wilson, runtime 37:50.",
+      "coverage_note": "Primary 48-hour podcast window; source-diverse from The AI Daily Brief.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Everyday AI",
+          "url": "https://www.buzzsprout.com/2175779/episodes/19733545-ep-865-open-source-ai-101-why-local-models-cheap-apis-and-ai-agents-change-everything-start-here-series-vol-24?t=0"
+        }
+      ]
+    }
+  ]
 }
