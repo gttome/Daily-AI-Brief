@@ -47,3 +47,13 @@ test('September 16 public canonical and reader files contain no owner-only book-
   assert.doesNotMatch(text,/data-george-implication|Proposed update:|owner-only book/i);
  }
 });
+
+
+test('September 19 restores data-driven professional-series mappings without filling every slot',()=>{
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-19.json'));
+ assert.doesNotThrow(()=>validateBookReading(current,catalog));
+ const selections=catalog.editions['2026-09-19'];
+ assert.equal(selections.length,3);
+ assert.ok(selections.some(x=>x.item_id==='dab-story-2026-09-19-5b233997'));
+ assert.match(renderBookReading('dab-story-2026-09-19-5b233997','2026-09-19'),/GENERATIVE AI PROFESSIONAL SERIES/);
+});
