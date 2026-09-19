@@ -67,3 +67,21 @@ test('qualification replay ignores stale same-date reading support only in quali
   if(previous===undefined) delete process.env.DAB_EXECUTION_MODE; else process.env.DAB_EXECUTION_MODE=previous;
  }
 });
+
+
+test('catalog stale entries are tolerated only for qualification replay',()=>{
+ const current=structuredClone(JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json')));
+ current.stories=current.stories.map((story,index)=>({...story,story_id:`qualification-story-${index+1}`}));
+ current.worth_watching={general:{status:'empty',exception:'none'},agents_non_technical_people:{status:'empty',exception:'none'}};
+ delete current.podcast;
+ delete current.podcasts;
+ const previous=process.env.DAB_EXECUTION_MODE;
+ try{
+  delete process.env.DAB_EXECUTION_MODE;
+  assert.throws(()=>validateReadingSupport(current),/unknown or duplicate/);
+  process.env.DAB_EXECUTION_MODE='qualification_nonproduction';
+  assert.doesNotThrow(()=>validateReadingSupport(current));
+ } finally {
+  if(previous===undefined) delete process.env.DAB_EXECUTION_MODE; else process.env.DAB_EXECUTION_MODE=previous;
+ }
+});
