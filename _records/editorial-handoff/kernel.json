@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "brief_date": "2026-09-19",
   "edition_id": "dab-edition-2026-09-19",
-  "baseline_sha": "90e138198a47732b05fc44d07a62f6abe3a64662",
+  "baseline_sha": "c3cf5cdb1749275d94896ee48c92a55c6bd86821",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
   "stories": [
@@ -442,12 +442,14 @@
   "editorial_takeaway": "Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.",
   "media_decisions": {
     "videos": {
-      "status": "empty",
-      "exception": "No video candidates were present in the bounded precomputed editorial evidence; no broader media research was permitted."
+      "status": "included",
+      "count": 2,
+      "note": "Two independently verified current videos selected after the recovery media-search restriction was removed."
     },
     "podcasts": {
-      "status": "empty",
-      "exception": "No podcast candidates were present in the bounded precomputed editorial evidence; no broader media research was permitted."
+      "status": "included",
+      "count": 2,
+      "note": "Two source-diverse September 18 podcast episodes selected from registered sources."
     }
   },
   "changed_watchlist_topics": []
