@@ -4,62 +4,48 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-18T14:41:06Z</updated>
+  <updated>2026-09-19T00:16:51Z</updated>
   <entry>
-    <title>Anthropic proposes three measurements for AI self-acceleration inside frontier labs</title>
-    <id>dab-story-2026-09-18-2cda8d5e</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/" />
+    <title>GitHub moves workflow execution protections to general availability</title>
+    <id>dab-story-2026-09-18-3b4029a5</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&amp;D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&amp;D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.</summary>
+    <summary>GitHub’s September 17 announcement moves Actions execution protections from public preview to general availability. The metadata describes an allowlist governing who can trigger workflows.</summary>
   </entry>
   <entry>
-    <title>GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used</title>
-    <id>dab-story-2026-09-18-3ac3c725</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/" />
+    <title>GitHub’s Copilot dashboard adds feature-engagement visibility</title>
+    <id>dab-story-2026-09-18-6dae2514</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-s-copilot-dashboard-adds-feature-engagement-visibility/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.</summary>
+    <summary>GitHub’s September 17 update says its Copilot impact dashboard now shows how many active users regularly use key Copilot features. The change gives administrators a more specific view than general activity alone.</summary>
   </entry>
   <entry>
-    <title>Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work</title>
-    <id>dab-story-2026-09-18-87612b7e</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/" />
+    <title>Microsoft shares a playbook built from its AI transformation experience</title>
+    <id>dab-story-2026-09-18-b782b47e</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/microsoft-shares-a-playbook-built-from-its-ai-transformation-experience/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.</summary>
+    <summary>Microsoft describes codifying proven approaches into case studies and sharing a Frontier Playbook. Its September 17 account draws on transformation efforts across the company, including work redesign and learning from failure.</summary>
   </entry>
   <entry>
-    <title>Salesforce makes Builder Central a natural-language front door for governed apps and agents</title>
-    <id>dab-story-2026-09-18-c5d22f27</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/" />
+    <title>Microsoft frames education AI around educator control and student thinking</title>
+    <id>dab-story-2026-09-18-f947a943</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/microsoft-frames-education-ai-around-educator-control-and-student-thinking/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.</summary>
+    <summary>Microsoft’s September 16 statement lists safety, privacy, security and transparency by design; educator control; support for learning rather than replacement of thinking; stronger education systems; and preparation for an AI-powered future.</summary>
   </entry>
   <entry>
-    <title>Rovo lets teams teach repeatable work as custom skills in ordinary language</title>
-    <id>dab-story-2026-09-18-bc42dd44</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/" />
+    <title>GitHub adds reusable-skill activity to Copilot CLI reporting</title>
+    <id>dab-story-2026-09-18-d2d912ae</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.</summary>
+    <summary>GitHub’s September 17 announcement extends CLI reporting with activity metrics for skills and custom agents. The accompanying metadata also names MCP servers, slash commands and plugins.</summary>
   </entry>
   <entry>
-    <title>Google gives a household agent its own identity, permissions, shared memory, and isolated computer</title>
-    <id>dab-story-2026-09-18-062b5025</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/" />
+    <title>Salesforce distinguishes long-running agent work from single-request responses</title>
+    <id>dab-story-2026-09-18-e696943b</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/salesforce-distinguishes-long-running-agent-work-from-single-request-responses/" />
     <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.</summary>
-  </entry>
-  <entry>
-    <title>Why Everyone Is Getting Excited About Personal AI Agents</title>
-    <id>dab-podcast-2026-09-18-personal-ai-agents</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-18/personal-ai-agents/" />
-    <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.</summary>
-  </entry>
-  <entry>
-    <title>How to get discovered in AI search</title>
-    <id>dab-podcast-2026-09-18-ai-search-discovery</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-18/ai-search-discovery/" />
-    <updated>2026-09-18T18:00:00Z</updated>
-    <summary>Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.</summary>
+    <summary>Salesforce’s September 16 article describes long-horizon agents working alongside users toward a goal over time and adapting to changing circumstances. Its introduction contrasts this with a request followed by a single response.</summary>
   </entry>
   <entry>
     <title>OpenAI builds a standing process for disclosing model misalignment</title>

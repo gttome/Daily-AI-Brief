@@ -4,210 +4,117 @@
   "stories": [
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-18-2cda8d5e",
+      "story_id": "dab-story-2026-09-18-3b4029a5",
       "brief_date": "2026-09-18",
       "event_date": "2026-09-17",
-      "headline": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
-      "url": "/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/",
+      "headline": "GitHub moves workflow execution protections to general availability",
+      "url": "/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/",
       "focus": "technical_ai_engineering",
       "topics": [
-        "frontier AI",
-        "R&D automation",
-        "agent oversight",
-        "evaluation",
-        "compute governance"
+        "workflow-authority"
       ],
-      "companies": [
-        "Anthropic"
-      ],
-      "evidence_type": "official_research",
-      "availability_status": "published_research",
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
       "trends": [
-        "Agent reliability and governance",
+        "AI-assisted development",
         "Accessible agents for knowledge work"
       ],
-      "summary": "Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions."
+      "summary": "GitHub’s September 17 announcement moves Actions execution protections from public preview to general availability. The metadata describes an allowlist governing who can trigger workflows."
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-18-3ac3c725",
+      "story_id": "dab-story-2026-09-18-6dae2514",
       "brief_date": "2026-09-18",
       "event_date": "2026-09-17",
-      "headline": "GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used",
-      "url": "/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/",
+      "headline": "GitHub’s Copilot dashboard adds feature-engagement visibility",
+      "url": "/stories/2026-09-18/github-s-copilot-dashboard-adds-feature-engagement-visibility/",
       "focus": "technical_ai_engineering",
       "topics": [
-        "agent observability",
-        "Copilot CLI",
-        "Agent Skills",
-        "MCP",
-        "plugins",
-        "usage metrics"
+        "feature-engagement"
       ],
-      "companies": [
-        "GitHub"
-      ],
+      "companies": [],
       "evidence_type": "official_announcement",
-      "availability_status": "general_availability",
+      "availability_status": "published",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "GitHub’s September 17 update says its Copilot impact dashboard now shows how many active users regularly use key Copilot features. The change gives administrators a more specific view than general activity alone."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-b782b47e",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "Microsoft shares a playbook built from its AI transformation experience",
+      "url": "/stories/2026-09-18/microsoft-shares-a-playbook-built-from-its-ai-transformation-experience/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "learning-playbook"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [],
+      "summary": "Microsoft describes codifying proven approaches into case studies and sharing a Frontier Playbook. Its September 17 account draws on transformation efforts across the company, including work redesign and learning from failure."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-f947a943",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-16",
+      "headline": "Microsoft frames education AI around educator control and student thinking",
+      "url": "/stories/2026-09-18/microsoft-frames-education-ai-around-educator-control-and-student-thinking/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "education-principles"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Agent reliability and governance"
+      ],
+      "summary": "Microsoft’s September 16 statement lists safety, privacy, security and transparency by design; educator control; support for learning rather than replacement of thinking; stronger education systems; and preparation for an AI-powered future."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-18-d2d912ae",
+      "brief_date": "2026-09-18",
+      "event_date": "2026-09-17",
+      "headline": "GitHub adds reusable-skill activity to Copilot CLI reporting",
+      "url": "/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "skill-activity"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
       "trends": [
         "AI-assisted development",
         "Accessible agents for knowledge work"
       ],
-      "summary": "GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy."
+      "summary": "GitHub’s September 17 announcement extends CLI reporting with activity metrics for skills and custom agents. The accompanying metadata also names MCP servers, slash commands and plugins."
     },
     {
       "content_type": "Article",
-      "story_id": "dab-story-2026-09-18-87612b7e",
+      "story_id": "dab-story-2026-09-18-e696943b",
       "brief_date": "2026-09-18",
-      "event_date": "2026-09-17",
-      "headline": "Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work",
-      "url": "/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "AI adoption",
-        "workflow redesign",
-        "knowledge work",
-        "outcome measurement",
-        "change management"
-      ],
-      "companies": [
-        "Microsoft"
-      ],
-      "evidence_type": "official_case_study",
-      "availability_status": "published_guidance",
-      "trends": [
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-18-c5d22f27",
-      "brief_date": "2026-09-18",
-      "event_date": "2026-09-17",
-      "headline": "Salesforce makes Builder Central a natural-language front door for governed apps and agents",
-      "url": "/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "no-code AI",
-        "vibe building",
-        "enterprise apps",
-        "Agentforce",
-        "governance"
-      ],
-      "companies": [
-        "Salesforce"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "beta_announced",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-18-bc42dd44",
-      "brief_date": "2026-09-18",
-      "event_date": "2026-09-17",
-      "headline": "Rovo lets teams teach repeatable work as custom skills in ordinary language",
-      "url": "/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/",
+      "event_date": "2026-09-16",
+      "headline": "Salesforce distinguishes long-running agent work from single-request responses",
+      "url": "/stories/2026-09-18/salesforce-distinguishes-long-running-agent-work-from-single-request-responses/",
       "focus": "agents_non_technical_people",
       "topics": [
-        "Agent Skills",
-        "reusable workflows",
-        "Rovo",
-        "team context",
-        "no-code agents"
+        "long-horizon-work"
       ],
-      "companies": [
-        "Atlassian"
-      ],
+      "companies": [],
       "evidence_type": "official_announcement",
-      "availability_status": "rolling_out",
-      "trends": [
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-18-062b5025",
-      "brief_date": "2026-09-18",
-      "event_date": "2026-09-17",
-      "headline": "Google gives a household agent its own identity, permissions, shared memory, and isolated computer",
-      "url": "/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "consumer agents",
-        "identity",
-        "permissions",
-        "shared memory",
-        "isolated execution",
-        "Gemini"
-      ],
-      "companies": [
-        "Google Labs"
-      ],
-      "evidence_type": "official_announcement",
-      "availability_status": "experimental_waitlist",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness."
-    },
-    {
-      "content_type": "Podcast",
-      "story_id": "dab-podcast-2026-09-18-personal-ai-agents",
-      "brief_date": "2026-09-18",
-      "event_date": "2026-09-17",
-      "headline": "Why Everyone Is Getting Excited About Personal AI Agents",
-      "url": "/podcasts/2026-09-18/personal-ai-agents/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "personal AI agents",
-        "consumer agents",
-        "delegation"
-      ],
-      "companies": [
-        "The AI Daily Brief"
-      ],
-      "evidence_type": "practitioner_analysis",
-      "availability_status": "not_applicable",
+      "availability_status": "published",
       "trends": [
         "Accessible agents for knowledge work"
       ],
-      "summary": "Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation."
-    },
-    {
-      "content_type": "Podcast",
-      "story_id": "dab-podcast-2026-09-18-ai-search-discovery",
-      "brief_date": "2026-09-18",
-      "event_date": "2026-09-17",
-      "headline": "How to get discovered in AI search",
-      "url": "/podcasts/2026-09-18/ai-search-discovery/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "AI search",
-        "retrieval",
-        "citations",
-        "agent discovery"
-      ],
-      "companies": [
-        "Practical AI"
-      ],
-      "evidence_type": "practitioner_analysis",
-      "availability_status": "not_applicable",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information."
+      "summary": "Salesforce’s September 16 article describes long-horizon agents working alongside users toward a goal over time and adapting to changing circumstances. Its introduction contrasts this with a request followed by a single response."
     },
     {
       "content_type": "Article",

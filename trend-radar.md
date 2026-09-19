@@ -13,12 +13,11 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-31 supporting stories appeared in the latest 7 days and 70 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+30 supporting stories appeared in the latest 7 days and 70 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [September 18, 2026]({{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/microsoft-frames-education-ai-around-educator-control-and-student-thinking/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/' | relative_url }})
@@ -123,13 +122,10 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-16 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+13 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/' | relative_url }})
-- [September 18, 2026]({{ '/podcasts/2026-09-18/ai-search-discovery/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/llamaindex-treats-extraction-schemas-as-semantic-contracts/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/' | relative_url }})
@@ -195,9 +191,9 @@ Supporting stories:
 
 Supporting stories:
 
-- [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-s-copilot-dashboard-adds-feature-engagement-visibility/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/' | relative_url }})
 - [September 16, 2026]({{ '/stories/2026-09-16/google-moves-agent-security-to-runtime-intent-controls/' | relative_url }})
 - [September 16, 2026]({{ '/stories/2026-09-16/copilot-suggests-repository-governance-taxonomies/' | relative_url }})
@@ -294,18 +290,13 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-42 supporting stories appeared in the latest 7 days and 118 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+37 supporting stories appeared in the latest 7 days and 118 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
-- [September 18, 2026]({{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})
-- [September 18, 2026]({{ '/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/' | relative_url }})
-- [September 18, 2026]({{ '/podcasts/2026-09-18/personal-ai-agents/' | relative_url }})
-- [September 18, 2026]({{ '/podcasts/2026-09-18/ai-search-discovery/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/' | relative_url }})
+- [September 18, 2026]({{ '/stories/2026-09-18/salesforce-distinguishes-long-running-agent-work-from-single-request-responses/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/claude-unifies-chat-and-cowork-in-one-workspace/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/github-makes-copilot-budget-increases-a-governed-request/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/zocks-adds-a-reusable-financial-planning-agent-skill/' | relative_url }})
