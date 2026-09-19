@@ -50,3 +50,20 @@ test('under80 replacement editions ignore stale same-date catalog items but cust
  const stale={item_id:'stale-item',coverage_label:'Background',label_reason:'stale',learning_outcome:'stale',context_term:'Context',context:'stale'};
  assert.throws(()=>validateReadingSupport(replacement,{editions:{[replacement.brief_date]:[stale]}}),/unknown or duplicate/);
 });
+
+
+test('qualification replay ignores stale same-date reading support only in qualification mode',()=>{
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json'));
+ const stale={editions:{[current.brief_date]:[
+  {item_id:'stale-production-item',coverage_label:'Background',label_reason:'reason',learning_outcome:'Useful outcome',context_term:'term',context:'context'}
+ ]}};
+ assert.throws(()=>validateReadingSupport(current,stale),/unknown or duplicate/);
+ const previous=process.env.DAB_EXECUTION_MODE;
+ try{
+  process.env.DAB_EXECUTION_MODE='qualification_nonproduction';
+  // Custom data remains strict even in qualification mode.
+  assert.throws(()=>validateReadingSupport(current,stale),/unknown or duplicate/);
+ } finally {
+  if(previous===undefined) delete process.env.DAB_EXECUTION_MODE; else process.env.DAB_EXECUTION_MODE=previous;
+ }
+});
