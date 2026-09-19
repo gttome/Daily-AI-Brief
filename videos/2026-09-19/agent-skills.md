@@ -19,7 +19,7 @@ reader_release: true
 
 <span class="story-data" data-story-id="dab-video-2026-09-19-agent-skills" hidden></span>
 
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 18, 2026  
 **Topics:**   
 **Evidence:** Practitioner Analysis  
