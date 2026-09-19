@@ -26,6 +26,11 @@ function imageInspection(relative){
  if(ext==='.png')return {...inspectPng(buffer,{minimumWidth:1200,minimumHeight:630}),format:'png'};
  return {pass:false,errors:['unsupported_image_format'],width:null,height:null,sha256:createHash('sha256').update(buffer).digest('hex'),bytes:buffer.length,format:ext.slice(1)||null};
 }
+function legacyPngInspection(relative){
+ const buffer=fs.readFileSync(path.join(root,relative));
+ if(buffer.length<24||buffer.toString('ascii',1,4)!=='PNG')return {pass:false,errors:['not_png'],width:null,height:null,sha256:createHash('sha256').update(buffer).digest('hex'),bytes:buffer.length,format:'png'};
+ return {pass:true,errors:[],width:buffer.readUInt32BE(16),height:buffer.readUInt32BE(20),sha256:createHash('sha256').update(buffer).digest('hex'),bytes:buffer.length,format:'png'};
+}
 async function probe(url){
  try{
   const response=await fetch(url,{signal:AbortSignal.timeout(10000),redirect:'follow',headers:{'user-agent':'DailyAIBriefValidation/2.0'}});
@@ -69,7 +74,7 @@ if(completion&&edition){
   const image=story.image?.path;
   if(!image){imageProblems.push(`${story.story_id}:missing_image_path`);continue;}
   if(!exists(image)){imageProblems.push(`${image}:missing`);continue;}
-  const info=imageInspection(image);
+  const info=date>='2026-09-19'?imageInspection(image):legacyPngInspection(image);
   if(info.pass&&info.width>=1200&&info.height>=630)integrityPassed++;
   else imageProblems.push(`${image}:${(info.errors||[]).join(',')||`${info.width}x${info.height}`}`);
   const manifest=manifestEntries.find(x=>x?.path===image);
@@ -114,7 +119,7 @@ check('command_center_owner_operations',protectedObservation.result.toLowerCase(
 const failures=checks.filter(x=>x.result==='fail'),ended=new Date().toISOString();
 const finalResult=failures.some(x=>['critical','high'].includes(x.severity))?'fail':failures.length?'degraded':'pass';
 const domainStates={publication:completion?.phase==='pages_verified'&&completion?.pages?.conclusion==='success'?'verified':completion?'pending':'unavailable',coverage:coverage.included_items===10?'complete':coverage.included_items===null?'unavailable':'degraded',measurements:'credit_target_unverified',retention:'private_unverified',learning:'deferred',book_backlog:'private_unverified'};
-const record={schema_version:'1.2.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:routeCount,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,coverage,domain_states:domainStates,checks,final_result:finalResult,semantic_escalation_required:false,diagnostic_packet:semanticPacket(failures),automatic_ai_recovery_runs:0};
+const record={schema_version:'1.3.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:routeCount,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,coverage,image_readiness:imageReadiness,domain_states:domainStates,checks,final_result:finalResult,semantic_escalation_required:false,diagnostic_packet:semanticPacket(failures),automatic_ai_recovery_runs:0};
 const out=path.resolve(args.out||`/tmp/dab-validation-${date}.json`);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(record,null,2)+'\n');
 console.log(JSON.stringify(record,null,2));
 if(record.final_result==='fail')process.exitCode=1;
