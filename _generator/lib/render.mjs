@@ -169,7 +169,7 @@ ${readerRelease(edition.brief_date)?renderEditionOverview(edition)+'\n\n':watchl
 
 ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'general')}
 
-${renderVideo('Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
+${renderVideo('Agents for Everyone', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
 ${podcastBlock}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
 
