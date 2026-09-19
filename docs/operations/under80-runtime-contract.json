@@ -115,7 +115,7 @@
     "normal_attempts_per_story": 1,
     "targeted_regeneration_only_on_actual_quality_failure": true,
     "reuse_only_same_edition_accepted_assets_on_recovery": true,
-    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": true,
+    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": false,
     "binary_transport": {
       "method": "github_git_data_api",
       "connector_tools": [
@@ -124,25 +124,25 @@
         "create_commit",
         "update_ref"
       ],
-      "github_contents_api_for_png_prohibited": true,
       "native_git_credentials_required": false,
       "local_validator": "node _tools/validate-handoff-images.mjs --kernel _records/editorial-handoff/kernel.json --images _records/editorial-handoff/images.json",
       "atomic_commit_sequence": [
         "fetch current main commit and tree SHA",
         "create isolated editorial-handoff branch from that exact main SHA",
         "create UTF-8 blobs for handoff JSON artifacts",
-        "create base64 blobs for the six accepted PNG files",
+        "create base64 blobs for the six accepted PNG or WebP files",
         "create one tree over the trusted main tree using mode 100644/type blob entries",
         "create one commit with trusted main as parent",
         "advance only the isolated handoff branch with update_ref",
-        "stop Work immediately; GitHub Actions validates remote PNG integrity"
+        "stop Work immediately; GitHub Actions validates remote image integrity"
       ],
-      "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that truncated prior PNGs.",
+      "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that corrupted prior binary image transfers.",
       "blob_encoding_for_binary_images": "base64",
       "accepted_formats": [
         "webp",
         "png"
-      ]
+      ],
+      "github_contents_api_for_binary_images_prohibited": true
     },
     "generation_scope": "Generate each story image in its own independent image-generation request. Never request or accept a multi-story collage, newsletter panel, contact sheet, or combined six-story graphic as a story asset.",
     "acceptance_scope": "Each accepted image must illustrate exactly one selected story and its verified evidence. A multi-story collage, generic unrelated concept, or deterministic placeholder fails the production image gate.",
@@ -170,7 +170,8 @@
         "selected_story_materially_changes"
       ],
       "command_center_role": "display status and canonical Brief asset references only; never maintain a second image copy"
-    }
+    },
+    "production_deterministic_replacement_prohibited": true
   },
   "media": {
     "video_duration_ladder_seconds": [
