@@ -132,7 +132,7 @@
   },
   "images_shape": {
     "c01": {
-      "path": "briefs/images/YYYY-MM-DD/01-story.png",
+      "path": "briefs/images/YYYY-MM-DD/01-story.webp",
       "alt": "Substantive story-specific image alt text.",
       "width": 1200,
       "height": 630,
@@ -140,21 +140,48 @@
       "cache_key": "accepted-image-hash-prefix",
       "sha256": "accepted-image-sha256",
       "quality_accepted": true,
-      "generation_method": "openai_image_generation"
+      "generation_method": "openai_image_generation",
+      "accepted_locked": true,
+      "lock_status": "accepted_locked"
     }
   },
   "media_shape": {
     "worth_watching": {
       "general": {
-        "status": "empty",
-        "exception": "No video met today’s editorial quality standards."
+        "status": "included",
+        "title": "Verified video",
+        "url": "https://publisher.example/video",
+        "upload_date": "YYYY-MM-DD",
+        "runtime_seconds": 600
       },
       "agents_non_technical_people": {
-        "status": "empty",
-        "exception": "No video met today’s editorial quality standards."
+        "status": "included",
+        "title": "Verified agent video",
+        "url": "https://publisher.example/agent-video",
+        "upload_date": "YYYY-MM-DD",
+        "runtime_seconds": 600
       }
     },
-    "podcasts": []
+    "podcasts": [
+      {
+        "status": "included",
+        "ordinal": 9,
+        "title": "Verified podcast one",
+        "show": "Source A",
+        "publication_date": "YYYY-MM-DD",
+        "runtime_seconds": 1800,
+        "url": "https://publisher.example/podcast-1"
+      },
+      {
+        "status": "included",
+        "ordinal": 10,
+        "title": "Verified podcast two",
+        "show": "Source B",
+        "publication_date": "YYYY-MM-DD",
+        "runtime_seconds": 1800,
+        "url": "https://publisher.example/podcast-2"
+      }
+    ]
   },
   "handoff_manifest_shape": {
     "schema_version": "1.0.0",
@@ -181,9 +208,11 @@
     "Before any model inspects article discovery candidates, run `_tools/under80-metadata-gate.mjs`; never open the raw discovery queue. The committed gate output must contain at most 20 candidates.",
     "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
     "Facts and image manifests must contain every selected candidate_id.",
-    "All six PNGs must be fresh accepted full-quality images for a from-scratch qualification test.",
     "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work.",
-    "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation."
+    "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation.",
+    "For production editions on or after 2026-09-19, the image manifest must contain six accepted_locked story-specific assets. Reuse locked assets on retries; do not regenerate them.",
+    "For production editions on or after 2026-09-19, include exactly two verified videos and exactly two verified podcasts with a four-item media preflight receipt.",
+    "Serve canonical public image URLs from the GitHub Pages Brief asset layer; the Command Center displays the same assets but is not their authoritative host."
   ],
   "qualification_handoff_manifest_shape": {
     "schema_version": "1.0.0",
