@@ -31,7 +31,9 @@ reader_release: true
 
 **Why it matters:** The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding when AI-generated review suggestions are ready to accept into the codebase.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 

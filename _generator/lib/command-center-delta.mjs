@@ -37,6 +37,11 @@ export function commandCenterDeltaPacket({validation={},watchlist={},policy={},g
    automatic_ai_recovery_runs:Number.isInteger(validation.automatic_ai_recovery_runs)?validation.automatic_ai_recovery_runs:null,
    checks
   },
+  presentation:{
+   focus_labels:{agents_non_technical_people:'Agents for Everyone',applied_genai_knowledge_workers:'Applied Generative AI for Knowledge Workers',technical_ai_engineering:'Technical AI Engineering'},
+   book_series:{mapping_source:'_data/book-reading.json',rendering:'data_driven_optional'},
+   github_startup_gate:{required:true,phase:'before_editorial_or_image_work'}
+  },
   watchlist:{
    changed_topics:changed,
    carried_topics:carried,

@@ -164,7 +164,7 @@ test('failed staging leaves the source checkout unchanged and rollback target ex
 
 test('baseline shadow check passes', () => {
   const record = runShadowCheck(root, currentBriefDate(), baseline);
-  assert.equal(record.result, 'pass');
+  assert.equal(record.result, 'pass', record.errors.join('\n'));
   assert.deepEqual(record.errors, []);
 });
 

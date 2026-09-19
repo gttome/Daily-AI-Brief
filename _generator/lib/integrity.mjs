@@ -79,6 +79,13 @@ export function validateUrlContract(repoRoot) {
   return errors;
 }
 
+function firstDerivedDiff(actual,expected){
+  const a=String(actual).split('\n'),e=String(expected).split('\n');
+  const max=Math.max(a.length,e.length);
+  for(let i=0;i<max;i++)if(a[i]!==e[i])return `line ${i+1}: actual=${JSON.stringify(a[i]??null)} expected=${JSON.stringify(e[i]??null)}`;
+  return 'byte difference with no line-level mismatch';
+}
+
 export function validateDerivedParity(edition, repoRoot) {
   const expected = generatedFiles(edition, repoRoot);
   const errors = [];
@@ -86,7 +93,7 @@ export function validateDerivedParity(edition, repoRoot) {
     const file = path.join(repoRoot, name);
     const normalized = content.endsWith('\n') ? content : `${content}\n`;
     if (!fs.existsSync(file)) errors.push(`${name}: missing derived output`);
-    else if (fs.readFileSync(file, 'utf8') !== normalized) errors.push(`${name}: derived output does not match canonical generation`);
+    else { const actual=fs.readFileSync(file,'utf8'); if(actual!==normalized) errors.push(`${name}: derived output does not match canonical generation (${firstDerivedDiff(actual,normalized)})`); }
   }
   return errors;
 }

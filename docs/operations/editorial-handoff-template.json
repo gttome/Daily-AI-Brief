@@ -132,7 +132,7 @@
   },
   "images_shape": {
     "c01": {
-      "path": "briefs/images/YYYY-MM-DD/01-story.png",
+      "path": "briefs/images/YYYY-MM-DD/01-story.webp",
       "alt": "Substantive story-specific image alt text.",
       "width": 1200,
       "height": 630,
@@ -140,7 +140,8 @@
       "cache_key": "accepted-image-hash-prefix",
       "sha256": "accepted-image-sha256",
       "quality_accepted": true,
-      "generation_method": "openai_image_generation"
+      "generation_method": "openai_image_generation",
+      "format": "webp"
     }
   },
   "media_shape": {
@@ -173,7 +174,7 @@
     "image_transport_method": "github_git_data_api"
   },
   "hard_rules": [
-    "Before handoff, run `_tools/validate-handoff-images.mjs`. Then create PNG blobs with the authenticated GitHub Git Data API (`create_blob` with `encoding=base64`), compose one tree/commit, and advance only the isolated handoff ref with `update_ref`. Do not use native git credentials or GitHub Contents API/create_file/update_file for PNG bytes.",
+    "Before handoff, run `_tools/validate-handoff-images.mjs`. Then create accepted WebP or PNG blobs with the authenticated GitHub Git Data API (`create_blob` with `encoding=base64`), compose one tree/commit, and advance only the isolated handoff ref with `update_ref`. Do not use native git credentials or GitHub Contents API/create_file/update_file for binary image bytes.",
     "Do not perform article-source network retrieval in Work. Use only the committed nine-candidate GitHub Actions article-evidence packet.",
     "Work must not run `_tools/discover-sources.mjs` or the metadata gate. Those execute in GitHub Actions preflight with zero model calls. Work may read only the preflight `result/metadata-candidates.json` and `result/receipt.json` after `coverage_ready=true`.",
     "Continue past metadata gating only when coverage_ready=true, every candidate has date_status=resolved_metadata_date, each focus_hint has at least three candidates, and agent_skill_signals>=1.",
@@ -181,7 +182,7 @@
     "Before any model inspects article discovery candidates, run `_tools/under80-metadata-gate.mjs`; never open the raw discovery queue. The committed gate output must contain at most 20 candidates.",
     "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
     "Facts and image manifests must contain every selected candidate_id.",
-    "All six PNGs must be fresh accepted full-quality images for a from-scratch qualification test.",
+    "All six story images must be fresh accepted full-quality images; prefer 1200×630 WebP, with PNG accepted when needed for a from-scratch qualification test.",
     "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work.",
     "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation."
   ],
@@ -203,13 +204,18 @@
   },
   "transport_shape": {
     "method": "github_git_data_api",
-    "png_blob_encoding": "base64",
     "text_blob_encoding": "utf-8",
     "tree_entry": {
       "mode": "100644",
       "type": "blob"
     },
     "commit_parent": "exact trusted main SHA",
-    "update_ref_force": false
+    "update_ref_force": false,
+    "preferred_image_format": "webp",
+    "accepted_image_formats": [
+      "webp",
+      "png"
+    ],
+    "image_blob_encoding": "base64"
   }
 }

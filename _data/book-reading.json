@@ -138,6 +138,26 @@
         "label": "READ DEEPER",
         "why": "The verification gate provides a useful frame for deciding when a specialized judgment should be accepted or escalated."
       }
+    ],
+    "2026-09-19": [
+      {
+        "item_id": "dab-story-2026-09-19-807056d1",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the final-gate framework as background for deciding when AI-generated review suggestions are ready to accept into the codebase."
+      },
+      {
+        "item_id": "dab-story-2026-09-19-5b233997",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the context-quality checklist when deciding what instructions, references, tools, and constraints belong in a reusable Agent Skill."
+      },
+      {
+        "item_id": "dab-story-2026-09-19-0a581a31",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Calibrated trust is useful when deciding how much autonomy a persistent, long-horizon agent should receive before human review is required."
+      }
     ]
   }
 }

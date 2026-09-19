@@ -19,7 +19,7 @@ reader_release: true
 
 <span class="story-data" data-story-id="dab-story-2026-09-19-5b233997" hidden></span>
 
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 17, 2026  
 **Topics:** Agent Skills, Copilot CLI, agent metrics  
 **Evidence:** Official Announcement  
@@ -31,7 +31,9 @@ reader_release: true
 
 **Why it matters:** Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding what instructions, references, tools, and constraints belong in a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 

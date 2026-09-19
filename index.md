@@ -22,7 +22,7 @@ reader_release: true
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div></aside>
 <!-- reader-release:end -->
 
-**Focus: Agents for Non-Technical People**
+**Focus: Agents for Everyone**
 
 **Date:** September 17, 2026
 
@@ -41,7 +41,9 @@ reader_release: true
 
 **Why it matters:** Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding what instructions, references, tools, and constraints belong in a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Track reusable agent skills:** Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used.
 
@@ -62,7 +64,7 @@ reader_release: true
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 11 min read</span></div></aside>
 <!-- reader-release:end -->
 
-**Focus: Agents for Non-Technical People**
+**Focus: Agents for Everyone**
 
 **Date:** September 16, 2026
 
@@ -81,7 +83,9 @@ reader_release: true
 
 **Why it matters:** For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust is useful when deciding how much autonomy a persistent, long-horizon agent should receive before human review is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Define persistent agent goals:** For recurring work, specify the goal, checkpoints, changing inputs, and conditions that require human review.
 
@@ -201,7 +205,9 @@ reader_release: true
 
 **Why it matters:** The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding when AI-generated review suggestions are ready to accept into the codebase.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Review the new code-review flow:** Check whether clearer progress and batch commit messages reduce review overhead in active repositories.
 
@@ -289,7 +295,7 @@ reader_release: true
 
 <span id="agents-for-non-technical-people"></span>
 
-## 8. Agents for Non-Technical People
+## 8. Agents for Everyone
 
 ### Control AI Agents from Anywhere: 7 Open-Source Tools
 
@@ -332,7 +338,7 @@ reader_release: true
 
 **Show:** The AI Daily Brief  
 **Host / guest:** Nathaniel Whittemore  
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 18, 2026  
 **Duration:** 30:06 · No episode time limit  
 **Topics:** agent security, model choice, data control, enterprise AI

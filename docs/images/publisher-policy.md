@@ -18,7 +18,7 @@ Future custom images must be comparable in **professional finish, information de
 Every custom story image MUST:
 
 - use a dominant white or near-white background;
-- be exactly **1200×630 PNG** and render as the complete uncropped canvas;
+- be exactly **1200×630** and use **WebP as the preferred canonical publication format, with PNG accepted when needed**; render as the complete uncropped canvas;
 - look like a professionally commissioned technical/editorial textbook plate, not a presentation placeholder;
 - use refined vector or semi-realistic diagram rendering with subtle depth, shading, linework, hierarchy, and polished icons;
 - contain enough meaningful story-specific components to explain the core mechanism or implication visually;
@@ -64,7 +64,7 @@ File existence, metadata, dimensions, or an accessibility pass alone do **not** 
 
 The six accepted `premium3` illustrations in the September 10 edition supplement the earlier benchmark. The superseded September 10 cylinder-and-icon set is an explicit negative example: repeating a template with different labels fails even when every file is valid and readable.
 
-Inspect every final PNG individually at its published size and compare the complete set before merge. Record the exact asset hashes, composition-specific assessment, meaningful components, rejected attempts and regeneration outcomes in a dated image-quality record. Aim for 6–12 or more meaningful story-specific components where appropriate; component count alone never proves quality. Primary labels must remain readable, while fine details may require opening the full image on mobile.
+Inspect every final accepted WebP or PNG individually at its published size and compare the complete set before merge. Record the exact canonical asset hashes, format, composition-specific assessment, meaningful components, rejected attempts and regeneration outcomes in a dated image-quality record. Aim for 6–12 or more meaningful story-specific components where appropriate; component count alone never proves quality. Primary labels must remain readable, while fine details may require opening the full image on mobile.
 
 Fail any primarily simplistic, generic, sparse, flat, title-card, low-detail icon-board or repeated-template image. Decorative props and scenery do not count as instructional richness. The gate must explicitly judge refinement, professional finish, conceptual storytelling, useful visual depth and material differentiation. An external-looking log, screenshot, chart or runtime setting must be clearly conceptual unless it is verified source evidence. Never represent a self-review as an external human or independent-agent review.
 

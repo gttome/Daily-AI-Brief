@@ -5,6 +5,13 @@ import {deepEqualJson, sha256} from './util.mjs';
 import {validateEdition} from './validate.mjs';
 import {renderDated,renderLatest,renderIndex} from './render.mjs';
 
+function firstDiff(actual, expected) {
+  const a=String(actual).split('\n'), e=String(expected).split('\n');
+  const max=Math.max(a.length,e.length);
+  for(let i=0;i<max;i++) if(a[i]!==e[i]) return `line ${i+1}: actual=${JSON.stringify(a[i]??null)} expected=${JSON.stringify(e[i]??null)}`;
+  return 'byte difference with no line-level mismatch';
+}
+
 export function runShadowCheck(repoRoot, date, sourceCommit = null) {
   const checks = [];
   const errors = [];
@@ -31,7 +38,7 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
       if(modern){
         const actual=fs.readFileSync(location.path,'utf8');
         const expected=renderers[location.name](modern);
-        if(actual.trimEnd()!==expected.trimEnd())validation.push('reader output differs from canonical rendering');
+        if(actual.trimEnd()!==expected.trimEnd())validation.push(`reader output differs from canonical rendering (${firstDiff(actual.trimEnd(),expected.trimEnd())})`);
       }
       checks.push({check_id: `${location.name}_canonical_import`, result: validation.length ? 'fail' : 'pass', evidence: validation.length ? validation.join('; ') : 'Imported and validated.'});
       errors.push(...validation.map(item => `${location.name}: ${item}`));

@@ -19,7 +19,7 @@ reader_release: true
 
 <span class="story-data" data-story-id="dab-story-2026-09-19-0a581a31" hidden></span>
 
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 16, 2026  
 **Topics:** agents, long-horizon, persistent work  
 **Evidence:** Official Announcement  
@@ -31,7 +31,9 @@ reader_release: true
 
 **Why it matters:** For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust is useful when deciding how much autonomy a persistent, long-horizon agent should receive before human review is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 
