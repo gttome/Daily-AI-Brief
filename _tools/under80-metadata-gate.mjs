@@ -47,7 +47,7 @@ const focusHint=(value,isSkill)=>{
  const v=text(value).toLowerCase();
  if(isSkill)return 'agents_non_technical_people';
  if(/\b(agent|agents|workflow automation|computer use|assistant)\b/.test(v)&&!/\b(api|sdk|framework|developer|code|benchmark|model)\b/.test(v))return 'agents_non_technical_people';
- if(/\b(workplace|knowledge worker|enterprise|productivity|no-code|low-code|salesforce|microsoft 365|google workspace|office|business users?|docs)\b/.test(v))return 'applied_genai_knowledge_workers';
+ if(/\b(workplace|knowledge worker|enterprise|productivity|no-code|low-code|salesforce|microsoft 365|google workspace|office|business users?|impact dashboard|feature engagement|adoption|docs)\b/.test(v))return 'applied_genai_knowledge_workers';
  return 'technical_ai_engineering';
 };
 
