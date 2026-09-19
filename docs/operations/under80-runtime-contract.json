@@ -320,5 +320,31 @@
     "artifact_retention_days": 30,
     "rule": "After required CI succeeds, deterministic validation resolves the matching successful GitHub Pages deployment for the exact main SHA, derives completion evidence from the latest validated publication event, and stores that evidence with the validation artifact. A missing same-day repository completion file must not force another content publication or model pass.",
     "repository_completion_role": "Historical repository completion.json records remain valid durable evidence when present; normal validation must not require a second protected-main commit solely to create that record."
+  },
+  "github_startup_gate": {
+    "required": true,
+    "phase": "before_editorial_or_image_work",
+    "repository": "gttome/Daily-AI-Brief",
+    "required_capabilities": [
+      "authenticated_connection",
+      "read_main_sha",
+      "inspect_branches",
+      "inspect_actions",
+      "create_or_update_isolated_branch",
+      "git_data_blob_tree_commit_ref",
+      "create_or_reuse_publication_pr",
+      "inspect_ci_and_pages"
+    ],
+    "failure": "BLOCKED — GitHub connection unavailable for scheduled publication.",
+    "record_in_attempt": true
+  },
+  "image": {
+    "preferred_canonical_format": "webp",
+    "accepted_formats": [
+      "webp",
+      "png"
+    ],
+    "required_dimensions": "1200x630",
+    "historical_png_compatible": true
   }
 }
