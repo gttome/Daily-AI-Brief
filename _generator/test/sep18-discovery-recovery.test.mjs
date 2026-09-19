@@ -30,7 +30,7 @@ test('Watchlist recovery stops at three successes and never forces assisted sour
  const recovery=await runWatchlistFallback(sources,checks,async(source,force)=>{
   calls.push(source.source_id);assert.equal(force,true);
   return {source_id:source.source_id,status:'retrieved',checked_at:'2026-09-18T13:00:00Z'};
- });
+ },{minimumFresh:3,maxFallbackChecks:5});
  assert.deepEqual(calls,['s1','s2']);assert.equal(recovery.checks.length,2);
  assert.equal(checks.filter(c=>c.status==='retrieved').length,3);
  assert.equal(checks.find(c=>c.source_id==='s0').status,'not_due');
@@ -39,7 +39,7 @@ test('Watchlist recovery stops at three successes and never forces assisted sour
 test('Watchlist recovery is bounded at five failures',async()=>{
  const sources=Array.from({length:8},(_,i)=>({source_id:'s'+i,endpoint:'https://example.org/'+i,automated:true}));
  const checks=sources.map(s=>({source_id:s.source_id,status:'not_due',previous_status:'retrieved'}));
- const recovery=await runWatchlistFallback(sources,checks,async s=>({source_id:s.source_id,status:'unavailable'}));
+ const recovery=await runWatchlistFallback(sources,checks,async s=>({source_id:s.source_id,status:'unavailable'}),{minimumFresh:3,maxFallbackChecks:5});
  assert.equal(recovery.checks.length,5);assert.equal(checks.filter(c=>c.status==='not_due').length,3);
 });
 test('forced Watchlist retrieval rechecks cached content',async()=>{
