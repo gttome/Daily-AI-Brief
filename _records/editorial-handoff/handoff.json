@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "execution_mode": "production",
-  "staging_ref": "editorial-handoff/production/2026-09-19-repair-2",
+  "staging_ref": "editorial-handoff/production/2026-09-19-hardening-proof",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
   "images_path": "_records/editorial-handoff/images.json",
@@ -13,6 +13,6 @@
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
   "image_transport_method": "github_git_data_api",
-  "recovery_attempt": 8,
-  "recovery_note": "Retry corrective republication after fixing WebP validator syntax; reuse the six locked professional story assets and existing verified media and Watchlist refresh."
+  "recovery_attempt": 10,
+  "recovery_note": "Post-hardening September 19 idempotency proof after the targeted Brief-domain importer compatibility fix. Reuse all six accepted_locked professional assets, both verified videos, both verified podcasts, and the refreshed September 19 Watchlist. No rediscovery and no image regeneration."
 }

@@ -10,7 +10,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/",
       "title": "Copilot code review adds clearer progress and smarter batch suggestions",
       "summary": "GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea",
       "date_published": "2026-09-19T13:00:00-05:00",
       "tags": [
         "Copilot",
@@ -23,7 +23,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/",
       "title": "GitHub schedules selected Copilot model deprecations for October 19",
       "summary": "GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176",
       "date_published": "2026-09-19T13:00:00-05:00",
       "tags": [
         "Copilot",
@@ -36,7 +36,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/",
       "title": "Copilot impact dashboard now exposes feature engagement",
       "summary": "GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87",
       "date_published": "2026-09-19T13:00:00-05:00",
       "tags": [
         "Copilot",
@@ -49,7 +49,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/",
       "title": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
       "summary": "Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57",
       "date_published": "2026-09-19T13:00:00-05:00",
       "tags": [
         "AI transformation",
@@ -62,7 +62,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/",
       "title": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
       "summary": "GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f",
       "date_published": "2026-09-19T13:00:00-05:00",
       "tags": [
         "Agent Skills",
@@ -75,7 +75,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/",
       "title": "Salesforce explains why long-horizon agents need persistence across sessions",
       "summary": "Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44",
       "date_published": "2026-09-19T13:00:00-05:00",
       "tags": [
         "agents",

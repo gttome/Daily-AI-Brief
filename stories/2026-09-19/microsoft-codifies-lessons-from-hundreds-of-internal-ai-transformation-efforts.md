@@ -2,7 +2,7 @@
 layout: default
 title: "Microsoft codifies lessons from hundreds of internal AI transformation efforts"
 description: "The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workfl"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57"
 permalink: /stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/
 brief_date: 2026-09-19
 story_id: dab-story-2026-09-19-928822d1
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57)
+![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57)
 
 **Summary:** Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.
 

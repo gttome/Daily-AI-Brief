@@ -2,7 +2,7 @@
 layout: default
 title: "GitHub adds agent skills and customizations to Copilot CLI usage metrics"
 description: "Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an"
-image: "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f"
 permalink: /stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/
 brief_date: 2026-09-19
 story_id: dab-story-2026-09-19-5b233997
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f)
+![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f)
 
 **Summary:** GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.
 

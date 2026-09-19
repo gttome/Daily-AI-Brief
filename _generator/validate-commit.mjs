@@ -52,6 +52,7 @@ for (const date of dates) {
       `_records/trends/${date}.json`,
       `_records/editorial-feedback/${date.slice(0, 7)}.json`,
       ...(date >= '2026-09-10' && policyProfile === 'full_v1' ? [`_records/editorial/podcasts/${date}.json`] : []),
+      ...(date >= '2026-09-17' ? [`_records/editorial/media-preflight/${date}.json`] : []),
       `briefs/${date}.md`,
       'latest.md',
       'index.md',
