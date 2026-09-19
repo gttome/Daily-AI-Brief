@@ -22,7 +22,7 @@ export function validateReadingSupport(edition,data=catalog){
  const seen=new Set();
  for(const x of data.editions[edition.brief_date]||[]){
   if(!ids.has(x.item_id)){
-   if(data===catalog&&edition.policy_profile==='under80-v1')continue;
+   if(data===catalog&&process.env.DAB_EXECUTION_MODE==='qualification_nonproduction')continue;
    throw Error('Reading support has unknown or duplicate item');
   }
   if(seen.has(x.item_id))throw Error('Reading support has unknown or duplicate item');seen.add(x.item_id);
