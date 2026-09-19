@@ -6,6 +6,84 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-09-19-807056d1",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/",
+      "title": "Copilot code review adds clearer progress and smarter batch suggestions",
+      "summary": "GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.png?v=78ce6ac61f3922e",
+      "date_published": "2026-09-19T13:00:00-05:00",
+      "tags": [
+        "Copilot",
+        "code review",
+        "developer workflow"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-19-49a474f5",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/",
+      "title": "GitHub schedules selected Copilot model deprecations for October 19",
+      "summary": "GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.png?v=08aa57e524cd6658",
+      "date_published": "2026-09-19T13:00:00-05:00",
+      "tags": [
+        "Copilot",
+        "models",
+        "deprecation"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-19-a4a2b339",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/",
+      "title": "Copilot impact dashboard now exposes feature engagement",
+      "summary": "GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde",
+      "date_published": "2026-09-19T13:00:00-05:00",
+      "tags": [
+        "Copilot",
+        "adoption",
+        "analytics"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-19-928822d1",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/",
+      "title": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
+      "summary": "Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.png?v=23a9427adac462b7",
+      "date_published": "2026-09-19T13:00:00-05:00",
+      "tags": [
+        "AI transformation",
+        "knowledge work",
+        "enterprise adoption"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-19-5b233997",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/",
+      "title": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
+      "summary": "GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.png?v=db8c2461e421ce10",
+      "date_published": "2026-09-19T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "Copilot CLI",
+        "agent metrics"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-19-0a581a31",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/",
+      "title": "Salesforce explains why long-horizon agents need persistence across sessions",
+      "summary": "Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.",
+      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67",
+      "date_published": "2026-09-19T13:00:00-05:00",
+      "tags": [
+        "agents",
+        "long-horizon",
+        "persistent work"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-18-2cda8d5e",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/",
       "title": "Anthropic proposes three measurements for AI self-acceleration inside frontier labs",
@@ -2963,87 +3041,6 @@
         "evaluation",
         "human review",
         "videos and training",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-20-396b7ecc",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/",
-      "title": "OpenAI previews cross-session safety monitoring that preserves Zero Data Retention",
-      "summary": "OpenAI announced a preview of **Private Safety Processing**, intended to detect risky patterns across related interactions while keeping Zero Data Retention commitments. For eligible ZDR deployments, content remains on customer-controlled infrastructure; OpenAI is also developing customer-key-encrypted storage on its own infrastructure. Automated systems can analyze related interactions and return narrowly defined safety signals without giving OpenAI personnel the underlying prompts or responses. The company says early-customer testing is underway and a technical white paper is planned for September.",
-      "image": "https://www.google.com/s2/favicons?domain=openai.com&sz=256",
-      "date_published": "2026-08-20T13:00:00-05:00",
-      "tags": [
-        "Major AI-company developments",
-        "privacy",
-        "guardrails",
-        "context engineering",
-        "agent monitoring",
-        "enterprise AI",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-20-89c66468",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/skillgate-shows-that-agents-need-separate-learning-signals-for-selecting-and-exe/",
-      "title": "SkillGate shows that agents need separate learning signals for selecting and executing skills",
-      "summary": "*SkillGate* studies how an agent learns which procedural skill to load during a long task. The authors identify **selector credit starvation**: ordinary outcome-based reinforcement learning spreads one final reward across the whole trajectory, so the few tokens that selected a skill receive little—and sometimes misleading—credit when later execution fails. SkillGate separates selection credit from execution credit. Across five agent benchmarks with a 16-skill candidate set, the reported trial-success rate for a 9B model rose from 40.8% after supervised fine-tuning to 53.2%; exposure to misleading skills fell substantially.",
-      "image": "https://www.google.com/s2/favicons?domain=github.com&sz=256",
-      "date_published": "2026-08-20T13:00:00-05:00",
-      "tags": [
-        "Harness engineering",
-        "agent skills",
-        "loop engineering",
-        "long-horizon agents",
-        "tool selection",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-20-6364926f",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/evalcegar-evolves-executable-evaluation-checks-from-an-evaluator-s-blind-spots/",
-      "title": "EvalCEGAR evolves executable evaluation checks from an evaluator’s blind spots",
-      "summary": "*Metrics That Write Themselves* proposes EvalCEGAR, a loop that searches for pairs of answers an existing evaluator scores identically even though one is correct and the other is not. Those counterexamples become the specification for a small Python operator that detects one named defect or abstains. On MBPP+ and HumanEval+, the system produced a 55-line operator that closed 15.4% of the gap between flagging nothing and a perfect filter on 428 unseen tasks. Six of eight runs admitted a useful operator, and all six improved out-of-sample filtering.",
-      "image": "https://arxiv.org/static/browse/0.3.4/images/icons/apple-touch-icon.png",
-      "date_published": "2026-08-20T13:00:00-05:00",
-      "tags": [
-        "Evaluation engineering",
-        "guardrails",
-        "loop engineering",
-        "executable metrics",
-        "LLM-as-judge",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-20-f54a140b",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/componentbench-proves-that-the-harness-can-change-computer-agent-performance-by-/",
-      "title": "ComponentBench proves that the harness can change computer-agent performance by over 30 points",
-      "summary": "ComponentBench introduces 2,910 programmatically verified tasks covering 97 common web-interface components, with cleaned human reference trajectories. Seven models were tested across four observation and action configurations. Within the same harness, changing only the observation/action representation shifted success by more than 30 percentage points for the same model: GPT-5 mini scored 83.1% with accessibility-tree observations and 48.9% with coordinate-only pixel control. Even the fastest configuration took 3.7 times as long as the matched human reference.",
-      "image": "https://www.google.com/s2/favicons?domain=componentbench.com&sz=256",
-      "date_published": "2026-08-20T13:00:00-05:00",
-      "tags": [
-        "Computer-use agents",
-        "harness engineering",
-        "evaluation",
-        "user interfaces",
-        "tool design",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-20-5d1fe565",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/",
-      "title": "Coding-agent rankings break under harmless code transformations",
-      "summary": "*A Jagged Frontier* tests whether coding agents remain reliable when code is changed in ways that preserve its meaning, including identifier renaming, dead-code insertion, and control-flow rewrites. The researchers paired two agent scaffolds with four models across SWE-bench Verified and SWE-bench Pro. Most configurations showed small degradation, but the largest mean resolve-rate decline reached 6.7 percentage points, and six of 16 model–scaffold–dataset combinations degraded significantly. No model had a consistently best robustness ranking across scaffolds; the simpler mini-SWE-agent scaffold was generally more robust.",
-      "image": "https://www.google.com/s2/favicons?domain=github.com&sz=256",
-      "date_published": "2026-08-20T13:00:00-05:00",
-      "tags": [
-        "AI-assisted coding",
-        "vibe coding",
-        "agent evaluation",
-        "robustness",
-        "human review",
         "arXiv"
       ]
     }

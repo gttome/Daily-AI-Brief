@@ -15,6 +15,7 @@ Daily QA and self-healing repair results are stored permanently in [`qa/`](qa/) 
 
 ## Archive
 
+- [September 19, 2026](briefs/2026-09-19.md)
 - [September 18, 2026](briefs/2026-09-18.md)
 - [September 17, 2026](briefs/2026-09-17.md)
 - [September 16, 2026](briefs/2026-09-16.md)
