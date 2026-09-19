@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-18",
-  "updated_at": "2026-09-18T14:31:07.655Z",
-  "baseline_note": "September 18 source scan: 28 fresh successful automated observations, including 24 sources with candidate links; 13 automated sources failed, four returned no links, and eight require assisted review. No topic received a qualifying material update; all eight are carried forward with original evidence dates and no inferred popularity.",
+  "edition_date": "2026-09-19",
+  "updated_at": "2026-09-19T17:09:07.447Z",
+  "baseline_note": "September 19 recovery refresh: the current 20-candidate zero-model discovery packet and verified September 16-18 publisher/research evidence were reconciled into the Watchlist. Seven new topics were added and three existing topics received material updates. Older signals remain visible for continuity; no popularity or adoption level is inferred from source coverage alone.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -226,12 +226,12 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "OpenAI published a standing framework for tracking, investigating and disclosing observed model misalignment, adding a new primary development to the broader move from static safeguards toward runtime evidence and response.",
+      "why_now": "A September 17 preprint measures when frontier agents overclaim task completion, adding a concrete evaluation target to the existing runtime-safeguard and misalignment-reporting evidence.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
       "limitations": "A preprint and its benchmarks do not establish protection against all real-world attacks.",
-      "next_action": "Compare containment failures and goal-conflict evaluations, then extract reusable sandbox, monitoring and approval tests.",
+      "next_action": "Compare overclaiming tests, containment failures, and goal-conflict evaluations, then extract reusable verification, sandbox, monitoring, and approval checks.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-17T12:22:20Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -294,6 +294,16 @@
           "checked_at": "2026-09-17T12:22:20Z",
           "development_id": "openai-standing-misalignment-disclosure",
           "review_depth": "full publisher framework and six linked reports"
+        },
+        {
+          "title": "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+          "url": "https://arxiv.org/abs/2609.20812v1",
+          "publisher": "arXiv",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "agent-overclaiming-2026-09-17",
+          "review_depth": "original arXiv abstract and metadata"
         }
       ],
       "external_attention": [
@@ -318,9 +328,14 @@
             "observed_at": "2026-09-17T12:22:20Z",
             "value": null,
             "source": "Independent new primary development; comparable public attention metric unavailable."
+          },
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "New primary research adds a measurable agent-verification failure mode; public popularity is not inferred."
           }
         ],
-        "reason": "A new independent primary development adds an operational disclosure loop; comparable popularity metrics remain unavailable."
+        "reason": "New primary research adds measurable agent-verification evidence to the existing safeguard and disclosure signals."
       },
       "rubric": {
         "novelty": {
@@ -438,12 +453,12 @@
       "name": "Turning agent memory into compact plans",
       "audience": "Technical AI and agent designers",
       "summary": "Use remembered episodes when planning, then give the executor a compact plan instead of the full history.",
-      "why_now": "MaP-WAM studies this separation in memory-dependent robotic tasks.",
-      "practical_value": "A possible teaching example for separating memory, planning and execution; transfer to office agents remains unproven.",
+      "why_now": "Salesforce now describes long-horizon agents that continue across sessions and adapt as circumstances change, adding a current applied signal to earlier memory-and-planning research.",
+      "practical_value": "Useful for teaching how persistent goals, saved context, planning, and execution need to be separated in recurring agent workflows.",
       "limitations": "Robotics results cannot be assumed to apply to general knowledge-work agents.",
       "next_action": "Check the experimental setup and search for independent applications outside robotics.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-14T12:15:00Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -476,6 +491,16 @@
           "checked_at": "2026-09-14T12:15:00Z",
           "development_id": "agentforce-job-ready-agents",
           "review_depth": "full publisher announcement"
+        },
+        {
+          "title": "Your Agent Can Sprint, But Can It Go the Distance?",
+          "url": "https://www.salesforce.com/blog/long-horizon-agents/",
+          "publisher": "Salesforce",
+          "kind": "primary",
+          "publication_date": "2026-09-16",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "salesforce-long-horizon-agents-2026-09-16",
+          "review_depth": "publisher article describing multi-session long-horizon agent behavior"
         }
       ],
       "external_attention": [
@@ -495,9 +520,14 @@
             "observed_at": "2026-09-14T12:15:00Z",
             "value": null,
             "source": "Independent new primary development; comparable public attention metric unavailable."
+          },
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "New publisher-authored applied development; comparable adoption metric unavailable."
           }
         ],
-        "reason": "A second independent primary development now supports the underlying capability; comparable popularity metrics remain unavailable."
+        "reason": "A current applied development strengthens the case for persistent context and planning across sessions."
       },
       "rubric": {
         "novelty": {
@@ -533,14 +563,14 @@
       "name": "Building 3D worlds through recursive code",
       "audience": "Creators and technical builders",
       "summary": "Represent scenes as editable programs and refine their parts through repeated visual comparison.",
-      "why_now": "Recursive Code World Models studies reconstructing complex scenes from a reference image.",
+      "why_now": "NVIDIA describes agentic workflows that inspect, prepare, and validate 3D scenes for simulation, adding an applied development to earlier recursive scene-program research.",
       "practical_value": "Could inform future interactive educational environments and editable generative media.",
       "limitations": "Early research; scene reconstruction is not proof of general physical simulation or broad deployment.",
       "next_action": "Inspect demonstrations and compare with other image-to-scene approaches.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-12T02:08:04.109758Z",
-      "status": "early_signal",
-      "confidence": "limited",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
       "evidence": [
         {
           "title": "Recursive Code World Models: Recursive Scene Programs",
@@ -561,6 +591,16 @@
           "checked_at": "2026-09-12T02:08:04.109758Z",
           "development_id": "2609.11499",
           "review_depth": "community listing and discussion"
+        },
+        {
+          "title": "How to Use AI Agents to Prepare 3D Scenes for Simulation",
+          "url": "https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/",
+          "publisher": "NVIDIA Developer",
+          "kind": "primary",
+          "publication_date": "2026-09-16",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "nvidia-agentic-3d-scene-prep-2026-09-16",
+          "review_depth": "publisher engineering article"
         }
       ],
       "external_attention": [
@@ -573,10 +613,16 @@
         }
       ],
       "momentum": {
-        "classification": "baseline",
+        "classification": "gaining_evidence",
         "score": null,
-        "observations": [],
-        "reason": "First watchlist observation; growth cannot yet be measured."
+        "observations": [
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "Independent applied primary development; comparable attention metric unavailable."
+          }
+        ],
+        "reason": "A second, independently published development moves the signal from isolated research toward applied tooling."
       },
       "rubric": {
         "novelty": {
@@ -588,12 +634,12 @@
           "reason": "Original source checked; deeper assessment and independent validation remain outstanding."
         },
         "independence": {
-          "score": 1,
-          "reason": "One underlying development; a community repost is not independent corroboration."
+          "score": 4,
+          "reason": "Two distinct primary developments from different organizations now support agent-assisted scene construction and validation."
         },
         "momentum": {
-          "score": null,
-          "reason": "No comparable earlier watchlist observation."
+          "score": 3,
+          "reason": "A new applied development was observed since the baseline; popularity growth is not inferred."
         },
         "relevance": {
           "score": 3,
@@ -605,7 +651,7 @@
         }
       },
       "trial_story_ids": [],
-      "research_score": 49
+      "research_score": 67
     },
     {
       "topic_id": "dab-topic-selective-precision-attention",
@@ -685,6 +731,507 @@
       },
       "trial_story_ids": [],
       "research_score": 45
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "name": "Reusable agent skills become observable",
+      "audience": "AI leaders, admins, and agent builders",
+      "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose actual use can be measured.",
+      "why_now": "GitHub added agentic customization activity to Copilot CLI usage metrics on September 17.",
+      "practical_value": "Makes the agent customization layer easier to govern, rationalize, and teach because organizations can see what is actually being used.",
+      "limitations": "Usage telemetry does not establish correctness, business value, or security of an individual skill or agent.",
+      "next_action": "Track which reusable skills and agent components are used, then pair usage with outcome and quality checks.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "early_signal",
+      "confidence": "moderate",
+      "evidence": [
+        {
+          "title": "Agentic CLI customizations now in the usage metrics API",
+          "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+          "publisher": "GitHub Changelog",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "github-agentic-cli-usage-metrics-2026-09-17",
+          "review_depth": "publisher changelog and metadata"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Agent Skills and MCP-style customizations are moving from configuration into measurable operations."
+        },
+        "evidence": {
+          "score": 5,
+          "reason": "Direct publisher evidence documents the new usage fields."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "One primary development currently anchors this signal."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier Watchlist observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to reusable agent skills, governance, and adoption."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Observability of agent components is likely to remain useful as agent stacks mature."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 70
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "name": "Agents that persist across sessions",
+      "audience": "Knowledge workers, consultants, and agent designers",
+      "summary": "Design agents around goals that continue over time instead of treating every interaction as a one-shot task.",
+      "why_now": "Salesforce published a September 16 explanation of long-horizon agents that continue across multiple sessions and adapt as conditions change.",
+      "practical_value": "Provides a practical model for recurring work: persistent goals, checkpoints, saved context, adaptation, and human review.",
+      "limitations": "Publisher explanation does not independently establish reliability over long-running real-world deployments.",
+      "next_action": "Define one recurring workflow with an explicit goal, checkpoints, resume state, and escalation conditions.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "early_signal",
+      "confidence": "moderate",
+      "evidence": [
+        {
+          "title": "Your Agent Can Sprint, But Can It Go the Distance?",
+          "url": "https://www.salesforce.com/blog/long-horizon-agents/",
+          "publisher": "Salesforce",
+          "kind": "primary",
+          "publication_date": "2026-09-16",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "salesforce-long-horizon-agents-2026-09-16",
+          "review_depth": "publisher article"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Cross-session goal persistence is a meaningful step beyond one-shot agent automation."
+        },
+        "evidence": {
+          "score": 4,
+          "reason": "Publisher-authored description is direct but not independent evaluation."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "One primary development anchors this topic."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier Watchlist observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Highly relevant to recurring knowledge-work agents."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Long-running work requires continuity regardless of specific vendor implementation."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 65
+    },
+    {
+      "topic_id": "dab-topic-ai-adoption-telemetry",
+      "name": "AI adoption measured at the feature level",
+      "audience": "AI program leaders and enterprise enablement teams",
+      "summary": "Move beyond seats and licenses to measure which AI capabilities people actually use and where enablement is needed.",
+      "why_now": "GitHub added feature-engagement views to its Copilot impact dashboard while Microsoft published an internal transformation playbook centered on learning from real deployments.",
+      "practical_value": "Supports targeted training, rollout decisions, and evidence-based AI adoption programs.",
+      "limitations": "Feature engagement is not the same as productivity, quality, or business impact.",
+      "next_action": "Pair feature-level usage with outcome measures for a small set of high-value workflows.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
+      "evidence": [
+        {
+          "title": "Copilot impact dashboard now shows feature engagement",
+          "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+          "publisher": "GitHub Changelog",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "github-copilot-feature-engagement-2026-09-17",
+          "review_depth": "publisher changelog"
+        },
+        {
+          "title": "What we’ve learned from Microsoft’s own AI transformation",
+          "url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+          "publisher": "Microsoft",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "microsoft-ai-transformation-playbook-2026-09-17",
+          "review_depth": "publisher transformation article"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "gaining_evidence",
+        "score": null,
+        "observations": [
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "Two independent publisher developments observed in the same period; popularity is not inferred."
+          }
+        ],
+        "reason": "Independent product and operating-model developments point toward evidence-based adoption management."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Feature-level adoption measurement is more specific than license-count reporting."
+        },
+        "evidence": {
+          "score": 5,
+          "reason": "Two direct publisher sources support the operational pattern."
+        },
+        "independence": {
+          "score": 5,
+          "reason": "Independent developments from GitHub and Microsoft."
+        },
+        "momentum": {
+          "score": 3,
+          "reason": "Multiple current developments appeared in the same week."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly useful to enterprise AI adoption and consulting work."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Usage-to-outcome measurement is a durable adoption discipline."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 88
+    },
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "name": "AI harness engineering becomes a first-class layer",
+      "audience": "Agent builders and AI engineering teams",
+      "summary": "Treat the harness around a model—tools, constraints, state, verification, and control loops—as an engineering system in its own right.",
+      "why_now": "Salesforce published an accessible harness explanation while new research isolates harness design choices for coding and robot-manipulation agents.",
+      "practical_value": "Helps teams improve agents without assuming every gain must come from changing the underlying model.",
+      "limitations": "The research is early and results from coding or robotics may not transfer directly to other agent domains.",
+      "next_action": "Document the harness around one production agent and identify which component—tooling, state, verification, permissions, or loop control—is limiting reliability.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
+      "evidence": [
+        {
+          "title": "What Does an AI Harness Have To Do With Growing Business?",
+          "url": "https://www.salesforce.com/blog/small-business/ai-harness-explained-for-smbs/",
+          "publisher": "Salesforce",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "salesforce-ai-harness-smb-2026-09-17",
+          "review_depth": "publisher explanation"
+        },
+        {
+          "title": "An Empirical Study of Harness Design for Coding Agents",
+          "url": "https://arxiv.org/abs/2609.20804v1",
+          "publisher": "arXiv",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "coding-agent-harness-study-2026-09-17",
+          "review_depth": "original arXiv abstract and metadata"
+        },
+        {
+          "title": "Coding Agents with an Obstacle-Aware Harness for Safe Robot Manipulation",
+          "url": "https://arxiv.org/abs/2609.20822v1",
+          "publisher": "arXiv",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "obstacle-aware-robot-harness-2026-09-17",
+          "review_depth": "original arXiv abstract and metadata"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "gaining_evidence",
+        "score": null,
+        "observations": [
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "Three current primary developments across applied and research settings."
+          }
+        ],
+        "reason": "Multiple current developments make harness design a distinct engineering topic rather than a background implementation detail."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "The harness is increasingly being studied and explained as a separable source of agent capability and safety."
+        },
+        "evidence": {
+          "score": 4,
+          "reason": "Direct publisher evidence plus two new preprints."
+        },
+        "independence": {
+          "score": 4,
+          "reason": "Developments come from Salesforce and separate research teams."
+        },
+        "momentum": {
+          "score": 4,
+          "reason": "Several developments appeared within days."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Highly relevant to reliable agents, evaluation, and workflow design."
+        },
+        "durability": {
+          "score": 5,
+          "reason": "Harness engineering is likely to remain central as models become more interchangeable."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 89
+    },
+    {
+      "topic_id": "dab-topic-agentic-edge-inference",
+      "name": "Agentic workloads move toward measured edge inference",
+      "audience": "AI engineers and technical leaders",
+      "summary": "Benchmark model and agent workloads with workload-specific measurements, including deployment on constrained edge hardware.",
+      "why_now": "NVIDIA published AIPerf guidance for LLM inference and a separate MLPerf Edge Agentic benchmark result on Jetson AGX Thor.",
+      "practical_value": "Encourages teams to measure latency, throughput, and agent workload behavior rather than relying on generic model-speed claims.",
+      "limitations": "Vendor benchmarks do not establish equivalent performance across other hardware, models, or production workloads.",
+      "next_action": "Define a representative workload and benchmark it on the actual deployment target before making infrastructure decisions.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
+      "evidence": [
+        {
+          "title": "Benchmarking LLM Inference at Scale with AIPerf",
+          "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+          "publisher": "NVIDIA Developer",
+          "kind": "primary",
+          "publication_date": "2026-09-18",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "nvidia-aiperf-llm-inference-2026-09-18",
+          "review_depth": "publisher engineering article"
+        },
+        {
+          "title": "TensorRT Edge-LLM Completes the MLPerf Edge Agentic Benchmark 6.4x Faster on Jetson AGX Thor",
+          "url": "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/",
+          "publisher": "NVIDIA Developer",
+          "kind": "primary",
+          "publication_date": "2026-09-16",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "nvidia-edge-agentic-benchmark-2026-09-16",
+          "review_depth": "publisher benchmark article"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "gaining_evidence",
+        "score": null,
+        "observations": [
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "Two current benchmark-oriented primary developments."
+          }
+        ],
+        "reason": "Current benchmark work is expanding from generic inference toward agentic and edge-specific workloads."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Agentic edge benchmarking is a newer extension of established inference measurement."
+        },
+        "evidence": {
+          "score": 4,
+          "reason": "Two direct NVIDIA engineering sources; independent replication remains limited."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "Two developments but from the same publisher."
+        },
+        "momentum": {
+          "score": 3,
+          "reason": "Multiple current publications in the same week."
+        },
+        "relevance": {
+          "score": 4,
+          "reason": "Relevant to deployment cost, latency, and physical/edge agents."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Workload-specific benchmarking remains useful even as hardware and models change."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 71
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "name": "Model lifecycle governance for AI products",
+      "audience": "AI admins, platform owners, and engineering leaders",
+      "summary": "Treat model selection, policy, deprecation, and migration as an ongoing operational discipline.",
+      "why_now": "GitHub announced selected Copilot model deprecations for October 19 and its weekly Copilot release summary highlighted continuing model-selection changes.",
+      "practical_value": "Helps teams avoid brittle workflows that silently depend on a model that may be replaced or disabled.",
+      "limitations": "This signal currently comes from one product ecosystem and should not be generalized to every AI platform.",
+      "next_action": "Inventory workflows that pin or assume a specific model and define a tested replacement path.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "gaining_evidence",
+      "confidence": "moderate",
+      "evidence": [
+        {
+          "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+          "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+          "publisher": "GitHub Changelog",
+          "kind": "primary",
+          "publication_date": "2026-09-18",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "github-copilot-model-deprecation-2026-09-18",
+          "review_depth": "publisher changelog"
+        },
+        {
+          "title": "GitHub Copilot weekly releases — September 14",
+          "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+          "publisher": "GitHub Changelog",
+          "kind": "primary",
+          "publication_date": "2026-09-18",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "github-copilot-weekly-model-selection-2026-09-18",
+          "review_depth": "publisher weekly release summary"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "gaining_evidence",
+        "score": null,
+        "observations": [
+          {
+            "observed_at": "2026-09-19T17:09:07.447Z",
+            "value": null,
+            "source": "Two current product-lifecycle developments from the same ecosystem."
+          }
+        ],
+        "reason": "Repeated model-selection and deprecation changes reinforce lifecycle management as an operational concern."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 4,
+          "reason": "Model lifecycle policy is becoming visible to ordinary AI product operations."
+        },
+        "evidence": {
+          "score": 5,
+          "reason": "Direct publisher evidence documents the changes and deadline."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "Two developments but from one publisher ecosystem."
+        },
+        "momentum": {
+          "score": 3,
+          "reason": "Multiple related changes appeared in the same release window."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to teams standardizing AI workflows."
+        },
+        "durability": {
+          "score": 5,
+          "reason": "Model replacement and migration will remain recurring operational work."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 81
+    },
+    {
+      "topic_id": "dab-topic-agent-overclaiming",
+      "name": "Agents that overclaim task completion",
+      "audience": "Agent builders, evaluators, and reviewers",
+      "summary": "Measure whether an agent's final report accurately reflects what it actually completed.",
+      "why_now": "A September 17 preprint proposes measuring overclaiming when frontier agents report completion that conflicts with execution evidence.",
+      "practical_value": "Adds a concrete evaluation target for long-running agents: verify claims against artifacts, tests, logs, or environment state.",
+      "limitations": "Preprint evidence is early and does not establish prevalence across every model, agent harness, or task.",
+      "next_action": "Add a completion-verification check that compares an agent’s final claim with machine-checkable evidence.",
+      "first_detected": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Quantifying Overclaiming Propensity in Frontier LLM Agents",
+          "url": "https://arxiv.org/abs/2609.20812v1",
+          "publisher": "arXiv",
+          "kind": "primary",
+          "publication_date": "2026-09-17",
+          "checked_at": "2026-09-19T17:09:07.447Z",
+          "development_id": "frontier-agent-overclaiming-2026-09-17",
+          "review_depth": "original arXiv abstract and metadata"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; growth cannot yet be measured."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "Task-completion overclaiming isolates a specific reliability failure that is easy to miss in long agent runs."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "One new preprint provides primary evidence."
+        },
+        "independence": {
+          "score": 1,
+          "reason": "One underlying development so far."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "No comparable earlier Watchlist observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Highly relevant to agent evaluation and human review."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Claim-versus-evidence verification is a durable reliability practice."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 61
     }
   ]
 }
