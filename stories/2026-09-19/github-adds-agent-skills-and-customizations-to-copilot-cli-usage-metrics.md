@@ -33,6 +33,10 @@ reader_release: true
 
 
 
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding what instructions, references, tools, and constraints belong in a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 ## What to do now
 
 **Track reusable agent skills:** Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used.
