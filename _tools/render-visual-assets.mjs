@@ -4,7 +4,7 @@ import path from 'node:path';
 import os from 'node:os';
 import {execFileSync} from 'node:child_process';
 import {parseArgs} from '../_generator/lib/util.mjs';
-import {buildDeterministicSvg,inspectPng,visualAssetDecision} from '../_generator/lib/visual-output.mjs';
+import {buildDeterministicSvg,inspectPng,inspectWebp,visualAssetDecision} from '../_generator/lib/visual-output.mjs';
 
 const args=parseArgs(process.argv.slice(2));
 if(!args.kernel||!args.out)throw Error('Requires --kernel and --out');
@@ -18,8 +18,11 @@ const commandAvailable=name=>{try{execFileSync('sh',['-lc',`command -v ${name}`]
 const pngRendererVerified=policy.deterministic_png_enabled===true&&commandAvailable('rsvg-convert');
 const fallbackValid=(entry,date)=>{
  if(!entry?.path||!entry.alt||!entry.path.startsWith(`briefs/images/${date}/`)||!fs.existsSync(entry.path))return null;
- const inspection=inspectPng(fs.readFileSync(entry.path),{minimumWidth:policy.minimum_width||1200,minimumHeight:policy.minimum_height||630});
- return inspection.pass?inspection:null;
+ const bytes=fs.readFileSync(entry.path),ext=path.extname(entry.path).toLowerCase();
+ const inspection=ext==='.webp'
+   ? inspectWebp(bytes,{minimumWidth:policy.minimum_width||1200,minimumHeight:policy.minimum_height||630})
+   : inspectPng(bytes,{minimumWidth:policy.minimum_width||1200,minimumHeight:policy.minimum_height||630});
+ return ['.png','.webp'].includes(ext)&&inspection.pass?inspection:null;
 };
 
 for(const story of kernel.stories||[]){
