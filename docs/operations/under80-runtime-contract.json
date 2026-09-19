@@ -139,7 +139,9 @@
         "stop Work immediately; GitHub Actions validates remote PNG integrity"
       ],
       "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that truncated prior PNGs."
-    }
+    },
+    "generation_scope": "Generate each story image in its own independent image-generation request. Never request or accept a multi-story collage, newsletter panel, contact sheet, or combined six-story graphic as a story asset.",
+    "acceptance_scope": "Each accepted PNG must illustrate exactly one selected story and its verified evidence. A graphic that depicts multiple Brief stories or a generic unrelated concept fails the image gate."
   },
   "media": {
     "video_duration_ladder_seconds": [
