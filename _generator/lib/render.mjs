@@ -26,6 +26,9 @@ export function readerOrderedStories(stories,briefDate){
 function label(value) {
   return value.split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
 }
+function focusLabel(value,briefDate){
+  return value==='agents_non_technical_people'&&briefDate>='2026-09-19'?'Agents for Everyone':FOCUS[value];
+}
 
 function readerSafeItem(item) {
   if (!item || typeof item !== 'object') return item;
@@ -63,7 +66,7 @@ function renderStory(story, briefDate, displayOrdinal=story.ordinal) {
 
 ${renderReadingSupport(story,story.story_id,briefDate)}
 
-**Focus: ${FOCUS[story.focus]}**
+**Focus: ${focusLabel(story.focus,briefDate)}**
 
 **Date:** ${formatDate(story.event_date)}
 
@@ -169,7 +172,7 @@ ${readerRelease(edition.brief_date)?renderEditionOverview(edition)+'\n\n':watchl
 
 ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'general')}
 
-${renderVideo('Agents for Everyone', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
+${renderVideo(edition.brief_date>='2026-09-19'?'Agents for Everyone':'Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
 ${podcastBlock}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
 
