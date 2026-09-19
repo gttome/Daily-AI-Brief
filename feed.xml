@@ -4,7 +4,7 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-19T14:46:05Z</updated>
+  <updated>2026-09-19T17:11:51Z</updated>
   <entry>
     <title>Copilot code review adds clearer progress and smarter batch suggestions</title>
     <id>dab-story-2026-09-19-807056d1</id>
@@ -46,6 +46,34 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/" />
     <updated>2026-09-19T18:00:00Z</updated>
     <summary>Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.</summary>
+  </entry>
+  <entry>
+    <title>ChatGPT Privacy: What Not to Share and When to Double-Check</title>
+    <id>dab-video-2026-09-19-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-19/general/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>A concise official tutorial on minimizing sensitive data exposure and recognizing when an AI answer needs independent checking.</summary>
+  </entry>
+  <entry>
+    <title>Control AI Agents from Anywhere: 7 Open-Source Tools</title>
+    <id>dab-video-2026-09-19-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-19/agent-skills/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>A five-minute scan of current open-source agent tools, including persistent-context, desktop-automation, verification, and multi-agent projects.</summary>
+  </entry>
+  <entry>
+    <title>The AI Challenges Businesses Are Actually Focused On Right Now</title>
+    <id>dab-podcast-2026-09-19-business-ai-challenges</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-19/business-ai-challenges/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>Nathaniel Whittemore examines the AI concerns businesses are prioritizing in practice, including agent security, changing model choices, and control over enterprise data.</summary>
+  </entry>
+  <entry>
+    <title>Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything</title>
+    <id>dab-podcast-2026-09-19-open-source-ai-101</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-19/open-source-ai-101/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>Jordan Wilson surveys the changing trade-offs between open and closed models, local deployment, API economics, and always-on agentic systems.</summary>
   </entry>
   <entry>
     <title>Anthropic proposes three measurements for AI self-acceleration inside frontier labs</title>

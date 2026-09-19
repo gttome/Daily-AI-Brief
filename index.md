@@ -11,7 +11,7 @@ reader_release: true
 **Coverage period:** 24-hour primary window ending at 2026-09-19T12:03:00.000Z; recency fallback used for reviewed items outside the primary window.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 0 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-19-807056d1">Copilot code review adds clearer progress and smarter batch suggestions</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-49a474f5">GitHub schedules selected Copilot model deprecations for October 19</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-a4a2b339">Copilot impact dashboard now exposes feature engagement</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-928822d1">Microsoft codifies lessons from hundreds of internal AI transformation efforts</a><span>Article · about 16 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-5b233997">GitHub adds agent skills and customizations to Copilot CLI usage metrics</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-0a581a31">Salesforce explains why long-horizon agents need persistence across sessions</a><span>Article · about 11 min source read</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#worth-listening--podcast">Podcast</a><span>Podcast · No qualifying selection</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-19-807056d1">Copilot code review adds clearer progress and smarter batch suggestions</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-49a474f5">GitHub schedules selected Copilot model deprecations for October 19</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-a4a2b339">Copilot impact dashboard now exposes feature engagement</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-928822d1">Microsoft codifies lessons from hundreds of internal AI transformation efforts</a><span>Article · about 16 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-5b233997">GitHub adds agent skills and customizations to Copilot CLI usage metrics</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-0a581a31">Salesforce explains why long-horizon agents need persistence across sessions</a><span>Article · about 11 min source read</span></li><li><a href="#general">ChatGPT Privacy: What Not to Share and When to Double-Check</a><span>Video · 1:40</span></li><li><a href="#agents-for-non-technical-people">Control AI Agents from Anywhere: 7 Open-Source Tools</a><span>Video · 5:16</span></li><li><a href="#podcast-dab-podcast-2026-09-19-business-ai-challenges">The AI Challenges Businesses Are Actually Focused On Right Now</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-19-open-source-ai-101">Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
 <span id="reading-dab-story-2026-09-19-5b233997"></span>
@@ -35,7 +35,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.png?v=db8c2461e421ce10)
+![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f)
 
 **Summary:** GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.
 
@@ -75,7 +75,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67)
+![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44)
 
 **Summary:** Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.
 
@@ -115,7 +115,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde)
+![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87)
 
 **Summary:** GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.
 
@@ -155,7 +155,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.png?v=23a9427adac462b7)
+![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57)
 
 **Summary:** Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.
 
@@ -195,7 +195,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.png?v=78ce6ac61f3922e)
+![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea)
 
 **Summary:** GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.
 
@@ -235,7 +235,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.png?v=08aa57e524cd6658)
+![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176)
 
 **Summary:** GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.
 
@@ -260,17 +260,141 @@ reader_release: true
 
 ## 7. General
 
-No video met today’s editorial quality standards.
+### ChatGPT Privacy: What Not to Share and When to Double-Check
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>1:40 video</span></div></aside>
+<!-- reader-release:end -->
+
+<a href="{{ '/videos/2026-09-19/general/' | relative_url }}" data-item-id="dab-video-2026-09-19-general" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** OpenAI Academy  
+**Date:** September 17, 2026  
+**Runtime:** 1:40  
+**Format:** Video
+
+**Summary:** A concise official tutorial on minimizing sensitive data exposure and recognizing when an AI answer needs independent checking.
+
+**Why it matters:** It reinforces the brief’s operational-maturity theme: useful AI workflows need explicit review boundaries, not just faster output.
+
+
+
+**Source:** <a href="https://academy.openai.com/public/videos/privacy-and-double-checking-older-adults" data-item-id="dab-video-2026-09-19-general" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-video-2026-09-19-general">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
 
 <span id="agents-for-non-technical-people"></span>
 
 ## 8. Agents for Non-Technical People
 
-No video met today’s editorial quality standards.
+### Control AI Agents from Anywhere: 7 Open-Source Tools
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>5:16 video</span></div></aside>
+<!-- reader-release:end -->
+
+<a href="{{ '/videos/2026-09-19/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-19-agent-skills" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** HubMesh  
+**Date:** September 18, 2026  
+**Runtime:** 5:16  
+**Format:** Video
+
+**Summary:** A five-minute scan of current open-source agent tools, including persistent-context, desktop-automation, verification, and multi-agent projects.
+
+**Why it matters:** It gives readers concrete examples of the agent-control, context, and verification patterns behind today’s Agent Skills and long-horizon-agent stories.
+
+
+
+**Source:** <a href="https://hubmesh.dev/posts/2026-09-18-hubmesh-open-cowork-osir_9/" data-item-id="dab-video-2026-09-19-agent-skills" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on HubMesh</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-video-2026-09-19-agent-skills">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
 
 ## Worth Listening — Podcasts
 
-No podcast met today’s editorial quality standards.
+### 9. The AI Challenges Businesses Are Actually Focused On Right Now
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>30:06 podcast</span></div></aside>
+<!-- reader-release:end -->
+
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-19-business-ai-challenges" data-podcast-title="The AI Challenges Businesses Are Actually Focused On Right Now" data-podcast-url="/podcasts/2026-09-19/business-ai-challenges/" hidden></span>
+
+<a href="{{ '/podcasts/2026-09-19/business-ai-challenges/' | relative_url }}" data-item-id="dab-podcast-2026-09-19-business-ai-challenges" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
+**Show:** The AI Daily Brief  
+**Host / guest:** Nathaniel Whittemore  
+**Focus:** Agents for Non-Technical People  
+**Date:** September 18, 2026  
+**Duration:** 30:06 · No episode time limit  
+**Topics:** agent security, model choice, data control, enterprise AI
+
+**Summary:** Nathaniel Whittemore examines the AI concerns businesses are prioritizing in practice, including agent security, changing model choices, and control over enterprise data.
+
+**Why it matters:** It provides a current business-side view of the governance and control issues that become more important as agents gain more autonomy and persistence.
+
+**Connection to the brief:** Pairs with today’s Agent Skills metrics and long-horizon-agent stories by focusing on the organizational controls around agent deployment.
+
+
+
+**Coverage:** Primary 48-hour podcast window; source-diverse from Everyday AI.
+
+**Evidence:** Practitioner analysis. Apple Podcasts and independent podcast listings identify the episode as September 18, 2026, hosted by Nathaniel Whittemore, with a 30:06 runtime.
+
+**Listen / watch:** <a href="https://podcasts.apple.com/au/podcast/the-ai-challenges-businesses-are-actually-focused-on/id1680633614?i=1000790595438" data-item-id="dab-podcast-2026-09-19-business-ai-challenges" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-podcast-2026-09-19-business-ai-challenges">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+### 10. Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>37:50 podcast</span></div></aside>
+<!-- reader-release:end -->
+
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-19-open-source-ai-101" data-podcast-title="Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything" data-podcast-url="/podcasts/2026-09-19/open-source-ai-101/" hidden></span>
+
+<a href="{{ '/podcasts/2026-09-19/open-source-ai-101/' | relative_url }}" data-item-id="dab-podcast-2026-09-19-open-source-ai-101" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
+**Show:** Everyday AI  
+**Host / guest:** Jordan Wilson  
+**Focus:** Applied Generative AI for Knowledge Workers  
+**Date:** September 18, 2026  
+**Duration:** 37:50 · No episode time limit  
+**Topics:** open-source AI, local models, AI agents, model economics
+
+**Summary:** Jordan Wilson surveys the changing trade-offs between open and closed models, local deployment, API economics, and always-on agentic systems.
+
+**Why it matters:** The episode gives knowledge workers and AI leaders a practical framework for deciding where local or open models may fit alongside frontier hosted models.
+
+**Connection to the brief:** It complements today’s model-lifecycle and enterprise-transformation stories by framing model choice as an operating and cost decision rather than a one-time vendor choice.
+
+
+
+**Coverage:** Primary 48-hour podcast window; source-diverse from The AI Daily Brief.
+
+**Evidence:** Practitioner analysis. Buzzsprout lists September 18, 2026, Everyday AI episode 865, hosted by Jordan Wilson, runtime 37:50.
+
+**Listen / watch:** <a href="https://www.buzzsprout.com/2175779/episodes/19733545-ep-865-open-source-ai-101-why-local-models-cheap-apis-and-ai-agents-change-everything-start-here-series-vol-24?t=0" data-item-id="dab-podcast-2026-09-19-open-source-ai-101" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Everyday AI</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-podcast-2026-09-19-open-source-ai-101">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
 
 <!-- reader-release:start -->
 

@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {sha256} from './util.mjs';
+import {inspectPng,inspectWebp} from './visual-output.mjs';
 
 export function reviewedImages(edition, root) {
   if (edition.brief_date < '2026-09-10') return {legacy:true, assets:[], errors:[]};
@@ -21,10 +22,12 @@ export function reviewedImages(edition, root) {
     const filename=path.resolve(root,i.asset);
     if(!filename.startsWith(path.resolve(root)+path.sep)||!i.asset.startsWith(`briefs/images/${edition.brief_date}/`)){errors.push('Unsafe or cross-edition asset path');continue;}
     try{
-      const bytes=fs.readFileSync(filename),hash=sha256(bytes);
-      if(bytes.subarray(0,8).toString('hex')!=='89504e470d0a1a0a'||bytes.readUInt32BE(16)!==1200||bytes.readUInt32BE(20)!==630)errors.push(`Invalid final PNG canvas: ${i.asset}`);
+      const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.asset).toLowerCase();
+      const inspection=ext==='.webp'?inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630}):inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
+      const width=inspection.width||0,height=inspection.height||0;
+      if(!['.png','.webp'].includes(ext)||!inspection.pass||width!==1200||height!==630)errors.push(`Invalid final image canvas: ${i.asset}`);
       if(hash!==i.replacement_sha256)errors.push(`Reviewed image bytes changed: ${i.asset}`);
-      hashes.add(hash);assets.push({path:i.asset,sha256:hash,bytes:bytes.length});
+      hashes.add(hash);assets.push({path:i.asset,sha256:hash,bytes:bytes.length,width,height,format:ext.slice(1)});
     }catch{errors.push(`Missing or unreadable image: ${i.asset}`);}
   }
   if(compositions.size!==6||hashes.size!==6)errors.push('Repeated image or repeated composition evidence requires renewed visual review');
@@ -49,12 +52,11 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     const filename=path.resolve(root,i.path||'');
     if(!filename.startsWith(base+path.sep)||!String(i.path||'').startsWith(`briefs/images/${edition.brief_date}/`)){errors.push('Unsafe or cross-edition handoff asset path');continue;}
     try{
-      const bytes=fs.readFileSync(filename),hash=sha256(bytes);
-      const png=bytes.length>=24&&bytes.subarray(0,8).toString('hex')==='89504e470d0a1a0a';
-      const width=png?bytes.readUInt32BE(16):0,height=png?bytes.readUInt32BE(20):0;
-      const ratio=height?width/height:0,target=1200/630;
-      if(!png||width<1200||height<630||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff PNG canvas: ${i.path}`);
-      if(i.sha256!==hash)errors.push(`Accepted handoff image bytes changed: ${i.path}`);
+      const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.path).toLowerCase();
+      const inspection=ext==='.webp'?inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630}):inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
+      const width=inspection.width||0,height=inspection.height||0,ratio=height?width/height:0,target=1200/630;
+      if(!['.png','.webp'].includes(ext)||!inspection.pass||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff image canvas: ${i.path}`);
+      if(i.sha256&&i.sha256!==hash)errors.push(`Accepted handoff image bytes changed: ${i.path}`);
       if(Number.isInteger(story.image?.width)&&story.image.width!==width)errors.push(`Edition image width mismatch: ${i.path}`);
       if(Number.isInteger(story.image?.height)&&story.image.height!==height)errors.push(`Edition image height mismatch: ${i.path}`);
       hashes.add(hash);assets.push({path:i.path,sha256:hash,bytes:bytes.length});

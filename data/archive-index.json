@@ -129,6 +129,93 @@
       "summary": "Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change."
     },
     {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-19-general",
+      "brief_date": "2026-09-19",
+      "event_date": "2026-09-17",
+      "headline": "ChatGPT Privacy: What Not to Share and When to Double-Check",
+      "url": "/videos/2026-09-19/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "OpenAI Academy"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "A concise official tutorial on minimizing sensitive data exposure and recognizing when an AI answer needs independent checking."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-19-agent-skills",
+      "brief_date": "2026-09-19",
+      "event_date": "2026-09-18",
+      "headline": "Control AI Agents from Anywhere: 7 Open-Source Tools",
+      "url": "/videos/2026-09-19/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "HubMesh"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A five-minute scan of current open-source agent tools, including persistent-context, desktop-automation, verification, and multi-agent projects."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-19-business-ai-challenges",
+      "brief_date": "2026-09-19",
+      "event_date": "2026-09-18",
+      "headline": "The AI Challenges Businesses Are Actually Focused On Right Now",
+      "url": "/podcasts/2026-09-19/business-ai-challenges/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent security",
+        "model choice",
+        "data control",
+        "enterprise AI"
+      ],
+      "companies": [
+        "The AI Daily Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Nathaniel Whittemore examines the AI concerns businesses are prioritizing in practice, including agent security, changing model choices, and control over enterprise data."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-19-open-source-ai-101",
+      "brief_date": "2026-09-19",
+      "event_date": "2026-09-18",
+      "headline": "Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything",
+      "url": "/podcasts/2026-09-19/open-source-ai-101/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "open-source AI",
+        "local models",
+        "AI agents",
+        "model economics"
+      ],
+      "companies": [
+        "Everyday AI"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Jordan Wilson surveys the changing trade-offs between open and closed models, local deployment, API economics, and always-on agentic systems."
+    },
+    {
       "content_type": "Article",
       "story_id": "dab-story-2026-09-18-2cda8d5e",
       "brief_date": "2026-09-18",

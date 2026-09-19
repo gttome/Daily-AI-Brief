@@ -13,10 +13,12 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-28 supporting stories appeared in the latest 7 days and 69 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+30 supporting stories appeared in the latest 7 days and 69 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 19, 2026]({{ '/videos/2026-09-19/agent-skills/' | relative_url }})
+- [September 19, 2026]({{ '/podcasts/2026-09-19/business-ai-challenges/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
 - [September 17, 2026]({{ '/stories/2026-09-17/openai-builds-a-standing-misalignment-disclosure-process/' | relative_url }})
@@ -119,10 +121,11 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-13 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+14 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 19, 2026]({{ '/videos/2026-09-19/agent-skills/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/' | relative_url }})
 - [September 18, 2026]({{ '/podcasts/2026-09-18/ai-search-discovery/' | relative_url }})
@@ -292,13 +295,16 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-40 supporting stories appeared in the latest 7 days and 119 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+43 supporting stories appeared in the latest 7 days and 119 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
 - [September 19, 2026]({{ '/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/' | relative_url }})
 - [September 19, 2026]({{ '/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/' | relative_url }})
 - [September 19, 2026]({{ '/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/' | relative_url }})
+- [September 19, 2026]({{ '/videos/2026-09-19/agent-skills/' | relative_url }})
+- [September 19, 2026]({{ '/podcasts/2026-09-19/business-ai-challenges/' | relative_url }})
+- [September 19, 2026]({{ '/podcasts/2026-09-19/open-source-ai-101/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/' | relative_url }})

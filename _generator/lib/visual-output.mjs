@@ -29,6 +29,36 @@ export function inspectPng(buffer,{minimumWidth=VISUAL_CANVAS.width,minimumHeigh
  return {pass:errors.length===0,errors,width,height,bytes:buffer.length,chunks,sha256:createHash('sha256').update(buffer).digest('hex')};
 }
 
+
+export function inspectWebp(buffer,{minimumWidth=VISUAL_CANVAS.width,minimumHeight=VISUAL_CANVAS.height}={}){
+ const errors=[];if(!Buffer.isBuffer(buffer))buffer=Buffer.from(buffer||[]);
+ const sha256=createHash('sha256').update(buffer).digest('hex');
+ if(buffer.length<30||buffer.subarray(0,4).toString('ascii')!=='RIFF'||buffer.subarray(8,12).toString('ascii')!=='WEBP')return {pass:false,errors:['invalid_webp_signature_or_truncated'],width:null,height:null,bytes:buffer.length,sha256};
+ const declared=buffer.readUInt32LE(4)+8;if(declared!==buffer.length)errors.push('webp_riff_size_mismatch');
+ let offset=12,width=null,height=null,seenImage=false,chunks=0;
+ while(offset+8<=buffer.length){
+  const type=buffer.subarray(offset,offset+4).toString('ascii'),length=buffer.readUInt32LE(offset+4),dataStart=offset+8,dataEnd=dataStart+length,paddedEnd=dataEnd+(length&1);
+  if(dataEnd>buffer.length){errors.push(`truncated_chunk:${type||'unknown'}`);break;}
+  chunks++;
+  if(type==='VP8X'&&length>=10){width=1+buffer.readUIntLE(dataStart+4,3);height=1+buffer.readUIntLE(dataStart+7,3);}
+  if(type==='VP8 '&&length>=10){
+   if(buffer[dataStart+3]===0x9d&&buffer[dataStart+4]===0x01&&buffer[dataStart+5]===0x2a){width=buffer.readUInt16LE(dataStart+6)&0x3fff;height=buffer.readUInt16LE(dataStart+8)&0x3fff;seenImage=true;}
+   else errors.push('invalid_vp8_frame_header');
+  }
+  if(type==='VP8L'&&length>=5){
+   if(buffer[dataStart]===0x2f){const b1=buffer[dataStart+1],b2=buffer[dataStart+2],b3=buffer[dataStart+3],b4=buffer[dataStart+4];width=1+(((b2&0x3f)<<8)|b1);height=1+(((b4&0x0f)<<10)|(b3<<2)|((b2&0xc0)>>6));seenImage=true;}
+   else errors.push('invalid_vp8l_frame_header');
+  }
+  offset=paddedEnd;
+ }
+ if(offset!==buffer.length)errors.push('bytes_after_webp_chunks');
+ if(!seenImage&&!buffer.includes(Buffer.from('VP8 '))&&!buffer.includes(Buffer.from('VP8L')))errors.push('missing_webp_image_chunk');
+ if(!width||!height)errors.push('missing_webp_dimensions');
+ if(width&&width<minimumWidth)errors.push(`width_below_${minimumWidth}`);
+ if(height&&height<minimumHeight)errors.push(`height_below_${minimumHeight}`);
+ return {pass:errors.length===0,errors:[...new Set(errors)],width,height,bytes:buffer.length,sha256,chunks};
+}
+
 export function inspectSvg(spec,svg){
  const errors=[];const gate=visualQualityGate(spec);if(!gate.pass)errors.push(...gate.errors);
  if(typeof svg!=='string'||!svg.startsWith('<svg'))errors.push('svg_required');
