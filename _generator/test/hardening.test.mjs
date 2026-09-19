@@ -66,3 +66,15 @@ test('full derived generation stays within the integration performance budget', 
   assert.ok(outputs.size >= 130);
   assert.ok(elapsed < 3000, `generation took ${elapsed}ms`);
 });
+
+
+test('September 19 publication contract requires exactly two videos and two podcasts',()=>{
+  const current=JSON.parse(fs.readFileSync(path.join(root,'_data/editions/2026-09-19.json'),'utf8'));
+  assert.deepEqual(validateEdition(current),[]);
+  const missingVideo=structuredClone(current);
+  missingVideo.worth_watching.general={status:'empty',exception:'simulated missing video'};
+  assert.ok(validateEdition(missingVideo).some(error=>error.includes('exactly two included videos')));
+  const missingPodcast=structuredClone(current);
+  missingPodcast.podcasts=missingPodcast.podcasts.slice(0,1);
+  assert.ok(validateEdition(missingPodcast).some(error=>error.includes('exactly two included podcasts')));
+});
