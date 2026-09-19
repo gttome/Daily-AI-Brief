@@ -210,6 +210,7 @@
     "open or reuse protected publication PR",
     "required CI and protected promotion",
     "Pages completion",
+    "generate a runtime Pages completion evidence receipt for deterministic validation without requiring a second production content commit",
     "deterministic delta validation with zero model calls",
     "public-safe Command Center delta"
   ],
@@ -301,5 +302,23 @@
     "updated_at_must_be_same_edition_date": true,
     "every_topic_requires_evidence": true,
     "failure": "A stale or unreviewed Watchlist blocks publication; preserve the last valid edition and run targeted Watchlist recovery."
+  },
+  "completion_evidence": {
+    "mode": "runtime_artifact_with_repository_history",
+    "workflow": ".github/workflows/daily-delta-validation.yml",
+    "validation_override": "_tools/daily-validation.mjs --completion <runtime-completion-json>",
+    "required_fields": [
+      "edition_id",
+      "phase",
+      "commit_sha",
+      "pages.run_id",
+      "pages.conclusion",
+      "pages.verified_at"
+    ],
+    "required_phase": "pages_verified",
+    "required_pages_conclusion": "success",
+    "artifact_retention_days": 30,
+    "rule": "After required CI succeeds, deterministic validation resolves the matching successful GitHub Pages deployment for the exact main SHA, derives completion evidence from the latest validated publication event, and stores that evidence with the validation artifact. A missing same-day repository completion file must not force another content publication or model pass.",
+    "repository_completion_role": "Historical repository completion.json records remain valid durable evidence when present; normal validation must not require a second protected-main commit solely to create that record."
   }
 }
