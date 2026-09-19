@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -18,7 +18,9 @@
     ],
     "reusable_agent_skills_stories": 1,
     "videos_target": 2,
-    "podcast_target": 2
+    "podcast_target": 2,
+    "videos_required": 2,
+    "podcasts_required": 2
   },
   "freshness": {
     "prefer_hours": 24,
@@ -141,13 +143,28 @@
       "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that truncated prior PNGs."
     },
     "generation_scope": "Generate each story image in its own independent image-generation request. Never request or accept a multi-story collage, newsletter panel, contact sheet, or combined six-story graphic as a story asset.",
-    "acceptance_scope": "Each accepted PNG must illustrate exactly one selected story and its verified evidence. A graphic that depicts multiple Brief stories or a generic unrelated concept fails the image gate.",
+    "acceptance_scope": "Each accepted image must illustrate exactly one selected story and its verified evidence. Multi-story collages, newsletter panels, contact sheets, generic placeholders, or combined six-story graphics fail the gate.",
     "emergency_deterministic_fallback": {
       "allowed": true,
       "condition": "OpenAI image generation repeatedly returns multi-story/collage output that fails generation_scope and blocks same-day publication",
       "method": "deterministic_editorial_diagram",
       "quality_requirements": "story-specific, evidence-grounded, 1200x630 minimum, readable labels, white/near-white background, safe margins; never reuse a combined image",
       "audit_required": true
+    },
+    "accepted_asset_lock": {
+      "effective_date": "2026-09-19",
+      "required": true,
+      "fields": [
+        "quality_accepted",
+        "accepted_locked",
+        "lock_status",
+        "path",
+        "width",
+        "height"
+      ],
+      "rule": "Once a story image passes quality and binary-integrity review, persist it in briefs/images/YYYY-MM-DD/, mark accepted_locked, and reuse it on every retry, repair, QA run, Command Center view, and republication unless the story materially changes or the binary is missing/corrupt.",
+      "public_serving_origin": "https://gttome.github.io/Daily-AI-Brief/",
+      "command_center_role": "viewer_and_status_only_not_authoritative_host"
     }
   },
   "media": {
@@ -160,7 +177,11 @@
     "podcasts_target": 2,
     "podcasts_source_diverse_when_two": true,
     "max_ai_daily_brief_podcasts": 1,
-    "bounded_omission_allowed": true
+    "bounded_omission_allowed": false,
+    "production_contract_effective_date": "2026-09-19",
+    "videos_required": 2,
+    "podcasts_required": 2,
+    "prepublication_verification_required": true
   },
   "work_owns": [
     "read one precomputed <=12000-character article evidence packet for nine balanced candidates; do not retrieve article sources in Work",
@@ -268,5 +289,11 @@
     "pages_deployment_allowed": false,
     "purpose": "Allows a full scheduled-equivalent cost/structure test through the editorial handoff while deterministically proving the post-editorial stage without any production release path.",
     "prework": "Prepare the historical qualification metadata preflight outside Work through the zero-model GitHub Actions preflight workflow; begin Work only after the isolated preflight branch has ready=true."
+  },
+  "watchlist": {
+    "minimum_fresh_observations": 12,
+    "max_bounded_fallback_checks": 20,
+    "daily_refresh_required": true,
+    "stale_state_rule": "A production edition may carry older topics for continuity, but the Watchlist edition_date must equal the publication date and the daily scan must meet the fresh-observation floor or be explicitly blocked/degraded before publication."
   }
 }
