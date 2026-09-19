@@ -112,3 +112,13 @@ test('current video and podcast sources open in a new tab', () => {
     assert.match(page, /target="_blank" rel="noopener noreferrer"/);
   }
 });
+
+
+test('current reader terminology uses Agents for Everyone while preserving the stable internal focus id', () => {
+  const current = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-19.json'), 'utf8'));
+  const files = readerFoundationFiles(current, root);
+  const combined = [files.get('archive.md'), ...[...files.values()]].join('\n');
+  assert.match(combined, /Agents for Everyone/);
+  assert.doesNotMatch(combined, /Agents for Non-Technical People/);
+  assert.ok(current.stories.some(story => story.focus === 'agents_non_technical_people'));
+});
