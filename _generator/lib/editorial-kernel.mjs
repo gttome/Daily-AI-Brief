@@ -83,7 +83,8 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
       ?'Outside the 24-hour primary window; included under the documented Agent Skills recency exception after bounded review.'
       :'Outside the 24-hour primary window; included under the documented recency fallback after bounded review.'};
   const storySlug=slug(story.headline),idSuffix=sha256(`${normalized.brief_date}|${story.candidate_id}`).slice(0,8);
-  const publicImage=`https://gttome.github.io/Daily-AI-Brief/${image.path}${image.cache_key?`?v=${encodeURIComponent(image.cache_key)}`:''}`;
+  const imageHost=normalized.brief_date>='2026-09-19'?'https://gttome.github.io/Daily-AI-Brief/':'https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/';
+  const publicImage=`${imageHost}${image.path}${image.cache_key?`?v=${encodeURIComponent(image.cache_key)}`:''}`;
   const sourceWordCount=Number.isInteger(fact.source_word_count)&&fact.source_word_count>0?fact.source_word_count:Number.isInteger(fact.source?.word_count)&&fact.source.word_count>0?fact.source.word_count:null;
   const sourceReading=sourceWordCount?{status:'verified',word_count:sourceWordCount,verified_at:fact.source_fetched_at||fact.source?.word_count_verified_at||publishedAt,method:fact.source_word_count_method||fact.source?.word_count_method||'retrieved_source_text_word_count',words_per_minute:200}:null;
   const selectionRationale=fact.selection_rationale||fact.score?.rationale||story.why_it_matters;
