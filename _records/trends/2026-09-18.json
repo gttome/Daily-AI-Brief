@@ -13,15 +13,14 @@
       "name": "Agent reliability and governance",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "31 supporting stories appeared in the latest 7 days and 70 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "30 supporting stories appeared in the latest 7 days and 70 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 31,
+        "recent_7_days": 30,
         "preceding_days": 70,
-        "total": 101
+        "total": 100
       },
       "supporting_story_ids": [
-        "dab-story-2026-09-18-2cda8d5e",
-        "dab-story-2026-09-18-c5d22f27",
+        "dab-story-2026-09-18-f947a943",
         "dab-story-2026-09-17-1a7c4e90",
         "dab-story-2026-09-17-2b8d5f01",
         "dab-story-2026-09-17-4daf7b23",
@@ -124,14 +123,9 @@
       ],
       "supporting_stories": [
         {
-          "story_id": "dab-story-2026-09-18-2cda8d5e",
+          "story_id": "dab-story-2026-09-18-f947a943",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/"
-        },
-        {
-          "story_id": "dab-story-2026-09-18-c5d22f27",
-          "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/"
+          "url": "/stories/2026-09-18/microsoft-frames-education-ai-around-educator-control-and-student-thinking/"
         },
         {
           "story_id": "dab-story-2026-09-17-1a7c4e90",
@@ -635,16 +629,13 @@
       "name": "Agent memory and context",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "16 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "13 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 16,
+        "recent_7_days": 13,
         "preceding_days": 43,
-        "total": 59
+        "total": 56
       },
       "supporting_story_ids": [
-        "dab-story-2026-09-18-bc42dd44",
-        "dab-story-2026-09-18-062b5025",
-        "dab-podcast-2026-09-18-ai-search-discovery",
         "dab-story-2026-09-17-2b8d5f01",
         "dab-story-2026-09-17-3c9e6a12",
         "dab-story-2026-09-17-5eb08c34",
@@ -703,21 +694,6 @@
         "dab-story-2026-08-20-396b7ecc"
       ],
       "supporting_stories": [
-        {
-          "story_id": "dab-story-2026-09-18-bc42dd44",
-          "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/"
-        },
-        {
-          "story_id": "dab-story-2026-09-18-062b5025",
-          "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/"
-        },
-        {
-          "story_id": "dab-podcast-2026-09-18-ai-search-discovery",
-          "brief_date": "2026-09-18",
-          "url": "/podcasts/2026-09-18/ai-search-discovery/"
-        },
         {
           "story_id": "dab-story-2026-09-17-2b8d5f01",
           "brief_date": "2026-09-17",
@@ -1012,9 +988,9 @@
         "total": 94
       },
       "supporting_story_ids": [
-        "dab-story-2026-09-18-3ac3c725",
-        "dab-story-2026-09-18-c5d22f27",
-        "dab-story-2026-09-18-bc42dd44",
+        "dab-story-2026-09-18-3b4029a5",
+        "dab-story-2026-09-18-6dae2514",
+        "dab-story-2026-09-18-d2d912ae",
         "dab-story-2026-09-17-4daf7b23",
         "dab-story-2026-09-16-9f13a2c7",
         "dab-story-2026-09-16-7e31bc48",
@@ -1109,19 +1085,19 @@
       ],
       "supporting_stories": [
         {
-          "story_id": "dab-story-2026-09-18-3ac3c725",
+          "story_id": "dab-story-2026-09-18-3b4029a5",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/"
+          "url": "/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/"
         },
         {
-          "story_id": "dab-story-2026-09-18-c5d22f27",
+          "story_id": "dab-story-2026-09-18-6dae2514",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/"
+          "url": "/stories/2026-09-18/github-s-copilot-dashboard-adds-feature-engagement-visibility/"
         },
         {
-          "story_id": "dab-story-2026-09-18-bc42dd44",
+          "story_id": "dab-story-2026-09-18-d2d912ae",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/"
+          "url": "/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/"
         },
         {
           "story_id": "dab-story-2026-09-17-4daf7b23",
@@ -1585,21 +1561,16 @@
       "name": "Accessible agents for knowledge work",
       "classification": "stable",
       "confidence": "high",
-      "rationale": "42 supporting stories appeared in the latest 7 days and 118 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
+      "rationale": "37 supporting stories appeared in the latest 7 days and 118 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.",
       "evidence_counts": {
-        "recent_7_days": 42,
+        "recent_7_days": 37,
         "preceding_days": 118,
-        "total": 160
+        "total": 155
       },
       "supporting_story_ids": [
-        "dab-story-2026-09-18-2cda8d5e",
-        "dab-story-2026-09-18-3ac3c725",
-        "dab-story-2026-09-18-87612b7e",
-        "dab-story-2026-09-18-c5d22f27",
-        "dab-story-2026-09-18-bc42dd44",
-        "dab-story-2026-09-18-062b5025",
-        "dab-podcast-2026-09-18-personal-ai-agents",
-        "dab-podcast-2026-09-18-ai-search-discovery",
+        "dab-story-2026-09-18-3b4029a5",
+        "dab-story-2026-09-18-d2d912ae",
+        "dab-story-2026-09-18-e696943b",
         "dab-story-2026-09-17-3c9e6a12",
         "dab-story-2026-09-17-4daf7b23",
         "dab-story-2026-09-17-5eb08c34",
@@ -1755,44 +1726,19 @@
       ],
       "supporting_stories": [
         {
-          "story_id": "dab-story-2026-09-18-2cda8d5e",
+          "story_id": "dab-story-2026-09-18-3b4029a5",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/"
+          "url": "/stories/2026-09-18/github-moves-workflow-execution-protections-to-general-availability/"
         },
         {
-          "story_id": "dab-story-2026-09-18-3ac3c725",
+          "story_id": "dab-story-2026-09-18-d2d912ae",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/"
+          "url": "/stories/2026-09-18/github-adds-reusable-skill-activity-to-copilot-cli-reporting/"
         },
         {
-          "story_id": "dab-story-2026-09-18-87612b7e",
+          "story_id": "dab-story-2026-09-18-e696943b",
           "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/"
-        },
-        {
-          "story_id": "dab-story-2026-09-18-c5d22f27",
-          "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/"
-        },
-        {
-          "story_id": "dab-story-2026-09-18-bc42dd44",
-          "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/"
-        },
-        {
-          "story_id": "dab-story-2026-09-18-062b5025",
-          "brief_date": "2026-09-18",
-          "url": "/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/"
-        },
-        {
-          "story_id": "dab-podcast-2026-09-18-personal-ai-agents",
-          "brief_date": "2026-09-18",
-          "url": "/podcasts/2026-09-18/personal-ai-agents/"
-        },
-        {
-          "story_id": "dab-podcast-2026-09-18-ai-search-discovery",
-          "brief_date": "2026-09-18",
-          "url": "/podcasts/2026-09-18/ai-search-discovery/"
+          "url": "/stories/2026-09-18/salesforce-distinguishes-long-running-agent-work-from-single-request-responses/"
         },
         {
           "story_id": "dab-story-2026-09-17-3c9e6a12",
