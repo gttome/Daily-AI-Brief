@@ -27,6 +27,10 @@ const fallbackValid=(entry,date)=>{
 
 for(const story of kernel.stories||[]){
  const candidateId=story.candidate_id,fb=fallback[candidateId],fbInspection=fallbackValid(fb,kernel.brief_date);
+ if(fb?.accepted_locked===true&&fb?.quality_accepted===true&&fb?.lock_status==='accepted_locked'&&fbInspection){
+  outputManifest[candidateId]={...fb,width:fbInspection.width,height:fbInspection.height,sha256:fbInspection.sha256,kind:fb.kind||'editorial_explainer',cache_key:fb.cache_key||fbInspection.sha256.slice(0,16)};
+  records.push({candidate_id:candidateId,story_id:story.story_id,path:'locked_asset_reuse',reason:'accepted_locked_asset',asset:fb.path,inspection:fbInspection});continue;
+ }
  const decision=visualAssetDecision(story.visual,{sep17ParityApproved:policy.sep17_parity_approved===true,pngRendererVerified,hasApprovedFallback:!!fbInspection});
  if(decision.path==='generative_fallback'){
   outputManifest[candidateId]={...fb,width:fbInspection.width,height:fbInspection.height,sha256:fbInspection.sha256,kind:fb.kind||'editorial_explainer',cache_key:fb.cache_key||fbInspection.sha256.slice(0,16)};
@@ -54,6 +58,6 @@ for(const story of kernel.stories||[]){
  }
 }
 const blocked=records.filter(x=>x.path==='blocked');
-const receipt={schema_version:'1.0.0',brief_date:kernel.brief_date,minimum_baseline:policy.minimum_baseline||'2026-09-17',sep17_parity_approved:policy.sep17_parity_approved===true,png_renderer_verified:pngRendererVerified,deterministic:records.filter(x=>x.path==='deterministic').length,generative_fallback:records.filter(x=>x.path==='generative_fallback').length,blocked:blocked.length,records};
+const receipt={schema_version:'1.0.0',brief_date:kernel.brief_date,minimum_baseline:policy.minimum_baseline||'2026-09-17',sep17_parity_approved:policy.sep17_parity_approved===true,png_renderer_verified:pngRendererVerified,locked_reuse:records.filter(x=>x.path==='locked_asset_reuse').length,deterministic:records.filter(x=>x.path==='deterministic').length,generative_fallback:records.filter(x=>x.path==='generative_fallback').length,blocked:blocked.length,records};
 fs.mkdirSync(path.dirname(path.resolve(args.out)),{recursive:true});fs.writeFileSync(path.resolve(args.out),JSON.stringify(outputManifest,null,2)+'\n');fs.writeFileSync(receiptPath,JSON.stringify(receipt,null,2)+'\n');console.log(JSON.stringify(receipt,null,2));
 if(blocked.length)process.exitCode=2;
