@@ -51,7 +51,7 @@ function parseStory(block, briefDate, repoRoot) {
   const image = block.content.match(/!\[([^\]]+)\]\((https?:\/\/[^)]+)\)/);
   if (!image) throw new Error(`Unable to parse story ${block.ordinal} image`);
   const imageUrl = image[2];
-  const imagePath = imageUrl.match(/raw\.githubusercontent\.com\/gttome\/Daily-AI-Brief\/[^/]+\/(briefs\/images\/[^?]+)/)?.[1];
+  const imagePath = imageUrl.match(/raw\.githubusercontent\.com\/gttome\/Daily-AI-Brief\/[^/]+\/(briefs\/images\/[^?]+)/)?.[1] || imageUrl.match(/gttome\.github\.io\/Daily-AI-Brief\/(briefs\/images\/[^?]+)/)?.[1];
   if (!imagePath) throw new Error(`Story ${block.ordinal} image must be a stable repository asset`);
   const source = block.content.match(/\*\*Source:\*\*\s*\[([^\]]+)\]\((https?:\/\/[^)]+)\)/i);
   if (!source) throw new Error(`Unable to parse story ${block.ordinal} source`);
