@@ -25,7 +25,7 @@ reader_release: true
 
 **Show:** The AI Daily Brief  
 **Host / guest:** Nathaniel Whittemore  
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 18, 2026  
 **Duration:** 30:06 · No episode time limit  
 **Topics:** agent security, model choice, data control, enterprise AI
