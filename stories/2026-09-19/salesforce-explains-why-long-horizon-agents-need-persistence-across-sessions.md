@@ -19,7 +19,7 @@ reader_release: true
 
 <span class="story-data" data-story-id="dab-story-2026-09-19-0a581a31" hidden></span>
 
-**Focus:** Agents for Non-Technical People  
+**Focus:** Agents for Everyone  
 **Date:** September 16, 2026  
 **Topics:** agents, long-horizon, persistent work  
 **Evidence:** Official Announcement  
