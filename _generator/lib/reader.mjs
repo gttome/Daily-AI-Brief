@@ -353,7 +353,7 @@ ${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,
 
 **Show:** ${slot.show}  
 **Host / guest:** ${slot.host}  
-**Focus:** ${focusLabels[slot.focus]}  
+**Focus:** ${focusLabelFor(slot.focus,briefDate)}  
 **Date:** ${formatDate(slot.publication_date)}  
 **Duration:** ${slot.runtime_seconds === null ? 'Not independently verified' : `${Math.floor(slot.runtime_seconds / 60)}:${String(slot.runtime_seconds % 60).padStart(2,'0')}`} · No episode time limit  
 **Topics:** ${slot.topics.join(', ')}
