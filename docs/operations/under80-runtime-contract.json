@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -115,7 +115,7 @@
     "normal_attempts_per_story": 1,
     "targeted_regeneration_only_on_actual_quality_failure": true,
     "reuse_only_same_edition_accepted_assets_on_recovery": true,
-    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": true,
+    "deterministic_visual_replacement_requires_explicit_side_by_side_parity_approval": false,
     "binary_transport": {
       "method": "github_git_data_api",
       "connector_tools": [
@@ -124,31 +124,54 @@
         "create_commit",
         "update_ref"
       ],
-      "blob_encoding_for_png": "base64",
-      "github_contents_api_for_png_prohibited": true,
       "native_git_credentials_required": false,
       "local_validator": "node _tools/validate-handoff-images.mjs --kernel _records/editorial-handoff/kernel.json --images _records/editorial-handoff/images.json",
       "atomic_commit_sequence": [
         "fetch current main commit and tree SHA",
         "create isolated editorial-handoff branch from that exact main SHA",
         "create UTF-8 blobs for handoff JSON artifacts",
-        "create base64 blobs for the six accepted PNG files",
+        "create base64 blobs for the six accepted PNG or WebP files",
         "create one tree over the trusted main tree using mode 100644/type blob entries",
         "create one commit with trusted main as parent",
         "advance only the isolated handoff branch with update_ref",
-        "stop Work immediately; GitHub Actions validates remote PNG integrity"
+        "stop Work immediately; GitHub Actions validates remote image integrity"
       ],
-      "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that truncated prior PNGs."
+      "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that corrupted prior binary image transfers.",
+      "blob_encoding_for_binary_images": "base64",
+      "accepted_formats": [
+        "webp",
+        "png"
+      ],
+      "github_contents_api_for_binary_images_prohibited": true
     },
     "generation_scope": "Generate each story image in its own independent image-generation request. Never request or accept a multi-story collage, newsletter panel, contact sheet, or combined six-story graphic as a story asset.",
-    "acceptance_scope": "Each accepted PNG must illustrate exactly one selected story and its verified evidence. A graphic that depicts multiple Brief stories or a generic unrelated concept fails the image gate.",
+    "acceptance_scope": "Each accepted image must illustrate exactly one selected story and its verified evidence. A multi-story collage, generic unrelated concept, or deterministic placeholder fails the production image gate.",
     "emergency_deterministic_fallback": {
-      "allowed": true,
-      "condition": "OpenAI image generation repeatedly returns multi-story/collage output that fails generation_scope and blocks same-day publication",
-      "method": "deterministic_editorial_diagram",
-      "quality_requirements": "story-specific, evidence-grounded, 1200x630 minimum, readable labels, white/near-white background, safe margins; never reuse a combined image",
+      "allowed": false,
+      "condition": "Not permitted for production editions beginning 2026-09-19.",
+      "method": null,
+      "quality_requirements": "Professional OpenAI-generated story-specific image quality at the September 17 or better baseline is mandatory.",
+      "failure": "Preserve the last valid edition and stop for targeted image recovery; never silently downgrade image quality.",
       "audit_required": true
-    }
+    },
+    "canonical_asset_store": {
+      "path_pattern": "briefs/images/YYYY-MM-DD/",
+      "reader_host": "https://gttome.github.io/Daily-AI-Brief/",
+      "policy": "Generate each story image once, validate once, persist once, then reuse the exact accepted bytes on publication retries, QA, Command Center synchronization, and proof reruns.",
+      "lock_fields": [
+        "accepted_locked",
+        "lock_status",
+        "git_blob_sha",
+        "cache_key"
+      ],
+      "required_lock_status": "accepted_locked",
+      "regeneration_allowed_only_if": [
+        "asset_missing_or_corrupt",
+        "selected_story_materially_changes"
+      ],
+      "command_center_role": "display status and canonical Brief asset references only; never maintain a second image copy"
+    },
+    "production_deterministic_replacement_prohibited": true
   },
   "media": {
     "video_duration_ladder_seconds": [
@@ -160,7 +183,10 @@
     "podcasts_target": 2,
     "podcasts_source_diverse_when_two": true,
     "max_ai_daily_brief_podcasts": 1,
-    "bounded_omission_allowed": true
+    "bounded_omission_allowed": false,
+    "videos_required": 2,
+    "podcasts_required": 2,
+    "failure": "If exactly two qualifying videos and two qualifying podcasts are not verified, preserve the last valid edition and stop for targeted media recovery."
   },
   "work_owns": [
     "read one precomputed <=12000-character article evidence packet for nine balanced candidates; do not retrieve article sources in Work",
@@ -213,7 +239,7 @@
       "metadata_candidates_max": 20,
       "image_transport_method": "github_git_data_api"
     },
-    "hard_stop": "After all six local images pass integrity validation, create the handoff atomically with authenticated GitHub Git Data API operations (create_blob/create_tree/create_commit/update_ref) and then end Work. Do not use native git authentication, GitHub Contents API, connector create_file/update_file, or text/base64 Contents writes for PNGs. GitHub Actions owns remote integrity validation and all deterministic downstream work.",
+    "hard_stop": "After all six accepted and locked images pass integrity validation, create the handoff atomically with authenticated GitHub Git Data API operations and end Work. Do not regenerate or retransmit accepted same-edition assets during recovery unless missing/corrupt or the story materially changes. GitHub Actions owns downstream deterministic validation and publication.",
     "template_path": "docs/operations/editorial-handoff-template.json",
     "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
     "production_branch_prefix": "editorial-handoff/production/",
@@ -233,7 +259,6 @@
     "article_evidence_copy_path": "_records/editorial-handoff/article-evidence.json",
     "git_data_transport": {
       "branch_creation": "create_branch from exact trusted main SHA",
-      "png_blob_creation": "create_blob with encoding=base64 using the complete local PNG bytes",
       "text_blob_creation": "create_blob with encoding=utf-8",
       "tree_entry_shape": {
         "mode": "100644",
@@ -243,7 +268,8 @@
       "create_commit_parent": "trusted main commit SHA",
       "finalize": "update_ref on the isolated handoff branch only; force=false",
       "no_contents_api_for_binary": true,
-      "no_native_git_credentials": true
+      "no_native_git_credentials": true,
+      "image_blob_creation": "create_blob with encoding=base64 using the complete accepted PNG or WebP bytes"
     }
   },
   "credits": {
@@ -268,5 +294,12 @@
     "pages_deployment_allowed": false,
     "purpose": "Allows a full scheduled-equivalent cost/structure test through the editorial handoff while deterministically proving the post-editorial stage without any production release path.",
     "prework": "Prepare the historical qualification metadata preflight outside Work through the zero-model GitHub Actions preflight workflow; begin Work only after the isolated preflight branch has ready=true."
+  },
+  "watchlist": {
+    "publication_freshness_required": true,
+    "edition_date_must_match_brief_date": true,
+    "updated_at_must_be_same_edition_date": true,
+    "every_topic_requires_evidence": true,
+    "failure": "A stale or unreviewed Watchlist blocks publication; preserve the last valid edition and run targeted Watchlist recovery."
   }
 }

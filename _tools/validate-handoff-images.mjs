@@ -17,7 +17,10 @@ for(const story of stories){
  if(!entry)errors.push('manifest_entry_missing');
  if(entry){
   if(entry.quality_accepted!==true)errors.push('quality_accepted_required');
-  if(!['openai_image_generation','deterministic_editorial_diagram'].includes(entry.generation_method))errors.push('approved_generation_method_required');
+  const strictLock=kernel.brief_date>='2026-09-19';
+  const approvedMethod=strictLock?entry.generation_method==='openai_image_generation':['openai_image_generation','deterministic_editorial_diagram'].includes(entry.generation_method);
+  if(!approvedMethod)errors.push('approved_generation_method_required');
+  if(strictLock&&(entry.accepted_locked!==true||entry.lock_status!=='accepted_locked'))errors.push('accepted_locked_required');
   if(typeof entry.path!=='string'||!entry.path.startsWith(`briefs/images/${kernel.brief_date}/`))errors.push('edition_image_path_required');
   if(!entry.path||!fs.existsSync(entry.path))errors.push('image_file_missing');
   else {

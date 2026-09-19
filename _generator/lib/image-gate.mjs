@@ -13,6 +13,8 @@ export function reviewedImages(edition, root) {
   if(!selected)return {assets:[],errors:['Missing mandatory final image review']};
   const r=selected.record, errors=[],assets=[];
   if(r.image_gate!=='pass'||!r.review_method||!r.reviewed_at)errors.push('Final image set has not passed documented visual review');
+  if(edition.brief_date>='2026-09-19'&&r.asset_policy!=='accepted_locked_reuse_only')errors.push('Final image set must use accepted_locked_reuse_only policy beginning 2026-09-19');
+  if(edition.brief_date>='2026-09-19'&&!/OpenAI/i.test(String(r.generation_method||'')))errors.push('Final image set must document professional OpenAI image generation beginning 2026-09-19');
   if(r.images?.length!==6)errors.push('Image review must cover exactly six final story images');
   const compositions=new Set(),hashes=new Set();
   for(const story of edition.stories){
@@ -47,7 +49,10 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     const matches=entries.filter(x=>x?.path===story.image?.path);
     if(matches.length!==1){errors.push(`Missing or ambiguous handoff visual approval: ${story.story_id}`);continue;}
     const i=matches[0];
-    if(i.quality_accepted!==true||!['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method))errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
+    const strictLock=edition.brief_date>='2026-09-19';
+    const approvedMethod=strictLock?i.generation_method==='openai_image_generation':['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
+    if(i.quality_accepted!==true||!approvedMethod)errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
+    if(strictLock&&(i.accepted_locked!==true||i.lock_status!=='accepted_locked'))errors.push(`Handoff visual must be accepted and locked: ${story.story_id}`);
     if(i.alt!==story.image?.alt)errors.push(`Handoff visual alt text mismatch: ${story.story_id}`);
     const filename=path.resolve(root,i.path||'');
     if(!filename.startsWith(base+path.sep)||!String(i.path||'').startsWith(`briefs/images/${edition.brief_date}/`)){errors.push('Unsafe or cross-edition handoff asset path');continue;}

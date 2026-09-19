@@ -116,3 +116,24 @@ export function assertMediaPreflight(edition, record, options={}) {
   if (errors.length) throw new Error(`Media preflight failed:\n- ${errors.join('\n- ')}`);
   return record;
 }
+ 
+export function validateWatchlistFreshness(edition,watchlist){
+  const errors=[];
+  if(!edition?.brief_date||edition.brief_date<'2026-09-19')return errors;
+  if(!watchlist||typeof watchlist!=='object')return ['Current-edition Watchlist is required'];
+  if(watchlist.edition_date!==edition.brief_date)errors.push('Watchlist edition_date must match brief_date');
+  const updated=Date.parse(watchlist.updated_at);
+  if(!Number.isFinite(updated)||new Date(updated).toISOString().slice(0,10)!==edition.brief_date)errors.push('Watchlist updated_at must be a valid same-edition-date timestamp');
+  if(!Array.isArray(watchlist.topics)||watchlist.topics.length<1)errors.push('Watchlist must contain at least one reviewed topic');
+  else for(const topic of watchlist.topics){
+    if(!topic?.topic_id||!topic?.name||!topic?.status||!topic?.confidence)errors.push('Every Watchlist topic requires identity, status, and confidence');
+    if(!Array.isArray(topic?.evidence)||topic.evidence.length<1)errors.push('Watchlist topic lacks evidence: '+(topic?.topic_id||'unknown'));
+  }
+  return [...new Set(errors)];
+}
+
+export function assertWatchlistFreshness(edition,watchlist){
+  const errors=validateWatchlistFreshness(edition,watchlist);
+  if(errors.length)throw new Error('Watchlist freshness failed:\n- '+errors.join('\n- '));
+  return watchlist;
+}

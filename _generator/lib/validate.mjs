@@ -91,6 +91,7 @@ export function validateEdition(edition) {
   });
   if(freshnessRequired&&fallbackCount>0&&!/recency fallback/i.test(edition.coverage_period||''))errors.push('coverage_period must disclose recency fallback use');
 
+  const completeMediaRequired=edition.brief_date>='2026-09-19';
   for (const slot of ['general', 'agents_non_technical_people']) {
     const video = edition.worth_watching?.[slot];
     if (!video) errors.push(`worth_watching.${slot} is required`);
@@ -105,11 +106,16 @@ export function validateEdition(edition) {
     }
     else if (!['empty', 'included'].includes(video.status)) errors.push(`worth_watching.${slot}.status is invalid`);
   }
+  if(completeMediaRequired){
+    const includedVideos=Object.values(edition.worth_watching||{}).filter(item=>item?.status==='included').length;
+    if(includedVideos!==2)errors.push('edition must contain exactly two included videos beginning 2026-09-19');
+  }
 
   const multiPodcast=edition.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE;
   if(multiPodcast&&edition.podcasts!==undefined&&!Array.isArray(edition.podcasts))errors.push('podcasts must be an array for new editions');
   if(multiPodcast&&edition.policy_profile==='full_v1'&&!Array.isArray(edition.podcasts))errors.push('podcasts collection is required for full_v1 editions beginning 2026-09-18');
   const podcasts=editionPodcasts(edition);
+  if(completeMediaRequired&&podcasts.length!==2)errors.push('edition must contain exactly two included podcasts beginning 2026-09-19');
   errors.push(...validatePodcastDiversity(edition));
   if(multiPodcast&&podcasts.length!==edition.podcasts?.length)errors.push('podcasts collection may contain only included podcast items');
   if(!multiPodcast&&edition.policy_profile==='full_v1'&&edition.brief_date>='2026-09-10'&&!edition.podcast)errors.push('podcast slot 9 is required');

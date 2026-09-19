@@ -34,3 +34,17 @@ test('deterministic expansion owns ids slugs URLs source metadata image metadata
 test('deterministic ownership keeps editorial semantics in the kernel and derived publication mechanics in code',()=>{
  const ownership=deterministicOwnership();assert.ok(ownership.owned_by_code.includes('archive_and_feed_derivatives'));assert.ok(ownership.owned_by_code.includes('completion_receipt'));assert.ok(ownership.owned_by_editorial_kernel.includes('story_selection'));assert.match(ownership.rule,/normal Work processing ends/);
 });
+
+
+test('September 19 expansion serves canonical images from the Brief domain',()=>{
+ const k=structuredClone(kernel);k.brief_date='2026-09-19';k.edition_id='dab-edition-2026-09-19';
+ const candidateFacts={},imageAssets={},metadataCandidates={cutoff:'2026-09-19T14:41:06Z',candidates:[]};
+ for(let i=0;i<6;i++){
+  candidateFacts[`candidate-${i+1}`]={event_date:'2026-09-18',companies:['Example AI'],source_word_count:800,source_word_count_method:'retrieved_source_text_whitespace_v1',source_fetched_at:'2026-09-19T11:00:00Z',source:{title:`Source ${i+1}`,organization:'Example AI',url:`https://example.org/story-${i+1}`,publication_date:'2026-09-18',evidence_type:'official_announcement',availability_status:'general_availability'},novelty:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:{significance:4,freshness:4,authority:5,evidence_quality:4,novelty:4,practical_value:4,category_fit:5,total:30},selection_rationale:'Qualified candidate.'};
+  metadataCandidates.candidates.push({candidate_id:`candidate-${i+1}`,canonical_url:`https://example.org/story-${i+1}`,published_at:'2026-09-18T10:00:00Z'});
+  imageAssets[`candidate-${i+1}`]={path:`briefs/images/2026-09-19/0${i+1}-story.webp`,alt:`Detailed story image ${i+1}.`,width:1200,height:630,kind:'editorial_explainer',cache_key:'abc123'};
+ }
+ const media={worth_watching:{general:{status:'included'},agents_non_technical_people:{status:'included'}},podcasts:[]};
+ const edition=expandEditorialKernel(k,{candidateFacts,imageAssets,metadataCandidates,media,publishedAt:'2026-09-19T15:00:00Z',coveragePeriod:'24-hour primary window ending at 2026-09-19T14:41:06Z.'});
+ assert.match(edition.stories[0].image.public_url,/^https:\/\/gttome\.github\.io\/Daily-AI-Brief\/briefs\/images\/2026-09-19\/01-story\.webp\?v=abc123$/);
+});

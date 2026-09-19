@@ -9,6 +9,7 @@ import {publicationOutcome, rollbackOutcome, validatePublicationFreshness, valid
 import {validateFeeds} from '../lib/reader.mjs';
 import {generatedFiles} from '../lib/render.mjs';
 import {validateEdition} from '../lib/validate.mjs';
+import {reviewedHandoffImages,reviewedImages} from '../lib/image-gate.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', '..');
 const edition = JSON.parse(fs.readFileSync(path.join(root, '_data/editions/2026-09-07.json'), 'utf8'));
@@ -65,4 +66,25 @@ test('full derived generation stays within the integration performance budget', 
   const start = performance.now(); const outputs = generatedFiles(edition, root); const elapsed = performance.now() - start;
   assert.ok(outputs.size >= 130);
   assert.ok(elapsed < 3000, `generation took ${elapsed}ms`);
+});
+
+
+test('September 19 publication contract requires exactly two videos and two podcasts',()=>{
+  const current=JSON.parse(fs.readFileSync(path.join(root,'_data/editions/2026-09-19.json'),'utf8'));
+  assert.deepEqual(validateEdition(current),[]);
+  const missingVideo=structuredClone(current);
+  missingVideo.worth_watching.general={status:'empty',exception:'simulated missing video'};
+  assert.ok(validateEdition(missingVideo).some(error=>error.includes('exactly two included videos')));
+  const missingPodcast=structuredClone(current);
+  missingPodcast.podcasts=missingPodcast.podcasts.slice(0,1);
+  assert.ok(validateEdition(missingPodcast).some(error=>error.includes('exactly two included podcasts')));
+});
+
+
+test('September 19 professional image set is locked and reusable',()=>{
+  const current=JSON.parse(fs.readFileSync(path.join(root,'_data/editions/2026-09-19.json'),'utf8'));
+  assert.deepEqual(reviewedImages(current,root).errors,[]);
+  assert.deepEqual(reviewedHandoffImages(current,root,'_records/editorial-handoff/images.json').errors,[]);
+  const manifest=JSON.parse(fs.readFileSync(path.join(root,'_records/editorial-handoff/images.json'),'utf8'));
+  assert.equal(Object.values(manifest).filter(x=>x.accepted_locked===true&&x.lock_status==='accepted_locked'&&x.generation_method==='openai_image_generation').length,6);
 });
