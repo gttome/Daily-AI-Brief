@@ -7,8 +7,8 @@ on:
     paths:
       - '_records/discovery-preflight/request.json'
   schedule:
-    - cron: '45 11 * * *'
-    - cron: '45 12 * * *'
+    - cron: '35 11 * * *'
+    - cron: '35 12 * * *'
 
 permissions:
   contents: write
@@ -41,7 +41,7 @@ jobs:
           if [ "$EVENT_NAME" = "schedule" ]; then
             local_stamp="$(node -e "const d=new Date();const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d);const o=Object.fromEntries(p.map(x=>[x.type,x.value]));process.stdout.write(o.year+'-'+o.month+'-'+o.day+'T'+o.hour+':'+o.minute)")"
             local_time="${local_stamp#*T}"
-            if [ "$local_time" != "06:45" ]; then
+            if [ "$local_time" != "06:35" ]; then
               echo "run_preflight=false" >> "$GITHUB_OUTPUT"
               echo "Second DST-covering cron skipped at local $local_stamp."
               exit 0
