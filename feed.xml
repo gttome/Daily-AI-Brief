@@ -4,7 +4,49 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-18T14:41:06Z</updated>
+  <updated>2026-09-19T14:46:05Z</updated>
+  <entry>
+    <title>Copilot code review adds clearer progress and smarter batch suggestions</title>
+    <id>dab-story-2026-09-19-807056d1</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.</summary>
+  </entry>
+  <entry>
+    <title>GitHub schedules selected Copilot model deprecations for October 19</title>
+    <id>dab-story-2026-09-19-49a474f5</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.</summary>
+  </entry>
+  <entry>
+    <title>Copilot impact dashboard now exposes feature engagement</title>
+    <id>dab-story-2026-09-19-a4a2b339</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>GitHub&apos;s Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft codifies lessons from hundreds of internal AI transformation efforts</title>
+    <id>dab-story-2026-09-19-928822d1</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.</summary>
+  </entry>
+  <entry>
+    <title>GitHub adds agent skills and customizations to Copilot CLI usage metrics</title>
+    <id>dab-story-2026-09-19-5b233997</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.</summary>
+  </entry>
+  <entry>
+    <title>Salesforce explains why long-horizon agents need persistence across sessions</title>
+    <id>dab-story-2026-09-19-0a581a31</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/" />
+    <updated>2026-09-19T18:00:00Z</updated>
+    <summary>Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.</summary>
+  </entry>
   <entry>
     <title>Anthropic proposes three measurements for AI self-acceleration inside frontier labs</title>
     <id>dab-story-2026-09-18-2cda8d5e</id>
@@ -1348,40 +1390,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-21/dual-gatekeeping-improves-ai-generated-educational-videos-by-refusing-weak-outpu/" />
     <updated>2026-08-21T18:00:00Z</updated>
     <summary>*When Saying No Makes Better Videos* evaluates an AI video-authoring pipeline with two gates. Educators first reshape generated scripts using multimedia-learning principles; automated metrics then flag problems in instructional coherence and narrative–visual synchronization. A study with 23 educators across three topics, combined with automated evaluation across seven science and philosophy topics, found that the human and automated gates independently improved the same instructional dimensions.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI previews cross-session safety monitoring that preserves Zero Data Retention</title>
-    <id>dab-story-2026-08-20-396b7ecc</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/" />
-    <updated>2026-08-20T18:00:00Z</updated>
-    <summary>OpenAI announced a preview of **Private Safety Processing**, intended to detect risky patterns across related interactions while keeping Zero Data Retention commitments. For eligible ZDR deployments, content remains on customer-controlled infrastructure; OpenAI is also developing customer-key-encrypted storage on its own infrastructure. Automated systems can analyze related interactions and return narrowly defined safety signals without giving OpenAI personnel the underlying prompts or responses. The company says early-customer testing is underway and a technical white paper is planned for September.</summary>
-  </entry>
-  <entry>
-    <title>SkillGate shows that agents need separate learning signals for selecting and executing skills</title>
-    <id>dab-story-2026-08-20-89c66468</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/skillgate-shows-that-agents-need-separate-learning-signals-for-selecting-and-exe/" />
-    <updated>2026-08-20T18:00:00Z</updated>
-    <summary>*SkillGate* studies how an agent learns which procedural skill to load during a long task. The authors identify **selector credit starvation**: ordinary outcome-based reinforcement learning spreads one final reward across the whole trajectory, so the few tokens that selected a skill receive little—and sometimes misleading—credit when later execution fails. SkillGate separates selection credit from execution credit. Across five agent benchmarks with a 16-skill candidate set, the reported trial-success rate for a 9B model rose from 40.8% after supervised fine-tuning to 53.2%; exposure to misleading skills fell substantially.</summary>
-  </entry>
-  <entry>
-    <title>EvalCEGAR evolves executable evaluation checks from an evaluator’s blind spots</title>
-    <id>dab-story-2026-08-20-6364926f</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/evalcegar-evolves-executable-evaluation-checks-from-an-evaluator-s-blind-spots/" />
-    <updated>2026-08-20T18:00:00Z</updated>
-    <summary>*Metrics That Write Themselves* proposes EvalCEGAR, a loop that searches for pairs of answers an existing evaluator scores identically even though one is correct and the other is not. Those counterexamples become the specification for a small Python operator that detects one named defect or abstains. On MBPP+ and HumanEval+, the system produced a 55-line operator that closed 15.4% of the gap between flagging nothing and a perfect filter on 428 unseen tasks. Six of eight runs admitted a useful operator, and all six improved out-of-sample filtering.</summary>
-  </entry>
-  <entry>
-    <title>ComponentBench proves that the harness can change computer-agent performance by over 30 points</title>
-    <id>dab-story-2026-08-20-f54a140b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/componentbench-proves-that-the-harness-can-change-computer-agent-performance-by-/" />
-    <updated>2026-08-20T18:00:00Z</updated>
-    <summary>ComponentBench introduces 2,910 programmatically verified tasks covering 97 common web-interface components, with cleaned human reference trajectories. Seven models were tested across four observation and action configurations. Within the same harness, changing only the observation/action representation shifted success by more than 30 percentage points for the same model: GPT-5 mini scored 83.1% with accessibility-tree observations and 48.9% with coordinate-only pixel control. Even the fastest configuration took 3.7 times as long as the matched human reference.</summary>
-  </entry>
-  <entry>
-    <title>Coding-agent rankings break under harmless code transformations</title>
-    <id>dab-story-2026-08-20-5d1fe565</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/" />
-    <updated>2026-08-20T18:00:00Z</updated>
-    <summary>*A Jagged Frontier* tests whether coding agents remain reliable when code is changed in ways that preserve its meaning, including identifier renaming, dead-code insertion, and control-flow rewrites. The researchers paired two agent scaffolds with four models across SWE-bench Verified and SWE-bench Pro. Most configurations showed small degradation, but the largest mean resolve-rate decline reached 6.7 percentage points, and six of 16 model–scaffold–dataset combinations degraded significantly. No model had a consistently best robustness ranking across scaffolds; the simpler mini-SWE-agent scaffold was generally more robust.</summary>
   </entry>
 </feed>

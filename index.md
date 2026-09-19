@@ -1,259 +1,253 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-09-18
+brief_date: 2026-09-19
 reader_release: true
 ---
 
-# Daily Generative AI Brief — September 18, 2026
+# Daily Generative AI Brief — September 19, 2026
 
-**Published:** September 18, 2026  
-**Coverage period:** September 17 sources reviewed for the September 18 edition. Recency fallback: exact posting times were unavailable; date-only sources are conservatively normalized and not asserted inside the exact 24-hour primary window.
+**Published:** September 19, 2026  
+**Coverage period:** 24-hour primary window ending at 2026-09-19T12:03:00.000Z; recency fallback used for reviewed items outside the primary window.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-18-2cda8d5e">Anthropic proposes three measurements for AI self-acceleration inside frontier labs</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-3ac3c725">GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-87612b7e">Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-c5d22f27">Salesforce makes Builder Central a natural-language front door for governed apps and agents</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-bc42dd44">Rovo lets teams teach repeatable work as custom skills in ordinary language</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-18-062b5025">Google gives a household agent its own identity, permissions, shared memory, and isolated computer</a><span>Article · Source reading time unavailable</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#podcast-dab-podcast-2026-09-18-personal-ai-agents">Why Everyone Is Getting Excited About Personal AI Agents</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-18-ai-search-discovery">How to get discovered in AI search</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 0 VIDEOS / 0 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-19-807056d1">Copilot code review adds clearer progress and smarter batch suggestions</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-49a474f5">GitHub schedules selected Copilot model deprecations for October 19</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-a4a2b339">Copilot impact dashboard now exposes feature engagement</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-928822d1">Microsoft codifies lessons from hundreds of internal AI transformation efforts</a><span>Article · about 16 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-5b233997">GitHub adds agent skills and customizations to Copilot CLI usage metrics</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-0a581a31">Salesforce explains why long-horizon agents need persistence across sessions</a><span>Article · about 11 min source read</span></li><li><a href="#general">General video</a><span>Video · No qualifying selection</span></li><li><a href="#agents-for-non-technical-people">Agent Skills video</a><span>Video · No qualifying selection</span></li><li><a href="#worth-listening--podcast">Podcast</a><span>Podcast · No qualifying selection</span></li></ol></section>
 <!-- reader-release:end -->
 
-<span id="reading-dab-story-2026-09-18-bc42dd44"></span>
+<span id="reading-dab-story-2026-09-19-5b233997"></span>
 
-## 1. Rovo lets teams teach repeatable work as custom skills in ordinary language
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Reusable Agent Skill:</strong> A reusable skill packages a repeated procedure, expected output and review responsibility for repeated use. The feature is rolling out rather than universally available, and Atlassian’s announcement does not provide independent evidence that automatically authored skills are complete, correct, or appropriately governed.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-11/atlassian-s-twg-cli-installs-one-reusable-skill-package-across-major-agent-tools/" target="_blank" rel="noopener noreferrer">Atlassian’s TWG CLI installs one reusable skill package across major agent tools</a></p><p>2026-09-11 · The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations.</p></div></aside>
-<!-- reader-release:end -->
-
-**Focus: Agents for Non-Technical People**
-
-**Date:** September 17, 2026
-
-**Topics:** Agent Skills, reusable workflows, Rovo, team context, no-code agents
-
-<span class="story-data" data-story-id="dab-story-2026-09-18-bc42dd44" data-story-url="/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/" hidden></span>
-
-<a href="{{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }}" data-item-id="dab-story-2026-09-18-bc42dd44" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Announcement  
-**Availability:** Rolling Out
-
-**What changed since last coverage:** The September 11 Atlassian story covered a CLI package for portable skills across agent tools. This release brings custom skill creation into Rovo Chat and Rovo Studio for nontechnical teams, alongside visible memory, agent mentions, and shareable conversations.
-
-![Textbook workflow showing a repeated team process converted into a reviewed Rovo custom skill and reused across shared conversations with memory and agent handoffs.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/05-rovo-skills.png?v=91a1b2c3efa2c3c2)
-
-**Summary:** Atlassian added visible memory controls, @mentionable agents, shareable chats, and custom skills to Rovo Chat. Users can describe a repeated process in natural language and have Rovo ask clarifying questions, build the skill, and let teams refine it in Chat or Rovo Studio; custom skills are rolling out across instances over the coming week.
-
-**Why it matters:** This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to colleagues, and combine it with shared conversational context without writing code.
-
-
-
-**What to do now — Turn one repeated team process into a reviewed skill:** Choose a recurring workflow with a clear owner, encode the steps and output standard, test edge cases, assign review responsibility, and revise the skill from real usage rather than treating the first draft as policy.
-
-**Source:** <a href="https://www.atlassian.com/blog/company-news/rovo-chat-new-features-september-2026" data-item-id="dab-story-2026-09-18-bc42dd44" data-edition-date="2026-09-18" data-action="source_clicks">New in Rovo Chat: Where context shapes your work</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-bc42dd44">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-18-062b5025"></span>
-
-## 2. Google gives a household agent its own identity, permissions, shared memory, and isolated computer
+## 1. GitHub adds agent skills and customizations to Copilot CLI usage metrics
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Agent identity and memory:</strong> A shared agent needs a distinct identity, explicit sharing boundaries and clear treatment of shared versus person-specific context. CC is an early U.S.-only Google Labs experiment for adults with personal Google accounts, with existing-user upgrades and a waitlist. The announcement does not establish reliability for consequential household actions.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Non-Technical People**
 
 **Date:** September 17, 2026
 
-**Topics:** consumer agents, identity, permissions, shared memory, isolated execution, Gemini
+**Topics:** Agent Skills, Copilot CLI, agent metrics
 
-<span class="story-data" data-story-id="dab-story-2026-09-18-062b5025" data-story-url="/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-19-5b233997" data-story-url="/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/" hidden></span>
 
-<a href="{{ '/stories/2026-09-18/google-gives-a-household-agent-its-own-identity-permissions-shared-memory-and-isolated-computer/' | relative_url }}" data-item-id="dab-story-2026-09-18-062b5025" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/' | relative_url }}" data-item-id="dab-story-2026-09-19-5b233997" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
-**Availability:** Experimental Waitlist
+**Availability:** Published
 
-![Textbook architecture diagram showing household members selectively sharing data with a distinct CC agent identity, separate memory scopes, permission gates, and an isolated cloud computer.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/06-household-agent-boundaries.png?v=5b4ff0fd59a81b50)
+![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/05-agentic-cli-metrics.png?v=db8c2461e421ce10)
 
-**Summary:** Google Labs expanded CC into an experimental household agent for up to six members. CC has its own Google Account, only sees information each person chooses to share, can connect to Gmail, Chat, Drive, Calendar and Tasks, can fill forms with permission, keeps shared and person-specific memory, and runs on an isolated cloud computer using Google’s agentic harness.
+**Summary:** GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.
 
-**Why it matters:** The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and isolated execution. Those are useful patterns for any multi-user agent, not just household logistics.
+**Why it matters:** Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.
 
 
 
-**What to do now — Use CC’s controls as an agent design checklist:** For any shared agent, specify who the agent is, who may instruct it, what each member shares, which actions require approval, how shared and private memory differ, and where execution is isolated.
+**What to do now — Track reusable agent skills:** Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used.
 
-**Source:** <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/cc-expanding-to-groups/" data-item-id="dab-story-2026-09-18-062b5025" data-edition-date="2026-09-18" data-action="source_clicks">The new CC, an AI agent built for families</a>
+**Source:** <a href="https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api" data-item-id="dab-story-2026-09-19-5b233997" data-edition-date="2026-09-19" data-action="source_clicks">GitHub adds agent skills and customizations to Copilot CLI usage metrics</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-062b5025">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-5b233997">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-18-87612b7e"></span>
+<span id="reading-dab-story-2026-09-19-0a581a31"></span>
 
-## 3. Microsoft’s internal AI playbook shifts transformation from tool adoption to redesigned work
+## 2. Salesforce explains why long-horizon agents need persistence across sessions
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Workflow redesign:</strong> Start with a business outcome, map the process, then change the work and measure the result. The performance figures are Microsoft-reported internal case studies with different scopes and time periods. They do not establish causal effects across organizations, and the playbook reflects Microsoft’s products and operating environment.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-10/microsoft-argues-ai-value-should-be-measured-in-completed-work-not-prompt-volume/" target="_blank" rel="noopener noreferrer">Microsoft argues AI value should be measured in completed work, not prompt volume</a></p><p>2026-09-10 · The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 11 min read</span></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Agents for Non-Technical People**
+
+**Date:** September 16, 2026
+
+**Topics:** agents, long-horizon, persistent work
+
+<span class="story-data" data-story-id="dab-story-2026-09-19-0a581a31" data-story-url="/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/" hidden></span>
+
+<a href="{{ '/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/' | relative_url }}" data-item-id="dab-story-2026-09-19-0a581a31" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Official Announcement  
+**Availability:** Published
+
+![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/06-long-horizon-agents.png?v=89bea6483437aa67)
+
+**Summary:** Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.
+
+**Why it matters:** For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.
+
+
+
+**What to do now — Define persistent agent goals:** For recurring work, specify the goal, checkpoints, changing inputs, and conditions that require human review.
+
+**Source:** <a href="https://www.salesforce.com/blog/long-horizon-agents/" data-item-id="dab-story-2026-09-19-0a581a31" data-edition-date="2026-09-19" data-action="source_clicks">Salesforce explains why long-horizon agents need persistence across sessions</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-0a581a31">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-19-a4a2b339"></span>
+
+## 3. Copilot impact dashboard now exposes feature engagement
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
 **Date:** September 17, 2026
 
-**Topics:** AI adoption, workflow redesign, knowledge work, outcome measurement, change management
+**Topics:** Copilot, adoption, analytics
 
-<span class="story-data" data-story-id="dab-story-2026-09-18-87612b7e" data-story-url="/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-19-a4a2b339" data-story-url="/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/" hidden></span>
 
-<a href="{{ '/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/' | relative_url }}" data-item-id="dab-story-2026-09-18-87612b7e" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/' | relative_url }}" data-item-id="dab-story-2026-09-19-a4a2b339" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Case Study  
-**Availability:** Published Guidance
+**Evidence:** Official Announcement  
+**Availability:** Published
 
-**What changed since last coverage:** The earlier story argued for measuring completed work rather than interactions. Microsoft now publishes a broader transformation playbook drawn from hundreds of internal efforts, with concrete sales, supply-chain, and product-development examples.
+![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/03-copilot-impact-dashboard.png?v=faf3cb9c4a230fde)
 
-![Conceptual before-and-after illustration of fragmented AI tool adoption becoming a redesigned workflow with shared data and outcome measurement.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/03-workflow-transformation.png?v=9141c39f4a9a0665)
+**Summary:** GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.
 
-**Summary:** Microsoft distilled lessons from hundreds of internal AI transformation efforts into a Frontier Playbook. It reports that one sales group tripled priority-use-case adoption while revenue per account manager rose 9.4% and close rates were 20% higher; selected supply-chain workflows cut cycle time by up to 75%; and a nine-person engineering team shipped an initial release in 35 days.
-
-**Why it matters:** The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measure completed work. That is a more durable adoption model than distributing AI tools and tracking logins or prompts.
+**Why it matters:** AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.
 
 
 
-**What to do now — Start from one measurable business outcome:** Choose one bounded workflow, map the end-to-end process, remove unnecessary steps, define a measurable outcome, and introduce AI only where it changes the workflow rather than merely accelerating one task.
+**What to do now — Review feature-level engagement:** Use engagement data to distinguish widely adopted Copilot experiences from features that need targeted enablement.
 
-**Source:** <a href="https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/" data-item-id="dab-story-2026-09-18-87612b7e" data-edition-date="2026-09-18" data-action="source_clicks">What we’ve learned from Microsoft&apos;s own AI transformation</a>
+**Source:** <a href="https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement" data-item-id="dab-story-2026-09-19-a4a2b339" data-edition-date="2026-09-19" data-action="source_clicks">Copilot impact dashboard now exposes feature engagement</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-87612b7e">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-a4a2b339">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-18-c5d22f27"></span>
+<span id="reading-dab-story-2026-09-19-928822d1"></span>
 
-## 4. Salesforce makes Builder Central a natural-language front door for governed apps and agents
+## 4. Microsoft codifies lessons from hundreds of internal AI transformation efforts
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Governed no-code building:</strong> Natural-language building should still respect the data model, permissions and review controls of the host system. Builder Central was announced for beta rather than broad general availability, and Salesforce’s article does not provide independent evidence of reliability, adoption, or long-term governance outcomes.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 16 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
 **Date:** September 17, 2026
 
-**Topics:** no-code AI, vibe building, enterprise apps, Agentforce, governance
+**Topics:** AI transformation, knowledge work, enterprise adoption
 
-<span class="story-data" data-story-id="dab-story-2026-09-18-c5d22f27" data-story-url="/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-19-928822d1" data-story-url="/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/" hidden></span>
 
-<a href="{{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }}" data-item-id="dab-story-2026-09-18-c5d22f27" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/' | relative_url }}" data-item-id="dab-story-2026-09-19-928822d1" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
-**Availability:** Beta Announced
+**Availability:** Published
 
-![Textbook diagram showing natural-language app and agent building passing through Salesforce data, metadata, security, and governance controls before deployment.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/04-governed-building.png?v=f97e426828ea5af6)
+![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/04-microsoft-ai-transformation.png?v=23a9427adac462b7)
 
-**Summary:** Salesforce announced Builder Central, an AI-powered no-code environment where users can start a project in natural language, refine and troubleshoot it, and deploy apps, agents, and experiences from one place. Salesforce says it is built on AIforce so projects use existing data, metadata, security, and governance; beta access is planned for the week after Dreamforce for Agentforce-enabled customers.
+**Summary:** Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.
 
-**Why it matters:** Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers a simpler path from intent to working application while retaining administrator controls and existing data boundaries.
+**Why it matters:** The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workflows rather than treating AI as a one-time tool rollout.
 
 
 
-**What to do now — Pilot one governed no-code workflow:** Use a low-consequence internal workflow to test whether natural-language building preserves permission boundaries, metadata integrity, reviewability, and rollback before widening access.
+**What to do now — Build an internal AI playbook:** Capture successful and failed workflow experiments so proven patterns can be reused across teams.
 
-**Source:** <a href="https://admin.salesforce.com/blog/2026/dreamforce-2026-product-highlights-for-admins" data-item-id="dab-story-2026-09-18-c5d22f27" data-edition-date="2026-09-18" data-action="source_clicks">Dreamforce 2026 Product Highlights for Admins</a>
+**Source:** <a href="https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/" data-item-id="dab-story-2026-09-19-928822d1" data-edition-date="2026-09-19" data-action="source_clicks">Microsoft codifies lessons from hundreds of internal AI transformation efforts</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-c5d22f27">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-928822d1">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-18-2cda8d5e"></span>
+<span id="reading-dab-story-2026-09-19-807056d1"></span>
 
-## 5. Anthropic proposes three measurements for AI self-acceleration inside frontier labs
+## 5. Copilot code review adds clearer progress and smarter batch suggestions
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Measurement framework:</strong> Automation, oversight and compute answer different questions; vendor-defined measures need methodology before cross-lab comparison. These are Anthropic-defined measurements from Anthropic systems. Cross-lab methodology is not standardized, some evaluation relies on Anthropic models, and the published figures should not be generalized to the industry.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 17, 2026
+**Date:** September 18, 2026
 
-**Topics:** frontier AI, R&D automation, agent oversight, evaluation, compute governance
+**Topics:** Copilot, code review, developer workflow
 
-<span class="story-data" data-story-id="dab-story-2026-09-18-2cda8d5e" data-story-url="/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-19-807056d1" data-story-url="/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/" hidden></span>
 
-<a href="{{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }}" data-item-id="dab-story-2026-09-18-2cda8d5e" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/' | relative_url }}" data-item-id="dab-story-2026-09-19-807056d1" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Research  
-**Availability:** Published Research
+**Evidence:** Official Announcement  
+**Availability:** Published
 
-![Conceptual textbook illustration of AI-driven research, agent oversight, and compute allocation as three measurement lenses.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/01-frontier-lab-measurements.png?v=6bff2de1e8782d82)
+![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/01-copilot-code-review.png?v=78ce6ac61f3922e)
 
-**Summary:** Anthropic published three proposed measurements for frontier-lab development: how much AI performs AI R&D, how comprehensively research agents are monitored, and how compute is allocated. Its August snapshot says Claude leads 26% of measured R&D work, more than 90% is at or above human-AI collaboration, about 30,000 research and engineering agents were active at once on its most-used internal platform, and online monitors blocked 0.002% of more than a billion analyzed decisions.
+**Summary:** GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.
 
-**Why it matters:** The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that automation. Comparable, independently checked operational metrics could make acceleration and control more inspectable.
+**Why it matters:** The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.
 
 
 
-**What to do now — Track operational capability and control together:** When evaluating an agentic engineering system, pair productivity or automation metrics with monitor coverage, review latency, escalation rates, and the scope of human intervention.
+**What to do now — Review the new code-review flow:** Check whether clearer progress and batch commit messages reduce review overhead in active repositories.
 
-**Source:** <a href="https://www.anthropic.com/institute/measuring-pace-of-ai-development" data-item-id="dab-story-2026-09-18-2cda8d5e" data-edition-date="2026-09-18" data-action="source_clicks">Measurements for understanding the pace of AI development inside frontier labs</a>
+**Source:** <a href="https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience" data-item-id="dab-story-2026-09-19-807056d1" data-edition-date="2026-09-19" data-action="source_clicks">Copilot code review adds clearer progress and smarter batch suggestions</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-2cda8d5e">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-807056d1">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-18-3ac3c725"></span>
+<span id="reading-dab-story-2026-09-19-49a474f5"></span>
 
-## 6. GitHub exposes which Copilot CLI skills, agents, MCP servers, commands, and plugins are actually used
+## 6. GitHub schedules selected Copilot model deprecations for October 19
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p><strong>Usage telemetry:</strong> Invocation counts describe adoption and tool mix. They need separate quality and outcome checks to assess value. Interaction counts do not measure quality or business value. MCP counts include connection attempts rather than tool calls, plugin totals overlap skill totals, and customer-defined names are intentionally grouped.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.</p></div><div class="related-coverage"><strong>Earlier Brief</strong><p><a href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-12/github-separates-vs-code-agent-activity-from-generic-copilot-usage/" target="_blank" rel="noopener noreferrer">GitHub separates VS Code agent activity from generic Copilot usage</a></p><p>2026-09-12 · The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.</p></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 17, 2026
+**Date:** September 18, 2026
 
-**Topics:** agent observability, Copilot CLI, Agent Skills, MCP, plugins, usage metrics
+**Topics:** Copilot, models, deprecation
 
-<span class="story-data" data-story-id="dab-story-2026-09-18-3ac3c725" data-story-url="/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-19-49a474f5" data-story-url="/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/" hidden></span>
 
-<a href="{{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }}" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/' | relative_url }}" data-item-id="dab-story-2026-09-19-49a474f5" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
-**Availability:** General Availability
+**Availability:** Published
 
-**What changed since last coverage:** The September 12 story separated VS Code agent activity from generic Copilot usage. This update adds item-level CLI telemetry for skills, custom agents, MCP servers, slash commands, and plugins, including top-use and distinct-use counts.
+![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-19/02-copilot-model-deprecation.png?v=08aa57e524cd6658)
 
-![Textbook diagram of Copilot CLI skills, agents, MCP servers, commands, and plugins flowing into usage and distinct-use telemetry with privacy grouping.](https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-18/02-cli-telemetry.png?v=e69696eeaa07df9f)
+**Summary:** GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.
 
-**Summary:** GitHub expanded the Copilot usage metrics API with CLI customization telemetry. Reports can now show top-used skills, custom agents, MCP servers, slash commands, and plugins plus counts of how many distinct items are being used; customer-defined names are grouped to protect privacy.
-
-**Why it matters:** Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from the smaller set people actually invoke, identify enablement gaps, and measure whether reusable agent components are spreading.
+**Why it matters:** Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.
 
 
 
-**What to do now — Measure reuse before expanding the catalog:** Track which reusable agent assets are invoked, how broadly they spread, and whether high-use assets also pass quality and outcome checks before investing in more customizations.
+**What to do now — Audit Copilot model policies:** Identify affected model choices and enable suitable alternatives before the October 19 deprecation date.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api/" data-item-id="dab-story-2026-09-18-3ac3c725" data-edition-date="2026-09-18" data-action="source_clicks">Agentic CLI customizations now in the usage metrics API</a>
+**Source:** <a href="https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october" data-item-id="dab-story-2026-09-19-49a474f5" data-edition-date="2026-09-19" data-action="source_clicks">GitHub schedules selected Copilot model deprecations for October 19</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-story-2026-09-18-3ac3c725">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-49a474f5">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -276,81 +270,7 @@ No video met today’s editorial quality standards.
 
 ## Worth Listening — Podcasts
 
-### 9. Why Everyone Is Getting Excited About Personal AI Agents
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span>29:56 podcast</span></div><p><strong>Listening context:</strong> Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation.</p></div></aside>
-<!-- reader-release:end -->
-
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-18-personal-ai-agents" data-podcast-title="Why Everyone Is Getting Excited About Personal AI Agents" data-podcast-url="/podcasts/2026-09-18/personal-ai-agents/" hidden></span>
-
-<a href="{{ '/podcasts/2026-09-18/personal-ai-agents/' | relative_url }}" data-item-id="dab-podcast-2026-09-18-personal-ai-agents" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent podcast page</a>
-
-**Show:** The AI Daily Brief  
-**Host / guest:** Nathaniel Whittemore  
-**Focus:** Agents for Non-Technical People  
-**Date:** September 17, 2026  
-**Duration:** 29:56 · No episode time limit  
-**Topics:** personal AI agents, consumer agents, delegation
-
-**Summary:** Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.
-
-**Why it matters:** It provides a consumer-side complement to today’s Google CC story and helps separate excitement about agent categories from the concrete controls required for trustworthy delegation.
-
-**Connection to the brief:** Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.
-
-
-
-**Coverage:** Primary 48-hour podcast window; one of two source-diverse selections.
-
-**Evidence:** Practitioner analysis. Apple Podcasts lists September 17, 2026, Nathaniel Whittemore, and a 29:56 runtime.
-
-**Listen / watch:** <a href="https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942" data-item-id="dab-podcast-2026-09-18-personal-ai-agents" data-edition-date="2026-09-18" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-podcast-2026-09-18-personal-ai-agents">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-### 10. How to get discovered in AI search
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">New development</span><span>55:14 podcast</span></div><p><strong>Listening context:</strong> It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers.</p></div></aside>
-<!-- reader-release:end -->
-
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-18-ai-search-discovery" data-podcast-title="How to get discovered in AI search" data-podcast-url="/podcasts/2026-09-18/ai-search-discovery/" hidden></span>
-
-<a href="{{ '/podcasts/2026-09-18/ai-search-discovery/' | relative_url }}" data-item-id="dab-podcast-2026-09-18-ai-search-discovery" data-edition-date="2026-09-18" data-action="permanent_page_clicks">Open the permanent podcast page</a>
-
-**Show:** Practical AI  
-**Host / guest:** Daniel Whitenack and Chris Benson  
-**Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 17, 2026  
-**Duration:** 55:14 · No episode time limit  
-**Topics:** AI search, retrieval, citations, agent discovery
-
-**Summary:** Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.
-
-**Why it matters:** The episode gives knowledge workers a practical mental model for how AI-mediated discovery differs from traditional search and why citations alone do not fully explain model answers.
-
-**Connection to the brief:** It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.
-
-
-
-**Coverage:** Primary 48-hour podcast window; source-diverse from The AI Daily Brief.
-
-**Evidence:** Practitioner analysis. Practical AI’s publisher page identifies episode E372, September 17, 2026, hosted by Daniel Whitenack and Chris Benson, runtime 55:14.
-
-**Listen / watch:** <a href="https://practicalai.show/372" data-item-id="dab-podcast-2026-09-18-ai-search-discovery" data-edition-date="2026-09-18" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Practical AI</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-18" data-feedback-story-id="dab-podcast-2026-09-18-ai-search-discovery">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
+No podcast met today’s editorial quality standards.
 
 <!-- reader-release:start -->
 
@@ -362,7 +282,7 @@ No video met today’s editorial quality standards.
 
 ## Editorial takeaway
 
-The strongest September 18 signal is not a single model release but a shift toward operationalizing agents: measure what they automate, govern how they act, redesign work around outcomes, and package repeatable procedures so people can reuse them safely.
+Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>

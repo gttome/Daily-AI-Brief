@@ -1,0 +1,454 @@
+{
+  "schema_version": "1.0.0",
+  "brief_date": "2026-09-19",
+  "edition_id": "dab-edition-2026-09-19",
+  "baseline_sha": "90e138198a47732b05fc44d07a62f6abe3a64662",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "stories": [
+    {
+      "candidate_id": "m04",
+      "story_id": "copilot-code-review-improved-2026-09-19",
+      "canonical_ordinal": 1,
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot code review adds clearer progress and smarter batch suggestions",
+      "summary": "GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.",
+      "why_it_matters": "The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.",
+      "editorial_limitation": "Based on GitHub's September 18 product announcement; operational impact will vary by repository and workflow.",
+      "topic_labels": [
+        "Copilot",
+        "code review",
+        "developer workflow"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Review the new code-review flow",
+        "rationale": "Check whether clearer progress and batch commit messages reduce review overhead in active repositories."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Copilot code review flow",
+        "alt_text": "Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Review progress",
+            "detail": "Clearer status across a changing review."
+          },
+          {
+            "id": "n2",
+            "label": "Auto-resolve",
+            "detail": "Copilot can more intelligently resolve its own suggestions."
+          },
+          {
+            "id": "n3",
+            "label": "Batch suggestions",
+            "detail": "Developers can accept multiple suggestions."
+          },
+          {
+            "id": "n4",
+            "label": "Commit messages",
+            "detail": "Useful commit messages are generated for accepted batches."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "flow"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "flow"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "flow"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n3",
+            "text": "The update targets review clarity and lower-friction follow-through."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m03",
+      "story_id": "copilot-model-deprecation-october-2026",
+      "canonical_ordinal": 2,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub schedules selected Copilot model deprecations for October 19",
+      "summary": "GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.",
+      "why_it_matters": "Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.",
+      "editorial_limitation": "The evidence packet confirms the deprecation and alternative-model guidance but does not reproduce the complete model list.",
+      "topic_labels": [
+        "Copilot",
+        "models",
+        "deprecation"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "update_policy",
+        "label": "Audit Copilot model policies",
+        "rationale": "Identify affected model choices and enable suitable alternatives before the October 19 deprecation date."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Copilot model transition",
+        "alt_text": "Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Current models",
+            "detail": "Identify selected models in use."
+          },
+          {
+            "id": "n2",
+            "label": "Policy check",
+            "detail": "Review Copilot model policies."
+          },
+          {
+            "id": "n3",
+            "label": "Alternatives",
+            "detail": "Enable supported alternative models."
+          },
+          {
+            "id": "n4",
+            "label": "Oct 19",
+            "detail": "Complete transition before deprecation."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "flow"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "flow"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "flow"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Administrators may need to enable alternative models through policy."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m06",
+      "story_id": "copilot-impact-dashboard-engagement-2026-09-19",
+      "canonical_ordinal": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Copilot impact dashboard now exposes feature engagement",
+      "summary": "GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.",
+      "why_it_matters": "AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.",
+      "editorial_limitation": "The dashboard measures engagement signals; engagement alone does not establish productivity or business impact.",
+      "topic_labels": [
+        "Copilot",
+        "adoption",
+        "analytics"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "monitor",
+        "label": "Review feature-level engagement",
+        "rationale": "Use engagement data to distinguish widely adopted Copilot experiences from features that need targeted enablement."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "From usage to enablement",
+        "alt_text": "Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Active users",
+            "detail": "Start with active Copilot users."
+          },
+          {
+            "id": "n2",
+            "label": "Feature usage",
+            "detail": "See regular use of key features."
+          },
+          {
+            "id": "n3",
+            "label": "Adoption gaps",
+            "detail": "Identify underused experiences."
+          },
+          {
+            "id": "n4",
+            "label": "Enablement",
+            "detail": "Target training or rollout support."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "flow"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "flow"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "flow"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n3",
+            "text": "Feature engagement is a stronger adoption signal than licenses alone."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m07",
+      "story_id": "microsoft-ai-transformation-lessons-2026-09-19",
+      "canonical_ordinal": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
+      "summary": "Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.",
+      "why_it_matters": "The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workflows rather than treating AI as a one-time tool rollout.",
+      "editorial_limitation": "This is Microsoft's account of its own transformation and should be read as publisher-authored evidence rather than independent benchmarking.",
+      "topic_labels": [
+        "AI transformation",
+        "knowledge work",
+        "enterprise adoption"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "teach",
+        "label": "Build an internal AI playbook",
+        "rationale": "Capture successful and failed workflow experiments so proven patterns can be reused across teams."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "AI transformation learning loop",
+        "alt_text": "Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "AI efforts",
+            "detail": "Run AI transformation efforts across work."
+          },
+          {
+            "id": "n2",
+            "label": "Lessons",
+            "detail": "Codify successes and failures."
+          },
+          {
+            "id": "n3",
+            "label": "Scale",
+            "detail": "Reuse approaches that work."
+          },
+          {
+            "id": "n4",
+            "label": "Redesign work",
+            "detail": "Evolve the operating model around AI."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "flow"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "flow"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "flow"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Microsoft says its playbook draws on hundreds of internal efforts."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m01",
+      "story_id": "agentic-cli-customizations-metrics-2026-09-19",
+      "canonical_ordinal": 5,
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
+      "summary": "GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.",
+      "why_it_matters": "Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.",
+      "editorial_limitation": "Usage metrics show activity, not whether an individual skill or agent produced a correct or valuable outcome.",
+      "topic_labels": [
+        "Agent Skills",
+        "Copilot CLI",
+        "agent metrics"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "agent_skill": true,
+      "what_to_do_now": {
+        "action": "monitor",
+        "label": "Track reusable agent skills",
+        "rationale": "Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Agent skills become measurable",
+        "alt_text": "Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Skills",
+            "detail": "Reusable agent skills."
+          },
+          {
+            "id": "n2",
+            "label": "Custom agents",
+            "detail": "Organization-specific agent configurations."
+          },
+          {
+            "id": "n3",
+            "label": "MCP + commands",
+            "detail": "MCP servers, slash commands, and plugins."
+          },
+          {
+            "id": "n4",
+            "label": "Usage metrics",
+            "detail": "Agentic activity appears in reporting."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n4",
+            "label": "measured"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "measured"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "measured"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "This is today's required reusable Agent Skills story."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m13",
+      "story_id": "long-horizon-agents-2026-09-19",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "Salesforce explains why long-horizon agents need persistence across sessions",
+      "summary": "Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.",
+      "why_it_matters": "For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.",
+      "editorial_limitation": "This is a Salesforce explanatory article, not an independent evaluation of long-horizon agent reliability.",
+      "topic_labels": [
+        "agents",
+        "long-horizon",
+        "persistent work"
+      ],
+      "source_url": "https://www.salesforce.com/blog/long-horizon-agents/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Define persistent agent goals",
+        "rationale": "For recurring work, specify the goal, checkpoints, changing inputs, and conditions that require human review."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Long-horizon agent loop",
+        "alt_text": "Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Goal",
+            "detail": "Maintain a goal over time."
+          },
+          {
+            "id": "n2",
+            "label": "Sessions",
+            "detail": "Continue work across sessions."
+          },
+          {
+            "id": "n3",
+            "label": "Adapt",
+            "detail": "Respond to changing circumstances."
+          },
+          {
+            "id": "n4",
+            "label": "Outcome",
+            "detail": "Track progress toward the desired result."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "persist"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "observe"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "advance"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n3",
+            "text": "Long-horizon work requires adaptation, not just repeated one-shot prompts."
+          }
+        ]
+      }
+    }
+  ],
+  "editorial_takeaway": "Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.",
+  "media_decisions": {
+    "videos": {
+      "status": "empty",
+      "exception": "No video candidates were present in the bounded precomputed editorial evidence; no broader media research was permitted."
+    },
+    "podcasts": {
+      "status": "empty",
+      "exception": "No podcast candidates were present in the bounded precomputed editorial evidence; no broader media research was permitted."
+    }
+  },
+  "changed_watchlist_topics": []
+}

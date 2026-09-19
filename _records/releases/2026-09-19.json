@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-19",
+  "baseline_sha": "90e138198a47732b05fc44d07a62f6abe3a64662",
+  "rollback_target_sha": "90e138198a47732b05fc44d07a62f6abe3a64662",
+  "policy_profile": "under80-v1",
+  "image_review": "_records/editorial-handoff/images.json",
+  "image_review_sha256": "5987484c3910cf8bcae6030ad54c619d3db945d0d5340af6eaaf70e803045f3c",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-19/01-copilot-code-review.png",
+      "sha256": "e81ba118f0324ca0fd9b19d2efd702bc79423d92d65128f71af018bba457c224",
+      "bytes": 2656
+    },
+    {
+      "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.png",
+      "sha256": "7b9455394858aa6c97ec5abaf1b03e5a995cd4bb20c45ce2775f100a242adf99",
+      "bytes": 4790
+    },
+    {
+      "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.png",
+      "sha256": "6c5ca8c4a12c49e8511bf9c0c94b7ca68264513320a3530c1fa11f2869402c88",
+      "bytes": 2660
+    },
+    {
+      "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.png",
+      "sha256": "9e896d2073c5a885c3252f26bda0c57a71774ee8b6371161439e1196379c5683",
+      "bytes": 2605
+    },
+    {
+      "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.png",
+      "sha256": "fdd1c4db6dc154a58068ef98a0fe1bbbcb7666334581095900d7fd2afea18567",
+      "bytes": 4794
+    },
+    {
+      "path": "briefs/images/2026-09-19/06-long-horizon-agents.png",
+      "sha256": "218d74f529eb7dc241db3c764c92b52b380a2632b4d49231aff75e6a712b0038",
+      "bytes": 4951
+    }
+  ],
+  "canonical_sha256": "38d4efc4169cfe90120c5bb6becd5109b02b0ba18b31ba090d598e59d051b7d2",
+  "candidate_digest": "sha256:5678a06c1ae50be8125206b543f43b4f872d58d0818492f5a17b373f1a57d491"
+}

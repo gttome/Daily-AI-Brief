@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 18, 2026
+# Trend Radar — September 19, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,7 +13,7 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-31 supporting stories appeared in the latest 7 days and 70 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+28 supporting stories appeared in the latest 7 days and 69 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -114,16 +114,12 @@ Supporting stories:
 - [August 21, 2026]({{ '/stories/2026-08-21/phantom-gains-finds-that-self-improvement-can-be-a-measurement-illusion/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/envharness-adapts-an-agent-s-training-world-without-rebuilding-it/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/dual-gatekeeping-improves-ai-generated-educational-videos-by-refusing-weak-outpu/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/evalcegar-evolves-executable-evaluation-checks-from-an-evaluator-s-blind-spots/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/componentbench-proves-that-the-harness-can-change-computer-agent-performance-by-/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/' | relative_url }})
 
 ## Agent memory and context
 
 **STABLE · high confidence**
 
-16 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+13 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
@@ -185,16 +181,19 @@ Supporting stories:
 - [August 22, 2026]({{ '/stories/2026-08-22/statemem-shows-that-agent-memory-must-track-what-is-current-not-merely-what-was-/' | relative_url }})
 - [August 22, 2026]({{ '/stories/2026-08-22/pandora-s-router-asks-whether-a-better-routing-decision-is-worth-the-cost-of-mak/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/' | relative_url }})
 
 ## AI-assisted development
 
 **STABLE · high confidence**
 
-25 supporting stories appeared in the latest 7 days and 69 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+25 supporting stories appeared in the latest 7 days and 72 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 19, 2026]({{ '/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/' | relative_url }})
+- [September 19, 2026]({{ '/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/' | relative_url }})
+- [September 19, 2026]({{ '/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/' | relative_url }})
+- [September 19, 2026]({{ '/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/salesforce-makes-builder-central-a-natural-language-front-door-for-governed-apps-and-agents/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/rovo-lets-teams-teach-repeatable-work-as-custom-skills-in-ordinary-language/' | relative_url }})
@@ -288,16 +287,18 @@ Supporting stories:
 - [August 22, 2026]({{ '/stories/2026-08-22/midtool-teaches-models-the-structure-of-real-tool-workflows-before-post-training/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/phantom-gains-finds-that-self-improvement-can-be-a-measurement-illusion/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-42 supporting stories appeared in the latest 7 days and 118 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+40 supporting stories appeared in the latest 7 days and 119 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 19, 2026]({{ '/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/' | relative_url }})
+- [September 19, 2026]({{ '/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/' | relative_url }})
+- [September 19, 2026]({{ '/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/anthropic-proposes-three-measurements-for-ai-self-acceleration-inside-frontier-labs/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/github-exposes-which-copilot-cli-skills-agents-mcp-servers-commands-and-plugins-are-actually-used/' | relative_url }})
 - [September 18, 2026]({{ '/stories/2026-09-18/microsoft-s-internal-ai-playbook-shifts-transformation-from-tool-adoption-to-redesigned-work/' | relative_url }})
@@ -454,9 +455,5 @@ Supporting stories:
 - [August 21, 2026]({{ '/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/policyguide-converts-organizational-rules-into-a-live-workflow-graph/' | relative_url }})
 - [August 21, 2026]({{ '/stories/2026-08-21/envharness-adapts-an-agent-s-training-world-without-rebuilding-it/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/openai-previews-cross-session-safety-monitoring-that-preserves-zero-data-retenti/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/skillgate-shows-that-agents-need-separate-learning-signals-for-selecting-and-exe/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/componentbench-proves-that-the-harness-can-change-computer-agent-performance-by-/' | relative_url }})
-- [August 20, 2026]({{ '/stories/2026-08-20/coding-agent-rankings-break-under-harmless-code-transformations/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

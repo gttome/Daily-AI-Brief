@@ -1,0 +1,126 @@
+{
+  "edition_id": "dab-edition-2026-09-19",
+  "baseline_main_sha": "90e138198a47732b05fc44d07a62f6abe3a64662",
+  "reviewed_at": "2026-09-19T14:47:30Z",
+  "generation_method": "Emergency deterministic editorial diagrams, six individual story-specific 1200x630 PNG assets transported through GitHub Git Data API after repeated OpenAI collage-generation failures.",
+  "review_method": "Emergency recovery review: each final PNG passed full PNG signature/chunk/CRC/IEND integrity validation at 1200x630; labels and diagram content were generated directly from the selected story evidence and reviewed for story identity, readable primary labels, white background, safe margins, and distinct composition. This is assistant recovery review, not independent human review.",
+  "image_gate": "pass",
+  "rejected_attempts": [
+    {
+      "reason": "Four earlier OpenAI image-generation attempts produced prohibited multi-story collages and were rejected."
+    },
+    {
+      "reason": "Three initial Git Data PNG transports failed CRC/IEND integrity and were replaced before acceptance."
+    }
+  ],
+  "images": [
+    {
+      "story_id": "dab-story-2026-09-19-807056d1",
+      "asset": "briefs/images/2026-09-19/01-copilot-code-review.png",
+      "replacement_sha256": "e81ba118f0324ca0fd9b19d2efd702bc79423d92d65128f71af018bba457c224",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "result": "pass",
+      "composition": "four-stage code review progression",
+      "meaningful_components": [
+        "review progress",
+        "auto-resolve",
+        "batch suggestions",
+        "commit messages"
+      ],
+      "assessment": "Story-specific code-review process diagram with four labeled stages, white background and safe margins.",
+      "attempts": 2
+    },
+    {
+      "story_id": "dab-story-2026-09-19-49a474f5",
+      "asset": "briefs/images/2026-09-19/02-copilot-model-deprecation.png",
+      "replacement_sha256": "7b9455394858aa6c97ec5abaf1b03e5a995cd4bb20c45ce2775f100a242adf99",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "result": "pass",
+      "composition": "four-stage model transition timeline",
+      "meaningful_components": [
+        "current models",
+        "policy check",
+        "alternative models",
+        "October 19 transition"
+      ],
+      "assessment": "Story-specific Copilot model transition diagram with four labeled stages, white background and safe margins.",
+      "attempts": 1
+    },
+    {
+      "story_id": "dab-story-2026-09-19-a4a2b339",
+      "asset": "briefs/images/2026-09-19/03-copilot-impact-dashboard.png",
+      "replacement_sha256": "6c5ca8c4a12c49e8511bf9c0c94b7ca68264513320a3530c1fa11f2869402c88",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "result": "pass",
+      "composition": "feature engagement measurement funnel",
+      "meaningful_components": [
+        "active users",
+        "feature usage",
+        "adoption gaps",
+        "enablement action"
+      ],
+      "assessment": "Story-specific feature-engagement diagram with four labeled stages, white background and safe margins.",
+      "attempts": 2
+    },
+    {
+      "story_id": "dab-story-2026-09-19-928822d1",
+      "asset": "briefs/images/2026-09-19/04-microsoft-ai-transformation.png",
+      "replacement_sha256": "9e896d2073c5a885c3252f26bda0c57a71774ee8b6371161439e1196379c5683",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "result": "pass",
+      "composition": "enterprise transformation learning loop",
+      "meaningful_components": [
+        "AI efforts",
+        "capture lessons",
+        "scale what works",
+        "redesign work"
+      ],
+      "assessment": "Story-specific AI transformation learning diagram with four labeled stages, white background and safe margins.",
+      "attempts": 2
+    },
+    {
+      "story_id": "dab-story-2026-09-19-5b233997",
+      "asset": "briefs/images/2026-09-19/05-agentic-cli-metrics.png",
+      "replacement_sha256": "fdd1c4db6dc154a58068ef98a0fe1bbbcb7666334581095900d7fd2afea18567",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "result": "pass",
+      "composition": "agent customization telemetry pipeline",
+      "meaningful_components": [
+        "skills",
+        "custom agents",
+        "MCP servers",
+        "usage metrics API"
+      ],
+      "assessment": "Story-specific Agent Skills metrics diagram with four labeled stages, white background and safe margins.",
+      "attempts": 1
+    },
+    {
+      "story_id": "dab-story-2026-09-19-0a581a31",
+      "asset": "briefs/images/2026-09-19/06-long-horizon-agents.png",
+      "replacement_sha256": "218d74f529eb7dc241db3c764c92b52b380a2632b4d49231aff75e6a712b0038",
+      "width": 1200,
+      "height": 630,
+      "format": "PNG",
+      "result": "pass",
+      "composition": "persistent agent lifecycle loop",
+      "meaningful_components": [
+        "goal over time",
+        "multi-session work",
+        "adapt to change",
+        "outcome tracking"
+      ],
+      "assessment": "Story-specific long-horizon agent lifecycle diagram with four labeled stages, white background and safe margins.",
+      "attempts": 1
+    }
+  ]
+}

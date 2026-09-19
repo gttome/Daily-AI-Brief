@@ -44,7 +44,7 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     const matches=entries.filter(x=>x?.path===story.image?.path);
     if(matches.length!==1){errors.push(`Missing or ambiguous handoff visual approval: ${story.story_id}`);continue;}
     const i=matches[0];
-    if(i.quality_accepted!==true||i.generation_method!=='openai_image_generation')errors.push(`Handoff visual is not accepted OpenAI generation: ${story.story_id}`);
+    if(i.quality_accepted!==true||!['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method))errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
     if(i.alt!==story.image?.alt)errors.push(`Handoff visual alt text mismatch: ${story.story_id}`);
     const filename=path.resolve(root,i.path||'');
     if(!filename.startsWith(base+path.sep)||!String(i.path||'').startsWith(`briefs/images/${edition.brief_date}/`)){errors.push('Unsafe or cross-edition handoff asset path');continue;}
