@@ -38,7 +38,7 @@ export function inspectWebp(buffer,{minimumWidth=VISUAL_CANVAS.width,minimumHeig
  let offset=12,width=null,height=null,seenImage=false,chunks=0;
  while(offset+8<=buffer.length){
   const type=buffer.subarray(offset,offset+4).toString('ascii'),length=buffer.readUInt32LE(offset+4),dataStart=offset+8,dataEnd=dataStart+length,paddedEnd=dataEnd+(length&1);
-  if(dataEnd>buffer.length){errors.push(\`truncated_chunk:\${type||'unknown'}\`);break;}
+  if(dataEnd>buffer.length){errors.push(`truncated_chunk:${type||'unknown'}`);break;}
   chunks++;
   if(type==='VP8X'&&length>=10){width=1+buffer.readUIntLE(dataStart+4,3);height=1+buffer.readUIntLE(dataStart+7,3);}
   if(type==='VP8 '&&length>=10){
@@ -54,8 +54,8 @@ export function inspectWebp(buffer,{minimumWidth=VISUAL_CANVAS.width,minimumHeig
  if(offset!==buffer.length)errors.push('bytes_after_webp_chunks');
  if(!seenImage&&!buffer.includes(Buffer.from('VP8 '))&&!buffer.includes(Buffer.from('VP8L')))errors.push('missing_webp_image_chunk');
  if(!width||!height)errors.push('missing_webp_dimensions');
- if(width&&width<minimumWidth)errors.push(\`width_below_\${minimumWidth}\`);
- if(height&&height<minimumHeight)errors.push(\`height_below_\${minimumHeight}\`);
+ if(width&&width<minimumWidth)errors.push(`width_below_${minimumWidth}`);
+ if(height&&height<minimumHeight)errors.push(`height_below_${minimumHeight}`);
  return {pass:errors.length===0,errors:[...new Set(errors)],width,height,bytes:buffer.length,sha256,chunks};
 }
 
