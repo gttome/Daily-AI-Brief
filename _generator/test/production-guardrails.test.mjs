@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {newEfficiency,METRICS} from '../lib/efficiency.mjs';
-import {productionTelemetryHealth,applyProductionTelemetryHealth,validateMediaPreflight} from '../lib/production-guardrails.mjs';
+import {productionTelemetryHealth,applyProductionTelemetryHealth,validateMediaPreflight,validateWatchlistFreshness} from '../lib/production-guardrails.mjs';
 import {incrementalCoverage,watchlistFallbackPlan} from '../lib/incremental-watchlist.mjs';
 import {DEFAULT_DEEP_CANDIDATE_TARGET} from '../lib/research.mjs';
 import {completionDecision} from '../lib/production-run.mjs';
@@ -72,4 +72,15 @@ test('published edition is distinct from final QA completion',()=>{
 test('September 17 atomic publication requires persisted media preflight evidence',()=>{
  const paths=['_data/editions/2026-09-17.json','briefs/2026-09-17.md','latest.md','index.md','archive.md','README.md'];
  assert.ok(validateAtomicChangedPaths(paths,'2026-09-17').includes('_records/editorial/media-preflight/2026-09-17.json'));
+});
+
+
+test('September 19 publication blocks stale or evidence-free Watchlist state',()=>{
+ const edition={brief_date:'2026-09-19',edition_id:'dab-edition-2026-09-19'};
+ const good={edition_date:'2026-09-19',updated_at:'2026-09-19T17:09:07Z',topics:[{topic_id:'topic-a',name:'Agent skills observability',status:'early_signal',confidence:'moderate',evidence:[{url:'https://example.org'}]}]};
+ assert.deepEqual(validateWatchlistFreshness(edition,good),[]);
+ const stale={...good,edition_date:'2026-09-18',updated_at:'2026-09-18T17:09:07Z'};
+ assert.ok(validateWatchlistFreshness(edition,stale).some(x=>x.includes('edition_date')));
+ const noEvidence=structuredClone(good);noEvidence.topics[0].evidence=[];
+ assert.ok(validateWatchlistFreshness(edition,noEvidence).some(x=>x.includes('lacks evidence')));
 });
