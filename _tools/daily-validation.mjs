@@ -47,7 +47,11 @@ function semanticPacket(failures){return failures.map(x=>({artifact_id:x.affecte
 let completion,edition,routeCount=0;
 let coverage={articles:null,videos:null,podcasts:null,included_items:null,potential_positions:10,video_omissions:[],podcast_omissions:[]};
 let imageReadiness={expected:6,accepted_locked:0,integrity_passed:0,canonical_hosted:0,status:'unavailable'};
-try{completion=readJson(`_records/publication/${date}/completion.json`);edition=readJson(`_data/editions/${date}.json`);}catch(error){
+try{
+ const completionFile=args.completion?path.resolve(String(args.completion)):path.join(root,`_records/publication/${date}/completion.json`);
+ completion=JSON.parse(fs.readFileSync(completionFile,'utf8'));
+ edition=readJson(`_data/editions/${date}.json`);
+}catch(error){
  check('publication_receipt','fail','critical',`Required current-edition evidence is missing: ${error.message}`);
 }
 if(completion&&edition){
