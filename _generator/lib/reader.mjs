@@ -12,11 +12,12 @@ import {editionPodcasts,EMPTY_PODCAST_COPY,MULTI_PODCAST_EFFECTIVE_DATE} from '.
 const focusLabels = {
   technical_ai_engineering: 'Technical AI Engineering',
   applied_genai_knowledge_workers: 'Applied Generative AI for Knowledge Workers',
-  agents_non_technical_people: 'Agents for Everyone',
+  agents_non_technical_people: 'Agents for Non-Technical People',
   historical_unspecified: 'Earlier edition'
 };
 
 const label = value => String(value || 'unspecified').split('_').map(word => word[0].toUpperCase() + word.slice(1)).join(' ');
+const focusLabelFor=(focus,date)=>focus==='agents_non_technical_people'&&date>='2026-09-19'?'Agents for Everyone':(focusLabels[focus]||label(focus));
 const yamlString = value => JSON.stringify(String(value || ''));
 const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
 
@@ -137,7 +138,7 @@ ${readerRelease(story.brief_date)?'reader_release: true\n':''}---
 
 ${story.brief_date >= "2026-09-12" ? renderReadingSupport(story,story.story_id,story.brief_date,story.content_type||"Article")+"\n\n" : ""}<span class="story-data" data-story-id="${story.story_id}" hidden></span>
 
-**Focus:** ${focusLabels[story.focus] || label(story.focus)}  
+**Focus:** ${focusLabelFor(story.focus,story.brief_date)}  
 **Date:** ${formatDate(story.event_date)}  
 **Topics:** ${(story.topics || []).join(', ')}  
 **Evidence:** ${label(story.evidence_type)}  
@@ -230,7 +231,7 @@ description: Find a complete daily edition or an individual article, video, or p
 <p id="archive-result-count" role="status" aria-live="polite">${stories.length} items</p>
 <div id="archive-empty" hidden><h2>No matching items</h2><p>Try a broader date range, a different content type, or fewer filters.</p><button id="archive-clear" type="button">Clear all filters</button></div>
 <div id="archive-results" class="archive-results">
-${stories.map(story => `<article class="archive-story"><p class="archive-story-meta"><span class="archive-type">${story.content_type || 'Article'}</span> ${formatDate(story.brief_date)} · ${focusLabels[story.focus] || label(story.focus)}</p><h2>${trackedLink(story.permanent_url,story.headline,story.story_id,story.brief_date,'permanent_page_clicks')}</h2><p>${xml(story.summary || '')}</p><a class="archive-edition-link" href="{{ '/briefs/${story.brief_date}/' | relative_url }}">Read the complete ${formatDate(story.brief_date)} edition →</a></article>`).join('\n')}
+${stories.map(story => `<article class="archive-story"><p class="archive-story-meta"><span class="archive-type">${story.content_type || 'Article'}</span> ${formatDate(story.brief_date)} · ${focusLabelFor(story.focus,story.brief_date)}</p><h2>${trackedLink(story.permanent_url,story.headline,story.story_id,story.brief_date,'permanent_page_clicks')}</h2><p>${xml(story.summary || '')}</p><a class="archive-edition-link" href="{{ '/briefs/${story.brief_date}/' | relative_url }}">Read the complete ${formatDate(story.brief_date)} edition →</a></article>`).join('\n')}
 </div>
 </section>
 <noscript><p>Interactive filters require JavaScript. Individual items and complete editions remain available below and above.</p></noscript>
