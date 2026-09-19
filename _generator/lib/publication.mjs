@@ -60,11 +60,14 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   if(edition.brief_date>='2026-09-17'){
     const selectedVideos=Object.values(edition.worth_watching||{}).filter(item=>item?.status==='included').length;
     const selectedPodcasts=editionPodcasts(edition).length;
-    if(!mediaPreflight&&selectedVideos+selectedPodcasts===0){
-      mediaPreflight={schema_version:'1.0.0',edition_id:edition.edition_id,checked_at:options.observedAt,items:[],basis:'deterministic_empty_selected_media_set'};
-    }
     const diskPath=path.join(repoRoot,mediaPreflightPath);
     if(!mediaPreflight&&fs.existsSync(diskPath))mediaPreflight=JSON.parse(fs.readFileSync(diskPath,'utf8'));
+    if(edition.brief_date>='2026-09-19'){
+      if(selectedVideos!==2||selectedPodcasts!==2)throw new Error('September 19+ publication requires exactly two videos and two podcasts');
+      if(!mediaPreflight||!Array.isArray(mediaPreflight.items)||mediaPreflight.items.length!==4)throw new Error('September 19+ publication requires four independently verified media preflight items');
+    }else if(!mediaPreflight&&selectedVideos+selectedPodcasts===0){
+      mediaPreflight={schema_version:'1.0.0',edition_id:edition.edition_id,checked_at:options.observedAt,items:[],basis:'deterministic_empty_selected_media_set'};
+    }
     assertMediaPreflight(edition,mediaPreflight,{observedAt:options.observedAt});
   }
   const files = generatedFiles(edition, repoRoot);
