@@ -158,6 +158,38 @@
         "label": "READ DEEPER",
         "why": "Calibrated trust is useful when deciding how much autonomy a persistent, long-horizon agent should receive before human review is required."
       }
+    ],
+    "2026-09-20": [
+      {
+        "item_id": "dab-story-2026-09-20-94a301a8",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the final-gate framework as background for deciding when a newly released Copilot capability is ready to enter a team’s standard engineering workflow."
+      },
+      {
+        "item_id": "dab-story-2026-09-20-2d9f17ac",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the context-quality checklist when deciding which business-system context, permissions, references, and constraints should travel through an MCP connection."
+      },
+      {
+        "item_id": "dab-story-2026-09-20-d10aba14",
+        "reference_id": "context-quality-checklist",
+        "label": "READ DEEPER",
+        "why": "Use the context-quality framework to evaluate whether source content is structured, current, and specific enough to support reliable AI outputs."
+      },
+      {
+        "item_id": "dab-story-2026-09-20-e6b79e74",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the checklist when deciding what instructions, tools, references, examples, and validation evidence belong inside a reusable Agent Skill."
+      },
+      {
+        "item_id": "dab-story-2026-09-20-fcc5cf79",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Calibrated trust helps define how much autonomy a managed agent runtime should receive before human review, escalation, or rollback is required."
+      }
     ]
   }
 }
