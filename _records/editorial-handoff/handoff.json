@@ -13,5 +13,5 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_revision": 5
+  "recovery_revision": 3
 }
