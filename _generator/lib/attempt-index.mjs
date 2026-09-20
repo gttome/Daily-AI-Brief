@@ -17,8 +17,8 @@ function timeOrNull(value,label){
 }
 
 export function usageIndexEntry(record,sourcePath){
-  if(!record||!ATTEMPT_ID.test(record.attempt_id||''))throw Error(`Invalid attempt_id in ${sourcePath}`);
-  if(!CANONICAL_EDITION.test(record.edition_id||''))return null;
+  if(!record||!CANONICAL_EDITION.test(record.edition_id||''))return null;
+  if(!ATTEMPT_ID.test(record.attempt_id||''))throw Error(`Invalid attempt_id in ${sourcePath}`);
   const imageDrafts=numberOrNull(record.measured_work?.image_drafts,'image_drafts');
   const imageRejects=numberOrNull(record.measured_work?.image_rejects,'image_rejects');
   const acceptedImages=numberOrNull(record.measured_work?.accepted_images,'accepted_images');
