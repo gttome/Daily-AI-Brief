@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -212,7 +212,7 @@
     "expand canonical edition deterministically",
     "generate all derived views",
     "run repository tests and contract validation",
-    "open or reuse protected publication PR",
+    "find/reuse the connector-created publication PR and add publication-candidate only after deterministic validation",
     "required CI and protected promotion",
     "Pages completion",
     "generate a runtime Pages completion evidence receipt for deterministic validation without requiring a second production content commit",
@@ -245,7 +245,7 @@
       "metadata_candidates_max": 20,
       "image_transport_method": "github_git_data_api"
     },
-    "hard_stop": "After all six accepted and locked images pass integrity validation, create the handoff atomically with authenticated GitHub Git Data API operations and end Work. Do not regenerate or retransmit accepted same-edition assets during recovery unless missing/corrupt or the story materially changes. GitHub Actions owns downstream deterministic validation and publication.",
+    "hard_stop": "After all six accepted and locked images pass integrity validation, create the handoff atomically, advance only the isolated handoff branch, then use the authenticated GitHub connector to open or reuse one unlabelled PR from that branch to main. Do not add publication-candidate in the scheduled publisher. GitHub Actions owns deterministic expansion, adds publication-candidate only after its validation stage, and protected CI owns promotion.",
     "template_path": "docs/operations/editorial-handoff-template.json",
     "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
     "production_branch_prefix": "editorial-handoff/production/",
@@ -276,6 +276,15 @@
       "no_contents_api_for_binary": true,
       "no_native_git_credentials": true,
       "image_blob_creation": "create_blob with encoding=base64 using the complete accepted PNG or WebP bytes"
+    },
+    "publication_pr": {
+      "creation_owner": "scheduled_publisher_github_connector",
+      "timing": "immediately_after_atomic_handoff_ref_update",
+      "initial_label_state": "unlabelled",
+      "reason": "Avoid dependence on the repository setting that can block GitHub Actions from creating pull requests.",
+      "deterministic_workflow_role": "Populate deterministic outputs on the same branch, find/reuse the existing PR, and add publication-candidate only after deterministic validation succeeds.",
+      "promotion_guard": "Protected CI and the publication-candidate label remain mandatory before automatic promotion.",
+      "actions_create_pr_dependency": false
     }
   },
   "credits": {
