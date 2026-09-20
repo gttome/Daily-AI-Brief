@@ -2,7 +2,7 @@
 layout: default
 title: "AWS shows how existing multi-model agents can move into a managed runtime"
 description: "For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, obser"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg?v=e308bc6f06ee6979"
 permalink: /stories/2026-09-20/aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtime/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-fcc5cf79
@@ -25,11 +25,15 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979)
+![Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg?v=e308bc6f06ee6979)
 
 **Summary:** AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.
 
 **Why it matters:** For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, observability, and operations—becomes as important as the model itself.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust helps define how much autonomy a managed agent runtime should receive before human review, escalation, or rollback is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
