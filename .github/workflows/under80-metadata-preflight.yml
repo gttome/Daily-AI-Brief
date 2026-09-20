@@ -65,12 +65,12 @@ jobs:
           const now=new Date();
           const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(now).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
           const date=parts.year+'-'+parts.month+'-'+parts.day;
-          const shouldRun=Number(parts.hour)===6;
-          console.log(JSON.stringify({shouldRun,date,cutoff:now.toISOString()}));
+          console.log(JSON.stringify({date,cutoff:now.toISOString()}));
           NODE
-            should="$(node -e "const x=require('/tmp/scheduled.json');process.stdout.write(String(x.shouldRun))")"
-            if [ "$should" != "true" ]; then
+            date="$(node -e "const x=require('/tmp/scheduled.json');process.stdout.write(x.date)")"
+            if git ls-remote --exit-code --heads origin "refs/heads/preflight/$date" >/dev/null 2>&1; then
               echo "should_run=false" >> "$GITHUB_OUTPUT"
+              echo "Current-day metadata preflight branch already exists: preflight/$date"
               exit 0
             fi
             node - <<'NODE' > /tmp/preflight-request.json
