@@ -180,11 +180,15 @@ jobs:
         run: |
           set -euo pipefail
           if [ -f /tmp/daily-validation.json ] && [ -f /tmp/watchlist-delta.json ]; then
-            node _tools/command-center-delta.mjs \
+            args=( \
               --validation /tmp/daily-validation.json \
               --watchlist /tmp/watchlist-delta.json \
               --policy docs/operations/efficiency-operating-policy.json \
-              --out /tmp/command-center-delta.json
+              --out /tmp/command-center-delta.json \
+            )
+            incident="_records/command-center/${{ steps.date.outputs.value }}-incident-and-recovery.json"
+            if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
+            node _tools/command-center-delta.mjs "${args[@]}"
           else
             echo 'Validation inputs unavailable; Command Center handoff packet not generated.'
           fi
