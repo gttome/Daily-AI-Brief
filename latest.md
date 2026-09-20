@@ -38,8 +38,6 @@
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding what instructions, tools, references, examples, and validation evidence belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-
-
 **What to do now — Package one repeatable skill:** Choose a recurring multi-step task with stable expert guidance and turn its instructions, checks, and examples into a reusable skill rather than another one-off prompt.
 
 **Source:** <a href="https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/" data-item-id="dab-story-2026-09-20-e6b79e74" data-edition-date="2026-09-20" data-action="source_clicks">Deploy Hugging Face models on Amazon SageMaker AI with coding agents</a>
@@ -81,8 +79,6 @@
 <!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust helps define how much autonomy a managed agent runtime should receive before human review, escalation, or rollback is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
-
-
 
 **What to do now — Separate agent logic from runtime:** Document which parts of an agent belong to its task logic versus the infrastructure needed for identity, scaling, monitoring, and safe production operation.
 
@@ -126,8 +122,6 @@
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding which business-system context, permissions, references, and constraints should travel through an MCP connection.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-
-
 **What to do now — Map high-value Workspace connections:** Identify one or two systems where eliminating copy-and-paste context transfer would materially improve a recurring knowledge-work process.
 
 **Source:** <a href="https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html" data-item-id="dab-story-2026-09-20-2d9f17ac" data-edition-date="2026-09-20" data-action="source_clicks">Google Workspace Weekly Recap - September 18, 2026</a>
@@ -170,8 +164,6 @@
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality framework to evaluate whether source content is structured, current, and specific enough to support reliable AI outputs.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-
-
 **What to do now — Treat content as AI infrastructure:** Document the standards, structures, and reusable content patterns that your AI systems should rely on before trying to solve every quality issue with a different model.
 
 **Source:** <a href="https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality" data-item-id="dab-story-2026-09-20-d10aba14" data-edition-date="2026-09-20" data-action="source_clicks">How Content Technology is powering Atlassian’s AI quality</a>
@@ -213,8 +205,6 @@
 <!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding when a newly released Copilot capability is ready to enter a team’s standard engineering workflow.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
-
-
 
 **What to do now — Review this week’s Copilot changes:** Compare the new Copilot and VS Code changes with current engineering guidance and identify anything that needs testing or documentation updates.
 
