@@ -12,5 +12,6 @@
   "coverage_period": "24-hour primary window ending at 2026-09-20T14:15:00Z; recency fallback permitted only for reviewed items inside the documented policy windows.",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
-  "deterministic_validation_model_calls": 0
+  "deterministic_validation_model_calls": 0,
+  "recovery_revision": 2
 }
