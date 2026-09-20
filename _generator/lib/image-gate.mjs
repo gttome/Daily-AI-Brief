@@ -36,6 +36,20 @@ export function reviewedImages(edition, root) {
   return {review_path:selected.path,review_sha256:sha256(fs.readFileSync(path.join(root,selected.path))),assets,errors};
 }
 
+function inspectHandoffAsset(bytes,ext){
+  if(ext==='.webp')return inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630});
+  if(ext==='.png')return inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
+  if(ext==='.svg'){
+    const svg=bytes.toString('utf8'),errors=[];
+    if(!svg.startsWith('<svg')||!svg.includes('width="1200"')||!svg.includes('height="630"'))errors.push('invalid_svg_canvas');
+    if(!svg.includes('role="img"')||!svg.includes('aria-label='))errors.push('svg_accessibility_required');
+    if(!svg.includes('fill="#ffffff"'))errors.push('svg_white_background_required');
+    if((svg.match(/<text\b/g)||[]).length<12)errors.push('svg_explanatory_density_too_low');
+    return {pass:errors.length===0,errors,width:1200,height:630,bytes:bytes.length};
+  }
+  return {pass:false,errors:['unsupported_image_format'],width:null,height:null,bytes:bytes.length};
+}
+
 export function reviewedHandoffImages(edition, root, manifestPath) {
   const errors=[],assets=[],hashes=new Set();
   if(!manifestPath||typeof manifestPath!=='string'||path.isAbsolute(manifestPath)||manifestPath.includes('..'))return {assets,errors:['Invalid handoff image review path']};
@@ -59,9 +73,9 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     if(!filename.startsWith(base+path.sep)||!String(i.path||'').startsWith(`briefs/images/${edition.brief_date}/`)){errors.push('Unsafe or cross-edition handoff asset path');continue;}
     try{
       const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.path).toLowerCase();
-      const inspection=ext==='.webp'?inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630}):inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
+      const inspection=inspectHandoffAsset(bytes,ext);
       const width=inspection.width||0,height=inspection.height||0,ratio=height?width/height:0,target=1200/630;
-      if(!['.png','.webp'].includes(ext)||!inspection.pass||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff image canvas: ${i.path}`);
+      if(!['.png','.webp','.svg'].includes(ext)||!inspection.pass||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff image canvas: ${i.path}`);
       if(i.sha256&&i.sha256!==hash)errors.push(`Accepted handoff image bytes changed: ${i.path}`);
       if(Number.isInteger(story.image?.width)&&story.image.width!==width)errors.push(`Edition image width mismatch: ${i.path}`);
       if(Number.isInteger(story.image?.height)&&story.image.height!==height)errors.push(`Edition image height mismatch: ${i.path}`);
