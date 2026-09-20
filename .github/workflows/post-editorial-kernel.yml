@@ -296,9 +296,7 @@ jobs:
           node --test _generator/test/*.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
-          args=(integration-check)
-          if [ -n "$IMAGES_PATH" ]; then args+=(--image-review "$IMAGES_PATH"); fi
-          node _generator/cli.mjs "${args[@]}"
+          node _generator/cli.mjs integration-check --image-review "$FINAL_IMAGE_REVIEW_PATH"
 
       - name: Commit deterministic outputs to staging only
         env:
