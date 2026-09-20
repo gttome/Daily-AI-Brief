@@ -104,7 +104,8 @@ jobs:
         run: |
           set -euo pipefail
           date="$(node -e "const x=require('/tmp/preflight-request.json');process.stdout.write(x.edition_date)")"
-          if [ "$EVENT_NAME" = "schedule" ] || [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+          mode="$(node -e "const x=require('/tmp/preflight-request.json');process.stdout.write(String(x.execution_mode||'qualification_nonproduction'))")"
+          if [ "$EVENT_NAME" = "schedule" ] || [ "$EVENT_NAME" = "workflow_dispatch" ] || [ "$mode" = "production" ]; then
             target="preflight/$date"
             git checkout -B "$target"
           else

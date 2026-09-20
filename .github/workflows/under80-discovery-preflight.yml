@@ -62,6 +62,11 @@ jobs:
           else
             target_ref="$REF_NAME"
             test -f _records/discovery-preflight/request.json
+            purpose="$(node -e "const r=require('./_records/discovery-preflight/request.json');process.stdout.write(String(r.purpose||''))")"
+            request_date="$(node -e "const r=require('./_records/discovery-preflight/request.json');process.stdout.write(String(r.edition_date||''))")"
+            if [ "$purpose" = "daily_pre_work_discovery" ]; then
+              target_ref="discovery-preflight/daily/$request_date"
+            fi
           fi
           echo "run_preflight=true" >> "$GITHUB_OUTPUT"
           echo "target_ref=$target_ref" >> "$GITHUB_OUTPUT"
@@ -87,12 +92,24 @@ jobs:
         if: steps.request.outputs.run_preflight == 'true'
         env:
           DAB_RESEARCH_CUTOFF: ${{ steps.config.outputs.cutoff }}
+          DAB_DISCOVERY_FRESH: '1'
           DAB_SOURCE_SCAN_MIN: '12'
           DAB_SOURCE_SCAN_MAX: ${{ steps.config.outputs.source_scan_max }}
           DAB_FRESH_METADATA_TARGET: ${{ steps.config.outputs.fresh_metadata_target }}
         run: |
           set -euo pipefail
           node _tools/discover-sources.mjs
+
+      - name: Enrich metadata dates outside Work
+        if: steps.request.outputs.run_preflight == 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p _records/discovery-preflight/result
+          node _tools/enrich-metadata-dates.mjs \
+            --input _data/media-candidate-queue.json \
+            --receipt _records/discovery-preflight/result/date-enrichment.json \
+            --limit 48 \
+            --cutoff "${{ steps.config.outputs.cutoff }}"
 
       - name: Build bounded model-visible shortlist
         if: steps.request.outputs.run_preflight == 'true'
@@ -150,7 +167,7 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence.json _records/discovery-preflight/result/article-evidence-receipt.json _records/discovery-preflight/result/receipt.json
+          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/date-enrichment.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence.json _records/discovery-preflight/result/article-evidence-receipt.json _records/discovery-preflight/result/receipt.json
           git commit -m "Complete under-80 discovery preflight"
           git push origin "HEAD:$TARGET_REF"
 
