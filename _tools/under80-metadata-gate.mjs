@@ -118,10 +118,10 @@ add(eligible.find(x=>x.agent_skill_story_ready));
 
 // Guarantee metadata breadth for the eventual 2/2/2 editorial allocation before filling by score.
 for(const focus of ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people']){
- let count=selected.filter(x=>x.focus_hint===focus).length;
+ let count=selected.filter(x=>x.focus_hint===focus&&x.background_only!==true).length;
  for(const item of eligible){
   if(count>=3||selected.length>=limit)break;
-  if(item.focus_hint===focus&&add(item))count++;
+  if(item.focus_hint===focus&&item.background_only!==true&&add(item))count++;
  }
 }
 
@@ -146,7 +146,7 @@ while(selected.length<limit&&keys.some(k=>groups.get(k).length)){
 
 const candidates=selected.map((x,i)=>({...x,candidate_id:x.candidate_id||`m${String(i+1).padStart(2,'0')}`}));
 if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_violation');
-const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
+const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f&&x.background_only!==true).length]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
 const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
 const preferredAgentSkillCandidateId=candidates.find(x=>x.agent_skill_story_ready)?.candidate_id||null;
