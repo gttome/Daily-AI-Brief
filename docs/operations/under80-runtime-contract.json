@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -17,8 +17,13 @@
       "agents_non_technical_people"
     ],
     "reusable_agent_skills_stories": 1,
-    "videos_target": 2,
-    "podcast_target": 2
+    "videos_required": 2,
+    "podcasts_required": 2,
+    "display_focus_labels": {
+      "technical_ai_engineering": "Technical AI Engineering",
+      "applied_genai_knowledge_workers": "Applied Generative AI for Knowledge Workers",
+      "agents_non_technical_people": "Agents for Everyone"
+    }
   },
   "freshness": {
     "prefer_hours": 24,
@@ -294,7 +299,9 @@
     "merge_to_main_allowed": false,
     "pages_deployment_allowed": false,
     "purpose": "Allows a full scheduled-equivalent cost/structure test through the editorial handoff while deterministically proving the post-editorial stage without any production release path.",
-    "prework": "Prepare the historical qualification metadata preflight outside Work through the zero-model GitHub Actions preflight workflow; begin Work only after the isolated preflight branch has ready=true."
+    "prework": "Prepare the qualification metadata/article-evidence preflight through zero-model GitHub Actions; begin the single scheduled editorial semantic pass only after the isolated preflight branch is ready.",
+    "zero_work_status": "not_qualified",
+    "zero_work_reason": "Current scheduler controls do not expose an execution-mode selector that proves scheduled regular-chat/non-Work execution."
   },
   "watchlist": {
     "publication_freshness_required": true,
@@ -346,5 +353,13 @@
     ],
     "required_dimensions": "1200x630",
     "historical_png_compatible": true
+  },
+  "scheduler_execution": {
+    "zero_work_target": true,
+    "zero_work_qualified": false,
+    "execution_mode_selector_exposed": false,
+    "verified_current_state": "The scheduler configuration exposes prompt, timing, enabled state, and notifications, but no explicit regular-chat-vs-Work execution-mode selector.",
+    "production_rule": "Do not switch production to a claimed zero-Work path until a scheduled run proves GitHub-enabled full publication-equivalent execution without Work/Codex use.",
+    "current_action": "Keep the existing production execution path, enforce the GitHub startup gate first, and record only owner-observed credit values."
   }
 }
