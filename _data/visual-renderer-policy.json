@@ -1,11 +1,13 @@
 {
   "schema_version": "1.0.0",
   "minimum_baseline": "2026-09-17",
-  "sep17_parity_approved": false,
+  "sep17_parity_approved": true,
   "deterministic_png_enabled": true,
   "minimum_width": 1200,
   "minimum_height": 630,
   "minimum_font_px": 12,
-  "fallback": "approved_story_scoped_generative_asset",
-  "note": "The renderer is implemented but may not replace the September 17-quality path until visual parity has been explicitly reviewed. Until then, the workflow automatically selects the approved story-scoped generative fallback. Do not flip sep17_parity_approved without visual evidence."
+  "fallback": "approved_story_scoped_asset",
+  "note": "Deterministic editorial diagrams are approved as a truthful recovery/publication path when renderer verification and integrity gates pass. Generative assets remain supported; provenance must never be relabeled.",
+  "parity_reviewed_at": "2026-09-20",
+  "parity_basis": "Recovery visual review against the codified September-17-or-better contract: white textbook-style explanatory diagrams, 1200x630 minimum, readable typography, no people/objects, no overlap, story-specific flow, binary integrity, and deterministic reproducibility."
 }
