@@ -28,11 +28,15 @@
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=61e7adc99b3e4c13)
+![Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13)
 
 **Summary:** AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.
 
 **Why it matters:** Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once and let an agent invoke it when the situation matches.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding what instructions, tools, references, examples, and validation evidence belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
@@ -68,11 +72,15 @@
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979)
+![Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg?v=e308bc6f06ee6979)
 
 **Summary:** AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.
 
 **Why it matters:** For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, observability, and operations—becomes as important as the model itself.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust helps define how much autonomy a managed agent runtime should receive before human review, escalation, or rollback is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
@@ -108,11 +116,15 @@
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=5f6a72904f253592)
+![Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592)
 
 **Summary:** Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.
 
 **Why it matters:** For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requiring users to shuttle context between systems.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding which business-system context, permissions, references, and constraints should travel through an MCP connection.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
@@ -148,11 +160,15 @@
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=0d4439efae6dd18a)
+![Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a)
 
 **Summary:** Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.
 
 **Why it matters:** For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and evaluation practices can improve reliability without changing the underlying model.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality framework to evaluate whether source content is structured, current, and specific enough to support reliable AI outputs.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
@@ -188,11 +204,15 @@
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a weekly Copilot release, workflow mapping, testing, and updated engineering guidance.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=b0617a1e1bf02951)
+![Four-step diagram showing a weekly Copilot release, workflow mapping, testing, and updated engineering guidance.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg?v=b0617a1e1bf02951)
 
 **Summary:** GitHub’s September 14 weekly Copilot release roundup groups several developer-facing changes across Copilot experiences and VS Code, giving engineering teams a compact view of the latest product surface they need to evaluate.
 
 **Why it matters:** A recurring release cadence means teams need a lightweight operating practice for reviewing Copilot changes, deciding which ones affect local workflows, and updating guidance before new behavior surprises developers.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding when a newly released Copilot capability is ready to enter a team’s standard engineering workflow.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
@@ -228,7 +248,7 @@
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=3405d45eb9641fa2)
+![Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg?v=3405d45eb9641fa2)
 
 **Summary:** NVIDIA introduced AIPerf as the successor to GenAI-Perf, using a multiprocess architecture intended to prevent the benchmark client itself from becoming the bottleneck during high-concurrency LLM inference tests.
 
@@ -392,7 +412,7 @@
 <!-- reader-release:start -->
 
 
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p><strong>0 new today.</strong> No new Watchlist item cleared the September 20 publication gate; existing monitored topics remain available below.</p><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
 
 
 <!-- reader-release:end -->
