@@ -50,7 +50,14 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     if(matches.length!==1){errors.push(`Missing or ambiguous handoff visual approval: ${story.story_id}`);continue;}
     const i=matches[0];
     const strictLock=edition.brief_date>='2026-09-19';
-    const approvedMethod=strictLock?i.generation_method==='openai_image_generation':['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
+    let deterministicApproved=false;
+    if(i.generation_method==='deterministic_editorial_diagram'&&i.renderer_verified===true){
+      try{
+        const policy=JSON.parse(fs.readFileSync(path.join(root,'_data/visual-renderer-policy.json'),'utf8'));
+        deterministicApproved=policy.sep17_parity_approved===true;
+      }catch{}
+    }
+    const approvedMethod=strictLock?(i.generation_method==='openai_image_generation'||deterministicApproved):['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
     if(i.quality_accepted!==true||!approvedMethod)errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
     if(strictLock&&(i.accepted_locked!==true||i.lock_status!=='accepted_locked'))errors.push(`Handoff visual must be accepted and locked: ${story.story_id}`);
     if(i.alt!==story.image?.alt)errors.push(`Handoff visual alt text mismatch: ${story.story_id}`);
