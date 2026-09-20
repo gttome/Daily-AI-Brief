@@ -70,9 +70,13 @@ if(completion&&edition){
  const missing=[...new Set(required)].filter(x=>!exists(x));
  check('local_release_artifacts',missing.length?'fail':'pass','critical',missing.length?`Missing: ${missing.join(', ')}`:`${new Set(required).size} current release artifacts exist locally.`);
  const images=stories.map(s=>s.image?.path).filter(Boolean),imageProblems=[];
- let imageManifest={};
- try{imageManifest=readJson('_records/editorial-handoff/images.json');}catch{}
- const manifestEntries=Object.values(imageManifest||{});
+ let manifestEntries=[];
+ for(const manifestPath of ['_records/editorial-handoff/final-image-review.json','_records/editorial-handoff/images.json']){
+  try{
+   const entries=Object.values(readJson(manifestPath)||{});
+   if(entries.some(entry=>String(entry?.path||'').startsWith(`briefs/images/${date}/`))){manifestEntries=entries;break;}
+  }catch{}
+ }
  let integrityPassed=0,acceptedLocked=0,canonicalHosted=0;
  for(const story of stories){
   const image=story.image?.path;
