@@ -77,7 +77,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Layered agent-runtime illustration separating portable planner, model routing, tools, and state from managed identity, isolation, permissions, scaling, observability, recovery, and rollback.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979)
+![Layered agent-runtime illustration separating portable planner, model routing, tools, and state from managed identity, isolation, permissions, scaling, observability, recovery, and rollback.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=5e87a8b76e479a79)
 
 **Summary:** AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.
 
