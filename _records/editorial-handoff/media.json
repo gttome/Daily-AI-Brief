@@ -23,10 +23,12 @@
       "why_useful": "A practical 11-minute look at how Claude can support a highly automated one-person business, including where AI can absorb repeatable work around software, sales, and support.",
       "connection": "It complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state: a small operation built around reusable AI workflows rather than one-off chats.",
       "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
-      "duration_tier": "fallback_under_20m",
+      "duration_tier": "fallback",
       "short_search_evidence": [
-        "Daily Curry listed the video on September 20, 2026 with an 11:40 runtime and linked the YouTube video."
-      ]
+        "A current September 20 video scan checked multiple AI/agent videos; the closest highly relevant options at or under 10 minutes were either stale or materially less aligned with reusable agent workflows.",
+        "Daily Curry listed this September 20 video at 11:40 and linked the YouTube source."
+      ],
+      "fallback_reason": "The bounded current-video search found no equally relevant agent/workflow video at or under the 10-minute target; this 11:40 item is within the permitted under-20-minute fallback window and directly supports the Agent Skills/automation theme."
     }
   },
   "podcasts": [
