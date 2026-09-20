@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "purpose": "Shape-only template for the compact editorial-to-deterministic handoff. Replace every placeholder from fresh reviewed evidence; this file is not editorial evidence.",
   "branch": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
   "files": {
@@ -147,15 +147,33 @@
   "media_shape": {
     "worth_watching": {
       "general": {
-        "status": "empty",
-        "exception": "No video met today’s editorial quality standards."
+        "status": "selected",
+        "title": "Verified qualifying video title",
+        "url": "https://www.youtube.com/watch?v=example1",
+        "runtime_seconds": 600
       },
       "agents_non_technical_people": {
-        "status": "empty",
-        "exception": "No video met today’s editorial quality standards."
+        "status": "selected",
+        "display_label": "Agents for Everyone",
+        "title": "Verified qualifying agent video title",
+        "url": "https://www.youtube.com/watch?v=example2",
+        "runtime_seconds": 600
       }
     },
-    "podcasts": []
+    "podcasts": [
+      {
+        "status": "selected",
+        "title": "Verified podcast one",
+        "source": "Source A",
+        "url": "https://example.com/podcast-1"
+      },
+      {
+        "status": "selected",
+        "title": "Verified podcast two",
+        "source": "Source B",
+        "url": "https://example.com/podcast-2"
+      }
+    ]
   },
   "handoff_manifest_shape": {
     "schema_version": "1.0.0",
@@ -182,6 +200,8 @@
     "Before any model inspects article discovery candidates, run `_tools/under80-metadata-gate.mjs`; never open the raw discovery queue. The committed gate output must contain at most 20 candidates.",
     "Kernel must contain exactly six stories in ordered 2/2/2 allocation and exactly one agent_skill=true.",
     "Facts and image manifests must contain every selected candidate_id.",
+    "Use the stable internal focus id `agents_non_technical_people` for compatibility, but all current reader-facing display labels must be `Agents for Everyone`.",
+    "Media is fail-closed: the handoff must contain exactly two verified videos and exactly two verified source-diverse podcasts. Empty or omitted production media slots are invalid; preserve the last valid edition and stop for targeted media recovery.",
     "All six story images must be fresh accepted full-quality images; prefer 1200×630 WebP, with PNG accepted when needed for a from-scratch qualification test.",
     "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work.",
     "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation."
