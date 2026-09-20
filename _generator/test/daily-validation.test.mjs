@@ -45,6 +45,25 @@ test('deterministic validation verifies hardened September 19 completeness and l
  }finally{fs.rmSync(path.dirname(out),{recursive:true,force:true});}
 });
 
+test('deterministic validation uses the current final locked-image review for September 20',()=>{
+ const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-validation-'));
+ const out=path.join(temp,'receipt.json'),completionFile=path.join(temp,'completion.json');
+ try{
+  const completion=JSON.parse(fs.readFileSync('_records/publication/2026-09-19/completion.json','utf8'));
+  const validated=JSON.parse(fs.readFileSync('_records/publication/2026-09-20/kernel-35518865790.validated.json','utf8'));
+  completion.edition_id='dab-edition-2026-09-20';completion.commit_sha='a'.repeat(40);
+  completion.file_set=validated.file_set;completion.pages={...completion.pages,conclusion:'success'};
+  fs.writeFileSync(completionFile,JSON.stringify(completion,null,2)+'\n');
+  execFileSync(process.execPath,['_tools/daily-validation.mjs','--date','2026-09-20','--offline','--completion',completionFile,'--out',out],{cwd:process.cwd(),stdio:'pipe'});
+  const receipt=JSON.parse(fs.readFileSync(out,'utf8'));
+  assert.equal(receipt.model_calls,0);assert.equal(receipt.final_result,'pass');
+  assert.equal(receipt.image_readiness.expected,6);assert.equal(receipt.image_readiness.accepted_locked,6);
+  assert.equal(receipt.image_readiness.integrity_passed,6);assert.equal(receipt.image_readiness.canonical_hosted,6);
+  assert.equal(receipt.image_readiness.status,'pass');
+  assert.equal(receipt.checks.find(x=>x.check_id==='image_asset_lock').result,'pass');
+ }finally{fs.rmSync(temp,{recursive:true,force:true});}
+});
+
 
 test('daily validation accepts runtime Pages completion evidence without requiring a new repository completion commit',()=>{ 
  const temp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-runtime-completion-'));
