@@ -7,6 +7,7 @@ import {commandCenterDeltaPacket} from '../_generator/lib/command-center-delta.m
 const args=parseArgs(process.argv.slice(2));
 if(!args.validation||!args.watchlist||!args.policy||!args.out)throw Error('Usage: command-center-delta.mjs --validation <json> --watchlist <json> --policy <json> --out <json>');
 const read=p=>JSON.parse(fs.readFileSync(path.resolve(p),'utf8'));
-const packet=commandCenterDeltaPacket({validation:read(args.validation),watchlist:read(args.watchlist),policy:read(args.policy)});
+const incidentHistory=args.incident&&fs.existsSync(path.resolve(args.incident))?read(args.incident):null;
+const packet=commandCenterDeltaPacket({validation:read(args.validation),watchlist:read(args.watchlist),policy:read(args.policy),incidentHistory});
 const out=path.resolve(args.out);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(packet,null,2)+'\n');
 console.log(JSON.stringify(packet,null,2));
