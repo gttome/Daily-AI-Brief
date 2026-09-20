@@ -2,14 +2,17 @@
   "schema_version": "1.0.0",
   "minimum_baseline": "2026-09-17",
   "sep17_parity_approved": false,
-  "deterministic_png_enabled": true,
+  "deterministic_png_enabled": false,
   "minimum_width": 1200,
   "minimum_height": 630,
   "minimum_font_px": 12,
-  "fallback": "approved_story_scoped_asset",
-  "note": "Deterministic editorial diagrams are approved as a truthful recovery/publication path when renderer verification and integrity gates pass. Generative assets remain supported; provenance must never be relabeled.",
+  "fallback": "accepted_locked_professional_generative_asset",
+  "note": "Publication must fail closed unless six story-specific professionally reviewed generative assets are supplied. Low-detail deterministic diagrams are not an acceptable publication fallback.",
   "parity_reviewed_at": "2026-09-20",
-  "parity_basis": "September 20 closure review found the current deterministic box-diagram renderer materially below the accepted professional September 19 WebP baseline. Fail closed: use an approved story-scoped professional asset until deterministic rendering is requalified.",
+  "parity_basis": "September 20 reader review rejected the deterministic box-diagram renderer as materially below the established professional textbook standard. Deterministic rendering is disabled for publication until separately requalified against that visual baseline.",
   "low_detail_fallback_allowed": false,
-  "preferred_public_format": "webp"
+  "preferred_public_format": "webp",
+  "professional_generative_assets_required": true,
+  "required_generation_method": "openai_image_generation",
+  "required_lock_status": "accepted_locked"
 }
