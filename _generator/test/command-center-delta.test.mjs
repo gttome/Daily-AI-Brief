@@ -7,6 +7,7 @@ test('Command Center delta packet is allowlisted and excludes private/arbitrary 
   validation:{date:'2026-09-18',publication_sha:'a'.repeat(40),final_result:'pass',model_calls:0,semantic_escalation_required:false,automatic_ai_recovery_runs:0,coverage:{articles:6,videos:0,podcasts:2,included_items:8,potential_positions:10},image_readiness:{expected:6,accepted_locked:6,integrity_passed:6,canonical_hosted:6,status:'pass'},domain_states:{publication:'verified',coverage:'degraded'},private_reader_data:{ratings:[1,2,3]},checks:[{check_id:'routes',result:'pass',severity:'critical',evidence:'do not copy detailed evidence',owner_email:'private@example.com'}]},
   watchlist:{changed_topics:['topic-a'],carried_topics:['topic-b'],removed_topics:[],normal_semantic_input_topic_ids:['topic-a'],model_calls:0,private_reviews:{notes:'secret'}},
   policy:{profile_id:'under80-v1',daily_system_credit_target_lt:80,metadata_candidate_limit:20,normal_deep_review_limit:9,image:{quality_protected:true},reason:'internal prose not allowlisted',secret:'never copy'},
+  incidentHistory:{incident_id:'dab-incident-2026-09-19-publication-quality',edition_date:'2026-09-19',status:'resolved_with_hardening',summary:'Initial edition was corrected.',original_publication:{observed_state:{videos:0,podcasts:0}},correction:{corrective_pr:162,corrected_state:{videos:2,podcasts:2}},hardening:[{pr:164,control:'Fail closed media'}],closure_requirements:{exact_media_2_videos_2_podcasts:true},private_owner_note:'never copy'},
   generatedAt:'2026-09-18T14:00:00Z'
  });
  assert.equal(packet.mode,'public_safe_command_center_delta_handoff');
@@ -21,6 +22,10 @@ test('Command Center delta packet is allowlisted and excludes private/arbitrary 
  assert.equal(packet.operating_policy.normal_deep_review_limit,9);assert.equal(packet.operating_policy.profile_id,'under80-v1');assert.equal(packet.operating_policy.daily_system_credit_target_lt,80);assert.equal(packet.operating_policy.image.quality_protected,true);
  assert.equal(packet.privacy.private_reader_records_included,false);
  assert.equal(packet.transport.live_command_center_owner_state_mutation,'not_configured');
+ assert.equal(packet.incident_history.incident_id,'dab-incident-2026-09-19-publication-quality');
+ assert.equal(packet.incident_history.original_publication.observed_state.videos,0);
+ assert.equal(packet.incident_history.correction.corrected_state.videos,2);
+ assert.equal(packet.incident_history.hardening[0].pr,164);
  const text=JSON.stringify(packet);
- for(const forbidden of ['private@example.com','secret','private_reader_data','private_reviews','detailed evidence'])assert.equal(text.includes(forbidden),false);
+ for(const forbidden of ['private@example.com','secret','private_reader_data','private_reviews','detailed evidence','private_owner_note'])assert.equal(text.includes(forbidden),false);
 });

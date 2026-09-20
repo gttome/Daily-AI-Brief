@@ -54,3 +54,13 @@ test('September 20 image contract remains WebP-preferred and PNG-compatible with
   assert.equal(template.images_shape.c01.format,'webp');
   assert.ok(template.hard_rules.some(rule=>/accepted WebP or PNG blobs/.test(rule)));
 });
+
+
+test('production handoff does not depend on GitHub Actions permission to create pull requests',()=>{
+  const runtime=read('docs/operations/under80-runtime-contract.json');
+  assert.equal(runtime.handoff.publication_pr.creation_owner,'scheduled_publisher_github_connector');
+  assert.equal(runtime.handoff.publication_pr.initial_label_state,'unlabelled');
+  assert.equal(runtime.handoff.publication_pr.actions_create_pr_dependency,false);
+  assert.match(runtime.handoff.publication_pr.deterministic_workflow_role,/add publication-candidate only after deterministic validation succeeds/);
+  assert.match(runtime.handoff.hard_stop,/authenticated GitHub connector to open or reuse one unlabelled PR/);
+});
