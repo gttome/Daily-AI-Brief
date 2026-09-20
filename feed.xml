@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-19T17:42:07Z</updated>
+  <updated>2026-09-20T15:13:52Z</updated>
+  <entry>
+    <title>GitHub Copilot weekly releases expand the engineering surface</title>
+    <id>dab-story-2026-09-20-94a301a8</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/github-copilot-weekly-releases-expand-the-engineering-surface/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>GitHub’s September 14 weekly Copilot release roundup groups several developer-facing changes across Copilot experiences and VS Code, giving engineering teams a compact view of the latest product surface they need to evaluate.</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency</title>
+    <id>dab-story-2026-09-20-e23d62ec</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>NVIDIA introduced AIPerf as the successor to GenAI-Perf, using a multiprocess architecture intended to prevent the benchmark client itself from becoming the bottleneck during high-concurrency LLM inference tests.</summary>
+  </entry>
+  <entry>
+    <title>Gemini in Workspace connects directly to more business tools through MCP</title>
+    <id>dab-story-2026-09-20-2d9f17ac</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.</summary>
+  </entry>
+  <entry>
+    <title>Atlassian treats content systems as an AI-quality control layer</title>
+    <id>dab-story-2026-09-20-d10aba14</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/atlassian-treats-content-systems-as-an-ai-quality-control-layer/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.</summary>
+  </entry>
+  <entry>
+    <title>AWS shows Agent Skills packaging reusable SageMaker deployment work</title>
+    <id>dab-story-2026-09-20-e6b79e74</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.</summary>
+  </entry>
+  <entry>
+    <title>AWS shows how existing multi-model agents can move into a managed runtime</title>
+    <id>dab-story-2026-09-20-fcc5cf79</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtime/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.</summary>
+  </entry>
+  <entry>
+    <title>NVIDIA PAIR Connects Your Computers for Local AI</title>
+    <id>dab-video-2026-09-20-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-20/general/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.</summary>
+  </entry>
+  <entry>
+    <title>Anthropic’s CEO: How to Build a 1 Person Business with Claude</title>
+    <id>dab-video-2026-09-20-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-20/agent-skills/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>A practical 11-minute look at how Claude can support a highly automated one-person business, including where AI can absorb repeatable work around software, sales, and support.</summary>
+  </entry>
+  <entry>
+    <title>Inside China&apos;s AI race</title>
+    <id>dab-podcast-2026-09-20-inside-chinas-ai-race</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-20/inside-chinas-ai-race/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.</summary>
+  </entry>
+  <entry>
+    <title>AI Doom Backlash Arrives, Anthropic &amp; OpenAI IPO Outlook, Frontier Business Momentum Slows</title>
+    <id>dab-podcast-2026-09-20-ai-doom-backlash</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-20/ai-doom-backlash/" />
+    <updated>2026-09-20T18:00:00Z</updated>
+    <summary>Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.</summary>
+  </entry>
   <entry>
     <title>Copilot code review adds clearer progress and smarter batch suggestions</title>
     <id>dab-story-2026-09-19-807056d1</id>
@@ -1383,40 +1453,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-22/pandora-s-router-asks-whether-a-better-routing-decision-is-worth-the-cost-of-mak/" />
     <updated>2026-08-22T18:00:00Z</updated>
     <summary>*Pandora’s AI Model Routing Box* studies systems that choose among multiple models, harnesses, retrieval specialists, or reasoning settings. The central problem is that predicting which specialist will perform best can itself be expensive. A cheap estimator may be fast but noisy; a more accurate estimator may require retrieval, partial reasoning, or another model call. The proposed Pandora’s Router uses value-of-information calculations to decide when the cheap estimate is sufficient and when paying for a more accurate estimate is justified. Across a multi-LLM benchmark, retrieval-augmented specialists, and variable inference-time reasoning, the authors report routing quality comparable to exhaustive estimation while querying the expensive estimator substantially less often.</summary>
-  </entry>
-  <entry>
-    <title>Mistral turns RAG into an evidence-seeking retrieval loop</title>
-    <id>dab-story-2026-08-21-f1184b97</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-21/mistral-turns-rag-into-an-evidence-seeking-retrieval-loop/" />
-    <updated>2026-08-21T18:00:00Z</updated>
-    <summary>Mistral introduced **Agentic Search**, a retrieval layer that lets a model repeatedly search, open, navigate, read, and grep indexed documents instead of answering from one fixed set of chunks. It is available through Mistral Search Toolkit and through Libraries in Studio and Vibe, with cloud and on-premises deployment options. In Mistral’s tests, the complete loop raised GLM-5.2 accuracy on FinanceBench from 26.7% to 86.0% and on OfficeQA Pro from 6.3% to 51.9%. Navigation also reduced token use by as much as one-third and cut FinanceBench p90 latency from 255 to 154 seconds.</summary>
-  </entry>
-  <entry>
-    <title>PolicyGuide converts organizational rules into a live workflow graph</title>
-    <id>dab-story-2026-08-21-92a6e1fe</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-21/policyguide-converts-organizational-rules-into-a-live-workflow-graph/" />
-    <updated>2026-08-21T18:00:00Z</updated>
-    <summary>*PolicyGuide* compiles a domain policy into a workflow graph, persists the graph’s state across a conversation, and runs a verifier at user-turn boundaries. The verifier checks both prohibited actions and required steps that might otherwise be omitted, then returns remediation along a compliant path. On the airline, retail, and telecom domains of τ²-bench, the authors report that mean Pass⁴ rose from 0.42 to 0.62 with GPT-5.4; telecom improved from 0.19 to 0.61. The same workflows transferred to Claude Sonnet 4.6 and Gemini 2.5 Pro agents.</summary>
-  </entry>
-  <entry>
-    <title>Phantom Gains finds that self-improvement can be a measurement illusion</title>
-    <id>dab-story-2026-08-21-2e9487fe</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-21/phantom-gains-finds-that-self-improvement-can-be-a-measurement-illusion/" />
-    <updated>2026-08-21T18:00:00Z</updated>
-    <summary>*Phantom Gains* audits three rounds of rank-32 LoRA self-training on Qwen3-8B by sending an unchanged control model through the identical training-and-evaluation pipeline. The authors identify seven measurement failures that can reverse a conclusion when the control is absent. A single greedy decode, for example, appeared to create per-problem capability changes in the frozen model because of inference batching. Their replacement uses per-problem exact tests against a pooled baseline with false-discovery-rate control. Under that audit, external distillation improved problems the base model rarely solved, while three self-training variants did not; self-training also damaged some problems solved at baseline.</summary>
-  </entry>
-  <entry>
-    <title>EnvHarness adapts an agent’s training world without rebuilding it</title>
-    <id>dab-story-2026-08-21-eeb92c90</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-21/envharness-adapts-an-agent-s-training-world-without-rebuilding-it/" />
-    <updated>2026-08-21T18:00:00Z</updated>
-    <summary>*EnvHarness* proposes a programmable layer of plug-ins that wraps an existing agent environment and changes its behavior through standard interfaces while retaining the original verifier. Its companion system, EnvRigger, treats the agent as a black box, analyzes execution trajectories, synthesizes components that target diagnosed weaknesses, and validates them with fresh rollouts. Across five benchmarks in four domains, the authors report improvements of up to 9.0 points on held-out instances with 9.8% fewer execution steps than comparison environments.</summary>
-  </entry>
-  <entry>
-    <title>Dual gatekeeping improves AI-generated educational videos by refusing weak output</title>
-    <id>dab-story-2026-08-21-6877cf6f</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-21/dual-gatekeeping-improves-ai-generated-educational-videos-by-refusing-weak-outpu/" />
-    <updated>2026-08-21T18:00:00Z</updated>
-    <summary>*When Saying No Makes Better Videos* evaluates an AI video-authoring pipeline with two gates. Educators first reshape generated scripts using multimedia-learning principles; automated metrics then flag problems in instructional coherence and narrative–visual synchronization. A study with 23 educators across three topics, combined with automated evaluation across seven science and philosophy topics, found that the human and automated gates independently improved the same instructional dimensions.</summary>
   </entry>
 </feed>

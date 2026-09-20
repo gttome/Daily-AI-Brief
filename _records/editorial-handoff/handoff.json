@@ -1,18 +1,17 @@
 {
   "schema_version": "1.0.0",
   "execution_mode": "production",
-  "staging_ref": "editorial-handoff/production/2026-09-19-hardening-proof",
+  "staging_ref": "editorial-handoff/production/2026-09-20-final",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
-  "images_path": "_records/editorial-handoff/images.json",
+  "images_path": "",
   "media_path": "_records/editorial-handoff/media.json",
-  "coverage_period": "Coverage reviewed through the committed September 19, 2026 preflight cutoff at 12:03 UTC, with a same-day corrective media and Watchlist refresh using independently verified current sources.",
-  "editorial_model_passes": 1,
-  "post_editorial_model_passes": 0,
-  "deterministic_validation_model_calls": 0,
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
   "image_transport_method": "github_git_data_api",
-  "recovery_attempt": 10,
-  "recovery_note": "Post-hardening September 19 idempotency proof after the targeted Brief-domain importer compatibility fix. Reuse all six accepted_locked professional assets, both verified videos, both verified podcasts, and the refreshed September 19 Watchlist. No rediscovery and no image regeneration."
+  "coverage_period": "24-hour primary window ending at 2026-09-20T14:15:00Z; recency fallback permitted only for reviewed items inside the documented policy windows.",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "deterministic_validation_model_calls": 0,
+  "recovery_revision": 6
 }

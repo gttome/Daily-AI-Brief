@@ -1,56 +1,56 @@
 {
   "schema_version": "1.0.0",
-  "brief_date": "2026-09-19",
-  "edition_id": "dab-edition-2026-09-19",
-  "baseline_sha": "a4213adc0458519fc1352303b80bfdf7b072cd6f",
+  "brief_date": "2026-09-20",
+  "edition_id": "dab-edition-2026-09-20",
+  "baseline_sha": "71b8af55ac8b00080e0652cadda8d2c40cbc31df",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
   "stories": [
     {
-      "candidate_id": "m04",
-      "story_id": "copilot-code-review-improved-2026-09-19",
+      "candidate_id": "m02",
+      "story_id": "copilot-weekly-releases-2026-09-20",
       "canonical_ordinal": 1,
       "focus": "technical_ai_engineering",
-      "headline": "Copilot code review adds clearer progress and smarter batch suggestions",
-      "summary": "GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.",
-      "why_it_matters": "The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.",
-      "editorial_limitation": "Based on GitHub's September 18 product announcement; operational impact will vary by repository and workflow.",
+      "headline": "GitHub Copilot weekly releases expand the engineering surface",
+      "summary": "GitHub’s September 14 weekly Copilot release roundup groups several developer-facing changes across Copilot experiences and VS Code, giving engineering teams a compact view of the latest product surface they need to evaluate.",
+      "why_it_matters": "A recurring release cadence means teams need a lightweight operating practice for reviewing Copilot changes, deciding which ones affect local workflows, and updating guidance before new behavior surprises developers.",
+      "editorial_limitation": "This is a publisher release roundup, so practical impact depends on which Copilot surfaces and configurations a team actually uses.",
       "topic_labels": [
         "Copilot",
-        "code review",
-        "developer workflow"
+        "developer workflow",
+        "release management"
       ],
-      "source_url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "source_url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "evaluate",
-        "label": "Review the new code-review flow",
-        "rationale": "Check whether clearer progress and batch commit messages reduce review overhead in active repositories."
+        "action": "monitor",
+        "label": "Review this week’s Copilot changes",
+        "rationale": "Compare the new Copilot and VS Code changes with current engineering guidance and identify anything that needs testing or documentation updates."
       },
       "visual": {
         "layout": "process",
-        "title": "Copilot code review flow",
-        "alt_text": "Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.",
+        "title": "Copilot release review loop",
+        "alt_text": "Four-step diagram showing a weekly Copilot release, workflow mapping, testing, and updated engineering guidance.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Review progress",
-            "detail": "Clearer status across a changing review."
+            "label": "Weekly release",
+            "detail": "Capture the newest Copilot changes."
           },
           {
             "id": "n2",
-            "label": "Auto-resolve",
-            "detail": "Copilot can more intelligently resolve its own suggestions."
+            "label": "Map workflows",
+            "detail": "Identify affected engineering workflows."
           },
           {
             "id": "n3",
-            "label": "Batch suggestions",
-            "detail": "Developers can accept multiple suggestions."
+            "label": "Test changes",
+            "detail": "Verify behavior in representative repositories."
           },
           {
             "id": "n4",
-            "label": "Commit messages",
-            "detail": "Useful commit messages are generated for accepted batches."
+            "label": "Update guidance",
+            "detail": "Refresh team guidance and rollout notes."
           }
         ],
         "edges": [
@@ -72,57 +72,61 @@
         ],
         "callouts": [
           {
-            "anchor": "n3",
-            "text": "The update targets review clarity and lower-friction follow-through."
+            "anchor": "n2",
+            "text": "Treat product changes as recurring engineering inputs, not one-time announcements."
+          },
+          {
+            "anchor": "n4",
+            "text": "A short review loop reduces surprises when Copilot behavior changes."
           }
         ]
       }
     },
     {
       "candidate_id": "m03",
-      "story_id": "copilot-model-deprecation-october-2026",
+      "story_id": "aiperf-llm-benchmarking-2026-09-20",
       "canonical_ordinal": 2,
       "focus": "technical_ai_engineering",
-      "headline": "GitHub schedules selected Copilot model deprecations for October 19",
-      "summary": "GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.",
-      "why_it_matters": "Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.",
-      "editorial_limitation": "The evidence packet confirms the deprecation and alternative-model guidance but does not reproduce the complete model list.",
+      "headline": "NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency",
+      "summary": "NVIDIA introduced AIPerf as the successor to GenAI-Perf, using a multiprocess architecture intended to prevent the benchmark client itself from becoming the bottleneck during high-concurrency LLM inference tests.",
+      "why_it_matters": "When benchmarking tools saturate before the model-serving stack does, engineering teams can draw the wrong conclusions about capacity. A benchmark designed for larger concurrency makes infrastructure tuning and deployment comparisons more trustworthy.",
+      "editorial_limitation": "The article is NVIDIA-authored and describes NVIDIA’s own benchmark design; teams should still validate methodology against their workloads and serving stack.",
       "topic_labels": [
-        "Copilot",
-        "models",
-        "deprecation"
+        "LLM inference",
+        "benchmarking",
+        "performance engineering"
       ],
-      "source_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "source_url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "update_policy",
-        "label": "Audit Copilot model policies",
-        "rationale": "Identify affected model choices and enable suitable alternatives before the October 19 deprecation date."
+        "action": "evaluate",
+        "label": "Recheck inference benchmarks",
+        "rationale": "If current load tests approach client-side limits, compare AIPerf with the existing harness before using benchmark results for capacity decisions."
       },
       "visual": {
         "layout": "process",
-        "title": "Copilot model transition",
-        "alt_text": "Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.",
+        "title": "LLM inference benchmarking at scale",
+        "alt_text": "Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Current models",
-            "detail": "Identify selected models in use."
+            "label": "High concurrency",
+            "detail": "Generate realistic concurrent inference demand."
           },
           {
             "id": "n2",
-            "label": "Policy check",
-            "detail": "Review Copilot model policies."
+            "label": "Multiprocess load",
+            "detail": "Distribute benchmark work across processes."
           },
           {
             "id": "n3",
-            "label": "Alternatives",
-            "detail": "Enable supported alternative models."
+            "label": "Measure bottlenecks",
+            "detail": "Separate client limits from serving limits."
           },
           {
             "id": "n4",
-            "label": "Oct 19",
-            "detail": "Complete transition before deprecation."
+            "label": "Tune deployment",
+            "detail": "Use measured constraints to tune deployment."
           }
         ],
         "edges": [
@@ -145,56 +149,61 @@
         "callouts": [
           {
             "anchor": "n2",
-            "text": "Administrators may need to enable alternative models through policy."
+            "text": "Benchmark tooling must not become the hidden throughput ceiling."
+          },
+          {
+            "anchor": "n4",
+            "text": "The useful output is a capacity decision tied to the real serving bottleneck."
           }
         ]
       }
     },
     {
-      "candidate_id": "m06",
-      "story_id": "copilot-impact-dashboard-engagement-2026-09-19",
+      "candidate_id": "m05",
+      "story_id": "google-workspace-gemini-mcp-2026-09-20",
       "canonical_ordinal": 3,
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Copilot impact dashboard now exposes feature engagement",
-      "summary": "GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.",
-      "why_it_matters": "AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.",
-      "editorial_limitation": "The dashboard measures engagement signals; engagement alone does not establish productivity or business impact.",
+      "headline": "Gemini in Workspace connects directly to more business tools through MCP",
+      "summary": "Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.",
+      "why_it_matters": "For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requiring users to shuttle context between systems.",
+      "editorial_limitation": "Availability depends on Google Workspace rollout and administrator configuration, and integrations still inherit the permissions and quality limits of connected systems.",
       "topic_labels": [
-        "Copilot",
-        "adoption",
-        "analytics"
+        "Gemini",
+        "Google Workspace",
+        "MCP",
+        "knowledge work"
       ],
-      "source_url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+      "source_url": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "monitor",
-        "label": "Review feature-level engagement",
-        "rationale": "Use engagement data to distinguish widely adopted Copilot experiences from features that need targeted enablement."
+        "action": "evaluate",
+        "label": "Map high-value Workspace connections",
+        "rationale": "Identify one or two systems where eliminating copy-and-paste context transfer would materially improve a recurring knowledge-work process."
       },
       "visual": {
         "layout": "process",
-        "title": "From usage to enablement",
-        "alt_text": "Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.",
+        "title": "Gemini moves across work tools",
+        "alt_text": "Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Active users",
-            "detail": "Start with active Copilot users."
+            "label": "Workspace request",
+            "detail": "Start from the user’s active work context."
           },
           {
             "id": "n2",
-            "label": "Feature usage",
-            "detail": "See regular use of key features."
+            "label": "MCP connector",
+            "detail": "Use a governed connector to reach another system."
           },
           {
             "id": "n3",
-            "label": "Adoption gaps",
-            "detail": "Identify underused experiences."
+            "label": "Business systems",
+            "detail": "Retrieve or act on authorized business information."
           },
           {
             "id": "n4",
-            "label": "Enablement",
-            "detail": "Target training or rollout support."
+            "label": "Return to workflow",
+            "detail": "Bring the result back into the working flow."
           }
         ],
         "edges": [
@@ -216,57 +225,62 @@
         ],
         "callouts": [
           {
-            "anchor": "n3",
-            "text": "Feature engagement is a stronger adoption signal than licenses alone."
+            "anchor": "n2",
+            "text": "The practical gain is continuity of context across tools."
+          },
+          {
+            "anchor": "n4",
+            "text": "Permissions and connector governance remain part of the workflow design."
           }
         ]
       }
     },
     {
       "candidate_id": "m07",
-      "story_id": "microsoft-ai-transformation-lessons-2026-09-19",
+      "story_id": "atlassian-content-ai-quality-2026-09-20",
       "canonical_ordinal": 4,
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
-      "summary": "Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.",
-      "why_it_matters": "The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workflows rather than treating AI as a one-time tool rollout.",
-      "editorial_limitation": "This is Microsoft's account of its own transformation and should be read as publisher-authored evidence rather than independent benchmarking.",
+      "headline": "Atlassian treats content systems as an AI-quality control layer",
+      "summary": "Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.",
+      "why_it_matters": "For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and evaluation practices can improve reliability without changing the underlying model.",
+      "editorial_limitation": "This is Atlassian’s account of its own practices, not an independent measurement of how much each content-system intervention improves model quality.",
       "topic_labels": [
-        "AI transformation",
-        "knowledge work",
-        "enterprise adoption"
+        "AI quality",
+        "content systems",
+        "knowledge management",
+        "enterprise AI"
       ],
-      "source_url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+      "source_url": "https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "teach",
-        "label": "Build an internal AI playbook",
-        "rationale": "Capture successful and failed workflow experiments so proven patterns can be reused across teams."
+        "label": "Treat content as AI infrastructure",
+        "rationale": "Document the standards, structures, and reusable content patterns that your AI systems should rely on before trying to solve every quality issue with a different model."
       },
       "visual": {
         "layout": "process",
-        "title": "AI transformation learning loop",
-        "alt_text": "Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.",
+        "title": "Content systems improve AI quality",
+        "alt_text": "Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.",
         "nodes": [
           {
             "id": "n1",
-            "label": "AI efforts",
-            "detail": "Run AI transformation efforts across work."
+            "label": "Standards",
+            "detail": "Define reusable editorial and information standards."
           },
           {
             "id": "n2",
-            "label": "Lessons",
-            "detail": "Codify successes and failures."
+            "label": "Structured content",
+            "detail": "Organize knowledge so systems can retrieve it consistently."
           },
           {
             "id": "n3",
-            "label": "Scale",
-            "detail": "Reuse approaches that work."
+            "label": "Evaluation",
+            "detail": "Evaluate outputs against explicit quality criteria."
           },
           {
             "id": "n4",
-            "label": "Redesign work",
-            "detail": "Evolve the operating model around AI."
+            "label": "Better outputs",
+            "detail": "Feed clearer structures back into AI experiences."
           }
         ],
         "edges": [
@@ -289,168 +303,186 @@
         "callouts": [
           {
             "anchor": "n2",
-            "text": "Microsoft says its playbook draws on hundreds of internal efforts."
+            "text": "Reliable AI depends on the quality of the information system around the model."
+          },
+          {
+            "anchor": "n4",
+            "text": "Content operations can function as a repeatable control layer."
           }
         ]
       }
     },
     {
       "candidate_id": "m01",
-      "story_id": "agentic-cli-customizations-metrics-2026-09-19",
+      "story_id": "aws-agent-skills-sagemaker-2026-09-20",
       "canonical_ordinal": 5,
       "focus": "agents_non_technical_people",
-      "headline": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
-      "summary": "GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.",
-      "why_it_matters": "Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.",
-      "editorial_limitation": "Usage metrics show activity, not whether an individual skill or agent produced a correct or valuable outcome.",
+      "headline": "AWS shows Agent Skills packaging reusable SageMaker deployment work",
+      "summary": "AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.",
+      "why_it_matters": "Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once and let an agent invoke it when the situation matches.",
+      "editorial_limitation": "The example is technical and AWS-specific, so non-technical readers should treat it as evidence of the reusable-skill pattern rather than a recommendation to adopt SageMaker.",
       "topic_labels": [
         "Agent Skills",
-        "Copilot CLI",
-        "agent metrics"
+        "reusable workflows",
+        "SageMaker",
+        "coding agents"
       ],
-      "source_url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
       "agent_skill": true,
       "what_to_do_now": {
-        "action": "monitor",
-        "label": "Track reusable agent skills",
-        "rationale": "Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used."
-      },
-      "visual": {
-        "layout": "process",
-        "title": "Agent skills become measurable",
-        "alt_text": "Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.",
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "Skills",
-            "detail": "Reusable agent skills."
-          },
-          {
-            "id": "n2",
-            "label": "Custom agents",
-            "detail": "Organization-specific agent configurations."
-          },
-          {
-            "id": "n3",
-            "label": "MCP + commands",
-            "detail": "MCP servers, slash commands, and plugins."
-          },
-          {
-            "id": "n4",
-            "label": "Usage metrics",
-            "detail": "Agentic activity appears in reporting."
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n4",
-            "label": "measured"
-          },
-          {
-            "from": "n2",
-            "to": "n4",
-            "label": "measured"
-          },
-          {
-            "from": "n3",
-            "to": "n4",
-            "label": "measured"
-          }
-        ],
-        "callouts": [
-          {
-            "anchor": "n4",
-            "text": "This is today's required reusable Agent Skills story."
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "m13",
-      "story_id": "long-horizon-agents-2026-09-19",
-      "canonical_ordinal": 6,
-      "focus": "agents_non_technical_people",
-      "headline": "Salesforce explains why long-horizon agents need persistence across sessions",
-      "summary": "Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.",
-      "why_it_matters": "For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.",
-      "editorial_limitation": "This is a Salesforce explanatory article, not an independent evaluation of long-horizon agent reliability.",
-      "topic_labels": [
-        "agents",
-        "long-horizon",
-        "persistent work"
-      ],
-      "source_url": "https://www.salesforce.com/blog/long-horizon-agents/",
-      "agent_skill": false,
-      "what_to_do_now": {
         "action": "adopt",
-        "label": "Define persistent agent goals",
-        "rationale": "For recurring work, specify the goal, checkpoints, changing inputs, and conditions that require human review."
+        "label": "Package one repeatable skill",
+        "rationale": "Choose a recurring multi-step task with stable expert guidance and turn its instructions, checks, and examples into a reusable skill rather than another one-off prompt."
       },
       "visual": {
         "layout": "process",
-        "title": "Long-horizon agent loop",
-        "alt_text": "Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.",
+        "title": "Reusable Agent Skills deployment",
+        "alt_text": "Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Goal",
-            "detail": "Maintain a goal over time."
+            "label": "Skill package",
+            "detail": "Capture the procedure, checks, and examples once."
           },
           {
             "id": "n2",
-            "label": "Sessions",
-            "detail": "Continue work across sessions."
+            "label": "Coding agent",
+            "detail": "Let the agent select the reusable skill when relevant."
           },
           {
             "id": "n3",
-            "label": "Adapt",
-            "detail": "Respond to changing circumstances."
+            "label": "Deployment task",
+            "detail": "Apply the packaged knowledge to the deployment workflow."
           },
           {
             "id": "n4",
-            "label": "Outcome",
-            "detail": "Track progress toward the desired result."
+            "label": "Repeatable result",
+            "detail": "Reuse the same governed method on future tasks."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "persist"
+            "label": "flow"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "observe"
+            "label": "flow"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "advance"
+            "label": "flow"
           }
         ],
         "callouts": [
           {
-            "anchor": "n3",
-            "text": "Long-horizon work requires adaptation, not just repeated one-shot prompts."
+            "anchor": "n2",
+            "text": "This is today’s required Agent Skills story."
+          },
+          {
+            "anchor": "n4",
+            "text": "The transferable idea is reusable expertise, not the specific cloud service."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m09",
+      "story_id": "aws-agentcore-migration-2026-09-20",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "AWS shows how existing multi-model agents can move into a managed runtime",
+      "summary": "AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.",
+      "why_it_matters": "For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, observability, and operations—becomes as important as the model itself.",
+      "editorial_limitation": "The case is AWS-authored and uses a healthcare example; production requirements will differ by organization, risk level, and cloud architecture.",
+      "topic_labels": [
+        "agents",
+        "managed runtime",
+        "AgentCore",
+        "operations"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Separate agent logic from runtime",
+        "rationale": "Document which parts of an agent belong to its task logic versus the infrastructure needed for identity, scaling, monitoring, and safe production operation."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Migrating an agent to a managed runtime",
+        "alt_text": "Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Existing agent",
+            "detail": "Preserve the task logic and model choices."
+          },
+          {
+            "id": "n2",
+            "label": "Runtime contract",
+            "detail": "Define the execution, identity, and tool contract."
+          },
+          {
+            "id": "n3",
+            "label": "Managed runtime",
+            "detail": "Move work into managed agent infrastructure."
+          },
+          {
+            "id": "n4",
+            "label": "Operate at scale",
+            "detail": "Add monitoring, scaling, and operational controls."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "flow"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "flow"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "flow"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Production agents need an operating environment, not only prompts and models."
+          },
+          {
+            "anchor": "n4",
+            "text": "Separating agent logic from runtime infrastructure makes migration easier."
           }
         ]
       }
     }
   ],
-  "editorial_takeaway": "Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.",
+  "editorial_takeaway": "Today’s edition is about the systems around AI: recurring release review, trustworthy performance measurement, connected knowledge-work tools, content-quality controls, reusable Agent Skills, and managed runtimes for production agents.",
   "media_decisions": {
     "videos": {
       "status": "included",
       "count": 2,
-      "note": "Two independently verified current videos selected after the recovery media-search restriction was removed."
+      "note": "Two short current videos selected."
     },
     "podcasts": {
       "status": "included",
       "count": 2,
-      "note": "Two source-diverse September 18 podcast episodes selected from registered sources."
+      "note": "Two source-diverse September 19 podcast episodes selected."
     }
   },
-  "changed_watchlist_topics": []
+  "changed_watchlist_topics": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-harness-engineering",
+    "dab-topic-ai-adoption-telemetry"
+  ]
 }

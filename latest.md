@@ -1,179 +1,175 @@
-# Daily Generative AI Brief — September 19, 2026
+# Daily Generative AI Brief — September 20, 2026
 
-**Published:** September 19, 2026  
-**Coverage period:** 24-hour primary window ending at 2026-09-19T12:03:00.000Z; recency fallback used for reviewed items outside the primary window.
+**Published:** September 20, 2026  
+**Coverage period:** 24-hour primary window ending at 2026-09-20T14:15:00.000Z; recency fallback used for reviewed items outside the primary window.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-19-807056d1">Copilot code review adds clearer progress and smarter batch suggestions</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-49a474f5">GitHub schedules selected Copilot model deprecations for October 19</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-a4a2b339">Copilot impact dashboard now exposes feature engagement</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-928822d1">Microsoft codifies lessons from hundreds of internal AI transformation efforts</a><span>Article · about 16 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-5b233997">GitHub adds agent skills and customizations to Copilot CLI usage metrics</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-09-19-0a581a31">Salesforce explains why long-horizon agents need persistence across sessions</a><span>Article · about 11 min source read</span></li><li><a href="#general">ChatGPT Privacy: What Not to Share and When to Double-Check</a><span>Video · 1:40</span></li><li><a href="#agents-for-non-technical-people">Control AI Agents from Anywhere: 7 Open-Source Tools</a><span>Video · 5:16</span></li><li><a href="#podcast-dab-podcast-2026-09-19-business-ai-challenges">The AI Challenges Businesses Are Actually Focused On Right Now</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-19-open-source-ai-101">Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-20-94a301a8">GitHub Copilot weekly releases expand the engineering surface</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-20-e23d62ec">NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency</a><span>Article · about 15 min source read</span></li><li><a href="#reading-dab-story-2026-09-20-2d9f17ac">Gemini in Workspace connects directly to more business tools through MCP</a><span>Article · about 6 min source read</span></li><li><a href="#reading-dab-story-2026-09-20-d10aba14">Atlassian treats content systems as an AI-quality control layer</a><span>Article · about 9 min source read</span></li><li><a href="#reading-dab-story-2026-09-20-e6b79e74">AWS shows Agent Skills packaging reusable SageMaker deployment work</a><span>Article · about 19 min source read</span></li><li><a href="#reading-dab-story-2026-09-20-fcc5cf79">AWS shows how existing multi-model agents can move into a managed runtime</a><span>Article · about 16 min source read</span></li><li><a href="#general">NVIDIA PAIR Connects Your Computers for Local AI</a><span>Video · 1:06</span></li><li><a href="#agents-for-non-technical-people">Anthropic’s CEO: How to Build a 1 Person Business with Claude</a><span>Video · 11:40</span></li><li><a href="#podcast-dab-podcast-2026-09-20-inside-chinas-ai-race">Inside China&#39;s AI race</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-20-ai-doom-backlash">AI Doom Backlash Arrives, Anthropic &amp; OpenAI IPO Outlook, Frontier Business Momentum Slows</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
-<span id="reading-dab-story-2026-09-19-5b233997"></span>
+<span id="reading-dab-story-2026-09-20-e6b79e74"></span>
 
-## 1. GitHub adds agent skills and customizations to Copilot CLI usage metrics
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div></aside>
-<!-- reader-release:end -->
-
-**Focus: Agents for Everyone**
-
-**Date:** September 17, 2026
-
-**Topics:** Agent Skills, Copilot CLI, agent metrics
-
-<span class="story-data" data-story-id="dab-story-2026-09-19-5b233997" data-story-url="/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/" hidden></span>
-
-<a href="{{ '/stories/2026-09-19/github-adds-agent-skills-and-customizations-to-copilot-cli-usage-metrics/' | relative_url }}" data-item-id="dab-story-2026-09-19-5b233997" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Announcement  
-**Availability:** Published
-
-![Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/05-agentic-cli-metrics.webp?v=1e74ae7976afd50f)
-
-**Summary:** GitHub expanded Copilot CLI reporting with agentic activity metrics covering skills, custom agents, MCP servers, slash commands, and plugins.
-
-**Why it matters:** Agent capabilities become easier to govern when organizations can observe which reusable skills and customizations are actually being used instead of treating the agent layer as an opaque configuration surface.
+## 1. AWS shows Agent Skills packaging reusable SageMaker deployment work
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding what instructions, references, tools, and constraints belong in a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**What to do now — Track reusable agent skills:** Use the expanded metrics to see which skills, custom agents, MCP servers, commands, and plugins are actually used.
-
-**Source:** <a href="https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api" data-item-id="dab-story-2026-09-19-5b233997" data-edition-date="2026-09-19" data-action="source_clicks">GitHub adds agent skills and customizations to Copilot CLI usage metrics</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-5b233997">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-19-0a581a31"></span>
-
-## 2. Salesforce explains why long-horizon agents need persistence across sessions
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 11 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 19 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
 
-**Date:** September 16, 2026
+**Date:** September 18, 2026
 
-**Topics:** agents, long-horizon, persistent work
+**Topics:** Agent Skills, reusable workflows, SageMaker, coding agents
 
-<span class="story-data" data-story-id="dab-story-2026-09-19-0a581a31" data-story-url="/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-20-e6b79e74" data-story-url="/stories/2026-09-20/aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work/" hidden></span>
 
-<a href="{{ '/stories/2026-09-19/salesforce-explains-why-long-horizon-agents-need-persistence-across-sessions/' | relative_url }}" data-item-id="dab-story-2026-09-19-0a581a31" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-20/aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work/' | relative_url }}" data-item-id="dab-story-2026-09-20-e6b79e74" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/06-long-horizon-agents.webp?v=3e3fa605eee0ae44)
+![Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=61e7adc99b3e4c13)
 
-**Summary:** Salesforce describes long-horizon agents as systems that work with users toward goals over time, continue across multiple sessions, and adapt behavior as circumstances change.
+**Summary:** AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.
 
-**Why it matters:** For non-technical users, the important shift is from one-shot task automation to agents that maintain a goal, resume work, and adjust as new information arrives.
+**Why it matters:** Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once and let an agent invoke it when the situation matches.
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust is useful when deciding how much autonomy a persistent, long-horizon agent should receive before human review is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
 
-**What to do now — Define persistent agent goals:** For recurring work, specify the goal, checkpoints, changing inputs, and conditions that require human review.
 
-**Source:** <a href="https://www.salesforce.com/blog/long-horizon-agents/" data-item-id="dab-story-2026-09-19-0a581a31" data-edition-date="2026-09-19" data-action="source_clicks">Salesforce explains why long-horizon agents need persistence across sessions</a>
+**What to do now — Package one repeatable skill:** Choose a recurring multi-step task with stable expert guidance and turn its instructions, checks, and examples into a reusable skill rather than another one-off prompt.
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-0a581a31">
+**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/" data-item-id="dab-story-2026-09-20-e6b79e74" data-edition-date="2026-09-20" data-action="source_clicks">Deploy Hugging Face models on Amazon SageMaker AI with coding agents</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-story-2026-09-20-e6b79e74">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-19-a4a2b339"></span>
+<span id="reading-dab-story-2026-09-20-fcc5cf79"></span>
 
-## 3. Copilot impact dashboard now exposes feature engagement
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div></aside>
-<!-- reader-release:end -->
-
-**Focus: Applied Generative AI for Knowledge Workers**
-
-**Date:** September 17, 2026
-
-**Topics:** Copilot, adoption, analytics
-
-<span class="story-data" data-story-id="dab-story-2026-09-19-a4a2b339" data-story-url="/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/" hidden></span>
-
-<a href="{{ '/stories/2026-09-19/copilot-impact-dashboard-now-exposes-feature-engagement/' | relative_url }}" data-item-id="dab-story-2026-09-19-a4a2b339" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Official Announcement  
-**Availability:** Published
-
-![Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/03-copilot-impact-dashboard.webp?v=bba4e5aae3a99d87)
-
-**Summary:** GitHub's Copilot impact dashboard now shows how many active users regularly use key Copilot features, helping enterprise administrators see which experiences are broadly adopted and which may need additional enablement.
-
-**Why it matters:** AI adoption programs can move beyond license counts and inspect actual feature engagement, creating a better basis for training, rollout, and value-realization decisions.
-
-
-
-**What to do now — Review feature-level engagement:** Use engagement data to distinguish widely adopted Copilot experiences from features that need targeted enablement.
-
-**Source:** <a href="https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement" data-item-id="dab-story-2026-09-19-a4a2b339" data-edition-date="2026-09-19" data-action="source_clicks">Copilot impact dashboard now exposes feature engagement</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-a4a2b339">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-09-19-928822d1"></span>
-
-## 4. Microsoft codifies lessons from hundreds of internal AI transformation efforts
+## 2. AWS shows how existing multi-model agents can move into a managed runtime
 
 <!-- reader-release:start -->
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 16 min read</span></div></aside>
 <!-- reader-release:end -->
 
-**Focus: Applied Generative AI for Knowledge Workers**
+**Focus: Agents for Everyone**
 
-**Date:** September 17, 2026
+**Date:** September 18, 2026
 
-**Topics:** AI transformation, knowledge work, enterprise adoption
+**Topics:** agents, managed runtime, AgentCore, operations
 
-<span class="story-data" data-story-id="dab-story-2026-09-19-928822d1" data-story-url="/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-20-fcc5cf79" data-story-url="/stories/2026-09-20/aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtime/" hidden></span>
 
-<a href="{{ '/stories/2026-09-19/microsoft-codifies-lessons-from-hundreds-of-internal-ai-transformation-efforts/' | relative_url }}" data-item-id="dab-story-2026-09-19-928822d1" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-20/aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtime/' | relative_url }}" data-item-id="dab-story-2026-09-20-fcc5cf79" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/04-microsoft-ai-transformation.webp?v=7034564edc388e57)
+![Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979)
 
-**Summary:** Microsoft says it has turned lessons from hundreds of internal AI transformation efforts into case studies and a Frontier Playbook designed to scale what worked, learn from failures, and redesign work around AI.
+**Summary:** AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.
 
-**Why it matters:** The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workflows rather than treating AI as a one-time tool rollout.
+**Why it matters:** For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, observability, and operations—becomes as important as the model itself.
 
 
 
-**What to do now — Build an internal AI playbook:** Capture successful and failed workflow experiments so proven patterns can be reused across teams.
+**What to do now — Separate agent logic from runtime:** Document which parts of an agent belong to its task logic versus the infrastructure needed for identity, scaling, monitoring, and safe production operation.
 
-**Source:** <a href="https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/" data-item-id="dab-story-2026-09-19-928822d1" data-edition-date="2026-09-19" data-action="source_clicks">Microsoft codifies lessons from hundreds of internal AI transformation efforts</a>
+**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/" data-item-id="dab-story-2026-09-20-fcc5cf79" data-edition-date="2026-09-20" data-action="source_clicks">Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-928822d1">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-story-2026-09-20-fcc5cf79">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-19-807056d1"></span>
+<span id="reading-dab-story-2026-09-20-2d9f17ac"></span>
 
-## 5. Copilot code review adds clearer progress and smarter batch suggestions
+## 3. Gemini in Workspace connects directly to more business tools through MCP
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 18, 2026
+
+**Topics:** Gemini, Google Workspace, MCP, knowledge work
+
+<span class="story-data" data-story-id="dab-story-2026-09-20-2d9f17ac" data-story-url="/stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/" hidden></span>
+
+<a href="{{ '/stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/' | relative_url }}" data-item-id="dab-story-2026-09-20-2d9f17ac" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Official Announcement  
+**Availability:** Published
+
+![Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=5f6a72904f253592)
+
+**Summary:** Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.
+
+**Why it matters:** For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requiring users to shuttle context between systems.
+
+
+
+**What to do now — Map high-value Workspace connections:** Identify one or two systems where eliminating copy-and-paste context transfer would materially improve a recurring knowledge-work process.
+
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html" data-item-id="dab-story-2026-09-20-2d9f17ac" data-edition-date="2026-09-20" data-action="source_clicks">Google Workspace Weekly Recap - September 18, 2026</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-story-2026-09-20-2d9f17ac">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-20-d10aba14"></span>
+
+## 4. Atlassian treats content systems as an AI-quality control layer
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div></aside>
+<!-- reader-release:end -->
+
+**Focus: Applied Generative AI for Knowledge Workers**
+
+**Date:** September 18, 2026
+
+**Topics:** AI quality, content systems, knowledge management, enterprise AI
+
+<span class="story-data" data-story-id="dab-story-2026-09-20-d10aba14" data-story-url="/stories/2026-09-20/atlassian-treats-content-systems-as-an-ai-quality-control-layer/" hidden></span>
+
+<a href="{{ '/stories/2026-09-20/atlassian-treats-content-systems-as-an-ai-quality-control-layer/' | relative_url }}" data-item-id="dab-story-2026-09-20-d10aba14" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Official Announcement  
+**Availability:** Published
+
+![Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=0d4439efae6dd18a)
+
+**Summary:** Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.
+
+**Why it matters:** For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and evaluation practices can improve reliability without changing the underlying model.
+
+
+
+**What to do now — Treat content as AI infrastructure:** Document the standards, structures, and reusable content patterns that your AI systems should rely on before trying to solve every quality issue with a different model.
+
+**Source:** <a href="https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality" data-item-id="dab-story-2026-09-20-d10aba14" data-edition-date="2026-09-20" data-action="source_clicks">How Content Technology is powering Atlassian’s AI quality</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-story-2026-09-20-d10aba14">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-09-20-94a301a8"></span>
+
+## 5. GitHub Copilot weekly releases expand the engineering surface
 
 <!-- reader-release:start -->
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div></aside>
@@ -183,70 +179,68 @@
 
 **Date:** September 18, 2026
 
-**Topics:** Copilot, code review, developer workflow
+**Topics:** Copilot, developer workflow, release management
 
-<span class="story-data" data-story-id="dab-story-2026-09-19-807056d1" data-story-url="/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-20-94a301a8" data-story-url="/stories/2026-09-20/github-copilot-weekly-releases-expand-the-engineering-surface/" hidden></span>
 
-<a href="{{ '/stories/2026-09-19/copilot-code-review-adds-clearer-progress-and-smarter-batch-suggestions/' | relative_url }}" data-item-id="dab-story-2026-09-19-807056d1" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-20/github-copilot-weekly-releases-expand-the-engineering-surface/' | relative_url }}" data-item-id="dab-story-2026-09-20-94a301a8" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/01-copilot-code-review.webp?v=50f36b3149b16bea)
+![Four-step diagram showing a weekly Copilot release, workflow mapping, testing, and updated engineering guidance.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=b0617a1e1bf02951)
 
-**Summary:** GitHub updated Copilot code review with a clearer view of review progress, smarter auto-resolution of its own suggestions, and useful commit messages when developers accept suggestions in batches.
+**Summary:** GitHub’s September 14 weekly Copilot release roundup groups several developer-facing changes across Copilot experiences and VS Code, giving engineering teams a compact view of the latest product surface they need to evaluate.
 
-**Why it matters:** The changes make AI-assisted review easier to follow and reduce friction when turning multiple review suggestions into committed code.
+**Why it matters:** A recurring release cadence means teams need a lightweight operating practice for reviewing Copilot changes, deciding which ones affect local workflows, and updating guidance before new behavior surprises developers.
 
-<!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding when AI-generated review suggestions are ready to accept into the codebase.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
 
-**What to do now — Review the new code-review flow:** Check whether clearer progress and batch commit messages reduce review overhead in active repositories.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience" data-item-id="dab-story-2026-09-19-807056d1" data-edition-date="2026-09-19" data-action="source_clicks">Copilot code review adds clearer progress and smarter batch suggestions</a>
+**What to do now — Review this week’s Copilot changes:** Compare the new Copilot and VS Code changes with current engineering guidance and identify anything that needs testing or documentation updates.
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-807056d1">
+**Source:** <a href="https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14" data-item-id="dab-story-2026-09-20-94a301a8" data-edition-date="2026-09-20" data-action="source_clicks">GitHub Copilot weekly releases — September 14</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-story-2026-09-20-94a301a8">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-19-49a474f5"></span>
+<span id="reading-dab-story-2026-09-20-e23d62ec"></span>
 
-## 6. GitHub schedules selected Copilot model deprecations for October 19
+## 6. NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 15 min read</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
 **Date:** September 18, 2026
 
-**Topics:** Copilot, models, deprecation
+**Topics:** LLM inference, benchmarking, performance engineering
 
-<span class="story-data" data-story-id="dab-story-2026-09-19-49a474f5" data-story-url="/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-20-e23d62ec" data-story-url="/stories/2026-09-20/nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency/" hidden></span>
 
-<a href="{{ '/stories/2026-09-19/github-schedules-selected-copilot-model-deprecations-for-october-19/' | relative_url }}" data-item-id="dab-story-2026-09-19-49a474f5" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-20/nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency/' | relative_url }}" data-item-id="dab-story-2026-09-20-e23d62ec" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-19/02-copilot-model-deprecation.webp?v=9c402784fe974176)
+![Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=3405d45eb9641fa2)
 
-**Summary:** GitHub says selected models will be deprecated across Copilot experiences on October 19, 2026, and points administrators and users toward alternative models available through Copilot model policies and selectors.
+**Summary:** NVIDIA introduced AIPerf as the successor to GenAI-Perf, using a multiprocess architecture intended to prevent the benchmark client itself from becoming the bottleneck during high-concurrency LLM inference tests.
 
-**Why it matters:** Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.
+**Why it matters:** When benchmarking tools saturate before the model-serving stack does, engineering teams can draw the wrong conclusions about capacity. A benchmark designed for larger concurrency makes infrastructure tuning and deployment comparisons more trustworthy.
 
 
 
-**What to do now — Audit Copilot model policies:** Identify affected model choices and enable suitable alternatives before the October 19 deprecation date.
+**What to do now — Recheck inference benchmarks:** If current load tests approach client-side limits, compare AIPerf with the existing harness before using benchmark results for capacity decisions.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october" data-item-id="dab-story-2026-09-19-49a474f5" data-edition-date="2026-09-19" data-action="source_clicks">GitHub schedules selected Copilot model deprecations for October 19</a>
+**Source:** <a href="https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/" data-item-id="dab-story-2026-09-20-e23d62ec" data-edition-date="2026-09-20" data-action="source_clicks">Benchmarking LLM Inference at Scale with AIPerf</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-story-2026-09-19-49a474f5">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-story-2026-09-20-e23d62ec">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -259,27 +253,27 @@
 
 ## 7. General
 
-### ChatGPT Privacy: What Not to Share and When to Double-Check
+### NVIDIA PAIR Connects Your Computers for Local AI
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>1:40 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>1:06 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-19/general/' | relative_url }}" data-item-id="dab-video-2026-09-19-general" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** OpenAI Academy  
-**Date:** September 17, 2026  
-**Runtime:** 1:40  
+<a href="{{ '/videos/2026-09-20/general/' | relative_url }}" data-item-id="dab-video-2026-09-20-general" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** Matthew Berman  
+**Date:** September 20, 2026  
+**Runtime:** 1:06  
 **Format:** Video
 
-**Summary:** A concise official tutorial on minimizing sensitive data exposure and recognizing when an AI answer needs independent checking.
+**Summary:** A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.
 
-**Why it matters:** It reinforces the brief’s operational-maturity theme: useful AI workflows need explicit review boundaries, not just faster output.
+**Why it matters:** Pairs with the AIPerf story by showing inference infrastructure becoming more distributed and workload-aware.
 
 
 
-**Source:** <a href="https://academy.openai.com/public/videos/privacy-and-double-checking-older-adults" data-item-id="dab-video-2026-09-19-general" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI Academy</a>
+**Source:** <a href="https://www.youtube.com/shorts/Z4no-hhcuas" data-item-id="dab-video-2026-09-20-general" data-edition-date="2026-09-20" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-video-2026-09-19-general">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-video-2026-09-20-general">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -290,27 +284,27 @@
 
 ## 8. Agents for Everyone
 
-### Control AI Agents from Anywhere: 7 Open-Source Tools
+### Anthropic’s CEO: How to Build a 1 Person Business with Claude
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>5:16 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>11:40 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-19/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-19-agent-skills" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** HubMesh  
-**Date:** September 18, 2026  
-**Runtime:** 5:16  
+<a href="{{ '/videos/2026-09-20/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-20-agent-skills" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** Nate Herk | AI Automation  
+**Date:** September 20, 2026  
+**Runtime:** 11:40 · Longer selection today: no suitable video of 10 minutes or less was found.  
 **Format:** Video
 
-**Summary:** A five-minute scan of current open-source agent tools, including persistent-context, desktop-automation, verification, and multi-agent projects.
+**Summary:** A practical 11-minute look at how Claude can support a highly automated one-person business, including where AI can absorb repeatable work around software, sales, and support.
 
-**Why it matters:** It gives readers concrete examples of the agent-control, context, and verification patterns behind today’s Agent Skills and long-horizon-agent stories.
+**Why it matters:** It complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state: a small operation built around reusable AI workflows rather than one-off chats.
 
 
 
-**Source:** <a href="https://hubmesh.dev/posts/2026-09-18-hubmesh-open-cowork-osir_9/" data-item-id="dab-video-2026-09-19-agent-skills" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on HubMesh</a>
+**Source:** <a href="https://www.youtube.com/watch?v=QDsenEcAJIk" data-item-id="dab-video-2026-09-20-agent-skills" data-edition-date="2026-09-20" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-video-2026-09-19-agent-skills">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-video-2026-09-20-agent-skills">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -319,76 +313,76 @@
 
 ## Worth Listening — Podcasts
 
-### 9. The AI Challenges Businesses Are Actually Focused On Right Now
+### 9. Inside China's AI race
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>30:06 podcast</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>22:26 podcast</span></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-19-business-ai-challenges" data-podcast-title="The AI Challenges Businesses Are Actually Focused On Right Now" data-podcast-url="/podcasts/2026-09-19/business-ai-challenges/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-20-inside-chinas-ai-race" data-podcast-title="Inside China&apos;s AI race" data-podcast-url="/podcasts/2026-09-20/inside-chinas-ai-race/" hidden></span>
 
-<a href="{{ '/podcasts/2026-09-19/business-ai-challenges/' | relative_url }}" data-item-id="dab-podcast-2026-09-19-business-ai-challenges" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-09-20/inside-chinas-ai-race/' | relative_url }}" data-item-id="dab-podcast-2026-09-20-inside-chinas-ai-race" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
-**Show:** The AI Daily Brief  
-**Host / guest:** Nathaniel Whittemore  
-**Focus:** Agents for Everyone  
-**Date:** September 18, 2026  
-**Duration:** 30:06 · No episode time limit  
-**Topics:** agent security, model choice, data control, enterprise AI
+**Show:** Reuters On Assignment  
+**Host / guest:** Reuters  
+**Focus:** Technical AI Engineering  
+**Date:** September 19, 2026  
+**Duration:** 22:26 · No episode time limit  
+**Topics:** AI competition, chips, distillation, AI safeguards
 
-**Summary:** Nathaniel Whittemore examines the AI concerns businesses are prioritizing in practice, including agent security, changing model choices, and control over enterprise data.
+**Summary:** Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.
 
-**Why it matters:** It provides a current business-side view of the governance and control issues that become more important as agents gain more autonomy and persistence.
+**Why it matters:** It gives readers a broader systems view of AI capability and infrastructure beyond individual model releases.
 
-**Connection to the brief:** Pairs with today’s Agent Skills metrics and long-horizon-agent stories by focusing on the organizational controls around agent deployment.
+**Connection to the brief:** Complements today’s engineering stories by showing how compute, deployment, and policy shape AI systems.
 
 
 
-**Coverage:** Primary 48-hour podcast window; source-diverse from Everyday AI.
+**Coverage:** Primary 48-hour podcast window; source-diverse from Big Technology Podcast.
 
-**Evidence:** Practitioner analysis. Apple Podcasts and independent podcast listings identify the episode as September 18, 2026, hosted by Nathaniel Whittemore, with a 30:06 runtime.
+**Evidence:** Practitioner analysis. Reuters verifies the September 19 publication date; an independent listing gives a 22:26 runtime.
 
-**Listen / watch:** <a href="https://podcasts.apple.com/au/podcast/the-ai-challenges-businesses-are-actually-focused-on/id1680633614?i=1000790595438" data-item-id="dab-podcast-2026-09-19-business-ai-challenges" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+**Listen / watch:** <a href="https://www.reuters.com/podcasts/china-ai-2026-09-19/" data-item-id="dab-podcast-2026-09-20-inside-chinas-ai-race" data-edition-date="2026-09-20" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Reuters</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-podcast-2026-09-19-business-ai-challenges">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-podcast-2026-09-20-inside-chinas-ai-race">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-### 10. Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything
+### 10. AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>37:50 podcast</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>67:57 podcast</span></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-19-open-source-ai-101" data-podcast-title="Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything" data-podcast-url="/podcasts/2026-09-19/open-source-ai-101/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-20-ai-doom-backlash" data-podcast-title="AI Doom Backlash Arrives, Anthropic &amp; OpenAI IPO Outlook, Frontier Business Momentum Slows" data-podcast-url="/podcasts/2026-09-20/ai-doom-backlash/" hidden></span>
 
-<a href="{{ '/podcasts/2026-09-19/open-source-ai-101/' | relative_url }}" data-item-id="dab-podcast-2026-09-19-open-source-ai-101" data-edition-date="2026-09-19" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-09-20/ai-doom-backlash/' | relative_url }}" data-item-id="dab-podcast-2026-09-20-ai-doom-backlash" data-edition-date="2026-09-20" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
-**Show:** Everyday AI  
-**Host / guest:** Jordan Wilson  
+**Show:** Big Technology Podcast  
+**Host / guest:** Alex Kantrowitz  
 **Focus:** Applied Generative AI for Knowledge Workers  
-**Date:** September 18, 2026  
-**Duration:** 37:50 · No episode time limit  
-**Topics:** open-source AI, local models, AI agents, model economics
+**Date:** September 19, 2026  
+**Duration:** 67:57 · No episode time limit  
+**Topics:** AI safety, frontier labs, AI economics, governance
 
-**Summary:** Jordan Wilson surveys the changing trade-offs between open and closed models, local deployment, API economics, and always-on agentic systems.
+**Summary:** Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.
 
-**Why it matters:** The episode gives knowledge workers and AI leaders a practical framework for deciding where local or open models may fit alongside frontier hosted models.
+**Why it matters:** The episode adds a business and governance lens to the operational engineering changes covered elsewhere in the brief.
 
-**Connection to the brief:** It complements today’s model-lifecycle and enterprise-transformation stories by framing model choice as an operating and cost decision rather than a one-time vendor choice.
+**Connection to the brief:** Pairs with today’s focus on production maturity by asking what accountability, economics, and evidence should look like as AI systems become more capable.
 
 
 
-**Coverage:** Primary 48-hour podcast window; source-diverse from The AI Daily Brief.
+**Coverage:** Primary 48-hour podcast window; source-diverse from Reuters On Assignment.
 
-**Evidence:** Practitioner analysis. Buzzsprout lists September 18, 2026, Everyday AI episode 865, hosted by Jordan Wilson, runtime 37:50.
+**Evidence:** Practitioner analysis. Independent podcast listings identify the episode as September 19, 2026 with a 1:07:57 runtime.
 
-**Listen / watch:** <a href="https://www.buzzsprout.com/2175779/episodes/19733545-ep-865-open-source-ai-101-why-local-models-cheap-apis-and-ai-agents-change-everything-start-here-series-vol-24?t=0" data-item-id="dab-podcast-2026-09-19-open-source-ai-101" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Everyday AI</a>
+**Listen / watch:** <a href="https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY" data-item-id="dab-podcast-2026-09-20-ai-doom-backlash" data-edition-date="2026-09-20" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Tapesearch</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-19" data-feedback-story-id="dab-podcast-2026-09-19-open-source-ai-101">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-20" data-feedback-story-id="dab-podcast-2026-09-20-ai-doom-backlash">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -405,7 +399,7 @@
 
 ## Editorial takeaway
 
-Today's edition emphasizes operational maturity: clearer AI-assisted engineering workflows, measurable adoption, reusable agent skills, and agents that persist across longer-running work.
+Today’s edition is about the systems around AI: recurring release review, trustworthy performance measurement, connected knowledge-work tools, content-quality controls, reusable Agent Skills, and managed runtimes for production agents.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>

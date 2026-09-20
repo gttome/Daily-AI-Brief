@@ -1,200 +1,122 @@
 {
-  "m04": {
+  "m02": {
     "event_date": "2026-09-18",
     "source": {
-      "title": "Copilot code review adds clearer progress and smarter batch suggestions",
+      "title": "GitHub Copilot weekly releases — September 14",
       "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
       "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 806,
-    "source_fetched_at": "2026-09-19T12:03:00Z",
+    "source_word_count": 853,
+    "source_fetched_at": "2026-09-20T14:15:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
-    "freshness": {
-      "tier": "primary_24h"
-    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "candidate_score": {
-      "significance": 5,
-      "freshness": 5,
-      "authority": 5,
-      "evidence_quality": 5,
-      "novelty": 5,
-      "practical_value": 5,
-      "category_fit": 5,
-      "total": 35
-    },
-    "selection_rationale": "Fresh official engineering update with direct workflow impact."
+    "selection_rationale": "Fresh official engineering roundup with direct relevance to AI-assisted developer workflows."
   },
   "m03": {
     "event_date": "2026-09-18",
     "source": {
-      "title": "GitHub schedules selected Copilot model deprecations for October 19",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "title": "Benchmarking LLM Inference at Scale with AIPerf",
+      "organization": "NVIDIA Developer",
+      "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
       "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 544,
-    "source_fetched_at": "2026-09-19T12:03:00Z",
+    "source_word_count": 2831,
+    "source_fetched_at": "2026-09-20T14:15:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
-    "freshness": {
-      "tier": "primary_24h"
-    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "candidate_score": {
-      "significance": 5,
-      "freshness": 5,
-      "authority": 5,
-      "evidence_quality": 5,
-      "novelty": 5,
-      "practical_value": 5,
-      "category_fit": 5,
-      "total": 35
-    },
-    "selection_rationale": "Time-sensitive official model lifecycle change requiring preparation."
+    "selection_rationale": "Fresh first-party performance-engineering guidance on reliable high-concurrency LLM benchmarking."
   },
-  "m06": {
-    "event_date": "2026-09-17",
+  "m05": {
+    "event_date": "2026-09-18",
     "source": {
-      "title": "Copilot impact dashboard now exposes feature engagement",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
-      "publication_date": "2026-09-17",
+      "title": "Google Workspace Weekly Recap - September 18, 2026",
+      "organization": "Google Workspace",
+      "url": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
+      "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 765,
-    "source_fetched_at": "2026-09-19T12:03:00Z",
+    "source_word_count": 1006,
+    "source_fetched_at": "2026-09-20T14:15:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
-    "freshness": {
-      "tier": "ordinary_72h"
-    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "candidate_score": {
-      "significance": 5,
-      "freshness": 4,
-      "authority": 5,
-      "evidence_quality": 5,
-      "novelty": 5,
-      "practical_value": 5,
-      "category_fit": 5,
-      "total": 34
-    },
-    "selection_rationale": "Strong applied-AI adoption signal with measurable feature engagement."
+    "selection_rationale": "Fresh official applied-AI update connecting Gemini directly to common business systems through MCP."
   },
   "m07": {
-    "event_date": "2026-09-17",
+    "event_date": "2026-09-18",
     "source": {
-      "title": "Microsoft codifies lessons from hundreds of internal AI transformation efforts",
-      "organization": "Microsoft",
-      "url": "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
-      "publication_date": "2026-09-17",
+      "title": "How Content Technology is powering Atlassian’s AI quality",
+      "organization": "Atlassian",
+      "url": "https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality",
+      "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3082,
-    "source_fetched_at": "2026-09-19T12:03:00Z",
+    "source_word_count": 1695,
+    "source_fetched_at": "2026-09-20T14:15:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
-    "freshness": {
-      "tier": "ordinary_72h"
-    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "candidate_score": {
-      "significance": 5,
-      "freshness": 4,
-      "authority": 5,
-      "evidence_quality": 4,
-      "novelty": 5,
-      "practical_value": 5,
-      "category_fit": 5,
-      "total": 33
-    },
-    "selection_rationale": "Substantive publisher-authored account of enterprise AI transformation lessons."
+    "selection_rationale": "Fresh first-party applied-AI practice showing information and content systems as a quality layer."
   },
   "m01": {
-    "event_date": "2026-09-17",
+    "event_date": "2026-09-18",
     "source": {
-      "title": "GitHub adds agent skills and customizations to Copilot CLI usage metrics",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
-      "publication_date": "2026-09-17",
+      "title": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+      "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 800,
-    "source_fetched_at": "2026-09-19T12:03:00Z",
+    "source_word_count": 3764,
+    "source_fetched_at": "2026-09-20T14:15:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
-    "freshness": {
-      "tier": "agent_skills_7d"
-    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "candidate_score": {
-      "significance": 5,
-      "freshness": 5,
-      "authority": 5,
-      "evidence_quality": 5,
-      "novelty": 5,
-      "practical_value": 5,
-      "category_fit": 5,
-      "total": 35
-    },
-    "selection_rationale": "Preferred story-ready Agent Skills signal and exactly-one required Agent Skills story."
+    "selection_rationale": "Preferred fresh Agent Skills signal showing reusable expert procedures applied by coding agents."
   },
-  "m13": {
-    "event_date": "2026-09-16",
+  "m09": {
+    "event_date": "2026-09-18",
     "source": {
-      "title": "Salesforce explains why long-horizon agents need persistence across sessions",
-      "organization": "Salesforce",
-      "url": "https://www.salesforce.com/blog/long-horizon-agents/",
-      "publication_date": "2026-09-16",
+      "title": "Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/",
+      "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 2116,
-    "source_fetched_at": "2026-09-19T12:03:00Z",
+    "source_word_count": 3166,
+    "source_fetched_at": "2026-09-20T14:15:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
-    "freshness": {
-      "tier": "ordinary_72h"
-    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "candidate_score": {
-      "significance": 5,
-      "freshness": 4,
-      "authority": 4,
-      "evidence_quality": 4,
-      "novelty": 5,
-      "practical_value": 5,
-      "category_fit": 5,
-      "total": 32
-    },
-    "selection_rationale": "Clear non-technical explanation of persistent multi-session agent behavior."
+    "selection_rationale": "Fresh first-party agent-operations pattern showing migration from application logic into a managed runtime."
   }
 }
