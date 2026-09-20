@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "attempt_id": "kernel-35458882398",
+  "edition_id": "dab-edition-2026-09-19",
+  "started_at": null,
+  "ended_at": null,
+  "wall_seconds": null,
+  "scope": "publication_generation",
+  "measured_work": {
+    "accepted_images": 6
+  },
+  "usage": {
+    "exact_model_calls": null,
+    "exact_input_tokens": null,
+    "exact_output_tokens": null,
+    "exact_credits": null,
+    "dollars": null,
+    "coverage": "partial",
+    "reason": "No edition-attributed platform token, credit, dollar, elapsed-time, image-draft, or image-reject measurements were available."
+  },
+  "reconciliation": {
+    "status": "partial",
+    "source_records": [
+      "_records/publication/2026-09-19/completion.json",
+      "_records/efficiency/2026-09-19/dab-efficiency-2026-09-19-kernel-35458882398-publication_generation.json"
+    ],
+    "note": "The final publication run identity and six accepted_locked reused images are authoritative. Reused accepted images are not reclassified as generated drafts. Unmeasured timing, draft, reject, token, model-call, dollar, and credit values remain unavailable."
+  },
+  "outcome": "pages_verified_partial_usage_measurement"
+}
