@@ -140,6 +140,15 @@
       "evidence_class": "publisher_authored",
       "focus_hint": "agents_non_technical_people",
       "status": "active"
+    },
+    {
+      "source_id": "salesforce-agentforce-category",
+      "owner": "Salesforce",
+      "discovery_endpoint": "https://www.salesforce.com/blog/category/agentforce/?bc=OTH",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "status": "active"
     }
   ]
 }
