@@ -167,6 +167,20 @@
       "evidence_class": "publisher_authored",
       "focus_hint": "agents_non_technical_people",
       "status": "active"
+    },
+    {
+      "source_id": "google-workspace-weekly-recap-sep18",
+      "owner": "Google Workspace",
+      "discovery_endpoint": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
+      "canonical_url": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active",
+      "pinned_candidate": true,
+      "candidate_title": "Google Workspace Weekly Recap - September 18, 2026",
+      "known_publication_date": "2026-09-18T00:00:00Z",
+      "candidate_snippet": "Official Google Workspace recap covering Gemini tool connections, AI Overviews in Gmail search, Workspace Studio automation, and Gemini Notebook updates."
     }
   ]
 }

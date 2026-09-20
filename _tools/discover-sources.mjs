@@ -48,6 +48,24 @@ const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
  return ordinary||required;
 }).length;
 
+// Seed explicitly pinned first-party candidates whose catalog pages are reliable but whose own title/date
+// may not be discoverable from the catalog markup. These remain metadata-only and still require evidence review.
+for(const s of preflightSources.filter(source=>source.pinned_candidate===true&&source.canonical_url&&source.candidate_title)){
+  try{
+    const key=new URL(s.canonical_url).href;
+    const published=s.known_publication_date||null;
+    if(!candidates.has(key))candidates.set(key,{
+      source_id:s.source_id,publisher:s.owner||null,headline:s.candidate_title,canonical_url:key,url:key,
+      published_at:published,publication_date:published,publication_dates:published?[published]:[],
+      date_conflict:false,updated_at:null,date_source:'pinned_first_party_metadata',
+      snippet:s.candidate_snippet||null,content_type:'article',retrieval_status:'metadata_only',
+      source_reliability:s.evidence_class||'publisher_authored',format:'article',discovered_at:new Date().toISOString(),
+      runtime_seconds:null,focus_hint:s.focus_hint||null,background_only:false,material_update_verified:false,
+      status:'needs_editorial_and_metadata_review'
+    });
+  }catch{}
+}
+
 // Seed exact required-topic pages with authoritative registry dates so mandatory topics are not lost
 // merely because a single article page has weak catalog markup. These remain metadata-only candidates
 // and still require deep review before selection.
