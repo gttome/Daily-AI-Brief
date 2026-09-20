@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "profile_id": "under80-v1",
   "effective_date": "2026-09-18",
   "baseline_date": "2026-09-17",
@@ -52,19 +52,23 @@
   },
   "video": {
     "preferred_count": 2,
-    "minimum_desirable_count": 1,
+    "minimum_desirable_count": 2,
     "deep_review_max": 5,
     "duration_tiers_seconds": [
       600,
       900,
       1200
-    ]
+    ],
+    "required_count": 2,
+    "publication_required": true
   },
   "podcast": {
     "target_count": 2,
     "max_ai_daily_brief_per_edition": 1,
     "require_different_sources_when_two_selected": true,
-    "maximum_duration_seconds": null
+    "maximum_duration_seconds": null,
+    "required_count": 2,
+    "publication_required": true
   },
   "deterministic_validation": {
     "model_calls": 0,
@@ -80,7 +84,7 @@
   "runtime_contract_path": "docs/operations/under80-runtime-contract.json",
   "daily_work_reads_historical_runbook": false,
   "post_editorial_execution_owner": "github_actions",
-  "work_stop_boundary": "after one accepted editorial bundle, six accepted full-quality images, local PNG integrity validation, and one atomic Git Data API handoff commit on an isolated branch",
+  "work_stop_boundary": "after one accepted editorial bundle, six accepted full-quality story images in WebP or PNG, image integrity validation, and one atomic Git Data API handoff commit on an isolated branch",
   "work_forbidden_after_handoff": [
     "deterministic generator",
     "repository test suite",
@@ -173,5 +177,16 @@
     "contents_api_binary_writes": false,
     "native_git_authentication": false,
     "atomic_ref_update": true
+  },
+  "display_labels": {
+    "agents_non_technical_people": "Agents for Everyone"
+  },
+  "scheduler_execution": {
+    "zero_work_target": true,
+    "zero_work_qualified": false,
+    "execution_mode_selector_exposed": false,
+    "current_production_path": "existing scheduled ChatGPT publisher using the active under80 runtime contract",
+    "qualification_rule": "Do not claim or switch production to zero-Work execution until the scheduler exposes or otherwise proves a GitHub-enabled non-Work execution path that can complete the full publication-equivalent workflow.",
+    "fallback": "Keep the lowest-cost existing scheduled path and preserve all quality gates."
   }
 }
