@@ -13,6 +13,21 @@ const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||72);
 const skillAgeHours=Number(args['skill-max-age-hours']||168);
 if(!Number.isFinite(ordinaryAgeHours)||ordinaryAgeHours<=0||!Number.isFinite(skillAgeHours)||skillAgeHours<ordinaryAgeHours)throw Error('valid_metadata_age_windows_required');
 
+const publishedUrls=new Set();
+if(fs.existsSync('_data/editions')){
+ for(const name of fs.readdirSync('_data/editions').filter(name=>/^\\d{4}-\\d{2}-\\d{2}\\.json$/.test(name)).sort()){
+  const editionDate=name.slice(0,10);
+  const cutoffDate=new Date(cutoff).toISOString().slice(0,10);
+  if(editionDate>=cutoffDate)continue;
+  try{
+   const edition=JSON.parse(fs.readFileSync(path.join('_data/editions',name),'utf8'));
+   for(const story of edition.stories||[]){
+    const prior=story?.source?.normalized_url||story?.source?.url;
+    if(prior)try{publishedUrls.add(normalizeUrl(prior));}catch{}
+   }
+  }catch{}
+ }
+}
 const raw=JSON.parse(fs.readFileSync(path.resolve(args.input),'utf8'));
 const source=Array.isArray(raw)?raw:Array.isArray(raw.candidates)?raw.candidates:[];
 const text=v=>String(v??'').replace(/\s+/g,' ').trim();
@@ -99,11 +114,12 @@ for(const item of source){
   agent_skill_signal:isSkill,
   agent_skill_story_ready:skillStoryReady,
   material_update_verified:item.material_update_verified===true,
+  recently_published:publishedUrls.has(url),
   background_only:item.background_only===true,
   required_topic:item.required_topic||null,
   status:'metadata_prefiltered_not_deep_reviewed'
  };
- const score=reliabilityRank(normalized.source_reliability)+ageRank(eventStamp,maxAge)+relevance+Number(!!normalized.snippet)+(skillStoryReady?12:0)+(item.required_topic?4:0)-(item.background_only?8:0);
+ const score=reliabilityRank(normalized.source_reliability)+ageRank(eventStamp,maxAge)+relevance+Number(!!normalized.snippet)+(skillStoryReady?12:0)+(item.required_topic?4:0)-(item.background_only?8:0)-(normalized.recently_published&&item.material_update_verified!==true?30:0);
  const candidate={...normalized,prefilter_score:score};
  const prior=byUrl.get(url);
  if(!prior||candidate.prefilter_score>prior.prefilter_score)byUrl.set(url,candidate);else rejected.duplicate++;
@@ -149,7 +165,7 @@ if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_vio
 const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
 const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
-const preferredAgentSkillCandidateId=candidates.find(x=>x.agent_skill_story_ready)?.candidate_id||null;
+const preferredAgentSkillCandidateId=(candidates.find(x=>x.agent_skill_story_ready&&!x.recently_published)||candidates.find(x=>x.agent_skill_story_ready))?.candidate_id||null;
 const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillStoryReadySignals>=1;
 const result={
  schema_version:'1.1.0',
