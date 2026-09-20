@@ -77,7 +77,7 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
   scanned++;
   try{const result=await acquisition.retrieve(s.discovery_endpoint);let found=0;
    for(const link of extractCandidateMetadata(result.text,result.resolved_url,s)){
-    const title=link.headline;if(title.length<20||title.length>200||(!s.broad_discovery&&!/agent|AI|context|retrieval|evaluation|copilot|gemini|claude|skill|prompt|LLM/i.test(title))||found>=100)continue;
+    const title=link.headline;if(title.length<20||title.length>200||(!s.broad_discovery&&!/agent|AI|chatgpt|gpt|codex|context|retrieval|evaluation|copilot|gemini|claude|skill|prompt|LLM/i.test(title))||found>=100)continue;
     const url=new URL(link.canonical_url);
     const canonicalRequired=s.required_topic&&(()=>{try{return new URL(s.canonical_url||s.discovery_endpoint).hostname===url.hostname&&new URL(s.canonical_url||s.discovery_endpoint).pathname.replace(/\/$/,'')===url.pathname.replace(/\/$/,'');}catch{return false;}})();
     const topicalRequired=s.required_topic&&/agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?/i.test(title+' '+(link.snippet||''));

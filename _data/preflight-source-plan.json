@@ -149,6 +149,24 @@
       "evidence_class": "publisher_authored",
       "focus_hint": "agents_non_technical_people",
       "status": "active"
+    },
+    {
+      "source_id": "openai-index",
+      "owner": "OpenAI",
+      "discovery_endpoint": "https://openai.com/index/",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active"
+    },
+    {
+      "source_id": "aws-machine-learning-feed",
+      "owner": "AWS Machine Learning",
+      "discovery_endpoint": "https://aws.amazon.com/blogs/machine-learning/feed/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "status": "active"
     }
   ]
 }
