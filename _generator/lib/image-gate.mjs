@@ -64,8 +64,13 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     if(matches.length!==1){errors.push(`Missing or ambiguous handoff visual approval: ${story.story_id}`);continue;}
     const i=matches[0];
     const strictLock=edition.brief_date>='2026-09-19';
-    const deterministicApproved=i.generation_method==='deterministic_editorial_diagram'&&i.renderer_verified===true;
-    const approvedMethod=strictLock?(i.generation_method==='openai_image_generation'||deterministicApproved):['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
+    const professionalOnly=edition.brief_date>='2026-09-20';
+    const deterministicApproved=!professionalOnly&&i.generation_method==='deterministic_editorial_diagram'&&i.renderer_verified===true;
+    const approvedMethod=professionalOnly
+      ? i.generation_method==='openai_image_generation'
+      : strictLock
+        ? (i.generation_method==='openai_image_generation'||deterministicApproved)
+        : ['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
     if(i.quality_accepted!==true||!approvedMethod)errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
     if(strictLock&&(i.accepted_locked!==true||i.lock_status!=='accepted_locked'))errors.push(`Handoff visual must be accepted and locked: ${story.story_id}`);
     if(i.alt!==story.image?.alt)errors.push(`Handoff visual alt text mismatch: ${story.story_id}`);
@@ -75,7 +80,8 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
       const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.path).toLowerCase();
       const inspection=inspectHandoffAsset(bytes,ext);
       const width=inspection.width||0,height=inspection.height||0,ratio=height?width/height:0,target=1200/630;
-      if(!['.png','.webp','.svg'].includes(ext)||!inspection.pass||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff image canvas: ${i.path}`);
+      const acceptedFormats=professionalOnly?['.png','.webp']:['.png','.webp','.svg'];
+      if(!acceptedFormats.includes(ext)||!inspection.pass||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff image canvas: ${i.path}`);
       if(i.sha256&&i.sha256!==hash)errors.push(`Accepted handoff image bytes changed: ${i.path}`);
       if(Number.isInteger(story.image?.width)&&story.image.width!==width)errors.push(`Edition image width mismatch: ${i.path}`);
       if(Number.isInteger(story.image?.height)&&story.image.height!==height)errors.push(`Edition image height mismatch: ${i.path}`);

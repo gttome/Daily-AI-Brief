@@ -2,7 +2,7 @@
 layout: default
 title: "Atlassian treats content systems as an AI-quality control layer"
 description: "For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and eva"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=ff382d88bd687e85"
 permalink: /stories/2026-09-20/atlassian-treats-content-systems-as-an-ai-quality-control-layer/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-d10aba14
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a)
+![Information-architecture illustration showing canonical content, taxonomy, standards, retrieval, generation, evaluation, defect tracing, and feedback as an AI quality-control layer.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=ff382d88bd687e85)
 
 **Summary:** Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.
 

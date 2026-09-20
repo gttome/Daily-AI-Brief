@@ -2,7 +2,7 @@
 layout: default
 title: "AWS shows Agent Skills packaging reusable SageMaker deployment work"
 description: "Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=f1394f439ab3ca95"
 permalink: /stories/2026-09-20/aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-e6b79e74
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13)
+![Agent-engineering illustration showing a reusable Skill package loaded by a coding agent into a SageMaker deployment pipeline with validation, observability, rollback, and reuse.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=f1394f439ab3ca95)
 
 **Summary:** AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.
 

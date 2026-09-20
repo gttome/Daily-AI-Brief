@@ -10,7 +10,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/github-copilot-weekly-releases-expand-the-engineering-surface/",
       "title": "GitHub Copilot weekly releases expand the engineering surface",
       "summary": "GitHub’s September 14 weekly Copilot release roundup groups several developer-facing changes across Copilot experiences and VS Code, giving engineering teams a compact view of the latest product surface they need to evaluate.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg?v=b0617a1e1bf02951",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=2182d94df9f505f6",
       "date_published": "2026-09-20T13:00:00-05:00",
       "tags": [
         "Copilot",
@@ -23,7 +23,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency/",
       "title": "NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency",
       "summary": "NVIDIA introduced AIPerf as the successor to GenAI-Perf, using a multiprocess architecture intended to prevent the benchmark client itself from becoming the bottleneck during high-concurrency LLM inference tests.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg?v=3405d45eb9641fa2",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=b85046ac4e38dfed",
       "date_published": "2026-09-20T13:00:00-05:00",
       "tags": [
         "LLM inference",
@@ -36,7 +36,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/",
       "title": "Gemini in Workspace connects directly to more business tools through MCP",
       "summary": "Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=78f105ef153ed2a2",
       "date_published": "2026-09-20T13:00:00-05:00",
       "tags": [
         "Gemini",
@@ -50,7 +50,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/atlassian-treats-content-systems-as-an-ai-quality-control-layer/",
       "title": "Atlassian treats content systems as an AI-quality control layer",
       "summary": "Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=ff382d88bd687e85",
       "date_published": "2026-09-20T13:00:00-05:00",
       "tags": [
         "AI quality",
@@ -64,7 +64,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work/",
       "title": "AWS shows Agent Skills packaging reusable SageMaker deployment work",
       "summary": "AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=f1394f439ab3ca95",
       "date_published": "2026-09-20T13:00:00-05:00",
       "tags": [
         "Agent Skills",
@@ -78,7 +78,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtime/",
       "title": "AWS shows how existing multi-model agents can move into a managed runtime",
       "summary": "AWS describes migrating a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the agent’s model choices and behavior and moving execution into managed agent infrastructure.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg?v=e308bc6f06ee6979",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=5e87a8b76e479a79",
       "date_published": "2026-09-20T13:00:00-05:00",
       "tags": [
         "agents",
