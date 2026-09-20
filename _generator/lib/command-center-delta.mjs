@@ -12,7 +12,7 @@ function publicPolicy(policy={}){
  return safe;
 }
 
-export function commandCenterDeltaPacket({validation={},watchlist={},policy={},generatedAt=new Date().toISOString()}={}){
+export function commandCenterDeltaPacket({validation={},watchlist={},policy={},incidentHistory=null,generatedAt=new Date().toISOString()}={}){
  const checks=Array.isArray(validation.checks)?validation.checks.map(check=>({
   check_id:String(check.check_id||''),
   result:String(check.result||'unknown'),
@@ -49,6 +49,16 @@ export function commandCenterDeltaPacket({validation={},watchlist={},policy={},g
    semantic_refresh_topic_ids:Array.isArray(watchlist.normal_semantic_input_topic_ids)?watchlist.normal_semantic_input_topic_ids.map(String):[],
    model_calls:Number.isInteger(watchlist.model_calls)?watchlist.model_calls:null
   },
+  incident_history:incidentHistory&&typeof incidentHistory==='object'?{
+   incident_id:String(incidentHistory.incident_id||''),
+   edition_date:String(incidentHistory.edition_date||''),
+   status:String(incidentHistory.status||''),
+   summary:String(incidentHistory.summary||''),
+   original_publication:incidentHistory.original_publication&&typeof incidentHistory.original_publication==='object'?incidentHistory.original_publication:null,
+   correction:incidentHistory.correction&&typeof incidentHistory.correction==='object'?incidentHistory.correction:null,
+   hardening:Array.isArray(incidentHistory.hardening)?incidentHistory.hardening.map(item=>({pr:Number(item.pr)||null,control:String(item.control||'')})):[],
+   closure_requirements:incidentHistory.closure_requirements&&typeof incidentHistory.closure_requirements==='object'?incidentHistory.closure_requirements:null
+  }:null,
   operating_policy:publicPolicy(policy),
   transport:{
    repository_packet:'available',
