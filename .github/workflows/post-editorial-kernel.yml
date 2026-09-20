@@ -248,6 +248,13 @@ jobs:
           set -euo pipefail
           node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images /tmp/images.json
 
+      - name: Persist final rendered image review for publication staging
+        run: |
+          set -euo pipefail
+          mkdir -p _records/editorial-handoff
+          cp /tmp/images.json _records/editorial-handoff/final-image-review.json
+          echo "FINAL_IMAGE_REVIEW_PATH=_records/editorial-handoff/final-image-review.json" >> "$GITHUB_ENV"
+
       - name: Deterministically expand canonical edition
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
@@ -275,8 +282,8 @@ jobs:
             --out /tmp/publication-stage \
             --baseline-sha "${{ steps.baseline.outputs.sha }}" \
             --observed-at "$PUBLISHED_AT" \
-            --run-id "kernel-${GITHUB_RUN_ID}")
-          if [ -n "$IMAGES_PATH" ]; then args+=(--image-review "$IMAGES_PATH"); fi
+            --run-id "kernel-${GITHUB_RUN_ID}" \
+            --image-review "$FINAL_IMAGE_REVIEW_PATH")
           node _generator/cli.mjs "${args[@]}"
 
       - name: Apply deterministic stage to staging branch
