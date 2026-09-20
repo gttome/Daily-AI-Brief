@@ -49,7 +49,7 @@ const excerptFor=(plain,headline,max=650)=>{
 const fetchedAt=new Date().toISOString(),records=[];
 for(const candidate of plan){
  try{
-  const result=await retrieveSource(candidate.canonical_url,{maxResponseBytes:1800000,maxNormalizedChars:400000});
+  const result=await retrieveSource(candidate.canonical_url,{maxResponseBytes:1800000,maxNormalizedChars:800000});
   const compact=compactDiscoveryHtml(result.text),plain=clean(compact);
   const wordCount=(plain.match(/\b[\p{L}\p{N}][\p{L}\p{N}'’-]*\b/gu)||[]).length;
   records.push({
