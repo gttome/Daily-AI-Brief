@@ -240,6 +240,13 @@ jobs:
           if [ -n "$IMAGES_PATH" ]; then args+=(--fallback "$IMAGES_PATH"); fi
           node _tools/render-visual-assets.mjs "${args[@]}"
 
+      - name: Validate final rendered image manifest
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+        run: |
+          set -euo pipefail
+          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images /tmp/images.json
+
       - name: Deterministically expand canonical edition
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
