@@ -15,7 +15,7 @@ if(!Number.isFinite(ordinaryAgeHours)||ordinaryAgeHours<=0||!Number.isFinite(ski
 
 const publishedUrls=new Set();
 if(fs.existsSync('_data/editions')){
- for(const name of fs.readdirSync('_data/editions').filter(name=>/^\\d{4}-\\d{2}-\\d{2}\\.json$/.test(name)).sort()){
+ for(const name of fs.readdirSync('_data/editions').filter(name=>/^\d{4}-\d{2}-\d{2}\.json$/.test(name)).sort()){
   const editionDate=name.slice(0,10);
   const cutoffDate=new Date(cutoff).toISOString().slice(0,10);
   if(editionDate>=cutoffDate)continue;
