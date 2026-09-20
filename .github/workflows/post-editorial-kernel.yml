@@ -270,13 +270,14 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf /tmp/publication-stage
-          node _generator/cli.mjs generate \
+          args=(generate \
             --edition /tmp/staged-edition.json \
             --out /tmp/publication-stage \
             --baseline-sha "${{ steps.baseline.outputs.sha }}" \
             --observed-at "$PUBLISHED_AT" \
-            --run-id "kernel-${GITHUB_RUN_ID}" \
-            --image-review "$IMAGES_PATH"
+            --run-id "kernel-${GITHUB_RUN_ID}")
+          if [ -n "$IMAGES_PATH" ]; then args+=(--image-review "$IMAGES_PATH"); fi
+          node _generator/cli.mjs "${args[@]}"
 
       - name: Apply deterministic stage to staging branch
         env:
@@ -288,7 +289,9 @@ jobs:
           node --test _generator/test/*.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
-          node _generator/cli.mjs integration-check --image-review "$IMAGES_PATH"
+          args=(integration-check)
+          if [ -n "$IMAGES_PATH" ]; then args+=(--image-review "$IMAGES_PATH"); fi
+          node _generator/cli.mjs "${args[@]}"
 
       - name: Commit deterministic outputs to staging only
         env:
