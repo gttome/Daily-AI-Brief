@@ -18,6 +18,9 @@ const commandAvailable=name=>{try{execFileSync('sh',['-lc',`command -v ${name}`]
 const pngRendererVerified=policy.deterministic_png_enabled===true&&commandAvailable('rsvg-convert');
 const fallbackValid=(entry,date)=>{
  if(!entry?.path||!entry.alt||!entry.path.startsWith(`briefs/images/${date}/`)||!fs.existsSync(entry.path))return null;
+ if(policy.professional_generative_assets_required===true){
+  if(entry.generation_method!==policy.required_generation_method||entry.quality_accepted!==true||entry.accepted_locked!==true||entry.lock_status!==policy.required_lock_status)return null;
+ }
  const bytes=fs.readFileSync(entry.path),ext=path.extname(entry.path).toLowerCase();
  const inspection=ext==='.webp'
    ? inspectWebp(bytes,{minimumWidth:policy.minimum_width||1200,minimumHeight:policy.minimum_height||630})
@@ -33,7 +36,7 @@ for(const story of kernel.stories||[]){
   records.push({candidate_id:candidateId,story_id:story.story_id,path:'generative_fallback',reason:decision.reason,asset:fb.path,inspection:fbInspection});continue;
  }
  if(decision.path==='blocked'){
-  records.push({candidate_id:candidateId,story_id:story.story_id,path:'blocked',reason:decision.reason,errors:decision.gate?.errors||[],required_action:'Provide one approved September-17-quality generative fallback for this story or approve deterministic parity after visual review.'});continue;
+  records.push({candidate_id:candidateId,story_id:story.story_id,path:'blocked',reason:decision.reason,errors:decision.gate?.errors||[],required_action:'Provide one accepted_locked professional generative asset for this story. Low-detail deterministic publication fallback is prohibited.'});continue;
  }
  try{
   const built=buildDeterministicSvg(story.visual),tmp=fs.mkdtempSync(path.join(os.tmpdir(),'dab-visual-')),svgPath=path.join(tmp,'visual.svg'),pngPath=path.join(tmp,'visual.png');
