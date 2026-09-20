@@ -43,7 +43,7 @@ for(const story of kernel.stories||[]){
   if(!inspection.pass)throw Error(`png_integrity_gate_failed:${inspection.errors.join(',')}`);
   const filename=`${String(story.canonical_ordinal).padStart(2,'0')}-${slug(story.headline)}.png`,relative=`briefs/images/${kernel.brief_date}/${filename}`,svgRelative=relative.replace(/\.png$/,'.svg');
   fs.mkdirSync(path.dirname(relative),{recursive:true});fs.writeFileSync(relative,bytes);fs.writeFileSync(svgRelative,built.svg,'utf8');
-  outputManifest[candidateId]={path:relative,alt:story.visual.alt_text,width:inspection.width,height:inspection.height,kind:'editorial_explainer',cache_key:inspection.sha256.slice(0,16),sha256:inspection.sha256,svg_source:svgRelative};
+  outputManifest[candidateId]={path:relative,alt:story.visual.alt_text,width:inspection.width,height:inspection.height,kind:'editorial_explainer',cache_key:inspection.sha256.slice(0,16),sha256:inspection.sha256,svg_source:svgRelative,generation_method:'deterministic_editorial_diagram',renderer_verified:true,quality_accepted:true,accepted_locked:true,lock_status:'accepted_locked'};
   records.push({candidate_id:candidateId,story_id:story.story_id,path:'deterministic',reason:decision.reason,asset:relative,svg_source:svgRelative,svg_inspection:built.inspection,png_inspection:inspection});
   fs.rmSync(tmp,{recursive:true,force:true});
  }catch(error){
