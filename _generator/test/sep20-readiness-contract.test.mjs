@@ -64,3 +64,13 @@ test('production handoff does not depend on GitHub Actions permission to create 
   assert.match(runtime.handoff.publication_pr.deterministic_workflow_role,/add publication-candidate only after deterministic validation succeeds/);
   assert.match(runtime.handoff.hard_stop,/authenticated GitHub connector to open or reuse one unlabelled PR/);
 });
+
+
+test('failed current-edition recovery continues until live verification and Sep 20+ images are professional-only',()=>{
+  const policy=read('docs/operations/efficiency-operating-policy.json');
+  assert.equal(policy.failed_brief_recovery.mode,'continuous_until_live_verified');
+  assert.equal(policy.failed_brief_recovery.preserve_completed_work,true);
+  assert.equal(policy.failed_brief_recovery.redo_completed_editorial_work,false);
+  assert.match(policy.failed_brief_recovery.completion_definition,/live site/);
+  assert.equal(policy.image.quality_protected,true);
+});
