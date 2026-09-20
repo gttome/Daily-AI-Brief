@@ -14,7 +14,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: under80-discovery-preflight-${{ github.ref_name || github.run_id }}
+  group: under80-discovery-preflight
   cancel-in-progress: false
 
 jobs:
@@ -169,7 +169,7 @@ jobs:
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git add _records/discovery-preflight/request.json _records/discovery-preflight/result/date-enrichment.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence.json _records/discovery-preflight/result/article-evidence-receipt.json _records/discovery-preflight/result/receipt.json
           git commit -m "Complete under-80 discovery preflight"
-          git push origin "HEAD:$TARGET_REF"
+          git push --force-with-lease origin "HEAD:$TARGET_REF"
 
       - name: Summary
         if: always() && steps.request.outputs.run_preflight == 'true'
