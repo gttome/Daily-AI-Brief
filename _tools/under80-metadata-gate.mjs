@@ -77,7 +77,10 @@ for(const item of source){
  // Treat upstream focus hints as advisory. Reclassify clear knowledge-worker adoption/engagement stories deterministically so technical-heavy source defaults cannot starve the 2/2/2 coverage gate.
  const inferredFocus=focusHint(combined,false);
  const appliedOverride=inferredFocus==='applied_genai_knowledge_workers'&&/\b(impact dashboard|feature engagement|adoption|knowledge worker|workplace|productivity|business users?|enterprise)\b/i.test(combined);
- const focus=isSkill?'agents_non_technical_people':appliedOverride?'applied_genai_knowledge_workers':providedFocus||inferredFocus;
+ // Upstream source hints are advisory for agent-facing work too. An explicit end-user/support agent
+ // story must not remain technical merely because it came from a research-heavy source.
+ const agentOverride=inferredFocus==='agents_non_technical_people'&&/\b(customer support|support agents?|troubleshooting agents?|workflow automation|assistant|business users?|knowledge worker)\b/i.test(combined);
+ const focus=isSkill?'agents_non_technical_people':agentOverride?'agents_non_technical_people':appliedOverride?'applied_genai_knowledge_workers':providedFocus||inferredFocus;
  const skillStoryReady=isSkill&&(dateBasis==='published_at'||(dateBasis==='updated_at_requires_material_update_review'&&item.material_update_verified===true));
  const normalized={
   candidate_id:text(item.candidate_id)||null,
