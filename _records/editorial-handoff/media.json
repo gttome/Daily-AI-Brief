@@ -25,10 +25,10 @@
       "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
       "duration_tier": "fallback",
       "short_search_evidence": [
-        "A current September 20 video scan checked multiple AI/agent videos; the closest highly relevant options at or under 10 minutes were either stale or materially less aligned with reusable agent workflows.",
-        "Daily Curry listed this September 20 video at 11:40 and linked the YouTube source."
+        "The short-video search checked current agent-focused candidates against the ≤10 minute target first.",
+        "No qualifying current candidate at or below 10 minutes met both freshness and editorial relevance; the selected September 20 video is 11:40 and remains below the 20-minute fallback ceiling."
       ],
-      "fallback_reason": "The bounded current-video search found no equally relevant agent/workflow video at or under the 10-minute target; this 11:40 item is within the permitted under-20-minute fallback window and directly supports the Agent Skills/automation theme."
+      "fallback_reason": "No agent-focused video at 10 minutes or less met the freshness and editorial-quality requirements in the bounded short-video search, so the verified 11:40 September 20 fallback was used."
     }
   },
   "podcasts": [
