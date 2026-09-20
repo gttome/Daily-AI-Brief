@@ -2,7 +2,7 @@
 layout: default
 title: "AWS shows Agent Skills packaging reusable SageMaker deployment work"
 description: "Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=61e7adc99b3e4c13"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13"
 permalink: /stories/2026-09-20/aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-e6b79e74
@@ -25,11 +25,15 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=61e7adc99b3e4c13)
+![Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13)
 
 **Summary:** AWS demonstrates six reusable skills from the Hugging Face Skills repository that coding agents can apply when deploying production-ready Hugging Face models on Amazon SageMaker AI.
 
 **Why it matters:** Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once and let an agent invoke it when the situation matches.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the checklist when deciding what instructions, tools, references, examples, and validation evidence belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 
 
