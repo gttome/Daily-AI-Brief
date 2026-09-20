@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "brief_date": "2026-09-20",
   "edition_id": "dab-edition-2026-09-20",
-  "baseline_sha": "db501579a081c4b5546c8e44bc41cee88078cd34",
+  "baseline_sha": "71b8af55ac8b00080e0652cadda8d2c40cbc31df",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
   "stories": [
