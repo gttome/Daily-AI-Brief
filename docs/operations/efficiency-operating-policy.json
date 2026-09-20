@@ -80,7 +80,7 @@
   "release_authorization": "2026-09-18 user proceed for scoped under80 implementation; platform and repository enforcement remain authoritative",
   "no_added_cost": true,
   "no_new_credentials": true,
-  "failure_policy": "preserve_last_valid_edition_and_stop_without_same_edition_ai_retry",
+  "failure_policy": "For a failed or defective current edition, preserve completed valid work and continue corrective action until the edition is published and live-verified. Do not stop for routine implementation decisions. Stop only for a new paid service, external credential, security/privacy change, sharing/access change, irreversible destructive action, material product change, or a hard platform capability blocker.",
   "runtime_contract_path": "docs/operations/under80-runtime-contract.json",
   "daily_work_reads_historical_runbook": false,
   "post_editorial_execution_owner": "github_actions",
@@ -188,5 +188,22 @@
     "current_production_path": "existing scheduled ChatGPT publisher using the active under80 runtime contract",
     "qualification_rule": "Do not claim or switch production to zero-Work execution until the scheduler exposes or otherwise proves a GitHub-enabled non-Work execution path that can complete the full publication-equivalent workflow.",
     "fallback": "Keep the lowest-cost existing scheduled path and preserve all quality gates."
+  },
+  "failed_brief_recovery": {
+    "mode": "continuous_until_live_verified",
+    "preserve_completed_work": true,
+    "redo_completed_editorial_work": false,
+    "routine_corrective_decisions_pre_authorized": true,
+    "final_response_only_when_user_requests_minimal_updates": true,
+    "hard_stop_conditions": [
+      "new_paid_service",
+      "external_credential",
+      "security_or_privacy_change",
+      "sharing_or_access_change",
+      "irreversible_destructive_action",
+      "material_product_change",
+      "hard_platform_capability_blocker"
+    ],
+    "completion_definition": "publication_record, live site, and after-action evidence agree; all Critical/High defects closed"
   }
 }
