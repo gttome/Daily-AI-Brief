@@ -8,6 +8,7 @@ const args=parseArgs(process.argv.slice(2));
 if(!args.kernel||!args.images)throw Error('Requires --kernel and --images');
 const kernel=JSON.parse(fs.readFileSync(path.resolve(args.kernel),'utf8'));
 const manifest=JSON.parse(fs.readFileSync(path.resolve(args.images),'utf8'));
+const rendererPolicy=JSON.parse(fs.readFileSync(path.resolve('_data/visual-renderer-policy.json'),'utf8'));
 const stories=kernel.stories||[];
 if(stories.length!==6)throw Error('six_story_kernel_required');
 const records=[];
@@ -18,9 +19,11 @@ for(const story of stories){
  if(entry){
   if(entry.quality_accepted!==true)errors.push('quality_accepted_required');
   const strictLock=kernel.brief_date>='2026-09-19';
-  const approvedMethod=strictLock?entry.generation_method==='openai_image_generation':['openai_image_generation','deterministic_editorial_diagram'].includes(entry.generation_method);
+  const deterministicApproved=entry.generation_method==='deterministic_editorial_diagram'&&entry.renderer_verified===true&&rendererPolicy.sep17_parity_approved===true;
+  const approvedMethod=strictLock?(entry.generation_method==='openai_image_generation'||deterministicApproved):['openai_image_generation','deterministic_editorial_diagram'].includes(entry.generation_method);
   if(!approvedMethod)errors.push('approved_generation_method_required');
   if(strictLock&&(entry.accepted_locked!==true||entry.lock_status!=='accepted_locked'))errors.push('accepted_locked_required');
+  if(strictLock&&entry.generation_method==='deterministic_editorial_diagram'&&entry.renderer_verified!==true)errors.push('renderer_verified_required');
   if(typeof entry.path!=='string'||!entry.path.startsWith(`briefs/images/${kernel.brief_date}/`))errors.push('edition_image_path_required');
   if(!entry.path||!fs.existsSync(entry.path))errors.push('image_file_missing');
   else {
