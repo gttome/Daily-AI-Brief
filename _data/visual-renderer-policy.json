@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
   "minimum_baseline": "2026-09-17",
-  "sep17_parity_approved": true,
+  "sep17_parity_approved": false,
   "deterministic_png_enabled": true,
   "minimum_width": 1200,
   "minimum_height": 630,
@@ -9,5 +9,7 @@
   "fallback": "approved_story_scoped_asset",
   "note": "Deterministic editorial diagrams are approved as a truthful recovery/publication path when renderer verification and integrity gates pass. Generative assets remain supported; provenance must never be relabeled.",
   "parity_reviewed_at": "2026-09-20",
-  "parity_basis": "Recovery visual review against the codified September-17-or-better contract: white textbook-style explanatory diagrams, 1200x630 minimum, readable typography, no people/objects, no overlap, story-specific flow, binary integrity, and deterministic reproducibility."
+  "parity_basis": "September 20 closure review found the current deterministic box-diagram renderer materially below the accepted professional September 19 WebP baseline. Fail closed: use an approved story-scoped professional asset until deterministic rendering is requalified.",
+  "low_detail_fallback_allowed": false,
+  "preferred_public_format": "webp"
 }

@@ -25,8 +25,8 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=b0617a1e1bf02951",
+        "path": "briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg?v=b0617a1e1bf02951",
         "alt": "Four-step diagram showing a weekly Copilot release, workflow mapping, testing, and updated engineering guidance.",
         "width": 1200,
         "height": 630,
@@ -71,7 +71,7 @@
       "social": {
         "title": "GitHub Copilot weekly releases expand the engineering surface",
         "description": "A recurring release cadence means teams need a lightweight operating practice for reviewing Copilot changes, deciding which ones affect local workflows, and updating guidance befor",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=b0617a1e1bf02951"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg?v=b0617a1e1bf02951"
       }
     },
     {
@@ -89,8 +89,8 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=3405d45eb9641fa2",
+        "path": "briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg?v=3405d45eb9641fa2",
         "alt": "Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.",
         "width": 1200,
         "height": 630,
@@ -135,7 +135,7 @@
       "social": {
         "title": "NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency",
         "description": "When benchmarking tools saturate before the model-serving stack does, engineering teams can draw the wrong conclusions about capacity. A benchmark designed for larger concurrency m",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=3405d45eb9641fa2"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg?v=3405d45eb9641fa2"
       }
     },
     {
@@ -154,8 +154,8 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=5f6a72904f253592",
+        "path": "briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592",
         "alt": "Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.",
         "width": 1200,
         "height": 630,
@@ -200,7 +200,7 @@
       "social": {
         "title": "Gemini in Workspace connects directly to more business tools through MCP",
         "description": "For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requi",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=5f6a72904f253592"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592"
       }
     },
     {
@@ -219,8 +219,8 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=0d4439efae6dd18a",
+        "path": "briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a",
         "alt": "Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.",
         "width": 1200,
         "height": 630,
@@ -265,7 +265,7 @@
       "social": {
         "title": "Atlassian treats content systems as an AI-quality control layer",
         "description": "For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and eva",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=0d4439efae6dd18a"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a"
       }
     },
     {
@@ -284,8 +284,8 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=61e7adc99b3e4c13",
+        "path": "briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13",
         "alt": "Four-step diagram showing a reusable skill package, a coding agent, a SageMaker deployment task, and a repeatable validated result.",
         "width": 1200,
         "height": 630,
@@ -330,7 +330,7 @@
       "social": {
         "title": "AWS shows Agent Skills packaging reusable SageMaker deployment work",
         "description": "Agent Skills turn repeated expert procedures into reusable instructions and tools. Instead of rebuilding deployment knowledge for every task, teams can package a proven method once",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.png?v=61e7adc99b3e4c13"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg?v=61e7adc99b3e4c13"
       }
     },
     {
@@ -349,8 +349,8 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979",
+        "path": "briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg?v=e308bc6f06ee6979",
         "alt": "Four-step diagram showing an existing agent, a runtime contract, managed AgentCore execution, and operational controls at scale.",
         "width": 1200,
         "height": 630,
@@ -395,7 +395,7 @@
       "social": {
         "title": "AWS shows how existing multi-model agents can move into a managed runtime",
         "description": "For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, obser",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.png?v=e308bc6f06ee6979"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg?v=e308bc6f06ee6979"
       }
     }
   ],

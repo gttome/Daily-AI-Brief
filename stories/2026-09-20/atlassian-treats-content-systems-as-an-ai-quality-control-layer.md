@@ -2,7 +2,7 @@
 layout: default
 title: "Atlassian treats content systems as an AI-quality control layer"
 description: "For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and eva"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=0d4439efae6dd18a"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a"
 permalink: /stories/2026-09-20/atlassian-treats-content-systems-as-an-ai-quality-control-layer/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-d10aba14
@@ -25,13 +25,15 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.png?v=0d4439efae6dd18a)
+![Four-step diagram showing content standards, structured information, evaluation, and more reliable AI outputs.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg?v=0d4439efae6dd18a)
 
 **Summary:** Atlassian describes Content Technologists as building systems, standards, and information structures that help its AI products produce better outputs instead of relying on model capability alone.
 
 **Why it matters:** For organizations deploying generative AI, output quality often depends on the surrounding information architecture: structured content, clear standards, reusable patterns, and evaluation practices can improve reliability without changing the underlying model.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality framework to evaluate whether source content is structured, current, and specific enough to support reliable AI outputs.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 

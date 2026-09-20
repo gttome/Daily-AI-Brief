@@ -2,7 +2,7 @@
 layout: default
 title: "NVIDIA AIPerf targets LLM benchmarking bottlenecks at high concurrency"
 description: "When benchmarking tools saturate before the model-serving stack does, engineering teams can draw the wrong conclusions about capacity. A benchmark designed for larger concurrency m"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=3405d45eb9641fa2"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg?v=3405d45eb9641fa2"
 permalink: /stories/2026-09-20/nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-e23d62ec
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.png?v=3405d45eb9641fa2)
+![Four-step diagram showing high-concurrency load generation, multiprocess benchmarking, bottleneck measurement, and deployment tuning.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg?v=3405d45eb9641fa2)
 
 **Summary:** NVIDIA introduced AIPerf as the successor to GenAI-Perf, using a multiprocess architecture intended to prevent the benchmark client itself from becoming the bottleneck during high-concurrency LLM inference tests.
 

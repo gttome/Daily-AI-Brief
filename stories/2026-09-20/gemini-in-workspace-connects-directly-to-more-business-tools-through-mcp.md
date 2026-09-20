@@ -2,7 +2,7 @@
 layout: default
 title: "Gemini in Workspace connects directly to more business tools through MCP"
 description: "For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requi"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=5f6a72904f253592"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592"
 permalink: /stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-2d9f17ac
@@ -25,13 +25,15 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=5f6a72904f253592)
+![Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592)
 
 **Summary:** Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.
 
 **Why it matters:** For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requiring users to shuttle context between systems.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding which business-system context, permissions, references, and constraints should travel through an MCP connection.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 
