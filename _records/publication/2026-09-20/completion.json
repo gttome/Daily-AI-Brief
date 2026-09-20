@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20260920T155633Z-closure",
+  "run_id": "sep20-publication-closure",
+  "phase": "pages_verified",
+  "edition_id": "dab-edition-2026-09-20",
+  "observed_at": "2026-09-20T15:56:33Z",
+  "baseline_main_sha": "71b8af55ac8b00080e0652cadda8d2c40cbc31df",
+  "staged_tree_digest": "sha256:cd14c83fdd4885728534fde3dc89551dd8c5eeb811c80f15cfb82b1b45426745",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "edition_validation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "September 20 canonical edition remains structurally and semantically valid."
+    },
+    {
+      "check_id": "publication_candidate_ci",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Original publication candidate CI run 35519173726 passed."
+    },
+    {
+      "check_id": "protected_publication",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Protected publication promotion run 35519203231 passed and PR #190 published the edition."
+    },
+    {
+      "check_id": "reader_closure_repair_ci",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "PR #191 deterministic publication CI run 35521015441 passed all generator, integrated-state, atomic-change, ledger, and Jekyll checks."
+    },
+    {
+      "check_id": "pages_deployment",
+      "class": "live_postpublication",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Pages run 35521095792 successfully deployed corrected production commit 9870142690b0a8ff833f59bd57516388ef3247ec."
+    },
+    {
+      "check_id": "live_reader_parity",
+      "class": "live_postpublication",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Homepage shows September 20, 6/2/2 counts, ratings, permanent links, five book bridges, Watchlist 0-new empty state, and archive/media entries."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-09-20.json",
+      "_data/book-reading.json",
+      "_data/watchlist.json"
+    ],
+    "assets": [
+      "briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg",
+      "briefs/images/2026-09-20/02-nvidia-aiperf-targets-llm-benchmarking-bottlenecks-at-high-concurrency.svg",
+      "briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg",
+      "briefs/images/2026-09-20/04-atlassian-treats-content-systems-as-an-ai-quality-control-layer.svg",
+      "briefs/images/2026-09-20/05-aws-shows-agent-skills-packaging-reusable-sagemaker-deployment-work.svg",
+      "briefs/images/2026-09-20/06-aws-shows-how-existing-multi-model-agents-can-move-into-a-managed-runtim.svg"
+    ],
+    "derived_outputs": [
+      "index.md",
+      "latest.md",
+      "briefs/2026-09-20.md",
+      "archive.md",
+      "feed.xml",
+      "feed.json",
+      "data/archive-index.json"
+    ],
+    "operational_records": [
+      "_records/publication/2026-09-20/kernel-35518865790.validated.json",
+      "_records/editorial-handoff/final-image-review.json",
+      "_records/publication/2026-09-20/completion.json",
+      "_records/publication/2026-09-20/after-action.md"
+    ]
+  },
+  "commit_sha": "9870142690b0a8ff833f59bd57516388ef3247ec",
+  "publication_pr": 190,
+  "closure_repair_pr": 191,
+  "required_ci": {
+    "run_id": 35521015441,
+    "conclusion": "success"
+  },
+  "pages": {
+    "run_id": 35521095792,
+    "conclusion": "success",
+    "verified_at": "2026-09-20T15:56:33Z",
+    "deployment_url": "https://gttome.github.io/Daily-AI-Brief/"
+  },
+  "final_counts": {
+    "articles": 6,
+    "videos": 2,
+    "podcasts": 2,
+    "story_images": 6,
+    "book_connections": 5,
+    "watchlist_new_today": 0
+  },
+  "rollback_target_sha": "82f9fa61d4ecb3ab4fe7d164a53c7d63bc7f89a8",
+  "supersedes_event_id": "dab-publication-event-20260920T151352Z-3a1b287c"
+}
