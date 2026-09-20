@@ -35,8 +35,6 @@ reader_release: true
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding which business-system context, permissions, references, and constraints should travel through an MCP connection.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-
-
 ## What to do now
 
 **Map high-value Workspace connections:** Identify one or two systems where eliminating copy-and-paste context transfer would materially improve a recurring knowledge-work process.
