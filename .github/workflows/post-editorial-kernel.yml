@@ -223,6 +223,7 @@ jobs:
           node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
 
       - name: Validate six Git-Data handoff PNGs
+        if: steps.handoff.outputs.images_path != ''
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
