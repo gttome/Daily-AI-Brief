@@ -248,6 +248,13 @@ jobs:
           set -euo pipefail
           node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images /tmp/images.json
 
+      - name: Persist final rendered image review
+        run: |
+          set -euo pipefail
+          mkdir -p _records/editorial-handoff
+          cp /tmp/images.json _records/editorial-handoff/final-images.json
+          echo "FINAL_IMAGES_PATH=_records/editorial-handoff/final-images.json" >> "$GITHUB_ENV"
+
       - name: Deterministically expand canonical edition
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
@@ -270,14 +277,13 @@ jobs:
         run: |
           set -euo pipefail
           rm -rf /tmp/publication-stage
-          args=(generate \
+          node _generator/cli.mjs generate \
             --edition /tmp/staged-edition.json \
             --out /tmp/publication-stage \
             --baseline-sha "${{ steps.baseline.outputs.sha }}" \
             --observed-at "$PUBLISHED_AT" \
-            --run-id "kernel-${GITHUB_RUN_ID}")
-          if [ -n "$IMAGES_PATH" ]; then args+=(--image-review "$IMAGES_PATH"); fi
-          node _generator/cli.mjs "${args[@]}"
+            --run-id "kernel-${GITHUB_RUN_ID}" \
+            --image-review "$FINAL_IMAGES_PATH"
 
       - name: Apply deterministic stage to staging branch
         env:
@@ -289,9 +295,7 @@ jobs:
           node --test _generator/test/*.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
-          args=(integration-check)
-          if [ -n "$IMAGES_PATH" ]; then args+=(--image-review "$IMAGES_PATH"); fi
-          node _generator/cli.mjs "${args[@]}"
+          node _generator/cli.mjs integration-check --image-review "$FINAL_IMAGES_PATH"
 
       - name: Commit deterministic outputs to staging only
         env:
