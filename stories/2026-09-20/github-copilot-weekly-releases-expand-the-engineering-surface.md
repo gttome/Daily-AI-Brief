@@ -2,7 +2,7 @@
 layout: default
 title: "GitHub Copilot weekly releases expand the engineering surface"
 description: "A recurring release cadence means teams need a lightweight operating practice for reviewing Copilot changes, deciding which ones affect local workflows, and updating guidance befor"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg?v=b0617a1e1bf02951"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=2182d94df9f505f6"
 permalink: /stories/2026-09-20/github-copilot-weekly-releases-expand-the-engineering-surface/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-94a301a8
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a weekly Copilot release, workflow mapping, testing, and updated engineering guidance.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.svg?v=b0617a1e1bf02951)
+![Detailed engineering release-management illustration showing Copilot and VS Code changes flowing through IDE behavior, code review, model choice, workflow policy, testing, rollout telemetry, and a feedback loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/01-github-copilot-weekly-releases-expand-the-engineering-surface.png?v=2182d94df9f505f6)
 
 **Summary:** GitHub’s September 14 weekly Copilot release roundup groups several developer-facing changes across Copilot experiences and VS Code, giving engineering teams a compact view of the latest product surface they need to evaluate.
 

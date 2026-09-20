@@ -2,7 +2,7 @@
 layout: default
 title: "Gemini in Workspace connects directly to more business tools through MCP"
 description: "For knowledge workers, the value is less tab-switching and fewer manual handoffs: an assistant can retrieve or act on business information inside the flow of work rather than requi"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=78f105ef153ed2a2"
 permalink: /stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/
 brief_date: 2026-09-20
 story_id: dab-story-2026-09-20-2d9f17ac
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Four-step diagram showing a Workspace request, MCP connectors, external business systems, and returned context inside the user workflow.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.svg?v=5f6a72904f253592)
+![Enterprise integration illustration showing a Workspace task routed through Gemini and a governed MCP capability layer to multiple business systems with structured results returned.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-20/03-gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp.png?v=78f105ef153ed2a2)
 
 **Summary:** Google’s September 18 Workspace recap says Gemini in Workspace can directly interact with services including Asana, Atlassian Rovo, HubSpot, Mailchimp, QuickBooks, Monday, and Salesforce through Model Context Protocol integrations.
 
