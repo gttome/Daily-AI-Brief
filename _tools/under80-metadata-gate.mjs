@@ -46,8 +46,11 @@ const ageRank=(stamp,maxAge)=>{
 const skillSignal=value=>{
  const v=text(value).toLowerCase();
  const explicit=/\b(agent skills?|ai skills?|skill\.md|skills\.md|reusable agent workflows?|reusable workflows?|custom skills?|build(?:ing)? skills?|create(?:ing)? skills?)\b/.test(v);
+ if(explicit)return true;
+ // Generic workforce skills and upskilling stories are Applied AI, not Agent Skills.
+ if(/\b(workforce|employees?|chro|training|upskilling|skills erosion|ai literacy|workforce readiness)\b/.test(v))return false;
  const contextual=/\bskills?\b/.test(v)&&/\b(copilot|plugin|plugins|cli|workflow|workflows|customization|customizations|reusable|invocations?|skill totals?|custom agents?)\b/.test(v);
- return explicit||contextual;
+ return contextual;
 };
 const relevanceRank=value=>{
  const v=text(value).toLowerCase();
