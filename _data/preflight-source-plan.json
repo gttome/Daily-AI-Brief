@@ -237,6 +237,20 @@
       "candidate_title": "Pharma sector doubles down on AI to slash costs, timelines",
       "known_publication_date": "2026-09-21T00:00:00Z",
       "candidate_snippet": "Reuters reports how pharmaceutical teams are applying AI modeling and automated workflows to accelerate research and development and improve efficiency."
+    },
+    {
+      "source_id": "salesforce-dreamforce-live-sep21",
+      "owner": "Salesforce",
+      "discovery_endpoint": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
+      "canonical_url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active",
+      "pinned_candidate": true,
+      "candidate_title": "Dreamforce 2026 Live: enterprise AI highlights and customer workflows",
+      "known_publication_date": "2026-09-21T00:00:00Z",
+      "candidate_snippet": "Official Salesforce live coverage of Dreamforce 2026 highlights enterprise AI, customer workflows, productivity, adoption, and practical agentic work."
     }
   ]
 }
