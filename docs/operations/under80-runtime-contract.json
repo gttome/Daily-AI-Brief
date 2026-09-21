@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -370,5 +370,55 @@
     "verified_current_state": "The scheduler configuration exposes prompt, timing, enabled state, and notifications, but no explicit regular-chat-vs-Work execution-mode selector.",
     "production_rule": "Do not switch production to a claimed zero-Work path until a scheduled run proves GitHub-enabled full publication-equivalent execution without Work/Codex use.",
     "current_action": "Keep the existing production execution path, enforce the GitHub startup gate first, and record only owner-observed credit values."
+  },
+  "readiness_certification": {
+    "enabled": true,
+    "purpose": "One authoritative current-day readiness decision without adding schedules. The existing Preflight Guard writes the preliminary certification and the existing Final Gate finalizes it before the publisher starts.",
+    "schedule_owners": {
+      "preliminary": "Daily Brief Preflight Guard at 06:15 America/Chicago",
+      "final": "Daily Brief Final Gate at 06:55 America/Chicago",
+      "consumer": "Daily AI Brief + QA at 07:00 America/Chicago"
+    },
+    "receipt_branch_pattern": "discovery-preflight/daily/YYYY-MM-DD",
+    "receipt_path_pattern": "_records/readiness/YYYY-MM-DD.json",
+    "allowed_statuses": [
+      "READY",
+      "READY_WITH_WARNINGS",
+      "NOT_READY"
+    ],
+    "preliminary_required_checks": [
+      "exact_current_main_sha",
+      "required_main_ruleset_active",
+      "latest_main_ci_success",
+      "latest_main_pages_success",
+      "latest_deterministic_delta_validation_success",
+      "metadata_preflight_present_and_ready",
+      "discovery_preflight_present_and_coverage_ready",
+      "article_evidence_ready",
+      "candidate_limit_at_most_20",
+      "focus_coverage_at_least_3_each",
+      "agent_skills_story_ready_signal_present",
+      "publisher_guard_final_gate_after_action_automations_enabled",
+      "no_known_critical_or_high_open_blocker"
+    ],
+    "final_required_checks": [
+      "preliminary_receipt_present",
+      "receipt_main_sha_matches_current_main_or_is_recertified",
+      "metadata_preflight_still_ready",
+      "discovery_preflight_still_ready",
+      "article_evidence_still_ready",
+      "no_new_blocking_workflow_failure",
+      "publisher_automation_enabled",
+      "github_publication_capability_available"
+    ],
+    "status_rules": {
+      "READY": "All required checks pass and no blocking warning exists.",
+      "READY_WITH_WARNINGS": "All publication-blocking checks pass; one or more explicitly nonblocking warnings are recorded.",
+      "NOT_READY": "Any publication-blocking check fails, is stale, is missing, or cannot be verified."
+    },
+    "publication_rule": "The 07:00 publisher must not begin editorial, media, or image work unless the final current-day readiness receipt is READY or READY_WITH_WARNINGS and every warning is explicitly nonblocking.",
+    "fail_closed_rule": "NOT_READY, missing receipt, stale receipt, SHA mismatch, or unverifiable receipt preserves the last valid live edition and blocks the publisher until targeted recovery restores readiness.",
+    "write_policy": "The readiness receipt is written only on the existing current-day discovery-preflight branch. It is operational evidence, not a production-content commit, and does not require a new schedule.",
+    "work_cost_rule": "Readiness certification must not use ChatGPT Work/Codex as part of normal production operation."
   }
 }
