@@ -26,6 +26,20 @@ Analytics stores aggregate counters only, suppresses story counts below five, an
 
 Personal Editorial Learning uses explicit anonymous daily ratings from compact controls beneath each story on the homepage, dated brief, and permanent shared-story page. George is the primary reader, while recipients of shared stories may contribute independently to the same aggregate. The Share control includes the share count but never transfers a sender's browser-local rating in the URL. Passive views/clicks remain secondary. The analytics workflow refreshes seven canonical editions and reevaluates learning automatically. Inline ratings may recommend only practical_value ±10%; category_fit requires richer explicitly approved owner feedback. No weight activates without George’s approval. Do not request approval until the state reports five completely rated editions, 30 ratings, ten ratings per focus, and five passing candidate-set shadow comparisons. Approved weights fail closed after ten editions or immediately on any configured rollback trigger.
 
+## Daily book-change proposal evaluation
+
+Every completed Brief must receive an owner-only Generative AI Professional Series book-change evaluation after the final published edition is known.
+
+- Evaluate every included article, video, and podcast independently for whether the evidence warrants a material revision, expansion, example, checklist, exercise, diagram, or other teaching asset in a Series book.
+- Keep this evaluation separate from reader-facing book bridges. A reader bridge can be appropriate without a book change, and a book change can be warranted even when no reader bridge is shown.
+- Create private Command Center proposals only when the evidence clears the material-change threshold. Deduplicate against the existing private backlog and preserve prior approval/rejection state.
+- Record an explicit daily outcome in the private Command Center: either `N proposals generated` with the evaluated edition date, or `0 proposals — all included items evaluated; no material book change warranted`.
+- A missing outcome is a failed/incomplete Command Center synchronization, not evidence that there were zero proposals.
+- If the edition is repaired or republished after the initial evaluation, rerun the book-change evaluation against the final production state before operational closure.
+- Book-change proposals remain owner-only. Do not create a public proposal queue or expose proposal contents in public repository outputs.
+
+Operational closure for a daily Brief therefore requires both publication validation and a recorded private book-change evaluation result.
+
 ## Known limitations
 
 - Legacy briefs lack some evidence/status fields and show `Unspecified` in the archive.
