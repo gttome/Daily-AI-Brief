@@ -1,0 +1,506 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-09-21",
+  "brief_date": "2026-09-21",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 21, 2026",
+  "published_at": "2026-09-21T16:09:38Z",
+  "research_cutoff_at": "2026-09-21T14:28:00.000Z",
+  "coverage_period": "24-hour primary window ending at 2026-09-21T14:28:00.000Z; recency fallback used for reviewed items outside the primary window.",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-21-05232b62",
+      "ordinal": 1,
+      "slug": "github-sets-an-october-deadline-for-several-copilot-models",
+      "permanent_url": "/stories/2026-09-21/github-sets-an-october-deadline-for-several-copilot-models/",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub sets an October deadline for several Copilot models",
+      "event_date": "2026-09-18",
+      "topics": [
+        "Copilot",
+        "model lifecycle",
+        "deprecation",
+        "developer workflow"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-21/01-github-copilot-model-deprecation.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/01-github-copilot-model-deprecation.webp?v=e2799c9098849d31",
+        "alt": "Model lifecycle migration illustration showing current Copilot model inventory, affected workflows, replacement-model evaluation, policy updates, testing, and migration before the October 19, 2026 deadline.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "e2799c9098849d31"
+      },
+      "summary": "GitHub says selected models will be removed from Copilot experiences on October 19, creating a concrete migration deadline for teams that depend on model-specific behavior in chat, edits, agent mode, or completions.",
+      "why_it_matters": "Model deprecations are operational changes, not just catalog cleanup. Teams need to identify workflows tied to retiring models, test alternatives, and update guidance before the cutoff turns a routine platform change into broken developer workflows.",
+      "source": {
+        "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+        "normalized_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+        "publication_date": "2026-09-18",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 544,
+          "verified_at": "2026-09-21T14:28:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-18T19:00:00.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented recency fallback after bounded review."
+      },
+      "selection_rationale": "Concrete first-party model-lifecycle change with a dated migration deadline.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "test",
+        "label": "Test replacement models now",
+        "rationale": "Inventory any Copilot workflows that depend on the retiring models and compare supported alternatives before the October 19 cutoff."
+      },
+      "social_description": "Model deprecations are operational changes, not just catalog cleanup. Teams need to identify workflows tied to retiring models, test alternatives, and update guidance before the cu",
+      "social": {
+        "title": "GitHub sets an October deadline for several Copilot models",
+        "description": "Model deprecations are operational changes, not just catalog cleanup. Teams need to identify workflows tied to retiring models, test alternatives, and update guidance before the cu",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/01-github-copilot-model-deprecation.webp?v=e2799c9098849d31"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-21-b624254e",
+      "ordinal": 2,
+      "slug": "copilot-code-review-adds-clearer-progress-and-smarter-suggestion-handling",
+      "permanent_url": "/stories/2026-09-21/copilot-code-review-adds-clearer-progress-and-smarter-suggestion-handling/",
+      "focus": "technical_ai_engineering",
+      "headline": "Copilot code review adds clearer progress and smarter suggestion handling",
+      "event_date": "2026-09-18",
+      "topics": [
+        "Copilot",
+        "code review",
+        "software engineering",
+        "AI-assisted development"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-21/02-github-copilot-code-review.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/02-github-copilot-code-review.webp?v=e6359e58e0079f03",
+        "alt": "Governed AI code-review illustration showing pull request intake, AI suggestions, human and automated checks, merge gates, suggestion states, policy controls, and full review traceability.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "e6359e58e0079f03"
+      },
+      "summary": "GitHub updated Copilot code review with clearer visibility into review progress, more intelligent auto-resolution of suggestions, and generated commit messages when developers accept batches of proposed changes.",
+      "why_it_matters": "AI-assisted review is moving from isolated comments toward a more stateful review workflow. Better progress visibility and suggestion lifecycle handling can reduce review friction, but teams still need controls for what gets accepted and how changes are verified.",
+      "source": {
+        "title": "Copilot code review: An improved review experience",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+        "normalized_url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+        "publication_date": "2026-09-18",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 806,
+          "verified_at": "2026-09-21T14:28:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-18T20:17:22.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented recency fallback after bounded review."
+      },
+      "selection_rationale": "Fresh first-party engineering workflow improvement relevant to AI-assisted code review.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Evaluate the review workflow",
+        "rationale": "Test the updated review experience on representative pull requests and confirm that accepted suggestions still pass the same human and automated checks."
+      },
+      "social_description": "AI-assisted review is moving from isolated comments toward a more stateful review workflow. Better progress visibility and suggestion lifecycle handling can reduce review friction,",
+      "social": {
+        "title": "Copilot code review adds clearer progress and smarter suggestion handling",
+        "description": "AI-assisted review is moving from isolated comments toward a more stateful review workflow. Better progress visibility and suggestion lifecycle handling can reduce review friction,",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/02-github-copilot-code-review.webp?v=e6359e58e0079f03"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-21-311a56d1",
+      "ordinal": 3,
+      "slug": "microsoft-links-ai-ready-infrastructure-with-workforce-readiness-in-india",
+      "permanent_url": "/stories/2026-09-21/microsoft-links-ai-ready-infrastructure-with-workforce-readiness-in-india/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft links AI-ready infrastructure with workforce readiness in India",
+      "event_date": "2026-09-21",
+      "topics": [
+        "enterprise AI",
+        "workforce readiness",
+        "cloud infrastructure",
+        "AI adoption"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-21/03-microsoft-enterprise-ai-readiness.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/03-microsoft-enterprise-ai-readiness.webp?v=1c36a1ddd33a2bab",
+        "alt": "Enterprise AI readiness illustration showing business goals aligned with AI infrastructure, governance and security, workforce capability, operational workflows, production readiness, measurement, learning, and scaling.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "1c36a1ddd33a2bab"
+      },
+      "summary": "Microsoft says its India datacenter regions are now AI-enabled and highlights workforce training at national scale, pairing infrastructure availability with the skills needed to move enterprise AI from pilots into operational use.",
+      "why_it_matters": "Knowledge-worker adoption depends on more than access to models. Infrastructure, governance, organizational readiness, and employee capability have to advance together if AI is going to become part of normal business operations.",
+      "source": {
+        "title": "Microsoft expands AI-ready capabilities and workforce readiness across India",
+        "organization": "Microsoft",
+        "url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
+        "normalized_url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
+        "publication_date": "2026-09-21",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 1954,
+          "verified_at": "2026-09-21T14:28:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-21T00:00:00.000Z"
+      },
+      "selection_rationale": "Current first-party enterprise AI adoption signal connecting infrastructure and workforce readiness.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Check readiness as a system",
+        "rationale": "Assess whether your AI program has aligned infrastructure, governance, training, and workflow redesign rather than treating model access as the only dependency."
+      },
+      "social_description": "Knowledge-worker adoption depends on more than access to models. Infrastructure, governance, organizational readiness, and employee capability have to advance together if AI is goi",
+      "social": {
+        "title": "Microsoft links AI-ready infrastructure with workforce readiness in India",
+        "description": "Knowledge-worker adoption depends on more than access to models. Infrastructure, governance, organizational readiness, and employee capability have to advance together if AI is goi",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/03-microsoft-enterprise-ai-readiness.webp?v=1c36a1ddd33a2bab"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-21-cf2a803f",
+      "ordinal": 4,
+      "slug": "ibm-finds-a-gap-between-ai-supervision-needs-and-employee-priorities",
+      "permanent_url": "/stories/2026-09-21/ibm-finds-a-gap-between-ai-supervision-needs-and-employee-priorities/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "IBM finds a gap between AI supervision needs and employee priorities",
+      "event_date": "2026-09-21",
+      "topics": [
+        "AI workforce",
+        "critical thinking",
+        "human oversight",
+        "AI literacy"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-21/04-ibm-human-judgment-control-layer.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/04-ibm-human-judgment-control-layer.webp?v=337557aea9c2c42b",
+        "alt": "Human-judgment control-layer illustration showing AI output, validation and assessment, risk-based decisions, override and correction, evidence tracing, uncertainty indicators, and accountability.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "337557aea9c2c42b"
+      },
+      "summary": "IBM reports that 71% of surveyed CHROs identify the ability to supervise, validate, and override AI outputs as a critical workforce skill, while only 29% of employees rank judgment as important, alongside concerns about skills erosion.",
+      "why_it_matters": "Organizations may be scaling AI faster than they are building the human judgment needed to use it responsibly. The practical challenge is to make verification, escalation, and override behavior part of everyday work rather than abstract AI training.",
+      "source": {
+        "title": "New IBM CHRO Study: AI Puts Critical Thinking at the Center of Workforce Priorities",
+        "organization": "IBM",
+        "url": "https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities",
+        "normalized_url": "https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities",
+        "publication_date": "2026-09-21",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 1376,
+          "verified_at": "2026-09-21T14:28:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-21T00:00:00.000Z"
+      },
+      "selection_rationale": "Current workforce research directly relevant to human oversight and verification of AI outputs.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "teach",
+        "label": "Teach verification, not just prompting",
+        "rationale": "Add exercises that require employees to challenge AI outputs, validate evidence, recognize uncertainty, and know when to override or escalate."
+      },
+      "social_description": "Organizations may be scaling AI faster than they are building the human judgment needed to use it responsibly. The practical challenge is to make verification, escalation, and over",
+      "social": {
+        "title": "IBM finds a gap between AI supervision needs and employee priorities",
+        "description": "Organizations may be scaling AI faster than they are building the human judgment needed to use it responsibly. The practical challenge is to make verification, escalation, and over",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/04-ibm-human-judgment-control-layer.webp?v=337557aea9c2c42b"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-21-454cb9e6",
+      "ordinal": 5,
+      "slug": "aws-packages-domain-methodology-into-38-open-source-agent-skills",
+      "permanent_url": "/stories/2026-09-21/aws-packages-domain-methodology-into-38-open-source-agent-skills/",
+      "focus": "agents_non_technical_people",
+      "headline": "AWS packages domain methodology into 38 open-source Agent Skills",
+      "event_date": "2026-09-16",
+      "topics": [
+        "Agent Skills",
+        "domain expertise",
+        "healthcare AI",
+        "reusable workflows"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-21/05-aws-reusable-domain-agent-skills.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/05-aws-reusable-domain-agent-skills.webp?v=cfeacef6ff132405",
+        "alt": "Reusable Agent Skills illustration showing expert methodology captured as a structured Skill, stored in a governed library, invoked by an agent, and validated against domain-specific checks.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "cfeacef6ff132405"
+      },
+      "summary": "AWS describes a collection of 38 open-source Agent Skills across 11 healthcare and life-sciences domains, using structured skill files to give agents reusable domain methods and reporting a 410-prompt evaluation with strong win rates.",
+      "why_it_matters": "This is a concrete example of the Agent Skills pattern moving beyond generic productivity tasks. Reusable skill packages can encode domain methods, checks, and procedures so an agent does not have to rediscover expert practice from scratch on every request.",
+      "source": {
+        "title": "Improving HCLS AI reasoning with open-source agent skills",
+        "organization": "AWS Machine Learning",
+        "url": "https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/",
+        "normalized_url": "https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/",
+        "publication_date": "2026-09-16",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 4895,
+          "verified_at": "2026-09-21T14:28:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-16T19:00:00.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented Agent Skills recency exception after bounded review."
+      },
+      "selection_rationale": "Preferred Agent Skills candidate with reusable domain methods and explicit evaluation evidence.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Package one domain method",
+        "rationale": "Choose one stable expert procedure, encode its instructions and checks as a reusable skill, and evaluate it against representative tasks before wider use."
+      },
+      "social_description": "This is a concrete example of the Agent Skills pattern moving beyond generic productivity tasks. Reusable skill packages can encode domain methods, checks, and procedures so an age",
+      "social": {
+        "title": "AWS packages domain methodology into 38 open-source Agent Skills",
+        "description": "This is a concrete example of the Agent Skills pattern moving beyond generic productivity tasks. Reusable skill packages can encode domain methods, checks, and procedures so an age",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/05-aws-reusable-domain-agent-skills.webp?v=cfeacef6ff132405"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-21-9782e549",
+      "ordinal": 6,
+      "slug": "aws-redesigns-agentcore-runtime-for-elastic-scale-and-faster-agent-starts",
+      "permanent_url": "/stories/2026-09-21/aws-redesigns-agentcore-runtime-for-elastic-scale-and-faster-agent-starts/",
+      "focus": "agents_non_technical_people",
+      "headline": "AWS redesigns AgentCore runtime for elastic scale and faster agent starts",
+      "event_date": "2026-09-18",
+      "topics": [
+        "agents",
+        "managed runtime",
+        "scaling",
+        "latency"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-21/06-aws-production-agent-runtime.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/06-aws-production-agent-runtime.webp?v=877f2b45fdd2574e",
+        "alt": "Production agent runtime illustration showing variable demand, elastic managed runtime capacity, agent execution with models and tools, monitoring and telemetry, service outcomes, and failure handling.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "877f2b45fdd2574e"
+      },
+      "summary": "AWS details changes to the AgentCore managed runtime aimed at elastic scaling, optimized resource use, and consistently faster starts for deployed agents, addressing infrastructure behavior that becomes visible once agents move into production workloads.",
+      "why_it_matters": "For non-technical leaders, agent reliability depends on the runtime as much as on the model. Slow starts, scaling limits, and operational friction can determine whether an agent feels dependable enough to become part of a business process.",
+      "source": {
+        "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
+        "organization": "AWS Machine Learning",
+        "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+        "normalized_url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+        "publication_date": "2026-09-18",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 3618,
+          "verified_at": "2026-09-21T14:28:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-18T15:31:34.000Z",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented recency fallback after bounded review."
+      },
+      "selection_rationale": "Fresh first-party agent-runtime engineering update focused on elasticity and startup performance.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Define runtime service levels",
+        "rationale": "For any production agent, document acceptable startup latency, concurrency, failure handling, and scale behavior instead of evaluating only answer quality."
+      },
+      "social_description": "For non-technical leaders, agent reliability depends on the runtime as much as on the model. Slow starts, scaling limits, and operational friction can determine whether an agent fe",
+      "social": {
+        "title": "AWS redesigns AgentCore runtime for elastic scale and faster agent starts",
+        "description": "For non-technical leaders, agent reliability depends on the runtime as much as on the model. Slow starts, scaling limits, and operational friction can determine whether an agent fe",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/06-aws-production-agent-runtime.webp?v=877f2b45fdd2574e"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "NVIDIA PAIR Connects Your Computers for Local AI",
+      "channel": "Matthew Berman",
+      "upload_date": "2026-09-18",
+      "runtime_seconds": 66,
+      "why_useful": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.",
+      "connection": "Pairs with today’s production-runtime story by showing how AI infrastructure is becoming more distributed and workload-aware.",
+      "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Independent current listings verify the 1:06 runtime and September 18 publication date."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
+      "channel": "Nate Herk | AI Automation",
+      "upload_date": "2026-09-18",
+      "runtime_seconds": 700,
+      "why_useful": "A practical look at how Claude can support a highly automated one-person business, including repeatable work across software, sales, and support.",
+      "connection": "Complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state of reusable AI workflows.",
+      "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
+      "duration_tier": "fallback",
+      "short_search_evidence": [
+        "Independent current listings verify the 11:40 runtime and September 18 publication date.",
+        "No stronger qualifying current agent-focused video at or below 10 minutes cleared the bounded editorial bar."
+      ],
+      "fallback_reason": "No agent-focused video at 10 minutes or less met the current freshness and editorial-quality requirements; this verified 11:40 video remains below the 20-minute fallback ceiling."
+    }
+  },
+  "editorial_takeaway": "Today’s edition focuses on the operating discipline around AI: managing model lifecycle changes, making AI-assisted code review governable, aligning infrastructure with workforce readiness, strengthening human judgment, packaging reusable domain expertise as Agent Skills, and treating agent runtime behavior as part of production quality.",
+  "provenance": {
+    "created_by": "deterministic-kernel-expander",
+    "created_at": "2026-09-21T16:09:38Z",
+    "source_commit": "d1ddd4f0300ac15c0ec9eb22494cc59e6b10afe8"
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-21-inside-chinas-ai-race",
+      "title": "Inside China's AI race",
+      "show": "Reuters On Assignment",
+      "host": "Reuters",
+      "publication_date": "2026-09-19",
+      "runtime_seconds": null,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "AI competition",
+        "chips",
+        "distillation",
+        "AI safeguards"
+      ],
+      "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/",
+      "permanent_url": "/podcasts/2026-09-21/inside-chinas-ai-race/",
+      "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.",
+      "why_useful": "It gives readers a broader systems view of AI capability and infrastructure beyond individual model releases.",
+      "connection": "Complements today’s engineering stories by showing how compute, deployment, and policy shape AI systems.",
+      "selection_rationale": "Fresh September 19 Reuters technology podcast from a distinct source.",
+      "verification_note": "Reuters verifies the September 19 publication date. Independent duration listings conflict, so runtime is intentionally left unpinned rather than inventing precision.",
+      "coverage_note": "Primary 48-hour podcast window; source-diverse from Big Technology Podcast.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Reuters",
+          "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/"
+        }
+      ]
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-21-ai-doom-backlash",
+      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "show": "Big Technology Podcast",
+      "host": "Alex Kantrowitz",
+      "publication_date": "2026-09-19",
+      "runtime_seconds": 4077,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI safety",
+        "frontier labs",
+        "AI economics",
+        "governance"
+      ],
+      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
+      "permanent_url": "/podcasts/2026-09-21/ai-doom-backlash/",
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
+      "why_useful": "The episode adds a business and governance lens to the operational engineering changes covered elsewhere in the brief.",
+      "connection": "Pairs with today’s focus on production maturity by asking what accountability, economics, and evidence should look like as AI systems become more capable.",
+      "selection_rationale": "Fresh September 19 episode from a separate show/source.",
+      "verification_note": "Independent current podcast listings verify the September 19 publication date and a 1:07:57 runtime.",
+      "coverage_note": "Primary 48-hour podcast window; source-diverse from Reuters On Assignment.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Tapesearch",
+          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+        }
+      ]
+    }
+  ]
+}
