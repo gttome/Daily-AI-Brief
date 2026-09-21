@@ -36,11 +36,14 @@ const sourceRank=s=>(s.preflight_priority?100:0)+(s.required_topic?60:0)+(s.evid
 const ordered=[...monitored].sort((a,b)=>sourceRank(b)-sourceRank(a)||a.source_id.localeCompare(b.source_id));
 const balanceFocusOrder=list=>{
  const focusOrder=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
+ const weightedOrder=['applied_genai_knowledge_workers','applied_genai_knowledge_workers','technical_ai_engineering','agents_non_technical_people'];
  const buckets=new Map(focusOrder.map(f=>[f,list.filter(s=>s.focus_hint===f)]));
  const other=list.filter(s=>!focusOrder.includes(s.focus_hint));
  const balanced=[];
  while(focusOrder.some(f=>buckets.get(f).length)){
-  for(const f of focusOrder){const next=buckets.get(f).shift();if(next)balanced.push(next);}
+  let progressed=false;
+  for(const f of weightedOrder){const next=buckets.get(f).shift();if(next){balanced.push(next);progressed=true;}}
+  if(!progressed)break;
  }
  return [...balanced,...other];
 };
