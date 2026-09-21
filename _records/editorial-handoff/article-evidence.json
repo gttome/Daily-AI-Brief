@@ -5,7 +5,7 @@
   "model_calls": 0,
   "review_plan_count": 9,
   "preferred_agent_skill_candidate_id": "m01",
-  "model_visible_chars": 9728,
+  "model_visible_chars": 9938,
   "model_visible": [
     {
       "candidate_id": "m02",
@@ -22,77 +22,65 @@
     {
       "candidate_id": "m03",
       "focus": "technical_ai_engineering",
-      "headline": "Benchmarking LLM Inference at Scale with AIPerf",
-      "canonical_url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
-      "publisher": "NVIDIA Developer",
-      "published_at": "2026-09-18T19:04:41.000Z",
+      "headline": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+      "canonical_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-18T19:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 2831,
-      "excerpt": "Benchmarking LLM Inference at Scale with AIPerf | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Developer Tools & Techniques Benchmarking LLM Inference at Scale with AIPerf Sep 18, 2026 By Francesco Di Natale , Elias Bermudez , Anthony Casagrande , Matthew Kotila , Harshini Komali and Ganesh Kudleppanavar Like Discuss (0) L T F R E AI-Generated Summary NVIDIA AIPerf replaces GenAI-Perf with a multiprocess architecture that prevents the client from becoming a bottleneck during high-concurrency LLM benchmarking. Read How NVIDIA Dynamo 1.0 Powers Multi-Node Inference at…"
+      "source_word_count": 544,
+      "excerpt": "If you&rsquo;ve turned off the global default, you can enable access to the alternative models through their model policies in Copilot settings. Once enabled, users will see the model in the Copilot Chat model selector in supported GitHub Copilot experiences. Share your feedback To learn more about the models available in Copilot, see our documentation on supported models . copilot Share Copied Shared Back to changelog Related Posts Sep.18 Improvement Copilot code review: An improved review experience copilot Sep.18 Release GitHub Copilot weekly releases — September 14 copilot Sep.17 Improvement Copilot impact dashboard now shows feature…"
     },
     {
       "candidate_id": "m04",
       "focus": "technical_ai_engineering",
-      "headline": "Ubuntu 26 generally available and latest migration",
-      "canonical_url": "https://github.blog/changelog/2026-09-17-ubuntu-26-generally-available-and-latest-migration",
+      "headline": "Copilot code review: An improved review experience",
+      "canonical_url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
       "publisher": "GitHub Changelog",
-      "published_at": "2026-09-17T16:27:16.000Z",
+      "published_at": "2026-09-18T20:17:22.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 656,
-      "excerpt": "Ubuntu 26 generally available and latest migration - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 17, 2026 • 1 minute read Ubuntu 26 generally available and latest migration Table of Contents Using Ubuntu 26.04 ubuntu-latest is migrating to Ubuntu 26.04 Learn more Menu. Currently selected: Using Ubuntu 26.04 Using Ubuntu 26.04 ubuntu-latest is migrating to Ubuntu 26.04 Learn more The Ubuntu 26.04 runner image for GitHub Actions is…"
+      "source_word_count": 806,
+      "excerpt": "Copilot code review: An improved review experience - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 18, 2026 • 2 minute read Copilot code review: An improved review experience Table of Contents 🔍 Clearer review progress at a glance ✍️ Smart commit messages for batch suggestions Menu. Currently selected: 🔍 Clearer review progress at a glance 🔍 Clearer review progress at a glance ✍️ Smart commit messages for batch suggestions…"
     },
     {
       "candidate_id": "m05",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Google Workspace Weekly Recap - September 18, 2026",
-      "canonical_url": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
-      "publisher": "Google Workspace",
-      "published_at": "2026-09-18T00:00:00.000Z",
+      "headline": "Microsoft expands AI-ready capabilities and workforce readiness across India",
+      "canonical_url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-21T00:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 1006,
-      "excerpt": "Google Workspace Updates: Google Workspace Weekly Recap - September 18, 2026 Products For Admins Help Center Release Calendar Subscribe email This official feed from the Google Workspace team provides essential information about new features and improvements for Google Workspace customers. Connect to more tools with Gemini in Google Workspace Users will now be able to use Gemini in Workspace to directly interact with Asana, Atlassian Rovo, HubSpot, Intuit Mailchimp, Intuit QuickBooks, Monday, and Salesforce through Model Context Protocol (MCP) integrations. This will enable them to access information directly without needing to switch tabs,…"
+      "source_word_count": 1954,
+      "excerpt": "Puneet Chandok, President, Microsoft India and South Asia, also announced in his keynote address that Microsoft&#8217;s datacenter regions across India are now AI-enabled, built with AI-capable hardware, high-efficiency cooling systems and the platform foundation required to host and run advanced AI workloads, bringing frontier AI capability closer to Indian organizations. &#8220; Message from Brad Smith, Vice Chair and President, Microsoft Click here to load media FROM LIVE INFRASTRUCTURE TO REGIONAL CONNECTIVITY India South Central region launches with a broad portfolio of Azure services and is designed to support the full portfolio of…"
     },
     {
       "candidate_id": "m06",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Workflow execution protections in GitHub Actions generally available",
-      "canonical_url": "https://github.blog/changelog/2026-09-17-workflow-execution-protections-in-github-actions-generally-available",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-17T15:45:26.000Z",
+      "headline": "New IBM CHRO Study: AI Puts Critical Thinking at the Center of Workforce Priorities",
+      "canonical_url": "https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities",
+      "publisher": "IBM",
+      "published_at": "2026-09-21T00:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 819,
-      "excerpt": "Workflow execution protections in GitHub Actions generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 17, 2026 • 2 minute read Workflow execution protections in GitHub Actions generally available Table of Contents What's new New secure defaults Menu. Currently selected: What's new What's new New secure defaults Workflow execution protections for GitHub Actions, previously in public preview, are now generally available for…"
+      "source_word_count": 1376,
+      "excerpt": "While 71% of CHROs identify the ability to supervise, validate and override AI outputs as the workforce's most essential skill, only 29% of employees rank judgment as important. The study ,* which surveyed 1,500 CHROs and 8,800 employees globally, finds that 60% of employees worry about skills erosion, with critical thinking cited most often as declining. At the same time, CHROs identify critical thinking (57%) and human judgment (48%) as among the workforce&rsquo;s most important capabilities. CHROs have a critical role to play in redesigning the workplace of the future so people can focus on the areas where they can have the greatest…"
     },
     {
       "candidate_id": "m07",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "How Content Technology is powering Atlassian’s AI quality",
-      "canonical_url": "https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality",
-      "publisher": "Atlassian",
-      "published_at": "2026-09-18T00:00:00.000Z",
+      "headline": "Dreamforce 2026 Live: enterprise AI highlights and customer workflows",
+      "canonical_url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-21T00:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 1695,
-      "excerpt": "How Content Technology is powering Atlassian’s AI quality - Inside Atlassian Skip to content AI that knows your business Connect people, knowledge, and work to move faster together Learn more Dismiss How Content Technology is powering Atlassian’s AI quality Sign up now Dismiss Subscribe to our newsletter Research and insights on how teams can deliver results with AI. Search How Content Technology is powering Atlassian’s AI quality September 18, 2026 Published In AI at Work AI can sound confident about almost anything. At Atlassian, Content Technologists are building the systems, standards, and structures that help AI deliver better outputs,…"
+      "source_word_count": 5373,
+      "excerpt": "Dreamforce &#039;26 Live: UK & Ireland Highlights You Missed - Salesforce Skip to Content Skip to Footer 0% Agents Dreamforce &#8217;26 Live: UK & Ireland Highlights You Missed On-the-ground reporting from the must-attend event for the Agentic Enterprise September 21, 2026 20 min read Dreamforce &#8217;26 Live Welcome to the UKI Newsroom’s coverage of Dreamforce 2026 . Agentic Enterprise Next Up: Agentforce World Tour London, ExCeL, 15 October Open Image Modal Image Modal Dreamforce may be over, but the UKI Agentic Enterprise story returns to ExCeL London on 15 October for Agentforce World Tour, where customers and partners will see how…"
     },
     {
       "candidate_id": "m01",
-      "focus": "agents_non_technical_people",
-      "headline": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
-      "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-18T15:25:23.000Z",
-      "source_reliability": "publisher_authored",
-      "agent_skill_story_ready": true,
-      "source_word_count": 3764,
-      "excerpt": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In this post, you learn how to deploy production-ready Hugging Face models on SageMaker AI using agent skills. Agent skills for deploying Hugging Face models on SageMaker AI Six skills from the Hugging Face Skills GitHub repo cover…"
-    },
-    {
-      "candidate_id": "m08",
       "focus": "agents_non_technical_people",
       "headline": "Improving HCLS AI reasoning with open-source agent skills",
       "canonical_url": "https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/",
@@ -106,14 +94,26 @@
     {
       "candidate_id": "m09",
       "focus": "agents_non_technical_people",
-      "headline": "Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/",
+      "headline": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
       "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-18T15:38:53.000Z",
+      "published_at": "2026-09-18T15:31:34.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 3166,
-      "excerpt": "Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In this post, we show you how to migrate that multi-model agent to Amazon Bedrock AgentCore runtime. Solution overview This solution migrates a multi-model healthcare AI agent to Amazon Bedrock AgentCore runtime while preserving the…"
+      "source_word_count": 3618,
+      "excerpt": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. AgentCore runtime, a capability of Amazon Bedrock AgentCore, is the managed compute layer that gives developers a fully managed environment to deploy and run agents without building or maintaining infrastructure. Today, we are…"
+    },
+    {
+      "candidate_id": "m10",
+      "focus": "agents_non_technical_people",
+      "headline": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-18T15:25:23.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 3764,
+      "excerpt": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In this post, you learn how to deploy production-ready Hugging Face models on SageMaker AI using agent skills. Agent skills for deploying Hugging Face models on SageMaker AI Six skills from the Hugging Face Skills GitHub repo cover…"
     }
   ]
 }
