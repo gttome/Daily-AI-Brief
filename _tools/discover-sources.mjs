@@ -51,12 +51,14 @@ const MIN_SOURCES_SCANNED=Math.max(1,Math.min(24,Number(process.env.DAB_SOURCE_S
 const MAX_SOURCES_SCANNED=Math.max(MIN_SOURCES_SCANNED,Math.min(64,Number(process.env.DAB_SOURCE_SCAN_MAX||24)));
 const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;
 let scanned=0,stopReason=null;
-const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
+const isFreshMetadata=c=>{
  const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
  const ordinary=Number.isFinite(published)&&cutoffMs-published>=0&&cutoffMs-published<=FRESH_HOURS*3600000;
  const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
  return ordinary||required;
-}).length;
+};
+const freshMetadataCount=()=>[...candidates.values()].filter(isFreshMetadata).length;
+const freshFocusCoverage=()=>Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,[...candidates.values()].filter(c=>isFreshMetadata(c)&&c.focus_hint===f).length]));
 
 // Seed explicitly pinned first-party candidates whose catalog pages are reliable but whose own title/date
 // may not be discoverable from the catalog markup. These remain metadata-only and still require evidence review.
@@ -126,7 +128,8 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
   }catch(e){sources.push({source_id:s.source_id,status:'unavailable',reason:e.message,checked_at:new Date().toISOString(),attempts:e.attempts||[]});}
  }));
  const fresh=freshMetadataCount();
- if(scanned>=MIN_SOURCES_SCANNED&&fresh>=FRESH_METADATA_TARGET){stopReason='fresh_metadata_sufficiency';break;}
+ const focusCoverage=freshFocusCoverage();
+ if(scanned>=MIN_SOURCES_SCANNED&&fresh>=FRESH_METADATA_TARGET&&Object.values(focusCoverage).every(n=>n>=3)){stopReason='fresh_metadata_and_focus_sufficiency';break;}
  if(retrievalCache.metrics.source_text_chars_retrieved>=retrievalCache.normalCharBudget){stopReason='normal_acquisition_budget';break;}
 }
 for(const s of scanPlan.slice(scanned,MAX_SOURCES_SCANNED))sources.push({source_id:s.source_id,status:'deferred',reason:stopReason||'source_scan_limit'});
