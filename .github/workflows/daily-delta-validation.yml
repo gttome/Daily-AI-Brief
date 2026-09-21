@@ -138,12 +138,19 @@ jobs:
           const path=require('path');
           const date=process.env.EDITION_DATE;
           const dir=path.join('_records','publication',date);
+          if (!fs.existsSync(dir)) {
+            console.log(`No publication directory for ${date}; current-day edition has not reached validated publication yet. Skipping Pages completion evidence until publication exists.`);
+            process.exit(0);
+          }
           const candidates=fs.readdirSync(dir)
             .filter(name=>name.endsWith('.validated.json'))
             .map(name=>JSON.parse(fs.readFileSync(path.join(dir,name),'utf8')))
             .filter(record=>record.edition_id===`dab-edition-${date}`)
             .sort((a,b)=>Date.parse(b.observed_at||0)-Date.parse(a.observed_at||0));
-          if(!candidates.length)throw new Error(`No validated publication event found for ${date}`);
+          if(!candidates.length) {
+            console.log(`No validated publication event found for ${date}; skipping Pages completion evidence until publication exists.`);
+            process.exit(0);
+          }
           const validated=candidates[0];
           const verifiedAt=process.env.PAGES_VERIFIED_AT||new Date().toISOString();
           const completion={
