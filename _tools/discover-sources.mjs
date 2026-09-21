@@ -46,7 +46,7 @@ const balanceFocusOrder=list=>{
 };
 const preflightCore=balanceFocusOrder(ordered.filter(s=>s.preflight_priority)),requiredCore=ordered.filter(s=>s.required_topic&&!s.preflight_priority),ordinary=ordered.filter(s=>!s.required_topic&&!s.preflight_priority),core=[...preflightCore,...requiredCore,...ordinary.slice(0,6)],rest=ordinary.slice(6),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
 const rotated=rest.length?[...rest.slice(rotation),...rest.slice(0,rotation)]:[];
-const scanPlan=[...core,...rotated].filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
+const scanPlan=[...core,...rotated].filter(s=>s.pinned_candidate!==true).filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
 const MIN_SOURCES_SCANNED=Math.max(1,Math.min(24,Number(process.env.DAB_SOURCE_SCAN_MIN||12)));
 const MAX_SOURCES_SCANNED=Math.max(MIN_SOURCES_SCANNED,Math.min(64,Number(process.env.DAB_SOURCE_SCAN_MAX||24)));
 const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;
