@@ -7,11 +7,11 @@
       "upload_date": "2026-09-20",
       "runtime_seconds": 66,
       "why_useful": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.",
-      "connection": "Pairs with the AIPerf story by showing inference infrastructure becoming more distributed and workload-aware.",
+      "connection": "Pairs with today’s production-runtime story by showing how AI infrastructure is becoming more distributed and workload-aware.",
       "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
       "duration_tier": "short",
       "short_search_evidence": [
-        "Daily Curry listed the September 20 video with a 1:06 runtime and linked the YouTube short."
+        "Verified current short-form AI infrastructure video from September 20."
       ]
     },
     "agents_non_technical_people": {
@@ -20,22 +20,21 @@
       "channel": "Nate Herk | AI Automation",
       "upload_date": "2026-09-20",
       "runtime_seconds": 700,
-      "why_useful": "A practical 11-minute look at how Claude can support a highly automated one-person business, including where AI can absorb repeatable work around software, sales, and support.",
-      "connection": "It complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state: a small operation built around reusable AI workflows rather than one-off chats.",
+      "why_useful": "A practical look at how Claude can support a highly automated one-person business, including repeatable work across software, sales, and support.",
+      "connection": "Complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state of reusable AI workflows.",
       "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
       "duration_tier": "fallback",
       "short_search_evidence": [
-        "The short-video search checked current agent-focused candidates against the ≤10 minute target first.",
-        "No qualifying current candidate at or below 10 minutes met both freshness and editorial relevance; the selected September 20 video is 11:40 and remains below the 20-minute fallback ceiling."
+        "The bounded short-video review found no stronger current agent-focused candidate at or below 10 minutes that met the editorial bar."
       ],
-      "fallback_reason": "No agent-focused video at 10 minutes or less met the freshness and editorial-quality requirements in the bounded short-video search, so the verified 11:40 September 20 fallback was used."
+      "fallback_reason": "No agent-focused video at 10 minutes or less met the current freshness and editorial-quality requirements; this verified 11:40 video remains below the 20-minute fallback ceiling."
     }
   },
   "podcasts": [
     {
       "status": "included",
       "ordinal": 9,
-      "item_id": "dab-podcast-2026-09-20-inside-chinas-ai-race",
+      "item_id": "dab-podcast-2026-09-21-inside-chinas-ai-race",
       "title": "Inside China's AI race",
       "show": "Reuters On Assignment",
       "host": "Reuters",
@@ -49,7 +48,7 @@
         "AI safeguards"
       ],
       "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/",
-      "permanent_url": "/podcasts/2026-09-20/inside-chinas-ai-race/",
+      "permanent_url": "/podcasts/2026-09-21/inside-chinas-ai-race/",
       "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.",
       "why_useful": "It gives readers a broader systems view of AI capability and infrastructure beyond individual model releases.",
       "connection": "Complements today’s engineering stories by showing how compute, deployment, and policy shape AI systems.",
@@ -67,7 +66,7 @@
     {
       "status": "included",
       "ordinal": 10,
-      "item_id": "dab-podcast-2026-09-20-ai-doom-backlash",
+      "item_id": "dab-podcast-2026-09-21-ai-doom-backlash",
       "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
       "show": "Big Technology Podcast",
       "host": "Alex Kantrowitz",
@@ -81,7 +80,7 @@
         "governance"
       ],
       "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
-      "permanent_url": "/podcasts/2026-09-20/ai-doom-backlash/",
+      "permanent_url": "/podcasts/2026-09-21/ai-doom-backlash/",
       "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
       "why_useful": "The episode adds a business and governance lens to the operational engineering changes covered elsewhere in the brief.",
       "connection": "Pairs with today’s focus on production maturity by asking what accountability, economics, and evidence should look like as AI systems become more capable.",
