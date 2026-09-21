@@ -31,7 +31,9 @@ reader_release: true
 
 **Why it matters:** AI-assisted review is moving from isolated comments toward a more stateful review workflow. Better progress visibility and suggestion lifecycle handling can reduce review friction, but teams still need controls for what gets accepted and how changes are verified.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework when deciding whether AI-generated code-review suggestions have enough evidence and testing behind them to merge safely.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 ## What to do now
 

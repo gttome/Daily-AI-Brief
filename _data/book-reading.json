@@ -190,6 +190,32 @@
         "label": "READ DEEPER",
         "why": "Calibrated trust helps define how much autonomy a managed agent runtime should receive before human review, escalation, or rollback is required."
       }
+    ],
+    "2026-09-21": [
+      {
+        "item_id": "dab-story-2026-09-21-b624254e",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the final-gate framework when deciding whether AI-generated code-review suggestions have enough evidence and testing behind them to merge safely."
+      },
+      {
+        "item_id": "dab-story-2026-09-21-cf2a803f",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Calibrated trust provides a practical frame for deciding when people should accept, challenge, override, or escalate an AI-generated result."
+      },
+      {
+        "item_id": "dab-story-2026-09-21-454cb9e6",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the context-quality checklist when deciding which instructions, references, tools, constraints, and validation evidence belong inside a reusable Agent Skill."
+      },
+      {
+        "item_id": "dab-story-2026-09-21-9782e549",
+        "reference_id": "reliable-trust",
+        "label": "READ DEEPER",
+        "why": "Use calibrated trust to define how much autonomy a production agent runtime should receive before monitoring, human review, escalation, or rollback is required."
+      }
     ]
   }
 }

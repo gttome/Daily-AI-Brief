@@ -11,7 +11,7 @@ reader_release: true
 **Coverage period:** 24-hour primary window ending at 2026-09-21T14:28:00.000Z; recency fallback used for reviewed items outside the primary window.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-21-05232b62">GitHub sets an October deadline for several Copilot models</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-b624254e">Copilot code review adds clearer progress and smarter suggestion handling</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-311a56d1">Microsoft links AI-ready infrastructure with workforce readiness in India</a><span>Article · about 10 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-cf2a803f">IBM finds a gap between AI supervision needs and employee priorities</a><span>Article · about 7 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-454cb9e6">AWS packages domain methodology into 38 open-source Agent Skills</a><span>Article · about 25 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-9782e549">AWS redesigns AgentCore runtime for elastic scale and faster agent starts</a><span>Article · about 19 min source read</span></li><li><a href="#general">NVIDIA PAIR Connects Your Computers for Local AI</a><span>Video · 1:06</span></li><li><a href="#agents-for-non-technical-people">Anthropic’s CEO: How to Build a 1 Person Business with Claude</a><span>Video · 11:40</span></li><li><a href="#podcast-dab-podcast-2026-09-21-inside-chinas-ai-race">Inside China&#39;s AI race</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-21-ai-doom-backlash">AI Doom Backlash Arrives, Anthropic &amp; OpenAI IPO Outlook, Frontier Business Momentum Slows</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-21-454cb9e6">AWS packages domain methodology into 38 open-source Agent Skills</a><span>Article · about 25 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-9782e549">AWS redesigns AgentCore runtime for elastic scale and faster agent starts</a><span>Article · about 19 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-311a56d1">Microsoft links AI-ready infrastructure with workforce readiness in India</a><span>Article · about 10 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-cf2a803f">IBM finds a gap between AI supervision needs and employee priorities</a><span>Article · about 7 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-05232b62">GitHub sets an October deadline for several Copilot models</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-21-b624254e">Copilot code review adds clearer progress and smarter suggestion handling</a><span>Article · about 5 min source read</span></li><li><a href="#general">NVIDIA PAIR Connects Your Computers for Local AI</a><span>Video · 1:06</span></li><li><a href="#agents-for-non-technical-people">Anthropic’s CEO: How to Build a 1 Person Business with Claude</a><span>Video · 11:40</span></li><li><a href="#podcast-dab-podcast-2026-09-21-inside-chinas-ai-race">Inside China&#39;s AI race</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-21-ai-doom-backlash">AI Doom Backlash Arrives, Anthropic &amp; OpenAI IPO Outlook, Frontier Business Momentum Slows</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
 <span id="reading-dab-story-2026-09-21-454cb9e6"></span>
@@ -41,7 +41,9 @@ reader_release: true
 
 **Why it matters:** This is a concrete example of the Agent Skills pattern moving beyond generic productivity tasks. Reusable skill packages can encode domain methods, checks, and procedures so an agent does not have to rediscover expert practice from scratch on every request.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding which instructions, references, tools, constraints, and validation evidence belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Package one domain method:** Choose one stable expert procedure, encode its instructions and checks as a reusable skill, and evaluate it against representative tasks before wider use.
 
@@ -81,7 +83,9 @@ reader_release: true
 
 **Why it matters:** For non-technical leaders, agent reliability depends on the runtime as much as on the model. Slow starts, scaling limits, and operational friction can determine whether an agent feels dependable enough to become part of a business process.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Use calibrated trust to define how much autonomy a production agent runtime should receive before monitoring, human review, escalation, or rollback is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Define runtime service levels:** For any production agent, document acceptable startup latency, concurrency, failure handling, and scale behavior instead of evaluating only answer quality.
 
@@ -161,7 +165,9 @@ reader_release: true
 
 **Why it matters:** Organizations may be scaling AI faster than they are building the human judgment needed to use it responsibly. The practical challenge is to make verification, escalation, and override behavior part of everyday work rather than abstract AI training.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust provides a practical frame for deciding when people should accept, challenge, override, or escalate an AI-generated result.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Teach verification, not just prompting:** Add exercises that require employees to challenge AI outputs, validate evidence, recognize uncertainty, and know when to override or escalate.
 
@@ -241,7 +247,9 @@ reader_release: true
 
 **Why it matters:** AI-assisted review is moving from isolated comments toward a more stateful review workflow. Better progress visibility and suggestion lifecycle handling can reduce review friction, but teams still need controls for what gets accepted and how changes are verified.
 
-
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework when deciding whether AI-generated code-review suggestions have enough evidence and testing behind them to merge safely.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
 
 **What to do now — Evaluate the review workflow:** Test the updated review experience on representative pull requests and confirm that accepted suggestions still pass the same human and automated checks.
 
@@ -399,7 +407,7 @@ reader_release: true
 <!-- reader-release:start -->
 
 
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p class="watchlist-daily-counts"><strong>0 new today · 2 updated · 13 carried forward.</strong></p><p><strong>Updated today:</strong></p><ul class="watchlist-daily-items"><li>Reusable agent skills become observable</li><li>AI harness engineering becomes a first-class layer</li></ul><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
 
 
 <!-- reader-release:end -->

@@ -166,7 +166,7 @@ export function renderBody(edition) {
 **Published:** ${formatDate(edition.brief_date)}  
 **Coverage period:** ${edition.coverage_period}
 
-${readerRelease(edition.brief_date)?renderEditionOverview(edition)+'\n\n':watchlistPreview(edition.brief_date)}${readerStories.map((story,index) => renderStory(story, edition.brief_date,index+1)).join('\n\n')}
+${readerRelease(edition.brief_date)?renderEditionOverview({...edition,stories:readerStories})+'\n\n':watchlistPreview(edition.brief_date)}${readerStories.map((story,index) => renderStory(story, edition.brief_date,index+1)).join('\n\n')}
 
 ## Worth Watching
 
