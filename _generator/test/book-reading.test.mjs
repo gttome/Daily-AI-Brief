@@ -57,3 +57,19 @@ test('September 19 restores data-driven professional-series mappings without fil
  assert.ok(selections.some(x=>x.item_id==='dab-story-2026-09-19-5b233997'));
  assert.match(renderBookReading('dab-story-2026-09-19-5b233997','2026-09-19'),/GENERATIVE AI PROFESSIONAL SERIES/);
 });
+
+
+test('September 21 includes appropriate Professional Series bridges and homepage order matches brief order',()=>{
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-21.json'));
+ assert.doesNotThrow(()=>validateBookReading(current,catalog));
+ const selections=catalog.editions['2026-09-21'];
+ assert.equal(selections.length,4);
+ for(const id of ['dab-story-2026-09-21-b624254e','dab-story-2026-09-21-cf2a803f','dab-story-2026-09-21-454cb9e6','dab-story-2026-09-21-9782e549'])assert.match(renderBookReading(id,'2026-09-21'),/GENERATIVE AI PROFESSIONAL SERIES/);
+ const body=renderBody(current);
+ const overview=body.slice(0,body.indexOf('## 1.'));
+ const presented=[...body.matchAll(/^## ([1-6])\. (.+)$/gm)].map(x=>x[2]);
+ assert.equal(presented.length,6);
+ let cursor=-1;
+ for(const headline of presented){const next=overview.indexOf(headline);assert.ok(next>cursor,`overview order mismatch for ${headline}`);cursor=next;}
+ assert.equal((body.match(/class="book-bridge"/g)||[]).length,4);
+});
