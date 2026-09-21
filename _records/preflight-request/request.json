@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-21",
+  "cutoff": "2026-09-21T13:11:00Z",
+  "execution_mode": "production",
+  "metadata_candidate_limit": 20,
+  "ordinary_max_age_hours": 72,
+  "agent_skills_max_age_hours": 168,
+  "output_dir": "_records/preflight/2026-09-21"
+}
