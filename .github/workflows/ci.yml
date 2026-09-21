@@ -37,7 +37,11 @@ jobs:
 
       - name: Validate integrated system state
         run: |
-          if [ -f _records/editorial-handoff/final-image-review.json ]; then
+          latest_date="$(find _data/editions -maxdepth 1 -type f -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort | tail -1)"
+          dated_review="_records/editorial-handoff/final-image-review-${latest_date}.json"
+          if [ -f "$dated_review" ]; then
+            node _generator/cli.mjs integration-check --image-review "$dated_review"
+          elif [ -f _records/editorial-handoff/final-image-review.json ]; then
             node _generator/cli.mjs integration-check --image-review _records/editorial-handoff/final-image-review.json
           else
             node _generator/cli.mjs integration-check

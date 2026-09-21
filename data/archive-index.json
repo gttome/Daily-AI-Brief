@@ -4,6 +4,222 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-21-05232b62",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-18",
+      "headline": "GitHub sets an October deadline for several Copilot models",
+      "url": "/stories/2026-09-21/github-sets-an-october-deadline-for-several-copilot-models/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Copilot",
+        "model lifecycle",
+        "deprecation",
+        "developer workflow"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub says selected models will be removed from Copilot experiences on October 19, creating a concrete migration deadline for teams that depend on model-specific behavior in chat, edits, agent mode, or completions."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-21-b624254e",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-18",
+      "headline": "Copilot code review adds clearer progress and smarter suggestion handling",
+      "url": "/stories/2026-09-21/copilot-code-review-adds-clearer-progress-and-smarter-suggestion-handling/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Copilot",
+        "code review",
+        "software engineering",
+        "AI-assisted development"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "GitHub updated Copilot code review with clearer visibility into review progress, more intelligent auto-resolution of suggestions, and generated commit messages when developers accept batches of proposed changes."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-21-311a56d1",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-21",
+      "headline": "Microsoft links AI-ready infrastructure with workforce readiness in India",
+      "url": "/stories/2026-09-21/microsoft-links-ai-ready-infrastructure-with-workforce-readiness-in-india/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "enterprise AI",
+        "workforce readiness",
+        "cloud infrastructure",
+        "AI adoption"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [],
+      "summary": "Microsoft says its India datacenter regions are now AI-enabled and highlights workforce training at national scale, pairing infrastructure availability with the skills needed to move enterprise AI from pilots into operational use."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-21-cf2a803f",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-21",
+      "headline": "IBM finds a gap between AI supervision needs and employee priorities",
+      "url": "/stories/2026-09-21/ibm-finds-a-gap-between-ai-supervision-needs-and-employee-priorities/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI workforce",
+        "critical thinking",
+        "human oversight",
+        "AI literacy"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [],
+      "summary": "IBM reports that 71% of surveyed CHROs identify the ability to supervise, validate, and override AI outputs as a critical workforce skill, while only 29% of employees rank judgment as important, alongside concerns about skills erosion."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-21-454cb9e6",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-16",
+      "headline": "AWS packages domain methodology into 38 open-source Agent Skills",
+      "url": "/stories/2026-09-21/aws-packages-domain-methodology-into-38-open-source-agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "domain expertise",
+        "healthcare AI",
+        "reusable workflows"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS describes a collection of 38 open-source Agent Skills across 11 healthcare and life-sciences domains, using structured skill files to give agents reusable domain methods and reporting a 410-prompt evaluation with strong win rates."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-21-9782e549",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-18",
+      "headline": "AWS redesigns AgentCore runtime for elastic scale and faster agent starts",
+      "url": "/stories/2026-09-21/aws-redesigns-agentcore-runtime-for-elastic-scale-and-faster-agent-starts/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agents",
+        "managed runtime",
+        "scaling",
+        "latency"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS details changes to the AgentCore managed runtime aimed at elastic scaling, optimized resource use, and consistently faster starts for deployed agents, addressing infrastructure behavior that becomes visible once agents move into production workloads."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-21-general",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-18",
+      "headline": "NVIDIA PAIR Connects Your Computers for Local AI",
+      "url": "/videos/2026-09-21/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "Matthew Berman"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-21-agent-skills",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-18",
+      "headline": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
+      "url": "/videos/2026-09-21/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "Nate Herk | AI Automation"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A practical look at how Claude can support a highly automated one-person business, including repeatable work across software, sales, and support."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-21-inside-chinas-ai-race",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-19",
+      "headline": "Inside China's AI race",
+      "url": "/podcasts/2026-09-21/inside-chinas-ai-race/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "AI competition",
+        "chips",
+        "distillation",
+        "AI safeguards"
+      ],
+      "companies": [
+        "Reuters On Assignment"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-21-ai-doom-backlash",
+      "brief_date": "2026-09-21",
+      "event_date": "2026-09-19",
+      "headline": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "url": "/podcasts/2026-09-21/ai-doom-backlash/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI safety",
+        "frontier labs",
+        "AI economics",
+        "governance"
+      ],
+      "companies": [
+        "Big Technology Podcast"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-20-94a301a8",
       "brief_date": "2026-09-20",
       "event_date": "2026-09-18",
@@ -5058,142 +5274,6 @@
         "AI-assisted development"
       ],
       "summary": "*TESTNAV* addresses compositional robustness testing: inputs can be affected by several changes at once, but exhaustively trying every combination quickly becomes expensive and many combinations are too distorted to be meaningful. The framework treats testing as a two-objective search—maximize performance degradation while preserving input fidelity—and uses NSGA-II to approximate the Pareto frontier. Across four benchmarks covering vision, natural language, and code generation, the authors report recovering Pareto fronts up to 2.15 times faster than search baselines while evaluating 35.8% to 89.3% of a discrete space with four perturbation dimensions and six levels each."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-22-fe121e20",
-      "brief_date": "2026-08-22",
-      "event_date": "2026-08-21",
-      "headline": "GitHub brings visible, steerable Copilot agent sessions into Microsoft Teams",
-      "url": "/stories/2026-08-22/github-brings-visible-steerable-copilot-agent-sessions-into-microsoft-teams/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "AI-assisted coding",
-        "agent workflows",
-        "harness engineering",
-        "human review",
-        "collaboration tools"
-      ],
-      "companies": [
-        "GitHub"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "GitHub released a public preview that lets Microsoft Teams participants mention `@GitHub` in a channel, thread, meeting chat, or direct message to start a Copilot cloud-agent session. Everyone in the conversation can add context and steer the work. Participants with repository write access can trigger code changes, while the agent runs asynchronously in a cloud sandbox and can hand work back into GitHub, an IDE, or a terminal. GitHub also provides an optional repository control requiring an additional approval for pull requests attributed to the Teams integration identity."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-22-88a696d2",
-      "brief_date": "2026-08-22",
-      "event_date": "2026-08-21",
-      "headline": "GitHub turns Slack conversations into shared Copilot coding-agent sessions",
-      "url": "/stories/2026-08-22/github-turns-slack-conversations-into-shared-copilot-coding-agent-sessions/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "AI-assisted coding",
-        "agent workflows",
-        "collaboration",
-        "human review",
-        "tool permissions",
-        "shared context"
-      ],
-      "companies": [
-        "GitHub"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "GitHub also introduced a new Copilot experience in Slack. In public preview, users can mention `@GitHub` in a direct message, channel, or thread to start an agent session that can answer questions about code and GitHub, triage bugs and issues, investigate failures, implement and validate changes in a cloud sandbox, and open a pull request. GitHub is also introducing dedicated Slack Code channels designed around shared agent sessions. The experience is bounded by GitHub permissions, and organizations can require an additional approval before agent-created changes are merged."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-22-24c74a86",
-      "brief_date": "2026-08-22",
-      "event_date": "2026-08-20",
-      "headline": "MidTool teaches models the structure of real tool workflows before post-training",
-      "url": "/stories/2026-08-22/midtool-teaches-models-the-structure-of-real-tool-workflows-before-post-training/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Tool use",
-        "MCP",
-        "context engineering",
-        "agent training",
-        "harness engineering"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "*MidTool: Mid-training Data Synthesis for Agentic Tool Use* introduces an open data-construction pipeline for teaching general tool use during model mid-training. Its MidTool-Mix corpus combines web, PDF, and code data with synthesized supervision derived from real APIs, MCP skills, and document-grounded workflows. The training material is designed to teach tool affordances, context-grounded arguments, multi-tool sequences, and recovery when information is incomplete. The authors mid-trained Qwen3 4B and 8B base models, then applied supervised and reinforcement-learning post-training. They report consistent improvements over baselines on BFCL, τ²-bench, and MCP Universe."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-22-0a66eadf",
-      "brief_date": "2026-08-22",
-      "event_date": "2026-08-20",
-      "headline": "StateMem shows that agent memory must track what is current—not merely what was said",
-      "url": "/stories/2026-08-22/statemem-shows-that-agent-memory-must-track-what-is-current-not-merely-what-was-/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Context engineering",
-        "agent memory",
-        "evolving state",
-        "RAG",
-        "long-running workflows"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "*Can Agent Memory Systems Track Evolving State?* introduces StateMemBench, 234 multi-session scenarios in which facts, constraints, and decisions change over time. Its grading distinguishes answers based on the current state from answers that repeat a superseded state. The authors report that conventional memory, retrieval, and long-context baselines struggle with this distinction. Their StateMem method explicitly records supersession and relational dependencies. The paper reports current-state accuracy increasing from 0.205 to 0.363 on DeepSeek-V4-Flash and from 0.149 to 0.233 over the strongest comparison memory system on Qwen-3.5-9B. A single-call wrapper produced much larger gains across six backends, while matched controls attributed a substantial part of the improvement to the state structure rather than merely adding more context."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-22-d6deaef1",
-      "brief_date": "2026-08-22",
-      "event_date": "2026-08-20",
-      "headline": "Pandora’s Router asks whether a better routing decision is worth the cost of making it",
-      "url": "/stories/2026-08-22/pandora-s-router-asks-whether-a-better-routing-decision-is-worth-the-cost-of-mak/",
-      "focus": "historical_unspecified",
-      "topics": [
-        "Model routing",
-        "evaluation",
-        "cost engineering",
-        "RAG",
-        "inference-time reasoning"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context"
-      ],
-      "summary": "*Pandora’s AI Model Routing Box* studies systems that choose among multiple models, harnesses, retrieval specialists, or reasoning settings. The central problem is that predicting which specialist will perform best can itself be expensive. A cheap estimator may be fast but noisy; a more accurate estimator may require retrieval, partial reasoning, or another model call. The proposed Pandora’s Router uses value-of-information calculations to decide when the cheap estimate is sufficient and when paying for a more accurate estimate is justified. Across a multi-LLM benchmark, retrieval-augmented specialists, and variable inference-time reasoning, the authors report routing quality comparable to exhaustive estimation while querying the expensive estimator substantially less often."
     }
   ]
 }

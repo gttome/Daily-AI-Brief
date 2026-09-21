@@ -249,11 +249,15 @@ jobs:
           node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images /tmp/images.json
 
       - name: Persist final rendered image review for publication staging
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
         run: |
           set -euo pipefail
           mkdir -p _records/editorial-handoff
-          cp /tmp/images.json _records/editorial-handoff/final-image-review.json
-          echo "FINAL_IMAGE_REVIEW_PATH=_records/editorial-handoff/final-image-review.json" >> "$GITHUB_ENV"
+          brief_date="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.brief_date||''));" "$KERNEL_PATH")"
+          review_path="_records/editorial-handoff/final-image-review-${brief_date}.json"
+          cp /tmp/images.json "$review_path"
+          echo "FINAL_IMAGE_REVIEW_PATH=$review_path" >> "$GITHUB_ENV"
 
       - name: Deterministically expand canonical edition
         env:

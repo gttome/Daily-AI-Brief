@@ -75,7 +75,7 @@ if(completion&&edition){
  check('local_release_artifacts',missing.length?'fail':'pass','critical',missing.length?`Missing: ${missing.join(', ')}`:`${new Set(required).size} current release artifacts exist locally.`);
  const images=stories.map(s=>s.image?.path).filter(Boolean),imageProblems=[];
  let manifestEntries=[];
- for(const manifestPath of ['_records/editorial-handoff/final-image-review.json','_records/editorial-handoff/images.json']){
+ for(const manifestPath of [`_records/editorial-handoff/final-image-review-${date}.json`,'_records/editorial-handoff/final-image-review.json','_records/editorial-handoff/images.json']){
   try{
    const entries=Object.values(readJson(manifestPath)||{});
    if(entries.some(entry=>String(entry?.path||'').startsWith(`briefs/images/${date}/`))){manifestEntries=entries;break;}

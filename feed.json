@@ -6,6 +6,138 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-09-21-05232b62",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-21/github-sets-an-october-deadline-for-several-copilot-models/",
+      "title": "GitHub sets an October deadline for several Copilot models",
+      "summary": "GitHub says selected models will be removed from Copilot experiences on October 19, creating a concrete migration deadline for teams that depend on model-specific behavior in chat, edits, agent mode, or completions.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/01-github-copilot-model-deprecation.webp?v=e2799c9098849d31",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "Copilot",
+        "model lifecycle",
+        "deprecation",
+        "developer workflow"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-21-b624254e",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-21/copilot-code-review-adds-clearer-progress-and-smarter-suggestion-handling/",
+      "title": "Copilot code review adds clearer progress and smarter suggestion handling",
+      "summary": "GitHub updated Copilot code review with clearer visibility into review progress, more intelligent auto-resolution of suggestions, and generated commit messages when developers accept batches of proposed changes.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/02-github-copilot-code-review.webp?v=e6359e58e0079f03",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "Copilot",
+        "code review",
+        "software engineering",
+        "AI-assisted development"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-21-311a56d1",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-21/microsoft-links-ai-ready-infrastructure-with-workforce-readiness-in-india/",
+      "title": "Microsoft links AI-ready infrastructure with workforce readiness in India",
+      "summary": "Microsoft says its India datacenter regions are now AI-enabled and highlights workforce training at national scale, pairing infrastructure availability with the skills needed to move enterprise AI from pilots into operational use.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/03-microsoft-enterprise-ai-readiness.webp?v=1c36a1ddd33a2bab",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "enterprise AI",
+        "workforce readiness",
+        "cloud infrastructure",
+        "AI adoption"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-21-cf2a803f",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-21/ibm-finds-a-gap-between-ai-supervision-needs-and-employee-priorities/",
+      "title": "IBM finds a gap between AI supervision needs and employee priorities",
+      "summary": "IBM reports that 71% of surveyed CHROs identify the ability to supervise, validate, and override AI outputs as a critical workforce skill, while only 29% of employees rank judgment as important, alongside concerns about skills erosion.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/04-ibm-human-judgment-control-layer.webp?v=337557aea9c2c42b",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "AI workforce",
+        "critical thinking",
+        "human oversight",
+        "AI literacy"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-21-454cb9e6",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-21/aws-packages-domain-methodology-into-38-open-source-agent-skills/",
+      "title": "AWS packages domain methodology into 38 open-source Agent Skills",
+      "summary": "AWS describes a collection of 38 open-source Agent Skills across 11 healthcare and life-sciences domains, using structured skill files to give agents reusable domain methods and reporting a 410-prompt evaluation with strong win rates.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/05-aws-reusable-domain-agent-skills.webp?v=cfeacef6ff132405",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "domain expertise",
+        "healthcare AI",
+        "reusable workflows"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-21-9782e549",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-21/aws-redesigns-agentcore-runtime-for-elastic-scale-and-faster-agent-starts/",
+      "title": "AWS redesigns AgentCore runtime for elastic scale and faster agent starts",
+      "summary": "AWS details changes to the AgentCore managed runtime aimed at elastic scaling, optimized resource use, and consistently faster starts for deployed agents, addressing infrastructure behavior that becomes visible once agents move into production workloads.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-21/06-aws-production-agent-runtime.webp?v=877f2b45fdd2574e",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "agents",
+        "managed runtime",
+        "scaling",
+        "latency"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-21-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-21/general/",
+      "title": "NVIDIA PAIR Connects Your Computers for Local AI",
+      "summary": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "Matthew Berman"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-21-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-21/agent-skills/",
+      "title": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
+      "summary": "A practical look at how Claude can support a highly automated one-person business, including repeatable work across software, sales, and support.",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "Nate Herk | AI Automation"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-21-inside-chinas-ai-race",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-21/inside-chinas-ai-race/",
+      "title": "Inside China's AI race",
+      "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "AI competition",
+        "chips",
+        "distillation",
+        "AI safeguards",
+        "Reuters On Assignment"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-21-ai-doom-backlash",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-21/ai-doom-backlash/",
+      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
+      "date_published": "2026-09-21T13:00:00-05:00",
+      "tags": [
+        "AI safety",
+        "frontier labs",
+        "AI economics",
+        "governance",
+        "Big Technology Podcast"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-20-94a301a8",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-20/github-copilot-weekly-releases-expand-the-engineering-surface/",
       "title": "GitHub Copilot weekly releases expand the engineering surface",
@@ -3059,86 +3191,6 @@
         "AI-assisted coding",
         "multimodal systems",
         "test generation",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-22-fe121e20",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-22/github-brings-visible-steerable-copilot-agent-sessions-into-microsoft-teams/",
-      "title": "GitHub brings visible, steerable Copilot agent sessions into Microsoft Teams",
-      "summary": "GitHub released a public preview that lets Microsoft Teams participants mention `@GitHub` in a channel, thread, meeting chat, or direct message to start a Copilot cloud-agent session. Everyone in the conversation can add context and steer the work. Participants with repository write access can trigger code changes, while the agent runs asynchronously in a cloud sandbox and can hand work back into GitHub, an IDE, or a terminal. GitHub also provides an optional repository control requiring an additional approval for pull requests attributed to the Teams integration identity.",
-      "image": "https://github.blog/wp-content/uploads/2026/08/638616055-5259fa4e-a40a-411c-b642-f49a5ddee934.jpg?resize=2000%2C1095",
-      "date_published": "2026-08-22T13:00:00-05:00",
-      "tags": [
-        "AI-assisted coding",
-        "agent workflows",
-        "harness engineering",
-        "human review",
-        "collaboration tools",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-22-88a696d2",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-22/github-turns-slack-conversations-into-shared-copilot-coding-agent-sessions/",
-      "title": "GitHub turns Slack conversations into shared Copilot coding-agent sessions",
-      "summary": "GitHub also introduced a new Copilot experience in Slack. In public preview, users can mention `@GitHub` in a direct message, channel, or thread to start an agent session that can answer questions about code and GitHub, triage bugs and issues, investigate failures, implement and validate changes in a cloud sandbox, and open a pull request. GitHub is also introducing dedicated Slack Code channels designed around shared agent sessions. The experience is bounded by GitHub permissions, and organizations can require an additional approval before agent-created changes are merged.",
-      "image": "https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096",
-      "date_published": "2026-08-22T13:00:00-05:00",
-      "tags": [
-        "AI-assisted coding",
-        "agent workflows",
-        "collaboration",
-        "human review",
-        "tool permissions",
-        "shared context",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-22-24c74a86",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-22/midtool-teaches-models-the-structure-of-real-tool-workflows-before-post-training/",
-      "title": "MidTool teaches models the structure of real tool workflows before post-training",
-      "summary": "*MidTool: Mid-training Data Synthesis for Agentic Tool Use* introduces an open data-construction pipeline for teaching general tool use during model mid-training. Its MidTool-Mix corpus combines web, PDF, and code data with synthesized supervision derived from real APIs, MCP skills, and document-grounded workflows. The training material is designed to teach tool affordances, context-grounded arguments, multi-tool sequences, and recovery when information is incomplete. The authors mid-trained Qwen3 4B and 8B base models, then applied supervised and reinforcement-learning post-training. They report consistent improvements over baselines on BFCL, τ²-bench, and MCP Universe.",
-      "image": "https://arxiv.org/html/2608.20314v1/teaser.png",
-      "date_published": "2026-08-22T13:00:00-05:00",
-      "tags": [
-        "Tool use",
-        "MCP",
-        "context engineering",
-        "agent training",
-        "harness engineering",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-22-0a66eadf",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-22/statemem-shows-that-agent-memory-must-track-what-is-current-not-merely-what-was-/",
-      "title": "StateMem shows that agent memory must track what is current—not merely what was said",
-      "summary": "*Can Agent Memory Systems Track Evolving State?* introduces StateMemBench, 234 multi-session scenarios in which facts, constraints, and decisions change over time. Its grading distinguishes answers based on the current state from answers that repeat a superseded state. The authors report that conventional memory, retrieval, and long-context baselines struggle with this distinction. Their StateMem method explicitly records supersession and relational dependencies. The paper reports current-state accuracy increasing from 0.205 to 0.363 on DeepSeek-V4-Flash and from 0.149 to 0.233 over the strongest comparison memory system on Qwen-3.5-9B. A single-call wrapper produced much larger gains across six backends, while matched controls attributed a substantial part of the improvement to the state structure rather than merely adding more context.",
-      "image": "https://arxiv.org/html/2608.19652v1/state_drift_teaser1.png",
-      "date_published": "2026-08-22T13:00:00-05:00",
-      "tags": [
-        "Context engineering",
-        "agent memory",
-        "evolving state",
-        "RAG",
-        "long-running workflows",
-        "arXiv"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-22-d6deaef1",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-22/pandora-s-router-asks-whether-a-better-routing-decision-is-worth-the-cost-of-mak/",
-      "title": "Pandora’s Router asks whether a better routing decision is worth the cost of making it",
-      "summary": "*Pandora’s AI Model Routing Box* studies systems that choose among multiple models, harnesses, retrieval specialists, or reasoning settings. The central problem is that predicting which specialist will perform best can itself be expensive. A cheap estimator may be fast but noisy; a more accurate estimator may require retrieval, partial reasoning, or another model call. The proposed Pandora’s Router uses value-of-information calculations to decide when the cheap estimate is sufficient and when paying for a more accurate estimate is justified. Across a multi-LLM benchmark, retrieval-augmented specialists, and variable inference-time reasoning, the authors report routing quality comparable to exhaustive estimation while querying the expensive estimator substantially less often.",
-      "date_published": "2026-08-22T13:00:00-05:00",
-      "tags": [
-        "Model routing",
-        "evaluation",
-        "cost engineering",
-        "RAG",
-        "inference-time reasoning",
         "arXiv"
       ]
     }
