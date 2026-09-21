@@ -34,19 +34,34 @@ const monitored=[...preflightSources,...requiredSources,...preferredRegistrySour
 // This preserves breadth without paying to sweep every registered catalog before enough fresh evidence exists.
 const sourceRank=s=>(s.preflight_priority?100:0)+(s.required_topic?60:0)+(s.evidence_class==='publisher_authored'?30:s.evidence_class==='preprint'?20:10)+(s.format==='rss'||s.format==='atom'?8:0)+(s.broad_discovery?0:2);
 const ordered=[...monitored].sort((a,b)=>sourceRank(b)-sourceRank(a)||a.source_id.localeCompare(b.source_id));
-const preflightCore=ordered.filter(s=>s.preflight_priority),requiredCore=ordered.filter(s=>s.required_topic&&!s.preflight_priority),ordinary=ordered.filter(s=>!s.required_topic&&!s.preflight_priority),core=[...preflightCore,...requiredCore,...ordinary.slice(0,6)],rest=ordinary.slice(6),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
+const balanceFocusOrder=list=>{
+ const focusOrder=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
+ const weightedOrder=['applied_genai_knowledge_workers','applied_genai_knowledge_workers','technical_ai_engineering','agents_non_technical_people'];
+ const buckets=new Map(focusOrder.map(f=>[f,list.filter(s=>s.focus_hint===f)]));
+ const other=list.filter(s=>!focusOrder.includes(s.focus_hint));
+ const balanced=[];
+ while(focusOrder.some(f=>buckets.get(f).length)){
+  let progressed=false;
+  for(const f of weightedOrder){const next=buckets.get(f).shift();if(next){balanced.push(next);progressed=true;}}
+  if(!progressed)break;
+ }
+ return [...balanced,...other];
+};
+const preflightCore=balanceFocusOrder(ordered.filter(s=>s.preflight_priority)),requiredCore=ordered.filter(s=>s.required_topic&&!s.preflight_priority),ordinary=ordered.filter(s=>!s.required_topic&&!s.preflight_priority),core=[...preflightCore,...requiredCore,...ordinary.slice(0,6)],rest=ordinary.slice(6),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
 const rotated=rest.length?[...rest.slice(rotation),...rest.slice(0,rotation)]:[];
-const scanPlan=[...core,...rotated].filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
+const scanPlan=[...core,...rotated].filter(s=>s.pinned_candidate!==true).filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
 const MIN_SOURCES_SCANNED=Math.max(1,Math.min(24,Number(process.env.DAB_SOURCE_SCAN_MIN||12)));
 const MAX_SOURCES_SCANNED=Math.max(MIN_SOURCES_SCANNED,Math.min(64,Number(process.env.DAB_SOURCE_SCAN_MAX||24)));
 const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;
 let scanned=0,stopReason=null;
-const freshMetadataCount=()=>[...candidates.values()].filter(c=>{
+const isFreshMetadata=c=>{
  const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
  const ordinary=Number.isFinite(published)&&cutoffMs-published>=0&&cutoffMs-published<=FRESH_HOURS*3600000;
  const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
  return ordinary||required;
-}).length;
+};
+const freshMetadataCount=()=>[...candidates.values()].filter(isFreshMetadata).length;
+const freshFocusCoverage=()=>Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,[...candidates.values()].filter(c=>isFreshMetadata(c)&&c.focus_hint===f).length]));
 
 // Seed explicitly pinned first-party candidates whose catalog pages are reliable but whose own title/date
 // may not be discoverable from the catalog markup. These remain metadata-only and still require evidence review.
@@ -116,7 +131,8 @@ for(let i=0;i<scanPlan.length&&scanned<MAX_SOURCES_SCANNED;i+=4){
   }catch(e){sources.push({source_id:s.source_id,status:'unavailable',reason:e.message,checked_at:new Date().toISOString(),attempts:e.attempts||[]});}
  }));
  const fresh=freshMetadataCount();
- if(scanned>=MIN_SOURCES_SCANNED&&fresh>=FRESH_METADATA_TARGET){stopReason='fresh_metadata_sufficiency';break;}
+ const focusCoverage=freshFocusCoverage();
+ if(scanned>=MIN_SOURCES_SCANNED&&fresh>=FRESH_METADATA_TARGET&&Object.values(focusCoverage).every(n=>n>=3)){stopReason='fresh_metadata_and_focus_sufficiency';break;}
  if(retrievalCache.metrics.source_text_chars_retrieved>=retrievalCache.normalCharBudget){stopReason='normal_acquisition_budget';break;}
 }
 for(const s of scanPlan.slice(scanned,MAX_SOURCES_SCANNED))sources.push({source_id:s.source_id,status:'deferred',reason:stopReason||'source_scan_limit'});
