@@ -413,3 +413,20 @@ Upload or reference this `handoff.md`, then send:
 - The current editorial-learning record is inactive because evidence is insufficient. This is expected and safe.
 
 The receiving Work session should update this handoff or create a successor architecture record when it makes a material Command Center decision, so future sessions can distinguish original proposal assumptions from approved implementation behavior.
+
+## 19. Daily book-change proposal contract
+
+Beginning with the September 22, 2026 run and applying to every subsequent Brief, the private Daily AI Brief Command Center must treat book-change evaluation as a mandatory daily completion step.
+
+1. After the final published edition is known, evaluate every included article, video, and podcast for material implications to the Generative AI Professional Series.
+2. Keep reader-facing book bridges and owner-only book-change proposals as separate decisions.
+3. When a material change is warranted, create a private backlog proposal with the source Brief date, source item type/title/permanent URL, book title, proposed change, evidence reason, suggested teaching asset when useful, stable deduplication identity, and initial state `Pending review`.
+4. Deduplicate against existing private proposals without resetting prior owner decisions.
+5. When nothing clears the threshold, persist the explicit private result `0 proposals — all included items evaluated; no material book change warranted`.
+6. Never interpret an empty or missing proposal view as zero. Missing evaluation evidence means `Incomplete` or `Degraded`.
+7. Any late repair or republication invalidates the earlier evaluation until the final edition has been reevaluated.
+8. Daily operational completion must expose the evaluation date, final production SHA evaluated, proposal count, and evaluation status in the Command Center.
+9. Proposal contents remain private to the Command Center and must not be serialized into public repository outputs.
+
+The Command Center should therefore answer the owner unambiguously when asked whether a day's Brief produced book-change proposals and whether the evaluation is current against the final production SHA.
+
