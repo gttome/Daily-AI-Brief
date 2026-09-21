@@ -31,8 +31,6 @@ reader_release: true
 
 **Why it matters:** This is a concrete example of the Agent Skills pattern moving beyond generic productivity tasks. Reusable skill packages can encode domain methods, checks, and procedures so an agent does not have to rediscover expert practice from scratch on every request.
 
-
-
 <!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when deciding which instructions, references, tools, constraints, and validation evidence belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
