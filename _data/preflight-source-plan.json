@@ -195,6 +195,48 @@
       "candidate_title": "How Content Technology is powering Atlassian’s AI quality",
       "known_publication_date": "2026-09-18T00:00:00Z",
       "candidate_snippet": "Atlassian explains how content technologists build systems, standards, and information structures that improve the quality and trustworthiness of AI outputs for enterprise users."
+    },
+    {
+      "source_id": "reuters-imf-ai-productivity-sep19",
+      "owner": "Reuters",
+      "discovery_endpoint": "https://www.reuters.com/business/imf-tells-eu-ministers-ai-could-boost-growth-increase-economic-strains-2026-09-19/",
+      "canonical_url": "https://www.reuters.com/business/imf-tells-eu-ministers-ai-could-boost-growth-increase-economic-strains-2026-09-19/",
+      "format": "article",
+      "evidence_class": "authoritative_reporting",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active",
+      "pinned_candidate": true,
+      "candidate_title": "IMF tells EU ministers AI could boost growth but increase economic strains",
+      "known_publication_date": "2026-09-19T00:00:00Z",
+      "candidate_snippet": "Reuters reports IMF analysis of AI productivity, worker exposure, adoption gaps, and economic impacts across European workplaces."
+    },
+    {
+      "source_id": "reuters-workday-ai-hiring-sep21",
+      "owner": "Reuters",
+      "discovery_endpoint": "https://www.reuters.com/legal/government/these-workers-say-an-ai-hiring-platform-discriminated-against-them-who-should-2026-09-21/",
+      "canonical_url": "https://www.reuters.com/legal/government/these-workers-say-an-ai-hiring-platform-discriminated-against-them-who-should-2026-09-21/",
+      "format": "article",
+      "evidence_class": "authoritative_reporting",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active",
+      "pinned_candidate": true,
+      "candidate_title": "These workers say an AI hiring platform discriminated against them. But who should pay?",
+      "known_publication_date": "2026-09-21T00:00:00Z",
+      "candidate_snippet": "Reuters examines enterprise AI hiring software, alleged disparate impacts, and the liability questions facing employers and workplace technology vendors."
+    },
+    {
+      "source_id": "reuters-pharma-ai-workflows-sep21",
+      "owner": "Reuters",
+      "discovery_endpoint": "https://www.reuters.com/business/healthcare-pharmaceuticals/pharma-sector-doubles-down-ai-amid-hopes-slashing-costs-timelines-2026-09-16/",
+      "canonical_url": "https://www.reuters.com/business/healthcare-pharmaceuticals/pharma-sector-doubles-down-ai-amid-hopes-slashing-costs-timelines-2026-09-16/",
+      "format": "article",
+      "evidence_class": "authoritative_reporting",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active",
+      "pinned_candidate": true,
+      "candidate_title": "Pharma sector doubles down on AI to slash costs, timelines",
+      "known_publication_date": "2026-09-21T00:00:00Z",
+      "candidate_snippet": "Reuters reports how pharmaceutical teams are applying AI modeling and automated workflows to accelerate research and development and improve efficiency."
     }
   ]
 }
