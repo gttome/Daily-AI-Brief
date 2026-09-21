@@ -73,3 +73,14 @@ test('September 21 includes appropriate Professional Series bridges and homepage
  for(const headline of presented){const next=overview.indexOf(headline);assert.ok(next>cursor,`overview order mismatch for ${headline}`);cursor=next;}
  assert.equal((body.match(/class="book-bridge"/g)||[]).length,4);
 });
+
+
+test('latest edition must record at least one verified Professional Series mapping',()=>{
+ const dates=fs.readdirSync('_data/editions').filter(name=>/^\d{4}-\d{2}-\d{2}\.json$/.test(name)).map(name=>name.slice(0,10)).sort();
+ const latest=dates.at(-1);
+ if(latest>='2026-09-21'){
+  const current=JSON.parse(fs.readFileSync(`_data/editions/${latest}.json`));
+  assert.ok(Array.isArray(catalog.editions[latest])&&catalog.editions[latest].length>=1,`Professional Series mapping required for latest edition ${latest}`);
+  assert.doesNotThrow(()=>validateBookReading(current,catalog));
+ }
+});
