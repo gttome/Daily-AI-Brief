@@ -4,7 +4,7 @@
   "staging_ref": "editorial-handoff/production/2026-09-21-recovery",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
-  "images_path": "_records/editorial-handoff/images.json",
+  "images_path": "_records/editorial-handoff/images-2026-09-21.json",
   "media_path": "_records/editorial-handoff/media.json",
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
@@ -13,5 +13,5 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_revision": 3
+  "recovery_revision": 4
 }
