@@ -6,6 +6,7 @@ import {createHash} from 'node:crypto';
 import {parseArgs,normalizeUrl} from '../_generator/lib/util.mjs';
 import {inspectPng,inspectWebp} from '../_generator/lib/visual-output.mjs';
 import {classifyCommandCenterObservation,commandCenterAccessContract} from '../_generator/lib/command-center-access.mjs';
+import {classifySourceHttpState} from '../_generator/lib/source-http-state.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const args=parseArgs(process.argv.slice(2));
@@ -101,8 +102,9 @@ if(completion&&edition){
  }else{
   const results=await Promise.all(unique.map(probe)),failed=results.filter(x=>!x.ok);
   check('live_changed_routes',failed.length?'fail':'pass','critical',failed.length?JSON.stringify(failed):`${results.length} homepage/edition/archive/watchlist/feed/story/media routes returned successful HTTP responses.`);
-  const sources=await Promise.all(sourceUrls.map(probe)),failedSources=sources.filter(x=>!x.ok);
-  check('source_http_state',failedSources.length?'fail':'pass','high',failedSources.length?JSON.stringify(failedSources):`${sources.length} selected source URLs returned successful HTTP responses.`);
+  const sources=await Promise.all(sourceUrls.map(probe));
+  const sourceState=classifySourceHttpState(sources);
+  check('source_http_state',sourceState.result,sourceState.severity,sourceState.evidence);
  }
  const rendered=exists(`briefs/${date}.md`)?fs.readFileSync(path.join(root,`briefs/${date}.md`),'utf8'):'';
  const layout=exists('_layouts/default.html')?fs.readFileSync(path.join(root,'_layouts/default.html'),'utf8'):'';
