@@ -7,8 +7,9 @@ on:
     paths:
       - '_records/discovery-preflight/request.json'
   schedule:
-    - cron: '35 11 * * *'
-    - cron: '35 12 * * *'
+    # 05:50 America/Chicago across DST/CST; branch-existence guard makes the second trigger a no-op.
+    - cron: '50 10 * * *'
+    - cron: '50 11 * * *'
 
 permissions:
   contents: write
