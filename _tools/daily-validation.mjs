@@ -53,7 +53,10 @@ try{
  completion=JSON.parse(fs.readFileSync(completionFile,'utf8'));
  edition=readJson(`_data/editions/${date}.json`);
 }catch(error){
- check('publication_receipt','fail','critical',`Required current-edition evidence is missing: ${error.message}`);
+ const editionPath=`_data/editions/${date}.json`;
+ const publicationDir=`_records/publication/${date}`;
+ const publicationStarted=exists(editionPath)||exists(publicationDir);
+ check('publication_receipt',publicationStarted?'fail':'not_applicable',publicationStarted?'critical':'medium',publicationStarted?`Required current-edition evidence is missing after publication artifacts began: ${error.message}`:`Current-day edition has not entered publication yet; completion evidence is not applicable until publication artifacts exist.`);
 }
 if(completion&&edition){
  const receiptOk=completion.phase==='pages_verified'&&completion.pages?.conclusion==='success'&&completion.edition_id===edition.edition_id&&/^[a-f0-9]{40}$/.test(completion.commit_sha||'');
