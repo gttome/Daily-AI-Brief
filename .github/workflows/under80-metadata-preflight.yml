@@ -7,8 +7,9 @@ on:
     paths:
       - '_records/preflight-request/request.json'
   schedule:
-    - cron: '30 11 * * *'
-    - cron: '30 12 * * *'
+    # 05:45 America/Chicago across DST/CST; branch-existence guard makes the second trigger a no-op.
+    - cron: '45 10 * * *'
+    - cron: '45 11 * * *'
   workflow_dispatch:
     inputs:
       edition_date:
