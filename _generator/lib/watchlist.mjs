@@ -30,4 +30,23 @@ export function validateWatchlist(data){
  return errors;
 }
 export function publicWatchlist(data){const errors=validateWatchlist(data);if(errors.length)throw Error(errors.join('\n'));return {...data,topics:data.topics.map(t=>({...t,research_score:scoreTopic(t)}))};}
-export function watchlistPreview(date){if(date<'2026-09-12')return '';const dailyState=date==='2026-09-20'?'<p><strong>0 new today.</strong> No new Watchlist item cleared the September 20 publication gate; existing monitored topics remain available below.</p>':'';return `\n\n<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2>${dailyState}<p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>\n\n`;}
+const escapeHtml=value=>String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function currentWatchlistFor(date,data){
+ if(data?.edition_date===date)return data;
+ try{const loaded=JSON.parse(fs.readFileSync(new URL('../../_data/watchlist.json',import.meta.url),'utf8'));return loaded.edition_date===date?loaded:null;}catch{return null;}
+}
+export function watchlistPreview(date,data=null){
+ if(date<'2026-09-12')return '';
+ const current=currentWatchlistFor(date,data);
+ let dailyState='';
+ if(current){
+  const counts=watchlistDailySummary(current);
+  const active=(current.topics||[]).filter(topic=>topic.status!=='archived');
+  const fresh=active.filter(topic=>watchlistDailyState(topic,date)==='new_today');
+  const updated=active.filter(topic=>watchlistDailyState(topic,date)==='updated_today');
+  const listed=fresh.length?fresh:updated;
+  const label=fresh.length?'New today':'Updated today';
+  dailyState=`<p class="watchlist-daily-counts"><strong>${counts.new_today} new today · ${counts.updated_today} updated · ${counts.carried_forward} carried forward.</strong></p>${listed.length?`<p><strong>${label}:</strong></p><ul class="watchlist-daily-items">${listed.map(topic=>`<li>${escapeHtml(topic.name)}</li>`).join('')}</ul>`:''}`;
+ }
+ return `\n\n<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2>${dailyState}<p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>\n\n`;
+}
