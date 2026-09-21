@@ -7,3 +7,12 @@ test('public watchlist matches researched canonical data',()=>{assert.deepEqual(
 test('watchlist launches September 12 without changing earlier briefs',()=>{assert.equal(watchlistPreview('2026-09-11'),'');assert.match(watchlistPreview('2026-09-12'),/data-watchlist-preview/);});
 test('single development and unmeasured momentum cannot advance',()=>{const copy=structuredClone(data);copy.topics[0].evidence=copy.topics[0].evidence.slice(0,1);copy.topics[0].status='gaining_evidence';assert.ok(validateWatchlist(copy).some(e=>e.includes('independent developments')));copy.topics[0].momentum={classification:'rising',observations:[]};assert.ok(validateWatchlist(copy).some(e=>e.includes('Momentum requires')));});
 test('private ballots cannot leak into public data',()=>{const copy=structuredClone(data);copy.ballot_hash='secret';assert.ok(validateWatchlist(copy).includes('Private data in public watchlist'));});
+
+
+test('current homepage Watchlist preview shows daily counts and lists updated items when there are no new topics',()=>{
+ const preview=watchlistPreview(data.edition_date,data);
+ assert.match(preview,/0 new today · 2 updated · 13 carried forward\./);
+ assert.match(preview,/Updated today:/);
+ assert.match(preview,/Reusable agent skills become observable/);
+ assert.match(preview,/AI harness engineering becomes a first-class layer/);
+});
