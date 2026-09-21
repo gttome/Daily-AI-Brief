@@ -1,122 +1,122 @@
 {
-  "m02": {
-    "event_date": "2026-09-18",
-    "source": {
-      "title": "GitHub Copilot weekly releases — September 14",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
-      "publication_date": "2026-09-18",
-      "evidence_type": "official_announcement",
-      "availability_status": "published"
-    },
-    "source_word_count": 853,
-    "source_fetched_at": "2026-09-20T14:15:00Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Fresh official engineering roundup with direct relevance to AI-assisted developer workflows."
-  },
   "m03": {
     "event_date": "2026-09-18",
     "source": {
-      "title": "Benchmarking LLM Inference at Scale with AIPerf",
-      "organization": "NVIDIA Developer",
-      "url": "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+      "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
       "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 2831,
-    "source_fetched_at": "2026-09-20T14:15:00Z",
+    "source_word_count": 544,
+    "source_fetched_at": "2026-09-21T14:28:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Fresh first-party performance-engineering guidance on reliable high-concurrency LLM benchmarking."
+    "selection_rationale": "Concrete first-party model-lifecycle change with a dated migration deadline."
+  },
+  "m04": {
+    "event_date": "2026-09-18",
+    "source": {
+      "title": "Copilot code review: An improved review experience",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
+      "publication_date": "2026-09-18",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 806,
+    "source_fetched_at": "2026-09-21T14:28:00Z",
+    "source_word_count_method": "retrieved_source_text_word_count",
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "selection_rationale": "Fresh first-party engineering workflow improvement relevant to AI-assisted code review."
   },
   "m05": {
-    "event_date": "2026-09-18",
+    "event_date": "2026-09-21",
     "source": {
-      "title": "Google Workspace Weekly Recap - September 18, 2026",
-      "organization": "Google Workspace",
-      "url": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
-      "publication_date": "2026-09-18",
+      "title": "Microsoft expands AI-ready capabilities and workforce readiness across India",
+      "organization": "Microsoft",
+      "url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
+      "publication_date": "2026-09-21",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 1006,
-    "source_fetched_at": "2026-09-20T14:15:00Z",
+    "source_word_count": 1954,
+    "source_fetched_at": "2026-09-21T14:28:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Fresh official applied-AI update connecting Gemini directly to common business systems through MCP."
+    "selection_rationale": "Current first-party enterprise AI adoption signal connecting infrastructure and workforce readiness."
   },
-  "m07": {
-    "event_date": "2026-09-18",
+  "m06": {
+    "event_date": "2026-09-21",
     "source": {
-      "title": "How Content Technology is powering Atlassian’s AI quality",
-      "organization": "Atlassian",
-      "url": "https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality",
-      "publication_date": "2026-09-18",
+      "title": "New IBM CHRO Study: AI Puts Critical Thinking at the Center of Workforce Priorities",
+      "organization": "IBM",
+      "url": "https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities",
+      "publication_date": "2026-09-21",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 1695,
-    "source_fetched_at": "2026-09-20T14:15:00Z",
+    "source_word_count": 1376,
+    "source_fetched_at": "2026-09-21T14:28:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Fresh first-party applied-AI practice showing information and content systems as a quality layer."
+    "selection_rationale": "Current workforce research directly relevant to human oversight and verification of AI outputs."
   },
   "m01": {
-    "event_date": "2026-09-18",
+    "event_date": "2026-09-16",
     "source": {
-      "title": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
+      "title": "Improving HCLS AI reasoning with open-source agent skills",
       "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
-      "publication_date": "2026-09-18",
+      "url": "https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/",
+      "publication_date": "2026-09-16",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3764,
-    "source_fetched_at": "2026-09-20T14:15:00Z",
+    "source_word_count": 4895,
+    "source_fetched_at": "2026-09-21T14:28:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Preferred fresh Agent Skills signal showing reusable expert procedures applied by coding agents."
+    "selection_rationale": "Preferred Agent Skills candidate with reusable domain methods and explicit evaluation evidence."
   },
   "m09": {
     "event_date": "2026-09-18",
     "source": {
-      "title": "Migrating multi-model AI agents to Amazon Bedrock AgentCore runtime",
+      "title": "The new AgentCore runtime: Elastic, optimized, and consistently fast starts",
       "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/",
+      "url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
       "publication_date": "2026-09-18",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3166,
-    "source_fetched_at": "2026-09-20T14:15:00Z",
+    "source_word_count": 3618,
+    "source_fetched_at": "2026-09-21T14:28:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Fresh first-party agent-operations pattern showing migration from application logic into a managed runtime."
+    "selection_rationale": "Fresh first-party agent-runtime engineering update focused on elasticity and startup performance."
   }
 }
