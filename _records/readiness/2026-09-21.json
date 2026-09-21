@@ -1,50 +1,42 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-21",
-  "stage": "preliminary",
+  "stage": "final",
   "status": "NOT_READY",
   "main_sha": "998144b5577f2ef57aa586ec6d035f47cf7de1c9",
-  "certified_at": "2026-09-21T11:14:30Z",
+  "certified_at": "2026-09-21T11:52:58Z",
   "checks": [
-    {"id":"github_repository_read","result":"PASS","evidence":"Connected GitHub capability read gttome/Daily-AI-Brief and exact main commit 998144b5577f2ef57aa586ec6d035f47cf7de1c9."},
-    {"id":"main_ruleset_validate","result":"PASS","evidence":"Active repository ruleset 23615327 protects refs/heads/main and requires strict GitHub Actions status check validate."},
-    {"id":"current_main_validate","result":"PASS","evidence":"Current-main check run 106184087798 named validate completed success for 998144b5577f2ef57aa586ec6d035f47cf7de1c9 in workflow run 35550452379."},
-    {"id":"current_main_pages","result":"PASS","evidence":"Current-main Pages deploy check 106184064443 completed success for 998144b5577f2ef57aa586ec6d035f47cf7de1c9 in workflow run 35550410559."},
-    {"id":"deterministic_delta_validation","result":"PASS","evidence":"Daily AI Brief deterministic delta validation run 35550452379 completed success on current main 998144b5577f2ef57aa586ec6d035f47cf7de1c9."},
-    {"id":"metadata_preflight_current_day","result":"FAIL","evidence":"No preflight/2026-09-21 branch or current-day metadata-preflight evidence was available; scheduled workflow query through 2026-09-21T11:14:30Z returned zero schedule runs for the current day."},
-    {"id":"discovery_preflight_current_day","result":"FAIL","evidence":"discovery-preflight/daily/2026-09-21 did not exist at certification start, so no current-day coverage_ready receipt existed. The branch was created only to persist this fail-closed readiness receipt; this does not substitute for discovery preflight output."},
-    {"id":"article_evidence_ready","result":"FAIL","evidence":"No current-day discovery-preflight output existed, therefore article-evidence readiness and <=12000 model-visible character cap could not be verified."},
-    {"id":"candidate_count_max_20","result":"FAIL","evidence":"Current-day metadata candidates unavailable; <=20 requirement cannot be verified."},
-    {"id":"resolved_metadata_dates","result":"FAIL","evidence":"Current-day metadata candidates unavailable; resolved-date requirement cannot be verified."},
-    {"id":"focus_coverage_minimum","result":"FAIL","evidence":"Current-day candidate set unavailable; >=3 candidates per focus cannot be verified."},
-    {"id":"agent_skills_signal","result":"FAIL","evidence":"Current-day discovery receipt unavailable; >=1 genuine story-ready Agent Skills signal and preferred candidate cannot be verified."},
-    {"id":"production_automations","result":"PASS","evidence":"Daily Brief Preflight Guard, Daily Brief Final Gate, Daily AI Brief + QA publisher, Validate Daily AI Brief Command Center, and Daily Brief After-Action were all observed enabled."},
-    {"id":"known_critical_high_blocker","result":"FAIL","evidence":"Current-day metadata/discovery/article-evidence preflight absence is a publication-blocking readiness defect under docs/operations/readiness-certification.md."},
-    {"id":"github_bounded_repair_capability","result":"WARN","evidence":"Repository read, ruleset/check inspection, workflow job/log inspection, failed-job rerun, branch creation, and text-file write capabilities are available and branch creation/write were exercised. Workflow dispatch for the missing scheduled preflights was not exposed by the connected capability, so the missing preflights could not be safely launched from this guard."}
+    {"id":"github_repository_read","result":"PASS","evidence":"Connected GitHub capability read gttome/Daily-AI-Brief and exact current main commit 998144b5577f2ef57aa586ec6d035f47cf7de1c9."},
+    {"id":"preliminary_receipt","result":"PASS","evidence":"Preliminary receipt existed on discovery-preflight/daily/2026-09-21 and matched current main SHA."},
+    {"id":"metadata_preflight_current_day","result":"FAIL","evidence":"Final-gate branch inspection found no preflight/2026-09-21 branch; current-day metadata readiness therefore remains unverifiable."},
+    {"id":"discovery_preflight_current_day","result":"FAIL","evidence":"The discovery-preflight/daily/2026-09-21 branch contains the fail-closed readiness receipt created by the guard, but no verified current-day discovery coverage receipt; coverage_ready=true is not established."},
+    {"id":"article_evidence_ready","result":"FAIL","evidence":"No verified current-day discovery output exists, so article-evidence readiness and the active model-visible character cap cannot be certified."},
+    {"id":"candidate_count_max_20","result":"FAIL","evidence":"Current-day metadata candidates are unavailable; <=20 cannot be verified."},
+    {"id":"resolved_metadata_dates","result":"FAIL","evidence":"Current-day metadata candidates are unavailable; resolved dates cannot be verified."},
+    {"id":"focus_coverage_minimum","result":"FAIL","evidence":"Current-day metadata candidates are unavailable; >=3 candidates per focus cannot be verified."},
+    {"id":"agent_skills_signal","result":"FAIL","evidence":"No current-day discovery receipt establishes >=1 genuine story-ready Agent Skills signal or preferred candidate."},
+    {"id":"blocking_workflow_state","result":"FAIL","evidence":"Scheduled-workflow evidence inspected at final gate did not establish successful current-day metadata/discovery preflight runs before publication cutoff."},
+    {"id":"publisher_automation","result":"PASS","evidence":"Daily AI Brief + QA was enabled when inspected before the fail-closed decision."},
+    {"id":"github_publication_capability","result":"PASS","evidence":"Connected GitHub capability has repository read/write, Git Data, PR, Actions inspection, and protected publication-related operations available."}
   ],
-  "warnings": [
-    {"code":"github_dispatch_unavailable","nonblocking":true,"evidence":"This capability limitation does not alter the NOT_READY decision; fail-closed preservation remains possible and the Final Gate can recheck if GitHub's later scheduled fallback produces the missing preflights.","follow_up":"At Final Gate, recheck whether the 11:45Z DST/CST fallback schedule produced current-day preflight branches and receipts; do not treat this warning as evidence of readiness."}
-  ],
+  "warnings": [],
   "blockers": [
-    {"code":"current_day_preflights_missing","evidence":"At 2026-09-21T11:14:30Z there was no preflight/2026-09-21 branch and no discovery-preflight/daily/2026-09-21 output branch from GitHub Actions; therefore metadata, coverage, article evidence, focus coverage, resolved dates, and Agent Skills gates are unverifiable.","recovery":"Allow the already-defined 11:45Z metadata fallback schedule and discovery workflow path to run if configured; Final Gate must verify actual current-day receipts and all gates before authorizing publication. Do not start editorial work from this placeholder readiness branch."}
+    {"code":"current_day_preflights_missing","evidence":"At final certification the required current-day metadata preflight branch and verified discovery/article-evidence outputs were still absent or unverifiable. Under readiness-certification.md, missing or unverifiable evidence is NOT_READY.","recovery":"Preserve the last valid live edition. Restore the scheduled zero-model metadata/discovery preflight path before a future publisher is enabled; do not fabricate or bypass readiness evidence."}
   ],
   "repairs_performed": [
-    {"action":"created_receipt_branch_only","evidence":"Created discovery-preflight/daily/2026-09-21 from exact main solely because the required current-day branch was absent, then wrote this NOT_READY receipt. No discovery/preflight evidence was fabricated and no production/editorial content changed."}
+    {"action":"recognized_existing_fail_closed_receipt","evidence":"Reused and finalized the same readiness receipt; no competing readiness record or editorial work was created."}
   ],
   "workflow_evidence": {
     "metadata_preflight": null,
     "discovery_preflight": null,
-    "ci": {"check_run_id":106184087798,"workflow_run_id":35550452379,"conclusion":"success","main_sha":"998144b5577f2ef57aa586ec6d035f47cf7de1c9"},
-    "pages": {"check_run_id":106184064443,"workflow_run_id":35550410559,"conclusion":"success","main_sha":"998144b5577f2ef57aa586ec6d035f47cf7de1c9"},
-    "delta_validation": {"workflow_run_id":35550452379,"conclusion":"success","main_sha":"998144b5577f2ef57aa586ec6d035f47cf7de1c9"}
+    "current_main_sha":"998144b5577f2ef57aa586ec6d035f47cf7de1c9"
   },
   "automation_state": {
-    "preflight_guard": "enabled",
-    "final_gate": "enabled",
-    "publisher": "enabled",
-    "command_center_sync": "enabled",
-    "after_action": "enabled"
+    "preflight_guard_before_decision":"enabled",
+    "final_gate_before_decision":"enabled",
+    "publisher_before_decision":"enabled",
+    "required_fail_closed_action":"disable Daily AI Brief + QA, Daily Brief Preflight Guard, and Daily Brief Final Gate only"
   },
   "publication_authorized": false,
-  "next_action": "Final Gate must recheck current main and current-day metadata/discovery/article-evidence receipts after the scheduled fallback opportunity. Authorize publication only if every blocking readiness gate passes; otherwise preserve the last valid live edition."
+  "next_action": "Hold the September 21 publisher and preserve the last valid live edition. Repair/verify the zero-model metadata and discovery preflight scheduling path before re-enabling production gates."
 }
