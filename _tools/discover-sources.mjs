@@ -34,7 +34,17 @@ const monitored=[...preflightSources,...requiredSources,...preferredRegistrySour
 // This preserves breadth without paying to sweep every registered catalog before enough fresh evidence exists.
 const sourceRank=s=>(s.preflight_priority?100:0)+(s.required_topic?60:0)+(s.evidence_class==='publisher_authored'?30:s.evidence_class==='preprint'?20:10)+(s.format==='rss'||s.format==='atom'?8:0)+(s.broad_discovery?0:2);
 const ordered=[...monitored].sort((a,b)=>sourceRank(b)-sourceRank(a)||a.source_id.localeCompare(b.source_id));
-const preflightCore=ordered.filter(s=>s.preflight_priority),requiredCore=ordered.filter(s=>s.required_topic&&!s.preflight_priority),ordinary=ordered.filter(s=>!s.required_topic&&!s.preflight_priority),core=[...preflightCore,...requiredCore,...ordinary.slice(0,6)],rest=ordinary.slice(6),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
+const balanceFocusOrder=list=>{
+ const focusOrder=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
+ const buckets=new Map(focusOrder.map(f=>[f,list.filter(s=>s.focus_hint===f)]));
+ const other=list.filter(s=>!focusOrder.includes(s.focus_hint));
+ const balanced=[];
+ while(focusOrder.some(f=>buckets.get(f).length)){
+  for(const f of focusOrder){const next=buckets.get(f).shift();if(next)balanced.push(next);}
+ }
+ return [...balanced,...other];
+};
+const preflightCore=balanceFocusOrder(ordered.filter(s=>s.preflight_priority)),requiredCore=ordered.filter(s=>s.required_topic&&!s.preflight_priority),ordinary=ordered.filter(s=>!s.required_topic&&!s.preflight_priority),core=[...preflightCore,...requiredCore,...ordinary.slice(0,6)],rest=ordinary.slice(6),rotation=rest.length?Math.abs([...date].reduce((n,c)=>n+c.charCodeAt(0),0))%rest.length:0;
 const rotated=rest.length?[...rest.slice(rotation),...rest.slice(0,rotation)]:[];
 const scanPlan=[...core,...rotated].filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
 const MIN_SOURCES_SCANNED=Math.max(1,Math.min(24,Number(process.env.DAB_SOURCE_SCAN_MIN||12)));
