@@ -13,6 +13,6 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "repair_attempt": 6,
-  "repair_note": "Added dated media preflight receipt for all four included media items after current independent verification."
+  "repair_attempt": 7,
+  "repair_note": "Watchlist freshness repair: rolled the reviewed 15-topic Watchlist to Sep 22 while preserving all topic evidence unchanged and explicitly recording that no new evidence was asserted."
 }
