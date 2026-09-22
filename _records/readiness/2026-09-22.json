@@ -1,35 +1,31 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-22",
-  "stage": "preliminary",
+  "stage": "final",
   "status": "NOT_READY",
   "main_sha": "10236fa4c363a868d882044c97501a08bf8e8f58",
-  "certified_at": "2026-09-22T11:16:12Z",
+  "certified_at": "2026-09-22T11:47:12Z",
   "checks": [
+    {"id":"publishing_reliability_handoff","result":"PASS","evidence":"Reviewed Daily_AI_Brief_Sep22_Publishing_Reliability_Handoff_2026-09-21.md; applied checkpoint preservation, targeted recovery, handoff-last, six independent factual image reviews, Git Data binary transport, date-scoped image review, Watchlist parity/counts, Professional Series mapping, story-order parity, and live-closure requirements."},
     {"id":"github_repository_read","result":"PASS","evidence":"Connected GitHub capability read gttome/Daily-AI-Brief and exact main SHA 10236fa4c363a868d882044c97501a08bf8e8f58."},
-    {"id":"github_bounded_repair_capability","result":"PASS","evidence":"Connector exposes workflow/job/log/check inspection, failed-job reruns, branch/file/PR/merge operations, Git Data writes, and current-day discovery-preflight branch read/write; this branch was created from exact main."},
-    {"id":"main_ruleset_required_validate","result":"PASS","evidence":"Active ruleset 23615327 protects refs/heads/main and requires GitHub Actions check context validate; no bypass actors."},
-    {"id":"current_main_validate","result":"PASS","evidence":"Current-main validate checks are completed success, including check 106472522869 associated with deterministic delta validation run 35641765052."},
-    {"id":"current_main_delta_validation","result":"PASS","evidence":"Daily AI Brief deterministic delta validation run 35641765052 completed success on current main SHA."},
-    {"id":"current_main_pages","result":"FAIL","evidence":"No matching current-main Pages deployment was verified during this preliminary certification; missing evidence cannot be treated as PASS."},
-    {"id":"current_main_publication_ci","result":"FAIL","evidence":"A latest current-main deterministic publication CI success matching the exact current main SHA was not verified during this preliminary certification."},
-    {"id":"metadata_preflight_current_day","result":"FAIL","evidence":"No preflight/2026-09-22 branch or current-day metadata preflight run/receipt exists at certification time."},
-    {"id":"discovery_preflight_current_day","result":"FAIL","evidence":"No discovery-preflight/daily/2026-09-22 branch or current-day discovery run/receipt existed before this fail-closed receipt branch was created."},
-    {"id":"article_evidence_ready","result":"FAIL","evidence":"Current-day article-evidence packet/receipt is unavailable because current-day discovery preflight has not completed."},
-    {"id":"candidate_count_max_20","result":"FAIL","evidence":"Current-day retained candidate count is unavailable; cannot certify <=20."},
-    {"id":"resolved_metadata_dates","result":"FAIL","evidence":"Current-day metadata candidates are unavailable; resolved-date requirement cannot be certified."},
-    {"id":"focus_coverage_minimum","result":"FAIL","evidence":"Current-day coverage counts are unavailable; >=3 per focus cannot be certified."},
-    {"id":"agent_skills_signal","result":"FAIL","evidence":"Current-day story-ready Agent Skills signal and preferred candidate are unavailable."},
-    {"id":"required_production_automations","result":"PASS","evidence":"Daily Brief Preflight Guard, Daily Brief Final Gate, Daily AI Brief + QA, Command Center validation, and Daily Brief After-Action are enabled; publisher remains scheduled for 07:00 America/Chicago and was not started early."},
-    {"id":"known_critical_high_blocker","result":"FAIL","evidence":"Current-day preflight evidence is absent, which is a publication-blocking readiness condition under docs/operations/readiness-certification.md."}
+    {"id":"preliminary_receipt","result":"PASS","evidence":"Same current-day readiness receipt exists on discovery-preflight/daily/2026-09-22 and was preliminary NOT_READY against exact current main."},
+    {"id":"metadata_preflight_current_day","result":"FAIL","evidence":"Current-day metadata-candidates.json is absent on discovery-preflight/daily/2026-09-22 at final certification."},
+    {"id":"discovery_preflight_current_day","result":"FAIL","evidence":"Current-day discovery result receipt.json is absent on discovery-preflight/daily/2026-09-22 at final certification."},
+    {"id":"article_evidence_ready","result":"FAIL","evidence":"Current-day article-evidence.json is absent on discovery-preflight/daily/2026-09-22 at final certification."},
+    {"id":"candidate_count_max_20","result":"FAIL","evidence":"Cannot certify candidate count without current-day metadata/discovery output."},
+    {"id":"resolved_metadata_dates","result":"FAIL","evidence":"Cannot certify resolved dates without current-day metadata output."},
+    {"id":"focus_coverage_minimum","result":"FAIL","evidence":"Cannot certify >=3 candidates per focus without current-day discovery output."},
+    {"id":"agent_skills_signal","result":"FAIL","evidence":"Cannot certify a genuine story-ready Agent Skills signal or preferred candidate without current-day discovery output."},
+    {"id":"reader_contract_protections","result":"PASS","evidence":"Publishing-reliability handoff documents permanent regression invariants for Watchlist canonical/public parity and daily counts, Professional Series mappings, reader presentation-order parity, date-scoped factual image review, and protected release/live closure."},
+    {"id":"publisher_automation","result":"PASS","evidence":"Preliminary receipt records Daily AI Brief + QA, Preflight Guard, Final Gate, Command Center validation, and After-Action enabled; publisher was not started early."},
+    {"id":"github_publication_capability","result":"PASS","evidence":"Connected GitHub capability can read repository/current main and perform repository file/PR/workflow operations required for bounded publication recovery."}
   ],
   "warnings": [],
   "blockers": [
-    {"code":"current_day_preflights_absent","evidence":"At 06:16 America/Chicago, neither the Sep 22 metadata-preflight branch/receipt nor the Sep 22 discovery/article-evidence branch/receipt had been produced.","recovery":"Allow the scheduled zero-model metadata and discovery preflights to produce current-day evidence; Final Gate must re-certify exact current main and all readiness requirements before authorizing publication."},
-    {"code":"current_main_pages_and_publication_ci_not_verified","evidence":"Matching current-main Pages and latest deterministic publication CI success were not verified in this preliminary pass.","recovery":"Final Gate should verify exact matching current-main Pages and deterministic publication CI evidence; do not infer success from older SHA evidence."}
+    {"code":"current_day_preflight_evidence_absent","evidence":"At final certification, metadata-candidates.json, discovery receipt.json, and article-evidence.json for 2026-09-22 are all absent from the authoritative current-day discovery-preflight branch.","recovery":"Preserve the last valid live edition. Produce the scheduled zero-model current-day metadata/discovery/article-evidence checkpoints, then re-certify against exact current main before any publisher consumes the gate."}
   ],
   "repairs_performed": [
-    {"action":"create_current_day_readiness_branch","evidence":"Created discovery-preflight/daily/2026-09-22 from exact main SHA solely to persist fail-closed preliminary readiness evidence; no production/editorial content changed."}
+    {"action":"finalize_same_readiness_receipt","evidence":"Updated the existing current-day readiness receipt in place; no competing readiness record, editorial work, image generation, media selection, publication, or Command Center synchronization performed."}
   ],
   "workflow_evidence": {
     "metadata_preflight": null,
@@ -39,12 +35,12 @@
     "delta_validation": {"run_id":35641765052,"conclusion":"success","main_sha":"10236fa4c363a868d882044c97501a08bf8e8f58"}
   },
   "automation_state": {
-    "preflight_guard": "enabled",
-    "final_gate": "enabled",
-    "publisher": "enabled",
+    "preflight_guard": "enabled_at_certification",
+    "final_gate": "enabled_at_certification",
+    "publisher": "enabled_at_certification",
     "command_center_sync": "enabled",
     "after_action": "enabled"
   },
   "publication_authorized": false,
-  "next_action": "Final Gate must fail closed unless current-day metadata/discovery/article-evidence preflights appear and all missing exact-main CI/Pages evidence is verified. Do not start publisher early."
+  "next_action": "Fail closed before 07:00: preserve the September 21 live edition and prevent the publisher from consuming this failed gate. Recover only missing current-day preflight checkpoints; do not redo valid editorial/publication work."
 }
