@@ -13,6 +13,6 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "repair_attempt": 7,
-  "repair_note": "Watchlist freshness repair: rolled the reviewed 15-topic Watchlist to Sep 22 while preserving all topic evidence unchanged and explicitly recording that no new evidence was asserted."
+  "repair_attempt": 8,
+  "repair_note": "Integration repair: canonical Sep 22 Professional Series mappings corrected; canonical/public Watchlist synchronized; Jev/System One decision models added as a new early-signal topic after missed-signal review; two evidence-backed existing-topic updates retained."
 }

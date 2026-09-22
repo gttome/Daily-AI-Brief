@@ -219,28 +219,28 @@
     ],
     "2026-09-22": [
       {
-        "item_id": "agent-evaluation-task-completion-2026-09-22",
+        "item_id": "dab-story-2026-09-22-20a54b62",
         "reference_id": "reliable-verification",
         "label": "READ DEEPER",
         "why": "Use the final-gate framework when evaluating whether an agent actually completed the intended task rather than merely producing plausible intermediate tool calls."
       },
       {
-        "item_id": "medical-claims-idp-ai-2026-09-22",
+        "item_id": "dab-story-2026-09-22-d5f8f1d2",
         "reference_id": "reliable-verification",
         "label": "READ DEEPER",
-        "why": "The verification framework provides useful background for deciding what evidence must be checked before AI-assisted document review can support a consequential human decision."
+        "why": "Use verification as the final gate before AI-assisted document review supports a consequential human decision."
       },
       {
-        "item_id": "sagemaker-huggingface-agent-skills-2026-09-22",
+        "item_id": "dab-story-2026-09-22-9646b0bd",
         "reference_id": "context-quality-checklist",
         "label": "PUT IT INTO PRACTICE",
-        "why": "Apply the context-quality checklist when deciding which instructions, references, tools, validation steps, monitoring, and cleanup procedures belong inside a reusable Agent Skill."
+        "why": "Apply the context-quality checklist when packaging instructions, references, tools, validation, monitoring, and cleanup into a reusable Agent Skill."
       },
       {
-        "item_id": "benchling-agentcore-multitenant-security-2026-09-22",
+        "item_id": "dab-story-2026-09-22-b12135af",
         "reference_id": "reliable-trust",
         "label": "READ DEEPER",
-        "why": "Calibrated trust helps define how much autonomy a code-running agent should receive before isolation, review, escalation, or rollback is required."
+        "why": "Use calibrated-trust principles when deciding how much autonomy, isolation, review, escalation, and rollback an agent should receive."
       }
     ]
   }

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-21",
-  "updated_at": "2026-09-21T16:05:00Z",
-  "baseline_note": "September 21 recovery review: all existing topics were revalidated for publication continuity. New first-party evidence was added for reusable Agent Skills and production agent-runtime engineering; no new Watchlist topic cleared the publication gate.",
+  "edition_date": "2026-09-22",
+  "updated_at": "2026-09-22T14:10:00Z",
+  "baseline_note": "September 22 review: one new early-signal topic was added for System One decision models/Jev; two existing topics received new primary evidence for reusable Agent Skills and harness/task-completion evaluation; thirteen topics were carried forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -742,7 +742,7 @@
       "limitations": "Usage telemetry does not establish correctness, business value, or security of an individual skill or agent.",
       "next_action": "Package one stable expert procedure as a reusable skill, then pair usage telemetry with outcome and quality checks.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-21T16:05:00Z",
+      "updated_at": "2026-09-22T13:46:00Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -775,6 +775,16 @@
           "checked_at": "2026-09-21T14:28:00Z",
           "development_id": "aws-hcls-agent-skills-2026-09-16",
           "review_depth": "full publisher article and bounded evidence packet"
+        },
+        {
+          "title": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
+          "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+          "publisher": "AWS Machine Learning",
+          "kind": "primary",
+          "publication_date": "2026-09-18",
+          "checked_at": "2026-09-22T13:46:00Z",
+          "development_id": "sagemaker-huggingface-agent-skills",
+          "review_depth": "full publisher announcement"
         }
       ],
       "external_attention": [],
@@ -981,7 +991,7 @@
       "limitations": "The research is early and results from coding or robotics may not transfer directly to other agent domains.",
       "next_action": "Separate model/agent logic from the harness around it and make measurement, runtime controls, and verification explicit.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-21T16:05:00Z",
+      "updated_at": "2026-09-22T13:46:00Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -1044,6 +1054,16 @@
           "checked_at": "2026-09-21T14:28:00Z",
           "development_id": "aws-agentcore-runtime-2026-09-18",
           "review_depth": "full publisher article and bounded evidence packet"
+        },
+        {
+          "title": "How to Evaluate AI Agents From Tool Calls to Task Completion",
+          "url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+          "publisher": "NVIDIA Developer",
+          "kind": "primary",
+          "publication_date": "2026-09-21",
+          "checked_at": "2026-09-22T13:46:00Z",
+          "development_id": "nvidia-agent-task-completion-evaluation",
+          "review_depth": "full publisher announcement"
         }
       ],
       "external_attention": [],
@@ -1302,6 +1322,77 @@
       },
       "trial_story_ids": [],
       "research_score": 61
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "name": "Decision models emerge as a separate AI systems layer",
+      "audience": "AI engineers, agent builders, and technical leaders",
+      "summary": "Specialized models return typed, probabilistic decisions for software workflows instead of generating free-form text.",
+      "why_now": "TypeSafe AI introduced Jev on September 15 as its first System One Model, built for fast structured decisions with calibrated probabilities, and the launch has quickly drawn broader technical coverage.",
+      "practical_value": "Could move routing, classification, scoring, triage, and agent-control decisions out of general-purpose text generation and into a lower-latency typed decision layer.",
+      "limitations": "The core performance and efficiency claims currently come from the vendor; the model is hosted, its low-level architecture and training data are not public, and teams still need task-specific calibration and independent evaluation.",
+      "next_action": "Compare Jev with LLM-based classifiers and simpler baselines on representative routing and agent-control tasks, while tracking calibration, robustness, prompt-injection exposure, latency, and cost.",
+      "first_detected": "2026-09-22T14:10:00Z",
+      "updated_at": "2026-09-22T14:10:00Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Introducing System One Models & Jev",
+          "url": "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+          "publisher": "TypeSafe AI",
+          "kind": "primary",
+          "publication_date": "2026-09-15",
+          "checked_at": "2026-09-22T14:10:00Z",
+          "development_id": "typesafe-jev-launch-2026-09-15",
+          "review_depth": "full publisher launch article"
+        },
+        {
+          "title": "What is Jev, an AI 'generalist' model with a new take on decision-making?",
+          "url": "https://indianexpress.com/article/technology/artificial-intelligence/meet-jev-new-ai-model-from-chatgpt-inventor-10887591/",
+          "publisher": "The Indian Express",
+          "kind": "discussion",
+          "publication_date": "2026-09-21",
+          "checked_at": "2026-09-22T14:10:00Z",
+          "development_id": "typesafe-jev-launch-2026-09-15",
+          "review_depth": "independent secondary coverage of the same launch"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation. Rapid secondary and creator attention triggered inclusion, but comparable repeated measurements are not yet available."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "A dedicated typed-decision model is a materially different systems primitive from a conventional text-generating LLM."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "The official launch and product contract are verifiable, but major performance claims still need independent task-level evaluation."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "Independent coverage exists, but the principal technical evidence still traces to the TypeSafe launch rather than multiple independent model developments."
+        },
+        "momentum": {
+          "score": 4,
+          "reason": "The launch has generated rapid secondary and creator attention within roughly one week, warranting active tracking."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to agent routing, guardrails, classification, scoring, triage, and reliable automated workflows."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "Separating structured decisions from generative text could remain useful even if Jev itself is later superseded."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 76
     }
   ]
 }
