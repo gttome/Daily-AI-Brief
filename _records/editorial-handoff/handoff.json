@@ -4,7 +4,7 @@
   "staging_ref": "editorial-handoff/production/2026-09-22",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
-  "images_path": "",
+  "images_path": "_records/editorial-handoff/images-2026-09-22.json",
   "media_path": "_records/editorial-handoff/media.json",
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
@@ -13,6 +13,6 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "repair_attempt": 1,
-  "repair_note": "Kernel contract repair: supported what_to_do_now enums plus required editorial_takeaway, media_decisions, and changed_watchlist_topics."
+  "repair_attempt": 2,
+  "repair_note": "Image gate repair: six previously accepted professional OpenAI-generated assets recovered into Sep 22 story paths with explicit reuse provenance; low-detail deterministic fallback remains prohibited."
 }
