@@ -193,3 +193,8 @@ After the editorial bundle and six accepted images are saved, create an isolated
 The push-triggered `Post-editorial deterministic publication` GitHub Actions workflow owns canonical expansion, generated views, repository tests, contract validation, publication PR creation, protected CI/promotion, Pages completion, deterministic delta validation, and the public-safe Command Center delta. The Work task must not run those stages itself and must not poll CI, merge state, Pages, or live validation after handoff.
 
 The successful September 18 canary showed that 20 metadata candidates, nine deep reviews, one editorial pass, an 11,176-character evidence package, and six fresh accepted 1200x630 images can satisfy the structural editorial contract. Under the runtime capsule, model-visible editorial evidence is therefore capped at 12,000 characters and the research capsule at 6,500 characters. If those bounded inputs cannot support a compliant six-story edition, preserve the last valid edition rather than broadening the model context or starting a second semantic pass.
+
+
+## September 22, 2026 — emerging Watchlist discovery gate
+
+For editions dated September 23, 2026 or later, the publisher must satisfy `_data/emerging-signal-policy.json` during the same single semantic pass that handles Watchlist/media/book relevance. The compact runtime contract is authoritative. The publisher must create `_records/watchlist-sweeps/YYYY-MM-DD.json` before handoff. Repository tests bind that receipt to the public Watchlist daily delta. Missing receipt, missing broad-web or YouTube creator coverage, or an uncertified zero-new result is a Watchlist discovery defect; do not silently convert it into “0 new today.”
