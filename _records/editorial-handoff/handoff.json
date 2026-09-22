@@ -1,17 +1,16 @@
 {
   "schema_version": "1.0.0",
   "execution_mode": "production",
-  "staging_ref": "editorial-handoff/production/2026-09-21-recovery",
+  "staging_ref": "editorial-handoff/production/2026-09-22",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
-  "images_path": "_records/editorial-handoff/images-2026-09-21.json",
+  "images_path": "",
   "media_path": "_records/editorial-handoff/media.json",
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
   "image_transport_method": "github_git_data_api",
-  "coverage_period": "24-hour primary window ending at 2026-09-21T14:28:00Z; recency fallback permitted only for reviewed items inside the documented policy windows.",
+  "coverage_period": "Coverage emphasizes verified developments from September 18 through September 22, 2026, with priority given to the most recent evidence.",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
-  "deterministic_validation_model_calls": 0,
-  "recovery_revision": 4
+  "deterministic_validation_model_calls": 0
 }
