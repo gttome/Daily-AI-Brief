@@ -13,6 +13,6 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "repair_attempt": 2,
-  "repair_note": "Image gate repair: six previously accepted professional OpenAI-generated assets recovered into Sep 22 story paths with explicit reuse provenance; low-detail deterministic fallback remains prohibited."
+  "repair_attempt": 3,
+  "repair_note": "Publication-stage repair: current deterministic contract requires exactly two included podcasts from 2026-09-19 onward; added a second verified recent podcast and aligned kernel media decisions."
 }
