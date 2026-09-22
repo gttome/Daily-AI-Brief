@@ -13,6 +13,6 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "repair_attempt": 3,
-  "repair_note": "Publication-stage repair: current deterministic contract requires exactly two included podcasts from 2026-09-19 onward; added a second verified recent podcast and aligned kernel media decisions."
+  "repair_attempt": 4,
+  "repair_note": "Podcast fallback metadata repair: second verified podcast is explicitly classified fallback_7d with documented freshness exception."
 }
