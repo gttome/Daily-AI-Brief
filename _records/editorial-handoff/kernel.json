@@ -255,7 +255,7 @@
       "source_url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "map",
+        "action": "evaluate",
         "label": "Redesign one workflow around outcomes",
         "rationale": "Choose one repeatable business process and define agent actions, data access, approval points, exceptions, and measurable outcomes."
       },
@@ -409,7 +409,7 @@
       "source_url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "secure",
+        "action": "update_policy",
         "label": "Treat agent code as untrusted",
         "rationale": "Place code-executing agents behind isolated runtimes, least-privilege policies, outbound network controls, tenant boundaries, and audit logs."
       },
@@ -468,5 +468,23 @@
         ]
       }
     }
+  ],
+  "editorial_takeaway": "Today’s edition centers on making agents operationally dependable: evaluate complete tasks rather than isolated tool calls, measure full-system performance, redesign knowledge workflows around evidence and human control, package repeatable procedures as Agent Skills, and contain code-running agents with defense-in-depth security.",
+  "media_decisions": {
+    "videos": {
+      "status": "included",
+      "count": 2,
+      "note": "Two current short-form AI videos verified within the <=10 minute target."
+    },
+    "podcasts": {
+      "status": "included",
+      "count": 1,
+      "note": "One current-day Reuters AI podcast selected; duration left unpinned where independent verification was unavailable."
+    }
+  },
+  "changed_watchlist_topics": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-ai-adoption-telemetry",
+    "dab-topic-harness-engineering"
   ]
 }
