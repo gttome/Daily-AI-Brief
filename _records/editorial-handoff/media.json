@@ -86,13 +86,14 @@
       "selection_rationale": "Verified September 19 episode from a separate show and source, satisfying the two-podcast publication contract.",
       "verification_note": "Independent current podcast listings verify the September 19 publication date and a 1:07:57 runtime.",
       "coverage_note": "Primary recent podcast window; source-diverse from Reuters Morning Bid.",
-      "freshness_tier": "primary_48h",
+      "freshness_tier": "fallback_7d",
       "platforms": [
         {
           "name": "Tapesearch",
           "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
         }
-      ]
+      ],
+      "freshness_exception_reason": "No second qualifying current-day or primary-window podcast from a distinct source cleared the publication contract; this verified September 19 episode is within the documented 7-day fallback window."
     }
   ]
 }
