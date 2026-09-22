@@ -61,6 +61,38 @@
           "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/"
         }
       ]
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-22-ai-doom-backlash",
+      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "show": "Big Technology Podcast",
+      "host": "Alex Kantrowitz",
+      "publication_date": "2026-09-19",
+      "runtime_seconds": 4077,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI safety",
+        "frontier labs",
+        "AI economics",
+        "governance"
+      ],
+      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
+      "permanent_url": "/podcasts/2026-09-22/ai-doom-backlash/",
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
+      "why_useful": "The episode adds a business and governance lens to the operational engineering changes covered elsewhere in the Brief.",
+      "connection": "Pairs with today’s production-maturity focus by asking what accountability, economics, and evidence should look like as AI systems become more capable.",
+      "selection_rationale": "Verified September 19 episode from a separate show and source, satisfying the two-podcast publication contract.",
+      "verification_note": "Independent current podcast listings verify the September 19 publication date and a 1:07:57 runtime.",
+      "coverage_note": "Primary recent podcast window; source-diverse from Reuters Morning Bid.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Tapesearch",
+          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+        }
+      ]
     }
   ]
 }
