@@ -1,0 +1,74 @@
+{
+  "m03": {
+    "path": "briefs/images/2026-09-22/01-agent-evaluation-task-completion.png",
+    "alt": "Professional editorial diagram used for the September 22 agent evaluation story, emphasizing measured system performance, workflow checkpoints, and outcome verification.",
+    "kind": "editorial_explainer",
+    "quality_accepted": true,
+    "generation_method": "openai_image_generation",
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "visual_review": "accepted_professional_textbook_editorial",
+    "source_asset": "Emergency recovery from a previously approved professional OpenAI-generated benchmarking composition; provenance preserved.",
+    "recovery_reuse": true
+  },
+  "m02": {
+    "path": "briefs/images/2026-09-22/02-ros2-ai-agent-gpu-zero-copy.png",
+    "alt": "Professional editorial diagram used for the September 22 AI-assisted engineering story, emphasizing system components, engineering workflow, and operational validation.",
+    "kind": "editorial_explainer",
+    "quality_accepted": true,
+    "generation_method": "openai_image_generation",
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "visual_review": "accepted_professional_textbook_editorial",
+    "source_asset": "Emergency recovery from a previously approved professional OpenAI-generated engineering composition; provenance preserved.",
+    "recovery_reuse": true
+  },
+  "m05": {
+    "path": "briefs/images/2026-09-22/03-medical-claims-idp-ai.png",
+    "alt": "Professional editorial diagram used for the September 22 medical claims workflow story, showing document processing, AI assistance, structured evidence, and human review.",
+    "kind": "editorial_explainer",
+    "quality_accepted": true,
+    "generation_method": "openai_image_generation",
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "visual_review": "accepted_professional_textbook_editorial",
+    "source_asset": "Emergency recovery from a previously approved professional OpenAI-generated document-agent composition; provenance preserved.",
+    "recovery_reuse": true
+  },
+  "m06": {
+    "path": "briefs/images/2026-09-22/04-agentic-business-workflows.png",
+    "alt": "Professional editorial diagram used for the September 22 agentic enterprise workflow story, showing connected business tools, workflow orchestration, controls, and outcomes.",
+    "kind": "editorial_explainer",
+    "quality_accepted": true,
+    "generation_method": "openai_image_generation",
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "visual_review": "accepted_professional_textbook_editorial",
+    "source_asset": "Emergency recovery from a previously approved professional OpenAI-generated connected-workflow composition; provenance preserved.",
+    "recovery_reuse": true
+  },
+  "m01": {
+    "path": "briefs/images/2026-09-22/05-sagemaker-agent-skills.png",
+    "alt": "Professional editorial diagram used for the September 22 Agent Skills story, showing reusable skill packaging, deployment steps, verification, monitoring, and teardown.",
+    "kind": "editorial_explainer",
+    "quality_accepted": true,
+    "generation_method": "openai_image_generation",
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "visual_review": "accepted_professional_textbook_editorial",
+    "source_asset": "Emergency recovery from a previously approved professional OpenAI-generated Agent Skills composition; provenance preserved.",
+    "recovery_reuse": true
+  },
+  "m09": {
+    "path": "briefs/images/2026-09-22/06-multitenant-agent-security.png",
+    "alt": "Professional editorial diagram used for the September 22 agent security story, showing isolated execution, sandbox boundaries, policy controls, and protected data flows.",
+    "kind": "editorial_explainer",
+    "quality_accepted": true,
+    "generation_method": "openai_image_generation",
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "visual_review": "accepted_professional_textbook_editorial",
+    "source_asset": "Emergency recovery from a previously approved professional OpenAI-generated enterprise sandbox composition; provenance preserved.",
+    "recovery_reuse": true
+  }
+}

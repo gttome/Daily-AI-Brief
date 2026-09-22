@@ -9,10 +9,9 @@ test('single development and unmeasured momentum cannot advance',()=>{const copy
 test('private ballots cannot leak into public data',()=>{const copy=structuredClone(data);copy.ballot_hash='secret';assert.ok(validateWatchlist(copy).includes('Private data in public watchlist'));});
 
 
-test('current homepage Watchlist preview shows daily counts and lists updated items when there are no new topics',()=>{
+test('current homepage Watchlist preview shows daily counts and lists new items',()=>{
  const preview=watchlistPreview(data.edition_date,data);
- assert.match(preview,/0 new today · 2 updated · 13 carried forward\./);
- assert.match(preview,/Updated today:/);
- assert.match(preview,/Reusable agent skills become observable/);
- assert.match(preview,/AI harness engineering becomes a first-class layer/);
+ assert.match(preview,/1 new today · 2 updated · 13 carried forward\./);
+ assert.match(preview,/New today:/);
+ assert.match(preview,/Decision models emerge as a separate AI systems layer/);
 });

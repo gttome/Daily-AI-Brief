@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-22",
+  "checked_at": "2026-09-22T13:43:00Z",
+  "basis": "Current independent web verification plus preserved direct publisher URLs; video metadata cross-checked against current Daily Curry listings, podcast metadata against Reuters/Tapesearch.",
+  "items": [
+    {
+      "item_id": "dab-video-2026-09-22-general",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-21",
+      "observed_runtime_seconds": 306
+    },
+    {
+      "item_id": "dab-video-2026-09-22-agent-skills",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-21",
+      "observed_runtime_seconds": 373
+    },
+    {
+      "item_id": "dab-podcast-2026-09-22-ais-new-muse",
+      "kind": "podcast",
+      "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-22",
+      "observed_runtime_seconds": null
+    },
+    {
+      "item_id": "dab-podcast-2026-09-22-ai-doom-backlash",
+      "kind": "podcast",
+      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
+      "reachable": true,
+      "http_status": 200,
+      "observed_date": "2026-09-19",
+      "observed_runtime_seconds": 4077
+    }
+  ]
+}
