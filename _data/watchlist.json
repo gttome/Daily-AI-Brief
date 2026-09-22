@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-21",
-  "updated_at": "2026-09-21T16:05:00Z",
-  "baseline_note": "September 21 recovery review: all existing topics were revalidated for publication continuity. New first-party evidence was added for reusable Agent Skills and production agent-runtime engineering; no new Watchlist topic cleared the publication gate.",
+  "edition_date": "2026-09-22",
+  "updated_at": "2026-09-22T13:45:00Z",
+  "baseline_note": "September 22 daily review completed. Existing topics and evidence were carried forward unchanged; no new topic evidence is asserted by this freshness roll-forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
