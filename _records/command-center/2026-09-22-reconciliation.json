@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "command_center_reconciliation",
+  "edition_date": "2026-09-22",
+  "reconciled_at": "2026-09-22T18:00:00Z",
+  "source": {
+    "repository": "gttome/Daily-AI-Brief",
+    "main_sha": "69abfc7bafc1dd1248547175008282419314f2a3",
+    "delta_validation_workflow_run_id": 35754102575,
+    "delta_validation_artifact_id": 10706064012,
+    "command_center_delta_generated_at": "2026-09-22T16:27:38.806Z"
+  },
+  "publication": {
+    "status": "verified",
+    "validation_result": "pass",
+    "coverage": {
+      "articles": 6,
+      "videos": 2,
+      "podcasts": 2,
+      "included_items": 10
+    },
+    "images": {
+      "expected": 6,
+      "accepted_locked": 6,
+      "integrity_passed": 6,
+      "canonical_hosted": 6,
+      "status": "pass"
+    },
+    "critical_checks": {
+      "publication_receipt": "pass",
+      "canonical_edition_contract": "pass",
+      "local_release_artifacts": "pass",
+      "image_asset_lock": "pass",
+      "live_changed_routes": "pass",
+      "pages_deployment": "pass",
+      "command_center_access_contract": "pass"
+    },
+    "high_checks": {
+      "podcast_collection_contract": "pass",
+      "image_integrity_dimensions": "pass",
+      "source_http_state": "pass",
+      "rating_share_generated_ids": "pass",
+      "accessibility_assertions": "pass",
+      "canonical_url_parity": "pass",
+      "command_center_public_read": "pass"
+    }
+  },
+  "watchlist": {
+    "changed_topics": [
+      "dab-topic-system-one-decision-models"
+    ],
+    "carried_topics": [
+      "dab-topic-collaborative-vibe-coding",
+      "dab-topic-repairable-generative-design",
+      "dab-topic-image-edit-restoration",
+      "dab-topic-adaptive-agent-safeguards",
+      "dab-topic-concept-level-language-models",
+      "dab-topic-memory-guided-planning",
+      "dab-topic-recursive-scene-programs",
+      "dab-topic-selective-precision-attention",
+      "dab-topic-agent-skills-observability",
+      "dab-topic-long-horizon-agents",
+      "dab-topic-ai-adoption-telemetry",
+      "dab-topic-harness-engineering",
+      "dab-topic-agentic-edge-inference",
+      "dab-topic-model-lifecycle-governance",
+      "dab-topic-agent-overclaiming"
+    ],
+    "removed_topics": [],
+    "semantic_refresh_topic_ids": [
+      "dab-topic-system-one-decision-models"
+    ],
+    "model_calls": 0
+  },
+  "private_domains": {
+    "retention": "private_unverified",
+    "book_backlog": "private_unverified",
+    "learning": "deferred",
+    "measurements": "credit_target_unverified",
+    "note": "No private owner records are copied into this public-safe reconciliation record."
+  },
+  "command_center": {
+    "repository_reconciliation": "complete",
+    "public_safe_delta": "available",
+    "owner_operations_check": "not_applicable",
+    "live_owner_state_mutation": "not_configured",
+    "live_site_sync_status": "external_sync_required",
+    "reason": "The repository contract exposes no authorized Command Center owner-state mutation endpoint or credential. This record is the durable repository-side reconciliation source for the existing sync path."
+  }
+}
