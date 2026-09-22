@@ -2,97 +2,63 @@
   "worth_watching": {
     "general": {
       "status": "included",
-      "title": "NVIDIA PAIR Connects Your Computers for Local AI",
-      "channel": "Matthew Berman",
-      "upload_date": "2026-09-18",
-      "runtime_seconds": 66,
-      "why_useful": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.",
-      "connection": "Pairs with today’s production-runtime story by showing how AI infrastructure is becoming more distributed and workload-aware.",
-      "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
+      "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+      "channel": "AICodeKing",
+      "upload_date": "2026-09-21",
+      "runtime_seconds": 306,
+      "why_useful": "A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.",
+      "connection": "Extends today's engineering coverage from agent evaluation into practical coding-agent orchestration and workflow controls.",
+      "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
       "duration_tier": "short",
       "short_search_evidence": [
-        "Independent current listings verify the 1:06 runtime and September 18 publication date."
+        "Independent current listings verify the September 21 publication date and 5:06 runtime."
       ]
     },
     "agents_non_technical_people": {
       "status": "included",
-      "title": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
-      "channel": "Nate Herk | AI Automation",
+      "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+      "channel": "AICodeKing",
       "upload_date": "2026-09-18",
-      "runtime_seconds": 700,
-      "why_useful": "A practical look at how Claude can support a highly automated one-person business, including repeatable work across software, sales, and support.",
-      "connection": "Complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state of reusable AI workflows.",
-      "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
-      "duration_tier": "fallback",
+      "runtime_seconds": 373,
+      "why_useful": "A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.",
+      "connection": "Pairs directly with today's agent-evaluation story by showing why the surrounding harness can materially change task outcomes.",
+      "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+      "duration_tier": "short",
       "short_search_evidence": [
-        "Independent current listings verify the 11:40 runtime and September 18 publication date.",
-        "No stronger qualifying current agent-focused video at or below 10 minutes cleared the bounded editorial bar."
-      ],
-      "fallback_reason": "No agent-focused video at 10 minutes or less met the current freshness and editorial-quality requirements; this verified 11:40 video remains below the 20-minute fallback ceiling."
+        "Independent current listings verify the September 18 publication date and 6:13 runtime."
+      ]
     }
   },
   "podcasts": [
     {
       "status": "included",
       "ordinal": 9,
-      "item_id": "dab-podcast-2026-09-21-inside-chinas-ai-race",
-      "title": "Inside China's AI race",
-      "show": "Reuters On Assignment",
+      "item_id": "dab-podcast-2026-09-22-ais-new-muse",
+      "title": "AI's new Muse",
+      "show": "Reuters Morning Bid",
       "host": "Reuters",
-      "publication_date": "2026-09-19",
+      "publication_date": "2026-09-22",
       "runtime_seconds": null,
-      "focus": "technical_ai_engineering",
+      "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "AI competition",
-        "chips",
-        "distillation",
-        "AI safeguards"
+        "AI assistants",
+        "agentic commerce",
+        "enterprise AI",
+        "markets"
       ],
-      "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/",
-      "permanent_url": "/podcasts/2026-09-21/inside-chinas-ai-race/",
-      "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.",
-      "why_useful": "It gives readers a broader systems view of AI capability and infrastructure beyond individual model releases.",
-      "connection": "Complements today’s engineering stories by showing how compute, deployment, and policy shape AI systems.",
-      "selection_rationale": "Fresh September 19 Reuters technology podcast from a distinct source.",
-      "verification_note": "Reuters verifies the September 19 publication date. Independent duration listings conflict, so runtime is intentionally left unpinned rather than inventing precision.",
-      "coverage_note": "Primary 48-hour podcast window; source-diverse from Big Technology Podcast.",
+      "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/",
+      "permanent_url": "/podcasts/2026-09-22/ais-new-muse/",
+      "summary": "Reuters examines the market response to Meta's new AI assistant Muse and the broader implications of increasingly agentic consumer and business interfaces.",
+      "why_useful": "It adds a market and adoption lens to today's technical and workflow-focused Brief.",
+      "connection": "Complements the enterprise-workflow stories by showing how agentic interfaces are beginning to affect platform strategy and user behavior.",
+      "selection_rationale": "Current-day Reuters podcast with direct AI relevance and source diversity.",
+      "verification_note": "Reuters verifies the September 22 publication date; runtime is intentionally left unpinned where a reliable duration could not be independently confirmed.",
+      "coverage_note": "Current-day source-diverse podcast selection.",
       "freshness_tier": "primary_48h",
       "platforms": [
         {
           "name": "Reuters",
-          "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/"
-        }
-      ]
-    },
-    {
-      "status": "included",
-      "ordinal": 10,
-      "item_id": "dab-podcast-2026-09-21-ai-doom-backlash",
-      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
-      "show": "Big Technology Podcast",
-      "host": "Alex Kantrowitz",
-      "publication_date": "2026-09-19",
-      "runtime_seconds": 4077,
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "AI safety",
-        "frontier labs",
-        "AI economics",
-        "governance"
-      ],
-      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
-      "permanent_url": "/podcasts/2026-09-21/ai-doom-backlash/",
-      "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
-      "why_useful": "The episode adds a business and governance lens to the operational engineering changes covered elsewhere in the brief.",
-      "connection": "Pairs with today’s focus on production maturity by asking what accountability, economics, and evidence should look like as AI systems become more capable.",
-      "selection_rationale": "Fresh September 19 episode from a separate show/source.",
-      "verification_note": "Independent current podcast listings verify the September 19 publication date and a 1:07:57 runtime.",
-      "coverage_note": "Primary 48-hour podcast window; source-diverse from Reuters On Assignment.",
-      "freshness_tier": "primary_48h",
-      "platforms": [
-        {
-          "name": "Tapesearch",
-          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+          "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/"
         }
       ]
     }
