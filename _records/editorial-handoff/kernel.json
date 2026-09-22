@@ -1,377 +1,146 @@
 {
   "schema_version": "1.0.0",
-  "brief_date": "2026-09-21",
-  "edition_id": "dab-edition-2026-09-21",
-  "baseline_sha": "d1ddd4f0300ac15c0ec9eb22494cc59e6b10afe8",
+  "brief_date": "2026-09-22",
+  "edition_id": "dab-edition-2026-09-22",
+  "baseline_sha": "10236fa4c363a868d882044c97501a08bf8e8f58",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
   "stories": [
     {
       "candidate_id": "m03",
-      "story_id": "copilot-model-deprecations-2026-09-21",
+      "story_id": "agent-evaluation-task-completion-2026-09-22",
       "canonical_ordinal": 1,
       "focus": "technical_ai_engineering",
-      "headline": "GitHub sets an October deadline for several Copilot models",
-      "summary": "GitHub says selected models will be removed from Copilot experiences on October 19, creating a concrete migration deadline for teams that depend on model-specific behavior in chat, edits, agent mode, or completions.",
-      "why_it_matters": "Model deprecations are operational changes, not just catalog cleanup. Teams need to identify workflows tied to retiring models, test alternatives, and update guidance before the cutoff turns a routine platform change into broken developer workflows.",
-      "editorial_limitation": "The announcement is specific to GitHub Copilot and does not establish that every affected team will see the same migration effort or quality tradeoffs.",
+      "headline": "Agent evaluation is moving from tool-call scores to full task completion",
+      "summary": "NVIDIA describes an evaluation approach that tests whether agents complete multi-step work in executable environments, tracking state across sequences of tool calls instead of judging isolated function invocations.",
+      "why_it_matters": "An agent can make individually valid tool calls and still fail the job. Production evaluation therefore needs end-to-end task outcomes, environment state, recovery behavior, and repeatability—not only model-level or single-call accuracy.",
+      "editorial_limitation": "The source presents NVIDIA's evaluation approach and examples; teams should validate the methodology against their own environments, failure modes, and service-level requirements.",
       "topic_labels": [
-        "Copilot",
-        "model lifecycle",
-        "deprecation",
-        "developer workflow"
+        "agent evaluation",
+        "tool use",
+        "task completion",
+        "AI reliability"
       ],
-      "source_url": "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+      "source_url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Add end-to-end agent tests",
+        "rationale": "Create representative tasks with executable environments and score completion, state changes, recovery, and final outcomes rather than isolated calls."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "From tool calls to task completion",
+        "alt_text": "Process diagram showing an agent plan, sequential tool calls, environment state changes, recovery checks, and final task completion.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Task goal",
+            "detail": "Define a real outcome in an executable environment."
+          },
+          {
+            "id": "n2",
+            "label": "Tool sequence",
+            "detail": "Run the multi-step chain of calls needed to complete the work."
+          },
+          {
+            "id": "n3",
+            "label": "State + recovery",
+            "detail": "Track environment state, errors, retries, and corrections."
+          },
+          {
+            "id": "n4",
+            "label": "Completion",
+            "detail": "Score whether the intended result was actually achieved."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "plan"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "execute"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "verify"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Correct individual calls do not guarantee a successful workflow."
+          },
+          {
+            "anchor": "n4",
+            "text": "The unit of quality is the completed task, not the isolated tool invocation."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m02",
+      "story_id": "ros2-ai-agent-gpu-zero-copy-2026-09-22",
+      "canonical_ordinal": 2,
+      "focus": "technical_ai_engineering",
+      "headline": "AI-assisted ROS 2 optimization targets zero-copy GPU data paths",
+      "summary": "NVIDIA shows how an AI agent can help accelerate a ROS 2 node using Isaac ROS, including GPU-resident buffers and zero-copy transport when runtime conditions permit while preserving standard ROS 2 message and node boundaries.",
+      "why_it_matters": "AI-assisted development is increasingly reaching systems code and performance engineering. The useful pattern is not simply generating CUDA code; it is reasoning across data movement, runtime constraints, interfaces, and verification so optimization survives in the full graph.",
+      "editorial_limitation": "The example is specific to NVIDIA's robotics stack and hardware path; gains depend on workload shape, message flow, GPU availability, and system-level bottlenecks.",
+      "topic_labels": [
+        "robotics",
+        "AI-assisted development",
+        "GPU acceleration",
+        "ROS 2"
+      ],
+      "source_url": "https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "test",
-        "label": "Test replacement models now",
-        "rationale": "Inventory any Copilot workflows that depend on the retiring models and compare supported alternatives before the October 19 cutoff."
+        "label": "Measure the full data path",
+        "rationale": "When using AI to optimize performance code, benchmark memory movement and end-to-end graph behavior, not only the generated kernel."
       },
       "visual": {
         "layout": "process",
-        "title": "Copilot model deprecation migration",
-        "alt_text": "Process diagram showing current Copilot models, affected workflows, replacement-model testing, and migration before the October 19 deadline.",
+        "title": "AI-assisted ROS 2 acceleration path",
+        "alt_text": "Process diagram showing a ROS 2 node, GPU-resident payloads, zero-copy transport, accelerated processing, and end-to-end validation.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Current models",
-            "detail": "Identify retiring Copilot models in active use."
+            "label": "ROS 2 node",
+            "detail": "Start with the existing node and message boundaries."
           },
           {
             "id": "n2",
-            "label": "Affected workflows",
-            "detail": "Map chats, edits, agents, and completions that depend on them."
+            "label": "GPU-resident buffer",
+            "detail": "Keep eligible payloads on the GPU."
           },
           {
             "id": "n3",
-            "label": "Replacement tests",
-            "detail": "Compare supported models on representative tasks."
+            "label": "Zero-copy transport",
+            "detail": "Avoid unnecessary host-device copies when conditions allow."
           },
           {
             "id": "n4",
-            "label": "Migration",
-            "detail": "Update defaults and guidance before October 19."
+            "label": "Graph validation",
+            "detail": "Measure latency and behavior across the complete ROS 2 graph."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "flow"
+            "label": "move"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "flow"
-          },
-          {
-            "from": "n3",
-            "to": "n4",
-            "label": "flow"
-          }
-        ],
-        "callouts": [
-          {
-            "anchor": "n2",
-            "text": "Deprecations become reliability issues when model choices are embedded in workflows."
-          },
-          {
-            "anchor": "n4",
-            "text": "A bounded migration window is easier to manage before the platform cutoff."
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "m04",
-      "story_id": "copilot-code-review-improvements-2026-09-21",
-      "canonical_ordinal": 2,
-      "focus": "technical_ai_engineering",
-      "headline": "Copilot code review adds clearer progress and smarter suggestion handling",
-      "summary": "GitHub updated Copilot code review with clearer visibility into review progress, more intelligent auto-resolution of suggestions, and generated commit messages when developers accept batches of proposed changes.",
-      "why_it_matters": "AI-assisted review is moving from isolated comments toward a more stateful review workflow. Better progress visibility and suggestion lifecycle handling can reduce review friction, but teams still need controls for what gets accepted and how changes are verified.",
-      "editorial_limitation": "These are workflow improvements from the product publisher; their practical value depends on repository practices, review policies, and how often teams accept AI-generated suggestions.",
-      "topic_labels": [
-        "Copilot",
-        "code review",
-        "software engineering",
-        "AI-assisted development"
-      ],
-      "source_url": "https://github.blog/changelog/2026-09-18-copilot-code-review-an-improved-review-experience",
-      "agent_skill": false,
-      "what_to_do_now": {
-        "action": "evaluate",
-        "label": "Evaluate the review workflow",
-        "rationale": "Test the updated review experience on representative pull requests and confirm that accepted suggestions still pass the same human and automated checks."
-      },
-      "visual": {
-        "layout": "process",
-        "title": "AI-assisted code review loop",
-        "alt_text": "Process diagram showing pull request review, AI suggestions, human verification, and accepted changes with generated commit context.",
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "Pull request",
-            "detail": "Start with the code and review context."
-          },
-          {
-            "id": "n2",
-            "label": "AI review",
-            "detail": "Generate suggestions and track review progress."
-          },
-          {
-            "id": "n3",
-            "label": "Human verification",
-            "detail": "Assess relevance, correctness, and risk."
-          },
-          {
-            "id": "n4",
-            "label": "Accepted change",
-            "detail": "Apply verified suggestions with clearer commit context."
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n2",
-            "label": "flow"
-          },
-          {
-            "from": "n2",
-            "to": "n3",
-            "label": "flow"
-          },
-          {
-            "from": "n3",
-            "to": "n4",
-            "label": "flow"
-          }
-        ],
-        "callouts": [
-          {
-            "anchor": "n3",
-            "text": "Workflow polish does not replace human review or automated tests."
-          },
-          {
-            "anchor": "n4",
-            "text": "The important shift is managing suggestion state, not merely generating comments."
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "m05",
-      "story_id": "microsoft-india-ai-ready-infrastructure-2026-09-21",
-      "canonical_ordinal": 3,
-      "focus": "applied_genai_knowledge_workers",
-      "headline": "Microsoft links AI-ready infrastructure with workforce readiness in India",
-      "summary": "Microsoft says its India datacenter regions are now AI-enabled and highlights workforce training at national scale, pairing infrastructure availability with the skills needed to move enterprise AI from pilots into operational use.",
-      "why_it_matters": "Knowledge-worker adoption depends on more than access to models. Infrastructure, governance, organizational readiness, and employee capability have to advance together if AI is going to become part of normal business operations.",
-      "editorial_limitation": "The source is a Microsoft announcement about its own investments and programs, so deployment outcomes and workforce impact should be evaluated independently by each organization.",
-      "topic_labels": [
-        "enterprise AI",
-        "workforce readiness",
-        "cloud infrastructure",
-        "AI adoption"
-      ],
-      "source_url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
-      "agent_skill": false,
-      "what_to_do_now": {
-        "action": "evaluate",
-        "label": "Check readiness as a system",
-        "rationale": "Assess whether your AI program has aligned infrastructure, governance, training, and workflow redesign rather than treating model access as the only dependency."
-      },
-      "visual": {
-        "layout": "process",
-        "title": "Enterprise AI readiness stack",
-        "alt_text": "Layered process diagram showing AI infrastructure, governance, workforce capability, and operational workflows combining into enterprise readiness.",
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "AI infrastructure",
-            "detail": "Provide capable compute, platforms, and regional availability."
-          },
-          {
-            "id": "n2",
-            "label": "Governance",
-            "detail": "Define access, data, security, and accountability controls."
-          },
-          {
-            "id": "n3",
-            "label": "Workforce capability",
-            "detail": "Build practical AI literacy and role-specific skills."
-          },
-          {
-            "id": "n4",
-            "label": "Operational workflows",
-            "detail": "Embed AI into repeatable business processes."
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n2",
-            "label": "flow"
-          },
-          {
-            "from": "n2",
-            "to": "n3",
-            "label": "flow"
-          },
-          {
-            "from": "n3",
-            "to": "n4",
-            "label": "flow"
-          }
-        ],
-        "callouts": [
-          {
-            "anchor": "n3",
-            "text": "Training has the most value when it is tied to real work."
-          },
-          {
-            "anchor": "n4",
-            "text": "AI readiness is a system property, not a model purchase."
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "m06",
-      "story_id": "ibm-chro-critical-thinking-ai-2026-09-21",
-      "canonical_ordinal": 4,
-      "focus": "applied_genai_knowledge_workers",
-      "headline": "IBM finds a gap between AI supervision needs and employee priorities",
-      "summary": "IBM reports that 71% of surveyed CHROs identify the ability to supervise, validate, and override AI outputs as a critical workforce skill, while only 29% of employees rank judgment as important, alongside concerns about skills erosion.",
-      "why_it_matters": "Organizations may be scaling AI faster than they are building the human judgment needed to use it responsibly. The practical challenge is to make verification, escalation, and override behavior part of everyday work rather than abstract AI training.",
-      "editorial_limitation": "This is IBM-sponsored research based on surveyed CHROs and employees; reported attitudes do not by themselves prove how specific organizations will perform with AI.",
-      "topic_labels": [
-        "AI workforce",
-        "critical thinking",
-        "human oversight",
-        "AI literacy"
-      ],
-      "source_url": "https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities",
-      "agent_skill": false,
-      "what_to_do_now": {
-        "action": "teach",
-        "label": "Teach verification, not just prompting",
-        "rationale": "Add exercises that require employees to challenge AI outputs, validate evidence, recognize uncertainty, and know when to override or escalate."
-      },
-      "visual": {
-        "layout": "comparison",
-        "title": "AI adoption needs a judgment layer",
-        "alt_text": "Comparison diagram showing fast AI adoption on one side and human verification, validation, override, and escalation capabilities on the other.",
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "AI output",
-            "detail": "Models produce increasingly useful work products."
-          },
-          {
-            "id": "n2",
-            "label": "Validate",
-            "detail": "Check evidence, assumptions, and factual accuracy."
-          },
-          {
-            "id": "n3",
-            "label": "Override",
-            "detail": "Reject or correct outputs that fail requirements."
-          },
-          {
-            "id": "n4",
-            "label": "Escalate",
-            "detail": "Route uncertain or high-risk cases to accountable humans."
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n2",
-            "label": "control"
-          },
-          {
-            "from": "n2",
-            "to": "n3",
-            "label": "when needed"
-          },
-          {
-            "from": "n3",
-            "to": "n4",
-            "label": "high risk"
-          }
-        ],
-        "callouts": [
-          {
-            "anchor": "n2",
-            "text": "Human judgment has to be operationalized, not merely encouraged."
-          },
-          {
-            "anchor": "n4",
-            "text": "The control layer matters most when AI is embedded in routine work."
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "m01",
-      "story_id": "hcls-open-source-agent-skills-2026-09-21",
-      "canonical_ordinal": 5,
-      "focus": "agents_non_technical_people",
-      "headline": "AWS packages domain methodology into 38 open-source Agent Skills",
-      "summary": "AWS describes a collection of 38 open-source Agent Skills across 11 healthcare and life-sciences domains, using structured skill files to give agents reusable domain methods and reporting a 410-prompt evaluation with strong win rates.",
-      "why_it_matters": "This is a concrete example of the Agent Skills pattern moving beyond generic productivity tasks. Reusable skill packages can encode domain methods, checks, and procedures so an agent does not have to rediscover expert practice from scratch on every request.",
-      "editorial_limitation": "The examples are healthcare and life-sciences focused and AWS-authored; regulated use still requires domain validation, governance, and human accountability.",
-      "topic_labels": [
-        "Agent Skills",
-        "domain expertise",
-        "healthcare AI",
-        "reusable workflows"
-      ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/",
-      "agent_skill": true,
-      "what_to_do_now": {
-        "action": "adopt",
-        "label": "Package one domain method",
-        "rationale": "Choose one stable expert procedure, encode its instructions and checks as a reusable skill, and evaluate it against representative tasks before wider use."
-      },
-      "visual": {
-        "layout": "process",
-        "title": "Domain expertise as an Agent Skill",
-        "alt_text": "Process diagram showing expert methodology encoded in a skill file, loaded by an agent, applied to a domain task, and evaluated against expected outcomes.",
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "Expert method",
-            "detail": "Capture domain rules, steps, and reference guidance."
-          },
-          {
-            "id": "n2",
-            "label": "Skill package",
-            "detail": "Encode the method in a reusable structured skill."
-          },
-          {
-            "id": "n3",
-            "label": "Agent execution",
-            "detail": "Load the skill when the matching task appears."
-          },
-          {
-            "id": "n4",
-            "label": "Evaluation",
-            "detail": "Test outputs against domain-specific expectations."
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n2",
-            "label": "encode"
-          },
-          {
-            "from": "n2",
-            "to": "n3",
-            "label": "invoke"
+            "label": "transport"
           },
           {
             "from": "n3",
@@ -382,109 +151,322 @@
         "callouts": [
           {
             "anchor": "n2",
-            "text": "Reusable skills turn expert process into an operational asset."
+            "text": "Kernel speed is only one part of system performance."
           },
           {
             "anchor": "n4",
-            "text": "Domain skills still need explicit evaluation and accountable oversight."
+            "text": "Optimization must hold at graph level, not just inside one function."
           }
         ]
       }
     },
     {
-      "candidate_id": "m09",
-      "story_id": "agentcore-runtime-fast-starts-2026-09-21",
-      "canonical_ordinal": 6,
-      "focus": "agents_non_technical_people",
-      "headline": "AWS redesigns AgentCore runtime for elastic scale and faster agent starts",
-      "summary": "AWS details changes to the AgentCore managed runtime aimed at elastic scaling, optimized resource use, and consistently faster starts for deployed agents, addressing infrastructure behavior that becomes visible once agents move into production workloads.",
-      "why_it_matters": "For non-technical leaders, agent reliability depends on the runtime as much as on the model. Slow starts, scaling limits, and operational friction can determine whether an agent feels dependable enough to become part of a business process.",
-      "editorial_limitation": "The performance claims describe AWS's managed runtime and should be validated against an organization's own workload patterns, latency targets, and cost constraints.",
+      "candidate_id": "m05",
+      "story_id": "medical-claims-idp-ai-2026-09-22",
+      "canonical_ordinal": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "EXL combines document AI and domain LLMs to compress medical claims review",
+      "summary": "AWS describes EXL's medical intelligent document processing solution, which extracts, summarizes, and supports querying of large medical-record sets using document processing plus domain-focused models on SageMaker and Bedrock.",
+      "why_it_matters": "The strongest knowledge-worker use cases increasingly redesign an entire information workflow: ingesting messy documents, structuring evidence, summarizing context, and keeping a reviewer in the decision loop. That is materially different from adding a chat box to an existing process.",
+      "editorial_limitation": "The performance claims come from an AWS customer case study and should be validated independently for document mix, accuracy requirements, reviewer workload, privacy controls, and regulated use.",
       "topic_labels": [
-        "agents",
-        "managed runtime",
-        "scaling",
-        "latency"
+        "document AI",
+        "claims review",
+        "knowledge work",
+        "human review"
       ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Define runtime service levels",
-        "rationale": "For any production agent, document acceptable startup latency, concurrency, failure handling, and scale behavior instead of evaluating only answer quality."
+        "label": "Map the full review workflow",
+        "rationale": "Identify document intake, extraction, evidence linking, summarization, reviewer decisions, and exception handling before choosing models."
       },
       "visual": {
         "layout": "process",
-        "title": "Production agent runtime path",
-        "alt_text": "Process diagram showing incoming agent demand, elastic runtime allocation, agent execution, and monitored service-level outcomes.",
+        "title": "AI-assisted claims review workflow",
+        "alt_text": "Process diagram showing medical records moving through extraction, domain summarization, evidence review, and human claims decisions.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Incoming demand",
-            "detail": "Requests arrive with variable concurrency."
+            "label": "Medical records",
+            "detail": "Ingest large, heterogeneous clinical documents."
           },
           {
             "id": "n2",
-            "label": "Elastic runtime",
-            "detail": "Allocate execution capacity as demand changes."
+            "label": "Extract + structure",
+            "detail": "Turn unstructured content into usable evidence."
           },
           {
             "id": "n3",
-            "label": "Agent execution",
-            "detail": "Run models, tools, and workflow logic."
+            "label": "Summarize + query",
+            "detail": "Use domain-aware models to surface relevant context."
           },
           {
             "id": "n4",
-            "label": "Service levels",
-            "detail": "Measure startup time, reliability, and scale behavior."
+            "label": "Human review",
+            "detail": "Keep accountable reviewers in the decision and exception loop."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "scale"
+            "label": "process"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "execute"
+            "label": "ground"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "observe"
+            "label": "review"
           }
         ],
         "callouts": [
           {
             "anchor": "n2",
-            "text": "Production agent quality includes infrastructure behavior."
+            "text": "Workflow value depends on reliable evidence extraction."
           },
           {
             "anchor": "n4",
-            "text": "Track latency and reliability alongside model output quality."
+            "text": "High-stakes decisions still require accountable human review."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m06",
+      "story_id": "dreamforce-agentic-enterprise-workflows-2026-09-22",
+      "canonical_ordinal": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Dreamforce highlights the shift from AI features to agentic business workflows",
+      "summary": "Salesforce's Dreamforce coverage emphasizes enterprise deployments where AI agents participate in customer and employee workflows, reflecting a broader move from isolated assistants toward systems that act across business processes.",
+      "why_it_matters": "For knowledge workers, the adoption question is becoming operational: which steps can an agent execute, what data and tools can it access, where does human approval sit, and how are outcomes measured. Workflow design is becoming more important than feature count.",
+      "editorial_limitation": "The source is Salesforce's own event coverage and highlights selected customer and product examples; organizations should evaluate comparable outcomes in their own process and governance context.",
+      "topic_labels": [
+        "enterprise AI",
+        "agentic workflows",
+        "knowledge workers",
+        "workflow redesign"
+      ],
+      "source_url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "map",
+        "label": "Redesign one workflow around outcomes",
+        "rationale": "Choose one repeatable business process and define agent actions, data access, approval points, exceptions, and measurable outcomes."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "From AI feature to agentic workflow",
+        "alt_text": "Process diagram showing a business trigger, agent actions across tools, human approval, and measured workflow outcomes.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Business trigger",
+            "detail": "Start from a real event or work request."
+          },
+          {
+            "id": "n2",
+            "label": "Agent actions",
+            "detail": "Execute bounded steps across approved tools and data."
+          },
+          {
+            "id": "n3",
+            "label": "Human control",
+            "detail": "Approve, override, or handle exceptions at defined points."
+          },
+          {
+            "id": "n4",
+            "label": "Measured outcome",
+            "detail": "Track cycle time, quality, adoption, and business result."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "start"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "control"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "measure"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Agentic value comes from coordinated workflow execution."
+          },
+          {
+            "anchor": "n3",
+            "text": "Approval and exception paths must be designed, not improvised."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m01",
+      "story_id": "sagemaker-huggingface-agent-skills-2026-09-22",
+      "canonical_ordinal": 5,
+      "focus": "agents_non_technical_people",
+      "headline": "Six reusable Agent Skills turn model deployment into a repeatable workflow",
+      "summary": "AWS shows six open-source skills that let coding agents deploy Hugging Face models on SageMaker AI with serving-container selection, autoscaling, CloudWatch alarms, endpoint verification, and teardown steps encoded as reusable procedures.",
+      "why_it_matters": "This is a concrete Agent Skills pattern: package a proven procedure once, then let an agent invoke it repeatedly with the same checkpoints. For non-specialists, that can make complex operational work more repeatable without pretending the underlying engineering has disappeared.",
+      "editorial_limitation": "The skills target Hugging Face deployments on SageMaker AI; production teams still need to validate generated infrastructure, permissions, costs, monitoring, and teardown behavior.",
+      "topic_labels": [
+        "Agent Skills",
+        "SageMaker",
+        "model deployment",
+        "reusable workflows"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+      "agent_skill": true,
+      "what_to_do_now": {
+        "action": "adopt",
+        "label": "Encode one proven runbook as a skill",
+        "rationale": "Pick a stable, repeatable procedure with explicit checks and package it so an agent can execute the same verified workflow on demand."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Model deployment as reusable Agent Skills",
+        "alt_text": "Process diagram showing a model request, reusable deployment skills, guarded infrastructure setup, verification and monitoring, and teardown.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Model request",
+            "detail": "Specify the Hugging Face model and deployment goal."
+          },
+          {
+            "id": "n2",
+            "label": "Skill set",
+            "detail": "Invoke reusable procedures for container, endpoint, scale, and monitoring."
+          },
+          {
+            "id": "n3",
+            "label": "Verified deployment",
+            "detail": "Create the endpoint and check runtime behavior."
+          },
+          {
+            "id": "n4",
+            "label": "Operate + teardown",
+            "detail": "Monitor the service and remove resources through a verified path."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "invoke"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "deploy"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "operate"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Skills convert runbooks into reusable operational assets."
+          },
+          {
+            "anchor": "n4",
+            "text": "A complete skill includes verification and cleanup, not only creation."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m09",
+      "story_id": "benchling-agentcore-multitenant-security-2026-09-22",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "Benchling treats agent-generated code as untrusted in a multi-tenant security design",
+      "summary": "AWS describes how Benchling runs AI agent-generated scientific code using AgentCore Code Interpreter in VPC mode, combining network isolation, DNS controls, and endpoint policies to reduce cross-tenant and data-exfiltration risk.",
+      "why_it_matters": "As agents gain the ability to write and run code, the key design assumption should be that generated code is untrusted. Security has to come from containment, least privilege, network controls, tenancy boundaries, and observable execution—not confidence in the model.",
+      "editorial_limitation": "This is an AWS-authored customer architecture and does not prove that the same control set is sufficient for every threat model, regulatory environment, or multi-tenant application.",
+      "topic_labels": [
+        "agent security",
+        "sandboxing",
+        "multi-tenancy",
+        "data exfiltration"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "secure",
+        "label": "Treat agent code as untrusted",
+        "rationale": "Place code-executing agents behind isolated runtimes, least-privilege policies, outbound network controls, tenant boundaries, and audit logs."
+      },
+      "visual": {
+        "layout": "process",
+        "title": "Defense in depth for code-running agents",
+        "alt_text": "Process diagram showing an agent, isolated code interpreter, network and DNS controls, tenant data boundaries, and monitored outputs.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "AI agent",
+            "detail": "Produces code or execution requests."
+          },
+          {
+            "id": "n2",
+            "label": "Isolated runtime",
+            "detail": "Run generated code in a constrained interpreter environment."
+          },
+          {
+            "id": "n3",
+            "label": "Network controls",
+            "detail": "Restrict DNS, endpoints, and outbound access."
+          },
+          {
+            "id": "n4",
+            "label": "Tenant boundary",
+            "detail": "Protect data separation and record execution evidence."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "execute"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "contain"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "enforce"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Generated code should be treated as untrusted by default."
+          },
+          {
+            "anchor": "n4",
+            "text": "Security comes from layered controls around the agent, not model confidence."
           }
         ]
       }
     }
-  ],
-  "editorial_takeaway": "Today’s edition focuses on the operating discipline around AI: managing model lifecycle changes, making AI-assisted code review governable, aligning infrastructure with workforce readiness, strengthening human judgment, packaging reusable domain expertise as Agent Skills, and treating agent runtime behavior as part of production quality.",
-  "media_decisions": {
-    "videos": {
-      "status": "pending",
-      "count": 0,
-      "note": "Current-day media selection is not yet verified."
-    },
-    "podcasts": {
-      "status": "pending",
-      "count": 0,
-      "note": "Current-day media selection is not yet verified."
-    }
-  },
-  "changed_watchlist_topics": [
-    "dab-topic-agent-skills-observability",
-    "dab-topic-ai-adoption-telemetry",
-    "dab-topic-harness-engineering"
   ]
 }
