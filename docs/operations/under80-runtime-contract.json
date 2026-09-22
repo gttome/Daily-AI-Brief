@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5.0",
+  "schema_version": "1.6.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -109,7 +109,9 @@
     "book_relevance_in_same_pass": true,
     "source_word_counts_capture_on_first_review": true,
     "separate_ai_validator": false,
-    "automatic_ai_recovery": false
+    "automatic_ai_recovery": false,
+    "emerging_watchlist_sweep_in_same_pass": true,
+    "emerging_watchlist_assisted_search_budget_max": 8
   },
   "images": {
     "required": 6,
@@ -199,11 +201,13 @@
     "read one committed ready=true zero-model metadata preflight containing at most 20 candidates; do not execute metadata discovery in Work",
     "load this compact runtime contract and the machine-readable efficiency policy",
     "one editorial semantic pass",
+    "perform the bounded daily emerging Watchlist sweep in the same semantic pass, including broad-web and YouTube creator searches, then write the dated sweep receipt",
     "six full-quality image generations and image acceptance",
     "write editorial kernel/facts/media/image manifest",
     "atomically create one editorial-handoff commit on an isolated editorial-handoff/* branch through authenticated GitHub Git Data API operations"
   ],
   "github_actions_owns": [
+    "enforce the dated emerging-signal receipt and Watchlist delta consistency from 2026-09-23 onward",
     "retrieve and compact the nine-candidate article evidence packet with zero model calls before Work",
     "run broad deterministic metadata discovery and <=20 coverage-ready prefilter before Work",
     "run scheduled zero-model metadata discovery and deterministic prefilter before Work begins",
@@ -317,7 +321,27 @@
     "edition_date_must_match_brief_date": true,
     "updated_at_must_be_same_edition_date": true,
     "every_topic_requires_evidence": true,
-    "failure": "A stale or unreviewed Watchlist blocks publication; preserve the last valid edition and run targeted Watchlist recovery."
+    "failure": "A stale or unreviewed Watchlist blocks publication; preserve the last valid edition and run targeted Watchlist recovery.",
+    "emerging_signal_policy": "_data/emerging-signal-policy.json",
+    "emerging_signal_effective_date": "2026-09-23",
+    "daily_emerging_sweep_required": true,
+    "receipt_path_pattern": "_records/watchlist-sweeps/YYYY-MM-DD.json",
+    "primary_lookback_days": 7,
+    "missed_signal_lookback_days": 14,
+    "required_surfaces": [
+      "primary_research",
+      "frontier_and_small_labs",
+      "open_source",
+      "technical_communities",
+      "broad_web",
+      "youtube_creator_ecosystem"
+    ],
+    "minimum_concept_classes_reviewed": 6,
+    "broad_web_search_required": true,
+    "youtube_creator_search_required": true,
+    "zero_new_rule": "Zero new may be certified only after all required surfaces complete, >=3 candidate concepts reviewed, and the 14-day missed-signal check completes.",
+    "popularity_treatment": "Discovery/momentum signal only; never validation.",
+    "new_topic_threshold": "One credible original development may create early_signal; gaining_evidence still requires two substantively independent developments."
   },
   "completion_evidence": {
     "mode": "runtime_artifact_with_repository_history",

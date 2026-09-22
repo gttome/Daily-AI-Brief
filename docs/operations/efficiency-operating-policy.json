@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "profile_id": "under80-v1",
   "effective_date": "2026-09-18",
   "baseline_date": "2026-09-17",
@@ -204,5 +204,17 @@
       "material_product_change",
       "hard_platform_capability_blocker"
     ]
+  },
+  "watchlist_emerging_signal": {
+    "effective_date": "2026-09-23",
+    "policy_path": "_data/emerging-signal-policy.json",
+    "same_semantic_pass": true,
+    "assisted_search_query_budget_max": 8,
+    "new_ai_task": false,
+    "broad_web_required": true,
+    "youtube_creator_ecosystem_required": true,
+    "primary_lookback_days": 7,
+    "missed_signal_lookback_days": 14,
+    "zero_new_fail_closed": true
   }
 }

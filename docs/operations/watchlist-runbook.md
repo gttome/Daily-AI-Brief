@@ -27,3 +27,14 @@ Compare initial reader interest with later usefulness ratings for linked trial s
 ## Rollback
 
 If voting fails, keep researched topics readable and show the failure. Revert the feature code through a reviewed commit if needed; preserve the additive D1 tables and all records. No database drop, reader-data migration, or changes to subscribers are required. A failed watchlist refresh must not silently block or falsely validate ordinary brief content; label watchlist health separately.
+
+
+## September 22, 2026 — mandatory daily emerging-concept sweep
+
+Beginning with the September 23 edition, the registered Watchlist sources are a baseline, not the search boundary. Every daily run must follow `_data/emerging-signal-policy.json` and write `_records/watchlist-sweeps/YYYY-MM-DD.json`.
+
+After shared deterministic acquisition, perform one bounded assisted emerging-concept sweep inside the existing single semantic publisher pass. It must cover primary research; frontier and smaller labs/vendors; open-source repositories and model hubs; technical communities; broad web/news search; and the YouTube creator ecosystem beyond official lab channels. Search for unfamiliar names and capabilities rather than only existing Watchlist keywords. Review at least six concept classes from the policy and use the seven-day primary lookback plus a fourteen-day missed-signal check.
+
+YouTube views, creator repetition, GitHub stars, Hacker News activity, Reddit discussion and newsletter repetition are discovery/momentum signals only. Trace consequential claims to original evidence. One credible original development may justify `early_signal`; `gaining_evidence` still requires at least two substantively independent developments.
+
+A “0 new” daily result is not valid merely because existing topics were refreshed. It may be certified only when every required surface completed, at least three candidate concepts were reviewed and dispositioned, the fourteen-day missed-signal check completed, and the receipt includes a substantive explanation for why no candidate cleared the new-topic gate. If a required surface is unavailable, record degraded coverage and do not certify zero new.
