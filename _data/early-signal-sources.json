@@ -301,15 +301,15 @@
     {
       "rank": 9,
       "channel_id": "youtube-ai-research",
-      "name": "YouTube — official labs and researchers",
+      "name": "YouTube — official labs, researchers, builders, and creator ecosystem",
       "kind": "video_channel",
       "automation_mode": "assisted_review",
       "targets": [
         "brief",
         "watchlist"
       ],
-      "why_monitored": "Official demonstrations, paper walkthroughs, research talks, and early technical explanations can precede written coverage.",
-      "evidence_treatment": "Verify channel identity, upload date, runtime, claims, and linked original evidence. Demonstrations and commentary are not independent validation.",
+      "why_monitored": "Official demonstrations, paper walkthroughs, research talks, and fast-moving creator/builder coverage can surface new model families, tools, and implementation patterns before they appear in established written coverage.",
+      "evidence_treatment": "Discovery and momentum signal only. Verify channel identity when consequential, upload date, claims, and linked original evidence. Creator repetition or view counts are not independent technical validation.",
       "entry_url": "https://www.youtube.com/",
       "endpoints": [
         {
@@ -385,34 +385,6 @@
           "automated": true
         }
       ]
-    },
-    {
-      "rank": 11,
-      "channel_id": "broad-web-emerging",
-      "name": "Broad web — emerging AI concepts and unfamiliar model names",
-      "kind": "assisted_web_search",
-      "automation_mode": "assisted_review",
-      "targets": [
-        "watchlist"
-      ],
-      "why_monitored": "Find new model families, architectures, workflows, small vendors, and terminology that static source registries can miss.",
-      "evidence_treatment": "Discovery signal only. Search recent web/news broadly, then verify consequential claims at an original paper, repository, official release, model card, or documentation source.",
-      "entry_url": "https://www.google.com/",
-      "endpoints": []
-    },
-    {
-      "rank": 12,
-      "channel_id": "youtube-creator-ecosystem",
-      "name": "YouTube — AI creator and builder ecosystem",
-      "kind": "creator_video_discovery",
-      "automation_mode": "assisted_review",
-      "targets": [
-        "watchlist"
-      ],
-      "why_monitored": "Creator coverage can surface fast-growing tools, model families, implementation patterns, and terminology before they appear in established publisher feeds.",
-      "evidence_treatment": "Discovery and momentum signal only. Verify upload date, creator identity where relevant, linked evidence, and all consequential technical claims at original sources. Views and repeated coverage are not validation.",
-      "entry_url": "https://www.youtube.com/",
-      "endpoints": []
     }
   ]
 }

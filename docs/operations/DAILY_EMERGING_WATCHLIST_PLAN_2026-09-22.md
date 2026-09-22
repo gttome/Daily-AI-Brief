@@ -17,7 +17,7 @@ Beginning with the September 23 edition, every daily publisher run must perform 
 5. Require a dated receipt at `_records/watchlist-sweeps/YYYY-MM-DD.json` from September 23 onward.
 6. Make repository tests fail future publication when the receipt is absent, invalid, or inconsistent with the Watchlist's new/updated topic IDs.
 7. Make a zero-new claim fail closed unless all six required surfaces completed, at least three candidate concepts were reviewed, the fourteen-day missed-signal check completed, and a substantive written justification is present.
-8. Add broad-web and creator-ecosystem channels to the early-signal registry and bind the policy into the under-80 runtime contract and production-run checkpoint inputs.
+8. Broaden the existing YouTube early-signal channel to include researchers, builders, and creators; require broad-web discovery through the machine policy; bind the policy into the under-80 runtime contract and production-run checkpoint inputs.
 
 ## Daily execution
 
