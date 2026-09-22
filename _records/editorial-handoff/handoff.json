@@ -12,5 +12,7 @@
   "coverage_period": "Coverage emphasizes verified developments from September 18 through September 22, 2026, with priority given to the most recent evidence.",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
-  "deterministic_validation_model_calls": 0
+  "deterministic_validation_model_calls": 0,
+  "repair_attempt": 1,
+  "repair_note": "Kernel contract repair: supported what_to_do_now enums plus required editorial_takeaway, media_decisions, and changed_watchlist_topics."
 }
