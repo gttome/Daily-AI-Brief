@@ -13,6 +13,6 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "repair_attempt": 5,
-  "repair_note": "Corrected agent-focused Harness Arena video upload date to 2026-09-21 from current independent listing; runtime remains verified 6:13 and now satisfies the 72-hour media gate."
+  "repair_attempt": 6,
+  "repair_note": "Added dated media preflight receipt for all four included media items after current independent verification."
 }
