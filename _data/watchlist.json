@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-22",
-  "updated_at": "2026-09-22T13:45:00Z",
-  "baseline_note": "September 22 daily review completed. Existing topics and evidence were carried forward unchanged; no new topic evidence is asserted by this freshness roll-forward.",
+  "updated_at": "2026-09-22T13:46:00Z",
+  "baseline_note": "September 22 review: two existing topics received new primary evidence—reusable Agent Skills and harness/task-completion evaluation. No new Watchlist topic cleared the publication gate; thirteen topics were carried forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -734,7 +734,7 @@
       "limitations": "Usage telemetry does not establish correctness, business value, or security of an individual skill or agent.",
       "next_action": "Package one stable expert procedure as a reusable skill, then pair usage telemetry with outcome and quality checks.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-21T16:05:00Z",
+      "updated_at": "2026-09-22T13:46:00Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -767,6 +767,16 @@
           "checked_at": "2026-09-21T14:28:00Z",
           "development_id": "aws-hcls-agent-skills-2026-09-16",
           "review_depth": "full publisher article and bounded evidence packet"
+        },
+        {
+          "title": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
+          "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+          "publisher": "AWS Machine Learning",
+          "kind": "primary",
+          "publication_date": "2026-09-18",
+          "checked_at": "2026-09-22T13:46:00Z",
+          "development_id": "sagemaker-huggingface-agent-skills",
+          "review_depth": "full publisher announcement"
         }
       ],
       "external_attention": [],
@@ -970,7 +980,7 @@
       "limitations": "The research is early and results from coding or robotics may not transfer directly to other agent domains.",
       "next_action": "Separate model/agent logic from the harness around it and make measurement, runtime controls, and verification explicit.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-21T16:05:00Z",
+      "updated_at": "2026-09-22T13:46:00Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -1033,6 +1043,16 @@
           "checked_at": "2026-09-21T14:28:00Z",
           "development_id": "aws-agentcore-runtime-2026-09-18",
           "review_depth": "full publisher article and bounded evidence packet"
+        },
+        {
+          "title": "How to Evaluate AI Agents From Tool Calls to Task Completion",
+          "url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+          "publisher": "NVIDIA Developer",
+          "kind": "primary",
+          "publication_date": "2026-09-21",
+          "checked_at": "2026-09-22T13:46:00Z",
+          "development_id": "nvidia-agent-task-completion-evaluation",
+          "review_depth": "full publisher announcement"
         }
       ],
       "external_attention": [],
