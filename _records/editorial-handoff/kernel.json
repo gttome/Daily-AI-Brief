@@ -478,8 +478,8 @@
     },
     "podcasts": {
       "status": "included",
-      "count": 1,
-      "note": "One current-day Reuters AI podcast selected; duration left unpinned where independent verification was unavailable."
+      "count": 2,
+      "note": "Two verified recent AI podcasts selected from distinct sources, matching the current publication contract."
     }
   },
   "changed_watchlist_topics": [
