@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-21T16:09:38Z</updated>
+  <updated>2026-09-22T15:44:48Z</updated>
+  <entry>
+    <title>Agent evaluation is moving from tool-call scores to full task completion</title>
+    <id>dab-story-2026-09-22-20a54b62</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-22/agent-evaluation-is-moving-from-tool-call-scores-to-full-task-completion/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>NVIDIA describes an evaluation approach that tests whether agents complete multi-step work in executable environments, tracking state across sequences of tool calls instead of judging isolated function invocations.</summary>
+  </entry>
+  <entry>
+    <title>AI-assisted ROS 2 optimization targets zero-copy GPU data paths</title>
+    <id>dab-story-2026-09-22-0f5b2df6</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-22/ai-assisted-ros-2-optimization-targets-zero-copy-gpu-data-paths/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>NVIDIA shows how an AI agent can help accelerate a ROS 2 node using Isaac ROS, including GPU-resident buffers and zero-copy transport when runtime conditions permit while preserving standard ROS 2 message and node boundaries.</summary>
+  </entry>
+  <entry>
+    <title>EXL combines document AI and domain LLMs to compress medical claims review</title>
+    <id>dab-story-2026-09-22-d5f8f1d2</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-22/exl-combines-document-ai-and-domain-llms-to-compress-medical-claims-review/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>AWS describes EXL&apos;s medical intelligent document processing solution, which extracts, summarizes, and supports querying of large medical-record sets using document processing plus domain-focused models on SageMaker and Bedrock.</summary>
+  </entry>
+  <entry>
+    <title>Dreamforce highlights the shift from AI features to agentic business workflows</title>
+    <id>dab-story-2026-09-22-831557f6</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-22/dreamforce-highlights-the-shift-from-ai-features-to-agentic-business-workflows/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>Salesforce&apos;s Dreamforce coverage emphasizes enterprise deployments where AI agents participate in customer and employee workflows, reflecting a broader move from isolated assistants toward systems that act across business processes.</summary>
+  </entry>
+  <entry>
+    <title>Six reusable Agent Skills turn model deployment into a repeatable workflow</title>
+    <id>dab-story-2026-09-22-9646b0bd</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-22/six-reusable-agent-skills-turn-model-deployment-into-a-repeatable-workflow/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>AWS shows six open-source skills that let coding agents deploy Hugging Face models on SageMaker AI with serving-container selection, autoscaling, CloudWatch alarms, endpoint verification, and teardown steps encoded as reusable procedures.</summary>
+  </entry>
+  <entry>
+    <title>Benchling treats agent-generated code as untrusted in a multi-tenant security design</title>
+    <id>dab-story-2026-09-22-b12135af</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-22/benchling-treats-agent-generated-code-as-untrusted-in-a-multi-tenant-security-design/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>AWS describes how Benchling runs AI agent-generated scientific code using AgentCore Code Interpreter in VPC mode, combining network isolation, DNS controls, and endpoint policies to reduce cross-tenant and data-exfiltration risk.</summary>
+  </entry>
+  <entry>
+    <title>Codex&apos;s NEW A2A Communication &amp; Crazy NEW UPDATES: You don&apos;t know about these SECRET UPDATES!</title>
+    <id>dab-video-2026-09-22-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-22/general/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.</summary>
+  </entry>
+  <entry>
+    <title>Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)</title>
+    <id>dab-video-2026-09-22-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-22/agent-skills/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.</summary>
+  </entry>
+  <entry>
+    <title>AI&apos;s new Muse</title>
+    <id>dab-podcast-2026-09-22-ais-new-muse</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-22/ais-new-muse/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>Reuters examines the market response to Meta&apos;s new AI assistant Muse and the broader implications of increasingly agentic consumer and business interfaces.</summary>
+  </entry>
+  <entry>
+    <title>AI Doom Backlash Arrives, Anthropic &amp; OpenAI IPO Outlook, Frontier Business Momentum Slows</title>
+    <id>dab-podcast-2026-09-22-ai-doom-backlash</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-22/ai-doom-backlash/" />
+    <updated>2026-09-22T18:00:00Z</updated>
+    <summary>Alex Kantrowitz and Ranjan Roy discuss recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.</summary>
+  </entry>
   <entry>
     <title>GitHub sets an October deadline for several Copilot models</title>
     <id>dab-story-2026-09-21-05232b62</id>
@@ -1453,40 +1523,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/" />
     <updated>2026-08-24T18:00:00Z</updated>
     <summary>OpenAI Academy’s workspace-agent guide defines an agent through a trigger, a process with reusable skills, and approved tools. Its named “Briefing” pattern gathers information from multiple places, extracts important signals, summarizes for an audience, and shares a memo or briefing. The builder starts in plain language: describe the job, success criteria, constraints, tools, and approval boundaries, then test it in preview.</summary>
-  </entry>
-  <entry>
-    <title>AI4AI-Bench finds coding agents rarely redesign the learning algorithm itself</title>
-    <id>dab-story-2026-08-23-b2a17ab9</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-23/ai4ai-bench-finds-coding-agents-rarely-redesign-the-learning-algorithm-itself/" />
-    <updated>2026-08-23T18:00:00Z</updated>
-    <summary>*AI4AI-Bench* tests whether agents can improve machine-learning training algorithms rather than merely tune parameters or collect more data. It freezes ten research repositories covering ten algorithm families. For each task, an agent gets four hours on one NVIDIA B300 to rewrite the training algorithm; the resulting code is then rerun from scratch for up to 12 hours and scored by a fixed evaluator hidden from the agent. Across 29 configurations of six systems on all ten tasks, the reported mean score was 0.166 and the best system reached 0.250, on a scale where the repository’s shipped algorithm is 0.1 and the stated task optimum is 1.0. Most submissions never changed how the model learned. The minority that did averaged 0.226 versus 0.126 for the rest. Increasing reasoning effort raised the share that attempted an algorithmic change from 8% to 64%, while mean score rose from 0.094 to 0.196.</summary>
-  </entry>
-  <entry>
-    <title>Smaller, text-based agent skills transfer better than monolithic task recipes</title>
-    <id>dab-story-2026-08-23-e8deab9a</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-23/smaller-text-based-agent-skills-transfer-better-than-monolithic-task-recipes/" />
-    <updated>2026-08-23T18:00:00Z</updated>
-    <summary>*Break It Down, Pass It On* compares two choices in agent skill induction: learning a recipe for an entire task versus learning skills for component subtasks, and storing those skills as text versus code. In the authors’ experiments, task-level skills mostly pushed performance below a no-memory baseline, while subtask-level skills improved it on average. Text skills transferred better than code skills. The study also defines specificity—how closely a skill matches real tasks—and abstractness—how broadly its relevance is distributed. Neither predicts success alone, but a combined skill-utility score correlates with transfer performance and can be computed from the skill and task descriptions before executing a new task.</summary>
-  </entry>
-  <entry>
-    <title>InsufficiencyBench shows frontier models struggle to ask for legally decisive missing facts</title>
-    <id>dab-story-2026-08-23-be5593e7</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-23/insufficiencybench-shows-frontier-models-struggle-to-ask-for-legally-decisive-mi/" />
-    <updated>2026-08-23T18:00:00Z</updated>
-    <summary>*InsufficiencyBench* evaluates whether a model recognizes when a legal question lacks facts that materially determine the answer, identifies what is missing, and avoids a premature conclusion. Its 202 items—58 complete queries and 144 deficient variants—span six legal domains and 24 U.S. jurisdictions and were annotated by practicing attorneys. Across ten frontier models, none exceeded an F2 score of 0.46 for missing-element identification, and median recall was 0.44. The authors observed two recurring failure modes: models hedged broadly even when a question was sufficiently specified, or answered an underspecified question using unstated assumptions.</summary>
-  </entry>
-  <entry>
-    <title>ReguSim separates an agent’s explanation from the action it actually attempted</title>
-    <id>dab-story-2026-08-23-40885c98</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-23/regusim-separates-an-agent-s-explanation-from-the-action-it-actually-attempted/" />
-    <updated>2026-08-23T18:00:00Z</updated>
-    <summary>*ReguSim* introduces a controlled financial-compliance environment and the ReguBench monitoring benchmark. Its design records four artifacts separately: the agent’s stated reasoning, its attempted action, the execution layer’s enforcement decision, and the evidence available to a monitor. In runs using DeepSeek V4 Pro and Gemini 3.5 Flash, visible rules reduced but did not eliminate rejected actions, while incentive and persona framing shifted behavior. A bridge study found that an independent monitor could be misled by the trader agent’s rationale unless it also saw enforcement evidence. For monitoring, simple structured baselines matched or exceeded prompt-only LLM monitors.</summary>
-  </entry>
-  <entry>
-    <title>TESTNAV searches for realistic combinations that break AI systems</title>
-    <id>dab-story-2026-08-23-dbdd1c3a</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-23/testnav-searches-for-realistic-combinations-that-break-ai-systems/" />
-    <updated>2026-08-23T18:00:00Z</updated>
-    <summary>*TESTNAV* addresses compositional robustness testing: inputs can be affected by several changes at once, but exhaustively trying every combination quickly becomes expensive and many combinations are too distorted to be meaningful. The framework treats testing as a two-objective search—maximize performance degradation while preserving input fidelity—and uses NSGA-II to approximate the Pareto frontier. Across four benchmarks covering vision, natural language, and code generation, the authors report recovering Pareto fronts up to 2.15 times faster than search baselines while evaluating 35.8% to 89.3% of a discrete space with four perturbation dimensions and six levels each.</summary>
   </entry>
 </feed>
