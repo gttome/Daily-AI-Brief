@@ -1,0 +1,74 @@
+{
+  "historical_1": {
+    "path": "briefs/images/2026-09-19/01-copilot-code-review.webp",
+    "alt": "Four-step diagram showing review progress, auto-resolution, batch suggestions, and commit messages.",
+    "quality_accepted": true,
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "generation_method": "openai_image_generation",
+    "sha256": "815e555fb3d961a36f5880d6ae541cb48ea13f61fe3907fcd458fd9fc0dc8c81",
+    "width": 1200,
+    "height": 630,
+    "review_source": "_records/image-quality/2026-09-19-professional-locked.json"
+  },
+  "historical_2": {
+    "path": "briefs/images/2026-09-19/02-copilot-model-deprecation.webp",
+    "alt": "Four-step diagram showing current models, policy review, alternative models, and the October 19 transition.",
+    "quality_accepted": true,
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "generation_method": "openai_image_generation",
+    "sha256": "29cf01926e98cb0dea2f69326822255755952916333b38ea09f3574fd7d47dbb",
+    "width": 1200,
+    "height": 630,
+    "review_source": "_records/image-quality/2026-09-19-professional-locked.json"
+  },
+  "historical_3": {
+    "path": "briefs/images/2026-09-19/03-copilot-impact-dashboard.webp",
+    "alt": "Four-step diagram showing active users, feature usage, adoption gaps, and enablement action.",
+    "quality_accepted": true,
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "generation_method": "openai_image_generation",
+    "sha256": "303cf11b1044c1656dc75eaa22a45004bb16deaa03a639e6cf528a23aa304261",
+    "width": 1200,
+    "height": 630,
+    "review_source": "_records/image-quality/2026-09-19-professional-locked.json"
+  },
+  "historical_4": {
+    "path": "briefs/images/2026-09-19/04-microsoft-ai-transformation.webp",
+    "alt": "Four-step diagram showing many AI efforts, captured lessons, scaling proven patterns, and redesigned work.",
+    "quality_accepted": true,
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "generation_method": "openai_image_generation",
+    "sha256": "a46feee4dd8f144f9a7d7284bbc9facf4a0551cf832d43867cb68f5729d1812f",
+    "width": 1200,
+    "height": 630,
+    "review_source": "_records/image-quality/2026-09-19-professional-locked.json"
+  },
+  "historical_5": {
+    "path": "briefs/images/2026-09-19/05-agentic-cli-metrics.webp",
+    "alt": "Four-step diagram showing skills, custom agents, MCP servers, and the usage metrics API.",
+    "quality_accepted": true,
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "generation_method": "openai_image_generation",
+    "sha256": "51c34acf3c5e74c55b0a159c693c456af1fdcea4ca09fa9f57732292d4f034be",
+    "width": 1200,
+    "height": 630,
+    "review_source": "_records/image-quality/2026-09-19-professional-locked.json"
+  },
+  "historical_6": {
+    "path": "briefs/images/2026-09-19/06-long-horizon-agents.webp",
+    "alt": "Four-step diagram showing a persistent goal, multi-session work, adaptation to change, and outcome tracking.",
+    "quality_accepted": true,
+    "accepted_locked": true,
+    "lock_status": "accepted_locked",
+    "generation_method": "openai_image_generation",
+    "sha256": "728af9a6386924e8da0419f8714a02ef32a9abe28aed74e09eb00347351a40d2",
+    "width": 1200,
+    "height": 630,
+    "review_source": "_records/image-quality/2026-09-19-professional-locked.json"
+  }
+}

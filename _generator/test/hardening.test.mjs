@@ -84,7 +84,7 @@ test('September 19 publication contract requires exactly two videos and two podc
 test('September 19 professional image set is locked and reusable',()=>{
   const current=JSON.parse(fs.readFileSync(path.join(root,'_data/editions/2026-09-19.json'),'utf8'));
   assert.deepEqual(reviewedImages(current,root).errors,[]);
-  assert.deepEqual(reviewedHandoffImages(current,root,'_records/editorial-handoff/images.json').errors,[]);
-  const manifest=JSON.parse(fs.readFileSync(path.join(root,'_records/editorial-handoff/images.json'),'utf8'));
+  assert.deepEqual(reviewedHandoffImages(current,root,'_records/editorial-handoff/final-image-review-2026-09-19.json').errors,[]);
+  const manifest=JSON.parse(fs.readFileSync(path.join(root,'_records/editorial-handoff/final-image-review-2026-09-19.json'),'utf8'));
   assert.equal(Object.values(manifest).filter(x=>x.accepted_locked===true&&x.lock_status==='accepted_locked'&&x.generation_method==='openai_image_generation').length,6);
 });

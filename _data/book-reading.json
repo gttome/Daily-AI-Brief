@@ -242,6 +242,14 @@
         "label": "READ DEEPER",
         "why": "Use calibrated-trust principles when deciding how much autonomy, isolation, review, escalation, and rollback an agent should receive."
       }
+    ],
+    "2026-09-23": [
+      {
+        "item_id": "dab-story-2026-09-23-dec1b780",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Apply the context-quality checklist when packaging shared skills, organizational instructions, tools, approval checkpoints, and validation into a reusable agent workflow."
+      }
     ]
   }
 }
