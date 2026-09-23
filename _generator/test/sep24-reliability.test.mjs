@@ -70,3 +70,20 @@ test('lifecycle closes only after delta validation and command-center reconcilia
  s=markRunStage(s,'COMMAND_CENTER_RECONCILED',{artifactPaths:['cc.json']});assert.equal(resolveResumeStage({state:s}),'CLOSED');
  s=markRunStage(s,'CLOSED',{artifactPaths:['completion.json']});assert.equal(s.publication_lifecycle,'closed');assert.equal(s.operational_status,'COMPLETE');
 });
+
+test('automatic completion persistence is protected and effective only for Sep24+',()=>{
+ const workflow=fs.readFileSync('.github/workflows/daily-delta-validation.yml','utf8');
+ assert.match(workflow,/2026-09-24/);
+ assert.match(workflow,/finalization\/\$EDITION_DATE/);
+ assert.match(workflow,/createWorkflowDispatch/);
+ assert.match(workflow,/workflow_id:'ci\.yml'/);
+ assert.match(workflow,/pulls\.merge/);
+ assert.match(workflow,/completion_persistence='protected_pull_request'/);
+});
+test('runtime contract exposes one durable recovery and status vocabulary',()=>{
+ const runtime=JSON.parse(fs.readFileSync('docs/operations/under80-runtime-contract.json','utf8'));
+ assert.equal(runtime.reliability_hardening.run_state_path_pattern,'_records/run-state/YYYY-MM-DD.json');
+ assert.equal(runtime.reliability_hardening.pre_pr_lint,'node _tools/publication-candidate-lint.mjs');
+ assert.ok(runtime.reliability_hardening.operational_status_vocabulary.includes('COMPLETE'));
+ assert.ok(runtime.reliability_hardening.publication_lifecycle.includes('closed'));
+});

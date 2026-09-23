@@ -444,5 +444,57 @@
     "fail_closed_rule": "NOT_READY, missing receipt, stale receipt, SHA mismatch, or unverifiable receipt preserves the last valid live edition and blocks the publisher until targeted recovery restores readiness.",
     "write_policy": "The readiness receipt is written only on the existing current-day discovery-preflight branch. It is operational evidence, not a production-content commit, and does not require a new schedule.",
     "work_cost_rule": "Readiness certification must not use ChatGPT Work/Codex as part of normal production operation."
+  },
+  "reliability_hardening": {
+    "effective_date": "2026-09-24",
+    "run_state_path_pattern": "_records/run-state/YYYY-MM-DD.json",
+    "run_state_version": "sep24-reliability-v1",
+    "authoritative_recovery_rule": "Resolve the first incomplete or invalid durable stage. Completed upstream stages are reused unless their input SHA, governing contract version, or durable artifact validity changed.",
+    "operational_status_vocabulary": [
+      "PREPARING",
+      "READY",
+      "EDITORIAL",
+      "ASSETS",
+      "HANDOFF",
+      "CI",
+      "MERGED",
+      "PAGES",
+      "FINAL_VALIDATION",
+      "COMMAND_CENTER_SYNC",
+      "COMPLETE",
+      "BLOCKED"
+    ],
+    "publication_lifecycle": [
+      "staged",
+      "candidate",
+      "validated",
+      "merged",
+      "deployed",
+      "verified",
+      "closed"
+    ],
+    "pre_pr_lint": "node _tools/publication-candidate-lint.mjs",
+    "public_watchlist_transform": "node _tools/sync-public-watchlist.mjs",
+    "completion_persistence": {
+      "owner": "github_actions",
+      "workflow": ".github/workflows/daily-delta-validation.yml",
+      "rule": "After Pages and deterministic delta validation succeed, persist completion, public-safe Command Center delta, and CLOSED run-state on a finalization branch, dispatch deterministic CI for the exact head, and merge only through protected main.",
+      "historical_editions_unchanged_before": "2026-09-24"
+    },
+    "recovery_matrix": {
+      "metadata_preflight": "retry failed metadata workflow/job only",
+      "discovery_preflight": "retry discovery only",
+      "readiness_receipt": "repair readiness receipt only",
+      "editorial_kernel": "one semantic pass only when no valid kernel exists",
+      "image": "regenerate only invalid image",
+      "media_slot": "recover only invalid media slot",
+      "watchlist": "regenerate public Watchlist from canonical only",
+      "handoff_write": "rebuild handoff commit from existing artifacts",
+      "pr_ci": "repair deterministic defect only",
+      "merge": "re-evaluate protection/baseline only",
+      "pages": "retry deployment only",
+      "completion": "generate completion record only",
+      "command_center_sync": "repair Command Center independently without reopening the public edition"
+    }
   }
 }
