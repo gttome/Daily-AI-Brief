@@ -10,7 +10,7 @@ const included=x=>['included','selected'].includes(x?.status);
 const host=u=>{try{return new URL(u).hostname.replace(/^www\./,'');}catch{return null;}};
 
 export function expectedWatchlistSurface(data){
- const counts=watchlistDailySummary(data),changed=(data.topics||[]).filter(t=>t.status!=='archived'&&['new_today','updated_today'].includes(watchlistDailyState(t,data.edition_date))).map(t=>({topic_id:t.topic_id,name:t.name,state:watchlistDailyState(t,data.edition_date)});
+ const counts=watchlistDailySummary(data),changed=(data.topics||[]).filter(t=>t.status!=='archived'&&['new_today','updated_today'].includes(watchlistDailyState(t,data.edition_date))).map(t=>({topic_id:t.topic_id,name:t.name,state:watchlistDailyState(t,data.edition_date)}));
  return {counts,changed_topics:changed};
 }
 export function lintPublicationCandidate({root,edition,kernel,media,imageManifest,mediaReceipt,canonicalWatchlist,publicWatchlistData,handoff,runtime,gitEvidence={}}){

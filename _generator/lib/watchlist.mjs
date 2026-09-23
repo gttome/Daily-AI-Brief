@@ -44,8 +44,8 @@ export function watchlistPreview(date,data=null){
   const active=(current.topics||[]).filter(topic=>topic.status!=='archived');
   const fresh=active.filter(topic=>watchlistDailyState(topic,date)==='new_today');
   const updated=active.filter(topic=>watchlistDailyState(topic,date)==='updated_today');
-  const listed=[...fresh,...updated];
-  const label='Changed today';
+  const listed=date>='2026-09-24'?[...fresh,...updated]:(fresh.length?fresh:updated);
+  const label=date>='2026-09-24'?'Changed today':(fresh.length?'New today':'Updated today');
   dailyState=`<p class="watchlist-daily-counts"><strong>${counts.new_today} new today · ${counts.updated_today} updated · ${counts.carried_forward} carried forward.</strong></p>${listed.length?`<p><strong>${label}:</strong></p><ul class="watchlist-daily-items">${listed.map(topic=>`<li>${escapeHtml(topic.name)}</li>`).join('')}</ul>`:''}`;
  }
  return `\n\n<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2>${dailyState}<p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>\n\n`;
