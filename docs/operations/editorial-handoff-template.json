@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "purpose": "Shape-only template for the compact editorial-to-deterministic handoff. Replace every placeholder from fresh reviewed evidence; this file is not editorial evidence.",
   "branch": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
   "files": {
@@ -141,7 +141,13 @@
       "sha256": "accepted-image-sha256",
       "quality_accepted": true,
       "generation_method": "openai_image_generation",
-      "format": "webp"
+      "format": "webp",
+      "story_id": "stable-editorial-story-id",
+      "inspection_result": "pass",
+      "locked": true,
+      "git_blob_sha": "git-blob-sha-returned-by-create_blob",
+      "accepted_locked": true,
+      "lock_status": "accepted_locked"
     }
   },
   "media_shape": {
@@ -204,7 +210,9 @@
     "Media is fail-closed: the handoff must contain exactly two verified videos and exactly two verified source-diverse podcasts. Empty or omitted production media slots are invalid; preserve the last valid edition and stop for targeted media recovery.",
     "All six story images must be fresh accepted full-quality images; prefer 1200×630 WebP, with PNG accepted when needed for a from-scratch qualification test.",
     "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work.",
-    "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation."
+    "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation.",
+    "Beginning with the 2026-09-24 edition, every accepted image manifest entry must include story_id, sha256, 1200x630 dimensions, inspection_result=pass, locked=true, accepted_locked=true, lock_status=accepted_locked, and the canonical Git blob identity returned by create_blob.",
+    "Beginning with the 2026-09-24 edition, persist a current-day media preflight receipt bound to the editorial-kernel SHA-256, with exactly two videos and two podcasts, verification timestamps/evidence, and a passing two-source podcast-diversity result. Reuse it unchanged on downstream retries while the kernel hash is unchanged."
   ],
   "qualification_handoff_manifest_shape": {
     "schema_version": "1.0.0",
@@ -237,5 +245,27 @@
       "png"
     ],
     "image_blob_encoding": "base64"
+  },
+  "media_receipt_shape": {
+    "schema_version": "1.1.0",
+    "edition_id": "dab-edition-YYYY-MM-DD",
+    "checked_at": "ISO-8601 timestamp",
+    "verification_timestamp": "ISO-8601 timestamp",
+    "editorial_kernel_sha256": "sha256-of-kernel-bytes",
+    "podcast_source_diversity": {
+      "pass": true,
+      "distinct_sources": 2
+    },
+    "items": [
+      {
+        "item_id": "selected-media-item-id",
+        "kind": "video_or_podcast",
+        "source": "publisher-or-channel",
+        "publication_date": "YYYY-MM-DD",
+        "runtime_seconds": null,
+        "verification_timestamp": "ISO-8601 timestamp",
+        "verification_evidence": "What was independently checked"
+      }
+    ]
   }
 }
