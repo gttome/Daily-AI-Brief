@@ -43,6 +43,8 @@ export function commandCenterDeltaPacket({validation={},watchlist={},policy={},i
    github_startup_gate:{required:true,phase:'before_editorial_or_image_work'}
   },
   watchlist:{
+   daily_counts:watchlist.daily_counts&&typeof watchlist.daily_counts==='object'?watchlist.daily_counts:null,
+   changed_topic_names:Array.isArray(watchlist.changed_topic_names)?watchlist.changed_topic_names.map(String):[],
    changed_topics:changed,
    carried_topics:carried,
    removed_topics:removed,

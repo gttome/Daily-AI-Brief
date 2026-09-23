@@ -302,6 +302,18 @@ jobs:
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
           node _generator/cli.mjs integration-check --image-review "$FINAL_IMAGE_REVIEW_PATH"
 
+      - name: Regenerate public Watchlist from canonical state
+        run: node _tools/sync-public-watchlist.mjs
+
+      - name: Run pre-PR publication-candidate lint
+        env:
+          STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
+        run: |
+          set -euo pipefail
+          node _tools/publication-candidate-lint.mjs --date "$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")"
+          date="$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")"
+          node _tools/run-state.mjs seed-candidate --date "$date" --baseline "${{ steps.baseline.outputs.sha }}" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1"
+
       - name: Commit deterministic outputs to staging only
         env:
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
@@ -330,14 +342,18 @@ jobs:
         with:
           script: |
             const head=process.env.STAGING_REF;
+            const ref=(await github.rest.git.getRef({...context.repo,ref:`heads/${head}`})).data;
+            const candidateSha=ref.object.sha;
             const {data: prs}=await github.rest.pulls.list({...context.repo,head:`${context.repo.owner}:${head}`,base:'main',state:'open'});
             let pr=prs[0];
             if(!pr){
               const created=await github.rest.pulls.create({...context.repo,head,base:'main',title:'Publish deterministic Daily AI Brief candidate',body:'Generated from one approved editorial kernel. Deterministic expansion, guarded visual selection, tests and contracts completed on the staging branch. Required main rules and human/editorial gates remain authoritative.'});
               pr=created.data;
             }
+            pr=(await github.rest.pulls.get({...context.repo,pull_number:pr.number})).data;
+            if(pr.head.sha!==candidateSha){core.setFailed(`PR head ${pr.head.sha} does not equal committed candidate ${candidateSha}`);return;}
             await github.rest.issues.addLabels({...context.repo,issue_number:pr.number,labels:['publication-candidate']}).catch(()=>{});
-            core.info(`Publication PR #${pr.number} ready for required CI and protected promotion.`);
+            core.info(`Publication PR #${pr.number} is bound to exact candidate ${candidateSha} and ready for required CI.`);
 
       - name: Upload deterministic handoff evidence
         if: always()

@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {watchlistDeltaPlan} from '../_generator/lib/watchlist-delta.mjs';
 import {parseArgs} from '../_generator/lib/util.mjs';
+import {watchlistDailySummary} from '../_generator/lib/watchlist.mjs';
 
 const args=parseArgs(process.argv.slice(2));
 const priorPath=args.prior;
@@ -25,6 +26,8 @@ const receipt={
  prior_topic_count:prior.topics.length,
  next_topic_count:next.topics.length,
  ...plan,
+ daily_counts:watchlistDailySummary(next),
+ changed_topic_names:(next.topics||[]).filter(t=>(plan.changed_topics||[]).includes(t.topic_id)).map(t=>t.name),
  model_calls:0,
  rule:'Only changed/new topic evidence is eligible for semantic refresh. Carried topics preserve prior semantic text; observation timestamp changes alone do not trigger refresh.'
 };
