@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import {newRunState,markRunStage,invalidateRunState,resolveResumeStage,deriveOperationalStatus,validateHandoffCheckpoint,RECOVERY_MATRIX} from '../lib/run-state.mjs';
+import {newRunState,markRunStage,invalidateRunState,resolveResumeStage,deriveOperationalStatus,validateHandoffCheckpoint,RECOVERY_MATRIX,acceptedImageReusable,mediaReceiptReusable} from '../lib/run-state.mjs';
 import {publicWatchlist,watchlistDailySummary} from '../lib/watchlist.mjs';
 import {expectedWatchlistSurface} from '../lib/publication-candidate-lint.mjs';
 import {sha256} from '../lib/util.mjs';
@@ -86,4 +86,37 @@ test('runtime contract exposes one durable recovery and status vocabulary',()=>{
  assert.equal(runtime.reliability_hardening.pre_pr_lint,'node _tools/publication-candidate-lint.mjs');
  assert.ok(runtime.reliability_hardening.operational_status_vocabulary.includes('COMPLETE'));
  assert.ok(runtime.reliability_hardening.publication_lifecycle.includes('closed'));
+});
+
+test('accepted image and media checkpoints are reused across deterministic downstream failure',()=>{
+ const image={sha256:'1'.repeat(64),accepted_locked:true,lock_status:'accepted_locked',locked:true};
+ assert.equal(acceptedImageReusable(image,{observedSha256:image.sha256}),true);
+ assert.equal(acceptedImageReusable(image,{observedSha256:image.sha256,storyChanged:true}),false);
+ const kernel='2'.repeat(64),receipt={editorial_kernel_sha256:kernel,podcast_source_diversity:{pass:true},items:[
+  {kind:'video',verification_evidence:'date/runtime',verification_timestamp:'2026-09-24T12:00:00Z'},
+  {kind:'video',verification_evidence:'date/runtime',verification_timestamp:'2026-09-24T12:00:00Z'},
+  {kind:'podcast',verification_evidence:'date/source',verification_timestamp:'2026-09-24T12:00:00Z'},
+  {kind:'podcast',verification_evidence:'date/source',verification_timestamp:'2026-09-24T12:00:00Z'}]};
+ assert.equal(mediaReceiptReusable(receipt,kernel),true);assert.equal(mediaReceiptReusable(receipt,'3'.repeat(64)),false);
+ let s=newRunState({date:'2026-09-24',baselineSha:baseline});
+ for(const stage of ['PREFLIGHT_METADATA_READY','PREFLIGHT_DISCOVERY_READY','READINESS_PRELIMINARY','READINESS_FINAL','EDITORIAL_KERNEL_READY','MEDIA_READY','IMAGES_READY','HANDOFF_COMMITTED','PR_CREATED','DETERMINISTIC_EXPANSION_READY','PROTECTED_CI_PASS'])s=markRunStage(s,stage,{artifactPaths:[stage+'.json']});
+ s=invalidateRunState(s,'PROTECTED_CI_PASS',{reason:'deterministic_ci_failure'});
+ assert.equal(s.stages.MEDIA_READY.status,'pass');assert.equal(s.stages.IMAGES_READY.status,'pass');
+});
+test('same-edition Watchlist counts and changed-topic names match all three current reader surfaces',()=>{
+ const canonical=JSON.parse(fs.readFileSync('_data/watchlist.json','utf8')),surface=expectedWatchlistSurface(canonical);
+ const countText=surface.counts.new_today+' new today · '+surface.counts.updated_today+' updated · '+surface.counts.carried_forward+' carried forward.';
+ for(const p of ['index.md','latest.md','briefs/2026-09-23.md']){const body=fs.readFileSync(p,'utf8');assert.ok(body.includes(countText));for(const t of surface.changed_topics)assert.ok(body.includes(t.name));}
+});
+test('current edition retains all hard counts and Agent Skills identity',()=>{
+ const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-23.json','utf8')),kernel=JSON.parse(fs.readFileSync('_records/editorial-handoff/kernel.json','utf8')),media=JSON.parse(fs.readFileSync('_records/editorial-handoff/media.json','utf8')),images=JSON.parse(fs.readFileSync('_records/editorial-handoff/final-image-review-2026-09-23.json','utf8')),runtime=JSON.parse(fs.readFileSync('docs/operations/under80-runtime-contract.json','utf8'));
+ assert.equal(edition.stories.length,6);assert.deepEqual(edition.stories.map(x=>x.focus),['technical_ai_engineering','technical_ai_engineering','applied_genai_knowledge_workers','applied_genai_knowledge_workers','agents_non_technical_people','agents_non_technical_people']);
+ assert.equal(kernel.stories.filter(x=>x.agent_skill===true).length,1);assert.equal(runtime.output.display_focus_labels.agents_non_technical_people,'Agents for Everyone');
+ assert.equal(Object.values(images).length,6);assert.equal(Object.values(media.worth_watching).filter(x=>['included','selected'].includes(x.status)).length,2);assert.equal(media.podcasts.filter(x=>['included','selected'].includes(x.status)).length,2);
+});
+test('completion-finalization retry reuses the same production-SHA-scoped branch',()=>{
+ const workflow=fs.readFileSync('.github/workflows/daily-delta-validation.yml','utf8');
+ assert.match(workflow,/finalization\/\$EDITION_DATE-\\\$\{EXPECTED_SHA:0:8\}/);
+ assert.match(workflow,/Reusing durable finalization branch/);
+ assert.match(workflow,/git ls-remote --exit-code --heads/);
 });

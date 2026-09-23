@@ -112,3 +112,14 @@ export const RECOVERY_MATRIX=Object.freeze({
  handoff_write:'HANDOFF_COMMITTED',pr_ci:'PROTECTED_CI_PASS',merge:'MERGED',pages:'PAGES_VERIFIED',
  completion:'COMPLETION_PERSISTED',command_center_sync:'COMMAND_CENTER_RECONCILED'
 });
+
+export function acceptedImageReusable(entry,{storyChanged=false,observedSha256=null}={}){
+ if(storyChanged||!entry||entry.accepted_locked!==true||entry.lock_status!=='accepted_locked'||!entry.sha256)return false;
+ if(observedSha256&&entry.sha256!==observedSha256)return false;
+ return true;
+}
+export function mediaReceiptReusable(receipt,kernelSha256){
+ if(!receipt||receipt.editorial_kernel_sha256!==kernelSha256||!/^[a-f0-9]{64}$/.test(kernelSha256||''))return false;
+ if(receipt.podcast_source_diversity?.pass!==true)return false;
+ const items=receipt.items||[];return items.length===4&&items.filter(x=>x.kind==='video').length===2&&items.filter(x=>x.kind==='podcast').length===2&&items.every(x=>x.verification_evidence&&x.verification_timestamp);
+}
