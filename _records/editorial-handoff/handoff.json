@@ -13,7 +13,7 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_attempt": 2,
+  "recovery_attempt": 3,
   "recovery_note": "Same-day Sep 23 recovery resumed from successful zero-model discovery preflight; no discovery redo; fresh six-image set and verified media completed before atomic handoff.",
-  "repair_note": "Targeted deterministic recovery: corrected media freshness metadata and Sep23 podcast permanent URLs after publication-stage validation failure; reused the same editorial kernel, evidence packet, and exact six accepted/locked image bytes. No new paid API or Work/Codex path used."
+  "repair_note": "Targeted deterministic recovery after media validation: retained repaired 72-hour video metadata, Sep23 podcast permanent URLs, and added the required current media-preflight receipt. Reused exact editorial kernel/evidence and six accepted/locked image bytes; no paid API or Work/Codex path used."
 }
