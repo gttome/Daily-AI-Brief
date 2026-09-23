@@ -2,30 +2,31 @@
   "worth_watching": {
     "general": {
       "status": "included",
-      "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
-      "channel": "AICodeKing",
-      "upload_date": "2026-09-21",
-      "runtime_seconds": 306,
-      "why_useful": "A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.",
-      "connection": "Extends today's engineering coverage from agent evaluation into practical coding-agent orchestration and workflow controls.",
-      "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
-      "duration_tier": "short",
+      "title": "How We Solved Agent Building - Andrew Qu, Vercel",
+      "channel": "AI Engineer",
+      "upload_date": "2026-09-14",
+      "runtime_seconds": 1054,
+      "why_useful": "Andrew Qu explains how Vercel moved from brittle prompt chains to a file-system agent with broad context and reusable skills.",
+      "connection": "Connects today’s observability, governance, and reusable-skill stories to an end-to-end production agent architecture.",
+      "url": "https://www.youtube.com/watch?v=9dYcwOkpCE8",
+      "duration_tier": "fallback_20m",
       "short_search_evidence": [
-        "Independent current listings verify the September 21 publication date and 5:06 runtime."
+        "Independent current listing verifies September 14, 2026 and 17:34 runtime."
       ]
     },
     "agents_non_technical_people": {
       "status": "included",
-      "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
-      "channel": "AICodeKing",
-      "upload_date": "2026-09-21",
-      "runtime_seconds": 373,
-      "why_useful": "A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.",
-      "connection": "Pairs directly with today's agent-evaluation story by showing why the surrounding harness can materially change task outcomes.",
-      "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+      "display_label": "Agents for Everyone",
+      "title": "What Anthropic's Own Engineers Build Instead of AI Agents",
+      "channel": "Nate Herk | AI Automation",
+      "upload_date": "2026-09-13",
+      "runtime_seconds": 587,
+      "why_useful": "A concise explanation of reusable skills, trigger descriptions, durable corrections, portability, and built-in verification.",
+      "connection": "Directly complements today’s JetBrains shared-skills story and shows how non-specialists can turn recurring methods into reusable agent capabilities.",
+      "url": "https://www.youtube.com/watch?v=HIRDzMtuWFk",
       "duration_tier": "short",
       "short_search_evidence": [
-        "Independent current Daily Curry listing dated September 21, 2026 verifies the Harness Arena video at 6:13."
+        "Independent current listing verifies September 13, 2026 and 09:47 runtime."
       ]
     }
   },
@@ -33,67 +34,64 @@
     {
       "status": "included",
       "ordinal": 9,
-      "item_id": "dab-podcast-2026-09-22-ais-new-muse",
-      "title": "AI's new Muse",
-      "show": "Reuters Morning Bid",
-      "host": "Reuters",
+      "item_id": "dab-podcast-2026-09-23-agents-rules-business",
+      "title": "Are AI agents changing the rules of business?",
+      "show": "Take on Tomorrow",
+      "host": "PwC; guests Rob Seaman and Joe Atkinson",
       "publication_date": "2026-09-22",
       "runtime_seconds": null,
       "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "AI assistants",
-        "agentic commerce",
-        "enterprise AI",
-        "markets"
+        "AI agents",
+        "workflow redesign",
+        "enterprise adoption",
+        "human work"
       ],
-      "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/",
-      "permanent_url": "/podcasts/2026-09-22/ais-new-muse/",
-      "summary": "Reuters examines the market response to Meta's new AI assistant Muse and the broader implications of increasingly agentic consumer and business interfaces.",
-      "why_useful": "It adds a market and adoption lens to today's technical and workflow-focused Brief.",
-      "connection": "Complements the enterprise-workflow stories by showing how agentic interfaces are beginning to affect platform strategy and user behavior.",
-      "selection_rationale": "Current-day Reuters podcast with direct AI relevance and source diversity.",
-      "verification_note": "Reuters verifies the September 22 publication date; runtime is intentionally left unpinned where a reliable duration could not be independently confirmed.",
-      "coverage_note": "Current-day source-diverse podcast selection.",
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.",
+      "why_useful": "Adds an enterprise-adoption lens to today’s operational stories.",
+      "connection": "Reinforces the shift from AI features to governed, outcome-oriented workflows.",
+      "selection_rationale": "Recent September 22 episode from PwC with direct agentic-work relevance.",
+      "verification_note": "PwC page verifies the September 22, 2026 publication date; runtime not independently recorded.",
+      "coverage_note": "Primary recent source-diverse podcast selection.",
       "freshness_tier": "primary_48h",
       "platforms": [
         {
-          "name": "Reuters",
-          "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/"
+          "name": "PwC",
+          "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html"
         }
       ]
     },
     {
       "status": "included",
       "ordinal": 10,
-      "item_id": "dab-podcast-2026-09-22-ai-doom-backlash",
-      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
-      "show": "Big Technology Podcast",
-      "host": "Alex Kantrowitz",
-      "publication_date": "2026-09-19",
-      "runtime_seconds": 4077,
-      "focus": "applied_genai_knowledge_workers",
+      "item_id": "dab-podcast-2026-09-23-upnext-ai",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "show": "UpNext AI",
+      "host": "UpNext AI",
+      "publication_date": "2026-09-22",
+      "runtime_seconds": 480,
+      "focus": "technical_ai_engineering",
       "topics": [
-        "AI safety",
-        "frontier labs",
-        "AI economics",
-        "governance"
+        "agent safety",
+        "long-horizon evaluation",
+        "AI security",
+        "agent platforms"
       ],
-      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
-      "permanent_url": "/podcasts/2026-09-22/ai-doom-backlash/",
-      "summary": "Alex Kantrowitz and Ranjan Roy discuss recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
-      "why_useful": "The episode adds a business and governance lens to the operational engineering changes covered elsewhere in the Brief.",
-      "connection": "Pairs with today’s production-maturity focus by asking what accountability, economics, and evidence should look like as AI systems become more capable.",
-      "selection_rationale": "Verified September 19 episode from a separate show and source, satisfying the two-podcast publication contract.",
-      "verification_note": "Independent current podcast listings verify the September 19 publication date and a 1:07:57 runtime.",
-      "coverage_note": "Primary recent podcast window; source-diverse from Reuters Morning Bid.",
-      "freshness_tier": "fallback_7d",
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.",
+      "why_useful": "Adds a compact reliability and safety counterpoint to the day’s product and workflow developments.",
+      "connection": "Pairs with today’s emphasis on observability, tool governance, and verified agent outcomes.",
+      "selection_rationale": "Recent September 22 episode from a source distinct from PwC, with independently listed 8-minute runtime.",
+      "verification_note": "Independent current listing verifies September 22, 2026 and 8-minute runtime.",
+      "coverage_note": "Primary recent source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
       "platforms": [
         {
-          "name": "Tapesearch",
-          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+          "name": "Podscan",
+          "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026"
         }
-      ],
-      "freshness_exception_reason": "No second qualifying current-day or primary-window podcast from a distinct source cleared the publication contract; this verified September 19 episode is within the documented 7-day fallback window."
+      ]
     }
   ]
 }
