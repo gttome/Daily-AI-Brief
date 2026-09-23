@@ -7,7 +7,7 @@ on:
     paths:
       - '_records/discovery-preflight/request.json'
   schedule:
-    # 05:50 America/Chicago across DST/CST; branch-existence guard makes the second trigger a no-op.
+    # 05:50 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
     - cron: '50 10 * * *'
     - cron: '50 11 * * *'
 
@@ -44,11 +44,28 @@ jobs:
             date="${local_stamp%%T*}"
             target_ref="discovery-preflight/daily/$date"
             if git ls-remote --exit-code --heads origin "refs/heads/$target_ref" >/dev/null 2>&1; then
-              echo "run_preflight=false" >> "$GITHUB_OUTPUT"
-              echo "Current-day discovery preflight branch already exists: $target_ref"
-              exit 0
+              git fetch origin "refs/heads/$target_ref:refs/remotes/origin/$target_ref"
+              valid=false
+              if git show "origin/$target_ref:_records/discovery-preflight/result/receipt.json" > /tmp/existing-discovery-receipt.json 2>/dev/null                 && git show "origin/$target_ref:_records/discovery-preflight/result/metadata-candidates.json" > /tmp/existing-discovery-metadata.json 2>/dev/null                 && git show "origin/$target_ref:_records/discovery-preflight/result/article-evidence.json" > /tmp/existing-article-evidence.json 2>/dev/null                 && git show "origin/$target_ref:_records/discovery-preflight/result/article-evidence-receipt.json" > /tmp/existing-article-evidence-receipt.json 2>/dev/null; then
+                if node - "$date" /tmp/existing-discovery-receipt.json <<'NODE'
+          const fs=require('fs');
+          const [date,receiptPath]=process.argv.slice(2),r=JSON.parse(fs.readFileSync(receiptPath,'utf8'));
+          if(r.edition_date!==date||r.model_calls!==0||r.coverage_ready!==true||r.article_evidence_ready!==true)process.exit(1);
+          if(!Number.isInteger(r.candidate_count)||r.candidate_count<1||r.candidate_count>20)process.exit(1);
+          if(!Number.isInteger(r.article_evidence_count)||r.article_evidence_count<1||r.article_evidence_count>9)process.exit(1);
+          NODE
+                then valid=true; fi
+              fi
+              if [ "$valid" = "true" ]; then
+                echo "run_preflight=false" >> "$GITHUB_OUTPUT"
+                echo "Current-day discovery preflight has valid durable receipt: $target_ref"
+                exit 0
+              fi
+              echo "Existing discovery preflight branch is incomplete or invalid; rebuilding only discovery preflight: $target_ref"
+              git switch -C "$target_ref" "$GITHUB_SHA"
+            else
+              git switch -c "$target_ref"
             fi
-            git switch -c "$target_ref"
             mkdir -p _records/discovery-preflight
             cutoff="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
             node - "$cutoff" "$date" <<'NODE' > _records/discovery-preflight/request.json
@@ -67,6 +84,20 @@ jobs:
             request_date="$(node -e "const r=require('./_records/discovery-preflight/request.json');process.stdout.write(String(r.edition_date||''))")"
             if [ "$purpose" = "daily_pre_work_discovery" ]; then
               target_ref="discovery-preflight/daily/$request_date"
+              git fetch origin "refs/heads/$target_ref:refs/remotes/origin/$target_ref" || true
+              if git show "origin/$target_ref:_records/discovery-preflight/result/receipt.json" > /tmp/current-discovery-receipt.json 2>/dev/null; then
+                if node - "$request_date" /tmp/current-discovery-receipt.json <<'NODE'
+          const fs=require('fs');const [date,p]=process.argv.slice(2),r=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(r.edition_date===date&&r.model_calls===0&&r.coverage_ready===true&&r.article_evidence_ready===true)process.exit(0);
+          process.exit(1);
+          NODE
+                then
+                  echo "run_preflight=false" >> "$GITHUB_OUTPUT"
+                  echo "Push-trigger duplicate suppressed because the durable discovery receipt is already valid: $target_ref"
+                  echo "target_ref=$target_ref" >> "$GITHUB_OUTPUT"
+                  exit 0
+                fi
+              fi
             fi
           fi
           echo "run_preflight=true" >> "$GITHUB_OUTPUT"
@@ -168,7 +199,12 @@ jobs:
           set -euo pipefail
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/date-enrichment.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence.json _records/discovery-preflight/result/article-evidence-receipt.json _records/discovery-preflight/result/receipt.json
+          git fetch origin main
+          date="$(node -e "const r=require('./_records/discovery-preflight/request.json');process.stdout.write(r.edition_date)")"
+          baseline="$(git rev-parse origin/main)"
+          node _tools/run-state.mjs checkpoint --date "$date" --baseline "$baseline" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1" --stage PREFLIGHT_METADATA_READY --workflow-run-id "$GITHUB_RUN_ID" --artifact-paths "_records/discovery-preflight/result/metadata-candidates.json;_records/discovery-preflight/result/date-enrichment.json"
+          node _tools/run-state.mjs checkpoint --date "$date" --baseline "$baseline" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1" --stage PREFLIGHT_DISCOVERY_READY --workflow-run-id "$GITHUB_RUN_ID" --artifact-paths "_records/discovery-preflight/result/receipt.json;_records/discovery-preflight/result/article-evidence.json;_records/discovery-preflight/result/article-evidence-receipt.json"
+          git add _records/discovery-preflight/request.json _records/discovery-preflight/result/date-enrichment.json _records/discovery-preflight/result/metadata-candidates.json _records/discovery-preflight/result/article-evidence.json _records/discovery-preflight/result/article-evidence-receipt.json _records/discovery-preflight/result/receipt.json "_records/run-state/$date.json"
           git commit -m "Complete under-80 discovery preflight"
           git push --force-with-lease origin "HEAD:$TARGET_REF"
 

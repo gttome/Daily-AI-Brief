@@ -495,6 +495,15 @@
       "pages": "retry deployment only",
       "completion": "generate completion record only",
       "command_center_sync": "repair Command Center independently without reopening the public edition"
+    },
+    "preflight_cursor": {
+      "authoritative_branch_pattern": "discovery-preflight/daily/YYYY-MM-DD",
+      "branch_exists_is_stage_proof": false,
+      "metadata_proof": "valid metadata receipt plus bounded metadata artifact and PREFLIGHT_METADATA_READY checkpoint",
+      "discovery_proof": "valid discovery receipt plus metadata/evidence artifacts and PREFLIGHT_DISCOVERY_READY checkpoint",
+      "invalid_existing_branch_behavior": "rebuild only the invalid preflight stage from current main; do not treat branch existence as completion",
+      "duplicate_trigger_behavior": "suppress queued push-trigger execution once the current branch has a valid durable discovery receipt",
+      "resolver": "node _tools/run-state.mjs resolve --date YYYY-MM-DD --baseline <current-main-sha> --contract under80-v1/sep24-reliability-v1"
     }
   }
 }
