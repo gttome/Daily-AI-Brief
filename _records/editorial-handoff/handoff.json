@@ -13,7 +13,7 @@
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_attempt": 3,
+  "recovery_attempt": 4,
   "recovery_note": "Same-day Sep 23 recovery resumed from successful zero-model discovery preflight; no discovery redo; fresh six-image set and verified media completed before atomic handoff.",
-  "repair_note": "Targeted deterministic recovery after media validation: retained repaired 72-hour video metadata, Sep23 podcast permanent URLs, and added the required current media-preflight receipt. Reused exact editorial kernel/evidence and six accepted/locked image bytes; no paid API or Work/Codex path used."
+  "repair_note": "Targeted deterministic recovery after Watchlist freshness gate: updated canonical Watchlist to Sep23 using same-edition primary evidence already present in the bounded editorial packet; retained prior media repair and exact six accepted/locked images. No new paid API or Work/Codex path used."
 }
