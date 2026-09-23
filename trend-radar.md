@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 22, 2026
+# Trend Radar — September 23, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,13 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-21 supporting stories appeared in the latest 7 days and 74 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+19 supporting stories appeared in the latest 7 days and 75 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 23, 2026]({{ '/stories/2026-09-23/github-copilot-adds-opentelemetry-for-agent-observability/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals/' | relative_url }})
+- [September 23, 2026]({{ '/podcasts/2026-09-23/upnext-ai/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/agent-evaluation-is-moving-from-tool-call-scores-to-full-task-completion/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/six-reusable-agent-skills-turn-model-deployment-into-a-repeatable-workflow/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/benchling-treats-agent-generated-code-as-untrusted-in-a-multi-tenant-security-design/' | relative_url }})
@@ -108,19 +111,18 @@ Supporting stories:
 - [August 26, 2026]({{ '/stories/2026-08-26/openai-s-admin-plugin-turns-workspace-operations-into-governed-agent-workflows/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/nvidia-draws-a-hard-line-between-behavioral-guidance-and-enforceable-agent-secur/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/microsoft-agent-framework-adds-recovery-mechanics-for-long-running-agents/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/apple-messages-brings-an-approval-gated-action-to-chatgpt-work/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/' | relative_url }})
 
 ## Agent memory and context
 
 **STABLE · high confidence**
 
-13 supporting stories appeared in the latest 7 days and 41 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+14 supporting stories appeared in the latest 7 days and 40 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 23, 2026]({{ '/stories/2026-09-23/confidential-computing-targets-private-production-ai-inference-without-giving-up-acceleration/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows/' | relative_url }})
+- [September 23, 2026]({{ '/videos/2026-09-23/general/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/dreamforce-highlights-the-shift-from-ai-features-to-agentic-business-workflows/' | relative_url }})
 - [September 22, 2026]({{ '/videos/2026-09-22/general/' | relative_url }})
 - [September 20, 2026]({{ '/stories/2026-09-20/gemini-in-workspace-connects-directly-to-more-business-tools-through-mcp/' | relative_url }})
@@ -172,18 +174,19 @@ Supporting stories:
 - [August 26, 2026]({{ '/stories/2026-08-26/github-gives-agent-customization-a-unified-discovery-layer/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/chatgpt-projects-now-let-knowledge-workers-choose-a-tighter-memory-boundary/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/google-drive-in-chatgpt-library-reduces-manual-context-assembly/' | relative_url }})
 
 ## AI-assisted development
 
 **STABLE · high confidence**
 
-22 supporting stories appeared in the latest 7 days and 78 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+23 supporting stories appeared in the latest 7 days and 80 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 23, 2026]({{ '/stories/2026-09-23/gpt-6-sol-and-luna-expand-model-choice-inside-github-copilot/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/github-copilot-adds-opentelemetry-for-agent-observability/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals/' | relative_url }})
+- [September 23, 2026]({{ '/videos/2026-09-23/general/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/six-reusable-agent-skills-turn-model-deployment-into-a-repeatable-workflow/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/benchling-treats-agent-generated-code-as-untrusted-in-a-multi-tenant-security-design/' | relative_url }})
 - [September 22, 2026]({{ '/videos/2026-09-22/general/' | relative_url }})
@@ -283,16 +286,22 @@ Supporting stories:
 - [August 25, 2026]({{ '/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/maia-turns-plain-language-intent-into-a-visible-agent-or-automation-canvas/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-44 supporting stories appeared in the latest 7 days and 127 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+45 supporting stories appeared in the latest 7 days and 128 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 23, 2026]({{ '/stories/2026-09-23/gpt-6-sol-and-luna-expand-model-choice-inside-github-copilot/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/github-copilot-adds-opentelemetry-for-agent-observability/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals/' | relative_url }})
+- [September 23, 2026]({{ '/stories/2026-09-23/agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows/' | relative_url }})
+- [September 23, 2026]({{ '/videos/2026-09-23/agent-skills/' | relative_url }})
+- [September 23, 2026]({{ '/podcasts/2026-09-23/agents-rules-business/' | relative_url }})
+- [September 23, 2026]({{ '/podcasts/2026-09-23/upnext-ai/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/agent-evaluation-is-moving-from-tool-call-scores-to-full-task-completion/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/ai-assisted-ros-2-optimization-targets-zero-copy-gpu-data-paths/' | relative_url }})
 - [September 22, 2026]({{ '/stories/2026-09-22/dreamforce-highlights-the-shift-from-ai-features-to-agentic-business-workflows/' | relative_url }})
@@ -459,10 +468,5 @@ Supporting stories:
 - [August 25, 2026]({{ '/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/radarfirst-puts-ai-agents-around-not-in-place-of-regulated-decisions/' | relative_url }})
 - [August 25, 2026]({{ '/stories/2026-08-25/maia-turns-plain-language-intent-into-a-visible-agent-or-automation-canvas/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/microsoft-agent-framework-adds-recovery-mechanics-for-long-running-agents/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/chatgpt-projects-now-let-knowledge-workers-choose-a-tighter-memory-boundary/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/apple-messages-brings-an-approval-gated-action-to-chatgpt-work/' | relative_url }})
-- [August 24, 2026]({{ '/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

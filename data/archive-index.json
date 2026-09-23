@@ -4,6 +4,230 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-09-23-c720a977",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-23",
+      "headline": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
+      "url": "/stories/2026-09-23/nemotron-3-brings-real-time-speaker-diarization-to-open-weight-voice-ai/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "speaker diarization",
+        "voice AI",
+        "open-weight models",
+        "multimodal systems"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [],
+      "summary": "NVIDIA’s open-weight 100M-parameter Nemotron 3 Diarization model identifies who spoke when in multi-speaker audio, producing speaker activity and timestamps that can feed downstream speech recognition and analytics."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-23-8e98ee1e",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-22",
+      "headline": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
+      "url": "/stories/2026-09-23/gpt-6-sol-and-luna-expand-model-choice-inside-github-copilot/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "GitHub Copilot",
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "model routing"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub added OpenAI GPT-6 Sol and GPT-6 Luna to Copilot, giving teams a balanced model for careful multistep agentic coding and a lighter, lower-cost option for faster everyday tasks."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-23-f8e1d991",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-23",
+      "headline": "GitHub Copilot adds OpenTelemetry for agent observability",
+      "url": "/stories/2026-09-23/github-copilot-adds-opentelemetry-for-agent-observability/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "OpenTelemetry",
+        "agent observability",
+        "GitHub Copilot",
+        "enterprise governance"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "The GitHub Copilot app now supports enterprise-managed OpenTelemetry configuration so organizations can observe how Copilot agents interact with models and tools and export operational telemetry into existing observability systems."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-23-7419152a",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-22",
+      "headline": "Confidential computing targets private production AI inference without giving up acceleration",
+      "url": "/stories/2026-09-23/confidential-computing-targets-private-production-ai-inference-without-giving-up-acceleration/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "confidential computing",
+        "AI inference",
+        "privacy",
+        "trusted execution environments"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Agent memory and context"
+      ],
+      "summary": "NVIDIA describes confidential-computing patterns for protecting prompts, proprietary context, model assets, and intermediate data during accelerated production inference inside attested trusted execution environments."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-23-dec1b780",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-23",
+      "headline": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
+      "url": "/stories/2026-09-23/copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agent Skills",
+        "GitHub Copilot",
+        "JetBrains",
+        "tool approvals"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "GitHub Copilot for JetBrains 1.18.0 adds AI-assisted tool approvals, plan review, more control over agent conversations, and organization-level shared skills and instructions that package repeatable methods and standards."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-09-23-cfe12519",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-22",
+      "headline": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
+      "url": "/stories/2026-09-23/agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agentforce",
+        "AWS",
+        "MCP",
+        "public-sector AI"
+      ],
+      "companies": [],
+      "evidence_type": "official_announcement",
+      "availability_status": "published",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS shows how public-sector teams can combine data-extraction services, Model Context Protocol connections, and Salesforce Agentforce so natural-language agents can query structured evidence and surface governed insights for human review."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-23-general",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-21",
+      "headline": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+      "url": "/videos/2026-09-23/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "AICodeKing"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context",
+        "AI-assisted development"
+      ],
+      "summary": "A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-09-23-agent-skills",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-21",
+      "headline": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+      "url": "/videos/2026-09-23/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "AICodeKing"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-23-agents-rules-business",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-22",
+      "headline": "Are AI agents changing the rules of business?",
+      "url": "/podcasts/2026-09-23/agents-rules-business/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI agents",
+        "workflow redesign",
+        "enterprise adoption",
+        "human work"
+      ],
+      "companies": [
+        "Take on Tomorrow"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-09-23-upnext-ai",
+      "brief_date": "2026-09-23",
+      "event_date": "2026-09-22",
+      "headline": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "url": "/podcasts/2026-09-23/upnext-ai/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent safety",
+        "long-horizon evaluation",
+        "AI security",
+        "agent platforms"
+      ],
+      "companies": [
+        "UpNext AI"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-22-20a54b62",
       "brief_date": "2026-09-22",
       "event_date": "2026-09-21",
@@ -5208,164 +5432,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "Make released Maia, a conversational co-worker inside its visual Scenario Builder. Users describe an outcome in plain language; Maia asks clarifying questions, selects and configures modules, and visibly builds the workflow step by step. It can also customize templates, explain existing scenarios, modify automations, and troubleshoot failed modules. Maia is available to all Make users, with plan-dependent usage."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-24-f58c2c99",
-      "brief_date": "2026-08-24",
-      "event_date": "2026-08-21",
-      "headline": "Microsoft Agent Framework adds recovery mechanics for long-running agents",
-      "url": "/stories/2026-08-24/microsoft-agent-framework-adds-recovery-mechanics-for-long-running-agents/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "Harness engineering",
-        "long-running workflows",
-        "checkpoints",
-        "approvals",
-        "A2A",
-        "MCP"
-      ],
-      "companies": [
-        "GitHub"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Microsoft Agent Framework Python 1.15.0 adds steering, retry, and recovery support for resilient Foundry Hosted Agents, along with long-running workflow samples. The release also introduces a first-class fatal middleware signal, a workflow checkpoint type registry, persisted approval state, and fixes for A2A inputs, tool-call duplication, remote MCP name shadowing, and superlinear history growth."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-24-4517141d",
-      "brief_date": "2026-08-24",
-      "event_date": "2026-08-21",
-      "headline": "NVIDIA AVO shows how memory, supervision, and grounded feedback sustain an agent loop",
-      "url": "/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "Loop engineering",
-        "harness evaluation",
-        "persistent memory",
-        "supervision",
-        "ARC-AGI-3"
-      ],
-      "companies": [
-        "NVIDIA"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "NVIDIA reports that its Agentic Variation Operators architecture completed all 183 levels across the 25-environment ARC-AGI-3 public set with a 100.00 Relative Human Action Efficiency score. The same architecture previously ran a seven-day GPU-kernel optimization loop. AVO combines persistent memory, tools, execution-grounded tests, and a supervisor that can redirect the main agent when progress stalls."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-24-4c295f61",
-      "brief_date": "2026-08-24",
-      "event_date": "2026-08-14",
-      "headline": "ChatGPT Projects now let knowledge workers choose a tighter memory boundary",
-      "url": "/stories/2026-08-24/chatgpt-projects-now-let-knowledge-workers-choose-a-tighter-memory-boundary/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "Context engineering",
-        "memory",
-        "projects",
-        "privacy",
-        "reliable knowledge work"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Eligible unshared ChatGPT Projects can now switch between default memory and project-only memory without creating a new project. In project-only mode, ChatGPT can use conversations from the same project but will not reference memories or conversations outside it, and project information is kept out of memory used elsewhere."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-24-c688328c",
-      "brief_date": "2026-08-24",
-      "event_date": "2026-08-13",
-      "headline": "Google Drive in ChatGPT Library reduces manual context assembly",
-      "url": "/stories/2026-08-24/google-drive-in-chatgpt-library-reduces-manual-context-assembly/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "Grounded work",
-        "connected files",
-        "research",
-        "writing",
-        "analysis"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context"
-      ],
-      "summary": "With the Google Drive plugin connected, users can browse Drive files and folders directly from ChatGPT Library, bring a file or folder into a conversation without re-uploading it, and keep Google Docs, Sheets, or Slides open beside the chat. Where supported and authorized, ChatGPT can update the source file directly."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-24-fb9e9c08",
-      "brief_date": "2026-08-24",
-      "event_date": "2026-08-20",
-      "headline": "Apple Messages brings an approval-gated action to ChatGPT Work",
-      "url": "/stories/2026-08-24/apple-messages-brings-an-approval-gated-action-to-chatgpt-work/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "Accessible agents",
-        "tool use",
-        "human approval",
-        "messaging",
-        "delegated work"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "On Apple silicon Macs, the Apple Messages plugin lets ChatGPT Work read and search iMessage, SMS, and RCS conversations and prepare or send messages through the Messages app. By default, ChatGPT asks the user to approve the message and recipients before sending."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-08-24-db55e747",
-      "brief_date": "2026-08-24",
-      "event_date": "2026-04-22",
-      "headline": "OpenAI documents “briefing” as a repeatable workspace-agent pattern",
-      "url": "/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "No-code agent building",
-        "recurring briefs",
-        "governance",
-        "human review",
-        "publishing workflows"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI Academy’s workspace-agent guide defines an agent through a trigger, a process with reusable skills, and approved tools. Its named “Briefing” pattern gathers information from multiple places, extracts important signals, summarizes for an audience, and shares a memo or briefing. The builder starts in plain language: describe the job, success criteria, constraints, tools, and approval boundaries, then test it in preview."
     }
   ]
 }
