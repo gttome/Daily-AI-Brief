@@ -4,7 +4,7 @@
 
 Strengthen the existing Daily Generative AI Brief production path without adding another schedule.
 
-The system uses the already-scheduled **06:15 Preflight Guard** and **06:55 Final Gate** to create one machine-readable readiness receipt for the current edition. The **07:00 publisher** consumes that final result.
+The system uses the already-scheduled **05:45 Preflight Guard** and **06:45 Final Gate** to create one machine-readable readiness receipt for the current edition. The **07:00 publisher** consumes that final result.
 
 ## Receipt
 
@@ -31,11 +31,11 @@ Allowed final statuses:
 ```text
 05:45 metadata preflight
 05:50 discovery + article-evidence preflight
-06:15 Preflight Guard
+05:45 Preflight Guard
       -> full infrastructure/system certification
       -> targeted deterministic repair when safe
       -> writes preliminary readiness receipt
-06:55 Final Gate
+06:45 Final Gate
       -> rechecks current main + current-day evidence
       -> finalizes READY / READY_WITH_WARNINGS / NOT_READY
 07:00 Publisher
@@ -45,7 +45,7 @@ Allowed final statuses:
 
 No new automation schedule is created.
 
-## 06:15 certification scope
+## 05:45 certification scope
 
 The Preflight Guard verifies:
 
@@ -66,7 +66,7 @@ The Preflight Guard verifies:
 
 Any safe deterministic defect is repaired within the existing bounded-repair policy. Completed valid work is never restarted.
 
-## 06:55 final gate
+## 06:45 final gate
 
 The Final Gate rechecks:
 
