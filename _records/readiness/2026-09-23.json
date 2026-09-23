@@ -1,0 +1,93 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-23",
+  "stage": "final",
+  "status": "READY",
+  "main_sha": "727b41bbca5b2e07965224bfe5210e98b068968d",
+  "certified_at": "2026-09-23T15:49:00Z",
+  "checks": [
+    {
+      "id": "github_publication_capability",
+      "result": "PASS",
+      "evidence": "Authenticated GitHub connector verified read/write, branch, blob/tree/commit/ref, PR, Actions, checks and Pages inspection capability."
+    },
+    {
+      "id": "main_protected_ci",
+      "result": "PASS",
+      "evidence": "Current main 727b41bbca5b2e07965224bfe5210e98b068968d has successful Deterministic publication CI run 35771636445."
+    },
+    {
+      "id": "main_pages",
+      "result": "PASS",
+      "evidence": "Current main has successful Pages build/deploy run 35771635831."
+    },
+    {
+      "id": "main_delta_validation",
+      "result": "PASS",
+      "evidence": "Current main has successful deterministic delta validation run 35771707267."
+    },
+    {
+      "id": "metadata_preflight",
+      "result": "PASS",
+      "evidence": "Sep23 metadata preflight runs 35879721775 and 35882510248 completed successfully."
+    },
+    {
+      "id": "discovery_preflight",
+      "result": "PASS",
+      "evidence": "Sep23 discovery preflight runs 35879757721 and 35882574812 completed successfully; coverage_ready=true."
+    },
+    {
+      "id": "article_evidence",
+      "result": "PASS",
+      "evidence": "9 retrieved candidates; 3/3/3 focus distribution; model_visible_chars=9824; model_calls=0; receipt ready=true."
+    },
+    {
+      "id": "candidate_cap",
+      "result": "PASS",
+      "evidence": "20 retained metadata candidates; all retained candidates have resolved in-window metadata dates."
+    },
+    {
+      "id": "focus_coverage",
+      "result": "PASS",
+      "evidence": "Metadata coverage 7 technical / 7 applied / 6 agents; deep evidence 3/3/3."
+    },
+    {
+      "id": "agent_skills",
+      "result": "PASS",
+      "evidence": "3 skill signals, 2 story-ready; m01 preferred and m08 also deep-reviewed/story-ready."
+    },
+    {
+      "id": "publisher_enabled",
+      "result": "PASS",
+      "evidence": "Daily AI Brief + QA automation is enabled for the normal next-day schedule; same-day recovery is operating under pre-authorized autonomy."
+    }
+  ],
+  "warnings": [],
+  "blockers": [],
+  "repairs_performed": [
+    "Same-day recovery reused successful Sep23 preflight checkpoints after missed scheduler transition.",
+    "Editorial handoff is being completed directly from the validated Sep23 evidence rather than repeating discovery."
+  ],
+  "workflow_evidence": {
+    "metadata_preflight": [
+      35879721775,
+      35882510248
+    ],
+    "discovery_preflight": [
+      35879757721,
+      35882574812
+    ],
+    "ci": 35771636445,
+    "pages": 35771635831,
+    "delta_validation": 35771707267
+  },
+  "automation_state": {
+    "preflight_guard": "enabled",
+    "final_gate": "enabled",
+    "publisher": "enabled",
+    "command_center_sync": "enabled",
+    "after_action": "paused_for_same_day_recovery"
+  },
+  "publication_authorized": true,
+  "next_action": "Complete one bounded Sep23 editorial pass, six-image/media gates, atomic handoff, connector PR, protected CI, merge, Pages and deterministic completion."
+}
