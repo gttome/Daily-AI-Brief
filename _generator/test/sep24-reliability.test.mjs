@@ -116,7 +116,7 @@ test('current edition retains all hard counts and Agent Skills identity',()=>{
 });
 test('completion-finalization retry reuses the same production-SHA-scoped branch',()=>{
  const workflow=fs.readFileSync('.github/workflows/daily-delta-validation.yml','utf8');
- assert.match(workflow,/finalization\/\$EDITION_DATE-\\\$\{EXPECTED_SHA:0:8\}/);
+ assert.ok(workflow.includes('finalization/$EDITION_DATE-${EXPECTED_SHA:0:8}'));
  assert.match(workflow,/Reusing durable finalization branch/);
  assert.match(workflow,/git ls-remote --exit-code --heads/);
 });
