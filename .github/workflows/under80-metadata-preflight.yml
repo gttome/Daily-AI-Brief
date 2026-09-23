@@ -7,7 +7,7 @@ on:
     paths:
       - '_records/preflight-request/request.json'
   schedule:
-    # 05:45 America/Chicago across DST/CST; branch-existence guard makes the second trigger a no-op.
+    # 05:45 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
     - cron: '45 10 * * *'
     - cron: '45 11 * * *'
   workflow_dispatch:
@@ -69,10 +69,26 @@ jobs:
           console.log(JSON.stringify({date,cutoff:now.toISOString()}));
           NODE
             date="$(node -e "const x=require('/tmp/scheduled.json');process.stdout.write(x.date)")"
-            if git ls-remote --exit-code --heads origin "refs/heads/preflight/$date" >/dev/null 2>&1; then
-              echo "should_run=false" >> "$GITHUB_OUTPUT"
-              echo "Current-day metadata preflight branch already exists: preflight/$date"
-              exit 0
+            target="preflight/$date"
+            if git ls-remote --exit-code --heads origin "refs/heads/$target" >/dev/null 2>&1; then
+              git fetch origin "refs/heads/$target:refs/remotes/origin/$target"
+              valid=false
+              if git show "origin/$target:_records/preflight/$date/receipt.json" > /tmp/existing-metadata-receipt.json 2>/dev/null                 && git show "origin/$target:_records/preflight/$date/metadata-candidates.json" > /tmp/existing-metadata-candidates.json 2>/dev/null; then
+                if node - "$date" /tmp/existing-metadata-receipt.json /tmp/existing-metadata-candidates.json <<'NODE'
+          const fs=require('fs');
+          const [date,receiptPath,candidatesPath]=process.argv.slice(2);
+          const r=JSON.parse(fs.readFileSync(receiptPath,'utf8')),m=JSON.parse(fs.readFileSync(candidatesPath,'utf8'));
+          if(r.edition_date!==date||r.ready!==true||r.model_calls!==0||r.gate?.coverage_ready!==true)process.exit(1);
+          if(!Array.isArray(m.candidates)||m.candidates.length<1||m.candidates.length>20)process.exit(1);
+          NODE
+                then valid=true; fi
+              fi
+              if [ "$valid" = "true" ]; then
+                echo "should_run=false" >> "$GITHUB_OUTPUT"
+                echo "Current-day metadata preflight has valid durable receipt: $target"
+                exit 0
+              fi
+              echo "Existing metadata preflight branch is incomplete or invalid; rebuilding only metadata preflight: $target"
             fi
             node - <<'NODE' > /tmp/preflight-request.json
           const x=require('/tmp/scheduled.json');
@@ -114,7 +130,10 @@ jobs:
           fi
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
-          git add "_records/preflight/$date/metadata-candidates.json" "_records/preflight/$date/receipt.json" "_records/preflight/$date/date-enrichment.json" "_records/discovery/$date.json"
+          git fetch origin main
+          baseline="$(git rev-parse origin/main)"
+          node _tools/run-state.mjs checkpoint --date "$date" --baseline "$baseline" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1" --stage PREFLIGHT_METADATA_READY --workflow-run-id "$GITHUB_RUN_ID" --artifact-paths "_records/preflight/$date/metadata-candidates.json;_records/preflight/$date/receipt.json;_records/preflight/$date/date-enrichment.json"
+          git add "_records/preflight/$date/metadata-candidates.json" "_records/preflight/$date/receipt.json" "_records/preflight/$date/date-enrichment.json" "_records/discovery/$date.json" "_records/run-state/$date.json"
           if git diff --cached --quiet; then
             echo "No preflight changes to commit."
           else

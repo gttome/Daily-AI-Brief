@@ -29,8 +29,21 @@ function proofValid(p,{baselineSha,contractVersion}={}){
 export function resolveResumeStage({state,baselineSha=null,contractVersion=null}={}){
  if(!state)return 'PREFLIGHT_METADATA_READY';
  const baseline=baselineSha||state.baseline_main_sha,contract=contractVersion||state.contract_runtime_version;
+ if(baselineSha&&state.baseline_main_sha!==baselineSha)return 'PREFLIGHT_METADATA_READY';
+ if(contractVersion&&state.contract_runtime_version!==contractVersion)return 'PREFLIGHT_METADATA_READY';
  for(const stage of RUN_STAGES.slice(1,-1))if(!proofValid(state.stages?.[stage],{baselineSha:baseline,contractVersion:contract}))return stage;
  return proofValid(state.stages?.CLOSED,{baselineSha:baseline,contractVersion:contract})?'CLOSED':'CLOSED';
+}
+export function resolveResumeStageFromRepository(root,state,{baselineSha=null,contractVersion=null}={}){
+ const structural=resolveResumeStage({state,baselineSha,contractVersion});
+ if(!state||structural==='PREFLIGHT_METADATA_READY')return structural;
+ const baseline=baselineSha||state.baseline_main_sha,contract=contractVersion||state.contract_runtime_version;
+ for(const stage of RUN_STAGES.slice(1,-1)){
+  const proof=state.stages?.[stage];
+  if(!proofValid(proof,{baselineSha:baseline,contractVersion:contract}))return stage;
+  if((proof.artifact_paths||[]).some(p=>!fs.existsSync(path.join(root,p))))return stage;
+ }
+ return 'CLOSED';
 }
 export function deriveOperationalStatus(resumeStage){
  if(['PREFLIGHT_METADATA_READY','PREFLIGHT_DISCOVERY_READY','READINESS_PRELIMINARY'].includes(resumeStage))return 'PREPARING';

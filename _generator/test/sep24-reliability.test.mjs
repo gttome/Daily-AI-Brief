@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import os from 'node:os';
-import {newRunState,markRunStage,invalidateRunState,resolveResumeStage,deriveOperationalStatus,validateHandoffCheckpoint,RECOVERY_MATRIX,acceptedImageReusable,mediaReceiptReusable} from '../lib/run-state.mjs';
+import {newRunState,markRunStage,invalidateRunState,resolveResumeStage,resolveResumeStageFromRepository,deriveOperationalStatus,validateHandoffCheckpoint,RECOVERY_MATRIX,acceptedImageReusable,mediaReceiptReusable} from '../lib/run-state.mjs';
 import {publicWatchlist,watchlistDailySummary} from '../lib/watchlist.mjs';
 import {expectedWatchlistSurface} from '../lib/publication-candidate-lint.mjs';
 import {sha256} from '../lib/util.mjs';
@@ -119,4 +119,35 @@ test('completion-finalization retry reuses the same production-SHA-scoped branch
  assert.ok(workflow.includes('finalization/$EDITION_DATE-${EXPECTED_SHA:0:8}'));
  assert.match(workflow,/Reusing durable finalization branch/);
  assert.match(workflow,/git ls-remote --exit-code --heads/);
+});
+
+test('repository-aware resume rejects a completed stage whose durable artifact is missing',()=>{
+ const root=fs.mkdtempSync(path.join(os.tmpdir(),'dab-resume-'));
+ try{
+  let s=newRunState({date:'2026-09-24',baselineSha:baseline});
+  s=markRunStage(s,'PREFLIGHT_METADATA_READY',{artifactPaths:['metadata.json']});
+  assert.equal(resolveResumeStage({state:s}),'PREFLIGHT_DISCOVERY_READY');
+  assert.equal(resolveResumeStageFromRepository(root,s),'PREFLIGHT_METADATA_READY');
+  fs.writeFileSync(path.join(root,'metadata.json'),'{}\n');
+  assert.equal(resolveResumeStageFromRepository(root,s),'PREFLIGHT_DISCOVERY_READY');
+ } finally {fs.rmSync(root,{recursive:true,force:true});}
+});
+test('baseline or contract drift invalidates the cursor from metadata preflight',()=>{
+ let s=newRunState({date:'2026-09-24',baselineSha:baseline,contractVersion:'v1'});
+ s=markRunStage(s,'PREFLIGHT_METADATA_READY',{artifactPaths:['metadata.json']});
+ assert.equal(resolveResumeStage({state:s,baselineSha:'b'.repeat(40)}),'PREFLIGHT_METADATA_READY');
+ assert.equal(resolveResumeStage({state:s,contractVersion:'v2'}),'PREFLIGHT_METADATA_READY');
+});
+test('scheduled preflights require durable receipt validity rather than branch existence',()=>{
+ const metadata=fs.readFileSync('.github/workflows/under80-metadata-preflight.yml','utf8');
+ const discovery=fs.readFileSync('.github/workflows/under80-discovery-preflight.yml','utf8');
+ assert.match(metadata,/valid durable receipt/);
+ assert.match(metadata,/incomplete or invalid; rebuilding only metadata preflight/);
+ assert.match(metadata,/run-state\.mjs checkpoint[\s\S]*PREFLIGHT_METADATA_READY/);
+ assert.match(discovery,/valid durable receipt/);
+ assert.match(discovery,/incomplete or invalid; rebuilding only discovery preflight/);
+ assert.match(discovery,/Push-trigger duplicate suppressed/);
+ assert.match(discovery,/PREFLIGHT_METADATA_READY/);
+ assert.match(discovery,/PREFLIGHT_DISCOVERY_READY/);
+ assert.match(discovery,/_records\/run-state\/\$date\.json/);
 });

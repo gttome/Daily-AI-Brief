@@ -2,10 +2,27 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parseArgs} from '../_generator/lib/util.mjs';
-import {RUN_STATE_VERSION,newRunState,loadRunState,persistRunState,markRunStage,resolveResumeStage,runStatePath} from '../_generator/lib/run-state.mjs';
+import {RUN_STATE_VERSION,newRunState,loadRunState,persistRunState,markRunStage,resolveResumeStage,resolveResumeStageFromRepository,runStatePath} from '../_generator/lib/run-state.mjs';
 const a=parseArgs(process.argv.slice(2)),command=a._?.[0]||process.argv[2],root=path.resolve(a.root||'.'),date=a.date;
 if(!date)throw Error('date_required');
-if(command==='resolve'){const state=loadRunState(root,date);console.log(JSON.stringify({resume_stage:resolveResumeStage({state}),state_path:runStatePath(date)},null,2));process.exit(0);}
+if(command==='resolve'){
+ const state=loadRunState(root,date);
+ console.log(JSON.stringify({resume_stage:resolveResumeStageFromRepository(root,state,{baselineSha:a.baseline||null,contractVersion:a.contract||null}),state_path:runStatePath(date)},null,2));
+ process.exit(0);
+}
+if(command==='checkpoint'){
+ if(!a.baseline||!a.stage)throw Error('checkpoint_requires_baseline_and_stage');
+ const contract=a.contract||RUN_STATE_VERSION;
+ let state=loadRunState(root,date);
+ if(!state||state.baseline_main_sha!==a.baseline||state.contract_runtime_version!==contract)state=newRunState({date,baselineSha:a.baseline,contractVersion:contract});
+ const artifacts=String(a['artifact-paths']||'').split(';').map(x=>x.trim()).filter(Boolean);
+ if(!artifacts.length)throw Error('checkpoint_artifacts_required');
+ for(const artifact of artifacts)if(!fs.existsSync(path.join(root,artifact)))throw Error('checkpoint_artifact_missing:'+artifact);
+ state=markRunStage(state,a.stage,{currentSha:a.current||state.current_sha,artifactPaths:artifacts,workflowRunIds:a['workflow-run-id']?[String(a['workflow-run-id'])]:[]});
+ persistRunState(root,state);
+ console.log(JSON.stringify({stage:state.stage,resume_stage:resolveResumeStageFromRepository(root,state),state_path:runStatePath(date)},null,2));
+ process.exit(0);
+}
 if(command==='seed-candidate'){
  let state=loadRunState(root,date)||newRunState({date,baselineSha:a.baseline,contractVersion:a.contract||RUN_STATE_VERSION});
  const current=a.current||state.current_sha,steps=[
