@@ -5,46 +5,70 @@
   "model_calls": 0,
   "review_plan_count": 9,
   "preferred_agent_skill_candidate_id": "m01",
-  "model_visible_chars": 9995,
+  "model_visible_chars": 9824,
   "model_visible": [
     {
       "candidate_id": "m02",
       "focus": "technical_ai_engineering",
-      "headline": "Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS",
-      "canonical_url": "https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/",
-      "publisher": "NVIDIA Developer",
-      "published_at": "2026-09-22T12:00:00.000Z",
+      "headline": "Claude Opus 5.5 is now available in GitHub Copilot",
+      "canonical_url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-22T17:10:23.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 3017,
-      "excerpt": "Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Robotics Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS Sep 22, 2026 By Jaiveer Singh , Raffaello Bonghi , Hemal Shah , CY (Chien-Ying) Chen and Karsten Patzaldt Like Discuss (0) L T F R E AI-Generated Summary rosidl::Buffer and the NVIDIA-contributed CUDA buffer backend enable ROS 2 nodes to exchange GPU-resident payloads through zero-copy transport when runtime conditions allow, while preserving standard ROS 2 messages and node boundaries.…"
+      "source_word_count": 651,
+      "excerpt": "Claude Opus 5.5 is now available in GitHub Copilot - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read Claude Opus 5.5 is now available in GitHub Copilot Table of Contents Availability in GitHub Copilot Enabling access Learn more Share your feedback Menu. Currently selected: Availability in GitHub Copilot Availability in GitHub Copilot Enabling access Learn more Share your feedback Claude Opus 5.5, Anthropic&rsquo;s…"
     },
     {
       "candidate_id": "m03",
       "focus": "technical_ai_engineering",
-      "headline": "How to Evaluate AI Agents From Tool Calls to Task Completion",
-      "canonical_url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
-      "publisher": "NVIDIA Developer",
-      "published_at": "2026-09-21T21:05:28.000Z",
+      "headline": "OpenAI’s GPT-6 Sol and GPT-6 Luna now available",
+      "canonical_url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-22T17:00:14.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 2777,
-      "excerpt": "How to Evaluate AI Agents From Tool Calls to Task Completion | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Agentic AI / Generative AI How to Evaluate AI Agents From Tool Calls to Task Completion Sep 21, 2026 By Sophia Abbassi , Chris Alexiuk , Davide Onofrio and Gomathy Venkata Krishnan Like Discuss (0) L T F R E AI-Generated Summary Agent evaluation has shifted from scoring individual function calls to measuring full task completion through executable environments that track state across multi-step tool use. Learn more When you ship an AI agent , the key question…"
+      "source_word_count": 645,
+      "excerpt": "OpenAI&#039;s GPT-6 Sol and GPT-6 Luna now available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read OpenAI&#8217;s GPT-6 Sol and GPT-6 Luna now available Table of Contents Availability in GitHub Copilot Enabling access Learn more Share your feedback Menu. Currently selected: Availability in GitHub Copilot Availability in GitHub Copilot Enabling access Learn more Share your feedback OpenAI&rsquo;s GPT-6 family…"
     },
     {
       "candidate_id": "m04",
       "focus": "technical_ai_engineering",
-      "headline": "Refreshed repository pull requests page generally available",
-      "canonical_url": "https://github.blog/changelog/2026-09-21-refreshed-repository-pull-requests-page-generally-available",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-22T01:25:53.000Z",
+      "headline": "**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**",
+      "canonical_url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+      "publisher": "Hugging Face",
+      "published_at": "2026-09-23T13:17:01.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 541,
-      "excerpt": "Refreshed repository pull requests page generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 21, 2026 • 1 minute read Refreshed repository pull requests page generally available Table of Contents Highlights Recent improvements Menu. Currently selected: Highlights Highlights Recent improvements The new repository pull requests page is now generally available to all GitHub users. Highlights The new page makes it easier to…"
+      "source_word_count": 3553,
+      "excerpt": "Speaker diarization classifies who spoke when , helping applications connect what was said to the right participant. NVIDIA Nemotron 3 Diarization is an open-weight, 100M-parameter model that ranks #1 on VoiceArena's Diarization-Bench leaderboard with a 14.72% Diarization Error Rate (DER). Nemotron 3 Diarization follows the Sortformer approach of ordering output speakers by when they first appear. Diarization and Speaker Attributed ASR (Multi-speaker ASR) are different tasks Standalone diarization produces speaker activity and timestamps, not the words being spoken. Bring real-time, speaker-aware transcription on device Argmax has added…"
     },
     {
       "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "OpenTelemetry in the GitHub Copilot app",
+      "canonical_url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-23T02:14:54.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 469,
+      "excerpt": "OpenTelemetry in the GitHub Copilot app - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read OpenTelemetry in the GitHub Copilot app Understand how Copilot agents perform and interact with models and tools. The GitHub Copilot app now supports OpenTelemetry (OTel) configuration through enterprise-managed settings. Learn more about OpenTelemetry for agent monitoring and configuring enterprise-managed settings . Enter…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Enabling Private High-Performance Production AI Inference with NVIDIA Confidential Computing",
+      "canonical_url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-22T17:27:41.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1547,
+      "excerpt": "Enabling Private High&#x2d;Performance Production AI Inference with NVIDIA Confidential Computing | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Trustworthy AI / Cybersecurity English 中文 Enabling Private High-Performance Production AI Inference with NVIDIA Confidential Computing Sep 22, 2026 By Lorna Aine Like Discuss (0) L T F R E As large language model (LLM) inference increasingly processes sensitive information and proprietary model context across personal, enterprise, and regulated settings, data must be processed inside a trusted environment. Inference…"
+    },
+    {
+      "candidate_id": "m07",
       "focus": "applied_genai_knowledge_workers",
       "headline": "Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution",
       "canonical_url": "https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/",
@@ -56,64 +80,40 @@
       "excerpt": "Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Medical records are unstructured, filled with specialized clinical terminology, and require the reviewer to connect disparate data points about a patient’s condition and its evolution over time. Building the EXL Insurance…"
     },
     {
-      "candidate_id": "m06",
-      "focus": "applied_genai_knowledge_workers",
-      "headline": "Dreamforce 2026 Live: enterprise AI highlights and customer workflows",
-      "canonical_url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
-      "publisher": "Salesforce",
-      "published_at": "2026-09-21T00:00:00.000Z",
-      "source_reliability": "publisher_authored",
-      "agent_skill_story_ready": false,
-      "source_word_count": 5373,
-      "excerpt": "Dreamforce &#039;26 Live: UK & Ireland Highlights You Missed - Salesforce Skip to Content Skip to Footer 0% Agents Dreamforce &#8217;26 Live: UK & Ireland Highlights You Missed On-the-ground reporting from the must-attend event for the Agentic Enterprise September 21, 2026 20 min read Dreamforce &#8217;26 Live Welcome to the UKI Newsroom’s coverage of Dreamforce 2026 . Agentic Enterprise Next Up: Agentforce World Tour London, ExCeL, 15 October Open Image Modal Image Modal Dreamforce may be over, but the UKI Agentic Enterprise story returns to ExCeL London on 15 October for Agentforce World Tour, where customers and partners will see how…"
-    },
-    {
-      "candidate_id": "m07",
-      "focus": "applied_genai_knowledge_workers",
-      "headline": "Microsoft expands AI-ready capabilities and workforce readiness across India",
-      "canonical_url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
-      "publisher": "Microsoft",
-      "published_at": "2026-09-21T00:00:00.000Z",
-      "source_reliability": "publisher_authored",
-      "agent_skill_story_ready": false,
-      "source_word_count": 1954,
-      "excerpt": "Puneet Chandok, President, Microsoft India and South Asia, also announced in his keynote address that Microsoft&#8217;s datacenter regions across India are now AI-enabled, built with AI-capable hardware, high-efficiency cooling systems and the platform foundation required to host and run advanced AI workloads, bringing frontier AI capability closer to Indian organizations. &#8220; Message from Brad Smith, Vice Chair and President, Microsoft Click here to load media FROM LIVE INFRASTRUCTURE TO REGIONAL CONNECTIVITY India South Central region launches with a broad portfolio of Azure services and is designed to support the full portfolio of…"
-    },
-    {
       "candidate_id": "m01",
       "focus": "agents_non_technical_people",
-      "headline": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
-      "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-18T15:25:23.000Z",
+      "headline": "New features and improvements in Copilot for JetBrains",
+      "canonical_url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-23T00:34:18.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": true,
-      "source_word_count": 3764,
-      "excerpt": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In this post, you learn how to deploy production-ready Hugging Face models on SageMaker AI using agent skills. Agent skills for deploying Hugging Face models on SageMaker AI Six skills from the Hugging Face Skills GitHub repo cover…"
+      "source_word_count": 952,
+      "excerpt": "New features and improvements in Copilot for JetBrains - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 2 minute read New features and improvements in Copilot for JetBrains Table of Contents What's new User experience enhancements Quality improvements Changed Deprecation Try it out Share your feedback Menu. Currently selected: What's new What's new User experience enhancements Quality improvements Changed Deprecation Try it…"
     },
     {
       "candidate_id": "m08",
       "focus": "agents_non_technical_people",
-      "headline": "xAI’s Grok 4.6 is now available in Amazon Bedrock",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/xais-grok-4-6-is-now-available-in-amazon-bedrock/",
+      "headline": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
       "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-21T18:30:34.000Z",
+      "published_at": "2026-09-22T17:18:13.000Z",
       "source_reliability": "publisher_authored",
-      "agent_skill_story_ready": false,
-      "source_word_count": 4192,
-      "excerpt": "xAI’s Grok 4.6 is now available in Amazon Bedrock | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. When Grok 4.3 became generally available , xAI joined Amazon Bedrock as a model provider and the model was reachable through Bedrock Mantle, the OpenAI-compatible inference engine in Amazon Bedrock. The model is reachable through two endpoints, and the…"
+      "agent_skill_story_ready": true,
+      "source_word_count": 3941,
+      "excerpt": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. To make these failures measurable, Strands Evals SDK and Amazon Bedrock AgentCore Evaluations , a capability of Amazon Bedrock AgentCore, add skill-focused evaluators: Skill Selection Accuracy determines whether each invoked…"
     },
     {
       "candidate_id": "m09",
       "focus": "agents_non_technical_people",
-      "headline": "How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/",
+      "headline": "Extending public sector intelligence with Agentforce and AWS",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
       "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-21T16:27:34.000Z",
+      "published_at": "2026-09-22T15:17:45.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 4020,
-      "excerpt": "How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Amazon Bedrock AgentCore is a platform to build, connect, and optimize agents at scale, with any framework or model. Benchling uses AgentCore Code Interpreter, a capability of Amazon Bedrock AgentCore , in Amazon Virtual Private…"
+      "source_word_count": 4002,
+      "excerpt": "Extending public sector intelligence with Agentforce and AWS | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In our previous post, Modernizing evidence management in Salesforce Public Sector Solutions with Amazon S3 , we used the External Storage of Files with Amazon Simple Storage Service (Amazon S3) integration from Agentforce Public Sector…"
     }
   ]
 }

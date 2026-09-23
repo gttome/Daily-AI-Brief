@@ -1,0 +1,501 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-09-23",
+  "brief_date": "2026-09-23",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 23, 2026",
+  "published_at": "2026-09-23T17:06:09Z",
+  "research_cutoff_at": "2026-09-23T14:22:00.000Z",
+  "coverage_period": "24-hour primary window ending at 2026-09-23T14:22:00.000Z.",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-23-c720a977",
+      "ordinal": 1,
+      "slug": "nemotron-3-brings-real-time-speaker-diarization-to-open-weight-voice-ai",
+      "permanent_url": "/stories/2026-09-23/nemotron-3-brings-real-time-speaker-diarization-to-open-weight-voice-ai/",
+      "focus": "technical_ai_engineering",
+      "headline": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
+      "event_date": "2026-09-23",
+      "topics": [
+        "speaker diarization",
+        "voice AI",
+        "open-weight models",
+        "multimodal systems"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-23/01-nemotron-diarization.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/01-nemotron-diarization.webp?v=ca2e7d51ac0bbb0c",
+        "alt": "Professional textbook-style editorial diagram for Nemotron 3 brings real-time speaker diarization to open-weight voice AI.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "ca2e7d51ac0bbb0c"
+      },
+      "summary": "NVIDIA’s open-weight 100M-parameter Nemotron 3 Diarization model identifies who spoke when in multi-speaker audio, producing speaker activity and timestamps that can feed downstream speech recognition and analytics.",
+      "why_it_matters": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes the architecture easier to evaluate and replace component by component.",
+      "source": {
+        "title": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
+        "organization": "Hugging Face / NVIDIA",
+        "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+        "normalized_url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+        "publication_date": "2026-09-23",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 3553,
+          "verified_at": "2026-09-23T14:22:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-23T13:17:01.000Z"
+      },
+      "selection_rationale": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes the architecture easier to evaluate and replace component by component.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
+      },
+      "social_description": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes ",
+      "social": {
+        "title": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
+        "description": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes ",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/01-nemotron-diarization.webp?v=ca2e7d51ac0bbb0c"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-23-8e98ee1e",
+      "ordinal": 2,
+      "slug": "gpt-6-sol-and-luna-expand-model-choice-inside-github-copilot",
+      "permanent_url": "/stories/2026-09-23/gpt-6-sol-and-luna-expand-model-choice-inside-github-copilot/",
+      "focus": "technical_ai_engineering",
+      "headline": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
+      "event_date": "2026-09-22",
+      "topics": [
+        "GitHub Copilot",
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "model routing"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-23/02-gpt6-sol-luna-copilot.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/02-gpt6-sol-luna-copilot.webp?v=4eaed753f88fcdf6",
+        "alt": "Professional textbook-style editorial diagram for GPT-6 Sol and Luna expand model choice inside GitHub Copilot.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "4eaed753f88fcdf6"
+      },
+      "summary": "GitHub added OpenAI GPT-6 Sol and GPT-6 Luna to Copilot, giving teams a balanced model for careful multistep agentic coding and a lighter, lower-cost option for faster everyday tasks.",
+      "why_it_matters": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot policy layer.",
+      "source": {
+        "title": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+        "normalized_url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+        "publication_date": "2026-09-22",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 645,
+          "verified_at": "2026-09-23T14:22:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-22T17:00:14.000Z"
+      },
+      "selection_rationale": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot policy layer.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
+      },
+      "social_description": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot polic",
+      "social": {
+        "title": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
+        "description": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot polic",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/02-gpt6-sol-luna-copilot.webp?v=4eaed753f88fcdf6"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-23-f8e1d991",
+      "ordinal": 3,
+      "slug": "github-copilot-adds-opentelemetry-for-agent-observability",
+      "permanent_url": "/stories/2026-09-23/github-copilot-adds-opentelemetry-for-agent-observability/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "GitHub Copilot adds OpenTelemetry for agent observability",
+      "event_date": "2026-09-23",
+      "topics": [
+        "OpenTelemetry",
+        "agent observability",
+        "GitHub Copilot",
+        "enterprise governance"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-23/03-copilot-opentelemetry.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/03-copilot-opentelemetry.webp?v=092be5cc2e6544c8",
+        "alt": "Professional textbook-style editorial diagram for GitHub Copilot adds OpenTelemetry for agent observability.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "092be5cc2e6544c8"
+      },
+      "summary": "The GitHub Copilot app now supports enterprise-managed OpenTelemetry configuration so organizations can observe how Copilot agents interact with models and tools and export operational telemetry into existing observability systems.",
+      "why_it_matters": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures, and model behavior instead of relying on the agent’s final answer.",
+      "source": {
+        "title": "GitHub Copilot adds OpenTelemetry for agent observability",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+        "normalized_url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+        "publication_date": "2026-09-23",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 469,
+          "verified_at": "2026-09-23T14:22:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-23T02:14:54.000Z"
+      },
+      "selection_rationale": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures, and model behavior instead of relying on the agent’s final answer.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
+      },
+      "social_description": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures,",
+      "social": {
+        "title": "GitHub Copilot adds OpenTelemetry for agent observability",
+        "description": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures,",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/03-copilot-opentelemetry.webp?v=092be5cc2e6544c8"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-23-7419152a",
+      "ordinal": 4,
+      "slug": "confidential-computing-targets-private-production-ai-inference-without-giving-up-acceleration",
+      "permanent_url": "/stories/2026-09-23/confidential-computing-targets-private-production-ai-inference-without-giving-up-acceleration/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Confidential computing targets private production AI inference without giving up acceleration",
+      "event_date": "2026-09-22",
+      "topics": [
+        "confidential computing",
+        "AI inference",
+        "privacy",
+        "trusted execution environments"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-23/04-nvidia-confidential-inference.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/04-nvidia-confidential-inference.webp?v=2c96716383f95ae9",
+        "alt": "Professional textbook-style editorial diagram for Confidential computing targets private production AI inference without giving up acceleration.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "2c96716383f95ae9"
+      },
+      "summary": "NVIDIA describes confidential-computing patterns for protecting prompts, proprietary context, model assets, and intermediate data during accelerated production inference inside attested trusted execution environments.",
+      "why_it_matters": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumptions, but teams still need workload-specific security and performance validation.",
+      "source": {
+        "title": "Confidential computing targets private production AI inference without giving up acceleration",
+        "organization": "NVIDIA Developer",
+        "url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
+        "normalized_url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
+        "publication_date": "2026-09-22",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 1547,
+          "verified_at": "2026-09-23T14:22:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-22T17:27:41.000Z"
+      },
+      "selection_rationale": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumptions, but teams still need workload-specific security and performance validation.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
+      },
+      "social_description": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumpti",
+      "social": {
+        "title": "Confidential computing targets private production AI inference without giving up acceleration",
+        "description": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumpti",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/04-nvidia-confidential-inference.webp?v=2c96716383f95ae9"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-23-dec1b780",
+      "ordinal": 5,
+      "slug": "copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals",
+      "permanent_url": "/stories/2026-09-23/copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals/",
+      "focus": "agents_non_technical_people",
+      "headline": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
+      "event_date": "2026-09-23",
+      "topics": [
+        "Agent Skills",
+        "GitHub Copilot",
+        "JetBrains",
+        "tool approvals"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-23/05-copilot-jetbrains-skills.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/05-copilot-jetbrains-skills.webp?v=b240c927916df48a",
+        "alt": "Professional textbook-style editorial diagram for Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "b240c927916df48a"
+      },
+      "summary": "GitHub Copilot for JetBrains 1.18.0 adds AI-assisted tool approvals, plan review, more control over agent conversations, and organization-level shared skills and instructions that package repeatable methods and standards.",
+      "why_it_matters": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeatable know-how is portable but high-impact actions stay reviewable.",
+      "source": {
+        "title": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+        "normalized_url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+        "publication_date": "2026-09-23",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 952,
+          "verified_at": "2026-09-23T14:22:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-23T00:34:18.000Z"
+      },
+      "selection_rationale": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeatable know-how is portable but high-impact actions stay reviewable.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Package one repeatable method as a governed skill",
+        "rationale": "Choose a stable recurring task, encode its method and references as a reusable skill, require approvals for sensitive tools, and verify outputs before reuse."
+      },
+      "social_description": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeata",
+      "social": {
+        "title": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
+        "description": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeata",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/05-copilot-jetbrains-skills.webp?v=b240c927916df48a"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-23-cfe12519",
+      "ordinal": 6,
+      "slug": "agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows",
+      "permanent_url": "/stories/2026-09-23/agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows/",
+      "focus": "agents_non_technical_people",
+      "headline": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
+      "event_date": "2026-09-22",
+      "topics": [
+        "Agentforce",
+        "AWS",
+        "MCP",
+        "public-sector AI"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-23/06-agentforce-aws-public-sector.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/06-agentforce-aws-public-sector.webp?v=dc9ae606841e9f23",
+        "alt": "Professional textbook-style editorial diagram for Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "dc9ae606841e9f23"
+      },
+      "summary": "AWS shows how public-sector teams can combine data-extraction services, Model Context Protocol connections, and Salesforce Agentforce so natural-language agents can query structured evidence and surface governed insights for human review.",
+      "why_it_matters": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accountable humans in the decision loop.",
+      "source": {
+        "title": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
+        "organization": "AWS Machine Learning",
+        "url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
+        "normalized_url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
+        "publication_date": "2026-09-22",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 4002,
+          "verified_at": "2026-09-23T14:22:00Z",
+          "method": "retrieved_source_text_word_count",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-22T15:17:45.000Z"
+      },
+      "selection_rationale": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accountable humans in the decision loop.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
+      },
+      "social_description": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accou",
+      "social": {
+        "title": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
+        "description": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accou",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-23/06-agentforce-aws-public-sector.webp?v=dc9ae606841e9f23"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+      "channel": "AICodeKing",
+      "upload_date": "2026-09-21",
+      "runtime_seconds": 306,
+      "why_useful": "A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.",
+      "connection": "Extends today's engineering coverage into practical coding-agent orchestration and workflow controls.",
+      "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Previously independently verified September 21 publication date and 5:06 runtime in the September 22 production media evidence."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "display_label": "Agents for Everyone",
+      "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+      "channel": "AICodeKing",
+      "upload_date": "2026-09-21",
+      "runtime_seconds": 373,
+      "why_useful": "A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.",
+      "connection": "Pairs with today's agent observability and reusable-skill coverage by showing why the surrounding harness changes task outcomes.",
+      "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Previously independently verified September 21 publication date and 6:13 runtime in the September 22 production media evidence."
+      ]
+    }
+  },
+  "editorial_takeaway": "Today’s developments point toward governed AI systems: choose models deliberately, make agent activity observable, protect sensitive inference, package repeatable work as skills, and keep tool access and public-sector decisions bounded by explicit controls and human review.",
+  "provenance": {
+    "created_by": "deterministic-kernel-expander",
+    "created_at": "2026-09-23T17:06:09Z",
+    "source_commit": "727b41bbca5b2e07965224bfe5210e98b068968d"
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-23-agents-rules-business",
+      "title": "Are AI agents changing the rules of business?",
+      "show": "Take on Tomorrow",
+      "host": "PwC; guests Rob Seaman and Joe Atkinson",
+      "publication_date": "2026-09-22",
+      "runtime_seconds": null,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI agents",
+        "workflow redesign",
+        "enterprise adoption",
+        "human work"
+      ],
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "permanent_url": "/podcasts/2026-09-23/agents-rules-business/",
+      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.",
+      "why_useful": "Adds an enterprise-adoption lens to today's operational stories.",
+      "connection": "Reinforces the shift from AI features to governed, outcome-oriented workflows.",
+      "selection_rationale": "Recent September 22 episode from PwC with direct agentic-work relevance.",
+      "verification_note": "PwC page verifies the September 22, 2026 publication date; runtime not independently recorded.",
+      "coverage_note": "Primary recent source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "PwC",
+          "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html"
+        }
+      ]
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-23-upnext-ai",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "show": "UpNext AI",
+      "host": "UpNext AI",
+      "publication_date": "2026-09-22",
+      "runtime_seconds": 480,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent safety",
+        "long-horizon evaluation",
+        "AI security",
+        "agent platforms"
+      ],
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "permanent_url": "/podcasts/2026-09-23/upnext-ai/",
+      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.",
+      "why_useful": "Adds a compact reliability and safety counterpoint to the day's product and workflow developments.",
+      "connection": "Pairs with today's emphasis on observability, tool governance, and verified agent outcomes.",
+      "selection_rationale": "Recent September 22 episode from a source distinct from PwC, with independently listed 8-minute runtime.",
+      "verification_note": "Independent current listing verifies September 22, 2026 and 8-minute runtime.",
+      "coverage_note": "Primary recent source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Podscan",
+          "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026"
+        }
+      ]
+    }
+  ]
+}

@@ -1,122 +1,122 @@
 {
-  "m03": {
-    "event_date": "2026-09-21",
+  "m04": {
+    "event_date": "2026-09-23",
     "source": {
-      "title": "How to Evaluate AI Agents From Tool Calls to Task Completion",
-      "organization": "NVIDIA Developer",
-      "url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
-      "publication_date": "2026-09-21",
+      "title": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
+      "organization": "Hugging Face / NVIDIA",
+      "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+      "publication_date": "2026-09-23",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 2777,
-    "source_fetched_at": "2026-09-22T13:08:00Z",
+    "source_word_count": 3553,
+    "source_fetched_at": "2026-09-23T14:22:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Fresh first-party engineering guidance focused on end-to-end agent evaluation."
+    "selection_rationale": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes the architecture easier to evaluate and replace component by component."
   },
-  "m02": {
+  "m03": {
     "event_date": "2026-09-22",
     "source": {
-      "title": "Accelerating a ROS 2 Node with an AI Agent and NVIDIA Isaac ROS",
-      "organization": "NVIDIA Developer",
-      "url": "https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/",
+      "title": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
       "publication_date": "2026-09-22",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3017,
-    "source_fetched_at": "2026-09-22T13:08:00Z",
+    "source_word_count": 645,
+    "source_fetched_at": "2026-09-23T14:22:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Current-day engineering example of AI-assisted systems optimization and GPU data-path design."
+    "selection_rationale": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot policy layer."
   },
   "m05": {
-    "event_date": "2026-09-21",
+    "event_date": "2026-09-23",
     "source": {
-      "title": "Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution",
-      "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/",
-      "publication_date": "2026-09-21",
+      "title": "GitHub Copilot adds OpenTelemetry for agent observability",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "publication_date": "2026-09-23",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 4162,
-    "source_fetched_at": "2026-09-22T13:08:00Z",
+    "source_word_count": 469,
+    "source_fetched_at": "2026-09-23T14:22:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Concrete knowledge-worker workflow redesign using document AI, domain models, and human review."
+    "selection_rationale": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures, and model behavior instead of relying on the agent’s final answer."
   },
   "m06": {
-    "event_date": "2026-09-21",
+    "event_date": "2026-09-22",
     "source": {
-      "title": "Dreamforce 2026 Live: enterprise AI highlights and customer workflows",
-      "organization": "Salesforce",
-      "url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
-      "publication_date": "2026-09-21",
+      "title": "Confidential computing targets private production AI inference without giving up acceleration",
+      "organization": "NVIDIA Developer",
+      "url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
+      "publication_date": "2026-09-22",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 5373,
-    "source_fetched_at": "2026-09-22T13:08:00Z",
+    "source_word_count": 1547,
+    "source_fetched_at": "2026-09-23T14:22:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Current first-party signal on enterprise agentic workflows and operational adoption."
+    "selection_rationale": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumptions, but teams still need workload-specific security and performance validation."
   },
   "m01": {
-    "event_date": "2026-09-18",
+    "event_date": "2026-09-23",
     "source": {
-      "title": "Deploy Hugging Face models on Amazon SageMaker AI with coding agents",
-      "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
-      "publication_date": "2026-09-18",
+      "title": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+      "publication_date": "2026-09-23",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3764,
-    "source_fetched_at": "2026-09-22T13:08:00Z",
+    "source_word_count": 952,
+    "source_fetched_at": "2026-09-23T14:22:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Preferred preflight Agent Skills candidate with six reusable production deployment procedures."
+    "selection_rationale": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeatable know-how is portable but high-impact actions stay reviewable."
   },
   "m09": {
-    "event_date": "2026-09-21",
+    "event_date": "2026-09-22",
     "source": {
-      "title": "How Benchling secured multi-tenant AI agents with Amazon Bedrock AgentCore",
+      "title": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
       "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/",
-      "publication_date": "2026-09-21",
+      "url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
+      "publication_date": "2026-09-22",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 4020,
-    "source_fetched_at": "2026-09-22T13:08:00Z",
+    "source_word_count": 4002,
+    "source_fetched_at": "2026-09-23T14:22:00Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Fresh production agent security architecture with concrete isolation and exfiltration controls."
+    "selection_rationale": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accountable humans in the decision loop."
   }
 }

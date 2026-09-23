@@ -1,64 +1,64 @@
 {
   "schema_version": "1.0.0",
-  "brief_date": "2026-09-22",
-  "edition_id": "dab-edition-2026-09-22",
-  "baseline_sha": "10236fa4c363a868d882044c97501a08bf8e8f58",
+  "brief_date": "2026-09-23",
+  "edition_id": "dab-edition-2026-09-23",
+  "baseline_sha": "727b41bbca5b2e07965224bfe5210e98b068968d",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
   "stories": [
     {
-      "candidate_id": "m03",
-      "story_id": "agent-evaluation-task-completion-2026-09-22",
+      "candidate_id": "m04",
+      "story_id": "nemotron-3-diarization-2026-09-23",
       "canonical_ordinal": 1,
       "focus": "technical_ai_engineering",
-      "headline": "Agent evaluation is moving from tool-call scores to full task completion",
-      "summary": "NVIDIA describes an evaluation approach that tests whether agents complete multi-step work in executable environments, tracking state across sequences of tool calls instead of judging isolated function invocations.",
-      "why_it_matters": "An agent can make individually valid tool calls and still fail the job. Production evaluation therefore needs end-to-end task outcomes, environment state, recovery behavior, and repeatability—not only model-level or single-call accuracy.",
-      "editorial_limitation": "The source presents NVIDIA's evaluation approach and examples; teams should validate the methodology against their own environments, failure modes, and service-level requirements.",
+      "headline": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
+      "summary": "NVIDIA’s open-weight 100M-parameter Nemotron 3 Diarization model identifies who spoke when in multi-speaker audio, producing speaker activity and timestamps that can feed downstream speech recognition and analytics.",
+      "why_it_matters": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes the architecture easier to evaluate and replace component by component.",
+      "editorial_limitation": "The reported benchmark position and performance come from the publisher ecosystem; deployment teams should validate latency, diarization error, overlap handling, language coverage, and hardware fit on their own audio.",
       "topic_labels": [
-        "agent evaluation",
-        "tool use",
-        "task completion",
-        "AI reliability"
+        "speaker diarization",
+        "voice AI",
+        "open-weight models",
+        "multimodal systems"
       ],
-      "source_url": "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+      "source_url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Add end-to-end agent tests",
-        "rationale": "Create representative tasks with executable environments and score completion, state changes, recovery, and final outcomes rather than isolated calls."
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
       },
       "visual": {
         "layout": "process",
-        "title": "From tool calls to task completion",
-        "alt_text": "Process diagram showing an agent plan, sequential tool calls, environment state changes, recovery checks, and final task completion.",
+        "title": "From mixed audio to attributed speakers",
+        "alt_text": "Professional white-background instructional diagram explaining from mixed audio to attributed speakers.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Task goal",
-            "detail": "Define a real outcome in an executable environment."
+            "label": "Input",
+            "detail": "Start from the real task, data, or request."
           },
           {
             "id": "n2",
-            "label": "Tool sequence",
-            "detail": "Run the multi-step chain of calls needed to complete the work."
+            "label": "Control layer",
+            "detail": "Apply the relevant model, skill, policy, or protected execution control."
           },
           {
             "id": "n3",
-            "label": "State + recovery",
-            "detail": "Track environment state, errors, retries, and corrections."
+            "label": "Execution",
+            "detail": "Run the bounded workflow and capture observable evidence."
           },
           {
             "id": "n4",
-            "label": "Completion",
-            "detail": "Score whether the intended result was actually achieved."
+            "label": "Verified outcome",
+            "detail": "Review results, exceptions, and operational evidence before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "plan"
+            "label": "route"
           },
           {
             "from": "n2",
@@ -73,417 +73,393 @@
         ],
         "callouts": [
           {
-            "anchor": "n2",
-            "text": "Correct individual calls do not guarantee a successful workflow."
-          },
-          {
-            "anchor": "n4",
-            "text": "The unit of quality is the completed task, not the isolated tool invocation."
+            "anchor": "n3",
+            "text": "Operational evidence matters more than a fluent final answer."
           }
         ]
       }
     },
     {
-      "candidate_id": "m02",
-      "story_id": "ros2-ai-agent-gpu-zero-copy-2026-09-22",
+      "candidate_id": "m03",
+      "story_id": "gpt6-sol-luna-copilot-2026-09-23",
       "canonical_ordinal": 2,
       "focus": "technical_ai_engineering",
-      "headline": "AI-assisted ROS 2 optimization targets zero-copy GPU data paths",
-      "summary": "NVIDIA shows how an AI agent can help accelerate a ROS 2 node using Isaac ROS, including GPU-resident buffers and zero-copy transport when runtime conditions permit while preserving standard ROS 2 message and node boundaries.",
-      "why_it_matters": "AI-assisted development is increasingly reaching systems code and performance engineering. The useful pattern is not simply generating CUDA code; it is reasoning across data movement, runtime constraints, interfaces, and verification so optimization survives in the full graph.",
-      "editorial_limitation": "The example is specific to NVIDIA's robotics stack and hardware path; gains depend on workload shape, message flow, GPU availability, and system-level bottlenecks.",
+      "headline": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
+      "summary": "GitHub added OpenAI GPT-6 Sol and GPT-6 Luna to Copilot, giving teams a balanced model for careful multistep agentic coding and a lighter, lower-cost option for faster everyday tasks.",
+      "why_it_matters": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot policy layer.",
+      "editorial_limitation": "Availability varies by Copilot plan and rollout state, and GitHub’s product guidance does not establish that either model is optimal for every codebase or task.",
       "topic_labels": [
-        "robotics",
-        "AI-assisted development",
-        "GPU acceleration",
-        "ROS 2"
+        "GitHub Copilot",
+        "GPT-6 Sol",
+        "GPT-6 Luna",
+        "model routing"
       ],
-      "source_url": "https://developer.nvidia.com/blog/accelerating-a-ros-2-node-with-an-ai-agent-and-nvidia-isaac-ros/",
+      "source_url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "test",
-        "label": "Measure the full data path",
-        "rationale": "When using AI to optimize performance code, benchmark memory movement and end-to-end graph behavior, not only the generated kernel."
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
       },
       "visual": {
         "layout": "process",
-        "title": "AI-assisted ROS 2 acceleration path",
-        "alt_text": "Process diagram showing a ROS 2 node, GPU-resident payloads, zero-copy transport, accelerated processing, and end-to-end validation.",
+        "title": "Policy-aware model choice in Copilot",
+        "alt_text": "Professional white-background instructional diagram explaining policy-aware model choice in copilot.",
         "nodes": [
           {
             "id": "n1",
-            "label": "ROS 2 node",
-            "detail": "Start with the existing node and message boundaries."
+            "label": "Input",
+            "detail": "Start from the real task, data, or request."
           },
           {
             "id": "n2",
-            "label": "GPU-resident buffer",
-            "detail": "Keep eligible payloads on the GPU."
+            "label": "Control layer",
+            "detail": "Apply the relevant model, skill, policy, or protected execution control."
           },
           {
             "id": "n3",
-            "label": "Zero-copy transport",
-            "detail": "Avoid unnecessary host-device copies when conditions allow."
+            "label": "Execution",
+            "detail": "Run the bounded workflow and capture observable evidence."
           },
           {
             "id": "n4",
-            "label": "Graph validation",
-            "detail": "Measure latency and behavior across the complete ROS 2 graph."
+            "label": "Verified outcome",
+            "detail": "Review results, exceptions, and operational evidence before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "move"
+            "label": "route"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "transport"
+            "label": "execute"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "measure"
+            "label": "verify"
           }
         ],
         "callouts": [
           {
-            "anchor": "n2",
-            "text": "Kernel speed is only one part of system performance."
-          },
-          {
-            "anchor": "n4",
-            "text": "Optimization must hold at graph level, not just inside one function."
+            "anchor": "n3",
+            "text": "Operational evidence matters more than a fluent final answer."
           }
         ]
       }
     },
     {
       "candidate_id": "m05",
-      "story_id": "medical-claims-idp-ai-2026-09-22",
+      "story_id": "copilot-opentelemetry-2026-09-23",
       "canonical_ordinal": 3,
       "focus": "applied_genai_knowledge_workers",
-      "headline": "EXL combines document AI and domain LLMs to compress medical claims review",
-      "summary": "AWS describes EXL's medical intelligent document processing solution, which extracts, summarizes, and supports querying of large medical-record sets using document processing plus domain-focused models on SageMaker and Bedrock.",
-      "why_it_matters": "The strongest knowledge-worker use cases increasingly redesign an entire information workflow: ingesting messy documents, structuring evidence, summarizing context, and keeping a reviewer in the decision loop. That is materially different from adding a chat box to an existing process.",
-      "editorial_limitation": "The performance claims come from an AWS customer case study and should be validated independently for document mix, accuracy requirements, reviewer workload, privacy controls, and regulated use.",
+      "headline": "GitHub Copilot adds OpenTelemetry for agent observability",
+      "summary": "The GitHub Copilot app now supports enterprise-managed OpenTelemetry configuration so organizations can observe how Copilot agents interact with models and tools and export operational telemetry into existing observability systems.",
+      "why_it_matters": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures, and model behavior instead of relying on the agent’s final answer.",
+      "editorial_limitation": "The changelog establishes support for OpenTelemetry configuration, but useful observability still depends on what signals are exported, retained, interpreted, and governed by the organization.",
       "topic_labels": [
-        "document AI",
-        "claims review",
-        "knowledge work",
-        "human review"
+        "OpenTelemetry",
+        "agent observability",
+        "GitHub Copilot",
+        "enterprise governance"
       ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/",
+      "source_url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Map the full review workflow",
-        "rationale": "Identify document intake, extraction, evidence linking, summarization, reviewer decisions, and exception handling before choosing models."
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
       },
       "visual": {
         "layout": "process",
-        "title": "AI-assisted claims review workflow",
-        "alt_text": "Process diagram showing medical records moving through extraction, domain summarization, evidence review, and human claims decisions.",
+        "title": "Tracing agent work with OpenTelemetry",
+        "alt_text": "Professional white-background instructional diagram explaining tracing agent work with opentelemetry.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Medical records",
-            "detail": "Ingest large, heterogeneous clinical documents."
+            "label": "Input",
+            "detail": "Start from the real task, data, or request."
           },
           {
             "id": "n2",
-            "label": "Extract + structure",
-            "detail": "Turn unstructured content into usable evidence."
+            "label": "Control layer",
+            "detail": "Apply the relevant model, skill, policy, or protected execution control."
           },
           {
             "id": "n3",
-            "label": "Summarize + query",
-            "detail": "Use domain-aware models to surface relevant context."
+            "label": "Execution",
+            "detail": "Run the bounded workflow and capture observable evidence."
           },
           {
             "id": "n4",
-            "label": "Human review",
-            "detail": "Keep accountable reviewers in the decision and exception loop."
+            "label": "Verified outcome",
+            "detail": "Review results, exceptions, and operational evidence before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "process"
+            "label": "route"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "ground"
+            "label": "execute"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "review"
+            "label": "verify"
           }
         ],
         "callouts": [
           {
-            "anchor": "n2",
-            "text": "Workflow value depends on reliable evidence extraction."
-          },
-          {
-            "anchor": "n4",
-            "text": "High-stakes decisions still require accountable human review."
+            "anchor": "n3",
+            "text": "Operational evidence matters more than a fluent final answer."
           }
         ]
       }
     },
     {
       "candidate_id": "m06",
-      "story_id": "dreamforce-agentic-enterprise-workflows-2026-09-22",
+      "story_id": "confidential-ai-inference-2026-09-23",
       "canonical_ordinal": 4,
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Dreamforce highlights the shift from AI features to agentic business workflows",
-      "summary": "Salesforce's Dreamforce coverage emphasizes enterprise deployments where AI agents participate in customer and employee workflows, reflecting a broader move from isolated assistants toward systems that act across business processes.",
-      "why_it_matters": "For knowledge workers, the adoption question is becoming operational: which steps can an agent execute, what data and tools can it access, where does human approval sit, and how are outcomes measured. Workflow design is becoming more important than feature count.",
-      "editorial_limitation": "The source is Salesforce's own event coverage and highlights selected customer and product examples; organizations should evaluate comparable outcomes in their own process and governance context.",
+      "headline": "Confidential computing targets private production AI inference without giving up acceleration",
+      "summary": "NVIDIA describes confidential-computing patterns for protecting prompts, proprietary context, model assets, and intermediate data during accelerated production inference inside attested trusted execution environments.",
+      "why_it_matters": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumptions, but teams still need workload-specific security and performance validation.",
+      "editorial_limitation": "The source is NVIDIA-authored. Confidential computing reduces some infrastructure risks but does not eliminate model, application, key-management, authorization, or workload-level threats.",
       "topic_labels": [
-        "enterprise AI",
-        "agentic workflows",
-        "knowledge workers",
-        "workflow redesign"
+        "confidential computing",
+        "AI inference",
+        "privacy",
+        "trusted execution environments"
       ],
-      "source_url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
+      "source_url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Redesign one workflow around outcomes",
-        "rationale": "Choose one repeatable business process and define agent actions, data access, approval points, exceptions, and measurable outcomes."
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
       },
       "visual": {
         "layout": "process",
-        "title": "From AI feature to agentic workflow",
-        "alt_text": "Process diagram showing a business trigger, agent actions across tools, human approval, and measured workflow outcomes.",
+        "title": "Private inference inside a trusted execution boundary",
+        "alt_text": "Professional white-background instructional diagram explaining private inference inside a trusted execution boundary.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Business trigger",
-            "detail": "Start from a real event or work request."
+            "label": "Input",
+            "detail": "Start from the real task, data, or request."
           },
           {
             "id": "n2",
-            "label": "Agent actions",
-            "detail": "Execute bounded steps across approved tools and data."
+            "label": "Control layer",
+            "detail": "Apply the relevant model, skill, policy, or protected execution control."
           },
           {
             "id": "n3",
-            "label": "Human control",
-            "detail": "Approve, override, or handle exceptions at defined points."
+            "label": "Execution",
+            "detail": "Run the bounded workflow and capture observable evidence."
           },
           {
             "id": "n4",
-            "label": "Measured outcome",
-            "detail": "Track cycle time, quality, adoption, and business result."
+            "label": "Verified outcome",
+            "detail": "Review results, exceptions, and operational evidence before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "start"
+            "label": "route"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "control"
+            "label": "execute"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "measure"
+            "label": "verify"
           }
         ],
         "callouts": [
           {
-            "anchor": "n2",
-            "text": "Agentic value comes from coordinated workflow execution."
-          },
-          {
             "anchor": "n3",
-            "text": "Approval and exception paths must be designed, not improvised."
+            "text": "Operational evidence matters more than a fluent final answer."
           }
         ]
       }
     },
     {
       "candidate_id": "m01",
-      "story_id": "sagemaker-huggingface-agent-skills-2026-09-22",
+      "story_id": "copilot-jetbrains-shared-skills-2026-09-23",
       "canonical_ordinal": 5,
       "focus": "agents_non_technical_people",
-      "headline": "Six reusable Agent Skills turn model deployment into a repeatable workflow",
-      "summary": "AWS shows six open-source skills that let coding agents deploy Hugging Face models on SageMaker AI with serving-container selection, autoscaling, CloudWatch alarms, endpoint verification, and teardown steps encoded as reusable procedures.",
-      "why_it_matters": "This is a concrete Agent Skills pattern: package a proven procedure once, then let an agent invoke it repeatedly with the same checkpoints. For non-specialists, that can make complex operational work more repeatable without pretending the underlying engineering has disappeared.",
-      "editorial_limitation": "The skills target Hugging Face deployments on SageMaker AI; production teams still need to validate generated infrastructure, permissions, costs, monitoring, and teardown behavior.",
+      "headline": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
+      "summary": "GitHub Copilot for JetBrains 1.18.0 adds AI-assisted tool approvals, plan review, more control over agent conversations, and organization-level shared skills and instructions that package repeatable methods and standards.",
+      "why_it_matters": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeatable know-how is portable but high-impact actions stay reviewable.",
+      "editorial_limitation": "The evidence is a GitHub product changelog. Teams still need to review what skills contain, how instructions are governed, which tools require approval, and whether the workflow behaves consistently across projects.",
       "topic_labels": [
         "Agent Skills",
-        "SageMaker",
-        "model deployment",
-        "reusable workflows"
+        "GitHub Copilot",
+        "JetBrains",
+        "tool approvals"
       ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+      "source_url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
       "agent_skill": true,
       "what_to_do_now": {
-        "action": "adopt",
-        "label": "Encode one proven runbook as a skill",
-        "rationale": "Pick a stable, repeatable procedure with explicit checks and package it so an agent can execute the same verified workflow on demand."
+        "action": "evaluate",
+        "label": "Package one repeatable method as a governed skill",
+        "rationale": "Choose a stable recurring task, encode its method and references as a reusable skill, require approvals for sensitive tools, and verify outputs before reuse."
       },
       "visual": {
         "layout": "process",
-        "title": "Model deployment as reusable Agent Skills",
-        "alt_text": "Process diagram showing a model request, reusable deployment skills, guarded infrastructure setup, verification and monitoring, and teardown.",
+        "title": "Governed agent work with reusable skills",
+        "alt_text": "Professional white-background instructional diagram explaining governed agent work with reusable skills.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Model request",
-            "detail": "Specify the Hugging Face model and deployment goal."
+            "label": "Input",
+            "detail": "Start from the real task, data, or request."
           },
           {
             "id": "n2",
-            "label": "Skill set",
-            "detail": "Invoke reusable procedures for container, endpoint, scale, and monitoring."
+            "label": "Control layer",
+            "detail": "Apply the relevant model, skill, policy, or protected execution control."
           },
           {
             "id": "n3",
-            "label": "Verified deployment",
-            "detail": "Create the endpoint and check runtime behavior."
+            "label": "Execution",
+            "detail": "Run the bounded workflow and capture observable evidence."
           },
           {
             "id": "n4",
-            "label": "Operate + teardown",
-            "detail": "Monitor the service and remove resources through a verified path."
+            "label": "Verified outcome",
+            "detail": "Review results, exceptions, and operational evidence before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "invoke"
+            "label": "route"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "deploy"
+            "label": "execute"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "operate"
+            "label": "verify"
           }
         ],
         "callouts": [
           {
-            "anchor": "n2",
-            "text": "Skills convert runbooks into reusable operational assets."
-          },
-          {
-            "anchor": "n4",
-            "text": "A complete skill includes verification and cleanup, not only creation."
+            "anchor": "n3",
+            "text": "Operational evidence matters more than a fluent final answer."
           }
         ]
       }
     },
     {
       "candidate_id": "m09",
-      "story_id": "benchling-agentcore-multitenant-security-2026-09-22",
+      "story_id": "agentforce-aws-public-sector-2026-09-23",
       "canonical_ordinal": 6,
       "focus": "agents_non_technical_people",
-      "headline": "Benchling treats agent-generated code as untrusted in a multi-tenant security design",
-      "summary": "AWS describes how Benchling runs AI agent-generated scientific code using AgentCore Code Interpreter in VPC mode, combining network isolation, DNS controls, and endpoint policies to reduce cross-tenant and data-exfiltration risk.",
-      "why_it_matters": "As agents gain the ability to write and run code, the key design assumption should be that generated code is untrusted. Security has to come from containment, least privilege, network controls, tenancy boundaries, and observable execution—not confidence in the model.",
-      "editorial_limitation": "This is an AWS-authored customer architecture and does not prove that the same control set is sufficient for every threat model, regulatory environment, or multi-tenant application.",
+      "headline": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
+      "summary": "AWS shows how public-sector teams can combine data-extraction services, Model Context Protocol connections, and Salesforce Agentforce so natural-language agents can query structured evidence and surface governed insights for human review.",
+      "why_it_matters": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accountable humans in the decision loop.",
+      "editorial_limitation": "The architecture is described by AWS and uses specific Salesforce/AWS services. Agencies must independently validate privacy, retention, access control, evidentiary provenance, bias, and legal constraints.",
       "topic_labels": [
-        "agent security",
-        "sandboxing",
-        "multi-tenancy",
-        "data exfiltration"
+        "Agentforce",
+        "AWS",
+        "MCP",
+        "public-sector AI"
       ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/how-benchling-secured-multi-tenant-ai-agents-with-amazon-bedrock-agentcore/",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
       "agent_skill": false,
       "what_to_do_now": {
-        "action": "update_policy",
-        "label": "Treat agent code as untrusted",
-        "rationale": "Place code-executing agents behind isolated runtimes, least-privilege policies, outbound network controls, tenant boundaries, and audit logs."
+        "action": "evaluate",
+        "label": "Pilot with explicit verification",
+        "rationale": "Test the pattern on a bounded workflow, define objective evidence and human review points, and compare results before scaling."
       },
       "visual": {
         "layout": "process",
-        "title": "Defense in depth for code-running agents",
-        "alt_text": "Process diagram showing an agent, isolated code interpreter, network and DNS controls, tenant data boundaries, and monitored outputs.",
+        "title": "From unstructured evidence to governed public-sector intelligence",
+        "alt_text": "Professional white-background instructional diagram explaining from unstructured evidence to governed public-sector intelligence.",
         "nodes": [
           {
             "id": "n1",
-            "label": "AI agent",
-            "detail": "Produces code or execution requests."
+            "label": "Input",
+            "detail": "Start from the real task, data, or request."
           },
           {
             "id": "n2",
-            "label": "Isolated runtime",
-            "detail": "Run generated code in a constrained interpreter environment."
+            "label": "Control layer",
+            "detail": "Apply the relevant model, skill, policy, or protected execution control."
           },
           {
             "id": "n3",
-            "label": "Network controls",
-            "detail": "Restrict DNS, endpoints, and outbound access."
+            "label": "Execution",
+            "detail": "Run the bounded workflow and capture observable evidence."
           },
           {
             "id": "n4",
-            "label": "Tenant boundary",
-            "detail": "Protect data separation and record execution evidence."
+            "label": "Verified outcome",
+            "detail": "Review results, exceptions, and operational evidence before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "execute"
+            "label": "route"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "contain"
+            "label": "execute"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "enforce"
+            "label": "verify"
           }
         ],
         "callouts": [
           {
-            "anchor": "n2",
-            "text": "Generated code should be treated as untrusted by default."
-          },
-          {
-            "anchor": "n4",
-            "text": "Security comes from layered controls around the agent, not model confidence."
+            "anchor": "n3",
+            "text": "Operational evidence matters more than a fluent final answer."
           }
         ]
       }
     }
   ],
-  "editorial_takeaway": "Today’s edition centers on making agents operationally dependable: evaluate complete tasks rather than isolated tool calls, measure full-system performance, redesign knowledge workflows around evidence and human control, package repeatable procedures as Agent Skills, and contain code-running agents with defense-in-depth security.",
+  "editorial_takeaway": "Today’s developments point toward governed AI systems: choose models deliberately, make agent activity observable, protect sensitive inference, package repeatable work as skills, and keep tool access and public-sector decisions bounded by explicit controls and human review.",
   "media_decisions": {
     "videos": {
       "status": "included",
       "count": 2,
-      "note": "Two current short-form AI videos verified within the <=10 minute target."
+      "note": "Two independently verified videos selected under the 10/15/20-minute ladder."
     },
     "podcasts": {
       "status": "included",
       "count": 2,
-      "note": "Two verified recent AI podcasts selected from distinct sources, matching the current publication contract."
+      "note": "Two recent source-diverse AI podcasts selected and independently date-verified."
     }
   },
   "changed_watchlist_topics": [
-    "dab-topic-system-one-decision-models",
+    "dab-topic-model-lifecycle-governance",
     "dab-topic-agent-skills-observability",
     "dab-topic-harness-engineering"
   ]

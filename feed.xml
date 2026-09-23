@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-22T15:44:48Z</updated>
+  <updated>2026-09-23T17:06:09Z</updated>
+  <entry>
+    <title>Nemotron 3 brings real-time speaker diarization to open-weight voice AI</title>
+    <id>dab-story-2026-09-23-c720a977</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/nemotron-3-brings-real-time-speaker-diarization-to-open-weight-voice-ai/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>NVIDIA’s open-weight 100M-parameter Nemotron 3 Diarization model identifies who spoke when in multi-speaker audio, producing speaker activity and timestamps that can feed downstream speech recognition and analytics.</summary>
+  </entry>
+  <entry>
+    <title>GPT-6 Sol and Luna expand model choice inside GitHub Copilot</title>
+    <id>dab-story-2026-09-23-8e98ee1e</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/gpt-6-sol-and-luna-expand-model-choice-inside-github-copilot/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>GitHub added OpenAI GPT-6 Sol and GPT-6 Luna to Copilot, giving teams a balanced model for careful multistep agentic coding and a lighter, lower-cost option for faster everyday tasks.</summary>
+  </entry>
+  <entry>
+    <title>GitHub Copilot adds OpenTelemetry for agent observability</title>
+    <id>dab-story-2026-09-23-f8e1d991</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/github-copilot-adds-opentelemetry-for-agent-observability/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>The GitHub Copilot app now supports enterprise-managed OpenTelemetry configuration so organizations can observe how Copilot agents interact with models and tools and export operational telemetry into existing observability systems.</summary>
+  </entry>
+  <entry>
+    <title>Confidential computing targets private production AI inference without giving up acceleration</title>
+    <id>dab-story-2026-09-23-7419152a</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/confidential-computing-targets-private-production-ai-inference-without-giving-up-acceleration/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>NVIDIA describes confidential-computing patterns for protecting prompts, proprietary context, model assets, and intermediate data during accelerated production inference inside attested trusted execution environments.</summary>
+  </entry>
+  <entry>
+    <title>Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals</title>
+    <id>dab-story-2026-09-23-dec1b780</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/copilot-for-jetbrains-adds-shared-skills-instructions-plan-review-and-tool-approvals/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>GitHub Copilot for JetBrains 1.18.0 adds AI-assisted tool approvals, plan review, more control over agent conversations, and organization-level shared skills and instructions that package repeatable methods and standards.</summary>
+  </entry>
+  <entry>
+    <title>Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows</title>
+    <id>dab-story-2026-09-23-cfe12519</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>AWS shows how public-sector teams can combine data-extraction services, Model Context Protocol connections, and Salesforce Agentforce so natural-language agents can query structured evidence and surface governed insights for human review.</summary>
+  </entry>
+  <entry>
+    <title>Codex&apos;s NEW A2A Communication &amp; Crazy NEW UPDATES: You don&apos;t know about these SECRET UPDATES!</title>
+    <id>dab-video-2026-09-23-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-23/general/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.</summary>
+  </entry>
+  <entry>
+    <title>Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)</title>
+    <id>dab-video-2026-09-23-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-23/agent-skills/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.</summary>
+  </entry>
+  <entry>
+    <title>Are AI agents changing the rules of business?</title>
+    <id>dab-podcast-2026-09-23-agents-rules-business</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-23/agents-rules-business/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.</summary>
+  </entry>
+  <entry>
+    <title>Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents</title>
+    <id>dab-podcast-2026-09-23-upnext-ai</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-23/upnext-ai/" />
+    <updated>2026-09-23T18:00:00Z</updated>
+    <summary>An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.</summary>
+  </entry>
   <entry>
     <title>Agent evaluation is moving from tool-call scores to full task completion</title>
     <id>dab-story-2026-09-22-20a54b62</id>
@@ -1481,47 +1551,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/maia-turns-plain-language-intent-into-a-visible-agent-or-automation-canvas/" />
     <updated>2026-08-25T18:00:00Z</updated>
     <summary>Make released Maia, a conversational co-worker inside its visual Scenario Builder. Users describe an outcome in plain language; Maia asks clarifying questions, selects and configures modules, and visibly builds the workflow step by step. It can also customize templates, explain existing scenarios, modify automations, and troubleshoot failed modules. Maia is available to all Make users, with plan-dependent usage.</summary>
-  </entry>
-  <entry>
-    <title>Microsoft Agent Framework adds recovery mechanics for long-running agents</title>
-    <id>dab-story-2026-08-24-f58c2c99</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/microsoft-agent-framework-adds-recovery-mechanics-for-long-running-agents/" />
-    <updated>2026-08-24T18:00:00Z</updated>
-    <summary>Microsoft Agent Framework Python 1.15.0 adds steering, retry, and recovery support for resilient Foundry Hosted Agents, along with long-running workflow samples. The release also introduces a first-class fatal middleware signal, a workflow checkpoint type registry, persisted approval state, and fixes for A2A inputs, tool-call duplication, remote MCP name shadowing, and superlinear history growth.</summary>
-  </entry>
-  <entry>
-    <title>NVIDIA AVO shows how memory, supervision, and grounded feedback sustain an agent loop</title>
-    <id>dab-story-2026-08-24-4517141d</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/nvidia-avo-shows-how-memory-supervision-and-grounded-feedback-sustain-an-agent-l/" />
-    <updated>2026-08-24T18:00:00Z</updated>
-    <summary>NVIDIA reports that its Agentic Variation Operators architecture completed all 183 levels across the 25-environment ARC-AGI-3 public set with a 100.00 Relative Human Action Efficiency score. The same architecture previously ran a seven-day GPU-kernel optimization loop. AVO combines persistent memory, tools, execution-grounded tests, and a supervisor that can redirect the main agent when progress stalls.</summary>
-  </entry>
-  <entry>
-    <title>ChatGPT Projects now let knowledge workers choose a tighter memory boundary</title>
-    <id>dab-story-2026-08-24-4c295f61</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/chatgpt-projects-now-let-knowledge-workers-choose-a-tighter-memory-boundary/" />
-    <updated>2026-08-24T18:00:00Z</updated>
-    <summary>Eligible unshared ChatGPT Projects can now switch between default memory and project-only memory without creating a new project. In project-only mode, ChatGPT can use conversations from the same project but will not reference memories or conversations outside it, and project information is kept out of memory used elsewhere.</summary>
-  </entry>
-  <entry>
-    <title>Google Drive in ChatGPT Library reduces manual context assembly</title>
-    <id>dab-story-2026-08-24-c688328c</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/google-drive-in-chatgpt-library-reduces-manual-context-assembly/" />
-    <updated>2026-08-24T18:00:00Z</updated>
-    <summary>With the Google Drive plugin connected, users can browse Drive files and folders directly from ChatGPT Library, bring a file or folder into a conversation without re-uploading it, and keep Google Docs, Sheets, or Slides open beside the chat. Where supported and authorized, ChatGPT can update the source file directly.</summary>
-  </entry>
-  <entry>
-    <title>Apple Messages brings an approval-gated action to ChatGPT Work</title>
-    <id>dab-story-2026-08-24-fb9e9c08</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/apple-messages-brings-an-approval-gated-action-to-chatgpt-work/" />
-    <updated>2026-08-24T18:00:00Z</updated>
-    <summary>On Apple silicon Macs, the Apple Messages plugin lets ChatGPT Work read and search iMessage, SMS, and RCS conversations and prepare or send messages through the Messages app. By default, ChatGPT asks the user to approve the message and recipients before sending.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI documents “briefing” as a repeatable workspace-agent pattern</title>
-    <id>dab-story-2026-08-24-db55e747</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-24/openai-documents-briefing-as-a-repeatable-workspace-agent-pattern/" />
-    <updated>2026-08-24T18:00:00Z</updated>
-    <summary>OpenAI Academy’s workspace-agent guide defines an agent through a trigger, a process with reusable skills, and approved tools. Its named “Briefing” pattern gathers information from multiple places, extracts important signals, summarizes for an audience, and shares a memo or briefing. The builder starts in plain language: describe the job, success criteria, constraints, tools, and approval boundaries, then test it in preview.</summary>
   </entry>
 </feed>
