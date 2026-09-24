@@ -2,25 +2,23 @@
   "schema_version": "1.0.0",
   "edition_date": "2026-09-24",
   "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
+  "current_sha": "6ba042d7245cf3043d2d12fb916e1fea71d44908",
   "contract_runtime_version": "under80-v1/sep24-reliability-v1",
-  "stage": "PREFLIGHT_DISCOVERY_READY",
+  "stage": "READINESS_PRELIMINARY",
   "status": "pass",
   "retry_count": 0,
   "pr_number": null,
   "workflow_run_ids": [
-    "36008720746"
+    "36005501533",
+    "36008720746",
+    "35910156226"
   ],
   "artifact_paths": [
-    "_records/discovery-preflight/result/article-evidence-receipt.json",
-    "_records/discovery-preflight/result/article-evidence.json",
-    "_records/discovery-preflight/result/date-enrichment.json",
-    "_records/discovery-preflight/result/metadata-candidates.json",
-    "_records/discovery-preflight/result/receipt.json"
+    "_records/readiness/2026-09-24.json"
   ],
   "invalidated_downstream_stages": [],
   "publication_lifecycle": "staged",
-  "operational_status": "PREPARING",
+  "operational_status": "READY_FOR_FINAL_GATE",
   "stages": {
     "PREFLIGHT_METADATA_READY": {
       "stage": "PREFLIGHT_METADATA_READY",
@@ -56,6 +54,24 @@
       "pr_number": null,
       "contract_runtime_version": "under80-v1/sep24-reliability-v1",
       "note": null
+    },
+    "READINESS_PRELIMINARY": {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-24T14:24:30Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "6ba042d7245cf3043d2d12fb916e1fea71d44908",
+      "artifact_paths": [
+        "_records/readiness/2026-09-24.json"
+      ],
+      "workflow_run_ids": [
+        "36005501533",
+        "36008720746",
+        "35910156226"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": "Preliminary readiness recertified after targeted metadata/discovery recovery; publication_authorized remains false until Final Gate."
     }
   },
   "history": [
@@ -74,6 +90,14 @@
       "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
       "pr_number": null,
       "note": null
+    },
+    {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-24T14:24:30Z",
+      "status": "pass",
+      "current_sha": "6ba042d7245cf3043d2d12fb916e1fea71d44908",
+      "pr_number": null,
+      "note": "Preliminary readiness recertified after targeted metadata/discovery recovery; publication_authorized remains false until Final Gate."
     }
   ]
 }
