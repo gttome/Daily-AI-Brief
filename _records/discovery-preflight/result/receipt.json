@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "edition_date": "2026-09-24",
+  "cutoff": "2026-09-24T13:27:00Z",
+  "candidate_count": 20,
+  "coverage_counts": {
+    "technical_ai_engineering": 9,
+    "applied_genai_knowledge_workers": 4,
+    "agents_non_technical_people": 7
+  },
+  "agent_skill_signals": 2,
+  "agent_skill_story_ready_signals": 2,
+  "preferred_agent_skill_candidate_id": "m01",
+  "coverage_ready": true,
+  "article_evidence_ready": true,
+  "article_evidence_count": 9,
+  "article_evidence_chars": 9760,
+  "article_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+  "article_evidence_receipt_path": "_records/discovery-preflight/result/article-evidence-receipt.json",
+  "metadata_candidates_sha256": "9fb6e94a61c1351c41b7428382e192efd14df68ae25ac59c1da9b06a902d295c",
+  "production_changes": 0
+}

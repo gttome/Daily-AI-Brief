@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9760,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning",
+      "canonical_url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-23T22:54:56.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3033,
+      "excerpt": "Introducing NV&#x2d;Reason&#x2d;CT Open 3D CT VLM for Radiologist Chain&#x2d;of&#x2d;Thought Reasoning | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Developer Tools & Techniques Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning Sep 23, 2026 By Andriy Myronenko , Supriya V. NV-Reason-CT extends chain-of-thought reasoning to full volumetric CT, generating structured diagnostic reports, emulating radiologist internal thinking, and supporting multistep follow-up conversation across chest and abdomen. Providing full 3D reasoning for CT…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Node 20 is no longer available in GitHub Actions",
+      "canonical_url": "https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-23T20:46:07.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 470,
+      "excerpt": "Node 20 is no longer available in GitHub Actions - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Retired September 23, 2026 • 1 minute read Node 20 is no longer available in GitHub Actions This is the final notification that Node 20 is no longer available on GitHub Actions runners. Runners now use Node 24 for JavaScript actions. The temporary ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION opt-out is no longer available. actions Share Copied Shared Back to…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Validate GPU Cluster Readiness Before AI Workloads Land",
+      "canonical_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-23T19:45:19.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2514,
+      "excerpt": "Validate GPU Cluster Readiness Before AI Workloads Land | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Data Center / Cloud Validate GPU Cluster Readiness Before AI Workloads Land Using NVIDIA Cluster Readiness Engine, teams can bring reliable GPU clusters to production with workload-driven validation. Sep 23, 2026 By Dhvani Chheda and Kai Wombacher Like Discuss (0) L T F R E AI-Generated Summary NVIDIA Cluster Readiness Engine (NVCRE) is an open source Kubernetes controller that runs real distributed workloads across topology-aware node groups to prove GPU cluster…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "More ways to request and configure Copilot code reviews",
+      "canonical_url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-23T21:25:58.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 649,
+      "excerpt": "More ways to request and configure Copilot code reviews - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog September 23, 2026 • 1 minute read More ways to request and configure Copilot code reviews Table of Contents ⚙️ Manage your personal review settings 🏢 Set an enterprise default review effort Menu. Currently selected: ⚙️ Manage your personal review settings ⚙️ Manage your personal review settings 🏢 Set an enterprise default review effort GitHub…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Building the system for AI at work",
+      "canonical_url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/",
+      "publisher": "Microsoft 365",
+      "published_at": "2026-09-23T15:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1395,
+      "excerpt": "But underneath the noise, something real has happened: AI can now do genuine, economically valuable work. And we give you the most powerful tools for building agents, with one place to monitor, secure, and govern them across your organization. The organizations pulling ahead decide what good work looks like, measure against it, and improve a little at a time until the agent outperforms anything they could have specified up front. AI arrived on that same model, but agents don&#8217;t work that way. September 10 3 min read Build apps in Copilot Cowork and Copilot Studio Create full-stack business apps through conversation, grounded in your…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "OpenTelemetry in the GitHub Copilot app",
+      "canonical_url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-23T02:14:54.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 462,
+      "excerpt": "OpenTelemetry in the GitHub Copilot app - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read OpenTelemetry in the GitHub Copilot app Understand how Copilot agents perform and interact with models and tools. The GitHub Copilot app now supports OpenTelemetry (OTel) configuration through enterprise-managed settings. Learn more about OpenTelemetry for agent monitoring and configuring enterprise-managed settings . Enter…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-22T17:18:13.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 3941,
+      "excerpt": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. To make these failures measurable, Strands Evals SDK and Amazon Bedrock AgentCore Evaluations , a capability of Amazon Bedrock AgentCore, add skill-focused evaluators: Skill Selection Accuracy determines whether each invoked…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "Use open weight models as your AI coding agent with Amazon Bedrock",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-23T18:17:44.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 4230,
+      "excerpt": "Use open weight models as your AI coding agent with Amazon Bedrock | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Open weight models on Amazon Bedrock now make these agents practical to run privately and cost-effectively. What if you could run an AI coding agent that keeps your data in your own AWS account, switches between frontier open weight…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Agentic conversational video intelligence built on AWS",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/agentic-conversational-video-intelligence-built-on-aws/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-23T18:21:54.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 5265,
+      "excerpt": "Agentic conversational video intelligence built on AWS | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In this post, we walk through the architecture and key patterns for building a video intelligence solution that accepts natural language questions and returns answers from video content. from strands import Agent from strands.models.bedrock import…"
+    }
+  ]
+}

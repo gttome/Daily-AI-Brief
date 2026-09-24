@@ -1,16 +1,79 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-24",
-  "contract_version": "1.6.0",
   "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "cursor_status": "BLOCKED",
+  "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
+  "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+  "stage": "PREFLIGHT_DISCOVERY_READY",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": null,
+  "workflow_run_ids": [
+    "36008720746"
+  ],
+  "artifact_paths": [
+    "_records/discovery-preflight/result/article-evidence-receipt.json",
+    "_records/discovery-preflight/result/article-evidence.json",
+    "_records/discovery-preflight/result/date-enrichment.json",
+    "_records/discovery-preflight/result/metadata-candidates.json",
+    "_records/discovery-preflight/result/receipt.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "publication_lifecycle": "staged",
+  "operational_status": "PREPARING",
   "stages": {
-    "PREFLIGHT_METADATA_READY": {"status":"UNVERIFIED","artifact":null,"workflow_run":null,"retry_count":0,"evidence":"No durable current-day receipt/artifact validated; scheduler activity is not completion proof."},
-    "PREFLIGHT_DISCOVERY_READY": {"status":"UNVERIFIED","artifact":null,"workflow_run":null,"retry_count":0,"evidence":"No durable current-day receipt/artifact validated; scheduler activity is not completion proof."},
-    "READINESS_PRELIMINARY": {"status":"FAIL","artifact":"_records/readiness/2026-09-24.json","workflow_run":null,"retry_count":0,"evidence":"Preliminary readiness persisted as NOT_READY because required durable preflight proofs are absent."},
-    "READINESS_FINAL": {"status":"FAIL","artifact":"_records/readiness/2026-09-24.json","workflow_run":null,"retry_count":0,"evidence":"Final gate re-certified exact main and failed closed because resolver still returns PREFLIGHT_METADATA_READY; publication_authorized=false."}
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-24T13:53:08.472Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
+      "artifact_paths": [
+        "_records/discovery-preflight/result/date-enrichment.json",
+        "_records/discovery-preflight/result/metadata-candidates.json"
+      ],
+      "workflow_run_ids": [
+        "36008720746"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "PREFLIGHT_DISCOVERY_READY": {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-24T13:53:08.516Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
+      "artifact_paths": [
+        "_records/discovery-preflight/result/article-evidence-receipt.json",
+        "_records/discovery-preflight/result/article-evidence.json",
+        "_records/discovery-preflight/result/receipt.json"
+      ],
+      "workflow_run_ids": [
+        "36008720746"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    }
   },
-  "resume_from": "PREFLIGHT_METADATA_READY",
-  "updated_at": "2026-09-24T11:47:20Z",
-  "invariant": "Never infer stage completion from branch existence, scheduler completion, or workflow activity alone. Reuse only durable receipts and referenced artifacts validated against this baseline SHA and contract version."
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-24T13:53:08.472Z",
+      "status": "pass",
+      "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-24T13:53:08.516Z",
+      "status": "pass",
+      "current_sha": "7050d1136190efec1fd7fbb9a2dcc8273dcc2807",
+      "pr_number": null,
+      "note": null
+    }
+  ]
 }
