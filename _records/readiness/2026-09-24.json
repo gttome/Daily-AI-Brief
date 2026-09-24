@@ -1,10 +1,10 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-24",
-  "stage": "preliminary",
+  "stage": "final",
   "status": "READY",
   "main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "certified_at": "2026-09-24T14:24:00Z",
+  "certified_at": "2026-09-24T14:25:30Z",
   "checks": [
     {
       "id": "main_sha",
@@ -55,6 +55,11 @@
       "id": "github_publication_capability",
       "result": "PASS",
       "evidence": "Connected GitHub capability can read/write isolated branches and perform authorized GitHub repository operations."
+    },
+    {
+      "id": "durable_preliminary_cursor",
+      "result": "PASS",
+      "evidence": "Current-day run-state durably proves READINESS_PRELIMINARY under baseline main SHA 4ac06268048a3241d2ecaa5ce7c2638266500d75 and active contract."
     }
   ],
   "warnings": [],
@@ -84,6 +89,6 @@
       "conclusion": "success"
     }
   },
-  "publication_authorized": false,
-  "next_action": "Persist READINESS_PRELIMINARY in durable run-state, then perform Final Gate recertification. Final Gate alone may set publication_authorized=true."
+  "publication_authorized": true,
+  "next_action": "Persist READINESS_FINAL in the same run-state and begin the existing September 24 publisher path."
 }
