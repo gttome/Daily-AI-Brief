@@ -7,9 +7,10 @@
   "stages": {
     "PREFLIGHT_METADATA_READY": {"status":"UNVERIFIED","artifact":null,"workflow_run":null,"retry_count":0,"evidence":"No durable current-day receipt/artifact validated; scheduler activity is not completion proof."},
     "PREFLIGHT_DISCOVERY_READY": {"status":"UNVERIFIED","artifact":null,"workflow_run":null,"retry_count":0,"evidence":"No durable current-day receipt/artifact validated; scheduler activity is not completion proof."},
-    "READINESS_PRELIMINARY": {"status":"FAIL","artifact":"_records/readiness/2026-09-24.json","workflow_run":null,"retry_count":0,"evidence":"Preliminary readiness persisted as NOT_READY because required durable preflight proofs are absent."}
+    "READINESS_PRELIMINARY": {"status":"FAIL","artifact":"_records/readiness/2026-09-24.json","workflow_run":null,"retry_count":0,"evidence":"Preliminary readiness persisted as NOT_READY because required durable preflight proofs are absent."},
+    "READINESS_FINAL": {"status":"FAIL","artifact":"_records/readiness/2026-09-24.json","workflow_run":null,"retry_count":0,"evidence":"Final gate re-certified exact main and failed closed because resolver still returns PREFLIGHT_METADATA_READY; publication_authorized=false."}
   },
   "resume_from": "PREFLIGHT_METADATA_READY",
-  "updated_at": "2026-09-24T10:47:20Z",
+  "updated_at": "2026-09-24T11:47:20Z",
   "invariant": "Never infer stage completion from branch existence, scheduler completion, or workflow activity alone. Reuse only durable receipts and referenced artifacts validated against this baseline SHA and contract version."
 }
