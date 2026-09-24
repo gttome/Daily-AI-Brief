@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-24",
+  "contract_version": "1.6.0",
+  "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "cursor_status": "BLOCKED",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {"status":"UNVERIFIED","artifact":null,"workflow_run":null,"retry_count":0,"evidence":"No durable current-day receipt/artifact validated; scheduler activity is not completion proof."},
+    "PREFLIGHT_DISCOVERY_READY": {"status":"UNVERIFIED","artifact":null,"workflow_run":null,"retry_count":0,"evidence":"No durable current-day receipt/artifact validated; scheduler activity is not completion proof."},
+    "READINESS_PRELIMINARY": {"status":"FAIL","artifact":"_records/readiness/2026-09-24.json","workflow_run":null,"retry_count":0,"evidence":"Preliminary readiness persisted as NOT_READY because required durable preflight proofs are absent."}
+  },
+  "resume_from": "PREFLIGHT_METADATA_READY",
+  "updated_at": "2026-09-24T10:47:20Z",
+  "invariant": "Never infer stage completion from branch existence, scheduler completion, or workflow activity alone. Reuse only durable receipts and referenced artifacts validated against this baseline SHA and contract version."
+}
