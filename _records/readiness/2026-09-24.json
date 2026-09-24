@@ -1,40 +1,89 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-24",
-  "stage": "final",
-  "status": "NOT_READY",
+  "stage": "preliminary",
+  "status": "READY",
   "main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "certified_at": "2026-09-24T11:47:20Z",
+  "certified_at": "2026-09-24T14:24:00Z",
   "checks": [
-    {"id":"github_repository_read","result":"PASS","evidence":"Connected GitHub capability read gttome/Daily-AI-Brief and exact current main SHA 4ac06268048a3241d2ecaa5ce7c2638266500d75."},
-    {"id":"reliability_handoff_review","result":"PASS","evidence":"Reviewed Daily_AI_Brief_Sep22_Publishing_Reliability_Handoff_2026-09-21.md; targeted recovery, immutable accepted-image checkpoints, Git Data API binary transport, current date-scoped image review, Watchlist parity/dynamic counts, Professional Series mappings, story-order parity, and merged/deployed/live closure distinctions remain required."},
-    {"id":"preliminary_receipt","result":"PASS","evidence":"Current-day preliminary readiness receipt exists on discovery-preflight/daily/2026-09-24 and is bound to exact current main SHA."},
-    {"id":"durable_run_state","result":"FAIL","evidence":"Current-day run-state is BLOCKED and resolves resume_from=PREFLIGHT_METADATA_READY; PREFLIGHT_METADATA_READY is UNVERIFIED, PREFLIGHT_DISCOVERY_READY is UNVERIFIED, and READINESS_PRELIMINARY is FAIL."},
-    {"id":"metadata_preflight_current_day","result":"FAIL","evidence":"No validated durable PREFLIGHT_METADATA_READY artifact/receipt is referenced by the current-day run-state."},
-    {"id":"discovery_preflight_current_day","result":"FAIL","evidence":"No validated durable PREFLIGHT_DISCOVERY_READY artifact/coverage-ready receipt is referenced by the current-day run-state."},
-    {"id":"article_evidence_ready","result":"FAIL","evidence":"Cannot certify bounded current-day article evidence without durable discovery proof."},
-    {"id":"candidate_count_dates_focus_agent_skills","result":"FAIL","evidence":"Cannot certify <=20 candidates, resolved dates, >=3 per focus, or a genuine story-ready Agent Skills signal without durable current-day preflight artifacts."},
-    {"id":"publisher_automation","result":"PASS_THEN_DISABLED_FAIL_CLOSED","evidence":"Daily AI Brief + QA was enabled when checked; it was disabled only after final NOT_READY decision to prevent consumption of a failed gate."},
-    {"id":"github_publication_capability","result":"PASS","evidence":"Connected GitHub capability can read repository/current branch state and perform authorized repository operations; publication itself was not started."}
+    {
+      "id": "main_sha",
+      "result": "PASS",
+      "evidence": "Exact current main SHA 4ac06268048a3241d2ecaa5ce7c2638266500d75."
+    },
+    {
+      "id": "protected_main",
+      "result": "PASS",
+      "evidence": "Active repository ruleset 23615327 Protect main - required publication CI is enforced."
+    },
+    {
+      "id": "current_main_ci_pages_delta",
+      "result": "PASS",
+      "evidence": "Current-main deterministic publication CI run 35910075328 succeeded; Pages run 35910074771 succeeded; deterministic delta validation run 35910156226 succeeded."
+    },
+    {
+      "id": "metadata_preflight",
+      "result": "PASS",
+      "evidence": "Workflow 36005501533 succeeded; durable metadata receipt ready=true, coverage_ready=true, model_calls=0."
+    },
+    {
+      "id": "discovery_preflight",
+      "result": "PASS",
+      "evidence": "Workflow 36008720746 succeeded; durable discovery receipt coverage_ready=true, article_evidence_ready=true, candidate_count=20."
+    },
+    {
+      "id": "article_evidence",
+      "result": "PASS",
+      "evidence": "9/9 evidence retrievals ready, 9760 model-visible chars <=12000, balanced 3/3/3."
+    },
+    {
+      "id": "coverage",
+      "result": "PASS",
+      "evidence": "Coverage counts 9 technical, 4 applied, 7 agents; all >=3; retained candidates <=20 and preflight validator enforced resolved metadata dates."
+    },
+    {
+      "id": "agent_skills",
+      "result": "PASS",
+      "evidence": "2 story-ready Agent Skills signals; preferred candidate m01."
+    },
+    {
+      "id": "publisher_automation",
+      "result": "PASS",
+      "evidence": "Daily AI Brief + QA, Daily Brief Preflight Guard, and Daily Brief Final Gate were restored enabled after deterministic recovery."
+    },
+    {
+      "id": "github_publication_capability",
+      "result": "PASS",
+      "evidence": "Connected GitHub capability can read/write isolated branches and perform authorized GitHub repository operations."
+    }
   ],
   "warnings": [],
-  "blockers": [
-    {"code":"durable_cursor_before_readiness_preliminary","evidence":"_records/run-state/2026-09-24.json is BLOCKED with resume_from=PREFLIGHT_METADATA_READY. The final gate expected READINESS_PRELIMINARY, so publication authorization is prohibited.","recovery":"Repair only PREFLIGHT_METADATA_READY using the existing zero-model deterministic preflight path; then validate PREFLIGHT_DISCOVERY_READY and reconstruct/advance the durable cursor from verified artifacts. Do not rerun valid stages or start editorial work."}
-  ],
+  "blockers": [],
   "repairs_performed": [
-    {"action":"fail_closed_automations","evidence":"Disabled only Daily AI Brief + QA, Daily Brief Preflight Guard, and Daily Brief Final Gate after the final NOT_READY decision; unrelated automations were left unchanged."}
+    {
+      "action": "targeted_metadata_recovery",
+      "evidence": "Under-80 metadata preflight run 36005501533 succeeded without model calls."
+    },
+    {
+      "action": "targeted_discovery_recovery",
+      "evidence": "Under-80 discovery preflight run 36008720746 succeeded without model calls."
+    }
   ],
   "workflow_evidence": {
-    "metadata_preflight": null,
-    "discovery_preflight": null,
-    "delta_validation": {"run_id":35910156226,"main_sha":"4ac06268048a3241d2ecaa5ce7c2638266500d75","conclusion":"success"}
-  },
-  "automation_state": {
-    "preflight_guard":"disabled_fail_closed",
-    "final_gate":"disabled_fail_closed",
-    "publisher":"disabled_fail_closed",
-    "unrelated_automations":"unchanged"
+    "metadata_preflight": {
+      "run_id": 36005501533,
+      "conclusion": "success"
+    },
+    "discovery_preflight": {
+      "run_id": 36008720746,
+      "conclusion": "success"
+    },
+    "delta_validation": {
+      "run_id": 35910156226,
+      "main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "conclusion": "success"
+    }
   },
   "publication_authorized": false,
-  "next_action": "Preserve the last valid live edition. Repair only the first invalid durable stage PREFLIGHT_METADATA_READY through the zero-model deterministic path, then advance discovery/readiness only from validated artifacts before re-enabling publication."
+  "next_action": "Persist READINESS_PRELIMINARY in durable run-state, then perform Final Gate recertification. Final Gate alone may set publication_authorized=true."
 }
