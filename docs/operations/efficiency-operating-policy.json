@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5.0",
+  "schema_version": "1.6.0",
   "profile_id": "under80-v1",
   "effective_date": "2026-09-18",
   "baseline_date": "2026-09-17",
@@ -84,7 +84,7 @@
   "runtime_contract_path": "docs/operations/under80-runtime-contract.json",
   "daily_work_reads_historical_runbook": false,
   "post_editorial_execution_owner": "github_actions",
-  "work_stop_boundary": "after one accepted editorial bundle, six accepted full-quality story images in WebP or PNG, image integrity validation, and one atomic Git Data API handoff commit on an isolated branch",
+  "work_stop_boundary": "after one accepted editorial bundle, verified/frozen media, a dated frozen Watchlist plus sweep receipt, six accepted full-quality story images in WebP or PNG, and one validated versioned publication manifest are atomically committed on an isolated handoff branch",
   "work_forbidden_after_handoff": [
     "deterministic generator",
     "repository test suite",
@@ -216,5 +216,16 @@
     "primary_lookback_days": 7,
     "missed_signal_lookback_days": 14,
     "zero_new_fail_closed": true
+  },
+  "handoff_publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
+  "handoff_publication_manifest_required": true,
+  "handoff_publication_manifest_effective_date": "2026-09-26",
+  "post_handoff_contract_policy": {
+    "media_repair_allowed": false,
+    "watchlist_research_or_repair_allowed": false,
+    "image_review_path_fallback_allowed": false,
+    "publication_manifest_must_validate_before_expansion": true,
+    "full_test_suite_before_pr": false,
+    "protected_pr_ci_remains_integrated_full_gate": true
   }
 }
