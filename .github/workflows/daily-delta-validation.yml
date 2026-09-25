@@ -208,23 +208,27 @@ jobs:
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
           exit "$exit_code"
 
-      - name: Build public-safe Command Center delta handoff
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && always()
+      - name: Project canonical status for already-closed edition
+        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value == 'true'
         run: |
           set -euo pipefail
-          if [ -f /tmp/daily-validation.json ] && [ -f /tmp/watchlist-delta.json ]; then
-            args=( \
-              --validation /tmp/daily-validation.json \
-              --watchlist /tmp/watchlist-delta.json \
-              --policy docs/operations/efficiency-operating-policy.json \
-              --out /tmp/command-center-delta.json \
-            )
-            incident="_records/command-center/${{ steps.date.outputs.value }}-incident-and-recovery.json"
-            if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
-            node _tools/command-center-delta.mjs "${args[@]}"
-          else
-            echo 'Validation inputs unavailable; Command Center handoff packet not generated.'
-          fi
+          node _tools/publication-lifecycle.mjs project \
+            --date "${{ steps.date.outputs.value }}" \
+            --out /tmp/publication-status.json
+
+      - name: Build read-only Command Center refresh handoff for already-closed edition
+        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value == 'true'
+        run: |
+          set -euo pipefail
+          args=( \
+            --status /tmp/publication-status.json \
+            --policy docs/operations/efficiency-operating-policy.json \
+            --out /tmp/command-center-delta.json \
+          )
+          incident="_records/command-center/${{ steps.date.outputs.value }}-incident-and-recovery.json"
+          if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
+          node _tools/command-center-delta.mjs "${args[@]}"
+          echo 'Closed-edition refresh is read-only: no editorial, media, Watchlist, image, lifecycle, or publication work is replayed.'
 
       - name: Prepare protected completion persistence
         id: persistence
@@ -264,11 +268,10 @@ jobs:
           fi
           test -f /tmp/completion-evidence.json
           test -f /tmp/daily-validation.json
-          test -f /tmp/command-center-delta.json
+          test -f /tmp/watchlist-delta.json
           mkdir -p "$(dirname "$completion")" _records/command-center
           cp /tmp/completion-evidence.json "$completion"
           cc="_records/command-center/$EDITION_DATE-public-safe-delta.json"
-          cp /tmp/command-center-delta.json "$cc"
           pr="$(gh api "repos/$GITHUB_REPOSITORY/commits/$EXPECTED_SHA/pulls" --jq '.[0].number // 0' 2>/dev/null || echo 0)"
           if [ "$pr" -le 0 ]; then echo "No protected publication PR found for $EXPECTED_SHA."; exit 1; fi
           candidate_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.head.sha')"
@@ -288,6 +291,17 @@ jobs:
           x.lifecycle_status='completed';x.completion_persistence='protected_pull_request';fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
           NODE
           node _tools/publication-lifecycle.mjs finalize --date "$EDITION_DATE" --completion "$completion" --candidate-sha "$candidate_sha" --pr "$pr" --ci-run-id "$ci_run_id" --publication-merge-sha "$publication_merge_sha"
+          args=( \
+            --status data/operations/publication-status.json \
+            --validation /tmp/daily-validation.json \
+            --watchlist /tmp/watchlist-delta.json \
+            --policy docs/operations/efficiency-operating-policy.json \
+            --out /tmp/command-center-delta.json \
+          )
+          incident="_records/command-center/$EDITION_DATE-incident-and-recovery.json"
+          if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
+          node _tools/command-center-delta.mjs "${args[@]}"
+          cp /tmp/command-center-delta.json "$cc"
           node _tools/run-state.mjs finalize --date "$EDITION_DATE" --production-sha "$EXPECTED_SHA" --pr "$pr" --completion "$completion" --validation /tmp/daily-validation.json --cc "$cc"
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
@@ -335,9 +349,9 @@ jobs:
             core.info('Completion evidence merged through protected main at '+merged.data.sha+'.');
 
       - name: Publish compact receipts to job summary
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && always()
+        if: steps.gate.outputs.run == 'true' && always()
         run: |
-          for receipt in /tmp/completion-evidence.json /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
+          for receipt in /tmp/publication-status.json /tmp/completion-evidence.json /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
             if [ -f "$receipt" ]; then
               echo "#### $(basename "$receipt")" >> "$GITHUB_STEP_SUMMARY"
               echo '```json' >> "$GITHUB_STEP_SUMMARY"
@@ -347,17 +361,18 @@ jobs:
           done
 
       - name: Upload validation receipts
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && always()
+        if: steps.gate.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: daily-validation-${{ steps.date.outputs.value }}-${{ github.run_id }}
           path: |
+            /tmp/publication-status.json
             /tmp/completion-evidence.json
             /tmp/daily-validation.json
             /tmp/watchlist-delta.json
             /tmp/command-center-delta.json
           retention-days: 30
-          if-no-files-found: error
+          if-no-files-found: warn
 
       - name: Create deduplicated failure alert
         if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && steps.validation.outcome == 'failure'
