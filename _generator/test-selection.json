@@ -42,7 +42,8 @@
       ],
       "tier": "A",
       "tests": [
-        "_generator/test/run-state-recovery.test.mjs"
+        "_generator/test/run-state-recovery.test.mjs",
+        "_generator/test/sep24-reliability.test.mjs"
       ]
     },
     {
