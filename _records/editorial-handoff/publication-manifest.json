@@ -125,6 +125,8 @@
   },
   "migration": {
     "source": "reliability_iteration_2",
-    "note": "Binds already-completed September 25 artifacts without rewriting editorial, media, image, Watchlist, or reader content."
+    "note": "Binds already-completed September 25 artifacts without rewriting editorial, media, image, Watchlist, or reader content. Two historical identity conventions are explicitly adapted: the media receipt kernel hash predates the raw-byte binding rule, and final image-review story_id values are not required to match the later kernel story IDs. Both exceptions expire before the 2026-09-26 frozen-contract cutoff.",
+    "allow_legacy_media_kernel_hash_semantics": true,
+    "allow_legacy_image_story_identity": true
   }
 }
