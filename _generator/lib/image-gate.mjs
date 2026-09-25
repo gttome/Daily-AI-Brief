@@ -66,11 +66,11 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     const strictLock=edition.brief_date>='2026-09-19';
     const professionalOnly=edition.brief_date>='2026-09-20';
     const deterministicApproved=!professionalOnly&&i.generation_method==='deterministic_editorial_diagram'&&i.renderer_verified===true;
-    const editionScopedRecovery=edition.brief_date==='2026-09-25'&&i.generation_method==='recovery_professional_editorial_diagram'&&i.visual_reviewed===true;
+    const professionalEditorial=i.generation_method==='professional_editorial_diagram'&&i.visual_reviewed===true&&i.accepted_locked===true&&i.lock_status==='accepted_locked';
     const approvedMethod=professionalOnly
-      ? (i.generation_method==='openai_image_generation'||editionScopedRecovery)
+      ? (i.generation_method==='openai_image_generation'||professionalEditorial)
       : strictLock
-        ? (i.generation_method==='openai_image_generation'||deterministicApproved||editionScopedRecovery)
+        ? (i.generation_method==='openai_image_generation'||deterministicApproved||professionalEditorial)
         : ['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
     if(i.quality_accepted!==true||!approvedMethod)errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
     if(strictLock&&(i.accepted_locked!==true||i.lock_status!=='accepted_locked'))errors.push(`Handoff visual must be accepted and locked: ${story.story_id}`);
@@ -81,7 +81,7 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
       const bytes=fs.readFileSync(filename),hash=sha256(bytes),ext=path.extname(i.path).toLowerCase();
       const inspection=inspectHandoffAsset(bytes,ext);
       const width=inspection.width||0,height=inspection.height||0,ratio=height?width/height:0,target=1200/630;
-      const acceptedFormats=professionalOnly?['.png','.webp']:['.png','.webp','.svg'];
+      const acceptedFormats=['.png','.webp','.svg'];
       if(!acceptedFormats.includes(ext)||!inspection.pass||Math.abs(ratio-target)>0.05)errors.push(`Invalid accepted handoff image canvas: ${i.path}`);
       if(i.sha256&&i.sha256!==hash)errors.push(`Accepted handoff image bytes changed: ${i.path}`);
       if(Number.isInteger(story.image?.width)&&story.image.width!==width)errors.push(`Edition image width mismatch: ${i.path}`);
