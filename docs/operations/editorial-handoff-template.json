@@ -157,7 +157,9 @@
       "asset_version": "v1-story-specific",
       "overall_gate": "pass",
       "quality_evidence_path": "_records/image-quality/YYYY-MM-DD-editorial.json",
-      "quality_evidence_sha256": "sha256-of-versioned-quality-evidence"
+      "quality_evidence_sha256": "sha256-of-versioned-quality-evidence",
+      "supersedes": null,
+      "deployment_verification_required": false
     }
   },
   "media_shape": {
