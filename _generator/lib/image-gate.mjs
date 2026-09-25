@@ -173,11 +173,7 @@ export function reviewedHandoffImages(edition, root, manifestPath, {mode='combin
   for(const story of edition.stories||[]){
     const matches=entries.filter(([,x])=>x?.path===story.image?.path);
     if(matches.length!==1){errors.push('Missing or ambiguous handoff visual approval: '+story.story_id);continue;}
-    const [,i]=matches[0],strictLock=edition.brief_date>='2026-09-19',professionalOnly=edition.brief_date>='2026-09-20';
-    const deterministicApproved=!professionalOnly&&i.generation_method==='deterministic_editorial_diagram'&&i.renderer_verified===true;
-    const professionalEditorial=i.generation_method==='professional_editorial_diagram'&&i.visual_reviewed===true&&i.accepted_locked===true&&i.lock_status==='accepted_locked';
-    const approvedMethod=professionalOnly?(i.generation_method==='openai_image_generation'||professionalEditorial):strictLock?(i.generation_method==='openai_image_generation'||deterministicApproved||professionalEditorial):['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
-    if(i.quality_accepted!==true||!approvedMethod)errors.push('Handoff visual uses an unapproved generation method: '+story.story_id);
+    const [,i]=matches[0],strictLock=edition.brief_date>='2026-09-19';
     if(strictLock&&(i.accepted_locked!==true||i.lock_status!=='accepted_locked'))errors.push('Handoff visual must be accepted and locked: '+story.story_id);
     if(i.alt!==story.image?.alt)errors.push('Handoff visual alt text mismatch: '+story.story_id);
     if(edition.brief_date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE&&i.story_id!==story.story_id)errors.push('Handoff visual story identity mismatch: '+story.story_id);
@@ -198,6 +194,13 @@ export function reviewedHandoffImages(edition, root, manifestPath, {mode='combin
   const structuralErrors=[...errors],structuralGate={result:structuralErrors.length?'fail':'pass',errors:structuralErrors};
   let qualityEvidencePath=null,qualityEvidenceSha256=null,editorialErrors=[];
   if(mode==='combined'){
+    for(const [,entry] of entries){
+      const strictLock=edition.brief_date>='2026-09-19',professionalOnly=edition.brief_date>='2026-09-20';
+      const deterministicApproved=!professionalOnly&&entry.generation_method==='deterministic_editorial_diagram'&&entry.renderer_verified===true;
+      const professionalEditorial=entry.generation_method==='professional_editorial_diagram'&&entry.visual_reviewed===true&&entry.accepted_locked===true&&entry.lock_status==='accepted_locked';
+      const approvedMethod=professionalOnly?(entry.generation_method==='openai_image_generation'||professionalEditorial):strictLock?(entry.generation_method==='openai_image_generation'||deterministicApproved||professionalEditorial):['openai_image_generation','deterministic_editorial_diagram'].includes(entry.generation_method);
+      if(!approvedMethod)editorialErrors.push('quality_evidence_unapproved_generation_method:'+String(entry.story_id||entry.path));
+    }
     if(edition.brief_date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE){
       const paths=new Set(entries.map(([,x])=>x.quality_evidence_path).filter(Boolean)),expectedDigests=new Set(entries.map(([,x])=>x.quality_evidence_sha256).filter(Boolean));
       if(paths.size!==1||expectedDigests.size!==1)editorialErrors.push('quality_evidence_reference_missing_or_ambiguous');
