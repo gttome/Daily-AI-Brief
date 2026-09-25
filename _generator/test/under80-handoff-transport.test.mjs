@@ -25,6 +25,8 @@ test('under80 handoff uses authenticated Git Data API rather than native git or 
  assert.equal(template.images_shape.c01.quality_accepted,true);
  assert.equal(template.images_shape.c01.generation_method,'openai_image_generation');
  assert.match(workflow,/github_git_data_api/);
+ assert.match(workflow,/echo \"FINAL_IMAGE_REVIEW_PATH=\$IMAGE_REVIEW_PATH\" >> \"\$GITHUB_ENV\"/);
+ assert.match(workflow,/args=\(expand --kernel \"\$KERNEL_PATH\" --facts \"\$FACTS_PATH\" --metadata \"\$METADATA_CANDIDATES_PATH\" --images \"\$FINAL_IMAGE_REVIEW_PATH\"/);
  assert.doesNotMatch(workflow,/handoff_manifest_native_git_image_transport_required/);
 });
 
