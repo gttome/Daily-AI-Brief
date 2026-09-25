@@ -187,7 +187,7 @@
     ]
   },
   "handoff_manifest_shape": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "staging_ref": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
     "kernel_path": "_records/editorial-handoff/kernel.json",
     "facts_path": "_records/editorial-handoff/facts.json",
@@ -225,7 +225,7 @@
     "Beginning with the 2026-09-24 edition, persist a current-day media preflight receipt bound to the editorial-kernel SHA-256, with exactly two videos and two podcasts, verification timestamps/evidence, and a passing two-source podcast-diversity result. Reuse it unchanged on downstream retries while the kernel hash is unchanged."
   ],
   "qualification_handoff_manifest_shape": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "execution_mode": "qualification_nonproduction",
     "staging_ref": "editorial-handoff/qualification/YYYY-MM-DD-runtime-test-<attempt>",
     "kernel_path": "_records/editorial-handoff/kernel.json",
@@ -238,7 +238,8 @@
     "deterministic_validation_model_calls": 0,
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
     "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-    "image_transport_method": "github_git_data_api"
+    "image_transport_method": "github_git_data_api",
+    "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json"
   },
   "transport_shape": {
     "method": "github_git_data_api",
