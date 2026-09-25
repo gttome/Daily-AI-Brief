@@ -270,9 +270,18 @@ jobs:
           MEDIA_PATH: ${{ steps.publication_manifest.outputs.media_path }}
           METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
           COVERAGE_PERIOD: ${{ steps.handoff.outputs.coverage_period }}
+          EXECUTION_MODE: ${{ steps.handoff.outputs.execution_mode }}
         run: |
           set -euo pipefail
           published_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          if [ "$EXECUTION_MODE" = "qualification_nonproduction" ]; then
+            replay_date="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.env.KERNEL_PATH,'utf8'));process.stdout.write(String(k.brief_date||''));")"
+            replay_edition="_data/editions/$replay_date.json"
+            if [ -f "$replay_edition" ]; then
+              original_published_at="$(node -e "const fs=require('fs');const e=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(e.published_at||''));" "$replay_edition")"
+              if [ -n "$original_published_at" ]; then published_at="$original_published_at"; fi
+            fi
+          fi
           args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --metadata "$METADATA_CANDIDATES_PATH" --images "$FINAL_IMAGE_REVIEW_PATH" --media "$MEDIA_PATH" --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
           node _tools/editorial-kernel.mjs "${args[@]}"
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
