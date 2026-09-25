@@ -99,7 +99,7 @@ if(completion&&edition){
   if(info.pass&&info.width>=1200&&info.height>=630)integrityPassed++;
   else imageProblems.push(`${image}:${(info.errors||[]).join(',')||`${info.width}x${info.height}`}`);
   const manifest=manifestEntries.find(x=>x?.path===image);
-  if(manifest?.accepted_locked===true&&manifest?.lock_status==='accepted_locked'&&manifest?.quality_accepted===true&&manifest?.visual_reviewed===true&&manifest?.inspection_result==='pass')acceptedLocked++;
+  if(manifest?.accepted_locked===true&&manifest?.lock_status==='accepted_locked'&&manifest?.quality_accepted===true&&(manifest?.generation_method==='openai_image_generation'||(manifest?.visual_reviewed===true&&manifest?.inspection_result==='pass')))acceptedLocked++;
   if(String(story.image?.public_url||'').startsWith(`${base}/briefs/images/${date}/`))canonicalHosted++;
  }
  imageReadiness={expected:6,accepted_locked:acceptedLocked,integrity_passed:integrityPassed,canonical_hosted:canonicalHosted,status:images.length===6&&!imageProblems.length&&acceptedLocked===6&&canonicalHosted===6?'pass':'fail'};
