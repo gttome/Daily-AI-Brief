@@ -1,0 +1,232 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-25",
+  "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+  "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+  "stage": "DETERMINISTIC_EXPANSION_READY",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": null,
+  "workflow_run_ids": [],
+  "artifact_paths": [
+    "_data/editions/2026-09-25.json",
+    "_records/editorial-handoff/article-evidence.json",
+    "_records/editorial-handoff/facts.json",
+    "_records/editorial-handoff/final-image-review-2026-09-25.json",
+    "_records/editorial-handoff/handoff.json",
+    "_records/editorial-handoff/kernel.json",
+    "_records/editorial-handoff/media.json",
+    "_records/editorial-handoff/metadata-candidates.json",
+    "_records/editorial/media-preflight/2026-09-25.json",
+    "data/operations/current-edition.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "publication_lifecycle": "candidate",
+  "operational_status": "HANDOFF",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-25T14:25:52.973Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/metadata-candidates.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "PREFLIGHT_DISCOVERY_READY": {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-25T14:25:52.973Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/article-evidence.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "READINESS_PRELIMINARY": {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/metadata-candidates.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "READINESS_FINAL": {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/kernel.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "EDITORIAL_KERNEL_READY": {
+      "stage": "EDITORIAL_KERNEL_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/facts.json",
+        "_records/editorial-handoff/kernel.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "MEDIA_READY": {
+      "stage": "MEDIA_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/media.json",
+        "_records/editorial/media-preflight/2026-09-25.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "IMAGES_READY": {
+      "stage": "IMAGES_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/final-image-review-2026-09-25.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "HANDOFF_COMMITTED": {
+      "stage": "HANDOFF_COMMITTED",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_records/editorial-handoff/handoff.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "DETERMINISTIC_EXPANSION_READY": {
+      "stage": "DETERMINISTIC_EXPANSION_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "artifact_paths": [
+        "_data/editions/2026-09-25.json",
+        "data/operations/current-edition.json"
+      ],
+      "workflow_run_ids": [],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    }
+  },
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-25T14:25:52.973Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-25T14:25:52.973Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "EDITORIAL_KERNEL_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "MEDIA_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "IMAGES_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "HANDOFF_COMMITTED",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "DETERMINISTIC_EXPANSION_READY",
+      "timestamp": "2026-09-25T14:25:52.974Z",
+      "status": "pass",
+      "current_sha": "4e141ccc32142ba0cf664d79bb04dd848db48c92",
+      "pr_number": null,
+      "note": null
+    }
+  ]
+}
