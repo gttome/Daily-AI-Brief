@@ -1,3 +1,79 @@
 {
-  "schema_version":"1.0.0","edition_date":"2026-09-25","lifecycle_stage":"COMPLETED","status":"COMPLETED","terminal_outcome":"COMPLETED","baseline_sha":"4ac06268048a3241d2ecaa5ce7c2638266500d75","candidate_sha":"86f2415fb91aefb2aa7000da9c0ca3a89ea14faf","production_sha":"ed3344500a630fc44b04fc48211c027a344a8c6b","publication_merge_sha":"1e44aa2e10cce2a593c4f677192b523f03594985","pr_number":217,"ci_run_id":36147513639,"pages_deployment_id":36153629964,"deployed_sha":"ed3344500a630fc44b04fc48211c027a344a8c6b","live_verification_timestamp":"2026-09-25T16:28:00Z","completion_path":"_records/publication/2026-09-25/completion.json","command_center_sync":"pending","current_blocker":null,"next_legal_recovery_action":"Synchronize Command Center from canonical status.","updated_at":"2026-09-25T16:28:00Z"
+  "schema_version": "2.0.0",
+  "projection_version": "publication-status-v2",
+  "edition_date": "2026-09-25",
+  "edition_id": "dab-edition-2026-09-25",
+  "lifecycle_stage": "COMPLETED",
+  "lifecycle_state": "COMPLETED",
+  "operator_state": "COMPLETED",
+  "status": "COMPLETED",
+  "terminal_outcome": "COMPLETED",
+  "current_blocker": null,
+  "earliest_failed_stage": null,
+  "last_successful_stage": "COMPLETED",
+  "preserved_completed_work": [
+    "PLANNED",
+    "PREFLIGHT_READY",
+    "EDITORIAL_READY",
+    "CANDIDATE_READY",
+    "PR_OPEN",
+    "CI_PASS",
+    "MERGED",
+    "PAGES_DEPLOYED",
+    "LIVE_VERIFIED",
+    "COMPLETED"
+  ],
+  "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
+  "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
+  "operator_intervention_required": null,
+  "baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "candidate_sha": "86f2415fb91aefb2aa7000da9c0ca3a89ea14faf",
+  "production_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
+  "publication_merge_sha": "1e44aa2e10cce2a593c4f677192b523f03594985",
+  "pr_number": 217,
+  "ci_run_id": 36147513639,
+  "ci": {
+    "state": "passed",
+    "run_id": 36147513639
+  },
+  "pages_deployment_id": 36153629964,
+  "deployed_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
+  "pages": {
+    "state": "succeeded",
+    "run_id": 36153629964,
+    "deployed_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b"
+  },
+  "live_verification_timestamp": "2026-09-25T16:28:00Z",
+  "live_reader": {
+    "state": "verified",
+    "verified_at": "2026-09-25T16:28:00Z"
+  },
+  "completion_path": "_records/publication/2026-09-25/completion.json",
+  "completion": {
+    "state": "verified",
+    "path": "_records/publication/2026-09-25/completion.json"
+  },
+  "command_center_sync": "pending",
+  "command_center": {
+    "state": "pending",
+    "result": "pending",
+    "last_synced_at": null,
+    "source_status_sha256": null,
+    "stale": null
+  },
+  "last_authoritative_state_transition": {
+    "stage": "COMPLETED",
+    "at": "2026-09-25T16:28:00Z"
+  },
+  "source_evidence": {
+    "lifecycle_path": "_records/publication/2026-09-25/lifecycle.json",
+    "completion_path": "_records/publication/2026-09-25/completion.json",
+    "current_edition_path": "data/operations/current-edition.json",
+    "run_state_path": "_records/run-state/2026-09-25.json"
+  },
+  "consistency": {
+    "state": "pass",
+    "errors": []
+  },
+  "updated_at": "2026-09-25T16:28:00Z"
 }
