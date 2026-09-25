@@ -16,6 +16,12 @@ test('under80 handoff uses authenticated Git Data API rather than native git or 
  assert.equal(policy.no_new_credentials,true);
  assert.equal(template.handoff_manifest_shape.image_transport_method,'github_git_data_api');
  assert.equal(template.qualification_handoff_manifest_shape.image_transport_method,'github_git_data_api');
+ assert.equal(runtime.handoff.publication_manifest_path,'_records/editorial-handoff/publication-manifest.json');
+ assert.equal(policy.handoff_publication_manifest_required,true);
+ assert.equal(template.handoff_manifest_shape.publication_manifest_path,'_records/editorial-handoff/publication-manifest.json');
+ assert.equal(template.qualification_handoff_manifest_shape.publication_manifest_path,'_records/editorial-handoff/publication-manifest.json');
+ assert.match(workflow,/Validate and freeze versioned publication manifest/);
+ assert.doesNotMatch(workflow,/Regenerate public Watchlist from canonical state/);
  assert.equal(template.images_shape.c01.quality_accepted,true);
  assert.equal(template.images_shape.c01.generation_method,'openai_image_generation');
  assert.match(workflow,/github_git_data_api/);
