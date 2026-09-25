@@ -222,6 +222,22 @@ jobs:
           echo "sha=$baseline" >> "$GITHUB_OUTPUT"
           node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
 
+      - name: Resolve durable recovery checkpoint
+        id: recovery
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          BASELINE_SHA: ${{ steps.baseline.outputs.sha }}
+        run: |
+          set -euo pipefail
+          date="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.brief_date||''));" "$KERNEL_PATH")"
+          decision="$(node _tools/run-state.mjs resolve --date "$date" --baseline "$BASELINE_SHA" --contract "under80-v1/sep24-reliability-v1")"
+          printf '%s\n' "$decision" > /tmp/recovery-decision.json
+          reuse_images="$(printf '%s' "$decision" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const x=JSON.parse(s);process.stdout.write((x.preserved_stages||[]).includes('IMAGES_READY')?'true':'false')})")"
+          reuse_expansion="$(printf '%s' "$decision" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const x=JSON.parse(s);process.stdout.write((x.preserved_stages||[]).includes('DETERMINISTIC_EXPANSION_READY')?'true':'false')})")"
+          echo "reuse_images=$reuse_images" >> "$GITHUB_OUTPUT"
+          echo "reuse_expansion=$reuse_expansion" >> "$GITHUB_OUTPUT"
+          echo "Recovery checkpoint: images=$reuse_images expansion=$reuse_expansion"
+
       - name: Validate six Git-Data handoff PNGs
         if: steps.handoff.outputs.images_path != ''
         env:
@@ -231,7 +247,20 @@ jobs:
           set -euo pipefail
           node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGES_PATH"
 
+      - name: Reuse accepted image checkpoint
+        if: steps.recovery.outputs.reuse_images == 'true'
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+        run: |
+          set -euo pipefail
+          brief_date="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.brief_date||''));" "$KERNEL_PATH")"
+          review_path="_records/editorial-handoff/final-image-review-${brief_date}.json"
+          test -f "$review_path"
+          cp "$review_path" /tmp/images.json
+          printf '{"schema_version":"1.0.0","brief_date":"%s","reused_checkpoint":"IMAGES_READY","regenerated":false}\n' "$brief_date" > /tmp/visual-receipt.json
+
       - name: Render or select six guarded visual assets
+        if: steps.recovery.outputs.reuse_images != 'true'
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
@@ -260,6 +289,7 @@ jobs:
           echo "FINAL_IMAGE_REVIEW_PATH=$review_path" >> "$GITHUB_ENV"
 
       - name: Deterministically expand canonical edition
+        if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
@@ -275,6 +305,7 @@ jobs:
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
 
       - name: Generate one atomic publication stage
+        if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           DAB_QUALIFICATION_NONPRODUCTION: ${{ steps.handoff.outputs.execution_mode == 'qualification_nonproduction' && '1' || '0' }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
@@ -291,6 +322,7 @@ jobs:
           node _generator/cli.mjs "${args[@]}"
 
       - name: Apply deterministic stage to staging branch
+        if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           DAB_QUALIFICATION_NONPRODUCTION: ${{ steps.handoff.outputs.execution_mode == 'qualification_nonproduction' && '1' || '0' }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
@@ -304,9 +336,11 @@ jobs:
           node _generator/cli.mjs integration-check --image-review "$FINAL_IMAGE_REVIEW_PATH"
 
       - name: Regenerate public Watchlist from canonical state
+        if: steps.recovery.outputs.reuse_expansion != 'true'
         run: node _tools/sync-public-watchlist.mjs
 
       - name: Run pre-PR publication-candidate lint
+        if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         run: |
@@ -316,6 +350,7 @@ jobs:
           node _tools/run-state.mjs seed-candidate --date "$date" --baseline "${{ steps.baseline.outputs.sha }}" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1"
 
       - name: Commit deterministic outputs to staging only
+        if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         run: |
@@ -345,8 +380,13 @@ jobs:
             const head=process.env.STAGING_REF;
             const ref=(await github.rest.git.getRef({...context.repo,ref:`heads/${head}`})).data;
             const candidateSha=ref.object.sha;
-            const {data: prs}=await github.rest.pulls.list({...context.repo,head:`${context.repo.owner}:${head}`,base:'main',state:'open'});
-            let pr=prs[0];
+            const {data: prs}=await github.rest.pulls.list({...context.repo,head:`${context.repo.owner}:${head}`,base:'main',state:'all',per_page:100});
+            let pr=prs.find(p=>p.state==='open');
+            const prior=prs.find(p=>p.head.sha===candidateSha&&p.state==='closed');
+            if(!pr&&prior){
+              if(prior.merged_at){core.info(`Candidate ${candidateSha} already published by PR #${prior.number}; duplicate PR creation suppressed.`);return;}
+              core.setFailed(`Candidate ${candidateSha} already has closed unmerged PR #${prior.number}; explicit recovery is required before creating another PR.`);return;
+            }
             if(!pr){
               const created=await github.rest.pulls.create({...context.repo,head,base:'main',title:'Publish deterministic Daily AI Brief candidate',body:'Generated from one approved editorial kernel. Deterministic expansion, guarded visual selection, tests and contracts completed on the staging branch. Required main rules and human/editorial gates remain authoritative.'});
               pr=created.data;
@@ -355,6 +395,18 @@ jobs:
             if(pr.head.sha!==candidateSha){core.setFailed(`PR head ${pr.head.sha} does not equal committed candidate ${candidateSha}`);return;}
             await github.rest.issues.addLabels({...context.repo,issue_number:pr.number,labels:['publication-candidate']}).catch(()=>{});
             core.info(`Publication PR #${pr.number} is bound to exact candidate ${candidateSha} and ready for required CI.`);
+
+      - name: Build recovery decision after failure
+        if: failure()
+        env:
+          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+        run: |
+          set +e
+          date="$(node -e "const fs=require('fs');try{const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.brief_date||''));}catch{}" "$KERNEL_PATH")"
+          if [ -n "$date" ]; then
+            node _tools/run-state.mjs recover --date "$date" --root-error "post_editorial_workflow_failed" --out /tmp/recovery-decision.json
+          fi
+          set -e
 
       - name: Upload deterministic handoff evidence
         if: always()
@@ -366,6 +418,7 @@ jobs:
             /tmp/visual-receipt.json
             /tmp/images.json
             /tmp/staged-edition.json
+            /tmp/recovery-decision.json
           retention-days: 30
           if-no-files-found: warn
 
