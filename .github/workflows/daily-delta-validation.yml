@@ -263,18 +263,32 @@ jobs:
           test -f /tmp/command-center-delta.json
           mkdir -p "$(dirname "$completion")" _records/command-center
           cp /tmp/completion-evidence.json "$completion"
-          node - "$completion" <<'NODE'
-          const fs=require('fs');const p=process.argv[2],x=JSON.parse(fs.readFileSync(p,'utf8'));
-          x.lifecycle_status='closed';x.completion_persistence='protected_pull_request';fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
-          NODE
           cc="_records/command-center/$EDITION_DATE-public-safe-delta.json"
           cp /tmp/command-center-delta.json "$cc"
           pr="$(gh api "repos/$GITHUB_REPOSITORY/commits/$EXPECTED_SHA/pulls" --jq '.[0].number // 0' 2>/dev/null || echo 0)"
+          if [ "$pr" -le 0 ]; then echo "No protected publication PR found for $EXPECTED_SHA."; exit 1; fi
+          candidate_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.head.sha')"
+          publication_merge_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.merge_commit_sha // empty')"
+          if ! [[ "$candidate_sha" =~ ^[0-9a-f]{40}$ ]] || ! [[ "$publication_merge_sha" =~ ^[0-9a-f]{40}$ ]]; then echo "Publication PR evidence is incomplete."; exit 1; fi
+          ci_run_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$candidate_sha&per_page=100" --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .event=="pull_request" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
+          if [ "$ci_run_id" -le 0 ]; then echo "No successful protected CI found for publication candidate $candidate_sha."; exit 1; fi
+          node - "$completion" /tmp/daily-validation.json "$EXPECTED_SHA" "$candidate_sha" "$publication_merge_sha" "$pr" "$ci_run_id" <<'NODE'
+          const fs=require('fs');
+          const [p,validationPath,productionSha,candidateSha,mergeSha,prNumber,ciRunId]=process.argv.slice(2);
+          const x=JSON.parse(fs.readFileSync(p,'utf8')),v=JSON.parse(fs.readFileSync(validationPath,'utf8'));
+          const pass=id=>v.checks?.some(check=>check.check_id===id&&check.result==='pass');
+          const required=['publication_receipt','pages_deployment','live_changed_routes','live_homepage_edition','live_dated_edition','live_image_assets'];
+          if(v.final_result!=='pass'||required.some(id=>!pass(id)))throw new Error('live_completion_checks_not_all_passed');
+          x.schema_version='2.0.0';x.phase='live_verified';x.production_sha=productionSha;x.deployed_sha=productionSha;x.candidate_sha=candidateSha;x.publication_merge_sha=mergeSha;x.pr_number=Number(prNumber);x.ci_run_id=Number(ciRunId);
+          x.live_verified_at=v.ended_at;x.live_verification={final_result:'pass',homepage_edition_date:v.date,dated_edition_verified:true,route_count:v.route_count,checks:required,source_validation_run_id:process.env.GITHUB_RUN_ID?Number(process.env.GITHUB_RUN_ID):null};
+          x.lifecycle_status='completed';x.completion_persistence='protected_pull_request';fs.writeFileSync(p,JSON.stringify(x,null,2)+'\n');
+          NODE
+          node _tools/publication-lifecycle.mjs finalize --date "$EDITION_DATE" --completion "$completion" --candidate-sha "$candidate_sha" --pr "$pr" --ci-run-id "$ci_run_id" --publication-merge-sha "$publication_merge_sha"
           node _tools/run-state.mjs finalize --date "$EDITION_DATE" --production-sha "$EXPECTED_SHA" --pr "$pr" --completion "$completion" --validation /tmp/daily-validation.json --cc "$cc"
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add "$completion" "$state" "$cc"
+          git add "$completion" "$state" "$cc" "_records/publication/$EDITION_DATE/lifecycle.json" "data/operations/current-edition.json" "data/operations/publication-status.json"
           git commit -m "Persist $EDITION_DATE publication completion and closure evidence"
           git push origin "HEAD:$branch"
           echo "needed=true" >> "$GITHUB_OUTPUT"
