@@ -2,18 +2,99 @@
   "schema_version": "1.0.0",
   "principle": "minimum_sufficient_affected_tests_before_full_publication_ci",
   "tiers": {
-    "A": {"target": "seconds", "purpose": "pure unit, schema, invariant and targeted regression tests"},
-    "B": {"target": "low_minutes", "purpose": "affected component integrations"},
-    "C": {"target": "under_10_minutes", "purpose": "full deterministic publication CI for integrated candidates or shared-core changes"},
-    "D": {"target": "under_5_minutes", "purpose": "post-deployment exact-SHA and live-reader verification"},
-    "E": {"target": "explicitly_bounded", "purpose": "failure injection and major-wave qualification only"}
+    "A": {
+      "target": "seconds",
+      "purpose": "pure unit, schema, invariant and targeted regression tests"
+    },
+    "B": {
+      "target": "low_minutes",
+      "purpose": "affected component integrations"
+    },
+    "C": {
+      "target": "under_10_minutes",
+      "purpose": "full deterministic publication CI for integrated candidates or shared-core changes"
+    },
+    "D": {
+      "target": "under_5_minutes",
+      "purpose": "post-deployment exact-SHA and live-reader verification"
+    },
+    "E": {
+      "target": "explicitly_bounded",
+      "purpose": "failure injection and major-wave qualification only"
+    }
   },
   "rules": [
-    {"patterns": ["_generator/lib/publication-lifecycle.mjs", "_tools/publication-lifecycle.mjs", "data/operations/current-edition.json", "data/operations/publication-status.json", "_records/publication/*/lifecycle.json", "_records/publication/*/completion.json"], "tier": "A", "tests": ["_generator/test/publication-lifecycle.test.mjs"]},
-    {"patterns": ["_tools/daily-validation.mjs", ".github/workflows/daily-delta-validation.yml"], "tier": "B", "tests": ["_generator/test/publication-lifecycle.test.mjs"]},
-    {"patterns": ["_generator/lib/render.mjs"], "tier": "B", "tests": ["_generator/test/publication-lifecycle.test.mjs", "_generator/test/publication.test.mjs"]},
-    {"patterns": [".github/workflows/ci.yml", "_generator/lib/publication.mjs", "_generator/validate-commit.mjs"], "tier": "C", "tests": ["_generator/test/publication-lifecycle.test.mjs"]}
+    {
+      "patterns": [
+        "_generator/lib/run-state.mjs",
+        "_tools/run-state.mjs",
+        "_generator/test/run-state-recovery.test.mjs"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/run-state-recovery.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
+        "_generator/lib/publication-lifecycle.mjs",
+        "_tools/publication-lifecycle.mjs",
+        "data/operations/current-edition.json",
+        "data/operations/publication-status.json",
+        "_records/publication/*/lifecycle.json",
+        "_records/publication/*/completion.json"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/publication-lifecycle.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
+        "_tools/daily-validation.mjs",
+        ".github/workflows/daily-delta-validation.yml"
+      ],
+      "tier": "B",
+      "tests": [
+        "_generator/test/publication-lifecycle.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
+        "_generator/lib/render.mjs"
+      ],
+      "tier": "B",
+      "tests": [
+        "_generator/test/publication-lifecycle.test.mjs",
+        "_generator/test/publication.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
+        ".github/workflows/ci.yml",
+        "_generator/lib/publication.mjs",
+        "_generator/validate-commit.mjs"
+      ],
+      "tier": "C",
+      "tests": [
+        "_generator/test/publication-lifecycle.test.mjs"
+      ]
+    }
   ],
-  "sentinel_cases": ["normal_success", "missing_completion", "wrong_live_reader_date", "deployed_sha_mismatch", "interrupted_publication_resume"],
-  "prohibitions": ["run_all_by_default_after_isolated_change", "broad_historical_replay_without_hypothesis", "rerun_passing_unaffected_tiers", "recreate_editorial_media_or_images_for_deterministic_tests"]
+  "sentinel_cases": [
+    "normal_success",
+    "missing_completion",
+    "wrong_live_reader_date",
+    "deployed_sha_mismatch",
+    "interrupted_publication_resume",
+    "checkpoint_output_mutation",
+    "checkpoint_dependency_mutation",
+    "duplicate_consequential_action"
+  ],
+  "prohibitions": [
+    "run_all_by_default_after_isolated_change",
+    "broad_historical_replay_without_hypothesis",
+    "rerun_passing_unaffected_tiers",
+    "recreate_editorial_media_or_images_for_deterministic_tests"
+  ]
 }
