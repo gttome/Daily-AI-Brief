@@ -25,6 +25,14 @@ function imageInspection(relative){
  const ext=path.extname(relative).toLowerCase();
  if(ext==='.webp')return {...inspectWebp(buffer,{minimumWidth:1200,minimumHeight:630}),format:'webp'};
  if(ext==='.png')return {...inspectPng(buffer,{minimumWidth:1200,minimumHeight:630}),format:'png'};
+ if(ext==='.svg'){
+  const svg=buffer.toString('utf8'),errors=[];
+  if(!svg.startsWith('<svg')||!svg.includes('width="1200"')||!svg.includes('height="630"'))errors.push('invalid_svg_canvas');
+  if(!svg.includes('role="img"')||!svg.includes('aria-label='))errors.push('svg_accessibility_required');
+  if(!svg.includes('fill="#ffffff"'))errors.push('svg_white_background_required');
+  if((svg.match(/<text\b/g)||[]).length<12)errors.push('svg_explanatory_density_too_low');
+  return {pass:errors.length===0,errors,width:1200,height:630,sha256:createHash('sha256').update(buffer).digest('hex'),bytes:buffer.length,format:'svg'};
+ }
  return {pass:false,errors:['unsupported_image_format'],width:null,height:null,sha256:createHash('sha256').update(buffer).digest('hex'),bytes:buffer.length,format:ext.slice(1)||null};
 }
 function legacyPngInspection(relative){
@@ -59,8 +67,9 @@ try{
  check('publication_receipt',publicationStarted?'fail':'not_applicable',publicationStarted?'critical':'medium',publicationStarted?`Required current-edition evidence is missing after publication artifacts began: ${error.message}`:`Current-day edition has not entered publication yet; completion evidence is not applicable until publication artifacts exist.`);
 }
 if(completion&&edition){
- const receiptOk=completion.phase==='pages_verified'&&completion.pages?.conclusion==='success'&&completion.edition_id===edition.edition_id&&/^[a-f0-9]{40}$/.test(completion.commit_sha||'');
- check('publication_receipt',receiptOk?'pass':'fail','critical',receiptOk?`Verified completion receipt for ${completion.commit_sha}.`:'Completion receipt is incomplete or inconsistent with the canonical edition.');
+ const receiptSha=completion.production_sha||completion.commit_sha;
+ const receiptOk=['pages_verified','live_verified'].includes(completion.phase)&&completion.pages?.conclusion==='success'&&completion.edition_id===edition.edition_id&&/^[a-f0-9]{40}$/.test(receiptSha||'');
+ check('publication_receipt',receiptOk?'pass':'fail','critical',receiptOk?`Verified completion receipt for ${receiptSha}.`:'Completion receipt is incomplete or inconsistent with the canonical edition.');
  const stories=edition.stories||[],counts={technical_ai_engineering:0,applied_genai_knowledge_workers:0,agents_non_technical_people:0};
  for(const story of stories)if(Object.hasOwn(counts,story.focus))counts[story.focus]++;
  const editionOk=stories.length===6&&Object.values(counts).every(n=>n===2)&&new Set(stories.map(x=>x.story_id)).size===6&&new Set(stories.map(x=>x.permanent_url)).size===6;
@@ -90,7 +99,7 @@ if(completion&&edition){
   if(info.pass&&info.width>=1200&&info.height>=630)integrityPassed++;
   else imageProblems.push(`${image}:${(info.errors||[]).join(',')||`${info.width}x${info.height}`}`);
   const manifest=manifestEntries.find(x=>x?.path===image);
-  if(manifest?.accepted_locked===true&&manifest?.lock_status==='accepted_locked'&&manifest?.generation_method==='openai_image_generation')acceptedLocked++;
+  if(manifest?.accepted_locked===true&&manifest?.lock_status==='accepted_locked'&&manifest?.quality_accepted===true&&manifest?.visual_reviewed===true&&manifest?.inspection_result==='pass')acceptedLocked++;
   if(String(story.image?.public_url||'').startsWith(`${base}/briefs/images/${date}/`))canonicalHosted++;
  }
  imageReadiness={expected:6,accepted_locked:acceptedLocked,integrity_passed:integrityPassed,canonical_hosted:canonicalHosted,status:images.length===6&&!imageProblems.length&&acceptedLocked===6&&canonicalHosted===6?'pass':'fail'};
@@ -105,6 +114,15 @@ if(completion&&edition){
  }else{
   const results=await Promise.all(unique.map(probe)),failed=results.filter(x=>!x.ok);
   check('live_changed_routes',failed.length?'fail':'pass','critical',failed.length?JSON.stringify(failed):`${results.length} homepage/edition/archive/watchlist/feed/story/media routes returned successful HTTP responses.`);
+  const displayDate=new Intl.DateTimeFormat('en-US',{timeZone:'UTC',month:'long',day:'numeric',year:'numeric'}).format(new Date(date+'T12:00:00Z'));
+  const probeText=async url=>{try{const response=await fetch(url,{signal:AbortSignal.timeout(10000),redirect:'follow',headers:{'user-agent':'DailyAIBriefValidation/2.0'}});return {ok:response.ok,status:response.status,text:response.ok?await response.text():'',resolved_url:response.url};}catch(error){return {ok:false,status:null,text:'',error:error.message};}};
+  const [homepage,dated]=await Promise.all([probeText(base+'/'),probeText(base+'/briefs/'+date+'/')]);
+  const homepageOk=homepage.ok&&homepage.text.includes(displayDate)&&homepage.text.includes('Daily Generative AI Brief');
+  const datedOk=dated.ok&&dated.text.includes(displayDate)&&dated.text.includes('Daily Generative AI Brief');
+  check('live_homepage_edition',homepageOk?'pass':'fail','critical',homepageOk?`Live homepage identifies ${displayDate}.`:JSON.stringify({status:homepage.status,expected_date:displayDate}));
+  check('live_dated_edition',datedOk?'pass':'fail','critical',datedOk?`Live dated edition identifies ${displayDate}.`:JSON.stringify({status:dated.status,expected_date:displayDate}));
+  const liveAssets=stories.map(s=>s.image?.public_url).filter(Boolean),assetResults=await Promise.all(liveAssets.map(probe)),assetFailures=assetResults.filter(x=>!x.ok);
+  check('live_image_assets',liveAssets.length===6&&!assetFailures.length?'pass':'fail','critical',liveAssets.length!==6?`Expected six live image URLs; found ${liveAssets.length}.`:assetFailures.length?JSON.stringify(assetFailures):'All six live story image assets returned successful HTTP responses.');
   const sources=await Promise.all(sourceUrls.map(probe));
   const sourceState=classifySourceHttpState(sources);
   check('source_http_state',sourceState.result,sourceState.severity,sourceState.evidence);
@@ -131,7 +149,7 @@ check('command_center_owner_operations',protectedObservation.result.toLowerCase(
 
 const failures=checks.filter(x=>x.result==='fail'),ended=new Date().toISOString();
 const finalResult=failures.some(x=>['critical','high'].includes(x.severity))?'fail':failures.length?'degraded':'pass';
-const domainStates={publication:completion?.phase==='pages_verified'&&completion?.pages?.conclusion==='success'?'verified':completion?'pending':'unavailable',coverage:coverage.included_items===10?'complete':coverage.included_items===null?'unavailable':'degraded',measurements:'credit_target_unverified',retention:'private_unverified',learning:'deferred',book_backlog:'private_unverified'};
+const domainStates={publication:['pages_verified','live_verified'].includes(completion?.phase)&&completion?.pages?.conclusion==='success'?'verified':completion?'pending':'unavailable',coverage:coverage.included_items===10?'complete':coverage.included_items===null?'unavailable':'degraded',measurements:'credit_target_unverified',retention:'private_unverified',learning:'deferred',book_backlog:'private_unverified'};
 const record={schema_version:'1.3.0',date,mode:'deterministic_delta_validation',started_at:started,ended_at:ended,elapsed_seconds:(Date.parse(ended)-Date.parse(started))/1000,publication_sha:completion?.commit_sha||null,route_count:routeCount,model_calls:0,input_tokens:null,output_tokens:null,owner_observed_credits:null,coverage,image_readiness:imageReadiness,domain_states:domainStates,checks,final_result:finalResult,semantic_escalation_required:false,diagnostic_packet:semanticPacket(failures),automatic_ai_recovery_runs:0};
 const out=path.resolve(args.out||`/tmp/dab-validation-${date}.json`);fs.mkdirSync(path.dirname(out),{recursive:true});fs.writeFileSync(out,JSON.stringify(record,null,2)+'\n');
 console.log(JSON.stringify(record,null,2));
