@@ -5,94 +5,82 @@
   "model_calls": 0,
   "review_plan_count": 9,
   "preferred_agent_skill_candidate_id": "m01",
-  "model_visible_chars": 9824,
+  "model_visible_chars": 9829,
   "model_visible": [
     {
       "candidate_id": "m02",
       "focus": "technical_ai_engineering",
-      "headline": "Claude Opus 5.5 is now available in GitHub Copilot",
-      "canonical_url": "https://github.blog/changelog/2026-09-22-claude-opus-5-5-is-now-available-in-github-copilot",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-22T17:10:23.000Z",
+      "headline": "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning",
+      "canonical_url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-23T22:54:56.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 651,
-      "excerpt": "Claude Opus 5.5 is now available in GitHub Copilot - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read Claude Opus 5.5 is now available in GitHub Copilot Table of Contents Availability in GitHub Copilot Enabling access Learn more Share your feedback Menu. Currently selected: Availability in GitHub Copilot Availability in GitHub Copilot Enabling access Learn more Share your feedback Claude Opus 5.5, Anthropic&rsquo;s…"
+      "source_word_count": 3033,
+      "excerpt": "Introducing NV&#x2d;Reason&#x2d;CT Open 3D CT VLM for Radiologist Chain&#x2d;of&#x2d;Thought Reasoning | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Developer Tools & Techniques Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning Sep 23, 2026 By Andriy Myronenko , Supriya V. NV-Reason-CT extends chain-of-thought reasoning to full volumetric CT, generating structured diagnostic reports, emulating radiologist internal thinking, and supporting multistep follow-up conversation across chest and abdomen. Providing full 3D reasoning for CT…"
     },
     {
       "candidate_id": "m03",
       "focus": "technical_ai_engineering",
-      "headline": "OpenAI’s GPT-6 Sol and GPT-6 Luna now available",
-      "canonical_url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+      "headline": "Node 20 is no longer available in GitHub Actions",
+      "canonical_url": "https://github.blog/changelog/2026-09-23-node-20-is-no-longer-available-in-github-actions",
       "publisher": "GitHub Changelog",
-      "published_at": "2026-09-22T17:00:14.000Z",
+      "published_at": "2026-09-23T20:46:07.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 645,
-      "excerpt": "OpenAI&#039;s GPT-6 Sol and GPT-6 Luna now available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read OpenAI&#8217;s GPT-6 Sol and GPT-6 Luna now available Table of Contents Availability in GitHub Copilot Enabling access Learn more Share your feedback Menu. Currently selected: Availability in GitHub Copilot Availability in GitHub Copilot Enabling access Learn more Share your feedback OpenAI&rsquo;s GPT-6 family…"
+      "source_word_count": 470,
+      "excerpt": "Node 20 is no longer available in GitHub Actions - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Retired September 23, 2026 • 1 minute read Node 20 is no longer available in GitHub Actions This is the final notification that Node 20 is no longer available on GitHub Actions runners. Runners now use Node 24 for JavaScript actions. The temporary ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION opt-out is no longer available. actions Share Copied Shared Back to…"
     },
     {
       "candidate_id": "m04",
       "focus": "technical_ai_engineering",
-      "headline": "**Know Who Spoke When: Build Real-Time, Multi-Speaker AI with NVIDIA Nemotron 3 Diarization**",
-      "canonical_url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
-      "publisher": "Hugging Face",
-      "published_at": "2026-09-23T13:17:01.000Z",
+      "headline": "Validate GPU Cluster Readiness Before AI Workloads Land",
+      "canonical_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-23T19:45:19.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 3553,
-      "excerpt": "Speaker diarization classifies who spoke when , helping applications connect what was said to the right participant. NVIDIA Nemotron 3 Diarization is an open-weight, 100M-parameter model that ranks #1 on VoiceArena's Diarization-Bench leaderboard with a 14.72% Diarization Error Rate (DER). Nemotron 3 Diarization follows the Sortformer approach of ordering output speakers by when they first appear. Diarization and Speaker Attributed ASR (Multi-speaker ASR) are different tasks Standalone diarization produces speaker activity and timestamps, not the words being spoken. Bring real-time, speaker-aware transcription on device Argmax has added…"
+      "source_word_count": 2514,
+      "excerpt": "Validate GPU Cluster Readiness Before AI Workloads Land | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Data Center / Cloud Validate GPU Cluster Readiness Before AI Workloads Land Using NVIDIA Cluster Readiness Engine, teams can bring reliable GPU clusters to production with workload-driven validation. Sep 23, 2026 By Dhvani Chheda and Kai Wombacher Like Discuss (0) L T F R E AI-Generated Summary NVIDIA Cluster Readiness Engine (NVCRE) is an open source Kubernetes controller that runs real distributed workloads across topology-aware node groups to prove GPU cluster…"
     },
     {
       "candidate_id": "m05",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "OpenTelemetry in the GitHub Copilot app",
-      "canonical_url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "headline": "Default Enablement of Copilot Features for Copilot Business and Enterprise",
+      "canonical_url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
       "publisher": "GitHub Changelog",
-      "published_at": "2026-09-23T02:14:54.000Z",
+      "published_at": "2026-09-25T03:13:23.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 469,
-      "excerpt": "OpenTelemetry in the GitHub Copilot app - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 1 minute read OpenTelemetry in the GitHub Copilot app Understand how Copilot agents perform and interact with models and tools. The GitHub Copilot app now supports OpenTelemetry (OTel) configuration through enterprise-managed settings. Learn more about OpenTelemetry for agent monitoring and configuring enterprise-managed settings . Enter…"
+      "source_word_count": 601,
+      "excerpt": "Default Enablement of Copilot Features for Copilot Business and Enterprise - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 24, 2026 • 1 minute read Default Enablement of Copilot Features for Copilot Business and Enterprise We&rsquo;re introducing a new global default policy for generally available GitHub Copilot features and supported client capabilities in enterprise and organization Copilot settings. What&rsquo;s changing Today,…"
     },
     {
       "candidate_id": "m06",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Enabling Private High-Performance Production AI Inference with NVIDIA Confidential Computing",
-      "canonical_url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
-      "publisher": "NVIDIA Developer",
-      "published_at": "2026-09-22T17:27:41.000Z",
+      "headline": "More ways to request and configure Copilot code reviews",
+      "canonical_url": "https://github.blog/changelog/2026-09-23-copilot-code-review-more-ways-to-request-and-configure-reviews",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-23T21:25:58.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 1547,
-      "excerpt": "Enabling Private High&#x2d;Performance Production AI Inference with NVIDIA Confidential Computing | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Trustworthy AI / Cybersecurity English 中文 Enabling Private High-Performance Production AI Inference with NVIDIA Confidential Computing Sep 22, 2026 By Lorna Aine Like Discuss (0) L T F R E As large language model (LLM) inference increasingly processes sensitive information and proprietary model context across personal, enterprise, and regulated settings, data must be processed inside a trusted environment. Inference…"
+      "source_word_count": 657,
+      "excerpt": "More ways to request and configure Copilot code reviews - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog September 23, 2026 • 1 minute read More ways to request and configure Copilot code reviews Table of Contents ⚙️ Manage your personal review settings 🏢 Set an enterprise default review effort Menu. Currently selected: ⚙️ Manage your personal review settings ⚙️ Manage your personal review settings 🏢 Set an enterprise default review effort GitHub…"
     },
     {
       "candidate_id": "m07",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/reducing-medical-claims-review-time-with-ai-on-aws-the-exl-medical-idp-solution/",
-      "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-21T16:24:40.000Z",
+      "headline": "Building the system for AI at work",
+      "canonical_url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/",
+      "publisher": "Microsoft 365",
+      "published_at": "2026-09-23T15:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 4162,
-      "excerpt": "Reducing medical claims review time with AI on AWS: The EXL Medical IDP solution | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Medical records are unstructured, filled with specialized clinical terminology, and require the reviewer to connect disparate data points about a patient’s condition and its evolution over time. Building the EXL Insurance…"
+      "source_word_count": 1253,
+      "excerpt": "Building the system for AI at work | AI at Work Blog Skip to content Skip to main content Copilot Copilot Word Excel PowerPoint Outlook OneDrive Teams Copilot Studio Work IQ Cowork Individuals Business Enterprise Education Plans and pricing Support Customer stories Blog Copilot vs. competitors Tech community Frontier program AI for Work Roadmap Agents New user onboarding Roll-out and adoption Prompts and use cases AI knowledge Connectors Open Copilot Download the app Blog home Building the system for AI at work Search Building the system for AI at work Sep 23, 2026 Share Listen By Jared Spataro Microsoft 365 Copilot The power of AI wherever…"
     },
     {
       "candidate_id": "m01",
-      "focus": "agents_non_technical_people",
-      "headline": "New features and improvements in Copilot for JetBrains",
-      "canonical_url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-23T00:34:18.000Z",
-      "source_reliability": "publisher_authored",
-      "agent_skill_story_ready": true,
-      "source_word_count": 952,
-      "excerpt": "New features and improvements in Copilot for JetBrains - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 22, 2026 • 2 minute read New features and improvements in Copilot for JetBrains Table of Contents What's new User experience enhancements Quality improvements Changed Deprecation Try it out Share your feedback Menu. Currently selected: What's new What's new User experience enhancements Quality improvements Changed Deprecation Try it…"
-    },
-    {
-      "candidate_id": "m08",
       "focus": "agents_non_technical_people",
       "headline": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
       "canonical_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
@@ -104,16 +92,28 @@
       "excerpt": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. To make these failures measurable, Strands Evals SDK and Amazon Bedrock AgentCore Evaluations , a capability of Amazon Bedrock AgentCore, add skill-focused evaluators: Skill Selection Accuracy determines whether each invoked…"
     },
     {
-      "candidate_id": "m09",
+      "candidate_id": "m08",
       "focus": "agents_non_technical_people",
-      "headline": "Extending public sector intelligence with Agentforce and AWS",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
+      "headline": "Build a multi-account AI agent with AgentCore Gateway and MCP",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
       "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-22T15:17:45.000Z",
+      "published_at": "2026-09-24T16:12:47.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 4002,
-      "excerpt": "Extending public sector intelligence with Agentforce and AWS | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In our previous post, Modernizing evidence management in Salesforce Public Sector Solutions with Amazon S3 , we used the External Storage of Files with Amazon Simple Storage Service (Amazon S3) integration from Agentforce Public Sector…"
+      "source_word_count": 4830,
+      "excerpt": "Build a multi-account AI agent with AgentCore Gateway and MCP | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. In this post, you build a multi-account architecture that keeps each team’s data in its own account while giving agents a unified way to query across them, using Amazon Bedrock AgentCore Gateway and Model Context Protocol (MCP) . Solution…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Speaker-labeled transcription with WhisperX on SageMaker AI",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/speaker-labeled-transcription-with-whisperx-on-sagemaker-ai/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-24T16:20:12.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 3733,
+      "excerpt": "Speaker-labeled transcription with WhisperX on SageMaker AI | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Choosing between real-time and asynchronous endpoints Amazon SageMaker AI supports both real-time and asynchronous endpoints, so you can serve the same WhisperX DLC through either pattern. Amazon SageMaker AI forwards each request to the…"
     }
   ]
 }

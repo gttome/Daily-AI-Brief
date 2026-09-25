@@ -6,6 +6,138 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-09-25-fbf2fd8f",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows/",
+      "title": "NVIDIA opens 3D CT reasoning model for volumetric radiology workflows",
+      "summary": "NVIDIA introduced NV-Reason-CT, an open 3D CT vision-language model designed to reason across full volumetric chest and abdomen scans, produce structured diagnostic reports, and support multistep follow-up dialogue.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png?v=bf765b462d75b3fa",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "multimodal AI",
+        "3D vision-language models",
+        "medical AI",
+        "reasoning evaluation"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-25-fc65e87b",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness/",
+      "title": "NVIDIA adds workload-driven validation for GPU cluster readiness",
+      "summary": "NVIDIA’s Cluster Readiness Engine uses real distributed workloads across topology-aware GPU groups to test whether a cluster is actually ready for production AI workloads rather than relying only on component health checks.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.png?v=59f15009ee16051e",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "GPU infrastructure",
+        "AI reliability",
+        "cluster validation",
+        "production readiness"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-25-566bb67b",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/github-changes-the-default-policy-for-generally-available-copilot-features/",
+      "title": "GitHub changes the default policy for generally available Copilot features",
+      "summary": "GitHub introduced a global default policy for generally available Copilot features and supported client capabilities in Business and Enterprise settings, shifting how new capabilities become enabled across organizations.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.png?v=a5e3e7b06861ad3a",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "GitHub Copilot",
+        "enterprise governance",
+        "AI policy",
+        "feature management"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-25-80681ec6",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/",
+      "title": "Microsoft frames workplace AI as a system of models, context, agents, and governance",
+      "summary": "Microsoft’s AI at Work update argues that enterprise value comes from connecting copilots and agents to organizational context, workflow, governance, and measurement rather than treating AI as a standalone chat interface.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png?v=642ad488499257a4",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "knowledge work",
+        "Microsoft 365 Copilot",
+        "enterprise AI",
+        "workflow design"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-25-e2f16170",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures/",
+      "title": "AWS adds skill-specific evaluation for agents using reusable procedures",
+      "summary": "AWS shows how Strands Evals and Amazon Bedrock AgentCore Evaluations can test whether skill-equipped agents select the correct reusable skill and follow its instructions, rather than judging only the fluency of the final answer.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.png?v=5c9dda37b01869de",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "agent evaluation",
+        "Strands Evals",
+        "AgentCore"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-25-ab3f39a4",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boundaries/",
+      "title": "AWS uses MCP and AgentCore Gateway to connect agents across account boundaries",
+      "summary": "AWS presents a multi-account agent architecture where each business unit keeps data in its own account while a central agent queries approved MCP servers through AgentCore Gateway using cross-account authorization.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png?v=9ee924fc974b7762",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "MCP",
+        "AgentCore Gateway",
+        "multi-account architecture",
+        "agent security"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-25-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-25/general/",
+      "title": "Stop guessing which model your agent needs",
+      "summary": "A concise walkthrough of choosing an agent model with Microsoft Foundry using repeatable evaluations rather than intuition, including latency, token usage, output quality, and cost.",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "Microsoft Developer"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-25-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-25/agent-skills/",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "summary": "A short practical comparison showing how the new model behaves in everyday Claude Code work, including speed, usage limits, and when medium effort is enough.",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "Claude"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-25-agents-rules-business",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-25/agents-rules-business/",
+      "title": "Are AI agents changing the rules of business?",
+      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "AI agents",
+        "workflow redesign",
+        "enterprise adoption",
+        "human work",
+        "Take on Tomorrow"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-25-upnext-ai",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-25/upnext-ai/",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.",
+      "date_published": "2026-09-25T13:00:00-05:00",
+      "tags": [
+        "agent safety",
+        "long-horizon evaluation",
+        "AI security",
+        "agent platforms",
+        "UpNext AI"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-23-c720a977",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-23/nemotron-3-brings-real-time-speaker-diarization-to-open-weight-voice-ai/",
       "title": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
@@ -3092,193 +3224,6 @@
         "portals",
         "permissions",
         "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-26-b03e2253",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-26/prime-agent-turns-the-harness-into-a-persistent-self-improving-system/",
-      "title": "Prime Agent turns the harness into a persistent, self-improving system",
-      "summary": "Prime Intellect released Prime Agent, an open-source harness built around a persistent IPython environment, recursive subagents, agent-to-agent coordination, and a “Continual Harness” that retains histories, memories, skills, prompts, and subagent specifications across trajectories. The paper reports substantial gains across ARC-AGI-3 and several long-horizon coding and reasoning workloads.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/prime-agent.svg",
-      "date_published": "2026-08-26T13:00:00-05:00",
-      "tags": [
-        "Harness engineering",
-        "recursive subagents",
-        "persistent state",
-        "long-horizon evaluation",
-        "Hugging Face"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-26-47742631",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-26/github-gives-agent-customization-a-unified-discovery-layer/",
-      "title": "GitHub gives agent customization a unified discovery layer",
-      "summary": "GitHub made the Copilot app’s Customize tab generally available. It brings MCP servers, plugins, skills, and canvases into one place, adds featured collections, and lets users browse trending MCP servers by category. GitHub’s featured canvases can also connect visible work context to delegated backlog actions.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/copilot-customize.svg",
-      "date_published": "2026-08-26T13:00:00-05:00",
-      "tags": [
-        "MCP",
-        "plugins",
-        "skills",
-        "canvases",
-        "agent customization",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-26-3128a73a",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-26/google-meet-puts-ai-note-taking-control-in-the-room/",
-      "title": "Google Meet puts AI note-taking control in the room",
-      "summary": "Google announced that eligible Google Meet hardware touch controllers will gain direct start, stop, and pause controls for “Take notes for me.” In-room participants will be able to see whether Gemini is recording notes and pause it for off-the-record discussion without joining from a laptop in Companion mode. Rollout begins August 31 for Early Preview devices and September 8 for Rapid and Scheduled Release domains.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/meet-notes.svg",
-      "date_published": "2026-08-26T13:00:00-05:00",
-      "tags": [
-        "Meeting notes",
-        "human control",
-        "privacy",
-        "Gemini",
-        "Google"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-26-9271a92d",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-26/copilot-brings-python-backed-analysis-into-the-excel-editing-workflow/",
-      "title": "Copilot brings Python-backed analysis into the Excel editing workflow",
-      "summary": "Microsoft’s latest Microsoft 365 Copilot release notes add Python support to “Edit with Copilot” in Excel on Windows, Mac, and the web. Users can request advanced analysis, automation, data transformation, simulations, or visualizations in natural language, with results returned directly to the workbook under existing execution and security controls.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/excel-python.svg",
-      "date_published": "2026-08-26T13:00:00-05:00",
-      "tags": [
-        "Excel",
-        "data analysis",
-        "natural-language editing",
-        "human verification",
-        "Microsoft"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-26-893a3c2c",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-26/chatgpt-scheduled-tasks-can-now-react-to-app-events-and-be-shared/",
-      "title": "ChatGPT scheduled tasks can now react to app events and be shared",
-      "summary": "ChatGPT Work scheduled tasks can now start when supported events occur in Gmail, Slack, or GitHub instead of relying only on a clock. Plus and Pro users can create these event-triggered tasks on web, iOS, and Android, while actions requiring approval pause for review. Scheduled tasks can also be shared so another person can inspect and customize the instructions, connect their own apps, and create an independent copy.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/event-tasks.svg",
-      "date_published": "2026-08-26T13:00:00-05:00",
-      "tags": [
-        "Event triggers",
-        "recurring workflows",
-        "Gmail",
-        "Slack",
-        "GitHub",
-        "sharing",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-26-48060fd1",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-26/openai-s-admin-plugin-turns-workspace-operations-into-governed-agent-workflows/",
-      "title": "OpenAI’s Admin plugin turns workspace operations into governed agent workflows",
-      "summary": "OpenAI introduced an Admin plugin for ChatGPT Work and Codex. Authorized administrators can conversationally analyze adoption and credit usage, manage members and groups, diagnose permissions, adjust limits, and review spending requests. They can also automate recurring checks and high-volume requests, route decisions to Slack or Microsoft Teams, and automatically handle cases that meet predefined criteria while escalating exceptions.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-26/admin-plugin.svg",
-      "date_published": "2026-08-26T13:00:00-05:00",
-      "tags": [
-        "No-code agents",
-        "workspace administration",
-        "permissions",
-        "approvals",
-        "recurring checks",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-25-a653e831",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/agentx-measures-infrastructure-using-real-agent-session-behavior/",
-      "title": "AgentX measures infrastructure using real agent-session behavior",
-      "summary": "NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30× more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/agentx.svg",
-      "date_published": "2026-08-25T13:00:00-05:00",
-      "tags": [
-        "Agent evaluation",
-        "long context",
-        "inference infrastructure",
-        "KV-cache reuse",
-        "performance per watt",
-        "NVIDIA"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-25-b52263f4",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/nvidia-draws-a-hard-line-between-behavioral-guidance-and-enforceable-agent-secur/",
-      "title": "NVIDIA draws a hard line between behavioral guidance and enforceable agent security",
-      "summary": "NVIDIA’s security teams propose a layered agent stack in which prompts, models, and harness logic influence behavior, while a secure runtime and infrastructure enforce identity, policy, isolation, credentials, and audit. Their governing rule is that components above the boundary may propose actions, but only the authoritative environment below it decides what can occur. The guidance identifies recurring gaps: unclear boundaries, excessive standing access, untrusted data influencing control, uncontrolled external effects, cascading delegation failures, and incomplete audit evidence. It recommends checking every consequential effect, using short-lived task-scoped access, isolating each agent, and retaining independent records below the agent boundary.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/security-boundary.svg",
-      "date_published": "2026-08-25T13:00:00-05:00",
-      "tags": [
-        "Agent security",
-        "runtime enforcement",
-        "least privilege",
-        "isolation",
-        "auditability",
-        "NVIDIA"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-25-ae2e6fb8",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/chatgpt-plugin-discovery-now-prioritizes-tools-people-continue-using/",
-      "title": "ChatGPT plugin discovery now prioritizes tools people continue using",
-      "summary": "ChatGPT updated plugin recommendations on web and mobile so discovery rankings give more weight to plugins people continue using after installation. Availability still varies by plan, region, and workspace settings, and the update does not yet include desktop.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/plugin-discovery.svg",
-      "date_published": "2026-08-25T13:00:00-05:00",
-      "tags": [
-        "Plugin discovery",
-        "connected tools",
-        "accessible AI",
-        "workflow selection",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-25-b3b680ed",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/make-separates-input-and-output-token-rates-for-accessible-ai-workflows/",
-      "title": "Make separates input and output token rates for accessible AI workflows",
-      "summary": "Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/token-pricing.svg",
-      "date_published": "2026-08-25T13:00:00-05:00",
-      "tags": [
-        "No-code AI",
-        "workflow economics",
-        "context efficiency",
-        "token usage",
-        "help.make.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-25-a2eb5c74",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/radarfirst-puts-ai-agents-around-not-in-place-of-regulated-decisions/",
-      "title": "RadarFirst puts AI agents around—not in place of—regulated decisions",
-      "summary": "RadarFirst introduced an Agentic Layer for privacy, AI, and compliance operations. Purpose-built assistants guide incident intake, identify missing information, draft follow-up questions, prioritize cases, organize evidence, and prepare communications. RadarFirst states that the agents do not make regulatory decisions: people review recommendations, approve or override actions, and remain accountable.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/compliance-agents.svg",
-      "date_published": "2026-08-25T13:00:00-05:00",
-      "tags": [
-        "Compliance agents",
-        "human judgment",
-        "evidence organization",
-        "bounded delegation",
-        "radarfirst.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-25-66cea67b",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-25/maia-turns-plain-language-intent-into-a-visible-agent-or-automation-canvas/",
-      "title": "Maia turns plain-language intent into a visible agent or automation canvas",
-      "summary": "Make released Maia, a conversational co-worker inside its visual Scenario Builder. Users describe an outcome in plain language; Maia asks clarifying questions, selects and configures modules, and visibly builds the workflow step by step. It can also customize templates, explain existing scenarios, modify automations, and troubleshoot failed modules. Maia is available to all Make users, with plan-dependent usage.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-25/maia-canvas.svg",
-      "date_published": "2026-08-25T13:00:00-05:00",
-      "tags": [
-        "No-code agents",
-        "visual automation",
-        "human review",
-        "transparent building",
-        "debugging",
-        "make.com"
       ]
     }
   ]

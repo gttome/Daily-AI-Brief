@@ -297,6 +297,7 @@ jobs:
         run: |
           set -euo pipefail
           cp -a /tmp/publication-stage/. ./
+          node _tools/sync-public-watchlist.mjs
           node --test _generator/test/*.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"

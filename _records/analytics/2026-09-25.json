@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-25",
+  "timezone": "America/Chicago",
+  "aggregation_window": {
+    "start": "2026-09-25T05:00:00.000Z",
+    "end": "2026-09-26T05:00:00.000Z"
+  },
+  "privacy": {
+    "contains_personal_identifiers": false,
+    "small_count_suppression": true,
+    "suppression_threshold": 5,
+    "retention_days": 400
+  },
+  "site_totals": {
+    "views": null,
+    "source_clicks": null,
+    "share_initiations": null,
+    "worth_watching_clicks": null,
+    "retention_30s": null,
+    "feedback_most_useful": null,
+    "feedback_useful": null,
+    "feedback_neutral": null,
+    "feedback_not_useful": null
+  },
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-25-fbf2fd8f",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-25-fc65e87b",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-25-566bb67b",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-25-80681ec6",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-25-e2f16170",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-25-ab3f39a4",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "videos": [
+    {
+      "item_id": "dab-video-2026-09-25-general",
+      "title": "Stop guessing which model your agent needs",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "item_id": "dab-video-2026-09-25-agent-skills",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "podcasts": [
+    {
+      "item_id": "dab-podcast-2026-09-25-agents-rules-business",
+      "title": "Are AI agents changing the rules of business?",
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "item_id": "dab-podcast-2026-09-25-upnext-ai",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "collection_status": "partial",
+  "limitations": [
+    "Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.",
+    "Exact credit usage is unavailable without an attributable platform usage record.",
+    "A later observation must not be represented as reconstructed event-day activity.",
+    "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."
+  ],
+  "observed_at": "2026-09-25T14:25:49.107Z",
+  "edition_id": "dab-edition-2026-09-25",
+  "private_evidence": {
+    "status": "not_collected",
+    "reference": "owner-only:/api/snapshot?key=_records/analytics/2026-09-25.json",
+    "metric_basis": "lifetime_observed",
+    "public_metric_status": "suppressed"
+  }
+}

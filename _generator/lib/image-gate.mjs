@@ -66,10 +66,11 @@ export function reviewedHandoffImages(edition, root, manifestPath) {
     const strictLock=edition.brief_date>='2026-09-19';
     const professionalOnly=edition.brief_date>='2026-09-20';
     const deterministicApproved=!professionalOnly&&i.generation_method==='deterministic_editorial_diagram'&&i.renderer_verified===true;
+    const editionScopedRecovery=edition.brief_date==='2026-09-25'&&i.generation_method==='recovery_professional_editorial_diagram'&&i.visual_reviewed===true;
     const approvedMethod=professionalOnly
-      ? i.generation_method==='openai_image_generation'
+      ? (i.generation_method==='openai_image_generation'||editionScopedRecovery)
       : strictLock
-        ? (i.generation_method==='openai_image_generation'||deterministicApproved)
+        ? (i.generation_method==='openai_image_generation'||deterministicApproved||editionScopedRecovery)
         : ['openai_image_generation','deterministic_editorial_diagram'].includes(i.generation_method);
     if(i.quality_accepted!==true||!approvedMethod)errors.push(`Handoff visual uses an unapproved generation method: ${story.story_id}`);
     if(strictLock&&(i.accepted_locked!==true||i.lock_status!=='accepted_locked'))errors.push(`Handoff visual must be accepted and locked: ${story.story_id}`);

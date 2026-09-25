@@ -250,6 +250,14 @@
         "label": "PUT IT INTO PRACTICE",
         "why": "Apply the context-quality checklist when packaging shared skills, organizational instructions, tools, approval checkpoints, and validation into a reusable agent workflow."
       }
+    ],
+    "2026-09-25": [
+      {
+        "item_id": "dab-story-2026-09-25-e2f16170",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Use the context-quality checklist when defining the instructions, references, tools, constraints, and evaluation evidence that belong inside a reusable Agent Skill."
+      }
     ]
   }
 }
