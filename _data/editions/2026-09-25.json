@@ -26,13 +26,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png?v=bf765b462d75b3fa",
+        "path": "briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg?v=professional-20260925-r2",
         "alt": "Professional white-background instructional diagram showing a 3D CT volume passing through multimodal reasoning, structured reporting, and human clinical review.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "bf765b462d75b3fa"
+        "cache_key": "professional-20260925-r2"
       },
       "summary": "NVIDIA introduced NV-Reason-CT, an open 3D CT vision-language model designed to reason across full volumetric chest and abdomen scans, produce structured diagnostic reports, and support multistep follow-up dialogue.",
       "why_it_matters": "The release pushes multimodal reasoning beyond 2D images into full 3D clinical volumes. For AI engineering teams, it highlights the growing importance of structured reasoning, domain-specific evaluation, and workload-specific safety controls for high-stakes multimodal systems.",
@@ -91,13 +91,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.png?v=59f15009ee16051e",
+        "path": "briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg?v=professional-20260925-r2",
         "alt": "Professional white-background instructional diagram showing component health, workload-driven cluster tests, observed distributed behavior, and a production readiness gate.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "59f15009ee16051e"
+        "cache_key": "professional-20260925-r2"
       },
       "summary": "NVIDIA’s Cluster Readiness Engine uses real distributed workloads across topology-aware GPU groups to test whether a cluster is actually ready for production AI workloads rather than relying only on component health checks.",
       "why_it_matters": "AI infrastructure can look healthy while failing under real distributed load. Workload-level readiness testing gives engineering teams a stronger pre-production signal for networking, topology, collective communication, and GPU behavior.",
@@ -156,13 +156,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.png?v=a5e3e7b06861ad3a",
+        "path": "briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg?v=professional-20260925-r2",
         "alt": "Professional white-background instructional diagram showing a generally available Copilot feature flowing through enterprise defaults, organization controls, and governed user access.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "a5e3e7b06861ad3a"
+        "cache_key": "professional-20260925-r2"
       },
       "summary": "GitHub introduced a global default policy for generally available Copilot features and supported client capabilities in Business and Enterprise settings, shifting how new capabilities become enabled across organizations.",
       "why_it_matters": "AI feature governance is becoming a default-management problem, not just an adoption problem. Administrators need explicit ownership of organization defaults, exceptions, and review windows so feature rollout does not outpace policy.",
@@ -220,13 +220,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png?v=642ad488499257a4",
+        "path": "briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2",
         "alt": "Professional white-background instructional diagram connecting organizational context, copilots and agents, workflow execution, governance, and measured outcomes.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "642ad488499257a4"
+        "cache_key": "professional-20260925-r2"
       },
       "summary": "Microsoft’s AI at Work update argues that enterprise value comes from connecting copilots and agents to organizational context, workflow, governance, and measurement rather than treating AI as a standalone chat interface.",
       "why_it_matters": "Knowledge-worker adoption increasingly depends on system design: trustworthy context, repeatable workflows, governed actions, and measurable outcomes. That is a more durable operating model than distributing isolated prompts or assistants.",
@@ -285,13 +285,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.png?v=5c9dda37b01869de",
+        "path": "briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg?v=professional-20260925-r2",
         "alt": "Professional white-background instructional diagram showing an agent task, skill selection, instruction execution, and evaluator checks for skill accuracy and fidelity.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "5c9dda37b01869de"
+        "cache_key": "professional-20260925-r2"
       },
       "summary": "AWS shows how Strands Evals and Amazon Bedrock AgentCore Evaluations can test whether skill-equipped agents select the correct reusable skill and follow its instructions, rather than judging only the fluency of the final answer.",
       "why_it_matters": "Agent Skills turn repeatable methods into portable instructions, but they also create a new failure surface: the agent can choose the wrong skill or ignore the skill’s procedure. Skill-selection and instruction-following metrics make that behavior testable.",
@@ -350,13 +350,13 @@
       ],
       "companies": [],
       "image": {
-        "path": "briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png?v=9ee924fc974b7762",
+        "path": "briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2",
         "alt": "Professional white-background instructional diagram showing a central agent, gateway, account-local MCP servers, authorization boundaries, and an audited governed response.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "9ee924fc974b7762"
+        "cache_key": "professional-20260925-r2"
       },
       "summary": "AWS presents a multi-account agent architecture where each business unit keeps data in its own account while a central agent queries approved MCP servers through AgentCore Gateway using cross-account authorization.",
       "why_it_matters": "Enterprise agents often need access to distributed data without centralizing everything. A gateway-plus-MCP pattern can separate agent orchestration from data ownership while preserving account boundaries and fine-grained authorization.",
