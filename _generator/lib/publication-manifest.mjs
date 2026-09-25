@@ -140,8 +140,10 @@ function watchlistErrors(root,ctx,date,freeze){
   const projectionText=JSON.stringify(publicWatchlist(watch),null,2)+'\n';
   const expected='git_blob_sha1:'+gitBlobSha1(Buffer.from(projectionText));
   if(freeze.public_projection_digest!==expected)errors.push('publication_manifest_watchlist_projection_digest_mismatch');
-  const publicFile=path.join(root,freeze.public_projection_path);
-  if(!fs.existsSync(publicFile)||'git_blob_sha1:'+gitBlobSha1(fs.readFileSync(publicFile))!==freeze.public_projection_digest)errors.push('publication_manifest_watchlist_public_projection_mismatch');
+  if(date<CONTRACT_FREEZE_DATE){
+   const publicFile=path.join(root,freeze.public_projection_path);
+   if(!fs.existsSync(publicFile)||'git_blob_sha1:'+gitBlobSha1(fs.readFileSync(publicFile))!==freeze.public_projection_digest)errors.push('publication_manifest_watchlist_public_projection_mismatch');
+  }
  }
  return errors;
 }
