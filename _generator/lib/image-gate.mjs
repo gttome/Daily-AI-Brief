@@ -54,12 +54,13 @@ function inspectHandoffAsset(bytes,ext){
   if(ext==='.webp')return inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630});
   if(ext==='.png')return inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
   if(ext==='.svg'){
-    const svg=bytes.toString('utf8'),errors=[];
-    if(!svg.startsWith('<svg')||!svg.includes('</svg>')||!svg.includes('width="1200"')||!svg.includes('height="630"'))errors.push('invalid_svg_canvas');
-    if(!svg.includes('role="img"')||!svg.includes('aria-label='))errors.push('svg_accessibility_required');
+    const svg=bytes.toString('utf8'),errors=[],rootTag=svg.match(/^<svg\\b[^>]*>/)?.[0]||'';
+    const width=Number(rootTag.match(/\\bwidth="(\\d+)"/)?.[1]||0),height=Number(rootTag.match(/\\bheight="(\\d+)"/)?.[1]||0);
+    if(!rootTag||!svg.includes('</svg>')||width!==1200||height!==630)errors.push('invalid_svg_canvas');
+    if(!/\\brole="img"/.test(rootTag)||!/\\baria-label=/.test(rootTag))errors.push('svg_accessibility_required');
     if(!svg.includes('fill="#ffffff"'))errors.push('svg_white_background_required');
-    if((svg.match(/<text\b/g)||[]).length<12)errors.push('svg_explanatory_density_too_low');
-    return {pass:errors.length===0,errors,width:1200,height:630,bytes:bytes.length};
+    if((svg.match(/<text\\b/g)||[]).length<12)errors.push('svg_explanatory_density_too_low');
+    return {pass:errors.length===0,errors,width,height,bytes:bytes.length};
   }
   return {pass:false,errors:['unsupported_image_format'],width:null,height:null,bytes:bytes.length};
 }
