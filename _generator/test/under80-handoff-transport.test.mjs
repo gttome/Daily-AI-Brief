@@ -37,3 +37,9 @@ test('Git Data handoff recipe is atomic and isolated',()=>{
  assert.equal(recipe.no_contents_api_for_binary,true);
  assert.equal(recipe.no_native_git_credentials,true);
 });
+
+test('post-editorial expansion uses the validated final image-review path',()=>{
+ const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
+ assert.match(workflow,/args=\(expand[\s\S]*--images "\$FINAL_IMAGE_REVIEW_PATH"/);
+ assert.doesNotMatch(workflow,/args=\(expand[\s\S]*--images "\$IMAGE_REVIEW_PATH"/);
+});
