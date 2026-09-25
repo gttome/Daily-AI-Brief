@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.6.0",
+  "schema_version": "1.7.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -193,7 +193,9 @@
     "bounded_omission_allowed": false,
     "videos_required": 2,
     "podcasts_required": 2,
-    "failure": "If exactly two qualifying videos and two qualifying podcasts are not verified, preserve the last valid edition and stop for targeted media recovery."
+    "failure": "If exactly two qualifying videos and two qualifying podcasts are not verified, preserve the last valid edition and stop for targeted media recovery.",
+    "freeze_stage": "MEDIA_READY_before_handoff",
+    "downstream_repair_allowed": false
   },
   "work_owns": [
     "read one precomputed <=12000-character article evidence packet for nine balanced candidates; do not retrieve article sources in Work",
@@ -204,14 +206,15 @@
     "perform the bounded daily emerging Watchlist sweep in the same semantic pass, including broad-web and YouTube creator searches, then write the dated sweep receipt",
     "six full-quality image generations and image acceptance",
     "write editorial kernel/facts/media/image manifest",
-    "atomically create one editorial-handoff commit on an isolated editorial-handoff/* branch through authenticated GitHub Git Data API operations"
+    "atomically create one editorial-handoff commit on an isolated editorial-handoff/* branch through authenticated GitHub Git Data API operations",
+    "write and validate one versioned publication manifest binding all frozen handoff artifacts by exact digest"
   ],
   "github_actions_owns": [
     "enforce the dated emerging-signal receipt and Watchlist delta consistency from 2026-09-23 onward",
     "retrieve and compact the nine-candidate article evidence packet with zero model calls before Work",
     "run broad deterministic metadata discovery and <=20 coverage-ready prefilter before Work",
     "run scheduled zero-model metadata discovery and deterministic prefilter before Work begins",
-    "validate handoff and trusted main baseline",
+    "validate handoff, trusted main baseline, and the complete versioned publication manifest before downstream publication",
     "select the six accepted generative image assets without lowering quality",
     "expand canonical edition deterministically",
     "generate all derived views",
@@ -240,7 +243,8 @@
       "editorial_model_passes",
       "post_editorial_model_passes",
       "deterministic_validation_model_calls",
-      "image_transport_method"
+      "image_transport_method",
+      "publication_manifest_path"
     ],
     "required_values": {
       "editorial_model_passes": 1,
@@ -249,7 +253,7 @@
       "metadata_candidates_max": 20,
       "image_transport_method": "github_git_data_api"
     },
-    "hard_stop": "After all six accepted and locked images pass integrity validation, create the handoff atomically, advance only the isolated handoff branch, then use the authenticated GitHub connector to open or reuse one unlabelled PR from that branch to main. Do not add publication-candidate in the scheduled publisher. GitHub Actions owns deterministic expansion, adds publication-candidate only after its validation stage, and protected CI owns promotion.",
+    "hard_stop": "After the editorial bundle, verified media, dated Watchlist evidence, six accepted and locked images, and the complete versioned publication manifest all pass pre-handoff validation, create the handoff atomically and advance only the isolated handoff branch, then use the authenticated GitHub connector to open or reuse one unlabelled PR from that branch to main. Do not add publication-candidate in the scheduled publisher. GitHub Actions may consume the frozen artifacts but may not repair them downstream; it owns deterministic expansion, adds publication-candidate only after deterministic validation succeeds, and protected CI owns promotion.",
     "template_path": "docs/operations/editorial-handoff-template.json",
     "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
     "production_branch_prefix": "editorial-handoff/production/",
@@ -289,7 +293,9 @@
       "deterministic_workflow_role": "Populate deterministic outputs on the same branch, find/reuse the existing PR, and add publication-candidate only after deterministic validation succeeds.",
       "promotion_guard": "Protected CI and the publication-candidate label remain mandatory before automatic promotion.",
       "actions_create_pr_dependency": false
-    }
+    },
+    "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
+    "publication_manifest_validation": "node _tools/publication-manifest.mjs validate --manifest _records/editorial-handoff/publication-manifest.json --baseline <trusted-main-sha> --date YYYY-MM-DD --staging-ref <handoff-branch>"
   },
   "credits": {
     "target_lt": 80,
@@ -341,7 +347,10 @@
     "youtube_creator_search_required": true,
     "zero_new_rule": "Zero new may be certified only after all required surfaces complete, >=3 candidate concepts reviewed, and the 14-day missed-signal check completes.",
     "popularity_treatment": "Discovery/momentum signal only; never validation.",
-    "new_topic_threshold": "One credible original development may create early_signal; gaining_evidence still requires two substantively independent developments."
+    "new_topic_threshold": "One credible original development may create early_signal; gaining_evidence still requires two substantively independent developments.",
+    "freeze_stage": "WATCHLIST_READY_before_handoff",
+    "public_projection_digest_required": true,
+    "downstream_repair_allowed": false
   },
   "completion_evidence": {
     "mode": "runtime_artifact_with_repository_history",
@@ -474,7 +483,7 @@
       "closed"
     ],
     "pre_pr_lint": "node _tools/publication-candidate-lint.mjs",
-    "public_watchlist_transform": "node _tools/sync-public-watchlist.mjs",
+    "public_watchlist_transform": "node _tools/sync-public-watchlist.mjs --source <manifest-bound-watchlist> --expected-digest <manifest-public-projection-digest>",
     "completion_persistence": {
       "owner": "github_actions",
       "workflow": ".github/workflows/daily-delta-validation.yml",
@@ -488,13 +497,14 @@
       "editorial_kernel": "one semantic pass only when no valid kernel exists",
       "image": "regenerate only invalid image",
       "media_slot": "recover only invalid media slot",
-      "watchlist": "regenerate public Watchlist from canonical only",
+      "watchlist": "invalidate HANDOFF_COMMITTED when the frozen Watchlist or its projection digest changes; preserve earlier valid editorial work",
       "handoff_write": "rebuild handoff commit from existing artifacts",
       "pr_ci": "repair deterministic defect only",
       "merge": "re-evaluate protection/baseline only",
       "pages": "retry deployment only",
       "completion": "generate completion record only",
-      "command_center_sync": "repair Command Center independently without reopening the public edition"
+      "command_center_sync": "repair Command Center independently without reopening the public edition",
+      "publication_manifest": "invalidate HANDOFF_COMMITTED and only its downstream stages"
     },
     "preflight_cursor": {
       "authoritative_branch_pattern": "discovery-preflight/daily/YYYY-MM-DD",
@@ -504,6 +514,40 @@
       "invalid_existing_branch_behavior": "rebuild only the invalid preflight stage from current main; do not treat branch existence as completion",
       "duplicate_trigger_behavior": "suppress queued push-trigger execution once the current branch has a valid durable discovery receipt",
       "resolver": "node _tools/run-state.mjs resolve --date YYYY-MM-DD --baseline <current-main-sha> --contract under80-v1/sep24-reliability-v1"
-    }
+    },
+    "publication_manifest": "_records/editorial-handoff/publication-manifest.json"
+  },
+  "publication_manifest": {
+    "effective_date": "2026-09-26",
+    "path": "_records/editorial-handoff/publication-manifest.json",
+    "schema_version": "1.0.0",
+    "digest_algorithm": "git_blob_sha1",
+    "required_artifacts": [
+      "kernel",
+      "facts",
+      "metadata_candidates",
+      "article_evidence",
+      "media",
+      "media_receipt",
+      "image_manifest",
+      "image_review",
+      "watchlist",
+      "watchlist_evidence",
+      "book_mappings"
+    ],
+    "explicit_legacy_adapters": [
+      "candidate-facts-map-v1",
+      "selected-media-v1",
+      "accepted-images-map-v1"
+    ],
+    "rules": [
+      "all artifact paths must exist before handoff",
+      "all digests must match exact committed bytes",
+      "all dates and edition identifiers must agree",
+      "baseline must match trusted main",
+      "unsupported schemas and implicit legacy fallback fail closed",
+      "media and Watchlist are immutable after handoff",
+      "image review path is manifest-bound and cannot be reconstructed downstream"
+    ]
   }
 }

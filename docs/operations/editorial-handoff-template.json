@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.2.0",
+  "schema_version": "1.3.0",
   "purpose": "Shape-only template for the compact editorial-to-deterministic handoff. Replace every placeholder from fresh reviewed evidence; this file is not editorial evidence.",
   "branch": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
   "files": {
@@ -10,7 +10,12 @@
     "manifest_path": "_records/editorial-handoff/handoff.json",
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
     "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-    "article_evidence_receipt_path": "_records/discovery-preflight/result/article-evidence-receipt.json"
+    "article_evidence_receipt_path": "_records/discovery-preflight/result/article-evidence-receipt.json",
+    "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
+    "media_receipt_path": "_records/editorial/media-preflight/YYYY-MM-DD.json",
+    "image_review_path": "_records/editorial-handoff/final-image-review-YYYY-MM-DD.json",
+    "watchlist_path": "_records/editorial-handoff/watchlist-YYYY-MM-DD.json",
+    "watchlist_evidence_path": "_records/watchlist-sweeps/YYYY-MM-DD.json"
   },
   "kernel_shape": {
     "schema_version": "1.0.0",
@@ -182,7 +187,7 @@
     ]
   },
   "handoff_manifest_shape": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "staging_ref": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
     "kernel_path": "_records/editorial-handoff/kernel.json",
     "facts_path": "_records/editorial-handoff/facts.json",
@@ -195,9 +200,14 @@
     "execution_mode": "production",
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
     "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-    "image_transport_method": "github_git_data_api"
+    "image_transport_method": "github_git_data_api",
+    "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json"
   },
   "hard_rules": [
+    "Before the handoff advances, create and validate the versioned publication manifest. Every required artifact must exist, use a supported schema or explicit legacy adapter, and match its git_blob_sha1 digest.",
+    "MEDIA_READY is immutable after manifest validation. Deterministic publication may consume the selected media and its verification receipt but must not repair, rediscover, or rewrite media metadata.",
+    "WATCHLIST_READY is immutable after manifest validation. Render and public projection must use the manifest-bound dated Watchlist artifact, never whichever _data/watchlist.json happens to be newest.",
+    "The accepted image-review path must be named explicitly in the publication manifest. Production must not silently choose between dated and legacy review paths.",
     "Before handoff, run `_tools/validate-handoff-images.mjs`. Then create accepted WebP or PNG blobs with the authenticated GitHub Git Data API (`create_blob` with `encoding=base64`), compose one tree/commit, and advance only the isolated handoff ref with `update_ref`. Do not use native git credentials or GitHub Contents API/create_file/update_file for binary image bytes.",
     "Do not perform article-source network retrieval in Work. Use only the committed nine-candidate GitHub Actions article-evidence packet.",
     "Work must not run `_tools/discover-sources.mjs` or the metadata gate. Those execute in GitHub Actions preflight with zero model calls. Work may read only the preflight `result/metadata-candidates.json` and `result/receipt.json` after `coverage_ready=true`.",
@@ -215,7 +225,7 @@
     "Beginning with the 2026-09-24 edition, persist a current-day media preflight receipt bound to the editorial-kernel SHA-256, with exactly two videos and two podcasts, verification timestamps/evidence, and a passing two-source podcast-diversity result. Reuse it unchanged on downstream retries while the kernel hash is unchanged."
   ],
   "qualification_handoff_manifest_shape": {
-    "schema_version": "1.0.0",
+    "schema_version": "1.1.0",
     "execution_mode": "qualification_nonproduction",
     "staging_ref": "editorial-handoff/qualification/YYYY-MM-DD-runtime-test-<attempt>",
     "kernel_path": "_records/editorial-handoff/kernel.json",
@@ -228,7 +238,8 @@
     "deterministic_validation_model_calls": 0,
     "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
     "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
-    "image_transport_method": "github_git_data_api"
+    "image_transport_method": "github_git_data_api",
+    "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json"
   },
   "transport_shape": {
     "method": "github_git_data_api",
@@ -267,5 +278,32 @@
         "verification_evidence": "What was independently checked"
       }
     ]
+  },
+  "publication_manifest_shape": {
+    "schema_version": "1.0.0",
+    "manifest_kind": "daily_ai_brief_publication",
+    "edition_date": "YYYY-MM-DD",
+    "edition_id": "dab-edition-YYYY-MM-DD",
+    "baseline_sha": "40-char-main-sha",
+    "staging_ref": "editorial-handoff/production/YYYY-MM-DD-<attempt>",
+    "policy_profile": "under80-v1",
+    "artifacts": {
+      "kernel": "path + schema_version + git_blob_sha1 digest",
+      "facts": "path + explicit candidate-facts-map-v1 legacy adapter + git_blob_sha1 digest",
+      "metadata_candidates": "path + schema_version + git_blob_sha1 digest",
+      "article_evidence": "path + schema_version + git_blob_sha1 digest",
+      "media": "path + explicit selected-media-v1 legacy adapter + git_blob_sha1 digest",
+      "media_receipt": "path + schema_version + git_blob_sha1 digest",
+      "image_manifest": "path + explicit accepted-images-map-v1 adapter + git_blob_sha1 digest",
+      "image_review": "path + explicit accepted-images-map-v1 adapter + git_blob_sha1 digest",
+      "watchlist": "immutable dated path + schema_version + git_blob_sha1 digest",
+      "watchlist_evidence": "dated sweep path + schema_version + git_blob_sha1 digest",
+      "book_mappings": "path + schema_version + git_blob_sha1 digest"
+    },
+    "freeze": {
+      "media": "MEDIA_READY; no downstream repair",
+      "images": "IMAGES_READY; manifest-only image review path",
+      "watchlist": "WATCHLIST_READY; immutable counts and public projection digest"
+    }
   }
 }

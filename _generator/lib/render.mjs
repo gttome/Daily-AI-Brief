@@ -152,7 +152,7 @@ ${renderInlineFeedback({
   })}`;
 }
 
-export function renderBody(edition) {
+export function renderBody(edition,{watchlist=null}={}) {
   validateBookReading(edition);
   validateReadingSupport(edition);
   const separated=edition.brief_date>=SERIES_SEPARATION_DATE;
@@ -166,7 +166,7 @@ export function renderBody(edition) {
 **Published:** ${formatDate(edition.brief_date)}  
 **Coverage period:** ${edition.coverage_period}
 
-${readerRelease(edition.brief_date)?renderEditionOverview({...edition,stories:readerStories})+'\n\n':watchlistPreview(edition.brief_date)}${readerStories.map((story,index) => renderStory(story, edition.brief_date,index+1)).join('\n\n')}
+${readerRelease(edition.brief_date)?renderEditionOverview({...edition,stories:readerStories})+'\n\n':watchlistPreview(edition.brief_date,watchlist)}${readerStories.map((story,index) => renderStory(story, edition.brief_date,index+1)).join('\n\n')}
 
 ## Worth Watching
 
@@ -174,32 +174,32 @@ ${renderVideo('General', edition.worth_watching.general, edition.brief_date, 'ge
 
 ${renderVideo(edition.brief_date>='2026-09-19'?'Agents for Everyone':'Agents for Non-Technical People', edition.worth_watching.agents_non_technical_people, edition.brief_date, 'agent-skills')}
 
-${podcastBlock}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date))+'\n\n':''}## Editorial takeaway
+${podcastBlock}${readerRelease(edition.brief_date)?readerAddition(watchlistPreview(edition.brief_date,watchlist))+'\n\n':''}## Editorial takeaway
 
 ${edition.editorial_takeaway}
 
 ${renderSeriesInvitation(edition.brief_date)}`;
 }
 
-export function renderDated(edition) {
+export function renderDated(edition,options={}) {
   const frontmatter = `---
 layout: default
 title: "Daily Generative AI Brief - ${formatDate(edition.brief_date)}"
 permalink: /briefs/${edition.brief_date}/
 brief_date: ${edition.brief_date}
 ${readerRelease(edition.brief_date)?'reader_release: true\n':''}---`;
-  const body = renderBody(edition);
+  const body = renderBody(edition,options);
   const firstBreak = body.indexOf('\n\n## 1.');
   const withTopNavigation = `${body.slice(0, firstBreak)}\n\n[← Home]({{ '/' | relative_url }}) · [Briefs Archive]({{ '/briefs-archive/' | relative_url }})${body.slice(firstBreak)}`;
   return `${frontmatter}\n\n${withTopNavigation}\n\n---\n\n[← Back to Home]({{ '/' | relative_url }}) · [View Briefs Archive]({{ '/briefs-archive/' | relative_url }})\n`;
 }
 
-export function renderLatest(edition) {
-  return `${renderBody(edition)}\n`;
+export function renderLatest(edition,options={}) {
+  return `${renderBody(edition,options)}\n`;
 }
 
-export function renderIndex(edition) {
-  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n${readerRelease(edition.brief_date)?'reader_release: true\n':''}---\n\n${renderBody(edition)}\n\n${renderSubscriptionCard()}\n`;
+export function renderIndex(edition,options={}) {
+  return `---\nlayout: default\ntitle: Daily Generative AI Brief\nbrief_date: ${edition.brief_date}\n${readerRelease(edition.brief_date)?'reader_release: true\n':''}---\n\n${renderBody(edition,options)}\n\n${renderSubscriptionCard()}\n`;
 }
 
 export function renderArchive(repoRoot, currentDate) {
@@ -233,11 +233,12 @@ export function renderReadme(repoRoot, currentDate) {
   return `${prefix}\n\n## Archive\n\n${items}\n`;
 }
 
-export function generatedFiles(edition, repoRoot) {
+export function generatedFiles(edition, repoRoot,{watchlist=null}={}) {
+  const renderOptions={watchlist};
   const files = new Map([
-    [`briefs/${edition.brief_date}.md`, renderDated(edition)],
-    ['latest.md', renderLatest(edition)],
-    ['index.md', renderIndex(edition)],
+    [`briefs/${edition.brief_date}.md`, renderDated(edition,renderOptions)],
+    ['latest.md', renderLatest(edition,renderOptions)],
+    ['index.md', renderIndex(edition,renderOptions)],
     ['README.md', renderReadme(repoRoot, edition.brief_date)]
   ]);
   const separated=edition.brief_date>=SERIES_SEPARATION_DATE;

@@ -60,14 +60,19 @@ if(command==='seed-candidate'){
   ['EDITORIAL_KERNEL_READY',['_records/editorial-handoff/kernel.json','_records/editorial-handoff/facts.json']],
   ['MEDIA_READY',['_records/editorial-handoff/media.json','_records/editorial/media-preflight/'+date+'.json']],
   ['IMAGES_READY',['_records/editorial-handoff/final-image-review-'+date+'.json']],
-  ['HANDOFF_COMMITTED',['_records/editorial-handoff/handoff.json']],
+  ['HANDOFF_COMMITTED',['_records/editorial-handoff/handoff.json',...(fs.existsSync(path.join(root,'_records/editorial-handoff/publication-manifest.json'))?['_records/editorial-handoff/publication-manifest.json']:[])]],
   ['DETERMINISTIC_EXPANSION_READY',['_data/editions/'+date+'.json']]
  ];
  for(const [stage,artifacts] of steps){
   if(validProof(state,stage))continue;
   state=ensureRecoverable(state,stage,'seed_candidate_checkpoint_changed');
   const present=artifacts.filter(p=>fs.existsSync(path.join(root,p)));if(!present.length)throw Error('missing_stage_evidence:'+stage);
-  state=checkpointRunStage(root,state,stage,{currentSha:current,artifactPaths:present});
+  let dependencyPaths=null;
+  if(stage==='HANDOFF_COMMITTED'&&fs.existsSync(path.join(root,'_records/editorial-handoff/publication-manifest.json'))){
+   const manifest=JSON.parse(fs.readFileSync(path.join(root,'_records/editorial-handoff/publication-manifest.json'),'utf8'));
+   dependencyPaths=Object.values(manifest.artifacts||{}).map(x=>x?.path).filter(Boolean);
+  }
+  state=checkpointRunStage(root,state,stage,{currentSha:current,artifactPaths:present,dependencyPaths});
  }
  persistRunState(root,state);console.log(JSON.stringify({stage:state.stage,...recoveryDecision(root,state)},null,2));process.exit(0);
 }

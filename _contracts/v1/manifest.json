@@ -72,6 +72,11 @@
       "name": "efficiency",
       "schema": "efficiency.schema.json",
       "valid_example": "examples/efficiency.valid.json"
+    },
+    {
+      "name": "publication_manifest",
+      "schema": "publication-manifest.schema.json",
+      "valid_example": "examples/publication-manifest.valid.json"
     }
   ],
   "negative_examples": [

@@ -9,6 +9,8 @@ import {sha256, stableSuffix, writeText} from './util.mjs';
 import {assertValidEdition} from './validate.mjs';
 import {applyProductionTelemetryHealth,assertMediaPreflight,assertWatchlistFreshness} from './production-guardrails.mjs';
 import {editionPodcasts} from './podcasts.mjs';
+import {publicWatchlist} from './watchlist.mjs';
+import {CONTRACT_FREEZE_DATE} from './publication-manifest.mjs';
 
 export function stagedDigest(files) {
   const canonical = [...files.entries()].sort(([a], [b]) => a.localeCompare(b)).map(([name, content]) => `${name}\0${sha256(content)}`).join('\n');
@@ -56,37 +58,47 @@ export function buildPublicationStage(edition, repoRoot, outDir, options) {
   const generationSpan=telemetry?.begin('generation');
   assertValidEdition(edition);
   const mediaPreflightPath=`_records/editorial/media-preflight/${edition.brief_date}.json`;
+  const frozenContracts=edition.brief_date>=CONTRACT_FREEZE_DATE;
   let mediaPreflight=options.mediaPreflight||null;
   if(edition.brief_date>='2026-09-17'){
     const selectedVideos=Object.values(edition.worth_watching||{}).filter(item=>item?.status==='included').length;
     const selectedPodcasts=editionPodcasts(edition).length;
+    if(frozenContracts&&!mediaPreflight)throw new Error('Manifest-bound media preflight is required');
     if(!mediaPreflight&&selectedVideos+selectedPodcasts===0){
       mediaPreflight={schema_version:'1.0.0',edition_id:edition.edition_id,checked_at:options.observedAt,items:[],basis:'deterministic_empty_selected_media_set'};
     }
     const diskPath=path.join(repoRoot,mediaPreflightPath);
-    if(!mediaPreflight&&fs.existsSync(diskPath))mediaPreflight=JSON.parse(fs.readFileSync(diskPath,'utf8'));
+    if(!frozenContracts&&!mediaPreflight&&fs.existsSync(diskPath))mediaPreflight=JSON.parse(fs.readFileSync(diskPath,'utf8'));
     assertMediaPreflight(edition,mediaPreflight,{observedAt:options.observedAt});
   }
-  let watchlistFresh=false;
+  let watchlistFresh=false,watchlist=options.watchlist||null;
   if(edition.brief_date>='2026-09-19'){
-    const watchlistPath=path.join(repoRoot,'_data/watchlist.json');
-    if(!fs.existsSync(watchlistPath))throw new Error('Current-edition Watchlist is required');
-    assertWatchlistFreshness(edition,JSON.parse(fs.readFileSync(watchlistPath,'utf8')));
+    if(frozenContracts&&!watchlist)throw new Error('Manifest-bound Watchlist is required');
+    if(!watchlist){
+      const watchlistPath=path.join(repoRoot,'_data/watchlist.json');
+      if(!fs.existsSync(watchlistPath))throw new Error('Current-edition Watchlist is required');
+      watchlist=JSON.parse(fs.readFileSync(watchlistPath,'utf8'));
+    }
+    assertWatchlistFreshness(edition,watchlist);
     watchlistFresh=true;
   }
-  const files = generatedFiles(edition, repoRoot);
+  const files = generatedFiles(edition, repoRoot,{watchlist});
   const expected = new Set([`briefs/${edition.brief_date}.md`, ...COMPATIBILITY_OUTPUTS]);
   for (const name of expected) if (!files.has(name)) throw new Error(`Atomic publication plan is missing ${name}`);
   const checks = [
     {check_id: 'edition_validation', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'Canonical edition passed structural and semantic validation.'},
     {check_id: 'atomic_file_set', class: 'deterministic', result: 'pass', severity: 'critical', evidence: 'All five compatibility outputs are present in the staged transaction.'}
   ];
-  if(watchlistFresh)checks.push({check_id:'watchlist_freshness',class:'deterministic',result:'pass',severity:'critical',evidence:'Watchlist edition date and update timestamp match the publication date and every topic carries evidence.'});
+  if(watchlistFresh){
+    checks.push({check_id:'watchlist_freshness',class:'deterministic',result:'pass',severity:'critical',evidence:'Manifest-bound Watchlist edition date and evidence are frozen before publication.'});
+    files.set('data/watchlist.json',JSON.stringify(publicWatchlist(watchlist),null,2)+'\n');
+  }
   if (edition.brief_date >= '2026-09-17') {
     checks.push({check_id:'selected_media_preflight',class:'live_prepublication',result:'pass',severity:'critical',evidence:'Every included video and podcast URL, date, and runtime matched a fresh independent prepublication observation.'});
     files.set(mediaPreflightPath,JSON.stringify(mediaPreflight,null,2)+'\n');
   }
   files.set(`_data/editions/${edition.brief_date}.json`, `${JSON.stringify(edition, null, 2)}\n`);
+  if(frozenContracts&&!options.imageReviewPath)throw new Error('Manifest-bound image review is required');
   const review=options.imageReviewPath?reviewedHandoffImages(edition,repoRoot,options.imageReviewPath):reviewedImages(edition,repoRoot);
   if(review.errors.length)throw new Error(review.errors.join('; '));
   for(const asset of review.assets)files.set(asset.path,fs.readFileSync(path.join(repoRoot,asset.path)));

@@ -26,6 +26,20 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/publication-manifest.mjs",
+        "_tools/publication-manifest.mjs",
+        "_records/editorial-handoff/publication-manifest.json",
+        ".github/workflows/post-editorial-kernel.yml",
+        "_tools/sync-public-watchlist.mjs"
+      ],
+      "tier": "B",
+      "tests": [
+        "_generator/test/publication-manifest.test.mjs",
+        "_generator/test/under80-handoff-transport.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         ".github/workflows/post-editorial-kernel.yml"
       ],
       "tier": "B",
@@ -100,7 +114,15 @@
     "interrupted_publication_resume",
     "checkpoint_output_mutation",
     "checkpoint_dependency_mutation",
-    "duplicate_consequential_action"
+    "duplicate_consequential_action",
+    "publication_manifest_wrong_schema",
+    "publication_manifest_missing_artifact",
+    "publication_manifest_stale_baseline",
+    "publication_manifest_date_mismatch",
+    "publication_manifest_invalid_digest",
+    "publication_manifest_unsupported_adapter",
+    "frozen_media_mismatch",
+    "frozen_watchlist_projection_mismatch"
   ],
   "prohibitions": [
     "run_all_by_default_after_isolated_change",

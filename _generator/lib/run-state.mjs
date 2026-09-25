@@ -214,7 +214,9 @@ export function validateHandoffCheckpoint({baselineSha,branchHeadSha,parentSha,a
  if(!/^[a-f0-9]{40}$/.test(branchHeadSha||'')||branchHeadSha===baselineSha)errors.push('handoff_branch_must_advance_from_main');
  if(parentSha!==baselineSha)errors.push('handoff_commit_parent_must_equal_trusted_main');
  if(!manifest||manifest.staging_ref!==actualStagingRef)errors.push('handoff_manifest_staging_ref_mismatch');
- for(const key of ['kernel_path','facts_path','media_path','images_path']){
+ const requiredKeys=['kernel_path','facts_path','media_path','images_path'];
+ if(manifest?.schema_version!=='1.0.0'||manifest?.publication_manifest_path)requiredKeys.push('publication_manifest_path');
+ for(const key of requiredKeys){
   const p=manifest?.[key];if(!p||requiredFileExists?.(p)!==true)errors.push('missing_handoff_artifact:'+key);
  }
  if(imageEntries.length!==6)errors.push('six_accepted_image_entries_required');
@@ -225,7 +227,7 @@ export function validateHandoffCheckpoint({baselineSha,branchHeadSha,parentSha,a
 
 export const RECOVERY_MATRIX=Object.freeze({
  metadata_preflight:'PREFLIGHT_METADATA_READY',discovery_preflight:'PREFLIGHT_DISCOVERY_READY',readiness_receipt:'READINESS_FINAL',
- editorial_kernel:'EDITORIAL_KERNEL_READY',image:'IMAGES_READY',media_slot:'MEDIA_READY',watchlist:'DETERMINISTIC_EXPANSION_READY',
+ editorial_kernel:'EDITORIAL_KERNEL_READY',image:'IMAGES_READY',media_slot:'MEDIA_READY',watchlist:'HANDOFF_COMMITTED',publication_manifest:'HANDOFF_COMMITTED',
  handoff_write:'HANDOFF_COMMITTED',publication_pr:'PR_CREATED',pr_ci:'PROTECTED_CI_PASS',merge:'MERGED',pages:'PAGES_VERIFIED',
  completion:'COMPLETION_PERSISTED',command_center_sync:'COMMAND_CENTER_RECONCILED'
 });
