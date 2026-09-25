@@ -7,25 +7,30 @@ on:
         description: Existing non-main branch containing the approved editorial kernel and deterministic inputs
         required: true
         type: string
+      publication_manifest_path:
+        description: Versioned publication manifest path committed on the handoff branch
+        required: false
+        default: _records/editorial-handoff/publication-manifest.json
+        type: string
       kernel_path:
-        description: Repository-relative editorial kernel JSON path
-        required: true
+        description: Deprecated compatibility input; ignored because the handoff manifest is authoritative
+        required: false
         type: string
       facts_path:
-        description: Repository-relative public-safe candidate facts JSON path keyed by candidate ID
-        required: true
+        description: Deprecated compatibility input; ignored because the handoff manifest is authoritative
+        required: false
         type: string
       images_path:
-        description: Optional repository-relative approved generative fallback image manifest keyed by candidate ID
+        description: Deprecated compatibility input; ignored because the handoff manifest is authoritative
         required: false
         type: string
       media_path:
-        description: Optional repository-relative selected media JSON path
+        description: Deprecated compatibility input; ignored because the handoff manifest is authoritative
         required: false
         type: string
       coverage_period:
-        description: Verified coverage-period sentence for the edition
-        required: true
+        description: Deprecated compatibility input; ignored because the handoff manifest is authoritative
+        required: false
         type: string
 
   push:
@@ -77,35 +82,22 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install deterministic SVG rasterizer
-        run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends librsvg2-bin
-          rsvg-convert --version
-
       - name: Resolve editorial handoff inputs
         id: handoff
         env:
-          EVENT_NAME: ${{ github.event_name }}
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
-          INPUT_KERNEL_PATH: ${{ inputs.kernel_path }}
-          INPUT_FACTS_PATH: ${{ inputs.facts_path }}
-          INPUT_IMAGES_PATH: ${{ inputs.images_path }}
-          INPUT_MEDIA_PATH: ${{ inputs.media_path }}
-          INPUT_COVERAGE_PERIOD: ${{ inputs.coverage_period }}
         run: |
           set -euo pipefail
-          if [ "$EVENT_NAME" = "push" ]; then
-            manifest="_records/editorial-handoff/handoff.json"
-            if [ ! -f "$manifest" ]; then
-              echo "Required editorial handoff manifest is missing: $manifest"
-              exit 1
-            fi
-            node - "$manifest" "$STAGING_REF" "$GITHUB_OUTPUT" <<'NODE'
+          handoff="_records/editorial-handoff/handoff.json"
+          if [ ! -f "$handoff" ]; then
+            echo "Required editorial handoff manifest is missing: $handoff"
+            exit 1
+          fi
+          node - "$handoff" "$STAGING_REF" "$GITHUB_OUTPUT" <<'NODE'
           const fs=require('fs');
           const [manifestPath,stagingRef,outputPath]=process.argv.slice(2);
           const m=JSON.parse(fs.readFileSync(manifestPath,'utf8'));
-          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','metadata_candidates_path','article_evidence_path','image_transport_method','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
+          const required=['schema_version','execution_mode','staging_ref','kernel_path','facts_path','images_path','media_path','metadata_candidates_path','article_evidence_path','publication_manifest_path','image_transport_method','coverage_period','editorial_model_passes','post_editorial_model_passes','deterministic_validation_model_calls'];
           for(const key of required) if(!(key in m)) throw new Error('handoff_manifest_missing_'+key);
           if(m.staging_ref!==stagingRef) throw new Error('handoff_manifest_staging_ref_mismatch');
           if(!['production','qualification_nonproduction'].includes(m.execution_mode)) throw new Error('handoff_manifest_execution_mode_invalid');
@@ -115,7 +107,7 @@ jobs:
           if(m.post_editorial_model_passes!==0) throw new Error('handoff_manifest_post_editorial_pass_count_invalid');
           if(m.deterministic_validation_model_calls!==0) throw new Error('handoff_manifest_validation_model_calls_invalid');
           if(m.image_transport_method!=='github_git_data_api') throw new Error('handoff_manifest_git_data_image_transport_required');
-          for(const key of ['kernel_path','facts_path','images_path','media_path','coverage_period']) {
+          for(const key of ['kernel_path','facts_path','images_path','media_path','metadata_candidates_path','article_evidence_path','publication_manifest_path','coverage_period']){
             if(typeof m[key]!=='string'||m[key].includes('\n')||m[key].includes('\r')) throw new Error('handoff_manifest_invalid_'+key);
           }
           fs.appendFileSync(outputPath,
@@ -125,35 +117,25 @@ jobs:
             'media_path='+m.media_path+'\n'+
             'metadata_candidates_path='+m.metadata_candidates_path+'\n'+
             'article_evidence_path='+m.article_evidence_path+'\n'+
+            'publication_manifest_path='+m.publication_manifest_path+'\n'+
             'image_transport_method='+m.image_transport_method+'\n'+
             'coverage_period='+m.coverage_period+'\n'+
             'execution_mode='+m.execution_mode+'\n');
           NODE
-          else
-            {
-              echo "kernel_path=$INPUT_KERNEL_PATH"
-              echo "facts_path=$INPUT_FACTS_PATH"
-              echo "images_path=$INPUT_IMAGES_PATH"
-              echo "media_path=$INPUT_MEDIA_PATH"
-              echo "metadata_candidates_path=_records/editorial-handoff/metadata-candidates.json"
-              echo "article_evidence_path=_records/editorial-handoff/article-evidence.json"
-              echo "image_transport_method=github_git_data_api"
-              echo "coverage_period=$INPUT_COVERAGE_PERIOD"
-              echo "execution_mode=production"
-            } >> "$GITHUB_OUTPUT"
-          fi
 
       - name: Validate repository-relative inputs
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
-          MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
+          MEDIA_PATH: ${{ steps.publication_manifest.outputs.media_path }}
+          IMAGE_REVIEW_PATH: ${{ steps.publication_manifest.outputs.image_review_path }}
           METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
           ARTICLE_EVIDENCE_PATH: ${{ steps.handoff.outputs.article_evidence_path }}
+          PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
         run: |
           set -euo pipefail
-          for p in "$KERNEL_PATH" "$FACTS_PATH" "$METADATA_CANDIDATES_PATH" "$ARTICLE_EVIDENCE_PATH"; do
+          for p in "$KERNEL_PATH" "$FACTS_PATH" "$METADATA_CANDIDATES_PATH" "$ARTICLE_EVIDENCE_PATH" "$PUBLICATION_MANIFEST_PATH"; do
             if [ -z "$p" ] || [[ "$p" == /* ]] || [[ "$p" == *".."* ]] || [ ! -f "$p" ]; then
               echo "Invalid or missing repository-relative input: $p"
               exit 1
@@ -222,6 +204,36 @@ jobs:
           echo "sha=$baseline" >> "$GITHUB_OUTPUT"
           node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
 
+      - name: Validate and freeze versioned publication manifest
+        id: publication_manifest
+        env:
+          PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
+          BASELINE_SHA: ${{ steps.baseline.outputs.sha }}
+          STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
+        run: |
+          set -euo pipefail
+          date="$(node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync(process.env.PUBLICATION_MANIFEST_PATH,'utf8'));process.stdout.write(m.edition_date)")"
+          node _tools/publication-manifest.mjs validate --manifest "$PUBLICATION_MANIFEST_PATH" --baseline "$BASELINE_SHA" --date "$date" --staging-ref "$STAGING_REF" --out /tmp/publication-manifest-validation.json
+          node - "$PUBLICATION_MANIFEST_PATH" "_records/editorial-handoff/handoff.json" "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs');
+          const [manifestPath,handoffPath,outputPath]=process.argv.slice(2);
+          const m=JSON.parse(fs.readFileSync(manifestPath,'utf8')),h=JSON.parse(fs.readFileSync(handoffPath,'utf8'));
+          const artifact=name=>m.artifacts?.[name]?.path;
+          const pairs=[['kernel_path','kernel'],['facts_path','facts'],['images_path','image_manifest'],['media_path','media'],['metadata_candidates_path','metadata_candidates'],['article_evidence_path','article_evidence']];
+          for(const [handoffKey,artifactName] of pairs)if(h[handoffKey]!==artifact(artifactName))throw new Error('handoff_publication_manifest_path_mismatch:'+handoffKey);
+          const values={
+            image_manifest_path:artifact('image_manifest'),
+            image_review_path:artifact('image_review'),
+            media_path:artifact('media'),
+            media_receipt_path:artifact('media_receipt'),
+            watchlist_path:artifact('watchlist'),
+            watchlist_evidence_path:artifact('watchlist_evidence'),
+            public_watchlist_path:m.freeze?.watchlist?.public_projection_path||'',
+            public_watchlist_digest:m.freeze?.watchlist?.public_projection_digest||''
+          };
+          for(const [key,value] of Object.entries(values)){if(!value)throw new Error('publication_manifest_output_missing:'+key);fs.appendFileSync(outputPath,key+'='+value+'\n');}
+          NODE
+
       - name: Resolve durable recovery checkpoint
         id: recovery
         env:
@@ -238,55 +250,16 @@ jobs:
           echo "reuse_expansion=$reuse_expansion" >> "$GITHUB_OUTPUT"
           echo "Recovery checkpoint: images=$reuse_images expansion=$reuse_expansion"
 
-      - name: Validate six Git-Data handoff PNGs
-        if: steps.handoff.outputs.images_path != ''
+      - name: Validate manifest-bound accepted image contracts
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
-          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
+          IMAGE_MANIFEST_PATH: ${{ steps.publication_manifest.outputs.image_manifest_path }}
+          IMAGE_REVIEW_PATH: ${{ steps.publication_manifest.outputs.image_review_path }}
         run: |
           set -euo pipefail
-          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGES_PATH"
-
-      - name: Reuse accepted image checkpoint
-        if: steps.recovery.outputs.reuse_images == 'true'
-        env:
-          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
-        run: |
-          set -euo pipefail
-          brief_date="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.brief_date||''));" "$KERNEL_PATH")"
-          review_path="_records/editorial-handoff/final-image-review-${brief_date}.json"
-          test -f "$review_path"
-          cp "$review_path" /tmp/images.json
-          printf '{"schema_version":"1.0.0","brief_date":"%s","reused_checkpoint":"IMAGES_READY","regenerated":false}\n' "$brief_date" > /tmp/visual-receipt.json
-
-      - name: Render or select six guarded visual assets
-        if: steps.recovery.outputs.reuse_images != 'true'
-        env:
-          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
-          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
-        run: |
-          set -euo pipefail
-          args=(--kernel "$KERNEL_PATH" --policy _data/visual-renderer-policy.json --out /tmp/images.json --receipt /tmp/visual-receipt.json)
-          if [ -n "$IMAGES_PATH" ]; then args+=(--fallback "$IMAGES_PATH"); fi
-          node _tools/render-visual-assets.mjs "${args[@]}"
-
-      - name: Validate final rendered image manifest
-        env:
-          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
-        run: |
-          set -euo pipefail
-          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images /tmp/images.json
-
-      - name: Persist final rendered image review for publication staging
-        env:
-          KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
-        run: |
-          set -euo pipefail
-          mkdir -p _records/editorial-handoff
-          brief_date="$(node -e "const fs=require('fs');const k=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(k.brief_date||''));" "$KERNEL_PATH")"
-          review_path="_records/editorial-handoff/final-image-review-${brief_date}.json"
-          cp /tmp/images.json "$review_path"
-          echo "FINAL_IMAGE_REVIEW_PATH=$review_path" >> "$GITHUB_ENV"
+          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_MANIFEST_PATH"
+          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_REVIEW_PATH"
+          echo "FINAL_IMAGE_REVIEW_PATH=$IMAGE_REVIEW_PATH" >> "$GITHUB_ENV"
 
       - name: Deterministically expand canonical edition
         if: steps.recovery.outputs.reuse_expansion != 'true'
@@ -299,8 +272,7 @@ jobs:
         run: |
           set -euo pipefail
           published_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --metadata "$METADATA_CANDIDATES_PATH" --images /tmp/images.json --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
-          if [ -n "$MEDIA_PATH" ]; then args+=(--media "$MEDIA_PATH"); fi
+          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --metadata "$METADATA_CANDIDATES_PATH" --images "$IMAGE_REVIEW_PATH" --media "$MEDIA_PATH" --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
           node _tools/editorial-kernel.mjs "${args[@]}"
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
 
@@ -308,7 +280,7 @@ jobs:
         if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
           DAB_QUALIFICATION_NONPRODUCTION: ${{ steps.handoff.outputs.execution_mode == 'qualification_nonproduction' && '1' || '0' }}
-          IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
+          PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
         run: |
           set -euo pipefail
           rm -rf /tmp/publication-stage
@@ -318,7 +290,7 @@ jobs:
             --baseline-sha "${{ steps.baseline.outputs.sha }}" \
             --observed-at "$PUBLISHED_AT" \
             --run-id "kernel-${GITHUB_RUN_ID}" \
-            --image-review "$FINAL_IMAGE_REVIEW_PATH")
+            --publication-manifest "$PUBLICATION_MANIFEST_PATH")
           node _generator/cli.mjs "${args[@]}"
 
       - name: Apply deterministic stage to staging branch
@@ -329,15 +301,10 @@ jobs:
         run: |
           set -euo pipefail
           cp -a /tmp/publication-stage/. ./
-          node _tools/sync-public-watchlist.mjs
-          node --test _generator/test/*.test.mjs
+          node --test _generator/test/publication-manifest.test.mjs _generator/test/under80-handoff-transport.test.mjs
           node _tools/validate-contracts.mjs
           node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
           node _generator/cli.mjs integration-check --image-review "$FINAL_IMAGE_REVIEW_PATH"
-
-      - name: Regenerate public Watchlist from canonical state
-        if: steps.recovery.outputs.reuse_expansion != 'true'
-        run: node _tools/sync-public-watchlist.mjs
 
       - name: Run pre-PR publication-candidate lint
         if: steps.recovery.outputs.reuse_expansion != 'true'
@@ -345,7 +312,7 @@ jobs:
           STAGING_REF: ${{ github.event_name == 'push' && github.ref_name || inputs.staging_ref }}
         run: |
           set -euo pipefail
-          node _tools/publication-candidate-lint.mjs --date "$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")"
+          node _tools/publication-candidate-lint.mjs --date "$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")" --manifest "${{ steps.handoff.outputs.publication_manifest_path }}"
           date="$(node -e "const k=require('./_records/editorial-handoff/kernel.json');process.stdout.write(k.brief_date)")"
           node _tools/run-state.mjs seed-candidate --date "$date" --baseline "${{ steps.baseline.outputs.sha }}" --current "$(git rev-parse HEAD)" --contract "under80-v1/sep24-reliability-v1"
 
