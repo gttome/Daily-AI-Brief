@@ -114,3 +114,20 @@ test('recovery decision includes an explicit safe next action',()=>{
   assert.match(decision.safe_next_action,/production SHA deployment/i);
  }finally{cleanup(root);}
 });
+
+test('post-editorial workflow reuses valid image and expansion checkpoints',()=>{
+ const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
+ assert.match(workflow,/Resolve durable recovery checkpoint/);
+ assert.match(workflow,/reuse_images/);
+ assert.match(workflow,/reuse_expansion/);
+ assert.match(workflow,/Reuse accepted image checkpoint/);
+ assert.match(workflow,/if: steps\.recovery\.outputs\.reuse_expansion != 'true'/);
+});
+
+test('post-editorial retry suppresses duplicate PRs and records recovery evidence',()=>{
+ const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
+ assert.match(workflow,/state:'all',per_page:100/);
+ assert.match(workflow,/duplicate PR creation suppressed/);
+ assert.match(workflow,/Build recovery decision after failure/);
+ assert.match(workflow,/\/tmp\/recovery-decision\.json/);
+});
