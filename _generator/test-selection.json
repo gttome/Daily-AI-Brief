@@ -130,6 +130,23 @@
         "_generator/test/command-center-delta.test.mjs",
         "_generator/test/publication-lifecycle.test.mjs"
       ]
+    },
+    {
+      "patterns": [
+        "_generator/lib/reliability-proof.mjs",
+        "_tools/reliability-proof.mjs",
+        "_generator/test/reliability-proof.test.mjs",
+        "_records/reliability-proof/wave5/*",
+        "docs/operations/RELIABILITY_ITERATION5_*"
+      ],
+      "tier": "E",
+      "tests": [
+        "_generator/test/reliability-proof.test.mjs",
+        "_generator/test/run-state-recovery.test.mjs",
+        "_generator/test/publication-lifecycle.test.mjs",
+        "_generator/test/command-center-delta.test.mjs",
+        "_generator/test/image-quality-gate.test.mjs"
+      ]
     }
   ],
   "sentinel_cases": [
@@ -173,7 +190,11 @@
     "command_center_stale_copy_detected",
     "command_center_failed_refresh_not_current",
     "command_center_refresh_cannot_mutate_lifecycle",
-    "no_fallback_verified_state"
+    "no_fallback_verified_state",
+    "wave5_clean_edition_qualifies",
+    "wave5_unproven_metric_disqualifies",
+    "wave5_consecutive_streak_resets",
+    "wave5_recovery_qualification_matrix"
   ],
   "prohibitions": [
     "run_all_by_default_after_isolated_change",
