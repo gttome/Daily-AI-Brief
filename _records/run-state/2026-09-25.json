@@ -2,9 +2,9 @@
   "schema_version": "1.0.0",
   "edition_date": "2026-09-25",
   "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "current_sha": "159a91c930d491fa8db514e60c0012206c18cf23",
+  "current_sha": "71fd47a9a85e61fda7f4f55a59eab4a203c3c609",
   "contract_runtime_version": "under80-v1/sep24-reliability-v1",
-  "stage": "READINESS_PRELIMINARY",
+  "stage": "READINESS_FINAL",
   "status": "pass",
   "retry_count": 0,
   "pr_number": null,
@@ -25,7 +25,7 @@
   ],
   "invalidated_downstream_stages": [],
   "publication_lifecycle": "staged",
-  "operational_status": "PREPARING",
+  "operational_status": "READY",
   "stages": {
     "PREFLIGHT_METADATA_READY": {
       "stage": "PREFLIGHT_METADATA_READY",
@@ -81,6 +81,26 @@
       "pr_number": null,
       "contract_runtime_version": "under80-v1/sep24-reliability-v1",
       "note": "Preliminary READY_WITH_WARNINGS; publication_authorized=false."
+    },
+    "READINESS_FINAL": {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-09-25T13:18:44Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "71fd47a9a85e61fda7f4f55a59eab4a203c3c609",
+      "artifact_paths": [
+        "_records/readiness/2026-09-25.json"
+      ],
+      "workflow_run_ids": [
+        "36125861237",
+        "36125852502",
+        "35910075328",
+        "35910074771",
+        "36038416659"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": "Final READY_WITH_WARNINGS; publication_authorized=true. Pages evidence verified through Actions; bounded recovery checkpoints reused."
     }
   },
   "history": [
@@ -107,6 +127,14 @@
       "current_sha": "159a91c930d491fa8db514e60c0012206c18cf23",
       "pr_number": null,
       "note": "Preliminary READY_WITH_WARNINGS; publication_authorized=false."
+    },
+    {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-09-25T13:18:44Z",
+      "status": "pass",
+      "current_sha": "71fd47a9a85e61fda7f4f55a59eab4a203c3c609",
+      "pr_number": null,
+      "note": "Final READY_WITH_WARNINGS; publication_authorized=true."
     }
   ]
 }
