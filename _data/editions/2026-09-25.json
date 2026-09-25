@@ -72,7 +72,7 @@
       "social": {
         "title": "NVIDIA opens 3D CT reasoning model for volumetric radiology workflows",
         "description": "The release pushes multimodal reasoning beyond 2D images into full 3D clinical volumes. For AI engineering teams, it highlights the growing importance of structured reasoning, doma",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png?v=bf765b462d75b3fa"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg?v=professional-20260925-r2"
       }
     },
     {
@@ -137,7 +137,7 @@
       "social": {
         "title": "NVIDIA adds workload-driven validation for GPU cluster readiness",
         "description": "AI infrastructure can look healthy while failing under real distributed load. Workload-level readiness testing gives engineering teams a stronger pre-production signal for networki",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.png?v=59f15009ee16051e"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg?v=professional-20260925-r2"
       }
     },
     {
@@ -201,7 +201,7 @@
       "social": {
         "title": "GitHub changes the default policy for generally available Copilot features",
         "description": "AI feature governance is becoming a default-management problem, not just an adoption problem. Administrators need explicit ownership of organization defaults, exceptions, and revie",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.png?v=a5e3e7b06861ad3a"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg?v=professional-20260925-r2"
       }
     },
     {
@@ -266,7 +266,7 @@
       "social": {
         "title": "Microsoft frames workplace AI as a system of models, context, agents, and governance",
         "description": "Knowledge-worker adoption increasingly depends on system design: trustworthy context, repeatable workflows, governed actions, and measurable outcomes. That is a more durable operat",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png?v=642ad488499257a4"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2"
       }
     },
     {
@@ -331,7 +331,7 @@
       "social": {
         "title": "AWS adds skill-specific evaluation for agents using reusable procedures",
         "description": "Agent Skills turn repeatable methods into portable instructions, but they also create a new failure surface: the agent can choose the wrong skill or ignore the skill’s procedure. S",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.png?v=5c9dda37b01869de"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg?v=professional-20260925-r2"
       }
     },
     {
@@ -395,7 +395,7 @@
       "social": {
         "title": "AWS uses MCP and AgentCore Gateway to connect agents across account boundaries",
         "description": "Enterprise agents often need access to distributed data without centralizing everything. A gateway-plus-MCP pattern can separate agent orchestration from data ownership while prese",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png?v=9ee924fc974b7762"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2"
       }
     }
   ],
