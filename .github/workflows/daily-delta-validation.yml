@@ -171,16 +171,23 @@ jobs:
             process.exit(0);
           }
           const validated=candidates[0];
+          const edition=JSON.parse(fs.readFileSync(path.join('_data','editions',date+'.json'),'utf8'));
           const verifiedAt=process.env.PAGES_VERIFIED_AT||new Date().toISOString();
+          const expectedSha=process.env.EXPECTED_SHA;
           const completion={
             ...validated,
+            schema_version:'2.0.0',
             phase:'pages_verified',
             observed_at:verifiedAt,
-            commit_sha:process.env.EXPECTED_SHA,
+            commit_sha:expectedSha,
+            production_sha:expectedSha,
+            deployed_sha:expectedSha,
+            file_set:{...validated.file_set,assets:(edition.stories||[]).map(story=>story.image?.path).filter(Boolean)},
             pages:{
               run_id:Number(process.env.PAGES_RUN_ID),
               conclusion:'success',
               verified_at:verifiedAt,
+              deployed_sha:expectedSha,
               deployment_url:process.env.DEPLOYMENT_URL
             },
             supersedes_event_id:validated.event_id
