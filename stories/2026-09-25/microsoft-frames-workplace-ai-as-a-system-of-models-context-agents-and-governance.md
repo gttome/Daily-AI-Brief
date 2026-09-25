@@ -2,7 +2,7 @@
 layout: default
 title: "Microsoft frames workplace AI as a system of models, context, agents, and governance"
 description: "Knowledge-worker adoption increasingly depends on system design: trustworthy context, repeatable workflows, governed actions, and measurable outcomes. That is a more durable operat"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png?v=642ad488499257a4"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2"
 permalink: /stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/
 brief_date: 2026-09-25
 story_id: dab-story-2026-09-25-80681ec6
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram connecting organizational context, copilots and agents, workflow execution, governance, and measured outcomes.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png?v=642ad488499257a4)
+![Professional white-background instructional diagram connecting organizational context, copilots and agents, workflow execution, governance, and measured outcomes.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2)
 
 **Summary:** Microsoft’s AI at Work update argues that enterprise value comes from connecting copilots and agents to organizational context, workflow, governance, and measurement rather than treating AI as a standalone chat interface.
 
