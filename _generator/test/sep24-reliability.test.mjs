@@ -99,7 +99,7 @@ test('accepted image and media checkpoints are reused across deterministic downs
   {kind:'podcast',verification_evidence:'date/source',verification_timestamp:'2026-09-24T12:00:00Z'}]};
  assert.equal(mediaReceiptReusable(receipt,kernel),true);assert.equal(mediaReceiptReusable(receipt,'3'.repeat(64)),false);
  let s=newRunState({date:'2026-09-24',baselineSha:baseline});
- for(const stage of ['PREFLIGHT_METADATA_READY','PREFLIGHT_DISCOVERY_READY','READINESS_PRELIMINARY','READINESS_FINAL','EDITORIAL_KERNEL_READY','MEDIA_READY','IMAGES_READY','HANDOFF_COMMITTED','PR_CREATED','DETERMINISTIC_EXPANSION_READY','PROTECTED_CI_PASS'])s=markRunStage(s,stage,{artifactPaths:[stage+'.json']});
+ for(const stage of ['PREFLIGHT_METADATA_READY','PREFLIGHT_DISCOVERY_READY','READINESS_PRELIMINARY','READINESS_FINAL','EDITORIAL_KERNEL_READY','MEDIA_READY','IMAGES_READY','HANDOFF_COMMITTED','DETERMINISTIC_EXPANSION_READY','PR_CREATED','PROTECTED_CI_PASS'])s=markRunStage(s,stage,{artifactPaths:[stage+'.json']});
  s=invalidateRunState(s,'PROTECTED_CI_PASS',{reason:'deterministic_ci_failure'});
  assert.equal(s.stages.MEDIA_READY.status,'pass');assert.equal(s.stages.IMAGES_READY.status,'pass');
 });
