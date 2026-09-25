@@ -26,6 +26,16 @@
   "rules": [
     {
       "patterns": [
+        ".github/workflows/post-editorial-kernel.yml"
+      ],
+      "tier": "B",
+      "tests": [
+        "_generator/test/run-state-recovery.test.mjs",
+        "_generator/test/under80-handoff-transport.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/run-state.mjs",
         "_tools/run-state.mjs",
         "_generator/test/run-state-recovery.test.mjs"
