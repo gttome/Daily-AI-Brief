@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-25",
+  "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
+  "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+  "stage": "PREFLIGHT_DISCOVERY_READY",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": null,
+  "workflow_run_ids": [
+    "36125852502"
+  ],
+  "artifact_paths": [
+    "_records/discovery-preflight/result/article-evidence-receipt.json",
+    "_records/discovery-preflight/result/article-evidence.json",
+    "_records/discovery-preflight/result/date-enrichment.json",
+    "_records/discovery-preflight/result/metadata-candidates.json",
+    "_records/discovery-preflight/result/receipt.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "publication_lifecycle": "staged",
+  "operational_status": "PREPARING",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-25T10:47:39.360Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
+      "artifact_paths": [
+        "_records/discovery-preflight/result/date-enrichment.json",
+        "_records/discovery-preflight/result/metadata-candidates.json"
+      ],
+      "workflow_run_ids": [
+        "36125852502"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "PREFLIGHT_DISCOVERY_READY": {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-25T10:47:39.399Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
+      "artifact_paths": [
+        "_records/discovery-preflight/result/article-evidence-receipt.json",
+        "_records/discovery-preflight/result/article-evidence.json",
+        "_records/discovery-preflight/result/receipt.json"
+      ],
+      "workflow_run_ids": [
+        "36125852502"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    }
+  },
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-25T10:47:39.360Z",
+      "status": "pass",
+      "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
+      "pr_number": null,
+      "note": null
+    },
+    {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-25T10:47:39.399Z",
+      "status": "pass",
+      "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
+      "pr_number": null,
+      "note": null
+    }
+  ]
+}
