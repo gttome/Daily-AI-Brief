@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "purpose": "daily_pre_work_discovery",
+  "edition_date": "2026-09-25",
+  "cutoff": "2026-09-25T10:46:27Z",
+  "source_scan_max": 48,
+  "fresh_metadata_target": 24
+}
