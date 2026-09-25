@@ -349,9 +349,9 @@ jobs:
             core.info('Completion evidence merged through protected main at '+merged.data.sha+'.');
 
       - name: Publish compact receipts to job summary
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && always()
+        if: steps.gate.outputs.run == 'true' && always()
         run: |
-          for receipt in /tmp/completion-evidence.json /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
+          for receipt in /tmp/publication-status.json /tmp/completion-evidence.json /tmp/watchlist-delta.json /tmp/daily-validation.json /tmp/command-center-delta.json; do
             if [ -f "$receipt" ]; then
               echo "#### $(basename "$receipt")" >> "$GITHUB_STEP_SUMMARY"
               echo '```json' >> "$GITHUB_STEP_SUMMARY"
@@ -361,17 +361,18 @@ jobs:
           done
 
       - name: Upload validation receipts
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && always()
+        if: steps.gate.outputs.run == 'true' && always()
         uses: actions/upload-artifact@v4
         with:
           name: daily-validation-${{ steps.date.outputs.value }}-${{ github.run_id }}
           path: |
+            /tmp/publication-status.json
             /tmp/completion-evidence.json
             /tmp/daily-validation.json
             /tmp/watchlist-delta.json
             /tmp/command-center-delta.json
           retention-days: 30
-          if-no-files-found: error
+          if-no-files-found: warn
 
       - name: Create deduplicated failure alert
         if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && steps.validation.outcome == 'failure'
