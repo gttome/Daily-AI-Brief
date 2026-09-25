@@ -4,7 +4,7 @@
   "stage": "final",
   "status": "READY_WITH_WARNINGS",
   "main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "certified_at": "2026-09-25T13:19:08Z",
+  "certified_at": "2026-09-25T13:18:44Z",
   "checks": [
     {
       "id": "main_protection",
@@ -14,7 +14,7 @@
     {
       "id": "ci_pages_delta",
       "result": "PASS",
-      "evidence": "CI 35910075328, Pages 35910074771, delta 36038416659 succeeded for current main evidence."
+      "evidence": "Current main 4ac06268048a3241d2ecaa5ce7c2638266500d75 has successful Deterministic publication CI 35910075328, matching pages build and deployment 35910074771, and deterministic delta validation 36038416659."
     },
     {
       "id": "metadata_preflight",
@@ -39,20 +39,30 @@
     {
       "id": "durable_run_state",
       "result": "PASS",
-      "evidence": "Metadata and discovery stages pass and are bound to current main and active resolver contract."
+      "evidence": "PREFLIGHT_METADATA_READY, PREFLIGHT_DISCOVERY_READY, and READINESS_PRELIMINARY remain valid against unchanged main and active contract."
     },
     {
-      "id": "final_gate_recertification",
+      "id": "workflow_regression",
       "result": "PASS",
-      "evidence": "Exact current main 4ac06268048a3241d2ecaa5ce7c2638266500d75 matches preliminary receipt; metadata/discovery/article evidence remain ready; Pages evidence is available through successful GitHub Actions pages build and deployment run 35910074771; no new blocking defect identified."
+      "evidence": "Only current-day workflow runs found are metadata preflight 36125861237 and discovery preflight 36125852502; both completed successfully; no later current-day blocking Actions failure is present."
+    },
+    {
+      "id": "github_publication_capability",
+      "result": "PASS",
+      "evidence": "Authenticated GitHub connector exposes repository read/write plus create_blob, create_tree, create_commit, update_ref, PR, Actions, and Pages-workflow inspection capabilities required by the runtime contract."
+    },
+    {
+      "id": "publisher_enabled",
+      "result": "PASS",
+      "evidence": "Daily AI Brief + QA remains enabled."
     }
   ],
   "warnings": [
     {
       "code": "bounded_recovery_used",
       "nonblocking": true,
-      "evidence": "Current-day branch was absent at guard start; existing zero-model recovery paths succeeded.",
-      "follow_up": "Final Gate must revalidate."
+      "evidence": "Current-day branch was absent at guard start; bounded zero-model metadata/discovery recovery succeeded without redoing editorial work.",
+      "follow_up": "Preserve the recovered checkpoints and proceed from READINESS_FINAL."
     }
   ],
   "blockers": [],
@@ -60,6 +70,10 @@
     {
       "action": "bounded_preflight_recovery",
       "evidence": "Runs 36125861237 and 36125852502 succeeded."
+    },
+    {
+      "action": "final_gate_capability_correction",
+      "evidence": "Pages evidence verified through GitHub Actions workflow run 35910074771; no dedicated Pages REST endpoint is required."
     }
   ],
   "workflow_evidence": {
@@ -89,8 +103,8 @@
     "final_gate": "enabled",
     "publisher": "enabled",
     "command_center_sync": "not_touched",
-    "after_action": "enabled"
+    "after_action": "paused"
   },
   "publication_authorized": true,
-  "next_action": "Publisher may resume from durable READINESS_FINAL; do not redo valid preflight work."
+  "next_action": "Proceed from durable READINESS_FINAL to the publisher/editorial kernel; do not rerun valid preflight work."
 }
