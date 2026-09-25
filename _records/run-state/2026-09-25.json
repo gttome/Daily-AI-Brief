@@ -2,21 +2,26 @@
   "schema_version": "1.0.0",
   "edition_date": "2026-09-25",
   "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
+  "current_sha": "159a91c930d491fa8db514e60c0012206c18cf23",
   "contract_runtime_version": "under80-v1/sep24-reliability-v1",
-  "stage": "PREFLIGHT_DISCOVERY_READY",
+  "stage": "READINESS_PRELIMINARY",
   "status": "pass",
   "retry_count": 0,
   "pr_number": null,
   "workflow_run_ids": [
-    "36125852502"
+    "36125852502",
+    "36125861237",
+    "35910075328",
+    "35910074771",
+    "36038416659"
   ],
   "artifact_paths": [
     "_records/discovery-preflight/result/article-evidence-receipt.json",
     "_records/discovery-preflight/result/article-evidence.json",
     "_records/discovery-preflight/result/date-enrichment.json",
     "_records/discovery-preflight/result/metadata-candidates.json",
-    "_records/discovery-preflight/result/receipt.json"
+    "_records/discovery-preflight/result/receipt.json",
+    "_records/readiness/2026-09-25.json"
   ],
   "invalidated_downstream_stages": [],
   "publication_lifecycle": "staged",
@@ -56,6 +61,26 @@
       "pr_number": null,
       "contract_runtime_version": "under80-v1/sep24-reliability-v1",
       "note": null
+    },
+    "READINESS_PRELIMINARY": {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-25T10:48:30Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "159a91c930d491fa8db514e60c0012206c18cf23",
+      "artifact_paths": [
+        "_records/readiness/2026-09-25.json"
+      ],
+      "workflow_run_ids": [
+        "36125861237",
+        "36125852502",
+        "35910075328",
+        "35910074771",
+        "36038416659"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": "Preliminary READY_WITH_WARNINGS; publication_authorized=false."
     }
   },
   "history": [
@@ -74,6 +99,14 @@
       "current_sha": "35270897251ad60d8f0412710e5afd7ca993df1e",
       "pr_number": null,
       "note": null
+    },
+    {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-25T10:48:30Z",
+      "status": "pass",
+      "current_sha": "159a91c930d491fa8db514e60c0012206c18cf23",
+      "pr_number": null,
+      "note": "Preliminary READY_WITH_WARNINGS; publication_authorized=false."
     }
   ]
 }
