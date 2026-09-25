@@ -60,7 +60,7 @@ test('handoff workflow validates manifest before expensive publication and conta
  const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
  assert.match(workflow,/Validate and freeze versioned publication manifest/);
  assert.match(workflow,/--publication-manifest/);
- assert.match(workflow,/manifest-bound accepted image contracts/);
+ assert.match(workflow,/Reuse accepted image checkpoint from manifest-bound review/);
  assert.doesNotMatch(workflow,/Regenerate public Watchlist from canonical state/);
  assert.doesNotMatch(workflow,/render-visual-assets\.mjs/);
  assert.doesNotMatch(workflow,/node --test _generator\/test\/\*\.test\.mjs/);
