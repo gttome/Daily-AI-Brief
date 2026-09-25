@@ -34,7 +34,7 @@ if(command==='seed-candidate'){
   ['MEDIA_READY',['_records/editorial-handoff/media.json','_records/editorial/media-preflight/'+date+'.json']],
   ['IMAGES_READY',['_records/editorial-handoff/final-image-review-'+date+'.json']],
   ['HANDOFF_COMMITTED',['_records/editorial-handoff/handoff.json']],
-  ['DETERMINISTIC_EXPANSION_READY',['_data/editions/'+date+'.json','data/operations/current-edition.json']]
+  ['DETERMINISTIC_EXPANSION_READY',['_data/editions/'+date+'.json']]
  ];
  for(const [stage,artifacts] of steps){const present=artifacts.filter(p=>fs.existsSync(path.join(root,p)));if(!present.length)throw Error('missing_stage_evidence:'+stage);state=markRunStage(state,stage,{currentSha:current,artifactPaths:present});}
  persistRunState(root,state);console.log(JSON.stringify({stage:state.stage,resume_stage:resolveResumeStage({state})},null,2));process.exit(0);

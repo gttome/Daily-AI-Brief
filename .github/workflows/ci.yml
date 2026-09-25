@@ -35,6 +35,9 @@ jobs:
       - name: Validate repository state
         run: node _generator/cli.mjs validate-repo --commit "${GITHUB_SHA}"
 
+      - name: Validate authoritative publication lifecycle
+        run: node _tools/publication-lifecycle.mjs validate
+
       - name: Validate integrated system state
         run: |
           latest_date="$(find _data/editions -maxdepth 1 -type f -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort | tail -1)"
