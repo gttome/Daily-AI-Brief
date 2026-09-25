@@ -25,3 +25,14 @@ These boundaries cover media normalization, image preflight and recovery after f
 ## Validation
 
 Frozen tests merge platform aliases, distinguish publisher-scoped GUIDs, preserve unknown/conflicting metadata and reject unsupported claim references. The actual approved September 14 set is copied only into a temporary test checkpoint; all six images remain reusable, a changed story invalidates only its own image, missing bytes restore exactly, and changed working bytes are not overwritten. No new image generation or ordinary production token saving is claimed.
+
+
+## Versioned image replacement after acceptance
+
+For editions governed by the September 26, 2026 image-quality contract, an accepted image replacement is a new versioned asset event, not an in-place overwrite.
+
+A replacement must preserve the superseded asset identity and record a new asset version, SHA-256, Git blob identity and cache key. The final image-review entry must remain bound to the versioned `2.0.0` editorial-quality evidence record, and that evidence must explicitly require post-deployment verification.
+
+After Pages deployment, deterministic validation fetches the live image bytes and compares their SHA-256 values with the accepted repository assets. HTTP 200 alone is not sufficient. A stale cache, old filename, mismatched bytes or unverified replacement keeps the publication/recovery state open.
+
+Do not edit historical approval evidence to make a replacement appear to have been the originally accepted asset. Preserve supersession history and regenerate only the affected derived surfaces.

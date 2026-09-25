@@ -91,3 +91,24 @@ For an image recovery, compare all replacement hashes against the observed main 
 When replacing an already-published story image, prefer a new versioned asset filename and update the canonical `path`, `cache_key` and `public_url`, regenerate all derived reader surfaces from the canonical edition, and verify the exact public asset after deployment. Do not rely on a stale branch URL or browser cache when judging the replacement.
 
 The September 10 recovery demonstrated that changing a query cache key alone can still serve stale raw-main bytes. If a byte comparison fails, use a new asset filename and regenerate the reader surfaces; do not report success from a Pages build alone.
+
+
+## Machine-enforced quality contract — effective September 26, 2026
+
+The image gate has two independent decisions:
+
+```text
+structural_gate = pass|fail
+editorial_quality_gate = pass|fail
+overall_gate = pass ONLY IF both gates pass
+```
+
+Structural validation proves file identity, integrity, supported format, exact 1200×630 canvas, expected path/story identity, accessibility metadata, accepted hash/Git blob identity, lock state and replacement identity. It does **not** prove editorial quality.
+
+Editorial quality requires a completed rendered benchmark comparison against `_records/image-quality/benchmark-profile-v1.json`. The evidence record is versioned as `2.0.0` and must preserve dimension-level findings for professional finish, meaningful detail, explanatory mechanism, annotation richness, visual depth, hierarchy, composition, story specificity and differentiation. An opaque numerical score is not sufficient.
+
+The six-image set is also a gate. Six valid files fail when their composition signatures are duplicated or their layouts, diagram grammar, information hierarchy or annotation patterns are excessively reused.
+
+Missing or unavailable editorial review is a blocking failure. Low-detail, generic, sparse or decorative-only visuals fail even when dimensions, hashes, accessibility and build checks pass.
+
+For a legitimate replacement, the record must preserve the superseded asset identity and use a new asset version, content hash and cache key. Post-deployment validation must verify that the reader serves the exact accepted bytes; a repository-only replacement is not completion evidence.

@@ -257,8 +257,8 @@ jobs:
           IMAGE_REVIEW_PATH: ${{ steps.publication_manifest.outputs.image_review_path }}
         run: |
           set -euo pipefail
-          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_MANIFEST_PATH"
-          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_REVIEW_PATH"
+          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_MANIFEST_PATH" --mode structural
+          node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_REVIEW_PATH" --mode combined
           printf '{"schema_version":"1.0.0","source":"publication_manifest","recovery_checkpoint_reused":%s,"regenerated":false}\n' "$RECOVERY_REUSE_IMAGES" > /tmp/visual-receipt.json
           echo "FINAL_IMAGE_REVIEW_PATH=$IMAGE_REVIEW_PATH" >> "$GITHUB_ENV"
 
@@ -403,7 +403,7 @@ jobs:
             echo '- Protected publication PR: **prohibited for qualification_nonproduction**' >> "$GITHUB_STEP_SUMMARY"
             echo '- Production merge / Pages deployment: **prohibited**' >> "$GITHUB_STEP_SUMMARY"
           fi
-          echo '- Visual path: deterministic only after Sep-17 parity + PNG integrity; otherwise story-scoped approved fallback' >> "$GITHUB_STEP_SUMMARY"
+          echo '- Image gate: **structural PASS + editorial benchmark PASS required; fail closed on either failure**' >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"
           cat /tmp/kernel-receipt.json 2>/dev/null || true
           cat /tmp/visual-receipt.json 2>/dev/null || true

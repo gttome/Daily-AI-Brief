@@ -3,6 +3,7 @@ import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {sha256} from './util.mjs';
 import {publicWatchlist,validateWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
+import {EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE,reviewedHandoffImages} from './image-gate.mjs';
 
 export const PUBLICATION_MANIFEST_VERSION='1.0.0';
 export const CONTRACT_FREEZE_DATE='2026-09-26';
@@ -52,6 +53,7 @@ export function publicationManifestContext(root,manifest){
   mediaReceipt:read('media_receipt'),
   imageManifest:read('image_manifest'),
   imageReview:read('image_review'),
+  imageQualityEvidence:manifest?.artifacts?.image_quality_evidence?read('image_quality_evidence'):null,
   watchlist:read('watchlist'),
   watchlistEvidence:read('watchlist_evidence'),
   bookMappings:read('book_mappings')
@@ -123,6 +125,20 @@ function imageErrors(root,ctx,{allowLegacyStoryIdentity=false}={}){
    }
   }
  }
+ if(ctx.manifest.edition_date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE){
+  const edition={
+   brief_date:ctx.manifest.edition_date,
+   edition_id:ctx.manifest.edition_id,
+   stories:(ctx.kernel.stories||[]).map(story=>{
+    const entry=ctx.imageReview?.[story.candidate_id]||{};
+    return {story_id:story.story_id,image:{path:entry.path,alt:story.visual?.alt_text||entry.alt,width:entry.width,height:entry.height}};
+   })
+  };
+  const gated=reviewedHandoffImages(edition,root,publicationArtifactPath(ctx.manifest,'image_review'),{mode:'combined'});
+  for(const error of gated.errors)errors.push('publication_manifest_image_quality:'+error);
+  const evidencePath=publicationArtifactPath(ctx.manifest,'image_quality_evidence');
+  if(gated.quality_evidence_path!==evidencePath)errors.push('publication_manifest_image_quality_evidence_path_mismatch');
+ }
  return errors;
 }
 function watchlistErrors(root,ctx,date,freeze){
@@ -160,6 +176,7 @@ export function publicationManifestErrors(root,manifest,{expectedBaseline=null,e
  if(manifest?.policy_profile!=='under80-v1')errors.push('publication_manifest_policy_profile_invalid');
  if(expectedStagingRef&&manifest?.staging_ref!==expectedStagingRef)errors.push('publication_manifest_staging_ref_mismatch');
  for(const [name,rule] of Object.entries(REQUIRED_ARTIFACTS))errors.push(...artifactErrors(root,name,manifest?.artifacts?.[name],rule));
+ if(date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE)for(const [name,rule] of Object.entries(FUTURE_IMAGE_QUALITY_ARTIFACTS))errors.push(...artifactErrors(root,name,manifest?.artifacts?.[name],rule));
  if(errors.some(x=>x.includes('artifact_missing')||x.includes('artifact_json_invalid')))return [...new Set(errors)];
  let ctx;
  try{ctx={root,...publicationManifestContext(root,manifest)};}catch{errors.push('publication_manifest_context_unreadable');return [...new Set(errors)];}
@@ -178,7 +195,9 @@ export function publicationManifestErrors(root,manifest,{expectedBaseline=null,e
  const deps=manifest?.lifecycle_dependencies||{};
  for(const stage of ['MEDIA_READY','IMAGES_READY','WATCHLIST_READY','HANDOFF_COMMITTED'])if(!Array.isArray(deps[stage])||!deps[stage].length)errors.push('publication_manifest_lifecycle_dependency_missing:'+stage);
  const handoffDeps=deps.HANDOFF_COMMITTED||[];
- for(const name of Object.keys(REQUIRED_ARTIFACTS))if(!handoffDeps.includes(name))errors.push('publication_manifest_handoff_dependency_missing:'+name);
+ const requiredDependencyArtifacts=[...Object.keys(REQUIRED_ARTIFACTS),...(date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE?Object.keys(FUTURE_IMAGE_QUALITY_ARTIFACTS):[])];
+ for(const name of requiredDependencyArtifacts)if(!handoffDeps.includes(name))errors.push('publication_manifest_handoff_dependency_missing:'+name);
+ if(date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE&&!(deps.IMAGES_READY||[]).includes('image_quality_evidence'))errors.push('publication_manifest_image_quality_dependency_missing');
  return [...new Set(errors)];
 }
 export function validatePublicationManifest(root,manifest,options={}){

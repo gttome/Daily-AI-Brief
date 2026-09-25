@@ -2,48 +2,46 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parseArgs} from '../_generator/lib/util.mjs';
-import {inspectPng,inspectWebp} from '../_generator/lib/visual-output.mjs';
+import {reviewedHandoffImages} from '../_generator/lib/image-gate.mjs';
 
 const args=parseArgs(process.argv.slice(2));
 if(!args.kernel||!args.images)throw Error('Requires --kernel and --images');
+const mode=String(args.mode||'combined');
+if(!['combined','structural'].includes(mode))throw Error('mode must be structural or combined');
 const kernel=JSON.parse(fs.readFileSync(path.resolve(args.kernel),'utf8'));
 const manifest=JSON.parse(fs.readFileSync(path.resolve(args.images),'utf8'));
-const rendererPolicy=JSON.parse(fs.readFileSync(path.resolve('_data/visual-renderer-policy.json'),'utf8'));
 const stories=kernel.stories||[];
 if(stories.length!==6)throw Error('six_story_kernel_required');
-const records=[];
-for(const story of stories){
- const entry=manifest[story.candidate_id];
- const errors=[];
- if(!entry)errors.push('manifest_entry_missing');
- if(entry){
-  if(entry.quality_accepted!==true)errors.push('quality_accepted_required');
-  const strictLock=kernel.brief_date>='2026-09-19';
-  const deterministicApproved=entry.generation_method==='deterministic_editorial_diagram'&&entry.renderer_verified===true&&rendererPolicy.sep17_parity_approved===true;
-  const professionalEditorial=entry.generation_method==='professional_editorial_diagram'&&entry.visual_reviewed===true&&entry.accepted_locked===true&&entry.lock_status==='accepted_locked';
-  const approvedMethod=strictLock?(entry.generation_method==='openai_image_generation'||deterministicApproved||professionalEditorial):['openai_image_generation','deterministic_editorial_diagram','professional_editorial_diagram'].includes(entry.generation_method);
-  if(!approvedMethod)errors.push('approved_generation_method_required');
-  if(strictLock&&(entry.accepted_locked!==true||entry.lock_status!=='accepted_locked'))errors.push('accepted_locked_required');
-  if(strictLock&&entry.generation_method==='deterministic_editorial_diagram'&&entry.renderer_verified!==true)errors.push('renderer_verified_required');
-  if(typeof entry.path!=='string'||!entry.path.startsWith(`briefs/images/${kernel.brief_date}/`))errors.push('edition_image_path_required');
-  if(!entry.path||!fs.existsSync(entry.path))errors.push('image_file_missing');
-  else {
-   const buffer=fs.readFileSync(entry.path),ext=path.extname(entry.path).toLowerCase();
-   const inspection=ext==='.svg'
-     ? {pass:/<svg\b/.test(buffer.toString('utf8'))&&/width="1200"/.test(buffer.toString('utf8'))&&/height="630"/.test(buffer.toString('utf8'))&&/role="img"/.test(buffer.toString('utf8'))&&/aria-label=/.test(buffer.toString('utf8'))&&/fill="#ffffff"/.test(buffer.toString('utf8')),width:1200,height:630,bytes:buffer.length,sha256:null,errors:[]}
-     : ext==='.webp'?inspectWebp(buffer,{minimumWidth:1200,minimumHeight:630}):inspectPng(buffer,{minimumWidth:1200,minimumHeight:630});
-   if(!['.png','.webp','.svg'].includes(ext))errors.push('unsupported_image_format');
-   if(!inspection.pass)errors.push(...inspection.errors);
-   if(entry.sha256&&entry.sha256!==inspection.sha256)errors.push('manifest_sha256_mismatch');
-   if(entry.width&&entry.width!==inspection.width)errors.push('manifest_width_mismatch');
-   if(entry.height&&entry.height!==inspection.height)errors.push('manifest_height_mismatch');
-   records.push({candidate_id:story.candidate_id,path:entry.path,bytes:inspection.bytes,width:inspection.width,height:inspection.height,sha256:inspection.sha256,errors});
-   continue;
-  }
- }
- records.push({candidate_id:story.candidate_id,path:entry?.path||null,errors});
-}
-const failures=records.filter(x=>x.errors.length);
-const receipt={schema_version:'1.0.0',brief_date:kernel.brief_date,images_expected:6,images_valid:records.length-failures.length,binary_transport_required:'github_git_data_api',records};
+const edition={
+  brief_date:kernel.brief_date,
+  edition_id:kernel.edition_id,
+  stories:stories.map(story=>{
+    const entry=manifest[story.candidate_id]||{};
+    return {
+      story_id:story.story_id,
+      image:{
+        path:entry.path,
+        alt:story.visual?.alt_text||entry.alt,
+        width:entry.width,
+        height:entry.height
+      }
+    };
+  })
+};
+const result=reviewedHandoffImages(edition,path.resolve('.'),String(args.images),{mode});
+const receipt={
+  schema_version:'2.0.0',
+  brief_date:kernel.brief_date,
+  mode,
+  images_expected:6,
+  images_valid:result.assets.length,
+  structural_gate:result.structural_gate||{result:result.errors.length?'fail':'pass'},
+  editorial_quality_gate:result.editorial_quality_gate||{result:mode==='structural'?'not_run':result.errors.length?'fail':'pass'},
+  overall_gate:result.overall_gate||{result:result.errors.length?'fail':'pass'},
+  quality_evidence_path:result.quality_evidence_path||null,
+  quality_evidence_sha256:result.quality_evidence_sha256||null,
+  binary_transport_required:'github_git_data_api',
+  errors:result.errors
+};
 console.log(JSON.stringify(receipt,null,2));
-if(failures.length)process.exitCode=2;
+if(result.errors.length)process.exitCode=2;

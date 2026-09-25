@@ -5,6 +5,7 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import {parseArgs,normalizeUrl} from '../_generator/lib/util.mjs';
 import {inspectPng,inspectWebp} from '../_generator/lib/visual-output.mjs';
+import {deployedImageByteErrors,EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE} from '../_generator/lib/image-gate.mjs';
 import {classifyCommandCenterObservation,commandCenterAccessContract} from '../_generator/lib/command-center-access.mjs';
 import {classifySourceHttpState} from '../_generator/lib/source-http-state.mjs';
 
@@ -45,6 +46,13 @@ async function probe(url){
   const response=await fetch(url,{signal:AbortSignal.timeout(10000),redirect:'follow',headers:{'user-agent':'DailyAIBriefValidation/2.0'}});
   return {url,status:response.status,ok:response.ok,resolved_url:response.url};
  }catch(error){return {url,status:null,ok:false,error:error.message};}
+}
+async function probeBytes(url){
+ try{
+  const response=await fetch(url,{signal:AbortSignal.timeout(15000),redirect:'follow',headers:{'user-agent':'DailyAIBriefValidation/2.0'}});
+  const bytes=response.ok?Buffer.from(await response.arrayBuffer()):Buffer.alloc(0);
+  return {url,status:response.status,ok:response.ok,resolved_url:response.url,bytes:bytes.length,sha256:response.ok?createHash('sha256').update(bytes).digest('hex'):null};
+ }catch(error){return {url,status:null,ok:false,error:error.message,bytes:0,sha256:null};}
 }
 function includedMedia(edition){
  const videos=Object.values(edition.worth_watching||{}).filter(x=>x?.status==='included');
@@ -121,8 +129,13 @@ if(completion&&edition){
   const datedOk=dated.ok&&dated.text.includes(displayDate)&&dated.text.includes('Daily Generative AI Brief');
   check('live_homepage_edition',homepageOk?'pass':'fail','critical',homepageOk?`Live homepage identifies ${displayDate}.`:JSON.stringify({status:homepage.status,expected_date:displayDate}));
   check('live_dated_edition',datedOk?'pass':'fail','critical',datedOk?`Live dated edition identifies ${displayDate}.`:JSON.stringify({status:dated.status,expected_date:displayDate}));
-  const liveAssets=stories.map(s=>s.image?.public_url).filter(Boolean),assetResults=await Promise.all(liveAssets.map(probe)),assetFailures=assetResults.filter(x=>!x.ok);
-  check('live_image_assets',liveAssets.length===6&&!assetFailures.length?'pass':'fail','critical',liveAssets.length!==6?`Expected six live image URLs; found ${liveAssets.length}.`:assetFailures.length?JSON.stringify(assetFailures):'All six live story image assets returned successful HTTP responses.');
+  const expectedLiveAssets=stories.filter(s=>s.image?.public_url&&s.image?.path&&exists(s.image.path)).map(s=>({url:s.image.public_url,path:s.image.path,sha256:hashFile(s.image.path)}));
+  const assetResults=await Promise.all(expectedLiveAssets.map(item=>probeBytes(item.url))),assetFailures=assetResults.filter(x=>!x.ok);
+  check('live_image_assets',expectedLiveAssets.length===6&&!assetFailures.length?'pass':'fail','critical',expectedLiveAssets.length!==6?`Expected six live image URLs; found ${expectedLiveAssets.length}.`:assetFailures.length?JSON.stringify(assetFailures):'All six live story image assets returned successful HTTP responses.');
+  if(date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE){
+   const byteErrors=deployedImageByteErrors(expectedLiveAssets,assetResults);
+   check('live_image_bytes',byteErrors.length?'fail':'pass','critical',byteErrors.length?byteErrors.join('; '):'All six deployed image byte streams exactly match the accepted repository assets.');
+  }
   const sources=await Promise.all(sourceUrls.map(probe));
   const sourceState=classifySourceHttpState(sources);
   check('source_http_state',sourceState.result,sourceState.severity,sourceState.evidence);
