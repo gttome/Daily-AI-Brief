@@ -47,7 +47,7 @@ test('public Watchlist is generated-only and September 23 research_score drift i
  assert.notDeepEqual(drift,generated);assert.deepEqual(publicWatchlist(canonical),generated);
 });
 test('September 23 Watchlist fixture remains 0 new, 3 updated, 13 carried forward',()=>{
- const canonical=JSON.parse(fs.readFileSync('_data/watchlist.json','utf8'));
+ const canonical=JSON.parse(fs.readFileSync('_records/watchlist/2026-09-23-canonical-fixture.json','utf8'));
  assert.equal(canonical.edition_date,'2026-09-23');
  assert.deepEqual(watchlistDailySummary(canonical),{new_today:0,updated_today:3,carried_forward:13});
  const surface=expectedWatchlistSurface(canonical);assert.equal(surface.changed_topics.length,3);
@@ -106,7 +106,7 @@ test('accepted image and media checkpoints are reused across deterministic downs
 test('same-edition Watchlist counts and changed-topic names match all three current reader surfaces',()=>{
  const canonical=JSON.parse(fs.readFileSync('_data/watchlist.json','utf8')),surface=expectedWatchlistSurface(canonical);
  const countText=surface.counts.new_today+' new today · '+surface.counts.updated_today+' updated · '+surface.counts.carried_forward+' carried forward.';
- for(const p of ['index.md','latest.md','briefs/2026-09-23.md']){const body=fs.readFileSync(p,'utf8');assert.ok(body.includes(countText));for(const t of surface.changed_topics)assert.ok(body.includes(t.name));}
+ for(const p of ['index.md','latest.md',`briefs/${canonical.edition_date}.md`]){const body=fs.readFileSync(p,'utf8');assert.ok(body.includes(countText));for(const t of surface.changed_topics)assert.ok(body.includes(t.name));}
 });
 test('current edition retains all hard counts and Agent Skills identity',()=>{
  const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-23.json','utf8')),kernel=JSON.parse(fs.readFileSync('_records/editorial-handoff/kernel.json','utf8')),media=JSON.parse(fs.readFileSync('_records/editorial-handoff/media.json','utf8')),images=JSON.parse(fs.readFileSync('_records/editorial-handoff/final-image-review-2026-09-23.json','utf8')),runtime=JSON.parse(fs.readFileSync('docs/operations/under80-runtime-contract.json','utf8'));

@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-25",
-  "updated_at": "2026-09-25T13:58:00Z",
-  "baseline_note": "September 25 recovery review preserved carried-forward topics and added only story-supported primary evidence for Agent Skills evaluation, governed multi-account agent access, and Copilot feature-default governance.",
+  "edition_date": "2026-09-23",
+  "updated_at": "2026-09-23T16:56:30Z",
+  "baseline_note": "September 23 review: no new topic was added; three existing topics were updated with same-edition primary evidence for model lifecycle governance, Agent Skills/observability, and harness engineering; remaining topics were carried forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -734,7 +734,7 @@
       "limitations": "Product features do not by themselves establish portability, reliability, or cross-vendor interoperability.",
       "next_action": "Test a reusable skill with explicit instructions/approvals and capture trace evidence for tool use, latency, retries, and failure handling.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-25T13:58:00Z",
+      "updated_at": "2026-09-23T16:56:30Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -797,16 +797,6 @@
           "checked_at": "2026-09-23T14:22:00Z",
           "development_id": "github-copilot-opentelemetry-2026-09-22",
           "review_depth": "full publisher changelog in bounded Sep23 evidence packet"
-        },
-        {
-          "title": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
-          "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
-          "publisher": "AWS Machine Learning",
-          "kind": "primary",
-          "publication_date": "2026-09-22",
-          "checked_at": "2026-09-25T10:47:33Z",
-          "development_id": "aws-skill-equipped-agent-evals-2026-09-22",
-          "review_depth": "full publisher article in bounded September 25 evidence packet"
         }
       ],
       "external_attention": [],
@@ -1010,7 +1000,7 @@
       "limitations": "Vendor implementations differ; workflow-specific evaluation is still required.",
       "next_action": "Make observability, permission boundaries, tool/data interfaces, and completion verification explicit in the harness and test them independently.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-25T13:58:00Z",
+      "updated_at": "2026-09-23T16:56:30Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -1103,16 +1093,6 @@
           "checked_at": "2026-09-23T14:22:00Z",
           "development_id": "aws-agentforce-public-sector-2026-09-22",
           "review_depth": "full publisher article in bounded Sep23 evidence packet"
-        },
-        {
-          "title": "Build a multi-account AI agent with AgentCore Gateway and MCP",
-          "url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
-          "publisher": "AWS Machine Learning",
-          "kind": "primary",
-          "publication_date": "2026-09-24",
-          "checked_at": "2026-09-25T10:47:33Z",
-          "development_id": "aws-multi-account-agentcore-mcp-2026-09-24",
-          "review_depth": "full publisher article in bounded September 25 evidence packet"
         }
       ],
       "external_attention": [],
@@ -1242,7 +1222,7 @@
       "limitations": "Evidence remains concentrated in the GitHub Copilot ecosystem; teams still need workload-specific evaluation before changing defaults.",
       "next_action": "Inventory workflows that pin or assume a specific model and define tested routing and replacement paths.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-25T13:58:00Z",
+      "updated_at": "2026-09-23T16:56:30Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -1275,16 +1255,6 @@
           "checked_at": "2026-09-23T14:22:00Z",
           "development_id": "github-copilot-gpt6-sol-luna-2026-09-22",
           "review_depth": "full publisher changelog in bounded Sep23 evidence packet"
-        },
-        {
-          "title": "Default Enablement of Copilot Features for Copilot Business and Enterprise",
-          "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
-          "publisher": "GitHub Changelog",
-          "kind": "primary",
-          "publication_date": "2026-09-24",
-          "checked_at": "2026-09-25T10:47:33Z",
-          "development_id": "github-copilot-default-enablement-2026-09-24",
-          "review_depth": "full publisher changelog in bounded September 25 evidence packet"
         }
       ],
       "external_attention": [],

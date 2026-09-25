@@ -17,7 +17,7 @@ test('current homepage Watchlist preview derives daily counts and changed-item l
  const updated=active.filter(topic=>watchlistDailyState(topic,data.edition_date)==='updated_today');
  const listed=fresh.length?fresh:updated;
  if(listed.length){
-   assert.ok(preview.includes(fresh.length?'New today:':'Updated today:'));
+   assert.ok(preview.includes(data.edition_date>='2026-09-24'?'Changed today:':(fresh.length?'New today:':'Updated today:')));
    for(const topic of listed) assert.ok(preview.includes(topic.name));
  }
 });

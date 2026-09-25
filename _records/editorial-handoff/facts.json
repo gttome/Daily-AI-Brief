@@ -1,122 +1,122 @@
 {
+  "m02": {
+    "event_date": "2026-09-23",
+    "source": {
+      "title": "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning",
+      "organization": "NVIDIA Developer",
+      "url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
+      "publication_date": "2026-09-23",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 3033,
+    "source_fetched_at": "2026-09-25T10:47:33Z",
+    "source_word_count_method": "retrieved_source_text_word_count",
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "selection_rationale": "Moves multimodal analysis into volumetric 3D reasoning with structured reporting and follow-up dialogue."
+  },
   "m04": {
     "event_date": "2026-09-23",
     "source": {
-      "title": "Nemotron 3 brings real-time speaker diarization to open-weight voice AI",
-      "organization": "Hugging Face / NVIDIA",
-      "url": "https://huggingface.co/blog/nvidia/nemotron-diarization",
+      "title": "Validate GPU Cluster Readiness Before AI Workloads Land",
+      "organization": "NVIDIA Developer",
+      "url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
       "publication_date": "2026-09-23",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3553,
-    "source_fetched_at": "2026-09-23T14:22:00Z",
+    "source_word_count": 2514,
+    "source_fetched_at": "2026-09-25T10:47:33Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes the architecture easier to evaluate and replace component by component."
-  },
-  "m03": {
-    "event_date": "2026-09-22",
-    "source": {
-      "title": "GPT-6 Sol and Luna expand model choice inside GitHub Copilot",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
-      "publication_date": "2026-09-22",
-      "evidence_type": "official_announcement",
-      "availability_status": "published"
-    },
-    "source_word_count": 645,
-    "source_fetched_at": "2026-09-23T14:22:00Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot policy layer."
+    "selection_rationale": "Workload-driven cluster validation addresses reliability gaps that static health checks can miss."
   },
   "m05": {
+    "event_date": "2026-09-24",
+    "source": {
+      "title": "Default Enablement of Copilot Features for Copilot Business and Enterprise",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+      "publication_date": "2026-09-24",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 601,
+    "source_fetched_at": "2026-09-25T10:47:33Z",
+    "source_word_count_method": "retrieved_source_text_word_count",
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "selection_rationale": "Makes enterprise AI governance concrete by changing how generally available Copilot capabilities are enabled by default."
+  },
+  "m07": {
     "event_date": "2026-09-23",
     "source": {
-      "title": "GitHub Copilot adds OpenTelemetry for agent observability",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+      "title": "Building the system for AI at work",
+      "organization": "Microsoft 365",
+      "url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/",
       "publication_date": "2026-09-23",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 469,
-    "source_fetched_at": "2026-09-23T14:22:00Z",
+    "source_word_count": 1253,
+    "source_fetched_at": "2026-09-25T10:47:33Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures, and model behavior instead of relying on the agent’s final answer."
-  },
-  "m06": {
-    "event_date": "2026-09-22",
-    "source": {
-      "title": "Confidential computing targets private production AI inference without giving up acceleration",
-      "organization": "NVIDIA Developer",
-      "url": "https://developer.nvidia.com/blog/enabling-private-high-performance-production-ai-inference-with-nvidia-confidential-computing/",
-      "publication_date": "2026-09-22",
-      "evidence_type": "official_announcement",
-      "availability_status": "published"
-    },
-    "source_word_count": 1547,
-    "source_fetched_at": "2026-09-23T14:22:00Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumptions, but teams still need workload-specific security and performance validation."
+    "selection_rationale": "Provides a systems view of knowledge-worker AI grounded in context, workflow, governance, and measurable outcomes."
   },
   "m01": {
-    "event_date": "2026-09-23",
-    "source": {
-      "title": "Copilot for JetBrains adds shared skills, instructions, plan review, and tool approvals",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
-      "publication_date": "2026-09-23",
-      "evidence_type": "official_announcement",
-      "availability_status": "published"
-    },
-    "source_word_count": 952,
-    "source_fetched_at": "2026-09-23T14:22:00Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Reusable skills become more useful when they are paired with organizational instructions, plan review, and explicit approvals. The result is a governed agent workflow where repeatable know-how is portable but high-impact actions stay reviewable."
-  },
-  "m09": {
     "event_date": "2026-09-22",
     "source": {
-      "title": "Agentforce and AWS connect unstructured public-sector evidence to governed agent workflows",
+      "title": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
       "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
+      "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
       "publication_date": "2026-09-22",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 4002,
-    "source_fetched_at": "2026-09-23T14:22:00Z",
+    "source_word_count": 3941,
+    "source_fetched_at": "2026-09-25T10:47:33Z",
     "source_word_count_method": "retrieved_source_text_word_count",
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accountable humans in the decision loop."
+    "selection_rationale": "Directly addresses Agent Skills with measurable skill-selection and instruction-following evaluation."
+  },
+  "m08": {
+    "event_date": "2026-09-24",
+    "source": {
+      "title": "Build a multi-account AI agent with AgentCore Gateway and MCP",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
+      "publication_date": "2026-09-24",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 4830,
+    "source_fetched_at": "2026-09-25T10:47:33Z",
+    "source_word_count_method": "retrieved_source_text_word_count",
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "selection_rationale": "Demonstrates a governed pattern for agents accessing distributed enterprise data through MCP while preserving ownership boundaries."
   }
 }

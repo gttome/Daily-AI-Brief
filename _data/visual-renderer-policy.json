@@ -14,5 +14,19 @@
   "preferred_public_format": "webp",
   "professional_generative_assets_required": true,
   "required_generation_method": "openai_image_generation",
-  "required_lock_status": "accepted_locked"
+  "required_lock_status": "accepted_locked",
+  "emergency_recovery": {
+    "edition_date": "2026-09-25",
+    "allowed_generation_method": "recovery_professional_editorial_diagram",
+    "expires_after_edition": true,
+    "requirements": [
+      "story_specific",
+      "1200x630_png",
+      "quality_accepted",
+      "accepted_locked",
+      "visual_reviewed",
+      "sha256_bound"
+    ],
+    "note": "Edition-scoped September 25 publication recovery only. Does not change the normal professional generative-image requirement for any other edition."
+  }
 }
