@@ -252,7 +252,7 @@ export function generatedFiles(edition, repoRoot) {
   }
   const analyticsPath=`_records/analytics/${edition.brief_date}.json`;
   if(!fs.existsSync(path.join(repoRoot,analyticsPath)))files.set(analyticsPath,JSON.stringify(publicAnalyticsEvidence(edition),null,2));
-  files.set('data/operations/current-edition.json', JSON.stringify({schema_version:'1.0.0',edition_id:edition.edition_id,brief_date:edition.brief_date,completion_path:'_records/publication/'+edition.brief_date+'/completion.json'},null,2));
+  // current-edition is a post-live-verification projection. Candidate rendering must never advance it.
   files.set('qa/index.md', renderQaDashboard(repoRoot));
   files.set('data/qa/30-day.json', JSON.stringify(qaAggregate(loadQaRecords(repoRoot)), null, 2));
   return files;
