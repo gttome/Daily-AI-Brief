@@ -63,7 +63,7 @@ test('historical PNG compatibility remains supported',()=>{
 });
 test('lifecycle closes only after delta validation and command-center reconciliation',()=>{
  let s=newRunState({date:'2026-09-24',baselineSha:baseline});
- const order=['PREFLIGHT_METADATA_READY','PREFLIGHT_DISCOVERY_READY','READINESS_PRELIMINARY','READINESS_FINAL','EDITORIAL_KERNEL_READY','MEDIA_READY','IMAGES_READY','HANDOFF_COMMITTED','PR_CREATED','DETERMINISTIC_EXPANSION_READY','PROTECTED_CI_PASS','MERGED','PAGES_VERIFIED','COMPLETION_PERSISTED'];
+ const order=['PREFLIGHT_METADATA_READY','PREFLIGHT_DISCOVERY_READY','READINESS_PRELIMINARY','READINESS_FINAL','EDITORIAL_KERNEL_READY','MEDIA_READY','IMAGES_READY','HANDOFF_COMMITTED','DETERMINISTIC_EXPANSION_READY','PR_CREATED','PROTECTED_CI_PASS','MERGED','PAGES_VERIFIED','COMPLETION_PERSISTED'];
  for(const stage of order)s=markRunStage(s,stage,{artifactPaths:[stage+'.json']});
  assert.notEqual(s.publication_lifecycle,'closed');assert.equal(resolveResumeStage({state:s}),'DELTA_VALIDATED');
  s=markRunStage(s,'DELTA_VALIDATED',{artifactPaths:['delta.json']});assert.equal(resolveResumeStage({state:s}),'COMMAND_CENTER_RECONCILED');
