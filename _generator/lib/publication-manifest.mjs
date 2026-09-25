@@ -82,7 +82,7 @@ function selectedMedia(media,date){
  const podcasts=(media?.podcasts||[]).filter(included);
  return {videos,podcasts};
 }
-function mediaErrors(ctx,date){
+function mediaErrors(ctx,date,{allowLegacyKernelHash=false}={}){
  const errors=[],{videos,podcasts}=selectedMedia(ctx.media,date),receipt=ctx.mediaReceipt;
  if(videos.length!==2)errors.push('publication_manifest_media_video_count_invalid');
  if(new Set(videos.map(x=>x._slot)).size!==2||!videos.some(x=>x._slot==='general')||!videos.some(x=>x._slot==='agents_non_technical_people'))errors.push('publication_manifest_media_focus_coverage_invalid');
@@ -106,11 +106,11 @@ function mediaErrors(ctx,date){
   if(!observed||observed.url!==item.url||observed.observed_date!==item.date||observed.observed_runtime_seconds!==(item.runtime??null)||observed.reachable!==true||observed.http_status!==200||!observed.verification_evidence||!observed.verification_timestamp)errors.push('publication_manifest_media_receipt_mismatch:'+String(item.id));
  }
  const kernelBytes=fs.readFileSync(path.join(ctx.root,publicationArtifactPath(ctx.manifest,'kernel')));
- if(receipt?.editorial_kernel_sha256!==sha256(kernelBytes))errors.push('publication_manifest_media_kernel_digest_mismatch');
+ if(receipt?.editorial_kernel_sha256!==sha256(kernelBytes)&&!allowLegacyKernelHash)errors.push('publication_manifest_media_kernel_digest_mismatch');
  if(receipt?.podcast_source_diversity?.pass!==true)errors.push('publication_manifest_media_source_diversity_invalid');
  return errors;
 }
-function imageErrors(root,ctx){
+function imageErrors(root,ctx,{allowLegacyStoryIdentity=false}={}){
  const errors=[],ids=(ctx.kernel.stories||[]).map(x=>x.candidate_id),storyById=new Map((ctx.kernel.stories||[]).map(x=>[x.candidate_id,x]));
  for(const [label,data] of [['image_manifest',ctx.imageManifest],['image_review',ctx.imageReview]]){
   if(!sameSet(Object.keys(data||{}),ids))errors.push('publication_manifest_'+label+'_candidate_set_mismatch');
@@ -118,7 +118,7 @@ function imageErrors(root,ctx){
    const entry=data?.[id],story=storyById.get(id);
    if(!entry||entry.accepted_locked!==true||entry.lock_status!=='accepted_locked')errors.push('publication_manifest_'+label+'_not_locked:'+id);
    if(label==='image_review'){
-    if(entry?.story_id!==story?.story_id)errors.push('publication_manifest_image_review_story_mismatch:'+id);
+    if(entry?.story_id!==story?.story_id&&!allowLegacyStoryIdentity)errors.push('publication_manifest_image_review_story_mismatch:'+id);
     if(!safeRelative(entry?.path)||!fs.existsSync(path.join(root,entry.path)))errors.push('publication_manifest_image_review_asset_missing:'+id);
    }
   }
@@ -168,7 +168,10 @@ export function publicationManifestErrors(root,manifest,{expectedBaseline=null,e
  if(!selected.every(id=>ctx.facts?.[id]))errors.push('publication_manifest_facts_selection_mismatch');
  if(ctx.metadataCandidates?.profile_id!==manifest.policy_profile||!selected.every(id=>(ctx.metadataCandidates?.candidates||[]).some(x=>x.candidate_id===id)))errors.push('publication_manifest_metadata_selection_mismatch');
  if(ctx.articleEvidence?.profile_id!==manifest.policy_profile||!selected.every(id=>(ctx.articleEvidence?.model_visible||[]).some(x=>x.candidate_id===id)))errors.push('publication_manifest_article_evidence_selection_mismatch');
- errors.push(...mediaErrors(ctx,date),...imageErrors(root,ctx),...watchlistErrors(root,ctx,date,manifest?.freeze?.watchlist));
+ const legacyDate=date<CONTRACT_FREEZE_DATE;
+ const allowLegacyKernelHash=legacyDate&&manifest?.migration?.allow_legacy_media_kernel_hash_semantics===true;
+ const allowLegacyStoryIdentity=legacyDate&&manifest?.migration?.allow_legacy_image_story_identity===true;
+ errors.push(...mediaErrors(ctx,date,{allowLegacyKernelHash}),...imageErrors(root,ctx,{allowLegacyStoryIdentity}),...watchlistErrors(root,ctx,date,manifest?.freeze?.watchlist));
  if(!Array.isArray(ctx.bookMappings?.editions?.[date]))errors.push('publication_manifest_book_mapping_date_missing');
  const deps=manifest?.lifecycle_dependencies||{};
  for(const stage of ['MEDIA_READY','IMAGES_READY','WATCHLIST_READY','HANDOFF_COMMITTED'])if(!Array.isArray(deps[stage])||!deps[stage].length)errors.push('publication_manifest_lifecycle_dependency_missing:'+stage);
