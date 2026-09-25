@@ -4,17 +4,55 @@
   "title": "Daily AI Brief Publication Manifest",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version","manifest_kind","edition_date","edition_id","baseline_sha","staging_ref","policy_profile","artifacts","freeze","lifecycle_dependencies"],
+  "required": [
+    "schema_version",
+    "manifest_kind",
+    "edition_date",
+    "edition_id",
+    "baseline_sha",
+    "staging_ref",
+    "policy_profile",
+    "artifacts",
+    "freeze",
+    "lifecycle_dependencies"
+  ],
   "properties": {
-    "schema_version": {"const":"1.0.0"},
-    "manifest_kind": {"const":"daily_ai_brief_publication"},
-    "edition_date": {"type":"string","format":"date"},
-    "edition_id": {"type":"string","minLength":1},
-    "baseline_sha": {"type":"string","pattern":"^[a-f0-9]{40}$"},
-    "staging_ref": {"type":"string","minLength":1},
-    "policy_profile": {"const":"under80-v1"},
-    "artifacts": {"type":"object"},
-    "freeze": {"type":"object"},
-    "lifecycle_dependencies": {"type":"object"}
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "manifest_kind": {
+      "const": "daily_ai_brief_publication"
+    },
+    "edition_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "edition_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "staging_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "policy_profile": {
+      "const": "under80-v1"
+    },
+    "artifacts": {
+      "type": "object"
+    },
+    "freeze": {
+      "type": "object"
+    },
+    "lifecycle_dependencies": {
+      "type": "object"
+    },
+    "migration": {
+      "type": "object"
+    }
   }
 }
