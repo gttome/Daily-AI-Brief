@@ -231,7 +231,7 @@ export const RECOVERY_MATRIX=Object.freeze({
 });
 
 export function acceptedImageReusable(entry,{storyChanged=false,observedSha256=null,observedGitBlobSha=null}={}){
- if(storyChanged||!entry||entry.accepted_locked!==true||entry.lock_status!=='accepted_locked'||!entry.path)return false;
+ if(storyChanged||!entry||entry.accepted_locked!==true||entry.lock_status!=='accepted_locked')return false;
  const stable=entry.sha256||entry.git_blob_sha||entry.cache_key||null;if(!stable)return false;
  if(observedSha256&&entry.sha256&&entry.sha256!==observedSha256)return false;
  if(observedGitBlobSha&&entry.git_blob_sha&&entry.git_blob_sha!==observedGitBlobSha)return false;
