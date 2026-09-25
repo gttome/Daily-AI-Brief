@@ -43,3 +43,14 @@ test('post-editorial expansion uses the validated final image-review path',()=>{
  assert.match(workflow,/args=\(expand[\s\S]*--images "\$FINAL_IMAGE_REVIEW_PATH"/);
  assert.doesNotMatch(workflow,/args=\(expand[\s\S]*--images "\$IMAGE_REVIEW_PATH"/);
 });
+
+test('qualification replay reuses original edition publication timestamp without changing production timing',()=>{
+ const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
+ assert.match(workflow,/EXECUTION_MODE: \$\{\{ steps\.handoff\.outputs\.execution_mode \}\}/);
+ assert.match(workflow,/if \[ "\$EXECUTION_MODE" = "qualification_nonproduction" \]; then/);
+ assert.match(workflow,/replay_edition="_data\/editions\/\$replay_date\.json"/);
+ assert.match(workflow,/original_published_at=/);
+ assert.match(workflow,/if \[ -n "\$original_published_at" \]; then published_at="\$original_published_at"; fi/);
+ assert.match(workflow,/published_at="\$\(date -u \+%Y-%m-%dT%H:%M:%SZ\)"/);
+});
+
