@@ -6,27 +6,13 @@
   "minimum_width": 1200,
   "minimum_height": 630,
   "minimum_font_px": 12,
-  "fallback": "accepted_locked_professional_generative_asset",
-  "note": "Publication must fail closed unless six story-specific professionally reviewed generative assets are supplied. Low-detail deterministic diagrams are not an acceptable publication fallback.",
+  "fallback": "professional_asset_only_fail_closed",
+  "note": "Publication must fail closed unless six story-specific professionally reviewed generative assets are supplied. No low-quality deterministic or emergency image fallback is permitted.",
   "parity_reviewed_at": "2026-09-20",
   "parity_basis": "September 20 reader review rejected the deterministic box-diagram renderer as materially below the established professional textbook standard. Deterministic rendering is disabled for publication until separately requalified against that visual baseline.",
   "low_detail_fallback_allowed": false,
   "preferred_public_format": "webp",
   "professional_generative_assets_required": true,
   "required_generation_method": "openai_image_generation",
-  "required_lock_status": "accepted_locked",
-  "emergency_recovery": {
-    "edition_date": "2026-09-25",
-    "allowed_generation_method": "recovery_professional_editorial_diagram",
-    "expires_after_edition": true,
-    "requirements": [
-      "story_specific",
-      "1200x630_png",
-      "quality_accepted",
-      "accepted_locked",
-      "visual_reviewed",
-      "sha256_bound"
-    ],
-    "note": "Edition-scoped September 25 publication recovery only. Does not change the normal professional generative-image requirement for any other edition."
-  }
+  "required_lock_status": "accepted_locked"
 }
