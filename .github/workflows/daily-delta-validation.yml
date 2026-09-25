@@ -208,23 +208,27 @@ jobs:
           echo "exit_code=$exit_code" >> "$GITHUB_OUTPUT"
           exit "$exit_code"
 
-      - name: Build public-safe Command Center delta handoff
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && always()
+      - name: Project canonical status for already-closed edition
+        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value == 'true'
         run: |
           set -euo pipefail
-          if [ -f /tmp/daily-validation.json ] && [ -f /tmp/watchlist-delta.json ]; then
-            args=( \
-              --validation /tmp/daily-validation.json \
-              --watchlist /tmp/watchlist-delta.json \
-              --policy docs/operations/efficiency-operating-policy.json \
-              --out /tmp/command-center-delta.json \
-            )
-            incident="_records/command-center/${{ steps.date.outputs.value }}-incident-and-recovery.json"
-            if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
-            node _tools/command-center-delta.mjs "${args[@]}"
-          else
-            echo 'Validation inputs unavailable; Command Center handoff packet not generated.'
-          fi
+          node _tools/publication-lifecycle.mjs project \
+            --date "${{ steps.date.outputs.value }}" \
+            --out /tmp/publication-status.json
+
+      - name: Build read-only Command Center refresh handoff for already-closed edition
+        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value == 'true'
+        run: |
+          set -euo pipefail
+          args=( \
+            --status /tmp/publication-status.json \
+            --policy docs/operations/efficiency-operating-policy.json \
+            --out /tmp/command-center-delta.json \
+          )
+          incident="_records/command-center/${{ steps.date.outputs.value }}-incident-and-recovery.json"
+          if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
+          node _tools/command-center-delta.mjs "${args[@]}"
+          echo 'Closed-edition refresh is read-only: no editorial, media, Watchlist, image, lifecycle, or publication work is replayed.'
 
       - name: Prepare protected completion persistence
         id: persistence
