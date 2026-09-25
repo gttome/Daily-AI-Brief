@@ -253,7 +253,7 @@
       "metadata_candidates_max": 20,
       "image_transport_method": "github_git_data_api"
     },
-    "hard_stop": "After the editorial bundle, verified media, dated Watchlist evidence, six accepted and locked images, and the complete versioned publication manifest all pass pre-handoff validation, create the handoff atomically and advance only the isolated handoff branch. GitHub Actions may consume those frozen artifacts but may not repair them downstream.",
+    "hard_stop": "After the editorial bundle, verified media, dated Watchlist evidence, six accepted and locked images, and the complete versioned publication manifest all pass pre-handoff validation, create the handoff atomically and advance only the isolated handoff branch, then use the authenticated GitHub connector to open or reuse one unlabelled PR from that branch to main. Do not add publication-candidate in the scheduled publisher. GitHub Actions may consume the frozen artifacts but may not repair them downstream; it owns deterministic expansion, adds publication-candidate only after deterministic validation succeeds, and protected CI owns promotion.",
     "template_path": "docs/operations/editorial-handoff-template.json",
     "template_usage": "Read this compact shape-only template instead of inspecting generator implementation code during normal Work. Replace every placeholder from fresh reviewed evidence.",
     "production_branch_prefix": "editorial-handoff/production/",
