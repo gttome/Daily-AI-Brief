@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0.0",
+  "iteration": "reliability-iteration-1",
+  "baseline_main_sha": "2dd85e96cd37cfe5926b0e4eb25a567581618c7a",
+  "strategy": "minimum_sufficient_affected_tests",
+  "changed_components": [
+    "_generator/lib/run-state.mjs",
+    "_tools/run-state.mjs",
+    ".github/workflows/post-editorial-kernel.yml",
+    ".github/workflows/ci.yml",
+    "_generator/test-selection.json"
+  ],
+  "targeted_first": [
+    "_generator/test/run-state-recovery.test.mjs",
+    "_generator/test/under80-handoff-transport.test.mjs",
+    "_generator/test/publication-lifecycle.test.mjs"
+  ],
+  "failure_injection_scope": [
+    "metadata",
+    "discovery",
+    "editorial_kernel",
+    "media",
+    "images",
+    "handoff",
+    "deterministic_expansion",
+    "publication_pr",
+    "protected_ci",
+    "merge",
+    "pages",
+    "completion",
+    "command_center_sync"
+  ],
+  "prohibited_rework": [
+    "historical_brief_replay",
+    "editorial_regeneration",
+    "media_rediscovery",
+    "accepted_image_regeneration",
+    "whole_pipeline_restart_after_late_failure"
+  ],
+  "full_ci_policy": "Run only after affected targeted tests pass on the integrated PR head.",
+  "authoritative_results_location": "GitHub Checks on the exact Iteration 1 PR head; final run IDs are recorded in the merged PR closure comment to avoid invalidating the tested head."
+}
