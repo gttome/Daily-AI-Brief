@@ -15,7 +15,8 @@
     "media_receipt_path": "_records/editorial/media-preflight/YYYY-MM-DD.json",
     "image_review_path": "_records/editorial-handoff/final-image-review-YYYY-MM-DD.json",
     "watchlist_path": "_records/editorial-handoff/watchlist-YYYY-MM-DD.json",
-    "watchlist_evidence_path": "_records/watchlist-sweeps/YYYY-MM-DD.json"
+    "watchlist_evidence_path": "_records/watchlist-sweeps/YYYY-MM-DD.json",
+    "image_quality_evidence_path": "_records/image-quality/YYYY-MM-DD-editorial.json"
   },
   "kernel_shape": {
     "schema_version": "1.0.0",
@@ -152,7 +153,11 @@
       "locked": true,
       "git_blob_sha": "git-blob-sha-returned-by-create_blob",
       "accepted_locked": true,
-      "lock_status": "accepted_locked"
+      "lock_status": "accepted_locked",
+      "asset_version": "v1-story-specific",
+      "overall_gate": "pass",
+      "quality_evidence_path": "_records/image-quality/YYYY-MM-DD-editorial.json",
+      "quality_evidence_sha256": "sha256-of-versioned-quality-evidence"
     }
   },
   "media_shape": {
@@ -222,7 +227,11 @@
     "Push the handoff manifest once, then end Work immediately; do not run deterministic release stages in Work.",
     "For a qualification test, use execution_mode=qualification_nonproduction and an editorial-handoff/qualification/* branch. That mode prohibits publication PR creation, publication-candidate labeling, main merge, Pages deployment, and production mutation.",
     "Beginning with the 2026-09-24 edition, every accepted image manifest entry must include story_id, sha256, 1200x630 dimensions, inspection_result=pass, locked=true, accepted_locked=true, lock_status=accepted_locked, and the canonical Git blob identity returned by create_blob.",
-    "Beginning with the 2026-09-24 edition, persist a current-day media preflight receipt bound to the editorial-kernel SHA-256, with exactly two videos and two podcasts, verification timestamps/evidence, and a passing two-source podcast-diversity result. Reuse it unchanged on downstream retries while the kernel hash is unchanged."
+    "Beginning with the 2026-09-24 edition, persist a current-day media preflight receipt bound to the editorial-kernel SHA-256, with exactly two videos and two podcasts, verification timestamps/evidence, and a passing two-source podcast-diversity result. Reuse it unchanged on downstream retries while the kernel hash is unchanged.",
+    "Beginning with the 2026-09-26 edition, structural_gate and editorial_quality_gate are independent. overall_gate=pass only when both pass; a technically valid image is never sufficient by itself.",
+    "Beginning with the 2026-09-26 edition, the publication manifest must bind image_quality_evidence as a versioned 2.0.0 artifact and include it in IMAGES_READY and HANDOFF_COMMITTED lifecycle dependencies.",
+    "Editorial image review must compare all six rendered images against _records/image-quality/benchmark-profile-v1.json and preserve dimension-level evidence for professional finish, meaningful detail, explanatory mechanism, annotation richness, visual depth, hierarchy, composition, story specificity and differentiation.",
+    "Image replacement is append-only evidence: use a new asset version, content hash and cache key, identify the superseded asset, and require post-deployment byte verification. Do not silently overwrite accepted evidence."
   ],
   "qualification_handoff_manifest_shape": {
     "schema_version": "1.1.0",
@@ -298,12 +307,69 @@
       "image_review": "path + explicit accepted-images-map-v1 adapter + git_blob_sha1 digest",
       "watchlist": "immutable dated path + schema_version + git_blob_sha1 digest",
       "watchlist_evidence": "dated sweep path + schema_version + git_blob_sha1 digest",
-      "book_mappings": "path + schema_version + git_blob_sha1 digest"
+      "book_mappings": "path + schema_version + git_blob_sha1 digest",
+      "image_quality_evidence": "versioned 2.0.0 dated editorial-quality evidence + git_blob_sha1 digest"
     },
     "freeze": {
       "media": "MEDIA_READY; no downstream repair",
       "images": "IMAGES_READY; manifest-only image review path",
       "watchlist": "WATCHLIST_READY; immutable counts and public projection digest"
     }
+  },
+  "image_quality_evidence_shape": {
+    "schema_version": "2.0.0",
+    "record_kind": "editorial_image_quality",
+    "edition_date": "YYYY-MM-DD",
+    "edition_id": "dab-edition-YYYY-MM-DD",
+    "benchmark_profile": "sep09-sep10-premium3-v1",
+    "benchmark_profile_path": "_records/image-quality/benchmark-profile-v1.json",
+    "reviewed_at": "ISO-8601 timestamp",
+    "review_method": "rendered visual benchmark comparison",
+    "review_status": "complete",
+    "set_review": {
+      "result": "pass",
+      "composition_differentiation": "pass",
+      "layout_differentiation": "pass",
+      "diagram_grammar_differentiation": "pass",
+      "information_hierarchy_differentiation": "pass",
+      "annotation_pattern_differentiation": "pass",
+      "assessment": "Explicit rendered six-image set comparison against the locked benchmark."
+    },
+    "images": [
+      {
+        "story_id": "stable-editorial-story-id",
+        "asset_path": "briefs/images/YYYY-MM-DD/01-story.webp",
+        "asset_hash": "accepted-image-sha256",
+        "git_blob_sha": "git-blob-sha-returned-by-create_blob",
+        "cache_key": "accepted-image-cache-key",
+        "asset_version": "v1-story-specific",
+        "structural_gate": {
+          "result": "pass",
+          "checks": "all required structural checks pass"
+        },
+        "editorial_quality_gate": {
+          "result": "pass",
+          "benchmark_comparison": "dimension-level pass evidence; no opaque aggregate score",
+          "story_specificity": "pass",
+          "information_density": "pass",
+          "explanatory_mechanism": "pass",
+          "annotation_quality": "pass",
+          "depth_hierarchy": "pass",
+          "composition": "pass",
+          "generic_or_sparse": false,
+          "decorative_only": false,
+          "meaningful_components": "at least eight story-specific components",
+          "composition_signature": "distinct composition identity",
+          "layout_signature": "layout identity",
+          "diagram_grammar": "diagram grammar identity",
+          "hierarchy_signature": "information hierarchy identity",
+          "annotation_pattern_signature": "annotation pattern identity",
+          "assessment": "Rendered editorial assessment."
+        },
+        "overall_gate": "pass",
+        "supersedes": null,
+        "deployment_verification_required": false
+      }
+    ]
   }
 }
