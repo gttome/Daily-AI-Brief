@@ -221,7 +221,7 @@ export function reviewedHandoffImages(edition, root, manifestPath, {mode='combin
     }
   }
   errors.push(...editorialErrors);
-  const editorialGate={result:mode==='structural'?'not_run':editorialErrors.length?'fail':'pass',errors:editorialErrors},overallGate={result:errors.length?'fail':'pass'};
+  const editorialGate={result:mode==='structural'?'not_run':editorialErrors.length?'fail':'pass',errors:editorialErrors},overallGate={result:mode==='structural'?'not_run':errors.length?'fail':'pass'};
   return {review_path:manifestPath,review_sha256:sha256(raw||Buffer.alloc(0)),quality_evidence_path:qualityEvidencePath,quality_evidence_sha256:qualityEvidenceSha256,assets,structural_gate:structuralGate,editorial_quality_gate:editorialGate,overall_gate:overallGate,errors:[...new Set(errors)]};
 }
 
