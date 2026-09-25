@@ -1,0 +1,33 @@
+{
+  "schema_version": "2.0.0",
+  "event_id": "dab-completion-2026-09-25-iteration0-migration",
+  "run_id": "kernel-36147360903",
+  "phase": "live_verified",
+  "edition_id": "dab-edition-2026-09-25",
+  "observed_at": "2026-09-25T16:28:00Z",
+  "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "candidate_sha": "86f2415fb91aefb2aa7000da9c0ca3a89ea14faf",
+  "publication_merge_sha": "1e44aa2e10cce2a593c4f677192b523f03594985",
+  "production_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
+  "deployed_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
+  "pr_number": 217,
+  "repair_pr_numbers": [218, 219],
+  "ci_run_id": 36147513639,
+  "final_production_ci_run_id": 36153630540,
+  "pages": {"run_id":36153629964,"conclusion":"success","verified_at":"2026-09-25T15:23:12Z","deployed_sha":"ed3344500a630fc44b04fc48211c027a344a8c6b","deployment_url":"https://gttome.github.io/Daily-AI-Brief/"},
+  "live_verified_at": "2026-09-25T16:28:00Z",
+  "live_verification": {
+    "final_result":"pass",
+    "homepage_edition_date":"2026-09-25",
+    "homepage_heading":"Daily Generative AI Brief — September 25, 2026",
+    "dated_edition_verified":true,
+    "route_count":16,
+    "source_validation_run_id":36153718323,
+    "source_workflow_conclusion":"failure",
+    "live_route_check_result":"pass",
+    "pages_check_result":"pass",
+    "migration_note":"The source delta-validation workflow failed on stale pre-repair PNG asset metadata after the accepted SVG replacement. Its live route and Pages checks passed for the final production SHA. Iteration 0 records the current live outcome without recreating or replacing completed editorial/image work."
+  },
+  "evidence":{"validated_event":"_records/publication/2026-09-25/kernel-36147360903.validated.json","run_state":"_records/run-state/2026-09-25.json","final_image_review":"_records/editorial-handoff/final-image-review-2026-09-25.json","publication_pr":217,"image_repair_pr":218,"image_policy_pr":219},
+  "migration":{"created_by":"reliability_iteration_0","reason":"Reconcile already-live September 25 production state into the new authoritative lifecycle without rewriting historical validated events."}
+}
