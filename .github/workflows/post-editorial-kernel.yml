@@ -249,15 +249,17 @@ jobs:
           echo "reuse_expansion=$reuse_expansion" >> "$GITHUB_OUTPUT"
           echo "Recovery checkpoint: images=$reuse_images expansion=$reuse_expansion"
 
-      - name: Validate manifest-bound accepted image contracts
+      - name: Reuse accepted image checkpoint from manifest-bound review
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
+          RECOVERY_REUSE_IMAGES: ${{ steps.recovery.outputs.reuse_images }}
           IMAGE_MANIFEST_PATH: ${{ steps.publication_manifest.outputs.image_manifest_path }}
           IMAGE_REVIEW_PATH: ${{ steps.publication_manifest.outputs.image_review_path }}
         run: |
           set -euo pipefail
           node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_MANIFEST_PATH"
           node _tools/validate-handoff-images.mjs --kernel "$KERNEL_PATH" --images "$IMAGE_REVIEW_PATH"
+          printf '{"schema_version":"1.0.0","source":"publication_manifest","recovery_checkpoint_reused":%s,"regenerated":false}\n' "$RECOVERY_REUSE_IMAGES" > /tmp/visual-receipt.json
           echo "FINAL_IMAGE_REVIEW_PATH=$IMAGE_REVIEW_PATH" >> "$GITHUB_ENV"
 
       - name: Deterministically expand canonical edition
