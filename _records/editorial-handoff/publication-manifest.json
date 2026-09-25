@@ -1,0 +1,130 @@
+{
+  "schema_version": "1.0.0",
+  "manifest_kind": "daily_ai_brief_publication",
+  "edition_date": "2026-09-25",
+  "edition_id": "dab-edition-2026-09-25",
+  "baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "staging_ref": "editorial-handoff/production/2026-09-25-recovery",
+  "policy_profile": "under80-v1",
+  "artifacts": {
+    "kernel": {
+      "path": "_records/editorial-handoff/kernel.json",
+      "schema_version": "1.0.0",
+      "digest": "git_blob_sha1:fb4675dda7e7fd0ce68c6f8019e74ec7e914402a"
+    },
+    "facts": {
+      "path": "_records/editorial-handoff/facts.json",
+      "schema_version": "legacy-unversioned",
+      "adapter": "candidate-facts-map-v1",
+      "digest": "git_blob_sha1:2b26aa70f20ab093e742d2b7ce88bcf8507a6d14"
+    },
+    "metadata_candidates": {
+      "path": "_records/editorial-handoff/metadata-candidates.json",
+      "schema_version": "1.1.0",
+      "digest": "git_blob_sha1:d0807e1c1d433ef61e67f531eb8d5c5ee1c7ad8a"
+    },
+    "article_evidence": {
+      "path": "_records/editorial-handoff/article-evidence.json",
+      "schema_version": "1.0.0",
+      "digest": "git_blob_sha1:592c15dc5a3fcbc84db9dcbf8ec2e9b1f3f445d6"
+    },
+    "media": {
+      "path": "_records/editorial-handoff/media.json",
+      "schema_version": "legacy-unversioned",
+      "adapter": "selected-media-v1",
+      "digest": "git_blob_sha1:626cbaac2d7c432dde410bbd62a1c5dd46a0f485"
+    },
+    "media_receipt": {
+      "path": "_records/editorial/media-preflight/2026-09-25.json",
+      "schema_version": "1.0.0",
+      "digest": "git_blob_sha1:3455bee37d04cbfec0ee34f2e952216bb9c47b1d"
+    },
+    "image_manifest": {
+      "path": "_records/editorial-handoff/images.json",
+      "schema_version": "legacy-unversioned",
+      "adapter": "accepted-images-map-v1",
+      "digest": "git_blob_sha1:12a070bd2a2c772b8bc137d7f618d28182887762"
+    },
+    "image_review": {
+      "path": "_records/editorial-handoff/final-image-review-2026-09-25.json",
+      "schema_version": "legacy-unversioned",
+      "adapter": "accepted-images-map-v1",
+      "digest": "git_blob_sha1:486d90213e888dfadae4311873b0b54580018bbc"
+    },
+    "watchlist": {
+      "path": "_records/editorial-handoff/watchlist-2026-09-25.json",
+      "schema_version": "1.0.0",
+      "digest": "git_blob_sha1:de76ca6ae9b6304483d5bb998bb367c113316529"
+    },
+    "watchlist_evidence": {
+      "path": "_records/watchlist-sweeps/2026-09-25.json",
+      "schema_version": "1.0.0",
+      "digest": "git_blob_sha1:e05d33c0213a2ed7150f2d5bdd3cb5329cbbe283"
+    },
+    "book_mappings": {
+      "path": "_data/book-reading.json",
+      "schema_version": "1.0.0",
+      "digest": "git_blob_sha1:2014b0a2c217ab3f5450bda53a60744312696e1d"
+    }
+  },
+  "freeze": {
+    "media": {
+      "state": "MEDIA_READY",
+      "artifact": "media",
+      "receipt_artifact": "media_receipt",
+      "repair_allowed_downstream": false
+    },
+    "images": {
+      "state": "IMAGES_READY",
+      "artifact": "image_manifest",
+      "review_artifact": "image_review",
+      "path_resolution": "manifest_only"
+    },
+    "watchlist": {
+      "state": "WATCHLIST_READY",
+      "artifact": "watchlist",
+      "evidence_artifact": "watchlist_evidence",
+      "counts": {
+        "new_today": 0,
+        "updated_today": 3,
+        "carried_forward": 13
+      },
+      "public_projection_path": "data/watchlist.json",
+      "public_projection_digest": "git_blob_sha1:0d982195e71d507e322338f1f0f0d20f12bdc6c7",
+      "repair_allowed_downstream": false
+    }
+  },
+  "lifecycle_dependencies": {
+    "MEDIA_READY": [
+      "kernel",
+      "media",
+      "media_receipt"
+    ],
+    "IMAGES_READY": [
+      "kernel",
+      "image_manifest",
+      "image_review"
+    ],
+    "WATCHLIST_READY": [
+      "watchlist",
+      "watchlist_evidence"
+    ],
+    "HANDOFF_COMMITTED": [
+      "kernel",
+      "facts",
+      "metadata_candidates",
+      "article_evidence",
+      "media",
+      "media_receipt",
+      "image_manifest",
+      "image_review",
+      "watchlist",
+      "watchlist_evidence",
+      "book_mappings"
+    ]
+  },
+  "migration": {
+    "source": "reliability_iteration_2",
+    "note": "Binds already-completed September 25 artifacts without rewriting editorial, media, image, Watchlist, or reader content."
+  }
+}
