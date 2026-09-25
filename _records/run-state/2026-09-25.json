@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-25",
+  "baseline_main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "current_sha": "fc90bcc79350d08051e6f469c8e481db7130349a",
+  "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+  "stage": "PREFLIGHT_METADATA_READY",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": null,
+  "workflow_run_ids": [
+    "36125861237"
+  ],
+  "artifact_paths": [
+    "_records/preflight/2026-09-25/date-enrichment.json",
+    "_records/preflight/2026-09-25/metadata-candidates.json",
+    "_records/preflight/2026-09-25/receipt.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "publication_lifecycle": "staged",
+  "operational_status": "PREPARING",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-25T10:47:33.678Z",
+      "status": "pass",
+      "input_baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+      "current_sha": "fc90bcc79350d08051e6f469c8e481db7130349a",
+      "artifact_paths": [
+        "_records/preflight/2026-09-25/date-enrichment.json",
+        "_records/preflight/2026-09-25/metadata-candidates.json",
+        "_records/preflight/2026-09-25/receipt.json"
+      ],
+      "workflow_run_ids": [
+        "36125861237"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    }
+  },
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-25T10:47:33.678Z",
+      "status": "pass",
+      "current_sha": "fc90bcc79350d08051e6f469c8e481db7130349a",
+      "pr_number": null,
+      "note": null
+    }
+  ]
+}
