@@ -1,24 +1,96 @@
 {
-  "schema_version":"1.0.0",
-  "edition_date":"2026-09-25",
-  "stage":"preliminary",
-  "status":"READY_WITH_WARNINGS",
-  "main_sha":"4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "certified_at":"2026-09-25T10:48:30Z",
-  "checks":[
-    {"id":"main_protection","result":"PASS","evidence":"Ruleset 23615327 active; PR and strict validate required."},
-    {"id":"ci_pages_delta","result":"PASS","evidence":"CI 35910075328, Pages 35910074771, delta 36038416659 succeeded for current main evidence."},
-    {"id":"metadata_preflight","result":"PASS","evidence":"Run 36125861237 succeeded; ready=true; model_calls=0; 20 candidates; coverage 7/5/8."},
-    {"id":"discovery_preflight","result":"PASS","evidence":"Run 36125852502 succeeded; coverage_ready=true; model_calls=0; 20 candidates; coverage 7/5/8."},
-    {"id":"article_evidence","result":"PASS","evidence":"ready=true; 9 retrieved; balanced 3/3/3; 9829 chars within 12000 cap."},
-    {"id":"agent_skills","result":"PASS","evidence":"2 story-ready signals; preferred candidate m01."},
-    {"id":"durable_run_state","result":"PASS","evidence":"Metadata and discovery stages pass and are bound to current main and active resolver contract."}
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-25",
+  "stage": "final",
+  "status": "READY_WITH_WARNINGS",
+  "main_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "certified_at": "2026-09-25T13:19:08Z",
+  "checks": [
+    {
+      "id": "main_protection",
+      "result": "PASS",
+      "evidence": "Ruleset 23615327 active; PR and strict validate required."
+    },
+    {
+      "id": "ci_pages_delta",
+      "result": "PASS",
+      "evidence": "CI 35910075328, Pages 35910074771, delta 36038416659 succeeded for current main evidence."
+    },
+    {
+      "id": "metadata_preflight",
+      "result": "PASS",
+      "evidence": "Run 36125861237 succeeded; ready=true; model_calls=0; 20 candidates; coverage 7/5/8."
+    },
+    {
+      "id": "discovery_preflight",
+      "result": "PASS",
+      "evidence": "Run 36125852502 succeeded; coverage_ready=true; model_calls=0; 20 candidates; coverage 7/5/8."
+    },
+    {
+      "id": "article_evidence",
+      "result": "PASS",
+      "evidence": "ready=true; 9 retrieved; balanced 3/3/3; 9829 chars within 12000 cap."
+    },
+    {
+      "id": "agent_skills",
+      "result": "PASS",
+      "evidence": "2 story-ready signals; preferred candidate m01."
+    },
+    {
+      "id": "durable_run_state",
+      "result": "PASS",
+      "evidence": "Metadata and discovery stages pass and are bound to current main and active resolver contract."
+    },
+    {
+      "id": "final_gate_recertification",
+      "result": "PASS",
+      "evidence": "Exact current main 4ac06268048a3241d2ecaa5ce7c2638266500d75 matches preliminary receipt; metadata/discovery/article evidence remain ready; Pages evidence is available through successful GitHub Actions pages build and deployment run 35910074771; no new blocking defect identified."
+    }
   ],
-  "warnings":[{"code":"bounded_recovery_used","nonblocking":true,"evidence":"Current-day branch was absent at guard start; existing zero-model recovery paths succeeded.","follow_up":"Final Gate must revalidate."}],
-  "blockers":[],
-  "repairs_performed":[{"action":"bounded_preflight_recovery","evidence":"Runs 36125861237 and 36125852502 succeeded."}],
-  "workflow_evidence":{"metadata_preflight":{"run_id":36125861237,"conclusion":"success"},"discovery_preflight":{"run_id":36125852502,"conclusion":"success"},"ci":{"run_id":35910075328,"conclusion":"success"},"pages":{"run_id":35910074771,"conclusion":"success"},"delta_validation":{"run_id":36038416659,"conclusion":"success"}},
-  "automation_state":{"preflight_guard":"enabled","final_gate":"enabled","publisher":"enabled","command_center_sync":"not_touched","after_action":"enabled"},
-  "publication_authorized":false,
-  "next_action":"Final Gate revalidates; publisher must not start early."
+  "warnings": [
+    {
+      "code": "bounded_recovery_used",
+      "nonblocking": true,
+      "evidence": "Current-day branch was absent at guard start; existing zero-model recovery paths succeeded.",
+      "follow_up": "Final Gate must revalidate."
+    }
+  ],
+  "blockers": [],
+  "repairs_performed": [
+    {
+      "action": "bounded_preflight_recovery",
+      "evidence": "Runs 36125861237 and 36125852502 succeeded."
+    }
+  ],
+  "workflow_evidence": {
+    "metadata_preflight": {
+      "run_id": 36125861237,
+      "conclusion": "success"
+    },
+    "discovery_preflight": {
+      "run_id": 36125852502,
+      "conclusion": "success"
+    },
+    "ci": {
+      "run_id": 35910075328,
+      "conclusion": "success"
+    },
+    "pages": {
+      "run_id": 35910074771,
+      "conclusion": "success"
+    },
+    "delta_validation": {
+      "run_id": 36038416659,
+      "conclusion": "success"
+    }
+  },
+  "automation_state": {
+    "preflight_guard": "enabled",
+    "final_gate": "enabled",
+    "publisher": "enabled",
+    "command_center_sync": "not_touched",
+    "after_action": "enabled"
+  },
+  "publication_authorized": true,
+  "next_action": "Publisher may resume from durable READINESS_FINAL; do not redo valid preflight work."
 }
