@@ -2,7 +2,7 @@
 layout: default
 title: "AWS uses MCP and AgentCore Gateway to connect agents across account boundaries"
 description: "Enterprise agents often need access to distributed data without centralizing everything. A gateway-plus-MCP pattern can separate agent orchestration from data ownership while prese"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png?v=9ee924fc974b7762"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2"
 permalink: /stories/2026-09-25/aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boundaries/
 brief_date: 2026-09-25
 story_id: dab-story-2026-09-25-ab3f39a4
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram showing a central agent, gateway, account-local MCP servers, authorization boundaries, and an audited governed response.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png?v=9ee924fc974b7762)
+![Professional white-background instructional diagram showing a central agent, gateway, account-local MCP servers, authorization boundaries, and an audited governed response.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2)
 
 **Summary:** AWS presents a multi-account agent architecture where each business unit keeps data in its own account while a central agent queries approved MCP servers through AgentCore Gateway using cross-account authorization.
 

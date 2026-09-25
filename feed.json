@@ -10,7 +10,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows/",
       "title": "NVIDIA opens 3D CT reasoning model for volumetric radiology workflows",
       "summary": "NVIDIA introduced NV-Reason-CT, an open 3D CT vision-language model designed to reason across full volumetric chest and abdomen scans, produce structured diagnostic reports, and support multistep follow-up dialogue.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png?v=bf765b462d75b3fa",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg?v=professional-20260925-r2",
       "date_published": "2026-09-25T13:00:00-05:00",
       "tags": [
         "multimodal AI",
@@ -24,7 +24,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness/",
       "title": "NVIDIA adds workload-driven validation for GPU cluster readiness",
       "summary": "NVIDIA’s Cluster Readiness Engine uses real distributed workloads across topology-aware GPU groups to test whether a cluster is actually ready for production AI workloads rather than relying only on component health checks.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.png?v=59f15009ee16051e",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg?v=professional-20260925-r2",
       "date_published": "2026-09-25T13:00:00-05:00",
       "tags": [
         "GPU infrastructure",
@@ -38,7 +38,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/github-changes-the-default-policy-for-generally-available-copilot-features/",
       "title": "GitHub changes the default policy for generally available Copilot features",
       "summary": "GitHub introduced a global default policy for generally available Copilot features and supported client capabilities in Business and Enterprise settings, shifting how new capabilities become enabled across organizations.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.png?v=a5e3e7b06861ad3a",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg?v=professional-20260925-r2",
       "date_published": "2026-09-25T13:00:00-05:00",
       "tags": [
         "GitHub Copilot",
@@ -52,7 +52,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/",
       "title": "Microsoft frames workplace AI as a system of models, context, agents, and governance",
       "summary": "Microsoft’s AI at Work update argues that enterprise value comes from connecting copilots and agents to organizational context, workflow, governance, and measurement rather than treating AI as a standalone chat interface.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png?v=642ad488499257a4",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2",
       "date_published": "2026-09-25T13:00:00-05:00",
       "tags": [
         "knowledge work",
@@ -66,7 +66,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures/",
       "title": "AWS adds skill-specific evaluation for agents using reusable procedures",
       "summary": "AWS shows how Strands Evals and Amazon Bedrock AgentCore Evaluations can test whether skill-equipped agents select the correct reusable skill and follow its instructions, rather than judging only the fluency of the final answer.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.png?v=5c9dda37b01869de",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg?v=professional-20260925-r2",
       "date_published": "2026-09-25T13:00:00-05:00",
       "tags": [
         "Agent Skills",
@@ -80,7 +80,7 @@
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-25/aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boundaries/",
       "title": "AWS uses MCP and AgentCore Gateway to connect agents across account boundaries",
       "summary": "AWS presents a multi-account agent architecture where each business unit keeps data in its own account while a central agent queries approved MCP servers through AgentCore Gateway using cross-account authorization.",
-      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png?v=9ee924fc974b7762",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2",
       "date_published": "2026-09-25T13:00:00-05:00",
       "tags": [
         "MCP",
