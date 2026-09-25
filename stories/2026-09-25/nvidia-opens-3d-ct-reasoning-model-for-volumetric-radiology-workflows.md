@@ -2,7 +2,7 @@
 layout: default
 title: "NVIDIA opens 3D CT reasoning model for volumetric radiology workflows"
 description: "The release pushes multimodal reasoning beyond 2D images into full 3D clinical volumes. For AI engineering teams, it highlights the growing importance of structured reasoning, doma"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png?v=bf765b462d75b3fa"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg?v=professional-20260925-r2"
 permalink: /stories/2026-09-25/nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows/
 brief_date: 2026-09-25
 story_id: dab-story-2026-09-25-fbf2fd8f
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram showing a 3D CT volume passing through multimodal reasoning, structured reporting, and human clinical review.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png?v=bf765b462d75b3fa)
+![Professional white-background instructional diagram showing a 3D CT volume passing through multimodal reasoning, structured reporting, and human clinical review.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg?v=professional-20260925-r2)
 
 **Summary:** NVIDIA introduced NV-Reason-CT, an open 3D CT vision-language model designed to reason across full volumetric chest and abdomen scans, produce structured diagnostic reports, and support multistep follow-up dialogue.
 
