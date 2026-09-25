@@ -7,6 +7,7 @@ import {createHash} from 'node:crypto';
 import {
   deployedImageByteErrors,
   reviewedHandoffImages,
+  reviewedImages,
   validateBenchmarkProfile
 } from '../lib/image-gate.mjs';
 
@@ -193,4 +194,12 @@ test('production wiring preserves fail-closed policy and two-stage validation',(
   const daily=fs.readFileSync('_tools/daily-validation.mjs','utf8');
   assert.match(daily,/live_image_bytes/);
   assert.match(daily,/deployedImageByteErrors/);
+});
+
+
+test('actual September 10 premium3 benchmark set remains accepted without regeneration',()=>{
+  const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-10.json','utf8'));
+  const result=reviewedImages(edition,process.cwd());
+  assert.deepEqual(result.errors,[]);
+  assert.equal(result.assets.length,6);
 });
