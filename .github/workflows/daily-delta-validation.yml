@@ -87,9 +87,9 @@ jobs:
           const date=process.env.EDITION_DATE;
           let closed=false;
           try {
-            const state=JSON.parse(fs.readFileSync('_records/run-state/'+date+'.json','utf8'));
+            const lifecycle=JSON.parse(fs.readFileSync('_records/publication/'+date+'/lifecycle.json','utf8'));
             const completion=JSON.parse(fs.readFileSync('_records/publication/'+date+'/completion.json','utf8'));
-            closed=state.stage==='CLOSED'&&state.publication_lifecycle==='closed'&&completion.pages?.conclusion==='success';
+            closed=['COMPLETED','CC_SYNCED'].includes(lifecycle.stage)&&lifecycle.terminal_outcome==='COMPLETED'&&completion.phase==='live_verified'&&completion.pages?.conclusion==='success';
           } catch {}
           fs.appendFileSync(process.env.GITHUB_OUTPUT,'value='+(closed?'true':'false')+'\n');
           NODE
