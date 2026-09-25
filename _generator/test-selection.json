@@ -26,6 +26,20 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/image-gate.mjs",
+        "_tools/validate-handoff-images.mjs",
+        "_records/image-quality/benchmark-profile-v1.json",
+        "_generator/test/image-quality-gate.test.mjs",
+        "docs/images/publisher-policy.md",
+        "_tools/daily-validation.mjs"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/image-quality-gate.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/publication-manifest.mjs",
         "_tools/publication-manifest.mjs",
         "_records/editorial-handoff/publication-manifest.json",
@@ -122,7 +136,19 @@
     "publication_manifest_invalid_digest",
     "publication_manifest_unsupported_adapter",
     "frozen_media_mismatch",
-    "frozen_watchlist_projection_mismatch"
+    "frozen_watchlist_projection_mismatch",
+    "image_structurally_valid_editorially_weak",
+    "image_structurally_valid_generic",
+    "image_duplicate_composition_set",
+    "image_wrong_dimensions",
+    "image_clipped_or_corrupt",
+    "image_accessibility_missing",
+    "image_benchmark_quality_pass",
+    "image_quality_evidence_missing",
+    "image_editorial_review_unavailable",
+    "image_replacement_identity_not_versioned",
+    "image_deployed_byte_mismatch",
+    "image_historical_fixture_preserved"
   ],
   "prohibitions": [
     "run_all_by_default_after_isolated_change",
