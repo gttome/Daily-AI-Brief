@@ -128,8 +128,7 @@ jobs:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
           IMAGES_PATH: ${{ steps.handoff.outputs.images_path }}
-          MEDIA_PATH: ${{ steps.publication_manifest.outputs.media_path }}
-          IMAGE_REVIEW_PATH: ${{ steps.publication_manifest.outputs.image_review_path }}
+          MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
           METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
           ARTICLE_EVIDENCE_PATH: ${{ steps.handoff.outputs.article_evidence_path }}
           PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
@@ -266,7 +265,7 @@ jobs:
         env:
           KERNEL_PATH: ${{ steps.handoff.outputs.kernel_path }}
           FACTS_PATH: ${{ steps.handoff.outputs.facts_path }}
-          MEDIA_PATH: ${{ steps.handoff.outputs.media_path }}
+          MEDIA_PATH: ${{ steps.publication_manifest.outputs.media_path }}
           METADATA_CANDIDATES_PATH: ${{ steps.handoff.outputs.metadata_candidates_path }}
           COVERAGE_PERIOD: ${{ steps.handoff.outputs.coverage_period }}
         run: |
