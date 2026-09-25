@@ -13,6 +13,22 @@ The September 9, 2026 story-image set is the repository benchmark for visual qua
 
 Future custom images must be comparable in **professional finish, information density, instructional clarity, depth, annotation quality, and textbook-illustration polish**. Matching the benchmark does not mean copying its subject or exact layout; each story must have its own composition.
 
+## September 25, 2026 quality assessment and forward requirement
+
+The September 25 replacement images are an improvement over the rejected low-quality recovery images, but they are **still materially below the professional finish, visual detail, explanatory depth, annotation richness, and textbook-quality polish demonstrated by the September 9 benchmark and the accepted September 10 `premium3` set**.
+
+This is an explicit quality finding, not a historical note to be ignored after September 25. For every new Daily Generative AI Brief:
+
+- the earlier high-quality benchmark is the minimum visual acceptance standard;
+- “better than the previous failed image” is **not** sufficient for PASS;
+- technically valid dimensions, readable labels, correct metadata, SVG/PNG/WebP validity, or a successful site build are **not** sufficient for PASS;
+- images must match the earlier benchmark in professional composition, information density, meaningful story-specific detail, refined rendering, depth, hierarchy, annotations, and instructional value;
+- reviewers must compare the rendered six-image set against the September 9 and accepted September 10 benchmark images before publication;
+- if any final image is visibly less professional, less detailed, more schematic, more generic, flatter, or materially less informative than those benchmark sets, the image gate must fail and the image must be regenerated or replaced before publication;
+- there is no lower-quality recovery, emergency, deterministic, programmatic, or placeholder path. The system must fail closed rather than publish imagery below the benchmark.
+
+**Acceptance rule:** a future image set is publishable only when it can reasonably sit beside the best earlier Daily Brief images without a noticeable downgrade in visual quality or explanatory richness.
+
 ## Required visual standard
 
 Every custom story image MUST:
