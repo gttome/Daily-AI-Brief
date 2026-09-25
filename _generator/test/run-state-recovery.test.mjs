@@ -122,6 +122,8 @@ test('post-editorial workflow reuses valid image and expansion checkpoints',()=>
  assert.match(workflow,/reuse_expansion/);
  assert.match(workflow,/Reuse accepted image checkpoint/);
  assert.match(workflow,/if: steps\.recovery\.outputs\.reuse_expansion != 'true'/);
+ assert.match(workflow,/--images \"\$FINAL_IMAGE_REVIEW_PATH\"/);
+ assert.doesNotMatch(workflow,/--images \"\$IMAGE_REVIEW_PATH\"/);
 });
 
 test('post-editorial retry suppresses duplicate PRs and records recovery evidence',()=>{
