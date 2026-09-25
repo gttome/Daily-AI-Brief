@@ -142,6 +142,8 @@ function qualityRecordErrors(edition,record,manifestEntries,assets){
     if(item.git_blob_sha!==actual.git_blob_sha||entry.git_blob_sha!==actual.git_blob_sha)errors.push('quality_evidence_git_blob_mismatch:'+entry.path);
     if(item.cache_key!==entry.cache_key)errors.push('quality_evidence_cache_key_mismatch:'+entry.path);
     if(item.asset_version!==entry.asset_version)errors.push('quality_evidence_asset_version_mismatch:'+entry.path);
+    if(JSON.stringify(item.supersedes??null)!==JSON.stringify(entry.supersedes??null))errors.push('quality_evidence_supersedes_mismatch:'+entry.path);
+    if(Boolean(item.deployment_verification_required)!==Boolean(entry.deployment_verification_required))errors.push('quality_evidence_deployment_verification_flag_mismatch:'+entry.path);
     errors.push(...structuralEvidenceErrors(item).map(x=>x+':'+entry.path));
     errors.push(...editorialEvidenceErrors(item).map(x=>x+':'+entry.path));
     errors.push(...replacementErrors(item).map(x=>x+':'+entry.path));
@@ -184,7 +186,18 @@ export function reviewedHandoffImages(edition, root, manifestPath, {mode='combin
       const width=inspection.width||0,height=inspection.height||0,ratio=height?width/height:0,target=1200/630;
       if(!['.png','.webp','.svg'].includes(ext)||!inspection.pass||width!==1200||height!==630||Math.abs(ratio-target)>0.001)errors.push('Invalid accepted handoff image canvas: '+i.path);
       if(i.sha256&&i.sha256!==hash)errors.push('Accepted handoff image bytes changed: '+i.path);
-      if(edition.brief_date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE&&i.git_blob_sha!==blob)errors.push('Accepted handoff image Git blob identity changed: '+i.path);
+      if(edition.brief_date>=EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE){
+        if(i.git_blob_sha!==blob)errors.push('Accepted handoff image Git blob identity changed: '+i.path);
+        if(!text(i.asset_version)||!text(i.cache_key))errors.push('Accepted handoff image version/cache identity missing: '+i.path);
+        const old=i.supersedes;
+        if(old!==null&&old!==undefined){
+          if(!text(old.asset_path)||!text(old.asset_hash)||!text(old.cache_key)||!text(old.asset_version))errors.push('Accepted handoff image supersession identity incomplete: '+i.path);
+          if(old.asset_hash===hash)errors.push('Accepted handoff replacement hash did not change: '+i.path);
+          if(old.cache_key===i.cache_key)errors.push('Accepted handoff replacement cache key did not change: '+i.path);
+          if(old.asset_version===i.asset_version)errors.push('Accepted handoff replacement version did not change: '+i.path);
+          if(i.deployment_verification_required!==true)errors.push('Accepted handoff replacement must require deployed-byte verification: '+i.path);
+        }
+      }
       if(Number.isInteger(story.image?.width)&&story.image.width!==width)errors.push('Edition image width mismatch: '+i.path);
       if(Number.isInteger(story.image?.height)&&story.image.height!==height)errors.push('Edition image height mismatch: '+i.path);
       hashes.add(hash);assets.push({path:i.path,sha256:hash,git_blob_sha:blob,bytes:bytes.length,width,height,format:ext.slice(1),cache_key:i.cache_key||null,asset_version:i.asset_version||null});
