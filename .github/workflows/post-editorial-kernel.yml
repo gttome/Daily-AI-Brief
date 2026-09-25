@@ -273,7 +273,7 @@ jobs:
         run: |
           set -euo pipefail
           published_at="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
-          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --metadata "$METADATA_CANDIDATES_PATH" --images "$IMAGE_REVIEW_PATH" --media "$MEDIA_PATH" --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
+          args=(expand --kernel "$KERNEL_PATH" --facts "$FACTS_PATH" --metadata "$METADATA_CANDIDATES_PATH" --images "$FINAL_IMAGE_REVIEW_PATH" --media "$MEDIA_PATH" --published-at "$published_at" --coverage "$COVERAGE_PERIOD" --out /tmp/staged-edition.json)
           node _tools/editorial-kernel.mjs "${args[@]}"
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
 
