@@ -118,6 +118,18 @@
       "tests": [
         "_generator/test/publication-lifecycle.test.mjs"
       ]
+    },
+    {
+      "patterns": [
+        "_generator/lib/command-center-delta.mjs",
+        "_tools/command-center-delta.mjs",
+        "_generator/test/command-center-delta.test.mjs"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/command-center-delta.test.mjs",
+        "_generator/test/publication-lifecycle.test.mjs"
+      ]
     }
   ],
   "sentinel_cases": [
@@ -148,7 +160,20 @@
     "image_editorial_review_unavailable",
     "image_replacement_identity_not_versioned",
     "image_deployed_byte_mismatch",
-    "image_historical_fixture_preserved"
+    "image_historical_fixture_preserved",
+    "canonical_status_completed",
+    "canonical_status_running",
+    "canonical_status_blocked_preserves_work",
+    "canonical_status_failed",
+    "canonical_status_candidate_ready",
+    "canonical_status_merged_pages_pending",
+    "canonical_status_pages_success_live_pending",
+    "canonical_status_live_verified_cc_sync_pending",
+    "command_center_exact_parity",
+    "command_center_stale_copy_detected",
+    "command_center_failed_refresh_not_current",
+    "command_center_refresh_cannot_mutate_lifecycle",
+    "no_fallback_verified_state"
   ],
   "prohibitions": [
     "run_all_by_default_after_isolated_change",
