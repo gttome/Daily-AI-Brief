@@ -177,3 +177,20 @@ test('September 25 accepted historical image fixture remains valid without regen
   assert.deepEqual(result.errors,[]);
   assert.equal(result.overall_gate.result,'pass');
 });
+
+
+test('production wiring preserves fail-closed policy and two-stage validation',()=>{
+  const policy=JSON.parse(fs.readFileSync('_data/visual-renderer-policy.json','utf8'));
+  assert.equal(policy.low_detail_fallback_allowed,false);
+  assert.equal(policy.deterministic_png_enabled,false);
+  assert.equal(policy.fallback,'professional_asset_only_fail_closed');
+  const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
+  assert.match(workflow,/--mode structural/);
+  assert.match(workflow,/--mode combined/);
+  const manifestLib=fs.readFileSync('_generator/lib/publication-manifest.mjs','utf8');
+  assert.match(manifestLib,/image_quality_evidence/);
+  assert.match(manifestLib,/publication_manifest_image_quality_dependency_missing/);
+  const daily=fs.readFileSync('_tools/daily-validation.mjs','utf8');
+  assert.match(daily,/live_image_bytes/);
+  assert.match(daily,/deployedImageByteErrors/);
+});
