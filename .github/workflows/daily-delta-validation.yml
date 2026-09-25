@@ -242,19 +242,23 @@ jobs:
           fi
           completion="_records/publication/$EDITION_DATE/completion.json"
           state="_records/run-state/$EDITION_DATE.json"
+          lifecycle="_records/publication/$EDITION_DATE/lifecycle.json"
           branch="finalization/$EDITION_DATE-${EXPECTED_SHA:0:8}"
           if git ls-remote --exit-code --heads origin "refs/heads/$branch" >/dev/null 2>&1; then
             git fetch origin "$branch"
             remote_head="$(git rev-parse "origin/$branch")"
             git show "origin/$branch:$completion" >/dev/null
             git show "origin/$branch:$state" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const x=JSON.parse(s);process.exit(x.stage==='CLOSED'&&x.publication_lifecycle==='closed'?0:1)})"
+            git show "origin/$branch:$lifecycle" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const x=JSON.parse(s);process.exit(['COMPLETED','CC_SYNCED'].includes(x.stage)&&x.terminal_outcome==='COMPLETED'?0:1)})"
+            git show "origin/$branch:data/operations/current-edition.json" >/dev/null
+            git show "origin/$branch:data/operations/publication-status.json" >/dev/null
             echo "needed=true" >> "$GITHUB_OUTPUT"
             echo "branch=$branch" >> "$GITHUB_OUTPUT"
             echo "head_sha=$remote_head" >> "$GITHUB_OUTPUT"
             echo "Reusing durable finalization branch $branch at $remote_head."
             exit 0
           fi
-          if [ -f "$completion" ] && [ -f "$state" ] && node -e "const s=require('./$state');const c=require('./$completion');process.exit(s.stage==='CLOSED'&&s.publication_lifecycle==='closed'&&c.pages?.conclusion==='success'?0:1)"; then
+          if [ -f "$completion" ] && [ -f "$state" ] && [ -f "$lifecycle" ] && node -e "const s=require('./$state');const c=require('./$completion');const l=require('./$lifecycle');process.exit(s.stage==='CLOSED'&&s.publication_lifecycle==='closed'&&['COMPLETED','CC_SYNCED'].includes(l.stage)&&l.terminal_outcome==='COMPLETED'&&c.phase==='live_verified'&&c.pages?.conclusion==='success'?0:1)"; then
             echo "needed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
