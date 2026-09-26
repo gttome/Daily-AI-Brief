@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "editorial_passes": 1,
+  "post_editorial_passes": 0,
+  "stories": [
+    {
+      "ordinal": 1,
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Security Lab uses a Taskflow Agent to drive AI-powered fuzzing workflows",
+      "source_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 2,
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub agentic autofix can use Copilot Memory as repository-specific security context",
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 3,
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft reorganizes Copilot around Home, Code and persistent Autopilot work",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 4,
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft Copilot Managed Runtime brings governed code execution inside the Microsoft 365 tenant boundary",
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 5,
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can suggest new or updated Agent Skills from reusable conversation experience",
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true
+    },
+    {
+      "ordinal": 6,
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub Copilot canvases let users describe a workflow surface in plain English and have an agent build it",
+      "source_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+      "agent_skill": false
+    }
+  ],
+  "allocation": "2/2/2",
+  "agent_skills_stories": 1,
+  "production_mutation": false
+}
