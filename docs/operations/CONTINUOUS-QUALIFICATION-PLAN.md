@@ -169,6 +169,13 @@ For each of the six selected stories:
 
 This control is qualification-safe and production-neutral. It does not weaken the existing September 9/10 image benchmark or the fail-closed image gate.
 
+## 5C. Qualification novelty must be enforced before semantic execution
+
+Q2 exposed a preflight defect: a prior-production Agent Skills source was correctly marked as previously published but was still counted as story-ready, causing the single semantic pass to discover too late that the mandatory Agent Skills slot was impossible.
+
+For qualification runs, deterministic metadata preflight must evaluate exact-source production novelty against production editions strictly before the qualification edition date. Same-day production and all qualification-only history remain excluded. A prior-production exact source is not story-ready unless a verified material update explicitly qualifies it. The preflight output must expose `production_novelty_eligible`, a reason when ineligible, and `agent_skill_story_ready_signals_after_novelty`. If zero Agent Skills candidates remain after novelty filtering, preflight fails closed with `qualification_agent_skill_unavailable_after_novelty` and the semantic pass must not start.
+
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
