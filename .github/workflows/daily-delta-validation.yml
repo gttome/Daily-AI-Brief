@@ -7,7 +7,7 @@ on:
     branches: [main]
   schedule:
     # GitHub cron is UTC. Trigger both DST possibilities; the Chicago-hour gate runs exactly one.
-    - cron: '0 14,15 * * *'
+    - cron: '0 15,16 * * *'
   workflow_dispatch:
     inputs:
       date:
@@ -29,7 +29,7 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Gate scheduled run to 09:00 America/Chicago
+      - name: Gate scheduled run to 10:00 America/Chicago
         id: gate
         env:
           EVENT_NAME: ${{ github.event_name }}
@@ -44,7 +44,7 @@ jobs:
             else
               echo "run=false" >> "$GITHUB_OUTPUT"
             fi
-          elif [ "$(TZ=America/Chicago date +%H)" = "09" ]; then
+          elif [ "$(TZ=America/Chicago date +%H)" = "10" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
