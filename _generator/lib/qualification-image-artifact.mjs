@@ -37,3 +37,47 @@ export function validateQualificationImageReviewReceipt(receipt){
   if(receipt.accepted_locked!==true)errors.push('accepted_locked_required');
   return [...new Set(errors)];
 }
+
+
+export function validateSerializedQualificationImageEvents(events,storyOrder){
+  const errors=[];
+  if(!Array.isArray(events))return ['image_event_log_required'];
+  if(!Array.isArray(storyOrder)||storyOrder.length!==6)return ['six_story_order_required'];
+  const state=new Map(storyOrder.map(id=>[id,'not_started']));
+  let active=null;
+  let nextIndex=0;
+  const terminal=new Set(['accepted_locked','rejected_with_attempt_budget_remaining','rejected_terminal_run_fail']);
+  for(const [index,event] of events.entries()){
+    const story=event?.candidate_id;
+    const type=event?.type;
+    if(!state.has(story)){errors.push(`event_${index}_unknown_candidate`);continue;}
+    if(type==='worker_started'){
+      if(active!==null)errors.push(`event_${index}_overlapping_worker`);
+      if(storyOrder[nextIndex]!==story)errors.push(`event_${index}_out_of_order_start`);
+      active=story;state.set(story,'active');
+    }else if(type==='library_captured'){
+      if(active!==story)errors.push(`event_${index}_capture_without_active_worker`);
+      state.set(story,'captured');
+    }else if(type==='worker_exited'){
+      if(active!==story)errors.push(`event_${index}_exit_without_active_worker`);
+      if(state.get(story)!=='captured')errors.push(`event_${index}_worker_exit_before_durable_capture`);
+      active=null;state.set(story,'awaiting_review');
+    }else if(type==='review_completed'){
+      if(active!==null)errors.push(`event_${index}_review_while_worker_active`);
+      if(state.get(story)!=='awaiting_review')errors.push(`event_${index}_review_without_capture`);
+      state.set(story,'reviewed');
+    }else if(type==='git_persisted'){
+      if(state.get(story)!=='reviewed')errors.push(`event_${index}_git_persist_before_review`);
+      state.set(story,'git_persisted');
+    }else if(type==='story_terminal'){
+      if(!terminal.has(event.status))errors.push(`event_${index}_invalid_terminal_status`);
+      if(event.status==='accepted_locked'&&state.get(story)!=='git_persisted')errors.push(`event_${index}_accepted_before_exact_git_persist`);
+      state.set(story,event.status);
+      if(storyOrder[nextIndex]===story)nextIndex+=1;
+    }else{
+      errors.push(`event_${index}_unknown_type`);
+    }
+  }
+  if(active!==null)errors.push('worker_left_active');
+  return [...new Set(errors)];
+}
