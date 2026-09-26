@@ -36,3 +36,18 @@ test('qualification novelty baseline excludes same-day production and Q-run hist
   assert.equal(n.exclude_all_qualification_runs,true);
   assert.equal(n.production_history_mutation,false);
 });
+
+
+test('qualification image execution is isolated before generation',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const i=c.image_execution_isolation;
+  assert.equal(i.packet_per_story,true);
+  assert.equal(i.exactly_one_story_id_per_packet,true);
+  assert.equal(i.exactly_one_candidate_id_per_packet,true);
+  assert.equal(i.exclude_other_story_prompts,true);
+  assert.equal(i.exclude_edition_status_art,true);
+  assert.equal(i.rejected_wrong_subject_must_start_fresh_request,true);
+  assert.equal(i.rejected_wrong_subject_must_not_be_edited_or_reused,true);
+  assert.equal(i.receipt_required_per_story,true);
+  assert.equal(i.low_quality_fallback,false);
+});

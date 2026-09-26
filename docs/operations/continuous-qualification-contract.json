@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -174,5 +174,35 @@
     "reason": "Multiple same-day qualification runs would otherwise become impossible after the first real edition consumes the strongest 24-hour candidates. Isolation preserves the actual 30-day novelty rule while testing each Q-run as an independent production simulation.",
     "qualification_repeat_selection_allowed": true,
     "qualification_repeat_note": "The same source may appear in multiple Q-runs only if it was novel relative to the frozen pre-edition production history. Qualification repetition never authorizes a production repeat."
+  },
+  "image_execution_isolation": {
+    "rule": "Every qualification image generation consumes one sealed single-story image packet and no other story or edition visual context.",
+    "packet_per_story": true,
+    "exactly_one_story_id_per_packet": true,
+    "exactly_one_candidate_id_per_packet": true,
+    "exclude_other_story_titles": true,
+    "exclude_other_story_sources": true,
+    "exclude_other_story_prompts": true,
+    "exclude_edition_status_art": true,
+    "rejected_wrong_subject_must_start_fresh_request": true,
+    "rejected_wrong_subject_must_not_be_edited_or_reused": true,
+    "acceptance_order": [
+      "subject_identity",
+      "factual_support",
+      "structural_quality",
+      "editorial_quality"
+    ],
+    "receipt_required_per_story": true,
+    "receipt_fields": [
+      "story_id",
+      "candidate_id",
+      "request_sha256",
+      "subject_match",
+      "factual_support",
+      "quality_result",
+      "accepted_sha256"
+    ],
+    "low_quality_fallback": false,
+    "q1_root_cause": "Q1 produced repeated wrong-subject/unsupported-detail image attempts despite the post-generation gate; isolation must be enforced before generation as well as after review."
   }
 }
