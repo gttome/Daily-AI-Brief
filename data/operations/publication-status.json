@@ -1,8 +1,8 @@
 {
   "schema_version": "2.0.0",
   "projection_version": "publication-status-v2",
-  "edition_date": "2026-09-25",
-  "edition_id": "dab-edition-2026-09-25",
+  "edition_date": "2026-09-26",
+  "edition_id": "dab-edition-2026-09-26",
   "lifecycle_stage": "COMPLETED",
   "lifecycle_state": "COMPLETED",
   "operator_state": "COMPLETED",
@@ -26,32 +26,32 @@
   "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
   "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
   "operator_intervention_required": null,
-  "baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "candidate_sha": "86f2415fb91aefb2aa7000da9c0ca3a89ea14faf",
-  "production_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
-  "publication_merge_sha": "1e44aa2e10cce2a593c4f677192b523f03594985",
-  "pr_number": 217,
-  "ci_run_id": 36147513639,
+  "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+  "candidate_sha": "22cd00a8f40733c4e06737ed5d3668ac74ac6e7b",
+  "production_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "publication_merge_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "pr_number": 243,
+  "ci_run_id": 36253439587,
   "ci": {
     "state": "passed",
-    "run_id": 36147513639
+    "run_id": 36253439587
   },
-  "pages_deployment_id": 36153629964,
-  "deployed_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
+  "pages_deployment_id": 36253499609,
+  "deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
   "pages": {
     "state": "succeeded",
-    "run_id": 36153629964,
-    "deployed_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b"
+    "run_id": 36253499609,
+    "deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b"
   },
-  "live_verification_timestamp": "2026-09-25T16:28:00Z",
+  "live_verification_timestamp": "2026-09-26T15:54:26.601Z",
   "live_reader": {
     "state": "verified",
-    "verified_at": "2026-09-25T16:28:00Z"
+    "verified_at": "2026-09-26T15:54:26.601Z"
   },
-  "completion_path": "_records/publication/2026-09-25/completion.json",
+  "completion_path": "_records/publication/2026-09-26/completion.json",
   "completion": {
     "state": "verified",
-    "path": "_records/publication/2026-09-25/completion.json"
+    "path": "_records/publication/2026-09-26/completion.json"
   },
   "command_center_sync": "pending",
   "command_center": {
@@ -63,17 +63,17 @@
   },
   "last_authoritative_state_transition": {
     "stage": "COMPLETED",
-    "at": "2026-09-25T16:28:00Z"
+    "at": "2026-09-26T15:54:26.601Z"
   },
   "source_evidence": {
-    "lifecycle_path": "_records/publication/2026-09-25/lifecycle.json",
-    "completion_path": "_records/publication/2026-09-25/completion.json",
+    "lifecycle_path": "_records/publication/2026-09-26/lifecycle.json",
+    "completion_path": "_records/publication/2026-09-26/completion.json",
     "current_edition_path": "data/operations/current-edition.json",
-    "run_state_path": "_records/run-state/2026-09-25.json"
+    "run_state_path": "_records/run-state/2026-09-26.json"
   },
   "consistency": {
     "state": "pass",
     "errors": []
   },
-  "updated_at": "2026-09-25T16:28:00Z"
+  "updated_at": "2026-09-26T15:54:26.601Z"
 }

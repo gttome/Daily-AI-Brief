@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0.0",
+  "lifecycle_version": "publication-lifecycle-v1",
+  "edition_date": "2026-09-26",
+  "edition_id": "dab-edition-2026-09-26",
+  "run_id": "kernel-36252537141",
+  "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+  "candidate_sha": "22cd00a8f40733c4e06737ed5d3668ac74ac6e7b",
+  "publication_merge_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "production_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "publication_pr_number": 243,
+  "repair_pr_numbers": [],
+  "ci_run_id": 36253439587,
+  "pages_deployment_id": 36253499609,
+  "stage": "COMPLETED",
+  "status": "COMPLETED",
+  "terminal_outcome": "COMPLETED",
+  "completion_record": "_records/publication/2026-09-26/completion.json",
+  "command_center_sync": "pending",
+  "retry_count": 0,
+  "last_error": null,
+  "blocker": null,
+  "next_legal_action": "Synchronize Command Center from canonical status.",
+  "created_at": "2026-09-26T15:54:14Z",
+  "updated_at": "2026-09-26T15:54:26.601Z",
+  "migration": false,
+  "history": [
+    {
+      "stage": "PLANNED",
+      "at": "2026-09-26T15:54:14Z",
+      "evidence": {
+        "kind": "run_start"
+      }
+    },
+    {
+      "stage": "PREFLIGHT_READY",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "durable_run_state_or_handoff",
+        "path": "_records/run-state/2026-09-26.json"
+      }
+    },
+    {
+      "stage": "EDITORIAL_READY",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "approved_editorial_handoff",
+        "path": "_records/editorial-handoff/handoff.json"
+      }
+    },
+    {
+      "stage": "CANDIDATE_READY",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "deterministic_candidate",
+        "sha": "22cd00a8f40733c4e06737ed5d3668ac74ac6e7b"
+      }
+    },
+    {
+      "stage": "PR_OPEN",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "publication_pr",
+        "number": 243
+      }
+    },
+    {
+      "stage": "CI_PASS",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "protected_ci",
+        "run_id": 36253439587
+      }
+    },
+    {
+      "stage": "MERGED",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "protected_merge",
+        "sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b"
+      }
+    },
+    {
+      "stage": "PAGES_DEPLOYED",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "pages_deployment",
+        "run_id": 36253499609,
+        "sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b"
+      }
+    },
+    {
+      "stage": "LIVE_VERIFIED",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "live_verification",
+        "final_result": "pass",
+        "homepage_edition_date": "2026-09-26",
+        "dated_edition_verified": true,
+        "route_count": 16,
+        "checks": [
+          "publication_receipt",
+          "pages_deployment",
+          "live_changed_routes",
+          "live_homepage_edition",
+          "live_dated_edition",
+          "live_image_assets"
+        ],
+        "source_validation_run_id": 36253535680
+      }
+    },
+    {
+      "stage": "COMPLETED",
+      "at": "2026-09-26T15:54:26.601Z",
+      "evidence": {
+        "kind": "completion_record",
+        "path": "_records/publication/2026-09-26/completion.json"
+      }
+    }
+  ]
+}
