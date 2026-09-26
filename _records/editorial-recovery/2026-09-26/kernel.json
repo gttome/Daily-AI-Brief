@@ -1,0 +1,463 @@
+{
+  "schema_version": "1.0.0",
+  "brief_date": "2026-09-26",
+  "edition_id": "dab-edition-2026-09-26",
+  "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+  "evidence_baseline_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "recovery_context": {
+    "source_branch": "discovery-preflight/daily/2026-09-26",
+    "readiness_status": "READY_WITH_WARNINGS",
+    "publication_authorized": true,
+    "repaired_agent_skill_source": "https://docs.qoder.com/release-notes/qoder",
+    "repaired_agent_skill_title": "Qoder 0.4.1 adds Skill evolution suggestions",
+    "no_rework": [
+      "metadata_preflight",
+      "discovery_preflight",
+      "article_evidence",
+      "readiness",
+      "agent_skills_novelty_repair"
+    ]
+  },
+  "stories": [
+    {
+      "candidate_id": "m03",
+      "story_id": "github-agentic-autofix-copilot-memory-2026-09-26",
+      "canonical_ordinal": 1,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Agentic Autofix now uses Copilot Memory for repository-specific security context",
+      "summary": "GitHub says Agentic Autofix can now consult Copilot Memory when customers have enabled it, allowing the security-fix agent to use repository-specific knowledge while resolving alerts and share secure-development context with other Copilot features.",
+      "why_it_matters": "Persistent memory changes agent reliability from a one-shot prompting problem into a context-governance problem. Engineering teams need to evaluate what is remembered, how that memory influences fixes, and whether stale or incorrect memory can propagate across multiple agentic workflows.",
+      "editorial_limitation": "GitHub’s announcement describes the capability and intended benefits but does not independently establish defect-reduction rates or safety outcomes. Teams should validate memory quality, scoping, update behavior, and failure handling in their own repositories.",
+      "topic_labels": [
+        "Copilot Memory",
+        "agentic security",
+        "repository context",
+        "AI reliability"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Audit the memory that security agents can consume",
+        "rationale": "Test whether repository memories are current, appropriately scoped, and safe to reuse across autofix, code review, and other Copilot agents."
+      },
+      "visual": {
+        "layout": "context-loop",
+        "title": "How repository memory changes agentic security remediation",
+        "alt_text": "White-background instructional diagram showing repository security alerts flowing into Agentic Autofix, Copilot Memory supplying reusable context, a proposed fix, and validation feedback updating future context.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Security alert",
+            "detail": "A repository issue triggers agentic remediation."
+          },
+          {
+            "id": "n2",
+            "label": "Copilot Memory",
+            "detail": "Repository-specific secure development patterns provide context."
+          },
+          {
+            "id": "n3",
+            "label": "Agentic Autofix",
+            "detail": "The agent combines alert evidence with remembered context."
+          },
+          {
+            "id": "n4",
+            "label": "Verified fix",
+            "detail": "Human and automated checks validate the proposed remediation."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "problem"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "context"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "propose + verify"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Persistent memory is useful only when its scope, freshness, and provenance are governed."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m04",
+      "story_id": "github-copilot-weekly-sep21-2026-09-26",
+      "canonical_ordinal": 2,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Copilot’s weekly release adds local sandboxing and broader model options",
+      "summary": "GitHub’s September 21 weekly release rollup highlights new model availability, local sandboxing in the Copilot app, and updates across Slack, Microsoft Teams, JetBrains, and VS Code.",
+      "why_it_matters": "The release shows the engineering surface of AI coding systems expanding beyond model selection into execution isolation and multi-client orchestration. Local sandboxing is particularly important because agent usefulness increasingly depends on safely executing code and tools, not just generating suggestions.",
+      "editorial_limitation": "The weekly rollup bundles multiple product changes and does not provide one unified performance benchmark. Teams should evaluate each capability separately for isolation strength, permissions, model behavior, and workflow fit.",
+      "topic_labels": [
+        "GitHub Copilot",
+        "sandboxing",
+        "coding agents",
+        "model selection"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Test sandbox boundaries before expanding coding-agent autonomy",
+        "rationale": "Use representative tasks to verify file, network, tool, and credential boundaries before allowing broader autonomous execution."
+      },
+      "visual": {
+        "layout": "layered",
+        "title": "From model choice to safe coding-agent execution",
+        "alt_text": "White-background instructional diagram showing model selection feeding a Copilot agent, execution inside a local sandbox, tool access controls, and verified code output.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Model choice",
+            "detail": "Select model capability appropriate to the task."
+          },
+          {
+            "id": "n2",
+            "label": "Coding agent",
+            "detail": "Agent plans edits and tool use."
+          },
+          {
+            "id": "n3",
+            "label": "Local sandbox",
+            "detail": "Execution is isolated behind explicit boundaries."
+          },
+          {
+            "id": "n4",
+            "label": "Verified output",
+            "detail": "Tests and review confirm the result before promotion."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "reason"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "execute"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "validate"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n3",
+            "text": "Execution isolation is becoming a core control for agentic coding."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m05",
+      "story_id": "microsoft-copilot-home-code-autopilot-2026-09-26",
+      "canonical_ordinal": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft reorganizes Copilot around Home, Code, and Autopilot",
+      "summary": "Microsoft introduced a redesigned Copilot experience centered on Home, Code, and Autopilot. Home brings Chat, Cowork, and Office together; Code is aimed at building solutions; and Autopilot is positioned as a more autonomous work layer rolling out through Microsoft’s Frontier program.",
+      "why_it_matters": "For knowledge workers, the shift is from a single assistant interface toward an operating environment that spans asking, building, and delegating. That raises the value of repeatable workflow design, permissions, human checkpoints, and clear ownership of what autonomous work is allowed to do.",
+      "editorial_limitation": "Several capabilities are rolling out through Microsoft’s Frontier program rather than being universally available. Organizations should distinguish current production availability from preview positioning and validate governance before broader adoption.",
+      "topic_labels": [
+        "Microsoft Copilot",
+        "knowledge work",
+        "Autopilot",
+        "AI workflow design"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "map",
+        "label": "Separate ask, build, and delegate workflows",
+        "rationale": "Identify which recurring work belongs in conversational assistance, solution-building, or bounded autonomous execution, with explicit review gates for each."
+      },
+      "visual": {
+        "layout": "three-lane",
+        "title": "Three modes of AI work in the new Copilot",
+        "alt_text": "White-background educational diagram showing Home for assisted work, Code for building solutions, Autopilot for delegated execution, all feeding governed business outcomes.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Home",
+            "detail": "Chat, Cowork, and Office support assisted knowledge work."
+          },
+          {
+            "id": "n2",
+            "label": "Code",
+            "detail": "Users build and customize solutions."
+          },
+          {
+            "id": "n3",
+            "label": "Autopilot",
+            "detail": "Bounded work is delegated for autonomous execution."
+          },
+          {
+            "id": "n4",
+            "label": "Governed outcome",
+            "detail": "Permissions, review, and measurement remain explicit."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n4",
+            "label": "assist"
+          },
+          {
+            "from": "n2",
+            "to": "n4",
+            "label": "build"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "delegate"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "The operating question is not only what AI can do, but which mode should own each workflow."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m06",
+      "story_id": "microsoft-copilot-managed-runtime-2026-09-26",
+      "canonical_ordinal": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft previews a governed code runtime inside the Microsoft 365 tenant boundary",
+      "summary": "Microsoft introduced Copilot Managed Runtime in public preview as an enterprise code-execution platform designed to run within the Microsoft 365 tenant boundary while inheriting sharing, live-data connections, and app access patterns familiar to Microsoft 365 users.",
+      "why_it_matters": "Knowledge-worker AI increasingly needs to execute code against live organizational data, not just draft text. A governed runtime can make that capability more usable, but it also turns ordinary Copilot workflows into execution environments that need policy, auditability, data-boundary controls, and failure handling.",
+      "editorial_limitation": "This is a Microsoft public-preview capability. Production suitability, supported workloads, isolation guarantees, operational limits, and governance behavior should be independently tested before critical use.",
+      "topic_labels": [
+        "Microsoft 365",
+        "code execution",
+        "enterprise AI",
+        "governed runtime"
+      ],
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "pilot",
+        "label": "Pilot governed code execution on one low-risk workflow",
+        "rationale": "Choose a repeatable analysis task, constrain data and permissions, log execution, and measure whether the runtime improves speed without weakening governance."
+      },
+      "visual": {
+        "layout": "boundary",
+        "title": "Governed code execution inside the Microsoft 365 boundary",
+        "alt_text": "White-background instructional diagram showing a knowledge-worker request, Copilot planning, code execution inside a managed tenant boundary, access to approved Microsoft 365 data, and reviewed output.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Knowledge-work request",
+            "detail": "A user asks for analysis or transformation."
+          },
+          {
+            "id": "n2",
+            "label": "Copilot plan",
+            "detail": "The assistant determines code and data actions."
+          },
+          {
+            "id": "n3",
+            "label": "Managed Runtime",
+            "detail": "Code executes inside governed tenant boundaries."
+          },
+          {
+            "id": "n4",
+            "label": "Reviewed result",
+            "detail": "Output is checked before business use."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "intent"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "execute"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "return + verify"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n3",
+            "text": "Code execution turns AI assistance into an operational control surface."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "recovery-agent-skill-qoder-0.4.1",
+      "story_id": "qoder-skill-evolution-2026-09-26",
+      "canonical_ordinal": 5,
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can now suggest turning repeated experience into reusable Skills",
+      "summary": "Qoder 0.4.1 can suggest creating or updating reusable Skills after a conversation based on accumulated experience. Accepting a suggestion opens a separate conversation where the user reviews and confirms the plan before changes are applied.",
+      "why_it_matters": "This moves Agent Skills from manually authored procedures toward a feedback loop where repeated work can become reusable operating knowledge. For nontechnical users, the important design feature is the confirmation boundary: the system can propose a new reusable skill, but a person still approves the change.",
+      "editorial_limitation": "The evidence is Qoder’s own release documentation. Teams should evaluate the quality of proposed skills, how experience is selected, whether sensitive context can leak into reusable instructions, and how skill changes are versioned and reviewed.",
+      "topic_labels": [
+        "Agent Skills",
+        "reusable workflows",
+        "skill evolution",
+        "human approval"
+      ],
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true,
+      "what_to_do_now": {
+        "action": "experiment",
+        "label": "Turn one repeated workflow into a reviewed reusable skill",
+        "rationale": "Use a low-risk repeated task, inspect the proposed skill carefully, remove accidental context, and require explicit approval before reuse."
+      },
+      "visual": {
+        "layout": "learning-loop",
+        "title": "From repeated work to a reviewed reusable Skill",
+        "alt_text": "White-background instructional loop showing a completed conversation, experience pattern detection, a proposed reusable Skill, human review and confirmation, and the approved Skill returning to future workflows.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Repeated work",
+            "detail": "A conversation completes a recurring task."
+          },
+          {
+            "id": "n2",
+            "label": "Experience pattern",
+            "detail": "The system detects reusable steps."
+          },
+          {
+            "id": "n3",
+            "label": "Skill proposal",
+            "detail": "A new or updated reusable Skill is suggested."
+          },
+          {
+            "id": "n4",
+            "label": "Human confirmation",
+            "detail": "The user reviews and approves the plan before reuse."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "learn"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "propose"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "review"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n4",
+            "text": "The human approval step is the critical control between experience and reusable automation."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "m09",
+      "story_id": "narrateai-llm-quality-assurance-bedrock-2026-09-26",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "NarrateAI packages five quality-assurance techniques for production LLM workflows on Bedrock",
+      "summary": "AWS describes NarrateAI, a production-oriented quality-assurance approach on Amazon Bedrock that combines multiple checks across the path from retrieval through response delivery rather than relying on a single end-of-pipeline quality score.",
+      "why_it_matters": "For teams deploying agents and generative workflows, reliability comes from layered checks around evidence, generation, and delivery. That is especially relevant for nontechnical operators who need repeatable assurance mechanisms instead of manually inspecting every output.",
+      "editorial_limitation": "The implementation is AWS-authored and Bedrock-centered. Teams should validate which techniques materially reduce their own failure modes, define thresholds from representative tasks, and keep human escalation for consequential decisions.",
+      "topic_labels": [
+        "LLM quality assurance",
+        "Amazon Bedrock",
+        "agent reliability",
+        "production guardrails"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "layer",
+        "label": "Add multiple quality checks around one production AI workflow",
+        "rationale": "Map retrieval, generation, validation, and delivery failure modes separately and assign a measurable control to each rather than using one generic quality score."
+      },
+      "visual": {
+        "layout": "quality-stack",
+        "title": "Layered quality assurance for production LLM workflows",
+        "alt_text": "White-background instructional diagram showing retrieval, generation, validation, and delivery stages with separate quality checks and an escalation path.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Retrieve",
+            "detail": "Gather source evidence for the task."
+          },
+          {
+            "id": "n2",
+            "label": "Generate",
+            "detail": "Produce the draft response or agent output."
+          },
+          {
+            "id": "n3",
+            "label": "Validate",
+            "detail": "Apply layered quality and consistency checks."
+          },
+          {
+            "id": "n4",
+            "label": "Deliver or escalate",
+            "detail": "Release passing output or route failures for review."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n2",
+            "label": "ground"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "check"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "gate"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n3",
+            "text": "Production reliability comes from layered controls, not a single final score."
+          }
+        ]
+      }
+    }
+  ]
+}
