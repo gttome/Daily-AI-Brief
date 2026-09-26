@@ -1,182 +1,3 @@
-name: Daily AI Brief deterministic delta validation
-
-on:
-  workflow_run:
-    workflows: ["Deterministic publication CI"]
-    types: [completed]
-    branches: [main]
-  schedule:
-    # GitHub cron is UTC. Trigger both DST possibilities; the Chicago-hour gate runs exactly one.
-    - cron: '0 15,16 * * *'
-  workflow_dispatch:
-    inputs:
-      date:
-        description: Edition date (YYYY-MM-DD). Defaults to current Chicago date.
-        required: false
-        type: string
-      expected_sha:
-        description: Exact protected production merge SHA for this deployment validation.
-        required: false
-        type: string
-
-permissions:
-  contents: write
-  actions: write
-  pages: write
-  pull-requests: write
-  issues: write
-
-concurrency:
-  group: daily-ai-brief-delta-validation
-  cancel-in-progress: false
-
-jobs:
-  validate:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Gate scheduled run to 10:00 America/Chicago
-        id: gate
-        env:
-          EVENT_NAME: ${{ github.event_name }}
-          WORKFLOW_CONCLUSION: ${{ github.event.workflow_run.conclusion }}
-          WORKFLOW_EVENT: ${{ github.event.workflow_run.event }}
-        run: |
-          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          elif [ "$EVENT_NAME" = "workflow_run" ]; then
-            if [ "$WORKFLOW_CONCLUSION" = "success" ] && [ "$WORKFLOW_EVENT" = "push" ]; then
-              echo "run=true" >> "$GITHUB_OUTPUT"
-            else
-              echo "run=false" >> "$GITHUB_OUTPUT"
-            fi
-          elif [ "$(TZ=America/Chicago date +%H)" = "10" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Check out main
-        if: steps.gate.outputs.run == 'true'
-        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-        with:
-          ref: ${{ inputs.expected_sha || 'main' }}
-          fetch-depth: 0
-
-      - name: Set up Node.js
-        if: steps.gate.outputs.run == 'true'
-        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
-        with:
-          node-version: '20'
-
-      - name: Resolve edition date
-        if: steps.gate.outputs.run == 'true'
-        id: date
-        env:
-          REQUESTED_DATE: ${{ inputs.date }}
-        run: |
-          if [ -n "$REQUESTED_DATE" ]; then
-            value="$REQUESTED_DATE"
-          else
-            value="$(TZ=America/Chicago date +%F)"
-          fi
-          echo "value=$value" >> "$GITHUB_OUTPUT"
-
-      - name: Detect already-closed edition
-        id: closed
-        if: steps.gate.outputs.run == 'true'
-        env:
-          EDITION_DATE: ${{ steps.date.outputs.value }}
-        run: |
-          node - <<'NODE'
-          const fs=require('fs');
-          const date=process.env.EDITION_DATE;
-          let closed=false;
-          try {
-            const lifecycle=JSON.parse(fs.readFileSync('_records/publication/'+date+'/lifecycle.json','utf8'));
-            const completion=JSON.parse(fs.readFileSync('_records/publication/'+date+'/completion.json','utf8'));
-            closed=['COMPLETED','CC_SYNCED'].includes(lifecycle.stage)&&lifecycle.terminal_outcome==='COMPLETED'&&completion.phase==='live_verified'&&completion.pages?.conclusion==='success';
-          } catch {}
-          fs.appendFileSync(process.env.GITHUB_OUTPUT,'value='+(closed?'true':'false')+'\n');
-          NODE
-
-      - name: Build deterministic Watchlist delta receipt
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true'
-        run: |
-          set -euo pipefail
-          prior_commit="$(git log --format=%H -- _data/watchlist.json | sed -n '2p')"
-          args=(--next _data/watchlist.json --out /tmp/watchlist-delta.json)
-          if [ -n "$prior_commit" ]; then
-            git show "$prior_commit:_data/watchlist.json" > /tmp/prior-watchlist.json
-            args+=(--prior /tmp/prior-watchlist.json)
-          fi
-          node _tools/watchlist-delta-plan.mjs "${args[@]}"
-
-      - name: Resolve matching Pages deployment
-        id: pages
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true'
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
-        with:
-          script: |
-            const expectedSha = context.payload.inputs?.expected_sha || (context.eventName === 'workflow_run'
-              ? context.payload.workflow_run.head_sha
-              : context.sha);
-            if(!/^[0-9a-f]{40}$/.test(expectedSha))throw new Error('Exact production SHA required.');
-            const mainSha=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
-            if(mainSha!==expectedSha)throw new Error('Current main differs from requested production SHA; refusing stale deployment evidence.');
-            const attempts = 36;
-            for (let i = 0; i < attempts; i++) {
-              const {data} = await github.rest.actions.listWorkflowRunsForRepo({
-                ...context.repo,
-                head_sha: expectedSha,
-                per_page: 100
-              });
-              const pages = data.workflow_runs
-                .filter(run => run.name === 'pages build and deployment')
-                .sort((a,b) => Date.parse(b.created_at) - Date.parse(a.created_at));
-              const run = pages[0];
-              if (run?.status === 'completed') {
-                if (run.conclusion !== 'success') {
-                  core.setFailed(`Matching Pages deployment ${run.id} ended ${run.conclusion} for ${expectedSha}.`);
-                  return;
-                }
-                core.setOutput('run_id', String(run.id));
-                core.setOutput('verified_at', run.updated_at || new Date().toISOString());
-                core.setOutput('expected_sha', expectedSha);
-                core.setOutput('deployment_url', 'https://gttome.github.io/Daily-AI-Brief/');
-                core.info(`Matching Pages deployment ${run.id} succeeded for ${expectedSha}.`);
-                return;
-              }
-              await new Promise(resolve => setTimeout(resolve, 10000));
-            }
-            core.setFailed(`No successful completed Pages deployment observed for ${expectedSha} within the bounded validation window.`);
-
-      - name: Build runtime Pages completion evidence
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && steps.pages.outputs.run_id != ''
-        env:
-          EDITION_DATE: ${{ steps.date.outputs.value }}
-          PAGES_RUN_ID: ${{ steps.pages.outputs.run_id }}
-          PAGES_VERIFIED_AT: ${{ steps.pages.outputs.verified_at }}
-          EXPECTED_SHA: ${{ steps.pages.outputs.expected_sha }}
-          DEPLOYMENT_URL: ${{ steps.pages.outputs.deployment_url }}
-        run: |
-          set -euo pipefail
-          node - <<'NODE'
-          const fs=require('fs');
-          const path=require('path');
-          const date=process.env.EDITION_DATE;
-          const dir=path.join('_records','publication',date);
-          if (!fs.existsSync(dir)) {
-            console.log(`No publication directory for ${date}; current-day edition has not reached validated publication yet. Skipping Pages completion evidence until publication exists.`);
-            process.exit(0);
-          }
-          const candidates=fs.readdirSync(dir)
-            .filter(name=>name.endsWith('.validated.json'))
-            .map(name=>JSON.parse(fs.readFileSync(path.join(dir,name),'utf8')))
-            .filter(record=>record.edition_id===`dab-edition-${date}`)
-            .sort((a,b)=>Date.parse(b.observed_at||0)-Date.parse(a.observed_at||0));
-          if(!candidates.length) {
-            console.log(`No validated publication event found for ${date}; skipping Pages completion evidence until publication exists.`);
-            process.exit(0);
           }
           const validated=candidates[0];
           const edition=JSON.parse(fs.readFileSync(path.join('_data','editions',date+'.json'),'utf8'));
@@ -255,11 +76,13 @@ jobs:
           completion="_records/publication/$EDITION_DATE/completion.json"
           state="_records/run-state/$EDITION_DATE.json"
           lifecycle="_records/publication/$EDITION_DATE/lifecycle.json"
+          validation="_records/publication/$EDITION_DATE/delta-validation.json"
           branch="finalization/$EDITION_DATE-${EXPECTED_SHA:0:8}"
           if git ls-remote --exit-code --heads origin "refs/heads/$branch" >/dev/null 2>&1; then
             git fetch origin "$branch"
             remote_head="$(git rev-parse "origin/$branch")"
             git show "origin/$branch:$completion" >/dev/null
+            git show "origin/$branch:$validation" >/dev/null
             git show "origin/$branch:$state" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const x=JSON.parse(s);process.exit(x.stage==='CLOSED'&&x.publication_lifecycle==='closed'?0:1)})"
             git show "origin/$branch:$lifecycle" | node -e "let s='';process.stdin.on('data',d=>s+=d).on('end',()=>{const x=JSON.parse(s);process.exit(['COMPLETED','CC_SYNCED'].includes(x.stage)&&x.terminal_outcome==='COMPLETED'?0:1)})"
             git show "origin/$branch:data/operations/current-edition.json" >/dev/null
@@ -270,7 +93,7 @@ jobs:
             echo "Reusing durable finalization branch $branch at $remote_head."
             exit 0
           fi
-          if [ -f "$completion" ] && [ -f "$state" ] && [ -f "$lifecycle" ] && node -e "const s=require('./$state');const c=require('./$completion');const l=require('./$lifecycle');process.exit(s.stage==='CLOSED'&&s.publication_lifecycle==='closed'&&['COMPLETED','CC_SYNCED'].includes(l.stage)&&l.terminal_outcome==='COMPLETED'&&c.phase==='live_verified'&&c.pages?.conclusion==='success'?0:1)"; then
+          if [ -f "$completion" ] && [ -f "$validation" ] && [ -f "$state" ] && [ -f "$lifecycle" ] && node -e "const s=require('./$state');const c=require('./$completion');const l=require('./$lifecycle');process.exit(s.stage==='CLOSED'&&s.publication_lifecycle==='closed'&&['COMPLETED','CC_SYNCED'].includes(l.stage)&&l.terminal_outcome==='COMPLETED'&&c.phase==='live_verified'&&c.pages?.conclusion==='success'?0:1)"; then
             echo "needed=false" >> "$GITHUB_OUTPUT"
             exit 0
           fi
@@ -279,6 +102,7 @@ jobs:
           test -f /tmp/watchlist-delta.json
           mkdir -p "$(dirname "$completion")" _records/command-center
           cp /tmp/completion-evidence.json "$completion"
+          cp /tmp/daily-validation.json "$validation"
           cc="_records/command-center/$EDITION_DATE-public-safe-delta.json"
           pr="$(gh api "repos/$GITHUB_REPOSITORY/commits/$EXPECTED_SHA/pulls" --jq '.[0].number // 0' 2>/dev/null || echo 0)"
           if [ "$pr" -le 0 ]; then echo "No protected publication PR found for $EXPECTED_SHA."; exit 1; fi
@@ -301,7 +125,7 @@ jobs:
           node _tools/publication-lifecycle.mjs finalize --date "$EDITION_DATE" --completion "$completion" --candidate-sha "$candidate_sha" --pr "$pr" --ci-run-id "$ci_run_id" --publication-merge-sha "$publication_merge_sha"
           args=( \
             --status data/operations/publication-status.json \
-            --validation /tmp/daily-validation.json \
+            --validation "$validation" \
             --watchlist /tmp/watchlist-delta.json \
             --policy docs/operations/efficiency-operating-policy.json \
             --out /tmp/command-center-delta.json \
@@ -310,11 +134,11 @@ jobs:
           if [ -f "$incident" ]; then args+=(--incident "$incident"); fi
           node _tools/command-center-delta.mjs "${args[@]}"
           cp /tmp/command-center-delta.json "$cc"
-          node _tools/run-state.mjs finalize --date "$EDITION_DATE" --production-sha "$EXPECTED_SHA" --pr "$pr" --completion "$completion" --validation /tmp/daily-validation.json --cc "$cc"
+          node _tools/run-state.mjs finalize --date "$EDITION_DATE" --production-sha "$EXPECTED_SHA" --pr "$pr" --completion "$completion" --validation "$validation" --cc "$cc"
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
-          git add "$completion" "$state" "$cc" "_records/publication/$EDITION_DATE/lifecycle.json" "data/operations/current-edition.json" "data/operations/publication-status.json"
+          git add "$completion" "$validation" "$state" "$cc" "_records/publication/$EDITION_DATE/lifecycle.json" "data/operations/current-edition.json" "data/operations/publication-status.json"
           git commit -m "Persist $EDITION_DATE publication completion and closure evidence"
           git push origin "HEAD:$branch"
           echo "needed=true" >> "$GITHUB_OUTPUT"
@@ -388,15 +212,3 @@ jobs:
 
       - name: Create deduplicated failure alert
         if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && steps.validation.outcome == 'failure'
-        uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
-        with:
-          script: |
-            const title = 'Daily AI Brief alert: deterministic validation failure';
-            const {data: issues} = await github.rest.issues.listForRepo({owner: context.repo.owner, repo: context.repo.repo, state: 'open', per_page: 100});
-            if (!issues.some(issue => issue.title === title)) {
-              await github.rest.issues.create({owner: context.repo.owner, repo: context.repo.repo, title, body: `Deterministic validation failed for ${{ steps.date.outputs.value }}. Run: ${context.serverUrl}/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`});
-            }
-
-      - name: Enforce deterministic validation result
-        if: steps.gate.outputs.run == 'true' && steps.closed.outputs.value != 'true' && steps.validation.outcome == 'failure'
-        run: exit 1
