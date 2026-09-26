@@ -132,6 +132,7 @@ jobs:
         env:
           DAB_RESEARCH_CUTOFF: ${{ steps.config.outputs.cutoff }}
           DAB_DISCOVERY_FRESH: '1'
+          DAB_DISCOVERY_PURPOSE: ${{ steps.config.outputs.purpose }}
           DAB_SOURCE_SCAN_MIN: '12'
           DAB_SOURCE_SCAN_MAX: ${{ steps.config.outputs.source_scan_max }}
           DAB_FRESH_METADATA_TARGET: ${{ steps.config.outputs.fresh_metadata_target }}
