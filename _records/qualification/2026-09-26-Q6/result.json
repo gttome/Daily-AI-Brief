@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q6",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "EDITORIAL_KERNEL_READY",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "production_main_sha_start": "eccf2c42e79c331f2f14c6fe5cedabbff3d503c1",
+  "production_main_sha_end": "eccf2c42e79c331f2f14c6fe5cedabbff3d503c1",
+  "preflight": {
+    "result": "pass",
+    "workflow_run_id": "36266364126",
+    "metadata_candidates": 16,
+    "evidence_candidates": 9,
+    "evidence_chars": 9611,
+    "model_calls": 0,
+    "reused": true,
+    "modified": false
+  },
+  "semantic": {
+    "result": "fail",
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "stories": 0,
+    "allocation": null,
+    "agent_skills_stories": 0,
+    "failure_code": "qualification_agent_focus_semantic_mismatch",
+    "reason": "Only m01 is semantically valid for Agents for Everyone in the frozen Q6 evidence. m08 is multimodal RL training and m09 is LLM quality assurance; neither frozen excerpt establishes an agent workflow. A compliant 2/2/2 kernel is therefore impossible without prohibited preflight rework."
+  },
+  "media": {
+    "result": "not_run",
+    "reason": "semantic gate failed before downstream media checkpoint"
+  },
+  "watchlist": {
+    "result": "not_run",
+    "reason": "semantic gate failed before downstream current-watchlist checkpoint"
+  },
+  "professional_series": {
+    "result": "not_run",
+    "reason": "semantic gate failed before downstream mapping checkpoint"
+  },
+  "images": {
+    "result": "not_run",
+    "attempts": 0,
+    "accepted_locked": 0,
+    "reason": "semantic gate failed before image packets; factual-support image hardening remains untested by Q6"
+  },
+  "handoff": {
+    "result": "not_run",
+    "reason": "no valid six-story semantic kernel"
+  },
+  "deterministic_qualification": {
+    "result": "not_run",
+    "reason": "no valid atomic handoff"
+  },
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "owner_github_ui_intervention": 0,
+  "completed_stage_rework": 0,
+  "streak_effect": "reset",
+  "q1_q5_evidence_preserved": true,
+  "q6_preflight_preserved": true,
+  "next_action": "Preserve Q6 as a semantic-stage failure. Harden deterministic preflight so an upstream agents_non_technical_people hint cannot satisfy category coverage without concrete agent evidence. Test that correction only on fresh Q7; do not repair Q6 into a pass."
+}
