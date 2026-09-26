@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q4",
+  "stage": "IMAGES_READY",
+  "status": "fail",
+  "attempts": [
+    {
+      "attempt": 1,
+      "target": "m03",
+      "sha256": "c4f31ad83ddeeda48ae7210a1462fde383b395a4f7f7df10490c02cf936a88c4",
+      "size": "1312x1199",
+      "result": "rejected",
+      "reason": "Wrong subject: generated a qualification status dashboard instead of the requested story diagram."
+    },
+    {
+      "attempt": 2,
+      "target": "m03",
+      "sha256": "092339d7cc39b4f641d38b7aef96687b4d46f615f60833c1a4ed43532be54ea7",
+      "size": "1157x1360",
+      "result": "rejected",
+      "reason": "Fresh retry again generated a qualification status dashboard instead of the requested story diagram."
+    }
+  ],
+  "accepted_locked": 0,
+  "low_quality_fallback_used": false,
+  "production_asset_reuse": false,
+  "disposition": "fail_closed"
+}
