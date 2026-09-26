@@ -7,9 +7,9 @@ on:
     paths:
       - '_records/preflight-request/request.json'
   schedule:
-    # 05:45 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
-    - cron: '45 10 * * *'
-    - cron: '45 11 * * *'
+    # 04:00 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
+    - cron: '0 9 * * *'
+    - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
       edition_date:
