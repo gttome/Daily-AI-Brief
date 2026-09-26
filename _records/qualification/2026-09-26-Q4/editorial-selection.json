@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q4",
+  "editorial_passes": 1,
+  "stories": [
+    {
+      "ordinal": 1,
+      "candidate_id": "m03",
+      "story_id": "dab-story-2026-09-26-a403c9d1",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub gives agentic autofix repository memory before proposing security repairs",
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 2,
+      "candidate_id": "m04",
+      "story_id": "dab-story-2026-09-26-b504d8e2",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub expands Copilot across models, local sandboxing, collaboration surfaces, and IDEs",
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 3,
+      "candidate_id": "m05",
+      "story_id": "dab-story-2026-09-26-c605e7f3",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft reorganizes Copilot around Home, Code, and persistent Autopilot work",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 4,
+      "candidate_id": "m06",
+      "story_id": "dab-story-2026-09-26-d706f8a4",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft brings governed code execution inside the Microsoft 365 tenant boundary",
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 5,
+      "candidate_id": "m01",
+      "story_id": "dab-story-2026-09-26-e101a2b3",
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can propose reusable Skills from repeated work, with a separate human confirmation step",
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true
+    },
+    {
+      "ordinal": 6,
+      "candidate_id": "m08",
+      "story_id": "dab-story-2026-09-26-f808b9c4",
+      "focus": "agents_non_technical_people",
+      "headline": "AWS shows how to pair a terminal coding agent with open-weight models inside an AWS account",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/",
+      "agent_skill": false
+    }
+  ],
+  "videos": [
+    {
+      "title": "Stop guessing which model your agent needs",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "runtime_seconds": 573,
+      "source": "Microsoft Developer"
+    },
+    {
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "runtime_seconds": 213,
+      "source": "Claude"
+    }
+  ],
+  "podcasts": [
+    {
+      "title": "From AGENTS.md to Enterprise Deployment",
+      "url": "https://practicalai.show/373",
+      "source": "Practical AI",
+      "runtime_seconds": 2932
+    },
+    {
+      "title": "#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation",
+      "url": "https://podcast.smarterx.ai/shownotes/242",
+      "source": "The Artificial Intelligence Show",
+      "runtime_seconds": 2650
+    }
+  ],
+  "watchlist": {
+    "evaluated_from_current_dated_artifact": "_records/editorial-handoff/watchlist-2026-09-26.json",
+    "new_today": 0,
+    "updated_today": 4,
+    "carried_forward": 12,
+    "updated_topic_ids": [
+      "dab-topic-agent-skills-observability",
+      "dab-topic-memory-guided-planning",
+      "dab-topic-harness-engineering",
+      "dab-topic-long-horizon-agents"
+    ]
+  },
+  "book_mappings": [
+    {
+      "candidate_id": "m01",
+      "reference_id": "context-quality-checklist"
+    },
+    {
+      "candidate_id": "m06",
+      "reference_id": "reliable-verification"
+    },
+    {
+      "candidate_id": "m05",
+      "reference_id": "reliable-trust"
+    }
+  ],
+  "bq_01_graduation_blocker_remains": true,
+  "semantic_note": "Single bounded Q4 semantic pass over the frozen nine-item article-evidence packet plus current verified media, dated Watchlist, and verified book-reference catalog. No second editorial pass is permitted."
+}
