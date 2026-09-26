@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q2",
+  "edition_date": "2026-09-26",
+  "novelty_baseline": "production history strictly before 2026-09-26",
+  "baseline_evidence": [
+    {
+      "edition_date": "2026-09-25",
+      "path": "_data/editions/2026-09-25.json",
+      "duplicate_candidate_id": "m01",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+      "prior_headline": "AWS adds skill-specific evaluation for agents using reusable procedures",
+      "effect": "blocks the only story-ready Agent Skills candidate in the frozen Q2 evidence packet"
+    },
+    {
+      "edition_date": "2026-09-25",
+      "path": "_data/editions/2026-09-25.json",
+      "duplicate_candidate_id": "m07",
+      "source_url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+      "prior_headline": "GitHub changes the default policy for generally available Copilot features",
+      "effect": "candidate unavailable for Q2 novelty, but applied category still has m05/m06"
+    }
+  ],
+  "frozen_evidence_agent_skill_candidates": [
+    {
+      "candidate_id": "m01",
+      "story_ready": true,
+      "novel": false
+    }
+  ],
+  "compliant_six_story_selection_possible": false,
+  "blocking_requirement": "exactly one qualifying Agent Skills story",
+  "decision": "fail_closed_at_semantic_stage",
+  "preflight_mutated": false,
+  "production_mutation": false
+}
