@@ -10,7 +10,15 @@ const load=()=>JSON.parse(fs.readFileSync(PUBLICATION_MANIFEST_PATH,'utf8'));
 
 test('September 25 migration manifest binds completed artifacts without rework',()=>{
  const manifest=load();
- const result=validatePublicationManifest(root,manifest,{expectedBaseline:manifest.baseline_sha,expectedEditionDate:'2026-09-25',expectedStagingRef:'editorial-handoff/production/2026-09-25-recovery'});
+ const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
+ assert.equal(manifest.staging_ref,handoff.staging_ref);
+ if(handoff.execution_mode==='production')assert.equal(manifest.staging_ref,'editorial-handoff/production/2026-09-25-recovery');
+ else {
+  assert.equal(handoff.execution_mode,'qualification_nonproduction');
+  assert.equal(manifest.staging_ref.startsWith('editorial-handoff/qualification/'),true);
+  assert.equal(manifest.migration?.qualification_replay,true);
+ }
+ const result=validatePublicationManifest(root,manifest,{expectedBaseline:manifest.baseline_sha,expectedEditionDate:'2026-09-25',expectedStagingRef:handoff.staging_ref});
  assert.deepEqual(result.errors,[]);
  assert.equal(result.result,'PASS');
  assert.deepEqual(manifest.freeze.watchlist.counts,{new_today:0,updated_today:3,carried_forward:13});
