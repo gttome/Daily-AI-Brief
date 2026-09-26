@@ -7,7 +7,7 @@ test('continuous qualification contract preserves production and requires zero p
   const p=JSON.parse(fs.readFileSync('docs/operations/efficiency-operating-policy.json','utf8'));
   const r=JSON.parse(fs.readFileSync('docs/operations/under80-runtime-contract.json','utf8'));
   assert.equal(c.contract_id,'continuous-qualification-v1');
-  assert.equal(c.cadence.max_full_semantic_qualification_runs_per_chicago_day,4);
+  assert.ok(c.cadence.max_full_semantic_qualification_runs_per_chicago_day>=20);
   assert.equal(c.cadence.target_consecutive_full_passes,5);
   assert.ok(c.cadence.minimum_distinct_fresh_evidence_cutoffs_in_streak>=3);
   assert.equal(c.cost_boundary.work_usage_required,0);
@@ -50,4 +50,13 @@ test('qualification image execution is isolated before generation',()=>{
   assert.equal(i.rejected_wrong_subject_must_not_be_edited_or_reused,true);
   assert.equal(i.receipt_required_per_story,true);
   assert.equal(i.low_quality_fallback,false);
+});
+
+
+test('qualification run identity supports scalable independently pausable slots',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  assert.equal(c.run_identity.minimum_supported_slots_per_day,20);
+  assert.equal(c.run_identity.maximum_supported_slot_number,40);
+  assert.equal(c.schedule_separation.independently_pauseable,true);
+  assert.equal(c.schedule_separation.dynamic_slot_addition_allowed,true);
 });

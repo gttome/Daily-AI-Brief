@@ -71,6 +71,23 @@ Qualification schedules are intentionally separate from production schedules. Th
 
 The qualification schedules must never call, resume, rename, or reuse a production schedule. Production schedules must never treat Q1-Q4 state as production progress. Each qualification schedule uses `qualification_nonproduction` and unique qualification branches. Qualification schedules may be paused independently without changing production timing.
 
+## 3B. Scalable qualification slot pool
+
+The qualification system is not limited to four daily runs. The durable run identity accepts `Q1` through `Q40`, allowing at least 20 active runs per day with additional burst capacity. Every Q-slot is an independent ChatGPT schedule and may be paused or resumed without changing any other qualification slot or either production schedule.
+
+Operational rules:
+
+- maintain at least 20 active qualification slots during intensive stabilization when capacity is required;
+- keep each slot independently pausable;
+- additional slots may be added up to `Q40` without changing production orchestration;
+- every slot uses its own fresh preflight branch, semantic/handoff branch, and durable result path;
+- a terminal result for a slot prevents that exact slot from rerunning for the same date;
+- an already-running slot prevents duplicate execution of the same run identity;
+- pausing one slot never changes another slot or production;
+- production schedules remain separate and retain priority around their own execution windows.
+
+The scheduler configuration is operational state; the repository contract defines the valid identity range and isolation requirements so slots can be added or removed without a code redesign.
+
 ## 4. Full qualification lifecycle
 
 ```mermaid
