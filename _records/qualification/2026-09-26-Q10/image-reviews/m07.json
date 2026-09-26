@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "story_id": "story-m07",
+  "candidate_id": "m07",
+  "headline": "Microsoft Copilot Managed Runtime brings governed code execution inside the Microsoft 365 tenant boundary.",
+  "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+  "subject_identity": "not_evaluated",
+  "factual_support": "not_evaluated",
+  "structural_quality": "not_evaluated",
+  "editorial_quality": "not_evaluated",
+  "accepted_locked": false,
+  "asset_path": null,
+  "sha256": null,
+  "dimensions": null,
+  "fallback": false,
+  "failure_code": "prior_image_not_accessible_in_task_context",
+  "failure_reason": "The exact previously generated m07 illustration was not available as an accessible/materializable file in the current task context. The only accessible generated conversation image was for candidate m04, so no visual gate was evaluated and no substitute image was used.",
+  "transport_action": "receipt_only_no_image_written",
+  "prohibited_actions_confirmed": [
+    "no_regeneration",
+    "no_edit",
+    "no_transform",
+    "no_replacement",
+    "no_main_mutation",
+    "no_pr_117_change",
+    "no_fallback"
+  ],
+  "cost_boundary": {
+    "work": 0,
+    "codex": 0,
+    "paid_api": 0
+  }
+}
