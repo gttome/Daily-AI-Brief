@@ -131,3 +131,14 @@ test('qualification novelty ignores same-day production and qualification histor
  assert.equal(result.candidates[0].production_novelty_eligible,true);
  assert.equal(result.candidates[0].agent_skill_story_ready,true);
 });
+
+
+test('required Agent Skills source set retains the validated Qoder skill-evolution release',()=>{
+ const required=JSON.parse(fs.readFileSync('_data/required-topic-sources.json','utf8'));
+ const topic=required.topics.find(x=>x.topic_id==='agent_skills');
+ const qoder=topic.sources.find(x=>x.source_id==='qoder-skill-evolution');
+ assert.ok(qoder);
+ assert.equal(qoder.status,'active');
+ assert.equal(qoder.material_update_verified,true);
+ assert.equal(qoder.known_publication_date,'2026-09-23T00:00:00Z');
+});
