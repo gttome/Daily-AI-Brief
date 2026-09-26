@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.7.0",
+  "schema_version": "1.8.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -563,5 +563,24 @@
       "media and Watchlist are immutable after handoff",
       "image review path is manifest-bound and cannot be reconstructed downstream"
     ]
+  },
+  "qualification_stabilization": {
+    "contract_path": "docs/operations/continuous-qualification-contract.json",
+    "execution_mode": "qualification_nonproduction",
+    "full_runs_per_day_max": 4,
+    "target_consecutive_passes": 5,
+    "minimum_fresh_cutoffs_in_streak": 3,
+    "semantic_executor": "ordinary_chatgpt",
+    "work": false,
+    "codex": false,
+    "paid_api": false,
+    "preflight_owner": "github_actions",
+    "deterministic_owner": "github_actions",
+    "production_mutation": false,
+    "branch_pattern": "editorial-handoff/qualification/YYYY-MM-DD-QN",
+    "preflight_branch_pattern": "discovery-preflight/qualification/YYYY-MM-DD-QN",
+    "semantic_receipt_pattern": "_records/qualification/YYYY-MM-DD-QN/semantic-receipt.json",
+    "deterministic_result_pattern": "_records/qualification/YYYY-MM-DD-QN/result.json",
+    "rule": "Qualification runs may be repeated intraday for stabilization. They never count as published editions, never update production novelty/history/current-edition state, and never merge or deploy to the production reader."
   }
 }
