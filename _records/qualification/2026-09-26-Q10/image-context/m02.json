@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.1.0",
+  "run_id": "2026-09-26-Q10",
+  "mode": "single_story",
+  "story_ids": [
+    "q10-story-m02"
+  ],
+  "candidate_id": "m02",
+  "includes_edition_context": false,
+  "source_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+  "headline": "GitHub Security Lab uses a Taskflow Agent to drive AI-powered fuzzing workflows",
+  "visual_brief": "White-background 1200x630 professional textbook plate explaining an AI-powered fuzzing taskflow: target software, Taskflow Agent, fuzzing workflow, generated test inputs, observed failures, and review loop. Keep all labels generic except verified source concepts.",
+  "verified_visual_facts": [
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered fuzzing",
+    "fuzzing taskflow",
+    "software testing workflow"
+  ],
+  "generic_conceptual_elements": [
+    "target software block",
+    "test-input stream",
+    "failure signal",
+    "human review gate"
+  ],
+  "prohibited_specifics": [
+    "invented vulnerability names",
+    "invented code",
+    "invented repository files",
+    "unsupported exploit results",
+    "unsupported product UI"
+  ],
+  "reference_policy": "No other story image or prompt may be used. Generation must occur in a fresh dedicated image-only worker containing only this packet.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_image_only_worker",
+  "factual_support_failure_action": "discard_and_start_fresh_image_only_worker",
+  "low_quality_fallback": false
+}
