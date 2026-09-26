@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "state": "IMAGE_PACKETS_READY",
+  "completed": [
+    "PREFLIGHT_DISCOVERY_READY",
+    "EDITORIAL_KERNEL_READY",
+    "MEDIA_READY",
+    "WATCHLIST_READY",
+    "PROFESSIONAL_SERIES_EVALUATED",
+    "IMAGE_PACKETS_READY"
+  ],
+  "pending": [
+    "IMAGES_READY",
+    "HANDOFF_COMMITTED",
+    "FULL_QUALIFICATION_CI_PASS",
+    "SIMULATED_CLOSED"
+  ],
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false
+}
