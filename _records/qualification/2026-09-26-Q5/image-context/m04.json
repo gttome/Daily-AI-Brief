@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "mode": "single_story",
+  "story_ids": [
+    "q5-story-m04"
+  ],
+  "candidate_id": "m04",
+  "includes_edition_context": false,
+  "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+  "headline": "GitHub expands Copilot across model choice, local sandboxing, collaboration surfaces and IDEs",
+  "visual_brief": "White-background 1200x630 professional textbook plate mapping model choice, local sandboxing in the Copilot app, IDE surfaces, and Slack/Teams as distinct release areas. Use a layered deployment review composition with explicit boundary questions rather than unsupported per-client capability claims. No other stories or status artwork.",
+  "reference_policy": "No other story image or prompt may be used for initial generation. Targeted edits, if needed, may reference only this same story draft.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_request",
+  "low_quality_fallback": false
+}
