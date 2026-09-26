@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.1.0",
+  "run_id": "2026-09-26-Q10",
+  "mode": "single_story",
+  "story_ids": [
+    "q10-story-m01"
+  ],
+  "candidate_id": "m01",
+  "includes_edition_context": false,
+  "source_url": "https://docs.qoder.com/release-notes/qoder",
+  "headline": "Qoder can suggest new or updated Agent Skills from reusable conversation experience",
+  "visual_brief": "White-background 1200x630 professional textbook workflow showing a completed conversation, reusable experience, Qoder Skill evolution suggestion, proposed create/update Skill action, human confirmation, and a reusable Skill available for future work.",
+  "verified_visual_facts": [
+    "Qoder 0.4.1",
+    "Skill evolution suggestions",
+    "conversation finishes",
+    "suggest creating or updating Skills",
+    "reusable experience",
+    "Projects and discussions",
+    "Agent Teams",
+    "response annotations"
+  ],
+  "generic_conceptual_elements": [
+    "completed conversation block",
+    "suggestion arrow",
+    "human confirmation gate",
+    "reusable Skill block",
+    "future-use arrow"
+  ],
+  "prohibited_specifics": [
+    "automatic unsupervised Skill mutation",
+    "invented Skill file names",
+    "invented code",
+    "invented approval UI",
+    "unsupported autonomous deployment"
+  ],
+  "reference_policy": "No other story image or prompt may be used. Generation must occur in a fresh dedicated image-only worker containing only this packet.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_image_only_worker",
+  "factual_support_failure_action": "discard_and_start_fresh_image_only_worker",
+  "low_quality_fallback": false
+}
