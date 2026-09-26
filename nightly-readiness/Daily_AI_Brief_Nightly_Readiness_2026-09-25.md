@@ -1,170 +1,264 @@
-# 🟡 Daily Generative AI Brief — Nightly Readiness
+# Daily Generative AI Brief — Nightly Readiness Report
 
-> **Verdict:** READY WITH WARNINGS  
-> **Observed:** 2026-09-25 20:57 CDT (America/Chicago)  
-> **Next edition:** 2026-09-26  
-> **Current main:** `5ed89e35f010d7d3f96a45241c7a69eca9262bf5`  
-> **Blocking issues:** 0  
-> **Warnings:** 4  
-> **Work/Codex invoked:** No
+> ## 🟡 READY WITH WARNINGS
+> **Audit date:** September 25, 2026  
+> **Audit time:** approximately 9:06 PM America/Chicago  
+> **Next production date:** September 26, 2026  
+> **Repository:** `gttome/Daily-AI-Brief`  
+> **Current main SHA:** `5ed89e35f010d7d3f96a45241c7a69eca9262bf5`
 
 ---
 
-## Executive summary
+## Executive Summary
 
-The production system is structurally ready for the September 26 cycle. The intended 03:00/03:15 GitHub pre-work and 04:00/06:30/08:30/10:30 ChatGPT supervisory sequence is active. Current `main` is green under deterministic CI, Pages, and delta validation. No September 26 production branch, publication PR, or in-progress workflow was found.
+The Daily Generative AI Brief production system is structurally ready for the September 26 run. Current production `main` is protected and healthy; the latest Deterministic publication CI, GitHub Pages deployment, and deterministic delta validation all succeeded on the exact current main SHA. The hidden GitHub pre-work is correctly positioned at 03:00 and 03:15 America/Chicago, ahead of the 04:00 Production Orchestrator.
 
-The primary warning is documentation/contract drift: current readiness documentation and portions of the active runtime contract still contain obsolete 05:45/06:45/07:00 and “Work” wording even though actual production now uses a 03:00/03:15/04:00 no-Work/no-Codex architecture. Current scheduled prompts explicitly override those stale assumptions, so this does not block tonight.
+There is **one operational warning**: the newly created 9:00 PM ChatGPT Nightly Brief Readiness schedule did not fire at its scheduled time tonight; its `last_run_time` remained empty at 9:06 PM. This report is the manual recovery audit for tonight. The missed nightly trigger does **not** block tomorrow's production schedules, but it means the readiness-notification schedule itself requires observation on the next run.
 
-## Readiness scorecard
+No Work or Codex activity was intentionally invoked for this audit.
 
-| Check | Result | Key evidence |
+---
+
+# Readiness Scorecard
+
+| Check | Status | Evidence / Finding |
 |---|---|---|
-| Schedule integrity | ⚠️ PASS WITH WARNING | Active production tasks: 04:00, 06:30, 08:30, 10:30. GitHub pre-work: 03:00/03:15 with Chicago-time gates. No active duplicate legacy publisher. |
-| Repository health | ✅ PASS | Current-main CI, Pages, and delta validation all succeeded at `5ed89e35...`. |
-| Workflow / contract drift | ⚠️ PASS WITH WARNING | Final-image path fix and regression test are already on main; Git Data API and accepted-lock contracts are present. Stale schedule/Work wording remains. |
-| Prior-day closure | ⚠️ PASS WITH WARNING | Sep 25 authoritative lifecycle = COMPLETED; completion = live_verified; production SHA = deployed SHA. Legacy run-state remains at candidate/HANDOFF and Command Center sync is pending. |
-| Capability readiness | ✅ PASS | Connector supports repository reads, PR creation, Git Data blobs/trees/commits/ref updates, workflow/job/log inspection, rulesets, and failed-job reruns. |
-| Resource / contamination | ✅ PASS | No branch matching 2026-09-26, no next-edition publication PR, no active recent workflow. |
-| Zero Work / Codex | ✅ PASS | All four active production supervisory prompts explicitly prohibit Work/Codex/paid services/new credentials. |
-| Collision / buffer logic | ✅ PASS | Later supervisors inspect durable state and do not assume prior tasks completed by fixed elapsed time. |
+| 1. Schedule integrity | 🟡 WARN | Production schedules are correct; nightly readiness schedule missed tonight's 21:00 trigger |
+| 2. Repository health | 🟢 PASS | Current main `5ed89e35...`; CI, Pages and delta validation succeeded |
+| 3. Workflow / contract drift | 🟢 PASS | 03:00/03:15 pre-work timing and final-image-review path are aligned |
+| 4. Prior-day closure | 🟢 PASS with legacy inconsistency | Sep 25 authoritative lifecycle is COMPLETED; older run-state remains pre-closure |
+| 5. Capability readiness | 🟢 PASS | GitHub connector has required read/write Actions/contents/PR capabilities |
+| 6. Resource / contamination | 🟡 WARN | Open historical/canary PRs exist; no evidence they are active production blockers |
+| 7. Zero Work / Codex | 🟢 PASS | No intentional Work/Codex path invoked |
+| 8. Collision / buffer logic | 🟢 PASS | State-driven architecture removes dependency on guessed buffers |
 
-## Active ChatGPT production schedule
+---
 
-| Time CT | Task | State |
-|---:|---|---|
-| 04:00 | Daily Brief Production Orchestrator | Active |
-| 06:30 | Daily Brief Publication Recovery | Active |
-| 08:30 | Daily Brief Live Validation & Repair | Active |
-| 10:30 | Daily Brief Closure Audit | Active |
+# 1. Schedule Integrity
 
-The 21:00 Nightly Brief Readiness audit is separate and inspection-only.
+## Intended production sequence
 
-## GitHub cron schedule
-
-| Workflow | Cron | Local behavior |
+| Time (America/Chicago) | Component | Status |
 |---|---|---|
-| `under80-metadata-preflight.yml` | `0 8 * * *`, `0 9 * * *` | Local gate enforces exactly 03:00 America/Chicago |
-| `under80-discovery-preflight.yml` | `15 8 * * *`, `15 9 * * *` | Local gate enforces exactly 03:15 America/Chicago |
-| `analytics-aggregate.yml` | `15 14 * * *` | 09:15 CDT on Sep 26; no Chicago DST gate |
-| `daily-delta-validation.yml` | `0 15,16 * * *` | Local gate enforces exactly 10:00 America/Chicago |
+| 03:00 | GitHub metadata preflight | ✅ Configured |
+| 03:15 | GitHub discovery/evidence preflight | ✅ Configured |
+| 04:00 | Daily Brief Production Orchestrator | ✅ Enabled |
+| 06:30 | Daily Brief Publication Recovery | ✅ Enabled |
+| 08:30 | Daily Brief Live Validation & Repair | ✅ Enabled |
+| 09:15 | GitHub publication freshness check | ✅ Present |
+| 10:00 | GitHub deterministic delta validation | ✅ Present |
+| 10:30 | Daily Brief Closure Audit | ✅ Enabled |
 
-No schedule exists on CI, post-editorial, publish-candidate, acquisition-prewarm, iteration-shadow, or PR117-shadow workflows.
+Legacy standalone preflight and restore-publisher tasks remain paused/obsolete.
 
-## Repository health
+### Nightly readiness scheduler warning
 
-**Current production head:** `5ed89e35f010d7d3f96a45241c7a69eca9262bf5`
+The `Nightly Brief Readiness` task is configured for **21:00 America/Chicago**, but at approximately 21:06 tonight its `last_run_time` was still empty. The manual audit was therefore performed in this chat.
 
-Latest commit: **Align visible Daily Brief schedule with 04:00 start (#233)**.
+**Impact:** notification/readiness-audit reliability only.  
+**Production impact:** none observed.  
+**Severity:** Medium.  
+**Action:** observe tomorrow night's 21:00 run; if it misses again, move nightly readiness execution to a deterministic GitHub Actions cron or add an independent fallback notification path.
 
-**Protected-main ruleset:** [Protect main - required publication CI](https://github.com/gttome/Daily-AI-Brief/rules/23615327)
+---
 
-Observed protections: active on `refs/heads/main`; PR required; strict required `validate` check; deletion blocked; non-fast-forward blocked; bypass list empty.
+# 2. Repository Health
 
-| Signal | Run | Result |
+**Exact current main SHA:**  
+`5ed89e35f010d7d3f96a45241c7a69eca9262bf5`
+
+Latest production commit:
+
+> **Align visible Daily Brief schedule with 04:00 start (#233)**
+
+### Current-main validation
+
+| Evidence | Run ID | Result |
 |---|---:|---|
-| Deterministic publication CI | [36206009331](https://github.com/gttome/Daily-AI-Brief/actions/runs/36206009331) | ✅ success at current main |
-| Pages build/deployment | [36206009477](https://github.com/gttome/Daily-AI-Brief/actions/runs/36206009477) | ✅ success at current main |
-| Deterministic delta validation | [36206049205](https://github.com/gttome/Daily-AI-Brief/actions/runs/36206049205) | ✅ success at current main |
+| Deterministic publication CI | `36206009331` | ✅ SUCCESS |
+| GitHub Pages deployment | `36206009477` | ✅ SUCCESS |
+| Daily deterministic delta validation | `36206049205` | ✅ SUCCESS |
 
-## Workflow / contract drift
+### Main protection
 
-Healthy controls verified:
+Ruleset: **Protect main - required publication CI**
 
-- `under80-v1`: ≤20 metadata candidates, ≤9 deep reviews, ≤12,000 model-visible evidence chars.
-- One editorial semantic pass; zero post-editorial model passes.
-- Six accepted/locked professional images; Git Data API binary transport.
-- Exactly 2 videos and 2 source-diverse podcasts.
-- Post-editorial expansion uses `$FINAL_IMAGE_REVIEW_PATH`.
-- Main contains a regression test requiring the validated final image-review path.
-- September 26 handoff contract separates structural image validity from editorial quality.
+Verified controls:
 
-### Warning 1 — stale schedule / Work wording
+- applies to `refs/heads/main`;
+- pull request required;
+- deletion blocked;
+- non-fast-forward changes blocked;
+- required status check: `validate`;
+- strict/up-to-date status-check policy;
+- no bypass actors;
+- current user cannot bypass.
 
-`docs/operations/readiness-certification.md` still names the former **05:45 Preflight Guard**, **06:45 Final Gate**, and **07:00 publisher**. The runtime contract also retains “Work begins” and `07:00 publisher` language.
+**Result:** PASS.
 
-**Current impact:** nonblocking because the active ChatGPT schedules explicitly reject legacy timing assumptions and prohibit Work/Codex, while GitHub cron is correctly set to 03:00/03:15.
+---
 
-## Prior-day closure
+# 3. Workflow / Contract Drift
 
-September 25 authoritative lifecycle:
+The current scheduling commit moved hidden pre-work to:
+
+- metadata: **03:00 America/Chicago**;
+- discovery/evidence: **03:15 America/Chicago**.
+
+Both workflows use dual UTC cron entries for DST/CST plus explicit America/Chicago local-time gates so the companion trigger becomes a no-op.
+
+The post-editorial workflow currently uses the validated final image-review variable:
+
+`FINAL_IMAGE_REVIEW_PATH`
+
+for deterministic expansion and integration checks.
+
+This matches the intended image-validation contract and avoids the previously identified unset-variable failure.
+
+**Result:** PASS.
+
+---
+
+# 4. Prior-Day Closure — September 25
+
+Authoritative publication lifecycle evidence reports:
+
+- `stage: COMPLETED`;
+- `status: COMPLETED`;
+- `terminal_outcome: COMPLETED`;
+- publication PR: `#217`;
+- repair PRs: `#218`, `#219`;
+- production SHA: `ed3344500a630fc44b04fc48211c027a344a8c6b`;
+- deployed SHA: same;
+- Pages: success;
+- live verification: pass;
+- dated edition verified;
+- 16 live routes checked.
+
+### Legacy inconsistency
+
+`_records/run-state/2026-09-25.json` still reports:
+
+- `DETERMINISTIC_EXPANSION_READY`;
+- `publication_lifecycle: candidate`.
+
+The newer authoritative lifecycle/completion records supersede this for closure determination.
+
+**Risk to Sep 26:** low because all current execution is edition/date scoped.
+
+**Result:** PASS WITH LOW-SEVERITY RECORD HYGIENE WARNING.
+
+---
+
+# 5. GitHub Capability Readiness
+
+Observed connector capabilities and repository permissions support the required production operations:
+
+- repository/file/branch/PR reads;
+- workflow run/job/log/check inspection;
+- ruleset reads;
+- pull-request creation;
+- Git Data API blob/tree/commit/ref operations;
+- Actions job reruns;
+- workflow write permission;
+- repository contents write permission;
+- pull-request write permission;
+- status/check reads.
+
+No mutation was performed merely to test capability during this audit.
+
+**Result:** PASS.
+
+---
+
+# 6. Resource / Contamination Check
+
+Open non-current production artifacts observed include:
+
+- PR `#226` — historical/narrow hotfix for final-image-review path;
+- PR `#128` — explicit **CANARY — DO NOT MERGE**.
+
+Current `main` already contains the corrected `FINAL_IMAGE_REVIEW_PATH` behavior, so PR #226 does not currently demonstrate an unresolved production defect.
+
+Historical recovery/canary tasks remain paused.
+
+No duplicate Sep 26 publication PR or next-edition contamination was observed in this audit evidence.
+
+**Result:** READY WITH WARNING — historical open PR hygiene should remain clearly non-production.
+
+---
+
+# 7. Zero Work / Codex Assurance
+
+The active production orchestrators explicitly prohibit:
+
+- ChatGPT Work;
+- Codex;
+- paid APIs/services;
+- overage;
+- alternate accounts;
+- new credentials.
+
+This nightly audit performed inspection/readiness work only.
+
+**Work/Codex intentionally invoked:** **No**
+
+Platform-level credit accounting was not queried and no credit values are inferred.
+
+---
+
+# 8. Collision / Buffer Logic
+
+Tomorrow's architecture is state-driven:
 
 ```text
-stage: COMPLETED
-status: COMPLETED
-terminal_outcome: COMPLETED
+03:00 metadata preflight
+03:15 discovery/evidence preflight
+04:00 production orchestrator
+06:30 publication recovery
+08:30 live validation/repair
+09:15 freshness
+10:00 deterministic delta validation
+10:30 closure audit
 ```
 
-| Field | Value |
-|---|---|
-| Publication PR | #217 |
-| Repair PRs | #218, #219 |
-| Production SHA | `ed3344500a630fc44b04fc48211c027a344a8c6b` |
-| Deployed SHA | `ed3344500a630fc44b04fc48211c027a344a8c6b` |
-| Pages | run 36153629964 — success |
-| Completion phase | `live_verified` |
-| Live verification | pass; 16 routes |
-| Command Center sync | `pending` |
+The 06:30, 08:30, and 10:30 ChatGPT tasks are instructed to inspect durable state and resume only the first incomplete/invalid stage. They do not assume the previous task finished within a fixed buffer.
 
-### Warning 2 — legacy run-state mismatch
-
-`_records/run-state/2026-09-25.json` still reports `DETERMINISTIC_EXPANSION_READY`, `candidate`, and `HANDOFF`. The newer authoritative lifecycle/completion pair says the edition is completed and live verified.
-
-This is nonblocking for Sep 26 because lifecycle resolution is date-scoped.
-
-## Resource / contamination review
-
-- Branch matching `2026-09-26`: **none**
-- Open next-edition publication PR: **none**
-- Recent in-progress workflow: **none**
-
-Open PRs observed:
-
-- [#226](https://github.com/gttome/Daily-AI-Brief/pull/226) — image-review env-path hotfix. **Superseded**: its workflow fix and regression test are already on current main.
-- [#128](https://github.com/gttome/Daily-AI-Brief/pull/128) — non-production canary / do-not-merge.
-- [#118](https://github.com/gttome/Daily-AI-Brief/pull/118) — experimental/documentation work, not a current publication PR.
-
-Recent failures in the prior 24 hours included post-editorial runs [36202415310](https://github.com/gttome/Daily-AI-Brief/actions/runs/36202415310) and [36203546930](https://github.com/gttome/Daily-AI-Brief/actions/runs/36203546930), plus CI run [36203336689](https://github.com/gttome/Daily-AI-Brief/actions/runs/36203336689). Later current-main CI, Pages, and delta validation all succeeded; no unresolved current-main failure was found.
-
-## Capability readiness
-
-Observed repository permissions include pull, push, triage, maintain, and admin. Available connector operations include `create_pull_request`, `create_blob`, `create_tree`, `create_commit`, `update_ref`, workflow/job/log reads, ruleset reads, and failed-job-only reruns.
-
-No production mutation was executed merely to test these capabilities.
-
-## Zero-Work / zero-Codex assurance
-
-The 04:00, 06:30, 08:30, and 10:30 production tasks all explicitly prohibit Work, Codex, paid APIs/services, overage, alternate accounts, and new credentials.
-
-This audit performed inspection only. It did not run editorial discovery, image generation, media research, a test Brief, workflow dispatch, CI rerun, or publication.
-
-## Warnings
-
-1. **Medium — active readiness/runtime wording is stale.** Obsolete 05:45/06:45/07:00 and Work language remains.
-2. **Low — Sep 25 legacy run-state is stale** relative to the authoritative completed lifecycle; Command Center sync remains pending.
-3. **Low — freshness cron is not DST-safe.** `14:15 UTC` is 09:15 CDT for Sep 26 but will shift after a DST transition.
-4. **Medium — phone/email delivery cannot be independently verified.** The audit can post the GitHub issue event, but GitHub Mobile/email delivery depends on account/device settings. The ChatGPT task's direct notification/email flags are disabled.
-
-## Risk register
-
-**Critical:** none.  
-**High:** none.  
-**Medium:** stale readiness/runtime wording; notification delivery not independently verifiable.  
-**Low:** legacy Sep 25 run-state/Command Center sync; future DST drift of freshness cron; recent recovered failures.
-
-## Recommended action before 03:00
-
-**No publication-blocking action is required. Keep the scheduled run intact.**
-
-Highest-priority maintenance is a protected documentation/contract normalization so the active readiness/runtime materials consistently describe the authoritative 03:00 → 03:15 → 04:00 no-Work architecture. Separately, make the 09:15 freshness job DST-safe and reconcile auxiliary Sep 25 state without rewriting completed publication history.
+**Result:** PASS.
 
 ---
 
-# 🟡 Final verdict — READY WITH WARNINGS
+# Risk Register
+
+| Severity | Risk | Status |
+|---|---|---|
+| Critical | None observed | ✅ |
+| High | None observed | ✅ |
+| Medium | 21:00 nightly readiness schedule did not fire tonight | ⚠️ Observe next run |
+| Low | Sep 25 legacy run-state lags authoritative lifecycle | ⚠️ Non-blocking |
+| Low | Historical open canary/hotfix PRs remain visible | ⚠️ Non-production |
+
+---
+
+# Recommended Actions Before 03:00
+
+1. **No production changes are required tonight.**
+2. Leave current `main` and the four production orchestrators unchanged.
+3. Do not run a rehearsal, test Brief, image generation, editorial discovery, Work, or Codex.
+4. Allow 03:00 metadata and 03:15 discovery/evidence workflows to start normally.
+5. Observe the nightly readiness scheduler again tomorrow at 21:00; if it misses a second time, move the readiness notification trigger to a deterministic GitHub Actions cron or add a separate fallback.
+
+---
+
+# Final Verdict
+
+## 🟡 READY WITH WARNINGS
+
+The **Daily Generative AI Brief production system is ready for the September 26 run**. The warning concerns only the newly created nightly readiness schedule failing to trigger at 21:00 tonight; the actual production pipeline, repository protection, CI, Pages, pre-work cron, and state-driven orchestrators are healthy.
 
 **Nightly readiness:** READY WITH WARNINGS  
 **Current main SHA:** `5ed89e35f010d7d3f96a45241c7a69eca9262bf5`  
 **Blocking issues:** 0  
-**Warnings:** 4  
+**Warnings:** 2 — nightly readiness trigger missed tonight; Sep 25 legacy run-state inconsistency  
 **Work/Codex invoked:** No  
-**Recommended action before 03:00:** No blocking action required; keep the scheduled run intact. Highest-priority maintenance is aligning active readiness/runtime wording with the 03:00 / 03:15 / 04:00 no-Work architecture.
+**Recommended action before 03:00:** No production action required; allow the 03:00/03:15/04:00 sequence to proceed normally.
