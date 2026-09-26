@@ -12,7 +12,7 @@ export const IMAGE_BENCHMARK_PROFILE_PATH='_records/image-quality/benchmark-prof
 const BENCHMARK_DIMENSIONS=Object.freeze(['professional_finish','meaningful_detail','explanatory_mechanism','annotation_richness','visual_depth','hierarchy','composition','story_specificity','differentiation']);
 const STRUCTURAL_CHECKS=Object.freeze(['file_exists','file_integrity','format','dimensions','expected_path','clipping_corruption','byte_uniqueness','story_identity','accessibility','asset_hash','git_blob_identity','lock_state','replacement_identity']);
 const safeRelative=p=>typeof p==='string'&&p.length>0&&!path.isAbsolute(p)&&!p.split(/[\\/]+/).includes('..');
-const gitBlobSha1=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
+export const gitBlobSha1=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
 const candidateEntries=manifest=>Object.entries(manifest||{}).filter(([key,value])=>!key.startsWith('_')&&value&&typeof value==='object');
 const pass=v=>String(v||'').toLowerCase()==='pass';
 const text=(v,min=1)=>typeof v==='string'&&v.trim().length>=min;
@@ -50,7 +50,7 @@ export function reviewedImages(edition, root) {
   return {review_path:selected.path,review_sha256:sha256(fs.readFileSync(path.join(root,selected.path))),assets,errors};
 }
 
-function inspectHandoffAsset(bytes,ext){
+export function inspectHandoffAsset(bytes,ext){
   if(ext==='.webp')return inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630});
   if(ext==='.png')return inspectPng(bytes,{minimumWidth:1200,minimumHeight:630});
   if(ext==='.svg'){
