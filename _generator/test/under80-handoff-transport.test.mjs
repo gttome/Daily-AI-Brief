@@ -54,3 +54,13 @@ test('qualification replay reuses original edition publication timestamp without
  assert.match(workflow,/published_at="\$\(date -u \+%Y-%m-%dT%H:%M:%SZ\)"/);
 });
 
+
+
+test('both protected promotion paths explicitly dispatch Pages and exact-SHA delta validation',()=>{
+ const workflow=fs.readFileSync('.github/workflows/post-editorial-kernel.yml','utf8');
+ const pages=(workflow.match(/POST \/repos\/\{owner\}\/\{repo\}\/pages\/builds/g)||[]).length;
+ const delta=(workflow.match(/workflow_id:'daily-delta-validation\.yml'/g)||[]).length;
+ assert.equal(pages,2);
+ assert.equal(delta,2);
+ assert.match(workflow,/expected_sha:mergeSha/);
+});
