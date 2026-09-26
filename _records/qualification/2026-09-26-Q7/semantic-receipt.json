@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q7",
+  "execution_mode": "qualification_nonproduction",
+  "edition_date": "2026-09-26",
+  "cutoff": "2026-09-26T19:41:00Z",
+  "baseline_main_sha": "5c9b8c01cab916464d3ba374f856f43172de92a7",
+  "semantic_executor": "ordinary_chatgpt",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "production_mutation": false,
+  "preflight_run_id": "36267013135",
+  "preflight_request_sha": "8ca264a65a6ccbaa0372fcfd09a91ed84cf9eda6",
+  "metadata_candidates": 16,
+  "article_evidence_candidates": 9,
+  "article_evidence_chars": 9614,
+  "semantic_result": "fail",
+  "semantic_pass_complete": true,
+  "failure_stage": "EDITORIAL_KERNEL_READY",
+  "failure_code": "qualification_category_novelty_coverage_unsatisfied",
+  "reason": "The frozen Q7 packet contains three agent-focus evidence items, but m08 and m09 are explicitly production_novelty_eligible=false because their exact sources were published before the qualification edition date. Only m01 remains eligible for Agents for Everyone. The required 2/2/2 allocation therefore cannot be satisfied from the frozen packet without violating novelty or redoing preflight.",
+  "eligible_agent_category_candidates": [
+    "m01"
+  ],
+  "novelty_ineligible_agent_category_candidates": [
+    "m08",
+    "m09"
+  ],
+  "agent_skill_candidate_id": "m01",
+  "stories_selected": 0,
+  "images_attempted": 0,
+  "images_accepted": 0,
+  "no_low_quality_fallback_used": true,
+  "completed_stage_rework": 0
+}
