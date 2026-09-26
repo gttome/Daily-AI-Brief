@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q4",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "IMAGES_READY",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "production_main_sha_start": "6b3f91f0ac6483253a8d9f7b1212135588e1d99a",
+  "production_main_sha_end": "6b3f91f0ac6483253a8d9f7b1212135588e1d99a",
+  "preflight": {
+    "result": "pass",
+    "workflow_run_id": "36260804296",
+    "metadata_candidates": 18,
+    "evidence_candidates": 9,
+    "model_calls": 0
+  },
+  "semantic": {
+    "result": "pass",
+    "editorial_model_passes": 1,
+    "stories": 6,
+    "allocation": "2/2/2",
+    "agent_skills_stories": 1
+  },
+  "media": {
+    "result": "pass",
+    "videos": 2,
+    "podcasts": 2
+  },
+  "watchlist": {
+    "result": "pass"
+  },
+  "professional_series": {
+    "result": "evaluated"
+  },
+  "images": {
+    "result": "fail",
+    "attempts": 2,
+    "accepted_locked": 0,
+    "reason": "Wrong-subject output repeated on a fresh isolated retry."
+  },
+  "handoff": {
+    "result": "not_run"
+  },
+  "deterministic_qualification": {
+    "result": "not_run"
+  },
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "streak_effect": "reset",
+  "next_action": "Fix image request isolation and use the next fresh Q identity."
+}
