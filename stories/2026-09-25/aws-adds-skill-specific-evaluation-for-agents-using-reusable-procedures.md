@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram showing an agent task, skill selection, instruction execution, and evaluator checks for skill accuracy and fidelity.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg?v=professional-20260925-r2)
+![White-background instructional diagram showing a user task, agent skill selection, instruction execution, and evaluator checks.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg?v=professional-20260925-r2)
 
 **Summary:** AWS shows how Strands Evals and Amazon Bedrock AgentCore Evaluations can test whether skill-equipped agents select the correct reusable skill and follow its instructions, rather than judging only the fluency of the final answer.
 

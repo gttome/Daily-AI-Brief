@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram connecting organizational context, copilots and agents, workflow execution, governance, and measured outcomes.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2)
+![White-background instructional diagram connecting organizational context, AI assistance, workflow execution, governance, and measurable outcomes.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg?v=professional-20260925-r2)
 
 **Summary:** Microsoft’s AI at Work update argues that enterprise value comes from connecting copilots and agents to organizational context, workflow, governance, and measurement rather than treating AI as a standalone chat interface.
 

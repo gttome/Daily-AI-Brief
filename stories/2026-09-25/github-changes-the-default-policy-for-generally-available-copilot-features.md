@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram showing a generally available Copilot feature flowing through enterprise defaults, organization controls, and governed user access.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg?v=professional-20260925-r2)
+![White-background instructional diagram showing vendor feature availability, enterprise default policy, organization controls, and governed user access.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg?v=professional-20260925-r2)
 
 **Summary:** GitHub introduced a global default policy for generally available Copilot features and supported client capabilities in Business and Enterprise settings, shifting how new capabilities become enabled across organizations.
 

@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram showing component health, workload-driven cluster tests, observed distributed behavior, and a production readiness gate.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg?v=professional-20260925-r2)
+![White-background instructional diagram showing component health, representative distributed workload tests, observed behavior, and a production readiness decision.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg?v=professional-20260925-r2)
 
 **Summary:** NVIDIA’s Cluster Readiness Engine uses real distributed workloads across topology-aware GPU groups to test whether a cluster is actually ready for production AI workloads rather than relying only on component health checks.
 

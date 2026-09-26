@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Announcement  
 **Availability:** Published
 
-![Professional white-background instructional diagram showing a central agent, gateway, account-local MCP servers, authorization boundaries, and an audited governed response.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2)
+![White-background instructional diagram showing a central agent, gateway, MCP servers in separate accounts, and authorization boundaries.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg?v=professional-20260925-r2)
 
 **Summary:** AWS presents a multi-account agent architecture where each business unit keeps data in its own account while a central agent queries approved MCP servers through AgentCore Gateway using cross-account authorization.
 
