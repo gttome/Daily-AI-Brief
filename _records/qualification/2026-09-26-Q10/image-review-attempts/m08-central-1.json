@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "reviewer": "central_image_matcher",
+  "generation_in_matcher": false,
+  "fallback": false,
+  "prohibited_actions_confirmed": [
+    "no_generation",
+    "no_edit",
+    "no_transform",
+    "no_redraw",
+    "no_enhance",
+    "no_replacement",
+    "no_main_mutation",
+    "no_production_mutation",
+    "no_pages_mutation",
+    "no_command_center_mutation",
+    "no_pr_117_change"
+  ],
+  "cost_boundary": {
+    "work": 0,
+    "codex": 0,
+    "paid_api": 0
+  },
+  "story_id": "story-m08",
+  "candidate_id": "m08",
+  "headline": "GitHub Copilot canvases let users describe a workflow surface in plain English and have an agent build it.",
+  "subject_identity": "pass",
+  "factual_support": "pass",
+  "structural_quality": "pass",
+  "editorial_quality": "pass",
+  "visual_review_result": "pass",
+  "accepted_locked": false,
+  "asset_path": null,
+  "sha256": "41a18c286afa37c108fd8bef266bbcea815f010ac847a8b38932ab4787105d24",
+  "dimensions": {
+    "width": 1731,
+    "height": 909
+  },
+  "format": "png",
+  "size_bytes": 1094353,
+  "source_file_id": "file_00000000577081f5ba501e8a6a8eb9e6",
+  "chosen_output_reason": "This output cleanly depicts the four required conceptual stages with abstract canvas surfaces and no visible unsupported GitHub product controls.",
+  "alternate_output": {
+    "file_id": "file_000000001d5481f5a7198d161a250cdb",
+    "sha256": "90c7373918f67143cb38d6308f3d83b9bc68a41dbe1a2910b19c312fb82dca48",
+    "dimensions": {
+      "width": 1730,
+      "height": 909
+    },
+    "size_bytes": 1201172,
+    "review_result": "rejected",
+    "rejection_code": "unsupported_ui_specificity_risk",
+    "rejection_reason": "The alternate output adds avatar/chat-like interface elements that are more specific than the generic canvas abstractions permitted by the contract."
+  },
+  "failure_code": "exact_binary_transport_unavailable",
+  "failure_reason": "The accepted visual was materialized and hashed exactly, but the available GitHub connector mutations accept UTF-8 text or explicit blob content and provide no direct container-file/file-id binary handoff. Exact bytes therefore could not be persisted to the Q10 branch without re-encoding through an unsupported transport path. The matcher did not alter or substitute the image.",
+  "transport_action": "visual_pass_but_not_locked_no_image_written"
+}

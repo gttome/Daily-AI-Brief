@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "reviewer": "central_image_matcher",
+  "generation_in_matcher": false,
+  "fallback": false,
+  "prohibited_actions_confirmed": [
+    "no_generation",
+    "no_edit",
+    "no_transform",
+    "no_redraw",
+    "no_enhance",
+    "no_replacement",
+    "no_main_mutation",
+    "no_production_mutation",
+    "no_pages_mutation",
+    "no_command_center_mutation",
+    "no_pr_117_change"
+  ],
+  "cost_boundary": {
+    "work": 0,
+    "codex": 0,
+    "paid_api": 0
+  },
+  "story_id": "story-m04",
+  "candidate_id": "m04",
+  "headline": "GitHub agentic autofix can use Copilot Memory as repository-specific security context.",
+  "subject_identity": "not_evaluated",
+  "factual_support": "not_evaluated",
+  "structural_quality": "not_evaluated",
+  "editorial_quality": "not_evaluated",
+  "accepted_locked": false,
+  "asset_path": null,
+  "sha256": null,
+  "dimensions": null,
+  "failure_code": "no_accessible_matching_image_in_matcher_context",
+  "failure_reason": "The matcher could access only two unique generated image outputs, and both visibly depict the GitHub Copilot canvases workflow for candidate m08. No accessible image matched this candidate, so no substitute was generated and no asset was written.",
+  "accessible_generated_outputs_reviewed": 2,
+  "transport_action": "receipt_only_no_image_written"
+}

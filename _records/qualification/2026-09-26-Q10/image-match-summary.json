@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "matcher": "central_image_matcher",
+  "generated_in_matcher": false,
+  "accessible_generated_outputs": 2,
+  "accessible_file_records": 3,
+  "duplicate_file_records": 1,
+  "accessible_inventory": [
+    {
+      "candidate_match": "m08",
+      "file_id": "file_00000000577081f5ba501e8a6a8eb9e6",
+      "sha256": "41a18c286afa37c108fd8bef266bbcea815f010ac847a8b38932ab4787105d24",
+      "dimensions": {
+        "width": 1731,
+        "height": 909
+      },
+      "review_result": "visual_pass_selected_but_transport_failed"
+    },
+    {
+      "candidate_match": "m08",
+      "file_id": "file_000000001d5481f5a7198d161a250cdb",
+      "sha256": "90c7373918f67143cb38d6308f3d83b9bc68a41dbe1a2910b19c312fb82dca48",
+      "dimensions": {
+        "width": 1730,
+        "height": 909
+      },
+      "review_result": "rejected_unsupported_ui_specificity_risk"
+    },
+    {
+      "duplicate_of": "file_000000001d5481f5a7198d161a250cdb",
+      "file_id": "file_000000006dec8230bc1a80ecc3b6807b",
+      "note": "Mounted/upload file record for the same 1,201,172-byte m08-b image; not counted as a third unique generated output."
+    }
+  ],
+  "accepted_locked_candidate_ids": [],
+  "missing_or_rejected_candidate_ids": [
+    "m02",
+    "m04",
+    "m06",
+    "m07",
+    "m01",
+    "m08"
+  ],
+  "candidate_status": {
+    "m02": "missing_no_accessible_match",
+    "m04": "missing_no_accessible_match",
+    "m06": "missing_no_accessible_match",
+    "m07": "missing_no_accessible_match",
+    "m01": "missing_no_accessible_match",
+    "m08": "visual_pass_exact_binary_transport_unavailable"
+  },
+  "all_images_unique_per_candidate": true,
+  "fallback_used": false,
+  "production_mutation": false,
+  "cost_boundary": {
+    "work": 0,
+    "codex": 0,
+    "paid_api": 0
+  }
+}
