@@ -36,3 +36,13 @@ test('qualification novelty baseline excludes same-day production and Q-run hist
   assert.equal(n.exclude_all_qualification_runs,true);
   assert.equal(n.production_history_mutation,false);
 });
+
+
+test('valid qualification preflight is frozen within one Q identity',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  assert.equal(c.preflight_freeze.stage,'PREFLIGHT_DISCOVERY_READY');
+  assert.equal(c.preflight_freeze.freeze_when_valid,true);
+  assert.equal(c.preflight_freeze.semantic_executor_may_rerun_preflight,false);
+  assert.match(c.preflight_freeze.semantic_failure_policy,/record semantic-stage FAIL/i);
+  assert.match(c.preflight_freeze.streak_rule,/disqualifies/i);
+});

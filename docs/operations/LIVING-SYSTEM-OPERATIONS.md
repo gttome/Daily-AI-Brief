@@ -1086,3 +1086,8 @@ The active testing schedules are separate from production orchestration. Product
 ### Q1 finding — qualification novelty baseline isolation
 
 The first continuous Q1 preflight succeeded with 17 bounded metadata candidates and nine retrieved evidence items, but inspection showed that several strong candidates were already used by the real September 26 production edition. Applying production novelty against the already-published same-day edition would make repeated intraday qualification structurally impossible and would test candidate scarcity rather than automation repeatability. Permanent control: every Q-run is an independent hypothetical production attempt and evaluates novelty against production history strictly before its edition date. Same-day production and all Q-runs are excluded from the qualification novelty baseline. This does not weaken the real production 30-day novelty rule and does not authorize repeated production publication.
+
+
+### CQ-03 — valid qualification preflight was unnecessarily rerun
+
+During Q1, a valid qualification preflight at `b33a4cf1db326e88fbac1641f52274a142e4bc6c` was followed by a semantic-side source edit and a `Retry Q1 preflight` request, producing second preflight run `36257872448`. This was unnecessary rework. Permanent control: `PREFLIGHT_DISCOVERY_READY` freezes the Q-run's discovery request, shortlist and evidence artifacts. Semantic execution must consume them or record semantic-stage FAIL; it cannot improve the same Q-run by retriggering preflight. Q1 may continue for downstream functional testing but cannot count toward the consecutive no-rework stabilization streak.

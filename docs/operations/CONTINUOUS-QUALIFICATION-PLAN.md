@@ -273,3 +273,12 @@ Update this file whenever any of the following changes:
 - recurring qualification failure or permanent control.
 
 The stabilization program is complete only when evidence—not elapsed calendar time—shows repeated unattended success.
+
+
+## 14. CQ-03 — Freeze a valid preflight within each Q-run
+
+Q1 exposed an unnecessary-rework failure: after a valid `PREFLIGHT_DISCOVERY_READY` checkpoint already existed, the running semantic schedule added a discovery source and retriggered the same Q1 preflight. The second preflight also passed, but repeating a valid completed stage violates the stabilization objective.
+
+Permanent rule: once a Q identity reaches valid `PREFLIGHT_DISCOVERY_READY`, its request, shortlist, article-evidence packet and discovery source inputs are frozen for that Q-run. The semantic executor must consume the frozen packet. If that packet cannot support a compliant six-story qualification, the Q-run records a semantic-stage FAIL; it must not rewrite discovery inputs or rerun preflight to improve the candidate set. Only a new Q identity receives a fresh preflight.
+
+A same-Q rerun of an already-valid preflight disqualifies that run from the consecutive no-rework pass streak, even when the rerun itself succeeds. The run may still continue as a functional test so downstream defects can be found and hardened.
