@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "editorial_passes": 1,
+  "stories": [
+    {
+      "ordinal": 1,
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub lets agentic autofix use Copilot Memory as repository-specific repair context",
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 2,
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub expands Copilot across model choice, local sandboxing, collaboration surfaces and IDEs",
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 3,
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft reshapes Copilot around Home, Code and persistent Autopilot work",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 4,
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft brings governed code execution inside Microsoft 365 with Copilot Managed Runtime",
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 5,
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can turn reusable conversation experience into proposed Agent Skills",
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true
+    },
+    {
+      "ordinal": 6,
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "Open-weight models can power private multi-model coding-agent workflows on Amazon Bedrock",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/",
+      "agent_skill": false
+    }
+  ],
+  "watchlist": {
+    "result": "evaluated_in_same_pass",
+    "production_mutation": false
+  },
+  "professional_series": {
+    "result": "evaluated_in_same_pass"
+  },
+  "media": {
+    "result": "pending_verification"
+  },
+  "images": {
+    "result": "pending_generation"
+  }
+}
