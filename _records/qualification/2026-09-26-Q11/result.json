@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q11",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "IMAGES_READY",
+  "failure_code": "qualification_image_durable_handoff_missing",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "observed_main_sha": "adc5d3ee0d0ddce67f5fd264d9077e2533c14132",
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "editorial_model_passes": 1,
+  "stories": 6,
+  "allocation": "2/2/2",
+  "agent_skills_stories": 1,
+  "videos": 2,
+  "podcasts": 2,
+  "accepted_locked_images": 0,
+  "note": "Terminal Q11 result. Preserve as evidence and test any correction only on fresh Q12."
+}
