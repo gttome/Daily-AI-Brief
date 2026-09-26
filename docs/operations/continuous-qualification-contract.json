@@ -209,5 +209,38 @@
     ],
     "fail_closed_code": "qualification_agent_skill_unavailable_after_novelty",
     "semantic_must_not_start_when_agent_skill_ready_after_novelty_is_zero": true
+  },
+  "image_worker_isolation": {
+    "rule": "Story image generation must execute in a dedicated image-only worker context that receives exactly one sealed story packet and no qualification, scheduler, status, publication, edition, QA-dashboard, or other-story control text.",
+    "dedicated_worker_required": true,
+    "input_exactly_one_story_packet": true,
+    "operational_context_prohibited": true,
+    "prohibited_context_classes": [
+      "qualification_status",
+      "scheduler_state",
+      "publication_state",
+      "edition_dashboard",
+      "other_story_prompt",
+      "other_story_image",
+      "repair_status"
+    ],
+    "allowed_fields": [
+      "story_id",
+      "candidate_id",
+      "headline",
+      "source_url",
+      "visual_brief",
+      "reference_policy",
+      "acceptance_order",
+      "wrong_subject_action",
+      "low_quality_fallback"
+    ],
+    "worker_prompt_must_not_contain_run_id": true,
+    "worker_prompt_must_not_contain_q_number": true,
+    "worker_prompt_must_not_contain_status_terms": true,
+    "wrong_subject_retry_requires_new_worker_context": true,
+    "same_worker_retry_prohibited_after_subject_mismatch": true,
+    "max_wrong_subject_attempts_per_story_before_run_fail": 2,
+    "q4_root_cause": "Q4 generated qualification-status dashboards twice for m03 despite single-story packet isolation, proving that surrounding operational task context can contaminate generation. Dedicated image-only worker context is therefore mandatory."
   }
 }
