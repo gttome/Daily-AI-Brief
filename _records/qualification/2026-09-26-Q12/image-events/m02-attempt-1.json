@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q12",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "subject_identity": "fail",
+  "failure_code": "wrong_subject",
+  "accepted_locked": false,
+  "sha256": "1f5a18192aaad6b7abb6bd70be9fdfae55f6bee1b31a0942d13095ba3b0775da",
+  "dimensions": "1733x907",
+  "production_mutation": false
+}
