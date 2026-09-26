@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -242,5 +242,26 @@
     "same_worker_retry_prohibited_after_subject_mismatch": true,
     "max_wrong_subject_attempts_per_story_before_run_fail": 2,
     "q4_root_cause": "Q4 generated qualification-status dashboards twice for m03 despite single-story packet isolation, proving that surrounding operational task context can contaminate generation. Dedicated image-only worker context is therefore mandatory."
+  },
+  "image_factual_support": {
+    "rule": "Specific image labels and examples must be supported by frozen source evidence. Generic explanatory elements are allowed only when they remain conceptual.",
+    "direct_source_support_required_for_specific_labels": true,
+    "source_phrase_allowlist_required": true,
+    "generic_conceptual_elements_allowed": true,
+    "generic_elements_must_not_imply_product_fact": true,
+    "image_packet_required_fields": [
+      "verified_visual_facts",
+      "generic_conceptual_elements",
+      "prohibited_specifics"
+    ],
+    "acceptance_order": [
+      "subject_identity",
+      "factual_support",
+      "structural_quality",
+      "editorial_quality"
+    ],
+    "factual_support_failure_action": "discard_and_start_fresh_image_only_worker_for_same_story",
+    "max_factual_support_failures_per_story_before_run_fail": 2,
+    "q5_root_cause": "Q5 image-only workers stayed on subject but added unsupported concrete details. The next control restricts concrete content to frozen-evidence facts."
   }
 }
