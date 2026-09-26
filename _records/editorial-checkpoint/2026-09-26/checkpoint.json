@@ -34,5 +34,10 @@
   "production_changes": 0,
   "lifecycle": "staged",
   "closed": false,
-  "next_action": "Generate five remaining independent story-specific OpenAI images in an image-specific execution context, validate all six against structural + editorial v2 gates, then create the atomic handoff and continue through publication closure."
+  "next_action": "Generate five remaining independent story-specific OpenAI images in an image-specific execution context, validate all six against structural + editorial v2 gates, then create the atomic handoff and continue through publication closure.",
+  "documentation_debt": {
+    "required": true,
+    "target": "docs/operations/LIVING-SYSTEM-OPERATIONS.md and docs/operations/under80-runtime-contract.json",
+    "reason": "Image execution-context isolation blocker must be added to the living hardening ledger and runtime image guard in the first subsequent hardening change that can safely modify those files."
+  }
 }
