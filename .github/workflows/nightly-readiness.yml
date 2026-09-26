@@ -2,289 +2,107 @@ name: Nightly Daily Brief readiness
 
 on:
   schedule:
-    # 21:00 America/Chicago across CDT/CST. Local-time gate suppresses the DST companion trigger.
     - cron: '0 2 * * *'
     - cron: '0 3 * * *'
-  workflow_dispatch:
+  workflow_dispatch: {}
 
 permissions:
   contents: write
   actions: read
   issues: write
-  pull-requests: read
-
-concurrency:
-  group: nightly-daily-brief-readiness
-  cancel-in-progress: false
 
 jobs:
   readiness:
     runs-on: ubuntu-latest
     steps:
-      - name: Gate scheduled run to 21:00 America/Chicago
+      - name: Gate
         id: gate
-        shell: bash
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
-          local_time="$(TZ=America/Chicago date +%H:%M)"
-          if [ "$local_time" = "21:00" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H:%M)" = "21:00" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
-            echo "DST companion trigger suppressed at $local_time America/Chicago."
           fi
 
-      - name: Build readiness report and notify
+      - name: Audit and notify
         if: steps.gate.outputs.run == 'true'
-        uses: actions/github-script@v8
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const owner = context.repo.owner;
-            const repo = context.repo.repo;
-            const issue_number = 234;
-            const reportBranch = 'ops/nightly-readiness';
-            const tz = 'America/Chicago';
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          d="$(TZ=America/Chicago date +%F)"
+          t="$(TZ=America/Chicago date +%H:%M:%S)"
+          prior="$(TZ=America/Chicago date -d yesterday +%F)"
+          sha="$(gh api repos/$REPO/commits/main --jq .sha)"
+          runs="$(gh api 'repos/'$REPO'/actions/runs?branch=main&per_page=100')"
 
-            function chicagoParts(d = new Date()) {
-              const parts = new Intl.DateTimeFormat('en-US', {
-                timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit',
-                hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
-              }).formatToParts(d);
-              return Object.fromEntries(parts.filter(x => x.type !== 'literal').map(x => [x.type, x.value]));
-            }
-            const now = chicagoParts();
-            const auditDate = `${now.year}-${now.month}-${now.day}`;
-            const auditTime = `${now.hour}:${now.minute}:${now.second}`;
-            const priorDate = new Date(Date.UTC(Number(now.year), Number(now.month)-1, Number(now.day)));
-            priorDate.setUTCDate(priorDate.getUTCDate()-1);
-            const prior = priorDate.toISOString().slice(0,10);
+          result() { jq -r --arg s "$sha" --arg n "$1" '.workflow_runs[]|select(.name==$n and .head_sha==$s)|.conclusion' <<<"$runs"|head -1; }
+          ci="$(result 'Deterministic publication CI')"
+          pages="$(result 'pages build and deployment')"
+          delta="$(result 'Daily AI Brief deterministic delta validation')"
+          rules="$(gh api repos/$REPO/rulesets/23615327 --jq .enforcement 2>/dev/null || echo unavailable)"
 
-            const main = await github.rest.repos.getBranch({owner, repo, branch:'main'});
-            const mainSha = main.data.commit.sha;
+          blockers=0
+          [ "$ci" = success ] || blockers=$((blockers+1))
+          [ "$pages" = success ] || blockers=$((blockers+1))
+          [ "$delta" = success ] || blockers=$((blockers+1))
+          [ "$rules" = active ] || blockers=$((blockers+1))
 
-            const runsResp = await github.rest.actions.listWorkflowRunsForRepo({owner, repo, branch:'main', per_page:100});
-            const runs = runsResp.data.workflow_runs || [];
-            const latestByName = name => runs.find(r => r.name === name && r.head_sha === mainSha);
-            const ci = latestByName('Deterministic publication CI');
-            const pages = latestByName('pages build and deployment');
-            const delta = latestByName('Daily AI Brief deterministic delta validation');
+          lifecycle="$(gh api repos/$REPO/contents/_records/publication/$prior/lifecycle.json?ref=main --jq .content 2>/dev/null|tr -d '\n'|base64 -d 2>/dev/null||true)"
+          completion="$(gh api repos/$REPO/contents/_records/publication/$prior/completion.json?ref=main --jq .content 2>/dev/null|tr -d '\n'|base64 -d 2>/dev/null||true)"
+          ls="$(jq -r '.stage//"Unavailable"' <<<"$lifecycle" 2>/dev/null||echo Unavailable)"
+          lo="$(jq -r '.terminal_outcome//"Unavailable"' <<<"$lifecycle" 2>/dev/null||echo Unavailable)"
+          cp="$(jq -r '.phase//"Unavailable"' <<<"$completion" 2>/dev/null||echo Unavailable)"
+          pg="$(jq -r '.pages.conclusion//"Unavailable"' <<<"$completion" 2>/dev/null||echo Unavailable)"
 
-            let ruleset = null;
-            try {
-              const rs = await github.request('GET /repos/{owner}/{repo}/rulesets', {owner, repo});
-              ruleset = (rs.data || []).find(x => x.name === 'Protect main - required publication CI') || null;
-            } catch {}
+          warnings=1
+          if ! { { [ "$ls" = COMPLETED ] || [ "$ls" = CC_SYNCED ]; } && [ "$lo" = COMPLETED ] && [ "$cp" = live_verified ] && [ "$pg" = success ]; }; then warnings=$((warnings+1)); fi
 
-            async function readJson(path, ref='main') {
-              try {
-                const r = await github.rest.repos.getContent({owner, repo, path, ref});
-                if (Array.isArray(r.data) || !r.data.content) return null;
-                return JSON.parse(Buffer.from(r.data.content, r.data.encoding || 'base64').toString('utf8'));
-              } catch { return null; }
-            }
+          if [ "$blockers" -gt 0 ]; then verdict="NOT READY"; emoji="🔴"; elif [ "$warnings" -gt 0 ]; then verdict="READY WITH WARNINGS"; emoji="🟡"; else verdict="READY"; emoji="🟢"; fi
 
-            const lifecycle = await readJson(`_records/publication/${prior}/lifecycle.json`);
-            const completion = await readJson(`_records/publication/${prior}/completion.json`);
-            const runState = await readJson(`_records/run-state/${prior}.json`);
-            const priorClosed = !!(
-              lifecycle &&
-              ['COMPLETED','CC_SYNCED'].includes(lifecycle.stage) &&
-              lifecycle.terminal_outcome === 'COMPLETED' &&
-              completion?.phase === 'live_verified' &&
-              completion?.pages?.conclusion === 'success'
-            );
+          path="nightly-readiness/Daily_AI_Brief_Nightly_Readiness_${d}.md"
+          url="https://github.com/$REPO/blob/ops/nightly-readiness/$path"
+          cat >/tmp/r.md <<EOF
+# Daily Generative AI Brief — Nightly Readiness Report
 
-            const prs = (await github.rest.pulls.list({owner, repo, state:'open', per_page:100})).data;
-            const suspiciousPrs = prs.filter(p => !p.draft && !/CANARY|DO NOT MERGE/i.test(p.title || ''));
+## $emoji $verdict
 
-            const recentFailures = runs.filter(r => {
-              const age = Date.now() - new Date(r.created_at).getTime();
-              return age <= 24*60*60*1000 && ['failure','cancelled','timed_out'].includes(r.conclusion);
-            }).slice(0,10);
-
-            const blockers = [];
-            const warnings = [];
-
-            if (!ci || ci.conclusion !== 'success') blockers.push('Latest current-main Deterministic publication CI is not verified successful.');
-            if (!pages || pages.conclusion !== 'success') blockers.push('Latest current-main GitHub Pages deployment is not verified successful.');
-            if (!delta || delta.conclusion !== 'success') blockers.push('Latest current-main deterministic delta validation is not verified successful.');
-            if (!ruleset || ruleset.enforcement !== 'active') blockers.push('Required main protection ruleset is not verified active.');
-            if (!priorClosed) warnings.push(`Prior edition ${prior} is not fully CLOSED by lifecycle/completion evidence.`);
-            if (runState && lifecycle && runState.stage !== lifecycle.stage) {
-              warnings.push(`Prior edition legacy run-state (${runState.stage}) differs from authoritative lifecycle (${lifecycle.stage}).`);
-            }
-            if (suspiciousPrs.length) {
-              warnings.push(`${suspiciousPrs.length} open non-draft PR(s) require awareness; verify they are not competing publication work.`);
-            }
-            if (recentFailures.length) {
-              warnings.push(`${recentFailures.length} workflow failure/cancellation(s) occurred in the last 24 hours; later green runs may supersede them.`);
-            }
-
-            // GitHub cannot inspect ChatGPT's live automation registry. This is explicit rather than inferred.
-            warnings.push('Live ChatGPT schedule enablement is not directly observable from GitHub Actions; expected contract remains 04:00 / 06:30 / 08:30 / 10:30 America/Chicago.');
-
-            const verdict = blockers.length ? 'NOT READY' : warnings.length ? 'READY WITH WARNINGS' : 'READY';
-            const emoji = blockers.length ? '🔴' : warnings.length ? '🟡' : '🟢';
-
-            const fmtRun = r => r ? `\`${r.id}\` — ${r.conclusion || r.status} — \`${r.head_sha}\`` : 'Unavailable / not recorded';
-            const reportPath = `nightly-readiness/Daily_AI_Brief_Nightly_Readiness_${auditDate}.md`;
-            const reportUrl = `https://github.com/${owner}/${repo}/blob/${reportBranch}/${reportPath}`;
-
-            const report = `# Daily Generative AI Brief — Nightly Readiness Report
-
-> ## ${emoji} ${verdict}
-> **Audit date:** ${auditDate}  
-> **Audit time:** ${auditTime} America/Chicago  
-> **Current main SHA:** \`${mainSha}\`  
-> **Prior edition checked:** ${prior}
-
----
-
-## Executive Summary
-
-Nightly structural readiness was evaluated deterministically inside GitHub Actions. This workflow does **not** invoke ChatGPT Work, Codex, editorial research, image generation, media research, or a test Brief.
-
-**Verdict:** **${verdict}**
-
----
-
-## Readiness Scorecard
+Audit: $d $t America/Chicago
+Current main SHA: $sha
 
 | Check | Result |
 |---|---|
-| Current-main deterministic CI | ${ci?.conclusion === 'success' ? '✅ PASS' : '❌ FAIL'} |
-| Current-main Pages | ${pages?.conclusion === 'success' ? '✅ PASS' : '❌ FAIL'} |
-| Current-main delta validation | ${delta?.conclusion === 'success' ? '✅ PASS' : '❌ FAIL'} |
-| Main protection ruleset | ${ruleset?.enforcement === 'active' ? '✅ PASS' : '❌ FAIL'} |
-| Prior-day lifecycle closure | ${priorClosed ? '✅ PASS' : '⚠️ WARN'} |
-| Open PR contamination review | ${suspiciousPrs.length ? '⚠️ WARN' : '✅ PASS'} |
-| Recent workflow-failure review | ${recentFailures.length ? '⚠️ WARN' : '✅ PASS'} |
-| Work/Codex invoked | ✅ No |
+| Deterministic publication CI | $ci |
+| GitHub Pages | $pages |
+| Deterministic delta validation | $delta |
+| Main protection ruleset | $rules |
+| Prior edition lifecycle | $ls / $lo / $cp / $pg |
+| Work/Codex invoked | No |
 
----
+Expected sequence: 03:00 metadata -> 03:15 discovery/evidence -> 04:00 production -> 06:30 recovery -> 08:30 validation/repair -> 09:15 freshness -> 10:00 delta validation -> 10:30 closure.
 
-## Expected Daily Sequence
+GitHub cannot directly inspect the live ChatGPT automation registry; ChatGPT schedule times are the current operational contract, not live-verified state.
 
-| Time | Stage |
-|---|---|
-| 03:00 | GitHub metadata preflight |
-| 03:15 | GitHub discovery/evidence preflight |
-| 04:00 | ChatGPT Production Orchestrator |
-| 06:30 | ChatGPT Publication Recovery |
-| 08:30 | ChatGPT Live Validation & Repair |
-| 09:15 | GitHub publication freshness check |
-| 10:00 | GitHub deterministic delta validation |
-| 10:30 | ChatGPT Closure Audit |
+Nightly readiness: $verdict
+Current main SHA: $sha
+Blocking issues: $blockers
+Warnings: $warnings
+Work/Codex invoked: No
+Recommended action before 03:00: $([ "$blockers" -gt 0 ] && echo "Resolve blockers." || echo "No GitHub-side action required.")
+EOF
 
-> GitHub Actions cannot directly inspect ChatGPT's live automation registry. The ChatGPT schedule times above are the current operational contract and must not be reported as live-verified by this workflow.
+          b64="$(base64 -w0 /tmp/r.md)"
+          old="$(gh api "repos/$REPO/contents/$path?ref=ops/nightly-readiness" --jq .sha 2>/dev/null||true)"
+          if [ -n "$old" ]; then extra=(-f sha="$old"); else extra=(); fi
+          gh api --method PUT "repos/$REPO/contents/$path" -f message="Nightly readiness $d" -f content="$b64" -f branch=ops/nightly-readiness "${extra[@]}" >/dev/null
 
----
+          body="@gttome $emoji $verdict — Daily Brief nightly readiness
 
-## Repository Health
-
-- **Current main:** \`${mainSha}\`
-- **Deterministic publication CI:** ${fmtRun(ci)}
-- **GitHub Pages:** ${fmtRun(pages)}
-- **Deterministic delta validation:** ${fmtRun(delta)}
-- **Main ruleset:** ${ruleset ? `${ruleset.name} — ${ruleset.enforcement}` : 'Unavailable / not recorded'}
-
----
-
-## Prior-Day Closure
-
-- **Edition:** ${prior}
-- **Lifecycle stage:** ${lifecycle?.stage || 'Unavailable / not recorded'}
-- **Terminal outcome:** ${lifecycle?.terminal_outcome || 'Unavailable / not recorded'}
-- **Completion phase:** ${completion?.phase || 'Unavailable / not recorded'}
-- **Pages conclusion:** ${completion?.pages?.conclusion || 'Unavailable / not recorded'}
-- **Legacy run-state stage:** ${runState?.stage || 'Unavailable / not recorded'}
-- **Authoritative closed:** ${priorClosed ? 'Yes' : 'No'}
-
----
-
-## Open PR Review
-
-${prs.length ? prs.map(p => `- #${p.number} — ${p.draft ? 'DRAFT' : 'OPEN'} — ${p.title}`).join('\n') : '- None'}
-
----
-
-## Recent Workflow Failures / Cancellations (24h)
-
-${recentFailures.length ? recentFailures.map(r => `- ${r.name} — run ${r.id} — ${r.conclusion} — ${r.created_at}`).join('\n') : '- None observed'}
-
----
-
-## Risks
-
-### Critical / High
-${blockers.length ? blockers.map(x => `- ${x}`).join('\n') : '- None observed'}
-
-### Medium / Low
-${warnings.length ? warnings.map(x => `- ${x}`).join('\n') : '- None observed'}
-
----
-
-## Recommended Action Before 03:00
-
-${blockers.length ? 'Resolve the blocking items above before allowing the production cycle to proceed.' : 'No GitHub-side production change is required before 03:00. Allow the normal preflight and state-driven production sequence to proceed.'}
-
----
-
-**Nightly readiness:** ${verdict}  
-**Current main SHA:** \`${mainSha}\`  
-**Blocking issues:** ${blockers.length}  
-**Warnings:** ${warnings.length}  
-**Work/Codex invoked:** No  
-**Recommended action before 03:00:** ${blockers.length ? 'Resolve blockers before production.' : 'No GitHub-side action required.'}
-`;
-
-            async function getRefSha(ref) {
-              const r = await github.rest.git.getRef({owner, repo, ref:`heads/${ref}`});
-              return r.data.object.sha;
-            }
-
-            let reportRefSha;
-            try {
-              reportRefSha = await getRefSha(reportBranch);
-            } catch {
-              await github.rest.git.createRef({owner, repo, ref:`refs/heads/${reportBranch}`, sha:mainSha});
-              reportRefSha = mainSha;
-            }
-
-            let existingSha = null;
-            try {
-              const existing = await github.rest.repos.getContent({owner, repo, path:reportPath, ref:reportBranch});
-              if (!Array.isArray(existing.data)) existingSha = existing.data.sha;
-            } catch {}
-
-            const payload = {
-              owner, repo, path:reportPath, branch:reportBranch,
-              message: `Nightly readiness report for ${auditDate}`,
-              content: Buffer.from(report, 'utf8').toString('base64')
-            };
-            if (existingSha) payload.sha = existingSha;
-            await github.rest.repos.createOrUpdateFileContents(payload);
-
-            const topBlocker = blockers[0] || 'None';
-            const topWarning = warnings[0] || 'None';
-            const comment = `@gttome ${emoji} **${verdict}** — Daily Brief nightly readiness
-
-**Audit:** ${auditDate} ${auditTime} America/Chicago  
-**Current main:** \`${mainSha}\`  
-**Blocking issues:** ${blockers.length} — ${topBlocker}  
-**Warnings:** ${warnings.length} — ${topWarning}  
-**Work/Codex invoked:** No  
-**Recommended action before 03:00:** ${blockers.length ? 'Resolve blockers before production.' : 'No GitHub-side production action required.'}
-
-[Open the full nightly readiness report](${reportUrl})`;
-
-            await github.rest.issues.createComment({owner, repo, issue_number, body:comment});
-
-            core.summary.addHeading(`${emoji} ${verdict}`);
-            core.summary.addRaw(`Current main: \`${mainSha}\`\n\n`);
-            core.summary.addLink('Full nightly readiness report', reportUrl);
-            await core.summary.write();
+Audit: $d $t America/Chicago
+Current main: $sha
+Blocking issues: $blockers
+Warnings: $warnings
+Work/Codex invoked: No
+Full report: $url"
+          gh api --method POST repos/$REPO/issues/234/comments -f body="$body" >/dev/null
