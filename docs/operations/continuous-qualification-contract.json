@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.7.0",
+  "schema_version": "1.8.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -139,9 +139,9 @@
     ],
     "qualification_schedules": [
       {
-        "name": "Qualification slots",
-        "time_chicago": "individually scheduled",
-        "run_slot": "Q1..Q40",
+        "name": "Qualification Sequential Controller",
+        "time_chicago": "state_driven_after_previous_terminal_and_repair_ready",
+        "run_slot": "next_unused_Q1..Q40",
         "scope": "qualification_nonproduction"
       }
     ],
@@ -151,9 +151,13 @@
     "independently_pauseable": true,
     "dynamic_slot_addition_allowed": true,
     "slot_pause_resume_independent": true,
-    "minimum_active_capacity_target": 20,
     "slot_terminal_guard_required": true,
-    "slot_duplicate_run_guard_required": true
+    "slot_duplicate_run_guard_required": true,
+    "reserve_slot_capacity_target": 20,
+    "maximum_concurrent_nonterminal_q_runs": 1,
+    "future_q_clock_prescheduling": false,
+    "next_q_requires_previous_terminal": true,
+    "next_q_requires_failure_repair_merged_when_applicable": true
   },
   "qualification_novelty_baseline": {
     "rule": "Each full qualification run is an independent hypothetical production attempt for its edition date. Novelty must be evaluated against the production history that existed before that edition date, not against the real same-day production edition or prior Q-runs.",
@@ -295,5 +299,17 @@
     "minimum_novelty_eligible_candidates_per_focus": 3,
     "fail_closed_before_semantic_when_any_focus_below_minimum": true,
     "q7_root_cause": "Q7 reported 10/3/3 coverage while two of the three agent-focus candidates were exact-source prior-production duplicates marked production_novelty_eligible=false."
+  },
+  "qualification_source_supply_acquisition": {
+    "rule": "Qualification discovery must not stop at the normal catalog acquisition budget while fresh metadata or per-focus source supply is insufficient; it may continue only within the existing absolute retrieval budget and source-scan maximum.",
+    "qualification_only": true,
+    "production_normal_budget_behavior_unchanged": true,
+    "normal_budget_can_stop_qualification_when_supply_incomplete": false,
+    "absolute_retrieval_budget_remains_hard": true,
+    "source_scan_maximum_remains_hard": true,
+    "fresh_metadata_target_required_before_sufficiency_stop": true,
+    "minimum_fresh_focus_candidates_before_sufficiency_stop": 5,
+    "purpose_env": "DAB_DISCOVERY_PURPOSE=continuous_qualification",
+    "q8_root_cause": "Q8 scanned 12 sources and stopped at the normal acquisition budget with only 13 fresh metadata candidates; novelty-aware post-gate coverage was Technical 8 / Applied 2 / Agents 1, so qualification source supply was insufficient before semantic execution."
   }
 }
