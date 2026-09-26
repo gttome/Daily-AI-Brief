@@ -1,0 +1,37 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "stage": "IMAGES_READY",
+  "status": "fail",
+  "attempts": [
+    {
+      "attempt": 1,
+      "target": "m03",
+      "sha256": "24d8b83d78e674b097c846beed0a5a2a221ce85182bdcd81a115287f431f72bd",
+      "size": "1734x907",
+      "result": "rejected",
+      "reason": "Subject identity passed, but factual-support gate failed: image invented repository-memory contents and additional verification/iteration details not established by the sealed story packet."
+    },
+    {
+      "attempt": 2,
+      "target": "m03",
+      "sha256": "2b2ccb183adae73ea6bf97f04ae9b2b229ca9fedf672c498e5297ff9384fdde6",
+      "size": "1730x909",
+      "result": "rejected",
+      "reason": "Fresh request remained on subject but introduced unsupported vulnerability categories, repository contents, workflow claims, and benefit/iteration language."
+    },
+    {
+      "attempt": 3,
+      "target": "m03",
+      "sha256": "5785f620efaefec8faedb8746098d5ccec32ba1def25c81e7fb28915429ce2df",
+      "size": "1730x909",
+      "result": "rejected",
+      "reason": "Fresh schematic request still added unsupported repository contents, alert details, verification claims, human-review actions, benefit claims, and iteration behavior."
+    }
+  ],
+  "accepted_locked": 0,
+  "low_quality_fallback_used": false,
+  "production_asset_reuse": false,
+  "disposition": "fail_closed",
+  "failure_code": "qualification_image_factual_support_unsatisfied"
+}
