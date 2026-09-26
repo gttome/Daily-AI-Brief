@@ -64,3 +64,13 @@ test('both protected promotion paths explicitly dispatch Pages and exact-SHA del
  assert.equal(delta,2);
  assert.match(workflow,/expected_sha:mergeSha/);
 });
+
+
+test('closure finalization persists delta validation inside the protected branch before checkpointing',()=>{
+ const workflow=fs.readFileSync('.github/workflows/daily-delta-validation.yml','utf8');
+ assert.match(workflow,/validation="_records\/publication\/\$EDITION_DATE\/delta-validation\.json"/);
+ assert.match(workflow,/cp \/tmp\/daily-validation\.json "\$validation"/);
+ assert.match(workflow,/run-state\.mjs finalize[^\n]*--validation "\$validation"/);
+ assert.doesNotMatch(workflow,/run-state\.mjs finalize[^\n]*--validation \/tmp\/daily-validation\.json/);
+ assert.match(workflow,/git add "\$completion" "\$validation" "\$state"/);
+});
