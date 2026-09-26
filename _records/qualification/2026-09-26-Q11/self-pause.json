@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q11",
+  "task_title": "Qualification Q11",
+  "self_paused": true,
+  "terminal_result": "fail",
+  "final_stage": "IMAGES_READY",
+  "observed_main_sha": "adc5d3ee0d0ddce67f5fd264d9077e2533c14132",
+  "production_mutation": false
+}
