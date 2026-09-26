@@ -176,7 +176,11 @@ while(selected.length<limit&&keys.some(k=>groups.get(k).length)){
 
 const candidates=selected.map((x,i)=>({...x,candidate_id:x.candidate_id||`m${String(i+1).padStart(2,'0')}`}));
 if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_violation');
-const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
+const coverageCountsBeforeNovelty=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
+const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[
+ f,
+ candidates.filter(x=>x.focus_hint===f&&(!qualificationEditionDate||x.production_novelty_eligible!==false)).length
+]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
 const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
 const agentSkillStoryReadySignalsAfterNovelty=agentSkillStoryReadySignals;
@@ -195,6 +199,7 @@ const result={
  retained_metadata_candidates:candidates.length,
  deferred_count:Math.max(0,eligible.length-candidates.length),
  coverage_counts:coverageCounts,
+ coverage_counts_before_novelty:coverageCountsBeforeNovelty,
  agent_skill_signals:agentSkillSignals,
  agent_skill_story_ready_signals:agentSkillStoryReadySignals,
  agent_skill_story_ready_signals_after_novelty:agentSkillStoryReadySignalsAfterNovelty,

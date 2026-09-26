@@ -163,3 +163,25 @@ test('qualification preflight does not count upstream agent hints without concre
  assert.equal(result.coverage_counts.agents_non_technical_people,1);
  assert.equal(result.coverage_ready,false);
 });
+
+
+test('qualification category coverage excludes prior-production novelty-ineligible candidates',()=>{
+ const priorA='https://example.com/agent-prior-a';
+ const priorB='https://example.com/agent-prior-b';
+ const result=runGate([
+  {source_id:'skill',headline:'Qoder Agent Skill evolution suggestions for reusable workflows',snippet:'Agent Skills reusable workflows.',canonical_url:'https://example.com/skill-current',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'},
+  {source_id:'a1',headline:'AI agent workflow automation for business teams',canonical_url:priorA,published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'agents_non_technical_people'},
+  {source_id:'a2',headline:'AI assistant agent workflow for business users',canonical_url:priorB,published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'agents_non_technical_people'},
+  {source_id:'t1',headline:'AI model evaluation benchmark release for developer reliability one',canonical_url:'https://example.com/t1',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'t2',headline:'AI model evaluation benchmark release for developer reliability two',canonical_url:'https://example.com/t2',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'t3',headline:'AI model evaluation benchmark release for developer reliability three',canonical_url:'https://example.com/t3',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'k1',headline:'Enterprise workplace AI productivity update for knowledge workers one',canonical_url:'https://example.com/k1',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'k2',headline:'Enterprise workplace AI productivity update for knowledge workers two',canonical_url:'https://example.com/k2',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'k3',headline:'Enterprise workplace AI productivity update for knowledge workers three',canonical_url:'https://example.com/k3',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'}
+ ],{cutoff:'2026-09-26T20:00:00Z',qualificationEditionDate:'2026-09-26',publishedEditions:[{brief_date:'2026-09-25',stories:[{source:{url:priorA}},{source:{url:priorB}}]}]});
+ assert.equal(result.coverage_counts_before_novelty.agents_non_technical_people,3);
+ assert.equal(result.coverage_counts.agents_non_technical_people,1);
+ assert.equal(result.coverage_ready,false);
+ assert.equal(result.candidates.find(x=>x.canonical_url===priorA).production_novelty_eligible,false);
+ assert.equal(result.candidates.find(x=>x.canonical_url===priorB).production_novelty_eligible,false);
+});

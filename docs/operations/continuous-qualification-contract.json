@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.6.0",
+  "schema_version": "1.7.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -283,5 +283,17 @@
     "coverage_recomputed_after_reclassification": true,
     "fail_closed_when_agent_focus_coverage_below_three": true,
     "q6_root_cause": "Q6 preflight counted two upstream agent-focus hints whose frozen evidence was multimodal RL training and LLM quality assurance, leaving only one semantically valid Agents for Everyone story at the editorial gate."
+  },
+  "qualification_category_novelty_coverage": {
+    "rule": "Qualification focus coverage and bounded article-evidence selection must exclude candidates whose production_novelty_eligible is false.",
+    "qualification_only": true,
+    "coverage_computed_after_novelty": true,
+    "retained_metadata_may_include_ineligible_for_traceability": true,
+    "ineligible_candidates_cannot_satisfy_focus_coverage": true,
+    "ineligible_candidates_excluded_from_article_evidence_plan": true,
+    "diagnostic_pre_novelty_counts_allowed": true,
+    "minimum_novelty_eligible_candidates_per_focus": 3,
+    "fail_closed_before_semantic_when_any_focus_below_minimum": true,
+    "q7_root_cause": "Q7 reported 10/3/3 coverage while two of the three agent-focus candidates were exact-source prior-production duplicates marked production_novelty_eligible=false."
   }
 }

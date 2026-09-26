@@ -226,6 +226,15 @@ For qualification runs only, an upstream agent focus hint is advisory. Unless th
 If the resulting qualification candidate set no longer has at least three agent-focus candidates, preflight must fail closed before semantic execution. A failed Q-run is preserved; the correction is tested only on the next fresh Q identity.
 
 
+## 5G. Qualification category coverage is novelty-aware
+
+Q7 proved that Agent Skills novelty alone is insufficient. Deterministic preflight reported three Agents for Everyone candidates even though two of those exact sources were already present in prior production history and were explicitly marked `production_novelty_eligible=false`. The single semantic pass therefore had only one usable agent story.
+
+For qualification runs, every focus-category coverage count must be computed **after** production novelty eligibility is applied. A novelty-ineligible candidate may remain in the retained metadata set for traceability, but it cannot satisfy the required three-candidate category breadth and cannot enter the bounded nine-item article-evidence plan. The preflight may expose the pre-novelty counts separately for diagnostics, but readiness is determined only from novelty-eligible counts.
+
+If any focus category has fewer than three novelty-eligible candidates, preflight fails closed before the semantic pass. The failed Q identity is preserved and any source-supply correction is tested only on the next fresh Q-run.
+
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
