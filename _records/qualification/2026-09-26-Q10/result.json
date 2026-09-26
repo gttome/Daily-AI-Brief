@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "IMAGES_READY",
+  "failure_code": "qualification_image_artifact_routing_unsatisfied",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "production_main_sha_observed_at_failure": "87316c692833cb94890c46f325942ffbe40484dc",
+  "preserved_checkpoints": ["PREFLIGHT_DISCOVERY_READY","EDITORIAL_KERNEL_READY","MEDIA_READY","WATCHLIST_READY","PROFESSIONAL_SERIES_EVALUATED","IMAGE_PACKETS_READY"],
+  "images": {
+    "result": "fail",
+    "required": 6,
+    "candidate_ids": ["m02","m04","m06","m07","m01","m08"],
+    "accepted_locked": 0,
+    "visual_pass_but_not_locked": ["m08"],
+    "missing_or_unroutable": ["m02","m04","m06","m07","m01"],
+    "fallback_used": false,
+    "routing_evidence": "_records/qualification/2026-09-26-Q10/image-match-summary.json",
+    "review_attempts_directory": "_records/qualification/2026-09-26-Q10/image-review-attempts",
+    "reason": "Isolated image generation completed, but exact generated binaries were not reliably exposed to the separate review/transport context. The matcher could access only two unique outputs, both for m08; one m08 output passed all visual gates but exact binary transport to GitHub was unavailable. A compliant retry requires a brand-new dedicated image-only task, which this supervisor run cannot create, and the supervisor itself is prohibited from generating images."
+  },
+  "handoff": {"result":"not_run","reason":"IMAGES_READY failed closed"},
+  "deterministic_qualification": {"result":"not_run","reason":"no valid atomic handoff"},
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "owner_github_ui_intervention": 0,
+  "completed_stage_rework": 0,
+  "streak_effect": "reset",
+  "next_action": "Do not repair Q10 into a pass and do not start Q11. Permanently harden image artifact routing so each dedicated image-only worker returns a durable exact-binary artifact reference with candidate lineage to a separate reviewer that can materialize, hash, inspect, and persist the exact bytes. Merge that hardening through protected CI, then test only on fresh Q11."
+}
