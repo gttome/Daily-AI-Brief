@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-26",
+  "baseline_main_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
+  "stage": "EDITORIAL_KERNEL_READY",
+  "status": "blocked",
+  "blocker_code": "agent_skills_novelty_conflict",
+  "preferred_candidate_id": "m01",
+  "prior_story_id": "dab-story-2026-09-25-e2f16170",
+  "material_update_verified": false,
+  "semantic_passes_used": 0,
+  "first_incomplete_stage": "EDITORIAL_KERNEL_READY",
+  "recovery": "Reuse all preflight/readiness checkpoints. Repair only the Agent Skills evidence slot with a genuinely new or materially updated qualifying source; do not broad-retry the edition."
+}
