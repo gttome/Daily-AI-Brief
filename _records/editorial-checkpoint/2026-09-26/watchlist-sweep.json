@@ -1,0 +1,68 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-26",
+  "recovery_mode": "bounded_same_pass_from_existing_preflight_and_selected_story_evidence",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": false,
+    "reason": "Not rerun during recovery because prior discovery/Watchlist research is a completed upstream stage and broad semantic rework is prohibited."
+  },
+  "surfaces": [
+    {
+      "id": "current_selected_story_evidence",
+      "status": "complete",
+      "queries": [],
+      "candidates_found": 6
+    },
+    {
+      "id": "targeted_agent_skills_repair",
+      "status": "complete",
+      "queries": [],
+      "candidates_found": 1
+    }
+  ],
+  "concept_classes_reviewed": [
+    "agent_pattern_or_harness",
+    "developer_tooling",
+    "safety_security_or_governance",
+    "knowledge_worker_workflow",
+    "evaluation_or_benchmark"
+  ],
+  "candidates_reviewed": [
+    {
+      "name": "Qoder skill evolution suggestions",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "rationale": "Adds a human-confirmed learn-from-experience loop to reusable Agent Skills.",
+      "evidence_urls": [
+        "https://docs.qoder.com/release-notes/qoder"
+      ]
+    },
+    {
+      "name": "Agentic autofix with Copilot Memory",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "rationale": "Adds project memory as an observable harness input for security-repair agents.",
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory"
+      ]
+    },
+    {
+      "name": "Copilot weekly model/sandbox/client bundle",
+      "concept_class": "developer_tooling",
+      "disposition": "update_existing",
+      "rationale": "Strengthens model-lifecycle governance by coupling model choice with sandbox and client-surface changes.",
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
+      ]
+    }
+  ],
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-harness-engineering",
+    "dab-topic-model-lifecycle-governance"
+  ],
+  "zero_new_certified": true,
+  "zero_new_justification": "No new durable Watchlist topic is created during this bounded recovery. The accepted current evidence materially strengthens three existing topics; broader Watchlist discovery was intentionally not repeated."
+}

@@ -1,0 +1,157 @@
+{
+  "schema_version": "1.0.0",
+  "brief_date": "2026-09-26",
+  "edition_id": "dab-edition-2026-09-26",
+  "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "stories": [
+    {
+      "candidate_id": "m09",
+      "story_id": "narrateai-llm-quality-assurance-2026-09-26",
+      "canonical_ordinal": 1,
+      "focus": "technical_ai_engineering",
+      "headline": "AWS shows how to build continuous quality checks into production LLM workflows",
+      "summary": "AWS describes NarrateAI, a production LLM quality-assurance pattern on Amazon Bedrock that combines adaptive orchestration, multi-model failover, streaming evaluation, composite evaluation, and data-accuracy verification inside the response path.",
+      "why_it_matters": "Reliable generative AI requires more than an offline benchmark. Embedding verification into retrieval, generation, failover, and streaming makes quality observable while the system is actually serving users.",
+      "editorial_limitation": "The architecture and reported accuracy come from an AWS-authored implementation. Teams should independently test thresholds, evaluator bias, latency overhead, failure coverage, and portability before adopting the pattern.",
+      "topic_labels": [
+        "LLM evaluation",
+        "production reliability",
+        "streaming evaluation",
+        "Bedrock"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Add one live quality check to a production AI path",
+        "rationale": "Start with a measurable failure mode such as numerical accuracy or citation consistency, then track the added latency and false-positive rate."
+      }
+    },
+    {
+      "candidate_id": "m04",
+      "story_id": "copilot-weekly-release-stack-2026-09-26",
+      "canonical_ordinal": 2,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs",
+      "summary": "GitHub’s September 21 weekly release bundle adds new model choices, local sandboxing in the Copilot app, updates for Slack and Microsoft Teams, and changes across JetBrains and VS Code.",
+      "why_it_matters": "Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaboration surfaces, and client-specific behavior as one operating system.",
+      "editorial_limitation": "This is a bundled vendor release. Individual features vary by client, plan, rollout state, and policy, so teams should verify the exact capability and governance surface they intend to use.",
+      "topic_labels": [
+        "GitHub Copilot",
+        "sandboxing",
+        "model routing",
+        "developer agents"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Map Copilot capability to execution boundary",
+        "rationale": "For each enabled surface, document the model, tools, sandbox or host boundary, data access, and organization policy that governs it."
+      }
+    },
+    {
+      "candidate_id": "m05",
+      "story_id": "microsoft-new-copilot-home-code-autopilot-2026-09-26",
+      "canonical_ordinal": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft redesigns Copilot around Home, Code, and persistent Autopilot",
+      "summary": "Microsoft introduced a new Copilot experience organized around Home for everyday work, Code for building solutions, and Autopilot for persistent delegated work that can continue across time.",
+      "why_it_matters": "The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to deciding which work should remain interactive, become an artifact, or run persistently.",
+      "editorial_limitation": "Home, Code, and Autopilot have different rollout states and organizational controls. Teams should validate availability, identity, data access, approval, and audit behavior before treating persistent work as autonomous.",
+      "topic_labels": [
+        "Microsoft Copilot",
+        "knowledge work",
+        "Autopilot",
+        "AI workspace"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Classify one recurring workflow as chat, build, or delegate",
+        "rationale": "Choose a real task and decide whether it belongs in interactive Home work, a reusable Code artifact, or a persistent Autopilot assignment with explicit checkpoints."
+      }
+    },
+    {
+      "candidate_id": "m06",
+      "story_id": "copilot-managed-runtime-2026-09-26",
+      "canonical_ordinal": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft adds a governed runtime for code execution inside Microsoft 365",
+      "summary": "Microsoft Copilot Managed Runtime enters public preview as a tenant-boundary platform for executing code with enterprise governance, live data connections, app access, and familiar Microsoft 365 sharing expectations.",
+      "why_it_matters": "Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while giving IT a clearer place to govern identity, data, sharing, and execution.",
+      "editorial_limitation": "The feature is in public preview and tied to Microsoft 365. Organizations should test workload isolation, supported languages and libraries, data-boundary guarantees, logging, and failure recovery before relying on it for critical work.",
+      "topic_labels": [
+        "Microsoft 365 Copilot",
+        "code execution",
+        "enterprise governance",
+        "managed runtime"
+      ],
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Test one governed analytical workflow",
+        "rationale": "Use a bounded dataset and repeatable calculation to compare the managed runtime with current spreadsheet, notebook, or local-code practices."
+      }
+    },
+    {
+      "candidate_id": "m03",
+      "story_id": "agentic-autofix-copilot-memory-2026-09-26",
+      "canonical_ordinal": 5,
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub gives agentic autofix project memory for security repairs",
+      "summary": "GitHub agentic autofix can now use Copilot Memory when customers enable it, letting the repair agent retrieve project-specific secure-development context and prior patterns before proposing fixes for security alerts.",
+      "why_it_matters": "An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remembers, when that memory influences a fix, and how a human verifies the result.",
+      "editorial_limitation": "The feature depends on Copilot Memory being enabled and operates within GitHub’s security tooling. Memory can improve context but does not prove a repair is correct, secure, or regression-free.",
+      "topic_labels": [
+        "agentic autofix",
+        "Copilot Memory",
+        "security agents",
+        "context engineering"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Review what security memory the agent is allowed to use",
+        "rationale": "Start with one alert class, inspect the retrieved project patterns, and require tests plus human review before accepting the automated fix."
+      }
+    },
+    {
+      "candidate_id": "r01",
+      "story_id": "qoder-skill-evolution-2026-09-26",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can turn repeated work into proposed reusable Skills",
+      "summary": "Qoder 0.4.1 can suggest creating or updating reusable Skills after a conversation, using experience from completed work; accepting the suggestion opens a separate conversation where the user confirms the plan before changes are applied.",
+      "why_it_matters": "Reusable agent skills can evolve from actual work rather than being authored only up front. The confirmation step is equally important: it keeps the conversion from experience into durable instructions visible and reviewable.",
+      "editorial_limitation": "The evidence is Qoder’s release note and describes product behavior rather than independent effectiveness. Teams should inspect the generated skill content, version changes, portability, and failure modes before relying on evolved skills.",
+      "topic_labels": [
+        "Agent Skills",
+        "Qoder",
+        "skill evolution",
+        "reusable workflows"
+      ],
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Capture one repeated workflow as a proposed skill",
+        "rationale": "Use a completed task to generate a skill suggestion, review every instruction in the separate confirmation conversation, and test the resulting skill on a new task."
+      }
+    }
+  ],
+  "editorial_takeaway": "The strongest pattern today is operationalization: agents are gaining memory and reusable skills, workplace copilots are gaining persistent and executable work modes, and engineering platforms are moving evaluation, isolation, and governance closer to the live execution path.",
+  "media_decisions": {
+    "strategy": "targeted recovery reuse of independently verified recent media; no broad media rediscovery"
+  },
+  "changed_watchlist_topics": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-harness-engineering",
+    "dab-topic-model-lifecycle-governance"
+  ]
+}

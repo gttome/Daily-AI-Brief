@@ -1,0 +1,101 @@
+{
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Stop guessing which model your agent needs",
+      "channel": "Microsoft Developer",
+      "upload_date": "2026-09-23",
+      "runtime_seconds": 573,
+      "why_useful": "A concise walkthrough of choosing an agent model with repeatable evaluations rather than intuition, including latency, token use, output quality, and cost.",
+      "connection": "Pairs with today’s reliability and execution-layer stories by turning model selection into a measured engineering decision.",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Reused from the independently verified Sep 25 media receipt; a current Sep 26 public listing still identifies the Sep 23 Microsoft Developer video at 9:33."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "display_label": "Agents for Everyone",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "channel": "Claude",
+      "upload_date": "2026-09-23",
+      "runtime_seconds": 213,
+      "why_useful": "A practical three-minute comparison showing how model choice changes speed, limits, and daily agentic coding work.",
+      "connection": "Complements the day’s agent-memory and reusable-skill stories with a concrete example of matching capability and effort to routine work.",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Reused from the independently verified Sep 25 media receipt; a current Sep 26 independent listing still identifies the Sep 23 Claude upload at 3:33."
+      ]
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-26-agents-rules-business",
+      "title": "Are AI agents changing the rules of business?",
+      "show": "Take on Tomorrow",
+      "host": "PwC; guests Rob Seaman and Joe Atkinson",
+      "publication_date": "2026-09-22",
+      "runtime_seconds": null,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI agents",
+        "workflow redesign",
+        "enterprise adoption",
+        "human work"
+      ],
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "permanent_url": "/podcasts/2026-09-26/agents-rules-business/",
+      "summary": "PwC discusses moving from agent experiments toward redesigned workflows and measurable value.",
+      "why_useful": "Adds an enterprise operating-model perspective to persistent agents and workplace AI.",
+      "connection": "Reinforces the shift from isolated AI features to governed, outcome-oriented workflows.",
+      "selection_rationale": "Publisher page rechecked Sep 26; it still identifies the episode as September 22, 2026.",
+      "verification_note": "Current PwC publisher page reachable and date verified September 26.",
+      "coverage_note": "Targeted recovery reuse; no broad media rediscovery.",
+      "freshness_tier": "fallback_7d",
+      "freshness_exception_reason": "Reused a currently reachable independently verified September 22 episode within the allowed seven-day podcast fallback window.",
+      "platforms": [
+        {
+          "name": "PwC",
+          "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html"
+        }
+      ]
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-26-upnext-ai",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "show": "UpNext AI",
+      "host": "UpNext AI",
+      "publication_date": "2026-09-22",
+      "runtime_seconds": 480,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent safety",
+        "long-horizon evaluation",
+        "AI security",
+        "agent platforms"
+      ],
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "permanent_url": "/podcasts/2026-09-26/upnext-ai/",
+      "summary": "An eight-minute AI news episode covering agent security failure modes and emerging long-horizon evaluations.",
+      "why_useful": "Adds a compact safety and evaluation counterpoint to today’s product and workflow developments.",
+      "connection": "Pairs with today’s focus on verification, memory, and governed agent execution.",
+      "selection_rationale": "Current independent listing rechecked Sep 26; date remains September 22 and runtime remains 8 minutes.",
+      "verification_note": "Current listing reachable September 26.",
+      "coverage_note": "Targeted recovery reuse; no broad media rediscovery.",
+      "freshness_tier": "fallback_7d",
+      "freshness_exception_reason": "Reused a currently reachable independently verified September 22 episode from a distinct source within the allowed seven-day fallback window.",
+      "platforms": [
+        {
+          "name": "Podscan",
+          "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026"
+        }
+      ]
+    }
+  ]
+}
