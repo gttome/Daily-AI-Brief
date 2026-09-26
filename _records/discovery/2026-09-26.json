@@ -1,0 +1,345 @@
+{
+  "date": "2026-09-26",
+  "research_cutoff_at": "2026-09-26T09:00:59.000Z",
+  "sources": [
+    {
+      "source_id": "anthropic-agent-skills",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:12.758Z",
+      "candidate_links": 7,
+      "checked_at": "2026-09-26T09:02:12.763Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.604Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 173883,
+          "normalized_chars": 173804
+        }
+      ]
+    },
+    {
+      "source_id": "anthropic-engineering",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "anthropic-research-skills",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "arxiv-cs-ai-api",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "arxiv-cs-lg-api",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "atlassian-ai-workflows",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:13.982Z",
+      "candidate_links": 1,
+      "checked_at": "2026-09-26T09:02:13.986Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:13.832Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 356118,
+          "normalized_chars": 355969
+        }
+      ]
+    },
+    {
+      "source_id": "aws-machine-learning-feed",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:13.961Z",
+      "candidate_links": 15,
+      "checked_at": "2026-09-26T09:02:13.972Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:13.836Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 634915,
+          "normalized_chars": 633670
+        }
+      ]
+    },
+    {
+      "source_id": "github-changelog",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "github-changelog-copilot",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:12.688Z",
+      "candidate_links": 11,
+      "checked_at": "2026-09-26T09:02:12.700Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.602Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 47524,
+          "normalized_chars": 47506
+        }
+      ]
+    },
+    {
+      "source_id": "google-deepmind",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "google-workspace-feed",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:12.921Z",
+      "candidate_links": 0,
+      "checked_at": "2026-09-26T09:02:12.926Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.543Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 222596,
+          "normalized_chars": 222388
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-feed",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:13.084Z",
+      "candidate_links": 100,
+      "checked_at": "2026-09-26T09:02:13.132Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.996Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 256302,
+          "normalized_chars": 255973
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-technology",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "langchain",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "llamaindex",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "microsoft-365-feed",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:12.992Z",
+      "candidate_links": 7,
+      "checked_at": "2026-09-26T09:02:12.994Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.600Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 11056,
+          "normalized_chars": 11046
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-official-blog",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:13.147Z",
+      "candidate_links": 17,
+      "checked_at": "2026-09-26T09:02:13.155Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.994Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 158035,
+          "normalized_chars": 157507
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-research-feed",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:13.476Z",
+      "candidate_links": 8,
+      "checked_at": "2026-09-26T09:02:13.482Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.998Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 275989,
+          "normalized_chars": 275701
+        }
+      ]
+    },
+    {
+      "source_id": "nvidia-generative-ai",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:14.145Z",
+      "candidate_links": 78,
+      "checked_at": "2026-09-26T09:02:14.154Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:13.835Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 547393,
+          "normalized_chars": 547353
+        }
+      ]
+    },
+    {
+      "source_id": "openai-academy-skills",
+      "status": "retrieved",
+      "cache_status": "miss",
+      "fetched_at": "2026-09-26T09:02:13.829Z",
+      "candidate_links": 4,
+      "checked_at": "2026-09-26T09:02:13.831Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:12.997Z",
+          "status": "retrieved",
+          "http_status": 200,
+          "response_bytes": 544054,
+          "normalized_chars": 543700
+        }
+      ]
+    },
+    {
+      "source_id": "openai-index",
+      "status": "unavailable",
+      "reason": "HTTP 403",
+      "checked_at": "2026-09-26T09:02:13.865Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-26T09:02:13.833Z",
+          "status": "unavailable",
+          "reason": "HTTP 403"
+        }
+      ]
+    },
+    {
+      "source_id": "openreview",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "qwen-blog",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "salesforce-agentforce-category",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "salesforce-feed",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    },
+    {
+      "source_id": "specialized-discords",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Use only official or verified community access, never expose private discussion, and require public original evidence before selection."
+    },
+    {
+      "source_id": "x-research-feeds",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Confirm account identity, follow every claim to original evidence, and do not treat screenshots, engagement, or reposts as validation."
+    },
+    {
+      "source_id": "xai-news",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-ai-research",
+      "status": "assisted_review_required",
+      "reason": "Discovery and momentum signal only. Verify channel identity when consequential, upload date, claims, and linked original evidence. Creator repetition or view counts are not independent technical validation."
+    },
+    {
+      "source_id": "youtube-anthropic",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-google-deepmind",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-openai",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "zapier-ai-automation",
+      "status": "deferred",
+      "reason": "normal_acquisition_budget"
+    }
+  ],
+  "queue_size": 259,
+  "queue_discovered": 259,
+  "retention": {
+    "policy": "source_round_robin_priority_recency_url_v2",
+    "discovered_unique": 259,
+    "retained": 259,
+    "overflow": []
+  },
+  "early_signal_channels": 10,
+  "efficiency": {
+    "cache_hits": 0,
+    "cache_misses": 12,
+    "conditional_revalidations": 0,
+    "not_modified_304": 0,
+    "source_text_chars_retrieved": 1669661,
+    "fulltext_retrievals": 0,
+    "metadata_retrievals": 11,
+    "failed_retrievals": 1,
+    "normal_char_budget": 1500000,
+    "absolute_char_budget": 2500000,
+    "normal_char_budget_exceeded": true,
+    "article_sources_fulltext_retrieved": 0,
+    "scope": "bounded_catalog_metadata_discovery",
+    "sources_scanned": 12,
+    "source_scan_minimum": 12,
+    "source_scan_maximum": 24,
+    "fresh_metadata_candidates": 18,
+    "fresh_metadata_target": 20,
+    "required_topic_sources": 3,
+    "preferred_feed_sources": 11,
+    "preflight_sources": 25,
+    "stop_reason": "normal_acquisition_budget"
+  },
+  "note": "Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Catalog acquisition stops after bounded breadth plus sufficient fresh metadata, or at the normal acquisition budget; later editorial research retains at most 20 metadata candidates."
+}
