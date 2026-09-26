@@ -7,9 +7,9 @@ on:
     paths:
       - '_records/discovery-preflight/request.json'
   schedule:
-    # 05:50 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
-    - cron: '50 10 * * *'
-    - cron: '50 11 * * *'
+    # 04:30 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
+    - cron: '30 9 * * *'
+    - cron: '30 10 * * *'
 
 permissions:
   contents: write
