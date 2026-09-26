@@ -7,9 +7,9 @@ on:
     paths:
       - '_records/preflight-request/request.json'
   schedule:
-    # 04:00 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
+    # 03:00 America/Chicago across DST/CST; local-time gate ensures exactly one trigger runs.
+    - cron: '0 8 * * *'
     - cron: '0 9 * * *'
-    - cron: '0 10 * * *'
   workflow_dispatch:
     inputs:
       edition_date:
@@ -62,6 +62,12 @@ jobs:
             exit 0
           fi
           if [ "$EVENT_NAME" = "schedule" ]; then
+            local_time="$(TZ=America/Chicago date +%H:%M)"
+            if [ "$local_time" != "03:00" ]; then
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              echo "DST companion trigger suppressed at $local_time America/Chicago."
+              exit 0
+            fi
             node - <<'NODE' > /tmp/scheduled.json
           const now=new Date();
           const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',hourCycle:'h23'}).formatToParts(now).filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
