@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q4",
+  "terminal_result_commit": "7fd4f14a95798e3fc2dd2f3c67fca6418644856d",
+  "terminal_result": "fail",
+  "final_stage": "IMAGES_READY",
+  "primary_qualification_q4_paused": true,
+  "overlapping_one_time_q4_executor_paused": true,
+  "production_mutation": false,
+  "issue_247_log_status": "pending_connector_write",
+  "issue_247_log_note": "Direct issue mutation was attempted after terminal result but the connector safety layer blocked the write. Durable self-pause evidence is preserved here for later reconciliation."
+}
