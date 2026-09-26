@@ -13,7 +13,7 @@ Waiting one calendar day between meaningful end-to-end tests is too slow for rel
 | Lane | Purpose | Frequency | Production mutation |
 |---|---|---:|---:|
 | Production | Publish the real Daily Generative AI Brief | 1 real edition/day | Yes, protected |
-| Continuous qualification | Exercise a fresh publication-equivalent candidate and deterministic release chain | Up to 4 full semantic runs/day during stabilization | **No** |
+| Continuous qualification | Exercise fresh publication-equivalent candidates sequentially | State-driven; next Q starts only after the prior Q is terminal and any required repair is merged | **No** |
 | Targeted regression | Verify one deterministic repair | As needed in GitHub Actions | **No** |
 
 A qualification run **never counts as a published edition**.
@@ -64,12 +64,9 @@ Qualification schedules are intentionally separate from production schedules. Th
 |---|---:|---|---|:---:|
 | Production Orchestrator | 04:00 | real daily edition | Publish the actual Brief | Protected production only |
 | Production Live Validation & Repair | 08:30 | real daily edition | Validate/repair actual production | Protected production only |
-| Qualification Q1 | 12:00 | YYYY-MM-DD-Q1 | Fresh nonproduction qualification | **No** |
-| Qualification Q2 | 15:00 | YYYY-MM-DD-Q2 | Fresh nonproduction qualification | **No** |
-| Qualification Q3 | 18:00 | YYYY-MM-DD-Q3 | Fresh nonproduction qualification | **No** |
-| Qualification Q4 | 20:30 | YYYY-MM-DD-Q4 | Fresh nonproduction qualification | **No** |
+| Qualification Sequential Controller | State-driven | next unused YYYY-MM-DD-Q# | Start exactly one fresh nonproduction qualification after the prior Q is terminal and required hardening is merged | **No** |
 
-The qualification schedules must never call, resume, rename, or reuse a production schedule. Production schedules must never treat Q1-Q4 state as production progress. Each qualification schedule uses `qualification_nonproduction` and unique qualification branches. Qualification schedules may be paused independently without changing production timing.
+Qualification execution is sequential rather than clock-driven. The controller must never pre-schedule multiple future Q-runs by time and must never allow more than one nonterminal Q-run. After a terminal PASS, the next unused Q may start. After a terminal FAIL, the next Q may start only after the smallest required permanent hardening is merged through protected CI. Qualification must never call, resume, rename, or reuse a production schedule, and production must ignore Q-run state.
 
 ## 3B. Scalable qualification slot pool
 
@@ -77,9 +74,10 @@ The qualification system is not limited to four daily runs. The durable run iden
 
 Operational rules:
 
-- maintain at least 20 active qualification slots during intensive stabilization when capacity is required;
-- keep each slot independently pausable;
-- additional slots may be added up to `Q40` without changing production orchestration;
+- retain identity/task capacity through at least Q20 (and up to Q40), but keep future Q definitions paused until they are the next eligible run;
+- allow at most one nonterminal Q-run at any time;
+- keep each reserve slot independently pausable;
+- additional reserve slots may be added up to `Q40` without assigning fixed launch times or changing production orchestration;
 - every slot uses its own fresh preflight branch, semantic/handoff branch, and durable result path;
 - a terminal result for a slot prevents that exact slot from rerunning for the same date;
 - an already-running slot prevents duplicate execution of the same run identity;
@@ -235,6 +233,15 @@ For qualification runs, every focus-category coverage count must be computed **a
 If any focus category has fewer than three novelty-eligible candidates, preflight fails closed before the semantic pass. The failed Q identity is preserved and any source-supply correction is tested only on the next fresh Q-run.
 
 
+## 5H. Qualification source-supply acquisition may exceed the normal catalog budget
+
+Q8 proved that the corrected classification and novelty gates can expose a source-supply shortage before semantic execution. The Q8 discovery pass scanned 12 sources, found 13 fresh metadata candidates, and stopped at the normal catalog acquisition budget. After deterministic novelty-aware classification, only 2 Applied and 1 Agents candidates remained, below the required breadth.
+
+For qualification only, the normal catalog acquisition budget is no longer a valid stop condition while fresh metadata or per-focus supply is insufficient. Discovery may continue scanning toward the configured source-scan maximum and existing absolute retrieval-character budget. Production discovery keeps its normal-budget behavior unchanged.
+
+A qualification sufficiency stop requires both the requested fresh-metadata target and at least five fresh metadata candidates in each focus before the later novelty/classification gates. The absolute retrieval budget and source-scan maximum remain hard ceilings. If adequate supply still cannot be found, preflight fails closed rather than weakening the 2/2/2 gate.
+
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
@@ -321,14 +328,14 @@ Between separate full qualification runs, start fresh semantic evidence intentio
 
 ## 11. Testing tempo
 
-During active stabilization, recommended windows are approximately:
+Qualification is **state-driven, not clock-driven**.
 
-- Q1 — morning
-- Q2 — late morning / midday
-- Q3 — afternoon
-- Q4 — evening if a prior full run failed or a significant repair needs qualification
-
-The exact clock time is less important than using **meaningfully distinct fresh evidence cutoffs**.
+- Run exactly one Q identity at a time.
+- When it reaches durable PASS, pause it and start the next unused Q identity.
+- When it reaches durable FAIL, pause it, preserve the failure, merge only the smallest verified permanent correction, then start the next unused Q identity.
+- Do not pre-schedule Q10, Q11, Q12, etc. for fixed future clock times.
+- Keep reserve Q definitions paused so automation capacity remains available.
+- Fresh cutoffs remain required, but elapsed clock time is not a prerequisite for advancing to the next Q.
 
 ## 12. Readiness to start
 
