@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-26",
+  "orchestrator_entry_time": "2026-09-26T11:31:46Z",
+  "entry_cursor": "READINESS_FINAL",
+  "first_incomplete_stage": "EDITORIAL_KERNEL_READY",
+  "blocker_code": "agent_skills_novelty_conflict",
+  "repair": "targeted_agent_skills_slot_repair",
+  "repair_status": "resolved",
+  "repair_evidence_path": "_records/discovery-preflight/recovery/agent-skills-2026-09-26.json",
+  "reused_checkpoints": [
+    "PREFLIGHT_METADATA_READY",
+    "PREFLIGHT_DISCOVERY_READY",
+    "READINESS_PRELIMINARY",
+    "READINESS_FINAL"
+  ],
+  "retries_performed": 0,
+  "invalidated_downstream_stages": [],
+  "semantic_passes_used": 0,
+  "discovery_rerun": false,
+  "article_evidence_rerun": false,
+  "production_changes": 0,
+  "final_cursor": "READINESS_FINAL",
+  "lifecycle": "staged",
+  "closed": false,
+  "smallest_remaining_stage": "EDITORIAL_KERNEL_READY",
+  "next_action": "Proceed once through the bounded editorial stage from the repaired evidence set, then continue only through newly incomplete downstream stages."
+}
