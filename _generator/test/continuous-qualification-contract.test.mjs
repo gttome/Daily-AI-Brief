@@ -60,3 +60,17 @@ test('qualification run identity supports scalable independently pausable slots'
   assert.equal(c.schedule_separation.independently_pauseable,true);
   assert.equal(c.schedule_separation.dynamic_slot_addition_allowed,true);
 });
+
+
+test('qualification images require a dedicated image-only worker context',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const w=c.image_worker_isolation;
+  assert.equal(w.dedicated_worker_required,true);
+  assert.equal(w.input_exactly_one_story_packet,true);
+  assert.equal(w.operational_context_prohibited,true);
+  assert.equal(w.worker_prompt_must_not_contain_run_id,true);
+  assert.equal(w.worker_prompt_must_not_contain_q_number,true);
+  assert.equal(w.wrong_subject_retry_requires_new_worker_context,true);
+  assert.equal(w.same_worker_retry_prohibited_after_subject_mismatch,true);
+  assert.equal(w.max_wrong_subject_attempts_per_story_before_run_fail,2);
+});
