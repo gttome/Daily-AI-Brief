@@ -3,11 +3,11 @@
   "edition_date": "2026-09-26",
   "baseline_main_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
   "evidence_baseline_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
-  "current_sha": "40af52b8c3aa77db1166b3e1f940f052a8769fd5",
-  "stage": "EDITORIAL_KERNEL_READY",
+  "current_sha": "245dea01c649258272ec7e8db5de40d13df3820e",
+  "stage": "MEDIA_READY",
   "status": "pass",
   "publication_lifecycle": "staged",
-  "operational_status": "PREPARING",
+  "operational_status": "ASSETS",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "selected_story_count": 6,
@@ -22,8 +22,40 @@
     "PREFLIGHT_DISCOVERY_READY",
     "READINESS_PRELIMINARY",
     "READINESS_FINAL",
-    "targeted_agent_skills_slot_repair"
+    "targeted_agent_skills_slot_repair",
+    "EDITORIAL_KERNEL_READY"
   ],
-  "first_incomplete_stage": "MEDIA_READY",
-  "next_action": "Verify and freeze September 26 Watchlist, exactly 2 videos and exactly 2 source-diverse podcasts; then generate and quality-gate six story-specific professional images."
+  "first_incomplete_stage": "IMAGES_ACCEPTED_LOCKED",
+  "next_action": "Generate exactly six independent professional story-specific images from the existing six visual briefs, quality-review each, accept+lock exact bytes, and preserve all completed editorial/media/Watchlist checkpoints.",
+  "media_ready": {
+    "timestamp": "2026-09-26T14:22:47Z",
+    "videos": 2,
+    "podcasts": 2,
+    "podcast_source_diversity": "pass",
+    "media_path": "_records/editorial-recovery/2026-09-26/media.json",
+    "media_receipt_path": "_records/editorial-recovery/2026-09-26/media-receipt.json",
+    "media_commit_chain": [
+      "6e96aa42d2c68fef01a07f25f1120de783ff4624",
+      "1d22f0787df7beada2743fa71feb86d42ffab382"
+    ]
+  },
+  "watchlist_ready": {
+    "timestamp": "2026-09-26T14:22:47Z",
+    "new_today": 0,
+    "updated_today": 4,
+    "carried_forward": 12,
+    "watchlist_path": "_records/editorial-recovery/2026-09-26/watchlist.json",
+    "evidence_path": "_records/editorial-recovery/2026-09-26/watchlist-evidence.json",
+    "watchlist_commit": "245dea01c649258272ec7e8db5de40d13df3820e",
+    "evidence_commit": "630c86d0b816b593af7bc66a8ba11db3a2510439",
+    "recovery_scope": "bounded_selected_story_reconstruction"
+  },
+  "recovery": {
+    "scheduled_start_missed": false,
+    "observed_failure": "primary production stalled after readiness; subsequent recovery advanced editorial kernel",
+    "recovery_matrix_row": "MEDIA_READY targeted verification/freeze",
+    "upstream_reused": true,
+    "broad_restart": false,
+    "retries": 0
+  }
 }
