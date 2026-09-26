@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "control_id": "qualification-image-context-attestation",
+  "effective_after": "2026-09-26-Q12",
+  "scope": "qualification_nonproduction",
+  "root_cause": "Q12 serialized image execution, yet both m02 attempts rendered the m04 Copilot Memory subject. The remaining defect is inherited or mixed worker input context, not concurrency or Library transport.",
+  "pre_generation_gate": {
+    "required": true,
+    "fresh_single_story_worker_input": true,
+    "sealed_packet_only": true,
+    "packet_sha256_required": true,
+    "story_candidate_binding_required": true,
+    "inherited_context_prohibited": true,
+    "prior_worker_context_prohibited": true,
+    "other_story_context_prohibited": true,
+    "operational_context_prohibited": true,
+    "reused_context_prohibited": true,
+    "generation_must_not_run_on_gate_failure": true,
+    "failure_code": "qualification_image_worker_context_not_clean"
+  },
+  "retry_rule": {
+    "wrong_subject_requires_new_attested_worker": true,
+    "same_context_retry_prohibited": true
+  },
+  "production_mutation": false
+}
