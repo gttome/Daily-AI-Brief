@@ -242,6 +242,14 @@ For qualification only, the normal catalog acquisition budget is no longer a val
 A qualification sufficiency stop requires both the requested fresh-metadata target and at least five fresh metadata candidates in each focus before the later novelty/classification gates. The absolute retrieval budget and source-scan maximum remain hard ceilings. If adequate supply still cannot be found, preflight fails closed rather than weakening the 2/2/2 gate.
 
 
+## 5I. Q9 agent-source supply hardening
+
+Q9 verified that the Q8 acquisition-budget correction worked: qualification scanned all 48 configured sources and found 52 fresh metadata candidates. The run still failed preflight because novelty-aware retained coverage was 13 Technical / 3 Applied / 2 Agents. This isolates the remaining problem to fresh Agents for Everyone source supply.
+
+The smallest correction is to add one verified first-party, fresh, semantically agent-focused discovery candidate rather than weaken the agent classification or novelty gates. Microsoft’s September 25 Work IQ announcement is pinned for qualification discovery because it explicitly describes Work IQ grounding Copilot and agents in Dynamics 365 and Microsoft Power Platform business data. The source was not present in the September 25 production edition, so it is eligible for the September 26 qualification novelty baseline.
+
+This correction changes discovery supply only. It does not force editorial selection, does not change production history, and does not lower the three-candidate Agents preflight requirement.
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:

@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.8.0",
+  "schema_version": "1.9.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -311,5 +311,25 @@
     "minimum_fresh_focus_candidates_before_sufficiency_stop": 5,
     "purpose_env": "DAB_DISCOVERY_PURPOSE=continuous_qualification",
     "q8_root_cause": "Q8 scanned 12 sources and stopped at the normal acquisition budget with only 13 fresh metadata candidates; novelty-aware post-gate coverage was Technical 8 / Applied 2 / Agents 1, so qualification source supply was insufficient before semantic execution."
+  },
+  "qualification_agent_source_supply": {
+    "rule": "Qualification must maintain enough fresh, novelty-eligible, semantically agent-focused first-party candidates to satisfy the Agents for Everyone breadth gate without weakening classification.",
+    "q9_observed_coverage": {
+      "technical_ai_engineering": 13,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 2
+    },
+    "q9_sources_scanned": 48,
+    "q9_fresh_metadata_candidates": 52,
+    "source_supply_shortfall": "one additional fresh Agents for Everyone candidate",
+    "added_source_id": "microsoft-work-iq-agents-sep25",
+    "added_source_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+    "source_is_first_party": true,
+    "source_published_date": "2026-09-25",
+    "source_focus": "agents_non_technical_people",
+    "production_history_duplicate_before_edition": false,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "q9_root_cause": "After Q8 acquisition hardening, Q9 scanned all 48 permitted sources and found 52 fresh metadata candidates, but deterministic novelty-aware classification retained only two Agents for Everyone candidates. The remaining issue was insufficient fresh agent-source supply, not early stopping."
   }
 }

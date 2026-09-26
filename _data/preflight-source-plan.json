@@ -279,6 +279,22 @@
       "candidate_title": "Microsoft expands AI-ready capabilities and workforce readiness across India",
       "known_publication_date": "2026-09-21T00:00:00Z",
       "candidate_snippet": "Microsoft details AI-ready enterprise infrastructure and reports workforce training for more than 10 million people in India, connecting deployment capacity with workforce readiness."
+    },
+    {
+      "source_id": "microsoft-work-iq-agents-sep25",
+      "owner": "Microsoft",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "canonical_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "status": "active",
+      "pinned_candidate": true,
+      "candidate_title": "Work IQ grounds Copilot and agents in core business data",
+      "known_publication_date": "2026-09-25T00:00:00Z",
+      "candidate_snippet": "Microsoft says Work IQ grounds Copilot and agents in core business data from Dynamics 365 and Microsoft Power Platform.",
+      "background_only": false,
+      "material_update_verified": false
     }
   ]
 }
