@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q10",
+  "defect_id": "Q10-IMAGE-ROUTING-01",
+  "failure_code": "qualification_image_artifact_routing_unsatisfied",
+  "root_cause": "Dedicated image-only generation is isolated correctly, but generated image binaries are not durably and deterministically routed across task boundaries to the review-and-GitHub-persistence step. The review context can see only a subset of generated outputs, and the available GitHub text-content mutations cannot persist an already-materialized binary without a supported exact-binary handoff.",
+  "smallest_permanent_hardening": {
+    "requirement": "Introduce a qualification image artifact handoff contract in which every dedicated image-only worker returns a durable exact-binary artifact reference plus candidate_id/story_id lineage to a separate reviewer. The reviewer must be able to materialize the exact bytes, compute SHA-256 and dimensions, perform visual gates, and persist those exact bytes without re-encoding.",
+    "must_preserve": ["dedicated image-only worker isolation","single-story packet","factual-support allowlist","separate review context","wrong-subject discard rule","no low-quality fallback","exact-byte SHA-256 lock","production isolation"],
+    "must_not_do": ["pass image data through lossy text encoding","regenerate in the reviewer","edit a failed image into compliance","accept an image without exact persisted bytes","weaken visual or factual gates"],
+    "regression_acceptance": ["six independently generated story images produce six durable artifact references","reviewer can materialize all six exact binaries","reviewer records unique SHA-256 and dimensions for all six","accepted images persist byte-for-byte on the qualification branch","a missing or mismatched artifact fails closed","no production mutation"]
+  },
+  "q10_terminal": true,
+  "test_correction_on": "fresh Q11 only after protected hardening merge",
+  "work": 0,
+  "codex": 0,
+  "paid_api": 0
+}
