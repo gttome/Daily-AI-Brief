@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -174,5 +174,17 @@
     "reason": "Multiple same-day qualification runs would otherwise become impossible after the first real edition consumes the strongest 24-hour candidates. Isolation preserves the actual 30-day novelty rule while testing each Q-run as an independent production simulation.",
     "qualification_repeat_selection_allowed": true,
     "qualification_repeat_note": "The same source may appear in multiple Q-runs only if it was novel relative to the frozen pre-edition production history. Qualification repetition never authorizes a production repeat."
+  },
+  "image_execution_isolation": {
+    "issue_id": "CQ-03",
+    "per_story_context": true,
+    "subject_match_required": true,
+    "unsupported_detail_rejection": true,
+    "production_asset_reuse": false,
+    "fallback_allowed": false,
+    "consecutive_subject_mismatch_limit": 2,
+    "limit_action": "fail_current_Q_run_at_IMAGES_READY",
+    "preserve_valid_upstream_checkpoints": true,
+    "next_full_attempt": "new_Q_run_identity"
   }
 }
