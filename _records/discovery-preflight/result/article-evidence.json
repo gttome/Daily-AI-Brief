@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9770,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Private saved views for repository issues and “Relates to” issue relationship is generally available",
+      "canonical_url": "https://github.blog/changelog/2026-09-25-personal-saved-views-for-repository-issues-and-more",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T19:05:03.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 424,
+      "excerpt": "Private saved views for repository issues and “Relates to” issue relationship is generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 25, 2026 • 1 minute read Private saved views for repository issues and “Relates to” issue relationship is generally available Private saved views for repository issues Repository issues pages now support private saved views, making it easier to create and save personalized views of your…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Agentic autofix now uses Copilot Memory",
+      "canonical_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T17:25:50.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 435,
+      "excerpt": "Agentic autofix now uses Copilot Memory - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 25, 2026 • 1 minute read Agentic autofix now uses Copilot Memory Agentic autofix now uses Copilot Memory for customers who&rsquo;ve enabled it. These memories can help agentic autofix resolve additional security alerts and teach other GitHub Copilot features (e.g., Copilot code review, Copilot cloud agent) about secure development patterns unique…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub Copilot weekly releases — September 21",
+      "canonical_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T16:42:48.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 824,
+      "excerpt": "GitHub Copilot weekly releases — September 21 - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 25, 2026 • 2 minute read GitHub Copilot weekly releases — September 21 Table of Contents GitHub Copilot GitHub Copilot app GitHub Copilot in Slack and Microsoft Teams GitHub Copilot in JetBrains GitHub Copilot in VS Code 1.139 release Menu. Currently selected: GitHub Copilot GitHub Copilot GitHub Copilot app GitHub Copilot in Slack and…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Introducing the new Copilot with Home, Code and Autopilot",
+      "canonical_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-25T12:03:50.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2407,
+      "excerpt": "Today we’re introducing the new Copilot to connect the tools people rely on with the next generation of capabilities they’ll need to build, customize and scale AI across work. The Copilot app now has three new capabilities: Home is your new starting point, where Chat and Cowork come together — and with Office in Copilot , the full power of Word, Excel and PowerPoint is now built into the experience. Code lets everyone build their own solutions with the tools to run them safely, and it’s powered by the same underlying technology as GitHub Copilot. Home and Code will start rolling out in our Frontier program in the coming weeks and Autopilot…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft Copilot Managed Runtime",
+      "canonical_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-25T12:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1755,
+      "excerpt": "Microsoft Copilot Managed Runtime: Enterprise code execution for Microsoft 365 | Microsoft Copilot Blog Skip to content Skip to main content Copilot Copilot Word Excel PowerPoint Outlook OneDrive Teams Copilot Studio Work IQ Cowork Individuals Business Enterprise Education Plans and pricing Support Customer stories Blog Copilot vs. Today, we’re introducing Microsoft Copilot Managed Runtime into public preview, an enterprise-grade platform to run code within the Microsoft 365 tenant boundary that’s governed by IT and inherits all the usability expectations users have such as sharing, live data connections, and easy access to their apps.…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Default Enablement of Copilot features for Copilot Business and Enterprise",
+      "canonical_url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T03:13:23.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 604,
+      "excerpt": "Default Enablement of Copilot features for Copilot Business and Enterprise - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 24, 2026 • 1 minute read Default Enablement of Copilot features for Copilot Business and Enterprise We&rsquo;re introducing a new global default policy for generally available GitHub Copilot features and supported client capabilities in enterprise and organization Copilot settings. What&rsquo;s changing Today,…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-22T17:18:13.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 3941,
+      "excerpt": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. To make these failures measurable, Strands Evals SDK and Amazon Bedrock AgentCore Evaluations , a capability of Amazon Bedrock AgentCore, add skill-focused evaluators: Skill Selection Accuracy determines whether each invoked…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "Use open weight models as your AI coding agent with Amazon Bedrock",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-23T18:17:44.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 4230,
+      "excerpt": "Use open weight models as your AI coding agent with Amazon Bedrock | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Open weight models on Amazon Bedrock now make these agents practical to run privately and cost-effectively. What if you could run an AI coding agent that keeps your data in your own AWS account, switches between frontier open weight…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/accelerate-multimodal-rl-training-with-skyrl-on-amazon-sagemaker-hyperpod/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-25T16:18:07.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 4858,
+      "excerpt": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Combined with the Ray capabilities on HyperPod , you can create Ray clusters from SageMaker Studio, submit jobs remotely using secure connections, and monitor training through pre-built Amazon Managed Grafana dashboards that the…"
+    }
+  ]
+}
