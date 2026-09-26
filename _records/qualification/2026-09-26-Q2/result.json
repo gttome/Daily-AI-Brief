@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q2",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "EDITORIAL_KERNEL_READY",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "production_main_sha_start": "84a6f18a657eceff261400aeb28a1d6ed6c1e0a6",
+  "production_main_sha_end": "84a6f18a657eceff261400aeb28a1d6ed6c1e0a6",
+  "preflight": {
+    "result": "pass",
+    "workflow_run_id": "36259582417",
+    "metadata_candidates": 17,
+    "evidence_candidates": 9,
+    "evidence_chars": 9770,
+    "model_calls": 0,
+    "reused": true,
+    "modified": false
+  },
+  "semantic": {
+    "result": "fail",
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "stories": 0,
+    "allocation": null,
+    "agent_skills_stories": 0,
+    "failure_code": "qualification_agent_skill_novelty_unsatisfied",
+    "reason": "Only frozen story-ready Agent Skills candidate m01 is a September 25 production duplicate under the required pre-edition novelty baseline."
+  },
+  "media": {
+    "result": "not_run",
+    "reason": "semantic gate failed before downstream media selection"
+  },
+  "watchlist": {
+    "result": "not_run",
+    "reason": "semantic gate failed before downstream current-watchlist checkpoint"
+  },
+  "professional_series": {
+    "result": "not_run",
+    "reason": "semantic gate failed before downstream mapping checkpoint"
+  },
+  "images": {
+    "result": "not_run",
+    "attempts": 0,
+    "accepted_locked": 0,
+    "reason": "semantic gate failed; image_execution_isolation was therefore not exercised in Q2"
+  },
+  "handoff": {
+    "result": "not_run",
+    "reason": "no valid six-story semantic kernel"
+  },
+  "deterministic_qualification": {
+    "result": "not_run",
+    "reason": "no valid atomic handoff"
+  },
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "owner_github_ui_intervention": 0,
+  "completed_stage_rework": 0,
+  "streak_effect": "reset",
+  "q1_evidence_preserved": true,
+  "q2_preflight_preserved": true,
+  "next_action": "Preserve Q2 as a semantic-stage failure. Harden future qualification preflight so the frozen evidence packet applies the qualification production-history cutoff before semantic execution, while keeping same-day production/Q-runs excluded. Start Q3 as a fresh run after that targeted hardening; do not repair Q2 into a pass."
+}
