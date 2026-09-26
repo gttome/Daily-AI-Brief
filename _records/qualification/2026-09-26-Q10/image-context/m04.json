@@ -1,0 +1,46 @@
+{
+  "schema_version": "1.1.0",
+  "run_id": "2026-09-26-Q10",
+  "mode": "single_story",
+  "story_ids": [
+    "q10-story-m04"
+  ],
+  "candidate_id": "m04",
+  "includes_edition_context": false,
+  "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+  "headline": "GitHub agentic autofix can use Copilot Memory as repository-specific security context",
+  "visual_brief": "White-background 1200x630 professional textbook plate showing a security alert, enabled Copilot Memory providing repository-specific secure-development context, agentic autofix using that context, proposed repair, and generic review/verification gates.",
+  "verified_visual_facts": [
+    "Agentic autofix",
+    "Copilot Memory",
+    "security alerts",
+    "repository-specific secure development patterns",
+    "Copilot code review",
+    "Copilot cloud agent"
+  ],
+  "generic_conceptual_elements": [
+    "security alert icon",
+    "context/memory block",
+    "proposed repair block",
+    "generic verification gate",
+    "human review gate"
+  ],
+  "prohibited_specifics": [
+    "invented vulnerability categories",
+    "invented filenames",
+    "invented code",
+    "invented repository contents",
+    "unsupported security controls",
+    "unsupported product UI"
+  ],
+  "reference_policy": "No other story image or prompt may be used. Generation must occur in a fresh dedicated image-only worker containing only this packet.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_image_only_worker",
+  "factual_support_failure_action": "discard_and_start_fresh_image_only_worker",
+  "low_quality_fallback": false
+}
