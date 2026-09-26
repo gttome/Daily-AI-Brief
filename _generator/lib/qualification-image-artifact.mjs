@@ -1,3 +1,5 @@
+import {createHash} from 'node:crypto';
+
 export const REQUIRED_ARTIFACT_FIELDS=[
   'story_id','candidate_id','library_file_id','file_id','current_version_number',
   'library_path','mime_type','size_bytes'
@@ -37,7 +39,6 @@ export function validateQualificationImageReviewReceipt(receipt){
   if(receipt.accepted_locked!==true)errors.push('accepted_locked_required');
   return [...new Set(errors)];
 }
-
 
 export function validateSerializedQualificationImageEvents(events,storyOrder){
   const errors=[];
@@ -79,5 +80,89 @@ export function validateSerializedQualificationImageEvents(events,storyOrder){
     }
   }
   if(active!==null)errors.push('worker_left_active');
+  return [...new Set(errors)];
+}
+
+export function validateQualificationImageWorkerContextReceipt(receipt,{storyId=null,candidateId=null,packetSha256=null}={}){
+  const errors=[];
+  if(!receipt||typeof receipt!=='object')return ['worker_context_receipt_required'];
+  for(const field of ['story_id','candidate_id','packet_sha256','fresh_execution_context','generation_instruction_source','visible_context_classes','other_story_context_present','operational_context_present']){
+    if(receipt[field]===undefined||receipt[field]===null)errors.push(`missing_${field}`);
+  }
+  if(storyId&&receipt.story_id!==storyId)errors.push('worker_context_story_id_mismatch');
+  if(candidateId&&receipt.candidate_id!==candidateId)errors.push('worker_context_candidate_id_mismatch');
+  if(packetSha256&&receipt.packet_sha256!==packetSha256)errors.push('worker_context_packet_sha256_mismatch');
+  if(!/^[a-f0-9]{64}$/.test(receipt.packet_sha256||''))errors.push('worker_context_packet_sha256_invalid');
+  if(receipt.fresh_execution_context!==true)errors.push('fresh_execution_context_required');
+  if(receipt.generation_instruction_source!=='sealed_story_packet_only')errors.push('sealed_story_packet_only_required');
+  if(!Array.isArray(receipt.visible_context_classes))errors.push('visible_context_classes_array_required');
+  const allowed=new Set(['sealed_story_packet']);
+  for(const item of Array.isArray(receipt.visible_context_classes)?receipt.visible_context_classes:[]){
+    if(!allowed.has(item))errors.push(`prohibited_visible_context_${item}`);
+  }
+  if(receipt.other_story_context_present!==false)errors.push('other_story_context_prohibited');
+  if(receipt.operational_context_present!==false)errors.push('operational_context_prohibited');
+  if(receipt.prior_image_worker_history_present===true)errors.push('prior_image_worker_history_prohibited');
+  if(receipt.parent_conversation_history_present===true)errors.push('parent_conversation_history_prohibited');
+  if(receipt.reused_execution_context===true)errors.push('reused_execution_context_prohibited');
+  if(receipt.context_attested_before_generation!==true)errors.push('context_attestation_must_precede_generation');
+  return [...new Set(errors)];
+}
+
+export function buildQualificationImageSubjectLock(packet){
+  if(!packet||typeof packet!=='object')throw new Error('sealed_story_packet_required');
+  for(const field of ['story_id','candidate_id','headline','source_url','packet_sha256']){
+    if(!packet[field])throw new Error(`missing_${field}`);
+  }
+  if(!/^[a-f0-9]{64}$/.test(packet.packet_sha256))throw new Error('packet_sha256_invalid');
+  const canonical=JSON.stringify({
+    story_id:packet.story_id,
+    candidate_id:packet.candidate_id,
+    headline:packet.headline,
+    source_url:packet.source_url,
+    packet_sha256:packet.packet_sha256
+  });
+  const subject_lock_sha256=createHash('sha256').update(canonical).digest('hex');
+  return {
+    story_id:packet.story_id,
+    candidate_id:packet.candidate_id,
+    packet_sha256:packet.packet_sha256,
+    target_headline:packet.headline,
+    target_source_url:packet.source_url,
+    subject_lock_sha256,
+    generation_instruction:[
+      `TARGET CANDIDATE: ${packet.candidate_id}`,
+      `ONLY SUBJECT: ${packet.headline}`,
+      `SOURCE: ${packet.source_url}`,
+      'Render only this target subject. Do not substitute a different story, product, workflow, or topic.',
+      'If the target cannot be rendered faithfully, return no image.'
+    ].join('\n'),
+    generation_subject_binding:true,
+    alternate_subjects_allowed:false,
+    created_before_generation:true
+  };
+}
+
+export function validateQualificationImageSubjectLock(lock,{storyId=null,candidateId=null,headline=null,sourceUrl=null,packetSha256=null}={}){
+  const errors=[];
+  if(!lock||typeof lock!=='object')return ['image_subject_lock_required'];
+  for(const field of ['story_id','candidate_id','packet_sha256','target_headline','target_source_url','subject_lock_sha256','generation_instruction']){
+    if(lock[field]===undefined||lock[field]===null||lock[field]==='')errors.push(`missing_${field}`);
+  }
+  if(storyId&&lock.story_id!==storyId)errors.push('subject_lock_story_id_mismatch');
+  if(candidateId&&lock.candidate_id!==candidateId)errors.push('subject_lock_candidate_id_mismatch');
+  if(headline&&lock.target_headline!==headline)errors.push('subject_lock_headline_mismatch');
+  if(sourceUrl&&lock.target_source_url!==sourceUrl)errors.push('subject_lock_source_url_mismatch');
+  if(packetSha256&&lock.packet_sha256!==packetSha256)errors.push('subject_lock_packet_sha256_mismatch');
+  if(!/^[a-f0-9]{64}$/.test(lock.packet_sha256||''))errors.push('subject_lock_packet_sha256_invalid');
+  if(!/^[a-f0-9]{64}$/.test(lock.subject_lock_sha256||''))errors.push('subject_lock_sha256_invalid');
+  if(lock.generation_subject_binding!==true)errors.push('generation_subject_binding_required');
+  if(lock.alternate_subjects_allowed!==false)errors.push('alternate_subjects_must_be_false');
+  if(lock.created_before_generation!==true)errors.push('subject_lock_must_precede_generation');
+  if(typeof lock.generation_instruction==='string'){
+    if(!lock.generation_instruction.includes(`TARGET CANDIDATE: ${lock.candidate_id}`))errors.push('generation_instruction_candidate_binding_missing');
+    if(!lock.generation_instruction.includes(`ONLY SUBJECT: ${lock.target_headline}`))errors.push('generation_instruction_headline_binding_missing');
+    if(!lock.generation_instruction.includes(`SOURCE: ${lock.target_source_url}`))errors.push('generation_instruction_source_binding_missing');
+  }
   return [...new Set(errors)];
 }
