@@ -525,4 +525,15 @@ jobs:
               core.setFailed(`GitHub protection denied publication promotion: ${result.data.message || 'merge not completed'}`);
               return;
             }
-            core.info(`Protected publication PR #${pr.number} merged at ${result.data.sha}; Pages and deterministic post-deployment validation now own completion.`);
+            const mergeSha=result.data.sha;
+            const mainAfter=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
+            if(mainAfter!==mergeSha){
+              core.setFailed('Main moved before closure dispatch; refusing to bind another commit to this edition.');
+              return;
+            }
+            const manifestResponse=await github.rest.repos.getContent({...context.repo,path:'_records/editorial-handoff/publication-manifest.json',ref:'main'});
+            if(Array.isArray(manifestResponse.data)||!manifestResponse.data.content)throw new Error('Current publication manifest unavailable after protected merge.');
+            const manifest=JSON.parse(Buffer.from(manifestResponse.data.content,'base64').toString('utf8'));
+            await github.request('POST /repos/{owner}/{repo}/pages/builds',context.repo);
+            await github.rest.actions.createWorkflowDispatch({...context.repo,workflow_id:'daily-delta-validation.yml',ref:'main',inputs:{date:manifest.edition_date,expected_sha:mergeSha}});
+            core.info(`Protected publication PR #${pr.number}, merge ${mergeSha}: Pages and exact-SHA delta validation were explicitly dispatched.`);
