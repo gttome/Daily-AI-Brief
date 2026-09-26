@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q1",
+  "editorial_passes": 1,
+  "stories": [
+    {
+      "ordinal": 1,
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub lets agentic autofix consult repository memory before proposing repairs",
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 2,
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub broadens Copilot across model choice, local sandboxing, collaboration surfaces, and IDEs",
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 3,
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft brings governed code execution inside Microsoft 365 with Copilot Managed Runtime",
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 4,
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "GitHub makes default Copilot feature availability an explicit enterprise policy",
+      "source_url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+      "agent_skill": false
+    },
+    {
+      "ordinal": 5,
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can turn repeated work into proposed reusable Skills with a human confirmation step",
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true
+    },
+    {
+      "ordinal": 6,
+      "candidate_id": "m05",
+      "focus": "agents_non_technical_people",
+      "headline": "Microsoft reframes Copilot around asking, building, and persistent delegation",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false
+    }
+  ],
+  "videos": [
+    {
+      "title": "Stop guessing which model your agent needs",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "runtime_seconds": 573
+    },
+    {
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "runtime_seconds": 213
+    }
+  ],
+  "podcasts": [
+    {
+      "title": "From AGENTS.md to Enterprise Deployment",
+      "url": "https://practicalai.show/373",
+      "source": "Practical AI"
+    },
+    {
+      "title": "#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation",
+      "url": "https://podcast.smarterx.ai/shownotes/242",
+      "source": "The Artificial Intelligence Show"
+    }
+  ],
+  "watchlist": {
+    "new_today": 0,
+    "updated_today": 4,
+    "carried_forward": 12,
+    "updated_topic_ids": [
+      "dab-topic-agent-skills-observability",
+      "dab-topic-harness-engineering",
+      "dab-topic-model-lifecycle-governance",
+      "dab-topic-collaborative-vibe-coding"
+    ]
+  },
+  "book_mappings": [
+    {
+      "candidate_id": "m01",
+      "reference_id": "context-quality-checklist"
+    },
+    {
+      "candidate_id": "m06",
+      "reference_id": "reliable-verification"
+    },
+    {
+      "candidate_id": "m07",
+      "reference_id": "reliable-trust"
+    }
+  ]
+}

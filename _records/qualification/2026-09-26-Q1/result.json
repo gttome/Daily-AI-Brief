@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q1",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "IMAGES_READY",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "production_main_sha_start": "b32aab3a84f4b31db4a80b4ab21a471672bbb499",
+  "production_main_sha_end": "b32aab3a84f4b31db4a80b4ab21a471672bbb499",
+  "preflight": {
+    "result": "pass",
+    "workflow_run_id": "36257872448",
+    "metadata_candidates": 18,
+    "evidence_candidates": 9,
+    "evidence_chars": 9612,
+    "model_calls": 0
+  },
+  "semantic": {
+    "result": "pass",
+    "editorial_model_passes": 1,
+    "post_editorial_model_passes": 0,
+    "stories": 6,
+    "allocation": "2/2/2",
+    "agent_skills_stories": 1,
+    "selected_candidate_ids": [
+      "m03",
+      "m04",
+      "m06",
+      "m07",
+      "m01",
+      "m05"
+    ]
+  },
+  "media": {
+    "result": "pass",
+    "videos": 2,
+    "podcasts": 2,
+    "source_diverse_podcasts": true
+  },
+  "watchlist": {
+    "result": "pass",
+    "new_today": 0,
+    "updated_today": 4,
+    "carried_forward": 12
+  },
+  "professional_series": {
+    "result": "evaluated",
+    "mappings": 3,
+    "bq_01_graduation_blocker_remains": true
+  },
+  "images": {
+    "result": "fail",
+    "attempts": 4,
+    "accepted_locked": 0,
+    "reason": "Repeated subject mismatch and unsupported-detail generation; no fallback accepted."
+  },
+  "handoff": {
+    "result": "not_run",
+    "reason": "image gate failed closed"
+  },
+  "deterministic_qualification": {
+    "result": "not_run",
+    "reason": "no valid atomic handoff"
+  },
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "owner_github_ui_intervention": 0,
+  "completed_stage_rework": 0,
+  "streak_effect": "reset",
+  "next_action": "Harden qualification image execution isolation, then start the next fresh Q-run. Do not convert Q1 to an apparent pass."
+}

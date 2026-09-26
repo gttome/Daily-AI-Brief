@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q1",
+  "stage": "IMAGES_READY",
+  "status": "fail",
+  "attempts": [
+    {
+      "attempt": 1,
+      "target": "m03",
+      "sha256": "2ffcd9d5a56c189e49adfb6f17052654ed51213130c468eb2e6ca6122773a87b",
+      "size": "1730x909",
+      "result": "rejected",
+      "reason": "Contained unsupported story-specific example details."
+    },
+    {
+      "attempt": 2,
+      "target": "m03",
+      "sha256": "dbe68f07bd0a23d87740df3772a1150e9ba432945035e59a5692f5aa8be094a5",
+      "size": "1730x909",
+      "result": "rejected",
+      "reason": "Correction attempt retained unsupported example details."
+    },
+    {
+      "attempt": 3,
+      "target": "m04",
+      "sha256": "2580c37dd9e70fc9a0c86bedbdcd0ff504954146492d5db74d4076f97925cfbe",
+      "size": "1730x909",
+      "result": "rejected",
+      "reason": "Generated prior-story composition instead of requested story."
+    },
+    {
+      "attempt": 4,
+      "target": "m04",
+      "sha256": "87a0eae8d737a9d1c724ac5af3c18e829b6728c0b881454a61a931efdbf74370",
+      "size": "1730x909",
+      "result": "rejected",
+      "reason": "Generated unrelated RAG composition instead of requested story."
+    }
+  ],
+  "accepted_locked": 0,
+  "low_quality_fallback_used": false,
+  "production_asset_reuse": false,
+  "disposition": "fail_closed"
+}
