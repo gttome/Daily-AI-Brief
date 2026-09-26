@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.1.0",
+  "edition_date": "2026-09-26",
+  "baseline_main_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+  "evidence_baseline_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
+  "current_sha": "40af52b8c3aa77db1166b3e1f940f052a8769fd5",
+  "stage": "EDITORIAL_KERNEL_READY",
+  "status": "pass",
+  "publication_lifecycle": "staged",
+  "operational_status": "PREPARING",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "selected_story_count": 6,
+  "focus_counts": {
+    "technical_ai_engineering": 2,
+    "applied_genai_knowledge_workers": 2,
+    "agents_non_technical_people": 2
+  },
+  "agent_skills_count": 1,
+  "reused_checkpoints": [
+    "PREFLIGHT_METADATA_READY",
+    "PREFLIGHT_DISCOVERY_READY",
+    "READINESS_PRELIMINARY",
+    "READINESS_FINAL",
+    "targeted_agent_skills_slot_repair"
+  ],
+  "first_incomplete_stage": "MEDIA_READY",
+  "next_action": "Verify and freeze September 26 Watchlist, exactly 2 videos and exactly 2 source-diverse podcasts; then generate and quality-gate six story-specific professional images."
+}
