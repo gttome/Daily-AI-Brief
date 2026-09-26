@@ -8,5 +8,6 @@
   "cutoff": "2026-09-26T16:40:17Z",
   "source_scan_max": 48,
   "fresh_metadata_target": 24,
-  "production_mutation": false
+  "production_mutation": false,
+  "repair_attempt": 1
 }
