@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "mode": "single_story",
+  "story_ids": [
+    "q5-story-m05"
+  ],
+  "candidate_id": "m05",
+  "includes_edition_context": false,
+  "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+  "headline": "Microsoft reshapes Copilot around Home, Code and persistent Autopilot work",
+  "visual_brief": "White-background 1200x630 professional textbook plate with three differentiated work lanes for Home, Code, and Autopilot, showing interactive drafting, solution building, and persistent delegated work. Keep controls conceptual and clearly labeled. No other stories, dashboards, or unsupported product details.",
+  "reference_policy": "No other story image or prompt may be used for initial generation. Targeted edits, if needed, may reference only this same story draft.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_request",
+  "low_quality_fallback": false
+}
