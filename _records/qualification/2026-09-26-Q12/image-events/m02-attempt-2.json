@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q12",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "subject_identity": "fail",
+  "failure_code": "wrong_subject",
+  "accepted_locked": false,
+  "library_file_id": "libfile_f119682d821c81918e2a67204e2201cc",
+  "backing_file_id": "file_0000000036fc820a88b4a051c775a4e7",
+  "library_path": "/Daily AI Brief Qualification Images/m02/Q12-attempt-2-rejected.png",
+  "mime_type": "image/png",
+  "size_bytes": 1388033,
+  "sha256": "37bad5e639918551c28640d92113026f22820fe083f03b2bf8da3b8aced3d6d3",
+  "dimensions": "1733x907",
+  "production_mutation": false
+}
