@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -164,5 +164,15 @@
     "production_must_ignore_qualification_state": true,
     "qualification_must_not_invoke_production_schedule": true,
     "independently_pauseable": true
+  },
+  "qualification_novelty_baseline": {
+    "rule": "Each full qualification run is an independent hypothetical production attempt for its edition date. Novelty must be evaluated against the production history that existed before that edition date, not against the real same-day production edition or prior Q-runs.",
+    "production_history_cutoff": "strictly_before_edition_date",
+    "exclude_real_same_day_production": true,
+    "exclude_all_qualification_runs": true,
+    "production_history_mutation": false,
+    "reason": "Multiple same-day qualification runs would otherwise become impossible after the first real edition consumes the strongest 24-hour candidates. Isolation preserves the actual 30-day novelty rule while testing each Q-run as an independent production simulation.",
+    "qualification_repeat_selection_allowed": true,
+    "qualification_repeat_note": "The same source may appear in multiple Q-runs only if it was novel relative to the frozen pre-edition production history. Qualification repetition never authorizes a production repeat."
   }
 }

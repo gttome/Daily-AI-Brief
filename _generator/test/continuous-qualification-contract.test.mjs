@@ -26,3 +26,13 @@ test('continuous qualification contract preserves production and requires zero p
   assert.equal(r.qualification_stabilization.semantic_executor,'ordinary_chatgpt');
   assert.equal(r.qualification_stabilization.production_mutation,false);
 });
+
+
+test('qualification novelty baseline excludes same-day production and Q-run history',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const n=c.qualification_novelty_baseline;
+  assert.equal(n.production_history_cutoff,'strictly_before_edition_date');
+  assert.equal(n.exclude_real_same_day_production,true);
+  assert.equal(n.exclude_all_qualification_runs,true);
+  assert.equal(n.production_history_mutation,false);
+});

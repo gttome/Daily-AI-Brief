@@ -1081,3 +1081,8 @@ A production-only once-per-day validation cadence is too slow for active reliabi
 ### Qualification schedule separation
 
 The active testing schedules are separate from production orchestration. Production remains at 04:00 (Production Orchestrator) and 08:30 (Live Validation & Repair). Continuous qualification runs use separate ChatGPT schedules at 12:00 (Q1), 15:00 (Q2), 18:00 (Q3), and 20:30 (Q4), America/Chicago. Q1-Q4 use only `qualification_nonproduction` branches and evidence; they cannot count as production progress, mutate production state, deploy Pages, or trigger production publication/Command Center actions. Each testing schedule can be paused independently from production.
+
+
+### Q1 finding — qualification novelty baseline isolation
+
+The first continuous Q1 preflight succeeded with 17 bounded metadata candidates and nine retrieved evidence items, but inspection showed that several strong candidates were already used by the real September 26 production edition. Applying production novelty against the already-published same-day edition would make repeated intraday qualification structurally impossible and would test candidate scarcity rather than automation repeatability. Permanent control: every Q-run is an independent hypothetical production attempt and evaluates novelty against production history strictly before its edition date. Same-day production and all Q-runs are excluded from the qualification novelty baseline. This does not weaken the real production 30-day novelty rule and does not authorize repeated production publication.

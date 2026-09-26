@@ -136,6 +136,23 @@ Qualification must never:
 
 The existing `qualification_nonproduction` execution mode remains fail-closed.
 
+## 5A. Qualification novelty baseline isolation
+
+Continuous same-day testing exposed an important distinction between **production history** and **qualification history**.
+
+Each Q-run is an independent hypothetical production attempt for its edition date. Therefore its 30-day novelty test must use the production history that existed **strictly before the qualification edition date**. It must exclude:
+
+- the real same-day production edition;
+- every earlier Q-run from that day;
+- every later Q-run;
+- any qualification-only story memory.
+
+For example, all September 26 Q-runs evaluate novelty against production history through September 25. A story used by the real September 26 edition may still be selected in Q1-Q4 if it was novel relative to the September 25 production history. This does **not** make it eligible for a second real production publication; it only lets each qualification run simulate an independent September 26 production attempt.
+
+This isolation is necessary because otherwise the first real edition would consume the strongest current candidates and make 3–4 same-day full qualifications structurally impossible under the unchanged 30-day production novelty rule.
+
+**Invariant:** qualification may repeat a source across Q-runs; production may not use qualification repetition as justification for an approved repeat.
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
