@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "continuous-qualification-v1",
+  "run_id": "2026-09-26-Q5",
+  "execution_mode": "qualification_nonproduction",
+  "edition_date": "2026-09-26",
+  "cutoff": "2026-09-26T18:10:00Z",
+  "semantic_executor": "ordinary_chatgpt",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "stories": 6,
+  "allocation": "2/2/2",
+  "agent_skills_stories": 1,
+  "selected_candidate_ids": [
+    "m03",
+    "m04",
+    "m05",
+    "m06",
+    "m01",
+    "m08"
+  ],
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "state": "EDITORIAL_KERNEL_READY"
+}
