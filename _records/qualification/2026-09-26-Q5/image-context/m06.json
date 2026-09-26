@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "mode": "single_story",
+  "story_ids": [
+    "q5-story-m06"
+  ],
+  "candidate_id": "m06",
+  "includes_edition_context": false,
+  "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+  "headline": "Microsoft brings governed code execution inside Microsoft 365 with Copilot Managed Runtime",
+  "visual_brief": "White-background 1200x630 professional textbook cutaway showing Microsoft 365 request, governed managed runtime, tenant boundary, code execution, live data connections, policy controls, output, and verification questions. Avoid invented settings or unsupported controls. No other stories or status artwork.",
+  "reference_policy": "No other story image or prompt may be used for initial generation. Targeted edits, if needed, may reference only this same story draft.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_request",
+  "low_quality_fallback": false
+}
