@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q12",
+  "execution_mode": "qualification_nonproduction",
+  "result": "pass",
+  "reused_same_day_verified_checkpoint": true,
+  "video_count": 2,
+  "podcast_count": 2,
+  "source_diverse_podcasts": true,
+  "source_checkpoint": "current September 26 production media receipt",
+  "production_mutation": false
+}
