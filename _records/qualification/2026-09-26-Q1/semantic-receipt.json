@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q1",
+  "execution_mode": "qualification_nonproduction",
+  "edition_date": "2026-09-26",
+  "cutoff": "2026-09-26T16:40:17Z",
+  "baseline_main_sha": "b32aab3a84f4b31db4a80b4ab21a471672bbb499",
+  "semantic_executor": "ordinary_chatgpt",
+  "editorial_model_passes": 1,
+  "post_editorial_model_passes": 0,
+  "production_mutation": false,
+  "preflight_run_id": "36257872448",
+  "preflight_branch_head": "3f8058a8768db2b9046ff06594822e2bd2f13b9c",
+  "metadata_candidates": 18,
+  "article_evidence_candidates": 9,
+  "article_evidence_chars": 9612,
+  "selected_candidate_ids": [
+    "m03",
+    "m04",
+    "m06",
+    "m07",
+    "m01",
+    "m05"
+  ],
+  "agent_skill_candidate_id": "m01",
+  "image_attempts": 4,
+  "images_accepted": 0,
+  "image_stage_status": "blocked_subject_routing_mismatch",
+  "no_low_quality_fallback_used": true,
+  "semantic_pass_complete": true
+}
