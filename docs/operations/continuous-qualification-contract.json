@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.9.0",
+  "schema_version": "2.0.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -331,5 +331,67 @@
     "classification_gate_unchanged": true,
     "novelty_gate_unchanged": true,
     "q9_root_cause": "After Q8 acquisition hardening, Q9 scanned all 48 permitted sources and found 52 fresh metadata candidates, but deterministic novelty-aware classification retained only two Agents for Everyone candidates. The remaining issue was insufficient fresh agent-source supply, not early stopping."
+  },
+  "qualification_image_artifact_handoff": {
+    "rule": "Every qualification image must cross the image-worker boundary through a durable exact-file handoff before separate review. An ephemeral task-local file_id is not sufficient.",
+    "qualification_only": true,
+    "q10_root_cause": "Q10 image generation produced visually reviewable output, but exact generated binaries were not durably routed from isolated image-worker contexts to the separate reviewer. One m08 image passed visual gates but could not be accepted_locked because its exact bytes could not be materialized and persisted.",
+    "worker_generation_isolation_unchanged": true,
+    "artifact_capture_phase": "post_generation_nonsemantic_transport",
+    "artifact_capture_may_contain_only": [
+      "story_id",
+      "candidate_id",
+      "generated_file_ref",
+      "library_destination"
+    ],
+    "artifact_capture_must_not_contain": [
+      "qualification_status",
+      "scheduler_state",
+      "publication_state",
+      "edition_dashboard",
+      "other_story_prompt",
+      "other_story_image",
+      "repair_status"
+    ],
+    "durable_surface": "personal_library",
+    "library_path_prefix": "/Daily AI Brief Qualification Images",
+    "exact_source_snapshot_required": true,
+    "upload_source_must_be_exact_generated_file_ref": true,
+    "required_handoff_fields": [
+      "story_id",
+      "candidate_id",
+      "library_file_id",
+      "file_id",
+      "current_version_number",
+      "library_path",
+      "mime_type",
+      "size_bytes"
+    ],
+    "ephemeral_file_id_only_prohibited": true,
+    "reviewer_must_materialize_raw_file": true,
+    "reviewer_must_compute_sha256": true,
+    "reviewer_must_verify_dimensions": true,
+    "reviewer_must_visually_review": true,
+    "reviewer_acceptance_order": [
+      "subject_identity",
+      "factual_support",
+      "structural_quality",
+      "editorial_quality"
+    ],
+    "reviewer_must_persist_exact_bytes_to_git_blob": true,
+    "git_blob_encoding": "base64",
+    "lossy_reencoding_prohibited": true,
+    "reviewer_regeneration_prohibited": true,
+    "accepted_locked_requires_git_blob_exact_byte_match": true,
+    "missing_durable_handoff_failure_code": "qualification_image_durable_handoff_missing",
+    "materialization_failure_code": "qualification_image_artifact_materialization_failed",
+    "six_story_acceptance": [
+      "six_unique_durable_library_artifacts",
+      "six_successful_raw_materializations",
+      "six_unique_sha256_values",
+      "six_visual_gate_passes",
+      "six_exact_git_blob_persists"
+    ],
+    "production_mutation": false
   }
 }
