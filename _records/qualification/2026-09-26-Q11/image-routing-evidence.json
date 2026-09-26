@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q11",
+  "candidate_id": "m02",
+  "attempt_count": 2,
+  "accepted_locked": 0,
+  "durable_handoff_within_worker": false,
+  "failure_code": "qualification_image_durable_handoff_missing",
+  "preserved_library_artifacts": [
+    {
+      "library_file_id": "libfile_4b5c5b22f4e481918657aeafeac0796d",
+      "library_path": "/Daily AI Brief Qualification Images/m02/Q11-attempt-1-rejected.png",
+      "mime_type": "image/png",
+      "size_bytes": 1530535
+    },
+    {
+      "library_file_id": "libfile_3b646bbfe09c81919bbd31cb4585d334",
+      "library_path": "/Daily AI Brief Qualification Images/m02/Q11-attempt-2-rejected.png",
+      "mime_type": "image/png",
+      "size_bytes": 1422100
+    }
+  ],
+  "production_mutation": false
+}
