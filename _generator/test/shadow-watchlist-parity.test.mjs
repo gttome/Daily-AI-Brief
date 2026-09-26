@@ -30,7 +30,6 @@ function fixture(){
     fs.mkdirSync(path.dirname(target),{recursive:true});
     fs.writeFileSync(target,content.endsWith('\n')?content:content+'\n');
   }
-  fs.writeFileSync(path.join(root,'archive.md'),'['+date+'](/briefs/'+date+'/ )\n');
   for(const story of edition.stories){
     const target=path.join(root,story.image.path);
     fs.mkdirSync(path.dirname(target),{recursive:true});
