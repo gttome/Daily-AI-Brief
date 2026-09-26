@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "purpose": "continuous_qualification",
+  "execution_mode": "qualification_nonproduction",
+  "qualification_run_id": "2026-09-26-Q4",
+  "edition_date": "2026-09-26",
+  "cutoff": "2026-09-26T17:57:00Z",
+  "source_scan_max": 48,
+  "fresh_metadata_target": 24,
+  "production_mutation": false
+}
