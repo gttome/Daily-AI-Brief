@@ -50,6 +50,25 @@
           ],
           "evidence_class": "publisher_authored",
           "status": "active"
+        },
+        {
+          "source_id": "qoder-skill-evolution",
+          "owner": "Qoder",
+          "discovery_endpoint": "https://docs.qoder.com/release-notes/qoder",
+          "canonical_url": "https://docs.qoder.com/release-notes/qoder",
+          "format": "article",
+          "audience": [
+            "knowledge_worker",
+            "technical"
+          ],
+          "focus_hint": "agents_non_technical_people",
+          "evidence_class": "publisher_authored",
+          "status": "active",
+          "candidate_title": "Qoder 0.4.1 adds Skill evolution suggestions from reusable experience",
+          "known_publication_date": "2026-09-23T00:00:00Z",
+          "date_source": "official_release_notes",
+          "background_only": false,
+          "material_update_verified": true
         }
       ]
     }
