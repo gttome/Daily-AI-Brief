@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q8",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "PREFLIGHT_DISCOVERY_READY",
+  "simulated_lifecycle": "NOT_CLOSED",
+  "production_mutation": false,
+  "production_main_sha_start": "9376049e4a4ac381838839900c74857f7476d566",
+  "production_main_sha_end": "9376049e4a4ac381838839900c74857f7476d566",
+  "preflight": {
+    "result": "fail",
+    "workflow_run_id": "36267248056",
+    "workflow_job_id": "108474164817",
+    "request_sha": "697b7fae0c22434078b8f4c5a0e66bbb89e3f535",
+    "metadata_candidates": 15,
+    "coverage_counts": {
+      "technical_ai_engineering": 8,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 1
+    },
+    "agent_skill_signals": 2,
+    "agent_skill_story_ready_signals_after_novelty": 1,
+    "preferred_agent_skill_candidate_id": "m01",
+    "model_calls": 0,
+    "failure_code": "discovery_preflight_not_coverage_ready",
+    "reason": "Novelty-aware qualification preflight correctly excluded prior-production candidates and then found insufficient fresh category breadth: Applied=2 and Agents=1, both below the required minimum of 3."
+  },
+  "article_evidence": {
+    "result": "not_run",
+    "reason": "readiness failed before bounded evidence retrieval"
+  },
+  "semantic": {
+    "result": "not_run",
+    "editorial_model_passes": 0,
+    "reason": "preflight failed closed before semantic execution"
+  },
+  "media": {"result":"not_run","reason":"preflight failed"},
+  "watchlist": {"result":"not_run","reason":"preflight failed"},
+  "professional_series": {"result":"not_run","reason":"preflight failed"},
+  "images": {"result":"not_run","attempts":0,"accepted_locked":0,"reason":"preflight failed"},
+  "handoff": {"result":"not_run","reason":"preflight failed"},
+  "deterministic_qualification": {"result":"not_run","reason":"no valid atomic handoff"},
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "owner_github_ui_intervention": 0,
+  "completed_stage_rework": 0,
+  "streak_effect": "reset",
+  "q1_q7_evidence_preserved": true,
+  "next_action": "Preserve Q8 as terminal preflight evidence. Add the smallest validated fresh source-supply correction for Applied and Agents, then test only on fresh Q9; do not rerun Q8."
+}
