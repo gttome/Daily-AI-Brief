@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.1.0",
+  "schema_version": "1.2.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -174,5 +174,21 @@
     "reason": "Multiple same-day qualification runs would otherwise become impossible after the first real edition consumes the strongest 24-hour candidates. Isolation preserves the actual 30-day novelty rule while testing each Q-run as an independent production simulation.",
     "qualification_repeat_selection_allowed": true,
     "qualification_repeat_note": "The same source may appear in multiple Q-runs only if it was novel relative to the frozen pre-edition production history. Qualification repetition never authorizes a production repeat."
+  },
+  "preflight_freeze": {
+    "stage": "PREFLIGHT_DISCOVERY_READY",
+    "freeze_when_valid": true,
+    "immutable_within_same_q_run": [
+      "_records/discovery-preflight/request.json",
+      "_records/discovery-preflight/result/metadata-candidates.json",
+      "_records/discovery-preflight/result/article-evidence.json",
+      "_records/discovery-preflight/result/article-evidence-receipt.json",
+      "_records/discovery-preflight/result/receipt.json",
+      "qualification discovery source inputs"
+    ],
+    "semantic_executor_may_rerun_preflight": false,
+    "semantic_failure_policy": "If the frozen evidence packet cannot support a compliant six-story qualification, record semantic-stage FAIL for that Q identity. Do not mutate or rerun preflight to improve the candidate set.",
+    "next_fresh_preflight": "Only a new Q identity may create a fresh qualification preflight.",
+    "streak_rule": "Any same-Q rerun of a previously valid preflight disqualifies that Q-run from the no-rework consecutive-pass streak."
   }
 }
