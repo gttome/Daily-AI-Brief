@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "mode": "single_story",
+  "story_ids": [
+    "q5-story-m03"
+  ],
+  "candidate_id": "m03",
+  "includes_edition_context": false,
+  "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+  "headline": "GitHub lets agentic autofix use Copilot Memory as repository-specific repair context",
+  "visual_brief": "White-background 1200x630 professional textbook plate showing a security alert, repository memory/context, agentic autofix reasoning path, proposed patch, verification rail, and human review. Use only verified concepts from this story. No other stories, no edition status, no dashboard, no unsupported product behavior.",
+  "reference_policy": "No other story image or prompt may be used for initial generation. Targeted edits, if needed, may reference only this same story draft.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_request",
+  "low_quality_fallback": false
+}
