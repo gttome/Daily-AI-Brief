@@ -5,7 +5,7 @@
   "model_calls": 0,
   "review_plan_count": 9,
   "preferred_agent_skill_candidate_id": "m01",
-  "model_visible_chars": 9770,
+  "model_visible_chars": 9612,
   "model_visible": [
     {
       "candidate_id": "m02",
@@ -82,14 +82,14 @@
     {
       "candidate_id": "m01",
       "focus": "agents_non_technical_people",
-      "headline": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
-      "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-22T17:18:13.000Z",
+      "headline": "qoder-skill-evolution",
+      "canonical_url": "https://docs.qoder.com/release-notes/qoder",
+      "publisher": "Qoder",
+      "published_at": "2026-09-23T00:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": true,
-      "source_word_count": 3941,
-      "excerpt": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. To make these failures measurable, Strands Evals SDK and Amazon Bedrock AgentCore Evaluations , a capability of Amazon Bedrock AgentCore, add skill-focused evaluators: Skill Selection Accuracy determines whether each invoked…"
+      "source_word_count": 2507,
+      "excerpt": "​ September 23, 2026 Qoder 0.4.1 A New Space for Human and Agent Collaboration Features Projects and discussions (Enterprise&Teams) : Discuss plans, push tasks forward, and bring ideas to life with your Agent, all in one place. Agent Teams (Enterprise&Teams) : Create and configure Agents, then bring them together into teams. Skill evolution suggestions : After a conversation finishes, Qoder can suggest creating or updating Skills based on reusable experience. Response annotations : Enable this feature in Settings-Experimental Features to select text in an Agent response, add it to the chat input box with an optional comment, and reference…"
     },
     {
       "candidate_id": "m08",
