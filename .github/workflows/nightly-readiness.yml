@@ -2,8 +2,8 @@ name: Nightly Daily Brief readiness
 
 on:
   schedule:
-    - cron: '0 2 * * *'
-    - cron: '0 3 * * *'
+    - cron: '30 2 * * *'
+    - cron: '30 3 * * *'
   workflow_dispatch:
 
 permissions:
@@ -19,7 +19,7 @@ jobs:
       - name: Gate
         id: gate
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H:%M)" = "21:00" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H:%M)" = "21:30" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
