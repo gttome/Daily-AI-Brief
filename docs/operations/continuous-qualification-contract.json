@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.5.0",
+  "schema_version": "1.6.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -263,5 +263,25 @@
     "factual_support_failure_action": "discard_and_start_fresh_image_only_worker_for_same_story",
     "max_factual_support_failures_per_story_before_run_fail": 2,
     "q5_root_cause": "Q5 image-only workers stayed on subject but added unsupported concrete details. The next control restricts concrete content to frozen-evidence facts."
+  },
+  "qualification_agent_focus_preflight": {
+    "rule": "During qualification, an upstream agents_non_technical_people hint cannot satisfy agent coverage without concrete agent intent in the title unless the item is an Agent Skills story or qualifies through the existing end-user/support-agent override.",
+    "qualification_only": true,
+    "upstream_agent_focus_hint_is_advisory": true,
+    "concrete_title_signals": [
+      "agent",
+      "agents",
+      "agentic",
+      "assistant",
+      "computer use",
+      "tool-using",
+      "mcp"
+    ],
+    "agent_skills_exception": true,
+    "existing_end_user_agent_override_preserved": true,
+    "production_focus_classification_unchanged": true,
+    "coverage_recomputed_after_reclassification": true,
+    "fail_closed_when_agent_focus_coverage_below_three": true,
+    "q6_root_cause": "Q6 preflight counted two upstream agent-focus hints whose frozen evidence was multimodal RL training and LLM quality assurance, leaving only one semantically valid Agents for Everyone story at the editorial gate."
   }
 }
