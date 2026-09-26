@@ -1,0 +1,45 @@
+{
+  "schema_version": "1.1.0",
+  "run_id": "2026-09-26-Q10",
+  "mode": "single_story",
+  "story_ids": [
+    "q10-story-m08"
+  ],
+  "candidate_id": "m08",
+  "includes_edition_context": false,
+  "source_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+  "headline": "GitHub Copilot canvases let users describe a workflow surface in plain English and have an agent build it",
+  "visual_brief": "White-background 1200x630 professional textbook workflow showing a user describing an interface in plain English, a Copilot agent constructing a canvas/live surface, user and agent working on the surface, and iterative refinement. Keep UI abstract.",
+  "verified_visual_facts": [
+    "GitHub Copilot app",
+    "custom workflows",
+    "canvases",
+    "describe the interface you need in plain English",
+    "agent build a live surface",
+    "user and agent can both use the surface"
+  ],
+  "generic_conceptual_elements": [
+    "plain-language request bubble",
+    "abstract canvas frame",
+    "agent build step",
+    "shared work surface",
+    "refinement loop"
+  ],
+  "prohibited_specifics": [
+    "invented canvas controls",
+    "invented GitHub UI",
+    "invented workflow actions",
+    "invented permissions",
+    "unsupported deployment behavior"
+  ],
+  "reference_policy": "No other story image or prompt may be used. Generation must occur in a fresh dedicated image-only worker containing only this packet.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_image_only_worker",
+  "factual_support_failure_action": "discard_and_start_fresh_image_only_worker",
+  "low_quality_fallback": false
+}
