@@ -7,9 +7,9 @@ on:
     paths:
       - '_records/discovery-preflight/request.json'
   schedule:
-    # 04:30 America/Chicago across DST/CST; durable receipt validation makes the second trigger a no-op.
-    - cron: '30 9 * * *'
-    - cron: '30 10 * * *'
+    # 03:15 America/Chicago across DST/CST; local-time gate ensures exactly one trigger runs.
+    - cron: '15 8 * * *'
+    - cron: '15 9 * * *'
 
 permissions:
   contents: write
@@ -40,6 +40,12 @@ jobs:
         run: |
           set -euo pipefail
           if [ "$EVENT_NAME" = "schedule" ]; then
+            local_time="$(TZ=America/Chicago date +%H:%M)"
+            if [ "$local_time" != "03:15" ]; then
+              echo "run_preflight=false" >> "$GITHUB_OUTPUT"
+              echo "DST companion trigger suppressed at $local_time America/Chicago."
+              exit 0
+            fi
             local_stamp="$(node -e "const d=new Date();const p=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(d);const o=Object.fromEntries(p.map(x=>[x.type,x.value]));process.stdout.write(o.year+'-'+o.month+'-'+o.day+'T'+o.hour+':'+o.minute)")"
             date="${local_stamp%%T*}"
             target_ref="discovery-preflight/daily/$date"
