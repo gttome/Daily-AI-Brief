@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q5",
+  "execution_mode": "qualification_nonproduction",
+  "result": "evaluated",
+  "mappings": [
+    {
+      "candidate_id": "m01",
+      "reference_id": "context-quality-checklist"
+    },
+    {
+      "candidate_id": "m03",
+      "reference_id": "context-quality-checklist"
+    },
+    {
+      "candidate_id": "m06",
+      "reference_id": "reliable-verification"
+    }
+  ],
+  "catalog_gap_remains": true,
+  "production_mutation": false
+}
