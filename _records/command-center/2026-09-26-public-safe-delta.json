@@ -1,0 +1,369 @@
+{
+  "schema_version": "2.0.0",
+  "mode": "public_safe_command_center_delta_handoff",
+  "generated_at": "2026-09-26T15:54:32.567Z",
+  "edition_date": "2026-09-26",
+  "publication_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+  "canonical_publication_status": {
+    "schema_version": "2.0.0",
+    "projection_version": "publication-status-v2",
+    "edition_date": "2026-09-26",
+    "edition_id": "dab-edition-2026-09-26",
+    "lifecycle_stage": "COMPLETED",
+    "lifecycle_state": "COMPLETED",
+    "operator_state": "COMPLETED",
+    "status": "COMPLETED",
+    "terminal_outcome": "COMPLETED",
+    "current_blocker": null,
+    "earliest_failed_stage": null,
+    "last_successful_stage": "COMPLETED",
+    "preserved_completed_work": [
+      "PLANNED",
+      "PREFLIGHT_READY",
+      "EDITORIAL_READY",
+      "CANDIDATE_READY",
+      "PR_OPEN",
+      "CI_PASS",
+      "MERGED",
+      "PAGES_DEPLOYED",
+      "LIVE_VERIFIED",
+      "COMPLETED"
+    ],
+    "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
+    "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
+    "operator_intervention_required": null,
+    "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+    "candidate_sha": "22cd00a8f40733c4e06737ed5d3668ac74ac6e7b",
+    "production_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+    "publication_merge_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+    "pr_number": 243,
+    "ci_run_id": 36253439587,
+    "ci": {
+      "state": "passed",
+      "run_id": 36253439587
+    },
+    "pages_deployment_id": 36253499609,
+    "deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+    "pages": {
+      "state": "succeeded",
+      "run_id": 36253499609,
+      "deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b"
+    },
+    "live_verification_timestamp": "2026-09-26T15:54:26.601Z",
+    "live_reader": {
+      "state": "verified",
+      "verified_at": "2026-09-26T15:54:26.601Z"
+    },
+    "completion_path": "_records/publication/2026-09-26/completion.json",
+    "completion": {
+      "state": "verified",
+      "path": "_records/publication/2026-09-26/completion.json"
+    },
+    "command_center_sync": "pending",
+    "command_center": {
+      "state": "pending",
+      "result": "pending",
+      "last_synced_at": null,
+      "source_status_sha256": null,
+      "stale": null
+    },
+    "last_authoritative_state_transition": {
+      "stage": "COMPLETED",
+      "at": "2026-09-26T15:54:26.601Z"
+    },
+    "source_evidence": {
+      "lifecycle_path": "_records/publication/2026-09-26/lifecycle.json",
+      "completion_path": "_records/publication/2026-09-26/completion.json",
+      "current_edition_path": "data/operations/current-edition.json",
+      "run_state_path": "_records/run-state/2026-09-26.json"
+    },
+    "consistency": {
+      "state": "pass",
+      "errors": []
+    },
+    "updated_at": "2026-09-26T15:54:26.601Z"
+  },
+  "synchronization": {
+    "source_edition": "2026-09-26",
+    "source_production_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+    "source_deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
+    "source_lifecycle_state": "COMPLETED",
+    "source_completion_state": "verified",
+    "source_live_reader_state": "verified",
+    "source_status_sha256": "sha256:ba19fdcfe9058c23224e82406e16347174dc48c932121308da49d01010f2f74f",
+    "requested_at": "2026-09-26T15:54:32.567Z",
+    "result": "pending",
+    "stale": null,
+    "mismatches": [],
+    "reason": "synchronized_command_center_state_unavailable",
+    "mutation_permitted": false
+  },
+  "validation": {
+    "final_result": "pass",
+    "model_calls": 0,
+    "semantic_escalation_required": false,
+    "coverage": {
+      "articles": 6,
+      "videos": 2,
+      "podcasts": 2,
+      "included_items": 10,
+      "potential_positions": 10,
+      "video_omissions": [],
+      "podcast_omissions": []
+    },
+    "image_readiness": {
+      "expected": 6,
+      "accepted_locked": 6,
+      "integrity_passed": 6,
+      "canonical_hosted": 6,
+      "status": "pass"
+    },
+    "domain_states": {
+      "publication": "verified",
+      "coverage": "complete",
+      "measurements": "credit_target_unverified",
+      "retention": "private_unverified",
+      "learning": "deferred",
+      "book_backlog": "private_unverified"
+    },
+    "automatic_ai_recovery_runs": 0,
+    "checks": [
+      {
+        "check_id": "publication_receipt",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "canonical_edition_contract",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "podcast_collection_contract",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "local_release_artifacts",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "image_integrity_dimensions",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "image_asset_lock",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "live_changed_routes",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "live_homepage_edition",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "live_dated_edition",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "live_image_assets",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "live_image_bytes",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "source_http_state",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "rating_share_generated_ids",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "accessibility_assertions",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "canonical_url_parity",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "pages_deployment",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "command_center_access_contract",
+        "result": "pass",
+        "severity": "critical"
+      },
+      {
+        "check_id": "command_center_public_read",
+        "result": "pass",
+        "severity": "high"
+      },
+      {
+        "check_id": "command_center_owner_operations",
+        "result": "not_applicable",
+        "severity": "medium"
+      }
+    ]
+  },
+  "presentation": {
+    "focus_labels": {
+      "agents_non_technical_people": "Agents for Everyone",
+      "applied_genai_knowledge_workers": "Applied Generative AI for Knowledge Workers",
+      "technical_ai_engineering": "Technical AI Engineering"
+    },
+    "book_series": {
+      "mapping_source": "_data/book-reading.json",
+      "rendering": "data_driven_optional"
+    },
+    "github_startup_gate": {
+      "required": true,
+      "phase": "before_editorial_or_image_work"
+    },
+    "operational_status_source": "canonical_publication_status"
+  },
+  "watchlist": {
+    "daily_counts": {
+      "new_today": 0,
+      "updated_today": 3,
+      "carried_forward": 13
+    },
+    "changed_topic_names": [
+      "Reusable agent skills become observable",
+      "AI harness engineering becomes a first-class layer",
+      "Model lifecycle governance for AI products"
+    ],
+    "changed_topics": [
+      "dab-topic-agent-skills-observability",
+      "dab-topic-harness-engineering",
+      "dab-topic-model-lifecycle-governance"
+    ],
+    "carried_topics": [
+      "dab-topic-collaborative-vibe-coding",
+      "dab-topic-repairable-generative-design",
+      "dab-topic-image-edit-restoration",
+      "dab-topic-adaptive-agent-safeguards",
+      "dab-topic-concept-level-language-models",
+      "dab-topic-memory-guided-planning",
+      "dab-topic-recursive-scene-programs",
+      "dab-topic-selective-precision-attention",
+      "dab-topic-long-horizon-agents",
+      "dab-topic-ai-adoption-telemetry",
+      "dab-topic-agentic-edge-inference",
+      "dab-topic-agent-overclaiming",
+      "dab-topic-system-one-decision-models"
+    ],
+    "removed_topics": [],
+    "semantic_refresh_topic_ids": [
+      "dab-topic-agent-skills-observability",
+      "dab-topic-harness-engineering",
+      "dab-topic-model-lifecycle-governance"
+    ],
+    "model_calls": 0
+  },
+  "incident_history": null,
+  "operating_policy": {
+    "profile_id": "under80-v1",
+    "daily_system_credit_target_lt": 80,
+    "credit_admission_threshold": 65,
+    "daily_ai_task_limit": 1,
+    "daily_validation_ai_tasks": 0,
+    "metadata_candidate_limit": 20,
+    "normal_deep_review_limit": 9,
+    "exception_deep_review_limit": 9,
+    "deep_review_expansion_enabled": false,
+    "model_visible_evidence_char_limit": 12000,
+    "semantic_rule_context_char_limit": 4000,
+    "research_capsule_char_limit": 6500,
+    "work_context_char_limit": 6500,
+    "normal_editorial_model_passes": 1,
+    "normal_post_editorial_model_passes": 0,
+    "normal_validation_model_passes": 0,
+    "broad_fallback_searches": 0,
+    "automatic_ai_recovery_runs": 0,
+    "ai_release_polling": 0,
+    "reader_focus_order": [
+      "agents_non_technical_people",
+      "applied_genai_knowledge_workers",
+      "technical_ai_engineering"
+    ],
+    "canonical_focus_order_unchanged": true,
+    "visual_quality_baseline": "2026-09-17",
+    "image": {
+      "method": "current_openai_generation_with_accepted_asset_reuse",
+      "quality_protected": true,
+      "required_story_images": 6,
+      "reuse_accepted_on_recovery": true,
+      "batch_regeneration_on_unrelated_failure": false,
+      "alternative_requires_side_by_side_equivalence": true,
+      "binary_transport": "github_git_data_api",
+      "github_contents_api_for_png": false,
+      "prepush_integrity_validator": "_tools/validate-handoff-images.mjs",
+      "github_git_data_blob_encoding": "base64",
+      "native_git_credentials_required": false,
+      "connector_git_data_tools": [
+        "create_blob",
+        "create_tree",
+        "create_commit",
+        "update_ref"
+      ]
+    },
+    "video": {
+      "preferred_count": 2,
+      "minimum_desirable_count": 2,
+      "deep_review_max": 5,
+      "duration_tiers_seconds": [
+        600,
+        900,
+        1200
+      ],
+      "required_count": 2,
+      "publication_required": true
+    },
+    "podcast": {
+      "target_count": 2,
+      "max_ai_daily_brief_per_edition": 1,
+      "require_different_sources_when_two_selected": true,
+      "maximum_duration_seconds": null,
+      "required_count": 2,
+      "publication_required": true
+    },
+    "deterministic_validation": {
+      "model_calls": 0,
+      "trigger": "pages_completion_with_09_chicago_fallback",
+      "work_validator_cutover": "after_first_successful_live_deterministic_receipt"
+    },
+    "autonomous_main_merge_enabled": true,
+    "failure_policy": "For a failed or defective current edition, preserve completed valid work and continue corrective action until the edition is published and live-verified. Do not stop for routine implementation decisions. Stop only for a new paid service, external credential, security/privacy change, sharing/access change, irreversible destructive action, material product change, or a hard platform capability blocker."
+  },
+  "transport": {
+    "repository_packet": "available",
+    "live_command_center_owner_state_mutation": "not_configured",
+    "consumer_contract": "display canonical_publication_status exactly; never infer publication success from timestamps, cache age, or partial validation evidence",
+    "reason": "No authorized repository-side Command Center owner-state mutation endpoint or credential is part of this repository contract."
+  },
+  "privacy": {
+    "private_reader_records_included": false,
+    "owner_identity_included": false,
+    "arbitrary_input_fields_copied": false
+  }
+}
