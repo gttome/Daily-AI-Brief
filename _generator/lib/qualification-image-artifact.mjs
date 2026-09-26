@@ -81,3 +81,30 @@ export function validateSerializedQualificationImageEvents(events,storyOrder){
   if(active!==null)errors.push('worker_left_active');
   return [...new Set(errors)];
 }
+
+
+export function validateQualificationImageWorkerContextReceipt(receipt,{storyId=null,candidateId=null,packetSha256=null}={}){
+  const errors=[];
+  if(!receipt||typeof receipt!=='object')return ['worker_context_receipt_required'];
+  for(const field of ['story_id','candidate_id','packet_sha256','fresh_execution_context','generation_instruction_source','visible_context_classes','other_story_context_present','operational_context_present']){
+    if(receipt[field]===undefined||receipt[field]===null)errors.push(`missing_${field}`);
+  }
+  if(storyId&&receipt.story_id!==storyId)errors.push('worker_context_story_id_mismatch');
+  if(candidateId&&receipt.candidate_id!==candidateId)errors.push('worker_context_candidate_id_mismatch');
+  if(packetSha256&&receipt.packet_sha256!==packetSha256)errors.push('worker_context_packet_sha256_mismatch');
+  if(!/^[a-f0-9]{64}$/.test(receipt.packet_sha256||''))errors.push('worker_context_packet_sha256_invalid');
+  if(receipt.fresh_execution_context!==true)errors.push('fresh_execution_context_required');
+  if(receipt.generation_instruction_source!=='sealed_story_packet_only')errors.push('sealed_story_packet_only_required');
+  if(!Array.isArray(receipt.visible_context_classes))errors.push('visible_context_classes_array_required');
+  const allowed=new Set(['sealed_story_packet']);
+  for(const item of Array.isArray(receipt.visible_context_classes)?receipt.visible_context_classes:[]){
+    if(!allowed.has(item))errors.push(`prohibited_visible_context_${item}`);
+  }
+  if(receipt.other_story_context_present!==false)errors.push('other_story_context_prohibited');
+  if(receipt.operational_context_present!==false)errors.push('operational_context_prohibited');
+  if(receipt.prior_image_worker_history_present===true)errors.push('prior_image_worker_history_prohibited');
+  if(receipt.parent_conversation_history_present===true)errors.push('parent_conversation_history_prohibited');
+  if(receipt.reused_execution_context===true)errors.push('reused_execution_context_prohibited');
+  if(receipt.context_attested_before_generation!==true)errors.push('context_attestation_must_precede_generation');
+  return [...new Set(errors)];
+}
