@@ -25,6 +25,9 @@ const REQUIRED_ARTIFACTS=Object.freeze({
 export const SUPPORTED_PUBLICATION_MANIFEST_ADAPTERS=Object.freeze([
  'candidate-facts-map-v1','selected-media-v1','accepted-images-map-v1'
 ]);
+const FUTURE_IMAGE_QUALITY_ARTIFACTS=Object.freeze({
+ image_quality_evidence:{versions:['2.0.0']}
+});
 
 const safeRelative=p=>typeof p==='string'&&p.length>0&&!path.isAbsolute(p)&&!p.split(/[\\/]+/).includes('..');
 const jsonDate=value=>typeof value==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(value);

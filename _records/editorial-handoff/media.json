@@ -1,4 +1,6 @@
 {
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-26",
   "worth_watching": {
     "general": {
       "status": "included",
@@ -6,27 +8,26 @@
       "channel": "Microsoft Developer",
       "upload_date": "2026-09-23",
       "runtime_seconds": 573,
-      "why_useful": "A concise walkthrough of choosing an agent model with Microsoft Foundry using repeatable evaluations rather than intuition, including latency, token usage, output quality, and cost.",
-      "connection": "Extends today’s engineering and evaluation coverage by showing how model choice can become a measured production decision.",
+      "why_useful": "A concise walkthrough of choosing an agent model with repeatable evaluations rather than intuition, including latency, token use, output quality, and cost.",
+      "connection": "Pairs with today’s reliability and execution-layer stories by turning model selection into a measured engineering decision.",
       "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
       "duration_tier": "short",
       "short_search_evidence": [
-        "Verified September 23, 2026 Microsoft Developer upload; runtime 9:33; current source listing and chapter timings corroborated."
+        "Reused from the independently verified Sep 25 media receipt; a current Sep 26 public listing still identifies the Sep 23 Microsoft Developer video at 9:33."
       ]
     },
     "agents_non_technical_people": {
       "status": "included",
-      "display_label": "Agents for Everyone",
       "title": "Using Claude Opus 5.5 as your daily driver",
       "channel": "Claude",
       "upload_date": "2026-09-23",
       "runtime_seconds": 213,
-      "why_useful": "A short practical comparison showing how the new model behaves in everyday Claude Code work, including speed, usage limits, and when medium effort is enough.",
-      "connection": "Complements today’s agent and knowledge-work stories with a concrete example of matching model capability and operating cost to routine work.",
+      "why_useful": "A practical three-minute comparison showing how model choice changes speed, limits, and daily agentic coding work.",
+      "connection": "Complements the day’s agent-memory and reusable-skill stories with a concrete example of matching capability and effort to routine work.",
       "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
       "duration_tier": "short",
       "short_search_evidence": [
-        "Verified September 23, 2026 Claude upload; runtime 3:33."
+        "Reused from the independently verified Sep 25 media receipt; a current Sep 26 independent listing still identifies the Sep 23 Claude upload at 3:33."
       ]
     }
   },
@@ -34,68 +35,70 @@
     {
       "status": "included",
       "ordinal": 9,
-      "item_id": "dab-podcast-2026-09-25-agents-rules-business",
-      "title": "Are AI agents changing the rules of business?",
-      "show": "Take on Tomorrow",
-      "host": "PwC; guests Rob Seaman and Joe Atkinson",
-      "publication_date": "2026-09-22",
-      "runtime_seconds": null,
-      "focus": "applied_genai_knowledge_workers",
+      "item_id": "dab-podcast-2026-09-26-practical-ai-agents-enterprise",
+      "title": "From AGENTS.md to Enterprise Deployment",
+      "show": "Practical AI",
+      "host": "Daniel Whitenack and Chris Benson; guest Nick Kuhn",
+      "publication_date": "2026-09-24",
+      "runtime_seconds": 2932,
+      "focus": "technical_ai_engineering",
       "topics": [
         "AI agents",
-        "workflow redesign",
-        "enterprise adoption",
-        "human work"
+        "enterprise deployment",
+        "MCP",
+        "shared memory",
+        "identity",
+        "sandboxing"
       ],
-      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
-      "permanent_url": "/podcasts/2026-09-25/agents-rules-business/",
-      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.",
-      "why_useful": "Adds an enterprise-adoption lens to today’s operational stories.",
-      "connection": "Reinforces the shift from AI features to governed, outcome-oriented workflows.",
-      "selection_rationale": "Recent September 22 episode from PwC with direct agentic-work relevance.",
-      "verification_note": "PwC page previously verified the September 22, 2026 publication date.",
-      "coverage_note": "Fallback selection reused during publication recovery to avoid unnecessary rediscovery.",
-      "freshness_tier": "fallback_7d",
-      "freshness_exception_reason": "No newer independently verified podcast was present in the completed September 25 preflight; reused a verified September 22 episode within the allowed seven-day recovery window.",
+      "url": "https://practicalai.show/373",
+      "permanent_url": "/podcasts/2026-09-26/agents-md-enterprise-deployment/",
+      "summary": "Practical AI examines moving agents from prototypes into enterprise environments where platform engineering, identity, memory, MCP gateways, security, compliance, scalability, and reliability become operating requirements.",
+      "why_useful": "Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.",
+      "selection_rationale": "Approved-source episode dated September 24 with publisher-verified 48:52 runtime and strong production-agent relevance.",
+      "verification_note": "Official Practical AI page verified September 24, 2026, runtime 48:52, episode 373.",
+      "freshness_tier": "primary_48h",
       "platforms": [
         {
-          "name": "PwC",
-          "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html"
+          "name": "Practical AI",
+          "url": "https://practicalai.show/373"
         }
-      ]
+      ],
+      "connection": "Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.",
+      "coverage_note": "Reused the completed September 26 media checkpoint; no selection or source-content rediscovery."
     },
     {
       "status": "included",
       "ordinal": 10,
-      "item_id": "dab-podcast-2026-09-25-upnext-ai",
-      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
-      "show": "UpNext AI",
-      "host": "UpNext AI",
-      "publication_date": "2026-09-22",
-      "runtime_seconds": 480,
-      "focus": "technical_ai_engineering",
+      "item_id": "dab-podcast-2026-09-26-ai-show-baptist-health",
+      "title": "#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation",
+      "show": "The Artificial Intelligence Show",
+      "host": "Mike Kaput; guest Christine Kotler",
+      "publication_date": "2026-09-24",
+      "runtime_seconds": 2650,
+      "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "agent safety",
-        "long-horizon evaluation",
-        "AI security",
-        "agent platforms"
+        "AI adoption",
+        "knowledge work",
+        "governance",
+        "learning",
+        "workflow redesign"
       ],
-      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
-      "permanent_url": "/podcasts/2026-09-25/upnext-ai/",
-      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.",
-      "why_useful": "Adds a compact reliability and safety counterpoint to the day’s product and workflow developments.",
-      "connection": "Pairs with today’s emphasis on observability, tool governance, and verified agent outcomes.",
-      "selection_rationale": "Verified September 22 episode from a source distinct from PwC, with independently listed 8-minute runtime.",
-      "verification_note": "Independent listing previously verified September 22, 2026 and 8-minute runtime.",
-      "coverage_note": "Fallback selection reused during publication recovery to avoid unnecessary rediscovery.",
-      "freshness_tier": "fallback_7d",
-      "freshness_exception_reason": "No newer independently verified second podcast was present in the completed September 25 preflight; reused a verified September 22 episode within the allowed seven-day recovery window.",
+      "url": "https://podcast.smarterx.ai/shownotes/242",
+      "permanent_url": "/podcasts/2026-09-26/baptist-health-ai-transformation/",
+      "summary": "A regulated-healthcare case study of a two-year AI adoption program built around structured learning, peer coaching, workflow integration, pilots, governance, and role redesign.",
+      "why_useful": "Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.",
+      "selection_rationale": "Approved core source, distinct from Practical AI, with current September 24 episode and directly relevant knowledge-worker transformation evidence.",
+      "verification_note": "Official show notes verify September 24; independent listing verifies 44:10.",
+      "freshness_tier": "primary_48h",
+      "freshness_exception_reason": "The bounded verification set yielded only one distinct-source finalist clearly inside the strict 48-hour timestamp window; this September 24 episode is the strongest approved-source fallback.",
       "platforms": [
         {
-          "name": "Podscan",
-          "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026"
+          "name": "The Artificial Intelligence Show",
+          "url": "https://podcast.smarterx.ai/shownotes/242"
         }
-      ]
+      ],
+      "connection": "Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.",
+      "coverage_note": "Reused the completed September 26 media checkpoint; no selection or source-content rediscovery."
     }
   ]
 }

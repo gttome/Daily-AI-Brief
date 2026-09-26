@@ -45,6 +45,8 @@ on:
 
 permissions:
   contents: write
+  actions: write
+  pages: write
   pull-requests: write
   issues: write
 
@@ -56,6 +58,7 @@ jobs:
   expand-validate-stage:
     if: github.event_name == 'workflow_dispatch' || github.event_name == 'push'
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Refuse direct-main operation
         env:
@@ -372,6 +375,43 @@ jobs:
             if(pr.head.sha!==candidateSha){core.setFailed(`PR head ${pr.head.sha} does not equal committed candidate ${candidateSha}`);return;}
             await github.rest.issues.addLabels({...context.repo,issue_number:pr.number,labels:['publication-candidate']}).catch(()=>{});
             core.info(`Publication PR #${pr.number} is bound to exact candidate ${candidateSha} and ready for required CI.`);
+
+            // Token-created PRs do not reliably start CI. Dispatch the unchanged
+            // required workflow once, and keep bounded observation in Actions.
+            const dispatchedAt=Date.now();
+            await github.rest.actions.createWorkflowDispatch({...context.repo,workflow_id:'ci.yml',ref:head});
+            let passing=null;
+            for(let i=0;i<48;i++){
+              await new Promise(resolve=>setTimeout(resolve,10000));
+              const runs=(await github.rest.actions.listWorkflowRuns({...context.repo,workflow_id:'ci.yml',branch:head,event:'workflow_dispatch',per_page:30})).data.workflow_runs;
+              const run=runs.find(x=>x.head_sha===candidateSha&&Date.parse(x.created_at)>=dispatchedAt-5000);
+              if(run?.status==='completed'){
+                if(run.conclusion!=='success')throw new Error(`Required publication CI ${run.id} ended ${run.conclusion}; candidate retained for narrow recovery.`);
+                passing=run;break;
+              }
+            }
+            if(!passing)throw new Error('Required publication CI did not pass within the bounded Actions window.');
+            const policyResponse=await github.rest.repos.getContent({...context.repo,path:'docs/operations/efficiency-operating-policy.json',ref:'main'});
+            if(Array.isArray(policyResponse.data)||!policyResponse.data.content)throw new Error('Current main operating policy unavailable.');
+            const policy=JSON.parse(Buffer.from(policyResponse.data.content,'base64').toString('utf8'));
+            if(policy.profile_id!=='under80-v1'||policy.autonomous_main_merge_enabled!==true)throw new Error('Current main policy does not authorize autonomous promotion.');
+            const fs=require('fs');
+            const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
+            const manifest=JSON.parse(fs.readFileSync(handoff.publication_manifest_path,'utf8'));
+            const mainBefore=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
+            if(mainBefore!==manifest.baseline_sha)throw new Error('Trusted main moved after candidate validation; narrow revalidation required.');
+            pr=(await github.rest.pulls.get({...context.repo,pull_number:pr.number})).data;
+            if(pr.head.sha!==candidateSha||pr.base.ref!=='main'||pr.state!=='open'||pr.draft||pr.head.repo?.full_name!==`${context.repo.owner}/${context.repo.repo}`)throw new Error('Publication PR identity changed after passing CI.');
+            if(!(pr.labels||[]).some(x=>(typeof x==='string'?x:x.name)==='publication-candidate'))throw new Error('Publication-candidate label missing.');
+            const merged=await github.rest.pulls.merge({...context.repo,pull_number:pr.number,sha:candidateSha,merge_method:'squash'});
+            if(!merged.data.merged)throw new Error('Protected publication merge denied: '+(merged.data.message||'not merged'));
+            const mergeSha=merged.data.sha;
+            const mainAfter=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
+            if(mainAfter!==mergeSha)throw new Error('Main moved before Pages request; refusing to bind another commit to this edition.');
+            // Request a build without changing Pages configuration or access.
+            await github.request('POST /repos/{owner}/{repo}/pages/builds',context.repo);
+            await github.rest.actions.createWorkflowDispatch({...context.repo,workflow_id:'daily-delta-validation.yml',ref:'main',inputs:{date:manifest.edition_date,expected_sha:mergeSha}});
+            core.info(`Protected PR #${pr.number}, CI ${passing.id}, merge ${mergeSha}: exact-SHA deployment and live closure are now owned by deterministic delta validation.`);
 
       - name: Build recovery decision after failure
         if: failure()

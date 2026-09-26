@@ -32,9 +32,14 @@ jobs:
           EVENT_BEFORE: ${{ github.event.before }}
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           set -euo pipefail
           base_sha="${PR_BASE:-${EVENT_BEFORE:-}}"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            git fetch --no-tags origin main
+            base_sha="$(git merge-base HEAD origin/main)"
+          fi
           if [ -z "$base_sha" ] || [[ "$base_sha" =~ ^0+$ ]]; then
             base_sha="$(git rev-parse HEAD^ 2>/dev/null || true)"
           fi
@@ -75,8 +80,13 @@ jobs:
           EVENT_BEFORE: ${{ github.event.before }}
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           base_sha="${PR_BASE:-${EVENT_BEFORE:-}}"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            git fetch --no-tags origin main
+            base_sha="$(git merge-base HEAD origin/main)"
+          fi
           if [ -z "$base_sha" ] || [[ "$base_sha" =~ ^0+$ ]]; then
             base_sha="$(git rev-parse HEAD^ 2>/dev/null || true)"
           fi
@@ -87,8 +97,13 @@ jobs:
           EVENT_BEFORE: ${{ github.event.before }}
           PR_BASE: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           base_sha="${PR_BASE:-${EVENT_BEFORE:-}}"
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            git fetch --no-tags origin main
+            base_sha="$(git merge-base HEAD origin/main)"
+          fi
           if [ -z "$base_sha" ] || [[ "$base_sha" =~ ^0+$ ]]; then
             base_sha="$(git rev-parse HEAD^ 2>/dev/null || true)"
           fi

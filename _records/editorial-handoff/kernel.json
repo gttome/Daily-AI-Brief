@@ -1,137 +1,137 @@
 {
   "schema_version": "1.0.0",
-  "brief_date": "2026-09-25",
-  "edition_id": "dab-edition-2026-09-25",
-  "baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "brief_date": "2026-09-26",
+  "edition_id": "dab-edition-2026-09-26",
+  "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
   "normal_model_passes": 1,
   "normal_post_editorial_model_passes": 0,
   "stories": [
     {
-      "candidate_id": "m02",
-      "story_id": "nv-reason-ct-3d-vlm-2026-09-25",
+      "candidate_id": "m09",
+      "story_id": "dab-story-2026-09-26-f3e5113c",
       "canonical_ordinal": 1,
       "focus": "technical_ai_engineering",
-      "headline": "NVIDIA opens 3D CT reasoning model for volumetric radiology workflows",
-      "summary": "NVIDIA introduced NV-Reason-CT, an open 3D CT vision-language model designed to reason across full volumetric chest and abdomen scans, produce structured diagnostic reports, and support multistep follow-up dialogue.",
-      "why_it_matters": "The release pushes multimodal reasoning beyond 2D images into full 3D clinical volumes. For AI engineering teams, it highlights the growing importance of structured reasoning, domain-specific evaluation, and workload-specific safety controls for high-stakes multimodal systems.",
-      "editorial_limitation": "The technical claims come from NVIDIA’s own release. Medical deployment requires independent clinical validation, regulatory review, privacy controls, and human radiologist oversight.",
+      "headline": "AWS shows how to build continuous quality checks into production LLM workflows",
+      "summary": "AWS describes NarrateAI, a production LLM quality-assurance pattern on Amazon Bedrock that combines adaptive orchestration, multi-model failover, streaming evaluation, composite evaluation, and data-accuracy verification inside the response path.",
+      "why_it_matters": "Reliable generative AI requires more than an offline benchmark. Embedding verification into retrieval, generation, failover, and streaming makes quality observable while the system is actually serving users.",
+      "editorial_limitation": "The architecture and reported accuracy come from an AWS-authored implementation. Teams should independently test thresholds, evaluator bias, latency overhead, failure coverage, and portability before adopting the pattern.",
       "topic_labels": [
-        "multimodal AI",
-        "3D vision-language models",
-        "medical AI",
-        "reasoning evaluation"
+        "LLM evaluation",
+        "production reliability",
+        "streaming evaluation",
+        "Bedrock"
       ],
-      "source_url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Evaluate domain reasoning with explicit clinical guardrails",
-        "rationale": "Separate model capability tests from clinical acceptance, define task-specific metrics, and keep qualified human review mandatory."
+        "label": "Add one live quality check to a production AI path",
+        "rationale": "Start with a measurable failure mode such as numerical accuracy or citation consistency, then track the added latency and false-positive rate."
       },
       "visual": {
-        "layout": "process",
-        "title": "From volumetric CT to reviewed diagnostic reasoning",
-        "alt_text": "White-background instructional diagram showing a 3D CT volume passing through multimodal reasoning, structured report generation, and human clinical review.",
+        "layout": "quality-stack",
+        "title": "Layered quality assurance for production LLM workflows",
+        "alt_text": "Detailed white-background textbook plate showing retrieval, model routing and failover, streamed tokens, live evaluation, source-value comparison, and a reviewed response.",
         "nodes": [
           {
             "id": "n1",
-            "label": "3D CT volume",
-            "detail": "Full chest or abdomen scan."
+            "label": "Retrieve",
+            "detail": "Gather source evidence for the task."
           },
           {
             "id": "n2",
-            "label": "Multimodal reasoning",
-            "detail": "Model interprets spatial findings across slices."
+            "label": "Generate",
+            "detail": "Produce the draft response or agent output."
           },
           {
             "id": "n3",
-            "label": "Structured report",
-            "detail": "Findings and rationale are organized for review."
+            "label": "Validate",
+            "detail": "Apply layered quality and consistency checks."
           },
           {
             "id": "n4",
-            "label": "Clinical verification",
-            "detail": "Radiologist validates findings before use."
+            "label": "Deliver or escalate",
+            "detail": "Release passing output or route failures for review."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "route"
+            "label": "ground"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "execute"
+            "label": "check"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "verify"
+            "label": "gate"
           }
         ],
         "callouts": [
           {
-            "anchor": "n4",
-            "text": "High-stakes reasoning must remain independently validated."
+            "anchor": "n3",
+            "text": "Production reliability comes from layered controls, not a single final score."
           }
         ]
       }
     },
     {
       "candidate_id": "m04",
-      "story_id": "gpu-cluster-readiness-engine-2026-09-25",
+      "story_id": "dab-story-2026-09-26-8a5e2871",
       "canonical_ordinal": 2,
       "focus": "technical_ai_engineering",
-      "headline": "NVIDIA adds workload-driven validation for GPU cluster readiness",
-      "summary": "NVIDIA’s Cluster Readiness Engine uses real distributed workloads across topology-aware GPU groups to test whether a cluster is actually ready for production AI workloads rather than relying only on component health checks.",
-      "why_it_matters": "AI infrastructure can look healthy while failing under real distributed load. Workload-level readiness testing gives engineering teams a stronger pre-production signal for networking, topology, collective communication, and GPU behavior.",
-      "editorial_limitation": "The approach is NVIDIA-authored and centered on its ecosystem. Teams should validate compatibility, failure coverage, and operational overhead against their own cluster stack and workloads.",
+      "headline": "GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs",
+      "summary": "GitHub’s September 21 weekly release bundle adds new model choices, local sandboxing in the Copilot app, updates for Slack and Microsoft Teams, and changes across JetBrains and VS Code.",
+      "why_it_matters": "Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaboration surfaces, and client-specific behavior as one operating system.",
+      "editorial_limitation": "This is a bundled vendor release. Individual features vary by client, plan, rollout state, and policy, so teams should verify the exact capability and governance surface they intend to use.",
       "topic_labels": [
-        "GPU infrastructure",
-        "AI reliability",
-        "cluster validation",
-        "production readiness"
+        "GitHub Copilot",
+        "sandboxing",
+        "model routing",
+        "developer agents"
       ],
-      "source_url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Add workload-level readiness tests before deployment",
-        "rationale": "Use representative distributed jobs to expose failures that static health checks can miss."
+        "label": "Map Copilot capability to execution boundary",
+        "rationale": "For each enabled surface, document the model, tools, sandbox or host boundary, data access, and organization policy that governs it."
       },
       "visual": {
-        "layout": "process",
-        "title": "Proving a GPU cluster is ready for AI workloads",
-        "alt_text": "White-background instructional diagram showing component health, representative distributed workload tests, observed behavior, and a production readiness decision.",
+        "layout": "layered",
+        "title": "From model choice to safe coding-agent execution",
+        "alt_text": "Layered Copilot deployment review showing IDE and collaboration surfaces, model choices, tool routing, local sandbox internals, and questions to verify for each client.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Healthy components",
-            "detail": "GPUs, links, pods, and services report normal."
+            "label": "Model choice",
+            "detail": "Select model capability appropriate to the task."
           },
           {
             "id": "n2",
-            "label": "Representative workload",
-            "detail": "Run topology-aware distributed AI tests."
+            "label": "Coding agent",
+            "detail": "Agent plans edits and tool use."
           },
           {
             "id": "n3",
-            "label": "Observed behavior",
-            "detail": "Measure communication, failures, and performance."
+            "label": "Local sandbox",
+            "detail": "Execution is isolated behind explicit boundaries."
           },
           {
             "id": "n4",
-            "label": "Readiness decision",
-            "detail": "Promote only when workload evidence passes."
+            "label": "Verified output",
+            "detail": "Tests and review confirm the result before promotion."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "route"
+            "label": "reason"
           },
           {
             "from": "n2",
@@ -141,143 +141,143 @@
           {
             "from": "n3",
             "to": "n4",
-            "label": "verify"
+            "label": "validate"
           }
         ],
         "callouts": [
           {
-            "anchor": "n4",
-            "text": "Component health is not the same as workload readiness."
+            "anchor": "n3",
+            "text": "Execution isolation is becoming a core control for agentic coding."
           }
         ]
       }
     },
     {
       "candidate_id": "m05",
-      "story_id": "copilot-default-feature-enablement-2026-09-25",
+      "story_id": "dab-story-2026-09-26-17fb50a5",
       "canonical_ordinal": 3,
       "focus": "applied_genai_knowledge_workers",
-      "headline": "GitHub changes the default policy for generally available Copilot features",
-      "summary": "GitHub introduced a global default policy for generally available Copilot features and supported client capabilities in Business and Enterprise settings, shifting how new capabilities become enabled across organizations.",
-      "why_it_matters": "AI feature governance is becoming a default-management problem, not just an adoption problem. Administrators need explicit ownership of organization defaults, exceptions, and review windows so feature rollout does not outpace policy.",
-      "editorial_limitation": "The change applies within GitHub Copilot’s enterprise and organization settings and does not remove the need for local governance, access controls, or feature-specific review.",
+      "headline": "Microsoft redesigns Copilot around Home, Code, and persistent Autopilot",
+      "summary": "Microsoft introduced a new Copilot experience organized around Home for everyday work, Code for building solutions, and Autopilot for persistent delegated work that can continue across time.",
+      "why_it_matters": "The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to deciding which work should remain interactive, become an artifact, or run persistently.",
+      "editorial_limitation": "Home, Code, and Autopilot have different rollout states and organizational controls. Teams should validate availability, identity, data access, approval, and audit behavior before treating persistent work as autonomous.",
       "topic_labels": [
-        "GitHub Copilot",
-        "enterprise governance",
-        "AI policy",
-        "feature management"
+        "Microsoft Copilot",
+        "knowledge work",
+        "Autopilot",
+        "AI workspace"
       ],
-      "source_url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Review Copilot defaults and exception ownership",
-        "rationale": "Confirm who owns default settings, which capabilities are permitted, and how new features are reviewed before broad use."
+        "label": "Classify one recurring workflow as chat, build, or delegate",
+        "rationale": "Choose a real task and decide whether it belongs in interactive Home work, a reusable Code artifact, or a persistent Autopilot assignment with explicit checkpoints."
       },
       "visual": {
-        "layout": "process",
-        "title": "Governed defaults for enterprise AI features",
-        "alt_text": "White-background instructional diagram showing vendor feature availability, enterprise default policy, organization controls, and governed user access.",
+        "layout": "three-lane",
+        "title": "Three modes of AI work in the new Copilot",
+        "alt_text": "Three illustrated work lanes compare Copilot Home for interactive drafts, Code for reusable artifacts, and Autopilot for persistent tasks with review checkpoints.",
         "nodes": [
           {
             "id": "n1",
-            "label": "New GA capability",
-            "detail": "Vendor makes a feature generally available."
+            "label": "Home",
+            "detail": "Chat, Cowork, and Office support assisted knowledge work."
           },
           {
             "id": "n2",
-            "label": "Enterprise default",
-            "detail": "Central policy defines default enablement."
+            "label": "Code",
+            "detail": "Users build and customize solutions."
           },
           {
             "id": "n3",
-            "label": "Organization controls",
-            "detail": "Teams apply permitted exceptions and scope."
+            "label": "Autopilot",
+            "detail": "Bounded work is delegated for autonomous execution."
           },
           {
             "id": "n4",
-            "label": "Governed use",
-            "detail": "Users receive capabilities within policy."
+            "label": "Governed outcome",
+            "detail": "Permissions, review, and measurement remain explicit."
           }
         ],
         "edges": [
           {
             "from": "n1",
-            "to": "n2",
-            "label": "route"
+            "to": "n4",
+            "label": "assist"
           },
           {
             "from": "n2",
-            "to": "n3",
-            "label": "execute"
+            "to": "n4",
+            "label": "build"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "verify"
+            "label": "delegate"
           }
         ],
         "callouts": [
           {
             "anchor": "n4",
-            "text": "Defaults are governance decisions, not neutral settings."
+            "text": "The operating question is not only what AI can do, but which mode should own each workflow."
           }
         ]
       }
     },
     {
-      "candidate_id": "m07",
-      "story_id": "microsoft-ai-at-work-system-2026-09-25",
+      "candidate_id": "m06",
+      "story_id": "dab-story-2026-09-26-ade5bc01",
       "canonical_ordinal": 4,
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Microsoft frames workplace AI as a system of models, context, agents, and governance",
-      "summary": "Microsoft’s AI at Work update argues that enterprise value comes from connecting copilots and agents to organizational context, workflow, governance, and measurement rather than treating AI as a standalone chat interface.",
-      "why_it_matters": "Knowledge-worker adoption increasingly depends on system design: trustworthy context, repeatable workflows, governed actions, and measurable outcomes. That is a more durable operating model than distributing isolated prompts or assistants.",
-      "editorial_limitation": "This is Microsoft’s product and strategy framing. Organizations should test the model against their own workflow economics, data architecture, governance requirements, and employee experience.",
+      "headline": "Microsoft adds a governed runtime for code execution inside Microsoft 365",
+      "summary": "Microsoft Copilot Managed Runtime enters public preview as a tenant-boundary platform for executing code with enterprise governance, live data connections, app access, and familiar Microsoft 365 sharing expectations.",
+      "why_it_matters": "Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while giving IT a clearer place to govern identity, data, sharing, and execution.",
+      "editorial_limitation": "The feature is in public preview and tied to Microsoft 365. Organizations should test workload isolation, supported languages and libraries, data-boundary guarantees, logging, and failure recovery before relying on it for critical work.",
       "topic_labels": [
-        "knowledge work",
         "Microsoft 365 Copilot",
-        "enterprise AI",
-        "workflow design"
+        "code execution",
+        "enterprise governance",
+        "managed runtime"
       ],
-      "source_url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/",
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
       "agent_skill": false,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Map one knowledge workflow as an AI system",
-        "rationale": "Define the context, actions, controls, human checkpoints, and outcome metrics around one recurring workflow."
+        "label": "Test one governed analytical workflow",
+        "rationale": "Use a bounded dataset and repeatable calculation to compare the managed runtime with current spreadsheet, notebook, or local-code practices."
       },
       "visual": {
-        "layout": "process",
-        "title": "Building an operating system for AI at work",
-        "alt_text": "White-background instructional diagram connecting organizational context, AI assistance, workflow execution, governance, and measurable outcomes.",
+        "layout": "boundary",
+        "title": "Governed code execution inside the Microsoft 365 boundary",
+        "alt_text": "Nested Microsoft 365 tenant and Managed Runtime boundaries show identity, data connections, computation, reviewed output, governed sharing, and control questions.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Work context",
-            "detail": "People, data, documents, and business intent."
+            "label": "Knowledge-work request",
+            "detail": "A user asks for analysis or transformation."
           },
           {
             "id": "n2",
-            "label": "Copilots and agents",
-            "detail": "Models reason over governed context."
+            "label": "Copilot plan",
+            "detail": "The assistant determines code and data actions."
           },
           {
             "id": "n3",
-            "label": "Workflow execution",
-            "detail": "AI supports or performs bounded work."
+            "label": "Managed Runtime",
+            "detail": "Code executes inside governed tenant boundaries."
           },
           {
             "id": "n4",
-            "label": "Governed outcomes",
-            "detail": "Humans review, measure, and improve results."
+            "label": "Reviewed result",
+            "detail": "Output is checked before business use."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "route"
+            "label": "intent"
           },
           {
             "from": "n2",
@@ -287,180 +287,172 @@
           {
             "from": "n3",
             "to": "n4",
-            "label": "verify"
+            "label": "return + verify"
           }
         ],
         "callouts": [
           {
-            "anchor": "n4",
-            "text": "Adoption should be measured at the workflow outcome, not prompt volume."
+            "anchor": "n3",
+            "text": "Code execution turns AI assistance into an operational control surface."
           }
         ]
       }
     },
     {
-      "candidate_id": "m01",
-      "story_id": "skill-equipped-agent-evals-2026-09-25",
+      "candidate_id": "m03",
+      "story_id": "dab-story-2026-09-26-5bddf735",
       "canonical_ordinal": 5,
       "focus": "agents_non_technical_people",
-      "headline": "AWS adds skill-specific evaluation for agents using reusable procedures",
-      "summary": "AWS shows how Strands Evals and Amazon Bedrock AgentCore Evaluations can test whether skill-equipped agents select the correct reusable skill and follow its instructions, rather than judging only the fluency of the final answer.",
-      "why_it_matters": "Agent Skills turn repeatable methods into portable instructions, but they also create a new failure surface: the agent can choose the wrong skill or ignore the skill’s procedure. Skill-selection and instruction-following metrics make that behavior testable.",
-      "editorial_limitation": "The evaluation approach is demonstrated in the AWS and Strands ecosystem. Teams should define their own task sets, thresholds, failure cases, and human review criteria before relying on skill-equipped agents.",
+      "headline": "GitHub gives agentic autofix project memory for security repairs",
+      "summary": "GitHub agentic autofix can now use Copilot Memory when customers enable it, letting the repair agent retrieve project-specific secure-development context and prior patterns before proposing fixes for security alerts.",
+      "why_it_matters": "An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remembers, when that memory influences a fix, and how a human verifies the result.",
+      "editorial_limitation": "The feature depends on Copilot Memory being enabled and operates within GitHub’s security tooling. Memory can improve context but does not prove a repair is correct, secure, or regression-free.",
+      "topic_labels": [
+        "agentic autofix",
+        "Copilot Memory",
+        "security agents",
+        "context engineering"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Review what security memory the agent is allowed to use",
+        "rationale": "Start with one alert class, inspect the retrieved project patterns, and require tests plus human review before accepting the automated fix."
+      },
+      "visual": {
+        "layout": "context-loop",
+        "title": "How repository memory changes agentic security remediation",
+        "alt_text": "Security alert and enabled repository memory feed agentic autofix, a conceptual code patch, independent tests, human review, and memory-scope review.",
+        "nodes": [
+          {
+            "id": "n1",
+            "label": "Security alert",
+            "detail": "A repository issue triggers agentic remediation."
+          },
+          {
+            "id": "n2",
+            "label": "Copilot Memory",
+            "detail": "Repository-specific secure development patterns provide context."
+          },
+          {
+            "id": "n3",
+            "label": "Agentic Autofix",
+            "detail": "The agent combines alert evidence with remembered context."
+          },
+          {
+            "id": "n4",
+            "label": "Verified fix",
+            "detail": "Human and automated checks validate the proposed remediation."
+          }
+        ],
+        "edges": [
+          {
+            "from": "n1",
+            "to": "n3",
+            "label": "problem"
+          },
+          {
+            "from": "n2",
+            "to": "n3",
+            "label": "context"
+          },
+          {
+            "from": "n3",
+            "to": "n4",
+            "label": "propose + verify"
+          }
+        ],
+        "callouts": [
+          {
+            "anchor": "n2",
+            "text": "Persistent memory is useful only when its scope, freshness, and provenance are governed."
+          }
+        ]
+      }
+    },
+    {
+      "candidate_id": "r01",
+      "story_id": "dab-story-2026-09-26-0434240f",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can turn repeated work into proposed reusable Skills",
+      "summary": "Qoder 0.4.1 can suggest creating or updating reusable Skills after a conversation, using experience from completed work; accepting the suggestion opens a separate conversation where the user confirms the plan before changes are applied.",
+      "why_it_matters": "Reusable agent skills can evolve from actual work rather than being authored only up front. The confirmation step is equally important: it keeps the conversion from experience into durable instructions visible and reviewable.",
+      "editorial_limitation": "The evidence is Qoder’s release note and describes product behavior rather than independent effectiveness. Teams should inspect the generated skill content, version changes, portability, and failure modes before relying on evolved skills.",
       "topic_labels": [
         "Agent Skills",
-        "agent evaluation",
-        "Strands Evals",
-        "AgentCore"
+        "Qoder",
+        "skill evolution",
+        "reusable workflows"
       ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
       "agent_skill": true,
       "what_to_do_now": {
         "action": "evaluate",
-        "label": "Test one reusable skill for selection and instruction fidelity",
-        "rationale": "Create representative tasks, measure whether the agent invokes the correct skill, and verify that required steps are followed before scaling."
+        "label": "Capture one repeated workflow as a proposed skill",
+        "rationale": "Use a completed task to generate a skill suggestion, review every instruction in the separate confirmation conversation, and test the resulting skill on a new task."
       },
       "visual": {
-        "layout": "process",
-        "title": "Evaluating whether an agent uses the right skill correctly",
-        "alt_text": "White-background instructional diagram showing a user task, agent skill selection, instruction execution, and evaluator checks.",
+        "layout": "learning-loop",
+        "title": "From repeated work to a reviewed reusable Skill",
+        "alt_text": "Qoder skill evolution moves from completed work through a skill proposal and separate confirmation conversation to an applied reusable skill and a later test task.",
         "nodes": [
           {
             "id": "n1",
-            "label": "Task",
-            "detail": "A request enters the agent workflow."
+            "label": "Repeated work",
+            "detail": "A conversation completes a recurring task."
           },
           {
             "id": "n2",
-            "label": "Skill selection",
-            "detail": "Agent chooses a reusable procedure."
+            "label": "Experience pattern",
+            "detail": "The system detects reusable steps."
           },
           {
             "id": "n3",
-            "label": "Skill execution",
-            "detail": "Agent follows the skill instructions and tools."
+            "label": "Skill proposal",
+            "detail": "A new or updated reusable Skill is suggested."
           },
           {
             "id": "n4",
-            "label": "Evaluation",
-            "detail": "Measure selection accuracy and instruction fidelity."
+            "label": "Human confirmation",
+            "detail": "The user reviews and approves the plan before reuse."
           }
         ],
         "edges": [
           {
             "from": "n1",
             "to": "n2",
-            "label": "route"
+            "label": "learn"
           },
           {
             "from": "n2",
             "to": "n3",
-            "label": "execute"
+            "label": "propose"
           },
           {
             "from": "n3",
             "to": "n4",
-            "label": "verify"
+            "label": "review"
           }
         ],
         "callouts": [
           {
             "anchor": "n4",
-            "text": "A fluent answer does not prove the right skill was selected or followed."
-          }
-        ]
-      }
-    },
-    {
-      "candidate_id": "m08",
-      "story_id": "multi-account-agentcore-mcp-2026-09-25",
-      "canonical_ordinal": 6,
-      "focus": "agents_non_technical_people",
-      "headline": "AWS uses MCP and AgentCore Gateway to connect agents across account boundaries",
-      "summary": "AWS presents a multi-account agent architecture where each business unit keeps data in its own account while a central agent queries approved MCP servers through AgentCore Gateway using cross-account authorization.",
-      "why_it_matters": "Enterprise agents often need access to distributed data without centralizing everything. A gateway-plus-MCP pattern can separate agent orchestration from data ownership while preserving account boundaries and fine-grained authorization.",
-      "editorial_limitation": "The design is AWS-specific and requires careful validation of identity, cross-account permissions, MCP server trust, logging, and failure isolation before production use.",
-      "topic_labels": [
-        "MCP",
-        "AgentCore Gateway",
-        "multi-account architecture",
-        "agent security"
-      ],
-      "source_url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
-      "agent_skill": false,
-      "what_to_do_now": {
-        "action": "evaluate",
-        "label": "Prototype one governed cross-boundary agent query",
-        "rationale": "Keep data ownership local, expose only a narrow MCP surface, and log every cross-account action for review."
-      },
-      "visual": {
-        "layout": "process",
-        "title": "A governed multi-account agent with MCP",
-        "alt_text": "White-background instructional diagram showing a central agent, gateway, MCP servers in separate accounts, and authorization boundaries.",
-        "nodes": [
-          {
-            "id": "n1",
-            "label": "Central agent",
-            "detail": "Receives a user question and plans the query."
-          },
-          {
-            "id": "n2",
-            "label": "Agent gateway",
-            "detail": "Routes approved tool calls with policy controls."
-          },
-          {
-            "id": "n3",
-            "label": "Account-local MCP servers",
-            "detail": "Each unit exposes bounded data access."
-          },
-          {
-            "id": "n4",
-            "label": "Governed response",
-            "detail": "Results return with authorization and audit evidence."
-          }
-        ],
-        "edges": [
-          {
-            "from": "n1",
-            "to": "n2",
-            "label": "route"
-          },
-          {
-            "from": "n2",
-            "to": "n3",
-            "label": "execute"
-          },
-          {
-            "from": "n3",
-            "to": "n4",
-            "label": "verify"
-          }
-        ],
-        "callouts": [
-          {
-            "anchor": "n4",
-            "text": "The gateway enforces boundaries while data remains in owning accounts."
+            "text": "The human approval step is the critical control between experience and reusable automation."
           }
         ]
       }
     }
   ],
-  "editorial_takeaway": "September 25’s strongest pattern is operational discipline: evaluate reasoning and skills explicitly, test infrastructure with real workloads, govern AI feature defaults, and keep agent access bounded by clear authorization and review.",
+  "editorial_takeaway": "The strongest pattern today is operationalization: agents are gaining memory and reusable skills, workplace copilots are gaining persistent and executable work modes, and engineering platforms are moving evaluation, isolation, and governance closer to the live execution path.",
   "media_decisions": {
-    "videos": {
-      "status": "included",
-      "count": 2,
-      "note": "Two independently verified September 23 videos selected within the 72-hour freshness gate and under the 10-minute target."
-    },
-    "podcasts": {
-      "status": "included",
-      "count": 2,
-      "note": "Two independently verified September 22 podcasts reused within the allowed seven-day recovery window; no media rediscovery was performed."
-    }
+    "strategy": "targeted recovery reuse of independently verified recent media; no broad media rediscovery"
   },
   "changed_watchlist_topics": [
     "dab-topic-agent-skills-observability",
+    "dab-topic-memory-guided-planning",
     "dab-topic-harness-engineering",
-    "dab-topic-model-lifecycle-governance"
+    "dab-topic-long-horizon-agents"
   ]
 }

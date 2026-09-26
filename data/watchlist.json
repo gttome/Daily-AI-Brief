@@ -1,7 +1,7 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-25",
-  "updated_at": "2026-09-25T13:58:00Z",
+  "edition_date": "2026-09-26",
+  "updated_at": "2026-09-26T14:22:47Z",
   "baseline_note": "September 25 recovery review preserved carried-forward topics and added only story-supported primary evidence for Agent Skills evaluation, governed multi-account agent access, and Copilot feature-default governance.",
   "topics": [
     {
@@ -453,12 +453,12 @@
       "name": "Turning agent memory into compact plans",
       "audience": "Technical AI and agent designers",
       "summary": "Use remembered episodes when planning, then give the executor a compact plan instead of the full history.",
-      "why_now": "Salesforce now describes long-horizon agents that continue across sessions and adapt as circumstances change, adding a current applied signal to earlier memory-and-planning research.",
+      "why_now": "GitHub Agentic Autofix can now consult Copilot Memory for repository-specific secure-development context, adding a production memory-reuse signal.",
       "practical_value": "Useful for teaching how persistent goals, saved context, planning, and execution need to be separated in recurring agent workflows.",
       "limitations": "Robotics results cannot be assumed to apply to general knowledge-work agents.",
       "next_action": "Check the experimental setup and search for independent applications outside robotics.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-19T17:09:07.447Z",
+      "updated_at": "2026-09-26T14:22:47Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -501,6 +501,16 @@
           "checked_at": "2026-09-19T17:09:07.447Z",
           "development_id": "salesforce-long-horizon-agents-2026-09-16",
           "review_depth": "publisher article describing multi-session long-horizon agent behavior"
+        },
+        {
+          "title": "Agentic Autofix now uses Copilot Memory",
+          "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+          "publisher": "GitHub",
+          "kind": "primary",
+          "publication_date": "2026-09-25",
+          "checked_at": "2026-09-26T14:22:47Z",
+          "development_id": "github-agentic-autofix-copilot-memory-2026-09-25",
+          "review_depth": "selected-story official changelog evidence"
         }
       ],
       "external_attention": [
@@ -737,12 +747,12 @@
       "name": "Reusable agent skills become observable",
       "audience": "AI leaders, admins, and agent builders",
       "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose actual use can be measured.",
-      "why_now": "GitHub added shared skills and instructions to Copilot for JetBrains while also adding OpenTelemetry support in the Copilot app, strengthening both reusable capability packaging and operational visibility.",
+      "why_now": "Qoder 0.4.1 adds a human-confirmed skill-evolution loop that can propose creating or updating reusable Skills from repeated conversational experience.",
       "practical_value": "Makes reusable agent know-how easier to govern while traces and spans make tool/model behavior easier to inspect.",
       "limitations": "Product features do not by themselves establish portability, reliability, or cross-vendor interoperability.",
       "next_action": "Test a reusable skill with explicit instructions/approvals and capture trace evidence for tool use, latency, retries, and failure handling.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-25T13:58:00Z",
+      "updated_at": "2026-09-26T14:22:47Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -815,6 +825,16 @@
           "checked_at": "2026-09-25T10:47:33Z",
           "development_id": "aws-skill-equipped-agent-evals-2026-09-22",
           "review_depth": "full publisher article in bounded September 25 evidence packet"
+        },
+        {
+          "title": "Qoder 0.4.1 adds Skill evolution suggestions",
+          "url": "https://docs.qoder.com/release-notes/qoder",
+          "publisher": "Qoder",
+          "kind": "primary",
+          "publication_date": "2026-09-23",
+          "checked_at": "2026-09-26T14:22:47Z",
+          "development_id": "qoder-skill-evolution-0.4.1",
+          "review_depth": "selected-story primary release evidence"
         }
       ],
       "external_attention": [],
@@ -858,13 +878,13 @@
       "name": "Agents that persist across sessions",
       "audience": "Knowledge workers, consultants, and agent designers",
       "summary": "Design agents around goals that continue over time instead of treating every interaction as a one-shot task.",
-      "why_now": "Salesforce published a September 16 explanation of long-horizon agents that continue across multiple sessions and adapt as conditions change.",
+      "why_now": "Microsoft's new Copilot organizes assisted, built, and delegated work around Home, Code, and Autopilot, adding an applied autonomous-work signal.",
       "practical_value": "Provides a practical model for recurring work: persistent goals, checkpoints, saved context, adaptation, and human review.",
       "limitations": "Publisher explanation does not independently establish reliability over long-running real-world deployments.",
       "next_action": "Define one recurring workflow with an explicit goal, checkpoints, resume state, and escalation conditions.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-19T17:09:07.447Z",
-      "status": "early_signal",
+      "updated_at": "2026-09-26T14:22:47Z",
+      "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
         {
@@ -876,6 +896,16 @@
           "checked_at": "2026-09-19T17:09:07.447Z",
           "development_id": "salesforce-long-horizon-agents-2026-09-16",
           "review_depth": "publisher article"
+        },
+        {
+          "title": "Introducing the new Copilot with Home, Code and Autopilot",
+          "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+          "publisher": "Microsoft",
+          "kind": "primary",
+          "publication_date": "2026-09-25",
+          "checked_at": "2026-09-26T14:22:47Z",
+          "development_id": "microsoft-copilot-autopilot-2026-09-25",
+          "review_depth": "selected-story official announcement evidence"
         }
       ],
       "external_attention": [],
@@ -1016,12 +1046,12 @@
       "name": "AI harness engineering becomes a first-class layer",
       "audience": "Agent builders and AI engineering teams",
       "summary": "Treat the harness around a model—tools, constraints, state, verification, and control loops—as an engineering system in its own right.",
-      "why_now": "GitHub’s OpenTelemetry support for Copilot agents and AWS’s governed Agentforce integration add current production evidence that observability, tool/data controls, and execution boundaries are first-class parts of the agent harness.",
+      "why_now": "GitHub's local sandboxing and Microsoft's governed code runtime add current evidence that execution isolation and runtime boundaries are core agent-harness controls.",
       "practical_value": "Helps teams separate model capability from the surrounding controls that determine what an agent can observe, access, execute, and verify.",
       "limitations": "Vendor implementations differ; workflow-specific evaluation is still required.",
       "next_action": "Make observability, permission boundaries, tool/data interfaces, and completion verification explicit in the harness and test them independently.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-25T13:58:00Z",
+      "updated_at": "2026-09-26T14:22:47Z",
       "status": "gaining_evidence",
       "confidence": "high",
       "evidence": [
@@ -1124,6 +1154,16 @@
           "checked_at": "2026-09-25T10:47:33Z",
           "development_id": "aws-multi-account-agentcore-mcp-2026-09-24",
           "review_depth": "full publisher article in bounded September 25 evidence packet"
+        },
+        {
+          "title": "GitHub Copilot weekly releases — September 21",
+          "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+          "publisher": "GitHub",
+          "kind": "primary",
+          "publication_date": "2026-09-25",
+          "checked_at": "2026-09-26T14:22:47Z",
+          "development_id": "github-copilot-local-sandbox-2026-09-25",
+          "review_depth": "selected-story official changelog evidence"
         }
       ],
       "external_attention": [],
@@ -1474,5 +1514,17 @@
       "trial_story_ids": [],
       "research_score": 76
     }
-  ]
+  ],
+  "daily_summary": {
+    "new_today": 0,
+    "updated_today": 4,
+    "carried_forward": 12,
+    "new_topic_ids": [],
+    "updated_topic_ids": [
+      "dab-topic-agent-skills-observability",
+      "dab-topic-memory-guided-planning",
+      "dab-topic-harness-engineering",
+      "dab-topic-long-horizon-agents"
+    ]
+  }
 }

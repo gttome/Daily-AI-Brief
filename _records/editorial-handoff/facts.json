@@ -1,122 +1,201 @@
 {
-  "m02": {
-    "event_date": "2026-09-23",
+  "m09": {
+    "event_date": "2026-09-25",
     "source": {
-      "title": "Introducing NV-Reason-CT Open 3D CT VLM for Radiologist Chain-of-Thought Reasoning",
-      "organization": "NVIDIA Developer",
-      "url": "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/",
-      "publication_date": "2026-09-23",
+      "title": "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock",
+      "organization": "AWS Machine Learning",
+      "url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+      "publication_date": "2026-09-25",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 3033,
-    "source_fetched_at": "2026-09-25T10:47:33Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
+    "source_word_count": 5803,
+    "source_fetched_at": "2026-09-26T09:00:59Z",
+    "source_word_count_method": "precomputed_article_evidence",
+    "freshness": {
+      "tier": "primary_24h"
+    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Moves multimodal analysis into volumetric 3D reasoning with structured reporting and follow-up dialogue."
+    "candidate_score": {
+      "significance": 5,
+      "freshness": 5,
+      "authority": 5,
+      "evidence_quality": 5,
+      "novelty": 5,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 35
+    },
+    "selection_rationale": "Provides a concrete production pattern for live LLM evaluation, failover, and data-accuracy verification."
   },
   "m04": {
-    "event_date": "2026-09-23",
+    "event_date": "2026-09-25",
     "source": {
-      "title": "Validate GPU Cluster Readiness Before AI Workloads Land",
-      "organization": "NVIDIA Developer",
-      "url": "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/",
-      "publication_date": "2026-09-23",
+      "title": "GitHub Copilot weekly releases — September 21",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "publication_date": "2026-09-25",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 2514,
-    "source_fetched_at": "2026-09-25T10:47:33Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
+    "source_word_count": 824,
+    "source_fetched_at": "2026-09-26T09:00:59Z",
+    "source_word_count_method": "precomputed_article_evidence",
+    "freshness": {
+      "tier": "primary_24h"
+    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Workload-driven cluster validation addresses reliability gaps that static health checks can miss."
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 5,
+      "authority": 5,
+      "evidence_quality": 5,
+      "novelty": 4,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 33
+    },
+    "selection_rationale": "Shows Copilot becoming a cross-surface engineering platform spanning models, sandboxing, collaboration, and IDE clients."
   },
   "m05": {
-    "event_date": "2026-09-24",
+    "event_date": "2026-09-25",
     "source": {
-      "title": "Default Enablement of Copilot Features for Copilot Business and Enterprise",
-      "organization": "GitHub Changelog",
-      "url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
-      "publication_date": "2026-09-24",
+      "title": "Introducing the new Copilot with Home, Code and Autopilot",
+      "organization": "Microsoft",
+      "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "publication_date": "2026-09-25",
       "evidence_type": "official_announcement",
       "availability_status": "published"
     },
-    "source_word_count": 601,
-    "source_fetched_at": "2026-09-25T10:47:33Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
+    "source_word_count": 2407,
+    "source_fetched_at": "2026-09-26T09:00:59Z",
+    "source_word_count_method": "precomputed_article_evidence",
+    "freshness": {
+      "tier": "primary_24h"
+    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Makes enterprise AI governance concrete by changing how generally available Copilot capabilities are enabled by default."
+    "candidate_score": {
+      "significance": 5,
+      "freshness": 5,
+      "authority": 5,
+      "evidence_quality": 5,
+      "novelty": 5,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 35
+    },
+    "selection_rationale": "A major knowledge-work interface shift from chat toward building and persistent delegation."
   },
-  "m07": {
+  "m06": {
+    "event_date": "2026-09-25",
+    "source": {
+      "title": "Microsoft Copilot Managed Runtime",
+      "organization": "Microsoft",
+      "url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "publication_date": "2026-09-25",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 1755,
+    "source_fetched_at": "2026-09-26T09:00:59Z",
+    "source_word_count_method": "precomputed_article_evidence",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "candidate_score": {
+      "significance": 5,
+      "freshness": 5,
+      "authority": 5,
+      "evidence_quality": 5,
+      "novelty": 5,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 35
+    },
+    "selection_rationale": "Brings governed code execution into the Microsoft 365 knowledge-work surface."
+  },
+  "m03": {
+    "event_date": "2026-09-25",
+    "source": {
+      "title": "Agentic autofix now uses Copilot Memory",
+      "organization": "GitHub Changelog",
+      "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "publication_date": "2026-09-25",
+      "evidence_type": "official_announcement",
+      "availability_status": "published"
+    },
+    "source_word_count": 435,
+    "source_fetched_at": "2026-09-26T09:00:59Z",
+    "source_word_count_method": "precomputed_article_evidence",
+    "freshness": {
+      "tier": "primary_24h"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "candidate_score": {
+      "significance": 4,
+      "freshness": 5,
+      "authority": 5,
+      "evidence_quality": 5,
+      "novelty": 5,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 34
+    },
+    "selection_rationale": "Turns memory into an explicit control surface for an agent performing security repairs."
+  },
+  "r01": {
     "event_date": "2026-09-23",
     "source": {
-      "title": "Building the system for AI at work",
-      "organization": "Microsoft 365",
-      "url": "https://www.microsoft.com/en-us/copilot/blog/2026/09/23/building-the-system-for-ai-at-work/",
+      "title": "Qoder 0.4.1 release notes — Skill evolution suggestions",
+      "organization": "Qoder",
+      "url": "https://docs.qoder.com/release-notes/qoder",
       "publication_date": "2026-09-23",
-      "evidence_type": "official_announcement",
+      "evidence_type": "official_release_note",
       "availability_status": "published"
     },
-    "source_word_count": 1253,
-    "source_fetched_at": "2026-09-25T10:47:33Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
+    "source_word_count": null,
+    "source_fetched_at": null,
+    "source_word_count_method": "unavailable_in_targeted_recovery_evidence_no_refetch",
+    "freshness": {
+      "tier": "agent_skills_exception_7d"
+    },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
     },
-    "selection_rationale": "Provides a systems view of knowledge-worker AI grounded in context, workflow, governance, and measurable outcomes."
-  },
-  "m01": {
-    "event_date": "2026-09-22",
-    "source": {
-      "title": "Evaluate skill-equipped agents with Strands Evals and Amazon Bedrock AgentCore",
-      "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
-      "publication_date": "2026-09-22",
-      "evidence_type": "official_announcement",
-      "availability_status": "published"
+    "candidate_score": {
+      "significance": 5,
+      "freshness": 4,
+      "authority": 5,
+      "evidence_quality": 4,
+      "novelty": 5,
+      "practical_value": 5,
+      "category_fit": 5,
+      "total": 33
     },
-    "source_word_count": 3941,
-    "source_fetched_at": "2026-09-25T10:47:33Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Directly addresses Agent Skills with measurable skill-selection and instruction-following evaluation."
-  },
-  "m08": {
-    "event_date": "2026-09-24",
-    "source": {
-      "title": "Build a multi-account AI agent with AgentCore Gateway and MCP",
-      "organization": "AWS Machine Learning",
-      "url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
-      "publication_date": "2026-09-24",
-      "evidence_type": "official_announcement",
-      "availability_status": "published"
-    },
-    "source_word_count": 4830,
-    "source_fetched_at": "2026-09-25T10:47:33Z",
-    "source_word_count_method": "retrieved_source_text_word_count",
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    },
-    "selection_rationale": "Demonstrates a governed pattern for agents accessing distributed enterprise data through MCP while preserving ownership boundaries."
+    "selection_rationale": "Repairs the Agent Skills slot with a distinct fresh development about human-reviewed skill evolution rather than skill evaluation.",
+    "novelty_repair_note": "Distinct from the Sep 25 AWS evaluation story: this development concerns learning from completed conversations to propose creating or updating reusable Skills with a separate user-confirmation step."
   }
 }

@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-09-26-5bddf735"
+  ],
+  "candidate_id": "m03",
+  "includes_edition_context": false,
+  "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+  "prompt": "Create one standalone technical editorial textbook plate for ONE story: GitHub agentic autofix now uses Copilot Memory when enabled, retrieving repository-specific secure-development context and prior patterns before proposing security fixes. All other conversation topics excluded. White background, exact intended canvas 1200x630 landscape, 40px safe margins, professional navy/teal/copper palette. Rich asymmetrical two-input evidence-fusion composition: left upper detailed security alert card with a highlighted vulnerable code fragment clearly labeled 'Conceptual example'; left lower a layered repository-memory folio containing 'Approved patterns', 'Project conventions', 'Prior context' with a small 'Memory enabled' switch. These two differently colored evidence paths converge at a central cutaway of an agent workbench labeled 'Agentic autofix', with internal stages 'Read alert', 'Retrieve context', 'Propose patch'. On the right, a large before/after code diff pane with red deletion and green addition markings (abstract lines, not real executable code) and callouts 'Changed lines', 'Reason for fix', 'Context used'. Under the proposal a distinct independent verification rail shows 'Security tests', 'Regression checks', 'Human review', followed by 'Accept or revise'. A thin feedback arrow from review to a labeled 'Review memory scope and freshness' note, NOT a claim that the product automatically writes memory. Main title exactly 'Project memory informs the proposed security fix'. Bottom caption exactly 'Memory supplies context; tests and human review establish confidence'. Strong figure hierarchy, carefully drawn cross-sections, leader-line annotations, 12 useful explanatory components, refined subtle depth and high finish. Avoid decorative props, photographic hardware, robots, people, logos, unnecessary text, any edition dashboard or completion status, and any claim that memory guarantees a secure fix.",
+  "targeted_edit_prompts": [],
+  "tool": "built-in OpenAI image generation",
+  "reference_policy": "No reference image for initial creation; targeted edits reference only this same story draft.",
+  "accepted_source_file": "exec-8d0cdd0b-efa2-4416-9498-c1514956f5a2.png"
+}

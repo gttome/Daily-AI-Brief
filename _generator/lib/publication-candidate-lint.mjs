@@ -71,7 +71,12 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
  }
  const pointerPath=path.join(root,'data/operations/current-edition.json');
  if(!fs.existsSync(pointerPath))errors.push('current_edition_pointer_missing');
- else {const pointer=JSON.parse(fs.readFileSync(pointerPath,'utf8'));if(pointer.brief_date!==date||pointer.edition_id!==edition.edition_id)errors.push('current_edition_pointer_mismatch');}
+ else {
+  const pointer=JSON.parse(fs.readFileSync(pointerPath,'utf8'));
+  if(typeof pointer.brief_date!=='string'||pointer.brief_date>date)errors.push('current_edition_pointer_invalid_for_candidate');
+  // This pointer is a post-live-verification projection. A fresh candidate must
+  // preserve the latest completed edition until exact-SHA Pages closure.
+ }
  const required=['_data/editions/'+date+'.json','briefs/'+date+'.md','latest.md','index.md','archive.md','feed.json','feed.xml',
   ...edition.stories.map(s=>'stories/'+date+'/'+s.slug+'.md')];
  for(const p of required)if(!exists(root,p))errors.push('required_derived_file_missing:'+p);

@@ -79,6 +79,18 @@ export function validateUrlContract(repoRoot) {
   return errors;
 }
 
+function sameEditionWatchlist(repoRoot,date){
+  for(const relative of ['_data/watchlist.json','data/watchlist.json']){
+    const file=path.join(repoRoot,relative);
+    if(!fs.existsSync(file))continue;
+    try{
+      const data=JSON.parse(fs.readFileSync(file,'utf8'));
+      if(data?.edition_date===date)return data;
+    }catch{}
+  }
+  return null;
+}
+
 function firstDerivedDiff(actual,expected){
   const a=String(actual).split('\n'),e=String(expected).split('\n');
   const max=Math.max(a.length,e.length);
@@ -87,7 +99,8 @@ function firstDerivedDiff(actual,expected){
 }
 
 export function validateDerivedParity(edition, repoRoot) {
-  const expected = generatedFiles(edition, repoRoot);
+  const watchlist=sameEditionWatchlist(repoRoot,edition.brief_date);
+  const expected = generatedFiles(edition, repoRoot,{watchlist});
   const errors = [];
   for (const [name, content] of expected) {
     const file = path.join(repoRoot, name);

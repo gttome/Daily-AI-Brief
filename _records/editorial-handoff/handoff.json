@@ -1,19 +1,19 @@
 {
   "schema_version": "1.1.0",
   "execution_mode": "production",
-  "staging_ref": "editorial-handoff/production/2026-09-25-recovery",
+  "staging_ref": "editorial-handoff/production/2026-09-26-bounded-recovery",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
   "images_path": "_records/editorial-handoff/images.json",
   "media_path": "_records/editorial-handoff/media.json",
   "metadata_candidates_path": "_records/editorial-handoff/metadata-candidates.json",
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
+  "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
   "image_transport_method": "github_git_data_api",
-  "coverage_period": "Coverage emphasizes verified Generative AI developments from September 22 through September 25, 2026, with bounded reuse of recently verified media during publication recovery.",
+  "coverage_period": "Verified September 25 developments with the prior targeted September 23 Agent Skills exception, two recent videos and two verified September 24 podcasts.",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_attempt": 9,
-  "recovery_note": "September 25 recovery resumed from successful zero-model metadata and discovery/article-evidence preflights. No discovery redo. Missing production editorial handoff reconstructed from durable September 25 evidence. Six story-specific professional recovery diagrams were visually reviewed and supplied as SVG sources for gated 1200x630 PNG rasterization in the current production pipeline. Media contract repaired to exactly two verified fallback_7d podcasts with explicit freshness-exception reasons. Replaced both stale Sep 21 videos with verified Sep 23 Microsoft Developer and Claude videos, both under 10 minutes and within the required 72-hour window. Added current selected-media preflight receipt binding all four included media items to independently checked URL/date/runtime observations. Refreshed current Watchlist to September 25 and appended primary story-supported evidence to the three changed Watchlist topics. Aligned the final handoff image-review validator to the same September 25-only recovery method already accepted by the upstream image integrity gates; six distinct 1200x630 PNGs remain required. Added the required Professional Series mapping and Sep25 emerging-signal receipt; preserved Sep23 as a historical regression fixture; synchronized generated public Watchlist before current-edition tests. Targeted final repair: aligned only the current homepage Watchlist regression test with the already-implemented Sep24+ 'Changed today' reader label; no stories, images, media, Watchlist evidence, or other completed work changed. Provenance-only closure: bound locked image records to exact story/source blob identities, completed the existing media verification receipt, and squashed the already-completed September 25 candidate onto trusted main so the required handoff parent invariant is satisfied. No editorial, image, media, or Watchlist selection was redone.",
-  "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json"
+  "recovery_note": "Reused frozen six-story prose and selection, existing metadata/article evidence and targeted Qoder slot repair. Reused newer completed media and Watchlist checkpoints. Recovered missing image stage with isolated story requests; 8 calls, 2 targeted corrections, 6 locked assets. Fixed missing future image-quality artifact constant, date-coupled manifest regression checks, and added an auditable single-story image-context gate. No build, CI or Pages job executed in Work.",
+  "deterministic_recovery_trigger": "Retry the unchanged frozen publication handoff after same-edition Watchlist parity repairs across shadow and integrated repository validators through commit dceb1d100893ffbf0008e9c6073adc0d05823e24; preserve all editorial, media and accepted-image checkpoints."
 }
