@@ -124,3 +124,19 @@ test('Q9 agent source supply includes Microsoft Work IQ without weakening gates'
   assert.equal(c.qualification_agent_source_supply.novelty_gate_unchanged,true);
   assert.equal(c.qualification_agent_source_supply.production_history_duplicate_before_edition,false);
 });
+
+
+test('qualification image artifact handoff is durable and exact-byte preserving',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const h=c.qualification_image_artifact_handoff;
+  assert.equal(h.durable_surface,'personal_library');
+  assert.equal(h.exact_source_snapshot_required,true);
+  assert.equal(h.ephemeral_file_id_only_prohibited,true);
+  assert.equal(h.reviewer_must_materialize_raw_file,true);
+  assert.equal(h.reviewer_must_compute_sha256,true);
+  assert.equal(h.reviewer_must_persist_exact_bytes_to_git_blob,true);
+  assert.equal(h.lossy_reencoding_prohibited,true);
+  assert.equal(h.reviewer_regeneration_prohibited,true);
+  assert.equal(h.accepted_locked_requires_git_blob_exact_byte_match,true);
+  assert.equal(h.production_mutation,false);
+});
