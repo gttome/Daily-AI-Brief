@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "continuous-qualification-v1",
+  "effective_date": "2026-09-26",
+  "repository": "gttome/Daily-AI-Brief",
+  "timezone": "America/Chicago",
+  "purpose": "Run publication-equivalent Daily Generative AI Brief qualification cycles repeatedly during stabilization without mutating production and without Work, Codex, or paid API usage.",
+  "production_invariants": {
+    "real_public_editions_per_day_max": 1,
+    "production_main_mutation": false,
+    "production_publication_pr": false,
+    "publication_candidate_label": false,
+    "production_pages_deployment": false,
+    "production_command_center_sync": false,
+    "production_novelty_memory_mutation": false,
+    "production_ratings_analytics_mutation": false
+  },
+  "cadence": {
+    "max_full_semantic_qualification_runs_per_chicago_day": 4,
+    "targeted_deterministic_regressions_per_day": "unbounded_within_github_actions",
+    "target_consecutive_full_passes": 5,
+    "minimum_distinct_fresh_evidence_cutoffs_in_streak": 3,
+    "final_graduation_requirement": "one subsequent real production edition reaches durable PUBLIC CLOSED under the same zero-Work/zero-Codex/zero-paid-API operating model"
+  },
+  "cost_boundary": {
+    "work_usage_required": 0,
+    "codex_usage_required": 0,
+    "paid_api_usage_required": 0,
+    "new_paid_services_required": 0,
+    "new_credentials_required": 0,
+    "overage_required": 0,
+    "deterministic_model_calls_required": 0,
+    "account_meter_policy": "Do not infer Work/Codex credit usage. When the platform exposes a balance, owner-observed before/after values may be attached as external evidence."
+  },
+  "run_identity": {
+    "format": "YYYY-MM-DD-QN",
+    "examples": [
+      "2026-09-26-Q1",
+      "2026-09-26-Q2",
+      "2026-09-26-Q3",
+      "2026-09-26-Q4"
+    ],
+    "preflight_branch": "discovery-preflight/qualification/YYYY-MM-DD-QN",
+    "handoff_branch": "editorial-handoff/qualification/YYYY-MM-DD-QN",
+    "semantic_receipt": "_records/qualification/YYYY-MM-DD-QN/semantic-receipt.json",
+    "deterministic_result": "_records/qualification/YYYY-MM-DD-QN/result.json"
+  },
+  "fresh_run_requirements": {
+    "fresh_metadata_discovery": true,
+    "fresh_cutoff": true,
+    "bounded_article_evidence": true,
+    "metadata_candidates_max": 20,
+    "article_evidence_candidates_max": 9,
+    "one_semantic_editorial_pass": true,
+    "post_editorial_semantic_passes": 0,
+    "stories": 6,
+    "ordered_allocation": [
+      "technical_ai_engineering",
+      "technical_ai_engineering",
+      "applied_genai_knowledge_workers",
+      "applied_genai_knowledge_workers",
+      "agents_non_technical_people",
+      "agents_non_technical_people"
+    ],
+    "agent_skills_stories": 1,
+    "videos": 2,
+    "podcasts": 2,
+    "fresh_watchlist_evaluation": true,
+    "book_mapping_evaluation": true,
+    "images": 6,
+    "image_quality_baseline": "2026-09-17-or-better",
+    "low_quality_fallback": false
+  },
+  "execution_ownership": {
+    "preflight": "github_actions",
+    "semantic_editorial_and_image_generation": "ordinary_chatgpt_without_Work_or_Codex",
+    "deterministic_expansion_and_validation": "github_actions",
+    "production_promotion": "prohibited"
+  },
+  "simulated_release_chain": [
+    "PREFLIGHT_METADATA_READY",
+    "PREFLIGHT_DISCOVERY_READY",
+    "READINESS_FINAL",
+    "EDITORIAL_KERNEL_READY",
+    "MEDIA_READY",
+    "IMAGES_READY",
+    "WATCHLIST_READY",
+    "HANDOFF_COMMITTED",
+    "DETERMINISTIC_EXPANSION_READY",
+    "FULL_QUALIFICATION_CI_PASS",
+    "SIMULATED_LIVE_VALIDATION_PASS",
+    "SIMULATED_CLOSED"
+  ],
+  "pass_criteria": {
+    "owner_manual_github_ui_actions": 0,
+    "owner_supplied_branch_names": 0,
+    "owner_supplied_shas": 0,
+    "repeated_completed_stages": 0,
+    "duplicate_publication_prs": 0,
+    "work_usage": 0,
+    "codex_usage": 0,
+    "paid_api_usage": 0,
+    "critical_high_defects_open": 0,
+    "deterministic_result": "pass",
+    "simulated_lifecycle": "CLOSED"
+  },
+  "book_series_diversity": {
+    "issue_id": "BQ-01",
+    "minimum_distinct_books_in_reference_catalog": 4,
+    "selection_rule": "semantic_relevance_first",
+    "forced_daily_rotation": false,
+    "rolling_observation_window_full_runs": 10,
+    "dominant_reference_share_warning_threshold": 0.5,
+    "graduation_gate": "All four books must be represented in the verified reference catalog before stabilization graduates to mature.",
+    "current_known_gap": "The current production catalog has only three references across two books; recent use is over-concentrated in Reliable Generative AI Context Engineering Chapter 3."
+  },
+  "safety": {
+    "protected_ci_bypass": false,
+    "quality_gate_weakening": false,
+    "sharing_access_change": false,
+    "destructive_production_action": false,
+    "merge_pr_117": false
+  }
+}

@@ -1,0 +1,169 @@
+name: Continuous qualification validation
+
+on:
+  workflow_run:
+    workflows: ["Post-editorial deterministic publication"]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      staging_ref:
+        description: Qualification handoff branch (editorial-handoff/qualification/YYYY-MM-DD-QN)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: continuous-qualification-${{ github.event_name == 'workflow_dispatch' && inputs.staging_ref || github.event.workflow_run.head_branch }}
+  cancel-in-progress: false
+
+jobs:
+  qualify:
+    if: github.event_name == 'workflow_dispatch' || (github.event.workflow_run.conclusion == 'success' && startsWith(github.event.workflow_run.head_branch, 'editorial-handoff/qualification/'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Resolve qualification ref
+        id: ref
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          INPUT_REF: ${{ inputs.staging_ref }}
+          RUN_REF: ${{ github.event.workflow_run.head_branch }}
+        run: |
+          set -euo pipefail
+          ref="${INPUT_REF:-}"
+          if [ "$EVENT_NAME" = "workflow_run" ]; then ref="$RUN_REF"; fi
+          if [[ ! "$ref" =~ ^editorial-handoff/qualification/[0-9]{4}-[0-9]{2}-[0-9]{2}-Q[1-4]$ ]]; then
+            echo "Invalid qualification ref: $ref"
+            exit 1
+          fi
+          echo "value=$ref" >> "$GITHUB_OUTPUT"
+          echo "run_id=${ref##*/}" >> "$GITHUB_OUTPUT"
+
+      - name: Check out latest qualification branch head
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ steps.ref.outputs.value }}
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Validate zero-cost nonproduction contract
+        env:
+          QUAL_REF: ${{ steps.ref.outputs.value }}
+          RUN_ID: ${{ steps.ref.outputs.run_id }}
+        run: |
+          set -euo pipefail
+          node - "$QUAL_REF" "$RUN_ID" <<'NODE'
+          const fs=require('fs');
+          const [ref,runId]=process.argv.slice(2);
+          const h=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
+          if(h.execution_mode!=='qualification_nonproduction')throw new Error('qualification_execution_mode_required');
+          if(h.staging_ref!==ref)throw new Error('qualification_staging_ref_mismatch');
+          const receiptPath='_records/qualification/'+runId+'/semantic-receipt.json';
+          if(!fs.existsSync(receiptPath))throw new Error('qualification_semantic_receipt_missing:'+receiptPath);
+          const r=JSON.parse(fs.readFileSync(receiptPath,'utf8'));
+          if(r.run_id!==runId||r.execution_mode!=='qualification_nonproduction')throw new Error('qualification_semantic_receipt_identity_invalid');
+          for(const k of ['work_usage','codex_usage','paid_api_usage'])if(r[k]!==0)throw new Error(k+'_must_be_zero');
+          if(r.production_mutation!==false)throw new Error('qualification_production_mutation_must_be_false');
+          if(r.semantic_executor!=='ordinary_chatgpt')throw new Error('ordinary_chatgpt_semantic_executor_required');
+          if(r.editorial_model_passes!==1||r.post_editorial_model_passes!==0)throw new Error('qualification_semantic_pass_count_invalid');
+          NODE
+
+      - name: Run full deterministic qualification gate
+        env:
+          DAB_QUALIFICATION_NONPRODUCTION: '1'
+        run: |
+          set -euo pipefail
+          node --test _generator/test/*.test.mjs
+          node _tools/validate-contracts.mjs
+          node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
+          latest_date="$(node -e "const h=require('./_records/editorial-handoff/handoff.json');const k=require(h.kernel_path);process.stdout.write(k.brief_date)")"
+          dated_review="_records/editorial-handoff/final-image-review-${latest_date}.json"
+          if [ -f "$dated_review" ]; then
+            node _generator/cli.mjs integration-check --image-review "$dated_review"
+          else
+            node _generator/cli.mjs integration-check --image-review _records/editorial-handoff/images.json
+          fi
+
+      - name: Build qualification site
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Assert production main was not mutated
+        id: guard
+        env:
+          RUN_ID: ${{ steps.ref.outputs.run_id }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          main_sha="$(git rev-parse origin/main)"
+          baseline="$(node -e "const h=require('./_records/editorial-handoff/handoff.json');const k=require(h.kernel_path);process.stdout.write(k.baseline_sha)")"
+          if [ -z "$main_sha" ]; then exit 1; fi
+          echo "main_sha=$main_sha" >> "$GITHUB_OUTPUT"
+          echo "baseline_sha=$baseline" >> "$GITHUB_OUTPUT"
+          echo "Qualification branch validation did not write to production main."
+
+      - name: Persist qualification result on qualification branch only
+        env:
+          RUN_ID: ${{ steps.ref.outputs.run_id }}
+          QUAL_REF: ${{ steps.ref.outputs.value }}
+          MAIN_SHA: ${{ steps.guard.outputs.main_sha }}
+        run: |
+          set -euo pipefail
+          result="_records/qualification/$RUN_ID/result.json"
+          mkdir -p "$(dirname "$result")"
+          node - "$result" "$RUN_ID" "$QUAL_REF" "$MAIN_SHA" "$GITHUB_RUN_ID" <<'NODE'
+          const fs=require('fs');
+          const [p,runId,ref,mainSha,workflowRunId]=process.argv.slice(2);
+          const semantic=JSON.parse(fs.readFileSync('_records/qualification/'+runId+'/semantic-receipt.json','utf8'));
+          const h=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
+          const k=JSON.parse(fs.readFileSync(h.kernel_path,'utf8'));
+          const result={
+            schema_version:'1.0.0',
+            contract_id:'continuous-qualification-v1',
+            run_id:runId,
+            edition_date:k.brief_date,
+            cutoff:semantic.cutoff||null,
+            execution_mode:'qualification_nonproduction',
+            result:'pass',
+            simulated_lifecycle:'CLOSED',
+            branch:ref,
+            branch_head:process.env.GITHUB_SHA,
+            observed_main_sha:mainSha,
+            deterministic_workflow_run_id:Number(workflowRunId),
+            work_usage:0,
+            codex_usage:0,
+            paid_api_usage:0,
+            deterministic_model_calls:0,
+            production_mutation:false,
+            production_pr:false,
+            production_pages_deployment:false,
+            owner_manual_github_ui_actions:0,
+            editorial_model_passes:semantic.editorial_model_passes,
+            post_editorial_model_passes:semantic.post_editorial_model_passes,
+            note:'Qualification-only result. It does not represent a published edition and must not update production novelty/history/current-edition state.'
+          };
+          fs.writeFileSync(p,JSON.stringify(result,null,2)+'\n');
+          NODE
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$result"
+          if git diff --cached --quiet; then exit 0; fi
+          git commit -m "Record $RUN_ID continuous qualification result"
+          git push origin "HEAD:$QUAL_REF"
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Continuous qualification" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Run: **${{ steps.ref.outputs.run_id }}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Production mutation: **prohibited**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Work/Codex/paid API: **required zero by qualification receipt**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Production PR/merge/Pages: **prohibited**" >> "$GITHUB_STEP_SUMMARY"

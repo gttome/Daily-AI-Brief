@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.6.0",
+  "schema_version": "1.7.0",
   "profile_id": "under80-v1",
   "effective_date": "2026-09-18",
   "baseline_date": "2026-09-17",
@@ -227,5 +227,33 @@
     "publication_manifest_must_validate_before_expansion": true,
     "full_test_suite_before_pr": false,
     "protected_pr_ci_remains_integrated_full_gate": true
+  },
+  "continuous_qualification": {
+    "enabled": true,
+    "contract_path": "docs/operations/continuous-qualification-contract.json",
+    "purpose": "Accelerated nonproduction stabilization without waiting for the next calendar-day production edition.",
+    "max_full_semantic_runs_per_chicago_day": 4,
+    "target_consecutive_full_passes": 5,
+    "minimum_distinct_fresh_evidence_cutoffs_in_streak": 3,
+    "production_daily_ai_task_limit_unchanged": true,
+    "execution_mode": "qualification_nonproduction",
+    "semantic_executor": "ordinary_chatgpt_only",
+    "work_usage_allowed": false,
+    "codex_usage_allowed": false,
+    "paid_api_usage_allowed": false,
+    "new_paid_service_allowed": false,
+    "deterministic_owner": "github_actions",
+    "production_main_mutation": false,
+    "publication_pr": false,
+    "publication_candidate_label": false,
+    "production_pages_deployment": false,
+    "production_command_center_sync": false,
+    "manual_github_ui_dispatch_required": false,
+    "accepted_run_start": "ordinary ChatGPT creates a unique qualification preflight request branch through the existing GitHub connector; GitHub Actions owns zero-model preflight and deterministic post-handoff validation.",
+    "qualification_branch_pattern": "editorial-handoff/qualification/YYYY-MM-DD-QN",
+    "qualification_preflight_branch_pattern": "discovery-preflight/qualification/YYYY-MM-DD-QN",
+    "result_path_pattern": "_records/qualification/YYYY-MM-DD-QN/result.json",
+    "graduation_requires_one_real_production_public_closed": true,
+    "zero_work_observability_note": "Repository evidence can prove GitHub Actions/model-call ownership and zero paid API configuration; ChatGPT account Work-credit balances are external platform telemetry and must not be inferred."
   }
 }
