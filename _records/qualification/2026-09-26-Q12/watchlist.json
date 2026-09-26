@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q12",
+  "execution_mode": "qualification_nonproduction",
+  "result": "pass",
+  "source": "_records/editorial-handoff/watchlist-2026-09-26.json",
+  "same_day_current_checkpoint": true,
+  "total_topics": 16,
+  "new_today": 0,
+  "updated_today": 4,
+  "carried_forward": 12,
+  "updated_topic_ids": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-memory-guided-planning",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents"
+  ],
+  "production_mutation": false
+}
