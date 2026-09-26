@@ -108,3 +108,19 @@ test('qualification source supply can continue beyond normal acquisition budget 
   assert.equal(s.source_scan_maximum_remains_hard,true);
   assert.equal(s.minimum_fresh_focus_candidates_before_sufficiency_stop,5);
 });
+
+
+test('Q9 agent source supply includes Microsoft Work IQ without weakening gates',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const p=JSON.parse(fs.readFileSync('_data/preflight-source-plan.json','utf8'));
+  const s=p.sources.find(x=>x.source_id==='microsoft-work-iq-agents-sep25');
+  assert.ok(s);
+  assert.equal(s.status,'active');
+  assert.equal(s.pinned_candidate,true);
+  assert.equal(s.focus_hint,'agents_non_technical_people');
+  assert.equal(s.known_publication_date,'2026-09-25T00:00:00Z');
+  assert.match(s.candidate_title,/agents/i);
+  assert.equal(c.qualification_agent_source_supply.classification_gate_unchanged,true);
+  assert.equal(c.qualification_agent_source_supply.novelty_gate_unchanged,true);
+  assert.equal(c.qualification_agent_source_supply.production_history_duplicate_before_edition,false);
+});
