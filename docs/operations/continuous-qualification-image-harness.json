@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH1",
+  "execution_mode": "qualification_image_harness_nonproduction",
+  "fixed_story_order": [
+    "m02",
+    "m04",
+    "m06",
+    "m07",
+    "m01",
+    "m08"
+  ],
+  "q_release_blocked_until_pass": "Q13",
+  "max_parallel_story_workers": 1,
+  "require_worker_context_attestation": true,
+  "require_subject_lock": true,
+  "required_states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS",
+    "EXACT_GIT_BLOB_PERSISTED",
+    "ACCEPTED_LOCKED"
+  ],
+  "exact_byte_persistence": true,
+  "post_review_transforms_allowed": false,
+  "low_quality_fallback_allowed": false,
+  "cross_story_contamination_allowed": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "pass_requires_accepted_locked": 6
+}
