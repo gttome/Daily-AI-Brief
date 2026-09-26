@@ -120,5 +120,49 @@
     "sharing_access_change": false,
     "destructive_production_action": false,
     "merge_pr_117": false
+  },
+  "schedule_separation": {
+    "production_schedules": [
+      {
+        "name": "Daily Brief Production Orchestrator",
+        "time_chicago": "04:00",
+        "scope": "production"
+      },
+      {
+        "name": "Daily Brief Live Validation & Repair",
+        "time_chicago": "08:30",
+        "scope": "production"
+      }
+    ],
+    "qualification_schedules": [
+      {
+        "name": "Qualification Q1",
+        "time_chicago": "12:00",
+        "run_slot": "Q1",
+        "scope": "qualification_nonproduction"
+      },
+      {
+        "name": "Qualification Q2",
+        "time_chicago": "15:00",
+        "run_slot": "Q2",
+        "scope": "qualification_nonproduction"
+      },
+      {
+        "name": "Qualification Q3",
+        "time_chicago": "18:00",
+        "run_slot": "Q3",
+        "scope": "qualification_nonproduction"
+      },
+      {
+        "name": "Qualification Q4",
+        "time_chicago": "20:30",
+        "run_slot": "Q4",
+        "scope": "qualification_nonproduction"
+      }
+    ],
+    "cross_lane_reuse_prohibited": true,
+    "production_must_ignore_qualification_state": true,
+    "qualification_must_not_invoke_production_schedule": true,
+    "independently_pauseable": true
   }
 }
