@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.0.0",
+  "schema_version": "2.1.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -392,6 +392,35 @@
       "six_visual_gate_passes",
       "six_exact_git_blob_persists"
     ],
+    "production_mutation": false
+  },
+  "qualification_image_worker_serialization": {
+    "rule": "Qualification image workers must execute strictly one story at a time. A later story worker may not start until the prior story has completed generation, durable Library capture, separate review, and exact Git persistence or a terminal per-story rejection.",
+    "qualification_only": true,
+    "q11_root_cause": "Q11 persisted two supposed m02 image artifacts to durable Library storage, but both visually contained the m04 Copilot Memory subject. Durable transport therefore worked, while concurrent/multi-worker execution still allowed cross-story subject or artifact contamination.",
+    "maximum_concurrent_image_workers": 1,
+    "required_story_sequence": "editorial_selection_order",
+    "next_story_start_requires_prior_story_terminal": true,
+    "prior_story_terminal_states": [
+      "accepted_locked",
+      "rejected_with_attempt_budget_remaining",
+      "rejected_terminal_run_fail"
+    ],
+    "generation_and_capture_same_worker_required": true,
+    "durable_library_capture_before_worker_exit": true,
+    "separate_reviewer_after_capture": true,
+    "exact_git_persist_before_next_story": true,
+    "cross_story_parallelism_prohibited": true,
+    "cross_story_batch_generation_prohibited": true,
+    "cross_story_artifact_pooling_prohibited": true,
+    "candidate_lineage_match_required_at_generation": true,
+    "candidate_lineage_match_required_at_library_capture": true,
+    "candidate_lineage_match_required_at_review": true,
+    "candidate_lineage_match_required_at_git_persist": true,
+    "subject_mismatch_action": "discard_fresh_worker_same_story",
+    "subject_mismatch_artifact_must_remain_append_only_evidence": true,
+    "max_subject_mismatch_attempts_per_story": 2,
+    "failure_code_after_attempt_budget": "qualification_image_subject_lineage_unsatisfied",
     "production_mutation": false
   }
 }
