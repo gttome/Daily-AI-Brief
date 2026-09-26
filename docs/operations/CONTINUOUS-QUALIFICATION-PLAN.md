@@ -55,6 +55,22 @@ Evidence:
 - `_records/qualification/2026-09-26-Q1/semantic-receipt.json`
 - `_records/qualification/2026-09-26-Q1/result.json`
 
+
+## 3A. Qualification schedule separation
+
+Qualification schedules are intentionally separate from production schedules. They have distinct names, run identities, branches, evidence paths, and mutation rules.
+
+| Schedule | America/Chicago | Run identity | Purpose | Production mutation |
+|---|---:|---|---|:---:|
+| Production Orchestrator | 04:00 | real daily edition | Publish the actual Brief | Protected production only |
+| Production Live Validation & Repair | 08:30 | real daily edition | Validate/repair actual production | Protected production only |
+| Qualification Q1 | 12:00 | YYYY-MM-DD-Q1 | Fresh nonproduction qualification | **No** |
+| Qualification Q2 | 15:00 | YYYY-MM-DD-Q2 | Fresh nonproduction qualification | **No** |
+| Qualification Q3 | 18:00 | YYYY-MM-DD-Q3 | Fresh nonproduction qualification | **No** |
+| Qualification Q4 | 20:30 | YYYY-MM-DD-Q4 | Fresh nonproduction qualification | **No** |
+
+The qualification schedules must never call, resume, rename, or reuse a production schedule. Production schedules must never treat Q1-Q4 state as production progress. Each qualification schedule uses `qualification_nonproduction` and unique qualification branches. Qualification schedules may be paused independently without changing production timing.
+
 ## 4. Full qualification lifecycle
 
 ```mermaid
