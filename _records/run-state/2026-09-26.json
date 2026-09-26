@@ -3,26 +3,31 @@
   "checkpoint_digest_version": "checkpoint-digests-v1",
   "edition_date": "2026-09-26",
   "baseline_main_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
-  "current_sha": "7134eec7fc02f4d0ce8f560995c7f25d9091b21e",
+  "current_sha": "ed8f72108d69a30de672125842d3ed2b984be8cb",
   "contract_runtime_version": "under80-v1/sep24-reliability-v1",
-  "stage": "PREFLIGHT_DISCOVERY_READY",
+  "stage": "READINESS_FINAL",
   "status": "pass",
   "retry_count": 0,
   "pr_number": null,
   "workflow_run_ids": [
-    "36231601789"
+    "36231601789",
+    "36231547233",
+    "36213134475",
+    "36213134240",
+    "36213162567"
   ],
   "artifact_paths": [
     "_records/discovery-preflight/result/article-evidence-receipt.json",
     "_records/discovery-preflight/result/article-evidence.json",
     "_records/discovery-preflight/result/date-enrichment.json",
     "_records/discovery-preflight/result/metadata-candidates.json",
-    "_records/discovery-preflight/result/receipt.json"
+    "_records/discovery-preflight/result/receipt.json",
+    "_records/readiness/2026-09-26.json"
   ],
   "invalidated_downstream_stages": [],
   "consequential_actions": [],
   "publication_lifecycle": "staged",
-  "operational_status": "PREPARING",
+  "operational_status": "READY",
   "stages": {
     "PREFLIGHT_METADATA_READY": {
       "stage": "PREFLIGHT_METADATA_READY",
@@ -73,6 +78,46 @@
       "pr_number": null,
       "contract_runtime_version": "under80-v1/sep24-reliability-v1",
       "note": null
+    },
+    "READINESS_PRELIMINARY": {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-26T09:09:55.343Z",
+      "status": "pass",
+      "input_baseline_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
+      "current_sha": "ed8f72108d69a30de672125842d3ed2b984be8cb",
+      "artifact_paths": [
+        "_records/readiness/2026-09-26.json"
+      ],
+      "workflow_run_ids": [
+        "36231547233",
+        "36231601789",
+        "36213134475",
+        "36213134240",
+        "36213162567"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": "Preliminary READY_WITH_WARNINGS; all publication-blocking checks pass; publication_authorized=false at preliminary decision point."
+    },
+    "READINESS_FINAL": {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-09-26T09:09:55.343Z",
+      "status": "pass",
+      "input_baseline_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
+      "current_sha": "ed8f72108d69a30de672125842d3ed2b984be8cb",
+      "artifact_paths": [
+        "_records/readiness/2026-09-26.json"
+      ],
+      "workflow_run_ids": [
+        "36231547233",
+        "36231601789",
+        "36213134475",
+        "36213134240",
+        "36213162567"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": "Final READY_WITH_WARNINGS; publication_authorized=true; bounded preflight recovery succeeded and checkpoints are reused."
     }
   },
   "history": [
@@ -97,6 +142,22 @@
       "input_digest": "sha256:93b9bae465a49b605460e975196618ac5499dd158358f9d29c73df78ccdda448",
       "dependency_digest": "sha256:0c0ba23968df0bedff853e199e65008ec205ae389051353f4730661da7cd5755",
       "output_digest": "sha256:8dcffecef4c0268fa5e7fc02c1b5d89339c13cf019fce009e67871c7626d38cd"
+    },
+    {
+      "stage": "READINESS_PRELIMINARY",
+      "timestamp": "2026-09-26T09:09:55.343Z",
+      "status": "pass",
+      "current_sha": "ed8f72108d69a30de672125842d3ed2b984be8cb",
+      "pr_number": null,
+      "note": "Preliminary READY_WITH_WARNINGS; publication_authorized=false."
+    },
+    {
+      "stage": "READINESS_FINAL",
+      "timestamp": "2026-09-26T09:09:55.343Z",
+      "status": "pass",
+      "current_sha": "ed8f72108d69a30de672125842d3ed2b984be8cb",
+      "pr_number": null,
+      "note": "Final READY_WITH_WARNINGS; publication_authorized=true."
     }
   ]
 }
