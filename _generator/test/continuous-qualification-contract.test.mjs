@@ -140,3 +140,23 @@ test('qualification image artifact handoff is durable and exact-byte preserving'
   assert.equal(h.accepted_locked_requires_git_blob_exact_byte_match,true);
   assert.equal(h.production_mutation,false);
 });
+
+
+test('qualification image workers are serialized story by story after Q11',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const s=c.qualification_image_worker_serialization;
+  assert.equal(s.maximum_concurrent_image_workers,1);
+  assert.equal(s.next_story_start_requires_prior_story_terminal,true);
+  assert.equal(s.generation_and_capture_same_worker_required,true);
+  assert.equal(s.durable_library_capture_before_worker_exit,true);
+  assert.equal(s.separate_reviewer_after_capture,true);
+  assert.equal(s.exact_git_persist_before_next_story,true);
+  assert.equal(s.cross_story_parallelism_prohibited,true);
+  assert.equal(s.cross_story_batch_generation_prohibited,true);
+  assert.equal(s.cross_story_artifact_pooling_prohibited,true);
+  assert.equal(s.candidate_lineage_match_required_at_generation,true);
+  assert.equal(s.candidate_lineage_match_required_at_library_capture,true);
+  assert.equal(s.candidate_lineage_match_required_at_review,true);
+  assert.equal(s.candidate_lineage_match_required_at_git_persist,true);
+  assert.equal(s.production_mutation,false);
+});
