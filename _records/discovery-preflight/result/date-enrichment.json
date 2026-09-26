@@ -1,0 +1,251 @@
+{
+  "schema_version": "1.0.0",
+  "cutoff": "2026-09-26T20:22:01.000Z",
+  "attempt_limit": 48,
+  "attempted": 48,
+  "resolved": 22,
+  "published_resolved": 22,
+  "updated_resolved": 12,
+  "failed": 3,
+  "details": [
+    {
+      "url": "https://www.anthropic.com/research/skills",
+      "status": "resolved",
+      "published_at": "2023-11-03T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://deepmind.google/models/gemini/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://docs.github.com/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "status": "resolved",
+      "published_at": "2026-03-10T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/integrate-coding-agent-with-slack",
+      "status": "resolved",
+      "published_at": "2026-03-10T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://ibm.webcasts.com/starthere.jsp?ei=1749693&sti=webinarspage&tp_key=83a9212ff7",
+      "status": "resolved",
+      "published_at": "2019-02-11T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "status": "resolved",
+      "published_at": "2026-01-09T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "status": "resolved",
+      "published_at": "2025-09-29T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.ibm.com/think/podcasts/mixture-of-experts/ai-frontier-granite-4-2-meta-muse",
+      "status": "resolved",
+      "published_at": "2026-09-17T00:00:00.000Z",
+      "updated_at": "2026-09-23T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ibm.com/think/podcasts/mixture-of-experts/anthropic-claude-hardware-guidelines-openai-rogue-agents-runway-solaris",
+      "status": "resolved",
+      "published_at": "2026-09-03T00:00:00.000Z",
+      "updated_at": "2026-09-03T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ibm.com/think/topics/ai-agents",
+      "status": "resolved",
+      "published_at": "2024-07-03T00:00:00.000Z",
+      "updated_at": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.langchain.com/langchain",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/evaluation",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/llm-gateway",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/agentic-document-extraction",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/agentic-document-processing",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/automate-workflows-with-document-agents-a-complete-tutorial-to-building-context-aware-AI",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/automating-invoice-processing-with-document-agents",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://aka.ms/AIAdventurers",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://ibm.webcasts.com/starthere.jsp?ei=1764029&sti=techsummitpg&tp_key=2c94c99189",
+      "status": "resolved",
+      "published_at": "2019-02-11T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/education/products/copilot-in-education?msockid=33348aca553063b115a19f8554cb62c1",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "status": "resolved",
+      "published_at": "2026-09-25T12:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://aka.ms/ExternalRedTeamAlliance",
+      "status": "resolved",
+      "published_at": "2026-07-27T16:25:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://bioresilience.llnl.gov/about",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://blogs.microsoft.com/on-the-issues/2026/05/07/the-state-of-global-ai-diffusion-in-2026/",
+      "status": "resolved",
+      "published_at": "2026-05-07T13:14:51.000Z",
+      "updated_at": "2026-05-07T15:05:52.000Z"
+    },
+    {
+      "url": "https://unlocked.microsoft.com/copilot-special-education-teacher/",
+      "status": "resolved",
+      "published_at": "2026-09-10T13:00:00.000Z",
+      "updated_at": "2026-09-14T19:44:02.000Z"
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/corporate-responsibility/topics/ai-economy-institute/?msockid=33348aca553063b115a19f8554cb62c1",
+      "status": "resolved",
+      "published_at": "2026-01-08T13:00:00.000Z",
+      "updated_at": "2026-09-25T13:08:43.000Z"
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "status": "resolved",
+      "published_at": "2025-10-16T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://academy.zapier.com/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-copilot-guide/",
+      "status": "resolved",
+      "published_at": "2024-05-07T00:00:00.000Z",
+      "updated_at": "2025-12-10T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/sdk",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://docs.github.com/copilot",
+      "status": "failed",
+      "reason": "normalized_body_too_large:924434>900000"
+    },
+    {
+      "url": "https://zapier.com/agents",
+      "status": "failed",
+      "reason": "response_too_large:1212416>1200000"
+    },
+    {
+      "url": "https://zapier.com/ai",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/solutions/hr",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://claude.com/claude-for-microsoft-365",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://claude.com/product/claude-code/enterprise",
+      "status": "failed",
+      "reason": "normalized_body_too_large:997820>900000"
+    },
+    {
+      "url": "https://engineering.salesforce.com/how-data-360-builds-trusted-context-the-enduring-layer-for-enterprise-ai/",
+      "status": "resolved",
+      "published_at": "2026-09-16T17:23:42.000Z",
+      "updated_at": "2026-09-22T18:05:32.000Z"
+    },
+    {
+      "url": "https://www.linkedin.com/pulse/agentic-enterprise-how-data-360-aiforce-redefined-d0cuc/",
+      "status": "resolved",
+      "published_at": "2026-09-21T13:57:55.000Z",
+      "updated_at": "2026-09-21T13:58:29.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/ai-models-on-zapier/",
+      "status": "resolved",
+      "published_at": "2026-03-17T00:00:00.000Z",
+      "updated_at": "2026-09-23T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-ai-guide/",
+      "status": "resolved",
+      "published_at": "2024-05-07T00:00:00.000Z",
+      "updated_at": "2026-08-03T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-mcp-guide/",
+      "status": "resolved",
+      "published_at": "2025-04-03T00:00:00.000Z",
+      "updated_at": "2026-08-18T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/build-automated-loan-income-verification-with-llamaparse-claude-agent-sdk",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/build-smarter-ai-agents-with-oxylabs-and-llamaindex",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/give-ai-agents-web-access-with-bright-data-and-llamaindex",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/liteparse-local-document-parsing-for-ai-agents",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-and-kaggle-launch-a-document-extraction-leaderboard-for-ai-agents",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaindex-and-kaggle-launch-a-new-document-ocr-leaderboard-for-ai-agents",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.llamaindex.ai/blog/llamaparse-mcp-the-tooling-layer-for-your-document-agents",
+      "status": "unresolved"
+    }
+  ]
+}

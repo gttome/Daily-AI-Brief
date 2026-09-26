@@ -12,8 +12,8 @@
     "agents_non_technical_people": 3
   },
   "preferred_agent_skill_candidate_id": "m01",
-  "model_visible_chars": 9824,
-  "evidence_sha256": "338cd47953b47ba405826a035d41c4810295afdc58199d705299b84c2457781d",
+  "model_visible_chars": 9602,
+  "evidence_sha256": "e2f5c9d0a7e6f272c29724f70bf4fdb4ffae44543620989f59323be185d84c66",
   "ready": true,
   "failures": []
 }
