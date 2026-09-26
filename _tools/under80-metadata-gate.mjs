@@ -101,7 +101,12 @@ for(const item of source){
  // Upstream source hints are advisory for agent-facing work too. An explicit end-user/support agent
  // story must not remain technical merely because it came from a research-heavy source.
  const agentOverride=(inferredFocus==='agents_non_technical_people'&&/\b(customer support|support agents?|troubleshooting agents?|workflow automation|assistant|business users?|knowledge worker)\b/i.test(combined))||/\btroubleshooting agents?\b/i.test(title)&&/\bcustomer support\b/i.test(combined);
- const focus=isSkill?'agents_non_technical_people':agentOverride?'agents_non_technical_people':appliedOverride?'applied_genai_knowledge_workers':providedFocus||inferredFocus;
+ // Qualification-only guard: upstream agent focus hints are advisory and cannot satisfy
+ // the semantic 2/2/2 gate unless the candidate title itself contains concrete agent intent.
+ // This prevents generic ML/LLM posts from being reserved as agent stories due to source defaults.
+ const strongAgentTitleSignal=/\b(agent|agents|agentic|assistant|computer use|tool[- ]using|mcp)\b/i.test(title);
+ const admissibleProvidedFocus=qualificationEditionDate&&providedFocus==='agents_non_technical_people'&&!strongAgentTitleSignal?null:providedFocus;
+ const focus=isSkill?'agents_non_technical_people':agentOverride?'agents_non_technical_people':appliedOverride?'applied_genai_knowledge_workers':admissibleProvidedFocus||inferredFocus;
  const productionNoveltyEligible=!qualificationEditionDate||!publishedUrls.has(url)||item.material_update_verified===true;
  const skillStoryReady=isSkill&&productionNoveltyEligible&&(dateBasis==='published_at'||(dateBasis==='updated_at_requires_material_update_review'&&item.material_update_verified===true));
  const normalized={
