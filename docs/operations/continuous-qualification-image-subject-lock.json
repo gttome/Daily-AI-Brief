@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "control_id": "qualification-image-subject-lock",
+  "effective_after": "2026-09-26-Q12",
+  "scope": "qualification_nonproduction",
+  "root_cause": "Q12 used serial image execution but both m02 attempts still rendered the m04 Copilot Memory subject. The remaining defect is weak subject binding at generation time.",
+  "requirements": {
+    "subject_lock_required_before_generation": true,
+    "story_id_required": true,
+    "candidate_id_required": true,
+    "target_headline_required": true,
+    "target_source_url_required": true,
+    "packet_sha256_required": true,
+    "subject_lock_sha256_required": true,
+    "generation_subject_binding_required": true,
+    "alternate_subjects_allowed": false,
+    "wrong_subject_retry_requires_new_subject_lock": true,
+    "same_lock_retry_prohibited": true
+  },
+  "failure_code": "qualification_image_subject_lock_mismatch",
+  "production_mutation": false
+}
