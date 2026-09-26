@@ -153,6 +153,22 @@ This isolation is necessary because otherwise the first real edition would consu
 
 **Invariant:** qualification may repeat a source across Q-runs; production may not use qualification repetition as justification for an approved repeat.
 
+## 5B. Image execution isolation
+
+Q1 proved that a post-generation subject-mismatch gate is necessary but not sufficient: repeated image requests can still inherit the wrong story or unsupported details before the gate rejects them. Qualification therefore enforces isolation **before generation**.
+
+For each of the six selected stories:
+
+1. Create one sealed image packet bound to exactly one `story_id` and one `candidate_id`.
+2. The packet may contain only that story's verified evidence and approved visual brief. It must exclude other story titles, source URLs, prompts, images, edition/status artwork and publication-state context.
+3. Submit a fresh image-generation request from that one packet only.
+4. Review in this order: subject identity → factual support → structural quality → editorial benchmark quality.
+5. If the image depicts the wrong story or unsupported details, reject it and start a **brand-new request** for the same target. Never edit, transform or reuse the wrong-subject image.
+6. Persist a per-story receipt containing target story/candidate IDs, request digest, subject-match result, factual-support result, quality result and accepted asset SHA-256.
+7. No lower-quality fallback is permitted.
+
+This control is qualification-safe and production-neutral. It does not weaken the existing September 9/10 image benchmark or the fail-closed image gate.
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
