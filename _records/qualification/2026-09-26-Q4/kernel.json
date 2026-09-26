@@ -1,0 +1,158 @@
+{
+  "schema_version": "1.0.0",
+  "brief_date": "2026-09-26",
+  "edition_id": "dab-edition-2026-09-26",
+  "baseline_sha": "6b3f91f0ac6483253a8d9f7b1212135588e1d99a",
+  "normal_model_passes": 1,
+  "normal_post_editorial_model_passes": 0,
+  "stories": [
+    {
+      "candidate_id": "m03",
+      "story_id": "dab-story-2026-09-26-a403c9d1",
+      "canonical_ordinal": 1,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub adds project context to an AI repair workflow",
+      "summary": "Authoritative source describes a current AI capability and its operating context.",
+      "why_it_matters": "This development changes how teams design, govern, and verify AI-assisted work in practice.",
+      "editorial_limitation": "Publisher-authored evidence; independently validate availability, effectiveness, and operating controls.",
+      "topic_labels": [
+        "AI operations"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a bounded evaluation",
+        "rationale": "Test one representative workflow with explicit checks and human acceptance before broader use."
+      },
+      "visual": {
+        "layout": "story-specific"
+      }
+    },
+    {
+      "candidate_id": "m04",
+      "story_id": "dab-story-2026-09-26-b504d8e2",
+      "canonical_ordinal": 2,
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub expands Copilot models, isolation, and client surfaces",
+      "summary": "Authoritative source describes a current AI capability and its operating context.",
+      "why_it_matters": "This development changes how teams design, govern, and verify AI-assisted work in practice.",
+      "editorial_limitation": "Publisher-authored evidence; independently validate availability, effectiveness, and operating controls.",
+      "topic_labels": [
+        "AI operations"
+      ],
+      "source_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a bounded evaluation",
+        "rationale": "Test one representative workflow with explicit checks and human acceptance before broader use."
+      },
+      "visual": {
+        "layout": "story-specific"
+      }
+    },
+    {
+      "candidate_id": "m05",
+      "story_id": "dab-story-2026-09-26-c605e7f3",
+      "canonical_ordinal": 3,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft reorganizes Copilot around Home, Code, and Autopilot",
+      "summary": "Authoritative source describes a current AI capability and its operating context.",
+      "why_it_matters": "This development changes how teams design, govern, and verify AI-assisted work in practice.",
+      "editorial_limitation": "Publisher-authored evidence; independently validate availability, effectiveness, and operating controls.",
+      "topic_labels": [
+        "AI operations"
+      ],
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a bounded evaluation",
+        "rationale": "Test one representative workflow with explicit checks and human acceptance before broader use."
+      },
+      "visual": {
+        "layout": "story-specific"
+      }
+    },
+    {
+      "candidate_id": "m06",
+      "story_id": "dab-story-2026-09-26-d706f8a4",
+      "canonical_ordinal": 4,
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft adds a governed runtime inside Microsoft 365",
+      "summary": "Authoritative source describes a current AI capability and its operating context.",
+      "why_it_matters": "This development changes how teams design, govern, and verify AI-assisted work in practice.",
+      "editorial_limitation": "Publisher-authored evidence; independently validate availability, effectiveness, and operating controls.",
+      "topic_labels": [
+        "AI operations"
+      ],
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a bounded evaluation",
+        "rationale": "Test one representative workflow with explicit checks and human acceptance before broader use."
+      },
+      "visual": {
+        "layout": "story-specific"
+      }
+    },
+    {
+      "candidate_id": "m01",
+      "story_id": "dab-story-2026-09-26-e101a2b3",
+      "canonical_ordinal": 5,
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can propose reusable Skills from completed work",
+      "summary": "Authoritative source describes a current AI capability and its operating context.",
+      "why_it_matters": "This development changes how teams design, govern, and verify AI-assisted work in practice.",
+      "editorial_limitation": "Publisher-authored evidence; independently validate availability, effectiveness, and operating controls.",
+      "topic_labels": [
+        "AI operations"
+      ],
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "agent_skill": true,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a bounded evaluation",
+        "rationale": "Test one representative workflow with explicit checks and human acceptance before broader use."
+      },
+      "visual": {
+        "layout": "story-specific"
+      }
+    },
+    {
+      "candidate_id": "m08",
+      "story_id": "dab-story-2026-09-26-f808b9c4",
+      "canonical_ordinal": 6,
+      "focus": "agents_non_technical_people",
+      "headline": "AWS shows a model-routed coding-agent workflow on Bedrock",
+      "summary": "Authoritative source describes a current AI capability and its operating context.",
+      "why_it_matters": "This development changes how teams design, govern, and verify AI-assisted work in practice.",
+      "editorial_limitation": "Publisher-authored evidence; independently validate availability, effectiveness, and operating controls.",
+      "topic_labels": [
+        "AI operations"
+      ],
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/use-open-weight-models-as-your-ai-coding-agent-with-amazon-bedrock/",
+      "agent_skill": false,
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Run a bounded evaluation",
+        "rationale": "Test one representative workflow with explicit checks and human acceptance before broader use."
+      },
+      "visual": {
+        "layout": "story-specific"
+      }
+    }
+  ],
+  "editorial_takeaway": "Q4 shows AI systems becoming more operational through reusable context, stronger execution controls, persistent workflows, and governed model use.",
+  "media_decisions": {
+    "strategy": "Q4 reviewed the current verified September 26 media set."
+  },
+  "changed_watchlist_topics": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-memory-guided-planning",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents"
+  ]
+}
