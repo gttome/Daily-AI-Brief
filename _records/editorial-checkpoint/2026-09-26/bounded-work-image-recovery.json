@@ -1,0 +1,70 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-26",
+  "created_at": "2026-09-26T14:59:42.848950Z",
+  "checkpoint_kind": "images_accepted_locked",
+  "reused_editorial_sha": "44f9801f749ab2531e9fffa873a7eb8e4351ee7d",
+  "reused_media_watchlist_sha": "14db62c4b5613eef602fc1beb7865570d3c9e6b5",
+  "reused_preflight_sha": "658158921624e74694e9dc524ee4ebd7779ba209",
+  "semantic_story_text_unchanged": true,
+  "accepted_locked": 6,
+  "attempts_this_invocation": 8,
+  "rejected_this_invocation": 2,
+  "prior_attempts": null,
+  "assets": [
+    {
+      "candidate_id": "m09",
+      "path": "briefs/images/2026-09-26/01-m09-textbook-v1.webp",
+      "sha256": "d992d23de34bcd0c0d2202d822ef6190c1d2f1bdc0f8249237c2147f7b645d67",
+      "git_blob_sha": "9a474994efd624cf6b7941950a9ebd13950dca58",
+      "bytes": 91446
+    },
+    {
+      "candidate_id": "m04",
+      "path": "briefs/images/2026-09-26/02-m04-textbook-v1.webp",
+      "sha256": "971493f737fa39a538297c5607cf95ec8df39f9e1d3fcd4922918f737bb794e8",
+      "git_blob_sha": "3313812cdd1c239d8e7f6235da0fd15d0a2c7673",
+      "bytes": 75380
+    },
+    {
+      "candidate_id": "m05",
+      "path": "briefs/images/2026-09-26/03-m05-textbook-v1.webp",
+      "sha256": "8a005fbe2f2d6ed6a02d37ba3088184923579072ae9ae82462c4829ee18618d3",
+      "git_blob_sha": "29bc218d9726c20e67454892cadc51cb78e63f0b",
+      "bytes": 69282
+    },
+    {
+      "candidate_id": "m06",
+      "path": "briefs/images/2026-09-26/04-m06-textbook-v1.webp",
+      "sha256": "3d7b0bf14f4711358911183e5356cef438f8cebab0b2b4906dac3c90860a244d",
+      "git_blob_sha": "6f182d130996a6ba1504de829925cb2c08f623be",
+      "bytes": 85822
+    },
+    {
+      "candidate_id": "m03",
+      "path": "briefs/images/2026-09-26/05-m03-textbook-v1.webp",
+      "sha256": "6be669ff18b28eccd830ec69195ff8d602913402ddd33853e9f5c6209d28f3dd",
+      "git_blob_sha": "84aa7c2eca3ebb61b20f27b4526326a61a788092",
+      "bytes": 80992
+    },
+    {
+      "candidate_id": "r01",
+      "path": "briefs/images/2026-09-26/06-r01-textbook-v1.webp",
+      "sha256": "173b38def39d236652a7715ffde734e8661733fe0f8c5eea63336b3869e86de8",
+      "git_blob_sha": "33e974c7e30180491967e37a2628883000c7dd95",
+      "bytes": 82778
+    }
+  ],
+  "handoff_branch": "editorial-handoff/production/2026-09-26-bounded-recovery",
+  "publication_closed": false,
+  "next_owner": "GitHub Actions",
+  "next_stage": "HANDOFF_COMMITTED",
+  "hardening": [
+    "T19",
+    "T20",
+    "T21",
+    "T22",
+    "T23"
+  ],
+  "deterministic_continuation": "Actions-owned explicit required-CI dispatch, protected exact-head merge, Pages build request and SHA-pinned delta-validation dispatch; no Work polling."
+}

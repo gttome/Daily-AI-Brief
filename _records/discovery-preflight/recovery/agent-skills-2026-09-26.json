@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-26",
+  "recovery_kind": "targeted_agent_skills_slot_repair",
+  "orchestrator_entry_time": "2026-09-26T11:31:46Z",
+  "baseline_main_sha": "c5751362118b1a10f40c58f48484973a8ae03477",
+  "original_blocker": {
+    "code": "agent_skills_novelty_conflict",
+    "candidate_id": "m01",
+    "prior_story_id": "dab-story-2026-09-25-e2f16170",
+    "prior_source_url": "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+    "material_update_verified": false
+  },
+  "replacement_evidence": {
+    "title": "Qoder 0.4.1 adds Skill evolution suggestions",
+    "publisher": "Qoder",
+    "source_url": "https://docs.qoder.com/release-notes/qoder",
+    "published_at": "2026-09-23",
+    "focus": "agents_non_technical_people",
+    "reader_label": "Agents for Everyone",
+    "agent_skill_story_ready": true,
+    "novelty_status": "new_story",
+    "evidence_summary": "Qoder 0.4.1 can suggest creating or updating reusable Skills from experience after a conversation finishes; accepting a suggestion opens a separate conversation where the user confirms the plan before changes are applied.",
+    "distinction_from_prior_story": "The September 25 AWS story covered evaluation of skill selection and instruction fidelity. This is a different product development about capturing repeated conversational experience into proposed reusable Skill creation or updates with explicit user confirmation."
+  },
+  "recovery_scope": {
+    "preflight_reused": true,
+    "readiness_reused": true,
+    "metadata_discovery_rerun": false,
+    "article_evidence_rerun": false,
+    "broad_research_restart": false,
+    "semantic_passes_used": 0,
+    "accepted_assets_regenerated": false
+  },
+  "conflict_resolved": true,
+  "next_stage": "EDITORIAL_KERNEL_READY",
+  "next_action": "Use the repaired Agent Skills slot in the single bounded editorial semantic pass. Reuse all valid current-day preflight and readiness checkpoints; do not rerun discovery."
+}

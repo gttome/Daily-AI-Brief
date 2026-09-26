@@ -35,6 +35,9 @@ function buildFixture(){
   for(let i=0;i<6;i++){
     const storyId='story-'+(i+1),candidate='c'+(i+1),rel='briefs/images/'+date+'/0'+(i+1)+'-story.svg',alt='Detailed accessible story image '+(i+1)+' explaining a specific mechanism.';
     const bytes=svg('story '+(i+1)),hash=sha256(bytes),blob=gitBlobSha1(bytes);
+    const requestPath='_records/image-context/'+date+'/'+candidate+'.json';
+    const requestRaw=JSON.stringify({mode:'single_story',story_ids:[storyId],includes_edition_context:false,prompt:'Create a detailed textbook illustration for this one story only, with no edition or status artwork.'});
+    fs.mkdirSync(path.dirname(path.join(root,requestPath)),{recursive:true});fs.writeFileSync(path.join(root,requestPath),requestRaw);
     fs.mkdirSync(path.dirname(path.join(root,rel)),{recursive:true});fs.writeFileSync(path.join(root,rel),bytes);
     stories.push({story_id:storyId,image:{path:rel,alt,width:1200,height:630}});
     manifest[candidate]={
@@ -45,6 +48,7 @@ function buildFixture(){
       quality_evidence_path:qualityPath,quality_evidence_sha256:null
     };
     qualityImages.push({
+      generation_context:{mode:'single_story',story_ids:[storyId],includes_edition_context:false,reviewed_subject_match:'pass',unrelated_status_artwork:false,request_path:requestPath,request_sha256:sha256(requestRaw)},
       story_id:storyId,asset_path:rel,asset_hash:hash,git_blob_sha:blob,
       cache_key:'cache-v1-'+(i+1),asset_version:'v1-'+(i+1),
       structural_gate:{result:'pass',checks:structuralChecks()},
@@ -107,6 +111,16 @@ test('structurally valid low-detail image fails editorial quality',()=>{
   assert.equal(result.editorial_quality_gate.result,'fail');
   assert.ok(result.errors.some(e=>e.includes('information_density_below_benchmark')));
   assert.equal(result.overall_gate.result,'fail');
+});
+
+test('a cross-story generation context fails even when structural and visual scores pass',()=>{
+  const x=buildFixture();x.record.images[0].generation_context.story_ids.push('other-story');x.persist();
+  assert.ok(reviewedHandoffImages(x.edition,x.root,x.reviewPath).errors.some(e=>e.includes('image_context_not_isolated')));
+});
+
+test('unrelated status artwork fails the accepted story subject gate',()=>{
+  const x=buildFixture();x.record.images[0].generation_context.unrelated_status_artwork=true;x.persist();
+  assert.ok(reviewedHandoffImages(x.edition,x.root,x.reviewPath).errors.some(e=>e.includes('image_subject_mismatch')));
 });
 
 test('generic image with correct dimensions fails editorial quality',()=>{

@@ -258,6 +258,26 @@
         "label": "PUT IT INTO PRACTICE",
         "why": "Use the context-quality checklist when defining the instructions, references, tools, constraints, and evaluation evidence that belong inside a reusable Agent Skill."
       }
+    ],
+    "2026-09-26": [
+      {
+        "item_id": "dab-story-2026-09-26-f3e5113c",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use the final-verification framework to define what evidence a live LLM quality check must provide before a response is accepted."
+      },
+      {
+        "item_id": "dab-story-2026-09-26-5bddf735",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Review the scope, freshness and relevance of repository memory before allowing it to guide a security repair."
+      },
+      {
+        "item_id": "dab-story-2026-09-26-0434240f",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Inspect the instructions, inputs, checks and constraints of an evolved Skill before confirming the proposed update."
+      }
     ]
   }
 }

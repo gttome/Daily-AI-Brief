@@ -178,7 +178,21 @@
       ],
       "command_center_role": "display status and canonical Brief asset references only; never maintain a second image copy"
     },
-    "production_deterministic_replacement_prohibited": true
+    "production_deterministic_replacement_prohibited": true,
+    "execution_context_isolation": {
+      "required": true,
+      "effective_date": "2026-09-26",
+      "scope": "One selected story per self-contained image-generation request; no edition/status narrative or cross-story reference assets.",
+      "request_receipt": "_records/image-context/YYYY-MM-DD/CANDIDATE.json",
+      "quality_gate_binding": [
+        "single story identity",
+        "request byte digest",
+        "rendered subject match",
+        "explicit rejection of unrelated status artwork"
+      ],
+      "retry_scope": "Only the failed story image; preserve every accepted locked asset.",
+      "accepted_asset_persistence": "Persist exact bytes and SHA identities with acceptance; a prose accepted count alone is not a recoverable asset checkpoint."
+    }
   },
   "media": {
     "video_duration_ladder_seconds": [

@@ -5,6 +5,18 @@ import {deepEqualJson, sha256} from './util.mjs';
 import {validateEdition} from './validate.mjs';
 import {renderDated,renderLatest,renderIndex} from './render.mjs';
 
+function sameEditionWatchlist(repoRoot,date){
+  for(const relative of ['_data/watchlist.json','data/watchlist.json']){
+    const file=path.join(repoRoot,relative);
+    if(!fs.existsSync(file))continue;
+    try{
+      const data=JSON.parse(fs.readFileSync(file,'utf8'));
+      if(data?.edition_date===date)return data;
+    }catch{}
+  }
+  return null;
+}
+
 function firstDiff(actual, expected) {
   const a=String(actual).split('\n'), e=String(expected).split('\n');
   const max=Math.max(a.length,e.length);
@@ -24,6 +36,7 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
   const canonicalPath=path.join(repoRoot,'_data','editions',`${date}.json`);
   const modern=date>='2026-09-18'&&fs.existsSync(canonicalPath)?JSON.parse(fs.readFileSync(canonicalPath,'utf8')):null;
   const renderers={dated:renderDated,latest:renderLatest,homepage:renderIndex};
+  const watchlist=modern?sameEditionWatchlist(repoRoot,date):null;
   for (const location of locations) {
     if (!fs.existsSync(location.path)) {
       errors.push(`${location.name} file is missing`);
@@ -37,7 +50,7 @@ export function runShadowCheck(repoRoot, date, sourceCommit = null) {
       const validation = validateEdition(editions[location.name]);
       if(modern){
         const actual=fs.readFileSync(location.path,'utf8');
-        const expected=renderers[location.name](modern);
+        const expected=renderers[location.name](modern,{watchlist});
         if(actual.trimEnd()!==expected.trimEnd())validation.push(`reader output differs from canonical rendering (${firstDiff(actual.trimEnd(),expected.trimEnd())})`);
       }
       checks.push({check_id: `${location.name}_canonical_import`, result: validation.length ? 'fail' : 'pass', evidence: validation.length ? validation.join('; ') : 'Imported and validated.'});

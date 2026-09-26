@@ -112,3 +112,10 @@ The six-image set is also a gate. Six valid files fail when their composition si
 Missing or unavailable editorial review is a blocking failure. Low-detail, generic, sparse or decorative-only visuals fail even when dimensions, hashes, accessibility and build checks pass.
 
 For a legitimate replacement, the record must preserve the superseded asset identity and use a new asset version, content hash and cache key. Post-deployment validation must verify that the reader serves the exact accepted bytes; a repository-only replacement is not completion evidence.
+
+
+## Image execution-context isolation — September 26, 2026
+
+Each initial image request must be a self-contained single-story brief. Do not include edition summaries, publication status, other stories or unrelated reference images. Targeted edits may reference only the same story draft. Save the exact request, bind its digest and story ID into the v2 image-quality record, and explicitly inspect for subject match and unrelated dashboard/status artwork. The shared gate rejects missing, cross-story, changed or unreviewed context evidence. Self-review must be identified as self-review.
+
+Acceptance is durable only when exact asset bytes, SHA-256 and Git blob identity are persisted. Preserve all locked assets on downstream retries. An unrecoverable accepted asset may be regenerated only under the existing missing/corrupt exception, with the failed recovery search documented.

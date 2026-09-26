@@ -123,7 +123,20 @@ function editorialEvidenceErrors(item){
   return errors;
 }
 
-function qualityRecordErrors(edition,record,manifestEntries,assets){
+function imageContextErrors(root,item){
+  const errors=[],context=item?.generation_context;
+  if(context?.mode!=='single_story'||JSON.stringify(context?.story_ids)!==JSON.stringify([item.story_id])||context?.includes_edition_context!==false)errors.push('quality_evidence_image_context_not_isolated');
+  if(context?.reviewed_subject_match!=='pass'||context?.unrelated_status_artwork!==false)errors.push('quality_evidence_image_subject_mismatch');
+  if(!safeRelative(context?.request_path)||!/^[a-f0-9]{64}$/.test(context?.request_sha256||''))errors.push('quality_evidence_image_request_identity_missing');
+  else try{
+    const raw=fs.readFileSync(path.join(root,context.request_path)),request=JSON.parse(raw);
+    if(sha256(raw)!==context.request_sha256)errors.push('quality_evidence_image_request_digest_mismatch');
+    if(request.mode!=='single_story'||JSON.stringify(request.story_ids)!==JSON.stringify([item.story_id])||request.includes_edition_context!==false||!text(request.prompt,40))errors.push('quality_evidence_image_request_not_isolated');
+  }catch{errors.push('quality_evidence_image_request_unavailable');}
+  return errors;
+}
+
+function qualityRecordErrors(root,edition,record,manifestEntries,assets){
   const errors=[];
   if(record?.schema_version!==EDITORIAL_IMAGE_QUALITY_VERSION||record?.record_kind!=='editorial_image_quality')errors.push('quality_evidence_schema_invalid');
   if(record?.edition_date!==edition.brief_date||record?.edition_id!==edition.edition_id)errors.push('quality_evidence_edition_identity_mismatch');
@@ -146,6 +159,7 @@ function qualityRecordErrors(edition,record,manifestEntries,assets){
     if(Boolean(item.deployment_verification_required)!==Boolean(entry.deployment_verification_required))errors.push('quality_evidence_deployment_verification_flag_mismatch:'+entry.path);
     errors.push(...structuralEvidenceErrors(item).map(x=>x+':'+entry.path));
     errors.push(...editorialEvidenceErrors(item).map(x=>x+':'+entry.path));
+    errors.push(...imageContextErrors(root,item).map(x=>x+':'+entry.path));
     errors.push(...replacementErrors(item).map(x=>x+':'+entry.path));
     const gate=item.editorial_quality_gate||{};
     composition.push(gate.composition_signature);layouts.push(gate.layout_signature);grammars.push(gate.diagram_grammar);hierarchies.push(gate.hierarchy_signature);annotations.push(gate.annotation_pattern_signature);
@@ -224,7 +238,7 @@ export function reviewedHandoffImages(edition, root, manifestPath, {mode='combin
           try{
             const qualityRaw=fs.readFileSync(path.join(root,qualityEvidencePath));qualityEvidenceSha256=sha256(qualityRaw);
             if(qualityEvidenceSha256!==[...expectedDigests][0])editorialErrors.push('quality_evidence_digest_mismatch');
-            editorialErrors.push(...qualityRecordErrors(edition,JSON.parse(qualityRaw.toString('utf8')),entries,assets));
+            editorialErrors.push(...qualityRecordErrors(root,edition,JSON.parse(qualityRaw.toString('utf8')),entries,assets));
           }catch{editorialErrors.push('quality_evidence_missing_or_unreadable');}
         }
       }

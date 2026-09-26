@@ -14,10 +14,15 @@ on:
         description: Edition date (YYYY-MM-DD). Defaults to current Chicago date.
         required: false
         type: string
+      expected_sha:
+        description: Exact protected production merge SHA for this deployment validation.
+        required: false
+        type: string
 
 permissions:
   contents: write
   actions: write
+  pages: write
   pull-requests: write
   issues: write
 
@@ -54,7 +59,7 @@ jobs:
         if: steps.gate.outputs.run == 'true'
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: main
+          ref: ${{ inputs.expected_sha || 'main' }}
           fetch-depth: 0
 
       - name: Set up Node.js
@@ -112,9 +117,12 @@ jobs:
         uses: actions/github-script@f28e40c7f34bde8b3046d885e986cb6290c5673b
         with:
           script: |
-            const expectedSha = context.eventName === 'workflow_run'
+            const expectedSha = context.payload.inputs?.expected_sha || (context.eventName === 'workflow_run'
               ? context.payload.workflow_run.head_sha
-              : context.sha;
+              : context.sha);
+            if(!/^[0-9a-f]{40}$/.test(expectedSha))throw new Error('Exact production SHA required.');
+            const mainSha=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
+            if(mainSha!==expectedSha)throw new Error('Current main differs from requested production SHA; refusing stale deployment evidence.');
             const attempts = 36;
             for (let i = 0; i < attempts; i++) {
               const {data} = await github.rest.actions.listWorkflowRunsForRepo({
@@ -277,7 +285,7 @@ jobs:
           candidate_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.head.sha')"
           publication_merge_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.merge_commit_sha // empty')"
           if ! [[ "$candidate_sha" =~ ^[0-9a-f]{40}$ ]] || ! [[ "$publication_merge_sha" =~ ^[0-9a-f]{40}$ ]]; then echo "Publication PR evidence is incomplete."; exit 1; fi
-          ci_run_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$candidate_sha&per_page=100" --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .event=="pull_request" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
+          ci_run_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$candidate_sha&per_page=100" --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and (.event=="pull_request" or .event=="workflow_dispatch") and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
           if [ "$ci_run_id" -le 0 ]; then echo "No successful protected CI found for publication candidate $candidate_sha."; exit 1; fi
           node - "$completion" /tmp/daily-validation.json "$EXPECTED_SHA" "$candidate_sha" "$publication_merge_sha" "$pr" "$ci_run_id" <<'NODE'
           const fs=require('fs');
@@ -347,6 +355,10 @@ jobs:
             const merged=await github.rest.pulls.merge({...context.repo,pull_number:pr.number,sha:headSha,merge_method:'squash'});
             if(!merged.data.merged){core.setFailed('Protected completion merge denied: '+(merged.data.message||'not merged'));return;}
             core.info('Completion evidence merged through protected main at '+merged.data.sha+'.');
+            const finalMain=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
+            if(finalMain!==merged.data.sha){core.setFailed('Main moved before completion-status deployment; refusing to request an unrelated build.');return;}
+            await github.request('POST /repos/{owner}/{repo}/pages/builds',context.repo);
+            core.info('Requested Pages rebuild for exact finalization main '+finalMain+'; closure records retain the separately validated reader-publication SHA.');
 
       - name: Publish compact receipts to job summary
         if: steps.gate.outputs.run == 'true' && always()
