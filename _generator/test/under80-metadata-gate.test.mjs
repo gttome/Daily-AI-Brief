@@ -5,11 +5,15 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 
-const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20}={})=>{
+const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20,qualificationEditionDate=null,publishedEditions=[]}={})=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dab-gate-'));
- const input=path.join(dir,'in.json'),out=path.join(dir,'out.json');
+ const input=path.join(dir,'in.json'),out=path.join(dir,'out.json'),editions=path.join(dir,'editions');
+ fs.mkdirSync(editions,{recursive:true});
  fs.writeFileSync(input,JSON.stringify({updated_at:'2026-09-18T13:05:00Z',candidates}));
- execFileSync(process.execPath,['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit',String(limit),'--cutoff',cutoff],{cwd:process.cwd()});
+ for(const edition of publishedEditions)fs.writeFileSync(path.join(editions,edition.brief_date+'.json'),JSON.stringify(edition));
+ const argv=['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit',String(limit),'--cutoff',cutoff,'--published-editions-dir',editions];
+ if(qualificationEditionDate)argv.push('--qualification-edition-date',qualificationEditionDate);
+ execFileSync(process.execPath,argv,{cwd:process.cwd()});
  return JSON.parse(fs.readFileSync(out,'utf8'));
 };
 
@@ -95,4 +99,35 @@ test('generic agentic research with incidental skills language is not an Agent S
  assert.equal(result.candidates.length,1);
  assert.equal(result.candidates[0].agent_skill_signal,false);
  assert.equal(result.candidates[0].agent_skill_story_ready,false);
+});
+
+
+test('qualification preflight removes prior-production Agent Skills duplicates before semantic execution',()=>{
+ const url='https://example.com/agent-skill-prior-production';
+ const result=runGate([
+  {source_id:'skills',headline:'Reusable Agent Skills evaluation update for enterprise agents',snippet:'Agent Skills skill selection and reusable workflow evaluation.',canonical_url:url,published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'},
+  {source_id:'a1',headline:'Agent workflow automation for business teams without coding',canonical_url:'https://example.com/a1',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'a2',headline:'AI assistant workflow automation for business users',canonical_url:'https://example.com/a2',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'t1',headline:'AI model evaluation benchmark release for developer reliability one',canonical_url:'https://example.com/t1',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'t2',headline:'AI model evaluation benchmark release for developer reliability two',canonical_url:'https://example.com/t2',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'t3',headline:'AI model evaluation benchmark release for developer reliability three',canonical_url:'https://example.com/t3',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'k1',headline:'Enterprise workplace AI productivity update for knowledge workers one',canonical_url:'https://example.com/k1',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'k2',headline:'Enterprise workplace AI productivity update for knowledge workers two',canonical_url:'https://example.com/k2',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'},
+  {source_id:'k3',headline:'Enterprise workplace AI productivity update for knowledge workers three',canonical_url:'https://example.com/k3',published_at:'2026-09-25T12:00:00Z',source_reliability:'publisher_authored',content_type:'article'}
+ ],{cutoff:'2026-09-26T18:00:00Z',qualificationEditionDate:'2026-09-26',publishedEditions:[{brief_date:'2026-09-25',stories:[{source:{url}}]}]});
+ const skill=result.candidates.find(x=>x.canonical_url===url);
+ assert.equal(skill.production_novelty_eligible,false);
+ assert.equal(skill.agent_skill_story_ready,false);
+ assert.equal(result.agent_skill_story_ready_signals_after_novelty,0);
+ assert.equal(result.preferred_agent_skill_candidate_id,null);
+ assert.equal(result.coverage_ready,false);
+});
+
+test('qualification novelty ignores same-day production and qualification history',()=>{
+ const url='https://example.com/same-day-skill';
+ const result=runGate([
+  {source_id:'skills',headline:'Reusable Agent Skills evaluation update for enterprise agents',snippet:'Agent Skills reusable workflow evaluation.',canonical_url:url,published_at:'2026-09-26T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'}
+ ],{cutoff:'2026-09-26T18:00:00Z',qualificationEditionDate:'2026-09-26',publishedEditions:[{brief_date:'2026-09-26',stories:[{source:{url}}]}]});
+ assert.equal(result.candidates[0].production_novelty_eligible,true);
+ assert.equal(result.candidates[0].agent_skill_story_ready,true);
 });
