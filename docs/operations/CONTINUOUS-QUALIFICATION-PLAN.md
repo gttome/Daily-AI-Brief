@@ -217,6 +217,15 @@ Every specific label or concrete example in the generated image must map to `ver
 Factual-support review remains the second gate after subject identity. A factual-support failure requires discarding the image and starting a fresh dedicated image-only worker for that story. Two factual-support failures for the same story fail the Q-run closed.
 
 
+## 5F. Qualification agent focus hints require concrete agent evidence
+
+Q6 exposed a semantic-coverage defect: deterministic preflight accepted upstream `agents_non_technical_people` focus hints for two candidates whose frozen evidence described multimodal reinforcement-learning training and LLM quality assurance, not an agent workflow. That allowed preflight coverage to appear sufficient even though the single semantic pass could produce only one valid Agents for Everyone story.
+
+For qualification runs only, an upstream agent focus hint is advisory. Unless the item is already a valid Agent Skills story or qualifies through the existing end-user/support-agent override, the candidate title must contain concrete agent intent such as agent/agents/agentic, assistant, computer use, tool-using, or MCP. Otherwise deterministic preflight must reclassify the item through the normal inferred-focus path. This rule does not change production focus classification.
+
+If the resulting qualification candidate set no longer has at least three agent-focus candidates, preflight must fail closed before semantic execution. A failed Q-run is preserved; the correction is tested only on the next fresh Q identity.
+
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
