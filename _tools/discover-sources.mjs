@@ -86,16 +86,16 @@ for(const s of preflightSources.filter(source=>source.pinned_candidate===true&&s
 // and still require deep review before selection.
 for(const s of requiredSources){
   if(!s.canonical_url)continue;
-  const title=s.source_id==='openai-academy-skills'?'Skills — OpenAI Academy':
+  const title=s.candidate_title||(s.source_id==='openai-academy-skills'?'Skills — OpenAI Academy':
     s.source_id==='anthropic-research-skills'?'Claude Skills: Customize AI for your workflows':
-    s.source_id==='anthropic-engineering-agent-skills'?'Equipping agents for the real world with Agent Skills':s.source_id;
+    s.source_id==='anthropic-engineering-agent-skills'?'Equipping agents for the real world with Agent Skills':s.source_id);
   const published=s.known_publication_date||null,updated=s.known_updated_at||null;
   const key=new URL(s.canonical_url).href;
   if(!candidates.has(key))candidates.set(key,{
     source_id:s.source_id,publisher:s.owner||null,headline:title,canonical_url:key,url:key,
     published_at:published,publication_date:published,publication_dates:published?[published]:[],
     date_conflict:false,updated_at:updated,date_source:s.date_source||'required_topic_registry',
-    snippet:'Authoritative required-topic source for reusable Agent Skills.',
+    snippet:s.candidate_snippet||'Authoritative required-topic source for reusable Agent Skills.',
     content_type:'article',retrieval_status:'metadata_only',source_reliability:s.evidence_class||'publisher_authored',
     format:'article',discovered_at:new Date().toISOString(),runtime_seconds:null,
     required_topic:s.required_topic||'agent_skills',required_topic_fallback_days:s.required_topic_fallback_days||7,
