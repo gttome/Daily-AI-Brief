@@ -1,0 +1,36 @@
+{
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "headline": "GitHub Security Lab uses a Taskflow Agent to drive AI-powered fuzzing workflows",
+  "source_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+  "visual_brief": "Professional white-background technical textbook diagram showing a GitHub Security Lab Taskflow Agent coordinating an AI-powered fuzzing workflow. Use abstract process nodes and arrows only; no people, screenshots, dashboards, code snippets, filenames, or invented product UI.",
+  "verified_visual_facts": [
+    "GitHub Security Lab",
+    "Taskflow Agent",
+    "AI-powered fuzzing",
+    "fuzzing taskflow"
+  ],
+  "generic_conceptual_elements": [
+    "agent orchestration node",
+    "generic test-input flow",
+    "generic feedback loop",
+    "generic target boundary"
+  ],
+  "prohibited_specifics": [
+    "specific vulnerability classes",
+    "specific file names",
+    "specific code",
+    "specific fuzzing engines not named in frozen evidence",
+    "performance numbers",
+    "dashboard/status UI"
+  ],
+  "reference_policy": "Use only frozen evidence phrases above for concrete labels; all other elements must remain generic conceptual symbols.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "Discard and start a brand-new worker for this same story only.",
+  "low_quality_fallback": false
+}
