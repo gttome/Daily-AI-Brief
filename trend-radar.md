@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 25, 2026
+# Trend Radar — September 26, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,16 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-20 supporting stories appeared in the latest 7 days and 76 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+24 supporting stories appeared in the latest 7 days and 76 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 26, 2026]({{ '/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
+- [September 26, 2026]({{ '/videos/2026-09-26/general/' | relative_url }})
+- [September 26, 2026]({{ '/podcasts/2026-09-26/agents-md-enterprise-deployment/' | relative_url }})
+- [September 26, 2026]({{ '/podcasts/2026-09-26/baptist-health-ai-transformation/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/github-changes-the-default-policy-for-generally-available-copilot-features/' | relative_url }})
@@ -111,17 +117,17 @@ Supporting stories:
 - [August 29, 2026]({{ '/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/' | relative_url }})
 - [August 28, 2026]({{ '/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/' | relative_url }})
 - [August 28, 2026]({{ '/stories/2026-08-28/randomized-study-separates-chatgpt-s-quality-gains-from-critical-thinking-s-orig/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/openai-documents-an-agent-escape-that-reached-hugging-face-systems/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/' | relative_url }})
 
 ## Agent memory and context
 
 **COOLING · high confidence**
 
-8 supporting stories appeared in the latest 7 days and 44 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+9 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
+- [September 26, 2026]({{ '/podcasts/2026-09-26/agents-md-enterprise-deployment/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/' | relative_url }})
 - [September 23, 2026]({{ '/stories/2026-09-23/confidential-computing-targets-private-production-ai-inference-without-giving-up-acceleration/' | relative_url }})
 - [September 23, 2026]({{ '/stories/2026-09-23/agentforce-and-aws-connect-unstructured-public-sector-evidence-to-governed-agent-workflows/' | relative_url }})
@@ -179,10 +185,15 @@ Supporting stories:
 
 **STABLE · high confidence**
 
-22 supporting stories appeared in the latest 7 days and 76 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+23 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 26, 2026]({{ '/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
+- [September 26, 2026]({{ '/videos/2026-09-26/agent-skills/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/github-changes-the-default-policy-for-generally-available-copilot-features/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/' | relative_url }})
 - [September 25, 2026]({{ '/videos/2026-09-25/agent-skills/' | relative_url }})
@@ -278,18 +289,24 @@ Supporting stories:
 - [August 29, 2026]({{ '/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/' | relative_url }})
 - [August 28, 2026]({{ '/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/' | relative_url }})
 - [August 28, 2026]({{ '/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/claude-s-watermark-explainer-clarifies-what-provenance-can-and-cannot-prove/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/loveholidays-shows-non-engineers-shipping-prototypes-with-codex/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-40 supporting stories appeared in the latest 7 days and 130 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+43 supporting stories appeared in the latest 7 days and 132 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 26, 2026]({{ '/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
+- [September 26, 2026]({{ '/stories/2026-09-26/qoder-can-turn-repeated-work-into-proposed-reusable-skills/' | relative_url }})
+- [September 26, 2026]({{ '/videos/2026-09-26/general/' | relative_url }})
+- [September 26, 2026]({{ '/videos/2026-09-26/agent-skills/' | relative_url }})
+- [September 26, 2026]({{ '/podcasts/2026-09-26/agents-md-enterprise-deployment/' | relative_url }})
+- [September 26, 2026]({{ '/podcasts/2026-09-26/baptist-health-ai-transformation/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/github-changes-the-default-policy-for-generally-available-copilot-features/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/' | relative_url }})
@@ -456,9 +473,5 @@ Supporting stories:
 - [August 28, 2026]({{ '/stories/2026-08-28/openai-pairs-brazil-expansion-with-role-specific-ai-literacy/' | relative_url }})
 - [August 28, 2026]({{ '/stories/2026-08-28/a-non-technical-marketer-builds-a-recurring-personalized-briefing-agent/' | relative_url }})
 - [August 28, 2026]({{ '/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/openai-documents-an-agent-escape-that-reached-hugging-face-systems/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/loveholidays-shows-non-engineers-shipping-prototypes-with-codex/' | relative_url }})
-- [August 27, 2026]({{ '/stories/2026-08-27/claude-cowork-gains-a-separate-built-in-browser-for-delegated-web-work/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

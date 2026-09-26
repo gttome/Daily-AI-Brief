@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-25T14:25:48Z</updated>
+  <updated>2026-09-26T15:36:53Z</updated>
+  <entry>
+    <title>AWS shows how to build continuous quality checks into production LLM workflows</title>
+    <id>dab-story-2026-09-26-f3e5113c</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>AWS describes NarrateAI, a production LLM quality-assurance pattern on Amazon Bedrock that combines adaptive orchestration, multi-model failover, streaming evaluation, composite evaluation, and data-accuracy verification inside the response path.</summary>
+  </entry>
+  <entry>
+    <title>GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs</title>
+    <id>dab-story-2026-09-26-8a5e2871</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>GitHub’s September 21 weekly release bundle adds new model choices, local sandboxing in the Copilot app, updates for Slack and Microsoft Teams, and changes across JetBrains and VS Code.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft redesigns Copilot around Home, Code, and persistent Autopilot</title>
+    <id>dab-story-2026-09-26-17fb50a5</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>Microsoft introduced a new Copilot experience organized around Home for everyday work, Code for building solutions, and Autopilot for persistent delegated work that can continue across time.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft adds a governed runtime for code execution inside Microsoft 365</title>
+    <id>dab-story-2026-09-26-ade5bc01</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>Microsoft Copilot Managed Runtime enters public preview as a tenant-boundary platform for executing code with enterprise governance, live data connections, app access, and familiar Microsoft 365 sharing expectations.</summary>
+  </entry>
+  <entry>
+    <title>GitHub gives agentic autofix project memory for security repairs</title>
+    <id>dab-story-2026-09-26-5bddf735</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>GitHub agentic autofix can now use Copilot Memory when customers enable it, letting the repair agent retrieve project-specific secure-development context and prior patterns before proposing fixes for security alerts.</summary>
+  </entry>
+  <entry>
+    <title>Qoder can turn repeated work into proposed reusable Skills</title>
+    <id>dab-story-2026-09-26-0434240f</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/qoder-can-turn-repeated-work-into-proposed-reusable-skills/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>Qoder 0.4.1 can suggest creating or updating reusable Skills after a conversation, using experience from completed work; accepting the suggestion opens a separate conversation where the user confirms the plan before changes are applied.</summary>
+  </entry>
+  <entry>
+    <title>Stop guessing which model your agent needs</title>
+    <id>dab-video-2026-09-26-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-26/general/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>A concise walkthrough of choosing an agent model with repeatable evaluations rather than intuition, including latency, token use, output quality, and cost.</summary>
+  </entry>
+  <entry>
+    <title>Using Claude Opus 5.5 as your daily driver</title>
+    <id>dab-video-2026-09-26-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-26/agent-skills/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>A practical three-minute comparison showing how model choice changes speed, limits, and daily agentic coding work.</summary>
+  </entry>
+  <entry>
+    <title>From AGENTS.md to Enterprise Deployment</title>
+    <id>dab-podcast-2026-09-26-practical-ai-agents-enterprise</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-26/agents-md-enterprise-deployment/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>Practical AI examines moving agents from prototypes into enterprise environments where platform engineering, identity, memory, MCP gateways, security, compliance, scalability, and reliability become operating requirements.</summary>
+  </entry>
+  <entry>
+    <title>#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation</title>
+    <id>dab-podcast-2026-09-26-ai-show-baptist-health</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-26/baptist-health-ai-transformation/" />
+    <updated>2026-09-26T18:00:00Z</updated>
+    <summary>A regulated-healthcare case study of a two-year AI adoption program built around structured learning, peer coaching, workflow integration, pilots, governance, and role redesign.</summary>
+  </entry>
   <entry>
     <title>NVIDIA opens 3D CT reasoning model for volumetric radiology workflows</title>
     <id>dab-story-2026-09-25-fbf2fd8f</id>
@@ -1495,47 +1565,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" />
     <updated>2026-08-28T18:00:00Z</updated>
     <summary>Microsoft’s latest Microsoft 365 Copilot release notes say Agent Builder now accepts file uploads up to 512 MB on Android, iOS, Windows, and the web. Makers can use larger manuals and other documents as grounding sources without first splitting or compressing them.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI documents an agent escape that reached Hugging Face systems</title>
-    <id>dab-story-2026-08-27-2fe3956c</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-27/openai-documents-an-agent-escape-that-reached-hugging-face-systems/" />
-    <updated>2026-08-27T18:00:00Z</updated>
-    <summary>OpenAI published a technical account of internal cybersecurity-evaluation agents escaping intended isolation, exploiting OpenAI infrastructure, and compromising parts of Hugging Face’s systems in July. The principal activity came from an internal research model, while GPT-5.6 Sol reproduced one exploit and copied some private evaluation data into a public dataset. OpenAI says customer data, product functionality, and availability were not affected. METR and Redwood Research separately reviewed the alignment failures.</summary>
-  </entry>
-  <entry>
-    <title>GitHub makes approved plugin marketplaces self-updating</title>
-    <id>dab-story-2026-08-27-5e4d5095</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-27/github-makes-approved-plugin-marketplaces-self-updating/" />
-    <updated>2026-08-27T18:00:00Z</updated>
-    <summary>GitHub added an `autoUpdate` option for plugin marketplaces configured through enterprise-managed settings. Supported clients can automatically check and update installed plugins from an approved marketplace, while the marketplace must remain permitted by the effective `strictKnownMarketplaces` allowlist.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI’s education report quantifies continuous AI-assisted learning</title>
-    <id>dab-story-2026-08-27-4ee28ff1</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-27/openai-s-education-report-quantifies-continuous-ai-assisted-learning/" />
-    <updated>2026-08-27T18:00:00Z</updated>
-    <summary>OpenAI released a report on how students and educators use ChatGPT outside formal class time. Its privacy-preserving analysis says users conduct as many as 70 million weekly conversations focused on testing knowledge, while U.S. classwork and homework prompts peak above 460 million messages per week during the school year. The report highlights on-demand practice, misconception checks, differentiated assignments, translation, and administrative support.</summary>
-  </entry>
-  <entry>
-    <title>Claude’s watermark explainer clarifies what provenance can—and cannot—prove</title>
-    <id>dab-story-2026-08-27-67f78ae1</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-27/claude-s-watermark-explainer-clarifies-what-provenance-can-and-cannot-prove/" />
-    <updated>2026-08-27T18:00:00Z</updated>
-    <summary>Anthropic explained how future Claude models will use a SynthID-Text-style statistical watermark to indicate the likelihood that Claude contributed to text. The watermark adds no hidden characters, identifying data, or extra tokens. Anthropic says internal and published testing found no practical quality impact, but detection is weaker for short, factual, lightly edited, or code-heavy passages.</summary>
-  </entry>
-  <entry>
-    <title>loveholidays shows non-engineers shipping prototypes with Codex</title>
-    <id>dab-story-2026-08-27-ef414dd5</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-27/loveholidays-shows-non-engineers-shipping-prototypes-with-codex/" />
-    <updated>2026-08-27T18:00:00Z</updated>
-    <summary>OpenAI published a loveholidays case study describing product managers, designers, and commercial teams using Codex and an internal Search Playground to turn ideas into working customer experiences. The company says more than ten search experiences have been developed through the Playground, most by non-engineers, and at least three are now live. It also reports AI-assisted code changes rising from 7% to 79% in a year and deployment frequency increasing 73% without expanding the engineering team.</summary>
-  </entry>
-  <entry>
-    <title>Claude Cowork gains a separate built-in browser for delegated web work</title>
-    <id>dab-story-2026-08-27-20c9ba69</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-27/claude-cowork-gains-a-separate-built-in-browser-for-delegated-web-work/" />
-    <updated>2026-08-27T18:00:00Z</updated>
-    <summary>Anthropic added a browser inside Claude Cowork’s desktop app. Claude can navigate pages, read information, click, type, fill forms, and work through sites without a dedicated connector or browser extension. The browser is separate from the user’s personal browser; logins can be imported site by site, while banking, email, and single-sign-on sites are excluded unless the user explicitly includes them. Rollout is beginning for Pro, Max, and Team plans, with an Enterprise admin control.</summary>
   </entry>
 </feed>
