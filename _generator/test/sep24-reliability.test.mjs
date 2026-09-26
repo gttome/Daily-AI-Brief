@@ -104,9 +104,9 @@ test('accepted image and media checkpoints are reused across deterministic downs
  assert.equal(s.stages.MEDIA_READY.status,'pass');assert.equal(s.stages.IMAGES_READY.status,'pass');
 });
 test('same-edition Watchlist counts and changed-topic names match all three current reader surfaces',()=>{
- const canonical=JSON.parse(fs.readFileSync('_data/watchlist.json','utf8')),surface=expectedWatchlistSurface(canonical);
+ const projection=JSON.parse(fs.readFileSync('data/watchlist.json','utf8')),surface=expectedWatchlistSurface(projection);
  const countText=surface.counts.new_today+' new today · '+surface.counts.updated_today+' updated · '+surface.counts.carried_forward+' carried forward.';
- for(const p of ['index.md','latest.md',`briefs/${canonical.edition_date}.md`]){const body=fs.readFileSync(p,'utf8');assert.ok(body.includes(countText));for(const t of surface.changed_topics)assert.ok(body.includes(t.name));}
+ for(const p of ['index.md','latest.md',`briefs/${projection.edition_date}.md`]){const body=fs.readFileSync(p,'utf8');assert.ok(body.includes(countText));for(const t of surface.changed_topics)assert.ok(body.includes(t.name));}
 });
 test('current edition retains all hard counts and Agent Skills identity',()=>{
  const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-23.json','utf8')),kernel=JSON.parse(fs.readFileSync('_records/editorial-handoff/kernel.json','utf8')),media=JSON.parse(fs.readFileSync('_records/editorial-handoff/media.json','utf8')),images=JSON.parse(fs.readFileSync('_records/editorial-handoff/final-image-review-2026-09-23.json','utf8')),runtime=JSON.parse(fs.readFileSync('docs/operations/under80-runtime-contract.json','utf8'));
