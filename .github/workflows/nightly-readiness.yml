@@ -19,7 +19,7 @@ jobs:
       - name: Gate
         id: gate
         run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H:%M)" = "21:30" ]; then
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H)" = "21" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
           else
             echo "run=false" >> "$GITHUB_OUTPUT"
