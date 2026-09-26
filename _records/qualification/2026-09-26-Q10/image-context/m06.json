@@ -3,7 +3,7 @@
   "run_id": "2026-09-26-Q10",
   "mode": "single_story",
   "story_ids": [
-    "q10-story-m06"
+    "story-m06"
   ],
   "candidate_id": "m06",
   "includes_edition_context": false,
