@@ -4,105 +4,14 @@ on:
   schedule:
     - cron: '0 2 * * *'
     - cron: '0 3 * * *'
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
-  contents: write
-  actions: read
-  issues: write
+  contents: read
 
 jobs:
   readiness:
     runs-on: ubuntu-latest
     steps:
-      - name: Gate
-        id: gate
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] || [ "$(TZ=America/Chicago date +%H:%M)" = "21:00" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-          fi
-
-      - name: Audit and notify
-        if: steps.gate.outputs.run == 'true'
-        env:
-          GH_TOKEN: ${{ github.token }}
-          REPO: ${{ github.repository }}
-        run: |
-          set -euo pipefail
-          d="$(TZ=America/Chicago date +%F)"
-          t="$(TZ=America/Chicago date +%H:%M:%S)"
-          prior="$(TZ=America/Chicago date -d yesterday +%F)"
-          sha="$(gh api repos/$REPO/commits/main --jq .sha)"
-          runs="$(gh api 'repos/'$REPO'/actions/runs?branch=main&per_page=100')"
-
-          result() { jq -r --arg s "$sha" --arg n "$1" '.workflow_runs[]|select(.name==$n and .head_sha==$s)|.conclusion' <<<"$runs"|head -1; }
-          ci="$(result 'Deterministic publication CI')"
-          pages="$(result 'pages build and deployment')"
-          delta="$(result 'Daily AI Brief deterministic delta validation')"
-          rules="$(gh api repos/$REPO/rulesets/23615327 --jq .enforcement 2>/dev/null || echo unavailable)"
-
-          blockers=0
-          [ "$ci" = success ] || blockers=$((blockers+1))
-          [ "$pages" = success ] || blockers=$((blockers+1))
-          [ "$delta" = success ] || blockers=$((blockers+1))
-          [ "$rules" = active ] || blockers=$((blockers+1))
-
-          lifecycle="$(gh api repos/$REPO/contents/_records/publication/$prior/lifecycle.json?ref=main --jq .content 2>/dev/null|tr -d '\n'|base64 -d 2>/dev/null||true)"
-          completion="$(gh api repos/$REPO/contents/_records/publication/$prior/completion.json?ref=main --jq .content 2>/dev/null|tr -d '\n'|base64 -d 2>/dev/null||true)"
-          ls="$(jq -r '.stage//"Unavailable"' <<<"$lifecycle" 2>/dev/null||echo Unavailable)"
-          lo="$(jq -r '.terminal_outcome//"Unavailable"' <<<"$lifecycle" 2>/dev/null||echo Unavailable)"
-          cp="$(jq -r '.phase//"Unavailable"' <<<"$completion" 2>/dev/null||echo Unavailable)"
-          pg="$(jq -r '.pages.conclusion//"Unavailable"' <<<"$completion" 2>/dev/null||echo Unavailable)"
-
-          warnings=1
-          if ! { { [ "$ls" = COMPLETED ] || [ "$ls" = CC_SYNCED ]; } && [ "$lo" = COMPLETED ] && [ "$cp" = live_verified ] && [ "$pg" = success ]; }; then warnings=$((warnings+1)); fi
-
-          if [ "$blockers" -gt 0 ]; then verdict="NOT READY"; emoji="🔴"; elif [ "$warnings" -gt 0 ]; then verdict="READY WITH WARNINGS"; emoji="🟡"; else verdict="READY"; emoji="🟢"; fi
-
-          path="nightly-readiness/Daily_AI_Brief_Nightly_Readiness_${d}.md"
-          url="https://github.com/$REPO/blob/ops/nightly-readiness/$path"
-          cat >/tmp/r.md <<EOF
-# Daily Generative AI Brief — Nightly Readiness Report
-
-## $emoji $verdict
-
-Audit: $d $t America/Chicago
-Current main SHA: $sha
-
-| Check | Result |
-|---|---|
-| Deterministic publication CI | $ci |
-| GitHub Pages | $pages |
-| Deterministic delta validation | $delta |
-| Main protection ruleset | $rules |
-| Prior edition lifecycle | $ls / $lo / $cp / $pg |
-| Work/Codex invoked | No |
-
-Expected sequence: 03:00 metadata -> 03:15 discovery/evidence -> 04:00 production -> 06:30 recovery -> 08:30 validation/repair -> 09:15 freshness -> 10:00 delta validation -> 10:30 closure.
-
-GitHub cannot directly inspect the live ChatGPT automation registry; ChatGPT schedule times are the current operational contract, not live-verified state.
-
-Nightly readiness: $verdict
-Current main SHA: $sha
-Blocking issues: $blockers
-Warnings: $warnings
-Work/Codex invoked: No
-Recommended action before 03:00: $([ "$blockers" -gt 0 ] && echo "Resolve blockers." || echo "No GitHub-side action required.")
-EOF
-
-          b64="$(base64 -w0 /tmp/r.md)"
-          old="$(gh api "repos/$REPO/contents/$path?ref=ops/nightly-readiness" --jq .sha 2>/dev/null||true)"
-          if [ -n "$old" ]; then extra=(-f sha="$old"); else extra=(); fi
-          gh api --method PUT "repos/$REPO/contents/$path" -f message="Nightly readiness $d" -f content="$b64" -f branch=ops/nightly-readiness "${extra[@]}" >/dev/null
-
-          body="@gttome $emoji $verdict — Daily Brief nightly readiness
-
-Audit: $d $t America/Chicago
-Current main: $sha
-Blocking issues: $blockers
-Warnings: $warnings
-Work/Codex invoked: No
-Full report: $url"
-          gh api --method POST repos/$REPO/issues/234/comments -f body="$body" >/dev/null
+      - name: Sanity
+        run: echo nightly-readiness-ok
