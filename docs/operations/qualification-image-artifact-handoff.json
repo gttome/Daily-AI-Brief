@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0.0",
+  "contract_id": "qualification-image-artifact-handoff-v1",
+  "effective_date": "2026-09-26",
+  "scope": "qualification_nonproduction",
+  "root_cause": "Q10 image-only workers generated images, but exact binaries were not durably available to the separate reviewer. A visually passing m08 asset could not be locked byte-for-byte.",
+  "generation": {
+    "dedicated_image_only_worker_required": true,
+    "single_story_packet_required": true,
+    "exact_binary_capture_before_worker_context_exit": true,
+    "candidate_story_lineage_required": true,
+    "fallback_allowed": false
+  },
+  "transport": {
+    "method": "same_worker_exact_binary_capture",
+    "durable_artifact_reference_required": true,
+    "lossy_text_transport_prohibited": true,
+    "reencoding_prohibited": true,
+    "accepted_promotion_must_reuse_same_git_blob_sha": true
+  },
+  "review": {
+    "separate_reviewer_required": true,
+    "reviewer_regeneration_prohibited": true,
+    "acceptance_order": ["subject_identity", "factual_support", "structural_quality", "editorial_quality"],
+    "six_unique_exact_binaries_required": true,
+    "accepted_locked_requires_exact_persisted_bytes": true
+  },
+  "final_manifest": {
+    "path_template": "_records/qualification/YYYY-MM-DD-QN/image-artifacts.json",
+    "accepted_path_template": "_records/qualification/YYYY-MM-DD-QN/images/<candidate_id>.<png|webp>",
+    "formats": ["png", "webp"],
+    "required_fields": ["candidate_id", "story_id", "path", "sha256", "git_blob_sha", "width", "height", "format", "transport_method", "subject_identity", "factual_support", "structural_quality", "editorial_quality", "accepted_locked", "fallback"]
+  },
+  "failure": {
+    "missing_or_mismatched_artifact": "fail_closed",
+    "failure_code": "qualification_image_artifact_routing_unsatisfied",
+    "terminal_run_must_not_be_repaired_into_pass": true,
+    "test_correction_on_next_fresh_q_only": true
+  },
+  "safety": {
+    "production_mutation": false,
+    "work_usage": 0,
+    "codex_usage": 0,
+    "paid_api_usage": 0,
+    "merge_pr_117": false
+  }
+}
