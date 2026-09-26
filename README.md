@@ -1,6 +1,10 @@
 # Daily-AI-Brief
 Daily briefings covering important Generative AI developments, tools, concepts, and engineering practices.
 
+## System operations
+
+The current end-to-end production process, recovery/hardening ledger, notification model, and closure checklist are maintained in the [Living System Operations Reference](docs/operations/LIVING-SYSTEM-OPERATIONS.md).
+
 ## Podcasts
 
 Beginning September 18, 2026, each new edition targets up to two qualifying podcasts after the video positions, with no duration cap, permanent shareable pages, and usefulness ratings. When two are included, they come from distinct approved shows/sources and no more than one may be from _The AI Daily Brief_. See [publisher policy](docs/podcasts/publisher-policy.md), [source research and selection policy](docs/podcasts/source-research.md), and the [source registry](_data/podcast-sources.json).
