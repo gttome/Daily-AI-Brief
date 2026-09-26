@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-26-Q12",
+  "terminal_result": "fail",
+  "failure_code": "qualification_image_subject_lineage_unsatisfied",
+  "qualification_task_paused": true,
+  "durable_result_commit": "761989c76e1d3968d9e16175ba271f92254267ac",
+  "production_mutation": false
+}
