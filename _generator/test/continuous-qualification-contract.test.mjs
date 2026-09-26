@@ -74,3 +74,15 @@ test('qualification images require a dedicated image-only worker context',()=>{
   assert.equal(w.same_worker_retry_prohibited_after_subject_mismatch,true);
   assert.equal(w.max_wrong_subject_attempts_per_story_before_run_fail,2);
 });
+
+
+test('qualification image packets require factual-support allowlists',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const x=c.image_factual_support;
+  assert.equal(x.direct_source_support_required_for_specific_labels,true);
+  assert.equal(x.source_phrase_allowlist_required,true);
+  assert.equal(x.generic_conceptual_elements_allowed,true);
+  assert.equal(x.generic_elements_must_not_imply_product_fact,true);
+  assert.deepEqual(x.image_packet_required_fields,['verified_visual_facts','generic_conceptual_elements','prohibited_specifics']);
+  assert.equal(x.max_factual_support_failures_per_story_before_run_fail,2);
+});
