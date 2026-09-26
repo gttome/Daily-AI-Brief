@@ -1,7 +1,7 @@
 {
   "m02": {
     "path": "briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.svg",
-    "alt": "Professional white-background instructional diagram showing a 3D CT volume passing through multimodal reasoning, structured reporting, and human clinical review.",
+    "alt": "White-background instructional diagram showing a 3D CT volume passing through multimodal reasoning, structured report generation, and human clinical review.",
     "width": 1200,
     "height": 630,
     "kind": "editorial_explainer",
@@ -22,7 +22,7 @@
   },
   "m04": {
     "path": "briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.svg",
-    "alt": "Professional white-background instructional diagram showing component health, workload-driven cluster tests, observed distributed behavior, and a production readiness gate.",
+    "alt": "White-background instructional diagram showing component health, representative distributed workload tests, observed behavior, and a production readiness decision.",
     "width": 1200,
     "height": 630,
     "kind": "editorial_explainer",
@@ -43,7 +43,7 @@
   },
   "m05": {
     "path": "briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.svg",
-    "alt": "Professional white-background instructional diagram showing a generally available Copilot feature flowing through enterprise defaults, organization controls, and governed user access.",
+    "alt": "White-background instructional diagram showing vendor feature availability, enterprise default policy, organization controls, and governed user access.",
     "width": 1200,
     "height": 630,
     "kind": "editorial_explainer",
@@ -64,7 +64,7 @@
   },
   "m07": {
     "path": "briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.svg",
-    "alt": "Professional white-background instructional diagram connecting organizational context, copilots and agents, workflow execution, governance, and measured outcomes.",
+    "alt": "White-background instructional diagram connecting organizational context, AI assistance, workflow execution, governance, and measurable outcomes.",
     "width": 1200,
     "height": 630,
     "kind": "editorial_explainer",
@@ -85,7 +85,7 @@
   },
   "m01": {
     "path": "briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.svg",
-    "alt": "Professional white-background instructional diagram showing an agent task, skill selection, instruction execution, and evaluator checks for skill accuracy and fidelity.",
+    "alt": "White-background instructional diagram showing a user task, agent skill selection, instruction execution, and evaluator checks.",
     "width": 1200,
     "height": 630,
     "kind": "editorial_explainer",
@@ -106,7 +106,7 @@
   },
   "m08": {
     "path": "briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.svg",
-    "alt": "Professional white-background instructional diagram showing a central agent, gateway, account-local MCP servers, authorization boundaries, and an audited governed response.",
+    "alt": "White-background instructional diagram showing a central agent, gateway, MCP servers in separate accounts, and authorization boundaries.",
     "width": 1200,
     "height": 630,
     "kind": "editorial_explainer",

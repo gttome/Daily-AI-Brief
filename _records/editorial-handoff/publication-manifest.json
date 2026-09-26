@@ -3,14 +3,14 @@
   "manifest_kind": "daily_ai_brief_publication",
   "edition_date": "2026-09-25",
   "edition_id": "dab-edition-2026-09-25",
-  "baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
-  "staging_ref": "editorial-handoff/production/2026-09-25-recovery",
+  "baseline_sha": "1623a0897a9319d41b2739cbbee4551e869ea35e",
+  "staging_ref": "editorial-handoff/qualification/wave5-2026-09-25",
   "policy_profile": "under80-v1",
   "artifacts": {
     "kernel": {
       "path": "_records/editorial-handoff/kernel.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:fb4675dda7e7fd0ce68c6f8019e74ec7e914402a"
+      "digest": "git_blob_sha1:91b4f74735321270ad83975b36b24ae66f603001"
     },
     "facts": {
       "path": "_records/editorial-handoff/facts.json",
@@ -43,13 +43,13 @@
       "path": "_records/editorial-handoff/images.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:12a070bd2a2c772b8bc137d7f618d28182887762"
+      "digest": "git_blob_sha1:7fb7763e32e7c74dc21cc5d2b43ff3e91e35e2b6"
     },
     "image_review": {
       "path": "_records/editorial-handoff/final-image-review-2026-09-25.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:486d90213e888dfadae4311873b0b54580018bbc"
+      "digest": "git_blob_sha1:7fb7763e32e7c74dc21cc5d2b43ff3e91e35e2b6"
     },
     "watchlist": {
       "path": "_records/editorial-handoff/watchlist-2026-09-25.json",
@@ -127,6 +127,8 @@
     "source": "reliability_iteration_2",
     "note": "Binds already-completed September 25 artifacts without rewriting editorial, media, image, Watchlist, or reader content. Two historical identity conventions are explicitly adapted: the media receipt kernel hash predates the raw-byte binding rule, and final image-review story_id values are not required to match the later kernel story IDs. Both exceptions expire before the 2026-09-26 frozen-contract cutoff.",
     "allow_legacy_media_kernel_hash_semantics": true,
-    "allow_legacy_image_story_identity": true
+    "allow_legacy_image_story_identity": true,
+    "qualification_replay": true,
+    "qualification_replay_note": "Rebind existing September 25 accepted artifacts to the current Wave 5 production baseline for isolated qualification only; no editorial/media/image/Watchlist regeneration."
   }
 }
