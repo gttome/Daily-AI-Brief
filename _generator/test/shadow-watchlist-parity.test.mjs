@@ -23,13 +23,14 @@ function fixture(){
   const watchlist={schema_version:'1.0.0',edition_date:date,topics};
   fs.writeFileSync(path.join(root,'data','watchlist.json'),JSON.stringify(watchlist,null,2)+'\n');
 
+  fs.mkdirSync(path.join(root,'briefs'),{recursive:true});
   fs.writeFileSync(path.join(root,'README.md'),'# Fixture\n');
   for(const [name,content] of generatedFiles(edition,root,{watchlist})){
     const target=path.join(root,name);
     fs.mkdirSync(path.dirname(target),{recursive:true});
-    fs.writeFileSync(target,content.endsWith('\\n')?content:content+'\\n');
+    fs.writeFileSync(target,content.endsWith('\n')?content:content+'\n');
   }
-  fs.writeFileSync(path.join(root,'archive.md'),'['+date+'](/briefs/'+date+'/ )\\n');
+  fs.writeFileSync(path.join(root,'archive.md'),'['+date+'](/briefs/'+date+'/ )\n');
   for(const story of edition.stories){
     const target=path.join(root,story.image.path);
     fs.mkdirSync(path.dirname(target),{recursive:true});
@@ -42,7 +43,7 @@ test('shadow comparison reuses generated same-edition Watchlist state and still 
   const {root}=fixture();
   try{
     const passing=runShadowCheck(root,date,'fixture');
-    assert.equal(passing.result,'pass',passing.errors.join('\\n'));
+    assert.equal(passing.result,'pass',passing.errors.join('\n'));
     assert.deepEqual(validateDerivedParity(JSON.parse(fs.readFileSync(path.join(root,'_data','editions',date+'.json'),'utf8')),root),[]);
     for(const name of ['briefs/'+date+'.md','latest.md','index.md']){
       const body=fs.readFileSync(path.join(root,name),'utf8');
