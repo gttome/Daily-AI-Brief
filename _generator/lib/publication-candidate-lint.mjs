@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {sha256} from './util.mjs';
-import {inspectPng,inspectWebp} from './visual-output.mjs';
+import {inspectHandoffAsset,gitBlobSha1} from './image-gate.mjs';
 import {publicWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
 import {validateHandoffCheckpoint} from './run-state.mjs';
 
@@ -31,15 +31,16 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
   if(entry.accepted_locked!==true||entry.lock_status!=='accepted_locked')errors.push('image_lock_required:'+story.story_id);
   const file=path.join(root,entry.path||'');
   if(!fs.existsSync(file)){errors.push('image_file_missing:'+story.story_id);continue;}
-  const bytes=fs.readFileSync(file),ext=path.extname(file).toLowerCase(),inspection=ext==='.webp'?inspectWebp(bytes,{minimumWidth:1200,minimumHeight:630}):ext==='.png'?inspectPng(bytes,{minimumWidth:1200,minimumHeight:630}):{pass:false,width:0,height:0,errors:['unsupported']};
-  const hash=sha256(bytes);hashes.add(hash);
+  const bytes=fs.readFileSync(file),ext=path.extname(file).toLowerCase(),inspection=inspectHandoffAsset(bytes,ext);
+  const hash=sha256(bytes),blob=gitBlobSha1(bytes);hashes.add(hash);
   if(!inspection.pass||inspection.width!==1200||inspection.height!==630)errors.push('image_canvas_invalid:'+story.story_id);
-  if(entry.sha256!==hash)errors.push('image_hash_mismatch:'+story.story_id);
+  if(entry.sha256&&entry.sha256!==hash)errors.push('image_hash_mismatch:'+story.story_id);
+  if(entry.git_blob_sha&&entry.git_blob_sha!==blob)errors.push('image_git_blob_mismatch:'+story.story_id);
   if(date>='2026-09-24'){
    if(entry.story_id!==story.story_id)errors.push('image_story_id_required:'+story.story_id);
    if(entry.locked!==true)errors.push('image_locked_true_required:'+story.story_id);
    if(entry.inspection_result!=='pass')errors.push('image_inspection_pass_required:'+story.story_id);
-   if(!/^[a-f0-9]{40,64}$/.test(entry.git_blob_sha||''))errors.push('image_git_blob_identity_required:'+story.story_id);
+   if(!/^[a-f0-9]{40}$/.test(entry.git_blob_sha||''))errors.push('image_git_blob_identity_required:'+story.story_id);
   }
  }
  if(hashes.size!==6)errors.push('six_distinct_image_hashes_required');

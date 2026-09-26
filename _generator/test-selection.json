@@ -147,6 +147,17 @@
         "_generator/test/command-center-delta.test.mjs",
         "_generator/test/image-quality-gate.test.mjs"
       ]
+    },
+    {
+      "patterns": [
+        "_generator/lib/publication-candidate-lint.mjs",
+        "_generator/test/publication-candidate-lint.test.mjs"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/publication-candidate-lint.test.mjs",
+        "_generator/test/image-quality-gate.test.mjs"
+      ]
     }
   ],
   "sentinel_cases": [
