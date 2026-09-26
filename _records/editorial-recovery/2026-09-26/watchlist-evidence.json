@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-26",
+  "recovery_mode": "bounded_selected_story_reconstruction",
+  "recovery_note": "Current-day Watchlist freeze reconstructed from the already-valid single editorial kernel and its selected primary-source evidence. No second semantic pass and no broad discovery restart.",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": false,
+    "reason": "Broad sweep was not rerun during recovery; accepted editorial evidence was reused."
+  },
+  "surfaces": [
+    {
+      "id": "selected_story_primary_evidence",
+      "status": "complete",
+      "queries": [],
+      "candidates_found": 6
+    }
+  ],
+  "candidates_reviewed": [
+    {
+      "name": "Reusable agent skills become observable",
+      "concept_class": "existing_watchlist_topic",
+      "disposition": "update_existing",
+      "rationale": "Qoder 0.4.1 adds a human-confirmed skill-evolution loop that can propose creating or updating reusable Skills from repeated conversational experience.",
+      "evidence_urls": [
+        "https://docs.qoder.com/release-notes/qoder"
+      ]
+    },
+    {
+      "name": "Turning agent memory into compact plans",
+      "concept_class": "existing_watchlist_topic",
+      "disposition": "update_existing",
+      "rationale": "GitHub Agentic Autofix can now consult Copilot Memory for repository-specific secure-development context, adding a production memory-reuse signal.",
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory"
+      ]
+    },
+    {
+      "name": "AI harness engineering becomes a first-class layer",
+      "concept_class": "existing_watchlist_topic",
+      "disposition": "update_existing",
+      "rationale": "GitHub's local sandboxing and Microsoft's governed code runtime add current evidence that execution isolation and runtime boundaries are core agent-harness controls.",
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
+      ]
+    },
+    {
+      "name": "Agents that persist across sessions",
+      "concept_class": "existing_watchlist_topic",
+      "disposition": "update_existing",
+      "rationale": "Microsoft's new Copilot organizes assisted, built, and delegated work around Home, Code, and Autopilot, adding an applied autonomous-work signal.",
+      "evidence_urls": [
+        "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      ]
+    }
+  ],
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-memory-guided-planning",
+    "dab-topic-harness-engineering",
+    "dab-topic-long-horizon-agents"
+  ],
+  "zero_new_certified": false,
+  "zero_new_justification": "No new topic is asserted by this bounded recovery. Four established topics are updated using already-selected primary evidence; no fresh zero-new broad sweep is claimed."
+}
