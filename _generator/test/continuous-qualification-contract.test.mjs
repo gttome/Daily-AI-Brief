@@ -86,3 +86,25 @@ test('qualification image packets require factual-support allowlists',()=>{
   assert.deepEqual(x.image_packet_required_fields,['verified_visual_facts','generic_conceptual_elements','prohibited_specifics']);
   assert.equal(x.max_factual_support_failures_per_story_before_run_fail,2);
 });
+
+
+test('qualification scheduling is sequential and future Q runs are not clock-prescheduled',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const s=c.schedule_separation;
+  assert.equal(s.maximum_concurrent_nonterminal_q_runs,1);
+  assert.equal(s.future_q_clock_prescheduling,false);
+  assert.equal(s.next_q_requires_previous_terminal,true);
+  assert.equal(s.next_q_requires_failure_repair_merged_when_applicable,true);
+  assert.ok(s.reserve_slot_capacity_target>=20);
+});
+
+test('qualification source supply can continue beyond normal acquisition budget without exceeding absolute budget',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const s=c.qualification_source_supply_acquisition;
+  assert.equal(s.qualification_only,true);
+  assert.equal(s.production_normal_budget_behavior_unchanged,true);
+  assert.equal(s.normal_budget_can_stop_qualification_when_supply_incomplete,false);
+  assert.equal(s.absolute_retrieval_budget_remains_hard,true);
+  assert.equal(s.source_scan_maximum_remains_hard,true);
+  assert.equal(s.minimum_fresh_focus_candidates_before_sufficiency_stop,5);
+});
