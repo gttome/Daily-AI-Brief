@@ -123,7 +123,8 @@ jobs:
           if(!Number.isFinite(Date.parse(r.cutoff))) throw new Error('invalid_cutoff');
           const max=Math.max(24,Math.min(64,Number(r.source_scan_max||48)));
           const fresh=Math.max(20,Math.min(40,Number(r.fresh_metadata_target||24)));
-          fs.appendFileSync(out,'cutoff='+r.cutoff+'\nedition_date='+r.edition_date+'\nsource_scan_max='+max+'\nfresh_metadata_target='+fresh+'\n');
+          const purpose=String(r.purpose||'');
+          fs.appendFileSync(out,'cutoff='+r.cutoff+'\nedition_date='+r.edition_date+'\npurpose='+purpose+'\nsource_scan_max='+max+'\nfresh_metadata_target='+fresh+'\n');
           NODE
 
       - name: Run deterministic discovery outside Work
@@ -154,7 +155,11 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _records/discovery-preflight/result
-          node _tools/under80-metadata-gate.mjs --input _data/media-candidate-queue.json --out _records/discovery-preflight/result/metadata-candidates.json --limit 20 --cutoff "${{ steps.config.outputs.cutoff }}"
+          extra=()
+          if [ "${{ steps.config.outputs.purpose }}" = "continuous_qualification" ]; then
+            extra+=(--qualification-edition-date "${{ steps.config.outputs.edition_date }}")
+          fi
+          node _tools/under80-metadata-gate.mjs --input _data/media-candidate-queue.json --out _records/discovery-preflight/result/metadata-candidates.json --limit 20 --cutoff "${{ steps.config.outputs.cutoff }}" "${extra[@]}"
 
       - name: Verify readiness before Work may consume it
         if: steps.request.outputs.run_preflight == 'true'
@@ -167,7 +172,7 @@ jobs:
           if(!Array.isArray(d.candidates)||d.candidates.length>20) throw new Error('candidate_limit_invalid');
           if(d.candidates.some(x=>x.date_status!=='resolved_metadata_date'||!x.metadata_event_at)) throw new Error('unresolved_metadata_date');
           if(!d.coverage_counts||!['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].every(k=>d.coverage_counts[k]>=3)) throw new Error('focus_coverage_invalid');
-          if((d.agent_skill_story_ready_signals||0)<1) throw new Error('agent_skill_story_ready_signal_missing');
+          if((d.agent_skill_story_ready_signals_after_novelty??d.agent_skill_story_ready_signals??0)<1) throw new Error('qualification_agent_skill_unavailable_after_novelty');
           if(!d.preferred_agent_skill_candidate_id) throw new Error('preferred_agent_skill_candidate_missing');
           NODE
 

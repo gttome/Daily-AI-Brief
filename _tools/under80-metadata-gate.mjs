@@ -11,16 +11,19 @@ const cutoff=args.cutoff?Date.parse(args.cutoff):Date.now();
 if(!Number.isFinite(cutoff))throw Error('valid_cutoff_required');
 const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||72);
 const skillAgeHours=Number(args['skill-max-age-hours']||168);
+const qualificationEditionDate=args['qualification-edition-date']||null;
+const publishedEditionsDir=args['published-editions-dir']||'_data/editions';
+if(qualificationEditionDate&&!/^\d{4}-\d{2}-\d{2}$/.test(qualificationEditionDate))throw Error('valid_qualification_edition_date_required');
 if(!Number.isFinite(ordinaryAgeHours)||ordinaryAgeHours<=0||!Number.isFinite(skillAgeHours)||skillAgeHours<ordinaryAgeHours)throw Error('valid_metadata_age_windows_required');
 
 const publishedUrls=new Set();
-if(fs.existsSync('_data/editions')){
- for(const name of fs.readdirSync('_data/editions').filter(name=>/^\d{4}-\d{2}-\d{2}\.json$/.test(name)).sort()){
+if(fs.existsSync(publishedEditionsDir)){
+ for(const name of fs.readdirSync(publishedEditionsDir).filter(name=>/^\d{4}-\d{2}-\d{2}\.json$/.test(name)).sort()){
   const editionDate=name.slice(0,10);
-  const cutoffDate=new Date(cutoff).toISOString().slice(0,10);
+  const cutoffDate=qualificationEditionDate||new Date(cutoff).toISOString().slice(0,10);
   if(editionDate>=cutoffDate)continue;
   try{
-   const edition=JSON.parse(fs.readFileSync(path.join('_data/editions',name),'utf8'));
+   const edition=JSON.parse(fs.readFileSync(path.join(publishedEditionsDir,name),'utf8'));
    for(const story of edition.stories||[]){
     const prior=story?.source?.normalized_url||story?.source?.url;
     if(prior)try{publishedUrls.add(normalizeUrl(prior));}catch{}
@@ -99,7 +102,8 @@ for(const item of source){
  // story must not remain technical merely because it came from a research-heavy source.
  const agentOverride=(inferredFocus==='agents_non_technical_people'&&/\b(customer support|support agents?|troubleshooting agents?|workflow automation|assistant|business users?|knowledge worker)\b/i.test(combined))||/\btroubleshooting agents?\b/i.test(title)&&/\bcustomer support\b/i.test(combined);
  const focus=isSkill?'agents_non_technical_people':agentOverride?'agents_non_technical_people':appliedOverride?'applied_genai_knowledge_workers':providedFocus||inferredFocus;
- const skillStoryReady=isSkill&&(dateBasis==='published_at'||(dateBasis==='updated_at_requires_material_update_review'&&item.material_update_verified===true));
+ const productionNoveltyEligible=!qualificationEditionDate||!publishedUrls.has(url)||item.material_update_verified===true;
+ const skillStoryReady=isSkill&&productionNoveltyEligible&&(dateBasis==='published_at'||(dateBasis==='updated_at_requires_material_update_review'&&item.material_update_verified===true));
  const normalized={
   candidate_id:text(item.candidate_id)||null,
   headline:title,
@@ -118,6 +122,8 @@ for(const item of source){
   agent_skill_story_ready:skillStoryReady,
   material_update_verified:item.material_update_verified===true,
   recently_published:publishedUrls.has(url),
+  production_novelty_eligible:productionNoveltyEligible,
+  production_novelty_reason:productionNoveltyEligible?null:'exact_source_published_before_qualification_edition',
   background_only:item.background_only===true,
   required_topic:item.required_topic||null,
   status:'metadata_prefiltered_not_deep_reviewed'
@@ -168,6 +174,7 @@ if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_vio
 const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
 const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
+const agentSkillStoryReadySignalsAfterNovelty=agentSkillStoryReadySignals;
 const preferredAgentSkillCandidateId=(candidates.find(x=>x.agent_skill_story_ready&&!x.recently_published)||candidates.find(x=>x.agent_skill_story_ready))?.candidate_id||null;
 const coverageReady=Object.values(coverageCounts).every(n=>n>=3)&&agentSkillStoryReadySignals>=1;
 const result={
@@ -185,6 +192,8 @@ const result={
  coverage_counts:coverageCounts,
  agent_skill_signals:agentSkillSignals,
  agent_skill_story_ready_signals:agentSkillStoryReadySignals,
+ agent_skill_story_ready_signals_after_novelty:agentSkillStoryReadySignalsAfterNovelty,
+ qualification_novelty_cutoff_date:qualificationEditionDate,
  preferred_agent_skill_candidate_id:preferredAgentSkillCandidateId,
  coverage_ready:coverageReady,
  rejected,
@@ -193,4 +202,4 @@ const result={
 };
 fs.mkdirSync(path.dirname(path.resolve(args.out)),{recursive:true});
 fs.writeFileSync(path.resolve(args.out),JSON.stringify(result,null,2)+'\n');
-console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,agent_skill_story_ready_signals:agentSkillStoryReadySignals,preferred_agent_skill_candidate_id:preferredAgentSkillCandidateId,coverage_ready:coverageReady,rejected}));
+console.log(JSON.stringify({out:path.resolve(args.out),raw_queue_count:source.length,eligible:eligible.length,retained:candidates.length,limit,coverage_counts:coverageCounts,agent_skill_signals:agentSkillSignals,agent_skill_story_ready_signals:agentSkillStoryReadySignals,agent_skill_story_ready_signals_after_novelty:agentSkillStoryReadySignalsAfterNovelty,qualification_novelty_cutoff_date:qualificationEditionDate,preferred_agent_skill_candidate_id:preferredAgentSkillCandidateId,coverage_ready:coverageReady,rejected}));
