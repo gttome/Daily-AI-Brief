@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.1.0",
+  "run_id": "2026-09-26-Q10",
+  "mode": "single_story",
+  "story_ids": [
+    "q10-story-m06"
+  ],
+  "candidate_id": "m06",
+  "includes_edition_context": false,
+  "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+  "headline": "Microsoft reorganizes Copilot around Home, Code and persistent Autopilot work",
+  "visual_brief": "White-background 1200x630 professional textbook plate with three clear lanes: Home, Code, and Autopilot. Show Home as the starting point connecting Chat/Cowork and Office, Code as solution building, and Autopilot as persistent delegated work. Avoid unsupported interface detail.",
+  "verified_visual_facts": [
+    "Home",
+    "Code",
+    "Autopilot",
+    "Chat",
+    "Cowork",
+    "Word",
+    "Excel",
+    "PowerPoint",
+    "Frontier program"
+  ],
+  "generic_conceptual_elements": [
+    "starting-point lane",
+    "solution-building lane",
+    "persistent delegated-work lane",
+    "human oversight marker"
+  ],
+  "prohibited_specifics": [
+    "invented buttons",
+    "invented settings",
+    "invented rollout dates beyond coming weeks",
+    "unsupported automation behavior",
+    "unsupported product UI"
+  ],
+  "reference_policy": "No other story image or prompt may be used. Generation must occur in a fresh dedicated image-only worker containing only this packet.",
+  "acceptance_order": [
+    "subject_identity",
+    "factual_support",
+    "structural_quality",
+    "editorial_quality"
+  ],
+  "wrong_subject_action": "discard_and_start_fresh_image_only_worker",
+  "factual_support_failure_action": "discard_and_start_fresh_image_only_worker",
+  "low_quality_fallback": false
+}
