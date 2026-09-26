@@ -15,7 +15,7 @@ test('September 25 migration manifest binds completed artifacts without rework',
  if(handoff.execution_mode==='production')assert.equal(manifest.staging_ref,'editorial-handoff/production/2026-09-25-recovery');
  else {
   assert.equal(handoff.execution_mode,'qualification_nonproduction');
-  assert.match(manifest.staging_ref,/^editorial-handoff\\/qualification\\//);
+  assert.equal(manifest.staging_ref.startsWith('editorial-handoff/qualification/'),true);
   assert.equal(manifest.migration?.qualification_replay,true);
  }
  const result=validatePublicationManifest(root,manifest,{expectedBaseline:manifest.baseline_sha,expectedEditionDate:'2026-09-25',expectedStagingRef:handoff.staging_ref});
