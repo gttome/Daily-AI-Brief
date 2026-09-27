@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH1",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "terminal": true,
+  "states": ["PACKET_READY","WORKER_STARTED"],
+  "pre_generation_context_attestation": {
+    "status": "FAIL",
+    "failure_code": "image_harness_worker_context_attestation_unsatisfied",
+    "sealed_story_packet_only": false,
+    "fresh_execution_context": true,
+    "generation_instruction_source": "automation_runtime_plus_sealed_story_packet",
+    "other_story_context_present": false,
+    "operational_context_present": true,
+    "prior_image_worker_history_present": false,
+    "parent_conversation_history_present": true,
+    "reused_execution_context": false,
+    "context_attested_before_generation": true,
+    "reason": "The runtime necessarily exposes orchestration/conversation context outside the sealed story packet, so sealed_story_packet_only cannot be truthfully attested."
+  },
+  "subject_lock": {
+    "status": "NOT_EVALUATED",
+    "reason": "pre_generation_context_attestation_failed_before_generation"
+  },
+  "generation": {
+    "attempted": false,
+    "image_generated": false
+  },
+  "durable_library_capture": {
+    "attempted": false
+  },
+  "review": {
+    "attempted": false
+  },
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "attempts_remaining": 0,
+  "terminal_failure_code": "image_harness_worker_context_attestation_unsatisfied",
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "recorded_at": "2026-09-27T00:03:06Z"
+}
