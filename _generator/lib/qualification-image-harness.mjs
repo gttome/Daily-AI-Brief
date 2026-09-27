@@ -6,6 +6,61 @@ export const IMAGE_HARNESS_STATES=[
   'STRUCTURAL_QUALITY_PASS','EDITORIAL_QUALITY_PASS','EXACT_GIT_BLOB_PERSISTED','ACCEPTED_LOCKED'
 ];
 
+export const IMAGE_WORKER_PACKET_KEYS=[
+  'story_id','candidate_id','headline','source_url','verified_visual_facts',
+  'generic_conceptual_elements','prohibited_specifics','visual_brief','reference_policy',
+  'acceptance_order','wrong_subject_action','low_quality_fallback'
+];
+
+export function buildQualificationImageWorkerPayload(packet){
+  if(!packet||typeof packet!=='object')throw new Error('sealed_story_packet_required');
+  const payload={};
+  for(const key of IMAGE_WORKER_PACKET_KEYS){
+    if(packet[key]===undefined||packet[key]===null||packet[key]==='')throw new Error(`missing_${key}`);
+    payload[key]=packet[key];
+  }
+  return payload;
+}
+
+export function validateQualificationImageWorkerPayload(payload){
+  const errors=[];
+  if(!payload||typeof payload!=='object'||Array.isArray(payload))return ['image_worker_payload_required'];
+  const keys=Object.keys(payload);
+  for(const key of IMAGE_WORKER_PACKET_KEYS){
+    if(payload[key]===undefined||payload[key]===null||payload[key]==='')errors.push(`missing_${key}`);
+  }
+  for(const key of keys){
+    if(!IMAGE_WORKER_PACKET_KEYS.includes(key))errors.push(`prohibited_worker_payload_key_${key}`);
+  }
+  for(const field of ['verified_visual_facts','generic_conceptual_elements','prohibited_specifics','acceptance_order']){
+    if(!Array.isArray(payload[field])||payload[field].length<1)errors.push(`${field}_array_required`);
+  }
+  if(payload.low_quality_fallback!==false)errors.push('low_quality_fallback_must_be_false');
+  if(typeof payload.reference_policy!=='string'||!payload.reference_policy.includes('no other story'))errors.push('reference_policy_must_exclude_other_story_context');
+  if(typeof payload.wrong_subject_action!=='string'||!payload.wrong_subject_action.toLowerCase().includes('discard'))errors.push('wrong_subject_action_must_discard');
+  return [...new Set(errors)];
+}
+
+export function buildQualificationImageGenerationInstruction(payload){
+  const errors=validateQualificationImageWorkerPayload(payload);
+  if(errors.length)throw new Error(`invalid_image_worker_payload:${errors.join(',')}`);
+  return [
+    `story_id: ${payload.story_id}`,
+    `candidate_id: ${payload.candidate_id}`,
+    `headline: ${payload.headline}`,
+    `source_url: ${payload.source_url}`,
+    `verified_visual_facts: ${payload.verified_visual_facts.join('; ')}`,
+    `generic_conceptual_elements: ${payload.generic_conceptual_elements.join('; ')}`,
+    `prohibited_specifics: ${payload.prohibited_specifics.join('; ')}`,
+    `visual_brief: ${payload.visual_brief}`,
+    `reference_policy: ${payload.reference_policy}`,
+    `acceptance_order: ${payload.acceptance_order.join(' -> ')}`,
+    `wrong_subject_action: ${payload.wrong_subject_action}`,
+    'low_quality_fallback: prohibited',
+    'Generate exactly one illustration for this story. Return only the generated illustration.'
+  ].join('\n');
+}
+
 export function validateImageHarnessAttempt(attempt,{candidateId=null,maxAttempts=2}={}){
   const errors=[];
   if(!attempt||typeof attempt!=='object')return ['image_harness_attempt_required'];
