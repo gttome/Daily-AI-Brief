@@ -55,3 +55,20 @@ The harness may report PASS only when:
 - production mutation = false.
 
 Only then may fresh Q13 be released.
+
+
+## IH1 failure and launcher correction
+
+IH1 failed before a valid accepted image because the worker launch itself carried orchestration/runtime language. That made `sealed_story_packet_only` impossible to attest truthfully even when no other story was present.
+
+The permanent correction separates orchestration from generation:
+
+- orchestration may hold harness identity, retry state, scheduler state, branch/record paths, and review instructions;
+- the image worker payload is built deterministically from an allowlist of sealed story fields only;
+- any extra payload key fails closed before launch;
+- the generation instruction is synthesized only from the validated sealed payload;
+- harness IDs, Q IDs, scheduler/publication/repair state, parent-conversation fields, and other operational metadata are never copied into the image-generation payload.
+
+This correction does not relax the context gate. It makes the launch boundary testable and prevents the launcher itself from contaminating the image-generation instruction.
+
+The correction must be proved on a fresh harness identity. IH1 remains terminal evidence and must not be reopened.
