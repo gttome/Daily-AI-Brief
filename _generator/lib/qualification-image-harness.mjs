@@ -9,7 +9,7 @@ export const IMAGE_HARNESS_STATES=[
 export const IMAGE_WORKER_PACKET_KEYS=[
   'story_id','candidate_id','headline','source_url','verified_visual_facts',
   'generic_conceptual_elements','prohibited_specifics','visual_brief','reference_policy',
-  'acceptance_order','wrong_subject_action','low_quality_fallback'
+  'acceptance_order','wrong_subject_action','low_quality_fallback','allowed_image_text'
 ];
 
 export function buildQualificationImageWorkerPayload(packet){
@@ -32,10 +32,19 @@ export function validateQualificationImageWorkerPayload(payload){
   for(const key of keys){
     if(!IMAGE_WORKER_PACKET_KEYS.includes(key))errors.push(`prohibited_worker_payload_key_${key}`);
   }
-  for(const field of ['verified_visual_facts','generic_conceptual_elements','prohibited_specifics','acceptance_order']){
+  for(const field of ['verified_visual_facts','generic_conceptual_elements','prohibited_specifics','acceptance_order','allowed_image_text']){
     if(!Array.isArray(payload[field])||payload[field].length<1)errors.push(`${field}_array_required`);
   }
   if(payload.low_quality_fallback!==false)errors.push('low_quality_fallback_must_be_false');
+  if(Array.isArray(payload.allowed_image_text)){
+    const seen=new Set();
+    for(const label of payload.allowed_image_text){
+      if(typeof label!=='string'||label.trim()!==label||label.length<1||label.length>80)errors.push('allowed_image_text_label_invalid');
+      if(typeof label==='string'&&label.trim().split(/\s+/).length>8)errors.push('allowed_image_text_label_too_long');
+      if(seen.has(label))errors.push('allowed_image_text_duplicate');
+      seen.add(label);
+    }
+  }
   if(typeof payload.reference_policy!=='string'||!payload.reference_policy.includes('no other story'))errors.push('reference_policy_must_exclude_other_story_context');
   if(typeof payload.wrong_subject_action!=='string'||!payload.wrong_subject_action.toLowerCase().includes('discard'))errors.push('wrong_subject_action_must_discard');
   return [...new Set(errors)];
@@ -56,9 +65,23 @@ export function buildQualificationImageGenerationInstruction(payload){
     `reference_policy: ${payload.reference_policy}`,
     `acceptance_order: ${payload.acceptance_order.join(' -> ')}`,
     `wrong_subject_action: ${payload.wrong_subject_action}`,
+    `allowed_image_text: ${payload.allowed_image_text.join(' | ')}`,
+    'VISIBLE TEXT POLICY: Render only the exact strings listed in allowed_image_text. Do not render the headline unless it is explicitly present in allowed_image_text. Do not add captions, explanatory prose, summaries, sentences, examples, button text, UI text, or any other words.',
     'low_quality_fallback: prohibited',
     'Generate exactly one illustration for this story. Return only the generated illustration.'
   ].join('\n');
+}
+
+export function validateQualificationImageRenderedText(renderedText,allowedImageText){
+  const errors=[];
+  if(!Array.isArray(renderedText))return ['rendered_text_strings_required'];
+  if(!Array.isArray(allowedImageText)||allowedImageText.length<1)return ['allowed_image_text_required'];
+  const allowed=new Set(allowedImageText);
+  for(const text of renderedText){
+    if(typeof text!=='string'||text.trim()!==text||text.length<1){errors.push('rendered_text_string_invalid');continue;}
+    if(!allowed.has(text))errors.push(`rendered_text_not_allowlisted:${text}`);
+  }
+  return [...new Set(errors)];
 }
 
 export function validateImageHarnessAttempt(attempt,{candidateId=null,maxAttempts=2}={}){
@@ -83,6 +106,7 @@ export function validateImageHarnessAttempt(attempt,{candidateId=null,maxAttempt
     if(!/^[a-f0-9]{64}$/.test(attempt.sha256||''))errors.push('sha256_invalid');
     if(typeof attempt.git_blob_sha!=='string'||attempt.git_blob_sha.length<7)errors.push('git_blob_sha_required');
     if(!Number.isInteger(attempt.width)||attempt.width<1||!Number.isInteger(attempt.height)||attempt.height<1)errors.push('dimensions_invalid');
+    for(const textError of validateQualificationImageRenderedText(attempt.rendered_text_strings,attempt.allowed_image_text))errors.push(textError);
   }
   return [...new Set(errors)];
 }
