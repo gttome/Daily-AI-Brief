@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH8",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "baseline_main_sha": "9a5fdadf134af74417393c01e76eb23d4256eaa4",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "generation": {
+    "gen_id": "e1d2f711-9842-48c5-ac46-4fef6ad7aa0a",
+    "sha256": "fe73732de5c52000944fe87724ba4534d35e1f2271485a75a6c1a985a054e68a",
+    "width": 1536,
+    "height": 1024,
+    "mime_type": "image/png",
+    "size_bytes": 1874889,
+    "post_generation_transform": false
+  },
+  "library": {
+    "library_file_id": "libfile_cab8bfe052048191a0ae7937a630f113",
+    "file_id": "file_0000000018388209bfe5d2a277fd3a5d",
+    "path": "/Daily AI Brief Qualification Images/m02/IH8-m02-attempt-1.png",
+    "exact_byte_rematerialization": true,
+    "rematerialized_sha256": "fe73732de5c52000944fe87724ba4534d35e1f2271485a75a6c1a985a054e68a"
+  },
+  "gates": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "fail",
+    "visible_text_exact_set": "fail",
+    "structural_quality": "not_run",
+    "editorial_quality": "not_run"
+  },
+  "rendered_text_strings": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint",
+    "From Target to Trust",
+    "AUTOMATED TESTING FOR A MORE SECURE TOMORROW"
+  ],
+  "allowed_image_text": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "text_evidence": {
+    "required_count": 6,
+    "required_present_exactly_once_count": 6,
+    "missing_required_count": 0,
+    "duplicate_required_count": 0,
+    "extra_nonallowlisted_strings": [
+      "From Target to Trust",
+      "AUTOMATED TESTING FOR A MORE SECURE TOMORROW"
+    ],
+    "extra_nonallowlisted_count": 2
+  },
+  "failure_code": "qualification_image_visible_text_not_allowlisted",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "attempts_remaining": 1,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}

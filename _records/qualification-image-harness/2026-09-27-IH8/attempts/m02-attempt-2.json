@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH8",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "baseline_main_sha": "9a5fdadf134af74417393c01e76eb23d4256eaa4",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS"
+  ],
+  "generation": {
+    "gen_id": "5d20fab9-02ec-4876-a7bc-a792e5cd2d1a",
+    "sha256": "19cbbbb4cd5908213b47d459d2d531e539977bfb1dc4f50683f3a15938a5f654",
+    "width": 1840,
+    "height": 854,
+    "mime_type": "image/png",
+    "size_bytes": 1490626,
+    "post_generation_transform": false
+  },
+  "library": {
+    "library_file_id": "libfile_37ba7c1ddb0c8191a2a4f29d2963f0e0",
+    "file_id": "file_00000000d9e4820990742249313d1ddd",
+    "path": "/Daily AI Brief Qualification Images/m02/IH8-m02-attempt-2.png",
+    "exact_byte_rematerialization": true,
+    "rematerialized_sha256": "19cbbbb4cd5908213b47d459d2d531e539977bfb1dc4f50683f3a15938a5f654"
+  },
+  "gates": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "pass",
+    "visible_text_exact_set": "pass",
+    "structural_quality": "fail",
+    "editorial_quality": "not_run"
+  },
+  "rendered_text_strings": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "allowed_image_text": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "text_evidence": {
+    "required_count": 6,
+    "required_present_exactly_once_count": 6,
+    "missing_required_count": 0,
+    "duplicate_required_count": 0,
+    "extra_nonallowlisted_strings": [],
+    "extra_nonallowlisted_count": 0
+  },
+  "structural_evidence": [
+    "six evenly spaced one-label-per-stage visual columns",
+    "simple straight left-to-right arrow chain",
+    "isolated icon/pedestal treatment instead of an integrated central mechanism",
+    "effective generation prompt described six evenly spaced stages connected left to right"
+  ],
+  "failure_code": "qualification_image_prohibited_composition_pattern",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "attempts_remaining": 0,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
