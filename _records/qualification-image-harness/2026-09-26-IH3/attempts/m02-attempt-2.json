@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH3",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "terminal": true,
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "generation": {
+    "sha256": "076e328f47b7c3855f785f3449edbe12690b7fbef92669450e73b1dfdf39c507",
+    "width": 1730,
+    "height": 909,
+    "mime_type": "image/png",
+    "size_bytes": 1234956,
+    "post_generation_transform": false
+  },
+  "library": {
+    "library_file_id": "libfile_1bbc33cca7c8819186bbcff5d11d0320",
+    "file_id": "file_000000009ea081f6bd17495d93a86b3b",
+    "path": "/Daily AI Brief Qualification Images/m02/IH3-m02-attempt-2.png",
+    "exact_byte_rematerialization": false
+  },
+  "review": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "fail",
+    "structural_quality": "pass",
+    "editorial_quality": "fail",
+    "findings": [
+      "The image depicts the intended GitHub Security Lab Taskflow Agent / AI-powered fuzzing workflow.",
+      "It introduces unsupported behaviors/claims including 'Generates and manages test inputs, runs tests, analyzes results', 'Results reviewed and triaged', 'Iterate with new inputs and insights', and 'help find and fix security issues'.",
+      "These statements exceed the verified visual facts allowlist and therefore fail factual support.",
+      "Because unsupported explanatory text is prominent, the image also fails the editorial acceptance gate for this harness."
+    ]
+  },
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "attempts_remaining": 0,
+  "terminal_failure_code": "image_harness_visual_acceptance_unsatisfied",
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
