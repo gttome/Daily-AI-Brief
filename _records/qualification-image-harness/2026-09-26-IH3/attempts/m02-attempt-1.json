@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH3",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "generation": {
+    "sha256": "17067930a011cde38ec3a320bbdf5a0d4fd20e3ca54e63df3cf20f3cb634f43f",
+    "width": 1731,
+    "height": 909,
+    "mime_type": "image/png",
+    "size_bytes": 1221007,
+    "post_generation_transform": false
+  },
+  "library": {
+    "library_file_id": "libfile_6975685c29bc819197851040834303cb",
+    "file_id": "file_0000000071fc81f6b1ea76ba0ab20884",
+    "path": "/Daily AI Brief Qualification Images/m02/IH3-m02-attempt-1.png",
+    "exact_byte_rematerialization": true,
+    "rematerialized_sha256": "17067930a011cde38ec3a320bbdf5a0d4fd20e3ca54e63df3cf20f3cb634f43f"
+  },
+  "review": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "fail",
+    "structural_quality": "pass",
+    "editorial_quality": "fail",
+    "findings": [
+      "The visible subject is the intended GitHub Security Lab Taskflow Agent / AI-powered fuzzing story.",
+      "The image adds the concrete behavior 'adapts tests to explore new behaviors', which is not in the verified visual facts allowlist.",
+      "The image includes a depicted human reviewer figure, violating the standing no-people image standard."
+    ]
+  },
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "attempts_remaining": 1,
+  "failure_code": "image_harness_visual_acceptance_unsatisfied",
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
