@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH2",
+  "state": "TERMINAL_FAIL",
+  "failed_story_id": "story-m02",
+  "failed_candidate_id": "m02",
+  "failed_stage": "WORKER_STARTED",
+  "failure_code": "image_harness_isolated_generation_runtime_unavailable",
+  "bounded_attempts_used": 1,
+  "accepted_locked_count": 0,
+  "accepted_locked_candidates": [],
+  "cross_story_contamination_count": 0,
+  "fallback_used": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "next_action": "Provide a genuinely isolated image-generation worker boundary in which the generator receives only the validated sealed worker payload. Do not retry IH2 through the same runtime; prove the correction with a fresh harness identity.",
+  "immutable_evidence": [
+    "_records/qualification-image-harness/2026-09-26-IH2/attempts/m02-attempt-1.json"
+  ],
+  "recorded_at": "2026-09-27T00:46:30Z"
+}
