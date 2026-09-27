@@ -89,3 +89,22 @@ Permanent control:
 - a text-policy failure is a factual-support failure and cannot be repaired by editing the generated image.
 
 IH3 remains terminal evidence. This correction must be tested on a fresh harness identity before Q13 can be released.
+
+
+## IH4 editorial-composition correction
+
+IH4 proved the current lineage, factual-support, visible-text allowlist, durable Library capture, raw-byte materialization, structural-quality, no-fallback, and zero-cost controls. Both bounded m02 attempts still failed editorial quality because they converged on sparse six-card/icon-panel flows rather than the required professional high-detail textbook/editorial mechanism composition.
+
+Permanent control:
+
+- every sealed image-worker packet requires `composition_mode = mechanism_rich_textbook_plate`;
+- the generated plate must contain a central mechanism or process core;
+- the composition must use multiple interacting visual layers;
+- causal or functional relationships must extend beyond one straight left-to-right arrow chain;
+- dense but readable hierarchy is required;
+- `card_grid`, `dashboard`, `status_flow`, and `six_panel_icon_strip` are mandatory prohibited patterns;
+- isolated icon panels, sparse tile layouts, and simple linear status-chain compositions are explicitly prohibited;
+- composition density may not be achieved by adding text outside `allowed_image_text`;
+- all prior isolation, subject-lineage, factual-support, exact-text, artifact-routing, exact-byte, bounded-retry, no-fallback, and review-order controls remain unchanged.
+
+IH4 remains terminal evidence and is not repaired or rerun. The correction must be proved on fresh harness identity `2026-09-26-IH5`, starting with m02 only. Q13 remains blocked until a later six-story harness reaches 6/6 `accepted_locked` with zero cross-story contamination, no fallback, Work=0, Codex=0, paid API=0, and production mutation=false.
