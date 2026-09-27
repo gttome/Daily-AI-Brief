@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH5",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "baseline_main_sha": "96a0b3127eab0cfed72e980ff64998961c176791",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "composition_mode": "mechanism_rich_textbook_plate",
+  "allowed_image_text": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "rendered_text_strings": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint",
+    "Refine and Repeat"
+  ],
+  "missing_required_text": [
+    "AI-powered Fuzzing Workflow"
+  ],
+  "non_allowlisted_text": [
+    "Refine and Repeat"
+  ],
+  "generation": {
+    "sha256": "1a8148321c457fe203fb9d5624f3b0c734da14b6ff3e8fd13941b26b1b0f7362",
+    "width": 1536,
+    "height": 1024,
+    "mime_type": "image/png",
+    "size_bytes": 1420246,
+    "post_generation_transform": false
+  },
+  "library": {
+    "library_file_id": "libfile_2eb713cbfd20819195865960a9eaedb6",
+    "file_id": "file_00000000ce1c81f4a2e10ac097ccc703",
+    "current_version_number": 0,
+    "path": "/Daily AI Brief Qualification Images/m02/IH5-m02-attempt-1.png",
+    "exact_byte_rematerialization": true,
+    "rematerialized_sha256": "1a8148321c457fe203fb9d5624f3b0c734da14b6ff3e8fd13941b26b1b0f7362"
+  },
+  "gates": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "fail",
+    "visible_text_allowlist": "fail",
+    "structural_quality": "not_run",
+    "editorial_quality": "not_run"
+  },
+  "failure_code": "qualification_image_visible_text_allowlist_unsatisfied",
+  "failure_reason": "Attempt 1 rendered non-allowlisted visible text `Refine and Repeat` and omitted required visible label `AI-powered Fuzzing Workflow`; failed closed at factual-support/text-allowlist gate.",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "attempts_remaining": 1,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
