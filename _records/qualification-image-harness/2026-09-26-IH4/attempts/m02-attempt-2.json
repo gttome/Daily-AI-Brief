@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH4",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "baseline_main_sha": "892860aad6f9fdd08124456c565bcf19a42db6d2",
+  "sha256": "2edbf2b39c4fda32d6a36d0e183560d0a91edd2e95e0b23285784147ea562730",
+  "dimensions": {
+    "width": 1730,
+    "height": 909
+  },
+  "mime_type": "image/png",
+  "size_bytes": 998320,
+  "library_file_id": "libfile_cae40444f8008191be44c5a3ab866a6e",
+  "backing_file_id": "file_0000000089e882308c69882d33daebcd",
+  "library_path": "/Daily AI Brief Qualification Images/m02/IH4-m02-attempt-2.png",
+  "exact_raw_materialization": true,
+  "allowed_image_text": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "rendered_text_strings": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "gates": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "pass",
+    "visible_text_allowlist": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "fail"
+  },
+  "failure_code": "qualification_image_editorial_quality_unsatisfied",
+  "failure_reason": "Second bounded attempt again produced a sparse six-card icon flow. It is clean and factually constrained but remains below the required high-detail professional textbook/editorial mechanism benchmark.",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "git_persistence_not_attempted": true,
+  "fallback": false,
+  "attempts_remaining": 0,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
