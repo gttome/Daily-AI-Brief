@@ -72,3 +72,20 @@ The permanent correction separates orchestration from generation:
 This correction does not relax the context gate. It makes the launch boundary testable and prevents the launcher itself from contaminating the image-generation instruction.
 
 The correction must be proved on a fresh harness identity. IH1 remains terminal evidence and must not be reopened.
+
+
+## IH3 factual-support text correction
+
+IH3 proved that correct subject lineage and isolated generation are still insufficient when the generator invents explanatory prose inside the image.
+
+Permanent control:
+
+- every sealed story packet now carries an explicit `allowed_image_text` array;
+- labels are bounded, concise, unique strings rather than prose;
+- the generation instruction states that only those exact strings may be visibly rendered;
+- the headline is context-only unless explicitly allowlisted;
+- captions, summaries, sentences, examples, UI text, and other generated prose are prohibited;
+- review records the visible text strings and deterministic validation rejects any rendered string not present in `allowed_image_text`;
+- a text-policy failure is a factual-support failure and cannot be repaired by editing the generated image.
+
+IH3 remains terminal evidence. This correction must be tested on a fresh harness identity before Q13 can be released.
