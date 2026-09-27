@@ -50,7 +50,7 @@ export function validateQualificationImageWorkerPayload(payload){
       seen.add(label);
     }
   }
-  if(typeof payload.reference_policy!=='string'||!payload.reference_policy.includes('no other story'))errors.push('reference_policy_must_exclude_other_story_context');
+  if(typeof payload.reference_policy!=='string'||payload.reference_policy.trim().length<1)errors.push('reference_policy_required');
   if(typeof payload.wrong_subject_action!=='string'||!payload.wrong_subject_action.toLowerCase().includes('discard'))errors.push('wrong_subject_action_must_discard');
   return [...new Set(errors)];
 }

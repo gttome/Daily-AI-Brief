@@ -15,7 +15,7 @@ const sealedPacket={
   generic_conceptual_elements:['target software block','generated test-input stream','failure signal','human review gate'],
   prohibited_specifics:['invented vulnerability names','invented code','invented repository files','unsupported exploit results','unsupported product UI'],
   visual_brief:'White-background 1200x630 landscape technical/editorial textbook plate.',
-  reference_policy:'use no other story, image, prompt, task, dashboard, qualification status, publication state, scheduler state, repair state, or operational context as visual reference',
+  reference_policy:'Use only frozen evidence phrases above for concrete labels; all other elements must remain generic conceptual symbols.',
   acceptance_order:['candidate/story lineage','subject identity','factual support','structural quality','editorial quality'],
   wrong_subject_action:'discard; do not adapt or transform',
   low_quality_fallback:false,
@@ -34,13 +34,16 @@ test('worker launcher emits only sealed story packet keys',()=>{
   assert.deepEqual(validateQualificationImageWorkerPayload(payload),[]);
 });
 
-test('worker payload validator rejects orchestration keys',()=>{
+test('worker payload validator accepts frozen reference policy but rejects orchestration keys',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  assert.deepEqual(validateQualificationImageWorkerPayload(payload),[]);
   payload.harness_id='2026-09-26-IH2';
   payload.parent_conversation='present';
+  payload.other_story_context='present';
   const errors=validateQualificationImageWorkerPayload(payload);
   assert.ok(errors.includes('prohibited_worker_payload_key_harness_id'));
   assert.ok(errors.includes('prohibited_worker_payload_key_parent_conversation'));
+  assert.ok(errors.includes('prohibited_worker_payload_key_other_story_context'));
 });
 
 test('generation instruction is built only from validated sealed payload',()=>{
@@ -114,4 +117,12 @@ test('composition hardening preserves exact visible-text allowlist policy',()=>{
   assert.match(instruction,/VISIBLE TEXT POLICY: Render every string in allowed_image_text exactly once/);
   assert.match(instruction,/Do not satisfy density by adding unapproved text/);
   assert.deepEqual(validateQualificationImageRenderedText([...payload.allowed_image_text],payload.allowed_image_text),[]);
+});
+
+
+test('reference policy presence is required without magic phrase matching',()=>{
+  const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  payload.reference_policy='   ';
+  const errors=validateQualificationImageWorkerPayload(payload);
+  assert.ok(errors.includes('reference_policy_required'));
 });
