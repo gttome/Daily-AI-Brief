@@ -108,3 +108,20 @@ Permanent control:
 - all prior isolation, subject-lineage, factual-support, exact-text, artifact-routing, exact-byte, bounded-retry, no-fallback, and review-order controls remain unchanged.
 
 IH4 remains terminal evidence and is not repaired or rerun. The correction must be proved on fresh harness identity `2026-09-26-IH5`, starting with m02 only. Q13 remains blocked until a later six-story harness reaches 6/6 `accepted_locked` with zero cross-story contamination, no fallback, Work=0, Codex=0, paid API=0, and production mutation=false.
+
+
+## IH5 visible-text completeness correction
+
+IH5 proved that allowlisting rendered text as a subset was insufficient: a generated image could omit one required label while still containing no disallowed strings.
+
+Permanent control:
+
+- rendered text must equal the complete `allowed_image_text` set;
+- every required label must appear exactly once;
+- missing labels fail closed;
+- duplicate labels fail closed;
+- extra or altered labels fail closed;
+- the generation instruction explicitly requires complete exact-set coverage before factual-support PASS;
+- this correction does not relax lineage, composition, structural, editorial, exact-byte, no-fallback, or zero-cost controls.
+
+IH5 remains immutable terminal evidence. The correction must be proved on fresh harness identity `2026-09-26-IH6`. Q13 remains blocked until a later six-story harness reaches 6/6 `accepted_locked`.
