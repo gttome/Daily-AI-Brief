@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH6",
+  "state": "TERMINAL_FAIL",
+  "failed_story_id": "story-m02",
+  "failed_candidate_id": "m02",
+  "failed_stage": "WORKER_PAYLOAD_VALIDATION",
+  "failure_code": "qualification_image_worker_reference_policy_contract_mismatch",
+  "bounded_attempt_slots_consumed": 1,
+  "generation_attempts_used": 0,
+  "accepted_locked_count": 0,
+  "accepted_locked_candidates": [],
+  "pre_generation_result": "FAIL_CLOSED",
+  "worker_context_attestation_result": "FAIL: protected validator rejects the frozen reference_policy because it lacks literal substring `no other story`",
+  "subject_lock_result": "not evaluated because sealed payload validation failed",
+  "durable_library_capture_result": "not run because no image generation was permitted",
+  "exact_raw_materialization_result": "not run because no Library image exists",
+  "visible_text_exact_set_result": "not run",
+  "structural_quality_result": "not run",
+  "editorial_quality_result": "not run",
+  "exact_git_blob_persistence_result": "not attempted because generation was prohibited",
+  "cross_story_contamination_count": 0,
+  "fallback_used": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "next_smallest_verified_correction": "Make worker reference-policy validation structural instead of dependent on the magic literal `no other story`: preserve the sealed allowlisted payload boundary and fresh-worker attestation as the actual no-cross-story control, while accepting the frozen IH6 reference_policy text verbatim. Add deterministic regression coverage proving the exact frozen policy passes and extra worker fields/other-story context still fail closed. Merge through protected CI, then prove on a fresh harness identity; never reopen IH6.",
+  "immutable_evidence": [
+    "_records/qualification-image-harness/2026-09-26-IH6/attempts/m02-attempt-1.json"
+  ]
+}
