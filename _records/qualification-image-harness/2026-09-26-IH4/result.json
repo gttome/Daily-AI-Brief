@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH4",
+  "state": "TERMINAL_FAIL",
+  "failed_story_id": "story-m02",
+  "failed_candidate_id": "m02",
+  "failed_stage": "EDITORIAL_QUALITY_PASS",
+  "failure_code": "qualification_image_editorial_quality_unsatisfied",
+  "bounded_attempts_used": 2,
+  "accepted_locked_count": 0,
+  "accepted_locked_candidates": [],
+  "text_allowlist_control_result": "PASS on both attempts",
+  "subject_lineage_result": "PASS on both attempts",
+  "exact_raw_materialization_result": "PASS on both attempts",
+  "exact_git_blob_persistence_result": "not attempted because no attempt passed editorial quality",
+  "cross_story_contamination_count": 0,
+  "fallback_used": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "next_action": "Harden the generation brief and acceptance controls for high-detail mechanism-rich textbook/editorial composition without relaxing the six-string visible-text allowlist. Prove the correction on a fresh harness identity before Q13.",
+  "immutable_evidence": [
+    "_records/qualification-image-harness/2026-09-26-IH4/attempts/m02-attempt-1.json",
+    "_records/qualification-image-harness/2026-09-26-IH4/attempts/m02-attempt-2.json"
+  ]
+}
