@@ -126,3 +126,20 @@ test('reference policy presence is required without magic phrase matching',()=>{
   const errors=validateQualificationImageWorkerPayload(payload);
   assert.ok(errors.includes('reference_policy_required'));
 });
+
+test('glyph-free concept policy is present and explicit',()=>{
+  const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  const instruction=buildQualificationImageGenerationInstruction(payload);
+  assert.match(instruction,/GLYPH-FREE CONCEPT POLICY/);
+  assert.match(instruction,/render zero visible alphanumeric or punctuation glyphs/);
+  assert.match(instruction,/code brackets, slashes, angle brackets, binary digits, numerals, alert punctuation/);
+  assert.match(instruction,/only with unlabeled abstract geometric forms/);
+});
+
+test('text validator still rejects incidental glyphs outside the exact allowlist',()=>{
+  const allowed=[...sealedPacket.allowed_image_text];
+  for (const glyph of ['</>','0101','!']) {
+    const errors=validateQualificationImageRenderedText([...allowed,glyph],allowed);
+    assert.ok(errors.includes(`rendered_text_not_allowlisted:${glyph}`));
+  }
+});
