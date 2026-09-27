@@ -691,6 +691,19 @@ flowchart TD
 
 ---
 
+## September 27, 2026 — Production novelty gate hardening
+
+> [!IMPORTANT]
+> **Recurring-failure correction:** production metadata selection must reject source URLs already published in prior editions unless the candidate carries a verified material update newer than the previously published source event. This check applies to production as well as qualification runs.
+
+- **Failure observed:** the September 27 production preflight admitted prior-edition source URLs, allowing duplicate story concepts to reach editorial evidence despite the 30-day novelty contract.
+- **Smallest invalidated stage:** metadata selection and all downstream current-day readiness/editorial stages that depended on that shortlist. The September 26 live edition remained valid and was preserved.
+- **Permanent guard:** `_tools/under80-metadata-gate.mjs` now builds prior-published URL/source-event memory for production runs, filters non-novel candidates before coverage reservation, and requires any material-update exception to be newer than the previously published source event.
+- **Recovery rule:** after this guard changes, rerun only metadata preflight, discovery/article-evidence preflight, readiness, and later stages. Do not rerun unaffected prior-day publication work.
+- **Supervision note:** if the documented hourly Publication Recovery Supervisor is not actually active, the 08:30 Live Validation & Secondary Recovery control must classify stalled current-day progress and take over from the first incomplete stage rather than waiting on an absent executor.
+
+---
+
 # 6. Failure Classification Playbook
 
 <details>
