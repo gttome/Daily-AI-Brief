@@ -75,7 +75,7 @@ export function buildQualificationImageGenerationInstruction(payload){
     `prohibited_composition_patterns: ${payload.prohibited_composition_patterns.join(' | ')}`,
     'COMPOSITION CONTRACT: Create a mechanism-rich professional textbook/editorial plate with a central process or mechanism core, multiple interacting visual layers, and causal or functional relationships that extend beyond one straight left-to-right arrow chain. Dense but readable hierarchy is required.',
     'PROHIBITED COMPOSITION: Do not use card grids, dashboards, status flows, six-panel icon strips, isolated icon panels, sparse tile layouts, or simple linear status-chain compositions. Do not satisfy density by adding unapproved text.',
-    'VISIBLE TEXT POLICY: Render only the exact strings listed in allowed_image_text. Do not render the headline unless it is explicitly present in allowed_image_text. Do not add captions, explanatory prose, summaries, sentences, examples, button text, UI text, or any other words.',
+    'VISIBLE TEXT POLICY: Render every string in allowed_image_text exactly once and render no other visible text. Missing, duplicated, altered, or extra strings fail the factual-support gate. Do not render the headline unless it is explicitly present in allowed_image_text. Do not add captions, explanatory prose, summaries, sentences, examples, button text, UI text, or any other words.',
     'low_quality_fallback: prohibited',
     'Generate exactly one illustration for this story. Return only the generated illustration.'
   ].join('\n');
@@ -85,10 +85,16 @@ export function validateQualificationImageRenderedText(renderedText,allowedImage
   const errors=[];
   if(!Array.isArray(renderedText))return ['rendered_text_strings_required'];
   if(!Array.isArray(allowedImageText)||allowedImageText.length<1)return ['allowed_image_text_required'];
-  const allowed=new Set(allowedImageText);
+  const allowed=new Set(allowedImageText),counts=new Map();
   for(const text of renderedText){
     if(typeof text!=='string'||text.trim()!==text||text.length<1){errors.push('rendered_text_string_invalid');continue;}
     if(!allowed.has(text))errors.push(`rendered_text_not_allowlisted:${text}`);
+    counts.set(text,(counts.get(text)||0)+1);
+  }
+  for(const label of allowedImageText){
+    const count=counts.get(label)||0;
+    if(count===0)errors.push(`required_rendered_text_missing:${label}`);
+    if(count>1)errors.push(`rendered_text_duplicate:${label}`);
   }
   return [...new Set(errors)];
 }
