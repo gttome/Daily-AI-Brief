@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH2",
+  "base_main_sha": "7701122d75b640289e8ea56f428d00c6bccbb667",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "terminal": true,
+  "states": ["PACKET_READY", "WORKER_STARTED"],
+  "sealed_worker_payload": {
+    "validation": "PASS",
+    "extra_keys": [],
+    "canonical_sha256": "7f6cdf7451aa8184ec912a05499981b6beeb294320d811f386de947f71b748a3",
+    "operational_fields_copied": false
+  },
+  "pre_generation_context_attestation": {
+    "status": "FAIL",
+    "failure_code": "image_harness_isolated_generation_runtime_unavailable",
+    "sealed_story_packet_only": false,
+    "fresh_execution_context": false,
+    "other_story_context_present": false,
+    "operational_context_present": true,
+    "prior_image_worker_history_present": false,
+    "reused_execution_context": false,
+    "reason": "The generation runtime available to this run does not provide a separately attestable sealed execution-context boundary. Launching generation would violate the fail-closed sealed-story-only contract."
+  },
+  "generation": {"attempted": false, "image_generated": false},
+  "durable_library_capture": {"attempted": false},
+  "review": {"attempted": false},
+  "exact_git_blob_persisted": false,
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "attempts_remaining_nominal": 1,
+  "retry_permitted_in_same_runtime": false,
+  "retry_block_reason": "A second attempt through the same non-isolated runtime would repeat the same context-boundary failure and would not constitute a genuinely fresh isolated worker.",
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "recorded_at": "2026-09-27T00:46:30Z"
+}
