@@ -17,6 +17,7 @@ if(qualificationEditionDate&&!/^\d{4}-\d{2}-\d{2}$/.test(qualificationEditionDat
 if(!Number.isFinite(ordinaryAgeHours)||ordinaryAgeHours<=0||!Number.isFinite(skillAgeHours)||skillAgeHours<ordinaryAgeHours)throw Error('valid_metadata_age_windows_required');
 
 const publishedUrls=new Set();
+const publishedSourceEvents=new Map();
 if(fs.existsSync(publishedEditionsDir)){
  for(const name of fs.readdirSync(publishedEditionsDir).filter(name=>/^\d{4}-\d{2}-\d{2}\.json$/.test(name)).sort()){
   const editionDate=name.slice(0,10);
@@ -26,7 +27,16 @@ if(fs.existsSync(publishedEditionsDir)){
    const edition=JSON.parse(fs.readFileSync(path.join(publishedEditionsDir,name),'utf8'));
    for(const story of edition.stories||[]){
     const prior=story?.source?.normalized_url||story?.source?.url;
-    if(prior)try{publishedUrls.add(normalizeUrl(prior));}catch{}
+    if(prior)try{
+     const normalizedPrior=normalizeUrl(prior);
+     publishedUrls.add(normalizedPrior);
+     const sourceEventRaw=story?.freshness?.source_published_at||story?.source?.publication_date||edition?.published_at||editionDate;
+     const sourceEvent=Date.parse(sourceEventRaw);
+     if(Number.isFinite(sourceEvent)){
+      const previous=publishedSourceEvents.get(normalizedPrior);
+      if(!Number.isFinite(previous)||sourceEvent>previous)publishedSourceEvents.set(normalizedPrior,sourceEvent);
+     }
+    }catch{}
    }
   }catch{}
  }
@@ -105,9 +115,11 @@ for(const item of source){
  // the semantic 2/2/2 gate unless the candidate title itself contains concrete agent intent.
  // This prevents generic ML/LLM posts from being reserved as agent stories due to source defaults.
  const strongAgentTitleSignal=/\b(agent|agents|agentic|assistant|computer use|tool[- ]using|mcp)\b/i.test(title);
- const admissibleProvidedFocus=qualificationEditionDate&&providedFocus==='agents_non_technical_people'&&!strongAgentTitleSignal?null:providedFocus;
+ const admissibleProvidedFocus=providedFocus==='agents_non_technical_people'&&!strongAgentTitleSignal?null:providedFocus;
  const focus=isSkill?'agents_non_technical_people':agentOverride?'agents_non_technical_people':appliedOverride?'applied_genai_knowledge_workers':admissibleProvidedFocus||inferredFocus;
- const productionNoveltyEligible=!qualificationEditionDate||!publishedUrls.has(url)||item.material_update_verified===true;
+ const priorSourceEvent=publishedSourceEvents.get(url);
+ const newerVerifiedMaterialUpdate=item.material_update_verified===true&&Number.isFinite(updated)&&(!Number.isFinite(priorSourceEvent)||updated>priorSourceEvent);
+ const productionNoveltyEligible=!publishedUrls.has(url)||newerVerifiedMaterialUpdate;
  const skillStoryReady=isSkill&&productionNoveltyEligible&&(dateBasis==='published_at'||(dateBasis==='updated_at_requires_material_update_review'&&item.material_update_verified===true));
  const normalized={
   candidate_id:text(item.candidate_id)||null,
@@ -140,23 +152,24 @@ for(const item of source){
 }
 
 const eligible=[...byUrl.values()].sort((a,b)=>b.prefilter_score-a.prefilter_score||String(b.metadata_event_at).localeCompare(String(a.metadata_event_at))||a.canonical_url.localeCompare(b.canonical_url));
+const productionEligible=eligible.filter(x=>x.production_novelty_eligible!==false);
 const selected=[],selectedUrls=new Set();
 const add=item=>{if(item&&selected.length<limit&&!selectedUrls.has(item.canonical_url)){selected.push(item);selectedUrls.add(item.canonical_url);return true;}return false;};
 
 // Reserve the mandatory Agent Skills signal before general ranking.
-add(eligible.find(x=>x.agent_skill_story_ready));
+add(productionEligible.find(x=>x.agent_skill_story_ready));
 
 // Guarantee metadata breadth for the eventual 2/2/2 editorial allocation before filling by score.
 for(const focus of ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people']){
  let count=selected.filter(x=>x.focus_hint===focus).length;
- for(const item of eligible){
+ for(const item of productionEligible){
   if(count>=3||selected.length>=limit)break;
   if(item.focus_hint===focus&&add(item))count++;
  }
 }
 
 // Fill the remaining slots source-diversely.
-const remaining=eligible.filter(x=>!selectedUrls.has(x.canonical_url));
+const remaining=productionEligible.filter(x=>!selectedUrls.has(x.canonical_url));
 const groups=new Map();
 for(const item of remaining){
  const key=item.source_id||item.publisher||'unknown';
@@ -179,7 +192,7 @@ if(candidates.length>limit)throw Error('under80_metadata_gate_internal_limit_vio
 const coverageCountsBeforeNovelty=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,candidates.filter(x=>x.focus_hint===f).length]));
 const coverageCounts=Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[
  f,
- candidates.filter(x=>x.focus_hint===f&&(!qualificationEditionDate||x.production_novelty_eligible!==false)).length
+ candidates.filter(x=>x.focus_hint===f&&x.production_novelty_eligible!==false).length
 ]));
 const agentSkillSignals=candidates.filter(x=>x.agent_skill_signal).length;
 const agentSkillStoryReadySignals=candidates.filter(x=>x.agent_skill_story_ready).length;
