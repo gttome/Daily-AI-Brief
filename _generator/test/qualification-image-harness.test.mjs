@@ -52,7 +52,7 @@ test('generation instruction is built only from validated sealed payload',()=>{
   assert.doesNotMatch(instruction,/scheduler_state/);
   assert.doesNotMatch(instruction,/parent_conversation/);
   assert.match(instruction,/VISIBLE TEXT POLICY/);
-  assert.match(instruction,/Review Checkpoint/);
+  assert.match(instruction,/Review Checkpoint/);\n  assert.match(instruction,/Do not omit, duplicate, paraphrase, abbreviate, or add labels/);
   assert.match(instruction,/composition_mode: mechanism_rich_textbook_plate/);
   assert.match(instruction,/central process or mechanism core/);
   assert.match(instruction,/Do not use card grids, dashboards, status flows, six-panel icon strips/);
@@ -107,7 +107,7 @@ test('worker payload requires all sparse-layout prohibitions',()=>{
 test('composition hardening preserves exact visible-text allowlist policy',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
   const instruction=buildQualificationImageGenerationInstruction(payload);
-  assert.match(instruction,/VISIBLE TEXT POLICY: Render only the exact strings listed in allowed_image_text/);
+  assert.match(instruction,/VISIBLE TEXT POLICY: Render every exact string listed in allowed_image_text exactly once/);
   assert.match(instruction,/Do not satisfy density by adding unapproved text/);
-  assert.deepEqual(validateQualificationImageRenderedText(['Target Software','Review Checkpoint'],payload.allowed_image_text),[]);
+  assert.deepEqual(validateQualificationImageRenderedText([...payload.allowed_image_text],payload.allowed_image_text),[]);
 });

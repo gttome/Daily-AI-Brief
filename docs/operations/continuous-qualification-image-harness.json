@@ -36,5 +36,9 @@
   "codex_usage": 0,
   "paid_api_usage": 0,
   "production_mutation": false,
-  "pass_requires_accepted_locked": 6
+  "pass_requires_accepted_locked": 6,
+  "visible_text_policy": "exact_set_equality",
+  "require_each_allowed_image_text_exactly_once": true,
+  "visible_text_omission_allowed": false,
+  "visible_text_duplicate_allowed": false
 }
