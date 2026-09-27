@@ -20,6 +20,8 @@ const sealedPacket={
   wrong_subject_action:'discard; do not adapt or transform',
   low_quality_fallback:false,
   allowed_image_text:['Target Software','GitHub Security Lab Taskflow Agent','AI-powered Fuzzing Workflow','Generated Test Inputs','Observed Failure Signal','Review Checkpoint'],
+  composition_mode:'mechanism_rich_textbook_plate',
+  prohibited_composition_patterns:['card_grid','dashboard','status_flow','six_panel_icon_strip'],
   harness_id:'2026-09-26-IH2',
   scheduler_state:'running'
 };
@@ -51,6 +53,9 @@ test('generation instruction is built only from validated sealed payload',()=>{
   assert.doesNotMatch(instruction,/parent_conversation/);
   assert.match(instruction,/VISIBLE TEXT POLICY/);
   assert.match(instruction,/Review Checkpoint/);
+  assert.match(instruction,/composition_mode: mechanism_rich_textbook_plate/);
+  assert.match(instruction,/central process or mechanism core/);
+  assert.match(instruction,/Do not use card grids, dashboards, status flows, six-panel icon strips/);
 });
 
 test('rendered image text must be an exact subset of the allowlist',()=>{
@@ -81,4 +86,28 @@ test('accepted harness attempt fails if subject-lineage proof is skipped',()=>{
 test('six-story harness PASS requires exact fixed order and 6/6 accepted_locked',()=>{
   const summary={status:'PASS',production_mutation:false,work_usage:0,codex_usage:0,paid_api_usage:0,fallback_used:false,cross_story_contamination_count:0,accepted_locked_count:6,story_results:IMAGE_HARNESS_STORY_ORDER.map(candidate_id=>({candidate_id,accepted_locked:true}))};
   assert.deepEqual(validateImageHarnessSummary(summary),[]);
+});
+
+
+test('worker payload requires mechanism-rich textbook composition mode',()=>{
+  const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  payload.composition_mode='card_grid';
+  const errors=validateQualificationImageWorkerPayload(payload);
+  assert.ok(errors.includes('composition_mode_must_be_mechanism_rich_textbook_plate'));
+});
+
+test('worker payload requires all sparse-layout prohibitions',()=>{
+  const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  payload.prohibited_composition_patterns=['card_grid','dashboard'];
+  const errors=validateQualificationImageWorkerPayload(payload);
+  assert.ok(errors.includes('missing_prohibited_composition_pattern_status_flow'));
+  assert.ok(errors.includes('missing_prohibited_composition_pattern_six_panel_icon_strip'));
+});
+
+test('composition hardening preserves exact visible-text allowlist policy',()=>{
+  const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  const instruction=buildQualificationImageGenerationInstruction(payload);
+  assert.match(instruction,/VISIBLE TEXT POLICY: Render only the exact strings listed in allowed_image_text/);
+  assert.match(instruction,/Do not satisfy density by adding unapproved text/);
+  assert.deepEqual(validateQualificationImageRenderedText(['Target Software','Review Checkpoint'],payload.allowed_image_text),[]);
 });
