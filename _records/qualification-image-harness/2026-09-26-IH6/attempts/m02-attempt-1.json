@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH6",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "baseline_main_sha": "bfec137e7488fefb9025fe1b31aab14f3d38a07e",
+  "state": "TERMINAL_PREGEN_FAIL",
+  "states": [
+    "PACKET_READY"
+  ],
+  "sealed_worker_payload_validation": {
+    "passed": false,
+    "errors": [
+      "reference_policy_must_exclude_other_story_context"
+    ],
+    "evidence": {
+      "frozen_reference_policy": "Use only frozen evidence phrases above for concrete labels; all other elements must remain generic conceptual symbols.",
+      "protected_validator_requirement": "payload.reference_policy must include literal substring `no other story`",
+      "validator_path": "_generator/lib/qualification-image-harness.mjs"
+    }
+  },
+  "worker_context_attestation": "fail_closed_before_generation",
+  "subject_lock": "not_evaluated_due_to_invalid_sealed_payload",
+  "image_generated": false,
+  "library_capture": false,
+  "raw_file_materialized": false,
+  "gates": {
+    "candidate_story_lineage": "not_run",
+    "subject_identity": "not_run",
+    "factual_support": "not_run",
+    "visible_text_exact_set": "not_run",
+    "structural_quality": "not_run",
+    "editorial_quality": "not_run"
+  },
+  "failure_code": "qualification_image_worker_reference_policy_contract_mismatch",
+  "failure_reason": "The frozen IH6 reference_policy is not accepted by the protected worker-payload validator, which requires the literal substring `no other story`. Altering the frozen packet would violate the proof contract, so the attempt failed closed before image generation.",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "generation_attempts_used": 0,
+  "bounded_attempt_slots_consumed": 1,
+  "bounded_attempt_slots_remaining": 1,
+  "second_attempt_skipped_reason": "Deterministic pre-generation contract mismatch would recur unchanged; repeating generation is impossible without mutating the frozen packet and would be redundant rework.",
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
