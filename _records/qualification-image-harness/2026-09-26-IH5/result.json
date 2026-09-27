@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH5",
+  "state": "TERMINAL_FAIL",
+  "failed_story_id": "story-m02",
+  "failed_candidate_id": "m02",
+  "failed_stage": "FACTUAL_SUPPORT_PASS",
+  "failure_code": "qualification_image_required_visible_text_missing",
+  "bounded_attempts_used": 2,
+  "accepted_locked_count": 0,
+  "accepted_locked_candidates": [],
+  "subject_lineage_result": "PASS on both attempts",
+  "durable_library_capture_result": "PASS on both attempts",
+  "exact_raw_materialization_result": "PASS on both attempts",
+  "visible_text_control_result": "FAIL: attempt 1 had one non-allowlisted string and omitted one required label; attempt 2 removed extra prose but still omitted one required label",
+  "structural_quality_result": "not run because factual-support/text gate failed first",
+  "editorial_quality_result": "not run because factual-support/text gate failed first",
+  "exact_git_blob_persistence_result": "not attempted because no attempt passed factual support",
+  "cross_story_contamination_count": 0,
+  "fallback_used": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "next_smallest_verified_correction": "Strengthen the visible-text contract from subset allowlisting to exact-set equality: every allowed_image_text label must be rendered exactly once, no additional strings may be present, and deterministic review must fail on any omission, duplicate, or extra string. Update the generation instruction to require complete six-label coverage before a fresh harness identity is released.",
+  "immutable_evidence": [
+    "_records/qualification-image-harness/2026-09-26-IH5/attempts/m02-attempt-1.json",
+    "_records/qualification-image-harness/2026-09-26-IH5/attempts/m02-attempt-2.json",
+    "/Daily AI Brief Qualification Images/m02/IH5-m02-attempt-1.png",
+    "/Daily AI Brief Qualification Images/m02/IH5-m02-attempt-2.png"
+  ]
+}
