@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-27",
+  "stage": "final",
+  "status": "READY_WITH_WARNINGS",
+  "main_sha": "96a0b3127eab0cfed72e980ff64998961c176791",
+  "certified_at": "2026-09-27T09:03:00Z",
+  "checks": [
+    {
+      "id": "main_protection",
+      "result": "PASS",
+      "evidence": "Ruleset 23615327 active; pull request required; strict required status check validate enforced."
+    },
+    {
+      "id": "ci_pages_delta",
+      "result": "PASS",
+      "evidence": "Exact current main 96a0b3127eab0cfed72e980ff64998961c176791: Deterministic publication CI 36292151000 success; pages build and deployment 36292150479 success; deterministic delta validation 36292191834 success."
+    },
+    {
+      "id": "metadata_preflight",
+      "result": "PASS",
+      "evidence": "Run 36307989383 success; ready=true; model_calls=0; 15 retained candidates; coverage 4/3/8; 2 story-ready Agent Skills signals."
+    },
+    {
+      "id": "discovery_preflight",
+      "result": "PASS",
+      "evidence": "Run 36308067160 success; coverage_ready=true; article_evidence_ready=true; model_calls=0; 15 candidates; production_changes=0."
+    },
+    {
+      "id": "article_evidence",
+      "result": "PASS",
+      "evidence": "9 retrieved; balanced 3/3/3; 9650 model-visible chars within 12000 cap; no failures."
+    },
+    {
+      "id": "agent_skills",
+      "result": "PASS",
+      "evidence": "2 story-ready Agent Skills signals; preferred candidate m01; production novelty eligible."
+    },
+    {
+      "id": "durable_run_state",
+      "result": "PASS",
+      "evidence": "PREFLIGHT_METADATA_READY and PREFLIGHT_DISCOVERY_READY are valid and bound to baseline main 96a0b3127eab0cfed72e980ff64998961c176791."
+    },
+    {
+      "id": "prior_live_edition_safety",
+      "result": "PASS",
+      "evidence": "Current production pointer remains Sep 26 with completion evidence and exact production/deployed SHA 10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b until Sep 27 passes publication gates."
+    },
+    {
+      "id": "github_publication_capability",
+      "result": "PASS",
+      "evidence": "Connected GitHub capability verified repository read/write, protected ruleset/Actions/Pages evidence, Git Data operations and PR support."
+    },
+    {
+      "id": "stage_driven_entry",
+      "result": "PASS",
+      "evidence": "Readiness evaluated from durable stages; no legacy clock assumption used."
+    },
+    {
+      "id": "current_blockers",
+      "result": "PASS",
+      "evidence": "No open Critical- or High-labeled issue found; current-main nightly readiness run 36306265497 succeeded."
+    }
+  ],
+  "warnings": [
+    {
+      "code": "bounded_preflight_recovery_used",
+      "nonblocking": true,
+      "evidence": "Current-day metadata/discovery durable branches were absent at orchestration start. Existing zero-model GitHub preflight mechanisms were invoked and completed successfully without semantic research or production mutation.",
+      "follow_up": "Reuse the recovered checkpoints; do not repeat preflight."
+    },
+    {
+      "code": "recovery_watchdog_schedule_not_directly_verified",
+      "nonblocking": true,
+      "evidence": "The primary 04:00 orchestrator and 08:30 live-validation schedule are active; the living operations document also specifies a 04:30 hourly Publication Recovery Supervisor, but that supervisor was not directly present in the active schedule list inspected during this run.",
+      "follow_up": "Current primary run remains responsible for nonstop closure; record schedule hardening debt without blocking this edition."
+    }
+  ],
+  "blockers": [],
+  "repairs_performed": [
+    {
+      "action": "bounded_metadata_preflight_recovery",
+      "evidence": "Run 36307989383 completed successfully."
+    },
+    {
+      "action": "bounded_discovery_evidence_recovery",
+      "evidence": "Run 36308067160 completed successfully."
+    }
+  ],
+  "workflow_evidence": {
+    "metadata_preflight": {
+      "run_id": 36307989383,
+      "conclusion": "success"
+    },
+    "discovery_preflight": {
+      "run_id": 36308067160,
+      "conclusion": "success"
+    },
+    "ci": {
+      "run_id": 36292151000,
+      "conclusion": "success"
+    },
+    "pages": {
+      "run_id": 36292150479,
+      "conclusion": "success"
+    },
+    "delta_validation": {
+      "run_id": 36292191834,
+      "conclusion": "success"
+    },
+    "nightly_readiness": {
+      "run_id": 36306265497,
+      "conclusion": "success"
+    }
+  },
+  "automation_state": {
+    "production_orchestrator": "active",
+    "live_validation_and_repair": "active",
+    "publication_recovery_supervisor": "not_directly_verified",
+    "command_center_sync": "separate_not_required_for_publication_start"
+  },
+  "publication_authorized": true,
+  "next_action": "Proceed from durable READINESS_FINAL to the single bounded editorial semantic pass; do not rerun valid preflight work."
+}
