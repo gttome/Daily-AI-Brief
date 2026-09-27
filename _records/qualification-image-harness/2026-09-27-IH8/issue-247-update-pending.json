@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH8",
+  "target_issue": 247,
+  "update_status": "blocked",
+  "blocker": "GitHub issue-comment write was rejected by the connector safety layer after multiple bounded attempts.",
+  "durable_result_commit": "51e27edd6b9c00454ff6506013b0fa8382ee2954",
+  "required_followup": "Retry Issue #247 update without altering IH8 terminal evidence."
+}
