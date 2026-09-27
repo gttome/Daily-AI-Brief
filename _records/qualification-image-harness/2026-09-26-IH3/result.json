@@ -1,0 +1,24 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH3",
+  "state": "TERMINAL_FAIL",
+  "failed_story_id": "story-m02",
+  "failed_candidate_id": "m02",
+  "failed_stage": "EDITORIAL_QUALITY_PASS",
+  "failure_code": "image_harness_visual_acceptance_unsatisfied",
+  "bounded_attempts_used": 2,
+  "accepted_locked_count": 0,
+  "accepted_locked_candidates": [],
+  "cross_story_contamination_count": 0,
+  "fallback_used": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "production_mutation": false,
+  "q13_release_blocked": true,
+  "next_action": "Harden the generation contract so explanatory text is restricted to allowlisted labels only, then prove the correction on a fresh image-harness identity before Q13.",
+  "immutable_evidence": [
+    "_records/qualification-image-harness/2026-09-26-IH3/attempts/m02-attempt-1.json",
+    "_records/qualification-image-harness/2026-09-26-IH3/attempts/m02-attempt-2.json"
+  ]
+}
