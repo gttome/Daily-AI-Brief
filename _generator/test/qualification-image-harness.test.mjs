@@ -58,11 +58,15 @@ test('generation instruction is built only from validated sealed payload',()=>{
   assert.match(instruction,/Do not use card grids, dashboards, status flows, six-panel icon strips/);
 });
 
-test('rendered image text must be an exact subset of the allowlist',()=>{
+test('rendered image text must exactly equal the allowlist set',()=>{
   const allowed=['Target Software','Generated Test Inputs','Observed Failure Signal'];
-  assert.deepEqual(validateQualificationImageRenderedText(['Target Software','Observed Failure Signal'],allowed),[]);
-  const errors=validateQualificationImageRenderedText(['Target Software','Runs tests and analyzes results'],allowed);
-  assert.ok(errors.includes('rendered_text_not_allowlisted:Runs tests and analyzes results'));
+  assert.deepEqual(validateQualificationImageRenderedText([...allowed],allowed),[]);
+  const missing=validateQualificationImageRenderedText(['Target Software','Observed Failure Signal'],allowed);
+  assert.ok(missing.includes('required_rendered_text_missing:Generated Test Inputs'));
+  const extra=validateQualificationImageRenderedText([...allowed,'Runs tests and analyzes results'],allowed);
+  assert.ok(extra.includes('rendered_text_not_allowlisted:Runs tests and analyzes results'));
+  const duplicate=validateQualificationImageRenderedText(['Target Software','Generated Test Inputs','Observed Failure Signal','Observed Failure Signal'],allowed);
+  assert.ok(duplicate.includes('rendered_text_duplicate:Observed Failure Signal'));
 });
 
 test('worker payload rejects prose-like allowlist labels that exceed the bounded label size',()=>{
@@ -107,7 +111,7 @@ test('worker payload requires all sparse-layout prohibitions',()=>{
 test('composition hardening preserves exact visible-text allowlist policy',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
   const instruction=buildQualificationImageGenerationInstruction(payload);
-  assert.match(instruction,/VISIBLE TEXT POLICY: Render only the exact strings listed in allowed_image_text/);
+  assert.match(instruction,/VISIBLE TEXT POLICY: Render every string in allowed_image_text exactly once/);
   assert.match(instruction,/Do not satisfy density by adding unapproved text/);
-  assert.deepEqual(validateQualificationImageRenderedText(['Target Software','Review Checkpoint'],payload.allowed_image_text),[]);
+  assert.deepEqual(validateQualificationImageRenderedText([...payload.allowed_image_text],payload.allowed_image_text),[]);
 });
