@@ -140,3 +140,18 @@ Permanent control:
 - all prior exact-text, mechanism-rich composition, lineage, exact-byte, no-fallback, and zero-cost controls remain unchanged.
 
 IH6 remains immutable terminal evidence. This correction must be merged through protected CI and proved on a fresh harness identity before Q13 can advance.
+
+
+## IH7 incidental-glyph correction
+
+IH7 proved that exact required labels alone are insufficient if the generator also renders incidental glyph-bearing technical motifs such as code brackets, binary digits, or alert punctuation.
+
+Permanent control:
+
+- outside the exact `allowed_image_text` labels, zero visible alphanumeric or punctuation glyphs are permitted;
+- code brackets, slashes, angle brackets, binary digits, numerals, alert punctuation, browser/status text, UI microtext, and glyph-bearing code/data cards are explicitly prohibited;
+- code, data, test-input, failure, browser, and status concepts must be represented only with unlabeled abstract geometric forms, lines, shapes, textures, or color regions;
+- exact-set text validation remains unchanged and still rejects any rendered string outside `allowed_image_text`;
+- all prior subject-lineage, composition, Library handoff, raw-byte, no-fallback, zero-cost, and protected-CI controls remain unchanged.
+
+IH7 remains immutable terminal evidence. This correction must be merged through protected CI and proved on a fresh later harness identity before Q13 can advance.
