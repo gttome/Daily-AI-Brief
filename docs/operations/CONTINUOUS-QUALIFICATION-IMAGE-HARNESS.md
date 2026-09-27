@@ -125,3 +125,18 @@ Permanent control:
 - this correction does not relax lineage, composition, structural, editorial, exact-byte, no-fallback, or zero-cost controls.
 
 IH5 remains immutable terminal evidence. The correction must be proved on fresh harness identity `2026-09-26-IH6`. Q13 remains blocked until a later six-story harness reaches 6/6 `accepted_locked`.
+
+
+## IH6 pre-generation reference-policy correction
+
+IH6 failed closed before image generation because the frozen m02 reference policy was semantically valid for the sealed story packet but did not contain the validator's historical magic substring `no other story`.
+
+Permanent control:
+
+- no-cross-story isolation is enforced structurally by the fixed worker-payload key allowlist, rejection of extra runtime/orchestration/other-story keys, and fresh-worker attestation;
+- `reference_policy` remains a required non-empty sealed story field, but validation no longer depends on a particular phrase;
+- the frozen policy `Use only frozen evidence phrases above for concrete labels; all other elements must remain generic conceptual symbols.` is accepted verbatim;
+- regression coverage proves that harness IDs, parent-conversation state, and explicit other-story context still fail closed when injected as worker payload keys;
+- all prior exact-text, mechanism-rich composition, lineage, exact-byte, no-fallback, and zero-cost controls remain unchanged.
+
+IH6 remains immutable terminal evidence. This correction must be merged through protected CI and proved on a fresh harness identity before Q13 can advance.
