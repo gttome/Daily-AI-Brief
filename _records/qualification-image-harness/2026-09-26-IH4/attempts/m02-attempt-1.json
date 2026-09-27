@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH4",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "baseline_main_sha": "892860aad6f9fdd08124456c565bcf19a42db6d2",
+  "sha256": "223a08a2f46a6df07b54c06d70111fee5f18707c66beb52312a4590d81b3d41d",
+  "dimensions": {
+    "width": 1730,
+    "height": 909
+  },
+  "mime_type": "image/png",
+  "size_bytes": 979042,
+  "library_file_id": "libfile_92d49a945bdc8191889d443e1a866f60",
+  "backing_file_id": "file_00000000640c8230b3537eee0b8cdcda",
+  "library_path": "/Daily AI Brief Qualification Images/m02/IH4-m02-attempt-1.png",
+  "exact_raw_materialization": true,
+  "allowed_image_text": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "rendered_text_strings": [
+    "Target Software",
+    "GitHub Security Lab Taskflow Agent",
+    "AI-powered Fuzzing Workflow",
+    "Generated Test Inputs",
+    "Observed Failure Signal",
+    "Review Checkpoint"
+  ],
+  "gates": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "pass",
+    "visible_text_allowlist": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "fail"
+  },
+  "failure_code": "qualification_image_editorial_quality_unsatisfied",
+  "failure_reason": "Clean and legible, but too sparse and icon-panel oriented for the required high-detail textbook/editorial benchmark.",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "attempts_remaining": 1,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
