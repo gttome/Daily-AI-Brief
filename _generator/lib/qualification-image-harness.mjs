@@ -9,7 +9,7 @@ export const IMAGE_HARNESS_STATES=[
 export const IMAGE_WORKER_PACKET_KEYS=[
   'story_id','candidate_id','headline','source_url','verified_visual_facts',
   'generic_conceptual_elements','prohibited_specifics','visual_brief','reference_policy',
-  'acceptance_order','wrong_subject_action','low_quality_fallback','allowed_image_text'
+  'acceptance_order','wrong_subject_action','low_quality_fallback','allowed_image_text','composition_mode','prohibited_composition_patterns'
 ];
 
 export function buildQualificationImageWorkerPayload(packet){
@@ -32,10 +32,15 @@ export function validateQualificationImageWorkerPayload(payload){
   for(const key of keys){
     if(!IMAGE_WORKER_PACKET_KEYS.includes(key))errors.push(`prohibited_worker_payload_key_${key}`);
   }
-  for(const field of ['verified_visual_facts','generic_conceptual_elements','prohibited_specifics','acceptance_order','allowed_image_text']){
+  for(const field of ['verified_visual_facts','generic_conceptual_elements','prohibited_specifics','acceptance_order','allowed_image_text','prohibited_composition_patterns']){
     if(!Array.isArray(payload[field])||payload[field].length<1)errors.push(`${field}_array_required`);
   }
   if(payload.low_quality_fallback!==false)errors.push('low_quality_fallback_must_be_false');
+  if(payload.composition_mode!=='mechanism_rich_textbook_plate')errors.push('composition_mode_must_be_mechanism_rich_textbook_plate');
+  if(Array.isArray(payload.prohibited_composition_patterns)){
+    const required=['card_grid','dashboard','status_flow','six_panel_icon_strip'];
+    for(const pattern of required){if(!payload.prohibited_composition_patterns.includes(pattern))errors.push(`missing_prohibited_composition_pattern_${pattern}`);}
+  }
   if(Array.isArray(payload.allowed_image_text)){
     const seen=new Set();
     for(const label of payload.allowed_image_text){
@@ -66,6 +71,10 @@ export function buildQualificationImageGenerationInstruction(payload){
     `acceptance_order: ${payload.acceptance_order.join(' -> ')}`,
     `wrong_subject_action: ${payload.wrong_subject_action}`,
     `allowed_image_text: ${payload.allowed_image_text.join(' | ')}`,
+    `composition_mode: ${payload.composition_mode}`,
+    `prohibited_composition_patterns: ${payload.prohibited_composition_patterns.join(' | ')}`,
+    'COMPOSITION CONTRACT: Create a mechanism-rich professional textbook/editorial plate with a central process or mechanism core, multiple interacting visual layers, and causal or functional relationships that extend beyond one straight left-to-right arrow chain. Dense but readable hierarchy is required.',
+    'PROHIBITED COMPOSITION: Do not use card grids, dashboards, status flows, six-panel icon strips, isolated icon panels, sparse tile layouts, or simple linear status-chain compositions. Do not satisfy density by adding unapproved text.',
     'VISIBLE TEXT POLICY: Render only the exact strings listed in allowed_image_text. Do not render the headline unless it is explicitly present in allowed_image_text. Do not add captions, explanatory prose, summaries, sentences, examples, button text, UI text, or any other words.',
     'low_quality_fallback: prohibited',
     'Generate exactly one illustration for this story. Return only the generated illustration.'
