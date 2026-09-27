@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-26-IH5",
+  "story_id": "story-m02",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "baseline_main_sha": "96a0b3127eab0cfed72e980ff64998961c176791",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "generation": {
+    "sha256": "ceee1bdf8731831360e5d2513dd906cf69ae11bae03574145eebeaa920dc0502",
+    "width": 1734,
+    "height": 907,
+    "mime_type": "image/png",
+    "size_bytes": 1377521,
+    "post_generation_transform": false
+  },
+  "library": {
+    "library_file_id": "libfile_9bd5b00348f88191abd9f1c0956a53ea",
+    "file_id": "file_000000009c6481f49d6898676dd371b7",
+    "path": "/Daily AI Brief Qualification Images/m02/IH5-m02-attempt-2.png",
+    "exact_byte_rematerialization": true,
+    "rematerialized_sha256": "ceee1bdf8731831360e5d2513dd906cf69ae11bae03574145eebeaa920dc0502"
+  },
+  "gates": {
+    "candidate_story_lineage": "pass",
+    "subject_identity": "pass",
+    "factual_support": "fail",
+    "visible_text_allowlist": "fail",
+    "structural_quality": "not_run",
+    "editorial_quality": "not_run"
+  },
+  "text_evidence": {
+    "required_count": 6,
+    "rendered_allowlisted_count": 5,
+    "missing_required_count": 1,
+    "extra_nonallowlisted_count": 0
+  },
+  "failure_code": "qualification_image_required_visible_text_missing",
+  "accepted_locked": false,
+  "exact_git_blob_persisted": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "attempts_remaining": 0,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
