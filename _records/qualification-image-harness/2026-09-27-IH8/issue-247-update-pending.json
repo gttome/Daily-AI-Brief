@@ -5,5 +5,7 @@
   "update_status": "blocked",
   "blocker": "GitHub issue-comment write was rejected by the connector safety layer after multiple bounded attempts.",
   "durable_result_commit": "51e27edd6b9c00454ff6506013b0fa8382ee2954",
-  "required_followup": "Retry Issue #247 update without altering IH8 terminal evidence."
+  "required_followup": "Retry Issue #247 update in a later controller pass without altering IH8 terminal evidence.",
+  "latest_retry_result": "blocked_by_connector_safety_layer",
+  "retry_count_note": "Issue #247 comment retried twice in this execution; both writes were rejected by the connector safety layer."
 }
