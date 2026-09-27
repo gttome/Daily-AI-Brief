@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,
   buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,
-  validateQualificationImageWorkerPayload,validateImageHarnessAttempt,validateImageHarnessSummary
+  validateQualificationImageWorkerPayload,validateQualificationImageRenderedText,validateImageHarnessAttempt,validateImageHarnessSummary
 } from '../lib/qualification-image-harness.mjs';
 
 const sealedPacket={
@@ -19,6 +19,7 @@ const sealedPacket={
   acceptance_order:['candidate/story lineage','subject identity','factual support','structural quality','editorial quality'],
   wrong_subject_action:'discard; do not adapt or transform',
   low_quality_fallback:false,
+  allowed_image_text:['Target Software','GitHub Security Lab Taskflow Agent','AI-powered Fuzzing Workflow','Generated Test Inputs','Observed Failure Signal','Review Checkpoint'],
   harness_id:'2026-09-26-IH2',
   scheduler_state:'running'
 };
@@ -48,10 +49,26 @@ test('generation instruction is built only from validated sealed payload',()=>{
   assert.doesNotMatch(instruction,/IH2/);
   assert.doesNotMatch(instruction,/scheduler_state/);
   assert.doesNotMatch(instruction,/parent_conversation/);
+  assert.match(instruction,/VISIBLE TEXT POLICY/);
+  assert.match(instruction,/Review Checkpoint/);
+});
+
+test('rendered image text must be an exact subset of the allowlist',()=>{
+  const allowed=['Target Software','Generated Test Inputs','Observed Failure Signal'];
+  assert.deepEqual(validateQualificationImageRenderedText(['Target Software','Observed Failure Signal'],allowed),[]);
+  const errors=validateQualificationImageRenderedText(['Target Software','Runs tests and analyzes results'],allowed);
+  assert.ok(errors.includes('rendered_text_not_allowlisted:Runs tests and analyzes results'));
+});
+
+test('worker payload rejects prose-like allowlist labels that exceed the bounded label size',()=>{
+  const payload=buildQualificationImageWorkerPayload(sealedPacket);
+  payload.allowed_image_text=['This explanatory sentence is much too long to be an approved image label'];
+  const errors=validateQualificationImageWorkerPayload(payload);
+  assert.ok(errors.includes('allowed_image_text_label_too_long'));
 });
 
 test('one accepted harness attempt requires the complete exact-byte state path',()=>{
-  const attempt={candidate_id:'m02',attempt:1,states:[...IMAGE_HARNESS_STATES],accepted_locked:true,fallback:false,cross_story_contamination:false,sha256:'a'.repeat(64),git_blob_sha:'deadbeef',width:1200,height:630};
+  const attempt={candidate_id:'m02',attempt:1,states:[...IMAGE_HARNESS_STATES],accepted_locked:true,fallback:false,cross_story_contamination:false,sha256:'a'.repeat(64),git_blob_sha:'deadbeef',width:1200,height:630,allowed_image_text:['Target Software'],rendered_text_strings:['Target Software']};
   assert.deepEqual(validateImageHarnessAttempt(attempt,{candidateId:'m02'}),[]);
 });
 
