@@ -83,7 +83,8 @@
       "format": "article",
       "evidence_class": "publisher_authored",
       "focus_hint": "applied_genai_knowledge_workers",
-      "status": "active"
+      "status": "active",
+      "q16_hardening": true
     },
     {
       "source_id": "microsoft-365-feed",
