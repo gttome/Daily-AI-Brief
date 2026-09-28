@@ -1,0 +1,94 @@
++  const checkedFreshness=articleFreshness(sourcePublishedAt,researchCutoffAt,{policy:currentFreshness?ARTICLE_FRESHNESS_POLICY:LEGACY_ARTICLE_FRESHNESS_POLICY,agentSkill:story.agent_skill===true});
++  if(!checkedFreshness)throw Error(`Article exceeds policy freshness ceiling: ${story.candidate_id}`);
+@@ -84,0 +90,5 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
++  if(currentFreshness&&freshnessTier==='fallback'){
++   if(!str(story.fallback_reason,30))throw Error(`Specific editorial fallback_reason required: ${story.candidate_id}`);
++   freshness.fallback_band=checkedFreshness.fallback_band;
++   freshness.fallback_reason=story.fallback_reason.trim();
++  }
+@@ -95 +105 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
+- const base={schema_version:'1.0.0',policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
++ const base={schema_version:'1.0.0',...(currentFreshness?{article_freshness_policy:ARTICLE_FRESHNESS_POLICY}:{}),policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
+diff --git a/_generator/lib/reader.mjs b/_generator/lib/reader.mjs
+index 020c004..e8bb295 100644
+--- a/_generator/lib/reader.mjs
++++ b/_generator/lib/reader.mjs
+@@ -64,0 +65 @@ function canonicalStory(story, edition) {
++    ...(story.freshness?.fallback_band?{freshness:story.freshness}:{}),
+diff --git a/_generator/lib/reading-support.mjs b/_generator/lib/reading-support.mjs
+index 937ad0c..9efa715 100644
+--- a/_generator/lib/reading-support.mjs
++++ b/_generator/lib/reading-support.mjs
+@@ -1,0 +2 @@ import fs from 'node:fs';
++import {ARTICLE_FRESHNESS_POLICY,articleFallbackLabel} from './article-freshness.mjs';
+@@ -29 +30 @@ export function validateReadingSupport(edition,data=catalog){
+-  if(!['New development','Update','Background','Recency fallback'].includes(x.coverage_label)||!x.label_reason||!x.learning_outcome?.trim()||!x.context_term||!x.context)throw Error('Reading support requires reviewed labels, learning outcomes and context');
++  if(!['New development','Update','Background','Recency fallback','Extended recency fallback'].includes(x.coverage_label)||!x.label_reason||!x.learning_outcome?.trim()||!x.context_term||!x.context)throw Error('Reading support requires reviewed labels, learning outcomes and context');
+@@ -31,2 +32,2 @@ export function validateReadingSupport(edition,data=catalog){
+-  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='fallback'&&x.coverage_label!=='Recency fallback')throw Error(`${x.item_id}: fallback stories must use the Recency fallback label`);
+-  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='primary'&&x.coverage_label==='Recency fallback')throw Error(`${x.item_id}: primary-window stories cannot use the Recency fallback label`);
++  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='fallback'&&x.coverage_label!==(edition.article_freshness_policy===ARTICLE_FRESHNESS_POLICY?articleFallbackLabel(story.freshness):'Recency fallback'))throw Error(`${x.item_id}: fallback stories must use the Recency fallback label matching their actual freshness band`);
++  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='primary'&&/recency fallback/i.test(x.coverage_label))throw Error(`${x.item_id}: primary-window stories cannot use the Recency fallback label`);
+@@ -43 +44,4 @@ export function renderReadingSupport(item,id,date,kind='Article'){
+- return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${x?`<span class="coverage-label">${esc(x.coverage_label)}</span>`:''}<span${kind==='Article'?' title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified."':''}>${esc(duration)}</span></div>${x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:''}${r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:''}</aside>`);
++ const fallback=kind==='Article'&&item.freshness?.tier==='fallback'&&item.freshness.fallback_band?item.freshness:null;
++ const coverageLabel=fallback?articleFallbackLabel(fallback):x?.coverage_label;
++ const disclosure=fallback?`<p class="recency-disclosure"><strong>Originally published:</strong> ${esc(fallback.source_published_at)}. ${esc(fallback.fallback_reason)}</p>`:'';
++ return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${coverageLabel?`<span class="coverage-label">${esc(coverageLabel)}</span>`:''}<span${kind==='Article'?' title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified."':''}>${esc(duration)}</span></div>${disclosure}${x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:''}${r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:''}</aside>`);
+diff --git a/_generator/lib/research.mjs b/_generator/lib/research.mjs
+index eec69ff..1c35ae5 100644
+--- a/_generator/lib/research.mjs
++++ b/_generator/lib/research.mjs
+@@ -1,0 +2,2 @@ import fs from 'node:fs';
++import {compareArticleFreshness} from './article-freshness.mjs';
++export {ARTICLE_FRESHNESS_POLICY,ARTICLE_EXTENDED_FALLBACK_HOURS} from './article-freshness.mjs';
+@@ -8 +10 @@ export const PRIMARY_FRESHNESS_HOURS = 24;
+-export const DEFAULT_FALLBACK_HOURS = 72;
++export const DEFAULT_FALLBACK_HOURS = 72; // Legacy ordinary ceiling; current article policy uses ARTICLE_EXTENDED_FALLBACK_HOURS.
+@@ -198 +200 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
+-    ...plan.fallback.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a))
++    ...plan.fallback.filter(c=>c.focus===f).sort((a,b)=>compareArticleFreshness(a,b,now)||score(b)-score(a))
+diff --git a/_generator/lib/validate.mjs b/_generator/lib/validate.mjs
+index 9e061e5..06175bc 100644
+--- a/_generator/lib/validate.mjs
++++ b/_generator/lib/validate.mjs
+@@ -0,0 +1 @@
++import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness} from './article-freshness.mjs';
+@@ -22,0 +24,2 @@ export function validateEdition(edition) {
++  const currentArticlePolicy=edition.article_freshness_policy===ARTICLE_FRESHNESS_POLICY;
++  if(edition.article_freshness_policy&&![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(edition.article_freshness_policy))errors.push('unknown article freshness policy');
+@@ -62,0 +66 @@ export function validateEdition(edition) {
++      if(currentArticlePolicy&&f?.tier==='primary'&&f.fallback_band!=null)errors.push(`${label}.freshness primary must not have fallback_band`);
+@@ -73 +77,6 @@ export function validateEdition(edition) {
+-          const maxHours=agentSkillsStory(story)?AGENT_SKILLS_FALLBACK_HOURS:DEFAULT_FALLBACK_HOURS;
++          const maxHours=currentArticlePolicy||agentSkillsStory(story)?AGENT_SKILLS_FALLBACK_HOURS:DEFAULT_FALLBACK_HOURS;
++          if(currentArticlePolicy){
++            const expected=articleFreshness(f.source_published_at,edition.research_cutoff_at);
++            if(!expected||f.fallback_band!==expected.fallback_band)errors.push(`${label}.freshness fallback_band must match actual age`);
++            if(typeof f.fallback_reason!=='string'||f.fallback_reason.trim().length<30)errors.push(`${label}.freshness fallback_reason must be specific`);
++          }
+diff --git a/_generator/test/article-seven-day-policy.test.mjs b/_generator/test/article-seven-day-policy.test.mjs
+new file mode 100644
+index 0000000..1b6ed10
+--- /dev/null
++++ b/_generator/test/article-seven-day-policy.test.mjs
+@@ -0,0 +1,111 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import fs from 'node:fs';
++import os from 'node:os';
++import path from 'node:path';
++import {execFileSync} from 'node:child_process';
++import {ARTICLE_FRESHNESS_POLICY as policy,LEGACY_ARTICLE_FRESHNESS_POLICY as legacy,articleFreshness,compareArticleFreshness,balancedArticleEvidencePlan} from '../lib/article-freshness.mjs';
++import {extractCandidateMetadata,publicationTimestamp} from '../../_tools/discovery-links.mjs';
++import {validateEdition} from '../lib/validate.mjs';
++import {renderReadingSupport} from '../lib/reading-support.mjs';
++import {VIDEO_MAX_AGE_HOURS} from '../lib/media-selection.mjs';
++const cutoff='2026-09-28T17:00:00Z';
++const published=hours=>new Date(Date.parse(cutoff)-hours*3600000).toISOString();
++for(const [hours,expected] of [[0,'primary'],[24,'primary'],[24+1/3600,'normal'],[72,'normal'],[72+1/3600,'extended'],[168,'extended'],[168+1/3600,null],[-1,null]]){
++ test(`current article boundary ${hours} hours`,()=>{
++  const f=articleFreshness(published(hours),cutoff);assert.equal(f?(f.tier==='primary'?'primary':f.fallback_band):null,expected);
++ });
++}
++test('unresolved dates, future sources and unknown policy fail closed',()=>{
