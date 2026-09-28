@@ -3284,8 +3284,68 @@
       "sha": "5883856919dce4c931aa02bb89314d37c1eb822b",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-image4-transfer"
+    },
+    {
+      "branch": "repair/2026-09-09-live-share-qa",
+      "sha": "7e3c02a9ada3450c8a9b92136b917ca678eb1f3f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-live-share-qa"
+    },
+    {
+      "branch": "repair/2026-09-09-ratings-images-v2",
+      "sha": "dc428e0f129a6c12ca97555e24a64833ccbd10cf",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-ratings-images-v2"
+    },
+    {
+      "branch": "repair/2026-09-09-reader-media-skills",
+      "sha": "aa6f5ba9f78b092b95808e3b5f8d4300e5901138",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-reader-media-skills"
+    },
+    {
+      "branch": "repair/2026-09-09-share-analytics-qa",
+      "sha": "c778e75d4323610dd56c296de8d866fe4effb873",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-share-analytics-qa"
+    },
+    {
+      "branch": "repair/2026-09-09-share-initiation",
+      "sha": "d2f9bdb0d7b1b953c7ce6882a3eb8f340185dd75",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-share-initiation"
+    },
+    {
+      "branch": "repair/2026-09-09-share-retry-sync",
+      "sha": "6f944bc70dac9bdc404f58ecb42defbcf8bab54f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-share-retry-sync"
+    },
+    {
+      "branch": "repair/2026-09-09-share-video-analytics",
+      "sha": "b62322c37443798a72ec6ecf288758cd7fb6973c",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-share-video-analytics"
+    },
+    {
+      "branch": "repair/2026-09-09-single-share-event",
+      "sha": "404fa0aef195c2a75add307644485be7b0f577a6",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-single-share-event"
+    },
+    {
+      "branch": "repair/2026-09-09-story-home-navigation",
+      "sha": "947577e49fb78a404581422f0e425837ca37840f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-story-home-navigation"
+    },
+    {
+      "branch": "repair/2026-09-10-hq-images",
+      "sha": "22a17dbd6f7943b9275a7f9fc58528d6398a8532",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-10-hq-images"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:27:25.102Z"
+  "updated_at": "2026-09-28T15:28:04.809Z"
 }
