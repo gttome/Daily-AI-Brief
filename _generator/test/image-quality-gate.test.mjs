@@ -1,3 +1,4 @@
+import {buildImageGenerationExecution,imageExecutionHash,IMAGE_EXECUTION_POLICY} from '../lib/image-execution.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -28,9 +29,9 @@ function svg(label,{width=1200,height=630,accessible=true,closed=true}={}){
   return Buffer.from('<svg width="'+width+'" height="'+height+'" role="'+(accessible?'img':'presentation')+'" '+(accessible?'aria-label="'+label+'" ':'')+'xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="630" fill="#ffffff"/>'+texts+(closed?'</svg>':''));
 }
 
-function buildFixture(){
+function buildFixture({date='2026-09-26'}={}){
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'dab-image-quality-'));
-  const date='2026-09-26',qualityPath='_records/image-quality/2026-09-26-editorial.json',reviewPath='_records/editorial-handoff/final-image-review-2026-09-26.json';
+  const qualityPath='_records/image-quality/'+date+'-editorial.json',reviewPath='_records/editorial-handoff/final-image-review-'+date+'.json';
   const manifest={},stories=[],qualityImages=[];
   for(let i=0;i<6;i++){
     const storyId='story-'+(i+1),candidate='c'+(i+1),rel='briefs/images/'+date+'/0'+(i+1)+'-story.svg',alt='Detailed accessible story image '+(i+1)+' explaining a specific mechanism.';
@@ -216,4 +217,50 @@ test('actual September 10 premium3 benchmark set remains accepted without regene
   const result=reviewedImages(edition,process.cwd());
   assert.deepEqual(result.errors,[]);
   assert.equal(result.assets.length,6);
+});
+
+// Synthetic live-schema evidence exercises the production validator only. These
+// fixture IDs/bytes are never saved to a real edition or claimed as native output.
+function automatedFixture(){
+  const x=buildFixture({date:'2026-09-28'}),receipts=[];
+  const usage=()=>({work_invocations:0,codex_invocations:0,paid_model_api_calls:0});
+  for(const [i,item] of x.record.images.entries()){
+    const candidate='c'+(i+1),context=item.generation_context;
+    const execution=buildImageGenerationExecution({story_id:item.story_id,candidate_id:candidate,headline:'Synthetic supported mechanism '+candidate,source_url:'https://example.com/'+candidate,
+      verified_visual_facts:['Supported mechanism'],generic_conceptual_elements:['generic input'],prohibited_specifics:['invented benchmark'],visual_brief:'Professional white-background detailed single-story textbook diagram.',reference_policy:'Use source-supported specifics only.',acceptance_order:['subject','facts','structure','editorial'],wrong_subject_action:'Discard; generate a fresh request for the same story.',low_quality_fallback:false,allowed_image_text:['Input'],composition_mode:'annotated_system',prohibited_composition_patterns:['generic sparse title card']});
+    const raw=JSON.stringify(execution,null,2)+'\n';fs.writeFileSync(path.join(x.root,context.request_path),raw);context.request_sha256=sha256(Buffer.from(raw));context.execution_policy=IMAGE_EXECUTION_POLICY;
+    const receipt={schema_version:'2.0.0',policy_id:IMAGE_EXECUTION_POLICY,request_sha256:imageExecutionHash(execution),story_id:item.story_id,candidate_id:candidate,
+      execution_mode:'production',evidence_type:'live',trigger:'scheduled',owner_interventions:[],runtime_context_isolation:'not_asserted',attempt:1,
+      fallback_used:false,...usage(),account_billing_observed:false,status:'accepted_locked',
+      generation:{executor:'native_chatgpt_image_generation',call_id:'SYNTHETIC-call-'+candidate,artifact_id:'SYNTHETIC-artifact-'+candidate,generated_at:'2026-09-28T21:00:00Z',raw_sha256:item.asset_hash,raw_capture:{path:'_records/image-attempts/synthetic/'+candidate+'.png',sha256:item.asset_hash,git_blob_sha:item.git_blob_sha,read_back_verified:true},evidence_type:'live',usage:usage(),owner_interventions:[]},
+      review:{mode:'automated',phase:'after_generation',call_id:'SYNTHETIC-review-'+candidate,reviewed_at:'2026-09-28T21:01:00Z',asset_sha256:item.asset_hash,subject_match:'pass',factual_support:'pass',structural_quality:'pass',editorial_quality:'pass',usage:usage(),owner_interventions:[]},
+      persistence:{path:item.asset_path,sha256:item.asset_hash,git_blob_sha:item.git_blob_sha,persisted_at:'2026-09-28T21:02:00Z',read_back_verified:true}};
+    context.execution_receipt_path='_records/image-execution/'+candidate+'.json';receipts.push(receipt);
+  }
+  const persistReceipts=()=>{
+    for(const [i,item] of x.record.images.entries()){
+      const raw=JSON.stringify(receipts[i],null,2)+'\n',p=path.join(x.root,item.generation_context.execution_receipt_path);
+      fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,raw);item.generation_context.execution_receipt_sha256=sha256(Buffer.from(raw));
+    }x.persist();
+  };
+  persistReceipts();return {...x,receipts,persistReceipts};
+}
+test('new-edition production gate requires actual-execution schema in addition to image quality',()=>{
+  const x=automatedFixture();assert.deepEqual(reviewedHandoffImages(x.edition,x.root,x.reviewPath).errors,[]);
+});
+test('new-edition gate cannot downgrade to legacy request by omitting policy',()=>{
+  const x=buildFixture({date:'2026-09-28'}),result=reviewedHandoffImages(x.edition,x.root,x.reviewPath);
+  assert.ok(result.errors.some(e=>e.includes('automated_image_execution_receipt_required')));assert.equal(result.overall_gate.result,'fail');
+});
+test('manual image upload fails the actual production combined gate',()=>{
+  const x=automatedFixture();x.receipts[0].owner_interventions=['upload image'];x.persistReceipts();assert.ok(reviewedHandoffImages(x.edition,x.root,x.reviewPath).errors.some(e=>e.includes('manual_image_intervention_prohibited')));
+});
+test('fixture receipts cannot pass the actual production image gate',()=>{
+  const x=automatedFixture();Object.assign(x.receipts[0],{evidence_type:'fixture',trigger:'fixture',status:'fixture_pass'});x.persistReceipts();assert.ok(reviewedHandoffImages(x.edition,x.root,x.reviewPath).errors.some(e=>e.includes('live_image_execution_evidence_required')));
+});
+test('changed execution receipt bytes fail even if image bytes remain valid',()=>{
+  const x=automatedFixture(),context=x.record.images[0].generation_context;fs.appendFileSync(path.join(x.root,context.execution_receipt_path),' ');assert.ok(reviewedHandoffImages(x.edition,x.root,x.reviewPath).errors.some(e=>e.includes('automated_image_receipt_digest_mismatch')));
+});
+test('automated receipt does not bypass professional editorial quality review',()=>{
+  const x=automatedFixture();x.record.images[0].editorial_quality_gate.generic_or_sparse=true;x.persist();assert.equal(reviewedHandoffImages(x.edition,x.root,x.reviewPath).overall_gate.result,'fail');
 });

@@ -410,7 +410,7 @@
       "create_or_reuse_publication_pr",
       "inspect_ci_and_pages"
     ],
-    "failure": "BLOCKED — GitHub connection unavailable for scheduled publication.",
+    "failure": "BLOCKED \u2014 GitHub connection unavailable for scheduled publication.",
     "record_in_attempt": true
   },
   "image": {
@@ -608,5 +608,22 @@
     "historical_missing_policy": "retain legacy edition-date reference; do not relabel historical Q outcomes",
     "age_duration_diversity_quality_limits_changed": false,
     "selection_api": "Pass date, cutoff and policy explicitly to selectPodcasts; pass cutoff/policy options to selectVideo. Carry media_freshness_policy on the kernel into the canonical edition."
+  },
+  "image_execution": {
+    "policy_id": "production-image-execution-v2",
+    "shared_module": "_generator/lib/image-execution.mjs",
+    "qualification_production_parity": true,
+    "manual_intervention_allowed": false,
+    "requires_fresh_conversation": false,
+    "runtime_context_isolation": "not_asserted",
+    "review_phase": "after_generation",
+    "max_attempts_per_story": 4,
+    "capability_failure": "CAPABILITY_BLOCKED",
+    "cost_boundary": {
+      "work": 0,
+      "codex": 0,
+      "paid_model_api": 0
+    },
+    "scheduled_live_proof_required": true
   }
 }

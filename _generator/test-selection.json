@@ -158,6 +158,25 @@
         "_generator/test/publication-candidate-lint.test.mjs",
         "_generator/test/image-quality-gate.test.mjs"
       ]
+    },
+    {
+      "tier": "image-execution-parity",
+      "patterns": [
+        "_generator/lib/image-execution.mjs",
+        "_generator/lib/image-story-packet.mjs",
+        "_generator/lib/qualification-image-harness.mjs",
+        "_generator/lib/image-gate.mjs",
+        "_tools/image-execution.mjs",
+        "docs/operations/automated-image-execution.md",
+        "docs/operations/continuous-qualification-contract.json"
+      ],
+      "tests": [
+        "_generator/test/image-execution.test.mjs",
+        "_generator/test/image-quality-gate.test.mjs",
+        "_generator/test/qualification-image-harness.test.mjs",
+        "_generator/test/qualification-image-subject-lock.test.mjs",
+        "_generator/test/continuous-qualification-contract.test.mjs"
+      ]
     }
   ],
   "sentinel_cases": [

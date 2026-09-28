@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,APPROVED_COMPOSITION_MODES,IMAGE_GENERATION_EXECUTION_KEYS,
-  buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,buildQualificationImageGenerationExecution,
-  validateQualificationImageWorkerPayload,validateQualificationImageGenerationExecution,validateQualificationImageRenderedText,validateImageHarnessAttempt,validateImageHarnessSummary
+  IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,APPROVED_COMPOSITION_MODES,LEGACY_IMAGE_GENERATION_EXECUTION_KEYS as IMAGE_GENERATION_EXECUTION_KEYS,
+  buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,buildLegacyQualificationImageGenerationExecution as buildQualificationImageGenerationExecution,
+  validateQualificationImageWorkerPayload,validateLegacyQualificationImageGenerationExecution as validateQualificationImageGenerationExecution,validateQualificationImageRenderedText,validateImageHarnessAttempt,validateImageHarnessSummary
 } from '../lib/qualification-image-harness.mjs';
 
 const sealedPacket={
@@ -46,7 +46,7 @@ test('worker payload validator accepts frozen reference policy but rejects orche
   assert.ok(errors.includes('prohibited_worker_payload_key_other_story_context'));
 });
 
-test('generation execution creates a fresh image-only context from only the sealed story packet',()=>{
+test('historical IH9 generation execution creates a fresh image-only context from only the sealed story packet',()=>{
   const execution=buildQualificationImageGenerationExecution({
     ...sealedPacket,
     harness_id:'2026-09-27-IH9',
@@ -76,7 +76,7 @@ test('generation execution creates a fresh image-only context from only the seal
   assert.deepEqual(validateQualificationImageGenerationExecution(execution),[]);
 });
 
-test('generation execution fails closed if ambient context or same-context review is reintroduced',()=>{
+test('historical IH9 generation execution fails closed if ambient context or same-context review is reintroduced',()=>{
   const baseline=buildQualificationImageGenerationExecution(sealedPacket);
   const contaminated={
     ...baseline,
