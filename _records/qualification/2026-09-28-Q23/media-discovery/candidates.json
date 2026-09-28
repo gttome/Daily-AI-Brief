@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q23",
+  "cutoff": "2026-09-28T19:10:36Z",
+  "execution_mode": "qualification_nonproduction",
+  "stage": "MEDIA_METADATA_ACQUIRED_NOT_READY",
+  "model_calls": 0,
+  "article_retrievals": 0,
+  "source_observations": [
+    {
+      "source_id": "ibm-technology",
+      "kind": "video",
+      "endpoint": "https://www.ibm.com/think/videos",
+      "resolved_url": "https://www.ibm.com/think/videos",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:18:53.280Z",
+      "source_content_sha256": "ed8200f8359d5bf841909b2cf5ebdedbb084658b1ac52c00c7ebce362e7ced13",
+      "metadata_records": 50,
+      "in_window_records": 0,
+      "maximum_age_hours": 72
+    },
+    {
+      "source_id": "nvidia-ai-podcast",
+      "kind": "podcast",
+      "endpoint": "https://ai-podcast.nvidia.com/",
+      "resolved_url": "https://ai-podcast.nvidia.com/",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:18:55.192Z",
+      "source_content_sha256": "f300f07be7f1a2b7871a00b059be761ec1d440348261ca8a61402508be76e796",
+      "metadata_records": 100,
+      "in_window_records": 0,
+      "maximum_age_hours": 168
+    },
+    {
+      "source_id": "practical-ai",
+      "kind": "podcast",
+      "endpoint": "https://practicalai.show/",
+      "resolved_url": "https://practicalai.show/",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:18:55.389Z",
+      "source_content_sha256": "3940e087c4aa8e70df79300f3f8482895bd03ff43ccff602a6bfc89111039e3b",
+      "metadata_records": 18,
+      "in_window_records": 0,
+      "maximum_age_hours": 168
+    },
+    {
+      "source_id": "everyday-ai",
+      "kind": "podcast",
+      "endpoint": "https://www.youreverydayai.com/feed/",
+      "resolved_url": "https://www.youreverydayai.com/feed/",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:18:55.737Z",
+      "source_content_sha256": "cd74b57f9c2ffa6c3b8a872a580f4450cb6bafa8a26e33def412675b1066bd8f",
+      "metadata_records": 49,
+      "in_window_records": 0,
+      "maximum_age_hours": 168
+    },
+    {
+      "source_id": "ai-for-humans",
+      "kind": "podcast",
+      "endpoint": "https://feeds.libsyn.com/469701/rss",
+      "status": "unavailable",
+      "checked_at": "2026-09-28T19:18:56.664Z",
+      "reason": "normalized_body_too_large:1680928>1500000"
+    }
+  ],
+  "candidates": [],
+  "video_metadata_count": 0,
+  "podcast_metadata_count": 0,
+  "media_ready": false,
+  "selection_performed": false,
+  "raw_article_queue_opened": false,
+  "production_mutation": false,
+  "note": "Catalog acquisition is not a verified media selection. Missing dates, runtimes, identity, episode/content evidence, editorial fit, novelty and required source breadth remain gates. No media freshness or quality rule is relaxed."
+}

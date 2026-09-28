@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q23",
+  "workflow_run_id": 36471348463,
+  "request_commit": "2253db21c4a5627f80660435bdaf77121279b246",
+  "observed_at": "2026-09-28T19:18:57.119Z",
+  "model_calls": 0,
+  "registered_sources_available": 5,
+  "sources_requested": 5,
+  "source_retrievals_success": 4,
+  "video_metadata_count": 0,
+  "podcast_metadata_count": 0,
+  "candidates_sha256": "74c348a8e6eeda3bf2001de48667b16a99840f277101fa18697825cc906d2166",
+  "semantic_receipt_sha256": "8b4f7dd51b0bf737f07bbc3030c67453cb33c35ff2ba2b5f6c644d4280f7198e",
+  "frozen_article_evidence_blob": "ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df",
+  "frozen_article_evidence_unchanged": true,
+  "semantic_receipt_unchanged": true,
+  "media_ready": false,
+  "production_mutation": false
+}
