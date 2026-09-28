@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "state": "PASS",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "fixed_story_order": [
+    "m02",
+    "m04",
+    "m06",
+    "m07",
+    "m01",
+    "m08"
+  ],
+  "accepted_locked_count": 6,
+  "accepted_locked": [
+    "m02",
+    "m04",
+    "m06",
+    "m07",
+    "m01",
+    "m08"
+  ],
+  "failed_attempts_preserved": [
+    {
+      "candidate_id": "m06",
+      "attempt": 1,
+      "failed_stage": "FACTUAL_SUPPORT_PASS",
+      "failure_code": "qualification_image_unsupported_product_behavior_text"
+    },
+    {
+      "candidate_id": "m07",
+      "attempt": 1,
+      "failed_stage": "FACTUAL_SUPPORT_PASS",
+      "failure_code": "qualification_image_unsupported_specific_app_endpoints"
+    }
+  ],
+  "fallback_used": false,
+  "cross_story_contamination_count": 0,
+  "q13_release_blocked": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "completion_evidence": {
+    "final_candidate": "m08",
+    "final_image_sha256": "d2e935233355a00cf078e36817b16f245e3706670223ff99a11472d2d2773afe",
+    "final_git_blob_sha": "9188f613a044931dc29dc76d45c89ecb608cb950",
+    "final_git_persistence_commit": "c39b083b4e610f871695692c2086f34892b4d486",
+    "final_exact_byte_workflow_run": 36370980455
+  },
+  "next_action": "Release fresh Q13 without redoing Q12 completed semantic work; consume the frozen Q12 semantic checkpoint plus all six IH10 accepted/locked exact-byte images."
+}
