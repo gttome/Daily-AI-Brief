@@ -1,0 +1,81 @@
+name: Q23 publisher-page media resolution
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q23']
+    paths: ['.github/workflows/q23-media-page-resolution.yml']
+permissions:
+  contents: write
+concurrency:
+  group: q23-publisher-page-resolution
+  cancel-in-progress: false
+jobs:
+  capture-new-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Capture seven public publisher or publisher-distributed pages, never challenged video endpoints
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import {execFileSync} from 'node:child_process';
+          import {retrieveSource} from './_tools/discovery-links.mjs';
+          const sha=x=>crypto.createHash('sha256').update(x).digest('hex');
+          const runId='2026-09-28-Q23',root='_records/qualification/'+runId,raw='/tmp/q23-media-pages';
+          const semantic=root+'/semantic-receipt.json',article='_records/discovery-preflight/result/article-evidence.json';
+          if(fs.existsSync(root+'/result.json'))throw Error('terminal_Q23_cannot_continue');
+          if(sha(fs.readFileSync(semantic))!=='8b4f7dd51b0bf737f07bbc3030c67453cb33c35ff2ba2b5f6c644d4280f7198e')throw Error('semantic_receipt_changed');
+          if(execFileSync('git',['hash-object',article],{encoding:'utf8'}).trim()!=='ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df')throw Error('article_evidence_changed');
+          const before={semantic:sha(fs.readFileSync(semantic)),article:sha(fs.readFileSync(article))};
+          const pages=[
+            ['practical-373','podcast_episode','https://practicalai.show/373'],
+            ['practical-373-transcript','podcast_transcript','https://practicalai.show/373/transcript'],
+            ['everyday-871','podcast_episode','https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779'],
+            ['ai-for-humans-sep24','podcast_episode','https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406'],
+            ['matt-wolfe-catalog','video_catalog','https://mattwolfe.com/'],
+            ['kevin-stratvert-catalog','video_catalog','https://kevinstratvert.com/'],
+            ['jeff-su-catalog','video_catalog','https://www.jeffsu.org/']
+          ];
+          fs.mkdirSync(raw,{recursive:true});
+          fs.mkdirSync(root+'/media-pages',{recursive:true});
+          const observations=[];
+          for(const [id,kind,url] of pages){
+            try{
+              const r=await retrieveSource(url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
+              fs.writeFileSync(raw+'/'+id+'.html',r.text,{flag:'wx'});
+              const structured=[];
+              for(const match of r.text.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script\s*>/gi)){
+                try{structured.push(JSON.parse(match[1]));}catch{}
+              }
+              observations.push({id,kind,url,resolved_url:r.url,status:'retrieved',checked_at:new Date().toISOString(),source_sha256:sha(r.text),source_chars:r.text.length,artifact_file:id+'.html',jsonld:structured});
+            }catch(error){observations.push({id,kind,url,status:'unavailable',checked_at:new Date().toISOString(),reason:String(error.message),attempts:error.attempts||[]});}
+          }
+          if(before.semantic!==sha(fs.readFileSync(semantic))||before.article!==sha(fs.readFileSync(article)))throw Error('frozen_input_mutation');
+          const receipt={schema_version:'1.0.0',run_id:runId,cutoff:'2026-09-28T19:10:36Z',workflow_run_id:Number(process.env.GITHUB_RUN_ID),request_commit:process.env.GITHUB_SHA,model_calls:0,new_endpoints_requested:pages.length,article_candidate_retrievals:0,original_catalogs_refetched:0,challenged_youtube_endpoints_refetched:0,frozen_inputs_unchanged:true,media_ready:false,selection_performed:false,production_mutation:false,observations};
+          fs.writeFileSync(root+'/media-pages/observations.json',JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});
+          console.log(JSON.stringify({...receipt,observations:observations.map(({jsonld,...item})=>({...item,jsonld_blocks:jsonld?.length||0}))},null,2));
+          NODE
+      - name: Persist only new media observations on the Q23 branch
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-28-Q23'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q23/media-pages/observations.json
+          git commit -m 'Preserve Q23 publisher-page media observations without changing frozen articles'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q23-publisher-page-media-evidence
+          path: |
+            /tmp/q23-media-pages/
+            _records/qualification/2026-09-28-Q23/media-pages/
+          retention-days: 14
+          if-no-files-found: error
