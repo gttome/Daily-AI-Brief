@@ -11,12 +11,13 @@
     "m01",
     "m08"
   ],
-  "accepted_locked_count": 1,
+  "accepted_locked_count": 2,
   "accepted_locked": [
-    "m02"
+    "m02",
+    "m04"
   ],
-  "current_candidate_id": "m04",
-  "next_action": "Prepare and execute m04 in a fresh image-only context, then separate review and exact-byte persistence.",
+  "current_candidate_id": "m06",
+  "next_action": "Prepare and execute m06 in a fresh image-only context, then separate review and exact-byte persistence.",
   "q13_release_blocked": true,
   "fallback_used": false,
   "cross_story_contamination_count": 0,
