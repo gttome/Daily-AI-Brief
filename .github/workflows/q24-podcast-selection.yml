@@ -1,0 +1,90 @@
+name: Q24 reviewed podcast selection verification
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-podcast-selection.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  validate-podcasts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Reuse exact captured Q24 sources without any publisher refetch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-editorial-review.json)" = '31647bf2be967e50b70fefbcceec04d918262add'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-metadata.json)" = '14a81457860d2211bf2c8e03939bca013f2792c2'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/prior-podcast-history.json)" = '4c0381ec3d3d425aeb3f3cc79f20bac328bebb7c'
+          mkdir -p /tmp/q24-podcast-selection
+          gh api repos/gttome/Daily-AI-Brief/actions/artifacts/10993938898/zip > /tmp/q24-podcast-selection/evidence.zip
+          echo '6534c0cf323bd4f5175b0fda240ef74ada7678709001f86c8b271a3870c2f528  /tmp/q24-podcast-selection/evidence.zip' | sha256sum -c -
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile
+          root=Path('/tmp/q24-podcast-selection/sources');root.mkdir()
+          with zipfile.ZipFile('/tmp/q24-podcast-selection/evidence.zip') as z:
+              for info in z.infolist():
+                  p=Path(info.filename)
+                  if p.is_absolute() or '..' in p.parts: raise ValueError('unsafe artifact path')
+                  if p.suffix=='.html':
+                      target=root/p.name
+                      if target.exists(): raise ValueError('duplicate source basename')
+                      target.write_bytes(z.read(info))
+          PY
+      - name: Verify approved excerpts, normalize evidence and run the released selector
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          import crypto from 'node:crypto';
+          import {normalizeMediaEvidence} from './_generator/lib/media-evidence.mjs';
+          import {selectPodcasts} from './_generator/lib/media-selection.mjs';
+          const root='_records/qualification/2026-09-28-Q24/media-evidence';
+          const metadata=JSON.parse(fs.readFileSync(root+'/podcast-metadata.json','utf8'));
+          const review=JSON.parse(fs.readFileSync(root+'/podcast-editorial-review.json','utf8'));
+          const request=JSON.parse(fs.readFileSync('_records/discovery-preflight/request.json','utf8'));
+          assert.equal(review.cutoff,request.cutoff);assert.equal(review.media_freshness_policy,request.media_freshness_policy);
+          assert.equal(review.baseline_sha,request.baseline_sha);assert.equal(review.reviews.length,2);
+          const normalized=[],candidates=[];
+          for(const r of review.reviews){
+            const m=metadata.records.find(x=>x.candidate_id===r.candidate_id);
+            assert.ok(m&&m.metadata_identity_verified&&m.identity_novelty_screen_passed);
+            assert.equal(r.editorial_pass,true);assert.equal(r.duplicate,false);
+            const text=fs.readFileSync('/tmp/q24-podcast-selection/sources/'+r.source_artifact_file,'utf8');
+            const hash=crypto.createHash('sha256').update(text).digest('hex');
+            assert.equal(hash,m.source_sha256);assert.equal(hash,r.source_sha256);
+            assert.ok(r.source_excerpts.length>0&&r.source_excerpts.every(x=>text.includes(x)));
+            const evidence=normalizeMediaEvidence({kind:'podcast',canonical_url:m.canonical_url,episode_guid:m.episode_guid,feed_url:m.feed_url,title:m.title,published_at:m.published_at,runtime_seconds:m.runtime_seconds,source:{url:m.canonical_url,text,checked_at:m.checked_at},review:{status:'reviewed',reviewer:review.reviewer,reviewed_at:review.reviewed_at,source_content_hash:hash,excerpts:r.source_excerpts,scope:review.review_scope,audio_listened:false},audience_fit:r.audience_fit});
+            assert.equal(evidence.metadata_status,'reviewed');normalized.push(evidence);
+            candidates.push({candidate_id:m.candidate_id,status:'included',url:m.canonical_url,title:m.title,show:m.show,publication_date:m.published_at,runtime_seconds:m.runtime_seconds,verified:true,editorial_pass:r.editorial_pass,duplicate:r.duplicate,score:r.score,freshness_exception_reason:r.freshness_exception_reason,summary:r.summary,why_it_matters:r.why_it_matters,editorial_limitation:r.editorial_limitation,platforms:[{name:'Apple Podcasts',url:m.canonical_url}],source_evidence_identity:evidence.identity});
+          }
+          const selection=selectPodcasts(candidates,{date:request.edition_date,cutoff:request.cutoff,policy:request.media_freshness_policy});
+          assert.deepEqual(selection.selected.map(x=>x.candidate_id),['everyday-871','ai-for-humans-197']);
+          assert.equal(selection.source_diverse,true);assert.equal(selection.selected.length,2);
+          assert.equal(selection.selected[0].freshness_tier,'primary_48h');assert.equal(selection.selected[1].freshness_tier,'fallback_7d');
+          assert.ok(!selection.selected.some(x=>x.candidate_id==='practical-373'));
+          const result={schema_version:'1.0.0',run_id:request.qualification_run_id,baseline_sha:request.baseline_sha,cutoff:request.cutoff,media_freshness_policy:request.media_freshness_policy,workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,validated_at:new Date().toISOString(),result:'pass',scope:'podcast component only; not full MEDIA_READY or qualification closure',source_artifact_id:10993938898,new_publisher_retrievals:0,model_calls:0,source_hashes_and_review_excerpts_verified:true,podcast_selection_validated:true,podcast_count:2,source_diverse:true,selection,normalized_evidence:normalized,rejected:review.rejected,review_scope:review.review_scope,history_scope:review.history_scope,video_selection_completed:false,media_ready:false,production_mutation:false};
+          fs.writeFileSync(root+'/podcast-selection.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+          console.log(JSON.stringify({result:result.result,workflow_run_id:result.workflow_run_id,selected:selection.selected.map(x=>({candidate_id:x.candidate_id,publication_date:x.publication_date,runtime_seconds:x.runtime_seconds,freshness_tier:x.freshness_tier})),podcast_selection_validated:true,media_ready:false},null,2));
+          NODE
+      - name: Persist only the validated podcast component while preserving frozen articles
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json
+          git commit -m 'Validate Q24 two-podcast component with exact source review and cutoff policy'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
