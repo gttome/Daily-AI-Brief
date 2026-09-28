@@ -3816,8 +3816,68 @@
       "sha": "f2268afcfed815149dfc96861a32172a1f90f03c",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-a/feat/private-draft-recovery"
+    },
+    {
+      "branch": "feature/audience-subscriptions",
+      "sha": "906e3c4a9bf90132730871a285836ff5ae293153",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/audience-subscriptions"
+    },
+    {
+      "branch": "feature/calendar-subscription",
+      "sha": "56309ab1853f0d368ead41be533fce6a647c566b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/calendar-subscription"
+    },
+    {
+      "branch": "feature/daily-edition-rss",
+      "sha": "f1342cb6543d4e82178f75484160fea688eb0a82",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/daily-edition-rss"
+    },
+    {
+      "branch": "feature/emerging-watchlist-2026-09-12",
+      "sha": "e6d11227cace9f126f1e07063cf6f57e8b449726",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/emerging-watchlist-2026-09-12"
+    },
+    {
+      "branch": "feature/followit-email",
+      "sha": "26843cbd5c74b90587c9d6c1c550f954d9bd0073",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/followit-email"
+    },
+    {
+      "branch": "feature/inline-daily-feedback",
+      "sha": "a9843f76694e9b15cf5e5c734ba0d5077a6efb6a",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/inline-daily-feedback"
+    },
+    {
+      "branch": "feature/personal-editorial-learning",
+      "sha": "c8a3a9e3ad29d3336fc11ad977464de192645ada",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/personal-editorial-learning"
+    },
+    {
+      "branch": "feature/reminder-duration",
+      "sha": "8e194c5d3035eab72f3aa58bf30ffe6f8f566094",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/reminder-duration"
+    },
+    {
+      "branch": "feature/shared-story-fresh-rating-scale",
+      "sha": "fe7db73925fbf4cfdb06e41527d4d3c67bfc80ae",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/shared-story-fresh-rating-scale"
+    },
+    {
+      "branch": "feature/shared-story-share-count-no-rating",
+      "sha": "4e9a0640313bb4c74bb50e4cb21d11145cfec59b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/shared-story-share-count-no-rating"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:17:05.788Z"
+  "updated_at": "2026-09-28T15:17:46.498Z"
 }
