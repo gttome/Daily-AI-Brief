@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH9",
+  "state": "TERMINAL_FAIL",
+  "failed_candidate_id": "m02",
+  "failed_stage": "SUBJECT_LINEAGE_PASS",
+  "failure_code": "qualification_image_context_isolation_failed",
+  "bounded_attempts_used": 2,
+  "stopped_early_for_deterministic_contract_defect": true,
+  "accepted_locked_count": 0,
+  "q13_release_blocked": true,
+  "root_cause": "Generation context was not story-only; two fresh calls produced the harness/status subject instead of the frozen m02 subject.",
+  "next_smallest_verified_correction": "Use a separate fresh image-only generation context containing only the sealed m02 packet, followed by separate review.",
+  "fallback_used": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
