@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "purpose": "continuous_qualification",
+  "execution_mode": "qualification_nonproduction",
+  "qualification_run_id": "2026-09-28-Q23",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "baseline_sha": "cad5da83752a36b6bd59f26e0800bbde7c7f7ef3",
+  "edition_date": "2026-09-28",
+  "cutoff": "2026-09-28T19:10:36Z",
+  "source_scan_max": 48,
+  "fresh_metadata_target": 24,
+  "ordinary_max_age_hours": 168,
+  "agent_skills_max_age_hours": 168,
+  "production_mutation": false
+}
