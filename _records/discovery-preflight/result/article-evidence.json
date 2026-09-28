@@ -1,0 +1,120 @@
+{
+  "schema_version": "1.0.0",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 8598,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+      "canonical_url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-28T08:56:55.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2200,
+      "excerpt": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In&#x2d;Silicon Agent Monitoring | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Trustworthy AI / Cybersecurity English 한국어 NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring Secure AI agents with a safety enforcement layer spanning software and hardware Sep 28, 2026 By John Myers , Alex Watson , Ali Golshan and Ofir Arkin Like Discuss (0) L T F R E AI-Generated Summary NVIDIA OpenShell provides an open-source secure runtime that executes autonomous AI agents in…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+      "canonical_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-28T08:55:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2360,
+      "excerpt": "Add Runtime Controls to AI Agents with NVIDIA OpenShell | NVIDIA Technical Blog DEVELOPER Home Blog Forums Docs Downloads Training Join Technical Blog Subscribe Related Resources Agentic AI / Generative AI English 한국어 Add Runtime Controls to AI Agents with NVIDIA OpenShell Sep 28, 2026 By Alex Watson and Ali Golshan Like Discuss (0) L T F R E AI-Generated Summary NVIDIA OpenShell 0.1.0 provides an open-source runtime that enforces which systems and data an AI agent can access without rewriting the agent. NVIDIA OpenShell 0.1.0 is an open-source runtime for defining and enforcing which systems and data an agent can access. This post shows how…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Build real-time voice applications with vLLM-Omni on SageMaker AI – Part 1",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/build-real-time-voice-applications-with-vllm-omni-on-sagemaker-ai-part-1/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-28T16:15:46.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2661,
+      "excerpt": "Build real-time voice applications with vLLM-Omni on SageMaker AI – Part 1 | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. It focuses on streamed speech for real-time voice applications. The earlier post, Build real-time voice applications with Amazon SageMaker AI and vLLM , demonstrates the input side of a voice pipeline. Generate images and video…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Change Management Best Practices to Drive Value with Agent Builder",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
+      "publisher": "Microsoft Community Hub — Microsoft Copilot",
+      "published_at": "2026-09-28T15:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 13,
+      "excerpt": "Change Management Best Practices to Drive Value with Agent Builder | Microsoft Community Hub"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "AI at work: Learn, build, and grow with Microsoft Copilot and agents",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140",
+      "publisher": "Microsoft Community Hub — Skills Hub",
+      "published_at": "2026-09-25T12:04:32.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 15,
+      "excerpt": "AI at work: Learn, build, and grow with Microsoft Copilot and agents | Microsoft Community Hub"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "3 Must-Haves for Scaling Agentic AI in Health",
+      "canonical_url": "https://www.salesforce.com/blog/3-must-haves-for-scaling-agentic-ai-in-health/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-25T17:45:03.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2286,
+      "excerpt": "3 Must-Haves for Scaling Agentic AI in Health - Salesforce Skip to Content 0% Healthcare and Life Sciences 3 Must-Haves for Scaling Agentic AI in Health Lizanne Kiel September 25, 2026 5 min read Share article Learn how to build an Agentic Health Enterprise through trust, context, and action with insights from the Health Keynote at Dreamforce 2026. Instead of adding another layer of technology, agents coordinate work across the systems healthcare organizations already have, handling routine steps so people can focus on the judgment, care, and connection that matter most. See how organizations like UCLA Health, Highmark Health, and Select…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "qoder-skill-evolution",
+      "canonical_url": "https://docs.qoder.com/release-notes/qoder",
+      "publisher": "Qoder",
+      "published_at": "2026-09-23T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 2507,
+      "excerpt": "​ September 23, 2026 Qoder 0.4.1 A New Space for Human and Agent Collaboration Features Projects and discussions (Enterprise&Teams) : Discuss plans, push tasks forward, and bring ideas to life with your Agent, all in one place. Agent Teams (Enterprise&Teams) : Create and configure Agents, then bring them together into teams. Skill evolution suggestions : After a conversation finishes, Qoder can suggest creating or updating Skills based on reusable experience. Response annotations : Enable this feature in Settings-Experimental Features to select text in an Agent response, add it to the chat input box with an optional comment, and reference…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "The 5 AI agents I tell every executive to build first",
+      "canonical_url": "https://workspace.google.com/blog/future-of-work/the-5-ai-agents-i-tell-every-executive-to-build-first",
+      "publisher": "Google Workspace",
+      "published_at": "2026-09-24T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1067,
+      "excerpt": "The 5 AI agents I tell every executive to build first | Google Workspace Blog Jump to Content Workspace Blog Contact sales Get started Workspace Blog Topics Product Announcements AI and Machine Learning Productivity and Collaboration Identity and Security Future of Work Hybrid Work Customer Stories Developers and Practitioners Partners Events Public Sector Product News Gmail Meet Chat Drive Docs Sheets Vids Contact sales Get started Future of Work The 5 AI agents I tell every executive to build first September 24, 2026 Laura Mae Martin Executive Productivity Advisor, Google Try Google Workspace at No Cost Get a business email, all the…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Introducing n8n Agents",
+      "canonical_url": "https://blog.n8n.io/introducing-n8n-agents/",
+      "publisher": "n8n",
+      "published_at": "2026-09-25T12:00:23.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2220,
+      "excerpt": "Introducing n8n Agents – n8n Blog n8n home Tutorials Guides Tips By partners News Interviews Github ★ 162k Sign in Get Started n8n home Tutorials Guides Tips By partners News Interviews Sign in Get Started Introducing n8n Agents n8n now has a new type of Agent. Ophir Prusak September 25, 2026 ∙ 8 minutes read n8n now has Agents . With agents, it's easier to handle open-ended or back-and-forth jobs that could get complicated to build as a fixed workflow. Agents sit next to your workflows, and the two are built to work together. 👇 Why agents, and why now For as long as n8n has existed, automating something meant working out the steps and…"
+    }
+  ]
+}
