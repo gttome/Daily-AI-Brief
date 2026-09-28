@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m07",
+  "attempt": 1,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "image_sha256": "e8b4604563446e6682410558d343852b1b138c9d0511a1758ab9f2886854ae7b",
+  "rematerialized_sha256": "e8b4604563446e6682410558d343852b1b138c9d0511a1758ab9f2886854ae7b",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 1980306,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_9c60f056ff2c8191b336931f3d48e2c7",
+  "library_path": "/Daily AI Brief Qualification Images/m07/IH10-m07-attempt-1.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image clearly depicts Microsoft Copilot Managed Runtime inside a Microsoft 365 tenant boundary with IT governance, enterprise code execution, sharing, live data connections, and apps. No harness/status/Q/publication contamination is visible."
+    },
+    "factual_support": {
+      "pass": false,
+      "evidence": "The sealed evidence supports generic access to users' apps, but the generated image depicts specific branded Outlook, Excel, Word, PowerPoint, and OneNote app endpoints. Those specific app identities are not established by the frozen m07 evidence and therefore over-specify the supported claim."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Layered architecture is clear and integrated: tenant boundary is explicit, governed runtime sits inside it, and sharing/live-data/app-access paths are connected coherently."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional white-background textbook/editorial architecture with strong hierarchy, clean labeling, and restrained technical iconography."
+    }
+  },
+  "first_failed_gate": "FACTUAL_SUPPORT_PASS",
+  "failure_code": "qualification_image_unsupported_specific_app_endpoints",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "next_smallest_verified_correction": "Fresh m07 attempt preserving the same subject and layered architecture, but replace branded/named app endpoints with generic unlabeled application endpoint symbols only."
+}
