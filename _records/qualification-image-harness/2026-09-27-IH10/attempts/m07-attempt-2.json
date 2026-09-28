@@ -18,8 +18,8 @@
   ],
   "image_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
   "rematerialized_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
-  "width": 1536,
-  "height": 1024,
+  "width": 1731,
+  "height": 909,
   "size_bytes": 1939308,
   "mime_type": "image/png",
   "library_file_id": "libfile_00417bbc0fdc81919cd0a7d8ecf7e5b1",
@@ -50,5 +50,6 @@
   "production_mutation": false,
   "work_usage": 0,
   "codex_usage": 0,
-  "paid_api_usage": 0
+  "paid_api_usage": 0,
+  "note": "All four visual review gates PASS. Exact uploaded artifact metadata corrected from the raw PNG; acceptance remains pending exact-byte Git blob persistence."
 }
