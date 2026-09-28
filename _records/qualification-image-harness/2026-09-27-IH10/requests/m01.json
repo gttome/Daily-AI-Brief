@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "candidate_id": "m01",
+  "state": "GENERATION_REQUEST_READY",
+  "provenance": {
+    "source_selection_branch": "discovery-preflight/qualification/2026-09-26-Q12",
+    "source_selection_path": "_records/qualification/2026-09-26-Q12/editorial-selection.json",
+    "source_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "policy_overlay": "protected main after PR #271"
+  },
+  "generation_execution": {
+    "context_mode": "fresh_image_only",
+    "inherit_parent_context": false,
+    "prior_messages": [],
+    "attachments": [],
+    "sealed_story_packet": {
+      "story_id": "story-m01",
+      "candidate_id": "m01",
+      "headline": "Qoder can suggest new or updated Agent Skills from reusable conversation experience",
+      "source_url": "https://docs.qoder.com/release-notes/qoder",
+      "verified_visual_facts": [
+        "Qoder 0.4.1 includes Skill evolution suggestions",
+        "After a conversation finishes, Qoder can suggest creating Skills based on reusable experience",
+        "After a conversation finishes, Qoder can suggest updating Skills based on reusable experience"
+      ],
+      "generic_conceptual_elements": [
+        "completed conversation block",
+        "reusable experience extraction",
+        "skill suggestion decision point",
+        "create-skill outcome",
+        "update-skill outcome"
+      ],
+      "prohibited_specifics": [
+        "invented Qoder UI or screenshots",
+        "invented skill file formats or filenames",
+        "invented skill contents",
+        "invented scoring or ranking metrics",
+        "invented automation after suggestion",
+        "unsupported agent behavior",
+        "people or identifiable persons"
+      ],
+      "visual_brief": "Professional white-background textbook/editorial diagram explaining Qoder Skill evolution suggestions as a flow from a completed conversation to reusable experience, then to a suggestion that may create a new Skill or update an existing Skill. Use abstract process nodes, arrows, a clear decision/branch, and restrained technical iconography. No screenshots, dashboards, code, filenames, people, or fabricated product UI.",
+      "reference_policy": "Use only the frozen Q12 Qoder release-note evidence for concrete behavior; keep all other elements generic conceptual symbols.",
+      "acceptance_order": [
+        "subject_identity",
+        "factual_support",
+        "structural_quality",
+        "editorial_quality"
+      ],
+      "wrong_subject_action": "Discard and start a brand-new worker for this same story only.",
+      "low_quality_fallback": false,
+      "allowed_image_text": [
+        "Qoder",
+        "Conversation",
+        "Reusable Experience",
+        "Skill Evolution Suggestion",
+        "Create Skill",
+        "Update Skill"
+      ],
+      "composition_mode": "story_fit_editorial",
+      "prohibited_composition_patterns": [
+        "sparse_generic",
+        "decorative_only",
+        "repetitive_low_information"
+      ]
+    },
+    "generation_instruction": "story_id: story-m01\ncandidate_id: m01\nheadline: Qoder can suggest new or updated Agent Skills from reusable conversation experience\nsource_url: https://docs.qoder.com/release-notes/qoder\nverified_visual_facts: Qoder 0.4.1 includes Skill evolution suggestions; After a conversation finishes, Qoder can suggest creating Skills based on reusable experience; After a conversation finishes, Qoder can suggest updating Skills based on reusable experience\ngeneric_conceptual_elements: completed conversation block; reusable experience extraction; skill suggestion decision point; create-skill outcome; update-skill outcome\nprohibited_specifics: invented Qoder UI or screenshots; invented skill file formats or filenames; invented skill contents; invented scoring or ranking metrics; invented automation after suggestion; unsupported agent behavior; people or identifiable persons\nvisual_brief: Professional white-background textbook/editorial diagram explaining Qoder Skill evolution suggestions as a flow from a completed conversation to reusable experience, then to a suggestion that may create a new Skill or update an existing Skill. Use abstract process nodes, arrows, a clear decision/branch, and restrained technical iconography. No screenshots, dashboards, code, filenames, people, or fabricated product UI.\nreference_policy: Use only the frozen Q12 Qoder release-note evidence for concrete behavior; keep all other elements generic conceptual symbols.\nacceptance_order: subject_identity -> factual_support -> structural_quality -> editorial_quality\nwrong_subject_action: Discard and start a brand-new worker for this same story only.\nessential_image_text: Qoder | Conversation | Reusable Experience | Skill Evolution Suggestion | Create Skill | Update Skill\ncomposition_mode: story_fit_editorial\nhistorical_low_quality_patterns: sparse_generic | decorative_only | repetitive_low_information\nCOMPOSITION CONTRACT: Create a professional, detailed, readable textbook/editorial process illustration. Show one completed Conversation feeding Reusable Experience, then a Skill Evolution Suggestion that branches clearly to Create Skill and Update Skill. Keep the mechanism integrated and story-specific without inventing implementation details.\nVISIBLE TEXT POLICY: Render each essential_image_text label exactly as written at least once. Render NO OTHER visible product-behavior sentences, captions, slogans, UI text, metrics, filenames, or unsupported factual prose. Non-textual abstract technical symbols and icons are allowed.\nFACTUAL TEXT SAFETY: Do not imply that Qoder automatically creates or updates a Skill without a suggestion/decision step. Do not invent skill contents, ranking metrics, file formats, automation, UI, code, or other product behaviors.\nlow_quality_fallback: prohibited\nGenerate exactly one illustration for this story. Return only the generated illustration.",
+    "review_in_same_context": false
+  },
+  "generation_status": "pending_external_image_generation",
+  "review_status": "not_started",
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
