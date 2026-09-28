@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.12.0",
+  "schema_version": "1.13.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -72,7 +72,8 @@
     "book_mapping_evaluation": true,
     "images": 6,
     "image_quality_baseline": "2026-09-17-or-better",
-    "low_quality_fallback": false
+    "low_quality_fallback": false,
+    "media_freshness_policy": "media-research-cutoff-v1"
   },
   "execution_ownership": {
     "preflight": "github_actions",
@@ -568,5 +569,16 @@
     "modified_timestamp_is_not_publication": true,
     "historical_missing_policy": "ordinary 72 hours; Agent Skills 168 hours",
     "media_rules_changed": false
+  },
+  "media_cutoff_correction": {
+    "source_q": "2026-09-28-Q23",
+    "failure_code": "qualification_media_freshness_uses_midnight_not_cutoff",
+    "terminal_result_preserved": true,
+    "new_request_semantic_and_kernel_policy_identity_required": true,
+    "cutoff_source": "original fresh-run request; same reference for selection and canonical validation",
+    "same_day_pre_cutoff_media_eligible": true,
+    "after_cutoff_media_ineligible": true,
+    "historical_missing_policy_unchanged": true,
+    "media_limits_unchanged": true
   }
 }

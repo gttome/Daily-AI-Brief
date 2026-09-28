@@ -1,5 +1,29 @@
 # Daily AI Brief — Current Operations Entry Point
 
+## September 28, 2026 — Q23 media reference-time correction
+
+> [!IMPORTANT]
+> Q23 is terminal FAIL at MEDIA_READY, preserved at `cd940858dee9bb5a4c5e6d84cf2a7dbf47b4618d`. Its article preflight and one semantic selection passed and remain unchanged. This correction is not released until protected CI passes on the actual final head and normal merge completes. Never resume or refill Q23 into PASS.
+
+**Demonstrated defect:** workflow 36474976174 used publisher-verified Everyday AI episode 871 metadata: publication `2026-09-28T11:00:00Z`, duration 1,853 seconds, Q23 cutoff `2026-09-28T19:10:36Z`. The old selector rejected that 8.18-hour-old candidate because it used UTC midnight. Both video and podcast edition-validation paths contained the same reference-time error. No source timestamp was changed to make it pass.
+
+**Versioned correction:** `media-research-cutoff-v1` uses the original recorded research cutoff for selection and canonical edition validation. New run requests, semantic receipts and kernels must carry `media_freshness_policy`; kernel expansion retains it. Selectors receive the original cutoff and policy explicitly. Unknown policies, missing or timezone-free cutoffs, unresolved source dates and future sources fail closed. Historical artifacts without the field retain their recorded legacy interpretation. The metadata gate remains the authoritative cutoff source; execution time does not extend it.
+
+| Existing limit | Unchanged value |
+|---|---|
+| Videos | Exactly two; maximum age 72 hours; preferred duration <=10 minutes, fallback <=15, last resort <=20 |
+| Podcasts | Exactly two source-diverse selections; 48-hour primary, 7-day fallback and documented 30-day exception |
+| Evidence | Verified identity, original timestamp, exact runtime and reviewed source support; metadata capture is not editorial approval |
+| Other gates | Six stories, 2/2/2, one reusable Agent Skills story, nine article packets, 12,000 characters, novelty, professional images and nonproduction isolation |
+
+**Verified source-resolution lesson:** the stale Everyday AI WordPress feed is not evidence that the podcast has no recent episodes. Publisher-distributed Apple episode pages bind episode ID, show ID, GUID, exact release time and exact runtime. Saved-page artifact 10991834733 plus metadata-verification artifact 10992499980 provide three independently extracted records: Everyday AI 871 (September 28, 11:00 UTC, 30:53), Practical AI 373 (September 24, 09:00 UTC, 48:52), and AI for Humans 197 (September 24, 10:00 UTC, 48:21). Practical AI also supplies an episode page and transcript. These are metadata-qualified candidates, not selected media or reusable approval for a later Q. Preserve source hashes and review/novelty limitations. No oversized feed limit was raised.
+
+**YouTube diagnostic correction:** offline inspection of the three saved IBM-linked responses found LOGIN_REQUIRED / bot challenges with absent videoDetails. They are access challenges, not confirmed identity mismatches. Retain the original observations and append this diagnosis; do not retry or bypass challenges, invent dates/runtimes, or claim zero qualifying videos exist. Video selections remain unresolved.
+
+**Acceptance and continuation:** run new same-day/future/boundary/historical/kernel-round-trip tests, the full suite and protected CI; include contracts and these living-document amendments in the same PR; remove the temporary workbench. After normal merge, resolve live refs and start the next unused Q from actual merged main and an observed fresh cutoff. Require matching execution evidence. Preserve PR281/PR282, terminal Q/IH records, PR117, published content, the separate greenfield repository and Sites. No Work, Codex or paid-model API is authorized; billing is unobserved.
+
+---
+
 ## September 28, 2026 — Recovered Q22 repair: current continuation boundary
 
 > [!IMPORTANT]
