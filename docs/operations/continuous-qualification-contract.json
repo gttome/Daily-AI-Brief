@@ -516,5 +516,19 @@
     "added_recurring_applied_catalog": "google-workspace-blog-applied",
     "recurring_catalog_not_dated_pin": true,
     "production_mutation": false
+  },
+  "qualification_q18_semantic_evidence_membership": {
+    "qualification_only": true,
+    "q18_result": "fail",
+    "failure_code": "qualification_semantic_selection_outside_article_evidence",
+    "invalid_candidate_id": "m11",
+    "rule": "Every selected semantic candidate_id must be a member of the frozen nine-item article-evidence model_visible set before downstream work begins.",
+    "semantic_selection_must_be_subset_of_article_evidence": true,
+    "fail_closed_before_media": true,
+    "fail_closed_before_images": true,
+    "semantic_pass_count_unchanged": 1,
+    "rerun_failed_identity": false,
+    "next_proof_identity": "Q19",
+    "production_mutation": false
   }
 }
