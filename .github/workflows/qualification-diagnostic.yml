@@ -1,0 +1,59 @@
+name: Qualification coverage diagnostic
+
+on:
+  push:
+    branches: ['qualification-diagnostic/**']
+    paths: ['_records/qualification-diagnostics/request.json']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: qualification-coverage-diagnostic
+  cancel-in-progress: false
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out diagnostic branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Validate diagnostic identity and safety tests
+        run: |
+          set -euo pipefail
+          node --test _generator/test/qualification-diagnostic.test.mjs
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const r=JSON.parse(fs.readFileSync('_records/qualification-diagnostics/request.json','utf8'));
+          if(process.env.GITHUB_REF_NAME!=='qualification-diagnostic/'+r.diagnostic_id)throw Error('diagnostic_branch_identity_mismatch');
+          if(r.execution_mode!=='qualification_diagnostic_nonproduction'||r.production_mutation!==false)throw Error('diagnostic_isolation_required');
+          NODE
+      - name: Diagnose bounded source coverage without a semantic pass
+        run: node _tools/qualification-diagnostic.mjs
+      - name: Persist diagnostic evidence even when coverage is blocked
+        if: always()
+        run: |
+          set -euo pipefail
+          id="${GITHUB_REF_NAME##*/}"
+          [[ "$id" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}-D[0-9]+$ ]]
+          result="_records/qualification-diagnostics/$id"
+          test -f "$result/report.json"
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add -- "$result"
+          if ! git diff --cached --quiet; then
+            git commit -m "Preserve qualification diagnostic $id"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+          node - "$result/report.json" <<'NODE' >> "$GITHUB_STEP_SUMMARY"
+          const fs=require('fs'),r=JSON.parse(fs.readFileSync(process.argv[2]));
+          console.log('## Qualification coverage diagnostic');
+          console.log(JSON.stringify({diagnostic_id:r.diagnostic_id,result:r.result,classification:r.classification,pool:r.pool_coverage_after_novelty,shortlist:r.shortlist_coverage,qualification_pass:false,production_mutation:false},null,2));
+          NODE
