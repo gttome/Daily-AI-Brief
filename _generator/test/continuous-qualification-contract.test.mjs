@@ -62,17 +62,20 @@ test('qualification run identity supports scalable independently pausable slots'
 });
 
 
-test('qualification images require a dedicated image-only worker context',()=>{
+test('qualification images share automated production requests without manual fresh contexts',()=>{
   const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
   const w=c.image_worker_isolation;
-  assert.equal(w.dedicated_worker_required,true);
+  assert.equal(w.dedicated_worker_required,false);
+  assert.equal(w.manual_intervention_allowed,false);
+  assert.equal(w.requires_fresh_conversation,false);
+  assert.equal(w.runtime_context_isolation,'not_asserted');
   assert.equal(w.input_exactly_one_story_packet,true);
   assert.equal(w.operational_context_prohibited,true);
   assert.equal(w.worker_prompt_must_not_contain_run_id,true);
   assert.equal(w.worker_prompt_must_not_contain_q_number,true);
-  assert.equal(w.wrong_subject_retry_requires_new_worker_context,true);
-  assert.equal(w.same_worker_retry_prohibited_after_subject_mismatch,true);
-  assert.equal(w.max_wrong_subject_attempts_per_story_before_run_fail,2);
+  assert.equal(w.wrong_subject_retry_requires_new_worker_context,false);
+  assert.equal(w.same_worker_retry_prohibited_after_subject_mismatch,false);
+  assert.equal(w.max_wrong_subject_attempts_per_story_before_run_fail,4);
 });
 
 
@@ -84,7 +87,7 @@ test('qualification image packets require factual-support allowlists',()=>{
   assert.equal(x.generic_conceptual_elements_allowed,true);
   assert.equal(x.generic_elements_must_not_imply_product_fact,true);
   assert.deepEqual(x.image_packet_required_fields,['verified_visual_facts','generic_conceptual_elements','prohibited_specifics']);
-  assert.equal(x.max_factual_support_failures_per_story_before_run_fail,2);
+  assert.equal(x.max_factual_support_failures_per_story_before_run_fail,4);
 });
 
 
@@ -129,14 +132,15 @@ test('Q9 agent source supply includes Microsoft Work IQ without weakening gates'
 test('qualification image artifact handoff is durable and exact-byte preserving',()=>{
   const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
   const h=c.qualification_image_artifact_handoff;
-  assert.equal(h.durable_surface,'personal_library');
+  assert.equal(h.durable_surface,'exact_git_blob_with_native_output_provenance');
+  assert.equal(h.manual_intervention_allowed,false);
   assert.equal(h.exact_source_snapshot_required,true);
   assert.equal(h.ephemeral_file_id_only_prohibited,true);
   assert.equal(h.reviewer_must_materialize_raw_file,true);
   assert.equal(h.reviewer_must_compute_sha256,true);
   assert.equal(h.reviewer_must_persist_exact_bytes_to_git_blob,true);
   assert.equal(h.lossy_reencoding_prohibited,true);
-  assert.equal(h.reviewer_regeneration_prohibited,true);
+  assert.equal(h.reviewer_regeneration_prohibited,false);
   assert.equal(h.accepted_locked_requires_git_blob_exact_byte_match,true);
   assert.equal(h.production_mutation,false);
 });
@@ -148,8 +152,9 @@ test('qualification image workers are serialized story by story after Q11',()=>{
   assert.equal(s.maximum_concurrent_image_workers,1);
   assert.equal(s.next_story_start_requires_prior_story_terminal,true);
   assert.equal(s.generation_and_capture_same_worker_required,true);
-  assert.equal(s.durable_library_capture_before_worker_exit,true);
-  assert.equal(s.separate_reviewer_after_capture,true);
+  assert.equal(s.durable_library_capture_before_worker_exit,false);
+  assert.equal(s.separate_reviewer_after_capture,false);
+  assert.equal(s.review_phase,'after_generation');
   assert.equal(s.exact_git_persist_before_next_story,true);
   assert.equal(s.cross_story_parallelism_prohibited,true);
   assert.equal(s.cross_story_batch_generation_prohibited,true);

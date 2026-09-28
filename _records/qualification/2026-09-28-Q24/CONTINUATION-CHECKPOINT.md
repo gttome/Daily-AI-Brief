@@ -1,3 +1,15 @@
+# Current amendment: automated production image parity
+
+**Policy:** production-image-execution-v2. **Released code:** e21634590350f2b07e50a5b69d7a7fe3fb9c1908 (PR284, protected CI36494774048). **Q24 image requests:** six prepared and validated, not generated.
+
+The owner authorized testing to use production's automated path, with no manual image intervention. This amendment supersedes older fresh-chat, mandatory Library-transfer, separate review-conversation and unavailable-native-tool claims below. Runtime context isolation is not asserted; explicit request scope is one frozen story. Preserve factual/quality review, bounded automatic retries, raw capture, exact-byte persistence and read-back. No owner chats, uploads or manual reviews may be required.
+
+Read image-execution-v2/preparation.json and requests in frozen order m04, m03, m05, m06, m01, m09. Actual native generation, automatic capture/review/persistence and scheduled proof remain unfinished. A request or passing fixture is not an image. Continue the first unfinished image action; do not repeat the five passed components, change cutoff, start Q25 or claim full qualification/publication. The original baseline and frozen receipts remain immutable; execution code adoption is recorded separately.
+
+---
+
+## Earlier component checkpoint (preserved historical detail)
+
 # Daily AI Brief — Q24 Watchlist and Reader-Book Components PASS
 
 **Date:** September 28, 2026  

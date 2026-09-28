@@ -1,0 +1,58 @@
+{
+  "policy_id": "production-image-execution-v2",
+  "qualification_id": "2026-09-28-Q24",
+  "status": "REQUESTS_READY",
+  "prepared_at": "2026-09-28T22:54:27.325Z",
+  "workflow_run_id": "36495071588",
+  "execution_code_sha": "e21634590350f2b07e50a5b69d7a7fe3fb9c1908",
+  "original_baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "requests": [
+    {
+      "candidate_id": "m04",
+      "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json",
+      "file_sha256": "5a47d47cbe853d8808a2c3d16d6042cd96e67064437d20a8aabfef040e57c0ac",
+      "execution_sha256": "c6ee6ddaac0d89377752171ae9197b18cb282f54e28e715fdfc08e83a22e9956"
+    },
+    {
+      "candidate_id": "m03",
+      "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m03.json",
+      "file_sha256": "1c0888be7bd6b05b6b4d001ae7e4b98848b673df523793b255f647fb0abe3e0f",
+      "execution_sha256": "89d5846393b7218b13d20cb77a01e02c389c7820a73aeeb6d0421ce836cbed82"
+    },
+    {
+      "candidate_id": "m05",
+      "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m05.json",
+      "file_sha256": "9b0d75b831595518dde7f7eaaa834a410a524331c23f464b09111dd6cafc7017",
+      "execution_sha256": "2eede3c675f362e5b0a3c4b11b0765a75edad24c1c46406b3ac7a9fdb3b7e505"
+    },
+    {
+      "candidate_id": "m06",
+      "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m06.json",
+      "file_sha256": "6d8dc878faba37934cae599934d0fa9a1c632866e63846f3b95a7e878ae34fae",
+      "execution_sha256": "d463401d4be3f63b56961c9087d03d0a37b9433574080657ef5771b1df34a1b8"
+    },
+    {
+      "candidate_id": "m01",
+      "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m01.json",
+      "file_sha256": "402a001376bade2b5cad3efe1d4d46422bb1d753fec8763fe93a732af8a091c9",
+      "execution_sha256": "f7b3309643ac534f5cc273aff4b80f3207b846d22a8715400dbe72855fe3ecca"
+    },
+    {
+      "candidate_id": "m09",
+      "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m09.json",
+      "file_sha256": "3f80e33c228289e061ecdecac24e54d6b4105376a3253d802971e28cedca2221",
+      "execution_sha256": "2046104f184d2520cc5742a81241a312a0715816b218f270014bf1d12190a60d"
+    }
+  ],
+  "request_checks_passed": 6,
+  "native_image_generation_started": false,
+  "image_generation_calls": 0,
+  "accepted_locked_count": 0,
+  "manual_intervention_required": false,
+  "qualification_terminal": false,
+  "production_mutation": false,
+  "account_billing_observed": false
+}
