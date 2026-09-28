@@ -1,0 +1,74 @@
+name: Qualification date budget diagnostic
+on:
+  push:
+    branches: ['qualification-diagnostic/2026-09-28-D04']
+    paths: ['.github/workflows/qualification-date-budget-probe.yml']
+permissions:
+  contents: write
+concurrency:
+  group: qualification-date-budget-D04
+  cancel-in-progress: false
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Test bounded expiry-aware date enrichment without changing the metadata gate
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import {execFileSync} from 'node:child_process';
+          import {createHash} from 'node:crypto';
+          const id='2026-09-28-D04',dir='_records/qualification-date-budget/'+id;
+          if(process.env.GITHUB_REF_NAME!=='qualification-diagnostic/'+id)throw Error('wrong_diagnostic_branch');
+          if(fs.existsSync(dir+'/report.json'))throw Error('diagnostic_already_terminal');
+          fs.mkdirSync(dir,{recursive:true});
+          const cutoff=new Date().toISOString(),cutoffMs=Date.parse(cutoff),editionDate=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date(cutoff));
+          const report={schema_version:'1.0.0',diagnostic_id:id,workflow_run_id:process.env.GITHUB_RUN_ID,cutoff,started_at:cutoff,qualification_pass:false,production_mutation:false,semantic_pass_started:false,article_evidence_started:false,model_calls:0,source_scan_limit:48,enrichment_limit:48,metadata_limit:20,ordinary_freshness_hours:72,steps:[]};
+          const call=(name,file,args=[],env={})=>{
+            try{const stdout=execFileSync(process.execPath,[file,...args],{encoding:'utf8',timeout:300000,maxBuffer:6000000,env:{...process.env,...env}});report.steps.push({name,result:'pass',stdout:stdout.slice(-4000)});}
+            catch(e){report.steps.push({name,result:'fail',error:String(e.stderr||e.message).slice(-2500)});throw e;}
+          };
+          const enrichmentPath='_tools/enrich-metadata-dates.mjs',original=fs.readFileSync(enrichmentPath,'utf8');
+          try{
+            call('discovery','_tools/discover-sources.mjs',[],{DAB_RESEARCH_CUTOFF:cutoff,DAB_DISCOVERY_FRESH:'1',DAB_DISCOVERY_PURPOSE:'continuous_qualification',DAB_SOURCE_SCAN_MIN:'12',DAB_SOURCE_SCAN_MAX:'48',DAB_FRESH_METADATA_TARGET:'24'});
+            const queue=JSON.parse(fs.readFileSync('_data/media-candidate-queue.json'));
+            const isExpired=item=>!item.required_topic&&item.publication_date_precision==='day'&&Number.isFinite(Date.parse(item.published_at||item.publication_date))&&cutoffMs-Date.parse(item.published_at||item.publication_date)>108*3600000;
+            const expired=queue.candidates.filter(isExpired);
+            report.expired_day_precision_candidates=expired.length;
+            report.expired_by_source=Object.fromEntries([...new Set(expired.map(x=>x.source_id))].sort().map(s=>[s,expired.filter(x=>x.source_id===s).length]));
+            report.original_enrichment_sha256=createHash('sha256').update(original).digest('hex');
+            const marker='const pool=raw.candidates.filter(item=>{';
+            if(original.split(marker).length!==2)throw Error('enrichment_probe_marker_mismatch');
+            const guard="\n const existingPublished=Date.parse(item.published_at||item.publication_date);\n if(!item.required_topic&&item.publication_date_precision==='day'&&Number.isFinite(existingPublished)&&cutoffMs-existingPublished>108*3600000)return false;\n";
+            fs.writeFileSync(enrichmentPath,original.replace(marker,marker+guard));
+            call('expiry_aware_date_enrichment',enrichmentPath,['--input','_data/media-candidate-queue.json','--receipt',dir+'/date-enrichment.json','--limit','48','--cutoff',cutoff]);
+            fs.writeFileSync(enrichmentPath,original);
+            call('unchanged_metadata_gate','_tools/under80-metadata-gate.mjs',['--input','_data/media-candidate-queue.json','--out',dir+'/metadata-candidates.json','--limit','20','--cutoff',cutoff,'--qualification-edition-date',editionDate]);
+            const gate=JSON.parse(fs.readFileSync(dir+'/metadata-candidates.json')),enrichment=JSON.parse(fs.readFileSync(dir+'/date-enrichment.json'));
+            report.coverage_counts=gate.coverage_counts;report.coverage_ready=gate.coverage_ready;report.agent_skill_story_ready_signals_after_novelty=gate.agent_skill_story_ready_signals_after_novelty;report.rejected=gate.rejected;
+            report.enrichment={attempted:enrichment.attempted,resolved:enrichment.resolved,precision_attempted:enrichment.precision_attempted,precision_resolved:enrichment.precision_resolved,failed:enrichment.failed};
+            report.result='diagnostic_complete';report.note='Only the date-check candidate plan was changed in this isolated runner. No raw queue, altered implementation or qualification PASS is committed. This is a current snapshot, not a controlled replay of Q21; improved coverage, if any, still requires a tested permanent change and fresh full qualification.';
+          }catch(e){report.result='diagnostic_failed';report.error=String(e.message).slice(0,2000);process.exitCode=1;}
+          finally{fs.writeFileSync(enrichmentPath,original);report.completed_at=new Date().toISOString();fs.writeFileSync(dir+'/report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));}
+          NODE
+      - name: Preserve bounded diagnostic evidence
+        if: always()
+        run: |
+          set -euo pipefail
+          result='_records/qualification-date-budget/2026-09-28-D04'
+          test -f "$result/report.json"
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add -- "$result"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Preserve D04 expiry-aware date-budget diagnostic'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
