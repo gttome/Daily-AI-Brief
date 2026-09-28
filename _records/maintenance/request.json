@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "repository": "gttome/Daily-AI-Brief",
+  "maintenance_id": "cleanup-20260928-a",
+  "mode": "apply",
+  "expected_main_sha": "2700138782f8f92e7290b514e0be256e18371811",
+  "merged_before": "2026-09-27T00:00:00Z",
+  "max_branches": 80
+}
