@@ -1,54 +1,129 @@
-name: Q22 article body fixture capture
+name: Q22 recovered repair verification and document integration
 on:
   push:
     branches: [hardening/q22-article-evidence-body-2026-09-28]
     paths: [.github/workflows/q22-article-body-workbench.yml]
 permissions:
-  contents: read
+  contents: write
+concurrency:
+  group: q22-recovered-repair-document-integration
+  cancel-in-progress: false
 jobs:
-  capture:
+  verify-and-document:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '20'
-      - name: Reuse Q22 frozen evidence and terminal result
+      - name: Verify exact saved repair bytes and add reviewed documentation without rewriting history
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import hashlib, json
+          expected = {
+            '_tools/article-evidence-text.mjs': '4a55c54eb3718df83a899e30d91d35ba8e5ebf55f42c5480f6a7864f9ecaa6e1',
+            '_tools/under80-evidence-preflight.mjs': 'e31d6723613f91b2d370fd89df6098cefe1b1328b93f94cf471a0ea31c9c3762',
+            '_tools/validate-qualification-semantic-receipt.mjs': 'd42b58cba7d6fc294ed6c05a026502299614bf573fa6561c365306fe6a779d29',
+            '_generator/test/article-evidence-body.test.mjs': '063ca15811a83c7d97224b8e8ef5a6faa1a16056f9a697bcf0c1351e807971e2'
+          }
+          for filename, digest in expected.items():
+              assert hashlib.sha256(Path(filename).read_bytes()).hexdigest() == digest, filename + ': saved source checksum mismatch'
+          bases = {
+            'docs/operations/LIVING-SYSTEM-OPERATIONS.md': '3539978544968e75f30d78cc3dcaecc62a6b81f0',
+            'docs/operations/START-HERE.md': '7e7b4916ed000c1a77d7fd277fa5f071c5b15343'
+          }
+          for filename, digest in bases.items():
+              data = Path(filename).read_bytes()
+              assert hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest() == digest, filename + ': concurrent document change'
+          living = '''
+          ## September 28, 2026 — Q22 article-body extraction and evidence guard
+
+          > [!IMPORTANT]
+          > **PR #281 is already released; Q22 remains terminal FAIL.** This narrow correction becomes released behavior only after successful protected CI on its actual final head and a normal merge. The source-write retry through the same connected GitHub tool succeeded after the owner attached the checksum-verified bundle. No safeguard was bypassed. The older persistence incident below does not authorize reconstructing this recovered repair.
+
+          ### Article evidence must contain a source body, not an HTTP-success page shell
+
+          Q22 cleared preflight coverage with 11 Technical / 4 Applied / 5 Agents and nine evidence packets, but two Applied packets contained only 13-word and 15-word titles. Its terminal failure `qualification_article_evidence_title_only_false_readiness` and original evidence remain unchanged on `discovery-preflight/qualification/2026-09-28-Q22` at `4466d7f499b1848238bbe4594af4589d20d062f0`. Never refill, rerun or repair that Q into PASS.
+
+          The completed two-response capture in workflow **36461068265**, artifact **10987306772**, found the Microsoft Community Hub article text in JSON-LD `BlogPosting.description`, with matching canonical `mainEntityOfPage.@id` and headline. The earlier cleaner discarded scripts and lost that body. The capture is reused, not repeated; no authenticated endpoint, browser execution, extra article review or new source is required.
+
+          `_tools/article-evidence-text.mjs` parses JSON data without executing scripts, requires a supported article type and matching canonical URL, and rejects a conflicting headline. It prefers `articleBody`, then an adequately long article `description`, then visible article/main text with common navigation regions removed. Unrelated Organization descriptions, different article identities, malformed JSON and missing canonical identities cannot provide a structured source body.
+
+          Mechanical minimums are **80 source-body words and 25 excerpt words**, with explicit title-only rejection. These thresholds reject page shells; they do not certify semantic completeness. Editorial review must still reject irrelevant, promotional, unsupported or otherwise inadequate evidence. The collector records extraction method and body count, excludes insufficient retrievals from readiness, and rechecks excerpts after model-visible truncation. The current-policy semantic validator independently rejects selected evidence that fails the same guard. Historical legacy-policy artifacts retain their prior validator semantics.
+
+          | Preserved source | Original Q22 words | Local captured-response replay words | Extraction method |
+          |---|---:|---:|---|
+          | m05, Microsoft Copilot change management | 13 | 1,734 | Identity-matched `jsonld.description` |
+          | m06, Microsoft Skills Hub AI at work | 15 | 431 | Identity-matched `jsonld.description` |
+
+          These are prior parser-replay results, not a repaired Q22 or a new qualification. The recovered bundle records 468 passing local tests and 24 contract checks. Its exact four source/test files are verified by SHA-256 before this document integration; current GitHub workflow results must be reported separately from saved local evidence. The final PR must pass protected `validate` before normal merge.
+
+          **Unchanged constraints:** the nine-candidate plan, per-focus balance, preferred reusable Agent Skills candidate, bounded retrievals, 12,000-character evidence ceiling, one semantic pass, novelty, article freshness, media, professional accepted_locked images, nonproduction isolation and no Work/Codex/paid-model APIs. Insufficient evidence does not permit replacements in a frozen Q or higher review limits. Account billing remains unobserved.
+
+          **Continuation:** remove the temporary Q22 workbench from the final release diff, include these operating documents with the four source/test changes, require protected CI and normal merge, then recheck live refs and start only the next unused Q from actual merged main with an observed UTC cutoff. Verify matching workflow execution before reporting a start. PR #117, the separate greenfield repository, Sites and public editions are outside this correction.
+
+          ---
+          '''
+          start = '''
+          ## September 28, 2026 — Recovered Q22 repair: current continuation boundary
+
+          > [!IMPORTANT]
+          > **The saved repair is recovered, not missing.** The owner attached `Q22_Article_Evidence_Repair_2026-09-28.zip`; all 17 checksum entries passed. The exact four source/test files were reviewed and committed through the ordinary connected GitHub file tools. The earlier safety-status block did not recur. Do not repeat the source reconstruction, PR #281, D01–D05 or the two-response capture.
+
+          | Checkpoint | Durable meaning |
+          |---|---|
+          | Seven-day article policy | Already released in PR #281 at `adc2b88aeee4b946f3c9b6bf801b4e0ba416b486`, protected CI `36460152038` |
+          | Q22 | Terminal FAIL at `4466d7f499b1848238bbe4594af4589d20d062f0`; successful preflight does not supersede its failed semantic gate |
+          | Article-body correction | `hardening/q22-article-evidence-body-2026-09-28`; exact saved patch SHA-256 `16c70db6377c35e37b4d0e2d62d5b8f212f4f5511cbea080027395a991993a09` |
+          | Saved tests | 468 local tests and 24 contract checks; these are prior evidence, not the eventual protected-CI result |
+          | Release requirement | Same-PR operating documents, successful protected CI on final head, then normal merge |
+          | Next Q | Q23 was unused at recovery; resolve live refs again after merge rather than assuming it remains available |
+
+          Read Q22's `_records/qualification/2026-09-28-Q22/result.json` on its qualification branch before older receipts. Its m05 and m06 Applied evidence contains only titles. Never rerun discovery, refill its evidence, restart semantic selection or turn that failed Q into a pass.
+
+          The recovered extractor uses canonical-URL/headline-checked JSON-LD article bodies, visible-body fallback, and 80-source-word/25-excerpt-word title-shell guards. The collector and current-policy semantic validator both enforce evidence sufficiency without expanding the nine-item packet or relaxing editorial quality. See the Q22 amendment in `LIVING-SYSTEM-OPERATIONS.md` for the mechanism and preserved fixture proof.
+
+          Reuse any newer valid remote work. Remove the temporary workbench before the final release PR. Do not allocate a fresh Q until the correction has passed protected CI and merged. Then start the next unused identity from actual merged main and current observed UTC time; report the real matching workflow, not merely a request, branch or enabled schedule. Keep at most one nonterminal Q and preserve terminal evidence, PR #117, public content, the greenfield repository and Sites. No Work, Codex or paid model APIs are authorized; billing is unobserved.
+
+          ---
+          '''
+          for filename, addition in [('docs/operations/LIVING-SYSTEM-OPERATIONS.md', living), ('docs/operations/START-HERE.md', start)]:
+              p = Path(filename)
+              data = p.read_bytes()
+              first, rest = data.split(b'\n', 1)
+              addition = '\n'.join(line[0:] for line in addition.splitlines()) + '\n'
+              p.write_bytes(first + b'\n' + addition.encode('utf-8') + rest)
+          Path('/tmp/q22-repair-verification').mkdir(exist_ok=True)
+          Path('/tmp/q22-repair-verification/checksum-verification.json').write_text(json.dumps({'source_sha256': expected, 'document_base_blobs': bases, 'exact_saved_source_match': True, 'source_fixture_recapture': False}, indent=2) + '\n')
+          print('Exact saved source bytes and both document bases verified; historical document bytes preserved.')
+          PY
+      - name: Run complete deterministic tests and contracts
         run: |
           set -euo pipefail
-          mkdir -p /tmp/q22-article-body
-          git fetch --no-tags --depth=1 origin 4466d7f499b1848238bbe4594af4589d20d062f0
-          git show 4466d7f499b1848238bbe4594af4589d20d062f0:_records/qualification/2026-09-28-Q22/result.json > /tmp/q22-article-body/q22-result.json
-          git show 4466d7f499b1848238bbe4594af4589d20d062f0:_records/discovery-preflight/result/article-evidence.json > /tmp/q22-article-body/q22-article-evidence.json
-          git show 4466d7f499b1848238bbe4594af4589d20d062f0:_records/discovery-preflight/result/metadata-candidates.json > /tmp/q22-article-body/q22-metadata.json
-      - name: Capture the two demonstrated failed sources only
+          npm test 2>&1 | tee /tmp/q22-repair-verification/tests.log
+          npm run validate 2>&1 | tee /tmp/q22-repair-verification/repository-validation.log
+      - name: Commit only the two operating-document amendments to the correction branch
         run: |
-          node --input-type=module <<'NODE'
-          import fs from 'node:fs';
-          import crypto from 'node:crypto';
-          import {retrieveSource,compactDiscoveryHtml,cleanText} from './_tools/discovery-links.mjs';
-          const root='/tmp/q22-article-body';
-          const frozen=JSON.parse(fs.readFileSync(root+'/q22-article-evidence.json','utf8'));
-          const report={scope:'parser fixture capture, not a Q rerun',source_q:'2026-09-28-Q22',captured_at:new Date().toISOString(),model_calls:0,production_mutation:false,items:[]};
-          for(const id of ['m05','m06']){
-            const candidate=frozen.model_visible.find(x=>x.candidate_id===id);
-            if(!candidate||new URL(candidate.canonical_url).hostname!=='techcommunity.microsoft.com')throw Error('Unexpected source');
-            try{
-              const r=await retrieveSource(candidate.canonical_url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
-              fs.writeFileSync(root+'/'+id+'.html',r.text);
-              const compact=compactDiscoveryHtml(r.text),plain=cleanText(compact);
-              const structured=[...r.text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script\s*>/gi)].map(m=>({attributes:m[1].slice(0,300),chars:m[2].length,articleBody:m[2].includes('articleBody'),nextData:/__NEXT_DATA__/.test(m[1]),flight:/self\.__next_f/.test(m[2])}));
-              report.items.push({candidate_id:id,url:candidate.canonical_url,response_url:r.url,response_bytes:r.response_bytes,sha256:crypto.createHash('sha256').update(r.text).digest('hex'),plain_word_count:plain.split(/\s+/).filter(Boolean).length,plain_excerpt:plain.slice(0,1000),scripts:structured,article_elements:(r.text.match(/<article\b/gi)||[]).length,main_elements:(r.text.match(/<main\b/gi)||[]).length,attempts:r.attempts});
-            }catch(e){report.items.push({candidate_id:id,url:candidate.canonical_url,error:String(e.message),attempts:e.attempts||[]});}
-          }
-          fs.writeFileSync(root+'/report.json',JSON.stringify(report,null,2)+'\n');
-          console.log(JSON.stringify(report,null,2));
-          NODE
+          set -euo pipefail
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          test "$(git ls-remote origin refs/heads/hardening/q22-article-evidence-body-2026-09-28 | cut -f1)" = "$GITHUB_SHA"
+          python3 - <<'PY'
+          import subprocess
+          changed=set(subprocess.check_output(['git','diff','--name-only'],text=True).splitlines())
+          assert changed == {'docs/operations/LIVING-SYSTEM-OPERATIONS.md','docs/operations/START-HERE.md'}, changed
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/operations/LIVING-SYSTEM-OPERATIONS.md docs/operations/START-HERE.md
+          git commit -m 'Document recovered Q22 article-body evidence guard and release boundary'
+          git push origin HEAD:refs/heads/hardening/q22-article-evidence-body-2026-09-28
+          git rev-parse HEAD | tee /tmp/q22-repair-verification/document-commit.txt
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: q22-article-body-fixtures
-          path: /tmp/q22-article-body/
+          name: q22-recovered-repair-verification
+          path: /tmp/q22-repair-verification/
           retention-days: 14
           if-no-files-found: error
