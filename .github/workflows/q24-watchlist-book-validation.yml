@@ -1,0 +1,80 @@
+name: Q24 watchlist and reader-book component validation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-watchlist-book-validation.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Confirm nonterminal frozen baseline and reuse source artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/watchlist-book-evidence/validation.json
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = '1def5c4ba158247a9c02106dc4e4820d80a7133d'
+          mkdir -p /tmp/q24-watchlist-book-validation /tmp/q24-watchlist-book-sources
+          gh api repos/gttome/Daily-AI-Brief/actions/artifacts/11000686644/zip > /tmp/q24-primary-sources.zip
+          echo 'b3bd218d20b70492a664bc4f9106ca6ffb390bc14c41e6dcaa834ee3ee71dc93  /tmp/q24-primary-sources.zip' | sha256sum -c -
+          python3 - <<'PY'
+          import pathlib,zipfile
+          with zipfile.ZipFile('/tmp/q24-primary-sources.zip') as z:
+              for name in z.namelist():
+                  p=pathlib.PurePosixPath(name)
+                  assert not p.is_absolute() and '..' not in p.parts
+              z.extractall('/tmp/q24-watchlist-book-sources')
+          PY
+          python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+          node --check _records/qualification/2026-09-28-Q24/tools/validate-watchlist-books.mjs
+      - name: Run released watchlist and reader-book regression tests
+        run: |
+          set -euo pipefail
+          if node --test _generator/test/watchlist.test.mjs _generator/test/watchlist-delta.test.mjs _generator/test/watchlist-daily-state.test.mjs _generator/test/emerging-signal-sweep.test.mjs _generator/test/book-reading.test.mjs > /tmp/q24-watchlist-book-validation/targeted-tests.tap 2>&1; then
+            cat /tmp/q24-watchlist-book-validation/targeted-tests.tap
+          else
+            cat /tmp/q24-watchlist-book-validation/targeted-tests.tap
+            exit 1
+          fi
+      - name: Validate reviewed evidence and derive branch-local component projections
+        run: |
+          set -euo pipefail
+          if node _records/qualification/2026-09-28-Q24/tools/validate-watchlist-books.mjs > /tmp/q24-watchlist-book-validation/component-validation.log 2>&1; then
+            cat /tmp/q24-watchlist-book-validation/component-validation.log
+          else
+            cat /tmp/q24-watchlist-book-validation/component-validation.log
+            exit 1
+          fi
+      - name: Persist only the five validated component records
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          test "$(git ls-remote origin refs/heads/main | cut -f1)" = '1def5c4ba158247a9c02106dc4e4820d80a7133d'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for name in watchlist-selection.json watchlist-delta.json emerging-signal-sweep.json book-reading-selection.json validation.json; do
+            git add "_records/qualification/2026-09-28-Q24/watchlist-book-evidence/$name"
+          done
+          git diff --cached --name-only | python3 -c 'import sys; p="_records/qualification/2026-09-28-Q24/watchlist-book-evidence/"; expected={p+n for n in ("watchlist-selection.json","watchlist-delta.json","emerging-signal-sweep.json","book-reading-selection.json","validation.json")}; assert set(sys.stdin.read().splitlines())==expected'
+          git commit -m 'Validate Q24 watchlist and reader-book components; images and final gates pending'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - name: Preserve unsuccessful attempt diagnostic
+        if: failure()
+        run: |
+          mkdir -p /tmp/q24-watchlist-book-validation
+          printf '{"workflow_run_id":"%s","status":"COMPONENT_ATTEMPT_FAILED","qualification_terminal":false,"note":"Inspect retained logs; no full qualification result is claimed."}\n' "$GITHUB_RUN_ID" > /tmp/q24-watchlist-book-validation/attempt-failure.json
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-watchlist-book-component-validation
+          path: |
+            /tmp/q24-watchlist-book-validation/
+            _records/qualification/2026-09-28-Q24/watchlist-book-evidence/
+          retention-days: 14
+          if-no-files-found: error
