@@ -1,0 +1,70 @@
+name: Q24 m04 raw image read-back
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-m04-raw-readback.yml']
+permissions:
+  contents: read
+jobs:
+  readback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Verify existing raw file and export bounded review bundle
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import hashlib,json,os,struct,subprocess,shutil
+          from pathlib import Path
+          from datetime import datetime,timezone
+          q=Path('_records/qualification/2026-09-28-Q24')
+          assert not (q/'result.json').exists(), 'Q24 already terminal'
+          bindings={
+            '_records/discovery-preflight/result/article-evidence.json':'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df',
+            str(q/'semantic-receipt.json'):'fc459b45af230f8b3d9142a7f951510b9a8475f7',
+            str(q/'media-evidence/podcast-selection.json'):'0255cbdca2e89ebb4c2b20672103dee517056930',
+            str(q/'media-evidence/video-selection.json'):'02125e82d2246e512740cdb48d5d4f97a5bc41ce',
+            str(q/'watchlist-book-evidence/validation.json'):'75c7f045b9937f5e33157cd1cbd59e92202d2ee9'
+          }
+          for p,h in bindings.items():
+            assert subprocess.check_output(['git','hash-object',p],text=True).strip()==h,p
+          attempt_path=q/'image-execution-v2/attempts/m04-attempt-1.json'
+          a=json.loads(attempt_path.read_text())
+          assert a['candidate_id']=='m04' and a['attempt']==1
+          assert a['policy_id']=='production-image-execution-v2'
+          assert a['preserved_cutoff']=='2026-09-28T20:04:36Z'
+          assert a['owner_interventions']==[]
+          raw_path=Path('_records/image-attempts/2026-09-28-Q24/m04/attempt-1/raw.png')
+          raw=raw_path.read_bytes()
+          digest=hashlib.sha256(raw).hexdigest()
+          blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+          assert digest=='7e51fd9afff52d2be13471c141e5114f03be2cf02a7564b0f6a4ef771dc4d7f2'
+          assert blob=='3517484d4705ba6dd4e8211829a677f11a20ff5a'
+          assert a['generation']['raw_sha256']==digest==a['raw_capture']['sha256']
+          assert a['raw_capture']['git_blob_sha']==blob
+          assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+          assert struct.unpack('>II',raw[16:24])==(1536,1024)
+          request=Path(a['request_binding']['path'])
+          assert hashlib.sha256(request.read_bytes()).hexdigest()==a['request_binding']['file_sha256']
+          out=Path('/tmp/q24-m04-readback');out.mkdir()
+          for p in [raw_path,attempt_path,request,Path('_records/image-quality/benchmark-profile-v1.json')]:
+            target=out/p;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
+          profile=json.loads(Path('_records/image-quality/benchmark-profile-v1.json').read_text())
+          for s in profile['accepted_sets']:
+            for item in s['assets']:
+              p=Path(item['path']);assert not p.is_absolute() and '..' not in p.parts
+              assert subprocess.check_output(['git','hash-object',str(p)],text=True).strip()==item['git_blob_sha']
+              target=out/p;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
+          subprocess.run(['git','archive','--format=zip','--output='+str(out/'source.zip'),'HEAD','_generator','_tools','docs/operations/automated-image-execution.md',str(q/'image-execution-v2'),str(q/'semantic-receipt.json')],check=True)
+          result={'qualification_id':'2026-09-28-Q24','candidate_id':'m04','attempt':1,'result':'pass','scope':'Read-back and frozen-input verification only; not visual approval or acceptance','verified_at':datetime.now(timezone.utc).isoformat(),'workflow_run_id':os.environ['GITHUB_RUN_ID'],'execution_commit':os.environ['GITHUB_SHA'],'raw_path':str(raw_path),'raw_sha256':digest,'raw_git_blob_sha':blob,'raw_bytes':len(raw),'width':1536,'height':1024,'read_back_verified':True,'generation_rerun':False,'review_complete':False,'accepted_locked':False,'production_mutation':False,'frozen_bindings':bindings}
+          (out/'readback.json').write_text(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          PY
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-m04-exact-image-review-inputs
+          path: /tmp/q24-m04-readback/
+          retention-days: 14
+          if-no-files-found: error
