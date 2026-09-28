@@ -6,6 +6,13 @@ export function discoveryStopDecision({qualification=false,scanned,minSources,fr
     if(normalChars>=absoluteBudget)return {stop:true,reason:'qualification_absolute_acquisition_budget',focus_minimum:focusMinimum};
     return {stop:false,reason:null,focus_minimum:focusMinimum};
   }
-  if(normalChars>=normalBudget)return {stop:true,reason:'normal_acquisition_budget',focus_minimum:focusMinimum};
+  // The normal production budget is a soft efficiency target, not permission to
+  // violate the mandatory 3-per-focus coverage gate. Continue bounded scanning
+  // until focus coverage is sufficient or the absolute budget is reached.
+  if(normalChars>=absoluteBudget)return {stop:true,reason:'production_absolute_acquisition_budget',focus_minimum:focusMinimum};
+  if(normalChars>=normalBudget){
+    if(coverageReady)return {stop:true,reason:'normal_acquisition_budget',focus_minimum:focusMinimum};
+    return {stop:false,reason:null,focus_minimum:focusMinimum};
+  }
   return {stop:false,reason:null,focus_minimum:focusMinimum};
 }

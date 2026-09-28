@@ -14,9 +14,29 @@ const base={
   absoluteBudget:2500000
 };
 
-test('production discovery still stops at normal acquisition budget',()=>{
+test('production discovery continues past normal acquisition budget while required focus supply is insufficient',()=>{
   assert.deepEqual(discoveryStopDecision({...base,qualification:false}),{
+    stop:false,reason:null,focus_minimum:3
+  });
+});
+
+test('production discovery may stop at normal budget once mandatory focus coverage is satisfied',()=>{
+  assert.deepEqual(discoveryStopDecision({
+    ...base,
+    qualification:false,
+    focusCoverage:{technical_ai_engineering:8,applied_genai_knowledge_workers:3,agents_non_technical_people:3}
+  }),{
     stop:true,reason:'normal_acquisition_budget',focus_minimum:3
+  });
+});
+
+test('production discovery keeps the absolute acquisition budget hard',()=>{
+  assert.deepEqual(discoveryStopDecision({
+    ...base,
+    qualification:false,
+    normalChars:2500000
+  }),{
+    stop:true,reason:'production_absolute_acquisition_budget',focus_minimum:3
   });
 });
 

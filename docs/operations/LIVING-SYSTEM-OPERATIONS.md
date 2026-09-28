@@ -326,7 +326,7 @@ stateDiagram-v2
 |---:|---|---|
 | **7** | **Establish edition date + cutoff** | Current America/Chicago edition date and research cutoff are recorded. |
 | **8** | **Fresh metadata discovery** | Approved primary-source channels are scanned with zero model calls. |
-| **9** | **Bound discovery breadth** | Acquisition stops at configured source and character budgets. |
+| **9** | **Bound discovery breadth** | The normal acquisition budget is a soft efficiency target while mandatory 3-per-focus coverage is unmet; production may continue bounded scanning only up to the absolute acquisition budget, which remains a hard fail-closed ceiling. |
 | **10** | **Resolve publication/update dates** | Bounded deterministic date enrichment is performed. |
 | **11** | **Deterministic metadata filtering** | Stale, invalid, duplicate, unresolved and low-value items are removed. |
 | **12** | **Retain ≤20 metadata candidates** | Bounded shortlist is written to the preflight branch. |
@@ -630,6 +630,21 @@ flowchart TD
 ---
 
 # 5. Troubleshooting & Hardening Ledger
+
+## 2026-09-28 — Production discovery exhausted the normal budget before Applied coverage
+
+| Field | Durable operating record |
+|---|---|
+| **Symptom** | Current-day recovery discovery scanned 12 sources, retained 12 candidates, and failed coverage with **7 Technical / 0 Applied / 5 Agents** even though the active source plan contained recurring Applied catalogs. |
+| **Failure code / stage** | `discovery_preflight_not_coverage_ready` at `PREFLIGHT_DISCOVERY_READY`. |
+| **Root cause** | Production discovery treated the normal acquisition character budget as a hard stop even when the mandatory production focus minimum (3 per focus) was not satisfied. The newer Applied catalogs were therefore never reached in the bounded scan. |
+| **Smallest permanent correction** | Treat the normal acquisition budget as soft only while mandatory focus coverage is incomplete; continue scanning within the existing source cap until coverage is sufficient or the absolute acquisition budget is reached. |
+| **Hard ceiling** | The absolute acquisition budget remains hard. If it is reached before coverage becomes valid, discovery still fails closed; no editorial downgrade or synthetic filler is permitted. |
+| **No-rework rule** | Reuse the successful current-day metadata checkpoint; rerun only discovery/evidence and deterministic dependents after the protected correction reaches `main`. |
+| **Regression control** | `discovery-stop-policy.test.mjs` proves production continues past the normal budget when coverage is insufficient, may stop at the normal budget when coverage is valid, and always stops at the absolute budget. |
+| **Documentation** | This living reference is updated in the same hardening change set. |
+
+
 
 ## Hardening status dashboard
 
