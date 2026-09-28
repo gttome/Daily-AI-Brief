@@ -1,0 +1,174 @@
+{
+  "schema_version": "1.0.0",
+  "qualification_id": "2026-09-28-Q24",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": "36490666765",
+  "execution_commit": "7c67bd98fc47e6935a113d1e205b7a0ab6d33b4e",
+  "validated_at": "2026-09-28T22:09:30.854Z",
+  "result": "pass",
+  "scope": "Watchlist and reader-book components only; not final edition, protected release CI, assembled media gate, private book-change evaluation, qualification closure or publication.",
+  "watchlist_daily_summary": {
+    "new_today": 1,
+    "updated_today": 3,
+    "carried_forward": 13
+  },
+  "watchlist_coverage_status": "degraded",
+  "book_items_evaluated": 10,
+  "books_considered": 4,
+  "reader_bridges_selected": 7,
+  "books_linked": 3,
+  "book_contract_gap": "Learning Ecosystem has verified public sample content but no public table of contents in captured evidence; do not mislabel.",
+  "private_book_change_evaluation": {
+    "status": "DEFERRED_UNTIL_FINAL_EDITION",
+    "evaluation_completed": false,
+    "proposal_count": null,
+    "reason": "The private operations contract evaluates the final published edition and deduplicates a private backlog. Q24 has neither final edition SHA nor closure. Reader bridges are not that private evaluation. No private proposal contents or backlog are copied into this public repository."
+  },
+  "source_artifact_id": 11000686644,
+  "source_artifact_sha256": "b3bd218d20b70492a664bc4f9106ca6ffb390bc14c41e6dcaa834ee3ee71dc93",
+  "source_capture_sha256": "2255216b2b022de8804b60d738396dc5b2f3c11efd8f4827bb8095f993e75b21",
+  "review_sha256": "fbc7b3da8a19331179a19474a04851862efa24177cf4acb83eef995bafea2477",
+  "output_sha256": {
+    "watchlist-selection.json": "fff88d8377857564d963dde00052fccd1169c5d3dc15f8d507ce3abe8b875044",
+    "watchlist-delta.json": "9759f8d168da4769adfdd6f67b937e267852efd9ee7abf437344c012a282706d",
+    "emerging-signal-sweep.json": "8ce7feb04fb77ede1d6ad68e6f40d978fa185c1505501e219b3f2fd6fada9ab2",
+    "book-reading-selection.json": "08af8bfabfc82582c9e333154ca160bb08e74ea4020f2aa5dc7dc801f701887e"
+  },
+  "checks": [
+    {
+      "name": "frozen components, policies and preservation baselines",
+      "result": "pass"
+    },
+    {
+      "name": "nine raw source hashes and exact captured manifest",
+      "result": "pass"
+    },
+    {
+      "name": "original arXiv v1 and pinned CLM timestamps",
+      "result": "pass"
+    },
+    {
+      "name": "exact PDF extraction and honest fourth-book evidence type",
+      "result": "pass"
+    },
+    {
+      "name": "released watchlist validator and exact 1/3/13 daily delta",
+      "result": "pass"
+    },
+    {
+      "name": "Qoder is preserved without another development or timestamp",
+      "result": "pass"
+    },
+    {
+      "name": "released emerging sweep validator; eight queries and degraded coverage retained",
+      "result": "pass"
+    },
+    {
+      "name": "all ten frozen items reviewed against four-book inventory",
+      "result": "pass"
+    },
+    {
+      "name": "released reader-bridge validator; historical catalog preserved; seven links across three books",
+      "result": "pass"
+    },
+    {
+      "name": "reject changed cutoff",
+      "result": "pass"
+    },
+    {
+      "name": "reject changed source digest",
+      "result": "pass"
+    },
+    {
+      "name": "reject fabricated literal excerpt",
+      "result": "pass"
+    },
+    {
+      "name": "reject future evidence timestamp",
+      "result": "pass"
+    },
+    {
+      "name": "reject unknown book reference",
+      "result": "pass"
+    },
+    {
+      "name": "reject duplicate book placement",
+      "result": "pass"
+    },
+    {
+      "name": "reject relabeled unsupported book evidence type",
+      "result": "pass"
+    },
+    {
+      "name": "reject invented practice",
+      "result": "pass"
+    },
+    {
+      "name": "reject non-Leanpub book destination",
+      "result": "pass"
+    },
+    {
+      "name": "reject unknown reader item",
+      "result": "pass"
+    },
+    {
+      "name": "reject invented book section",
+      "result": "pass"
+    },
+    {
+      "name": "reject watchlist topic without primary evidence",
+      "result": "pass"
+    },
+    {
+      "name": "reject invented momentum",
+      "result": "pass"
+    },
+    {
+      "name": "reject false zero-new certificate",
+      "result": "pass"
+    },
+    {
+      "name": "reject omitted missed-signal check",
+      "result": "pass"
+    },
+    {
+      "name": "reject removed prior topic",
+      "result": "pass"
+    },
+    {
+      "name": "reject retimed carried topic",
+      "result": "pass"
+    }
+  ],
+  "checks_passed": 26,
+  "targeted_existing_tests_passed": 23,
+  "targeted_test_log_sha256": "45bad7cac0fed95f255427beccf432df36959905007f8f7e16a7e5a7000c44be",
+  "pdf_extractions": {
+    "prompt-guide-sample": {
+      "pages": 6,
+      "sha256": "f00674ece2bd0b353e47fd476a3dbce634851cdeb5c29b047e878197bd54b9bf",
+      "title": "Microsoft Word - Generative AI Professional Prompt Engineering Guide - First Edition Release 11.docx",
+      "method": "pypdf 5.9.0",
+      "contains_toc": true
+    },
+    "learning-sample": {
+      "pages": 6,
+      "sha256": "cdbabed20e05114a29060b65357ab96a1eaf7fc02e973fb87251f76e5df217d8",
+      "title": "",
+      "method": "pypdf 5.9.0",
+      "contains_toc": false
+    }
+  },
+  "article_and_media_components_reused": true,
+  "media_ready": false,
+  "images_started": false,
+  "qualification_terminal": false,
+  "new_publisher_requests": 0,
+  "model_api_calls": 0,
+  "production_mutation": false,
+  "account_billing_observed": false,
+  "final_gate_obligation": "Revalidate these projections against the complete final edition and its canonical media IDs. Do not treat the minimal story/video bridge identity envelope as an assembled edition."
+}

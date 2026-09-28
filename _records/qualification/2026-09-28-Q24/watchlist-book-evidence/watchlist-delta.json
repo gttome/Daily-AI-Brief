@@ -1,0 +1,187 @@
+{
+  "schema_version": "1.0.0",
+  "topics": [
+    {
+      "topic_id": "dab-topic-collaborative-vibe-coding",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "d6caf318b534e20bc562034b6f1b5eb803850bbd094d37efc13945958fc6a41d",
+      "evidence_hash": "d6caf318b534e20bc562034b6f1b5eb803850bbd094d37efc13945958fc6a41d",
+      "source_set_hash": "8203080aa88b36a9e4bd6309cac88c97fa4aaeae03a9d6d8d81b2d6a0dd07521",
+      "evidence_count": 2
+    },
+    {
+      "topic_id": "dab-topic-repairable-generative-design",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "4fc182c259fdd34bcd9c092ecd4fcc6532ab6eeaa8ce854a7cc4f615ea3d30da",
+      "evidence_hash": "4fc182c259fdd34bcd9c092ecd4fcc6532ab6eeaa8ce854a7cc4f615ea3d30da",
+      "source_set_hash": "f7ff18416c6f413bbb909e4d3be4a5426be3090e4d529df802de5ac4b0faa74e",
+      "evidence_count": 1
+    },
+    {
+      "topic_id": "dab-topic-image-edit-restoration",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "6172bb22d433a30467d7c0cbc5c43a5b35e8dfeee9dc7de1373a46f6d93c1510",
+      "evidence_hash": "6172bb22d433a30467d7c0cbc5c43a5b35e8dfeee9dc7de1373a46f6d93c1510",
+      "source_set_hash": "17c4fd20cbd8c718f47f561fa98699aa6165bf03c0535382ba382f7062ec614f",
+      "evidence_count": 2
+    },
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "212b324f7b9795301de122e340b047e5d754f5cf3287e9c0e4498a8c7fb644fc",
+      "evidence_hash": "212b324f7b9795301de122e340b047e5d754f5cf3287e9c0e4498a8c7fb644fc",
+      "source_set_hash": "276291501a7da90632c109030600eb2fe645250b77ecae9a392e38cea7d9f972",
+      "evidence_count": 7
+    },
+    {
+      "topic_id": "dab-topic-concept-level-language-models",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "538f9e0584d2fca4a4c2226d35281099ca965c94d07fdc8526077d9fef347bd9",
+      "evidence_hash": "538f9e0584d2fca4a4c2226d35281099ca965c94d07fdc8526077d9fef347bd9",
+      "source_set_hash": "650c77ed527355f668436599500ea8c1b1efda038f80205d16a61e183cf17d32",
+      "evidence_count": 2
+    },
+    {
+      "topic_id": "dab-topic-memory-guided-planning",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "5f1242477cb1a438649248c5a5954f9792d438c9c90e1cbfac88ddcf771f023e",
+      "evidence_hash": "5f1242477cb1a438649248c5a5954f9792d438c9c90e1cbfac88ddcf771f023e",
+      "source_set_hash": "c6d77916fe1b6c340c0b9d81d8febf9b0e8e445c2b9f113d08ed8c1f377bae41",
+      "evidence_count": 5
+    },
+    {
+      "topic_id": "dab-topic-recursive-scene-programs",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "905e3bc8092cb4f8647fedc49c4a4abe9c08d9de43d47e6fe7b55b35ca859a8a",
+      "evidence_hash": "905e3bc8092cb4f8647fedc49c4a4abe9c08d9de43d47e6fe7b55b35ca859a8a",
+      "source_set_hash": "4357b017c722d34c60d8661909ff8a34c168eef46b4790e03a04f24f8da71275",
+      "evidence_count": 3
+    },
+    {
+      "topic_id": "dab-topic-selective-precision-attention",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "f5531d1d3e2dbefcd9e3c9e023ee2aa6b12a453aafff01a384df19a36163e673",
+      "evidence_hash": "f5531d1d3e2dbefcd9e3c9e023ee2aa6b12a453aafff01a384df19a36163e673",
+      "source_set_hash": "7ebe18d229dec1e82f684b7445d24c6c2b553b3e3a062353964285249a62f264",
+      "evidence_count": 2
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "f969955d3baef802dc62811388fe0d5b22edf906920e1cfca146fcf434199626",
+      "evidence_hash": "f969955d3baef802dc62811388fe0d5b22edf906920e1cfca146fcf434199626",
+      "source_set_hash": "7f4180d4bcb51e4a755bebce050ef199dc05e36ed7b9162de5a629961ff95552",
+      "evidence_count": 8
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "ffded2e3a8dda1c9968c340239d5ba5054c02195acb0695fa97e66a2c62fef1a",
+      "evidence_hash": "ffded2e3a8dda1c9968c340239d5ba5054c02195acb0695fa97e66a2c62fef1a",
+      "source_set_hash": "8f74d72a573f423af2520c29dd791e2e025a2990e043fd044c7790272f49238e",
+      "evidence_count": 2
+    },
+    {
+      "topic_id": "dab-topic-ai-adoption-telemetry",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "175982143afd0d5e1cddc0533d30f3e3787666ef699907803849acb332753688",
+      "evidence_hash": "175982143afd0d5e1cddc0533d30f3e3787666ef699907803849acb332753688",
+      "source_set_hash": "c6c278eaab964f55244c8e7660f32fbf62705b9c1d98efbaa89700cd8b3ffaea",
+      "evidence_count": 4
+    },
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "status": "changed",
+      "semantic_refresh_required": true,
+      "prior_hash": "5d5bb2e44caf82352eeafdd45ce53e3fed6a9b337ef48204e103b223388ced6f",
+      "evidence_hash": "2bdfc4cd56c07913cd92d1d19901bb9109b05732c792774b16bab2cda956efb8",
+      "source_set_hash": "b60326f17b61cf33cfcc039bf08d78488ebc2385dfae89ca457d361f4e61e103",
+      "evidence_count": 12
+    },
+    {
+      "topic_id": "dab-topic-agentic-edge-inference",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "15e381abade8e702a94db7ce199255977cced0efb6b184546d10b3b4d9a74eb1",
+      "evidence_hash": "15e381abade8e702a94db7ce199255977cced0efb6b184546d10b3b4d9a74eb1",
+      "source_set_hash": "4e922359240a9aadd27903a81962eb1e2b3bd46a89eef8675cea5ad5640211d6",
+      "evidence_count": 2
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "status": "changed",
+      "semantic_refresh_required": true,
+      "prior_hash": "f610bef881526f0acf2a6ef7c9a8c74d743f136335b60b8b104e4b4d98aae468",
+      "evidence_hash": "ed7e437169046ec2c537e07669083064cec1da792c01e7e683e2f7c68c3ee443",
+      "source_set_hash": "c41d5f544cd5f357a8d7335a00efff420fa9eeddde18b40002c11f88c5241b0f",
+      "evidence_count": 5
+    },
+    {
+      "topic_id": "dab-topic-agent-overclaiming",
+      "status": "carried",
+      "semantic_refresh_required": false,
+      "prior_hash": "09d385dce17b0534689ddfacef5a28c774e461cc64922e8a35aed6f496cedfce",
+      "evidence_hash": "09d385dce17b0534689ddfacef5a28c774e461cc64922e8a35aed6f496cedfce",
+      "source_set_hash": "3ea69f9998b164a73efc4bb37a32aa3b661e799d559641888e7494024da0af92",
+      "evidence_count": 1
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "status": "changed",
+      "semantic_refresh_required": true,
+      "prior_hash": "b7407c8078692b2aa5080dacf4b0117b2c9274eb51fd1bb50b51ef71336c8e66",
+      "evidence_hash": "01803cb8a98bbeaff359a7fd4d67fd0f3d622dc30e2a62e62f1d27d142d315b5",
+      "source_set_hash": "fd5a96743be191d794d037bd49116a750acfe152e1162bb10e182839f713fe75",
+      "evidence_count": 3
+    },
+    {
+      "topic_id": "dab-topic-self-organizing-agent-coordination",
+      "status": "new",
+      "semantic_refresh_required": true,
+      "prior_hash": null,
+      "evidence_hash": "d56ccdd7847af293f2bb88bdb4a12d13b37293c66ca316ff9fe7b997187a1951",
+      "source_set_hash": "7e91f9e61b8936f9744c938c05ad5fc946b4eb6a13bb8d0c7fc59d15cfcb0797",
+      "evidence_count": 1
+    }
+  ],
+  "changed_topics": [
+    "dab-topic-harness-engineering",
+    "dab-topic-model-lifecycle-governance",
+    "dab-topic-system-one-decision-models",
+    "dab-topic-self-organizing-agent-coordination"
+  ],
+  "carried_topics": [
+    "dab-topic-collaborative-vibe-coding",
+    "dab-topic-repairable-generative-design",
+    "dab-topic-image-edit-restoration",
+    "dab-topic-adaptive-agent-safeguards",
+    "dab-topic-concept-level-language-models",
+    "dab-topic-memory-guided-planning",
+    "dab-topic-recursive-scene-programs",
+    "dab-topic-selective-precision-attention",
+    "dab-topic-agent-skills-observability",
+    "dab-topic-long-horizon-agents",
+    "dab-topic-ai-adoption-telemetry",
+    "dab-topic-agentic-edge-inference",
+    "dab-topic-agent-overclaiming"
+  ],
+  "removed_topics": [],
+  "normal_semantic_input_topic_ids": [
+    "dab-topic-harness-engineering",
+    "dab-topic-model-lifecycle-governance",
+    "dab-topic-system-one-decision-models",
+    "dab-topic-self-organizing-agent-coordination"
+  ],
+  "rule": "Only changed/new topic evidence enters semantic refresh. Carried topics retain prior semantic text and require no model call."
+}

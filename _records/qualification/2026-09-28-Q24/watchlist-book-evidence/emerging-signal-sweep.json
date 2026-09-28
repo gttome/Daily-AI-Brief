@@ -1,0 +1,273 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-28",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": true,
+    "lookback_days": 14,
+    "method": "Bounded prior-week query and reconciliation with all 16 preserved topics, including the September 15 Jev launch; not exhaustive internet coverage."
+  },
+  "assisted_search_queries": [
+    "site:arxiv.org/abs/ \"September\" \"2026\" (agent OR evaluation OR \"language model\") after:2026-09-21 before:2026-09-29",
+    "AI new model architecture small lab release September 2026 after:2026-09-21 before:2026-09-29",
+    "site:github.com (agent harness OR inference runtime) September 2026 after:2026-09-21 before:2026-09-29",
+    "site:news.ycombinator.com AI agent model \"2026\" after:2026-09-21 before:2026-09-29",
+    "emerging AI new evaluation benchmark multimodal workflow September 2026 after:2026-09-21 before:2026-09-29",
+    "site:youtube.com/watch AI new model agents \"September\" \"2026\" after:2026-09-21 before:2026-09-29",
+    "\"contrastive language model\" \"System One\" September 2026",
+    "AI new architecture decision model evaluation benchmark September 2026 after:2026-09-14 before:2026-09-22"
+  ],
+  "surfaces": [
+    {
+      "id": "primary_research",
+      "status": "complete",
+      "query_indices": [
+        0,
+        7
+      ],
+      "surfaced_examples": [
+        "Agensh",
+        "PotARCin"
+      ],
+      "queries": [
+        "site:arxiv.org/abs/ \"September\" \"2026\" (agent OR evaluation OR \"language model\") after:2026-09-21 before:2026-09-29",
+        "AI new architecture decision model evaluation benchmark September 2026 after:2026-09-14 before:2026-09-22"
+      ],
+      "candidates_found": 2,
+      "count_scope": "Relevant surfaced concepts inspected, not total engine hits"
+    },
+    {
+      "id": "frontier_and_small_labs",
+      "status": "complete",
+      "query_indices": [
+        1,
+        6
+      ],
+      "surfaced_examples": [
+        "CLM"
+      ],
+      "queries": [
+        "AI new model architecture small lab release September 2026 after:2026-09-21 before:2026-09-29",
+        "\"contrastive language model\" \"System One\" September 2026"
+      ],
+      "candidates_found": 1,
+      "count_scope": "Relevant surfaced concepts inspected, not total engine hits"
+    },
+    {
+      "id": "open_source",
+      "status": "complete",
+      "query_indices": [
+        2,
+        6
+      ],
+      "surfaced_examples": [
+        "CLM repository"
+      ],
+      "queries": [
+        "site:github.com (agent harness OR inference runtime) September 2026 after:2026-09-21 before:2026-09-29",
+        "\"contrastive language model\" \"System One\" September 2026"
+      ],
+      "candidates_found": 1,
+      "count_scope": "Relevant surfaced concepts inspected, not total engine hits"
+    },
+    {
+      "id": "technical_communities",
+      "status": "degraded",
+      "query_indices": [
+        3
+      ],
+      "surfaced_examples": [
+        "UnrealAgent discussion",
+        "self-diagnosis prompting discussion"
+      ],
+      "reason": "Discussion metadata only; independent primary content was not verified for these candidates.",
+      "queries": [
+        "site:news.ycombinator.com AI agent model \"2026\" after:2026-09-21 before:2026-09-29"
+      ],
+      "candidates_found": 2,
+      "count_scope": "Relevant surfaced concepts inspected, not total engine hits"
+    },
+    {
+      "id": "broad_web",
+      "status": "complete",
+      "query_indices": [
+        4,
+        7
+      ],
+      "surfaced_examples": [
+        "PotARCin",
+        "NVIDIA open agent safety platform",
+        "Sponsored Agents announcement"
+      ],
+      "queries": [
+        "emerging AI new evaluation benchmark multimodal workflow September 2026 after:2026-09-21 before:2026-09-29",
+        "AI new architecture decision model evaluation benchmark September 2026 after:2026-09-14 before:2026-09-22"
+      ],
+      "candidates_found": 3,
+      "count_scope": "Relevant surfaced concepts inspected, not total engine hits"
+    },
+    {
+      "id": "youtube_creator_ecosystem",
+      "status": "degraded",
+      "query_indices": [
+        5
+      ],
+      "surfaced_examples": [
+        "-RTgK6qX6A8",
+        "xl4C7pQHgJE",
+        "4DhcSPkEbwI"
+      ],
+      "reason": "Search metadata only; no playback, transcripts or independently reviewed new media.",
+      "queries": [
+        "site:youtube.com/watch AI new model agents \"September\" \"2026\" after:2026-09-21 before:2026-09-29"
+      ],
+      "candidates_found": 3,
+      "count_scope": "Relevant surfaced concepts inspected, not total engine hits"
+    }
+  ],
+  "concept_classes_reviewed": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "evaluation_or_benchmark",
+    "inference_runtime_or_hardware",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "safety_security_or_governance",
+    "knowledge_worker_workflow"
+  ],
+  "candidates_reviewed": [
+    {
+      "name": "Agensh",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "new_topic",
+      "rationale": "Distinct decentralized coordination design; early signal only.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.26781v1"
+      ]
+    },
+    {
+      "name": "CLM",
+      "concept_class": "model_family_or_architecture",
+      "disposition": "update_existing",
+      "rationale": "Add a distinct implementation to the existing System One topic, not a duplicate Jev topic.",
+      "evidence_urls": [
+        "https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md"
+      ]
+    },
+    {
+      "name": "PotARCin",
+      "concept_class": "evaluation_or_benchmark",
+      "disposition": "needs_research",
+      "rationale": "Primary-page open returned DisabledError. Search metadata is not accepted evidence.",
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.27288"
+      ]
+    },
+    {
+      "name": "CLM typed-decision tooling",
+      "concept_class": "developer_tooling",
+      "disposition": "update_existing",
+      "rationale": "Same CLM development, not an additional independent development.",
+      "evidence_urls": [
+        "https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md"
+      ]
+    },
+    {
+      "name": "OpenShell runtime controls",
+      "concept_class": "safety_security_or_governance",
+      "disposition": "update_existing",
+      "rationale": "Reuse frozen m03 for harness evidence; no article rediscovery.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/"
+      ]
+    },
+    {
+      "name": "Sonnet 5.5 on AWS",
+      "concept_class": "model_family_or_architecture",
+      "disposition": "update_existing",
+      "rationale": "Reuse frozen m04 for model lifecycle choices, not performance endorsement.",
+      "evidence_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/"
+      ]
+    },
+    {
+      "name": "Agent Builder adoption and Copilot learning",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "rejected",
+      "rationale": "Useful selected coverage, but no distinct new architecture or feature-level adoption telemetry is established.",
+      "evidence_urls": [
+        "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
+        "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140"
+      ]
+    },
+    {
+      "name": "NVIDIA broader agent platform",
+      "concept_class": "inference_runtime_or_hardware",
+      "disposition": "needs_research",
+      "rationale": "Catalog discovery and frozen rejected m02 do not establish an independently checked new inference mechanism.",
+      "evidence_urls": [
+        "https://nvidianews.nvidia.com/news/open-agent-safety-platform"
+      ]
+    },
+    {
+      "name": "CLM multimodal roadmap",
+      "concept_class": "multimodal_or_interface",
+      "disposition": "rejected",
+      "rationale": "Pinned README lists multimodal support as roadmap work, not an available capability.",
+      "evidence_urls": [
+        "https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md"
+      ]
+    },
+    {
+      "name": "Qoder skill evolution",
+      "concept_class": "developer_tooling",
+      "disposition": "rejected",
+      "rationale": "Already present as qoder-skill-evolution-0.4.1 in the September 26 baseline; no new evidence or timestamp refresh.",
+      "evidence_urls": [
+        "https://docs.qoder.com/release-notes/qoder"
+      ]
+    },
+    {
+      "name": "n8n agents alongside workflows",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "rejected",
+      "rationale": "Frozen m09 distinguishes fixed and open-ended work but does not establish a new long-horizon result.",
+      "evidence_urls": [
+        "https://blog.n8n.io/introducing-n8n-agents/"
+      ]
+    },
+    {
+      "name": "Community UnrealAgent discussion",
+      "concept_class": "developer_tooling",
+      "disposition": "needs_research",
+      "rationale": "Discussion metadata only, not an independently checked release.",
+      "evidence_urls": [
+        "https://news.ycombinator.com/item?id=49805748"
+      ]
+    },
+    {
+      "name": "Creator agent tutorials",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "needs_research",
+      "rationale": "Search metadata only; no playback or new video selection.",
+      "evidence_urls": [
+        "https://www.youtube.com/watch?v=-RTgK6qX6A8",
+        "https://www.youtube.com/watch?v=xl4C7pQHgJE",
+        "https://www.youtube.com/watch?v=4DhcSPkEbwI"
+      ]
+    }
+  ],
+  "new_topic_ids": [
+    "dab-topic-self-organizing-agent-coordination"
+  ],
+  "updated_topic_ids": [
+    "dab-topic-harness-engineering",
+    "dab-topic-model-lifecycle-governance",
+    "dab-topic-system-one-decision-models"
+  ],
+  "zero_new_certified": false,
+  "overall_coverage": "degraded",
+  "limitations": "Eight assisted queries, not a full registry sweep. Complete means the stated bounded surface check executed, not exhaustive results. Query filters are not publication proof. September 18 cached discovery is not fresh observation. No new momentum or playback claim.",
+  "assisted_search_query_count": 8
+}
