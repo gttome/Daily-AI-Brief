@@ -1,4 +1,5 @@
 import {normalizeUrl} from '../_generator/lib/util.mjs';
+import {publisherFeedUrl} from './publisher-feed-url.mjs';
 
 export const DEFAULT_SOURCE_TIMEOUT_MS=12000;
 export const MAX_RESPONSE_BYTES=1500000;
@@ -104,8 +105,8 @@ export function extractCandidateMetadata(text, base, source = {}) {
    return match ? cleanText(match[1].replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,'$1')) : null;
  };
  const add = item => {
-   let url;try {url=new URL(item.url,base);}catch{return;}
-   if(url.protocol!=='https:'||url.username||url.password)return;
+   let url=publisherFeedUrl(item.url,base,source);
+   if(!url)return;
    url=new URL(normalizeUrl(url.href));
    const parsed=publicationTimestamp(item.published_at),prior=candidates.get(url.href);
    const incomingPrecision=publicationDatePrecision(item.published_at);
