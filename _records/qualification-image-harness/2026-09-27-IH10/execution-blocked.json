@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m02",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "state": "GENERATION_BLOCKED_FAIL_CLOSED",
+  "failure_code": "fresh_image_only_executor_unavailable_in_current_chat",
+  "failure_stage": "WORKER_STARTED",
+  "request_commit": "f5d3fee328890c7280512b3893ca8e6c8cf1534d",
+  "verified_reason": "The available in-chat image generator inherits the current conversation context and cannot be truthfully attested as a fresh image-only context containing only the sealed m02 packet. Executing it here would violate the PR #271 contract and risk reproducing IH9 contamination.",
+  "prohibited_action": "Do not call the current-chat image generator for IH10 m02 and do not mark WORKER_STARTED or IMAGE_GENERATED.",
+  "next_smallest_safe_action": "Run the sealed IH10 m02 generation request in a genuinely new image-only conversation/context with no prior messages or attachments, then durably capture the exact generated artifact and return only its artifact identity for separate review.",
+  "ih10_terminal": false,
+  "attempt_started": false,
+  "generation_performed": false,
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
