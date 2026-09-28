@@ -1,0 +1,27 @@
+name: Seven-day policy implementation workbench
+on:
+  push:
+    branches: [hardening/seven-day-article-policy-2026-09-28]
+    paths: [.github/workflows/seven-day-policy-workbench.yml]
+permissions:
+  contents: read
+jobs:
+  workspace:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Export existing baseline and completed D05 evidence for local implementation
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/seven-day-workspace
+          git archive --format=tar HEAD | gzip > /tmp/seven-day-workspace/repository.tar.gz
+          git fetch --no-tags --depth=1 origin 954e825ecb8f4a19da5c37609c7483e64e32a7cf
+          git archive --format=tar 954e825ecb8f4a19da5c37609c7483e64e32a7cf _records/qualification-policy-audit/2026-09-28-D05 | gzip > /tmp/seven-day-workspace/d05-evidence.tar.gz
+          git rev-parse HEAD > /tmp/seven-day-workspace/baseline-sha.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: seven-day-policy-workspace
+          path: /tmp/seven-day-workspace/
+          retention-days: 2
+          if-no-files-found: error
