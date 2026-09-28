@@ -38,7 +38,11 @@
     "operations_documents": 27,
     "pinned_sources": 13,
     "pins_older_than_96h": 11,
-    "latest_qualification_branch": "discovery-preflight/qualification/2026-09-28-Q20"
+    "latest_qualification_branch": "discovery-preflight/qualification/2026-09-28-Q20",
+    "branches_after": 276,
+    "archived_and_removed": 58,
+    "skipped_at_execution": 0,
+    "main_unchanged": true
   },
   "protected_pr117": {
     "number": 117,
@@ -3344,8 +3348,56 @@
       "sha": "22a17dbd6f7943b9275a7f9fc58528d6398a8532",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-10-hq-images"
+    },
+    {
+      "branch": "repair/2026-09-11-public-ratings",
+      "sha": "71a1ec064b3925a239a35bc3d78d07c6cc183411",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-11-public-ratings"
+    },
+    {
+      "branch": "repair/2026-09-12-spotify-link",
+      "sha": "a10d355eb154bfe1a9b33f1265a51d12bd65839d",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-12-spotify-link"
+    },
+    {
+      "branch": "repair/2026-09-13-rating-contract",
+      "sha": "77fe16922eda14b0ab591e8aaa15f69a7fadaf9f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-13-rating-contract"
+    },
+    {
+      "branch": "repair/2026-09-13-reader-completion",
+      "sha": "e75b7af81a4fd34acad9b90174f16cbbfd42b3e2",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-13-reader-completion"
+    },
+    {
+      "branch": "repair/2026-09-13-reader-operations",
+      "sha": "54bb567c21ccd92e8913330b0d434211ecb33136",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-13-reader-operations"
+    },
+    {
+      "branch": "repair/2026-09-13-reader-sharing",
+      "sha": "7f5dd66bb0b62d057a1107c079364ad3421591af",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-13-reader-sharing"
+    },
+    {
+      "branch": "repair/2026-09-16-podcast-evidence",
+      "sha": "5c51885a1061f4a1c86ee5500644054b08252a90",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-16-podcast-evidence"
+    },
+    {
+      "branch": "repair/20260910-image-asset-cache",
+      "sha": "534a0e688584615a8470caaf7116c19f48547fea",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/20260910-image-asset-cache"
     }
   ],
-  "status": "applying",
-  "updated_at": "2026-09-28T15:28:04.809Z"
+  "status": "complete",
+  "updated_at": "2026-09-28T15:28:38.607Z"
 }
