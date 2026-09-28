@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9478,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring",
+      "canonical_url": "https://developer.nvidia.com/blog/nvidia-open-agent-safety-platform-a-reference-for-continuous-in-silicon-agent-monitoring/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-28T08:56:55.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1970,
+      "excerpt": "Trustworthy AI / Cybersecurity English 한국어 NVIDIA Open Agent Safety Platform: A Reference for Continuous In-Silicon Agent Monitoring Secure AI agents with a safety enforcement layer spanning software and hardware Sep 28, 2026 By John Myers , Alex Watson , Ali Golshan and Ofir Arkin Like Discuss (0) L T F R E AI-Generated Summary NVIDIA OpenShell provides an open-source secure runtime that executes autonomous AI agents in sandboxed environments with kernel-level isolation. The NVIDIA Open Agent Safety Platform combines OpenShell on NVIDIA Vera CPUs with NVIDIA Sentry on BlueField-4 DPUs to create a layered safety architecture. Explore the…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+      "canonical_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-28T08:55:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2113,
+      "excerpt": "Agentic AI / Generative AI English 한국어 Add Runtime Controls to AI Agents with NVIDIA OpenShell Sep 28, 2026 By Alex Watson and Ali Golshan Like Discuss (0) L T F R E AI-Generated Summary NVIDIA OpenShell 0.1.0 provides an open-source runtime that enforces which systems and data an AI agent can access without rewriting the agent. NVIDIA OpenShell 0.1.0 is an open-source runtime for defining and enforcing which systems and data an agent can access. This post shows how NVIDIA OpenShell 0.1.0 places enforceable runtime controls around an existing AI agent—without rewriting it—so teams can restrict API operations, protect credentials, and review…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Introducing Claude Sonnet 5.5 on AWS",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-28T18:57:13.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 778,
+      "excerpt": "Introducing Claude Sonnet 5.5 on AWS Today, we’re excited to announce the availability of Claude Sonnet 5.5 on Amazon Bedrock and Claude Platform on AWS . Claude Sonnet 5.5 is a smarter, more efficient Sonnet model suited for focused coding and knowledge work with lower cost per task for most work at faster speed. This post covers Claude Sonnet 5.5’s improvements, practical guidance on when to choose Sonnet, and how to get started on Amazon Bedrock. What makes Claude Sonnet 5.5 different The improvements stand out on well-scoped work. Getting started with Claude Sonnet 5.5 on Amazon Bedrock To try Sonnet 5.5, open the Amazon Bedrock console…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Change Management Best Practices to Drive Value with Agent Builder",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
+      "publisher": "Microsoft Community Hub — Microsoft Copilot",
+      "published_at": "2026-09-28T15:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1734,
+      "excerpt": "In this article, we share best practices for driving change management with Agent Builder and accelerating agent adoption across the enterprise. Now that you know what Agent Builder is, let’s explore how to drive behavior change for scaled adoption. Change Management Operating Model To get started with scaled adoption for Agent Builder, you do not need a bespoke plan for every team. &nbsp; The following HCLTech customer story shows how the organization approached Agent Builder adoption through a structured change management program. By combining Microsoft 365 Copilot innovation with HCLTech's structured change management approach, we…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "AI at work: Learn, build, and grow with Microsoft Copilot and agents",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140",
+      "publisher": "Microsoft Community Hub — Skills Hub",
+      "published_at": "2026-09-25T12:04:32.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 431,
+      "excerpt": "Explore new Copilot modes, learn the basics of AI FinOps, and understand what’s next for agents. Microsoft is reimagining Copilot, bringing familiar tools together with new capabilities that help people and organizations build, customize, and scale AI across work. This playlist brings together practical learning to help you choose and use the Copilot mode that best fits your role and your work. Learn by doing with the AI at Work playlist The new AI at Work playlist in AI Skills Navigator shows you how to use the new Copilot in three practical areas. Learn how the Copilot app supports different kinds of work, from answering questions and…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "3 Must-Haves for Scaling Agentic AI in Health",
+      "canonical_url": "https://www.salesforce.com/blog/3-must-haves-for-scaling-agentic-ai-in-health/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-25T17:45:03.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1268,
+      "excerpt": "Instead of adding another layer of technology, agents coordinate work across the systems healthcare organizations already have, handling routine steps so people can focus on the judgment, care, and connection that matter most. See how organizations like UCLA Health, Highmark Health, and Select Health are leading the way with real agents, real workflows, and real outcomes. That’s why Salesforce has spent 27 years building a healthcare infrastructure designed around governance. This gives healthcare organizations something generic AI can’t: the confidence to move beyond the pilot stage and deploy agents across their highest-priority workflows,…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "qoder-skill-evolution",
+      "canonical_url": "https://docs.qoder.com/release-notes/qoder",
+      "publisher": "Qoder",
+      "published_at": "2026-09-23T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 2100,
+      "excerpt": "​ September 23, 2026 Qoder 0.4.1 A New Space for Human and Agent Collaboration Features Projects and discussions (Enterprise&Teams) : Discuss plans, push tasks forward, and bring ideas to life with your Agent, all in one place. Agent Teams (Enterprise&Teams) : Create and configure Agents, then bring them together into teams. Skill evolution suggestions : After a conversation finishes, Qoder can suggest creating or updating Skills based on reusable experience. Response annotations : Enable this feature in Settings-Experimental Features to select text in an Agent response, add it to the chat input box with an optional comment, and reference…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "The 5 AI agents I tell every executive to build first",
+      "canonical_url": "https://workspace.google.com/blog/future-of-work/the-5-ai-agents-i-tell-every-executive-to-build-first",
+      "publisher": "Google Workspace",
+      "published_at": "2026-09-24T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 847,
+      "excerpt": "Future of Work The 5 AI agents I tell every executive to build first September 24, 2026 Laura Mae Martin Executive Productivity Advisor, Google Try Google Workspace at No Cost Get a business email, all the storage you need, video conferencing, and more. Agentic AI is opening up new possibilities, especially for busy executives who spend so much time in meetings or traveling. As the next evolutionary step from gen AI, AI agents go beyond responding to prompts. Explore Gemini Enterprise — Google’s agentic platform that seamlessly connects your apps, like Google Workspace and Microsoft 365, to help you build AI agents and automate workflows. To…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Introducing n8n Agents",
+      "canonical_url": "https://blog.n8n.io/introducing-n8n-agents/",
+      "publisher": "n8n",
+      "published_at": "2026-09-25T12:00:23.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1984,
+      "excerpt": "With agents, it's easier to handle open-ended or back-and-forth jobs that could get complicated to build as a fixed workflow. Agents sit next to your workflows, and the two are built to work together. 👇 Why agents, and why now For as long as n8n has existed, automating something meant working out the steps and adding them to the canvas. \"But I've been building agents in n8n for years\" You have, and so have we. Lots of n8n users run agents built exactly this way, and they work."
+    }
+  ]
+}
