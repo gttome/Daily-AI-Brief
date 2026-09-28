@@ -3996,8 +3996,68 @@
       "sha": "024897391334630b8725e219d61f28a10c4971c1",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-informatica-source"
+    },
+    {
+      "branch": "fix/sep16-production-guardrails",
+      "sha": "16706db3c7caaa5d317af2bb7e1ddee81dda213d",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-production-guardrails"
+    },
+    {
+      "branch": "fix/sep18-command-center-reconciliation",
+      "sha": "39be37a7e67a6a72ccc636fcddd855aae8f7668d",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep18-command-center-reconciliation"
+    },
+    {
+      "branch": "fix/sep18-watchlist-scan-caption",
+      "sha": "342fff36aaaa6018bcfa5ccc84eabc48999c0f9f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep18-watchlist-scan-caption"
+    },
+    {
+      "branch": "fix/under80-actions-discovery-preflight-2026-09-18",
+      "sha": "b52f0a33dd0476b069d1c8153f293300f1cb410a",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-actions-discovery-preflight-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-applied-coverage-2026-09-19",
+      "sha": "160838bd1b68ad11978529a2ef57163589eca84b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-applied-coverage-2026-09-19"
+    },
+    {
+      "branch": "fix/under80-deterministic-expansion-2026-09-18",
+      "sha": "f33fcb31a1f61af204036b3afdbfd815dbdc699e",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-deterministic-expansion-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-discovery-quality-2026-09-18",
+      "sha": "a8ccce4433ed9e9d30e80d1edfe28467cc672562",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-discovery-quality-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-empty-media-preflight-2026-09-18",
+      "sha": "d11d23f48db1a45684475a3de21c4c71c38e3b10",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-empty-media-preflight-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-git-data-binary-handoff-2026-09-18",
+      "sha": "aff9b1d0bc127b0f0573a641b02f0855ac694723",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-git-data-binary-handoff-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-handoff-image-review-2026-09-18",
+      "sha": "48fd8802624427f31d2410eab3333366d94487ef",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-handoff-image-review-2026-09-18"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:19:06.477Z"
+  "updated_at": "2026-09-28T15:19:48.338Z"
 }
