@@ -1,0 +1,67 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "reviewer": "ordinary_chatgpt",
+  "reviewed_at": "2026-09-28T20:23:09Z",
+  "source_artifact_id": 10993938898,
+  "source_artifact_sha256": "6534c0cf323bd4f5175b0fda240ef74ada7678709001f86c8b271a3870c2f528",
+  "metadata_git_blob": "14a81457860d2211bf2c8e03939bca013f2792c2",
+  "history_git_blob": "4c0381ec3d3d425aeb3f3cc79f20bac328bebb7c",
+  "history_workflow_id": 36478645504,
+  "history_scope": "Reviewed titles, show names, episode URLs, platform aliases, source dates and summaries in all 20 available canonical production editions before September 28. No same-day production or Q results were treated as novelty history.",
+  "review_scope": "Fresh Q24 publisher-distributed episode descriptions, topic lists and chapters plus exact episode/show metadata. Audio was not played or transcribed. This review supports descriptions of the episodes' advertised topics, not independent confirmation of product performance or every statement in the audio.",
+  "new_source_retrievals_for_this_review": 0,
+  "article_selection_changed": false,
+  "reviews": [
+    {
+      "candidate_id": "everyday-871",
+      "decision": "approve_podcast_pending_deterministic_validation",
+      "editorial_pass": true,
+      "duplicate": false,
+      "score": 90,
+      "source_artifact_file": "everyday-871.html",
+      "source_sha256": "8beed0b749a1b239573023570c6a3722d44addd0ba2c7153ac3587aa86507767",
+      "source_excerpts": ["Agent Loops: Automation and Verification", "Context Windows and Task Delegation"],
+      "audience_fit": "Accessible explanation of desktop-agent vocabulary for knowledge workers and nontechnical agent users.",
+      "novelty_assessment": "The only earlier Everyday AI record is episode 865 on open-source AI, with a different Buzzsprout episode identity and subject. Earlier agent-loop coverage is a different episode and publisher. Episode 871 and its present terminology-focused treatment are not repeated podcast selections in the reviewed history.",
+      "freshness_tier": "primary_48h",
+      "freshness_exception_reason": null,
+      "summary": "Everyday AI introduces desktop-agent terminology, including goals, plans, loops, subagents and context delegation. The published topic list and chapter markers frame the episode as a vocabulary primer for understanding agent-based work rather than a conventional chatbot interaction.",
+      "why_it_matters": "Shared vocabulary can help a team distinguish a task goal from a plan, an iterative loop and delegated subtasks before evaluating an agent workflow.",
+      "editorial_limitation": "Reviewed publisher-distributed shownotes and chapters, not the audio or a hands-on product demonstration. Product-specific instructions and performance claims are not independently verified."
+    },
+    {
+      "candidate_id": "ai-for-humans-197",
+      "decision": "approve_podcast_pending_deterministic_validation",
+      "editorial_pass": true,
+      "duplicate": false,
+      "score": 78,
+      "source_artifact_file": "ai-for-humans-197.html",
+      "source_sha256": "005985c52c4fef47a41f39802fb77bff45c396504c32f5ce9d3db6661c788d51",
+      "source_excerpts": ["39:03 Actually Useful AI: GPT-6 Astra Makes Motion Graphics", "33:22 Giant Gavin: Turning Myself Into A 3D Model With Meshy 7.1"],
+      "audience_fit": "Creator-oriented commentary and application examples; complements the terminology-focused first podcast without substituting host enthusiasm for verified model comparisons.",
+      "novelty_assessment": "No AI for Humans episode or matching episode identity, title or topic summary appears in the reviewed pre-edition podcast history. Its creative-application discussion is distinct from prior enterprise deployment and healthcare adoption podcasts.",
+      "freshness_tier": "fallback_7d",
+      "freshness_exception_reason": "Only one primary-window candidate is present in the bounded verified podcast set. The other verified reserve, Practical AI 373, repeats September 26 production. This source-diverse September 24 episode supplies a distinct creative-application discussion within seven days; newer qualifying alternatives were not established by the completed bounded acquisition.",
+      "summary": "AI for Humans discusses recent model releases through creative examples, including games, animation, 3D modeling and motion graphics. The episode's favorable model comparisons are the hosts' opinions; this selection emphasizes the advertised application examples rather than presenting those comparisons as independently established results.",
+      "why_it_matters": "The chapter list offers a range of creative tasks to consider for experimentation, with a different emphasis from enterprise deployment or introductory agent vocabulary.",
+      "editorial_limitation": "Shownotes and chapter review only; audio and linked demonstrations were not independently tested. Model rankings, pricing assertions and rumors are not adopted as factual conclusions."
+    }
+  ],
+  "rejected": [
+    {
+      "candidate_id": "practical-373",
+      "reason": "Same title, show, runtime and episode identity as the Practical AI 373 podcast already included on September 26. An Apple distribution URL does not make the episode new. No verified material update is established.",
+      "prior_production_edition": "2026-09-26",
+      "prior_production_url": "https://practicalai.show/373"
+    }
+  ],
+  "podcast_selection_validated": false,
+  "video_selection_completed": false,
+  "media_ready": false,
+  "production_mutation": false,
+  "account_billing_observed": false
+}
