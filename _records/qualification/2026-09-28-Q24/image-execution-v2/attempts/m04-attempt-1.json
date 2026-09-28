@@ -8,7 +8,7 @@
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
   "evidence_type": "live",
-  "status": "GENERATION_REQUESTED",
+  "status": "RAW_IMAGE_CAPTURED",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json",
     "git_blob_sha": "49658a068c00ea3a558f15e3b65b70f6d2702b34",
@@ -24,7 +24,7 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "generation_started": false,
+  "generation_started": true,
   "raw_capture_complete": false,
   "review_complete": false,
   "persistence_complete": false,
@@ -32,5 +32,27 @@
   "original_baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
   "article_freshness_policy": "article-24-72-168-v1",
   "media_freshness_policy": "media-research-cutoff-v1",
-  "note": "Durable pre-generation request binding. Actual native tool identity/output must be appended only after the call and exact raw-byte recovery."
+  "note": "Native image generation completed. Exact raw bytes were transferred automatically through a machine-only base64 bridge and Git data blob; Git read-back remains to be verified before review.",
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "image_gen.text2im/gen_id:e63d07ae-dcec-4d6a-ab3f-c46a8014b744",
+    "artifact_id": "file_0000000019b0820cb5fad940e92ac770",
+    "gen_id": "e63d07ae-dcec-4d6a-ab3f-c46a8014b744",
+    "generated_at": "2026-09-28T23:00:29.888539Z",
+    "raw_sha256": "7e51fd9afff52d2be13471c141e5114f03be2cf02a7564b0f6a4ef771dc4d7f2",
+    "width": 1536,
+    "height": 1024,
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "raw_capture": {
+    "path": "_records/image-attempts/2026-09-28-Q24/m04/attempt-1/raw.png",
+    "sha256": "7e51fd9afff52d2be13471c141e5114f03be2cf02a7564b0f6a4ef771dc4d7f2",
+    "git_blob_sha": "3517484d4705ba6dd4e8211829a677f11a20ff5a",
+    "read_back_verified": false
+  }
 }
