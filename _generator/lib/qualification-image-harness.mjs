@@ -17,6 +17,50 @@ export const APPROVED_COMPOSITION_MODES=[
   'taxonomy','annotated_system','panel_based_explanation','story_fit_editorial'
 ];
 
+export const IMAGE_GENERATION_EXECUTION_KEYS=[
+  'context_mode','inherit_parent_context','prior_messages','attachments',
+  'sealed_story_packet','generation_instruction','review_in_same_context'
+];
+
+export function buildQualificationImageGenerationExecution(packet){
+  const sealedStoryPacket=buildQualificationImageWorkerPayload(packet);
+  const generationInstruction=buildQualificationImageGenerationInstruction(sealedStoryPacket);
+  return {
+    context_mode:'fresh_image_only',
+    inherit_parent_context:false,
+    prior_messages:[],
+    attachments:[],
+    sealed_story_packet:sealedStoryPacket,
+    generation_instruction:generationInstruction,
+    review_in_same_context:false
+  };
+}
+
+export function validateQualificationImageGenerationExecution(execution){
+  const errors=[];
+  if(!execution||typeof execution!=='object'||Array.isArray(execution))return ['image_generation_execution_required'];
+  const keys=Object.keys(execution);
+  for(const key of IMAGE_GENERATION_EXECUTION_KEYS){
+    if(!(key in execution))errors.push(`missing_generation_execution_key_${key}`);
+  }
+  for(const key of keys){
+    if(!IMAGE_GENERATION_EXECUTION_KEYS.includes(key))errors.push(`prohibited_generation_execution_key_${key}`);
+  }
+  if(execution.context_mode!=='fresh_image_only')errors.push('generation_context_mode_must_be_fresh_image_only');
+  if(execution.inherit_parent_context!==false)errors.push('generation_parent_context_inheritance_must_be_false');
+  if(!Array.isArray(execution.prior_messages)||execution.prior_messages.length!==0)errors.push('generation_prior_messages_must_be_empty');
+  if(!Array.isArray(execution.attachments)||execution.attachments.length!==0)errors.push('generation_attachments_must_be_empty');
+  if(execution.review_in_same_context!==false)errors.push('generation_review_must_be_separate');
+  for(const payloadError of validateQualificationImageWorkerPayload(execution.sealed_story_packet))errors.push(payloadError);
+  try{
+    const expected=buildQualificationImageGenerationInstruction(execution.sealed_story_packet);
+    if(execution.generation_instruction!==expected)errors.push('generation_instruction_must_derive_only_from_sealed_story_packet');
+  }catch{
+    errors.push('generation_instruction_invalid');
+  }
+  return [...new Set(errors)];
+}
+
 export function buildQualificationImageWorkerPayload(packet){
   if(!packet||typeof packet!=='object')throw new Error('sealed_story_packet_required');
   const payload={};

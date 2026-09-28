@@ -179,3 +179,23 @@ Revised controls:
 No low-quality fallback is introduced. Cross-story contamination remains a hard failure. Exact-byte Library/Git persistence, Work=0, Codex=0, paid API=0, and production_mutation=false remain unchanged during qualification.
 
 IH1-IH8 remain immutable historical evidence. This revised policy must be merged through protected CI and proved on a fresh harness identity.
+
+
+## IH9 fresh image-only execution correction
+
+IH9 proved that payload sanitization alone is insufficient. The sealed m02 packet and generation instruction were story-specific, but the real image-generation environment still inherited operational context and twice rendered the harness/status subject instead of the frozen GitHub Security Lab Taskflow Agent / AI-powered fuzzing story.
+
+Permanent control:
+
+- every generation attempt must be represented by a `fresh_image_only` execution contract;
+- parent/ambient conversation inheritance is explicitly disabled;
+- prior messages are required to be an empty array;
+- attachments are required to be an empty array so prior generated images or unrelated artifacts cannot enter the generation context;
+- the execution object may contain only the fixed generation-execution keys;
+- the sealed story packet is rebuilt through the existing story-only allowlist before launch;
+- the generation instruction must exactly equal the deterministic instruction derived from that sealed story packet;
+- harness identity, Q identity, scheduler/publication/failure state, parent conversation, issue/PR state, review instructions, and other-story context may exist only in orchestration outside the generation environment;
+- review must not occur in the generation context; after durable Library capture and worker/context exit, review occurs separately against the raw materialized artifact;
+- any executor that cannot guarantee these context-boundary requirements must fail closed before generation rather than attest isolation optimistically.
+
+IH9 remains immutable `TERMINAL_FAIL` evidence. Attempts 3-4 must not be used because the repeated wrong-subject result established a deterministic contract defect. This correction must pass protected CI, merge to protected `main`, and be proved under a fresh later harness identity before Q13 can advance.
