@@ -1,0 +1,450 @@
+{
+  "schema_version": "1.0.0",
+  "diagnostic_id": "2026-09-28-D01",
+  "diagnostic_only": true,
+  "qualification_pass": false,
+  "request": {
+    "schema_version": "1.0.0",
+    "diagnostic_id": "2026-09-28-D01",
+    "execution_mode": "qualification_diagnostic_nonproduction",
+    "edition_date": "2026-09-28",
+    "cutoff": "2026-09-28T15:39:32Z",
+    "baseline_sha": "2700138782f8f92e7290b514e0be256e18371811",
+    "expected_gate_blob_sha": "0f6e74629015e6830af8146d61bae687fa037445",
+    "source_scan_max": 48,
+    "production_mutation": false,
+    "reason": "Diagnose the unchanged Q20 failure with current bounded inputs; not a rerun of Q20 and not a qualification PASS. Preserve aggregate eligible-pool counts, source-level rejection counts and the bounded shortlist."
+  },
+  "started_at": "2026-09-28T15:39:56.980Z",
+  "workflow_run_id": "36445276484",
+  "source_scan_max": 48,
+  "metadata_limit": 20,
+  "article_evidence_started": false,
+  "semantic_pass_started": false,
+  "production_mutation": false,
+  "model_calls": 0,
+  "account_billing_observed": false,
+  "steps": [
+    {
+      "name": "discovery",
+      "start": "2026-09-28T15:39:56.980Z",
+      "completed_at": "2026-09-28T15:40:16.742Z",
+      "result": "pass",
+      "stdout": "{\"date\":\"2026-09-28\",\"research_cutoff_at\":\"2026-09-28T15:39:32.000Z\",\"fresh_discovery\":true,\"sources\":57,\"scanned\":48,\"queue\":505,\"fresh_metadata\":49,\"stop_reason\":\"source_scan_limit\"}\n"
+    },
+    {
+      "name": "date_enrichment",
+      "start": "2026-09-28T15:40:16.742Z",
+      "completed_at": "2026-09-28T15:40:36.050Z",
+      "result": "pass",
+      "stdout": "{\"attempted\":48,\"resolved\":35,\"published_resolved\":29,\"updated_resolved\":17,\"precision_attempted\":17,\"precision_resolved\":9,\"failed\":5}\n"
+    },
+    {
+      "name": "metadata_gate",
+      "start": "2026-09-28T15:40:36.052Z",
+      "completed_at": "2026-09-28T15:40:36.132Z",
+      "result": "pass",
+      "stdout": "{\"out\":\"/home/runner/work/Daily-AI-Brief/Daily-AI-Brief/_records/qualification-diagnostics/2026-09-28-D01/metadata-candidates.json\",\"raw_queue_count\":500,\"eligible\":36,\"retained\":20,\"limit\":20,\"coverage_counts\":{\"technical_ai_engineering\":13,\"applied_genai_knowledge_workers\":1,\"agents_non_technical_people\":2},\"agent_skill_signals\":2,\"agent_skill_story_ready_signals\":1,\"agent_skill_story_ready_signals_after_novelty\":1,\"qualification_novelty_cutoff_date\":\"2026-09-28\",\"preferred_agent_skill_candidate_id\":\"m01\",\"coverage_ready\":false,\"rejected\":{\"invalid_title\":2,\"nonstory_url\":5,\"nonarticle_content\":39,\"date_conflict\":0,\"unresolved_date\":137,\"outside_window\":265,\"low_relevance\":16,\"duplicate\":0}}\n"
+    }
+  ],
+  "gate_blob_sha": "0f6e74629015e6830af8146d61bae687fa037445",
+  "method": "original_gate_with_read_only_aggregate_probe",
+  "pool_coverage_before_novelty": {
+    "technical_ai_engineering": 32,
+    "applied_genai_knowledge_workers": 1,
+    "agents_non_technical_people": 3
+  },
+  "pool_coverage_after_novelty": {
+    "technical_ai_engineering": 29,
+    "applied_genai_knowledge_workers": 1,
+    "agents_non_technical_people": 2
+  },
+  "shortlist_coverage": {
+    "technical_ai_engineering": 13,
+    "applied_genai_knowledge_workers": 1,
+    "agents_non_technical_people": 2
+  },
+  "rejections": {
+    "invalid_title": 2,
+    "nonstory_url": 5,
+    "nonarticle_content": 39,
+    "date_conflict": 0,
+    "unresolved_date": 137,
+    "outside_window": 265,
+    "low_relevance": 16,
+    "duplicate": 0
+  },
+  "classification": "eligible_source_supply_shortfall",
+  "coverage_ready": false,
+  "sources": [
+    {
+      "source_id": "acl-anthology",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2676582>2500000"
+    },
+    {
+      "source_id": "ai-for-humans",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "normalized_body_too_large:1680928>900000"
+    },
+    {
+      "source_id": "anthropic-agent-skills",
+      "status": "retrieved",
+      "candidate_links": 7,
+      "reason": null
+    },
+    {
+      "source_id": "anthropic-engineering",
+      "status": "retrieved",
+      "candidate_links": 27,
+      "reason": null
+    },
+    {
+      "source_id": "anthropic-research-skills",
+      "status": "retrieved",
+      "candidate_links": 5,
+      "reason": null
+    },
+    {
+      "source_id": "arxiv-cs-ai",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2532616>2500000"
+    },
+    {
+      "source_id": "arxiv-cs-ai-api",
+      "status": "retrieved",
+      "candidate_links": 20,
+      "reason": null
+    },
+    {
+      "source_id": "arxiv-cs-cl",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2530569>2500000"
+    },
+    {
+      "source_id": "arxiv-cs-lg",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2527459>2500000"
+    },
+    {
+      "source_id": "arxiv-cs-lg-api",
+      "status": "retrieved",
+      "candidate_links": 20,
+      "reason": null
+    },
+    {
+      "source_id": "atlassian-ai-workflows",
+      "status": "retrieved",
+      "candidate_links": 1,
+      "reason": null
+    },
+    {
+      "source_id": "aws-machine-learning-feed",
+      "status": "retrieved",
+      "candidate_links": 15,
+      "reason": null
+    },
+    {
+      "source_id": "everyday-ai",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2988658>2500000"
+    },
+    {
+      "source_id": "github-ai-agents",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2532388>2500000"
+    },
+    {
+      "source_id": "github-changelog",
+      "status": "retrieved",
+      "candidate_links": 13,
+      "reason": null
+    },
+    {
+      "source_id": "github-changelog-copilot",
+      "status": "retrieved",
+      "candidate_links": 11,
+      "reason": null
+    },
+    {
+      "source_id": "github-generative-ai",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2533948>2500000"
+    },
+    {
+      "source_id": "github-llm",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2550628>2500000"
+    },
+    {
+      "source_id": "github-trending",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2606463>2500000"
+    },
+    {
+      "source_id": "google-deepmind",
+      "status": "retrieved",
+      "candidate_links": 15,
+      "reason": null
+    },
+    {
+      "source_id": "google-workspace-blog-applied",
+      "status": "retrieved",
+      "candidate_links": 8,
+      "reason": null
+    },
+    {
+      "source_id": "google-workspace-feed",
+      "status": "retrieved",
+      "candidate_links": 0,
+      "reason": null
+    },
+    {
+      "source_id": "hacker-news-newest",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2516537>2500000"
+    },
+    {
+      "source_id": "hacker-news-show",
+      "status": "retrieved",
+      "candidate_links": 39,
+      "reason": null
+    },
+    {
+      "source_id": "hugging-face-feed",
+      "status": "retrieved",
+      "candidate_links": 100,
+      "reason": null
+    },
+    {
+      "source_id": "ibm-technology",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2500880>2500000"
+    },
+    {
+      "source_id": "langchain",
+      "status": "retrieved",
+      "candidate_links": 10,
+      "reason": null
+    },
+    {
+      "source_id": "llamaindex",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2584286>2500000"
+    },
+    {
+      "source_id": "meta-ai-blog",
+      "status": "retrieved",
+      "candidate_links": 3,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-365-feed",
+      "status": "retrieved",
+      "candidate_links": 7,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-copilot-agentic-ai-catalog",
+      "status": "retrieved",
+      "candidate_links": 19,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-copilot-product-catalog",
+      "status": "retrieved",
+      "candidate_links": 13,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-copilot-studio-feature-releases-applied",
+      "status": "retrieved",
+      "candidate_links": 19,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-official-blog",
+      "status": "retrieved",
+      "candidate_links": 17,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-research-feed",
+      "status": "retrieved",
+      "candidate_links": 8,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-techcommunity-copilot-applied",
+      "status": "retrieved",
+      "candidate_links": 10,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-techcommunity-finops-ai",
+      "status": "retrieved",
+      "candidate_links": 6,
+      "reason": null
+    },
+    {
+      "source_id": "microsoft-techcommunity-skills-hub",
+      "status": "retrieved",
+      "candidate_links": 11,
+      "reason": null
+    },
+    {
+      "source_id": "mistral-news",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "normalized_body_too_large:1257448>900000"
+    },
+    {
+      "source_id": "nvidia-generative-ai",
+      "status": "retrieved",
+      "candidate_links": 78,
+      "reason": null
+    },
+    {
+      "source_id": "openai-academy-skills",
+      "status": "retrieved",
+      "candidate_links": 4,
+      "reason": null
+    },
+    {
+      "source_id": "openai-index",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "HTTP 403"
+    },
+    {
+      "source_id": "openai-news",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "HTTP 403"
+    },
+    {
+      "source_id": "openreview",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "qoder-skill-evolution",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "normalized_body_too_large:998753>900000"
+    },
+    {
+      "source_id": "qwen-blog",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "salesforce-agentforce-category",
+      "status": "retrieved",
+      "candidate_links": 6,
+      "reason": null
+    },
+    {
+      "source_id": "salesforce-feed",
+      "status": "retrieved",
+      "candidate_links": 18,
+      "reason": null
+    },
+    {
+      "source_id": "simon-willison",
+      "status": "unavailable",
+      "candidate_links": 0,
+      "reason": "retrieval_character_budget_exceeded:2633423>2500000"
+    },
+    {
+      "source_id": "specialized-discords",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "Discovery signal only. Use only official or verified community access, never expose private discussion, and require public original evidence before selection."
+    },
+    {
+      "source_id": "x-research-feeds",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "Discovery signal only. Confirm account identity, follow every claim to original evidence, and do not treat screenshots, engagement, or reposts as validation."
+    },
+    {
+      "source_id": "xai-news",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-ai-research",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "Discovery and momentum signal only. Verify channel identity when consequential, upload date, claims, and linked original evidence. Creator repetition or view counts are not independent technical validation."
+    },
+    {
+      "source_id": "youtube-anthropic",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-google-deepmind",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-openai",
+      "status": "assisted_review_required",
+      "candidate_links": 0,
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "zapier-ai-automation",
+      "status": "retrieved",
+      "candidate_links": 25,
+      "reason": null
+    }
+  ],
+  "discovery_efficiency": {
+    "cache_hits": 0,
+    "cache_misses": 48,
+    "conditional_revalidations": 0,
+    "not_modified_304": 0,
+    "source_text_chars_retrieved": 2489611,
+    "fulltext_retrievals": 0,
+    "metadata_retrievals": 30,
+    "failed_retrievals": 18,
+    "normal_char_budget": 1500000,
+    "absolute_char_budget": 2500000,
+    "normal_char_budget_exceeded": true,
+    "article_sources_fulltext_retrieved": 0,
+    "scope": "bounded_catalog_metadata_discovery",
+    "sources_scanned": 48,
+    "source_scan_minimum": 12,
+    "source_scan_maximum": 48,
+    "fresh_metadata_candidates": 49,
+    "fresh_metadata_target": 24,
+    "required_topic_sources": 4,
+    "preferred_feed_sources": 11,
+    "preflight_sources": 37,
+    "qualification_discovery": true,
+    "stop_reason": "source_scan_limit"
+  },
+  "result": "diagnostic_complete",
+  "completed_at": "2026-09-28T15:40:36.133Z"
+}

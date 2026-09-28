@@ -1,0 +1,273 @@
+{
+  "before_novelty": {
+    "technical_ai_engineering": 32,
+    "applied_genai_knowledge_workers": 1,
+    "agents_non_technical_people": 3
+  },
+  "after_novelty": {
+    "technical_ai_engineering": 29,
+    "applied_genai_knowledge_workers": 1,
+    "agents_non_technical_people": 2
+  },
+  "by_source": {
+    "arxiv-cs-ai-api": {
+      "before_novelty": {
+        "technical_ai_engineering": 14,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 14,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      }
+    },
+    "arxiv-cs-lg-api": {
+      "before_novelty": {
+        "technical_ai_engineering": 8,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 8,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      }
+    },
+    "aws-machine-learning-feed": {
+      "before_novelty": {
+        "technical_ai_engineering": 3,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 1
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 2,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      }
+    },
+    "github-changelog": {
+      "before_novelty": {
+        "technical_ai_engineering": 0,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 1
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 0,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 1
+      }
+    },
+    "github-changelog-copilot": {
+      "before_novelty": {
+        "technical_ai_engineering": 4,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 2,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      }
+    },
+    "hugging-face-feed": {
+      "before_novelty": {
+        "technical_ai_engineering": 1,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 1,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      }
+    },
+    "nvidia-generative-ai": {
+      "before_novelty": {
+        "technical_ai_engineering": 2,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 2,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 0
+      }
+    },
+    "qoder-skill-evolution": {
+      "before_novelty": {
+        "technical_ai_engineering": 0,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 1
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 0,
+        "applied_genai_knowledge_workers": 0,
+        "agents_non_technical_people": 1
+      }
+    },
+    "salesforce-feed": {
+      "before_novelty": {
+        "technical_ai_engineering": 0,
+        "applied_genai_knowledge_workers": 1,
+        "agents_non_technical_people": 0
+      },
+      "after_novelty": {
+        "technical_ai_engineering": 0,
+        "applied_genai_knowledge_workers": 1,
+        "agents_non_technical_people": 0
+      }
+    }
+  },
+  "rejections_by_source": {
+    "adobe-acrobat-ai-workflows-sep24": {
+      "outside_window": 1
+    },
+    "adobe-workfront-ai-request-autofill-sep25": {
+      "outside_window": 1
+    },
+    "anthropic-agent-skills": {
+      "unresolved_date": 7
+    },
+    "anthropic-engineering": {
+      "unresolved_date": 15,
+      "outside_window": 6
+    },
+    "anthropic-engineering-agent-skills": {
+      "outside_window": 1
+    },
+    "anthropic-research-skills": {
+      "outside_window": 1
+    },
+    "arxiv-cs-ai-api": {
+      "low_relevance": 6
+    },
+    "arxiv-cs-lg-api": {
+      "low_relevance": 9
+    },
+    "atlassian-ai-quality-sep18": {
+      "outside_window": 1
+    },
+    "atlassian-ai-workflows": {
+      "invalid_title": 1
+    },
+    "google-deepmind": {
+      "unresolved_date": 14,
+      "outside_window": 1
+    },
+    "google-workspace-blog-applied": {
+      "unresolved_date": 5,
+      "outside_window": 1,
+      "invalid_title": 1
+    },
+    "google-workspace-executive-agents-sep24": {
+      "outside_window": 1
+    },
+    "google-workspace-intelligent-content-sep23": {
+      "outside_window": 1
+    },
+    "google-workspace-weekly-recap-sep18": {
+      "outside_window": 1
+    },
+    "hacker-news-show": {
+      "nonarticle_content": 39
+    },
+    "ibm-chro-ai-workforce-sep21": {
+      "outside_window": 1
+    },
+    "langchain": {
+      "unresolved_date": 10
+    },
+    "meta-ai-blog": {
+      "unresolved_date": 3
+    },
+    "microsoft-365-feed": {
+      "outside_window": 7
+    },
+    "microsoft-copilot-agentic-ai-catalog": {
+      "outside_window": 7,
+      "unresolved_date": 3
+    },
+    "microsoft-copilot-product-catalog": {
+      "outside_window": 3,
+      "unresolved_date": 4
+    },
+    "microsoft-copilot-studio-feature-releases-applied": {
+      "outside_window": 12,
+      "unresolved_date": 3
+    },
+    "microsoft-india-ai-skills-sep21": {
+      "outside_window": 1
+    },
+    "microsoft-official-blog": {
+      "outside_window": 8,
+      "unresolved_date": 8,
+      "nonstory_url": 1
+    },
+    "microsoft-research-feed": {
+      "outside_window": 3,
+      "unresolved_date": 5
+    },
+    "microsoft-techcommunity-copilot-applied": {
+      "unresolved_date": 2,
+      "nonstory_url": 2,
+      "outside_window": 1
+    },
+    "microsoft-techcommunity-finops-ai": {
+      "unresolved_date": 4
+    },
+    "microsoft-techcommunity-skills-hub": {
+      "outside_window": 3,
+      "unresolved_date": 3
+    },
+    "microsoft-work-iq-agents-sep25": {
+      "outside_window": 1
+    },
+    "openai-academy-skills": {
+      "outside_window": 1,
+      "unresolved_date": 4
+    },
+    "reuters-imf-ai-productivity-sep19": {
+      "outside_window": 1
+    },
+    "reuters-pharma-ai-workflows-sep21": {
+      "outside_window": 1
+    },
+    "reuters-workday-ai-hiring-sep21": {
+      "nonstory_url": 1
+    },
+    "salesforce-agentforce-category": {
+      "outside_window": 4,
+      "nonstory_url": 1
+    },
+    "salesforce-dreamforce-live-sep21": {
+      "outside_window": 1
+    },
+    "zapier-ai-automation": {
+      "unresolved_date": 23,
+      "outside_window": 2
+    },
+    "github-changelog": {
+      "outside_window": 8,
+      "unresolved_date": 4
+    },
+    "hugging-face-feed": {
+      "outside_window": 94
+    },
+    "salesforce-feed": {
+      "outside_window": 2,
+      "unresolved_date": 15
+    },
+    "nvidia-generative-ai": {
+      "outside_window": 76
+    },
+    "aws-machine-learning-feed": {
+      "low_relevance": 1,
+      "outside_window": 10
+    },
+    "github-changelog-copilot": {
+      "outside_window": 2,
+      "unresolved_date": 5
+    }
+  }
+}
