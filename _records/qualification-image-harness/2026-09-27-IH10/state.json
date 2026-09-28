@@ -21,7 +21,7 @@
     "m08"
   ],
   "current_candidate_id": null,
-  "next_action": "Release Q13 from the preserved Q12 semantic checkpoint using the six IH10 accepted/locked exact-byte images; do not redo discovery/editorial/media/watchlist/professional-series work.",
+  "next_action": "Fresh Q13 full qualification released from protected main with a fresh cutoff. Do not reuse Q12 as a full-run pass; Q12 remains terminal FAIL and serves only as historical/harness source evidence.",
   "q13_release_blocked": false,
   "fallback_used": false,
   "cross_story_contamination_count": 0,
