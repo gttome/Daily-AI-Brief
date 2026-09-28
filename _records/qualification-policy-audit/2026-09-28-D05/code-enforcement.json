@@ -1,0 +1,127 @@
+[
+  {
+    "path": "_generator/lib/editorial-kernel.mjs",
+    "matches": [
+      {
+        "line": 78,
+        "text": "  const freshnessTier=ageHours<=24?'primary':'fallback';"
+      },
+      {
+        "line": 82,
+        "text": "   :{tier:'fallback',source_published_at:sourcePublishedAt,fallback_reason:story.agent_skill===true&&ageHours>72"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/media-selection.mjs",
+    "matches": [
+      {
+        "line": 8,
+        "text": "export const VIDEO_MAX_AGE_HOURS=72;"
+      },
+      {
+        "line": 53,
+        "text": "  rule:'0 videos is valid only after bounded 72-hour coverage includes both video intents, at least 15 metadata candidates across at least 8 trusted sources, preferred and fallback duration tiers, and 3-5 deep reviews.'};"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/research.mjs",
+    "matches": [
+      {
+        "line": 8,
+        "text": "export const DEFAULT_FALLBACK_HOURS = 72;"
+      },
+      {
+        "line": 9,
+        "text": "export const AGENT_SKILLS_FALLBACK_HOURS = 168;"
+      },
+      {
+        "line": 24,
+        "text": "export function freshnessTier(publishedAt, now, {primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS}={}) {"
+      },
+      {
+        "line": 32,
+        "text": "export function filterCandidates(candidates, {now, primaryAgeHours = PRIMARY_FRESHNESS_HOURS, maxAgeHours = AGENT_SKILLS_FALLBACK_HOURS, coveredEvents = []} = {}) {"
+      },
+      {
+        "line": 189,
+        "text": "export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=DEFAULT_DEEP_CANDIDATE_TARGET,metadataCandidateLimit=DEFAULT_METADATA_CANDIDATE_LIMIT,maxDeepCandidates=MAX_DEEP_CANDIDATE_EXCEPTION}={}) {"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/validate.mjs",
+    "matches": [
+      {
+        "line": 2,
+        "text": "import {PRIMARY_FRESHNESS_HOURS, DEFAULT_FALLBACK_HOURS, AGENT_SKILLS_FALLBACK_HOURS} from './research.mjs';"
+      },
+      {
+        "line": 72,
+        "text": "          if(ageHours<=PRIMARY_FRESHNESS_HOURS)errors.push(`${label}.freshness fallback is still inside the primary window`);"
+      },
+      {
+        "line": 74,
+        "text": "          if(ageHours>maxHours)errors.push(`${label}.freshness fallback exceeds ${maxHours} hours`);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/visual-diagram.mjs",
+    "matches": [
+      {
+        "line": 69,
+        "text": " return `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${WIDTH}\" height=\"${HEIGHT}\" viewBox=\"0 0 ${WIDTH} ${HEIGHT}\" role=\"img\" aria-label=\"${esc(spec.alt_text)}\"><rect width=\"1200\" height=\"630\" fill=\"#ffffff\"/>${marker}${svgText(wrap(spec.title,72),60,55,{size:30,weight:700,fill:'#17365d',anchor:'start',lineHeight:34})}${spec.subtitle?svgText(wrap(spec.subtitle,100),60,95,{size:16,fill:'#5b6470',anchor:'start',lineHeight:20}):''}${edgeSvg}${nodeSvg}${calloutSvg}<text x=\"1140\" y=\"604\" text-anchor=\"end\" font-family=\"Arial,Helvetica,sans-serif\" font-size=\"12\" fill=\"#6b7280\">Daily Generative AI Brief \u00b7 explanatory diagram</text></svg>`;"
+      }
+    ]
+  },
+  {
+    "path": "_tools/discover-sources.mjs",
+    "matches": [
+      {
+        "line": 57,
+        "text": "const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;"
+      }
+    ]
+  },
+  {
+    "path": "_tools/render-visual-assets.mjs",
+    "matches": [
+      {
+        "line": 16,
+        "text": "const slug=value=>String(value||'story').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,72).replace(/-$/,'')||'story';"
+      }
+    ]
+  },
+  {
+    "path": "_tools/run-under80-preflight.mjs",
+    "matches": [
+      {
+        "line": 49,
+        "text": "  '--ordinary-max-age-hours',String(request.ordinary_max_age_hours||72),"
+      },
+      {
+        "line": 50,
+        "text": "  '--skill-max-age-hours',String(request.agent_skills_max_age_hours||168)"
+      }
+    ]
+  },
+  {
+    "path": "_tools/under80-metadata-gate.mjs",
+    "matches": [
+      {
+        "line": 12,
+        "text": "const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||72);"
+      },
+      {
+        "line": 13,
+        "text": "const skillAgeHours=Number(args['skill-max-age-hours']||168);"
+      },
+      {
+        "line": 46,
+        "text": " if(h<=72)return 12;"
+      }
+    ]
+  }
+]

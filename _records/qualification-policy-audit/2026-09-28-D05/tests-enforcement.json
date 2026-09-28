@@ -1,0 +1,75 @@
+[
+  {
+    "path": "_generator/test/continuous-qualification-contract.test.mjs",
+    "matches": [
+      {
+        "line": 201,
+        "text": "  assert.equal(q.ordinary_freshness_hours_unchanged,72);"
+      },
+      {
+        "line": 227,
+        "text": "  assert.equal(q.ordinary_freshness_hours_unchanged,72);"
+      },
+      {
+        "line": 256,
+        "text": "  assert.equal(q.ordinary_freshness_hours_unchanged,72);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/freshness-policy.test.mjs",
+    "matches": [
+      {
+        "line": 34,
+        "text": "test('ordinary fallbacks are capped at 72 hours and require disclosure',()=>{"
+      },
+      {
+        "line": 37,
+        "text": " assert.ok(freshnessErrors(edition).some(error=>error.includes('exceeds 72 hours')));"
+      },
+      {
+        "line": 53,
+        "text": " assert.ok(freshnessErrors(edition).some(error=>error.includes('exceeds 168 hours')));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/operations-efficiency.test.mjs",
+    "matches": [
+      {
+        "line": 20,
+        "text": "test('video duration ladder prefers <=10m, then 10-15m, then 15-20m within the bounded 72-hour window',()=>{"
+      },
+      {
+        "line": 32,
+        "text": "test('zero-video completion requires bounded evidence-backed 72-hour coverage',()=>{"
+      },
+      {
+        "line": 35,
+        "text": " assert.equal(receipt.complete,true);assert.equal(receipt.bounded,true);assert.equal(receipt.zero_video_allowed,true);assert.equal(receipt.maximum_age_hours,72);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/publication-date-precision.test.mjs",
+    "matches": [
+      {
+        "line": 34,
+        "text": "test('Q14 hardening keeps the ordinary freshness gate at exactly 72 hours',()=>{"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/research.test.mjs",
+    "matches": [
+      {
+        "line": 7,
+        "text": "import {RetrievalCache,filterCandidates,createEvidencePacket,researchSufficiency,FOCUSES,researchTelemetry,runSelectiveResearch,PRIMARY_FRESHNESS_HOURS,DEFAULT_FALLBACK_HOURS,AGENT_SKILLS_FALLBACK_HOURS,DEFAULT_METADATA_CANDIDATE_LIMIT,MAX_DEEP_CANDIDATE_EXCEPTION} from '../lib/research.mjs';"
+      },
+      {
+        "line": 14,
+        "text": " assert.equal(PRIMARY_FRESHNESS_HOURS,24);assert.equal(DEFAULT_FALLBACK_HOURS,72);assert.equal(AGENT_SKILLS_FALLBACK_HOURS,168);"
+      }
+    ]
+  }
+]

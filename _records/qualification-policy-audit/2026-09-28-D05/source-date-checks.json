@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "workflow_run_id": "36450645680",
+  "production_mutation": false,
+  "model_calls": 0,
+  "checks": [
+    {
+      "source_id": "notion",
+      "endpoint": "https://www.notion.com/releases/rss.xml",
+      "format": "rss",
+      "resolved_url": "https://www.notion.com/releases/rss.xml",
+      "ai_entries": 32,
+      "dated_ai_entries": 0,
+      "article_checks": [],
+      "status": "limited",
+      "checked_at": "2026-09-28T16:23:27.714Z"
+    },
+    {
+      "source_id": "n8n",
+      "endpoint": "https://blog.n8n.io/rss/",
+      "format": "rss",
+      "resolved_url": "https://blog.n8n.io/rss/",
+      "ai_entries": 19,
+      "dated_ai_entries": 9,
+      "article_checks": [
+        {
+          "url": "https://blog.n8n.io/how-to-evaluate-the-performance-of-ai-agents/",
+          "published_at": "2026-04-21T17:45:41.000Z",
+          "status": "date_verified"
+        },
+        {
+          "url": "https://blog.n8n.io/ai-agent-orchestration-frameworks/",
+          "published_at": "2025-10-16T12:51:31.000Z",
+          "status": "date_verified"
+        }
+      ],
+      "status": "operational",
+      "checked_at": "2026-09-28T16:23:27.848Z"
+    },
+    {
+      "source_id": "box",
+      "endpoint": "https://blog.box.com/",
+      "format": "article",
+      "resolved_url": "https://blog.box.com/",
+      "ai_entries": 21,
+      "dated_ai_entries": 0,
+      "article_checks": [
+        {
+          "url": "https://blog.box.com/claude-opus-55-faster-and-leaner-high-quality-work",
+          "published_at": null,
+          "status": "date_unresolved"
+        },
+        {
+          "url": "https://blog.box.com/SAI26-agentic-ai-is-here",
+          "published_at": null,
+          "status": "date_unresolved"
+        }
+      ],
+      "status": "limited",
+      "checked_at": "2026-09-28T16:23:28.390Z"
+    },
+    {
+      "source_id": "airtable",
+      "endpoint": "https://www.airtable.com/articles",
+      "format": "article",
+      "resolved_url": "https://www.airtable.com/articles",
+      "ai_entries": 59,
+      "dated_ai_entries": 0,
+      "article_checks": [
+        {
+          "url": "https://www.airtable.com/platform/app-building",
+          "published_at": null,
+          "status": "date_unresolved"
+        },
+        {
+          "url": "https://www.airtable.com/platform/ai-agents",
+          "published_at": null,
+          "status": "date_unresolved"
+        }
+      ],
+      "status": "limited",
+      "checked_at": "2026-09-28T16:23:28.983Z"
+    }
+  ]
+}

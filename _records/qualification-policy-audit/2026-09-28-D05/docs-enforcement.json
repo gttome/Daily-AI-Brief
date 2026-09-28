@@ -1,0 +1,114 @@
+[
+  {
+    "path": "docs/operations/CONTINUOUS-QUALIFICATION-PLAN.md",
+    "matches": [
+      {
+        "line": 425,
+        "text": "Verified root cause: the Q13 repair relied on first-party pinned candidates whose publisher dates were represented as date-only values normalized to `00:00:00Z`. The metadata enricher skipped any candidate that already had a publication date, so it never attempted to recover an exact article-page timestamp. By the Q14 cutoff (`2026-09-28T02:53:00Z`), September 23\u201325 date-only pins had conservatively aged beyond the unchanged 72-hour ordinary freshness window."
+      },
+      {
+        "line": 428,
+        "text": "- preserve the ordinary **72-hour** freshness gate exactly;"
+      },
+      {
+        "line": 445,
+        "text": "- preserve the ordinary **72-hour** freshness gate exactly;"
+      },
+      {
+        "line": 463,
+        "text": "- preserve the ordinary **72-hour** freshness gate;"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+    "matches": [
+      {
+        "line": 298,
+        "text": "| \ud83e\uddea **L \u2014 Independent Live Validation** | 72\u201382 | Prove reader-facing release works | Validation supervisor |"
+      },
+      {
+        "line": 528,
+        "text": "<summary><strong>\ud83e\uddea Phase L \u2014 Independent Live Validation \u00b7 Steps 72\u201382</strong></summary>"
+      },
+      {
+        "line": 532,
+        "text": "| **72** | **Verify edition date** | Public site displays current intended date. |"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/Q17-APPLIED-SOURCE-SUPPLY-HARDENING.md",
+    "matches": [
+      {
+        "line": 3,
+        "text": "Q17 failed before article evidence or semantic execution with novelty-aware coverage 10 Technical, 2 Applied, and 3 Agents. The correction adds a recurring first-party Microsoft Copilot Studio Feature Releases catalog as Applied source supply. The 72-hour freshness, classification, novelty, three-per-focus breadth, Agent Skills, evidence, zero-cost, and production-isolation gates remain unchanged. Q17 is immutable; proof belongs to fresh Q18 after protected CI and merge."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/Q20-FEED-RECOVERY-2026-09-28.md",
+    "matches": [
+      {
+        "line": 13,
+        "text": "The change retains the 72-hour ordinary freshness window, Agent Skills policy, three-candidate focus minimum, 20-item model-visible metadata limit, nine-item article evidence limit, and exact 2/2/2 editorial allocation. No source dates or article bodies are manufactured. Main publication artifacts, accepted images, prior Q identities, and PR #117 are untouched."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/continuous-qualification-contract.json",
+    "matches": [
+      {
+        "line": 462,
+        "text": "    \"ordinary_freshness_hours_unchanged\": 72,"
+      },
+      {
+        "line": 488,
+        "text": "    \"ordinary_freshness_hours_unchanged\": 72,"
+      },
+      {
+        "line": 511,
+        "text": "    \"ordinary_freshness_hours_unchanged\": 72,"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/freshness-policy.md",
+    "matches": [
+      {
+        "line": 17,
+        "text": "5. An ordinary `fallback` story may be used only when no qualifying primary-window candidate survives the existing authority, evidence, novelty, significance, practical-value, and category gates for that required slot. Ordinary fallback age is capped at **72 hours**."
+      },
+      {
+        "line": 18,
+        "text": "6. The required reusable Agent Skills story retains its already approved exception: if no qualifying primary-window Agent Skills development exists, it may use a fallback up to **168 hours / 7 days** old. It still requires a specific fallback reason."
+      },
+      {
+        "line": 50,
+        "text": "- no ordinary fallback exceeds 72 hours;"
+      },
+      {
+        "line": 51,
+        "text": "- no Agent Skills fallback exceeds 168 hours;"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/qualification-q17-hardening-contract.json",
+    "matches": [
+      {
+        "line": 11,
+        "text": "  \"ordinary_freshness_hours\": 72,"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/under80-runtime-contract.json",
+    "matches": [
+      {
+        "line": 30,
+        "text": "    \"ordinary_fallback_hours\": 72,"
+      }
+    ]
+  }
+]
