@@ -243,3 +243,29 @@ test('Q15 hardening restores recurring Applied source supply without weakening g
     assert.match(s.discovery_endpoint,/^https:\/\/techcommunity\.microsoft\.com\//);
   }
 });
+
+
+test('Q16 hardening restores one additional recurring Applied source without weakening gates',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const p=JSON.parse(fs.readFileSync('_data/preflight-source-plan.json','utf8'));
+  const q=c.qualification_q16_applied_source_supply;
+  assert.equal(q.qualification_only,true);
+  assert.deepEqual(q.q16_observed_coverage,{technical_ai_engineering:10,applied_genai_knowledge_workers:2,agents_non_technical_people:3});
+  assert.equal(q.q14_date_precision_control_preserved,true);
+  assert.equal(q.q15_applied_source_supply_preserved,true);
+  assert.equal(q.ordinary_freshness_hours_unchanged,72);
+  assert.equal(q.classification_gate_unchanged,true);
+  assert.equal(q.novelty_gate_unchanged,true);
+  assert.equal(q.minimum_focus_coverage_unchanged,3);
+  assert.equal(q.agent_skills_gate_unchanged,true);
+  assert.equal(q.recurring_catalog_not_dated_pin,true);
+  assert.equal(q.production_mutation,false);
+  const s=p.sources.find(x=>x.source_id===q.added_recurring_applied_catalog);
+  assert.ok(s);
+  assert.equal(s.status,'active');
+  assert.equal(s.evidence_class,'publisher_authored');
+  assert.equal(s.focus_hint,'applied_genai_knowledge_workers');
+  assert.equal(s.q16_hardening,true);
+  assert.equal(s.pinned_candidate,undefined);
+  assert.equal(s.discovery_endpoint,'https://workspace.google.com/blog/');
+});
