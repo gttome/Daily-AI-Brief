@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH9",
+  "candidate_id": "m02",
+  "attempt": 2,
+  "baseline_main_sha": "3f490c83e072292d66e5a9a4518fb1bcbe9f6597",
+  "image_sha256": "7776fd2b5f1acf16fdb998c83de4fa3d4f4e7ad30fbc41a06a374686f5dfdca6",
+  "library_file_id": "libfile_46129a6c07ec8191a901924b23f82b88",
+  "library_path": "/Daily AI Brief Qualification Images/m02/IH9-m02-attempt-2.png",
+  "first_failed_gate": "SUBJECT_LINEAGE_PASS",
+  "failure_code": "qualification_image_context_isolation_failed",
+  "failure_evidence": "Second generation again produced the harness/status subject instead of the frozen m02 story subject.",
+  "deterministic_defect": true,
+  "retries_stopped_early": true,
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
