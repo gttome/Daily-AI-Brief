@@ -28,7 +28,7 @@
   "work_usage": 0,
   "codex_usage": 0,
   "paid_api_usage": 0,
-  "root_cause": "The qualification metadata gate reserves three candidates per focus before filling the 20-candidate shortlist, but the reservation loop counts candidates that are exact-source prior-production duplicates even though those candidates are excluded from the post-novelty coverage calculation. Q17 therefore retained only two novelty-eligible Applied candidates despite the contract requiring novelty-aware breadth before semantic execution.",
-  "next_smallest_verified_correction": "Make the qualification breadth-reservation loop count and reserve only production_novelty_eligible candidates when qualification mode is active. Keep prior-production duplicates traceable, but do not let them consume any of the three reserved focus slots. Preserve the 72-hour freshness, classification, novelty, 3-per-focus, Agent Skills, evidence, and production-isolation gates.",
+  "root_cause": "Q17 preserved the Q16 baseline corrections but still produced only two novelty-eligible Applied candidates while Technical and Agents remained above or at the required breadth. The Q16 Google Workspace catalog did not close the final recurring Applied source-supply gap at this cutoff; freshness, date precision, novelty, classification, Agent Skills, and the 3-per-focus gate continued to behave fail-closed.",
+  "next_smallest_verified_correction": "Add one additional recurring first-party Applied catalog with a currently fresh, distinct knowledge-work candidate: Microsoft Copilot Studio feature releases. Do not weaken the 72-hour freshness window, classification, novelty, 3-per-focus breadth, Agent Skills, evidence, or production-isolation gates.",
   "rerun_prohibited": true
 }
