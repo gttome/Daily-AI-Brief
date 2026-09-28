@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0.0",
+  "diagnostic_id": "2026-09-28-D04",
+  "workflow_run_id": "36447847716",
+  "cutoff": "2026-09-28T16:00:32.310Z",
+  "started_at": "2026-09-28T16:00:32.310Z",
+  "qualification_pass": false,
+  "production_mutation": false,
+  "semantic_pass_started": false,
+  "article_evidence_started": false,
+  "model_calls": 0,
+  "source_scan_limit": 48,
+  "enrichment_limit": 48,
+  "metadata_limit": 20,
+  "ordinary_freshness_hours": 72,
+  "steps": [
+    {
+      "name": "discovery",
+      "result": "pass",
+      "stdout": "{\"date\":\"2026-09-28\",\"research_cutoff_at\":\"2026-09-28T16:00:32.310Z\",\"fresh_discovery\":true,\"sources\":57,\"scanned\":48,\"queue\":482,\"fresh_metadata\":48,\"stop_reason\":\"source_scan_limit\"}\n"
+    },
+    {
+      "name": "expiry_aware_date_enrichment",
+      "result": "pass",
+      "stdout": "{\"attempted\":48,\"resolved\":29,\"published_resolved\":28,\"updated_resolved\":13,\"precision_attempted\":3,\"precision_resolved\":2,\"failed\":4}\n"
+    },
+    {
+      "name": "unchanged_metadata_gate",
+      "result": "pass",
+      "stdout": "{\"out\":\"/home/runner/work/Daily-AI-Brief/Daily-AI-Brief/_records/qualification-date-budget/2026-09-28-D04/metadata-candidates.json\",\"raw_queue_count\":482,\"eligible\":38,\"retained\":20,\"limit\":20,\"coverage_counts\":{\"technical_ai_engineering\":13,\"applied_genai_knowledge_workers\":2,\"agents_non_technical_people\":3},\"agent_skill_signals\":1,\"agent_skill_story_ready_signals\":1,\"agent_skill_story_ready_signals_after_novelty\":1,\"qualification_novelty_cutoff_date\":\"2026-09-28\",\"preferred_agent_skill_candidate_id\":\"m01\",\"coverage_ready\":false,\"rejected\":{\"invalid_title\":2,\"nonstory_url\":5,\"nonarticle_content\":0,\"date_conflict\":0,\"unresolved_date\":134,\"outside_window\":288,\"low_relevance\":15,\"duplicate\":0}}\n"
+    }
+  ],
+  "expired_day_precision_candidates": 15,
+  "expired_by_source": {
+    "adobe-acrobat-ai-workflows-sep24": 1,
+    "atlassian-ai-quality-sep18": 1,
+    "google-workspace-executive-agents-sep24": 1,
+    "google-workspace-intelligent-content-sep23": 1,
+    "google-workspace-weekly-recap-sep18": 1,
+    "ibm-chro-ai-workforce-sep21": 1,
+    "microsoft-india-ai-skills-sep21": 1,
+    "reuters-imf-ai-productivity-sep19": 1,
+    "reuters-pharma-ai-workflows-sep21": 1,
+    "reuters-workday-ai-hiring-sep21": 1,
+    "salesforce-agentforce-category": 4,
+    "salesforce-dreamforce-live-sep21": 1
+  },
+  "original_enrichment_sha256": "d4afcfa35fa799859ccce465da19d31224b8dda0d89cac6788682d9b6e7d74d9",
+  "coverage_counts": {
+    "technical_ai_engineering": 13,
+    "applied_genai_knowledge_workers": 2,
+    "agents_non_technical_people": 3
+  },
+  "coverage_ready": false,
+  "agent_skill_story_ready_signals_after_novelty": 1,
+  "rejected": {
+    "invalid_title": 2,
+    "nonstory_url": 5,
+    "nonarticle_content": 0,
+    "date_conflict": 0,
+    "unresolved_date": 134,
+    "outside_window": 288,
+    "low_relevance": 15,
+    "duplicate": 0
+  },
+  "enrichment": {
+    "attempted": 48,
+    "resolved": 29,
+    "precision_attempted": 3,
+    "precision_resolved": 2,
+    "failed": 4
+  },
+  "result": "diagnostic_complete",
+  "note": "Only the date-check candidate plan was changed in this isolated runner. No raw queue, altered implementation or qualification PASS is committed. This is a current snapshot, not a controlled replay of Q21; improved coverage, if any, still requires a tested permanent change and fresh full qualification.",
+  "completed_at": "2026-09-28T16:01:16.673Z"
+}
