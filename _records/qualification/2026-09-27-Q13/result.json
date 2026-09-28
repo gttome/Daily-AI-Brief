@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-27-Q13",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "PREFLIGHT_DISCOVERY_READY",
+  "failed_stage": "PREFLIGHT_DISCOVERY_READY",
+  "failure_code": "qualification_focus_coverage_insufficient_after_novelty",
+  "workflow_run_id": 36371142079,
+  "cutoff": "2026-09-28T02:45:00Z",
+  "sources_scanned": 48,
+  "fresh_metadata_discovered": 48,
+  "retained_candidates": 20,
+  "coverage_counts": {
+    "technical_ai_engineering": 11,
+    "applied_genai_knowledge_workers": 0,
+    "agents_non_technical_people": 2
+  },
+  "required_minimum_per_focus": 3,
+  "agent_skill_story_ready_signals_after_novelty": 1,
+  "semantic_pass_started": false,
+  "article_evidence_started": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "root_cause": "The fresh qualification discovery supply produced abundant technical candidates but insufficient novelty-eligible Applied and Agents candidates. The readiness gate correctly failed before semantic execution.",
+  "next_smallest_verified_correction": "Add a bounded set of fresh first-party Applied and Agents discovery candidates to the qualification source plan; do not weaken novelty, focus-classification, category-breadth, or Agent Skills gates.",
+  "rerun_prohibited": true
+}
