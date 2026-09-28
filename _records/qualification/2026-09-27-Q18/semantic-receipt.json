@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-27-Q18",
+  "execution_mode": "qualification_nonproduction",
+  "semantic_pass_count": 1,
+  "source_packet": "_records/discovery-preflight/result/article-evidence.json",
+  "source_packet_frozen": true,
+  "discovery_rerun": false,
+  "article_evidence_rerun": false,
+  "selection": [
+    {
+      "order": 1,
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod"
+    },
+    {
+      "order": 2,
+      "candidate_id": "m11",
+      "focus": "technical_ai_engineering",
+      "headline": "Compact Documentation for Coding Agents: A Benchmark, an Optimizer, and Why It Does Not Transfer"
+    },
+    {
+      "order": 3,
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "3 Must-Haves for Scaling Agentic AI in Health"
+    },
+    {
+      "order": 4,
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Build where you want, run with confidence: Now Microsoft hosts and manages the code created by Copilot"
+    },
+    {
+      "order": 5,
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "qoder-skill-evolution",
+      "agent_skills_story": true
+    },
+    {
+      "order": 6,
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub Copilot app for Beginners: How to build custom workflows with canvases"
+    }
+  ],
+  "allocation": {
+    "technical_ai_engineering": 2,
+    "applied_genai_knowledge_workers": 2,
+    "agents_non_technical_people": 2
+  },
+  "agent_skills_story_count": 1,
+  "selected_agent_skills_candidate_id": "m01",
+  "rejected_from_evidence": [
+    {
+      "candidate_id": "m02",
+      "reason": "Not sufficiently generative-AI centered for the six-story brief despite deterministic technical focus."
+    },
+    {
+      "candidate_id": "m03",
+      "reason": "Useful Copilot integration update but lower editorial priority than selected technical and applied mechanisms."
+    },
+    {
+      "candidate_id": "m05",
+      "reason": "Article evidence packet contains only a 15-word title-level excerpt, insufficient for selection."
+    },
+    {
+      "candidate_id": "m09",
+      "reason": "Strong Agents candidate but m08 provides a clearer nontechnical end-user workflow story while preserving exactly one Agent Skills story."
+    }
+  ],
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "next_stage": "MEDIA_READY_AND_IMAGE_PACKET_PREPARATION"
+}
