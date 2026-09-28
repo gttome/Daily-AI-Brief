@@ -36,5 +36,10 @@
   "codex_usage": 0,
   "paid_api_usage": 0,
   "production_mutation": false,
-  "pass_requires_accepted_locked": 6
+  "pass_requires_accepted_locked": 6,
+  "status": "historical_ih_fixture",
+  "current_execution_policy": "production-image-execution-v2",
+  "current_execution_module": "_generator/lib/image-execution.mjs",
+  "new_runs_use_editorial_selection_order": true,
+  "historical_fields_below_do_not_require_manual_owner_actions_for_new_runs": true
 }

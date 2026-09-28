@@ -1,5 +1,19 @@
 # Daily Generative AI Brief
 
+## September 28, 2026 — Automated production/qualification image parity
+
+> [!IMPORTANT]
+> **Current image policy: `production-image-execution-v2`.** Production and qualification now use the same request builder, execution/receipt contract and production image gate. No owner-created fresh chats, owner image uploads, mandatory manual Library transfers or manual image approvals are part of the new path. This amendment supersedes earlier fresh-worker and Library-exit procedures for new runs only; historical IH/Q evidence remains unchanged.
+
+The automatic sequence is sealed single-story request → native image generation → exact output capture → automated post-generation review → bounded same-story regeneration when needed → exact Git persistence/read-back. Review must be a later phase, not necessarily a different conversation. The explicit payload excludes other stories and operational content; hidden runtime isolation is **not asserted**. Keep all factual, professional-quality, six-image differentiation and exact-byte gates. No Work, Codex or paid-model API use is authorized.
+
+`_generator/lib/image-execution.mjs` is shared by both modes. The qualification builder is a direct alias of the production builder. `_tools/image-execution.mjs` prepares requests and validates actual receipts; request preparation is not generation. Missing native generation/review/transport is `CAPABILITY_BLOCKED`, never an owner-upload workaround. For September 28 editions onward, the combined production image gate requires V2 live execution evidence. Earlier editions retain historical validators.
+
+**Release and proof are distinct:** require protected CI/merge for this change; require actual scheduled native generation, capture, review and exact persistence before declaring the image stage unattended. Adapter fixtures cannot establish production automation. See [Automated image execution](automated-image-execution.md). Preserve Q24's completed components and original cutoff; record the execution amendment without rewriting frozen receipts or allocating Q25 while Q24 is nonterminal.
+
+---
+
+
 ## September 28, 2026 — Q23 media reference-time correction
 
 > [!IMPORTANT]

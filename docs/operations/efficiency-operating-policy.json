@@ -272,5 +272,22 @@
     "modified_timestamp_is_not_publication": true,
     "historical_missing_policy": "ordinary 72 hours; Agent Skills 168 hours",
     "media_rules_changed": false
+  },
+  "image_execution": {
+    "policy_id": "production-image-execution-v2",
+    "shared_module": "_generator/lib/image-execution.mjs",
+    "qualification_production_parity": true,
+    "manual_intervention_allowed": false,
+    "requires_fresh_conversation": false,
+    "runtime_context_isolation": "not_asserted",
+    "review_phase": "after_generation",
+    "max_attempts_per_story": 4,
+    "capability_failure": "CAPABILITY_BLOCKED",
+    "cost_boundary": {
+      "work": 0,
+      "codex": 0,
+      "paid_model_api": 0
+    },
+    "scheduled_live_proof_required": true
   }
 }

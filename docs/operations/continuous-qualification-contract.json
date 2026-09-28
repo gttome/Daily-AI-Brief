@@ -171,7 +171,7 @@
     "qualification_repeat_note": "The same source may appear in multiple Q-runs only if it was novel relative to the frozen pre-edition production history. Qualification repetition never authorizes a production repeat."
   },
   "image_execution_isolation": {
-    "rule": "Every qualification image generation consumes one sealed single-story image packet and no other story or edition visual context.",
+    "rule": "Production and qualification use the same sealed single-story request and automated execution pipeline. Request-only isolation is enforced; hidden runtime context exclusion is not asserted.",
     "packet_per_story": true,
     "exactly_one_story_id_per_packet": true,
     "exactly_one_candidate_id_per_packet": true,
@@ -216,8 +216,8 @@
     "semantic_must_not_start_when_agent_skill_ready_after_novelty_is_zero": true
   },
   "image_worker_isolation": {
-    "rule": "Story image generation must execute in a dedicated image-only worker context that receives exactly one sealed story packet and no qualification, scheduler, status, publication, edition, QA-dashboard, or other-story control text.",
-    "dedicated_worker_required": true,
+    "rule": "Use the shared production image execution path. No owner-created chat, uploaded image or manual review. A fresh request is not a claim of a fresh platform conversation.",
+    "dedicated_worker_required": false,
     "input_exactly_one_story_packet": true,
     "operational_context_prohibited": true,
     "prohibited_context_classes": [
@@ -243,10 +243,15 @@
     "worker_prompt_must_not_contain_run_id": true,
     "worker_prompt_must_not_contain_q_number": true,
     "worker_prompt_must_not_contain_status_terms": true,
-    "wrong_subject_retry_requires_new_worker_context": true,
-    "same_worker_retry_prohibited_after_subject_mismatch": true,
-    "max_wrong_subject_attempts_per_story_before_run_fail": 2,
-    "q4_root_cause": "Q4 generated qualification-status dashboards twice for m03 despite single-story packet isolation, proving that surrounding operational task context can contaminate generation. Dedicated image-only worker context is therefore mandatory."
+    "wrong_subject_retry_requires_new_worker_context": false,
+    "same_worker_retry_prohibited_after_subject_mismatch": false,
+    "max_wrong_subject_attempts_per_story_before_run_fail": 4,
+    "q4_root_cause": "Q4 generated qualification-status dashboards twice for m03 despite single-story packet isolation, proving that surrounding operational task context can contaminate generation. Dedicated image-only worker context is therefore mandatory.",
+    "operational_context_scope": "explicit_generation_payload_only",
+    "requires_fresh_conversation": false,
+    "manual_intervention_allowed": false,
+    "runtime_context_isolation": "not_asserted",
+    "review_phase": "after_generation"
   },
   "image_factual_support": {
     "rule": "Specific image labels and examples must be supported by frozen source evidence. Generic explanatory elements are allowed only when they remain conceptual.",
@@ -265,8 +270,8 @@
       "structural_quality",
       "editorial_quality"
     ],
-    "factual_support_failure_action": "discard_and_start_fresh_image_only_worker_for_same_story",
-    "max_factual_support_failures_per_story_before_run_fail": 2,
+    "factual_support_failure_action": "discard_and_automatically_generate_fresh_request_for_same_story",
+    "max_factual_support_failures_per_story_before_run_fail": 4,
     "q5_root_cause": "Q5 image-only workers stayed on subject but added unsupported concrete details. The next control restricts concrete content to frozen-evidence facts."
   },
   "qualification_agent_focus_preflight": {
@@ -334,10 +339,10 @@
     "q9_root_cause": "After Q8 acquisition hardening, Q9 scanned all 48 permitted sources and found 52 fresh metadata candidates, but deterministic novelty-aware classification retained only two Agents for Everyone candidates. The remaining issue was insufficient fresh agent-source supply, not early stopping."
   },
   "qualification_image_artifact_handoff": {
-    "rule": "Every qualification image must cross the image-worker boundary through a durable exact-file handoff before separate review. An ephemeral task-local file_id is not sufficient.",
-    "qualification_only": true,
+    "rule": "Both production and qualification capture native output automatically, review exact final bytes, persist to Git and verify read-back. No owner Library transfer or upload is required.",
+    "qualification_only": false,
     "q10_root_cause": "Q10 image generation produced visually reviewable output, but exact generated binaries were not durably routed from isolated image-worker contexts to the separate reviewer. One m08 image passed visual gates but could not be accepted_locked because its exact bytes could not be materialized and persisted.",
-    "worker_generation_isolation_unchanged": true,
+    "worker_generation_isolation_unchanged": false,
     "artifact_capture_phase": "post_generation_nonsemantic_transport",
     "artifact_capture_may_contain_only": [
       "story_id",
@@ -354,19 +359,17 @@
       "other_story_image",
       "repair_status"
     ],
-    "durable_surface": "personal_library",
-    "library_path_prefix": "/Daily AI Brief Qualification Images",
+    "durable_surface": "exact_git_blob_with_native_output_provenance",
+    "library_path_prefix": null,
     "exact_source_snapshot_required": true,
     "upload_source_must_be_exact_generated_file_ref": true,
     "required_handoff_fields": [
       "story_id",
       "candidate_id",
-      "library_file_id",
-      "file_id",
-      "current_version_number",
-      "library_path",
-      "mime_type",
-      "size_bytes"
+      "request_sha256",
+      "generation",
+      "review",
+      "persistence"
     ],
     "ephemeral_file_id_only_prohibited": true,
     "reviewer_must_materialize_raw_file": true,
@@ -382,22 +385,23 @@
     "reviewer_must_persist_exact_bytes_to_git_blob": true,
     "git_blob_encoding": "base64",
     "lossy_reencoding_prohibited": true,
-    "reviewer_regeneration_prohibited": true,
+    "reviewer_regeneration_prohibited": false,
     "accepted_locked_requires_git_blob_exact_byte_match": true,
     "missing_durable_handoff_failure_code": "qualification_image_durable_handoff_missing",
     "materialization_failure_code": "qualification_image_artifact_materialization_failed",
     "six_story_acceptance": [
-      "six_unique_durable_library_artifacts",
-      "six_successful_raw_materializations",
+      "six_native_generation_receipts",
+      "six_automated_reviews",
       "six_unique_sha256_values",
-      "six_visual_gate_passes",
-      "six_exact_git_blob_persists"
+      "six_exact_git_blob_persists",
+      "six_readback_matches"
     ],
-    "production_mutation": false
+    "production_mutation": false,
+    "manual_intervention_allowed": false
   },
   "qualification_image_worker_serialization": {
-    "rule": "Qualification image workers must execute strictly one story at a time. A later story worker may not start until the prior story has completed generation, durable Library capture, separate review, and exact Git persistence or a terminal per-story rejection.",
-    "qualification_only": true,
+    "rule": "Execute one sealed story request at a time with automatic capture, post-generation review, bounded regeneration and exact Git persistence before the next story.",
+    "qualification_only": false,
     "q11_root_cause": "Q11 persisted two supposed m02 image artifacts to durable Library storage, but both visually contained the m04 Copilot Memory subject. Durable transport therefore worked, while concurrent/multi-worker execution still allowed cross-story subject or artifact contamination.",
     "maximum_concurrent_image_workers": 1,
     "required_story_sequence": "editorial_selection_order",
@@ -408,8 +412,8 @@
       "rejected_terminal_run_fail"
     ],
     "generation_and_capture_same_worker_required": true,
-    "durable_library_capture_before_worker_exit": true,
-    "separate_reviewer_after_capture": true,
+    "durable_library_capture_before_worker_exit": false,
+    "separate_reviewer_after_capture": false,
     "exact_git_persist_before_next_story": true,
     "cross_story_parallelism_prohibited": true,
     "cross_story_batch_generation_prohibited": true,
@@ -418,11 +422,13 @@
     "candidate_lineage_match_required_at_library_capture": true,
     "candidate_lineage_match_required_at_review": true,
     "candidate_lineage_match_required_at_git_persist": true,
-    "subject_mismatch_action": "discard_fresh_worker_same_story",
+    "subject_mismatch_action": "discard_and_automatically_generate_fresh_request_same_story",
     "subject_mismatch_artifact_must_remain_append_only_evidence": true,
-    "max_subject_mismatch_attempts_per_story": 2,
+    "max_subject_mismatch_attempts_per_story": 4,
     "failure_code_after_attempt_budget": "qualification_image_subject_lineage_unsatisfied",
-    "production_mutation": false
+    "production_mutation": false,
+    "review_phase": "after_generation",
+    "requires_fresh_conversation": false
   },
   "qualification_q13_source_supply": {
     "rule": "After Q13 exposed novelty-aware coverage of 11 Technical / 0 Applied / 2 Agents, qualification must add only bounded, first-party, dated Applied and Agents source candidates; category, novelty, Agent Skills, and 3-per-focus readiness gates remain unchanged.",
@@ -580,5 +586,17 @@
     "after_cutoff_media_ineligible": true,
     "historical_missing_policy_unchanged": true,
     "media_limits_unchanged": true
+  },
+  "image_execution_policy": "production-image-execution-v2",
+  "image_automation_acceptance": {
+    "policy_id": "production-image-execution-v2",
+    "shared_module": "_generator/lib/image-execution.mjs",
+    "maximum_attempts_per_story": 4,
+    "manual_image_actions_allowed": 0,
+    "live_scheduled_receipts_required_for_unattended_claim": true,
+    "fixture_tests_are_not_live_execution": true,
+    "missing_executor_state": "CAPABILITY_BLOCKED",
+    "missing_executor_owner_upload_fallback": false,
+    "historical_ih_and_q_results_immutable": true
   }
 }
