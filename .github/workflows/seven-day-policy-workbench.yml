@@ -6,22 +6,42 @@ on:
 permissions:
   contents: read
 jobs:
-  workspace:
+  publisher-fixtures:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Export existing baseline and completed D05 evidence for local implementation
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Capture only unresolved publisher representations for parser regression fixtures
         run: |
-          set -euo pipefail
-          mkdir -p /tmp/seven-day-workspace
-          git archive --format=tar HEAD | gzip > /tmp/seven-day-workspace/repository.tar.gz
-          git fetch --no-tags --depth=1 origin 954e825ecb8f4a19da5c37609c7483e64e32a7cf
-          git archive --format=tar 954e825ecb8f4a19da5c37609c7483e64e32a7cf _records/qualification-policy-audit/2026-09-28-D05 | gzip > /tmp/seven-day-workspace/d05-evidence.tar.gz
-          git rev-parse HEAD > /tmp/seven-day-workspace/baseline-sha.txt
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {retrieveSource,extractCandidateMetadata} from './_tools/discovery-links.mjs';
+          const out='/tmp/publisher-fixtures';fs.mkdirSync(out,{recursive:true});
+          const checks=[];
+          async function capture(id,url,format='article'){
+            try{
+              const r=await retrieveSource(url,{maxResponseBytes:2500000,maxNormalizedChars:2500000});
+              fs.writeFileSync(`${out}/${id}.txt`,r.text);
+              const entries=extractCandidateMetadata(r.text,r.url,{source_id:id,format,evidence_class:'publisher_authored'});
+              checks.push({id,url,resolved_url:r.url,checked_at:new Date().toISOString(),status:'retrieved',entries});
+              return entries;
+            }catch(e){checks.push({id,url,status:'unavailable',error:e.message,checked_at:new Date().toISOString()});return [];}
+          }
+          const notion=await capture('notion-rss','https://www.notion.com/releases/rss.xml','atom');
+          const notionArticle=notion.find(x=>/^https:\/\/www.notion.com\/releases\/[^/]+$/.test(x.canonical_url));
+          if(notionArticle)await capture('notion-article',notionArticle.canonical_url);
+          await capture('box-article','https://blog.box.com/claude-opus-55-faster-and-leaner-high-quality-work');
+          const airtable=await capture('airtable-catalog','https://www.airtable.com/articles');
+          const articleLinks=airtable.filter(x=>/^https:\/\/www.airtable.com\/articles\/[^/?]+\/?$/.test(x.canonical_url)&&/\bAI\b|agent|Claude/i.test(x.headline)&&!/read article/i.test(x.headline)).slice(0,2);
+          for(const [i,x] of articleLinks.entries())await capture(`airtable-article-${i+1}`,x.canonical_url);
+          fs.writeFileSync(`${out}/checks.json`,JSON.stringify({workflow_run_id:process.env.GITHUB_RUN_ID,checks},null,2));
+          NODE
       - uses: actions/upload-artifact@v4
         with:
-          name: seven-day-policy-workspace
-          path: /tmp/seven-day-workspace/
+          name: seven-day-publisher-fixtures
+          path: /tmp/publisher-fixtures/
           retention-days: 2
           if-no-files-found: error
