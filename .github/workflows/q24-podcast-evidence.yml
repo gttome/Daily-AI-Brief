@@ -18,8 +18,9 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
-          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = "$(git rev-parse 22ab6b7ab394ef4db84a2b998e3f0091761b6b7d:_records/qualification/2026-09-28-Q24/semantic-receipt.json)"
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
           test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/podcast-metadata.json
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
           import crypto from 'node:crypto';
@@ -73,7 +74,6 @@ jobs:
         run: |
           node --input-type=module <<'NODE'
           import fs from 'node:fs';
-          import crypto from 'node:crypto';
           import {MEDIA_FRESHNESS_POLICY,mediaReferenceTime,mediaPublicationTime} from './_generator/lib/media-freshness.mjs';
           const runId='2026-09-28-Q24',root='_records/qualification/'+runId,request=JSON.parse(fs.readFileSync('_records/discovery-preflight/request.json','utf8'));
           const semantic=JSON.parse(fs.readFileSync(root+'/semantic-receipt.json','utf8'));
@@ -84,14 +84,14 @@ jobs:
           const prior=[];
           for(const filename of fs.readdirSync('_data/editions').filter(x=>/^\d{4}-\d{2}-\d{2}\.json$/.test(x)&&x.slice(0,10)<request.edition_date)){
             const edition=JSON.parse(fs.readFileSync('_data/editions/'+filename,'utf8'));
-            for(const item of [...(edition.podcasts||[]),...(edition.podcast?[edition.podcast]:[])])prior.push({edition_date:filename.slice(0,10),title:item.title,show:item.show,ids:[item.url,item.canonical_url,...(item.platforms||[]).map(x=>x.url)].map(identity).filter(Boolean)});
+            for(const item of [...(edition.podcasts||[]),...(edition.podcast?[edition.podcast]:[])])prior.push({edition_date:filename.slice(0,10),title:item.title,show:item.show,ids:[item.url,item.canonical_url,...(Array.isArray(item.platforms)?item.platforms:[]).map(x=>x.url)].map(identity).filter(Boolean)});
           }
           const records=data.records.map(record=>{
             const age=(reference-mediaPublicationTime(record.published_at,MEDIA_FRESHNESS_POLICY))/3600000;
             const matches=prior.filter(x=>x.ids.includes(identity(record.canonical_url))||(x.title&&x.title.trim().toLowerCase()===record.title.trim().toLowerCase()&&x.show===record.show));
             return {...record,age_hours_at_cutoff:Number.isFinite(age)?age:null,within_primary_or_seven_day_window:Number.isFinite(age)&&age>=0&&age<=168,freshness_tier:age>=0&&age<=48?'primary_48h':age>48&&age<=168?'fallback_7d':null,prior_production_identity_matches:matches,identity_novelty_screen_passed:matches.length===0,semantic_novelty_review_complete:false,selection_status:'metadata_verified_not_selected'};
           });
-          const evidence={schema_version:'1.0.0',run_id:runId,cutoff:request.cutoff,baseline_sha:request.baseline_sha,media_freshness_policy:MEDIA_FRESHNESS_POLICY,workflow_run_id:Number(process.env.GITHUB_RUN_ID),model_calls:0,new_episode_page_retrievals:3,article_candidate_retrievals:0,prior_q_approval_reused:false,records,diagnostics:data.diagnostics,media_ready:false,podcast_selection_complete:false,video_selection_complete:false,production_mutation:false};
+          const evidence={schema_version:'1.0.0',run_id:runId,cutoff:request.cutoff,baseline_sha:request.baseline_sha,media_freshness_policy:MEDIA_FRESHNESS_POLICY,workflow_run_id:Number(process.env.GITHUB_RUN_ID),model_calls:0,new_episode_page_retrievals:3,article_candidate_retrievals:0,prior_q_approval_reused:false,prior_attempt:{workflow_run_id:36477387128,result:'failed_before_source_retrieval',reason:'shallow_checkout_did_not_include_semantic_commit',article_stages_repeated:false,source_retrievals:0},records,diagnostics:data.diagnostics,media_ready:false,podcast_selection_complete:false,video_selection_complete:false,production_mutation:false};
           fs.mkdirSync(root+'/media-evidence',{recursive:true});
           fs.writeFileSync(root+'/media-evidence/podcast-metadata.json',JSON.stringify(evidence,null,2)+'\n',{flag:'wx'});
           console.log(JSON.stringify(evidence,null,2));
@@ -100,7 +100,7 @@ jobs:
         run: |
           set -euo pipefail
           test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
-          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = "$(git rev-parse 22ab6b7ab394ef4db84a2b998e3f0091761b6b7d:_records/qualification/2026-09-28-Q24/semantic-receipt.json)"
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
           test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
