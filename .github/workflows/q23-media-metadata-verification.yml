@@ -1,0 +1,125 @@
+name: Q23 saved-page podcast metadata verification
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q23']
+    paths: ['.github/workflows/q23-media-metadata-verification.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  verify-podcast-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Reuse saved page artifact without refetching sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/q23-metadata
+          gh api repos/gttome/Daily-AI-Brief/actions/artifacts/10991834733/zip > /tmp/q23-metadata/pages.zip
+          echo '93ae6c4c2a10f6ed264041c84ec069d2fd9c1ebf348b4e8ba0abcee5fa55b4ad  /tmp/q23-metadata/pages.zip' | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          root=Path('/tmp/q23-metadata/saved'); root.mkdir()
+          with zipfile.ZipFile('/tmp/q23-metadata/pages.zip') as z:
+              for info in z.infolist():
+                  p=Path(info.filename)
+                  if p.is_absolute() or '..' in p.parts: raise ValueError('unsafe artifact path')
+                  if p.suffix=='.html':
+                      target=root/p.name
+                      if target.exists(): raise ValueError('duplicate artifact basename')
+                      target.write_bytes(z.read(info))
+          PY
+      - name: Capture only the newly resolved publisher-distributed Practical AI episode page
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {retrieveSource} from './_tools/discovery-links.mjs';
+          const url='https://podcasts.apple.com/us/podcast/from-agents-md-to-enterprise-deployment/id1406537385?i=1000791431612';
+          const r=await retrieveSource(url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
+          fs.writeFileSync('/tmp/q23-metadata/saved/practical-373-apple.html',r.text,{flag:'wx'});
+          fs.writeFileSync('/tmp/q23-metadata/new-source-observation.json',JSON.stringify({url,resolved_url:r.url,checked_at:new Date().toISOString()},null,2)+'\n');
+          NODE
+      - name: Verify matching episode and show identity, exact release time and duration
+        run: |
+          python3 - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from datetime import datetime
+          class Scripts(HTMLParser):
+              def __init__(self): super().__init__(); self.active=False; self.parts=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='script' and dict(attrs).get('id')=='serialized-server-data': self.active=True
+              def handle_endtag(self,tag):
+                  if tag=='script': self.active=False
+              def handle_data(self,data):
+                  if self.active: self.parts.append(data)
+          root=Path('/tmp/q23-metadata/saved'); out=Path('_records/qualification/2026-09-28-Q23/media-resolution'); out.mkdir(parents=True,exist_ok=True)
+          cutoff=datetime.fromisoformat('2026-09-28T19:10:36+00:00')
+          inputs=[('everyday-871', '1000792012779','1683401861','826e902066e1d3f43d941fe8afbe13f829fe41f6c4ac5bbb80a720462a27c582'),('practical-373-apple','1000791431612','1406537385',None),('ai-for-humans-sep24','1000791443406','1682409647','f6f1c40766e2e1a3192b79739076395146f60cc382d78e087fe664d3fe94f47a')]
+          records=[]
+          for name,episode,show,expected in inputs:
+              data=(root/(name+'.html')).read_bytes(); digest=hashlib.sha256(data).hexdigest()
+              if expected and digest!=expected: raise ValueError('saved source mismatch')
+              parser=Scripts(); parser.feed(data.decode('utf8')); document=json.loads(''.join(parser.parts))
+              header=document['data'][0]['data']['shelves'][0]['items'][0]; offer=header['contextAction']['episodeOffer']
+              assert str(header['adamId'])==episode==str(offer['contentId'])
+              assert str(offer['showOffer']['adamId'])==show
+              assert header['duration']==offer['duration'] and isinstance(offer['duration'],int) and offer['duration']>0
+              assert header['releaseDate']==offer['releaseDate']
+              assert ('id'+show) in offer['storeUrl'] and ('i='+episode) in offer['storeUrl']
+              published=datetime.fromisoformat(offer['releaseDate'].replace('Z','+00:00')); age=(cutoff-published).total_seconds()/3600
+              assert 0<=age<=168
+              records.append({'candidate_id':name,'kind':'podcast','canonical_url':offer['storeUrl'],'show':offer['showOffer']['title'],'show_id':show,'episode_id':episode,'episode_guid':offer['guid'],'feed_url':offer['showOffer']['feedUrl'],'title':offer['title'],'published_at':offer['releaseDate'],'runtime_seconds':offer['duration'],'age_hours_at_cutoff':age,'freshness_tier':'primary_48h' if age<=48 else 'fallback_7d','source_file':name+'.html','source_sha256':digest,'metadata_identity_verified':True,'editorial_review_complete':False,'selection_status':'metadata_verified_not_selected'})
+          body={'schema_version':'1.0.0','run_id':'2026-09-28-Q23','cutoff':'2026-09-28T19:10:36Z','source_artifact_reused':10991834733,'new_publisher_urls_requested':1,'original_sources_refetched':0,'records':records,'media_ready':False,'production_mutation':False}
+          (out/'podcast-metadata.json').write_text(json.dumps(body,indent=2)+'\n')
+          print(json.dumps(body,indent=2))
+          PY
+      - name: Inspect current selector with a real same-day candidate without changing its timestamp
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import {selectPodcasts} from './_generator/lib/media-selection.mjs';
+          const root='_records/qualification/2026-09-28-Q23',semantic=root+'/semantic-receipt.json';
+          if(fs.existsSync(root+'/result.json'))throw Error('terminal_Q23_cannot_continue');
+          if(crypto.createHash('sha256').update(fs.readFileSync(semantic)).digest('hex')!=='8b4f7dd51b0bf737f07bbc3030c67453cb33c35ff2ba2b5f6c644d4280f7198e')throw Error('frozen_semantic_changed');
+          const metadata=JSON.parse(fs.readFileSync(root+'/media-resolution/podcast-metadata.json','utf8'));
+          const sameDay=metadata.records.find(x=>x.candidate_id==='everyday-871');
+          const input={url:sameDay.canonical_url,show:sameDay.show,publication_date:sameDay.published_at,runtime_seconds:sameDay.runtime_seconds,verified:true,editorial_pass:true,duplicate:false,score:90};
+          const result=selectPodcasts([input],{date:'2026-09-28'});
+          const receipt={schema_version:'1.0.0',scope:'isolated deterministic selector diagnostic, not editorial approval',run_id:'2026-09-28-Q23',baseline_sha:'cad5da83752a36b6bd59f26e0800bbde7c7f7ef3',workflow_run_id:Number(process.env.GITHUB_RUN_ID),observed_at:new Date().toISOString(),candidate_published_at:input.publication_date,qualification_cutoff:metadata.cutoff,actual_age_hours:sameDay.age_hours_at_cutoff,selector_date_argument:'2026-09-28',selected_count:result.selected.length,same_day_candidate_retained:result.selected.some(x=>x.url===input.url),raw_selector_result:result,publication_timestamp_modified:false,source_code_modified:false,media_ready:false};
+          fs.writeFileSync(root+'/media-resolution/current-selector-diagnostic.json',JSON.stringify(receipt,null,2)+'\n');
+          console.log(JSON.stringify(receipt,null,2));
+          NODE
+          git grep -n 'selectPodcasts\|podcastTier\|PODCAST_PRIMARY_AGE_DAYS' -- _generator _tools > /tmp/q23-metadata/selector-call-sites.txt
+          cp _generator/lib/media-selection.mjs /tmp/q23-metadata/
+      - name: Persist only new verification records without repeating completed stages
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q23/media-resolution/podcast-metadata.json _records/qualification/2026-09-28-Q23/media-resolution/current-selector-diagnostic.json
+          git commit -m 'Record exact Q23 podcast metadata and current selector diagnostic'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q23-podcast-metadata-verification
+          path: |
+            /tmp/q23-metadata/new-source-observation.json
+            /tmp/q23-metadata/saved/practical-373-apple.html
+            /tmp/q23-metadata/selector-call-sites.txt
+            /tmp/q23-metadata/media-selection.mjs
+            _records/qualification/2026-09-28-Q23/media-resolution/
+          retention-days: 14
+          if-no-files-found: error
