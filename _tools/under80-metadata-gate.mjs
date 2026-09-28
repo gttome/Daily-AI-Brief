@@ -147,11 +147,16 @@ const add=item=>{if(item&&selected.length<limit&&!selectedUrls.has(item.canonica
 add(eligible.find(x=>x.agent_skill_story_ready));
 
 // Guarantee metadata breadth for the eventual 2/2/2 editorial allocation before filling by score.
+// Qualification must reserve novelty-eligible candidates first because readiness is evaluated after novelty.
+// Novelty-ineligible candidates remain eligible for later traceability fill but cannot consume the three
+// mandatory per-focus qualification reservation slots.
 for(const focus of ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people']){
- let count=selected.filter(x=>x.focus_hint===focus).length;
+ let count=selected.filter(x=>x.focus_hint===focus&&(!qualificationEditionDate||x.production_novelty_eligible!==false)).length;
  for(const item of eligible){
   if(count>=3||selected.length>=limit)break;
-  if(item.focus_hint===focus&&add(item))count++;
+  if(item.focus_hint!==focus)continue;
+  if(qualificationEditionDate&&item.production_novelty_eligible===false)continue;
+  if(add(item))count++;
  }
 }
 
