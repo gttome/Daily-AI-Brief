@@ -1,0 +1,3762 @@
+{
+  "schema_version": "1.0.0",
+  "maintenance_id": "cleanup-20260928-a",
+  "observed_at": "2026-09-28T15:16:20.347Z",
+  "baseline_sha": "2700138782f8f92e7290b514e0be256e18371811",
+  "request_commit": "d3ed81e66d3d667d15622ecda80e703e5067a826",
+  "request": {
+    "schema_version": "1.0.0",
+    "repository": "gttome/Daily-AI-Brief",
+    "maintenance_id": "cleanup-20260928-a",
+    "mode": "apply",
+    "expected_main_sha": "2700138782f8f92e7290b514e0be256e18371811",
+    "merged_before": "2026-09-27T00:00:00Z",
+    "max_branches": 80
+  },
+  "summary": {
+    "branches_before": 411,
+    "eligible_for_archive": 138,
+    "selected": 80,
+    "open_pull_requests": [
+      {
+        "number": 250,
+        "title": "Freeze valid qualification preflight within each Q run",
+        "branch": "hardening/qualification-freeze-valid-preflight-2026-09-26"
+      },
+      {
+        "number": 244,
+        "title": "Persist durable validation receipt during closure",
+        "branch": "repair/sep26-durable-validation-receipt-v2"
+      },
+      {
+        "number": 226,
+        "title": "Fix post-editorial final image review path",
+        "branch": "hotfix/wave5-final-image-review-env-2026-09-25"
+      },
+      {
+        "number": 128,
+        "title": "[CANARY — DO NOT MERGE] Under-80 qualification 2026-09-18",
+        "branch": "canary-under80-fresh-2026-09-18-1243"
+      },
+      {
+        "number": 118,
+        "title": "Post-Sep18 handoff and sub-100 Work credit roadmap",
+        "branch": "post-sep18-handoff-2026-09-17"
+      }
+    ],
+    "tracked_files": 1312,
+    "operations_documents": 27,
+    "pinned_sources": 13,
+    "pins_older_than_96h": 11,
+    "latest_qualification_branch": "discovery-preflight/qualification/2026-09-28-Q20"
+  },
+  "protected_pr117": {
+    "number": 117,
+    "head": "efficiency-revision-2026-09-17",
+    "sha": "e25653f28accb2b4778001b7454e778b9c296587"
+  },
+  "plan": [
+    {
+      "branch": "approved-discovery-release-20260913",
+      "sha": "d976cb912752b787bbd176c91f860892b4169156",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 79,
+      "merged_at": "2026-09-13T02:01:47Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "approved-discovery-release-evidence-20260913",
+      "sha": "3015eaeab52c9b2e09dd85de91db2d7fae00a815",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 80,
+      "merged_at": "2026-09-13T02:06:47Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "approved-reader-release-20260913",
+      "sha": "e69b885971e44ff8cad60f994f4955dc738f0e40",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 77,
+      "merged_at": "2026-09-13T01:16:57Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "approved-reader-release-evidence-20260913",
+      "sha": "a898e039c1a2a757f79b5df8a5fd169eacae453d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 78,
+      "merged_at": "2026-09-13T01:23:03Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "approved-reading-support-20260913",
+      "sha": "b54d357c25cbbec8617a316f475a9e632435e2dc",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 81,
+      "merged_at": "2026-09-13T03:26:21Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "architecture/iteration-0",
+      "sha": "414c87185aa39f9f92ffbd7b6721ab17be79baa0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "asset-repair/2026-09-19-professional-images",
+      "sha": "c3cf5cdb1749275d94896ee48c92a55c6bd86821",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "canary-under80-2026-09-18-1227",
+      "sha": "5ed01a334ac12ab7f42dd519f9baff9c4f32178f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "canary-under80-fresh-2026-09-18-1243",
+      "sha": "31e4163cfe963820353246e5ab043c1e230c9aa4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "chore/retire-feedback-textbook-images-20260908",
+      "sha": "077f0efe20f520f0cd4044bffe292dbed6e8a693",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 20,
+      "merged_at": "2026-09-08T14:33:51Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/chore/retire-feedback-textbook-images-20260908"
+    },
+    {
+      "branch": "closure/sep20-final-evidence",
+      "sha": "1b3ea3583132a34546d433d61c3321d113afdc11",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "command-center/reconcile-2026-09-22",
+      "sha": "b95995aea3552b53bf640d18c9e71bf4765005ab",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 209,
+      "merged_at": "2026-09-22T19:01:30Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-20",
+      "sha": "c7ea9279f2de72591b7cb7d5b77e5551dc141042",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-21",
+      "sha": "5a15591a6d83c2cdef7eb55833c48893e90ac222",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-22",
+      "sha": "cb9334286c0101fea39cdd31c62ee0b72e3d6c87",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-23",
+      "sha": "8daac7fdd336f3c03df102a5bd82401b0f7c5bc4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-24",
+      "sha": "78af5aad7e075f07b2933f22f879fd7f20c8eb4c",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-25",
+      "sha": "39d4d249a42d20c01b081fadbc3921b613623976",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-26",
+      "sha": "658158921624e74694e9dc524ee4ebd7779ba209",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-27",
+      "sha": "8043817640c94ad495ecbf1903501e7be1405629",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/daily/2026-09-28",
+      "sha": "927dea434f0f1e80fa9f44e20cd6b2eecf7277e3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-19-recovery",
+      "sha": "eb8da38cb53095726a5738ae07c28590139115e4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-final",
+      "sha": "f4069e6fa6e2e413896987548c69e6fa8b35a884",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0823",
+      "sha": "8c50db2595d83ae1df54dd51f27e3cb32fb57a9b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0827",
+      "sha": "58a3679c1c82e594939a632b0d00c13c629d287e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0830",
+      "sha": "d3dff9ce651d8e1cbd4ef1d4642862ead3f5ec3a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0834",
+      "sha": "37738c448f0ab25e320fc185a03b1ff9e1c4cb49",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0837",
+      "sha": "d2930043647625ef85f2fb16a0752e451f3a4c63",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0839",
+      "sha": "389b96fa734ae445c52f70cd90edd0384301005e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0841",
+      "sha": "0e29887e6a59d58ffc9ea21bfa6efdf11173c6f0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0858",
+      "sha": "993dbcbc08633e0f4ab1cfe405d666559e487f10",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0902",
+      "sha": "12956a1a2addd9df784d00538a80656aea80ac1e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0905",
+      "sha": "61d3745dc17bd50fac64b162d3f72ebdf1baa444",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/production/2026-09-20-recovery-0908",
+      "sha": "0c15fedc876c7899bc8e1bf93ed68f3782f9d7cd",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/wave5-2026-09-18",
+      "sha": "7c5460bf5a64d8f8f7467cd7fc18448b0030e02d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-1448",
+      "sha": "9aaa61f414b70571fda7673a9db92ef2fb610be7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-1455",
+      "sha": "2348b41e9ac3bc04d6f7f3e35ecc5075aeb4831e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-2012",
+      "sha": "1cd26ea5f1e35a597774c8be0846474a4382cc6f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-2014",
+      "sha": "6f3d3f1759e2ac03b47bc9c23ba61e39015a72cc",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-2048",
+      "sha": "fcd855c49c09e3ff5714d9f28aab532233baec81",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-2051",
+      "sha": "4089c49d3d7d8d9733538c410daf4a74208782da",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-18-article-evidence-1708",
+      "sha": "22021217490fb552236b60c4c4114664556c922f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q1",
+      "sha": "e2569f3872bd3ce005246580d66a0ae6f6a2ce3f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q2",
+      "sha": "efd34e0a027e478f280f1f16f4302aedd6ec7204",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q3",
+      "sha": "e3b8639676951e6503e06913a8208c3348fed807",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q4",
+      "sha": "332483206aa6f3437a7068c96e42771f669edbf8",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q5",
+      "sha": "3b53d500acfa4cfe144d1e7c8ace460cb9c7a111",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q6",
+      "sha": "7a56a4fb874aa7121232ad763cd57c080e4d08d0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q7",
+      "sha": "c8f6bfb88926e21d7930173ba774178662683777",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q8",
+      "sha": "ee3cb0914bde15f4d4c529df11d70201c1a44c4b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q9",
+      "sha": "9b9172a53fe186fe7e975be7dd1a8480ca91e7db",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q10",
+      "sha": "74a3c050521184d9cb94c0efada362a6f37b1b84",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q11",
+      "sha": "ed728bd8ca30b3b3de485120df975bef668c33b1",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-26-Q12",
+      "sha": "8c818eec22b26e96404d0c5db56ca523047e71c2",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-27-Q13",
+      "sha": "84abd58f13ac20e70f8539c12b6afcd63fa4dc49",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-27-Q14",
+      "sha": "c101a3be265892f5a73409486b69c341f4575958",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-27-Q15",
+      "sha": "b86bc483433c2c20657f63e7397f8f54a111b133",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-27-Q16",
+      "sha": "a31a0e15e7a8926f905a7444dfbd9a464640a261",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-27-Q17",
+      "sha": "ac5c790fd0952210e36f0be6d3edd709daa57754",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-27-Q18",
+      "sha": "227e1c3795a79d23eb3c632199a37c601596e206",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-28-Q19",
+      "sha": "9a54dbaf9bca1b965720039fe028f9416a72bf26",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "discovery-preflight/qualification/2026-09-28-Q20",
+      "sha": "b6251e25744d9163a5631ae02cb06c6132baddf4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "docs/align-saved-publisher-policy",
+      "sha": "955fe6472d0c55789364a5398a3152f15d7d99a5",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 101,
+      "merged_at": "2026-09-14T22:48:53Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/align-saved-publisher-policy"
+    },
+    {
+      "branch": "docs/command-center-handoff",
+      "sha": "dbd9cf98589775f9edb1e6feb1174903cd4b111f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 16,
+      "merged_at": "2026-09-08T08:55:58Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/command-center-handoff"
+    },
+    {
+      "branch": "docs/command-center-handoff-date-fix",
+      "sha": "44ef899fc55da34c271741f023dbab1b4367294b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 17,
+      "merged_at": "2026-09-08T09:00:10Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/command-center-handoff-date-fix"
+    },
+    {
+      "branch": "docs/high-end-living-operations-2026-09-26",
+      "sha": "7e940fe5380640548d62248e0557369268513685",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 239,
+      "merged_at": "2026-09-26T13:55:15Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/high-end-living-operations-2026-09-26"
+    },
+    {
+      "branch": "docs/living-system-operations-2026-09-26",
+      "sha": "b168c045f31481619cbde6d546cc19be6bc3a121",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 238,
+      "merged_at": "2026-09-26T13:38:33Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/living-system-operations-2026-09-26"
+    },
+    {
+      "branch": "docs/podcast-release-evidence",
+      "sha": "3d5b2dd0a6cff16654bab7fd0305faa87e857016",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 49,
+      "merged_at": "2026-09-10T09:57:25Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/podcast-release-evidence"
+    },
+    {
+      "branch": "docs/qualification-schedule-separation-2026-09-26",
+      "sha": "a2bcd83d69bd6b093259eaefe4b1e1a8b03b19dc",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 248,
+      "merged_at": "2026-09-26T16:33:11Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "docs/sep25-image-quality-standard",
+      "sha": "d93c55292fa7feea39bfa42294438eff9ad82533",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 219,
+      "merged_at": "2026-09-25T15:21:35Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/sep25-image-quality-standard"
+    },
+    {
+      "branch": "earlier-brief-heading-20260913",
+      "sha": "f78f5858524ed1c2fcf626b96d096f23d8da51f4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 82,
+      "merged_at": "2026-09-13T03:38:36Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "edition/2026-09-18-resume",
+      "sha": "005977eee9bbba9eacd69b0ef4803a40085e7cd6",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 121,
+      "merged_at": "2026-09-18T14:53:45Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-checkpoint/2026-09-26-recovery",
+      "sha": "44f9801f749ab2531e9fffa873a7eb8e4351ee7d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-19-hardening-proof",
+      "sha": "32b623a4ded8b72f21c8821976c4ea02a4bfbad9",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 166,
+      "merged_at": "2026-09-19T17:44:44Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-19-recovery-0811",
+      "sha": "c56c6ab491956cb3b1e9415ab9b68c44e8f44ba1",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-19-repair-2",
+      "sha": "5871cad843c1e127a3aa7e16c332b7589a70cb5a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 162,
+      "merged_at": "2026-09-19T17:15:16Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-19-repair-final",
+      "sha": "c3cf5cdb1749275d94896ee48c92a55c6bd86821",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-19-republish-professional",
+      "sha": "c3cf5cdb1749275d94896ee48c92a55c6bd86821",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-20-final",
+      "sha": "69c1ad02d25d42d03cf36c71bcd0239e40b633a3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 190,
+      "merged_at": "2026-09-20T15:19:27Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-21-recovery",
+      "sha": "6bc1fc8fb97a621d6dd0aed2679d224d6eeecc22",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 204,
+      "merged_at": "2026-09-21T16:12:18Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-22",
+      "sha": "b856918b33f91416e19ad2894ccb7cfa9dc35797",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 207,
+      "merged_at": "2026-09-22T16:10:27Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-23-recovery",
+      "sha": "727b41bbca5b2e07965224bfe5210e98b068968d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-23-recovery-1",
+      "sha": "e5fd8ef5e9cf201e3dafb5d890f7baf48bb7110e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 212,
+      "merged_at": "2026-09-23T17:08:16Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-25-recovery",
+      "sha": "86f2415fb91aefb2aa7000da9c0ca3a89ea14faf",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 217,
+      "merged_at": "2026-09-25T14:27:35Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/production/2026-09-26-bounded-recovery",
+      "sha": "c1c4989609b4e3d32005451439318f05abb95625",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 240,
+      "merged_at": "2026-09-26T15:43:01Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/wave5-2026-09-25",
+      "sha": "bd45b21ec1b15f6a67ebd8eab480ee4501a11887",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay2-20260918T2330Z",
+      "sha": "df38930a2b68824906ef24f8d4ff3bdd2be018c7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay3-20260918T2333Z",
+      "sha": "935c4e2c2e3fe762e2813421ed2f089b4491a105",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay4-20260918T2345Z",
+      "sha": "41bf1f20608f1eb75acd7307ae45d63bb29ef2f7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay4-20260919T0018Z",
+      "sha": "8b9ea9abee7beca88b7c84afc4f1493455169a6e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay4-20260919T0031Z",
+      "sha": "d474ce51beb37d8f20fd8acddc19efdc2375a5c7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay5-20260918T2352Z",
+      "sha": "35ee606929e60f056b8691911cd8dcbc659072e3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay6-20260918T2356Z",
+      "sha": "3ada0e0848eb3fd6fea811ed7c09e442b96a07f9",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay7-20260918T2359Z",
+      "sha": "9a0265edea7cd42b5669cc6c2a62241e8624425b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-replay-20260918T2325Z",
+      "sha": "b022965efc87879cb7a481d599914c0be8bf6be2",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-test-20260918T2025Z",
+      "sha": "96143a954a01ad86119ac1a6e0e6fc797d1f1575",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-test-20260918T185910Z",
+      "sha": "0f2e33cd2aac01350d127e3ecb4ebb26a46154ea",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-18-runtime-test-20260918T230421Z",
+      "sha": "e7c2256dd7e257d13129de3f21c718e506a0b5a4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/qualification/2026-09-27-Q18",
+      "sha": "691dc52ab90721c3d4ebd083be57433ccc79c814",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-handoff/2026-09-18-runtime-test-001",
+      "sha": "f8de252c2874def5ed2f8cc118a833439cf9355c",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "editorial-recovery/2026-09-26",
+      "sha": "14db62c4b5613eef602fc1beb7865570d3c9e6b5",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency/cloud-checkpoint-transport",
+      "sha": "dfc6b81f0b8e471970bfad406f6d1fea2018b9ca",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 103,
+      "merged_at": "2026-09-15T00:01:40Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency/prework-metadata-preflight-2026-09-18",
+      "sha": "153af389834e14aaf330bd8db945e7747424d2a1",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 134,
+      "merged_at": "2026-09-18T19:27:29Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency-revision-2026-09-17",
+      "sha": "e25653f28accb2b4778001b7454e778b9c296587",
+      "decision": "retain",
+      "reason": "protected",
+      "pull_request": 117,
+      "merged_at": "2026-09-17T21:28:56Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency-under80-2026-09-18",
+      "sha": "43ba799e10cd31c457153920e8cf41627a8604d7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 125,
+      "merged_at": "2026-09-18T16:57:03Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency-under80-cutover-2026-09-18",
+      "sha": "a0a1328f3ec23af28db436fe6d8cb8a715abd574",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 127,
+      "merged_at": "2026-09-18T17:11:57Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency-under80-handoff-template-2026-09-18",
+      "sha": "81c774729e30998a1386f7cc79216b158bd84797",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 130,
+      "merged_at": "2026-09-18T18:37:20Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency-under80-runtime-handoff-2026-09-18",
+      "sha": "65bad205e98be7aeab11a3f4eb046523a171b592",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 129,
+      "merged_at": "2026-09-18T18:35:16Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "efficiency-under80-validation-trigger-fix",
+      "sha": "c6301e65c596d026c6d870c72a52421c48993483",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 126,
+      "merged_at": "2026-09-18T16:59:52Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "evidence/inline-daily-feedback",
+      "sha": "de1580ef3545d3d6e33bd5768427e028a72aa39f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 15,
+      "merged_at": "2026-09-08T02:38:49Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "evidence/personal-editorial-learning",
+      "sha": "628d7bbd5cdfe5aa94d2380ad2309609a363f37f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 13,
+      "merged_at": "2026-09-08T01:56:43Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "evidence/2026-09-18-publication-completion",
+      "sha": "997e79c98cc7ab702f25a4f33e0d9923066a1a6a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 122,
+      "merged_at": "2026-09-18T15:03:39Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "feat/podcast-slot-nine-approved",
+      "sha": "2629fa6706fb6364408317a2a29560e64f55b327",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 48,
+      "merged_at": "2026-09-10T09:52:53Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feat/podcast-slot-nine-approved"
+    },
+    {
+      "branch": "feat/private-draft-recovery",
+      "sha": "f2268afcfed815149dfc96861a32172a1f90f03c",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 102,
+      "merged_at": "2026-09-14T23:00:20Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feat/private-draft-recovery"
+    },
+    {
+      "branch": "feature/audience-subscriptions",
+      "sha": "906e3c4a9bf90132730871a285836ff5ae293153",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 67,
+      "merged_at": "2026-09-11T20:07:54Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/audience-subscriptions"
+    },
+    {
+      "branch": "feature/calendar-subscription",
+      "sha": "56309ab1853f0d368ead41be533fce6a647c566b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 66,
+      "merged_at": "2026-09-11T19:33:41Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/calendar-subscription"
+    },
+    {
+      "branch": "feature/daily-edition-rss",
+      "sha": "f1342cb6543d4e82178f75484160fea688eb0a82",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 61,
+      "merged_at": "2026-09-11T18:02:46Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/daily-edition-rss"
+    },
+    {
+      "branch": "feature/emerging-watchlist-2026-09-12",
+      "sha": "e6d11227cace9f126f1e07063cf6f57e8b449726",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 71,
+      "merged_at": "2026-09-12T02:18:03Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/emerging-watchlist-2026-09-12"
+    },
+    {
+      "branch": "feature/followit-email",
+      "sha": "26843cbd5c74b90587c9d6c1c550f954d9bd0073",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 64,
+      "merged_at": "2026-09-11T18:57:43Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/followit-email"
+    },
+    {
+      "branch": "feature/inline-daily-feedback",
+      "sha": "a9843f76694e9b15cf5e5c734ba0d5077a6efb6a",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 14,
+      "merged_at": "2026-09-08T02:31:41Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/inline-daily-feedback"
+    },
+    {
+      "branch": "feature/personal-editorial-learning",
+      "sha": "c8a3a9e3ad29d3336fc11ad977464de192645ada",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 12,
+      "merged_at": "2026-09-08T01:47:38Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/personal-editorial-learning"
+    },
+    {
+      "branch": "feature/reminder-duration",
+      "sha": "8e194c5d3035eab72f3aa58bf30ffe6f8f566094",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 69,
+      "merged_at": "2026-09-11T20:37:39Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/reminder-duration"
+    },
+    {
+      "branch": "feature/shared-story-fresh-rating-scale",
+      "sha": "fe7db73925fbf4cfdb06e41527d4d3c67bfc80ae",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 24,
+      "merged_at": "2026-09-08T17:24:48Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/shared-story-fresh-rating-scale"
+    },
+    {
+      "branch": "feature/shared-story-share-count-no-rating",
+      "sha": "4e9a0640313bb4c74bb50e4cb21d11145cfec59b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 23,
+      "merged_at": "2026-09-08T17:14:17Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/shared-story-share-count-no-rating"
+    },
+    {
+      "branch": "feature/subscribe-navigation",
+      "sha": "2154b80a5d7a2557ea1fd89cc33cf1b86d317d46",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 62,
+      "merged_at": "2026-09-11T18:17:36Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/subscribe-navigation"
+    },
+    {
+      "branch": "finalization/2026-09-26-10e9d2ac",
+      "sha": "1c28c36e621ab590c771122f278244fdc5d3ba8f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 245,
+      "merged_at": "2026-09-26T15:56:19Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "fix/agent-skills-freshness-signal-2026-09-18",
+      "sha": "f9bc46083c9ca3a9b5fcb90f5de9773a1e6d7e6e",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 140,
+      "merged_at": "2026-09-18T20:10:49Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/agent-skills-freshness-signal-2026-09-18"
+    },
+    {
+      "branch": "fix/agent-skills-signal-precision-2026-09-18",
+      "sha": "558b4ca0c69cc9dc95b2d409d1b0bb3169a3d1f2",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 141,
+      "merged_at": "2026-09-18T20:13:15Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/agent-skills-signal-precision-2026-09-18"
+    },
+    {
+      "branch": "fix/book-series-reader-backlog",
+      "sha": "e18a1a7f617a92f77f4f238cf42777023a0efd5a",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 107,
+      "merged_at": "2026-09-15T18:07:13Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/book-series-reader-backlog"
+    },
+    {
+      "branch": "fix/brief-domain-image-import-2026-09-19",
+      "sha": "c8d97a29ab5a76f791de96037ded1fadbe0b6a33",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 165,
+      "merged_at": "2026-09-19T17:41:18Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/brief-domain-image-import-2026-09-19"
+    },
+    {
+      "branch": "fix/calendar-subscription-link",
+      "sha": "e02b4fef2bbe29b0bdb2d45dad0efd2de85fba00",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 70,
+      "merged_at": "2026-09-11T21:53:46Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/calendar-subscription-link"
+    },
+    {
+      "branch": "fix/current-edition-tests",
+      "sha": "2eaeba0d45391f51f3042133f7255b8cddb4f205",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 7,
+      "merged_at": "2026-09-07T17:56:24Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/current-edition-tests"
+    },
+    {
+      "branch": "fix/emergency-story-image-fallback-2026-09-19",
+      "sha": "80b3547b7cd07ef026a5797878716d0a84d81e7c",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 160,
+      "merged_at": "2026-09-19T13:11:15Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/emergency-story-image-fallback-2026-09-19"
+    },
+    {
+      "branch": "fix/evidence-preflight-background-filter-2026-09-18",
+      "sha": "425f5df590998c5191c64fbdbf5e165466562fe3",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 143,
+      "merged_at": "2026-09-18T20:48:13Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/evidence-preflight-background-filter-2026-09-18"
+    },
+    {
+      "branch": "fix/freshness-labeling-sep16",
+      "sha": "a54707f65e3f734416b1567310c01bf877f42038",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 106,
+      "merged_at": "2026-09-15T17:23:54Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/freshness-labeling-sep16"
+    },
+    {
+      "branch": "fix/nonproduction-handoff-control-2026-09-18",
+      "sha": "43b2b07caa295758a24841eb2214ab27d6f93e87",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 131,
+      "merged_at": "2026-09-18T18:55:41Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/nonproduction-handoff-control-2026-09-18"
+    },
+    {
+      "branch": "fix/pr-ci-base-selection",
+      "sha": "df4d7e8d0d18a0c8768061fc228cbf4bff21eda7",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 8,
+      "merged_at": "2026-09-07T17:58:58Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/pr-ci-base-selection"
+    },
+    {
+      "branch": "fix/preflight-date-enrichment-2026-09-18",
+      "sha": "b6799e0a49c90b8a8c947cdcc8e4e7f890444cec",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 135,
+      "merged_at": "2026-09-18T19:32:06Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/preflight-date-enrichment-2026-09-18"
+    },
+    {
+      "branch": "fix/preflight-required-topic-relevance-2026-09-18",
+      "sha": "d97ea5f6575d6b5d3412b0fac2c45ec16e449d0f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 137,
+      "merged_at": "2026-09-18T19:40:43Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/preflight-required-topic-relevance-2026-09-18"
+    },
+    {
+      "branch": "fix/preflight-source-coverage-2026-09-18",
+      "sha": "5a4038ea1ad59516fab7bd50a0689166ad291b61",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 136,
+      "merged_at": "2026-09-18T19:37:47Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/preflight-source-coverage-2026-09-18"
+    },
+    {
+      "branch": "fix/remove-followit",
+      "sha": "ceaa1eff11e4d3153ae49986626e3325d0c045f9",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 65,
+      "merged_at": "2026-09-11T19:16:34Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/remove-followit"
+    },
+    {
+      "branch": "fix/remove-open-rss",
+      "sha": "ded31eda24937208a24b9cd5a9eccc2c6e81091f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 68,
+      "merged_at": "2026-09-11T20:23:19Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/remove-open-rss"
+    },
+    {
+      "branch": "fix/sep13-video-navigation-reading",
+      "sha": "0c570ec4ad80397220665231c2b3c229c925bbff",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 94,
+      "merged_at": "2026-09-13T17:23:08Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep13-video-navigation-reading"
+    },
+    {
+      "branch": "fix/sep16-informatica-canonical",
+      "sha": "f0a1bd7226fe1d54bf5dc67b02965357fe4ccf1c",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 114,
+      "merged_at": "2026-09-16T17:14:25Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-informatica-canonical"
+    },
+    {
+      "branch": "fix/sep16-informatica-source",
+      "sha": "024897391334630b8725e219d61f28a10c4971c1",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 113,
+      "merged_at": "2026-09-16T17:09:41Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-informatica-source"
+    },
+    {
+      "branch": "fix/sep16-production-guardrails",
+      "sha": "16706db3c7caaa5d317af2bb7e1ddee81dda213d",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 111,
+      "merged_at": "2026-09-16T14:06:40Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-production-guardrails"
+    },
+    {
+      "branch": "fix/sep18-command-center-reconciliation",
+      "sha": "39be37a7e67a6a72ccc636fcddd855aae8f7668d",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 123,
+      "merged_at": "2026-09-18T15:34:03Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep18-command-center-reconciliation"
+    },
+    {
+      "branch": "fix/sep18-watchlist-scan-caption",
+      "sha": "342fff36aaaa6018bcfa5ccc84eabc48999c0f9f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 124,
+      "merged_at": "2026-09-18T15:37:39Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep18-watchlist-scan-caption"
+    },
+    {
+      "branch": "fix/under80-actions-discovery-preflight-2026-09-18",
+      "sha": "b52f0a33dd0476b069d1c8153f293300f1cb410a",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 138,
+      "merged_at": "2026-09-18T19:52:31Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-actions-discovery-preflight-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-applied-coverage-2026-09-19",
+      "sha": "160838bd1b68ad11978529a2ef57163589eca84b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 157,
+      "merged_at": "2026-09-19T12:26:27Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-applied-coverage-2026-09-19"
+    },
+    {
+      "branch": "fix/under80-deterministic-expansion-2026-09-18",
+      "sha": "f33fcb31a1f61af204036b3afdbfd815dbdc699e",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 146,
+      "merged_at": "2026-09-18T23:25:00Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-deterministic-expansion-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-discovery-quality-2026-09-18",
+      "sha": "a8ccce4433ed9e9d30e80d1edfe28467cc672562",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 133,
+      "merged_at": "2026-09-18T19:17:45Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-discovery-quality-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-empty-media-preflight-2026-09-18",
+      "sha": "d11d23f48db1a45684475a3de21c4c71c38e3b10",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 147,
+      "merged_at": "2026-09-18T23:29:11Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-empty-media-preflight-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-evidence-image-transport-2026-09-18",
+      "sha": "670098573956c9fcef57db84ca6dcfc7ce5cc7d4",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "fix/under80-git-data-binary-handoff-2026-09-18",
+      "sha": "aff9b1d0bc127b0f0573a641b02f0855ac694723",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 145,
+      "merged_at": "2026-09-18T22:48:48Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-git-data-binary-handoff-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-handoff-image-review-2026-09-18",
+      "sha": "48fd8802624427f31d2410eab3333366d94487ef",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 150,
+      "merged_at": "2026-09-18T23:49:42Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-handoff-image-review-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-integration-image-review-2026-09-18",
+      "sha": "2b5fed602d057f8d1cb52a5b35d71e88fd61beab",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 152,
+      "merged_at": "2026-09-18T23:57:18Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-integration-image-review-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-media-preflight-import-2026-09-18",
+      "sha": "685e163422e3e32114da7455a431b41b321337ef",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 148,
+      "merged_at": "2026-09-18T23:32:37Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-media-preflight-import-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-metadata-gate-2026-09-18",
+      "sha": "9d1a7598e67b3afb54625827617663e4bd94fa54",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 132,
+      "merged_at": "2026-09-18T19:06:22Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-metadata-gate-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-preflight-yaml-2026-09-18",
+      "sha": "99e7a68d4cdb36fafafc4620470bba8812c0707c",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 139,
+      "merged_at": "2026-09-18T19:54:17Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-preflight-yaml-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-qualification-test-scope-2026-09-18",
+      "sha": "9295586784f8ee7a0e46fac3da0246ce2a7c7680",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 151,
+      "merged_at": "2026-09-18T23:53:35Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "fix/under80-reading-support-qualification-isolation-v2",
+      "sha": "a0e123a11cf13a682aa10158391b32f0e13c696b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 154,
+      "merged_at": "2026-09-19T00:15:28Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "fix/under80-reading-support-replay-2026-09-18",
+      "sha": "12998a89bd33c7eba337b48efe0c4ea5d291e26e",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "fix/under80-reading-support-stale-date-2026-09-18",
+      "sha": "25b91c2f954cbccf0df4a2a480501fda74a8527d",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "fix/under80-single-story-image-generation-2026-09-19",
+      "sha": "8c1cb07a5b34dca93fac522ff57da6b9f8e5397a",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 158,
+      "merged_at": "2026-09-19T12:28:04Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-single-story-image-generation-2026-09-19"
+    },
+    {
+      "branch": "fix/watchlist-copy-link-label",
+      "sha": "7b655e02b0eb1e46deab01648850efdd08b59d9b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 72,
+      "merged_at": "2026-09-12T02:28:32Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/watchlist-copy-link-label"
+    },
+    {
+      "branch": "fix/watchlist-response-spacing",
+      "sha": "4f72ccccaf1abd6b9416871ce69d7cf4fe8b14bf",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 73,
+      "merged_at": "2026-09-12T02:34:12Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/watchlist-response-spacing"
+    },
+    {
+      "branch": "fix-browser-assets-20260913",
+      "sha": "6b6f1df204f47a36feb52be9f0cc206715a3deee",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 86,
+      "merged_at": "2026-09-13T04:49:10Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "harden/book-change-proposals-2026-09-22",
+      "sha": "c34d64f68b83e80f42f808da4a4d390ba9e2d1c0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 206,
+      "merged_at": "2026-09-21T18:15:14Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/agent-skills-source-supply-2026-09-26",
+      "sha": "e61feef1fc00bd21c2cc3af9657d8a8cebc3286d",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 254,
+      "merged_at": "2026-09-26T17:56:21Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/agent-skills-source-supply-2026-09-26"
+    },
+    {
+      "branch": "hardening/completion-artifact-2026-09-19",
+      "sha": "b1b1c9af4e21137d82838e96b0616dceb785c50f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 168,
+      "merged_at": "2026-09-19T17:59:52Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/completion-artifact-2026-09-19"
+    },
+    {
+      "branch": "hardening/continuous-qualification-2026-09-26",
+      "sha": "e469a1b579f29bb25ac94ae485ce54ee83518093",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 246,
+      "merged_at": "2026-09-26T16:26:31Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih1-worker-launch-isolation-2026-09-26",
+      "sha": "244b599369bd801d473e2d08f42ee18e0c921a05",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 264,
+      "merged_at": "2026-09-27T00:42:11Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih3-image-text-allowlist-2026-09-26",
+      "sha": "a059f9d324b6dd6c08f49b43d63125cd187ec6a3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 265,
+      "merged_at": "2026-09-27T02:49:45Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih4-editorial-composition-quality-2026-09-26",
+      "sha": "a6d8e675d227087ff54bf6e1539468cb1e5ec8b1",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 266,
+      "merged_at": "2026-09-27T03:41:39Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih5-exact-visible-text-set-2026-09-27",
+      "sha": "3446797c7d687e0f0cba7f0dbc1fc4088daf9466",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih5-visible-text-exact-set-2026-09-27",
+      "sha": "55261f214ed225d897fbcce323f463a85ad601b0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 267,
+      "merged_at": "2026-09-27T14:26:22Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih6-reference-policy-structural-2026-09-27",
+      "sha": "18b1ce11e73a9a83c5d27e5dd30546c5337ee6e7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 268,
+      "merged_at": "2026-09-27T18:22:49Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih7-glyph-free-concepts-2026-09-27",
+      "sha": "b3cf1210505d290e1a1fa354730e6f840cf50095",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 269,
+      "merged_at": "2026-09-27T22:32:55Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/ih9-fresh-image-context-2026-09-27",
+      "sha": "bd40eae0160d25233016508229491e213e9b42bf",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 271,
+      "merged_at": "2026-09-28T01:10:28Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/image-harness-consolidation-2026-09-26",
+      "sha": "99d33ddbb1307d826933aa83c0d3eba777e2dee6",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 263,
+      "merged_at": "2026-09-26T23:40:24Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/image-policy-risk-rebalance-2026-09-27",
+      "sha": "fb809a1dd7c23a8d1f8ea4cd308a56fc630d956d",
+      "decision": "retain",
+      "reason": "cooling_period",
+      "pull_request": 270,
+      "merged_at": "2026-09-28T00:50:52Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/plus-resilience-20260910",
+      "sha": "d55f36006e1c657594ca5f2224d4718749986d59",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 55,
+      "merged_at": "2026-09-10T20:01:34Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/plus-resilience-20260910"
+    },
+    {
+      "branch": "hardening/production-novelty-gate-2026-09-27",
+      "sha": "9e4a1bd43802e78cd79e95874605a55765273e53",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q1-agent-skills-novelty-2026-09-26-v2",
+      "sha": "ec221bc7328f22388bd0c9cb3f5877d3d60f1c59",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q1-agent-skills-novelty-2026-09-26",
+      "sha": "9adf789a3dacb77d26d1340d2ca267247f1fa425",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q1-image-execution-isolation-2026-09-26",
+      "sha": "397bcde567a15b2c7a4af94b0422436c917ff3a3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 251,
+      "merged_at": "2026-09-26T17:36:47Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q1-image-isolation-2026-09-26",
+      "sha": "52b4f398ab2f59854d4498608819ada31bdb12bc",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q2-preflight-novelty-2026-09-26",
+      "sha": "802e5c672ef9ab1dce473743e909357f525f3f8f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 252,
+      "merged_at": "2026-09-26T17:51:33Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q4-image-worker-isolation-2026-09-26",
+      "sha": "f82d5102658610e54d0bfae774fcdd032dfeb621",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 255,
+      "merged_at": "2026-09-26T18:46:35Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q5-image-factual-support-2026-09-26",
+      "sha": "46c220ce80fd63ee307d4a9f337b3ff720ad5a7b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 256,
+      "merged_at": "2026-09-26T19:31:31Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q6-agent-focus-semantic-gate-2026-09-26",
+      "sha": "7d42549e0b0224c37d81793a11faba4371b48f48",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 257,
+      "merged_at": "2026-09-26T19:42:33Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q7-category-novelty-coverage-2026-09-26",
+      "sha": "bb7992d34fcefad744bfce01ee907291877ccfa6",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 258,
+      "merged_at": "2026-09-26T19:47:01Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q8-qualification-source-supply-2026-09-26",
+      "sha": "039a47532c76ec9b3e3388b9100c4dbf9f3f9a8e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 259,
+      "merged_at": "2026-09-26T20:17:17Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q9-agent-source-supply-2026-09-26",
+      "sha": "8a4037e3c597d7164df76f16243bdcee91c6d320",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 260,
+      "merged_at": "2026-09-26T20:21:57Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q10-image-artifact-handoff-2026-09-26",
+      "sha": "5a04a2f84a67a433d9f997d8005cb2da47a4dd91",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q10-image-artifact-routing-2026-09-26",
+      "sha": "70925bc515a3b866bb309e4a46f566b8a99989df",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 261,
+      "merged_at": "2026-09-26T21:47:27Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q11-serial-image-worker-lane-2026-09-26",
+      "sha": "b675300e8a5296af69a4ff6ed1d4973edd717a5a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 262,
+      "merged_at": "2026-09-26T22:12:33Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q12-image-context-attestation-2026-09-26",
+      "sha": "414161f621b3505e9ffe9c9d53f6f971af4f4fac",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q12-image-subject-lock-2026-09-26",
+      "sha": "2eb3cb6f23ed44c3b8b4c8f82f65562ce51ac629",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q13-applied-agent-source-supply-2026-09-27",
+      "sha": "197cc6344674e1873e3f5f0bbd1cf7162d48d867",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 272,
+      "merged_at": "2026-09-28T02:52:45Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q14-date-precision-source-supply-2026-09-27",
+      "sha": "0ca915b4954cf40543e7182f7f2282d2a3155e0d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 273,
+      "merged_at": "2026-09-28T03:09:12Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q15-applied-source-supply-2026-09-27",
+      "sha": "bc2f0550b6af871489bbc2c054be12f41e34877b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 274,
+      "merged_at": "2026-09-28T03:17:25Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q16-applied-source-supply-2026-09-27",
+      "sha": "19932486bafb1c862ce8c055ee61379b655fce29",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 275,
+      "merged_at": "2026-09-28T04:08:18Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q17-novelty-aware-breadth-selection-2026-09-27",
+      "sha": "afdeb28ef517733e9dd3962740c395be6dd4adb6",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 276,
+      "merged_at": "2026-09-28T04:58:15Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q18-semantic-evidence-membership-2026-09-28",
+      "sha": "60993d392d594cbca1127c2c40b5a2319091608b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 277,
+      "merged_at": "2026-09-28T14:55:25Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/q19-novelty-aware-focus-reservation-2026-09-28",
+      "sha": "9efd57c979dc0bebc9c7c7a0e7746766bebce459",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 278,
+      "merged_at": "2026-09-28T15:02:56Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/qualification-freeze-valid-preflight-2026-09-26",
+      "sha": "55cc2a3a02a51c27bf87550646ea77956e9214ee",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/qualification-novelty-baseline-2026-09-26",
+      "sha": "1544eee9e955caf4120274936a49c19047d2d6eb",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 249,
+      "merged_at": "2026-09-26T16:45:54Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/readiness-certification",
+      "sha": "b12903aa8e05577131c74685b7f70e438fe78d6e",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 199,
+      "merged_at": "2026-09-21T01:13:08Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/readiness-certification"
+    },
+    {
+      "branch": "hardening/reliability-iteration0-2026-09-25",
+      "sha": "b15a96cc8539d022d2dc2c5d0fb534cce56ac26f",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": 220,
+      "merged_at": "2026-09-25T17:17:18Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/reliability-iteration1-2026-09-25",
+      "sha": "58affe80ff99d5df48778f2e08a075f2b4bcd588",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": 221,
+      "merged_at": "2026-09-25T17:37:52Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/reliability-iteration2-2026-09-25",
+      "sha": "8a63efd7eea253f840f1f2f9bc853f508d3ce592",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": 222,
+      "merged_at": "2026-09-25T18:28:29Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/reliability-iteration3-2026-09-25",
+      "sha": "ce99078915c66b1f6b8da1c1d82a3f83774f7a7a",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": 223,
+      "merged_at": "2026-09-25T19:15:32Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/reliability-iteration4-2026-09-25",
+      "sha": "17fc1743ce6e489a8e1d0cea6f695166761c58af",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 224,
+      "merged_at": "2026-09-25T20:03:04Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/reliability-iteration4-2026-09-25"
+    },
+    {
+      "branch": "hardening/reliability-iteration5-2026-09-25",
+      "sha": "3b9d78374e152371bc53154d939fb814aec082a9",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": 225,
+      "merged_at": "2026-09-25T21:03:41Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/scalable-qualification-slots-2026-09-26",
+      "sha": "987970dbd31dbcfb7a6374581b79a1af57f04b8f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 253,
+      "merged_at": "2026-09-26T17:54:17Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/sep19-completion-validation-2026-09-19",
+      "sha": "0bb4fc1d1c0d181b7236923fc3a9a68d74e19fdc",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 167,
+      "merged_at": "2026-09-19T17:53:45Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/sep19-completion-validation-2026-09-19"
+    },
+    {
+      "branch": "hardening/sep19-publication-system-2026-09-19",
+      "sha": "a84a3a7d0b61093767496b5ffa214e2dbdd60be4",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/sep20-qualification-2026-09-19",
+      "sha": "c683c851d25f1da31b3c7e270d50ecd8d2422e48",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 170,
+      "merged_at": "2026-09-20T00:20:00Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/sep20-readiness-2026-09-19-v7",
+      "sha": "9ea9b3cd85f6574166fd61d8bf5a9f65be2d84ed",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 169,
+      "merged_at": "2026-09-19T23:38:34Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/sep20-readiness-2026-09-19-v7"
+    },
+    {
+      "branch": "hardening/sep20-readiness-closure-2026-09-19",
+      "sha": "38b8437dfdfa1c2a5a29a951711c78d39887ecaa",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 171,
+      "merged_at": "2026-09-20T00:43:36Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/sep20-readiness-closure-2026-09-19"
+    },
+    {
+      "branch": "hardening/sep24-preflight-resume-fix",
+      "sha": "5db5850f0cbd49b691e0466b5e911e7294e861ea",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 215,
+      "merged_at": "2026-09-23T19:07:00Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/sep24-preflight-resume-fix"
+    },
+    {
+      "branch": "hardening/sep24-reliability-2026-09-23",
+      "sha": "d7ccd3d3cc7a83f7b5139b70cef75dfaa64f3455",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 216,
+      "merged_at": "2026-09-23T19:33:03Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/sep24-reliability-2026-09-23"
+    },
+    {
+      "branch": "hardening/sep26-image-context-guard",
+      "sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/sep28-production-discovery-coverage-budget",
+      "sha": "221907794d379a22b02a7e6817b1e4ee23cedee7",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/wave5-candidate-lint-svg-2026-09-25",
+      "sha": "2c88d3169e170a3d3e9c7581d8550dcdbfc1296f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 231,
+      "merged_at": "2026-09-26T00:14:14Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/wave5-candidate-lint-svg-2026-09-25"
+    },
+    {
+      "branch": "hardening/wave5-final-image-path-2026-09-25",
+      "sha": "338ee0a71938c2d45dc7b37a39d2358378da6985",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/wave5-image-review-env-fix-2026-09-25",
+      "sha": "a4fcab0acf0eb4d3778bf9ec2697e4b7db5184fc",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 227,
+      "merged_at": "2026-09-25T23:21:20Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/wave5-image-review-env-fix-2026-09-25"
+    },
+    {
+      "branch": "hardening/wave5-qualification-manifest-test-2026-09-25",
+      "sha": "82b54140760d631ec20de5699fe37a0c2d68b8a8",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 230,
+      "merged_at": "2026-09-26T00:05:19Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/wave5-qualification-replay-clock-2026-09-25",
+      "sha": "3b035383a60482205a4011cdc1ba9781a0557bf2",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 229,
+      "merged_at": "2026-09-25T23:47:13Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "hardening/2026-09-19-publication-contract",
+      "sha": "58cd1184d68212ac90c48e5c5ff765d428829bce",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 164,
+      "merged_at": "2026-09-19T17:37:10Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/2026-09-19-publication-contract"
+    },
+    {
+      "branch": "hotfix/wave5-final-image-review-env-2026-09-25",
+      "sha": "1ee23a025ebd6a155cb8f3de8f68b35a11d521d7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "improve/eleven-items-20260911",
+      "sha": "32cf0ac269e73f4f90e9c7a29b138cdcd23a4d99",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 59,
+      "merged_at": "2026-09-11T17:03:33Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/improve/eleven-items-20260911"
+    },
+    {
+      "branch": "improvement/daily-emerging-watchlist-sweep-2026-09-22",
+      "sha": "cdb77614ab4632f984421f02a315e024dd172073",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 208,
+      "merged_at": "2026-09-22T16:25:33Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "iteration-1-shadow",
+      "sha": "8a5306b56c5305d6215994e65ef879c6d899942b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "main",
+      "sha": "2700138782f8f92e7290b514e0be256e18371811",
+      "decision": "retain",
+      "reason": "protected",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "maintenance/reversible-cleanup-2026-09-28",
+      "sha": "58b6c8664e9a32afebe060542a278ccb410d7dea",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 279,
+      "merged_at": "2026-09-28T15:15:36Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "maintenance-request/cleanup-20260928-a",
+      "sha": "d3ed81e66d3d667d15622ecda80e703e5067a826",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "navigation-update-work-20260822",
+      "sha": "2dd93b341bc886b58e98b4fd935aaac3d4424592",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "ops/align-visible-daily-schedule-2026-09-25",
+      "sha": "1bafdd7ca822d5ac0d8219e158cd20ebafaff2e8",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 233,
+      "merged_at": "2026-09-26T00:45:27Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/align-visible-daily-schedule-2026-09-25"
+    },
+    {
+      "branch": "ops/earlier-daily-schedule-2026-09-25",
+      "sha": "c839cce9ba1c95fadfed632b446686d0480a0e0d",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 232,
+      "merged_at": "2026-09-26T00:33:35Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/earlier-daily-schedule-2026-09-25"
+    },
+    {
+      "branch": "ops/fix-nightly-readiness-delay-2026-09-25",
+      "sha": "681257a2cd6f021dc6642f96dc926316535c38b2",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 237,
+      "merged_at": "2026-09-26T02:54:13Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/fix-nightly-readiness-delay-2026-09-25"
+    },
+    {
+      "branch": "ops/nightly-readiness",
+      "sha": "5dc97eb96c3f0f203b66dbe58886a16df2589ea8",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "ops/nightly-readiness-2130-2026-09-25",
+      "sha": "ab344d866db10a9b4c1676cbd6dd5de7e3fff94e",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 236,
+      "merged_at": "2026-09-26T02:21:49Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/nightly-readiness-2130-2026-09-25"
+    },
+    {
+      "branch": "ops/nightly-readiness-github-action-2026-09-25",
+      "sha": "08004a7027887af573e617880950066e9746eb41",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 235,
+      "merged_at": "2026-09-26T02:18:39Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/nightly-readiness-github-action-2026-09-25"
+    },
+    {
+      "branch": "ops/preflight-earlier-2026-09-19",
+      "sha": "d57fa1d22d663ebefd2311defb09afa0bf0794e7",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 156,
+      "merged_at": "2026-09-19T02:27:54Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/preflight-earlier-2026-09-19"
+    },
+    {
+      "branch": "policy/continuous-failed-brief-recovery",
+      "sha": "ff25225c21fd0342a4a3b685481095d35b9ce702",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 194,
+      "merged_at": "2026-09-20T16:17:53Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/policy/continuous-failed-brief-recovery"
+    },
+    {
+      "branch": "policy/podcast-48-hour-priority",
+      "sha": "70c4d98da227441478d00c800beaa4ff6570f380",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 50,
+      "merged_at": "2026-09-10T13:37:24Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/policy/podcast-48-hour-priority"
+    },
+    {
+      "branch": "post-sep18-handoff-2026-09-17",
+      "sha": "1237c0a351b5fa7fe63d3bede74948fc79295ac9",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-18",
+      "sha": "f78bffab7d7c18140653082ddde26894e9d0d15a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-20",
+      "sha": "775217b622fe596b30aebc0b086b8fa388462446",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-21",
+      "sha": "348aabc074be09da41cf2bca2d55136df4267fa2",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-22",
+      "sha": "f8cee371cfc67003e4efa3a2edf33e91ea80b7d7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-23",
+      "sha": "2186d90821063e5936a8e5a92ca62f65b4af2742",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-24",
+      "sha": "bf7bffdbf18baa8c2d60127e6d219c230f8f9ab9",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-25",
+      "sha": "78ff5b7560564c3451015aa784a0feea170a857f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-26",
+      "sha": "e5a54125bc6a767340e5918572f830a7181feb1b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-27",
+      "sha": "428b92610d45d07625d22e2a6fbc33e721c470c3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight/2026-09-28",
+      "sha": "659c2db0760840eb694e18a07cd40a773b55b6c0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/daily/2026-09-22",
+      "sha": "0bc681d0975cdabb94b2c7dcfb55355f3ab448c6",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/production/2026-09-19-0703",
+      "sha": "418c9e90fc021b2a9fde7726c8f328fa31f04141",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/production/2026-09-19-coverage-fix",
+      "sha": "902dc5fbdcc52f8ea1f465c06851d137dade1623",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/production/2026-09-19-coverage-fix2",
+      "sha": "42ab2e2145eb419e37cafe3cf9444be2d5578b1c",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/production/2026-09-27-orchestrator",
+      "sha": "3a7c50f27b1cb330235b259cf15a332e2c2c2cbf",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery2-2026-09-21",
+      "sha": "bece1df25709cc1bafc7a1cbb74d34229db54e60",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0823",
+      "sha": "a7ff510921738f8b65c5d733ff8ddc9c0d769e6e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0827",
+      "sha": "ad31787100ab42c673edcc691bc930a7aa107725",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0830",
+      "sha": "2ae43d7b83a0cf1216e239974230ba0dacccc45e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0834",
+      "sha": "75ddfb0b1266bbc69c20870db83feeaf44c7255c",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0837",
+      "sha": "a13944bb5a9b27e730944aa0046ad566e7cbe4fb",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0839",
+      "sha": "92ddbea469a56be7a24c18e894663c0e4a192563",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0841",
+      "sha": "c4252bde4054a647ca4d2f4394dcbe5d5e619e3d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0858",
+      "sha": "8b3e5b007a98950fdd970542bf11c818f068897f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0902",
+      "sha": "210cff2198498efe4f307c1a198f261f62addafc",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-0908",
+      "sha": "b44169c018ff7929416122258869691e9c13b434",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery/2026-09-20-final",
+      "sha": "22ae3583534a8a733b33d900ad1e95bf9f0b8c38",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery-2026-09-21",
+      "sha": "cb443a3d05858994d980932f01efdb7e9d76d77b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery-2026-09-24",
+      "sha": "f0b933c535695fa2b3d97ecd8e3dfcd08efdd42e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery-2026-09-25",
+      "sha": "fc90bcc79350d08051e6f469c8e481db7130349a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/recovery-2026-09-28-0833",
+      "sha": "b0e23ee27bc147414dc3400cd1dbc97387d96940",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/2026-09-18-qualification-1",
+      "sha": "e9bd5503f6105af233cbfc2a0596f30101699016",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/2026-09-18-qualification-2",
+      "sha": "f549d8df5f3012e4a1466a28106f84dcec9d8c73",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/2026-09-18-qualification-3",
+      "sha": "11c813841ffab7c8ebd1a7f0f370273c671dbe18",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/2026-09-18-qualification-4",
+      "sha": "5965f4fe71f186c1a40cb23e2244ad872855cce0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "preflight-request/2026-09-26-orchestrator",
+      "sha": "c4639fa194a9d7864254c9197ba9162846557c0e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "program/autonomous-control",
+      "sha": "a5da68d640f27efaa3c8bb257fcd6264e88cabc5",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 2,
+      "merged_at": "2026-09-07T16:35:35Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "program/final-gate-7",
+      "sha": "a95f9f77988c06a570d02947c661c81ec3e8ac70",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 11,
+      "merged_at": "2026-09-07T21:43:28Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "program/iteration-2-implementation",
+      "sha": "40943bd7e5563fe592bb92f481a1d83ff218fd5a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 4,
+      "merged_at": "2026-09-07T17:10:16Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "program/iteration-2",
+      "sha": "f7a498136551c8426bb9ce06337182b503521260",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 3,
+      "merged_at": "2026-09-07T16:50:30Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "program/iterations-1-6",
+      "sha": "dfdbe426a7198c0b1d9ed86e4d1ffdf92caeeb32",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 1,
+      "merged_at": "2026-09-07T16:29:20Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "program/iterations-3-7",
+      "sha": "f875463fb8522b15492cc37eef131475f255529d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 10,
+      "merged_at": "2026-09-07T21:34:28Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-07-repair",
+      "sha": "7a4dc25b4a63f404e275bdc7ff8b44b2ec799b42",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 6,
+      "merged_at": "2026-09-07T18:00:05Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-08-recovery",
+      "sha": "e9b6c7678a2cdb5e317b0b232034e5a7c7199377",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-08-recovery-full",
+      "sha": "bbc4f03bebceaf25cacd2e4462154cc58ea5f6b0",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 19,
+      "merged_at": "2026-09-08T13:59:35Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-09-0700",
+      "sha": "123f5ac5faf05237ed9ef47069c307d17a0641f7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 27,
+      "merged_at": "2026-09-09T12:21:14Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-09-skills-video-recovery",
+      "sha": "cd4e5d3c827a18142e470d5a667f105f4c7d1ef5",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 30,
+      "merged_at": "2026-09-09T14:12:37Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-11-0658",
+      "sha": "99355d122cfe54a6a5cc0c60625e54e7e9c87651",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 56,
+      "merged_at": "2026-09-11T12:28:27Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-12-0700",
+      "sha": "2bdf7cbde8dc987be72c718032cd035492ccb6c4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 74,
+      "merged_at": "2026-09-12T12:28:26Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-13-20260913t1535z",
+      "sha": "6594089eaa6e99cd7c832647f917ef2433361f9d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 88,
+      "merged_at": "2026-09-13T12:45:59Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-14-0702",
+      "sha": "fc824d2226bc015878d9e511025051a9d6d292db",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 95,
+      "merged_at": "2026-09-14T12:36:28Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-15-20260915t1255z",
+      "sha": "9a684876bd24ff73747e91ef5bcdc5175f0c31be",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 104,
+      "merged_at": "2026-09-15T12:29:15Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publication/2026-09-16-20260916t1200z",
+      "sha": "0abea1e288f8be3dd359c94a38985e822ae1f47f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 108,
+      "merged_at": "2026-09-16T12:34:16Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "publish/2026-09-17-daily-ai-brief",
+      "sha": "2cbc9aabf9cc0784b8843c5c94eedacdc7b8a5af",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 115,
+      "merged_at": "2026-09-17T12:42:09Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-1223",
+      "sha": "e406ce6110422d84a157b81650bd75e67b223280",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 28,
+      "merged_at": "2026-09-09T12:28:35Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-command-center-video-coverage",
+      "sha": "40084e89ab25fe57c99f8c68e12d7badf9a50697",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 44,
+      "merged_at": "2026-09-09T17:32:54Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-eight-item-visible",
+      "sha": "b00a3bccc853f2d4289ce09e27881484efdee174",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 41,
+      "merged_at": "2026-09-09T17:08:42Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-final-repair",
+      "sha": "8c185d79d283d867e01e189b09f24a972053b7d1",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 35,
+      "merged_at": "2026-09-09T15:28:43Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-recovery-record",
+      "sha": "187e576ab1d1e957666dc0f8d93b5b042a1c357a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 31,
+      "merged_at": "2026-09-09T14:17:06Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-share-reconciliation",
+      "sha": "f537465a58b11530c7a267f1b24189fae0398ef5",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 46,
+      "merged_at": "2026-09-09T17:39:18Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-09-single-share-event",
+      "sha": "700f6df5397516e0aba0759e4c4f84e64d9e57da",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 43,
+      "merged_at": "2026-09-09T17:28:55Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-10-final-closure",
+      "sha": "67e3b50d916f8d1f948d7590b9773bd426d5afef",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-11-final",
+      "sha": "05d0ade31c2a23ea106a93d448cf0faf70946ce4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 58,
+      "merged_at": "2026-09-11T12:54:40Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-12-final",
+      "sha": "e3086acfa7af7e30b80830569f3890472d70d61b",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 76,
+      "merged_at": "2026-09-12T12:46:10Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-13-final",
+      "sha": "911939ca5e8452c09673ce2d7ae02ac0e8e55f6f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 90,
+      "merged_at": "2026-09-13T13:09:17Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-14-1254",
+      "sha": "1cc2bb3128beabf301c47aa94d83f598fa156b00",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 96,
+      "merged_at": "2026-09-14T12:55:57Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-15-20260915t1244z",
+      "sha": "4ad5ec7e25171c7263eeb2b24fc252d44a66ba3d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 105,
+      "merged_at": "2026-09-15T12:49:55Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-16-20260916t131126z",
+      "sha": "809f5dd8f31c566ac735a01ffb556d3961296c91",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 110,
+      "merged_at": "2026-09-16T13:18:50Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/2026-09-17-final",
+      "sha": "13e5cf98cd9dcb707cb72ed12190069ce2de20b7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 116,
+      "merged_at": "2026-09-17T12:59:45Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qa/20260910-premium-image-closure",
+      "sha": "f6400353830a1b037a127c7126bd3de3e19aa4c7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 54,
+      "merged_at": "2026-09-10T18:47:43Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-26-IH1",
+      "sha": "e05608a65095d69212655f401fee52ae76dc34be",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-26-IH2",
+      "sha": "4bf1f84392801bb29102ac25a187bfd046fe8fe7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-26-IH3",
+      "sha": "271253389fb239cc4697b143acc2270419310029",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-26-IH4",
+      "sha": "47adbfc2dc80f6311339a50c8531bd2746110f9c",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-26-IH5",
+      "sha": "9651a30a481c8b01962aabfc2bd67f8d0e8ce5de",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-26-IH6",
+      "sha": "4d090ded9646681ceb859301847c5dec240a3010",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-27-IH7",
+      "sha": "6b5abad78ebda6326794ebaeedcdb79dbcd00af6",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-27-IH8",
+      "sha": "49a863a7c1f9a411c48756d4dc193477bcf653de",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-27-IH9",
+      "sha": "a78d4e3e3950a3f7ce8b6cd26a608bb445fdc040",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "qualification-image-harness/2026-09-27-IH10",
+      "sha": "174f31958fffc66709da843cd4e0169df50cf7d3",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "record/2026-09-18-blocked-attempt",
+      "sha": "1c482204bb13e3d920e199af07ce14a2d0b66ec1",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 119,
+      "merged_at": "2026-09-18T12:13:13Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "recovery/sep20-issue-195-professional-images",
+      "sha": "34f921f560e4fdac4e3d26e9e0b229b37aeca6c2",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 196,
+      "merged_at": "2026-09-20T17:49:29Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "recovery/2026-09-10-candidate",
+      "sha": "797b8d2471232c3e837904610af2946bb34a73fd",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "recovery/2026-09-10",
+      "sha": "08d4e3995f64dd9c985a31d11a864370b4831cde",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "recovery/20260910-premium-diagrams",
+      "sha": "bef2d945a7326d43795970c143475b3322e3d51e",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 52,
+      "merged_at": "2026-09-10T18:35:10Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "refactor/daily-brief-efficiency-v1",
+      "sha": "f7dcd9201d1101681b20e6213751a0bb75c4b435",
+      "decision": "retain",
+      "reason": "referenced_by_tracked_file",
+      "pull_request": 98,
+      "merged_at": "2026-09-14T19:27:54Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "refactor/efficiency-production-v2",
+      "sha": "c8cf81e39ae37a8cff4c52d6530d5501d8e0247e",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 99,
+      "merged_at": "2026-09-14T21:19:42Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/refactor/efficiency-production-v2"
+    },
+    {
+      "branch": "refactor/media-evidence-recovery",
+      "sha": "00c965bf7d6710f8b9c8debdf8af28d02498ab6a",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 100,
+      "merged_at": "2026-09-14T22:10:05Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/refactor/media-evidence-recovery"
+    },
+    {
+      "branch": "release/eleven-items-evidence",
+      "sha": "61a9d031f4ed4183f4874611afe76abfd64b5cc4",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 60,
+      "merged_at": "2026-09-11T17:13:58Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/command-center-completion-2026-09-22",
+      "sha": "d00605f48f4f3ede548c57653cfed9b759c857b4",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 210,
+      "merged_at": "2026-09-22T19:06:34Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/command-center-completion-2026-09-22"
+    },
+    {
+      "branch": "repair/deterministic-handoff-no-seed-images",
+      "sha": "8b70fe29bb8a1994558b2a5a864219b951f9d333",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 186,
+      "merged_at": "2026-09-20T14:39:29Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/deterministic-handoff-no-seed-images"
+    },
+    {
+      "branch": "repair/discovery-canonical-write-race-2026-09-20",
+      "sha": "933491ffa2e8579e1e542abb03eefde500cfade8",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 183,
+      "merged_at": "2026-09-20T14:04:22Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/discovery-canonical-write-race-2026-09-20"
+    },
+    {
+      "branch": "repair/failed-brief-recovery-policy-sep20",
+      "sha": "2a3e12529f46b51eb9d12200bc0dc8e5a3398d45",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 193,
+      "merged_at": "2026-09-20T17:49:31Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/failed-brief-recovery-policy-sep20"
+    },
+    {
+      "branch": "repair/final-deterministic-image-review-2026-09-20",
+      "sha": "5cc567ac136bb54f35b2a43e11f173b76815321b",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/final-rendered-image-review-contract",
+      "sha": "69ce0333da3666d04912a0c15bc5dd1c53666cb8",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 188,
+      "merged_at": "2026-09-20T15:04:32Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/final-rendered-image-review-contract"
+    },
+    {
+      "branch": "repair/final-rendered-image-review-handoff",
+      "sha": "71b8af55ac8b00080e0652cadda8d2c40cbc31df",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/integration-final-image-review-path",
+      "sha": "d5ba0faf874967a2817671cd26c9fb7341633c30",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 189,
+      "merged_at": "2026-09-20T15:12:24Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/integration-final-image-review-path"
+    },
+    {
+      "branch": "repair/iteration-2-publisher-payload",
+      "sha": "a1942d0ccdea362d77698f1d978abc94cd67918b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 5,
+      "merged_at": "2026-09-07T17:26:01Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/iteration-2-publisher-payload"
+    },
+    {
+      "branch": "repair/lock-professional-images-sep20",
+      "sha": "2c9fe1ac70797a5b76e1613ec590b8df6d4dd4a7",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 192,
+      "merged_at": "2026-09-20T16:07:42Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/lock-professional-images-sep20"
+    },
+    {
+      "branch": "repair/optional-image-review-arg-2026-09-20",
+      "sha": "5f8d5cbf69219c620e5c4b2e6c6b717b1b471830",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 187,
+      "merged_at": "2026-09-20T14:56:29Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/optional-image-review-arg-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-agent-classification-2026-09-20",
+      "sha": "482441ab98d6a73e82aa3cbe40e41323849fb3b1",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 177,
+      "merged_at": "2026-09-20T13:36:37Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-agent-classification-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-agent-coverage-2026-09-20",
+      "sha": "f4331ef092252e7a8dfde58ea8c4e8620b5c1c7b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 174,
+      "merged_at": "2026-09-20T13:26:42Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-agent-coverage-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-agentforce-source-2026-09-20",
+      "sha": "cca499fda4635f989c5ab45cb11af7d06b526808",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 175,
+      "merged_at": "2026-09-20T13:29:29Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-agentforce-source-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-evidence-size-2026-09-20",
+      "sha": "09e85f40e9acec9209c67176e393df84b5fc029b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 179,
+      "merged_at": "2026-09-20T13:40:36Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-evidence-size-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-oversized-evidence-2026-09-20",
+      "sha": "45260eabb482297ee662e365c0ddd819299e9914",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/preflight-pipeline-parity-2026-09-20",
+      "sha": "f25665d4080e056f27adc05d76665d2fd75157de",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 176,
+      "merged_at": "2026-09-20T13:32:39Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-pipeline-parity-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-schedule-reliability-2026-09-20",
+      "sha": "146ed15b7de57256796486325fb4f4290fb7f350",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 173,
+      "merged_at": "2026-09-20T13:23:05Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-schedule-reliability-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-story-eligible-coverage-2026-09-20",
+      "sha": "add22bf2554f4a4403feea11352a09701d2f6891",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/preflight-support-agent-routing-2026-09-20",
+      "sha": "5e0a7acb6d84454e4b32bb25eed4628b50e5017e",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 178,
+      "merged_at": "2026-09-20T13:38:50Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/preflight-support-agent-routing-2026-09-20"
+    },
+    {
+      "branch": "repair/prepublication-delta-validation-2026-09-21",
+      "sha": "dd72d05f4e81e8ebba48dd7e7effb2ace86f1d50",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 202,
+      "merged_at": "2026-09-21T14:23:10Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/prepublication-delta-validation-2026-09-21"
+    },
+    {
+      "branch": "repair/prepublication-validator-state-2026-09-21",
+      "sha": "d2154a1ef0835e592e60de039ed57b37f1c1eee0",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 203,
+      "merged_at": "2026-09-21T14:38:02Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/prepublication-validator-state-2026-09-21"
+    },
+    {
+      "branch": "repair/retire-feedback-nav-2026-09-08",
+      "sha": "0e5caa480a96257bb2537162e45e69d859ee17d8",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 21,
+      "merged_at": "2026-09-08T16:12:55Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/retire-feedback-nav-2026-09-08"
+    },
+    {
+      "branch": "repair/sep8-textbook-diagrams-v2",
+      "sha": "a301e2ab8d5dc43cffd1e696601cf8a50b2b6277",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 22,
+      "merged_at": "2026-09-08T16:58:30Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep8-textbook-diagrams-v2"
+    },
+    {
+      "branch": "repair/sep18-discovery-review",
+      "sha": "a69771fce19f4b2e42da9d739259c163499056b6",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 120,
+      "merged_at": "2026-09-18T13:34:21Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep18-discovery-review"
+    },
+    {
+      "branch": "repair/sep20-applied-image-recovery",
+      "sha": "edb77ee42c6679222b894fe487cdba94d7124a83",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 185,
+      "merged_at": "2026-09-20T14:14:52Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep20-applied-image-recovery"
+    },
+    {
+      "branch": "repair/sep20-large-evidence-applied-coverage",
+      "sha": "c827178cc7d8115ab957e989c345f941989c17ed",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 182,
+      "merged_at": "2026-09-20T14:01:46Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep20-large-evidence-applied-coverage"
+    },
+    {
+      "branch": "repair/sep20-live-image-lock-validator",
+      "sha": "628055bca5272700e9cae5e613f2f02033c0ae00",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 197,
+      "merged_at": "2026-09-20T17:55:53Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep20-live-image-lock-validator"
+    },
+    {
+      "branch": "repair/sep20-novelty-date-regex",
+      "sha": "baef53d8e98a9a7770d174f719e0b7b970fa029b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 184,
+      "merged_at": "2026-09-20T14:07:49Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep20-novelty-date-regex"
+    },
+    {
+      "branch": "repair/sep20-novelty-source-recovery",
+      "sha": "2445615f8e2f6e49895e51aba5ed1c006214afe6",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 181,
+      "merged_at": "2026-09-20T13:57:31Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep20-novelty-source-recovery"
+    },
+    {
+      "branch": "repair/sep20-publication-closure",
+      "sha": "97d8052e9dbaee16086e160b1e35a31e179133e4",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 191,
+      "merged_at": "2026-09-20T15:55:41Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep20-publication-closure"
+    },
+    {
+      "branch": "repair/sep21-balanced-preflight-scan",
+      "sha": "8f3deea2bd4c55fc27cdd7adf28e28097528c205",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 201,
+      "merged_at": "2026-09-21T14:16:25Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep21-balanced-preflight-scan"
+    },
+    {
+      "branch": "repair/sep21-preflight-timing",
+      "sha": "8b6b300615611b9fbd24c925aa7f7fcb618d9b4d",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 198,
+      "merged_at": "2026-09-21T00:59:05Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep21-preflight-timing"
+    },
+    {
+      "branch": "repair/sep21-reader-integration",
+      "sha": "9f73fe36f17c048fc9244b8969342c6ec055c232",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 205,
+      "merged_at": "2026-09-21T16:40:38Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep21-reader-integration"
+    },
+    {
+      "branch": "repair/sep23-completion-evidence",
+      "sha": "887ef4b7dc58bdb6b0aa98180c984627016bf582",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 213,
+      "merged_at": "2026-09-23T17:13:01Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep23-completion-evidence"
+    },
+    {
+      "branch": "repair/sep26-closure-validation-persistence",
+      "sha": "22cd00a8f40733c4e06737ed5d3668ac74ac6e7b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 243,
+      "merged_at": "2026-09-26T15:53:17Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep26-closure-validation-persistence"
+    },
+    {
+      "branch": "repair/sep26-durable-validation-receipt",
+      "sha": "0fd32202ffa7d1699c2447bac8fdb3cb05468ea0",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/sep26-durable-validation-receipt-v2",
+      "sha": "defe2d59481389066fcef2dc8c402c5293bb0ede",
+      "decision": "retain",
+      "reason": "open_pull_request",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/sep26-promotion-closure-dispatch",
+      "sha": "8d828bddad7cd4a8f459fb17d3d2b9eef0974115",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 241,
+      "merged_at": "2026-09-26T15:47:30Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/sep26-promotion-closure-dispatch"
+    },
+    {
+      "branch": "repair/transient-source-http-readiness",
+      "sha": "b02dab21a57bb61cc16550eeb76a42785635b1a4",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 200,
+      "merged_at": "2026-09-21T01:17:10Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/transient-source-http-readiness"
+    },
+    {
+      "branch": "repair/usage-history-2026-09-20",
+      "sha": "d2c094fbf5502483415aa762061cc4e651fdb734",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 172,
+      "merged_at": "2026-09-20T02:27:35Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/usage-history-2026-09-20"
+    },
+    {
+      "branch": "repair/2026-09-08-qa-analytics",
+      "sha": "a9bf19f8e8a7adbebee98d297b4ee370eb7bc6b9",
+      "decision": "retain",
+      "reason": "no_exact_merged_head",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "repair/2026-09-08-qa-backfill-v2",
+      "sha": "f49b17e9e134dea4a6dea73a9c3e36ccb74182d1",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 26,
+      "merged_at": "2026-09-08T18:05:00Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-08-qa-backfill-v2"
+    },
+    {
+      "branch": "repair/2026-09-09-authoritative-share-total",
+      "sha": "f69b9127fde8a4c0e9cd70c873389318c0b6a911",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 45,
+      "merged_at": "2026-09-09T17:36:24Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-authoritative-share-total"
+    },
+    {
+      "branch": "repair/2026-09-09-image4-cache-key",
+      "sha": "2d867ba08abfb84f00a12cd8c603dd5eb50d51f1",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 34,
+      "merged_at": "2026-09-09T15:22:38Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-image4-cache-key"
+    },
+    {
+      "branch": "repair/2026-09-09-image4-transfer",
+      "sha": "5883856919dce4c931aa02bb89314d37c1eb822b",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 33,
+      "merged_at": "2026-09-09T15:18:42Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-image4-transfer"
+    },
+    {
+      "branch": "repair/2026-09-09-live-share-qa",
+      "sha": "7e3c02a9ada3450c8a9b92136b917ca678eb1f3f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 39,
+      "merged_at": "2026-09-09T16:37:12Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-live-share-qa"
+    },
+    {
+      "branch": "repair/2026-09-09-ratings-images-v2",
+      "sha": "dc428e0f129a6c12ca97555e24a64833ccbd10cf",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 32,
+      "merged_at": "2026-09-09T15:14:57Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-ratings-images-v2"
+    },
+    {
+      "branch": "repair/2026-09-09-reader-media-skills",
+      "sha": "aa6f5ba9f78b092b95808e3b5f8d4300e5901138",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 29,
+      "merged_at": "2026-09-09T14:07:35Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-reader-media-skills"
+    },
+    {
+      "branch": "repair/2026-09-09-share-analytics-qa",
+      "sha": "c778e75d4323610dd56c296de8d866fe4effb873",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 37,
+      "merged_at": "2026-09-09T16:13:51Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-share-analytics-qa"
+    },
+    {
+      "branch": "repair/2026-09-09-share-initiation",
+      "sha": "d2f9bdb0d7b1b953c7ce6882a3eb8f340185dd75",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 40,
+      "merged_at": "2026-09-09T17:03:06Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-share-initiation"
+    },
+    {
+      "branch": "repair/2026-09-09-share-retry-sync",
+      "sha": "6f944bc70dac9bdc404f58ecb42defbcf8bab54f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 38,
+      "merged_at": "2026-09-09T16:32:34Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-share-retry-sync"
+    },
+    {
+      "branch": "repair/2026-09-09-share-video-analytics",
+      "sha": "b62322c37443798a72ec6ecf288758cd7fb6973c",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 36,
+      "merged_at": "2026-09-09T16:07:18Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-share-video-analytics"
+    },
+    {
+      "branch": "repair/2026-09-09-single-share-event",
+      "sha": "404fa0aef195c2a75add307644485be7b0f577a6",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 42,
+      "merged_at": "2026-09-09T17:22:53Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-single-share-event"
+    },
+    {
+      "branch": "repair/2026-09-09-story-home-navigation",
+      "sha": "947577e49fb78a404581422f0e425837ca37840f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 47,
+      "merged_at": "2026-09-09T18:37:28Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-09-story-home-navigation"
+    },
+    {
+      "branch": "repair/2026-09-10-hq-images",
+      "sha": "22a17dbd6f7943b9275a7f9fc58528d6398a8532",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 51,
+      "merged_at": "2026-09-10T15:38:50Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-10-hq-images"
+    },
+    {
+      "branch": "repair/2026-09-11-public-ratings",
+      "sha": "71a1ec064b3925a239a35bc3d78d07c6cc183411",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 57,
+      "merged_at": "2026-09-11T12:43:45Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-11-public-ratings"
+    },
+    {
+      "branch": "repair/2026-09-12-spotify-link",
+      "sha": "a10d355eb154bfe1a9b33f1265a51d12bd65839d",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 75,
+      "merged_at": "2026-09-12T12:40:17Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-12-spotify-link"
+    },
+    {
+      "branch": "repair/2026-09-13-rating-contract",
+      "sha": "77fe16922eda14b0ab591e8aaa15f69a7fadaf9f",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 89,
+      "merged_at": "2026-09-13T12:58:07Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-13-rating-contract"
+    },
+    {
+      "branch": "repair/2026-09-13-reader-completion",
+      "sha": "e75b7af81a4fd34acad9b90174f16cbbfd42b3e2",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 93,
+      "merged_at": "2026-09-13T15:50:36Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-13-reader-completion"
+    },
+    {
+      "branch": "repair/2026-09-13-reader-operations",
+      "sha": "54bb567c21ccd92e8913330b0d434211ecb33136",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 91,
+      "merged_at": "2026-09-13T15:40:20Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-13-reader-operations"
+    },
+    {
+      "branch": "repair/2026-09-13-reader-sharing",
+      "sha": "7f5dd66bb0b62d057a1107c079364ad3421591af",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 92,
+      "merged_at": "2026-09-13T15:43:49Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-13-reader-sharing"
+    },
+    {
+      "branch": "repair/2026-09-16-podcast-evidence",
+      "sha": "5c51885a1061f4a1c86ee5500644054b08252a90",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 109,
+      "merged_at": "2026-09-16T12:53:10Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/2026-09-16-podcast-evidence"
+    },
+    {
+      "branch": "repair/20260910-image-asset-cache",
+      "sha": "534a0e688584615a8470caaf7116c19f48547fea",
+      "decision": "archive_candidate",
+      "reason": "exact_merged_head",
+      "pull_request": 53,
+      "merged_at": "2026-09-10T18:39:28Z",
+      "archive_ref": "tags/archive/cleanup-20260928-a/repair/20260910-image-asset-cache"
+    },
+    {
+      "branch": "sep25-professional-images-only",
+      "sha": "dffe727436da3c9c47c2b9069f1381832315f7eb",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 218,
+      "merged_at": "2026-09-25T15:10:11Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "setup/followit-verification",
+      "sha": "fd0d2c5b5e68d49a5b58d4910a38a8b8781f7b5a",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 63,
+      "merged_at": "2026-09-11T18:49:20Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "simpler-subscriptions-20260913",
+      "sha": "799fa39241ee9f854280a6f3e5498d31c1c31303",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 85,
+      "merged_at": "2026-09-13T04:44:57Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "source-reliability-20260913",
+      "sha": "a9db76057ed30a6c9c89698ff1b11514ee864027",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 87,
+      "merged_at": "2026-09-13T05:30:41Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "transport-test/git-data-2026-09-18-1709",
+      "sha": "c0e1535d2d6af51db97912b13b0b25df9ca44555",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": null,
+      "merged_at": null,
+      "archive_ref": null
+    },
+    {
+      "branch": "visible-learning-outcomes-20260913",
+      "sha": "fefc828fbbeaab5076606a3a3c5527d716381ac7",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 84,
+      "merged_at": "2026-09-13T03:47:26Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "what-you-learn-20260913",
+      "sha": "4422da94dd484090ae7408aa2c094049cd08859d",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 83,
+      "merged_at": "2026-09-13T03:42:32Z",
+      "archive_ref": null
+    },
+    {
+      "branch": "work/media-empty-slot-editorial-copy",
+      "sha": "8eb2c7f2399a8dbaaa9a34b2c497ebb1210aed8f",
+      "decision": "retain",
+      "reason": "retained_namespace",
+      "pull_request": 112,
+      "merged_at": "2026-09-16T14:48:28Z",
+      "archive_ref": null
+    }
+  ],
+  "results": [],
+  "status": "planned",
+  "updated_at": "2026-09-28T15:16:21.352Z"
+}
