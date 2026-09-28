@@ -1,0 +1,62 @@
+name: Q24 m04 rejection and retry binding
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-m04-rejection-continuation.yml']
+permissions:
+  contents: write
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Validate preserved request, rejected raw image and bounded retry
+        run: |
+          node --input-type=module - <<'JS'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          import {createHash} from 'node:crypto';
+          import {execFileSync} from 'node:child_process';
+          import {validateImageGenerationExecution,imageExecutionHash} from './_generator/lib/image-execution.mjs';
+          import {validateQualificationImageRenderedText} from './_generator/lib/qualification-image-harness.mjs';
+          const q='_records/qualification/2026-09-28-Q24',d=q+'/image-execution-v2';
+          assert(!fs.existsSync(q+'/result.json'),'Q24 terminal');
+          const request=JSON.parse(fs.readFileSync(d+'/requests/m04.json'));
+          const rejected=JSON.parse(fs.readFileSync(d+'/reviews/m04-attempt-1.json'));
+          const old=JSON.parse(fs.readFileSync(d+'/attempts/m04-attempt-1.json'));
+          assert.deepEqual(validateImageGenerationExecution(request),[]);
+          assert.equal(imageExecutionHash(request),rejected.request_sha256);
+          assert.equal(rejected.first_failed_gate,'subject_identity');
+          assert.equal(rejected.review.subject_match,'fail');
+          assert.equal(rejected.accepted_locked,false);
+          const raw=fs.readFileSync(rejected.raw_capture.path);
+          assert.equal(createHash('sha256').update(raw).digest('hex'),rejected.raw_capture.sha256);
+          assert.equal(execFileSync('git',['hash-object',rejected.raw_capture.path],{encoding:'utf8'}).trim(),rejected.raw_capture.git_blob_sha);
+          const errors=validateQualificationImageRenderedText(rejected.review.observed_text_examples,request.sealed_story_packet.allowed_image_text);
+          assert.equal(errors.length,8);
+          assert(errors.every(x=>x.startsWith('required_rendered_text_missing:')));
+          assert.equal(old.attempt,1);assert.equal(old.generation.raw_sha256,rejected.raw_capture.sha256);
+          assert(!fs.existsSync(d+'/attempts/m04-attempt-2.json'),'Second attempt already bound');
+          const now=new Date().toISOString();
+          const updated={...old,status:'ATTEMPT_REJECTED',raw_capture_complete:true,review_complete:true,persistence_complete:false,accepted_locked:false,raw_capture:{...old.raw_capture,read_back_verified:true,readback_workflow_run_id:36496196500},review_path:d+'/reviews/m04-attempt-1.json',first_failed_gate:'subject_identity',failure_code:'WRONG_SUBJECT_PROJECT_BRANDING',note:'Scheduled generation and transfer succeeded; exact-byte active-chat review rejected unrelated project-branding artwork. Original raw bytes are preserved. No acceptance or publication.'};
+          fs.writeFileSync(d+'/attempts/m04-attempt-1.json',JSON.stringify(updated,null,2)+'\n');
+          const pending={schema_version:'2.0.0',policy_id:'production-image-execution-v2',qualification_id:'2026-09-28-Q24',candidate_id:'m04',story_id:request.story_ids[0],attempt:2,execution_mode:'qualification_nonproduction',trigger:'active_chat',evidence_type:'live',status:'GENERATION_REQUESTED',requested_at:now,request_binding:old.request_binding,request_scope:'sealed_story_payload_only',runtime_context_isolation:'not_asserted',manual_intervention_required:false,owner_interventions:[],fallback_used:false,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false,generation_started:false,raw_capture_complete:false,review_complete:false,persistence_complete:false,accepted_locked:false,preserved_cutoff:old.preserved_cutoff,original_baseline_sha:old.original_baseline_sha,article_freshness_policy:old.article_freshness_policy,media_freshness_policy:old.media_freshness_policy,prior_rejection_path:d+'/reviews/m04-attempt-1.json',maximum_attempts:4,recovery_required_before_any_new_generation:true,note:'Active chat will invoke native generation for this same immutable story request. Recover its actual generated output before allocating a further retry. A prepared request is not proof of a tool call. No scheduled-success claim for this active-chat retry.'};
+          fs.writeFileSync(d+'/attempts/m04-attempt-2.json',JSON.stringify(pending,null,2)+'\n');
+          const cp=q+'/CONTINUATION-CHECKPOINT.md';
+          const prefix='# Current image progress — first attempt rejected; same-story retry bound\n\nVerified raw read-back workflow **36496196500** passed. Automated visual review found that m04 attempt 1 is unrelated Daily AI Brief desk/laptop/mug branding, not the Claude Sonnet 5.5/AWS illustration. All eight essential labels are absent. The first failed gate is subject identity. Exact raw bytes remain at `_records/image-attempts/2026-09-28-Q24/m04/attempt-1/raw.png`. Read `image-execution-v2/reviews/m04-attempt-1.json` and the updated attempt record; never approve or edit that rejected output into a different subject.\n\n**0/6 accepted. m04 attempt 2 is bound for active-chat native generation, not yet certified generated by this workflow.** Use the same frozen m04 request. Read its actual attempt/output evidence before any next call; recover existing generated bytes rather than duplicating generation. Do not advance to m03 until m04 is accepted. The four-attempt limit and all quality gates remain. No owner image tasks. Scheduled generation/transfer was demonstrated on attempt 1, but this review and the next retry are active-chat work, not a complete unattended proof.\n\nThe next operation is the native call for pending attempt 2, followed by exact automatic raw capture/read-back and review. Preserve all five completed components and the original cutoff. Q24 is nonterminal; no Q25 or public publication. The local diagnostic import initially pointed to `image-story-packet.mjs`; it was corrected to the existing harness export. That inspection-script error did not change production code or raw bytes. The released request and missing-label checks then passed.\n\n---\n\n';
+          fs.writeFileSync(cp,prefix+fs.readFileSync(cp,'utf8'));
+          console.log('PASS: immutable request, raw hash/blob, subject rejection, eight missing-label rejections and bounded attempt-2 binding. No native generation in this workflow.');
+          JS
+      - name: Persist only rejection state, pending retry and continuation checkpoint
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/image-execution-v2/attempts/m04-attempt-1.json _records/qualification/2026-09-28-Q24/image-execution-v2/attempts/m04-attempt-2.json _records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md
+          git commit -m 'Preserve wrong-subject m04 rejection and bind native attempt 2'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
