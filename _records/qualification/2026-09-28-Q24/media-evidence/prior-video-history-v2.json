@@ -1,0 +1,611 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "canonical_field": "worth_watching",
+  "includes_before": "2026-09-28",
+  "same_day_and_qualification_outcomes_excluded": true,
+  "previous_projection_usable_for_novelty": false,
+  "supersedes_artifact_field": "10999560701/prior-video-history.json",
+  "semantic_novelty_review_complete": false,
+  "editions": [
+    {
+      "edition_date": "2026-09-06",
+      "source_path": "_data/editions/2026-09-06.json",
+      "source_sha256": "4dc3873b075a5b4c65b445c92ca749960f5ec0adade581bfcea4e438df1decce",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No video was included. The strongest current OpenAI workspace-agent webinar located for September 5 has a runtime of **47:43**, which exceeds the Daily AI Brief\u2019s hard **20:00** maximum."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No separate recent video met the required combination of authoritative sourcing, distinct value, and an exactly verified runtime of **20:00 or less**. The slot remains empty rather than substituting weak or unverified material."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-07",
+      "source_path": "_data/editions/2026-09-07.json",
+      "source_sha256": "8cf970d2720b7a9b3a479534f8f28184478f812155e8357e8f256480e5f00251",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No recent video was included because no candidate independently verified today met the combined requirements for authoritative sourcing, distinct editorial value, and an exact runtime of 20:00 or less."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No separate recent agents-for-non-technical-people video independently verified today met the required authority, distinctiveness, and exact runtime threshold of 20:00 or less."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-08",
+      "source_path": "_data/editions/2026-09-08.json",
+      "source_sha256": "ce35319e7b2d5e991e0e830f900177bec6fefece6a68b26ffc1937683fe9d42e",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No recent substantive general video with a directly verified runtime of 20:00 or less met the evidence threshold."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No recent practical agent video for non-technical people with a directly verified runtime of 20:00 or less met the evidence threshold."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-09",
+      "source_path": "_data/editions/2026-09-09.json",
+      "source_sha256": "d069d7c8165d85398b82f4ddf9023dd3f4f5dff7496d85a1981d0fb0af4c3b33",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Introducing workspace agents in ChatGPT",
+          "channel": "OpenAI",
+          "upload_date": "2026-04-22",
+          "runtime_seconds": 71,
+          "why_useful": "A concise official overview of shared agents that can handle longer-running work across team tools.",
+          "connection": "Shows the broader workspace-agent model behind today\u2019s themes of reusable workflows, permissions, and human oversight.",
+          "url": "https://www.youtube.com/watch?v=yyvVUEPSCu0"
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "ChatGPT Projects vs Skills Explained in 2 Minutes",
+          "channel": "AI with Kyle",
+          "upload_date": "2026-07-24",
+          "runtime_seconds": 120,
+          "why_useful": "A short, plain-language distinction between project context and reusable skills for repeated work.",
+          "connection": "Directly supports today\u2019s SKILL.md focus by helping non-technical users decide when to package a method as a reusable skill.",
+          "url": "https://www.youtube.com/watch?v=GRWChm0sYHE"
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-10",
+      "source_path": "_data/editions/2026-09-10.json",
+      "source_sha256": "d236b620ff304fba87fee7b7e8c7204bb7e6b3584e0279ecd9f20102b122a23f",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No General YouTube item was included because current searches did not yield a recent, substantive, direct YouTube source with an independently verifiable runtime of 20:00 or less. A 19-minute CIO governance demonstration was found, but the accessible evidence did not establish a direct YouTube URL, so it was rejected rather than relaxing the verification rule."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No Agent Skills YouTube item was included after checking recent SKILL.md, Agent Skills, Codex skills, Claude Skills, and reusable-agent-workflow searches across the permitted 30-day video window. Recent items located were either over 20:00, outside the window, or lacked a directly verified YouTube runtime."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-11",
+      "source_path": "_data/editions/2026-09-11.json",
+      "source_sha256": "c88075981f372597b6cebf9a4b5303cce0624fa9d829e8638270c81b86130dd3",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No qualifying video could be verified: the broader recovery search checked eight channel catalogs and publisher video links, but current upload dates or exact runtimes were inaccessible. Videos of 10 minutes or less remain preferred; the 20-minute fallback also requires verified metadata."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No qualifying video could be verified: the broader recovery search checked eight channel catalogs and publisher video links, but current upload dates or exact runtimes were inaccessible. Videos of 10 minutes or less remain preferred; the 20-minute fallback also requires verified metadata."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-12",
+      "source_path": "_data/editions/2026-09-12.json",
+      "source_sha256": "ad081c7276e7cdc247d3d75fe79344661a3e4db90ed0c2f87797fef9039e913c",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Friday, September 11, 2026 - 5 Minute AI News",
+          "channel": "5-Minute-AI-News",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 293,
+          "why_useful": "A compact scan of the previous day\u2019s AI developments that can help a reader identify which claims merit direct-source follow-up.",
+          "connection": "It complements the brief\u2019s emphasis on separating rapid awareness from primary-evidence verification.",
+          "url": "https://www.youtube.com/watch?v=BKq1NquBDa4",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "YouTube player metadata reported 293 seconds (4:53), below the independently preferred ten-minute ceiling."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)",
+          "channel": "ErrorFixer",
+          "upload_date": "2026-08-31",
+          "runtime_seconds": 429,
+          "why_useful": "A concise introduction to SKILL.md structure and progressive disclosure for readers who want a practical starting point.",
+          "connection": "It provides background for the Mastra filesystem-skills story without requiring software-framework expertise.",
+          "url": "https://www.youtube.com/watch?v=5vTdpYVPUyI",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "YouTube player metadata reported 429 seconds (7:09); no stronger current short tutorial was verified in the fresh search, so this unused 12-day-old item was selected within the 30-day media window."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-13",
+      "source_path": "_data/editions/2026-09-13.json",
+      "source_sha256": "dc47ab03210d3faec2e814de1a022b026fd3aae3609772afc44b5243ea9b1349",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Build Classroom Sites with ChatGPT for Teachers",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 316,
+          "why_useful": "A compact official demonstration of turning teaching intent into a reusable classroom site.",
+          "connection": "It complements today\u2019s research-to-interactive-artifact story with an accessible education use case.",
+          "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "OpenAI Academy displays an exact runtime of 5:16, below the independently preferred ten-minute ceiling."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Schedule Tasks with ChatGPT for Teachers",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 120,
+          "why_useful": "A two-minute official walkthrough of a practical recurring agent-like workflow for non-technical educators.",
+          "connection": "It gives a low-friction example of the first rung in today\u2019s agent-building learning path.",
+          "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "OpenAI Academy displays an exact runtime of 2:00, below the independently preferred ten-minute ceiling."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-14",
+      "source_path": "_data/editions/2026-09-14.json",
+      "source_sha256": "6308b7c7a6555d9a86b85b9b095455571a3f8c324bc3673e9af0460505525d1a",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Use Deep Research with ChatGPT for Teachers",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 266,
+          "why_useful": "A concise official walkthrough of researching school policy and lesson plans, checking sources and exporting a report.",
+          "connection": "It reinforces today\u2019s evidence-handoff theme: useful research artifacts still depend on source review.",
+          "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-deep-research-with-chatgpt-for-teachers",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "The official OpenAI Academy page displays an exact runtime of 4:26, below the independently preferred ten-minute ceiling."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Use Plugins with ChatGPT for Teachers",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 526,
+          "why_useful": "An eight-minute official example of invoking a reusable domain plugin for translation and exit-ticket tasks using teaching materials.",
+          "connection": "It gives non-technical readers a concrete companion to today\u2019s portable Agent Skills story.",
+          "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-plugins-with-chatgpt-for-teachers",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "The official OpenAI Academy page displays an exact runtime of 8:46, below the independently preferred ten-minute ceiling."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-15",
+      "source_path": "_data/editions/2026-09-15.json",
+      "source_sha256": "b93191e253795704885311b5d9322c9a6d3c1ead05acd950c2e01eebe5bd5cce",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Use Writing Blocks with ChatGPT for Teachers",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 201,
+          "why_useful": "A three-minute official example of turning source material into a structured handout, revising passages, and translating the result.",
+          "connection": "It complements today\u2019s operations-as-code story by showing a small, reviewable content transformation for knowledge workers.",
+          "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-writing-blocks-with-chatgpt-for-teachers",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "The official OpenAI Academy catalog displays 3:21, independently satisfying the preferred ten-minute tier."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Connect Apps with ChatGPT for Teachers",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-11",
+          "runtime_seconds": 224,
+          "why_useful": "A concise official demonstration of connecting Gmail, reviewing unread messages, and drafting replies for human review.",
+          "connection": "It gives non-technical readers a bounded example of permissioned context and an approval-before-action workflow.",
+          "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/connect-apps-with-chatgpt-for-teachers",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "The official OpenAI Academy catalog displays 3:44, independently satisfying the preferred ten-minute tier."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-16",
+      "source_path": "_data/editions/2026-09-16.json",
+      "source_sha256": "bf03d987e7cb015f118aa4026ab5c8dffbd91e6cc94f5fcd1f3e0585f9f32390",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No unused, directly relevant general AI video with an independently verified runtime of 10:00 or less was found. Official searches surfaced long replays, previously used clips, or pages without exact runtime evidence; no 10:01\u201320:00 fallback was needed."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No unused, directly relevant non-technical-agent video with an independently verified runtime of 10:00 or less was found. Searches of official OpenAI, Google, Salesforce and YouTube surfaces produced unverified clips, previously used items, or long sessions, so the slot remains empty."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-17",
+      "source_path": "_data/editions/2026-09-17.json",
+      "source_sha256": "26d1652c0714cbb081b56f8dccc1f8abf75825235e09c32103e567a2fd0496d4",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No video met today\u2019s editorial quality standards."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No video met today\u2019s editorial quality standards."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-18",
+      "source_path": "_data/editions/2026-09-18.json",
+      "source_sha256": "0943bf0067ae7417ea8ed2d4bb647c8e168814eb79a813fa89e0f7d9454b8bd1",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "empty",
+          "exception": "No video met today\u2019s editorial quality standards."
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "empty",
+          "exception": "No video met today\u2019s editorial quality standards."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-19",
+      "source_path": "_data/editions/2026-09-19.json",
+      "source_sha256": "11f54a05863980607f7e9547ff73049f18e260e09073cc7669005fa06bba4684",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "ChatGPT Privacy: What Not to Share and When to Double-Check",
+          "channel": "OpenAI Academy",
+          "upload_date": "2026-09-17",
+          "runtime_seconds": 100,
+          "why_useful": "A concise official tutorial on minimizing sensitive data exposure and recognizing when an AI answer needs independent checking.",
+          "connection": "It reinforces the brief\u2019s operational-maturity theme: useful AI workflows need explicit review boundaries, not just faster output.",
+          "url": "https://academy.openai.com/public/videos/privacy-and-double-checking-older-adults",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "OpenAI Academy lists the video as posted September 17, 2026 with a 1:40 runtime."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Control AI Agents from Anywhere: 7 Open-Source Tools",
+          "channel": "HubMesh",
+          "upload_date": "2026-09-18",
+          "runtime_seconds": 316,
+          "why_useful": "A five-minute scan of current open-source agent tools, including persistent-context, desktop-automation, verification, and multi-agent projects.",
+          "connection": "It gives readers concrete examples of the agent-control, context, and verification patterns behind today\u2019s Agent Skills and long-horizon-agent stories.",
+          "url": "https://hubmesh.dev/posts/2026-09-18-hubmesh-open-cowork-osir_9/",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "HubMesh lists the episode as September 18, 2026 with a 5:16 runtime and links to the underlying repositories."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-20",
+      "source_path": "_data/editions/2026-09-20.json",
+      "source_sha256": "1f4089205447125078dddb84c145f622e8fa9496fb9c7b525187e505c43538bf",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "NVIDIA PAIR Connects Your Computers for Local AI",
+          "channel": "Matthew Berman",
+          "upload_date": "2026-09-20",
+          "runtime_seconds": 66,
+          "why_useful": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.",
+          "connection": "Pairs with the AIPerf story by showing inference infrastructure becoming more distributed and workload-aware.",
+          "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Daily Curry listed the September 20 video with a 1:06 runtime and linked the YouTube short."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Anthropic\u2019s CEO: How to Build a 1 Person Business with Claude",
+          "channel": "Nate Herk | AI Automation",
+          "upload_date": "2026-09-20",
+          "runtime_seconds": 700,
+          "why_useful": "A practical 11-minute look at how Claude can support a highly automated one-person business, including where AI can absorb repeatable work around software, sales, and support.",
+          "connection": "It complements today\u2019s Agent Skills and managed-runtime stories by showing the user-facing end state: a small operation built around reusable AI workflows rather than one-off chats.",
+          "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
+          "duration_tier": "fallback",
+          "short_search_evidence": [
+            "The short-video search checked current agent-focused candidates against the \u226410 minute target first.",
+            "No qualifying current candidate at or below 10 minutes met both freshness and editorial relevance; the selected September 20 video is 11:40 and remains below the 20-minute fallback ceiling."
+          ],
+          "fallback_reason": "No agent-focused video at 10 minutes or less met the freshness and editorial-quality requirements in the bounded short-video search, so the verified 11:40 September 20 fallback was used."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-21",
+      "source_path": "_data/editions/2026-09-21.json",
+      "source_sha256": "0f4950d411fb2e5d361df9780a146d5b7cf3029c7cd4f9084464380efbfb56e9",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "NVIDIA PAIR Connects Your Computers for Local AI",
+          "channel": "Matthew Berman",
+          "upload_date": "2026-09-18",
+          "runtime_seconds": 66,
+          "why_useful": "A one-minute look at software that links multiple local computers so AI workloads can share compute across machines.",
+          "connection": "Pairs with today\u2019s production-runtime story by showing how AI infrastructure is becoming more distributed and workload-aware.",
+          "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Independent current listings verify the 1:06 runtime and September 18 publication date."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Anthropic\u2019s CEO: How to Build a 1 Person Business with Claude",
+          "channel": "Nate Herk | AI Automation",
+          "upload_date": "2026-09-18",
+          "runtime_seconds": 700,
+          "why_useful": "A practical look at how Claude can support a highly automated one-person business, including repeatable work across software, sales, and support.",
+          "connection": "Complements today\u2019s Agent Skills and managed-runtime stories by showing the user-facing end state of reusable AI workflows.",
+          "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
+          "duration_tier": "fallback",
+          "short_search_evidence": [
+            "Independent current listings verify the 11:40 runtime and September 18 publication date.",
+            "No stronger qualifying current agent-focused video at or below 10 minutes cleared the bounded editorial bar."
+          ],
+          "fallback_reason": "No agent-focused video at 10 minutes or less met the current freshness and editorial-quality requirements; this verified 11:40 video remains below the 20-minute fallback ceiling."
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-22",
+      "source_path": "_data/editions/2026-09-22.json",
+      "source_sha256": "cfee2dd5dad57b5f67867a9c5b63f4b255805d1e4cc4d4e922447426a32a2940",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+          "channel": "AICodeKing",
+          "upload_date": "2026-09-21",
+          "runtime_seconds": 306,
+          "why_useful": "A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.",
+          "connection": "Extends today's engineering coverage from agent evaluation into practical coding-agent orchestration and workflow controls.",
+          "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Independent current listings verify the September 21 publication date and 5:06 runtime."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+          "channel": "AICodeKing",
+          "upload_date": "2026-09-21",
+          "runtime_seconds": 373,
+          "why_useful": "A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.",
+          "connection": "Pairs directly with today's agent-evaluation story by showing why the surrounding harness can materially change task outcomes.",
+          "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Independent current Daily Curry listing dated September 21, 2026 verifies the Harness Arena video at 6:13."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-23",
+      "source_path": "_data/editions/2026-09-23.json",
+      "source_sha256": "70eb9465d428b3913228eaa65b991c5ddb8afdde9f6fb316455eb1a17618f7f8",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+          "channel": "AICodeKing",
+          "upload_date": "2026-09-21",
+          "runtime_seconds": 306,
+          "why_useful": "A concise walkthrough of current Codex task coordination, context management, worktrees, site tools, and live terminal interaction.",
+          "connection": "Extends today's engineering coverage into practical coding-agent orchestration and workflow controls.",
+          "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Previously independently verified September 21 publication date and 5:06 runtime in the September 22 production media evidence."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "display_label": "Agents for Everyone",
+          "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+          "channel": "AICodeKing",
+          "upload_date": "2026-09-21",
+          "runtime_seconds": 373,
+          "why_useful": "A six-minute look at comparing agent harnesses on the same tasks and models using recorded runs and blind judging.",
+          "connection": "Pairs with today's agent observability and reusable-skill coverage by showing why the surrounding harness changes task outcomes.",
+          "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Previously independently verified September 21 publication date and 6:13 runtime in the September 22 production media evidence."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-25",
+      "source_path": "_data/editions/2026-09-25.json",
+      "source_sha256": "f5269d992981e9de4ad599527c45c3653e80058d110af7d4abf9d9bff069c63a",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Stop guessing which model your agent needs",
+          "channel": "Microsoft Developer",
+          "upload_date": "2026-09-23",
+          "runtime_seconds": 573,
+          "why_useful": "A concise walkthrough of choosing an agent model with Microsoft Foundry using repeatable evaluations rather than intuition, including latency, token usage, output quality, and cost.",
+          "connection": "Extends today\u2019s engineering and evaluation coverage by showing how model choice can become a measured production decision.",
+          "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Verified September 23, 2026 Microsoft Developer upload; runtime 9:33; current source listing and chapter timings corroborated."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "display_label": "Agents for Everyone",
+          "title": "Using Claude Opus 5.5 as your daily driver",
+          "channel": "Claude",
+          "upload_date": "2026-09-23",
+          "runtime_seconds": 213,
+          "why_useful": "A short practical comparison showing how the new model behaves in everyday Claude Code work, including speed, usage limits, and when medium effort is enough.",
+          "connection": "Complements today\u2019s agent and knowledge-work stories with a concrete example of matching model capability and operating cost to routine work.",
+          "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Verified September 23, 2026 Claude upload; runtime 3:33."
+          ]
+        }
+      ]
+    },
+    {
+      "edition_date": "2026-09-26",
+      "source_path": "_data/editions/2026-09-26.json",
+      "source_sha256": "eced4f6f84817e5e66cb4fe1aa2e3e6d30b5b98f6f6c11c5bd8534c5099eebca",
+      "canonical_path": "worth_watching",
+      "videos": [
+        {
+          "slot": "general",
+          "status": "included",
+          "title": "Stop guessing which model your agent needs",
+          "channel": "Microsoft Developer",
+          "upload_date": "2026-09-23",
+          "runtime_seconds": 573,
+          "why_useful": "A concise walkthrough of choosing an agent model with repeatable evaluations rather than intuition, including latency, token use, output quality, and cost.",
+          "connection": "Pairs with today\u2019s reliability and execution-layer stories by turning model selection into a measured engineering decision.",
+          "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Reused from the independently verified Sep 25 media receipt; a current Sep 26 public listing still identifies the Sep 23 Microsoft Developer video at 9:33."
+          ]
+        },
+        {
+          "slot": "agents_non_technical_people",
+          "status": "included",
+          "title": "Using Claude Opus 5.5 as your daily driver",
+          "channel": "Claude",
+          "upload_date": "2026-09-23",
+          "runtime_seconds": 213,
+          "why_useful": "A practical three-minute comparison showing how model choice changes speed, limits, and daily agentic coding work.",
+          "connection": "Complements the day\u2019s agent-memory and reusable-skill stories with a concrete example of matching capability and effort to routine work.",
+          "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+          "duration_tier": "short",
+          "short_search_evidence": [
+            "Reused from the independently verified Sep 25 media receipt; a current Sep 26 independent listing still identifies the Sep 23 Claude upload at 3:33."
+          ]
+        }
+      ]
+    }
+  ]
+}
