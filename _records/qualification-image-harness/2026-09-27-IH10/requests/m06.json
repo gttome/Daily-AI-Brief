@@ -1,0 +1,82 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "candidate_id": "m06",
+  "state": "GENERATION_REQUEST_READY",
+  "provenance": {
+    "source_selection_branch": "discovery-preflight/qualification/2026-09-26-Q12",
+    "source_selection_path": "_records/qualification/2026-09-26-Q12/editorial-selection.json",
+    "source_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "policy_overlay": "protected main after PR #271"
+  },
+  "generation_execution": {
+    "context_mode": "fresh_image_only",
+    "inherit_parent_context": false,
+    "prior_messages": [],
+    "attachments": [],
+    "sealed_story_packet": {
+      "story_id": "story-m06",
+      "candidate_id": "m06",
+      "headline": "Microsoft reorganizes Copilot around Home, Code and persistent Autopilot work",
+      "source_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+      "verified_visual_facts": [
+        "The new Copilot introduces Home, Code and Autopilot",
+        "Home is a starting point where Chat and Cowork come together",
+        "Office in Copilot brings Word, Excel and PowerPoint into the experience",
+        "Code lets people build their own solutions with tools to run them safely",
+        "Code is powered by the same underlying technology as GitHub Copilot",
+        "Autopilot is framed as persistent work in the frozen Q12 editorial headline"
+      ],
+      "generic_conceptual_elements": [
+        "Home workspace hub",
+        "Code build-and-run lane",
+        "persistent Autopilot work lane",
+        "generic Office app blocks",
+        "arrows showing movement among the three capability areas"
+      ],
+      "prohibited_specifics": [
+        "invented Copilot UI screenshots",
+        "invented menus or controls",
+        "invented Autopilot schedules or actions",
+        "invented performance metrics",
+        "invented pricing or availability dates",
+        "unsupported product behavior"
+      ],
+      "visual_brief": "Professional white-background textbook/editorial diagram explaining the new Copilot organization around Home, Code and Autopilot. Present the three capabilities as a coherent system: Home as the starting workspace bringing Chat, Cowork and Office apps together; Code as a safe build/run capability powered by GitHub Copilot technology; and Autopilot as a persistent-work lane. Use abstract product-neutral panels, flows and technical iconography rather than screenshots or fabricated UI.",
+      "reference_policy": "Use only the frozen Q12 editorial selection and article-evidence facts for concrete product behavior; keep all other elements generic conceptual symbols.",
+      "acceptance_order": [
+        "subject_identity",
+        "factual_support",
+        "structural_quality",
+        "editorial_quality"
+      ],
+      "wrong_subject_action": "Discard and start a brand-new worker for this same story only.",
+      "low_quality_fallback": false,
+      "allowed_image_text": [
+        "Microsoft Copilot",
+        "Home",
+        "Code",
+        "Autopilot",
+        "Chat + Cowork",
+        "Word • Excel • PowerPoint"
+      ],
+      "composition_mode": "story_fit_editorial",
+      "prohibited_composition_patterns": [
+        "sparse_generic",
+        "decorative_only",
+        "repetitive_low_information"
+      ]
+    },
+    "generation_instruction": "story_id: story-m06\ncandidate_id: m06\nheadline: Microsoft reorganizes Copilot around Home, Code and persistent Autopilot work\nsource_url: https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/\nverified_visual_facts: The new Copilot introduces Home, Code and Autopilot; Home is a starting point where Chat and Cowork come together; Office in Copilot brings Word, Excel and PowerPoint into the experience; Code lets people build their own solutions with tools to run them safely; Code is powered by the same underlying technology as GitHub Copilot; Autopilot is framed as persistent work in the frozen Q12 editorial headline\ngeneric_conceptual_elements: Home workspace hub; Code build-and-run lane; persistent Autopilot work lane; generic Office app blocks; arrows showing movement among the three capability areas\nprohibited_specifics: invented Copilot UI screenshots; invented menus or controls; invented Autopilot schedules or actions; invented performance metrics; invented pricing or availability dates; unsupported product behavior\nvisual_brief: Professional white-background textbook/editorial diagram explaining the new Copilot organization around Home, Code and Autopilot. Present the three capabilities as a coherent system: Home as the starting workspace bringing Chat, Cowork and Office apps together; Code as a safe build/run capability powered by GitHub Copilot technology; and Autopilot as a persistent-work lane. Use abstract product-neutral panels, flows and technical iconography rather than screenshots or fabricated UI.\nreference_policy: Use only the frozen Q12 editorial selection and article-evidence facts for concrete product behavior; keep all other elements generic conceptual symbols.\nacceptance_order: subject_identity -> factual_support -> structural_quality -> editorial_quality\nwrong_subject_action: Discard and start a brand-new worker for this same story only.\nessential_image_text: Microsoft Copilot | Home | Code | Autopilot | Chat + Cowork | Word • Excel • PowerPoint\ncomposition_mode: story_fit_editorial\nhistorical_low_quality_patterns: sparse_generic | decorative_only | repetitive_low_information\nCOMPOSITION CONTRACT: Create a professional, detailed, readable textbook/editorial illustration whose composition fits the story. Use a coherent three-capability system view rather than a decorative poster. Linear flows, layered architectures, comparisons, panels, and annotated systems are acceptable when clear and story-specific.\nQUALITY CONTRACT: Reject genuinely sparse, generic, decorative, repetitive, or low-information layouts. Do not invent product UI or unsupported operational state.\nVISIBLE TEXT POLICY: Treat allowed_image_text as essential story-specific labels. Each essential label must be present and readable at least once. Short generic non-factual headings/descriptors are permitted only when they do not introduce unsupported factual claims or product-specific details.\nFACTUAL TEXT SAFETY: Unsupported factual prose, invented metrics, invented schedules, invented UI, and invented product behaviors remain prohibited.\nlow_quality_fallback: prohibited\nGenerate exactly one illustration for this story. Return only the generated illustration.",
+    "review_in_same_context": false
+  },
+  "generation_status": "pending_external_image_generation",
+  "review_status": "not_started",
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
