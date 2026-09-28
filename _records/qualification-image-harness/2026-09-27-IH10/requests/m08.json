@@ -1,0 +1,80 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "candidate_id": "m08",
+  "state": "GENERATION_REQUEST_READY",
+  "provenance": {
+    "source_selection_branch": "discovery-preflight/qualification/2026-09-26-Q12",
+    "source_selection_path": "_records/qualification/2026-09-26-Q12/editorial-selection.json",
+    "source_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "policy_overlay": "protected main after PR #271"
+  },
+  "generation_execution": {
+    "context_mode": "fresh_image_only",
+    "inherit_parent_context": false,
+    "prior_messages": [],
+    "attachments": [],
+    "sealed_story_packet": {
+      "story_id": "story-m08",
+      "candidate_id": "m08",
+      "headline": "GitHub Copilot canvases let users describe a workflow surface in plain English and have an agent build it",
+      "source_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+      "verified_visual_facts": [
+        "GitHub Copilot app supports canvases for custom workflows",
+        "A user can describe the interface they need in plain English",
+        "The agent can build a live surface",
+        "The resulting live surface can be used by the user and the agent"
+      ],
+      "generic_conceptual_elements": [
+        "plain-English request block",
+        "agent build/orchestration node",
+        "live interactive surface",
+        "custom workflow flow",
+        "bidirectional user-agent use arrows represented abstractly without people"
+      ],
+      "prohibited_specifics": [
+        "invented GitHub Copilot UI screenshots",
+        "invented canvas widgets or controls not supported by frozen evidence",
+        "invented code",
+        "invented workflow actions",
+        "invented metrics",
+        "invented pricing or availability claims",
+        "people or identifiable persons"
+      ],
+      "visual_brief": "Professional white-background textbook/editorial diagram explaining GitHub Copilot canvases as a plain-English-to-live-workflow-surface mechanism. Show a plain-English description flowing into an agent build step and then into a live surface/custom workflow that can be used in an ongoing user-agent workflow. Use abstract process nodes, arrows, and generic interface-surface geometry only; no screenshots, fabricated UI controls, people, code, or unsupported product details.",
+      "reference_policy": "Use only the frozen Q12 editorial headline and article-evidence excerpt for concrete product behavior; keep all other elements generic conceptual symbols.",
+      "acceptance_order": [
+        "subject_identity",
+        "factual_support",
+        "structural_quality",
+        "editorial_quality"
+      ],
+      "wrong_subject_action": "Discard and start a brand-new worker for this same story only.",
+      "low_quality_fallback": false,
+      "allowed_image_text": [
+        "GitHub Copilot Canvases",
+        "Plain-English Description",
+        "Agent Builds",
+        "Live Surface",
+        "Custom Workflow"
+      ],
+      "composition_mode": "story_fit_editorial",
+      "prohibited_composition_patterns": [
+        "sparse_generic",
+        "decorative_only",
+        "repetitive_low_information"
+      ]
+    },
+    "generation_instruction": "story_id: story-m08\ncandidate_id: m08\nheadline: GitHub Copilot canvases let users describe a workflow surface in plain English and have an agent build it\nsource_url: https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/\nverified_visual_facts: GitHub Copilot app supports canvases for custom workflows; A user can describe the interface they need in plain English; The agent can build a live surface; The resulting live surface can be used by the user and the agent\ngeneric_conceptual_elements: plain-English request block; agent build/orchestration node; live interactive surface; custom workflow flow; bidirectional user-agent use arrows represented abstractly without people\nprohibited_specifics: invented GitHub Copilot UI screenshots; invented canvas widgets or controls not supported by frozen evidence; invented code; invented workflow actions; invented metrics; invented pricing or availability claims; people or identifiable persons\nvisual_brief: Professional white-background textbook/editorial diagram explaining GitHub Copilot canvases as a plain-English-to-live-workflow-surface mechanism. Show a plain-English description flowing into an agent build step and then into a live surface/custom workflow that can be used in an ongoing user-agent workflow. Use abstract process nodes, arrows, and generic interface-surface geometry only; no screenshots, fabricated UI controls, people, code, or unsupported product details.\nreference_policy: Use only the frozen Q12 editorial headline and article-evidence excerpt for concrete product behavior; keep all other elements generic conceptual symbols.\nacceptance_order: subject_identity -> factual_support -> structural_quality -> editorial_quality\nwrong_subject_action: Discard and start a brand-new worker for this same story only.\nessential_image_text: GitHub Copilot Canvases | Plain-English Description | Agent Builds | Live Surface | Custom Workflow\ncomposition_mode: story_fit_editorial\nhistorical_low_quality_patterns: sparse_generic | decorative_only | repetitive_low_information\nCOMPOSITION CONTRACT: Create a professional, detailed, readable textbook/editorial process illustration. Show Plain-English Description flowing into Agent Builds and then into a Live Surface / Custom Workflow. The live surface should be clearly represented as a generic interactive workspace surface, not a screenshot or fabricated product UI.\nVISIBLE TEXT POLICY: Render each essential_image_text label exactly as written at least once. Render NO OTHER visible product-behavior sentences, captions, slogans, UI text, metrics, code, or unsupported factual prose. Non-textual abstract interface geometry, arrows, and technical symbols are allowed.\nFACTUAL TEXT SAFETY: Do not invent specific widgets, controls, actions, code, metrics, pricing, availability claims, or other product behavior beyond the sealed facts.\nlow_quality_fallback: prohibited\nGenerate exactly one illustration for this story. Return only the generated illustration.",
+    "review_in_same_context": false
+  },
+  "generation_status": "pending_external_image_generation",
+  "review_status": "not_started",
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
