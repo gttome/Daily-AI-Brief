@@ -1,0 +1,163 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": 36479004398,
+  "execution_commit": "604879b0f5ffdd366ad4c6249f7dd323bc052af6",
+  "validated_at": "2026-09-28T20:25:05.162Z",
+  "result": "pass",
+  "scope": "podcast component only; not full MEDIA_READY or qualification closure",
+  "source_artifact_id": 10993938898,
+  "new_publisher_retrievals": 0,
+  "model_calls": 0,
+  "source_hashes_and_review_excerpts_verified": true,
+  "podcast_selection_validated": true,
+  "podcast_count": 2,
+  "source_diverse": true,
+  "selection": {
+    "media_freshness_policy": "media-research-cutoff-v1",
+    "research_cutoff_at": "2026-09-28T20:04:36Z",
+    "selected": [
+      {
+        "candidate_id": "everyday-871",
+        "status": "included",
+        "url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779",
+        "title": "Ep 871: Desktop Agent Lingo Simplified: Goals, Loops, Plans, Subagents and how it works in Codex and Claude Code (Start Here Series Vol 30)",
+        "show": "Everyday AI Podcast – An AI and ChatGPT Podcast",
+        "publication_date": "2026-09-28T11:00:00Z",
+        "runtime_seconds": 1853,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 90,
+        "freshness_exception_reason": null,
+        "summary": "Everyday AI introduces desktop-agent terminology, including goals, plans, loops, subagents and context delegation. The published topic list and chapter markers frame the episode as a vocabulary primer for understanding agent-based work rather than a conventional chatbot interaction.",
+        "why_it_matters": "Shared vocabulary can help a team distinguish a task goal from a plan, an iterative loop and delegated subtasks before evaluating an agent workflow.",
+        "editorial_limitation": "Reviewed publisher-distributed shownotes and chapters, not the audio or a hands-on product demonstration. Product-specific instructions and performance claims are not independently verified.",
+        "platforms": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779"
+          }
+        ],
+        "source_evidence_identity": "episode:91f9fef57f20407640738039cd10a4c56ae3d863a3638655df238245fe5cb1e6",
+        "freshness_tier": "primary_48h"
+      },
+      {
+        "candidate_id": "ai-for-humans-197",
+        "status": "included",
+        "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+        "title": "Opus 5.5 is our favorite AI model (so far).",
+        "show": "AI For Humans: Weekly AI News, Tools & Trends",
+        "publication_date": "2026-09-24T10:00:00Z",
+        "runtime_seconds": 2901,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 78,
+        "freshness_exception_reason": "Only one primary-window candidate is present in the bounded verified podcast set. The other verified reserve, Practical AI 373, repeats September 26 production. This source-diverse September 24 episode supplies a distinct creative-application discussion within seven days; newer qualifying alternatives were not established by the completed bounded acquisition.",
+        "summary": "AI for Humans discusses recent model releases through creative examples, including games, animation, 3D modeling and motion graphics. The episode's favorable model comparisons are the hosts' opinions; this selection emphasizes the advertised application examples rather than presenting those comparisons as independently established results.",
+        "why_it_matters": "The chapter list offers a range of creative tasks to consider for experimentation, with a different emphasis from enterprise deployment or introductory agent vocabulary.",
+        "editorial_limitation": "Shownotes and chapter review only; audio and linked demonstrations were not independently tested. Model rankings, pricing assertions and rumors are not adopted as factual conclusions.",
+        "platforms": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+          }
+        ],
+        "source_evidence_identity": "episode:89ad3e0becd1923ccb77298dff31bde74310f237ca2955c624583e9b7f360443",
+        "freshness_tier": "fallback_7d"
+      }
+    ],
+    "target": 2,
+    "restricted_show": "The AI Daily Brief",
+    "restricted_show_count": 0,
+    "source_diverse": true,
+    "primary_age_days": 2,
+    "fallback_age_days": 7,
+    "exception_age_days": 30
+  },
+  "normalized_evidence": [
+    {
+      "schema_version": "1.0.0",
+      "identity": "episode:91f9fef57f20407640738039cd10a4c56ae3d863a3638655df238245fe5cb1e6",
+      "kind": "podcast",
+      "canonical_url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779",
+      "aliases": [
+        "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779"
+      ],
+      "title": "Ep 871: Desktop Agent Lingo Simplified: Goals, Loops, Plans, Subagents and how it works in Codex and Claude Code (Start Here Series Vol 30)",
+      "published_at": "2026-09-28T11:00:00.000Z",
+      "runtime_seconds": 1853,
+      "metadata_status": "reviewed",
+      "source": {
+        "url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779",
+        "content_hash": "8beed0b749a1b239573023570c6a3722d44addd0ba2c7153ac3587aa86507767",
+        "checked_at": "2026-09-28T20:13:55.857Z"
+      },
+      "review": {
+        "status": "reviewed",
+        "reviewer": "ordinary_chatgpt",
+        "reviewed_at": "2026-09-28T20:23:09.000Z",
+        "source_content_hash": "8beed0b749a1b239573023570c6a3722d44addd0ba2c7153ac3587aa86507767",
+        "excerpts": [
+          "Agent Loops: Automation and Verification",
+          "Context Windows and Task Delegation"
+        ],
+        "scope": "Fresh Q24 publisher-distributed episode descriptions, topic lists and chapters plus exact episode/show metadata. Audio was not played or transcribed. This review supports descriptions of the episodes' advertised topics, not independent confirmation of product performance or every statement in the audio.",
+        "audio_listened": false
+      },
+      "audience_fit": "Accessible explanation of desktop-agent vocabulary for knowledge workers and nontechnical agent users.",
+      "selection_history": [],
+      "rejection_reason": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "identity": "episode:89ad3e0becd1923ccb77298dff31bde74310f237ca2955c624583e9b7f360443",
+      "kind": "podcast",
+      "canonical_url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+      "aliases": [
+        "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+      ],
+      "title": "Opus 5.5 is our favorite AI model (so far).",
+      "published_at": "2026-09-24T10:00:00.000Z",
+      "runtime_seconds": 2901,
+      "metadata_status": "reviewed",
+      "source": {
+        "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+        "content_hash": "005985c52c4fef47a41f39802fb77bff45c396504c32f5ce9d3db6661c788d51",
+        "checked_at": "2026-09-28T20:13:56.230Z"
+      },
+      "review": {
+        "status": "reviewed",
+        "reviewer": "ordinary_chatgpt",
+        "reviewed_at": "2026-09-28T20:23:09.000Z",
+        "source_content_hash": "005985c52c4fef47a41f39802fb77bff45c396504c32f5ce9d3db6661c788d51",
+        "excerpts": [
+          "39:03 Actually Useful AI: GPT-6 Astra Makes Motion Graphics",
+          "33:22 Giant Gavin: Turning Myself Into A 3D Model With Meshy 7.1"
+        ],
+        "scope": "Fresh Q24 publisher-distributed episode descriptions, topic lists and chapters plus exact episode/show metadata. Audio was not played or transcribed. This review supports descriptions of the episodes' advertised topics, not independent confirmation of product performance or every statement in the audio.",
+        "audio_listened": false
+      },
+      "audience_fit": "Creator-oriented commentary and application examples; complements the terminology-focused first podcast without substituting host enthusiasm for verified model comparisons.",
+      "selection_history": [],
+      "rejection_reason": null
+    }
+  ],
+  "rejected": [
+    {
+      "candidate_id": "practical-373",
+      "reason": "Same title, show, runtime and episode identity as the Practical AI 373 podcast already included on September 26. An Apple distribution URL does not make the episode new. No verified material update is established.",
+      "prior_production_edition": "2026-09-26",
+      "prior_production_url": "https://practicalai.show/373"
+    }
+  ],
+  "review_scope": "Fresh Q24 publisher-distributed episode descriptions, topic lists and chapters plus exact episode/show metadata. Audio was not played or transcribed. This review supports descriptions of the episodes' advertised topics, not independent confirmation of product performance or every statement in the audio.",
+  "history_scope": "Reviewed titles, show names, episode URLs, platform aliases, source dates and summaries in all 20 available canonical production editions before September 28. No same-day production or Q results were treated as novelty history.",
+  "video_selection_completed": false,
+  "media_ready": false,
+  "production_mutation": false
+}
