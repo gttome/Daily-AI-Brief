@@ -1,0 +1,49 @@
+name: Q24 prior-production podcast review evidence
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-podcast-history.yml']
+permissions:
+  contents: write
+jobs:
+  compact-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Project the frozen pre-edition podcast history for editorial identity review
+        run: |
+          set -euo pipefail
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          const req=JSON.parse(fs.readFileSync('_records/discovery-preflight/request.json','utf8'));
+          if(req.qualification_run_id!=='2026-09-28-Q24'||req.baseline_sha!=='1def5c4ba158247a9c02106dc4e4820d80a7133d')throw Error('wrong_run_baseline');
+          const records=[],sources=[];
+          for(const filename of fs.readdirSync('_data/editions').filter(x=>/^\d{4}-\d{2}-\d{2}\.json$/.test(x)&&x.slice(0,10)<req.edition_date).sort()){
+            const text=fs.readFileSync('_data/editions/'+filename,'utf8'),e=JSON.parse(text);
+            sources.push({path:'_data/editions/'+filename,sha256:crypto.createHash('sha256').update(text).digest('hex')});
+            for(const p of [...(e.podcasts||[]),...(e.podcast?[e.podcast]:[])]){
+              if(p.status!=='included')continue;
+              records.push({edition_date:e.brief_date,title:p.title,show:p.show,url:p.url,canonical_url:p.canonical_url??null,publication_date:p.publication_date,runtime_seconds:p.runtime_seconds,episode_guid:p.episode_guid??null,aliases:p.aliases??[],platforms:p.platforms??null,summary:p.summary??null,why_it_matters:p.why_it_matters??null});
+            }
+          }
+          const result={schema_version:'1.0.0',run_id:req.qualification_run_id,baseline_sha:req.baseline_sha,cutoff:req.cutoff,history_rule:'all available canonical production editions strictly before edition date; no Q results or same-day production',workflow_run_id:Number(process.env.GITHUB_RUN_ID),source_retrievals:0,model_calls:0,sources,records,editorial_identity_review_completed:false,production_mutation:false};
+          fs.writeFileSync('_records/qualification/2026-09-28-Q24/media-evidence/prior-podcast-history.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+          console.log(JSON.stringify({records,edition_files:sources.length},null,2));
+          NODE
+      - name: Persist only the history projection on Q24
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/media-evidence/prior-podcast-history.json
+          git commit -m 'Preserve pre-edition podcast identities for Q24 cross-platform review'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
