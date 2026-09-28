@@ -14,7 +14,9 @@
     "SUBJECT_LINEAGE_PASS",
     "FACTUAL_SUPPORT_PASS",
     "STRUCTURAL_QUALITY_PASS",
-    "EDITORIAL_QUALITY_PASS"
+    "EDITORIAL_QUALITY_PASS",
+    "EXACT_GIT_BLOB_PERSISTED",
+    "ACCEPTED_LOCKED"
   ],
   "image_sha256": "a805ddf2c3b766689593d9e8f9bcd5f4150d1095801d2192317bcc2e87441c29",
   "rematerialized_sha256": "a805ddf2c3b766689593d9e8f9bcd5f4150d1095801d2192317bcc2e87441c29",
@@ -43,13 +45,22 @@
     }
   },
   "first_failed_gate": null,
-  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
-  "accepted_locked": false,
+  "accepted_locked": true,
   "fallback": false,
   "cross_story_contamination": false,
   "production_mutation": false,
   "work_usage": 0,
   "codex_usage": 0,
   "paid_api_usage": 0,
-  "note": "Visual review passed all four review gates. Acceptance remains pending exact-byte Git blob persistence of the reviewed PNG."
+  "note": "Visual review passed all four review gates. Acceptance remains pending exact-byte Git blob persistence of the reviewed PNG.",
+  "git_blob_sha": "fdce4fa880982f44a2b6d08343a595eea2ddb09b",
+  "git_path": "_records/qualification-image-harness/2026-09-27-IH10/images/m02-attempt-1.png",
+  "git_persistence_commit": "fa3697331b925e574eac6e1cdf7674aeb1a383da",
+  "exact_byte_verification": {
+    "expected_sha256": "a805ddf2c3b766689593d9e8f9bcd5f4150d1095801d2192317bcc2e87441c29",
+    "expected_size_bytes": 1988243,
+    "expected_git_blob_sha": "fdce4fa880982f44a2b6d08343a595eea2ddb09b",
+    "persisted_git_blob_sha": "fdce4fa880982f44a2b6d08343a595eea2ddb09b",
+    "pass": true
+  }
 }
