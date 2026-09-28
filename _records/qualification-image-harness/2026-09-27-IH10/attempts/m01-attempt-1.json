@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m01",
+  "attempt": 1,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS"
+  ],
+  "image_sha256": "7e7b69e19c9dc2533b8ea3e179d8c3bd05e42ecb7b17d232748bc413233cb4ea",
+  "rematerialized_sha256": "7e7b69e19c9dc2533b8ea3e179d8c3bd05e42ecb7b17d232748bc413233cb4ea",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 1008672,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_eec9cabace4481919782a1ef2a21185e",
+  "library_path": "/Daily AI Brief Qualification Images/m01/IH10-m01-attempt-1.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image clearly depicts Qoder conversation experience being distilled into reusable experience, followed by a Skill Evolution Suggestion branching to Create Skill and Update Skill. No harness/status/Q/publication contamination is visible."
+    },
+    "factual_support": {
+      "pass": true,
+      "evidence": "Visible labels align with the sealed m01 evidence and essential text set. The image does not claim automatic creation or update without a suggestion step and introduces no invented UI, code, filenames, metrics, skill contents, or unsupported agent behavior."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Clear process sequence from Conversation to Reusable Experience to Skill Evolution Suggestion, with an explicit branch to Create Skill and Update Skill; integrated and easy to follow."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional white-background textbook/editorial composition with readable hierarchy, restrained iconography, and story-specific explanatory value."
+    }
+  },
+  "first_failed_gate": null,
+  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
