@@ -74,7 +74,7 @@ for(const s of preflightSources.filter(source=>source.pinned_candidate===true&&s
     if(!candidates.has(key))candidates.set(key,{
       source_id:s.source_id,publisher:s.owner||null,headline:s.candidate_title,canonical_url:key,url:key,
       published_at:published,publication_date:published,publication_dates:published?[published]:[],
-      publication_date_precision:published?'day':null,
+      publication_date_precision:s.known_publication_date_precision||null,
       date_conflict:false,updated_at:null,date_source:'pinned_first_party_metadata',
       snippet:s.candidate_snippet||null,content_type:'article',retrieval_status:'metadata_only',
       source_reliability:s.evidence_class||'publisher_authored',format:'article',discovered_at:new Date().toISOString(),
