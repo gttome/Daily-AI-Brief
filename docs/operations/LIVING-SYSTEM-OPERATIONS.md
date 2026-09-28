@@ -1,5 +1,33 @@
 # Daily Generative AI Brief
 
+## September 28, 2026 — Q22 article-body extraction and evidence guard
+
+> [!IMPORTANT]
+> **PR #281 is already released; Q22 remains terminal FAIL.** This narrow correction becomes released behavior only after successful protected CI on its actual final head and a normal merge. The source-write retry through the same connected GitHub tool succeeded after the owner attached the checksum-verified bundle. No safeguard was bypassed. The older persistence incident below does not authorize reconstructing this recovered repair.
+
+### Article evidence must contain a source body, not an HTTP-success page shell
+
+Q22 cleared preflight coverage with 11 Technical / 4 Applied / 5 Agents and nine evidence packets, but two Applied packets contained only 13-word and 15-word titles. Its terminal failure `qualification_article_evidence_title_only_false_readiness` and original evidence remain unchanged on `discovery-preflight/qualification/2026-09-28-Q22` at `4466d7f499b1848238bbe4594af4589d20d062f0`. Never refill, rerun or repair that Q into PASS.
+
+The completed two-response capture in workflow **36461068265**, artifact **10987306772**, found the Microsoft Community Hub article text in JSON-LD `BlogPosting.description`, with matching canonical `mainEntityOfPage.@id` and headline. The earlier cleaner discarded scripts and lost that body. The capture is reused, not repeated; no authenticated endpoint, browser execution, extra article review or new source is required.
+
+`_tools/article-evidence-text.mjs` parses JSON data without executing scripts, requires a supported article type and matching canonical URL, and rejects a conflicting headline. It prefers `articleBody`, then an adequately long article `description`, then visible article/main text with common navigation regions removed. Unrelated Organization descriptions, different article identities, malformed JSON and missing canonical identities cannot provide a structured source body.
+
+Mechanical minimums are **80 source-body words and 25 excerpt words**, with explicit title-only rejection. These thresholds reject page shells; they do not certify semantic completeness. Editorial review must still reject irrelevant, promotional, unsupported or otherwise inadequate evidence. The collector records extraction method and body count, excludes insufficient retrievals from readiness, and rechecks excerpts after model-visible truncation. The current-policy semantic validator independently rejects selected evidence that fails the same guard. Historical legacy-policy artifacts retain their prior validator semantics.
+
+| Preserved source | Original Q22 words | Local captured-response replay words | Extraction method |
+|---|---:|---:|---|
+| m05, Microsoft Copilot change management | 13 | 1,734 | Identity-matched `jsonld.description` |
+| m06, Microsoft Skills Hub AI at work | 15 | 431 | Identity-matched `jsonld.description` |
+
+These are prior parser-replay results, not a repaired Q22 or a new qualification. The recovered bundle records 468 passing local tests and 24 contract checks. Its exact four source/test files are verified by SHA-256 before this document integration; current GitHub workflow results must be reported separately from saved local evidence. The final PR must pass protected `validate` before normal merge.
+
+**Unchanged constraints:** the nine-candidate plan, per-focus balance, preferred reusable Agent Skills candidate, bounded retrievals, 12,000-character evidence ceiling, one semantic pass, novelty, article freshness, media, professional accepted_locked images, nonproduction isolation and no Work/Codex/paid-model APIs. Insufficient evidence does not permit replacements in a frozen Q or higher review limits. Account billing remains unobserved.
+
+**Continuation:** remove the temporary Q22 workbench from the final release diff, include these operating documents with the four source/test changes, require protected CI and normal merge, then recheck live refs and start only the next unused Q from actual merged main with an observed UTC cutoff. Verify matching workflow execution before reporting a start. PR #117, the separate greenfield repository, Sites and public editions are outside this correction.
+
+---
+
 ## September 28, 2026 — Article policy amendment (`article-24-72-168-v1`)
 
 > [!IMPORTANT]
