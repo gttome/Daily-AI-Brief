@@ -1,0 +1,26 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q23",
+  "cutoff": "2026-09-28T19:10:36Z",
+  "records": [],
+  "diagnostics": [
+    {
+      "source_id": "ibm-XN3xNJvWXsc",
+      "status": "metadata_unresolved",
+      "reason": "video_identity_mismatch"
+    },
+    {
+      "source_id": "ibm-UabBYexBD4k",
+      "status": "metadata_unresolved",
+      "reason": "video_identity_mismatch"
+    },
+    {
+      "source_id": "ibm-_ZqSFVi6UDY",
+      "status": "metadata_unresolved",
+      "reason": "video_identity_mismatch"
+    }
+  ],
+  "metadata_record_count": 0,
+  "media_ready": false,
+  "production_mutation": false
+}

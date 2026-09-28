@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q23",
+  "workflow_run_id": 36471883760,
+  "source_artifact_id": 10991304633,
+  "cutoff": "2026-09-28T19:10:36Z",
+  "model_calls": 0,
+  "article_retrievals": 0,
+  "original_catalogs_refetched": 0,
+  "observations": [
+    {
+      "id": "practical-ai-rss",
+      "kind": "podcast_feed",
+      "url": "https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm",
+      "catalog_source_sha256": "3940e087c4aa8e70df79300f3f8482895bd03ff43ccff602a6bfc89111039e3b",
+      "link_basis": "Captured Practical AI catalog link rel=alternate type=application/rss+xml",
+      "status": "unavailable",
+      "checked_at": "2026-09-28T19:23:35.050Z",
+      "reason": "response_too_large:1802240>1800000"
+    },
+    {
+      "id": "ibm-XN3xNJvWXsc",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=XN3xNJvWXsc",
+      "catalog_source_sha256": "ed8200f8359d5bf841909b2cf5ebdedbb084658b1ac52c00c7ebce362e7ced13",
+      "link_basis": "Captured IBM Technology catalog full-video link",
+      "status": "retrieved",
+      "resolved_url": "https://www.youtube.com/watch?v=XN3xNJvWXsc",
+      "checked_at": "2026-09-28T19:23:36.418Z",
+      "source_content_sha256": "fbe586e0b85b6b97b894912e57c79e5d34a085b6403f96db82831893b32755f9"
+    },
+    {
+      "id": "ibm-UabBYexBD4k",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=UabBYexBD4k",
+      "catalog_source_sha256": "ed8200f8359d5bf841909b2cf5ebdedbb084658b1ac52c00c7ebce362e7ced13",
+      "link_basis": "Captured IBM Technology catalog full-video link",
+      "status": "retrieved",
+      "resolved_url": "https://www.youtube.com/watch?v=UabBYexBD4k",
+      "checked_at": "2026-09-28T19:23:37.191Z",
+      "source_content_sha256": "4baa186a6e23f2dd4919686347419878a443a98e1432c11afa9cc215ebfe8d8b"
+    },
+    {
+      "id": "ibm-_ZqSFVi6UDY",
+      "kind": "video",
+      "url": "https://www.youtube.com/watch?v=_ZqSFVi6UDY",
+      "catalog_source_sha256": "ed8200f8359d5bf841909b2cf5ebdedbb084658b1ac52c00c7ebce362e7ced13",
+      "link_basis": "Captured IBM Technology catalog full-video link",
+      "status": "retrieved",
+      "resolved_url": "https://www.youtube.com/watch?v=_ZqSFVi6UDY",
+      "checked_at": "2026-09-28T19:23:37.842Z",
+      "source_content_sha256": "658e1813c1aee6ab55f9fb203c4f7404ef15c7f09a03e6e39c5400d57458ca01"
+    }
+  ],
+  "frozen_article_evidence_unchanged": true,
+  "semantic_receipt_unchanged": true,
+  "media_ready": false,
+  "production_mutation": false
+}
