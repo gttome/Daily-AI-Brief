@@ -311,6 +311,14 @@
           }
         }
       ]
+    },
+    "article_freshness_policy": {
+      "type": "string",
+      "enum": [
+        "article-24-72-168-v1",
+        "article-24-72-skills168-v1"
+      ],
+      "description": "Optional article-policy identity. Absence preserves the historical ordinary-72/Skills-168 interpretation; runtime validation enforces age and disclosure."
     }
   },
   "$defs": {
@@ -677,6 +685,36 @@
                 "type": "string",
                 "minLength": 1
               }
+            }
+          }
+        },
+        "freshness": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": [
+            "tier",
+            "source_published_at"
+          ],
+          "properties": {
+            "tier": {
+              "enum": [
+                "primary",
+                "fallback"
+              ]
+            },
+            "source_published_at": {
+              "type": "string",
+              "format": "date-time"
+            },
+            "fallback_band": {
+              "enum": [
+                "normal",
+                "extended"
+              ]
+            },
+            "fallback_reason": {
+              "type": "string",
+              "minLength": 1
             }
           }
         }

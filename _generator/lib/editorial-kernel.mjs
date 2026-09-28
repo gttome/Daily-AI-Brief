@@ -1,3 +1,4 @@
+import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness} from './article-freshness.mjs';
 import {sha256,normalizeUrl} from './util.mjs';
 import {MULTI_PODCAST_EFFECTIVE_DATE} from './podcasts.mjs';
 
@@ -63,6 +64,8 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
  const researchCutoffAt=metadataCandidates.cutoff;
  if(!Number.isFinite(Date.parse(researchCutoffAt||''))||!String(researchCutoffAt).startsWith(normalized.brief_date))throw Error('Verified same-date research cutoff required from metadata gate');
  const metadataById=new Map(metadataCandidates.candidates.map(item=>[item.candidate_id,item]));
+ const currentFreshness=metadataCandidates.article_freshness_policy===ARTICLE_FRESHNESS_POLICY;
+ if(metadataCandidates.article_freshness_policy&&![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(metadataCandidates.article_freshness_policy))throw Error('unknown_article_freshness_policy');
  let fallbackUsed=false;
  const stories=normalized.stories.map(story=>{
   const fact=candidateFacts[story.candidate_id],image=imageAssets[story.candidate_id],metadata=metadataById.get(story.candidate_id);
@@ -71,10 +74,12 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
   if(normalizeUrl(fact.source?.url)!==story.source_url)throw Error(`Kernel source does not match reviewed candidate evidence: ${story.candidate_id}`);
   if(normalizeUrl(metadata.canonical_url)!==story.source_url)throw Error(`Kernel source does not match bounded metadata candidate: ${story.candidate_id}`);
   if(!/^\d{4}-\d{2}-\d{2}$/.test(fact.event_date||''))throw Error(`Verified event date required: ${story.candidate_id}`);
-  const sourcePublishedAt=metadata.published_at||metadata.metadata_event_at;
+  const sourcePublishedAt=currentFreshness?metadata.published_at:metadata.published_at||metadata.metadata_event_at;
   const publishedMs=Date.parse(sourcePublishedAt||''),cutoffMs=Date.parse(researchCutoffAt);
   if(!Number.isFinite(publishedMs)||publishedMs>cutoffMs)throw Error(`Verified pre-cutoff source timestamp required: ${story.candidate_id}`);
   const ageHours=(cutoffMs-publishedMs)/3600000;
+  const checkedFreshness=articleFreshness(sourcePublishedAt,researchCutoffAt,{policy:currentFreshness?ARTICLE_FRESHNESS_POLICY:LEGACY_ARTICLE_FRESHNESS_POLICY,agentSkill:story.agent_skill===true});
+  if(!checkedFreshness)throw Error(`Article exceeds policy freshness ceiling: ${story.candidate_id}`);
   const freshnessTier=ageHours<=24?'primary':'fallback';
   if(freshnessTier==='fallback')fallbackUsed=true;
   const freshness=freshnessTier==='primary'
@@ -82,6 +87,11 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
    :{tier:'fallback',source_published_at:sourcePublishedAt,fallback_reason:story.agent_skill===true&&ageHours>72
       ?'Outside the 24-hour primary window; included under the documented Agent Skills recency exception after bounded review.'
       :'Outside the 24-hour primary window; included under the documented recency fallback after bounded review.'};
+  if(currentFreshness&&freshnessTier==='fallback'){
+   if(!str(story.fallback_reason,30))throw Error(`Specific editorial fallback_reason required: ${story.candidate_id}`);
+   freshness.fallback_band=checkedFreshness.fallback_band;
+   freshness.fallback_reason=story.fallback_reason.trim();
+  }
   const storySlug=slug(story.headline),idSuffix=sha256(`${normalized.brief_date}|${story.candidate_id}`).slice(0,8);
   const imageHost=normalized.brief_date>='2026-09-19'?'https://gttome.github.io/Daily-AI-Brief/':'https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/';
   const publicImage=`${imageHost}${image.path}${image.cache_key?`?v=${encodeURIComponent(image.cache_key)}`:''}`;
@@ -92,7 +102,7 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
   return {story_id:`dab-story-${normalized.brief_date}-${idSuffix}`,ordinal:story.canonical_ordinal,slug:storySlug,permanent_url:`/stories/${normalized.brief_date}/${storySlug}/`,focus:story.focus,headline:story.headline,event_date:fact.event_date,topics:[...story.topic_labels],companies:[...(fact.companies||[])],image:{path:image.path,public_url:publicImage,alt:image.alt,width:image.width||1200,height:image.height||630,kind:image.kind||'editorial_explainer',...(image.cache_key?{cache_key:image.cache_key}:{})},summary:story.summary,why_it_matters:story.why_it_matters,source:{title:fact.source.title,organization:fact.source.organization,url:story.source_url,normalized_url:story.source_url,publication_date:fact.source.publication_date??sourcePublishedAt.slice(0,10),evidence_type:fact.source.evidence_type,availability_status:fact.source.availability_status,...(sourceReading?{reading_evidence:sourceReading}:{})},freshness,selection_rationale:selectionRationale,novelty:fact.novelty?{...fact.novelty}:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:candidateScore,what_to_do_now:{...story.what_to_do_now},social_description:story.why_it_matters.slice(0,180),social:{title:story.headline,description:story.why_it_matters.slice(0,180),image_url:publicImage}};
  });
  const canonicalCoverage=`24-hour primary window ending at ${researchCutoffAt}${fallbackUsed?'; recency fallback used for reviewed items outside the primary window.':'.'}`;
- const base={schema_version:'1.0.0',policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
+ const base={schema_version:'1.0.0',...(currentFreshness?{article_freshness_policy:ARTICLE_FRESHNESS_POLICY}:{}),policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
  if(normalized.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE){
   const publishablePodcasts=Array.isArray(media?.podcasts)?media.podcasts.filter(item=>item?.status==='included'):[];
   return {...base,podcasts:publishablePodcasts};

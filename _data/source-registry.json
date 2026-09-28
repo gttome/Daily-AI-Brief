@@ -495,7 +495,7 @@
       "discovery_endpoint": null,
       "candidate_yield": null,
       "status": "retrieval_limited",
-      "access_limitations": "HTTP 200; insufficient usable catalog",
+      "access_limitations": "D05 saved feed https://blog.adobe.com/feed.xml returned HTTP 404; not operational.",
       "retrieved_link_count": 8,
       "publisher_linked_feed_leads": [
         "https://blog.adobe.com/feed.xml"
@@ -505,7 +505,7 @@
       "source_id": "notion",
       "owner": "Notion",
       "canonical_url": "https://www.notion.com/blog",
-      "format": "article",
+      "format": "rss",
       "audience": [
         "knowledge_worker"
       ],
@@ -517,10 +517,17 @@
       "evidence_class": "publisher_authored",
       "expected_cadence": "varies",
       "last_successful_retrieval": null,
-      "discovery_endpoint": null,
+      "discovery_endpoint": "https://www.notion.com/releases/rss.xml",
       "candidate_yield": null,
-      "status": "pending_validation",
-      "access_limitations": "HTTPError"
+      "status": "active",
+      "access_limitations": "Dated RSS extraction verified; no guaranteed fresh yield.",
+      "verification": {
+        "policy_change": "article-24-72-168-v1",
+        "evidence_workflow": "36453175805",
+        "checked_at": "2026-09-28T16:44:33.903Z",
+        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
+        "limitation": "Explicit GMT+0000 publication dates with a parenthetical UTC name; captured latest entry September 15 is outside seven days."
+      }
     },
     {
       "source_id": "zapier",
@@ -563,8 +570,8 @@
       "last_successful_retrieval": null,
       "discovery_endpoint": null,
       "candidate_yield": null,
-      "status": "pending_validation",
-      "access_limitations": "HTTPError"
+      "status": "retrieval_limited",
+      "access_limitations": "D05 automated collector returned HTTP 403; no bypass or operational-feed claim."
     },
     {
       "source_id": "salesforce",
@@ -609,8 +616,8 @@
       "last_successful_retrieval": null,
       "discovery_endpoint": null,
       "candidate_yield": null,
-      "status": "pending_validation",
-      "access_limitations": "HTTPError"
+      "status": "retrieval_limited",
+      "access_limitations": "D05 catalog links retrieved; sampled article dates unresolved. Not story-ready supply."
     },
     {
       "source_id": "acl-anthology",
@@ -976,6 +983,33 @@
       "candidate_yield": null,
       "status": "retrieval_limited",
       "access_limitations": "Channel URL was checked but returned boilerplate or a retrieval failure; current uploads, channel ID and runtime could not be verified. Not counted as active coverage."
+    },
+    {
+      "source_id": "n8n-rss",
+      "owner": "n8n",
+      "canonical_url": "https://blog.n8n.io/",
+      "discovery_endpoint": "https://blog.n8n.io/rss/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "status": "active",
+      "verification": {
+        "policy_change": "article-24-72-168-v1",
+        "evidence_workflow": "36450645680",
+        "checked_at": "2026-09-28T16:23:27.848Z",
+        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
+        "limitation": "D05 dated samples are older than seven days; apply live freshness and novelty gates."
+      },
+      "audience": [
+        "knowledge_worker"
+      ],
+      "focus_tags": [
+        "agents",
+        "knowledge_work"
+      ],
+      "expected_cadence": "varies",
+      "last_successful_retrieval": null,
+      "candidate_yield": null
     }
   ],
   "targets": {

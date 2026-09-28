@@ -62,6 +62,7 @@ function canonicalStory(story, edition) {
     topics: story.topics,
     companies: story.companies || [story.source.organization].filter(Boolean),
     normalized_urls: [story.source.normalized_url],
+    ...(story.freshness?.fallback_band?{freshness:story.freshness}:{}),
     source_title: story.source.title,
     source_organization: story.source.organization,
     source_url: story.source.url,

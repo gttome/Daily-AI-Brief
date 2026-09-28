@@ -27,11 +27,23 @@
   },
   "freshness": {
     "prefer_hours": 24,
-    "ordinary_fallback_hours": 72,
+    "ordinary_fallback_hours": 168,
     "agent_skills_exception_days": 7,
     "novelty_window_days": 30,
     "authoritative_primary_sources_preferred": true,
-    "agent_skills_updated_at_requires_material_change_verification": true
+    "agent_skills_updated_at_requires_material_change_verification": true,
+    "policy_id": "article-24-72-168-v1",
+    "normal_fallback_hours": 72,
+    "selection_order": [
+      "primary",
+      "normal_fallback",
+      "extended_fallback"
+    ],
+    "extended_fallback_label": "Extended recency fallback",
+    "publication_timestamp_preserved": true,
+    "modified_timestamp_is_not_publication": true,
+    "historical_missing_policy": "ordinary 72 hours; Agent Skills 168 hours",
+    "media_rules_changed": false
   },
   "research": {
     "metadata_candidates_max": 20,

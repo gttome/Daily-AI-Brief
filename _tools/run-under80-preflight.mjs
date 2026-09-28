@@ -46,8 +46,9 @@ try{
   '--out',metadataPath,
   '--limit',String(request.metadata_candidate_limit||20),
   '--cutoff',new Date(cutoff).toISOString(),
-  '--ordinary-max-age-hours',String(request.ordinary_max_age_hours||72),
-  '--skill-max-age-hours',String(request.agent_skills_max_age_hours||168)
+  '--ordinary-max-age-hours',String(request.ordinary_max_age_hours||168),
+  '--skill-max-age-hours',String(request.agent_skills_max_age_hours||168),
+  '--article-freshness-policy',request.article_freshness_policy||'article-24-72-168-v1'
  ],{cwd:process.cwd(),env,encoding:'utf8',stdio:['ignore','pipe','pipe']}).trim();
 }catch(e){
  error={message:e.message,stderr:String(e.stderr||'').slice(0,4000),stdout:String(e.stdout||'').slice(0,4000)};

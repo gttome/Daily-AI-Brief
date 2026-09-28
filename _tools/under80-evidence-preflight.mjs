@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
+import {balancedArticleEvidencePlan} from '../_generator/lib/article-freshness.mjs';
 import path from 'node:path';
 import {parseArgs,sha256} from '../_generator/lib/util.mjs';
 import {retrieveSource,compactDiscoveryHtml} from './discovery-links.mjs';
@@ -13,18 +14,7 @@ const focuses=['technical_ai_engineering','applied_genai_knowledge_workers','age
 const preferred=gate.preferred_agent_skill_candidate_id||gate.candidates.find(x=>x.agent_skill_story_ready)?.candidate_id||null;
 if(!preferred)throw Error('preferred_agent_skill_candidate_required');
 
-const byFocus=new Map(focuses.map(f=>[f,gate.candidates.filter(x=>x.focus_hint===f&&x.background_only!==true&&x.production_novelty_eligible!==false).sort((a,b)=>(b.prefilter_score||0)-(a.prefilter_score||0)||String(a.candidate_id).localeCompare(String(b.candidate_id)))]));
-const plan=[];
-for(const focus of focuses){
- const pool=byFocus.get(focus);
- if(focus==='agents_non_technical_people'){
-  const skill=pool.find(x=>x.candidate_id===preferred);
-  if(!skill)throw Error('preferred_agent_skill_candidate_not_in_agent_focus');
-  plan.push(skill);
-  for(const item of pool)if(plan.filter(x=>x.focus_hint===focus).length<3&&item.candidate_id!==preferred)plan.push(item);
- }else plan.push(...pool.slice(0,3));
-}
-if(plan.length!==9||focuses.some(f=>plan.filter(x=>x.focus_hint===f).length!==3))throw Error('nine_candidate_balanced_review_plan_required');
+const plan=balancedArticleEvidencePlan(gate);
 
 const clean=value=>String(value||'')
  .replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,' ')
@@ -73,7 +63,7 @@ if(chars>11000){
  chars=JSON.stringify(modelVisible).length;
 }
 const ready=retrieved.length===9&&focuses.every(f=>focusCounts[f]===3)&&retrieved.some(x=>x.candidate_id===preferred&&x.agent_skill_story_ready===true)&&chars<=12000;
-const evidence={schema_version:'1.0.0',profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,review_plan_count:plan.length,preferred_agent_skill_candidate_id:preferred,model_visible_chars:chars,model_visible:modelVisible};
+const evidence={schema_version:'1.0.0',article_freshness_policy:gate.article_freshness_policy||null,profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,review_plan_count:plan.length,preferred_agent_skill_candidate_id:preferred,model_visible_chars:chars,model_visible:modelVisible};
 const receipt={schema_version:'1.0.0',profile_id:'under80-v1',stage:'deterministic_article_evidence_preflight',execution_owner:'github_actions',model_calls:0,network_retrievals:plan.length,retrieved:retrieved.length,focus_counts:focusCounts,preferred_agent_skill_candidate_id:preferred,model_visible_chars:chars,evidence_sha256:sha256(JSON.stringify(evidence)),ready,failures:records.filter(x=>x.retrieval_status!=='retrieved').map(x=>({candidate_id:x.candidate_id,reason:x.reason}))};
 fs.mkdirSync(path.dirname(path.resolve(args.out)),{recursive:true});
 fs.writeFileSync(path.resolve(args.out),JSON.stringify(evidence,null,2)+'\n');

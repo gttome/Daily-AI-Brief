@@ -141,7 +141,7 @@ export function publicationDatePrecision(value){
 }
 export function publicationTimestamp(value){
  if(typeof value!=='string'||!value.trim())return null;
- const v=value.trim();
+ const v=value.trim().replace(/(GMT[+-]\d{4})\s+\([A-Za-z ]+\)$/, '$1');
  if(/^\d{4}-\d{2}-\d{2}$/.test(v)){
   const stamp=Date.parse(v+'T00:00:00Z');return Number.isFinite(stamp)&&new Date(stamp).toISOString().slice(0,10)===v?new Date(stamp).toISOString():null;
  }

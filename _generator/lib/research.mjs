@@ -1,11 +1,13 @@
 import fs from 'node:fs';
+import {compareArticleFreshness} from './article-freshness.mjs';
+export {ARTICLE_FRESHNESS_POLICY,ARTICLE_EXTENDED_FALLBACK_HOURS} from './article-freshness.mjs';
 import path from 'node:path';
 import {normalizeUrl, sha256} from './util.mjs';
 
 export const RESEARCH_VERSION = 'efficiency-phase-2-v1';
 export const FOCUSES = ['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
 export const PRIMARY_FRESHNESS_HOURS = 24;
-export const DEFAULT_FALLBACK_HOURS = 72;
+export const DEFAULT_FALLBACK_HOURS = 72; // Legacy ordinary ceiling; current article policy uses ARTICLE_EXTENDED_FALLBACK_HOURS.
 export const AGENT_SKILLS_FALLBACK_HOURS = 168;
 export const DEFAULT_METADATA_CANDIDATE_LIMIT = 20;
 export const DEFAULT_DEEP_CANDIDATE_TARGET = 9;
@@ -195,7 +197,7 @@ export async function runSelectiveResearch(candidates, {now,cache,fetcher,review
   const score=c=>Number.isFinite(c.preliminary_score)?c.preliminary_score:Number.isFinite(c.candidate_score?.total)?c.candidate_score.total:Number.isFinite(c.score)?c.score:0;
   const queues=FOCUSES.map(f=>[
     ...plan.fresh.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a)),
-    ...plan.fallback.filter(c=>c.focus===f).sort((a,b)=>score(b)-score(a))
+    ...plan.fallback.filter(c=>c.focus===f).sort((a,b)=>compareArticleFreshness(a,b,now)||score(b)-score(a))
   ]);
   const ranked=[];
   while(queues.some(q=>q.length))for(const queue of queues)if(queue.length)ranked.push(queue.shift());

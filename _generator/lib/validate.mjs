@@ -1,3 +1,4 @@
+import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness} from './article-freshness.mjs';
 import {EXPECTED_FOCUS_ORDER, TIMEZONE} from './constants.mjs';
 import {PRIMARY_FRESHNESS_HOURS, DEFAULT_FALLBACK_HOURS, AGENT_SKILLS_FALLBACK_HOURS} from './research.mjs';
 import {editionPodcasts,MULTI_PODCAST_EFFECTIVE_DATE,validatePodcastDiversity} from './podcasts.mjs';
@@ -20,6 +21,8 @@ export function validateEdition(edition) {
   if (edition.timezone !== TIMEZONE) errors.push(`timezone must be ${TIMEZONE}`);
   if (edition.edition_id !== `dab-edition-${edition.brief_date}`) errors.push('edition_id must match brief_date');
   if (!Array.isArray(edition.stories) || edition.stories.length !== 6) errors.push('edition must contain exactly six stories');
+  const currentArticlePolicy=edition.article_freshness_policy===ARTICLE_FRESHNESS_POLICY;
+  if(edition.article_freshness_policy&&![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(edition.article_freshness_policy))errors.push('unknown article freshness policy');
   const freshnessRequired=edition.brief_date>='2026-09-16';
   const cutoff=time(edition.research_cutoff_at);
   if(freshnessRequired){
@@ -60,6 +63,7 @@ export function validateEdition(edition) {
     if(freshnessRequired){
       const f=story.freshness;
       if(!f||!['primary','fallback'].includes(f.tier))errors.push(`${label}.freshness.tier must be primary or fallback`);
+      if(currentArticlePolicy&&f?.tier==='primary'&&f.fallback_band!=null)errors.push(`${label}.freshness primary must not have fallback_band`);
       const published=time(f?.source_published_at);
       if(!Number.isFinite(published))errors.push(`${label}.freshness.source_published_at must be a verified timestamp`);
       else if(Number.isFinite(cutoff)){
@@ -70,7 +74,12 @@ export function validateEdition(edition) {
           fallbackCount++;
           requireText(f.fallback_reason,`${label}.freshness.fallback_reason`);
           if(ageHours<=PRIMARY_FRESHNESS_HOURS)errors.push(`${label}.freshness fallback is still inside the primary window`);
-          const maxHours=agentSkillsStory(story)?AGENT_SKILLS_FALLBACK_HOURS:DEFAULT_FALLBACK_HOURS;
+          const maxHours=currentArticlePolicy||agentSkillsStory(story)?AGENT_SKILLS_FALLBACK_HOURS:DEFAULT_FALLBACK_HOURS;
+          if(currentArticlePolicy){
+            const expected=articleFreshness(f.source_published_at,edition.research_cutoff_at);
+            if(!expected||f.fallback_band!==expected.fallback_band)errors.push(`${label}.freshness fallback_band must match actual age`);
+            if(typeof f.fallback_reason!=='string'||f.fallback_reason.trim().length<30)errors.push(`${label}.freshness fallback_reason must be specific`);
+          }
           if(ageHours>maxHours)errors.push(`${label}.freshness fallback exceeds ${maxHours} hours`);
         }
       }

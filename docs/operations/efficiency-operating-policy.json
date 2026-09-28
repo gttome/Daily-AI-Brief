@@ -255,5 +255,22 @@
     "result_path_pattern": "_records/qualification/YYYY-MM-DD-QN/result.json",
     "graduation_requires_one_real_production_public_closed": true,
     "zero_work_observability_note": "Repository evidence can prove GitHub Actions/model-call ownership and zero paid API configuration; ChatGPT account Work-credit balances are external platform telemetry and must not be inferred."
+  },
+  "article_freshness": {
+    "policy_id": "article-24-72-168-v1",
+    "prefer_hours": 24,
+    "normal_fallback_hours": 72,
+    "ordinary_fallback_hours": 168,
+    "agent_skills_exception_days": 7,
+    "selection_order": [
+      "primary",
+      "normal_fallback",
+      "extended_fallback"
+    ],
+    "extended_fallback_label": "Extended recency fallback",
+    "publication_timestamp_preserved": true,
+    "modified_timestamp_is_not_publication": true,
+    "historical_missing_policy": "ordinary 72 hours; Agent Skills 168 hours",
+    "media_rules_changed": false
   }
 }
