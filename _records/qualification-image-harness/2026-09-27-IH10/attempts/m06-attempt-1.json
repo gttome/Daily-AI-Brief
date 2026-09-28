@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m06",
+  "attempt": 1,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS"
+  ],
+  "image_sha256": "0be34f8fd066b27001f4d19d863c9ebe5b1b6ab2c06ccef5db63b60c905bd0cf",
+  "rematerialized_sha256": "0be34f8fd066b27001f4d19d863c9ebe5b1b6ab2c06ccef5db63b60c905bd0cf",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 2256903,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_2ef823a259108191b4c71ab4515202fd",
+  "library_path": "/Daily AI Brief Qualification Images/m06/IH10-m06-attempt-1.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image is clearly about Microsoft Copilot organized around Home, Code and Autopilot, with Home showing Chat/Cowork/Office, Code referencing GitHub Copilot technology, and Autopilot framed as persistent work. No harness/status/Q/publication contamination is visible."
+    },
+    "factual_support": {
+      "pass": false,
+      "evidence": "The image introduces product-behavior prose not present in the frozen m06 evidence, including 'Ask, explore, and create together with AI', 'Collaborate with people and AI in one place', 'Autopilot helps you move from ideas to outcomes with persistent work', and 'Keep progress moving, even when you’re on to something else.' It also omits the exact essential label 'Chat + Cowork' as a single label."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Three-capability system view is coherent, readable and sufficiently detailed, with clear relationships among Home, Code and Autopilot."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional white-background editorial/textbook composition with strong hierarchy, consistent iconography, and polished layout."
+    }
+  },
+  "first_failed_gate": "FACTUAL_SUPPORT_PASS",
+  "failure_code": "qualification_image_unsupported_product_behavior_text",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "next_smallest_verified_correction": "Fresh m06 attempt using the same story subject and composition intent, but visible text must be restricted to the essential labels plus short generic non-factual headings only; prohibit explanatory product-behavior sentences not verbatim supported by frozen evidence."
+}
