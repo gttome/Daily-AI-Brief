@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.11.0",
+  "schema_version": "1.12.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -472,6 +472,30 @@
     "novelty_gate_unchanged": true,
     "minimum_focus_coverage_unchanged": 3,
     "agent_skills_gate_unchanged": true,
+    "production_mutation": false
+  },
+  "qualification_q15_applied_source_supply": {
+    "qualification_only": true,
+    "q15_observed_coverage": {
+      "technical_ai_engineering": 9,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 3
+    },
+    "q15_cutoff": "2026-09-28T03:10:00Z",
+    "q14_date_precision_control_preserved": true,
+    "q14_precision_attempted": 17,
+    "q14_precision_resolved": 9,
+    "ordinary_freshness_hours_unchanged": 72,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "recurring_applied_catalogs": [
+      "microsoft-techcommunity-copilot-applied",
+      "microsoft-techcommunity-finops-ai",
+      "microsoft-techcommunity-skills-hub"
+    ],
+    "recurring_catalogs_not_dated_pins": true,
     "production_mutation": false
   }
 }

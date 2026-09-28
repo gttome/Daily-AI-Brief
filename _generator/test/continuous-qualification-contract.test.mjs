@@ -215,3 +215,31 @@ test('Q14 hardening corrects date precision without weakening freshness or focus
     assert.equal(s.q14_hardening,true);
   }
 });
+
+test('Q15 hardening restores recurring Applied source supply without weakening gates',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const p=JSON.parse(fs.readFileSync('_data/preflight-source-plan.json','utf8'));
+  const q=c.qualification_q15_applied_source_supply;
+  assert.equal(q.qualification_only,true);
+  assert.deepEqual(q.q15_observed_coverage,{technical_ai_engineering:9,applied_genai_knowledge_workers:1,agents_non_technical_people:3});
+  assert.equal(q.q14_date_precision_control_preserved,true);
+  assert.equal(q.q14_precision_resolved,9);
+  assert.equal(q.ordinary_freshness_hours_unchanged,72);
+  assert.equal(q.classification_gate_unchanged,true);
+  assert.equal(q.novelty_gate_unchanged,true);
+  assert.equal(q.minimum_focus_coverage_unchanged,3);
+  assert.equal(q.agent_skills_gate_unchanged,true);
+  assert.equal(q.recurring_catalogs_not_dated_pins,true);
+  assert.equal(q.production_mutation,false);
+  assert.equal(q.recurring_applied_catalogs.length,3);
+  for(const id of q.recurring_applied_catalogs){
+    const s=p.sources.find(x=>x.source_id===id);
+    assert.ok(s,id);
+    assert.equal(s.status,'active');
+    assert.equal(s.evidence_class,'publisher_authored');
+    assert.equal(s.focus_hint,'applied_genai_knowledge_workers');
+    assert.equal(s.q15_hardening,true);
+    assert.equal(s.pinned_candidate,undefined);
+    assert.match(s.discovery_endpoint,/^https:\/\/techcommunity\.microsoft\.com\//);
+  }
+});

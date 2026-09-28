@@ -394,6 +394,39 @@
       "focus_hint": "agents_non_technical_people",
       "purpose": "Recurring first-party Copilot agentic-AI catalog; final focus classification remains subject to the unchanged metadata gate.",
       "q14_hardening": true
+    },
+    {
+      "source_id": "microsoft-techcommunity-copilot-applied",
+      "owner": "Microsoft Community Hub — Microsoft Copilot",
+      "discovery_endpoint": "https://techcommunity.microsoft.com/category/microsoft-copilot",
+      "status": "active",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "purpose": "Recurring first-party Microsoft Copilot business and workforce updates for Applied GenAI qualification breadth.",
+      "q15_hardening": true
+    },
+    {
+      "source_id": "microsoft-techcommunity-finops-ai",
+      "owner": "Microsoft Community Hub — FinOps for AI",
+      "discovery_endpoint": "https://techcommunity.microsoft.com/category/ai-finops/blog/ai-finops-blog",
+      "status": "active",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "purpose": "Recurring first-party AI value, spend, and business-impact updates for Applied GenAI qualification breadth.",
+      "q15_hardening": true
+    },
+    {
+      "source_id": "microsoft-techcommunity-skills-hub",
+      "owner": "Microsoft Community Hub — Skills Hub",
+      "discovery_endpoint": "https://techcommunity.microsoft.com/category/skills-hub/blog/skills-hub-blog",
+      "status": "active",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "purpose": "Recurring first-party Copilot adoption and AI-at-work learning updates for knowledge-worker qualification breadth; generic workforce-skills content remains subject to the unchanged Agent Skills guard.",
+      "q15_hardening": true
     }
   ]
 }
