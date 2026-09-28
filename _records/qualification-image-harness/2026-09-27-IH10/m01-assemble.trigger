@@ -1,3 +1,0 @@
-IH10 m01 exact-byte assembly
-expected_sha256=7e7b69e19c9dc2533b8ea3e179d8c3bd05e42ecb7b17d232748bc413233cb4ea
-expected_size=1008672
