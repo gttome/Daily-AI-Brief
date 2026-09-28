@@ -1,0 +1,83 @@
+name: Qualification feed identity and freshness diagnostic
+on:
+  push:
+    branches: ['qualification-diagnostic/2026-09-28-D03']
+    paths: ['.github/workflows/qualification-feed-detail.yml']
+permissions:
+  contents: write
+concurrency:
+  group: qualification-feed-detail-D03
+  cancel-in-progress: false
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Compare exact registered descriptor and feed publication ages
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import {createHash} from 'node:crypto';
+          import {retrieveSource,extractCandidateMetadata,compactDiscoveryHtml,cleanText,publicationTimestamp} from './_tools/discovery-links.mjs';
+          const id='2026-09-28-D03';
+          if(process.env.GITHUB_REF_NAME!=='qualification-diagnostic/'+id)throw Error('wrong_diagnostic_branch');
+          const dir='_records/qualification-feed-detail/'+id;
+          if(fs.existsSync(dir+'/report.json'))throw Error('diagnostic_already_terminal');
+          fs.mkdirSync(dir,{recursive:true});
+          const plan=JSON.parse(fs.readFileSync('_data/preflight-source-plan.json'));
+          const source=plan.sources.find(x=>x.source_id==='google-workspace-feed');
+          if(!source||source.discovery_endpoint!=='https://workspaceupdates.googleblog.com/atom.xml')throw Error('source_identity_changed');
+          const observed=Date.now(),report={schema_version:'1.0.0',diagnostic_id:id,workflow_run_id:process.env.GITHUB_RUN_ID,started_at:new Date(observed).toISOString(),production_mutation:false,qualification_pass:false,semantic_pass_started:false,model_calls:0,source_descriptor:source,probes:[]};
+          const originCounts=urls=>{const counts={};for(const raw of urls){try{const u=new URL(raw);const key=u.protocol+'//'+u.host;counts[key]=(counts[key]||0)+1;}catch{counts.invalid=(counts.invalid||0)+1;}}return counts;};
+          const summary=items=>{
+            const ai=items.filter(x=>/agent|AI|chatgpt|gpt|codex|context|retrieval|evaluation|copilot|gemini|claude|skill|prompt|LLM/i.test(x.headline||''));
+            const dated=ai.map(x=>Date.parse(x.published_at)).filter(Number.isFinite);
+            return {extracted:items.length,ai_candidates:ai.length,dated_ai:dated.length,fresh_ai_72h:dated.filter(t=>observed>=t&&observed-t<=72*3600000).length,newest_ai_publication:dated.length?new Date(Math.max(...dated)).toISOString():null,oldest_ai_publication:dated.length?new Date(Math.min(...dated)).toISOString():null,article_origins:originCounts(ai.map(x=>x.canonical_url))};
+          };
+          const endpoints=[
+            {label:'registered_endpoint',url:source.discovery_endpoint},
+            {label:'unverified_same_publisher_redirect_false_variant',url:'https://workspaceupdates.googleblog.com/feeds/posts/default?alt=atom&max-results=25&redirect=false'}
+          ];
+          for(const endpoint of endpoints){
+            try{
+              const r=await retrieveSource(endpoint.url,{maxResponseBytes:1500000,maxNormalizedChars:900000});
+              const raw=extractCandidateMetadata(r.text,r.url,source),compact=extractCandidateMetadata(compactDiscoveryHtml(r.text),r.url,source);
+              const missing={...source};delete missing.discovery_endpoint;
+              const links=[],originals=[],dates=[];
+              for(const entry of r.text.matchAll(/<(item|entry)\b[^>]*>([\s\S]*?)<\/\1\s*>/gi)){
+                const block=entry[2];
+                for(const m of block.matchAll(/<link\b([^>]*)>([^<]*)|<link\b([^>]*)\/?\s*>/gi)){
+                  const attrs=m[1]||m[3]||'';
+                  const href=attrs.match(/\bhref=["']([^"']+)["']/i)?.[1];
+                  const rel=attrs.match(/\brel=["']([^"']+)["']/i)?.[1];
+                  if(!rel||rel==='alternate'){const value=href||cleanText(m[2]);if(value)links.push(value);}
+                }
+                for(const m of block.matchAll(/<feedburner:origLink\b[^>]*>([\s\S]*?)<\/feedburner:origLink>/gi))originals.push(cleanText(m[1]));
+                for(const m of block.matchAll(/<(pubDate|published)\b[^>]*>([^<]+)<\/\1>/gi)){const value=publicationTimestamp(cleanText(m[2]));if(value)dates.push(value);}
+              }
+              report.probes.push({label:endpoint.label,requested_url:endpoint.url,resolved_url:r.url,body_sha256:createHash('sha256').update(r.text).digest('hex'),entry_count:(r.text.match(/<(item|entry)\b/gi)||[]).length,alternate_link_origins:originCounts(links),feedburner_original_link_count:originals.length,original_link_origins:originCounts(originals),feed_newest_publication:dates.sort().at(-1)||null,feed_oldest_publication:dates.at(0)||null,actual_descriptor_raw:summary(raw),actual_descriptor_compact:summary(compact),missing_descriptor_raw:summary(extractCandidateMetadata(r.text,r.url,missing)),result:'checked'});
+            }catch(e){report.probes.push({label:endpoint.label,result:'unavailable',error:e.message});}
+            fs.writeFileSync(dir+'/report.json',JSON.stringify(report,null,2)+'\n');
+          }
+          report.completed_at=new Date().toISOString();report.result='diagnostic_complete';fs.writeFileSync(dir+'/report.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));
+          NODE
+      - name: Preserve diagnostic report
+        if: always()
+        run: |
+          set -euo pipefail
+          report='_records/qualification-feed-detail/2026-09-28-D03/report.json'
+          test -f "$report"
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add -- "$report"
+          if ! git diff --cached --quiet; then
+            git commit -m 'Preserve D03 registered feed identity and freshness evidence'
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
