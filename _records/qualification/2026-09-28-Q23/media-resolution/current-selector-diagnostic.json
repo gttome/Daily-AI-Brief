@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "isolated deterministic selector diagnostic, not editorial approval",
+  "run_id": "2026-09-28-Q23",
+  "baseline_sha": "cad5da83752a36b6bd59f26e0800bbde7c7f7ef3",
+  "workflow_run_id": 36474976174,
+  "observed_at": "2026-09-28T19:50:30.323Z",
+  "candidate_published_at": "2026-09-28T11:00:00Z",
+  "qualification_cutoff": "2026-09-28T19:10:36Z",
+  "actual_age_hours": 8.176666666666666,
+  "selector_date_argument": "2026-09-28",
+  "selected_count": 0,
+  "same_day_candidate_retained": false,
+  "raw_selector_result": {
+    "selected": [],
+    "target": 2,
+    "restricted_show": "The AI Daily Brief",
+    "restricted_show_count": 0,
+    "source_diverse": true,
+    "primary_age_days": 2,
+    "fallback_age_days": 7,
+    "exception_age_days": 30
+  },
+  "publication_timestamp_modified": false,
+  "source_code_modified": false,
+  "media_ready": false
+}
