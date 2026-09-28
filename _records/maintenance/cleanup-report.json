@@ -3756,7 +3756,68 @@
       "archive_ref": null
     }
   ],
-  "results": [],
-  "status": "planned",
-  "updated_at": "2026-09-28T15:16:21.352Z"
+  "results": [
+    {
+      "branch": "chore/retire-feedback-textbook-images-20260908",
+      "sha": "077f0efe20f520f0cd4044bffe292dbed6e8a693",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/chore/retire-feedback-textbook-images-20260908"
+    },
+    {
+      "branch": "docs/align-saved-publisher-policy",
+      "sha": "955fe6472d0c55789364a5398a3152f15d7d99a5",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/align-saved-publisher-policy"
+    },
+    {
+      "branch": "docs/command-center-handoff",
+      "sha": "dbd9cf98589775f9edb1e6feb1174903cd4b111f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/command-center-handoff"
+    },
+    {
+      "branch": "docs/command-center-handoff-date-fix",
+      "sha": "44ef899fc55da34c271741f023dbab1b4367294b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/command-center-handoff-date-fix"
+    },
+    {
+      "branch": "docs/high-end-living-operations-2026-09-26",
+      "sha": "7e940fe5380640548d62248e0557369268513685",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/high-end-living-operations-2026-09-26"
+    },
+    {
+      "branch": "docs/living-system-operations-2026-09-26",
+      "sha": "b168c045f31481619cbde6d546cc19be6bc3a121",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/living-system-operations-2026-09-26"
+    },
+    {
+      "branch": "docs/podcast-release-evidence",
+      "sha": "3d5b2dd0a6cff16654bab7fd0305faa87e857016",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/podcast-release-evidence"
+    },
+    {
+      "branch": "docs/sep25-image-quality-standard",
+      "sha": "d93c55292fa7feea39bfa42294438eff9ad82533",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/docs/sep25-image-quality-standard"
+    },
+    {
+      "branch": "feat/podcast-slot-nine-approved",
+      "sha": "2629fa6706fb6364408317a2a29560e64f55b327",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feat/podcast-slot-nine-approved"
+    },
+    {
+      "branch": "feat/private-draft-recovery",
+      "sha": "f2268afcfed815149dfc96861a32172a1f90f03c",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feat/private-draft-recovery"
+    }
+  ],
+  "status": "applying",
+  "updated_at": "2026-09-28T15:17:05.788Z"
 }
