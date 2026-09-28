@@ -282,6 +282,21 @@ The qualification image stage is therefore strictly serialized:
 
 This preserves the Q4 worker-isolation and Q10 durable-artifact controls while removing concurrency as a contamination vector.
 
+## 5L. Q13 Applied + Agents source-supply hardening
+
+Q13 started as the first fresh full qualification after IH10 reached six of six accepted/locked images. Its deterministic preflight scanned the full 48-source qualification budget and discovered 48 fresh metadata candidates, but novelty-aware deterministic classification retained **11 Technical / 0 Applied / 2 Agents**. The semantic pass never started. This proves the image subsystem was no longer the active blocker; current failure was bounded source supply for the Applied and Agents focus categories.
+
+The permanent correction does **not** lower the three-candidate category breadth requirement, alter production novelty, or reinterpret technical stories as knowledge-worker/agent stories. Instead, qualification adds four dated first-party pinned metadata candidates:
+
+- Google Workspace, September 24 — practical executive AI agents (`agents_non_technical_people`);
+- Adobe Acrobat, September 24 — AI-powered document and knowledge-work workflows (`applied_genai_knowledge_workers`);
+- Adobe Workfront, September 25 — AI-assisted request filling from prior requests/prompts/documents (`applied_genai_knowledge_workers`);
+- Google Workspace, September 23 — Gemini-grounded intelligent content and contextual knowledge work (`applied_genai_knowledge_workers`).
+
+Pinned candidates remain metadata-only until the ordinary article-evidence step retrieves and validates the underlying first-party source. The normal novelty gate, focus classifier, Agent Skills requirement, evidence bounds, and editorial discretion remain unchanged.
+
+Q13 remains immutable terminal FAIL evidence. This correction must pass protected CI and merge before proof continues under a fresh Q14 identity.
+
 ## 6. What makes a full run count
 
 A run counts toward the stabilization streak only when all are true:
