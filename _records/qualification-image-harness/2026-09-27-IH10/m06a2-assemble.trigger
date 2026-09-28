@@ -1,3 +1,0 @@
-IH10 m06 attempt2 exact-byte assembly
-expected_sha256=9988767aa6772c214ee61d5688d113dbedaa4c2df6efe797b82d590bef286618
-expected_size=1937045
