@@ -1,5 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
+import {ARTICLE_FRESHNESS_POLICY} from '../_generator/lib/article-freshness.mjs';
+import {articleEvidenceSufficiency} from './article-evidence-text.mjs';
 const [semanticPath,evidencePath]=process.argv.slice(2);
 if(!semanticPath||!evidencePath) throw new Error('usage: validate-qualification-semantic-receipt <semantic> <article-evidence>');
 const semantic=JSON.parse(fs.readFileSync(semanticPath,'utf8'));
@@ -10,6 +12,11 @@ if(!Array.isArray(semantic.selection)||semantic.selection.length!==6) throw new 
 const ids=new Set((evidence.model_visible||[]).map(x=>x.candidate_id));
 const outside=semantic.selection.filter(x=>!ids.has(x.candidate_id)).map(x=>x.candidate_id);
 if(outside.length) throw new Error('qualification_semantic_selection_outside_article_evidence:'+outside.join(','));
+if(evidence.article_freshness_policy===ARTICLE_FRESHNESS_POLICY){
+ const byId=new Map((evidence.model_visible||[]).map(x=>[x.candidate_id,x]));
+ const insufficient=semantic.selection.filter(x=>!articleEvidenceSufficiency(byId.get(x.candidate_id)).sufficient).map(x=>x.candidate_id);
+ if(insufficient.length)throw Error('qualification_semantic_evidence_insufficient:'+insufficient.join(','));
+}
 const counts={technical_ai_engineering:0,applied_genai_knowledge_workers:0,agents_non_technical_people:0};
 let skills=0;
 for(const s of semantic.selection){
