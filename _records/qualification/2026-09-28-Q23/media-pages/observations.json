@@ -1,0 +1,224 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q23",
+  "cutoff": "2026-09-28T19:10:36Z",
+  "workflow_run_id": 36474146347,
+  "request_commit": "27c1ae0ad665fae6d392fd1b22256a815bf46d16",
+  "model_calls": 0,
+  "new_endpoints_requested": 7,
+  "article_candidate_retrievals": 0,
+  "original_catalogs_refetched": 0,
+  "challenged_youtube_endpoints_refetched": 0,
+  "frozen_inputs_unchanged": true,
+  "media_ready": false,
+  "selection_performed": false,
+  "production_mutation": false,
+  "observations": [
+    {
+      "id": "practical-373",
+      "kind": "podcast_episode",
+      "url": "https://practicalai.show/373",
+      "resolved_url": "https://practicalai.show/373",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:12.887Z",
+      "source_sha256": "41ff1b11b3b243f0e61991bd44d1e405f3896e94cf0ca4574c0304839ec909f6",
+      "source_chars": 46116,
+      "artifact_file": "practical-373.html",
+      "jsonld": []
+    },
+    {
+      "id": "practical-373-transcript",
+      "kind": "podcast_transcript",
+      "url": "https://practicalai.show/373/transcript",
+      "resolved_url": "https://practicalai.show/373/transcript",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:13.002Z",
+      "source_sha256": "b55ebc94f233a530e69b5454ab1c0c6c96b6fc8bf4a060c22fbbb050e5ebd9ba",
+      "source_chars": 111885,
+      "artifact_file": "practical-373-transcript.html",
+      "jsonld": []
+    },
+    {
+      "id": "everyday-871",
+      "kind": "podcast_episode",
+      "url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779",
+      "resolved_url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:13.381Z",
+      "source_sha256": "826e902066e1d3f43d941fe8afbe13f829fe41f6c4ac5bbb80a720462a27c582",
+      "source_chars": 159814,
+      "artifact_file": "everyday-871.html",
+      "jsonld": [
+        {
+          "@context": "http://schema.org",
+          "@type": "PodcastEpisode",
+          "productionCompany": "Everyday AI",
+          "datePublished": "2026-09-28",
+          "description": "Talking about prompts and chatbots won't help you talk about AI strategy in 2026. \n\nYou've gotta know the ins and outs of loops, plans, goals, subagents and more. \n\nIn this episode of Everyday AI, we're breaking down the agent lingo and how the key te",
+          "duration": "PT30M53S",
+          "genre": [
+            "Technology"
+          ],
+          "name": "Ep 871: Desktop Agent Lingo Simplified: Goals, Loops, Plans, Subagents and how it works in Codex and Claude Code (Start Here Series Vol 30)",
+          "offers": [
+            {
+              "@type": "Offer",
+              "category": "free",
+              "price": 0
+            }
+          ],
+          "potentialAction": {
+            "@type": "ListenAction",
+            "expectsAcceptanceOf": {
+              "@type": "Offer",
+              "category": "free"
+            },
+            "target": {
+              "@type": "EntryPoint",
+              "actionPlatform": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779"
+            }
+          },
+          "url": "https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779",
+          "episodeNumber": 871,
+          "partOfSeries": {
+            "@type": "CreativeWorkSeries",
+            "name": "Everyday AI Podcast – An AI and ChatGPT Podcast",
+            "url": "https://podcasts.apple.com/us/podcast/everyday-ai-podcast-an-ai-and-chatgpt-podcast/id1683401861",
+            "offers": [
+              {
+                "@type": "Offer",
+                "category": "free",
+                "price": 0
+              }
+            ]
+          },
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts221/v4/97/58/f4/9758f456-839e-90e3-2922-77a6a51e2362/mza_125173709382590592.jpg/1200x1200bf.webp"
+        }
+      ]
+    },
+    {
+      "id": "ai-for-humans-sep24",
+      "kind": "podcast_episode",
+      "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+      "resolved_url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:13.668Z",
+      "source_sha256": "f6f1c40766e2e1a3192b79739076395146f60cc382d78e087fe664d3fe94f47a",
+      "source_chars": 162461,
+      "artifact_file": "ai-for-humans-sep24.html",
+      "jsonld": [
+        {
+          "@context": "http://schema.org",
+          "@type": "PodcastEpisode",
+          "productionCompany": "Kevin Pereira & Gavin Purcell",
+          "datePublished": "2026-09-24",
+          "description": "AI news this week: Claude Opus 5.5 is INSANE and we love it. Faster, cheaper, better. So much for the AI slowdown. Oh and OpenAI's new thing is good too.\n On today's AI For Humans, Kevin Pereira and Gavin Purcell go hands on with Claude Opus 5.5, which",
+          "duration": "PT48M21S",
+          "genre": [
+            "Technology"
+          ],
+          "name": "Opus 5.5 is our favorite AI model (so far).",
+          "offers": [
+            {
+              "@type": "Offer",
+              "category": "free",
+              "price": 0
+            }
+          ],
+          "potentialAction": {
+            "@type": "ListenAction",
+            "expectsAcceptanceOf": {
+              "@type": "Offer",
+              "category": "free"
+            },
+            "target": {
+              "@type": "EntryPoint",
+              "actionPlatform": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+            }
+          },
+          "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+          "episodeNumber": 197,
+          "partOfSeries": {
+            "@type": "CreativeWorkSeries",
+            "name": "AI For Humans: Weekly AI News, Tools & Trends",
+            "url": "https://podcasts.apple.com/us/podcast/ai-for-humans-weekly-ai-news-tools-trends/id1682409647",
+            "offers": [
+              {
+                "@type": "Offer",
+                "category": "free",
+                "price": 0
+              }
+            ]
+          },
+          "thumbnailUrl": "https://is1-ssl.mzstatic.com/image/thumb/Podcasts211/v4/60/e5/97/60e59746-1e5a-de6e-59ec-78bc76d43422/mza_17349172200761408050.png/1200x1200bf.webp"
+        }
+      ]
+    },
+    {
+      "id": "matt-wolfe-catalog",
+      "kind": "video_catalog",
+      "url": "https://mattwolfe.com/",
+      "resolved_url": "https://mattwolfe.com/",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:13.955Z",
+      "source_sha256": "6e820b5be4e4c38cfaa470f7786ff89f30238ba5c230aefb5eeb099cd39aa651",
+      "source_chars": 184961,
+      "artifact_file": "matt-wolfe-catalog.html",
+      "jsonld": []
+    },
+    {
+      "id": "kevin-stratvert-catalog",
+      "kind": "video_catalog",
+      "url": "https://kevinstratvert.com/",
+      "resolved_url": "https://kevinstratvert.com/",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:14.120Z",
+      "source_sha256": "a9906a315c80710e769c4f39a131e27406fea83150f174fd41216b9282d8c2d7",
+      "source_chars": 169887,
+      "artifact_file": "kevin-stratvert-catalog.html",
+      "jsonld": []
+    },
+    {
+      "id": "jeff-su-catalog",
+      "kind": "video_catalog",
+      "url": "https://www.jeffsu.org/",
+      "resolved_url": "https://www.jeffsu.org/",
+      "status": "retrieved",
+      "checked_at": "2026-09-28T19:43:14.326Z",
+      "source_sha256": "f247aceb9c815735b750ca95e9e941a66bd2da36b102322be39f2342f30bd645",
+      "source_chars": 100345,
+      "artifact_file": "jeff-su-catalog.html",
+      "jsonld": [
+        {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "publisher": {
+            "@type": "Organization",
+            "name": "Jeff Su",
+            "url": "https://www.jeffsu.org/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://storage.ghost.io/c/db/85/db858a9d-1c4f-4993-8042-faa87b9bb3c1/content/images/2022/01/jeffsignature-1.png"
+            }
+          },
+          "author": {
+            "@type": "Person",
+            "name": "Jeff",
+            "image": {
+              "@type": "ImageObject",
+              "url": "https://storage.ghost.io/c/db/85/db858a9d-1c4f-4993-8042-faa87b9bb3c1/content/images/2024/03/2024-LinkedIn-5.4MB-1.jpg",
+              "width": 796,
+              "height": 698
+            },
+            "sameAs": []
+          },
+          "headline": "Jeff Su | AI, Productivity, and Practical Tips",
+          "url": "https://www.jeffsu.org/",
+          "dateModified": "2026-09-10T02:24:36.000Z",
+          "description": "Hello\n\nI'm Jeff. As a management consultant, I started my career helping big companies make more profit. Then at Google, I helped one giant company make (even) more profit.\n\nNow, as one of the largest online educators in the world, I help professionals like you make more progress. 😉\n\nRead what people are saying about my courses, toolkits, and trainings.\n\n\n\nChangelog\n\n\n\n\nNewsletter\n\nEvery week, I send you an insanely actionable AI tip.\n\n\n\n\nGet the weekly tipJoin 130K+ readers\n\n\n\n\n\n\n\n\n\n\n\n\n\nRead i",
+          "mainEntityOfPage": "https://www.jeffsu.org/"
+        }
+      ]
+    }
+  ]
+}
