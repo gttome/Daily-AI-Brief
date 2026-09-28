@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parseArgs,normalizeUrl} from '../_generator/lib/util.mjs';
-import {retrieveSource,extractCandidateMetadata,publicationTimestamp} from './discovery-links.mjs';
+import {retrieveSource,extractCandidateMetadata,publicationDatePrecision,publicationTimestamp} from './discovery-links.mjs';
 
 const args=parseArgs(process.argv.slice(2));
 const input=path.resolve(args.input||'_data/media-candidate-queue.json');
@@ -44,13 +44,17 @@ const labeledDates=html=>{
   parseLooseDate(clean.match(/(?:last\s+updated|updated)(?:\s+on)?[:\s]+([A-Z][a-z]+\s+\d{1,2},\s+20\d{2})/i)?.[1]);
  return {published,updated};
 };
+const exactPublicationTimestamp=value=>{
+ if(publicationDatePrecision(value)!=='instant')return null;
+ return publicationTimestamp(value);
+};
 const structuredDates=html=>{
- const publishedValues=[],updatedValues=[];
- for(const m of html.matchAll(/["']datePublished["']\s*:\s*["']([^"']+)["']/gi))publishedValues.push(publicationTimestamp(m[1])||parseLooseDate(m[1]));
+ const publishedValues=[],exactPublishedValues=[],updatedValues=[];
+ for(const m of html.matchAll(/["']datePublished["']\s*:\s*["']([^"']+)["']/gi)){publishedValues.push(publicationTimestamp(m[1])||parseLooseDate(m[1]));exactPublishedValues.push(exactPublicationTimestamp(m[1]));}
  for(const m of html.matchAll(/["']dateModified["']\s*:\s*["']([^"']+)["']/gi))updatedValues.push(publicationTimestamp(m[1])||parseLooseDate(m[1]));
- for(const m of html.matchAll(/<meta\b[^>]*(?:property|name)=["']article:published_time["'][^>]*content=["']([^"']+)["'][^>]*>/gi))publishedValues.push(publicationTimestamp(m[1])||parseLooseDate(m[1]));
+ for(const m of html.matchAll(/<meta\b[^>]*(?:property|name)=["']article:published_time["'][^>]*content=["']([^"']+)["'][^>]*>/gi)){publishedValues.push(publicationTimestamp(m[1])||parseLooseDate(m[1]));exactPublishedValues.push(exactPublicationTimestamp(m[1]));}
  for(const m of html.matchAll(/<meta\b[^>]*(?:property|name)=["']article:modified_time["'][^>]*content=["']([^"']+)["'][^>]*>/gi))updatedValues.push(publicationTimestamp(m[1])||parseLooseDate(m[1]));
- return {published:publishedValues.find(Boolean)||null,updated:updatedValues.find(Boolean)||null};
+ return {published:publishedValues.find(Boolean)||null,published_exact:exactPublishedValues.find(Boolean)||null,updated:updatedValues.find(Boolean)||null};
 };
 
 const candidateFocus=item=>{
@@ -60,10 +64,11 @@ const candidateFocus=item=>{
  if(/\b(workplace|knowledge worker|enterprise|productivity|microsoft 365|workspace|salesforce|no-code|low-code)\b/.test(v))return 'applied_genai_knowledge_workers';
  return 'technical_ai_engineering';
 };
-const scoreItem=item=>(item.required_topic?100:0)+reliability(item.source_reliability)+relevance((item.headline||item.title)+' '+text(item.snippet));
+const scoreItem=item=>(item.required_topic?100:0)+(item.publication_date_precision==='day'?80:0)+reliability(item.source_reliability)+relevance((item.headline||item.title)+' '+text(item.snippet));
 const pool=raw.candidates.filter(item=>{
  if(item.date_conflict===true)return false;
- if(item.published_at||item.publication_date)return false;
+ const needsPrecision=item.publication_date_precision==='day';
+ if((item.published_at||item.publication_date)&&!needsPrecision)return false;
  const title=text(item.headline||item.title),url=text(item.canonical_url||item.url);
  if(title.length<20||title.length>200||!url.startsWith('https://')||badUrl(url))return false;
  return relevance(title+' '+text(item.snippet)+' '+text(item.required_topic))>=4;
@@ -82,7 +87,7 @@ for(const focus of ['technical_ai_engineering','applied_genai_knowledge_workers'
 }
 for(const item of pool){if(unresolved.length>=limit)break;add(item);}
 
-let attempted=0,resolved=0,failed=0,publishedResolved=0,updatedResolved=0;
+let attempted=0,resolved=0,failed=0,publishedResolved=0,updatedResolved=0,precisionAttempted=0,precisionResolved=0;
 const details=[];
 for(let i=0;i<unresolved.length;i+=6){
  const batch=unresolved.slice(i,i+6);
@@ -90,12 +95,14 @@ for(let i=0;i<unresolved.length;i+=6){
   attempted++;
   const url=item.canonical_url||item.url;
   try{
+   const needsPrecision=item.publication_date_precision==='day';
+   if(needsPrecision)precisionAttempted++;
    const response=await retrieveSource(url,{timeoutMs:10000,maxResponseBytes:1200000,maxNormalizedChars:900000});
    const sourceMeta={source_id:item.source_id||null,owner:item.publisher||null,publisher:item.publisher||null,format:'article',evidence_class:item.source_reliability||null};
    const extracted=extractCandidateMetadata(response.text,response.url||url,sourceMeta);
    const same=extracted.find(x=>sameUrl(x.canonical_url,url));
    const structured=structuredDates(response.text),labeled=labeledDates(response.text);
-   const published=same?.published_at||structured.published||labeled.published||null;
+   const published=needsPrecision?((same?.publication_date_precision==='instant'?same.published_at:null)||structured.published_exact||null):(same?.published_at||structured.published||labeled.published||null);
    const updated=same?.updated_at||structured.updated||labeled.updated||null;
    if(published){
     const t=Date.parse(published);
@@ -103,8 +110,10 @@ for(let i=0;i<unresolved.length;i+=6){
       item.published_at=new Date(t).toISOString();
       item.publication_date=item.published_at;
       item.publication_dates=[item.published_at];
+      item.publication_date_precision='instant';
       item.date_source=same?.date_source||'article_page_metadata_enrichment';
       publishedResolved++;
+      if(needsPrecision)precisionResolved++;
     }
    }
    if(updated){
@@ -122,9 +131,9 @@ for(let i=0;i<unresolved.length;i+=6){
 }
 raw.updated_at=new Date().toISOString();
 raw.metadata_enrichment={
- schema_version:'1.0.0',cutoff:new Date(cutoffMs).toISOString(),attempt_limit:limit,attempted,resolved,published_resolved:publishedResolved,updated_resolved:updatedResolved,failed
+ schema_version:'1.1.0',cutoff:new Date(cutoffMs).toISOString(),attempt_limit:limit,attempted,resolved,published_resolved:publishedResolved,updated_resolved:updatedResolved,precision_attempted:precisionAttempted,precision_resolved:precisionResolved,failed
 };
 fs.writeFileSync(input,JSON.stringify(raw,null,2)+'\n');
 fs.mkdirSync(path.dirname(receiptPath),{recursive:true});
-fs.writeFileSync(receiptPath,JSON.stringify({schema_version:'1.0.0',cutoff:new Date(cutoffMs).toISOString(),attempt_limit:limit,attempted,resolved,published_resolved:publishedResolved,updated_resolved:updatedResolved,failed,details},null,2)+'\n');
-console.log(JSON.stringify({attempted,resolved,published_resolved:publishedResolved,updated_resolved:updatedResolved,failed}));
+fs.writeFileSync(receiptPath,JSON.stringify({schema_version:'1.1.0',cutoff:new Date(cutoffMs).toISOString(),attempt_limit:limit,attempted,resolved,published_resolved:publishedResolved,updated_resolved:updatedResolved,precision_attempted:precisionAttempted,precision_resolved:precisionResolved,failed,details},null,2)+'\n');
+console.log(JSON.stringify({attempted,resolved,published_resolved:publishedResolved,updated_resolved:updatedResolved,precision_attempted:precisionAttempted,precision_resolved:precisionResolved,failed}));

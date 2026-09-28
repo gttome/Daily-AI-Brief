@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.10.0",
+  "schema_version": "1.11.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -450,5 +450,28 @@
     "minimum_focus_coverage_unchanged": 3,
     "agent_skills_gate_unchanged": true,
     "q13_root_cause": "Q13 scanned the full 48-source qualification budget and discovered 48 fresh metadata items, but post-novelty deterministic classification retained 11 Technical, 0 Applied, and 2 Agents candidates. The deficit was source supply in Applied and Agents, not insufficient scanning or image execution."
+  },
+  "qualification_q14_date_precision_source_supply": {
+    "qualification_only": true,
+    "q14_observed_coverage": {
+      "technical_ai_engineering": 10,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 2
+    },
+    "q14_cutoff": "2026-09-28T02:53:00Z",
+    "ordinary_freshness_hours_unchanged": 72,
+    "root_cause": "Date-only publisher metadata was normalized to midnight UTC and not re-enriched because a publication date was already present, causing valid same-day publisher items to age out conservatively before exact article timestamps were recovered.",
+    "date_precision_tracking_required": true,
+    "day_precision_article_reenrichment_required": true,
+    "exact_timestamp_may_replace_day_precision_only": true,
+    "recurring_first_party_catalogs": [
+      "microsoft-copilot-product-catalog",
+      "microsoft-copilot-agentic-ai-catalog"
+    ],
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "production_mutation": false
   }
 }

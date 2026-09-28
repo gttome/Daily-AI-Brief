@@ -417,3 +417,19 @@ Update this file whenever any of the following changes:
 - recurring qualification failure or permanent control.
 
 The stabilization program is complete only when evidence—not elapsed calendar time—shows repeated unattended success.
+
+## Q14 hardening — publication-date precision and recurring focus supply
+
+Q14 (`2026-09-27-Q14`) is immutable terminal FAIL evidence at `PREFLIGHT_DISCOVERY_READY`: **10 Technical / 1 Applied / 2 Agents** after novelty, with semantic and article-evidence execution never started.
+
+Verified root cause: the Q13 repair relied on first-party pinned candidates whose publisher dates were represented as date-only values normalized to `00:00:00Z`. The metadata enricher skipped any candidate that already had a publication date, so it never attempted to recover an exact article-page timestamp. By the Q14 cutoff (`2026-09-28T02:53:00Z`), September 23–25 date-only pins had conservatively aged beyond the unchanged 72-hour ordinary freshness window.
+
+Permanent control:
+- preserve the ordinary **72-hour** freshness gate exactly;
+- record whether publication metadata is day-precision or instant-precision;
+- re-fetch day-precision candidates during metadata enrichment and replace the date only when the publisher article exposes an exact timestamp;
+- keep the date-only value if exact timestamp recovery fails;
+- add recurring first-party Microsoft Copilot product and agentic-AI catalogs so Applied/Agents supply does not depend only on expiring dated pins;
+- keep classification, novelty, 3-per-focus breadth, Agent Skills, and production-isolation gates unchanged.
+
+Proof must occur only in a **fresh Q15** identity after protected CI and merge. Q14 must never be rerun or repaired into PASS.

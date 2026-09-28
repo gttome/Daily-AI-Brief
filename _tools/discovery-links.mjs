@@ -108,9 +108,11 @@ export function extractCandidateMetadata(text, base, source = {}) {
    if(url.protocol!=='https:'||url.username||url.password)return;
    url=new URL(normalizeUrl(url.href));
    const parsed=publicationTimestamp(item.published_at),prior=candidates.get(url.href);
+   const incomingPrecision=publicationDatePrecision(item.published_at);
    const dates=[...new Set([...(prior?.publication_dates||[]),parsed].filter(Boolean))];
    candidates.set(url.href,{source_id:source.source_id||null,publisher:source.owner||source.publisher||null,
      headline:item.title,canonical_url:url.href,published_at:dates.length===1?dates[0]:null,publication_dates:dates,date_conflict:dates.length>1,
+     publication_date_precision:dates.length===1?(incomingPrecision||prior?.publication_date_precision||null):null,
      updated_at:publicationTimestamp(item.updated_at)||prior?.updated_at||null,date_source:item.date_source||prior?.date_source||null,
      snippet:item.snippet?item.snippet.slice(0,600):null,content_type:source.format||'article',
      retrieval_status:'metadata_only',source_reliability:source.evidence_class||null});
@@ -130,6 +132,12 @@ export function extractCandidateMetadata(text, base, source = {}) {
  return [...candidates.values()];
 }
 // Publication dates belong to an article, never to every link on its catalog page.
+export function publicationDatePrecision(value){
+ if(typeof value!=='string'||!value.trim())return null;
+ const v=value.trim();
+ if(/^\d{4}-\d{2}-\d{2}$/.test(v))return 'day';
+ return publicationTimestamp(v)?'instant':null;
+}
 export function publicationTimestamp(value){
  if(typeof value!=='string'||!value.trim())return null;
  const v=value.trim();

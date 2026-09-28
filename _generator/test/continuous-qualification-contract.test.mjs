@@ -192,3 +192,26 @@ test('Q13 source-supply hardening adds bounded first-party Applied and Agents ca
   assert.equal(agents.length,1);
   assert.match(agents[0].candidate_title,/agents/i);
 });
+
+test('Q14 hardening corrects date precision without weakening freshness or focus gates',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const p=JSON.parse(fs.readFileSync('_data/preflight-source-plan.json','utf8'));
+  const q=c.qualification_q14_date_precision_source_supply;
+  assert.equal(q.qualification_only,true);
+  assert.equal(q.ordinary_freshness_hours_unchanged,72);
+  assert.equal(q.date_precision_tracking_required,true);
+  assert.equal(q.day_precision_article_reenrichment_required,true);
+  assert.equal(q.exact_timestamp_may_replace_day_precision_only,true);
+  assert.equal(q.classification_gate_unchanged,true);
+  assert.equal(q.novelty_gate_unchanged,true);
+  assert.equal(q.minimum_focus_coverage_unchanged,3);
+  assert.equal(q.agent_skills_gate_unchanged,true);
+  assert.equal(q.production_mutation,false);
+  for(const id of q.recurring_first_party_catalogs){
+    const s=p.sources.find(x=>x.source_id===id);
+    assert.ok(s,id);
+    assert.equal(s.status,'active');
+    assert.equal(s.evidence_class,'publisher_authored');
+    assert.equal(s.q14_hardening,true);
+  }
+});
