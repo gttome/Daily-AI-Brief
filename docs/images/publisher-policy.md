@@ -119,3 +119,22 @@ For a legitimate replacement, the record must preserve the superseded asset iden
 Each initial image request must be a self-contained single-story brief. Do not include edition summaries, publication status, other stories or unrelated reference images. Targeted edits may reference only the same story draft. Save the exact request, bind its digest and story ID into the v2 image-quality record, and explicitly inspect for subject match and unrelated dashboard/status artwork. The shared gate rejects missing, cross-story, changed or unreviewed context evidence. Self-review must be identified as self-review.
 
 Acceptance is durable only when exact asset bytes, SHA-256 and Git blob identity are persisted. Preserve all locked assets on downstream retries. An unrecoverable accepted asset may be regenerated only under the existing missing/corrupt exception, with the failed recovery search documented.
+
+
+## Outcome-based qualification amendment — September 27, 2026
+
+This amendment narrows the qualification gate to the outcomes that matter and supersedes earlier **categorical format bans** where they conflict with story-fit professional quality.
+
+The benchmark remains strict: images must be professional, detailed, story-specific, factually safe, explanatory, readable, differentiated across the edition, and free of low-quality fallback behavior. The following composition forms are no longer automatic failures solely because of their form: linear flows, card/panel layouts, six-stage explanations, status-flow structures, dashboard/system-view metaphors, taxonomies, comparisons, and layered architectures. They pass only when they are the clearest truthful structure for the story and meet the full professional-quality benchmark; sparse, generic, repetitive, decorative, or placeholder-like executions still fail.
+
+A central mechanism, multiple interacting layers, nonlinear cross-links, and dense hierarchy are no longer universal requirements. Use them when supported and useful. Clarity and explanatory value take precedence over complexity for its own sake.
+
+Text policy is also outcome-based. Essential story-specific labels must be readable and present. Useful duplicates, short generic headings/descriptors/legends, and non-prose technical symbols/glyphs are permitted when they do not introduce unsupported factual claims, metrics, identifiers, code, vulnerabilities, filenames, product-specific details, or misleading UI. Unsupported factual prose and invented specifics remain blocking failures.
+
+Human figures may be used when human workflow, review, collaboration, or adoption is genuinely part of the explanation; this does not relax factuality or permit unsupported identifiable-person depiction.
+
+The image generator may receive up to four bounded attempts per story during qualification. A deterministic contract defect should stop retries early. The first failed gate remains the official failure cause, while later non-mutating diagnostic review may continue to gather useful evidence.
+
+Final production publication still requires all six story images to pass and be accepted/locked. Qualification may continue with one isolated remediation lane when five images are already accepted/locked, but the sixth must pass before publication.
+
+All artifact-integrity, no-cross-story-contamination, exact-byte persistence, no-low-quality-fallback, and zero-paid-execution controls remain in force.
