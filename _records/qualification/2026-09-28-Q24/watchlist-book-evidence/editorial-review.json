@@ -1,0 +1,200 @@
+{
+  "schema_version": "1.0.0",
+  "qualification_id": "2026-09-28-Q24",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "reviewed_at": "2026-09-28T22:00:53.828199Z",
+  "reviewer": "ordinary_chatgpt",
+  "status": "EDITORIALLY_REVIEWED_COMPONENT_VALIDATION_PENDING",
+  "source_artifact_id": 11000686644,
+  "source_artifact_sha256": "b3bd218d20b70492a664bc4f9106ca6ffb390bc14c41e6dcaa834ee3ee71dc93",
+  "source_capture_sha256": "2255216b2b022de8804b60d738396dc5b2f3c11efd8f4827bb8095f993e75b21",
+  "preservation_baseline": {
+    "path": "_records/editorial-handoff/watchlist-2026-09-26.json",
+    "sha256": "a3d28ed5ad0287866aa6def7c5f51ccb90fd8e464739c9744394dbd346e5309a",
+    "reason": "Preserve newer tracked September 26 handoff evidence. This is a qualification preservation baseline, not a claim that the older public watchlist was synchronized."
+  },
+  "public_watchlist_sha256": "df164485dee48b11063c096cd315702ae6a553ba5a9041997f758a470e0584f3",
+  "book_catalog_sha256": "7f5cb576527b2044ef32b5f47fb6ab4e9c1bf85925eb211d7172889ed936f955",
+  "frozen_git_blobs": {
+    "_records/discovery-preflight/result/article-evidence.json": "ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df",
+    "_records/qualification/2026-09-28-Q24/semantic-receipt.json": "fc459b45af230f8b3d9142a7f951510b9a8475f7",
+    "_records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json": "0255cbdca2e89ebb4c2b20672103dee517056930",
+    "_records/qualification/2026-09-28-Q24/media-evidence/video-selection.json": "02125e82d2246e512740cdb48d5d4f97a5bc41ce"
+  },
+  "source_review": {
+    "agensh": {
+      "published_at": "2026-09-22T17:56:25Z",
+      "identity": "2609.26781v1",
+      "title": "Agensh: Scaling Organizational Intelligence to 1,024 Agents",
+      "excerpt": "a scalable self-organized multi-agent harness without a central orchestrator",
+      "scope": "Original v1 abstract and submission history only; no full-paper review or reproduction."
+    },
+    "clm": {
+      "evidence_available_at": "2026-09-24T23:09:47Z",
+      "commit": "bb42c6c5bf914fd449bed2f6ca65be80602cb1f7",
+      "excerpt": "A System One Model for Fast and Generalizable Decision-Making",
+      "scope": "Pinned pre-cutoff README architecture, API and limitations; no model execution or reproduced comparison. The date is commit availability, not an invented launch timestamp."
+    },
+    "pdf_extraction": {
+      "original_capture_status": "pdftotext_unavailable",
+      "resolution": "Extract the already captured exact PDFs with pypdf 5.9.0; retain the original acquisition diagnostic.",
+      "guide_text_sha256": "f00674ece2bd0b353e47fd476a3dbce634851cdeb5c29b047e878197bd54b9bf",
+      "learning_text_sha256": "cdbabed20e05114a29060b65357ab96a1eaf7fc02e973fb87251f76e5df217d8",
+      "full_books_reviewed": false,
+      "visual_inspection": "Guide sample TOC PDF page 1 and Learning Ecosystem sample PDF page 5 inspected."
+    }
+  },
+  "watchlist_updates": [
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "candidate_id": "m03",
+      "development_id": "nvidia-openshell-runtime-controls-2026-09-28",
+      "semantic_fields": {
+        "why_now": "NVIDIA OpenShell adds publisher-described runtime controls around an existing agent, alongside the preserved sandbox and managed-runtime evidence.",
+        "limitations": "Vendor descriptions establish the control approach, not universal security, production maturity or independently measured outcomes.",
+        "next_action": "Test allowed and denied operations separately from the agent prompt; retain explicit credential and API boundaries."
+      }
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "candidate_id": "m04",
+      "development_id": "aws-claude-sonnet-5-5-2026-09-28",
+      "semantic_fields": {
+        "why_now": "AWS adds a newly announced Claude Sonnet 5.5 option on Bedrock and Claude Platform on AWS to the preserved model-lifecycle evidence.",
+        "limitations": "Availability and efficiency are publisher descriptions. Regional entitlement, pricing and task-level gains were not independently verified.",
+        "next_action": "Compare the new option on the same representative tasks before changing a model default or migration policy."
+      }
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "source_id": "clm",
+      "development_id": "contrastive-lm-0-1-pinned-2026-09-24",
+      "evidence_title": "CLM: pre-cutoff first-party README",
+      "evidence_url": "https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md",
+      "publisher": "Contrastive-LM",
+      "publication_date": "2026-09-24",
+      "semantic_fields": {
+        "summary": "System One decision models score candidate actions rather than generate unrestricted text. CLM adds an open implementation to the existing Jev evidence.",
+        "why_now": "A pre-cutoff CLM README describes separately encoded states and actions, typed decisions and candidate ranking.",
+        "practical_value": "A distinct implementation helps investigate routing and verification without treating every decision as a text-generation task.",
+        "limitations": "Both projects report their own results. CLM scores supplied candidates; its displayed coding-verifier results involve fine-tuning. No performance or calibration claim was reproduced.",
+        "next_action": "Compare decision quality and calibration on identical candidate sets; distinguish the reference checkpoint from task-tuned verifier heads.",
+        "confidence": "limited"
+      }
+    }
+  ],
+  "new_topic": {
+    "topic_id": "dab-topic-self-organizing-agent-coordination",
+    "name": "Self-organizing multi-agent coordination",
+    "audience": "Agent engineers and workflow designers",
+    "summary": "Agensh describes workers that claim subtasks and share progress without a central orchestrator.",
+    "why_now": "A September 22 preprint supplies a concrete coordination design.",
+    "practical_value": "Separates task allocation from a single coordinating agent.",
+    "limitations": "One author-reported study; only its abstract and metadata were reviewed. No independent reproduction, deployment safety or cost-efficiency finding is established.",
+    "next_action": "Investigate conflicts, duplicate work and completion checks before experimenting.",
+    "status": "early_signal",
+    "confidence": "limited",
+    "evidence": [],
+    "external_attention": [],
+    "momentum": {"classification": "baseline", "score": null, "observations": [], "reason": "First observation; no comparable attention measurements."},
+    "rubric": {
+      "novelty": {"score": 4, "reason": "Distinct coordination mechanism."},
+      "evidence": {"score": 2, "reason": "Original abstract only."},
+      "independence": {"score": 1, "reason": "One development; no reproduction."},
+      "momentum": {"score": null, "reason": "No longitudinal measurements."},
+      "relevance": {"score": 4, "reason": "Relevant to task allocation."},
+      "durability": {"score": 3, "reason": "Potentially reusable coordination pattern."}
+    },
+    "trial_story_ids": []
+  },
+  "emerging_sweep": {
+    "schema_version": "1.0.0",
+    "edition_date": "2026-09-28",
+    "cutoff": "2026-09-28T20:04:36Z",
+    "primary_lookback_days": 7,
+    "missed_signal_check": {"completed": true, "lookback_days": 14, "method": "Bounded prior-week query and reconciliation with all 16 preserved topics, including the September 15 Jev launch; not exhaustive internet coverage."},
+    "assisted_search_queries": [
+      "site:arxiv.org/abs/ \"September\" \"2026\" (agent OR evaluation OR \"language model\") after:2026-09-21 before:2026-09-29",
+      "AI new model architecture small lab release September 2026 after:2026-09-21 before:2026-09-29",
+      "site:github.com (agent harness OR inference runtime) September 2026 after:2026-09-21 before:2026-09-29",
+      "site:news.ycombinator.com AI agent model \"2026\" after:2026-09-21 before:2026-09-29",
+      "emerging AI new evaluation benchmark multimodal workflow September 2026 after:2026-09-21 before:2026-09-29",
+      "site:youtube.com/watch AI new model agents \"September\" \"2026\" after:2026-09-21 before:2026-09-29",
+      "\"contrastive language model\" \"System One\" September 2026",
+      "AI new architecture decision model evaluation benchmark September 2026 after:2026-09-14 before:2026-09-22"
+    ],
+    "surfaces": [
+      {"id": "primary_research", "status": "complete", "query_indices": [0,7], "surfaced_examples": ["Agensh", "PotARCin"]},
+      {"id": "frontier_and_small_labs", "status": "complete", "query_indices": [1,6], "surfaced_examples": ["CLM"]},
+      {"id": "open_source", "status": "complete", "query_indices": [2,6], "surfaced_examples": ["CLM repository"]},
+      {"id": "technical_communities", "status": "degraded", "query_indices": [3], "surfaced_examples": ["UnrealAgent discussion", "self-diagnosis prompting discussion"], "reason": "Discussion metadata only; independent primary content was not verified for these candidates."},
+      {"id": "broad_web", "status": "complete", "query_indices": [4,7], "surfaced_examples": ["PotARCin", "NVIDIA open agent safety platform", "Sponsored Agents announcement"]},
+      {"id": "youtube_creator_ecosystem", "status": "degraded", "query_indices": [5], "surfaced_examples": ["-RTgK6qX6A8", "xl4C7pQHgJE", "4DhcSPkEbwI"], "reason": "Search metadata only; no playback, transcripts or independently reviewed new media."}
+    ],
+    "concept_classes_reviewed": ["model_family_or_architecture", "agent_pattern_or_harness", "evaluation_or_benchmark", "inference_runtime_or_hardware", "developer_tooling", "multimodal_or_interface", "safety_security_or_governance", "knowledge_worker_workflow"],
+    "candidates_reviewed": [
+      {"name": "Agensh", "concept_class": "agent_pattern_or_harness", "disposition": "new_topic", "rationale": "Distinct decentralized coordination design; early signal only.", "evidence_urls": ["https://arxiv.org/abs/2609.26781v1"]},
+      {"name": "CLM", "concept_class": "model_family_or_architecture", "disposition": "update_existing", "rationale": "Add a distinct implementation to the existing System One topic, not a duplicate Jev topic.", "evidence_urls": ["https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md"]},
+      {"name": "PotARCin", "concept_class": "evaluation_or_benchmark", "disposition": "needs_research", "rationale": "Primary-page open returned DisabledError. Search metadata is not accepted evidence.", "evidence_urls": ["https://arxiv.org/abs/2609.27288"]},
+      {"name": "CLM typed-decision tooling", "concept_class": "developer_tooling", "disposition": "update_existing", "rationale": "Same CLM development, not an additional independent development.", "evidence_urls": ["https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md"]},
+      {"name": "OpenShell runtime controls", "concept_class": "safety_security_or_governance", "disposition": "update_existing", "rationale": "Reuse frozen m03 for harness evidence; no article rediscovery.", "evidence_urls": ["https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/"]},
+      {"name": "Sonnet 5.5 on AWS", "concept_class": "model_family_or_architecture", "disposition": "update_existing", "rationale": "Reuse frozen m04 for model lifecycle choices, not performance endorsement.", "evidence_urls": ["https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/"]},
+      {"name": "Agent Builder adoption and Copilot learning", "concept_class": "knowledge_worker_workflow", "disposition": "rejected", "rationale": "Useful selected coverage, but no distinct new architecture or feature-level adoption telemetry is established.", "evidence_urls": ["https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753", "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140"]},
+      {"name": "NVIDIA broader agent platform", "concept_class": "inference_runtime_or_hardware", "disposition": "needs_research", "rationale": "Catalog discovery and frozen rejected m02 do not establish an independently checked new inference mechanism.", "evidence_urls": ["https://nvidianews.nvidia.com/news/open-agent-safety-platform"]},
+      {"name": "CLM multimodal roadmap", "concept_class": "multimodal_or_interface", "disposition": "rejected", "rationale": "Pinned README lists multimodal support as roadmap work, not an available capability.", "evidence_urls": ["https://github.com/Contrastive-LM/CLM/blob/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md"]},
+      {"name": "Qoder skill evolution", "concept_class": "developer_tooling", "disposition": "rejected", "rationale": "Already present as qoder-skill-evolution-0.4.1 in the September 26 baseline; no new evidence or timestamp refresh.", "evidence_urls": ["https://docs.qoder.com/release-notes/qoder"]},
+      {"name": "n8n agents alongside workflows", "concept_class": "agent_pattern_or_harness", "disposition": "rejected", "rationale": "Frozen m09 distinguishes fixed and open-ended work but does not establish a new long-horizon result.", "evidence_urls": ["https://blog.n8n.io/introducing-n8n-agents/"]},
+      {"name": "Community UnrealAgent discussion", "concept_class": "developer_tooling", "disposition": "needs_research", "rationale": "Discussion metadata only, not an independently checked release.", "evidence_urls": ["https://news.ycombinator.com/item?id=49805748"]},
+      {"name": "Creator agent tutorials", "concept_class": "knowledge_worker_workflow", "disposition": "needs_research", "rationale": "Search metadata only; no playback or new video selection.", "evidence_urls": ["https://www.youtube.com/watch?v=-RTgK6qX6A8", "https://www.youtube.com/watch?v=xl4C7pQHgJE", "https://www.youtube.com/watch?v=4DhcSPkEbwI"]}
+    ],
+    "new_topic_ids": ["dab-topic-self-organizing-agent-coordination"],
+    "updated_topic_ids": ["dab-topic-harness-engineering", "dab-topic-model-lifecycle-governance", "dab-topic-system-one-decision-models"],
+    "zero_new_certified": false,
+    "overall_coverage": "degraded",
+    "limitations": "Eight assisted queries, not a full registry sweep. Complete means the stated bounded surface check executed, not exhaustive results. Query filters are not publication proof. September 18 cached discovery is not fresh observation. No new momentum or playback claim."
+  },
+  "book_inventory": [
+    {"book": "Reliable Generative AI", "url": "https://leanpub.com/reliablegenerativeai", "source_id": "reliable", "evidence_type": "public table of contents", "disposition": "eligible"},
+    {"book": "Reliable Generative AI Context Engineering", "url": "https://leanpub.com/reliable-context-engineering", "source_id": "context", "evidence_type": "public table of contents", "disposition": "eligible"},
+    {"book": "Generative AI Professional Prompt Engineering Guide", "url": "https://leanpub.com/genaipromptingguide", "source_id": "prompt-guide-sample", "evidence_type": "public table of contents in publisher-linked sample", "disposition": "eligible_with_sample_version_disclosure", "limitation": "PDF metadata names Release 11; product page advertises Release 14. No current-edition pagination or full-chapter review is claimed."},
+    {"book": "Generative AI Prompt Engineering Learning Ecosystem", "url": "https://leanpub.com/GenAILearn", "source_id": "learning-sample", "evidence_type": "public sample section, not a table of contents", "disposition": "reader_bridge_held_contract_mismatch", "verified_section": "Five Generative AI Prompt Companion Users", "sample_pdf_page": 5, "limitation": "Relevant to role-based learning, but released validateBookReading admits only public table of contents. Do not relabel this sample. Evidence-contract expansion requires a separate tested production change."}
+  ],
+  "book_references": [
+    {"id": "context-reliability-measurement", "book": "Reliable Generative AI Context Engineering", "locator": "Chapter 4", "section_title": "Reliability, Failure Handling, and Measurement", "url": "https://leanpub.com/reliable-context-engineering", "evidence_level": "public table of contents", "verified_date": "2026-09-28", "full_text_reviewed": false, "source_id": "context"},
+    {"id": "reliable-utility-sandboxes", "book": "Reliable Generative AI", "locator": "Chapter 2, section 2.4.3", "section_title": "Utility Agents and Sandboxes", "url": "https://leanpub.com/reliablegenerativeai", "evidence_level": "public table of contents", "verified_date": "2026-09-28", "full_text_reviewed": false, "source_id": "reliable"},
+    {"id": "prompt-guide-learning-paths-sample", "book": "Generative AI Professional Prompt Engineering Guide", "locator": "Publisher-linked sample TOC (Release 11), introductory section", "section_title": "Learning Paths (How to Use this Guide)", "url": "https://leanpub.com/genaipromptingguide", "evidence_level": "public table of contents", "verified_date": "2026-09-28", "full_text_reviewed": false, "source_id": "prompt-guide-sample"},
+    {"id": "context-lifecycle", "book": "Reliable Generative AI Context Engineering", "locator": "Chapter 2", "section_title": "The Context Engineering Lifecycle", "url": "https://leanpub.com/reliable-context-engineering", "evidence_level": "public table of contents", "verified_date": "2026-09-28", "full_text_reviewed": false, "source_id": "context"},
+    {"id": "reliable-agent-tools", "book": "Reliable Generative AI", "locator": "Chapter 3, section 3.2", "section_title": "Building Reliable Agents - Giving AI Hands and Tools", "url": "https://leanpub.com/reliablegenerativeai", "evidence_level": "public table of contents", "verified_date": "2026-09-28", "full_text_reviewed": false, "source_id": "reliable"},
+    {"id": "context-enterprise-operations", "book": "Reliable Generative AI Context Engineering", "locator": "Chapter 5", "section_title": "Enterprise Operationalization", "url": "https://leanpub.com/reliable-context-engineering", "evidence_level": "public table of contents", "verified_date": "2026-09-28", "full_text_reviewed": false, "source_id": "context"}
+  ],
+  "book_item_reviews": [
+    {"kind": "article", "candidate_id": "m04", "disposition": "include", "reference_id": "context-reliability-measurement", "why": "Use the measurement chapter as background for comparing a new model on unchanged tasks; the book link does not verify AWS performance claims."},
+    {"kind": "article", "candidate_id": "m03", "disposition": "include", "reference_id": "reliable-utility-sandboxes", "why": "Read about utility agents and sandboxes as background for separating an agent instruction from its allowed operations."},
+    {"kind": "article", "candidate_id": "m05", "disposition": "omit", "reason": "The story concerns organizational change management. No sufficiently precise verified section was found; do not force a generic reliability or context link."},
+    {"kind": "article", "candidate_id": "m06", "disposition": "include", "reference_id": "prompt-guide-learning-paths-sample", "why": "The publisher-linked Release 11 sample lists a learning-path section: useful background when choosing where to begin. Its pagination and contents are not asserted to match Release 14, and it is not Microsoft-specific training."},
+    {"kind": "article", "candidate_id": "m01", "disposition": "include", "reference_id": "context-lifecycle", "why": "Use lifecycle thinking as background for reviewing and testing a proposed reusable Skill rather than treating a suggestion as an already proven improvement."},
+    {"kind": "article", "candidate_id": "m09", "disposition": "include", "reference_id": "reliable-agent-tools", "why": "Read about agents and tools as background for distinguishing open-ended agent work from predictable workflow steps."},
+    {"kind": "video", "slot": "general", "candidate_id": "bs1qPy_CWkM", "disposition": "include", "reference_id": "reliable-verification", "why": "The final-verification section provides background for judging when AI-assisted coding output is ready to accept; it does not independently verify the video."},
+    {"kind": "video", "slot": "agents_non_technical_people", "candidate_id": "kyJ1vd7yEPc", "disposition": "include", "reference_id": "context-enterprise-operations", "why": "Use the enterprise chapter as background for reviewing data handling and security boundaries before giving a workflow access to information."},
+    {"kind": "podcast", "candidate_id": "everyday-871", "disposition": "omit", "reason": "The episode supplies a terminology primer. No chapter bridge was added merely to fill the slot; audio was not reviewed."},
+    {"kind": "podcast", "candidate_id": "ai-for-humans-197", "disposition": "omit", "reason": "The creative examples and host preferences do not support a sufficiently specific verified book-section connection; audio and demonstrations were not reviewed."}
+  ],
+  "private_book_change_evaluation": {
+    "status": "DEFERRED_UNTIL_FINAL_EDITION",
+    "evaluation_completed": false,
+    "proposal_count": null,
+    "reason": "The private operations contract evaluates the final published edition and deduplicates a private backlog. Q24 has neither final edition SHA nor closure. Reader bridges are not that private evaluation. No private proposal contents or backlog are copied into this public repository."
+  },
+  "limitations": [
+    "No article or media rerun; frozen selection and cutoff preserved.",
+    "Carried topics are not retimed solely because reviewed.",
+    "Four books considered; seven reader bridges across three books. Fourth-book source-contract mismatch remains explicit.",
+    "Original pdftotext_unavailable capture diagnostic is retained; later extraction is separate.",
+    "Primary PotARCin open returned DisabledError. Author X and Notion pages were unavailable and did not supply accepted evidence.",
+    "Container git lookup failed DNS; connector artifact transport succeeded.",
+    "Q24 remains nonterminal. No images, final handoff, assembled media gate, qualification CI, publication or private proposal creation."
+  ]
+}
