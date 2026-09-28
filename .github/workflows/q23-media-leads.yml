@@ -1,0 +1,105 @@
+name: Q23 publisher-linked media metadata
+on:
+  push:
+    branches: [editorial-handoff/qualification/2026-09-28-Q23]
+    paths: [.github/workflows/q23-media-leads.yml]
+permissions:
+  contents: write
+concurrency:
+  group: q23-publisher-linked-media-metadata
+  cancel-in-progress: false
+jobs:
+  resolve-new-media-leads:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Fetch four previously unrequested publisher-linked media endpoints
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {createHash} from 'node:crypto';
+          import {retrieveSource} from './_tools/discovery-links.mjs';
+          const dir='_records/qualification/2026-09-28-Q23/media-leads';
+          if(fs.existsSync(dir))throw Error('completed_media_leads_must_not_be_rerun');
+          const prior=JSON.parse(fs.readFileSync('_records/qualification/2026-09-28-Q23/media-discovery/receipt.json'));
+          if(prior.workflow_run_id!==36471348463||!prior.frozen_article_evidence_unchanged||!prior.semantic_receipt_unchanged)throw Error('prior_acquisition_receipt_required');
+          const ep='_records/discovery-preflight/result/article-evidence.json',sp='_records/qualification/2026-09-28-Q23/semantic-receipt.json';
+          const hash=b=>createHash('sha256').update(b).digest('hex');
+          const before={article:hash(fs.readFileSync(ep)),semantic:hash(fs.readFileSync(sp))};
+          if(before.semantic!=='8b4f7dd51b0bf737f07bbc3030c67453cb33c35ff2ba2b5f6c644d4280f7198e')throw Error('semantic_receipt_changed');
+          const plan=[
+           {id:'practical-ai-rss',kind:'podcast_feed',url:'https://feeds.transistor.fm/practical-ai-machine-learning-data-science-llm',catalog_source_sha256:'3940e087c4aa8e70df79300f3f8482895bd03ff43ccff602a6bfc89111039e3b',link_basis:'Captured Practical AI catalog link rel=alternate type=application/rss+xml'},
+           ...['XN3xNJvWXsc','UabBYexBD4k','_ZqSFVi6UDY'].map(id=>({id:'ibm-'+id,kind:'video',url:'https://www.youtube.com/watch?v='+id,catalog_source_sha256:'ed8200f8359d5bf841909b2cf5ebdedbb084658b1ac52c00c7ebce362e7ced13',link_basis:'Captured IBM Technology catalog full-video link'}))
+          ];
+          fs.mkdirSync('/tmp/q23-media-leads',{recursive:true});const out=[];
+          for(const lead of plan){try{
+           const response=await retrieveSource(lead.url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
+           const text=String(response.text),digest=hash(text);fs.writeFileSync('/tmp/q23-media-leads/'+lead.id+'.txt',text);
+           out.push({...lead,status:'retrieved',resolved_url:response.resolved_url||lead.url,checked_at:new Date().toISOString(),source_content_sha256:digest});
+          }catch(e){out.push({...lead,status:'unavailable',checked_at:new Date().toISOString(),reason:String(e.message||e)});}}
+          if(before.article!==hash(fs.readFileSync(ep))||before.semantic!==hash(fs.readFileSync(sp)))throw Error('completed_stage_mutated');
+          fs.mkdirSync(dir,{recursive:true});fs.writeFileSync(dir+'/observations.json',JSON.stringify({schema_version:'1.0.0',run_id:'2026-09-28-Q23',workflow_run_id:Number(process.env.GITHUB_RUN_ID),source_artifact_id:10991304633,cutoff:'2026-09-28T19:10:36Z',model_calls:0,article_retrievals:0,original_catalogs_refetched:0,observations:out,frozen_article_evidence_unchanged:true,semantic_receipt_unchanged:true,media_ready:false,production_mutation:false},null,2)+'\n');
+          NODE
+      - name: Extract explicit episode or video metadata without inferring missing values
+        run: |
+          python3 - <<'PY'
+          import json, re, email.utils, datetime, xml.etree.ElementTree as ET
+          from pathlib import Path
+          from html import unescape
+          d=Path('_records/qualification/2026-09-28-Q23/media-leads');o=json.loads((d/'observations.json').read_text());cutoff=datetime.datetime.fromisoformat(o['cutoff'].replace('Z','+00:00'));records=[];diagnostics=[]
+          def duration(value):
+              if not value:return None
+              value=value.strip()
+              if not re.fullmatch(r'\d+(?::\d{1,2}){0,2}',value):return None
+              total=0
+              for part in value.split(':'):total=total*60+int(part)
+              return total or None
+          for obs in o['observations']:
+              if obs['status']!='retrieved':continue
+              text=Path('/tmp/q23-media-leads/'+obs['id']+'.txt').read_text()
+              try:
+                  if obs['kind']=='podcast_feed':
+                      root=ET.fromstring(text);items=root.findall('./channel/item');kept=0
+                      for item in items:
+                          raw=item.findtext('pubDate');published=email.utils.parsedate_to_datetime(raw) if raw else None
+                          if not published or not published.tzinfo:continue
+                          age=(cutoff-published).total_seconds()/3600
+                          if not 0<=age<=168:continue
+                          desc=item.findtext('description') or '';enclosure=item.find('enclosure');raw_duration=item.findtext('{http://www.itunes.com/dtds/podcast-1.0.dtd}duration')
+                          records.append({'kind':'podcast','show':'Practical AI','title':item.findtext('title'),'url':item.findtext('link'),'episode_guid':item.findtext('guid'),'published_at':published.isoformat(),'date_precision':'timestamp','runtime_seconds':duration(raw_duration),'runtime_source_text':raw_duration,'metadata_age_hours':age,'description_excerpt':re.sub('<[^>]+>',' ',unescape(desc))[:1500],'enclosure_url':enclosure.attrib.get('url') if enclosure is not None else None,'source_url':obs['url'],'source_content_sha256':obs['source_content_sha256'],'checked_at':obs['checked_at'],'verified':False,'editorial_pass':False,'status':'explicit_feed_metadata_requires_editorial_and_identity_review'});kept+=1
+                          if kept>=12:break
+                      diagnostics.append({'source_id':obs['id'],'parsed_items':len(items),'in_window_retained':kept})
+                  else:
+                      found=re.search(r'(?:var\s+)?ytInitialPlayerResponse\s*=\s*',text)
+                      if not found:diagnostics.append({'source_id':obs['id'],'status':'player_metadata_missing'});continue
+                      player,_=json.JSONDecoder().raw_decode(text[found.end():]);detail=player.get('videoDetails',{});micro=player.get('microformat',{}).get('playerMicroformatRenderer',{});expected=obs['url'].split('v=')[-1]
+                      if detail.get('videoId')!=expected:raise ValueError('video_identity_mismatch')
+                      records.append({'kind':'video','publisher':'IBM Technology','title':detail.get('title'),'url':obs['url'],'video_id':expected,'upload_date_source_text':micro.get('uploadDate'),'publication_date_source_text':micro.get('publishDate'),'date_precision':'publisher_value_not_normalized','runtime_seconds':duration(detail.get('lengthSeconds')),'description_excerpt':detail.get('shortDescription','')[:1000],'source_url':obs['url'],'source_content_sha256':obs['source_content_sha256'],'checked_at':obs['checked_at'],'verified':False,'editorial_pass':False,'status':'player_metadata_requires_date_freshness_identity_and_editorial_review'})
+              except Exception as e:diagnostics.append({'source_id':obs['id'],'status':'metadata_unresolved','reason':str(e)})
+          (d/'metadata.json').write_text(json.dumps({'schema_version':'1.0.0','run_id':o['run_id'],'cutoff':o['cutoff'],'records':records,'diagnostics':diagnostics,'metadata_record_count':len(records),'media_ready':False,'production_mutation':False},indent=2)+'\n')
+          print(json.dumps({'records':len(records),'diagnostics':diagnostics,'media_ready':False}))
+          PY
+      - name: Persist only new Q23 media-lead records
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/editorial-handoff/qualification/2026-09-28-Q23 | cut -f1)" = "$GITHUB_SHA"
+          test -z "$(git diff --name-only)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q23/media-leads/
+          git commit -m 'Preserve Q23 publisher-linked media metadata and unresolved limitations'
+          git push origin HEAD:refs/heads/editorial-handoff/qualification/2026-09-28-Q23
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q23-publisher-linked-media-evidence
+          path: |
+            /tmp/q23-media-leads/
+            _records/qualification/2026-09-28-Q23/media-leads/
+          retention-days: 14
+          if-no-files-found: error
