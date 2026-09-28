@@ -26,6 +26,20 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/native-image-delivery.mjs",
+        "_tools/native-image-delivery.mjs",
+        "_generator/test/native-image-delivery.test.mjs",
+        "docs/operations/native-image-task-delivery.md"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/native-image-delivery.test.mjs",
+        "_generator/test/image-execution.test.mjs",
+        "_generator/test/image-quality-gate.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/image-gate.mjs",
         "_tools/validate-handoff-images.mjs",
         "_records/image-quality/benchmark-profile-v1.json",
