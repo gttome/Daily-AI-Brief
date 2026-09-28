@@ -1,0 +1,77 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "candidate_id": "m02",
+  "state": "GENERATION_REQUEST_READY",
+  "provenance": {
+    "source_packet_branch": "discovery-preflight/qualification/2026-09-26-Q12",
+    "source_packet_path": "_records/qualification/2026-09-26-Q12/image-packets/m02.json",
+    "source_packet_blob_sha": "0a27be0914a31b91ed8e2d5452d22f89e807dd85",
+    "policy_overlay": "protected main after PR #271"
+  },
+  "generation_execution": {
+    "context_mode": "fresh_image_only",
+    "inherit_parent_context": false,
+    "prior_messages": [],
+    "attachments": [],
+    "sealed_story_packet": {
+      "story_id": "story-m02",
+      "candidate_id": "m02",
+      "headline": "GitHub Security Lab uses a Taskflow Agent to drive AI-powered fuzzing workflows",
+      "source_url": "https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/",
+      "verified_visual_facts": [
+        "GitHub Security Lab",
+        "Taskflow Agent",
+        "AI-powered fuzzing",
+        "fuzzing taskflow"
+      ],
+      "generic_conceptual_elements": [
+        "agent orchestration node",
+        "generic test-input flow",
+        "generic feedback loop",
+        "generic target boundary"
+      ],
+      "prohibited_specifics": [
+        "specific vulnerability classes",
+        "specific file names",
+        "specific code",
+        "specific fuzzing engines not named in frozen evidence",
+        "performance numbers",
+        "dashboard/status UI"
+      ],
+      "visual_brief": "Professional white-background technical textbook diagram showing a GitHub Security Lab Taskflow Agent coordinating an AI-powered fuzzing workflow. Use abstract process nodes and arrows only; no people, screenshots, dashboards, code snippets, filenames, or invented product UI.",
+      "reference_policy": "Use only frozen evidence phrases above for concrete labels; all other elements must remain generic conceptual symbols.",
+      "acceptance_order": [
+        "subject_identity",
+        "factual_support",
+        "structural_quality",
+        "editorial_quality"
+      ],
+      "wrong_subject_action": "Discard and start a brand-new worker for this same story only.",
+      "low_quality_fallback": false,
+      "allowed_image_text": [
+        "GitHub Security Lab",
+        "Taskflow Agent",
+        "AI-powered fuzzing",
+        "Fuzzing Taskflow"
+      ],
+      "composition_mode": "story_fit_editorial",
+      "prohibited_composition_patterns": [
+        "sparse_generic",
+        "decorative_only",
+        "repetitive_low_information"
+      ]
+    },
+    "generation_instruction": "story_id: story-m02\ncandidate_id: m02\nheadline: GitHub Security Lab uses a Taskflow Agent to drive AI-powered fuzzing workflows\nsource_url: https://github.blog/security/application-security/ai-powered-fuzzing-with-the-github-security-lab-taskflow-agent/\nverified_visual_facts: GitHub Security Lab; Taskflow Agent; AI-powered fuzzing; fuzzing taskflow\ngeneric_conceptual_elements: agent orchestration node; generic test-input flow; generic feedback loop; generic target boundary\nprohibited_specifics: specific vulnerability classes; specific file names; specific code; specific fuzzing engines not named in frozen evidence; performance numbers; dashboard/status UI\nvisual_brief: Professional white-background technical textbook diagram showing a GitHub Security Lab Taskflow Agent coordinating an AI-powered fuzzing workflow. Use abstract process nodes and arrows only; no people, screenshots, dashboards, code snippets, filenames, or invented product UI.\nreference_policy: Use only frozen evidence phrases above for concrete labels; all other elements must remain generic conceptual symbols.\nacceptance_order: subject_identity -> factual_support -> structural_quality -> editorial_quality\nwrong_subject_action: Discard and start a brand-new worker for this same story only.\nessential_image_text: GitHub Security Lab | Taskflow Agent | AI-powered fuzzing | Fuzzing Taskflow\ncomposition_mode: story_fit_editorial\nhistorical_low_quality_patterns: sparse_generic | decorative_only | repetitive_low_information\nCOMPOSITION CONTRACT: Create a professional, detailed, readable textbook/editorial illustration whose composition fits the story. A central mechanism, multiple interacting layers, or nonlinear feedback are encouraged only when they truthfully improve explanation. Linear flows, card/panel structures, comparisons, taxonomies, layered architectures, and annotated systems are acceptable when they are the clearest story-fit structure and remain sufficiently detailed, integrated, story-specific, and professionally executed.\nQUALITY CONTRACT: Reject genuinely sparse, generic, decorative, repetitive, or low-information layouts. Do not reject an image solely because it is linear, panel-based, card-based, or uses a dashboard/system-view metaphor when that structure is appropriate and does not invent unsupported product UI or operational state.\nVISIBLE TEXT POLICY: Treat allowed_image_text as essential story-specific labels. Each essential label must be present and readable at least once. Useful duplicates are permitted when they materially improve clarity. Short generic non-factual headings, descriptors, legends, and technical symbols/glyphs are permitted when they do not introduce unsupported factual claims, metrics, identifiers, code, vulnerabilities, filenames, product-specific details, or misleading product UI.\nFACTUAL TEXT SAFETY: Unsupported factual prose and invented specifics remain prohibited. Generic technical notation, punctuation, arrows, brackets, digits used decoratively, and symbolic motifs do not fail solely because they are outside allowed_image_text; factual-support review must reject them only when they convey an unsupported claim or specific fact.\nHUMAN FIGURES: People or human figures may be used when human workflow, review, collaboration, or adoption is materially relevant. Keep them professional/editorial and do not depict an identifiable real person unless explicitly supported and intended.\nlow_quality_fallback: prohibited\nGenerate exactly one illustration for this story. Return only the generated illustration.",
+    "review_in_same_context": false
+  },
+  "generation_status": "pending_external_image_generation",
+  "review_status": "not_started",
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
