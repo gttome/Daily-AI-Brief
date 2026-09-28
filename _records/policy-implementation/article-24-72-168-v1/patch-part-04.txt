@@ -1,0 +1,133 @@
++ await Promise.all([...a,...b].map(u=>acquisition.retrieve(u)));assert.equal(calls,expected);
++ await Promise.all([...a,...b].map(u=>acquisition.retrieve(u)));assert.equal(calls,expected);
+diff --git a/_generator/test/fixtures/notion-publication-zone.xml b/_generator/test/fixtures/notion-publication-zone.xml
+new file mode 100644
+index 0000000..ff439c3
+--- /dev/null
++++ b/_generator/test/fixtures/notion-publication-zone.xml
+@@ -0,0 +1,11 @@
++<rss><channel><item>
++            <title><![CDATA[Notion 3.7: Agent skills for your whole team]]></title>
++            <link>https://www.notion.so/releases/2026-09-15</link>
++            <pubDate>Tue Sep 15 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
++            <guid isPermaLink="false">https://www.notion.so/releases/2026-09-15</guid>
++        </item><item>
++            <title><![CDATA[Control which AI models your agents can use]]></title>
++            <link>https://www.notion.so/releases/2026-09-09</link>
++            <pubDate>Wed Sep 09 2026 00:00:00 GMT+0000 (Coordinated Universal Time)</pubDate>
++            <guid isPermaLink="false">https://www.notion.so/releases/2026-09-09</guid>
++        </item></channel></rss>
+diff --git a/_generator/test/publication-date-precision.test.mjs b/_generator/test/publication-date-precision.test.mjs
+index 030d48c..9d60fc5 100644
+--- a/_generator/test/publication-date-precision.test.mjs
++++ b/_generator/test/publication-date-precision.test.mjs
+@@ -41 +41 @@ test('Q14 hardening keeps the ordinary freshness gate at exactly 72 hours',()=>{
+-  execFileSync(process.execPath,['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit','20','--cutoff','2026-09-28T03:00:00Z'],{cwd:process.cwd()});
++  execFileSync(process.execPath,['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit','20','--cutoff','2026-09-28T03:00:00Z','--article-freshness-policy','article-24-72-skills168-v1','--ordinary-max-age-hours','72'],{cwd:process.cwd()});
+diff --git a/_generator/test/under80-metadata-gate.test.mjs b/_generator/test/under80-metadata-gate.test.mjs
+index 0b113ee..82a4411 100644
+--- a/_generator/test/under80-metadata-gate.test.mjs
++++ b/_generator/test/under80-metadata-gate.test.mjs
+@@ -8 +8 @@ import {execFileSync} from 'node:child_process';
+-const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20,qualificationEditionDate=null,publishedEditions=[]}={})=>{
++const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20,qualificationEditionDate=null,publishedEditions=[],legacyPolicy=false}={})=>{
+@@ -14,0 +15 @@ const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20,qualificationE
++ if(legacyPolicy)argv.push('--article-freshness-policy','article-24-72-skills168-v1','--ordinary-max-age-hours','72');
+@@ -46 +47 @@ test('under80 metadata gate removes navigation and unresolved-date entries',()=>
+-test('updated Agent Skills metadata is background until material change is verified',()=>{
++test('historical legacy policy: updated Agent Skills metadata is background until material change is verified',()=>{
+@@ -49 +50 @@ test('updated Agent Skills metadata is background until material change is verif
+- ]);
++ ],{legacyPolicy:true});
+@@ -72 +73 @@ test('coverage readiness requires three metadata candidates per focus and one Ag
+-test('required topic survives sparse title wording but does not satisfy freshness without verified material change',()=>{
++test('historical legacy policy: required topic survives sparse title wording but does not satisfy freshness without verified material change',()=>{
+@@ -75 +76 @@ test('required topic survives sparse title wording but does not satisfy freshnes
+- ]);
++ ],{legacyPolicy:true});
+diff --git a/_tools/discover-sources.mjs b/_tools/discover-sources.mjs
+index c105185..2bc8349 100644
+--- a/_tools/discover-sources.mjs
++++ b/_tools/discover-sources.mjs
+@@ -18 +18 @@ const candidates=new Map(previous.filter(c=>{const discovered=Date.parse(c.disco
+-const preflightSources=(preflightPlan.sources||[]).map(source=>({...source,preflight_priority:true}));
++const preflightSources=(preflightPlan.sources||[]).filter(source=>!source.pinned_candidate||!source.known_publication_date||cutoffMs-Date.parse(source.known_publication_date)<=168*3600000).map(source=>({...source,preflight_priority:true}));
+@@ -57 +57 @@ const MAX_SOURCES_SCANNED=Math.max(MIN_SOURCES_SCANNED,Math.min(64,Number(proces
+-const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;
++const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=24;
+@@ -60,4 +60,2 @@ const isFreshMetadata=c=>{
+- const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
+- const ordinary=Number.isFinite(published)&&cutoffMs-published>=0&&cutoffMs-published<=FRESH_HOURS*3600000;
+- const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
+- return ordinary||required;
++ const published=Date.parse(c.published_at||c.publication_date);
++ return !c.date_conflict&&Number.isFinite(published)&&cutoffMs-published>=0&&cutoffMs-published<=FRESH_HOURS*3600000;
+diff --git a/_tools/discovery-links.mjs b/_tools/discovery-links.mjs
+index 0f12cf6..9bdd21d 100644
+--- a/_tools/discovery-links.mjs
++++ b/_tools/discovery-links.mjs
+@@ -144 +144 @@ export function publicationTimestamp(value){
+- const v=value.trim();
++ const v=value.trim().replace(/(GMT[+-]\d{4})\s+\([A-Za-z ]+\)$/, '$1');
+diff --git a/_tools/run-under80-preflight.mjs b/_tools/run-under80-preflight.mjs
+index a5b57f7..6509a86 100644
+--- a/_tools/run-under80-preflight.mjs
++++ b/_tools/run-under80-preflight.mjs
+@@ -49,2 +49,3 @@ try{
+-  '--ordinary-max-age-hours',String(request.ordinary_max_age_hours||72),
+-  '--skill-max-age-hours',String(request.agent_skills_max_age_hours||168)
++  '--ordinary-max-age-hours',String(request.ordinary_max_age_hours||168),
++  '--skill-max-age-hours',String(request.agent_skills_max_age_hours||168),
++  '--article-freshness-policy',request.article_freshness_policy||'article-24-72-168-v1'
+diff --git a/_tools/under80-evidence-preflight.mjs b/_tools/under80-evidence-preflight.mjs
+index 55bf1df..d39bc20 100644
+--- a/_tools/under80-evidence-preflight.mjs
++++ b/_tools/under80-evidence-preflight.mjs
+@@ -2,0 +3 @@ import fs from 'node:fs';
++import {balancedArticleEvidencePlan} from '../_generator/lib/article-freshness.mjs';
+@@ -16,12 +17 @@ if(!preferred)throw Error('preferred_agent_skill_candidate_required');
+-const byFocus=new Map(focuses.map(f=>[f,gate.candidates.filter(x=>x.focus_hint===f&&x.background_only!==true&&x.production_novelty_eligible!==false).sort((a,b)=>(b.prefilter_score||0)-(a.prefilter_score||0)||String(a.candidate_id).localeCompare(String(b.candidate_id)))]));
+-const plan=[];
+-for(const focus of focuses){
+- const pool=byFocus.get(focus);
+- if(focus==='agents_non_technical_people'){
+-  const skill=pool.find(x=>x.candidate_id===preferred);
+-  if(!skill)throw Error('preferred_agent_skill_candidate_not_in_agent_focus');
+-  plan.push(skill);
+-  for(const item of pool)if(plan.filter(x=>x.focus_hint===focus).length<3&&item.candidate_id!==preferred)plan.push(item);
+- }else plan.push(...pool.slice(0,3));
+-}
+-if(plan.length!==9||focuses.some(f=>plan.filter(x=>x.focus_hint===f).length!==3))throw Error('nine_candidate_balanced_review_plan_required');
++const plan=balancedArticleEvidencePlan(gate);
+@@ -76 +66 @@ const ready=retrieved.length===9&&focuses.every(f=>focusCounts[f]===3)&&retrieve
+-const evidence={schema_version:'1.0.0',profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,review_plan_count:plan.length,preferred_agent_skill_candidate_id:preferred,model_visible_chars:chars,model_visible:modelVisible};
++const evidence={schema_version:'1.0.0',article_freshness_policy:gate.article_freshness_policy||null,profile_id:'under80-v1',execution_owner:'github_actions',model_calls:0,review_plan_count:plan.length,preferred_agent_skill_candidate_id:preferred,model_visible_chars:chars,model_visible:modelVisible};
+diff --git a/_tools/under80-metadata-gate.mjs b/_tools/under80-metadata-gate.mjs
+index 0f6e746..e3fb998 100644
+--- a/_tools/under80-metadata-gate.mjs
++++ b/_tools/under80-metadata-gate.mjs
+@@ -2,0 +3 @@ import fs from 'node:fs';
++import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness,compareArticleFreshness} from '../_generator/lib/article-freshness.mjs';
+@@ -12 +13,4 @@ if(!Number.isFinite(cutoff))throw Error('valid_cutoff_required');
+-const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||72);
++const policy=args['article-freshness-policy']||ARTICLE_FRESHNESS_POLICY;
++if(![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(policy))throw Error('unknown_article_freshness_policy');
++const currentPolicy=policy===ARTICLE_FRESHNESS_POLICY;
++const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||(currentPolicy?168:72));
+@@ -13,0 +18 @@ const skillAgeHours=Number(args['skill-max-age-hours']||168);
++if(currentPolicy&&(ordinaryAgeHours!==168||skillAgeHours!==168))throw Error('article_policy_window_mismatch');
+@@ -92 +97 @@ for(const item of source){
+- else if(isSkill&&Number.isFinite(updated)&&ageHours(updated)>=0&&ageHours(updated)<=skillAgeHours){eventStamp=updated;dateBasis='updated_at_requires_material_update_review';}
++ else if(!currentPolicy&&isSkill&&Number.isFinite(updated)&&ageHours(updated)>=0&&ageHours(updated)<=skillAgeHours){eventStamp=updated;dateBasis='updated_at_requires_material_update_review';}
+@@ -137 +142,2 @@ for(const item of source){
+- const candidate={...normalized,prefilter_score:score};
++ const f=articleFreshness(normalized.published_at,new Date(cutoff).toISOString(),{policy,agentSkill:isSkill});
++ const candidate={...normalized,prefilter_score:score,...(f?{freshness_tier:f.tier,fallback_band:f.fallback_band,freshness_age_hours:f.age_hours}:{})};
+@@ -142 +148 @@ for(const item of source){
+-const eligible=[...byUrl.values()].sort((a,b)=>b.prefilter_score-a.prefilter_score||String(b.metadata_event_at).localeCompare(String(a.metadata_event_at))||a.canonical_url.localeCompare(b.canonical_url));
++const eligible=[...byUrl.values()].sort((a,b)=>(currentPolicy?compareArticleFreshness(a,b,new Date(cutoff).toISOString()):0)||b.prefilter_score-a.prefilter_score||String(b.metadata_event_at).localeCompare(String(a.metadata_event_at))||a.canonical_url.localeCompare(b.canonical_url));
+@@ -175,0 +182,2 @@ while(selected.length<limit&&keys.some(k=>groups.get(k).length)){
++ const heads=keys.map(k=>groups.get(k)[0]).filter(Boolean);
++ const freshest=[...heads].sort((a,b)=>compareArticleFreshness(a,b,new Date(cutoff).toISOString()))[0];
+@@ -177,0 +186,2 @@ while(selected.length<limit&&keys.some(k=>groups.get(k).length)){
++  const head=groups.get(key)[0];
