@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q22",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "failed_stage": "SEMANTIC_SELECTION_READY",
+  "failure_code": "qualification_article_evidence_title_only_false_readiness",
+  "baseline_sha": "adc2b88aeee4b946f3c9b6bf801b4e0ba416b486",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "request_commit": "b302800da5fcc6acdab004bf569c96696cb0d61d",
+  "preflight_workflow_run_id": 36460438424,
+  "preflight_workflow_job_id": 109057328711,
+  "preflight_workflow_conclusion": "success",
+  "cutoff": "2026-09-28T17:45:40Z",
+  "preflight_coverage_counts": {
+    "technical_ai_engineering": 11,
+    "applied_genai_knowledge_workers": 4,
+    "agents_non_technical_people": 5
+  },
+  "article_evidence_count": 9,
+  "article_evidence_chars": 8598,
+  "article_evidence_git_blob_sha": "ea8555e523bbfb76422f77244977d54581dfe497",
+  "source_packet_frozen": true,
+  "discovery_rerun": false,
+  "article_evidence_rerun": false,
+  "semantic_pass_count": 1,
+  "selection_completed": false,
+  "evidence_defects": [
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "source_word_count": 13,
+      "excerpt": "Change Management Best Practices to Drive Value with Agent Builder | Microsoft Community Hub",
+      "defect": "Only the page title is present; no substantive article claims are available in the frozen packet."
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "source_word_count": 15,
+      "excerpt": "AI at work: Learn, build, and grow with Microsoft Copilot and agents | Microsoft Community Hub",
+      "defect": "Only the page title is present; no substantive article claims are available in the frozen packet."
+    }
+  ],
+  "usable_applied_evidence_candidates": 1,
+  "required_applied_finalists": 2,
+  "root_cause_demonstrated": "The deterministic article collector marks any successful HTTP/text retrieval as retrieved and counts it toward ready=true, even when the cleaned source and model-visible excerpt contain only a title. The packet cannot support two Applied stories. The underlying publisher-body representation still needs a bounded fixture check before choosing its parser repair.",
+  "downstream_media_started": false,
+  "downstream_images_started": false,
+  "production_mutation": false,
+  "rerun_prohibited": true,
+  "account_billing_observed": false,
+  "next_smallest_correction": "Preserve this terminal result and the successful coverage evidence. Qualify extraction of substantive publisher article bodies, reject title-only/navigation-only evidence before declaring readiness, add deterministic regression cases and update living documents in a protected correction PR. Then prove on the next unused fresh Q; never refill or repair Q22's frozen nine-item packet into a pass."
+}
