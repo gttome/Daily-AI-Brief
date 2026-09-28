@@ -1,9 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,APPROVED_COMPOSITION_MODES,
-  buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,
-  validateQualificationImageWorkerPayload,validateQualificationImageRenderedText,validateImageHarnessAttempt,validateImageHarnessSummary
+  IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,APPROVED_COMPOSITION_MODES,IMAGE_GENERATION_EXECUTION_KEYS,
+  buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,buildQualificationImageGenerationExecution,
+  validateQualificationImageWorkerPayload,validateQualificationImageGenerationExecution,validateQualificationImageRenderedText,validateImageHarnessAttempt,validateImageHarnessSummary
 } from '../lib/qualification-image-harness.mjs';
 
 const sealedPacket={
@@ -44,6 +44,60 @@ test('worker payload validator accepts frozen reference policy but rejects orche
   assert.ok(errors.includes('prohibited_worker_payload_key_harness_id'));
   assert.ok(errors.includes('prohibited_worker_payload_key_parent_conversation'));
   assert.ok(errors.includes('prohibited_worker_payload_key_other_story_context'));
+});
+
+test('generation execution creates a fresh image-only context from only the sealed story packet',()=>{
+  const execution=buildQualificationImageGenerationExecution({
+    ...sealedPacket,
+    harness_id:'2026-09-27-IH9',
+    q_id:'Q13',
+    scheduler_state:'running',
+    publication_state:'blocked',
+    failure_history:['IH9'],
+    parent_conversation:'must not inherit',
+    review_instructions:'must not enter generation',
+    other_story_context:'must not enter generation'
+  });
+  assert.deepEqual(Object.keys(execution),IMAGE_GENERATION_EXECUTION_KEYS);
+  assert.equal(execution.context_mode,'fresh_image_only');
+  assert.equal(execution.inherit_parent_context,false);
+  assert.deepEqual(execution.prior_messages,[]);
+  assert.deepEqual(execution.attachments,[]);
+  assert.equal(execution.review_in_same_context,false);
+  assert.equal('harness_id' in execution.sealed_story_packet,false);
+  assert.equal('q_id' in execution.sealed_story_packet,false);
+  assert.equal('scheduler_state' in execution.sealed_story_packet,false);
+  assert.equal('publication_state' in execution.sealed_story_packet,false);
+  assert.equal('failure_history' in execution.sealed_story_packet,false);
+  assert.equal('parent_conversation' in execution.sealed_story_packet,false);
+  assert.equal('review_instructions' in execution.sealed_story_packet,false);
+  assert.equal('other_story_context' in execution.sealed_story_packet,false);
+  assert.doesNotMatch(execution.generation_instruction,/IH9|Q13|scheduler|publication_state|failure_history|parent_conversation|review_instructions|other_story_context/);
+  assert.deepEqual(validateQualificationImageGenerationExecution(execution),[]);
+});
+
+test('generation execution fails closed if ambient context or same-context review is reintroduced',()=>{
+  const baseline=buildQualificationImageGenerationExecution(sealedPacket);
+  const contaminated={
+    ...baseline,
+    inherit_parent_context:true,
+    prior_messages:['IH9 terminal failure status'],
+    attachments:['prior-image.png'],
+    review_in_same_context:true,
+    harness_id:'2026-09-27-IH9'
+  };
+  const errors=validateQualificationImageGenerationExecution(contaminated);
+  assert.ok(errors.includes('prohibited_generation_execution_key_harness_id'));
+  assert.ok(errors.includes('generation_parent_context_inheritance_must_be_false'));
+  assert.ok(errors.includes('generation_prior_messages_must_be_empty'));
+  assert.ok(errors.includes('generation_attachments_must_be_empty'));
+  assert.ok(errors.includes('generation_review_must_be_separate'));
+});
+
+test('generation instruction cannot be replaced with orchestration text',()=>{
+  const execution=buildQualificationImageGenerationExecution(sealedPacket);
+  execution.generation_instruction='IH9 status report; explain why Q13 is blocked';
+  assert.ok(validateQualificationImageGenerationExecution(execution).includes('generation_instruction_must_derive_only_from_sealed_story_packet'));
 });
 
 test('generation instruction keeps factual boundaries but allows story-fit composition',()=>{
