@@ -1,0 +1,154 @@
+name: Q24 reviewed video component validation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-video-selection.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  validate-videos:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Guard completed stages and recover exact existing public metadata sources
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-editorial-review.json)" = 'cf7ddaa288a9cc3cbe427ed1beab8ecf99513332'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-metadata-reconciliation.json)" = '3ecabea17d0668b785c0ffdbe9df83c11764e05c'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/prior-video-history-v2.json)" = 'cadb39e689845bdf84fb5233f547ecd083337708'
+          test "$(git hash-object _generator/lib/media-selection.mjs)" = '1d3018192551f33e509a1648a4be43bea122f42a'
+          test "$(git hash-object _generator/lib/media-evidence.mjs)" = 'c6595a9a376a38a9e8ecc4c2bfe2b417318474c2'
+          mkdir -p /tmp/q24-video-selection
+          curl --fail --silent --show-error --location --max-time 60 -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/11000140814/zip -o /tmp/q24-video-selection/source.zip
+          echo '5bd46d50ff9df9dbd03095539bc867640f7311b3045687e5a76c07cdbf2c7af3  /tmp/q24-video-selection/source.zip' | sha256sum -c -
+          python3 - <<'PY'
+          from pathlib import Path
+          import zipfile,hashlib,json,runpy,re
+          root=Path('/tmp/q24-video-selection')
+          with zipfile.ZipFile(root/'source.zip') as archive:
+              for filename,expected in [('ibm-public-feed.txt','4f910653cd78b4c0899d89a63a3030000dfcda243cca8b1ac69452768bdf115b'),('ibm-channel-catalog.html','6c1bef4250e6da6d6a4b0b3e6ebc34cd65b2dd067e4a34ea356c67376fa2f7b5')]:
+                  raw=archive.read('tmp/q24-video-primary/'+filename)
+                  assert hashlib.sha256(raw).hexdigest()==expected
+                  (root/filename).write_bytes(raw)
+          parser=runpy.run_path('_records/qualification/2026-09-28-Q24/tools/reconcile-video-evidence.py')['parse_feed']
+          entries=parser((root/'ibm-public-feed.txt').read_bytes())
+          (root/'parsed-feed.json').write_text(json.dumps(entries,ensure_ascii=False)+'\n')
+          raw=(root/'ibm-channel-catalog.html').read_text();match=re.search(r'ytInitialData\s*=\s*',raw);assert match
+          doc,_=json.JSONDecoder().raw_decode(raw[match.end():]);items={}
+          def walk(obj):
+              if isinstance(obj,dict):
+                  item=obj.get('lockupViewModel')
+                  if isinstance(item,dict) and item.get('contentId'):items[item['contentId']]=item
+                  for value in obj.values():walk(value)
+              elif isinstance(obj,list):
+                  for value in obj:walk(value)
+          walk(doc);catalog={}
+          for identity in ['bs1qPy_CWkM','kyJ1vd7yEPc','F3hlZSZc6UI','O4n1jtWzt30']:
+              item=items[identity];title=item['metadata']['lockupMetadataViewModel']['title']['content'];durations=[]
+              for overlay in item['contentImage']['thumbnailViewModel'].get('overlays',[]):
+                  for badge in overlay.get('thumbnailBottomOverlayViewModel',{}).get('badges',[]):
+                      value=badge.get('thumbnailBadgeViewModel',{});text=value.get('text','')
+                      if value.get('animationActivationTargetId')==identity and re.fullmatch(r'\d+:\d{2}(?::\d{2})?',text):durations.append(text)
+              assert len(set(durations))==1
+              seconds=0
+              for part in durations[0].split(':'):seconds=seconds*60+int(part)
+              catalog[identity]={'video_id':identity,'title':title,'display_runtime':durations[0],'runtime_seconds':seconds}
+          (root/'parsed-catalog.json').write_text(json.dumps(catalog,ensure_ascii=False)+'\n')
+          PY
+      - name: Independently verify source review, canonical history and released video selector
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+          import {normalizeMediaEvidence,mediaIdentity} from './_generator/lib/media-evidence.mjs';
+          import {selectVideo,videoDurationTier} from './_generator/lib/media-selection.mjs';
+          const dir='_records/qualification/2026-09-28-Q24/media-evidence',tmp='/tmp/q24-video-selection';
+          const load=p=>JSON.parse(fs.readFileSync(p,'utf8')),hash=x=>crypto.createHash('sha256').update(x).digest('hex');
+          const request=load('_records/discovery-preflight/request.json'),review=load(dir+'/video-editorial-review.json'),metadata=load(dir+'/video-metadata-reconciliation.json'),history=load(dir+'/prior-video-history-v2.json'),feed=load(tmp+'/parsed-feed.json'),catalog=load(tmp+'/parsed-catalog.json');
+          const source=fs.readFileSync(tmp+'/ibm-public-feed.txt','utf8');
+          assert.equal(request.qualification_run_id,'2026-09-28-Q24');assert.equal(request.cutoff,'2026-09-28T20:04:36Z');
+          assert.equal(request.baseline_sha,'1def5c4ba158247a9c02106dc4e4820d80a7133d');assert.equal(request.media_freshness_policy,'media-research-cutoff-v1');
+          for(const item of [review,metadata]){assert.equal(item.cutoff,request.cutoff);assert.equal(item.baseline_sha,request.baseline_sha);assert.equal(item.media_freshness_policy,request.media_freshness_policy);assert.equal(item.article_freshness_policy,'article-24-72-168-v1');}
+          assert.equal(hash(source),review.evidence_bindings.feed_source_sha256);
+          assert.equal(hash(fs.readFileSync(dir+'/video-metadata-reconciliation.json')),review.evidence_bindings.metadata_sha256);
+          assert.equal(hash(fs.readFileSync(dir+'/prior-video-history-v2.json')),review.evidence_bindings.history_sha256);
+          assert.equal(hash(fs.readFileSync(tmp+'/ibm-channel-catalog.html')),review.evidence_bindings.channel_source_sha256);
+          const actualDates=fs.readdirSync('_data/editions').filter(x=>/^\d{4}-\d{2}-\d{2}\.json$/.test(x)&&x.slice(0,10)<request.edition_date).map(x=>x.slice(0,10)).sort();
+          assert.deepEqual(history.editions.map(x=>x.edition_date),actualDates);assert.deepEqual(review.history_scope.edition_dates,actualDates);assert.equal(actualDates.length,20);
+          const prior=[];
+          for(const edition of history.editions){
+            const bytes=fs.readFileSync(edition.source_path);assert.equal(hash(bytes),edition.source_sha256);const data=JSON.parse(bytes);
+            assert.equal(edition.canonical_path,'worth_watching');assert.equal(data.brief_date,edition.edition_date);
+            for(const record of edition.videos){const {slot,...rest}=record;assert.deepEqual(rest,data.worth_watching[slot]);if(record.status==='included')prior.push(record);}
+          }
+          assert.equal(prior.length,24);assert.equal(review.history_scope.semantic_novelty_review_complete,true);
+          const normalized=[],candidates=[],inputEvidence=[];const options={cutoff:request.cutoff,policy:request.media_freshness_policy};
+          assert.equal(review.reviews.length,2);
+          for(const r of review.reviews){
+            const m=metadata.records.find(x=>x.video_id===r.video_id),entry=feed[r.video_id],c=catalog[r.video_id];
+            assert.ok(m&&m.metadata_resolved&&m.primary_feed_catalog_identity_matches&&!m.metadata_conflict);
+            assert.equal(entry.canonical_url,m.canonical_url);assert.equal(entry.title,m.title);assert.equal(c.title,m.title);
+            assert.equal(entry.published_at,m.published_at);assert.equal(c.runtime_seconds,m.catalog_runtime_seconds);
+            assert.equal(r.editorial_pass,true);assert.equal(r.duplicate,false);assert.ok(r.novelty_reason&&r.audience_fit&&r.editorial_limitation);
+            assert.ok(r.source_excerpts.length&&r.source_excerpts.every(x=>source.includes(x)&&entry.description.includes(x)));
+            const identity=mediaIdentity({kind:'video',canonical_url:m.canonical_url});
+            assert.equal(identity,'youtube:'+r.video_id);
+            assert.ok(!prior.some(p=>mediaIdentity({kind:'video',canonical_url:p.url})===identity||p.title.trim().toLowerCase()===m.title.trim().toLowerCase()));
+            const input={kind:'video',canonical_url:m.canonical_url,title:m.title,published_at:m.published_at,runtime_seconds:c.runtime_seconds,source:{url:metadata.observations.find(x=>x.id==='ibm-public-feed').url,text:source,checked_at:metadata.observations.find(x=>x.id==='ibm-public-feed').checked_at},review:{status:'reviewed',reviewer:review.reviewer,reviewed_at:review.reviewed_at,source_content_hash:hash(source),excerpts:r.source_excerpts,scope:review.review_scope,audio_or_video_played:false,publisher_ai_metadata_disclosure_retained:true},audience_fit:r.audience_fit};
+            const evidence=normalizeMediaEvidence(input);assert.equal(evidence.metadata_status,'reviewed');normalized.push(evidence);inputEvidence.push(input);
+            candidates.push({candidate_id:r.video_id,slot:r.slot,status:'included',url:m.canonical_url,title:m.title,channel:'IBM Technology',source_id:'ibm-technology',upload_date:m.published_at,runtime_seconds:c.runtime_seconds,verified:true,editorial_pass:r.editorial_pass,duplicate:r.duplicate,score:r.score,summary:r.summary,why_useful:r.why_useful,connection:r.connection,editorial_limitation:r.editorial_limitation,short_search_evidence:r.short_search_evidence,fallback_reason:r.fallback_reason,source_evidence_identity:evidence.identity});
+          }
+          const slots=['general','agents_non_technical_people'],selection={},worth_watching={};
+          for(const slot of slots){const selected=selectVideo(candidates,slot,request.edition_date,options);assert.ok(selected.candidate);selection[slot]=selected;worth_watching[slot]={...selected.candidate,duration_tier:selected.tier,selection_duration_tier:selected.duration_tier};}
+          assert.equal(selection.general.candidate.candidate_id,'bs1qPy_CWkM');assert.equal(selection.general.duration_tier,'preferred');assert.equal(selection.general.candidate.runtime_seconds,435);
+          assert.equal(selection.agents_non_technical_people.candidate.candidate_id,'kyJ1vd7yEPc');assert.equal(selection.agents_non_technical_people.duration_tier,'fallback');assert.equal(selection.agents_non_technical_people.candidate.runtime_seconds,689);
+          assert.ok(worth_watching.agents_non_technical_people.fallback_reason&&worth_watching.agents_non_technical_people.short_search_evidence.length===3);
+          const inWindow=Object.values(feed).filter(x=>{const age=Date.parse(request.cutoff)-Date.parse(x.published_at);return age>=0&&age<=72*3600000;}).map(x=>x.video_id).sort();
+          assert.deepEqual(inWindow,['bs1qPy_CWkM','kyJ1vd7yEPc'].sort());
+          for(const r of review.rejected){assert.equal(feed[r.video_id].published_at,r.published_at);assert.equal(feed[r.video_id].title,r.title);assert.ok(Date.parse(request.cutoff)-Date.parse(r.published_at)>72*3600000);}
+          assert.equal(catalog.F3hlZSZc6UI.runtime_seconds,586);assert.equal(catalog.O4n1jtWzt30.runtime_seconds,2364);
+          const regressionChecks=[];const base=candidates[0];
+          for(const [name,patch] of [['older_than_72h',{upload_date:'2026-09-25T20:04:35Z'}],['future_upload',{upload_date:'2026-09-28T20:04:37Z'}],['runtime_above_20m',{runtime_seconds:1201}],['duplicate',{duplicate:true}],['unverified',{verified:false}],['editorial_reject',{editorial_pass:false}],['wrong_slot',{slot:'not_a_slot'}]]){assert.equal(selectVideo([{...base,...patch}],'general',request.edition_date,options).candidate,null);regressionChecks.push(name);}
+          assert.ok(selectVideo([{...base,upload_date:'2026-09-25T20:04:36Z'}],'general',request.edition_date,options).candidate);regressionChecks.push('72h_inclusive_boundary');
+          assert.equal(videoDurationTier(1200),'last_resort');regressionChecks.push('20m_inclusive_boundary');
+          assert.throws(()=>normalizeMediaEvidence({...inputEvidence[0],review:{...inputEvidence[0].review,source_content_hash:'0'.repeat(64)}}));regressionChecks.push('incorrect_source_hash');
+          assert.throws(()=>normalizeMediaEvidence({...inputEvidence[0],review:{...inputEvidence[0].review,excerpts:['unobserved fabricated excerpt']}}));regressionChecks.push('unsupported_excerpt');
+          assert.throws(()=>normalizeMediaEvidence({...inputEvidence[0],aliases:['https://www.youtube.com/watch?v=kyJ1vd7yEPc'],aliases_reviewed:true}));regressionChecks.push('conflicting_video_alias');
+          const podcasts=load(dir+'/podcast-selection.json');assert.equal(podcasts.podcast_selection_validated,true);assert.equal(podcasts.podcast_count,2);assert.equal(podcasts.cutoff,request.cutoff);
+          const result={schema_version:'1.0.0',run_id:request.qualification_run_id,cutoff:request.cutoff,baseline_sha:request.baseline_sha,article_freshness_policy:'article-24-72-168-v1',media_freshness_policy:request.media_freshness_policy,workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,validated_at:new Date().toISOString(),result:'pass',scope:'video component only; not final kernel MEDIA_READY, full qualification, playback verification, or publication',video_selection_validated:true,video_count:2,worth_watching,selection,normalized_evidence:normalized,source_hashes_and_scoped_review_excerpts_verified:true,evidence_bindings:review.evidence_bindings,editorial_review_git_blob:'cf7ddaa288a9cc3cbe427ed1beab8ecf99513332',review_scope:review.review_scope,history_scope:review.history_scope,shorter_search_scope:review.shorter_search_scope,rejected:review.rejected,preserved_limitations:review.preserved_limitations,selector_and_evidence_regression_checks:regressionChecks,selector_and_evidence_regression_checks_passed:regressionChecks.length,podcast_component_reused_unchanged:true,podcast_component_git_blob:'0255cbdca2e89ebb4c2b20672103dee517056930',all_media_components_validated:true,media_ready:false,media_ready_reason:'Final assembled kernel-level gate has not executed; both component receipts are now available.',new_publisher_retrievals:0,article_selection_repeated:false,podcast_selection_repeated:false,model_calls:0,production_mutation:false};
+          fs.writeFileSync(dir+'/video-selection.json',JSON.stringify(result,null,2)+'\n',{flag:'wx'});
+          console.log(JSON.stringify({result:result.result,video_count:result.video_count,checks:regressionChecks,all_media_components_validated:true,media_ready:false},null,2));
+          NODE
+      - name: Persist only the validated video component
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json
+          git commit -m 'Validate Q24 two-video component without weakening freshness or evidence limits'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-reviewed-video-validation
+          path: |
+            /tmp/q24-video-selection/parsed-feed.json
+            /tmp/q24-video-selection/parsed-catalog.json
+            _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json
+          retention-days: 14
+          if-no-files-found: error
