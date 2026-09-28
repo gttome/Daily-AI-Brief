@@ -3936,8 +3936,68 @@
       "sha": "a54707f65e3f734416b1567310c01bf877f42038",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-a/fix/freshness-labeling-sep16"
+    },
+    {
+      "branch": "fix/nonproduction-handoff-control-2026-09-18",
+      "sha": "43b2b07caa295758a24841eb2214ab27d6f93e87",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/nonproduction-handoff-control-2026-09-18"
+    },
+    {
+      "branch": "fix/pr-ci-base-selection",
+      "sha": "df4d7e8d0d18a0c8768061fc228cbf4bff21eda7",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/pr-ci-base-selection"
+    },
+    {
+      "branch": "fix/preflight-date-enrichment-2026-09-18",
+      "sha": "b6799e0a49c90b8a8c947cdcc8e4e7f890444cec",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/preflight-date-enrichment-2026-09-18"
+    },
+    {
+      "branch": "fix/preflight-required-topic-relevance-2026-09-18",
+      "sha": "d97ea5f6575d6b5d3412b0fac2c45ec16e449d0f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/preflight-required-topic-relevance-2026-09-18"
+    },
+    {
+      "branch": "fix/preflight-source-coverage-2026-09-18",
+      "sha": "5a4038ea1ad59516fab7bd50a0689166ad291b61",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/preflight-source-coverage-2026-09-18"
+    },
+    {
+      "branch": "fix/remove-followit",
+      "sha": "ceaa1eff11e4d3153ae49986626e3325d0c045f9",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/remove-followit"
+    },
+    {
+      "branch": "fix/remove-open-rss",
+      "sha": "ded31eda24937208a24b9cd5a9eccc2c6e81091f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/remove-open-rss"
+    },
+    {
+      "branch": "fix/sep13-video-navigation-reading",
+      "sha": "0c570ec4ad80397220665231c2b3c229c925bbff",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep13-video-navigation-reading"
+    },
+    {
+      "branch": "fix/sep16-informatica-canonical",
+      "sha": "f0a1bd7226fe1d54bf5dc67b02965357fe4ccf1c",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-informatica-canonical"
+    },
+    {
+      "branch": "fix/sep16-informatica-source",
+      "sha": "024897391334630b8725e219d61f28a10c4971c1",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/sep16-informatica-source"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:18:27.349Z"
+  "updated_at": "2026-09-28T15:19:06.477Z"
 }
