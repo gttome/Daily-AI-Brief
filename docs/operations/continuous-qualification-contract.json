@@ -497,5 +497,24 @@
     ],
     "recurring_catalogs_not_dated_pins": true,
     "production_mutation": false
+  },
+  "qualification_q16_applied_source_supply": {
+    "qualification_only": true,
+    "q16_observed_coverage": {
+      "technical_ai_engineering": 10,
+      "applied_genai_knowledge_workers": 2,
+      "agents_non_technical_people": 3
+    },
+    "q16_cutoff": "2026-09-28T03:18:00Z",
+    "q14_date_precision_control_preserved": true,
+    "q15_applied_source_supply_preserved": true,
+    "ordinary_freshness_hours_unchanged": 72,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "added_recurring_applied_catalog": "google-workspace-blog-applied",
+    "recurring_catalog_not_dated_pin": true,
+    "production_mutation": false
   }
 }
