@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m02",
+  "attempt": 1,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS"
+  ],
+  "image_sha256": "a805ddf2c3b766689593d9e8f9bcd5f4150d1095801d2192317bcc2e87441c29",
+  "rematerialized_sha256": "a805ddf2c3b766689593d9e8f9bcd5f4150d1095801d2192317bcc2e87441c29",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 1988243,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_5366e5af84008191af0f83e04c61c6c6",
+  "library_path": "/Daily AI Brief Qualification Images/m02/IH10-m02-attempt-1.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image is explicitly about GitHub Security Lab, a Taskflow Agent, AI-powered fuzzing, a fuzzing taskflow, and an application-under-test target. No harness/status/Q/publication subject contamination is visible."
+    },
+    "factual_support": {
+      "pass": true,
+      "evidence": "Concrete story-specific claims remain within the frozen evidence: GitHub Security Lab, Taskflow Agent, AI-powered fuzzing, and fuzzing taskflow. Other labels describe generic test-input, target, analysis, and feedback-loop concepts and do not introduce prohibited vulnerability classes, filenames, code, fuzzing-engine names, performance metrics, or fabricated product UI."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Integrated left-to-right system explanation with a clear agent core, test-input flow, fuzzing-taskflow block, target boundary, and feedback loop; sufficiently detailed and readable rather than sparse or decorative."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional textbook/editorial presentation on a white background with coherent hierarchy, readable labels, consistent iconography, and story-specific explanatory value."
+    }
+  },
+  "first_failed_gate": null,
+  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "note": "Visual review passed all four review gates. Acceptance remains pending exact-byte Git blob persistence of the reviewed PNG."
+}
