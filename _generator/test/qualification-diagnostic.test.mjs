@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {instrumentGate,classifyCoverage,FOCI} from '../../_tools/qualification-diagnostic.mjs';
+const counts=n=>Object.fromEntries(FOCI.map(f=>[f,n]));
+test('coverage identifies supply rather than presuming ranking defect',()=>{assert.equal(classifyCoverage({after_novelty:{...counts(13),applied_genai_knowledge_workers:1,agents_non_technical_people:2}},{coverage_counts:{...counts(13),applied_genai_knowledge_workers:1,agents_non_technical_people:2}}),'eligible_source_supply_shortfall');});
+test('coverage identifies actual selection starvation',()=>{assert.equal(classifyCoverage({after_novelty:counts(5)},{coverage_counts:{...counts(3),applied_genai_knowledge_workers:1}}),'shortlist_selection_starvation');});
+test('skills gate is separate',()=>{assert.equal(classifyCoverage({after_novelty:counts(4)},{coverage_counts:counts(3),agent_skill_story_ready_signals_after_novelty:0}),'agent_skills_unavailable');});
+test('pass means only preflight coverage',()=>{assert.equal(classifyCoverage({after_novelty:counts(4)},{coverage_counts:counts(3),agent_skill_story_ready_signals_after_novelty:1,coverage_ready:true}),'preflight_coverage_ready');});
+test('unknown counts fail closed',()=>{assert.equal(classifyCoverage({},{}),'diagnostic_incomplete');});
+test('probe does not replace existing selection code',()=>{const s='const selected=[],selectedUrls=new Set();\nselected.push(eligible[0]);';const p=instrumentGate(s);assert.ok(p.endsWith(s));assert.equal(p.match(/const selected=/g).length,1);assert.ok(!p.includes('headline'));assert.ok(!p.includes('canonical_url'));});
+test('source mismatch fails closed',()=>{assert.throws(()=>instrumentGate('changed source'),/marker_mismatch/);});
