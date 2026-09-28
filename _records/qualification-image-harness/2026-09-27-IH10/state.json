@@ -2,7 +2,7 @@
   "schema_version": "1.0.0",
   "harness_id": "2026-09-27-IH10",
   "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
-  "state": "IN_PROGRESS",
+  "state": "PASS",
   "fixed_story_order": [
     "m02",
     "m04",
@@ -11,17 +11,18 @@
     "m01",
     "m08"
   ],
-  "accepted_locked_count": 5,
+  "accepted_locked_count": 6,
   "accepted_locked": [
     "m02",
     "m04",
     "m06",
     "m07",
-    "m01"
+    "m01",
+    "m08"
   ],
-  "current_candidate_id": "m08",
-  "next_action": "Prepare and execute m08 in a fresh image-only context, then separate review and exact-byte persistence.",
-  "q13_release_blocked": true,
+  "current_candidate_id": null,
+  "next_action": "Release Q13 from the preserved Q12 semantic checkpoint using the six IH10 accepted/locked exact-byte images; do not redo discovery/editorial/media/watchlist/professional-series work.",
+  "q13_release_blocked": false,
   "fallback_used": false,
   "cross_story_contamination_count": 0,
   "production_mutation": false,
