@@ -4176,8 +4176,68 @@
       "sha": "58cd1184d68212ac90c48e5c5ff765d428829bce",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-a/hardening/2026-09-19-publication-contract"
+    },
+    {
+      "branch": "improve/eleven-items-20260911",
+      "sha": "32cf0ac269e73f4f90e9c7a29b138cdcd23a4d99",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/improve/eleven-items-20260911"
+    },
+    {
+      "branch": "ops/align-visible-daily-schedule-2026-09-25",
+      "sha": "1bafdd7ca822d5ac0d8219e158cd20ebafaff2e8",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/align-visible-daily-schedule-2026-09-25"
+    },
+    {
+      "branch": "ops/earlier-daily-schedule-2026-09-25",
+      "sha": "c839cce9ba1c95fadfed632b446686d0480a0e0d",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/earlier-daily-schedule-2026-09-25"
+    },
+    {
+      "branch": "ops/fix-nightly-readiness-delay-2026-09-25",
+      "sha": "681257a2cd6f021dc6642f96dc926316535c38b2",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/fix-nightly-readiness-delay-2026-09-25"
+    },
+    {
+      "branch": "ops/nightly-readiness-2130-2026-09-25",
+      "sha": "ab344d866db10a9b4c1676cbd6dd5de7e3fff94e",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/nightly-readiness-2130-2026-09-25"
+    },
+    {
+      "branch": "ops/nightly-readiness-github-action-2026-09-25",
+      "sha": "08004a7027887af573e617880950066e9746eb41",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/nightly-readiness-github-action-2026-09-25"
+    },
+    {
+      "branch": "ops/preflight-earlier-2026-09-19",
+      "sha": "d57fa1d22d663ebefd2311defb09afa0bf0794e7",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/ops/preflight-earlier-2026-09-19"
+    },
+    {
+      "branch": "policy/continuous-failed-brief-recovery",
+      "sha": "ff25225c21fd0342a4a3b685481095d35b9ce702",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/policy/continuous-failed-brief-recovery"
+    },
+    {
+      "branch": "policy/podcast-48-hour-priority",
+      "sha": "70c4d98da227441478d00c800beaa4ff6570f380",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/policy/podcast-48-hour-priority"
+    },
+    {
+      "branch": "refactor/efficiency-production-v2",
+      "sha": "c8cf81e39ae37a8cff4c52d6530d5501d8e0247e",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/refactor/efficiency-production-v2"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:21:14.769Z"
+  "updated_at": "2026-09-28T15:21:56.078Z"
 }
