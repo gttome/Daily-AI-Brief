@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "diagnostic_id": "2026-09-28-D05",
+  "workflow_run_id": "36450354692",
+  "started_at": "2026-09-28T16:21:04.815Z",
+  "production_mutation": false,
+  "model_calls": 0,
+  "semantic_pass_started": false,
+  "sources": [
+    {
+      "source_id": "make",
+      "owner": "Make",
+      "requested_url": "https://www.make.com/en/blog",
+      "focus_hint": "agents_non_technical_people",
+      "status": "unavailable",
+      "error": "HTTP 403",
+      "checked_at": "2026-09-28T16:21:05.014Z"
+    },
+    {
+      "source_id": "box",
+      "owner": "Box",
+      "requested_url": "https://blog.box.com/",
+      "resolved_url": "https://blog.box.com/",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "catalog_verified",
+      "body_sha256": "72a1d6bd8691588abc5c6bf96fa9e5d6215f8206998604bd0fcf30c5bdddcfa8",
+      "compact_chars": 23662,
+      "article_links": 31,
+      "ai_links": 22,
+      "dated_ai": 0,
+      "feeds": [],
+      "checked_at": "2026-09-28T16:21:05.346Z"
+    },
+    {
+      "source_id": "notion",
+      "owner": "Notion",
+      "requested_url": "https://www.notion.com/releases",
+      "resolved_url": "https://www.notion.com/releases",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "catalog_verified",
+      "body_sha256": "bdaa9489194867ba1077eb6addfe144094bcc581a344d4aa4d0c5a6b331527d1",
+      "compact_chars": 31597,
+      "article_links": 26,
+      "ai_links": 12,
+      "dated_ai": 0,
+      "feeds": [
+        "/releases/rss.xml"
+      ],
+      "checked_at": "2026-09-28T16:21:05.522Z"
+    },
+    {
+      "source_id": "airtable",
+      "owner": "Airtable",
+      "requested_url": "https://www.airtable.com/articles",
+      "resolved_url": "https://www.airtable.com/articles",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "catalog_verified",
+      "body_sha256": "5037d772535842f358e2e55a079be458b891dc18d1e0ba52bf3b3385f2b1c4f2",
+      "compact_chars": 55299,
+      "article_links": 237,
+      "ai_links": 60,
+      "dated_ai": 0,
+      "feeds": [],
+      "checked_at": "2026-09-28T16:21:05.907Z"
+    },
+    {
+      "source_id": "n8n",
+      "owner": "n8n",
+      "requested_url": "https://blog.n8n.io/",
+      "resolved_url": "https://blog.n8n.io/",
+      "focus_hint": "agents_non_technical_people",
+      "status": "catalog_verified",
+      "body_sha256": "1a796366bd947096dd4cf3f3330ce8e1ebf5bbbd04b3ab47216be8714d3e66b4",
+      "compact_chars": 13493,
+      "article_links": 13,
+      "ai_links": 4,
+      "dated_ai": 1,
+      "feeds": [
+        "https://blog.n8n.io/rss/"
+      ],
+      "checked_at": "2026-09-28T16:21:06.080Z"
+    },
+    {
+      "source_id": "adobe",
+      "owner": "Adobe",
+      "requested_url": "https://blog.adobe.com/feed.xml",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "unavailable",
+      "error": "HTTP 404",
+      "checked_at": "2026-09-28T16:21:06.239Z"
+    }
+  ],
+  "completed_at": "2026-09-28T16:21:06.239Z"
+}

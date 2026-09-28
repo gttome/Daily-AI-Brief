@@ -1,0 +1,2301 @@
+[
+  {
+    "path": ".github/workflows/acquisition-prewarm.yml",
+    "matches": [
+      {
+        "line": 18,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      },
+      {
+        "line": 29,
+        "text": "        uses: actions/cache@0057852bfaa89a56745cba8c7296529d2fc39830"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/analytics-aggregate.yml",
+    "matches": [
+      {
+        "line": 1,
+        "text": "name: Verify publication freshness"
+      },
+      {
+        "line": 9,
+        "text": "  group: daily-ai-brief-freshness"
+      },
+      {
+        "line": 15,
+        "text": "      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      },
+      {
+        "line": 21,
+        "text": "      - run: node _tools/freshness-check.mjs"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/ci.yml",
+    "matches": [
+      {
+        "line": 21,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/continuous-qualification.yml",
+    "matches": [
+      {
+        "line": 45,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/daily-delta-validation.yml",
+    "matches": [
+      {
+        "line": 60,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/iteration-1-shadow.yml",
+    "matches": [
+      {
+        "line": 24,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/maintenance-cleanup.yml",
+    "matches": [
+      {
+        "line": 24,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/post-editorial-kernel.yml",
+    "matches": [
+      {
+        "line": 78,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/pr117-shadow-verification.yml",
+    "matches": [
+      {
+        "line": 28,
+        "text": "      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/publish-candidate.yml",
+    "matches": [
+      {
+        "line": 25,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/qualification-policy-audit.yml",
+    "matches": [
+      {
+        "line": 1,
+        "text": "name: Qualification freshness policy audit"
+      },
+      {
+        "line": 16,
+        "text": "      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      },
+      {
+        "line": 20,
+        "text": "      - name: Inventory all current freshness enforcement and documentation"
+      },
+      {
+        "line": 33,
+        "text": "            hits=[{'line':i+1,'text':line[:1500]} for i,line in enumerate(lines) if re.search(r'72|168|fallback_max|freshness|recency',line,re.I)]"
+      },
+      {
+        "line": 75,
+        "text": "            git commit -m 'Persist D05 freshness inventory and source verification evidence'"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/qualification-semantic-gate.yml",
+    "matches": [
+      {
+        "line": 17,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/under80-discovery-preflight.yml",
+    "matches": [
+      {
+        "line": 26,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      }
+    ]
+  },
+  {
+    "path": ".github/workflows/under80-metadata-preflight.yml",
+    "matches": [
+      {
+        "line": 41,
+        "text": "        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262"
+      },
+      {
+        "line": 101,
+        "text": "          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:x.date,cutoff:x.cutoff,execution_mode:'production',metadata_candidate_limit:20,ordinary_max_age_hours:72,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+x.date},null,2));"
+      },
+      {
+        "line": 113,
+        "text": "          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:date,cutoff,execution_mode:mode,metadata_candidate_limit:20,ordinary_max_age_hours:72,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+date},null,2));"
+      }
+    ]
+  },
+  {
+    "path": "_data/book-reading.json",
+    "matches": [
+      {
+        "line": 273,
+        "text": "        \"why\": \"Review the scope, freshness and relevance of repository memory before allowing it to guide a security repair.\""
+      }
+    ]
+  },
+  {
+    "path": "_data/media-candidate-queue.json",
+    "matches": [
+      {
+        "line": 4053,
+        "text": "      \"discovered_at\": \"2026-09-15T12:01:54.726Z\","
+      },
+      {
+        "line": 4383,
+        "text": "      \"canonical_url\": \"https://practicalai.show/372\","
+      },
+      {
+        "line": 4393,
+        "text": "      \"url\": \"https://practicalai.show/372\","
+      },
+      {
+        "line": 6483,
+        "text": "      \"discovered_at\": \"2026-09-15T12:01:54.726Z\","
+      },
+      {
+        "line": 8045,
+        "text": "      \"discovered_at\": \"2026-09-15T12:01:54.726Z\","
+      },
+      {
+        "line": 8684,
+        "text": "      \"url\": \"https://support.google.com/a/answer/172177\","
+      },
+      {
+        "line": 8697,
+        "text": "      \"canonical_url\": \"https://support.google.com/a/answer/172177\","
+      },
+      {
+        "line": 10154,
+        "text": "      \"canonical_url\": \"https://en.osm.town/@osm_tech/117273699871137554\","
+      },
+      {
+        "line": 10164,
+        "text": "      \"url\": \"https://en.osm.town/@osm_tech/117273699871137554\","
+      },
+      {
+        "line": 10902,
+        "text": "      \"headline\": \"m-a-p/YuE2-3B Text-to-Audio \u2022 4B \u2022 Updated 4 days ago \u2022 6.72k \u2022 516\","
+      },
+      {
+        "line": 10914,
+        "text": "      \"title\": \"m-a-p/YuE2-3B Text-to-Audio \u2022 4B \u2022 Updated 4 days ago \u2022 6.72k \u2022 516\","
+      },
+      {
+        "line": 11223,
+        "text": "    \"policy\": \"source_round_robin_priority_recency_url_v1\","
+      },
+      {
+        "line": 12250,
+        "text": "        \"url\": \"https://developer.nvidia.com/blog/experiment-with-qwen3-8-flash-next-on-nvidia-gb300-nvl72-for-agentic-coding/\","
+      }
+    ]
+  },
+  {
+    "path": "_data/podcast-sources.json",
+    "matches": [
+      {
+        "line": 7,
+        "text": "    \"recency_days\": ["
+      },
+      {
+        "line": 21,
+        "text": "    \"freshness_priority\": \"Select a worthwhile verified episode within 48 hours before considering older episodes, even if an older episode has somewhat better audience fit.\","
+      }
+    ]
+  },
+  {
+    "path": "_data/reading-support.json",
+    "matches": [
+      {
+        "line": 94,
+        "text": "      \"word_count\": 1720,"
+      },
+      {
+        "line": 245,
+        "text": "    \"dab-story-2026-09-18-3ac3c725\": {"
+      },
+      {
+        "line": 496,
+        "text": "        \"label_reason\": \"Practitioner interview selected under the documented freshness fallback.\","
+      },
+      {
+        "line": 577,
+        "text": "        \"label_reason\": \"Registered-source podcast selected under the documented recency fallback.\","
+      },
+      {
+        "line": 616,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      },
+      {
+        "line": 619,
+        "text": "        \"label_reason\": \"Bounded 72-hour fallback selected after no second fresh non-technical-agent candidate survived the gates.\","
+      },
+      {
+        "line": 692,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      },
+      {
+        "line": 699,
+        "text": "        \"item_id\": \"dab-story-2026-09-18-3ac3c725\","
+      },
+      {
+        "line": 700,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      },
+      {
+        "line": 715,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      },
+      {
+        "line": 730,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      },
+      {
+        "line": 738,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      },
+      {
+        "line": 753,
+        "text": "        \"coverage_label\": \"Recency fallback\","
+      }
+    ]
+  },
+  {
+    "path": "_data/required-topic-sources.json",
+    "matches": [
+      {
+        "line": 21,
+        "text": "          \"metadata_notes\": \"Public OpenAI Academy Skills resource. Use as background unless a specific material update is independently verified; updated_at alone does not satisfy story freshness.\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-06.json",
+    "matches": [
+      {
+        "line": 155,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 408,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 453,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 2009,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-08.json",
+    "matches": [
+      {
+        "line": 140,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 200,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 541,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 566,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 599,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1131,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1743,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1862,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2744,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4148,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4445,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-09.json",
+    "matches": [
+      {
+        "line": 142,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 202,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 543,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 568,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 601,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1133,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1745,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1864,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2746,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4150,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4447,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 5279,
+        "text": "      \"story_id\": \"dab-story-2026-09-08-47284df4\","
+      },
+      {
+        "line": 5450,
+        "text": "      \"story_id\": \"dab-story-2026-09-09-be5f728f\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-10.json",
+    "matches": [
+      {
+        "line": 143,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 203,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 544,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 569,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 602,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1134,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1746,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1865,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2747,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4151,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4448,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 5280,
+        "text": "      \"story_id\": \"dab-story-2026-09-08-47284df4\","
+      },
+      {
+        "line": 5451,
+        "text": "      \"story_id\": \"dab-story-2026-09-09-be5f728f\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-11.json",
+    "matches": [
+      {
+        "line": 143,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 203,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 544,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 569,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 602,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1134,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1746,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1865,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2747,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4151,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4448,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 5280,
+        "text": "      \"story_id\": \"dab-story-2026-09-08-47284df4\","
+      },
+      {
+        "line": 5451,
+        "text": "      \"story_id\": \"dab-story-2026-09-09-be5f728f\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-12.json",
+    "matches": [
+      {
+        "line": 144,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 204,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 545,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 570,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 603,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1135,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1747,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1866,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2748,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4152,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4449,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 5281,
+        "text": "      \"story_id\": \"dab-story-2026-09-08-47284df4\","
+      },
+      {
+        "line": 5452,
+        "text": "      \"story_id\": \"dab-story-2026-09-09-be5f728f\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-13.json",
+    "matches": [
+      {
+        "line": 145,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 205,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 546,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 571,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 604,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1136,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1748,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1867,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2749,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4153,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4450,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 5282,
+        "text": "      \"story_id\": \"dab-story-2026-09-08-47284df4\","
+      },
+      {
+        "line": 5453,
+        "text": "      \"story_id\": \"dab-story-2026-09-09-be5f728f\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-14.json",
+    "matches": [
+      {
+        "line": 146,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 206,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 547,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 572,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 605,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1137,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1749,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1868,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2750,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4154,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4451,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 5283,
+        "text": "      \"story_id\": \"dab-story-2026-09-08-47284df4\","
+      },
+      {
+        "line": 5454,
+        "text": "      \"story_id\": \"dab-story-2026-09-09-be5f728f\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-15.json",
+    "matches": [
+      {
+        "line": 148,
+        "text": "      \"george_implication\": \"This is highly relevant to context-engineering lifecycle material. It supports teaching context management as an **iterative selection-and-refinement loop**, not a one-time prompt assembly step. It also provides a research-backed example for explaining why freshness, relevance, signal-to-noise ratio, and token budgeting must be evaluated at every agent turn.\","
+      },
+      {
+        "line": 208,
+        "text": "      \"story_id\": \"dab-story-2026-08-17-f72cbc5e\","
+      },
+      {
+        "line": 549,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 574,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 607,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 1139,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1751,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1870,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2752,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 4156,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4453,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-16.json",
+    "matches": [
+      {
+        "line": 339,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 364,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 397,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 929,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1541,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1660,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2542,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 3946,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4243,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-17.json",
+    "matches": [
+      {
+        "line": 128,
+        "text": "      \"story_id\": \"dab-story-2026-08-19-a8e67241\","
+      },
+      {
+        "line": 153,
+        "text": "      \"summary\": \"The revised *Admission Without Answers* paper tackles a central problem in experience-learning agents: deciding which newly generated solutions or skills are trustworthy enough to store when no answer key exists. In a 300-problem label-blind stream, accepting every executable model poisoned roughly one in four admissions. The proposed AdmitOR gate tests candidates across resampled inputs and diverse model, prompting, and solver families, then returns **accept, abstain, or escalate**. In the reported comparison, admission precision reached 0.927, versus 0.871 for majority vote and 0.726 for execution success.\","
+      },
+      {
+        "line": 186,
+        "text": "        \"https://arxiv.org/abs/2608.16859\""
+      },
+      {
+        "line": 718,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1330,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1449,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2331,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 3735,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 4032,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      }
+    ]
+  },
+  {
+    "path": "_data/story-memory/2026-09-18.json",
+    "matches": [
+      {
+        "line": 513,
+        "text": "        \"url\": \"https://github.blog/wp-content/uploads/2026/08/638619753-9a27284a-b9b0-4383-991b-068515859d0a.jpg?resize=2000%2C1096\","
+      },
+      {
+        "line": 1125,
+        "text": "      \"summary\": \"NVIDIA published results using SemiAnalysis AgentX, an open-source InferenceX benchmark that replays recorded coding-agent sessions turn by turn. Unlike fixed prompt-and-response tests, AgentX preserves changing input and output lengths, accumulated context, reasoning time, tool-call latency, cache pressure, and varying concurrency. NVIDIA reports preview Vera Rubin NVL72 results of up to 30\u00d7 more throughput per megawatt than GB300 NVL72 at 160 tokens per second per user.\","
+      },
+      {
+        "line": 1244,
+        "text": "      \"summary\": \"Make changed the credit conversion for its built-in AI provider to price input and output tokens separately. Its current documentation lists different token-per-credit rates by model and applies lower rates to contexts above 272,000 tokens for several OpenAI models. Make says the revised structure reduces credit consumption for most automation workflows.\","
+      },
+      {
+        "line": 2126,
+        "text": "      \"story_id\": \"dab-story-2026-08-29-74777276\","
+      },
+      {
+        "line": 3530,
+        "text": "      \"summary\": \"OpenAI introduced GPT-6 Astra, reporting substantial gains in computer use, coding, browsing, professional work, science and cybersecurity. The model is initially rolling out to a limited set of organizations, with broader ChatGPT and API availability planned over the following days. OpenAI says Astra can execute multi-step computer workflows and produce documents, spreadsheets and presentations that follow existing templates and business style. Its published evaluations include 72.6% on OSWorld 2.0, while OpenAI also reports lower rates of boundary-violating behavior than GPT-5.6 Sol in internal tests.\","
+      },
+      {
+        "line": 3827,
+        "text": "      \"why_it_matters\": \"Persistent memory is becoming a core context-engineering problem. More memory is not automatically better: stale, duplicated, conflicting, or unnecessary context can reduce answer quality, raise compliance risk, and make failures harder to diagnose. Memory therefore needs retention policy, freshness criteria, provenance, deletion rules, and evaluation just like other governed data assets.\","
+      },
+      {
+        "line": 6934,
+        "text": "      \"story_id\": \"dab-story-2026-09-18-3ac3c725\","
+      }
+    ]
+  },
+  {
+    "path": "_data/watchlist-discoveries.json",
+    "matches": [
+      {
+        "line": 176,
+        "text": "      \"id\": \"lead-2e2b72808762e1c9\","
+      },
+      {
+        "line": 419,
+        "text": "      \"id\": \"lead-625c26772c024239\","
+      },
+      {
+        "line": 714,
+        "text": "      \"published_at\": \"2026-09-17T18:29:08.772Z\","
+      },
+      {
+        "line": 716,
+        "text": "        \"2026-09-17T18:29:08.772Z\""
+      },
+      {
+        "line": 733,
+        "text": "      \"publication_date\": \"2026-09-17T18:29:08.772Z\","
+      },
+      {
+        "line": 815,
+        "text": "      \"id\": \"lead-3e4f01ba72e5ae21\","
+      },
+      {
+        "line": 1180,
+        "text": "      \"title\": \"echel0nn1881/kimi-cyber-reasoning Viewer \u2022 Updated 15 days ago \u2022 997 \u2022 2.08k \u2022 72\","
+      },
+      {
+        "line": 1191,
+        "text": "      \"headline\": \"echel0nn1881/kimi-cyber-reasoning Viewer \u2022 Updated 15 days ago \u2022 997 \u2022 2.08k \u2022 72\","
+      },
+      {
+        "line": 1245,
+        "text": "      \"id\": \"lead-cf04ec1dcc0b7277\","
+      },
+      {
+        "line": 1461,
+        "text": "      \"id\": \"lead-e2ec0c4e8c72975d\","
+      },
+      {
+        "line": 1871,
+        "text": "      \"id\": \"lead-2a73168f36a1b61b\","
+      },
+      {
+        "line": 2716,
+        "text": "      \"id\": \"lead-1b21f77292c22aa1\","
+      },
+      {
+        "line": 2922,
+        "text": "      \"url\": \"https://ad.doubleclick.net/ddm/trackclk/N572608.5847589TLDRMEDIALLC/B36170213.451076220;dc_trk_aid=644549298;dc_trk_cid=258754087;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=$%7BGDPR%7D;gdpr_consent=$%7BGDPR_CONSENT_755%7D;ltd=;dc_tdv=1\","
+      },
+      {
+        "line": 2931,
+        "text": "      \"canonical_url\": \"https://ad.doubleclick.net/ddm/trackclk/N572608.5847589TLDRMEDIALLC/B36170213.451076220;dc_trk_aid=644549298;dc_trk_cid=258754087;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;tfua=;gdpr=$%7BGDPR%7D;gdpr_consent=$%7BGDPR_CONSENT_755%7D;ltd=;dc_tdv=1\","
+      },
+      {
+        "line": 3233,
+        "text": "      \"id\": \"lead-462ad728c0ca677e\","
+      },
+      {
+        "line": 3480,
+        "text": "      \"id\": \"lead-66e87d723e814df3\","
+      },
+      {
+        "line": 3505,
+        "text": "      \"id\": \"lead-9f79c2eb60a72df1\","
+      },
+      {
+        "line": 3544,
+        "text": "      \"id\": \"lead-546e05a3fae472b8\","
+      },
+      {
+        "line": 3644,
+        "text": "      \"id\": \"lead-206998b872946361\","
+      },
+      {
+        "line": 4248,
+        "text": "      \"id\": \"lead-774c678972a24ce4\","
+      },
+      {
+        "line": 4565,
+        "text": "      \"id\": \"lead-20c9f9de702fe722\","
+      },
+      {
+        "line": 4654,
+        "text": "      \"id\": \"lead-603a6177230a9a96\","
+      },
+      {
+        "line": 5501,
+        "text": "      \"id\": \"lead-cbc185a90072baae\","
+      },
+      {
+        "line": 5790,
+        "text": "      \"id\": \"lead-97291b3b216d01af\","
+      },
+      {
+        "line": 6121,
+        "text": "      \"id\": \"lead-898195f072222c53\","
+      },
+      {
+        "line": 6590,
+        "text": "      \"id\": \"lead-b77235353457c81e\","
+      },
+      {
+        "line": 7347,
+        "text": "      \"id\": \"lead-af272b51acbc7dd0\","
+      },
+      {
+        "line": 7561,
+        "text": "      \"id\": \"lead-1f112fc7530a72ce\","
+      },
+      {
+        "line": 7625,
+        "text": "      \"id\": \"lead-57dc5d8dacaa7210\","
+      },
+      {
+        "line": 7916,
+        "text": "      \"id\": \"lead-3d72f61333f55bdf\","
+      },
+      {
+        "line": 7944,
+        "text": "      \"id\": \"lead-249b589f759b7205\","
+      },
+      {
+        "line": 8086,
+        "text": "      \"id\": \"lead-64b7234d1a5216bf\","
+      },
+      {
+        "line": 8278,
+        "text": "      \"id\": \"lead-7a89d3ba2a72b6c4\","
+      },
+      {
+        "line": 8796,
+        "text": "      \"url\": \"https://doi.org/10.5281/zenodo.22307723\","
+      },
+      {
+        "line": 8797,
+        "text": "      \"title\": \"https://doi.org/10.5281/zenodo.22307723\","
+      },
+      {
+        "line": 8805,
+        "text": "      \"canonical_url\": \"https://doi.org/10.5281/zenodo.22307723\","
+      },
+      {
+        "line": 9549,
+        "text": "      \"id\": \"lead-06fa4428272bbabc\","
+      },
+      {
+        "line": 9907,
+        "text": "      \"id\": \"lead-38ae21f689972ffe\","
+      },
+      {
+        "line": 9951,
+        "text": "      \"title\": \"MohammadJRanjbar/ParsVoice Viewer \u2022 Updated 7 days ago \u2022 2.72M \u2022 692 \u2022 29\","
+      },
+      {
+        "line": 10318,
+        "text": "      \"headline\": \"https://doi.org/10.5281/zenodo.22721044\","
+      },
+      {
+        "line": 10319,
+        "text": "      \"canonical_url\": \"https://doi.org/10.5281/zenodo.22721044\","
+      },
+      {
+        "line": 10329,
+        "text": "      \"url\": \"https://doi.org/10.5281/zenodo.22721044\","
+      },
+      {
+        "line": 10330,
+        "text": "      \"title\": \"https://doi.org/10.5281/zenodo.22721044\","
+      },
+      {
+        "line": 10331,
+        "text": "      \"id\": \"lead-c4517089cd307b72\","
+      },
+      {
+        "line": 11019,
+        "text": "      \"id\": \"lead-023cb072fc146f2d\","
+      },
+      {
+        "line": 11198,
+        "text": "      \"id\": \"lead-b558547209946a51\","
+      },
+      {
+        "line": 11291,
+        "text": "      \"id\": \"lead-3052f8f59721f3a1\","
+      },
+      {
+        "line": 11878,
+        "text": "      \"id\": \"lead-a7b10b4e72a0a266\","
+      },
+      {
+        "line": 11928,
+        "text": "      \"id\": \"lead-9fa759b72385cdec\","
+      },
+      {
+        "line": 12539,
+        "text": "      \"id\": \"lead-b3ce0eb6396723af\","
+      },
+      {
+        "line": 13027,
+        "text": "      \"id\": \"lead-a72a8c8d784d0f35\","
+      },
+      {
+        "line": 13922,
+        "text": "      \"id\": \"lead-af465440672652ab\","
+      },
+      {
+        "line": 14051,
+        "text": "      \"id\": \"lead-c3e3b7243293f253\","
+      },
+      {
+        "line": 14230,
+        "text": "      \"id\": \"lead-93ffdc724a33a2f1\","
+      },
+      {
+        "line": 14269,
+        "text": "      \"id\": \"lead-87c8b0475772daa0\","
+      },
+      {
+        "line": 14865,
+        "text": "      \"id\": \"lead-841a24e6327202ec\","
+      },
+      {
+        "line": 14915,
+        "text": "      \"id\": \"lead-3dcc67287492a889\","
+      },
+      {
+        "line": 14954,
+        "text": "      \"id\": \"lead-8fa15b72d360726f\","
+      },
+      {
+        "line": 15405,
+        "text": "      \"id\": \"lead-4b9554574bdc1f72\","
+      },
+      {
+        "line": 15496,
+        "text": "      \"title\": \"Qwen/Qwen3.8-Flash-Next Image-Text-to-Text \u2022 180B \u2022 Updated 22 days ago \u2022 724k \u2022 \u2022 5.39k\","
+      }
+    ]
+  },
+  {
+    "path": "_data/watchlist-source-state.json",
+    "matches": [
+      {
+        "line": 13,
+        "text": "      \"latest_known_item_date\": \"2026-09-17T18:29:08.772Z\","
+      },
+      {
+        "line": 167,
+        "text": "      \"last_content_fingerprint\": \"5ae86c2f701572559d7b3c80eec6302abe804ac4058597020c007ba63c3b29cb\","
+      },
+      {
+        "line": 185,
+        "text": "      \"last_attempt_at\": \"2026-09-18T14:31:34.172Z\","
+      },
+      {
+        "line": 187,
+        "text": "      \"last_content_fingerprint\": \"d0f3a67f5279382cae57cf27add725b373c0b26b3090ad747762b14452995bc0\","
+      },
+      {
+        "line": 206,
+        "text": "      \"reason\": \"normalized_body_too_large:825072>500000\","
+      },
+      {
+        "line": 211,
+        "text": "      \"next_check_at\": \"2026-09-18T16:31:34.172Z\""
+      },
+      {
+        "line": 299,
+        "text": "      \"last_content_fingerprint\": \"8ee5f1e1f5354157e168046bec6608d23fe6c10e132702fea62874958c912304\","
+      },
+      {
+        "line": 388,
+        "text": "      \"last_content_fingerprint\": \"e96e03b2ea75b448106451476c8772e53eb4e5640d23f328b2dc5b9b63a144af\","
+      },
+      {
+        "line": 502,
+        "text": "      \"last_content_fingerprint\": \"7c6d9f7b8bb813729d36517c5d5dcc607830670e62ff43f9369867c8d812f621\","
+      },
+      {
+        "line": 808,
+        "text": "        \"https://doi.org/10.5281/zenodo.22721044\","
+      },
+      {
+        "line": 899,
+        "text": "      \"last_content_fingerprint\": \"c66d7af72ea12bb06eb54a7184608540eafac19a2e0d78af051509f7ea83e508\","
+      },
+      {
+        "line": 976,
+        "text": "      \"last_content_fingerprint\": \"7c6d9f7b8bb813729d36517c5d5dcc607830670e62ff43f9369867c8d812f621\","
+      },
+      {
+        "line": 1160,
+        "text": "      \"last_content_fingerprint\": \"04b76b916b3cb1ce01c8fd92e82ea3044b42cc4b660a0d63725e52159d1ff7ce\","
+      },
+      {
+        "line": 1216,
+        "text": "      \"last_content_fingerprint\": \"07c0c7772ce1c207f65f43404eae460fb5ce330cf6ecba13a4855c3b311553ab\","
+      },
+      {
+        "line": 1252,
+        "text": "      \"last_content_fingerprint\": \"c79db229e589fd5659572c86c929d2a47da2d38b8d19f5f7de55fcb37bacd1c6\","
+      },
+      {
+        "line": 1367,
+        "text": "      \"last_content_fingerprint\": \"ff12abbed8247ca1bd8ed4f0f79aa805f4f0bb9e72a055ee98a0d3fb4ec0bcd7\","
+      },
+      {
+        "line": 1471,
+        "text": "      \"last_content_fingerprint\": \"83b7e41e6d4ee51168bb087693ce7e0d9a3c4b91932b73d3f9a078d8489ac8fd\","
+      },
+      {
+        "line": 2096,
+        "text": "      \"last_content_fingerprint\": \"072615d8aa58c4ea21cb9f844b250858959f82e7d50f626370eebf0d2b8eded0\","
+      }
+    ]
+  },
+  {
+    "path": "_data/watchlist-sources.json",
+    "matches": [
+      {
+        "line": 150,
+        "text": "        \"reason\": \"normalized_body_too_large:825072>500000\","
+      },
+      {
+        "line": 155,
+        "text": "            \"reason\": \"normalized_body_too_large:825072>500000\""
+      },
+      {
+        "line": 158,
+        "text": "        \"checked_at\": \"2026-09-18T14:31:34.172Z\""
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/accessibility.mjs",
+    "matches": [
+      {
+        "line": 6,
+        "text": "  return .2126 * rgb[0] + .7152 * rgb[1] + .0722 * rgb[2];"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/discovery-queue.mjs",
+    "matches": [
+      {
+        "line": 21,
+        "text": " return {candidates:selected,retention:{policy:'source_round_robin_priority_recency_url_v2',discovered_unique:byUrl.size,retained:selected.length,"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/draft-recovery.mjs",
+    "matches": [
+      {
+        "line": 90,
+        "text": "  return {state:'recoverable_draft',review_status:r.review_status,restored,approval:'not_granted',requires_final_gates:true,evidence_file:path.join(dir,'evidence.json'),freshness:'must_be_rechecked_before_publication'};"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/editorial-kernel.mjs",
+    "matches": [
+      {
+        "line": 78,
+        "text": "  const freshnessTier=ageHours<=24?'primary':'fallback';"
+      },
+      {
+        "line": 79,
+        "text": "  if(freshnessTier==='fallback')fallbackUsed=true;"
+      },
+      {
+        "line": 80,
+        "text": "  const freshness=freshnessTier==='primary'"
+      },
+      {
+        "line": 82,
+        "text": "   :{tier:'fallback',source_published_at:sourcePublishedAt,fallback_reason:story.agent_skill===true&&ageHours>72"
+      },
+      {
+        "line": 83,
+        "text": "      ?'Outside the 24-hour primary window; included under the documented Agent Skills recency exception after bounded review.'"
+      },
+      {
+        "line": 84,
+        "text": "      :'Outside the 24-hour primary window; included under the documented recency fallback after bounded review.'};"
+      },
+      {
+        "line": 92,
+        "text": "  return {story_id:`dab-story-${normalized.brief_date}-${idSuffix}`,ordinal:story.canonical_ordinal,slug:storySlug,permanent_url:`/stories/${normalized.brief_date}/${storySlug}/`,focus:story.focus,headline:story.headline,event_date:fact.event_date,topics:[...story.topic_labels],companies:[...(fact.companies||[])],image:{path:image.path,public_url:publicImage,alt:image.alt,width:image.width||1200,height:image.height||630,kind:image.kind||'editorial_explainer',...(image.cache_key?{cache_key:image.cache_key}:{})},summary:story.summary,why_it_matters:story.why_it_matters,source:{title:fact.source.title,organization:fact.source.organization,url:story.source_url,normalized_url:story.source_url,publication_date:fact.source.publication_date??sourcePublishedAt.slice(0,10),evidence_type:fact.source.evidence_type,availability_status:fact.source.availability_status,...(sourceReading?{reading_evidence:sourceReading}:{})},freshness,selection_rationale:selectionRationale,novelty:fact.novelty?{...fact.novelty}:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:candidateScore,what_to_do_now:{...story.what_to_do_now},social_description:story.why_it_matters.slice(0,180),social:{title:story.headline,description:story.why_it_matters.slice(0,180),image_url:publicImage}};"
+      },
+      {
+        "line": 94,
+        "text": " const canonicalCoverage=`24-hour primary window ending at ${researchCutoffAt}${fallbackUsed?'; recency fallback used for reviewed items outside the primary window.':'.'}`;"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/import-legacy.mjs",
+    "matches": [
+      {
+        "line": 168,
+        "text": "      const bySource=new Map((canonical.stories||[]).map(story=>[story.source?.normalized_url,story.freshness]));"
+      },
+      {
+        "line": 169,
+        "text": "      imported.stories=imported.stories.map(story=>({...story,freshness:bySource.get(story.source.normalized_url)}));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/integrity.mjs",
+    "matches": [
+      {
+        "line": 123,
+        "text": "export function validatePublicationFreshness(edition, expectedDate) {"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/media-selection.mjs",
+    "matches": [
+      {
+        "line": 8,
+        "text": "export const VIDEO_MAX_AGE_HOURS=72;"
+      },
+      {
+        "line": 53,
+        "text": "  rule:'0 videos is valid only after bounded 72-hour coverage includes both video intents, at least 15 metadata candidates across at least 8 trusted sources, preferred and fallback duration tiers, and 3-5 deep reviews.'};"
+      },
+      {
+        "line": 65,
+        "text": " if(!/^\\d{4}-\\d{2}-\\d{2}$/.test(date||''))throw Error('Explicit edition date required for podcast freshness');"
+      },
+      {
+        "line": 74,
+        "text": "   if(tier!=='primary_48h'&&!String(candidate.freshness_exception_reason||'').trim())continue;"
+      },
+      {
+        "line": 75,
+        "text": "   selected.push({...candidate,freshness_tier:tier});"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/personal-learning.mjs",
+    "matches": [
+      {
+        "line": 12,
+        "text": "  protectedDimensions: ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty']"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/production-guardrails.mjs",
+    "matches": [
+      {
+        "line": 120,
+        "text": "export function validateWatchlistFreshness(edition,watchlist){"
+      },
+      {
+        "line": 135,
+        "text": "export function assertWatchlistFreshness(edition,watchlist){"
+      },
+      {
+        "line": 136,
+        "text": "  const errors=validateWatchlistFreshness(edition,watchlist);"
+      },
+      {
+        "line": 137,
+        "text": "  if(errors.length)throw new Error('Watchlist freshness failed:\\n- '+errors.join('\\n- '));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/production-run.mjs",
+    "matches": [
+      {
+        "line": 17,
+        "text": " return {candidate_id:p.candidate_id,headline:compact(p.headline,180),publisher:compact(p.publisher,100)||null,canonical_url:p.canonical_url,category:p.category,published_at:p.published_at,source_reliability:p.source_reliability,freshness_tier:p.freshness_tier,freshness_age_hours:p.freshness_age_hours,novelty_status:p.novelty_status,confidence:p.confidence,agent_skill_relevance:p.agent_skill_relevance===true,evidence:(p.verified_claims||[]).slice(0,4).map(x=>compact(x.claim,300)),source_word_count:Number.isInteger(p.source_word_count)&&p.source_word_count>0?p.source_word_count:null,source_reading_minutes:Number.isInteger(p.source_reading_minutes)&&p.source_reading_minutes>0?p.source_reading_minutes:null,limitation:(p.limitations||[]).slice(0,1).map(x=>compact(x,240))[0]||null,availability:compact(p.availability,120)||null,why_candidate_matters:compact(p.why_it_matters,320)||null};"
+      },
+      {
+        "line": 26,
+        "text": "  views.editorial.push({candidate_id:capsule.candidate_id,headline:capsule.headline,canonical_url:capsule.canonical_url,category:capsule.category,published_at:capsule.published_at,source_reliability:capsule.source_reliability,freshness_tier:capsule.freshness_tier,novelty_status:capsule.novelty_status,confidence:capsule.confidence,agent_skill_relevance:capsule.agent_skill_relevance,evidence:capsule.evidence,source_word_count:capsule.source_word_count,source_reading_minutes:capsule.source_reading_minutes,limitation:capsule.limitation,availability:capsule.availability,why_candidate_matters:capsule.why_candidate_matters});"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/publication-manifest.mjs",
+    "matches": [
+      {
+        "line": 98,
+        "text": "  const age=daysBetween(date,item.upload_date);if(!Number.isFinite(age)||age<0||age>3)errors.push('publication_manifest_video_freshness_invalid:'+item._receipt_id);"
+      },
+      {
+        "line": 103,
+        "text": "  if(!Number.isFinite(age)||age<0||age>30)errors.push('publication_manifest_podcast_freshness_invalid:'+String(item.item_id||item.title));"
+      },
+      {
+        "line": 104,
+        "text": "  if(age>2&&!String(item.freshness_exception_reason||'').trim())errors.push('publication_manifest_podcast_freshness_exception_required:'+String(item.item_id||item.title));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/publication.mjs",
+    "matches": [
+      {
+        "line": 10,
+        "text": "import {applyProductionTelemetryHealth,assertMediaPreflight,assertWatchlistFreshness} from './production-guardrails.mjs';"
+      },
+      {
+        "line": 82,
+        "text": "    assertWatchlistFreshness(edition,watchlist);"
+      },
+      {
+        "line": 93,
+        "text": "    checks.push({check_id:'watchlist_freshness',class:'deterministic',result:'pass',severity:'critical',evidence:'Manifest-bound Watchlist edition date and evidence are frozen before publication.'});"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/reading-support.mjs",
+    "matches": [
+      {
+        "line": 29,
+        "text": "  if(!['New development','Update','Background','Recency fallback'].includes(x.coverage_label)||!x.label_reason||!x.learning_outcome?.trim()||!x.context_term||!x.context)throw Error('Reading support requires reviewed labels, learning outcomes and context');"
+      },
+      {
+        "line": 31,
+        "text": "  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='fallback'&&x.coverage_label!=='Recency fallback')throw Error(`${x.item_id}: fallback stories must use the Recency fallback label`);"
+      },
+      {
+        "line": 32,
+        "text": "  if(edition.brief_date>='2026-09-16'&&story?.freshness?.tier==='primary'&&x.coverage_label==='Recency fallback')throw Error(`${x.item_id}: primary-window stories cannot use the Recency fallback label`);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/research.mjs",
+    "matches": [
+      {
+        "line": 7,
+        "text": "export const PRIMARY_FRESHNESS_HOURS = 24;"
+      },
+      {
+        "line": 8,
+        "text": "export const DEFAULT_FALLBACK_HOURS = 72;"
+      },
+      {
+        "line": 9,
+        "text": "export const AGENT_SKILLS_FALLBACK_HOURS = 168;"
+      },
+      {
+        "line": 24,
+        "text": "export function freshnessTier(publishedAt, now, {primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS}={}) {"
+      },
+      {
+        "line": 32,
+        "text": "export function filterCandidates(candidates, {now, primaryAgeHours = PRIMARY_FRESHNESS_HOURS, maxAgeHours = AGENT_SKILLS_FALLBACK_HOURS, coveredEvents = []} = {}) {"
+      },
+      {
+        "line": 48,
+        "text": "    else if (Number.isFinite(published) && (published > time(now) || time(now)-published > maxAgeHours*3600000)) reason = 'outside_freshness_window';"
+      },
+      {
+        "line": 53,
+        "text": "      const freshness=freshnessTier(item.published_at,now,{primaryAgeHours,maxAgeHours});"
+      },
+      {
+        "line": 54,
+        "text": "      accepted.push({...item,freshness_tier:freshness.tier,freshness_age_hours:freshness.age_hours});"
+      },
+      {
+        "line": 57,
+        "text": "  const fresh=accepted.filter(item=>item.freshness_tier==='primary');"
+      },
+      {
+        "line": 58,
+        "text": "  const fallback=accepted.filter(item=>item.freshness_tier==='fallback');"
+      },
+      {
+        "line": 62,
+        "text": "export function researchSufficiency(packets, {now, primaryAgeHours=PRIMARY_FRESHNESS_HOURS} = {}) {"
+      },
+      {
+        "line": 63,
+        "text": "  if (!Number.isFinite(time(now)) || !Number.isFinite(primaryAgeHours) || primaryAgeHours<=0) throw Error('Explicit valid time/primary freshness window required');"
+      },
+      {
+        "line": 98,
+        "text": "    freshness_tier:candidate.freshness_tier||null,freshness_age_hours:Number.isFinite(candidate.freshness_age_hours)?candidate.freshness_age_hours:null,"
+      },
+      {
+        "line": 189,
+        "text": "export async function runSelectiveResearch(candidates, {now,cache,fetcher,reviewer,primaryAgeHours=PRIMARY_FRESHNESS_HOURS,maxAgeHours=AGENT_SKILLS_FALLBACK_HOURS,minDeepCandidates=DEFAULT_DEEP_CANDIDATE_TARGET,metadataCandidateLimit=DEFAULT_METADATA_CANDIDATE_LIMIT,maxDeepCandidates=MAX_DEEP_CANDIDATE_EXCEPTION}={}) {"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/scoring.mjs",
+    "matches": [
+      {
+        "line": 4,
+        "text": "export const SCORE_DIMENSIONS = ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty', 'practical_value', 'category_fit'];"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/validate.mjs",
+    "matches": [
+      {
+        "line": 2,
+        "text": "import {PRIMARY_FRESHNESS_HOURS, DEFAULT_FALLBACK_HOURS, AGENT_SKILLS_FALLBACK_HOURS} from './research.mjs';"
+      },
+      {
+        "line": 23,
+        "text": "  const freshnessRequired=edition.brief_date>='2026-09-16';"
+      },
+      {
+        "line": 25,
+        "text": "  if(freshnessRequired){"
+      },
+      {
+        "line": 40,
+        "text": "    if(!freshnessRequired)storyFields.push('george_implication');"
+      },
+      {
+        "line": 60,
+        "text": "    if(freshnessRequired){"
+      },
+      {
+        "line": 61,
+        "text": "      const f=story.freshness;"
+      },
+      {
+        "line": 62,
+        "text": "      if(!f||!['primary','fallback'].includes(f.tier))errors.push(`${label}.freshness.tier must be primary or fallback`);"
+      },
+      {
+        "line": 64,
+        "text": "      if(!Number.isFinite(published))errors.push(`${label}.freshness.source_published_at must be a verified timestamp`);"
+      },
+      {
+        "line": 67,
+        "text": "        if(ageHours<0)errors.push(`${label}.freshness source timestamp is after the research cutoff`);"
+      },
+      {
+        "line": 68,
+        "text": "        if(f?.tier==='primary'&&ageHours>PRIMARY_FRESHNESS_HOURS)errors.push(`${label}.freshness primary story exceeds ${PRIMARY_FRESHNESS_HOURS} hours`);"
+      },
+      {
+        "line": 71,
+        "text": "          requireText(f.fallback_reason,`${label}.freshness.fallback_reason`);"
+      },
+      {
+        "line": 72,
+        "text": "          if(ageHours<=PRIMARY_FRESHNESS_HOURS)errors.push(`${label}.freshness fallback is still inside the primary window`);"
+      },
+      {
+        "line": 74,
+        "text": "          if(ageHours>maxHours)errors.push(`${label}.freshness fallback exceeds ${maxHours} hours`);"
+      },
+      {
+        "line": 79,
+        "text": "      const dimensions = ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty', 'practical_value', 'category_fit'];"
+      },
+      {
+        "line": 92,
+        "text": "  if(freshnessRequired&&fallbackCount>0&&!/recency fallback/i.test(edition.coverage_period||''))errors.push('coverage_period must disclose recency fallback use');"
+      },
+      {
+        "line": 126,
+        "text": "    if(!freshnessRequired)podcastFields.push('george_implication');"
+      },
+      {
+        "line": 142,
+        "text": "      if(!Number.isFinite(age)||age<0||age>PODCAST_EXCEPTION_AGE_DAYS)errors.push(`${label} exceeds the ${PODCAST_EXCEPTION_AGE_DAYS}-day absolute freshness ceiling`);"
+      },
+      {
+        "line": 144,
+        "text": "        requireText(podcast.freshness_exception_reason,`${label}.freshness_exception_reason`);"
+      },
+      {
+        "line": 146,
+        "text": "        if(podcast.freshness_tier!==expectedTier)errors.push(`${label}.freshness_tier must be ${expectedTier}`);"
+      },
+      {
+        "line": 147,
+        "text": "      }else if(podcast.freshness_tier&&podcast.freshness_tier!=='primary_48h')errors.push(`${label}.freshness_tier must be primary_48h inside the primary window`);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/lib/visual-diagram.mjs",
+    "matches": [
+      {
+        "line": 65,
+        "text": " const marker='<defs><marker id=\"arrow\" markerWidth=\"10\" markerHeight=\"10\" refX=\"8\" refY=\"3\" orient=\"auto\"><path d=\"M0,0 L0,6 L9,3 z\" fill=\"#6b7280\"/></marker></defs>';"
+      },
+      {
+        "line": 66,
+        "text": " const edgeSvg=(spec.edges||[]).map(edge=>{const a=byId.get(edge.from),b=byId.get(edge.to);if(!a||!b)return '';const dx=b.x-a.x,dy=b.y-a.y,len=Math.hypot(dx,dy)||1,ax=a.x+dx/len*(a.w/2),ay=a.y+dy/len*(a.h/2),bx=b.x-dx/len*(b.w/2),by=b.y-dy/len*(b.h/2),mx=(ax+bx)/2,my=(ay+by)/2;return `<path d=\"M${ax.toFixed(1)},${ay.toFixed(1)} L${bx.toFixed(1)},${by.toFixed(1)}\" stroke=\"#6b7280\" stroke-width=\"2.2\" fill=\"none\" marker-end=\"url(#arrow)\"/>${edge.label?svgText(wrap(edge.label,20),mx,my-8,{size:13,fill:'#5b6470'}):''}`;}).join('');"
+      },
+      {
+        "line": 67,
+        "text": " const nodeSvg=spec.nodes.map((node,i)=>{const p=byId.get(node.id),accent=['#9c2f2f','#2f6b9a','#3f704d','#7a5a13'][i%4],label=wrap(node.label,24),detail=wrap(node.detail,31);return `<g><rect x=\"${p.x-p.w/2}\" y=\"${p.y-p.h/2}\" width=\"${p.w}\" height=\"${p.h}\" rx=\"14\" fill=\"#ffffff\" stroke=\"${accent}\" stroke-width=\"2.4\"/><rect x=\"${p.x-p.w/2}\" y=\"${p.y-p.h/2}\" width=\"7\" height=\"${p.h}\" rx=\"3\" fill=\"${accent}\"/>${svgText(label,p.x,p.y-p.h/2+30,{size:17,weight:700,fill:'#172b3a'})}${svgText(detail,p.x,p.y-p.h/2+30+label.length*21+12,{size:13,fill:'#425466',lineHeight:17})}</g>`;}).join('');"
+      },
+      {
+        "line": 69,
+        "text": " return `<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"${WIDTH}\" height=\"${HEIGHT}\" viewBox=\"0 0 ${WIDTH} ${HEIGHT}\" role=\"img\" aria-label=\"${esc(spec.alt_text)}\"><rect width=\"1200\" height=\"630\" fill=\"#ffffff\"/>${marker}${svgText(wrap(spec.title,72),60,55,{size:30,weight:700,fill:'#17365d',anchor:'start',lineHeight:34})}${spec.subtitle?svgText(wrap(spec.subtitle,100),60,95,{size:16,fill:'#5b6470',anchor:'start',lineHeight:20}):''}${edgeSvg}${nodeSvg}${calloutSvg}<text x=\"1140\" y=\"604\" text-anchor=\"end\" font-family=\"Arial,Helvetica,sans-serif\" font-size=\"12\" fill=\"#6b7280\">Daily Generative AI Brief \u00b7 explanatory diagram</text></svg>`;"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/continuous-qualification-contract.test.mjs",
+    "matches": [
+      {
+        "line": 196,
+        "text": "test('Q14 hardening corrects date precision without weakening freshness or focus gates',()=>{"
+      },
+      {
+        "line": 201,
+        "text": "  assert.equal(q.ordinary_freshness_hours_unchanged,72);"
+      },
+      {
+        "line": 227,
+        "text": "  assert.equal(q.ordinary_freshness_hours_unchanged,72);"
+      },
+      {
+        "line": 256,
+        "text": "  assert.equal(q.ordinary_freshness_hours_unchanged,72);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/editorial-kernel.test.mjs",
+    "matches": [
+      {
+        "line": 26,
+        "text": "  candidateFacts[`candidate-${i+1}`]={event_date:'2026-09-17',companies:['Example AI'],source_word_count:800+i,source_word_count_method:'retrieved_source_text_whitespace_v1',source_fetched_at:'2026-09-18T11:00:00Z',source:{title:`Source ${i+1}`,organization:'Example AI',url:`https://example.org/story-${i+1}`,publication_date:'2026-09-17',evidence_type:'official_announcement',availability_status:'general_availability'},novelty:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:{significance:4,freshness:4,authority:5,evidence_quality:4,novelty:4,practical_value:4,category_fit:5,total:30},selection_rationale:'Highest qualifying candidate in its approved category.'};"
+      },
+      {
+        "line": 31,
+        "text": " assert.equal(edition.status,'staged');assert.equal(edition.policy_profile,'under80-v1');assert.equal(edition.stories.length,6);assert.match(edition.stories[0].story_id,/^dab-story-2026-09-18-[0-9a-f]{8}$/);assert.equal(edition.stories[0].ordinal,1);assert.equal(edition.stories[0].permanent_url,'/stories/2026-09-18/a-substantive-verified-headline-1/');assert.equal(edition.stories[0].source.organization,'Example AI');assert.equal(edition.stories[0].source.reading_evidence.word_count,800);assert.equal(edition.stories[0].source.reading_evidence.words_per_minute,200);assert.match(edition.stories[0].image.public_url,/0[1]-story\\.png\\?v=20260918$/);assert.equal(edition.stories[0].social.title,kernel.stories[0].headline);assert.equal(edition.worth_watching.general.status,'empty');assert.equal(edition.research_cutoff_at,'2026-09-18T14:41:06Z');assert.match(edition.coverage_period,/24-hour primary window/);assert.equal(edition.stories[0].freshness.tier,'primary');assert.equal(edition.stories[2].freshness.tier,'fallback');assert.equal(edition.stories[0].candidate_score.selection_rationale,'Highest qualifying candidate in its approved category.');"
+      },
+      {
+        "line": 43,
+        "text": "  candidateFacts[`candidate-${i+1}`]={event_date:'2026-09-18',companies:['Example AI'],source_word_count:800,source_word_count_method:'retrieved_source_text_whitespace_v1',source_fetched_at:'2026-09-19T11:00:00Z',source:{title:`Source ${i+1}`,organization:'Example AI',url:`https://example.org/story-${i+1}`,publication_date:'2026-09-18',evidence_type:'official_announcement',availability_status:'general_availability'},novelty:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:{significance:4,freshness:4,authority:5,evidence_quality:4,novelty:4,practical_value:4,category_fit:5,total:30},selection_rationale:'Qualified candidate.'};"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/editorial.test.mjs",
+    "matches": [
+      {
+        "line": 62,
+        "text": "    story.candidate_score = {significance: 5, freshness: 5, authority: 5, evidence_quality: 5, novelty: 5, practical_value: 5, category_fit: 5, total: 35, selection_rationale: 'Top-ranked verified candidate in its required category.'};"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/efficiency-revision.test.mjs",
+    "matches": [
+      {
+        "line": 33,
+        "text": "  source_reliability:'publisher_authored',freshness_tier:'primary',freshness_age_hours:2,novelty_status:'pass',confidence:'high',agent_skill_relevance:i===0,"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/freshness-policy.test.mjs",
+    "matches": [
+      {
+        "line": 13,
+        "text": " edition.coverage_period='24-hour primary window ending September 16 at 07:00 America/Chicago; no recency fallbacks were needed.';"
+      },
+      {
+        "line": 18,
+        "text": "  story.freshness={tier:'primary',source_published_at:'2026-09-16T10:00:00Z'};"
+      },
+      {
+        "line": 25,
+        "text": "const freshnessErrors=edition=>validateEdition(edition).filter(error=>/freshness|research_cutoff|coverage_period|primary window|recency fallback/i.test(error));"
+      },
+      {
+        "line": 29,
+        "text": " assert.deepEqual(freshnessErrors(edition),[]);"
+      },
+      {
+        "line": 31,
+        "text": " assert.ok(freshnessErrors(edition).some(error=>error.includes('research_cutoff_at')));"
+      },
+      {
+        "line": 34,
+        "text": "test('ordinary fallbacks are capped at 72 hours and require disclosure',()=>{"
+      },
+      {
+        "line": 36,
+        "text": " edition.stories[0].freshness={tier:'fallback',source_published_at:'2026-09-13T04:00:00Z',fallback_reason:'No qualifying primary-window candidate survived the technical category gates.'};"
+      },
+      {
+        "line": 37,
+        "text": " assert.ok(freshnessErrors(edition).some(error=>error.includes('exceeds 72 hours')));"
+      },
+      {
+        "line": 38,
+        "text": " edition.stories[0].freshness.source_published_at='2026-09-15T06:00:00Z';"
+      },
+      {
+        "line": 39,
+        "text": " edition.coverage_period='24-hour primary window ending September 16 at 07:00 America/Chicago; 1 recency fallback filled a required category after fresh candidates failed the gates.';"
+      },
+      {
+        "line": 40,
+        "text": " assert.deepEqual(freshnessErrors(edition),[]);"
+      },
+      {
+        "line": 41,
+        "text": " delete edition.stories[0].freshness.fallback_reason;"
+      },
+      {
+        "line": 42,
+        "text": " assert.ok(freshnessErrors(edition).some(error=>error.includes('fallback_reason')));"
+      },
+      {
+        "line": 49,
+        "text": " skill.freshness={tier:'fallback',source_published_at:'2026-09-11T12:00:00Z',fallback_reason:'No qualifying Agent Skills development was found in the primary window.'};"
+      },
+      {
+        "line": 50,
+        "text": " edition.coverage_period='24-hour primary window ending September 16 at 07:00 America/Chicago; 1 recency fallback used the approved Agent Skills exception.';"
+      },
+      {
+        "line": 51,
+        "text": " assert.deepEqual(freshnessErrors(edition),[]);"
+      },
+      {
+        "line": 52,
+        "text": " skill.freshness.source_published_at='2026-09-08T12:00:00Z';"
+      },
+      {
+        "line": 53,
+        "text": " assert.ok(freshnessErrors(edition).some(error=>error.includes('exceeds 168 hours')));"
+      },
+      {
+        "line": 56,
+        "text": "test('fallback stories must render the visible Recency fallback label',()=>{"
+      },
+      {
+        "line": 59,
+        "text": " story.freshness={tier:'fallback',source_published_at:'2026-09-15T06:00:00Z',fallback_reason:'No qualifying primary-window candidate survived the category gates.'};"
+      },
+      {
+        "line": 61,
+        "text": "  item_id:story.story_id,coverage_label:'New development',label_reason:'Reviewed selection.',learning_outcome:'Understand the selected development.',context_term:'Freshness',context:'This item fills a required category.'"
+      },
+      {
+        "line": 63,
+        "text": " assert.throws(()=>validateReadingSupport(edition,support),/Recency fallback/);"
+      },
+      {
+        "line": 64,
+        "text": " support.editions['2026-09-16'][0].coverage_label='Recency fallback';"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/hardening.test.mjs",
+    "matches": [
+      {
+        "line": 8,
+        "text": "import {publicationOutcome, rollbackOutcome, validatePublicationFreshness, validateQaRecord} from '../lib/integrity.mjs';"
+      },
+      {
+        "line": 28,
+        "text": "  assert.ok(validatePublicationFreshness(edition, '2026-09-08').some(error => error.includes('stale edition')));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/operations-efficiency.test.mjs",
+    "matches": [
+      {
+        "line": 20,
+        "text": "test('video duration ladder prefers <=10m, then 10-15m, then 15-20m within the bounded 72-hour window',()=>{"
+      },
+      {
+        "line": 32,
+        "text": "test('zero-video completion requires bounded evidence-backed 72-hour coverage',()=>{"
+      },
+      {
+        "line": 35,
+        "text": " assert.equal(receipt.complete,true);assert.equal(receipt.bounded,true);assert.equal(receipt.zero_video_allowed,true);assert.equal(receipt.maximum_age_hours,72);"
+      },
+      {
+        "line": 39,
+        "text": "test('podcast target is two with freshness, show diversity and at most one AI Daily Brief episode',()=>{"
+      },
+      {
+        "line": 48,
+        "text": " assert.equal(result.restricted_show_count,1);assert.equal(result.source_diverse,true);assert.ok(result.selected.every(x=>x.freshness_tier==='primary_48h'));"
+      },
+      {
+        "line": 55,
+        "text": "  {verified:true,editorial_pass:true,show:'Fallback With Reason',url:'https://pod.test/reason',publication_date:'2026-09-14',score:40,freshness_exception_reason:'No second qualifying episode was available inside the primary 48-hour window.'}"
+      },
+      {
+        "line": 59,
+        "text": " assert.equal(result.selected[1].freshness_tier,'fallback_7d');"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/pr117-prospective-handoff.test.mjs",
+    "matches": [
+      {
+        "line": 44,
+        "text": "      freshness:{tier:'primary',source_published_at:'2026-09-18T10:00:00Z'},"
+      },
+      {
+        "line": 46,
+        "text": "      candidate_score:{significance:1,freshness:1,authority:1,evidence_quality:1,novelty:1,practical_value:1,category_fit:1,total:7,selection_rationale:'Synthetic contract score only.'},"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/production-guardrails.test.mjs",
+    "matches": [
+      {
+        "line": 4,
+        "text": "import {productionTelemetryHealth,applyProductionTelemetryHealth,validateMediaPreflight,validateWatchlistFreshness} from '../lib/production-guardrails.mjs';"
+      },
+      {
+        "line": 81,
+        "text": " assert.deepEqual(validateWatchlistFreshness(edition,good),[]);"
+      },
+      {
+        "line": 83,
+        "text": " assert.ok(validateWatchlistFreshness(edition,stale).some(x=>x.includes('edition_date')));"
+      },
+      {
+        "line": 85,
+        "text": " assert.ok(validateWatchlistFreshness(edition,noEvidence).some(x=>x.includes('lacks evidence')));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/publication-date-precision.test.mjs",
+    "matches": [
+      {
+        "line": 34,
+        "text": "test('Q14 hardening keeps the ordinary freshness gate at exactly 72 hours',()=>{"
+      },
+      {
+        "line": 35,
+        "text": "  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dab-q14-freshness-'));"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/research.test.mjs",
+    "matches": [
+      {
+        "line": 7,
+        "text": "import {RetrievalCache,filterCandidates,createEvidencePacket,researchSufficiency,FOCUSES,researchTelemetry,runSelectiveResearch,PRIMARY_FRESHNESS_HOURS,DEFAULT_FALLBACK_HOURS,AGENT_SKILLS_FALLBACK_HOURS,DEFAULT_METADATA_CANDIDATE_LIMIT,MAX_DEEP_CANDIDATE_EXCEPTION} from '../lib/research.mjs';"
+      },
+      {
+        "line": 13,
+        "text": "test('freshness constants preserve a 24-hour primary window and bounded fallbacks',()=>{"
+      },
+      {
+        "line": 14,
+        "text": " assert.equal(PRIMARY_FRESHNESS_HOURS,24);assert.equal(DEFAULT_FALLBACK_HOURS,72);assert.equal(AGENT_SKILLS_FALLBACK_HOURS,168);"
+      },
+      {
+        "line": 29,
+        "text": " assert.equal(result.fresh.length,1);assert.equal(result.fallback.length,1);assert.equal(result.fallback[0].freshness_tier,'fallback');"
+      },
+      {
+        "line": 30,
+        "text": " assert.equal(result.rejected[0].reason,'outside_freshness_window');"
+      },
+      {
+        "line": 38,
+        "text": " assert.deepEqual(result.rejected.map(x=>x.reason),['duplicate_url','outside_freshness_window','unsupported_source','covered_event_requires_material_update']);"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/under80-metadata-gate.test.mjs",
+    "matches": [
+      {
+        "line": 72,
+        "text": "test('required topic survives sparse title wording but does not satisfy freshness without verified material change',()=>{"
+      }
+    ]
+  },
+  {
+    "path": "_generator/test/watchlist-daily-state.test.mjs",
+    "matches": [
+      {
+        "line": 23,
+        "text": "test('Watchlist page visibly explains rolling freshness and daily states',()=>{"
+      }
+    ]
+  },
+  {
+    "path": "_tools/build-early-signal-sources.mjs",
+    "matches": [
+      {
+        "line": 38,
+        "text": "Every candidate still passes freshness, authority, evidence-quality, novelty, relevance, and duplication checks. Community discussion can identify a lead or a limitation; consequential claims must be traced to an original paper, model card, repository, official release, system card, or other authoritative evidence. Preprints and vendor-reported results are labeled for what they are."
+      }
+    ]
+  },
+  {
+    "path": "_tools/discover-sources.mjs",
+    "matches": [
+      {
+        "line": 57,
+        "text": "const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;"
+      }
+    ]
+  },
+  {
+    "path": "_tools/freshness-check.mjs",
+    "matches": [
+      {
+        "line": 7,
+        "text": "console.log(JSON.stringify(result,null,2));if(process.env.GITHUB_STEP_SUMMARY)fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,`## Daily Brief freshness\\n\\nExpected ${date}; observed ${latest||'unavailable'}. Status: ${result.status}.\\n`);"
+      }
+    ]
+  },
+  {
+    "path": "_tools/render-visual-assets.mjs",
+    "matches": [
+      {
+        "line": 16,
+        "text": "const slug=value=>String(value||'story').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,72).replace(/-$/,'')||'story';"
+      }
+    ]
+  },
+  {
+    "path": "_tools/run-under80-preflight.mjs",
+    "matches": [
+      {
+        "line": 49,
+        "text": "  '--ordinary-max-age-hours',String(request.ordinary_max_age_hours||72),"
+      },
+      {
+        "line": 50,
+        "text": "  '--skill-max-age-hours',String(request.agent_skills_max_age_hours||168)"
+      }
+    ]
+  },
+  {
+    "path": "_tools/under80-metadata-gate.mjs",
+    "matches": [
+      {
+        "line": 12,
+        "text": "const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||72);"
+      },
+      {
+        "line": 13,
+        "text": "const skillAgeHours=Number(args['skill-max-age-hours']||168);"
+      },
+      {
+        "line": 46,
+        "text": " if(h<=72)return 12;"
+      }
+    ]
+  },
+  {
+    "path": "_tools/validate-contracts.mjs",
+    "matches": [
+      {
+        "line": 93,
+        "text": "        const keys = ['significance', 'freshness', 'authority', 'evidence_quality', 'novelty', 'practical_value', 'category_fit'];"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/CONTINUOUS-QUALIFICATION-PLAN.md",
+    "matches": [
+      {
+        "line": 425,
+        "text": "Verified root cause: the Q13 repair relied on first-party pinned candidates whose publisher dates were represented as date-only values normalized to `00:00:00Z`. The metadata enricher skipped any candidate that already had a publication date, so it never attempted to recover an exact article-page timestamp. By the Q14 cutoff (`2026-09-28T02:53:00Z`), September 23\u201325 date-only pins had conservatively aged beyond the unchanged 72-hour ordinary freshness window."
+      },
+      {
+        "line": 428,
+        "text": "- preserve the ordinary **72-hour** freshness gate exactly;"
+      },
+      {
+        "line": 441,
+        "text": "The Q14 correction worked materially: date enrichment attempted precision recovery for 17 day-precision candidates and resolved 9 exact timestamps, while Agents coverage reached the required three. The remaining failure is therefore isolated to recurring Applied source supply rather than timestamp precision, Agents classification, Agent Skills, or the freshness gate."
+      },
+      {
+        "line": 445,
+        "text": "- preserve the ordinary **72-hour** freshness gate exactly;"
+      },
+      {
+        "line": 463,
+        "text": "- preserve the ordinary **72-hour** freshness gate;"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/DAILY_EMERGING_WATCHLIST_PLAN_2026-09-22.md",
+    "matches": [
+      {
+        "line": 32,
+        "text": "A source outage is recorded as degraded; it is never represented as a successful review. A run may not certify \u201c0 new\u201d while any required surface is degraded. The system must either complete targeted recovery or carry a clearly unresolved Watchlist discovery state into publication handling under the existing freshness policy."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+    "matches": [
+      {
+        "line": 94,
+        "text": "    classDef media fill:#fff8c5,color:#633c01,stroke:#d4a72c,stroke-width:2px;"
+      },
+      {
+        "line": 231,
+        "text": "    classDef sup fill:#fff8c5,color:#633c01,stroke:#d4a72c,stroke-width:2px;"
+      },
+      {
+        "line": 298,
+        "text": "| \ud83e\uddea **L \u2014 Independent Live Validation** | 72\u201382 | Prove reader-facing release works | Validation supervisor |"
+      },
+      {
+        "line": 358,
+        "text": "| **19** | **Verify Agent Skills candidate first** | Freshness, material change and 30-day novelty are checked. |"
+      },
+      {
+        "line": 412,
+        "text": "| **37** | **Verify video #1** | Source, runtime and freshness pass. |"
+      },
+      {
+        "line": 455,
+        "text": "    classDef gate fill:#fff8c5,color:#633c01,stroke:#d4a72c,stroke-width:2px;"
+      },
+      {
+        "line": 528,
+        "text": "<summary><strong>\ud83e\uddea Phase L \u2014 Independent Live Validation \u00b7 Steps 72\u201382</strong></summary>"
+      },
+      {
+        "line": 532,
+        "text": "| **72** | **Verify edition date** | Public site displays current intended date. |"
+      },
+      {
+        "line": 604,
+        "text": "    classDef warn fill:#fff8c5,color:#633c01,stroke:#d4a72c,stroke-width:2px;"
+      },
+      {
+        "line": 886,
+        "text": "    classDef fix fill:#fff8c5,color:#633c01,stroke:#d4a72c,stroke-width:2px;"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/Q17-APPLIED-SOURCE-SUPPLY-HARDENING.md",
+    "matches": [
+      {
+        "line": 3,
+        "text": "Q17 failed before article evidence or semantic execution with novelty-aware coverage 10 Technical, 2 Applied, and 3 Agents. The correction adds a recurring first-party Microsoft Copilot Studio Feature Releases catalog as Applied source supply. The 72-hour freshness, classification, novelty, three-per-focus breadth, Agent Skills, evidence, zero-cost, and production-isolation gates remain unchanged. Q17 is immutable; proof belongs to fresh Q18 after protected CI and merge."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/Q20-FEED-RECOVERY-2026-09-28.md",
+    "matches": [
+      {
+        "line": 13,
+        "text": "The change retains the 72-hour ordinary freshness window, Agent Skills policy, three-candidate focus minimum, 20-item model-visible metadata limit, nine-item article evidence limit, and exact 2/2/2 editorial allocation. No source dates or article bodies are manufactured. Main publication artifacts, accepted images, prior Q identities, and PR #117 are untouched."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/RELIABILITY_ITERATION2_IMPLEMENTATION_2026-09-25.md",
+    "matches": [
+      {
+        "line": 64,
+        "text": "- media count, URL, freshness, runtime/explicit unknown-runtime evidence, source diversity and verification receipt;"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/RELIABILITY_ITERATION5_INSTRUMENTATION_2026-09-25.md",
+    "matches": [
+      {
+        "line": 22,
+        "text": "- Pages: `36183387254` \u2014 SUCCESS."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/START-HERE.md",
+    "matches": [
+      {
+        "line": 40,
+        "text": "Q20's preflight again reported 13 Technical / 1 Applied / 2 Agents after Q19's reservation repair. That does not prove the complete source-supply problem was fixed. Distinguish selection starvation from genuinely insufficient eligible source supply, extraction failure, date precision, stale pins and coverage aging before another fresh Q. Test the proposed repair against preserved bounded evidence before starting a full qualification. Do not loosen freshness, novelty, category allocation, evidence or image quality to manufacture a pass."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/cloud-checkpoint-transport.md",
+    "matches": [
+      {
+        "line": 35,
+        "text": "4. Resume the original canonical candidate and reviewed inputs only after checking current repository baseline, source freshness and policy compatibility. Run existing recover-draft or recover-images checks with the original manifest and checkpoint IDs. A restored rejected image stays rejected. Every final editorial, visual, contract, CI, publication and live gate remains mandatory."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/continuous-qualification-contract.json",
+    "matches": [
+      {
+        "line": 462,
+        "text": "    \"ordinary_freshness_hours_unchanged\": 72,"
+      },
+      {
+        "line": 488,
+        "text": "    \"ordinary_freshness_hours_unchanged\": 72,"
+      },
+      {
+        "line": 511,
+        "text": "    \"ordinary_freshness_hours_unchanged\": 72,"
+      },
+      {
+        "line": 548,
+        "text": "    \"freshness_unchanged\": true,"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/draft-recovery.md",
+    "matches": [
+      {
+        "line": 34,
+        "text": "Recovery binds the same attempt, edition, cutoff, article window, selected story, reviewed packet, generation instructions and image preflight. It checks hashes of the publisher runbook, runner, draft/manifest implementation and, for images, image policy and approval/preflight implementations. Changed inputs, corrupt records/bytes or unsafe paths return `requires_review`. This check is not exhaustive publication dependency validation: source freshness and every final contract/editorial/image gate still apply."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/editorial-handoff-template.json",
+    "matches": [
+      {
+        "line": 118,
+        "text": "      \"freshness\": {"
+      },
+      {
+        "line": 128,
+        "text": "        \"freshness\": 5,"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/freshness-policy.md",
+    "matches": [
+      {
+        "line": 1,
+        "text": "# Daily Generative AI Brief freshness policy"
+      },
+      {
+        "line": 4,
+        "text": "**Status:** Authoritative supplement to `docs/operations/publisher-runbook.md`. Where an older instruction describes article freshness only as a preference or uses a broader undifferentiated research window, this policy controls."
+      },
+      {
+        "line": 13,
+        "text": "   - `freshness.tier`: `primary` or `fallback`;"
+      },
+      {
+        "line": 14,
+        "text": "   - `freshness.source_published_at`: a verified source/discovery timestamp used for freshness evaluation;"
+      },
+      {
+        "line": 15,
+        "text": "   - `freshness.fallback_reason` when `tier` is `fallback`."
+      },
+      {
+        "line": 17,
+        "text": "5. An ordinary `fallback` story may be used only when no qualifying primary-window candidate survives the existing authority, evidence, novelty, significance, practical-value, and category gates for that required slot. Ordinary fallback age is capped at **72 hours**."
+      },
+      {
+        "line": 18,
+        "text": "6. The required reusable Agent Skills story retains its already approved exception: if no qualifying primary-window Agent Skills development exists, it may use a fallback up to **168 hours / 7 days** old. It still requires a specific fallback reason."
+      },
+      {
+        "line": 19,
+        "text": "7. A fallback is never labeled `New development`. Reader-facing reading context must use **Recency fallback**. A material update whose qualifying new evidence occurred inside the primary window may use `Update` and must retain its prior-story lineage."
+      },
+      {
+        "line": 20,
+        "text": "8. The edition `coverage_period` must state the **24-hour primary window**. If any fallback is selected, it must also disclose recency-fallback use rather than using vague wording such as \u201cfallbacks were used where needed.\u201d"
+      },
+      {
+        "line": 22,
+        "text": "Missing or unverifiable timestamps do not justify claiming primary-window freshness. Resolve the date evidence or choose a different candidate; never invent a publication time."
+      },
+      {
+        "line": 48,
+        "text": "- all six stories have valid freshness metadata;"
+      },
+      {
+        "line": 50,
+        "text": "- no ordinary fallback exceeds 72 hours;"
+      },
+      {
+        "line": 51,
+        "text": "- no Agent Skills fallback exceeds 168 hours;"
+      },
+      {
+        "line": 52,
+        "text": "- each fallback has a specific reason and visible `Recency fallback` label;"
+      },
+      {
+        "line": 56,
+        "text": "A freshness validation failure blocks promotion just like the existing mandatory editorial gates. Preserve the previous verified edition until the defect is corrected."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/hardening-status.md",
+    "matches": [
+      {
+        "line": 13,
+        "text": "| Automation | Current runbook, Plus-only resource semantics; read-only GitHub freshness workflow replaces public analytics writer |"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/media-image-recovery.md",
+    "matches": [
+      {
+        "line": 11,
+        "text": "Catalog presence does not select an item. Keep required podcast-source/platform coverage, short-video-first rules, separate freshness windows, fallback rationales and all existing editorial gates. Missing/future publication dates and missing runtime remain unresolved. Existing source acquisition can supply these records; this command does not claim a new live source check or re-read an episode automatically."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/publisher-runbook.md",
+    "matches": [
+      {
+        "line": 17,
+        "text": "Use current `gttome/Daily-AI-Brief` main and its contracts. Work/Codex supplies research, selection, writing, image generation and editorial review within the owner's Plus allowance. No paid AI API, extra credits, top-up, overage or subscription upgrade. GitHub performs deterministic checks, controlled promotion and live freshness checks. No trigger or alternate sign-in surface is an allowance bypass."
+      },
+      {
+        "line": 53,
+        "text": "Exact historical analytics migration is not yet completed. Do not create new public rating snapshots. The retired public analytics writer is replaced by a read-only freshness check. Preserve older repository history and original totals pending approved migration; do not describe old public copies as erased."
+      },
+      {
+        "line": 59,
+        "text": "Before promotion, any mandatory editorial/image/privacy/interaction failure preserves the prior live edition. Save a public-safe failure record and private usage evidence when available. An allowance-blocked run is not a successful fresh edition. Resume the same candidate when allowance and required tools are available, recheck source freshness and baseline, and avoid duplicate publication or repeated known-failing retries. Do not invent reset times. Existing GitHub freshness checks can report a missing edition but cannot replenish Plus allowance or guarantee an alert was delivered."
+      },
+      {
+        "line": 147,
+        "text": "A dated URL may prioritize queue retention, but is never a verified publication timestamp or a freshness approval. Zero dates extracted from catalogs means unresolved metadata. Run the existing bounded `research.mjs metadata` review for promising retained leads before drawing freshness conclusions. Budget exhaustion is not the successful nine-candidate research early-stop condition; record them separately."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/qualification-q17-hardening-contract.json",
+    "matches": [
+      {
+        "line": 11,
+        "text": "  \"ordinary_freshness_hours\": 72,"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/under-80-implementation-receipt-2026-09-18.md",
+    "matches": [
+      {
+        "line": 49,
+        "text": "- Pages deployment run `35371727878` completed successfully for that revision."
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/under80-runtime-contract.json",
+    "matches": [
+      {
+        "line": 28,
+        "text": "  \"freshness\": {"
+      },
+      {
+        "line": 30,
+        "text": "    \"ordinary_fallback_hours\": 72,"
+      },
+      {
+        "line": 340,
+        "text": "    \"publication_freshness_required\": true,"
+      }
+    ]
+  },
+  {
+    "path": "docs/operations/watchlist-runbook.md",
+    "matches": [
+      {
+        "line": 15,
+        "text": "9. Verify live `/watchlist/`, `/watchlist/research/`, `/data/watchlist.json`, header navigation and the dated edition preview. Check the Command Center Watchlist tab and private review access. Preserve actual last-research times if discovery fails; show stale/partial coverage, not fabricated freshness. Record failed attempts and resume without losing topics or votes."
+      }
+    ]
+  }
+]
