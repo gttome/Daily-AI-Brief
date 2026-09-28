@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m06",
+  "attempt": 2,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS",
+    "EXACT_GIT_BLOB_PERSISTED",
+    "ACCEPTED_LOCKED"
+  ],
+  "image_sha256": "9988767aa6772c214ee61d5688d113dbedaa4c2df6efe797b82d590bef286618",
+  "rematerialized_sha256": "9988767aa6772c214ee61d5688d113dbedaa4c2df6efe797b82d590bef286618",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 1937045,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_2cd1f948b1e48191ad3114c58bf7d660",
+  "library_path": "/Daily AI Brief Qualification Images/m06/IH10-m06-attempt-2.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image is clearly about Microsoft Copilot organized around Home, Code and Autopilot. No harness/status/Q/publication contamination is visible."
+    },
+    "factual_support": {
+      "pass": true,
+      "evidence": "Attempt 2 renders only the required story labels: Microsoft Copilot, Home, Code, Autopilot, Chat + Cowork, and Word • Excel • PowerPoint. The unsupported explanatory product-behavior prose from attempt 1 is absent."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Professional three-capability system view with Home central/top and clear visual relationships to Code and Autopilot; explanatory without fabricated UI."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Polished white-background textbook/editorial composition with strong hierarchy, restrained iconography, readable labels and story-specific explanatory value."
+    }
+  },
+  "first_failed_gate": null,
+  "accepted_locked": true,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "git_blob_sha": "00daaa08b54a10b4c535fba0954da32c60e553c5",
+  "git_path": "_records/qualification-image-harness/2026-09-27-IH10/images/m06-attempt-2.png",
+  "git_persistence_commit": "919fcbff19dd91c35843c2358dbe69c00a8e26e6",
+  "exact_byte_verification": {
+    "expected_sha256": "9988767aa6772c214ee61d5688d113dbedaa4c2df6efe797b82d590bef286618",
+    "expected_size_bytes": 1937045,
+    "expected_git_blob_sha": "00daaa08b54a10b4c535fba0954da32c60e553c5",
+    "persisted_git_blob_sha": "00daaa08b54a10b4c535fba0954da32c60e553c5",
+    "workflow_run_id": 36369023231,
+    "pass": true
+  }
+}
