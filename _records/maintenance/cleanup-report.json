@@ -3164,8 +3164,68 @@
       "sha": "0e5caa480a96257bb2537162e45e69d859ee17d8",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-b/repair/retire-feedback-nav-2026-09-08"
+    },
+    {
+      "branch": "repair/sep8-textbook-diagrams-v2",
+      "sha": "a301e2ab8d5dc43cffd1e696601cf8a50b2b6277",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep8-textbook-diagrams-v2"
+    },
+    {
+      "branch": "repair/sep18-discovery-review",
+      "sha": "a69771fce19f4b2e42da9d739259c163499056b6",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep18-discovery-review"
+    },
+    {
+      "branch": "repair/sep20-applied-image-recovery",
+      "sha": "edb77ee42c6679222b894fe487cdba94d7124a83",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep20-applied-image-recovery"
+    },
+    {
+      "branch": "repair/sep20-large-evidence-applied-coverage",
+      "sha": "c827178cc7d8115ab957e989c345f941989c17ed",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep20-large-evidence-applied-coverage"
+    },
+    {
+      "branch": "repair/sep20-live-image-lock-validator",
+      "sha": "628055bca5272700e9cae5e613f2f02033c0ae00",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep20-live-image-lock-validator"
+    },
+    {
+      "branch": "repair/sep20-novelty-date-regex",
+      "sha": "baef53d8e98a9a7770d174f719e0b7b970fa029b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep20-novelty-date-regex"
+    },
+    {
+      "branch": "repair/sep20-novelty-source-recovery",
+      "sha": "2445615f8e2f6e49895e51aba5ed1c006214afe6",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep20-novelty-source-recovery"
+    },
+    {
+      "branch": "repair/sep20-publication-closure",
+      "sha": "97d8052e9dbaee16086e160b1e35a31e179133e4",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep20-publication-closure"
+    },
+    {
+      "branch": "repair/sep21-balanced-preflight-scan",
+      "sha": "8f3deea2bd4c55fc27cdd7adf28e28097528c205",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep21-balanced-preflight-scan"
+    },
+    {
+      "branch": "repair/sep21-preflight-timing",
+      "sha": "8b6b300615611b9fbd24c925aa7f7fcb618d9b4d",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep21-preflight-timing"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:26:04.245Z"
+  "updated_at": "2026-09-28T15:26:45.762Z"
 }
