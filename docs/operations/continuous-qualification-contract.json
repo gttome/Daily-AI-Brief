@@ -530,5 +530,26 @@
     "rerun_failed_identity": false,
     "next_proof_identity": "Q19",
     "production_mutation": false
+  },
+  "qualification_q19_novelty_aware_focus_reservation": {
+    "qualification_only": true,
+    "q19_result": "fail",
+    "failure_code": "qualification_focus_coverage_insufficient_after_novelty",
+    "q19_observed_coverage": {
+      "technical_ai_engineering": 13,
+      "applied_genai_knowledge_workers": 1,
+      "agents_non_technical_people": 2
+    },
+    "eligible_after_deterministic_filter": 36,
+    "retained_candidates": 20,
+    "rule": "During qualification, mandatory per-focus reservation must count and select production_novelty_eligible candidates first; novelty-ineligible candidates may only participate in later traceability/general fill.",
+    "minimum_focus_coverage_unchanged": 3,
+    "metadata_candidate_limit_unchanged": 20,
+    "freshness_unchanged": true,
+    "classification_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "agent_skills_gate_unchanged": true,
+    "production_mutation": false,
+    "next_proof_identity": "Q20"
   }
 }
