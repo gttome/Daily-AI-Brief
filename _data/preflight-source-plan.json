@@ -77,6 +77,15 @@
       "status": "active"
     },
     {
+      "source_id": "google-workspace-blog-applied",
+      "owner": "Google Workspace",
+      "discovery_endpoint": "https://workspace.google.com/blog/",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "status": "active"
+    },
+    {
       "source_id": "microsoft-365-feed",
       "owner": "Microsoft 365",
       "discovery_endpoint": "https://www.microsoft.com/en-us/microsoft-365/blog/feed/",
