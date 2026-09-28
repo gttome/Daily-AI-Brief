@@ -14,7 +14,9 @@
     "SUBJECT_LINEAGE_PASS",
     "FACTUAL_SUPPORT_PASS",
     "STRUCTURAL_QUALITY_PASS",
-    "EDITORIAL_QUALITY_PASS"
+    "EDITORIAL_QUALITY_PASS",
+    "EXACT_GIT_BLOB_PERSISTED",
+    "ACCEPTED_LOCKED"
   ],
   "image_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
   "rematerialized_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
@@ -43,13 +45,23 @@
     }
   },
   "first_failed_gate": null,
-  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
-  "accepted_locked": false,
+  "accepted_locked": true,
   "fallback": false,
   "cross_story_contamination": false,
   "production_mutation": false,
   "work_usage": 0,
   "codex_usage": 0,
   "paid_api_usage": 0,
-  "note": "All four visual review gates PASS. Exact uploaded artifact metadata corrected from the raw PNG; acceptance remains pending exact-byte Git blob persistence."
+  "note": "All review gates PASS. Exact reviewed PNG bytes reconstructed on the IH10 branch, SHA-256/size verified in GitHub Actions, persisted exactly, and accepted_locked.",
+  "git_blob_sha": "f2e5615405d94fb85557ed22cfaf56f3829c4bae",
+  "git_path": "_records/qualification-image-harness/2026-09-27-IH10/images/m07-attempt-2.png",
+  "git_persistence_commit": "2a413f52ee4a1e9651a787559eca0309aa320946",
+  "exact_byte_verification": {
+    "expected_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
+    "expected_size_bytes": 1939308,
+    "expected_git_blob_sha": "f2e5615405d94fb85557ed22cfaf56f3829c4bae",
+    "persisted_git_blob_sha": "f2e5615405d94fb85557ed22cfaf56f3829c4bae",
+    "workflow_run_id": 36370027714,
+    "pass": true
+  }
 }
