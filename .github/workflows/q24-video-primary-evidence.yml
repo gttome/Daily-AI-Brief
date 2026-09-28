@@ -1,0 +1,139 @@
+name: Q24 primary video metadata evidence
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-video-primary-evidence.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Guard frozen components and recover the already captured channel catalog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/video-primary-metadata.json
+          mkdir -p /tmp/q24-video-primary
+          curl --fail --silent --show-error --location --max-time 60 -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/10999560701/zip -o /tmp/q24-catalog.zip
+          echo 'f379abcc47cef338d8611c2e3b27c0f2ff9ee1572ffe47fffc3b70a18d6a95d5  /tmp/q24-catalog.zip' | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile,hashlib
+          from pathlib import Path
+          with zipfile.ZipFile('/tmp/q24-catalog.zip') as archive:
+              for name in ['ibm-channel-catalog.html','prior-video-history.json']:
+                  source=archive.read('tmp/q24-video-catalogs/'+name)
+                  if name=='ibm-channel-catalog.html':assert hashlib.sha256(source).hexdigest()=='6c1bef4250e6da6d6a4b0b3e6ebc34cd65b2dd067e4a34ea356c67376fa2f7b5'
+                  Path('/tmp/q24-video-primary/'+name).write_bytes(source)
+          PY
+      - name: Capture the linked public feed and two new video pages once without retries
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import crypto from 'node:crypto';
+          import {retrieveSource} from './_tools/discovery-links.mjs';
+          const request=JSON.parse(fs.readFileSync('_records/discovery-preflight/request.json','utf8'));
+          if(request.qualification_run_id!=='2026-09-28-Q24'||request.cutoff!=='2026-09-28T20:04:36Z'||request.media_freshness_policy!=='media-research-cutoff-v1')throw Error('Q24_binding_changed');
+          const root='/tmp/q24-video-primary',catalog=fs.readFileSync(root+'/ibm-channel-catalog.html','utf8');
+          const feed='https://www.youtube.com/feeds/videos.xml?channel_id=UCKWaEZ-_VweaEx1j62do_vQ';
+          if(!catalog.includes(feed)||!catalog.includes('bs1qPy_CWkM')||!catalog.includes('kyJ1vd7yEPc'))throw Error('Unbound_source_lead');
+          const seeds=[{id:'ibm-public-feed',url:feed,kind:'publisher_feed'},{id:'bs1qPy_CWkM',url:'https://www.youtube.com/watch?v=bs1qPy_CWkM',kind:'new_video_page'},{id:'kyJ1vd7yEPc',url:'https://www.youtube.com/watch?v=kyJ1vd7yEPc',kind:'new_video_page'}],observations=[];
+          for(const seed of seeds){
+            try{
+              const r=await retrieveSource(seed.url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
+              const blocked=/sign in to confirm you.re not a bot|verify you are human|unusual traffic from your computer/i.test(r.text);
+              fs.writeFileSync(root+'/'+seed.id+'.txt',r.text,{flag:'wx'});
+              observations.push({...seed,status:blocked?'access_challenge':'retrieved',resolved_url:r.url,checked_at:new Date().toISOString(),source_sha256:crypto.createHash('sha256').update(r.text).digest('hex'),hash_scope:'UTF-8 retrieved response text',artifact_file:seed.id+'.txt',access_challenge_bypassed:false});
+            }catch(e){observations.push({...seed,status:'unavailable',checked_at:new Date().toISOString(),reason:String(e.message),access_challenge_bypassed:false});}
+          }
+          fs.writeFileSync(root+'/observations.json',JSON.stringify(observations,null,2)+'\n',{flag:'wx'});
+          NODE
+      - name: Bind identity and primary metadata, retaining unresolved content and access limitations
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,re,hashlib,os,xml.etree.ElementTree as ET
+          from datetime import datetime
+          root=Path('/tmp/q24-video-primary');observations=json.loads((root/'observations.json').read_text());by_id={x['id']:x for x in observations};catalog=(root/'ibm-channel-catalog.html').read_text()
+          match=re.search(r'ytInitialData\s*=\s*',catalog);assert match is not None
+          doc,_=json.JSONDecoder().raw_decode(catalog[match.end():]);items={}
+          def walk(obj):
+              if isinstance(obj,dict):
+                  lockup=obj.get('lockupViewModel')
+                  if isinstance(lockup,dict) and lockup.get('contentId'):items[lockup['contentId']]=lockup
+                  for value in obj.values():walk(value)
+              elif isinstance(obj,list):
+                  for value in obj:walk(value)
+          walk(doc)
+          feed_records={};diagnostics=[];feed_observation=by_id['ibm-public-feed']
+          if feed_observation['status']=='retrieved':
+              try:
+                  ns={'a':'http://www.w3.org/2005/Atom','yt':'http://www.youtube.com/xml/schemas/2015','m':'http://search.yahoo.com/mrss/'}
+                  feed=ET.fromstring((root/'ibm-public-feed.txt').read_bytes())
+                  assert feed.findtext('yt:channelId',namespaces=ns)=='UCKWaEZ-_VweaEx1j62do_vQ'
+                  for entry in feed.findall('a:entry',ns):
+                      video_id=entry.findtext('yt:videoId',namespaces=ns)
+                      feed_records[video_id]={'video_id':video_id,'channel_id':entry.findtext('yt:channelId',namespaces=ns),'title':entry.findtext('a:title',namespaces=ns),'published_at':entry.findtext('a:published',namespaces=ns),'updated_at_not_used_for_freshness':entry.findtext('a:updated',namespaces=ns),'description':entry.findtext('m:group/m:description',namespaces=ns),'url':entry.find('a:link',ns).get('href')}
+              except (ET.ParseError,AssertionError,AttributeError) as error:diagnostics.append({'source':'ibm-public-feed','reason':type(error).__name__+': '+str(error)})
+          results=[]
+          for video_id in ['bs1qPy_CWkM','kyJ1vd7yEPc']:
+              item=items[video_id];title=item['metadata']['lockupMetadataViewModel']['title']['content'];durations=[]
+              for overlay in item['contentImage']['thumbnailViewModel'].get('overlays',[]):
+                  for badge in overlay.get('thumbnailBottomOverlayViewModel',{}).get('badges',[]):
+                      b=badge.get('thumbnailBadgeViewModel',{});text=b.get('text','')
+                      if b.get('animationActivationTargetId')==video_id and re.fullmatch(r'\d+:\d{2}(?::\d{2})?',text):durations.append(text)
+              assert len(set(durations))==1
+              seconds=0
+              for part in durations[0].split(':'):seconds=seconds*60+int(part)
+              page_observation=by_id[video_id];player={}
+              if page_observation['status']=='retrieved':
+                  text=(root/(video_id+'.txt')).read_text();m=re.search(r'ytInitialPlayerResponse\s*=\s*',text)
+                  if m:
+                      try:player,_=json.JSONDecoder().raw_decode(text[m.end():])
+                      except ValueError:pass
+              details=player.get('videoDetails',{});player_metadata={}
+              if details.get('videoId')==video_id:
+                  player_metadata={'title':details.get('title'),'runtime_seconds':int(details['lengthSeconds']) if str(details.get('lengthSeconds','')).isdigit() else None,'description':details.get('shortDescription'),'channel_id':details.get('channelId'),'microformat':player.get('microformat',{}),'playability_status':player.get('playabilityStatus',{}).get('status')}
+              feed_record=feed_records.get(video_id);matches=bool(feed_record and feed_record['channel_id']=='UCKWaEZ-_VweaEx1j62do_vQ' and feed_record['url']=='https://www.youtube.com/watch?v='+video_id and feed_record['title']==title)
+              published=feed_record.get('published_at') if matches else None
+              cutoff=datetime.fromisoformat('2026-09-28T20:04:36+00:00');age=None
+              if published:
+                  when=datetime.fromisoformat(published.replace('Z','+00:00'))
+                  if when.tzinfo is not None:age=(cutoff-when).total_seconds()/3600
+              conflict=bool(player_metadata and (player_metadata['runtime_seconds']!=seconds or player_metadata['title']!=title or player_metadata['channel_id']!='UCKWaEZ-_VweaEx1j62do_vQ'))
+              results.append({'video_id':video_id,'canonical_url':'https://www.youtube.com/watch?v='+video_id,'title':title,'catalog_display_runtime':durations[0],'catalog_runtime_seconds':seconds,'feed_record':feed_record,'player_metadata':player_metadata,'published_at':published,'age_hours_at_original_cutoff':age,'within_72_hours':age is not None and 0<=age<=72,'within_20_minutes':0<seconds<=1200,'primary_feed_catalog_identity_matches':matches,'metadata_conflict':conflict,'metadata_resolved':matches and published is not None and not conflict,'runtime_evidence':'publisher channel display; player comparison included only when available','catalog_source_sha256':'6c1bef4250e6da6d6a4b0b3e6ebc34cd65b2dd067e4a34ea356c67376fa2f7b5','feed_source_sha256':feed_observation.get('source_sha256'),'page_observation':page_observation,'editorial_review_complete':False,'selected':False,'audio_or_video_played':False})
+          result={'schema_version':'1.0.0','run_id':'2026-09-28-Q24','cutoff':'2026-09-28T20:04:36Z','baseline_sha':'1def5c4ba158247a9c02106dc4e4820d80a7133d','article_freshness_policy':'article-24-72-168-v1','media_freshness_policy':'media-research-cutoff-v1','workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'execution_commit':os.environ['GITHUB_SHA'],'catalog_artifact_id':10999560701,'new_endpoints_requested':3,'catalogs_refetched':0,'previously_challenged_watch_endpoints_retried':0,'article_retrievals':0,'podcast_retrievals':0,'model_calls':0,'records':results,'observations':observations,'diagnostics':diagnostics,'metadata_only':True,'video_selection_validated':False,'media_ready':False,'production_mutation':False}
+          with Path('_records/qualification/2026-09-28-Q24/media-evidence/video-primary-metadata.json').open('x') as stream:stream.write(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only new Q24 primary video metadata
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/media-evidence/video-primary-metadata.json
+          git commit -m 'Preserve Q24 primary video evidence with original timestamps and limitations'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-video-primary-evidence
+          path: |
+            /tmp/q24-video-primary/
+            _records/qualification/2026-09-28-Q24/media-evidence/video-primary-metadata.json
+          retention-days: 14
+          if-no-files-found: error
