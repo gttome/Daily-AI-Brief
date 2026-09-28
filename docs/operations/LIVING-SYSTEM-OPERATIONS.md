@@ -1133,3 +1133,10 @@ The qualification image policy was reviewed after IH8 showed that a factually sa
 - final publication still requires six accepted/locked professional images, while qualification may continue with one isolated remediation lane if five are already locked.
 
 This amendment does not weaken the production success condition, protected CI, no-rework model, zero-cost policy, or publication requirement for six final professional images.
+
+
+### Seven-day article schema compatibility and transfer recovery — September 28, 2026
+
+The canonical v1 schema now permits the optional article policy identity and story freshness metadata without adding requirements to historical fixtures. Seven focused schema checks cover current primary/extended metadata, explicit legacy identity, absent historical identity, and rejection of unknown policies, invalid bands and undated freshness. Runtime `validateEdition` remains responsible for age boundaries, actual cutoff, fallback reasons and publication checks; schema acceptance alone is not qualification or publication proof.
+
+When a GitHub Actions runner cannot push workflow-file changes, preserve its tested commit and failed execution evidence. An authorized connected GitHub app may fast-forward the existing nonproduction implementation branch to that exact verified commit after confirming its parent and tree. Do not infer a repository-wide access failure, ask for new credentials, rerun completed audits, force-update a ref, or bypass protected PR CI. Run 36459299324 created commit 8e7168c9bbd2317d86eba8e082a2deae6382885c; its failed runner push was recovered through this connected fast-forward path.

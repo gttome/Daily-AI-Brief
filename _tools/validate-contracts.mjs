@@ -164,6 +164,31 @@ for (const relative of manifest.negative_examples) {
   results.push({test: `invalid:${path.basename(relative)}`, result: errors.length && matched ? 'PASS' : 'FAIL', errors: errors.length && matched ? [] : errors});
 }
 
+// Optional article freshness metadata must not break historical schema consumers.
+// Age, cutoff, priority and substantive fallback reasons remain runtime gates.
+{
+  const contract = manifest.contracts.find(item => item.name === 'edition');
+  const schema = readJson(path.join(contractDir, contract.schema));
+  const original = readJson(path.join(contractDir, contract.valid_example));
+  const current = structuredClone(original);
+  current.article_freshness_policy = 'article-24-72-168-v1';
+  current.stories[0].freshness = {tier:'fallback', source_published_at:'2026-09-24T12:00:00Z', fallback_band:'extended', fallback_reason:'No newer qualifying article filled this focus after bounded evidence and novelty review.'};
+  const cases = [
+    ['historical-without-policy', original, true],
+    ['current-extended-metadata', current, true],
+    ['current-primary-metadata', (() => {const x=structuredClone(current); x.stories[0].freshness={tier:'primary',source_published_at:'2026-09-28T12:00:00Z'}; return x;})(), true],
+    ['legacy-explicit-policy', {...original,article_freshness_policy:'article-24-72-skills168-v1'}, true],
+    ['unknown-policy-rejected', {...current,article_freshness_policy:'unapproved'}, false],
+    ['invalid-band-rejected', (() => {const x=structuredClone(current); x.stories[0].freshness.fallback_band='unbounded'; return x;})(), false],
+    ['undated-freshness-rejected', (() => {const x=structuredClone(current); delete x.stories[0].freshness.source_published_at; return x;})(), false]
+  ];
+  for (const [name, example, valid] of cases) {
+    const errors = validate(example, schema, schema);
+    const pass = valid ? errors.length === 0 : errors.length > 0;
+    results.push({test:`article-schema:${name}`, result:pass?'PASS':'FAIL', errors:pass?[]:errors.length?errors:['Invalid metadata was accepted']});
+  }
+}
+
 const failures = results.filter(item => item.result === 'FAIL');
 console.log(JSON.stringify({contract_version: manifest.contract_version, result: failures.length ? 'FAIL' : 'PASS', tests: results, passed: results.length - failures.length, failed: failures.length}, null, 2));
 process.exitCode = failures.length ? 1 : 0;
