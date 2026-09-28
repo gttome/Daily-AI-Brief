@@ -449,3 +449,21 @@ Permanent control:
 - keep qualification production mutation disabled and Work/Codex/paid API usage at zero.
 
 Q15 must never be rerun or converted into PASS. Proof belongs only to fresh **Q16** after protected CI and merge.
+
+
+## Q16 hardening — final recurring Applied source gap
+
+Q16 (`2026-09-27-Q16`) is immutable terminal FAIL evidence at `PREFLIGHT_DISCOVERY_READY`: **10 Technical / 2 Applied / 3 Agents** after novelty. Agent Skills remained story-ready; article evidence and semantic execution did not start.
+
+Q16 proves the previous two repairs are working: date-precision recovery remains active, Agents coverage remains at the required three, and the Q15 recurring Applied catalogs improved Applied coverage from one to two. The remaining defect is therefore exactly one missing recurring Applied candidate.
+
+Permanent control:
+- preserve Q14 publication-date precision handling unchanged;
+- preserve all Q15 recurring Applied catalogs unchanged;
+- preserve the ordinary **72-hour** freshness gate;
+- add the recurring first-party Google Workspace blog catalog as Applied knowledge-work discovery supply;
+- do not add another dated pin;
+- keep classification, production novelty, three-per-focus breadth, Agent Skills, evidence bounds, and editorial discretion unchanged;
+- keep Work=0, Codex=0, paid API=0, and production mutation=false.
+
+Q16 must never be rerun or converted into PASS. Proof belongs only to fresh **Q17** after protected CI and merge.
