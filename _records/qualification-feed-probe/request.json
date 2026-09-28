@@ -1,0 +1,9 @@
+{
+  "schema_version": "1.0.0",
+  "diagnostic_id": "2026-09-28-D02",
+  "purpose": "Test registered empty feed responses and direct publisher feed alternatives after D01 proved eligible supply shortage",
+  "endpoint_limit": 6,
+  "production_mutation": false,
+  "baseline_sha": "2700138782f8f92e7290b514e0be256e18371811",
+  "qualification_pass": false
+}
