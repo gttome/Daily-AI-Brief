@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "qualification_run_id": "2026-09-27-Q17",
+  "terminal_result": "fail",
+  "failed_stage": "PREFLIGHT_DISCOVERY_READY",
+  "observed_coverage": {
+    "technical_ai_engineering": 10,
+    "applied_genai_knowledge_workers": 2,
+    "agents_non_technical_people": 3
+  },
+  "ordinary_freshness_hours": 72,
+  "minimum_focus_coverage": 3,
+  "agent_skills_required": true,
+  "added_recurring_applied_catalog": "microsoft-copilot-studio-feature-releases-applied",
+  "production_mutation": false,
+  "rerun_prohibited": true,
+  "next_proof_identity": "Q18"
+}
