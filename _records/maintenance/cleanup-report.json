@@ -3224,8 +3224,68 @@
       "sha": "8b6b300615611b9fbd24c925aa7f7fcb618d9b4d",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep21-preflight-timing"
+    },
+    {
+      "branch": "repair/sep21-reader-integration",
+      "sha": "9f73fe36f17c048fc9244b8969342c6ec055c232",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep21-reader-integration"
+    },
+    {
+      "branch": "repair/sep23-completion-evidence",
+      "sha": "887ef4b7dc58bdb6b0aa98180c984627016bf582",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep23-completion-evidence"
+    },
+    {
+      "branch": "repair/sep26-closure-validation-persistence",
+      "sha": "22cd00a8f40733c4e06737ed5d3668ac74ac6e7b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep26-closure-validation-persistence"
+    },
+    {
+      "branch": "repair/sep26-promotion-closure-dispatch",
+      "sha": "8d828bddad7cd4a8f459fb17d3d2b9eef0974115",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/sep26-promotion-closure-dispatch"
+    },
+    {
+      "branch": "repair/transient-source-http-readiness",
+      "sha": "b02dab21a57bb61cc16550eeb76a42785635b1a4",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/transient-source-http-readiness"
+    },
+    {
+      "branch": "repair/usage-history-2026-09-20",
+      "sha": "d2c094fbf5502483415aa762061cc4e651fdb734",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/usage-history-2026-09-20"
+    },
+    {
+      "branch": "repair/2026-09-08-qa-backfill-v2",
+      "sha": "f49b17e9e134dea4a6dea73a9c3e36ccb74182d1",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-08-qa-backfill-v2"
+    },
+    {
+      "branch": "repair/2026-09-09-authoritative-share-total",
+      "sha": "f69b9127fde8a4c0e9cd70c873389318c0b6a911",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-authoritative-share-total"
+    },
+    {
+      "branch": "repair/2026-09-09-image4-cache-key",
+      "sha": "2d867ba08abfb84f00a12cd8c603dd5eb50d51f1",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-image4-cache-key"
+    },
+    {
+      "branch": "repair/2026-09-09-image4-transfer",
+      "sha": "5883856919dce4c931aa02bb89314d37c1eb822b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/2026-09-09-image4-transfer"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:26:45.762Z"
+  "updated_at": "2026-09-28T15:27:25.102Z"
 }
