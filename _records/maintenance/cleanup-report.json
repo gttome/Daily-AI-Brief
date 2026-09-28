@@ -3044,7 +3044,68 @@
       "archive_ref": null
     }
   ],
-  "results": [],
-  "status": "planned",
-  "updated_at": "2026-09-28T15:24:38.790Z"
+  "results": [
+    {
+      "branch": "refactor/media-evidence-recovery",
+      "sha": "00c965bf7d6710f8b9c8debdf8af28d02498ab6a",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/refactor/media-evidence-recovery"
+    },
+    {
+      "branch": "repair/command-center-completion-2026-09-22",
+      "sha": "d00605f48f4f3ede548c57653cfed9b759c857b4",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/command-center-completion-2026-09-22"
+    },
+    {
+      "branch": "repair/deterministic-handoff-no-seed-images",
+      "sha": "8b70fe29bb8a1994558b2a5a864219b951f9d333",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/deterministic-handoff-no-seed-images"
+    },
+    {
+      "branch": "repair/discovery-canonical-write-race-2026-09-20",
+      "sha": "933491ffa2e8579e1e542abb03eefde500cfade8",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/discovery-canonical-write-race-2026-09-20"
+    },
+    {
+      "branch": "repair/failed-brief-recovery-policy-sep20",
+      "sha": "2a3e12529f46b51eb9d12200bc0dc8e5a3398d45",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/failed-brief-recovery-policy-sep20"
+    },
+    {
+      "branch": "repair/final-rendered-image-review-contract",
+      "sha": "69ce0333da3666d04912a0c15bc5dd1c53666cb8",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/final-rendered-image-review-contract"
+    },
+    {
+      "branch": "repair/integration-final-image-review-path",
+      "sha": "d5ba0faf874967a2817671cd26c9fb7341633c30",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/integration-final-image-review-path"
+    },
+    {
+      "branch": "repair/iteration-2-publisher-payload",
+      "sha": "a1942d0ccdea362d77698f1d978abc94cd67918b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/iteration-2-publisher-payload"
+    },
+    {
+      "branch": "repair/lock-professional-images-sep20",
+      "sha": "2c9fe1ac70797a5b76e1613ec590b8df6d4dd4a7",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/lock-professional-images-sep20"
+    },
+    {
+      "branch": "repair/optional-image-review-arg-2026-09-20",
+      "sha": "5f8d5cbf69219c620e5c4b2e6c6b717b1b471830",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/optional-image-review-arg-2026-09-20"
+    }
+  ],
+  "status": "applying",
+  "updated_at": "2026-09-28T15:25:19.359Z"
 }
