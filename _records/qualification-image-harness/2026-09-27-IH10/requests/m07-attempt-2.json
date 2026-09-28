@@ -1,0 +1,87 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "candidate_id": "m07",
+  "state": "GENERATION_REQUEST_READY",
+  "provenance": {
+    "source_selection_branch": "discovery-preflight/qualification/2026-09-26-Q12",
+    "source_selection_path": "_records/qualification/2026-09-26-Q12/editorial-selection.json",
+    "source_evidence_path": "_records/discovery-preflight/result/article-evidence.json",
+    "policy_overlay": "protected main after PR #271"
+  },
+  "generation_execution": {
+    "context_mode": "fresh_image_only",
+    "inherit_parent_context": false,
+    "prior_messages": [],
+    "attachments": [],
+    "sealed_story_packet": {
+      "story_id": "story-m07",
+      "candidate_id": "m07",
+      "headline": "Microsoft Copilot Managed Runtime brings governed code execution inside the Microsoft 365 tenant boundary",
+      "source_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+      "verified_visual_facts": [
+        "Microsoft Copilot Managed Runtime is an enterprise-grade platform to run code within the Microsoft 365 tenant boundary",
+        "The runtime is governed by IT",
+        "The runtime supports sharing",
+        "The runtime supports live data connections",
+        "The runtime provides easy access to users' apps"
+      ],
+      "generic_conceptual_elements": [
+        "tenant boundary",
+        "governed runtime layer",
+        "code execution node",
+        "live data connection flow",
+        "sharing path",
+        "application access endpoints"
+      ],
+      "prohibited_specifics": [
+        "invented Microsoft 365 UI",
+        "invented admin controls",
+        "invented code samples",
+        "invented security certifications or compliance claims",
+        "invented performance metrics",
+        "invented pricing or availability beyond public preview",
+        "unsupported runtime behavior"
+      ],
+      "visual_brief": "Professional white-background textbook/editorial diagram explaining Microsoft Copilot Managed Runtime as governed enterprise code execution inside the Microsoft 365 tenant boundary. Show a clear tenant boundary containing a managed runtime/code-execution layer, IT governance above or around it, and generic flows for sharing, live data connections, and app access. Use abstract system architecture, arrows and restrained technical iconography; no screenshots, dashboards, code snippets, admin UI, people, or fabricated product controls.",
+      "reference_policy": "Use only the frozen Q12 editorial selection and article-evidence facts for concrete product behavior; keep all other elements generic conceptual symbols.",
+      "acceptance_order": [
+        "subject_identity",
+        "factual_support",
+        "structural_quality",
+        "editorial_quality"
+      ],
+      "wrong_subject_action": "Discard and start a brand-new worker for this same story only.",
+      "low_quality_fallback": false,
+      "allowed_image_text": [
+        "Microsoft Copilot Managed Runtime",
+        "Microsoft 365 Tenant Boundary",
+        "IT Governance",
+        "Enterprise Code Execution",
+        "Sharing",
+        "Live Data Connections",
+        "Apps"
+      ],
+      "composition_mode": "layered_architecture",
+      "prohibited_composition_patterns": [
+        "sparse_generic",
+        "decorative_only",
+        "repetitive_low_information"
+      ]
+    },
+    "generation_instruction": "story_id: story-m07\ncandidate_id: m07\nheadline: Microsoft Copilot Managed Runtime brings governed code execution inside the Microsoft 365 tenant boundary\nsource_url: https://aka.ms/CopilotManagedRuntime-Blog\nverified_visual_facts: Microsoft Copilot Managed Runtime is an enterprise-grade platform to run code within the Microsoft 365 tenant boundary; The runtime is governed by IT; The runtime supports sharing; The runtime supports live data connections; The runtime provides easy access to users' apps\ngeneric_conceptual_elements: tenant boundary; governed runtime layer; code execution node; live data connection flow; sharing path; application access endpoints\nprohibited_specifics: invented Microsoft 365 UI; invented admin controls; invented code samples; invented security certifications or compliance claims; invented performance metrics; invented pricing or availability beyond public preview; unsupported runtime behavior\nvisual_brief: Professional white-background textbook/editorial diagram explaining Microsoft Copilot Managed Runtime as governed enterprise code execution inside the Microsoft 365 tenant boundary. Show a clear tenant boundary containing a managed runtime/code-execution layer, IT governance above or around it, and generic flows for sharing, live data connections, and app access. Use abstract system architecture, arrows and restrained technical iconography; no screenshots, dashboards, code snippets, admin UI, people, or fabricated product controls.\nreference_policy: Use only the frozen Q12 editorial selection and article-evidence facts for concrete product behavior; keep all other elements generic conceptual symbols.\nacceptance_order: subject_identity -> factual_support -> structural_quality -> editorial_quality\nwrong_subject_action: Discard and start a brand-new worker for this same story only.\nessential_image_text: Microsoft Copilot Managed Runtime | Microsoft 365 Tenant Boundary | IT Governance | Enterprise Code Execution | Sharing | Live Data Connections | Apps\ncomposition_mode: layered_architecture\nhistorical_low_quality_patterns: sparse_generic | decorative_only | repetitive_low_information\nCOMPOSITION CONTRACT: Preserve the professional layered architecture: explicit Microsoft 365 Tenant Boundary, governed Microsoft Copilot Managed Runtime / Enterprise Code Execution inside it, IT Governance, Sharing, Live Data Connections, and Apps.\nAPP ENDPOINT CORRECTION FOR ATTEMPT 2: Represent Apps only with generic unlabeled application endpoint symbols. Do NOT depict or imply specific Microsoft apps or recognizable branded app logos such as Outlook, Excel, Word, PowerPoint, OneNote, Teams, or any other named application.\nVISIBLE TEXT POLICY: Render each essential_image_text label exactly as written at least once: Microsoft Copilot Managed Runtime; Microsoft 365 Tenant Boundary; IT Governance; Enterprise Code Execution; Sharing; Live Data Connections; Apps. Render NO OTHER visible words, product names, letters used as app identifiers, captions, slogans, UI text, metrics, or product-behavior prose. Non-textual abstract technical symbols and icons are allowed.\nFACTUAL TEXT SAFETY: No specific application identities. No invented admin controls, compliance/security claims, code, metrics, pricing, schedules, or product UI.\nlow_quality_fallback: prohibited\nGenerate exactly one NEW illustration for this story. Do not edit, transform, reference, or reuse the prior attempt. Return only the generated illustration.",
+    "review_in_same_context": false
+  },
+  "generation_status": "pending_external_image_generation",
+  "review_status": "not_started",
+  "accepted_locked": false,
+  "fallback": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "attempt": 2,
+  "supersedes_attempt": 1,
+  "correction_scope": "generic_app_endpoints_only"
+}
