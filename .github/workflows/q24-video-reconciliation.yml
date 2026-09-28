@@ -1,0 +1,60 @@
+name: Q24 saved video evidence reconciliation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-video-reconciliation.yml']
+permissions:
+  contents: write
+  actions: read
+jobs:
+  reconcile:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Recover captured feed without new publisher requests
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-primary-metadata.json)" = '31b3b469809ffb68d20092b6ab9ba99b44cfeb3b'
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/video-metadata-reconciliation.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/prior-video-history-v2.json
+          mkdir -p /tmp/q24-video-reconciled
+          curl --fail --silent --show-error --location --max-time 60 -H "Authorization: Bearer $GH_TOKEN" -H 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/11000140814/zip -o /tmp/q24-primary.zip
+          echo '5bd46d50ff9df9dbd03095539bc867640f7311b3045687e5a76c07cdbf2c7af3  /tmp/q24-primary.zip' | sha256sum -c -
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+          with zipfile.ZipFile('/tmp/q24-primary.zip') as archive:
+              Path('/tmp/q24-video-reconciled/ibm-public-feed.txt').write_bytes(archive.read('tmp/q24-video-primary/ibm-public-feed.txt'))
+          PY
+      - name: Reconcile exact publisher identities and test nine invalid identity cases
+        run: |
+          python3 _records/qualification/2026-09-28-Q24/tools/reconcile-video-evidence.py
+      - name: Persist append-only metadata and corrected canonical history
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/media-evidence/video-metadata-reconciliation.json _records/qualification/2026-09-28-Q24/media-evidence/prior-video-history-v2.json
+          git commit -m 'Reconcile Q24 video feed identities and retain real canonical video history'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-video-evidence-reconciliation
+          path: |
+            /tmp/q24-video-reconciled/
+            _records/qualification/2026-09-28-Q24/media-evidence/video-metadata-reconciliation.json
+            _records/qualification/2026-09-28-Q24/media-evidence/prior-video-history-v2.json
+          retention-days: 14
+          if-no-files-found: error
