@@ -1,0 +1,103 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": 36485691371,
+  "execution_commit": "0fac0843ebc23aaf82a8d3cf73acd2f547a15f3b",
+  "new_catalog_endpoints_requested": 5,
+  "challenged_watch_endpoints_requested": 0,
+  "article_retrievals": 0,
+  "podcast_retrievals": 0,
+  "model_calls": 0,
+  "observations": [
+    {
+      "id": "ibm-media-center",
+      "url": "https://mediacenter.ibm.com/",
+      "basis": "Independent IBM-owned public catalog",
+      "authority": "publisher",
+      "status": "retrieved",
+      "resolved_url": "https://mediacenter.ibm.com/",
+      "checked_at": "2026-09-28T21:22:58.149Z",
+      "source_sha256": "5eda20d7b3d3b2f193b01b40b83fcf50325527c63622025af2c9dbcac8d9723d",
+      "hash_scope": "UTF-8 retrieved response text",
+      "source_chars": 218097,
+      "artifact_file": "ibm-media-center.html",
+      "selection_evidence": false
+    },
+    {
+      "id": "microsoft-ai-show",
+      "url": "https://learn.microsoft.com/en-us/shows/ai-show/",
+      "basis": "Microsoft-owned AI Show catalog",
+      "authority": "publisher",
+      "status": "retrieved",
+      "resolved_url": "https://learn.microsoft.com/en-us/shows/ai-show/",
+      "checked_at": "2026-09-28T21:22:58.212Z",
+      "source_sha256": "44672d90585929ab199d81d0d878b2c44737a6f739895ff408b2472f1583505c",
+      "hash_scope": "UTF-8 retrieved response text",
+      "source_chars": 29514,
+      "artifact_file": "microsoft-ai-show.html",
+      "selection_evidence": false
+    },
+    {
+      "id": "microsoft-mechanics",
+      "url": "https://learn.microsoft.com/en-us/shows/microsoft-mechanics/",
+      "basis": "Microsoft-owned show route; availability not assumed",
+      "authority": "publisher",
+      "status": "unavailable",
+      "checked_at": "2026-09-28T21:22:58.302Z",
+      "reason": "HTTP 404",
+      "selection_evidence": false
+    },
+    {
+      "id": "ibm-channel-catalog",
+      "url": "https://www.youtube.com/@IBMTechnology/videos",
+      "basis": "Public publisher channel catalog; no challenged watch endpoint requested",
+      "authority": "publisher_distribution",
+      "status": "retrieved",
+      "resolved_url": "https://www.youtube.com/@IBMTechnology/videos",
+      "checked_at": "2026-09-28T21:22:58.555Z",
+      "source_sha256": "6c1bef4250e6da6d6a4b0b3e6ebc34cd65b2dd067e4a34ea356c67376fa2f7b5",
+      "hash_scope": "UTF-8 retrieved response text",
+      "source_chars": 1183484,
+      "artifact_file": "ibm-channel-catalog.html",
+      "selection_evidence": false
+    },
+    {
+      "id": "ibm-secondary-leads",
+      "url": "https://www.creatorwatchr.com/channel/ibm-technology",
+      "basis": "Search-discovered index; identity leads only, never selection evidence",
+      "authority": "secondary_lead_only",
+      "status": "retrieved",
+      "resolved_url": "https://www.creatorwatchr.com/channel/ibm-technology",
+      "checked_at": "2026-09-28T21:22:58.886Z",
+      "source_sha256": "164fa7000a3b6b89c82d6994f2cef0615df2662395a056561b5c1660c55d1e0b",
+      "hash_scope": "UTF-8 retrieved response text",
+      "source_chars": 71506,
+      "artifact_file": "ibm-secondary-leads.html",
+      "selection_evidence": false
+    }
+  ],
+  "projection_file": "catalog-projections.json",
+  "projection_sha256": "bb2127466f30813a2acb2244b8a2549c1e3348ff91d5c7f8e869c7d88b80cf36",
+  "prior_video_history_sha256": "ef9baaae37bd6f233f1c595abd5fc3b62eae23ece1d4c0c6d8a656bcd24dfb9b",
+  "prior_video_history_editions": 20,
+  "historical_catalogs_reused_as_leads": {
+    "workflow_run_id": 36474146347,
+    "artifact_id": 10991834733,
+    "artifact_sha256": "93ae6c4c2a10f6ed264041c84ec069d2fd9c1ebf348b4e8ba0abcee5fa55b4ad",
+    "sources": [
+      "matt-wolfe-catalog",
+      "kevin-stratvert-catalog",
+      "jeff-su-catalog"
+    ],
+    "approval_reused": false
+  },
+  "video_selection_validated": false,
+  "media_ready": false,
+  "zero_video_exception_established": false,
+  "production_mutation": false,
+  "frozen_article_and_podcast_components_unchanged": true
+}
