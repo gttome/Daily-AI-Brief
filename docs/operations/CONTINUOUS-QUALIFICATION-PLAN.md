@@ -433,3 +433,19 @@ Permanent control:
 - keep classification, novelty, 3-per-focus breadth, Agent Skills, and production-isolation gates unchanged.
 
 Proof must occur only in a **fresh Q15** identity after protected CI and merge. Q14 must never be rerun or repaired into PASS.
+
+## Q15 hardening — recurring Applied knowledge-work source supply
+
+Q15 (`2026-09-27-Q15`) is immutable terminal FAIL evidence at `PREFLIGHT_DISCOVERY_READY`: **9 Technical / 1 Applied / 3 Agents** after novelty. Agent Skills remained story-ready and neither article evidence nor semantic execution started.
+
+The Q14 correction worked materially: date enrichment attempted precision recovery for 17 day-precision candidates and resolved 9 exact timestamps, while Agents coverage reached the required three. The remaining failure is therefore isolated to recurring Applied source supply rather than timestamp precision, Agents classification, Agent Skills, or the freshness gate.
+
+Permanent control:
+- preserve the Q14 publication-date precision correction unchanged;
+- preserve the ordinary **72-hour** freshness gate exactly;
+- add recurring first-party Microsoft Community Hub catalogs for Microsoft Copilot, FinOps for AI, and Skills Hub as Applied knowledge-work discovery supply;
+- do not use new dated pins as the Q15 repair;
+- keep classification, production novelty, three-per-focus breadth, Agent Skills, evidence bounds, and editorial discretion unchanged;
+- keep qualification production mutation disabled and Work/Codex/paid API usage at zero.
+
+Q15 must never be rerun or converted into PASS. Proof belongs only to fresh **Q16** after protected CI and merge.
