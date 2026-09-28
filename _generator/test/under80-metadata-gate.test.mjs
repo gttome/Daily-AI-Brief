@@ -185,3 +185,23 @@ test('qualification category coverage excludes prior-production novelty-ineligib
  assert.equal(result.candidates.find(x=>x.canonical_url===priorA).production_novelty_eligible,false);
  assert.equal(result.candidates.find(x=>x.canonical_url===priorB).production_novelty_eligible,false);
 });
+
+
+test('qualification reserves novelty-eligible focus breadth before traceability fill',()=>{
+ const priorApplied='https://example.com/applied-prior';
+ const priorAgent='https://example.com/agent-prior';
+ const candidates=[
+  {source_id:'skill',headline:'Qoder Agent Skill evolution suggestions for reusable workflows',snippet:'Agent Skills reusable workflows.',canonical_url:'https://example.com/skill-current',published_at:'2026-09-28T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'},
+  ...Array.from({length:13},(_,i)=>({source_id:'t'+i,headline:`AI model evaluation benchmark developer reliability ${i}`,canonical_url:`https://example.com/t/${i}`,published_at:'2026-09-28T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'technical_ai_engineering'})),
+  {source_id:'ap-old',headline:'Enterprise workplace AI productivity prior update',canonical_url:priorApplied,published_at:'2026-09-28T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'applied_genai_knowledge_workers'},
+  {source_id:'ag-old',headline:'AI agent workflow prior update for business teams',canonical_url:priorAgent,published_at:'2026-09-28T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'agents_non_technical_people'},
+  ...Array.from({length:3},(_,i)=>({source_id:'ap'+i,headline:`Enterprise workplace AI productivity fresh update ${i}`,canonical_url:`https://example.com/ap/${i}`,published_at:'2026-09-28T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'applied_genai_knowledge_workers'})),
+  ...Array.from({length:2},(_,i)=>({source_id:'ag'+i,headline:`AI agent workflow automation fresh update ${i}`,canonical_url:`https://example.com/ag/${i}`,published_at:'2026-09-28T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'agents_non_technical_people'}))
+ ];
+ const result=runGate(candidates,{cutoff:'2026-09-28T15:00:00Z',qualificationEditionDate:'2026-09-28',publishedEditions:[{brief_date:'2026-09-27',stories:[{source:{url:priorApplied}},{source:{url:priorAgent}}]}]});
+ assert.equal(result.coverage_counts.applied_genai_knowledge_workers,3);
+ assert.equal(result.coverage_counts.agents_non_technical_people,3);
+ assert.equal(result.coverage_ready,true);
+ assert.ok(result.candidates.some(x=>x.canonical_url==='https://example.com/ap/2'));
+ assert.ok(result.candidates.some(x=>x.canonical_url==='https://example.com/ag/1'));
+});
