@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m04",
+  "attempt": 1,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS"
+  ],
+  "image_sha256": "e5e727e77a0322143dea2cc63b8e1ddc28e04eb0fc0b7fb5b6fe0928ef8bdad3",
+  "rematerialized_sha256": "e5e727e77a0322143dea2cc63b8e1ddc28e04eb0fc0b7fb5b6fe0928ef8bdad3",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 1857341,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_3cc7f74ac6b081918e667562c7563725",
+  "library_path": "/Daily AI Brief Qualification Images/m04/IH10-m04-attempt-1.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image is explicitly about GitHub Agentic Autofix, Copilot Memory, security-alert input, repository-specific context, secure-development patterns, and a resolved-alert outcome. No harness/status/Q/publication subject contamination is visible."
+    },
+    "factual_support": {
+      "pass": true,
+      "evidence": "The concrete product claims shown match the sealed m04 evidence: Copilot Memory can provide context to agentic autofix; memories can teach GitHub Copilot features about secure development patterns; and memories can help agentic autofix resolve additional security alerts. No vulnerability classes, filenames, code, unsupported metrics, or fabricated product UI are introduced."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Clear integrated flow from Copilot Memory and Security Alert into Agentic Autofix and onward to a resolved-alert outcome. Context and alert inputs are visually distinguished and the composition is explanatory rather than decorative."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional white-background textbook/editorial composition with strong hierarchy, readable typography, restrained iconography, consistent spacing, and story-specific explanatory value."
+    }
+  },
+  "first_failed_gate": null,
+  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
