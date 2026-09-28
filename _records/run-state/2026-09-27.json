@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.1.0",
+  "checkpoint_digest_version": "checkpoint-digests-v1",
+  "edition_date": "2026-09-27",
+  "baseline_main_sha": "b998bb7ecfc3fab41238b7d67ba4ea927c83842b",
+  "current_sha": "8bc4c951f89a850f78f46e66bb40a60d3b4093c0",
+  "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+  "stage": "PREFLIGHT_DISCOVERY_READY",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": null,
+  "workflow_run_ids": [
+    "36379907038"
+  ],
+  "artifact_paths": [
+    "_records/discovery-preflight/result/article-evidence-receipt.json",
+    "_records/discovery-preflight/result/article-evidence.json",
+    "_records/discovery-preflight/result/date-enrichment.json",
+    "_records/discovery-preflight/result/metadata-candidates.json",
+    "_records/discovery-preflight/result/receipt.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "consequential_actions": [],
+  "publication_lifecycle": "staged",
+  "operational_status": "PREPARING",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-28T04:59:18.309Z",
+      "status": "pass",
+      "input_baseline_sha": "b998bb7ecfc3fab41238b7d67ba4ea927c83842b",
+      "current_sha": "8bc4c951f89a850f78f46e66bb40a60d3b4093c0",
+      "artifact_paths": [
+        "_records/discovery-preflight/result/date-enrichment.json",
+        "_records/discovery-preflight/result/metadata-candidates.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [],
+      "input_digest": "sha256:c9989d9b3989ff635eaa51954d1d8e76c8599c57ee5bcee65155e0f3af93780e",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:2e0ab6f6aef79be002b5a3226729da24532d9ee4db662590e31594702dc19221",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [
+        "36379907038"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    },
+    "PREFLIGHT_DISCOVERY_READY": {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-28T04:59:18.339Z",
+      "status": "pass",
+      "input_baseline_sha": "b998bb7ecfc3fab41238b7d67ba4ea927c83842b",
+      "current_sha": "8bc4c951f89a850f78f46e66bb40a60d3b4093c0",
+      "artifact_paths": [
+        "_records/discovery-preflight/result/article-evidence-receipt.json",
+        "_records/discovery-preflight/result/article-evidence.json",
+        "_records/discovery-preflight/result/receipt.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [
+        "_records/discovery-preflight/result/date-enrichment.json",
+        "_records/discovery-preflight/result/metadata-candidates.json"
+      ],
+      "input_digest": "sha256:6d1fffb43c9b2df6335ad67a42364c8f96062aceff2892971d4101c038972e67",
+      "dependency_digest": "sha256:2e0ab6f6aef79be002b5a3226729da24532d9ee4db662590e31594702dc19221",
+      "output_digest": "sha256:97866f626912a7af8446a1a36f5299231e8f61bc1a527b205a97d25136e864ff",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [
+        "36379907038"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    }
+  },
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-28T04:59:18.309Z",
+      "status": "pass",
+      "current_sha": "8bc4c951f89a850f78f46e66bb40a60d3b4093c0",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:c9989d9b3989ff635eaa51954d1d8e76c8599c57ee5bcee65155e0f3af93780e",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:2e0ab6f6aef79be002b5a3226729da24532d9ee4db662590e31594702dc19221"
+    },
+    {
+      "stage": "PREFLIGHT_DISCOVERY_READY",
+      "timestamp": "2026-09-28T04:59:18.339Z",
+      "status": "pass",
+      "current_sha": "8bc4c951f89a850f78f46e66bb40a60d3b4093c0",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:6d1fffb43c9b2df6335ad67a42364c8f96062aceff2892971d4101c038972e67",
+      "dependency_digest": "sha256:2e0ab6f6aef79be002b5a3226729da24532d9ee4db662590e31594702dc19221",
+      "output_digest": "sha256:97866f626912a7af8446a1a36f5299231e8f61bc1a527b205a97d25136e864ff"
+    }
+  ]
+}

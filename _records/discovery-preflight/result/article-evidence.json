@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9363,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Private saved views for repository issues and “Relates to” issue relationship is generally available",
+      "canonical_url": "https://github.blog/changelog/2026-09-25-personal-saved-views-for-repository-issues-and-more",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T19:05:03.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 424,
+      "excerpt": "Private saved views for repository issues and “Relates to” issue relationship is generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 25, 2026 • 1 minute read Private saved views for repository issues and “Relates to” issue relationship is generally available Private saved views for repository issues Repository issues pages now support private saved views, making it easier to create and save personalized views of your…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Updates to GitHub Copilot for Slack and Microsoft Teams",
+      "canonical_url": "https://github.blog/changelog/2026-09-25-updates-to-github-copilot-for-slack-and-microsoft-teams",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T16:33:42.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 938,
+      "excerpt": "Updates to GitHub Copilot for Slack and Microsoft Teams - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 25, 2026 • 2 minute read Updates to GitHub Copilot for Slack and Microsoft Teams Table of Contents Better context for the work you’re already doing More control over how you work Bug fixes and reliability improvements Availability Get started in Slack Get started in Microsoft Teams Menu. Currently selected: Better context for the…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/accelerate-multimodal-rl-training-with-skyrl-on-amazon-sagemaker-hyperpod/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-25T16:18:07.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 4858,
+      "excerpt": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Combined with the Ray capabilities on HyperPod , you can create Ray clusters from SageMaker Studio, submit jobs remotely using secure connections, and monitor training through pre-built Amazon Managed Grafana dashboards that the…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "AI at work: Learn, build, and grow with Microsoft Copilot and agents",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140",
+      "publisher": "Microsoft Community Hub — Skills Hub",
+      "published_at": "2026-09-25T12:04:32.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 15,
+      "excerpt": "AI at work: Learn, build, and grow with Microsoft Copilot and agents | Microsoft Community Hub"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "3 Must-Haves for Scaling Agentic AI in Health",
+      "canonical_url": "https://www.salesforce.com/blog/3-must-haves-for-scaling-agentic-ai-in-health/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-25T17:45:03.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2286,
+      "excerpt": "3 Must-Haves for Scaling Agentic AI in Health - Salesforce Skip to Content 0% Healthcare and Life Sciences 3 Must-Haves for Scaling Agentic AI in Health Lizanne Kiel September 25, 2026 5 min read Share article Learn how to build an Agentic Health Enterprise through trust, context, and action with insights from the Health Keynote at Dreamforce 2026. Instead of adding another layer of technology, agents coordinate work across the systems healthcare organizations already have, handling routine steps so people can focus on the judgment, care, and connection that matter most. See how organizations like UCLA Health, Highmark Health, and Select…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Build where you want, run with confidence: Now Microsoft hosts and manages the code created by Copilot",
+      "canonical_url": "https://www.microsoft.com/en-us/copilot/blog/copilot-studio/build-where-you-want-run-with-confidence-now-microsoft-hosts-and-manages-the-code-created-by-copilot/",
+      "publisher": "Microsoft Copilot",
+      "published_at": "2026-09-25T12:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1755,
+      "excerpt": "Microsoft Copilot Managed Runtime: Enterprise code execution for Microsoft 365 | Microsoft Copilot Blog Skip to content Skip to main content Copilot Copilot Word Excel PowerPoint Outlook OneDrive Teams Copilot Studio Work IQ Cowork Individuals Business Enterprise Education Plans and pricing Support Customer stories Blog Copilot vs. competitors Tech community Frontier program AI for Work Roadmap Agents New user onboarding Roll-out and adoption Prompts and use cases AI knowledge Connectors Open Copilot Download the app Blog home Build where you want, run with confidence: Now Microsoft hosts and manages the code created by Copilot Search…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "qoder-skill-evolution",
+      "canonical_url": "https://docs.qoder.com/release-notes/qoder",
+      "publisher": "Qoder",
+      "published_at": "2026-09-23T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 2507,
+      "excerpt": "​ September 23, 2026 Qoder 0.4.1 A New Space for Human and Agent Collaboration Features Projects and discussions (Enterprise&Teams) : Discuss plans, push tasks forward, and bring ideas to life with your Agent, all in one place. Agent Teams (Enterprise&Teams) : Create and configure Agents, then bring them together into teams. Skill evolution suggestions : After a conversation finishes, Qoder can suggest creating or updating Skills based on reusable experience. Response annotations : Enable this feature in Settings-Experimental Features to select text in an Agent response, add it to the chat input box with an optional comment, and reference…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub Copilot app for Beginners: How to build custom workflows with canvases",
+      "canonical_url": "https://github.blog/ai-and-ml/github-copilot/github-copilot-app-for-beginners-how-to-build-custom-workflows-with-canvases/",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-25T18:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2388,
+      "excerpt": "GitHub Copilot app for Beginners: How to build custom workflows with canvases - The GitHub Blog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe AI & ML AI & ML Learn about artificial intelligence and machine learning across the GitHub ecosystem and the wider industry. Learn more Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Home / AI & ML / GitHub Copilot GitHub Copilot app for Beginners: How to build custom workflows with canvases Describe the interface you need in plain English, then let the agent build a live surface you can both use and…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "Work IQ grounds Copilot and agents in core business data",
+      "canonical_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-25T12:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2351,
+      "excerpt": "Tags Microsoft Copilot Microsoft Dataverse Power Apps Power Platform Audience IT Professionals Content types News and product updates Job Roles IT decision maker​ Products Dynamics 365 Customer Service​ Dynamics 365 Sales Topics AI Work IQ now grounds Microsoft Copilot and agents in your core business data from Microsoft Dynamics 365 and Microsoft Power Platform . By connecting and modeling your business once, you create a shared foundation for Copilot and agents: what your data means, how records relate, and which business rules guide the next step. Your business applications remain the systems of record, but their data and processes are…"
+    }
+  ]
+}

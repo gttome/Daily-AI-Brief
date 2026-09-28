@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.1.0",
+  "cutoff": "2026-09-28T04:31:00.000Z",
+  "attempt_limit": 48,
+  "attempted": 48,
+  "resolved": 35,
+  "published_resolved": 29,
+  "updated_resolved": 19,
+  "precision_attempted": 17,
+  "precision_resolved": 9,
+  "failed": 4,
+  "details": [
+    {
+      "url": "https://www.anthropic.com/research/skills",
+      "status": "resolved",
+      "published_at": "2023-11-03T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://deepmind.google/models/gemini/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://docs.github.com/copilot/how-tos/use-copilot-agents/cloud-agent",
+      "status": "resolved",
+      "published_at": "2026-03-10T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://docs.github.com/copilot/how-tos/use-copilot-agents/coding-agent/integrate-coding-agent-with-slack",
+      "status": "resolved",
+      "published_at": "2026-03-10T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://ibm.webcasts.com/starthere.jsp?ei=1749693&sti=webinarspage&tp_key=83a9212ff7",
+      "status": "resolved",
+      "published_at": "2019-02-11T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+      "status": "resolved",
+      "published_at": "2026-01-09T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents",
+      "status": "resolved",
+      "published_at": "2025-09-29T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.ibm.com/think/podcasts/mixture-of-experts/ai-frontier-granite-4-2-meta-muse",
+      "status": "resolved",
+      "published_at": "2026-09-17T00:00:00.000Z",
+      "updated_at": "2026-09-23T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ibm.com/think/podcasts/mixture-of-experts/anthropic-claude-hardware-guidelines-openai-rogue-agents-runway-solaris",
+      "status": "resolved",
+      "published_at": "2026-09-03T00:00:00.000Z",
+      "updated_at": "2026-09-03T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.ibm.com/think/topics/ai-agents",
+      "status": "resolved",
+      "published_at": "2024-07-03T00:00:00.000Z",
+      "updated_at": "2026-08-10T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.langchain.com/langchain",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/evaluation",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://www.langchain.com/langsmith/llm-gateway",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/",
+      "status": "resolved",
+      "published_at": "2025-11-13T18:55:00.000Z",
+      "updated_at": "2026-07-06T10:48:07.011Z"
+    },
+    {
+      "url": "https://github.com/githubnext/agentics/blob/main/docs/efficiency-improver.md",
+      "status": "resolved",
+      "published_at": "2025-07-24T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://github.com/GitHubSecurityLab/seclab-taskflow-agent",
+      "status": "resolved",
+      "published_at": "2025-03-26T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://ibm.webcasts.com/starthere.jsp?ei=1770336&sti=thinkwebinarspg&tp_key=1da09031bf",
+      "status": "resolved",
+      "published_at": "2019-02-11T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://newsroom.ibm.com/2026-09-21-new-ibm-chro-study-ai-puts-critical-thinking-at-the-center-of-workforce-priorities",
+      "status": "resolved",
+      "published_at": "2026-09-21T00:00:00Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
+      "status": "resolved",
+      "published_at": "2026-09-18T00:00:00Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://news.microsoft.com/source/asia/2026/09/21/ai-ambition-into-action-microsoft-brings-ai-ready-capabilities-across-its-india-cloud-infrastructure-establishes-india-south-central-region-as-a-strategic-hub-for-asia-and-global-south/",
+      "status": "resolved",
+      "published_at": "2026-09-21T07:08:49.000Z",
+      "updated_at": "2026-09-21T08:17:41.000Z"
+    },
+    {
+      "url": "https://workspace.google.com/blog/productivity-collaboration/google-named-a-leader-in-idc-marketscape-worldwide-intelligent-content-services-2026-vendor-assessment",
+      "status": "resolved",
+      "published_at": "2026-09-23T00:00:00Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality",
+      "status": "resolved",
+      "published_at": "2026-09-18T16:22:18.000Z",
+      "updated_at": "2026-09-18T16:22:20.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/uk/news/stories/dreamforce-live-2026/",
+      "status": "resolved",
+      "published_at": "2026-09-21T10:37:37.000Z",
+      "updated_at": "2026-09-21T10:47:20.000Z"
+    },
+    {
+      "url": "https://experienceleague.adobe.com/en/docs/document-cloud-learn/acrobat-learning/ai-powered/ai-overview?lang=en",
+      "status": "resolved",
+      "published_at": "2026-09-24T00:00:00Z",
+      "updated_at": "2026-09-24T00:00:00.000Z"
+    },
+    {
+      "url": "https://experienceleague.adobe.com/en/docs/workfront/using/basics/ai-assistant/autofill-request-with-ai",
+      "status": "resolved",
+      "published_at": "2026-09-25T00:00:00Z",
+      "updated_at": "2026-09-25T00:00:00.000Z"
+    },
+    {
+      "url": "https://www.reuters.com/business/imf-tells-eu-ministers-ai-could-boost-growth-increase-economic-strains-2026-09-19/",
+      "status": "failed",
+      "reason": "HTTP 401"
+    },
+    {
+      "url": "https://www.reuters.com/business/healthcare-pharmaceuticals/pharma-sector-doubles-down-ai-amid-hopes-slashing-costs-timelines-2026-09-16/",
+      "status": "failed",
+      "reason": "HTTP 401"
+    },
+    {
+      "url": "https://workspace.google.com/blog/product-announcements/teach-gemini-your-teams-know-hows-with-skills-in-google-workspace",
+      "status": "resolved",
+      "published_at": "2026-09-16T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://aka.ms/AIAdventurers",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140",
+      "status": "resolved",
+      "published_at": "2026-09-25T12:04:32.000Z",
+      "updated_at": "2026-09-25T11:56:30.000Z"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-skills-navigator-is-now-available-in-microsoft-copilot/4543633",
+      "status": "resolved",
+      "published_at": "2026-08-27T16:00:00.000Z",
+      "updated_at": "2026-08-27T17:23:17.000Z"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/new-microsoft-certified-multi-agent-ai-solutions-expert-certification/4494122",
+      "status": "resolved",
+      "published_at": "2026-07-22T16:15:00.000Z",
+      "updated_at": "2026-07-23T16:36:49.000Z"
+    },
+    {
+      "url": "https://techcommunity.microsoft.com/event/microsoft-copilot-events/ai-at-work-webinar-copilot-apps--agents/4550941",
+      "status": "resolved",
+      "published_at": "2026-08-27T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
+      "status": "resolved",
+      "published_at": "2025-10-16T00:00:00.000Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://workspace.google.com/blog/future-of-work/the-5-ai-agents-i-tell-every-executive-to-build-first",
+      "status": "resolved",
+      "published_at": "2026-09-24T00:00:00Z",
+      "updated_at": null
+    },
+    {
+      "url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "status": "resolved",
+      "published_at": "2026-09-25T12:00:00.000Z",
+      "updated_at": "2026-09-25T21:10:24.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/blog/3-must-haves-for-scaling-agentic-ai-in-health/",
+      "status": "resolved",
+      "published_at": "2026-09-25T17:45:03.000Z",
+      "updated_at": "2026-09-25T17:45:04.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/blog/openai-agentforce/",
+      "status": "resolved",
+      "published_at": "2026-09-15T20:55:32.000Z",
+      "updated_at": "2026-09-15T20:58:14.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/blog/agent-optimizer/",
+      "status": "resolved",
+      "published_at": "2026-09-21T14:00:24.000Z",
+      "updated_at": "2026-09-22T17:44:35.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/blog/long-horizon-agents/",
+      "status": "resolved",
+      "published_at": "2026-09-16T13:00:00.000Z",
+      "updated_at": "2026-09-22T17:51:00.000Z"
+    },
+    {
+      "url": "https://www.salesforce.com/blog/small-business/ai-harness-explained-for-smbs/",
+      "status": "resolved",
+      "published_at": "2026-09-17T13:00:00.000Z",
+      "updated_at": "2026-09-17T13:06:28.000Z"
+    },
+    {
+      "url": "https://academy.zapier.com/",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/blog/zapier-copilot-guide/",
+      "status": "resolved",
+      "published_at": "2024-05-07T00:00:00.000Z",
+      "updated_at": "2025-12-10T00:00:00.000Z"
+    },
+    {
+      "url": "https://zapier.com/sdk",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://docs.github.com/copilot",
+      "status": "failed",
+      "reason": "normalized_body_too_large:924434>900000"
+    },
+    {
+      "url": "https://zapier.com/agents",
+      "status": "failed",
+      "reason": "response_too_large:1212416>1200000"
+    },
+    {
+      "url": "https://zapier.com/ai",
+      "status": "unresolved"
+    },
+    {
+      "url": "https://zapier.com/solutions/hr",
+      "status": "unresolved"
+    }
+  ]
+}
