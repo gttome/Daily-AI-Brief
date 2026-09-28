@@ -1,5 +1,5 @@
 {
-  "schema_version": "2.1.0",
+  "schema_version": "1.10.0",
   "contract_id": "continuous-qualification-v1",
   "effective_date": "2026-09-26",
   "repository": "gttome/Daily-AI-Brief",
@@ -422,5 +422,33 @@
     "max_subject_mismatch_attempts_per_story": 2,
     "failure_code_after_attempt_budget": "qualification_image_subject_lineage_unsatisfied",
     "production_mutation": false
+  },
+  "qualification_q13_source_supply": {
+    "rule": "After Q13 exposed novelty-aware coverage of 11 Technical / 0 Applied / 2 Agents, qualification must add only bounded, first-party, dated Applied and Agents source candidates; category, novelty, Agent Skills, and 3-per-focus readiness gates remain unchanged.",
+    "qualification_only": true,
+    "q13_observed_coverage": {
+      "technical_ai_engineering": 11,
+      "applied_genai_knowledge_workers": 0,
+      "agents_non_technical_people": 2
+    },
+    "q13_sources_scanned": 48,
+    "q13_fresh_metadata_candidates": 48,
+    "q13_semantic_pass_started": false,
+    "added_source_ids": [
+      "google-workspace-executive-agents-sep24",
+      "adobe-acrobat-ai-workflows-sep24",
+      "adobe-workfront-ai-request-autofill-sep25",
+      "google-workspace-intelligent-content-sep23"
+    ],
+    "added_applied_candidates": 3,
+    "added_agent_candidates": 1,
+    "sources_are_first_party": true,
+    "pinned_candidates_are_metadata_only_until_article_evidence": true,
+    "production_history_checked_against_edition_baseline": true,
+    "classification_gate_unchanged": true,
+    "novelty_gate_unchanged": true,
+    "minimum_focus_coverage_unchanged": 3,
+    "agent_skills_gate_unchanged": true,
+    "q13_root_cause": "Q13 scanned the full 48-source qualification budget and discovered 48 fresh metadata items, but post-novelty deterministic classification retained 11 Technical, 0 Applied, and 2 Agents candidates. The deficit was source supply in Applied and Agents, not insufficient scanning or image execution."
   }
 }

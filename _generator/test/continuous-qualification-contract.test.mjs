@@ -160,3 +160,35 @@ test('qualification image workers are serialized story by story after Q11',()=>{
   assert.equal(s.candidate_lineage_match_required_at_git_persist,true);
   assert.equal(s.production_mutation,false);
 });
+
+
+test('Q13 source-supply hardening adds bounded first-party Applied and Agents candidates without weakening gates',()=>{
+  const c=JSON.parse(fs.readFileSync('docs/operations/continuous-qualification-contract.json','utf8'));
+  const p=JSON.parse(fs.readFileSync('_data/preflight-source-plan.json','utf8'));
+  const q=c.qualification_q13_source_supply;
+  assert.equal(q.qualification_only,true);
+  assert.deepEqual(q.q13_observed_coverage,{
+    technical_ai_engineering:11,
+    applied_genai_knowledge_workers:0,
+    agents_non_technical_people:2
+  });
+  assert.equal(q.added_applied_candidates,3);
+  assert.equal(q.added_agent_candidates,1);
+  assert.equal(q.classification_gate_unchanged,true);
+  assert.equal(q.novelty_gate_unchanged,true);
+  assert.equal(q.minimum_focus_coverage_unchanged,3);
+  assert.equal(q.agent_skills_gate_unchanged,true);
+  for(const id of q.added_source_ids){
+    const s=p.sources.find(x=>x.source_id===id);
+    assert.ok(s, id);
+    assert.equal(s.status,'active');
+    assert.equal(s.pinned_candidate,true);
+    assert.equal(s.evidence_class,'publisher_authored');
+    assert.ok(/^2026-09-2[345]T00:00:00Z$/.test(s.known_publication_date), id);
+  }
+  const applied=q.added_source_ids.map(id=>p.sources.find(x=>x.source_id===id)).filter(x=>x.focus_hint==='applied_genai_knowledge_workers');
+  const agents=q.added_source_ids.map(id=>p.sources.find(x=>x.source_id===id)).filter(x=>x.focus_hint==='agents_non_technical_people');
+  assert.equal(applied.length,3);
+  assert.equal(agents.length,1);
+  assert.match(agents[0].candidate_title,/agents/i);
+});
