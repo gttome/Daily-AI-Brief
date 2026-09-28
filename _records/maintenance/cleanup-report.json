@@ -3104,8 +3104,68 @@
       "sha": "5f8d5cbf69219c620e5c4b2e6c6b717b1b471830",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-b/repair/optional-image-review-arg-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-agent-classification-2026-09-20",
+      "sha": "482441ab98d6a73e82aa3cbe40e41323849fb3b1",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-agent-classification-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-agent-coverage-2026-09-20",
+      "sha": "f4331ef092252e7a8dfde58ea8c4e8620b5c1c7b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-agent-coverage-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-agentforce-source-2026-09-20",
+      "sha": "cca499fda4635f989c5ab45cb11af7d06b526808",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-agentforce-source-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-evidence-size-2026-09-20",
+      "sha": "09e85f40e9acec9209c67176e393df84b5fc029b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-evidence-size-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-pipeline-parity-2026-09-20",
+      "sha": "f25665d4080e056f27adc05d76665d2fd75157de",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-pipeline-parity-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-schedule-reliability-2026-09-20",
+      "sha": "146ed15b7de57256796486325fb4f4290fb7f350",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-schedule-reliability-2026-09-20"
+    },
+    {
+      "branch": "repair/preflight-support-agent-routing-2026-09-20",
+      "sha": "5e0a7acb6d84454e4b32bb25eed4628b50e5017e",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/preflight-support-agent-routing-2026-09-20"
+    },
+    {
+      "branch": "repair/prepublication-delta-validation-2026-09-21",
+      "sha": "dd72d05f4e81e8ebba48dd7e7effb2ace86f1d50",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/prepublication-delta-validation-2026-09-21"
+    },
+    {
+      "branch": "repair/prepublication-validator-state-2026-09-21",
+      "sha": "d2154a1ef0835e592e60de039ed57b37f1c1eee0",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/prepublication-validator-state-2026-09-21"
+    },
+    {
+      "branch": "repair/retire-feedback-nav-2026-09-08",
+      "sha": "0e5caa480a96257bb2537162e45e69d859ee17d8",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-b/repair/retire-feedback-nav-2026-09-08"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:25:19.359Z"
+  "updated_at": "2026-09-28T15:26:04.245Z"
 }
