@@ -14,7 +14,9 @@
     "SUBJECT_LINEAGE_PASS",
     "FACTUAL_SUPPORT_PASS",
     "STRUCTURAL_QUALITY_PASS",
-    "EDITORIAL_QUALITY_PASS"
+    "EDITORIAL_QUALITY_PASS",
+    "EXACT_GIT_BLOB_PERSISTED",
+    "ACCEPTED_LOCKED"
   ],
   "image_sha256": "e5e727e77a0322143dea2cc63b8e1ddc28e04eb0fc0b7fb5b6fe0928ef8bdad3",
   "rematerialized_sha256": "e5e727e77a0322143dea2cc63b8e1ddc28e04eb0fc0b7fb5b6fe0928ef8bdad3",
@@ -43,12 +45,20 @@
     }
   },
   "first_failed_gate": null,
-  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
-  "accepted_locked": false,
+  "accepted_locked": true,
   "fallback": false,
   "cross_story_contamination": false,
   "production_mutation": false,
   "work_usage": 0,
   "codex_usage": 0,
-  "paid_api_usage": 0
+  "paid_api_usage": 0,
+  "git_blob_sha": "edfe9dd39208a77f3fb5ee8f6560dfabe7eeea2e",
+  "git_path": "_records/qualification-image-harness/2026-09-27-IH10/images/m04-attempt-1.png",
+  "git_persistence_commit": "0e5ffe9e5a3453487a94ac157cde203d35ab9a7a",
+  "exact_byte_verification": {
+    "expected_sha256": "e5e727e77a0322143dea2cc63b8e1ddc28e04eb0fc0b7fb5b6fe0928ef8bdad3",
+    "expected_size_bytes": 1857341,
+    "persisted_git_blob_sha": "edfe9dd39208a77f3fb5ee8f6560dfabe7eeea2e",
+    "pass": true
+  }
 }
