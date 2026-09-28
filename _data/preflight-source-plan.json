@@ -359,6 +359,28 @@
       "candidate_snippet": "Google describes Gemini using semantic search across files, emails and chats, plus Drive Projects as curated knowledge bases with inline citations for grounded knowledge work.",
       "background_only": false,
       "material_update_verified": false
+    },
+    {
+      "source_id": "microsoft-copilot-product-catalog",
+      "owner": "Microsoft Copilot",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/copilot/blog/product/microsoft-copilot/",
+      "status": "active",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "purpose": "Recurring first-party Copilot product catalog for fresh knowledge-worker and enterprise AI source supply.",
+      "q14_hardening": true
+    },
+    {
+      "source_id": "microsoft-copilot-agentic-ai-catalog",
+      "owner": "Microsoft Copilot",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/copilot/blog/copilot-studio/topic/agentic-ai/",
+      "status": "active",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "purpose": "Recurring first-party Copilot agentic-AI catalog; final focus classification remains subject to the unchanged metadata gate.",
+      "q14_hardening": true
     }
   ]
 }
