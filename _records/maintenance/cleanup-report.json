@@ -4056,8 +4056,68 @@
       "sha": "48fd8802624427f31d2410eab3333366d94487ef",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-handoff-image-review-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-integration-image-review-2026-09-18",
+      "sha": "2b5fed602d057f8d1cb52a5b35d71e88fd61beab",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-integration-image-review-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-media-preflight-import-2026-09-18",
+      "sha": "685e163422e3e32114da7455a431b41b321337ef",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-media-preflight-import-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-metadata-gate-2026-09-18",
+      "sha": "9d1a7598e67b3afb54625827617663e4bd94fa54",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-metadata-gate-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-preflight-yaml-2026-09-18",
+      "sha": "99e7a68d4cdb36fafafc4620470bba8812c0707c",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-preflight-yaml-2026-09-18"
+    },
+    {
+      "branch": "fix/under80-single-story-image-generation-2026-09-19",
+      "sha": "8c1cb07a5b34dca93fac522ff57da6b9f8e5397a",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/under80-single-story-image-generation-2026-09-19"
+    },
+    {
+      "branch": "fix/watchlist-copy-link-label",
+      "sha": "7b655e02b0eb1e46deab01648850efdd08b59d9b",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/watchlist-copy-link-label"
+    },
+    {
+      "branch": "fix/watchlist-response-spacing",
+      "sha": "4f72ccccaf1abd6b9416871ce69d7cf4fe8b14bf",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/watchlist-response-spacing"
+    },
+    {
+      "branch": "hardening/agent-skills-source-supply-2026-09-26",
+      "sha": "e61feef1fc00bd21c2cc3af9657d8a8cebc3286d",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/agent-skills-source-supply-2026-09-26"
+    },
+    {
+      "branch": "hardening/completion-artifact-2026-09-19",
+      "sha": "b1b1c9af4e21137d82838e96b0616dceb785c50f",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/completion-artifact-2026-09-19"
+    },
+    {
+      "branch": "hardening/plus-resilience-20260910",
+      "sha": "d55f36006e1c657594ca5f2224d4718749986d59",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/hardening/plus-resilience-20260910"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:19:48.338Z"
+  "updated_at": "2026-09-28T15:20:30.768Z"
 }
