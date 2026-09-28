@@ -108,7 +108,7 @@ export function extractCandidateMetadata(text, base, source = {}) {
    if(url.protocol!=='https:'||url.username||url.password)return;
    url=new URL(normalizeUrl(url.href));
    const parsed=publicationTimestamp(item.published_at),prior=candidates.get(url.href);
-   const incomingPrecision=typeof item.published_at==='string'&&/^\\d{4}-\\d{2}-\\d{2}$/.test(item.published_at.trim())?'day':parsed?'instant':null;
+   const incomingPrecision=publicationDatePrecision(item.published_at);
    const dates=[...new Set([...(prior?.publication_dates||[]),parsed].filter(Boolean))];
    candidates.set(url.href,{source_id:source.source_id||null,publisher:source.owner||source.publisher||null,
      headline:item.title,canonical_url:url.href,published_at:dates.length===1?dates[0]:null,publication_dates:dates,date_conflict:dates.length>1,
