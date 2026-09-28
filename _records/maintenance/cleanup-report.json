@@ -48,7 +48,11 @@
     "operations_documents": 27,
     "pinned_sources": 13,
     "pins_older_than_96h": 11,
-    "latest_qualification_branch": "discovery-preflight/qualification/2026-09-28-Q20"
+    "latest_qualification_branch": "discovery-preflight/qualification/2026-09-28-Q20",
+    "branches_after": 332,
+    "archived_and_removed": 80,
+    "skipped_at_execution": 0,
+    "main_unchanged": true
   },
   "protected_pr117": {
     "number": 117,
@@ -4238,6 +4242,6 @@
       "archive_ref": "tags/archive/cleanup-20260928-a/refactor/efficiency-production-v2"
     }
   ],
-  "status": "applying",
-  "updated_at": "2026-09-28T15:21:56.078Z"
+  "status": "complete",
+  "updated_at": "2026-09-28T15:21:58.990Z"
 }
