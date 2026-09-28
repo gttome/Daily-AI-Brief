@@ -1,105 +1,140 @@
-# Daily AI Brief — Q24 Article, Podcast and Video Components PASS
+# Daily AI Brief — Q24 Watchlist and Reader-Book Components PASS
 
 **Date:** September 28, 2026  
 **Repository:** `gttome/Daily-AI-Brief`  
 **Active qualification:** `2026-09-28-Q24`  
-**Latest validated component:** Two videos, 2026-09-28T21:39:15.892Z / 4:39:15 p.m. Central  
-**First unfinished work:** Watchlist and book evaluation; then professional images and final handoff/gates.
+**Latest component validation:** `2026-09-28T22:09:30.854Z` / **5:09:30 p.m. Central**  
+**Validated component persistence commit:** `918cba0a3f35abe76d752ba72b8b9ee84ac5c052`  
+**First unfinished work:** Six independent professional images; then final kernel, assembled gates and qualification closure.
 
 > [!IMPORTANT]
-> **Q24's article selection, two-podcast component and two-video component have passed their respective validations. Reuse all three.** Do not repeat PR281–283, D01–D05, article preflight/selection, podcast acquisition/review/validation, or completed video capture/reconciliation/review/validation. The earlier full podcast checkpoint remains immutable at commit `cb4bc66ac504e96800c74e693ca51f24a94dab60` under this same path.
+> Article selection, two podcasts, two videos, watchlist decisions and reader-book mappings now have successful component validations. **Reuse all five components.** Do not repeat article/media selection, watchlist discovery, source capture, book review or the passed component tests merely to resume. No additional owner ZIP upload or GitHub permission request is required.
 
 > [!WARNING]
-> **Q24 is still nonterminal, not a full qualification PASS or a public edition.** Both media component receipts are available, but the assembled kernel-level `MEDIA_READY` gate has not run, so `media_ready=false` remains accurate. Q22 and Q23 remain terminal FAIL. Do not allocate Q25 while Q24 is nonterminal.
+> **Q24 remains nonterminal, not a full qualification PASS or a public edition.** `media_ready=false` preserves the unexecuted assembled kernel gate. Images have not started. The separate private book-change evaluation remains deferred until the final edition. Do not allocate Q25 or manufacture a terminal result.
 
 ## Resume instruction
 
-Read live main, the current Q24 editorial branch, the latest Issue #247 update and any newer terminal result before acting. Reuse newer valid work. Preserve the original cutoff, both policy IDs and frozen inputs below. Continue at watchlist/book evaluation, not another media or article search. Preserve rejected candidates, access limitations, parser diagnostics and every unsuccessful execution. Do not claim that a component receipt, branch-local helper or successful acquisition workflow is a released general-purpose repair, full qualification or public publication.
+Read live main, the current Q24 editorial branch, the latest Issue #247 comment and any newer terminal result before acting. Preserve newer valid work, the original cutoff, both policy IDs and all frozen input bindings below. Continue at the first safely executable unfinished image action, not another article/media/watchlist search. Preserve unsuccessful attempts, access limitations and original source diagnostics. Perform actual work during an active invocation and report what executed; do not imply an unobserved background worker.
 
-## 1. Frozen run and completed upstream work
+The preceding complete video checkpoint is retained at [immutable commit 13636e08](https://github.com/gttome/Daily-AI-Brief/blob/13636e08fea15961c8689c4624440c40d46c2e77/_records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md). Its article/media details and historical failure records remain authoritative; its then-unfinished watchlist/book status is superseded by this checkpoint. The earlier complete podcast checkpoint remains at `cb4bc66ac504e96800c74e693ca51f24a94dab60` under the same path.
+
+## 1. Frozen run bindings — unchanged
 
 | Binding | Exact value |
 |---|---|
-| Q24 identity | `2026-09-28-Q24` |
-| Original cutoff | `2026-09-28T20:04:36Z` |
-| Baseline / last observed main | `1def5c4ba158247a9c02106dc4e4820d80a7133d` |
-| Policies | `article-24-72-168-v1`; `media-research-cutoff-v1` |
+| Qualification | `2026-09-28-Q24` |
+| Original research cutoff | `2026-09-28T20:04:36Z` |
+| Baseline / last verified main | `1def5c4ba158247a9c02106dc4e4820d80a7133d` |
+| Article policy | `article-24-72-168-v1` |
+| Media policy | `media-research-cutoff-v1` |
 | Editorial branch | `editorial-handoff/qualification/2026-09-28-Q24` |
 | Article evidence Git blob | `ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df` |
 | Semantic receipt Git blob | `fc459b45af230f8b3d9142a7f951510b9a8475f7` |
 | Podcast selection Git blob | `0255cbdca2e89ebb4c2b20672103dee517056930` |
 | Video selection Git blob | `02125e82d2246e512740cdb48d5d4f97a5bc41ce` |
-| Persisted video selection commit | `5f6f346efec3f7bb9b9b3a0593ac0c7c3d7707ec` |
+| New watchlist/book validation Git blob | `75c7f045b9937f5e33157cd1cbd59e92202d2ee9` |
 
-**PR283 is already released:** normal squash merge at 20:03:48 UTC, protected CI 36476404384, with 33 targeted regressions, 501 full-suite tests and 24 contracts passing in the prior repair verification. It uses the recorded research cutoff for media rather than midnight. That repair was not repeated or changed in this continuation. No production source code or main-branch content was changed by the Q24 video work.
+PR281–283, D01–D05 and prior repairs are completed. PR283's protected CI `36476404384`, 33 targeted regressions, 501 full-suite tests and 24 contracts are **historical repair results**, not tests rerun during this continuation. These new branch-local evidence helpers are not a general-purpose production release or a substitute for protected release CI.
 
-**Articles:** Preflight 36476660754 and semantic validation 36477136972 passed. Frozen order **m04, m03, m05, m06, m01, m09**, exact 2/2/2, with only m01 the reusable Agent Skills story. The nine-packet, 9,478-character evidence and supported editorial receipt remain unchanged.
+## 2. Newly executed watchlist/book workflows — all finished
 
-**Podcasts:** Validation 36479004398 passed at 20:25:10 UTC. Everyday AI 871 is 30:53, published September 28 at 11:00 UTC; AI for Humans 197 is 48:21, published September 24 at 10:00 UTC with the explicit seven-day fallback. Practical AI 373 remains excluded as a repeated production episode. Podcast approval, raw sources and novelty review were not redone. The earlier helper failure 36477387128 remains failed and retained in `prior_attempt`.
+| Workflow | Actual outcome | Artifact |
+|---|---|---|
+| [36488680794 — canonical input audit](https://github.com/gttome/Daily-AI-Brief/actions/runs/36488680794) | SUCCESS; frozen bindings checked; canonical input inventory and review bundle retained | `11000129686` |
+| [36489446865 — bounded primary-source capture](https://github.com/gttome/Daily-AI-Brief/actions/runs/36489446865) | SUCCESS as acquisition; nine raw sources, including publisher-linked samples; no article/media retrieval | `11000686644` |
+| [36490666765 — component validation](https://github.com/gttome/Daily-AI-Brief/actions/runs/36490666765) | **SUCCESS; 23 existing regression tests and 26 evidence/preservation checks** | `11001013130` |
 
-## 2. Two-video component — PASS with explicit review limitations
+The validation executed at commit `7c67bd98fc47e6935a113d1e205b7a0ab6d33b4e` and persisted five records in commit `918cba0a3f35abe76d752ba72b8b9ee84ac5c052`. It checked all nine raw-source hashes, exact source manifest, original pre-cutoff identities/timestamps, literal book headings, PDF extraction hashes, the released watchlist/sweep/book validators, all ten item decisions, and preservation of historical topics and book mappings. Its 17 negative cases reject changed cutoff/digests, invented excerpts/sections/practices, future evidence, unsupported book evidence type, unknown or duplicate items, false zero-new claims, fabricated momentum, removed topics and retimed carried topics.
 
-| Slot | Selected video | Original publication | Runtime | Tier / age at original cutoff |
-|---|---|---|---:|---|
-| General | IBM Technology — **Prompt to Production: The Future of AI Code Workflows**, `bs1qPy_CWkM` | `2026-09-28T11:00:25Z` | **7:15 / 435 seconds** | Preferred; 9.07 hours |
-| Agents for Non-Technical People | IBM Technology — **AI Is Exposing Your Data: An AI Security Problem You Can't See**, `kyJ1vd7yEPc` | `2026-09-27T11:00:22Z` | **11:29 / 689 seconds** | Existing 10–15-minute fallback; 33.07 hours |
+The successful test suite covered the released `watchlist`, `watchlist-delta`, `watchlist-daily-state`, `emerging-signal-sweep` and `book-reading` tests. It did **not** run full qualification CI or public live verification. The downloaded validation ZIP, editorial-review hash and all four output hashes were independently checked in the active chat container after the workflow completed.
 
-Publication times come from the publisher-distributed public feed's original `published` fields. Runtimes come from matching video IDs/titles in the first-party channel catalog's displayed durations. The independently checked selector retains the **72-hour limit and 20-minute hard ceiling**. A later `updated` timestamp was not substituted for original publication.
+All following files are under `_records/qualification/2026-09-28-Q24/watchlist-book-evidence/`:
 
-**Editorial scope:** The general item is an engineering planning/validation/verification explainer. The second item fits non-technical agent ownership through data-flow awareness and oversight; it is not represented as a no-code construction tutorial or a guarantee of jargon-free instruction. Review covered publisher descriptions and the first video's available chapter topics. **No video/audio was played, no transcript was independently reviewed, and no security or productivity claims were benchmarked.** The publisher's AI-assisted transcript/metadata disclosure is retained. Reader summaries stay within the documented topics.
-
-**Novelty:** All 20 available canonical production editions before September 28 were reviewed: 40 slots, 24 included video occurrences and 16 empty slots. Identity, URL aliases, title, channel, date, `why_useful` and `connection` were compared. Neither video repeats a prior episode. The September 19 privacy clip is related but addresses what a person shares in ChatGPT, not this episode's multi-component agent/data-flow topic. Same-day production and prior Q approvals were excluded.
-
-**Fallback:** The fresh 7:15 item has an engineering-delivery purpose and occupies the general slot. The relevant 9:46 US Open agent/API example was published September 24 at 11:00:22 UTC, outside the 72-hour window. Other inspected saved catalogs did not supply a completely verified short agent-oversight alternative. The bounded-search scope and limitations are recorded; internet-wide exhaustion and a zero-video exception are **not** claimed.
-
-### Executed evidence chain
-
-All records below are under `_records/qualification/2026-09-28-Q24/media-evidence/` unless otherwise stated.
-
-| Execution / evidence | Observed result |
+| File | Role / SHA-256 |
 |---|---|
-| Catalog capture **36485691371**, job **109141922136** | SUCCESS; five new endpoints, no article or podcast retrieval |
-| Catalog artifact **10999560701** | `q24-video-catalog-resolution`; SHA-256 `f379abcc47cef338d8611c2e3b27c0f2ff9ee1572ffe47fffc3b70a18d6a95d5` |
-| Primary feed/pages **36486149727**, job **109143409225** | SUCCESS as capture; original metadata receipt explicitly unresolved |
-| Primary artifact **11000140814** | SHA-256 `5bd46d50ff9df9dbd03095539bc867640f7311b3045687e5a76c07cdbf2c7af3` |
-| Saved-source reconciliation **36486736788** | SUCCESS; no new publisher requests; nine invalid-identity regression cases rejected |
-| Reconciliation artifact **11000027107** | SHA-256 `259625c4a4f4fe85a4efca0a9a04d4244032b07fcb8d3b3bdff0b51c76e71ab8` |
-| `video-metadata-reconciliation.json` | Git blob `3ecabea17d0668b785c0ffdbe9df83c11764e05c` |
-| `prior-video-history-v2.json` | Git blob `cadb39e689845bdf84fb5233f547ecd083337708`; SHA-256 `bc2cf5f6678b1f353eb4163d003e0fb86a32bfc4e0cb5c1381777350ba4bb1d3` |
-| `video-editorial-review.json` | Commit `1ca5ce91ffa07fc53cfcc71c37ebbceabca58955`; Git blob `cf7ddaa288a9cc3cbe427ed1beab8ecf99513332` |
-| Independent video validation **36487509973**, job **109147885687** | SUCCESS; validated at **21:39:15.892 UTC** |
-| Video validation execution commit | `2da97096a7069b33f12c4b5e02d1820245036bf3` |
-| Validation artifact **11000107976** | SHA-256 `963a9139321bdb1b7141f8b4fe991e73c2b4b4bb4a58cb879454b6182e518109` |
-| `video-selection.json` | **PASS, two videos**, Git blob `02125e82d2246e512740cdb48d5d4f97a5bc41ce` |
+| `input-audit.json` | Canonical input inventory; acquisition only, not approval |
+| `source-capture.json` | Original source outcomes; `2255216b2b022de8804b60d738396dc5b2f3c11efd8f4827bb8095f993e75b21` |
+| `editorial-review.json` | Frozen editorial decisions and limitations; `fbc7b3da8a19331179a19474a04851862efa24177cf4acb83eef995bafea2477` |
+| `watchlist-selection.json` | Seventeen-topic projection; `fff88d8377857564d963dde00052fccd1169c5d3dc15f8d507ce3abe8b875044` |
+| `watchlist-delta.json` | Exact changed/carried scope; `9759f8d168da4769adfdd6f67b937e267852efd9ee7abf437344c012a282706d` |
+| `emerging-signal-sweep.json` | Bounded discovery with degraded coverage; `8ce7feb04fb77ede1d6ad68e6f40d978fa185c1505501e219b3f2fd6fada9ab2` |
+| `book-reading-selection.json` | Historical catalog plus seven Q24 reader bridges; `08af8bfabfc82582c9e333154ca160bb08e74ea4020f2aa5dc7dc801f701887e` |
+| `validation.json` | Component PASS receipt; `94334f6c24aaeeda901f248e4bbbea5c0ae5910561606e9f1859c30be68e86ef` |
 
-The final verifier recovered the original captured artifact, checked exact hashes, reparsed publisher identities and durations, verified each reviewed excerpt both in the raw feed and the matching episode description, compared the canonical history to its source files, normalized evidence with the released module and executed the released cutoff-aware selector. **Twelve selector/evidence checks passed**, covering stale/future uploads, overlong runtime, duplicate/unverified/editorially rejected/wrong-slot candidates, inclusive time boundaries, incorrect source hashes, fabricated excerpts and conflicting video aliases. Podcast selection was only read and hash-checked, not rerun.
+Artifact ZIP SHA-256 values:
 
-## 3. Preserve these limitations and lessons
+- Input audit `11000129686`: `d3431ae73f4868c2b84faa85adb791fe290882339fce71c94e09721394bed175`.
+- Primary sources `11000686644`: `b3bd218d20b70492a664bc4f9106ca6ffb390bc14c41e6dcaa834ee3ee71dc93`.
+- Component validation `11001013130`: `72983c0cf2e339c5d841e604a9d43e818fb6cda59158360fde6736f1d8425e14`.
+
+Artifacts have 14-day retention; inspect live expiry before later recovery. Source hashes bind the captured response-body bytes. PDF text hashes separately bind the specified extraction output.
+
+## 3. Watchlist outcome — 1 new / 3 updated / 13 carried
+
+The preservation baseline is the newer tracked `_records/editorial-handoff/watchlist-2026-09-26.json`, SHA-256 `a3d28ed5ad0287866aa6def7c5f51ccb90fd8e464739c9744394dbd346e5309a`. The older public `_data/watchlist.json` was not modified or represented as synchronized. All sixteen prior topics and their evidence were retained.
+
+| Disposition | Topic | Evidence and limit |
+|---|---|---|
+| New | Self-organizing multi-agent coordination | Agensh v1, original submission September 22 at 17:56:25 UTC. Abstract and submission metadata only; early signal, limited confidence, no reproduced results or measured momentum. |
+| Updated | Harness engineering | Reuses frozen m03 OpenShell runtime-control evidence; no new article request or universal-security claim. |
+| Updated | Model lifecycle governance | Reuses frozen m04 Sonnet 5.5 on AWS evidence; no independent efficiency, entitlement or pricing verification. |
+| Updated | System One decision models | CLM is a distinct implementation alongside Jev, not a duplicate new topic. Uses README commit `bb42c6c5bf914fd449bed2f6ca65be80602cb1f7`, available September 24 at 23:09:47 UTC. This is a source-availability timestamp, not an invented launch date. |
+| Carried | Thirteen existing topics | No timestamp refresh merely for review. Qoder's `qoder-skill-evolution-0.4.1` was already in the September 26 baseline and was not counted twice. |
+
+Eight assisted queries covered six discovery surfaces and the bounded fourteen-day missed-signal check. Technical-community and YouTube discovery remained metadata-only/degraded. **Overall coverage is degraded.** A completed bounded surface query is not proof of internet-wide coverage. No zero-new certificate, exhaustive registry sweep, playback or new momentum observation is claimed. The old September 18 discovery cache was not treated as fresh evidence.
+
+PotARCin remained `needs_research` after its primary-page open returned DisabledError. Unavailable author X/Notion pages were not used as accepted source evidence. CLM's multimodal roadmap was not represented as an available capability, and task-tuned verifier results were not attributed to an untuned reference model. Full source/candidate dispositions are retained in `editorial-review.json` and `emerging-signal-sweep.json`.
+
+## 4. Reader-book outcome — all ten items evaluated, four books considered
+
+**Seven reader bridges span three books.** The historical reference catalog and previous editions remain unchanged in the proposed catalog. No generic connection was inserted just to fill a slot.
+
+| Q24 item | Selected reference |
+|---|---|
+| m04 — model evaluation | Reliable Generative AI Context Engineering, Chapter 4: Reliability, Failure Handling, and Measurement |
+| m03 — runtime controls | Reliable Generative AI, Chapter 2, section 2.4.3: Utility Agents and Sandboxes |
+| m06 — role-oriented learning | Generative AI Professional Prompt Engineering Guide, publisher-linked **Release 11 sample TOC**, introductory Learning Paths (How to Use this Guide) |
+| m01 — reusable Skills | Reliable Generative AI Context Engineering, Chapter 2: The Context Engineering Lifecycle |
+| m09 — agents and workflows | Reliable Generative AI, Chapter 3, section 3.2: Building Reliable Agents - Giving AI Hands and Tools |
+| General video | Reliable Generative AI, Chapter 3, section 3.3.3: Verification as the Final Gate |
+| Agent oversight video | Reliable Generative AI Context Engineering, Chapter 5: Enterprise Operationalization |
+
+m05 and both podcasts have explicit omission rationales. Audio/video playback and full-book reading were not performed. These are verified section-level background connections, not evidence that a book validates a publisher's claims or contains an unreviewed exercise.
 
 > [!CAUTION]
-> These are **branch-local evidence-resolution helpers**, not a new merged production repair. Any general-purpose adapter change still needs its own regression coverage, living-document amendment and protected release CI. Do not claim this session ran the full qualification suite or produced a clean no-rework run.
+> **Fourth-book gap is not closed.** Generative AI Prompt Engineering Learning Ecosystem has a verified publisher-linked sample section, “Five Generative AI Prompt Companion Users,” but the captured sample is not a table of contents. Released `validateBookReading` accepts only `public table of contents`. Do not mislabel the source. Supporting a different evidence type requires a separate tested production change, living-document amendment and protected release CI. The Prompt Engineering Guide sample identifies Release 11 while its product page advertises Release 14; that version limitation is explicit in its reader bridge and locator.
 
-**Access limitations:** The three older challenged watch IDs `XN3xNJvWXsc`, `UabBYexBD4k` and `_ZqSFVi6UDY` were not retried. The two new selected watch URLs were each requested once and returned bot challenges; those pages were not used as content evidence or retried. The independently public publisher channel and its explicitly linked feed supplied the approved metadata. No challenge was bypassed. Microsoft Mechanics returned 404; other catalog limitations remain in the capture records.
+**Private book-change evaluation is a separate, unfinished obligation:** `DEFERRED_UNTIL_FINAL_EDITION`, `evaluation_completed=false`, `proposal_count=null`. It requires a final edition and private backlog deduplication. No private proposals or backlog contents were copied into this public repository. Reader bridges are not a substitute for that evaluation, and null is not a claim of zero proposals.
 
-**Feed identity reconciliation:** The captured feed root reports channel ID `KWaEZ-_VweaEx1j62do_vQ` without `UC`, while its author URL, alternate URL, self-link parameter and all entry channel IDs bind to `UCKWaEZ-_VweaEx1j62do_vQ`. The first root-equality assertion therefore failed. The correction requires all those exact full identities, episode links, matching titles and timezone-qualified timestamps; it does not accept mismatched identities. The original `video-primary-metadata.json` blob `31b3b469809ffb68d20092b6ab9ba99b44cfeb3b` remains unchanged and unresolved as historical evidence.
+**Final integration obligation:** The component validator used a minimal story/video identity envelope to check these selected bridges; it did not invent final podcast IDs or claim to assemble an edition. Revalidate the proposed catalog, watchlist and all media/image contracts against the final canonical edition and manifest.
 
-**Catalog and history projection:** The current channel page uses `lockupViewModel`, not only the older `videoRenderer` shape. Reconciliation used the saved raw catalog; it was not recaptured. The first history helper incorrectly projected `edition.videos` and produced empty arrays. The corrected append-only history uses actual canonical `worth_watching`; the first projection is retained but explicitly unusable for novelty. No no-prior-video conclusion was drawn from it.
+## 5. Original article and media components — preserved, not rerun
 
-**Rejected media:** `F3hlZSZc6UI` is too old despite its 9:46 duration; `SQYwRET4a6Q` is too old despite a later update timestamp; `O4n1jtWzt30` is too old and 39:24, above the hard maximum. None was made eligible by a metadata update or freshness waiver.
+**Articles:** Preflight `36476660754` and semantic validation `36477136972` passed. Frozen order **m04, m03, m05, m06, m01, m09**, exact 2/2/2, only m01 reusable Agent Skills. Nine evidence packets / 9,478 characters. Reuse locked summaries, implications, source dates, fallback reasons and limitations.
 
-Raw channel SHA-256: `6c1bef4250e6da6d6a4b0b3e6ebc34cd65b2dd067e4a34ea356c67376fa2f7b5`. Raw public-feed SHA-256: `4f910653cd78b4c0899d89a63a3030000dfcda243cca8b1ac69452768bdf115b`. Hash scope is UTF-8 retrieved response text, not a claim about original transport bytes.
+**Podcasts:** Validation `36479004398` passed. Everyday AI 871, September 28 at 11:00 UTC, **30:53**; AI for Humans 197, September 24 at 10:00 UTC, **48:21**, explicit seven-day fallback. Practical AI 373 remains excluded as repeated production coverage. No audio playback or transcription. Failed helper run `36477387128` remains an unsuccessful historical attempt.
 
-## 4. Remaining stages — not started or completed by the video component
+**Videos:** Validation `36487509973` passed. IBM Technology `bs1qPy_CWkM`, Prompt to Production: The Future of AI Code Workflows, September 28 at 11:00:25 UTC, **7:15**; `kyJ1vd7yEPc`, AI Is Exposing Your Data: An AI Security Problem You Can't See, September 27 at 11:00:22 UTC, **11:29** under the existing 10–15-minute fallback. Both meet the unchanged 72-hour original-publication window and 20-minute maximum. The article seven-day fallback does not extend video freshness.
 
-1. Complete watchlist and book evaluation from canonical sources, preserving the frozen six-story selection.
-2. Obtain six independently generated professional single-story image-only outputs; inspect exact bytes, accept or reject, and lock them under the existing image-isolation contract. Do not substitute low-quality fallbacks or fabricate image receipts.
-3. Assemble the final editorial kernel and manifest-bound handoff, then execute deterministic expansion and the final media/image/canonical gates.
-4. Run full qualification CI, simulated live verification and closure. Record an honest terminal result only when those gates justify it.
+Video review used publisher channel/feed metadata, descriptions and available chapters, not playback, independent transcripts or reproduced benchmarks. The agent video concerns ownership/data-flow oversight, not a claimed no-code construction tutorial. All twenty pre-edition canonical production records were reviewed previously; the corrected novelty projection uses `worth_watching`, not `videos`.
 
-The saved video receipt explicitly records `all_media_components_validated=true` **and** `media_ready=false`: the former means both component receipts exist, while the latter preserves the not-yet-executed assembled gate. It is not contradictory and must not be silently promoted to full qualification PASS.
+The prior immutable checkpoint retains the complete video chain: catalog `36485691371`, primary capture `36486149727`, saved-source reconciliation `36486736788`, validation `36487509973`, all artifacts, source hashes and rejected candidates. Preserve the unresolved original `video-primary-metadata.json` and unusable first history projection. UC-less feed-root reconciliation required exact full author/alternate/self/entry identities; it did not loosen identity rules. Saved catalog parsing used `lockupViewModel` without recapture.
 
-## 5. Preservation, cost and autonomy boundaries
+Do not retry challenged IDs `XN3xNJvWXsc`, `UabBYexBD4k`, `_ZqSFVi6UDY`, `bs1qPy_CWkM` or `kyJ1vd7yEPc`. No challenge was bypassed. The raw channel/feed response-text hash scope in the prior checkpoint remains unchanged.
 
-Main was rechecked after video validation and remains `1def5c4ba158247a9c02106dc4e4820d80a7133d`. Public production content, PR117, terminal Q22/Q23/IH evidence, the separate greenfield repository, Sites and sharing settings were not changed. Q22 remains at `4466d7f499b1848238bbe4594af4589d20d062f0`; Q23's immutable terminal record remains at `cd940858dee9bb5a4c5e6d84cf2a7dbf47b4618d`.
+## 6. Preserved diagnostics and remaining stages
 
-All four video workflows listed as completed have finished. There is no unobserved background semantic worker claimed by this checkpoint. No Work, Codex or paid-model API was invoked; billing remains unobserved. Continue the next safe unfinished action in an active invocation without asking the user to repeat already approved work.
+The source-capture receipt correctly records `pdftotext_unavailable` for the two samples. The later verifier extracted the **same captured PDF bytes** using pinned `pypdf 5.9.0`, verified text hashes and retained the original diagnostic. A local attempt to open a nonexistent pre-extracted text file failed before this resolution; it was not evidence of a PDF-source failure. Container Git lookup failed DNS; connector artifact transport succeeded. These limitations do not turn the successful acquisition into an original successful extraction.
+
+1. **Images — not started:** Obtain six independently generated professional single-story image-only outputs under the existing isolation contract, inspect exact bytes, accept/reject honestly and lock accepted assets. No low-quality fallback or fabricated acceptance receipt. This continuation did not expose a native image-generation tool or independent fresh image-context executor; it did not claim generation was running.
+2. **Final handoff — not started:** Assemble the canonical editorial kernel and manifest-bound handoff, preserving every locked component and the original cutoff. Then run deterministic expansion and final canonical/media/image/book/watchlist gates. Do not trigger `post-editorial-kernel.yml` with an incomplete handoff.
+3. **Qualification — not completed:** Full qualification CI, simulated live verification and closure must justify any terminal result. Complete the separate final-edition private book-change evaluation at its required boundary. Do not label Q24 clean/no-rework based on component successes.
+
+Both media receipts exist (`all_media_components_validated=true`), while `media_ready=false` correctly means the assembled gate has not run. No contradiction or permission to promote to terminal PASS follows.
+
+## 7. Preservation and cost boundary
+
+Main was checked again after the new component validation and remains `1def5c4ba158247a9c02106dc4e4820d80a7133d`. Public production content, PR117, terminal Q22/Q23/IH evidence, the separate greenfield repository, Sites and sharing settings were not changed. Q22 remains at `4466d7f499b1848238bbe4594af4589d20d062f0`; Q23's immutable terminal record remains at `cd940858dee9bb5a4c5e6d84cf2a7dbf47b4618d`.
+
+All three new workflows above finished. No Q25 was allocated. No unobserved background semantic or image worker is claimed. No Work, Codex or paid-model API was invoked; account billing remains unobserved. This checkpoint records completed component work and explicit remaining gates, not a public publication or newly merged permanent production repair.
