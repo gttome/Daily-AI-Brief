@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m08",
+  "attempt": 1,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS"
+  ],
+  "image_sha256": "d2e935233355a00cf078e36817b16f245e3706670223ff99a11472d2d2773afe",
+  "rematerialized_sha256": "d2e935233355a00cf078e36817b16f245e3706670223ff99a11472d2d2773afe",
+  "width": 1774,
+  "height": 887,
+  "size_bytes": 1014157,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_9bf9aabcb8cc8191857001e553591405",
+  "library_path": "/Daily AI Brief Qualification Images/m08/IH10-m08-attempt-1.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image clearly depicts GitHub Copilot Canvases as a Plain-English Description flowing into Agent Builds and then a Live Surface / Custom Workflow. No harness/status/Q/publication contamination is visible."
+    },
+    "factual_support": {
+      "pass": true,
+      "evidence": "Visible labels match the sealed m08 essential text set. The live surface is represented with generic interface geometry rather than a claimed GitHub UI, and the image introduces no invented widgets, controls, workflow actions, code, metrics, pricing, or availability claims."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Clear mechanism from plain-English request to agent build to live surface/custom workflow, with an abstract return-flow indicating ongoing use. The composition is integrated and easy to follow."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional white-background textbook/editorial composition with strong hierarchy, restrained iconography, readable labels, and story-specific explanatory value."
+    }
+  },
+  "first_failed_gate": null,
+  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
