@@ -1,0 +1,6 @@
+{
+  "issue": 247,
+  "harness_id": "2026-09-27-IH9",
+  "status": "pending_comment",
+  "summary": "IH9 m02 terminal failure at SUBJECT_LINEAGE_PASS after two deterministic context-isolation failures. Q13 remains blocked."
+}
