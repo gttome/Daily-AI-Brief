@@ -1,5 +1,27 @@
 # Daily AI Brief — Current Operations Entry Point
 
+## September 28, 2026 — Recovered Q22 repair: current continuation boundary
+
+> [!IMPORTANT]
+> **The saved repair is recovered, not missing.** The owner attached `Q22_Article_Evidence_Repair_2026-09-28.zip`; all 17 checksum entries passed. The exact four source/test files were reviewed and committed through the ordinary connected GitHub file tools. The earlier safety-status block did not recur. Do not repeat the source reconstruction, PR #281, D01–D05 or the two-response capture.
+
+| Checkpoint | Durable meaning |
+|---|---|
+| Seven-day article policy | Already released in PR #281 at `adc2b88aeee4b946f3c9b6bf801b4e0ba416b486`, protected CI `36460152038` |
+| Q22 | Terminal FAIL at `4466d7f499b1848238bbe4594af4589d20d062f0`; successful preflight does not supersede its failed semantic gate |
+| Article-body correction | `hardening/q22-article-evidence-body-2026-09-28`; exact saved patch SHA-256 `16c70db6377c35e37b4d0e2d62d5b8f212f4f5511cbea080027395a991993a09` |
+| Saved tests | 468 local tests and 24 contract checks; these are prior evidence, not the eventual protected-CI result |
+| Release requirement | Same-PR operating documents, successful protected CI on final head, then normal merge |
+| Next Q | Q23 was unused at recovery; resolve live refs again after merge rather than assuming it remains available |
+
+Read Q22's `_records/qualification/2026-09-28-Q22/result.json` on its qualification branch before older receipts. Its m05 and m06 Applied evidence contains only titles. Never rerun discovery, refill its evidence, restart semantic selection or turn that failed Q into a pass.
+
+The recovered extractor uses canonical-URL/headline-checked JSON-LD article bodies, visible-body fallback, and 80-source-word/25-excerpt-word title-shell guards. The collector and current-policy semantic validator both enforce evidence sufficiency without expanding the nine-item packet or relaxing editorial quality. See the Q22 amendment in `LIVING-SYSTEM-OPERATIONS.md` for the mechanism and preserved fixture proof.
+
+Reuse any newer valid remote work. Remove the temporary workbench before the final release PR. Do not allocate a fresh Q until the correction has passed protected CI and merged. Then start the next unused identity from actual merged main and current observed UTC time; report the real matching workflow, not merely a request, branch or enabled schedule. Keep at most one nonterminal Q and preserve terminal evidence, PR #117, public content, the greenfield repository and Sites. No Work, Codex or paid model APIs are authorized; billing is unobserved.
+
+---
+
 ## September 28, 2026 — Article policy amendment (`article-24-72-168-v1`)
 
 > [!IMPORTANT]
