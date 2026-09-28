@@ -38,7 +38,7 @@ test('Q14 hardening keeps the ordinary freshness gate at exactly 72 hours',()=>{
     {source_id:'boundary',headline:'Enterprise workplace AI productivity update for knowledge workers',canonical_url:'https://example.com/boundary',published_at:'2026-09-25T03:00:00Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'applied_genai_knowledge_workers'},
     {source_id:'stale',headline:'Enterprise workplace AI productivity release for business users',canonical_url:'https://example.com/stale',published_at:'2026-09-25T02:59:59Z',source_reliability:'publisher_authored',content_type:'article',focus_hint:'applied_genai_knowledge_workers'}
   ]}));
-  execFileSync(process.execPath,['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit','20','--cutoff','2026-09-28T03:00:00Z'],{cwd:process.cwd()});
+  execFileSync(process.execPath,['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit','20','--cutoff','2026-09-28T03:00:00Z','--article-freshness-policy','article-24-72-skills168-v1','--ordinary-max-age-hours','72'],{cwd:process.cwd()});
   const result=JSON.parse(fs.readFileSync(out,'utf8'));
   assert.equal(result.candidates.some(x=>x.canonical_url==='https://example.com/boundary'),true);
   assert.equal(result.candidates.some(x=>x.canonical_url==='https://example.com/stale'),false);

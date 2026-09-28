@@ -76,7 +76,7 @@ jobs:
             cutoff="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
             node - "$cutoff" "$date" <<'NODE' > _records/discovery-preflight/request.json
           const [cutoff,date]=process.argv.slice(2);
-          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',purpose:'daily_pre_work_discovery',edition_date:date,cutoff,source_scan_max:48,fresh_metadata_target:24},null,2)+'\n');
+          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',purpose:'daily_pre_work_discovery',article_freshness_policy:'article-24-72-168-v1',edition_date:date,cutoff,source_scan_max:48,fresh_metadata_target:24},null,2)+'\n');
           NODE
             git add _records/discovery-preflight/request.json
             git config user.name "github-actions[bot]"
@@ -156,7 +156,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _records/discovery-preflight/result
-          extra=()
+          extra=(--article-freshness-policy article-24-72-168-v1 --ordinary-max-age-hours 168 --skill-max-age-hours 168)
           if [ "${{ steps.config.outputs.purpose }}" = "continuous_qualification" ]; then
             extra+=(--qualification-edition-date "${{ steps.config.outputs.edition_date }}")
           fi

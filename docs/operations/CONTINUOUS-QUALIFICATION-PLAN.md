@@ -1,5 +1,34 @@
 # Continuous Daily Brief Qualification & Stabilization Plan
 
+## September 28, 2026 — Article policy amendment (`article-24-72-168-v1`)
+
+> [!IMPORTANT]
+> This policy applies only after the coordinated change passes protected CI and is merged. A prepared branch or local test is not a release. Historical Q1–Q21 failures and D01–D05 audits remain immutable.
+
+| Publication age at the recorded cutoff | Treatment |
+|---|---|
+| 0–24 hours inclusive | Primary priority, subject to evidence, relevance, novelty and focus fit |
+| Over 24–72 hours inclusive | Normal recency fallback only when qualifying primary items cannot fill that focus |
+| Over 72–168 hours inclusive | Extended recency fallback only when newer qualifying items cannot fill that focus |
+| Over 168 hours, future or unresolved | Not eligible for a daily article slot |
+
+Shortlist reservation and the nine-candidate evidence plan use freshness-band priority before score. Required focus/Agent Skills reservations remain; there is no rigid recent-story quota. The 24-hour discovery early-stop measure excludes fallback articles. Original publication timestamps are preserved; `dateModified` never creates a new publication date. Every new-policy fallback requires a substantive editorial `fallback_reason`; its `fallback_band` must match its age. Reader labels are **Recency fallback** or **Extended recency fallback**, with the original source timestamp. The coverage statement discloses fallback use.
+
+The explicit `article_freshness_policy` field identifies new-policy artifacts. Missing identity on historical artifacts retains ordinary-72/Skills-168 semantics. Legacy constants, historical Q14/Q15/Q16 reports and older editions are not reinterpreted. The legacy metadata CLI option remains available for regression evidence only, not new runs.
+
+**Verified source paths:** n8n RSS and Notion releases RSS are activated with bounded transport/date-parser evidence. The captured n8n samples and latest captured Notion entry are older than seven days, so activation is not proof of fresh yield. Box and Airtable remain limited by article/date qualification; Make HTTP 403 and Adobe saved-feed HTTP 404 are not operational paths. Google Workspace feed recovery from PR #280 is reused without a duplicate registration. Expired source pins are omitted from live seeding, not deleted from history.
+
+**Unchanged:** six stories in 2/2/2 order, one reusable Agent Skills story, <=20 metadata candidates, nine balanced evidence candidates, <=12,000 model-visible evidence characters, one semantic pass, two verified videos, two source-diverse podcasts, all media freshness/duration rules, professional accepted_locked images, novelty, evidence and nonproduction isolation. No Work, Codex or paid model API invocation is authorized; account billing is unobserved.
+
+**Recovery and acceptance:** commit code, registry, source plan, tests and all living documents in this same change set; run targeted/full tests and protected CI; merge before allocating the next unused Q from live refs and current UTC time. Require an actual matching execution before reporting a Q started. A failed Q is terminal and is followed by a minimal tested correction and a fresh identity. Preserve valid completed stages and do not repeat D05 or PR #280.
+
+**September 28 persistence incident:** the earlier assistant reported local test counts, but the next runtime contained only the baseline workspace and publisher fixtures, not the substantive patch or its test logs. Those old counts cannot certify the recovered implementation. Reconstruct only the missing patch from preserved inputs, persist it before ending the invocation, and attach fresh actual CI evidence. Do not report local-only work as a GitHub release.
+
+---
+
+### Earlier operating record (superseded only for current ARTICLE freshness by the amendment above)
+
+
 > **Status:** ACTIVE LIVING PLAN  
 > **Effective:** 2026-09-26  
 > **Repository:** `gttome/Daily-AI-Brief`  

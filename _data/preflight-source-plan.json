@@ -448,6 +448,40 @@
       "focus_hint": "applied_genai_knowledge_workers",
       "purpose": "Recurring first-party Copilot adoption and AI-at-work learning updates for knowledge-worker qualification breadth; generic workforce-skills content remains subject to the unchanged Agent Skills guard.",
       "q15_hardening": true
+    },
+    {
+      "source_id": "n8n-rss",
+      "owner": "n8n",
+      "canonical_url": "https://blog.n8n.io/",
+      "discovery_endpoint": "https://blog.n8n.io/rss/",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "status": "active",
+      "verification": {
+        "policy_change": "article-24-72-168-v1",
+        "evidence_workflow": "36450645680",
+        "checked_at": "2026-09-28T16:23:27.848Z",
+        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
+        "limitation": "D05 dated samples are older than seven days; apply live freshness and novelty gates."
+      }
+    },
+    {
+      "source_id": "notion-releases-rss",
+      "owner": "Notion",
+      "canonical_url": "https://www.notion.com/releases",
+      "discovery_endpoint": "https://www.notion.com/releases/rss.xml",
+      "format": "rss",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "agents_non_technical_people",
+      "status": "active",
+      "verification": {
+        "policy_change": "article-24-72-168-v1",
+        "evidence_workflow": "36453175805",
+        "checked_at": "2026-09-28T16:44:33.903Z",
+        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
+        "limitation": "Explicit GMT+0000 publication dates with a parenthetical UTC name; captured latest entry September 15 is outside seven days."
+      }
     }
   ]
 }

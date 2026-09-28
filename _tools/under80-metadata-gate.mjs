@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
+import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness,compareArticleFreshness} from '../_generator/lib/article-freshness.mjs';
 import path from 'node:path';
 import {parseArgs,normalizeUrl} from '../_generator/lib/util.mjs';
 
@@ -9,8 +10,12 @@ const limit=Number(args.limit||20);
 if(!Number.isInteger(limit)||limit<1||limit>20)throw Error('under80_metadata_limit_must_be_1_to_20');
 const cutoff=args.cutoff?Date.parse(args.cutoff):Date.now();
 if(!Number.isFinite(cutoff))throw Error('valid_cutoff_required');
-const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||72);
+const policy=args['article-freshness-policy']||ARTICLE_FRESHNESS_POLICY;
+if(![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(policy))throw Error('unknown_article_freshness_policy');
+const currentPolicy=policy===ARTICLE_FRESHNESS_POLICY;
+const ordinaryAgeHours=Number(args['ordinary-max-age-hours']||(currentPolicy?168:72));
 const skillAgeHours=Number(args['skill-max-age-hours']||168);
+if(currentPolicy&&(ordinaryAgeHours!==168||skillAgeHours!==168))throw Error('article_policy_window_mismatch');
 const qualificationEditionDate=args['qualification-edition-date']||null;
 const publishedEditionsDir=args['published-editions-dir']||'_data/editions';
 if(qualificationEditionDate&&!/^\d{4}-\d{2}-\d{2}$/.test(qualificationEditionDate))throw Error('valid_qualification_edition_date_required');
@@ -89,7 +94,7 @@ for(const item of source){
  const maxAge=isSkill?skillAgeHours:ordinaryAgeHours;
  let eventStamp=NaN,dateBasis=null;
  if(Number.isFinite(published)&&ageHours(published)>=0&&ageHours(published)<=maxAge){eventStamp=published;dateBasis='published_at';}
- else if(isSkill&&Number.isFinite(updated)&&ageHours(updated)>=0&&ageHours(updated)<=skillAgeHours){eventStamp=updated;dateBasis='updated_at_requires_material_update_review';}
+ else if(!currentPolicy&&isSkill&&Number.isFinite(updated)&&ageHours(updated)>=0&&ageHours(updated)<=skillAgeHours){eventStamp=updated;dateBasis='updated_at_requires_material_update_review';}
  else if(!Number.isFinite(published)&&!(isSkill&&Number.isFinite(updated))){rejected.unresolved_date++;continue;}
  else {rejected.outside_window++;continue;}
  const relevance=relevanceRank(combined)+(item.required_topic==='agent_skills'?8:0);
@@ -134,12 +139,13 @@ for(const item of source){
   status:'metadata_prefiltered_not_deep_reviewed'
  };
  const score=reliabilityRank(normalized.source_reliability)+ageRank(eventStamp,maxAge)+relevance+Number(!!normalized.snippet)+(skillStoryReady?12:0)+(item.required_topic?4:0)-(item.background_only?8:0)-(normalized.recently_published&&item.material_update_verified!==true?30:0);
- const candidate={...normalized,prefilter_score:score};
+ const f=articleFreshness(normalized.published_at,new Date(cutoff).toISOString(),{policy,agentSkill:isSkill});
+ const candidate={...normalized,prefilter_score:score,...(f?{freshness_tier:f.tier,fallback_band:f.fallback_band,freshness_age_hours:f.age_hours}:{})};
  const prior=byUrl.get(url);
  if(!prior||candidate.prefilter_score>prior.prefilter_score)byUrl.set(url,candidate);else rejected.duplicate++;
 }
 
-const eligible=[...byUrl.values()].sort((a,b)=>b.prefilter_score-a.prefilter_score||String(b.metadata_event_at).localeCompare(String(a.metadata_event_at))||a.canonical_url.localeCompare(b.canonical_url));
+const eligible=[...byUrl.values()].sort((a,b)=>(currentPolicy?compareArticleFreshness(a,b,new Date(cutoff).toISOString()):0)||b.prefilter_score-a.prefilter_score||String(b.metadata_event_at).localeCompare(String(a.metadata_event_at))||a.canonical_url.localeCompare(b.canonical_url));
 const selected=[],selectedUrls=new Set();
 const add=item=>{if(item&&selected.length<limit&&!selectedUrls.has(item.canonical_url)){selected.push(item);selectedUrls.add(item.canonical_url);return true;}return false;};
 
@@ -173,8 +179,12 @@ const keys=[...groups.keys()].sort((a,b)=>{
  return bb-aa||a.localeCompare(b);
 });
 while(selected.length<limit&&keys.some(k=>groups.get(k).length)){
+ const heads=keys.map(k=>groups.get(k)[0]).filter(Boolean);
+ const freshest=[...heads].sort((a,b)=>compareArticleFreshness(a,b,new Date(cutoff).toISOString()))[0];
  for(const key of keys){
   if(selected.length>=limit)break;
+  const head=groups.get(key)[0];
+  if(currentPolicy&&head&&compareArticleFreshness(head,freshest,new Date(cutoff).toISOString())>0)continue;
   add(groups.get(key).shift());
  }
 }
@@ -196,6 +206,7 @@ const result={
  profile_id:'under80-v1',
  gate:'metadata_prefilter_before_model_exposure',
  cutoff:new Date(cutoff).toISOString(),
+ article_freshness_policy:policy,
  ordinary_max_age_hours:ordinaryAgeHours,
  agent_skills_max_age_hours:skillAgeHours,
  metadata_candidate_limit:limit,

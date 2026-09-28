@@ -15,7 +15,7 @@ const freshDiscovery=process.env.DAB_DISCOVERY_FRESH==='1';
 const qualificationDiscovery=process.env.DAB_DISCOVERY_PURPOSE==='continuous_qualification';
 const previous=!freshDiscovery&&fs.existsSync('_data/media-candidate-queue.json')?JSON.parse(fs.readFileSync('_data/media-candidate-queue.json')).candidates:[];
 const candidates=new Map(previous.filter(c=>{const discovered=Date.parse(c.discovered_at);return Number.isFinite(discovered)&&cutoffMs-discovered>=0&&cutoffMs-discovered<=30*86400000;}).map(c=>[c.url,c]));const sources=[];
-const preflightSources=(preflightPlan.sources||[]).map(source=>({...source,preflight_priority:true}));
+const preflightSources=(preflightPlan.sources||[]).filter(source=>!source.pinned_candidate||!source.known_publication_date||cutoffMs-Date.parse(source.known_publication_date)<=168*3600000).map(source=>({...source,preflight_priority:true}));
 const preferredRegistrySources=registry.sources.map(source=>{
  const feed=(source.publisher_linked_feed_leads||[]).find(url=>typeof url==='string'&&url.startsWith('https://'));
  if(!feed)return source;
@@ -54,13 +54,11 @@ const rotated=rest.length?[...rest.slice(rotation),...rest.slice(0,rotation)]:[]
 const scanPlan=[...core,...rotated].filter(s=>s.pinned_candidate!==true).filter((s,index,all)=>all.findIndex(x=>x.discovery_endpoint===s.discovery_endpoint)===index);
 const MIN_SOURCES_SCANNED=Math.max(1,Math.min(24,Number(process.env.DAB_SOURCE_SCAN_MIN||12)));
 const MAX_SOURCES_SCANNED=Math.max(MIN_SOURCES_SCANNED,Math.min(64,Number(process.env.DAB_SOURCE_SCAN_MAX||24)));
-const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=72;
+const FRESH_METADATA_TARGET=Math.max(9,Math.min(40,Number(process.env.DAB_FRESH_METADATA_TARGET||20))),FRESH_HOURS=24;
 let scanned=0,stopReason=null;
 const isFreshMetadata=c=>{
- const published=Date.parse(c.published_at||c.publication_date),updated=Date.parse(c.updated_at);
- const ordinary=Number.isFinite(published)&&cutoffMs-published>=0&&cutoffMs-published<=FRESH_HOURS*3600000;
- const required=c.required_topic&&Number.isFinite(updated)&&cutoffMs-updated>=0&&cutoffMs-updated<=(c.required_topic_fallback_days||7)*86400000;
- return ordinary||required;
+ const published=Date.parse(c.published_at||c.publication_date);
+ return !c.date_conflict&&Number.isFinite(published)&&cutoffMs-published>=0&&cutoffMs-published<=FRESH_HOURS*3600000;
 };
 const freshMetadataCount=()=>[...candidates.values()].filter(isFreshMetadata).length;
 const freshFocusCoverage=()=>Object.fromEntries(['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'].map(f=>[f,[...candidates.values()].filter(c=>isFreshMetadata(c)&&c.focus_hint===f).length]));

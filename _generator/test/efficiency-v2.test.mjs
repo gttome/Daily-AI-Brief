@@ -30,13 +30,15 @@ test('main-text extraction keeps evidence and removes page furniture without cla
  assert.match(x.text,/12 tasks/);assert.match(x.text,/synthetic tests/);assert.match(x.text,/config=sample/);assert.doesNotMatch(x.text,/Noise/);assert.equal(x.main_text_verified,false);assert.equal(x.reading_minutes,null);
 });
 import {DiscoveryAcquisition} from '../../_tools/discovery-context.mjs';import {RetrievalCache} from '../lib/research.mjs';import {evidenceViews,completionDecision,assertRunManifest} from '../lib/production-run.mjs';
-test('actual catalog and Watchlist registries share 59 cold acquisitions, and warm reads fetch none',async()=>{
+test('actual catalog and Watchlist registries deduplicate cold acquisitions, and warm reads fetch none',async()=>{
  const reg=JSON.parse(fs.readFileSync(path.join(root,'_data/source-registry.json'))),watch=JSON.parse(fs.readFileSync(path.join(root,'_data/watchlist-sources.json'))),early=JSON.parse(fs.readFileSync(path.join(root,'_data/early-signal-sources.json')));
  const extra=early.channels.flatMap(c=>c.endpoints).filter(x=>x.automated).map(x=>x.url);
  const a=[...new Set([...reg.sources.filter(s=>s.status==='active'&&s.discovery_endpoint).map(x=>x.discovery_endpoint),...extra])],b=[...new Set([...watch.sources.filter(s=>s.automated!==false&&s.endpoint).map(x=>x.endpoint),...extra])];
  let calls=0;const acquisition=new DiscoveryAcquisition({cache:new RetrievalCache(),fetcher:async url=>{calls++;return {text:'Evidence',url};}});
- await Promise.all([...a,...b].map(u=>acquisition.retrieve(u)));assert.equal(a.length+b.length,87);assert.equal(calls,59);
- await Promise.all([...a,...b].map(u=>acquisition.retrieve(u)));assert.equal(calls,59);
+ const expected=new Set([...a,...b].map(u=>acquisition.cache.key(u,'metadata'))).size;
+ assert.ok(expected<a.length+b.length,'registries must retain shared endpoints');
+ await Promise.all([...a,...b].map(u=>acquisition.retrieve(u)));assert.equal(calls,expected);
+ await Promise.all([...a,...b].map(u=>acquisition.retrieve(u)));assert.equal(calls,expected);
 });
 test('one denied source does not trigger repeated retrieval in the other consumer',async()=>{
  let calls=0;const a=new DiscoveryAcquisition({fetcher:async()=>{calls++;throw Error('HTTP 403');}});

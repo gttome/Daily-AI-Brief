@@ -5,13 +5,14 @@ import os from 'node:os';
 import path from 'node:path';
 import {execFileSync} from 'node:child_process';
 
-const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20,qualificationEditionDate=null,publishedEditions=[]}={})=>{
+const runGate=(candidates,{cutoff='2026-09-18T13:00:00Z',limit=20,qualificationEditionDate=null,publishedEditions=[],legacyPolicy=false}={})=>{
  const dir=fs.mkdtempSync(path.join(os.tmpdir(),'dab-gate-'));
  const input=path.join(dir,'in.json'),out=path.join(dir,'out.json'),editions=path.join(dir,'editions');
  fs.mkdirSync(editions,{recursive:true});
  fs.writeFileSync(input,JSON.stringify({updated_at:'2026-09-18T13:05:00Z',candidates}));
  for(const edition of publishedEditions)fs.writeFileSync(path.join(editions,edition.brief_date+'.json'),JSON.stringify(edition));
  const argv=['_tools/under80-metadata-gate.mjs','--input',input,'--out',out,'--limit',String(limit),'--cutoff',cutoff,'--published-editions-dir',editions];
+ if(legacyPolicy)argv.push('--article-freshness-policy','article-24-72-skills168-v1','--ordinary-max-age-hours','72');
  if(qualificationEditionDate)argv.push('--qualification-edition-date',qualificationEditionDate);
  execFileSync(process.execPath,argv,{cwd:process.cwd()});
  return JSON.parse(fs.readFileSync(out,'utf8'));
@@ -43,10 +44,10 @@ test('under80 metadata gate removes navigation and unresolved-date entries',()=>
  assert.equal(result.rejected.unresolved_date,1);
 });
 
-test('updated Agent Skills metadata is background until material change is verified',()=>{
+test('historical legacy policy: updated Agent Skills metadata is background until material change is verified',()=>{
  const result=runGate([
   {source_id:'skills',headline:'Using Agent Skills for reusable knowledge-worker workflows',canonical_url:'https://example.com/skills',published_at:'2026-04-10T12:00:00Z',updated_at:'2026-09-17T12:00:00Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills'}
- ]);
+ ],{legacyPolicy:true});
  assert.equal(result.candidates.length,1);
  assert.equal(result.candidates[0].agent_skill_signal,true);
  assert.equal(result.candidates[0].agent_skill_story_ready,false);
@@ -69,10 +70,10 @@ test('coverage readiness requires three metadata candidates per focus and one Ag
 });
 
 
-test('required topic survives sparse title wording but does not satisfy freshness without verified material change',()=>{
+test('historical legacy policy: required topic survives sparse title wording but does not satisfy freshness without verified material change',()=>{
  const result=runGate([
   {source_id:'openai-academy-skills',headline:'OpenAI Academy Skills for reusable ChatGPT workflows',canonical_url:'https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills',published_at:'2026-02-25T02:18:07Z',updated_at:'2026-09-17T15:25:07Z',source_reliability:'publisher_authored',content_type:'article',required_topic:'agent_skills',focus_hint:'agents_non_technical_people'}
- ]);
+ ],{legacyPolicy:true});
  assert.equal(result.candidates.length,1);
  assert.equal(result.candidates[0].agent_skill_signal,true);
  assert.equal(result.candidates[0].date_basis,'updated_at_requires_material_update_review');
