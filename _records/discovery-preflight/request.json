@@ -5,7 +5,7 @@
   "execution_mode": "qualification_nonproduction",
   "qualification_run_id": "2026-09-28-Q19",
   "edition_date": "2026-09-28",
-  "cutoff": "2026-09-28T14:58:00Z",
+  "cutoff": "2026-09-28T15:03:00Z",
   "source_scan_max": 48,
   "fresh_metadata_target": 24,
   "production_mutation": false
