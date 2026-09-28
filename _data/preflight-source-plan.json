@@ -395,6 +395,17 @@
       "q14_hardening": true
     },
     {
+      "source_id": "microsoft-copilot-studio-feature-releases-applied",
+      "owner": "Microsoft Copilot Studio",
+      "discovery_endpoint": "https://www.microsoft.com/en-us/copilot/blog/copilot-studio/content-type/feature-releases/",
+      "status": "active",
+      "format": "article",
+      "evidence_class": "publisher_authored",
+      "focus_hint": "applied_genai_knowledge_workers",
+      "purpose": "Recurring first-party Copilot Studio feature-release catalog for fresh knowledge-work and governed AI adoption source supply.",
+      "q17_hardening": true
+    },
+    {
       "source_id": "microsoft-copilot-agentic-ai-catalog",
       "owner": "Microsoft Copilot",
       "discovery_endpoint": "https://www.microsoft.com/en-us/copilot/blog/copilot-studio/topic/agentic-ai/",
