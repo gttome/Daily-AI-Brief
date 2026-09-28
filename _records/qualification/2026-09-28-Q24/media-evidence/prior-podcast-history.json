@@ -1,0 +1,591 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "history_rule": "all available canonical production editions strictly before edition date; no Q results or same-day production",
+  "workflow_run_id": 36478645504,
+  "source_retrievals": 0,
+  "model_calls": 0,
+  "sources": [
+    {
+      "path": "_data/editions/2026-09-06.json",
+      "sha256": "4dc3873b075a5b4c65b445c92ca749960f5ec0adade581bfcea4e438df1decce"
+    },
+    {
+      "path": "_data/editions/2026-09-07.json",
+      "sha256": "8cf970d2720b7a9b3a479534f8f28184478f812155e8357e8f256480e5f00251"
+    },
+    {
+      "path": "_data/editions/2026-09-08.json",
+      "sha256": "ce35319e7b2d5e991e0e830f900177bec6fefece6a68b26ffc1937683fe9d42e"
+    },
+    {
+      "path": "_data/editions/2026-09-09.json",
+      "sha256": "d069d7c8165d85398b82f4ddf9023dd3f4f5dff7496d85a1981d0fb0af4c3b33"
+    },
+    {
+      "path": "_data/editions/2026-09-10.json",
+      "sha256": "d236b620ff304fba87fee7b7e8c7204bb7e6b3584e0279ecd9f20102b122a23f"
+    },
+    {
+      "path": "_data/editions/2026-09-11.json",
+      "sha256": "c88075981f372597b6cebf9a4b5303cce0624fa9d829e8638270c81b86130dd3"
+    },
+    {
+      "path": "_data/editions/2026-09-12.json",
+      "sha256": "ad081c7276e7cdc247d3d75fe79344661a3e4db90ed0c2f87797fef9039e913c"
+    },
+    {
+      "path": "_data/editions/2026-09-13.json",
+      "sha256": "dc47ab03210d3faec2e814de1a022b026fd3aae3609772afc44b5243ea9b1349"
+    },
+    {
+      "path": "_data/editions/2026-09-14.json",
+      "sha256": "6308b7c7a6555d9a86b85b9b095455571a3f8c324bc3673e9af0460505525d1a"
+    },
+    {
+      "path": "_data/editions/2026-09-15.json",
+      "sha256": "b93191e253795704885311b5d9322c9a6d3c1ead05acd950c2e01eebe5bd5cce"
+    },
+    {
+      "path": "_data/editions/2026-09-16.json",
+      "sha256": "bf03d987e7cb015f118aa4026ab5c8dffbd91e6cc94f5fcd1f3e0585f9f32390"
+    },
+    {
+      "path": "_data/editions/2026-09-17.json",
+      "sha256": "26d1652c0714cbb081b56f8dccc1f8abf75825235e09c32103e567a2fd0496d4"
+    },
+    {
+      "path": "_data/editions/2026-09-18.json",
+      "sha256": "0943bf0067ae7417ea8ed2d4bb647c8e168814eb79a813fa89e0f7d9454b8bd1"
+    },
+    {
+      "path": "_data/editions/2026-09-19.json",
+      "sha256": "11f54a05863980607f7e9547ff73049f18e260e09073cc7669005fa06bba4684"
+    },
+    {
+      "path": "_data/editions/2026-09-20.json",
+      "sha256": "1f4089205447125078dddb84c145f622e8fa9496fb9c7b525187e505c43538bf"
+    },
+    {
+      "path": "_data/editions/2026-09-21.json",
+      "sha256": "0f4950d411fb2e5d361df9780a146d5b7cf3029c7cd4f9084464380efbfb56e9"
+    },
+    {
+      "path": "_data/editions/2026-09-22.json",
+      "sha256": "cfee2dd5dad57b5f67867a9c5b63f4b255805d1e4cc4d4e922447426a32a2940"
+    },
+    {
+      "path": "_data/editions/2026-09-23.json",
+      "sha256": "70eb9465d428b3913228eaa65b991c5ddb8afdde9f6fb316455eb1a17618f7f8"
+    },
+    {
+      "path": "_data/editions/2026-09-25.json",
+      "sha256": "f5269d992981e9de4ad599527c45c3653e80058d110af7d4abf9d9bff069c63a"
+    },
+    {
+      "path": "_data/editions/2026-09-26.json",
+      "sha256": "eced4f6f84817e5e66cb4fe1aa2e3e6d30b5b98f6f6c11c5bd8534c5099eebca"
+    }
+  ],
+  "records": [
+    {
+      "edition_date": "2026-09-09",
+      "title": "Agentic Loops for Knowledge Workers",
+      "show": "The AI Daily Brief",
+      "url": "https://aidailybrief.ai/e/2026-09-03",
+      "canonical_url": null,
+      "publication_date": "2026-09-03",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Episode website and notes",
+          "url": "https://aidailybrief.ai/e/2026-09-03"
+        },
+        {
+          "name": "Spotify episode",
+          "url": "https://open.spotify.com/episode/1vbROFe80yIFRPLTI2Krg4"
+        }
+      ],
+      "summary": "Nufar Gaspar explains how knowledge workers can use agent loops and connected workflows. The central lesson is to define a checkable completion condition before asking an agent to repeat work. The session includes a Claude Code demonstration.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-10",
+      "title": "Do AI Tokenomics Matter More Than Model Benchmarks? with Chris Potts",
+      "show": "The TWIML AI Podcast",
+      "url": "https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks",
+      "canonical_url": null,
+      "publication_date": "2026-09-09",
+      "runtime_seconds": 3569,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "TWIML",
+          "url": "https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks"
+        },
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/the-twiml-ai-podcast-formerly-this-week-in-machine/id1116303051"
+        }
+      ],
+      "summary": "Stanford professor Christopher Potts joins Sam Charrington to examine whether growing token consumption is producing proportional value, why benchmarks alone can hide economic tradeoffs, and how AI fluency and iterative human interaction affect outcomes.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-11",
+      "title": "Computer-Use Agents and the Future of the Agentic Internet",
+      "show": "Practical AI",
+      "url": "https://practicalai.show/371",
+      "canonical_url": null,
+      "publication_date": "2026-09-10",
+      "runtime_seconds": 3361,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Publisher episode and show notes",
+          "url": "https://practicalai.show/371"
+        },
+        {
+          "name": "Transcript",
+          "url": "https://practicalai.show/371/transcript"
+        }
+      ],
+      "summary": "Chris Benson and Demetrios Brinkmann discuss computer-use workflows, MCP, and the relationship between models and agent harnesses. Their examples span personal tasks and workplace adoption. Predictions about agent-led commerce are discussion, not established outcomes.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-12",
+      "title": "Anthropic Researcher Says AI Has Over a 10% Chance of Killing All Humans",
+      "show": "The AI Daily Brief",
+      "url": "https://aidailybrief.ai/e/2026-09-10",
+      "canonical_url": null,
+      "publication_date": "2026-09-10",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Publisher episode and transcript",
+          "url": "https://aidailybrief.ai/e/2026-09-10"
+        },
+        {
+          "name": "Spotify",
+          "url": "https://open.spotify.com/episode/4xD9AhlhIpzg6phdhS65qJ"
+        }
+      ],
+      "summary": "Nathaniel Whittemore examines a viral AI-extinction claim through incentives, media dynamics, uncertainty, and the demand for specific causal pathways and interventions. The episode contrasts highly visible extreme positions with a larger middle ground for capability progress and concrete safeguards.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-13",
+      "title": "10 Ways to Think Bigger with Opportunity AI",
+      "show": "The AI Daily Brief",
+      "url": "https://aidailybrief.ai/e/2026-09-13",
+      "canonical_url": null,
+      "publication_date": "2026-09-13",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Publisher episode and transcript",
+          "url": "https://aidailybrief.ai/e/2026-09-13"
+        }
+      ],
+      "summary": "Nathaniel Whittemore argues that the most valuable uses of a frontier model may be new categories of work rather than incremental gains on familiar tasks, offering examples such as playable marketing, interactive proposals, and products built from professional judgment.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-14",
+      "title": "How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees",
+      "show": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/shownotes/238",
+      "canonical_url": null,
+      "publication_date": "2026-09-10",
+      "runtime_seconds": 2311,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Publisher show notes and transcript",
+          "url": "https://podcast.smarterx.ai/shownotes/238"
+        }
+      ],
+      "summary": "Mike Kaput interviews Peapack Private CTO John Kowal about moving from employee chat access to governed internal applications and named “digital employees,” supported by a data warehouse, an AI engineering team and 29 business-line AI champions.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-15",
+      "title": "GPT-6 Astra, NYC Bans AI in Schools, Trump Goes All-In on Data Centers & Lawyers Under Pressure to Pass on AI Savings",
+      "show": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/shownotes/237",
+      "canonical_url": null,
+      "publication_date": "2026-09-08",
+      "runtime_seconds": 5250,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Publisher show notes and transcript",
+          "url": "https://podcast.smarterx.ai/shownotes/237"
+        }
+      ],
+      "summary": "Paul Roetzer and Mike Kaput discuss GPT-6 Astra, school AI policy, professional-services pricing, education assessment, and practical agent use, with chapter timestamps and a full transcript.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-16",
+      "title": "Even Other AI Labs Are Rallying Around Anthropic’s Slowdown Proposal",
+      "show": "The AI Daily Brief",
+      "url": "https://aidailybrief.ai/e/2026-09-14",
+      "canonical_url": null,
+      "publication_date": "2026-09-14",
+      "runtime_seconds": 2220,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Publisher episode and transcript",
+          "url": "https://aidailybrief.ai/e/2026-09-14"
+        },
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/even-other-ai-labs-are-rallying-around-anthropics-slowdown/id1680633614?i=1000789646778"
+        }
+      ],
+      "summary": "Nathaniel Whittemore examines the emerging debate over frontier-model pacing and third-party evaluation, including public reactions from major AI leaders and competing safety, competition and incentive arguments.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-17",
+      "title": "Why a New Class of AI “Judgment Models” Could Have Big Business Implications",
+      "show": "The AI Daily Brief",
+      "url": "https://podcasts.apple.com/us/podcast/why-a-new-class-of-ai-judgment-models-could-have/id1680633614?i=1000790088532",
+      "canonical_url": null,
+      "publication_date": "2026-09-16",
+      "runtime_seconds": 1519,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/why-a-new-class-of-ai-judgment-models-could-have/id1680633614?i=1000790088532"
+        }
+      ],
+      "summary": "Nathaniel Whittemore examines Jev, a model positioned for fast, inexpensive judgments rather than open-ended generation, and considers how specialized evaluators could change business automation and agent coordination.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-18",
+      "title": "Why Everyone Is Getting Excited About Personal AI Agents",
+      "show": "The AI Daily Brief",
+      "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942",
+      "canonical_url": null,
+      "publication_date": "2026-09-17",
+      "runtime_seconds": 1796,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/why-everyone-is-getting-excited-about-personal-ai-agents/id1680633614?i=1000790397942"
+        }
+      ],
+      "summary": "Nathaniel Whittemore examines why consumer-facing personal agents are attracting more attention, using current products and market signals to ask what changed in practical delegation.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-18",
+      "title": "How to get discovered in AI search",
+      "show": "Practical AI",
+      "url": "https://practicalai.show/372",
+      "canonical_url": null,
+      "publication_date": "2026-09-17",
+      "runtime_seconds": 3314,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Practical AI",
+          "url": "https://practicalai.show/372"
+        }
+      ],
+      "summary": "Daniel Whitenack and Chris Benson talk with Liam Dunne and Ben Moore about how AI search changes discovery, retrieval, citations, query fan-out, and the transition toward agents that can act on discovered information.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-19",
+      "title": "The AI Challenges Businesses Are Actually Focused On Right Now",
+      "show": "The AI Daily Brief",
+      "url": "https://podcasts.apple.com/au/podcast/the-ai-challenges-businesses-are-actually-focused-on/id1680633614?i=1000790595438",
+      "canonical_url": null,
+      "publication_date": "2026-09-18",
+      "runtime_seconds": 1806,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/au/podcast/the-ai-challenges-businesses-are-actually-focused-on/id1680633614?i=1000790595438"
+        }
+      ],
+      "summary": "Nathaniel Whittemore examines the AI concerns businesses are prioritizing in practice, including agent security, changing model choices, and control over enterprise data.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-19",
+      "title": "Open Source AI 101: Why Local Models, Cheap APIs, and AI Agents Change Everything",
+      "show": "Everyday AI",
+      "url": "https://www.buzzsprout.com/2175779/episodes/19733545-ep-865-open-source-ai-101-why-local-models-cheap-apis-and-ai-agents-change-everything-start-here-series-vol-24?t=0",
+      "canonical_url": null,
+      "publication_date": "2026-09-18",
+      "runtime_seconds": 2270,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Everyday AI",
+          "url": "https://www.buzzsprout.com/2175779/episodes/19733545-ep-865-open-source-ai-101-why-local-models-cheap-apis-and-ai-agents-change-everything-start-here-series-vol-24?t=0"
+        }
+      ],
+      "summary": "Jordan Wilson surveys the changing trade-offs between open and closed models, local deployment, API economics, and always-on agentic systems.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-20",
+      "title": "Inside China's AI race",
+      "show": "Reuters On Assignment",
+      "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/",
+      "canonical_url": null,
+      "publication_date": "2026-09-19",
+      "runtime_seconds": 1346,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Reuters",
+          "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/"
+        }
+      ],
+      "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-20",
+      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "show": "Big Technology Podcast",
+      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
+      "canonical_url": null,
+      "publication_date": "2026-09-19",
+      "runtime_seconds": 4077,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Tapesearch",
+          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+        }
+      ],
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-21",
+      "title": "Inside China's AI race",
+      "show": "Reuters On Assignment",
+      "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/",
+      "canonical_url": null,
+      "publication_date": "2026-09-19",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Reuters",
+          "url": "https://www.reuters.com/podcasts/china-ai-2026-09-19/"
+        }
+      ],
+      "summary": "Reuters correspondents examine China’s AI industry, including deployment strategy, chip access, distillation, export controls, and the difficulty of comparing national AI progress.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-21",
+      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "show": "Big Technology Podcast",
+      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
+      "canonical_url": null,
+      "publication_date": "2026-09-19",
+      "runtime_seconds": 4077,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Tapesearch",
+          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+        }
+      ],
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss the backlash to recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-22",
+      "title": "AI's new Muse",
+      "show": "Reuters Morning Bid",
+      "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/",
+      "canonical_url": null,
+      "publication_date": "2026-09-22",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Reuters",
+          "url": "https://www.reuters.com/podcasts/reuters-morning-bid/ais-new-muse-2026-09-22/"
+        }
+      ],
+      "summary": "Reuters examines the market response to Meta's new AI assistant Muse and the broader implications of increasingly agentic consumer and business interfaces.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-22",
+      "title": "AI Doom Backlash Arrives, Anthropic & OpenAI IPO Outlook, Frontier Business Momentum Slows",
+      "show": "Big Technology Podcast",
+      "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY",
+      "canonical_url": null,
+      "publication_date": "2026-09-19",
+      "runtime_seconds": 4077,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Tapesearch",
+          "url": "https://www.tapesearch.com/episode/ai-doom-backlash-arrives-anthropic-openai-ipo-outlook-frontier-business-momentum-slows/gxMTrTHkXwZR7ytxpzDwZY"
+        }
+      ],
+      "summary": "Alex Kantrowitz and Ranjan Roy discuss recent AI-risk claims, frontier-lab economics, IPO expectations, transparency, and signs that AI business momentum may be changing.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-23",
+      "title": "Are AI agents changing the rules of business?",
+      "show": "Take on Tomorrow",
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "canonical_url": null,
+      "publication_date": "2026-09-22",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "PwC",
+          "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html"
+        }
+      ],
+      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-23",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "show": "UpNext AI",
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "canonical_url": null,
+      "publication_date": "2026-09-22",
+      "runtime_seconds": 480,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Podscan",
+          "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026"
+        }
+      ],
+      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-25",
+      "title": "Are AI agents changing the rules of business?",
+      "show": "Take on Tomorrow",
+      "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html",
+      "canonical_url": null,
+      "publication_date": "2026-09-22",
+      "runtime_seconds": null,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "PwC",
+          "url": "https://www.pwc.com/gx/en/1/issues/reinvention/take-on-tomorrow/s05-e02-are-ai-agents-changing-the-rules-of-business.html"
+        }
+      ],
+      "summary": "PwC discusses how organizations move from isolated agent experiments toward redesigned business workflows and measurable value.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-25",
+      "title": "Gemini’s Internet Escape, AI Chemistry, and the Test for Game-Playing Agents",
+      "show": "UpNext AI",
+      "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026",
+      "canonical_url": null,
+      "publication_date": "2026-09-22",
+      "runtime_seconds": 480,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Podscan",
+          "url": "https://podscan.fm/podcasts/upnext-ai/episodes/geminis-internet-escape-ai-chemistry-and-the-test-for-game-playing-agents-upnext-ai-september-22-2026"
+        }
+      ],
+      "summary": "An eight-minute AI news episode covering a real-world agent security failure mode and emerging tests for long-horizon agents.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-26",
+      "title": "From AGENTS.md to Enterprise Deployment",
+      "show": "Practical AI",
+      "url": "https://practicalai.show/373",
+      "canonical_url": null,
+      "publication_date": "2026-09-24",
+      "runtime_seconds": 2932,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "Practical AI",
+          "url": "https://practicalai.show/373"
+        }
+      ],
+      "summary": "Practical AI examines moving agents from prototypes into enterprise environments where platform engineering, identity, memory, MCP gateways, security, compliance, scalability, and reliability become operating requirements.",
+      "why_it_matters": null
+    },
+    {
+      "edition_date": "2026-09-26",
+      "title": "#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation",
+      "show": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/shownotes/242",
+      "canonical_url": null,
+      "publication_date": "2026-09-24",
+      "runtime_seconds": 2650,
+      "episode_guid": null,
+      "aliases": [],
+      "platforms": [
+        {
+          "name": "The Artificial Intelligence Show",
+          "url": "https://podcast.smarterx.ai/shownotes/242"
+        }
+      ],
+      "summary": "A regulated-healthcare case study of a two-year AI adoption program built around structured learning, peer coaching, workflow integration, pilots, governance, and role redesign.",
+      "why_it_matters": null
+    }
+  ],
+  "editorial_identity_review_completed": false,
+  "production_mutation": false
+}
