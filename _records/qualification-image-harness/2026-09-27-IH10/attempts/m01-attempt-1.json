@@ -14,7 +14,9 @@
     "SUBJECT_LINEAGE_PASS",
     "FACTUAL_SUPPORT_PASS",
     "STRUCTURAL_QUALITY_PASS",
-    "EDITORIAL_QUALITY_PASS"
+    "EDITORIAL_QUALITY_PASS",
+    "EXACT_GIT_BLOB_PERSISTED",
+    "ACCEPTED_LOCKED"
   ],
   "image_sha256": "7e7b69e19c9dc2533b8ea3e179d8c3bd05e42ecb7b17d232748bc413233cb4ea",
   "rematerialized_sha256": "7e7b69e19c9dc2533b8ea3e179d8c3bd05e42ecb7b17d232748bc413233cb4ea",
@@ -43,12 +45,21 @@
     }
   },
   "first_failed_gate": null,
-  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
-  "accepted_locked": false,
+  "accepted_locked": true,
   "fallback": false,
   "cross_story_contamination": false,
   "production_mutation": false,
   "work_usage": 0,
   "codex_usage": 0,
-  "paid_api_usage": 0
+  "paid_api_usage": 0,
+  "git_blob_sha": "fe85abba56d298e906446063528efc41bb6c466b",
+  "git_path": "_records/qualification-image-harness/2026-09-27-IH10/images/m01-attempt-1.png",
+  "git_persistence_commit": "6c07d2f64c94df693a73c24d9c894fb713b8af02",
+  "exact_byte_verification": {
+    "expected_sha256": "7e7b69e19c9dc2533b8ea3e179d8c3bd05e42ecb7b17d232748bc413233cb4ea",
+    "expected_size_bytes": 1008672,
+    "expected_git_blob_sha": "fe85abba56d298e906446063528efc41bb6c466b",
+    "persisted_git_blob_sha": "fe85abba56d298e906446063528efc41bb6c466b",
+    "pass": true
+  }
 }
