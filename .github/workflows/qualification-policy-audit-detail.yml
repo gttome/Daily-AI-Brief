@@ -1,0 +1,66 @@
+name: Qualification policy detail audit
+on:
+  push:
+    branches: ['qualification-policy-audit/2026-09-28-D05']
+    paths: ['.github/workflows/qualification-policy-audit-detail.yml']
+permissions:
+  contents: write
+jobs:
+  detail:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Compact the completed audit without repeating discovery
+        run: |
+          python3 - <<'PY'
+          import pathlib,json,re
+          root=pathlib.Path('_records/qualification-policy-audit/2026-09-28-D05')
+          data=json.loads((root/'enforcement-inventory.json').read_text())
+          for group,prefixes in [('code',('_generator/lib/','_tools/')),('tests',('_generator/test/',)),('docs',('docs/operations/',))]:
+            rows=[]
+            for entry in data:
+              if not entry['path'].startswith(prefixes): continue
+              hits=[x for x in entry['matches'] if re.search(r'\b72\b|\b168\b|fallback.*hours|hours.*fallback',x['text'],re.I)]
+              if hits: rows.append({'path':entry['path'],'matches':hits})
+            (root/(group+'-enforcement.json')).write_text(json.dumps(rows,indent=2)+'\n')
+          PY
+      - name: Verify published feeds and article date extraction
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {retrieveSource,extractCandidateMetadata,compactDiscoveryHtml} from './_tools/discovery-links.mjs';
+          const targets=[['notion','https://www.notion.com/releases/rss.xml','rss'],['n8n','https://blog.n8n.io/rss/','rss'],['box','https://blog.box.com/','article'],['airtable','https://www.airtable.com/articles','article']];
+          const checks=[];
+          for(const [id,url,format] of targets){
+            try{
+              const s={source_id:id,owner:id,discovery_endpoint:url,format,evidence_class:'publisher_authored'};
+              const r=await retrieveSource(url,{timeoutMs:12000,maxResponseBytes:1500000,maxNormalizedChars:900000});
+              const items=extractCandidateMetadata(compactDiscoveryHtml(r.text),r.url,s).filter(x=>x.headline?.length>=20&&x.headline.length<=200&&/\b(ai|agent|agents|agentic|copilot|gemini|claude|llm|skills)\b/i.test(x.headline+' '+x.snippet));
+              const pages=[];
+              for(const item of items.filter(x=>new URL(x.canonical_url).hostname===new URL(url).hostname).slice(0,2)){
+                try{
+                  const p=await retrieveSource(item.canonical_url,{timeoutMs:10000,maxResponseBytes:1500000,maxNormalizedChars:900000});
+                  const rows=extractCandidateMetadata(compactDiscoveryHtml(p.text),p.url,{...s,format:'article'});
+                  const same=rows.find(x=>x.canonical_url.replace(/\/$/,'')===item.canonical_url.replace(/\/$/,''));
+                  const date=same?.published_at||item.published_at||null;
+                  pages.push({url:item.canonical_url,published_at:date,status:date?'date_verified':'date_unresolved'});
+                }catch(e){pages.push({url:item.canonical_url,status:'unavailable',error:e.message});}
+              }
+              checks.push({source_id:id,endpoint:url,format,resolved_url:r.url,ai_entries:items.length,dated_ai_entries:items.filter(x=>x.published_at).length,article_checks:pages,status:items.length&&(items.some(x=>x.published_at)||pages.some(x=>x.status==='date_verified'))?'operational':'limited',checked_at:new Date().toISOString()});
+            }catch(e){checks.push({source_id:id,endpoint:url,status:'unavailable',error:e.message});}
+          }
+          const result={schema_version:'1.0.0',workflow_run_id:process.env.GITHUB_RUN_ID,production_mutation:false,model_calls:0,checks};
+          fs.writeFileSync('_records/qualification-policy-audit/2026-09-28-D05/source-date-checks.json',JSON.stringify(result,null,2)+'\n');
+          console.log(JSON.stringify(result));
+          NODE
+      - name: Persist detail only
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification-policy-audit/2026-09-28-D05
+          if ! git diff --cached --quiet; then git commit -m 'Persist D05 source date checks and compact enforcement maps'; git push origin HEAD:qualification-policy-audit/2026-09-28-D05; fi
