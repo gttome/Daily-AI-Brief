@@ -1,0 +1,57 @@
+name: Q24 watchlist and book input audit
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-watchlist-book-input-audit.yml']
+permissions:
+  contents: write
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Bind frozen inputs and prepare canonical review bundle
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json)" = '02125e82d2246e512740cdb48d5d4f97a5bc41ce'
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/watchlist-book-evidence/input-audit.json
+          python3 - <<'PY'
+          import datetime, hashlib, json, os, pathlib, re, subprocess, zipfile
+          paths = subprocess.check_output(['git','ls-files','-z']).decode().split('\0')
+          selected=[]
+          for name in filter(None,paths):
+              p=pathlib.Path(name)
+              include=(name.startswith(('_generator/','_contracts/','_architecture/','scripts/','tests/','_tests/','_records/discovery-preflight/result/','_records/qualification/2026-09-28-Q24/')) or name in ('package.json','package-lock.json','README.md') or (name.startswith('_data/') and '/story-memory/' not in name and 'media-candidate-queue' not in name) or (name.startswith('_records/') and re.search(r'(book|watchlist|trend-radar|emerging|under80|operations|living|source-check|source-state)',name,re.I)))
+              if include and p.is_file() and p.suffix.lower() in ('.json','.jsonl','.md','.mjs','.js','.py','.yml','.yaml','.txt') and p.stat().st_size<=2000000:
+                  selected.append(name)
+          out=pathlib.Path('_records/qualification/2026-09-28-Q24/watchlist-book-evidence');out.mkdir(parents=True,exist_ok=True)
+          hashes={name:hashlib.sha256(pathlib.Path(name).read_bytes()).hexdigest() for name in selected}
+          inventory=[{'path':name,'bytes':pathlib.Path(name).stat().st_size,'sha256':hashes[name]} for name in selected]
+          report={'schema_version':'1.0.0','qualification_id':'2026-09-28-Q24','cutoff':'2026-09-28T20:04:36Z','baseline_sha':'1def5c4ba158247a9c02106dc4e4820d80a7133d','input_head':os.environ['GITHUB_SHA'],'workflow_run_id':os.environ['GITHUB_RUN_ID'],'audited_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'INPUTS_CAPTURED_NOT_EDITORIALLY_APPROVED','upstream_bindings_verified':True,'qualification_terminal':False,'watchlist_ready':False,'book_evaluation_ready':False,'publisher_requests':0,'model_api_calls':0,'production_mutations':0,'scope':'Canonical tracked files only. No article/media rerun, no new discovery and no public edition. Review and validation remain required.','inventory':inventory}
+          (out/'input-audit.json').write_text(json.dumps(report,indent=2)+'\n')
+          with zipfile.ZipFile('/tmp/q24-watchlist-book-review-inputs.zip','w',compression=zipfile.ZIP_DEFLATED) as z:
+              for name in selected:z.write(name,name)
+              z.write(out/'input-audit.json',str(out/'input-audit.json'))
+          print(json.dumps({'status':report['status'],'files':len(selected),'bundle_sha256':hashlib.sha256(pathlib.Path('/tmp/q24-watchlist-book-review-inputs.zip').read_bytes()).hexdigest()}))
+          PY
+      - name: Persist nonterminal input-audit receipt only
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/watchlist-book-evidence/input-audit.json
+          git commit -m 'Record Q24 watchlist and book canonical input audit; evaluation pending'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-watchlist-book-review-inputs
+          path: /tmp/q24-watchlist-book-review-inputs.zip
+          retention-days: 14
+          if-no-files-found: error
