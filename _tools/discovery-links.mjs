@@ -132,6 +132,12 @@ export function extractCandidateMetadata(text, base, source = {}) {
  return [...candidates.values()];
 }
 // Publication dates belong to an article, never to every link on its catalog page.
+export function publicationDatePrecision(value){
+ if(typeof value!=='string'||!value.trim())return null;
+ const v=value.trim();
+ if(/^\d{4}-\d{2}-\d{2}$/.test(v))return 'day';
+ return publicationTimestamp(v)?'instant':null;
+}
 export function publicationTimestamp(value){
  if(typeof value!=='string'||!value.trim())return null;
  const v=value.trim();
