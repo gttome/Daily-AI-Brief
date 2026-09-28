@@ -1,0 +1,77 @@
+name: Qualification freshness policy audit
+on:
+  push:
+    branches: ['qualification-policy-audit/2026-09-28-D05']
+    paths: ['.github/workflows/qualification-policy-audit.yml']
+permissions:
+  contents: write
+concurrency:
+  group: qualification-policy-audit-D05
+  cancel-in-progress: false
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Inventory all current freshness enforcement and documentation
+        run: |
+          mkdir -p _records/qualification-policy-audit/2026-09-28-D05
+          python3 - <<'PY'
+          import pathlib,json,re,subprocess
+          out=pathlib.Path('_records/qualification-policy-audit/2026-09-28-D05')
+          matches=[]
+          for name in subprocess.check_output(['git','ls-files'],text=True).splitlines():
+            if not name.startswith(('_generator/','_tools/','docs/operations/','_data/','.github/workflows/')): continue
+            if name.startswith(('_data/editions/','_data/publication','_data/editorial')): continue
+            if pathlib.Path(name).suffix not in ('.mjs','.js','.json','.md','.yml','.yaml'): continue
+            try: lines=pathlib.Path(name).read_text().splitlines()
+            except (UnicodeError,OSError): continue
+            hits=[{'line':i+1,'text':line[:1500]} for i,line in enumerate(lines) if re.search(r'72|168|fallback_max|freshness|recency',line,re.I)]
+            if hits: matches.append({'path':name,'matches':hits[:60]})
+          (out/'enforcement-inventory.json').write_text(json.dumps(matches,indent=2)+'\n')
+          print(json.dumps([{'path':x['path'],'hits':len(x['matches'])} for x in matches]))
+          PY
+      - name: Verify targeted official publisher catalog extraction
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import {createHash} from 'node:crypto';
+          import {retrieveSource,extractCandidateMetadata,compactDiscoveryHtml} from './_tools/discovery-links.mjs';
+          const targets=[
+            ['make','Make','https://www.make.com/en/blog','agents_non_technical_people'],
+            ['box','Box','https://blog.box.com/','applied_genai_knowledge_workers'],
+            ['notion','Notion','https://www.notion.com/releases','applied_genai_knowledge_workers'],
+            ['airtable','Airtable','https://www.airtable.com/articles','applied_genai_knowledge_workers'],
+            ['n8n','n8n','https://blog.n8n.io/','agents_non_technical_people'],
+            ['adobe','Adobe','https://blog.adobe.com/feed.xml','applied_genai_knowledge_workers']
+          ];
+          const report={schema_version:'1.0.0',diagnostic_id:'2026-09-28-D05',workflow_run_id:process.env.GITHUB_RUN_ID,started_at:new Date().toISOString(),production_mutation:false,model_calls:0,semantic_pass_started:false,sources:[]};
+          for(const [id,owner,url,focus] of targets){
+            const source={source_id:id,owner,discovery_endpoint:url,evidence_class:'publisher_authored',format:'article',focus_hint:focus};
+            try{
+              const r=await retrieveSource(url,{timeoutMs:12000,maxResponseBytes:1500000,maxNormalizedChars:900000});
+              const body=compactDiscoveryHtml(r.text),items=extractCandidateMetadata(body,r.url,source);
+              const valid=items.filter(x=>x.headline?.length>=20&&x.headline.length<=200);
+              const ai=valid.filter(x=>/\b(ai|agents?|agentic|automation|copilot|gemini|claude|llm|skills?)\b/i.test(x.headline+' '+x.snippet));
+              const feeds=[...r.text.matchAll(/<link\b[^>]*(?:application\/(?:rss|atom)\+xml)[^>]*>/gi)].map(x=>x[0].match(/href=["']([^"']+)["']/i)?.[1]).filter(Boolean).slice(0,3);
+              report.sources.push({source_id:id,owner,requested_url:url,resolved_url:r.url,focus_hint:focus,status:valid.length?'catalog_verified':'retrieved_no_usable_entries',body_sha256:createHash('sha256').update(r.text).digest('hex'),compact_chars:body.length,article_links:valid.length,ai_links:ai.length,dated_ai:ai.filter(x=>x.published_at).length,feeds,checked_at:new Date().toISOString()});
+            }catch(e){report.sources.push({source_id:id,owner,requested_url:url,focus_hint:focus,status:'unavailable',error:e.message,checked_at:new Date().toISOString()});}
+          }
+          report.completed_at=new Date().toISOString();
+          fs.writeFileSync('_records/qualification-policy-audit/2026-09-28-D05/source-probe.json',JSON.stringify(report,null,2)+'\n');
+          console.log(JSON.stringify(report));
+          NODE
+      - name: Persist audit evidence only
+        if: always()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '4189826+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification-policy-audit/2026-09-28-D05
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist D05 freshness inventory and source verification evidence'
+            git push origin HEAD:qualification-policy-audit/2026-09-28-D05
+          fi
