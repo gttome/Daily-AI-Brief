@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0.0",
+  "harness_id": "2026-09-27-IH10",
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "state": "IN_PROGRESS",
+  "fixed_story_order": [
+    "m02",
+    "m04",
+    "m06",
+    "m07",
+    "m01",
+    "m08"
+  ],
+  "accepted_locked_count": 1,
+  "accepted_locked": [
+    "m02"
+  ],
+  "current_candidate_id": "m04",
+  "next_action": "Prepare and execute m04 in a fresh image-only context, then separate review and exact-byte persistence.",
+  "q13_release_blocked": true,
+  "fallback_used": false,
+  "cross_story_contamination_count": 0,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
