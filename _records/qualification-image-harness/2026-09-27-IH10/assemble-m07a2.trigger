@@ -1,0 +1,3 @@
+IH10 m07 attempt 2 exact-byte assembly
+expected_sha256=28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe
+expected_size=1939308
