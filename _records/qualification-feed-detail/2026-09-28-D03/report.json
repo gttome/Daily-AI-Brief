@@ -1,0 +1,117 @@
+{
+  "schema_version": "1.0.0",
+  "diagnostic_id": "2026-09-28-D03",
+  "workflow_run_id": "36447426899",
+  "started_at": "2026-09-28T15:57:08.542Z",
+  "production_mutation": false,
+  "qualification_pass": false,
+  "semantic_pass_started": false,
+  "model_calls": 0,
+  "source_descriptor": {
+    "source_id": "google-workspace-feed",
+    "owner": "Google Workspace",
+    "discovery_endpoint": "https://workspaceupdates.googleblog.com/atom.xml",
+    "format": "atom",
+    "evidence_class": "publisher_authored",
+    "focus_hint": "applied_genai_knowledge_workers",
+    "status": "active"
+  },
+  "probes": [
+    {
+      "label": "registered_endpoint",
+      "requested_url": "https://workspaceupdates.googleblog.com/atom.xml",
+      "resolved_url": "http://feeds.feedburner.com/GoogleAppsUpdates",
+      "body_sha256": "91ec586f1804bf47de4dab2f08bb5a327bdbee69e7b9a8455257cfa18d2727ff",
+      "entry_count": 25,
+      "alternate_link_origins": {
+        "http://workspaceupdates.googleblog.com": 25
+      },
+      "feedburner_original_link_count": 0,
+      "original_link_origins": {},
+      "feed_newest_publication": "2026-09-25T19:00:43.921Z",
+      "feed_oldest_publication": "2026-09-15T17:08:18.819Z",
+      "actual_descriptor_raw": {
+        "extracted": 25,
+        "ai_candidates": 14,
+        "dated_ai": 14,
+        "fresh_ai_72h": 0,
+        "newest_ai_publication": "2026-09-23T19:02:00.760Z",
+        "oldest_ai_publication": "2026-09-15T17:08:18.819Z",
+        "article_origins": {
+          "https://workspaceupdates.googleblog.com": 14
+        }
+      },
+      "actual_descriptor_compact": {
+        "extracted": 25,
+        "ai_candidates": 14,
+        "dated_ai": 14,
+        "fresh_ai_72h": 0,
+        "newest_ai_publication": "2026-09-23T19:02:00.760Z",
+        "oldest_ai_publication": "2026-09-15T17:08:18.819Z",
+        "article_origins": {
+          "https://workspaceupdates.googleblog.com": 14
+        }
+      },
+      "missing_descriptor_raw": {
+        "extracted": 0,
+        "ai_candidates": 0,
+        "dated_ai": 0,
+        "fresh_ai_72h": 0,
+        "newest_ai_publication": null,
+        "oldest_ai_publication": null,
+        "article_origins": {}
+      },
+      "result": "checked"
+    },
+    {
+      "label": "unverified_same_publisher_redirect_false_variant",
+      "requested_url": "https://workspaceupdates.googleblog.com/feeds/posts/default?alt=atom&max-results=25&redirect=false",
+      "resolved_url": "https://workspaceupdates.googleblog.com/feeds/posts/default?alt=atom&max-results=25&redirect=false",
+      "body_sha256": "d2c751967a54ae264992e3985e096c08616ea11b1110efb859c993dfc282d8cc",
+      "entry_count": 25,
+      "alternate_link_origins": {
+        "https://workspaceupdates.googleblog.com": 25
+      },
+      "feedburner_original_link_count": 0,
+      "original_link_origins": {},
+      "feed_newest_publication": "2026-09-25T19:00:43.921Z",
+      "feed_oldest_publication": "2026-09-15T17:08:18.819Z",
+      "actual_descriptor_raw": {
+        "extracted": 25,
+        "ai_candidates": 14,
+        "dated_ai": 14,
+        "fresh_ai_72h": 0,
+        "newest_ai_publication": "2026-09-23T19:02:00.760Z",
+        "oldest_ai_publication": "2026-09-15T17:08:18.819Z",
+        "article_origins": {
+          "https://workspaceupdates.googleblog.com": 14
+        }
+      },
+      "actual_descriptor_compact": {
+        "extracted": 25,
+        "ai_candidates": 14,
+        "dated_ai": 14,
+        "fresh_ai_72h": 0,
+        "newest_ai_publication": "2026-09-23T19:02:00.760Z",
+        "oldest_ai_publication": "2026-09-15T17:08:18.819Z",
+        "article_origins": {
+          "https://workspaceupdates.googleblog.com": 14
+        }
+      },
+      "missing_descriptor_raw": {
+        "extracted": 25,
+        "ai_candidates": 14,
+        "dated_ai": 14,
+        "fresh_ai_72h": 0,
+        "newest_ai_publication": "2026-09-23T19:02:00.760Z",
+        "oldest_ai_publication": "2026-09-15T17:08:18.819Z",
+        "article_origins": {
+          "https://workspaceupdates.googleblog.com": 14
+        }
+      },
+      "result": "checked"
+    }
+  ],
+  "completed_at": "2026-09-28T15:57:09.419Z",
+  "result": "diagnostic_complete"
+}
