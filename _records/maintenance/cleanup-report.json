@@ -3876,8 +3876,68 @@
       "sha": "4e9a0640313bb4c74bb50e4cb21d11145cfec59b",
       "result": "archived_and_removed",
       "archive_ref": "tags/archive/cleanup-20260928-a/feature/shared-story-share-count-no-rating"
+    },
+    {
+      "branch": "feature/subscribe-navigation",
+      "sha": "2154b80a5d7a2557ea1fd89cc33cf1b86d317d46",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/feature/subscribe-navigation"
+    },
+    {
+      "branch": "fix/agent-skills-freshness-signal-2026-09-18",
+      "sha": "f9bc46083c9ca3a9b5fcb90f5de9773a1e6d7e6e",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/agent-skills-freshness-signal-2026-09-18"
+    },
+    {
+      "branch": "fix/agent-skills-signal-precision-2026-09-18",
+      "sha": "558b4ca0c69cc9dc95b2d409d1b0bb3169a3d1f2",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/agent-skills-signal-precision-2026-09-18"
+    },
+    {
+      "branch": "fix/book-series-reader-backlog",
+      "sha": "e18a1a7f617a92f77f4f238cf42777023a0efd5a",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/book-series-reader-backlog"
+    },
+    {
+      "branch": "fix/brief-domain-image-import-2026-09-19",
+      "sha": "c8d97a29ab5a76f791de96037ded1fadbe0b6a33",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/brief-domain-image-import-2026-09-19"
+    },
+    {
+      "branch": "fix/calendar-subscription-link",
+      "sha": "e02b4fef2bbe29b0bdb2d45dad0efd2de85fba00",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/calendar-subscription-link"
+    },
+    {
+      "branch": "fix/current-edition-tests",
+      "sha": "2eaeba0d45391f51f3042133f7255b8cddb4f205",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/current-edition-tests"
+    },
+    {
+      "branch": "fix/emergency-story-image-fallback-2026-09-19",
+      "sha": "80b3547b7cd07ef026a5797878716d0a84d81e7c",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/emergency-story-image-fallback-2026-09-19"
+    },
+    {
+      "branch": "fix/evidence-preflight-background-filter-2026-09-18",
+      "sha": "425f5df590998c5191c64fbdbf5e165466562fe3",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/evidence-preflight-background-filter-2026-09-18"
+    },
+    {
+      "branch": "fix/freshness-labeling-sep16",
+      "sha": "a54707f65e3f734416b1567310c01bf877f42038",
+      "result": "archived_and_removed",
+      "archive_ref": "tags/archive/cleanup-20260928-a/fix/freshness-labeling-sep16"
     }
   ],
   "status": "applying",
-  "updated_at": "2026-09-28T15:17:46.498Z"
+  "updated_at": "2026-09-28T15:18:27.349Z"
 }
