@@ -1,0 +1,63 @@
+{
+  "schema_version": "1.1.0",
+  "checkpoint_digest_version": "checkpoint-digests-v1",
+  "edition_date": "2026-09-28",
+  "baseline_main_sha": "b998bb7ecfc3fab41238b7d67ba4ea927c83842b",
+  "current_sha": "b0e23ee27bc147414dc3400cd1dbc97387d96940",
+  "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+  "stage": "PREFLIGHT_METADATA_READY",
+  "status": "pass",
+  "retry_count": 0,
+  "pr_number": null,
+  "workflow_run_ids": [
+    "36429908183"
+  ],
+  "artifact_paths": [
+    "_records/preflight/2026-09-28/date-enrichment.json",
+    "_records/preflight/2026-09-28/metadata-candidates.json",
+    "_records/preflight/2026-09-28/receipt.json"
+  ],
+  "invalidated_downstream_stages": [],
+  "consequential_actions": [],
+  "publication_lifecycle": "staged",
+  "operational_status": "PREPARING",
+  "stages": {
+    "PREFLIGHT_METADATA_READY": {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-28T13:37:52.127Z",
+      "status": "pass",
+      "input_baseline_sha": "b998bb7ecfc3fab41238b7d67ba4ea927c83842b",
+      "current_sha": "b0e23ee27bc147414dc3400cd1dbc97387d96940",
+      "artifact_paths": [
+        "_records/preflight/2026-09-28/date-enrichment.json",
+        "_records/preflight/2026-09-28/metadata-candidates.json",
+        "_records/preflight/2026-09-28/receipt.json"
+      ],
+      "input_paths": [],
+      "dependency_paths": [],
+      "input_digest": "sha256:807eaf8bdd6a93087529594d7dd9d10bb12c331650fbcc8ed5f0e24990db1a12",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:683871bdd77764e6bef3a14696081e9e53fee6bb9249e7a0f91b4dcccbf85090",
+      "checkpoint_digest_version": "checkpoint-digests-v1",
+      "workflow_run_ids": [
+        "36429908183"
+      ],
+      "pr_number": null,
+      "contract_runtime_version": "under80-v1/sep24-reliability-v1",
+      "note": null
+    }
+  },
+  "history": [
+    {
+      "stage": "PREFLIGHT_METADATA_READY",
+      "timestamp": "2026-09-28T13:37:52.127Z",
+      "status": "pass",
+      "current_sha": "b0e23ee27bc147414dc3400cd1dbc97387d96940",
+      "pr_number": null,
+      "note": null,
+      "input_digest": "sha256:807eaf8bdd6a93087529594d7dd9d10bb12c331650fbcc8ed5f0e24990db1a12",
+      "dependency_digest": "sha256:4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "output_digest": "sha256:683871bdd77764e6bef3a14696081e9e53fee6bb9249e7a0f91b4dcccbf85090"
+    }
+  ]
+}
