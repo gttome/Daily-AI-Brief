@@ -1086,3 +1086,21 @@ The active testing schedules are separate from production orchestration. Product
 ### Q1 finding — qualification novelty baseline isolation
 
 The first continuous Q1 preflight succeeded with 17 bounded metadata candidates and nine retrieved evidence items, but inspection showed that several strong candidates were already used by the real September 26 production edition. Applying production novelty against the already-published same-day edition would make repeated intraday qualification structurally impossible and would test candidate scarcity rather than automation repeatability. Permanent control: every Q-run is an independent hypothetical production attempt and evaluates novelty against production history strictly before its edition date. Same-day production and all Q-runs are excluded from the qualification novelty baseline. This does not weaken the real production 30-day novelty rule and does not authorize repeated production publication.
+
+
+## September 27 image-policy risk rebalance
+
+The qualification image policy was reviewed after IH8 showed that a factually safe, correctly labeled image could still fail solely because its clear six-stage linear composition matched a categorical format ban. The active policy now preserves the quality objective while reducing false-negative risk:
+
+- professional, detailed, story-specific textbook/editorial quality remains mandatory;
+- low-quality fallback remains prohibited;
+- story isolation, subject identity, factual safety, cross-story contamination controls, exact-byte Library/Git persistence, and accepted/locked artifact identity remain strict;
+- composition is story-fit rather than universally mechanism-centric: linear flows, layered architectures, comparisons, taxonomies, annotated systems, panel/card structures, and appropriate system-view metaphors may pass when professionally executed and explanatory;
+- central mechanisms, nonlinear feedback, multiple layers, and visual density are required only when they truthfully improve the explanation;
+- essential story-specific labels remain required, while bounded generic non-factual labels and symbolic glyphs may appear without failing solely for not being in the essential-label list;
+- unsupported factual prose, invented technical specifics, fabricated metrics/code/identifiers/vulnerabilities/product UI remain failures;
+- qualification permits up to four bounded image attempts per story, with early termination for a deterministic contract defect;
+- later non-mutating diagnostic review may continue after the first failed gate, but the first failed gate remains the official terminal cause for that attempt;
+- final publication still requires six accepted/locked professional images, while qualification may continue with one isolated remediation lane if five are already locked.
+
+This amendment does not weaken the production success condition, protected CI, no-rework model, zero-cost policy, or publication requirement for six final professional images.

@@ -155,3 +155,27 @@ Permanent control:
 - all prior subject-lineage, composition, Library handoff, raw-byte, no-fallback, zero-cost, and protected-CI controls remain unchanged.
 
 IH7 remains immutable terminal evidence. This correction must be merged through protected CI and proved on a fresh later harness identity before Q13 can advance.
+
+
+## IH8 policy-risk rebalance
+
+IH8 proved that the prior image contract had become over-prescriptive: the second attempt solved the extra-glyph class but still failed solely because a clear six-stage left-to-right process matched a categorically prohibited composition form. The owner reviewed the image constraints and directed the system to reduce false-negative risk while preserving factuality, professional quality, artifact integrity, no fallback, and zero-cost requirements.
+
+Revised controls:
+
+- story isolation remains structural and fail-closed on actual inherited/other-story context; brittle free-form attestation wording is not itself a blocker when the sealed payload proves isolation;
+- concrete factual claims remain limited to verified evidence, while generic explanatory shapes, metaphors, conventional technical symbols, and editorial devices are allowed when they do not assert unsupported facts;
+- `allowed_image_text` is treated as essential story-specific text: essential labels must be present and readable, useful duplicates are allowed, and short generic non-factual headings/descriptors/legends/symbols may appear;
+- generic symbolic glyphs such as punctuation, brackets, arrows, or decorative digits do not fail solely because they are outside the essential label set; unsupported factual code, metrics, identifiers, vulnerabilities, filenames, product specifics, or misleading UI still fail;
+- professional story-fit composition replaces one mandatory composition archetype. Approved structures include mechanism-rich plates, linear flows, layered architectures, comparisons, taxonomies, annotated systems, and panel-based explanations;
+- a central core, multiple layers, and nonlinear feedback are used only when they improve truthful explanation; a genuinely linear story may remain linear;
+- card, panel, status-flow, dashboard/system-view, six-panel, and tile forms are judged by professional quality and explanatory value rather than categorically banned;
+- density is not required for its own sake; clarity, story specificity, polish, explanatory value, and sufficient meaningful detail are the outcome gates;
+- people/human figures may appear when human workflow, review, collaboration, or adoption is materially relevant, while identifiable real-person depiction remains outside this qualification policy unless explicitly supported and intended;
+- bounded generation attempts increase from two to four per story, with early stop on a deterministic contract defect;
+- the first failed gate remains the official failure cause, but later non-mutating diagnostic review may continue when safe so structural/editorial information is not lost;
+- final production still requires six accepted/locked professional images; qualification may advance with exactly one isolated image-remediation lane open when five images are accepted/locked, but publication cannot proceed until the sixth image passes.
+
+No low-quality fallback is introduced. Cross-story contamination remains a hard failure. Exact-byte Library/Git persistence, Work=0, Codex=0, paid API=0, and production_mutation=false remain unchanged during qualification.
+
+IH1-IH8 remain immutable historical evidence. This revised policy must be merged through protected CI and proved on a fresh harness identity.

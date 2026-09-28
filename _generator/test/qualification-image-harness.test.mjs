@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {
-  IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,
+  IMAGE_HARNESS_STATES,IMAGE_HARNESS_STORY_ORDER,IMAGE_WORKER_PACKET_KEYS,APPROVED_COMPOSITION_MODES,
   buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,
   validateQualificationImageWorkerPayload,validateQualificationImageRenderedText,validateImageHarnessAttempt,validateImageHarnessSummary
 } from '../lib/qualification-image-harness.mjs';
@@ -46,33 +46,44 @@ test('worker payload validator accepts frozen reference policy but rejects orche
   assert.ok(errors.includes('prohibited_worker_payload_key_other_story_context'));
 });
 
-test('generation instruction is built only from validated sealed payload',()=>{
+test('generation instruction keeps factual boundaries but allows story-fit composition',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
   const instruction=buildQualificationImageGenerationInstruction(payload);
   assert.match(instruction,/story_id: story-m02/);
-  assert.match(instruction,/candidate_id: m02/);
   assert.doesNotMatch(instruction,/IH2/);
-  assert.doesNotMatch(instruction,/scheduler_state/);
-  assert.doesNotMatch(instruction,/parent_conversation/);
-  assert.match(instruction,/VISIBLE TEXT POLICY/);
-  assert.match(instruction,/Review Checkpoint/);
-  assert.match(instruction,/composition_mode: mechanism_rich_textbook_plate/);
-  assert.match(instruction,/central process or mechanism core/);
-  assert.match(instruction,/Do not use card grids, dashboards, status flows, six-panel icon strips/);
+  assert.match(instruction,/professional, detailed, readable textbook\/editorial illustration/);
+  assert.match(instruction,/Linear flows, card\/panel structures, comparisons, taxonomies/);
+  assert.match(instruction,/Short generic non-factual headings, descriptors, legends, and technical symbols\/glyphs are permitted/);
+  assert.match(instruction,/Unsupported factual prose and invented specifics remain prohibited/);
 });
 
-test('rendered image text must exactly equal the allowlist set',()=>{
-  const allowed=['Target Software','Generated Test Inputs','Observed Failure Signal'];
-  assert.deepEqual(validateQualificationImageRenderedText([...allowed],allowed),[]);
-  const missing=validateQualificationImageRenderedText(['Target Software','Observed Failure Signal'],allowed);
-  assert.ok(missing.includes('required_rendered_text_missing:Generated Test Inputs'));
-  const extra=validateQualificationImageRenderedText([...allowed,'Runs tests and analyzes results'],allowed);
-  assert.ok(extra.includes('rendered_text_not_allowlisted:Runs tests and analyzes results'));
-  const duplicate=validateQualificationImageRenderedText(['Target Software','Generated Test Inputs','Observed Failure Signal','Observed Failure Signal'],allowed);
-  assert.ok(duplicate.includes('rendered_text_duplicate:Observed Failure Signal'));
+test('approved composition archetypes are accepted',()=>{
+  for (const mode of APPROVED_COMPOSITION_MODES) {
+    const payload=buildQualificationImageWorkerPayload({...sealedPacket,composition_mode:mode});
+    assert.deepEqual(validateQualificationImageWorkerPayload(payload),[]);
+  }
+  const payload=buildQualificationImageWorkerPayload({...sealedPacket,composition_mode:'decorative_collage'});
+  assert.ok(validateQualificationImageWorkerPayload(payload).includes('composition_mode_not_approved'));
 });
 
-test('worker payload rejects prose-like allowlist labels that exceed the bounded label size',()=>{
+test('essential labels must appear but useful duplicates and bounded generic labels may appear',()=>{
+  const essential=['Target Software','AI-powered Fuzzing Workflow'];
+  assert.deepEqual(validateQualificationImageRenderedText(
+    ['Target Software','AI-powered Fuzzing Workflow','Review','</>','Target Software'],
+    essential
+  ),[]);
+  const missing=validateQualificationImageRenderedText(['Target Software','Review'],essential);
+  assert.ok(missing.includes('required_rendered_text_missing:AI-powered Fuzzing Workflow'));
+});
+
+test('unbounded visible prose still fails deterministic text hygiene',()=>{
+  const essential=['Target Software'];
+  const long='This is an intentionally very long explanatory sentence that exceeds the bounded generic label policy and should not be accepted as ordinary image microcopy';
+  const errors=validateQualificationImageRenderedText(['Target Software',long],essential);
+  assert.ok(errors.some(x=>x.startsWith('rendered_text_unbounded:')));
+});
+
+test('worker payload rejects prose-like essential labels that exceed bounded label size',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
   payload.allowed_image_text=['This explanatory sentence is much too long to be an approved image label'];
   const errors=validateQualificationImageWorkerPayload(payload);
@@ -80,66 +91,37 @@ test('worker payload rejects prose-like allowlist labels that exceed the bounded
 });
 
 test('one accepted harness attempt requires the complete exact-byte state path',()=>{
-  const attempt={candidate_id:'m02',attempt:1,states:[...IMAGE_HARNESS_STATES],accepted_locked:true,fallback:false,cross_story_contamination:false,sha256:'a'.repeat(64),git_blob_sha:'deadbeef',width:1200,height:630,allowed_image_text:['Target Software'],rendered_text_strings:['Target Software']};
+  const attempt={candidate_id:'m02',attempt:1,states:[...IMAGE_HARNESS_STATES],accepted_locked:true,fallback:false,cross_story_contamination:false,sha256:'a'.repeat(64),git_blob_sha:'deadbeef',width:1200,height:630,allowed_image_text:['Target Software'],rendered_text_strings:['Target Software','</>']};
   assert.deepEqual(validateImageHarnessAttempt(attempt,{candidateId:'m02'}),[]);
 });
 
 test('accepted harness attempt fails if subject-lineage proof is skipped',()=>{
   const states=IMAGE_HARNESS_STATES.filter(x=>x!=='SUBJECT_LINEAGE_PASS');
-  const attempt={candidate_id:'m02',attempt:1,states,accepted_locked:true,fallback:false,cross_story_contamination:false,sha256:'a'.repeat(64),git_blob_sha:'deadbeef',width:1200,height:630};
+  const attempt={candidate_id:'m02',attempt:1,states,accepted_locked:true,fallback:false,cross_story_contamination:false,sha256:'a'.repeat(64),git_blob_sha:'deadbeef',width:1200,height:630,allowed_image_text:['Target Software'],rendered_text_strings:['Target Software']};
   assert.ok(validateImageHarnessAttempt(attempt).includes('accepted_locked_missing_SUBJECT_LINEAGE_PASS'));
 });
 
-test('six-story harness PASS requires exact fixed order and 6/6 accepted_locked',()=>{
+test('bounded generation attempts increase to four',()=>{
+  const base={candidate_id:'m02',states:['PACKET_READY'],accepted_locked:false};
+  assert.deepEqual(validateImageHarnessAttempt({...base,attempt:4}),[]);
+  assert.ok(validateImageHarnessAttempt({...base,attempt:5}).includes('attempt_out_of_bounds'));
+});
+
+test('six-story final PASS still requires exact fixed order and 6/6 accepted_locked',()=>{
   const summary={status:'PASS',production_mutation:false,work_usage:0,codex_usage:0,paid_api_usage:0,fallback_used:false,cross_story_contamination_count:0,accepted_locked_count:6,story_results:IMAGE_HARNESS_STORY_ORDER.map(candidate_id=>({candidate_id,accepted_locked:true}))};
   assert.deepEqual(validateImageHarnessSummary(summary),[]);
 });
 
-
-test('worker payload requires mechanism-rich textbook composition mode',()=>{
-  const payload=buildQualificationImageWorkerPayload(sealedPacket);
-  payload.composition_mode='card_grid';
-  const errors=validateQualificationImageWorkerPayload(payload);
-  assert.ok(errors.includes('composition_mode_must_be_mechanism_rich_textbook_plate'));
+test('qualification may advance with exactly one isolated remediation lane while final publication still requires six',()=>{
+  const story_results=IMAGE_HARNESS_STORY_ORDER.map((candidate_id,i)=>({candidate_id,accepted_locked:i<5}));
+  const summary={status:'QUALIFICATION_ADVANCE_WITH_REMEDIATION',isolated_remediation_lane:true,production_mutation:false,work_usage:0,codex_usage:0,paid_api_usage:0,fallback_used:false,cross_story_contamination_count:0,accepted_locked_count:5,story_results};
+  assert.deepEqual(validateImageHarnessSummary(summary),[]);
+  assert.ok(validateImageHarnessSummary({...summary,isolated_remediation_lane:false}).includes('isolated_remediation_lane_required'));
 });
 
-test('worker payload requires all sparse-layout prohibitions',()=>{
-  const payload=buildQualificationImageWorkerPayload(sealedPacket);
-  payload.prohibited_composition_patterns=['card_grid','dashboard'];
-  const errors=validateQualificationImageWorkerPayload(payload);
-  assert.ok(errors.includes('missing_prohibited_composition_pattern_status_flow'));
-  assert.ok(errors.includes('missing_prohibited_composition_pattern_six_panel_icon_strip'));
-});
-
-test('composition hardening preserves exact visible-text allowlist policy',()=>{
-  const payload=buildQualificationImageWorkerPayload(sealedPacket);
-  const instruction=buildQualificationImageGenerationInstruction(payload);
-  assert.match(instruction,/VISIBLE TEXT POLICY: Render every string in allowed_image_text exactly once/);
-  assert.match(instruction,/Do not satisfy density by adding unapproved text/);
-  assert.deepEqual(validateQualificationImageRenderedText([...payload.allowed_image_text],payload.allowed_image_text),[]);
-});
-
-
-test('reference policy presence is required without magic phrase matching',()=>{
+test('reference policy presence remains required without magic phrase matching',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
   payload.reference_policy='   ';
   const errors=validateQualificationImageWorkerPayload(payload);
   assert.ok(errors.includes('reference_policy_required'));
-});
-
-test('glyph-free concept policy is present and explicit',()=>{
-  const payload=buildQualificationImageWorkerPayload(sealedPacket);
-  const instruction=buildQualificationImageGenerationInstruction(payload);
-  assert.match(instruction,/GLYPH-FREE CONCEPT POLICY/);
-  assert.match(instruction,/render zero visible alphanumeric or punctuation glyphs/);
-  assert.match(instruction,/code brackets, slashes, angle brackets, binary digits, numerals, alert punctuation/);
-  assert.match(instruction,/only with unlabeled abstract geometric forms/);
-});
-
-test('text validator still rejects incidental glyphs outside the exact allowlist',()=>{
-  const allowed=[...sealedPacket.allowed_image_text];
-  for (const glyph of ['</>','0101','!']) {
-    const errors=validateQualificationImageRenderedText([...allowed,glyph],allowed);
-    assert.ok(errors.includes(`rendered_text_not_allowlisted:${glyph}`));
-  }
 });

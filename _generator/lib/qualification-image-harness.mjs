@@ -12,6 +12,11 @@ export const IMAGE_WORKER_PACKET_KEYS=[
   'acceptance_order','wrong_subject_action','low_quality_fallback','allowed_image_text','composition_mode','prohibited_composition_patterns'
 ];
 
+export const APPROVED_COMPOSITION_MODES=[
+  'mechanism_rich_textbook_plate','linear_flow','layered_architecture','comparison',
+  'taxonomy','annotated_system','panel_based_explanation','story_fit_editorial'
+];
+
 export function buildQualificationImageWorkerPayload(packet){
   if(!packet||typeof packet!=='object')throw new Error('sealed_story_packet_required');
   const payload={};
@@ -36,11 +41,7 @@ export function validateQualificationImageWorkerPayload(payload){
     if(!Array.isArray(payload[field])||payload[field].length<1)errors.push(`${field}_array_required`);
   }
   if(payload.low_quality_fallback!==false)errors.push('low_quality_fallback_must_be_false');
-  if(payload.composition_mode!=='mechanism_rich_textbook_plate')errors.push('composition_mode_must_be_mechanism_rich_textbook_plate');
-  if(Array.isArray(payload.prohibited_composition_patterns)){
-    const required=['card_grid','dashboard','status_flow','six_panel_icon_strip'];
-    for(const pattern of required){if(!payload.prohibited_composition_patterns.includes(pattern))errors.push(`missing_prohibited_composition_pattern_${pattern}`);}
-  }
+  if(!APPROVED_COMPOSITION_MODES.includes(payload.composition_mode))errors.push('composition_mode_not_approved');
   if(Array.isArray(payload.allowed_image_text)){
     const seen=new Set();
     for(const label of payload.allowed_image_text){
@@ -70,13 +71,14 @@ export function buildQualificationImageGenerationInstruction(payload){
     `reference_policy: ${payload.reference_policy}`,
     `acceptance_order: ${payload.acceptance_order.join(' -> ')}`,
     `wrong_subject_action: ${payload.wrong_subject_action}`,
-    `allowed_image_text: ${payload.allowed_image_text.join(' | ')}`,
+    `essential_image_text: ${payload.allowed_image_text.join(' | ')}`,
     `composition_mode: ${payload.composition_mode}`,
-    `prohibited_composition_patterns: ${payload.prohibited_composition_patterns.join(' | ')}`,
-    'COMPOSITION CONTRACT: Create a mechanism-rich professional textbook/editorial plate with a central process or mechanism core, multiple interacting visual layers, and causal or functional relationships that extend beyond one straight left-to-right arrow chain. Dense but readable hierarchy is required.',
-    'PROHIBITED COMPOSITION: Do not use card grids, dashboards, status flows, six-panel icon strips, isolated icon panels, sparse tile layouts, or simple linear status-chain compositions. Do not satisfy density by adding unapproved text.',
-    'VISIBLE TEXT POLICY: Render every string in allowed_image_text exactly once and render no other visible text. Missing, duplicated, altered, or extra strings fail the factual-support gate. Do not render the headline unless it is explicitly present in allowed_image_text. Do not add captions, explanatory prose, summaries, sentences, examples, button text, UI text, or any other words.',
-    'GLYPH-FREE CONCEPT POLICY: Outside the exact allowed_image_text labels, render zero visible alphanumeric or punctuation glyphs. Prohibited extras include code brackets, slashes, angle brackets, binary digits, numerals, alert punctuation, browser/status text, UI microtext, and glyph-bearing code/data cards. Represent code, data, test-input, failure, browser, and status concepts only with unlabeled abstract geometric forms, lines, shapes, textures, or color regions.',
+    `historical_low_quality_patterns: ${payload.prohibited_composition_patterns.join(' | ')}`,
+    'COMPOSITION CONTRACT: Create a professional, detailed, readable textbook/editorial illustration whose composition fits the story. A central mechanism, multiple interacting layers, or nonlinear feedback are encouraged only when they truthfully improve explanation. Linear flows, card/panel structures, comparisons, taxonomies, layered architectures, and annotated systems are acceptable when they are the clearest story-fit structure and remain sufficiently detailed, integrated, story-specific, and professionally executed.',
+    'QUALITY CONTRACT: Reject genuinely sparse, generic, decorative, repetitive, or low-information layouts. Do not reject an image solely because it is linear, panel-based, card-based, or uses a dashboard/system-view metaphor when that structure is appropriate and does not invent unsupported product UI or operational state.',
+    'VISIBLE TEXT POLICY: Treat allowed_image_text as essential story-specific labels. Each essential label must be present and readable at least once. Useful duplicates are permitted when they materially improve clarity. Short generic non-factual headings, descriptors, legends, and technical symbols/glyphs are permitted when they do not introduce unsupported factual claims, metrics, identifiers, code, vulnerabilities, filenames, product-specific details, or misleading product UI.',
+    'FACTUAL TEXT SAFETY: Unsupported factual prose and invented specifics remain prohibited. Generic technical notation, punctuation, arrows, brackets, digits used decoratively, and symbolic motifs do not fail solely because they are outside allowed_image_text; factual-support review must reject them only when they convey an unsupported claim or specific fact.',
+    'HUMAN FIGURES: People or human figures may be used when human workflow, review, collaboration, or adoption is materially relevant. Keep them professional/editorial and do not depict an identifiable real person unless explicitly supported and intended.',
     'low_quality_fallback: prohibited',
     'Generate exactly one illustration for this story. Return only the generated illustration.'
   ].join('\n');
@@ -86,21 +88,20 @@ export function validateQualificationImageRenderedText(renderedText,allowedImage
   const errors=[];
   if(!Array.isArray(renderedText))return ['rendered_text_strings_required'];
   if(!Array.isArray(allowedImageText)||allowedImageText.length<1)return ['allowed_image_text_required'];
-  const allowed=new Set(allowedImageText),counts=new Map();
+  const counts=new Map();
   for(const text of renderedText){
     if(typeof text!=='string'||text.trim()!==text||text.length<1){errors.push('rendered_text_string_invalid');continue;}
-    if(!allowed.has(text))errors.push(`rendered_text_not_allowlisted:${text}`);
+    if(text.length>120||text.trim().split(/\s+/).length>16)errors.push(`rendered_text_unbounded:${text}`);
     counts.set(text,(counts.get(text)||0)+1);
   }
   for(const label of allowedImageText){
     const count=counts.get(label)||0;
     if(count===0)errors.push(`required_rendered_text_missing:${label}`);
-    if(count>1)errors.push(`rendered_text_duplicate:${label}`);
   }
   return [...new Set(errors)];
 }
 
-export function validateImageHarnessAttempt(attempt,{candidateId=null,maxAttempts=2}={}){
+export function validateImageHarnessAttempt(attempt,{candidateId=null,maxAttempts=4}={}){
   const errors=[];
   if(!attempt||typeof attempt!=='object')return ['image_harness_attempt_required'];
   if(candidateId&&attempt.candidate_id!==candidateId)errors.push('candidate_id_mismatch');
@@ -139,10 +140,21 @@ export function validateImageHarnessSummary(summary){
   if(!Array.isArray(summary.story_results)||summary.story_results.length!==6)errors.push('six_story_results_required');
   const ids=Array.isArray(summary.story_results)?summary.story_results.map(x=>x?.candidate_id):[];
   if(JSON.stringify(ids)!==JSON.stringify(IMAGE_HARNESS_STORY_ORDER))errors.push('story_order_mismatch');
-  for(const result of Array.isArray(summary.story_results)?summary.story_results:[]){
-    if(result?.accepted_locked!==true)errors.push(`${result?.candidate_id||'unknown'}_not_accepted_locked`);
+
+  const accepted=Array.isArray(summary.story_results)?summary.story_results.filter(x=>x?.accepted_locked===true).length:0;
+  const remediationOpen=summary.isolated_remediation_lane===true;
+  const qualificationAdvance=summary.status==='QUALIFICATION_ADVANCE_WITH_REMEDIATION';
+
+  if(summary.status==='PASS'){
+    for(const result of Array.isArray(summary.story_results)?summary.story_results:[]){
+      if(result?.accepted_locked!==true)errors.push(`${result?.candidate_id||'unknown'}_not_accepted_locked`);
+    }
+    if(summary.accepted_locked_count!==6||accepted!==6)errors.push('accepted_locked_count_must_be_six');
+  }else if(qualificationAdvance){
+    if(!remediationOpen)errors.push('isolated_remediation_lane_required');
+    if(summary.accepted_locked_count!==5||accepted!==5)errors.push('qualification_advance_requires_five_locked');
+  }else{
+    errors.push('status_must_be_PASS_or_QUALIFICATION_ADVANCE_WITH_REMEDIATION');
   }
-  if(summary.accepted_locked_count!==6)errors.push('accepted_locked_count_must_be_six');
-  if(summary.status!=='PASS')errors.push('status_must_be_PASS');
   return [...new Set(errors)];
 }
