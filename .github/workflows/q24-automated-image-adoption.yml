@@ -1,0 +1,101 @@
+name: Q24 automated image contract adoption
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-automated-image-adoption.yml']
+permissions:
+  contents: write
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Preserve Q24 and adopt the protected image-only release
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-28-Q24'
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = fc459b45af230f8b3d9142a7f951510b9a8475f7
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = 0255cbdca2e89ebb4c2b20672103dee517056930
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json)" = 02125e82d2246e512740cdb48d5d4f97a5bc41ce
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/watchlist-book-evidence/validation.json)" = 75c7f045b9937f5e33157cd1cbd59e92202d2ee9
+          git fetch origin e21634590350f2b07e50a5b69d7a7fe3fb9c1908
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git merge --no-commit --no-ff e21634590350f2b07e50a5b69d7a7fe3fb9c1908
+      - name: Construct single-story visual requests from frozen semantic evidence
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          root=Path('_records/qualification/2026-09-28-Q24')
+          semantic=json.loads((root/'semantic-receipt.json').read_text())
+          assert semantic['cutoff']=='2026-09-28T20:04:36Z'
+          assert [s['candidate_id'] for s in semantic['selection']]==['m04','m03','m05','m06','m01','m09']
+          visual={
+            'm04':('comparison',['Claude Sonnet 5.5','Amazon Bedrock','Claude Platform on AWS','Coding tasks','Knowledge work','Quality','Latency','Cost'], 'Create a richly annotated model-evaluation textbook plate: the announced model connects to its two named AWS access offerings; a separate conceptual evaluation workbench compares coding and knowledge-work tasks across quality, latency and cost. Show unfilled measuring scales and evidence containers, not invented results or an implied winner. Clearly distinguish publisher availability from a suggested evaluation method.'),
+            'm03':('layered_architecture',['NVIDIA OpenShell','Existing agent','Runtime controls','API operations','Systems and data','Credentials','Allow','Deny'], 'Create an integrated layered runtime-control cutaway: an existing agent inside an explicitly depicted permissions boundary, API operations crossing allow or deny gates, systems/data beyond the boundary, and a distinct credential-protection layer. Use legible detailed callouts, differentiated access routes and scope boundaries; do not imply complete attack prevention or depict real product screens.'),
+            'm05':('annotated_system',['Agent Builder','Change management','Structured operating model','Team adoption','Learning','Working practices','Technology','Behavior change'], 'Create an editorial operating-system map for organizational adoption: contrast merely introducing technology with developing supported working practices. Connect structured operating model, team learning and behavior change around Agent Builder. The learning and practice links are conceptual framing, not claimed proprietary implementation steps, success metrics or a reconstructed customer case study.'),
+            'm06':('taxonomy',['AI at Work','AI Skills Navigator','Work role','Copilot modes','Learning by doing','AI FinOps basics','Agents','Learning paths'], 'Create a professional role-to-learning taxonomy with a central work-role selection area branching into the announced Copilot, AI FinOps and agents learning themes. Integrate detailed conceptual practice loops and navigation hierarchy, without inventing lesson names, account entitlements, completion badges or measured learning outcomes.'),
+            'm01':('linear_flow',['Qoder','Completed conversation','Reusable experience','Suggested Skill','Create or update','Review suggestion','Future task','Not yet validated'], 'Create a detailed story-specific skill-evolution process plate: a completed Qoder conversation yields reusable experience and a suggested Skill for creation or update. Add a clearly conceptual review checkpoint before possible future reuse, with a visible not-yet-validated caution. Use dense but readable nested instruction/context elements without invented code, filenames or guaranteed generalization. Do not imply automatic acceptance.'),
+            'm09':('panel_based_explanation',['n8n','Fixed workflow','Predictable steps','Agent','Open-ended task','Back-and-forth decisions','Work together','Task boundary'], 'Create a two-lane integrated explanatory plate contrasting a fixed predictable workflow with an agent handling open-ended back-and-forth decisions. Join the lanes at carefully annotated generic task boundaries to explain coexistence rather than replacement. Use meaningful substructure and readable connections, not a sparse pair of boxes; do not invent n8n interface controls, pricing or governance guarantees.')
+          }
+          packets=[]
+          for s in semantic['selection']:
+              cid=s['candidate_id'];mode,labels,brief=visual[cid]
+              sid='dab-story-2026-09-28-'+hashlib.sha256(('2026-09-28|'+cid).encode()).hexdigest()[:8]
+              packets.append({'story_id':sid,'candidate_id':cid,'headline':s['headline'],'source_url':s['source_url'],
+                'verified_visual_facts':[s['summary']],
+                'generic_conceptual_elements':['Conceptual shapes, scope boundaries, arrows and comparison structures are explanatory, not product UI.','Evaluation and review elements are suggested practices, not measured publisher outcomes.'],
+                'prohibited_specifics':[s['editorial_limitation'],'No fabricated metrics, benchmark results, code, filenames, product UI, pricing, access entitlements or capabilities.','No operational dashboard, qualification status, other story subject, people, decorative imagery or low-quality fallback.'],
+                'visual_brief':'White background, professional high-detail landscape textbook illustration for a final 1200 by 630 canvas, clear non-overlapping labels and generous safe margins. '+brief,
+                'reference_policy':'Use only this frozen story packet for factual content. No other article, task, run status, repair context or previous image may supply visual facts. Generic conceptual elements must remain visibly explanatory.',
+                'acceptance_order':['subject_identity','factual_support','structural_quality','editorial_quality'],
+                'wrong_subject_action':'Discard rejected output and automatically generate a new attempt from this same frozen story packet; never ask the owner to intervene.',
+                'low_quality_fallback':False,'allowed_image_text':labels,'composition_mode':mode,
+                'prohibited_composition_patterns':['sparse generic boxes','repeated composition across stories','unsupported product interface','qualification status artwork']})
+          out=root/'image-execution-v2';out.mkdir(exist_ok=False)
+          (out/'sealed-story-packets.json').write_text(json.dumps(packets,indent=2,ensure_ascii=False)+'\n')
+          PY
+          node _tools/image-execution.mjs prepare --packets _records/qualification/2026-09-28-Q24/image-execution-v2/sealed-story-packets.json --out _records/qualification/2026-09-28-Q24/image-execution-v2/requests
+      - name: Verify six requests and record honest preparation state
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'JS'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          import {createHash} from 'node:crypto';
+          import {validateImageGenerationExecution,imageExecutionHash} from './_generator/lib/image-execution.mjs';
+          const root='_records/qualification/2026-09-28-Q24/image-execution-v2';
+          const ids=['m04','m03','m05','m06','m01','m09'];
+          const requests=ids.map(candidate_id=>{const path=`${root}/requests/${candidate_id}.json`,raw=fs.readFileSync(path),request=JSON.parse(raw);assert.deepEqual(validateImageGenerationExecution(request),[]);return {candidate_id,path,file_sha256:createHash('sha256').update(raw).digest('hex'),execution_sha256:imageExecutionHash(request)};});
+          const receipt={policy_id:'production-image-execution-v2',qualification_id:'2026-09-28-Q24',status:'REQUESTS_READY',prepared_at:new Date().toISOString(),workflow_run_id:process.env.GITHUB_RUN_ID,execution_code_sha:'e21634590350f2b07e50a5b69d7a7fe3fb9c1908',original_baseline_sha:'1def5c4ba158247a9c02106dc4e4820d80a7133d',cutoff:'2026-09-28T20:04:36Z',article_freshness_policy:'article-24-72-168-v1',media_freshness_policy:'media-research-cutoff-v1',requests,request_checks_passed:6,native_image_generation_started:false,image_generation_calls:0,accepted_locked_count:0,manual_intervention_required:false,qualification_terminal:false,production_mutation:false,account_billing_observed:false};
+          fs.writeFileSync(`${root}/preparation.json`,JSON.stringify(receipt,null,2)+'\n');
+          const checkpoint='_records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md';
+          const addendum=`# Current amendment: automated production image parity\n\n**Policy:** production-image-execution-v2. **Released code:** e21634590350f2b07e50a5b69d7a7fe3fb9c1908 (PR284, protected CI36494774048). **Q24 image requests:** six prepared and validated, not generated.\n\nThe owner authorized testing to use production's automated path, with no manual image intervention. This amendment supersedes older fresh-chat, mandatory Library-transfer, separate review-conversation and unavailable-native-tool claims below. Runtime context isolation is not asserted; explicit request scope is one frozen story. Preserve factual/quality review, bounded automatic retries, raw capture, exact-byte persistence and read-back. No owner chats, uploads or manual reviews may be required.\n\nRead image-execution-v2/preparation.json and requests in frozen order m04, m03, m05, m06, m01, m09. Actual native generation, automatic capture/review/persistence and scheduled proof remain unfinished. A request or passing fixture is not an image. Continue the first unfinished image action; do not repeat the five passed components, change cutoff, start Q25 or claim full qualification/publication. The original baseline and frozen receipts remain immutable; execution code adoption is recorded separately.\n\n---\n\n## Earlier component checkpoint (preserved historical detail)\n\n`;
+          fs.writeFileSync(checkpoint,addendum+fs.readFileSync(checkpoint,'utf8'));
+          JS
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = fc459b45af230f8b3d9142a7f951510b9a8475f7
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = 0255cbdca2e89ebb4c2b20672103dee517056930
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json)" = 02125e82d2246e512740cdb48d5d4f97a5bc41ce
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/watchlist-book-evidence/validation.json)" = 75c7f045b9937f5e33157cd1cbd59e92202d2ee9
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git add _records/qualification/2026-09-28-Q24/image-execution-v2 _records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md
+          git commit -m 'Adopt protected image parity on Q24; preserve five components and prepare six requests'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-automated-image-requests
+          path: _records/qualification/2026-09-28-Q24/image-execution-v2/
+          retention-days: 14
+          if-no-files-found: error
