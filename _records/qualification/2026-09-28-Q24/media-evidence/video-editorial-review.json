@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "reviewer": "ChatGPT editorial review in the active user-authorized continuation",
+  "reviewed_at": "2026-09-28T21:36:40Z",
+  "review_scope": "Publisher-distributed channel catalog and linked public feed: exact video identities, original published timestamps, displayed runtimes, descriptions, and available chapter topics. Comparison against all 20 prior canonical production editions. No video or audio playback, transcription, benchmark reproduction, or visual/pedagogical accessibility test.",
+  "evidence_bindings": {
+    "metadata_git_blob": "3ecabea17d0668b785c0ffdbe9df83c11764e05c",
+    "metadata_sha256": "dadf3f00f962c571301aaa3a2e86314db31f7baa9b62b2612d1d5078309ca957",
+    "history_git_blob": "cadb39e689845bdf84fb5233f547ecd083337708",
+    "history_sha256": "bc2cf5f6678b1f353eb4163d003e0fb86a32bfc4e0cb5c1381777350ba4bb1d3",
+    "primary_source_artifact_id": 11000140814,
+    "primary_source_artifact_sha256": "5bd46d50ff9df9dbd03095539bc867640f7311b3045687e5a76c07cdbf2c7af3",
+    "feed_source_sha256": "4f910653cd78b4c0899d89a63a3030000dfcda243cca8b1ac69452768bdf115b",
+    "channel_source_sha256": "6c1bef4250e6da6d6a4b0b3e6ebc34cd65b2dd067e4a34ea356c67376fa2f7b5"
+  },
+  "history_scope": {
+    "canonical_field": "worth_watching",
+    "edition_dates": ["2026-09-06", "2026-09-07", "2026-09-08", "2026-09-09", "2026-09-10", "2026-09-11", "2026-09-12", "2026-09-13", "2026-09-14", "2026-09-15", "2026-09-16", "2026-09-17", "2026-09-18", "2026-09-19", "2026-09-20", "2026-09-21", "2026-09-22", "2026-09-23", "2026-09-25", "2026-09-26"],
+    "editions_reviewed": 20,
+    "included_video_occurrences_reviewed": 24,
+    "empty_slots_reviewed": 16,
+    "compared_fields": ["canonical URL and YouTube ID aliases", "title", "channel", "upload date", "why_useful", "connection"],
+    "same_day_production_excluded": true,
+    "prior_qualification_approvals_reused": false,
+    "initial_empty_history_projection_used_for_novelty": false,
+    "semantic_novelty_review_complete": true
+  },
+  "shorter_search_scope": {
+    "bounded_not_exhaustive": true,
+    "full_zero_video_coverage_claimed": false,
+    "channel_catalog_and_feed_used": true,
+    "saved_additional_catalogs": ["IBM-owned media center", "Microsoft AI Show", "Microsoft Mechanics (404)", "Matt Wolfe", "Kevin Stratvert", "Jeff Su"],
+    "third_party_index_used_for_approval": false,
+    "observation": "The captured IBM feed has only two entries within the original 72-hour window. Its fresh 7:15 coding-workflow item fits the general slot, not the non-technical agent-oversight intent. The relevant 9:46 agent/API example is older than 72 hours. Other inspected saved catalogs supplied no additionally verified short video satisfying date, runtime, identity and the agent-oversight topic together. This is a bounded-search observation, not proof of internet-wide absence."
+  },
+  "reviews": [
+    {
+      "video_id": "bs1qPy_CWkM",
+      "slot": "general",
+      "editorial_pass": true,
+      "duplicate": false,
+      "score": 31,
+      "source_excerpts": [
+        "Sam Anthony explains why planning, execution, validation, and verification matter more as AI coding systems become increasingly capable.",
+        "04:33 - The New Bottleneck: Human Verification at AI Scale",
+        "05:07 - Evidence‑Driven Development and Trust",
+        "AI was used in the creation of the transcript and metadata for this video."
+      ],
+      "audience_fit": "General AI and engineering readers considering what remains human-reviewed in agent-assisted software delivery. The available chapter list establishes planning, validation and verification topics; this is not represented as a no-code agent-building lesson.",
+      "summary": "IBM Technology frames prompt-to-production work around planning, execution, validation and verification. Its published chapter outline emphasizes solution design, agentic coding workflows, human verification and evidence-driven development.",
+      "why_useful": "Gives readers a framework for reviewing AI-assisted delivery rather than treating generated code as finished work. The supported takeaway is to define the plan and verification evidence; the description does not establish measured reliability.",
+      "connection": "Complements the selected model/runtime engineering stories and the reusable-workflow stories by focusing on the review work around agent execution.",
+      "novelty_reason": "No matching video ID, URL alias or title occurs in the 20-edition production history. The nearest prior coding videos covered specific Codex coordination updates, agent-harness comparison and model choice. This publisher item instead centers the broader planning-to-verification workflow; conceptual overlap is not a repeated episode.",
+      "short_search_evidence": ["The first-party channel catalog binds this exact video ID and title to a 7:15 duration, satisfying the preferred <=10-minute tier."],
+      "fallback_reason": null,
+      "editorial_limitation": "Reviewed publisher description and chapters, not the video or an independently checked transcript. The publisher discloses AI-assisted transcript and metadata creation. The watch page returned a bot challenge and was not retried. No claims of demonstrated automation accuracy, complete code review, or benchmarked productivity are made."
+    },
+    {
+      "video_id": "kyJ1vd7yEPc",
+      "slot": "agents_non_technical_people",
+      "editorial_pass": true,
+      "duplicate": false,
+      "score": 30,
+      "source_excerpts": [
+        "Jeff Crume explains how AI agents, RAG pipelines, prompts, tools, and models move sensitive data through modern AI systems.",
+        "Learn how data lineage, AI security, and visibility help identify exposure risks before they become incidents.",
+        "AI was used in the creation of the transcript and metadata for this video."
+      ],
+      "audience_fit": "Agent users and non-technical workflow owners deciding what information an agent and its connected tools may expose. The supported fit is data-flow awareness and oversight, not a coding tutorial or a promise that the entire presentation is jargon-free.",
+      "summary": "IBM Technology describes how sensitive data moves through AI agents, retrieval pipelines, prompts, tools and models. The episode description focuses on data lineage and visibility as ways to recognize exposure risks.",
+      "why_useful": "Helps agent owners frame questions about where their information goes and which connected components can access it. It is an oversight explainer, not evidence that a particular security control has been tested or is sufficient.",
+      "connection": "Adds a user-facing data-exposure lens to the selected agent runtime, reusable Skills and workflow-management stories.",
+      "novelty_reason": "No matching video identity, URL alias or title occurs in the 20-edition production history. The closest prior item is the September 19 ChatGPT privacy clip about what a person shares and when to double-check answers. This episode instead addresses movement of data across agents, retrieval, prompts, tools and models. The privacy theme overlaps but the supported mechanism and episode are distinct.",
+      "short_search_evidence": [
+        "The captured feed contains only two entries within Q24's original 72-hour window; the 7:15 prompt-to-production item has an engineering-delivery purpose and was assigned to the general slot.",
+        "The saved 9:46 US Open agent/API explainer was published 2026-09-24T11:00:22Z, outside the 72-hour limit, so its short runtime cannot make it eligible.",
+        "Other inspected saved publisher catalogs did not yield another completely verified short agent-oversight candidate. Search scope and inaccessible metadata are retained; internet-wide exhaustion is not claimed."
+      ],
+      "fallback_reason": "No <=10-minute candidate in the bounded reviewed evidence met freshness, verified metadata and this agent-oversight intent together. Use the primary-catalog-verified 11:29 item in the existing 10-to-15-minute fallback tier; do not widen the 72-hour window or 20-minute ceiling.",
+      "editorial_limitation": "Reviewed the publisher description, not playback or a transcript; no chapter list was supplied for this episode. The publisher discloses AI-assisted transcript and metadata creation. Spoken/visual accessibility and effectiveness of security techniques were not independently assessed. The challenged watch page was not retried."
+    }
+  ],
+  "rejected": [
+    {"video_id": "F3hlZSZc6UI", "title": "How AI Agents, LLMs & APIs Use Real-Time Data at the US Open", "published_at": "2026-09-24T11:00:22Z", "reason": "Relevant short agent/API alternative, but original publication is more than 72 hours before Q24 cutoff; no freshness waiver.", "source_sha256": "4f910653cd78b4c0899d89a63a3030000dfcda243cca8b1ac69452768bdf115b"},
+    {"video_id": "SQYwRET4a6Q", "title": "Why Did The AI Race Just Change? 🏁", "published_at": "2026-09-25T16:00:28Z", "reason": "Original publication is outside 72 hours. A later updated timestamp is not a new upload and is not used.", "source_sha256": "4f910653cd78b4c0899d89a63a3030000dfcda243cca8b1ac69452768bdf115b"},
+    {"video_id": "O4n1jtWzt30", "title": "New frontier AI models, TypeSafe’s Jev AI, & NASA’s IBM collab", "published_at": "2026-09-25T10:00:11Z", "reason": "Original publication is outside 72 hours and the publisher catalog displays 39:24, above the hard 20-minute maximum.", "source_sha256": "4f910653cd78b4c0899d89a63a3030000dfcda243cca8b1ac69452768bdf115b"}
+  ],
+  "preserved_limitations": {
+    "video_or_audio_played": false,
+    "challenged_watch_pages_used_as_content_evidence": false,
+    "previous_metadata_assertion_failure_preserved": true,
+    "first_incomplete_history_projection_preserved_and_not_used": true,
+    "zero_video_exception_established": false,
+    "same_publisher_for_both_videos": true,
+    "source_diversity_exception_invented": false
+  },
+  "video_selection_validated": false,
+  "media_ready": false,
+  "full_qualification_pass": false,
+  "production_mutation": false
+}
