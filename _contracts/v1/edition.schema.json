@@ -319,6 +319,12 @@
         "article-24-72-skills168-v1"
       ],
       "description": "Optional article-policy identity. Absence preserves the historical ordinary-72/Skills-168 interpretation; runtime validation enforces age and disclosure."
+    },
+    "media_freshness_policy": {
+      "type": "string",
+      "enum": [
+        "media-research-cutoff-v1"
+      ]
     }
   },
   "$defs": {

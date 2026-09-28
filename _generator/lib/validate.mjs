@@ -1,3 +1,4 @@
+import {MEDIA_FRESHNESS_POLICY,mediaReferenceTime,mediaPublicationTime} from './media-freshness.mjs';
 import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness} from './article-freshness.mjs';
 import {EXPECTED_FOCUS_ORDER, TIMEZONE} from './constants.mjs';
 import {PRIMARY_FRESHNESS_HOURS, DEFAULT_FALLBACK_HOURS, AGENT_SKILLS_FALLBACK_HOURS} from './research.mjs';
@@ -25,6 +26,13 @@ export function validateEdition(edition) {
   if(edition.article_freshness_policy&&![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(edition.article_freshness_policy))errors.push('unknown article freshness policy');
   const freshnessRequired=edition.brief_date>='2026-09-16';
   const cutoff=time(edition.research_cutoff_at);
+  const mediaPolicy=edition.media_freshness_policy??null;
+  const currentMediaPolicy=mediaPolicy===MEDIA_FRESHNESS_POLICY;
+  let mediaReference=Date.parse(edition.brief_date);
+  if(mediaPolicy!=null){
+    try{mediaReference=mediaReferenceTime({date:edition.brief_date,cutoff:edition.research_cutoff_at,policy:mediaPolicy});}
+    catch(error){mediaReference=NaN;errors.push(String(error.message));}
+  }
   if(freshnessRequired){
     requireText(edition.research_cutoff_at,'research_cutoff_at');
     if(!Number.isFinite(cutoff)||!edition.research_cutoff_at.startsWith(edition.brief_date))errors.push('research_cutoff_at must be a valid same-edition-date timestamp');
@@ -107,7 +115,7 @@ export function validateEdition(edition) {
     else if (video.status === 'empty') requireText(video.exception, `worth_watching.${slot}.exception`);
     else if (video.status === 'included' && (!Number.isInteger(video.runtime_seconds) || video.runtime_seconds < 1 || video.runtime_seconds > 1200)) errors.push(`worth_watching.${slot}.runtime_seconds must be 1-1200`);
     else if (video.status==='included' && edition.brief_date>='2026-09-11') {
-      const ageHours=(Date.parse(edition.brief_date)-Date.parse(video.upload_date))/3600000;
+      const ageHours=(mediaReference-mediaPublicationTime(video.upload_date,currentMediaPolicy?MEDIA_FRESHNESS_POLICY:null))/3600000;
       const maxAge=edition.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE?VIDEO_MAX_AGE_HOURS:30*24;
       if(!Number.isFinite(ageHours)||ageHours<0||ageHours>maxAge)errors.push(`worth_watching.${slot} requires a verified upload date within ${maxAge} hours`);
       if(video.runtime_seconds>600 && (!video.short_search_evidence?.length || !['fallback','last_resort'].includes(video.duration_tier)||!video.fallback_reason?.trim()))errors.push(`worth_watching.${slot} requires documented short-video search and fallback reason`);
@@ -147,7 +155,7 @@ export function validateEdition(edition) {
     const otherUrls=[...sourceUrls,...Object.values(edition.worth_watching||{}).map(v=>v.url),...podcasts.filter((_,i)=>i!==index).flatMap(p=>[p.url,...(p.platforms||[]).map(x=>x.url)])];
     if ([podcast.url,...(podcast.platforms || []).map(p => p.url)].some(url => otherUrls.includes(url))) errors.push(`${label} duplicates another edition item`);
     if(multiPodcast){
-      const age=(Date.parse(edition.brief_date)-Date.parse(podcast.publication_date))/86400000;
+      const age=(mediaReference-mediaPublicationTime(podcast.publication_date,currentMediaPolicy?MEDIA_FRESHNESS_POLICY:null))/86400000;
       if(!Number.isFinite(age)||age<0||age>PODCAST_EXCEPTION_AGE_DAYS)errors.push(`${label} exceeds the ${PODCAST_EXCEPTION_AGE_DAYS}-day absolute freshness ceiling`);
       else if(age>PODCAST_PRIMARY_AGE_DAYS){
         requireText(podcast.freshness_exception_reason,`${label}.freshness_exception_reason`);

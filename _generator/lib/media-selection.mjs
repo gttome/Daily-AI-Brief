@@ -1,3 +1,4 @@
+import {MEDIA_FRESHNESS_POLICY,mediaReferenceTime,mediaPublicationTime} from './media-freshness.mjs';
 // Candidates are editorial evidence records, not inferred metadata.
 export const VIDEO_METADATA_TARGET=15;
 export const VIDEO_METADATA_MAX=20;
@@ -20,15 +21,16 @@ export function videoDurationTier(seconds){
 }
 
 function scoreSort(a,b){return (b.score||0)-(a.score||0)||String(b.upload_date||b.publication_date||'').localeCompare(String(a.upload_date||a.publication_date||''))||String(a.url).localeCompare(String(b.url));}
-function eligibleVideos(candidates,slot,date){
+function eligibleVideos(candidates,slot,date,options={}){
+ const reference=options.policy==null&&options.cutoff==null?Date.parse(date):mediaReferenceTime({date,...options});
  return candidates.filter(c=>{
-  const hours=ageDays(date,c.upload_date)*24;
+  const hours=(reference-mediaPublicationTime(c.upload_date,options.policy))/3600000;
   return c.slot===slot&&c.verified===true&&c.editorial_pass===true&&c.duplicate!==true&&videoDurationTier(c.runtime_seconds)&&Number.isFinite(hours)&&hours>=0&&hours<=VIDEO_MAX_AGE_HOURS;
  });
 }
 
-export function selectVideo(candidates,slot,date){
- const eligible=eligibleVideos(candidates,slot,date);
+export function selectVideo(candidates,slot,date,options={}){
+ const eligible=eligibleVideos(candidates,slot,date,options);
  for(const duration_tier of ['preferred','fallback','last_resort']){
   const tier=eligible.filter(c=>videoDurationTier(c.runtime_seconds)===duration_tier).sort(scoreSort);
   if(tier.length){
@@ -40,8 +42,9 @@ export function selectVideo(candidates,slot,date){
  return {candidate:null,tier:'empty',duration_tier:null,maximum_age_hours:VIDEO_MAX_AGE_HOURS};
 }
 
-export function videoDiscoveryReceipt(candidates,{deepReviewedIds=[],date=null}={}){
- const metadata=candidates.filter(c=>c&&c.url&&(!date||eligibleVideos([c],c.slot,date).length));
+export function videoDiscoveryReceipt(candidates,{deepReviewedIds=[],date=null,cutoff=null,policy=null}={}){
+ if(policy!=null||cutoff!=null)mediaReferenceTime({date,cutoff,policy});
+ const metadata=candidates.filter(c=>c&&c.url&&(!date||eligibleVideos([c],c.slot,date,{cutoff,policy}).length));
  const sources=new Set(metadata.map(c=>c.source_id||c.channel||c.publisher).filter(Boolean));
  const slots=new Set(metadata.map(c=>c.slot).filter(Boolean));
  const durationTiers=new Set(metadata.map(c=>videoDurationTier(c.runtime_seconds)).filter(Boolean));
@@ -53,21 +56,22 @@ export function videoDiscoveryReceipt(candidates,{deepReviewedIds=[],date=null}=
   rule:'0 videos is valid only after bounded 72-hour coverage includes both video intents, at least 15 metadata candidates across at least 8 trusted sources, preferred and fallback duration tiers, and 3-5 deep reviews.'};
 }
 
-function podcastTier(candidate,date){
- const age=ageDays(date,candidate.publication_date);
+function podcastTier(candidate,reference,policy=null){
+ const age=(reference-mediaPublicationTime(candidate.publication_date,policy))/86400000;
  if(!Number.isFinite(age)||age<0||age>PODCAST_EXCEPTION_AGE_DAYS)return null;
  if(age<=PODCAST_PRIMARY_AGE_DAYS)return 'primary_48h';
  if(age<=PODCAST_FALLBACK_AGE_DAYS)return 'fallback_7d';
  return 'exception_30d';
 }
 
-export function selectPodcasts(candidates,{date,limit=2,restrictedShow='The AI Daily Brief'}={}){
+export function selectPodcasts(candidates,{date,cutoff=null,policy=null,limit=2,restrictedShow='The AI Daily Brief'}={}){
  if(!/^\d{4}-\d{2}-\d{2}$/.test(date||''))throw Error('Explicit edition date required for podcast freshness');
+ const reference=mediaReferenceTime({date,cutoff,policy});
  if(limit!==2)throw Error('Daily podcast target is exactly two when two qualifying selections exist');
- const eligible=candidates.filter(c=>c?.verified===true&&c.editorial_pass===true&&c.duplicate!==true&&c.url&&c.show&&podcastTier(c,date));
+ const eligible=candidates.filter(c=>c?.verified===true&&c.editorial_pass===true&&c.duplicate!==true&&c.url&&c.show&&podcastTier(c,reference,policy));
  const selected=[];
  for(const tier of ['primary_48h','fallback_7d','exception_30d']){
-  for(const candidate of eligible.filter(c=>podcastTier(c,date)===tier).sort(scoreSort)){
+  for(const candidate of eligible.filter(c=>podcastTier(c,reference,policy)===tier).sort(scoreSort)){
    if(selected.length>=limit)break;
    if(candidate.show===restrictedShow&&selected.some(x=>x.show===restrictedShow))continue;
    if(selected.some(x=>x.show===candidate.show))continue;
@@ -76,5 +80,5 @@ export function selectPodcasts(candidates,{date,limit=2,restrictedShow='The AI D
   }
   if(selected.length>=limit)break;
  }
- return {selected,target:2,restricted_show:restrictedShow,restricted_show_count:selected.filter(x=>x.show===restrictedShow).length,source_diverse:selected.length<2||new Set(selected.map(x=>x.show)).size===selected.length,primary_age_days:PODCAST_PRIMARY_AGE_DAYS,fallback_age_days:PODCAST_FALLBACK_AGE_DAYS,exception_age_days:PODCAST_EXCEPTION_AGE_DAYS};
+ return {...(policy?{media_freshness_policy:policy,research_cutoff_at:cutoff}:{}),selected,target:2,restricted_show:restrictedShow,restricted_show_count:selected.filter(x=>x.show===restrictedShow).length,source_diverse:selected.length<2||new Set(selected.map(x=>x.show)).size===selected.length,primary_age_days:PODCAST_PRIMARY_AGE_DAYS,fallback_age_days:PODCAST_FALLBACK_AGE_DAYS,exception_age_days:PODCAST_EXCEPTION_AGE_DAYS};
 }

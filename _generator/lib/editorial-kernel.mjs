@@ -1,3 +1,4 @@
+import {MEDIA_FRESHNESS_POLICY,mediaReferenceTime,mediaPublicationTime} from './media-freshness.mjs';
 import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness} from './article-freshness.mjs';
 import {sha256,normalizeUrl} from './util.mjs';
 import {MULTI_PODCAST_EFFECTIVE_DATE} from './podcasts.mjs';
@@ -11,6 +12,7 @@ const slug=value=>String(value||'story').normalize('NFKD').toLowerCase().replace
 
 export function validateEditorialKernel(kernel){
  const errors=[];
+ if(kernel?.media_freshness_policy!=null&&kernel.media_freshness_policy!==MEDIA_FRESHNESS_POLICY)errors.push('unknown_media_freshness_policy');
  if(kernel?.schema_version!==EDITORIAL_KERNEL_VERSION)errors.push('unsupported_kernel_schema');
  if(!/^\d{4}-\d{2}-\d{2}$/.test(kernel?.brief_date||''))errors.push('valid_brief_date_required');
  if(!/^dab-edition-\d{4}-\d{2}-\d{2}$/.test(kernel?.edition_id||''))errors.push('valid_edition_id_required');
@@ -63,6 +65,7 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
  }
  const researchCutoffAt=metadataCandidates.cutoff;
  if(!Number.isFinite(Date.parse(researchCutoffAt||''))||!String(researchCutoffAt).startsWith(normalized.brief_date))throw Error('Verified same-date research cutoff required from metadata gate');
+ if(normalized.media_freshness_policy!=null)mediaReferenceTime({date:normalized.brief_date,cutoff:researchCutoffAt,policy:normalized.media_freshness_policy});
  const metadataById=new Map(metadataCandidates.candidates.map(item=>[item.candidate_id,item]));
  const currentFreshness=metadataCandidates.article_freshness_policy===ARTICLE_FRESHNESS_POLICY;
  if(metadataCandidates.article_freshness_policy&&![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(metadataCandidates.article_freshness_policy))throw Error('unknown_article_freshness_policy');
@@ -102,7 +105,7 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
   return {story_id:`dab-story-${normalized.brief_date}-${idSuffix}`,ordinal:story.canonical_ordinal,slug:storySlug,permanent_url:`/stories/${normalized.brief_date}/${storySlug}/`,focus:story.focus,headline:story.headline,event_date:fact.event_date,topics:[...story.topic_labels],companies:[...(fact.companies||[])],image:{path:image.path,public_url:publicImage,alt:image.alt,width:image.width||1200,height:image.height||630,kind:image.kind||'editorial_explainer',...(image.cache_key?{cache_key:image.cache_key}:{})},summary:story.summary,why_it_matters:story.why_it_matters,source:{title:fact.source.title,organization:fact.source.organization,url:story.source_url,normalized_url:story.source_url,publication_date:fact.source.publication_date??sourcePublishedAt.slice(0,10),evidence_type:fact.source.evidence_type,availability_status:fact.source.availability_status,...(sourceReading?{reading_evidence:sourceReading}:{})},freshness,selection_rationale:selectionRationale,novelty:fact.novelty?{...fact.novelty}:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:candidateScore,what_to_do_now:{...story.what_to_do_now},social_description:story.why_it_matters.slice(0,180),social:{title:story.headline,description:story.why_it_matters.slice(0,180),image_url:publicImage}};
  });
  const canonicalCoverage=`24-hour primary window ending at ${researchCutoffAt}${fallbackUsed?'; recency fallback used for reviewed items outside the primary window.':'.'}`;
- const base={schema_version:'1.0.0',...(currentFreshness?{article_freshness_policy:ARTICLE_FRESHNESS_POLICY}:{}),policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
+ const base={schema_version:'1.0.0',...(normalized.media_freshness_policy?{media_freshness_policy:normalized.media_freshness_policy}:{}),...(currentFreshness?{article_freshness_policy:ARTICLE_FRESHNESS_POLICY}:{}),policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
  if(normalized.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE){
   const publishablePodcasts=Array.isArray(media?.podcasts)?media.podcasts.filter(item=>item?.status==='included'):[];
   return {...base,podcasts:publishablePodcasts};

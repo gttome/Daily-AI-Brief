@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.8.0",
+  "schema_version": "1.9.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -594,5 +594,19 @@
     "semantic_receipt_pattern": "_records/qualification/YYYY-MM-DD-QN/semantic-receipt.json",
     "deterministic_result_pattern": "_records/qualification/YYYY-MM-DD-QN/result.json",
     "rule": "Qualification runs may be repeated intraday for stabilization. They never count as published editions, never update production novelty/history/current-edition state, and never merge or deploy to the production reader."
+  },
+  "media_freshness": {
+    "policy_id": "media-research-cutoff-v1",
+    "reference": "recorded research_cutoff_at, never edition-date midnight or execution wall clock",
+    "new_run_policy_identity_required": true,
+    "original_publication_timestamps_preserved": true,
+    "explicit_timestamp_and_timezone_required": true,
+    "video_max_age_hours": 72,
+    "podcast_primary_hours": 48,
+    "podcast_fallback_hours": 168,
+    "podcast_exception_hours": 720,
+    "historical_missing_policy": "retain legacy edition-date reference; do not relabel historical Q outcomes",
+    "age_duration_diversity_quality_limits_changed": false,
+    "selection_api": "Pass date, cutoff and policy explicitly to selectPodcasts; pass cutoff/policy options to selectVideo. Carry media_freshness_policy on the kernel into the canonical edition."
   }
 }
