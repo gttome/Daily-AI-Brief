@@ -1,0 +1,91 @@
+name: Q23 bounded media-only acquisition
+on:
+  push:
+    branches: [editorial-handoff/qualification/2026-09-28-Q23]
+    paths: [.github/workflows/q23-media-acquisition.yml]
+permissions:
+  contents: write
+concurrency:
+  group: q23-media-only-acquisition
+  cancel-in-progress: false
+jobs:
+  acquire-media-metadata:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Collect only registered active video and podcast catalogs
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import {retrieveSource,extractCandidateMetadata} from './_tools/discovery-links.mjs';
+          const runId='2026-09-28-Q23', dir='_records/qualification/'+runId+'/media-discovery';
+          const semanticPath='_records/qualification/'+runId+'/semantic-receipt.json';
+          const evidencePath='_records/discovery-preflight/result/article-evidence.json';
+          const semanticBytes=fs.readFileSync(semanticPath), evidenceBytes=fs.readFileSync(evidencePath);
+          const semantic=JSON.parse(semanticBytes), cutoff=Date.parse(semantic.cutoff);
+          if(process.env.GITHUB_REF_NAME!=='editorial-handoff/qualification/'+runId||semantic.run_id!==runId||semantic.baseline_sha!=='cad5da83752a36b6bd59f26e0800bbde7c7f7ef3')throw Error('qualification_identity_mismatch');
+          if(semantic.source_packet_frozen!==true||semantic.selection_completed!==true||!Number.isFinite(cutoff))throw Error('frozen_semantic_selection_required');
+          if(fs.existsSync(dir))throw Error('media_acquisition_already_recorded_no_rerun');
+          const blob=b=>crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+b.length+'\0'),b])).digest('hex');
+          if(blob(evidenceBytes)!=='ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df')throw Error('frozen_article_evidence_changed');
+          const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
+          const registry=JSON.parse(fs.readFileSync('_data/source-registry.json','utf8'));
+          const usable=registry.sources.filter(s=>s.status==='active'&&['video','podcast'].includes(s.format)&&s.discovery_endpoint);
+          const chosen=[...usable.filter(s=>s.format==='video').slice(0,10),...usable.filter(s=>s.format==='podcast').slice(0,5)];
+          const dedup=new Set(), plan=chosen.filter(s=>{if(dedup.has(s.discovery_endpoint))return false;dedup.add(s.discovery_endpoint);return true;});
+          const snapshots='/tmp/q23-media-source-snapshots'; fs.mkdirSync(snapshots,{recursive:true});
+          const observations=[], candidates=[];
+          for(const source of plan){
+            const lead=(source.publisher_linked_feed_leads||[]).find(u=>typeof u==='string'&&u.startsWith('https://')&&!/comments|podcasts\.google\.com/.test(u));
+            const endpoint=lead||source.discovery_endpoint;
+            const started=new Date().toISOString();
+            try{
+              const response=await retrieveSource(endpoint,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
+              const raw=String(response.text), hash=digest(raw), finalUrl=response.resolved_url||endpoint;
+              fs.writeFileSync(snapshots+'/'+hash+'.txt',raw);
+              const extracted=extractCandidateMetadata(raw,finalUrl,{...source,...(lead?{format:'rss'}:{})}).slice(0,100);
+              const maxHours=source.format==='video'?72:168;
+              const inWindow=extracted.filter(r=>{const p=Date.parse(r.published_at);return !r.date_conflict&&Number.isFinite(p)&&cutoff-p>=0&&cutoff-p<=maxHours*3600000;});
+              for(const r of inWindow){
+                const target=r.canonical_url||r.url; if(!target||candidates.some(c=>c.canonical_url===target))continue;
+                candidates.push({kind:source.format,source_id:source.source_id,publisher:source.owner||null,headline:r.headline,canonical_url:target,published_at:r.published_at,metadata_age_hours:(cutoff-Date.parse(r.published_at))/3600000,runtime_seconds:Number.isInteger(r.runtime_seconds)&&r.runtime_seconds>0?r.runtime_seconds:null,snippet:String(r.snippet||'').slice(0,500),source_endpoint:endpoint,source_content_sha256:hash,checked_at:started,status:'metadata_only_requires_identity_runtime_and_editorial_review',verified:false,editorial_pass:false});
+              }
+              observations.push({source_id:source.source_id,kind:source.format,endpoint,resolved_url:finalUrl,status:'retrieved',checked_at:started,source_content_sha256:hash,metadata_records:extracted.length,in_window_records:inWindow.length,maximum_age_hours:maxHours});
+            }catch(error){observations.push({source_id:source.source_id,kind:source.format,endpoint,status:'unavailable',checked_at:started,reason:String(error.message||error)});}
+          }
+          const sorted=kind=>candidates.filter(c=>c.kind===kind).sort((a,b)=>Date.parse(b.published_at)-Date.parse(a.published_at)||a.canonical_url.localeCompare(b.canonical_url));
+          const bounded=[...sorted('video').slice(0,20),...sorted('podcast').slice(0,12)].map((c,i)=>({candidate_id:'media-'+String(i+1).padStart(2,'0'),...c}));
+          const result={schema_version:'1.0.0',run_id:runId,cutoff:semantic.cutoff,execution_mode:'qualification_nonproduction',stage:'MEDIA_METADATA_ACQUIRED_NOT_READY',model_calls:0,article_retrievals:0,source_observations:observations,candidates:bounded,video_metadata_count:bounded.filter(c=>c.kind==='video').length,podcast_metadata_count:bounded.filter(c=>c.kind==='podcast').length,media_ready:false,selection_performed:false,raw_article_queue_opened:false,production_mutation:false,note:'Catalog acquisition is not a verified media selection. Missing dates, runtimes, identity, episode/content evidence, editorial fit, novelty and required source breadth remain gates. No media freshness or quality rule is relaxed.'};
+          fs.mkdirSync(dir,{recursive:true});
+          fs.writeFileSync(dir+'/candidates.json',JSON.stringify(result,null,2)+'\n');
+          fs.writeFileSync(dir+'/receipt.json',JSON.stringify({schema_version:'1.0.0',run_id:runId,workflow_run_id:Number(process.env.GITHUB_RUN_ID),request_commit:process.env.GITHUB_SHA,observed_at:new Date().toISOString(),model_calls:0,registered_sources_available:usable.length,sources_requested:plan.length,source_retrievals_success:observations.filter(s=>s.status==='retrieved').length,video_metadata_count:result.video_metadata_count,podcast_metadata_count:result.podcast_metadata_count,candidates_sha256:digest(fs.readFileSync(dir+'/candidates.json')),semantic_receipt_sha256:digest(semanticBytes),frozen_article_evidence_blob:blob(evidenceBytes),frozen_article_evidence_unchanged:fs.readFileSync(evidencePath).equals(evidenceBytes),semantic_receipt_unchanged:fs.readFileSync(semanticPath).equals(semanticBytes),media_ready:false,production_mutation:false},null,2)+'\n');
+          if(!fs.readFileSync(evidencePath).equals(evidenceBytes)||!fs.readFileSync(semanticPath).equals(semanticBytes))throw Error('completed_stage_mutated');
+          console.log(JSON.stringify({source_observations:observations,video_metadata_count:result.video_metadata_count,podcast_metadata_count:result.podcast_metadata_count,media_ready:false,model_calls:0,article_retrievals:0}));
+          NODE
+      - name: Persist only Q23 media-discovery records without a production action
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/editorial-handoff/qualification/2026-09-28-Q23 | cut -f1)" = "$GITHUB_SHA"
+          test -z "$(git diff --name-only)"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q23/media-discovery/
+          git commit -m 'Record bounded Q23 media catalog evidence without claiming readiness'
+          git push origin HEAD:refs/heads/editorial-handoff/qualification/2026-09-28-Q23
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q23-media-catalog-evidence
+          path: |
+            /tmp/q23-media-source-snapshots/
+            _records/qualification/2026-09-28-Q23/media-discovery/
+          retention-days: 14
+          if-no-files-found: error
