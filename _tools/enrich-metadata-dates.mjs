@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {parseArgs,normalizeUrl} from '../_generator/lib/util.mjs';
-import {retrieveSource,extractCandidateMetadata,publicationTimestamp} from './discovery-links.mjs';
+import {retrieveSource,extractCandidateMetadata,publicationDatePrecision,publicationTimestamp} from './discovery-links.mjs';
 
 const args=parseArgs(process.argv.slice(2));
 const input=path.resolve(args.input||'_data/media-candidate-queue.json');
@@ -45,7 +45,7 @@ const labeledDates=html=>{
  return {published,updated};
 };
 const exactPublicationTimestamp=value=>{
- if(typeof value!=='string'||!value.trim()||/^\d{4}-\d{2}-\d{2}$/.test(value.trim()))return null;
+ if(publicationDatePrecision(value)!=='instant')return null;
  return publicationTimestamp(value);
 };
 const structuredDates=html=>{
