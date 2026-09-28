@@ -1,0 +1,76 @@
+name: Q24 watchlist and book primary source capture
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-watchlist-book-source-capture.yml']
+permissions:
+  contents: write
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - name: Capture only reviewed watchlist and book sources
+        run: |
+          set -euo pipefail
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/watchlist-book-evidence/source-capture.json
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/video-selection.json)" = '02125e82d2246e512740cdb48d5d4f97a5bc41ce'
+          python3 - <<'PY'
+          import datetime,hashlib,html,json,os,pathlib,re,subprocess,urllib.request,urllib.error,urllib.parse
+          out=pathlib.Path('/tmp/q24-watchlist-book-sources');out.mkdir(parents=True,exist_ok=True)
+          sources=[('agensh','https://arxiv.org/abs/2609.26781v1'),('clm','https://raw.githubusercontent.com/Contrastive-LM/CLM/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7/README.md'),('clm-commit','https://api.github.com/repos/Contrastive-LM/CLM/commits/bb42c6c5bf914fd449bed2f6ca65be80602cb1f7'),('context','https://leanpub.com/reliable-context-engineering'),('reliable','https://leanpub.com/reliablegenerativeai'),('prompt-guide','https://leanpub.com/genaipromptingguide'),('learning','https://leanpub.com/GenAILearn')]
+          outcomes=[]
+          def capture(key,url):
+              row={'source_id':key,'requested_url':url,'checked_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'attempts':1}
+              try:
+                  req=urllib.request.Request(url,headers={'User-Agent':'Daily-AI-Brief-Q24-evidence/1.0','Accept':'text/html,application/json,application/pdf,text/plain'})
+                  with urllib.request.urlopen(req,timeout=30) as r:
+                      data=r.read(5000001);row.update(http_status=r.status,final_url=r.url,content_type=r.headers.get('Content-Type',''))
+                  if len(data)>5000000:raise ValueError('bounded_source_size_exceeded')
+                  binary='application/pdf' in row['content_type'] or data.startswith(b'%PDF')
+                  path=out/(key+('.pdf' if binary else '.txt'));path.write_bytes(data)
+                  row.update(status='captured',bytes=len(data),sha256=hashlib.sha256(data).hexdigest(),artifact_file=path.name)
+                  if binary:
+                      if subprocess.run(['which','pdftotext'],capture_output=True).returncode==0:
+                          subprocess.run(['pdftotext','-layout',str(path),str(out/(key+'-extracted.txt'))],check=True)
+                          text=(out/(key+'-extracted.txt')).read_bytes();row['extracted_text_file']=key+'-extracted.txt';row['extracted_text_sha256']=hashlib.sha256(text).hexdigest();row['extraction_method']='pdftotext -layout'
+                      else:row['extraction_status']='pdftotext_unavailable'
+                  return row,data
+              except Exception as e:
+                  row.update(status='unavailable',error=str(e));return row,b''
+          for key,url in sources:
+              row,data=capture(key,url);outcomes.append(row)
+              if key in ('prompt-guide','learning') and row['status']=='captured':
+                  text=data.decode('utf-8',errors='replace')
+                  links=[html.unescape(x) for x in re.findall(r'href=[\"\x27]([^\"\x27]+)',text) if 'samples.leanpub.com/' in x and '-sample.pdf' in x]
+                  if links:
+                      sample_url=urllib.parse.urljoin(url,links[0]);host=urllib.parse.urlparse(sample_url).hostname
+                      if host=='s3.amazonaws.com' or host=='samples.leanpub.com':
+                          sample,_=capture(key+'-sample',sample_url);sample['discovered_from']=url;outcomes.append(sample)
+                      else:outcomes.append({'source_id':key+'-sample','status':'unavailable','error':'sample_host_not_allowlisted'})
+                  else:outcomes.append({'source_id':key+'-sample','status':'unavailable','error':'sample_link_not_found_in_captured_publisher_page'})
+          record={'schema_version':'1.0.0','qualification_id':'2026-09-28-Q24','cutoff':'2026-09-28T20:04:36Z','baseline_sha':'1def5c4ba158247a9c02106dc4e4820d80a7133d','workflow_run_id':os.environ['GITHUB_RUN_ID'],'execution_commit':os.environ['GITHUB_SHA'],'status':'ACQUISITION_ONLY_REVIEW_REQUIRED','outcomes':outcomes,'new_article_requests':0,'new_media_requests':0,'model_api_calls':0,'qualification_terminal':False,'note':'Response-body byte hashes. No retries or challenge bypass. Successful transport is not content approval. arXiv v1 and pinned pre-cutoff CLM README preserve original evidence; current book catalog/sample availability is checked now, not represented as new news.'}
+          dest=pathlib.Path('_records/qualification/2026-09-28-Q24/watchlist-book-evidence/source-capture.json');dest.write_text(json.dumps(record,indent=2)+'\n');(out/'source-capture.json').write_text(dest.read_text())
+          print(json.dumps(record,indent=2))
+          PY
+      - name: Persist capture outcomes without editorial approval
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/watchlist-book-evidence/source-capture.json
+          git commit -m 'Preserve bounded Q24 watchlist and book capture outcomes; review pending'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-watchlist-book-primary-sources
+          path: /tmp/q24-watchlist-book-sources/
+          retention-days: 14
+          if-no-files-found: error
