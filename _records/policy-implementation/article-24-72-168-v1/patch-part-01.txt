@@ -1,0 +1,176 @@
+diff --git a/.github/workflows/under80-discovery-preflight.yml b/.github/workflows/under80-discovery-preflight.yml
+index 89f3e78..10a6406 100644
+--- a/.github/workflows/under80-discovery-preflight.yml
++++ b/.github/workflows/under80-discovery-preflight.yml
+@@ -79 +79 @@ jobs:
+-          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',purpose:'daily_pre_work_discovery',edition_date:date,cutoff,source_scan_max:48,fresh_metadata_target:24},null,2)+'\n');
++          process.stdout.write(JSON.stringify({schema_version:'1.0.0',profile_id:'under80-v1',purpose:'daily_pre_work_discovery',article_freshness_policy:'article-24-72-168-v1',edition_date:date,cutoff,source_scan_max:48,fresh_metadata_target:24},null,2)+'\n');
+@@ -159 +159 @@ jobs:
+-          extra=()
++          extra=(--article-freshness-policy article-24-72-168-v1 --ordinary-max-age-hours 168 --skill-max-age-hours 168)
+diff --git a/.github/workflows/under80-metadata-preflight.yml b/.github/workflows/under80-metadata-preflight.yml
+index e570d50..eb69381 100644
+--- a/.github/workflows/under80-metadata-preflight.yml
++++ b/.github/workflows/under80-metadata-preflight.yml
+@@ -101 +101 @@ jobs:
+-          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:x.date,cutoff:x.cutoff,execution_mode:'production',metadata_candidate_limit:20,ordinary_max_age_hours:72,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+x.date},null,2));
++          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:x.date,cutoff:x.cutoff,execution_mode:'production',metadata_candidate_limit:20,article_freshness_policy:'article-24-72-168-v1',ordinary_max_age_hours:168,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+x.date},null,2));
+@@ -113 +113 @@ jobs:
+-          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:date,cutoff,execution_mode:mode,metadata_candidate_limit:20,ordinary_max_age_hours:72,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+date},null,2));
++          console.log(JSON.stringify({schema_version:'1.0.0',edition_date:date,cutoff,execution_mode:mode,metadata_candidate_limit:20,article_freshness_policy:'article-24-72-168-v1',ordinary_max_age_hours:168,agent_skills_max_age_hours:168,output_dir:'_records/preflight/'+date},null,2));
+diff --git a/_data/preflight-source-plan.json b/_data/preflight-source-plan.json
+index 081909f..21abbc1 100644
+--- a/_data/preflight-source-plan.json
++++ b/_data/preflight-source-plan.json
+@@ -450,0 +451,34 @@
++    },
++    {
++      "source_id": "n8n-rss",
++      "owner": "n8n",
++      "canonical_url": "https://blog.n8n.io/",
++      "discovery_endpoint": "https://blog.n8n.io/rss/",
++      "format": "rss",
++      "evidence_class": "publisher_authored",
++      "focus_hint": "agents_non_technical_people",
++      "status": "active",
++      "verification": {
++        "policy_change": "article-24-72-168-v1",
++        "evidence_workflow": "36450645680",
++        "checked_at": "2026-09-28T16:23:27.848Z",
++        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
++        "limitation": "D05 dated samples are older than seven days; apply live freshness and novelty gates."
++      }
++    },
++    {
++      "source_id": "notion-releases-rss",
++      "owner": "Notion",
++      "canonical_url": "https://www.notion.com/releases",
++      "discovery_endpoint": "https://www.notion.com/releases/rss.xml",
++      "format": "rss",
++      "evidence_class": "publisher_authored",
++      "focus_hint": "agents_non_technical_people",
++      "status": "active",
++      "verification": {
++        "policy_change": "article-24-72-168-v1",
++        "evidence_workflow": "36453175805",
++        "checked_at": "2026-09-28T16:44:33.903Z",
++        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
++        "limitation": "Explicit GMT+0000 publication dates with a parenthetical UTC name; captured latest entry September 15 is outside seven days."
++      }
+diff --git a/_data/source-registry.json b/_data/source-registry.json
+index 51909e5..6a62747 100644
+--- a/_data/source-registry.json
++++ b/_data/source-registry.json
+@@ -498 +498 @@
+-      "access_limitations": "HTTP 200; insufficient usable catalog",
++      "access_limitations": "D05 saved feed https://blog.adobe.com/feed.xml returned HTTP 404; not operational.",
+@@ -508 +508 @@
+-      "format": "article",
++      "format": "rss",
+@@ -520 +520 @@
+-      "discovery_endpoint": null,
++      "discovery_endpoint": "https://www.notion.com/releases/rss.xml",
+@@ -522,2 +522,9 @@
+-      "status": "pending_validation",
+-      "access_limitations": "HTTPError"
++      "status": "active",
++      "access_limitations": "Dated RSS extraction verified; no guaranteed fresh yield.",
++      "verification": {
++        "policy_change": "article-24-72-168-v1",
++        "evidence_workflow": "36453175805",
++        "checked_at": "2026-09-28T16:44:33.903Z",
++        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
++        "limitation": "Explicit GMT+0000 publication dates with a parenthetical UTC name; captured latest entry September 15 is outside seven days."
++      }
+@@ -566,2 +573,2 @@
+-      "status": "pending_validation",
+-      "access_limitations": "HTTPError"
++      "status": "retrieval_limited",
++      "access_limitations": "D05 automated collector returned HTTP 403; no bypass or operational-feed claim."
+@@ -612,2 +619,2 @@
+-      "status": "pending_validation",
+-      "access_limitations": "HTTPError"
++      "status": "retrieval_limited",
++      "access_limitations": "D05 catalog links retrieved; sampled article dates unresolved. Not story-ready supply."
+@@ -978,0 +986,27 @@
++    },
++    {
++      "source_id": "n8n-rss",
++      "owner": "n8n",
++      "canonical_url": "https://blog.n8n.io/",
++      "discovery_endpoint": "https://blog.n8n.io/rss/",
++      "format": "rss",
++      "evidence_class": "publisher_authored",
++      "focus_hint": "agents_non_technical_people",
++      "status": "active",
++      "verification": {
++        "policy_change": "article-24-72-168-v1",
++        "evidence_workflow": "36450645680",
++        "checked_at": "2026-09-28T16:23:27.848Z",
++        "scope": "feed transport and publication-date extraction, not guaranteed current article yield",
++        "limitation": "D05 dated samples are older than seven days; apply live freshness and novelty gates."
++      },
++      "audience": [
++        "knowledge_worker"
++      ],
++      "focus_tags": [
++        "agents",
++        "knowledge_work"
++      ],
++      "expected_cadence": "varies",
++      "last_successful_retrieval": null,
++      "candidate_yield": null
+diff --git a/_generator/lib/article-freshness.mjs b/_generator/lib/article-freshness.mjs
+new file mode 100644
+index 0000000..c453674
+--- /dev/null
++++ b/_generator/lib/article-freshness.mjs
+@@ -0,0 +1,35 @@
++// Article-only policy. Historical artifacts with no policy identity keep their original ceilings.
++export const ARTICLE_FRESHNESS_POLICY='article-24-72-168-v1';
++export const LEGACY_ARTICLE_FRESHNESS_POLICY='article-24-72-skills168-v1';
++export const ARTICLE_PRIMARY_HOURS=24;
++export const ARTICLE_NORMAL_FALLBACK_HOURS=72;
++export const ARTICLE_EXTENDED_FALLBACK_HOURS=168;
++const stamp=value=>typeof value==='string'&&value.trim()?Date.parse(value):NaN;
++export function articleFreshness(publishedAt,cutoff,{policy=ARTICLE_FRESHNESS_POLICY,agentSkill=false}={}){
++ if(![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(policy))throw Error('unknown_article_freshness_policy');
++ const published=stamp(publishedAt),now=stamp(cutoff),age=(now-published)/3600000;
++ const max=policy===ARTICLE_FRESHNESS_POLICY||agentSkill?ARTICLE_EXTENDED_FALLBACK_HOURS:ARTICLE_NORMAL_FALLBACK_HOURS;
++ if(!Number.isFinite(age)||age<0||age>max)return null;
++ return {tier:age<=24?'primary':'fallback',fallback_band:age<=24?null:age<=72?'normal':'extended',age_hours:age};
++}
++export function compareArticleFreshness(a,b,cutoff){
++ const rank=x=>{const f=articleFreshness(x.published_at,cutoff);return !f?3:f.tier==='primary'?0:f.fallback_band==='normal'?1:2;};
++ return rank(a)-rank(b);
++}
++export function articleFallbackLabel(f){return f?.fallback_band==='extended'?'Extended recency fallback':'Recency fallback';}
++export function balancedArticleEvidencePlan(gate){
++ const focuses=['technical_ai_engineering','applied_genai_knowledge_workers','agents_non_technical_people'];
++ const preferred=gate.preferred_agent_skill_candidate_id||gate.candidates.find(x=>x.agent_skill_story_ready)?.candidate_id;
++ if(!preferred)throw Error('preferred_agent_skill_candidate_required');
++ const plan=[];
++ for(const focus of focuses){
++  const pool=gate.candidates.filter(x=>x.focus_hint===focus&&x.background_only!==true&&x.production_novelty_eligible!==false&&(gate.article_freshness_policy!==ARTICLE_FRESHNESS_POLICY||articleFreshness(x.published_at,gate.cutoff))).sort((a,b)=>(gate.article_freshness_policy===ARTICLE_FRESHNESS_POLICY?compareArticleFreshness(a,b,gate.cutoff):0)||(b.prefilter_score||0)-(a.prefilter_score||0)||String(a.candidate_id).localeCompare(String(b.candidate_id)));
++  if(focus==='agents_non_technical_people'){
++   const skill=pool.find(x=>x.candidate_id===preferred);
++   if(!skill)throw Error('preferred_agent_skill_candidate_not_in_agent_focus');
++   plan.push(skill,...pool.filter(x=>x!==skill).slice(0,2));
++  }else plan.push(...pool.slice(0,3));
++ }
++ if(plan.length!==9||focuses.some(f=>plan.filter(x=>x.focus_hint===f).length!==3))throw Error('nine_candidate_balanced_review_plan_required');
++ return plan;
++}
+diff --git a/_generator/lib/editorial-kernel.mjs b/_generator/lib/editorial-kernel.mjs
+index 7ed77d2..094cfd0 100644
+--- a/_generator/lib/editorial-kernel.mjs
++++ b/_generator/lib/editorial-kernel.mjs
+@@ -0,0 +1 @@
++import {ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY,articleFreshness} from './article-freshness.mjs';
+@@ -65,0 +67,2 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
++ const currentFreshness=metadataCandidates.article_freshness_policy===ARTICLE_FRESHNESS_POLICY;
++ if(metadataCandidates.article_freshness_policy&&![ARTICLE_FRESHNESS_POLICY,LEGACY_ARTICLE_FRESHNESS_POLICY].includes(metadataCandidates.article_freshness_policy))throw Error('unknown_article_freshness_policy');
+@@ -74 +77 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
+-  const sourcePublishedAt=metadata.published_at||metadata.metadata_event_at;
++  const sourcePublishedAt=currentFreshness?metadata.published_at:metadata.published_at||metadata.metadata_event_at;
+@@ -77,0 +81,2 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
