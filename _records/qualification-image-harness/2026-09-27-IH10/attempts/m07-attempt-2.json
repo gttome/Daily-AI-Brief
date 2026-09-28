@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.1.0",
+  "harness_id": "2026-09-27-IH10",
+  "candidate_id": "m07",
+  "attempt": 2,
+  "baseline_main_sha": "79151273117f9b81182fde606ab650887bbed448",
+  "states": [
+    "PACKET_READY",
+    "WORKER_STARTED",
+    "IMAGE_GENERATED",
+    "DURABLE_LIBRARY_CAPTURED",
+    "WORKER_EXITED",
+    "RAW_FILE_MATERIALIZED",
+    "SUBJECT_LINEAGE_PASS",
+    "FACTUAL_SUPPORT_PASS",
+    "STRUCTURAL_QUALITY_PASS",
+    "EDITORIAL_QUALITY_PASS"
+  ],
+  "image_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
+  "rematerialized_sha256": "28ddc8b87620e4ad4e53003717fcd0fe6edea9c332c806b88ee5e0ef6dad4fbe",
+  "width": 1536,
+  "height": 1024,
+  "size_bytes": 1939308,
+  "mime_type": "image/png",
+  "library_file_id": "libfile_00417bbc0fdc81919cd0a7d8ecf7e5b1",
+  "library_path": "/Daily AI Brief Qualification Images/m07/IH10-m07-attempt-2.png",
+  "review": {
+    "subject_lineage": {
+      "pass": true,
+      "evidence": "Image clearly depicts Microsoft Copilot Managed Runtime inside the Microsoft 365 Tenant Boundary with IT Governance, Enterprise Code Execution, Sharing, Live Data Connections, and Apps. No harness/status/Q/publication contamination is visible."
+    },
+    "factual_support": {
+      "pass": true,
+      "evidence": "The specific branded app endpoints from attempt 1 are removed. The Apps panel now uses generic unlabeled application symbols, matching the sealed claim of easy access to users' apps without inventing named app identities. All visible labels correspond to the essential m07 labels."
+    },
+    "structural_quality": {
+      "pass": true,
+      "evidence": "Layered architecture is explicit and coherent: Microsoft 365 tenant boundary contains governed runtime/code execution, with governance above and sharing/live-data/apps paths below."
+    },
+    "editorial_quality": {
+      "pass": true,
+      "evidence": "Professional white-background textbook/editorial architecture with strong hierarchy, readable labels, consistent iconography, and sufficient story-specific detail."
+    }
+  },
+  "first_failed_gate": null,
+  "remaining_gate": "EXACT_GIT_BLOB_PERSISTED",
+  "accepted_locked": false,
+  "fallback": false,
+  "cross_story_contamination": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0
+}
