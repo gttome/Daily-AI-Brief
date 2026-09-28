@@ -1,0 +1,136 @@
+name: Q24 bounded video catalog resolution
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-28-Q24']
+    paths: ['.github/workflows/q24-video-catalog-resolution.yml']
+permissions:
+  contents: write
+concurrency:
+  group: q24-video-catalog-resolution
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 7
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Guard frozen inputs and capture five new catalog endpoints once
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test ! -f _records/qualification/2026-09-28-Q24/result.json
+          test ! -f _records/qualification/2026-09-28-Q24/media-evidence/video-catalog-resolution.json
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import crypto from 'node:crypto';
+          import {retrieveSource} from './_tools/discovery-links.mjs';
+          const request=JSON.parse(fs.readFileSync('_records/discovery-preflight/request.json','utf8'));
+          if(request.qualification_run_id!=='2026-09-28-Q24'||request.cutoff!=='2026-09-28T20:04:36Z'||request.baseline_sha!=='1def5c4ba158247a9c02106dc4e4820d80a7133d'||request.media_freshness_policy!=='media-research-cutoff-v1')throw Error('Q24_binding_changed');
+          const root='/tmp/q24-video-catalogs';fs.mkdirSync(root,{recursive:true});
+          const seeds=[
+            {id:'ibm-media-center',url:'https://mediacenter.ibm.com/',basis:'Independent IBM-owned public catalog',authority:'publisher'},
+            {id:'microsoft-ai-show',url:'https://learn.microsoft.com/en-us/shows/ai-show/',basis:'Microsoft-owned AI Show catalog',authority:'publisher'},
+            {id:'microsoft-mechanics',url:'https://learn.microsoft.com/en-us/shows/microsoft-mechanics/',basis:'Microsoft-owned show route; availability not assumed',authority:'publisher'},
+            {id:'ibm-channel-catalog',url:'https://www.youtube.com/@IBMTechnology/videos',basis:'Public publisher channel catalog; no challenged watch endpoint requested',authority:'publisher_distribution'},
+            {id:'ibm-secondary-leads',url:'https://www.creatorwatchr.com/channel/ibm-technology',basis:'Search-discovered index; identity leads only, never selection evidence',authority:'secondary_lead_only'}
+          ];
+          const observations=[];
+          for(const seed of seeds){
+            try{
+              const response=await retrieveSource(seed.url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});
+              const file=seed.id+'.html';fs.writeFileSync(root+'/'+file,response.text,{flag:'wx'});
+              const blocked=/sign in to confirm you.re not a bot|verify you are human|unusual traffic from your computer/i.test(response.text);
+              observations.push({...seed,status:blocked?'access_challenge':'retrieved',resolved_url:response.url,checked_at:new Date().toISOString(),source_sha256:crypto.createHash('sha256').update(response.text).digest('hex'),hash_scope:'UTF-8 retrieved response text',source_chars:response.text.length,artifact_file:file,selection_evidence:false});
+            }catch(error){observations.push({...seed,status:'unavailable',checked_at:new Date().toISOString(),reason:String(error.message),selection_evidence:false});}
+          }
+          fs.writeFileSync(root+'/observations.json',JSON.stringify(observations,null,2)+'\n',{flag:'wx'});
+          NODE
+      - name: Extract publisher links and explicit metadata without approving candidates
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          from urllib.parse import urljoin
+          import json,hashlib,re,os
+          class Catalog(HTMLParser):
+              def __init__(self):
+                  super().__init__();self.links=[];self.feeds=[];self.meta=[];self.script_sources=[];self.scripts=[];self.anchor=None;self.script=None
+              def handle_starttag(self,tag,attrs):
+                  a=dict(attrs)
+                  if tag=='a' and a.get('href'): self.anchor={'href':a['href'],'text':''}
+                  if tag=='link' and a.get('href') and ('alternate' in a.get('rel','') or 'rss' in a.get('type','') or 'atom' in a.get('type','')): self.feeds.append(a)
+                  if tag=='meta' and a.get('content'): self.meta.append(a)
+                  if tag=='script':
+                      self.script={'attrs':a,'text':''}
+                      if a.get('src'): self.script_sources.append(a['src'])
+              def handle_data(self,data):
+                  if self.anchor is not None:self.anchor['text']+=data
+                  if self.script is not None:self.script['text']+=data
+              def handle_endtag(self,tag):
+                  if tag=='a' and self.anchor is not None:
+                      self.anchor['text']=' '.join(self.anchor['text'].split());self.links.append(self.anchor);self.anchor=None
+                  if tag=='script' and self.script is not None:self.scripts.append(self.script);self.script=None
+          root=Path('/tmp/q24-video-catalogs');observations=json.loads((root/'observations.json').read_text());projections=[]
+          for observation in observations:
+              if observation['status']!='retrieved':continue
+              raw=(root/observation['artifact_file']).read_bytes()
+              assert hashlib.sha256(raw).hexdigest()==observation['source_sha256']
+              parser=Catalog();parser.feed(raw.decode('utf8'));jsonld=[];youtube=[];embedded=[]
+              def walk(obj):
+                  if isinstance(obj,dict):
+                      for key,value in obj.items():
+                          if key in ('videoRenderer','gridVideoRenderer') and isinstance(value,dict): youtube.append(value)
+                          walk(value)
+                  elif isinstance(obj,list):
+                      for value in obj:walk(value)
+              for script in parser.scripts:
+                  if script['attrs'].get('type')=='application/ld+json':
+                      try:jsonld.append(json.loads(script['text']))
+                      except ValueError:pass
+                  for match in re.finditer(r'(?:var\s+)?ytInitialData\s*=\s*',script['text']):
+                      try:obj,_=json.JSONDecoder().raw_decode(script['text'][match.end():]);walk(obj)
+                      except ValueError:pass
+                  if script['attrs'].get('type')=='application/json' and len(script['text'])<250000:
+                      try:embedded.append({'attrs':script['attrs'],'data':json.loads(script['text'])})
+                      except ValueError:pass
+              links=[{**link,'url':urljoin(observation['resolved_url'],link['href'])} for link in parser.links]
+              projections.append({'source_id':observation['id'],'authority':observation['authority'],'source_sha256':observation['source_sha256'],'links':links[:250],'alternate_feeds':parser.feeds,'metadata':parser.meta,'script_sources':parser.script_sources,'jsonld':jsonld,'embedded_json':embedded,'youtube_catalog_records':youtube[:20],'original_upload_times_verified':False,'editorial_review_complete':False})
+          request=json.loads(Path('_records/discovery-preflight/request.json').read_text())
+          history=[]
+          for path in sorted(Path('_data/editions').glob('????-??-??.json')):
+              if path.stem>=request['edition_date']:continue
+              edition=json.loads(path.read_text())
+              history.append({'edition_date':path.stem,'videos':edition.get('videos',[]),'source_sha256':hashlib.sha256(path.read_bytes()).hexdigest()})
+          (root/'catalog-projections.json').write_text(json.dumps(projections,indent=2)+'\n')
+          (root/'prior-video-history.json').write_text(json.dumps(history,indent=2)+'\n')
+          result={'schema_version':'1.0.0','run_id':'2026-09-28-Q24','cutoff':request['cutoff'],'baseline_sha':request['baseline_sha'],'article_freshness_policy':'article-24-72-168-v1','media_freshness_policy':request['media_freshness_policy'],'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'execution_commit':os.environ['GITHUB_SHA'],'new_catalog_endpoints_requested':len(observations),'challenged_watch_endpoints_requested':0,'article_retrievals':0,'podcast_retrievals':0,'model_calls':0,'observations':observations,'projection_file':'catalog-projections.json','projection_sha256':hashlib.sha256((root/'catalog-projections.json').read_bytes()).hexdigest(),'prior_video_history_sha256':hashlib.sha256((root/'prior-video-history.json').read_bytes()).hexdigest(),'prior_video_history_editions':len(history),'historical_catalogs_reused_as_leads':{'workflow_run_id':36474146347,'artifact_id':10991834733,'artifact_sha256':'93ae6c4c2a10f6ed264041c84ec069d2fd9c1ebf348b4e8ba0abcee5fa55b4ad','sources':['matt-wolfe-catalog','kevin-stratvert-catalog','jeff-su-catalog'],'approval_reused':False},'video_selection_validated':False,'media_ready':False,'zero_video_exception_established':False,'production_mutation':False,'frozen_article_and_podcast_components_unchanged':True}
+          out=Path('_records/qualification/2026-09-28-Q24/media-evidence/video-catalog-resolution.json')
+          with out.open('x') as stream:stream.write(json.dumps(result,indent=2)+'\n')
+          print(json.dumps(result,indent=2))
+          PY
+      - name: Commit only new Q24 catalog evidence if branch has not moved
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 'ce5caea8a690b2a92b1298f5f0e7cf85fa97d7df'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/semantic-receipt.json)" = 'fc459b45af230f8b3d9142a7f951510b9a8475f7'
+          test "$(git hash-object _records/qualification/2026-09-28-Q24/media-evidence/podcast-selection.json)" = '0255cbdca2e89ebb4c2b20672103dee517056930'
+          test "$(git ls-remote origin refs/heads/$GITHUB_REF_NAME | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-28-Q24/media-evidence/video-catalog-resolution.json
+          git commit -m 'Record bounded Q24 video catalog evidence without approving media'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
+        with:
+          name: q24-video-catalog-resolution
+          path: |
+            /tmp/q24-video-catalogs/
+            _records/qualification/2026-09-28-Q24/media-evidence/video-catalog-resolution.json
+          retention-days: 14
+          if-no-files-found: error
