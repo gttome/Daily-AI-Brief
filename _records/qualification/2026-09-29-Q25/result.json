@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "failed_stage": "IMAGES_READY",
+  "failure_code": "CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF",
+  "observed_at": "2026-09-29T15:49:00Z",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "selected_candidate_ids": [
+    "m02",
+    "m03",
+    "m05",
+    "m06",
+    "m01",
+    "m09"
+  ],
+  "source_packet_frozen": true,
+  "discovery_rerun": false,
+  "article_evidence_rerun": false,
+  "semantic_pass_count": 1,
+  "completed_components": {
+    "discovery": "pass",
+    "semantic_selection": "pass",
+    "podcast_selection": "pass",
+    "video_selection": "pass",
+    "watchlist_book_review": "reviewed_pending_independent_component_validation"
+  },
+  "media": {
+    "podcasts_validated": 2,
+    "videos_validated": 2,
+    "media_ready_kernel": false
+  },
+  "images": {
+    "result_handoff_capability": "blocked",
+    "q25_attempts_allocated": 0,
+    "accepted_locked_count": 0,
+    "failure_evidence_path": "_records/qualification/2026-09-29-Q25/image-result-handoff-capability.json"
+  },
+  "root_cause": "The released PR #289 preflight correctly prevented Q25 from allocating native image attempts because the supervising execution context still cannot prove a scheduled image-only task's observable invocation identity, recover its native generation/result identifier, and recover the exact output bytes from that same task through supported automation/conversation/Files/Library surfaces.",
+  "preserved_valid_evidence": [
+    "Discovery workflow 36580938204 remains PASS and frozen.",
+    "Single semantic selection remains PASS and independently validated by workflow 36586059300.",
+    "Two-podcast component remains PASS via workflow 36589099491.",
+    "Two-video component remains PASS via workflow 36590746801.",
+    "Q25 Watchlist/book editorial review remains preserved for diagnostic and future hardening reference.",
+    "No Q25 image attempt was consumed and no image was accepted or rejected."
+  ],
+  "demonstrated_defect": "Scheduled native image task output is not exposed through a supervisor-recoverable result channel with task/result identity binding and exact bytes.",
+  "full_qualification_pass": false,
+  "final_handoff_completed": false,
+  "production_mutation": false,
+  "rerun_prohibited": true,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "next_smallest_correction": "Provide a supported execution-host result bridge that exposes scheduled task invocation identity, native image result identity and exact output bytes to the qualification supervisor without owner upload, manual review, new credentials, Work, Codex or paid-model APIs; add regression coverage, protected CI and normal merge, then start the next unused fresh qualification identity. Do not repair Q25 into PASS."
+}
