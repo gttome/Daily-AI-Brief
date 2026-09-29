@@ -13,7 +13,7 @@ function writeExact(file, text) {
   fs.writeFileSync(file, text, {flag: 'wx'});
 }
 try {
-  const {positionals,values:v} = parseArgs({allowPositionals:true,options:{execution:{type:'string'},out:{type:'string'},delivery:{type:'string'},prompt:{type:'string'},attempts:{type:'string'}}});
+  const {positionals,values:v} = parseArgs({allowPositionals:true,options:{execution:{type:'string'},out:{type:'string'},delivery:{type:'string'},prompt:{type:'string'},attempts:{type:'string'},capability:{type:'string'}}});
   if (!v.execution) throw Error('--execution required');
   const e = read(v.execution);
   if (positionals[0] === 'prepare') {
@@ -26,6 +26,6 @@ try {
     console.log(JSON.stringify(assertNativeImageTaskPrompt(fs.readFileSync(v.prompt,'utf8'),read(v.delivery),e)));
   } else if (positionals[0] === 'plan') {
     if (!v.attempts) throw Error('--attempts required');
-    console.log(JSON.stringify(planNativeImageContinuation(e,read(v.attempts))));
+    console.log(JSON.stringify(planNativeImageContinuation(e,read(v.attempts),v.capability?read(v.capability):null)));
   } else throw Error('Use prepare, validate-task or plan');
 } catch (error) { console.error(error.message); process.exitCode=1; }

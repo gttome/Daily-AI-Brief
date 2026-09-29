@@ -1253,3 +1253,16 @@ This disposition **does not assert that native generation succeeded or failed**.
 
 The live motivating incident is Q24 m03 attempt 1: task `6abb3052c5348191a3e69437b9d95fb0` has an observed scheduler invocation but no recoverable image, native result identifier, response payload or explicit failure after supported recovery checks. The new rule is not applied to that attempt until its implementation passes protected CI and merges to `main`; Q24's completed m04 and all frozen upstream evidence remain untouched.
 
+
+
+## 2026-09-29 — Image-task administration failure and result-handoff preflight
+
+Q24 demonstrated a control-plane failure rather than an editorial or image-quality failure. Four correctly bound visual-only image tasks for candidate `m03` were positively observed by the scheduler, but their generated attachment/result was not exposed through any supported recovery surface available to the qualification supervisor. The supervisor could therefore observe task invocation while remaining unable to capture, review, hash, persist or accept the native bytes. Q24 exhausted the bounded four-attempt budget and must remain terminal FAIL; it must never be repaired into PASS or given a fifth attempt.
+
+Permanent operating rule: **do not allocate a native image task until the execution environment has proved its result-handoff capability.** The planner now requires a versioned capability receipt showing that task invocation is observable, a native result is recoverable, exact output bytes are recoverable by the supervising context, a real verification timestamp exists, and durable evidence identifies the verified bridge. Without that proof the planner returns `CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF` before attempt 1, rather than consuming attempts that can never become acceptance evidence. The same preflight is required again before any later attempt allocation.
+
+This is not a quality relaxation and does not make an opaque task result acceptable. Existing raw/final byte equality, Git read-back, subject/factual/professional review, six-image differentiation, attempt limits and accepted-lock gates remain unchanged. A foreground/manual image may be used only in an explicitly manual-assisted publication recovery and must not be represented as unattended qualification proof.
+
+The administration layer also showed a separate liveness defect: the long-running publication supervisor repeatedly became disabled before the mission was complete. The active controller is now scheduled as an exact hourly task and a separate administration-only keeper re-enables that same controller if it is found disabled. The keeper never performs publication work or starts a competing executor.
+
+Operational consequence: future fresh qualification identities must fail fast on an unverified image-result bridge, harden the bridge first, and only then spend image attempts. This prevents another Q from losing hours to invisible worker outputs while preserving all valid upstream checkpoints.

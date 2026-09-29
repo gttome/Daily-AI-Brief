@@ -1,5 +1,20 @@
 # Daily AI Brief — Current Operations Entry Point
 
+## September 29, 2026 — Native image result-handoff preflight
+
+> [!IMPORTANT]
+> Q24 proved that scheduler invocation visibility is not the same as recoverable native image output. Four m03 tasks were invoked but no native image/result/attachment became observable to the qualification supervisor through supported task history, conversation/context, Files or Library recovery. Q24 therefore fails closed at `IMAGES_READY`; do not add a fifth attempt or repair Q24 into PASS.
+
+Before any future native image attempt is allocated, the planner must receive a versioned result-handoff capability receipt proving all of the following: task invocation is observable; the native result identity is recoverable; the exact output bytes are recoverable by the supervising execution context; the verification has a real timestamp; and durable evidence identifies the proven bridge. Without that receipt, the planner returns `CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF` before consuming an attempt.
+
+This rule preserves every existing quality and byte gate. It is an administration/liveness correction, not permission to accept an opaque task, a manual upload, or an unreviewed image as unattended proof. Manual-assisted emergency publication recovery must be labeled as such and cannot satisfy unattended qualification.
+
+The long-running publication controller is also externally guarded against silent self-disable. Controller liveness does not count as publication progress; only durable branch/workflow/lifecycle evidence does.
+
+The normal binary image route remains `connector-first-v1`. Complete binary payload delivery to the authenticated connector is still required; where the execution host cannot deliver the complete image bytes, record `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`. A current denial stops that operation; do not route around it. This result-handoff preflight does not alter **all V2 raw/final provenance** requirements, exact-byte read-back, review, differentiation, or acceptance gates.
+
+---
+
 ## September 28, 2026 — Connector-first image transport parity
 
 > [!IMPORTANT]
