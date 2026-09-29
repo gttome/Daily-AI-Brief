@@ -1,5 +1,16 @@
 # Daily Generative AI Brief
 
+## September 28, 2026 — One-operation image file transfer
+
+Use `github-image-file-transfer-v1` for permitted image uploads from an authenticated file-capable host. The shared `transferImageFile` function, `_tools/github-image-transfer.mjs` and `.github/actions/transfer-image` take an actual local PNG/WebP, perform one Contents API write and verify raw bytes at the returned immutable commit. Base64 stays inside executable code; no per-image text bridges, bespoke workflow or owner upload. Identical existing bytes are verified and reused without another write; different bytes, protected branches, unsafe paths, denials and uncertain writes fail closed. Keep one writer per handoff branch.
+
+A verified transfer is not image acceptance. All V2 image quality and visual-only task-delivery requirements remain. The local file and existing repository credential must be present on the same host. This code does not add a file-upload parameter to a text-only ChatGPT connector or prove native-output delivery to GitHub Actions. Known safety-blocked operations must not be replayed through this helper or another endpoint. Q24's previously blocked attempt-2 branch operation remains separate from the independent transport proof; do not report it recovered from a proof-branch upload.
+
+See [Image file transfer](image-file-transfer.md) for interfaces, recovery codes, host requirements and proof scope. Preserve all frozen Q24 components and failed outputs.
+
+---
+
+
 ## September 28, 2026 — Visual-only native generation task delivery
 
 > [!IMPORTANT]

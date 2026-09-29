@@ -26,6 +26,22 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/github-image-transfer.mjs",
+        "_tools/github-image-transfer.mjs",
+        "_tools/verify-image-transfer.mjs",
+        "_generator/test/github-image-transfer.test.mjs",
+        ".github/actions/transfer-image/action.yml",
+        "docs/operations/image-file-transfer.md"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/github-image-transfer.test.mjs",
+        "_generator/test/image-execution.test.mjs",
+        "_generator/test/image-quality-gate.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/native-image-delivery.mjs",
         "_tools/native-image-delivery.mjs",
         "_generator/test/native-image-delivery.test.mjs",
