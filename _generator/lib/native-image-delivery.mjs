@@ -89,14 +89,24 @@ export function planNativeImageContinuation(execution, attempts) {
     const a = attempts[i];
     if (a?.attempt !== i + 1 || a.request_sha256 !== requestHash)
       throw Error('attempt_sequence_or_request_binding_invalid');
-    if (i < attempts.length - 1 && a.disposition !== 'rejected')
-      throw Error('later_attempt_before_prior_rejection');
+    if (i < attempts.length - 1 && !['rejected','unrecoverable'].includes(a.disposition))
+      throw Error('later_attempt_before_prior_terminal_failure');
   }
   if (!attempts.length) return {...base, next_action: 'PREPARE_IMAGE_ONLY_TASK', attempt: 1};
-  // Inspect every generated prior output, not only the latest narrative record.
+  // Inspect every prior attempt, not only the latest narrative record.
   for (const a of attempts) {
     if (a.disposition === 'accepted_locked')
       return {...base, next_action: 'VERIFY_ACCEPTED_CHECKPOINT', attempt: a.attempt};
+    if (a.disposition === 'unrecoverable') {
+      const r = a.recovery;
+      if (!r || r.reason_code !== 'TASK_RESULT_UNRECOVERABLE' ||
+          r.task_invocation_observed !== true ||
+          r.exhaustive_supported_search !== true ||
+          r.outcome_observable !== false ||
+          !r.checked_at || Number.isNaN(Date.parse(r.checked_at)))
+        throw Error('unrecoverable_attempt_evidence_invalid');
+      continue;
+    }
     if (!a.generation?.artifact_id || !a.generation?.call_id || !validHash(a.generation?.raw_sha256))
       return {...base, next_action: 'RECOVER_OR_RECONCILE_EXISTING_ATTEMPT', attempt: a.attempt};
     const capture = a.git_capture;

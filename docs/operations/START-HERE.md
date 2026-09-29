@@ -16,6 +16,15 @@ The authoritative machine policies remain `under80-runtime-contract.json` and `e
 ---
 
 
+## September 29, 2026 — Bound invoked image tasks that become unobservable
+
+> [!IMPORTANT]
+> An observed scheduled invocation may not block qualification forever when every supported recovery channel has been exhausted. Under the pending hardening change, such an attempt is durably classified as `TASK_RESULT_UNRECOVERABLE` only with positive invocation evidence plus exhaustive supported recovery evidence and no observable output/result/failure. It consumes one of the existing four attempts without claiming generation success or failure, then permits the next bounded attempt. Pending or partially searched tasks remain non-duplicable.
+
+This is a recovery-state correction, not a quality-gate relaxation. Exact raw/final byte capture, review, six-image differentiation, attempt limits, one-writer discipline, and production/qualification parity remain unchanged. Q24 m03 attempt 1 is the motivating live case; preserve its existing task ID and evidence. Do not apply this rule to Q24 until the code/tests/docs pass protected CI and the hardening PR merges to `main`.
+
+---
+
 ## Historical PR286 utility guidance — not the normal connector route
 
 The independently tested `github-image-file-transfer-v1` utility applies only where its explicit file-host prerequisites and separate authorization are satisfied; it is not the normal production or qualification image route. The shared `transferImageFile` function, `_tools/github-image-transfer.mjs` and `.github/actions/transfer-image` take an actual local PNG/WebP, perform one Contents API write and verify raw bytes at the returned immutable commit. Base64 stays inside executable code; no per-image text bridges, bespoke workflow or owner upload. Identical existing bytes are verified and reused without another write; different bytes, protected branches, unsafe paths, denials and uncertain writes fail closed. Keep one writer per handoff branch.
