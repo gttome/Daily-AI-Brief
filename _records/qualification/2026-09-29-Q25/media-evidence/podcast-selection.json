@@ -1,0 +1,173 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": 36589099491,
+  "execution_commit": "05895f1efb3d7b711c8a82e2b857642c3cabb4ab",
+  "validated_at": "2026-09-29T15:17:59.419Z",
+  "result": "pass",
+  "scope": "two-podcast component only; not full MEDIA_READY, qualification closure or publication",
+  "podcast_selection_validated": true,
+  "podcast_count": 2,
+  "source_diverse": true,
+  "selection": {
+    "media_freshness_policy": "media-research-cutoff-v1",
+    "research_cutoff_at": "2026-09-29T14:09:00Z",
+    "selected": [
+      {
+        "candidate_id": "everyday-872",
+        "status": "included",
+        "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154",
+        "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
+        "show": "Everyday AI Podcast – An AI and ChatGPT Podcast",
+        "publication_date": "2026-09-29T11:00:00Z",
+        "runtime_seconds": 2099,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 92,
+        "freshness_exception_reason": null,
+        "summary": "Everyday AI discusses how repeated agent actions, tool use and model choices can affect AI spending. Its published topic list and chapters cover automation-loop costs, model mixtures and approaches to monitoring and managing usage; this selection treats those as discussion topics, not verified savings or current vendor-pricing guidance.",
+        "why_it_matters": "Gives teams a spending-governance lens to use alongside technical model selection, agent adoption and role-based learning. Readers can use the episode to frame questions about task budgets and usage visibility before approving broader automation.",
+        "editorial_limitation": "Reviewed publisher description and chapters only, not audio. The show's claims about subscription changes, specific products and cost-saving effectiveness were not independently verified and are not repeated as facts.",
+        "platforms": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154"
+          }
+        ],
+        "source_evidence_identity": "episode:591c08b1f8cf1c0c55bcf3e93892b8ecb6a4f4858d4bb03b351a29a8c68a5a51",
+        "freshness_tier": "primary_48h"
+      },
+      {
+        "candidate_id": "ai-for-humans-197",
+        "status": "included",
+        "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+        "title": "Opus 5.5 is our favorite AI model (so far).",
+        "show": "AI For Humans: Weekly AI News, Tools & Trends",
+        "publication_date": "2026-09-24T10:00:00Z",
+        "runtime_seconds": 2901,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 78,
+        "freshness_exception_reason": "The three current publisher-distributed catalogs were checked at Q25's original cutoff. Eligible primary-window episodes belong to Everyday AI, which already fills the first source. AI for Humans' latest episode is September 24; Practical AI's latest episode 373 is already in September 26 production. This distinct creative-application episode is within seven days and has no production identity/title match. The bounded three-show supply check is not a claim of internet-wide exhaustion.",
+        "summary": "AI for Humans discusses creative uses of recent AI models, including animation, education tools, 3D modeling and motion graphics. The selection emphasizes the application topics listed in the publisher's description and chapters; its favorable model rankings remain the hosts' opinions rather than the Brief's independently established conclusions.",
+        "why_it_matters": "Offers creative task ideas that complement the cost-governance episode and the Brief's technical and adoption stories, without treating demonstrations or host enthusiasm as evidence of reliable production outcomes.",
+        "editorial_limitation": "Reviewed description and chapters, not playback or independently tested demonstrations. Pricing, benchmark claims and rumors in the show are not adopted as factual conclusions.",
+        "platforms": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+          }
+        ],
+        "source_evidence_identity": "episode:89ad3e0becd1923ccb77298dff31bde74310f237ca2955c624583e9b7f360443",
+        "freshness_tier": "fallback_7d"
+      }
+    ],
+    "target": 2,
+    "restricted_show": "The AI Daily Brief",
+    "restricted_show_count": 0,
+    "source_diverse": true,
+    "primary_age_days": 2,
+    "fallback_age_days": 7,
+    "exception_age_days": 30
+  },
+  "normalized_evidence": [
+    {
+      "schema_version": "1.0.0",
+      "identity": "episode:591c08b1f8cf1c0c55bcf3e93892b8ecb6a4f4858d4bb03b351a29a8c68a5a51",
+      "kind": "podcast",
+      "canonical_url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154",
+      "aliases": [
+        "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154"
+      ],
+      "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
+      "published_at": "2026-09-29T11:00:00.000Z",
+      "runtime_seconds": 2099,
+      "metadata_status": "reviewed",
+      "source": {
+        "url": "https://podcasts.apple.com/us/podcast/everyday-ai-podcast-an-ai-and-chatgpt-podcast/id1683401861",
+        "content_hash": "4cb5dd7a1dc9e64767b5eccd5b6218ff60944d2406e359a9ecfe9ed9b19c1598",
+        "checked_at": "2026-09-29T15:12:07.456Z"
+      },
+      "review": {
+        "status": "reviewed",
+        "reviewer": "ordinary_chatgpt",
+        "reviewed_at": "2026-09-29T15:14:49.350Z",
+        "source_content_hash": "4cb5dd7a1dc9e64767b5eccd5b6218ff60944d2406e359a9ecfe9ed9b19c1598",
+        "excerpts": [
+          "19:26 Hidden costs of automation loops",
+          "24:13 The future of model mixtures"
+        ],
+        "scope": "Publisher-distributed catalog episode descriptions and chapters, with exact metadata cross-checked between matching episode shelf items and complete playback offers. Audio and linked demonstrations were not played or independently tested. Model capabilities, pricing assertions and model rankings in the shows are not adopted as independently established facts.",
+        "audio_listened": false
+      },
+      "audience_fit": "Knowledge workers and nontechnical agent owners responsible for practical AI adoption and spending oversight.",
+      "selection_history": [],
+      "rejection_reason": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "identity": "episode:89ad3e0becd1923ccb77298dff31bde74310f237ca2955c624583e9b7f360443",
+      "kind": "podcast",
+      "canonical_url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+      "aliases": [
+        "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+      ],
+      "title": "Opus 5.5 is our favorite AI model (so far).",
+      "published_at": "2026-09-24T10:00:00.000Z",
+      "runtime_seconds": 2901,
+      "metadata_status": "reviewed",
+      "source": {
+        "url": "https://podcasts.apple.com/us/podcast/ai-for-humans-weekly-ai-news-tools-trends/id1682409647",
+        "content_hash": "12cd3a8ce1103e3f65b768a586c585bf51db09f5c37c9316dea4136c178ad9d3",
+        "checked_at": "2026-09-29T15:12:07.764Z"
+      },
+      "review": {
+        "status": "reviewed",
+        "reviewer": "ordinary_chatgpt",
+        "reviewed_at": "2026-09-29T15:14:49.350Z",
+        "source_content_hash": "12cd3a8ce1103e3f65b768a586c585bf51db09f5c37c9316dea4136c178ad9d3",
+        "excerpts": [
+          "39:03 Actually Useful AI: GPT-6 Astra Makes Motion Graphics",
+          "18:02 Opus 5.5 Creative Use Cases: Claymation, Animation, & Education Tools"
+        ],
+        "scope": "Publisher-distributed catalog episode descriptions and chapters, with exact metadata cross-checked between matching episode shelf items and complete playback offers. Audio and linked demonstrations were not played or independently tested. Model capabilities, pricing assertions and model rankings in the shows are not adopted as independently established facts.",
+        "audio_listened": false
+      },
+      "audience_fit": "Knowledge workers exploring creative applications and practical experiments beyond enterprise deployment.",
+      "selection_history": [],
+      "rejection_reason": null
+    }
+  ],
+  "negative_tests_passed": [
+    "reject_tampered_contentId",
+    "reject_tampered_duration",
+    "reject_tampered_releaseDate",
+    "everyday-872:reject_changed_source_hash",
+    "everyday-872:reject_unsupported_excerpt",
+    "ai-for-humans-197:reject_changed_source_hash",
+    "ai-for-humans-197:reject_unsupported_excerpt",
+    "reject_production_duplicate",
+    "reject_post_cutoff_publication",
+    "reject_unjustified_fallback"
+  ],
+  "source_artifact_id": 11042203975,
+  "source_artifact_sha256": "b7e3e5ec5746d6373792a791de128187c2728c5f72a29a642f7799860ce61f3d",
+  "source_hashes_verified": true,
+  "current_cutoff_supply_verified": true,
+  "current_production_history_screened": true,
+  "prior_q_approval_reused": false,
+  "new_publisher_retrievals": 0,
+  "article_stages_repeated": false,
+  "media_ready": false,
+  "production_mutation": false,
+  "model_calls": 0,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false
+}
