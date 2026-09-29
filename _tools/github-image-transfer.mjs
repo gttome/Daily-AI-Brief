@@ -11,7 +11,7 @@ try {
     destination:v.destination, expectedSha256:v.sha256, token:process.env.GH_TOKEN || process.env.GITHUB_TOKEN,
     knownSafetyBlock:v['known-safety-block']});
   await fs.mkdir(path.dirname(v.receipt), {recursive:true});
-  // No stale success record survives a failed write; stdout is also a durable runner log.
+  // Use a new operation receipt path; exclusive creation preserves prior evidence.
   await fs.writeFile(v.receipt, JSON.stringify(receipt,null,2)+'\n', {flag:'wx'});
   console.log(JSON.stringify(receipt));
 } catch (error) {
