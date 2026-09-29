@@ -1,0 +1,133 @@
+name: Q25 reviewed podcast validation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-29-Q25']
+    paths: ['.github/workflows/q25-podcast-validation.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: q25-media-writer
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Preserve completed stages and retrieve exact existing source artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-29-Q25'
+          test ! -f _records/qualification/2026-09-29-Q25/result.json
+          test ! -f _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          curl --fail --location --max-time 45 --silent --show-error --header "Authorization: Bearer $GH_TOKEN" --header 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/11042203975/zip --output "$RUNNER_TEMP/q25-podcasts.zip"
+          echo "b7e3e5ec5746d6373792a791de128187c2728c5f72a29a642f7799860ce61f3d  $RUNNER_TEMP/q25-podcasts.zip" | sha256sum --check
+      - name: Reconcile complete episode items without refetching catalogs
+        run: |
+          python3 - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+          from urllib.parse import urlparse,parse_qs
+          import os,json,hashlib,zipfile,copy
+          class Scripts(HTMLParser):
+              def __init__(self):super().__init__();self.active=False;self.parts=[]
+              def handle_starttag(self,tag,attrs):
+                  if tag=='script' and dict(attrs).get('id')=='serialized-server-data':self.active=True
+              def handle_endtag(self,tag):
+                  if tag=='script':self.active=False
+              def handle_data(self,data):
+                  if self.active:self.parts.append(data)
+          def verify(item,offer,show_id):
+              assert str(item['adamId'])==str(offer['contentId'])
+              assert str(item['showAdamId'])==str(offer['showOffer']['adamId'])==show_id
+              assert item['title']==offer['title']
+              assert item['releaseDate']==offer['releaseDate']
+              assert isinstance(offer['duration'],int) and offer['duration']>0 and item['duration']==offer['duration']
+              u=urlparse(offer['storeUrl']);assert u.scheme=='https' and u.hostname=='podcasts.apple.com'
+              assert ('id'+show_id) in u.path and parse_qs(u.query)['i']==[str(item['adamId'])]
+              assert isinstance(item['summary'],str) and item['summary'].strip()
+          archive=zipfile.ZipFile(Path(os.environ['RUNNER_TEMP'])/'q25-podcasts.zip')
+          observations={x['id']:x for x in json.loads(archive.read('observations.json'))}
+          sources=[('everyday','1683401861'),('ai-for-humans','1682409647'),('practical','1406537385')]
+          catalogs=[];records=[];passed=[]
+          for source_id,show_id in sources:
+              filename='catalog-'+source_id+'.html';data=archive.read(filename);observation=observations['catalog-'+source_id]
+              assert hashlib.sha256(data).hexdigest()==observation['source_sha256']
+              parser=Scripts();parser.feed(data.decode('utf8'));document=json.loads(''.join(parser.parts));seen={};partial=0
+              for shelf in document['data'][0]['data']['shelves']:
+                  for item in shelf.get('items',[]):
+                      offer=item.get('playAction',{}).get('episodeOffer')
+                      if not offer or str(offer.get('showOffer',{}).get('adamId'))!=show_id:continue
+                      verify(item,offer,show_id)
+                      episode_id=str(offer['contentId']);fingerprint=(offer['title'],offer['releaseDate'],offer['duration'])
+                      if episode_id in seen:assert seen[episode_id]==fingerprint;continue
+                      seen[episode_id]=fingerprint
+                      menu=item.get('contextAction',{}).get('episodeOffer',{})
+                      if menu and ('releaseDate' not in menu or 'duration' not in menu):partial+=1
+                      records.append({'source_id':source_id,'episode_id':episode_id,'show_id':show_id,'canonical_url':offer['storeUrl'],'title':offer['title'],'show':offer['showOffer']['title'],'episode_guid':offer['guid'],'feed_url':offer['showOffer']['feedUrl'],'published_at':offer['releaseDate'],'runtime_seconds':offer['duration'],'source_artifact_file':filename,'catalog_source_sha256':observation['source_sha256'],'source_url':observation['url'],'source_checked_at':observation['checked_at'],'source_text':item['summary'],'source_text_sha256':hashlib.sha256(item['summary'].encode()).hexdigest()})
+                      if not passed:
+                          for field,value in [('contentId','wrong'),('duration',0),('releaseDate','2026-09-30T00:00:00Z')]:
+                              changed=copy.deepcopy(offer);changed[field]=value
+                              try:verify(item,changed,show_id)
+                              except (AssertionError,KeyError):passed.append('reject_tampered_'+field)
+                              else:raise AssertionError('negative_test_failed:'+field)
+              catalogs.append({'source_id':source_id,'show_id':show_id,'source_url':observation['url'],'source_checked_at':observation['checked_at'],'source_sha256':observation['source_sha256'],'verified_episode_items':len(seen),'partial_context_menu_records_not_used':partial})
+          assert len(passed)==3 and all(c['verified_episode_items']>0 for c in catalogs)
+          Path(os.environ['RUNNER_TEMP'],'q25-podcast-reconciled.json').write_text(json.dumps({'catalogs':catalogs,'records':records,'metadata_negative_tests':passed},ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps({'catalogs':catalogs,'negative_tests':passed}))
+          PY
+      - name: Validate current review and exact source support with released selectors
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';
+          import {selectPodcasts} from './_generator/lib/media-selection.mjs';
+          import {normalizeMediaEvidence} from './_generator/lib/media-evidence.mjs';
+          import {mediaReferenceTime,mediaPublicationTime} from './_generator/lib/media-freshness.mjs';
+          const root='_records/qualification/2026-09-29-Q25',out=root+'/media-evidence';
+          const load=p=>JSON.parse(fs.readFileSync(p,'utf8')),hash=s=>crypto.createHash('sha256').update(s).digest('hex');
+          const semantic=load(root+'/semantic-receipt.json'),review=load(out+'/podcast-editorial-review.json'),history=load(out+'/podcast-production-history.json'),data=load(process.env.RUNNER_TEMP+'/q25-podcast-reconciled.json');
+          assert.equal(review.cutoff,semantic.cutoff);assert.equal(review.run_id,semantic.run_id);assert.equal(review.prior_q_approval_reused,false);assert.equal(history.observed_main_sha,semantic.baseline_sha);
+          const reference=mediaReferenceTime({date:'2026-09-29',cutoff:semantic.cutoff,policy:semantic.media_freshness_policy});
+          const options={date:'2026-09-29',cutoff:semantic.cutoff,policy:semantic.media_freshness_policy};
+          const identity=value=>{try{const u=new URL(value);return u.hostname==='podcasts.apple.com'&&u.searchParams.get('i')?'apple:'+u.searchParams.get('i'):u.origin+u.pathname.replace(/\/$/,'');}catch{return null;}};
+          const textkey=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+          const catalogRecords=data.records.map(r=>{const age=(reference-mediaPublicationTime(r.published_at,options.policy))/3600000;const duplicates=history.records.filter(h=>h.urls.some(u=>identity(u)===identity(r.canonical_url))||(textkey(h.title)===textkey(r.title)&&textkey(h.show)===textkey(r.show)));return {...r,age_hours_at_cutoff:age,eligible_freshness:age>=0&&age<=168,prior_production_matches:duplicates};});
+          const normalized=[],candidates=[],tests=[...data.metadata_negative_tests];
+          for(const r of review.reviews){const source=catalogRecords.find(x=>x.episode_id===r.episode_id&&x.show_id===r.show_id);assert.ok(source);assert.equal(source.catalog_source_sha256,r.source_sha256);assert.equal(source.source_text_sha256,r.source_text_sha256);assert.equal(hash(source.source_text),r.source_text_sha256);assert.equal(source.title,r.expected_title);assert.equal(source.published_at,r.expected_published_at);assert.equal(source.runtime_seconds,r.expected_runtime_seconds);assert.equal(source.prior_production_matches.length,0);assert.equal(r.editorial_pass,true);assert.equal(r.duplicate,false);assert.equal(source.eligible_freshness,true);
+            const raw={kind:'podcast',canonical_url:source.canonical_url,episode_guid:source.episode_guid,feed_url:source.feed_url,title:source.title,published_at:source.published_at,runtime_seconds:source.runtime_seconds,source:{url:source.source_url,text:source.source_text,checked_at:source.source_checked_at},review:{status:'reviewed',reviewer:review.reviewer,reviewed_at:review.reviewed_at,source_content_hash:r.source_text_sha256,excerpts:r.source_excerpts,scope:review.review_scope,audio_listened:false},audience_fit:r.audience_fit,selection_history:[]};
+            const evidence=normalizeMediaEvidence(raw);assert.equal(evidence.metadata_status,'reviewed');normalized.push(evidence);fs.writeFileSync(out+'/source-texts/'+r.candidate_id+'-catalog-summary.txt',source.source_text,{flag:'wx'});
+            assert.throws(()=>normalizeMediaEvidence({...raw,review:{...raw.review,source_content_hash:'0'.repeat(64)}}));tests.push(r.candidate_id+':reject_changed_source_hash');assert.throws(()=>normalizeMediaEvidence({...raw,review:{...raw.review,excerpts:['unsupported fabricated excerpt']}}));tests.push(r.candidate_id+':reject_unsupported_excerpt');
+            candidates.push({candidate_id:r.candidate_id,status:'included',url:source.canonical_url,title:source.title,show:source.show,publication_date:source.published_at,runtime_seconds:source.runtime_seconds,verified:true,editorial_pass:true,duplicate:false,score:r.score,freshness_exception_reason:r.freshness_exception_reason,summary:r.summary,why_it_matters:r.why_it_matters,editorial_limitation:r.editorial_limitation,platforms:[{name:'Apple Podcasts',url:source.canonical_url}],source_evidence_identity:evidence.identity});
+          }
+          const selection=selectPodcasts(candidates,options);assert.equal(selection.selected.length,2);assert.equal(selection.source_diverse,true);assert.deepEqual(selection.selected.map(x=>x.candidate_id),['everyday-872','ai-for-humans-197']);assert.equal(selection.selected[0].freshness_tier,'primary_48h');assert.equal(selection.selected[1].freshness_tier,'fallback_7d');
+          const primaryShows=new Set(catalogRecords.filter(r=>r.eligible_freshness&&r.age_hours_at_cutoff<=48&&!r.prior_production_matches.length).map(r=>r.show_id));assert.deepEqual([...primaryShows],['1683401861']);
+          assert.equal(catalogRecords.find(r=>r.episode_id==='1000791431612').prior_production_matches.length,1);
+          assert.equal(selectPodcasts(candidates.map((c,i)=>i?c:{...c,duplicate:true}),options).selected.length,1);tests.push('reject_production_duplicate');
+          assert.equal(selectPodcasts(candidates.map((c,i)=>i?c:{...c,publication_date:'2026-09-29T14:09:01Z'}),options).selected.length,1);tests.push('reject_post_cutoff_publication');
+          assert.equal(selectPodcasts(candidates.map((c,i)=>i?{...c,freshness_exception_reason:''}:c),options).selected.length,1);tests.push('reject_unjustified_fallback');
+          const reconciliation={schema_version:'1.0.0',run_id:semantic.run_id,cutoff:semantic.cutoff,source_artifact_id:review.source_artifact_id,source_artifact_sha256:review.source_artifact_sha256,source_catalogs_refetched:0,raw_source_hashes_verified:true,metadata_negative_tests:data.metadata_negative_tests,diagnosis:review.catalog_diagnostic,catalogs:data.catalogs,considered:catalogRecords.map(({source_text,...r})=>r),corrected_eligible_count:catalogRecords.filter(r=>r.eligible_freshness).length,original_acquisition_preserved:true,production_mutation:false};
+          fs.writeFileSync(out+'/podcast-catalog-reconciliation.json',JSON.stringify(reconciliation,null,2)+'\n',{flag:'wx'});
+          const receipt={schema_version:'1.0.0',run_id:semantic.run_id,baseline_sha:semantic.baseline_sha,cutoff:semantic.cutoff,media_freshness_policy:semantic.media_freshness_policy,workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,validated_at:new Date().toISOString(),result:'pass',scope:'two-podcast component only; not full MEDIA_READY, qualification closure or publication',podcast_selection_validated:true,podcast_count:2,source_diverse:true,selection,normalized_evidence:normalized,negative_tests_passed:tests,source_artifact_id:review.source_artifact_id,source_artifact_sha256:review.source_artifact_sha256,source_hashes_verified:true,current_cutoff_supply_verified:true,current_production_history_screened:true,prior_q_approval_reused:false,new_publisher_retrievals:0,article_stages_repeated:false,media_ready:false,production_mutation:false,model_calls:0,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false};
+          fs.writeFileSync(out+'/podcast-selection.json',JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({result:receipt.result,podcast_count:2,source_diverse:true,selected:selection.selected.map(x=>({id:x.candidate_id,tier:x.freshness_tier,runtime_seconds:x.runtime_seconds})),negative_tests_passed:tests.length}));
+          NODE
+      - name: Persist verified podcast component without changing frozen articles
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json _records/qualification/2026-09-29-Q25/media-evidence/podcast-catalog-reconciliation.json _records/qualification/2026-09-29-Q25/media-evidence/source-texts/
+          git commit -m 'Pass Q25 two-podcast selection with saved-source and cutoff validation'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
