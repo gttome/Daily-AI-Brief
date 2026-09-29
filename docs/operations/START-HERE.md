@@ -1,5 +1,14 @@
 # Daily AI Brief — Current Operations Entry Point
 
+## September 29, 2026 — Bound invoked image tasks that become unobservable
+
+> [!IMPORTANT]
+> An observed scheduled invocation may not block qualification forever when every supported recovery channel has been exhausted. Under the pending hardening change, such an attempt is durably classified as `TASK_RESULT_UNRECOVERABLE` only with positive invocation evidence plus exhaustive supported recovery evidence and no observable output/result/failure. It consumes one of the existing four attempts without claiming generation success or failure, then permits the next bounded attempt. Pending or partially searched tasks remain non-duplicable.
+
+This is a recovery-state correction, not a quality-gate relaxation. Exact raw/final byte capture, review, six-image differentiation, attempt limits, one-writer discipline, and production/qualification parity remain unchanged. Q24 m03 attempt 1 is the motivating live case; preserve its existing task ID and evidence. Do not apply this rule to Q24 until the code/tests/docs pass protected CI and the hardening PR merges.
+
+---
+
 ## September 28, 2026 — Connector-first image transport parity
 
 > [!IMPORTANT]
