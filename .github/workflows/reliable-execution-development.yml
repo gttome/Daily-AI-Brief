@@ -25,10 +25,19 @@ jobs:
           mkdir -p /tmp/reliable-execution-proof
           sha256sum _generator/lib/durable-operation.mjs _generator/lib/recoverable-image-job.mjs _generator/lib/connector-image-delivery.mjs _generator/lib/edition-execution.mjs _tools/edition-execution.mjs _generator/test/reliable-execution.test.mjs docs/operations/reliable-edition-execution.md > /tmp/reliable-execution-proof/uploaded-source-hashes.txt
           node _tools/apply-reliable-execution-change.mjs | tee /tmp/reliable-execution-proof/migration.json
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          const line='Normal transport remains `connector-first-v1`. Complete payload delivery failures remain `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`; all V2 raw/final provenance requirements remain unchanged. A current denial stops that operation; no alternate endpoint may evade it.\n\n';
+          for(const p of ['docs/operations/START-HERE.md','docs/operations/LIVING-SYSTEM-OPERATIONS.md']){
+            const text=fs.readFileSync(p,'utf8'),target='A real supported native host and binary-reader adapter are still required;';
+            if(text.split(target).length!==2)throw Error('nonunique_transport_guidance_edit');
+            fs.writeFileSync(p,text.replace(target,line+target));
+          }
+          NODE
       - name: Exercise interruption recovery and exact local Git transport
         run: |
           set -euo pipefail
-          node --test _generator/test/reliable-execution.test.mjs _generator/test/image-execution.test.mjs _generator/test/native-image-delivery.test.mjs _generator/test/run-state-recovery.test.mjs _generator/test/publication-manifest.test.mjs | tee /tmp/reliable-execution-proof/targeted.tap
+          node --test _generator/test/reliable-execution.test.mjs _generator/test/image-execution.test.mjs _generator/test/native-image-delivery.test.mjs _generator/test/run-state-recovery.test.mjs _generator/test/publication-manifest.test.mjs _generator/test/image-transport-parity.test.mjs | tee /tmp/reliable-execution-proof/targeted.tap
       - name: Full regression and contract checks
         run: |
           set -euo pipefail
