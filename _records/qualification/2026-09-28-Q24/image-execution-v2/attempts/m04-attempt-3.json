@@ -8,7 +8,7 @@
   "attempt": 3,
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
-  "status": "CAPABILITY_BLOCKED_RAW_GIT_CAPTURE",
+  "status": "RAW_IMAGE_CAPTURED",
   "evidence_type": "live",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json",
@@ -46,9 +46,22 @@
   "raw_bytes": 1321460,
   "raw_width": 1730,
   "raw_height": 909,
-  "raw_capture_complete": false,
-  "raw_git_read_back_verified": false,
-  "raw_capture_complete_scope": "Required Git capture/read-back is not complete. Verified automatic Library capture is recorded separately.",
+  "raw_capture_complete": true,
+  "raw_git_read_back_verified": true,
+  "raw_capture_complete_scope": "Original native PNG is committed to the Q24 branch; workflow artifact read-back matches the original bytes, SHA-256 and Git blob identity. This does not complete final-image review or acceptance.",
+  "raw_capture": {
+    "path": "_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png",
+    "sha256": "efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3",
+    "git_blob_sha": "31f5ab0e228bdcdc3d04a5c064815ae4c1901ff8",
+    "commit_sha": "f64f15ac9bca113c79b5adac726e083a05c26400",
+    "read_back_verified": true,
+    "workflow_run_id": 36507952042,
+    "verified_at": "2026-09-29T01:27:14.755887+00:00",
+    "artifact_id": 11007478942,
+    "artifact_sha256": "043d4cd09887742557a12faa7501871c69aeb0aa0d4dc516e8b70f90c65d6de3"
+  },
+  "capture_reconciliation_event_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/events/m04-attempt-3-raw-capture-reconciliation.json",
+  "capture_reconciliation_event_commit": "af5724ccdd779c8648c020f6b328942fbcfd830f",
   "diagnostic_subject_match": "pass",
   "diagnostic_factual_scope": "pass",
   "essential_labels_observed_count": 8,
@@ -61,9 +74,14 @@
   "review_complete": false,
   "persistence_complete": false,
   "accepted_locked": false,
-  "blocker": "CAPABILITY_BLOCKED_AUTHENTICATED_FILE_HOST_REQUIRED",
-  "transfer_http_status": null,
-  "transfer_write_requests": 0,
+  "blocker": null,
+  "historical_local_cli_transfer": {
+    "result": "CAPABILITY_BLOCKED_AUTHENTICATED_FILE_HOST_REQUIRED",
+    "http_status": null,
+    "write_requests": 0,
+    "scope": "Historical PR286 local-token adapter attempt only; superseded for current raw-capture status by completed connector Git Data transfer and verified read-back. Original event is retained unchanged."
+  },
+  "next_action": "Complete formal final-candidate review, exact approved-file persistence/read-back and the live V2 acceptance gate. Do not repeat raw upload or regenerate this image.",
   "recovery_required_before_any_new_generation": true,
   "maximum_attempts": 4,
   "owner_interventions": [],
@@ -77,5 +95,5 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "note": "The actual third native output is recovered, its exact original is durably stored in Library and byte-verified, and it now depicts the correct single AWS/model-evaluation subject with all eight labels. A 1200x630 candidate was prepared without cropping and preserved separately. This is not an accepted image: the released transfer CLI stopped before HTTP because no authorized GitHub credential is present on the file host. The current connector has no file-backed binary upload parameter. No new GitHub denial is asserted and the previously resolved attempt-2 transfer stays resolved. Continue capture of this existing file, not another generation; formal quality/V2 acceptance still require completion. No image was generated during this recovery invocation."
+  "note": "The third native output's original bytes have already reached Git through the authenticated connector and passed independent workflow artifact read-back. The former current blocker fields were stale and are now reconciled to that evidence; historical observations remain in the immutable generation/recovery event and Git history. The 1200x630 candidate and all eight label diagnostics are preserved, but formal quality review, final-byte persistence and accepted_locked remain incomplete. This reconciliation called no image generator and repeated no upload or research."
 }
