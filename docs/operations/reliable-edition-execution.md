@@ -1,0 +1,158 @@
+# Reliable edition execution
+
+> [!IMPORTANT]
+> Owner-approved September 29 changes: one recoverable image job, deterministic
+> continuation from one journal, and immutable edition bundles with separate execution
+> and qualification identities. This is a staged integration into the existing system,
+> not a second publishing platform. A real supported native execution host is still
+> required. The code, fixtures and local Git integration do not prove that host exists.
+
+## Scope and rollout
+
+| Component | Implemented interface | Live boundary |
+|---|---|---|
+| Image production and delivery | `executeImageRequest(..., {executionProfile:'reliable-edition-v1', operationStore, host, transport, ...})` | A real native host must supply `generate`, `recover` and `review`; never fabricate these capabilities |
+| Binary persistence | `connectorImageDelivery` passes complete bytes through Git Data and checks immutable read-back | Actual authorized connector methods and an exact binary reader must coexist on the host |
+| Continuation | `drainOperations` and `executeEdition` | Stage handlers must use the established source, media, quality, qualification and production validators; missing handlers block rather than fake success |
+| Edition reuse | `sealPublicationBundle`, `verifyPublicationBundle`, `promotionDecision` | Production still requires protected CI, compatible deployment packaging, real live checks and PUBLIC CLOSED |
+| Consistent status | `_tools/edition-execution.mjs status` | Terminal result takes precedence; no narrative override |
+
+Do not switch a working legacy execution onto an unproved host. Historical profiles
+retain their previous interpretation. New reliable-profile requests may not silently
+fall back to the volatile executor. No new full qualification should be started until
+native handoff works on the intended host. Q24 and Q25 remain immutable terminal tests;
+new code cannot turn either into PASS. The approved mission still requires two distinct
+fully completed public Briefs, not two fixture or qualification results.
+
+## One image job, durable at every boundary
+
+`generate -> capture -> prepare -> review -> persist -> receipt`
+
+The job owns result delivery. It stores the native result bytes and exact identity
+before continuing. A supervisor reads that record, not a guessed filename or an
+unbounded conversation/Library search. Generated and reviewed byte objects are
+content-addressed and immutable. Normalization occurs before review and only its
+saved output is used thereafter. Raw/final Git verification and the existing V2
+receipt validator remain mandatory. Individual acceptance does not grant six-image
+set differentiation or publication approval.
+
+The adapter gets a stable operation key before invoking native generation. It must
+be able to recover the **same actual operation**. After an uncertain response, the
+controller invokes recovery instead of generating again. A timeout is not a quality
+rejection. Only a recorded subject/factual/structural/editorial rejection may use the
+next of the four allowed image attempts. Storage, status and bookkeeping failures
+resume the existing attempt. A current denial stops that action; no alternate route
+is used to evade it.
+
+`connectorImageDelivery` encodes actual Buffer bytes internally, invokes the existing
+`create_blob`, `create_tree`, `create_commit` and non-force `update_ref` interfaces,
+then reads the committed bytes through a supplied binary reader. Existing matching
+paths are verified and reused without another write. Different bytes cannot replace
+an image silently. The current branch tree and parent are retained; stale writers
+cannot force a ref. There is no local-token requirement, public relay, partial
+Base64 shuttle or owner upload step.
+
+**Host integration is explicit.** Repository code cannot call a native ChatGPT tool
+merely by declaring a callback. The current tool surface has not demonstrated a
+programmatic native producer/result bridge and complete-byte connector adapter on
+one recoverable execution host. Keep that limitation visible. Do not call fixture
+replays, past image downloads or readiness flags a new unattended native success.
+
+## Deterministic continuation and one state source
+
+The generic runner consumes trusted executable handlers, not shell commands from
+an editable JSON plan. It performs all ready dependent operations in the current
+invocation, within a bounded step budget. Successful completion and the next cursor
+are saved together. Thus interruption after a successful step resumes the next step,
+rather than waiting for another owner instruction or rerunning successful work.
+
+The file journal uses immutable, hash-linked versions published by atomic filesystem
+operations, with compare-and-swap revisions. A lease and fencing token protect against
+competing executors. An uncertain side effect needs keyed recovery. A blocked operation
+with unchanged inputs and no due retry does not blindly repeat on every status tick.
+A retry signal must represent an actual changed capability/result observation, not
+an invented reason to bypass the block. A pure replay-safe operation can be retried;
+publication and other consequential handlers require explicit recovery.
+
+The file store is durable **on a shared filesystem**. A new container does not acquire
+that filesystem merely because it can see a filename in a prior chat. A remote store
+must supply the same tested immutable-object and CAS contract. This limitation must
+not be hidden behind a success receipt. Current adapters do not export credentials.
+
+`operationView` and `renderExecutionCheckpoint` derive status from the journal.
+`canonicalExecutionStatus` gives a terminal qualification `result.json` precedence
+over old prose. A result cannot be reopened by a later checkpoint saying nonterminal.
+Legacy human documents remain historical evidence, not an alternative control plane.
+
+## Admission before expensive work
+
+`executeEdition` runs the existing-result handoff probe before calling discovery.
+The probe performs recovery and exact Git read-back; it does not generate a throwaway
+image. It binds host, actual invocation, native result, artifact identity, exact bytes,
+release, observed time and expiry. Fixtures cannot admit a live edition.
+
+The discovery workflow also checks admission **before network discovery** when the
+request explicitly carries `execution_profile: reliable-edition-v1`. Legacy scheduled
+and frozen requests are not silently migrated. Create any future reliable-profile
+request only after the same admission check succeeds; do not allocate a Q merely to
+rediscover a known host failure.
+
+```sh
+node _tools/edition-execution.mjs admission-check --release <pinned-protected-sha>
+```
+
+The default proof location is `_records/execution-host/image-handoff-proof.json`.
+It must come from real producer recovery and `proveImageHandoff`, not manually entered
+passing flags. Its raw proof bytes must be present under the bound operation key and
+match the recorded SHA-256 and Git blob. A changed release or expired proof requires
+new verification of the existing result, not new image generation by default.
+
+## Build once; resume stages; preserve failed qualifications
+
+An edition binding retains the original cutoff, research baseline, execution release,
+policy versions and execution identity. These are separate from any qualification's
+immutable pass/fail result. Subsequent compatible executions may reuse valid content
+with provenance and freshness checks, without altering historical failures.
+
+The bundle sealer invokes the **existing full publication-manifest validator**, then
+binds all manifest artifacts, final image files and available request/receipt/raw
+provenance. Verification reconstructs the complete inventory as well as checking every
+byte digest. A partial inventory cannot pass by hashing itself. Source timestamps are
+not changed. Required image quality, media, allocation, Skills, Watchlist and book gates
+are not removed.
+
+```sh
+node _tools/edition-execution.mjs seal --manifest <manifest-path> \
+  --release <pinned-protected-sha> --cutoff <original-cutoff> --out <new-bundle-path>
+node _tools/edition-execution.mjs verify --bundle <bundle-path>
+node _tools/edition-execution.mjs promotion-plan --bundle <bundle-path> \
+  --qualification <bound-pass-result-path> --release <target-sha> \
+  --production editorial-handoff/production/<edition-id>
+```
+
+An unrelated main change produces a compatibility/packaging requirement, not a
+research restart. `run-state resolve` understands admitted states tagged with the new
+profile; checkpoint writes cannot silently replace their original baseline. Existing
+publication baseline checks remain in force: a packaging migration must be explicit,
+validated and protected. This release does not bypass them or redate old sources.
+
+The production identity must be separate and use the same verified content. A bundle,
+qualification PASS or promotion plan is not deployment authorization or PUBLIC CLOSED.
+Real deployment SHA, public routes, media/images, feeds, ratings/sharing/privacy/mobile
+checks and completion evidence remain required. The second public run must be distinct
+and must not overwrite or pretend to be the first.
+
+## Verification and known remaining work
+
+Regression coverage exercises interrupted generation acknowledgement, raw/final capture,
+final persistence, exact bytes, CAS collisions, leases, pinned inputs, admission before
+research, terminal precedence, unknown side effects, fixture refusal and immutable
+promotion. Local Git integration exercises the actual executable Base64/Git Data sequence
+with >1 MiB binary data and lost update acknowledgements. These are **not** live native
+host certification or six new professional images.
+
+Before complete activation: provide the supported host adapters and shared durable store,
+connect trusted existing stage handlers, prove six real story-specific image jobs including
+interruption recovery, then complete the first and second distinct public Briefs. Do not
+launch new full Qs or claim unattended success before that evidence exists. No Work,
+Codex, paid-model API, owner transfer, new credentials or low-quality fallback is authorized.
