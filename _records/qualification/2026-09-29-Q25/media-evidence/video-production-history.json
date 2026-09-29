@@ -1,0 +1,197 @@
+{
+  "observed_main_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "records": [
+    {
+      "edition_date": "2026-09-09",
+      "slot": "general",
+      "title": "Introducing workspace agents in ChatGPT",
+      "url": "https://www.youtube.com/watch?v=yyvVUEPSCu0",
+      "runtime_seconds": 71,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-09",
+      "slot": "agents_non_technical_people",
+      "title": "ChatGPT Projects vs Skills Explained in 2 Minutes",
+      "url": "https://www.youtube.com/watch?v=GRWChm0sYHE",
+      "runtime_seconds": 120,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-12",
+      "slot": "general",
+      "title": "Friday, September 11, 2026 - 5 Minute AI News",
+      "url": "https://www.youtube.com/watch?v=BKq1NquBDa4",
+      "runtime_seconds": 293,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-12",
+      "slot": "agents_non_technical_people",
+      "title": "Agent Skills in AI Agents - Complete Tutorial (SKILL.md, Progressive Disclosure & Best Practices)",
+      "url": "https://www.youtube.com/watch?v=5vTdpYVPUyI",
+      "runtime_seconds": 429,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-13",
+      "slot": "general",
+      "title": "Build Classroom Sites with ChatGPT for Teachers",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers",
+      "runtime_seconds": 316,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-13",
+      "slot": "agents_non_technical_people",
+      "title": "Schedule Tasks with ChatGPT for Teachers",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers",
+      "runtime_seconds": 120,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-14",
+      "slot": "general",
+      "title": "Use Deep Research with ChatGPT for Teachers",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-deep-research-with-chatgpt-for-teachers",
+      "runtime_seconds": 266,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-14",
+      "slot": "agents_non_technical_people",
+      "title": "Use Plugins with ChatGPT for Teachers",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-plugins-with-chatgpt-for-teachers",
+      "runtime_seconds": 526,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-15",
+      "slot": "general",
+      "title": "Use Writing Blocks with ChatGPT for Teachers",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-writing-blocks-with-chatgpt-for-teachers",
+      "runtime_seconds": 201,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-15",
+      "slot": "agents_non_technical_people",
+      "title": "Connect Apps with ChatGPT for Teachers",
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/connect-apps-with-chatgpt-for-teachers",
+      "runtime_seconds": 224,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-19",
+      "slot": "general",
+      "title": "ChatGPT Privacy: What Not to Share and When to Double-Check",
+      "url": "https://academy.openai.com/public/videos/privacy-and-double-checking-older-adults",
+      "runtime_seconds": 100,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-19",
+      "slot": "agents_non_technical_people",
+      "title": "Control AI Agents from Anywhere: 7 Open-Source Tools",
+      "url": "https://hubmesh.dev/posts/2026-09-18-hubmesh-open-cowork-osir_9/",
+      "runtime_seconds": 316,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-20",
+      "slot": "general",
+      "title": "NVIDIA PAIR Connects Your Computers for Local AI",
+      "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
+      "runtime_seconds": 66,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-20",
+      "slot": "agents_non_technical_people",
+      "title": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
+      "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
+      "runtime_seconds": 700,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-21",
+      "slot": "general",
+      "title": "NVIDIA PAIR Connects Your Computers for Local AI",
+      "url": "https://www.youtube.com/shorts/Z4no-hhcuas",
+      "runtime_seconds": 66,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-21",
+      "slot": "agents_non_technical_people",
+      "title": "Anthropic’s CEO: How to Build a 1 Person Business with Claude",
+      "url": "https://www.youtube.com/watch?v=QDsenEcAJIk",
+      "runtime_seconds": 700,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-22",
+      "slot": "general",
+      "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+      "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
+      "runtime_seconds": 306,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-22",
+      "slot": "agents_non_technical_people",
+      "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+      "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+      "runtime_seconds": 373,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-23",
+      "slot": "general",
+      "title": "Codex's NEW A2A Communication & Crazy NEW UPDATES: You don't know about these SECRET UPDATES!",
+      "url": "https://www.youtube.com/watch?v=9Zbaw69O3QQ",
+      "runtime_seconds": 306,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-23",
+      "slot": "agents_non_technical_people",
+      "title": "Harness Arena (Fully Tested): This NEW Benchmark TESTED Every AGENT HARNESS (which is the best?)",
+      "url": "https://www.youtube.com/watch?v=aL4eepffdjM",
+      "runtime_seconds": 373,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-25",
+      "slot": "general",
+      "title": "Stop guessing which model your agent needs",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "runtime_seconds": 573,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-25",
+      "slot": "agents_non_technical_people",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "runtime_seconds": 213,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-26",
+      "slot": "general",
+      "title": "Stop guessing which model your agent needs",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "runtime_seconds": 573,
+      "summary": null
+    },
+    {
+      "edition_date": "2026-09-26",
+      "slot": "agents_non_technical_people",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "runtime_seconds": 213,
+      "summary": null
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": 36589539873,
+  "execution_commit": "0fb8fb3ab61ade315ca99d79cfa2e3b6bcb69a65",
+  "checked_at": "2026-09-29T15:21:31.602421+00:00",
+  "observed_production_history_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "catalog_requests": 4,
+  "feed_requests": 3,
+  "maximum_requests": 8,
+  "challenged_watch_requests": 0,
+  "access_challenge_bypassed": false,
+  "source_counts": [
+    {
+      "source_id": "ibm",
+      "feed_records": 15,
+      "eligible_verified": 0,
+      "catalog_source_sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d",
+      "feed_source_sha256": "a08068f63a05dc2a31e7b0290ead9d15a78111802c79e15b937af40d1c0f8f10"
+    },
+    {
+      "source_id": "jeff-su",
+      "feed_records": 15,
+      "eligible_verified": 0,
+      "catalog_source_sha256": "672f0b21256a38216294f7ddef043cc27fa0939fc8318d7df38836c0379b057b",
+      "feed_source_sha256": "e1e268e6a31188b3ac512ca93d8801fe649605f1ad9cbb8db3109b299dd00a0d"
+    },
+    {
+      "source_id": "kevin-stratvert",
+      "feed_records": 15,
+      "eligible_verified": 0,
+      "catalog_source_sha256": "aaf9f909128c957e52b350611b3b34e82d7cb0cc06ab8b5e3a97828470ff7a8c",
+      "feed_source_sha256": "324e7b2af6657319744d48705b31a319511f9361f884f4cae0d116791510b570"
+    }
+  ],
+  "catalog_observations": [
+    {
+      "id": "ibm",
+      "url": "https://www.youtube.com/@IBMTechnology/videos",
+      "expected_channel_id": "UCKWaEZ-_VweaEx1j62do_vQ",
+      "checked_at": "2026-09-29T15:21:29.659Z",
+      "resolved_url": "https://www.youtube.com/@IBMTechnology/videos",
+      "status": "retrieved",
+      "source_sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d"
+    },
+    {
+      "id": "jeff-su",
+      "url": "https://www.youtube.com/@JeffSu/videos",
+      "expected_channel_id": null,
+      "checked_at": "2026-09-29T15:21:29.920Z",
+      "resolved_url": "https://www.youtube.com/@JeffSu/videos",
+      "status": "retrieved",
+      "source_sha256": "672f0b21256a38216294f7ddef043cc27fa0939fc8318d7df38836c0379b057b"
+    },
+    {
+      "id": "kevin-stratvert",
+      "url": "https://www.youtube.com/@KevinStratvert/videos",
+      "expected_channel_id": null,
+      "checked_at": "2026-09-29T15:21:30.280Z",
+      "resolved_url": "https://www.youtube.com/@KevinStratvert/videos",
+      "status": "retrieved",
+      "source_sha256": "aaf9f909128c957e52b350611b3b34e82d7cb0cc06ab8b5e3a97828470ff7a8c"
+    },
+    {
+      "id": "microsoft-mechanics",
+      "url": "https://www.youtube.com/@MicrosoftMechanics/videos",
+      "expected_channel_id": null,
+      "checked_at": "2026-09-29T15:21:30.356Z",
+      "status": "unavailable",
+      "reason": "HTTP 404"
+    }
+  ],
+  "feed_observations": [
+    {
+      "id": "ibm",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWaEZ-_VweaEx1j62do_vQ",
+      "checked_at": "2026-09-29T15:21:30.986Z",
+      "status": "retrieved",
+      "source_sha256": "a08068f63a05dc2a31e7b0290ead9d15a78111802c79e15b937af40d1c0f8f10"
+    },
+    {
+      "id": "jeff-su",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu01qlnVg1Ai2AbtTMaA",
+      "checked_at": "2026-09-29T15:21:31.169Z",
+      "status": "retrieved",
+      "source_sha256": "e1e268e6a31188b3ac512ca93d8801fe649605f1ad9cbb8db3109b299dd00a0d"
+    },
+    {
+      "id": "kevin-stratvert",
+      "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfJT_eYDTmDE-ovKaxVE1ig",
+      "checked_at": "2026-09-29T15:21:31.497Z",
+      "status": "retrieved",
+      "source_sha256": "324e7b2af6657319744d48705b31a319511f9361f884f4cae0d116791510b570"
+    }
+  ],
+  "records": [],
+  "eligible_before_cap": 0,
+  "metadata_limit": 20,
+  "diagnostics": [
+    {
+      "source_id": "ibm",
+      "video_id": "7jUcTG1eeTM",
+      "reason": "exact catalog runtime unavailable"
+    },
+    {
+      "source_id": "ibm",
+      "video_id": "bs1qPy_CWkM",
+      "reason": "exact catalog runtime unavailable"
+    },
+    {
+      "source_id": "ibm",
+      "video_id": "kyJ1vd7yEPc",
+      "reason": "exact catalog runtime unavailable"
+    },
+    {
+      "source_id": "jeff-su",
+      "video_id": "peP_o66u-vM",
+      "reason": "exact catalog runtime unavailable"
+    },
+    {
+      "source_id": "kevin-stratvert",
+      "video_id": "KJ8Y2Nb9y9o",
+      "reason": "exact catalog runtime unavailable"
+    },
+    {
+      "source_id": "microsoft-mechanics",
+      "reason": "HTTP 404"
+    }
+  ],
+  "negative_tests_passed": [
+    "reject_wrong_publisher_identity"
+  ],
+  "video_selection_validated": false,
+  "media_ready": false,
+  "article_stages_repeated": false,
+  "podcast_stages_repeated": false,
+  "prior_q_approval_reused": false,
+  "model_calls": 0,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "production_mutation": false,
+  "account_billing_observed": false
+}
