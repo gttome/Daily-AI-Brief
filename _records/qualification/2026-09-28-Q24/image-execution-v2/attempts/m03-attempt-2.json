@@ -42,11 +42,20 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "next_action": "Wait for this single bound task to execute, then recover its genuine result/output before any further attempt.",
+  "next_action": "Observe execution of the same bound attempt-2 task at its rescheduled start, then recover the genuine result/output before any further generation.",
   "submitted_prompt_verifier": "Automation prompt equals the unchanged compiled m03 visual-only task prompt bound by SHA-256 f3661e96b9251e76883df68577475f399373e79fa77f254d257310bc3abe5a18.",
   "task_title": "OpenShell Runtime Illustration A2",
   "task_created_at": "2026-09-29T12:17:36.909136Z",
-  "scheduled_for": "2026-09-29T12:18:36Z",
+  "scheduled_for": "2026-09-29T12:23:12Z",
   "task_last_run_time_at_creation": null,
-  "generation_started_scope": "No native result is asserted before scheduled execution; reconcile actual output after the observed run."
+  "generation_started_scope": "No native result is asserted before scheduled execution; reconcile actual output after the observed run.",
+  "scheduler_start_misses": [
+    {
+      "scheduled_for": "2026-09-29T12:18:36Z",
+      "observed_at": "2026-09-29T12:21:57Z",
+      "last_run_time": null,
+      "classification": "scheduled_start_missed",
+      "action": "rescheduled_same_bound_task_no_duplicate"
+    }
+  ]
 }
