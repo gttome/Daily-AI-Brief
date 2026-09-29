@@ -1,41 +1,45 @@
-# Q24 — raw image transfer verified; final review and acceptance pending
+# Q24 — final candidate visual review passed; final persistence and acceptance pending
 
 > [!IMPORTANT]
-> **Q24 remains nonterminal, 0/6 accepted. The m04 attempt-3 original-file transfer is COMPLETE.** Do not upload or generate that original again. The current attempt record now says `RAW_IMAGE_CAPTURED`, `raw_capture_complete=true`, `raw_git_read_back_verified=true`, and `blocker=null`. Final review, final-byte persistence and V2 acceptance remain incomplete.
+> **Q24 remains nonterminal with 0/6 accepted images.** m04 attempt 3 has now passed per-image final visual review of the exact preserved 1200x630 candidate. The original raw transfer is already complete. The first unfinished operation is **final-candidate Git persistence/read-back and genuine V2 receipt validation**, not another raw upload, generation, normalization or visual review.
 
-## Current evidence-backed status
+## Actual advancement
 
-| Operation | Result |
+| Operation | Current result |
 |---|---|
-| m04 attempt-3 native generation | Completed; original artifact `file_00000000266081f8bf0237a56fae3206`, gen ID `16f66ef7-79d0-49f3-a241-441b5b78eb60` |
-| Original-file Git capture | Completed at `f64f15ac9bca113c79b5adac726e083a05c26400`, September 28, 8:26:57 p.m. Central |
-| Independent raw read-back | PASS, workflow `36507952042`, verified at `2026-09-29T01:27:14.755887+00:00` |
-| Artifact/original equality | PASS, genuine artifact `11007478942`; raw byte equality, SHA-256 and Git blob identity independently checked against retained native output |
-| Preliminary subject/factual diagnostics | Passed for the third output; all eight essential labels observed. Not a substitute for formal final review |
-| 1200x630 final candidate | Prepared and preserved in Library; final quality acceptance and final Git persistence/read-back remain pending |
-| Stale attempt-state reconciliation | Complete, attempt update `57ecbe46b51071bb7d27c212570512f0e162e670`; old local-token blocker retained as historical evidence only |
-| Full Q24 qualification / public publication | Not complete; no terminal PASS or public edition claimed |
+| Third native output | Complete; gen ID `16f66ef7-79d0-49f3-a241-441b5b78eb60`, artifact `file_00000000266081f8bf0237a56fae3206` |
+| Original raw Git capture/read-back | Complete; commit `f64f15ac9bca113c79b5adac726e083a05c26400`, successful workflow `36507952042`, artifact `11007478942` |
+| Exact final candidate recovery | Materialized the existing Library snapshot; 704,200 bytes, 1200x630, unchanged SHA-256 |
+| Final per-image subject/factual review | PASS; all eight essential labels readable; publisher availability distinguished from a suggested evaluation method; no invented measurements or winner |
+| Candidate pixel/file structural checks | PASS; released `inspectHandoffAsset`, 13 PNG chunks, full decode, canvas and clipping/overlap inspection |
+| Professional benchmark comparison | Per-image PASS; all 12 reference-image Git hashes and the benchmark profile validated; both September 9 and September 10 sets inspected |
+| Final Git persistence / V2 receipt / accepted lock | **Pending**; no final-file upload or accepted_locked claim from this review |
+| Six-image differentiation / final Q24 gates | **Pending**, not implied by one image's review |
 
-Immutable reconciliation event: `image-execution-v2/events/m04-attempt-3-raw-capture-reconciliation.json`, commit `af5724ccdd779c8648c020f6b328942fbcfd830f`. It binds the actual raw capture, verification artifact and historical projection. The original generation/recovery event remains unchanged. During reconciliation, the already-downloaded artifact was read and checked; no workflow, raw upload, image generation or editorial work was repeated.
+The formal per-image review completed at **2026-09-29T02:33:55.524Z / September 28, 9:33:55 p.m. Central**. Immutable review: `image-execution-v2/reviews/m04-attempt-3-final.json`, committed at `6e4b79e7bbddd85d56666eca71dbda32c5e1785e`. The current attempt was advanced at `6253a7b2fa3e85934782339b5471eb19a9d31ef3` to `FINAL_VISUAL_REVIEW_PASSED_PERSISTENCE_PENDING`, with `review_complete=true` explicitly scoped to this one image's visual review. `persistence_complete=false`, `final_git_read_back_verified=false`, `full_v2_receipt_validated=false` and `accepted_locked=false` remain truthful.
 
-## Exact file bindings
+## Exact final bytes — reuse, do not alter
 
-**Verified original:** `_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png`, 1,321,460 bytes, 1730x909. SHA-256 `efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3`; actual committed Git blob `31f5ab0e228bdcdc3d04a5c064815ae4c1901ff8`. Artifact ZIP SHA-256 `043d4cd09887742557a12faa7501871c69aeb0aa0d4dc516e8b70f90c65d6de3`. Library mirror: `libfile_0a71280905a08191bfde8f40293221d5`, backing `file_00000000cd0081f89894239f96601c9b`.
+- Final candidate SHA-256: `bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895`.
+- Computed final Git blob: `8be2d89294d3f18a29faa5f7608901bab9455cf5` — **computed identity, not yet verified storage**.
+- Exact existing Library record: `libfile_d699789ea89081919482f837987dd5d2`; backing snapshot `file_000000002c8481f6943af9e3227e3efe`.
+- Library path: `/Daily AI Brief Qualification Images/2026-09-28-Q24/m04/attempt-3-final-candidate.png`.
+- Original raw SHA-256: `efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3`; verified Git blob `31f5ab0e228bdcdc3d04a5c064815ae4c1901ff8`; committed path `_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png`.
 
-**Unaccepted final candidate:** 1200x630 PNG, SHA-256 `bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895`; computed Git blob `8be2d89294d3f18a29faa5f7608901bab9455cf5`. Library `libfile_d699789ea89081919482f837987dd5d2`, backing `file_000000002c8481f6943af9e3227e3efe`, `/Daily AI Brief Qualification Images/2026-09-28-Q24/m04/attempt-3-final-candidate.png`. A computed final blob is not evidence that final persistence has happened. Reuse these exact candidate bytes for review; do not normalize or regenerate again without a demonstrated defect.
+The per-image review used direct rendered pixels and benchmark contact sheets, not OCR or an opaque score. It records 10 meaningful components, factual observations and composition/hierarchy signatures. The final canvas's secondary footer is small but readable at native size; a mobile-page accessibility test was not performed. Six-image differentiation cannot be approved until the other five images exist. The actual candidate/benchmark render file identities are recorded; no opaque tool call ID was invented. This is active-chat automated review, not evidence that review ran in the scheduled task.
 
 ## First unfinished operation
 
-Complete automated formal review of the preserved final candidate against the frozen request and current factual/structural/professional-quality requirements. If it passes, persist its exact approved bytes on Q24 through the established authenticated connector, retrieve and compare them, and validate the genuine V2 execution receipt. Mark `accepted_locked` only after those requirements actually pass. Then continue to m03. Until m04 is resolved, do not create attempt 4, another m04 task, or an m03 task.
+Persist the **exact reviewed final candidate** on the existing isolated Q24 branch through the permitted authenticated connector path, using the live head/tree and no force push. Retrieve and compare the committed final bytes, then validate genuine V2 provenance, review and persistence evidence. Do not equate this per-image PASS with the complete structural lock/path/receipt gate. Mark the image accepted only after required evidence passes; then continue to m03. Do not consume m04 attempt 4 or schedule m03 while m04's acceptance remains unresolved.
 
-**The raw-transfer blocker is resolved; final acceptance has not yet been achieved.** This reconciliation did not perform final review, final-image upload or a new qualification run. Report that distinction. Consult live workflow and executor evidence before continuing; an enabled schedule is not a running process.
+The review invocation performed no new generation, normalization, raw-image transfer, workflow launch or full qualification run. It recovered the existing candidate, checked its exact bytes and reviewed it. No new blocker is asserted merely because final persistence is unfinished. Use live workflow/task evidence for whether another executor is progressing; a schedule alone is not evidence of running work.
 
-## Route and preservation requirements
+## Preserved state
 
-Use the current `connector-first-v1` guidance and the production Git Data connector route. Missing local `GH_TOKEN`/`GITHUB_TOKEN` is not a prerequisite for that route. PR287 release `ffe27f6b0c423852a9d258b6479863d29a64d8e5` restored that precedence; no new uploader or acceptance-code change was made here. A current tool denial must not be evaded. Preserve the live handoff tree and concurrent changes; no force pushes.
+Use `connector-first-v1`; a local GitHub token is not required for the authenticated connector. PR287 restored that routing without changing the image quality code. The inspected image-gate source blob was `a05a3c4d71bbf6eeed9d0240cc33b495bb65fb3d`, matching the live source. Follow actual tool schemas and stop any current denied operation; no alternate-endpoint evasion.
 
-Original cutoff `2026-09-28T20:04:36Z`, original baseline `1def5c4ba158247a9c02106dc4e4820d80a7133d`, policies `article-24-72-168-v1` and `media-research-cutoff-v1`, all five completed components and frozen requests remain unchanged. The successful raw read-back workflow verified the five recorded frozen input bindings. Three m04 generations have been used; the maximum remains four. Earlier rejected outputs remain preserved. Continue serially m04, m03, m05, m06, m01, m09, then final kernel/manifest, full qualification gates and simulated closure. No Q25 or production publication.
+Original cutoff `2026-09-28T20:04:36Z`, baseline `1def5c4ba158247a9c02106dc4e4820d80a7133d`, `article-24-72-168-v1`, `media-research-cutoff-v1`, five completed components and frozen requests remain unchanged. Three m04 generations used, maximum four; both prior rejections remain preserved. Continue m04, m03, m05, m06, m01, m09, then final kernel/manifest, full qualification checks and simulated closure. No Q25, public production, PR117, greenfield, Sites or sharing changes.
 
-Historical checkpoint before this correction: [immutable previous checkpoint](https://github.com/gttome/Daily-AI-Brief/blob/b5bf335a8c0b03c89f346d4dd7c49a5bd0a685bb/_records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md). It preserves earlier capability observations and links to complete component history; its transfer-blocked wording is historical, not current state. Issue #247 comment `5881968215` records the original status verification that established completed transfer.
+[Previous complete checkpoint and earlier evidence links](https://github.com/gttome/Daily-AI-Brief/blob/8da62e2a62c955644ea40d01fd568fb6f80283e9/_records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md). Historical review-pending wording there is superseded by the current review file and attempt projection, not deleted from history.
 
-No owner image task, Work, Codex, paid-model API, new credential, PR117, greenfield, Sites or sharing change. Billing remains unobserved. Full unattended image production is not yet proven.
+No owner image work, Work, Codex, paid-model API or new credentials. Billing remains unobserved. Full unattended image production and Q24 closure are not yet proven.
