@@ -1,0 +1,53 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "workflow_run_id": 36592084510,
+  "execution_commit": "cabe02979e03facd7b3f693e1d84f93727b389c0",
+  "outcomes": [
+    {
+      "id": "jev-ecosystem",
+      "url": "https://arxiv.org/abs/2609.30216v1",
+      "checked_at": "2026-09-29T15:41:26.246Z",
+      "status": "captured",
+      "source_sha256": "03bc13e762c79c5c44087ab9a1d3f2499917d84a1e5f3aa2a5b83492dab5e62f",
+      "source_text_sha256": "56309227d93d662216c7e08ddd01ec08cb85f22b56c2c19fb2b1759f01f70c3e",
+      "source_text_path": "_records/qualification/2026-09-29-Q25/watchlist-book-evidence/source-texts/jev-ecosystem.txt",
+      "artifact_file": "jev-ecosystem.html"
+    },
+    {
+      "id": "harness-cost",
+      "url": "https://arxiv.org/abs/2609.28919v1",
+      "checked_at": "2026-09-29T15:41:26.320Z",
+      "status": "captured",
+      "source_sha256": "18034b5c8a448a63760971b83b0ec96cda6ae2f73e530458a722c8c24427766f",
+      "source_text_sha256": "375cb6aa5b6cff1ff59b33d7fff26ff1fe7a1de0cb2ca2e11a17c19aec355799",
+      "source_text_path": "_records/qualification/2026-09-29-Q25/watchlist-book-evidence/source-texts/harness-cost.txt",
+      "artifact_file": "harness-cost.html"
+    },
+    {
+      "id": "potarcin",
+      "url": "https://arxiv.org/abs/2609.27288v1",
+      "checked_at": "2026-09-29T15:41:26.326Z",
+      "status": "captured",
+      "source_sha256": "d7bd7e127b0fd7ddc847f39115a34741d4ea20454fca52f7bcd3706879b574d2",
+      "source_text_sha256": "4f6c7df1ab309ed2db6002acf4ec179adc0c0a6c25f0bb248b0e672286078dc6",
+      "source_text_path": "_records/qualification/2026-09-29-Q25/watchlist-book-evidence/source-texts/potarcin.txt",
+      "artifact_file": "potarcin.html"
+    }
+  ],
+  "scope": "Watchlist-only original abstract/date verification; no full-paper review, reproduction or changed article selection",
+  "new_retrievals": 3,
+  "maximum_retrievals": 3,
+  "editorial_review_complete": false,
+  "watchlist_ready": false,
+  "article_stages_repeated": false,
+  "media_stages_repeated": false,
+  "production_mutation": false,
+  "model_calls": 0,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false
+}
