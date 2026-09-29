@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "visual-only-task-delivery-v1",
+  "request_sha256": "89d5846393b7218b13d20cb77a01e02c389c7820a73aeeb6d0421ce836cbed82",
+  "story_id": "dab-story-2026-09-28-88a7c51a",
+  "candidate_id": "m03",
+  "task_prompt": "Create exactly one NEW professional textbook illustration of this subject:\nNVIDIA OpenShell places runtime access controls around existing agents\n\nVisual composition:\nWhite background, professional high-detail landscape textbook illustration for a final 1200 by 630 canvas, clear non-overlapping labels and generous safe margins. Create an integrated layered runtime-control cutaway: an existing agent inside an explicitly depicted permissions boundary, API operations crossing allow or deny gates, systems/data beyond the boundary, and a distinct credential-protection layer. Use legible detailed callouts, differentiated access routes and scope boundaries; do not imply complete attack prevention or depict real product screens.\n\nVerified factual scope:\nNVIDIA describes OpenShell 0.1.0 as an open-source runtime for defining and enforcing which systems and data an AI agent can access. The post explains placing runtime controls around an existing agent without rewriting it, including restrictions on API operations and protection of credentials.\n\nConceptual explanatory elements:\nConceptual shapes, scope boundaries, arrows and comparison structures are explanatory, not product UI.\nEvaluation and review elements are suggested practices, not measured publisher outcomes.\n\nEssential readable labels; include every label verbatim:\n- NVIDIA OpenShell\n- Existing agent\n- Runtime controls\n- API operations\n- Systems and data\n- Credentials\n- Allow\n- Deny\n\nFactual and visual restrictions:\nPublisher-authored bounded excerpt includes an AI-generated summary. It supports the described controls but does not establish resistance to every attack, production maturity or measured security outcomes.\nNo fabricated metrics, benchmark results, code, filenames, product UI, pricing, access entitlements or capabilities.\nNo operational dashboard, qualification status, other story subject, people, decorative imagery or low-quality fallback.\n\nUse only the subject, facts, concepts and restrictions above as image content.\nCreate the illustration itself, not a scene about producing or reviewing illustrations.\nReturn only the single finished illustration.",
+  "task_prompt_sha256": "f3661e96b9251e76883df68577475f399373e79fa77f254d257310bc3abe5a18",
+  "runtime_context_isolation": "not_asserted",
+  "manual_intervention_allowed": false,
+  "native_tool_arguments": {
+    "prompt": null,
+    "size": "1536x1024",
+    "n": 1,
+    "transparent_background": false,
+    "is_style_transfer": false,
+    "referenced_image_ids": null
+  }
+}

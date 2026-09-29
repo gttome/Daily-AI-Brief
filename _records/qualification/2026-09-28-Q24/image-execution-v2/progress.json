@@ -1,0 +1,17 @@
+{
+  "qualification_id": "2026-09-28-Q24",
+  "status": "IMAGES_IN_PROGRESS",
+  "accepted_locked_count": 1,
+  "accepted_candidates": ["m04"],
+  "accepted_receipts": {"m04": "_records/qualification/2026-09-28-Q24/image-execution-v2/receipts/m04.json"},
+  "pending_candidate": "m03",
+  "pending_attempt": 1,
+  "next_action": "Submit exactly one prepared visual-only m03 task, then recover its actual output and complete capture/review/final persistence.",
+  "verification_workflow_run_id": 36516797618,
+  "verification_artifact_id": 11011087017,
+  "verification_artifact_sha256": "d3527ffdb4e2c5d4400ee8dbd9bebb42941464878161b9bf000fc5564df27538",
+  "final_verified_at": "2026-09-29T03:22:10.253Z",
+  "full_qualification_pass": false,
+  "six_image_set_review_complete": false,
+  "production_mutation": false
+}

@@ -8,7 +8,7 @@
   "attempt": 3,
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
-  "status": "FINAL_VISUAL_REVIEW_PASSED_PERSISTENCE_PENDING",
+  "status": "ACCEPTED_LOCKED",
   "evidence_type": "live",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json",
@@ -48,7 +48,7 @@
   "raw_height": 909,
   "raw_capture_complete": true,
   "raw_git_read_back_verified": true,
-  "raw_capture_complete_scope": "Original native PNG is committed to the Q24 branch; workflow artifact read-back matches the original bytes, SHA-256 and Git blob identity. This does not complete final-file persistence or acceptance.",
+  "raw_capture_complete_scope": "Verified original native bytes. Final-file verification and acceptance are separately completed below.",
   "raw_capture": {
     "path": "_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png",
     "sha256": "efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3",
@@ -72,7 +72,7 @@
   "final_candidate_library_file_id": "libfile_d699789ea89081919482f837987dd5d2",
   "final_candidate_library_backing_file_id": "file_000000002c8481f6943af9e3227e3efe",
   "review_complete": true,
-  "review_complete_scope": "Per-image factual, pixel-structural and professional benchmark review of the exact preserved 1200x630 candidate. Final Git/lock/receipt and six-image differentiation gates remain incomplete.",
+  "review_complete_scope": "Existing individual factual, pixel-structural and professional review is complete. Final-byte and V2 checks are now complete separately; six-image differentiation remains pending.",
   "final_visual_review": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/reviews/m04-attempt-3-final.json",
     "commit_sha": "6e4b79e7bbddd85d56666eca71dbda32c5e1785e",
@@ -89,19 +89,19 @@
     "benchmark_assets_hash_verified": 12,
     "six_image_differentiation_complete": false
   },
-  "persistence_complete": false,
-  "final_git_read_back_verified": false,
-  "full_v2_receipt_validated": false,
-  "accepted_locked": false,
+  "persistence_complete": true,
+  "final_git_read_back_verified": true,
+  "full_v2_receipt_validated": true,
+  "accepted_locked": true,
   "blocker": null,
   "historical_local_cli_transfer": {
     "result": "CAPABILITY_BLOCKED_AUTHENTICATED_FILE_HOST_REQUIRED",
     "http_status": null,
     "write_requests": 0,
-    "scope": "Historical PR286 local-token adapter attempt only; superseded for current raw-capture status by completed connector Git Data transfer and verified read-back. Original event is retained unchanged."
+    "scope": "Historical optional local-token adapter observation only. Original event is unchanged; completed connector transfer and read-back govern current status."
   },
-  "next_action": "Persist and independently read back the exact reviewed final candidate, then validate genuine V2 execution evidence and acceptance. Do not repeat raw upload, generation, normalization or completed per-image review. Six-image differentiation remains a later mandatory set gate.",
-  "recovery_required_before_any_new_generation": true,
+  "next_action": "Continue with frozen m03 only; reuse m04 accepted bytes without regeneration, normalization or visual review.",
+  "recovery_required_before_any_new_generation": false,
   "maximum_attempts": 4,
   "owner_interventions": [],
   "manual_intervention_required": false,
@@ -114,5 +114,29 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "note": "The third original raw transfer remains complete. The exact already-preserved final candidate has now passed per-image visual review, released PNG inspection and comparison to both hash-verified benchmark sets. Full final-image storage/read-back, V2 receipt and acceptance are still pending; a review PASS does not establish accepted_locked. This review did not generate, normalize or upload an image and repeated no research."
+  "execution_receipt_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/receipts/m04.json",
+  "execution_receipt_sha256": "a719dba22f820709072512cc337e64edf0966ba697baa1855ea139c6eaf1040f",
+  "final_persistence": {
+    "path": "briefs/images/2026-09-28/q24-m04-claude-sonnet-5-5-aws.png",
+    "sha256": "bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895",
+    "git_blob_sha": "8be2d89294d3f18a29faa5f7608901bab9455cf5",
+    "persisted_at": "2026-09-28T22:17:34-05:00",
+    "commit_sha": "7c4512e6b26a2af3e3e335057480e0978c0cc12c",
+    "read_back_verified": true,
+    "verification_commit": "54d8d07c958814b7082e115ab3b09ebcafdd3e6c",
+    "workflow_run_id": "36516797618"
+  },
+  "accepted_at": "2026-09-29T03:24:40.793749+00:00",
+  "acceptance_scope": "Single-image V2 receipt and exact final bytes verified. Full six-image differentiation, assembled production image gate and qualification closure remain pending.",
+  "acceptance_evidence": {
+    "workflow_run_id": 36516797618,
+    "artifact_id": 11011087017,
+    "artifact_sha256": "d3527ffdb4e2c5d4400ee8dbd9bebb42941464878161b9bf000fc5564df27538",
+    "artifact_final_matches_preserved_reviewed_bytes": true,
+    "released_receipt_errors": [],
+    "regression_tests_passed": 51,
+    "negative_receipt_mutations_rejected": 5,
+    "five_frozen_bindings_unchanged": true
+  },
+  "note": "The exact preserved reviewed 704,200-byte final PNG is committed and independently verified. The live receipt passed the unchanged V2 validator in Actions and locally; the downloaded final equals the retained reviewed PNG exactly. Review identity is explicitly a content-addressed durable record reference, not a fabricated provider tool-call ID. One image is accepted; Q24 and its six-image set remain nonterminal. Preserve all prior failures and completed components."
 }

@@ -1,0 +1,92 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "c6ee6ddaac0d89377752171ae9197b18cb282f54e28e715fdfc08e83a22e9956",
+  "story_id": "dab-story-2026-09-28-237e7abe",
+  "candidate_id": "m04",
+  "execution_mode": "qualification_nonproduction",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 3,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "16f66ef7-79d0-49f3-a241-441b5b78eb60",
+    "artifact_id": "file_00000000266081f8bf0237a56fae3206",
+    "generated_at": "2026-09-29T00:41:09.010676101Z",
+    "generated_at_source": "Parsed embedded c2pa.created metadata; signature not independently verified. Actual native result identity is recorded in the generation/recovery event.",
+    "raw_sha256": "efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png",
+      "sha256": "efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3",
+      "git_blob_sha": "31f5ab0e228bdcdc3d04a5c064815ae4c1901ff8",
+      "read_back_verified": true,
+      "original_verification": {
+        "path": "_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png",
+        "sha256": "efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3",
+        "git_blob_sha": "31f5ab0e228bdcdc3d04a5c064815ae4c1901ff8",
+        "commit_sha": "f64f15ac9bca113c79b5adac726e083a05c26400",
+        "read_back_verified": true,
+        "workflow_run_id": 36507952042,
+        "verified_at": "2026-09-29T01:27:14.755887+00:00",
+        "artifact_id": 11007478942,
+        "artifact_sha256": "043d4cd09887742557a12faa7501871c69aeb0aa0d4dc516e8b70f90c65d6de3"
+      }
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "review-record:e45ebef43a3d695a469ca122f3f52c3b6d843d62",
+    "call_id_kind": "content-addressed durable review record; not a claimed provider opaque tool-call ID",
+    "review_record_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/reviews/m04-attempt-3-final.json",
+    "review_record_sha256": "bdca182cac434491d86a053cb6548f1a86008d385a7b3dbd8d5c4a3a8f3d3532",
+    "review_record_git_blob_sha": "e45ebef43a3d695a469ca122f3f52c3b6d843d62",
+    "render_artifact_id": "file_00000000437c81f6a053a07f6d23623c",
+    "trigger": "active_chat",
+    "reviewed_at": "2026-09-29T02:33:55.524Z",
+    "asset_sha256": "bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": [],
+    "limitations": [
+      "This is active-chat automated review, not proof of an entirely scheduled review stage.",
+      "All benchmark files were hash-checked; composition comparison used two contact sheets, not an opaque numeric score.",
+      "Small-screen legibility and a published-page accessibility test were not performed.",
+      "An actual review render is identified above; no opaque execution call identifier was invented.",
+      "Six-image differentiation and final Git/receipt checks are not complete."
+    ]
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-28/q24-m04-claude-sonnet-5-5-aws.png",
+    "sha256": "bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895",
+    "git_blob_sha": "8be2d89294d3f18a29faa5f7608901bab9455cf5",
+    "persisted_at": "2026-09-28T22:17:34-05:00",
+    "commit_sha": "7c4512e6b26a2af3e3e335057480e0978c0cc12c",
+    "read_back_verified": true,
+    "verification_commit": "54d8d07c958814b7082e115ab3b09ebcafdd3e6c",
+    "workflow_run_id": "36516797618"
+  },
+  "status": "accepted_locked",
+  "scope": "One image execution receipt only; full six-image differentiation, assembled image gate, Q24 closure and unattended production remain unproven"
+}
