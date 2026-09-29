@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "execution_mode": "qualification_nonproduction",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "observed_at": "2026-09-29T15:53:19Z",
+  "status": "CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF",
+  "is_passing_capability_receipt": false,
+  "qualification_terminal": false,
+  "completed_components": {
+    "semantic_selection": {"workflow_run_id": 36586059300, "receipt_path": "_records/qualification/2026-09-29-Q25/semantic-validation-receipt.json"},
+    "podcasts": {"workflow_run_id": 36589099491, "receipt_git_blob": "9b2387dfb4fdd8e54bcfd5813d5f05fe753686d4", "count": 2},
+    "videos": {"workflow_run_id": 36590746801, "receipt_git_blob": "c85bafb10d7e6b1b817eda69ad460f0b27cc22dd", "count": 2},
+    "watchlist_and_public_reader_books": {"workflow_run_id": 36593054419, "receipt_git_blob": "1b63c4db76ea69613ff05770ae1657154851ef66"}
+  },
+  "investigation_started": true,
+  "prior_investigation_path": "_records/qualification/2026-09-29-Q25/image-result-handoff-investigation.json",
+  "positive_native_output_observation": {
+    "scope": "Existing historical OpenShell illustration, not a Q25 story image or new generation.",
+    "generation_id": "018b78c7-deda-4725-a16a-3fde6433b2d1",
+    "generation_id_source": "Actual image-tool result in this conversation",
+    "file_id": "file_000000006af481f4af7a4a1339696b53",
+    "files_metadata_source_kind": "generated",
+    "files_metadata_user_turn_index": 32,
+    "files_metadata_uploaded_at": "2026-09-29T13:30:14.075104+00:00",
+    "bounded_conversation_metadata_check_at": "2026-09-29T15:40:23.347896+00:00",
+    "bounded_metadata_check_result_count": 1,
+    "local_exact_file_read_at": "2026-09-29T15:53:19Z",
+    "local_exact_file_size": 1162134,
+    "local_exact_file_sha256": "bfc167479581dcca33f2d08710ec1679b87a8da45191a66384cd81005f2dbd58",
+    "prior_exact_library_capture_preserved": true,
+    "negative_semantic_search_does_not_negate_file": true
+  },
+  "remaining_unverified_capabilities": [
+    {
+      "capability": "scheduled_task_to_native_result_lineage",
+      "status": "unverified",
+      "reason": "The actual native ID and exact bytes are recoverable in this conversation, but no explicit platform-returned task/result association has been recovered. Matching subject, reused prompt text, a scheduled invocation timestamp or file timestamp alone is not asserted as causal linkage or unattended execution proof."
+    },
+    {
+      "capability": "supported_complete_binary_connector_payload_delivery",
+      "status": "unverified",
+      "reason": "The available create_blob interface accepts literal content and encoding, not a local-file parameter. Complete actual native image bytes have not been delivered to that argument through a supported host mechanism. A computed hash, mounted path or opaque file reference is not a payload. No raw/final Git persistence or read-back has been claimed."
+    }
+  ],
+  "not_a_missing_github_authentication_error": true,
+  "native_image_generation_available": true,
+  "native_image_generation_availability_is_unattended_proof": false,
+  "q25_image_attempts_allocated": 0,
+  "q25_accepted_images": 0,
+  "new_image_generation_performed": false,
+  "historical_q24_reopened": false,
+  "q26_started": false,
+  "next_required_action": "Close the two explicit host/result-handoff proof gaps using supported capabilities before allocating Q25 images. Preserve all five validated content components and the original cutoff. Reuse known file IDs instead of repeated broad searches; do not fabricate a passing capability record, route an OpenShell file to Q25 m03 (Quine), replay a safety denial, introduce new credentials or publish a partial handoff.",
+  "shared_parser_hardening_debt": [
+    "Q25 podcast workbench correction: retain complete playback offers rather than overwriting them with partial context-menu offers. Corrected saved-source reconciliation and negative tests passed; this is not yet a reusable protected-main acquisition release.",
+    "Q25 video workbench correction: support current lockupViewModel metadata and bind duration badges to the same contentId. Corrected saved-source reconciliation and negative tests passed; this is not yet a reusable protected-main acquisition release."
+  ],
+  "private_book_change_evaluation_completed": false,
+  "full_kernel_media_ready": false,
+  "final_kernel_completed": false,
+  "full_qualification_pass": false,
+  "production_mutation": false,
+  "work_invocations_this_step": 0,
+  "codex_invocations_this_step": 0,
+  "paid_model_api_calls_this_step": 0,
+  "account_billing_observed": false
+}
