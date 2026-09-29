@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "profile_id": "under80-v1",
+  "purpose": "continuous_qualification",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "edition_date": "2026-09-29",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "source_scan_max": 48,
+  "fresh_metadata_target": 24
+}
