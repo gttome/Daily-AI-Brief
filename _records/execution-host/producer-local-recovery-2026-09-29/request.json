@@ -1,0 +1,56 @@
+{
+  "schema_version": "native-producer-local-recovery-request-v1",
+  "recovery_id": "native-handoff-probe-A-recovery-1",
+  "created_at": "2026-09-29T21:05:00.232939Z",
+  "repository": "gttome/Daily-AI-Brief",
+  "release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+  "execution_profile_under_test": "reliable-edition-v1",
+  "original_task_id": "6abbddb376b481919593b0cf7de88eb2",
+  "original_task_title": "Native Handoff Probe",
+  "original_invocation_observed_at": "2026-09-29T15:49:14.497911Z",
+  "original_invocation_time_scope": "Scheduler last_run_time; not proof of native generation",
+  "original_visual_prompt": "Create exactly one NEW professional textbook illustration for a capability handoff probe. White background, landscape composition, no people. Show three connected labeled stages: \"Scheduled task\", \"Native result\", and \"Exact bytes\". Include the unique readable label \"NATIVE-HANDOFF-PROBE-2026-09-29-A\" exactly once. Use only these labels and simple abstract arrows and containers. Return only the single finished illustration.",
+  "original_visual_prompt_sha256": "d6931b1d6fb3564e8938eb4321f7281a3501535207e5773700493c2cb6f07a4a",
+  "method": "Update the same existing producer task to one recovery-only invocation; inspect its own available preceding native result instead of creating another generator or searching unrelated conversations. Same task ID is not a claim that historical conversation context is available.",
+  "hypothesis": "The original producer task may have access to its own actual previous native output even when a separate operational supervisor cannot recover it. This is unproved until the recovery executes.",
+  "new_generation_allowed": false,
+  "max_recovery_invocations": 1,
+  "repeat_without_material_change": false,
+  "git_result_path": "_records/execution-host/producer-local-recovery-2026-09-29/probe-recovery-result.json",
+  "raw_git_path": "_records/execution-host/producer-local-recovery-2026-09-29/probe-original.png",
+  "result_state": "RECOVERY_PLANNED_NOT_SUBMITTED",
+  "successful_recovery_requirements": [
+    "Actual preceding native tool result visible with its genuine generation/result ID",
+    "Original tool-produced file bytes accessible and intact",
+    "Evidence associating that preceding result with the original task prompt; do not infer from filename/time alone",
+    "Exact immutable Git byte read-back; existing historical m04 transport image cannot stand in for the missing native probe"
+  ],
+  "constraints": {
+    "old_execution_path_mutation": false,
+    "production_publication": false,
+    "terminal_Q24_Q25_mutation": false,
+    "new_qualification_allocation": false,
+    "owner_file_transfer_or_approval": false,
+    "work": false,
+    "codex": false,
+    "paid_model_apis": false,
+    "new_credentials": false,
+    "billing_observed": false
+  },
+  "documentation_findings": [
+    {
+      "source": "https://help.openai.com/en/articles/10291617-scheduled-tasks-in-chatgpt",
+      "observed_at": "2026-09-29",
+      "finding": "Tasks created in Projects cannot access uploaded or Project-stored files. Scheduled tasks can use supported connected apps; monitor tasks may use information from previous runs. Neither statement guarantees image-result access through the currently exposed tools."
+    },
+    {
+      "source": "https://help.openai.com/en/articles/11084440-images-in-chatgpt",
+      "observed_at": "2026-09-29",
+      "finding": "Generated images are automatically saved under Images. This does not establish automatic Library indexing or a programmatic Images-to-Files result API."
+    }
+  ],
+  "scope_notes": [
+    "This is a new bounded result-recovery diagnostic, not a regeneration or the earlier denied historical connector-proof JSON write.",
+    "No acceptance/admission/complete-automation claim may be inferred from preparing or scheduling this request."
+  ]
+}
