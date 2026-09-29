@@ -10,13 +10,13 @@
   },
   "acceptance_commit": "f2eede14362ce1a5e2194f95cfcf628bc2225a76",
   "pending_candidate": "m03",
-  "pending_attempt": 3,
+  "pending_attempt": 4,
   "pending_status": "TASK_SCHEDULED",
-  "pending_task_id": "6abbb747f4c88191bd27655de8eaef84",
-  "pending_task_title": "OpenShell Runtime Illustration A3",
-  "scheduled_for": "2026-09-29T13:05:07Z",
+  "pending_task_id": "6abbbd282598819188d4761f60133243",
+  "pending_task_title": "OpenShell Runtime Illustration A4",
+  "scheduled_for": "2026-09-29T13:30:12Z",
   "native_execution_verified": false,
-  "next_action": "Observe m03 attempt 3 execution and recover that same task's genuine output/result; no duplicate generation. On output, capture/review/persist/accept; on exhaustive unobservability, apply the bounded disposition before any final attempt.",
+  "next_action": "Observe final m03 attempt 4 execution and recover that same task's genuine output/result. If accepted, continue m05. If consumed without acceptance, m03 exhausts its four-attempt budget and Q24 must fail closed at the image stage.",
   "verification_workflow_run_id": 36516797618,
   "verification_artifact_id": 11011087017,
   "verification_artifact_sha256": "d3527ffdb4e2c5d4400ee8dbd9bebb42941464878161b9bf000fc5564df27538",
@@ -40,10 +40,17 @@
       "attempt": 2,
       "reason_code": "TASK_RESULT_UNRECOVERABLE",
       "event_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/events/m03-attempt-2-unrecoverable.json"
+    },
+    {
+      "candidate_id": "m03",
+      "attempt": 3,
+      "reason_code": "TASK_RESULT_UNRECOVERABLE",
+      "event_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/events/m03-attempt-3-unrecoverable.json"
     }
   ],
   "recovery_policy_release_sha": "d16ff493341b754d44627d2ae64071c87e805890",
   "attempt2_binding_commit": "716743b529728fe891d509052689e052cc9e2201",
   "scheduler_start_miss_count": 1,
-  "attempt3_binding_commit": "d299b7837ff674ee0edbe45cd6b76c687e9aa662"
+  "attempt3_binding_commit": "d299b7837ff674ee0edbe45cd6b76c687e9aa662",
+  "attempt4_binding_commit": "783d5c7a344c806bba5732e68e8944dccba09cf3"
 }
