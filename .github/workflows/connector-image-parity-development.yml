@@ -1,0 +1,55 @@
+name: Connector image transport parity verification
+on:
+  push:
+    branches: ['repair/connector-image-transport-parity-2026-09-28']
+    paths: ['.github/workflows/connector-image-parity-development.yml']
+permissions:
+  contents: write
+concurrency:
+  group: connector-image-parity-development
+  cancel-in-progress: false
+jobs:
+  verify:
+    if: github.ref_name == 'repair/connector-image-transport-parity-2026-09-28'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Reconcile current policy and retain original image implementation
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/connector-parity-proof
+          node _tools/_reconcile-image-transport-parity.mjs | tee /tmp/connector-parity-proof/reconciliation.json
+      - name: Test connector precedence and unchanged image contracts
+        run: |
+          set -euo pipefail
+          node --test _generator/test/image-transport-parity.test.mjs _generator/test/image-execution.test.mjs _generator/test/native-image-delivery.test.mjs _generator/test/github-image-transfer.test.mjs | tee /tmp/connector-parity-proof/targeted.log
+          node --test _generator/test/*.test.mjs | tee /tmp/connector-parity-proof/full.log
+          node _tools/validate-contracts.mjs | tee /tmp/connector-parity-proof/contracts.log
+      - name: Persist only the coordinated policy and regression changes
+        env:
+          TARGET_BRANCH: ${{ github.ref_name }}
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm _tools/_reconcile-image-transport-parity.mjs .github/workflows/connector-image-parity-development.yml
+          git add docs/operations/under80-runtime-contract.json docs/operations/efficiency-operating-policy.json docs/operations/START-HERE.md docs/operations/LIVING-SYSTEM-OPERATIONS.md docs/operations/automated-image-execution.md docs/operations/native-image-task-delivery.md docs/operations/image-file-transfer.md _generator/test/image-transport-parity.test.mjs _generator/test-selection.json
+          git diff --cached --name-only > /tmp/connector-parity-proof/changed-paths.txt
+          git commit -m 'Restore connector-first image transfer parity and guard against local-token regressions'
+          git push origin "HEAD:$TARGET_BRANCH"
+          git rev-parse HEAD > /tmp/connector-parity-proof/implementation-commit.txt
+          git diff --stat 7157e8c02b813af4b890eab885b388983923586d..HEAD > /tmp/connector-parity-proof/final-diff.txt
+      - name: Retain actual verification evidence
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: connector-image-transport-parity-proof
+          path: /tmp/connector-parity-proof/
+          retention-days: 14
+          if-no-files-found: error
