@@ -23,6 +23,8 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p /tmp/reliable-execution-proof
+          git diff --name-status 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs | tee /tmp/reliable-execution-proof/protected-before.txt
+          git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
           sha256sum _generator/lib/durable-operation.mjs _generator/lib/recoverable-image-job.mjs _generator/lib/connector-image-delivery.mjs _generator/lib/edition-execution.mjs _tools/edition-execution.mjs _generator/test/reliable-execution.test.mjs docs/operations/reliable-edition-execution.md > /tmp/reliable-execution-proof/uploaded-source-hashes.txt
           node _tools/apply-reliable-execution-change.mjs | tee /tmp/reliable-execution-proof/migration.json
           node --input-type=module - <<'NODE'
@@ -62,11 +64,31 @@ jobs:
           assert.throws(()=>verifyPublicationBundle('.',shortened),/incomplete/);
           fs.writeFileSync('/tmp/reliable-execution-proof/bundle-smoke.json',JSON.stringify({result:'pass',scope:'existing-content packaging only, not new native-image or public-run proof',bundle_sha256:a.bundle_sha256,artifacts:a.artifacts.length,original_cutoff:cutoff,native_generation_calls:0,production_mutation:false},null,2));
           NODE
+      - name: Preserve test side effects as diagnostics and restore unchanged input files
+        run: |
+          set -euo pipefail
+          git diff --binary HEAD -- _data _records briefs assets > /tmp/reliable-execution-proof/test-side-effects.patch
+          git diff --name-status HEAD -- _data _records briefs assets | tee /tmp/reliable-execution-proof/test-side-effects.txt
+          python3 - <<'PY'
+          import subprocess,json,hashlib
+          from pathlib import Path
+          changed=subprocess.check_output(['git','diff','--name-only','-z','HEAD','--','_data','_records','briefs','assets']).decode().split('\0')
+          rows=[]
+          for p in filter(None,changed):
+            original=subprocess.check_output(['git','show','HEAD:'+p])
+            baseline=subprocess.check_output(['git','show','49e43aa9a581866c487140b27400cc39e8531037:'+p])
+            assert original==baseline, 'Not an unchanged test input: '+p
+            file=Path(p)
+            assert not file.is_symlink()
+            rows.append({'path':p,'before_sha256':hashlib.sha256(original).hexdigest(),'after_sha256':hashlib.sha256(file.read_bytes()).hexdigest() if file.exists() else None})
+            file.parent.mkdir(parents=True,exist_ok=True);file.write_bytes(original)
+          Path('/tmp/reliable-execution-proof/test-side-effects.json').write_text(json.dumps(rows,indent=2)+'\n')
+          PY
+          git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
       - name: Persist only verified implementation and remove temporary helpers
         run: |
           set -euo pipefail
           test "$GITHUB_REF_NAME" = 'hardening/reliable-edition-execution-2026-09-29'
-          git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
           rm _tools/apply-reliable-execution-change.mjs .github/workflows/reliable-execution-development.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
