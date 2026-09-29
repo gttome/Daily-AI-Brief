@@ -1,34 +1,41 @@
-# Q24 — raw-image transfer resolved; visual-only attempt 3 submitted
+# Q24 — third native image recovered; correct subject; Git capture still incomplete
 
 > [!IMPORTANT]
-> **Q24 remains nonterminal, with 0/6 accepted images.** Both earlier m04 outputs are captured and rejected. The third image-only task has actually been created; its generated output and acceptance are not yet verified. Recover that task before creating any other generation attempt.
+> **Q24 remains nonterminal, with 0/6 accepted images.** m04 attempt 3 actually generated a correct-subject AWS model-evaluation illustration. Its original PNG is recovered, durably captured in Library and byte-verified. A 1200x630 candidate is also preserved. Neither is an accepted Git-bound image yet. **Do not generate attempt 4 or advance to m03 while this output remains recoverable.**
 
-## Current state
+## Latest completed work
 
-| Operation | Evidence-backed result |
+| Operation | Observed result |
 |---|---|
-| Attach attempt-2 raw bytes to Q24 | Complete — commit `db67ddbd110417dfa9d1b609c9de16248f0a2934` |
-| Exact Git read-back and PNG integrity | PASS — workflow `36503506700`, artifact `11005039890` |
-| Attempt-2 automated subject review | REJECTED — `image-execution-v2/reviews/m04-attempt-2.json` |
-| Released continuation planner | `PREPARE_IMAGE_ONLY_TASK`, attempt 3; seven local check groups passed |
-| Actual visual-only task submission | Complete — one-time **AWS Model Evaluation Illustration**, scheduled for `2026-09-29T00:37:34Z` / September 28, 7:37:34 p.m. Central |
-| Third native output / image approval | Not verified; consult current attempt record and actual task/file evidence |
-| Automatic supervisor | **Q24 Image Continuation**, hourly, next configured start `2026-09-29T00:39:43Z`; enabled is not execution proof |
+| Actual third native output | Native gen ID `16f66ef7-79d0-49f3-a241-441b5b78eb60`; original artifact `file_00000000266081f8bf0237a56fae3206` |
+| Original file recovery | 1,321,460-byte PNG, 1730x909; complete decode and PNG integrity passed |
+| Automatic original Library capture/read-back | Exact byte equality with native file passed |
+| Request and visual-only delivery binding | Released validators passed against unchanged request and submitted text hashes |
+| Visual diagnostics | Correct model/access/evaluation subject; all eight essential labels present; factual scope consistent with frozen evidence |
+| Final-canvas candidate | Prepared at 1200x630 by aspect-preserving fit; no crop, retouching, regeneration or accepted-byte change; PNG integrity passed |
+| Formal image quality/V2 acceptance | **Not complete**; diagnostic checks and Library storage do not grant acceptance |
 
-The current pending binding is `image-execution-v2/attempts/m04-attempt-3.json`, submission commit `42a95ca12228352150615ca80f640f68589a9681`. The actual task ID is recorded there, not in its visual instructions. The submitted task prompt was checked by released `assertNativeImageTaskPrompt` and equals `delivery/m04.json` exactly, SHA-256 `1195a3bf8790122f746ade67b9c0df1c17aaa82b31369eb17648a89205cfdb78`. No operational preface or storage/retry instructions were appended. No hidden runtime isolation is asserted.
+Immutable detail: `image-execution-v2/events/m04-attempt-3-generation-recovery.json`, commit `214041bbf9c648373cddb4153d8f00afc12a9486`. Current attempt: `image-execution-v2/attempts/m04-attempt-3.json`, reconciled at `18915ce5e5b44bd0c4839bc24bfee3427b8ec4f1`. Local checks completed at `2026-09-29T00:54:55.826Z` / September 28, 7:54:55 p.m. Central. The native PNG embeds `c2pa.created` time `2026-09-29T00:41:09.010676101Z`; this metadata was parsed, not independently signature-verified.
 
-## Resolved transfer and preserved evidence
+## Exact recovery bindings
 
-The normal connector create_tree, create_commit and non-force update_ref actions succeeded in this invocation with the already stored native blob. No alternate write endpoint, repeated upload, new credential or regeneration was used. The prior blocks remain historical observations; their cause was not determined and they do not prove a permanent restriction.
+| File | Durable Library source | SHA-256 |
+|---|---|---|
+| Original, unchanged PNG | `libfile_0a71280905a08191bfde8f40293221d5`; backing `file_00000000cd0081f89894239f96601c9b`; `/Daily AI Brief Qualification Images/2026-09-28-Q24/m04/attempt-3-raw.png` | `efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3` |
+| Unaccepted 1200x630 candidate | `libfile_d699789ea89081919482f837987dd5d2`; backing `file_000000002c8481f6943af9e3227e3efe`; same folder, `attempt-3-final-candidate.png` | `bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895` |
 
-The exact rejected PNG is at `_records/image-attempts/2026-09-28-Q24/m04/attempt-2/raw.png`: 2,105,999 bytes, 1536 x 1024, SHA-256 `58c3fb75f251db5c15450a0fbfbb8191c7c46f774db55c6d5ae52f2cd5ddc4dd`, Git blob `4ed9e6ca8add74cae5e8df16b45e6564ba4ef0f0`. Workflow read-back passed at `2026-09-29T00:31:30.697664+00:00`. Artifact ZIP SHA-256 `baa46e64081566844b583c86c8e174aecd030c25be266d3d1f753dadcb8bd376` and exact original-native-file equality were checked locally. Five frozen component bindings passed. The full outcome is in `events/m04-attempt-2-git-readback.json`; reconciliation commit `81528dd16063961a1f8c76f238b8e291d41d6ed9` contains both rejection/history and the third-attempt plan.
+Computed original Git blob: `31f5ab0e228bdcdc3d04a5c064815ae4c1901ff8`; computed candidate blob: `8be2d89294d3f18a29faa5f7608901bab9455cf5`. **Computed hashes do not establish Git storage.** The original must be captured at `_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png` and actually read back before required sequence completion.
 
-The existing read-back workflow now handles all Q24 raw attempts automatically when their raw PNGs are committed. It was reused, not recreated per image. This is a branch-local helper; no new protected main release was needed. Current released code remains PR286 `7157e8c02b813af4b890eab885b388983923586d`, including PR285 visual-only delivery and V2 image gates. This recovery proves reuse of an existing Git blob, not every future native-file upload path.
+## Current capability result and next action
 
-## Next action and boundaries
+The exact PR286 file-transfer CLI was executed on the local native PNG and returned **`CAPABILITY_BLOCKED_AUTHENTICATED_FILE_HOST_REQUIRED`**, with zero HTTP writes and no commit. The local file host had neither `GH_TOKEN` nor `GITHUB_TOKEN`; direct GitHub DNS also failed. The connected GitHub blob interface accepts literal text/Base64, not a file-backed argument. A preceding local missing dependency was restored from the retained source archive; it was not a permanent uploader defect. No new GitHub permission denial or tool-safety rejection occurred during this recovery.
 
-The supervisor must recover the real third-task output automatically, preserve and verify raw bytes, then review exact final bytes for the required story, facts and professional quality. Accept only after the actual V2 receipt and Git read-back pass. Do not reuse the two rejected images, edit them into compliance, duplicate the third task, or exceed four m04 generations. Continue serially m04, m03, m05, m06, m01, m09, then final kernel/manifest, full qualification gates and simulated closure. Do not self-disable merely because an image is pending or a recoverable intermediate operation remains.
+**Next:** recover these exact existing files on a permitted authenticated file-capable host, perform the released one-operation raw upload/read-back, finish final-candidate professional-quality review and exact persistence, and run actual V2 acceptance. Do not treat the earlier independent uploader proof or this Library copy as Git capture. Do not request owner uploads, invent credentials, add per-image text shuttles or repeat generation to hide a transport problem. A matching final receipt and six-image set review are still required.
 
-Original cutoff `2026-09-28T20:04:36Z`, original baseline `1def5c4ba158247a9c02106dc4e4820d80a7133d`, policies `article-24-72-168-v1` and `media-research-cutoff-v1`, all five completed components and frozen requests are unchanged. No Q25, public edition, owner image tasks, Work, Codex or paid-model API. Billing is unobserved; full unattended production is not yet proven.
+The existing supervisor must read these current records before acting. A pending capture is not a terminal Q result, and no new image task is warranted. This recovery called no image generator, created no duplicate task and did not pause the supervisor. Future execution is not asserted merely because a task is enabled.
 
-The [complete earlier component checkpoint](https://github.com/gttome/Daily-AI-Brief/blob/ec6757b45923258cea127f15904865d6d31cc54b/_records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md) retains prior media/watchlist/book details and historical failures. This current checkpoint supersedes only the older pending-transfer/review/task-submission narratives. Read newer machine evidence first.
+## Preserved history and boundaries
+
+Attempt 2's transfer remains resolved: raw attachment commit `db67ddbd110417dfa9d1b609c9de16248f0a2934`; read-back workflow `36503506700` and artifact `11005039890`. Both earlier outputs are durably captured and rejected. Do not repeat their transfer/review. The [prior complete progress checkpoint](https://github.com/gttome/Daily-AI-Brief/blob/88b81e4acab7b3a808f52407327c551a08a58bf8/_records/qualification/2026-09-28-Q24/CONTINUATION-CHECKPOINT.md) retains the task-submission and earlier component-history links.
+
+Original cutoff `2026-09-28T20:04:36Z`, baseline `1def5c4ba158247a9c02106dc4e4820d80a7133d`, policies `article-24-72-168-v1` and `media-research-cutoff-v1`, all five completed components and frozen requests remain unchanged. Released main checked at PR286 `7157e8c02b813af4b890eab885b388983923586d`. Three of four m04 generation attempts have been used. Continue serially m04, m03, m05, m06, m01, m09 only after each image passes, then final kernel/manifest, full qualification gates and simulated closure. No Q25, public edition, owner image tasks, Work, Codex or paid-model API. Account billing is unobserved. Full unattended image production remains unproven.
