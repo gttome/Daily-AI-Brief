@@ -9,7 +9,7 @@
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
   "evidence_type": "live",
-  "status": "TASK_BOUND_PENDING_SUBMISSION",
+  "status": "TASK_RESULT_UNRECOVERABLE",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m03.json",
     "git_blob_sha": "6b7f0d3d62738abd5b1ae0d215af177721c93582",
@@ -41,5 +41,11 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "next_action": "Submit exactly one final image-only task using the unchanged compiled m03 visual prompt; then observe and recover that same task. No further attempt is permitted if this one is consumed without acceptance."
+  "next_action": "Attempt budget exhausted. Q24 must fail closed at the image stage; do not create a fifth m03 attempt.",
+  "task_last_run_time_observed": "2026-09-29T13:30:24.835734Z",
+  "unrecoverable_event_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/events/m03-attempt-4-unrecoverable.json",
+  "disposition": "unrecoverable",
+  "attempt_consumed": true,
+  "generation_success_asserted": false,
+  "generation_failure_asserted": false
 }
