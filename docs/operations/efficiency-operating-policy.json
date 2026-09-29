@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.7.0",
+  "schema_version": "1.8.0",
   "profile_id": "under80-v1",
   "effective_date": "2026-09-18",
   "baseline_date": "2026-09-17",
@@ -48,7 +48,13 @@
       "create_tree",
       "create_commit",
       "update_ref"
-    ]
+    ],
+    "routing_policy_id": "connector-first-v1",
+    "connector_managed_authentication": true,
+    "credential_export_prohibited": true,
+    "local_file_host_token_is_connector_prerequisite": false,
+    "optional_helper_failure_blocks_connector": false,
+    "contents_file_helper_scope": "independent_authenticated_host_utility_not_normal_image_lane"
   },
   "video": {
     "preferred_count": 2,
