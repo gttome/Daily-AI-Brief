@@ -1,0 +1,31 @@
+name: Reliable execution development
+on:
+  push:
+    branches: ['hardening/reliable-edition-execution-2026-09-29']
+    paths: ['.github/workflows/reliable-execution-development.yml']
+permissions:
+  contents: read
+concurrency:
+  group: reliable-execution-development
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 49e43aa9a581866c487140b27400cc39e8531037
+      - name: Capture implementation inputs, not another qualification
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/reliable-execution-inputs
+          git archive --format=zip --output=/tmp/reliable-execution-inputs/source.zip HEAD _generator _tools _records _data docs .github package.json _architecture
+          git rev-parse HEAD > /tmp/reliable-execution-inputs/baseline.txt
+          sha256sum /tmp/reliable-execution-inputs/source.zip > /tmp/reliable-execution-inputs/source.sha256
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: reliable-execution-inputs
+          path: /tmp/reliable-execution-inputs/
+          retention-days: 7
+          if-no-files-found: error
