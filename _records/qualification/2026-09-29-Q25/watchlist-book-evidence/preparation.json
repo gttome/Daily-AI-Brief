@@ -1,0 +1,715 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": 36591236903,
+  "execution_commit": "7d276ee080b679a3eb42c76ff990342b49704370",
+  "status": "SOURCE_CAPTURED_REVIEW_PENDING",
+  "checked_at": "2026-09-29T15:34:43.368Z",
+  "source_outcomes": [
+    {
+      "id": "reliable",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "resolved_url": "https://leanpub.com/reliablegenerativeai",
+      "checked_at": "2026-09-29T15:34:42.386Z",
+      "status": "captured",
+      "source_sha256": "9e6e342011745ab6fad6c9285d894b49789fabe5ab40f1a802af822afd296094",
+      "artifact_file": "reliable.html"
+    },
+    {
+      "id": "context",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "resolved_url": "https://leanpub.com/reliable-context-engineering",
+      "checked_at": "2026-09-29T15:34:42.727Z",
+      "status": "captured",
+      "source_sha256": "aee0aa962cede5dd097c54d01143b09a4a181b5ef5a63c7b747ecd6c2a3a7790",
+      "artifact_file": "context.html"
+    },
+    {
+      "id": "prompt-guide",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "resolved_url": "https://leanpub.com/genaipromptingguide",
+      "checked_at": "2026-09-29T15:34:43.133Z",
+      "status": "captured",
+      "source_sha256": "2b6ba04729852a84a14ade43dd85cc24af45b4192f20db3e1277f08a361db5ba",
+      "artifact_file": "prompt-guide.html"
+    },
+    {
+      "id": "learning",
+      "url": "https://leanpub.com/GenAILearn",
+      "resolved_url": "https://leanpub.com/GenAILearn",
+      "checked_at": "2026-09-29T15:34:43.365Z",
+      "status": "captured",
+      "source_sha256": "97c71a31007d8973ebf367a169cab6c8dbcdc1116ee6ae422e35a1e4b7fbad87",
+      "artifact_file": "learning.html"
+    }
+  ],
+  "preservation_inputs": {
+    "_data/watchlist.json": {
+      "sha256": "df164485dee48b11063c096cd315702ae6a553ba5a9041997f758a470e0584f3",
+      "git_blob_sha": "de76ca6ae9b6304483d5bb998bb367c113316529"
+    },
+    "_records/editorial-handoff/watchlist-2026-09-26.json": {
+      "sha256": "a3d28ed5ad0287866aa6def7c5f51ccb90fd8e464739c9744394dbd346e5309a",
+      "git_blob_sha": "72f6b716decbfd1d8f3dba2f79718d4c8d1cedcd"
+    },
+    "_data/book-reading.json": {
+      "sha256": "7f5cb576527b2044ef32b5f47fb6ab4e9c1bf85925eb211d7172889ed936f955",
+      "git_blob_sha": "ef490fc652a79b18ba20179b7a139eb173013895"
+    }
+  },
+  "preservation_note": "The newer September 26 handoff is a tracked-topic preservation baseline, not proof that public watchlist state was synchronized. All preserved topics and evidence must survive this Q25 review; do not import Q24 approvals.",
+  "preservation_topics": [
+    {
+      "topic_id": "dab-topic-collaborative-vibe-coding",
+      "name": "Collaborative vibe coding",
+      "summary": "Teams building tools together through conversation with AI.",
+      "updated_at": "2026-09-14T12:15:00Z",
+      "development_ids": [
+        "collaborative-vibe-coding",
+        "microsoft-conversational-business-apps"
+      ],
+      "evidence_urls": [
+        "https://labs.google/",
+        "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/build-apps-in-copilot-cowork-and-copilot-studio/"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-repairable-generative-design",
+      "name": "Repairable AI-generated 3D designs",
+      "summary": "Generate a design, inspect its flaws, and guide repairs before fabrication.",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "development_ids": [
+        "repairable-generative-design"
+      ],
+      "evidence_urls": [
+        "https://www.csail.mit.edu/person/stefanie-mueller"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-image-edit-restoration",
+      "name": "Restoring images after repeated AI edits",
+      "summary": "Detect and repair unwanted textures that accumulate across AI image-editing rounds.",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "development_ids": [
+        "2609.11317",
+        "2609.11317"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.11317",
+        "https://huggingface.co/papers/2609.11317"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "name": "Agent safeguards tailored to the task",
+      "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "development_ids": [
+        "2609.05903",
+        "2609.05903",
+        "rubydoc-agent-containment-2026-09",
+        "agent-goal-conflict-analysis-2026-09",
+        "habitat-centralized-control-plane",
+        "openai-standing-misalignment-disclosure",
+        "agent-overclaiming-2026-09-17"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.05903",
+        "https://huggingface.co/papers/2609.05903",
+        "https://rubyhack.ai/",
+        "https://yoshuabengio.org/en/blog/why-are-ai-agents-lying-cheating-and-coordinating",
+        "https://openai.com/index/scaling-storage-one-billion-users-part-one/",
+        "https://openai.com/index/model-misalignment-reporting-framework/",
+        "https://arxiv.org/abs/2609.20812v1"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-concept-level-language-models",
+      "name": "Language models that also predict concepts",
+      "summary": "Train models to predict representations spanning multiple tokens alongside predicting individual tokens.",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "development_ids": [
+        "2609.10715",
+        "2609.10715"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.10715",
+        "https://huggingface.co/papers/2609.10715"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-memory-guided-planning",
+      "name": "Turning agent memory into compact plans",
+      "summary": "Use remembered episodes when planning, then give the executor a compact plan instead of the full history.",
+      "updated_at": "2026-09-26T14:22:47Z",
+      "development_ids": [
+        "2609.11561",
+        "2609.11561",
+        "agentforce-job-ready-agents",
+        "salesforce-long-horizon-agents-2026-09-16",
+        "github-agentic-autofix-copilot-memory-2026-09-25"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.11561",
+        "https://huggingface.co/papers/2609.11561",
+        "https://www.salesforce.com/news/stories/agentforce-job-ready-ai-agents/",
+        "https://www.salesforce.com/blog/long-horizon-agents/",
+        "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-recursive-scene-programs",
+      "name": "Building 3D worlds through recursive code",
+      "summary": "Represent scenes as editable programs and refine their parts through repeated visual comparison.",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "development_ids": [
+        "2609.11499",
+        "2609.11499",
+        "nvidia-agentic-3d-scene-prep-2026-09-16"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.11499",
+        "https://huggingface.co/papers/2609.11499",
+        "https://developer.nvidia.com/blog/how-to-use-ai-agents-to-prepare-3d-scenes-for-simulation/"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-selective-precision-attention",
+      "name": "Smaller model memory through selective precision",
+      "summary": "Compress most attention data while retaining higher precision where it matters most.",
+      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "development_ids": [
+        "2608.27875",
+        "2608.27875"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2608.27875",
+        "https://huggingface.co/papers/2608.27875"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "name": "Reusable agent skills become observable",
+      "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose actual use can be measured.",
+      "updated_at": "2026-09-26T14:22:47Z",
+      "development_ids": [
+        "github-agentic-cli-usage-metrics-2026-09-17",
+        "aws-huggingface-agent-skills-2026-09-18",
+        "aws-hcls-agent-skills-2026-09-16",
+        "sagemaker-huggingface-agent-skills",
+        "github-copilot-jetbrains-shared-skills-2026-09-22",
+        "github-copilot-opentelemetry-2026-09-22",
+        "aws-skill-equipped-agent-evals-2026-09-22",
+        "qoder-skill-evolution-0.4.1"
+      ],
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-17-agentic-cli-customizations-now-in-the-usage-metrics-api",
+        "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+        "https://aws.amazon.com/blogs/machine-learning/improving-hcls-ai-reasoning-with-open-source-agent-skills/",
+        "https://aws.amazon.com/blogs/machine-learning/deploy-hugging-face-models-on-amazon-sagemaker-ai-with-coding-agents/",
+        "https://github.blog/changelog/2026-09-22-new-features-and-improvements-in-copilot-for-jetbrains",
+        "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+        "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/",
+        "https://docs.qoder.com/release-notes/qoder"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "name": "Agents that persist across sessions",
+      "summary": "Design agents around goals that continue over time instead of treating every interaction as a one-shot task.",
+      "updated_at": "2026-09-26T14:22:47Z",
+      "development_ids": [
+        "salesforce-long-horizon-agents-2026-09-16",
+        "microsoft-copilot-autopilot-2026-09-25"
+      ],
+      "evidence_urls": [
+        "https://www.salesforce.com/blog/long-horizon-agents/",
+        "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-ai-adoption-telemetry",
+      "name": "AI adoption measured at the feature level",
+      "summary": "Move beyond seats and licenses to measure which AI capabilities people actually use and where enablement is needed.",
+      "updated_at": "2026-09-20T14:49:00Z",
+      "development_ids": [
+        "github-copilot-feature-engagement-2026-09-17",
+        "microsoft-ai-transformation-playbook-2026-09-17",
+        "google-workspace-gemini-mcp-2026-09-18",
+        "atlassian-content-ai-quality-2026-09-18"
+      ],
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-17-copilot-impact-dashboard-now-shows-feature-engagement",
+        "https://blogs.microsoft.com/blog/2026/09/17/what-weve-learned-from-microsofts-own-ai-transformation/",
+        "https://workspaceupdates.googleblog.com/2026/09/weekly-recap-09-18-2026.html",
+        "https://www.atlassian.com/blog/ai-at-work/how-content-technology-is-powering-atlassians-ai-quality"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "name": "AI harness engineering becomes a first-class layer",
+      "summary": "Treat the harness around a model—tools, constraints, state, verification, and control loops—as an engineering system in its own right.",
+      "updated_at": "2026-09-26T14:22:47Z",
+      "development_ids": [
+        "salesforce-ai-harness-smb-2026-09-17",
+        "coding-agent-harness-study-2026-09-17",
+        "obstacle-aware-robot-harness-2026-09-17",
+        "nvidia-aiperf-2026-09-18",
+        "aws-agentcore-migration-2026-09-18",
+        "aws-agentcore-runtime-2026-09-18",
+        "nvidia-agent-task-completion-evaluation",
+        "github-copilot-opentelemetry-2026-09-22",
+        "aws-agentforce-public-sector-2026-09-22",
+        "aws-multi-account-agentcore-mcp-2026-09-24",
+        "github-copilot-local-sandbox-2026-09-25"
+      ],
+      "evidence_urls": [
+        "https://www.salesforce.com/blog/small-business/ai-harness-explained-for-smbs/",
+        "https://arxiv.org/abs/2609.20804v1",
+        "https://arxiv.org/abs/2609.20822v1",
+        "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+        "https://aws.amazon.com/blogs/machine-learning/migrating-multi-model-ai-agents-to-amazon-bedrock-agentcore-runtime/",
+        "https://aws.amazon.com/blogs/machine-learning/the-new-agentcore-runtime-elastic-optimized-and-consistently-fast-starts/",
+        "https://developer.nvidia.com/blog/how-to-evaluate-ai-agents-from-tool-calls-to-task-completion/",
+        "https://github.blog/changelog/2026-09-22-opentelemetry-in-the-github-copilot-app",
+        "https://aws.amazon.com/blogs/machine-learning/extending-public-sector-intelligence-with-agentforce-and-aws/",
+        "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/",
+        "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-agentic-edge-inference",
+      "name": "Agentic workloads move toward measured edge inference",
+      "summary": "Benchmark model and agent workloads with workload-specific measurements, including deployment on constrained edge hardware.",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "development_ids": [
+        "nvidia-aiperf-llm-inference-2026-09-18",
+        "nvidia-edge-agentic-benchmark-2026-09-16"
+      ],
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/benchmarking-llm-inference-at-scale-with-aiperf/",
+        "https://developer.nvidia.com/blog/tensorrt-edge-llm-completes-the-mlperf-edge-agentic-benchmark-6-4x-faster-on-jetson-agx-thor/"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "name": "Model lifecycle governance for AI products",
+      "summary": "Treat model selection, policy, deprecation, and migration as an ongoing operational discipline.",
+      "updated_at": "2026-09-25T13:58:00Z",
+      "development_ids": [
+        "github-copilot-model-deprecation-2026-09-18",
+        "github-copilot-weekly-model-selection-2026-09-18",
+        "github-copilot-gpt6-sol-luna-2026-09-22",
+        "github-copilot-default-enablement-2026-09-24"
+      ],
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-18-upcoming-deprecation-of-selected-github-copilot-models-in-mid-october",
+        "https://github.blog/changelog/2026-09-18-github-copilot-weekly-releases-september-14",
+        "https://github.blog/changelog/2026-09-22-openais-gpt-6-sol-and-gpt-6-luna-now-available",
+        "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-agent-overclaiming",
+      "name": "Agents that overclaim task completion",
+      "summary": "Measure whether an agent's final report accurately reflects what it actually completed.",
+      "updated_at": "2026-09-19T17:09:07.447Z",
+      "development_ids": [
+        "frontier-agent-overclaiming-2026-09-17"
+      ],
+      "evidence_urls": [
+        "https://arxiv.org/abs/2609.20812v1"
+      ]
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "name": "Decision models emerge as a separate AI systems layer",
+      "summary": "Specialized models return typed, probabilistic decisions for software workflows instead of generating free-form text.",
+      "updated_at": "2026-09-22T14:10:00Z",
+      "development_ids": [
+        "typesafe-jev-launch-2026-09-15",
+        "typesafe-jev-launch-2026-09-15"
+      ],
+      "evidence_urls": [
+        "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+        "https://indianexpress.com/article/technology/artificial-intelligence/meet-jev-new-ai-model-from-chatgpt-inventor-10887591/"
+      ]
+    }
+  ],
+  "public_topics": [
+    {
+      "topic_id": "dab-topic-collaborative-vibe-coding",
+      "name": "Collaborative vibe coding"
+    },
+    {
+      "topic_id": "dab-topic-repairable-generative-design",
+      "name": "Repairable AI-generated 3D designs"
+    },
+    {
+      "topic_id": "dab-topic-image-edit-restoration",
+      "name": "Restoring images after repeated AI edits"
+    },
+    {
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "name": "Agent safeguards tailored to the task"
+    },
+    {
+      "topic_id": "dab-topic-concept-level-language-models",
+      "name": "Language models that also predict concepts"
+    },
+    {
+      "topic_id": "dab-topic-memory-guided-planning",
+      "name": "Turning agent memory into compact plans"
+    },
+    {
+      "topic_id": "dab-topic-recursive-scene-programs",
+      "name": "Building 3D worlds through recursive code"
+    },
+    {
+      "topic_id": "dab-topic-selective-precision-attention",
+      "name": "Smaller model memory through selective precision"
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "name": "Reusable agent skills become observable"
+    },
+    {
+      "topic_id": "dab-topic-long-horizon-agents",
+      "name": "Agents that persist across sessions"
+    },
+    {
+      "topic_id": "dab-topic-ai-adoption-telemetry",
+      "name": "AI adoption measured at the feature level"
+    },
+    {
+      "topic_id": "dab-topic-harness-engineering",
+      "name": "AI harness engineering becomes a first-class layer"
+    },
+    {
+      "topic_id": "dab-topic-agentic-edge-inference",
+      "name": "Agentic workloads move toward measured edge inference"
+    },
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "name": "Model lifecycle governance for AI products"
+    },
+    {
+      "topic_id": "dab-topic-agent-overclaiming",
+      "name": "Agents that overclaim task completion"
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "name": "Decision models emerge as a separate AI systems layer"
+    }
+  ],
+  "book_reference_catalog": {
+    "reliable-verification": {
+      "id": "reliable-verification",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 3, section 3.3.3",
+      "section_title": "Verification as the Final Gate",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-13",
+      "full_text_reviewed": false
+    },
+    "context-quality-checklist": {
+      "id": "context-quality-checklist",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 3",
+      "section_title": "Designing High-Quality Contexts",
+      "practice_title": "Quick Reference: Context Quality Checklist",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-13",
+      "full_text_reviewed": false
+    },
+    "reliable-trust": {
+      "id": "reliable-trust",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 4, section 4.1.2",
+      "section_title": "Managing Expectations and Calibrating Trust",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-13",
+      "full_text_reviewed": false
+    }
+  },
+  "item_inventory": {
+    "articles": [
+      {
+        "candidate_id": "m02",
+        "canonical_ordinal": 1,
+        "focus": "technical_ai_engineering",
+        "agent_skills_story": false,
+        "headline": "Grok 4.7 joins Amazon Bedrock with cross-Region inference profiles",
+        "source_url": "https://aws.amazon.com/blogs/machine-learning/grok-4-7-is-now-available-on-amazon-bedrock/",
+        "source_published_at": "2026-09-28T22:13:16.000Z",
+        "freshness_tier": "primary",
+        "fallback_band": null,
+        "summary": "AWS announces Grok 4.7 on Amazon Bedrock and positions it for coding, long-running agents and knowledge work. The captured publisher excerpt explains that requests use a cross-Region inference profile rather than a bare model identifier, and that the model is served through the Bedrock runtime endpoint.",
+        "why_it_matters": "For engineering teams, the request-routing detail is more immediately actionable than a broad model-quality claim. An announced model option still needs evaluation on representative tasks before replacing an existing choice.",
+        "editorial_limitation": "Bounded publisher excerpt only. No independent benchmark, entitlement check, pricing comparison or hands-on test was performed. Do not infer availability in every region or account.",
+        "what_to_do_now": {
+          "action": "evaluate",
+          "label": "Check routing and evaluate your tasks",
+          "rationale": "Confirm the documented inference profile for your environment and compare task results without assuming the publisher's positioning proves superiority."
+        },
+        "topic_labels": [
+          "Amazon Bedrock",
+          "model availability",
+          "inference routing"
+        ]
+      },
+      {
+        "candidate_id": "m03",
+        "canonical_ordinal": 2,
+        "focus": "technical_ai_engineering",
+        "agent_skills_story": false,
+        "headline": "Microsoft Research introduces Quine, linking biological models and scientific tools",
+        "source_url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+        "source_published_at": "2026-09-29T14:00:02.000Z",
+        "freshness_tier": "primary",
+        "fallback_band": null,
+        "summary": "Microsoft Research introduces Quine as a research effort toward a multimodal world model of biology and an interactive harness connecting models, scientific tools, literature and researchers. The announcement also describes a Quine Fellows program intended to provide a cohort of scientists with access and gather scientific feedback.",
+        "why_it_matters": "The announcement makes a useful architectural distinction between a model and the surrounding research system. Engineering teams can examine how tools, literature and domain feedback are connected without treating a research vision as a demonstrated discovery outcome.",
+        "editorial_limitation": "Publisher research announcement, not an independent validation study. The bounded excerpt does not establish scientific accuracy, general availability, clinical usefulness or measured research acceleration.",
+        "what_to_do_now": {
+          "action": "evaluate",
+          "label": "Separate model and research-system claims",
+          "rationale": "Identify what the announcement says about models, tools and feedback, and retain the distinction between planned access and proven results."
+        },
+        "topic_labels": [
+          "research systems",
+          "multimodal models",
+          "scientific tools"
+        ]
+      },
+      {
+        "candidate_id": "m05",
+        "canonical_ordinal": 3,
+        "focus": "applied_genai_knowledge_workers",
+        "agent_skills_story": false,
+        "headline": "Agent Builder adoption needs a change-management operating model, Microsoft argues",
+        "source_url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
+        "source_published_at": "2026-09-28T15:00:00.000Z",
+        "freshness_tier": "primary",
+        "fallback_band": null,
+        "summary": "Microsoft's Agent Builder guidance emphasizes behavior change and a structured operating model for scaling adoption. It says a bespoke plan is not needed for every team and introduces an HCLTech customer example of a structured change-management program.",
+        "why_it_matters": "Making a tool available does not establish a repeatable working practice. This guidance gives knowledge-work leaders an adoption-focused question to consider: how will colleagues learn, use and review the new way of working?",
+        "editorial_limitation": "Publisher guidance and a customer example, not an independent causal study. The frozen excerpt does not enumerate the complete operating model or substantiate quantified adoption gains.",
+        "what_to_do_now": {
+          "action": "evaluate",
+          "label": "Review the adoption process",
+          "rationale": "Compare your enablement process with the source's operating-model framing; do not infer success metrics missing from the evidence."
+        },
+        "topic_labels": [
+          "Agent Builder",
+          "change management",
+          "workplace adoption"
+        ]
+      },
+      {
+        "candidate_id": "m06",
+        "canonical_ordinal": 4,
+        "focus": "applied_genai_knowledge_workers",
+        "agent_skills_story": false,
+        "headline": "AI at Work offers role-oriented learning for Copilot and agents",
+        "source_url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140",
+        "source_published_at": "2026-09-25T12:04:32.000Z",
+        "freshness_tier": "fallback",
+        "fallback_band": "extended",
+        "fallback_reason": "Only m05 is within 72 hours in the frozen three-item Applied evidence packet. This September 25 resource fills the second Applied slot with broadly applicable role-oriented learning. The other extended-window reserve, m07, offers healthcare-specific vendor positioning with less supported practical detail in the excerpt. Original publication time is retained.",
+        "summary": "Microsoft describes an AI at Work playlist in AI Skills Navigator intended to help people choose and use a Copilot mode suited to their role. The announcement introduces learning themes covering Copilot modes, AI FinOps basics and agents, with an emphasis on learning by doing.",
+        "why_it_matters": "A role and a concrete work task provide a more specific starting point for learning than a general feature list. The announcement can help identify a resource to investigate, but is not itself evidence that a training program produces better work.",
+        "editorial_limitation": "Learning-resource announcement only. Linked lessons were not separately reviewed. Do not invent lesson titles, exact contents, account entitlements, completion outcomes or measured learning gains.",
+        "what_to_do_now": {
+          "action": "evaluate",
+          "label": "Choose a role-relevant learning theme",
+          "rationale": "Start with a current work task, then assess the relevant resource instead of assuming every announced mode is available to every account."
+        },
+        "topic_labels": [
+          "Copilot learning",
+          "AI Skills Navigator",
+          "knowledge work"
+        ]
+      },
+      {
+        "candidate_id": "m01",
+        "canonical_ordinal": 5,
+        "focus": "agents_non_technical_people",
+        "agent_skills_story": true,
+        "headline": "A new preprint examines progressive disclosure of Agent Skills",
+        "source_url": "https://arxiv.org/abs/2609.35692v1",
+        "source_published_at": "2026-09-28T17:38:37.000Z",
+        "freshness_tier": "primary",
+        "fallback_band": null,
+        "summary": "The September 28 preprint Report: Progressive Disclosure of Agent Skills frames skills as named procedures placed in an LLM's context. Its captured abstract introduces the topic through feature requests from users of Workday's deployed LLM-based agents. The available excerpt supports that framing, not a claim about the paper's eventual performance results.",
+        "why_it_matters": "For nontechnical users, a named reusable procedure is a concrete way to think about an Agent Skill rather than another one-off prompt. The editorial practice to try is documenting one repeatable task with a purpose, inputs, steps and a review condition, then testing it on a second example.",
+        "editorial_limitation": "Preprint, not established peer-reviewed evidence. Only the frozen abstract excerpt was reviewed; it ends before describing the full mechanism or findings. The suggested reusable-procedure exercise is editorial guidance, not a reproduced study method or measured outcome.",
+        "what_to_do_now": {
+          "action": "test",
+          "label": "Document and test one reusable procedure",
+          "rationale": "Give a repeatable task a name, specify its inputs and review condition, and compare two examples before treating the procedure as reusable."
+        },
+        "topic_labels": [
+          "Agent Skills",
+          "reusable procedures",
+          "preprint"
+        ]
+      },
+      {
+        "candidate_id": "m09",
+        "canonical_ordinal": 6,
+        "focus": "agents_non_technical_people",
+        "agent_skills_story": false,
+        "headline": "Google's executive-productivity guidance puts agent use cases in a work context",
+        "source_url": "https://workspace.google.com/blog/future-of-work/the-5-ai-agents-i-tell-every-executive-to-build-first",
+        "source_published_at": "2026-09-24T00:00:00.000Z",
+        "freshness_tier": "fallback",
+        "fallback_band": "extended",
+        "fallback_reason": "m01 is the sole primary-window Agents candidate in the frozen packet. No 24-to-72-hour Agents candidate is present. This September 24 publisher guidance is newer than the remaining September 23 Qoder reserve and supplies a distinct executive-work context without adding a second Agent Skills story. Original publication time is retained.",
+        "summary": "Google executive productivity advisor Laura Mae Martin presents guidance on agents for executives whose work involves meetings and travel. The captured introduction positions agents as going beyond responses to prompts and introduces Gemini Enterprise in relation to connected workplace applications and workflow automation.",
+        "why_it_matters": "Starting with a specific recurring work need can make an agent discussion more concrete for nontechnical people. Treat this as publisher guidance to evaluate, not proof that any suggested agent is safe, available or effective for your organization.",
+        "editorial_limitation": "The frozen excerpt does not enumerate the five agents promised by the original headline. This Brief intentionally does not invent their names or steps, and makes no verified availability, integration, permission or productivity claim beyond the source introduction.",
+        "what_to_do_now": {
+          "action": "evaluate",
+          "label": "Identify a bounded executive-work need",
+          "rationale": "Name a recurring task and its review requirement before choosing an agent; read the full publisher guidance before relying on its specific examples."
+        },
+        "topic_labels": [
+          "executive productivity",
+          "agent use cases",
+          "Google Workspace"
+        ]
+      }
+    ],
+    "podcasts": [
+      {
+        "candidate_id": "everyday-872",
+        "status": "included",
+        "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154",
+        "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
+        "show": "Everyday AI Podcast – An AI and ChatGPT Podcast",
+        "publication_date": "2026-09-29T11:00:00Z",
+        "runtime_seconds": 2099,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 92,
+        "freshness_exception_reason": null,
+        "summary": "Everyday AI discusses how repeated agent actions, tool use and model choices can affect AI spending. Its published topic list and chapters cover automation-loop costs, model mixtures and approaches to monitoring and managing usage; this selection treats those as discussion topics, not verified savings or current vendor-pricing guidance.",
+        "why_it_matters": "Gives teams a spending-governance lens to use alongside technical model selection, agent adoption and role-based learning. Readers can use the episode to frame questions about task budgets and usage visibility before approving broader automation.",
+        "editorial_limitation": "Reviewed publisher description and chapters only, not audio. The show's claims about subscription changes, specific products and cost-saving effectiveness were not independently verified and are not repeated as facts.",
+        "platforms": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154"
+          }
+        ],
+        "source_evidence_identity": "episode:591c08b1f8cf1c0c55bcf3e93892b8ecb6a4f4858d4bb03b351a29a8c68a5a51",
+        "freshness_tier": "primary_48h"
+      },
+      {
+        "candidate_id": "ai-for-humans-197",
+        "status": "included",
+        "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+        "title": "Opus 5.5 is our favorite AI model (so far).",
+        "show": "AI For Humans: Weekly AI News, Tools & Trends",
+        "publication_date": "2026-09-24T10:00:00Z",
+        "runtime_seconds": 2901,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 78,
+        "freshness_exception_reason": "The three current publisher-distributed catalogs were checked at Q25's original cutoff. Eligible primary-window episodes belong to Everyday AI, which already fills the first source. AI for Humans' latest episode is September 24; Practical AI's latest episode 373 is already in September 26 production. This distinct creative-application episode is within seven days and has no production identity/title match. The bounded three-show supply check is not a claim of internet-wide exhaustion.",
+        "summary": "AI for Humans discusses creative uses of recent AI models, including animation, education tools, 3D modeling and motion graphics. The selection emphasizes the application topics listed in the publisher's description and chapters; its favorable model rankings remain the hosts' opinions rather than the Brief's independently established conclusions.",
+        "why_it_matters": "Offers creative task ideas that complement the cost-governance episode and the Brief's technical and adoption stories, without treating demonstrations or host enthusiasm as evidence of reliable production outcomes.",
+        "editorial_limitation": "Reviewed description and chapters, not playback or independently tested demonstrations. Pricing, benchmark claims and rumors in the show are not adopted as factual conclusions.",
+        "platforms": [
+          {
+            "name": "Apple Podcasts",
+            "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+          }
+        ],
+        "source_evidence_identity": "episode:89ad3e0becd1923ccb77298dff31bde74310f237ca2955c624583e9b7f360443",
+        "freshness_tier": "fallback_7d"
+      }
+    ],
+    "videos": {
+      "general": {
+        "candidate_id": "bs1qPy_CWkM",
+        "slot": "general",
+        "status": "included",
+        "url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+        "title": "Prompt to Production: The Future of AI Code Workflows",
+        "channel": "IBM Technology",
+        "source_id": "ibm",
+        "upload_date": "2026-09-28T11:00:25+00:00",
+        "runtime_seconds": 435,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 91,
+        "summary": "IBM Technology discusses planning, execution, validation and verification around AI-assisted software delivery. The published chapter outline emphasizes designing a solution before execution and the human verification work surrounding increasingly capable coding systems.",
+        "why_useful": "Provides a review-oriented framework for evaluating generated work rather than treating code generation as the end of a task. The supported takeaway concerns planning and verification practices, not measured automation reliability.",
+        "connection": "Complements Q25's engineering and reusable-skills stories by emphasizing the evidence and review practices surrounding AI-assisted delivery.",
+        "editorial_limitation": "Publisher description and chapter review only, not playback or an independently checked transcript. IBM discloses AI-assisted transcript and metadata creation. No measured productivity, safety or complete verification guarantee is asserted.",
+        "short_search_evidence": [
+          "Current publisher catalog gives 7:15, bound to the same exact video ID and title as the publisher feed; preferred <=10-minute tier."
+        ],
+        "fallback_reason": null,
+        "source_evidence_identity": "youtube:bs1qPy_CWkM",
+        "duration_tier": "short",
+        "selection_duration_tier": "preferred"
+      },
+      "agents_non_technical_people": {
+        "candidate_id": "KJ8Y2Nb9y9o",
+        "slot": "agents_non_technical_people",
+        "status": "included",
+        "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+        "title": "Microsoft Copilot Just Got a Massive Upgrade",
+        "channel": "Kevin Stratvert",
+        "source_id": "kevin-stratvert",
+        "upload_date": "2026-09-28T23:31:02+00:00",
+        "runtime_seconds": 471,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 89,
+        "summary": "Kevin Stratvert presents an early-look Copilot walkthrough whose published description and chapters cover recurring work, app building and Office integration. The selection describes the creator's advertised topics rather than independently confirming feature availability or performance.",
+        "why_useful": "Gives nontechnical readers a compact set of agent-workflow ideas to examine, including recurring tasks and task-specific tools. Readers should verify their own access and requirements before relying on features described in an early-look video.",
+        "connection": "Adds a concrete creator-led tour of agent-oriented work to Q25's Copilot learning and Agent Builder adoption stories, while retaining the distinction between a walkthrough and validated organizational outcomes.",
+        "editorial_limitation": "Reviewed publisher description and chapters, not video playback. Access, entitlement, product claims and implementation effectiveness were not independently tested. The description contains promotional/affiliate links; none is used as evidence of a factual result or included as a recommended purchase.",
+        "short_search_evidence": [
+          "Current publisher catalog gives 7:51, tied to the exact feed video ID and title; a short candidate satisfies the agent-oriented slot, so no longer-video fallback is needed."
+        ],
+        "fallback_reason": null,
+        "source_evidence_identity": "youtube:KJ8Y2Nb9y9o",
+        "duration_tier": "short",
+        "selection_duration_tier": "preferred"
+      }
+    }
+  },
+  "new_book_page_retrievals": 4,
+  "new_article_retrievals": 0,
+  "new_media_retrievals": 0,
+  "article_stages_repeated": false,
+  "media_stages_repeated": false,
+  "prior_q_approval_reused": false,
+  "watchlist_review_completed": false,
+  "book_evaluation_completed": false,
+  "emerging_sweep_completed": false,
+  "images_started": false,
+  "media_ready": false,
+  "production_mutation": false,
+  "model_calls": 0,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false
+}
