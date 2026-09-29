@@ -37,12 +37,19 @@ jobs:
           printf '{"result":"pass","proof_commit":"%s","path":"%s","bytes":%s,"sha256":"%s","git_blob_sha":"%s","git_readback_verified":true}\n'             "${PROOF_COMMIT}" "${PROOF_PATH}" "${ACTUAL_BYTES}" "${ACTUAL_SHA256}" "${ACTUAL_BLOB}"             | tee /tmp/reliable-admission-readback/readback.json
           echo "READBACK_VERIFIED bytes=${ACTUAL_BYTES} sha256=${ACTUAL_SHA256} blob=${ACTUAL_BLOB}"
 
-      - name: Upload immutable read-back evidence
+      - name: Run released admission verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          node _tools/edition-execution.mjs admission-check             --root=.             --proof=_records/execution-host/image-handoff-proof.json             --release='e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef'             | tee /tmp/reliable-admission-readback/admission-check.json
+
+      - name: Upload admission evidence
         uses: actions/upload-artifact@v4
         with:
-          name: reliable-admission-readback
+          name: reliable-admission-readback-and-check
           path: |
             /tmp/reliable-admission-readback/raw.png
             /tmp/reliable-admission-readback/readback.json
+            /tmp/reliable-admission-readback/admission-check.json
           if-no-files-found: error
           retention-days: 1
