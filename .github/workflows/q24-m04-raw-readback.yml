@@ -5,6 +5,9 @@ on:
     paths:
       - '.github/workflows/q24-m04-raw-readback.yml'
       - '_records/image-attempts/2026-09-28-Q24/**/raw.png'
+      - 'briefs/images/2026-09-28/q24-*.png'
+      - '_records/qualification/2026-09-28-Q24/image-execution-v2/persistence/*-final-binding.json'
+      - '_records/qualification/2026-09-28-Q24/tools/verify-final-image-persistence.mjs'
 permissions:
   contents: read
 concurrency:
@@ -13,12 +16,14 @@ concurrency:
 jobs:
   readback:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: 7157e8c02b813af4b890eab885b388983923586d
+          ref: ffe27f6b0c423852a9d258b6479863d29a64d8e5
           path: .image-execution-code
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
@@ -82,25 +87,20 @@ jobs:
             for p in [raw_path,attempt_path,request]:
               target=out/p;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
             images.append({'candidate_id':candidate,'attempt':attempt,'path':str(raw_path),'sha256':digest,'git_blob_sha':blob,'bytes':len(raw),'width':width,'height':height,'png_chunk_count':chunks,'png_crc_pass':True,'read_back_verified':True,'accepted_locked':False})
-          result={'schema_version':'1.0.0','qualification_id':'2026-09-28-Q24','result':'pass','scope':'Committed raw-byte read-back, PNG integrity and frozen inputs only; not image approval','verified_at':datetime.now(timezone.utc).isoformat(),'workflow_run_id':os.environ['GITHUB_RUN_ID'],'execution_commit':os.environ['GITHUB_SHA'],'release_code_commit':'7157e8c02b813af4b890eab885b388983923586d','images':images,'frozen_bindings':bindings,'native_generation_calls':0,'owner_interventions':[],'production_mutation':False}
+          result={'schema_version':'1.0.0','qualification_id':'2026-09-28-Q24','result':'pass','scope':'Committed raw-byte read-back, PNG integrity and frozen inputs only; not image approval','verified_at':datetime.now(timezone.utc).isoformat(),'workflow_run_id':os.environ['GITHUB_RUN_ID'],'execution_commit':os.environ['GITHUB_SHA'],'release_code_commit':'ffe27f6b0c423852a9d258b6479863d29a64d8e5','images':images,'frozen_bindings':bindings,'native_generation_calls':0,'owner_interventions':[],'production_mutation':False}
           (out/'readback.json').write_text(json.dumps(result,indent=2)+'\n')
           print(json.dumps(result,indent=2))
           PY
-      - name: Compile immutable visual-only delivery from released code without generation
+      - name: Check released image execution and delivery regressions
+        working-directory: .image-execution-code
         run: |
           set -euo pipefail
-          node --input-type=module - <<'NODE'
-          import fs from 'node:fs';
-          import {buildNativeImageDelivery,assertNativeImageTaskPrompt} from './.image-execution-code/_generator/lib/native-image-delivery.mjs';
-          const request=JSON.parse(fs.readFileSync('_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json','utf8'));
-          const delivery=buildNativeImageDelivery(request);
-          const check=assertNativeImageTaskPrompt(delivery.task_prompt,delivery,request);
-          fs.writeFileSync('/tmp/q24-saved-image-readback/m04-delivery.json',JSON.stringify(delivery,null,2)+'\n');
-          fs.writeFileSync('/tmp/q24-saved-image-readback/m04-task-prompt.txt',delivery.task_prompt);
-          fs.writeFileSync('/tmp/q24-saved-image-readback/delivery-check.json',JSON.stringify(check,null,2)+'\n');
-          console.log(JSON.stringify(check));
-          NODE
-          git -C .image-execution-code archive --format=zip --output=/tmp/q24-saved-image-readback/released-image-code.zip HEAD _generator/lib/image-execution.mjs _generator/lib/image-story-packet.mjs _generator/lib/native-image-delivery.mjs _generator/lib/github-image-transfer.mjs _tools/native-image-delivery.mjs docs/operations/native-image-task-delivery.md docs/operations/image-file-transfer.md
+          node --test _generator/test/image-execution.test.mjs _generator/test/native-image-delivery.test.mjs | tee /tmp/q24-saved-image-readback/receipt-regressions.log
+      - name: Verify final bytes and genuine per-image receipts; prepare but do not launch next task
+        run: node _records/qualification/2026-09-28-Q24/tools/verify-final-image-persistence.mjs
+      - name: Retain exact released execution modules
+        run: |
+          git -C .image-execution-code archive --format=zip --output=/tmp/q24-saved-image-readback/released-image-code.zip HEAD _generator/lib/image-execution.mjs _generator/lib/image-story-packet.mjs _generator/lib/native-image-delivery.mjs _generator/lib/image-gate.mjs _generator/lib/util.mjs _generator/lib/visual-output.mjs
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
