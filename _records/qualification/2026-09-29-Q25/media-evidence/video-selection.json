@@ -1,0 +1,249 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "workflow_run_id": 36590746801,
+  "execution_commit": "cd678bffcb6a56e34b5775524b69bd8ac0f69e2f",
+  "validated_at": "2026-09-29T15:30:56.935Z",
+  "result": "pass",
+  "scope": "two-video component only; not kernel MEDIA_READY, complete qualification or publication",
+  "video_selection_validated": true,
+  "video_count": 2,
+  "both_preferred_length": true,
+  "worth_watching": {
+    "general": {
+      "candidate_id": "bs1qPy_CWkM",
+      "slot": "general",
+      "status": "included",
+      "url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+      "title": "Prompt to Production: The Future of AI Code Workflows",
+      "channel": "IBM Technology",
+      "source_id": "ibm",
+      "upload_date": "2026-09-28T11:00:25+00:00",
+      "runtime_seconds": 435,
+      "verified": true,
+      "editorial_pass": true,
+      "duplicate": false,
+      "score": 91,
+      "summary": "IBM Technology discusses planning, execution, validation and verification around AI-assisted software delivery. The published chapter outline emphasizes designing a solution before execution and the human verification work surrounding increasingly capable coding systems.",
+      "why_useful": "Provides a review-oriented framework for evaluating generated work rather than treating code generation as the end of a task. The supported takeaway concerns planning and verification practices, not measured automation reliability.",
+      "connection": "Complements Q25's engineering and reusable-skills stories by emphasizing the evidence and review practices surrounding AI-assisted delivery.",
+      "editorial_limitation": "Publisher description and chapter review only, not playback or an independently checked transcript. IBM discloses AI-assisted transcript and metadata creation. No measured productivity, safety or complete verification guarantee is asserted.",
+      "short_search_evidence": [
+        "Current publisher catalog gives 7:15, bound to the same exact video ID and title as the publisher feed; preferred <=10-minute tier."
+      ],
+      "fallback_reason": null,
+      "source_evidence_identity": "youtube:bs1qPy_CWkM",
+      "duration_tier": "short",
+      "selection_duration_tier": "preferred"
+    },
+    "agents_non_technical_people": {
+      "candidate_id": "KJ8Y2Nb9y9o",
+      "slot": "agents_non_technical_people",
+      "status": "included",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "channel": "Kevin Stratvert",
+      "source_id": "kevin-stratvert",
+      "upload_date": "2026-09-28T23:31:02+00:00",
+      "runtime_seconds": 471,
+      "verified": true,
+      "editorial_pass": true,
+      "duplicate": false,
+      "score": 89,
+      "summary": "Kevin Stratvert presents an early-look Copilot walkthrough whose published description and chapters cover recurring work, app building and Office integration. The selection describes the creator's advertised topics rather than independently confirming feature availability or performance.",
+      "why_useful": "Gives nontechnical readers a compact set of agent-workflow ideas to examine, including recurring tasks and task-specific tools. Readers should verify their own access and requirements before relying on features described in an early-look video.",
+      "connection": "Adds a concrete creator-led tour of agent-oriented work to Q25's Copilot learning and Agent Builder adoption stories, while retaining the distinction between a walkthrough and validated organizational outcomes.",
+      "editorial_limitation": "Reviewed publisher description and chapters, not video playback. Access, entitlement, product claims and implementation effectiveness were not independently tested. The description contains promotional/affiliate links; none is used as evidence of a factual result or included as a recommended purchase.",
+      "short_search_evidence": [
+        "Current publisher catalog gives 7:51, tied to the exact feed video ID and title; a short candidate satisfies the agent-oriented slot, so no longer-video fallback is needed."
+      ],
+      "fallback_reason": null,
+      "source_evidence_identity": "youtube:KJ8Y2Nb9y9o",
+      "duration_tier": "short",
+      "selection_duration_tier": "preferred"
+    }
+  },
+  "selection": {
+    "general": {
+      "candidate": {
+        "candidate_id": "bs1qPy_CWkM",
+        "slot": "general",
+        "status": "included",
+        "url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+        "title": "Prompt to Production: The Future of AI Code Workflows",
+        "channel": "IBM Technology",
+        "source_id": "ibm",
+        "upload_date": "2026-09-28T11:00:25+00:00",
+        "runtime_seconds": 435,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 91,
+        "summary": "IBM Technology discusses planning, execution, validation and verification around AI-assisted software delivery. The published chapter outline emphasizes designing a solution before execution and the human verification work surrounding increasingly capable coding systems.",
+        "why_useful": "Provides a review-oriented framework for evaluating generated work rather than treating code generation as the end of a task. The supported takeaway concerns planning and verification practices, not measured automation reliability.",
+        "connection": "Complements Q25's engineering and reusable-skills stories by emphasizing the evidence and review practices surrounding AI-assisted delivery.",
+        "editorial_limitation": "Publisher description and chapter review only, not playback or an independently checked transcript. IBM discloses AI-assisted transcript and metadata creation. No measured productivity, safety or complete verification guarantee is asserted.",
+        "short_search_evidence": [
+          "Current publisher catalog gives 7:15, bound to the same exact video ID and title as the publisher feed; preferred <=10-minute tier."
+        ],
+        "fallback_reason": null,
+        "source_evidence_identity": "youtube:bs1qPy_CWkM"
+      },
+      "tier": "short",
+      "duration_tier": "preferred",
+      "short_search_evidence": [],
+      "fallback_search_evidence": [],
+      "maximum_age_hours": 72
+    },
+    "agents_non_technical_people": {
+      "candidate": {
+        "candidate_id": "KJ8Y2Nb9y9o",
+        "slot": "agents_non_technical_people",
+        "status": "included",
+        "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+        "title": "Microsoft Copilot Just Got a Massive Upgrade",
+        "channel": "Kevin Stratvert",
+        "source_id": "kevin-stratvert",
+        "upload_date": "2026-09-28T23:31:02+00:00",
+        "runtime_seconds": 471,
+        "verified": true,
+        "editorial_pass": true,
+        "duplicate": false,
+        "score": 89,
+        "summary": "Kevin Stratvert presents an early-look Copilot walkthrough whose published description and chapters cover recurring work, app building and Office integration. The selection describes the creator's advertised topics rather than independently confirming feature availability or performance.",
+        "why_useful": "Gives nontechnical readers a compact set of agent-workflow ideas to examine, including recurring tasks and task-specific tools. Readers should verify their own access and requirements before relying on features described in an early-look video.",
+        "connection": "Adds a concrete creator-led tour of agent-oriented work to Q25's Copilot learning and Agent Builder adoption stories, while retaining the distinction between a walkthrough and validated organizational outcomes.",
+        "editorial_limitation": "Reviewed publisher description and chapters, not video playback. Access, entitlement, product claims and implementation effectiveness were not independently tested. The description contains promotional/affiliate links; none is used as evidence of a factual result or included as a recommended purchase.",
+        "short_search_evidence": [
+          "Current publisher catalog gives 7:51, tied to the exact feed video ID and title; a short candidate satisfies the agent-oriented slot, so no longer-video fallback is needed."
+        ],
+        "fallback_reason": null,
+        "source_evidence_identity": "youtube:KJ8Y2Nb9y9o"
+      },
+      "tier": "short",
+      "duration_tier": "preferred",
+      "short_search_evidence": [],
+      "fallback_search_evidence": [],
+      "maximum_age_hours": 72
+    }
+  },
+  "normalized_evidence": [
+    {
+      "schema_version": "1.0.0",
+      "identity": "youtube:bs1qPy_CWkM",
+      "kind": "video",
+      "canonical_url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+      "aliases": [
+        "https://www.youtube.com/watch?v=bs1qPy_CWkM"
+      ],
+      "title": "Prompt to Production: The Future of AI Code Workflows",
+      "published_at": "2026-09-28T11:00:25.000Z",
+      "runtime_seconds": 435,
+      "metadata_status": "reviewed",
+      "source": {
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWaEZ-_VweaEx1j62do_vQ",
+        "content_hash": "2a10406343571180dd929c0c3618280814e84111f3779d00ca7d81d201d19d20",
+        "checked_at": "2026-09-29T15:21:30.986Z"
+      },
+      "review": {
+        "status": "reviewed",
+        "reviewer": "ordinary_chatgpt",
+        "reviewed_at": "2026-09-29T15:27:53.000Z",
+        "source_content_hash": "2a10406343571180dd929c0c3618280814e84111f3779d00ca7d81d201d19d20",
+        "excerpts": [
+          "04:33 - The New Bottleneck: Human Verification at AI Scale",
+          "02:18 - Designing the Solution Before AI Executes"
+        ],
+        "scope": "Exact current publisher-distributed descriptions and chapter markers from the saved Atom feeds, with titles, identities and runtimes checked against the current channel catalogs. Video playback, transcript accuracy, accessibility, feature availability and demonstrated results were not independently tested. Promotional or comparative publisher claims are not adopted as independent facts.",
+        "audio_or_video_played": false
+      },
+      "audience_fit": "AI engineers and knowledge workers who commission, evaluate or review AI-generated technical work.",
+      "selection_history": [],
+      "rejection_reason": null
+    },
+    {
+      "schema_version": "1.0.0",
+      "identity": "youtube:KJ8Y2Nb9y9o",
+      "kind": "video",
+      "canonical_url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "aliases": [
+        "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o"
+      ],
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "published_at": "2026-09-28T23:31:02.000Z",
+      "runtime_seconds": 471,
+      "metadata_status": "reviewed",
+      "source": {
+        "url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfJT_eYDTmDE-ovKaxVE1ig",
+        "content_hash": "71a3805d59cf03c0a6eff39dce6f76006ac9359a7c7b5b496cd9cb35995cf6f2",
+        "checked_at": "2026-09-29T15:21:31.497Z"
+      },
+      "review": {
+        "status": "reviewed",
+        "reviewer": "ordinary_chatgpt",
+        "reviewed_at": "2026-09-29T15:27:53.000Z",
+        "source_content_hash": "71a3805d59cf03c0a6eff39dce6f76006ac9359a7c7b5b496cd9cb35995cf6f2",
+        "excerpts": [
+          "1:16 - Meet Copilot Autopilot",
+          "3:33 - Build apps with Copilot Code",
+          "4:56 - Use Office inside Copilot"
+        ],
+        "scope": "Exact current publisher-distributed descriptions and chapter markers from the saved Atom feeds, with titles, identities and runtimes checked against the current channel catalogs. Video playback, transcript accuracy, accessibility, feature availability and demonstrated results were not independently tested. Promotional or comparative publisher claims are not adopted as independent facts.",
+        "audio_or_video_played": false
+      },
+      "audience_fit": "Nontechnical agent users and knowledge workers assessing recurring work and task-specific tool concepts.",
+      "selection_history": [],
+      "rejection_reason": null
+    }
+  ],
+  "not_selected": [
+    {
+      "video_id": "7jUcTG1eeTM",
+      "runtime_seconds": 657,
+      "reason": "Ransomware/storage-security topic is less directly aligned with the Brief's generative-AI and agent-workflow focus; longer than ten minutes while a qualifying short general candidate exists."
+    },
+    {
+      "video_id": "kyJ1vd7yEPc",
+      "runtime_seconds": 689,
+      "reason": "Useful agent-data-exposure reserve, but the current bounded set contains a qualifying <=10-minute agent-oriented candidate. Do not use a duration fallback unnecessarily."
+    },
+    {
+      "video_id": "peP_o66u-vM",
+      "runtime_seconds": 877,
+      "reason": "Relevant file-organization rulebook and recurring-task reserve, but longer than ten minutes; use the qualifying short agent-oriented candidate first. Publisher product-applicability claims remain untested."
+    }
+  ],
+  "source_artifact_id": 11043047569,
+  "source_artifact_sha256": "59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40",
+  "source_hashes_verified": true,
+  "current_production_history_screened": true,
+  "negative_tests_passed": [
+    "reject_wrong_duration_owner",
+    "reject_wrong_feed_author",
+    "reject_mismatched_title",
+    "reject_timezone_free_publication",
+    "bs1qPy_CWkM:reject_source_hash_change",
+    "bs1qPy_CWkM:reject_unsupported_excerpt",
+    "KJ8Y2Nb9y9o:reject_source_hash_change",
+    "KJ8Y2Nb9y9o:reject_unsupported_excerpt",
+    "general:reject_production_duplicate",
+    "general:reject_future_source",
+    "agents_non_technical_people:reject_production_duplicate",
+    "agents_non_technical_people:reject_future_source"
+  ],
+  "source_refetches": 0,
+  "challenged_watch_requests": 0,
+  "article_stages_repeated": false,
+  "podcast_stages_repeated": false,
+  "prior_q_approval_reused": false,
+  "media_ready": false,
+  "production_mutation": false,
+  "model_calls": 0,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false
+}

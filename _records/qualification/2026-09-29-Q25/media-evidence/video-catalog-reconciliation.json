@@ -1,0 +1,154 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "source_artifact_id": 11043047569,
+  "source_artifact_sha256": "59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40",
+  "diagnosis": {
+    "observed_defect": "The new temporary acquisition workbench searched only videoRenderer entries. The saved current YouTube catalogs use lockupViewModel, with duration in a thumbnailBadgeViewModel bound to the same contentId. This caused a false zero-runtime result even though exact runtimes were present.",
+    "bounded_correction": "Parse the saved lockupViewModel contentId/title and its own thumbnail duration badge; require the badge animationActivationTargetId to equal contentId and reconcile with the publisher feed video identity/title. Preserve the original acquisition record unchanged; do not refetch any catalog/feed or retry challenged watch endpoints.",
+    "local_corrected_eligible_metadata_count": 5,
+    "metadata_capture_is_selection": false
+  },
+  "source_hashes_verified": true,
+  "source_refetches": 0,
+  "sources": [
+    {
+      "source_id": "ibm",
+      "channel_id": "UCKWaEZ-_VweaEx1j62do_vQ",
+      "catalog_source_sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d",
+      "feed_source_sha256": "a08068f63a05dc2a31e7b0290ead9d15a78111802c79e15b937af40d1c0f8f10",
+      "verified_lockup_items": 30,
+      "feed_entries": 15,
+      "eligible_verified_metadata": 3
+    },
+    {
+      "source_id": "jeff-su",
+      "channel_id": "UCwAnu01qlnVg1Ai2AbtTMaA",
+      "catalog_source_sha256": "672f0b21256a38216294f7ddef043cc27fa0939fc8318d7df38836c0379b057b",
+      "feed_source_sha256": "e1e268e6a31188b3ac512ca93d8801fe649605f1ad9cbb8db3109b299dd00a0d",
+      "verified_lockup_items": 30,
+      "feed_entries": 15,
+      "eligible_verified_metadata": 1
+    },
+    {
+      "source_id": "kevin-stratvert",
+      "channel_id": "UCfJT_eYDTmDE-ovKaxVE1ig",
+      "catalog_source_sha256": "aaf9f909128c957e52b350611b3b34e82d7cb0cc06ab8b5e3a97828470ff7a8c",
+      "feed_source_sha256": "324e7b2af6657319744d48705b31a319511f9361f884f4cae0d116791510b570",
+      "verified_lockup_items": 30,
+      "feed_entries": 15,
+      "eligible_verified_metadata": 1
+    }
+  ],
+  "records": [
+    {
+      "video_id": "7jUcTG1eeTM",
+      "canonical_url": "https://www.youtube.com/watch?v=7jUcTG1eeTM",
+      "title": "Ransomware Detection: Why Storage Finds the Attack First",
+      "published_at": "2026-09-29T11:00:27+00:00",
+      "age_hours_at_cutoff": 3.1425,
+      "runtime_seconds": 657,
+      "channel_id": "UCKWaEZ-_VweaEx1j62do_vQ",
+      "channel": "IBM Technology",
+      "source_id": "ibm",
+      "catalog_url": "https://www.youtube.com/@IBMTechnology/videos",
+      "catalog_source_sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWaEZ-_VweaEx1j62do_vQ",
+      "feed_source_sha256": "a08068f63a05dc2a31e7b0290ead9d15a78111802c79e15b937af40d1c0f8f10",
+      "checked_at": "2026-09-29T15:21:30.986Z",
+      "description_sha256": "b124c52d00e081d111d5d49ae70b3af9ecab7a86dcf41942bf242c7645eb7146",
+      "prior_production_matches": []
+    },
+    {
+      "video_id": "bs1qPy_CWkM",
+      "canonical_url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+      "title": "Prompt to Production: The Future of AI Code Workflows",
+      "published_at": "2026-09-28T11:00:25+00:00",
+      "age_hours_at_cutoff": 27.143055555555556,
+      "runtime_seconds": 435,
+      "channel_id": "UCKWaEZ-_VweaEx1j62do_vQ",
+      "channel": "IBM Technology",
+      "source_id": "ibm",
+      "catalog_url": "https://www.youtube.com/@IBMTechnology/videos",
+      "catalog_source_sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWaEZ-_VweaEx1j62do_vQ",
+      "feed_source_sha256": "a08068f63a05dc2a31e7b0290ead9d15a78111802c79e15b937af40d1c0f8f10",
+      "checked_at": "2026-09-29T15:21:30.986Z",
+      "description_sha256": "2a10406343571180dd929c0c3618280814e84111f3779d00ca7d81d201d19d20",
+      "prior_production_matches": []
+    },
+    {
+      "video_id": "kyJ1vd7yEPc",
+      "canonical_url": "https://www.youtube.com/watch?v=kyJ1vd7yEPc",
+      "title": "AI Is Exposing Your Data: An AI Security Problem You Can't See",
+      "published_at": "2026-09-27T11:00:22+00:00",
+      "age_hours_at_cutoff": 51.14388888888889,
+      "runtime_seconds": 689,
+      "channel_id": "UCKWaEZ-_VweaEx1j62do_vQ",
+      "channel": "IBM Technology",
+      "source_id": "ibm",
+      "catalog_url": "https://www.youtube.com/@IBMTechnology/videos",
+      "catalog_source_sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCKWaEZ-_VweaEx1j62do_vQ",
+      "feed_source_sha256": "a08068f63a05dc2a31e7b0290ead9d15a78111802c79e15b937af40d1c0f8f10",
+      "checked_at": "2026-09-29T15:21:30.986Z",
+      "description_sha256": "b6f8cbe3d57697639af1e6147b94e7800e595417ea4580f99a7fa76fcc6fc197",
+      "prior_production_matches": []
+    },
+    {
+      "video_id": "peP_o66u-vM",
+      "canonical_url": "https://www.youtube.com/watch?v=peP_o66u-vM",
+      "title": "Stop Organizing Files Yourself.",
+      "published_at": "2026-09-29T13:00:30+00:00",
+      "age_hours_at_cutoff": 1.1416666666666666,
+      "runtime_seconds": 877,
+      "channel_id": "UCwAnu01qlnVg1Ai2AbtTMaA",
+      "channel": "Jeff Su",
+      "source_id": "jeff-su",
+      "catalog_url": "https://www.youtube.com/@JeffSu/videos",
+      "catalog_source_sha256": "672f0b21256a38216294f7ddef043cc27fa0939fc8318d7df38836c0379b057b",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCwAnu01qlnVg1Ai2AbtTMaA",
+      "feed_source_sha256": "e1e268e6a31188b3ac512ca93d8801fe649605f1ad9cbb8db3109b299dd00a0d",
+      "checked_at": "2026-09-29T15:21:31.169Z",
+      "description_sha256": "3d5001db77f23e919f29ab0626bb2c6f1fe075d84110e191e4291955f1fdaa2d",
+      "prior_production_matches": []
+    },
+    {
+      "video_id": "KJ8Y2Nb9y9o",
+      "canonical_url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "published_at": "2026-09-28T23:31:02+00:00",
+      "age_hours_at_cutoff": 14.632777777777777,
+      "runtime_seconds": 471,
+      "channel_id": "UCfJT_eYDTmDE-ovKaxVE1ig",
+      "channel": "Kevin Stratvert",
+      "source_id": "kevin-stratvert",
+      "catalog_url": "https://www.youtube.com/@KevinStratvert/videos",
+      "catalog_source_sha256": "aaf9f909128c957e52b350611b3b34e82d7cb0cc06ab8b5e3a97828470ff7a8c",
+      "feed_url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCfJT_eYDTmDE-ovKaxVE1ig",
+      "feed_source_sha256": "324e7b2af6657319744d48705b31a319511f9361f884f4cae0d116791510b570",
+      "checked_at": "2026-09-29T15:21:31.497Z",
+      "description_sha256": "71a3805d59cf03c0a6eff39dce6f76006ac9359a7c7b5b496cd9cb35995cf6f2",
+      "prior_production_matches": []
+    }
+  ],
+  "missing_sources": [
+    {
+      "id": "microsoft-mechanics",
+      "url": "https://www.youtube.com/@MicrosoftMechanics/videos",
+      "expected_channel_id": null,
+      "checked_at": "2026-09-29T15:21:30.356Z",
+      "status": "unavailable",
+      "reason": "HTTP 404"
+    }
+  ],
+  "negative_tests": [
+    "reject_wrong_duration_owner",
+    "reject_wrong_feed_author",
+    "reject_mismatched_title",
+    "reject_timezone_free_publication"
+  ],
+  "original_acquisition_preserved": true,
+  "production_mutation": false
+}

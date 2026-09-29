@@ -1,0 +1,21 @@
+Learn more about Agentic Coding here → https://ibm.biz/~eVuLdAOOj
+
+Writing code is becoming the easy part. Sam Anthony explains why planning, execution, validation, and verification matter more as AI coding systems become increasingly capable. Learn how prompt-to-production workflows are reshaping modern software engineering.
+
+00:00 - Why Prompt‑to‑Production Feels So Easy
+00:25 - Planning: The New Core Skill in AI‑Driven Engineering
+01:08 - Choosing the Right AI‑Driven Approach
+01:31 - Why Implementation Is No Longer the Hard Part
+02:18 - Designing the Solution Before AI Executes
+02:48 - The Hidden Complexity Behind Code Changes
+03:11 - Agentic Coding Systems and Self‑Correcting Workflows
+04:33 - The New Bottleneck: Human Verification at AI Scale
+05:07 - Evidence‑Driven Development and Trust
+06:16 - How AI Is Reshaping Developer Skills
+06:47 - The Future: Continuous Prompt‑to‑Production Workflows
+
+AI news moves fast. Sign up for a monthly newsletter for AI updates from IBM → https://ibm.biz/~oN8SSIkDR
+
+AI was used in the creation of the transcript and metadata for this video.
+
+#agenticcoding #aicoding #aiagents #softwareengineering
