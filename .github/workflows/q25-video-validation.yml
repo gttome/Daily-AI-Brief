@@ -1,0 +1,166 @@
+name: Q25 reviewed video validation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-29-Q25']
+    paths: ['.github/workflows/q25-video-validation.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: q25-media-writer
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Preserve completed Q25 stages and recover saved source bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-29-Q25'
+          test ! -f _records/qualification/2026-09-29-Q25/result.json
+          test ! -f _records/qualification/2026-09-29-Q25/media-evidence/video-selection.json
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json)" = 9b2387dfb4fdd8e54bcfd5813d5f05fe753686d4
+          curl --fail --location --max-time 45 --silent --show-error --header "Authorization: Bearer $GH_TOKEN" --header 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/11043047569/zip --output "$RUNNER_TEMP/q25-videos.zip"
+          echo "59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40  $RUNNER_TEMP/q25-videos.zip" | sha256sum --check
+      - name: Reconcile exact lockup runtimes and publisher feeds without new retrieval
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse,parse_qs
+          from datetime import datetime
+          import os,json,re,hashlib,zipfile,copy,xml.etree.ElementTree as ET
+          archive=zipfile.ZipFile(Path(os.environ['RUNNER_TEMP'])/'q25-videos.zip')
+          catalogs={x['id']:x for x in json.loads(archive.read('catalog-observations.json'))};feeds={x['id']:x for x in json.loads(archive.read('feed-observations.json'))}
+          ns={'a':'http://www.w3.org/2005/Atom','yt':'http://www.youtube.com/xml/schemas/2015','m':'http://search.yahoo.com/mrss/'}
+          cutoff=datetime.fromisoformat('2026-09-29T14:09:00+00:00')
+          def collect(x,key):
+              if isinstance(x,dict):
+                  if key in x:yield x[key]
+                  for v in x.values():yield from collect(v,key)
+              elif isinstance(x,list):
+                  for v in x:yield from collect(v,key)
+          def runtime(item):
+              video_id=item['contentId'];assert re.fullmatch(r'[A-Za-z0-9_-]{11}',video_id)
+              durations=[]
+              for badge in collect(item['contentImage'],'thumbnailBadgeViewModel'):
+                  text=badge.get('text','')
+                  if not re.fullmatch(r'(?:\d+:)?\d{1,2}:\d{2}',text):continue
+                  assert badge.get('animationActivationTargetId')==video_id,'duration_badge_owner_mismatch'
+                  parts=[int(x) for x in text.split(':')];assert all(0<=x<60 for x in parts[1:]);value=0
+                  for p in parts:value=value*60+p
+                  assert value>0;durations.append(value)
+              assert durations and len(set(durations))==1,'duration_missing_or_conflicting'
+              return durations[0]
+          def parse_feed(data,channel):
+              feed=ET.fromstring(data);uri='https://www.youtube.com/channel/'+channel
+              assert feed.tag=='{'+ns['a']+'}feed'
+              assert feed.findtext('a:author/a:uri',namespaces=ns)==uri
+              assert feed.find("a:link[@rel='alternate']",ns).get('href')==uri
+              self_url=urlparse(feed.find("a:link[@rel='self']",ns).get('href'));assert self_url.hostname=='www.youtube.com' and self_url.path=='/feeds/videos.xml' and parse_qs(self_url.query)=={'channel_id':[channel]}
+              root_id=feed.findtext('yt:channelId',namespaces=ns);assert root_id in (channel,channel[2:]);assert feed.findtext('a:id',namespaces=ns)=='yt:channel:'+root_id
+              rows=[];seen=set()
+              for entry in feed.findall('a:entry',ns):
+                  video_id=entry.findtext('yt:videoId',namespaces=ns);assert re.fullmatch(r'[A-Za-z0-9_-]{11}',video_id or '') and video_id not in seen;seen.add(video_id)
+                  assert entry.findtext('yt:channelId',namespaces=ns)==channel and entry.findtext('a:author/a:uri',namespaces=ns)==uri
+                  assert entry.findtext('a:id',namespaces=ns)=='yt:video:'+video_id
+                  canonical=entry.find("a:link[@rel='alternate']",ns).get('href');assert canonical in ('https://www.youtube.com/watch?v='+video_id,'https://www.youtube.com/shorts/'+video_id)
+                  title=entry.findtext('a:title',namespaces=ns);assert title and title==entry.findtext('m:group/m:title',namespaces=ns)
+                  published=entry.findtext('a:published',namespaces=ns);assert re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})',published or '')
+                  age=(cutoff-datetime.fromisoformat(published.replace('Z','+00:00'))).total_seconds()/3600
+                  rows.append({'video_id':video_id,'canonical_url':canonical,'title':title,'published_at':published,'age_hours_at_cutoff':age,'description':entry.findtext('m:group/m:description',namespaces=ns) or ''})
+              return rows
+          records=[];sources=[];negative=[]
+          expected={'ibm':'UCKWaEZ-_VweaEx1j62do_vQ','jeff-su':'UCwAnu01qlnVg1Ai2AbtTMaA','kevin-stratvert':'UCfJT_eYDTmDE-ovKaxVE1ig'}
+          for source_id,channel in expected.items():
+              c=catalogs[source_id];f=feeds[source_id];raw=archive.read(source_id+'-catalog.html');feed=archive.read(source_id+'-feed.xml')
+              assert hashlib.sha256(raw).hexdigest()==c['source_sha256'] and hashlib.sha256(feed).hexdigest()==f['source_sha256']
+              text=raw.decode();match=re.search(r'(?:var\s+)?ytInitialData\s*=\s*',text);assert match
+              doc=json.JSONDecoder().raw_decode(text[match.end():])[0];meta=doc['metadata']['channelMetadataRenderer'];assert meta['externalId']==channel
+              items={}
+              for item in collect(doc,'lockupViewModel'):
+                  video_id=item.get('contentId')
+                  if not re.fullmatch(r'[A-Za-z0-9_-]{11}',video_id or ''):continue
+                  try:seconds=runtime(item)
+                  except AssertionError:
+                      if video_id in ['bs1qPy_CWkM','KJ8Y2Nb9y9o']:raise
+                      continue
+                  title=item['metadata']['lockupMetadataViewModel']['title']['content']
+                  if video_id in items:assert items[video_id]['title']==title and items[video_id]['runtime_seconds']==seconds
+                  items[video_id]={'title':title,'runtime_seconds':seconds}
+                  if video_id=='bs1qPy_CWkM':
+                      bad=copy.deepcopy(item)
+                      for badge in collect(bad['contentImage'],'thumbnailBadgeViewModel'):badge['animationActivationTargetId']='AAAAAAAAAAA'
+                      try:runtime(bad)
+                      except AssertionError:negative.append('reject_wrong_duration_owner')
+                      else:raise AssertionError('negative_duration_test_failed')
+              parsed=parse_feed(feed,channel);eligible=0
+              for r in parsed:
+                  if not 0<=r['age_hours_at_cutoff']<=72 or r['video_id'] not in items:continue
+                  item=items[r['video_id']];assert item['title']==r['title']
+                  if item['runtime_seconds']>1200:continue
+                  eligible+=1;records.append({**r,'runtime_seconds':item['runtime_seconds'],'channel_id':channel,'channel':meta['title'],'source_id':source_id,'catalog_url':c['url'],'catalog_source_sha256':c['source_sha256'],'feed_url':f['url'],'feed_source_sha256':f['source_sha256'],'checked_at':f['checked_at'],'description_sha256':hashlib.sha256(r['description'].encode()).hexdigest()})
+              if source_id=='ibm':
+                  for name,mutate in [
+                      ('reject_wrong_feed_author',lambda x:setattr(x.find('a:author/a:uri',ns),'text','https://www.youtube.com/channel/UCwrong')),
+                      ('reject_mismatched_title',lambda x:setattr(x.find('a:entry/m:group/m:title',ns),'text','different title')),
+                      ('reject_timezone_free_publication',lambda x:setattr(x.find('a:entry/a:published',ns),'text','2026-09-28T11:00:25'))]:
+                      bad=ET.fromstring(feed);mutate(bad)
+                      try:parse_feed(ET.tostring(bad),channel)
+                      except (AssertionError,ValueError):negative.append(name)
+                      else:raise AssertionError('negative_feed_test_failed:'+name)
+              sources.append({'source_id':source_id,'channel_id':channel,'catalog_source_sha256':c['source_sha256'],'feed_source_sha256':f['source_sha256'],'verified_lockup_items':len(items),'feed_entries':len(parsed),'eligible_verified_metadata':eligible})
+          assert len(negative)==4
+          result={'records':records,'sources':sources,'negative_tests':negative,'missing_sources':[x for x in catalogs.values() if x['status']!='retrieved'],'source_refetches':0}
+          Path(os.environ['RUNNER_TEMP'],'q25-video-reconciled.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps({'eligible':len(records),'negative_tests':negative,'sources':sources}))
+          PY
+      - name: Validate source review, novelty and two preferred-length video selections
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+          import {selectVideo,videoDurationTier} from './_generator/lib/media-selection.mjs';
+          import {normalizeMediaEvidence} from './_generator/lib/media-evidence.mjs';
+          const root='_records/qualification/2026-09-29-Q25',out=root+'/media-evidence',load=p=>JSON.parse(fs.readFileSync(p,'utf8')),hash=s=>crypto.createHash('sha256').update(s).digest('hex');
+          const semantic=load(root+'/semantic-receipt.json'),review=load(out+'/video-editorial-review.json'),history=load(out+'/video-production-history.json'),data=load(process.env.RUNNER_TEMP+'/q25-video-reconciled.json');
+          assert.equal(review.cutoff,semantic.cutoff);assert.equal(review.run_id,semantic.run_id);assert.equal(history.observed_main_sha,semantic.baseline_sha);assert.equal(review.prior_q_approval_reused,false);
+          const id=value=>{try{const u=new URL(value);return u.hostname==='youtu.be'?u.pathname.slice(1):u.searchParams.get('v')||u.pathname.match(/^\/(?:shorts|embed)\/([^/]+)$/)?.[1]||null;}catch{return null;}};
+          const tested=[...data.negative_tests],normalized=[],candidates=[];
+          const records=data.records.map(r=>({...r,prior_production_matches:history.records.filter(h=>id(h.url)===r.video_id||String(h.title).trim().toLowerCase()===r.title.trim().toLowerCase())}));
+          assert.equal(records.length,5);
+          for(const r of review.reviews){const source=records.find(x=>x.video_id===r.candidate_id);assert.ok(source);assert.equal(source.channel_id,r.channel_id);assert.equal(source.title,r.expected_title);assert.equal(source.published_at,r.expected_publication_date);assert.equal(source.runtime_seconds,r.expected_runtime_seconds);assert.equal(source.catalog_source_sha256,r.catalog_source_sha256);assert.equal(source.feed_source_sha256,r.feed_source_sha256);assert.equal(source.description_sha256,r.description_sha256);assert.equal(hash(source.description),r.description_sha256);assert.equal(source.prior_production_matches.length,0);assert.equal(r.editorial_pass,true);assert.equal(r.duplicate,false);assert.equal(videoDurationTier(source.runtime_seconds),'preferred');
+            const raw={kind:'video',canonical_url:source.canonical_url,title:source.title,published_at:source.published_at,runtime_seconds:source.runtime_seconds,source:{url:source.feed_url,text:source.description,checked_at:source.checked_at},review:{status:'reviewed',reviewer:review.reviewer,reviewed_at:review.reviewed_at,source_content_hash:r.description_sha256,excerpts:r.source_excerpts,scope:review.review_scope,audio_or_video_played:false},audience_fit:r.audience_fit,selection_history:[]};
+            const evidence=normalizeMediaEvidence(raw);assert.equal(evidence.metadata_status,'reviewed');assert.equal(evidence.identity,'youtube:'+r.candidate_id);normalized.push(evidence);
+            assert.throws(()=>normalizeMediaEvidence({...raw,review:{...raw.review,source_content_hash:'0'.repeat(64)}}));tested.push(r.candidate_id+':reject_source_hash_change');assert.throws(()=>normalizeMediaEvidence({...raw,review:{...raw.review,excerpts:['fabricated unobserved source excerpt']}}));tested.push(r.candidate_id+':reject_unsupported_excerpt');
+            fs.writeFileSync(out+'/source-texts/'+r.candidate_id+'-video-description.txt',source.description,{flag:'wx'});
+            candidates.push({candidate_id:r.candidate_id,slot:r.slot,status:'included',url:source.canonical_url,title:source.title,channel:source.channel,source_id:source.source_id,upload_date:source.published_at,runtime_seconds:source.runtime_seconds,verified:true,editorial_pass:true,duplicate:false,score:r.score,summary:r.summary,why_useful:r.why_useful,connection:r.connection,editorial_limitation:r.editorial_limitation,short_search_evidence:r.short_search_evidence,fallback_reason:null,source_evidence_identity:evidence.identity});
+          }
+          const options={cutoff:semantic.cutoff,policy:semantic.media_freshness_policy},selection={},worth_watching={};
+          for(const slot of ['general','agents_non_technical_people']){const s=selectVideo(candidates,slot,'2026-09-29',options);assert.ok(s.candidate);assert.equal(s.duration_tier,'preferred');selection[slot]=s;worth_watching[slot]={...s.candidate,duration_tier:s.tier,selection_duration_tier:s.duration_tier};assert.equal(selectVideo(candidates.map(c=>({...c,duplicate:true})),slot,'2026-09-29',options).candidate,null);tested.push(slot+':reject_production_duplicate');assert.equal(selectVideo(candidates.map(c=>({...c,upload_date:'2026-09-29T14:09:01Z'})),slot,'2026-09-29',options).candidate,null);tested.push(slot+':reject_future_source');}
+          assert.equal(worth_watching.general.candidate_id,'bs1qPy_CWkM');assert.equal(worth_watching.agents_non_technical_people.candidate_id,'KJ8Y2Nb9y9o');
+          fs.writeFileSync(out+'/video-catalog-reconciliation.json',JSON.stringify({schema_version:'1.0.0',run_id:semantic.run_id,cutoff:semantic.cutoff,source_artifact_id:review.source_artifact_id,source_artifact_sha256:review.source_artifact_sha256,diagnosis:review.parser_diagnostic,source_hashes_verified:true,source_refetches:0,sources:data.sources,records:records.map(({description,...r})=>r),missing_sources:data.missing_sources,negative_tests:data.negative_tests,original_acquisition_preserved:true,production_mutation:false},null,2)+'\n',{flag:'wx'});
+          const receipt={schema_version:'1.0.0',run_id:semantic.run_id,baseline_sha:semantic.baseline_sha,cutoff:semantic.cutoff,media_freshness_policy:semantic.media_freshness_policy,workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,validated_at:new Date().toISOString(),result:'pass',scope:'two-video component only; not kernel MEDIA_READY, complete qualification or publication',video_selection_validated:true,video_count:2,both_preferred_length:true,worth_watching,selection,normalized_evidence:normalized,not_selected:review.not_selected,source_artifact_id:review.source_artifact_id,source_artifact_sha256:review.source_artifact_sha256,source_hashes_verified:true,current_production_history_screened:true,negative_tests_passed:tested,source_refetches:0,challenged_watch_requests:0,article_stages_repeated:false,podcast_stages_repeated:false,prior_q_approval_reused:false,media_ready:false,production_mutation:false,model_calls:0,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false};
+          fs.writeFileSync(out+'/video-selection.json',JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({result:'pass',video_count:2,both_preferred_length:true,selected:Object.values(worth_watching).map(x=>({id:x.candidate_id,seconds:x.runtime_seconds})),negative_tests:tested.length}));
+          NODE
+      - name: Persist only new verified video evidence
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json)" = 9b2387dfb4fdd8e54bcfd5813d5f05fe753686d4
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-29-Q25/media-evidence/video-selection.json _records/qualification/2026-09-29-Q25/media-evidence/video-catalog-reconciliation.json _records/qualification/2026-09-29-Q25/media-evidence/source-texts/
+          git commit -m 'Pass Q25 two preferred short videos with exact saved-source validation'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
