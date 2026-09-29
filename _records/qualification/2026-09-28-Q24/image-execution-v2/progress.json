@@ -2,17 +2,21 @@
   "qualification_id": "2026-09-28-Q24",
   "status": "IMAGES_IN_PROGRESS",
   "accepted_locked_count": 1,
-  "accepted_candidates": ["m04"],
-  "accepted_receipts": {"m04": "_records/qualification/2026-09-28-Q24/image-execution-v2/receipts/m04.json"},
+  "accepted_candidates": [
+    "m04"
+  ],
+  "accepted_receipts": {
+    "m04": "_records/qualification/2026-09-28-Q24/image-execution-v2/receipts/m04.json"
+  },
   "acceptance_commit": "f2eede14362ce1a5e2194f95cfcf628bc2225a76",
   "pending_candidate": "m03",
-  "pending_attempt": 1,
-  "pending_status": "TASK_SCHEDULED",
-  "pending_task_id": "6abb3052c5348191a3e69437b9d95fb0",
+  "pending_attempt": 2,
+  "pending_status": "READY_TO_PREPARE",
+  "pending_task_id": null,
   "pending_task_title": "OpenShell Runtime Illustration",
-  "scheduled_for": "2026-09-29T03:29:18Z",
+  "scheduled_for": null,
   "native_execution_verified": false,
-  "next_action": "Recover m03's actual one-time image-task output, then capture, review, persist and validate it. No duplicate generation and no repeated m04 work.",
+  "next_action": "Prepare and bind m03 attempt 2 from the unchanged frozen request, then submit exactly one image-only task. Attempt 1 is durably unrecoverable under PR #288.",
   "verification_workflow_run_id": 36516797618,
   "verification_artifact_id": 11011087017,
   "verification_artifact_sha256": "d3527ffdb4e2c5d4400ee8dbd9bebb42941464878161b9bf000fc5564df27538",
@@ -23,5 +27,14 @@
   "enabled_is_execution_proof": false,
   "full_qualification_pass": false,
   "six_image_set_review_complete": false,
-  "production_mutation": false
+  "production_mutation": false,
+  "unrecoverable_attempts": [
+    {
+      "candidate_id": "m03",
+      "attempt": 1,
+      "reason_code": "TASK_RESULT_UNRECOVERABLE",
+      "event_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/events/m03-attempt-1-unrecoverable.json"
+    }
+  ],
+  "recovery_policy_release_sha": "d16ff493341b754d44627d2ae64071c87e805890"
 }
