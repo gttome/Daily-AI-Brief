@@ -1,161 +1,134 @@
+import {explicitMediaTimestamp} from './media-freshness.mjs';
+
+// Extraction only. Existing source review, freshness and selection gates still apply.
 const nonempty = value => typeof value === 'string' && value.trim().length > 0;
 const videoIdPattern = /^[A-Za-z0-9_-]{11}$/;
+const channelIdPattern = /^UC[A-Za-z0-9_-]{22}$/;
 const durationPattern = /^(?:\d+:)?\d{1,2}:\d{2}$/;
 
 export function collectNested(root, key) {
-  const out = [];
-  const visit = value => {
-    if (!value || typeof value !== 'object') return;
+  const out = [], stack = [root], seen = new WeakSet();
+  let visited = 0;
+  while (stack.length) {
+    const value = stack.pop();
+    if (!value || typeof value !== 'object') continue;
+    if (++visited > 100000) throw Error('media_document_node_limit');
+    if (seen.has(value)) throw Error('media_document_repeated_object');
+    seen.add(value);
     if (Object.prototype.hasOwnProperty.call(value, key)) out.push(value[key]);
-    if (Array.isArray(value)) {
-      for (const item of value) visit(item);
-    } else {
-      for (const item of Object.values(value)) visit(item);
-    }
-  };
-  visit(root);
+    const children = Array.isArray(value) ? value : Object.values(value);
+    for (let i = children.length - 1; i >= 0; i--) stack.push(children[i]);
+  }
   return out;
 }
 
 function durationSeconds(text) {
   if (!durationPattern.test(String(text || ''))) throw Error('invalid_duration_text');
   const parts = String(text).split(':').map(Number);
-  if (parts.slice(1).some(x => x < 0 || x >= 60)) throw Error('invalid_duration_text');
-  let seconds = 0;
-  for (const part of parts) seconds = seconds * 60 + part;
-  if (seconds <= 0) throw Error('invalid_duration_text');
+  if (parts.slice(1).some(x => x >= 60)) throw Error('invalid_duration_text');
+  const seconds = parts.reduce((n, part) => n * 60 + part, 0);
+  if (!Number.isSafeInteger(seconds) || seconds <= 0) throw Error('invalid_duration_text');
   return seconds;
 }
 
 function assertAppleEpisodeItem(item, offer, showId) {
-  if (!offer || typeof offer !== 'object') throw Error('apple_playback_offer_required');
-  const episodeId = String(offer.contentId || '');
-  if (!episodeId) throw Error('apple_episode_id_required');
+  const episodeId = String(offer?.contentId || '');
+  if (!/^\d+$/.test(episodeId)) throw Error('apple_episode_id_required');
   if (String(item?.adamId || '') !== episodeId) throw Error('apple_episode_item_identity_mismatch');
-  if (String(item?.showAdamId || '') !== String(showId)) throw Error('apple_episode_show_identity_mismatch');
-  if (String(offer?.showOffer?.adamId || '') !== String(showId)) throw Error('apple_offer_show_identity_mismatch');
-  if (!nonempty(offer.title) || item?.title !== offer.title) throw Error('apple_episode_title_mismatch');
-  if (!nonempty(offer.releaseDate) || item?.releaseDate !== offer.releaseDate || Number.isNaN(Date.parse(offer.releaseDate)))
+  if (String(item?.showAdamId || '') !== showId) throw Error('apple_episode_show_identity_mismatch');
+  if (String(offer?.showOffer?.adamId || '') !== showId) throw Error('apple_offer_show_identity_mismatch');
+  if (!nonempty(offer.title) || item.title !== offer.title) throw Error('apple_episode_title_mismatch');
+  if (item.releaseDate !== offer.releaseDate || !Number.isFinite(explicitMediaTimestamp(offer.releaseDate)))
     throw Error('apple_episode_release_date_mismatch');
-  if (!Number.isInteger(offer.duration) || offer.duration <= 0 || item?.duration !== offer.duration)
+  if (!Number.isSafeInteger(offer.duration) || offer.duration <= 0 || item.duration !== offer.duration)
     throw Error('apple_episode_duration_mismatch');
   if (!nonempty(offer.storeUrl)) throw Error('apple_episode_url_required');
   const url = new URL(offer.storeUrl);
-  if (url.protocol !== 'https:' || url.hostname !== 'podcasts.apple.com' || url.searchParams.get('i') !== episodeId)
+  if (url.protocol !== 'https:' || url.hostname !== 'podcasts.apple.com' || url.username || url.password || url.port ||
+      !url.pathname.endsWith('/id' + showId) || url.searchParams.getAll('i').length !== 1 || url.searchParams.get('i') !== episodeId)
     throw Error('apple_episode_url_identity_mismatch');
-  if (!nonempty(item?.summary)) throw Error('apple_episode_summary_required');
+  if (!nonempty(item.summary)) throw Error('apple_episode_summary_required');
 }
 
 export function extractApplePodcastEpisodes(document, {showId} = {}) {
-  if (!showId) throw Error('apple_show_id_required');
+  if (!/^\d+$/.test(String(showId || ''))) throw Error('apple_show_id_required');
+  showId = String(showId);
   const shelves = document?.data?.[0]?.data?.shelves;
   if (!Array.isArray(shelves)) throw Error('apple_catalog_shelves_required');
   const seen = new Map();
   let partialContextMenuRecordsNotUsed = 0;
   for (const shelf of shelves) {
-    for (const item of shelf?.items || []) {
+    if (!Array.isArray(shelf?.items)) continue;
+    for (const item of shelf.items) {
       const offer = item?.playAction?.episodeOffer;
-      if (!offer || String(offer?.showOffer?.adamId || '') !== String(showId)) continue;
-      assertAppleEpisodeItem(item, offer, String(showId));
+      if (!offer || String(offer?.showOffer?.adamId || '') !== showId) continue;
+      assertAppleEpisodeItem(item, offer, showId);
       const menu = item?.contextAction?.episodeOffer;
-      if (menu && (!('releaseDate' in menu) || !('duration' in menu))) partialContextMenuRecordsNotUsed += 1;
+      if (menu && (!('releaseDate' in menu) || !('duration' in menu))) partialContextMenuRecordsNotUsed++;
       const episodeId = String(offer.contentId);
       const row = {
-        episode_id: episodeId,
-        show_id: String(showId),
-        canonical_url: offer.storeUrl,
-        title: offer.title,
-        show: offer.showOffer.title || null,
-        episode_guid: offer.guid || null,
-        feed_url: offer.showOffer.feedUrl || null,
-        published_at: offer.releaseDate,
-        runtime_seconds: offer.duration,
-        source_text: item.summary
+        episode_id: episodeId, show_id: showId, canonical_url: offer.storeUrl,
+        title: offer.title, show: offer.showOffer.title || null,
+        episode_guid: offer.guid || null, feed_url: offer.showOffer.feedUrl || null,
+        published_at: offer.releaseDate, runtime_seconds: offer.duration, source_text: item.summary
       };
       const previous = seen.get(episodeId);
       if (previous && JSON.stringify(previous) !== JSON.stringify(row)) throw Error('apple_duplicate_episode_conflict');
       seen.set(episodeId, row);
     }
   }
-  return {
-    records: [...seen.values()],
-    partial_context_menu_records_not_used: partialContextMenuRecordsNotUsed
-  };
+  return {records: [...seen.values()], partial_context_menu_records_not_used: partialContextMenuRecordsNotUsed};
 }
 
 function rendererTitle(renderer) {
   const title = renderer?.title;
-  if (nonempty(title?.simpleText)) return title.simpleText;
-  const runs = Array.isArray(title?.runs) ? title.runs.map(x => x?.text || '').join('') : '';
-  return runs;
+  return nonempty(title?.simpleText) ? title.simpleText : Array.isArray(title?.runs) ? title.runs.map(x => x?.text || '').join('') : '';
 }
 
 function rendererDuration(renderer) {
   const length = renderer?.lengthText;
-  const text = length?.simpleText || (Array.isArray(length?.runs) ? length.runs.map(x => x?.text || '').join('') : '');
-  return durationSeconds(text);
+  return durationSeconds(length?.simpleText || (Array.isArray(length?.runs) ? length.runs.map(x => x?.text || '').join('') : ''));
 }
 
 function lockupDuration(lockup) {
-  const videoId = lockup?.contentId;
-  if (!videoIdPattern.test(String(videoId || ''))) throw Error('youtube_video_id_invalid');
-  const values = [];
-  for (const badge of collectNested(lockup?.contentImage, 'thumbnailBadgeViewModel')) {
-    const text = badge?.text;
-    if (!durationPattern.test(String(text || ''))) continue;
-    if (badge?.animationActivationTargetId !== videoId) throw Error('youtube_duration_badge_owner_mismatch');
-    values.push(durationSeconds(text));
+  const videoId = lockup.contentId, values = [];
+  for (const badge of collectNested(lockup.contentImage, 'thumbnailBadgeViewModel')) {
+    if (!durationPattern.test(String(badge?.text || ''))) continue;
+    if (badge.animationActivationTargetId !== videoId) throw Error('youtube_duration_badge_owner_mismatch');
+    values.push(durationSeconds(badge.text));
   }
-  if (!values.length || new Set(values).size !== 1) throw Error('youtube_duration_missing_or_conflicting');
+  if (!values.length) throw Error('youtube_duration_missing');
+  if (new Set(values).size !== 1) throw Error('youtube_duration_conflicting');
   return values[0];
 }
 
 export function extractYouTubeCatalogVideos(initialData, {expectedChannelId = null} = {}) {
   const meta = initialData?.metadata?.channelMetadataRenderer;
-  if (!meta || !videoIdPattern.test(String(meta.externalId || '').replace(/^UC/, 'AA'))) {
-    if (!/^UC[A-Za-z0-9_-]{22}$/.test(String(meta?.externalId || ''))) throw Error('youtube_channel_identity_required');
-  }
-  const channelId = meta.externalId;
-  if (!/^UC[A-Za-z0-9_-]{22}$/.test(String(channelId || ''))) throw Error('youtube_channel_identity_required');
+  const channelId = meta?.externalId;
+  if (!channelIdPattern.test(String(channelId || ''))) throw Error('youtube_channel_identity_required');
   if (expectedChannelId && channelId !== expectedChannelId) throw Error('youtube_channel_identity_mismatch');
-  const seen = new Map();
-  const modes = new Set();
-
+  const seen = new Map(), modes = new Set();
+  const add = (videoId, title, seconds, mode) => {
+    if (!nonempty(title)) return;
+    const row = {video_id: videoId, title, runtime_seconds: seconds};
+    const previous = seen.get(videoId);
+    if (previous && JSON.stringify(previous) !== JSON.stringify(row)) throw Error('youtube_duplicate_video_conflict');
+    seen.set(videoId, row); modes.add(mode);
+  };
   for (const renderer of collectNested(initialData, 'videoRenderer')) {
-    const videoId = renderer?.videoId;
-    if (!videoIdPattern.test(String(videoId || ''))) continue;
+    if (!videoIdPattern.test(String(renderer?.videoId || ''))) continue;
     let seconds;
     try { seconds = rendererDuration(renderer); } catch { continue; }
-    const title = rendererTitle(renderer);
-    if (!nonempty(title)) continue;
-    const row = {video_id: videoId, title, runtime_seconds: seconds};
-    const previous = seen.get(videoId);
-    if (previous && JSON.stringify(previous) !== JSON.stringify(row)) throw Error('youtube_duplicate_video_conflict');
-    seen.set(videoId, row);
-    modes.add('videoRenderer');
+    add(renderer.videoId, rendererTitle(renderer), seconds, 'videoRenderer');
   }
-
   for (const lockup of collectNested(initialData, 'lockupViewModel')) {
-    const videoId = lockup?.contentId;
-    if (!videoIdPattern.test(String(videoId || ''))) continue;
+    if (!videoIdPattern.test(String(lockup?.contentId || ''))) continue;
     let seconds;
     try { seconds = lockupDuration(lockup); } catch (error) {
-      if (String(error.message) === 'youtube_duration_badge_owner_mismatch') throw error;
+      if (error.message !== 'youtube_duration_missing' && error.message !== 'invalid_duration_text') throw error;
       continue;
     }
-    const title = lockup?.metadata?.lockupMetadataViewModel?.title?.content;
-    if (!nonempty(title)) continue;
-    const row = {video_id: videoId, title, runtime_seconds: seconds};
-    const previous = seen.get(videoId);
-    if (previous && JSON.stringify(previous) !== JSON.stringify(row)) throw Error('youtube_duplicate_video_conflict');
-    seen.set(videoId, row);
-    modes.add('lockupViewModel');
+    add(lockup.contentId, lockup.metadata?.lockupMetadataViewModel?.title?.content, seconds, 'lockupViewModel');
   }
-
-  return {
-    channel_id: channelId,
-    channel_name: meta.title || null,
-    parser_modes_used: [...modes].sort(),
-    records: [...seen.values()]
-  };
+  return {channel_id: channelId, channel_name: meta.title || null, parser_modes_used: [...modes].sort(), records: [...seen.values()]};
 }
