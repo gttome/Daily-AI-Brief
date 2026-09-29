@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "reviewed_at": "2026-09-29T15:44:46Z",
+  "reviewer": "ordinary_chatgpt",
+  "status": "REVIEWED_PENDING_INDEPENDENT_COMPONENT_VALIDATION",
+  "book_source_artifact_id": 11042789532,
+  "book_source_artifact_sha256": "1cc6f30c16cd86c13e96dcafc8125815c5e6c1ecb5e98d5a47feab3ebbe2f123",
+  "preserved_sample_artifact_id": 11000686644,
+  "preserved_sample_artifact_sha256": "b3bd218d20b70492a664bc4f9106ca6ffb390bc14c41e6dcaa834ee3ee71dc93",
+  "preserved_sample_scope": "Reuse exact previously captured public sample bytes, not Q24's editorial decisions. Current Q25 book pages were independently captured. Guide sample TOC page 1 and Learning Ecosystem sample page 5 were visually inspected in this Q25 review; neither is a complete-book review.",
+  "preservation_baseline": {
+    "path": "_records/editorial-handoff/watchlist-2026-09-26.json",
+    "sha256": "a3d28ed5ad0287866aa6def7c5f51ccb90fd8e464739c9744394dbd346e5309a",
+    "reason": "Preserve all 16 newer tracked topics and their exact evidence. This is not an assertion that the older public Watchlist was synchronized; do not import Q24's unpublished topic decisions."
+  },
+  "frozen_git_blobs": {
+    "_records/qualification/2026-09-29-Q25/semantic-receipt.json": "a4992a54c174da19b93a5e06d8ea756db8ac2435",
+    "_records/discovery-preflight/result/article-evidence.json": "1cc02ca2af61b225265efc24a6fa99e1c434b4a2",
+    "_records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json": "9b2387dfb4fdd8e54bcfd5813d5f05fe753686d4",
+    "_records/qualification/2026-09-29-Q25/media-evidence/video-selection.json": "c85bafb10d7e6b1b817eda69ad460f0b27cc22dd",
+    "_records/qualification/2026-09-29-Q25/watchlist-book-evidence/emerging-primary-capture.json": "c5ebe8b9025262653daec8dabef3207636177030",
+    "_data/book-reading.json": "ef490fc652a79b18ba20179b7a139eb173013895",
+    "_data/watchlist.json": "de76ca6ae9b6304483d5bb998bb367c113316529"
+  },
+  "watchlist_updates": [
+    {
+      "topic_id": "dab-topic-model-lifecycle-governance",
+      "candidate_id": "m02",
+      "development_id": "aws-grok-4-7-inference-profiles-2026-09-28",
+      "semantic_fields": {
+        "why_now": "AWS's Grok 4.7 announcement adds a concrete inference-profile routing detail to the tracked model-lifecycle question.",
+        "limitations": "Publisher availability guidance does not prove regional or account access, independent model superiority, pricing or measured task results.",
+        "next_action": "Check the documented request profile and representative task results before changing an application's model default."
+      }
+    },
+    {
+      "topic_id": "dab-topic-agent-skills-observability",
+      "candidate_id": "m01",
+      "development_id": "progressive-disclosure-agent-skills-arxiv-2609-35692v1",
+      "semantic_fields": {
+        "why_now": "A new preprint frames Agent Skills as named procedures in an LLM's context, adding a research perspective to preserved tooling and skill-evolution evidence.",
+        "limitations": "The frozen abstract excerpt ends before the detailed mechanism and results; it does not establish performance, portability or automatic validation of a Skill.",
+        "next_action": "Document the purpose, inputs and review condition of one named procedure, then test reuse without assuming the paper proves the suggested exercise."
+      }
+    },
+    {
+      "topic_id": "dab-topic-system-one-decision-models",
+      "source_id": "jev-ecosystem",
+      "development_id": "jev-ecosystem-study-arxiv-2609-30216v1",
+      "title": "Jev in the Wild: A Data-Driven Analysis of the Jev Model's Functionality, Applications and Ecosystem",
+      "url": "https://arxiv.org/abs/2609.30216v1",
+      "publisher": "Guoming Ling, Muen Xue and Zijian Ye / arXiv",
+      "published_at": "2026-09-24T17:46:08Z",
+      "source_text_sha256": "56309227d93d662216c7e08ddd01ec08cb85f22b56c2c19fb2b1759f01f70c3e",
+      "source_excerpts": ["public attention is concentrated in routing and interface agents and does not track project counts", "Thu, 24 Sep 2026 17:46:08 UTC"],
+      "semantic_fields": {
+        "why_now": "An original observational study examines Jev's public project ecosystem and separates application patterns from public attention. This updates the preserved September 15 launch rather than treating it as new today.",
+        "limitations": "Only the original abstract and submission history were reviewed. The study's collection and measurements were not reproduced; project counts and public attention do not prove reliable decisions, calibrated confidence or production adoption.",
+        "next_action": "Evaluate typed decisions on the intended workflow and distinguish project activity from evidence of correctness or operational value."
+      }
+    }
+  ],
+  "new_topic": {
+    "topic_id": "dab-topic-biology-research-model-harness",
+    "name": "Biology research systems connect models, tools and feedback",
+    "candidate_id": "m03",
+    "development_id": "microsoft-quine-research-system-2026-09-29",
+    "audience": "AI researchers and scientific-workflow designers",
+    "summary": "Quine introduces a research direction combining a multimodal biology world model with an interactive harness for tools, literature and researchers.",
+    "why_now": "Microsoft Research's September 29 announcement supplies a specific model-plus-research-system architecture and a fellows-program feedback plan.",
+    "practical_value": "Distinguishes the model from the surrounding scientific tools, literature and domain feedback needed in a research workflow.",
+    "limitations": "Publisher research announcement and frozen excerpt only. Scientific accuracy, clinical usefulness, general access and measured discovery acceleration have not been established by this review.",
+    "next_action": "Investigate how the model, tools, evidence and scientist feedback are evaluated separately before drawing conclusions about research outcomes.",
+    "status": "early_signal",
+    "confidence": "limited",
+    "external_attention": [],
+    "momentum": {"classification": "baseline", "score": null, "observations": [], "reason": "First tracked observation; no comparable longitudinal attention measurements."},
+    "rubric": {
+      "novelty": {"score": 3, "reason": "A domain-specific model-plus-harness research system, distinct from the current tracked topics."},
+      "evidence": {"score": 2, "reason": "One bounded primary research announcement."},
+      "independence": {"score": 1, "reason": "One publisher development, no independent reproduction."},
+      "momentum": {"score": null, "reason": "No comparable longitudinal measurements."},
+      "relevance": {"score": 4, "reason": "Useful architectural distinction for domain research systems."},
+      "durability": {"score": 3, "reason": "Potentially reusable model, tools and feedback framing; outcomes remain unestablished."}
+    },
+    "trial_story_ids": []
+  },
+  "emerging_sweep": {
+    "schema_version": "1.0.0",
+    "edition_date": "2026-09-29",
+    "cutoff": "2026-09-29T14:09:00Z",
+    "primary_lookback_days": 7,
+    "missed_signal_check": {"completed": true, "lookback_days": 14, "method": "Eight bounded queries include September 15-22 Jev discovery and comparison with all 16 preserved topics. The original Jev launch was already tracked; the September 24 study is a distinct new evidence development. This is not exhaustive internet coverage."},
+    "assisted_search_queries": [
+      "site:arxiv.org/abs/ \"2026\" \"September\" (agent OR evaluation OR \"language model\") after:2026-09-22 before:2026-09-30",
+      "AI new model architecture small lab release September 2026 after:2026-09-22 before:2026-09-30",
+      "site:github.com (\"agent harness\" OR \"decision model\" OR \"inference runtime\") September 2026 after:2026-09-22 before:2026-09-30",
+      "site:news.ycombinator.com (AI OR agent OR model) September 2026 after:2026-09-22 before:2026-09-30",
+      "emerging generative AI evaluation benchmark multimodal workflow September 2026 after:2026-09-22 before:2026-09-30",
+      "site:youtube.com/watch AI agent workflow \"September\" \"2026\" after:2026-09-22 before:2026-09-30",
+      "Jev decision model release September 2026 architecture after:2026-09-15 before:2026-09-23",
+      "site:github.com \"CLM\" \"System One\""
+    ],
+    "surfaces": [
+      {"id": "primary_research", "status": "complete", "query_indices": [0,4], "candidates_found": 4, "count_scope": "Named concepts reviewed: Quine, Jev ecosystem study, enterprise harness routing and PotARCin; not total engine results."},
+      {"id": "frontier_and_small_labs", "status": "complete", "query_indices": [1,6], "candidates_found": 2, "count_scope": "Named current or missed-window concepts: Quine and Bonsai; not a census."},
+      {"id": "open_source", "status": "degraded", "query_indices": [2,7], "candidates_found": 0, "reason": "The bounded queries did not yield a directly verified new repository release in the returned results. No repository-wide exhaustion or current CLM release claim is made."},
+      {"id": "technical_communities", "status": "degraded", "query_indices": [3], "candidates_found": 0, "reason": "The query did not expose directly inspectable recent Hacker News items in the returned results; community coverage is not certified complete."},
+      {"id": "broad_web", "status": "complete", "query_indices": [4,6], "candidates_found": 3, "count_scope": "Named leads inspected: Jev ecosystem, audio remixing and evaluation frameworks. Unverified secondary claims are held for research."},
+      {"id": "youtube_creator_ecosystem", "status": "complete", "query_indices": [5], "candidates_found": 5, "count_scope": "Bounded current four-channel acquisition and three verified feeds yielded five eligible exact-metadata videos, independently reconciled and reviewed for current Q25 selection."}
+    ],
+    "concept_classes_reviewed": ["model_family_or_architecture", "agent_pattern_or_harness", "evaluation_or_benchmark", "inference_runtime_or_hardware", "developer_tooling", "multimodal_or_interface", "safety_security_or_governance", "knowledge_worker_workflow"],
+    "candidates_reviewed": [
+      {"name": "Quine model-plus-harness research system", "concept_class": "model_family_or_architecture", "disposition": "new_topic", "rationale": "A primary announcement before Q25's original cutoff supports a limited new scientific research-system topic; it does not establish research outcomes.", "evidence_urls": ["https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/"]},
+      {"name": "Jev public ecosystem study", "concept_class": "agent_pattern_or_harness", "disposition": "update_existing", "rationale": "Original September 24 abstract adds observational ecosystem evidence to the preserved decision-model topic; no reproduced performance or popularity score.", "evidence_urls": ["https://arxiv.org/abs/2609.30216v1"]},
+      {"name": "PotARCin multidimensional reasoning evaluation", "concept_class": "evaluation_or_benchmark", "disposition": "needs_research", "rationale": "Original abstract describes evaluation beyond answer-grid accuracy. Full methods and benchmark lineage need review before a separate tracked evaluation topic is promoted.", "evidence_urls": ["https://arxiv.org/abs/2609.27288v1"]},
+      {"name": "Bonsai low-bit edge models", "concept_class": "inference_runtime_or_hardware", "disposition": "needs_research", "rationale": "The first-party September 17 model and September 23 smart-glasses announcements surfaced; exact deployment claims and comparison basis were not independently checked for a Watchlist update.", "evidence_urls": ["https://prismml.com/news/bonsai-2-27b", "https://prismml.com/news/prismml-brings-1-bit-bonsai-models-to-ai-smart-glasses-powered-by-snapdragon"]},
+      {"name": "Progressive disclosure of Agent Skills", "concept_class": "developer_tooling", "disposition": "update_existing", "rationale": "Fresh frozen abstract frames named reusable procedures; preserve its truncated-evidence limitation and add only that supported framing to the existing Skills topic.", "evidence_urls": ["https://arxiv.org/abs/2609.35692v1"]},
+      {"name": "User-guided generative audio remixing", "concept_class": "multimodal_or_interface", "disposition": "needs_research", "rationale": "SSE's original abstract surfaced a multimodal audio-remixing direction. It is a research lead, not a reproduced result or deployment recommendation.", "evidence_urls": ["https://arxiv.org/abs/2609.29169"]},
+      {"name": "Enterprise harness routing and cost governance", "concept_class": "safety_security_or_governance", "disposition": "needs_research", "rationale": "The abstract describes cache-aware routing and an emulated enterprise. Cost numbers and operational claims require full-method review; no claimed savings are adopted.", "evidence_urls": ["https://arxiv.org/abs/2609.28919v1"]},
+      {"name": "Creator-led Copilot recurring-work walkthrough", "concept_class": "knowledge_worker_workflow", "disposition": "needs_research", "rationale": "The current reviewed short video supplies application topics, but an early-look description is insufficient evidence of feature access or a durable new adoption trend.", "evidence_urls": ["https://www.youtube.com/watch?v=KJ8Y2Nb9y9o"]}
+    ],
+    "new_topic_ids": ["dab-topic-biology-research-model-harness"],
+    "updated_topic_ids": ["dab-topic-model-lifecycle-governance", "dab-topic-agent-skills-observability", "dab-topic-system-one-decision-models"],
+    "zero_new_certified": false,
+    "overall_coverage": "degraded",
+    "coverage_reason": "Open-source and technical-community discovery remain explicitly degraded. A real new primary-backed topic exists, so no false zero-new or exhaustive-coverage certificate is needed."
+  },
+  "book_inventory": [
+    {"book": "Reliable Generative AI", "source_id": "reliable", "url": "https://leanpub.com/reliablegenerativeai", "source_sha256": "9e6e342011745ab6fad6c9285d894b49789fabe5ab40f1a802af822afd296094", "evidence": "Current public table of contents", "full_text_reviewed": false},
+    {"book": "Reliable Generative AI Context Engineering", "source_id": "context", "url": "https://leanpub.com/reliable-context-engineering", "source_sha256": "aee0aa962cede5dd097c54d01143b09a4a181b5ef5a63c7b747ecd6c2a3a7790", "evidence": "Current public table of contents; Chapter 2 rather than automatically defaulting to Chapter 3", "full_text_reviewed": false},
+    {"book": "Generative AI Professional Prompt Engineering Guide", "source_id": "prompt-guide", "url": "https://leanpub.com/genaipromptingguide", "source_sha256": "2b6ba04729852a84a14ade43dd85cc24af45b4192f20db3e1277f08a361db5ba", "evidence": "Current public book page and preserved exact sample PDF's table of contents; sample SHA256 ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316; extracted text SHA256 f00674ece2bd0b353e47fd476a3dbce634851cdeb5c29b047e878197bd54b9bf", "full_text_reviewed": false},
+    {"book": "Generative AI Learning Ecosystem", "source_id": "learning", "url": "https://leanpub.com/GenAILearn", "source_sha256": "97c71a31007d8973ebf367a169cab6c8dbcdc1116ee6ae422e35a1e4b7fbad87", "evidence": "Current public book page and preserved public sample section Five Generative AI Prompt Companion Users, visually checked at PDF page 5. Sample SHA256 dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c; extracted text SHA256 cdbabed20e05114a29060b65357ab96a1eaf7fc02e973fb87251f76e5df217d8. This is NOT a verified table of contents.", "full_text_reviewed": false, "reader_reference_omission_reason": "The role-based section is relevant to m06, but the current released reader-bridge contract accepts only public table-of-contents evidence. Do not relabel sample prose as a TOC or invent a chapter number. All four books were evaluated; placement is based on verified scope, not a quota."}
+  ],
+  "new_book_references": [
+    {"id": "reliable-performance", "book": "Reliable Generative AI", "locator": "Chapter 3, section 3.5.1", "section_title": "Performance, Latency, and Batching", "url": "https://leanpub.com/reliablegenerativeai", "evidence_level": "public table of contents", "verified_date": "2026-09-29", "full_text_reviewed": false, "source_id": "reliable"},
+    {"id": "reliable-task-substitution", "book": "Reliable Generative AI", "locator": "Chapter 4, section 4.1.3", "section_title": "Task Substitution, Not Full Job Replacement", "url": "https://leanpub.com/reliablegenerativeai", "evidence_level": "public table of contents", "verified_date": "2026-09-29", "full_text_reviewed": false, "source_id": "reliable"},
+    {"id": "context-lifecycle", "book": "Reliable Generative AI Context Engineering", "locator": "Chapter 2", "section_title": "The Context Engineering Lifecycle", "url": "https://leanpub.com/reliable-context-engineering", "evidence_level": "public table of contents", "verified_date": "2026-09-29", "full_text_reviewed": false, "source_id": "context"},
+    {"id": "prompt-guide-learning-paths", "book": "Generative AI Professional Prompt Engineering Guide", "locator": "Learning Paths, printed page 23", "section_title": "Learning Paths (How to Use this Guide)", "url": "https://leanpub.com/genaipromptingguide", "evidence_level": "public table of contents", "verified_date": "2026-09-29", "full_text_reviewed": false, "source_id": "prompt-guide-sample"},
+    {"id": "prompt-guide-crafting-engineering", "book": "Generative AI Professional Prompt Engineering Guide", "locator": "Prompt Crafting vs Engineering, printed page 20", "section_title": "Prompt Crafting vs Engineering", "url": "https://leanpub.com/genaipromptingguide", "evidence_level": "public table of contents", "verified_date": "2026-09-29", "full_text_reviewed": false, "source_id": "prompt-guide-sample"}
+  ],
+  "book_item_reviews": [
+    {"kind": "article", "candidate_id": "m02", "disposition": "include", "reference_id": "reliable-performance", "why": "A background reference for considering performance and latency when evaluating an announced model option and its request-routing configuration; the book reference does not verify Grok results."},
+    {"kind": "article", "candidate_id": "m03", "disposition": "include", "reference_id": "reliable-verification", "why": "Use the final-verification framing as background for separating an announced scientific research system from evidence that its outputs are reliable; this is not biological or clinical validation."},
+    {"kind": "article", "candidate_id": "m05", "disposition": "include", "reference_id": "reliable-task-substitution", "why": "Provides a task-level frame for discussing adoption and changes to working practices instead of assuming that tool availability replaces complete jobs."},
+    {"kind": "article", "candidate_id": "m06", "disposition": "include", "reference_id": "prompt-guide-learning-paths", "why": "A verified learning-path entry helps readers connect a role-relevant AI learning resource to their own progression rather than treating a feature list as a curriculum."},
+    {"kind": "article", "candidate_id": "m01", "disposition": "include", "reference_id": "context-lifecycle", "why": "Chapter 2's lifecycle provides background for deciding how a named procedure should be selected, shaped and evaluated before reuse; no unreviewed result from the Skills preprint is implied."},
+    {"kind": "article", "candidate_id": "m09", "disposition": "include", "reference_id": "prompt-guide-crafting-engineering", "why": "A background reference for moving from a one-off agent request toward a deliberately scoped repeatable task, without inventing the executive-agent examples missing from the frozen excerpt."},
+    {"kind": "video", "candidate_id": "bs1qPy_CWkM", "slot": "general", "disposition": "include", "reference_id": "reliable-verification", "why": "Connects the video's advertised planning and verification themes to an exact verified book locator for a final acceptance gate."},
+    {"kind": "video", "candidate_id": "KJ8Y2Nb9y9o", "slot": "agents_non_technical_people", "disposition": "include", "reference_id": "reliable-trust", "why": "Trust calibration is useful when evaluating an early-look walkthrough without assuming that every advertised capability is available or effective in a reader's environment."},
+    {"kind": "podcast", "candidate_id": "everyday-872", "disposition": "omit", "reason": "The selected episode concerns current spending governance; the reviewed TOCs do not establish a specific matching budget practice. Avoid a generic or invented exercise merely to place a link."},
+    {"kind": "podcast", "candidate_id": "ai-for-humans-197", "disposition": "omit", "reason": "Creative application topics and host opinions are too broad to justify a precise extra chapter connection in the currently reviewed source inventory."}
+  ],
+  "private_book_change_evaluation": {"evaluation_completed": false, "proposal_count": null, "reason": "This component verifies public reader-book references, not full-manuscript change proposals or private owner-only actions. Those outcomes are not fabricated."},
+  "article_selection_changed": false,
+  "media_selection_changed": false,
+  "prior_q_approval_reused": false,
+  "images_started": false,
+  "production_mutation": false,
+  "account_billing_observed": false
+}
