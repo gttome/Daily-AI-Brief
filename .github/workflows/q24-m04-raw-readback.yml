@@ -1,21 +1,33 @@
-name: Q24 m04 raw image read-back
+name: Q24 saved-image read-back
 on:
   push:
     branches: ['editorial-handoff/qualification/2026-09-28-Q24']
-    paths: ['.github/workflows/q24-m04-raw-readback.yml']
+    paths:
+      - '.github/workflows/q24-m04-raw-readback.yml'
+      - '_records/image-attempts/2026-09-28-Q24/**/raw.png'
 permissions:
   contents: read
+concurrency:
+  group: q24-saved-image-readback
+  cancel-in-progress: false
 jobs:
   readback:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
-      - name: Verify existing raw file and export bounded review bundle
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: 7157e8c02b813af4b890eab885b388983923586d
+          path: .image-execution-code
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Read exact committed images and preserve frozen component bindings
         run: |
           set -euo pipefail
           python3 - <<'PY'
-          import hashlib,json,os,struct,subprocess,shutil
+          import hashlib,json,os,struct,subprocess,shutil,zlib
           from pathlib import Path
           from datetime import datetime,timezone
           q=Path('_records/qualification/2026-09-28-Q24')
@@ -27,44 +39,72 @@ jobs:
             str(q/'media-evidence/video-selection.json'):'02125e82d2246e512740cdb48d5d4f97a5bc41ce',
             str(q/'watchlist-book-evidence/validation.json'):'75c7f045b9937f5e33157cd1cbd59e92202d2ee9'
           }
+          def git(*args): return subprocess.check_output(['git',*args])
           for p,h in bindings.items():
-            assert subprocess.check_output(['git','hash-object',p],text=True).strip()==h,p
-          attempt_path=q/'image-execution-v2/attempts/m04-attempt-1.json'
-          a=json.loads(attempt_path.read_text())
-          assert a['candidate_id']=='m04' and a['attempt']==1
-          assert a['policy_id']=='production-image-execution-v2'
-          assert a['preserved_cutoff']=='2026-09-28T20:04:36Z'
-          assert a['owner_interventions']==[]
-          raw_path=Path('_records/image-attempts/2026-09-28-Q24/m04/attempt-1/raw.png')
-          raw=raw_path.read_bytes()
-          digest=hashlib.sha256(raw).hexdigest()
-          blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
-          assert digest=='7e51fd9afff52d2be13471c141e5114f03be2cf02a7564b0f6a4ef771dc4d7f2'
-          assert blob=='3517484d4705ba6dd4e8211829a677f11a20ff5a'
-          assert a['generation']['raw_sha256']==digest==a['raw_capture']['sha256']
-          assert a['raw_capture']['git_blob_sha']==blob
-          assert raw[:8]==b'\x89PNG\r\n\x1a\n'
-          assert struct.unpack('>II',raw[16:24])==(1536,1024)
-          request=Path(a['request_binding']['path'])
-          assert hashlib.sha256(request.read_bytes()).hexdigest()==a['request_binding']['file_sha256']
-          out=Path('/tmp/q24-m04-readback');out.mkdir()
-          for p in [raw_path,attempt_path,request,Path('_records/image-quality/benchmark-profile-v1.json')]:
-            target=out/p;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
-          profile=json.loads(Path('_records/image-quality/benchmark-profile-v1.json').read_text())
-          for s in profile['accepted_sets']:
-            for item in s['assets']:
-              p=Path(item['path']);assert not p.is_absolute() and '..' not in p.parts
-              assert subprocess.check_output(['git','hash-object',str(p)],text=True).strip()==item['git_blob_sha']
+            assert git('hash-object',p).decode().strip()==h,p
+          out=Path('/tmp/q24-saved-image-readback');out.mkdir()
+          images=[]
+          paths=sorted(Path('_records/image-attempts/2026-09-28-Q24').glob('*/attempt-*/raw.png'))
+          assert 1<=len(paths)<=24
+          for raw_path in paths:
+            assert not raw_path.is_symlink()
+            candidate=raw_path.parts[-3]; attempt=int(raw_path.parts[-2].split('-')[1])
+            assert candidate in ['m04','m03','m05','m06','m01','m09'] and 1<=attempt<=4
+            attempt_path=q/f'image-execution-v2/attempts/{candidate}-attempt-{attempt}.json'
+            a=json.loads(attempt_path.read_text())
+            assert a['candidate_id']==candidate and a['attempt']==attempt
+            assert a['policy_id']=='production-image-execution-v2'
+            assert a['preserved_cutoff']=='2026-09-28T20:04:36Z'
+            assert a['owner_interventions']==[]
+            raw=git('show','HEAD:'+str(raw_path))
+            assert raw==raw_path.read_bytes()
+            digest=hashlib.sha256(raw).hexdigest()
+            blob=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+            assert blob==git('rev-parse','HEAD:'+str(raw_path)).decode().strip()
+            expected=a.get('raw_sha256') or a.get('generation',{}).get('raw_sha256')
+            assert digest==expected, 'generated-byte mismatch'
+            expected_blob=a.get('raw_git_blob_sha_computed') or a.get('raw_capture',{}).get('git_blob_sha')
+            assert blob==expected_blob, 'original blob mismatch'
+            assert raw[:8]==b'\x89PNG\r\n\x1a\n'
+            width,height=struct.unpack('>II',raw[16:24]); assert width>0 and height>0
+            pos=8; chunks=0; ended=False
+            while pos<len(raw):
+              n=struct.unpack('>I',raw[pos:pos+4])[0]; typ=raw[pos+4:pos+8]; end=pos+12+n
+              assert end<=len(raw)
+              assert (zlib.crc32(raw[pos+4:pos+8+n])&0xffffffff)==struct.unpack('>I',raw[pos+8+n:end])[0]
+              chunks+=1; pos=end
+              if typ==b'IEND': ended=True; break
+            assert ended and pos==len(raw)
+            request=Path(a['request_binding']['path'])
+            assert '..' not in request.parts and not request.is_absolute()
+            assert hashlib.sha256(request.read_bytes()).hexdigest()==a['request_binding']['file_sha256']
+            assert git('hash-object',str(request)).decode().strip()==a['request_binding']['git_blob_sha']
+            for p in [raw_path,attempt_path,request]:
               target=out/p;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(p,target)
-          subprocess.run(['git','archive','--format=zip','--output='+str(out/'source.zip'),'HEAD','_generator','_tools','docs/operations/automated-image-execution.md',str(q/'image-execution-v2'),str(q/'semantic-receipt.json')],check=True)
-          result={'qualification_id':'2026-09-28-Q24','candidate_id':'m04','attempt':1,'result':'pass','scope':'Read-back and frozen-input verification only; not visual approval or acceptance','verified_at':datetime.now(timezone.utc).isoformat(),'workflow_run_id':os.environ['GITHUB_RUN_ID'],'execution_commit':os.environ['GITHUB_SHA'],'raw_path':str(raw_path),'raw_sha256':digest,'raw_git_blob_sha':blob,'raw_bytes':len(raw),'width':1536,'height':1024,'read_back_verified':True,'generation_rerun':False,'review_complete':False,'accepted_locked':False,'production_mutation':False,'frozen_bindings':bindings}
+            images.append({'candidate_id':candidate,'attempt':attempt,'path':str(raw_path),'sha256':digest,'git_blob_sha':blob,'bytes':len(raw),'width':width,'height':height,'png_chunk_count':chunks,'png_crc_pass':True,'read_back_verified':True,'accepted_locked':False})
+          result={'schema_version':'1.0.0','qualification_id':'2026-09-28-Q24','result':'pass','scope':'Committed raw-byte read-back, PNG integrity and frozen inputs only; not image approval','verified_at':datetime.now(timezone.utc).isoformat(),'workflow_run_id':os.environ['GITHUB_RUN_ID'],'execution_commit':os.environ['GITHUB_SHA'],'release_code_commit':'7157e8c02b813af4b890eab885b388983923586d','images':images,'frozen_bindings':bindings,'native_generation_calls':0,'owner_interventions':[],'production_mutation':False}
           (out/'readback.json').write_text(json.dumps(result,indent=2)+'\n')
           print(json.dumps(result,indent=2))
           PY
+      - name: Compile immutable visual-only delivery from released code without generation
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import {buildNativeImageDelivery,assertNativeImageTaskPrompt} from './.image-execution-code/_generator/lib/native-image-delivery.mjs';
+          const request=JSON.parse(fs.readFileSync('_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json','utf8'));
+          const delivery=buildNativeImageDelivery(request);
+          const check=assertNativeImageTaskPrompt(delivery.task_prompt,delivery,request);
+          fs.writeFileSync('/tmp/q24-saved-image-readback/m04-delivery.json',JSON.stringify(delivery,null,2)+'\n');
+          fs.writeFileSync('/tmp/q24-saved-image-readback/m04-task-prompt.txt',delivery.task_prompt);
+          fs.writeFileSync('/tmp/q24-saved-image-readback/delivery-check.json',JSON.stringify(check,null,2)+'\n');
+          console.log(JSON.stringify(check));
+          NODE
+          git -C .image-execution-code archive --format=zip --output=/tmp/q24-saved-image-readback/released-image-code.zip HEAD _generator/lib/image-execution.mjs _generator/lib/image-story-packet.mjs _generator/lib/native-image-delivery.mjs _generator/lib/github-image-transfer.mjs _tools/native-image-delivery.mjs docs/operations/native-image-task-delivery.md docs/operations/image-file-transfer.md
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
-          name: q24-m04-exact-image-review-inputs
-          path: /tmp/q24-m04-readback/
+          name: q24-saved-image-readback-${{ github.run_id }}
+          path: /tmp/q24-saved-image-readback/
           retention-days: 14
           if-no-files-found: error
