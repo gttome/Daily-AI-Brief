@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-29-Q25",
+  "execution_mode": "qualification_nonproduction",
+  "status": "CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF",
+  "observed_at": "2026-09-29T15:49:00Z",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "q25_image_attempts_allocated": 0,
+  "q25_accepted_images": 0,
+  "task_invocation_observable": false,
+  "native_result_recoverable": false,
+  "output_bytes_recoverable": false,
+  "evidence": [
+    "A bounded non-Q25 capability probe titled Native Handoff Probe was scheduled for 2026-09-29T15:48:13Z with one unique image-only prompt and no owner intervention.",
+    "Before the scheduled time the automation record remained enabled with last_run_time unavailable; after the scheduled boundary it left the active-task list and the completed-task count increased by one, but the available automation interface exposed no invocation timestamp, native generation identifier, response payload, artifact/file identifier, or output bytes for that probe.",
+    "A targeted prior-context recovery query for the exact unique label NATIVE-HANDOFF-PROBE-2026-09-29-A returned no task-linked native result or artifact metadata.",
+    "Current-conversation Files listing exposed no generated image from the probe.",
+    "Library-wide image listing after the Q25 cutoff exposed only the separately preserved historical OpenShell recovery image; that file is explicitly not evidence for this probe or Q25.",
+    "The earlier OpenShell recovery proves that native result metadata and exact bytes can be recovered in an active context, but it does not prove scheduled-task-to-result association."
+  ],
+  "exhaustive_supported_search": true,
+  "manual_intervention_required": false,
+  "image_attempt_consumed": false,
+  "production_mutation": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "next_required_action": "Treat Q25 as fail-closed before image-attempt allocation. Preserve completed discovery, semantic, media and Watchlist/book evidence. Implement only a supported execution-host bridge that exposes a scheduled native image task's invocation identity, native result identifier and exact output bytes to the supervising context; prove it with protected CI and a fresh qualification identity."
+}
