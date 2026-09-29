@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q24",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "failed_stage": "IMAGES_READY",
+  "failure_code": "image_task_result_handoff_unobservable_after_max_attempts",
+  "observed_at": "2026-09-29T13:46:40Z",
+  "baseline_sha": "1def5c4ba158247a9c02106dc4e4820d80a7133d",
+  "cutoff": "2026-09-28T20:04:36Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "selected_candidate_ids": [
+    "m04",
+    "m03",
+    "m05",
+    "m06",
+    "m01",
+    "m09"
+  ],
+  "source_packet_frozen": true,
+  "discovery_rerun": false,
+  "article_evidence_rerun": false,
+  "semantic_pass_count": 1,
+  "upstream_components_completed": true,
+  "accepted_locked_images": [
+    "m04"
+  ],
+  "accepted_locked_count": 1,
+  "failed_candidate": "m03",
+  "image_attempt_budget": 4,
+  "m03_attempt_dispositions": [
+    {
+      "attempt": 1,
+      "disposition": "unrecoverable"
+    },
+    {
+      "attempt": 2,
+      "disposition": "unrecoverable"
+    },
+    {
+      "attempt": 3,
+      "disposition": "unrecoverable"
+    },
+    {
+      "attempt": 4,
+      "disposition": "unrecoverable"
+    }
+  ],
+  "root_cause": "The scheduled ChatGPT image tasks were positively invoked, but their generated attachment/result was not exposed through any supported result surface available to the qualification supervisor (task metadata, conversation/context recovery, Files, or Library). The control plane therefore could not capture, review, or persist the native image bytes. Repeating tasks would only consume attempts without creating observable evidence.",
+  "demonstrated_administration_defects": [
+    "Scheduled image-task execution can be observed while its native output remains unreachable to the supervising qualification run.",
+    "The publication supervisor repeatedly self-disabled after executions despite an unfinished mission.",
+    "Hourly continuation allowed long idle periods after missed or opaque task results.",
+    "The previous planner permitted attempt allocation without a proven result-handoff capability."
+  ],
+  "preserved_valid_evidence": [
+    "Five upstream Q24 article/media/watchlist/book components remain valid and frozen.",
+    "m04 attempt 3 remains ACCEPTED_LOCKED with exact-byte verification run 36516797618.",
+    "All four m03 invocation/recovery records remain append-only failure evidence."
+  ],
+  "full_qualification_pass": false,
+  "six_image_set_review_complete": false,
+  "final_handoff_completed": false,
+  "production_mutation": false,
+  "rerun_prohibited": true,
+  "account_billing_observed": false,
+  "next_smallest_correction": "Add a fail-fast native-image result-handoff capability preflight before any attempt can be allocated, make controller liveness externally guarded, and require immediate bounded continuation after task execution. Prove those controls with protected CI, merge normally, then start the next unused fresh qualification identity. Do not repair Q24 into PASS or create a fifth m03 attempt."
+}
