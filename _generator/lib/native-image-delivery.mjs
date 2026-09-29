@@ -2,6 +2,35 @@ import {createHash} from 'node:crypto';
 import {imageExecutionHash, validateImageGenerationExecution} from './image-execution.mjs';
 
 export const NATIVE_IMAGE_DELIVERY_POLICY = 'visual-only-task-delivery-v1';
+export const NATIVE_IMAGE_RESULT_HANDOFF_CAPABILITY_VERSION = '1.0.0';
+
+export function validateNativeImageResultHandoffCapability(capability) {
+  const errors = [];
+  if (!capability || typeof capability !== 'object' || Array.isArray(capability))
+    return ['native_image_result_handoff_capability_required'];
+  if (capability.schema_version !== NATIVE_IMAGE_RESULT_HANDOFF_CAPABILITY_VERSION)
+    errors.push('native_image_result_handoff_capability_version_invalid');
+  if (capability.task_invocation_observable !== true)
+    errors.push('task_invocation_observable_required');
+  if (capability.native_result_recoverable !== true)
+    errors.push('native_result_recoverable_required');
+  if (capability.output_bytes_recoverable !== true)
+    errors.push('output_bytes_recoverable_required');
+  if (!capability.verified_at || Number.isNaN(Date.parse(capability.verified_at)))
+    errors.push('result_handoff_verified_at_required');
+  if (typeof capability.evidence !== 'string' || !capability.evidence.trim())
+    errors.push('result_handoff_evidence_required');
+  return errors;
+}
+
+function prepareImageTaskOrBlock(base, attempt, capability) {
+  const capabilityErrors = validateNativeImageResultHandoffCapability(capability);
+  if (capabilityErrors.length)
+    return {...base, next_action: 'CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF',
+      attempt, capability_errors: capabilityErrors};
+  return {...base, next_action: 'PREPARE_IMAGE_ONLY_TASK', attempt};
+}
+
 const sha = value => createHash('sha256').update(value).digest('hex');
 const validHash = value => /^[a-f0-9]{64}$/.test(value || '');
 const validBlob = value => /^[a-f0-9]{40}$/.test(value || '');
@@ -78,7 +107,7 @@ export function assertNativeImageTaskPrompt(submittedPrompt, delivery, execution
  * an image. Existing accepted receipts must be revalidated by the V2 byte gate.
  * Input entries are a small normalized projection of durable attempt records.
  */
-export function planNativeImageContinuation(execution, attempts) {
+export function planNativeImageContinuation(execution, attempts, resultHandoffCapability = null) {
   assertExecution(execution);
   if (!Array.isArray(attempts)) throw Error('durable_attempt_array_required');
   const requestHash = imageExecutionHash(execution);
@@ -92,7 +121,7 @@ export function planNativeImageContinuation(execution, attempts) {
     if (i < attempts.length - 1 && !['rejected','unrecoverable'].includes(a.disposition))
       throw Error('later_attempt_before_prior_terminal_failure');
   }
-  if (!attempts.length) return {...base, next_action: 'PREPARE_IMAGE_ONLY_TASK', attempt: 1};
+  if (!attempts.length) return prepareImageTaskOrBlock(base, 1, resultHandoffCapability);
   // Inspect every prior attempt, not only the latest narrative record.
   for (const a of attempts) {
     if (a.disposition === 'accepted_locked')
@@ -118,5 +147,5 @@ export function planNativeImageContinuation(execution, attempts) {
       return {...base, next_action: 'REVIEW_EXISTING_RAW', attempt: a.attempt};
   }
   if (attempts.length === 4) return {...base, next_action: 'ATTEMPT_LIMIT_EXHAUSTED', attempt: 4};
-  return {...base, next_action: 'PREPARE_IMAGE_ONLY_TASK', attempt: attempts.length + 1};
+  return prepareImageTaskOrBlock(base, attempts.length + 1, resultHandoffCapability);
 }
