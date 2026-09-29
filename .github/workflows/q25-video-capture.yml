@@ -1,0 +1,168 @@
+name: Q25 bounded video acquisition
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-29-Q25']
+    paths: ['.github/workflows/q25-video-capture.yml']
+permissions:
+  contents: write
+concurrency:
+  group: q25-media-writer
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Preserve completed Q25 components
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-29-Q25'
+          test ! -f _records/qualification/2026-09-29-Q25/result.json
+          test ! -f _records/qualification/2026-09-29-Q25/media-evidence/video-acquisition.json
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          node -e "const p=require('./_records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json');if(p.result!=='pass'||p.podcast_count!==2)throw Error('podcasts_not_validated')"
+          git hash-object _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json > "$RUNNER_TEMP/q25-podcast-lock"
+          git fetch --no-tags origin main
+      - name: Capture four public publisher channel catalogs, no watch-page requests
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import crypto from 'node:crypto';import {retrieveSource} from './_tools/discovery-links.mjs';
+          const root=process.env.RUNNER_TEMP+'/q25-video-capture';fs.mkdirSync(root,{recursive:true});
+          const sources=[['ibm','https://www.youtube.com/@IBMTechnology/videos','UCKWaEZ-_VweaEx1j62do_vQ'],['jeff-su','https://www.youtube.com/@JeffSu/videos',null],['kevin-stratvert','https://www.youtube.com/@KevinStratvert/videos',null],['microsoft-mechanics','https://www.youtube.com/@MicrosoftMechanics/videos',null]],observations=[];
+          for(const [id,url,expected_channel_id] of sources){try{const r=await retrieveSource(url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});const o={id,url,expected_channel_id,checked_at:new Date().toISOString(),resolved_url:r.url,status:'retrieved',source_sha256:crypto.createHash('sha256').update(r.text).digest('hex')};fs.writeFileSync(root+'/'+id+'-catalog.html',r.text,{flag:'wx'});observations.push(o);}catch(e){observations.push({id,url,expected_channel_id,checked_at:new Date().toISOString(),status:'unavailable',reason:String(e.message)});}}
+          fs.writeFileSync(root+'/catalog-observations.json',JSON.stringify(observations,null,2)+'\n');
+          NODE
+      - name: Parse exact catalog identities and runtimes before choosing feed URLs
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          import json,hashlib,re,os
+          root=Path(os.environ['RUNNER_TEMP'])/'q25-video-capture';out=[]
+          def walk(x):
+              if isinstance(x,dict):
+                  if 'videoRenderer' in x:yield x['videoRenderer']
+                  for value in x.values():yield from walk(value)
+              elif isinstance(x,list):
+                  for value in x:yield from walk(value)
+          def label(x):return x.get('simpleText') or ''.join(r.get('text','') for r in x.get('runs',[]))
+          for observation in json.loads((root/'catalog-observations.json').read_text()):
+              if observation['status']!='retrieved':out.append(observation);continue
+              try:
+                  data=(root/(observation['id']+'-catalog.html')).read_bytes();assert hashlib.sha256(data).hexdigest()==observation['source_sha256']
+                  text=data.decode();match=re.search(r'(?:var\s+)?ytInitialData\s*=\s*',text);assert match,'ytInitialData unavailable'
+                  doc=json.JSONDecoder().raw_decode(text[match.end():])[0];meta=doc['metadata']['channelMetadataRenderer'];channel=meta['externalId'];assert re.fullmatch(r'UC[A-Za-z0-9_-]{22}',channel)
+                  if observation['expected_channel_id']:assert channel==observation['expected_channel_id']
+                  videos={}
+                  for renderer in walk(doc):
+                      video_id=renderer.get('videoId');duration=label(renderer.get('lengthText',{}));title=label(renderer.get('title',{}))
+                      if not video_id or not re.fullmatch(r'[A-Za-z0-9_-]{11}',video_id) or not re.fullmatch(r'(?:\d+:)?\d{1,2}:\d{2}',duration):continue
+                      parts=[int(x) for x in duration.split(':')];assert all(0<=x<60 for x in parts[1:]);seconds=0
+                      for p in parts:seconds=seconds*60+p
+                      if video_id in videos:assert videos[video_id]['runtime_seconds']==seconds and videos[video_id]['title']==title
+                      videos[video_id]={'video_id':video_id,'title':title,'runtime_seconds':seconds,'display_runtime':duration}
+                  out.append({**observation,'channel_id':channel,'channel_name':meta['title'],'feed_url':'https://www.youtube.com/feeds/videos.xml?channel_id='+channel,'catalog_records':list(videos.values())})
+              except (AssertionError,KeyError,ValueError,TypeError) as e:out.append({**observation,'status':'metadata_unavailable','reason':str(e)})
+          (root/'catalogs.json').write_text(json.dumps(out,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps([{'id':o['id'],'status':o['status'],'catalog_records':len(o.get('catalog_records',[])),'reason':o.get('reason')} for o in out]))
+          PY
+      - name: Capture only verified publisher feeds
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import crypto from 'node:crypto';import {retrieveSource} from './_tools/discovery-links.mjs';
+          const root=process.env.RUNNER_TEMP+'/q25-video-capture',catalogs=JSON.parse(fs.readFileSync(root+'/catalogs.json','utf8')),observations=[];
+          for(const c of catalogs.filter(c=>c.feed_url)){try{const r=await retrieveSource(c.feed_url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});fs.writeFileSync(root+'/'+c.id+'-feed.xml',r.text,{flag:'wx'});observations.push({id:c.id,url:c.feed_url,checked_at:new Date().toISOString(),status:'retrieved',source_sha256:crypto.createHash('sha256').update(r.text).digest('hex')});}catch(e){observations.push({id:c.id,url:c.feed_url,checked_at:new Date().toISOString(),status:'unavailable',reason:String(e.message)});}}
+          fs.writeFileSync(root+'/feed-observations.json',JSON.stringify(observations,null,2)+'\n');
+          NODE
+      - name: Reconcile channel, video identity, exact publication date and current production history
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from urllib.parse import urlparse,parse_qs
+          from datetime import datetime,timezone
+          import json,hashlib,re,os,subprocess,xml.etree.ElementTree as ET
+          root=Path(os.environ['RUNNER_TEMP'])/'q25-video-capture';out=Path('_records/qualification/2026-09-29-Q25/media-evidence')
+          catalogs=json.loads((root/'catalogs.json').read_text());feeds={x['id']:x for x in json.loads((root/'feed-observations.json').read_text())}
+          semantic=json.loads(Path('_records/qualification/2026-09-29-Q25/semantic-receipt.json').read_text());cutoff=datetime.fromisoformat(semantic['cutoff'].replace('Z','+00:00'))
+          assert semantic['cutoff']=='2026-09-29T14:09:00Z'
+          ns={'a':'http://www.w3.org/2005/Atom','yt':'http://www.youtube.com/xml/schemas/2015','m':'http://search.yahoo.com/mrss/'}
+          def parse_feed(data,channel):
+              feed=ET.fromstring(data);channel_url='https://www.youtube.com/channel/'+channel
+              assert feed.tag=='{'+ns['a']+'}feed'
+              assert feed.findtext('a:author/a:uri',namespaces=ns)==channel_url
+              assert feed.find("a:link[@rel='alternate']",ns).get('href')==channel_url
+              u=urlparse(feed.find("a:link[@rel='self']",ns).get('href'));assert u.hostname=='www.youtube.com' and u.path=='/feeds/videos.xml' and parse_qs(u.query)=={'channel_id':[channel]}
+              root_id=feed.findtext('yt:channelId',namespaces=ns);assert root_id in (channel,channel[2:]);assert feed.findtext('a:id',namespaces=ns)=='yt:channel:'+root_id
+              result=[]
+              for entry in feed.findall('a:entry',ns):
+                  video_id=entry.findtext('yt:videoId',namespaces=ns);assert re.fullmatch(r'[A-Za-z0-9_-]{11}',video_id or '')
+                  assert entry.findtext('yt:channelId',namespaces=ns)==channel and entry.findtext('a:author/a:uri',namespaces=ns)==channel_url
+                  assert entry.findtext('a:id',namespaces=ns)=='yt:video:'+video_id
+                  link=entry.find("a:link[@rel='alternate']",ns).get('href');assert link in ('https://www.youtube.com/watch?v='+video_id,'https://www.youtube.com/shorts/'+video_id)
+                  title=entry.findtext('a:title',namespaces=ns);assert title==entry.findtext('m:group/m:title',namespaces=ns)
+                  published=entry.findtext('a:published',namespaces=ns);assert re.fullmatch(r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:Z|[+-]\d{2}:\d{2})',published or '')
+                  when=datetime.fromisoformat(published.replace('Z','+00:00'));description=entry.findtext('m:group/m:description',namespaces=ns) or ''
+                  result.append({'video_id':video_id,'canonical_url':link,'title':title,'published_at':published,'description':description,'age_hours_at_cutoff':(cutoff-when).total_seconds()/3600})
+              return result
+          def git(*a):return subprocess.check_output(['git',*a],text=True).strip()
+          main_sha=git('rev-parse','origin/main');history=[]
+          for filename in git('ls-tree','-r','--name-only','origin/main','_data/editions').splitlines():
+              if not re.fullmatch(r'_data/editions/\d{4}-\d{2}-\d{2}\.json',filename):continue
+              edition=json.loads(git('show','origin/main:'+filename));watch=edition.get('worth_watching',{})
+              if not isinstance(watch,dict):continue
+              for slot,v in watch.items():
+                  if isinstance(v,dict) and v.get('status')=='included':history.append({'edition_date':Path(filename).stem,'slot':slot,'title':v.get('title'),'url':v.get('url'),'runtime_seconds':v.get('runtime_seconds'),'summary':v.get('summary')})
+          def identity(url):
+              u=urlparse(url or '');return parse_qs(u.query).get('v',[None])[0] or (u.path.strip('/') if u.hostname=='youtu.be' else None)
+          records=[];diagnostics=[];source_counts=[];negative=[]
+          for catalog in catalogs:
+              observation=feeds.get(catalog['id'])
+              if not observation or observation['status']!='retrieved':diagnostics.append({'source_id':catalog['id'],'reason':(observation or catalog).get('reason','feed unavailable')});continue
+              try:
+                  data=(root/(catalog['id']+'-feed.xml')).read_bytes();assert hashlib.sha256(data).hexdigest()==observation['source_sha256']
+                  parsed=parse_feed(data,catalog['channel_id']);byid={x['video_id']:x for x in catalog['catalog_records']};count=0
+                  if catalog['id']=='ibm':
+                      bad=ET.fromstring(data);bad.find('a:author/a:uri',ns).text='https://www.youtube.com/channel/UCwrong'
+                      try:parse_feed(ET.tostring(bad),catalog['channel_id'])
+                      except AssertionError:negative.append('reject_wrong_publisher_identity')
+                      else:raise AssertionError('bad feed accepted')
+                  for item in parsed:
+                      if not 0<=item['age_hours_at_cutoff']<=72:continue
+                      metadata=byid.get(item['video_id'])
+                      if not metadata:diagnostics.append({'source_id':catalog['id'],'video_id':item['video_id'],'reason':'exact catalog runtime unavailable'});continue
+                      assert metadata['title']==item['title']
+                      if not 0<metadata['runtime_seconds']<=1200:continue
+                      count+=1
+                      matches=[h for h in history if identity(h['url'])==item['video_id'] or (h['title'] or '').strip().lower()==item['title'].strip().lower()]
+                      records.append({**item,'runtime_seconds':metadata['runtime_seconds'],'display_runtime':metadata['display_runtime'],'source_id':catalog['id'],'channel_id':catalog['channel_id'],'channel':catalog['channel_name'],'catalog_url':catalog['url'],'catalog_source_sha256':catalog['source_sha256'],'feed_url':observation['url'],'feed_source_sha256':observation['source_sha256'],'checked_at':observation['checked_at'],'metadata_resolved':True,'prior_production_matches':matches,'editorial_review_complete':False,'selected':False})
+                  source_counts.append({'source_id':catalog['id'],'feed_records':len(parsed),'eligible_verified':count,'catalog_source_sha256':catalog['source_sha256'],'feed_source_sha256':observation['source_sha256']})
+              except (AssertionError,KeyError,TypeError,ValueError,ET.ParseError) as e:diagnostics.append({'source_id':catalog['id'],'reason':type(e).__name__+': '+str(e)})
+          records.sort(key=lambda r:r['published_at'],reverse=True)
+          result={'schema_version':'1.0.0','run_id':semantic['run_id'],'baseline_sha':semantic['baseline_sha'],'cutoff':semantic['cutoff'],'media_freshness_policy':semantic['media_freshness_policy'],'workflow_run_id':int(os.environ['GITHUB_RUN_ID']),'execution_commit':os.environ['GITHUB_SHA'],'checked_at':datetime.now(timezone.utc).isoformat(),'observed_production_history_sha':main_sha,'catalog_requests':4,'feed_requests':len(feeds),'maximum_requests':8,'challenged_watch_requests':0,'access_challenge_bypassed':False,'source_counts':source_counts,'catalog_observations':json.loads((root/'catalog-observations.json').read_text()),'feed_observations':list(feeds.values()),'records':records[:20],'eligible_before_cap':len(records),'metadata_limit':20,'diagnostics':diagnostics,'negative_tests_passed':negative,'video_selection_validated':False,'media_ready':False,'article_stages_repeated':False,'podcast_stages_repeated':False,'prior_q_approval_reused':False,'model_calls':0,'work_invocations':0,'codex_invocations':0,'paid_model_api_calls':0,'production_mutation':False,'account_billing_observed':False}
+          (out/'video-acquisition.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n');(out/'video-production-history.json').write_text(json.dumps({'observed_main_sha':main_sha,'records':history},ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps({'records':[{k:r[k] for k in ['video_id','title','runtime_seconds','source_id','published_at']} for r in records[:20]],'diagnostics':diagnostics},ensure_ascii=False))
+          PY
+      - name: Persist new video evidence only
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json)" = "$(cat "$RUNNER_TEMP/q25-podcast-lock")"
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-29-Q25/media-evidence/video-acquisition.json _records/qualification/2026-09-29-Q25/media-evidence/video-production-history.json
+          git commit -m 'Persist bounded Q25 video metadata and current production novelty evidence'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - name: Preserve source catalogs and feeds
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: q25-video-capture
+          path: ${{ runner.temp }}/q25-video-capture/
+          retention-days: 14
+          if-no-files-found: error
