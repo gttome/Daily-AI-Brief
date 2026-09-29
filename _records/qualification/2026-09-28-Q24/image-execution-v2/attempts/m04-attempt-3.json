@@ -8,7 +8,7 @@
   "attempt": 3,
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
-  "status": "RAW_IMAGE_CAPTURED",
+  "status": "FINAL_VISUAL_REVIEW_PASSED_PERSISTENCE_PENDING",
   "evidence_type": "live",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m04.json",
@@ -48,7 +48,7 @@
   "raw_height": 909,
   "raw_capture_complete": true,
   "raw_git_read_back_verified": true,
-  "raw_capture_complete_scope": "Original native PNG is committed to the Q24 branch; workflow artifact read-back matches the original bytes, SHA-256 and Git blob identity. This does not complete final-image review or acceptance.",
+  "raw_capture_complete_scope": "Original native PNG is committed to the Q24 branch; workflow artifact read-back matches the original bytes, SHA-256 and Git blob identity. This does not complete final-file persistence or acceptance.",
   "raw_capture": {
     "path": "_records/image-attempts/2026-09-28-Q24/m04/attempt-3/raw.png",
     "sha256": "efd8f20bc5a80b51ee41ca7299f287a1326210feee98adfab45f8b7fcdfd04a3",
@@ -71,8 +71,27 @@
   "final_candidate_sha256": "bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895",
   "final_candidate_library_file_id": "libfile_d699789ea89081919482f837987dd5d2",
   "final_candidate_library_backing_file_id": "file_000000002c8481f6943af9e3227e3efe",
-  "review_complete": false,
+  "review_complete": true,
+  "review_complete_scope": "Per-image factual, pixel-structural and professional benchmark review of the exact preserved 1200x630 candidate. Final Git/lock/receipt and six-image differentiation gates remain incomplete.",
+  "final_visual_review": {
+    "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/reviews/m04-attempt-3-final.json",
+    "commit_sha": "6e4b79e7bbddd85d56666eca71dbda32c5e1785e",
+    "result": "pass",
+    "reviewed_at": "2026-09-29T02:33:55.524Z",
+    "mode": "automated",
+    "trigger": "active_chat",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "bacafda9f2cbb12f681655cf235823ccec6e9767b54c670b67d9df006b660895",
+    "benchmark_profile": "sep09-sep10-premium3-v1",
+    "benchmark_assets_hash_verified": 12,
+    "six_image_differentiation_complete": false
+  },
   "persistence_complete": false,
+  "final_git_read_back_verified": false,
+  "full_v2_receipt_validated": false,
   "accepted_locked": false,
   "blocker": null,
   "historical_local_cli_transfer": {
@@ -81,7 +100,7 @@
     "write_requests": 0,
     "scope": "Historical PR286 local-token adapter attempt only; superseded for current raw-capture status by completed connector Git Data transfer and verified read-back. Original event is retained unchanged."
   },
-  "next_action": "Complete formal final-candidate review, exact approved-file persistence/read-back and the live V2 acceptance gate. Do not repeat raw upload or regenerate this image.",
+  "next_action": "Persist and independently read back the exact reviewed final candidate, then validate genuine V2 execution evidence and acceptance. Do not repeat raw upload, generation, normalization or completed per-image review. Six-image differentiation remains a later mandatory set gate.",
   "recovery_required_before_any_new_generation": true,
   "maximum_attempts": 4,
   "owner_interventions": [],
@@ -95,5 +114,5 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "note": "The third native output's original bytes have already reached Git through the authenticated connector and passed independent workflow artifact read-back. The former current blocker fields were stale and are now reconciled to that evidence; historical observations remain in the immutable generation/recovery event and Git history. The 1200x630 candidate and all eight label diagnostics are preserved, but formal quality review, final-byte persistence and accepted_locked remain incomplete. This reconciliation called no image generator and repeated no upload or research."
+  "note": "The third original raw transfer remains complete. The exact already-preserved final candidate has now passed per-image visual review, released PNG inspection and comparison to both hash-verified benchmark sets. Full final-image storage/read-back, V2 receipt and acceptance are still pending; a review PASS does not establish accepted_locked. This review did not generate, normalize or upload an image and repeated no research."
 }
