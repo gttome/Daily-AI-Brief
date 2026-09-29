@@ -32,6 +32,15 @@ jobs:
         with:
           node-version: '20'
 
+      - name: Admit reliable-profile capability before new research
+        run: |
+          set -euo pipefail
+          profile="$(node -e "const fs=require('fs');const p='_records/discovery-preflight/request.json';process.stdout.write(fs.existsSync(p)?String(JSON.parse(fs.readFileSync(p)).execution_profile||'legacy'):'legacy')")"
+          if [ "$profile" = "reliable-edition-v1" ]; then
+            release="$(git merge-base HEAD origin/main)"
+            node _tools/edition-execution.mjs admission-check --release "$release"
+          fi
+
       - name: Resolve scheduled or requested preflight
         id: request
         env:

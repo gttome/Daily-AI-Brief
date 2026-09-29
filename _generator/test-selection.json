@@ -26,6 +26,25 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/durable-operation.mjs",
+        "_generator/lib/recoverable-image-job.mjs",
+        "_generator/lib/connector-image-delivery.mjs",
+        "_generator/lib/edition-execution.mjs",
+        "_tools/edition-execution.mjs",
+        "_generator/test/reliable-execution.test.mjs",
+        "docs/operations/reliable-edition-execution.md"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/reliable-execution.test.mjs",
+        "_generator/test/image-execution.test.mjs",
+        "_generator/test/native-image-delivery.test.mjs",
+        "_generator/test/run-state-recovery.test.mjs",
+        "_generator/test/publication-manifest.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/test/image-transport-parity.test.mjs",
         "docs/operations/under80-runtime-contract.json",
         "docs/operations/efficiency-operating-policy.json",

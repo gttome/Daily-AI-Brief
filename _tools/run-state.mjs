@@ -7,6 +7,8 @@ import {
  proofRepositoryErrors,recoveryDecision,applyRecoveryDecision,consequentialActionDecision,recordConsequentialAction
 } from '../_generator/lib/run-state.mjs';
 
+import {pinnedResumeDecision} from '../_generator/lib/edition-execution.mjs';
+
 const a=parseArgs(process.argv.slice(2)),command=a._?.[0]||process.argv[2],root=path.resolve(a.root||'.'),date=a.date;
 if(!date)throw Error('date_required');
 const split=value=>String(value||'').split(';').map(x=>x.trim()).filter(Boolean);
@@ -20,6 +22,9 @@ const ensureRecoverable=(state,stage,reason)=>{
 
 if(command==='resolve'){
  const state=loadRunState(root,date);
+ if(state?.execution_profile==='reliable-edition-v1'&&a.baseline){
+  console.log(JSON.stringify({...pinnedResumeDecision(root,state,a.baseline),state_path:runStatePath(date)},null,2));process.exit(0);
+ }
  const decision=recoveryDecision(root,state,{baselineSha:a.baseline||null,contractVersion:a.contract||null});
  console.log(JSON.stringify({...decision,state_path:runStatePath(date)},null,2));
  process.exit(0);
@@ -37,6 +42,7 @@ if(command==='checkpoint'){
  if(!a.baseline||!a.stage)throw Error('checkpoint_requires_baseline_and_stage');
  const contract=a.contract||RUN_STATE_VERSION;
  let state=loadRunState(root,date);
+ if(state?.execution_profile==='reliable-edition-v1'&&(state.baseline_main_sha!==a.baseline||state.contract_runtime_version!==contract))throw Error('explicit_compatibility_migration_required');
  if(!state||state.baseline_main_sha!==a.baseline||state.contract_runtime_version!==contract)state=newRunState({date,baselineSha:a.baseline,contractVersion:contract});
  if(validProof(state,a.stage)){
   console.log(JSON.stringify({stage:state.stage,resume_stage:resolveResumeStageFromRepository(root,state),state_path:runStatePath(date),reused_checkpoint:a.stage},null,2));process.exit(0);
