@@ -11,12 +11,12 @@
   "acceptance_commit": "f2eede14362ce1a5e2194f95cfcf628bc2225a76",
   "pending_candidate": "m03",
   "pending_attempt": 2,
-  "pending_status": "TASK_SCHEDULED",
+  "pending_status": "TASK_RESCHEDULED_AFTER_START_MISS",
   "pending_task_id": null,
   "pending_task_title": "OpenShell Runtime Illustration A2",
-  "scheduled_for": "2026-09-29T12:18:36Z",
+  "scheduled_for": "2026-09-29T12:23:12Z",
   "native_execution_verified": false,
-  "next_action": "Reconcile the single bound m03 attempt-2 task after its scheduled execution; recover output before any further generation.",
+  "next_action": "Observe the rescheduled same m03 attempt-2 task; do not create another task. Recover output immediately after a real invocation.",
   "verification_workflow_run_id": 36516797618,
   "verification_artifact_id": 11011087017,
   "verification_artifact_sha256": "d3527ffdb4e2c5d4400ee8dbd9bebb42941464878161b9bf000fc5564df27538",
@@ -37,5 +37,6 @@
     }
   ],
   "recovery_policy_release_sha": "d16ff493341b754d44627d2ae64071c87e805890",
-  "attempt2_binding_commit": "716743b529728fe891d509052689e052cc9e2201"
+  "attempt2_binding_commit": "716743b529728fe891d509052689e052cc9e2201",
+  "scheduler_start_miss_count": 1
 }
