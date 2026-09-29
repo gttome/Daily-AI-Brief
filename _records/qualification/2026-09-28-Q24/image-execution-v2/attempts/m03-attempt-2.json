@@ -9,7 +9,7 @@
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
   "evidence_type": "live",
-  "status": "INVOCATION_OBSERVED_RECOVERY_PENDING",
+  "status": "TASK_RESULT_UNRECOVERABLE",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m03.json",
     "git_blob_sha": "6b7f0d3d62738abd5b1ae0d215af177721c93582",
@@ -42,7 +42,7 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "next_action": "Recheck the genuine attempt-2 output after bounded result-surface latency. Do not resubmit or create another task while recovery is pending.",
+  "next_action": "Prepare m03 attempt 3 from the unchanged frozen request and exact visual-only prompt; bind it durably before submission.",
   "submitted_prompt_verifier": "Automation prompt equals the unchanged compiled m03 visual-only task prompt bound by SHA-256 f3661e96b9251e76883df68577475f399373e79fa77f254d257310bc3abe5a18.",
   "task_title": "OpenShell Runtime Illustration A2",
   "task_created_at": "2026-09-29T12:17:36.909136Z",
@@ -66,8 +66,19 @@
       "library_recent_images_result": "none after 2026-09-29T12:23:00Z",
       "current_conversation_images_result": "none",
       "classification": "recovery_pending_not_unrecoverable"
+    },
+    {
+      "checked_at": "2026-09-29T13:01:00Z",
+      "prior_conversation_context_result": "no matching output or native result",
+      "files_and_library_search_result": "no relevant attempt-2 image, native result ID, response payload, failure, or file reference",
+      "classification": "TASK_RESULT_UNRECOVERABLE"
     }
   ],
   "rescheduled_execution_cancelled": true,
-  "rescheduled_execution_cancelled_at": "2026-09-29T12:25:04.963043Z"
+  "rescheduled_execution_cancelled_at": "2026-09-29T12:25:04.963043Z",
+  "unrecoverable_event_path": "_records/qualification/2026-09-28-Q24/image-execution-v2/events/m03-attempt-2-unrecoverable.json",
+  "disposition": "unrecoverable",
+  "generation_success_asserted": false,
+  "generation_failure_asserted": false,
+  "attempt_consumed": true
 }
