@@ -26,6 +26,21 @@
   "rules": [
     {
       "patterns": [
+        "_generator/test/image-transport-parity.test.mjs",
+        "docs/operations/under80-runtime-contract.json",
+        "docs/operations/efficiency-operating-policy.json",
+        "docs/operations/image-file-transfer.md"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/image-transport-parity.test.mjs",
+        "_generator/test/image-execution.test.mjs",
+        "_generator/test/native-image-delivery.test.mjs",
+        "_generator/test/github-image-transfer.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/github-image-transfer.mjs",
         "_tools/github-image-transfer.mjs",
         "_tools/verify-image-transfer.mjs",

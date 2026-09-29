@@ -1,8 +1,24 @@
 # Daily AI Brief — Current Operations Entry Point
 
-## September 28, 2026 — One-operation image file transfer
+## September 28, 2026 — Connector-first image transport parity
 
-Use `github-image-file-transfer-v1` for permitted image uploads from an authenticated file-capable host. The shared `transferImageFile` function, `_tools/github-image-transfer.mjs` and `.github/actions/transfer-image` take an actual local PNG/WebP, perform one Contents API write and verify raw bytes at the returned immutable commit. Base64 stays inside executable code; no per-image text bridges, bespoke workflow or owner upload. Identical existing bytes are verified and reused without another write; different bytes, protected branches, unsafe paths, denials and uncertain writes fail closed. Keep one writer per handoff branch.
+> [!IMPORTANT]
+> **Current routing: `connector-first-v1`.** The existing authenticated GitHub connector is the normal image-transfer route for both production and qualification: `create_blob` (complete Base64-encoded binary bytes), `create_tree`, `create_commit`, and non-force `update_ref`. **No local GitHub token or native Git credential is required for that connector route.** This amendment corrects the adapter-precedence regression; it does not claim that an outstanding image has been uploaded.
+
+The authoritative machine policies remain `under80-runtime-contract.json` and `efficiency-operating-policy.json`. Their normal image lane remains `github_git_data_api`, including the existing restriction on Contents-based binary transport in that lane. The PR286 file-host uploader is retained as an independently tested utility for an already authenticated file-capable host, not a replacement or prerequisite for the normal connector path. Its missing-token result is adapter-specific and must never disable or disqualify the connector. Do not rerun that local CLI merely to rediscover absent local credentials. No credential export, new credentials, Work, Codex or paid-model API is authorized.
+
+**Payload delivery is a separate capability:** the full real image must actually reach the connector's binary-content argument using a supported execution-host mechanism. Tool exposure, a computed SHA, a Library file ID or a partial encoded snapshot is not delivery. Never put a local path or opaque file reference into a literal Base64 field. Where complete payload delivery is unavailable, record `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`, not missing GitHub authentication. Do not invent an adapter or pass fixture results as a live transfer.
+
+**Complete the real round trip:** verify the returned blob against the original file, attach it to the current isolated handoff tree, create a commit with the live handoff head as parent, and update only that branch without force. Preserve concurrent changes; do not rebuild a recovery branch from an old main tree. Reuse existing exact blobs and the existing image read-back workflow. Require actual byte equality and SHA-256 read-back before capture completion; all V2 raw/final provenance, factual, professional-quality, differentiation and accepted-byte gates remain unchanged. A current denial stops that operation; this routing rule never authorizes an alternate endpoint to evade a safety block.
+
+**Q24:** both earlier m04 outputs are already preserved and rejected. The third correct-subject native output and its 1200x630 candidate are preserved in Library, but their Git capture and final acceptance remain governed by live Q24 receipts. Reuse the original cutoff, five passed components, frozen requests and failures; do not generate attempt 4 or advance to m03 while the third output is unresolved. Do not infer successful native ingress from PR286's repository-local sample. The supervisor must stay on the first incomplete operation and notify only on real advancement or a new material blocker.
+
+---
+
+
+## Historical PR286 utility guidance — not the normal connector route
+
+The independently tested `github-image-file-transfer-v1` utility applies only where its explicit file-host prerequisites and separate authorization are satisfied; it is not the normal production or qualification image route. The shared `transferImageFile` function, `_tools/github-image-transfer.mjs` and `.github/actions/transfer-image` take an actual local PNG/WebP, perform one Contents API write and verify raw bytes at the returned immutable commit. Base64 stays inside executable code; no per-image text bridges, bespoke workflow or owner upload. Identical existing bytes are verified and reused without another write; different bytes, protected branches, unsafe paths, denials and uncertain writes fail closed. Keep one writer per handoff branch.
 
 A verified transfer is not image acceptance. All V2 image quality and visual-only task-delivery requirements remain. The local file and existing repository credential must be present on the same host. This code does not add a file-upload parameter to a text-only ChatGPT connector or prove native-output delivery to GitHub Actions. Known safety-blocked operations must not be replayed through this helper or another endpoint. Q24's previously blocked attempt-2 branch operation remains separate from the independent transport proof; do not report it recovered from a proof-branch upload.
 

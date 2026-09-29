@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.9.0",
+  "schema_version": "1.10.0",
   "profile_id": "under80-v1",
   "purpose": "Compact authoritative runtime contract for the single daily AI task. Historical runbook sections remain audit documentation and are not normal Work input.",
   "precedence": "This file plus docs/operations/efficiency-operating-policy.json governs normal daily Work execution where older runbook text conflicts.",
@@ -153,15 +153,35 @@
         "create one tree over the trusted main tree using mode 100644/type blob entries",
         "create one commit with trusted main as parent",
         "advance only the isolated handoff branch with update_ref",
-        "stop Work immediately; GitHub Actions validates remote image integrity"
+        "Return after the atomic handoff; GitHub Actions validates remote image integrity"
       ],
-      "reason": "The Work environment has authenticated GitHub connector Git Data API access but no native git credential helper. Git Data blobs preserve binary bytes without using the Contents API path that corrupted prior binary image transfers.",
+      "reason": "The existing GitHub connector owns authentication. Normal production and qualification image transport does not require a local Git credential helper, token export or Work. The optional PR286 host-side Contents utility does not replace this contract.",
       "blob_encoding_for_binary_images": "base64",
       "accepted_formats": [
         "webp",
         "png"
       ],
-      "github_contents_api_for_binary_images_prohibited": true
+      "github_contents_api_for_binary_images_prohibited": true,
+      "routing_policy_id": "connector-first-v1",
+      "applies_to": [
+        "production",
+        "qualification_nonproduction"
+      ],
+      "connector_managed_authentication": true,
+      "credential_export_prohibited": true,
+      "local_file_host_token_is_connector_prerequisite": false,
+      "optional_helper_failure_blocks_connector": false,
+      "contents_file_helper_scope": "independent_authenticated_host_utility_not_normal_image_lane",
+      "payload_requirement": "Complete original binary bytes encoded as Base64 at the connector boundary. A local path, file ID, truncated snapshot or computed hash is not a binary upload.",
+      "completion_requirement": "Returned blob equals the source Git blob identity; attach it to the live target branch without force; independently read back complete bytes and verify source SHA-256. Image acceptance remains a separate gate.",
+      "resume_commit_sequence": [
+        "Read the current isolated handoff branch head and tree",
+        "Reuse an existing matching blob or create the complete binary blob through the authenticated connector",
+        "Create a tree from the current handoff tree changing only authorized paths",
+        "Create a commit whose parent is the observed handoff head",
+        "Non-force update only the same handoff branch; on conflict reread and reconcile",
+        "Use the existing read-back workflow and compare actual bytes before recording capture complete"
+      ]
     },
     "generation_scope": "Generate each story image in its own independent image-generation request. Never request or accept a multi-story collage, newsletter panel, contact sheet, or combined six-story graphic as a story asset.",
     "acceptance_scope": "Each accepted image must illustrate exactly one selected story and its verified evidence. A multi-story collage, generic unrelated concept, or deterministic placeholder fails the production image gate.",
@@ -410,7 +430,7 @@
       "create_or_reuse_publication_pr",
       "inspect_ci_and_pages"
     ],
-    "failure": "BLOCKED \u2014 GitHub connection unavailable for scheduled publication.",
+    "failure": "BLOCKED — GitHub connection unavailable for scheduled publication.",
     "record_in_attempt": true
   },
   "image": {
