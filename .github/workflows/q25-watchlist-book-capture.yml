@@ -1,0 +1,63 @@
+name: Q25 watchlist and book evidence preparation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-29-Q25']
+    paths: ['.github/workflows/q25-watchlist-book-capture.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: q25-media-writer
+  cancel-in-progress: false
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Preserve frozen articles and validated media
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-29-Q25'
+          test ! -f _records/qualification/2026-09-29-Q25/result.json
+          test ! -f _records/qualification/2026-09-29-Q25/watchlist-book-evidence/preparation.json
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json)" = 9b2387dfb4fdd8e54bcfd5813d5f05fe753686d4
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/media-evidence/video-selection.json)" = c85bafb10d7e6b1b817eda69ad460f0b27cc22dd
+      - name: Capture four current public book pages and exact preservation inputs
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import path from 'node:path';import crypto from 'node:crypto';import assert from 'node:assert/strict';import {retrieveSource} from './_tools/discovery-links.mjs';
+          const base='_records/qualification/2026-09-29-Q25',out=base+'/watchlist-book-evidence',raw=process.env.RUNNER_TEMP+'/q25-watchlist-books';fs.mkdirSync(out+'/source-texts',{recursive:true});fs.mkdirSync(raw,{recursive:true});
+          const hash=b=>crypto.createHash('sha256').update(b).digest('hex'),blob=b=>crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+b.length+'\0'),b])).digest('hex');
+          const read=p=>JSON.parse(fs.readFileSync(p,'utf8'));const semantic=read(base+'/semantic-receipt.json');assert.equal(semantic.cutoff,'2026-09-29T14:09:00Z');
+          const sources=[['reliable','https://leanpub.com/reliablegenerativeai'],['context','https://leanpub.com/reliable-context-engineering'],['prompt-guide','https://leanpub.com/genaipromptingguide'],['learning','https://leanpub.com/GenAILearn']],outcomes=[];
+          for(const [id,url] of sources){try{const r=await retrieveSource(url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});fs.writeFileSync(raw+'/'+id+'.html',r.text,{flag:'wx'});outcomes.push({id,url,resolved_url:r.url,checked_at:new Date().toISOString(),status:'captured',source_sha256:hash(r.text),artifact_file:id+'.html'});}catch(e){outcomes.push({id,url,checked_at:new Date().toISOString(),status:'unavailable',reason:String(e.message)});}}
+          const snapshots={};for(const p of ['_data/watchlist.json','_records/editorial-handoff/watchlist-2026-09-26.json','_data/book-reading.json']){const bytes=fs.readFileSync(p);snapshots[p]={sha256:hash(bytes),git_blob_sha:blob(bytes)};fs.writeFileSync(raw+'/'+path.basename(p),bytes,{flag:'wx'});}
+          const preserved=read('_records/editorial-handoff/watchlist-2026-09-26.json'),publicWatch=read('_data/watchlist.json'),catalog=read('_data/book-reading.json');
+          const metadata={schema_version:'1.0.0',run_id:semantic.run_id,baseline_sha:semantic.baseline_sha,cutoff:semantic.cutoff,article_freshness_policy:semantic.article_freshness_policy,media_freshness_policy:semantic.media_freshness_policy,workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,status:'SOURCE_CAPTURED_REVIEW_PENDING',checked_at:new Date().toISOString(),source_outcomes:outcomes,preservation_inputs:snapshots,preservation_note:'The newer September 26 handoff is a tracked-topic preservation baseline, not proof that public watchlist state was synchronized. All preserved topics and evidence must survive this Q25 review; do not import Q24 approvals.',preservation_topics:preserved.topics.map(t=>({topic_id:t.topic_id,name:t.name,summary:t.summary,updated_at:t.updated_at,development_ids:(t.evidence||[]).map(e=>e.development_id),evidence_urls:(t.evidence||[]).map(e=>e.url)})),public_topics:publicWatch.topics.map(t=>({topic_id:t.topic_id,name:t.name})),book_reference_catalog:catalog.references,item_inventory:{articles:semantic.selection,podcasts:read(base+'/media-evidence/podcast-selection.json').selection.selected,videos:read(base+'/media-evidence/video-selection.json').worth_watching},new_book_page_retrievals:4,new_article_retrievals:0,new_media_retrievals:0,article_stages_repeated:false,media_stages_repeated:false,prior_q_approval_reused:false,watchlist_review_completed:false,book_evaluation_completed:false,emerging_sweep_completed:false,images_started:false,media_ready:false,production_mutation:false,model_calls:0,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false};
+          fs.writeFileSync(out+'/preparation.json',JSON.stringify(metadata,null,2)+'\n',{flag:'wx'});fs.writeFileSync(raw+'/source-capture.json',JSON.stringify({outcomes,snapshots},null,2)+'\n');console.log(JSON.stringify({books_captured:outcomes.filter(x=>x.status==='captured').length,preserved_topic_count:preserved.topics.length,review_pending:true}));
+          NODE
+      - name: Persist source preparation without rewriting prior checkpoints
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-29-Q25/watchlist-book-evidence/preparation.json
+          git commit -m 'Persist Q25 four-book sources and watchlist preservation inventory'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - name: Preserve exact book pages and baseline files
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: q25-watchlist-books
+          path: ${{ runner.temp }}/q25-watchlist-books/
+          retention-days: 14
+          if-no-files-found: error
