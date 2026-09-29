@@ -12,7 +12,7 @@
   "pending_candidate": "m03",
   "pending_attempt": 3,
   "pending_status": "TASK_SCHEDULED",
-  "pending_task_id": null,
+  "pending_task_id": "6abbb747f4c88191bd27655de8eaef84",
   "pending_task_title": "OpenShell Runtime Illustration A3",
   "scheduled_for": "2026-09-29T13:05:07Z",
   "native_execution_verified": false,
