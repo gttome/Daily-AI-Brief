@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9614,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Grok 4.7 is now available on Amazon Bedrock",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/grok-4-7-is-now-available-on-amazon-bedrock/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-28T22:13:16.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2074,
+      "excerpt": "Grok 4.7 is now available on Amazon Bedrock xAI’s Grok 4.7 is now available on Amazon Bedrock , adding a frontier model built for coding, long-running agents, and knowledge work to the Bedrock model catalog. This post covers what xAI says Grok 4.7 is designed for, how it is packaged on Amazon Bedrock, and how to send your first request. The model is served on the bedrock-runtime endpoint through cross-Region inference profiles, so requests name a profile rather than a bare model ID: Inference option Model ID Base URL Geo cross-Region us.xai.grok-4.7 https://bedrock-runtime.{region}.amazonaws.com/openai/v1 Global cross-Region…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Introducing Quine: An AI research system designed for the complexity of biology",
+      "canonical_url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+      "publisher": "Microsoft Research",
+      "published_at": "2026-09-29T14:00:02.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1809,
+      "excerpt": "At a glance Quine (opens in new tab) is a research effort to create a multimodal world model of biology and an interactive harness connecting models, scientific tools, literature, and researchers. The Quine Fellows program (opens in new tab) will give a cohort of scientists access to the system and an opportunity to accelerate their own research and provide scientific feedback. Today, Microsoft Research is introducing Quine (opens in new tab) , a research effort designed to work across those boundaries, reflecting our long-term vision for a discovery system that evolves through scientific use. Quine brings together a world model of biology…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "Introducing Claude Sonnet 5.5 on AWS",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/introducing-claude-sonnet-5-5-on-aws/",
+      "publisher": "AWS Machine Learning",
+      "published_at": "2026-09-28T18:57:13.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 778,
+      "excerpt": "Introducing Claude Sonnet 5.5 on AWS Today, we’re excited to announce the availability of Claude Sonnet 5.5 on Amazon Bedrock and Claude Platform on AWS . Claude Sonnet 5.5 is a smarter, more efficient Sonnet model suited for focused coding and knowledge work with lower cost per task for most work at faster speed. This post covers Claude Sonnet 5.5’s improvements, practical guidance on when to choose Sonnet, and how to get started on Amazon Bedrock. What makes Claude Sonnet 5.5 different The improvements stand out on well-scoped work. Getting started with Claude Sonnet 5.5 on Amazon Bedrock To try Sonnet 5.5, open the Amazon Bedrock console…"
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Change Management Best Practices to Drive Value with Agent Builder",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
+      "publisher": "Microsoft Community Hub — Microsoft Copilot",
+      "published_at": "2026-09-28T15:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1734,
+      "excerpt": "In this article, we share best practices for driving change management with Agent Builder and accelerating agent adoption across the enterprise. Now that you know what Agent Builder is, let’s explore how to drive behavior change for scaled adoption. Change Management Operating Model To get started with scaled adoption for Agent Builder, you do not need a bespoke plan for every team. &nbsp; The following HCLTech customer story shows how the organization approached Agent Builder adoption through a structured change management program. By combining Microsoft 365 Copilot innovation with HCLTech's structured change management approach, we…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "AI at work: Learn, build, and grow with Microsoft Copilot and agents",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/ai-at-work-learn-build-and-grow-with-microsoft-copilot-and-agents/4494140",
+      "publisher": "Microsoft Community Hub — Skills Hub",
+      "published_at": "2026-09-25T12:04:32.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 431,
+      "excerpt": "Explore new Copilot modes, learn the basics of AI FinOps, and understand what’s next for agents. Microsoft is reimagining Copilot, bringing familiar tools together with new capabilities that help people and organizations build, customize, and scale AI across work. This playlist brings together practical learning to help you choose and use the Copilot mode that best fits your role and your work. Learn by doing with the AI at Work playlist The new AI at Work playlist in AI Skills Navigator shows you how to use the new Copilot in three practical areas. Learn how the Copilot app supports different kinds of work, from answering questions and…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "3 Must-Haves for Scaling Agentic AI in Health",
+      "canonical_url": "https://www.salesforce.com/blog/3-must-haves-for-scaling-agentic-ai-in-health/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-25T17:45:03.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1268,
+      "excerpt": "Instead of adding another layer of technology, agents coordinate work across the systems healthcare organizations already have, handling routine steps so people can focus on the judgment, care, and connection that matter most. See how organizations like UCLA Health, Highmark Health, and Select Health are leading the way with real agents, real workflows, and real outcomes. That’s why Salesforce has spent 27 years building a healthcare infrastructure designed around governance. This gives healthcare organizations something generic AI can’t: the confidence to move beyond the pilot stage and deploy agents across their highest-priority workflows,…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "Report: Progressive Disclosure of Agent Skills",
+      "canonical_url": "https://arxiv.org/abs/2609.35692v1",
+      "publisher": "arXiv",
+      "published_at": "2026-09-28T17:38:37.000Z",
+      "source_reliability": "preprint",
+      "agent_skill_story_ready": true,
+      "source_word_count": 511,
+      "excerpt": "Computer Science > Artificial Intelligence arXiv:2609.35692v1 (cs) [Submitted on 28 Sep 2026] Title: Report: Progressive Disclosure of Agent Skills Authors: Guilin Zhang , Kai Zhao , Priyanka Mudgal , Waleed Ammar , Xiquan Cui , Xu Chu , Alet Blanken View a PDF of the paper titled Report: Progressive Disclosure of Agent Skills, by Guilin Zhang and 6 other authors View PDF HTML (experimental) Abstract: Users of Workday's deployed LLM-based agents often request features which can be addressed by defining named procedures, also known as skills, in the LLM context, effectively augmenting agents' capabilities. However, as an agent's skills…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "qoder-skill-evolution",
+      "canonical_url": "https://docs.qoder.com/release-notes/qoder",
+      "publisher": "Qoder",
+      "published_at": "2026-09-23T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 2100,
+      "excerpt": "​ September 23, 2026 Qoder 0.4.1 A New Space for Human and Agent Collaboration Features Projects and discussions (Enterprise&Teams) : Discuss plans, push tasks forward, and bring ideas to life with your Agent, all in one place. Agent Teams (Enterprise&Teams) : Create and configure Agents, then bring them together into teams. Skill evolution suggestions : After a conversation finishes, Qoder can suggest creating or updating Skills based on reusable experience. Response annotations : Enable this feature in Settings-Experimental Features to select text in an Agent response, add it to the chat input box with an optional comment, and reference…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "The 5 AI agents I tell every executive to build first",
+      "canonical_url": "https://workspace.google.com/blog/future-of-work/the-5-ai-agents-i-tell-every-executive-to-build-first",
+      "publisher": "Google Workspace",
+      "published_at": "2026-09-24T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 847,
+      "excerpt": "Future of Work The 5 AI agents I tell every executive to build first September 24, 2026 Laura Mae Martin Executive Productivity Advisor, Google Try Google Workspace at No Cost Get a business email, all the storage you need, video conferencing, and more. Agentic AI is opening up new possibilities, especially for busy executives who spend so much time in meetings or traveling. As the next evolutionary step from gen AI, AI agents go beyond responding to prompts. Explore Gemini Enterprise — Google’s agentic platform that seamlessly connects your apps, like Google Workspace and Microsoft 365, to help you build AI agents and automate workflows. To…"
+    }
+  ]
+}
