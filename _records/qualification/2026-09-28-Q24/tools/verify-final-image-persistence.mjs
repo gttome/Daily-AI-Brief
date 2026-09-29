@@ -18,7 +18,7 @@ const git=(...args)=>execFileSync('git',args,{maxBuffer:20*1024*1024});
 const json=p=>JSON.parse(fs.readFileSync(p,'utf8'));
 function checkedPath(p){assert.equal(typeof p,'string');assert.ok(!path.isAbsolute(p)&&!p.includes('\\')&&!p.split('/').some(s=>!s||s==='.'||s==='..'));assert.ok(!fs.lstatSync(p).isSymbolicLink());return p;}
 function committedBytes(p){checkedPath(p);const bytes=git('show','HEAD:'+p);assert.ok(bytes.equals(fs.readFileSync(p)));assert.equal(blob(bytes),git('rev-parse','HEAD:'+p).toString().trim());return bytes;}
-function save(p,value){const f=path.join(out,p);fs.mkdirSync(path.dirname(f),{recursive:true});fs.writeFileSync(f,typeof value==='string'||Buffer.isBuffer(value)?value:JSON.stringify(value,null,2)+'\n',{flag:'wx'});}
+function save(p,value){const f=path.join(out,p),bytes=Buffer.isBuffer(value)?value:Buffer.from(typeof value==='string'?value:JSON.stringify(value,null,2)+'\n');fs.mkdirSync(path.dirname(f),{recursive:true});if(fs.existsSync(f)){assert.ok(fs.readFileSync(f).equals(bytes),'different exported evidence:'+p);return;}fs.writeFileSync(f,bytes,{flag:'wx'});}
 const prep=json(base+'/preparation.json');
 assert.equal(prep.cutoff,'2026-09-28T20:04:36Z');
 for(const r of prep.requests){const bytes=committedBytes(r.path);assert.equal(digest(bytes),r.file_sha256);const e=JSON.parse(bytes);assert.deepEqual(validateImageGenerationExecution(e),[]);assert.equal(imageExecutionHash(e),r.execution_sha256);}
