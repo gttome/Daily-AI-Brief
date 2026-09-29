@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "qualification_id": "2026-09-29-Q25",
+  "baseline_sha": "49e43aa9a581866c487140b27400cc39e8531037",
+  "cutoff": "2026-09-29T14:09:00Z",
+  "execution_mode": "qualification_nonproduction",
+  "scope": "Watchlist plus public reader-book component only",
+  "workflow_run_id": 36593054419,
+  "execution_commit": "205ee1e89ddb9d1088ac456de9454abf99718bff",
+  "validated_at": "2026-09-29T15:49:09.323Z",
+  "result": "pass",
+  "watchlist": {
+    "result": "pass",
+    "topic_count": 17,
+    "counts": {
+      "new_today": 1,
+      "updated_today": 3,
+      "carried_forward": 13
+    },
+    "preserved_topic_count": 16,
+    "previous_evidence_preserved": true,
+    "new_topic_ids": [
+      "dab-topic-biology-research-model-harness"
+    ],
+    "updated_topic_ids": [
+      "dab-topic-model-lifecycle-governance",
+      "dab-topic-agent-skills-observability",
+      "dab-topic-system-one-decision-models"
+    ],
+    "emerging_sweep": "pass_with_explicit_degraded_surfaces",
+    "zero_new_certified": false
+  },
+  "reader_books": {
+    "result": "pass",
+    "items_evaluated": 10,
+    "references_selected": 8,
+    "books_evaluated": 4,
+    "distinct_books_selected": 3,
+    "full_books_reviewed": false
+  },
+  "book_source_validation": {
+    "schema_version": "1.0.0",
+    "run_id": "2026-09-29-Q25",
+    "book_inventory_count": 4,
+    "source_hashes_verified": true,
+    "toc_locators_verified": true,
+    "sources": [
+      {
+        "source_id": "reliable",
+        "url": "https://leanpub.com/reliablegenerativeai",
+        "source_sha256": "9e6e342011745ab6fad6c9285d894b49789fabe5ab40f1a802af822afd296094",
+        "checked_at": "2026-09-29T15:34:42.386Z"
+      },
+      {
+        "source_id": "context",
+        "url": "https://leanpub.com/reliable-context-engineering",
+        "source_sha256": "aee0aa962cede5dd097c54d01143b09a4a181b5ef5a63c7b747ecd6c2a3a7790",
+        "checked_at": "2026-09-29T15:34:42.727Z"
+      },
+      {
+        "source_id": "prompt-guide",
+        "url": "https://leanpub.com/genaipromptingguide",
+        "source_sha256": "2b6ba04729852a84a14ade43dd85cc24af45b4192f20db3e1277f08a361db5ba",
+        "checked_at": "2026-09-29T15:34:43.133Z"
+      },
+      {
+        "source_id": "learning",
+        "url": "https://leanpub.com/GenAILearn",
+        "source_sha256": "97c71a31007d8973ebf367a169cab6c8dbcdc1116ee6ae422e35a1e4b7fbad87",
+        "checked_at": "2026-09-29T15:34:43.365Z"
+      },
+      {
+        "source_id": "prompt-guide-sample",
+        "source_sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316",
+        "text_sha256": "f00674ece2bd0b353e47fd476a3dbce634851cdeb5c29b047e878197bd54b9bf",
+        "source_artifact_id": 11000686644,
+        "full_book_reviewed": false
+      },
+      {
+        "source_id": "learning-sample",
+        "source_sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c",
+        "text_sha256": "cdbabed20e05114a29060b65357ab96a1eaf7fc02e973fb87251f76e5df217d8",
+        "source_artifact_id": 11000686644,
+        "full_book_reviewed": false
+      }
+    ],
+    "full_books_reviewed": false,
+    "learning_sample_is_toc": false,
+    "new_publisher_retrievals": 0
+  },
+  "negative_tests_passed": [
+    "reject_dropped_preserved_topic",
+    "reject_rewritten_preserved_evidence",
+    "reject_false_zero_new_certificate",
+    "reject_unsupported_book_evidence_level",
+    "reject_duplicate_item_book_mapping"
+  ],
+  "unchanged_git_blobs": {
+    "_records/qualification/2026-09-29-Q25/semantic-receipt.json": "a4992a54c174da19b93a5e06d8ea756db8ac2435",
+    "_records/discovery-preflight/result/article-evidence.json": "1cc02ca2af61b225265efc24a6fa99e1c434b4a2",
+    "_records/qualification/2026-09-29-Q25/media-evidence/podcast-selection.json": "9b2387dfb4fdd8e54bcfd5813d5f05fe753686d4",
+    "_records/qualification/2026-09-29-Q25/media-evidence/video-selection.json": "c85bafb10d7e6b1b817eda69ad460f0b27cc22dd",
+    "_records/qualification/2026-09-29-Q25/watchlist-book-evidence/emerging-primary-capture.json": "c5ebe8b9025262653daec8dabef3207636177030",
+    "_data/book-reading.json": "ef490fc652a79b18ba20179b7a139eb173013895",
+    "_data/watchlist.json": "de76ca6ae9b6304483d5bb998bb367c113316529"
+  },
+  "new_publisher_retrievals": 0,
+  "article_stages_repeated": false,
+  "media_stages_repeated": false,
+  "images_started": false,
+  "media_ready": false,
+  "qualification_terminal": false,
+  "private_book_change_evaluation_completed": false,
+  "production_mutation": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false
+}

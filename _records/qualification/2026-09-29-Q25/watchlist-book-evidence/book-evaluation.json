@@ -1,0 +1,128 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-29",
+  "qualification_id": "2026-09-29-Q25",
+  "evaluation_completed": true,
+  "scope": "public reader-book bridge; not full-manuscript/private book-change evaluation",
+  "reader_items_evaluated": 10,
+  "reader_references_selected": 8,
+  "books_evaluated": [
+    {
+      "book": "Reliable Generative AI",
+      "source_id": "reliable",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "source_sha256": "9e6e342011745ab6fad6c9285d894b49789fabe5ab40f1a802af822afd296094",
+      "evidence": "Current public table of contents",
+      "full_text_reviewed": false
+    },
+    {
+      "book": "Reliable Generative AI Context Engineering",
+      "source_id": "context",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "source_sha256": "aee0aa962cede5dd097c54d01143b09a4a181b5ef5a63c7b747ecd6c2a3a7790",
+      "evidence": "Current public table of contents; Chapter 2 rather than automatically defaulting to Chapter 3",
+      "full_text_reviewed": false
+    },
+    {
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "source_id": "prompt-guide",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "source_sha256": "2b6ba04729852a84a14ade43dd85cc24af45b4192f20db3e1277f08a361db5ba",
+      "evidence": "Current public book page and preserved exact sample PDF's table of contents; sample SHA256 ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316; extracted text SHA256 f00674ece2bd0b353e47fd476a3dbce634851cdeb5c29b047e878197bd54b9bf",
+      "full_text_reviewed": false
+    },
+    {
+      "book": "Generative AI Learning Ecosystem",
+      "source_id": "learning",
+      "url": "https://leanpub.com/GenAILearn",
+      "source_sha256": "97c71a31007d8973ebf367a169cab6c8dbcdc1116ee6ae422e35a1e4b7fbad87",
+      "evidence": "Current public book page and preserved public sample section Five Generative AI Prompt Companion Users, visually checked at PDF page 5. Sample SHA256 dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c; extracted text SHA256 cdbabed20e05114a29060b65357ab96a1eaf7fc02e973fb87251f76e5df217d8. This is NOT a verified table of contents.",
+      "full_text_reviewed": false,
+      "reader_reference_omission_reason": "The role-based section is relevant to m06, but the current released reader-bridge contract accepts only public table-of-contents evidence. Do not relabel sample prose as a TOC or invent a chapter number. All four books were evaluated; placement is based on verified scope, not a quota."
+    }
+  ],
+  "selected_books": [
+    "Reliable Generative AI",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Reliable Generative AI Context Engineering"
+  ],
+  "full_books_reviewed": false,
+  "private_book_change_evaluation": {
+    "evaluation_completed": false,
+    "proposal_count": null,
+    "reason": "This component verifies public reader-book references, not full-manuscript change proposals or private owner-only actions. Those outcomes are not fabricated."
+  },
+  "items": [
+    {
+      "kind": "article",
+      "candidate_id": "m02",
+      "disposition": "include",
+      "reference_id": "reliable-performance",
+      "why": "A background reference for considering performance and latency when evaluating an announced model option and its request-routing configuration; the book reference does not verify Grok results."
+    },
+    {
+      "kind": "article",
+      "candidate_id": "m03",
+      "disposition": "include",
+      "reference_id": "reliable-verification",
+      "why": "Use the final-verification framing as background for separating an announced scientific research system from evidence that its outputs are reliable; this is not biological or clinical validation."
+    },
+    {
+      "kind": "article",
+      "candidate_id": "m05",
+      "disposition": "include",
+      "reference_id": "reliable-task-substitution",
+      "why": "Provides a task-level frame for discussing adoption and changes to working practices instead of assuming that tool availability replaces complete jobs."
+    },
+    {
+      "kind": "article",
+      "candidate_id": "m06",
+      "disposition": "include",
+      "reference_id": "prompt-guide-learning-paths",
+      "why": "A verified learning-path entry helps readers connect a role-relevant AI learning resource to their own progression rather than treating a feature list as a curriculum."
+    },
+    {
+      "kind": "article",
+      "candidate_id": "m01",
+      "disposition": "include",
+      "reference_id": "context-lifecycle",
+      "why": "Chapter 2's lifecycle provides background for deciding how a named procedure should be selected, shaped and evaluated before reuse; no unreviewed result from the Skills preprint is implied."
+    },
+    {
+      "kind": "article",
+      "candidate_id": "m09",
+      "disposition": "include",
+      "reference_id": "prompt-guide-crafting-engineering",
+      "why": "A background reference for moving from a one-off agent request toward a deliberately scoped repeatable task, without inventing the executive-agent examples missing from the frozen excerpt."
+    },
+    {
+      "kind": "video",
+      "candidate_id": "bs1qPy_CWkM",
+      "slot": "general",
+      "disposition": "include",
+      "reference_id": "reliable-verification",
+      "why": "Connects the video's advertised planning and verification themes to an exact verified book locator for a final acceptance gate."
+    },
+    {
+      "kind": "video",
+      "candidate_id": "KJ8Y2Nb9y9o",
+      "slot": "agents_non_technical_people",
+      "disposition": "include",
+      "reference_id": "reliable-trust",
+      "why": "Trust calibration is useful when evaluating an early-look walkthrough without assuming that every advertised capability is available or effective in a reader's environment."
+    },
+    {
+      "kind": "podcast",
+      "candidate_id": "everyday-872",
+      "disposition": "omit",
+      "reason": "The selected episode concerns current spending governance; the reviewed TOCs do not establish a specific matching budget practice. Avoid a generic or invented exercise merely to place a link."
+    },
+    {
+      "kind": "podcast",
+      "candidate_id": "ai-for-humans-197",
+      "disposition": "omit",
+      "reason": "Creative application topics and host opinions are too broad to justify a precise extra chapter connection in the currently reviewed source inventory."
+    }
+  ],
+  "production_mutation": false
+}
