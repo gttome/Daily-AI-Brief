@@ -1,0 +1,101 @@
+name: Q25 bounded podcast acquisition
+
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-29-Q25']
+    paths: ['.github/workflows/q25-podcast-capture.yml']
+
+permissions:
+  contents: write
+
+concurrency:
+  group: q25-media-writer
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Preserve frozen Q25 inputs and reject duplicate acquisition
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-29-Q25'
+          test ! -f _records/qualification/2026-09-29-Q25/result.json
+          test ! -f _records/qualification/2026-09-29-Q25/media-evidence/podcast-acquisition.json
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          git fetch --no-tags origin main
+      - name: Capture three current catalogs and at most four matching episode pages
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import crypto from 'node:crypto';
+          import assert from 'node:assert/strict';
+          import {execFileSync} from 'node:child_process';
+          import {retrieveSource} from './_tools/discovery-links.mjs';
+          import {mediaReferenceTime,mediaPublicationTime} from './_generator/lib/media-freshness.mjs';
+          const runId='2026-09-29-Q25',root='_records/qualification/'+runId;
+          const semantic=JSON.parse(fs.readFileSync(root+'/semantic-receipt.json','utf8'));
+          const validation=JSON.parse(fs.readFileSync(root+'/semantic-validation-receipt.json','utf8'));
+          assert.equal(validation.result,'pass');assert.equal(semantic.cutoff,'2026-09-29T14:09:00Z');
+          assert.equal(semantic.run_id,runId);assert.equal(semantic.media_freshness_policy,'media-research-cutoff-v1');
+          const reference=mediaReferenceTime({date:'2026-09-29',cutoff:semantic.cutoff,policy:semantic.media_freshness_policy});
+          const out=root+'/media-evidence',raw=path.join(process.env.RUNNER_TEMP,'q25-podcast-capture');
+          fs.mkdirSync(out+'/source-texts',{recursive:true});fs.mkdirSync(raw,{recursive:true});
+          const hash=s=>crypto.createHash('sha256').update(s).digest('hex');
+          const now=()=>new Date().toISOString();
+          const git=(...a)=>execFileSync('git',a,{encoding:'utf8'}).trim();
+          const decode=s=>s.replace(/&#(x[0-9a-f]+|[0-9]+);/gi,(_,v)=>String.fromCodePoint(v[0].toLowerCase()==='x'?parseInt(v.slice(1),16):Number(v))).replace(/&nbsp;/g,' ').replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"').replace(/&#39;|&apos;/g,"'");
+          const visible=s=>decode(s.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi,' ').replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi,' ').replace(/<[^>]*>/g,' ')).replace(/\s+/g,' ').trim();
+          function serialized(text){for(const m of text.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi))if(/\bid=["']serialized-server-data["']/.test(m[1]))return JSON.parse(m[2]);throw Error('serialized_server_data_missing');}
+          function offers(doc,showId){const found=new Map();function walk(x){if(!x||typeof x!=='object')return;if(x.episodeOffer){const o=x.episodeOffer;if(String(o.showOffer?.adamId)===showId&&o.storeUrl&&o.contentId)found.set(String(o.contentId),o);}for(const y of Object.values(x))if(y&&typeof y==='object')walk(y);}walk(doc);return [...found.values()];}
+          const observations=[],catalogs=[],records=[],diagnostics=[];let retrievals=0;
+          async function capture(id,url){const u=new URL(url);assert.equal(u.protocol,'https:');assert.equal(u.hostname,'podcasts.apple.com');retrievals++;const r=await retrieveSource(url,{maxResponseBytes:1800000,maxNormalizedChars:1500000});const checked_at=now();fs.writeFileSync(raw+'/'+id+'.html',r.text,{flag:'wx'});const o={id,url,resolved_url:r.url,checked_at,source_sha256:hash(r.text),status:'retrieved'};observations.push(o);return {...o,text:r.text};}
+          const shows=[
+            {id:'everyday',showId:'1683401861',url:'https://podcasts.apple.com/us/podcast/everyday-ai-podcast-an-ai-and-chatgpt-podcast/id1683401861',limit:2,fallback:'https://podcasts.apple.com/us/podcast/ep-871-desktop-agent-lingo-simplified-goals-loops-plans/id1683401861?i=1000792012779'},
+            {id:'ai-for-humans',showId:'1682409647',url:'https://podcasts.apple.com/us/podcast/ai-for-humans-weekly-ai-news-tools-trends/id1682409647',limit:1,fallback:'https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406'},
+            {id:'practical',showId:'1406537385',url:'https://podcasts.apple.com/us/podcast/practical-ai/id1406537385',limit:1,fallback:'https://podcasts.apple.com/us/podcast/from-agents-md-to-enterprise-deployment/id1406537385?i=1000791431612'}
+          ];
+          const pending=[];
+          for(const show of shows){try{const s=await capture('catalog-'+show.id,show.url);const all=offers(serialized(s.text),show.showId);const eligible=all.filter(o=>{try{const age=(reference-mediaPublicationTime(o.releaseDate,semantic.media_freshness_policy))/3600000;return age>=0&&age<=168;}catch{return false;}}).sort((a,b)=>Date.parse(b.releaseDate)-Date.parse(a.releaseDate));catalogs.push({source_id:show.id,show_id:show.showId,url:show.url,checked_at:s.checked_at,source_sha256:s.source_sha256,episode_offers:all.length,eligible_at_cutoff:eligible.map(o=>({episode_id:String(o.contentId),title:o.title,published_at:o.releaseDate,runtime_seconds:o.duration,url:o.storeUrl})),scope:'bounded current catalog, not internet-wide exhaustion'});for(const o of eligible.slice(0,show.limit))pending.push({id:show.id+'-'+o.contentId,showId:show.showId,episodeId:String(o.contentId),url:o.storeUrl});if(!eligible.length)pending.push({id:show.id+'-known',showId:show.showId,episodeId:new URL(show.fallback).searchParams.get('i'),url:show.fallback});}catch(e){diagnostics.push({source_id:show.id,phase:'catalog',reason:String(e.message),checked_at:now()});pending.push({id:show.id+'-known',showId:show.showId,episodeId:new URL(show.fallback).searchParams.get('i'),url:show.fallback});}}
+          const history=[],mainSha=git('rev-parse','origin/main');
+          for(const file of git('ls-tree','-r','--name-only','origin/main','_data/editions').split('\n').filter(x=>/^_data\/editions\/\d{4}-\d{2}-\d{2}\.json$/.test(x))){const edition=JSON.parse(git('show','origin/main:'+file));for(const p of [...(edition.podcasts||[]),...(edition.podcast?[edition.podcast]:[])])history.push({edition_date:file.match(/\d{4}-\d{2}-\d{2}/)[0],title:p.title,show:p.show,runtime_seconds:p.runtime_seconds,urls:[p.url,p.canonical_url,...(Array.isArray(p.platforms)?p.platforms:[]).map(x=>x.url)].filter(Boolean)});}
+          const ident=u=>{try{const p=new URL(u);return p.hostname==='podcasts.apple.com'&&p.searchParams.get('i')?'apple:'+p.searchParams.get('i'):p.origin+p.pathname.replace(/\/$/,'');}catch{return null;}};
+          const compact=s=>String(s||'').toLowerCase().replace(/[^a-z0-9]/g,'');
+          for(const target of pending.slice(0,4)){try{const s=await capture(target.id,target.url);const header=serialized(s.text).data[0].data.shelves[0].items[0],offer=header.contextAction.episodeOffer;
+            assert.equal(String(header.adamId),target.episodeId);assert.equal(String(offer.contentId),target.episodeId);assert.equal(String(offer.showOffer.adamId),target.showId);assert.equal(header.duration,offer.duration);assert.ok(Number.isInteger(offer.duration)&&offer.duration>0);assert.equal(header.releaseDate,offer.releaseDate);assert.equal(new URL(offer.storeUrl).searchParams.get('i'),target.episodeId);
+            const age=(reference-mediaPublicationTime(offer.releaseDate,semantic.media_freshness_policy))/3600000;const sourceText=visible(s.text);assert.ok(sourceText.length>200&&sourceText.length<=60000);
+            const textPath=out+'/source-texts/'+target.id+'.txt';fs.writeFileSync(textPath,sourceText,{flag:'wx'});
+            const matches=history.filter(h=>h.urls.some(u=>ident(u)===ident(offer.storeUrl))||(compact(h.title)===compact(offer.title)&&compact(h.show)===compact(offer.showOffer.title)));
+            records.push({candidate_id:target.id,kind:'podcast',canonical_url:offer.storeUrl,title:offer.title,show:offer.showOffer.title,episode_id:target.episodeId,show_id:target.showId,episode_guid:offer.guid,feed_url:offer.showOffer.feedUrl,published_at:offer.releaseDate,runtime_seconds:offer.duration,checked_at:s.checked_at,source_sha256:s.source_sha256,source_text_path:textPath,source_text_sha256:hash(sourceText),metadata_identity_verified:true,age_hours_at_cutoff:age,eligible_freshness:age>=0&&age<=168,freshness_tier:age>=0&&age<=48?'primary_48h':age>48&&age<=168?'fallback_7d':null,prior_production_matches:matches,identity_novelty_screen_passed:matches.length===0,editorial_review_complete:false,selected:false});
+          }catch(e){diagnostics.push({candidate_id:target.id,phase:'episode',reason:String(e.message),checked_at:now()});}}
+          const receipt={schema_version:'1.0.0',run_id:runId,execution_mode:'qualification_nonproduction',stage:'PODCAST_METADATA_CAPTURED',cutoff:semantic.cutoff,baseline_sha:semantic.baseline_sha,observed_production_history_sha:mainSha,media_freshness_policy:semantic.media_freshness_policy,workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,checked_at:now(),network_retrievals:retrievals,maximum_retrievals:7,catalogs,records,diagnostics,ready_for_editorial_review:new Set(records.filter(r=>r.eligible_freshness&&r.identity_novelty_screen_passed).map(r=>r.show_id)).size>=2,podcast_selection_complete:false,media_ready:false,article_stages_repeated:false,prior_q_approval_reused:false,model_calls:0,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false,production_mutation:false};
+          assert.ok(retrievals<=7);fs.writeFileSync(raw+'/observations.json',JSON.stringify(observations,null,2)+'\n');fs.writeFileSync(out+'/podcast-acquisition.json',JSON.stringify(receipt,null,2)+'\n',{flag:'wx'});fs.writeFileSync(out+'/podcast-production-history.json',JSON.stringify({observed_main_sha:mainSha,records:history},null,2)+'\n',{flag:'wx'});console.log(JSON.stringify({records:records.map(r=>({id:r.candidate_id,title:r.title,published_at:r.published_at,runtime:r.runtime_seconds,eligible:r.eligible_freshness,duplicate:!r.identity_novelty_screen_passed})),diagnostics,ready_for_editorial_review:receipt.ready_for_editorial_review}));
+          NODE
+      - name: Commit only new Q25 evidence without overwriting concurrent work
+        run: |
+          set -euo pipefail
+          test "$(git hash-object _records/qualification/2026-09-29-Q25/semantic-receipt.json)" = a4992a54c174da19b93a5e06d8ea756db8ac2435
+          test "$(git hash-object _records/discovery-preflight/result/article-evidence.json)" = 1cc02ca2af61b225265efc24a6fa99e1c434b4a2
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-29-Q25/media-evidence/podcast-acquisition.json _records/qualification/2026-09-29-Q25/media-evidence/podcast-production-history.json _records/qualification/2026-09-29-Q25/media-evidence/source-texts/
+          git commit -m 'Persist Q25 current podcast metadata and exact review-source texts'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+      - name: Preserve original source pages
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: q25-podcast-capture
+          path: ${{ runner.temp }}/q25-podcast-capture/
+          retention-days: 14
+          if-no-files-found: error
