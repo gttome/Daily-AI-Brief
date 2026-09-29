@@ -4,28 +4,76 @@ on:
     branches: ['hardening/reliable-edition-execution-2026-09-29']
     paths: ['.github/workflows/reliable-execution-development.yml']
 permissions:
-  contents: read
+  contents: write
 concurrency:
   group: reliable-execution-development
   cancel-in-progress: false
 jobs:
-  capture:
+  verify:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: 49e43aa9a581866c487140b27400cc39e8531037
-      - name: Capture implementation inputs, not another qualification
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Apply exact hash-bound source integration
         run: |
           set -euo pipefail
-          mkdir -p /tmp/reliable-execution-inputs
-          git archive --format=zip --output=/tmp/reliable-execution-inputs/source.zip HEAD _generator _tools _records _data docs .github package.json _architecture
-          git rev-parse HEAD > /tmp/reliable-execution-inputs/baseline.txt
-          sha256sum /tmp/reliable-execution-inputs/source.zip > /tmp/reliable-execution-inputs/source.sha256
+          mkdir -p /tmp/reliable-execution-proof
+          sha256sum _generator/lib/durable-operation.mjs _generator/lib/recoverable-image-job.mjs _generator/lib/connector-image-delivery.mjs _generator/lib/edition-execution.mjs _tools/edition-execution.mjs _generator/test/reliable-execution.test.mjs docs/operations/reliable-edition-execution.md > /tmp/reliable-execution-proof/uploaded-source-hashes.txt
+          node _tools/apply-reliable-execution-change.mjs | tee /tmp/reliable-execution-proof/migration.json
+      - name: Exercise interruption recovery and exact local Git transport
+        run: |
+          set -euo pipefail
+          node --test _generator/test/reliable-execution.test.mjs _generator/test/image-execution.test.mjs _generator/test/native-image-delivery.test.mjs _generator/test/run-state-recovery.test.mjs _generator/test/publication-manifest.test.mjs | tee /tmp/reliable-execution-proof/targeted.tap
+      - name: Full regression and contract checks
+        run: |
+          set -euo pipefail
+          node --test _generator/test/*.test.mjs | tee /tmp/reliable-execution-proof/full.tap
+          node _tools/validate-contracts.mjs | tee /tmp/reliable-execution-proof/contracts.json
+      - name: Seal and verify existing content without regeneration or publication
+        run: |
+          set -euo pipefail
+          node --input-type=module - <<'NODE'
+          import fs from 'node:fs';
+          import assert from 'node:assert/strict';
+          import {sealPublicationBundle,verifyPublicationBundle} from './_generator/lib/edition-execution.mjs';
+          import {hashBytes,stableJson} from './_generator/lib/durable-operation.mjs';
+          const p='_records/editorial-handoff/publication-manifest.json',m=JSON.parse(fs.readFileSync(p));
+          const cutoff=JSON.parse(fs.readFileSync(m.artifacts.metadata_candidates.path)).cutoff;
+          const args={releaseSha:'49e43aa9a581866c487140b27400cc39e8531037',cutoff};
+          const a=sealPublicationBundle('.',p,args),b=sealPublicationBundle('.',p,args);
+          assert.equal(a.bundle_sha256,b.bundle_sha256);
+          assert.equal(verifyPublicationBundle('.',a).result,'pass');
+          const shortened={...a,artifacts:a.artifacts.slice(1)};
+          delete shortened.bundle_sha256;shortened.bundle_sha256=hashBytes(stableJson(shortened));
+          assert.throws(()=>verifyPublicationBundle('.',shortened),/incomplete/);
+          fs.writeFileSync('/tmp/reliable-execution-proof/bundle-smoke.json',JSON.stringify({result:'pass',scope:'existing-content packaging only, not new native-image or public-run proof',bundle_sha256:a.bundle_sha256,artifacts:a.artifacts.length,original_cutoff:cutoff,native_generation_calls:0,production_mutation:false},null,2));
+          NODE
+      - name: Persist only verified implementation and remove temporary helpers
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'hardening/reliable-edition-execution-2026-09-29'
+          git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
+          rm _tools/apply-reliable-execution-change.mjs .github/workflows/reliable-execution-development.yml
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _generator/lib _generator/test/reliable-execution.test.mjs _generator/test-selection.json _tools/edition-execution.mjs _tools/run-state.mjs _tools/apply-reliable-execution-change.mjs docs/operations .github/workflows/under80-discovery-preflight.yml .github/workflows/reliable-execution-development.yml
+          git commit -m 'Integrate tested recoverable edition execution; preserve native-host proof boundary'
+          git fetch origin "$GITHUB_REF_NAME"
+          test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
+          git diff --name-only 49e43aa9a581866c487140b27400cc39e8531037 HEAD > /tmp/reliable-execution-proof/changed-files.txt
+          git rev-parse HEAD > /tmp/reliable-execution-proof/verified-head.txt
+          git diff --binary 49e43aa9a581866c487140b27400cc39e8531037 HEAD > /tmp/reliable-execution-proof/implementation.patch
+          git archive --format=zip --output=/tmp/reliable-execution-proof/implementation.zip HEAD $(cat /tmp/reliable-execution-proof/changed-files.txt)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        if: always()
         with:
-          name: reliable-execution-inputs
-          path: /tmp/reliable-execution-inputs/
-          retention-days: 7
+          name: reliable-execution-proof-${{ github.run_id }}
+          path: /tmp/reliable-execution-proof/
+          retention-days: 14
           if-no-files-found: error
