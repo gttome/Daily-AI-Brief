@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "qualification_id": "2026-09-28-Q24",
+  "candidate_id": "m03",
+  "attempt": 1,
+  "task_id": "6abb3052c5348191a3e69437b9d95fb0",
+  "task_title": "OpenShell Runtime Illustration",
+  "scheduled_for": "2026-09-29T03:29:18Z",
+  "observed_last_run_time": "2026-09-29T03:29:26.580853Z",
+  "disposition": "unrecoverable",
+  "reason_code": "TASK_RESULT_UNRECOVERABLE",
+  "task_invocation_observed": true,
+  "exhaustive_supported_search": true,
+  "outcome_observable": false,
+  "checked_at": "2026-09-29T12:14:25Z",
+  "output_evidence": {
+    "image": false,
+    "native_result_id": false,
+    "response_payload": false,
+    "explicit_failure": false
+  },
+  "release": {
+    "pr": 288,
+    "merge_sha": "d16ff493341b754d44627d2ae64071c87e805890",
+    "protected_ci_run_id": 36566700916
+  },
+  "semantics": "Consumes one bounded attempt without asserting generation success or failure."
+}
