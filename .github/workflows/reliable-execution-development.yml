@@ -19,13 +19,11 @@ jobs:
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '20'
-      - name: Apply exact hash-bound source integration
+      - name: Apply exact source integration with original transport safeguards
         run: |
           set -euo pipefail
           mkdir -p /tmp/reliable-execution-proof
-          git diff --name-status 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs | tee /tmp/reliable-execution-proof/protected-before.txt
           git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
-          sha256sum _generator/lib/durable-operation.mjs _generator/lib/recoverable-image-job.mjs _generator/lib/connector-image-delivery.mjs _generator/lib/edition-execution.mjs _tools/edition-execution.mjs _generator/test/reliable-execution.test.mjs docs/operations/reliable-edition-execution.md > /tmp/reliable-execution-proof/uploaded-source-hashes.txt
           node _tools/apply-reliable-execution-change.mjs | tee /tmp/reliable-execution-proof/migration.json
           node --input-type=module - <<'NODE'
           import fs from 'node:fs';
@@ -36,7 +34,7 @@ jobs:
             fs.writeFileSync(p,text.replace(target,line+target));
           }
           NODE
-      - name: Exercise interruption recovery and exact local Git transport
+      - name: Targeted interruption and transport regressions
         run: |
           set -euo pipefail
           node --test _generator/test/reliable-execution.test.mjs _generator/test/image-execution.test.mjs _generator/test/native-image-delivery.test.mjs _generator/test/run-state-recovery.test.mjs _generator/test/publication-manifest.test.mjs _generator/test/image-transport-parity.test.mjs | tee /tmp/reliable-execution-proof/targeted.tap
@@ -45,7 +43,7 @@ jobs:
           set -euo pipefail
           node --test _generator/test/*.test.mjs | tee /tmp/reliable-execution-proof/full.tap
           node _tools/validate-contracts.mjs | tee /tmp/reliable-execution-proof/contracts.json
-      - name: Seal and verify existing content without regeneration or publication
+      - name: Verify build-once packaging with existing historical content
         run: |
           set -euo pipefail
           node --input-type=module - <<'NODE'
@@ -62,45 +60,39 @@ jobs:
           const shortened={...a,artifacts:a.artifacts.slice(1)};
           delete shortened.bundle_sha256;shortened.bundle_sha256=hashBytes(stableJson(shortened));
           assert.throws(()=>verifyPublicationBundle('.',shortened),/incomplete/);
-          fs.writeFileSync('/tmp/reliable-execution-proof/bundle-smoke.json',JSON.stringify({result:'pass',scope:'existing-content packaging only, not new native-image or public-run proof',bundle_sha256:a.bundle_sha256,artifacts:a.artifacts.length,original_cutoff:cutoff,native_generation_calls:0,production_mutation:false},null,2));
+          fs.writeFileSync('/tmp/reliable-execution-proof/bundle-smoke.json',JSON.stringify({result:'pass',scope:'historical-content packaging only, not native-image or public-run proof',bundle_sha256:a.bundle_sha256,artifacts:a.artifacts.length,original_cutoff:cutoff,native_generation_calls:0,production_mutation:false},null,2));
           NODE
-      - name: Preserve test side effects as diagnostics and restore unchanged input files
+      - name: Prepare verified tree and capture commit diagnostics
         run: |
-          set -euo pipefail
-          git diff --binary HEAD -- _data _records briefs assets > /tmp/reliable-execution-proof/test-side-effects.patch
-          git diff --name-status HEAD -- _data _records briefs assets | tee /tmp/reliable-execution-proof/test-side-effects.txt
-          python3 - <<'PY'
-          import subprocess,json,hashlib
-          from pathlib import Path
-          changed=subprocess.check_output(['git','diff','--name-only','-z','HEAD','--','_data','_records','briefs','assets']).decode().split('\0')
-          rows=[]
-          for p in filter(None,changed):
-            original=subprocess.check_output(['git','show','HEAD:'+p])
-            baseline=subprocess.check_output(['git','show','49e43aa9a581866c487140b27400cc39e8531037:'+p])
-            assert original==baseline, 'Not an unchanged test input: '+p
-            file=Path(p)
-            assert not file.is_symlink()
-            rows.append({'path':p,'before_sha256':hashlib.sha256(original).hexdigest(),'after_sha256':hashlib.sha256(file.read_bytes()).hexdigest() if file.exists() else None})
-            file.parent.mkdir(parents=True,exist_ok=True);file.write_bytes(original)
-          Path('/tmp/reliable-execution-proof/test-side-effects.json').write_text(json.dumps(rows,indent=2)+'\n')
-          PY
-          git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
-      - name: Persist only verified implementation and remove temporary helpers
-        run: |
-          set -euo pipefail
+          exec > >(tee /tmp/reliable-execution-proof/persist.log) 2>&1
+          set -euxo pipefail
           test "$GITHUB_REF_NAME" = 'hardening/reliable-edition-execution-2026-09-29'
+          git status --short
+          git diff --quiet 49e43aa9a581866c487140b27400cc39e8531037 -- _data _records briefs assets _generator/lib/image-gate.mjs _generator/lib/native-image-delivery.mjs _generator/lib/publication-manifest.mjs
           rm _tools/apply-reliable-execution-change.mjs .github/workflows/reliable-execution-development.yml
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add _generator/lib _generator/test/reliable-execution.test.mjs _generator/test-selection.json _tools/edition-execution.mjs _tools/run-state.mjs _tools/apply-reliable-execution-change.mjs docs/operations .github/workflows/under80-discovery-preflight.yml .github/workflows/reliable-execution-development.yml
+          git add -u
+          git diff --cached --stat
+          git diff --binary 49e43aa9a581866c487140b27400cc39e8531037 > /tmp/reliable-execution-proof/implementation.patch
+          git diff --name-only 49e43aa9a581866c487140b27400cc39e8531037 > /tmp/reliable-execution-proof/changed-files.txt
+          python3 - <<'PY'
+          import zipfile,hashlib,json
+          from pathlib import Path
+          names=Path('/tmp/reliable-execution-proof/changed-files.txt').read_text().splitlines()
+          hashes={}
+          with zipfile.ZipFile('/tmp/reliable-execution-proof/implementation.zip','w',zipfile.ZIP_DEFLATED) as z:
+            for n in names:
+              p=Path(n)
+              if p.is_file():
+                z.write(p,n);hashes[n]=hashlib.sha256(p.read_bytes()).hexdigest()
+          Path('/tmp/reliable-execution-proof/final-source-hashes.json').write_text(json.dumps(hashes,indent=2)+'\n')
+          PY
           git commit -m 'Integrate tested recoverable edition execution; preserve native-host proof boundary'
           git fetch origin "$GITHUB_REF_NAME"
           test "$(git rev-parse FETCH_HEAD)" = "$GITHUB_SHA"
           git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
-          git diff --name-only 49e43aa9a581866c487140b27400cc39e8531037 HEAD > /tmp/reliable-execution-proof/changed-files.txt
           git rev-parse HEAD > /tmp/reliable-execution-proof/verified-head.txt
-          git diff --binary 49e43aa9a581866c487140b27400cc39e8531037 HEAD > /tmp/reliable-execution-proof/implementation.patch
-          git archive --format=zip --output=/tmp/reliable-execution-proof/implementation.zip HEAD $(cat /tmp/reliable-execution-proof/changed-files.txt)
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
