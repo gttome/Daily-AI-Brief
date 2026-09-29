@@ -1,0 +1,36 @@
+{
+  "schema_version": "1.0.0",
+  "qualification_id": "2026-09-28-Q24",
+  "candidate_id": "m03",
+  "attempt": 4,
+  "event": "TASK_RESULT_UNRECOVERABLE",
+  "policy_release_sha": "d16ff493341b754d44627d2ae64071c87e805890",
+  "invocation_evidence": {
+    "task_title": "OpenShell Runtime Illustration A4",
+    "observed_scheduler_run_time": "2026-09-29T13:30:24.835734Z",
+    "prompt_sha256": "f3661e96b9251e76883df68577475f399373e79fa77f254d257310bc3abe5a18",
+    "request_execution_sha256": "89d5846393b7218b13d20cb77a01e02c389c7820a73aeeb6d0421ce836cbed82"
+  },
+  "recovery_evidence": [
+    {
+      "checked_after": "2026-09-29T13:46:40Z",
+      "task_history": "scheduler invocation observed; no returned native image/result surfaced to controller",
+      "conversation_files_library_search": "no matching A4 image, native result id, response payload, explicit failure, or file reference",
+      "personal_context_search": "no matching task conversation/output"
+    }
+  ],
+  "observable_native_output": false,
+  "observable_native_result_id": false,
+  "observable_response_payload": false,
+  "observable_explicit_failure": false,
+  "disposition": "unrecoverable",
+  "generation_success_asserted": false,
+  "generation_failure_asserted": false,
+  "attempt_consumed": true,
+  "maximum_attempts": 4,
+  "next_action": "Attempt budget exhausted. Fail Q24 closed at IMAGES_READY, preserve all valid upstream evidence, harden the image-task result handoff/control plane, require protected CI/merge, then start the next fresh qualification identity.",
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "production_mutation": false
+}
