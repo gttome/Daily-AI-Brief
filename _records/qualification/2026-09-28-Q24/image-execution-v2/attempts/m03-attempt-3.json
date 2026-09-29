@@ -45,5 +45,6 @@
   "task_title": "OpenShell Runtime Illustration A3",
   "task_created_at": "2026-09-29T13:04:08.377680Z",
   "scheduled_for": "2026-09-29T13:05:07Z",
-  "submitted_prompt_verifier": "Automation prompt equals the unchanged compiled m03 visual-only task prompt bound by SHA-256 f3661e96b9251e76883df68577475f399373e79fa77f254d257310bc3abe5a18."
+  "submitted_prompt_verifier": "Automation prompt equals the unchanged compiled m03 visual-only task prompt bound by SHA-256 f3661e96b9251e76883df68577475f399373e79fa77f254d257310bc3abe5a18.",
+  "task_id": "6abbb747f4c88191bd27655de8eaef84"
 }
