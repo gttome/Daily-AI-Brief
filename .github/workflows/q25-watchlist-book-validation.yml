@@ -1,0 +1,115 @@
+name: Q25 Watchlist and reader-book validation
+on:
+  push:
+    branches: ['editorial-handoff/qualification/2026-09-29-Q25']
+    paths: ['.github/workflows/q25-watchlist-book-validation.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: q25-media-writer
+  cancel-in-progress: false
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Read original saved evidence without publisher refetches
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          test "$GITHUB_REF_NAME" = 'editorial-handoff/qualification/2026-09-29-Q25'
+          test ! -f _records/qualification/2026-09-29-Q25/result.json
+          test ! -f _records/qualification/2026-09-29-Q25/watchlist-book-evidence/validation-receipt.json
+          curl --fail --location --max-time 45 --silent --show-error --header "Authorization: Bearer $GH_TOKEN" --header 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/11042789532/zip --output "$RUNNER_TEMP/q25-books.zip"
+          curl --fail --location --max-time 45 --silent --show-error --header "Authorization: Bearer $GH_TOKEN" --header 'Accept: application/vnd.github+json' https://api.github.com/repos/gttome/Daily-AI-Brief/actions/artifacts/11000686644/zip --output "$RUNNER_TEMP/preserved-samples.zip"
+          echo "1cc6f30c16cd86c13e96dcafc8125815c5e6c1ecb5e98d5a47feab3ebbe2f123  $RUNNER_TEMP/q25-books.zip" | sha256sum --check
+          echo "b3bd218d20b70492a664bc4f9106ca6ffb390bc14c41e6dcaa834ee3ee71dc93  $RUNNER_TEMP/preserved-samples.zip" | sha256sum --check
+          python3 -m pip install --disable-pip-version-check 'pypdf==5.9.0'
+      - name: Verify exact book sources and sample TOC evidence
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from html.parser import HTMLParser
+          import os,json,hashlib,zipfile,io,re
+          from pypdf import PdfReader
+          class Visible(HTMLParser):
+              def __init__(self):super().__init__(convert_charrefs=True);self.skip=0;self.parts=[]
+              def handle_starttag(self,t,a):
+                  if t in ('script','style'):self.skip+=1
+              def handle_endtag(self,t):
+                  if t in ('script','style') and self.skip:self.skip-=1
+              def handle_data(self,s):
+                  if not self.skip:self.parts.append(s)
+          base=Path('_records/qualification/2026-09-29-Q25/watchlist-book-evidence');review=json.loads((base/'editorial-review.json').read_text());z=zipfile.ZipFile(Path(os.environ['RUNNER_TEMP'])/'q25-books.zip');old=zipfile.ZipFile(Path(os.environ['RUNNER_TEMP'])/'preserved-samples.zip');capture=json.loads(z.read('source-capture.json'));byid={x['id']:x for x in capture['outcomes']};texts={};evidence=[]
+          for item in review['book_inventory']:
+              source=byid[item['source_id']];raw=z.read(source['artifact_file']);assert hashlib.sha256(raw).hexdigest()==source['source_sha256']==item['source_sha256'];parser=Visible();parser.feed(raw.decode());texts[item['source_id']]=' '.join(' '.join(parser.parts).split());evidence.append({'source_id':item['source_id'],'url':source['url'],'source_sha256':source['source_sha256'],'checked_at':source['checked_at']})
+          samples={'prompt-guide-sample':('ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316','f00674ece2bd0b353e47fd476a3dbce634851cdeb5c29b047e878197bd54b9bf'),'learning-sample':('dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c','cdbabed20e05114a29060b65357ab96a1eaf7fc02e973fb87251f76e5df217d8')}
+          for name,(expected_raw,expected_text) in samples.items():
+              raw=old.read(name+'.pdf');assert hashlib.sha256(raw).hexdigest()==expected_raw;reader=PdfReader(io.BytesIO(raw));text='\n\f\n'.join(p.extract_text() or '' for p in reader.pages);assert hashlib.sha256(text.encode()).hexdigest()==expected_text;texts[name]=' '.join(text.split());(base/'source-texts'/(name+'.txt')).write_text(text);evidence.append({'source_id':name,'source_sha256':expected_raw,'text_sha256':expected_text,'source_artifact_id':11000686644,'full_book_reviewed':False})
+          assert 'Table of Contents' in texts['prompt-guide-sample'];assert 'Table of Contents' not in texts['learning-sample'];assert 'Five Generative AI Prompt Companion Users' in texts['learning-sample']
+          for reference in review['new_book_references']:
+              text=texts[reference['source_id']];assert reference['section_title'] in text
+              if reference['source_id']=='prompt-guide-sample':
+                  page=re.search(r'printed page (\d+)',reference['locator']).group(1)
+                  assert re.search(re.escape(reference['section_title'])+r'\s*\.+\s*'+page+r'\b',text)
+              else:
+                  assert 'Table of Contents' in text
+                  number=re.search(r'section ([0-9.]+)',reference['locator'])
+                  expected=(number.group(1)+' '+reference['section_title']) if number else reference['locator']+': '+reference['section_title']
+                  assert expected in text,expected
+          for title in ['Verification as the Final Gate','Managing Expectations and Calibrating Trust']:assert title in texts['reliable']
+          (base/'book-source-validation.json').write_text(json.dumps({'schema_version':'1.0.0','run_id':review['run_id'],'book_inventory_count':len(review['book_inventory']),'source_hashes_verified':True,'toc_locators_verified':True,'sources':evidence,'full_books_reviewed':False,'learning_sample_is_toc':False,'new_publisher_retrievals':0},ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps({'books_evaluated':4,'verified_new_toc_locators':len(review['new_book_references']),'sample_false_toc_rejected':True}))
+          PY
+      - name: Preserve tracked topics and validate current Watchlist delta and reader links
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';import crypto from 'node:crypto';import assert from 'node:assert/strict';
+          import {validateWatchlist,watchlistDailyState,watchlistDailySummary} from './_generator/lib/watchlist.mjs';
+          import {validateEmergingSignalSweep} from './_generator/lib/emerging-signal-sweep.mjs';
+          import {validateBookReading} from './_generator/lib/book-reading.mjs';
+          const base='_records/qualification/2026-09-29-Q25',out=base+'/watchlist-book-evidence',load=p=>JSON.parse(fs.readFileSync(p,'utf8')),sha=s=>crypto.createHash('sha256').update(s).digest('hex'),blob=b=>crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+b.length+'\0'),b])).digest('hex'),write=(name,v)=>fs.writeFileSync(out+'/'+name,JSON.stringify(v,null,2)+'\n',{flag:'wx'});
+          const review=load(out+'/editorial-review.json'),semantic=load(base+'/semantic-receipt.json'),date='2026-09-29',now=new Date().toISOString();assert.equal(review.run_id,semantic.run_id);assert.equal(review.cutoff,semantic.cutoff);assert.equal(review.baseline_sha,semantic.baseline_sha);assert.equal(review.status,'REVIEWED_PENDING_INDEPENDENT_COMPONENT_VALIDATION');
+          function frozen(){for(const [p,expected] of Object.entries(review.frozen_git_blobs))assert.equal(blob(fs.readFileSync(p)),expected,'frozen:'+p);}frozen();
+          const previousBytes=fs.readFileSync(review.preservation_baseline.path);assert.equal(sha(previousBytes),review.preservation_baseline.sha256);const previous=JSON.parse(previousBytes),watch=structuredClone(previous),sources=load(out+'/emerging-primary-capture.json');assert.equal(previous.topics.length,16);assert.deepEqual(validateWatchlist(previous),[]);
+          watch.edition_date=date;watch.updated_at=date;watch.updated_on=date;watch.last_reviewed_date=date;watch.source_qualification_id=semantic.run_id;
+          for(const topic of watch.topics){topic.daily_state='carried_forward';topic.last_reviewed_at=now;topic.what_changed_today='Reviewed for this edition; no new material primary evidence was added. Earlier evidence and original dates are preserved.';}
+          const selected=new Map(semantic.selection.map(s=>[s.candidate_id,s]));
+          function articleEvidence(candidate,development){const s=selected.get(candidate);assert.ok(s);assert.ok(Date.parse(s.source_published_at)<=Date.parse(review.cutoff));const publisher=new URL(s.source_url).hostname;return {url:s.source_url,title:s.headline,publisher,kind:'primary',development_id:development,checked_at:now,publication_date:s.source_published_at.slice(0,10),source_cutoff:semantic.cutoff,evidence_scope:'Frozen Q25 article excerpt; no article retrieval or semantic reselection'};}
+          for(const u of review.watchlist_updates){const topic=watch.topics.find(t=>t.topic_id===u.topic_id);assert.ok(topic);assert(!topic.evidence.some(e=>e.development_id===u.development_id));let evidence;
+            if(u.candidate_id)evidence=articleEvidence(u.candidate_id,u.development_id);
+            else{const source=sources.outcomes.find(x=>x.id===u.source_id);assert.equal(source.status,'captured');assert.equal(source.url,u.url);const text=fs.readFileSync(source.source_text_path,'utf8');assert.equal(sha(text),u.source_text_sha256);for(const excerpt of u.source_excerpts)assert.ok(text.includes(excerpt));assert.ok(Date.parse(u.published_at)<=Date.parse(review.cutoff));evidence={url:u.url,title:u.title,publisher:u.publisher,kind:'primary',development_id:u.development_id,publication_date:u.published_at.slice(0,10),published_at:u.published_at,checked_at:source.checked_at,source_text_sha256:u.source_text_sha256,evidence_scope:'Original v1 abstract and submission history; no reproduction or full-paper claim'};}
+            topic.evidence.push(evidence);Object.assign(topic,u.semantic_fields);topic.updated_at=date;topic.daily_state='updated_today';topic.what_changed_today=u.semantic_fields.why_now;
+          }
+          const n=structuredClone(review.new_topic);assert(!watch.topics.some(t=>t.topic_id===n.topic_id));const candidate=n.candidate_id,development=n.development_id;delete n.candidate_id;delete n.development_id;n.first_detected=date;n.updated_at=date;n.last_reviewed_at=now;n.daily_state='new_today';n.what_changed_today='New tracked research direction; one primary announcement, limited evidence and no claimed independent outcome.';n.evidence=[articleEvidence(candidate,development)];watch.topics.push(n);
+          function preserved(candidate){for(const old of previous.topics){const t=candidate.topics.find(t=>t.topic_id===old.topic_id);assert.ok(t,'preserved topic missing');assert.equal(t.first_detected,old.first_detected);for(const e of old.evidence)assert.ok(t.evidence.some(x=>JSON.stringify(x)===JSON.stringify(e)),'preserved evidence changed');if(!review.watchlist_updates.some(u=>u.topic_id===old.topic_id))assert.equal(t.updated_at,old.updated_at);}}preserved(watch);
+          assert.deepEqual(validateWatchlist(watch),[]);const counts=watchlistDailySummary(watch);assert.deepEqual(counts,{new_today:1,updated_today:3,carried_forward:13});
+          const sweep=structuredClone(review.emerging_sweep);sweep.checked_at=now;for(const surface of sweep.surfaces)surface.queries=surface.query_indices.map(i=>sweep.assisted_search_queries[i]);assert.deepEqual(validateEmergingSignalSweep(sweep,{editionDate:date}),[]);
+          const tests=[];let bad=structuredClone(watch);bad.topics=bad.topics.filter(t=>t.topic_id!==previous.topics[0].topic_id);assert.throws(()=>preserved(bad));tests.push('reject_dropped_preserved_topic');bad=structuredClone(watch);bad.topics[0].evidence[0].title='tampered';assert.throws(()=>preserved(bad));tests.push('reject_rewritten_preserved_evidence');const falseZero={...sweep,zero_new_certified:true};assert.ok(validateEmergingSignalSweep(falseZero,{editionDate:date}).length);tests.push('reject_false_zero_new_certificate');
+          const videos=load(base+'/media-evidence/video-selection.json');const podcasts=load(base+'/media-evidence/podcast-selection.json');assert.equal(videos.result,'pass');assert.equal(podcasts.result,'pass');
+          const catalog=load('_data/book-reading.json'),refs=structuredClone(catalog.references);for(const ref of review.new_book_references){assert(!refs[ref.id]);refs[ref.id]=ref;}for(const id of ['reliable-verification','reliable-trust']){assert.ok(refs[id]);refs[id].verified_date=date;}
+          const storyId=id=>'dab-story-'+date+'-'+sha(date+'|'+id).slice(0,8),edition={brief_date:date,stories:semantic.selection.map(s=>({story_id:storyId(s.candidate_id),headline:s.headline})),worth_watching:videos.worth_watching,podcasts:[]};
+          const mappings=[],seen=new Set();for(const r of review.book_item_reviews){const key=r.kind+':'+r.candidate_id;assert(!seen.has(key));seen.add(key);if(r.kind==='article')assert.ok(selected.has(r.candidate_id));else if(r.kind==='video')assert.equal(videos.worth_watching[r.slot].candidate_id,r.candidate_id);else assert.ok(podcasts.selection.selected.some(p=>p.candidate_id===r.candidate_id));
+            if(r.disposition==='omit'){assert.ok(r.reason?.length>35);continue;}assert.equal(r.disposition,'include');assert.ok(refs[r.reference_id]);assert.ok(r.why?.length>40);const item_id=r.kind==='article'?storyId(r.candidate_id):'dab-video-'+date+'-'+(r.slot==='general'?'general':'agent-skills');mappings.push({item_id,reference_id:r.reference_id,label:'READ DEEPER',why:r.why});}
+          assert.equal(seen.size,10);assert.equal(mappings.length,8);const candidateCatalog={schema_version:'1.0.0',references:refs,editions:{...catalog.editions,[date]:mappings}};validateBookReading(edition,candidateCatalog);const distinct=[...new Set(mappings.map(m=>refs[m.reference_id].book))];assert.equal(distinct.length,3);assert.equal(review.book_inventory.length,4);assert(!mappings.some(m=>m.reference_id==='context-quality-checklist'));
+          const fake=structuredClone(candidateCatalog),first=mappings[0].reference_id;fake.references[first].evidence_level='public sample relabeled as verified';assert.throws(()=>validateBookReading(edition,fake));tests.push('reject_unsupported_book_evidence_level');const duplicate=structuredClone(candidateCatalog);duplicate.editions[date][1].item_id=duplicate.editions[date][0].item_id;assert.throws(()=>validateBookReading(edition,duplicate));tests.push('reject_duplicate_item_book_mapping');
+          write('watchlist.json',watch);write('emerging-signal-sweep.json',sweep);write('book-reading.json',candidateCatalog);write('book-evaluation.json',{schema_version:'1.0.0',edition_date:date,qualification_id:semantic.run_id,evaluation_completed:true,scope:'public reader-book bridge; not full-manuscript/private book-change evaluation',reader_items_evaluated:10,reader_references_selected:8,books_evaluated:review.book_inventory,selected_books:distinct,full_books_reviewed:false,private_book_change_evaluation:review.private_book_change_evaluation,items:review.book_item_reviews,production_mutation:false});
+          const record={schema_version:'1.0.0',qualification_id:semantic.run_id,baseline_sha:semantic.baseline_sha,cutoff:semantic.cutoff,execution_mode:'qualification_nonproduction',scope:'Watchlist plus public reader-book component only',workflow_run_id:Number(process.env.GITHUB_RUN_ID),execution_commit:process.env.GITHUB_SHA,validated_at:now,result:'pass',watchlist:{result:'pass',topic_count:watch.topics.length,counts,preserved_topic_count:previous.topics.length,previous_evidence_preserved:true,new_topic_ids:sweep.new_topic_ids,updated_topic_ids:sweep.updated_topic_ids,emerging_sweep:'pass_with_explicit_degraded_surfaces',zero_new_certified:false},reader_books:{result:'pass',items_evaluated:10,references_selected:8,books_evaluated:4,distinct_books_selected:3,full_books_reviewed:false},book_source_validation:load(out+'/book-source-validation.json'),negative_tests_passed:tests,unchanged_git_blobs:review.frozen_git_blobs,new_publisher_retrievals:0,article_stages_repeated:false,media_stages_repeated:false,images_started:false,media_ready:false,qualification_terminal:false,private_book_change_evaluation_completed:false,production_mutation:false,work_invocations:0,codex_invocations:0,paid_model_api_calls:0,account_billing_observed:false};frozen();write('validation-receipt.json',record);console.log(JSON.stringify({result:'pass',watchlist_counts:counts,reader_links:8,books_selected:distinct,negative_tests:tests.length}));
+          NODE
+      - name: Persist validated components on isolated Q25 branch
+        run: |
+          set -euo pipefail
+          test "$(git ls-remote origin "refs/heads/$GITHUB_REF_NAME" | cut -f1)" = "$GITHUB_SHA"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add _records/qualification/2026-09-29-Q25/watchlist-book-evidence/
+          git commit -m 'Pass Q25 Watchlist preservation and public reader-book component gates'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"
