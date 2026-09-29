@@ -9,7 +9,7 @@
   "execution_mode": "qualification_nonproduction",
   "trigger": "scheduled",
   "evidence_type": "live",
-  "status": "TASK_SCHEDULED",
+  "status": "TASK_RESULT_UNRECOVERABLE",
   "request_binding": {
     "path": "_records/qualification/2026-09-28-Q24/image-execution-v2/requests/m03.json",
     "git_blob_sha": "6b7f0d3d62738abd5b1ae0d215af177721c93582",
@@ -32,7 +32,7 @@
   "scheduled_for": "2026-09-29T03:29:18Z",
   "task_last_run_time_at_creation": null,
   "generation_started": false,
-  "generation_started_scope": "No native result was present in the task-creation response; resolve newer task/output evidence before assuming execution or failure.",
+  "generation_started_scope": "Scheduler invocation is positively observed, but native generation success/failure and output identity remain unobservable.",
   "generation_completed": false,
   "raw_capture_complete": false,
   "review_complete": false,
@@ -49,6 +49,27 @@
   "codex_invocations": 0,
   "paid_model_api_calls": 0,
   "account_billing_observed": false,
-  "next_action": "Recover this actual one-time task's generated image. Do not create a duplicate task or regenerate while its outcome remains unresolved.",
-  "note": "m04 acceptance and this request binding were committed before automatic submission. One actual image-only task is now scheduled. Submission is not native execution or acceptance."
+  "next_action": "Attempt 1 is durably consumed as unrecoverable under the released bounded-recovery policy. Prepare m03 attempt 2 from the same frozen request; do not alter prior evidence.",
+  "note": "This disposition does not assert native generation success or failure. It records that the invoked task outcome is unobservable after exhaustive supported recovery and consumes one of the four bounded attempts.",
+  "disposition": "unrecoverable",
+  "task_last_run_time_observed": "2026-09-29T03:29:26.580853Z",
+  "recovery": {
+    "reason_code": "TASK_RESULT_UNRECOVERABLE",
+    "task_invocation_observed": true,
+    "exhaustive_supported_search": true,
+    "outcome_observable": false,
+    "checked_at": "2026-09-29T12:14:25Z",
+    "searched_channels": [
+      "task metadata and scheduler state",
+      "current and prior ChatGPT conversation evidence",
+      "current conversation files",
+      "targeted Q24 Library location",
+      "recent Library images after task submission",
+      "matching local/file evidence"
+    ],
+    "observed_result": "No image attachment/file, native generation/result ID, response payload, or explicit failure was recoverable.",
+    "policy_release_sha": "d16ff493341b754d44627d2ae64071c87e805890",
+    "policy_pr": 288,
+    "protected_ci_run_id": 36566700916
+  }
 }
