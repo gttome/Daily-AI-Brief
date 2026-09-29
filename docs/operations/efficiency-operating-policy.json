@@ -295,5 +295,19 @@
       "paid_model_api": 0
     },
     "scheduled_live_proof_required": true
+  },
+  "execution_reliability": {
+    "profile": "reliable-edition-v1",
+    "rollout": "staged_host_integration_required",
+    "image_entrypoint": "executeImageRequest",
+    "durable_store_required": true,
+    "controller": "executeEdition/drainOperations",
+    "admission_before_discovery": true,
+    "status_authority": "terminal_result_then_operation_journal",
+    "edition_bundle": "sealed-edition-bundle-v1",
+    "historical_results_immutable": true,
+    "legacy_execution_not_silently_migrated": true,
+    "native_host_operational_proof": "not_established_by_code_release",
+    "reference": "docs/operations/reliable-edition-execution.md"
   }
 }

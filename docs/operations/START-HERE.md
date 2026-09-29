@@ -1,5 +1,18 @@
 # Daily AI Brief — Current Operations Entry Point
 
+## September 29, 2026 — Recoverable edition execution (staged integration)
+
+> [!IMPORTANT]
+> The owner approved producer-owned image delivery, deterministic continuation and immutable build-once edition bundles. The new `reliable-edition-v1` profile uses a durable operation journal and stable operation keys. It resumes interrupted capture/review/persistence rather than regenerating after an unknown outcome. The shared image entry point routes this profile to `executeRecoverableImage`; it cannot silently fall back to the volatile executor. The existing connector route and all quality gates remain.
+
+Normal transport remains `connector-first-v1`. Complete payload delivery failures remain `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`; all V2 raw/final provenance requirements remain unchanged. A current denial stops that operation; no alternate endpoint may evade it.
+
+A real supported native host and binary-reader adapter are still required; their operational availability is **not established by this code release**. No new full Q is authorized until the actual handoff succeeds. New-profile discovery requests check admission before network work. Legacy scheduled/frozen requests are not silently migrated or disabled. Do not repair terminal Q24/Q25 into PASS. Do not confuse local Git/fixture recovery tests with six new native images or public closure.
+
+Use `_tools/edition-execution.mjs status` for terminal-first machine-derived status. Use the durable producer job and controller where the actual host integrations exist. Current source, media, image and publication validators remain the stage authorities. A later main change requires explicit compatibility packaging, not discarding valid research. See [Reliable edition execution](reliable-edition-execution.md) for code interfaces, retry semantics, exact implementation scope and the remaining host-integration work.
+
+---
+
 ## September 29, 2026 — Native image result-handoff preflight
 
 > [!IMPORTANT]

@@ -85,7 +85,7 @@ export function validateImageExecutionReceipt(r,e,{assetSha256=null,gitBlobSha=n
  * There is intentionally no paid API adapter, owner-upload callback, or implied scheduler.
  * eventSink must durably record each attempted call/result; fixture tests cannot certify live readiness.
  */
-export async function executeImageRequest(execution,{adapter,eventSink,executionMode,trigger='active_chat',evidenceType='live',maxAttempts=4,resume=null}={}){
+async function executeLegacyImageRequest(execution,{adapter,eventSink,executionMode,trigger='active_chat',evidenceType='live',maxAttempts=4,resume=null}={}){
   fail(validateImageGenerationExecution(execution));
   if(!['production','qualification_nonproduction'].includes(executionMode))throw Error('image_execution_mode_invalid');
   if(!['live','fixture'].includes(evidenceType)||!['scheduled','active_chat','fixture'].includes(trigger)||((evidenceType==='fixture')!==(trigger==='fixture')))throw Error('image_execution_evidence_mode_invalid');
@@ -149,6 +149,29 @@ export async function executeImageRequest(execution,{adapter,eventSink,execution
   }catch(error){await emit({status:'EXECUTION_FAILED',reason:error.message,manual_intervention_required:false});throw error;}
   await emit({status:'ATTEMPT_LIMIT_EXHAUSTED',failures,manual_intervention_required:false});
   return {status:'ATTEMPT_LIMIT_EXHAUSTED',accepted_locked:false,manual_intervention_required:false,failures};
+}
+
+/** New admitted editions use the durable producer job; historical callers retain
+ * their original behavior. No new-profile call may silently fall back to volatile
+ * execution just because a host/store capability is unavailable. */
+export async function executeImageRequest(execution, options={}) {
+  if (options.executionProfile !== 'reliable-edition-v1') return executeLegacyImageRequest(execution, options);
+  if (!options.operationStore) return {status:'CAPABILITY_BLOCKED_DURABLE_STORE_REQUIRED',accepted_locked:false,attempts_allocated:0};
+  if (options.resume) {
+    fail(validateImageExecutionReceipt(options.resume,execution,{allowFixture:options.evidenceType==='fixture'}));
+    if(options.resume.execution_mode!==options.executionMode||options.resume.evidence_type!==(options.evidenceType||'live'))throw Error('image_resume_mode_mismatch');
+    const bytes=await options.transport.read(options.resume.persistence.path,options.resume.persistence.commit_sha);
+    if(!Buffer.isBuffer(bytes)||digest(bytes)!==options.resume.persistence.sha256||blob(bytes)!==options.resume.persistence.git_blob_sha)throw Error('image_resume_bytes_changed');
+    return {...options.resume,reused:true};
+  }
+  const {executeRecoverableImage}=await import('./recoverable-image-job.mjs');
+  const maximum=options.maxAttempts??4;
+  if(!Number.isInteger(maximum)||maximum<1||maximum>4)throw Error('image_attempt_budget_invalid');
+  for(let attempt=1;attempt<=maximum;attempt++) {
+    const result=await executeRecoverableImage(execution,{...options,store:options.operationStore,attempt});
+    if(!result.quality_rejected)return result;
+  }
+  return {status:'ATTEMPT_LIMIT_EXHAUSTED',accepted_locked:false,manual_intervention_required:false};
 }
 
 export async function executeImageBatch(executions,options={}){
