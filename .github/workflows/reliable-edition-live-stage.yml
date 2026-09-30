@@ -6,6 +6,7 @@ on:
       - reliable-edition/dab-edition-2026-09-29
     paths:
       - '_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json'
+      - '_records/edition-execution/live/dab-edition-2026-09-29/images/**/result.json'
       - '.github/workflows/reliable-edition-live-stage.yml'
       - '_records/editorial/kernels/2026-09-29.json'
 
@@ -31,6 +32,33 @@ jobs:
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '22'
+
+      - name: Self-heal image controller projection from immutable results
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+        run: |
+          set -euo pipefail
+          current="$(node -e "const fs=require('fs');const s=JSON.parse(fs.readFileSync(process.env.STATE_PATH,'utf8'));process.stdout.write(String(s.current_operation||''));")"
+          if [ "$current" = "images" ]; then
+            node _tools/edition-execution.mjs image-progress --root . --state "$STATE_PATH" --write true > /tmp/image-progress-self-heal.json
+          fi
+
+      - name: Persist self-healed image projection when changed
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+        run: |
+          set -euo pipefail
+          git add "$STATE_PATH"
+          if git diff --cached --quiet; then
+            echo "Image controller projection already matches immutable evidence."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Self-heal image controller projection from immutable results"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
 
       - name: Resolve pinned controller state
         id: state
@@ -118,13 +146,6 @@ jobs:
           if(state.current_operation!=='discovery')throw new Error('stale_discovery_executor');
           if(state.edition.original_cutoff!==cutoff)throw new Error('pinned_cutoff_changed');
           const now=new Date().toISOString();
-          let boundAt='';
-          try{boundAt=execFileSync('git',['log','--diff-filter=A','-1','--format=%cI','--',bindingPath],{encoding:'utf8'}).trim();}catch{}
-          const elapsedSeconds=Number.isFinite(Date.parse(boundAt)) ? Math.max(0,Math.round((Date.parse(now)-Date.parse(boundAt))/1000)) : null;
-          const previousTiming=Array.isArray(state.task06.image_timing_history)&&state.task06.image_timing_history.length
-            ? state.task06.image_timing_history[state.task06.image_timing_history.length-1] : null;
-          const speedTrend=elapsedSeconds!=null&&previousTiming?.elapsed_seconds!=null
-            ? (elapsedSeconds>previousTiming.elapsed_seconds?'slower':elapsedSeconds<previousTiming.elapsed_seconds?'faster':'same') : 'baseline';
           const result={
             result:'pass',
             operation:'discovery',
@@ -468,6 +489,13 @@ jobs:
           if(!/^[a-f0-9]{40}$/.test(finalCommit))throw new Error('final_image_commit_unresolved');
 
           const now=new Date().toISOString();
+          let boundAt='';
+          try{boundAt=execFileSync('git',['log','--diff-filter=A','-1','--format=%cI','--',bindingPath],{encoding:'utf8'}).trim();}catch{}
+          const elapsedSeconds=Number.isFinite(Date.parse(boundAt)) ? Math.max(0,Math.round((Date.parse(now)-Date.parse(boundAt))/1000)) : null;
+          const previousTiming=Array.isArray(state.task06.image_timing_history)&&state.task06.image_timing_history.length
+            ? state.task06.image_timing_history[state.task06.image_timing_history.length-1] : null;
+          const speedTrend=elapsedSeconds!=null&&previousTiming?.elapsed_seconds!=null
+            ? (elapsedSeconds>previousTiming.elapsed_seconds?'slower':elapsedSeconds<previousTiming.elapsed_seconds?'faster':'same') : 'baseline';
           const result={
             schema_version:'reliable-edition-image-attempt-result-v1',
             edition_id:state.edition.edition_id,
@@ -524,46 +552,8 @@ jobs:
           fs.mkdirSync(path.dirname(resultPath),{recursive:true});
           fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
 
-          const order=state.completed?.editorial?.selected_candidate_ids||[];
-          const idx=order.indexOf(candidate);
-          const next=idx>=0?order[idx+1]:null;
-          state.version+=1;
-          state.task06.accepted_images=(state.task06.accepted_images||0)+1;
-          state.task06.last_accepted_candidate_id=candidate;
-          state.task06.last_accepted_result_path=resultPath;
-          state.task06.image_timing_history=[
-            ...(Array.isArray(state.task06.image_timing_history)?state.task06.image_timing_history:[]),
-            {
-              candidate_id:candidate,
-              attempt,
-              bound_at:boundAt||null,
-              accepted_at:now,
-              elapsed_seconds:elapsedSeconds,
-              trend_vs_previous:speedTrend
-            }
-          ].slice(-12);
-          state.task06.speed_review_required=speedTrend==='slower';
-          state.task06.speed_policy='measure_binding_to_durable_acceptance; if slower, simplify non-value-add steps without weakening quality, exact identity, duplicate-generation protection, protected CI, or PUBLIC CLOSED';
-          if(state.task06.accepted_images>=state.task06.required_images){
-            state.task06.status='done';
-            state.task06.substage='all_images_accepted';
-            state.current_operation='seal_bundle';
-            state.task06.current_candidate_id=null;
-            state.task06.current_attempt=null;
-            state.task06.current_operation_key=null;
-            state.task06.next_action='seal_bundle';
-          }else if(next){
-            state.task06.substage=next+'_attempt_1_binding_pending';
-            state.task06.current_candidate_id=next;
-            state.task06.current_attempt=1;
-            state.task06.current_operation_key=null;
-            state.task06.next_action='bind_'+next+'_attempt_1';
-          }else{
-            throw new Error('next_image_candidate_unresolved');
-          }
-          state.updated_at=now;
-          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
           NODE
+          node _tools/edition-execution.mjs image-progress --root . --state "$STATE_PATH" --write true > /tmp/image-progress-after-acceptance.json
 
       - name: Persist reconciled image result and advance image cursor
         if: steps.state.outputs.should_images == 'true'
