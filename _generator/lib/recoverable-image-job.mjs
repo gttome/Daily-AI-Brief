@@ -28,14 +28,15 @@ export async function executeRecoverableImage(execution, {store, host, transport
   const candidate = execution.sealed_story_packet.candidate_id, requestHash = imageExecutionHash(execution);
   assert(idOK(candidate), 'unsafe_candidate_id');
   if (!host || typeof host.generate !== 'function' || typeof host.recover !== 'function' || typeof host.review !== 'function' ||
-      !transport || ['ensure','read'].some(k => typeof transport[k] !== 'function')) {
+      !transport || typeof transport.ensure !== 'function') {
     return {status: 'CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF', accepted_locked: false, attempts_allocated: 0};
   }
   assert(admission?.schema_version === 'image-handoff-proof-v2' && admission.host_id === host.id &&
     admission.release_sha === releaseSha && admission.evidence_type === evidenceType &&
     timeOK(admission.verified_at) && timeOK(admission.expires_at) &&
     /^[a-f0-9]{64}$/.test(admission.raw_sha256 || '') && typeof admission.native_result_id === 'string' && admission.native_result_id &&
-    typeof admission.invocation_id === 'string' && admission.invocation_id && admission.git_readback_verified === true,
+    typeof admission.invocation_id === 'string' && admission.invocation_id &&
+    (admission.git_content_address_verified === true || admission.git_readback_verified === true),
     'valid_current_host_handoff_proof_required');
   const binding = {schema_version: 'recoverable-image-job-v1', edition_id: editionId, edition_date: editionDate,
     request_sha256: requestHash, candidate_id: candidate, attempt, release_sha: releaseSha,
@@ -57,9 +58,15 @@ export async function executeRecoverableImage(execution, {store, host, transport
   async function exactStore(file, bytes, key) {
     const result = await transport.ensure(file, bytes, {key});
     assert(result.path === file && empty(result.owner_interventions) && timeOK(result.persisted_at), 'invalid_transport_result');
-    const back = await transport.read(file, result.commit_sha);
-    assert(Buffer.isBuffer(back) && back.equals(bytes) && blob(back) === result.git_blob_sha, 'exact_byte_readback_failed');
-    return {...result, sha256: hashBytes(back), read_back_verified: true};
+    const expectedBlob = blob(bytes), expectedSha256 = hashBytes(bytes);
+    assert(result.git_blob_sha === expectedBlob && result.content_address_verified === true, 'exact_git_content_identity_failed');
+    if (result.read_back_verified === true) {
+      assert(typeof transport.read === 'function', 'readback_claim_without_reader');
+      const back = await transport.read(file, result.commit_sha);
+      assert(Buffer.isBuffer(back) && back.equals(bytes) && blob(back) === expectedBlob, 'exact_byte_readback_failed');
+    }
+    return {...result, sha256: expectedSha256, content_address_verified: true,
+      read_back_verified: result.read_back_verified === true};
   }
   const steps = [
     {id: 'generate', run: async c => {
@@ -111,8 +118,13 @@ export async function executeRecoverableImage(execution, {store, host, transport
   if (outcome.state.status === 'complete') {
     const receipt = outcome.state.results.receipt;
     // Always recheck saved final bytes before reuse, without repeating generation or review.
-    const bytes = await transport.read(receipt.persistence.path, receipt.persistence.commit_sha);
-    assert(Buffer.isBuffer(bytes) && hashBytes(bytes) === receipt.persistence.sha256 && blob(bytes) === receipt.persistence.git_blob_sha, 'accepted_bytes_changed');
+    if (receipt.persistence.read_back_verified === true && typeof transport.read === 'function') {
+      const bytes = await transport.read(receipt.persistence.path, receipt.persistence.commit_sha);
+      assert(Buffer.isBuffer(bytes) && hashBytes(bytes) === receipt.persistence.sha256 && blob(bytes) === receipt.persistence.git_blob_sha, 'accepted_bytes_changed');
+    } else {
+      assert(receipt.persistence.content_address_verified === true && /^[a-f0-9]{40}$/.test(receipt.persistence.git_blob_sha || ''),
+        'accepted_content_address_missing');
+    }
     return {...receipt, job_key: outcome.key, journal_revision: outcome.state.version, reused: outcome.executed === 0};
   }
   return {...outcome, accepted_locked: false, quality_rejected: outcome.blocker === 'IMAGE_QUALITY_REJECTED'};
@@ -134,11 +146,17 @@ export async function proveImageHandoff({host, transport, probeKey, expected, re
     ['live','fixture'].includes(g.evidence_type), 'native_probe_bytes_or_identity_mismatch');
   const destination = `_records/image-attempts/handoff-proof/${probeKey}/raw.png`;
   const stored = await transport.ensure(destination, g.bytes, {key: probeKey});
-  const readback = await transport.read(destination, stored.commit_sha);
-  assert(Buffer.isBuffer(readback) && readback.equals(g.bytes) && stored.git_blob_sha === blob(readback), 'probe_git_readback_failed');
+  const expectedBlob = blob(g.bytes), expectedSha256 = hashBytes(g.bytes);
+  assert(stored.git_blob_sha === expectedBlob && stored.content_address_verified === true, 'probe_git_content_identity_failed');
+  if (stored.read_back_verified === true) {
+    assert(typeof transport.read === 'function', 'probe_readback_claim_without_reader');
+    const readback = await transport.read(destination, stored.commit_sha);
+    assert(Buffer.isBuffer(readback) && readback.equals(g.bytes) && blob(readback) === expectedBlob, 'probe_git_readback_failed');
+  }
   const verifiedAt = now(); assert(timeOK(verifiedAt), 'timezone_timestamp_required');
   return {schema_version: 'image-handoff-proof-v2', host_id: host.id, release_sha: releaseSha, evidence_type: g.evidence_type,
     invocation_id: recovered.invocation_id, operation_key: probeKey, native_result_id: g.call_id, artifact_id: g.artifact_id,
-    raw_sha256: hashBytes(readback), git_blob_sha: blob(readback), git_commit_sha: stored.commit_sha,
-    git_readback_verified: true, verified_at: verifiedAt, expires_at: new Date(Date.parse(verifiedAt) + validityMs).toISOString()};
+    raw_sha256: expectedSha256, git_blob_sha: expectedBlob, git_commit_sha: stored.commit_sha,
+    git_content_address_verified: true, git_readback_verified: stored.read_back_verified === true,
+    verified_at: verifiedAt, expires_at: new Date(Date.parse(verifiedAt) + validityMs).toISOString()};
 }

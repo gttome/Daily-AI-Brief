@@ -165,7 +165,8 @@ export function verifyAdmissionEvidence(root, proof, {releaseSha, now = new Date
   assert(proof?.schema_version === 'image-handoff-proof-v2' && proof.evidence_type === 'live' && proof.release_sha === releaseSha &&
     typeof proof.host_id === 'string' && proof.host_id && typeof proof.invocation_id === 'string' && proof.invocation_id &&
     typeof proof.native_result_id === 'string' && proof.native_result_id && typeof proof.artifact_id === 'string' && proof.artifact_id &&
-    /^[a-f0-9]{64}$/.test(proof.operation_key || '') && proof.git_readback_verified === true && validSha(proof.git_commit_sha),
+    /^[a-f0-9]{64}$/.test(proof.operation_key || '') &&
+    (proof.git_content_address_verified === true || proof.git_readback_verified === true) && validSha(proof.git_commit_sha),
     'CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF');
   assert(stamp(proof.verified_at) && stamp(proof.expires_at) && Date.parse(proof.verified_at) <= Date.parse(now) &&
     Date.parse(proof.expires_at) > Date.parse(now) && Date.parse(proof.expires_at)-Date.parse(proof.verified_at) <= 86400000,

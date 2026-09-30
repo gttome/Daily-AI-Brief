@@ -2,8 +2,9 @@
 
 > [!IMPORTANT]
 > Read live machine evidence before narrative status. This entry point is a current
-> index, not another run-state record. Normal image transport remains `connector-first-v1`;
-> missing complete binary payload delivery is `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`.
+> index, not another run-state record. Normal image transport remains `connector-first-v1`, implemented through the permanent simple lifecycle **generate → transfer file → verify content identity → review → accept/reject**.
+> Git content-address identity is the primary persistence verification; optional raw reread must not become a publication blocker.
+> When complete binary payload delivery itself is unavailable, retain the existing classification `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`.
 > Preserve all V2 raw/final provenance, exact-byte verification and professional-quality
 > gates. A current denial stops that operation; do not use another endpoint to evade it.
 
@@ -32,7 +33,12 @@ sharing/access settings, accepted images, public archives and historical failure
 3. Reuse valid frozen inputs, original cutoffs, source dates, accepted images and stage
    receipts. Before consequential retries reconcile uncertain outcomes. Finish every
    available dependent step in the current invocation rather than ending at a status note.
-4. Report scheduled, queued, running, completed, failed, blocked and not-started accurately.
+4. **Simplify before expanding:** whenever a blocker holds publication, first determine
+   whether an existing component or a smaller contract can satisfy the real invariant.
+   Prefer one reusable primitive and fewer handoffs over adding probes, workflows,
+   supervisors or evidence layers. Preserve quality, provenance and protected publication
+   gates, but remove redundant proof machinery when it becomes the blocker.
+5. Report scheduled, queued, running, completed, failed, blocked and not-started accurately.
    An enabled schedule, prepared request or green component test is not execution or a
    finished Brief. Preserve the exact evidence and smallest unresolved next operation.
 
@@ -85,9 +91,12 @@ Use [automated image execution](automated-image-execution.md),
 Review is a later logical phase, not a mandatory separate conversation. Hidden context
 isolation is not asserted. No owner-managed fresh chats or Library handoffs are required.
 Git Data uses complete real bytes, `create_blob`, `create_tree`, `create_commit` and a
-non-force `update_ref` against the live handoff tree/parent. No local token is required
-for the authenticated connector. Contents-based file transfer remains an independent
-host-side utility, not the normal image lane or a prerequisite for it.
+non-force `update_ref` against the live handoff tree/parent. The exact local file's
+SHA-256 and Git blob are computed before transfer; GitHub must return the same blob and
+that blob must be bound into the committed tree. That content-address proof is sufficient
+for exact persistence. Raw reread is optional additional verification when available.
+No local token is required for the authenticated connector. The reusable file-transfer
+primitive is now the normal production image transport rather than a separate proof lane.
 
 The same verified content bundle proceeds through a separate production identity,
 protected PR/CI, exact-SHA deployment, actual reader verification and lifecycle

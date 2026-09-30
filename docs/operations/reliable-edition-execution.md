@@ -26,15 +26,23 @@ fully completed public Briefs, not two fixture or qualification results.
 
 ## One image job, durable at every boundary
 
-`generate -> capture -> prepare -> review -> persist -> receipt`
+`generate -> transfer file -> verify identity -> prepare/review -> accept or reject -> receipt`
 
 The job owns result delivery. It stores the native result bytes and exact identity
 before continuing. A supervisor reads that record, not a guessed filename or an
 unbounded conversation/Library search. Generated and reviewed byte objects are
 content-addressed and immutable. Normalization occurs before review and only its
-saved output is used thereafter. Raw/final Git verification and the existing V2
-receipt validator remain mandatory. Individual acceptance does not grant six-image
-set differentiation or publication approval.
+saved output is used thereafter.
+
+**Permanent simple image lifecycle:** generate one PNG, transfer that exact file once,
+verify its locally computed SHA-256 and Git blob identity against the GitHub-returned
+content-addressed blob and committed tree, then review it. If review passes, persist the
+accepted final bytes with the same content-address check; if review fails, close that
+attempt and bind the next attempt. A second raw binary download is optional strengthening
+when the host supports it; it is not a publication blocker when Git content identity is
+already proven. Raw/final provenance and the existing V2 receipt validator remain
+mandatory. Individual acceptance does not grant six-image set differentiation or
+publication approval.
 
 The adapter gets a stable operation key before invoking native generation. It must
 be able to recover the **same actual operation**. After an uncertain response, the
@@ -46,17 +54,31 @@ is used to evade it.
 
 `connectorImageDelivery` encodes actual Buffer bytes internally, invokes the existing
 `create_blob`, `create_tree`, `create_commit` and non-force `update_ref` interfaces,
-then reads the committed bytes through a supplied binary reader. Existing matching
-paths are verified and reused without another write. Different bytes cannot replace
-an image silently. The current branch tree and parent are retained; stale writers
-cannot force a ref. There is no local-token requirement, public relay, partial
-Base64 shuttle or owner upload step.
+and requires GitHub's returned blob identity to equal the Git blob computed from the
+exact local bytes. That content-address match plus the committed tree binding is the
+primary exact-byte verification. When a binary reader is available, the implementation
+may additionally re-read and compare the raw bytes, but absence of that optional reread
+does not block a content-address-verified image. Existing matching paths are verified
+and reused without another write. Different bytes cannot replace an image silently.
+The current branch tree and parent are retained; stale writers cannot force a ref.
+There is no local-token requirement, public relay, partial Base64 shuttle or owner
+upload step.
 
 **Host integration is explicit.** Repository code cannot call a native ChatGPT tool
 merely by declaring a callback. The current tool surface has not demonstrated a
 programmatic native producer/result bridge and complete-byte connector adapter on
 one recoverable execution host. Keep that limitation visible. Do not call fixture
 replays, past image downloads or readiness flags a new unattended native success.
+
+## Simplification-first blocker rule
+
+Whenever publication is blocked, first ask whether the current requirement can be met
+with fewer moving parts while preserving the actual quality, provenance, safety and
+publication contracts. Prefer deleting redundant proof layers, reusing one existing
+transport primitive and resuming the current artifact over adding another workflow,
+probe, executor, handoff format or recovery service. Complexity is justified only when
+the simpler path cannot preserve a required invariant. Record the smallest blocker and
+the simplification considered before adding infrastructure.
 
 ## Deterministic continuation and one state source
 
