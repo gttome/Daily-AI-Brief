@@ -2,7 +2,7 @@
   "schema_version": "1.1.0",
   "profile_id": "under80-v1",
   "gate": "metadata_prefilter_before_model_exposure",
-  "cutoff": "2026-09-30T00:03:07.131Z",
+  "cutoff": "2026-09-30T00:03:07.131932Z",
   "article_freshness_policy": "article-24-72-168-v1",
   "ordinary_max_age_hours": 168,
   "agent_skills_max_age_hours": 168,
