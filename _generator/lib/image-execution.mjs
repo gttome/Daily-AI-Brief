@@ -69,12 +69,14 @@ export function validateImageExecutionReceipt(r,e,{assetSha256=null,gitBlobSha=n
   if(r.fallback_used!==false||r.account_billing_observed!==false)errors.push('image_receipt_boundary_invalid');
   for(const key of ['work_invocations','codex_invocations','paid_model_api_calls'])if(r[key]!==0)errors.push('image_cost_boundary:'+key);
   const g=r.generation||{},v=r.review||{},p=r.persistence||{},raw=g.raw_capture||{};
-  if(!safePath(raw.path)||!raw.path.startsWith('_records/image-attempts/')||raw.sha256!==g.raw_sha256||!/^[a-f0-9]{40}$/.test(raw.git_blob_sha||'')||raw.read_back_verified!==true)errors.push('durable_raw_image_capture_required');
+  if(!safePath(raw.path)||!raw.path.startsWith('_records/image-attempts/')||raw.sha256!==g.raw_sha256||!/^[a-f0-9]{40}$/.test(raw.git_blob_sha||'')||
+    !(raw.content_address_verified===true||raw.read_back_verified===true))errors.push('durable_raw_image_capture_required');
   if(g.evidence_type!==r.evidence_type||!zeroUsage(g.usage)||!noOwner(g.owner_interventions)||g.executor!=='native_chatgpt_image_generation'||!nonempty(g.call_id)||!nonempty(g.artifact_id)||!stamp(g.generated_at)||!/^[a-f0-9]{64}$/.test(g.raw_sha256||''))errors.push('native_image_generation_evidence_required');
   if(!zeroUsage(v.usage)||!noOwner(v.owner_interventions)||v.mode!=='automated'||v.phase!=='after_generation'||!nonempty(v.call_id)||!stamp(v.reviewed_at)||Date.parse(v.reviewed_at)<Date.parse(g.generated_at))errors.push('automated_post_generation_review_required');
   for(const key of ['subject_match','factual_support','structural_quality','editorial_quality'])if(v[key]!=='pass')errors.push('automated_image_review_not_pass:'+key);
   if(!/^[a-f0-9]{64}$/.test(v.asset_sha256||'')||v.asset_sha256!==p.sha256)errors.push('reviewed_image_bytes_mismatch');
-  if(!safePath(p.path)||!p.path.startsWith('briefs/images/')||!/^[a-f0-9]{40}$/.test(p.git_blob_sha||'')||p.read_back_verified!==true||!stamp(p.persisted_at)||Date.parse(p.persisted_at)<Date.parse(v.reviewed_at))errors.push('exact_image_persistence_required');
+  if(!safePath(p.path)||!p.path.startsWith('briefs/images/')||!/^[a-f0-9]{40}$/.test(p.git_blob_sha||'')||
+    !(p.content_address_verified===true||p.read_back_verified===true)||!stamp(p.persisted_at)||Date.parse(p.persisted_at)<Date.parse(v.reviewed_at))errors.push('exact_image_persistence_required');
   if(assetSha256&&p.sha256!==assetSha256)errors.push('persisted_image_sha256_mismatch');
   if(gitBlobSha&&p.git_blob_sha!==gitBlobSha)errors.push('persisted_image_git_blob_mismatch');
   if(r.status!==(r.evidence_type==='live'?'accepted_locked':'fixture_pass'))errors.push('image_receipt_status_invalid');
