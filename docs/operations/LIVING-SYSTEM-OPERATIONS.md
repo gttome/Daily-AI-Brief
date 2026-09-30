@@ -1,5 +1,19 @@
 # Daily Generative AI Brief
 
+
+> [!IMPORTANT]
+> **September 29, 2026 — permanent image simplification.** Production image handling is now
+> one lifecycle: **generate → transfer file → verify Git content identity → review →
+> accept/reject**. Compute SHA-256 and Git blob from the exact PNG, write once, require
+> GitHub's returned blob/tree binding to match, and continue. Raw binary reread is optional
+> strengthening, not a hard publication gate when content identity is already proven.
+> Quality rejection advances the bounded attempt; transport uncertainty resumes the same
+> bytes. Do not create per-image workflows, probes, Base64 text handoffs or owner uploads.
+> For every future publication blocker, perform a **simplification-first assessment** before
+> adding machinery: reuse an existing primitive, remove redundant proof layers, and choose
+> the smallest change that preserves required quality, provenance, safety and PUBLIC CLOSED
+> gates.
+
 ## September 29, 2026 — Recoverable edition execution (staged integration)
 
 > [!IMPORTANT]
