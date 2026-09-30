@@ -18,6 +18,27 @@ export function researchCutoffMatchesBriefDate(researchCutoffAt,briefDate){
 }
 const slug=value=>String(value||'story').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,100).replace(/-$/,'')||'story';
 
+function canonicalSelectedNovelty(fact,metadata){
+ const novelty=fact?.novelty;
+ if(novelty?.disposition==='selected_locked'){
+  if(metadata?.production_novelty_eligible!==true)throw Error(`Selected story is not production-novelty eligible: ${metadata?.candidate_id||'unknown'}`);
+  return {disposition:'new',prior_story_ids:[],what_changed:null};
+ }
+ return novelty?{...novelty}:{disposition:'new',prior_story_ids:[],what_changed:null};
+}
+
+function canonicalIncludedPodcast(podcast,briefDate,index){
+ const sourceId=slug(podcast?.item_id||podcast?.show||podcast?.title||`podcast-${index+1}`);
+ const titleSlug=slug(podcast?.title||sourceId);
+ const prefix=`dab-podcast-${briefDate}-`;
+ const itemId=String(podcast?.item_id||'').startsWith(prefix)?podcast.item_id:`${prefix}${sourceId}`;
+ const permanentUrl=String(podcast?.permanent_url||'').startsWith(`/podcasts/${briefDate}/`)?podcast.permanent_url:`/podcasts/${briefDate}/${titleSlug}/`;
+ const platforms=Array.isArray(podcast?.platforms)&&podcast.platforms.length?podcast.platforms:[{name:podcast?.show||'Podcast source',url:podcast?.url}];
+ return {...podcast,ordinal:9+index,item_id:itemId,permanent_url:permanentUrl,platforms,
+  verification_note:podcast?.verification_note||`Locked media-stage verification retained the ${podcast?.publication_date||'verified'} publication date for this selected episode.`,
+  coverage_note:podcast?.coverage_note||`Reused the completed ${briefDate} media checkpoint; no media selection or source-content rediscovery.`};
+}
+
 export function validateEditorialKernel(kernel){
  const errors=[];
  if(kernel?.media_freshness_policy!=null&&kernel.media_freshness_policy!==MEDIA_FRESHNESS_POLICY)errors.push('unknown_media_freshness_policy');
@@ -110,12 +131,12 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
   const sourceReading=sourceWordCount?{status:'verified',word_count:sourceWordCount,verified_at:fact.source_fetched_at||fact.source?.word_count_verified_at||publishedAt,method:fact.source_word_count_method||fact.source?.word_count_method||'retrieved_source_text_word_count',words_per_minute:200}:null;
   const selectionRationale=fact.selection_rationale||fact.score?.rationale||story.why_it_matters;
   const candidateScore=fact.candidate_score?{...fact.candidate_score,selection_rationale:fact.candidate_score.selection_rationale||selectionRationale}:undefined;
-  return {story_id:`dab-story-${normalized.brief_date}-${idSuffix}`,ordinal:story.canonical_ordinal,slug:storySlug,permanent_url:`/stories/${normalized.brief_date}/${storySlug}/`,focus:story.focus,headline:story.headline,event_date:fact.event_date,topics:[...story.topic_labels],companies:[...(fact.companies||[])],image:{path:image.path,public_url:publicImage,alt:image.alt,width:image.width||1200,height:image.height||630,kind:image.kind||'editorial_explainer',...(image.cache_key?{cache_key:image.cache_key}:{})},summary:story.summary,why_it_matters:story.why_it_matters,source:{title:fact.source.title,organization:fact.source.organization,url:story.source_url,normalized_url:story.source_url,publication_date:fact.source.publication_date??sourcePublishedAt.slice(0,10),evidence_type:fact.source.evidence_type,availability_status:fact.source.availability_status,...(sourceReading?{reading_evidence:sourceReading}:{})},freshness,selection_rationale:selectionRationale,novelty:fact.novelty?{...fact.novelty}:{disposition:'new',prior_story_ids:[],what_changed:null},candidate_score:candidateScore,what_to_do_now:{...story.what_to_do_now},social_description:story.why_it_matters.slice(0,180),social:{title:story.headline,description:story.why_it_matters.slice(0,180),image_url:publicImage}};
+  return {story_id:`dab-story-${normalized.brief_date}-${idSuffix}`,ordinal:story.canonical_ordinal,slug:storySlug,permanent_url:`/stories/${normalized.brief_date}/${storySlug}/`,focus:story.focus,headline:story.headline,event_date:fact.event_date,topics:[...story.topic_labels],companies:[...(fact.companies||[])],image:{path:image.path,public_url:publicImage,alt:image.alt,width:image.width||1200,height:image.height||630,kind:image.kind||'editorial_explainer',...(image.cache_key?{cache_key:image.cache_key}:{})},summary:story.summary,why_it_matters:story.why_it_matters,source:{title:fact.source.title,organization:fact.source.organization,url:story.source_url,normalized_url:story.source_url,publication_date:fact.source.publication_date??sourcePublishedAt.slice(0,10),evidence_type:fact.source.evidence_type,availability_status:fact.source.availability_status,...(sourceReading?{reading_evidence:sourceReading}:{})},freshness,selection_rationale:selectionRationale,novelty:canonicalSelectedNovelty(fact,metadata),candidate_score:candidateScore,what_to_do_now:{...story.what_to_do_now},social_description:story.why_it_matters.slice(0,180),social:{title:story.headline,description:story.why_it_matters.slice(0,180),image_url:publicImage}};
  });
  const canonicalCoverage=`24-hour primary window ending at ${researchCutoffAt}${fallbackUsed?'; recency fallback used for reviewed items outside the primary window.':'.'}`;
  const base={schema_version:'1.0.0',...(normalized.media_freshness_policy?{media_freshness_policy:normalized.media_freshness_policy}:{}),...(currentFreshness?{article_freshness_policy:ARTICLE_FRESHNESS_POLICY}:{}),policy_profile:'under80-v1',edition_id:normalized.edition_id,brief_date:normalized.brief_date,timezone:'America/Chicago',title:`Daily Generative AI Brief — ${new Date(`${normalized.brief_date}T12:00:00Z`).toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric',timeZone:'UTC'})}`,published_at:publishedAt,research_cutoff_at:researchCutoffAt,coverage_period:canonicalCoverage,status:'staged',stories,worth_watching:media?.worth_watching||{general:{status:'empty',exception:'No video met today’s editorial quality standards.'},agents_non_technical_people:{status:'empty',exception:'No video met today’s editorial quality standards.'}},editorial_takeaway:normalized.editorial_takeaway,provenance:{created_by:createdBy,created_at:publishedAt,source_commit:normalized.baseline_sha}};
  if(normalized.brief_date>=MULTI_PODCAST_EFFECTIVE_DATE){
-  const publishablePodcasts=Array.isArray(media?.podcasts)?media.podcasts.filter(item=>item?.status==='included'):[];
+  const publishablePodcasts=Array.isArray(media?.podcasts)?media.podcasts.filter(item=>item?.status==='included').map((item,index)=>canonicalIncludedPodcast(item,normalized.brief_date,index)):[];
   return {...base,podcasts:publishablePodcasts};
  }
  return {...base,...(media?.podcast?.status==='included'?{podcast:media.podcast}:{})};

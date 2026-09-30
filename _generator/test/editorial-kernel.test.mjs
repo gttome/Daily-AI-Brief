@@ -37,6 +37,26 @@ test('deterministic expansion owns ids slugs URLs source metadata image metadata
  assert.equal(edition.status,'staged');assert.equal(edition.policy_profile,'under80-v1');assert.equal(edition.stories.length,6);assert.match(edition.stories[0].story_id,/^dab-story-2026-09-18-[0-9a-f]{8}$/);assert.equal(edition.stories[0].ordinal,1);assert.equal(edition.stories[0].permanent_url,'/stories/2026-09-18/a-substantive-verified-headline-1/');assert.equal(edition.stories[0].source.organization,'Example AI');assert.equal(edition.stories[0].source.reading_evidence.word_count,800);assert.equal(edition.stories[0].source.reading_evidence.words_per_minute,200);assert.match(edition.stories[0].image.public_url,/0[1]-story\.png\?v=20260918$/);assert.equal(edition.stories[0].social.title,kernel.stories[0].headline);assert.equal(edition.worth_watching.general.status,'empty');assert.equal(edition.research_cutoff_at,'2026-09-18T14:41:06Z');assert.match(edition.coverage_period,/24-hour primary window/);assert.equal(edition.stories[0].freshness.tier,'primary');assert.equal(edition.stories[2].freshness.tier,'fallback');assert.equal(edition.stories[0].candidate_score.selection_rationale,'Highest qualifying candidate in its approved category.');
 });
 
+test('selected_locked adapter normalizes production-eligible novelty and locked podcast publication fields',()=>{
+ const candidateFacts={},imageAssets={},metadataCandidates={cutoff:'2026-09-18T14:41:06Z',candidates:[]};
+ for(let i=0;i<6;i++){
+  candidateFacts[`candidate-${i+1}`]={event_date:'2026-09-18',companies:['Example AI'],source:{title:`Source ${i+1}`,organization:'Example AI',url:`https://example.org/story-${i+1}`,publication_date:'2026-09-18',evidence_type:'official_announcement',availability_status:'general_availability'},novelty:{disposition:i===0?'selected_locked':'new',...(i===0?{}:{prior_story_ids:[],what_changed:null})},selection_rationale:'Qualified selected story.'};
+  metadataCandidates.candidates.push({candidate_id:`candidate-${i+1}`,canonical_url:`https://example.org/story-${i+1}`,published_at:'2026-09-18T10:00:00Z',production_novelty_eligible:true});
+  imageAssets[`candidate-${i+1}`]={path:`briefs/images/2026-09-18/0${i+1}-story.png`,alt:`Detailed story image ${i+1}.`,width:1200,height:630,kind:'editorial_explainer',cache_key:'adapter'};
+ }
+ const media={podcasts:[
+  {status:'included',item_id:'locked-one',title:'Locked Podcast One',show:'Show One',host:'Host One',publication_date:'2026-09-18',runtime_seconds:null,focus:'technical_ai_engineering',topics:['agents'],url:'https://example.org/podcast-one',summary:'Locked podcast summary one.',why_useful:'Useful locked context one.',selection_rationale:'Locked media selection one.',freshness_tier:'primary_48h',connection:'Connection one.'},
+  {status:'included',item_id:'locked-two',title:'Locked Podcast Two',show:'Show Two',host:'Host Two',publication_date:'2026-09-18',runtime_seconds:null,focus:'applied_genai_knowledge_workers',topics:['workflows'],url:'https://example.org/podcast-two',summary:'Locked podcast summary two.',why_useful:'Useful locked context two.',selection_rationale:'Locked media selection two.',freshness_tier:'primary_48h',connection:'Connection two.'}
+ ]};
+ const edition=expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadataCandidates,media,publishedAt:'2026-09-18T15:00:00Z',coveragePeriod:'Qualification coverage sentence retained as handoff input.'});
+ assert.deepEqual(edition.stories[0].novelty,{disposition:'new',prior_story_ids:[],what_changed:null});
+ assert.match(edition.podcasts[0].item_id,/^dab-podcast-2026-09-18-/);
+ assert.match(edition.podcasts[0].permanent_url,/^\/podcasts\/2026-09-18\//);
+ assert.ok(edition.podcasts[0].verification_note);
+ assert.ok(edition.podcasts[0].coverage_note);
+ assert.equal(edition.podcasts[0].platforms[0].url,'https://example.org/podcast-one');
+});
+
 test('deterministic ownership keeps editorial semantics in the kernel and derived publication mechanics in code',()=>{
  const ownership=deterministicOwnership();assert.ok(ownership.owned_by_code.includes('archive_and_feed_derivatives'));assert.ok(ownership.owned_by_code.includes('completion_receipt'));assert.ok(ownership.owned_by_editorial_kernel.includes('story_selection'));assert.match(ownership.rule,/normal Work processing ends/);
 });
