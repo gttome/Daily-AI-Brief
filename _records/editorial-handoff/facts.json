@@ -13,7 +13,9 @@
       "tier": "selected_under_article-24-72-168-v1"
     },
     "novelty": {
-      "disposition": "selected_locked"
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
     }
   },
   "m03": {
@@ -30,7 +32,9 @@
       "tier": "selected_under_article-24-72-168-v1"
     },
     "novelty": {
-      "disposition": "selected_locked"
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
     }
   },
   "m05": {
@@ -47,7 +51,9 @@
       "tier": "selected_under_article-24-72-168-v1"
     },
     "novelty": {
-      "disposition": "selected_locked"
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
     }
   },
   "m06": {
@@ -64,7 +70,9 @@
       "tier": "selected_under_article-24-72-168-v1"
     },
     "novelty": {
-      "disposition": "selected_locked"
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
     }
   },
   "m01": {
@@ -81,7 +89,9 @@
       "tier": "selected_under_article-24-72-168-v1"
     },
     "novelty": {
-      "disposition": "selected_locked"
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
     }
   },
   "m08": {
@@ -98,7 +108,9 @@
       "tier": "selected_under_article-24-72-168-v1"
     },
     "novelty": {
-      "disposition": "selected_locked"
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
     }
   }
 }
