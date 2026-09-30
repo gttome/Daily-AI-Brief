@@ -21,7 +21,7 @@
     "metadata_candidates": {
       "path": "_records/editorial-handoff/metadata-candidates.json",
       "schema_version": "1.1.0",
-      "digest": "git_blob_sha1:750892fe2374bb4136b8d8d8571e271bfce814fe"
+      "digest": "git_blob_sha1:1c2ce9b01a87e77b17e69d33e53215cc5ab5330d"
     },
     "article_evidence": {
       "path": "_records/editorial-handoff/article-evidence.json",
