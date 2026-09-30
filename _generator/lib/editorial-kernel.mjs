@@ -8,6 +8,14 @@ export const STORY_FOCUSES=['technical_ai_engineering','applied_genai_knowledge_
 const SEMANTIC_TEXT_FIELDS=['candidate_id','headline','summary','why_it_matters','editorial_limitation'];
 const ACTIONS=['test','monitor','update_policy','teach','adopt','evaluate','ignore_for_now'];
 const str=(v,min=1)=>typeof v==='string'&&v.trim().length>=min;
+export function researchCutoffMatchesBriefDate(researchCutoffAt,briefDate){
+ const ms=Date.parse(researchCutoffAt||'');
+ if(!Number.isFinite(ms)||!/^\d{4}-\d{2}-\d{2}$/.test(briefDate||''))return false;
+ if(String(researchCutoffAt).startsWith(briefDate))return true;
+ const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'}).formatToParts(new Date(ms));
+ const byType=Object.fromEntries(parts.map(p=>[p.type,p.value]));
+ return `${byType.year}-${byType.month}-${byType.day}`===briefDate;
+}
 const slug=value=>String(value||'story').normalize('NFKD').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,100).replace(/-$/,'')||'story';
 
 export function validateEditorialKernel(kernel){
@@ -64,7 +72,7 @@ export function expandEditorialKernel(kernel,{candidateFacts,imageAssets,metadat
   metadataCandidates={cutoff:publishedAt,candidates:Object.entries(candidateFacts).map(([candidate_id,fact])=>({candidate_id,canonical_url:fact?.source?.url,published_at:fact?.source?.publication_date?`${fact.source.publication_date}T00:00:00Z`:fact?.event_date?`${fact.event_date}T00:00:00Z`:null}))};
  }
  const researchCutoffAt=metadataCandidates.cutoff;
- if(!Number.isFinite(Date.parse(researchCutoffAt||''))||!String(researchCutoffAt).startsWith(normalized.brief_date))throw Error('Verified same-date research cutoff required from metadata gate');
+ if(!researchCutoffMatchesBriefDate(researchCutoffAt,normalized.brief_date))throw Error('Verified same-date research cutoff required from metadata gate');
  if(normalized.media_freshness_policy!=null)mediaReferenceTime({date:normalized.brief_date,cutoff:researchCutoffAt,policy:normalized.media_freshness_policy});
  const metadataById=new Map(metadataCandidates.candidates.map(item=>[item.candidate_id,item]));
  const currentFreshness=metadataCandidates.article_freshness_policy===ARTICLE_FRESHNESS_POLICY;
