@@ -1,5 +1,17 @@
 # Daily Generative AI Brief
 
+> [!IMPORTANT]
+> **September 30, 2026 — first-attempt image hardening.** Before native generation, compile
+> each sealed story packet into `strict-image-render-spec-v1`. The render prompt excludes
+> headline, source URL and orchestration identifiers; visible text is an exact allowlist;
+> people/faces/avatars/group icons/humanoids are prohibited; and the prompt explicitly
+> forbids cross-story visual carryover. A deterministic lint rejects positive use of any
+> story-specific prohibited term before generation and consumes zero attempts. This guard
+> is part of the existing image lifecycle, not another workflow, probe or qualification
+> system. Post-generation V2 quality review and Git content-address verification remain
+> unchanged.
+
+
 
 > [!IMPORTANT]
 > **September 29, 2026 — permanent image simplification.** Production image handling is now
