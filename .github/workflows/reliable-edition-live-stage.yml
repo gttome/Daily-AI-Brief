@@ -118,6 +118,13 @@ jobs:
           if(state.current_operation!=='discovery')throw new Error('stale_discovery_executor');
           if(state.edition.original_cutoff!==cutoff)throw new Error('pinned_cutoff_changed');
           const now=new Date().toISOString();
+          let boundAt='';
+          try{boundAt=execFileSync('git',['log','--diff-filter=A','-1','--format=%cI','--',bindingPath],{encoding:'utf8'}).trim();}catch{}
+          const elapsedSeconds=Number.isFinite(Date.parse(boundAt)) ? Math.max(0,Math.round((Date.parse(now)-Date.parse(boundAt))/1000)) : null;
+          const previousTiming=Array.isArray(state.task06.image_timing_history)&&state.task06.image_timing_history.length
+            ? state.task06.image_timing_history[state.task06.image_timing_history.length-1] : null;
+          const speedTrend=elapsedSeconds!=null&&previousTiming?.elapsed_seconds!=null
+            ? (elapsedSeconds>previousTiming.elapsed_seconds?'slower':elapsedSeconds<previousTiming.elapsed_seconds?'faster':'same') : 'baseline';
           const result={
             result:'pass',
             operation:'discovery',
@@ -504,6 +511,14 @@ jobs:
             work_invocations:0,
             codex_invocations:0,
             paid_model_api_calls:0,
+            timing:{
+              clock:'binding_to_durable_acceptance',
+              bound_at:boundAt||null,
+              accepted_at:now,
+              elapsed_seconds:elapsedSeconds,
+              previous_elapsed_seconds:previousTiming?.elapsed_seconds??null,
+              trend_vs_previous:speedTrend
+            },
             recorded_at:now
           };
           fs.mkdirSync(path.dirname(resultPath),{recursive:true});
@@ -516,6 +531,19 @@ jobs:
           state.task06.accepted_images=(state.task06.accepted_images||0)+1;
           state.task06.last_accepted_candidate_id=candidate;
           state.task06.last_accepted_result_path=resultPath;
+          state.task06.image_timing_history=[
+            ...(Array.isArray(state.task06.image_timing_history)?state.task06.image_timing_history:[]),
+            {
+              candidate_id:candidate,
+              attempt,
+              bound_at:boundAt||null,
+              accepted_at:now,
+              elapsed_seconds:elapsedSeconds,
+              trend_vs_previous:speedTrend
+            }
+          ].slice(-12);
+          state.task06.speed_review_required=speedTrend==='slower';
+          state.task06.speed_policy='measure_binding_to_durable_acceptance; if slower, simplify non-value-add steps without weakening quality, exact identity, duplicate-generation protection, protected CI, or PUBLIC CLOSED';
           if(state.task06.accepted_images>=state.task06.required_images){
             state.task06.status='done';
             state.task06.substage='all_images_accepted';
