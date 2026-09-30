@@ -43,13 +43,13 @@
       "path": "_records/editorial-handoff/images.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:352dabe02da5f4d313a297c57942ccd0e1d54e56"
+      "digest": "git_blob_sha1:8f22601e8f4768a6cda7b9ab63288d7eb0dbdb4d"
     },
     "image_review": {
       "path": "_records/editorial-handoff/images.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:352dabe02da5f4d313a297c57942ccd0e1d54e56"
+      "digest": "git_blob_sha1:8f22601e8f4768a6cda7b9ab63288d7eb0dbdb4d"
     },
     "watchlist": {
       "path": "_records/editorial-handoff/watchlist-2026-09-29.json",
@@ -69,7 +69,7 @@
     "image_quality_evidence": {
       "path": "_records/image-quality/2026-09-29-editorial-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:4d484ab0545815df1ce900427ea47fd587fca665"
+      "digest": "git_blob_sha1:ce20da2548533152879f7302d8172dfeeda43511"
     }
   },
   "freeze": {
