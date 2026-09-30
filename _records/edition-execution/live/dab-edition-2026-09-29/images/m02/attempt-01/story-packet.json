@@ -1,0 +1,35 @@
+{
+  "schema_version": "reliable-edition-image-story-packet-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "edition_date": "2026-09-29",
+  "release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+  "operation_key": "dab-edition-2026-09-29-m02-attempt-01-e3edd099",
+  "candidate_id": "m02",
+  "story_id": "semantic-sep29-01",
+  "canonical_ordinal": 1,
+  "focus": "technical_ai_engineering",
+  "headline": "NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator",
+  "source_url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+  "verified_story_context": {
+    "summary": "NVIDIA describes TensorRT Model Connect as an open-source collection of C++ model reference implementations designed around coding-agent workflows. Its account emphasizes parallel work, model-family isolation, reversible changes, and GPU-backed validation as engineering patterns for letting agents contribute without collapsing project structure or verification.",
+    "why_it_matters": "Agentic coding becomes more reliable when repositories are organized for bounded parallelism, changes can be reversed cleanly, and hardware-backed validation is part of the normal loop."
+  },
+  "visual": {
+    "layout": "agent-ready engineering control loop",
+    "mechanism": "Parallel coding-agent work enters isolated model-family lanes, produces reversible changes, and converges only after GPU-backed validation and repository-level integration checks.",
+    "alt_text": "Textbook diagram showing parallel coding agents working in isolated model-family lanes, producing reversible changes that pass GPU-backed validation before repository integration.",
+    "style": "professional high-detail textbook/editorial systems diagram on a clean white background; mechanism-first; no people, decorative objects, stock-photo look, sparse generic boxes, or overlapping text",
+    "required_elements": [
+      "multiple parallel coding-agent work lanes",
+      "isolated model-family lanes",
+      "reversible change/commit checkpoints",
+      "GPU-backed validation gate",
+      "repository-level integration checks",
+      "clear convergence into an integrated repository"
+    ],
+    "text_policy": "Use only short legible labels necessary to explain the mechanism; no long prose in the image."
+  },
+  "attempt": 1,
+  "max_attempts": 4,
+  "sealed": true
+}
