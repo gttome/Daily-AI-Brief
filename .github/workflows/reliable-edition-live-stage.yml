@@ -47,11 +47,13 @@ jobs:
           const shouldDiscovery=s.status==='active'&&current==='discovery';
           const shouldEditorial=s.status==='active'&&current==='editorial';
           const shouldMedia=s.status==='active'&&current==='media';
+          const shouldImages=s.status==='active'&&current==='images';
           const rows={
             current_operation:String(current),
             should_discovery:String(shouldDiscovery),
             should_editorial:String(shouldEditorial),
             should_media:String(shouldMedia),
+            should_images:String(shouldImages),
             cutoff:s.edition.original_cutoff,
             date:s.edition.edition_date,
             release:s.edition.release_sha,
@@ -63,7 +65,7 @@ jobs:
           NODE
 
       - name: No-op when another operation owns the cursor
-        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true'
+        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true' && steps.state.outputs.should_images != 'true'
         run: echo "Durable cursor is ${{ steps.state.outputs.current_operation }}; this executor has no eligible deterministic stage for that cursor."
 
       - name: Verify protected release and admission
@@ -413,6 +415,144 @@ jobs:
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git add "$STATE_PATH" "_records/edition-execution/live/$EDITION_ID/media/result.json"
           git commit -m "Validate reliable edition media"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Reconcile verified image acceptance from immutable evidence
+        if: steps.state.outputs.should_images == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const {execFileSync}=require('child_process');
+          const statePath=process.env.STATE_PATH;
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          if(state.current_operation!=='images'||state.task06?.status!=='wip')process.exit(0);
+
+          const candidate=state.task06.current_candidate_id;
+          const attempt=state.task06.current_attempt;
+          if(!candidate||!Number.isInteger(attempt))process.exit(0);
+
+          const base='_records/edition-execution/live/'+process.env.EDITION_ID+'/images/'+candidate+'/attempt-'+String(attempt).padStart(2,'0');
+          const bindingPath=base+'/operation-binding.json';
+          const reviewPath=base+'/review.json';
+          const resultPath=base+'/result.json';
+          if(fs.existsSync(resultPath))process.exit(0);
+          if(!fs.existsSync(bindingPath)||!fs.existsSync(reviewPath))process.exit(0);
+
+          const binding=JSON.parse(fs.readFileSync(bindingPath,'utf8'));
+          const review=JSON.parse(fs.readFileSync(reviewPath,'utf8'));
+          if(review.result!=='pass'||binding.review?.result!=='pass')process.exit(0);
+
+          const finalPath=binding.persistence?.final_path;
+          const expectedBlob=binding.persistence?.final_git_blob_sha||review.prepared_final?.git_blob_sha;
+          const expectedSha256=binding.persistence?.final_sha256||review.prepared_final?.sha256;
+          if(!finalPath||!/^[a-f0-9]{40}$/.test(expectedBlob||'')||!/^[a-f0-9]{64}$/.test(expectedSha256||''))process.exit(0);
+
+          let row='';
+          try{row=execFileSync('git',['ls-tree','HEAD',finalPath],{encoding:'utf8'}).trim();}catch{}
+          const m=row.match(/^100644 blob ([a-f0-9]{40})\t/);
+          if(!m||m[1]!==expectedBlob)process.exit(0);
+
+          const finalCommit=execFileSync('git',['log','-1','--format=%H','--',finalPath],{encoding:'utf8'}).trim();
+          if(!/^[a-f0-9]{40}$/.test(finalCommit))throw new Error('final_image_commit_unresolved');
+
+          const now=new Date().toISOString();
+          const result={
+            schema_version:'reliable-edition-image-attempt-result-v1',
+            edition_id:state.edition.edition_id,
+            candidate_id:candidate,
+            attempt,
+            operation_key:binding.operation_key,
+            disposition:'accepted',
+            accepted:true,
+            quality_rejected:false,
+            generation:{
+              native_result_id:binding.native_generation_id,
+              native_file_id:binding.native_file_id,
+              bytes:binding.raw_capture?.bytes,
+              width:binding.raw_capture?.width,
+              height:binding.raw_capture?.height,
+              sha256:binding.raw_capture?.sha256
+            },
+            raw_persistence:{
+              path:binding.persistence?.raw_path,
+              commit_sha:binding.persistence?.raw_commit_sha,
+              git_blob_sha:binding.persistence?.raw_git_blob_sha,
+              content_address_verified:binding.persistence?.content_address_verified===true,
+              read_back_verified:false,
+              verification_mode:'git_content_address',
+              contract_release_sha:state.edition.release_sha
+            },
+            prepared_final:review.prepared_final,
+            review,
+            persistence:{
+              path:finalPath,
+              commit_sha:finalCommit,
+              git_blob_sha:expectedBlob,
+              sha256:expectedSha256,
+              content_address_verified:true,
+              read_back_verified:false,
+              verification_mode:'git_content_address',
+              contract_release_sha:state.edition.release_sha
+            },
+            next_attempt_allowed:false,
+            owner_interventions:[],
+            work_invocations:0,
+            codex_invocations:0,
+            paid_model_api_calls:0,
+            recorded_at:now
+          };
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+
+          const order=state.completed?.editorial?.selected_candidate_ids||[];
+          const idx=order.indexOf(candidate);
+          const next=idx>=0?order[idx+1]:null;
+          state.version+=1;
+          state.task06.accepted_images=(state.task06.accepted_images||0)+1;
+          state.task06.last_accepted_candidate_id=candidate;
+          state.task06.last_accepted_result_path=resultPath;
+          if(state.task06.accepted_images>=state.task06.required_images){
+            state.task06.status='done';
+            state.task06.substage='all_images_accepted';
+            state.current_operation='seal_bundle';
+            state.task06.current_candidate_id=null;
+            state.task06.current_attempt=null;
+            state.task06.current_operation_key=null;
+            state.task06.next_action='seal_bundle';
+          }else if(next){
+            state.task06.substage=next+'_attempt_1_binding_pending';
+            state.task06.current_candidate_id=next;
+            state.task06.current_attempt=1;
+            state.task06.current_operation_key=null;
+            state.task06.next_action='bind_'+next+'_attempt_1';
+          }else{
+            throw new Error('next_image_candidate_unresolved');
+          }
+          state.updated_at=now;
+          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist reconciled image result and advance image cursor
+        if: steps.state.outputs.should_images == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/edition-execution/live/$EDITION_ID/images"
+          if git diff --cached --quiet; then
+            echo "No deterministic image reconciliation was ready."
+            exit 0
+          fi
+          git commit -m "Reconcile verified image acceptance and advance cursor"
           git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
 
       - name: Stage summary
