@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 24,
+  "version": 25,
   "status": "active",
-  "current_operation": "images",
+  "current_operation": "seal_bundle",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -46,30 +46,32 @@
     "proof": "real discovery stage executed and durably advanced the shared cursor"
   },
   "task06": {
-    "status": "wip",
-    "accepted_images": 4,
+    "status": "done",
+    "accepted_images": 6,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "m01_attempt_3_bound_pending_generation",
+    "substage": "all_images_accepted",
     "editorial_input_ready": true,
     "editorial_kernel_locked": true,
     "media_locked": true,
-    "current_candidate_id": "m01",
-    "current_attempt": 3,
+    "current_candidate_id": null,
+    "current_attempt": null,
     "image_persistence_contract": "git_content_address_primary_optional_raw_reread",
-    "current_operation_key": "dab-edition-2026-09-29-m01-attempt-03-e0e7b595",
-    "last_accepted_candidate_id": "m06",
-    "last_accepted_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-03/result.json",
+    "current_operation_key": null,
+    "last_accepted_candidate_id": "m08",
+    "last_accepted_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m08/attempt-01/result.json",
     "last_rejected_candidate_id": "m01",
     "last_rejected_attempt": 2,
     "last_rejected_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-02/result.json",
-    "next_action": "generate_m01_attempt_3_once",
+    "next_action": "seal_bundle",
     "render_spec_policy": "strict-image-render-spec-v1",
     "accepted_candidate_ids": [
       "m02",
       "m03",
       "m05",
-      "m06"
+      "m06",
+      "m01",
+      "m08"
     ],
     "progress_source": "immutable_attempt_results",
     "performance_policy": "passive-image-performance-v1"
@@ -271,7 +273,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T17:40:47Z",
+  "updated_at": "2026-09-30T19:42:00Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -309,5 +311,5 @@
     ],
     "compatibility_reason": "controller simplification, bounded self-healing, immutable-result projection, passive timing; no editorial/media/image acceptance semantics weakened"
   },
-  "last_progress_at": "2026-09-30T18:10:20.370Z"
+  "last_progress_at": "2026-09-30T19:42:00Z"
 }
