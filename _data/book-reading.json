@@ -278,6 +278,26 @@
         "label": "PUT IT INTO PRACTICE",
         "why": "Inspect the instructions, inputs, checks and constraints of an evolved Skill before confirming the proposed update."
       }
+    ],
+    "2026-09-29": [
+      {
+        "item_id": "dab-story-2026-09-29-73a1c827",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Use final-gate verification principles to decide what executable evidence coding-agent changes must pass before repository integration."
+      },
+      {
+        "item_id": "dab-story-2026-09-29-e2811e43",
+        "reference_id": "context-quality-checklist",
+        "label": "PUT IT INTO PRACTICE",
+        "why": "Use the context-quality checklist to maintain the documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill."
+      },
+      {
+        "item_id": "dab-story-2026-09-29-196c601d",
+        "reference_id": "reliable-verification",
+        "label": "READ DEEPER",
+        "why": "Apply final-gate verification to quality, latency, tool-use reliability, and task-cost evidence before migrating a bounded workflow to a new model."
+      }
     ]
   }
 }

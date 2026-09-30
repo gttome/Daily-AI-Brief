@@ -78,8 +78,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 75
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-repairable-generative-design",
@@ -139,8 +138,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 57
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-image-edit-restoration",
@@ -218,8 +216,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 55
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-adaptive-agent-safeguards",
@@ -366,8 +363,7 @@
       "trial_story_ids": [
         "dab-story-2026-09-13-91c7e2a4",
         "dab-story-2026-09-13-4b8f13d0"
-      ],
-      "research_score": 83
+      ]
     },
     {
       "topic_id": "dab-topic-concept-level-language-models",
@@ -445,8 +441,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 56
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-memory-guided-planning",
@@ -555,8 +550,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 67
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-recursive-scene-programs",
@@ -650,8 +644,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 67
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-selective-precision-attention",
@@ -729,8 +722,7 @@
           "reason": "Addresses a continuing capability or workflow problem; sustained adoption is unverified."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 45
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-agent-skills-observability",
@@ -860,8 +852,7 @@
           "reason": "Observability of agent components is likely to remain useful as agent stacks mature."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 70
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-long-horizon-agents",
@@ -921,8 +912,7 @@
           "reason": "Long-running work requires continuity regardless of specific vendor implementation."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 65
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-ai-adoption-telemetry",
@@ -1018,8 +1008,7 @@
           "reason": "Usage-to-outcome measurement is a durable adoption discipline."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 88
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-harness-engineering",
@@ -1185,8 +1174,7 @@
           "reason": "Harness engineering is likely to remain central as models become more interchangeable."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 89
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-agentic-edge-inference",
@@ -1262,8 +1250,7 @@
           "reason": "Workload-specific benchmarking remains useful even as hardware and models change."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 71
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-model-lifecycle-governance",
@@ -1359,8 +1346,7 @@
           "reason": "Model replacement and migration will remain recurring operational work."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 81
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-agent-overclaiming",
@@ -1420,8 +1406,7 @@
           "reason": "Claim-versus-evidence verification is a durable reliability practice."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 61
+      "trial_story_ids": []
     },
     {
       "topic_id": "dab-topic-system-one-decision-models",
@@ -1491,8 +1476,7 @@
           "reason": "Separating structured decisions from generative text could remain useful even if Jev itself is later superseded."
         }
       },
-      "trial_story_ids": [],
-      "research_score": 76
+      "trial_story_ids": []
     }
   ]
 }
