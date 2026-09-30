@@ -16,7 +16,7 @@
     "edition_id": "dab-edition-2026-09-29",
     "edition_date": "2026-09-29",
     "original_cutoff": "2026-09-30T00:03:07.131932Z",
-    "release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+    "release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
     "research_baseline_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
     "execution_id": "reliable-edition-20260929-first",
     "policies": {
@@ -35,7 +35,7 @@
     "publication",
     "public_closed"
   ],
-  "version": 5,
+  "version": 6,
   "status": "active",
   "current_operation": "images",
   "task05": {
@@ -50,10 +50,13 @@
     "accepted_images": 0,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "image_generation",
+    "substage": "m02_attempt_1_closure",
     "editorial_input_ready": true,
     "editorial_kernel_locked": true,
-    "media_locked": true
+    "media_locked": true,
+    "current_candidate_id": "m02",
+    "current_attempt": 1,
+    "image_persistence_contract": "git_content_address_primary_optional_raw_reread"
   },
   "completed": {
     "admission": {
@@ -228,7 +231,7 @@
       "executor": "scheduled ChatGPT native image host",
       "implementation": "_generator/lib/recoverable-image-job.mjs",
       "transport": "_generator/lib/connector-image-delivery.mjs",
-      "validator": "V2 image review + exact Git read-back + publication manifest image gates"
+      "validator": "V2 image review + Git content-address identity (optional raw reread) + publication manifest image gates"
     },
     "seal_bundle": {
       "executor": "node _tools/edition-execution.mjs seal",
@@ -252,7 +255,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T00:39:53.940Z",
+  "updated_at": "2026-09-30T03:07:00Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -269,5 +272,17 @@
     "preferred_agent_skill_candidate_id": "m01",
     "model_calls_before_editorial": 0,
     "ready": true
+  },
+  "release_rebinding": {
+    "status": "applied",
+    "evidence_path": "_records/edition-execution/live/dab-edition-2026-09-29/release-rebinding-de006e7.json",
+    "evidence_commit": "ee1c7929488e7b74c9092544388f5f35c789981e",
+    "from_release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+    "to_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+    "preserved_stages": [
+      "discovery",
+      "editorial",
+      "media"
+    ]
   }
 }
