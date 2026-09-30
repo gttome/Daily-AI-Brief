@@ -1,9 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {assertEditorialKernel,deterministicOwnership,expandEditorialKernel,kernelReceipt,validateEditorialKernel} from '../lib/editorial-kernel.mjs';
+import {assertEditorialKernel,deterministicOwnership,expandEditorialKernel,kernelReceipt,researchCutoffMatchesBriefDate,validateEditorialKernel} from '../lib/editorial-kernel.mjs';
 
 const focuses=['technical_ai_engineering','technical_ai_engineering','applied_genai_knowledge_workers','applied_genai_knowledge_workers','agents_non_technical_people','agents_non_technical_people'];
 const kernel={schema_version:'1.0.0',brief_date:'2026-09-18',edition_id:'dab-edition-2026-09-18',baseline_sha:'1'.repeat(40),normal_model_passes:1,normal_post_editorial_model_passes:0,editorial_takeaway:'Use verified evidence and deterministic execution so expensive reasoning is reserved for editorial judgment.',stories:focuses.map((focus,i)=>({canonical_ordinal:i+1,story_id:`semantic-story-${i+1}`,candidate_id:`candidate-${i+1}`,focus,headline:`A substantive verified headline ${i+1}`,summary:'A sufficiently detailed summary of the verified development and the mechanism that matters to readers.',why_it_matters:'This explains the practical consequence for knowledge work, implementation, reliability, or adoption decisions.',what_to_do_now:{action:'test',label:'Test the bounded workflow',rationale:'Apply the evidence to a bounded workflow and verify the operational result before expanding the change.'},topic_labels:['agents','evidence'],editorial_limitation:'Current evidence supports the stated mechanism but should not be generalized beyond the verified scope.',source_url:`https://example.org/story-${i+1}`,agent_skill:i===4,visual:{layout:'process',mechanism:'Evidence moves through verification and controlled execution.'}})),media_decisions:{videos:{target:2},podcasts:{target:2}},changed_watchlist_topics:['topic-a']};
+
+test('research cutoff accepts UTC rollover when the pinned instant is still on the Brief date in America/Chicago',()=>{
+ assert.equal(researchCutoffMatchesBriefDate('2026-09-30T00:03:07.131932Z','2026-09-29'),true);
+ assert.equal(researchCutoffMatchesBriefDate('2026-09-29T23:59:59Z','2026-09-29'),true);
+ assert.equal(researchCutoffMatchesBriefDate('2026-09-30T06:00:00Z','2026-09-29'),false);
+});
 
 test('canonical editorial kernel enforces one semantic pass, six stories, 2/2/2 and one Agent Skills story',()=>{
  assert.deepEqual(validateEditorialKernel(kernel),[]);assert.equal(assertEditorialKernel(kernel),kernel);
