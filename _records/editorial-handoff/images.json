@@ -1,6 +1,6 @@
 {
   "m02": {
-    "story_id": "semantic-sep29-01",
+    "story_id": "dab-story-2026-09-29-73a1c827",
     "candidate_id": "m02",
     "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m02-2.png",
     "alt": "Textbook diagram showing parallel coding agents working in isolated model-family lanes, producing reversible changes that pass GPU-backed validation before repository integration.",
@@ -23,7 +23,7 @@
     "deployment_verification_required": true
   },
   "m03": {
-    "story_id": "semantic-sep29-02",
+    "story_id": "dab-story-2026-09-29-a64c16f9",
     "candidate_id": "m03",
     "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m03-2.png",
     "alt": "Textbook architecture diagram of a biological world model connected to scientific literature, tools, multiple biological modalities, and researcher feedback through an interactive harness.",
@@ -46,7 +46,7 @@
     "deployment_verification_required": true
   },
   "m05": {
-    "story_id": "semantic-sep29-03",
+    "story_id": "dab-story-2026-09-29-626077c7",
     "candidate_id": "m05",
     "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png",
     "alt": "Textbook workflow showing a script moving through Gemini text-to-speech, narrated audio, rapid preview and revision, and final placement in a Google Vids timeline.",
@@ -69,7 +69,7 @@
     "deployment_verification_required": true
   },
   "m06": {
-    "story_id": "semantic-sep29-04",
+    "story_id": "dab-story-2026-09-29-7eb33bf7",
     "candidate_id": "m06",
     "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
     "alt": "Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.",
@@ -92,7 +92,7 @@
     "deployment_verification_required": true
   },
   "m01": {
-    "story_id": "semantic-sep29-05",
+    "story_id": "dab-story-2026-09-29-e2811e43",
     "candidate_id": "m01",
     "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
     "alt": "Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.",
@@ -115,7 +115,7 @@
     "deployment_verification_required": true
   },
   "m08": {
-    "story_id": "semantic-sep29-06",
+    "story_id": "dab-story-2026-09-29-196c601d",
     "candidate_id": "m08",
     "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
     "alt": "Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.",
