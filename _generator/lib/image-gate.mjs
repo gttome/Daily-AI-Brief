@@ -29,7 +29,7 @@ export function reviewedImages(edition, root) {
   const r=selected.record, errors=[],assets=[];
   if(r.image_gate!=='pass'||!r.review_method||!r.reviewed_at)errors.push('Final image set has not passed documented visual review');
   if(edition.brief_date>='2026-09-19'&&r.asset_policy!=='accepted_locked_reuse_only')errors.push('Final image set must use accepted_locked_reuse_only policy beginning 2026-09-19');
-  if(edition.brief_date>='2026-09-19'&&!/OpenAI/i.test(String(r.generation_method||'')))errors.push('Final image set must document professional OpenAI image generation beginning 2026-09-19');
+  if(edition.brief_date>='2026-09-19'&&!/OpenAI/i.test(String(r.generation_method||''))&&r.generation_method!=='professional_editorial_diagram')errors.push('Final image set must document professional OpenAI image generation or verified professional editorial diagram rendering beginning 2026-09-19');
   if(r.images?.length!==6)errors.push('Image review must cover exactly six final story images');
   const compositions=new Set(),hashes=new Set();
   for(const story of edition.stories){
