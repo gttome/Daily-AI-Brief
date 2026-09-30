@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 26,
+  "version": 27,
   "status": "active",
-  "current_operation": "qualification",
+  "current_operation": "production_admission",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -229,11 +229,41 @@
       "result": "pass",
       "operation": "seal_bundle",
       "execution_host": "github_actions",
-      "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json",
-      "bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c",
+      "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle-v2.json",
+      "bundle_sha256": "4079821ebe1e72f750c7e0b37c3af0c992313c07b1212cccb869e3cb3afd9f94",
       "release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
       "cutoff": "2026-09-30T00:03:07.131932Z",
-      "verified_at": "2026-09-30T21:37:35.656Z"
+      "verified_at": "2026-09-30T22:04:05.317Z",
+      "supersedes_bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c",
+      "reason": "downstream_watchlist_receipt_contract_repair"
+    },
+    "qualification": {
+      "schema_version": "reliable-edition-qualification-result-v1",
+      "run_id": "reliable-edition-20260929-first-qualification-1",
+      "edition_id": "dab-edition-2026-09-29",
+      "edition_date": "2026-09-29",
+      "execution_mode": "qualification_nonproduction",
+      "result": "pass",
+      "simulated_lifecycle": "CLOSED",
+      "branch": "reliable-edition/dab-edition-2026-09-29",
+      "branch_head": "617e35b92b5afad6651d5855deaf6d06f8279d90",
+      "observed_main_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
+      "deterministic_workflow_run_id": 36783239129,
+      "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle-v2.json",
+      "bundle_sha256": "4079821ebe1e72f750c7e0b37c3af0c992313c07b1212cccb869e3cb3afd9f94",
+      "release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
+      "cutoff": "2026-09-30T00:03:07.131932Z",
+      "work_usage": 0,
+      "codex_usage": 0,
+      "paid_api_usage": 0,
+      "deterministic_model_calls": 0,
+      "production_mutation": false,
+      "production_pr": false,
+      "production_pages_deployment": false,
+      "editorial_model_passes": 1,
+      "post_editorial_model_passes": 0,
+      "verified_at": "2026-09-30T22:04:05.317Z",
+      "note": "Bundle-bound reliable-edition qualification. This is not a public production closure."
     }
   },
   "handler_registry": {
@@ -283,7 +313,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T21:37:35.656Z",
+  "updated_at": "2026-09-30T22:04:05.317Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -323,10 +353,24 @@
   },
   "last_progress_at": "2026-09-30T19:42:00Z",
   "task08": {
-    "status": "wip",
-    "substage": "bundle_verified_qualification_pending",
+    "status": "done",
+    "substage": "qualification_passed",
     "started_at": "2026-09-30T21:37:35.656Z",
     "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json",
-    "bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c"
-  }
+    "bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c",
+    "completed_at": "2026-09-30T22:04:05.317Z",
+    "qualification_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/qualification/result.json"
+  },
+  "seal_bundle_history": [
+    {
+      "result": "pass",
+      "operation": "seal_bundle",
+      "execution_host": "github_actions",
+      "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json",
+      "bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c",
+      "release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
+      "cutoff": "2026-09-30T00:03:07.131932Z",
+      "verified_at": "2026-09-30T21:37:35.656Z"
+    }
+  ]
 }

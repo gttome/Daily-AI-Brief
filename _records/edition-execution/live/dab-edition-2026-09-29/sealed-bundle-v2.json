@@ -1,0 +1,137 @@
+{
+  "schema_version": "sealed-edition-bundle-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "edition_date": "2026-09-29",
+  "research_baseline_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+  "release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
+  "cutoff": "2026-09-30T00:03:07.131932Z",
+  "manifest_path": "_records/editorial-handoff/publication-manifest.json",
+  "artifacts": [
+    {
+      "path": "_data/book-reading.json",
+      "sha256": "6f2fa684abb8bec363545e794468760b0f2e12dfc308776aebb08e43141c5ab1",
+      "bytes": 14072
+    },
+    {
+      "path": "_records/editorial-handoff/article-evidence.json",
+      "sha256": "a2810ed977b6e5773b912a4cf9cfd15a297d1e87bd7cb9850b33a3dbd36f8eef",
+      "bytes": 11218
+    },
+    {
+      "path": "_records/editorial-handoff/facts.json",
+      "sha256": "0984572b391c540519e4450dfc04ca71952ec773d21b3470aa9ef2277deae628",
+      "bytes": 4027
+    },
+    {
+      "path": "_records/editorial-handoff/images.json",
+      "sha256": "6ab8961992b2f14fa85222803d1b843807ae86da3c9f055cd185ae7d8d44902f",
+      "bytes": 6768
+    },
+    {
+      "path": "_records/editorial-handoff/kernel.json",
+      "sha256": "49d656346bbe8f38d5fcbe46e4cae38103f1ba1553987a73d464df991f3fdfe5",
+      "bytes": 16137
+    },
+    {
+      "path": "_records/editorial-handoff/media.json",
+      "sha256": "2347c01f34adcaa0e7e666ef5f994cc3ded6dac81796f769ab351cdcf66c2765",
+      "bytes": 4723
+    },
+    {
+      "path": "_records/editorial-handoff/metadata-candidates.json",
+      "sha256": "8b526ebb764433657aff4a0c6db3592fb15a527ee7a47bed45c63d75ba05500f",
+      "bytes": 28723
+    },
+    {
+      "path": "_records/editorial-handoff/publication-manifest.json",
+      "sha256": "af0aa40609550d7a41039bbfb4f851ec59f94c83a65710c01004a58ad2d1e71b",
+      "bytes": 4309
+    },
+    {
+      "path": "_records/editorial-handoff/watchlist-2026-09-29.json",
+      "sha256": "b648748fb84018ae0fc4305a3e6211236c0cd4f3adbda16c5f457948d4d7ff6e",
+      "bytes": 69760
+    },
+    {
+      "path": "_records/editorial/media-preflight/2026-09-29.json",
+      "sha256": "3f77b9fc7fccebc1b6cebc7f98c424ee4d11729117f3e2380efd42cc8ef1206e",
+      "bytes": 3308
+    },
+    {
+      "path": "_records/image-context/2026-09-29/m01.json",
+      "sha256": "67124e592d4d12dbe3c82516d1537073f4452ebe6489e596125b89523559cde1",
+      "bytes": 552
+    },
+    {
+      "path": "_records/image-context/2026-09-29/m02.json",
+      "sha256": "86a73fb95e3de48a56d789346b84a01152fd315a98babdbac7f4ecc07604c27c",
+      "bytes": 558
+    },
+    {
+      "path": "_records/image-context/2026-09-29/m03.json",
+      "sha256": "e8dae5eeee1f56db39856ef14e666f679a7ccae6edc9cd3b3380f30286fb9d92",
+      "bytes": 568
+    },
+    {
+      "path": "_records/image-context/2026-09-29/m05.json",
+      "sha256": "00a06af8ec6b992a529c01b8abbbddd5ccbd6ba2f282a71e92f9867c47ccf35a",
+      "bytes": 522
+    },
+    {
+      "path": "_records/image-context/2026-09-29/m06.json",
+      "sha256": "4e23e6d38f45d5b26350287f07cdfd6f03182a62c89d844562eb31ff52753207",
+      "bytes": 550
+    },
+    {
+      "path": "_records/image-context/2026-09-29/m08.json",
+      "sha256": "128278d979440855930258114a0739b8cba7454ed600116dd702c740926338cf",
+      "bytes": 536
+    },
+    {
+      "path": "_records/image-quality/2026-09-29-editorial-v2.json",
+      "sha256": "9b24a5dc5f9e9a3d4aaabad3d1c31f040c6cd80e4e1b96d3d4a6ccdf60c1c328",
+      "bytes": 24354
+    },
+    {
+      "path": "_records/image-quality/benchmark-profile-v1.json",
+      "sha256": "07e9a250ee1e1906f5fbfdc5e55608a3438ac33d85c9072455e7f7facb3e3478",
+      "bytes": 3837
+    },
+    {
+      "path": "_records/watchlist-sweeps/2026-09-29.json",
+      "sha256": "2457933bc8f1b12a43a1465d79512be797bba9b8b9898bfc4f94e71f4765237a",
+      "bytes": 5403
+    },
+    {
+      "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
+      "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
+      "bytes": 3452
+    },
+    {
+      "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m02-2.png",
+      "sha256": "60a65c4ce4642648bf6c2cd9cc7c628668d30a3f263e6b321badb7655f2f3e04",
+      "bytes": 653447
+    },
+    {
+      "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m03-2.png",
+      "sha256": "c3dffcbf3985573e3a15c14f506405c959fd1688897b8b20d263940ddf806dbb",
+      "bytes": 676572
+    },
+    {
+      "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png",
+      "sha256": "3668fb77b57f6329f588a403244ff5cea3c53565a5f16c89c014f9667d131784",
+      "bytes": 515549
+    },
+    {
+      "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
+      "sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+      "bytes": 389932
+    },
+    {
+      "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
+      "sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
+      "bytes": 6976
+    }
+  ],
+  "bundle_sha256": "4079821ebe1e72f750c7e0b37c3af0c992313c07b1212cccb869e3cb3afd9f94"
+}
