@@ -35,7 +35,7 @@
     "publication",
     "public_closed"
   ],
-  "version": 6,
+  "version": 7,
   "status": "active",
   "current_operation": "images",
   "task05": {
@@ -50,13 +50,14 @@
     "accepted_images": 0,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "m02_attempt_1_closure",
+    "substage": "m02_attempt_2_bound_pending_generation",
     "editorial_input_ready": true,
     "editorial_kernel_locked": true,
     "media_locked": true,
     "current_candidate_id": "m02",
-    "current_attempt": 1,
-    "image_persistence_contract": "git_content_address_primary_optional_raw_reread"
+    "current_attempt": 2,
+    "image_persistence_contract": "git_content_address_primary_optional_raw_reread",
+    "current_operation_key": "dab-edition-2026-09-29-m02-attempt-02-de006e74"
   },
   "completed": {
     "admission": {
@@ -255,7 +256,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T03:07:00Z",
+  "updated_at": "2026-09-30T03:09:00Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
