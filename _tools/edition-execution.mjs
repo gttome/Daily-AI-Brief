@@ -67,11 +67,17 @@ try {
     const progress=deriveImageProgress({selectedCandidateIds:evidence.ids,
       resultsByCandidate:evidence.resultsByCandidate,bindingsByCandidate:evidence.bindingsByCandidate});
     const performance=summarizeImagePerformance(evidence.resultsByCandidate);
+    let reconciled=false;
     if(a.write==='true'){
       const next=applyDerivedImageProgress(state,progress);
-      next.updated_at=new Date().toISOString();
-      writeJsonAtomic(a.state,next);
+      const changed=JSON.stringify(next.task06)!==JSON.stringify(state.task06)||next.current_operation!==state.current_operation;
+      if(changed){
+        next.version=(Number.isInteger(state.version)?state.version:0)+1;
+        next.updated_at=new Date().toISOString();
+        writeJsonAtomic(a.state,next);
+        reconciled=true;
+      }
     }
-    emit({progress,performance,state_reconciled:a.write==='true'});
+    emit({progress,performance,state_reconciled:reconciled});
   } else throw Error('expected_status_admission_check_seal_verify_promotion_plan_or_image_progress');
 } catch(error) {console.error(JSON.stringify({status:'blocked',code:error.message,public_closed:false}));process.exitCode=1;}
