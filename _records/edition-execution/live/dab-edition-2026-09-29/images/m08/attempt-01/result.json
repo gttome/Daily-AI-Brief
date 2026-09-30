@@ -1,0 +1,76 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m08",
+  "attempt": 1,
+  "operation_key": "dab-edition-2026-09-29-m08-attempt-01-e0e7b595",
+  "disposition": "accepted",
+  "accepted": true,
+  "quality_rejected": false,
+  "generation": {
+    "executor": "chatgpt_deterministic_textbook_diagram",
+    "native_result_id": null,
+    "native_file_id": null,
+    "bytes": 6976,
+    "width": 1200,
+    "height": 630,
+    "sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m08/attempt-01/raw.png",
+    "git_blob_sha": "8b3706f6355f1f3f269c5af15177ed7637d0c2ec",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150"
+  },
+  "prepared_final": {
+    "bytes": 6976,
+    "width": 1200,
+    "height": 630,
+    "sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
+    "git_blob_sha": "8b3706f6355f1f3f269c5af15177ed7637d0c2ec"
+  },
+  "review": {
+    "schema_version": "reliable-edition-image-review-v1",
+    "edition_id": "dab-edition-2026-09-29",
+    "candidate_id": "m08",
+    "attempt": 1,
+    "operation_key": "dab-edition-2026-09-29-m08-attempt-01-e0e7b595",
+    "asset_stage": "prepared_final",
+    "prepared_final": {
+      "bytes": 6976,
+      "width": 1200,
+      "height": 630,
+      "sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
+      "git_blob_sha": "8b3706f6355f1f3f269c5af15177ed7637d0c2ec"
+    },
+    "result": "pass",
+    "mode": "automated",
+    "phase": "after_generation_and_content_address_verification",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "visible_text_policy": "pass_exact_allowlist",
+    "people_policy": "pass_no_people_or_human_icons",
+    "cross_story_carryover": "pass",
+    "observation": "Professional workflows feed a bounded Amazon Bedrock evaluation containing GPT-6.1 Sol and four explicitly labeled evaluation criteria before Selected workloads. Labels are fully contained with no overlapping text, no screenshots, people, metrics, or unsupported product UI.",
+    "final_persistence_pending": false
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
+    "git_blob_sha": "8b3706f6355f1f3f269c5af15177ed7637d0c2ec",
+    "sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150"
+  },
+  "next_attempt_allowed": false,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T19:40:00Z"
+}

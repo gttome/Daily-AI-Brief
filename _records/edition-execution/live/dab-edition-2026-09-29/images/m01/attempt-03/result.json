@@ -1,0 +1,76 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m01",
+  "attempt": 3,
+  "operation_key": "dab-edition-2026-09-29-m01-attempt-03-e0e7b595",
+  "disposition": "accepted",
+  "accepted": true,
+  "quality_rejected": false,
+  "generation": {
+    "executor": "chatgpt_deterministic_textbook_diagram",
+    "native_result_id": null,
+    "native_file_id": null,
+    "bytes": 3452,
+    "width": 1200,
+    "height": 630,
+    "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-03/raw.png",
+    "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150"
+  },
+  "prepared_final": {
+    "bytes": 3452,
+    "width": 1200,
+    "height": 630,
+    "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
+    "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f"
+  },
+  "review": {
+    "schema_version": "reliable-edition-image-review-v1",
+    "edition_id": "dab-edition-2026-09-29",
+    "candidate_id": "m01",
+    "attempt": 3,
+    "operation_key": "dab-edition-2026-09-29-m01-attempt-03-e0e7b595",
+    "asset_stage": "prepared_final",
+    "prepared_final": {
+      "bytes": 3452,
+      "width": 1200,
+      "height": 630,
+      "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
+      "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f"
+    },
+    "result": "pass",
+    "mode": "automated",
+    "phase": "after_generation_and_content_address_verification",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "visible_text_policy": "pass_exact_allowlist",
+    "people_policy": "pass_no_people_or_human_icons",
+    "cross_story_carryover": "pass",
+    "observation": "Four separate source boxes in a 2x2 layout converge into Reusable Agent Skill, then Codex task, then Reviewable output. Exactly the seven allowed labels are visible; no feedback loop, book/database hub, extra prose, people, or cross-story carryover.",
+    "final_persistence_pending": false
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
+    "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f",
+    "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150"
+  },
+  "next_attempt_allowed": false,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T19:40:00Z"
+}

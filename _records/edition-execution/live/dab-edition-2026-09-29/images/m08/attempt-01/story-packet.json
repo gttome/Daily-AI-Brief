@@ -1,0 +1,49 @@
+{
+  "schema_version": "reliable-edition-image-story-packet-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "edition_date": "2026-09-29",
+  "release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
+  "operation_key": "dab-edition-2026-09-29-m08-attempt-01-e0e7b595",
+  "candidate_id": "m08",
+  "story_id": "semantic-sep29-06",
+  "canonical_ordinal": 6,
+  "focus": "agents_non_technical_people",
+  "headline": "AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows",
+  "source_url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/",
+  "verified_story_context": {
+    "summary": "AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads.",
+    "why_it_matters": "Operational value depends on evaluating bounded workflows for quality, latency, tool-use reliability, and total task cost before migration."
+  },
+  "visual": {
+    "render_spec_policy": "strict-image-render-spec-v1",
+    "layout": "white-background enterprise model evaluation diagram",
+    "mechanism": "Professional workflows enter an Amazon Bedrock boundary containing GPT-6.1 Sol, pass through evaluation on Quality, Latency, Tool-use reliability, and Total task cost, then selected workloads continue.",
+    "alt_text": "Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and total task cost before selected workloads move through GPT-6.1 Sol on Amazon Bedrock.",
+    "essential_labels": [
+      "Professional workflows",
+      "Amazon Bedrock",
+      "GPT-6.1 Sol",
+      "Quality",
+      "Latency",
+      "Tool-use reliability",
+      "Total task cost",
+      "Selected workloads"
+    ],
+    "visible_text_allowlist": [
+      "Professional workflows",
+      "Amazon Bedrock",
+      "GPT-6.1 Sol",
+      "Quality",
+      "Latency",
+      "Tool-use reliability",
+      "Total task cost",
+      "Selected workloads"
+    ],
+    "text_policy": "EXACT ALLOWLIST ONLY. Render each essential label legibly once and no extra visible text.",
+    "people_policy": "prohibited",
+    "fallback_policy": "prohibited"
+  },
+  "attempt": 1,
+  "max_attempts": 4,
+  "sealed": true
+}

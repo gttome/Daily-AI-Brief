@@ -1,0 +1,27 @@
+{
+  "schema_version": "reliable-edition-image-review-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m01",
+  "attempt": 3,
+  "operation_key": "dab-edition-2026-09-29-m01-attempt-03-e0e7b595",
+  "asset_stage": "prepared_final",
+  "prepared_final": {
+    "bytes": 3452,
+    "width": 1200,
+    "height": 630,
+    "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
+    "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f"
+  },
+  "result": "pass",
+  "mode": "automated",
+  "phase": "after_generation_and_content_address_verification",
+  "subject_match": "pass",
+  "factual_support": "pass",
+  "structural_quality": "pass",
+  "editorial_quality": "pass",
+  "visible_text_policy": "pass_exact_allowlist",
+  "people_policy": "pass_no_people_or_human_icons",
+  "cross_story_carryover": "pass",
+  "observation": "Four separate source boxes in a 2x2 layout converge into Reusable Agent Skill, then Codex task, then Reviewable output. Exactly the seven allowed labels are visible; no feedback loop, book/database hub, extra prose, people, or cross-story carryover.",
+  "final_persistence_pending": false
+}
