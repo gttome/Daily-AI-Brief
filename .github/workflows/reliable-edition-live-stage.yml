@@ -76,12 +76,14 @@ jobs:
           const shouldEditorial=s.status==='active'&&current==='editorial';
           const shouldMedia=s.status==='active'&&current==='media';
           const shouldImages=s.status==='active'&&current==='images';
+          const shouldSeal=s.status==='active'&&current==='seal_bundle';
           const rows={
             current_operation:String(current),
             should_discovery:String(shouldDiscovery),
             should_editorial:String(shouldEditorial),
             should_media:String(shouldMedia),
             should_images:String(shouldImages),
+            should_seal:String(shouldSeal),
             cutoff:s.edition.original_cutoff,
             date:s.edition.edition_date,
             release:s.edition.release_sha,
@@ -93,7 +95,7 @@ jobs:
           NODE
 
       - name: No-op when another operation owns the cursor
-        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true' && steps.state.outputs.should_images != 'true'
+        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true' && steps.state.outputs.should_images != 'true' && steps.state.outputs.should_seal != 'true'
         run: echo "Durable cursor is ${{ steps.state.outputs.current_operation }}; this executor has no eligible deterministic stage for that cursor."
 
       - name: Verify protected release and admission
@@ -571,6 +573,73 @@ jobs:
             exit 0
           fi
           git commit -m "Reconcile verified image acceptance and advance cursor"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Seal and independently verify immutable Sep 29 bundle
+        if: steps.state.outputs.should_seal == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          BUNDLE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json
+          MANIFEST_PATH: _records/editorial-handoff/publication-manifest.json
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+          CUTOFF: ${{ steps.state.outputs.cutoff }}
+        run: |
+          set -euo pipefail
+          if [ ! -f "$BUNDLE_PATH" ]; then
+            node _tools/edition-execution.mjs seal --manifest "$MANIFEST_PATH" --release "$RELEASE_SHA" --cutoff "$CUTOFF" --out "$BUNDLE_PATH"
+          fi
+          node _tools/edition-execution.mjs verify --bundle "$BUNDLE_PATH"
+          node - "$STATE_PATH" "$BUNDLE_PATH" <<'NODE'
+          const fs=require('fs');
+          const [statePath,bundlePath]=process.argv.slice(2);
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          const bundle=JSON.parse(fs.readFileSync(bundlePath,'utf8'));
+          if(state.current_operation!=='seal_bundle')throw new Error('stale_seal_executor');
+          if(bundle.edition_id!==state.edition.edition_id)throw new Error('bundle_edition_mismatch');
+          if(bundle.release_sha!==state.edition.release_sha)throw new Error('bundle_release_mismatch');
+          if(bundle.cutoff!==state.edition.original_cutoff)throw new Error('bundle_cutoff_mismatch');
+          const now=new Date().toISOString();
+          state.version=(Number.isInteger(state.version)?state.version:0)+1;
+          state.completed={...(state.completed||{}),seal_bundle:{
+            result:'pass',
+            operation:'seal_bundle',
+            execution_host:'github_actions',
+            bundle_path:bundlePath,
+            bundle_sha256:bundle.bundle_sha256,
+            release_sha:bundle.release_sha,
+            cutoff:bundle.cutoff,
+            verified_at:now
+          }};
+          state.current_operation='qualification';
+          state.task08={
+            ...(state.task08||{}),
+            status:'wip',
+            substage:'bundle_verified_qualification_pending',
+            started_at:state.task08?.started_at||now,
+            bundle_path:bundlePath,
+            bundle_sha256:bundle.bundle_sha256
+          };
+          state.updated_at=now;
+          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist sealed bundle and advance durable cursor
+        if: steps.state.outputs.should_seal == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          BUNDLE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "$BUNDLE_PATH"
+          if git diff --cached --quiet; then
+            echo "Bundle and controller already reconciled."
+            exit 0
+          fi
+          git commit -m "Seal and verify Sep 29 reliable edition bundle"
           git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
 
       - name: Stage summary
