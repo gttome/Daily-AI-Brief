@@ -1,0 +1,39 @@
+name: Reversible repository cleanup
+
+on:
+  push:
+    branches: ['maintenance-request/**']
+    paths: ['_records/maintenance/request.json']
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: reversible-repository-cleanup
+  cancel-in-progress: false
+
+jobs:
+  cleanup:
+    if: github.repository == 'gttome/Daily-AI-Brief' && github.actor == 'gttome'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out trusted main only
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          fetch-depth: 1
+          fetch-tags: false
+          persist-credentials: false
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+      - name: Test cleanup safety guards
+        run: node --test _generator/test/maintenance-cleanup.test.mjs
+      - name: Audit and perform request-bounded reversible cleanup
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node _tools/maintenance-cleanup.mjs

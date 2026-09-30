@@ -1,0 +1,61 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260908T175739Z-899990bb",
+  "edition_id": "dab-edition-2026-09-08",
+  "publication_run_id": "recovery-20260908",
+  "executed_at": "2026-09-08T17:57:39Z",
+  "initial_result": "pass",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "canonical_and_editorial_contracts",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The canonical September 8 edition, 20-candidate pool, 30-day memory, exact 2/2/2 allocation, six assets, 59 repository tests, and 15 contract fixtures passed the integrated recovery run."
+    },
+    {
+      "check_id": "atomic_synchronization",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The dated brief, homepage, latest brief, archives, feeds, and story pages are synchronized at production commit 899990bb44c3cd35963d95b83058640894833082."
+    },
+    {
+      "check_id": "pages_deployment",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "GitHub Pages run 34256940386 completed successfully; the homepage, September 8 dated brief, and public QA page return HTTP 200."
+    },
+    {
+      "check_id": "images_and_accessibility",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All six distinct September 8 image assets return HTTP 200 with image/svg+xml, and the six-story accessibility audit passed with reviewed alternative text."
+    },
+    {
+      "check_id": "novelty_and_evidence_review",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Selected stories retain score rationale, evidence status, source dates, and material-update lineage where required."
+    }
+  ],
+  "repairs": [
+    {
+      "repair_id": "backfill_missing_daily_records",
+      "result": "completed",
+      "evidence": "The missing September 8 QA record was regenerated, and the independently scheduled privacy-safe analytics backfill was verified on main, through the integrated Daily AI Brief + QA recovery workflow."
+    }
+  ],
+  "defects": [],
+  "deployment_evidence": {
+    "pages_run_id": 34256940386,
+    "head_sha": "899990bb44c3cd35963d95b83058640894833082",
+    "conclusion": "success"
+  },
+  "deployment_latency_seconds": null,
+  "record_path": "_records/qa/2026-09-08.json"
+}

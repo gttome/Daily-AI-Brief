@@ -1,0 +1,87 @@
+{
+  "result": "pass",
+  "operation": "media",
+  "execution_host": "github_actions",
+  "edition_id": "dab-edition-2026-09-29",
+  "media_freshness_policy": "media-research-cutoff-v1",
+  "controller_cutoff": "2026-09-30T00:03:07.131932Z",
+  "policy_cutoff": "2026-09-29T19:03:07.131-05:00",
+  "cutoff_same_instant": true,
+  "source_artifacts": {
+    "podcasts": {
+      "artifact_id": 11042203975,
+      "sha256": "b7e3e5ec5746d6373792a791de128187c2728c5f72a29a642f7799860ce61f3d"
+    },
+    "videos": {
+      "artifact_id": 11043047569,
+      "sha256": "59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40"
+    }
+  },
+  "podcasts": [
+    {
+      "id": "everyday-872",
+      "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
+      "show": "Everyday AI Podcast – An AI and ChatGPT Podcast",
+      "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154",
+      "publication_date": "2026-09-29T11:00:00Z",
+      "freshness_tier": "primary_48h",
+      "age_hours": 13.052
+    },
+    {
+      "id": "ai-for-humans-197",
+      "title": "Opus 5.5 is our favorite AI model (so far).",
+      "show": "AI For Humans: Weekly AI News, Tools & Trends",
+      "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+      "publication_date": "2026-09-24T10:00:00Z",
+      "freshness_tier": "fallback_7d",
+      "age_hours": 134.052
+    }
+  ],
+  "videos": [
+    {
+      "id": "bs1qPy_CWkM",
+      "published": "2026-09-28T11:00:25+00:00",
+      "title": "Prompt to Production: The Future of AI Code Workflows",
+      "url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+      "runtime_seconds": 435,
+      "duration_tier": "preferred",
+      "age_hours": 37.045
+    },
+    {
+      "id": "KJ8Y2Nb9y9o",
+      "published": "2026-09-28T23:31:02+00:00",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "runtime_seconds": 471,
+      "duration_tier": "preferred",
+      "age_hours": 24.535
+    }
+  ],
+  "source_diverse_podcasts": true,
+  "production_history_baseline": "49e43aa9a581866c487140b27400cc39e8531037",
+  "changed_files_since_baseline": [
+    ".github/workflows/under80-discovery-preflight.yml",
+    "_generator/lib/connector-image-delivery.mjs",
+    "_generator/lib/durable-operation.mjs",
+    "_generator/lib/edition-execution.mjs",
+    "_generator/lib/image-execution.mjs",
+    "_generator/lib/media-source-parsers.mjs",
+    "_generator/lib/recoverable-image-job.mjs",
+    "_generator/test-selection.json",
+    "_generator/test/media-source-parsers.test.mjs",
+    "_generator/test/reliable-execution.test.mjs",
+    "_records/hardening/media-source-parsers-2026-09-29/local-regression.json",
+    "_records/hardening/media-source-parsers-2026-09-29/saved-source-replay.json",
+    "_tools/edition-execution.mjs",
+    "_tools/parse-media-source.mjs",
+    "_tools/run-state.mjs",
+    "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+    "docs/operations/START-HERE.md",
+    "docs/operations/efficiency-operating-policy.json",
+    "docs/operations/media-source-recovery.md",
+    "docs/operations/reliable-edition-execution.md",
+    "docs/operations/under80-runtime-contract.json"
+  ],
+  "duplicate_recheck": "pass",
+  "validated_at": "2026-09-30T00:39:53.940Z"
+}

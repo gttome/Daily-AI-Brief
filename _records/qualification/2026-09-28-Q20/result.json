@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-28-Q20",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "failed_stage": "PREFLIGHT_DISCOVERY_READY",
+  "failure_code": "qualification_focus_coverage_insufficient_after_novelty",
+  "workflow_run_id": 36440641729,
+  "workflow_job_id": 108989901001,
+  "request_commit": "b6251e25744d9163a5631ae02cb06c6132baddf4",
+  "baseline_sha": "756c5fb3bb5acdb89520777722100b644e2a5d5e",
+  "cutoff": "2026-09-28T15:05:00Z",
+  "coverage_counts": {
+    "technical_ai_engineering": 13,
+    "applied_genai_knowledge_workers": 1,
+    "agents_non_technical_people": 2
+  },
+  "required_minimum_per_focus": 3,
+  "retained_candidates": 20,
+  "eligible_after_deterministic_filter": 36,
+  "agent_skill_story_ready_signals_after_novelty": 1,
+  "article_evidence_started": false,
+  "semantic_pass_started": false,
+  "production_mutation": false,
+  "rerun_prohibited": true,
+  "account_billing_observed": false,
+  "root_cause_status": "not_yet_isolated",
+  "observation": "Q19's novelty-aware reservation change did not improve the observed Q20 coverage. The logs establish inadequate final coverage, not that deeper eligible Applied/Agents candidates existed. Preserve this result and diagnose supply, extraction and filtering before another full run.",
+  "next_action": "Complete authorized maintenance without deleting Q20 evidence; isolate the source-supply defect and prove a targeted repair before launching a new unused qualification identity."
+}

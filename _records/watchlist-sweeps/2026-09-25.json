@@ -1,0 +1,124 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-25",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": true,
+    "lookback_days": 14
+  },
+  "surfaces": [
+    {
+      "id": "primary_research",
+      "status": "complete",
+      "queries": [
+        "September 2026 AI reasoning evaluation agent skills multimodal research"
+      ],
+      "candidates_found": 3
+    },
+    {
+      "id": "frontier_and_small_labs",
+      "status": "complete",
+      "queries": [
+        "September 2026 frontier AI agents evaluation governance model architecture"
+      ],
+      "candidates_found": 4
+    },
+    {
+      "id": "open_source",
+      "status": "complete",
+      "queries": [
+        "September 2026 open source AI agents MCP skills evaluation"
+      ],
+      "candidates_found": 3
+    },
+    {
+      "id": "technical_communities",
+      "status": "complete",
+      "queries": [
+        "September 2026 developer AI agent harness MCP evaluation Copilot"
+      ],
+      "candidates_found": 5
+    },
+    {
+      "id": "broad_web",
+      "status": "complete",
+      "queries": [
+        "September 2026 emerging AI agent skills governance multimodal infrastructure"
+      ],
+      "candidates_found": 9
+    },
+    {
+      "id": "youtube_creator_ecosystem",
+      "status": "complete",
+      "queries": [
+        "September 2026 AI agent skills model evaluation creator videos"
+      ],
+      "candidates_found": 2
+    }
+  ],
+  "concept_classes_reviewed": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "evaluation_or_benchmark",
+    "inference_runtime_or_hardware",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "safety_security_or_governance",
+    "knowledge_worker_workflow"
+  ],
+  "candidates_reviewed": [
+    {
+      "name": "Skill-specific agent evaluation",
+      "concept_class": "evaluation_or_benchmark",
+      "disposition": "update_existing",
+      "rationale": "AWS primary evidence adds measurable skill-selection accuracy and instruction-following evaluation to the existing reusable-agent-skills observability topic.",
+      "evidence_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/evaluate-skill-equipped-agents-with-strands-evals-and-amazon-bedrock-agentcore/"
+      ]
+    },
+    {
+      "name": "Multi-account AgentCore Gateway with MCP",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "rationale": "AWS primary evidence strengthens the existing harness-engineering topic with a governed cross-account agent gateway and bounded MCP access pattern.",
+      "evidence_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/build-a-multi-account-ai-agent-with-agentcore-gateway-and-mcp/"
+      ]
+    },
+    {
+      "name": "Enterprise Copilot default enablement",
+      "concept_class": "safety_security_or_governance",
+      "disposition": "update_existing",
+      "rationale": "GitHub primary evidence extends the existing model-lifecycle-governance topic by making default feature enablement an explicit enterprise policy control.",
+      "evidence_urls": [
+        "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise"
+      ]
+    },
+    {
+      "name": "Volumetric 3D CT reasoning",
+      "concept_class": "multimodal_or_interface",
+      "disposition": "needs_research",
+      "rationale": "NVIDIA's new 3D CT reasoning model is significant, but one publisher-authored development is not yet sufficient to establish a separate durable Watchlist topic.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/introducing-nv-reason-ct-open-3d-ct-vlm-for-radiologist-chain-of-thought-reasoning/"
+      ]
+    },
+    {
+      "name": "Workload-driven GPU cluster readiness",
+      "concept_class": "inference_runtime_or_hardware",
+      "disposition": "needs_research",
+      "rationale": "The cluster-readiness pattern is operationally useful, but current evidence is one NVIDIA-authored implementation and needs broader independent adoption evidence before a new topic is created.",
+      "evidence_urls": [
+        "https://developer.nvidia.com/blog/validate-gpu-cluster-readiness-before-ai-workloads-land/"
+      ]
+    }
+  ],
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-harness-engineering",
+    "dab-topic-model-lifecycle-governance"
+  ],
+  "zero_new_certified": true,
+  "zero_new_justification": "No candidate cleared the new-topic threshold after the required research, frontier-lab, open-source, technical-community, broad-web, and YouTube-creator reviews plus the fourteen-day missed-signal check. September 25 evidence materially strengthens three established Watchlist topics; the 3D CT reasoning and GPU-readiness signals remain promising but need broader independent evidence before becoming separate durable topics."
+}

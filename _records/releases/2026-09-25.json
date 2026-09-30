@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-25",
+  "baseline_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "rollback_target_sha": "4ac06268048a3241d2ecaa5ce7c2638266500d75",
+  "policy_profile": "under80-v1",
+  "image_review": "_records/editorial-handoff/final-image-review-2026-09-25.json",
+  "image_review_sha256": "cdd7615b2188cd8ef2b8dc85eae41a74f449f6b306f32d9930a9555dee37e0d0",
+  "assets": [
+    {
+      "path": "briefs/images/2026-09-25/01-nvidia-opens-3d-ct-reasoning-model-for-volumetric-radiology-workflows.png",
+      "sha256": "bf765b462d75b3fa4efb8e32316ec3d17d6caa754b3f3bac5ee7597b334d6db3",
+      "bytes": 115837
+    },
+    {
+      "path": "briefs/images/2026-09-25/02-nvidia-adds-workload-driven-validation-for-gpu-cluster-readiness.png",
+      "sha256": "59f15009ee16051e9bdf33a181b76b5bda981e906cae28b114f88ca8ab35c439",
+      "bytes": 118666
+    },
+    {
+      "path": "briefs/images/2026-09-25/03-github-changes-the-default-policy-for-generally-available-copilot-featur.png",
+      "sha256": "a5e3e7b06861ad3a15714e6e3ee43514079ae7111f22c60690d88ade7ed64c33",
+      "bytes": 113721
+    },
+    {
+      "path": "briefs/images/2026-09-25/04-microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-g.png",
+      "sha256": "642ad488499257a4567e4a14b5ec961622dd3616df859e620460389085492753",
+      "bytes": 110931
+    },
+    {
+      "path": "briefs/images/2026-09-25/05-aws-adds-skill-specific-evaluation-for-agents-using-reusable-procedures.png",
+      "sha256": "5c9dda37b01869de003775eb740e999afaee74940d45afbec18610420ebcb0e1",
+      "bytes": 109399
+    },
+    {
+      "path": "briefs/images/2026-09-25/06-aws-uses-mcp-and-agentcore-gateway-to-connect-agents-across-account-boun.png",
+      "sha256": "9ee924fc974b7762de5b15c128a9c85d8ba8ae6e40e61fa66972274a059a0b2e",
+      "bytes": 117229
+    }
+  ],
+  "canonical_sha256": "a74879a99d0659736674d97893356d506b11fc5f7baa7680c9d3b95ebe3fde00",
+  "candidate_digest": "sha256:0da444206bbef27c40f744191185da1c457e917445fe6e261cc3ddef74b4ee9e"
+}

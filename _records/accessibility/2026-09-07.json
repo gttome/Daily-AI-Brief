@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-07",
+  "reviewed_at": "2026-09-07T18:30:00Z",
+  "severity_policy": {
+    "critical": "block",
+    "high": "block",
+    "medium": "degrade_and_repair",
+    "low": "record"
+  },
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {
+      "story_id": "dab-story-2026-09-07-3f4df523",
+      "result": "pass",
+      "alt": "OpenAI research-agent workload measured against a human workday",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-07-dab4bc85",
+      "result": "pass",
+      "alt": "Generative agents producing a formal proof that is accepted by the Lean verifier",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-07-8053a573",
+      "result": "pass",
+      "alt": "GPT-6 Astra connected to professional artifacts, computer use, staged access, and human authority",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-07-968c0cd8",
+      "result": "pass",
+      "alt": "Work signals flowing through a human-readable memory model into a chief-of-staff agent",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-07-379d301c",
+      "result": "pass",
+      "alt": "A reusable skill moving through create, reuse, evaluate, improve, and run stages",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-07-fdefded2",
+      "result": "pass",
+      "alt": "Copilot Studio orchestrating a Fabric Data Agent while preserving enterprise data permissions",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-08",
+  "reviewed_at": "2026-09-08T14:35:00Z",
+  "severity_policy": {
+    "critical": "block",
+    "high": "block",
+    "medium": "degrade_and_repair",
+    "low": "record"
+  },
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {
+      "story_id": "dab-story-2026-09-08-aad4e966",
+      "result": "pass",
+      "alt": "Editorial illustration: Execution traces make agent reliability measurable across real development workflows",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-08-4a71e714",
+      "result": "pass",
+      "alt": "Editorial illustration: GitHub’s weekly Copilot release bundles agent-session and review improvements into one operational cadence",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-08-08eab2e3",
+      "result": "pass",
+      "alt": "Editorial illustration: Gemini custom instructions expand across Workspace, making reusable context a platform-level control",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-08-b9c617e3",
+      "result": "pass",
+      "alt": "Editorial illustration: Google Vids can turn source documents into narrated video summaries while keeping human review in the loop",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-08-3444f489",
+      "result": "pass",
+      "alt": "Editorial illustration: Box makes ChatGPT and Claude integrations available by default, reducing setup friction while preserving admin control",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-08-9061ff44",
+      "result": "pass",
+      "alt": "Editorial illustration: Microsoft introduces an Insights Agent pattern for asking how workplace agents are actually being used",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    }
+  ]
+}

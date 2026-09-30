@@ -1,0 +1,62 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m05",
+  "attempt": 2,
+  "operation_key": "dab-edition-2026-09-29-m05-attempt-02-de006e74",
+  "disposition": "accepted",
+  "accepted": true,
+  "quality_rejected": false,
+  "generation": {
+    "native_result_id": "dcf5f7c8-3370-4c0e-9c10-42eb7173f9de",
+    "native_file_id": "file_0000000073d88230a413056b70d815d5",
+    "bytes": 1345239,
+    "width": 1536,
+    "height": 1024,
+    "sha256": "d624e602f8d21a030651470abbe9eac92bd916b09b63aaba1e7b611b5190847e"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-02/raw.png",
+    "commit_sha": "eafc2479846d58810556ee0962561640ae6c3891",
+    "git_blob_sha": "493915607c90f611bb62f076c7ca9b56317553cd",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
+  },
+  "prepared_final": {
+    "bytes": 515549,
+    "width": 1200,
+    "height": 630,
+    "sha256": "3668fb77b57f6329f588a403244ff5cea3c53565a5f16c89c014f9667d131784",
+    "git_blob_sha": "6e69d2e6f2e3a58fc484eeb8338326c1e5d5249b"
+  },
+  "review": {
+    "result": "pass",
+    "mode": "automated",
+    "phase": "after_generation",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "3668fb77b57f6329f588a403244ff5cea3c53565a5f16c89c014f9667d131784",
+    "reviewed_at": "2026-09-30T05:02:00Z",
+    "observation": "Professional white-background textbook workflow showing Script → Gemini 3.8 Flash Lite TTS → Narrated audio → Preview & revise → Google Vids timeline, with a clear revision feedback loop and mechanism labels for naturalness, pacing, context-aware emphasis, and low latency. No biology/Quine, people, coding/repository, GPU/checkpoint, CI/CD, provider-comparison, or model-family imagery."
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png",
+    "commit_sha": "babab0c244d3c0e2d281c80424a5556903efb471",
+    "git_blob_sha": "6e69d2e6f2e3a58fc484eeb8338326c1e5d5249b",
+    "sha256": "3668fb77b57f6329f588a403244ff5cea3c53565a5f16c89c014f9667d131784",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
+  },
+  "next_attempt_allowed": false,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T05:02:00Z"
+}

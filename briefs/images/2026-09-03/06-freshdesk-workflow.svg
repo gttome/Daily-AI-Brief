@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f7fbfb"/>
+<text x="70" y="85" font-family="DejaVu Sans" font-size="34" font-weight="700" fill="#173033">Freshdesk: no-code agentic workflow building blocks</text>
+<g font-family="DejaVu Sans" font-size="22" font-weight="700" fill="#173033">
+<rect x="80" y="255" width="165" height="95" rx="22" fill="#e3f2f1" stroke="#3b7d79" stroke-width="4"/><text x="120" y="312">TRIGGER</text>
+<rect x="300" y="255" width="165" height="95" rx="22" fill="#e3f2f1" stroke="#3b7d79" stroke-width="4"/><text x="334" y="312">COLLECT</text>
+<polygon points="600,240 695,302 600,364 505,302" fill="#eaf4df" stroke="#658743" stroke-width="4"/><text x="542" y="310">CONDITION</text>
+<rect x="735" y="165" width="190" height="95" rx="22" fill="#fff1df" stroke="#a06b2b" stroke-width="4"/><text x="786" y="222">ACTION</text>
+<rect x="735" y="355" width="190" height="95" rx="22" fill="#f7e7e7" stroke="#995858" stroke-width="4"/><text x="773" y="412">HANDOFF</text>
+<rect x="980" y="255" width="145" height="95" rx="22" fill="#e7ebf8" stroke="#596eaa" stroke-width="4"/><text x="1008" y="312">RESULT</text>
+</g>
+<g fill="none" stroke="#55676a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+<path d="M245 302h55"/><path d="M465 302h40"/><path d="M695 302h15v-89h25"/><path d="M695 302h15v101h25"/><path d="M925 212h35v90h20"/><path d="M925 402h35v-100h20"/>
+</g>
+<g fill="none" stroke="#55676a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"><path d="M282 288l18 14-18 14"/><path d="M487 288l18 14-18 14"/><path d="M717 199l18 14-18 14"/><path d="M717 389l18 14-18 14"/><path d="M962 288l18 14-18 14"/></g>
+<text x="365" y="545" font-family="DejaVu Sans" font-size="25" fill="#465066">structure + AI judgment + human escalation</text>
+</svg>

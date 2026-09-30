@@ -1,0 +1,15 @@
+import fs from 'node:fs';import path from 'node:path';import {execFileSync} from 'node:child_process';import {validateIntegratedRepository} from '../_generator/lib/integrity.mjs';
+const ref=process.env.STAGING_REF;
+if(!ref||ref==='main'||ref.startsWith('-'))throw Error('A candidate branch is required');
+execFileSync('git',['check-ref-format','--branch',ref],{stdio:'ignore'});
+execFileSync('git',['fetch','origin',`refs/heads/${ref}:refs/remotes/origin/${ref}`],{stdio:'inherit'});
+const base=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+execFileSync('git',['merge-base','--is-ancestor',base,`origin/${ref}`]);
+const dest=path.resolve('_candidate_site');if(fs.existsSync(dest))throw Error('Candidate directory must be empty');
+execFileSync('git',['worktree','add','--detach',dest,`origin/${ref}`],{stdio:'inherit'});
+const dates=fs.readdirSync(path.join(dest,'_data/editions')).filter(x=>/^\d{4}-\d{2}-\d{2}\.json$/.test(x)).sort();
+const edition=JSON.parse(fs.readFileSync(path.join(dest,'_data/editions',dates.at(-1))));
+const errors=validateIntegratedRepository(edition,dest);if(errors.length)throw Error(errors.join('\n'));
+const changed=execFileSync('git',['diff','--name-only',base,`origin/${ref}`],{encoding:'utf8'}).split('\n');
+if(changed.some(p=>/^(_generator|_tools|\.github)\//.test(p)))throw Error('Publisher candidate cannot modify trusted executable code; use a maintenance PR');
+console.log('Candidate validated:',edition.edition_id);

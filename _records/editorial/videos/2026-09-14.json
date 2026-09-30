@@ -1,0 +1,60 @@
+{
+  "brief_date": "2026-09-14",
+  "searched_at": "2026-09-14",
+  "policy": "docs/operations/publisher-runbook.md",
+  "slots": {
+    "general": {
+      "status": "included",
+      "title": "Use Deep Research with ChatGPT for Teachers",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 266,
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-deep-research-with-chatgpt-for-teachers",
+      "duration_tier": "short",
+      "queries": [
+        "OpenAI Academy newest short AI research videos September 2026",
+        "generative AI research workflow video under 10 minutes",
+        "official source-verification AI tutorial"
+      ],
+      "verification": "OpenAI Academy displays 4:26 and Posted Sep 11, 2026; 4:26 equals 266 seconds.",
+      "selection_rationale": "Fresh, official, unused in the archive, directly relevant to evidence review and below ten minutes.",
+      "short_search_evidence": [
+        "The selected item independently satisfies the preferred short tier at 4:26."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Use Plugins with ChatGPT for Teachers",
+      "channel": "OpenAI Academy",
+      "upload_date": "2026-09-11",
+      "runtime_seconds": 526,
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/use-plugins-with-chatgpt-for-teachers",
+      "duration_tier": "short",
+      "queries": [
+        "OpenAI Academy newest plugin video September 2026",
+        "non-technical reusable AI capability video under 10 minutes",
+        "Agent Skills companion tutorial"
+      ],
+      "verification": "OpenAI Academy displays 8:46 and Posted Sep 11, 2026; 8:46 equals 526 seconds.",
+      "selection_rationale": "Official, unused, concrete for non-technical readers and directly connected to the selected Agent Skills story.",
+      "short_search_evidence": [
+        "The selected item independently satisfies the preferred short tier at 8:46."
+      ]
+    }
+  },
+  "rejections": [
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/build-classroom-sites-with-chatgpt-for-teachers",
+      "reason": "Rejected as an archive duplicate from September 13."
+    },
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/schedule-tasks-with-chatgpt-for-teachers",
+      "reason": "Rejected as an archive duplicate from September 13."
+    },
+    {
+      "url": "https://academy.openai.com/public/clubs/k-12-education-aacga/videos/chatgpt-edu-102-for-k-12-webinar-replay",
+      "reason": "Rejected because the displayed 1:00:04 runtime exceeds the 20-minute ceiling."
+    }
+  ],
+  "included_count": 2
+}

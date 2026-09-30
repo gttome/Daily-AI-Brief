@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "alert_id": "dab-alert-20260907T122100Z-abcdef04",
+  "fingerprint": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+  "alert_type": "qa_failure",
+  "severity": "high",
+  "state": "open",
+  "component": "generated-output parity",
+  "edition_id": "dab-edition-2026-09-07",
+  "run_id": "dab-qa-20260907T122000Z-abcdef02",
+  "first_seen_at": "2026-09-07T12:21:00Z",
+  "last_seen_at": "2026-09-07T12:21:00Z",
+  "occurrence_count": 1,
+  "summary": "Homepage differs from the canonical edition.",
+  "evidence_url": "https://github.com/gttome/Daily-AI-Brief/actions",
+  "notification": {"sent": true, "sent_at": "2026-09-07T12:21:10Z", "deduplicated": false, "reason": "First unresolved occurrence of a High-severity fingerprint."}
+}

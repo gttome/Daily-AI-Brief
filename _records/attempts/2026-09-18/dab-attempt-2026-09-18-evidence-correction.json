@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0.0",
+  "record_type": "attempt_evidence_correction",
+  "recorded_at": "2026-09-18T13:19:16.381334+00:00",
+  "corrects_attempt": "dab-attempt-2026-09-18-publication-20260918T120215Z",
+  "prior_record_preserved": true,
+  "corrections": [
+    {
+      "field": "measured_work.early_stop_triggered",
+      "corrected_value": false,
+      "reason": "The initial pass stopped at its acquisition budget. The reviewed-candidate research sufficiency gate was not reached. Budget stop and successful research early-stop are different conditions."
+    },
+    {
+      "field": "failed_attempts.article_discovery.evidence",
+      "corrected_value": "Publication preparation was incomplete; catalog metadata did not establish the absence of qualifying fresh developments. Targeted publication-date verification was still required.",
+      "reason": "Zero extracted catalog dates is missing evidence, not a finding of no news."
+    },
+    {
+      "field": "failed_attempts.watchlist_discovery.evidence",
+      "corrected_value": "The three fallback pages were requested in a batch after one due-source success; the claim of immediately stopping at three total successes is withdrawn.",
+      "reason": "The prior operation did not execute a sequential stop-at-three loop. Its hand-written aggregate is not a substitute for automated per-source receipts."
+    },
+    {
+      "field": "stage_elapsed_seconds",
+      "corrected_value": null,
+      "reason": "The prior rounded discovery and Watchlist spans are partial observations, not a complete independently timed stage breakdown; unavailable stages and model usage remain unavailable."
+    }
+  ],
+  "publication_status": "Pending",
+  "scope": "Discovery repair and evidence reconciliation; this record does not assert a September 18 edition, editorial approval, deployment or final live QA."
+}

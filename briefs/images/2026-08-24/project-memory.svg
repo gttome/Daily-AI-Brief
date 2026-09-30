@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#FFF5F0"/>
+<text x="60" y="82" fill="#37201C" font-family="Arial,sans-serif" font-size="38" font-weight="700">Project memory now has a visible boundary</text>
+<path d="M105 190 h380 l55 62 h555 v285 H105z" fill="#F29D7E"/>
+<rect x="155" y="280" width="390" height="205" rx="22" fill="#FFFDFB" stroke="#B94D33" stroke-width="5"/>
+<text x="350" y="342" text-anchor="middle" fill="#6A2A1D" font-family="Arial,sans-serif" font-size="29" font-weight="700">PROJECT-ONLY</text>
+<path d="M220 390 h260" stroke="#D88973" stroke-width="12" stroke-linecap="round"/>
+<path d="M250 431 h200" stroke="#E8B09F" stroke-width="12" stroke-linecap="round"/>
+<circle cx="820" cy="365" r="142" fill="#3C6E71"/>
+<path d="M820 286 c-55 0-82 40-82 78 0 32 18 55 43 70 v35 h78 v-35 c25-15 43-38 43-70 0-38-27-78-82-78z" fill="#E8F3EE"/>
+<path d="M783 365 h74" stroke="#3C6E71" stroke-width="10" stroke-linecap="round"/>
+<path d="M820 328 v74" stroke="#3C6E71" stroke-width="10" stroke-linecap="round"/>
+<path d="M987 225 v280" stroke="#754E46" stroke-width="8" stroke-dasharray="12 12"/>
+<text x="1035" y="350" text-anchor="middle" fill="#754E46" font-family="Arial,sans-serif" font-size="24" transform="rotate(90 1035 350)">MEMORY WALL</text>
+<text x="60" y="585" fill="#7B5148" font-family="Arial,sans-serif" font-size="24">Context can stay inside the project instead of leaking into unrelated work.</text>
+</svg>

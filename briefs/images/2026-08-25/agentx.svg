@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" rx="28" fill="#071622"/>
+<text x="58" y="76" fill="#F4FBFF" font-family="Arial,sans-serif" font-size="38" font-weight="700">AgentX replays the irregular shape of agent work</text>
+<text x="70" y="148" fill="#78A9C7" font-family="Arial,sans-serif" font-size="24">CHAT</text>
+<g fill="#2B8FB8"><rect x="180" y="116" width="125" height="55" rx="20"/><rect x="350" y="116" width="125" height="55" rx="20"/><rect x="520" y="116" width="125" height="55" rx="20"/><rect x="690" y="116" width="125" height="55" rx="20"/><rect x="860" y="116" width="125" height="55" rx="20"/></g>
+<path d="M80 215 H1120" stroke="#244050" stroke-width="3"/>
+<text x="70" y="284" fill="#FFCC76" font-family="Arial,sans-serif" font-size="24">AGENT</text>
+<g><rect x="180" y="246" width="210" height="70" rx="22" fill="#7857D8"/><rect x="425" y="266" width="88" height="40" rx="14" fill="#F2B84B"/><rect x="548" y="232" width="300" height="84" rx="22" fill="#7857D8"/><rect x="885" y="276" width="120" height="40" rx="14" fill="#F2B84B"/></g>
+<path d="M120 390 C230 330 260 500 370 430 S560 330 650 445 S820 515 910 390 S1050 335 1100 440" fill="none" stroke="#52E0B8" stroke-width="12" stroke-linecap="round"/>
+<circle cx="370" cy="430" r="16" fill="#FFF"/><circle cx="650" cy="445" r="16" fill="#FFF"/><circle cx="910" cy="390" r="16" fill="#FFF"/>
+<text x="105" y="540" fill="#9BC5D9" font-family="Arial,sans-serif" font-size="24">LONG CONTEXT</text>
+<text x="472" y="540" fill="#9BC5D9" font-family="Arial,sans-serif" font-size="24">TOOL GAPS</text>
+<text x="785" y="540" fill="#9BC5D9" font-family="Arial,sans-serif" font-size="24">CACHE REUSE</text>
+</svg>

@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://gttome.github.io/Daily-AI-Brief/contracts/v1/publication-event.schema.json",
+  "title": "Daily AI Brief immutable publication event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "run_id", "phase", "edition_id", "observed_at", "baseline_main_sha", "staged_tree_digest", "generator_version", "contract_version", "checks", "file_set", "commit_sha", "pages", "rollback_target_sha", "supersedes_event_id"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "event_id": {"type": "string", "pattern": "^dab-publication-event-[0-9]{8}T[0-9]{6}Z-[0-9a-f]{8}$"},
+    "run_id": {"type": "string", "pattern": "^dab-publication-[0-9]{8}T[0-9]{6}Z-[0-9a-f]{8}$"},
+    "phase": {"enum": ["validated", "commit_created", "pages_verified", "failed", "rolled_back"]},
+    "edition_id": {"type": "string", "pattern": "^dab-edition-"},
+    "observed_at": {"type": "string", "format": "date-time"},
+    "baseline_main_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "staged_tree_digest": {"type": "string", "pattern": "^sha256:[0-9a-f]{64}$"},
+    "generator_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "contract_version": {"const": "1.0.0"},
+    "checks": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/check"}},
+    "file_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["canonical_sources", "assets", "derived_outputs", "operational_records"],
+      "properties": {
+        "canonical_sources": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "assets": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+        "derived_outputs": {"type": "array", "minItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+        "operational_records": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}}
+      }
+    },
+    "commit_sha": {"type": ["string", "null"], "pattern": "^[0-9a-f]{40}$"},
+    "pages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["run_id", "conclusion", "verified_at"],
+      "properties": {
+        "run_id": {"type": ["integer", "null"], "minimum": 1},
+        "conclusion": {"enum": ["success", "failure", "cancelled", "timed_out", "not_run"]},
+        "verified_at": {"type": ["string", "null"], "format": "date-time"}
+      }
+    },
+    "rollback_target_sha": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "supersedes_event_id": {"type": ["string", "null"]}
+  },
+  "$defs": {
+    "check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["check_id", "class", "result", "severity", "evidence"],
+      "properties": {
+        "check_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+        "class": {"enum": ["deterministic", "editorial"]},
+        "result": {"enum": ["pass", "fail", "not_run", "not_applicable", "waived"]},
+        "severity": {"enum": ["critical", "high", "medium", "low", "info"]},
+        "evidence": {"type": "string", "minLength": 1}
+      }
+    }
+  }
+}

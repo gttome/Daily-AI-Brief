@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "checkpoints": [
+    {
+      "phase": 1,
+      "commit_sha": "c3b0a13abc2dc55dbdf7ce98b4e3dc25a1d42c92",
+      "tree_sha": "ad7e9a94fd964fdc8e91a38a014f7c041119ef94",
+      "tests": 118,
+      "contracts": 15,
+      "public_output_parity": "PASS",
+      "tag": "efficiency-phase-1",
+      "rollback_target": "580b34dd4082d5de22240652ead2e3ecf50fa557",
+      "production_efficiency_observations": 0
+    },
+    {
+      "phase": 2,
+      "commit_sha": "d8c1a90953fec96170ccf315ccc9ff6c76c081af",
+      "tree_sha": "6237e999e87adec1cc1fc29e6b5b3dcc74b5346d",
+      "tests": 120,
+      "contracts": 15,
+      "public_output_parity": "PASS",
+      "tag": "efficiency-phase-2",
+      "rollback_target": "c3b0a13abc2dc55dbdf7ce98b4e3dc25a1d42c92",
+      "production_efficiency_observations": 0
+    },
+    {
+      "phase": 3,
+      "commit_sha": "599978ba46156b1b1998749c7b43cf1cd2597dfa",
+      "tree_sha": "5658d5fd76ce04b79c1d167c6a359d0a18fd6856",
+      "tests": 123,
+      "contracts": 15,
+      "public_output_parity": "PASS",
+      "tag": "efficiency-phase-3",
+      "rollback_target": "d8c1a90953fec96170ccf315ccc9ff6c76c081af",
+      "production_efficiency_observations": 0
+    },
+    {
+      "phase": 4,
+      "commit_sha": "a4914118519975000631304cc84b3dc1fe4c0ef0",
+      "tree_sha": "abeb6613ab114c31237c1e8ba6690417ae3f1208",
+      "tests": 126,
+      "contracts": 16,
+      "public_output_parity": "PASS",
+      "tag": "efficiency-phase-4",
+      "rollback_target": "599978ba46156b1b1998749c7b43cf1cd2597dfa",
+      "production_efficiency_observations": 0
+    }
+  ]
+}

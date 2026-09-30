@@ -1,0 +1,190 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260917T125112Z-d92903c1",
+  "edition_id": "dab-edition-2026-09-17",
+  "publication_run_id": "20260917t1222z",
+  "executed_at": "2026-09-17T12:51:12Z",
+  "initial_result": "fail",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "freshness_schema_allocation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "The canonical and live edition is dated September 17, 2026, uses full_v1, validates against the active schema, records research cutoff 2026-09-17T12:05:28Z, and contains exactly six stable stories ordered 2 Technical, 2 Applied and 2 Agents."
+    },
+    {
+      "check_id": "candidate_memory_novelty_evidence",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Twenty candidates contain complete scores, rationales and rejection evidence. Nine candidates were deeply reviewed, three per focus category, before the sufficiency early-stop gate fired. The 30-day memory snapshot contains 175 stories and all six selected stories are new."
+    },
+    {
+      "check_id": "freshness_policy",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All six selected stories are verified inside the rolling 24-hour primary window. No ordinary or Agent Skills recency fallback was used."
+    },
+    {
+      "check_id": "agent_skills_allocation",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Exactly one selected story is the reusable Agent Skills item: the Zocks financial-planning Agent Skill."
+    },
+    {
+      "check_id": "media_slots",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Both video slots remain empty after private documented searches and display only the required neutral public sentence. Podcast slot 9 contains the independently preflighted September 16 Apple Podcasts episode with exact 25:19 runtime and a direct URL that returned HTTP 200 before staging."
+    },
+    {
+      "check_id": "reader_book_bridges",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All seven included items were evaluated. Five verified reader learning bridges are published with at most one per item, exact book locators, the approved Leanpub wording and no public proposed book changes or owner-only implications."
+    },
+    {
+      "check_id": "images_textbook_quality",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six custom built-in images were inspected individually and together. All are exact 1200x630 textbook PNGs with materially different compositions; all six final live SHA-256 values match the approved release manifest."
+    },
+    {
+      "check_id": "canonical_reader_parity",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Repository and integration validation pass. Homepage, dated brief, latest content, archive, feeds and permanent item pages preserve canonical identities and content. Verified source-article reading estimates are 6, 9, 5, 3, 5 and 4 minutes."
+    },
+    {
+      "check_id": "ratings_sharing_privacy",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Homepage and dated brief each contain seven rating groups and 35 stars because both video slots are empty; every included permanent item contains five stars. Browser execution confirmed the article Share control, visible count transition from 0 to 1 and a clean canonical article URL. Rating POST retains exactly brief_date, item_id and rating plus x-operation-id, preserves retry identity, expires after 29 days and accepts recorded=true without exposing rating totals."
+    },
+    {
+      "check_id": "reader_routes_feeds_navigation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Fifteen live routes returned HTTP 200: homepage, dated brief, archive, both Watchlist routes, six story pages, the podcast page, RSS, JSON feed and daily feed. The Watchlist appears after the podcast and before Editorial takeaway. Email remains Disabled by choice / Not applicable while RSS and calendar remain active."
+    },
+    {
+      "check_id": "watchlist_release",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "medium",
+      "evidence": "Eight substantive topics and both public Watchlist routes pass. Cadence-aware discovery checked 41 sources, recorded 37 fresh successful observations, 33 with candidate links, four with no links, four retrieval failures and eight assisted-review sources. The three-success floor passed; partial source coverage remains transparently degraded."
+    },
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #115 passed exact-head candidate CI 35222462213. Production content SHA d92903c10c489557d1acfee4b0496aacd0ef85ea passed deterministic CI 35222624397 and Pages deployment 35222623606."
+    },
+    {
+      "check_id": "efficiency_measurement",
+      "class": "deterministic",
+      "result": "not_run",
+      "severity": "medium",
+      "evidence": "Measured discovery, evidence-packet, image, Watchlist, generation, QA and publication timings are retained, with 15 cache hits, 59 misses and the nine-candidate early-stop confirmed. Filtering, deep-retrieval, selection/writing, media and live-verification seconds plus observable model-call and token counts were unavailable; no zero or inferred value was substituted and no optimization target is claimed."
+    },
+    {
+      "check_id": "private_operations",
+      "class": "deterministic",
+      "result": "not_run",
+      "severity": "medium",
+      "evidence": "The existing unattended Sites credential was retrieved without rotation, but owner-authenticated usage, snapshot, comment reads and the daily retention operation returned owner_identity_required. The maintenance receipt remained at the September 16 completion and the September 17 cleanup could not be verified. No private totals, credits or costs were inferred or published."
+    },
+    {
+      "check_id": "private_checkpoint",
+      "class": "deterministic",
+      "result": "not_run",
+      "severity": "low",
+      "evidence": "The owner-only local attempt directory remained readable throughout the run and retained stage packets and caches. Durable signed-download readback was unavailable, so checkpoint coverage is local-only and no remote persistence claim is made. Observed evidence reuse was zero."
+    },
+    {
+      "check_id": "subscriber_delivery",
+      "class": "deterministic",
+      "result": "not_applicable",
+      "severity": "info",
+      "evidence": "Disabled by choice / Not applicable. Signup and delivery remain disabled, and no email was sent."
+    }
+  ],
+  "repairs": [
+    {
+      "description": "Updated two stale 2026-09-17 test fixtures to a nonproduction 2099 date after the first local QA failed against the real September 17 reader-book and empty-media records.",
+      "commit_sha": "d92903c10c489557d1acfee4b0496aacd0ef85ea"
+    },
+    {
+      "description": "Recovered three pre-merge CI failures without rerunning editorial work: restored one exact approved image blob, added the required 30-day story-memory snapshot, and retransferred four large UTF-8 discovery records in exact chunks before the passing candidate head merged.",
+      "commit_sha": "d92903c10c489557d1acfee4b0496aacd0ef85ea"
+    }
+  ],
+  "defects": [
+    {
+      "severity": "medium",
+      "code": "stale_dated_test_fixtures",
+      "status": "resolved",
+      "description": "Two synthetic fixtures used the real September 17 date and conflicted with the new canonical reader records. Both now use a nonproduction date and the complete suite passes."
+    },
+    {
+      "severity": "medium",
+      "code": "candidate_blob_transport_truncation",
+      "status": "resolved",
+      "description": "The first candidate transfer truncated one approved PNG and four large UTF-8 discovery records. Exact chunked transfers restored the approved hashes and valid Jekyll data before merge."
+    },
+    {
+      "severity": "medium",
+      "code": "candidate_story_memory_missing",
+      "status": "resolved",
+      "description": "The first atomic candidate omitted the required September 17 30-day story-memory snapshot. The generated 175-story snapshot was added and validated before merge."
+    },
+    {
+      "severity": "medium",
+      "code": "discovery_coverage_partial",
+      "status": "accepted",
+      "description": "Four checked Watchlist sources failed retrieval, four returned no candidate links and eight require assisted review. Thirty-seven fresh automated observations exceeded the required floor, and no failed observation was treated as no news."
+    },
+    {
+      "severity": "medium",
+      "code": "private_owner_identity_unavailable",
+      "status": "accepted",
+      "description": "The existing Sites unattended credential did not satisfy the owner_identity_required gate for usage, snapshots, comments or September 17 retention cleanup. No bypass rotation or indirect historical transfer was attempted."
+    },
+    {
+      "severity": "medium",
+      "code": "efficiency_telemetry_incomplete",
+      "status": "accepted",
+      "description": "Several required per-stage timings and observable model-call/token measurements were unavailable. They remain null, making the efficiency result DEGRADED even though publication and public QA pass."
+    },
+    {
+      "severity": "low",
+      "code": "checkpoint_readback_unavailable",
+      "status": "accepted",
+      "description": "The local private checkpoint remained accessible, but durable remote readback could not be verified. No remote persistence or evidence reuse is claimed."
+    },
+    {
+      "severity": "info",
+      "code": "local_jekyll_unavailable",
+      "status": "accepted",
+      "description": "The local bundle executable was unavailable. Candidate and production GitHub CI completed the required deterministic Jekyll build successfully before success was reported."
+    }
+  ],
+  "deployment_evidence": {
+    "pages_run_id": 35222623606,
+    "head_sha": "d92903c10c489557d1acfee4b0496aacd0ef85ea",
+    "conclusion": "success"
+  },
+  "record_path": "_records/qa/2026-09-17.json",
+  "deployment_latency_seconds": 56
+}

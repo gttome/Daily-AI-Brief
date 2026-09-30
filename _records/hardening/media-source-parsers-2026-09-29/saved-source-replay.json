@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "result": "pass",
+  "verified_at": "2026-09-29T18:34:22.256459+00:00",
+  "scope": "Replay of six retained Q25 catalog responses only; metadata extraction, not new discovery, selection, image execution, qualification or publication.",
+  "new_source_retrievals": 0,
+  "podcast_records_extracted": 25,
+  "video_records_extracted": 90,
+  "historical_results_unchanged": true,
+  "artifacts": [
+    {"workflow_run_id": 36588339401, "artifact_id": 11042203975, "archive_sha256": "b7e3e5ec5746d6373792a791de128187c2728c5f72a29a642f7799860ce61f3d"},
+    {"workflow_run_id": 36589539873, "artifact_id": 11043047569, "archive_sha256": "59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40"}
+  ],
+  "sources": [
+    {"kind": "apple", "name": "everyday", "identity": "1683401861", "sha256": "d4e5efdc221027f95473288771230a314494fef0ba75ea94b0057b72a5b65b2c", "records": 8, "partial_menus_ignored": 8},
+    {"kind": "apple", "name": "ai-for-humans", "identity": "1682409647", "sha256": "e2b9007562746dbb19b097c2d2096be43aa3eb9f811bc0dc59058835070d2322", "records": 8, "partial_menus_ignored": 8},
+    {"kind": "apple", "name": "practical", "identity": "1406537385", "sha256": "05ce018fffbfd9293531035d79130135fb670e41e8b054d3a9f3b45537f51765", "records": 9, "partial_menus_ignored": 9},
+    {"kind": "youtube", "name": "ibm", "identity": "UCKWaEZ-_VweaEx1j62do_vQ", "sha256": "ccc1eca9649d49e48afffb933c16f1835d397ebbe2eb83c78aea1bfb4d8e591d", "records": 30, "mode": "lockupViewModel"},
+    {"kind": "youtube", "name": "jeff-su", "identity": "UCwAnu01qlnVg1Ai2AbtTMaA", "sha256": "672f0b21256a38216294f7ddef043cc27fa0939fc8318d7df38836c0379b057b", "records": 30, "mode": "lockupViewModel"},
+    {"kind": "youtube", "name": "kevin-stratvert", "identity": "UCfJT_eYDTmDE-ovKaxVE1ig", "sha256": "aaf9f909128c957e52b350611b3b34e82d7cb0cc06ab8b5e3a97828470ff7a8c", "records": 30, "mode": "lockupViewModel"}
+  ],
+  "local_tests": {"parser_tests_passed": 24, "targeted_tests_passed": 58, "earlier_broader_attempt": {"passed": 93, "failed": 2, "reason": "Retained partial checkout lacks unrelated September 14 image fixtures and _contracts/v1/edition.schema.json. Full validation must run on protected CI's complete checkout; no fixtures were invented or tests weakened."}},
+  "production_mutation": false,
+  "native_image_handoff_proven": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false
+}

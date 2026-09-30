@@ -1,0 +1,23 @@
+{
+  "schema_version": "image-handoff-proof-v2",
+  "host_id": "chatgpt-scheduled-executor",
+  "release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+  "evidence_type": "live",
+  "invocation_id": "automation:6abaf03d6c608191be014dd1765468d3@2026-09-29T23:31:54.210243Z",
+  "operation_key": "1ca4175cfda41490b8814128c39a5b7b40165e93460b571bdaa232cd154eee95",
+  "native_result_id": "73e1aa5f-0fd7-4018-a83a-7d1aad7e7b11",
+  "artifact_id": "file_000000004c9c81f8b244fb39ab06f2ff",
+  "raw_sha256": "1d2c035d3a46ea2ebdccc0f6c036d5d001181c2616823d27b06b73d4f230cb55",
+  "git_blob_sha": "77ffaceb440db06914e434bb90e314e5c46ab433",
+  "git_commit_sha": "4dcd14c77a3a66dcd3d91ef9fad737082609fc0a",
+  "git_readback_verified": true,
+  "verified_at": "2026-09-29T23:56:56Z",
+  "expires_at": "2026-09-30T00:56:56Z",
+  "scheduler_task_id": "6abaf03d6c608191be014dd1765468d3",
+  "scheduler_last_run_time": "2026-09-29T23:31:54.210243Z",
+  "invocation_id_kind": "scheduler_task_plus_observed_run_time",
+  "association_evidence": "same scheduled executor invocation produced the native generation result and exposed the matching current-execution file identity",
+  "readback_workflow_run_id": 36647823202,
+  "readback_job_id": 109674789563,
+  "readback_artifact_id": 11068744586
+}

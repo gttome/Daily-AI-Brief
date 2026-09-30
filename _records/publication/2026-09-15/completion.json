@@ -1,0 +1,73 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20260915T124400Z-0c0c7d41",
+  "run_id": "20260915t1305z",
+  "phase": "pages_verified",
+  "edition_id": "dab-edition-2026-09-15",
+  "observed_at": "2026-09-15T12:44:00Z",
+  "baseline_main_sha": "b833f01807eca040a0319c4540863fe5c19f8a4a",
+  "staged_tree_digest": "sha256:895e4adc81acf050d302cd1f17cd17c6fc1dba92dc0a430cec23bb5a43c35b71",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Publication PR #104 passed candidate CI 34968994298. Production SHA 0c0c7d41af5f225d39092e0c57652df1603a7924 passed CI 34969156965 and Pages 34969151908."
+    },
+    {
+      "check_id": "live_reader_routes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Homepage, dated brief, archive, both watchlist routes, six story pages, two video pages, podcast page, three feeds and calendar returned HTTP 200."
+    },
+    {
+      "check_id": "live_images_interactions",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six live PNG hashes match the approved release manifest. Browser execution confirmed a canonical article Share control, visible share count and five-star controls; homepage and dated brief each contain nine groups and 45 stars."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-09-15.json"
+    ],
+    "assets": [
+      "briefs/images/2026-09-15/01-copilot-auto-model-selection.png",
+      "briefs/images/2026-09-15/02-humanist-ai-control-layers.png",
+      "briefs/images/2026-09-15/03-financial-advisor-evidence-flow.png",
+      "briefs/images/2026-09-15/04-marketing-ops-as-code.png",
+      "briefs/images/2026-09-15/05-agent-skills-validation-lifecycle.png",
+      "briefs/images/2026-09-15/06-campaign-agent-orchestration.png"
+    ],
+    "derived_outputs": [
+      "briefs/2026-09-15.md",
+      "latest.md",
+      "index.md",
+      "archive.md",
+      "README.md",
+      "feed.xml",
+      "daily-feed.xml",
+      "feed.json",
+      "qa/2026-09-15.md",
+      "qa/index.md"
+    ],
+    "operational_records": [
+      "_records/publication/2026-09-15/20260915t1305z.validated.json",
+      "_records/qa/2026-09-15.json",
+      "_records/analytics/2026-09-15.json"
+    ]
+  },
+  "commit_sha": "0c0c7d41af5f225d39092e0c57652df1603a7924",
+  "pages": {
+    "run_id": 34969151908,
+    "conclusion": "success",
+    "verified_at": "2026-09-15T12:44:00Z"
+  },
+  "rollback_target_sha": "b833f01807eca040a0319c4540863fe5c19f8a4a",
+  "supersedes_event_id": "dab-publication-event-20260915T130500Z-aa0a6023"
+}

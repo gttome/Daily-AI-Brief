@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "dab-qa-20260918T150023Z-010884ed",
+  "edition_id": "dab-edition-2026-09-18",
+  "publication_run_id": "dab-sep18-work-preparation",
+  "executed_at": "2026-09-18T15:00:23Z",
+  "initial_result": "fail",
+  "final_result": "pass",
+  "checks": [
+    {
+      "check_id": "ci_pages_release",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "PR #121 merged approved candidate 005977eee9bbba9eacd69b0ef4803a40085e7cd6. Production CI 35359075028 and Pages 35359074510 both succeeded for content SHA 010884ed5beba364c0d792b87b0cdb1eb1beac8a"
+    },
+    {
+      "check_id": "live_reader_routes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Sixteen live routes returned HTTP 200: home, latest, dated brief, archive, Watchlist, eight permanent item pages and three feeds. All feeds contain September 18. Home, latest and dated brief each contain eight rating groups and 40 stars; every included item page contains five stars."
+    },
+    {
+      "check_id": "live_images",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six live PNG SHA-256 values match the approved repository images. Browser DOM confirmed all six loaded and eight rating groups rendered. Share controls are visible. No synthetic reader ratings or share events were submitted."
+    },
+    {
+      "check_id": "editorial_evidence",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six stories selected from 22 candidates, canonical 2/2/2 allocation, Rovo reusable Agent Skills story, two independently preflighted podcasts and six reviewed 1200x630 explanatory images. Date-only source timestamps are disclosed as recency fallback."
+    },
+    {
+      "check_id": "deterministic_gates",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "221 tests, 16 contract checks, repository and integrated validation, atomic publication, append-only ledgers and accessibility passed before approval. Production CI repeated required build gates."
+    },
+    {
+      "check_id": "reading_support",
+      "class": "editorial",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All eight items have reading support. Six article reading times are explicitly unavailable; reviewed source word counts were not retained. Earlier Brief links and limitations remain visible."
+    },
+    {
+      "check_id": "command_center",
+      "class": "deterministic",
+      "result": "fail",
+      "severity": "medium",
+      "evidence": "Signed-out browser recognizes September 18 and live GitHub signals. Its older nine-slot media display omits both podcasts and treats six articles as complete reader coverage. Private owner state is unavailable; no private usage/snapshot write or retention operation was performed. Completion/QA evidence is being appended separately."
+    },
+    {
+      "check_id": "subscriber_delivery",
+      "class": "deterministic",
+      "result": "not_applicable",
+      "severity": "info",
+      "evidence": "Disabled by choice / Not applicable; no email sent."
+    }
+  ],
+  "repairs": [
+    {
+      "description": "Modern shadow parity, first-generation ratings, historical page preservation and required story-memory path were repaired before the approved merge.",
+      "commit_sha": "010884ed5beba364c0d792b87b0cdb1eb1beac8a"
+    }
+  ],
+  "defects": [
+    {
+      "severity": "medium",
+      "code": "video_retrieval_degraded",
+      "status": "accepted",
+      "description": "Both video slots remain empty after bounded official-channel checks failed to expose usable metadata. No claim that no suitable videos exist."
+    },
+    {
+      "severity": "medium",
+      "code": "watchlist_coverage_partial",
+      "status": "accepted",
+      "description": "41 checks, 28 successful retrievals, 13 unavailable and 8 assisted-review sources. Existing topic dates preserved; no new semantic topics approved."
+    },
+    {
+      "severity": "low",
+      "code": "source_reading_times_unavailable",
+      "status": "accepted",
+      "description": "Six reliable source-text estimates remain unavailable."
+    },
+    {
+      "severity": "medium",
+      "code": "command_center_media_coverage",
+      "status": "open",
+      "description": "Command Center retains a legacy nine-slot view and omits the two-podcast array; public edition and item pages correctly show both. Reader coverage is therefore not validated for all eight included items."
+    },
+    {
+      "severity": "medium",
+      "code": "private_collection_unverified",
+      "status": "accepted",
+      "description": "Private owner-authenticated usage/snapshot reconciliation and retention operations were not performed."
+    },
+    {
+      "severity": "medium",
+      "code": "generator_and_atomic_repairs",
+      "status": "resolved",
+      "description": "Modern shadow parity, first-generation ratings, historical page preservation and required story-memory path were repaired before the approved merge."
+    }
+  ],
+  "deployment_evidence": {
+    "pages_run_id": 35359074510,
+    "head_sha": "010884ed5beba364c0d792b87b0cdb1eb1beac8a",
+    "conclusion": "success"
+  },
+  "record_path": "_records/qa/2026-09-18.json",
+  "deployment_latency_seconds": null
+}

@@ -1,0 +1,674 @@
+{
+  "date": "2026-09-13",
+  "sources": [
+    {
+      "source_id": "x-research-feeds",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Confirm account identity, follow every claim to original evidence, and do not treat screenshots, engagement, or reposts as validation."
+    },
+    {
+      "source_id": "specialized-discords",
+      "status": "assisted_review_required",
+      "reason": "Discovery signal only. Use only official or verified community access, never expose private discussion, and require public original evidence before selection."
+    },
+    {
+      "source_id": "youtube-ai-research",
+      "status": "assisted_review_required",
+      "reason": "Verify channel identity, upload date, runtime, claims, and linked original evidence. Demonstrations and commentary are not independent validation."
+    },
+    {
+      "source_id": "xai-news",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-openai",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-anthropic",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "youtube-google-deepmind",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "openreview",
+      "status": "assisted_review_required",
+      "reason": "This endpoint requires identity, access, runtime, and original-evidence review."
+    },
+    {
+      "source_id": "hugging-face",
+      "status": "retrieved",
+      "candidate_links": 18,
+      "checked_at": "2026-09-13T12:01:43.783Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:36.155Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "anthropic-engineering",
+      "status": "retrieved",
+      "candidate_links": 27,
+      "checked_at": "2026-09-13T12:01:44.234Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:36.135Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "stanford-hai",
+      "status": "retrieved",
+      "candidate_links": 10,
+      "checked_at": "2026-09-13T12:01:44.520Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:36.157Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-research",
+      "status": "retrieved",
+      "candidate_links": 8,
+      "checked_at": "2026-09-13T12:01:44.532Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:36.157Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "langchain",
+      "status": "retrieved",
+      "candidate_links": 10,
+      "checked_at": "2026-09-13T12:01:46.187Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:36.158Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-365",
+      "status": "retrieved",
+      "candidate_links": 18,
+      "checked_at": "2026-09-13T12:01:46.398Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:46.188Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "nvidia-ai-podcast",
+      "status": "retrieved",
+      "candidate_links": 59,
+      "checked_at": "2026-09-13T12:01:52.438Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:46.189Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "llamaindex",
+      "status": "retrieved",
+      "candidate_links": 100,
+      "checked_at": "2026-09-13T12:01:52.785Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:46.187Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "google-workspace",
+      "status": "retrieved",
+      "candidate_links": 8,
+      "checked_at": "2026-09-13T12:01:54.373Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:46.188Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "ibm-technology",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-13T12:02:10.190Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:01:46.188Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-13T12:01:58.189Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "source_id": "github-changelog",
+      "status": "retrieved",
+      "candidate_links": 20,
+      "checked_at": "2026-09-13T12:02:17.865Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:10.191Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "everyday-ai",
+      "status": "retrieved",
+      "candidate_links": 13,
+      "checked_at": "2026-09-13T12:02:18.122Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:10.191Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "ai-for-humans",
+      "status": "retrieved",
+      "candidate_links": 0,
+      "checked_at": "2026-09-13T12:02:18.165Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:10.191Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "google-deepmind",
+      "status": "retrieved",
+      "candidate_links": 15,
+      "checked_at": "2026-09-13T12:02:18.807Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:10.191Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "practical-ai",
+      "status": "retrieved",
+      "candidate_links": 4,
+      "checked_at": "2026-09-13T12:02:20.502Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:10.190Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "salesforce",
+      "status": "retrieved",
+      "candidate_links": 16,
+      "checked_at": "2026-09-13T12:02:26.768Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:20.503Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "microsoft-learn",
+      "status": "retrieved",
+      "candidate_links": 0,
+      "checked_at": "2026-09-13T12:02:26.829Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:20.502Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "zapier",
+      "status": "retrieved",
+      "candidate_links": 20,
+      "checked_at": "2026-09-13T12:02:28.096Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:20.503Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "nvidia-developer",
+      "status": "retrieved",
+      "candidate_links": 61,
+      "checked_at": "2026-09-13T12:02:29.151Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:20.502Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "atlassian",
+      "status": "retrieved",
+      "candidate_links": 1,
+      "checked_at": "2026-09-13T12:02:29.869Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:20.503Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "simon-willison",
+      "status": "retrieved",
+      "candidate_links": 30,
+      "checked_at": "2026-09-13T12:02:37.404Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:29.869Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-models",
+      "status": "retrieved",
+      "candidate_links": 30,
+      "checked_at": "2026-09-13T12:02:37.428Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:29.870Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv-cs-lg",
+      "status": "retrieved",
+      "candidate_links": 2,
+      "checked_at": "2026-09-13T12:02:38.903Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:29.870Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv-cs-ai",
+      "status": "retrieved",
+      "candidate_links": 1,
+      "checked_at": "2026-09-13T12:02:38.986Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:29.870Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "arxiv-cs-cl",
+      "status": "retrieved",
+      "candidate_links": 1,
+      "checked_at": "2026-09-13T12:02:38.990Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:29.870Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-datasets",
+      "status": "retrieved",
+      "candidate_links": 30,
+      "checked_at": "2026-09-13T12:02:39.406Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:38.990Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "anthropic-news",
+      "status": "retrieved",
+      "candidate_links": 23,
+      "checked_at": "2026-09-13T12:02:46.452Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:38.992Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "openai-news",
+      "status": "retrieved",
+      "candidate_links": 30,
+      "checked_at": "2026-09-13T12:02:47.424Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:38.991Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-spaces",
+      "status": "retrieved",
+      "candidate_links": 24,
+      "checked_at": "2026-09-13T12:02:50.010Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:38.991Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hugging-face-daily-papers",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-13T12:03:02.994Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:02:38.991Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-13T12:02:50.992Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "source_id": "qwen-blog",
+      "status": "retrieved",
+      "candidate_links": 0,
+      "checked_at": "2026-09-13T12:03:09.958Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:02.994Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "mistral-news",
+      "status": "retrieved",
+      "candidate_links": 89,
+      "checked_at": "2026-09-13T12:03:10.149Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:02.994Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "meta-ai-blog",
+      "status": "retrieved",
+      "candidate_links": 3,
+      "checked_at": "2026-09-13T12:03:12.706Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:02.994Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "google-deepmind-blog",
+      "status": "unavailable",
+      "reason": "The operation was aborted due to timeout",
+      "checked_at": "2026-09-13T12:03:26.995Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:02.994Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        },
+        {
+          "checked_at": "2026-09-13T12:03:14.994Z",
+          "status": "unavailable",
+          "reason": "The operation was aborted due to timeout"
+        }
+      ]
+    },
+    {
+      "source_id": "deepseek-news",
+      "status": "retrieved",
+      "candidate_links": 7,
+      "checked_at": "2026-09-13T12:03:34.221Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:26.995Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-generative-ai",
+      "status": "retrieved",
+      "candidate_links": 31,
+      "checked_at": "2026-09-13T12:03:35.399Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:26.995Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-llm",
+      "status": "retrieved",
+      "candidate_links": 21,
+      "checked_at": "2026-09-13T12:03:35.437Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:26.996Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-ai-agents",
+      "status": "retrieved",
+      "candidate_links": 24,
+      "checked_at": "2026-09-13T12:03:35.512Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:26.996Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "github-trending",
+      "status": "retrieved",
+      "candidate_links": 32,
+      "checked_at": "2026-09-13T12:03:35.908Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:26.995Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "reddit-localllama",
+      "status": "retrieved",
+      "candidate_links": 0,
+      "checked_at": "2026-09-13T12:03:44.989Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:35.909Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "reddit-machinelearning",
+      "status": "retrieved",
+      "candidate_links": 0,
+      "checked_at": "2026-09-13T12:03:45.072Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:35.908Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hacker-news-show",
+      "status": "retrieved",
+      "candidate_links": 29,
+      "checked_at": "2026-09-13T12:03:46.935Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:35.909Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "hacker-news-newest",
+      "status": "retrieved",
+      "candidate_links": 25,
+      "checked_at": "2026-09-13T12:03:46.978Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:35.909Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "icml",
+      "status": "retrieved",
+      "candidate_links": 21,
+      "checked_at": "2026-09-13T12:03:54.550Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:46.978Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "neurips",
+      "status": "retrieved",
+      "candidate_links": 26,
+      "checked_at": "2026-09-13T12:03:57.039Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:46.978Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "acl-anthology",
+      "status": "retrieved",
+      "candidate_links": 100,
+      "checked_at": "2026-09-13T12:04:04.334Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:57.040Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    },
+    {
+      "source_id": "iclr",
+      "status": "retrieved",
+      "candidate_links": 8,
+      "checked_at": "2026-09-13T12:04:06.454Z",
+      "attempts": [
+        {
+          "checked_at": "2026-09-13T12:03:57.039Z",
+          "status": "retrieved",
+          "http_status": 200
+        }
+      ]
+    }
+  ],
+  "queue_size": 1046,
+  "early_signal_channels": 10,
+  "note": "Discovery links are unverified candidates; never select without original evidence, date, runtime where required, duplicate and quality review. Community and aggregator leads require an original-source check."
+}

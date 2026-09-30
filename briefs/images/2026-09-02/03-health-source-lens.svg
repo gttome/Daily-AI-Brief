@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#edf9f6"/>
+<text x="55" y="68" fill="#12352f" font-family="Arial" font-size="34" font-weight="700">NINE PUBLIC HEALTH SOURCES, ONE RESEARCH VIEW</text>
+<g fill="#fff" stroke="#0f766e" stroke-width="4"><rect x="55" y="130" width="170" height="85" rx="14"/><rect x="55" y="250" width="170" height="85" rx="14"/><rect x="55" y="370" width="170" height="85" rx="14"/><rect x="270" y="190" width="170" height="85" rx="14"/><rect x="270" y="310" width="170" height="85" rx="14"/><rect x="270" y="430" width="170" height="85" rx="14"/></g>
+<g fill="#115e59" font-family="Arial" font-size="20" text-anchor="middle"><text x="140" y="182">RESEARCH</text><text x="140" y="302">TRIALS</text><text x="140" y="422">MEDICATIONS</text><text x="355" y="242">MEDICARE</text><text x="355" y="362">PROVIDERS</text><text x="355" y="482">PUBLIC DATA</text></g>
+<path d="M470 323h130" stroke="#14b8a6" stroke-width="10" marker-end="url(#h)"/><defs><marker id="h" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0l12 6-12 6z" fill="#14b8a6"/></marker></defs>
+<circle cx="775" cy="310" r="145" fill="#fff" stroke="#2563eb" stroke-width="14"/><circle cx="775" cy="310" r="79" fill="#dbeafe"/><path d="M875 410l115 115" stroke="#2563eb" stroke-width="30" stroke-linecap="round"/>
+<path d="M760 254h30v40h40v30h-40v40h-30v-40h-40v-30h40z" fill="#ef4444"/>
+<rect x="940" y="145" width="210" height="90" rx="15" fill="#fee2e2"/><text x="1045" y="184" fill="#991b1b" font-family="Arial" font-size="19" text-anchor="middle">PUBLIC SOURCES</text><text x="1045" y="212" fill="#991b1b" font-family="Arial" font-size="19" text-anchor="middle">NO PATIENT CHARTS</text>
+<text x="55" y="578" fill="#48645f" font-family="Arial" font-size="22">Read-only grounding broadens discovery; clinical judgment remains essential.</text>
+</svg>

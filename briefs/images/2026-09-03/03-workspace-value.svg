@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f8fbf8"/>
+<text x="70" y="85" font-family="DejaVu Sans" font-size="34" font-weight="700" fill="#1d2a22">From AI deployment to measurable business value</text>
+<path d="M130 475h900" stroke="#41534a" stroke-width="6"/>
+<g>
+<rect x="140" y="350" width="210" height="125" rx="18" fill="#e8f0ec" stroke="#527363" stroke-width="4"/>
+<text x="184" y="405" font-family="DejaVu Sans" font-size="29" font-weight="700" fill="#1d2a22">DEPLOY</text>
+<text x="172" y="444" font-family="DejaVu Sans" font-size="22" fill="#465066">tools + governance</text>
+<rect x="440" y="270" width="250" height="205" rx="18" fill="#dcece4" stroke="#527363" stroke-width="4"/>
+<text x="486" y="335" font-family="DejaVu Sans" font-size="29" font-weight="700" fill="#1d2a22">REDESIGN</text>
+<text x="482" y="380" font-family="DejaVu Sans" font-size="22" fill="#465066">workflow + roles</text>
+<text x="492" y="415" font-family="DejaVu Sans" font-size="22" fill="#465066">training + habits</text>
+<rect x="780" y="165" width="300" height="310" rx="18" fill="#cbe3d5" stroke="#527363" stroke-width="4"/>
+<text x="848" y="245" font-family="DejaVu Sans" font-size="29" font-weight="700" fill="#1d2a22">MEASURE</text>
+<circle cx="930" cy="340" r="78" fill="#fff" stroke="#527363" stroke-width="7"/>
+<path d="M930 340l50-40" stroke="#527363" stroke-width="9" stroke-linecap="round"/>
+<circle cx="930" cy="340" r="10" fill="#527363"/>
+</g>
+<path d="M350 350l90-80m250 0l90-105" stroke="#527363" stroke-width="8" stroke-linecap="round"/>
+<text x="380" y="555" font-family="DejaVu Sans" font-size="25" fill="#465066">adoption is not transformation</text>
+</svg>

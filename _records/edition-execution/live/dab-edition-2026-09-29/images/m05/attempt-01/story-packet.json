@@ -1,0 +1,52 @@
+{
+  "schema_version": "reliable-edition-image-story-packet-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "edition_date": "2026-09-29",
+  "release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+  "operation_key": "dab-edition-2026-09-29-m05-attempt-01-de006e74",
+  "candidate_id": "m05",
+  "story_id": "semantic-sep29-03",
+  "canonical_ordinal": 3,
+  "focus": "applied_genai_knowledge_workers",
+  "headline": "Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS",
+  "source_url": "https://workspaceupdates.googleblog.com/2026/09/create-more-natural-expressive-ai-voiceovers-in-Google-Vids-with-upgraded-Gemini-3.8-Flash-Lite-TTS.html",
+  "verified_story_context": {
+    "summary": "Google Workspace says Google Vids is moving AI voiceovers and avatar narration to Gemini 3.8 Flash Lite TTS to improve naturalness, pacing, context-aware emphasis, and generation latency for faster script and narration iteration.",
+    "why_it_matters": "Better narration quality and faster revision can make AI-assisted video more practical for routine training, presentations, explainers, and other knowledge-work communication."
+  },
+  "visual": {
+    "layout": "Professional white-background textbook/editorial workflow diagram. Show a left-to-right narration production loop: Script → Gemini 3.8 Flash Lite TTS → Narrated audio → Preview & revise loop → Google Vids timeline. Make the revision loop visibly return from preview to script/TTS.",
+    "mechanism": "A script enters Gemini text-to-speech; the TTS stage controls naturalness, pacing and context-aware emphasis while reducing generation latency; narrated audio is previewed; revisions loop back rapidly; approved narration is placed into the final Google Vids timeline.",
+    "alt_text": "Textbook workflow showing a script moving through Gemini 3.8 Flash Lite text-to-speech, narrated audio, rapid preview and revision, and final placement in a Google Vids timeline.",
+    "style": "professional high-detail textbook/editorial workflow; white background; crisp mechanism-first composition; legible non-overlapping text; no people, humanoid figures, cinematic scenes, stock imagery, dashboard screenshots, or decorative promotional art",
+    "required_elements": [
+      "Script input",
+      "Gemini 3.8 Flash Lite TTS stage",
+      "Narrated audio output",
+      "naturalness/pacing/context-aware emphasis controls",
+      "rapid Preview & revise feedback loop",
+      "final Google Vids timeline"
+    ],
+    "essential_labels": [
+      "Script",
+      "Gemini 3.8 Flash Lite TTS",
+      "Narrated audio",
+      "Preview & revise",
+      "Google Vids timeline"
+    ],
+    "forbidden_elements": [
+      "people",
+      "presenter portraits",
+      "humanoid robots",
+      "coding agents",
+      "software repository",
+      "GPU validation",
+      "provider comparison lanes",
+      "marketing headline prose"
+    ],
+    "text_policy": "Use the essential labels as primary readable text. Short mechanism labels such as pacing, emphasis, preview, revise, and latency may appear. Avoid promotional claims or unsupported metrics."
+  },
+  "attempt": 1,
+  "max_attempts": 4,
+  "sealed": true
+}

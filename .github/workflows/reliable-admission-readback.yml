@@ -1,0 +1,55 @@
+name: Reliable admission immutable read-back
+
+on:
+  push:
+    branches:
+      - editorial-handoff/qualification/reliable-admission-probe-2026-09-29
+
+permissions:
+  contents: read
+
+jobs:
+  verify-readback:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out full repository history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Read exact persisted probe from immutable commit
+        shell: bash
+        run: |
+          set -euo pipefail
+          PROOF_COMMIT='4dcd14c77a3a66dcd3d91ef9fad737082609fc0a'
+          PROOF_PATH='_records/image-attempts/handoff-proof/1ca4175cfda41490b8814128c39a5b7b40165e93460b571bdaa232cd154eee95/raw.png'
+          EXPECTED_BYTES='1572145'
+          EXPECTED_SHA256='1d2c035d3a46ea2ebdccc0f6c036d5d001181c2616823d27b06b73d4f230cb55'
+          EXPECTED_BLOB='77ffaceb440db06914e434bb90e314e5c46ab433'
+          mkdir -p /tmp/reliable-admission-readback
+          git show "${PROOF_COMMIT}:${PROOF_PATH}" > /tmp/reliable-admission-readback/raw.png
+          ACTUAL_BYTES="$(wc -c < /tmp/reliable-admission-readback/raw.png | tr -d ' ')"
+          ACTUAL_SHA256="$(sha256sum /tmp/reliable-admission-readback/raw.png | awk '{print $1}')"
+          ACTUAL_BLOB="$(git hash-object /tmp/reliable-admission-readback/raw.png)"
+          test "${ACTUAL_BYTES}" = "${EXPECTED_BYTES}"
+          test "${ACTUAL_SHA256}" = "${EXPECTED_SHA256}"
+          test "${ACTUAL_BLOB}" = "${EXPECTED_BLOB}"
+          printf '{"result":"pass","proof_commit":"%s","path":"%s","bytes":%s,"sha256":"%s","git_blob_sha":"%s","git_readback_verified":true}\n'             "${PROOF_COMMIT}" "${PROOF_PATH}" "${ACTUAL_BYTES}" "${ACTUAL_SHA256}" "${ACTUAL_BLOB}"             | tee /tmp/reliable-admission-readback/readback.json
+          echo "READBACK_VERIFIED bytes=${ACTUAL_BYTES} sha256=${ACTUAL_SHA256} blob=${ACTUAL_BLOB}"
+
+      - name: Run released admission verifier
+        shell: bash
+        run: |
+          set -euo pipefail
+          node _tools/edition-execution.mjs admission-check --root . --proof _records/execution-host/image-handoff-proof.json --release e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef | tee /tmp/reliable-admission-readback/admission-check.json
+
+      - name: Upload admission evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: reliable-admission-readback-and-check
+          path: |
+            /tmp/reliable-admission-readback/raw.png
+            /tmp/reliable-admission-readback/readback.json
+            /tmp/reliable-admission-readback/admission-check.json
+          if-no-files-found: error
+          retention-days: 1

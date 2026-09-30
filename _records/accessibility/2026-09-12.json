@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-12",
+  "reviewed_at": "2026-09-12T12:42:00Z",
+  "severity_policy": {
+    "critical": "block",
+    "high": "block",
+    "medium": "degrade_and_repair",
+    "low": "record"
+  },
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {
+      "story_id": "dab-story-2026-09-12-4f7c9a21",
+      "result": "pass",
+      "alt": "Radial code-review verification diagram in which specialist review agents use shell tools behind a firewall, merge findings into a review ledger, and separate addressed comments from still-open work.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-12-8b2e61d4",
+      "result": "pass",
+      "alt": "Isometric observability cutaway tracing VS Code agent-window activity through a policy gate into one-day, twenty-eight-day, aggregate, and per-user reports, with unavailable fields explicitly marked null.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-12-c16a53ef",
+      "result": "pass",
+      "alt": "Keyboard-first desktop workflow ribbon branching from Alt plus Space into quick questions, connected context, multi-step tasks, and media creation before converging on a reviewed result.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-12-2d8f70b6",
+      "result": "pass",
+      "alt": "Five collaboration-source islands flow through permission checks into a provenance spine, synthesis stage, and human completeness check, with a visible blind-spot branch for inaccessible context.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-12-6ae3c942",
+      "result": "pass",
+      "alt": "Layered filesystem-skills cutaway separating per-agent, shared, and isolated skill stores, SKILL.md instructions, references and scripts, mount boundaries, on-demand retrieval, sandbox execution, and human review.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-12-f0397b5d",
+      "result": "pass",
+      "alt": "Three materially different no-code agent workflow lanes pass through trigger, condition, tool call, webhook, error path, human review, and operating-cost criteria before a balanced fit decision.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#07152b"/>
+<text x="56" y="70" fill="#f8fafc" font-family="Arial" font-size="34" font-weight="700">ASTRA CROSSES A CRITICAL CYBER THRESHOLD</text>
+<path d="M70 160h240v95H190v75h210v105H275v95H70z" fill="none" stroke="#38bdf8" stroke-width="18"/>
+<circle cx="122" cy="205" r="24" fill="#facc15"/><path d="M125 205C290 185 380 230 470 315" fill="none" stroke="#facc15" stroke-width="8" stroke-dasharray="12 12"/>
+<path d="M470 315h210" stroke="#facc15" stroke-width="8" marker-end="url(#a)"/>
+<defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0l12 6-12 6z" fill="#facc15"/></marker></defs>
+<path d="M730 158l145 55v108c0 108-71 174-145 208-74-34-145-100-145-208V213z" fill="#132c4f" stroke="#f43f5e" stroke-width="10"/>
+<rect x="685" y="298" width="90" height="82" rx="15" fill="#f43f5e"/><path d="M705 298v-28a25 25 0 0150 0v28" fill="none" stroke="#fff" stroke-width="12"/>
+<text x="890" y="225" fill="#7dd3fc" font-family="Arial" font-size="25">LIMITED ACCESS</text><text x="890" y="285" fill="#fda4af" font-family="Arial" font-size="25">MISUSE FILTERS</text><text x="890" y="345" fill="#c4b5fd" font-family="Arial" font-size="25">BOUNDARY TRAINING</text><text x="890" y="405" fill="#86efac" font-family="Arial" font-size="25">LIVE MONITORING</text>
+<text x="56" y="579" fill="#94a3b8" font-family="Arial" font-size="22">Capability advance → stronger deployment controls</text>
+</svg>

@@ -1,0 +1,47 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m03",
+  "attempt": 1,
+  "operation_key": "dab-edition-2026-09-29-m03-attempt-01-de006e74",
+  "disposition": "quality_rejected",
+  "accepted": false,
+  "quality_rejected": true,
+  "generation": {
+    "native_result_id": "53832f43-e6a5-4e11-8cfd-a1eec1020f6a",
+    "native_file_id": "file_00000000fea48230a6da72f7c2b65ba2",
+    "bytes": 1464268,
+    "width": 1535,
+    "height": 1024,
+    "sha256": "41022de0f11e2328c9db989781a72423f5dd876fb6c12919eabb6e06f90fdb76"
+  },
+  "persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m03/attempt-01/raw.png",
+    "commit_sha": "338457bb2e69702ef15536db635b0b1029c57338",
+    "git_blob_sha": "101db5d53d4c451031e8955c1dee4ebb34e1a82b",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
+  },
+  "review": {
+    "result": "reject",
+    "mode": "automated",
+    "phase": "after_generation",
+    "failure_codes": [
+      "story_specificity_fail",
+      "factual_support_fail",
+      "mechanism_fail",
+      "sealed_story_packet_match_fail",
+      "style_fail"
+    ],
+    "observation": "The exact persisted asset is a coding-agent/model-provider pipeline: isolated OpenAI, Anthropic, Google and open-source model-family lanes feed parallel coding-agent lanes, reversible checkpoints, GPU-backed validation and repository integration. It does not depict the sealed Quine biology mechanism: no central Biological world model, Literature, Scientific tools, Biological modalities, Research harness or Research feedback loop. Provider/model labels and repository/GPU concepts are unsupported by the sealed m03 story packet.",
+    "evidence_scope": "exact_content_address_verified_asset_v2_review"
+  },
+  "next_attempt_allowed": true,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T04:15:42Z"
+}

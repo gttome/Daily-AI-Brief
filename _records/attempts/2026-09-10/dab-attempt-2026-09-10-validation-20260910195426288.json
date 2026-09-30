@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0.0",
+  "attempt_id": "dab-attempt-2026-09-10-validation-20260910195426288",
+  "edition_id": "dab-edition-2026-09-10",
+  "started_at": "2026-09-10T19:54:26.288Z",
+  "scope": "same-day full validation of retained editorial selection and approved images",
+  "checks": [
+    {
+      "name": "test",
+      "result": "pass"
+    },
+    {
+      "name": "_generator/cli.mjs validate-repo",
+      "result": "pass"
+    },
+    {
+      "name": "_generator/cli.mjs integration-check",
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+      "status": 200,
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://github.blog/changelog/2026-09-09-enterprise-managed-permissions-for-github-copilot-agent-operations/",
+      "status": 200,
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://news.adobe.com/news/2026/09/adobe-productivity-agent-in-acrobat-now-transforms-complex-documents",
+      "status": 200,
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/measuring-the-value-of-cowork-from-ai-interactions-to-completed-work/4554464",
+      "status": 200,
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://blog.google/products-and-platforms/products/google-one/fall-2026-ai-plan-updates/",
+      "status": 200,
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://codex.danielvaughan.com/2026/05/05/agent-skills-open-standard-portable-skills-codex-cli-cross-agent/",
+      "status": 200,
+      "result": "pass"
+    },
+    {
+      "name": "source availability",
+      "url": "https://twimlai.com/podcast/twimlai/do-ai-tokenomics-matter-more-than-model-benchmarks",
+      "status": 200,
+      "result": "pass"
+    }
+  ],
+  "outcome": "validated",
+  "release_digest": "sha256:a5c42b7a3496a2f1932f255bd61294c8e2c441286f00220a888e7f7fa61cd7ae",
+  "image_hashes": [
+    {
+      "path": "briefs/images/2026-09-10/01-anthropic-containment-premium3.png",
+      "sha256": "1adfd3ad4fef2423dacb7deba6db4bd257ade78c166a445024fb8143e3918bd2",
+      "bytes": 953385
+    },
+    {
+      "path": "briefs/images/2026-09-10/02-github-agent-permissions-premium3.png",
+      "sha256": "c318e345db3852c57f6c53f9ecf9000c6a1a8ad001025a4f23c01f14e7331217",
+      "bytes": 926642
+    },
+    {
+      "path": "briefs/images/2026-09-10/03-adobe-document-agent-premium3.png",
+      "sha256": "21be5328f80b8481c1b1d9c1a02cd9c85d193f710e26a433b881075ab7e52e1b",
+      "bytes": 768736
+    },
+    {
+      "path": "briefs/images/2026-09-10/04-microsoft-work-value-premium3.png",
+      "sha256": "4a4c92adb8810b667ccca4d4e37b969e61133f8e8b6d3970040f2f6006dd6e09",
+      "bytes": 854531
+    },
+    {
+      "path": "briefs/images/2026-09-10/05-google-opal-web-errands-premium3.png",
+      "sha256": "697d5b8ad74f3d46d55a989b4c24cd1cdfc054f66711eb34a647e355fa5d69a7",
+      "bytes": 869816
+    },
+    {
+      "path": "briefs/images/2026-09-10/06-skillmd-portability-premium3.png",
+      "sha256": "8b9ee0f755f0f1c1deb71a4a0a426bde7a1afe2cca7141386a64e13d58ae68db",
+      "bytes": 1038029
+    }
+  ],
+  "ended_at": "2026-09-10T19:55:11.228Z",
+  "wall_seconds": 45
+}

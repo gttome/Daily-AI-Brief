@@ -1,0 +1,3582 @@
+{
+  "schema_version": "1.0.0",
+  "window": {
+    "start_date": "2026-08-08",
+    "end_date": "2026-09-06",
+    "days": 30
+  },
+  "editions_scanned": [
+    "2026-08-17",
+    "2026-08-18",
+    "2026-08-19",
+    "2026-08-20",
+    "2026-08-21",
+    "2026-08-22",
+    "2026-08-23",
+    "2026-08-24",
+    "2026-08-25",
+    "2026-08-26",
+    "2026-08-27",
+    "2026-08-28",
+    "2026-08-29",
+    "2026-08-30",
+    "2026-08-31",
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-04",
+    "2026-09-05",
+    "2026-09-06"
+  ],
+  "stories": [
+    {
+      "story_id": "dab-story-2026-08-17-cdb22c68",
+      "edition_id": "dab-edition-2026-08-17",
+      "brief_date": "2026-08-17",
+      "ordinal": 1,
+      "headline": "Google’s A2A agent protocol moves into the Agentic AI Foundation",
+      "event_date": "2026-08-17",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Agent infrastructure",
+        "harness engineering",
+        "multi-agent systems",
+        "interoperability",
+        "context/tool standards"
+      ],
+      "normalized_urls": [
+        "https://www.axios.com/2026/08/17/a2a-agentic-ai-foundation-open-ai-standards",
+        "https://github.com/a2aproject/A2A/"
+      ],
+      "concept_tokens": [
+        "a2a",
+        "agent",
+        "agentic",
+        "foundation",
+        "google",
+        "moves",
+        "protocol"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-17-c5282e0d",
+      "edition_id": "dab-edition-2026-08-17",
+      "brief_date": "2026-08-17",
+      "ordinal": 2,
+      "headline": "Google unveils Gemini 3.7 Flash for coding and agent workflows",
+      "event_date": "2026-08-13",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted coding",
+        "coding agents",
+        "vibe coding",
+        "agent workflows",
+        "major AI-company developments"
+      ],
+      "normalized_urls": [
+        "https://www.reuters.com/business/google-unveils-gemini-37-flash-ai-model-coding-agent-workflows-2026-08-13/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "coding",
+        "flash",
+        "gemini",
+        "google",
+        "unveils",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-17-b7974d43",
+      "edition_id": "dab-edition-2026-08-17",
+      "brief_date": "2026-08-17",
+      "ordinal": 3,
+      "headline": "New research isolates “context interference” as a reliability problem in multi-turn search agents",
+      "event_date": "2026-08-11",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Context engineering",
+        "RAG",
+        "grounding",
+        "iterative search agents",
+        "reliability"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.10743"
+      ],
+      "concept_tokens": [
+        "agents",
+        "context",
+        "interference",
+        "isolates",
+        "multi",
+        "problem",
+        "reliability",
+        "research",
+        "search",
+        "turn"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-17-8c5a5979",
+      "edition_id": "dab-edition-2026-08-17",
+      "brief_date": "2026-08-17",
+      "ordinal": 4,
+      "headline": "Small but useful study shows one explicit compliance instruction can sharply change AI-generated code",
+      "event_date": "2026-08-07",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Prompt engineering",
+        "guardrails",
+        "coding reliability",
+        "evaluation",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.07776"
+      ],
+      "concept_tokens": [
+        "but",
+        "can",
+        "change",
+        "code",
+        "compliance",
+        "explicit",
+        "generated",
+        "instruction",
+        "one",
+        "sharply",
+        "small",
+        "study",
+        "useful"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-17-f72cbc5e",
+      "edition_id": "dab-edition-2026-08-17",
+      "brief_date": "2026-08-17",
+      "ordinal": 5,
+      "headline": "“Self-evolving coding agents” formalize a feedback-loop view of agentic software development",
+      "event_date": "2026-08-04",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Loop engineering",
+        "coding agents",
+        "harness engineering",
+        "memory",
+        "tools",
+        "agent adaptation"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.03392"
+      ],
+      "concept_tokens": [
+        "agentic",
+        "agents",
+        "coding",
+        "development",
+        "evolving",
+        "feedback",
+        "formalize",
+        "loop",
+        "self",
+        "software",
+        "view"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-18-90367aa5",
+      "edition_id": "dab-edition-2026-08-18",
+      "brief_date": "2026-08-18",
+      "ordinal": 1,
+      "headline": "Agent containment and cyber safeguards move to the center of the reliability debate",
+      "event_date": "2026-08-18",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Reliable generative AI",
+        "agent security",
+        "guardrails",
+        "human review",
+        "containment",
+        "tool use"
+      ],
+      "normalized_urls": [
+        "https://www.ft.com/content/a9947be4-5c0c-47ee-acae-a2aeaf01a0a0",
+        "https://openai.com/index/third-party-cyber-evaluations-involving-openai-models/",
+        "https://www.anthropic.com/engineering/how-we-contain-claude"
+      ],
+      "concept_tokens": [
+        "agent",
+        "center",
+        "containment",
+        "cyber",
+        "debate",
+        "move",
+        "reliability",
+        "safeguards"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-18-038bbe13",
+      "edition_id": "dab-edition-2026-08-18",
+      "brief_date": "2026-08-18",
+      "ordinal": 2,
+      "headline": "New reliability framework argues coding agents must be evaluated as systems, not just models",
+      "event_date": "2026-08-14",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Harness engineering",
+        "coding agents",
+        "evaluation",
+        "context engineering",
+        "memory",
+        "observability"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.13867"
+      ],
+      "concept_tokens": [
+        "agents",
+        "argues",
+        "coding",
+        "evaluated",
+        "framework",
+        "just",
+        "models",
+        "must",
+        "not",
+        "reliability",
+        "systems"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-18-195439db",
+      "edition_id": "dab-edition-2026-08-18",
+      "brief_date": "2026-08-18",
+      "ordinal": 3,
+      "headline": "Claude Code makes guarded autonomy the default for more users",
+      "event_date": "2026-08-14",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted coding",
+        "agent autonomy",
+        "guardrails",
+        "human review",
+        "tool permissions"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/auto-mode-default-in-claude-code"
+      ],
+      "concept_tokens": [
+        "autonomy",
+        "claude",
+        "code",
+        "default",
+        "guarded",
+        "more",
+        "users"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-18-9acc47c5",
+      "edition_id": "dab-edition-2026-08-18",
+      "brief_date": "2026-08-18",
+      "ordinal": 4,
+      "headline": "Vero benchmark shows repository-scale formal verification remains hard for coding agents",
+      "event_date": "2026-08-13",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Coding agents",
+        "evaluation",
+        "verification",
+        "reliable software generation",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.13522"
+      ],
+      "concept_tokens": [
+        "agents",
+        "benchmark",
+        "coding",
+        "formal",
+        "hard",
+        "remains",
+        "repository",
+        "scale",
+        "verification",
+        "vero"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-18-4bb94882",
+      "edition_id": "dab-edition-2026-08-18",
+      "brief_date": "2026-08-18",
+      "ordinal": 5,
+      "headline": "Meta’s Muse Code adds another major competitor to long-horizon agentic coding",
+      "event_date": "2026-08-05",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted coding",
+        "vibe coding",
+        "coding agents",
+        "multi-agent workflows",
+        "major AI-company developments"
+      ],
+      "normalized_urls": [
+        "https://www.reuters.com/technology/meta-launches-new-ai-coding-tool-powered-by-muse-spark-12-2026-08-05/",
+        "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/"
+      ],
+      "concept_tokens": [
+        "agentic",
+        "another",
+        "code",
+        "coding",
+        "competitor",
+        "horizon",
+        "long",
+        "major",
+        "meta",
+        "muse"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-19-f2f22489",
+      "edition_id": "dab-edition-2026-08-19",
+      "brief_date": "2026-08-19",
+      "ordinal": 1,
+      "headline": "OpenAI slows frontier development while rebuilding security around cyber-capable models",
+      "event_date": "2026-08-18",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Major AI-company developments",
+        "reliable generative AI",
+        "guardrails",
+        "harness engineering",
+        "monitoring",
+        "agent containment"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/pacing-model-development-cyber-capabilities/"
+      ],
+      "concept_tokens": [
+        "around",
+        "capable",
+        "cyber",
+        "development",
+        "frontier",
+        "models",
+        "openai",
+        "rebuilding",
+        "security",
+        "slows",
+        "while"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-19-973cfd13",
+      "edition_id": "dab-edition-2026-08-19",
+      "brief_date": "2026-08-19",
+      "ordinal": 2,
+      "headline": "OpenAI and CodeAI put critical evaluation—not passive tool use—at the center of AI literacy",
+      "event_date": "2026-08-18",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI literacy",
+        "practical AI creation",
+        "non-software developers",
+        "human review",
+        "prompt and context judgment"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/partnering-with-codeai/"
+      ],
+      "concept_tokens": [
+        "center",
+        "codeai",
+        "critical",
+        "evaluation",
+        "literacy",
+        "not",
+        "openai",
+        "passive",
+        "put",
+        "tool"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-19-a8e67241",
+      "edition_id": "dab-edition-2026-08-19",
+      "brief_date": "2026-08-19",
+      "ordinal": 3,
+      "headline": "AdmitOR reduces the risk that self-improving agents learn from bad experience",
+      "event_date": "2026-08-18",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Loop engineering",
+        "agent memory",
+        "evaluation",
+        "human escalation",
+        "reliable self-improvement"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.15565"
+      ],
+      "concept_tokens": [
+        "admitor",
+        "agents",
+        "bad",
+        "experience",
+        "improving",
+        "learn",
+        "reduces",
+        "risk",
+        "self"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-19-c4d5a830",
+      "edition_id": "dab-edition-2026-08-19",
+      "brief_date": "2026-08-19",
+      "ordinal": 4,
+      "headline": "HarnessEval-W turns evaluation into a transparent graph of evidence",
+      "event_date": "2026-08-17",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Harness engineering",
+        "graph engineering",
+        "multi-agent evaluation",
+        "tool use",
+        "evidence and observability"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.16859"
+      ],
+      "concept_tokens": [
+        "evaluation",
+        "evidence",
+        "graph",
+        "harnesseval",
+        "transparent"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-19-79e308b8",
+      "edition_id": "dab-edition-2026-08-19",
+      "brief_date": "2026-08-19",
+      "ordinal": 5,
+      "headline": "Semantic Bandits shows that action labels can quietly bias an agent’s decisions",
+      "event_date": "2026-08-17",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Prompt engineering",
+        "context engineering",
+        "agent decision-making",
+        "evaluation",
+        "reliability"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.16707"
+      ],
+      "concept_tokens": [
+        "action",
+        "agent",
+        "bandits",
+        "bias",
+        "can",
+        "decisions",
+        "labels",
+        "quietly",
+        "semantic"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-20-396b7ecc",
+      "edition_id": "dab-edition-2026-08-20",
+      "brief_date": "2026-08-20",
+      "ordinal": 1,
+      "headline": "OpenAI previews cross-session safety monitoring that preserves Zero Data Retention",
+      "event_date": "2026-08-19",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Major AI-company developments",
+        "privacy",
+        "guardrails",
+        "context engineering",
+        "agent monitoring",
+        "enterprise AI"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/offering-zero-data-retention-for-frontier-models/"
+      ],
+      "concept_tokens": [
+        "cross",
+        "data",
+        "monitoring",
+        "openai",
+        "preserves",
+        "previews",
+        "retention",
+        "safety",
+        "session",
+        "zero"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-20-89c66468",
+      "edition_id": "dab-edition-2026-08-20",
+      "brief_date": "2026-08-20",
+      "ordinal": 2,
+      "headline": "SkillGate shows that agents need separate learning signals for selecting and executing skills",
+      "event_date": "2026-08-19",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Harness engineering",
+        "agent skills",
+        "loop engineering",
+        "long-horizon agents",
+        "tool selection"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.18852",
+        "https://github.com/DeepExperience/SkillGate",
+        "https://huggingface.co/simonlqy/SkillGate-9B"
+      ],
+      "concept_tokens": [
+        "agents",
+        "executing",
+        "learning",
+        "need",
+        "selecting",
+        "separate",
+        "signals",
+        "skillgate",
+        "skills"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-20-6364926f",
+      "edition_id": "dab-edition-2026-08-20",
+      "brief_date": "2026-08-20",
+      "ordinal": 3,
+      "headline": "EvalCEGAR evolves executable evaluation checks from an evaluator’s blind spots",
+      "event_date": "2026-08-19",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Evaluation engineering",
+        "guardrails",
+        "loop engineering",
+        "executable metrics",
+        "LLM-as-judge"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.18744"
+      ],
+      "concept_tokens": [
+        "blind",
+        "checks",
+        "evalcegar",
+        "evaluation",
+        "evaluator",
+        "evolves",
+        "executable",
+        "spots"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-20-f54a140b",
+      "edition_id": "dab-edition-2026-08-20",
+      "brief_date": "2026-08-20",
+      "ordinal": 4,
+      "headline": "ComponentBench proves that the harness can change computer-agent performance by over 30 points",
+      "event_date": "2026-08-18",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Computer-use agents",
+        "harness engineering",
+        "evaluation",
+        "user interfaces",
+        "tool design"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.18307",
+        "https://www.componentbench.com/",
+        "https://github.com/TianchenGuan/ComponentBench",
+        "https://huggingface.co/datasets/TianchenGuan/ComponentBench"
+      ],
+      "concept_tokens": [
+        "agent",
+        "can",
+        "change",
+        "componentbench",
+        "computer",
+        "harness",
+        "over",
+        "performance",
+        "points",
+        "proves"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-20-5d1fe565",
+      "edition_id": "dab-edition-2026-08-20",
+      "brief_date": "2026-08-20",
+      "ordinal": 5,
+      "headline": "Coding-agent rankings break under harmless code transformations",
+      "event_date": "2026-08-18",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted coding",
+        "vibe coding",
+        "agent evaluation",
+        "robustness",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.18389"
+      ],
+      "concept_tokens": [
+        "agent",
+        "break",
+        "code",
+        "coding",
+        "harmless",
+        "rankings",
+        "transformations",
+        "under"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-21-f1184b97",
+      "edition_id": "dab-edition-2026-08-21",
+      "brief_date": "2026-08-21",
+      "ordinal": 1,
+      "headline": "Mistral turns RAG into an evidence-seeking retrieval loop",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Major AI-company developments",
+        "RAG and grounding",
+        "loop engineering",
+        "context engineering",
+        "tool use",
+        "no-code/low-code"
+      ],
+      "normalized_urls": [
+        "https://mistral.ai/news/agentic-search/"
+      ],
+      "concept_tokens": [
+        "evidence",
+        "loop",
+        "mistral",
+        "rag",
+        "retrieval",
+        "seeking"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-21-92a6e1fe",
+      "edition_id": "dab-edition-2026-08-21",
+      "brief_date": "2026-08-21",
+      "ordinal": 2,
+      "headline": "PolicyGuide converts organizational rules into a live workflow graph",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Graph engineering",
+        "guardrails",
+        "agent workflows",
+        "human review",
+        "policy compliance"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.19861"
+      ],
+      "concept_tokens": [
+        "converts",
+        "graph",
+        "live",
+        "organizational",
+        "policyguide",
+        "rules",
+        "workflow"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-21-2e9487fe",
+      "edition_id": "dab-edition-2026-08-21",
+      "brief_date": "2026-08-21",
+      "ordinal": 3,
+      "headline": "Phantom Gains finds that self-improvement can be a measurement illusion",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Loop engineering",
+        "evaluation",
+        "model self-improvement",
+        "statistical reliability"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.20290"
+      ],
+      "concept_tokens": [
+        "can",
+        "finds",
+        "gains",
+        "illusion",
+        "improvement",
+        "measurement",
+        "phantom",
+        "self"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-21-eeb92c90",
+      "edition_id": "dab-edition-2026-08-21",
+      "brief_date": "2026-08-21",
+      "ordinal": 4,
+      "headline": "EnvHarness adapts an agent’s training world without rebuilding it",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Harness engineering",
+        "agent learning",
+        "evaluation environments",
+        "tool infrastructure",
+        "loop engineering"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.19880"
+      ],
+      "concept_tokens": [
+        "adapts",
+        "agent",
+        "envharness",
+        "rebuilding",
+        "training",
+        "without",
+        "world"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-21-6877cf6f",
+      "edition_id": "dab-edition-2026-08-21",
+      "brief_date": "2026-08-21",
+      "ordinal": 5,
+      "headline": "Dual gatekeeping improves AI-generated educational videos by refusing weak output",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted content creation",
+        "guardrails",
+        "evaluation",
+        "human review",
+        "videos and training"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.19812"
+      ],
+      "concept_tokens": [
+        "dual",
+        "educational",
+        "gatekeeping",
+        "generated",
+        "improves",
+        "output",
+        "refusing",
+        "videos",
+        "weak"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-22-fe121e20",
+      "edition_id": "dab-edition-2026-08-22",
+      "brief_date": "2026-08-22",
+      "ordinal": 1,
+      "headline": "GitHub brings visible, steerable Copilot agent sessions into Microsoft Teams",
+      "event_date": "2026-08-21",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted coding",
+        "agent workflows",
+        "harness engineering",
+        "human review",
+        "collaboration tools"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-21-shared-agentic-work-with-github-copilot-in-microsoft-teams/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "copilot",
+        "github",
+        "microsoft",
+        "sessions",
+        "steerable",
+        "teams",
+        "visible"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-22-88a696d2",
+      "edition_id": "dab-edition-2026-08-22",
+      "brief_date": "2026-08-22",
+      "ordinal": 2,
+      "headline": "GitHub turns Slack conversations into shared Copilot coding-agent sessions",
+      "event_date": "2026-08-21",
+      "focus": "historical_unspecified",
+      "topics": [
+        "AI-assisted coding",
+        "agent workflows",
+        "collaboration",
+        "human review",
+        "tool permissions",
+        "shared context"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-21-the-new-github-copilot-experience-in-slack/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "coding",
+        "conversations",
+        "copilot",
+        "github",
+        "sessions",
+        "shared",
+        "slack"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-22-24c74a86",
+      "edition_id": "dab-edition-2026-08-22",
+      "brief_date": "2026-08-22",
+      "ordinal": 3,
+      "headline": "MidTool teaches models the structure of real tool workflows before post-training",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Tool use",
+        "MCP",
+        "context engineering",
+        "agent training",
+        "harness engineering"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.20314",
+        "https://huggingface.co/collections/MidTool/midtool-release"
+      ],
+      "concept_tokens": [
+        "before",
+        "midtool",
+        "models",
+        "post",
+        "real",
+        "structure",
+        "teaches",
+        "tool",
+        "training",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-22-0a66eadf",
+      "edition_id": "dab-edition-2026-08-22",
+      "brief_date": "2026-08-22",
+      "ordinal": 4,
+      "headline": "StateMem shows that agent memory must track what is current—not merely what was said",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Context engineering",
+        "agent memory",
+        "evolving state",
+        "RAG",
+        "long-running workflows"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.19652"
+      ],
+      "concept_tokens": [
+        "agent",
+        "current",
+        "memory",
+        "merely",
+        "must",
+        "not",
+        "said",
+        "statemem",
+        "track",
+        "was",
+        "what"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-22-d6deaef1",
+      "edition_id": "dab-edition-2026-08-22",
+      "brief_date": "2026-08-22",
+      "ordinal": 5,
+      "headline": "Pandora’s Router asks whether a better routing decision is worth the cost of making it",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Model routing",
+        "evaluation",
+        "cost engineering",
+        "RAG",
+        "inference-time reasoning"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.20316"
+      ],
+      "concept_tokens": [
+        "asks",
+        "better",
+        "cost",
+        "decision",
+        "making",
+        "pandora",
+        "router",
+        "routing",
+        "whether",
+        "worth"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-23-b2a17ab9",
+      "edition_id": "dab-edition-2026-08-23",
+      "brief_date": "2026-08-23",
+      "ordinal": 1,
+      "headline": "AI4AI-Bench finds coding agents rarely redesign the learning algorithm itself",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Coding agents",
+        "loop engineering",
+        "harness engineering",
+        "evaluation",
+        "AI research automation"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.20318"
+      ],
+      "concept_tokens": [
+        "agents",
+        "ai4ai",
+        "algorithm",
+        "bench",
+        "coding",
+        "finds",
+        "itself",
+        "learning",
+        "rarely",
+        "redesign"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-23-e8deab9a",
+      "edition_id": "dab-edition-2026-08-23",
+      "brief_date": "2026-08-23",
+      "ordinal": 2,
+      "headline": "Smaller, text-based agent skills transfer better than monolithic task recipes",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Agent skills",
+        "context engineering",
+        "memory",
+        "prompt engineering",
+        "reusable workflows"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.20274"
+      ],
+      "concept_tokens": [
+        "agent",
+        "based",
+        "better",
+        "monolithic",
+        "recipes",
+        "skills",
+        "smaller",
+        "task",
+        "text",
+        "than",
+        "transfer"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-23-be5593e7",
+      "edition_id": "dab-edition-2026-08-23",
+      "brief_date": "2026-08-23",
+      "ordinal": 3,
+      "headline": "InsufficiencyBench shows frontier models struggle to ask for legally decisive missing facts",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Clarification",
+        "guardrails",
+        "human review",
+        "legal AI",
+        "evaluation"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.20220"
+      ],
+      "concept_tokens": [
+        "ask",
+        "decisive",
+        "facts",
+        "frontier",
+        "insufficiencybench",
+        "legally",
+        "missing",
+        "models",
+        "struggle"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-23-40885c98",
+      "edition_id": "dab-edition-2026-08-23",
+      "brief_date": "2026-08-23",
+      "ordinal": 4,
+      "headline": "ReguSim separates an agent’s explanation from the action it actually attempted",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Guardrails",
+        "agent monitoring",
+        "tool use",
+        "audit evidence",
+        "financial compliance"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.19974"
+      ],
+      "concept_tokens": [
+        "action",
+        "actually",
+        "agent",
+        "attempted",
+        "explanation",
+        "regusim",
+        "separates"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-23-dbdd1c3a",
+      "edition_id": "dab-edition-2026-08-23",
+      "brief_date": "2026-08-23",
+      "ordinal": 5,
+      "headline": "TESTNAV searches for realistic combinations that break AI systems",
+      "event_date": "2026-08-20",
+      "focus": "historical_unspecified",
+      "topics": [
+        "Evaluation",
+        "robustness",
+        "AI-assisted coding",
+        "multimodal systems",
+        "test generation"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.19882"
+      ],
+      "concept_tokens": [
+        "break",
+        "combinations",
+        "realistic",
+        "searches",
+        "systems",
+        "testnav"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-24-f58c2c99",
+      "edition_id": "dab-edition-2026-08-24",
+      "brief_date": "2026-08-24",
+      "ordinal": 1,
+      "headline": "Microsoft Agent Framework adds recovery mechanics for long-running agents",
+      "event_date": "2026-08-21",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Harness engineering",
+        "long-running workflows",
+        "checkpoints",
+        "approvals",
+        "A2A",
+        "MCP"
+      ],
+      "normalized_urls": [
+        "https://github.com/microsoft/agent-framework/releases/tag/python-1.15.0"
+      ],
+      "concept_tokens": [
+        "agent",
+        "agents",
+        "framework",
+        "long",
+        "mechanics",
+        "microsoft",
+        "recovery",
+        "running"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-24-4517141d",
+      "edition_id": "dab-edition-2026-08-24",
+      "brief_date": "2026-08-24",
+      "ordinal": 2,
+      "headline": "NVIDIA AVO shows how memory, supervision, and grounded feedback sustain an agent loop",
+      "event_date": "2026-08-21",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Loop engineering",
+        "harness evaluation",
+        "persistent memory",
+        "supervision",
+        "ARC-AGI-3"
+      ],
+      "normalized_urls": [
+        "https://developer.nvidia.com/blog/nvidia-avo-reaches-100-on-arc-agi-3-demonstrating-a-frontier-level-general-purpose-architecture-for-long-horizon-autonomous-agents/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "avo",
+        "feedback",
+        "grounded",
+        "loop",
+        "memory",
+        "nvidia",
+        "supervision",
+        "sustain"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-24-4c295f61",
+      "edition_id": "dab-edition-2026-08-24",
+      "brief_date": "2026-08-24",
+      "ordinal": 3,
+      "headline": "ChatGPT Projects now let knowledge workers choose a tighter memory boundary",
+      "event_date": "2026-08-14",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Context engineering",
+        "memory",
+        "projects",
+        "privacy",
+        "reliable knowledge work"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "concept_tokens": [
+        "boundary",
+        "chatgpt",
+        "choose",
+        "knowledge",
+        "let",
+        "memory",
+        "projects",
+        "tighter",
+        "workers"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-24-c688328c",
+      "edition_id": "dab-edition-2026-08-24",
+      "brief_date": "2026-08-24",
+      "ordinal": 4,
+      "headline": "Google Drive in ChatGPT Library reduces manual context assembly",
+      "event_date": "2026-08-13",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Grounded work",
+        "connected files",
+        "research",
+        "writing",
+        "analysis"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "concept_tokens": [
+        "assembly",
+        "chatgpt",
+        "context",
+        "drive",
+        "google",
+        "library",
+        "manual",
+        "reduces"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-24-fb9e9c08",
+      "edition_id": "dab-edition-2026-08-24",
+      "brief_date": "2026-08-24",
+      "ordinal": 5,
+      "headline": "Apple Messages brings an approval-gated action to ChatGPT Work",
+      "event_date": "2026-08-20",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Accessible agents",
+        "tool use",
+        "human approval",
+        "messaging",
+        "delegated work"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "concept_tokens": [
+        "action",
+        "apple",
+        "approval",
+        "chatgpt",
+        "gated",
+        "messages",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-24-db55e747",
+      "edition_id": "dab-edition-2026-08-24",
+      "brief_date": "2026-08-24",
+      "ordinal": 6,
+      "headline": "OpenAI documents “briefing” as a repeatable workspace-agent pattern",
+      "event_date": "2026-04-22",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "No-code agent building",
+        "recurring briefs",
+        "governance",
+        "human review",
+        "publishing workflows"
+      ],
+      "normalized_urls": [
+        "https://openai.com/academy/workspace-agents/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "briefing",
+        "documents",
+        "openai",
+        "pattern",
+        "repeatable",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-25-a653e831",
+      "edition_id": "dab-edition-2026-08-25",
+      "brief_date": "2026-08-25",
+      "ordinal": 1,
+      "headline": "AgentX measures infrastructure using real agent-session behavior",
+      "event_date": "2026-08-24",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent evaluation",
+        "long context",
+        "inference infrastructure",
+        "KV-cache reuse",
+        "performance per watt"
+      ],
+      "normalized_urls": [
+        "https://developer.nvidia.com/blog/nvidia-vera-rubin-and-blackwell-set-a-new-standard-for-agentic-ai-performance-per-watt/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "agentx",
+        "behavior",
+        "infrastructure",
+        "measures",
+        "real",
+        "session"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-25-b52263f4",
+      "edition_id": "dab-edition-2026-08-25",
+      "brief_date": "2026-08-25",
+      "ordinal": 2,
+      "headline": "NVIDIA draws a hard line between behavioral guidance and enforceable agent security",
+      "event_date": "2026-08-21",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent security",
+        "runtime enforcement",
+        "least privilege",
+        "isolation",
+        "auditability"
+      ],
+      "normalized_urls": [
+        "https://developer.nvidia.com/blog/where-security-fits-in-an-ai-agent-stack/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "behavioral",
+        "between",
+        "draws",
+        "enforceable",
+        "guidance",
+        "hard",
+        "line",
+        "nvidia",
+        "security"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-25-ae2e6fb8",
+      "edition_id": "dab-edition-2026-08-25",
+      "brief_date": "2026-08-25",
+      "ordinal": 3,
+      "headline": "ChatGPT plugin discovery now prioritizes tools people continue using",
+      "event_date": "2026-08-21",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Plugin discovery",
+        "connected tools",
+        "accessible AI",
+        "workflow selection"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "concept_tokens": [
+        "chatgpt",
+        "continue",
+        "discovery",
+        "people",
+        "plugin",
+        "prioritizes",
+        "tools"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-25-b3b680ed",
+      "edition_id": "dab-edition-2026-08-25",
+      "brief_date": "2026-08-25",
+      "ordinal": 4,
+      "headline": "Make separates input and output token rates for accessible AI workflows",
+      "event_date": "2026-08-24",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "No-code AI",
+        "workflow economics",
+        "context efficiency",
+        "token usage"
+      ],
+      "normalized_urls": [
+        "https://help.make.com/2026",
+        "https://help.make.com/credits"
+      ],
+      "concept_tokens": [
+        "accessible",
+        "input",
+        "make",
+        "output",
+        "rates",
+        "separates",
+        "token",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-25-a2eb5c74",
+      "edition_id": "dab-edition-2026-08-25",
+      "brief_date": "2026-08-25",
+      "ordinal": 5,
+      "headline": "RadarFirst puts AI agents around—not in place of—regulated decisions",
+      "event_date": "2026-08-18",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Compliance agents",
+        "human judgment",
+        "evidence organization",
+        "bounded delegation"
+      ],
+      "normalized_urls": [
+        "https://www.radarfirst.com/news/radarfirst-agentic-layer-privacy-ai-compliance/"
+      ],
+      "concept_tokens": [
+        "agents",
+        "around",
+        "decisions",
+        "not",
+        "place",
+        "puts",
+        "radarfirst",
+        "regulated"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-25-66cea67b",
+      "edition_id": "dab-edition-2026-08-25",
+      "brief_date": "2026-08-25",
+      "ordinal": 6,
+      "headline": "Maia turns plain-language intent into a visible agent or automation canvas",
+      "event_date": "2026-08-12",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "No-code agents",
+        "visual automation",
+        "human review",
+        "transparent building",
+        "debugging"
+      ],
+      "normalized_urls": [
+        "https://www.make.com/en/blog/maia-conversational-ai-coworker-for-ai-agents-and-automation"
+      ],
+      "concept_tokens": [
+        "agent",
+        "automation",
+        "canvas",
+        "intent",
+        "language",
+        "maia",
+        "plain",
+        "visible"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-26-b03e2253",
+      "edition_id": "dab-edition-2026-08-26",
+      "brief_date": "2026-08-26",
+      "ordinal": 1,
+      "headline": "Prime Agent turns the harness into a persistent, self-improving system",
+      "event_date": "2026-08-24",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Harness engineering",
+        "recursive subagents",
+        "persistent state",
+        "long-horizon evaluation"
+      ],
+      "normalized_urls": [
+        "https://huggingface.co/papers/2608.23552",
+        "https://github.com/PrimeIntellect-ai/prime-agent"
+      ],
+      "concept_tokens": [
+        "agent",
+        "harness",
+        "improving",
+        "persistent",
+        "prime",
+        "self",
+        "system"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-26-47742631",
+      "edition_id": "dab-edition-2026-08-26",
+      "brief_date": "2026-08-26",
+      "ordinal": 2,
+      "headline": "GitHub gives agent customization a unified discovery layer",
+      "event_date": "2026-08-25",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "MCP",
+        "plugins",
+        "skills",
+        "canvases",
+        "agent customization"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-25-github-copilot-app-customize-tab-is-generally-available/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "customization",
+        "discovery",
+        "github",
+        "layer",
+        "unified"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-26-3128a73a",
+      "edition_id": "dab-edition-2026-08-26",
+      "brief_date": "2026-08-26",
+      "ordinal": 3,
+      "headline": "Google Meet puts AI note-taking control in the room",
+      "event_date": "2026-08-25",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Meeting notes",
+        "human control",
+        "privacy",
+        "Gemini"
+      ],
+      "normalized_urls": [
+        "https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html"
+      ],
+      "concept_tokens": [
+        "control",
+        "google",
+        "meet",
+        "note",
+        "puts",
+        "room",
+        "taking"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-26-9271a92d",
+      "edition_id": "dab-edition-2026-08-26",
+      "brief_date": "2026-08-26",
+      "ordinal": 4,
+      "headline": "Copilot brings Python-backed analysis into the Excel editing workflow",
+      "event_date": "2026-08-25",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Excel",
+        "data analysis",
+        "natural-language editing",
+        "human verification"
+      ],
+      "normalized_urls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
+      ],
+      "concept_tokens": [
+        "analysis",
+        "backed",
+        "copilot",
+        "editing",
+        "excel",
+        "python",
+        "workflow"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-26-893a3c2c",
+      "edition_id": "dab-edition-2026-08-26",
+      "brief_date": "2026-08-26",
+      "ordinal": 5,
+      "headline": "ChatGPT scheduled tasks can now react to app events and be shared",
+      "event_date": "2026-08-25",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Event triggers",
+        "recurring workflows",
+        "Gmail",
+        "Slack",
+        "GitHub",
+        "sharing"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+      ],
+      "concept_tokens": [
+        "app",
+        "can",
+        "chatgpt",
+        "events",
+        "react",
+        "scheduled",
+        "shared",
+        "tasks"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-26-48060fd1",
+      "edition_id": "dab-edition-2026-08-26",
+      "brief_date": "2026-08-26",
+      "ordinal": 6,
+      "headline": "OpenAI’s Admin plugin turns workspace operations into governed agent workflows",
+      "event_date": "2026-08-25",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "No-code agents",
+        "workspace administration",
+        "permissions",
+        "approvals",
+        "recurring checks"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/introducing-admin-plugin/"
+      ],
+      "concept_tokens": [
+        "admin",
+        "agent",
+        "governed",
+        "openai",
+        "operations",
+        "plugin",
+        "workflows",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-27-2fe3956c",
+      "edition_id": "dab-edition-2026-08-27",
+      "brief_date": "2026-08-27",
+      "ordinal": 1,
+      "headline": "OpenAI documents an agent escape that reached Hugging Face systems",
+      "event_date": "2026-08-26",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent security",
+        "sandboxing",
+        "reward hacking",
+        "monitoring",
+        "harness engineering"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
+        "https://metr.org/blog/2026-08-26-openai-hugging-face-incident-investigation/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "documents",
+        "escape",
+        "face",
+        "hugging",
+        "openai",
+        "reached",
+        "systems"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-27-5e4d5095",
+      "edition_id": "dab-edition-2026-08-27",
+      "brief_date": "2026-08-27",
+      "ordinal": 2,
+      "headline": "GitHub makes approved plugin marketplaces self-updating",
+      "event_date": "2026-08-26",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agent plugins",
+        "marketplace governance",
+        "enterprise policy",
+        "maintenance"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-26-enterprise-managed-settings-now-support-autoupdate-for-plugin-marketplaces/"
+      ],
+      "concept_tokens": [
+        "approved",
+        "github",
+        "marketplaces",
+        "plugin",
+        "self",
+        "updating"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-27-4ee28ff1",
+      "edition_id": "dab-edition-2026-08-27",
+      "brief_date": "2026-08-27",
+      "ordinal": 3,
+      "headline": "OpenAI’s education report quantifies continuous AI-assisted learning",
+      "event_date": "2026-08-26",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Learning",
+        "practice",
+        "feedback",
+        "educators",
+        "human judgment"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/learning-never-stops/"
+      ],
+      "concept_tokens": [
+        "assisted",
+        "continuous",
+        "education",
+        "learning",
+        "openai",
+        "quantifies",
+        "report"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-27-67f78ae1",
+      "edition_id": "dab-edition-2026-08-27",
+      "brief_date": "2026-08-27",
+      "ordinal": 4,
+      "headline": "Claude’s watermark explainer clarifies what provenance can—and cannot—prove",
+      "event_date": "2026-08-14",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Content provenance",
+        "authorship",
+        "EU AI Act",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://www.anthropic.com/news/claude-text-watermark"
+      ],
+      "concept_tokens": [
+        "can",
+        "cannot",
+        "clarifies",
+        "claude",
+        "explainer",
+        "prove",
+        "provenance",
+        "watermark",
+        "what"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-27-ef414dd5",
+      "edition_id": "dab-edition-2026-08-27",
+      "brief_date": "2026-08-27",
+      "ordinal": 5,
+      "headline": "loveholidays shows non-engineers shipping prototypes with Codex",
+      "event_date": "2026-08-26",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Agentic coding",
+        "non-engineer builders",
+        "prototyping",
+        "organizational controls"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/loveholidays/"
+      ],
+      "concept_tokens": [
+        "codex",
+        "engineers",
+        "loveholidays",
+        "non",
+        "prototypes",
+        "shipping"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-27-20c9ba69",
+      "edition_id": "dab-edition-2026-08-27",
+      "brief_date": "2026-08-27",
+      "ordinal": 6,
+      "headline": "Claude Cowork gains a separate built-in browser for delegated web work",
+      "event_date": "2026-08-26",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Browser agent",
+        "forms",
+        "dashboards",
+        "portals",
+        "permissions"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/cowork-built-in-browser"
+      ],
+      "concept_tokens": [
+        "browser",
+        "built",
+        "claude",
+        "cowork",
+        "delegated",
+        "gains",
+        "separate",
+        "web",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-28-00afae1b",
+      "edition_id": "dab-edition-2026-08-28",
+      "brief_date": "2026-08-28",
+      "ordinal": 1,
+      "headline": "GitHub closes the review gap for agent-authored and very large pull requests",
+      "event_date": "2026-08-27",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Agentic code review",
+        "coding agents",
+        "evaluation feedback",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-27-copilot-code-review-resolution-reasons-and-expanded-capabilities/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "authored",
+        "closes",
+        "gap",
+        "github",
+        "large",
+        "pull",
+        "requests",
+        "review",
+        "very"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-28-b578ffa1",
+      "edition_id": "dab-edition-2026-08-28",
+      "brief_date": "2026-08-28",
+      "ordinal": 2,
+      "headline": "Warp turns human feedback into reviewable agent-skill updates",
+      "event_date": "2026-08-26",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Loop engineering",
+        "skills",
+        "feedback",
+        "agent improvement",
+        "progressive disclosure"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/how-warp-builds-self-improving-agents-on-claude"
+      ],
+      "concept_tokens": [
+        "agent",
+        "feedback",
+        "human",
+        "reviewable",
+        "skill",
+        "updates",
+        "warp"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-28-633f53c9",
+      "edition_id": "dab-edition-2026-08-28",
+      "brief_date": "2026-08-28",
+      "ordinal": 3,
+      "headline": "Randomized study separates ChatGPT’s quality gains from critical thinking’s originality gains",
+      "event_date": "2026-08-27",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Learning",
+        "critical thinking",
+        "evaluation",
+        "originality",
+        "human judgment"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/what-students-gain-from-chatgpt-critical-thinking-training/"
+      ],
+      "concept_tokens": [
+        "chatgpt",
+        "critical",
+        "gains",
+        "originality",
+        "quality",
+        "randomized",
+        "separates",
+        "study",
+        "thinking"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-28-04a6435b",
+      "edition_id": "dab-edition-2026-08-28",
+      "brief_date": "2026-08-28",
+      "ordinal": 4,
+      "headline": "OpenAI pairs Brazil expansion with role-specific AI literacy",
+      "event_date": "2026-08-27",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI literacy",
+        "legal professionals",
+        "small business",
+        "public service",
+        "responsible adoption"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/expanding-our-presence-in-brazil/"
+      ],
+      "concept_tokens": [
+        "brazil",
+        "expansion",
+        "literacy",
+        "openai",
+        "pairs",
+        "role",
+        "specific"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-28-239cf04c",
+      "edition_id": "dab-edition-2026-08-28",
+      "brief_date": "2026-08-28",
+      "ordinal": 5,
+      "headline": "A non-technical marketer builds a recurring personalized briefing agent",
+      "event_date": "2026-08-24",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Recurring briefings",
+        "personalization",
+        "feedback",
+        "non-technical agent building"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/how-an-anthropic-field-marketer-uses-claude-code-to-send-weekly-personalized-updates-to-every-sales-rep"
+      ],
+      "concept_tokens": [
+        "agent",
+        "briefing",
+        "builds",
+        "marketer",
+        "non",
+        "personalized",
+        "recurring",
+        "technical"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-28-faa38e9f",
+      "edition_id": "dab-edition-2026-08-28",
+      "brief_date": "2026-08-28",
+      "ordinal": 6,
+      "headline": "Microsoft Agent Builder accepts files up to 512 MB for grounded agents",
+      "event_date": "2026-08-25",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "No-code agents",
+        "grounding",
+        "large files",
+        "domain knowledge",
+        "RAG"
+      ],
+      "normalized_urls": [
+        "https://learn.microsoft.com/en-us/microsoft-365/copilot/release-notes"
+      ],
+      "concept_tokens": [
+        "512",
+        "accepts",
+        "agent",
+        "agents",
+        "builder",
+        "files",
+        "grounded",
+        "microsoft"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-29-363c6a4d",
+      "edition_id": "dab-edition-2026-08-29",
+      "brief_date": "2026-08-29",
+      "ordinal": 1,
+      "headline": "GitHub turns Visual Studio into a more controllable agent cockpit",
+      "event_date": "2026-08-28",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "GitHub Copilot",
+        "Visual Studio",
+        "custom agents",
+        "reasoning controls",
+        "code review"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-28-github-copilot-in-visual-studio-august-update-2/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "cockpit",
+        "controllable",
+        "github",
+        "more",
+        "studio",
+        "visual"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-29-da2869d0",
+      "edition_id": "dab-edition-2026-08-29",
+      "brief_date": "2026-08-29",
+      "ordinal": 2,
+      "headline": "OpenAI’s planned Cursor cutoff exposes model-provider concentration risk",
+      "event_date": "2026-08-28",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Model-provider concentration",
+        "coding assistants",
+        "vendor risk",
+        "fallback architecture",
+        "resilience"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/"
+      ],
+      "concept_tokens": [
+        "concentration",
+        "cursor",
+        "cutoff",
+        "exposes",
+        "model",
+        "openai",
+        "planned",
+        "provider",
+        "risk"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-29-74777276",
+      "edition_id": "dab-edition-2026-08-29",
+      "brief_date": "2026-08-29",
+      "ordinal": 3,
+      "headline": "Claude for Teachers expands from individuals to governed school deployments",
+      "event_date": "2026-08-28",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI in education",
+        "teacher workflows",
+        "standards alignment",
+        "privacy",
+        "organizational governance"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/claude-for-teachers-now-available-for-schools-and-districts"
+      ],
+      "concept_tokens": [
+        "claude",
+        "deployments",
+        "expands",
+        "governed",
+        "individuals",
+        "school",
+        "teachers"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-29-67aff0e3",
+      "edition_id": "dab-edition-2026-08-29",
+      "brief_date": "2026-08-29",
+      "ordinal": 4,
+      "headline": "OpenAI’s Thailand accelerator puts reliability between prototype and deployment",
+      "event_date": "2026-08-28",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI deployment",
+        "user testing",
+        "safeguards",
+        "startup accelerators",
+        "reliability"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/supporting-next-generation-ai-startups-thailand/"
+      ],
+      "concept_tokens": [
+        "accelerator",
+        "between",
+        "deployment",
+        "openai",
+        "prototype",
+        "puts",
+        "reliability",
+        "thailand"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-29-ebf7f693",
+      "edition_id": "dab-edition-2026-08-29",
+      "brief_date": "2026-08-29",
+      "ordinal": 5,
+      "headline": "Anthropic publishes copyable Claude Tag workflows for real team work",
+      "event_date": "2026-08-28",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Claude Tag",
+        "Slack agents",
+        "delegated team workflows",
+        "shared context",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/how-anthropic-employees-use-claude-tag"
+      ],
+      "concept_tokens": [
+        "anthropic",
+        "claude",
+        "copyable",
+        "publishes",
+        "real",
+        "tag",
+        "team",
+        "work",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-29-b98b5a80",
+      "edition_id": "dab-edition-2026-08-29",
+      "brief_date": "2026-08-29",
+      "ordinal": 6,
+      "headline": "WRITER puts sessions, files, and reusable playbooks inside Slack",
+      "event_date": "2026-08-28",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "WRITER",
+        "Slack agents",
+        "reusable playbooks",
+        "file processing",
+        "governance"
+      ],
+      "normalized_urls": [
+        "https://support.writer.com/articles/1313908954-what-s-new-at-writer",
+        "https://support.writer.com/articles/6702604588-using-writer-for-slack"
+      ],
+      "concept_tokens": [
+        "files",
+        "inside",
+        "playbooks",
+        "puts",
+        "reusable",
+        "sessions",
+        "slack",
+        "writer"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-30-7712bd8b",
+      "edition_id": "dab-edition-2026-08-30",
+      "brief_date": "2026-08-30",
+      "ordinal": 1,
+      "headline": "Windows gives agent processes an OS-level identity trail",
+      "event_date": "2026-08-27",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent identity",
+        "process isolation",
+        "execution policy",
+        "operating-system security"
+      ],
+      "normalized_urls": [
+        "https://support.microsoft.com/en-us/servicing/os/windows-11/2026/08/kb5120998-windows-11-24h2-25h2-update"
+      ],
+      "concept_tokens": [
+        "agent",
+        "identity",
+        "level",
+        "processes",
+        "trail",
+        "windows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-30-3ea4c141",
+      "edition_id": "dab-edition-2026-08-30",
+      "brief_date": "2026-08-30",
+      "ordinal": 2,
+      "headline": "Anthropic proposes a shared hardware layer for scientific agents",
+      "event_date": "2026-08-27",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Model Hardware Standard",
+        "MCP",
+        "laboratory automation",
+        "physical-world agents"
+      ],
+      "normalized_urls": [
+        "https://www.anthropic.com/news/model-hardware-standard-research-preview"
+      ],
+      "concept_tokens": [
+        "agents",
+        "anthropic",
+        "hardware",
+        "layer",
+        "proposes",
+        "scientific",
+        "shared"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-30-6c8007e6",
+      "edition_id": "dab-edition-2026-08-30",
+      "brief_date": "2026-08-30",
+      "ordinal": 3,
+      "headline": "Notion lets an AI agent propose edits without taking authorship control",
+      "event_date": "2026-08-28",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "human review",
+        "writing",
+        "suggested edits",
+        "approval workflow"
+      ],
+      "normalized_urls": [
+        "https://www.notion.com/releases/2026-08-28"
+      ],
+      "concept_tokens": [
+        "agent",
+        "authorship",
+        "control",
+        "edits",
+        "notion",
+        "propose",
+        "taking",
+        "without"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-30-4faf2d80",
+      "edition_id": "dab-edition-2026-08-30",
+      "brief_date": "2026-08-30",
+      "ordinal": 4,
+      "headline": "Microsoft’s unified Copilot app retires Deep Research for consumers",
+      "event_date": "2026-08-18",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Copilot migration",
+        "research workflow continuity",
+        "account boundaries",
+        "OneDrive"
+      ],
+      "normalized_urls": [
+        "https://support.microsoft.com/en-us/microsoft-365-copilot/learning/changes-microsoft-copilot-app"
+      ],
+      "concept_tokens": [
+        "app",
+        "consumers",
+        "copilot",
+        "deep",
+        "microsoft",
+        "research",
+        "retires",
+        "unified"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-30-71d505c2",
+      "edition_id": "dab-edition-2026-08-30",
+      "brief_date": "2026-08-30",
+      "ordinal": 5,
+      "headline": "Claude in Chrome shifts browser work toward bounded autonomy",
+      "event_date": "2026-08-26",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "browser agents",
+        "tool use",
+        "action safety",
+        "prompt injection",
+        "user approvals"
+      ],
+      "normalized_urls": [
+        "https://claude.com/blog/claude-in-chrome-generally-available"
+      ],
+      "concept_tokens": [
+        "autonomy",
+        "bounded",
+        "browser",
+        "chrome",
+        "claude",
+        "shifts",
+        "toward",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-30-6649fb3e",
+      "edition_id": "dab-edition-2026-08-30",
+      "brief_date": "2026-08-30",
+      "ordinal": 6,
+      "headline": "Zapier turns no-code agent governance into a layered operating procedure",
+      "event_date": "2026-08-06",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code agents",
+        "scoped permissions",
+        "AI guardrails",
+        "human checkpoints",
+        "monitoring"
+      ],
+      "normalized_urls": [
+        "https://zapier.com/blog/safe-trustworthy-ai-agents/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "code",
+        "governance",
+        "layered",
+        "operating",
+        "procedure",
+        "zapier"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-31-ae8493a1",
+      "edition_id": "dab-edition-2026-08-31",
+      "brief_date": "2026-08-31",
+      "ordinal": 1,
+      "headline": "Operant AI puts an intent-aware enforcement layer in front of agent actions",
+      "event_date": "2026-08-27",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent security",
+        "semantic policy enforcement",
+        "tool calls",
+        "data loss prevention"
+      ],
+      "normalized_urls": [
+        "https://www.operant.ai/platform/semantic-firewall"
+      ],
+      "concept_tokens": [
+        "actions",
+        "agent",
+        "aware",
+        "enforcement",
+        "front",
+        "intent",
+        "layer",
+        "operant",
+        "puts"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-31-a3f5c0f6",
+      "edition_id": "dab-edition-2026-08-31",
+      "brief_date": "2026-08-31",
+      "ordinal": 2,
+      "headline": "Codex 0.151 makes subagent cost and restored permissions more visible",
+      "event_date": "2026-08-29",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "coding agents",
+        "harness observability",
+        "subagent accounting",
+        "permission state"
+      ],
+      "normalized_urls": [
+        "https://github.com/openai/codex/releases"
+      ],
+      "concept_tokens": [
+        "151",
+        "codex",
+        "cost",
+        "more",
+        "permissions",
+        "restored",
+        "subagent",
+        "visible"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-31-7b2aa975",
+      "edition_id": "dab-edition-2026-08-31",
+      "brief_date": "2026-08-31",
+      "ordinal": 3,
+      "headline": "GitHub Spark retires today, turning exportability into a no-code requirement",
+      "event_date": "2026-08-31",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "vibe coding",
+        "app portability",
+        "hosted inference",
+        "product retirement"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-08-04-upcoming-deprecation-of-github-spark-on-github-com/"
+      ],
+      "concept_tokens": [
+        "code",
+        "exportability",
+        "github",
+        "requirement",
+        "retires",
+        "spark",
+        "today",
+        "turning"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-31-f5d21908",
+      "edition_id": "dab-edition-2026-08-31",
+      "brief_date": "2026-08-31",
+      "ordinal": 4,
+      "headline": "The Financial Stability Board frames frontier AI as a resilience problem",
+      "event_date": "2026-08-31",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "cyber resilience",
+        "concentration risk",
+        "human oversight",
+        "financial decision support"
+      ],
+      "normalized_urls": [
+        "https://www.fsb.org/2026/08/fsb-chairs-letter-to-g20-finance-ministers-and-central-bank-governors-august-2026/"
+      ],
+      "concept_tokens": [
+        "board",
+        "financial",
+        "frames",
+        "frontier",
+        "problem",
+        "resilience",
+        "stability"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-31-5f4981c9",
+      "edition_id": "dab-edition-2026-08-31",
+      "brief_date": "2026-08-31",
+      "ordinal": 5,
+      "headline": "Make adds global search across scenarios and their runs",
+      "event_date": "2026-08-31",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code automation",
+        "workflow discovery",
+        "run history",
+        "operational review"
+      ],
+      "normalized_urls": [
+        "https://help.make.com/2026"
+      ],
+      "concept_tokens": [
+        "across",
+        "global",
+        "make",
+        "runs",
+        "scenarios",
+        "search"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-08-31-f97bd21f",
+      "edition_id": "dab-edition-2026-08-31",
+      "brief_date": "2026-08-31",
+      "ordinal": 6,
+      "headline": "Google Cloud schedules a no-code, build-to-deploy customer-agent demonstration",
+      "event_date": "2026-08-31",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code agents",
+        "customer service",
+        "visual workflow design",
+        "deployment governance"
+      ],
+      "normalized_urls": [
+        "https://cloudonair.withgoogle.com/events/develop-proactive-customer-agents-in-minutes"
+      ],
+      "concept_tokens": [
+        "agent",
+        "build",
+        "cloud",
+        "code",
+        "customer",
+        "demonstration",
+        "deploy",
+        "google",
+        "schedules"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-01-4df260d4",
+      "edition_id": "dab-edition-2026-09-01",
+      "brief_date": "2026-09-01",
+      "ordinal": 1,
+      "headline": "Codex 0.152 puts limits and durable evidence around agent tool use",
+      "event_date": "2026-09-01",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "coding agents",
+        "MCP",
+        "output budgets",
+        "authorization evidence",
+        "cloud-task security"
+      ],
+      "normalized_urls": [
+        "https://github.com/openai/codex/releases/tag/rust-v0.152.0"
+      ],
+      "concept_tokens": [
+        "152",
+        "agent",
+        "around",
+        "codex",
+        "durable",
+        "evidence",
+        "limits",
+        "puts",
+        "tool"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-01-09eff21b",
+      "edition_id": "dab-edition-2026-09-01",
+      "brief_date": "2026-09-01",
+      "ordinal": 2,
+      "headline": "ContextPilot teaches agents when to plan, remember and offload context",
+      "event_date": "2026-08-28",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "context engineering",
+        "long-term memory",
+        "context offloading",
+        "reinforcement learning"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2608.28476"
+      ],
+      "concept_tokens": [
+        "agents",
+        "context",
+        "contextpilot",
+        "offload",
+        "plan",
+        "remember",
+        "teaches",
+        "when"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-01-5005fc67",
+      "edition_id": "dab-edition-2026-09-01",
+      "brief_date": "2026-09-01",
+      "ordinal": 3,
+      "headline": "Google Meet gives the room a visible pause switch for AI notes",
+      "event_date": "2026-08-31",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "meeting notes",
+        "human control",
+        "privacy",
+        "off-the-record discussion"
+      ],
+      "normalized_urls": [
+        "https://workspaceupdates.googleblog.com/2026/08/control-take-notes-for-me-directly-from-Google-Meet-hardware-touch-controllers.html"
+      ],
+      "concept_tokens": [
+        "google",
+        "meet",
+        "notes",
+        "pause",
+        "room",
+        "switch",
+        "visible"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-01-f20296c3",
+      "edition_id": "dab-edition-2026-09-01",
+      "brief_date": "2026-09-01",
+      "ordinal": 4,
+      "headline": "Gemini labels Drive files at scale while owners retain review authority",
+      "event_date": "2026-08-28",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "data classification",
+        "Google Drive",
+        "human review",
+        "DLP",
+        "audit logs"
+      ],
+      "normalized_urls": [
+        "https://workspaceupdates.googleblog.com/2026/08/gemini-based-data-classification-in-Google-Drive-is-now-available-in-open-beta.html"
+      ],
+      "concept_tokens": [
+        "authority",
+        "drive",
+        "files",
+        "gemini",
+        "labels",
+        "owners",
+        "retain",
+        "review",
+        "scale",
+        "while"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-01-2881d03e",
+      "edition_id": "dab-edition-2026-09-01",
+      "brief_date": "2026-09-01",
+      "ordinal": 5,
+      "headline": "ChatGPT Work can discover tools provided directly by a website",
+      "event_date": "2026-08-31",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "WebMCP",
+        "website tools",
+        "ChatGPT Work",
+        "browser agents",
+        "confirmations"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+        "https://learn.chatgpt.com/docs/whats-new"
+      ],
+      "concept_tokens": [
+        "can",
+        "chatgpt",
+        "directly",
+        "discover",
+        "provided",
+        "tools",
+        "website",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-01-c324f577",
+      "edition_id": "dab-edition-2026-09-01",
+      "brief_date": "2026-09-01",
+      "ordinal": 6,
+      "headline": "Workspace Studio’s no-code agents gain least privilege, approvals and audit context",
+      "event_date": "2026-09-01",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code agents",
+        "least privilege",
+        "human approval",
+        "DLP",
+        "auditability"
+      ],
+      "normalized_urls": [
+        "https://workspaceupdates.googleblog.com/2026/08/new-enterprise-security-controls-for-Workspace-Studio-enable-expanded-collaboration-use-cases.html"
+      ],
+      "concept_tokens": [
+        "agents",
+        "approvals",
+        "audit",
+        "code",
+        "context",
+        "gain",
+        "least",
+        "privilege",
+        "studio",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-02-ad64fbde",
+      "edition_id": "dab-edition-2026-09-02",
+      "brief_date": "2026-09-02",
+      "ordinal": 1,
+      "headline": "Anthropic’s Fable 5.1 pushes long-running agent work while separating higher-risk Mythos access",
+      "event_date": "2026-09-01",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "frontier models",
+        "long-running agents",
+        "coding",
+        "safeguards",
+        "evaluation"
+      ],
+      "normalized_urls": [
+        "https://www.anthropic.com/claude/fable",
+        "https://www.anthropic.com/claude/mythos"
+      ],
+      "concept_tokens": [
+        "access",
+        "agent",
+        "anthropic",
+        "fable",
+        "higher",
+        "long",
+        "mythos",
+        "pushes",
+        "risk",
+        "running",
+        "separating",
+        "while",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-02-d4186454",
+      "edition_id": "dab-edition-2026-09-02",
+      "brief_date": "2026-09-02",
+      "ordinal": 2,
+      "headline": "Enterprise Frontier Safeguards puts misuse monitoring into customer-controlled infrastructure",
+      "event_date": "2026-09-02",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "zero data retention",
+        "misuse detection",
+        "enterprise security",
+        "privacy",
+        "frontier safeguards"
+      ],
+      "normalized_urls": [
+        "https://www.anthropic.com/news/enterprise-frontier-safeguards"
+      ],
+      "concept_tokens": [
+        "controlled",
+        "customer",
+        "enterprise",
+        "frontier",
+        "infrastructure",
+        "misuse",
+        "monitoring",
+        "puts",
+        "safeguards"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-02-ad704042",
+      "edition_id": "dab-edition-2026-09-02",
+      "brief_date": "2026-09-02",
+      "ordinal": 3,
+      "headline": "ChatGPT for Healthcare connects EHR context and nine official public-health sources",
+      "event_date": "2026-09-01",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "healthcare",
+        "EHR",
+        "governed connectors",
+        "grounding",
+        "authoritative sources",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/"
+      ],
+      "concept_tokens": [
+        "chatgpt",
+        "connects",
+        "context",
+        "ehr",
+        "health",
+        "healthcare",
+        "nine",
+        "official",
+        "public",
+        "sources"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-02-b368145c",
+      "edition_id": "dab-edition-2026-09-02",
+      "brief_date": "2026-09-02",
+      "ordinal": 4,
+      "headline": "Google Pics brings prompt-based image creation and editing into the Workspace flow",
+      "event_date": "2026-09-01",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "image generation",
+        "editing",
+        "Workspace",
+        "no-code creation",
+        "Docs",
+        "Slides"
+      ],
+      "normalized_urls": [
+        "https://blog.google/products-and-platforms/products/workspace/google-pics/"
+      ],
+      "concept_tokens": [
+        "based",
+        "creation",
+        "editing",
+        "flow",
+        "google",
+        "image",
+        "pics",
+        "prompt",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-02-097ae25d",
+      "edition_id": "dab-edition-2026-09-02",
+      "brief_date": "2026-09-02",
+      "ordinal": 5,
+      "headline": "OpenAI turns successful business processes into repeatable agent operating patterns",
+      "event_date": "2026-09-01",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent workflows",
+        "onboarding",
+        "account management",
+        "persistent context",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/ai-native-company-workflows/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "business",
+        "openai",
+        "operating",
+        "patterns",
+        "processes",
+        "repeatable",
+        "successful"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-02-6dc5626e",
+      "edition_id": "dab-edition-2026-09-02",
+      "brief_date": "2026-09-02",
+      "ordinal": 6,
+      "headline": "Gilbert + Tobin shows governed AI adoption as an operating model, not a tool rollout",
+      "event_date": "2026-09-01",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "law firms",
+        "AI governance",
+        "adoption",
+        "human accountability",
+        "enterprise workflows"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/gilbert-tobin/"
+      ],
+      "concept_tokens": [
+        "adoption",
+        "gilbert",
+        "governed",
+        "model",
+        "not",
+        "operating",
+        "rollout",
+        "tobin",
+        "tool"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-03-9e81e5ce",
+      "edition_id": "dab-edition-2026-09-03",
+      "brief_date": "2026-09-03",
+      "ordinal": 1,
+      "headline": "Gemini 3.8 Flash pushes long-horizon agents while Cyber access stays bounded",
+      "event_date": "2026-09-02",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Gemini 3.8",
+        "long-horizon agents",
+        "software engineering",
+        "cybersecurity",
+        "prompt injection",
+        "model economics"
+      ],
+      "normalized_urls": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/3-8-flash-and-3-8-flash-cyber/",
+        "https://blog.google/innovation-and-ai/technology/safety-security/fairwind-program/"
+      ],
+      "concept_tokens": [
+        "access",
+        "agents",
+        "bounded",
+        "cyber",
+        "flash",
+        "gemini",
+        "horizon",
+        "long",
+        "pushes",
+        "stays",
+        "while"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-03-a001445a",
+      "edition_id": "dab-edition-2026-09-03",
+      "brief_date": "2026-09-03",
+      "ordinal": 2,
+      "headline": "Repo-To-Skill argues that operational know-how belongs in reusable agent skills",
+      "event_date": "2026-09-02",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "context engineering",
+        "agent skills",
+        "repositories",
+        "research agents",
+        "operational knowledge",
+        "evaluation"
+      ],
+      "normalized_urls": [
+        "https://arxiv.org/abs/2609.02749"
+      ],
+      "concept_tokens": [
+        "agent",
+        "argues",
+        "belongs",
+        "know",
+        "operational",
+        "repo",
+        "reusable",
+        "skill",
+        "skills"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-03-98cf7178",
+      "edition_id": "dab-edition-2026-09-03",
+      "brief_date": "2026-09-03",
+      "ordinal": 3,
+      "headline": "Google’s AI-adoption playbook moves the target from licenses to redesigned workflows",
+      "event_date": "2026-09-02",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI adoption",
+        "change management",
+        "upskilling",
+        "workflow libraries",
+        "champions",
+        "value measurement"
+      ],
+      "normalized_urls": [
+        "https://workspace.google.com/blog/ai-and-machine-learning/from-deployment-to-transformation-the-playbook-for-realizing-ai-value"
+      ],
+      "concept_tokens": [
+        "adoption",
+        "google",
+        "licenses",
+        "moves",
+        "playbook",
+        "redesigned",
+        "target",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-03-acfceabb",
+      "edition_id": "dab-edition-2026-09-03",
+      "brief_date": "2026-09-03",
+      "ordinal": 4,
+      "headline": "Empower Work uses AI for retrieval and handoffs while counselors retain judgment",
+      "event_date": "2026-09-02",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "nonprofit",
+        "workforce counseling",
+        "trusted resources",
+        "summarization",
+        "human review",
+        "sensitive workflows"
+      ],
+      "normalized_urls": [
+        "https://academy.openai.com/public/blogs/a-nonprofit-founder-uses-chatgpt-to-help-more-workers-in-crisis-2026-09-02"
+      ],
+      "concept_tokens": [
+        "counselors",
+        "empower",
+        "handoffs",
+        "judgment",
+        "retain",
+        "retrieval",
+        "while",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-03-1cda360c",
+      "edition_id": "dab-edition-2026-09-03",
+      "brief_date": "2026-09-03",
+      "ordinal": 5,
+      "headline": "Copilot Studio brings a reasoning-heavy harness into the low-code agent builder",
+      "event_date": "2026-09-02",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Copilot Studio",
+        "low-code agents",
+        "harness engineering",
+        "skills",
+        "memory",
+        "MCP",
+        "enterprise context",
+        "governance"
+      ],
+      "normalized_urls": [
+        "https://www.microsoft.com/en-us/microsoft-copilot/blog/copilot-studio/new-and-improved-github-copilot-harness-agent-skills-and-richer-context/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "builder",
+        "code",
+        "copilot",
+        "harness",
+        "heavy",
+        "low",
+        "reasoning",
+        "studio"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-03-e5b0cb85",
+      "edition_id": "dab-edition-2026-09-03",
+      "brief_date": "2026-09-03",
+      "ordinal": 6,
+      "headline": "Freshdesk documents no-code building blocks for bounded agentic workflows",
+      "event_date": "2026-09-02",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "no-code agents",
+        "customer support",
+        "workflow builder",
+        "confirmations",
+        "MCP",
+        "human handoff",
+        "versioning"
+      ],
+      "normalized_urls": [
+        "https://support.freshdesk.com/support/solutions/articles/50000011782-build-workflows-no-code-agentic-workflows"
+      ],
+      "concept_tokens": [
+        "agentic",
+        "blocks",
+        "bounded",
+        "building",
+        "code",
+        "documents",
+        "freshdesk",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-dfb80844",
+      "edition_id": "dab-edition-2026-09-04",
+      "brief_date": "2026-09-04",
+      "ordinal": 1,
+      "headline": "GPT-6 Astra raises the ceiling on computer use and professional work",
+      "event_date": "2026-09-03",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "GPT-6 Astra",
+        "computer use",
+        "coding",
+        "professional work",
+        "alignment",
+        "evaluation"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/gpt-6-astra/",
+        "https://deploymentsafety.openai.com/gpt-6-astra"
+      ],
+      "concept_tokens": [
+        "astra",
+        "ceiling",
+        "computer",
+        "gpt",
+        "professional",
+        "raises",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-687d1566",
+      "edition_id": "dab-edition-2026-09-04",
+      "brief_date": "2026-09-04",
+      "ordinal": 2,
+      "headline": "Reported agent breakout puts scope control and monitoring back at center stage",
+      "event_date": "2026-09-04",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent safety",
+        "scope control",
+        "monitoring",
+        "external actions",
+        "multi-agent systems",
+        "incident response"
+      ],
+      "normalized_urls": [
+        "https://www.reuters.com/world/europe/openai-agents-hijacked-german-website-previously-undisclosed-ai-breakout-this-2026-09-04/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "back",
+        "breakout",
+        "center",
+        "control",
+        "monitoring",
+        "puts",
+        "reported",
+        "scope",
+        "stage"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-af83f986",
+      "edition_id": "dab-edition-2026-09-04",
+      "brief_date": "2026-09-04",
+      "ordinal": 3,
+      "headline": "Google Pics puts professional AI image creation directly inside Workspace",
+      "event_date": "2026-09-01",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Google Workspace",
+        "AI image generation",
+        "image editing",
+        "presentations",
+        "marketing",
+        "visual communication"
+      ],
+      "normalized_urls": [
+        "https://workspace.google.com/blog/product-announcements/google-pics-brings-pro-level-ai-image-creation-and-editing-to-google-workspace"
+      ],
+      "concept_tokens": [
+        "creation",
+        "directly",
+        "google",
+        "image",
+        "inside",
+        "pics",
+        "professional",
+        "puts",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-a2c5e263",
+      "edition_id": "dab-edition-2026-09-04",
+      "brief_date": "2026-09-04",
+      "ordinal": 4,
+      "headline": "ChatGPT for Healthcare connects authorized Epic context with official public data",
+      "event_date": "2026-09-01",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "healthcare",
+        "Epic",
+        "trusted data",
+        "grounding",
+        "connectors",
+        "professional workflows",
+        "human review"
+      ],
+      "normalized_urls": [
+        "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/"
+      ],
+      "concept_tokens": [
+        "authorized",
+        "chatgpt",
+        "connects",
+        "context",
+        "data",
+        "epic",
+        "healthcare",
+        "official",
+        "public"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-f5563221",
+      "edition_id": "dab-edition-2026-09-04",
+      "brief_date": "2026-09-04",
+      "ordinal": 5,
+      "headline": "Asana is bringing Agentic Work Management to every paid tier",
+      "event_date": "2026-09-03",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Asana",
+        "AI Teammates",
+        "Agentic Work Management",
+        "shared context",
+        "business workflows",
+        "human-agent teams"
+      ],
+      "normalized_urls": [
+        "https://investors.asana.com/news-releases/news-release-details/asana-announces-second-quarter-fiscal-2027-results/"
+      ],
+      "concept_tokens": [
+        "agentic",
+        "asana",
+        "bringing",
+        "every",
+        "management",
+        "paid",
+        "tier",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-04-2c938c91",
+      "edition_id": "dab-edition-2026-09-04",
+      "brief_date": "2026-09-04",
+      "ordinal": 6,
+      "headline": "Fabric data agents become reusable tools inside low-code Copilot Studio agents",
+      "event_date": "2026-09-02",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Microsoft Fabric",
+        "Copilot Studio",
+        "low-code agents",
+        "enterprise data",
+        "grounding",
+        "permissions",
+        "Microsoft 365"
+      ],
+      "normalized_urls": [
+        "https://learn.microsoft.com/en-us/fabric/data-science/data-agent-microsoft-copilot-studio-tool",
+        "https://community.fabric.microsoft.com/blog/fbc_fabricupdatesblogs/fabric-data-agents-in-microsoft-copilot-studio-generally-available/5362882"
+      ],
+      "concept_tokens": [
+        "agents",
+        "become",
+        "code",
+        "copilot",
+        "data",
+        "fabric",
+        "inside",
+        "low",
+        "reusable",
+        "studio",
+        "tools"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-05-a956fc27",
+      "edition_id": "dab-edition-2026-09-05",
+      "brief_date": "2026-09-05",
+      "ordinal": 1,
+      "headline": "GitHub’s HydraFusion turns model choice into runtime orchestration",
+      "event_date": "2026-09-04",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "multi-model orchestration",
+        "GitHub Copilot",
+        "coding agents",
+        "routing",
+        "critique",
+        "evaluation",
+        "cost-quality tradeoffs"
+      ],
+      "normalized_urls": [
+        "https://github.blog/ai-and-ml/github-copilot/project-hydrafusion-frontier-quality-via-multi-model-orchestration/"
+      ],
+      "concept_tokens": [
+        "choice",
+        "github",
+        "hydrafusion",
+        "model",
+        "orchestration",
+        "runtime"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-05-9cfd0663",
+      "edition_id": "dab-edition-2026-09-05",
+      "brief_date": "2026-09-05",
+      "ordinal": 2,
+      "headline": "AWS treats agent memory as a governed resource that must expire and evolve",
+      "event_date": "2026-09-04",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent memory",
+        "context engineering",
+        "lifecycle policies",
+        "stale context",
+        "compliance",
+        "consolidation",
+        "pruning"
+      ],
+      "normalized_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/designing-lifecycle-policies-for-agentcore-memory/"
+      ],
+      "concept_tokens": [
+        "agent",
+        "aws",
+        "evolve",
+        "expire",
+        "governed",
+        "memory",
+        "must",
+        "resource",
+        "treats"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-05-a3bb0c7b",
+      "edition_id": "dab-edition-2026-09-05",
+      "brief_date": "2026-09-05",
+      "ordinal": 3,
+      "headline": "ChatGPT Sites can now be shared privately with named people outside a workspace",
+      "event_date": "2026-09-03",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "ChatGPT Sites",
+        "external sharing",
+        "private publishing",
+        "collaboration",
+        "access control",
+        "business content"
+      ],
+      "normalized_urls": [
+        "https://openai.com/products/release-notes/"
+      ],
+      "concept_tokens": [
+        "can",
+        "chatgpt",
+        "named",
+        "outside",
+        "people",
+        "privately",
+        "shared",
+        "sites",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-05-7e9d8187",
+      "edition_id": "dab-edition-2026-09-05",
+      "brief_date": "2026-09-05",
+      "ordinal": 4,
+      "headline": "Google Translate makes long live-translation sessions easier to use during real work",
+      "event_date": "2026-09-04",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "live translation",
+        "mobile AI",
+        "multilingual work",
+        "background processing",
+        "accessibility",
+        "travel",
+        "communication"
+      ],
+      "normalized_urls": [
+        "https://blog.google/products-and-platforms/products/translate/google-translate-ios-android-upgrades/"
+      ],
+      "concept_tokens": [
+        "during",
+        "easier",
+        "google",
+        "live",
+        "long",
+        "real",
+        "sessions",
+        "translate",
+        "translation",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-05-d26b77c9",
+      "edition_id": "dab-edition-2026-09-05",
+      "brief_date": "2026-09-05",
+      "ordinal": 5,
+      "headline": "Amazon Quick Automate formalizes a reliability pattern for non-technical agentic workflows",
+      "event_date": "2026-09-03",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Amazon Quick Automate",
+        "business process automation",
+        "bounded agents",
+        "deterministic steps",
+        "human review",
+        "evaluation",
+        "observability"
+      ],
+      "normalized_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/best-practices-for-building-agentic-automations-with-amazon-quick-automate/"
+      ],
+      "concept_tokens": [
+        "agentic",
+        "amazon",
+        "automate",
+        "formalizes",
+        "non",
+        "pattern",
+        "quick",
+        "reliability",
+        "technical",
+        "workflows"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-05-9c2ab12f",
+      "edition_id": "dab-edition-2026-09-05",
+      "brief_date": "2026-09-05",
+      "ordinal": 6,
+      "headline": "Salesforce is bundling the stack needed to put agents into everyday business operations",
+      "event_date": "2026-09-03",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Salesforce",
+        "Agentforce",
+        "Slack",
+        "Tableau Next",
+        "enterprise agents",
+        "governance",
+        "analytics",
+        "packaging"
+      ],
+      "normalized_urls": [
+        "https://www.salesforce.com/news/stories/salesforce-simplifies-editions-2026/"
+      ],
+      "concept_tokens": [
+        "agents",
+        "bundling",
+        "business",
+        "everyday",
+        "needed",
+        "operations",
+        "put",
+        "salesforce",
+        "stack"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-06-2d659eea",
+      "edition_id": "dab-edition-2026-09-06",
+      "brief_date": "2026-09-06",
+      "ordinal": 1,
+      "headline": "GPT-6 Astra is now generally available inside GitHub Copilot",
+      "event_date": "2026-09-04",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "GPT-6 Astra",
+        "GitHub Copilot",
+        "coding agents",
+        "computer use",
+        "model integration",
+        "agentic development"
+      ],
+      "normalized_urls": [
+        "https://github.blog/changelog/2026-09-04-gpt-6-astra-is-generally-available-in-github-copilot/"
+      ],
+      "concept_tokens": [
+        "astra",
+        "available",
+        "copilot",
+        "generally",
+        "github",
+        "gpt",
+        "inside"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-06-679de9b0",
+      "edition_id": "dab-edition-2026-09-06",
+      "brief_date": "2026-09-06",
+      "ordinal": 2,
+      "headline": "Anthropic adds infrastructure-as-code discipline to agent deployment with `ant apply`",
+      "event_date": "2026-09-03",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent deployment",
+        "resources as code",
+        "reproducibility",
+        "skills",
+        "memory",
+        "environments",
+        "approval plans"
+      ],
+      "normalized_urls": [
+        "https://docs.anthropic.com/en/release-notes/api"
+      ],
+      "concept_tokens": [
+        "agent",
+        "ant",
+        "anthropic",
+        "apply",
+        "code",
+        "deployment",
+        "discipline",
+        "infrastructure"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-06-adb097bb",
+      "edition_id": "dab-edition-2026-09-06",
+      "brief_date": "2026-09-06",
+      "ordinal": 3,
+      "headline": "ChatGPT adds first-party Zendesk and OneNote plugins for support and knowledge workflows",
+      "event_date": "2026-09-03",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "ChatGPT plugins",
+        "Zendesk",
+        "OneNote",
+        "support operations",
+        "meeting notes",
+        "knowledge work",
+        "permissions"
+      ],
+      "normalized_urls": [
+        "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes"
+      ],
+      "concept_tokens": [
+        "chatgpt",
+        "first",
+        "knowledge",
+        "onenote",
+        "party",
+        "plugins",
+        "support",
+        "workflows",
+        "zendesk"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-06-d73ebecb",
+      "edition_id": "dab-edition-2026-09-06",
+      "brief_date": "2026-09-06",
+      "ordinal": 4,
+      "headline": "Claude Fable 5.1 raises the bar for research and difficult professional knowledge work",
+      "event_date": "2026-09-01",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "Claude Fable 5.1",
+        "knowledge work",
+        "research",
+        "coding",
+        "professional reasoning",
+        "model evaluation"
+      ],
+      "normalized_urls": [
+        "https://www.anthropic.com/claude-fable-and-mythos-5-1"
+      ],
+      "concept_tokens": [
+        "bar",
+        "claude",
+        "difficult",
+        "fable",
+        "knowledge",
+        "professional",
+        "raises",
+        "research",
+        "work"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-06-4819d1f6",
+      "edition_id": "dab-edition-2026-09-06",
+      "brief_date": "2026-09-06",
+      "ordinal": 5,
+      "headline": "OpenAI’s workspace-agent guidance emphasizes reusable workflows rather than one-off prompting",
+      "event_date": "2026-09-04",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "workspace agents",
+        "repeatable workflows",
+        "scheduling",
+        "shared processes",
+        "tools",
+        "safeguards",
+        "delegation"
+      ],
+      "normalized_urls": [
+        "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/workspace-agents"
+      ],
+      "concept_tokens": [
+        "agent",
+        "emphasizes",
+        "guidance",
+        "off",
+        "one",
+        "openai",
+        "prompting",
+        "rather",
+        "reusable",
+        "than",
+        "workflows",
+        "workspace"
+      ]
+    },
+    {
+      "story_id": "dab-story-2026-09-06-0532fd4e",
+      "edition_id": "dab-edition-2026-09-06",
+      "brief_date": "2026-09-06",
+      "ordinal": 6,
+      "headline": "Claude Cowork now formalizes a connector → browser → computer-use escalation path",
+      "event_date": "2026-09-05",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "Claude Cowork",
+        "computer use",
+        "connectors",
+        "browser agents",
+        "tool selection",
+        "human oversight",
+        "permissions"
+      ],
+      "normalized_urls": [
+        "https://support.claude.com/en/articles/14128542-let-claude-use-your-computer-in-cowork"
+      ],
+      "concept_tokens": [
+        "browser",
+        "claude",
+        "computer",
+        "connector",
+        "cowork",
+        "escalation",
+        "formalizes",
+        "path"
+      ]
+    }
+  ]
+}

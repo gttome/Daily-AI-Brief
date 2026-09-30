@@ -1,0 +1,46 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m06",
+  "attempt": 2,
+  "operation_key": "dab-edition-2026-09-29-m06-attempt-02-de006e74",
+  "disposition": "quality_rejected",
+  "accepted": false,
+  "quality_rejected": true,
+  "generation": {
+    "native_result_id": "68f1ceb5-f735-4ccf-9862-3256969f3935",
+    "native_file_id": "file_00000000340481f6b666c346830e52b1",
+    "bytes": 1081580,
+    "width": 1939,
+    "height": 811,
+    "sha256": "60e345c1cadee96e501f2e5cb498afe45d7e2a92d1e74aa9506b98ff3d8fa2b2"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-02/raw.png",
+    "commit_sha": "bd07fcd73a670e6bfe84e0787890891c4281eb4b",
+    "git_blob_sha": "d0feb3b98f0158d28b0584943585141a57e2bf68",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
+  },
+  "review": {
+    "result": "reject",
+    "mode": "automated",
+    "phase": "after_generation",
+    "failure_codes": [
+      "factual_support_fail",
+      "sealed_story_packet_match_fail",
+      "style_fail"
+    ],
+    "observation": "The exact persisted asset correctly depicts the seven-step Agent Builder workflow, uses abstract non-human symbols, and omits a promotional title/subtitle. However, it violates the sealed attempt-2 visible-text policy by adding substantial extra prose beyond the allowed essential labels and short mechanism labels, including Value case, Success criteria, Needs and goals, Alignment plan, Change approach, Milestones, Training resources, Access and tools, Readiness checks, Help resources, Issue resolution, Ongoing guidance, Usage and outcomes, Feedback analysis, Adjustments, Expanded deployment, Continued adoption, Measurable impact, Sustain and iterate, and an extra sentence-like feedback caption. These extras are not in the permitted visible-text set and some are unsupported specifics.",
+    "evidence_scope": "exact_content_address_verified_asset_v2_review"
+  },
+  "persistence": null,
+  "next_attempt_allowed": true,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T06:05:00Z"
+}

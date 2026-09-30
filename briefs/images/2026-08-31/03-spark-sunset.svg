@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#172554"/><stop offset="1" stop-color="#c2410c"/></linearGradient></defs>
+  <rect width="1200" height="630" fill="url(#sky)"/>
+  <text id="t1" x="60" y="78" fill="#fff7ed" font-family="Arial" font-size="34" font-weight="700">Spark sunsets; portable code becomes the lifeboat</text>
+  <circle cx="600" cy="410" r="155" fill="#fbbf24" opacity=".9"/>
+  <rect x="0" y="410" width="1200" height="220" fill="#172554"/>
+  <g transform="translate(95 175) rotate(-8)"><rect width="220" height="180" rx="20" fill="#fff" stroke="#fb923c" stroke-width="6"/><path d="M45 55 h130 M45 90 h100 M45 125 h145" stroke="#64748b" stroke-width="12"/><circle cx="185" cy="145" r="20" fill="#f97316"/></g>
+  <path d="M340 300 C445 300 455 330 505 360" fill="none" stroke="#fed7aa" stroke-width="8" stroke-dasharray="18 12"/>
+  <polygon points="505,360 473,352 492,331" fill="#fed7aa"/>
+  <g transform="translate(730 205)"><path d="M0 40 h300 v205 h-300z" fill="#f8fafc" stroke="#60a5fa" stroke-width="6"/><path d="M0 40 l95-40 h300 l-95 40z" fill="#bfdbfe"/><path d="M300 40 l95-40 v205 l-95 40z" fill="#93c5fd"/><path d="M62 95 h176 M62 135 h145 M62 175 h115" stroke="#334155" stroke-width="12"/></g>
+  <path d="M455 495 h105 v-50 h80 v50 h105" fill="none" stroke="#f87171" stroke-width="16"/>
+  <path d="M592 422 v95" stroke="#f87171" stroke-width="12"/><path d="M580 437 l24 0" stroke="#172554" stroke-width="10"/>
+  <text id="t2" x="495" y="530" fill="#fecaca" font-family="Arial" font-size="21">llm() link breaks</text>
+  <text id="t3" x="60" y="575" fill="#fed7aa" font-family="Arial" font-size="21">Export the repository; replace hosted inference before AI features fail</text>
+</svg>

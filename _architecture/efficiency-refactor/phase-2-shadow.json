@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "scope": "actual_30_day_historical_index_shadow",
+  "full_context_chars": 382811,
+  "compact_context_chars": 166715,
+  "reduction_percent": 56.44978853794692,
+  "stories": 173,
+  "editions": 29,
+  "novelty_backtest_parity": true,
+  "note": "Character counts are context proxies, not exact tokens. Local parse reuse is separate from model-context reduction."
+}

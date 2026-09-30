@@ -1,0 +1,52 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-09",
+  "reviewed_at": "2026-09-09T12:20:00Z",
+  "severity_policy": {
+    "critical": "block",
+    "high": "block",
+    "medium": "degrade_and_repair",
+    "low": "record"
+  },
+  "automated_result": "PASS",
+  "disposition": "pass",
+  "automated_findings": [],
+  "editorial_alt_review": [
+    {
+      "story_id": "dab-story-2026-09-09-e9be6ec5",
+      "result": "pass",
+      "alt": "Layered textbook diagram showing administrator policy governing filesystem, network, proxy, tools, keychain, and terminal access inside a sandboxed IDE agent workspace.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-0b6b1021",
+      "result": "pass",
+      "alt": "Exploded textbook diagram showing a package manifest, SKILL.md instructions, resources, validation, discovery, installation, and portable use across multiple agent runtimes.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-259c8fd8",
+      "result": "pass",
+      "alt": "Circular textbook workflow showing prompt, reference, and edit-mask inputs feeding a layered image canvas, fidelity and detail checks, precise editing, and export.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-1f112fc7",
+      "result": "pass",
+      "alt": "Scientific textbook diagram linking an experiment plan to a propose-run-observe-refine agent loop, quantum-chip calibration signals, and a human-authority review rail.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-a02b9db1",
+      "result": "pass",
+      "alt": "Radial textbook architecture showing a personal agent inside a secure virtual machine connected to email, calendar, travel, shopping, and payments with permission toggles and approval gates.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    },
+    {
+      "story_id": "dab-story-2026-09-09-81d2a78e",
+      "result": "pass",
+      "alt": "Textbook retrieval diagram showing a question routed through Copilot search across documentation, learning, community, account, and support sources, with source markers and escalation.",
+      "rationale": "Alternative text names the explanatory relationship shown and is not a filename or generic image label."
+    }
+  ]
+}

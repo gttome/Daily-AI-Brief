@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "2026-09-27-Q16",
+  "execution_mode": "qualification_nonproduction",
+  "result": "fail",
+  "final_stage": "PREFLIGHT_DISCOVERY_READY",
+  "failed_stage": "PREFLIGHT_DISCOVERY_READY",
+  "failure_code": "qualification_focus_coverage_insufficient_after_novelty",
+  "workflow_run_id": 36373167659,
+  "cutoff": "2026-09-28T03:18:00Z",
+  "retained_candidates": 20,
+  "coverage_counts": {
+    "technical_ai_engineering": 10,
+    "applied_genai_knowledge_workers": 2,
+    "agents_non_technical_people": 3
+  },
+  "required_minimum_per_focus": 3,
+  "agent_skill_signals": 2,
+  "agent_skill_story_ready_signals": 1,
+  "agent_skill_story_ready_signals_after_novelty": 1,
+  "date_precision_attempted": 17,
+  "date_precision_resolved": 9,
+  "semantic_pass_started": false,
+  "article_evidence_started": false,
+  "production_mutation": false,
+  "work_usage": 0,
+  "codex_usage": 0,
+  "paid_api_usage": 0,
+  "root_cause": "Q16 proved the Q15 repair improved novelty-aware Applied coverage from 1 to 2 while Agents remained at the required 3. One additional recurring Applied source is still required; the classification, freshness, novelty, category-breadth, Agent Skills, and date-precision gates are functioning as designed.",
+  "next_smallest_verified_correction": "Add one recurring first-party Google Workspace blog catalog as Applied source supply. Do not weaken the 72-hour freshness window, classification, novelty, 3-per-focus breadth, Agent Skills, or evidence bounds.",
+  "rerun_prohibited": true
+}

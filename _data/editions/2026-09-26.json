@@ -1,0 +1,564 @@
+{
+  "schema_version": "1.0.0",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-09-26",
+  "brief_date": "2026-09-26",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — September 26, 2026",
+  "published_at": "2026-09-26T15:36:53Z",
+  "research_cutoff_at": "2026-09-26T09:00:59.000Z",
+  "coverage_period": "24-hour primary window ending at 2026-09-26T09:00:59.000Z; recency fallback used for reviewed items outside the primary window.",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-26-f3e5113c",
+      "ordinal": 1,
+      "slug": "aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows",
+      "permanent_url": "/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/",
+      "focus": "technical_ai_engineering",
+      "headline": "AWS shows how to build continuous quality checks into production LLM workflows",
+      "event_date": "2026-09-25",
+      "topics": [
+        "LLM evaluation",
+        "production reliability",
+        "streaming evaluation",
+        "Bedrock"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-26/01-m09-textbook-v1.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/01-m09-textbook-v1.webp?v=sep26-m09-d992d23de34b",
+        "alt": "Detailed white-background textbook plate showing retrieval, model routing and failover, streamed tokens, live evaluation, source-value comparison, and a reviewed response.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep26-m09-d992d23de34b"
+      },
+      "summary": "AWS describes NarrateAI, a production LLM quality-assurance pattern on Amazon Bedrock that combines adaptive orchestration, multi-model failover, streaming evaluation, composite evaluation, and data-accuracy verification inside the response path.",
+      "why_it_matters": "Reliable generative AI requires more than an offline benchmark. Embedding verification into retrieval, generation, failover, and streaming makes quality observable while the system is actually serving users.",
+      "source": {
+        "title": "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock",
+        "organization": "AWS Machine Learning",
+        "url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+        "normalized_url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+        "publication_date": "2026-09-25",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 5803,
+          "verified_at": "2026-09-26T09:00:59Z",
+          "method": "precomputed_article_evidence",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-25T16:15:22.000Z"
+      },
+      "selection_rationale": "Provides a concrete production pattern for live LLM evaluation, failover, and data-accuracy verification.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "Provides a concrete production pattern for live LLM evaluation, failover, and data-accuracy verification."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Add one live quality check to a production AI path",
+        "rationale": "Start with a measurable failure mode such as numerical accuracy or citation consistency, then track the added latency and false-positive rate."
+      },
+      "social_description": "Reliable generative AI requires more than an offline benchmark. Embedding verification into retrieval, generation, failover, and streaming makes quality observable while the system",
+      "social": {
+        "title": "AWS shows how to build continuous quality checks into production LLM workflows",
+        "description": "Reliable generative AI requires more than an offline benchmark. Embedding verification into retrieval, generation, failover, and streaming makes quality observable while the system",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/01-m09-textbook-v1.webp?v=sep26-m09-d992d23de34b"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-26-8a5e2871",
+      "ordinal": 2,
+      "slug": "github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides",
+      "permanent_url": "/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/",
+      "focus": "technical_ai_engineering",
+      "headline": "GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs",
+      "event_date": "2026-09-25",
+      "topics": [
+        "GitHub Copilot",
+        "sandboxing",
+        "model routing",
+        "developer agents"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-26/02-m04-textbook-v1.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/02-m04-textbook-v1.webp?v=sep26-m04-971493f737fa",
+        "alt": "Layered Copilot deployment review showing IDE and collaboration surfaces, model choices, tool routing, local sandbox internals, and questions to verify for each client.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep26-m04-971493f737fa"
+      },
+      "summary": "GitHub’s September 21 weekly release bundle adds new model choices, local sandboxing in the Copilot app, updates for Slack and Microsoft Teams, and changes across JetBrains and VS Code.",
+      "why_it_matters": "Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaboration surfaces, and client-specific behavior as one operating system.",
+      "source": {
+        "title": "GitHub Copilot weekly releases — September 21",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+        "normalized_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+        "publication_date": "2026-09-25",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 824,
+          "verified_at": "2026-09-26T09:00:59Z",
+          "method": "precomputed_article_evidence",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-25T16:42:48.000Z"
+      },
+      "selection_rationale": "Shows Copilot becoming a cross-surface engineering platform spanning models, sandboxing, collaboration, and IDE clients.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 4,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "Shows Copilot becoming a cross-surface engineering platform spanning models, sandboxing, collaboration, and IDE clients."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Map Copilot capability to execution boundary",
+        "rationale": "For each enabled surface, document the model, tools, sandbox or host boundary, data access, and organization policy that governs it."
+      },
+      "social_description": "Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaborati",
+      "social": {
+        "title": "GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs",
+        "description": "Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaborati",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/02-m04-textbook-v1.webp?v=sep26-m04-971493f737fa"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-26-17fb50a5",
+      "ordinal": 3,
+      "slug": "microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot",
+      "permanent_url": "/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft redesigns Copilot around Home, Code, and persistent Autopilot",
+      "event_date": "2026-09-25",
+      "topics": [
+        "Microsoft Copilot",
+        "knowledge work",
+        "Autopilot",
+        "AI workspace"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-26/03-m05-textbook-v1.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/03-m05-textbook-v1.webp?v=sep26-m05-8a005fbe2f2d",
+        "alt": "Three illustrated work lanes compare Copilot Home for interactive drafts, Code for reusable artifacts, and Autopilot for persistent tasks with review checkpoints.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep26-m05-8a005fbe2f2d"
+      },
+      "summary": "Microsoft introduced a new Copilot experience organized around Home for everyday work, Code for building solutions, and Autopilot for persistent delegated work that can continue across time.",
+      "why_it_matters": "The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to deciding which work should remain interactive, become an artifact, or run persistently.",
+      "source": {
+        "title": "Introducing the new Copilot with Home, Code and Autopilot",
+        "organization": "Microsoft",
+        "url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+        "normalized_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
+        "publication_date": "2026-09-25",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 2407,
+          "verified_at": "2026-09-26T09:00:59Z",
+          "method": "precomputed_article_evidence",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-25T12:03:50.000Z"
+      },
+      "selection_rationale": "A major knowledge-work interface shift from chat toward building and persistent delegation.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "A major knowledge-work interface shift from chat toward building and persistent delegation."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Classify one recurring workflow as chat, build, or delegate",
+        "rationale": "Choose a real task and decide whether it belongs in interactive Home work, a reusable Code artifact, or a persistent Autopilot assignment with explicit checkpoints."
+      },
+      "social_description": "The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to decid",
+      "social": {
+        "title": "Microsoft redesigns Copilot around Home, Code, and persistent Autopilot",
+        "description": "The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to decid",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/03-m05-textbook-v1.webp?v=sep26-m05-8a005fbe2f2d"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-26-ade5bc01",
+      "ordinal": 4,
+      "slug": "microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365",
+      "permanent_url": "/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Microsoft adds a governed runtime for code execution inside Microsoft 365",
+      "event_date": "2026-09-25",
+      "topics": [
+        "Microsoft 365 Copilot",
+        "code execution",
+        "enterprise governance",
+        "managed runtime"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-26/04-m06-textbook-v1.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/04-m06-textbook-v1.webp?v=sep26-m06-3d7b0bf14f47",
+        "alt": "Nested Microsoft 365 tenant and Managed Runtime boundaries show identity, data connections, computation, reviewed output, governed sharing, and control questions.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep26-m06-3d7b0bf14f47"
+      },
+      "summary": "Microsoft Copilot Managed Runtime enters public preview as a tenant-boundary platform for executing code with enterprise governance, live data connections, app access, and familiar Microsoft 365 sharing expectations.",
+      "why_it_matters": "Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while giving IT a clearer place to govern identity, data, sharing, and execution.",
+      "source": {
+        "title": "Microsoft Copilot Managed Runtime",
+        "organization": "Microsoft",
+        "url": "https://aka.ms/CopilotManagedRuntime-Blog",
+        "normalized_url": "https://aka.ms/CopilotManagedRuntime-Blog",
+        "publication_date": "2026-09-25",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 1755,
+          "verified_at": "2026-09-26T09:00:59Z",
+          "method": "precomputed_article_evidence",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-25T12:00:00.000Z"
+      },
+      "selection_rationale": "Brings governed code execution into the Microsoft 365 knowledge-work surface.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 35,
+        "selection_rationale": "Brings governed code execution into the Microsoft 365 knowledge-work surface."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Test one governed analytical workflow",
+        "rationale": "Use a bounded dataset and repeatable calculation to compare the managed runtime with current spreadsheet, notebook, or local-code practices."
+      },
+      "social_description": "Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while givi",
+      "social": {
+        "title": "Microsoft adds a governed runtime for code execution inside Microsoft 365",
+        "description": "Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while givi",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/04-m06-textbook-v1.webp?v=sep26-m06-3d7b0bf14f47"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-26-5bddf735",
+      "ordinal": 5,
+      "slug": "github-gives-agentic-autofix-project-memory-for-security-repairs",
+      "permanent_url": "/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/",
+      "focus": "agents_non_technical_people",
+      "headline": "GitHub gives agentic autofix project memory for security repairs",
+      "event_date": "2026-09-25",
+      "topics": [
+        "agentic autofix",
+        "Copilot Memory",
+        "security agents",
+        "context engineering"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-26/05-m03-textbook-v1.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/05-m03-textbook-v1.webp?v=sep26-m03-6be669ff18b2",
+        "alt": "Security alert and enabled repository memory feed agentic autofix, a conceptual code patch, independent tests, human review, and memory-scope review.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep26-m03-6be669ff18b2"
+      },
+      "summary": "GitHub agentic autofix can now use Copilot Memory when customers enable it, letting the repair agent retrieve project-specific secure-development context and prior patterns before proposing fixes for security alerts.",
+      "why_it_matters": "An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remembers, when that memory influences a fix, and how a human verifies the result.",
+      "source": {
+        "title": "Agentic autofix now uses Copilot Memory",
+        "organization": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+        "normalized_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
+        "publication_date": "2026-09-25",
+        "evidence_type": "official_announcement",
+        "availability_status": "published",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 435,
+          "verified_at": "2026-09-26T09:00:59Z",
+          "method": "precomputed_article_evidence",
+          "words_per_minute": 200
+        }
+      },
+      "freshness": {
+        "tier": "primary",
+        "source_published_at": "2026-09-25T17:25:50.000Z"
+      },
+      "selection_rationale": "Turns memory into an explicit control surface for an agent performing security repairs.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 4,
+        "freshness": 5,
+        "authority": 5,
+        "evidence_quality": 5,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 34,
+        "selection_rationale": "Turns memory into an explicit control surface for an agent performing security repairs."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Review what security memory the agent is allowed to use",
+        "rationale": "Start with one alert class, inspect the retrieved project patterns, and require tests plus human review before accepting the automated fix."
+      },
+      "social_description": "An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remember",
+      "social": {
+        "title": "GitHub gives agentic autofix project memory for security repairs",
+        "description": "An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remember",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/05-m03-textbook-v1.webp?v=sep26-m03-6be669ff18b2"
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-26-0434240f",
+      "ordinal": 6,
+      "slug": "qoder-can-turn-repeated-work-into-proposed-reusable-skills",
+      "permanent_url": "/stories/2026-09-26/qoder-can-turn-repeated-work-into-proposed-reusable-skills/",
+      "focus": "agents_non_technical_people",
+      "headline": "Qoder can turn repeated work into proposed reusable Skills",
+      "event_date": "2026-09-23",
+      "topics": [
+        "Agent Skills",
+        "Qoder",
+        "skill evolution",
+        "reusable workflows"
+      ],
+      "companies": [],
+      "image": {
+        "path": "briefs/images/2026-09-26/06-r01-textbook-v1.webp",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/06-r01-textbook-v1.webp?v=sep26-r01-173b38def39d",
+        "alt": "Qoder skill evolution moves from completed work through a skill proposal and separate confirmation conversation to an applied reusable skill and a later test task.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "sep26-r01-173b38def39d"
+      },
+      "summary": "Qoder 0.4.1 can suggest creating or updating reusable Skills after a conversation, using experience from completed work; accepting the suggestion opens a separate conversation where the user confirms the plan before changes are applied.",
+      "why_it_matters": "Reusable agent skills can evolve from actual work rather than being authored only up front. The confirmation step is equally important: it keeps the conversion from experience into durable instructions visible and reviewable.",
+      "source": {
+        "title": "Qoder 0.4.1 release notes — Skill evolution suggestions",
+        "organization": "Qoder",
+        "url": "https://docs.qoder.com/release-notes/qoder",
+        "normalized_url": "https://docs.qoder.com/release-notes/qoder",
+        "publication_date": "2026-09-23",
+        "evidence_type": "official_release_note",
+        "availability_status": "published"
+      },
+      "freshness": {
+        "tier": "fallback",
+        "source_published_at": "2026-09-23",
+        "fallback_reason": "Outside the 24-hour primary window; included under the documented Agent Skills recency exception after bounded review."
+      },
+      "selection_rationale": "Repairs the Agent Skills slot with a distinct fresh development about human-reviewed skill evolution rather than skill evaluation.",
+      "novelty": {
+        "disposition": "new",
+        "prior_story_ids": [],
+        "what_changed": null
+      },
+      "candidate_score": {
+        "significance": 5,
+        "freshness": 4,
+        "authority": 5,
+        "evidence_quality": 4,
+        "novelty": 5,
+        "practical_value": 5,
+        "category_fit": 5,
+        "total": 33,
+        "selection_rationale": "Repairs the Agent Skills slot with a distinct fresh development about human-reviewed skill evolution rather than skill evaluation."
+      },
+      "what_to_do_now": {
+        "action": "evaluate",
+        "label": "Capture one repeated workflow as a proposed skill",
+        "rationale": "Use a completed task to generate a skill suggestion, review every instruction in the separate confirmation conversation, and test the resulting skill on a new task."
+      },
+      "social_description": "Reusable agent skills can evolve from actual work rather than being authored only up front. The confirmation step is equally important: it keeps the conversion from experience into",
+      "social": {
+        "title": "Qoder can turn repeated work into proposed reusable Skills",
+        "description": "Reusable agent skills can evolve from actual work rather than being authored only up front. The confirmation step is equally important: it keeps the conversion from experience into",
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/06-r01-textbook-v1.webp?v=sep26-r01-173b38def39d"
+      }
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Stop guessing which model your agent needs",
+      "channel": "Microsoft Developer",
+      "upload_date": "2026-09-23",
+      "runtime_seconds": 573,
+      "why_useful": "A concise walkthrough of choosing an agent model with repeatable evaluations rather than intuition, including latency, token use, output quality, and cost.",
+      "connection": "Pairs with today’s reliability and execution-layer stories by turning model selection into a measured engineering decision.",
+      "url": "https://www.youtube.com/watch?v=iTiKeH3FDoQ",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Reused from the independently verified Sep 25 media receipt; a current Sep 26 public listing still identifies the Sep 23 Microsoft Developer video at 9:33."
+      ]
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Using Claude Opus 5.5 as your daily driver",
+      "channel": "Claude",
+      "upload_date": "2026-09-23",
+      "runtime_seconds": 213,
+      "why_useful": "A practical three-minute comparison showing how model choice changes speed, limits, and daily agentic coding work.",
+      "connection": "Complements the day’s agent-memory and reusable-skill stories with a concrete example of matching capability and effort to routine work.",
+      "url": "https://www.youtube.com/watch?v=jKRl_CSVxyI",
+      "duration_tier": "short",
+      "short_search_evidence": [
+        "Reused from the independently verified Sep 25 media receipt; a current Sep 26 independent listing still identifies the Sep 23 Claude upload at 3:33."
+      ]
+    }
+  },
+  "editorial_takeaway": "The strongest pattern today is operationalization: agents are gaining memory and reusable skills, workplace copilots are gaining persistent and executable work modes, and engineering platforms are moving evaluation, isolation, and governance closer to the live execution path.",
+  "provenance": {
+    "created_by": "deterministic-kernel-expander",
+    "created_at": "2026-09-26T15:36:53Z",
+    "source_commit": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd"
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-09-26-practical-ai-agents-enterprise",
+      "title": "From AGENTS.md to Enterprise Deployment",
+      "show": "Practical AI",
+      "host": "Daniel Whitenack and Chris Benson; guest Nick Kuhn",
+      "publication_date": "2026-09-24",
+      "runtime_seconds": 2932,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "AI agents",
+        "enterprise deployment",
+        "MCP",
+        "shared memory",
+        "identity",
+        "sandboxing"
+      ],
+      "url": "https://practicalai.show/373",
+      "permanent_url": "/podcasts/2026-09-26/agents-md-enterprise-deployment/",
+      "summary": "Practical AI examines moving agents from prototypes into enterprise environments where platform engineering, identity, memory, MCP gateways, security, compliance, scalability, and reliability become operating requirements.",
+      "why_useful": "Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.",
+      "selection_rationale": "Approved-source episode dated September 24 with publisher-verified 48:52 runtime and strong production-agent relevance.",
+      "verification_note": "Official Practical AI page verified September 24, 2026, runtime 48:52, episode 373.",
+      "freshness_tier": "primary_48h",
+      "platforms": [
+        {
+          "name": "Practical AI",
+          "url": "https://practicalai.show/373"
+        }
+      ],
+      "connection": "Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.",
+      "coverage_note": "Reused the completed September 26 media checkpoint; no selection or source-content rediscovery."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-09-26-ai-show-baptist-health",
+      "title": "#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation",
+      "show": "The Artificial Intelligence Show",
+      "host": "Mike Kaput; guest Christine Kotler",
+      "publication_date": "2026-09-24",
+      "runtime_seconds": 2650,
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "AI adoption",
+        "knowledge work",
+        "governance",
+        "learning",
+        "workflow redesign"
+      ],
+      "url": "https://podcast.smarterx.ai/shownotes/242",
+      "permanent_url": "/podcasts/2026-09-26/baptist-health-ai-transformation/",
+      "summary": "A regulated-healthcare case study of a two-year AI adoption program built around structured learning, peer coaching, workflow integration, pilots, governance, and role redesign.",
+      "why_useful": "Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.",
+      "selection_rationale": "Approved core source, distinct from Practical AI, with current September 24 episode and directly relevant knowledge-worker transformation evidence.",
+      "verification_note": "Official show notes verify September 24; independent listing verifies 44:10.",
+      "freshness_tier": "primary_48h",
+      "freshness_exception_reason": "The bounded verification set yielded only one distinct-source finalist clearly inside the strict 48-hour timestamp window; this September 24 episode is the strongest approved-source fallback.",
+      "platforms": [
+        {
+          "name": "The Artificial Intelligence Show",
+          "url": "https://podcast.smarterx.ai/shownotes/242"
+        }
+      ],
+      "connection": "Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.",
+      "coverage_note": "Reused the completed September 26 media checkpoint; no selection or source-content rediscovery."
+    }
+  ]
+}

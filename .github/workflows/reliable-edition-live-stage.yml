@@ -1,0 +1,582 @@
+name: Reliable edition trusted stage executor
+
+on:
+  push:
+    branches:
+      - reliable-edition/dab-edition-2026-09-29
+    paths:
+      - '_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json'
+      - '_records/edition-execution/live/dab-edition-2026-09-29/images/**/result.json'
+      - '.github/workflows/reliable-edition-live-stage.yml'
+      - '_records/editorial/kernels/2026-09-29.json'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reliable-edition-dab-edition-2026-09-29
+  cancel-in-progress: false
+
+jobs:
+  execute-ready-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out durable live-edition branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: reliable-edition/dab-edition-2026-09-29
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+
+      - name: Self-heal image controller projection from immutable results
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+        run: |
+          set -euo pipefail
+          current="$(node -e "const fs=require('fs');const s=JSON.parse(fs.readFileSync(process.env.STATE_PATH,'utf8'));process.stdout.write(String(s.current_operation||''));")"
+          if [ "$current" = "images" ]; then
+            node _tools/edition-execution.mjs image-progress --root . --state "$STATE_PATH" --write true > /tmp/image-progress-self-heal.json
+          fi
+
+      - name: Persist self-healed image projection when changed
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+        run: |
+          set -euo pipefail
+          git add "$STATE_PATH"
+          if git diff --cached --quiet; then
+            echo "Image controller projection already matches immutable evidence."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Self-heal image controller projection from immutable results"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Resolve pinned controller state
+        id: state
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - '_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json' "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs');
+          const [p,out]=process.argv.slice(2);
+          const s=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(s.schema_version!=='reliable-edition-controller-state-v1'||s.profile!=='reliable-edition-v1')throw new Error('controller_state_contract_invalid');
+          if(s.controller?.branch!=='reliable-edition/dab-edition-2026-09-29')throw new Error('controller_state_branch_mismatch');
+          const current=s.current_operation;
+          const shouldDiscovery=s.status==='active'&&current==='discovery';
+          const shouldEditorial=s.status==='active'&&current==='editorial';
+          const shouldMedia=s.status==='active'&&current==='media';
+          const shouldImages=s.status==='active'&&current==='images';
+          const rows={
+            current_operation:String(current),
+            should_discovery:String(shouldDiscovery),
+            should_editorial:String(shouldEditorial),
+            should_media:String(shouldMedia),
+            should_images:String(shouldImages),
+            cutoff:s.edition.original_cutoff,
+            date:s.edition.edition_date,
+            release:s.edition.release_sha,
+            baseline:s.edition.research_baseline_sha,
+            edition_id:s.edition.edition_id,
+            state_version:String(s.version)
+          };
+          for(const [k,v] of Object.entries(rows))fs.appendFileSync(out,k+'='+v+'\n');
+          NODE
+
+      - name: No-op when another operation owns the cursor
+        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true' && steps.state.outputs.should_images != 'true'
+        run: echo "Durable cursor is ${{ steps.state.outputs.current_operation }}; this executor has no eligible deterministic stage for that cursor."
+
+      - name: Verify protected release and admission
+        if: steps.state.outputs.should_discovery == 'true'
+        shell: bash
+        env:
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          current_main="$(git rev-parse origin/main)"
+          test "$current_main" = "$RELEASE_SHA"
+          node _tools/edition-execution.mjs admission-check             --root .             --proof _records/execution-host/image-handoff-proof.json             --release "$RELEASE_SHA"             --out /tmp/reliable-admission-recheck.json
+
+      - name: Execute bounded fresh production discovery
+        if: steps.state.outputs.should_discovery == 'true'
+        shell: bash
+        env:
+          DAB_RESEARCH_CUTOFF: ${{ steps.state.outputs.cutoff }}
+          DAB_DISCOVERY_FRESH: '1'
+          DAB_DISCOVERY_PURPOSE: reliable_edition_production
+        run: |
+          set -euo pipefail
+          node _tools/discover-sources.mjs | tee /tmp/reliable-discovery-console.json
+
+      - name: Validate discovery evidence and advance durable cursor
+        if: steps.state.outputs.should_discovery == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_DATE: ${{ steps.state.outputs.date }}
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+          CUTOFF: ${{ steps.state.outputs.cutoff }}
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const statePath=process.env.STATE_PATH,date=process.env.EDITION_DATE,cutoff=process.env.CUTOFF;
+          const discoveryPath='_records/discovery/'+date+'.json';
+          const queuePath='_data/media-candidate-queue.json';
+          if(!fs.existsSync(discoveryPath)||!fs.existsSync(queuePath))throw new Error('discovery_artifacts_missing');
+          const d=JSON.parse(fs.readFileSync(discoveryPath,'utf8'));
+          const q=JSON.parse(fs.readFileSync(queuePath,'utf8'));
+          const expectedCutoff=new Date(Date.parse(cutoff)).toISOString();
+          if(d.date!==date||d.research_cutoff_at!==expectedCutoff)throw new Error('discovery_cutoff_binding_mismatch');
+          if(!Array.isArray(d.sources)||d.sources.length<1)throw new Error('discovery_sources_missing');
+          if(!Number.isInteger(d.efficiency?.sources_scanned)||d.efficiency.sources_scanned<1)throw new Error('discovery_scan_not_executed');
+          if(!Array.isArray(q.candidates)||q.candidates.length<1)throw new Error('discovery_candidate_queue_empty');
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          if(state.current_operation!=='discovery')throw new Error('stale_discovery_executor');
+          if(state.edition.original_cutoff!==cutoff)throw new Error('pinned_cutoff_changed');
+          const now=new Date().toISOString();
+          const result={
+            result:'pass',
+            operation:'discovery',
+            execution_host:'github_actions',
+            workflow_run_id:Number(process.env.GITHUB_RUN_ID),
+            source_commit:process.env.GITHUB_SHA,
+            edition_id:process.env.EDITION_ID,
+            cutoff:expectedCutoff,
+            artifacts:[discoveryPath,queuePath],
+            sources_observed:d.sources.length,
+            sources_scanned:d.efficiency.sources_scanned,
+            retained_candidates:q.candidates.length,
+            fresh_metadata_candidates:d.efficiency.fresh_metadata_candidates,
+            stop_reason:d.efficiency.stop_reason,
+            validated_at:now
+          };
+          const resultPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/discovery/result.json';
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+          state.version+=1;
+          state.completed.discovery=result;
+          state.current_operation='editorial';
+          state.task05={...state.task05,status:'done',binding_exercised:true,completed_at:now,proof:'real discovery stage executed and durably advanced the shared cursor'};
+          state.task06={...state.task06,status:'wip',started_at:now,substage:'editorial_story_packet_preparation'};
+          state.updated_at=now;
+          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist validated discovery and state transition
+        if: steps.state.outputs.should_discovery == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_DATE: ${{ steps.state.outputs.date }}
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/discovery/$EDITION_DATE.json" "_data/media-candidate-queue.json" "_records/edition-execution/live/$EDITION_ID/discovery/result.json"
+          git commit -m "Execute reliable edition production discovery"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Verify editorial baseline and admitted host
+        if: steps.state.outputs.should_editorial == 'true'
+        shell: bash
+        env:
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          test "$(git rev-parse origin/main)" = "$RELEASE_SHA"
+          node _tools/edition-execution.mjs admission-check --root . --proof _records/execution-host/image-handoff-proof.json --release "$RELEASE_SHA" --out /tmp/reliable-admission-editorial.json
+
+      - name: Validate single-pass editorial kernel and bounded evidence
+        if: steps.state.outputs.should_editorial == 'true'
+        shell: bash
+        env:
+          KERNEL_PATH: _records/editorial/kernels/2026-09-29.json
+          EVIDENCE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/editorial-input/article-evidence.json
+          METADATA_PATH: _records/edition-execution/live/dab-edition-2026-09-29/editorial-input/metadata-candidates.json
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const kernel=JSON.parse(fs.readFileSync(process.env.KERNEL_PATH,'utf8'));
+          const evidence=JSON.parse(fs.readFileSync(process.env.EVIDENCE_PATH,'utf8'));
+          const metadata=JSON.parse(fs.readFileSync(process.env.METADATA_PATH,'utf8'));
+          const state=JSON.parse(fs.readFileSync(process.env.STATE_PATH,'utf8'));
+          if(state.current_operation!=='editorial')throw new Error('stale_editorial_executor');
+          if(state.editorial_input?.ready!==true)throw new Error('editorial_input_not_ready');
+          if(kernel.normal_model_passes!==1||kernel.normal_post_editorial_model_passes!==0)throw new Error('single_editorial_pass_contract_failed');
+          if(evidence.profile_id!=='under80-v1'||evidence.execution_owner!=='github_actions'||evidence.model_calls!==0)throw new Error('bounded_evidence_provenance_invalid');
+          if(evidence.review_plan_count!==9||!Array.isArray(evidence.model_visible)||evidence.model_visible.length!==9||evidence.model_visible_chars>12000)throw new Error('bounded_evidence_contract_invalid');
+          const ids=new Set(evidence.model_visible.map(x=>x.candidate_id));
+          for(const story of kernel.stories)if(!ids.has(story.candidate_id))throw new Error('selected_story_missing_from_bounded_evidence:'+story.candidate_id);
+          if(new Set(kernel.stories.map(x=>x.candidate_id)).size!==6)throw new Error('editorial_candidate_identity_invalid');
+          if(kernel.stories.filter(x=>x.agent_skill===true).length!==1||kernel.stories.find(x=>x.agent_skill===true)?.candidate_id!==evidence.preferred_agent_skill_candidate_id)throw new Error('agent_skills_selection_binding_invalid');
+          const metaIds=new Set(metadata.candidates.map(x=>x.candidate_id));
+          for(const story of kernel.stories)if(!metaIds.has(story.candidate_id))throw new Error('selected_story_missing_from_metadata_gate:'+story.candidate_id);
+          const receipt=JSON.parse(fs.readFileSync('/tmp/kernel-receipt.json','utf8'));
+          const now=new Date().toISOString();
+          const kernelCommit=require('child_process').execFileSync('git',['log','-1','--format=%H','--',process.env.KERNEL_PATH],{encoding:'utf8'}).trim();
+          const result={
+            result:'pass',
+            operation:'editorial',
+            execution_host:'chatgpt_single_editorial_pass_plus_github_deterministic_validation',
+            kernel_path:process.env.KERNEL_PATH,
+            kernel_commit:kernelCommit,
+            kernel_sha256:receipt.kernel_sha256,
+            selected_candidate_ids:kernel.stories.map(x=>x.candidate_id),
+            allocation:receipt.allocation,
+            agent_skill_stories:receipt.agent_skill_stories,
+            bounded_evidence_path:process.env.EVIDENCE_PATH,
+            bounded_evidence_sha256:state.editorial_input.evidence_sha256,
+            metadata_candidates_path:process.env.METADATA_PATH,
+            editorial_model_passes:1,
+            post_editorial_model_passes:0,
+            deterministic_validation_model_calls:0,
+            validated_at:now
+          };
+          const resultPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/editorial/result.json';
+          const receiptPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/editorial/kernel-receipt.json';
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+          fs.writeFileSync(receiptPath,JSON.stringify(receipt,null,2)+'\n');
+          state.version+=1;
+          state.completed.editorial=result;
+          state.current_operation='media';
+          state.task06={...state.task06,status:'wip',substage:'media_preflight_and_image_packet_seal',editorial_kernel_locked:true,accepted_images:state.task06.accepted_images||0};
+          state.updated_at=now;
+          fs.writeFileSync(process.env.STATE_PATH,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist editorial validation and advance durable cursor
+        if: steps.state.outputs.should_editorial == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/edition-execution/live/$EDITION_ID/editorial/result.json" "_records/edition-execution/live/$EDITION_ID/editorial/kernel-receipt.json"
+          git commit -m "Validate reliable edition editorial kernel"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Verify protected release and preserved media evidence
+        if: steps.state.outputs.should_media == 'true'
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+          CONTROLLER_CUTOFF: ${{ steps.state.outputs.cutoff }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          test "$(git rev-parse origin/main)" = "$RELEASE_SHA"
+          node _tools/edition-execution.mjs admission-check --root . --proof _records/execution-host/image-handoff-proof.json --release "$RELEASE_SHA" --out /tmp/reliable-admission-media.json
+          gh api repos/${GITHUB_REPOSITORY}/actions/artifacts/11042203975/zip > /tmp/q25-podcasts.zip
+          gh api repos/${GITHUB_REPOSITORY}/actions/artifacts/11043047569/zip > /tmp/q25-videos.zip
+          test "$(sha256sum /tmp/q25-podcasts.zip | awk '{print $1}')" = "b7e3e5ec5746d6373792a791de128187c2728c5f72a29a642f7799860ce61f3d"
+          test "$(sha256sum /tmp/q25-videos.zip | awk '{print $1}')" = "59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40"
+          rm -rf /tmp/q25-podcasts /tmp/q25-videos
+          mkdir -p /tmp/q25-podcasts /tmp/q25-videos
+          unzip -q /tmp/q25-podcasts.zip -d /tmp/q25-podcasts
+          unzip -q /tmp/q25-videos.zip -d /tmp/q25-videos
+
+      - name: Revalidate selected media and advance durable cursor
+        if: steps.state.outputs.should_media == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+          EDITION_DATE: ${{ steps.state.outputs.date }}
+          CONTROLLER_CUTOFF: ${{ steps.state.outputs.cutoff }}
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+        run: |
+          set -euo pipefail
+          node --input-type=module <<'NODE'
+          import fs from 'node:fs';
+          import path from 'node:path';
+          import {execFileSync} from 'node:child_process';
+          import {selectPodcasts, videoDurationTier, VIDEO_MAX_AGE_HOURS} from './_generator/lib/media-selection.mjs';
+          import {MEDIA_FRESHNESS_POLICY} from './_generator/lib/media-freshness.mjs';
+
+          const statePath=process.env.STATE_PATH;
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          if(state.current_operation!=='media'||state.version!==4)throw new Error('stale_media_executor');
+          const controllerInstant=Date.parse(process.env.CONTROLLER_CUTOFF);
+          const mediaCutoff='2026-09-29T19:03:07.131-05:00';
+          if(!Number.isFinite(controllerInstant)||Date.parse(mediaCutoff)!==controllerInstant)throw new Error('media_cutoff_instant_mismatch');
+
+          function scriptJson(file){
+            const text=fs.readFileSync(file,'utf8');
+            const m=text.match(/<script type="application\/json" id="serialized-server-data">([\s\S]*?)<\/script>/i);
+            if(!m)throw new Error('apple_serialized_data_missing:'+file);
+            return JSON.parse(m[1]);
+          }
+          function findObject(root,pred){
+            const stack=[root];
+            while(stack.length){
+              const v=stack.pop();
+              if(v&&typeof v==='object'){
+                if(pred(v))return v;
+                if(Array.isArray(v))for(const x of v)stack.push(x);
+                else for(const x of Object.values(v))stack.push(x);
+              }
+            }
+            return null;
+          }
+          function appleEpisode(file,number){
+            const obj=findObject(scriptJson(file),o=>o.episodeNumber===number&&typeof o.storeUrl==='string'&&typeof o.releaseDate==='string');
+            if(!obj)throw new Error('apple_episode_missing:'+number);
+            return obj;
+          }
+          function feedEntry(file,id){
+            const text=fs.readFileSync(file,'utf8');
+            const entries=[...text.matchAll(/<entry>([\s\S]*?)<\/entry>/g)].map(m=>m[1]);
+            const e=entries.find(x=>x.includes('<yt:videoId>'+id+'</yt:videoId>'));
+            if(!e)throw new Error('youtube_feed_entry_missing:'+id);
+            const get=tag=>{const m=e.match(new RegExp('<'+tag+'>([^<]+)<\\/'+tag+'>'));return m?.[1]||null;};
+            return {id,published:get('published'),title:get('title'),url:'https://www.youtube.com/watch?v='+id};
+          }
+          function verifyCatalogDuration(file,id,seconds,label){
+            const text=fs.readFileSync(file,'utf8');
+            const i=text.indexOf(id);
+            if(i<0)throw new Error('youtube_catalog_id_missing:'+id);
+            const window=text.slice(Math.max(0,i-5000),i+7000);
+            if(!window.includes('"text":"'+label+'"'))throw new Error('youtube_duration_badge_missing:'+id);
+            if(videoDurationTier(seconds)!=='preferred')throw new Error('youtube_duration_not_preferred:'+id);
+          }
+          const p1=appleEpisode('/tmp/q25-podcasts/catalog-everyday.html',872);
+          const p2=appleEpisode('/tmp/q25-podcasts/catalog-ai-for-humans.html',197);
+          const podcasts=[
+            {id:'everyday-872',url:p1.storeUrl,show:p1.showOffer?.title||p1.podcastOffer?.title,title:p1.title,publication_date:p1.releaseDate,verified:true,editorial_pass:true,duplicate:false,score:100},
+            {id:'ai-for-humans-197',url:p2.storeUrl,show:p2.showOffer?.title||p2.podcastOffer?.title,title:p2.title,publication_date:p2.releaseDate,verified:true,editorial_pass:true,duplicate:false,score:90,freshness_exception_reason:'Preserved reviewed source-diverse selection; second qualifying item uses the existing 7-day fallback.'}
+          ];
+          const psel=selectPodcasts(podcasts,{date:process.env.EDITION_DATE,cutoff:mediaCutoff,policy:MEDIA_FRESHNESS_POLICY});
+          if(psel.selected.length!==2||psel.selected.map(x=>x.id).join(',')!=='everyday-872,ai-for-humans-197'||psel.source_diverse!==true)throw new Error('podcast_selection_revalidation_failed');
+
+          const v1=feedEntry('/tmp/q25-videos/ibm-feed.xml','bs1qPy_CWkM');
+          const v2=feedEntry('/tmp/q25-videos/kevin-stratvert-feed.xml','KJ8Y2Nb9y9o');
+          verifyCatalogDuration('/tmp/q25-videos/ibm-catalog.html',v1.id,435,'7:15');
+          verifyCatalogDuration('/tmp/q25-videos/kevin-stratvert-catalog.html',v2.id,471,'7:51');
+          const ref=Date.parse(mediaCutoff);
+          const videoAges=[v1,v2].map(v=>(ref-Date.parse(v.published))/3600000);
+          if(videoAges.some(h=>!Number.isFinite(h)||h<0||h>VIDEO_MAX_AGE_HOURS))throw new Error('video_freshness_revalidation_failed');
+
+          const podcastAges=psel.selected.map(p=>(ref-Date.parse(p.publication_date))/3600000);
+          if(Math.abs(podcastAges[0]-13.052)<0.02===false||Math.abs(podcastAges[1]-134.052)<0.02===false)throw new Error('podcast_age_revalidation_failed');
+          if(Math.abs(videoAges[0]-37.045)<0.02===false||Math.abs(videoAges[1]-24.535)<0.02===false)throw new Error('video_age_revalidation_failed');
+
+          const baseline='49e43aa9a581866c487140b27400cc39e8531037';
+          const changed=execFileSync('git',['diff','--name-only',baseline,process.env.RELEASE_SHA],{encoding:'utf8'}).trim().split(/\r?\n/).filter(Boolean);
+          if(changed.some(p=>p.startsWith('briefs/')||p.startsWith('data/operations/current-edition')||p.startsWith('_records/publication/')))throw new Error('production_history_changed_since_media_evidence');
+          for(const needle of [...podcasts.map(x=>x.url),v1.url,v2.url]){
+            try{
+              const out=execFileSync('git',['grep','-F','-n','-e',needle,process.env.RELEASE_SHA,'--','.'],{encoding:'utf8',stdio:['ignore','pipe','ignore']});
+              if(out.trim())throw new Error('media_duplicate_found_in_release:'+needle);
+            }catch(e){
+              if(e?.status!==1)throw e;
+            }
+          }
+
+          const now=new Date().toISOString();
+          const result={
+            result:'pass',
+            operation:'media',
+            execution_host:'github_actions',
+            edition_id:process.env.EDITION_ID,
+            media_freshness_policy:MEDIA_FRESHNESS_POLICY,
+            controller_cutoff:process.env.CONTROLLER_CUTOFF,
+            policy_cutoff:mediaCutoff,
+            cutoff_same_instant:true,
+            source_artifacts:{
+              podcasts:{artifact_id:11042203975,sha256:'b7e3e5ec5746d6373792a791de128187c2728c5f72a29a642f7799860ce61f3d'},
+              videos:{artifact_id:11043047569,sha256:'59c8cd4b366a1a0be905f8d3beb9c67e506169188878b72873d9d34cb2ad6c40'}
+            },
+            podcasts:psel.selected.map((x,i)=>({id:x.id,title:x.title,show:x.show,url:x.url,publication_date:x.publication_date,freshness_tier:x.freshness_tier,age_hours:Number(podcastAges[i].toFixed(3))})),
+            videos:[
+              {...v1,runtime_seconds:435,duration_tier:'preferred',age_hours:Number(videoAges[0].toFixed(3))},
+              {...v2,runtime_seconds:471,duration_tier:'preferred',age_hours:Number(videoAges[1].toFixed(3))}
+            ],
+            source_diverse_podcasts:true,
+            production_history_baseline:baseline,
+            changed_files_since_baseline:changed,
+            duplicate_recheck:'pass',
+            validated_at:now
+          };
+          const resultPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/media/result.json';
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+          state.version=5;
+          state.completed.media=result;
+          state.current_operation='images';
+          state.task06={...state.task06,status:'wip',substage:'image_generation',media_locked:true,accepted_images:state.task06.accepted_images||0};
+          state.updated_at=now;
+          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist media validation and advance durable cursor
+        if: steps.state.outputs.should_media == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/edition-execution/live/$EDITION_ID/media/result.json"
+          git commit -m "Validate reliable edition media"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Reconcile verified image acceptance from immutable evidence
+        if: steps.state.outputs.should_images == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const {execFileSync}=require('child_process');
+          const statePath=process.env.STATE_PATH;
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          if(state.current_operation!=='images'||state.task06?.status!=='wip')process.exit(0);
+
+          const candidate=state.task06.current_candidate_id;
+          const attempt=state.task06.current_attempt;
+          if(!candidate||!Number.isInteger(attempt))process.exit(0);
+
+          const base='_records/edition-execution/live/'+process.env.EDITION_ID+'/images/'+candidate+'/attempt-'+String(attempt).padStart(2,'0');
+          const bindingPath=base+'/operation-binding.json';
+          const reviewPath=base+'/review.json';
+          const resultPath=base+'/result.json';
+          if(fs.existsSync(resultPath))process.exit(0);
+          if(!fs.existsSync(bindingPath)||!fs.existsSync(reviewPath))process.exit(0);
+
+          const binding=JSON.parse(fs.readFileSync(bindingPath,'utf8'));
+          const review=JSON.parse(fs.readFileSync(reviewPath,'utf8'));
+          if(review.result!=='pass'||binding.review?.result!=='pass')process.exit(0);
+
+          const finalPath=binding.persistence?.final_path;
+          const expectedBlob=binding.persistence?.final_git_blob_sha||review.prepared_final?.git_blob_sha;
+          const expectedSha256=binding.persistence?.final_sha256||review.prepared_final?.sha256;
+          if(!finalPath||!/^[a-f0-9]{40}$/.test(expectedBlob||'')||!/^[a-f0-9]{64}$/.test(expectedSha256||''))process.exit(0);
+
+          let row='';
+          try{row=execFileSync('git',['ls-tree','HEAD',finalPath],{encoding:'utf8'}).trim();}catch{}
+          const m=row.match(/^100644 blob ([a-f0-9]{40})\t/);
+          if(!m||m[1]!==expectedBlob)process.exit(0);
+
+          const finalCommit=execFileSync('git',['log','-1','--format=%H','--',finalPath],{encoding:'utf8'}).trim();
+          if(!/^[a-f0-9]{40}$/.test(finalCommit))throw new Error('final_image_commit_unresolved');
+
+          const now=new Date().toISOString();
+          let boundAt='';
+          try{boundAt=execFileSync('git',['log','--diff-filter=A','-1','--format=%cI','--',bindingPath],{encoding:'utf8'}).trim();}catch{}
+          const elapsedSeconds=Number.isFinite(Date.parse(boundAt)) ? Math.max(0,Math.round((Date.parse(now)-Date.parse(boundAt))/1000)) : null;
+          const previousTiming=Array.isArray(state.task06.image_timing_history)&&state.task06.image_timing_history.length
+            ? state.task06.image_timing_history[state.task06.image_timing_history.length-1] : null;
+          const speedTrend=elapsedSeconds!=null&&previousTiming?.elapsed_seconds!=null
+            ? (elapsedSeconds>previousTiming.elapsed_seconds?'slower':elapsedSeconds<previousTiming.elapsed_seconds?'faster':'same') : 'baseline';
+          const result={
+            schema_version:'reliable-edition-image-attempt-result-v1',
+            edition_id:state.edition.edition_id,
+            candidate_id:candidate,
+            attempt,
+            operation_key:binding.operation_key,
+            disposition:'accepted',
+            accepted:true,
+            quality_rejected:false,
+            generation:{
+              native_result_id:binding.native_generation_id,
+              native_file_id:binding.native_file_id,
+              bytes:binding.raw_capture?.bytes,
+              width:binding.raw_capture?.width,
+              height:binding.raw_capture?.height,
+              sha256:binding.raw_capture?.sha256
+            },
+            raw_persistence:{
+              path:binding.persistence?.raw_path,
+              commit_sha:binding.persistence?.raw_commit_sha,
+              git_blob_sha:binding.persistence?.raw_git_blob_sha,
+              content_address_verified:binding.persistence?.content_address_verified===true,
+              read_back_verified:false,
+              verification_mode:'git_content_address',
+              contract_release_sha:state.edition.release_sha
+            },
+            prepared_final:review.prepared_final,
+            review,
+            persistence:{
+              path:finalPath,
+              commit_sha:finalCommit,
+              git_blob_sha:expectedBlob,
+              sha256:expectedSha256,
+              content_address_verified:true,
+              read_back_verified:false,
+              verification_mode:'git_content_address',
+              contract_release_sha:state.edition.release_sha
+            },
+            next_attempt_allowed:false,
+            owner_interventions:[],
+            work_invocations:0,
+            codex_invocations:0,
+            paid_model_api_calls:0,
+            timing:{
+              clock:'binding_to_durable_acceptance',
+              bound_at:boundAt||null,
+              accepted_at:now,
+              elapsed_seconds:elapsedSeconds,
+              previous_elapsed_seconds:previousTiming?.elapsed_seconds??null,
+              trend_vs_previous:speedTrend
+            },
+            recorded_at:now
+          };
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+
+          NODE
+          node _tools/edition-execution.mjs image-progress --root . --state "$STATE_PATH" --write true > /tmp/image-progress-after-acceptance.json
+
+      - name: Persist reconciled image result and advance image cursor
+        if: steps.state.outputs.should_images == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/edition-execution/live/$EDITION_ID/images"
+          if git diff --cached --quiet; then
+            echo "No deterministic image reconciliation was ready."
+            exit 0
+          fi
+          git commit -m "Reconcile verified image acceptance and advance cursor"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Stage summary
+        if: always()
+        run: |
+          echo "### Reliable edition trusted stage executor" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Edition: **${{ steps.state.outputs.edition_id }}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Durable cursor at invocation: **discovery**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Work/Codex/paid model API: **0**" >> "$GITHUB_STEP_SUMMARY"

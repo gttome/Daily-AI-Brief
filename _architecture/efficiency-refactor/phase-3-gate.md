@@ -1,0 +1,13 @@
+# Phase 3 checkpoint and repair workflow
+
+Phase 2: d8c1a90953fec96170ccf315ccc9ff6c76c081af, tree 6237e999e87adec1cc1fc29e6b5b3dcc74b5346d. 120 tests / 15 contracts, canonical parity and exact historical novelty backtest passed. The compact index reduced measured context characters 56.45%.
+
+Save each completed expensive stage with `node _tools/checkpoint.mjs save --file manifest.json`. The manifest provides directory, root, attempt_id, pipeline_version, stage, inputs and outputs. Inspect before reuse. Source files, policy files, review records, templates and source fingerprints that affect the stage MUST be included in inputs. Outputs are real artifact files; a completed status alone is insufficient. Dependency hashes and every input/output hash are checked recursively. New attempts or pipeline versions do not reuse old checkpoints implicitly. Changes archive the prior checkpoint; failed evidence is retained.
+
+Supported stages: metadata, filtering, evidence, selection, canonical, images, video, podcast, watchlist, generation, deterministic_qa, publication and live_qa. Independent production branches can use boundedTasks after selection is resolved. Watchlist may complete from explicitly retained verified topic state, with source-coverage limitations recorded. Publication and live QA checkpoint records are receipts, not permission to skip current-main/build/deployment/live checks.
+
+`node _tools/validate-efficient.mjs --attempt <id>` runs local tests and contract fixtures concurrently, then repository and integration checks. Repeating the same valid attempt reuses completed QA artifacts; input, output or pipeline changes invalidate reuse. Logs and failures are kept in the private .cache directory. This local result does not authorize publication and does not waive candidate CI or Jekyll.
+
+`node _tools/checkpoint.mjs repair-plan --kind test_fixture` lists affected stages and mandatory downstream gates. Other kinds: rating_javascript, image, podcast_link, feed_rendering, factual_story, transient_probe. Research invalidates for factual story defects; an image, media or test repair retains unaffected research. Source evidence must be refreshed when required by freshness/verification policy even if its local artifact hash is unchanged.
+
+Safe failure injection in the regression suite: a QA stage fails after research and generation. The retry runs research once, generation once, QA twice, with two checkpoint hits. Content corruption, changed inputs and changed pipeline versions invalidate cache reuse. Parallel work respects its concurrency limit and reports every rejected branch. No public edition was rerun or published.

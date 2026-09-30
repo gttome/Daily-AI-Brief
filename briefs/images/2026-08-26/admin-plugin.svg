@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#0d1723"/><path d="M70 120h1060v400H70z" fill="#182b3c" stroke="#4a6b80" stroke-width="4"/>
+<g fill="none" stroke="#6be5b7" stroke-width="12" stroke-linecap="round"><path d="M180 390a120 120 0 0 1 240 0"/><path d="M540 390a120 120 0 0 1 240 0"/></g><path d="M300 390l72-92M660 390l-45-108" stroke="#ffcf63" stroke-width="10" stroke-linecap="round"/>
+<g fill="#6be5b7"><circle cx="300" cy="390" r="18"/><circle cx="660" cy="390" r="18"/></g>
+<path d="M860 190h205v80H860zM860 310h205v80H860zM860 430h205v52H860z" fill="#263f53" stroke="#78a4bf" stroke-width="3"/><path d="M895 232l20 20 38-45M895 352l20 20 38-45" fill="none" stroke="#6be5b7" stroke-width="9" stroke-linecap="round"/>
+<circle cx="1030" cy="456" r="14" fill="#ffcf63"/>
+<text x="65" y="78" fill="#fff" font-family="Arial,sans-serif" font-size="40" font-weight="700">Governed workspace administration</text>
+<text x="172" y="462" fill="#aac4d4" font-family="Arial,sans-serif" font-size="25">USAGE</text><text x="602" y="462" fill="#aac4d4" font-family="Arial,sans-serif" font-size="25">ACCESS</text>
+</svg>

@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "effective_date": "2026-09-23",
+  "purpose": "Require a bounded daily emerging-concept sweep so the Watchlist can detect new model families, architectures, agent patterns, evaluation methods, infrastructure shifts, and workflows outside the standing source registry.",
+  "primary_lookback_days": 7,
+  "missed_signal_lookback_days": 14,
+  "required_surfaces": [
+    {
+      "id": "primary_research",
+      "mode": "automated_plus_review",
+      "examples": [
+        "arXiv",
+        "Hugging Face Daily Papers",
+        "conference/OpenReview"
+      ]
+    },
+    {
+      "id": "frontier_and_small_labs",
+      "mode": "automated_plus_assisted",
+      "examples": [
+        "frontier labs",
+        "smaller AI companies",
+        "new model vendors"
+      ]
+    },
+    {
+      "id": "open_source",
+      "mode": "automated_plus_review",
+      "examples": [
+        "GitHub Trending",
+        "GitHub AI topics",
+        "Hugging Face models/spaces"
+      ]
+    },
+    {
+      "id": "technical_communities",
+      "mode": "automated_plus_review",
+      "examples": [
+        "Hacker News",
+        "Reddit AI communities"
+      ]
+    },
+    {
+      "id": "broad_web",
+      "mode": "assisted_web_search",
+      "examples": [
+        "fresh web/news search for unfamiliar AI concepts and model names"
+      ]
+    },
+    {
+      "id": "youtube_creator_ecosystem",
+      "mode": "assisted_web_search",
+      "examples": [
+        "YouTube creator coverage beyond official lab channels"
+      ]
+    }
+  ],
+  "concept_classes": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "evaluation_or_benchmark",
+    "inference_runtime_or_hardware",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "safety_security_or_governance",
+    "knowledge_worker_workflow"
+  ],
+  "minimum_concept_classes_reviewed": 6,
+  "assisted_search_query_budget_max": 8,
+  "receipt_path_pattern": "_records/watchlist-sweeps/YYYY-MM-DD.json",
+  "rules": {
+    "one_credible_original_development_can_create_early_signal": true,
+    "popularity_is_discovery_signal_not_validation": true,
+    "youtube_engagement_is_discovery_signal_not_validation": true,
+    "zero_new_requires_complete_required_surfaces": true,
+    "zero_new_requires_14_day_missed_signal_check": true,
+    "zero_new_requires_written_justification": true,
+    "zero_new_requires_at_least_3_reviewed_candidate_concepts": true,
+    "source_registry_is_not_exhaustive": true,
+    "do_not_limit_search_to_existing_watchlist_topics": true,
+    "do_not_force_daily_topic_additions": true
+  }
+}

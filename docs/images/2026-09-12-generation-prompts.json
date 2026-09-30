@@ -1,0 +1,16 @@
+{
+  "brief_date": "2026-09-12",
+  "mode": "built_in",
+  "policy": "docs/images/publisher-policy.md",
+  "shared_direction": "Professional textbook diagrams only: dominant white background, crisp vector-style linework, restrained accents, short labels, instructional hierarchy, no photorealism, people, devices, physical scenes, title cards, or generic AI imagery.",
+  "attempts": [
+    {"ordinal": 1, "story_id": "dab-story-2026-09-12-4f7c9a21", "accepted": true, "output": "briefs/images/2026-09-12/01-copilot-review-verification.png", "composition": "radial review ensemble and evidence ledger", "story_components": ["code change", "specialist agents", "shell tools", "agent firewall", "merged review", "addressed", "still open", "human review"]},
+    {"ordinal": 2, "story_id": "dab-story-2026-09-12-8b2e61d4", "accepted": true, "output": "briefs/images/2026-09-12/02-vscode-agent-metrics.png", "composition": "isometric observability cutaway", "story_components": ["Agents window", "active users", "sessions", "messages", "policy gate", "one-day", "28-day", "aggregate", "per-user", "null data"]},
+    {"ordinal": 3, "story_id": "dab-story-2026-09-12-c16a53ef", "accepted": true, "output": "briefs/images/2026-09-12/03-gemini-windows-workflow.png", "composition": "branching keyboard-first workflow ribbon", "story_components": ["Alt plus Space", "quick question", "authorized context", "multi-step task", "create", "reviewed result"]},
+    {"ordinal": 4, "story_id": "dab-story-2026-09-12-2d8f70b6", "accepted": true, "output": "briefs/images/2026-09-12/04-cross-platform-grounding.png", "composition": "source islands and provenance spine", "story_components": ["meeting", "chat", "documents", "tasks", "in-person notes", "permissions", "blind spot", "provenance", "synthesis", "human check"]},
+    {"ordinal": 5, "story_id": "dab-story-2026-09-12-6ae3c942", "accepted": true, "output": "briefs/images/2026-09-12/05-mastra-filesystem-skills.png", "composition": "layered filesystem skill cutaway", "story_components": ["per-agent store", "shared store", "isolated store", "SKILL.md", "references", "scripts", "mount boundary", "search", "sandbox", "review"]},
+    {"ordinal": 6, "story_id": "dab-story-2026-09-12-f0397b5d", "accepted": true, "output": "briefs/images/2026-09-12/06-no-code-agent-fit-test.png", "composition": "comparative workflow swimlanes and balance test", "story_components": ["three builders", "trigger", "condition", "tool call", "webhook", "error path", "human review", "traceability", "hosting", "cost", "fit decision"]}
+  ],
+  "failed_attempts": [],
+  "note": "Six built-in premium generations were inspected individually and together. Final assets were composited on white and full-canvas resized to exact 1200x630 PNG without cropping."
+}

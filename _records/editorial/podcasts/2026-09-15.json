@@ -1,0 +1,60 @@
+{
+  "brief_date": "2026-09-15",
+  "searched_at": "2026-09-15",
+  "selected_item_id": "dab-podcast-2026-09-15-ai-show-237",
+  "source_registry": "_data/podcast-sources.json",
+  "candidates": [
+    {
+      "title": "GPT-6 Astra, NYC Bans AI in Schools, Trump Goes All-In on Data Centers & Lawyers Under Pressure to Pass on AI Savings",
+      "show": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/shownotes/237",
+      "publication_date": "2026-09-08",
+      "decision": "selected",
+      "reason": "Selected as the strongest verified unused registered-source episode after no worthwhile unused episode was found in the preferred 48-hour window or the first seven-day search results."
+    },
+    {
+      "title": "How a 700-Person Bank Is Using AI to Build Apps, Agents, and Digital Employees",
+      "show": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/shownotes/238",
+      "publication_date": "2026-09-10",
+      "decision": "rejected",
+      "reason": "Already selected for the September 14 edition."
+    },
+    {
+      "title": "10 Ways to Think Bigger with Opportunity AI",
+      "show": "The AI Daily Brief",
+      "url": "https://aidailybrief.ai/e/2026-09-13",
+      "publication_date": "2026-09-13",
+      "decision": "rejected",
+      "reason": "Already selected for the September 13 edition."
+    },
+    {
+      "title": "Computer-Use Agents and the Future of the Agentic Internet",
+      "show": "Practical AI",
+      "url": "https://practicalai.show/371",
+      "publication_date": "2026-09-10",
+      "decision": "rejected",
+      "reason": "Already selected for the September 11 edition."
+    },
+    {
+      "title": "Everyday AI latest episode",
+      "show": "Everyday AI",
+      "url": "https://www.youreverydayai.com/",
+      "publication_date": null,
+      "decision": "rejected",
+      "reason": "An unused exact episode page, publication date, and archive identity could not be verified."
+    }
+  ],
+  "verification": {
+    "publication_date": "Publisher page identifies September 8, 2026.",
+    "host": "Publisher transcript identifies Paul Roetzer and Mike Kaput.",
+    "runtime": "Transcript ends at 1:27:30, recorded as 5,250 seconds; podcasts have no duration cap.",
+    "platform_url": "Stable publisher show-notes and transcript URL verified.",
+    "novelty": "Canonical URL and title are absent from prior podcast records."
+  },
+  "limitations": [
+    "No eligible unused registered-source episode was verified in the preceding 48 hours.",
+    "The selected episode uses the documented seven-day boundary fallback.",
+    "Host interpretation and informal examples are not independent evaluation."
+  ]
+}

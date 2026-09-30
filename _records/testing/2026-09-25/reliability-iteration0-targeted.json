@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "reliability-iteration0-targeted-2026-09-25",
+  "baseline_main_sha": "ed3344500a630fc44b04fc48211c027a344a8c6b",
+  "implementation_branch": "hardening/reliability-iteration0-2026-09-25",
+  "strategy": "minimum_sufficient_affected_tests",
+  "changed_components": [
+    "_generator/lib/publication-lifecycle.mjs",
+    "_tools/publication-lifecycle.mjs",
+    "_generator/lib/render.mjs",
+    "_tools/run-state.mjs",
+    "_tools/daily-validation.mjs",
+    ".github/workflows/daily-delta-validation.yml",
+    ".github/workflows/ci.yml"
+  ],
+  "tier_a": {
+    "selected_tests": ["_generator/test/publication-lifecycle.test.mjs"],
+    "tests": 10,
+    "passed": 10,
+    "failed": 0,
+    "elapsed_seconds": 0.087,
+    "result": "pass",
+    "reuse_basis": "The publication lifecycle module on the implementation branch is unchanged from the locally tested content."
+  },
+  "tier_b": {
+    "selected_tests": ["_generator/test/publication.test.mjs"],
+    "result": "deferred_to_integrated_protected_ci",
+    "reason": "This test depends on the integrated repository fixture set; running it separately would duplicate the imminent full protected CI gate."
+  },
+  "tier_c": {
+    "result": "required_on_integrated_pr_head",
+    "reason": "Shared publication workflow and CI logic changed."
+  },
+  "tier_d": {
+    "result": "required_after_production_deployment",
+    "reason": "Exact-SHA Pages and live-reader verification is post-deployment only."
+  },
+  "tier_e": {
+    "result": "bounded_to_iteration0_failure_cases",
+    "sentinels": ["missing_completion", "wrong_completion_edition", "deployed_sha_mismatch", "wrong_live_reader_date", "illegal_transition", "missing_previous_terminal_outcome"]
+  },
+  "anti_rework": {
+    "full_suite_runs_during_development": 0,
+    "historical_replays": 0,
+    "editorial_regeneration": 0,
+    "image_regeneration": 0,
+    "media_rediscovery": 0
+  }
+}

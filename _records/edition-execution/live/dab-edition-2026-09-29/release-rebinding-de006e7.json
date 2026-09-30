@@ -1,0 +1,35 @@
+{
+  "schema_version": "reliable-edition-release-rebinding-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "branch": "reliable-edition/dab-edition-2026-09-29",
+  "from_release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+  "to_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+  "research_baseline_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+  "original_cutoff": "2026-09-30T00:03:07.131932Z",
+  "protected_ci_run_id": 36661586508,
+  "protected_ci_job_id": 109717334229,
+  "protected_ci_conclusion": "success",
+  "compare": {
+    "ahead_by": 14,
+    "behind_by": 0,
+    "changed_files": [
+      "_generator/lib/connector-image-delivery.mjs",
+      "_generator/lib/edition-execution.mjs",
+      "_generator/lib/image-execution.mjs",
+      "_generator/lib/recoverable-image-job.mjs",
+      "_generator/test/reliable-execution.test.mjs",
+      "docs/operations/LIVING-SYSTEM-OPERATIONS.md",
+      "docs/operations/START-HERE.md",
+      "docs/operations/reliable-edition-execution.md"
+    ]
+  },
+  "compatibility": {
+    "discovery": "preserved",
+    "editorial": "preserved",
+    "media": "preserved",
+    "images": "rebound_to_released_content_address_contract"
+  },
+  "rationale": "Protected-main delta changes reliable image persistence/verification and its tests/docs only; it does not change the pinned cutoff, research baseline, selected editorial kernel, or locked media evidence.",
+  "restarted_stages": [],
+  "recorded_at": "2026-09-30T02:57:30Z"
+}

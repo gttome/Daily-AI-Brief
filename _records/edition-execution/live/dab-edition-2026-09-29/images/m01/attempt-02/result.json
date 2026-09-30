@@ -1,0 +1,50 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m01",
+  "attempt": 2,
+  "operation_key": "dab-edition-2026-09-29-m01-attempt-02-e0e7b595",
+  "disposition": "quality_rejected",
+  "accepted": false,
+  "quality_rejected": true,
+  "generation": {
+    "native_result_id": "90e7f862-d8cc-4dcd-b9f9-a845849f7ca3",
+    "native_file_id": "file_00000000a69081f69414c1330e54873f",
+    "bytes": 982755,
+    "width": 1734,
+    "height": 907,
+    "sha256": "27f5fd458a70f036e4abe85024c7fae7789ed9bad481a557b686ea849b805d03"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-02/raw.png",
+    "commit_sha": "0da83dcbfb208e511a912a52870a1aaf41edcb65",
+    "git_blob_sha": "35d8b9679f609b6823569370b246831646b93e15",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150"
+  },
+  "review": {
+    "result": "reject",
+    "mode": "automated",
+    "phase": "after_generation_and_raw_content_address_verification",
+    "failure_codes": [
+      "subject_match_fail",
+      "factual_support_fail",
+      "sealed_story_packet_match_fail",
+      "style_fail",
+      "structural_quality_fail",
+      "visible_text_policy_fail",
+      "cross_story_carryover_fail"
+    ],
+    "observation": "The exact persisted m01 attempt-2 asset contains unauthorized visible text “Feedback & improvement,” “Curated knowledge,” “Agent skills,” and “Better outcomes”; it omits all seven required labels; it uses a large feedback-loop arrow explicitly forbidden by the sealed attempt-2 render specification; and it renders generic unlabeled source icons feeding a book/database hub rather than four labeled source tiles converging into a reusable Agent Skill, then a Codex task and reviewable output. “Better outcomes” is unsupported outcome language. The exact Git-persisted asset therefore fails subject/mechanism match, factual support, sealed-packet match, structural/style requirements, exact visible-text policy, and isolation/carryover requirements.",
+    "evidence_scope": "exact_git_blob_35d8b9679f609b6823569370b246831646b93e15_visual_review"
+  },
+  "persistence": null,
+  "next_attempt_allowed": true,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T17:40:47Z"
+}

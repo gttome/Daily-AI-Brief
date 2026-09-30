@@ -1,0 +1,68 @@
+{
+  "brief_date": "2026-09-17",
+  "reviewed_at": "2026-09-17T12:22:20Z",
+  "status": "approved",
+  "set_review": {
+    "distinct_compositions": true,
+    "dominant_white_backgrounds": true,
+    "mobile_readable": true,
+    "no_people_devices_or_photorealism": false,
+    "no_clipping_or_overlap": true
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-09-17-1a7c4e90",
+      "path": "briefs/images/2026-09-17/01-misalignment-disclosure-workflow.png",
+      "sha256": "41d8acbba32f3b2dff3880291379d97443670b4bcdedd40a63f4828ab83f23b3",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "linear disclosure workflow",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-17-2b8d5f01",
+      "path": "briefs/images/2026-09-17/02-extraction-schema-contract.png",
+      "sha256": "47033a824ea9af79108ec9394d165203bd3828fa9177736a73ce2762330e1f34",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "schema validation board",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-17-3c9e6a12",
+      "path": "briefs/images/2026-09-17/03-unified-ai-workspace.png",
+      "sha256": "f31460ce081f4fd7abb607233cf22498757fe453e2505a9f612aa7f96c3950c6",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "radial workspace map",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-17-4daf7b23",
+      "path": "briefs/images/2026-09-17/04-copilot-budget-request.png",
+      "sha256": "8bc77456175af627fe9025ddb08cfc5a54177f105865c33da9843ec3223db9ed",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "budget approval workflow",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-17-5eb08c34",
+      "path": "briefs/images/2026-09-17/05-zocks-agent-skill.png",
+      "sha256": "b1d6d412277f002b14a999a6720bb19a9bf723292fa977eaf9d22451f1d77e55",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "layered skill architecture",
+      "approval": "approved"
+    },
+    {
+      "story_id": "dab-story-2026-09-17-6fc19d45",
+      "path": "briefs/images/2026-09-17/06-quickbooks-conversational-agent.png",
+      "sha256": "7602df61a08d1e691ce5037e96921091f7980a6ca063a021ba79311afc4a65a9",
+      "width": 1200,
+      "height": 630,
+      "visual_family": "hexagonal accounting hub",
+      "approval": "approved"
+    }
+  ]
+}

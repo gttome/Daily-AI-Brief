@@ -1,0 +1,32 @@
+{
+  "schema_version": "1.0.0",
+  "lifecycle_version": "publication-lifecycle-v1",
+  "edition_date": "2026-09-24",
+  "edition_id": "dab-edition-2026-09-24",
+  "run_id": "continuity-migration-2026-09-24",
+  "baseline_sha": null,
+  "candidate_sha": null,
+  "publication_merge_sha": null,
+  "production_sha": null,
+  "deployed_sha": null,
+  "publication_pr_number": null,
+  "repair_pr_numbers": [],
+  "ci_run_id": null,
+  "pages_deployment_id": null,
+  "stage": "FAILED",
+  "status": "FAILED",
+  "terminal_outcome": "FAILED_UNRESOLVED",
+  "completion_record": null,
+  "command_center_sync": "pending",
+  "retry_count": 0,
+  "last_error": "missing_canonical_edition",
+  "blocker": "September 24 has no canonical edition/completion record in production history.",
+  "next_legal_action": "Preserve as FAILED_UNRESOLVED unless a separately verified historical recovery is performed.",
+  "created_at": "2026-09-25T16:28:00Z",
+  "updated_at": "2026-09-25T16:28:00Z",
+  "migration": true,
+  "history": [
+    {"stage":"PLANNED","at":"2026-09-25T16:28:00Z","evidence":{"kind":"migration_start"}},
+    {"stage":"FAILED","at":"2026-09-25T16:28:00Z","evidence":{"kind":"historical_continuity_reconciliation","error":"no_canonical_2026-09-24_edition_or_completion_record_on_iteration0_baseline","baseline_main_sha":"ed3344500a630fc44b04fc48211c027a344a8c6b"}}
+  ]
+}

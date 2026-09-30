@@ -1,0 +1,813 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Daily AI Brief efficiency record",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "edition_id",
+    "attempt_id",
+    "pipeline_version",
+    "baseline_sha",
+    "scope",
+    "start_time",
+    "end_time",
+    "wall_seconds",
+    "stages",
+    "research",
+    "context",
+    "media",
+    "qa",
+    "quality",
+    "usage"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": "1.0.0"
+    },
+    "edition_id": {
+      "type": "string",
+      "pattern": "^dab-edition-\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "attempt_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]{0,160}$"
+    },
+    "pipeline_version": {
+      "type": "string",
+      "minLength": 1
+    },
+    "baseline_sha": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{40}$"
+    },
+    "scope": {
+      "enum": [
+        "publication_generation",
+        "publication_complete",
+        "research_shadow",
+        "historical"
+      ]
+    },
+    "start_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "end_time": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "wall_seconds": {
+      "type": [
+        "number",
+        "null"
+      ],
+      "minimum": 0
+    },
+    "stages": {
+      "type": "object",
+      "required": [
+        "discovery_seconds",
+        "filtering_seconds",
+        "deep_retrieval_seconds",
+        "evidence_packet_seconds",
+        "selection_writing_seconds",
+        "images_seconds",
+        "media_seconds",
+        "watchlist_seconds",
+        "generation_seconds",
+        "qa_seconds",
+        "publication_seconds",
+        "live_verification_seconds"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "discovery_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "filtering_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "deep_retrieval_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "evidence_packet_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "selection_writing_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "images_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "media_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "watchlist_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "generation_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "qa_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "publication_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "live_verification_seconds": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "research": {
+      "type": "object",
+      "required": [
+        "registered_sources_available",
+        "metadata_sources_scanned",
+        "article_sources_fulltext_retrieved",
+        "watchlist_sources_scanned",
+        "watchlist_sources_returning_candidate_links",
+        "watchlist_sources_fulltext_retrieved",
+        "watchlist_sources_requiring_followup",
+        "cache_hits",
+        "cache_misses",
+        "candidate_count",
+        "deep_candidates",
+        "selected_stories",
+        "early_stop_triggered"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "registered_sources_available": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "metadata_sources_scanned": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "article_sources_fulltext_retrieved": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "watchlist_sources_scanned": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "watchlist_sources_returning_candidate_links": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "watchlist_sources_fulltext_retrieved": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "watchlist_sources_requiring_followup": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cache_hits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "cache_misses": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "candidate_count": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "deep_candidates": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "selected_stories": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "early_stop_triggered": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "evidence_packets_created",
+        "evidence_packet_chars",
+        "historical_index_records_loaded",
+        "historical_context_chars",
+        "source_text_chars_retrieved",
+        "downstream_context_chars",
+        "model_calls_observable",
+        "input_tokens_observable",
+        "output_tokens_observable"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "evidence_packets_created": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "evidence_packet_chars": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "historical_index_records_loaded": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "historical_context_chars": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "source_text_chars_retrieved": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "downstream_context_chars": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "model_calls_observable": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "input_tokens_observable": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "output_tokens_observable": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "media": {
+      "type": "object",
+      "required": [
+        "image_attempts",
+        "image_rejects",
+        "accepted_images",
+        "video_candidates_checked",
+        "videos_selected",
+        "podcast_candidates_checked",
+        "podcasts_selected"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "image_attempts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "image_rejects": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "accepted_images": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "video_candidates_checked": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "videos_selected": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "podcast_candidates_checked": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "podcasts_selected": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "qa": {
+      "type": "object",
+      "required": [
+        "deterministic_tests_run",
+        "contract_fixtures_run",
+        "semantic_checks_run",
+        "live_routes_checked",
+        "targeted_repair_cycles",
+        "full_pipeline_restarts",
+        "publication_prs",
+        "repair_prs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "deterministic_tests_run": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "contract_fixtures_run": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "semantic_checks_run": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "live_routes_checked": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "targeted_repair_cycles": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "full_pipeline_restarts": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "publication_prs": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "repair_prs": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "six_story_requirement",
+        "allocation_2_2_2",
+        "novelty_gate",
+        "source_verification",
+        "images",
+        "videos",
+        "podcast",
+        "watchlist",
+        "ratings_sharing",
+        "feeds_archive_parity",
+        "accessibility",
+        "private_operations",
+        "subscriber_delivery",
+        "initial_local_qa",
+        "final_public_qa",
+        "overall_run_status",
+        "critical_high_defects"
+      ],
+      "properties": {
+        "six_story_requirement": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "allocation_2_2_2": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "novelty_gate": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "source_verification": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "images": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "videos": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "podcast": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "watchlist": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "ratings_sharing": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "feeds_archive_parity": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "accessibility": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "private_operations": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "subscriber_delivery": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "initial_local_qa": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "final_public_qa": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "overall_run_status": {
+          "enum": [
+            null,
+            "PASS",
+            "FAIL",
+            "DEGRADED",
+            "NOT_APPLICABLE",
+            "PENDING",
+            "UNAVAILABLE"
+          ]
+        },
+        "critical_high_defects": {
+          "type": [
+            "integer",
+            "null"
+          ],
+          "minimum": 0
+        }
+      }
+    },
+    "usage": {
+      "type": "object",
+      "required": [
+        "exact_platform_tokens",
+        "exact_platform_credits",
+        "weekly_usage_percent_remaining_before",
+        "weekly_usage_percent_remaining_after",
+        "weekly_usage_percentage_points_consumed",
+        "weekly_usage_before_captured_at",
+        "weekly_usage_after_captured_at",
+        "weekly_reset_at",
+        "concurrent_work_codex_activity",
+        "allowance_changing_event",
+        "weekly_usage_measurement_status",
+        "measurement_note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "exact_platform_tokens": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "exact_platform_credits": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "weekly_usage_percent_remaining_before": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "weekly_usage_percent_remaining_after": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 100
+        },
+        "weekly_usage_percentage_points_consumed": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0
+        },
+        "weekly_usage_before_captured_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weekly_usage_after_captured_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "weekly_reset_at": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "concurrent_work_codex_activity": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "allowance_changing_event": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        },
+        "weekly_usage_measurement_status": {
+          "enum": [
+            "valid",
+            "contaminated",
+            "below_display_resolution",
+            "unavailable"
+          ]
+        },
+        "measurement_note": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "$id": "urn:daily-ai-brief:efficiency:1.0.0"
+}
