@@ -29,7 +29,7 @@
     {
       "status": "included",
       "ordinal": 9,
-      "item_id": "everyday-872",
+      "item_id": "dab-podcast-2026-09-29-everyday-ai-cost-control-872",
       "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
       "show": "Everyday AI Podcast – An AI and ChatGPT Podcast",
       "host": "Everyday AI",
@@ -46,12 +46,21 @@
       "why_useful": "Adds operating-cost context to model and workflow choices.",
       "selection_rationale": "Locked media-stage selection; primary 48-hour freshness tier.",
       "freshness_tier": "primary_48h",
-      "connection": "Adds cost discipline to model adoption decisions."
+      "connection": "Adds cost discipline to model adoption decisions.",
+      "permanent_url": "/podcasts/2026-09-29/ai-cost-control-board-level/",
+      "verification_note": "Locked September 29 media preflight verified the official Apple Podcasts listing dated September 29 and reachable at HTTP 200.",
+      "coverage_note": "Reused the completed September 29 media checkpoint; no selection or source-content rediscovery.",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154"
+        }
+      ]
     },
     {
       "status": "included",
       "ordinal": 10,
-      "item_id": "ai-for-humans-197",
+      "item_id": "dab-podcast-2026-09-29-ai-for-humans-opus-197",
       "title": "Opus 5.5 is our favorite AI model (so far).",
       "show": "AI For Humans: Weekly AI News, Tools & Trends",
       "host": "AI For Humans",
@@ -69,7 +78,16 @@
       "selection_rationale": "Locked source-diverse seven-day fallback selection.",
       "freshness_tier": "fallback_7d",
       "freshness_exception_reason": "Source-diverse locked fallback retained because the bounded current media selection required a second verified podcast and no newer distinct-source finalist displaced it.",
-      "connection": "Useful context for evaluating model choice rather than assuming a stronger model is automatically the right workflow fit."
+      "connection": "Useful context for evaluating model choice rather than assuming a stronger model is automatically the right workflow fit.",
+      "permanent_url": "/podcasts/2026-09-29/opus-5-5-model-discussion/",
+      "verification_note": "Locked September 29 media preflight verified the official Apple Podcasts listing dated September 24 and reachable at HTTP 200.",
+      "coverage_note": "Reused the completed September 29 source-diverse fallback media checkpoint; no selection or source-content rediscovery.",
+      "platforms": [
+        {
+          "name": "Apple Podcasts",
+          "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406"
+        }
+      ]
     }
   ]
 }
