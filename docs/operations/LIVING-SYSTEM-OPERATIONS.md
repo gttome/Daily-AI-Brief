@@ -1,6 +1,23 @@
 # Daily Generative AI Brief
 
 > [!IMPORTANT]
+> **September 30, 2026 — controller simplification and self-healing.** Scheduled controller
+> time starts work; it does not pace stages. A run drains all currently safe dependent work.
+> Recoverable blockers are cleared in-run using the smallest authorized action: derive stale
+> controller state from immutable results, reconcile a known outcome, resume the same bytes/
+> operation key after transport uncertainty, advance after documented quality rejection, or
+> repair pre-generation deterministic lint without allocating an attempt. External CI/deploy
+> waits, execution-host limits, and current safety/tool denials are the only normal yield
+> boundaries. Safety denials are never bypassed through alternate endpoints.
+>
+> Immutable image attempt results are authoritative. Controller counters/cursors and status
+> boards are projections. Image completion should persist result + derived cursor in one state
+> commit whenever possible. Passive timing captures operation durations, attempts-to-accept,
+> first-attempt acceptance and accepted-image wall time; timing cannot fail publication.
+> If overhead worsens, remove non-value-add steps before adding machinery.
+
+
+> [!IMPORTANT]
 > **September 30, 2026 — first-attempt image hardening.** Before native generation, compile
 > each sealed story packet into `strict-image-render-spec-v1`. The render prompt excludes
 > headline, source URL and orchestration identifiers; visible text is an exact allowlist;
