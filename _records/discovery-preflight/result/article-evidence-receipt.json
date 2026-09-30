@@ -1,5 +1,6 @@
 {
   "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
   "profile_id": "under80-v1",
   "stage": "deterministic_article_evidence_preflight",
   "execution_owner": "github_actions",
@@ -12,8 +13,55 @@
     "agents_non_technical_people": 3
   },
   "preferred_agent_skill_candidate_id": "m01",
-  "model_visible_chars": 9824,
-  "evidence_sha256": "338cd47953b47ba405826a035d41c4810295afdc58199d705299b84c2457781d",
+  "model_visible_chars": 10028,
+  "evidence_sha256": "326e164afbba6c772d3a02c369144163acf4a35967e952ca2d4f7aab6a02e7f2",
   "ready": true,
-  "failures": []
+  "failures": [],
+  "extraction_methods": [
+    {
+      "candidate_id": "m02",
+      "method": "html.main",
+      "source_word_count": 2192
+    },
+    {
+      "candidate_id": "m03",
+      "method": "html.main",
+      "source_word_count": 1823
+    },
+    {
+      "candidate_id": "m04",
+      "method": "html.article",
+      "source_word_count": 298
+    },
+    {
+      "candidate_id": "m05",
+      "method": "html.article",
+      "source_word_count": 202
+    },
+    {
+      "candidate_id": "m06",
+      "method": "jsonld.description",
+      "source_word_count": 1734
+    },
+    {
+      "candidate_id": "m07",
+      "method": "html.article",
+      "source_word_count": 297
+    },
+    {
+      "candidate_id": "m01",
+      "method": "html.article",
+      "source_word_count": 1810
+    },
+    {
+      "candidate_id": "m08",
+      "method": "html.article",
+      "source_word_count": 816
+    },
+    {
+      "candidate_id": "m09",
+      "method": "html.article",
+      "source_word_count": 2483
+    }
+  ]
 }
