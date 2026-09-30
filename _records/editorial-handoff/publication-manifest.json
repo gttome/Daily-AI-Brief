@@ -54,7 +54,7 @@
     "watchlist": {
       "path": "_records/editorial-handoff/watchlist-2026-09-29.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:88beef9d97fb732ce9cdbd149366825a32a299ed"
+      "digest": "git_blob_sha1:25395b2c50fc7fdfb20a716efb0112fbc7cb78ed"
     },
     "watchlist_evidence": {
       "path": "_records/watchlist-sweeps/2026-09-29.json",
@@ -95,7 +95,7 @@
         "carried_forward": 14
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:0bebd033ad731bfb87524802141e568a8e501296",
+      "public_projection_digest": "git_blob_sha1:887187ca35831361867a21cc5336f682a632c8eb",
       "repair_allowed_downstream": false
     }
   },
