@@ -35,7 +35,7 @@
     "publication",
     "public_closed"
   ],
-  "version": 15,
+  "version": 16,
   "status": "active",
   "current_operation": "images",
   "task05": {
@@ -50,20 +50,20 @@
     "accepted_images": 3,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "strict_render_spec_released_ready_to_bind_m06_attempt_3",
+    "substage": "m06_attempt_3_bound_pending_generation",
     "editorial_input_ready": true,
     "editorial_kernel_locked": true,
     "media_locked": true,
     "current_candidate_id": "m06",
-    "current_attempt": 2,
+    "current_attempt": 3,
     "image_persistence_contract": "git_content_address_primary_optional_raw_reread",
-    "current_operation_key": "dab-edition-2026-09-29-m06-attempt-02-de006e74",
+    "current_operation_key": "dab-edition-2026-09-29-m06-attempt-03-c4f73977",
     "last_accepted_candidate_id": "m05",
     "last_accepted_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-02/result.json",
     "last_rejected_candidate_id": "m06",
     "last_rejected_attempt": 2,
     "last_rejected_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-02/result.json",
-    "next_action": "bind_m06_attempt_3_once",
+    "next_action": "generate_m06_attempt_3_once",
     "render_spec_policy": "strict-image-render-spec-v1"
   },
   "completed": {
@@ -263,7 +263,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T06:22:00Z",
+  "updated_at": "2026-09-30T06:23:00Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
