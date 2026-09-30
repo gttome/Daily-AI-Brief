@@ -11,11 +11,32 @@
   "story_packet_git_blob_sha": "02e581e66374d76f0c342e8f373763c40cf45c1c",
   "render_spec_policy": "strict-image-render-spec-v1",
   "bound_before_generation": true,
-  "generation_started": false,
-  "native_generation_id": null,
-  "native_file_id": null,
-  "raw_capture": null,
-  "review": null,
+  "generation_started": true,
+  "native_generation_id": "55c2cb17-7bd1-4d05-ba4b-fa9888d5c24d",
+  "native_file_id": "file_00000000f1108210993c7ff1f51f55dc",
+  "raw_capture": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-01/raw.png",
+    "bytes": 890517,
+    "width": 1734,
+    "height": 907,
+    "sha256": "b5650aa633531903bdcb1e147fc7563ea7af6a69648f4cc878ae52e17506ed47",
+    "git_blob_sha": "c00b66f6b0ce6dc2eeb784d14a9949170c5efe61",
+    "commit_sha": "eef0e24939428e9f8edcf3f8537daf9f268b2bdb",
+    "content_address_verified": true,
+    "read_back_verified": false
+  },
+  "review": {
+    "result": "reject",
+    "failure_codes": [
+      "subject_match_fail",
+      "factual_support_fail",
+      "sealed_story_packet_match_fail",
+      "style_fail",
+      "visible_text_policy_fail",
+      "cross_story_carryover_fail"
+    ],
+    "result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-01/result.json"
+  },
   "persistence": null,
-  "disposition": "bound_pending_generation"
+  "disposition": "quality_rejected"
 }
