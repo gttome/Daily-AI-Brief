@@ -1,0 +1,48 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m05",
+  "attempt": 1,
+  "operation_key": "dab-edition-2026-09-29-m05-attempt-01-de006e74",
+  "disposition": "quality_rejected",
+  "accepted": false,
+  "quality_rejected": true,
+  "generation": {
+    "native_result_id": "bd6adf97-b66c-4327-9555-0235c6c44262",
+    "native_file_id": "file_00000000d24481fa9e451110c7174796",
+    "bytes": 1779882,
+    "width": 1536,
+    "height": 1024,
+    "sha256": "060b8e3d9d461a15c23193d74a953cd536347952f47071b92d23b4f8feea4525"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-01/raw.png",
+    "commit_sha": "a1c60ea778d0e7ed7d9b13006ffe40c6ae62e745",
+    "git_blob_sha": "2a73acb176de3f287b7582720f828c12ebb581b1",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
+  },
+  "review": {
+    "result": "reject",
+    "mode": "automated",
+    "phase": "after_generation",
+    "failure_codes": [
+      "story_specificity_fail",
+      "factual_support_fail",
+      "mechanism_fail",
+      "sealed_story_packet_match_fail",
+      "style_fail"
+    ],
+    "observation": "The exact persisted asset repeats the Quine biology architecture instead of the sealed Google Vids narration workflow. It does not depict Script → Gemini 3.8 Flash Lite TTS → Narrated audio → Preview & revise → Google Vids timeline, so it fails story specificity, factual/mechanism support, sealed-packet match, and style for m05.",
+    "evidence_scope": "exact_content_address_verified_asset_v2_review"
+  },
+  "persistence": null,
+  "next_attempt_allowed": true,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T04:52:32Z"
+}
