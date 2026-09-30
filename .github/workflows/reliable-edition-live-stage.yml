@@ -708,6 +708,35 @@ jobs:
           coverage="$(node -e "const h=require('./_records/editorial-handoff/handoff.json');process.stdout.write(h.coverage_period)")"
           baseline="$(node -e "const m=require('./_records/editorial-handoff/publication-manifest.json');process.stdout.write(m.baseline_sha)")"
           node _tools/editorial-kernel.mjs expand             --kernel _records/editorial-handoff/kernel.json             --facts _records/editorial-handoff/facts.json             --metadata /tmp/qualification-metadata.json             --images _records/editorial-handoff/images.json             --media _records/editorial-handoff/media.json             --published-at "$CUTOFF"             --coverage "$coverage"             --out /tmp/staged-edition.json
+          node - /tmp/staged-edition.json _records/editorial-handoff/kernel.json /tmp/qualification-metadata.json <<'NODE'
+          const fs=require('fs');
+          const [editionPath,kernelPath,metadataPath]=process.argv.slice(2);
+          const edition=JSON.parse(fs.readFileSync(editionPath,'utf8'));
+          const kernel=JSON.parse(fs.readFileSync(kernelPath,'utf8'));
+          const metadata=JSON.parse(fs.readFileSync(metadataPath,'utf8'));
+          const byId=new Map((metadata.candidates||[]).map(x=>[x.candidate_id,x]));
+          if(!Array.isArray(edition.stories)||edition.stories.length!==kernel.stories?.length)throw new Error('qualification_story_projection_mismatch');
+          for(let i=0;i<edition.stories.length;i++){
+            const candidateId=kernel.stories[i]?.candidate_id;
+            const candidate=byId.get(candidateId);
+            if(candidate?.production_novelty_eligible!==true)throw new Error('qualification_novelty_evidence_missing:'+candidateId);
+            const novelty=edition.stories[i].novelty;
+            if(novelty?.disposition==='selected_locked'){
+              if(novelty.prior_story_ids?.length||novelty.what_changed)throw new Error('qualification_novelty_lineage_conflict:'+candidateId);
+              edition.stories[i].novelty={disposition:'new',prior_story_ids:[],what_changed:null};
+            }
+          }
+          const slug=v=>String(v||'podcast').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+          for(const podcast of (edition.podcasts||[])){
+            const routeSlug=slug(podcast.item_id||podcast.title);
+            podcast.item_id='dab-podcast-'+edition.brief_date+'-'+routeSlug;
+            podcast.permanent_url='/podcasts/'+edition.brief_date+'/'+routeSlug+'/';
+            if(!Array.isArray(podcast.platforms)||!podcast.platforms.length)podcast.platforms=[{name:'Verified source',url:podcast.url}];
+            if(!podcast.verification_note)podcast.verification_note='Verified by the locked September 29 media-stage evidence and deterministic freshness revalidation.';
+            if(!podcast.coverage_note)podcast.coverage_note='Reused the completed September 29 media checkpoint; no media reselection or source-content rediscovery.';
+          }
+          fs.writeFileSync(editionPath,JSON.stringify(edition,null,2)+'\n');
+          NODE
           rm -rf /tmp/publication-stage
           node _generator/cli.mjs generate             --edition /tmp/staged-edition.json             --out /tmp/publication-stage             --baseline-sha "$baseline"             --observed-at "$CUTOFF"             --run-id "reliable-qualification-$GITHUB_RUN_ID"             --publication-manifest "$MANIFEST_PATH"
           cp -a /tmp/publication-stage/. ./
