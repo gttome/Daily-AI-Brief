@@ -10,11 +10,28 @@
   "story_packet_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-02/story-packet.json",
   "story_packet_git_blob_sha": "9f43e7eee22f264b0dd5502a2a7be3677b02bd1a",
   "bound_before_generation": true,
-  "generation_started": false,
-  "native_generation_id": null,
-  "native_file_id": null,
-  "raw_capture": null,
-  "review": null,
-  "persistence": null,
-  "disposition": "bound_pending_generation"
+  "generation_started": true,
+  "native_generation_id": "dcf5f7c8-3370-4c0e-9c10-42eb7173f9de",
+  "native_file_id": "file_0000000073d88230a413056b70d815d5",
+  "raw_capture": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-02/raw.png",
+    "sha256": "d624e602f8d21a030651470abbe9eac92bd916b09b63aaba1e7b611b5190847e",
+    "git_blob_sha": "493915607c90f611bb62f076c7ca9b56317553cd",
+    "commit_sha": "eafc2479846d58810556ee0962561640ae6c3891",
+    "content_address_verified": true
+  },
+  "review": {
+    "result": "pass",
+    "mode": "automated",
+    "result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-02/result.json"
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png",
+    "sha256": "3668fb77b57f6329f588a403244ff5cea3c53565a5f16c89c014f9667d131784",
+    "git_blob_sha": "6e69d2e6f2e3a58fc484eeb8338326c1e5d5249b",
+    "commit_sha": "babab0c244d3c0e2d281c80424a5556903efb471",
+    "content_address_verified": true,
+    "read_back_verified": false
+  },
+  "disposition": "accepted"
 }
