@@ -11,11 +11,17 @@
   "story_packet_git_blob_sha": "4216486aa984bf63ad4d1c2bc7d52fc37131b4d6",
   "render_spec_policy": "strict-image-render-spec-v1",
   "bound_before_generation": true,
-  "generation_started": false,
-  "native_generation_id": null,
-  "native_file_id": null,
-  "raw_capture": null,
+  "generation_started": true,
+  "native_generation_id": "68f7f6de-debf-4343-a410-44efadc36af7",
+  "native_file_id": "file_00000000661081fd844ae4bf05faba46",
+  "raw_capture": {
+    "bytes": 1104494,
+    "width": 1536,
+    "height": 1024,
+    "sha256": "c261f42aec16378140b1ecaa8a2524181f310909461239d9884bc1810ce13057",
+    "git_blob_sha": "fa46d8aa8ffd38eb21e41e3450d970b913133422"
+  },
   "review": null,
   "persistence": null,
-  "disposition": "bound_pending_generation"
+  "disposition": "generated_transfer_pending"
 }
