@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-09-29",
+  "method": "bounded_selected_story_reconstruction",
+  "sources_reused": [
+    "locked September 29 editorial kernel",
+    "saved September 29 article evidence"
+  ],
+  "new_topic_ids": [],
+  "updated_topic_ids": [
+    "dab-topic-agent-skills-observability",
+    "dab-topic-harness-engineering"
+  ],
+  "zero_new_certified": false,
+  "broad_sweep_rerun": false,
+  "reason": "Delivery-first carry-forward: update only Watchlist topics directly supported by already-locked September 29 stories; do not rerun discovery."
+}

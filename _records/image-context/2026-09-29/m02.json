@@ -1,0 +1,9 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "semantic-sep29-01"
+  ],
+  "includes_edition_context": false,
+  "candidate_id": "m02",
+  "prompt": "Create one professional white-background textbook/editorial diagram for: NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator. Match the locked story mechanism and alt text exactly in subject, use only supported story-specific labels, avoid people, screenshots, decorative-only layouts, unrelated status artwork, and unsupported factual claims."
+}

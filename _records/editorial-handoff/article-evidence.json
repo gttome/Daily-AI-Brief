@@ -1,126 +1,121 @@
 {
   "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
   "profile_id": "under80-v1",
   "execution_owner": "github_actions",
   "model_calls": 0,
   "review_plan_count": 9,
-  "preferred_agent_skill_candidate_id": "r01",
-  "model_visible_chars": 9292,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 10028,
   "model_visible": [
     {
       "candidate_id": "m02",
       "focus": "technical_ai_engineering",
-      "headline": "Private saved views for repository issues and “Relates to” issue relationship is generally available",
-      "canonical_url": "https://github.blog/changelog/2026-09-25-personal-saved-views-for-repository-issues-and-more",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-25T19:05:03.000Z",
+      "headline": "AI Native by Design: Lessons Learned from Building NVIDIA TensorRT Model Connect",
+      "canonical_url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-29T19:10:51.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 424,
-      "excerpt": "Private saved views for repository issues and “Relates to” issue relationship is generally available - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 25, 2026 • 1 minute read Private saved views for repository issues and “Relates to” issue relationship is generally available Private saved views for repository issues Repository issues pages now support private saved views, making it easier to create and save personalized views of your…"
+      "source_word_count": 2192,
+      "excerpt": "Developer Tools & Techniques AI Native by Design: Lessons Learned from Building NVIDIA TensorRT Model Connect Parallel work, model family isolation, reversible changes, and GPU-backed validation shaped an open source project designed around coding agents Sep 29, 2026 By Yifei Fang Like Discuss (0) L T F R E AI-Generated Summary NVIDIA TensorRT Model Connect is an open source collection of AI model reference implementations in C++ built on NVIDIA TensorRT. Learn more Parallel work, model-family isolation, reversible changes, and GPU-backed validation shaped an open source project designed around coding agents NVIDIA TensorRT Model Connect is…"
     },
     {
       "candidate_id": "m03",
       "focus": "technical_ai_engineering",
-      "headline": "Agentic autofix now uses Copilot Memory",
-      "canonical_url": "https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-25T17:25:50.000Z",
+      "headline": "Introducing Quine: An AI research system designed for the complexity of biology",
+      "canonical_url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+      "publisher": "Microsoft Research",
+      "published_at": "2026-09-29T14:00:02.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 435,
-      "excerpt": "Agentic autofix now uses Copilot Memory - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 25, 2026 • 1 minute read Agentic autofix now uses Copilot Memory Agentic autofix now uses Copilot Memory for customers who&rsquo;ve enabled it. These memories can help agentic autofix resolve additional security alerts and teach other GitHub Copilot features (e.g., Copilot code review, Copilot cloud agent) about secure development patterns unique…"
+      "source_word_count": 1823,
+      "excerpt": "At a glance Quine (opens in new tab) is a research effort to create a multimodal world model of biology and an interactive harness connecting models, scientific tools, literature, and researchers. The Quine Fellows program (opens in new tab) will give a cohort of scientists access to the system and an opportunity to accelerate their own research and provide scientific feedback. Today, Microsoft Research is introducing Quine (opens in new tab) , a research effort designed to work across those boundaries, reflecting our long-term vision for a discovery system that evolves through scientific use. Quine brings together a world model of biology…"
     },
     {
       "candidate_id": "m04",
       "focus": "technical_ai_engineering",
-      "headline": "GitHub Copilot weekly releases — September 21",
-      "canonical_url": "https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21",
+      "headline": "Bring business context with external custom properties",
+      "canonical_url": "https://github.blog/changelog/2026-09-29-bring-business-context-with-external-custom-properties",
       "publisher": "GitHub Changelog",
-      "published_at": "2026-09-25T16:42:48.000Z",
+      "published_at": "2026-09-29T18:40:27.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 824,
-      "excerpt": "GitHub Copilot weekly releases — September 21 - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Release September 25, 2026 • 2 minute read GitHub Copilot weekly releases — September 21 Table of Contents GitHub Copilot GitHub Copilot app GitHub Copilot in Slack and Microsoft Teams GitHub Copilot in JetBrains GitHub Copilot in VS Code 1.139 release Menu. Currently selected: GitHub Copilot GitHub Copilot GitHub Copilot app GitHub Copilot in Slack and…"
+      "source_word_count": 298,
+      "excerpt": "Back to changelog You can now seamlessly bring business context about your repositories from an external system of record (e.g., a configuration management database (CMDB), an internal developer portal, or an in-house system) into GitHub with external custom properties. Keep business context aligned with its source, with updates managed by your external system. When to choose external custom properties Use custom properties when you want to manage this context in GitHub, whether through the UI or APIs. Choose external custom properties when an external system should exclusively own and continuously update that context: Read-only in the…"
     },
     {
       "candidate_id": "m05",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Introducing the new Copilot with Home, Code and Autopilot",
-      "canonical_url": "https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/",
-      "publisher": "Microsoft",
-      "published_at": "2026-09-25T12:03:50.000Z",
+      "headline": "Create more natural, expressive AI voiceovers in Google Vids with upgraded Gemini 3.8 Flash Lite TTS",
+      "canonical_url": "https://workspaceupdates.googleblog.com/2026/09/create-more-natural-expressive-ai-voiceovers-in-Google-Vids-with-upgraded-Gemini-3.8-Flash-Lite-TTS.html",
+      "publisher": "Google Workspace",
+      "published_at": "2026-09-29T16:18:59.139Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 2407,
-      "excerpt": "Today we’re introducing the new Copilot to connect the tools people rely on with the next generation of capabilities they’ll need to build, customize and scale AI across work. The Copilot app now has three new capabilities: Home is your new starting point, where Chat and Cowork come together — and with Office in Copilot , the full power of Word, Excel and PowerPoint is now built into the experience. Code lets everyone build their own solutions with the tools to run them safely, and it’s powered by the same underlying technology as GitHub Copilot. Home and Code will start rolling out in our Frontier program in the coming weeks and Autopilot…"
+      "source_word_count": 202,
+      "excerpt": "arrow_back Back September 29, 2026 Create more natural, expressive AI voiceovers in Google Vids with upgraded Gemini 3.8 Flash Lite TTS Google Vids Rapid Release Scheduled Release We are upgrading the underlying text-to-speech (TTS) engine powering AI voiceovers and avatar narration in Google Vids to the latest Gemini 3.8 Flash Lite TTS model. With this model upgrade, Google Vids creators will experience: Superior Naturalness & Inflection: Improved sentence flow, lifelike pacing, and context-aware emphasis that reduces robotic cadences. Fast Generation Latency: Rapid audio synthesis allows you to iterate on scripts and preview voiceovers in…"
     },
     {
       "candidate_id": "m06",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Microsoft Copilot Managed Runtime",
-      "canonical_url": "https://aka.ms/CopilotManagedRuntime-Blog",
-      "publisher": "Microsoft",
-      "published_at": "2026-09-25T12:00:00.000Z",
+      "headline": "Change Management Best Practices to Drive Value with Agent Builder",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
+      "publisher": "Microsoft Community Hub — Microsoft Copilot",
+      "published_at": "2026-09-28T15:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 1755,
-      "excerpt": "Microsoft Copilot Managed Runtime: Enterprise code execution for Microsoft 365 | Microsoft Copilot Blog Skip to content Skip to main content Copilot Copilot Word Excel PowerPoint Outlook OneDrive Teams Copilot Studio Work IQ Cowork Individuals Business Enterprise Education Plans and pricing Support Customer stories Blog Copilot vs. Today, we’re introducing Microsoft Copilot Managed Runtime into public preview, an enterprise-grade platform to run code within the Microsoft 365 tenant boundary that’s governed by IT and inherits all the usability expectations users have such as sharing, live data connections, and easy access to their apps.…"
+      "source_word_count": 1734,
+      "excerpt": "In this article, we share best practices for driving change management with Agent Builder and accelerating agent adoption across the enterprise. Now that you know what Agent Builder is, let’s explore how to drive behavior change for scaled adoption. Change Management Operating Model To get started with scaled adoption for Agent Builder, you do not need a bespoke plan for every team. &nbsp; The following HCLTech customer story shows how the organization approached Agent Builder adoption through a structured change management program. By combining Microsoft 365 Copilot innovation with HCLTech's structured change management approach, we…"
     },
     {
       "candidate_id": "m07",
       "focus": "applied_genai_knowledge_workers",
-      "headline": "Default Enablement of Copilot features for Copilot Business and Enterprise",
-      "canonical_url": "https://github.blog/changelog/2026-09-24-default-enablement-of-copilot-features-for-copilot-business-and-enterprise",
-      "publisher": "GitHub Changelog",
-      "published_at": "2026-09-25T03:13:23.000Z",
+      "headline": "Ground AI prompts in Google Docs on existing sources from Gemini Notebook",
+      "canonical_url": "https://workspaceupdates.googleblog.com/2026/09/ground-ai-prompts-in-google-docs-on-existing-sources-from-Gemini-Notebook.html",
+      "publisher": "Google Workspace",
+      "published_at": "2026-09-23T18:26:49.229Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 604,
-      "excerpt": "Default Enablement of Copilot features for Copilot Business and Enterprise - GitHub Changelog Skip to content Skip to sidebar / Blog Changelog Docs Customer stories Try GitHub Copilot app Attend GitHub Universe Search Changelog Docs Customer stories Attend GitHub Universe Try GitHub Copilot app Back to changelog Improvement September 24, 2026 • 1 minute read Default Enablement of Copilot features for Copilot Business and Enterprise We&rsquo;re introducing a new global default policy for generally available GitHub Copilot features and supported client capabilities in enterprise and organization Copilot settings. What&rsquo;s changing Today,…"
+      "source_word_count": 297,
+      "excerpt": "arrow_back Back September 23, 2026 Ground AI prompts in Google Docs on existing sources from Gemini Notebook Gemini Notebook Google Docs Rapid Release Scheduled Release We are introducing the ability to use Gemini Notebook as a context source in Google Docs. If you’ve organized research in Gemini Notebook, you can now seamlessly tap into that library right where you write in Google Docs. Gemini will ground its output in your sources and provide inline citations, making it easy to verify facts while staying in the flow of your work. Visit the Help Center to learn more about creating personalized documents with Gemini in Google Docs . Rollout…"
     },
     {
-      "candidate_id": "r01",
+      "candidate_id": "m01",
       "focus": "agents_non_technical_people",
-      "headline": "Qoder 0.4.1 adds Skill evolution suggestions",
-      "canonical_url": "https://docs.qoder.com/release-notes/qoder",
-      "publisher": "Qoder",
-      "published_at": "2026-09-23",
+      "headline": "firebase-agent-plugin-codex",
+      "canonical_url": "https://firebase.blog/posts/2026/09/firebase-plugin-for-codex",
+      "publisher": "Firebase",
+      "published_at": "2026-09-28T00:00:00.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": true,
-      "source_word_count": null,
-      "excerpt": "Qoder 0.4.1 can suggest creating or updating reusable Skills from experience after a conversation finishes; accepting a suggestion opens a separate conversation where the user confirms the plan before changes are applied.",
-      "targeted_repair_provenance": "_records/discovery-preflight/recovery/agent-skills-2026-09-26.json"
+      "source_word_count": 1810,
+      "excerpt": "Earlier this year, we integrated Firebase directly into Google AI Studio and in Antigravity 2.0 . Now, we’re pleased to share that the Firebase agent plugin is available in the Codex plugin directory . When you build with Codex and have the Firebase plugin installed, Codex will be able to use: Firebase agent skills to gain domain expertise and workflow knowledge . Firebase agent skills provide up-to-date documentation and optimal workflows and tool knowledge so Codex knows the correct, Firebase-recommended way to structure your app’s configuration and architecture. Each of these tools and capabilities are available simply by installing the…"
     },
     {
       "candidate_id": "m08",
       "focus": "agents_non_technical_people",
-      "headline": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/accelerate-multimodal-rl-training-with-skyrl-on-amazon-sagemaker-hyperpod/",
+      "headline": "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/",
       "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-25T16:18:07.000Z",
+      "published_at": "2026-09-29T19:34:14.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 4858,
-      "excerpt": "Accelerate multimodal RL training with SkyRL on Amazon SageMaker HyperPod | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Combined with the Ray capabilities on HyperPod , you can create Ray clusters from SageMaker Studio, submit jobs remotely using secure connections, and monitor training through pre-built Amazon Managed Grafana dashboards that the…"
+      "source_word_count": 816,
+      "excerpt": "Bring near-Astra intelligence to everyday work with GPT-6.1 Sol on Amazon Bedrock GPT-6.1 Sol is now generally available on Amazon Bedrock, bringing stronger reasoning to coding, computer use, and professional workloads that run frequently. According to OpenAI, it brings near- Astra intelligence to everyday workflows. You can configure Codex to use GPT-6.1 Sol on Amazon Bedrock for work spanning investigation, implementation, and testing. Using supported Amazon Bedrock APIs, you can also build internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.…"
     },
     {
       "candidate_id": "m09",
       "focus": "agents_non_technical_people",
-      "headline": "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock",
-      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/",
+      "headline": "Prompt engineering by Quick component: Patterns and pitfalls",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/prompt-engineering-by-quick-component-patterns-and-pitfalls/",
       "publisher": "AWS Machine Learning",
-      "published_at": "2026-09-25T16:15:22.000Z",
+      "published_at": "2026-09-29T16:27:33.000Z",
       "source_reliability": "publisher_authored",
       "agent_skill_story_ready": false,
-      "source_word_count": 5803,
-      "excerpt": "NarrateAI: production-ready LLM quality assurance on Amazon Bedrock | Artificial Intelligence Skip to Main Content Filter: All English Contact us AWS Marketplace Support My account re:Invent Discover AWS Products Solutions Pricing Resources Search Filter: All Sign in to console Create account Explore topics Event Register now for AWS re:Invent 2026 Data Migration On-prem databases weren't built for agentic AI. Closing it requires production-ready quality assurance built into every step, from data retrieval to response delivery. This post details five techniques, implemented on Amazon Bedrock , that work together to deliver it: adaptive…"
+      "source_word_count": 2483,
+      "excerpt": "Prompt engineering by Quick component: Patterns and pitfalls In Part 1 of this series, we covered the foundational principles of prompt engineering in Amazon Quick: specificity, context-setting, few-shot examples, and the CRISPE framework for complex requests. In this post, we go component by component, showing you how each Quick capability interprets prompts differently and what patterns get the best results from each one. Common pitfalls to avoid Understanding common mistakes helps you avoid frustration across all Quick components. Component-specific pitfalls Quick Research: Writing search queries instead of research objectives. Here’s…"
     }
-  ],
-  "recovery_provenance": {
-    "original_execution_owner": "github_actions",
-    "repair_owner": "previously_completed_targeted_agent_skills_repair",
-    "fresh_article_retrievals": 0,
-    "broad_discovery_reruns": 0
-  }
+  ]
 }
