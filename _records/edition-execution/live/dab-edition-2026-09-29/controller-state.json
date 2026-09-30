@@ -35,18 +35,22 @@
     "publication",
     "public_closed"
   ],
-  "version": 1,
+  "version": 2,
   "status": "active",
-  "current_operation": "discovery",
+  "current_operation": "editorial",
   "task05": {
-    "status": "wip",
-    "binding_exercised": false,
-    "started_at": "2026-09-30T00:00:14.3903414Z"
+    "status": "done",
+    "binding_exercised": true,
+    "started_at": "2026-09-30T00:00:14.3903414Z",
+    "completed_at": "2026-09-30T00:06:25.726Z",
+    "proof": "real discovery stage executed and durably advanced the shared cursor"
   },
   "task06": {
-    "status": "backlog",
+    "status": "wip",
     "accepted_images": 0,
-    "required_images": 6
+    "required_images": 6,
+    "started_at": "2026-09-30T00:06:25.726Z",
+    "substage": "editorial_story_packet_preparation"
   },
   "completed": {
     "admission": {
@@ -61,6 +65,25 @@
       "verifier_job_id": 109675623193,
       "evidence_artifact_id": 11069671765,
       "verified_at": "2026-09-30T00:00:14.3903414Z"
+    },
+    "discovery": {
+      "result": "pass",
+      "operation": "discovery",
+      "execution_host": "github_actions",
+      "workflow_run_id": 36648615500,
+      "source_commit": "a9fd4cfbeebd6b44454c12cb72c1df6de7a74d9d",
+      "edition_id": "dab-edition-2026-09-29",
+      "cutoff": "2026-09-30T00:03:07.131Z",
+      "artifacts": [
+        "_records/discovery/2026-09-29.json",
+        "_data/media-candidate-queue.json"
+      ],
+      "sources_observed": 33,
+      "sources_scanned": 16,
+      "retained_candidates": 309,
+      "fresh_metadata_candidates": 10,
+      "stop_reason": "normal_acquisition_budget",
+      "validated_at": "2026-09-30T00:06:25.726Z"
     }
   },
   "handler_registry": {
@@ -110,5 +133,5 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T00:03:07.131932Z"
+  "updated_at": "2026-09-30T00:06:25.726Z"
 }
