@@ -289,6 +289,14 @@ jobs:
           node _tools/editorial-kernel.mjs "${args[@]}"
           echo "PUBLISHED_AT=$published_at" >> "$GITHUB_ENV"
 
+      - name: Refresh locked media preflight immediately before production staging
+        if: steps.handoff.outputs.execution_mode == 'production' && steps.recovery.outputs.reuse_expansion != 'true'
+        env:
+          PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
+        run: |
+          set -euo pipefail
+          node _tools/refresh-locked-media-preflight.mjs --manifest "$PUBLICATION_MANIFEST_PATH"
+
       - name: Generate one atomic publication stage
         if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
