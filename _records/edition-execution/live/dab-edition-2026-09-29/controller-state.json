@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 3,
+  "version": 4,
   "status": "active",
-  "current_operation": "editorial",
+  "current_operation": "media",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -50,8 +50,9 @@
     "accepted_images": 0,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "single_editorial_pass",
-    "editorial_input_ready": true
+    "substage": "media_preflight_and_image_packet_seal",
+    "editorial_input_ready": true,
+    "editorial_kernel_locked": true
   },
   "completed": {
     "admission": {
@@ -85,6 +86,35 @@
       "fresh_metadata_candidates": 10,
       "stop_reason": "normal_acquisition_budget",
       "validated_at": "2026-09-30T00:06:25.726Z"
+    },
+    "editorial": {
+      "result": "pass",
+      "operation": "editorial",
+      "execution_host": "chatgpt_single_editorial_pass_plus_github_deterministic_validation",
+      "kernel_path": "_records/editorial/kernels/2026-09-29.json",
+      "kernel_commit": "eba69a694fe31ff0e4673ae12791e1472bea97bd",
+      "kernel_sha256": "f2f96f676772b0b1e5423bde0542f84057b419c580ec752d26d2384f4b57771d",
+      "selected_candidate_ids": [
+        "m02",
+        "m03",
+        "m05",
+        "m06",
+        "m01",
+        "m08"
+      ],
+      "allocation": {
+        "technical_ai_engineering": 2,
+        "applied_genai_knowledge_workers": 2,
+        "agents_non_technical_people": 2
+      },
+      "agent_skill_stories": 1,
+      "bounded_evidence_path": "_records/edition-execution/live/dab-edition-2026-09-29/editorial-input/article-evidence.json",
+      "bounded_evidence_sha256": "326e164afbba6c772d3a02c369144163acf4a35967e952ca2d4f7aab6a02e7f2",
+      "metadata_candidates_path": "_records/edition-execution/live/dab-edition-2026-09-29/editorial-input/metadata-candidates.json",
+      "editorial_model_passes": 1,
+      "post_editorial_model_passes": 0,
+      "deterministic_validation_model_calls": 0,
+      "validated_at": "2026-09-30T00:17:38.129Z"
     }
   },
   "handler_registry": {
@@ -134,7 +164,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T00:12:24Z",
+  "updated_at": "2026-09-30T00:17:38.129Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
