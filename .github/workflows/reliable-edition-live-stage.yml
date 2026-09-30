@@ -7,6 +7,7 @@ on:
     paths:
       - '_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json'
       - '.github/workflows/reliable-edition-live-stage.yml'
+      - '_records/editorial/kernels/2026-09-29.json'
 
 permissions:
   contents: write
@@ -42,9 +43,13 @@ jobs:
           const s=JSON.parse(fs.readFileSync(p,'utf8'));
           if(s.schema_version!=='reliable-edition-controller-state-v1'||s.profile!=='reliable-edition-v1')throw new Error('controller_state_contract_invalid');
           if(s.controller?.branch!=='reliable-edition/dab-edition-2026-09-29')throw new Error('controller_state_branch_mismatch');
-          const shouldRun=s.status==='active'&&s.current_operation==='discovery';
+          const current=s.current_operation;
+          const shouldDiscovery=s.status==='active'&&current==='discovery';
+          const shouldEditorial=s.status==='active'&&current==='editorial';
           const rows={
-            should_run:String(shouldRun),
+            current_operation:String(current),
+            should_discovery:String(shouldDiscovery),
+            should_editorial:String(shouldEditorial),
             cutoff:s.edition.original_cutoff,
             date:s.edition.edition_date,
             release:s.edition.release_sha,
@@ -56,11 +61,11 @@ jobs:
           NODE
 
       - name: No-op when another operation owns the cursor
-        if: steps.state.outputs.should_run != 'true'
-        run: echo "Durable cursor is not discovery; no competing work started."
+        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true'
+        run: echo "Durable cursor is ${{ steps.state.outputs.current_operation }}; this executor has no eligible deterministic stage for that cursor."
 
       - name: Verify protected release and admission
-        if: steps.state.outputs.should_run == 'true'
+        if: steps.state.outputs.should_discovery == 'true'
         shell: bash
         env:
           RELEASE_SHA: ${{ steps.state.outputs.release }}
@@ -72,7 +77,7 @@ jobs:
           node _tools/edition-execution.mjs admission-check             --root .             --proof _records/execution-host/image-handoff-proof.json             --release "$RELEASE_SHA"             --out /tmp/reliable-admission-recheck.json
 
       - name: Execute bounded fresh production discovery
-        if: steps.state.outputs.should_run == 'true'
+        if: steps.state.outputs.should_discovery == 'true'
         shell: bash
         env:
           DAB_RESEARCH_CUTOFF: ${{ steps.state.outputs.cutoff }}
@@ -83,7 +88,7 @@ jobs:
           node _tools/discover-sources.mjs | tee /tmp/reliable-discovery-console.json
 
       - name: Validate discovery evidence and advance durable cursor
-        if: steps.state.outputs.should_run == 'true'
+        if: steps.state.outputs.should_discovery == 'true'
         shell: bash
         env:
           STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
@@ -138,7 +143,7 @@ jobs:
           NODE
 
       - name: Persist validated discovery and state transition
-        if: steps.state.outputs.should_run == 'true'
+        if: steps.state.outputs.should_discovery == 'true'
         shell: bash
         env:
           STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
@@ -150,6 +155,94 @@ jobs:
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git add "$STATE_PATH" "_records/discovery/$EDITION_DATE.json" "_data/media-candidate-queue.json" "_records/edition-execution/live/$EDITION_ID/discovery/result.json"
           git commit -m "Execute reliable edition production discovery"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Verify editorial baseline and admitted host
+        if: steps.state.outputs.should_editorial == 'true'
+        shell: bash
+        env:
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          test "$(git rev-parse origin/main)" = "$RELEASE_SHA"
+          node _tools/edition-execution.mjs admission-check --root . --proof _records/execution-host/image-handoff-proof.json --release "$RELEASE_SHA" --out /tmp/reliable-admission-editorial.json
+
+      - name: Validate single-pass editorial kernel and bounded evidence
+        if: steps.state.outputs.should_editorial == 'true'
+        shell: bash
+        env:
+          KERNEL_PATH: _records/editorial/kernels/2026-09-29.json
+          EVIDENCE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/editorial-input/article-evidence.json
+          METADATA_PATH: _records/edition-execution/live/dab-edition-2026-09-29/editorial-input/metadata-candidates.json
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          node _tools/editorial-kernel.mjs validate --kernel "$KERNEL_PATH" --out /tmp/kernel-receipt.json
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const kernel=JSON.parse(fs.readFileSync(process.env.KERNEL_PATH,'utf8'));
+          const evidence=JSON.parse(fs.readFileSync(process.env.EVIDENCE_PATH,'utf8'));
+          const metadata=JSON.parse(fs.readFileSync(process.env.METADATA_PATH,'utf8'));
+          const state=JSON.parse(fs.readFileSync(process.env.STATE_PATH,'utf8'));
+          if(state.current_operation!=='editorial')throw new Error('stale_editorial_executor');
+          if(state.editorial_input?.ready!==true)throw new Error('editorial_input_not_ready');
+          if(kernel.normal_model_passes!==1||kernel.normal_post_editorial_model_passes!==0)throw new Error('single_editorial_pass_contract_failed');
+          if(evidence.profile_id!=='under80-v1'||evidence.execution_owner!=='github_actions'||evidence.model_calls!==0)throw new Error('bounded_evidence_provenance_invalid');
+          if(evidence.review_plan_count!==9||!Array.isArray(evidence.model_visible)||evidence.model_visible.length!==9||evidence.model_visible_chars>12000)throw new Error('bounded_evidence_contract_invalid');
+          const ids=new Set(evidence.model_visible.map(x=>x.candidate_id));
+          for(const story of kernel.stories)if(!ids.has(story.candidate_id))throw new Error('selected_story_missing_from_bounded_evidence:'+story.candidate_id);
+          if(new Set(kernel.stories.map(x=>x.candidate_id)).size!==6)throw new Error('editorial_candidate_identity_invalid');
+          if(kernel.stories.filter(x=>x.agent_skill===true).length!==1||kernel.stories.find(x=>x.agent_skill===true)?.candidate_id!==evidence.preferred_agent_skill_candidate_id)throw new Error('agent_skills_selection_binding_invalid');
+          const metaIds=new Set(metadata.candidates.map(x=>x.candidate_id));
+          for(const story of kernel.stories)if(!metaIds.has(story.candidate_id))throw new Error('selected_story_missing_from_metadata_gate:'+story.candidate_id);
+          const receipt=JSON.parse(fs.readFileSync('/tmp/kernel-receipt.json','utf8'));
+          const now=new Date().toISOString();
+          const kernelCommit=require('child_process').execFileSync('git',['log','-1','--format=%H','--',process.env.KERNEL_PATH],{encoding:'utf8'}).trim();
+          const result={
+            result:'pass',
+            operation:'editorial',
+            execution_host:'chatgpt_single_editorial_pass_plus_github_deterministic_validation',
+            kernel_path:process.env.KERNEL_PATH,
+            kernel_commit:kernelCommit,
+            kernel_sha256:receipt.kernel_sha256,
+            selected_candidate_ids:kernel.stories.map(x=>x.candidate_id),
+            allocation:receipt.allocation,
+            agent_skill_stories:receipt.agent_skill_stories,
+            bounded_evidence_path:process.env.EVIDENCE_PATH,
+            bounded_evidence_sha256:state.editorial_input.evidence_sha256,
+            metadata_candidates_path:process.env.METADATA_PATH,
+            editorial_model_passes:1,
+            post_editorial_model_passes:0,
+            deterministic_validation_model_calls:0,
+            validated_at:now
+          };
+          const resultPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/editorial/result.json';
+          const receiptPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/editorial/kernel-receipt.json';
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+          fs.writeFileSync(receiptPath,JSON.stringify(receipt,null,2)+'\n');
+          state.version+=1;
+          state.completed.editorial=result;
+          state.current_operation='media';
+          state.task06={...state.task06,status:'wip',substage:'media_preflight_and_image_packet_seal',editorial_kernel_locked:true,accepted_images:state.task06.accepted_images||0};
+          state.updated_at=now;
+          fs.writeFileSync(process.env.STATE_PATH,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist editorial validation and advance durable cursor
+        if: steps.state.outputs.should_editorial == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/edition-execution/live/$EDITION_ID/editorial/result.json" "_records/edition-execution/live/$EDITION_ID/editorial/kernel-receipt.json"
+          git commit -m "Validate reliable edition editorial kernel"
           git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
 
       - name: Stage summary
