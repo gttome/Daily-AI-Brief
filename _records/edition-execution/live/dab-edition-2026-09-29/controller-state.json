@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 25,
+  "version": 26,
   "status": "active",
-  "current_operation": "seal_bundle",
+  "current_operation": "qualification",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -224,6 +224,16 @@
       ],
       "duplicate_recheck": "pass",
       "validated_at": "2026-09-30T00:39:53.940Z"
+    },
+    "seal_bundle": {
+      "result": "pass",
+      "operation": "seal_bundle",
+      "execution_host": "github_actions",
+      "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json",
+      "bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c",
+      "release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
+      "cutoff": "2026-09-30T00:03:07.131932Z",
+      "verified_at": "2026-09-30T21:37:35.656Z"
     }
   },
   "handler_registry": {
@@ -273,7 +283,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T19:42:00Z",
+  "updated_at": "2026-09-30T21:37:35.656Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -311,5 +321,12 @@
     ],
     "compatibility_reason": "controller simplification, bounded self-healing, immutable-result projection, passive timing; no editorial/media/image acceptance semantics weakened"
   },
-  "last_progress_at": "2026-09-30T19:42:00Z"
+  "last_progress_at": "2026-09-30T19:42:00Z",
+  "task08": {
+    "status": "wip",
+    "substage": "bundle_verified_qualification_pending",
+    "started_at": "2026-09-30T21:37:35.656Z",
+    "bundle_path": "_records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json",
+    "bundle_sha256": "c8268cad728dc0b83fb7c17609fe944015521b6666e27e8c93a37326eaa3233c"
+  }
 }
