@@ -1,0 +1,161 @@
+name: Reliable edition trusted stage executor
+
+on:
+  push:
+    branches:
+      - reliable-edition/dab-edition-2026-09-29
+    paths:
+      - '_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json'
+      - '.github/workflows/reliable-edition-live-stage.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: reliable-edition-dab-edition-2026-09-29
+  cancel-in-progress: false
+
+jobs:
+  execute-ready-stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Check out durable live-edition branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: reliable-edition/dab-edition-2026-09-29
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '22'
+
+      - name: Resolve pinned controller state
+        id: state
+        shell: bash
+        run: |
+          set -euo pipefail
+          node - '_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json' "$GITHUB_OUTPUT" <<'NODE'
+          const fs=require('fs');
+          const [p,out]=process.argv.slice(2);
+          const s=JSON.parse(fs.readFileSync(p,'utf8'));
+          if(s.schema_version!=='reliable-edition-controller-state-v1'||s.profile!=='reliable-edition-v1')throw new Error('controller_state_contract_invalid');
+          if(s.controller?.branch!=='reliable-edition/dab-edition-2026-09-29')throw new Error('controller_state_branch_mismatch');
+          const shouldRun=s.status==='active'&&s.current_operation==='discovery';
+          const rows={
+            should_run:String(shouldRun),
+            cutoff:s.edition.original_cutoff,
+            date:s.edition.edition_date,
+            release:s.edition.release_sha,
+            baseline:s.edition.research_baseline_sha,
+            edition_id:s.edition.edition_id,
+            state_version:String(s.version)
+          };
+          for(const [k,v] of Object.entries(rows))fs.appendFileSync(out,k+'='+v+'\n');
+          NODE
+
+      - name: No-op when another operation owns the cursor
+        if: steps.state.outputs.should_run != 'true'
+        run: echo "Durable cursor is not discovery; no competing work started."
+
+      - name: Verify protected release and admission
+        if: steps.state.outputs.should_run == 'true'
+        shell: bash
+        env:
+          RELEASE_SHA: ${{ steps.state.outputs.release }}
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          current_main="$(git rev-parse origin/main)"
+          test "$current_main" = "$RELEASE_SHA"
+          node _tools/edition-execution.mjs admission-check             --root .             --proof _records/execution-host/image-handoff-proof.json             --release "$RELEASE_SHA"             --out /tmp/reliable-admission-recheck.json
+
+      - name: Execute bounded fresh production discovery
+        if: steps.state.outputs.should_run == 'true'
+        shell: bash
+        env:
+          DAB_RESEARCH_CUTOFF: ${{ steps.state.outputs.cutoff }}
+          DAB_DISCOVERY_FRESH: '1'
+          DAB_DISCOVERY_PURPOSE: reliable_edition_production
+        run: |
+          set -euo pipefail
+          node _tools/discover-sources.mjs | tee /tmp/reliable-discovery-console.json
+
+      - name: Validate discovery evidence and advance durable cursor
+        if: steps.state.outputs.should_run == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_DATE: ${{ steps.state.outputs.date }}
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+          CUTOFF: ${{ steps.state.outputs.cutoff }}
+        run: |
+          set -euo pipefail
+          node <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const statePath=process.env.STATE_PATH,date=process.env.EDITION_DATE,cutoff=process.env.CUTOFF;
+          const discoveryPath='_records/discovery/'+date+'.json';
+          const queuePath='_data/media-candidate-queue.json';
+          if(!fs.existsSync(discoveryPath)||!fs.existsSync(queuePath))throw new Error('discovery_artifacts_missing');
+          const d=JSON.parse(fs.readFileSync(discoveryPath,'utf8'));
+          const q=JSON.parse(fs.readFileSync(queuePath,'utf8'));
+          const expectedCutoff=new Date(Date.parse(cutoff)).toISOString();
+          if(d.date!==date||d.research_cutoff_at!==expectedCutoff)throw new Error('discovery_cutoff_binding_mismatch');
+          if(!Array.isArray(d.sources)||d.sources.length<1)throw new Error('discovery_sources_missing');
+          if(!Number.isInteger(d.efficiency?.sources_scanned)||d.efficiency.sources_scanned<1)throw new Error('discovery_scan_not_executed');
+          if(!Array.isArray(q.candidates)||q.candidates.length<1)throw new Error('discovery_candidate_queue_empty');
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          if(state.current_operation!=='discovery')throw new Error('stale_discovery_executor');
+          if(state.edition.original_cutoff!==cutoff)throw new Error('pinned_cutoff_changed');
+          const now=new Date().toISOString();
+          const result={
+            result:'pass',
+            operation:'discovery',
+            execution_host:'github_actions',
+            workflow_run_id:Number(process.env.GITHUB_RUN_ID),
+            source_commit:process.env.GITHUB_SHA,
+            edition_id:process.env.EDITION_ID,
+            cutoff:expectedCutoff,
+            artifacts:[discoveryPath,queuePath],
+            sources_observed:d.sources.length,
+            sources_scanned:d.efficiency.sources_scanned,
+            retained_candidates:q.candidates.length,
+            fresh_metadata_candidates:d.efficiency.fresh_metadata_candidates,
+            stop_reason:d.efficiency.stop_reason,
+            validated_at:now
+          };
+          const resultPath='_records/edition-execution/live/'+process.env.EDITION_ID+'/discovery/result.json';
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+          state.version+=1;
+          state.completed.discovery=result;
+          state.current_operation='editorial';
+          state.task05={...state.task05,status:'done',binding_exercised:true,completed_at:now,proof:'real discovery stage executed and durably advanced the shared cursor'};
+          state.task06={...state.task06,status:'wip',started_at:now,substage:'editorial_story_packet_preparation'};
+          state.updated_at=now;
+          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+          NODE
+
+      - name: Persist validated discovery and state transition
+        if: steps.state.outputs.should_run == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          EDITION_DATE: ${{ steps.state.outputs.date }}
+          EDITION_ID: ${{ steps.state.outputs.edition_id }}
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "_records/discovery/$EDITION_DATE.json" "_data/media-candidate-queue.json" "_records/edition-execution/live/$EDITION_ID/discovery/result.json"
+          git commit -m "Execute reliable edition production discovery"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Stage summary
+        if: always()
+        run: |
+          echo "### Reliable edition trusted stage executor" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Edition: **${{ steps.state.outputs.edition_id }}**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Durable cursor at invocation: **discovery**" >> "$GITHUB_STEP_SUMMARY"
+          echo "- Work/Codex/paid model API: **0**" >> "$GITHUB_STEP_SUMMARY"
