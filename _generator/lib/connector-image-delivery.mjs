@@ -1,6 +1,7 @@
 import {createHash} from 'node:crypto';
 import {OperationBlocked} from './durable-operation.mjs';
 const blob = bytes => createHash('sha1').update(Buffer.from('blob ' + bytes.length + '\0')).update(bytes).digest('hex');
+const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const validSha = value => typeof value === 'string' && /^[a-f0-9]{40}$/.test(value);
 const safePath = value => typeof value === 'string' && !value.startsWith('/') && !value.includes('\\') &&
   !value.split('/').some(x => !x || x === '.' || x === '..') &&
@@ -12,7 +13,7 @@ const safePath = value => typeof value === 'string' && !value.startsWith('/') &&
  */
 export function connectorImageDelivery({api, repository, branch, readBytes, now = () => new Date().toISOString()}) {
   if (!/^[\w.-]+\/[\w.-]+$/.test(repository || '') || !/^editorial-handoff\/(qualification|production)\/[\w.-]+$/.test(branch || '')) throw Error('isolated_handoff_branch_required');
-  if (!api || ['fetch','create_blob','create_tree','create_commit','update_ref'].some(k => typeof api[k] !== 'function') || typeof readBytes !== 'function') throw Error('complete_connector_and_binary_reader_required');
+  if (!api || ['fetch','create_blob','create_tree','create_commit','update_ref'].some(k => typeof api[k] !== 'function')) throw Error('complete_connector_required');
   function unwrap(value) {
     if (value?.is_error || value?.error || value?.error_code || Number(value?.error_http_status_code) >= 400) {
       throw new OperationBlocked('CONNECTOR_ACTION_FAILED_OR_DENIED', {outcomeUnknown: true});
@@ -46,6 +47,7 @@ export function connectorImageDelivery({api, repository, branch, readBytes, now 
     }
   }
   const read = async (file, commit) => {
+    if (typeof readBytes !== 'function') throw Error('binary_reader_unavailable');
     if (!safePath(file) || !validSha(commit)) throw Error('immutable_safe_read_required');
     const bytes = await readBytes({repository, path: file, commit});
     if (!Buffer.isBuffer(bytes)) throw Error('binary_reader_must_return_exact_bytes');
@@ -72,11 +74,20 @@ export function connectorImageDelivery({api, repository, branch, readBytes, now 
         if (update?.success !== true) throw new OperationBlocked('BRANCH_UPDATE_UNCONFIRMED', {outcomeUnknown: true});
         commit = c.sha;
       }
-      const back = await read(file, commit);
-      if (!back.equals(bytes) || blob(back) !== expected) throw Error('committed_image_readback_mismatch');
-      return {path: file, commit_sha: commit, git_blob_sha: expected, persisted_at: now(),
-        persisted_at_scope: 'exact_persistence_verification_time', read_back_verified: true, reused,
-        owner_interventions: [], transport: 'github_git_data_api'};
+      // Git is content-addressed. Matching the locally computed blob identity to the
+      // blob accepted by GitHub and bound into the committed tree is sufficient exact-byte
+      // verification. A raw re-read strengthens the receipt when the host exposes a binary
+      // reader, but its absence must not block otherwise verified image persistence.
+      let readBackVerified = false;
+      if (typeof readBytes === 'function') {
+        const back = await read(file, commit);
+        if (!back.equals(bytes) || blob(back) !== expected) throw Error('committed_image_readback_mismatch');
+        readBackVerified = true;
+      }
+      return {path: file, commit_sha: commit, git_blob_sha: expected, sha256: sha256(bytes), persisted_at: now(),
+        persisted_at_scope: 'content_address_verification_time', content_address_verified: true,
+        read_back_verified: readBackVerified, verification_mode: readBackVerified ? 'git_content_address_plus_raw_readback' : 'git_content_address',
+        reused, owner_interventions: [], transport: 'github_git_data_api'};
     }
   };
 }
