@@ -11,11 +11,19 @@
   "story_packet_git_blob_sha": "fb6fb57ce9d824a255d4ffc5913583bb4d1e55e6",
   "render_spec_policy": "strict-image-render-spec-v1",
   "bound_before_generation": true,
-  "generation_started": false,
-  "native_generation_id": null,
-  "native_file_id": null,
-  "raw_capture": null,
+  "generation_started": true,
+  "native_generation_id": "90e7f862-d8cc-4dcd-b9f9-a845849f7ca3",
+  "native_file_id": "file_00000000a69081f69414c1330e54873f",
+  "raw_capture": {
+    "bytes": 982755,
+    "width": 1734,
+    "height": 907,
+    "sha256": "27f5fd458a70f036e4abe85024c7fae7789ed9bad481a557b686ea849b805d03",
+    "git_blob_sha": "35d8b9679f609b6823569370b246831646b93e15",
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-02/raw.png",
+    "content_address_verified": false
+  },
   "review": null,
   "persistence": null,
-  "disposition": "bound_pending_generation"
+  "disposition": "generated_transfer_pending"
 }
