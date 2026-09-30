@@ -1,0 +1,20 @@
+{
+  "schema_version": "reliable-edition-image-operation-binding-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+  "controller_branch": "reliable-edition/dab-edition-2026-09-29",
+  "operation_key": "dab-edition-2026-09-29-m05-attempt-01-de006e74",
+  "candidate_id": "m05",
+  "story_id": "semantic-sep29-03",
+  "attempt": 1,
+  "story_packet_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m05/attempt-01/story-packet.json",
+  "story_packet_git_blob_sha": "cbe5fd3d5d56af45e89d8f2fbdac7deac86767e5",
+  "bound_before_generation": true,
+  "generation_started": false,
+  "native_generation_id": null,
+  "native_file_id": null,
+  "raw_capture": null,
+  "review": null,
+  "persistence": null,
+  "disposition": "bound_pending_generation"
+}

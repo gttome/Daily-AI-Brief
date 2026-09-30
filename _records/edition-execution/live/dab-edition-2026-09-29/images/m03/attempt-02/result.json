@@ -1,28 +1,35 @@
 {
-  "schema_version": "reliable-edition-image-operation-binding-v1",
+  "schema_version": "reliable-edition-image-attempt-result-v1",
   "edition_id": "dab-edition-2026-09-29",
-  "release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
-  "controller_branch": "reliable-edition/dab-edition-2026-09-29",
-  "operation_key": "dab-edition-2026-09-29-m03-attempt-02-de006e74",
   "candidate_id": "m03",
-  "story_id": "semantic-sep29-02",
   "attempt": 2,
-  "story_packet_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m03/attempt-02/story-packet.json",
-  "story_packet_git_blob_sha": "fe53408984ac4d62878a85b061dba261ab64f7a9",
-  "bound_before_generation": true,
-  "generation_started": true,
-  "native_generation_id": "dfd4e51e-b166-42f0-b5b8-8661dc5175b5",
-  "native_file_id": "file_00000000b16481f898534a758ebfb635",
-  "raw_capture": {
+  "operation_key": "dab-edition-2026-09-29-m03-attempt-02-de006e74",
+  "disposition": "accepted",
+  "accepted": true,
+  "quality_rejected": false,
+  "generation": {
+    "native_result_id": "dfd4e51e-b166-42f0-b5b8-8661dc5175b5",
+    "native_file_id": "file_00000000b16481f898534a758ebfb635",
     "bytes": 1668610,
     "width": 1536,
     "height": 1024,
-    "sha256": "a2bf585c97f15885e65996df21ffb44672ba058158fcd8eea7fd549514fbf19f",
+    "sha256": "a2bf585c97f15885e65996df21ffb44672ba058158fcd8eea7fd549514fbf19f"
+  },
+  "raw_persistence": {
     "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m03/attempt-02/raw.png",
     "commit_sha": "e75eaad5fa3003665b8d8c88d717a3e2c3d4c1db",
     "git_blob_sha": "837b3d088d8f81343ef2c201e3b587e27f9a43a3",
     "content_address_verified": true,
-    "read_back_verified": false
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
+  },
+  "prepared_final": {
+    "bytes": 676572,
+    "width": 1200,
+    "height": 630,
+    "sha256": "c3dffcbf3985573e3a15c14f506405c959fd1688897b8b20d263940ddf806dbb",
+    "git_blob_sha": "92be8f6712aebe038c4e8c973e7bd72f1a74d31e"
   },
   "review": {
     "result": "pass",
@@ -46,5 +53,10 @@
     "verification_mode": "git_content_address",
     "contract_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4"
   },
-  "disposition": "accepted"
+  "next_attempt_allowed": false,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T04:18:55Z"
 }
