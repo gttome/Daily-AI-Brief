@@ -14,8 +14,12 @@ const hash = value => hashBytes(stableJson(value));
 const validKey = key => typeof key === 'string' && /^[a-f0-9]{64}$/.test(key);
 const stamp = value => typeof value === 'string' && /(?:Z|[+-]\d\d:\d\d)$/.test(value) && Number.isFinite(Date.parse(value));
 export class OperationBlocked extends Error {
-  constructor(code, {retryAt = null, outcomeUnknown = false} = {}) {
-    super(code); this.code = code; this.retryAt = retryAt; this.outcomeUnknown = outcomeUnknown;
+  constructor(code, {retryAt = null, outcomeUnknown = false, recoverable = false} = {}) {
+    super(code);
+    this.code = code;
+    this.retryAt = retryAt;
+    this.outcomeUnknown = outcomeUnknown;
+    this.recoverable = recoverable;
   }
 }
 
@@ -85,12 +89,27 @@ export function fileOperationStore(root) {
 }
 
 export const operationKey = binding => hash({version: DURABLE_OPERATION_VERSION, binding});
+export function operationTimingSummary(state) {
+  const summary = {completed_ms_by_operation: {}, blocked_ms_by_operation: {}, total_completed_ms: 0, total_blocked_ms: 0};
+  for (const event of state?.events || []) {
+    if (!Number.isFinite(event?.duration_ms) || event.duration_ms < 0 || !event.operation) continue;
+    if (event.type === 'completed') {
+      summary.completed_ms_by_operation[event.operation] = (summary.completed_ms_by_operation[event.operation] || 0) + event.duration_ms;
+      summary.total_completed_ms += event.duration_ms;
+    } else if (event.type === 'blocked') {
+      summary.blocked_ms_by_operation[event.operation] = (summary.blocked_ms_by_operation[event.operation] || 0) + event.duration_ms;
+      summary.total_blocked_ms += event.duration_ms;
+    }
+  }
+  return summary;
+}
 export function operationView(state) {
   if (!state) return {status: 'not_started', next_operation: null};
   return {status: state.status, next_operation: state.steps[state.cursor] ?? null,
     current_operation: state.current?.id ?? null, revision: state.version,
     retry_at: state.blocker?.retry_at ?? null, blocker: state.blocker?.code ?? null,
     last_progress_at: state.last_progress_at, completed_operations: Object.keys(state.results),
+    timing: operationTimingSummary(state),
     complete: state.status === 'complete', publication_complete: state.binding.evidence_type === 'live' && state.results.public_closed?.verified === true};
 }
 
@@ -99,12 +118,14 @@ export function operationView(state) {
  * Save the completion AND next cursor in the same CAS record.
  */
 export async function drainOperations({store, binding, steps, owner = randomUUID(), now = () => new Date().toISOString(),
-  leaseMs = 120000, maxSteps = 64, signal = null, afterSave = null}) {
+  leaseMs = 120000, maxSteps = 64, maxBlockRecoveries = 2, signal = null, afterSave = null}) {
   if (!store || ['load','cas','put','read'].some(k => typeof store[k] !== 'function')) throw Error('durable_store_required');
   if (!binding || !Array.isArray(steps) || !steps.length || steps.some(s => !/^[a-z][a-z0-9_-]*$/.test(s.id)) || new Set(steps.map(s => s.id)).size !== steps.length) throw Error('unique_operations_required');
-  if (!Number.isInteger(leaseMs) || leaseMs < 1 || !Number.isInteger(maxSteps) || maxSteps < 1) throw Error('invalid_execution_bounds');
+  if (!Number.isInteger(leaseMs) || leaseMs < 1 || !Number.isInteger(maxSteps) || maxSteps < 1 ||
+      !Number.isInteger(maxBlockRecoveries) || maxBlockRecoveries < 0) throw Error('invalid_execution_bounds');
   const key = operationKey(binding), ids = steps.map(s => s.id), signalHash = hash(signal);
   let state = await store.load(key), executed = 0;
+  const blockRecoveryCounts = {};
   async function save(next) {
     state = await store.cas(key, state?.version ?? -1, next);
     if (afterSave) await afterSave(operationView(state));
@@ -144,18 +165,49 @@ export async function drainOperations({store, binding, steps, owner = randomUUID
       state = live;
       const retryAt = error instanceof OperationBlocked ? error.retryAt : null;
       if (retryAt !== null && !stamp(retryAt)) throw Error('invalid_retry_timestamp');
+      const blockedAt = time();
+      const durationMs = Math.max(0, Date.parse(blockedAt) - Date.parse(start));
       await save({...state, status: 'blocked', current: {...state.current, lease: null},
         blocker: {code: error.code || error.message, outcome_unknown: !(error instanceof OperationBlocked) || error.outcomeUnknown,
-          retry_at: retryAt, signal_digest: signalHash},
-        events: [...state.events, {at: time(), operation: step.id, type: 'blocked', reason: error.code || error.message}]});
+          retry_at: retryAt, signal_digest: signalHash, recoverable: error instanceof OperationBlocked && error.recoverable === true},
+        events: [...state.events, {at: blockedAt, operation: step.id, type: 'blocked', reason: error.code || error.message, duration_ms: durationMs}]});
+      const recoveries = blockRecoveryCounts[step.id] || 0;
+      if (error instanceof OperationBlocked && error.recoverable === true && typeof step.resolveBlock === 'function' &&
+          recoveries < maxBlockRecoveries && (!retryAt || Date.parse(retryAt) <= Date.parse(time()))) {
+        blockRecoveryCounts[step.id] = recoveries + 1;
+        let resolution = null;
+        try {
+          resolution = await step.resolveBlock({code: error.code, outcomeUnknown: error.outcomeUnknown,
+            key: logicalKey, binding: structuredClone(binding), results: structuredClone(state.results),
+            put: bytes => store.put(bytes), read: ref => store.read(ref), recovery_attempt: blockRecoveryCounts[step.id]});
+          stableJson(resolution);
+        } catch {
+          resolution = null;
+        }
+        if (resolution?.resolved === true) {
+          const action = resolution.action || 'recover';
+          if (action === 'retry' && (error.outcomeUnknown || step.retrySafe !== true))
+            throw Error('unsafe_block_retry_requested');
+          if (action === 'recover' && typeof step.recover !== 'function' && step.replaySafe !== true)
+            throw Error('block_recovery_adapter_required');
+          const clearedAt = time();
+          await save({...state, status: 'ready', blocker: null,
+            current: action === 'retry' ? null : {...state.current, lease: null},
+            events: [...state.events, {at: clearedAt, operation: step.id, type: 'blocker_cleared',
+              reason: error.code, action, recovery_attempt: blockRecoveryCounts[step.id]}]});
+          continue;
+        }
+      }
       return {key, state, executed, ...operationView(state)};
     }
     const live = await store.load(key);
     if (live.current?.lease?.owner !== owner || live.current?.fence !== fence) throw Error('STALE_EXECUTOR');
     state = live;
+    const completedAt = time();
+    const durationMs = Math.max(0, Date.parse(completedAt) - Date.parse(start));
     await save({...state, cursor: state.cursor + 1, status: state.cursor + 1 === steps.length ? 'complete' : 'ready',
-      current: null, blocker: null, results: {...state.results, [step.id]: result}, last_progress_at: time(),
-      events: [...state.events, {at: time(), operation: step.id, type: 'completed', key: logicalKey}]});
+      current: null, blocker: null, results: {...state.results, [step.id]: result}, last_progress_at: completedAt,
+      events: [...state.events, {at: completedAt, operation: step.id, type: 'completed', key: logicalKey, duration_ms: durationMs}]});
     executed++;
   }
   return {key, state, executed, ...operationView(state)};

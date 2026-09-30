@@ -43,7 +43,16 @@ sharing/access settings, accepted images, public archives and historical failure
    Prefer one reusable primitive and fewer handoffs over adding probes, workflows,
    supervisors or evidence layers. Preserve quality, provenance and protected publication
    gates, but remove redundant proof machinery when it becomes the blocker.
-5. Report scheduled, queued, running, completed, failed, blocked and not-started accurately.
+5. **Self-heal before yielding:** classify the blocker. Reconcile stale state from immutable
+   results; recover the same operation/bytes after uncertain handoff; advance from a
+   documented quality rejection; fix pre-generation deterministic lint without consuming
+   an attempt; and continue in the same invocation. Only genuine external waits, host
+   limits, or a current safety/tool denial may yield. Never route around a denial.
+6. Treat immutable image attempt results as truth. Controller image counts/cursors and
+   Kanban/status are derived projections, not independent records. Use
+   `node _tools/edition-execution.mjs image-progress --state <controller-state.json>`
+   to inspect/rebuild image progress. Timing is passive evidence, never a publication gate.
+7. Report scheduled, queued, running, completed, failed, blocked and not-started accurately.
    An enabled schedule, prepared request or green component test is not execution or a
    finished Brief. Preserve the exact evidence and smallest unresolved next operation.
 

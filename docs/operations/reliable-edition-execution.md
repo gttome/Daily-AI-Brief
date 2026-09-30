@@ -1,6 +1,54 @@
 # Reliable edition execution
 
 > [!IMPORTANT]
+> **September 30 simplification / self-healing amendment:** a controller run is a start
+> trigger, not a stage pacer. Once started, the controller drains all safe dependent work
+> until completion, execution-host limits, or a blocker that remains after bounded recovery.
+> Durable image attempt results are authoritative; controller counters/cursors are derived
+> projections and may be rebuilt with `node _tools/edition-execution.mjs image-progress`.
+
+## Self-healing blocker ladder
+
+The controller must classify and clear recoverable blockers before yielding:
+
+1. **Stale mutable state** → rebuild the controller projection from immutable attempt
+   results/bindings and continue.
+2. **Known durable outcome with incomplete bookkeeping** → reconcile that same result;
+   never regenerate.
+3. **Transport/ack uncertainty** → recover the same bytes by content identity and the
+   same operation key.
+4. **Documented quality rejection** → close append-only, bind the next bounded attempt,
+   and continue.
+5. **Pre-generation deterministic lint/contract defect** → correct the render spec
+   without consuming an image attempt.
+6. **External CI/deployment wait** → trigger/check the existing workflow once and yield
+   only while it is actually pending.
+7. **Current safety/tool denial** → never evade via a different endpoint. Preserve the
+   exact blocker and retry the same minimal authorized operation on a later invocation.
+
+`drainOperations` supports bounded same-invocation blocker resolution through explicit
+`OperationBlocked({recoverable:true})` + a step `resolveBlock` hook. Blind retries are
+forbidden when the outcome is uncertain.
+
+## Atomic image completion and state authority
+
+An immutable accepted/rejected attempt result is the fact. In one state commit whenever
+possible, image completion writes the attempt result and reconciles the derived controller
+projection. `accepted_images`, current candidate and next attempt are not independently
+authoritative counters. They are derived from immutable attempt results plus the one
+in-flight operation binding. This removes stale-count/cursor recovery as a separate
+publication activity.
+
+## Passive performance evidence
+
+Operation events record elapsed milliseconds. Image results may additionally record
+binding-to-acceptance wall time. Metrics are advisory only: attempts-to-accept, first-attempt
+acceptance rate, median accepted-image wall time, and available phase/overhead timing.
+A timing regression never blocks publication; it triggers simplification of non-value-add
+steps before any new test, workflow, or evidence layer is added.
+
+
+> [!IMPORTANT]
 > **September 30 first-attempt hardening:** reliable-edition image jobs must compile and lint a `strict-image-render-spec-v1` before allocating a native generation attempt. The compiled prompt excludes headline/source/orchestration metadata, uses an exact visible-text allowlist, prohibits people/human icons and explicitly forbids inherited cross-story motifs. A render-spec lint failure allocates zero attempts. This is a smaller pre-generation guard inside the existing recoverable job, not a new executor or qualification lane.
 
 
