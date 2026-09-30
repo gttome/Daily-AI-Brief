@@ -1,6 +1,10 @@
 # Reliable edition execution
 
 > [!IMPORTANT]
+> **September 30 first-attempt hardening:** reliable-edition image jobs must compile and lint a `strict-image-render-spec-v1` before allocating a native generation attempt. The compiled prompt excludes headline/source/orchestration metadata, uses an exact visible-text allowlist, prohibits people/human icons and explicitly forbids inherited cross-story motifs. A render-spec lint failure allocates zero attempts. This is a smaller pre-generation guard inside the existing recoverable job, not a new executor or qualification lane.
+
+
+> [!IMPORTANT]
 > Owner-approved September 29 changes: one recoverable image job, deterministic
 > continuation from one journal, and immutable edition bundles with separate execution
 > and qualification identities. This is a staged integration into the existing system,

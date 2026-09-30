@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {createHash} from 'node:crypto';
 import {buildImageGenerationExecution,buildProductionImageGenerationExecution,validateImageGenerationExecution,validateImageExecutionReceipt,executeImageRequest,executeImageBatch} from '../lib/image-execution.mjs';
 import {buildQualificationImageGenerationExecution} from '../lib/qualification-image-harness.mjs';
+import {compileImageRenderSpec,validateImageRenderSpec} from '../lib/image-story-packet.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 const usage=()=>({work_invocations:0,codex_invocations:0,paid_model_api_calls:0});
 const packet=(id='m04')=>({story_id:'story-'+id,candidate_id:id,headline:'A supported single-story mechanism',source_url:'https://example.com/'+id,
@@ -33,6 +34,31 @@ test('request allowlist strips orchestration without claiming hidden platform is
  assert.doesNotMatch(e.prompt,/Q24|unrelated status|wrong story/);assert.equal(e.includes_edition_context,false);assert.equal(e.request_scope,'sealed_story_payload_only');
 });
 test('request is a deep copy of the frozen source packet',()=>{const p=packet(),e=buildImageGenerationExecution(p);p.allowed_image_text.push('changed');assert.deepEqual(e.sealed_story_packet.allowed_image_text,['Input','Review']);});
+test('strict render spec excludes headline source and orchestration text from generation prompt',()=>{
+ const p=packet(),e=buildImageGenerationExecution(p);
+ assert.doesNotMatch(e.prompt,/A supported single-story mechanism|example\.com|story-m04|candidate_id|source_url|headline:/);
+ assert.match(e.prompt,/VISIBLE TEXT ALLOWLIST — EXACT: Input \| Review/);
+ assert.match(e.prompt,/render NO other visible words/);
+ assert.doesNotMatch(e.prompt,/Useful duplicates are permitted|generic non-factual headings/);
+});
+test('strict render spec prohibits people and inherited story motifs',()=>{
+ const e=buildImageGenerationExecution(packet());
+ assert.match(e.prompt,/People, faces, bodies, avatars, group\/person icons, humanoids/);
+ assert.match(e.prompt,/Cross-story carryover is a failure/);
+ assert.match(e.prompt,/Ignore and do not reuse any prior story, image, visual motif/);
+});
+test('render-spec compiler is deterministic and exact-text constrained',()=>{
+ const spec=compileImageRenderSpec(packet());
+ assert.equal(spec.policy_id,'strict-image-render-spec-v1');
+ assert.equal(spec.visible_text_policy,'exact_allowlist_only');
+ assert.equal(spec.people_policy,'prohibited');
+ assert.deepEqual(spec.visible_text_allowlist,['Input','Review']);
+ assert.deepEqual(validateImageRenderSpec(spec),[]);
+});
+test('pre-generation render lint rejects positive use of prohibited specifics',()=>{
+ const p=packet();p.prohibited_specifics=['GitHub'];p.visual_brief='Detailed GitHub workflow diagram.';
+ assert.throws(()=>buildImageGenerationExecution(p),/render_spec_positive_prohibited_conflict:GitHub/);
+});
 for(const [key,value] of [['requires_fresh_conversation',true],['manual_intervention_allowed',true],['runtime_context_isolation','guaranteed'],['output_count',6],['review_phase','before_generation'],['prompt','make a status dashboard']]){
  test('reject invalid request '+key,()=>{const e=buildImageGenerationExecution(packet());e[key]=value;assert.ok(validateImageGenerationExecution(e).length);});
 }

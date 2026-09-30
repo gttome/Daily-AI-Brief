@@ -1,5 +1,15 @@
 # Automated image execution — production and qualification parity
 
+## September 30, 2026 — strict first-attempt render specification
+
+> [!IMPORTANT]
+> Image generation now compiles each sealed story packet into `strict-image-render-spec-v1` before the native image call. The render prompt excludes headline, source URL, story ID, candidate ID and orchestration metadata so they cannot become accidental visible copy. Generation receives only the story's verified visual mechanism, conceptual elements, composition mode, exact visible-text allowlist and explicit prohibitions.
+
+The visible-text allowlist is now **exact**, not advisory: every allowlisted label must be readable and no other visible words, numbers, captions, titles, subtitles, slogans, legends, UI text or explanatory prose may be rendered. People, faces, avatars, group/person icons and humanoids are prohibited; human workflow concepts use abstract non-human geometry. The instruction explicitly forbids cross-story carryover from prior prompts, images, layouts, labels, products or visual motifs.
+
+Before generation, the render-spec compiler performs a deterministic contamination lint: positive visual fields may not contain any explicitly prohibited story specifics. A lint failure consumes **zero** image attempts. This moves preventable subject/text failures before the expensive native generation while preserving the same post-generation V2 factual, structural, editorial and exact-byte gates. No quality fallback, paid service, owner upload or additional image harness is introduced.
+
+
 ## September 28, 2026 — Connector-first image transport parity
 
 > [!IMPORTANT]
