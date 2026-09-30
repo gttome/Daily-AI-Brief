@@ -65,14 +65,23 @@ jobs:
 
       - name: Validate integrated system state
         run: |
-          latest_date="$(find _data/editions -maxdepth 1 -type f -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort | tail -1)"
-          dated_review="_records/editorial-handoff/final-image-review-${latest_date}.json"
-          if [ -f "$dated_review" ]; then
-            node _generator/cli.mjs integration-check --image-review "$dated_review"
-          elif [ -f _records/editorial-handoff/final-image-review.json ]; then
-            node _generator/cli.mjs integration-check --image-review _records/editorial-handoff/final-image-review.json
+          manifest="_records/editorial-handoff/publication-manifest.json"
+          image_review=""
+          if [ -f "$manifest" ]; then
+            image_review="$(node -e "const fs=require('fs');const m=JSON.parse(fs.readFileSync(process.argv[1],'utf8'));process.stdout.write(String(m.artifacts?.image_review?.path||''));" "$manifest")"
+          fi
+          if [ -n "$image_review" ] && [ -f "$image_review" ]; then
+            node _generator/cli.mjs integration-check --image-review "$image_review"
           else
-            node _generator/cli.mjs integration-check
+            latest_date="$(find _data/editions -maxdepth 1 -type f -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort | tail -1)"
+            dated_review="_records/editorial-handoff/final-image-review-${latest_date}.json"
+            if [ -f "$dated_review" ]; then
+              node _generator/cli.mjs integration-check --image-review "$dated_review"
+            elif [ -f _records/editorial-handoff/final-image-review.json ]; then
+              node _generator/cli.mjs integration-check --image-review _records/editorial-handoff/final-image-review.json
+            else
+              node _generator/cli.mjs integration-check
+            fi
           fi
 
       - name: Validate atomic publication change set
