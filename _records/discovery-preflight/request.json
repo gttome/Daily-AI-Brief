@@ -9,5 +9,7 @@
   "source_scan_max": 48,
   "fresh_metadata_target": 24,
   "controller_branch": "reliable-edition/dab-edition-2026-09-29",
-  "controller_state_path": "_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json"
+  "controller_state_path": "_records/edition-execution/live/dab-edition-2026-09-29/controller-state.json",
+  "retry_reason": "fresh_firebase_agent_skills_required_topic_source_added",
+  "retry_attempt": 2
 }
