@@ -728,9 +728,10 @@ jobs:
           }
           const slug=v=>String(v||'podcast').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
           for(const podcast of (edition.podcasts||[])){
-            const routeSlug=slug(podcast.item_id||podcast.title);
-            podcast.item_id='dab-podcast-'+edition.brief_date+'-'+routeSlug;
-            podcast.permanent_url='/podcasts/'+edition.brief_date+'/'+routeSlug+'/';
+            const prefix='dab-podcast-'+edition.brief_date+'-';
+            const routeSlug=String(podcast.item_id||'').startsWith(prefix)?String(podcast.item_id).slice(prefix.length):slug(podcast.item_id||podcast.title);
+            podcast.item_id=prefix+routeSlug;
+            if(!podcast.permanent_url?.startsWith('/podcasts/'+edition.brief_date+'/'))podcast.permanent_url='/podcasts/'+edition.brief_date+'/'+routeSlug+'/';
             if(!Array.isArray(podcast.platforms)||!podcast.platforms.length)podcast.platforms=[{name:'Verified source',url:podcast.url}];
             if(!podcast.verification_note)podcast.verification_note='Verified by the locked September 29 media-stage evidence and deterministic freshness revalidation.';
             if(!podcast.coverage_note)podcast.coverage_note='Reused the completed September 29 media checkpoint; no media reselection or source-content rediscovery.';
@@ -738,7 +739,8 @@ jobs:
           fs.writeFileSync(editionPath,JSON.stringify(edition,null,2)+'\n');
           NODE
           rm -rf /tmp/publication-stage
-          node _generator/cli.mjs generate             --edition /tmp/staged-edition.json             --out /tmp/publication-stage             --baseline-sha "$baseline"             --observed-at "$CUTOFF"             --run-id "reliable-qualification-$GITHUB_RUN_ID"             --publication-manifest "$MANIFEST_PATH"
+          qualification_observed_at="$(node -e "const r=require('./_records/editorial/media-preflight/2026-09-29.json');process.stdout.write(r.checked_at)")"
+          node _generator/cli.mjs generate             --edition /tmp/staged-edition.json             --out /tmp/publication-stage             --baseline-sha "$baseline"             --observed-at "$qualification_observed_at"             --run-id "reliable-qualification-$GITHUB_RUN_ID"             --publication-manifest "$MANIFEST_PATH"
           cp -a /tmp/publication-stage/. ./
 
       - name: Run reliable-edition deterministic qualification gate
