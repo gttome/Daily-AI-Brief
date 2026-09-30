@@ -276,7 +276,7 @@
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m05.json",
-        "request_sha256": "a747d3dad0dae02e8740da3eb5c7e155a02872541fa874ab66912389cb8927aa"
+        "request_sha256": "a747d3dad0dae02e8740da3eb5c7e155a02872525fa874ab66912389cb8927aa"
       },
       "overall_gate": "pass",
       "result": "pass",
@@ -361,7 +361,7 @@
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m06.json",
-        "request_sha256": "4f3f9188043fa586242126ab6b789e98c4305e8837561e308ceb9be402382053"
+        "request_sha256": "4f3f9188043fa5862421268b6d789e98c4305e8837561e308ceb9be402382053"
       },
       "overall_gate": "pass",
       "result": "pass",
