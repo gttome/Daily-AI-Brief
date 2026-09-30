@@ -58,6 +58,11 @@ if(command==='checkpoint'){
 }
 if(command==='seed-candidate'){
  let state=loadRunState(root,date)||newRunState({date,baselineSha:a.baseline,contractVersion:a.contract||RUN_STATE_VERSION});
+ const publicationManifestFile=path.join(root,'_records/editorial-handoff/publication-manifest.json');
+ const publicationManifest=fs.existsSync(publicationManifestFile)?JSON.parse(fs.readFileSync(publicationManifestFile,'utf8')):null;
+ const imageStageArtifacts=publicationManifest
+  ? [publicationManifest.artifacts?.image_review?.path,publicationManifest.artifacts?.image_quality_evidence?.path].filter(Boolean)
+  : ['_records/editorial-handoff/final-image-review-'+date+'.json'];
  const current=a.current||state.current_sha,steps=[
   ['PREFLIGHT_METADATA_READY',['_records/editorial-handoff/metadata-candidates.json']],
   ['PREFLIGHT_DISCOVERY_READY',['_records/editorial-handoff/article-evidence.json']],
@@ -65,7 +70,7 @@ if(command==='seed-candidate'){
   ['READINESS_FINAL',['_records/editorial-handoff/kernel.json']],
   ['EDITORIAL_KERNEL_READY',['_records/editorial-handoff/kernel.json','_records/editorial-handoff/facts.json']],
   ['MEDIA_READY',['_records/editorial-handoff/media.json','_records/editorial/media-preflight/'+date+'.json']],
-  ['IMAGES_READY',['_records/editorial-handoff/final-image-review-'+date+'.json']],
+  ['IMAGES_READY',imageStageArtifacts],
   ['HANDOFF_COMMITTED',['_records/editorial-handoff/handoff.json',...(fs.existsSync(path.join(root,'_records/editorial-handoff/publication-manifest.json'))?['_records/editorial-handoff/publication-manifest.json']:[])]],
   ['DETERMINISTIC_EXPANSION_READY',['_data/editions/'+date+'.json']]
  ];
