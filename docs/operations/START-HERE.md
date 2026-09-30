@@ -4,6 +4,7 @@
 > Read live machine evidence before narrative status. This entry point is a current
 > index, not another run-state record. Normal image transport remains `connector-first-v1`, implemented through the permanent simple lifecycle **generate → transfer file → verify content identity → review → accept/reject**.
 > Git content-address identity is the primary persistence verification; optional raw reread must not become a publication blocker.
+> When complete binary payload delivery itself is unavailable, retain the existing classification `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`.
 > Preserve all V2 raw/final provenance, exact-byte verification and professional-quality
 > gates. A current denial stops that operation; do not use another endpoint to evade it.
 
