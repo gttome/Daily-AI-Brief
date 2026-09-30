@@ -9,6 +9,11 @@ on:
       - '_records/edition-execution/live/dab-edition-2026-09-29/images/**/result.json'
       - '.github/workflows/reliable-edition-live-stage.yml'
       - '_records/editorial/kernels/2026-09-29.json'
+      - '_records/editorial-handoff/publication-manifest.json'
+      - '_records/editorial-handoff/metadata-candidates.json'
+      - '_records/watchlist-sweeps/2026-09-29.json'
+      - '_generator/lib/editorial-kernel.mjs'
+      - '_generator/test/editorial-kernel.test.mjs'
 
 permissions:
   contents: write
