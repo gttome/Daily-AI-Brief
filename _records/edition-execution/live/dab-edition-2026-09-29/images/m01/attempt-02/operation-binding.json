@@ -21,9 +21,23 @@
     "sha256": "27f5fd458a70f036e4abe85024c7fae7789ed9bad481a557b686ea849b805d03",
     "git_blob_sha": "35d8b9679f609b6823569370b246831646b93e15",
     "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-02/raw.png",
-    "content_address_verified": false
+    "content_address_verified": true,
+    "commit_sha": "0da83dcbfb208e511a912a52870a1aaf41edcb65",
+    "read_back_verified": false
   },
-  "review": null,
+  "review": {
+    "result": "reject",
+    "failure_codes": [
+      "subject_match_fail",
+      "factual_support_fail",
+      "sealed_story_packet_match_fail",
+      "style_fail",
+      "structural_quality_fail",
+      "visible_text_policy_fail",
+      "cross_story_carryover_fail"
+    ],
+    "result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m01/attempt-02/result.json"
+  },
   "persistence": null,
-  "disposition": "generated_transfer_pending"
+  "disposition": "quality_rejected"
 }
