@@ -3,7 +3,7 @@
   "edition_id": "dab-edition-2026-09-29",
   "checked_at": "2026-09-30T00:39:53.940Z",
   "verification_timestamp": "2026-09-30T00:39:53.940Z",
-  "editorial_kernel_sha256": "f2f96f676772b0b1e5423bde0542f84057b419c580ec752d26d2384f4b57771d",
+  "editorial_kernel_sha256": "5cc4be0e6f9971899521a568018e6737e333da800e5d3b23800fc9c5a556c7e9",
   "basis": "Reused the already-passed September 29 media stage and its saved-source artifacts; no media rediscovery or editorial reselection.",
   "podcast_source_diversity": {
     "pass": true,
