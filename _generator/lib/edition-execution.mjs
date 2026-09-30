@@ -144,6 +144,104 @@ export function renderExecutionCheckpoint(status) {
   return '# Execution status\n\n' + Object.entries(status).map(([key,value]) => `**${key}:** ${typeof value === 'object' ? JSON.stringify(value) : String(value)}`).join('\n\n') + '\n';
 }
 
+
+/** Immutable attempt results are authoritative. Bindings describe only the one in-flight
+ * attempt. The mutable controller is a projection/cursor and may be rebuilt at any time.
+ */
+export function deriveImageProgress({selectedCandidateIds, resultsByCandidate = {}, bindingsByCandidate = {}}) {
+  assert(Array.isArray(selectedCandidateIds) && selectedCandidateIds.length > 0 &&
+    new Set(selectedCandidateIds).size === selectedCandidateIds.length, 'selected_image_candidates_required');
+  const acceptedCandidateIds = [];
+  const rejectedAttempts = {};
+  const normalizedResults = {};
+  for (const candidate of selectedCandidateIds) {
+    const results = [...(resultsByCandidate[candidate] || [])].sort((a,b) => a.attempt - b.attempt);
+    normalizedResults[candidate] = results;
+    const accepted = results.filter(r => r?.accepted === true && r?.disposition === 'accepted');
+    assert(accepted.length <= 1, 'multiple_accepted_attempts:' + candidate);
+    if (accepted.length === 1) acceptedCandidateIds.push(candidate);
+    rejectedAttempts[candidate] = results.filter(r => r?.quality_rejected === true && r?.disposition === 'quality_rejected').map(r => r.attempt);
+  }
+  if (acceptedCandidateIds.length === selectedCandidateIds.length) {
+    return {source:'immutable_attempt_results', status:'done', accepted_images:acceptedCandidateIds.length,
+      accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:null, current_attempt:null,
+      current_operation_key:null, substage:'all_images_accepted', next_action:'seal_bundle', rejected_attempts:rejectedAttempts};
+  }
+  const candidate = selectedCandidateIds.find(id => !acceptedCandidateIds.includes(id));
+  const results = normalizedResults[candidate];
+  const bindings = [...(bindingsByCandidate[candidate] || [])].sort((a,b) => a.attempt - b.attempt);
+  const lastResult = results.at(-1) || null, lastBinding = bindings.at(-1) || null;
+  if (lastResult?.quality_rejected === true) {
+    assert(lastResult.next_attempt_allowed !== false && lastResult.attempt < 4, 'image_attempt_budget_exhausted:' + candidate);
+    const attempt = lastResult.attempt + 1;
+    return {source:'immutable_attempt_results', status:'wip', accepted_images:acceptedCandidateIds.length,
+      accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:candidate, current_attempt:attempt,
+      current_operation_key:null, substage:`${candidate}_attempt_${attempt}_binding_pending`,
+      next_action:`bind_${candidate}_attempt_${attempt}`, rejected_attempts:rejectedAttempts};
+  }
+  if (lastBinding && (!lastResult || lastBinding.attempt > lastResult.attempt)) {
+    const attempt = lastBinding.attempt;
+    const operationKeyValue = lastBinding.operation_key || null;
+    if (lastBinding.generation_started !== true) {
+      return {source:'immutable_attempt_results_plus_binding', status:'wip', accepted_images:acceptedCandidateIds.length,
+        accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:candidate, current_attempt:attempt,
+        current_operation_key:operationKeyValue, substage:`${candidate}_attempt_${attempt}_bound_pending_generation`,
+        next_action:`generate_${candidate}_attempt_${attempt}_once`, rejected_attempts:rejectedAttempts};
+    }
+    if (lastBinding.review?.result === 'pass' && lastBinding.persistence?.final_path) {
+      return {source:'immutable_attempt_results_plus_binding', status:'wip', accepted_images:acceptedCandidateIds.length,
+        accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:candidate, current_attempt:attempt,
+        current_operation_key:operationKeyValue, substage:`${candidate}_attempt_${attempt}_acceptance_reconciliation_pending`,
+        next_action:`reconcile_${candidate}_attempt_${attempt}_acceptance`, rejected_attempts:rejectedAttempts};
+    }
+    if (lastBinding.review?.result === 'reject') {
+      return {source:'immutable_attempt_results_plus_binding', status:'wip', accepted_images:acceptedCandidateIds.length,
+        accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:candidate, current_attempt:attempt,
+        current_operation_key:operationKeyValue, substage:`${candidate}_attempt_${attempt}_rejection_reconciliation_pending`,
+        next_action:`reconcile_${candidate}_attempt_${attempt}_rejection`, rejected_attempts:rejectedAttempts};
+    }
+    return {source:'immutable_attempt_results_plus_binding', status:'wip', accepted_images:acceptedCandidateIds.length,
+      accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:candidate, current_attempt:attempt,
+      current_operation_key:operationKeyValue, substage:`${candidate}_attempt_${attempt}_review_or_persistence_pending`,
+      next_action:`resume_${candidate}_attempt_${attempt}`, rejected_attempts:rejectedAttempts};
+  }
+  return {source:'immutable_attempt_results', status:'wip', accepted_images:acceptedCandidateIds.length,
+    accepted_candidate_ids:acceptedCandidateIds, current_candidate_id:candidate, current_attempt:1,
+    current_operation_key:null, substage:`${candidate}_attempt_1_binding_pending`,
+    next_action:`bind_${candidate}_attempt_1`, rejected_attempts:rejectedAttempts};
+}
+
+export function applyDerivedImageProgress(state, progress) {
+  assert(state?.schema_version === 'reliable-edition-controller-state-v1' && state.task06 && progress?.source,
+    'image_controller_state_required');
+  const next = structuredClone(state);
+  next.task06 = {...next.task06,
+    status: progress.status,
+    accepted_images: progress.accepted_images,
+    current_candidate_id: progress.current_candidate_id,
+    current_attempt: progress.current_attempt,
+    current_operation_key: progress.current_operation_key,
+    substage: progress.substage,
+    next_action: progress.next_action,
+    progress_source: progress.source};
+  next.task06.accepted_candidate_ids = [...progress.accepted_candidate_ids];
+  if (progress.status === 'done') next.current_operation = 'seal_bundle';
+  return next;
+}
+
+export function summarizeImagePerformance(resultsByCandidate = {}) {
+  const rows = Object.values(resultsByCandidate).flat().filter(Boolean);
+  const accepted = rows.filter(r => r.accepted === true && r.disposition === 'accepted');
+  const firstAttemptAccepted = accepted.filter(r => r.attempt === 1).length;
+  const elapsed = accepted.map(r => r.timing?.elapsed_seconds).filter(Number.isFinite).sort((a,b)=>a-b);
+  const median = elapsed.length ? (elapsed.length % 2 ? elapsed[(elapsed.length-1)/2] :
+    (elapsed[elapsed.length/2-1] + elapsed[elapsed.length/2]) / 2) : null;
+  return {policy:'passive-image-performance-v1', attempts_total:rows.length, accepted_images:accepted.length,
+    first_attempt_accepts:firstAttemptAccepted,
+    first_attempt_acceptance_rate:accepted.length ? firstAttemptAccepted / accepted.length : null,
+    median_accepted_wall_seconds:median, timing_samples:elapsed.length, publication_gate:false};
+}
+
 /** New admitted editions pin the original execution release. A later main commit
  * requests compatibility packaging, never silently discards editorial checkpoints.
  * Historical run-state behavior remains unchanged unless the new profile is present.
