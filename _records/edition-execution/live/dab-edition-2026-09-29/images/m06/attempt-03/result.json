@@ -1,0 +1,77 @@
+{
+  "schema_version": "reliable-edition-image-attempt-result-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "candidate_id": "m06",
+  "attempt": 3,
+  "operation_key": "dab-edition-2026-09-29-m06-attempt-03-c4f73977",
+  "disposition": "accepted",
+  "accepted": true,
+  "quality_rejected": false,
+  "generation": {
+    "native_result_id": "68f7f6de-debf-4343-a410-44efadc36af7",
+    "native_file_id": "file_00000000661081fd844ae4bf05faba46",
+    "bytes": 1104494,
+    "width": 1536,
+    "height": 1024,
+    "sha256": "c261f42aec16378140b1ecaa8a2524181f310909461239d9884bc1810ce13057"
+  },
+  "raw_persistence": {
+    "path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-03/raw.png",
+    "commit_sha": "efbe5d306e6b976a9c7ab2f3e218e981f19548e9",
+    "git_blob_sha": "fa46d8aa8ffd38eb21e41e3450d970b913133422",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "c4f739774fb4d6a628d4dcf6c1c14bffd741140b"
+  },
+  "prepared_final": {
+    "bytes": 389932,
+    "width": 1200,
+    "height": 630,
+    "sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+    "git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8"
+  },
+  "review": {
+    "schema_version": "reliable-edition-image-review-v1",
+    "edition_id": "dab-edition-2026-09-29",
+    "candidate_id": "m06",
+    "attempt": 3,
+    "operation_key": "dab-edition-2026-09-29-m06-attempt-03-c4f73977",
+    "asset_stage": "prepared_final",
+    "prepared_final": {
+      "bytes": 389932,
+      "width": 1200,
+      "height": 630,
+      "sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+      "git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8"
+    },
+    "result": "pass",
+    "mode": "automated",
+    "phase": "after_generation_and_raw_content_address_verification",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "visible_text_policy": "pass_exact_allowlist",
+    "people_policy": "pass_no_people_or_human_icons",
+    "cross_story_carryover": "pass",
+    "observation": "Strict seven-stage Agent Builder change-management workflow with exactly the allowed stage labels, abstract non-human symbols only, and a Measurement feedback arrow to Behavior-change planning. No title, subtitle, slogan, microcopy, people/human icons, or prior-story motifs.",
+    "final_persistence_pending": true
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
+    "commit_sha": "4f8c55a8629937d49b68fba000407e6c7a8a58dc",
+    "git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8",
+    "sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address",
+    "contract_release_sha": "c4f739774fb4d6a628d4dcf6c1c14bffd741140b"
+  },
+  "next_attempt_allowed": false,
+  "owner_interventions": [],
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "recorded_at": "2026-09-30T13:12:18.754Z"
+}
