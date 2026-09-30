@@ -16,7 +16,7 @@
       "path": "_records/editorial-handoff/facts.json",
       "schema_version": "legacy-unversioned",
       "adapter": "candidate-facts-map-v1",
-      "digest": "git_blob_sha1:be29a813fac59021a1133d5cbe37e1f9ac91940e"
+      "digest": "git_blob_sha1:70aee59b6245a400da2ec57de8ac038d6823feaf"
     },
     "metadata_candidates": {
       "path": "_records/editorial-handoff/metadata-candidates.json",
@@ -32,7 +32,7 @@
       "path": "_records/editorial-handoff/media.json",
       "schema_version": "legacy-unversioned",
       "adapter": "selected-media-v1",
-      "digest": "git_blob_sha1:ac6e3367b86f8828d9cbfb90fb3b6fdc6aee8f44"
+      "digest": "git_blob_sha1:5b1427b2d7210db36fe57e96b2435c78b186920d"
     },
     "media_receipt": {
       "path": "_records/editorial/media-preflight/2026-09-29.json",
