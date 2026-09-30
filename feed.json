@@ -6,6 +6,142 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-09-29-73a1c827",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/",
+      "title": "NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator",
+      "summary": "NVIDIA describes TensorRT Model Connect as an open-source collection of C++ model reference implementations designed around coding-agent workflows. Its account emphasizes parallel work, model-family isolation, reversible changes, and GPU-backed validation as engineering patterns for letting agents contribute without collapsing project structure or verification.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m02-2.png?v=sep29-m02-60a65c4ce464",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "coding agents",
+        "TensorRT",
+        "software architecture",
+        "parallel development",
+        "validation"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-29-a64c16f9",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/microsoft-research-s-quine-links-biological-models-tools-literature-and-scientists-in-one-research-h/",
+      "title": "Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness",
+      "summary": "Microsoft Research introduced Quine as an early-stage research effort to build a multimodal world model of biology together with an interactive harness connecting models, scientific tools, literature, and researchers. A Quine Fellows program is intended to give scientists access to the system and generate scientific feedback from real research use.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m03-2.png?v=sep29-m03-c3dffcbf3985",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "AI for science",
+        "multimodal world models",
+        "research agents",
+        "biology",
+        "tool orchestration"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-29-626077c7",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/",
+      "title": "Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS",
+      "summary": "Google Workspace says Google Vids is moving AI voiceovers and avatar narration to Gemini 3.8 Flash Lite TTS. The update is intended to improve naturalness, pacing, context-aware emphasis, and generation latency so creators can iterate on scripts and narration more quickly inside the video workflow.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png?v=sep29-m05-3668fb77b57f",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "Google Vids",
+        "text to speech",
+        "knowledge work",
+        "AI voiceovers",
+        "content creation"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-29-7eb33bf7",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/",
+      "title": "Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout",
+      "summary": "Microsoft’s Copilot team describes an operating model for scaling Agent Builder through structured change management, using an HCLTech customer example to illustrate how organizations can combine Microsoft 365 Copilot innovation with an explicit adoption program rather than relying on one-off team deployments.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "Agent Builder",
+        "change management",
+        "AI adoption",
+        "Microsoft 365 Copilot",
+        "workflow transformation"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-29-e2811e43",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/",
+      "title": "Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex",
+      "summary": "Firebase’s Codex plugin includes Firebase Agent Skills that provide domain expertise, up-to-date documentation, recommended workflows, and tool knowledge. Firebase says the skills are intended to help Codex follow Firebase-recommended configuration and architecture patterns instead of relying only on a general model’s background knowledge.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "Firebase",
+        "Codex",
+        "reusable workflows",
+        "domain expertise"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-29-196c601d",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/",
+      "title": "AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows",
+      "summary": "AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads. The announcement describes using supported Bedrock APIs for internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "Amazon Bedrock",
+        "GPT-6.1 Sol",
+        "enterprise agents",
+        "professional workflows",
+        "model evaluation"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-29-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-29/general/",
+      "title": "Prompt to Production: The Future of AI Code Workflows",
+      "summary": "A concise prompt-to-production workflow that complements the day’s agent-ready engineering coverage.",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-29-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-29/agent-skills/",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "summary": "A short current overview of Copilot changes relevant to everyday agent and knowledge-work use.",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "YouTube"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-29-everyday-ai-cost-control-872",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-29/ai-cost-control-board-level/",
+      "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
+      "summary": "A same-day discussion of AI cost control and operating considerations.",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "AI cost control",
+        "enterprise AI",
+        "chatbots",
+        "Everyday AI Podcast – An AI and ChatGPT Podcast"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-29-ai-for-humans-opus-197",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-29/opus-5-5-model-discussion/",
+      "title": "Opus 5.5 is our favorite AI model (so far).",
+      "summary": "A recent independent-source model discussion retained by the locked media selection.",
+      "date_published": "2026-09-29T13:00:00-05:00",
+      "tags": [
+        "AI models",
+        "agents",
+        "tools",
+        "AI For Humans: Weekly AI News, Tools & Trends"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-26-f3e5113c",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/",
       "title": "AWS shows how to build continuous quality checks into production LLM workflows",
@@ -2984,288 +3120,6 @@
         "visual workflow design",
         "deployment governance",
         "Google"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-30-7712bd8b",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/",
-      "title": "Windows gives agent processes an OS-level identity trail",
-      "summary": "Microsoft’s optional Windows 11 preview update KB5120998 introduces two agent-oriented platform features. Microsoft Execution Containers add a lightweight policy boundary that can restrict files, networking, the user interface, and other OS capabilities for workloads such as coding agents and model-generated code. Separately, authorized components can attach an opaque agent identifier to a process token; Windows protects the marker, passes it to child processes, and includes it when the process authenticates through Web Account Manager.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/01-process-identity.svg",
-      "date_published": "2026-08-30T13:00:00-05:00",
-      "tags": [
-        "agent identity",
-        "process isolation",
-        "execution policy",
-        "operating-system security",
-        "Microsoft"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-30-3ea4c141",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/anthropic-proposes-a-shared-hardware-layer-for-scientific-agents/",
-      "title": "Anthropic proposes a shared hardware layer for scientific agents",
-      "summary": "Anthropic previewed the Model Hardware Standard, a model-agnostic specification for connecting AI agents to programmable equipment such as microscopes, liquid handlers, and robotic arms. Anthropic says MHS complements the Model Context Protocol: MCP exposes tools and data to the agent, while MHS standardizes device control and parallel operation. The company reports that early integrations cut setup from weeks or months to hours or minutes.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/02-hardware-standard.svg",
-      "date_published": "2026-08-30T13:00:00-05:00",
-      "tags": [
-        "Model Hardware Standard",
-        "MCP",
-        "laboratory automation",
-        "physical-world agents",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-30-6c8007e6",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/notion-lets-an-ai-agent-propose-edits-without-taking-authorship-control/",
-      "title": "Notion lets an AI agent propose edits without taking authorship control",
-      "summary": "Notion agents can now propose line-level changes instead of editing a document directly. A user asks the agent to “suggest edits,” then reviews the proposed changes from top to bottom and approves them individually. Notion positions the feature for tasks such as a grammar pass.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/03-suggest-edits.svg?v=20260830-2",
-      "date_published": "2026-08-30T13:00:00-05:00",
-      "tags": [
-        "human review",
-        "writing",
-        "suggested edits",
-        "approval workflow",
-        "notion.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-30-4faf2d80",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/",
-      "title": "Microsoft’s unified Copilot app retires Deep Research for consumers",
-      "summary": "Microsoft is consolidating personal, work, and school access into an updated Copilot app while keeping personal and organizational data boundaries separate. The app adds direct access to Microsoft 365 apps, files, email, calendar, and cloud storage, but Microsoft is retiring consumer Deep Research, Podcasts, and Group Chat. Deep Research retirement began August 18; generated files move to OneDrive, and users must preserve Group Chat content that will not migrate.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/04-copilot-migration.svg?v=20260830-2",
-      "date_published": "2026-08-30T13:00:00-05:00",
-      "tags": [
-        "Copilot migration",
-        "research workflow continuity",
-        "account boundaries",
-        "OneDrive",
-        "Microsoft"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-30-71d505c2",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/claude-in-chrome-shifts-browser-work-toward-bounded-autonomy/",
-      "title": "Claude in Chrome shifts browser work toward bounded autonomy",
-      "summary": "Anthropic made Claude in Chrome generally available to users on paid Claude plans. The extension can read pages, type, click, navigate, and complete forms using the user’s existing browser logins. It now uses an action-safety classifier to decide when an action can proceed autonomously rather than asking for approval every time; users can restore manual approval for every action.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/05-browser-agent.svg?v=20260830-2",
-      "date_published": "2026-08-30T13:00:00-05:00",
-      "tags": [
-        "browser agents",
-        "tool use",
-        "action safety",
-        "prompt injection",
-        "user approvals",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-30-6649fb3e",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/",
-      "title": "Zapier turns no-code agent governance into a layered operating procedure",
-      "summary": "Zapier published an updated practical guide for building safer no-code agents. Its recommended layers are scoped connections and permissions, input and output screening, human checkpoints for high-stakes or irreversible actions, and ongoing activity monitoring. Zapier’s AI Guardrails step can screen for categories including personally identifiable information, prompt injection, toxic content, and sentiment inside a visual workflow.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-30/06-zapier-guardrails.svg?v=20260830-2",
-      "date_published": "2026-08-30T13:00:00-05:00",
-      "tags": [
-        "no-code agents",
-        "scoped permissions",
-        "AI guardrails",
-        "human checkpoints",
-        "monitoring",
-        "zapier.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-29-363c6a4d",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/",
-      "title": "GitHub turns Visual Studio into a more controllable agent cockpit",
-      "summary": "GitHub’s August Visual Studio update adds organization-level custom agents, per-model Low/Medium/High thinking effort, model and context-window comparison, plan-usage visibility, and a Git agent that can review uncommitted changes or individual commits before a pull request. The release applies across Copilot plans, though publishing organization agents requires a GitHub organization.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/01-visual-studio-control.svg",
-      "date_published": "2026-08-29T13:00:00-05:00",
-      "tags": [
-        "GitHub Copilot",
-        "Visual Studio",
-        "custom agents",
-        "reasoning controls",
-        "code review",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-29-da2869d0",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/",
-      "title": "OpenAI’s planned Cursor cutoff exposes model-provider concentration risk",
-      "summary": "OpenAI says it notified SpaceX that it intends to wind down the contract supplying OpenAI models to Cursor, proposing November 12, 2026 as the shutoff date after SpaceX’s acquisition of Cursor. OpenAI also says it will not provide Cursor with future models, including its upcoming Astra model. These are OpenAI’s stated contractual and safety reasons; the announcement does not include Cursor or SpaceX’s response.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/02-cursor-bridge.svg",
-      "date_published": "2026-08-29T13:00:00-05:00",
-      "tags": [
-        "Model-provider concentration",
-        "coding assistants",
-        "vendor risk",
-        "fallback architecture",
-        "resilience",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-29-74777276",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/claude-for-teachers-expands-from-individuals-to-governed-school-deployments/",
-      "title": "Claude for Teachers expands from individuals to governed school deployments",
-      "summary": "Anthropic made Claude for Teachers available to qualifying U.S. K–12 schools and districts as a free Enterprise offering for one year if they sign up by June 30, 2027. It adds centralized administration, SSO, role-based access, domain claiming, K–12 terms and a data-processing agreement. Two new skills support lesson preparation and standards-aligned checks for understanding; the latter is limited to math at launch.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/03-teacher-standards.svg",
-      "date_published": "2026-08-29T13:00:00-05:00",
-      "tags": [
-        "AI in education",
-        "teacher workflows",
-        "standards alignment",
-        "privacy",
-        "organizational governance",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-29-67aff0e3",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/openai-s-thailand-accelerator-puts-reliability-between-prototype-and-deployment/",
-      "title": "OpenAI’s Thailand accelerator puts reliability between prototype and deployment",
-      "summary": "OpenAI and Thailand’s Ministry of Higher Education, Science, Research and Innovation launched an eight-week accelerator for ten startups in health, wellness, and education. The program connects founders with mentors from government, universities, research, investment, and industry. OpenAI explicitly frames testing, real-user feedback, safeguards, and a sustainable business model as the bridge from demo to dependable product.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/04-thailand-accelerator.svg",
-      "date_published": "2026-08-29T13:00:00-05:00",
-      "tags": [
-        "AI deployment",
-        "user testing",
-        "safeguards",
-        "startup accelerators",
-        "reliability",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-29-ebf7f693",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/anthropic-publishes-copyable-claude-tag-workflows-for-real-team-work/",
-      "title": "Anthropic publishes copyable Claude Tag workflows for real team work",
-      "summary": "Anthropic published more than a dozen Claude Tag use cases with prompts and setup guidance, highlighting three internal workflows: converting a Slack thread into customer-ready collateral, compiling weekly issue reports, and running legal review. In one example, a product marketer turned a 15-plus-message thread into a review-ready one-pager in 45 minutes by tagging Claude inside the conversation.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/05-claude-tag-thread.svg",
-      "date_published": "2026-08-29T13:00:00-05:00",
-      "tags": [
-        "Claude Tag",
-        "Slack agents",
-        "delegated team workflows",
-        "shared context",
-        "human review",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-29-b98b5a80",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/",
-      "title": "WRITER puts sessions, files, and reusable playbooks inside Slack",
-      "summary": "WRITER’s August 28 changelog announces its Slack experience for starting agent sessions, launching playbooks, and producing deliverables inside a conversation. The updated setup guide says users can run published playbooks from a picker, resume prior sessions, @mention the agent in channels, and submit office documents, images, audio, or video for processing—including on Slack mobile.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-29/06-writer-playbook.svg",
-      "date_published": "2026-08-29T13:00:00-05:00",
-      "tags": [
-        "WRITER",
-        "Slack agents",
-        "reusable playbooks",
-        "file processing",
-        "governance",
-        "support.writer.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-28-00afae1b",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/",
-      "title": "GitHub closes the review gap for agent-authored and very large pull requests",
-      "summary": "GitHub expanded Copilot code review so automatically requested reviews of pull requests opened by Copilot cloud agent receive the full agentic review rather than a limited fallback. GitHub also removed the previous 300-file or 20,000-line review ceiling and added explicit resolution reasons—“Addressed,” “Won’t fix,” and “Incorrect”—for Copilot comments.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/copilot-review-loop.svg",
-      "date_published": "2026-08-28T13:00:00-05:00",
-      "tags": [
-        "Agentic code review",
-        "coding agents",
-        "evaluation feedback",
-        "human review",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-28-b578ffa1",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/warp-turns-human-feedback-into-reviewable-agent-skill-updates/",
-      "title": "Warp turns human feedback into reviewable agent-skill updates",
-      "summary": "Anthropic published Warp’s pattern for self-improving agents. A task-specific base skill performs work; people leave feedback where the work already occurs; and a scheduled “improver” skill proposes a small edit to the base skill. The change moves through a normal pull-request review before becoming part of later runs. Warp says it applies the pattern to specification, review, and issue-triage agents.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/self-improving-loop.svg",
-      "date_published": "2026-08-28T13:00:00-05:00",
-      "tags": [
-        "Loop engineering",
-        "skills",
-        "feedback",
-        "agent improvement",
-        "progressive disclosure",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-28-633f53c9",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/randomized-study-separates-chatgpt-s-quality-gains-from-critical-thinking-s-orig/",
-      "title": "Randomized study separates ChatGPT’s quality gains from critical thinking’s originality gains",
-      "summary": "More than 1,000 first-year Bocconi University students were assigned by class period to ChatGPT access, causal-reasoning training, both, or neither while completing a real marketing case. Human graders used a five-point rubric, and researchers separately measured idea variety and causal reasoning. ChatGPT access raised rubric scores by almost one point and produced clearer, more expert-like work; causal-reasoning training produced more distinct ideas and clearer explanations of why ideas might succeed or fail. Students receiving both showed both effects.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/ai-critical-thinking.svg",
-      "date_published": "2026-08-28T13:00:00-05:00",
-      "tags": [
-        "Learning",
-        "critical thinking",
-        "evaluation",
-        "originality",
-        "human judgment",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-28-04a6435b",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/openai-pairs-brazil-expansion-with-role-specific-ai-literacy/",
-      "title": "OpenAI pairs Brazil expansion with role-specific AI literacy",
-      "summary": "Alongside launching commercial operations in Brazil, OpenAI announced planned programs with Brazilian organizations: national AI-literacy training for legal professionals with ENTER; free, mobile-first training for micro and small-business owners with Estímulo; and exploration of AI-supported public services with São Paulo and Prodam. OpenAI reports that 35% of classified Brazilian ChatGPT messages were work-related in June, versus 30% globally.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/brazil-ai-literacy.svg",
-      "date_published": "2026-08-28T13:00:00-05:00",
-      "tags": [
-        "AI literacy",
-        "legal professionals",
-        "small business",
-        "public service",
-        "responsible adoption",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-28-239cf04c",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/a-non-technical-marketer-builds-a-recurring-personalized-briefing-agent/",
-      "title": "A non-technical marketer builds a recurring personalized briefing agent",
-      "summary": "Anthropic field marketer Adam Ward described replacing hours of Sunday preparation with a Claude workflow that converts a weekly marketing report into personalized Monday briefings for each sales representative. He began by explaining the business problem as a non-technical product manager, piloted with a small group, gathered corrections from recipients, and folded those corrections into explicit operating rules.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/personalized-briefings.svg",
-      "date_published": "2026-08-28T13:00:00-05:00",
-      "tags": [
-        "Recurring briefings",
-        "personalization",
-        "feedback",
-        "non-technical agent building",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-28-faa38e9f",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/",
-      "title": "Microsoft Agent Builder accepts files up to 512 MB for grounded agents",
-      "summary": "Microsoft’s latest Microsoft 365 Copilot release notes say Agent Builder now accepts file uploads up to 512 MB on Android, iOS, Windows, and the web. Makers can use larger manuals and other documents as grounding sources without first splitting or compressing them.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-28/large-file-grounding.svg",
-      "date_published": "2026-08-28T13:00:00-05:00",
-      "tags": [
-        "No-code agents",
-        "grounding",
-        "large files",
-        "domain knowledge",
-        "RAG",
-        "Microsoft"
       ]
     }
   ]

@@ -37,7 +37,7 @@
     "media_receipt": {
       "path": "_records/editorial/media-preflight/2026-09-29.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:a4fc2c103d36726a259095031723081baddf0afa"
+      "digest": "git_blob_sha1:d710ca1215b899715a1ea31681c2811c5476929f"
     },
     "image_manifest": {
       "path": "_records/editorial-handoff/images.json",
@@ -142,6 +142,12 @@
       "from": "editorial-handoff/production/dab-edition-2026-09-29",
       "to": "editorial-handoff/production/2026-09-29",
       "reason": "Align production branch identity with protected publication contract without changing qualified content."
+    },
+    "media_preflight_refresh": {
+      "mode": "locked_media_live_reachability_only",
+      "checked_at": "2026-09-30T23:36:16Z",
+      "selection_changed": false,
+      "static_metadata_changed": false
     }
   }
 }
