@@ -7,6 +7,11 @@
 > When complete binary payload delivery itself is unavailable, retain the existing classification `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`.
 > Preserve all V2 raw/final provenance, exact-byte verification and professional-quality
 > gates. A current denial stops that operation; do not use another endpoint to evade it.
+> Before every new native image attempt, compile `strict-image-render-spec-v1`: omit
+> headline/source/orchestration text from the render prompt, lint positive fields against
+> prohibited story specifics, use an exact visible-text allowlist, prohibit people/human
+> icons, and explicitly forbid cross-story carryover. A render-spec lint failure consumes
+> zero image attempts.
 
 ## Scope and authorities
 
