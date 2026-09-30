@@ -45,7 +45,7 @@ test('strict render spec prohibits people and inherited story motifs',()=>{
  const e=buildImageGenerationExecution(packet());
  assert.match(e.prompt,/People, faces, bodies, avatars, group\/person icons, humanoids/);
  assert.match(e.prompt,/Cross-story carryover is a failure/);
- assert.match(e.prompt,/Do not reuse any prior story, image, visual motif/);
+ assert.match(e.prompt,/Ignore and do not reuse any prior story, image, visual motif/);
 });
 test('render-spec compiler is deterministic and exact-text constrained',()=>{
  const spec=compileImageRenderSpec(packet());
