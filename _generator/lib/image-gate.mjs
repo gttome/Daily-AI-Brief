@@ -124,6 +124,11 @@ function editorialEvidenceErrors(item){
   return errors;
 }
 
+export function requiresNativeImageExecutionReceipt(editionDate,entry={}){
+  const verifiedProfessionalDiagram=entry?.generation_method==='professional_editorial_diagram'&&entry?.renderer_verified===true&&entry?.visual_reviewed===true&&entry?.accepted_locked===true&&entry?.lock_status==='accepted_locked';
+  return editionDate>=AUTOMATED_IMAGE_EFFECTIVE_DATE&&!verifiedProfessionalDiagram;
+}
+
 function imageContextErrors(root,item,{requireAutomated=false}={}){
   const errors=[],context=item?.generation_context;
   if(context?.mode!=='single_story'||JSON.stringify(context?.story_ids)!==JSON.stringify([item.story_id])||context?.includes_edition_context!==false)errors.push('quality_evidence_image_context_not_isolated');
@@ -170,7 +175,7 @@ function qualityRecordErrors(root,edition,record,manifestEntries,assets){
     if(Boolean(item.deployment_verification_required)!==Boolean(entry.deployment_verification_required))errors.push('quality_evidence_deployment_verification_flag_mismatch:'+entry.path);
     errors.push(...structuralEvidenceErrors(item).map(x=>x+':'+entry.path));
     errors.push(...editorialEvidenceErrors(item).map(x=>x+':'+entry.path));
-    errors.push(...imageContextErrors(root,item,{requireAutomated:edition.brief_date>=AUTOMATED_IMAGE_EFFECTIVE_DATE}).map(x=>x+':'+entry.path));
+    errors.push(...imageContextErrors(root,item,{requireAutomated:requiresNativeImageExecutionReceipt(edition.brief_date,entry)}).map(x=>x+':'+entry.path));
     errors.push(...replacementErrors(item).map(x=>x+':'+entry.path));
     const gate=item.editorial_quality_gate||{};
     composition.push(gate.composition_signature);layouts.push(gate.layout_signature);grammars.push(gate.diagram_grammar);hierarchies.push(gate.hierarchy_signature);annotations.push(gate.annotation_pattern_signature);
