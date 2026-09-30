@@ -100,15 +100,18 @@ test('generation instruction cannot be replaced with orchestration text',()=>{
   assert.ok(validateQualificationImageGenerationExecution(execution).includes('generation_instruction_must_derive_only_from_sealed_story_packet'));
 });
 
-test('generation instruction keeps factual boundaries but allows story-fit composition',()=>{
+test('generation instruction keeps factual boundaries under strict render-spec isolation',()=>{
   const payload=buildQualificationImageWorkerPayload(sealedPacket);
   const instruction=buildQualificationImageGenerationInstruction(payload);
-  assert.match(instruction,/story_id: story-m02/);
-  assert.doesNotMatch(instruction,/IH2/);
-  assert.match(instruction,/professional, detailed, readable textbook\/editorial illustration/);
-  assert.match(instruction,/Linear flows, card\/panel structures, comparisons, taxonomies/);
-  assert.match(instruction,/Short generic non-factual headings, descriptors, legends, and technical symbols\/glyphs are permitted/);
-  assert.match(instruction,/Unsupported factual prose and invented specifics remain prohibited/);
+  assert.doesNotMatch(instruction,/story_id:|candidate_id:|headline:|source_url:|IH2/);
+  assert.match(instruction,/VERIFIED FACTUAL ELEMENTS: GitHub Security Lab Taskflow Agent; AI-powered fuzzing; fuzzing taskflow; software testing workflow/);
+  assert.match(instruction,/PROHIBITED SPECIFICS: invented vulnerability names; invented code; invented repository files; unsupported exploit results; unsupported product UI/);
+  assert.match(instruction,/COMPOSITION MODE: mechanism_rich_textbook_plate/);
+  assert.match(instruction,/VISIBLE TEXT ALLOWLIST — EXACT: Target Software \| GitHub Security Lab Taskflow Agent \| AI-powered Fuzzing Workflow \| Generated Test Inputs \| Observed Failure Signal \| Review Checkpoint/);
+  assert.match(instruction,/render NO other visible words/);
+  assert.match(instruction,/Cross-story carryover is a failure/);
+  assert.match(instruction,/People, faces, bodies, avatars, group\/person icons, humanoids/);
+  assert.doesNotMatch(instruction,/Short generic non-factual headings|Useful duplicates are permitted/);
 });
 
 test('approved composition archetypes are accepted',()=>{
