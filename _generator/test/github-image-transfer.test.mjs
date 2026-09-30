@@ -56,6 +56,7 @@ test('file bytes -> one Contents PUT -> raw read-back at exact commit',async()=>
  assert.equal(r.read_back_verified,true);assert.equal(r.image_acceptance_asserted,false);assert.equal(r.sha256,digest(small));assert.deepEqual(m.stored,small);
  assert.deepEqual(r.api_calls,{requests:4,write_requests:1,raw_reads:1});assert.equal(JSON.parse(m.calls[2].init.body).sha,undefined);
 });
+test('Git blob identity is deterministic for the exact local file bytes',async()=>{assert.equal(blob(small),createHash('sha1').update(`blob ${small.length}\\0`).update(small).digest('hex'));});
 test('greater-than-1MiB binary works with empty object content and raw media',async()=>{
  const m=mock({existing:large}),r=await transferImageFile(opts({...m,sourcePath:big,expectedSha256:digest(large)}));
  assert.equal(r.reused,true);assert.equal(r.bytes,large.length);assert.equal(r.api_calls.write_requests,0);assert.equal(r.api_calls.raw_reads,1);
