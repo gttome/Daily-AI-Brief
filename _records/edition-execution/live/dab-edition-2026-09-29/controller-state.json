@@ -16,7 +16,7 @@
     "edition_id": "dab-edition-2026-09-29",
     "edition_date": "2026-09-29",
     "original_cutoff": "2026-09-30T00:03:07.131932Z",
-    "release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+    "release_sha": "c4f739774fb4d6a628d4dcf6c1c14bffd741140b",
     "research_baseline_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
     "execution_id": "reliable-edition-20260929-first",
     "policies": {
@@ -35,7 +35,7 @@
     "publication",
     "public_closed"
   ],
-  "version": 14,
+  "version": 15,
   "status": "active",
   "current_operation": "images",
   "task05": {
@@ -50,7 +50,7 @@
     "accepted_images": 3,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "m06_attempt_2_closed_waiting_render_policy_hardening",
+    "substage": "strict_render_spec_released_ready_to_bind_m06_attempt_3",
     "editorial_input_ready": true,
     "editorial_kernel_locked": true,
     "media_locked": true,
@@ -63,7 +63,8 @@
     "last_rejected_candidate_id": "m06",
     "last_rejected_attempt": 2,
     "last_rejected_result_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-02/result.json",
-    "next_action": "release_strict_render_spec_then_bind_m06_attempt_3"
+    "next_action": "bind_m06_attempt_3_once",
+    "render_spec_policy": "strict-image-render-spec-v1"
   },
   "completed": {
     "admission": {
@@ -262,7 +263,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T06:05:00Z",
+  "updated_at": "2026-09-30T06:22:00Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -282,14 +283,20 @@
   },
   "release_rebinding": {
     "status": "applied",
-    "evidence_path": "_records/edition-execution/live/dab-edition-2026-09-29/release-rebinding-de006e7.json",
-    "evidence_commit": "ee1c7929488e7b74c9092544388f5f35c789981e",
-    "from_release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
-    "to_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+    "evidence_path": "_records/edition-execution/live/dab-edition-2026-09-29/release-rebinding-c4f7397.json",
+    "evidence_commit": "f25e0b4bf8f5d5b44858ee9d5e53ab937d4f77ec",
+    "from_release_sha": "de006e7472c228b1c03c7ba4c511fb3593f901f4",
+    "to_release_sha": "c4f739774fb4d6a628d4dcf6c1c14bffd741140b",
     "preserved_stages": [
+      "admission",
       "discovery",
       "editorial",
       "media"
+    ],
+    "preserved_accepted_images": [
+      "m02",
+      "m03",
+      "m05"
     ]
   }
 }
