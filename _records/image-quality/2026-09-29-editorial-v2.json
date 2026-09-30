@@ -29,7 +29,7 @@
   },
   "images": [
     {
-      "story_id": "semantic-sep29-01",
+      "story_id": "dab-story-2026-09-29-73a1c827",
       "candidate_id": "m02",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m02-2.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m02-2.png",
@@ -100,13 +100,13 @@
       "generation_context": {
         "mode": "single_story",
         "story_ids": [
-          "semantic-sep29-01"
+          "dab-story-2026-09-29-73a1c827"
         ],
         "includes_edition_context": false,
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m02.json",
-        "request_sha256": "bc9003b5cea67cc0c4620061d7473668894f0159c66f4d52afc613d606a59f9e"
+        "request_sha256": "86a73fb95e3de48a56d789346b84a01152fd315a98babdbac7f4ecc07604c27c"
       },
       "overall_gate": "pass",
       "result": "pass",
@@ -114,7 +114,7 @@
       "composition": "parallel-agent-lanes-validation-gate"
     },
     {
-      "story_id": "semantic-sep29-02",
+      "story_id": "dab-story-2026-09-29-a64c16f9",
       "candidate_id": "m03",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m03-2.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m03-2.png",
@@ -176,22 +176,22 @@
           "architecture boundaries"
         ],
         "composition_signature": "biology-world-model-hub",
-      "layout_signature": "central-hub-with-satellites",
-      "diagram_grammar": "research-harness-hub",
+        "layout_signature": "central-hub-with-satellites",
+        "diagram_grammar": "research-harness-hub",
         "hierarchy_signature": "world-model-tools-literature-feedback",
         "annotation_pattern_signature": "hub-and-satellite-labels",
-      "assessment": "The accepted m03 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images."
+        "assessment": "The accepted m03 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images."
       },
       "generation_context": {
         "mode": "single_story",
-      "story_ids": [
-          "semantic-sep29-02"
+        "story_ids": [
+          "dab-story-2026-09-29-a64c16f9"
         ],
         "includes_edition_context": false,
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m03.json",
-        "request_sha256": "2952dccae701608fdb206af199c2b977d750dd50ed04b03bd8ee43eef966ca2c"
+        "request_sha256": "e8dae5eeee1f56db39856ef14e666f679a7ccae6edc9cd3b3380f30286fb9d92"
       },
       "overall_gate": "pass",
       "result": "pass",
@@ -199,7 +199,7 @@
       "composition": "biology-world-model-hub"
     },
     {
-      "story_id": "semantic-sep29-03",
+      "story_id": "dab-story-2026-09-29-626077c7",
       "candidate_id": "m05",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png",
@@ -270,13 +270,13 @@
       "generation_context": {
         "mode": "single_story",
         "story_ids": [
-          "semantic-sep29-03"
+          "dab-story-2026-09-29-626077c7"
         ],
         "includes_edition_context": false,
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m05.json",
-        "request_sha256": "a747d3dad0dae02e8740da3eb5c7e155a02872525fa874ab66912389cb8927aa"
+        "request_sha256": "00a06af8ec6b992a529c01b8abbbddd5ccbd6ba2f282a71e92f9867c47ccf35a"
       },
       "overall_gate": "pass",
       "result": "pass",
@@ -284,7 +284,7 @@
       "composition": "narration-preview-revision-loop"
     },
     {
-      "story_id": "semantic-sep29-04",
+      "story_id": "dab-story-2026-09-29-7eb33bf7",
       "candidate_id": "m06",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
@@ -355,21 +355,21 @@
       "generation_context": {
         "mode": "single_story",
         "story_ids": [
-          "semantic-sep29-04"
+          "dab-story-2026-09-29-7eb33bf7"
         ],
         "includes_edition_context": false,
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m06.json",
-        "request_sha256": "4f3f9188043fa5862421268b6d789e98c4305e8837561e308ceb9be402382053"
+        "request_sha256": "4e23e6d38f45d5b26350287f07cdfd6f03182a62c89d844562eb31ff52753207"
       },
       "overall_gate": "pass",
       "result": "pass",
       "assessment": "The accepted m06 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images.",
       "composition": "agent-builder-staged-adoption"
     },
-   {
-      "story_id": "semantic-sep29-05",
+    {
+      "story_id": "dab-story-2026-09-29-e2811e43",
       "candidate_id": "m01",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
@@ -440,13 +440,13 @@
       "generation_context": {
         "mode": "single_story",
         "story_ids": [
-          "semantic-sep29-05"
+          "dab-story-2026-09-29-e2811e43"
         ],
         "includes_edition_context": false,
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m01.json",
-        "request_sha256": "89ae0439375ce1dc04da97251f703617623f810856e6289974d743ba308a0a73"
+        "request_sha256": "67124e592d4d12dbe3c82516d1537073f4452ebe6489e596125b89523559cde1"
       },
       "overall_gate": "pass",
       "result": "pass",
@@ -454,7 +454,7 @@
       "composition": "four-sources-to-skill-to-task"
     },
     {
-      "story_id": "semantic-sep29-06",
+      "story_id": "dab-story-2026-09-29-196c601d",
       "candidate_id": "m08",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
@@ -518,20 +518,20 @@
         "composition_signature": "bedrock-model-evaluation-funnel",
         "layout_signature": "bounded-evaluation-funnel",
         "diagram_grammar": "decision-funnel-with-criteria-grid",
-      "hierarchy_signature": "workflow-model-criteria-selection",
-      "annotation_pattern_signature": "boundary-and-criteria-labels",
+        "hierarchy_signature": "workflow-model-criteria-selection",
+        "annotation_pattern_signature": "boundary-and-criteria-labels",
         "assessment": "The accepted m08 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images."
       },
       "generation_context": {
         "mode": "single_story",
         "story_ids": [
-          "semantic-sep29-06"
+          "dab-story-2026-09-29-196c601d"
         ],
         "includes_edition_context": false,
         "reviewed_subject_match": "pass",
         "unrelated_status_artwork": false,
         "request_path": "_records/image-context/2026-09-29/m08.json",
-        "request_sha256": "eadef92b073a291a3a43cf4afa2bb0db7c17831df100ce1db2dccdffae95f051"
+        "request_sha256": "128278d979440855930258114a0739b8cba7454ed600116dd702c740926338cf"
       },
       "overall_gate": "pass",
       "result": "pass",

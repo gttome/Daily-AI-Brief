@@ -9,7 +9,7 @@
   "stories": [
     {
       "canonical_ordinal": 1,
-      "story_id": "semantic-sep29-01",
+      "story_id": "dab-story-2026-09-29-73a1c827",
       "candidate_id": "m02",
       "focus": "technical_ai_engineering",
       "headline": "NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator",
@@ -38,7 +38,7 @@
     },
     {
       "canonical_ordinal": 2,
-      "story_id": "semantic-sep29-02",
+      "story_id": "dab-story-2026-09-29-a64c16f9",
       "candidate_id": "m03",
       "focus": "technical_ai_engineering",
       "headline": "Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness",
@@ -67,7 +67,7 @@
     },
     {
       "canonical_ordinal": 3,
-      "story_id": "semantic-sep29-03",
+      "story_id": "dab-story-2026-09-29-626077c7",
       "candidate_id": "m05",
       "focus": "applied_genai_knowledge_workers",
       "headline": "Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS",
@@ -96,7 +96,7 @@
     },
     {
       "canonical_ordinal": 4,
-      "story_id": "semantic-sep29-04",
+      "story_id": "dab-story-2026-09-29-7eb33bf7",
       "candidate_id": "m06",
       "focus": "applied_genai_knowledge_workers",
       "headline": "Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout",
@@ -126,7 +126,7 @@
     },
     {
       "canonical_ordinal": 5,
-      "story_id": "semantic-sep29-05",
+      "story_id": "dab-story-2026-09-29-e2811e43",
       "candidate_id": "m01",
       "focus": "agents_non_technical_people",
       "headline": "Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex",
@@ -156,7 +156,7 @@
     },
     {
       "canonical_ordinal": 6,
-      "story_id": "semantic-sep29-06",
+      "story_id": "dab-story-2026-09-29-196c601d",
       "candidate_id": "m08",
       "focus": "agents_non_technical_people",
       "headline": "AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows",
