@@ -77,6 +77,7 @@ jobs:
           const shouldMedia=s.status==='active'&&current==='media';
           const shouldImages=s.status==='active'&&current==='images';
           const shouldSeal=s.status==='active'&&current==='seal_bundle';
+          const shouldQualification=s.status==='active'&&current==='qualification';
           const rows={
             current_operation:String(current),
             should_discovery:String(shouldDiscovery),
@@ -84,6 +85,7 @@ jobs:
             should_media:String(shouldMedia),
             should_images:String(shouldImages),
             should_seal:String(shouldSeal),
+            should_qualification:String(shouldQualification),
             cutoff:s.edition.original_cutoff,
             date:s.edition.edition_date,
             release:s.edition.release_sha,
@@ -95,7 +97,7 @@ jobs:
           NODE
 
       - name: No-op when another operation owns the cursor
-        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true' && steps.state.outputs.should_images != 'true' && steps.state.outputs.should_seal != 'true'
+        if: steps.state.outputs.should_discovery != 'true' && steps.state.outputs.should_editorial != 'true' && steps.state.outputs.should_media != 'true' && steps.state.outputs.should_images != 'true' && steps.state.outputs.should_seal != 'true' && steps.state.outputs.should_qualification != 'true'
         run: echo "Durable cursor is ${{ steps.state.outputs.current_operation }}; this executor has no eligible deterministic stage for that cursor."
 
       - name: Verify protected release and admission
@@ -640,6 +642,96 @@ jobs:
             exit 0
           fi
           git commit -m "Seal and verify Sep 29 reliable edition bundle"
+          git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
+
+      - name: Verify sealed bundle before qualification
+        if: steps.state.outputs.should_qualification == 'true'
+        shell: bash
+        env:
+          BUNDLE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json
+        run: |
+          set -euo pipefail
+          node _tools/edition-execution.mjs verify --bundle "$BUNDLE_PATH"
+
+      - name: Run reliable-edition deterministic qualification gate
+        if: steps.state.outputs.should_qualification == 'true'
+        shell: bash
+        env:
+          DAB_QUALIFICATION_NONPRODUCTION: '1'
+        run: |
+          set -euo pipefail
+          node --test _generator/test/*.test.mjs
+          node _tools/validate-contracts.mjs
+          node _generator/cli.mjs validate-repo --commit "$(git rev-parse HEAD)"
+          node _generator/cli.mjs integration-check --image-review _records/editorial-handoff/images.json
+
+      - name: Build reliable-edition qualification site
+        if: steps.state.outputs.should_qualification == 'true'
+        uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697
+        with:
+          source: ./
+          destination: ./_site
+
+      - name: Record bundle-bound qualification PASS and advance cursor
+        if: steps.state.outputs.should_qualification == 'true'
+        shell: bash
+        env:
+          STATE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/controller-state.json
+          BUNDLE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle.json
+          QUAL_RESULT: _records/edition-execution/live/dab-edition-2026-09-29/qualification/result.json
+        run: |
+          set -euo pipefail
+          git fetch --no-tags origin main
+          main_sha="$(git rev-parse origin/main)"
+          node - "$STATE_PATH" "$BUNDLE_PATH" "$QUAL_RESULT" "$main_sha" "$GITHUB_RUN_ID" <<'NODE'
+          const fs=require('fs'),path=require('path');
+          const [statePath,bundlePath,resultPath,mainSha,workflowRunId]=process.argv.slice(2);
+          const state=JSON.parse(fs.readFileSync(statePath,'utf8'));
+          const bundle=JSON.parse(fs.readFileSync(bundlePath,'utf8'));
+          if(state.current_operation!=='qualification')throw new Error('stale_qualification_executor');
+          if(bundle.bundle_sha256!==state.completed?.seal_bundle?.bundle_sha256)throw new Error('qualification_bundle_binding_mismatch');
+          const now=new Date().toISOString();
+          const result={
+            schema_version:'reliable-edition-qualification-result-v1',
+            run_id:state.edition.execution_id+'-qualification-1',
+            edition_id:state.edition.edition_id,
+            edition_date:state.edition.edition_date,
+            execution_mode:'qualification_nonproduction',
+            result:'pass',
+            simulated_lifecycle:'CLOSED',
+            branch:state.controller.branch,
+            branch_head:process.env.GITHUB_SHA,
+            observed_main_sha:mainSha,
+            deterministic_workflow_run_id:Number(workflowRunId),
+            bundle_path:bundlePath,
+            bundle_sha256:bundle.bundle_sha256,
+            release_sha:bundle.release_sha,
+            cutoff:bundle.cutoff,
+            work_usage:0,
+            codex_usage:0,
+            paid_api_usage:0,
+            deterministic_model_calls:0,
+            production_mutation:false,
+            production_pr:false,
+            production_pages_deployment:false,
+            editorial_model_passes:state.completed?.editorial?.editorial_model_passes??1,
+            post_editorial_model_passes:state.completed?.editorial?.post_editorial_model_passes??0,
+            verified_at:now,
+            note:'Bundle-bound reliable-edition qualification. This is not a public production closure.'
+          };
+          fs.mkdirSync(path.dirname(resultPath),{recursive:true});
+          fs.writeFileSync(resultPath,JSON.stringify(result,null,2)+'\n');
+          state.version=(Number.isInteger(state.version)?state.version:0)+1;
+          state.completed={...(state.completed||{}),qualification:result};
+          state.current_operation='production_admission';
+          state.task08={...(state.task08||{}),status:'done',substage:'qualification_passed',completed_at:now,qualification_result_path:resultPath};
+          state.updated_at=now;
+          fs.writeFileSync(statePath,JSON.stringify(state,null,2)+'\n');
+          NODE
+          git config user.name "github-actions[bot]"
+          git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git add "$STATE_PATH" "$QUAL_RESULT"
+          git commit -m "Qualify sealed Sep 29 reliable edition bundle"
           git push origin "HEAD:reliable-edition/dab-edition-2026-09-29"
 
       - name: Stage summary
