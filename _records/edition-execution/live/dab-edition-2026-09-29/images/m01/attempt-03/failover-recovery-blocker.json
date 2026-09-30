@@ -1,0 +1,66 @@
+{
+  "schema_version": "reliable-edition-failover-blocker-v1",
+  "edition_id": "dab-edition-2026-09-29",
+  "branch": "reliable-edition/dab-edition-2026-09-29",
+  "observed_branch_head": "b8603c8fd802e1d4abdfb2f1772d4b135d08b2da",
+  "observed_at": "2026-09-30T18:42:34Z",
+  "controller_last_run_time": "2026-09-30T18:17:57.519433Z",
+  "active_executor_observation": {
+    "github_actions_in_progress": 0,
+    "github_actions_queued": 0,
+    "durable_progress_commit_at": "2026-09-30T18:10:28Z",
+    "takeover_condition_met": true
+  },
+  "operation": {
+    "candidate_id": "m01",
+    "attempt": 3,
+    "operation_key": "dab-edition-2026-09-29-m01-attempt-03-e0e7b595",
+    "durable_binding_generation_started": false,
+    "durable_raw_png_present": false,
+    "durable_result_present": false
+  },
+  "recovery_guard": {
+    "source": "scheduler-local recovery hint supplied to failover",
+    "native_generation_id_hint": "597dc394-8a5f-493f-9e67-4c4e63085569",
+    "native_file_id_hint": "file_00000000978081faacdc46ccd5354e71",
+    "expected_bytes": 1147181,
+    "expected_dimensions": "1536x1024",
+    "expected_sha256": "995c91e9503e4bb79649c2cfd0a705e6e929e700442fabacaf77ea69dd5d2b89",
+    "expected_git_blob": "427e852b182ff5d9c1df8a296c26325cebc3806b",
+    "proof_status": "unverified_in_failover_context"
+  },
+  "recovery_checks": [
+    {
+      "surface": "conversation_files",
+      "result": "not_visible",
+      "detail": "Current failover conversation contains no visible files."
+    },
+    {
+      "surface": "files_materialize_exact_native_file_id",
+      "result": "blocked_not_visible",
+      "detail": "Known file ID could not be resolved because it is not visible in this failover files surface."
+    },
+    {
+      "surface": "library_recent_and_semantic_search",
+      "result": "not_found",
+      "detail": "No matching m01 attempt-3 raw asset, native generation ID, SHA-256, or operation-key asset was found in the persistent Library."
+    },
+    {
+      "surface": "github_git_blob_expected_sha",
+      "result": "not_found",
+      "detail": "GitHub returned 404 for expected blob 427e852b182ff5d9c1df8a296c26325cebc3806b; the hinted bytes were not previously uploaded as a Git blob."
+    }
+  ],
+  "blocker": {
+    "code": "CAPABILITY_BLOCKED_FAILOVER_ACCESS_TO_UNRESOLVED_NATIVE_RESULT_BYTES",
+    "detail": "Failover cannot safely persist or review m01 attempt 3 because the previously produced native file is not visible in this execution context or persistent Library, and the expected Git blob does not exist. Regeneration is prohibited by the recovery guard until durable evidence proves the hinted native outcome did not occur.",
+    "owner_action_required": false,
+    "next_safe_action": "The SAME Public Brief Completion controller should resume this exact operation and attempt recovery from any producer-local/native-result surface available to its own execution context. If the exact bytes become accessible, persist those SAME bytes first, verify content identity, review, and advance. Do not allocate or generate another m01 attempt while this anti-duplication uncertainty remains."
+  },
+  "mutations": {
+    "image_generated": false,
+    "publication_content_changed": false,
+    "qualification_allocated": false,
+    "competing_executor_created": false
+  }
+}
