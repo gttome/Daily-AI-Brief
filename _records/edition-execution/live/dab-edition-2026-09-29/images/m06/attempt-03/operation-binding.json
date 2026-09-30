@@ -21,7 +21,22 @@
     "sha256": "c261f42aec16378140b1ecaa8a2524181f310909461239d9884bc1810ce13057",
     "git_blob_sha": "fa46d8aa8ffd38eb21e41e3450d970b913133422"
   },
-  "review": null,
-  "persistence": null,
-  "disposition": "generated_transfer_pending"
+  "review": {
+    "result": "pass",
+    "mode": "automated",
+    "review_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-03/review.json",
+    "final_sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+    "final_git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8"
+  },
+  "persistence": {
+    "raw_path": "_records/edition-execution/live/dab-edition-2026-09-29/images/m06/attempt-03/raw.png",
+    "raw_git_blob_sha": "fa46d8aa8ffd38eb21e41e3450d970b913133422",
+    "raw_commit_sha": "efbe5d306e6b976a9c7ab2f3e218e981f19548e9",
+    "content_address_verified": true,
+    "final_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
+    "final_sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+    "final_git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8",
+    "final_content_address_verified": false
+  },
+  "disposition": "review_pass_final_transfer_pending"
 }
