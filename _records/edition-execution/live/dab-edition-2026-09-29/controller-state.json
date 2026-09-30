@@ -1,0 +1,114 @@
+{
+  "schema_version": "reliable-edition-controller-state-v1",
+  "profile": "reliable-edition-v1",
+  "mission": {
+    "required_public_closed": 2,
+    "verified_public_closed": 0
+  },
+  "controller": {
+    "owner": "chatgpt-scheduled-executor",
+    "automation_id": "6abaf03d6c608191be014dd1765468d3",
+    "single_controller": true,
+    "durable_control_plane": "github_branch_state",
+    "branch": "reliable-edition/dab-edition-2026-09-29"
+  },
+  "edition": {
+    "edition_id": "dab-edition-2026-09-29",
+    "edition_date": "2026-09-29",
+    "original_cutoff": "2026-09-30T00:03:07.131932Z",
+    "release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+    "research_baseline_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+    "execution_id": "reliable-edition-20260929-first",
+    "policies": {
+      "article_freshness": "article-24-72-168-v1"
+    }
+  },
+  "operation_sequence": [
+    "admission",
+    "discovery",
+    "editorial",
+    "media",
+    "images",
+    "seal_bundle",
+    "qualification",
+    "production_admission",
+    "publication",
+    "public_closed"
+  ],
+  "version": 1,
+  "status": "active",
+  "current_operation": "discovery",
+  "task05": {
+    "status": "wip",
+    "binding_exercised": false,
+    "started_at": "2026-09-30T00:00:14.3903414Z"
+  },
+  "task06": {
+    "status": "backlog",
+    "accepted_images": 0,
+    "required_images": 6
+  },
+  "completed": {
+    "admission": {
+      "result": "pass",
+      "proof_key": "1ca4175cfda41490b8814128c39a5b7b40165e93460b571bdaa232cd154eee95",
+      "proof_branch": "editorial-handoff/qualification/reliable-admission-probe-2026-09-29",
+      "persistence_commit": "4dcd14c77a3a66dcd3d91ef9fad737082609fc0a",
+      "git_blob_sha": "77ffaceb440db06914e434bb90e314e5c46ab433",
+      "raw_sha256": "1d2c035d3a46ea2ebdccc0f6c036d5d001181c2616823d27b06b73d4f230cb55",
+      "bytes": 1572145,
+      "verifier_run_id": 36648082372,
+      "verifier_job_id": 109675623193,
+      "evidence_artifact_id": 11069671765,
+      "verified_at": "2026-09-30T00:00:14.3903414Z"
+    }
+  },
+  "handler_registry": {
+    "admission": {
+      "executor": "node _tools/edition-execution.mjs admission-check",
+      "validator": "verifyAdmissionEvidence"
+    },
+    "discovery": {
+      "executor": "node _tools/discover-sources.mjs",
+      "validator": "pinned-cutoff discovery artifact assertions",
+      "execution_host": "github_actions"
+    },
+    "editorial": {
+      "executor": "scheduled ChatGPT one editorial pass",
+      "validator": "node _tools/editorial-kernel.mjs validate"
+    },
+    "media": {
+      "executor": "node _tools/parse-media-source.mjs + existing media selection inputs",
+      "implementation": "_generator/lib/media-source-parsers.mjs",
+      "validator": "publication manifest media/media_receipt gates"
+    },
+    "images": {
+      "executor": "scheduled ChatGPT native image host",
+      "implementation": "_generator/lib/recoverable-image-job.mjs",
+      "transport": "_generator/lib/connector-image-delivery.mjs",
+      "validator": "V2 image review + exact Git read-back + publication manifest image gates"
+    },
+    "seal_bundle": {
+      "executor": "node _tools/edition-execution.mjs seal",
+      "validator": "node _tools/edition-execution.mjs verify"
+    },
+    "qualification": {
+      "executor": ".github/workflows/post-editorial-kernel.yml + continuous-qualification.yml",
+      "validator": "qualification semantic gate + immutable result"
+    },
+    "production_admission": {
+      "executor": "node _tools/edition-execution.mjs promotion-plan",
+      "validator": "bundle/release/production identity binding"
+    },
+    "publication": {
+      "executor": ".github/workflows/publish-candidate.yml + protected CI + exact-head merge",
+      "validator": "trusted-main candidate validation and protected CI"
+    },
+    "public_closed": {
+      "executor": "node _tools/daily-validation.mjs + publication lifecycle",
+      "validator": "independent live completion integrity"
+    }
+  },
+  "blockers": [],
+  "updated_at": "2026-09-30T00:03:07.131932Z"
+}
