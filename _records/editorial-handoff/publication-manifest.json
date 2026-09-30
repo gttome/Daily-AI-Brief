@@ -64,7 +64,7 @@
     "book_mappings": {
       "path": "_data/book-reading.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:b69777cacf31f2cb6e0cf5b24738175e7133b97a"
+      "digest": "git_blob_sha1:9774f0544d70748e9e81ca911d57fe7dd5363079"
     },
     "image_quality_evidence": {
       "path": "_records/image-quality/2026-09-29-editorial-v2.json",
