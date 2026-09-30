@@ -667,6 +667,7 @@ jobs:
           BUNDLE_PATH: _records/edition-execution/live/dab-edition-2026-09-29/sealed-bundle-v2.json
           MANIFEST_PATH: _records/editorial-handoff/publication-manifest.json
           HANDOFF_PATH: _records/editorial-handoff/handoff.json
+          METADATA_PATH: _records/editorial-handoff/metadata-candidates.json
           QUAL_REF: editorial-handoff/qualification/reliable-edition-2026-09-29-Q26
           CUTOFF: ${{ steps.state.outputs.cutoff }}
         run: |
@@ -684,9 +685,24 @@ jobs:
           fs.writeFileSync(handoffPath,JSON.stringify(h,null,2)+'\n');
           fs.writeFileSync(manifestPath,JSON.stringify(m,null,2)+'\n');
           NODE
+          node - "$METADATA_PATH" /tmp/qualification-metadata.json "$CUTOFF" <<'NODE'
+          const fs=require('fs');
+          const [sourcePath,outPath,cutoff]=process.argv.slice(2);
+          const metadata=JSON.parse(fs.readFileSync(sourcePath,'utf8'));
+          const instant=Date.parse(cutoff);
+          if(!Number.isFinite(instant)||Date.parse(metadata.cutoff)!==instant)throw new Error('qualification_metadata_cutoff_instant_mismatch');
+          const parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23',timeZoneName:'longOffset'}).formatToParts(new Date(instant));
+          const byType=Object.fromEntries(parts.filter(p=>p.type!=='literal').map(p=>[p.type,p.value]));
+          const offset=String(byType.timeZoneName||'').replace(/^GMT/,'');
+          const ms=String(new Date(instant).getUTCMilliseconds()).padStart(3,'0');
+          const localCutoff=byType.year+'-'+byType.month+'-'+byType.day+'T'+byType.hour+':'+byType.minute+':'+byType.second+'.'+ms+offset;
+          if(Date.parse(localCutoff)!==instant)throw new Error('qualification_local_cutoff_instant_mismatch');
+          metadata.cutoff=localCutoff;
+          fs.writeFileSync(outPath,JSON.stringify(metadata,null,2)+'\n');
+          NODE
           coverage="$(node -e "const h=require('./_records/editorial-handoff/handoff.json');process.stdout.write(h.coverage_period)")"
           baseline="$(node -e "const m=require('./_records/editorial-handoff/publication-manifest.json');process.stdout.write(m.baseline_sha)")"
-          node _tools/editorial-kernel.mjs expand             --kernel _records/editorial-handoff/kernel.json             --facts _records/editorial-handoff/facts.json             --metadata _records/editorial-handoff/metadata-candidates.json             --images _records/editorial-handoff/images.json             --media _records/editorial-handoff/media.json             --published-at "$CUTOFF"             --coverage "$coverage"             --out /tmp/staged-edition.json
+          node _tools/editorial-kernel.mjs expand             --kernel _records/editorial-handoff/kernel.json             --facts _records/editorial-handoff/facts.json             --metadata /tmp/qualification-metadata.json             --images _records/editorial-handoff/images.json             --media _records/editorial-handoff/media.json             --published-at "$CUTOFF"             --coverage "$coverage"             --out /tmp/staged-edition.json
           rm -rf /tmp/publication-stage
           node _generator/cli.mjs generate             --edition /tmp/staged-edition.json             --out /tmp/publication-stage             --baseline-sha "$baseline"             --observed-at "$CUTOFF"             --run-id "reliable-qualification-$GITHUB_RUN_ID"             --publication-manifest "$MANIFEST_PATH"
           cp -a /tmp/publication-stage/. ./
