@@ -35,7 +35,7 @@
     "publication",
     "public_closed"
   ],
-  "version": 2,
+  "version": 3,
   "status": "active",
   "current_operation": "editorial",
   "task05": {
@@ -50,7 +50,8 @@
     "accepted_images": 0,
     "required_images": 6,
     "started_at": "2026-09-30T00:06:25.726Z",
-    "substage": "editorial_story_packet_preparation"
+    "substage": "single_editorial_pass",
+    "editorial_input_ready": true
   },
   "completed": {
     "admission": {
@@ -133,5 +134,22 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-09-30T00:06:25.726Z"
+  "updated_at": "2026-09-30T00:12:24Z",
+  "editorial_input": {
+    "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
+    "preflight_run_id": 36649105718,
+    "preflight_job_id": 109678851821,
+    "metadata_candidate_count": 20,
+    "article_evidence_count": 9,
+    "article_evidence_chars": 10028,
+    "evidence_sha256": "326e164afbba6c772d3a02c369144163acf4a35967e952ca2d4f7aab6a02e7f2",
+    "coverage_counts": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "preferred_agent_skill_candidate_id": "m01",
+    "model_calls_before_editorial": 0,
+    "ready": true
+  }
 }
