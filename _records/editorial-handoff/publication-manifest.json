@@ -59,7 +59,7 @@
     "watchlist_evidence": {
       "path": "_records/watchlist-sweeps/2026-09-29.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:40c3391fd652712d2ee1a02a74d873d6879fdf1b"
+      "digest": "git_blob_sha1:59673cee8b86f655b03bf8dc9bf2b5f63b9210c4"
     },
     "book_mappings": {
       "path": "_data/book-reading.json",
