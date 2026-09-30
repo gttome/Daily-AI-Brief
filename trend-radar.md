@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 26, 2026
+# Trend Radar — September 29, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,12 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-24 supporting stories appeared in the latest 7 days and 76 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+19 supporting stories appeared in the latest 7 days and 73 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
@@ -107,25 +109,17 @@ Supporting stories:
 - [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
 - [August 31, 2026]({{ '/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/' | relative_url }})
 - [August 31, 2026]({{ '/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/notion-lets-an-ai-agent-propose-edits-without-taking-authorship-control/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/claude-in-chrome-shifts-browser-work-toward-bounded-autonomy/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/claude-for-teachers-expands-from-individuals-to-governed-school-deployments/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/openai-s-thailand-accelerator-puts-reliability-between-prototype-and-deployment/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/randomized-study-separates-chatgpt-s-quality-gains-from-critical-thinking-s-orig/' | relative_url }})
 
 ## Agent memory and context
 
 **COOLING · high confidence**
 
-9 supporting stories appeared in the latest 7 days and 45 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+8 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 29, 2026]({{ '/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/' | relative_url }})
+- [September 29, 2026]({{ '/videos/2026-09-29/general/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
 - [September 26, 2026]({{ '/podcasts/2026-09-26/agents-md-enterprise-deployment/' | relative_url }})
 - [September 25, 2026]({{ '/stories/2026-09-25/microsoft-frames-workplace-ai-as-a-system-of-models-context-agents-and-governance/' | relative_url }})
@@ -175,20 +169,21 @@ Supporting stories:
 - [September 2, 2026]({{ '/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/anthropic-proposes-a-shared-hardware-layer-for-scientific-agents/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/anthropic-publishes-copyable-claude-tag-workflows-for-real-team-work/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/' | relative_url }})
 
 ## AI-assisted development
 
 **STABLE · high confidence**
 
-23 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+18 supporting stories appeared in the latest 7 days and 81 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/' | relative_url }})
+- [September 29, 2026]({{ '/videos/2026-09-29/general/' | relative_url }})
+- [September 29, 2026]({{ '/videos/2026-09-29/agent-skills/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/' | relative_url }})
@@ -282,22 +277,24 @@ Supporting stories:
 - [August 31, 2026]({{ '/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/' | relative_url }})
 - [August 31, 2026]({{ '/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/' | relative_url }})
 - [August 31, 2026]({{ '/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-43 supporting stories appeared in the latest 7 days and 132 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+33 supporting stories appeared in the latest 7 days and 135 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/microsoft-research-s-quine-links-biological-models-tools-literature-and-scientists-in-one-research-h/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/' | relative_url }})
+- [September 29, 2026]({{ '/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/' | relative_url }})
+- [September 29, 2026]({{ '/videos/2026-09-29/general/' | relative_url }})
+- [September 29, 2026]({{ '/videos/2026-09-29/agent-skills/' | relative_url }})
+- [September 29, 2026]({{ '/podcasts/2026-09-29/opus-5-5-model-discussion/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/' | relative_url }})
@@ -457,21 +454,5 @@ Supporting stories:
 - [August 31, 2026]({{ '/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/' | relative_url }})
 - [August 31, 2026]({{ '/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/' | relative_url }})
 - [August 31, 2026]({{ '/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/anthropic-proposes-a-shared-hardware-layer-for-scientific-agents/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/notion-lets-an-ai-agent-propose-edits-without-taking-authorship-control/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/claude-in-chrome-shifts-browser-work-toward-bounded-autonomy/' | relative_url }})
-- [August 30, 2026]({{ '/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/claude-for-teachers-expands-from-individuals-to-governed-school-deployments/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/openai-s-thailand-accelerator-puts-reliability-between-prototype-and-deployment/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/anthropic-publishes-copyable-claude-tag-workflows-for-real-team-work/' | relative_url }})
-- [August 29, 2026]({{ '/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/warp-turns-human-feedback-into-reviewable-agent-skill-updates/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/openai-pairs-brazil-expansion-with-role-specific-ai-literacy/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/a-non-technical-marketer-builds-a-recurring-personalized-briefing-agent/' | relative_url }})
-- [August 28, 2026]({{ '/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

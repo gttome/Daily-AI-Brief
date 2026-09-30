@@ -1,75 +1,75 @@
 {
   "schema_version": "1.0.0",
   "manifest_kind": "daily_ai_brief_publication",
-  "edition_date": "2026-09-26",
-  "edition_id": "dab-edition-2026-09-26",
-  "baseline_sha": "49b179dfe000ec41b7dcf75f59214a2b4a0410cd",
-  "staging_ref": "editorial-handoff/production/2026-09-26-bounded-recovery",
+  "edition_date": "2026-09-29",
+  "edition_id": "dab-edition-2026-09-29",
+  "baseline_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
+  "staging_ref": "editorial-handoff/production/2026-09-29",
   "policy_profile": "under80-v1",
   "artifacts": {
     "kernel": {
       "path": "_records/editorial-handoff/kernel.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:462c3a315ec5e899a02377184eaa23d925405938"
+      "digest": "git_blob_sha1:7a3cfc966ffef59de53b2b1c1f28cdf98c3f6c3c"
     },
     "facts": {
       "path": "_records/editorial-handoff/facts.json",
       "schema_version": "legacy-unversioned",
       "adapter": "candidate-facts-map-v1",
-      "digest": "git_blob_sha1:0b4cbf138883f42be4b9852e7126fdf18ab3ef83"
+      "digest": "git_blob_sha1:70aee59b6245a400da2ec57de8ac038d6823feaf"
     },
     "metadata_candidates": {
       "path": "_records/editorial-handoff/metadata-candidates.json",
       "schema_version": "1.1.0",
-      "digest": "git_blob_sha1:8067885f58ff4f3693215603f2630d639a3e8403"
+      "digest": "git_blob_sha1:1c2ce9b01a87e77b17e69d33e53215cc5ab5330d"
     },
     "article_evidence": {
       "path": "_records/editorial-handoff/article-evidence.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:ed1f1b028ac64684e60b258a68f77130b5e6f2fb"
+      "digest": "git_blob_sha1:57e64e04061f93174235e998458cb7b4cc04bd8f"
     },
     "media": {
       "path": "_records/editorial-handoff/media.json",
       "schema_version": "legacy-unversioned",
       "adapter": "selected-media-v1",
-      "digest": "git_blob_sha1:e4b03571c9442565b411f6ae4a7d0d4bb86009f9"
+      "digest": "git_blob_sha1:5b1427b2d7210db36fe57e96b2435c78b186920d"
     },
     "media_receipt": {
-      "path": "_records/editorial/media-preflight/2026-09-26.json",
+      "path": "_records/editorial/media-preflight/2026-09-29.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:f05aed16dd7c7f77a1a78e9a9c4bd1ee78c43349"
+      "digest": "git_blob_sha1:d710ca1215b899715a1ea31681c2811c5476929f"
     },
     "image_manifest": {
       "path": "_records/editorial-handoff/images.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:e2bbac803fbe84270c48ad8a1cd82c97b7e036d0"
+      "digest": "git_blob_sha1:3f911e6dff7fae4fda1ebd0df299b288fe23a723"
     },
     "image_review": {
-      "path": "_records/editorial-handoff/final-image-review-2026-09-26.json",
+      "path": "_records/editorial-handoff/images.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:e2bbac803fbe84270c48ad8a1cd82c97b7e036d0"
+      "digest": "git_blob_sha1:3f911e6dff7fae4fda1ebd0df299b288fe23a723"
     },
     "watchlist": {
-      "path": "_records/editorial-handoff/watchlist-2026-09-26.json",
+      "path": "_records/editorial-handoff/watchlist-2026-09-29.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:72f6b716decbfd1d8f3dba2f79718d4c8d1cedcd"
+      "digest": "git_blob_sha1:25395b2c50fc7fdfb20a716efb0112fbc7cb78ed"
     },
     "watchlist_evidence": {
-      "path": "_records/watchlist-sweeps/2026-09-26.json",
+      "path": "_records/watchlist-sweeps/2026-09-29.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:0e0730dc4bbb859885bcd68ddaf03ce034a56f79"
+      "digest": "git_blob_sha1:59673cee8b86f655b03bf8dc9bf2b5f63b9210c4"
     },
     "book_mappings": {
       "path": "_data/book-reading.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:ef490fc652a79b18ba20179b7a139eb173013895"
+      "digest": "git_blob_sha1:9774f0544d70748e9e81ca911d57fe7dd5363079"
     },
     "image_quality_evidence": {
-      "path": "_records/image-quality/2026-09-26-editorial-v2.json",
+      "path": "_records/image-quality/2026-09-29-editorial-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:2b85b75de6950c4b82185421f862d169b0bd868c"
+      "digest": "git_blob_sha1:63232ab51bb4166e22b6db99440e5fcb68343f1f"
     }
   },
   "freeze": {
@@ -91,11 +91,11 @@
       "evidence_artifact": "watchlist_evidence",
       "counts": {
         "new_today": 0,
-        "updated_today": 4,
-        "carried_forward": 12
+        "updated_today": 2,
+        "carried_forward": 14
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:ce8220420d8e5c6d8a543bf4c6893f31702ba2d1",
+      "public_projection_digest": "git_blob_sha1:887187ca35831361867a21cc5336f682a632c8eb",
       "repair_allowed_downstream": false
     }
   },
@@ -129,5 +129,25 @@
       "book_mappings",
       "image_quality_evidence"
     ]
+  },
+  "migration": {
+    "compatibility_packaging": true,
+    "source_bundle_sha256": "4079821ebe1e72f750c7e0b37c3af0c992313c07b1212cccb869e3cb3afd9f94",
+    "source_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
+    "target_release_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
+    "source_staging_ref": "reliable-edition/dab-edition-2026-09-29",
+    "restart_editorial": false,
+    "regenerate_images": false,
+    "branch_identity_repair": {
+      "from": "editorial-handoff/production/dab-edition-2026-09-29",
+      "to": "editorial-handoff/production/2026-09-29",
+      "reason": "Align production branch identity with protected publication contract without changing qualified content."
+    },
+    "media_preflight_refresh": {
+      "mode": "locked_media_live_reachability_only",
+      "checked_at": "2026-09-30T23:36:16Z",
+      "selection_changed": false,
+      "static_metadata_changed": false
+    }
   }
 }

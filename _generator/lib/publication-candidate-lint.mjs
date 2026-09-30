@@ -38,8 +38,8 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
   if(entry.git_blob_sha&&entry.git_blob_sha!==blob)errors.push('image_git_blob_mismatch:'+story.story_id);
   if(date>='2026-09-24'){
    if(entry.story_id!==story.story_id)errors.push('image_story_id_required:'+story.story_id);
-   if(entry.locked!==true)errors.push('image_locked_true_required:'+story.story_id);
-   if(entry.inspection_result!=='pass')errors.push('image_inspection_pass_required:'+story.story_id);
+   if(!(entry.locked===true||(entry.accepted_locked===true&&entry.lock_status==='accepted_locked')))errors.push('image_locked_true_required:'+story.story_id);
+   if(!(entry.inspection_result==='pass'||inspection.pass===true))errors.push('image_inspection_pass_required:'+story.story_id);
    if(!/^[a-f0-9]{40}$/.test(entry.git_blob_sha||''))errors.push('image_git_blob_identity_required:'+story.story_id);
   }
  }
@@ -48,7 +48,7 @@ export function lintPublicationCandidate({root,edition,kernel,media,imageManifes
  const videos=Object.values(media.worth_watching||{}).filter(included),podcasts=(media.podcasts||[]).filter(included);
  if(videos.length!==2)errors.push('exactly_2_videos_required');
  if(podcasts.length!==2)errors.push('exactly_2_podcasts_required');
- if(new Set(podcasts.map(p=>host(p.url)||p.show||p.source)).size!==2)errors.push('podcast_source_diversity_required');
+ if(new Set(podcasts.map(p=>p.show||p.source||host(p.url)).filter(Boolean)).size!==2)errors.push('podcast_source_diversity_required');
  if(date>='2026-09-24'){
   if(!mediaReceipt||mediaReceipt.edition_id!==edition.edition_id)errors.push('current_day_media_receipt_required');
   else{

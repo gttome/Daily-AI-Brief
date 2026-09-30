@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-26T15:36:53Z</updated>
+  <updated>2026-09-30T23:36:17Z</updated>
+  <entry>
+    <title>NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator</title>
+    <id>dab-story-2026-09-29-73a1c827</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>NVIDIA describes TensorRT Model Connect as an open-source collection of C++ model reference implementations designed around coding-agent workflows. Its account emphasizes parallel work, model-family isolation, reversible changes, and GPU-backed validation as engineering patterns for letting agents contribute without collapsing project structure or verification.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness</title>
+    <id>dab-story-2026-09-29-a64c16f9</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/microsoft-research-s-quine-links-biological-models-tools-literature-and-scientists-in-one-research-h/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>Microsoft Research introduced Quine as an early-stage research effort to build a multimodal world model of biology together with an interactive harness connecting models, scientific tools, literature, and researchers. A Quine Fellows program is intended to give scientists access to the system and generate scientific feedback from real research use.</summary>
+  </entry>
+  <entry>
+    <title>Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS</title>
+    <id>dab-story-2026-09-29-626077c7</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>Google Workspace says Google Vids is moving AI voiceovers and avatar narration to Gemini 3.8 Flash Lite TTS. The update is intended to improve naturalness, pacing, context-aware emphasis, and generation latency so creators can iterate on scripts and narration more quickly inside the video workflow.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout</title>
+    <id>dab-story-2026-09-29-7eb33bf7</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>Microsoft’s Copilot team describes an operating model for scaling Agent Builder through structured change management, using an HCLTech customer example to illustrate how organizations can combine Microsoft 365 Copilot innovation with an explicit adoption program rather than relying on one-off team deployments.</summary>
+  </entry>
+  <entry>
+    <title>Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex</title>
+    <id>dab-story-2026-09-29-e2811e43</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>Firebase’s Codex plugin includes Firebase Agent Skills that provide domain expertise, up-to-date documentation, recommended workflows, and tool knowledge. Firebase says the skills are intended to help Codex follow Firebase-recommended configuration and architecture patterns instead of relying only on a general model’s background knowledge.</summary>
+  </entry>
+  <entry>
+    <title>AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows</title>
+    <id>dab-story-2026-09-29-196c601d</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads. The announcement describes using supported Bedrock APIs for internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.</summary>
+  </entry>
+  <entry>
+    <title>Prompt to Production: The Future of AI Code Workflows</title>
+    <id>dab-video-2026-09-29-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-29/general/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>A concise prompt-to-production workflow that complements the day’s agent-ready engineering coverage.</summary>
+  </entry>
+  <entry>
+    <title>Microsoft Copilot Just Got a Massive Upgrade</title>
+    <id>dab-video-2026-09-29-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-29/agent-skills/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>A short current overview of Copilot changes relevant to everyday agent and knowledge-work use.</summary>
+  </entry>
+  <entry>
+    <title>Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)</title>
+    <id>dab-podcast-2026-09-29-everyday-ai-cost-control-872</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-29/ai-cost-control-board-level/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>A same-day discussion of AI cost control and operating considerations.</summary>
+  </entry>
+  <entry>
+    <title>Opus 5.5 is our favorite AI model (so far).</title>
+    <id>dab-podcast-2026-09-29-ai-for-humans-opus-197</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-29/opus-5-5-model-discussion/" />
+    <updated>2026-09-29T18:00:00Z</updated>
+    <summary>A recent independent-source model discussion retained by the locked media selection.</summary>
+  </entry>
   <entry>
     <title>AWS shows how to build continuous quality checks into production LLM workflows</title>
     <id>dab-story-2026-09-26-f3e5113c</id>
@@ -1439,131 +1509,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/" />
     <updated>2026-08-31T18:00:00Z</updated>
     <summary>Google Cloud announced a September 4 live session that promises to build and deploy a functional customer agent from scratch in under 15 minutes using a no-code/low-code environment. The demonstration is aimed at routine inquiries, multi-turn conversations and brand-aligned responses rather than software-framework setup.</summary>
-  </entry>
-  <entry>
-    <title>Windows gives agent processes an OS-level identity trail</title>
-    <id>dab-story-2026-08-30-7712bd8b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/windows-gives-agent-processes-an-os-level-identity-trail/" />
-    <updated>2026-08-30T18:00:00Z</updated>
-    <summary>Microsoft’s optional Windows 11 preview update KB5120998 introduces two agent-oriented platform features. Microsoft Execution Containers add a lightweight policy boundary that can restrict files, networking, the user interface, and other OS capabilities for workloads such as coding agents and model-generated code. Separately, authorized components can attach an opaque agent identifier to a process token; Windows protects the marker, passes it to child processes, and includes it when the process authenticates through Web Account Manager.</summary>
-  </entry>
-  <entry>
-    <title>Anthropic proposes a shared hardware layer for scientific agents</title>
-    <id>dab-story-2026-08-30-3ea4c141</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/anthropic-proposes-a-shared-hardware-layer-for-scientific-agents/" />
-    <updated>2026-08-30T18:00:00Z</updated>
-    <summary>Anthropic previewed the Model Hardware Standard, a model-agnostic specification for connecting AI agents to programmable equipment such as microscopes, liquid handlers, and robotic arms. Anthropic says MHS complements the Model Context Protocol: MCP exposes tools and data to the agent, while MHS standardizes device control and parallel operation. The company reports that early integrations cut setup from weeks or months to hours or minutes.</summary>
-  </entry>
-  <entry>
-    <title>Notion lets an AI agent propose edits without taking authorship control</title>
-    <id>dab-story-2026-08-30-6c8007e6</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/notion-lets-an-ai-agent-propose-edits-without-taking-authorship-control/" />
-    <updated>2026-08-30T18:00:00Z</updated>
-    <summary>Notion agents can now propose line-level changes instead of editing a document directly. A user asks the agent to “suggest edits,” then reviews the proposed changes from top to bottom and approves them individually. Notion positions the feature for tasks such as a grammar pass.</summary>
-  </entry>
-  <entry>
-    <title>Microsoft’s unified Copilot app retires Deep Research for consumers</title>
-    <id>dab-story-2026-08-30-4faf2d80</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/microsoft-s-unified-copilot-app-retires-deep-research-for-consumers/" />
-    <updated>2026-08-30T18:00:00Z</updated>
-    <summary>Microsoft is consolidating personal, work, and school access into an updated Copilot app while keeping personal and organizational data boundaries separate. The app adds direct access to Microsoft 365 apps, files, email, calendar, and cloud storage, but Microsoft is retiring consumer Deep Research, Podcasts, and Group Chat. Deep Research retirement began August 18; generated files move to OneDrive, and users must preserve Group Chat content that will not migrate.</summary>
-  </entry>
-  <entry>
-    <title>Claude in Chrome shifts browser work toward bounded autonomy</title>
-    <id>dab-story-2026-08-30-71d505c2</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/claude-in-chrome-shifts-browser-work-toward-bounded-autonomy/" />
-    <updated>2026-08-30T18:00:00Z</updated>
-    <summary>Anthropic made Claude in Chrome generally available to users on paid Claude plans. The extension can read pages, type, click, navigate, and complete forms using the user’s existing browser logins. It now uses an action-safety classifier to decide when an action can proceed autonomously rather than asking for approval every time; users can restore manual approval for every action.</summary>
-  </entry>
-  <entry>
-    <title>Zapier turns no-code agent governance into a layered operating procedure</title>
-    <id>dab-story-2026-08-30-6649fb3e</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-30/zapier-turns-no-code-agent-governance-into-a-layered-operating-procedure/" />
-    <updated>2026-08-30T18:00:00Z</updated>
-    <summary>Zapier published an updated practical guide for building safer no-code agents. Its recommended layers are scoped connections and permissions, input and output screening, human checkpoints for high-stakes or irreversible actions, and ongoing activity monitoring. Zapier’s AI Guardrails step can screen for categories including personally identifiable information, prompt injection, toxic content, and sentiment inside a visual workflow.</summary>
-  </entry>
-  <entry>
-    <title>GitHub turns Visual Studio into a more controllable agent cockpit</title>
-    <id>dab-story-2026-08-29-363c6a4d</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/github-turns-visual-studio-into-a-more-controllable-agent-cockpit/" />
-    <updated>2026-08-29T18:00:00Z</updated>
-    <summary>GitHub’s August Visual Studio update adds organization-level custom agents, per-model Low/Medium/High thinking effort, model and context-window comparison, plan-usage visibility, and a Git agent that can review uncommitted changes or individual commits before a pull request. The release applies across Copilot plans, though publishing organization agents requires a GitHub organization.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI’s planned Cursor cutoff exposes model-provider concentration risk</title>
-    <id>dab-story-2026-08-29-da2869d0</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/openai-s-planned-cursor-cutoff-exposes-model-provider-concentration-risk/" />
-    <updated>2026-08-29T18:00:00Z</updated>
-    <summary>OpenAI says it notified SpaceX that it intends to wind down the contract supplying OpenAI models to Cursor, proposing November 12, 2026 as the shutoff date after SpaceX’s acquisition of Cursor. OpenAI also says it will not provide Cursor with future models, including its upcoming Astra model. These are OpenAI’s stated contractual and safety reasons; the announcement does not include Cursor or SpaceX’s response.</summary>
-  </entry>
-  <entry>
-    <title>Claude for Teachers expands from individuals to governed school deployments</title>
-    <id>dab-story-2026-08-29-74777276</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/claude-for-teachers-expands-from-individuals-to-governed-school-deployments/" />
-    <updated>2026-08-29T18:00:00Z</updated>
-    <summary>Anthropic made Claude for Teachers available to qualifying U.S. K–12 schools and districts as a free Enterprise offering for one year if they sign up by June 30, 2027. It adds centralized administration, SSO, role-based access, domain claiming, K–12 terms and a data-processing agreement. Two new skills support lesson preparation and standards-aligned checks for understanding; the latter is limited to math at launch.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI’s Thailand accelerator puts reliability between prototype and deployment</title>
-    <id>dab-story-2026-08-29-67aff0e3</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/openai-s-thailand-accelerator-puts-reliability-between-prototype-and-deployment/" />
-    <updated>2026-08-29T18:00:00Z</updated>
-    <summary>OpenAI and Thailand’s Ministry of Higher Education, Science, Research and Innovation launched an eight-week accelerator for ten startups in health, wellness, and education. The program connects founders with mentors from government, universities, research, investment, and industry. OpenAI explicitly frames testing, real-user feedback, safeguards, and a sustainable business model as the bridge from demo to dependable product.</summary>
-  </entry>
-  <entry>
-    <title>Anthropic publishes copyable Claude Tag workflows for real team work</title>
-    <id>dab-story-2026-08-29-ebf7f693</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/anthropic-publishes-copyable-claude-tag-workflows-for-real-team-work/" />
-    <updated>2026-08-29T18:00:00Z</updated>
-    <summary>Anthropic published more than a dozen Claude Tag use cases with prompts and setup guidance, highlighting three internal workflows: converting a Slack thread into customer-ready collateral, compiling weekly issue reports, and running legal review. In one example, a product marketer turned a 15-plus-message thread into a review-ready one-pager in 45 minutes by tagging Claude inside the conversation.</summary>
-  </entry>
-  <entry>
-    <title>WRITER puts sessions, files, and reusable playbooks inside Slack</title>
-    <id>dab-story-2026-08-29-b98b5a80</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-29/writer-puts-sessions-files-and-reusable-playbooks-inside-slack/" />
-    <updated>2026-08-29T18:00:00Z</updated>
-    <summary>WRITER’s August 28 changelog announces its Slack experience for starting agent sessions, launching playbooks, and producing deliverables inside a conversation. The updated setup guide says users can run published playbooks from a picker, resume prior sessions, @mention the agent in channels, and submit office documents, images, audio, or video for processing—including on Slack mobile.</summary>
-  </entry>
-  <entry>
-    <title>GitHub closes the review gap for agent-authored and very large pull requests</title>
-    <id>dab-story-2026-08-28-00afae1b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/github-closes-the-review-gap-for-agent-authored-and-very-large-pull-requests/" />
-    <updated>2026-08-28T18:00:00Z</updated>
-    <summary>GitHub expanded Copilot code review so automatically requested reviews of pull requests opened by Copilot cloud agent receive the full agentic review rather than a limited fallback. GitHub also removed the previous 300-file or 20,000-line review ceiling and added explicit resolution reasons—“Addressed,” “Won’t fix,” and “Incorrect”—for Copilot comments.</summary>
-  </entry>
-  <entry>
-    <title>Warp turns human feedback into reviewable agent-skill updates</title>
-    <id>dab-story-2026-08-28-b578ffa1</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/warp-turns-human-feedback-into-reviewable-agent-skill-updates/" />
-    <updated>2026-08-28T18:00:00Z</updated>
-    <summary>Anthropic published Warp’s pattern for self-improving agents. A task-specific base skill performs work; people leave feedback where the work already occurs; and a scheduled “improver” skill proposes a small edit to the base skill. The change moves through a normal pull-request review before becoming part of later runs. Warp says it applies the pattern to specification, review, and issue-triage agents.</summary>
-  </entry>
-  <entry>
-    <title>Randomized study separates ChatGPT’s quality gains from critical thinking’s originality gains</title>
-    <id>dab-story-2026-08-28-633f53c9</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/randomized-study-separates-chatgpt-s-quality-gains-from-critical-thinking-s-orig/" />
-    <updated>2026-08-28T18:00:00Z</updated>
-    <summary>More than 1,000 first-year Bocconi University students were assigned by class period to ChatGPT access, causal-reasoning training, both, or neither while completing a real marketing case. Human graders used a five-point rubric, and researchers separately measured idea variety and causal reasoning. ChatGPT access raised rubric scores by almost one point and produced clearer, more expert-like work; causal-reasoning training produced more distinct ideas and clearer explanations of why ideas might succeed or fail. Students receiving both showed both effects.</summary>
-  </entry>
-  <entry>
-    <title>OpenAI pairs Brazil expansion with role-specific AI literacy</title>
-    <id>dab-story-2026-08-28-04a6435b</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/openai-pairs-brazil-expansion-with-role-specific-ai-literacy/" />
-    <updated>2026-08-28T18:00:00Z</updated>
-    <summary>Alongside launching commercial operations in Brazil, OpenAI announced planned programs with Brazilian organizations: national AI-literacy training for legal professionals with ENTER; free, mobile-first training for micro and small-business owners with Estímulo; and exploration of AI-supported public services with São Paulo and Prodam. OpenAI reports that 35% of classified Brazilian ChatGPT messages were work-related in June, versus 30% globally.</summary>
-  </entry>
-  <entry>
-    <title>A non-technical marketer builds a recurring personalized briefing agent</title>
-    <id>dab-story-2026-08-28-239cf04c</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/a-non-technical-marketer-builds-a-recurring-personalized-briefing-agent/" />
-    <updated>2026-08-28T18:00:00Z</updated>
-    <summary>Anthropic field marketer Adam Ward described replacing hours of Sunday preparation with a Claude workflow that converts a weekly marketing report into personalized Monday briefings for each sales representative. He began by explaining the business problem as a non-technical product manager, piloted with a small group, gathered corrections from recipients, and folded those corrections into explicit operating rules.</summary>
-  </entry>
-  <entry>
-    <title>Microsoft Agent Builder accepts files up to 512 MB for grounded agents</title>
-    <id>dab-story-2026-08-28-faa38e9f</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-28/microsoft-agent-builder-accepts-files-up-to-512-mb-for-grounded-agents/" />
-    <updated>2026-08-28T18:00:00Z</updated>
-    <summary>Microsoft’s latest Microsoft 365 Copilot release notes say Agent Builder now accepts file uploads up to 512 MB on Android, iOS, Windows, and the web. Makers can use larger manuals and other documents as grounding sources without first splitting or compressing them.</summary>
   </entry>
 </feed>

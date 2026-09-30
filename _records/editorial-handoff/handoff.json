@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "execution_mode": "production",
-  "staging_ref": "editorial-handoff/production/2026-09-26-bounded-recovery",
+  "staging_ref": "editorial-handoff/production/2026-09-29",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
   "images_path": "_records/editorial-handoff/images.json",
@@ -10,10 +10,14 @@
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
   "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
   "image_transport_method": "github_git_data_api",
-  "coverage_period": "Verified September 25 developments with the prior targeted September 23 Agent Skills exception, two recent videos and two verified September 24 podcasts.",
+  "coverage_period": "Locked September 29 editorial kernel, reused bounded preflight evidence, two verified videos, two source-diverse podcasts, and six accepted locked story images.",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_note": "Reused frozen six-story prose and selection, existing metadata/article evidence and targeted Qoder slot repair. Reused newer completed media and Watchlist checkpoints. Recovered missing image stage with isolated story requests; 8 calls, 2 targeted corrections, 6 locked assets. Fixed missing future image-quality artifact constant, date-coupled manifest regression checks, and added an auditable single-story image-context gate. No build, CI or Pages job executed in Work.",
-  "deterministic_recovery_trigger": "Retry the unchanged frozen publication handoff after same-edition Watchlist parity repairs across shadow and integrated repository validators through commit dceb1d100893ffbf0008e9c6073adc0d05823e24; preserve all editorial, media and accepted-image checkpoints."
+  "recovery_note": "Delivery-first serialization of already-completed Sep29 discovery, editorial, media and 6/6 accepted image checkpoints. No discovery/editorial/media/image rerun.",
+  "deterministic_recovery_trigger": "Compatibility-package the already-qualified bundle onto current trusted main; do not rerun discovery, editorial, media, or images.",
+  "compatibility_packaging_note": "Sep 29 research cutoff represented in America/Chicago while preserving the qualified instant; no content stage rerun.",
+  "media_preflight_revalidation_note": "Refresh live reachability for the four already-locked media URLs immediately before production staging; retain qualified selections, dates, runtimes, and all accepted images.",
+  "branch_identity_repair_note": "Use date-keyed production staging ref required by protected publication tests; no content, media selection, or image changes.",
+  "media_preflight_timing_note": "Run locked-media live revalidation before capturing PUBLISHED_AT so the fresh receipt precedes publication staging by construction."
 }

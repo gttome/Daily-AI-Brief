@@ -1,0 +1,195 @@
+{
+  "schema_version": "1.0.0",
+  "date": "2026-09-29",
+  "timezone": "America/Chicago",
+  "aggregation_window": {
+    "start": "2026-09-29T05:00:00.000Z",
+    "end": "2026-09-30T05:00:00.000Z"
+  },
+  "privacy": {
+    "contains_personal_identifiers": false,
+    "small_count_suppression": true,
+    "suppression_threshold": 5,
+    "retention_days": 400
+  },
+  "site_totals": {
+    "views": null,
+    "source_clicks": null,
+    "share_initiations": null,
+    "worth_watching_clicks": null,
+    "retention_30s": null,
+    "feedback_most_useful": null,
+    "feedback_useful": null,
+    "feedback_neutral": null,
+    "feedback_not_useful": null
+  },
+  "stories": [
+    {
+      "story_id": "dab-story-2026-09-29-73a1c827",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-29-a64c16f9",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-29-626077c7",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-29-7eb33bf7",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-29-e2811e43",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "story_id": "dab-story-2026-09-29-196c601d",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "videos": [
+    {
+      "item_id": "dab-video-2026-09-29-general",
+      "title": "Prompt to Production: The Future of AI Code Workflows",
+      "url": "https://www.youtube.com/watch?v=bs1qPy_CWkM",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "item_id": "dab-video-2026-09-29-agent-skills",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "podcasts": [
+    {
+      "item_id": "dab-podcast-2026-09-29-everyday-ai-cost-control-872",
+      "title": "Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)",
+      "url": "https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    },
+    {
+      "item_id": "dab-podcast-2026-09-29-ai-for-humans-opus-197",
+      "title": "Opus 5.5 is our favorite AI model (so far).",
+      "url": "https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406",
+      "metrics": {
+        "views": null,
+        "source_clicks": null,
+        "share_initiations": null,
+        "worth_watching_clicks": null,
+        "retention_30s": null,
+        "feedback_most_useful": null,
+        "feedback_useful": null,
+        "feedback_neutral": null,
+        "feedback_not_useful": null
+      }
+    }
+  ],
+  "collection_status": "partial",
+  "limitations": [
+    "Detailed reader metrics and usefulness aggregates are owner-only; null public values are withheld, not zero.",
+    "Exact credit usage is unavailable without an attributable platform usage record.",
+    "A later observation must not be represented as reconstructed event-day activity.",
+    "Counters are lifetime totals for the edition, observed at collection time; aggregation_window is the Chicago edition day, not an event-day bucket. Retention is a policy target; totals are retained for archive continuity."
+  ],
+  "observed_at": "2026-09-30T23:36:17.520Z",
+  "edition_id": "dab-edition-2026-09-29",
+  "private_evidence": {
+    "status": "not_collected",
+    "reference": "owner-only:/api/snapshot?key=_records/analytics/2026-09-29.json",
+    "metric_basis": "lifetime_observed",
+    "public_metric_status": "suppressed"
+  }
+}

@@ -1,64 +1,64 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-09-26
+brief_date: 2026-09-29
 reader_release: true
 ---
 
-# Daily Generative AI Brief — September 26, 2026
+# Daily Generative AI Brief — September 29, 2026
 
-**Published:** September 26, 2026  
-**Coverage period:** 24-hour primary window ending at 2026-09-26T09:00:59.000Z; recency fallback used for reviewed items outside the primary window.
+**Published:** September 29, 2026  
+**Coverage period:** 24-hour primary window ending at 2026-09-29T19:03:07.131932-05:00; recency fallback used for reviewed items outside the primary window.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-26-5bddf735">GitHub gives agentic autofix project memory for security repairs</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-09-26-0434240f">Qoder can turn repeated work into proposed reusable Skills</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-26-17fb50a5">Microsoft redesigns Copilot around Home, Code, and persistent Autopilot</a><span>Article · about 13 min source read</span></li><li><a href="#reading-dab-story-2026-09-26-ade5bc01">Microsoft adds a governed runtime for code execution inside Microsoft 365</a><span>Article · about 9 min source read</span></li><li><a href="#reading-dab-story-2026-09-26-f3e5113c">AWS shows how to build continuous quality checks into production LLM workflows</a><span>Article · about 30 min source read</span></li><li><a href="#reading-dab-story-2026-09-26-8a5e2871">GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs</a><span>Article · about 5 min source read</span></li><li><a href="#general">Stop guessing which model your agent needs</a><span>Video · 9:33</span></li><li><a href="#agents-for-non-technical-people">Using Claude Opus 5.5 as your daily driver</a><span>Video · 3:33</span></li><li><a href="#podcast-dab-podcast-2026-09-26-practical-ai-agents-enterprise">From AGENTS.md to Enterprise Deployment</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-26-ai-show-baptist-health">#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-09-29-e2811e43">Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-29-196c601d">AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-29-626077c7">Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-29-7eb33bf7">Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-29-73a1c827">NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator</a><span>Article · Source reading time unavailable</span></li><li><a href="#reading-dab-story-2026-09-29-a64c16f9">Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness</a><span>Article · Source reading time unavailable</span></li><li><a href="#general">Prompt to Production: The Future of AI Code Workflows</a><span>Video · 7:15</span></li><li><a href="#agents-for-non-technical-people">Microsoft Copilot Just Got a Massive Upgrade</a><span>Video · 7:51</span></li><li><a href="#podcast-dab-podcast-2026-09-29-everyday-ai-cost-control-872">Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-09-29-ai-for-humans-opus-197">Opus 5.5 is our favorite AI model (so far).</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
-<span id="reading-dab-story-2026-09-26-5bddf735"></span>
+<span id="reading-dab-story-2026-09-29-e2811e43"></span>
 
-## 1. GitHub gives agentic autofix project memory for security repairs
+## 1. Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-28T00:00:00.000Z. Outside the 24-hour primary window; included because it is the current bounded Agent Skills evidence and directly documents reusable Firebase domain expertise and recommended workflows in Codex.</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
 
-**Date:** September 25, 2026
+**Date:** September 29, 2026
 
-**Topics:** agentic autofix, Copilot Memory, security agents, context engineering
+**Topics:** Agent Skills, Firebase, Codex, reusable workflows, domain expertise
 
-<span class="story-data" data-story-id="dab-story-2026-09-26-5bddf735" data-story-url="/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-29-e2811e43" data-story-url="/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/" hidden></span>
 
-<a href="{{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }}" data-item-id="dab-story-2026-09-26-5bddf735" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/' | relative_url }}" data-item-id="dab-story-2026-09-29-e2811e43" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Announcement  
+**Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Security alert and enabled repository memory feed agentic autofix, a conceptual code patch, independent tests, human review, and memory-scope review.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/05-m03-textbook-v1.webp?v=sep26-m03-6be669ff18b2)
+![Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba)
 
-**Summary:** GitHub agentic autofix can now use Copilot Memory when customers enable it, letting the repair agent retrieve project-specific secure-development context and prior patterns before proposing fixes for security alerts.
+**Summary:** Firebase’s Codex plugin includes Firebase Agent Skills that provide domain expertise, up-to-date documentation, recommended workflows, and tool knowledge. Firebase says the skills are intended to help Codex follow Firebase-recommended configuration and architecture patterns instead of relying only on a general model’s background knowledge.
 
-**Why it matters:** An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remembers, when that memory influences a fix, and how a human verifies the result.
+**Why it matters:** This is a concrete example of Agent Skills as reusable operating knowledge. A product team can package current domain guidance and preferred procedures once, then let an agent apply that context repeatedly across tasks without each user rebuilding the same prompt or workflow from scratch.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Review the scope, freshness and relevance of repository memory before allowing it to guide a security repair.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality checklist to maintain the documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**What to do now — Review what security memory the agent is allowed to use:** Start with one alert class, inspect the retrieved project patterns, and require tests plus human review before accepting the automated fix.
+**What to do now — Treat reusable skills as maintained operating knowledge:** For one recurring domain workflow, package the current rules, preferred sequence, tool guidance, and review expectations as a versioned skill, then assign an owner to update it as the underlying product or policy changes.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-25-agentic-autofix-now-uses-copilot-memory" data-item-id="dab-story-2026-09-26-5bddf735" data-edition-date="2026-09-26" data-action="source_clicks">Agentic autofix now uses Copilot Memory</a>
+**Source:** <a href="https://firebase.blog/posts/2026/09/firebase-plugin-for-codex" data-item-id="dab-story-2026-09-29-e2811e43" data-edition-date="2026-09-29" data-action="source_clicks">Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-story-2026-09-26-5bddf735">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-story-2026-09-29-e2811e43">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-26-0434240f"></span>
+<span id="reading-dab-story-2026-09-29-196c601d"></span>
 
-## 2. Qoder can turn repeated work into proposed reusable Skills
+## 2. AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows
 
 <!-- reader-release:start -->
 <aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
@@ -66,194 +66,194 @@ reader_release: true
 
 **Focus: Agents for Everyone**
 
-**Date:** September 23, 2026
+**Date:** September 29, 2026
 
-**Topics:** Agent Skills, Qoder, skill evolution, reusable workflows
+**Topics:** Amazon Bedrock, GPT-6.1 Sol, enterprise agents, professional workflows, model evaluation
 
-<span class="story-data" data-story-id="dab-story-2026-09-26-0434240f" data-story-url="/stories/2026-09-26/qoder-can-turn-repeated-work-into-proposed-reusable-skills/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-29-196c601d" data-story-url="/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/" hidden></span>
 
-<a href="{{ '/stories/2026-09-26/qoder-can-turn-repeated-work-into-proposed-reusable-skills/' | relative_url }}" data-item-id="dab-story-2026-09-26-0434240f" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/' | relative_url }}" data-item-id="dab-story-2026-09-29-196c601d" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Release Note  
+**Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Qoder skill evolution moves from completed work through a skill proposal and separate confirmation conversation to an applied reusable skill and a later test task.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/06-r01-textbook-v1.webp?v=sep26-r01-173b38def39d)
+![Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195)
 
-**Summary:** Qoder 0.4.1 can suggest creating or updating reusable Skills after a conversation, using experience from completed work; accepting the suggestion opens a separate conversation where the user confirms the plan before changes are applied.
+**Summary:** AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads. The announcement describes using supported Bedrock APIs for internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.
 
-**Why it matters:** Reusable agent skills can evolve from actual work rather than being authored only up front. The confirmation step is equally important: it keeps the conversion from experience into durable instructions visible and reviewable.
+**Why it matters:** A stronger general model becomes operationally relevant when it can be placed inside existing enterprise infrastructure and used for repeatable workflows rather than only interactive chat. The practical question shifts from raw model capability to which bounded tasks justify migration and how teams will measure the change.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Inspect the instructions, inputs, checks and constraints of an evolved Skill before confirming the proposed update.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Apply final-gate verification to quality, latency, tool-use reliability, and task-cost evidence before migrating a bounded workflow to a new model.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**What to do now — Capture one repeated workflow as a proposed skill:** Use a completed task to generate a skill suggestion, review every instruction in the separate confirmation conversation, and test the resulting skill on a new task.
+**What to do now — Benchmark one bounded workflow before migrating:** Choose a representative agent or knowledge-work task, compare quality, latency, tool-use reliability, and total task cost against the current model, and migrate only where the measured workflow benefit is material.
 
-**Source:** <a href="https://docs.qoder.com/release-notes/qoder" data-item-id="dab-story-2026-09-26-0434240f" data-edition-date="2026-09-26" data-action="source_clicks">Qoder 0.4.1 release notes — Skill evolution suggestions</a>
+**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/" data-item-id="dab-story-2026-09-29-196c601d" data-edition-date="2026-09-29" data-action="source_clicks">AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-story-2026-09-26-0434240f">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-story-2026-09-29-196c601d">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-26-17fb50a5"></span>
+<span id="reading-dab-story-2026-09-29-626077c7"></span>
 
-## 3. Microsoft redesigns Copilot around Home, Code, and persistent Autopilot
+## 3. Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 13 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** September 25, 2026
+**Date:** September 29, 2026
 
-**Topics:** Microsoft Copilot, knowledge work, Autopilot, AI workspace
+**Topics:** Google Vids, text to speech, knowledge work, AI voiceovers, content creation
 
-<span class="story-data" data-story-id="dab-story-2026-09-26-17fb50a5" data-story-url="/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-29-626077c7" data-story-url="/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/" hidden></span>
 
-<a href="{{ '/stories/2026-09-26/microsoft-redesigns-copilot-around-home-code-and-persistent-autopilot/' | relative_url }}" data-item-id="dab-story-2026-09-26-17fb50a5" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/' | relative_url }}" data-item-id="dab-story-2026-09-29-626077c7" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Announcement  
+**Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Three illustrated work lanes compare Copilot Home for interactive drafts, Code for reusable artifacts, and Autopilot for persistent tasks with review checkpoints.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/03-m05-textbook-v1.webp?v=sep26-m05-8a005fbe2f2d)
+![Textbook workflow showing a script moving through Gemini text-to-speech, narrated audio, rapid preview and revision, and final placement in a Google Vids timeline.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m05-2.png?v=sep29-m05-3668fb77b57f)
 
-**Summary:** Microsoft introduced a new Copilot experience organized around Home for everyday work, Code for building solutions, and Autopilot for persistent delegated work that can continue across time.
+**Summary:** Google Workspace says Google Vids is moving AI voiceovers and avatar narration to Gemini 3.8 Flash Lite TTS. The update is intended to improve naturalness, pacing, context-aware emphasis, and generation latency so creators can iterate on scripts and narration more quickly inside the video workflow.
 
-**Why it matters:** The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to deciding which work should remain interactive, become an artifact, or run persistently.
+**Why it matters:** Generative AI adoption often depends on reducing small production frictions rather than adding a new standalone tool. Better narration quality and faster iteration can make AI-assisted video more practical for internal training, presentations, explainers, and other routine knowledge-work communication.
 
 
 
-**What to do now — Classify one recurring workflow as chat, build, or delegate:** Choose a real task and decide whether it belongs in interactive Home work, a reusable Code artifact, or a persistent Autopilot assignment with explicit checkpoints.
+**What to do now — Compare one real narration workflow before and after the upgrade:** Use a representative internal video, compare pacing, pronunciation, edit time, and regeneration frequency, and decide whether the upgraded voice workflow reduces total production effort without lowering communication quality.
 
-**Source:** <a href="https://blogs.microsoft.com/blog/2026/09/25/introducing-the-new-copilot-with-home-code-and-autopilot/" data-item-id="dab-story-2026-09-26-17fb50a5" data-edition-date="2026-09-26" data-action="source_clicks">Introducing the new Copilot with Home, Code and Autopilot</a>
+**Source:** <a href="https://workspaceupdates.googleblog.com/2026/09/create-more-natural-expressive-ai-voiceovers-in-Google-Vids-with-upgraded-Gemini-3.8-Flash-Lite-TTS.html" data-item-id="dab-story-2026-09-29-626077c7" data-edition-date="2026-09-29" data-action="source_clicks">Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-story-2026-09-26-17fb50a5">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-story-2026-09-29-626077c7">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-26-ade5bc01"></span>
+<span id="reading-dab-story-2026-09-29-7eb33bf7"></span>
 
-## 4. Microsoft adds a governed runtime for code execution inside Microsoft 365
+## 4. Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-28T15:00:00.000Z. Outside the 24-hour primary window; included because it provides current publisher-authored evidence on organizational rollout practices for Agent Builder that complements same-day product and workflow news.</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** September 25, 2026
+**Date:** September 29, 2026
 
-**Topics:** Microsoft 365 Copilot, code execution, enterprise governance, managed runtime
+**Topics:** Agent Builder, change management, AI adoption, Microsoft 365 Copilot, workflow transformation
 
-<span class="story-data" data-story-id="dab-story-2026-09-26-ade5bc01" data-story-url="/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-29-7eb33bf7" data-story-url="/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/" hidden></span>
 
-<a href="{{ '/stories/2026-09-26/microsoft-adds-a-governed-runtime-for-code-execution-inside-microsoft-365/' | relative_url }}" data-item-id="dab-story-2026-09-26-ade5bc01" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/' | relative_url }}" data-item-id="dab-story-2026-09-29-7eb33bf7" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Announcement  
+**Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Nested Microsoft 365 tenant and Managed Runtime boundaries show identity, data connections, computation, reviewed output, governed sharing, and control questions.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/04-m06-textbook-v1.webp?v=sep26-m06-3d7b0bf14f47)
+![Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20)
 
-**Summary:** Microsoft Copilot Managed Runtime enters public preview as a tenant-boundary platform for executing code with enterprise governance, live data connections, app access, and familiar Microsoft 365 sharing expectations.
+**Summary:** Microsoft’s Copilot team describes an operating model for scaling Agent Builder through structured change management, using an HCLTech customer example to illustrate how organizations can combine Microsoft 365 Copilot innovation with an explicit adoption program rather than relying on one-off team deployments.
 
-**Why it matters:** Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while giving IT a clearer place to govern identity, data, sharing, and execution.
+**Why it matters:** The bottleneck for internal agents is increasingly organizational. Reusable agents create value only when people know which work should change, how new behavior is supported, who owns the rollout, and how adoption is measured across teams instead of being treated as a collection of isolated experiments.
 
 
 
-**What to do now — Test one governed analytical workflow:** Use a bounded dataset and repeatable calculation to compare the managed runtime with current spreadsheet, notebook, or local-code practices.
+**What to do now — Give one agent rollout an explicit change-management owner:** For a bounded Agent Builder use case, define the target behavior, stakeholder groups, enablement plan, support path, and adoption measures before expanding access, so the rollout is managed as a workflow change rather than a software launch.
 
-**Source:** <a href="https://aka.ms/CopilotManagedRuntime-Blog" data-item-id="dab-story-2026-09-26-ade5bc01" data-edition-date="2026-09-26" data-action="source_clicks">Microsoft Copilot Managed Runtime</a>
+**Source:** <a href="https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753" data-item-id="dab-story-2026-09-29-7eb33bf7" data-edition-date="2026-09-29" data-action="source_clicks">Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-story-2026-09-26-ade5bc01">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-story-2026-09-29-7eb33bf7">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-26-f3e5113c"></span>
+<span id="reading-dab-story-2026-09-29-73a1c827"></span>
 
-## 5. AWS shows how to build continuous quality checks into production LLM workflows
+## 5. NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 30 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 25, 2026
+**Date:** September 29, 2026
 
-**Topics:** LLM evaluation, production reliability, streaming evaluation, Bedrock
+**Topics:** coding agents, TensorRT, software architecture, parallel development, validation
 
-<span class="story-data" data-story-id="dab-story-2026-09-26-f3e5113c" data-story-url="/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-29-73a1c827" data-story-url="/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/" hidden></span>
 
-<a href="{{ '/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/' | relative_url }}" data-item-id="dab-story-2026-09-26-f3e5113c" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }}" data-item-id="dab-story-2026-09-29-73a1c827" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Announcement  
+**Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Detailed white-background textbook plate showing retrieval, model routing and failover, streamed tokens, live evaluation, source-value comparison, and a reviewed response.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/01-m09-textbook-v1.webp?v=sep26-m09-d992d23de34b)
+![Textbook diagram showing parallel coding agents working in isolated model-family lanes, producing reversible changes that pass GPU-backed validation before repository integration.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m02-2.png?v=sep29-m02-60a65c4ce464)
 
-**Summary:** AWS describes NarrateAI, a production LLM quality-assurance pattern on Amazon Bedrock that combines adaptive orchestration, multi-model failover, streaming evaluation, composite evaluation, and data-accuracy verification inside the response path.
+**Summary:** NVIDIA describes TensorRT Model Connect as an open-source collection of C++ model reference implementations designed around coding-agent workflows. Its account emphasizes parallel work, model-family isolation, reversible changes, and GPU-backed validation as engineering patterns for letting agents contribute without collapsing project structure or verification.
 
-**Why it matters:** Reliable generative AI requires more than an offline benchmark. Embedding verification into retrieval, generation, failover, and streaming makes quality observable while the system is actually serving users.
+**Why it matters:** The useful lesson is architectural: agentic coding becomes more reliable when repositories are organized for bounded parallelism, changes can be reversed cleanly, and hardware-backed validation is part of the normal loop. Those controls matter more than simply giving a coding agent a larger task.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-verification framework to define what evidence a live LLM quality check must provide before a response is accepted.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use final-gate verification principles to decide what executable evidence coding-agent changes must pass before repository integration.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**What to do now — Add one live quality check to a production AI path:** Start with a measurable failure mode such as numerical accuracy or citation consistency, then track the added latency and false-positive rate.
+**What to do now — Design the repository for reversible agent work:** When testing coding agents, isolate model or feature work, require reversible commits, and make executable validation part of the handoff so parallel agent activity cannot silently bypass engineering controls.
 
-**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/narrateai-production-ready-llm-quality-assurance-on-amazon-bedrock/" data-item-id="dab-story-2026-09-26-f3e5113c" data-edition-date="2026-09-26" data-action="source_clicks">NarrateAI: production-ready LLM quality assurance on Amazon Bedrock</a>
+**Source:** <a href="https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/" data-item-id="dab-story-2026-09-29-73a1c827" data-edition-date="2026-09-29" data-action="source_clicks">NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-story-2026-09-26-f3e5113c">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-story-2026-09-29-73a1c827">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-09-26-8a5e2871"></span>
+<span id="reading-dab-story-2026-09-29-a64c16f9"></span>
 
-## 6. GitHub expands Copilot across models, local sandboxing, chat surfaces, and IDEs
+## 6. Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
 
-**Date:** September 25, 2026
+**Date:** September 29, 2026
 
-**Topics:** GitHub Copilot, sandboxing, model routing, developer agents
+**Topics:** AI for science, multimodal world models, research agents, biology, tool orchestration
 
-<span class="story-data" data-story-id="dab-story-2026-09-26-8a5e2871" data-story-url="/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-09-29-a64c16f9" data-story-url="/stories/2026-09-29/microsoft-research-s-quine-links-biological-models-tools-literature-and-scientists-in-one-research-h/" hidden></span>
 
-<a href="{{ '/stories/2026-09-26/github-expands-copilot-across-models-local-sandboxing-chat-surfaces-and-ides/' | relative_url }}" data-item-id="dab-story-2026-09-26-8a5e2871" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-09-29/microsoft-research-s-quine-links-biological-models-tools-literature-and-scientists-in-one-research-h/' | relative_url }}" data-item-id="dab-story-2026-09-29-a64c16f9" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent story page</a>
 
-**Evidence:** Official Announcement  
+**Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Layered Copilot deployment review showing IDE and collaboration surfaces, model choices, tool routing, local sandbox internals, and questions to verify for each client.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-26/02-m04-textbook-v1.webp?v=sep26-m04-971493f737fa)
+![Textbook architecture diagram of a biological world model connected to scientific literature, tools, multiple biological modalities, and researcher feedback through an interactive harness.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m03-2.png?v=sep29-m03-c3dffcbf3985)
 
-**Summary:** GitHub’s September 21 weekly release bundle adds new model choices, local sandboxing in the Copilot app, updates for Slack and Microsoft Teams, and changes across JetBrains and VS Code.
+**Summary:** Microsoft Research introduced Quine as an early-stage research effort to build a multimodal world model of biology together with an interactive harness connecting models, scientific tools, literature, and researchers. A Quine Fellows program is intended to give scientists access to the system and generate scientific feedback from real research use.
 
-**Why it matters:** Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaboration surfaces, and client-specific behavior as one operating system.
+**Why it matters:** The architecture points beyond single-model scientific assistants. Complex research domains may benefit more from systems that coordinate representations, external tools, literature, and expert feedback than from asking one model to answer every question from its internal knowledge.
 
 
 
-**What to do now — Map Copilot capability to execution boundary:** For each enabled surface, document the model, tools, sandbox or host boundary, data access, and organization policy that governs it.
+**What to do now — Watch how integrated scientific AI systems are evaluated:** Track whether systems like Quine publish evidence on hypothesis quality, tool-use reliability, researcher oversight, and reproducibility, because integration breadth alone does not demonstrate scientific value.
 
-**Source:** <a href="https://github.blog/changelog/2026-09-25-github-copilot-weekly-releases-september-21" data-item-id="dab-story-2026-09-26-8a5e2871" data-edition-date="2026-09-26" data-action="source_clicks">GitHub Copilot weekly releases — September 21</a>
+**Source:** <a href="https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/" data-item-id="dab-story-2026-09-29-a64c16f9" data-edition-date="2026-09-29" data-action="source_clicks">Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-story-2026-09-26-8a5e2871">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-story-2026-09-29-a64c16f9">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -266,27 +266,27 @@ reader_release: true
 
 ## 7. General
 
-### Stop guessing which model your agent needs
+### Prompt to Production: The Future of AI Code Workflows
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>9:33 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>7:15 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-26/general/' | relative_url }}" data-item-id="dab-video-2026-09-26-general" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** Microsoft Developer  
-**Date:** September 23, 2026  
-**Runtime:** 9:33  
+<a href="{{ '/videos/2026-09-29/general/' | relative_url }}" data-item-id="dab-video-2026-09-29-general" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** YouTube  
+**Date:** September 28, 2026  
+**Runtime:** 7:15  
 **Format:** Video
 
-**Summary:** A concise walkthrough of choosing an agent model with repeatable evaluations rather than intuition, including latency, token use, output quality, and cost.
+**Summary:** A concise prompt-to-production workflow that complements the day’s agent-ready engineering coverage.
 
-**Why it matters:** Pairs with today’s reliability and execution-layer stories by turning model selection into a measured engineering decision.
+**Why it matters:** Connects directly to repeatable engineering workflows and bounded production use.
 
 
 
-**Source:** <a href="https://www.youtube.com/watch?v=iTiKeH3FDoQ" data-item-id="dab-video-2026-09-26-general" data-edition-date="2026-09-26" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+**Source:** <a href="https://www.youtube.com/watch?v=bs1qPy_CWkM" data-item-id="dab-video-2026-09-29-general" data-edition-date="2026-09-29" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-video-2026-09-26-general">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-video-2026-09-29-general">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -297,27 +297,27 @@ reader_release: true
 
 ## 8. Agents for Everyone
 
-### Using Claude Opus 5.5 as your daily driver
+### Microsoft Copilot Just Got a Massive Upgrade
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>3:33 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>7:51 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-09-26/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-26-agent-skills" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** Claude  
-**Date:** September 23, 2026  
-**Runtime:** 3:33  
+<a href="{{ '/videos/2026-09-29/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-09-29-agent-skills" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** YouTube  
+**Date:** September 28, 2026  
+**Runtime:** 7:51  
 **Format:** Video
 
-**Summary:** A practical three-minute comparison showing how model choice changes speed, limits, and daily agentic coding work.
+**Summary:** A short current overview of Copilot changes relevant to everyday agent and knowledge-work use.
 
-**Why it matters:** Complements the day’s agent-memory and reusable-skill stories with a concrete example of matching capability and effort to routine work.
+**Why it matters:** Complements the day’s Agent Builder and workflow-adoption coverage.
 
 
 
-**Source:** <a href="https://www.youtube.com/watch?v=jKRl_CSVxyI" data-item-id="dab-video-2026-09-26-agent-skills" data-edition-date="2026-09-26" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
+**Source:** <a href="https://www.youtube.com/watch?v=KJ8Y2Nb9y9o" data-item-id="dab-video-2026-09-29-agent-skills" data-edition-date="2026-09-29" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-video-2026-09-26-agent-skills">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-video-2026-09-29-agent-skills">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -326,76 +326,76 @@ reader_release: true
 
 ## Worth Listening — Podcasts
 
-### 9. From AGENTS.md to Enterprise Deployment
+### 9. Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>48:52 podcast</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>Podcast · duration not verified</span></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-26-practical-ai-agents-enterprise" data-podcast-title="From AGENTS.md to Enterprise Deployment" data-podcast-url="/podcasts/2026-09-26/agents-md-enterprise-deployment/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-29-everyday-ai-cost-control-872" data-podcast-title="Ep 872: AI Cost Control 101: Why Your Chatbot Bill Is Becoming a Board-Level Problem (Start Here Series Vol 31)" data-podcast-url="/podcasts/2026-09-29/ai-cost-control-board-level/" hidden></span>
 
-<a href="{{ '/podcasts/2026-09-26/agents-md-enterprise-deployment/' | relative_url }}" data-item-id="dab-podcast-2026-09-26-practical-ai-agents-enterprise" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-09-29/ai-cost-control-board-level/' | relative_url }}" data-item-id="dab-podcast-2026-09-29-everyday-ai-cost-control-872" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
-**Show:** Practical AI  
-**Host / guest:** Daniel Whitenack and Chris Benson; guest Nick Kuhn  
-**Focus:** Technical AI Engineering  
-**Date:** September 24, 2026  
-**Duration:** 48:52 · No episode time limit  
-**Topics:** AI agents, enterprise deployment, MCP, shared memory, identity, sandboxing
-
-**Summary:** Practical AI examines moving agents from prototypes into enterprise environments where platform engineering, identity, memory, MCP gateways, security, compliance, scalability, and reliability become operating requirements.
-
-**Why it matters:** Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.
-
-**Connection to the brief:** Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.
-
-
-
-**Coverage:** Reused the completed September 26 media checkpoint; no selection or source-content rediscovery.
-
-**Evidence:** Practitioner analysis. Official Practical AI page verified September 24, 2026, runtime 48:52, episode 373.
-
-**Listen / watch:** <a href="https://practicalai.show/373" data-item-id="dab-podcast-2026-09-26-practical-ai-agents-enterprise" data-edition-date="2026-09-26" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Practical AI</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-podcast-2026-09-26-practical-ai-agents-enterprise">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-### 10. #242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>44:10 podcast</span></div></aside>
-<!-- reader-release:end -->
-
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-26-ai-show-baptist-health" data-podcast-title="#242: How Baptist Health’s Marketing Team Took the Lead on AI Transformation" data-podcast-url="/podcasts/2026-09-26/baptist-health-ai-transformation/" hidden></span>
-
-<a href="{{ '/podcasts/2026-09-26/baptist-health-ai-transformation/' | relative_url }}" data-item-id="dab-podcast-2026-09-26-ai-show-baptist-health" data-edition-date="2026-09-26" data-action="permanent_page_clicks">Open the permanent podcast page</a>
-
-**Show:** The Artificial Intelligence Show  
-**Host / guest:** Mike Kaput; guest Christine Kotler  
+**Show:** Everyday AI Podcast – An AI and ChatGPT Podcast  
+**Host / guest:** Everyday AI  
 **Focus:** Applied Generative AI for Knowledge Workers  
+**Date:** September 29, 2026  
+**Duration:** Not independently verified · No episode time limit  
+**Topics:** AI cost control, enterprise AI, chatbots
+
+**Summary:** A same-day discussion of AI cost control and operating considerations.
+
+**Why it matters:** Adds operating-cost context to model and workflow choices.
+
+**Connection to the brief:** Adds cost discipline to model adoption decisions.
+
+
+
+**Coverage:** Reused the completed September 29 media checkpoint; no selection or source-content rediscovery.
+
+**Evidence:** Practitioner analysis. Locked September 29 media preflight verified the official Apple Podcasts listing dated September 29 and reachable at HTTP 200.
+
+**Listen / watch:** <a href="https://podcasts.apple.com/us/podcast/ep-872-ai-cost-control-101-why-your-chatbot-bill-is/id1683401861?i=1000792187154" data-item-id="dab-podcast-2026-09-29-everyday-ai-cost-control-872" data-edition-date="2026-09-29" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-podcast-2026-09-29-everyday-ai-cost-control-872">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+### 10. Opus 5.5 is our favorite AI model (so far).
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>Podcast · duration not verified</span></div></aside>
+<!-- reader-release:end -->
+
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-09-29-ai-for-humans-opus-197" data-podcast-title="Opus 5.5 is our favorite AI model (so far)." data-podcast-url="/podcasts/2026-09-29/opus-5-5-model-discussion/" hidden></span>
+
+<a href="{{ '/podcasts/2026-09-29/opus-5-5-model-discussion/' | relative_url }}" data-item-id="dab-podcast-2026-09-29-ai-for-humans-opus-197" data-edition-date="2026-09-29" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+
+**Show:** AI For Humans: Weekly AI News, Tools & Trends  
+**Host / guest:** AI For Humans  
+**Focus:** Agents for Everyone  
 **Date:** September 24, 2026  
-**Duration:** 44:10 · No episode time limit  
-**Topics:** AI adoption, knowledge work, governance, learning, workflow redesign
+**Duration:** Not independently verified · No episode time limit  
+**Topics:** AI models, agents, tools
 
-**Summary:** A regulated-healthcare case study of a two-year AI adoption program built around structured learning, peer coaching, workflow integration, pilots, governance, and role redesign.
+**Summary:** A recent independent-source model discussion retained by the locked media selection.
 
-**Why it matters:** Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.
+**Why it matters:** Provides a contrasting practical model-selection perspective.
 
-**Connection to the brief:** Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.
+**Connection to the brief:** Useful context for evaluating model choice rather than assuming a stronger model is automatically the right workflow fit.
 
 
 
-**Coverage:** Reused the completed September 26 media checkpoint; no selection or source-content rediscovery.
+**Coverage:** Reused the completed September 29 source-diverse fallback media checkpoint; no selection or source-content rediscovery.
 
-**Evidence:** Practitioner analysis. Official show notes verify September 24; independent listing verifies 44:10.
+**Evidence:** Practitioner analysis. Locked September 29 media preflight verified the official Apple Podcasts listing dated September 24 and reachable at HTTP 200.
 
-**Listen / watch:** <a href="https://podcast.smarterx.ai/shownotes/242" data-item-id="dab-podcast-2026-09-26-ai-show-baptist-health" data-edition-date="2026-09-26" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Artificial Intelligence Show</a>
+**Listen / watch:** <a href="https://podcasts.apple.com/us/podcast/opus-5-5-is-our-favorite-ai-model-so-far/id1682409647?i=1000791443406" data-item-id="dab-podcast-2026-09-29-ai-for-humans-opus-197" data-edition-date="2026-09-29" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-26" data-feedback-story-id="dab-podcast-2026-09-26-ai-show-baptist-health">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-09-29" data-feedback-story-id="dab-podcast-2026-09-29-ai-for-humans-opus-197">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -405,14 +405,14 @@ reader_release: true
 <!-- reader-release:start -->
 
 
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p class="watchlist-daily-counts"><strong>0 new today · 4 updated · 12 carried forward.</strong></p><p><strong>Changed today:</strong></p><ul class="watchlist-daily-items"><li>Turning agent memory into compact plans</li><li>Reusable agent skills become observable</li><li>Agents that persist across sessions</li><li>AI harness engineering becomes a first-class layer</li></ul><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><p class="watchlist-daily-counts"><strong>0 new today · 2 updated · 14 carried forward.</strong></p><p><strong>Changed today:</strong></p><ul class="watchlist-daily-items"><li>Reusable agent skills become observable</li><li>AI harness engineering becomes a first-class layer</li></ul><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
 
 
 <!-- reader-release:end -->
 
 ## Editorial takeaway
 
-The strongest pattern today is operationalization: agents are gaining memory and reusable skills, workplace copilots are gaining persistent and executable work modes, and engineering platforms are moving evaluation, isolation, and governance closer to the live execution path.
+The day’s strongest signal is the shift from isolated AI features toward repeatable operating systems: agent-ready engineering practices, workflow-level adoption, reusable skills, and stronger general models are becoming useful only when teams pair them with explicit process, context, and control.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>

@@ -265,6 +265,14 @@ jobs:
           printf '{"schema_version":"1.0.0","source":"publication_manifest","recovery_checkpoint_reused":%s,"regenerated":false}\n' "$RECOVERY_REUSE_IMAGES" > /tmp/visual-receipt.json
           echo "FINAL_IMAGE_REVIEW_PATH=$IMAGE_REVIEW_PATH" >> "$GITHUB_ENV"
 
+      - name: Refresh locked media preflight immediately before production staging
+        if: steps.handoff.outputs.execution_mode == 'production' && steps.recovery.outputs.reuse_expansion != 'true'
+        env:
+          PUBLICATION_MANIFEST_PATH: ${{ steps.handoff.outputs.publication_manifest_path }}
+        run: |
+          set -euo pipefail
+          node _tools/refresh-locked-media-preflight.mjs --manifest "$PUBLICATION_MANIFEST_PATH"
+
       - name: Deterministically expand canonical edition
         if: steps.recovery.outputs.reuse_expansion != 'true'
         env:
