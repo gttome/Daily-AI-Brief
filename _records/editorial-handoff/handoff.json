@@ -16,5 +16,6 @@
   "deterministic_validation_model_calls": 0,
   "recovery_note": "Delivery-first serialization of already-completed Sep29 discovery, editorial, media and 6/6 accepted image checkpoints. No discovery/editorial/media/image rerun.",
   "deterministic_recovery_trigger": "Compatibility-package the already-qualified bundle onto current trusted main; do not rerun discovery, editorial, media, or images.",
-  "compatibility_packaging_note": "Sep 29 research cutoff represented in America/Chicago while preserving the qualified instant; no content stage rerun."
+  "compatibility_packaging_note": "Sep 29 research cutoff represented in America/Chicago while preserving the qualified instant; no content stage rerun.",
+  "media_preflight_revalidation_note": "Refresh live reachability for the four already-locked media URLs immediately before production staging; retain qualified selections, dates, runtimes, and all accepted images."
 }
