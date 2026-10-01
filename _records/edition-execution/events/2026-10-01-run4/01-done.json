@@ -1,0 +1,13 @@
+{
+  "task_id": "01",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T19:52:52Z",
+  "reason": "Run 4 execution identity, original cutoff and hardened baseline bound.",
+  "proof": {
+    "binding_path": "_records/edition-execution/bindings/dab-edition-2026-10-01-run4.json",
+    "execution_id": "reliable-edition-20261001-run4",
+    "original_cutoff": "2026-10-01T19:52:35Z",
+    "baseline_main_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8"
+  }
+}
