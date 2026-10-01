@@ -1,0 +1,134 @@
+{
+  "schema_version": "reliable-edition-controller-state-v1",
+  "profile": "reliable-edition-v1",
+  "mission": {
+    "required_public_closed": 2,
+    "verified_public_closed": 1
+  },
+  "controller": {
+    "owner": "chatgpt-scheduled-executor",
+    "automation_id": "6abaf03d6c608191be014dd1765468d3",
+    "single_controller": true,
+    "durable_control_plane": "github_branch_state",
+    "branch": "reliable-edition/dab-edition-2026-09-30"
+  },
+  "edition": {
+    "edition_id": "dab-edition-2026-09-30",
+    "edition_date": "2026-09-30",
+    "original_cutoff": "2026-10-01T04:12:21.330Z",
+    "release_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "research_baseline_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "execution_id": "reliable-edition-20260930-second",
+    "policies": {
+      "article_freshness": "article-24-72-168-v1",
+      "media_freshness": "media-research-cutoff-v1"
+    }
+  },
+  "operation_sequence": [
+    "admission",
+    "discovery",
+    "editorial",
+    "media",
+    "images",
+    "seal_bundle",
+    "qualification",
+    "production_admission",
+    "publication",
+    "public_closed"
+  ],
+  "version": 1,
+  "status": "blocked",
+  "current_operation": "admission",
+  "started_at": "2026-10-01T04:12:21.330Z",
+  "updated_at": "2026-10-01T04:12:21.330Z",
+  "last_progress_at": "2026-10-01T04:12:21.330Z",
+  "completed": {},
+  "handler_registry": {
+    "admission": {
+      "executor": "node _tools/edition-execution.mjs admission-check",
+      "validator": "verifyAdmissionEvidence"
+    },
+    "discovery": {
+      "executor": "node _tools/discover-sources.mjs",
+      "validator": "pinned-cutoff discovery artifact assertions",
+      "execution_host": "github_actions"
+    },
+    "editorial": {
+      "executor": "scheduled ChatGPT one editorial pass",
+      "validator": "node _tools/editorial-kernel.mjs validate"
+    },
+    "media": {
+      "executor": "node _tools/parse-media-source.mjs + existing media selection inputs",
+      "implementation": "_generator/lib/media-source-parsers.mjs",
+      "validator": "publication manifest media/media_receipt gates"
+    },
+    "images": {
+      "executor": "scheduled ChatGPT native image host",
+      "implementation": "_generator/lib/recoverable-image-job.mjs",
+      "transport": "_generator/lib/connector-image-delivery.mjs",
+      "validator": "V2 image review + Git content-address identity (optional raw reread) + publication manifest image gates"
+    },
+    "seal_bundle": {
+      "executor": "node _tools/edition-execution.mjs seal",
+      "validator": "node _tools/edition-execution.mjs verify"
+    },
+    "qualification": {
+      "executor": ".github/workflows/post-editorial-kernel.yml + continuous-qualification.yml",
+      "validator": "qualification semantic gate + immutable result"
+    },
+    "production_admission": {
+      "executor": "node _tools/edition-execution.mjs promotion-plan",
+      "validator": "bundle/release/production identity binding"
+    },
+    "publication": {
+      "executor": ".github/workflows/publish-candidate.yml + protected CI + exact-head merge",
+      "validator": "trusted-main candidate validation and protected CI"
+    },
+    "public_closed": {
+      "executor": "node _tools/daily-validation.mjs + publication lifecycle",
+      "validator": "independent live completion integrity"
+    }
+  },
+  "previous_edition": {
+    "edition_id": "dab-edition-2026-09-29",
+    "controller_branch": "reliable-edition/dab-edition-2026-09-29",
+    "public_closed": {
+      "result": "pass",
+      "edition_id": "dab-edition-2026-09-29",
+      "completion_path": "_records/publication/2026-09-29/completion.json",
+      "lifecycle_path": "_records/publication/2026-09-29/lifecycle.json",
+      "evidence_main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+      "production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+      "pr_number": 303,
+      "ci_run_id": 36809097161,
+      "pages_run_id": 36809532817,
+      "independent_validation_run_id": 36809593413,
+      "live_verified_at": "2026-10-01T03:14:48.948Z",
+      "reconciled_at": "2026-10-01T04:05:06.189Z"
+    }
+  },
+  "task11": {
+    "status": "wip",
+    "started_at": "2026-10-01T04:05:06.189Z",
+    "edition_bound_at": "2026-10-01T04:12:21.330Z",
+    "required_distinct_edition": true,
+    "previous_edition_id": "dab-edition-2026-09-29",
+    "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery.",
+    "images_accepted": 0
+  },
+  "blockers": [
+    {
+      "code": "CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF",
+      "operation": "admission",
+      "observed_at": "2026-10-01T04:12:21.330Z",
+      "reason": "No fresh native producer recovery proof bound to current protected release. Historical proof expired 2026-09-30T00:56:56Z and binds e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef.",
+      "recovery": "Existing scheduled controller must perform real same-result recovery; do not refresh timestamps or fabricate capability."
+    }
+  ],
+  "cost_boundary": {
+    "recurring_work_authorized": false,
+    "recurring_codex_authorized": false,
+    "paid_api_authorized": false,
+    "billing_observed": false
+  }
+}
