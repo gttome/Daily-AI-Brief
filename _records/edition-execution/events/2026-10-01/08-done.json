@@ -1,0 +1,13 @@
+{
+  "task_id": "08",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:36:43.225Z",
+  "source": "scheduled production continuation",
+  "reason": "Two current short videos were verified under the 72-hour media policy and frozen for the edition.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/video-selection-2026-10-01.json",
+    "artifact_commit": "46d9f13d6612c3b3bd1106f68f7d136798864a03",
+    "count": 2
+  }
+}
