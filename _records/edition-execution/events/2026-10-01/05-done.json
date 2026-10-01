@@ -1,0 +1,12 @@
+{
+  "task_id": "05",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T16:53:50.576Z",
+  "source": "scheduled production run",
+  "reason": "Bounded discovery froze nine balanced deep-review candidates (3/3/3) under the 24/72/168-hour article policy.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/metadata-candidates-2026-10-01.json",
+    "candidate_count": 9
+  }
+}

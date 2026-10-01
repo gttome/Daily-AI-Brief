@@ -1,0 +1,119 @@
+{
+  "schema_version": "oct1-metadata-candidates-v1",
+  "edition_date": "2026-10-01",
+  "cutoff": "2026-10-01T16:43:31.127Z",
+  "observed_at": "2026-10-01T16:53:50.576Z",
+  "policy": "article-24-72-168-v1",
+  "counts": {
+    "total": 9,
+    "technical_ai_engineering": 3,
+    "applied_genai_knowledge_workers": 3,
+    "agents_nontechnical": 3
+  },
+  "candidates": [
+    {
+      "id": "m01",
+      "category": "Technical AI Engineering",
+      "title": "AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks",
+      "source": "AWS",
+      "published_date": "2026-09-30",
+      "url": "https://aws.amazon.com/blogs/mt/best-practices-for-writing-aws-devops-agent-skills/",
+      "freshness_tier": "24h",
+      "agent_skills": true,
+      "deep_review": true
+    },
+    {
+      "id": "m02",
+      "category": "Technical AI Engineering",
+      "title": "Amazon Bedrock AgentCore Runtime Instances support persistent multi-agent workflows",
+      "source": "AWS",
+      "published_date": "2026-09-30",
+      "url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/",
+      "freshness_tier": "24h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m03",
+      "category": "Technical AI Engineering",
+      "title": "AWS Jam adds hands-on training for building, deploying, and governing agents",
+      "source": "AWS",
+      "published_date": "2026-09-30",
+      "url": "https://aws.amazon.com/blogs/training-and-certification/build-deploy-and-harden-ai-agents-three-new-aws-jam-experiences-now-available/",
+      "freshness_tier": "24h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m04",
+      "category": "Applied Generative AI for Knowledge Workers",
+      "title": "Gemini 4 Argon targets long-horizon coding, legal, finance, and cyber workflows",
+      "source": "Google",
+      "published_date": "2026-09-30",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "freshness_tier": "24h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m05",
+      "category": "Applied Generative AI for Knowledge Workers",
+      "title": "Stack Internal turns enterprise context into verified knowledge for people and agents",
+      "source": "Stack Overflow",
+      "published_date": "2026-09-30",
+      "url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+      "freshness_tier": "24h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m06",
+      "category": "Applied Generative AI for Knowledge Workers",
+      "title": "Microsoft Work IQ grounds Copilot and agents in shared business context",
+      "source": "Microsoft",
+      "published_date": "2026-09-25",
+      "url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "freshness_tier": "extended_168h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m07",
+      "category": "Agents for Non-Technical People",
+      "title": "OpenAI Dots introduces always-on agents with approvals, connected apps, and background research",
+      "source": "OpenAI",
+      "published_date": "2026-09-29",
+      "url": "https://openai.com/index/introducing-dots/",
+      "freshness_tier": "72h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m08",
+      "category": "Agents for Non-Technical People",
+      "title": "UiPath and Snowflake connect governed data directly to business automations and agents",
+      "source": "UiPath",
+      "published_date": "2026-09-30",
+      "url": "https://www.uipath.com/newsroom/uipath-and-snowflake-two-way-integration-marketplace",
+      "freshness_tier": "24h",
+      "agent_skills": false,
+      "deep_review": true
+    },
+    {
+      "id": "m09",
+      "category": "Agents for Non-Technical People",
+      "title": "UiPath and BDO package agentic internal-audit accelerators for continuous controls testing",
+      "source": "UiPath",
+      "published_date": "2026-09-29",
+      "url": "https://www.uipath.com/newsroom/uipath-expands-partnership-with-bdo",
+      "freshness_tier": "72h",
+      "agent_skills": false,
+      "deep_review": true
+    }
+  ],
+  "novelty_note": "None of the six September 30 published story titles are reused. Exact source/topic reuse remains subject to semantic selection.",
+  "limits": {
+    "metadata_candidates_max": 20,
+    "deep_review_candidates": 9
+  }
+}
