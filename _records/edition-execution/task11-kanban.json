@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "blocked",
-  "observed_at": "2026-10-01T04:16:25.733Z",
+  "observed_at": "2026-10-01T04:21:38.711Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -272,7 +272,8 @@
     "Performed the supported admission-path audit: proveImageHandoff requires host.recover plus complete native bytes.",
     "Current native tool surface exposes generation/editing only; no recover-by-key/result operation is available.",
     "Historical PNG blob identity 77ffaceb44 was confirmed, but binary readback was unavailable; no current certification was claimed.",
-    "Admission remains blocked; discovery was not started and the distinct September 30 binding was preserved."
+    "Admission remains blocked; discovery was not started and the distinct September 30 binding was preserved.",
+    "Primary completion automation paused after persisting the full capability blocker; keeper and sentinel remain enabled and no duplicate executor was created."
   ],
   "readiness": {
     "articles": "0 / 6",
@@ -460,12 +461,13 @@
     }
   ],
   "liveness": {
-    "observed_at": "2026-10-01T04:16:25.733Z",
+    "observed_at": "2026-10-01T04:21:38.711Z",
     "primary_controller": {
       "id": "6abaf03d6c608191be014dd1765468d3",
-      "enabled": true,
-      "state": "ACTIVE_THIS_INVOCATION",
-      "last_run_time": "2026-10-01T04:12:49.276109Z"
+      "enabled": false,
+      "state": "PAUSED_AFTER_FULL_CAPABILITY_BLOCKER",
+      "last_run_time": "2026-10-01T04:12:49.276109Z",
+      "disabled_at": "2026-10-01T04:21:27.862209Z"
     },
     "keeper": {
       "id": "6abbc140a31c8191add39f59ba06f522",
@@ -484,11 +486,11 @@
       "queued_relevant": 0,
       "note": "One unrelated stale Pages run from 2026-08-17 remains queued; it is not an active writer for this edition."
     },
-    "one_writer_check": "PASS — this primary invocation is the only active edition writer."
+    "one_writer_check": "PASS — no active edition writer after the fully blocked primary paused; keeper and sentinel remain enabled."
   },
   "repository": {
     "main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
-    "branch_head_before_record": "5bea01c54c8590d74c935fc8d3fbe42c75a266bb",
+    "branch_head_before_record": "7b87a264e5677a662096f6b90ca5764656dfa4b6",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
     "release_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e"
   },
