@@ -35,5 +35,25 @@
   "no_attempt_5": true,
   "task_outcome": "Blocked",
   "preserved_tasks": "00-14",
-  "accepted_images_unchanged": true
+  "accepted_images_unchanged": true,
+  "operational_learning": {
+    "problem_id": "DAB-OPS-20261001-017",
+    "status": "open",
+    "symptom": "m08 attempts 2 and 3 from the long-running orchestration context both generated Daily AI Brief/Supervisor dashboard architecture instead of the sealed Business Skill subject.",
+    "evidence": [
+      "_records/image-attempts/2026-10-01-run4/m08-attempt-2.json",
+      "_records/image-attempts/2026-10-01-run4/m08-attempt-3.json"
+    ],
+    "suspected_root_cause": "Inherited orchestration/chat context is the leading suspected execution-context failure because the surrounding dashboard/Supervisor concepts repeatedly displaced the sealed story subject; this remains a hypothesis, not a proven causal mechanism.",
+    "attempted_fix": "Execute attempt 4 in a fresh-context worker from the sealed single-story Business Skill instruction only.",
+    "outcome": "Fresh-context attempt 4 restored subject_match=PASS, strengthening the context-contamination hypothesis, but the worker did not succeed overall because the Hiring lane contained human-bust icons and exact PNG persistence was unavailable in the current worker surface.",
+    "invariant_promoted": false,
+    "regression_protection_promoted": false,
+    "reason_no_promotion": "The fresh-context worker did not complete successfully; keep the problem open rather than claiming a permanent fix."
+  },
+  "operational_learning_incident_delta_write": {
+    "status": "blocked",
+    "target": "_records/run-learning/incidents/reliable-edition-20261001-run4.jsonl",
+    "reason": "The connector rejected the incident-delta write with a safety check. The learning is preserved in this immutable worker result instead; no success is claimed for the canonical incident delta."
+  }
 }
