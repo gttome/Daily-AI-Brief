@@ -1,0 +1,11 @@
+{
+  "task_id": "00",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T19:51:27Z",
+  "reason": "Begin mandatory Production Readiness Validation before any Run 4 content production.",
+  "proof": {
+    "baseline_main_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+    "contract": "run-learning-readiness-v1"
+  }
+}
