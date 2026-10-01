@@ -2,7 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth,
+  activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth, applyImmediateImageRecovery,
   validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest,
   projectKanbanFromEvents, kanbanProjectionFresh
 } from '../_generator/lib/run-supervisor.mjs';
@@ -149,9 +149,17 @@ try{
     const latest=latestTaskEvent(events,taskId);
     const worker=workerState(runRoot,args['execution-id']);
     const executorState=args['executor-state']||worker.state;
-    const blockedRecoverable=current?.state==='Blocked' && latest?.recoverable!==false && latest?.external_blocker!==true;
+    const image=Number(taskId)>=11 && Number(taskId)<=16 ? latestImageRecovery(runRoot,executionKey) : null;
+    const imageOverride=applyImmediateImageRecovery({
+      task_id:taskId,
+      task_state:current?.state,
+      image_recovery:image,
+      recovery_attempts:Number(args['recovery-attempts']||0)
+    });
+    const blockedRecoverable=(current?.state==='Blocked' && latest?.recoverable!==false && latest?.external_blocker!==true) ||
+      imageOverride.blocked_recoverable;
     const classification=classifyRunHealth({
-      terminal,task_state:current?.state,executor_state:executorState,
+      terminal,task_state:imageOverride.task_state,executor_state:executorState,
       last_progress_at:args['last-progress-at']||latest?.at||null,
       blocked_recoverable:blockedRecoverable,blocked_external:latest?.external_blocker===true,
       next_task_ready:current?.state==='Backlog'||current?.state==='Ready',
@@ -160,15 +168,15 @@ try{
     });
     const decision=taskRecoveryDecision({
       classification,taskContract,
-      attempts:Number(args.attempts||0),recoveryAttempts:Number(args['recovery-attempts']||0)
+      attempts:Number(args.attempts||0),recoveryAttempts:imageOverride.recovery_attempts
     });
     let request=null;
     if(['dispatch_normal','first_recovery','alternate_recovery'].includes(decision.action)){
       let instruction=decision.instruction;
-      let recoveryAttempt=Number(args['recovery-attempts']||0);
-      if(Number(taskId)>=11 && Number(taskId)<=16){
-        const image=latestImageRecovery(runRoot,executionKey);
-        if(image?.recovery_action){ instruction=image.recovery_action; recoveryAttempt=Math.max(recoveryAttempt,Number(image.attempt||0)); }
+      let recoveryAttempt=imageOverride.recovery_attempts;
+      if(image?.recovery_action){
+        instruction=image.recovery_action;
+        recoveryAttempt=Math.max(recoveryAttempt,Number(image.attempt||0));
       }
       request=buildWorkerRequest({
         execution_id:args['execution-id'],edition_id:args['edition-id'],branch:args.branch,
@@ -183,7 +191,7 @@ try{
       schema_version:'run-supervisor-tick-v1',
       execution_id:args['execution-id'],execution_key:executionKey,edition_id:args['edition-id'],branch:args.branch,
       current_task:current,latest_task_event:latest,executor_state:executorState,
-      classification,decision,worker_request:request,
+      immediate_image_recovery:imageOverride,classification,decision,worker_request:request,
       kanban:{fresh:fresh.fresh,reason:fresh.reason,expected_digest:fresh.expected_digest,observed_digest:fresh.observed_digest,file:path.relative(runRoot,kanban.file)},
       terminal
     });
