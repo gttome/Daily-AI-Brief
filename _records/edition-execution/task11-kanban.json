@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T05:04:00.740393Z",
+  "observed_at": "2026-10-01T05:43:11.471Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -12,7 +12,7 @@
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
   "controller_sha": "3cea9cac92d0c8673ecfb8a6a80e16540e6b013c",
   "blocker": null,
-  "next_action": "Verify two videos, then two source-diverse podcasts; keep the six-story lock unchanged.",
+  "next_action": "Refresh the Emerging AI Watchlist; keep the six-story and media locks unchanged.",
   "cards": [
     {
       "id": "11.01",
@@ -95,30 +95,36 @@
       "id": "11.08",
       "title": "Select and verify two videos",
       "depends_on": "07",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T05:04:00.740393Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "Verify two fresh videos under media freshness and duration policy",
-      "next_action": "Select two verified videos, target ≤10 minutes; use ≤20 only if the approved fallback is required."
+      "completed_at": "2026-10-01T05:43:04.000Z",
+      "timing": "39m 3.260s",
+      "substage": "Two fresh videos verified; both ≤10 minutes; conservative runtime bound used for Codex Cloud",
+      "next_action": null,
+      "proof": "_records/editorial-handoff/media-preflight-2026-09-30.json"
     },
     {
       "id": "11.09",
       "title": "Select and verify required podcasts",
       "depends_on": "07",
-      "column": "Backlog",
+      "column": "Done",
       "started_at": null,
-      "completed_at": null,
-      "timing": "Not started"
+      "completed_at": "2026-10-01T05:43:11.471Z",
+      "timing": "UNKNOWN",
+      "substage": "Two distinct shows verified; both in primary 48-hour tier",
+      "next_action": null,
+      "proof": "_records/editorial-handoff/media-2026-09-30.json"
     },
     {
       "id": "11.10",
       "title": "Refresh Emerging AI Watchlist",
       "depends_on": "05",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T05:43:11.471Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "Refresh emerging watchlist from the frozen September 30 candidate/evidence set plus bounded independent checks",
+      "next_action": "Reconcile new, updated, and carried entries without changing the six-story lock."
     },
     {
       "id": "11.11",
@@ -282,16 +288,16 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Task 11.07 completed with six distinct locked stories and exactly one reusable Agent Skills story.",
-    "Task 11.08 started: two-video verification under current freshness and duration policy."
+    "Tasks 11.08 and 11.09 completed with two fresh short videos and two source-diverse primary-tier podcasts.",
+    "Task 11.10 started: refresh the Emerging AI Watchlist without reopening the locked stories."
   ],
   "readiness": {
     "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
     "editorial": "LOCKED: one semantic pass; no post-editorial model pass",
-    "videos": "0 / 2",
-    "podcasts": "0 / 2",
+    "videos": "LOCKED: 2 / 2; both ≤10 minutes",
+    "podcasts": "LOCKED: 2 / 2; distinct shows; both primary 48-hour tier",
     "images": "0 / 6",
-    "watchlist": "Not started",
+    "watchlist": "WIP",
     "books": "Not started; 4-book catalog",
     "bundle": "Not started",
     "qualification": "Not started",
@@ -520,6 +526,25 @@
       "event": "backlog_exit",
       "at": "2026-10-01T05:04:00.740393Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.08",
+      "event": "done_recorded",
+      "at": "2026-10-01T05:43:04.000Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 2343.26
+    },
+    {
+      "task_id": "11.09",
+      "event": "done_recorded",
+      "at": "2026-10-01T05:43:11.471Z",
+      "cycle_start_known": false
+    },
+    {
+      "task_id": "11.10",
+      "event": "backlog_exit",
+      "at": "2026-10-01T05:43:11.471Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -566,5 +591,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T05:04:00.740393Z"
+  "last_durable_progress_at": "2026-10-01T05:43:11.471Z"
 }
