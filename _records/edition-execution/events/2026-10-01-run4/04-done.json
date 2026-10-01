@@ -1,0 +1,8 @@
+{
+  "task_id": "04",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T19:58:03Z",
+  "reason": "Nine publisher-source candidates verified and classified under article-24-72-168-v1.",
+  "proof": {"evidence_file": "_records/editorial-handoff/article-evidence-2026-10-01-run4.json", "primary": 4, "normal_fallback": 3, "extended_fallback": 2}
+}
