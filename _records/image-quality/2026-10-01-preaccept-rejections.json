@@ -1,0 +1,6 @@
+{
+  "edition_id": "dab-edition-2026-10-01",
+  "result": "reject_replace",
+  "reviewed_at": "2026-10-01T18:41:55.326728Z",
+  "reason": "Initial SVG assets are not accepted production images. They violate sealed visible-text allowlists and are not certified against the required professional generative textbook-image policy."
+}
