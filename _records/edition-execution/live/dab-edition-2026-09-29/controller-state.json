@@ -3,7 +3,7 @@
   "profile": "reliable-edition-v1",
   "mission": {
     "required_public_closed": 2,
-    "verified_public_closed": 0
+    "verified_public_closed": 1
   },
   "controller": {
     "owner": "chatgpt-scheduled-executor",
@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 28,
+  "version": 29,
   "status": "active",
-  "current_operation": "public_closed",
+  "current_operation": "second_edition_admission",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -285,6 +285,20 @@
       "final_result": "pass",
       "exact_live_image_bytes": true,
       "reconciled_at": "2026-10-01T02:52:57.922Z"
+    },
+    "public_closed": {
+      "result": "pass",
+      "edition_id": "dab-edition-2026-09-29",
+      "completion_path": "_records/publication/2026-09-29/completion.json",
+      "lifecycle_path": "_records/publication/2026-09-29/lifecycle.json",
+      "evidence_main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+      "production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+      "pr_number": 303,
+      "ci_run_id": 36809097161,
+      "pages_run_id": 36809532817,
+      "independent_validation_run_id": 36809593413,
+      "live_verified_at": "2026-10-01T03:14:48.948Z",
+      "reconciled_at": "2026-10-01T04:05:06.189Z"
     }
   },
   "handler_registry": {
@@ -333,19 +347,8 @@
       "validator": "independent live completion integrity"
     }
   },
-  "blockers": [
-    {
-      "code": "FINALIZATION_PR_CREATION_TOOL_DENIED",
-      "operation": "public_closed",
-      "branch": "finalization/2026-09-29-d6de7157",
-      "head_sha": "ff42112e6ef85bb0d49971c499773b6013ffed42",
-      "target_branch": "main",
-      "observed_main_sha": "d6de71575a1ea110949f4f424e17ec29a51f2001",
-      "detail": "Closure evidence is complete and fresh, but opening the required protected finalization PR was denied by the current tool safety layer before GitHub mutation.",
-      "observed_at": "2026-10-01T02:52:57.922Z"
-    }
-  ],
-  "updated_at": "2026-10-01T02:52:57.922Z",
+  "blockers": [],
+  "updated_at": "2026-10-01T04:05:06.189Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -383,7 +386,7 @@
     ],
     "compatibility_reason": "controller simplification, bounded self-healing, immutable-result projection, passive timing; no editorial/media/image acceptance semantics weakened"
   },
-  "last_progress_at": "2026-10-01T02:52:57.922Z",
+  "last_progress_at": "2026-10-01T04:05:06.189Z",
   "task08": {
     "status": "done",
     "substage": "qualification_passed",
@@ -413,12 +416,38 @@
     "completed_at": "2026-10-01T02:52:57.922Z"
   },
   "task10": {
-    "status": "wip",
-    "substage": "closure_evidence_ready_finalization_pr_required",
+    "status": "done",
+    "substage": "completion_persisted_on_protected_main",
     "finalization_branch": "finalization/2026-09-29-d6de7157",
     "finalization_head": "ff42112e6ef85bb0d49971c499773b6013ffed42",
     "validation_result": "pass",
     "live_validation_run_id": 36800002686,
-    "next_action": "open protected finalization PR to main, pass protected CI, merge exact head, then verify closure evidence on protected main"
+    "next_action": null,
+    "completed_at": "2026-10-01T03:14:48.948Z"
+  },
+  "blocker_history": [
+    {
+      "code": "FINALIZATION_PR_CREATION_TOOL_DENIED",
+      "operation": "public_closed",
+      "branch": "finalization/2026-09-29-d6de7157",
+      "head_sha": "ff42112e6ef85bb0d49971c499773b6013ffed42",
+      "target_branch": "main",
+      "observed_main_sha": "d6de71575a1ea110949f4f424e17ec29a51f2001",
+      "detail": "Closure evidence is complete and fresh, but opening the required protected finalization PR was denied by the current tool safety layer before GitHub mutation.",
+      "observed_at": "2026-10-01T02:52:57.922Z",
+      "resolved_at": "2026-10-01T04:05:06.189Z",
+      "resolution": "Protected main contains completion and lifecycle COMPLETED; PR304 persisted closure; PR305 synchronized Command Center."
+    }
+  ],
+  "task11": {
+    "status": "wip",
+    "started_at": "2026-10-01T04:05:06.189Z",
+    "required_distinct_edition": true,
+    "previous_edition_id": "dab-edition-2026-09-29",
+    "next_action": "Refresh native host admission using existing producer result, then bind next distinct edition and execute discovery.",
+    "candidate_edition_date": "2026-09-30",
+    "date_selection_basis": "Next unpublished calendar edition after independently closed 2026-09-29; no second-edition branch or queued binding found.",
+    "edition_binding_status": "pending_admission",
+    "images_accepted": 0
   }
 }
