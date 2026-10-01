@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Always-on agent permission and approval loop">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eaf4ff"/><stop offset="1" stop-color="#cedff3"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#18324e" flood-opacity=".15"/></filter><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#385f84"/></marker></defs>
+<rect width="1200" height="630" fill="#ffffff"/>
+<text x="55" y="65" font-family="Arial" font-size="30" font-weight="700" fill="#10253f">Always-on Agent</text>
+<rect x="55" y="95" width="240" height="180" rx="32" fill="url(#b)" stroke="#648ab0" stroke-width="4" filter="url(#s)"/>
+<circle cx="175" cy="165" r="43" fill="#fff" stroke="#4a83b5" stroke-width="4"/><path d="M145 165 H205 M175 135 V195" stroke="#4a83b5" stroke-width="7"/>
+<text x="111" y="240" font-family="Arial" font-size="21" font-weight="700" fill="#2e5578">User Control</text>
+<path d="M295 180 H370" stroke="#385f84" stroke-width="5" marker-end="url(#a)"/>
+<text x="373" y="65" font-family="Arial" font-size="28" font-weight="700" fill="#10253f">Connected Apps</text>
+<rect x="370" y="95" width="255" height="180" rx="25" fill="#f7f9fc" stroke="#859db3" stroke-width="3" filter="url(#s)"/>
+<rect x="397" y="122" width="82" height="52" rx="13" fill="#e8f2ff" stroke="#7296b8"/><rect x="511" y="122" width="82" height="52" rx="13" fill="#eaf7ef" stroke="#6aa083"/>
+<rect x="397" y="194" width="82" height="52" rx="13" fill="#fff1dc" stroke="#d19a45"/><rect x="511" y="194" width="82" height="52" rx="13" fill="#f2ebff" stroke="#8e71b3"/>
+<path d="M495 275 V340" stroke="#385f84" stroke-width="5" marker-end="url(#a)"/>
+<rect x="355" y="342" width="280" height="82" rx="20" fill="#edf7f2" stroke="#559477" stroke-width="3"/><text x="391" y="392" font-family="Arial" font-size="24" font-weight="700" fill="#2e654b">Read-only Research</text>
+<path d="M635 383 H735" stroke="#385f84" stroke-width="5" marker-end="url(#a)"/>
+<rect x="735" y="330" width="200" height="105" rx="22" fill="#f4f8fc" stroke="#7895b0" stroke-width="3"/><text x="774" y="376" font-family="Arial" font-size="24" font-weight="700" fill="#315675">Activity View</text><rect x="770" y="394" width="130" height="11" rx="5" fill="#aac4dd"/>
+<path d="M935 383 H1010" stroke="#385f84" stroke-width="5" marker-end="url(#a)"/>
+<text x="965" y="65" font-family="Arial" font-size="27" font-weight="700" fill="#10253f">Permission Gate</text>
+<rect x="965" y="95" width="190" height="210" rx="28" fill="#fff" stroke="#889bab" stroke-width="3" filter="url(#s)"/>
+<rect x="990" y="120" width="140" height="45" rx="12" fill="#e8f6ed" stroke="#55a173"/><text x="1030" y="149" font-family="Arial" font-size="20" font-weight="700" fill="#2e6748">Allow</text>
+<rect x="990" y="180" width="140" height="45" rx="12" fill="#fff1dc" stroke="#d49a3b"/><text x="1004" y="209" font-family="Arial" font-size="18" font-weight="700" fill="#744c17">Approval Required</text>
+<rect x="990" y="240" width="140" height="45" rx="12" fill="#ffebe7" stroke="#d16b57"/><text x="1031" y="269" font-family="Arial" font-size="20" font-weight="700" fill="#873b2e">Block</text>
+<path d="M1060 305 V375" stroke="#385f84" stroke-width="5" marker-end="url(#a)"/>
+<rect x="955" y="378" width="210" height="85" rx="22" fill="#f7f9fc" stroke="#7b93a8" stroke-width="3"/><text x="975" y="415" font-family="Arial" font-size="20" font-weight="700" fill="#314f69">Consequential Action</text><text x="1000" y="444" font-family="Arial" font-size="17" font-weight="700" fill="#5c7185">Review before action</text>
+<path d="M955 510 C760 590 340 590 170 300" fill="none" stroke="#8296aa" stroke-width="4" stroke-dasharray="11 8" marker-end="url(#a)"/>
+<text x="585" y="575" font-family="Arial" font-size="21" font-weight="700" fill="#10253f">Background Progress</text>
+<text x="55" y="575" font-family="Arial" font-size="21" font-weight="700" fill="#10253f">Persistent Work</text>
+<text x="970" y="575" font-family="Arial" font-size="21" font-weight="700" fill="#10253f">Bounded Autonomy</text>
+</svg>
