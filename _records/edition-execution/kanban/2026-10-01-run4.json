@@ -5,9 +5,9 @@
   "execution_id": "reliable-edition-20261001-run4",
   "branch": "reliable-edition/dab-edition-2026-10-01-run4",
   "created_at": "2026-10-01T19:49:46Z",
-  "observed_at": "2026-10-01T19:49:46Z",
+  "observed_at": "2026-10-01T19:53:26Z",
   "authoritative_source": "transition_events",
-  "executor_state": "BOOTSTRAPPING",
+  "executor_state": "START_TRIGGER_ARMED_KEEPER_ENABLED",
   "public_closed": false,
   "terminal_state": null,
   "tasks": {
@@ -254,38 +254,38 @@
     "00": {
       "id": "00",
       "title": "Production Readiness Validation",
-      "state": "Backlog",
+      "state": "Done",
       "entered_backlog_at": "2026-10-01T19:49:46Z",
-      "active_started_at": null,
+      "active_started_at": "2026-10-01T19:51:27Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-01T19:52:10Z",
+      "cycle_seconds": 144,
+      "active_seconds": 43
     },
     "01": {
       "id": "01",
       "title": "Bind edition, Run 4 execution ID, cutoff and baseline",
-      "state": "Backlog",
+      "state": "Done",
       "entered_backlog_at": "2026-10-01T19:49:46Z",
-      "active_started_at": null,
+      "active_started_at": "2026-10-01T19:52:35Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-01T19:52:52Z",
+      "cycle_seconds": 186,
+      "active_seconds": 17
     },
     "02": {
       "id": "02",
       "title": "Start production controller and confirm persistent keeper",
-      "state": "Backlog",
+      "state": "Done",
       "entered_backlog_at": "2026-10-01T19:49:46Z",
-      "active_started_at": null,
+      "active_started_at": "2026-10-01T19:52:52Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-01T19:53:26Z",
+      "cycle_seconds": 220,
+      "active_seconds": 34
     },
     "03": {
       "id": "03",
