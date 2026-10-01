@@ -1,0 +1,8 @@
+{
+  "task_id": "07",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T17:31:34.785Z",
+  "source": "scheduled production continuation",
+  "reason": "Begin selecting the six final stories from the frozen nine-candidate evidence packet."
+}
