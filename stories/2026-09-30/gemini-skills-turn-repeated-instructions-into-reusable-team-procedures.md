@@ -14,7 +14,7 @@ reader_release: true
 # Gemini Skills turn repeated instructions into reusable team procedures
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-30T00:00:00.000Z. The publisher exposed a September 30 date without an exact publication time. The gate uses start-of-day conservatively for freshness and separately records a pre-cutoff first-seen timestamp; this is the edition’s one reusable Agent Skills story.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-30-3b6d7f96" hidden></span>

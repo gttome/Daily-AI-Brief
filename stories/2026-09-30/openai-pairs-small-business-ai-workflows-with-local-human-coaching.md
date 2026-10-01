@@ -14,7 +14,7 @@ reader_release: true
 # OpenAI pairs small-business AI workflows with local human coaching
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-30T00:00:00.000Z. The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, placing it just outside 24 hours while separate first-seen evidence proves it existed before the fixed cutoff.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-30-5d21346f" hidden></span>

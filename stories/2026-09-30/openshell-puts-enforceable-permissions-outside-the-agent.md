@@ -14,7 +14,7 @@ reader_release: true
 # OpenShell puts enforceable permissions outside the agent
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-28T08:55:00.000Z. Published about 67 hours before the fixed cutoff; selected under the normal 72-hour fallback because it is the strongest distinct implementation-level runtime-control story not used in the September 29 edition.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 28 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-30-77eb0ae9" hidden></span>

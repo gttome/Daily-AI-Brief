@@ -4,6 +4,14 @@ import {readerAddition} from './book-reading.mjs';
 import {editionPodcasts} from './podcasts.mjs';
 const catalog=JSON.parse(fs.readFileSync(new URL('../../_data/reading-support.json',import.meta.url),'utf8'));
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function publicationDateLabel(value){
+ // Preserve the publisher's calendar date instead of converting time zones.
+ const match=String(value||'').match(/^(\d{4})-(\d{2})-(\d{2})(?:T|$)/);
+ if(!match)return '';
+ const [,year,month,day]=match;
+ const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+ return months[Number(month)-1]?`${day} ${months[Number(month)-1]} ${year}`:'';
+}
 export function readingMinutes(evidence){
  if(evidence?.status!=='verified'||!Number.isInteger(evidence.word_count)||evidence.word_count<1||!evidence.source_url||!evidence.verified_at||!evidence.method)return null;
  return Math.max(1,Math.ceil(evidence.word_count/200));
@@ -48,6 +56,7 @@ export function renderReadingSupport(item,id,date,kind='Article'){
  const r=x?.related;
  const fallback=kind==='Article'&&item.freshness?.tier==='fallback'&&item.freshness.fallback_band?item.freshness:null;
  const coverageLabel=fallback?articleFallbackLabel(fallback):x?.coverage_label;
- const disclosure=fallback?`<p class="recency-disclosure"><strong>Originally published:</strong> ${esc(fallback.source_published_at)}. ${esc(fallback.fallback_reason)}</p>`:'';
+ const published=kind==='Article'?publicationDateLabel(item.source?.publication_date||item.freshness?.source_published_at):'';
+ const disclosure=published?`<p class="recency-disclosure"><strong>Originally published:</strong> ${published}</p>`:'';
  return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${coverageLabel?`<span class="coverage-label">${esc(coverageLabel)}</span>`:''}<span${kind==='Article'?' title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified."':''}>${esc(duration)}</span></div>${disclosure}${x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:''}${r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:''}</aside>`);
 }

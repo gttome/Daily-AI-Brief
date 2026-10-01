@@ -32,9 +32,13 @@ test('historical ordinary ceiling is not widened while legacy Skills retains 168
  edition.stories[0].freshness.fallback_band='normal';assert.ok(validateEdition(edition).some(x=>x.includes('fallback_band')));
 });
 test('new-policy ordinary article disclosure is independent of optional reading-support catalog',()=>{
- const f={tier:'fallback',fallback_band:'extended',source_published_at:published(90),fallback_reason:'No qualifying primary or normal-fallback article met the required focus and evidence checks.'};
+ const f={tier:'fallback',fallback_band:'extended',source_published_at:'2026-09-24T23:30:00-05:00',fallback_reason:'No qualifying primary or normal-fallback article met the required focus and evidence checks.'};
  const html=renderReadingSupport({freshness:f},'test-no-catalog-entry','2026-09-28');
- assert.match(html,/Extended recency fallback/);assert.ok(html.includes(f.source_published_at));assert.ok(html.includes(f.fallback_reason));
+ assert.match(html,/Extended recency fallback/);
+ assert.match(html,/<strong>Originally published:<\/strong> 24 Sep 2026<\/p>/);
+ assert.ok(!html.includes(f.source_published_at));assert.ok(!html.includes(f.fallback_reason));
+ const primary=renderReadingSupport({source:{publication_date:'2026-10-01'},freshness:{tier:'primary',source_published_at:'2026-10-02T00:30:00Z'}},'primary-no-catalog','2026-10-01');
+ assert.match(primary,/<strong>Originally published:<\/strong> 01 Oct 2026<\/p>/);
 });
 test('Notion observed RSS numeric timezone with display name yields paired publication dates',()=>{
  const text=fs.readFileSync('_generator/test/fixtures/notion-publication-zone.xml','utf8');
