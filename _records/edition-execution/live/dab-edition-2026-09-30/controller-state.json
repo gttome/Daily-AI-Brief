@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 2,
+  "version": 3,
   "status": "running",
-  "current_operation": "discovery",
+  "current_operation": "editorial",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T04:46:28.035993Z",
-  "last_progress_at": "2026-10-01T04:46:28.035993Z",
+  "updated_at": "2026-10-01T05:48:17.443Z",
+  "last_progress_at": "2026-10-01T05:48:17.443Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -58,6 +58,31 @@
       "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
       "native_recovery_capability_claimed": false,
       "image_stage_deferred": true
+    },
+    "discovery": {
+      "result": "pass",
+      "completed_at": "2026-10-01T05:04:00.740393Z",
+      "candidate_receipt": "_records/editorial-handoff/metadata-candidates-2026-09-30.json",
+      "evidence_receipt": "_records/editorial-handoff/article-evidence-2026-09-30.json",
+      "selection_receipt": "_records/editorial-handoff/semantic-selection-2026-09-30.json",
+      "stories_locked": 6
+    },
+    "media": {
+      "result": "pass",
+      "completed_at": "2026-10-01T05:43:11.471Z",
+      "selection": "_records/editorial-handoff/media-2026-09-30.json",
+      "preflight": "_records/editorial/media-preflight/2026-09-30.json",
+      "videos": 2,
+      "podcasts": 2
+    },
+    "watchlist": {
+      "result": "pass",
+      "completed_at": "2026-10-01T05:48:17.443Z",
+      "receipt": "_records/watchlist-sweeps/2026-09-30.json",
+      "new": 1,
+      "updated": 3,
+      "carried": 13,
+      "focused_checks": 14
     }
   },
   "handler_registry": {
@@ -130,9 +155,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Discover fresh Sep 30 article candidates under the fixed cutoff 2026-10-01T04:12:21.330Z; then verify evidence under article-24-72-168-v1.",
+    "next_action": "Complete the four-book item-anchor review matrix and deterministic mappings; then seal six image specifications.",
     "images_accepted": 0,
-    "current_task": "11.05"
+    "current_task": "11.11"
   },
   "blockers": [],
   "cost_boundary": {
