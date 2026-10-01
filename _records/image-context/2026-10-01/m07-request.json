@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "professional-editorial-diagram-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-01-m07"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional textbook control-loop diagram for an always-on agent using connected apps for read-only background research, showing progress in an activity ledger and routing consequential actions through allow, approval-required or block controls. White background, abstract system tokens only, no people or real UI.",
+  "candidate_id": "m07",
+  "edition_id": "dab-edition-2026-10-01",
+  "renderer": "svg-editorial-v1"
+}
