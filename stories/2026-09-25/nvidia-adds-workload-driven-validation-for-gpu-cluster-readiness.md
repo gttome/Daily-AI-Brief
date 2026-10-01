@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** AI infrastructure can look healthy while failing under real distributed load. Workload-level readiness testing gives engineering teams a stronger pre-production signal for networking, topology, collective communication, and GPU behavior.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

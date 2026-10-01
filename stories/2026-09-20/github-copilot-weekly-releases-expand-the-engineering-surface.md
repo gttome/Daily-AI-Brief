@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** A recurring release cadence means teams need a lightweight operating practice for reviewing Copilot changes, deciding which ones affect local workflows, and updating guidance before new behavior surprises developers.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework as background for deciding when a newly released Copilot capability is ready to enter a team’s standard engineering workflow.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

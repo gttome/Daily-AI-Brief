@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** It gives readers concrete examples of the agent-control, context, and verification patterns behind today’s Agent Skills and long-horizon-agent stories.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://hubmesh.dev/posts/2026-09-18-hubmesh-open-cowork-osir_9/" data-item-id="dab-video-2026-09-19-agent-skills" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">HubMesh</a>
 

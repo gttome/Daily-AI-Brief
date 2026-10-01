@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Pairs with today’s production-runtime story by showing how AI infrastructure is becoming more distributed and workload-aware.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/shorts/Z4no-hhcuas" data-item-id="dab-video-2026-09-21-general" data-edition-date="2026-09-21" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Matthew Berman</a>
 

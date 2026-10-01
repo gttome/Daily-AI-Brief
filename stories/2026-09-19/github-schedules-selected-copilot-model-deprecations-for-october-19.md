@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Teams that pin workflows, guidance, or expectations to particular Copilot models need to check model policies and transition plans before the October cutoff.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

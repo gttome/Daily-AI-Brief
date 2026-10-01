@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Knowledge-worker adoption increasingly depends on system design: trustworthy context, repeatable workflows, governed actions, and measurable outcomes. That is a more durable operating model than distributing isolated prompts or assistants.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

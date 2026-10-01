@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Agent observability is moving toward the same traces-and-spans discipline used for distributed software. That gives operators evidence about latency, tool usage, retries, failures, and model behavior instead of relying on the agent’s final answer.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** AI feature governance is becoming a default-management problem, not just an adoption problem. Administrators need explicit ownership of organization defaults, exceptions, and review windows so feature rollout does not outpace policy.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

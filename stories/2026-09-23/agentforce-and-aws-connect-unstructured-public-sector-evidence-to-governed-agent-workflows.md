@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The important pattern is not a generic chatbot: it is a governed tool-and-data layer that turns messy evidence into structured context, limits access, logs actions, and keeps accountable humans in the decision loop.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

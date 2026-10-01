@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Complements the day’s Agent Builder and workflow-adoption coverage.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=KJ8Y2Nb9y9o" data-item-id="dab-video-2026-09-29-agent-skills" data-edition-date="2026-09-29" data-action="source_clicks" target="_blank" rel="noopener noreferrer">YouTube</a>
 

@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Conversational accounting is useful only when the underlying books, permissions and confirmations remain visible. The commit verifies plugin availability, not the accuracy of every answer or action in a real company file.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

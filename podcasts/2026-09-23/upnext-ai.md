@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Pairs with today's emphasis on observability, tool governance, and verified agent outcomes.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary recent source-diverse podcast selection.
 

@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Pairs with today’s production-maturity focus by asking what accountability, economics, and evidence should look like as AI systems become more capable.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary recent podcast window; source-diverse from Reuters Morning Bid.
 

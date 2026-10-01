@@ -34,7 +34,7 @@ reader_release: true
 
 **Connection to the brief:** It complements today’s disclosure, extraction and agent-control stories by asking how systems can make and check smaller decisions.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Selected inside the preferred preceding-48-hour window after registered-source review.
 

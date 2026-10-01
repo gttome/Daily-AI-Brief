@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Complements today’s engineering stories by showing how compute, deployment, and policy shape AI systems.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary 48-hour podcast window; source-diverse from Big Technology Podcast.
 

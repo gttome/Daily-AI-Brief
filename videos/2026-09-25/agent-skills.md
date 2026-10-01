@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Complements today’s agent and knowledge-work stories with a concrete example of matching model capability and operating cost to routine work.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=jKRl_CSVxyI" data-item-id="dab-video-2026-09-25-agent-skills" data-edition-date="2026-09-25" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Claude</a>
 

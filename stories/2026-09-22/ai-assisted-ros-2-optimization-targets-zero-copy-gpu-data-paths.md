@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** AI-assisted development is increasingly reaching systems code and performance engineering. The useful pattern is not simply generating CUDA code; it is reasoning across data movement, runtime constraints, interfaces, and verification so optimization survives in the full graph.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

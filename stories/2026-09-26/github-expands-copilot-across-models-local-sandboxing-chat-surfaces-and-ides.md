@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Copilot is increasingly a distributed agent platform rather than a single editor feature. Engineering teams now have to reason about model routing, execution isolation, collaboration surfaces, and client-specific behavior as one operating system.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

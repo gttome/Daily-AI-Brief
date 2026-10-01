@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** An agent that remembers approved local patterns can make more context-aware repairs, but memory also becomes part of the control surface. Teams need to know what the agent remembers, when that memory influences a fix, and how a human verifies the result.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Review the scope, freshness and relevance of repository memory before allowing it to guide a security repair.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

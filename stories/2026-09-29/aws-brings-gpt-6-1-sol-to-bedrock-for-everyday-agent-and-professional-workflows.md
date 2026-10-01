@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** A stronger general model becomes operationally relevant when it can be placed inside existing enterprise infrastructure and used for repeatable workflows rather than only interactive chat. The practical question shifts from raw model capability to which bounded tasks justify migration and how teams will measure the change.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Apply final-gate verification to quality, latency, tool-use reliability, and task-cost evidence before migrating a bounded workflow to a new model.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

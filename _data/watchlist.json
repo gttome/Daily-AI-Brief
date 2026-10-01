@@ -1,7 +1,8 @@
 {
   "schema_version": "1.0.0",
   "edition_date": "2026-09-30",
-  "updated_at": "2026-10-01T05:47:00.774Z",
+  "updated_at": "2026-09-30T23:12:21.330Z",
+  "verification_observed_at": "2026-10-01T05:47:00.774Z",
   "baseline_note": "Independent seven-domain sweep completed 14 focused checks and reviewed seven candidates: 1 new source-aware verification topic, 3 materially updated topics, and 13 carried forward. The six-story editorial lock was unchanged.",
   "topics": [
     {

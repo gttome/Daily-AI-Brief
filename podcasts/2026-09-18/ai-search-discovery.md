@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** It complements today’s workflow and agent stories by showing how retrieval and discovery become upstream inputs to systems that increasingly take action, not just return links.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary 48-hour podcast window; source-diverse from The AI Daily Brief.
 

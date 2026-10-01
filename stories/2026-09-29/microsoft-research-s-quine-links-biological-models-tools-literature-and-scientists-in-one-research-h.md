@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The architecture points beyond single-model scientific assistants. Complex research domains may benefit more from systems that coordinate representations, external tools, literature, and expert feedback than from asking one model to answer every question from its internal knowledge.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

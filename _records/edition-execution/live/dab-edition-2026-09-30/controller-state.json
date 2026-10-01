@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 20,
+  "version": 21,
   "status": "running",
-  "current_operation": "qualification",
+  "current_operation": "production_admission",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T07:17:03.118Z",
-  "last_progress_at": "2026-10-01T07:17:03.118Z",
+  "updated_at": "2026-10-01T07:22:01.718Z",
+  "last_progress_at": "2026-10-01T07:22:01.718Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -139,7 +139,7 @@
       "result": "pass",
       "completed_at": "2026-10-01T07:17:03.118Z",
       "publication_manifest": "_records/editorial-handoff/publication-manifest.json",
-      "publication_manifest_git_blob_sha": "6c2d5c53e5da8214ce5c2ace3c50219776039443",
+      "publication_manifest_git_blob_sha": "fa1a6a631c5781d5d2e571a71f289a92a5c222af",
       "artifact_count": 12,
       "independent_verifier": "validatePublicationManifest",
       "verification_result": "PASS",
@@ -150,6 +150,25 @@
         "Watchlist edition-effective timestamp normalization with observed times preserved",
         "Watchlist discovery v2 ledger reconciliation"
       ],
+      "selection_changed": false
+    },
+    "qualification": {
+      "result": "pass",
+      "completed_at": "2026-10-01T07:22:01.718Z",
+      "validated_event": "_records/publication/2026-09-30/reliable-edition-20260930-second.validated.json",
+      "release_manifest": "_records/releases/2026-09-30.json",
+      "staged_tree_digest": "sha256:ee8624d46a40ccb8a1957c3652effc5ac4df2f6371fd15cac8cfaf2ed3f4db6a",
+      "publication_manifest_git_blob_sha": "fa1a6a631c5781d5d2e571a71f289a92a5c222af",
+      "watchlist_git_blob_sha": "ac6f22641c60db6d77593fb0d4d1f19db36b4e71",
+      "watchlist_public_projection_git_blob_sha": "604c4dcb04462ec404e563eab22eac6a097231ab",
+      "checks": {
+        "publication_manifest": "PASS",
+        "repository": "PASS",
+        "accessibility": "PASS",
+        "integration": "PASS",
+        "publication_generation": "PASS"
+      },
+      "repair": "Watchlist edition-effective timestamp normalized to a same-date UTC instant; real verification_observed_at preserved.",
       "selection_changed": false
     }
   },
@@ -223,9 +242,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Run full qualification against the immutable September 30 publication manifest and repair only deterministic dependents if a gate fails.",
+    "next_action": "Commit the qualified publication stage, bind production admission to the exact candidate SHA, open the publication PR, and pass protected CI.",
     "images_accepted": 6,
-    "current_task": "11.22"
+    "current_task": "11.23"
   },
   "blockers": [],
   "cost_boundary": {

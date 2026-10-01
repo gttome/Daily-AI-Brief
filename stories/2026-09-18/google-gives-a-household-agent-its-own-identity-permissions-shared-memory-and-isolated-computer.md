@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The design exposes governance concepts that are often hidden in consumer agents: a distinct agent identity, scoped sharing, explicit permissions, shared versus private memory, and isolated execution. Those are useful patterns for any multi-user agent, not just household logistics.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

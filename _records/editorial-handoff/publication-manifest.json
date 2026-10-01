@@ -54,7 +54,7 @@
     "watchlist": {
       "path": "_data/watchlist.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:2a2fa400766f61438524b540ffa57f3d574c8c31"
+      "digest": "git_blob_sha1:ac6f22641c60db6d77593fb0d4d1f19db36b4e71"
     },
     "watchlist_evidence": {
       "path": "_records/watchlist-sweeps/2026-09-30.json",
@@ -95,7 +95,7 @@
         "carried_forward": 13
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:2d24fb459bc2326e7ca02ab47de6f9251c26976a",
+      "public_projection_digest": "git_blob_sha1:604c4dcb04462ec404e563eab22eac6a097231ab",
       "repair_allowed_downstream": false
     }
   },

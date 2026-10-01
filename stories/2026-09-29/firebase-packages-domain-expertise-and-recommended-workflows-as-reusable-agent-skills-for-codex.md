@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** This is a concrete example of Agent Skills as reusable operating knowledge. A product team can package current domain guidance and preferred procedures once, then let an agent apply that context repeatedly across tasks without each user rebuilding the same prompt or workflow from scratch.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality checklist to maintain the documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

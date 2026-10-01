@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Knowledge workers increasingly need AI to do computational work, not just draft text. A managed runtime can make code execution usable inside normal enterprise workflows while giving IT a clearer place to govern identity, data, sharing, and execution.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

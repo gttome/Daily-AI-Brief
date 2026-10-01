@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The account frames enterprise AI transformation as an operating-model problem: capture evidence from real deployments, standardize proven patterns, and continuously redesign workflows rather than treating AI as a one-time tool rollout.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

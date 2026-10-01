@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** This turns reusable agent procedures from a developer packaging concept into a team operating practice. A process owner can codify how work should be done, keep it accessible to colleagues, and combine it with shared conversational context without writing code.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

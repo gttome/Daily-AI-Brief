@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** For non-technical leaders, the pattern is important: as agents move from experiments into persistent business processes, the surrounding runtime—identity, isolation, scaling, observability, and operations—becomes as important as the model itself.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Calibrated trust helps define how much autonomy a managed agent runtime should receive before human review, escalation, or rollback is required.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

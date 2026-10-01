@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Reinforces the shift from AI features to governed, outcome-oriented workflows.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary recent source-diverse podcast selection.
 

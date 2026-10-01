@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Pairs with today’s reliability and execution-layer stories by turning model selection into a measured engineering decision.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=iTiKeH3FDoQ" data-item-id="dab-video-2026-09-26-general" data-edition-date="2026-09-26" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Microsoft Developer</a>
 

@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Agent customization is becoming an operational layer that needs the same observability as models and prompts. Teams can now distinguish a large catalog of configured assets from the smaller set people actually invoke, identify enablement gaps, and measure whether reusable agent components are spreading.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

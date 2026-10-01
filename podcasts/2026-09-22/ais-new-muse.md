@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Complements the enterprise-workflow stories by showing how agentic interfaces are beginning to affect platform strategy and user behavior.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Current-day source-diverse podcast selection.
 

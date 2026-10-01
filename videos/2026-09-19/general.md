@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** It reinforces the brief’s operational-maturity theme: useful AI workflows need explicit review boundaries, not just faster output.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://academy.openai.com/public/videos/privacy-and-double-checking-older-adults" data-item-id="dab-video-2026-09-19-general" data-edition-date="2026-09-19" data-action="source_clicks" target="_blank" rel="noopener noreferrer">OpenAI Academy</a>
 
