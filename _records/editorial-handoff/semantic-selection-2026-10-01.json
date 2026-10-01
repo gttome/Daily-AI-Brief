@@ -1,0 +1,64 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-01",
+  "semantic_pass_count": 1,
+  "source_packet_frozen": true,
+  "discovery_rerun": false,
+  "article_evidence_rerun": false,
+  "selected_at": "2026-10-01T17:31:58.982Z",
+  "baseline_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+  "source_evidence": "_records/editorial-handoff/article-evidence-2026-10-01.json",
+  "selection": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "agent_skills_story": true,
+      "rationale": "Best fit for the one reusable Agent Skills slot: concrete guidance for encoding repeatable DevOps investigation procedures into focused, composable skills with explicit activation criteria."
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "agent_skills_story": false,
+      "rationale": "Strong implementation-level pattern for persistent multi-agent systems: shared session identity, durable volumes, GPU access, multi-day execution, and independently deployable agents."
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "applied_genai_knowledge_workers",
+      "agent_skills_story": false,
+      "rationale": "Material model shift for long-horizon professional work across coding, legal, finance, research, and cyber; strong relevance with phased availability caveats preserved."
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "agent_skills_story": false,
+      "rationale": "Directly addresses a recurring enterprise adoption problem: converting fragmented context into provenance-aware, human-validated knowledge that people and agents can reuse."
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "agents_non_technical_people",
+      "agent_skills_story": false,
+      "rationale": "Clear nontechnical model for always-on agents with read-only background research, visible activity, explicit permissions, and approval boundaries for consequential actions."
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "agent_skills_story": false,
+      "rationale": "Practical business-agent pattern connecting governed data to automations without copying it, while preserving existing access, policy, lineage, and auditability controls."
+    }
+  ],
+  "excluded_reviewed": [
+    {
+      "candidate_id": "m03",
+      "reason": "Useful hands-on training signal, but less directly valuable than the selected reusable-skill and persistent-runtime engineering patterns."
+    },
+    {
+      "candidate_id": "m06",
+      "reason": "Strong shared-context architecture, but it is the sole extended-168-hour item and the two selected applied stories are both fresher and more distinct for today's edition."
+    },
+    {
+      "candidate_id": "m09",
+      "reason": "Useful internal-audit accelerator pattern, but the selected Dots and Snowflake/UiPath items cover broader nontechnical agent use and governance with less overlap."
+    }
+  ],
+  "invariant": "One semantic selection pass; exact 2 / 2 / 2 allocation; exactly one Agent Skills story; all six selected candidates are contained in the frozen evidence packet."
+}
