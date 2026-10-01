@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-10-01",
+  "cutoff": "2026-10-01T13:29:08Z",
+  "execution_mode": "production",
+  "metadata_candidate_limit": 20,
+  "article_freshness_policy": "article-24-72-168-v1",
+  "ordinary_max_age_hours": 168,
+  "agent_skills_max_age_hours": 168,
+  "output_dir": "_records/preflight/2026-10-01"
+}
