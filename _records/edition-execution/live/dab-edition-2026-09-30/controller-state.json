@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 10,
+  "version": 11,
   "status": "running",
   "current_operation": "images",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T06:37:19.049Z",
-  "last_progress_at": "2026-10-01T06:37:19.049Z",
+  "updated_at": "2026-10-01T06:38:52.237Z",
+  "last_progress_at": "2026-10-01T06:38:52.237Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -169,7 +169,7 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Generate m07 attempt 2 from the unchanged sealed request; persist exact bytes before review.",
+    "next_action": "Generate m07 attempt 3 from the unchanged sealed request; persist exact bytes before review.",
     "images_accepted": 4,
     "current_task": "11.17"
   },
@@ -225,13 +225,13 @@
     "specifications_sealed": 6,
     "accepted": 4,
     "current_candidate": "m07",
-    "current_attempt": 2,
+    "current_attempt": 3,
     "generation_started": false,
     "last_receipt": "_records/image-attempts/2026-09-30/m05-attempt-1.json",
     "last_rejection": {
-      "attempt": 1,
-      "code": "VISIBLE_TEXT_DUPLICATE",
-      "record": "_records/image-attempts/2026-09-30/m07-attempt-1.json"
+      "attempt": 2,
+      "code": "HUMAN_FIGURE_PROHIBITED",
+      "record": "_records/image-attempts/2026-09-30/m07-attempt-2.json"
     }
   }
 }

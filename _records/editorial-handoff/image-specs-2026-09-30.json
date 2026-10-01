@@ -136,11 +136,11 @@
       ],
       "alt_text": "Textbook diagram showing repeated prompts becoming a maintained reusable Gemini Skill with instructions, examples, ownership, reuse across tasks, and a versioned update loop.",
       "status": "retry_required",
-      "attempts": 1,
-      "last_rejection": "VISIBLE_TEXT_DUPLICATE",
-      "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-1.png",
-      "last_raw_sha256": "de33e599d287652b48791ea10c15fc5496676a86d4ce8dbff7aedc459b2f30cc",
-      "next_attempt": 2
+      "attempts": 2,
+      "last_rejection": "HUMAN_FIGURE_PROHIBITED",
+      "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-2.png",
+      "last_raw_sha256": "629461c7886b189bbed61e50f4ae561940d4329ed15eeb3004328f8919efb819",
+      "next_attempt": 3
     },
     {
       "candidate_id": "m08",
@@ -192,5 +192,5 @@
   "generation_started": false,
   "accepted_count": 4,
   "current_candidate": "m07",
-  "current_attempt": 2
+  "current_attempt": 3
 }
