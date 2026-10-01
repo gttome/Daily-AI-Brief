@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "done",
-  "observed_at": "2026-10-01T08:03:00.692Z",
+  "observed_at": "2026-10-01T08:04:38.564Z",
   "verified_public_closed": 2,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -10,7 +10,7 @@
   "images_accepted": 6,
   "main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "4256c856a74f4577f867677f06cae1ef9ef523df",
+  "controller_sha": "d12b22d242d1f6c402fe10099698e5ab4b4e85d2",
   "blocker": null,
   "next_action": null,
   "cards": [
@@ -558,21 +558,21 @@
   "automations": [
     {
       "role": "Primary",
-      "enabled": true,
-      "last_run_at": "2026-10-01T04:22:46.484031+00:00",
-      "execution": "Invocation observed; stage progress unconfirmed"
+      "enabled": false,
+      "last_run_at": "2026-10-01T06:41:47.082426Z",
+      "execution": "Disabled after independently verified PUBLIC CLOSED 2 / 2"
     },
     {
       "role": "Sentinel",
-      "enabled": true,
-      "last_run_at": "2026-10-01T03:55:04.161948+00:00",
-      "execution": "Enabled; active execution unconfirmed"
+      "enabled": false,
+      "last_run_at": "2026-10-01T07:53:38.993391Z",
+      "execution": "Disabled after independently verified PUBLIC CLOSED 2 / 2"
     },
     {
       "role": "Keeper",
-      "enabled": true,
-      "last_run_at": "2026-10-01T03:57:05.607139+00:00",
-      "execution": "Enabled; active execution unconfirmed"
+      "enabled": false,
+      "last_run_at": "2026-10-01T07:46:23.714772Z",
+      "execution": "Disabled after independently verified PUBLIC CLOSED 2 / 2"
     }
   ],
   "task_timing_events": [
@@ -1086,35 +1086,42 @@
     }
   ],
   "liveness": {
-    "observed_at": "2026-10-01T06:21:11.880Z",
+    "observed_at": "2026-10-01T08:04:38.564Z",
     "primary_controller": {
       "id": "6abaf03d6c608191be014dd1765468d3",
-      "enabled": true,
-      "state": "IDLE",
+      "enabled": false,
+      "state": "DISABLED_MISSION_COMPLETE",
       "last_run_time": "2026-10-01T05:47:20.121660Z"
     },
     "keeper": {
       "id": "6abbc140a31c8191add39f59ba06f522",
-      "enabled": true,
-      "state": "ACTIVE",
+      "enabled": false,
+      "state": "DISABLED_MISSION_COMPLETE",
       "last_run_time": "2026-10-01T05:49:31.603486Z"
     },
     "sentinel": {
       "id": "6ab92da22cb08191951062354823191b",
-      "enabled": true,
-      "state": "IDLE",
+      "enabled": false,
+      "state": "DISABLED_MISSION_COMPLETE",
       "last_run_time": "2026-10-01T05:52:52.430416Z"
     },
     "github_actions": {
       "in_progress": 0,
-      "queued_relevant": 0,
-      "note": "No active or queued relevant workflow run at the pre-commit check."
+      "queued_relevant": 1,
+      "note": [
+        {
+          "id": 32052011519,
+          "name": "pages build and deployment",
+          "status": "queued",
+          "head_sha": "3f552f9ba7c3a3ca986dfde251aac194a45a05b4"
+        }
+      ]
     },
-    "one_writer_check": "PASS — no active edition writer or relevant GitHub Actions run; keeper resumed the durable Task 11.11 operation after the 15-minute inactivity threshold."
+    "one_writer_check": "PASS — mission complete; primary controller, keeper and sentinel disabled after 2/2 independently verified PUBLIC CLOSED editions."
   },
   "repository": {
     "main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
-    "branch_head_before_record": "4256c856a74f4577f867677f06cae1ef9ef523df",
+    "branch_head_before_record": "d12b22d242d1f6c402fe10099698e5ab4b4e85d2",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
     "release_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
     "closure_main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
@@ -1131,5 +1138,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T08:01:35.000Z"
+  "last_durable_progress_at": "2026-10-01T08:04:38.564Z"
 }
