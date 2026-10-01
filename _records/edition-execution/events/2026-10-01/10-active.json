@@ -1,0 +1,8 @@
+{
+  "task_id": "10",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T17:37:46.083Z",
+  "source": "scheduled production continuation",
+  "reason": "Begin independent Emerging AI Watchlist sweep for October 1 without deriving the Watchlist only from selected Brief stories."
+}
