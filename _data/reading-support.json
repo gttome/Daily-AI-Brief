@@ -281,6 +281,66 @@
       "verified_at": null,
       "method": null,
       "reason": "The reused editorial facts contain no reviewed main-text word count. No reading time is inferred from the Brief summary."
+    },
+    "dab-story-2026-09-30-77eb0ae9": {
+      "status": "verified",
+      "source_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+      "word_count": 1634,
+      "verified_at": "2026-10-01T14:04:44.100916Z",
+      "method": "reviewed_main_article_text_whitespace_v1",
+      "words_per_minute": 200,
+      "source_text_sha256": "5a3a1aa32e49f284b70c50ca4078e2e7159febc432dd297dc148d2c944be7d16",
+      "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
+    },
+    "dab-story-2026-09-30-bb1d40df": {
+      "status": "verified",
+      "source_url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+      "word_count": 1459,
+      "verified_at": "2026-10-01T14:04:44.101301Z",
+      "method": "reviewed_main_article_text_whitespace_v1",
+      "words_per_minute": 200,
+      "source_text_sha256": "3a3734fe521727e40f8e795261113cd4af76dccfcaf4815a0cb1d79934d0b3ef",
+      "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
+    },
+    "dab-story-2026-09-30-5d21346f": {
+      "status": "verified",
+      "source_url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
+      "word_count": 942,
+      "verified_at": "2026-10-01T14:04:44.101623Z",
+      "method": "reviewed_main_article_text_whitespace_v1",
+      "words_per_minute": 200,
+      "source_text_sha256": "4782cd5691736af9faf104d97d80e475c19cfd5f7702e9b87ca86cd4eeb16806",
+      "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
+    },
+    "dab-story-2026-09-30-9d62316c": {
+      "status": "verified",
+      "source_url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+      "word_count": 1435,
+      "verified_at": "2026-10-01T14:04:44.101971Z",
+      "method": "reviewed_main_article_text_whitespace_v1",
+      "words_per_minute": 200,
+      "source_text_sha256": "13aecd2e3999273d469c8ebb395fab5feed053ff1b9a2b8cb01b571d64036583",
+      "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
+    },
+    "dab-story-2026-09-30-3b6d7f96": {
+      "status": "verified",
+      "source_url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+      "word_count": 1118,
+      "verified_at": "2026-10-01T14:04:44.102353Z",
+      "method": "reviewed_main_article_text_whitespace_v1",
+      "words_per_minute": 200,
+      "source_text_sha256": "dc687764c8c076e6b4441643ef40b70b6003c389c1998818e5c4ca2c883b4035",
+      "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
+    },
+    "dab-story-2026-09-30-63e10dfd": {
+      "status": "verified",
+      "source_url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
+      "word_count": 2293,
+      "verified_at": "2026-10-01T14:04:44.102811Z",
+      "method": "reviewed_main_article_text_whitespace_v1",
+      "words_per_minute": 200,
+      "source_text_sha256": "9fa992b448aed164884f75f8dd4a9cb4b4ed0ffeb5d7f0589c2d24828d167408",
+      "exclusions": "Navigation, author metadata, comments, related-story cards and unrelated promotional material excluded."
     }
   },
   "schema_version": "1.0.0",
