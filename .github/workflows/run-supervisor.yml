@@ -1,0 +1,185 @@
+name: Daily AI Brief Run Supervisor
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_branch:
+        description: Existing production run branch to supervise
+        required: true
+        type: string
+      execution_key:
+        description: Run event key such as 2026-10-01-run4
+        required: true
+        type: string
+      execution_id:
+        description: Immutable execution identity
+        required: true
+        type: string
+      edition_id:
+        description: Immutable edition identity
+        required: true
+        type: string
+      takeover_dead_owner:
+        description: Permit a new fence only when watchdog confirmed the prior Supervisor is dead
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: daily-ai-brief-run-supervisor
+  cancel-in-progress: false
+
+jobs:
+  supervise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      RUN_BRANCH: ${{ inputs.run_branch }}
+      EXECUTION_KEY: ${{ inputs.execution_key }}
+      EXECUTION_ID: ${{ inputs.execution_id }}
+      EDITION_ID: ${{ inputs.edition_id }}
+      TAKEOVER_DEAD_OWNER: ${{ inputs.takeover_dead_owner }}
+      SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check out protected control plane
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: control
+          fetch-depth: 0
+
+      - name: Check out existing production run
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ inputs.run_branch }}
+          path: run
+          fetch-depth: 0
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Validate Supervisor contracts and cumulative learning
+        run: |
+          set -euo pipefail
+          node control/_tools/run-supervisor.mjs validate-contracts \
+            --file control/docs/operations/task-recovery-contracts.json
+          node control/_tools/operational-learning.mjs validate \
+            --ledger control/data/operations/production-continuous-improvement-ledger.jsonl \
+            --repo-root control
+
+      - name: Configure run-branch writer
+        run: |
+          git -C run config user.name "github-actions[bot]"
+          git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+
+      - name: Acquire fenced writer authority for this exact execution
+        id: fence
+        run: |
+          set -euo pipefail
+          lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
+          mkdir -p "run/$(dirname "$lease_rel")"
+          current_args=()
+          if [ -f "run/$lease_rel" ]; then current_args=(--current "run/$lease_rel"); fi
+          node control/_tools/run-supervisor.mjs writer-lease \
+            --execution-id "$EXECUTION_ID" \
+            --owner-id "$SUPERVISOR_OWNER" \
+            --ttl-ms 21600000 \
+            --takeover-dead-owner "$TAKEOVER_DEAD_OWNER" \
+            "${current_args[@]}" \
+            --output /tmp/writer-lease.json > /tmp/writer-result.json
+          cp /tmp/writer-lease.json "run/$lease_rel"
+          generation="$(node -e "const x=require('/tmp/writer-lease.json');process.stdout.write(String(x.generation))")"
+          echo "generation=$generation" >> "$GITHUB_OUTPUT"
+          git -C run add "$lease_rel"
+          if ! git -C run diff --cached --quiet; then
+            git -C run commit -m "Supervisor acquire writer fence for ${EXECUTION_ID}"
+            git -C run pull --rebase origin "$RUN_BRANCH"
+            git -C run push origin "HEAD:$RUN_BRANCH"
+          fi
+
+      - name: Persistent approximately one-minute supervision loop
+        env:
+          WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
+        run: |
+          set -euo pipefail
+          lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
+          for loop in $(seq 1 315); do
+            git -C run fetch --no-tags origin "$RUN_BRANCH"
+            git -C run reset --hard "origin/$RUN_BRANCH"
+
+            node control/_tools/run-supervisor.mjs assert-fence \
+              --lease "run/$lease_rel" \
+              --execution-id "$EXECUTION_ID" \
+              --owner-id "$SUPERVISOR_OWNER" \
+              --generation "$WRITER_GENERATION" >/tmp/fence-check.json
+
+            last_progress="$(
+              git -C run log -1 --format=%cI -- \
+                "_records/edition-execution/events/${EXECUTION_KEY}" \
+                "_records/image-attempts/${EXECUTION_KEY}" \
+                "_records/editorial-handoff" \
+                "_records/publication" \
+                "_data/editions" 2>/dev/null || true
+            )"
+
+            tick_args=()
+            if [ -n "$last_progress" ]; then tick_args+=(--last-progress-at "$last_progress"); fi
+            node control/_tools/run-supervisor.mjs tick \
+              --run-root run \
+              --execution-key "$EXECUTION_KEY" \
+              --execution-id "$EXECUTION_ID" \
+              --edition-id "$EDITION_ID" \
+              --branch "$RUN_BRANCH" \
+              --contracts control/docs/operations/task-recovery-contracts.json \
+              --writer-generation "$WRITER_GENERATION" \
+              "${tick_args[@]}" > /tmp/supervisor-tick.json
+            cat /tmp/supervisor-tick.json
+
+            kanban_fresh="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.kanban.fresh))")"
+            if [ "$kanban_fresh" != "true" ]; then
+              kanban_path="run/_records/edition-execution/kanban/${EXECUTION_KEY}.json"
+              node control/_tools/run-supervisor.mjs project-kanban \
+                --run-root run \
+                --execution-key "$EXECUTION_KEY" \
+                --execution-id "$EXECUTION_ID" \
+                --edition-id "$EDITION_ID" \
+                --contracts control/docs/operations/task-recovery-contracts.json \
+                --output "$kanban_path" >/tmp/kanban-projection.json
+            fi
+
+            has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
+            if [ "$has_request" = "true" ]; then
+              node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\\n')"
+              node control/_tools/run-supervisor.mjs enqueue \
+                --run-root run \
+                --request /tmp/worker-request.json >/tmp/enqueue-result.json
+              cat /tmp/enqueue-result.json
+            fi
+
+            git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
+            if [ -d "run/_records/edition-execution/worker-requests" ]; then
+              git -C run add "_records/edition-execution/worker-requests"
+            fi
+            if ! git -C run diff --cached --quiet; then
+              git -C run commit -m "Supervisor reconcile ${EXECUTION_ID} loop ${loop}"
+              if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                git -C run fetch --no-tags origin "$RUN_BRANCH"
+                git -C run rebase "origin/$RUN_BRANCH"
+                git -C run push origin "HEAD:$RUN_BRANCH"
+              fi
+            fi
+
+            terminal="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.terminal))")"
+            if [ "$terminal" = "true" ]; then
+              echo "All Tasks 00-29 are Done; Supervisor may stop."
+              break
+            fi
+
+            sleep 60
+          done
