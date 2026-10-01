@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 16,
+  "version": 17,
   "status": "running",
   "current_operation": "images",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T06:48:57.159Z",
-  "last_progress_at": "2026-10-01T06:48:57.159Z",
+  "updated_at": "2026-10-01T06:51:26.288Z",
+  "last_progress_at": "2026-10-01T06:51:26.288Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -169,9 +169,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Generate m08 revision 2 attempt 1 from the repaired non-human geometry request; persist exact bytes before review.",
-    "images_accepted": 5,
-    "current_task": "11.18"
+    "next_action": "Review the six accepted images as a complete set for byte uniqueness, story differentiation, accessibility, exact text and visual quality; then freeze the image handoff.",
+    "images_accepted": 6,
+    "current_task": "11.19"
   },
   "blockers": [],
   "cost_boundary": {
@@ -223,23 +223,24 @@
     "result": "in_progress",
     "specification_manifest": "_records/editorial-handoff/image-specs-2026-09-30.json",
     "specifications_sealed": 6,
-    "accepted": 5,
-    "current_candidate": "m08",
-    "current_attempt": 1,
+    "accepted": 6,
+    "current_candidate": null,
+    "current_attempt": null,
     "generation_started": false,
-    "last_receipt": "_records/image-attempts/2026-09-30/m07-v2-attempt-1.json",
+    "last_receipt": "_records/image-attempts/2026-09-30/m08-v2-attempt-1.json",
     "last_rejection": {
       "attempt": 2,
       "request_revision": 1,
       "code": "HUMAN_OR_HUMANOID_GLYPHS_PROHIBITED",
       "record": "_records/image-attempts/2026-09-30/m08-attempt-2.json"
     },
-    "current_request_revision": 2,
+    "current_request_revision": null,
     "spec_repair": {
       "at": "2026-10-01T06:48:57.159Z",
       "old_request_sha256": "bd6d5ef3a8b1e41640fa92df35537bc4b070e0502ca7cf36e549d068c5334acf",
       "new_request_sha256": "f006e04d1fe690666770683d88596ad03f262cc82200a868f5bfb7b84ae62069",
       "scope": "m08 only"
-    }
+    },
+    "status": "set_review_in_progress"
   }
 }

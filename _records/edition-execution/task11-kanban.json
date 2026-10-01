@@ -1,18 +1,18 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T06:48:57.159Z",
+  "observed_at": "2026-10-01T06:51:26.288Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
   "edition_binding": "Locked",
   "run_id": "reliable-edition-20260930-second",
-  "images_accepted": 5,
+  "images_accepted": 6,
   "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "2fe3730d91eebb15a77a1b8a51ffcbe000e034df",
+  "controller_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
   "blocker": null,
-  "next_action": "Generate m08 revision 2 attempt 1 from the repaired non-human geometry request; persist exact bytes before review.",
+  "next_action": "Review the six accepted images as a complete set for byte uniqueness, story differentiation, accessibility, exact text and visual quality; then freeze the image handoff.",
   "cards": [
     {
       "id": "11.01",
@@ -215,21 +215,24 @@
       "id": "11.18",
       "title": "Generate, save and accept image 6",
       "depends_on": "17",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T06:44:59.487Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "m08 attempts 1–2 rejected for repeated humanoid/person glyphs; minimal sealed-spec repair complete; revision 2 attempt 1 prepared",
-      "next_action": "Run revision 2 attempt 1 and capture returned bytes before review."
+      "completed_at": "2026-10-01T06:51:26.288Z",
+      "timing": "6m 26.801s",
+      "substage": "m08 accepted_locked on repaired request revision 2 attempt 1; two revision-1 rejections preserved",
+      "next_action": null,
+      "proof": "_records/image-attempts/2026-09-30/m08-v2-attempt-1.json"
     },
     {
       "id": "11.19",
       "title": "Review six-image set and accessibility",
       "depends_on": "13–18",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T06:51:26.288Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "Review all six accepted_locked assets as a differentiated accessible set",
+      "next_action": "Revalidate identity, dimensions, distinct hashes, story fit, exact visible text, alt text and cross-image differentiation."
     },
     {
       "id": "11.20",
@@ -302,7 +305,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 16,
+  "controller_state_version": 17,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -312,15 +315,15 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "m08 attempt 2 repeated the same humanoid/person-glyph defect and was durably rejected.",
-    "Minimal m08 spec repair sealed as revision 2 with only abstract non-human identity, role and user geometry."
+    "Task 11.18 completed: m08 revision 2 attempt 1 accepted_locked after the minimal non-human geometry repair; both earlier failures remain durable.",
+    "Task 11.19 started: six-image set and accessibility review."
   ],
   "readiness": {
     "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
     "editorial": "LOCKED: one semantic pass; no post-editorial model pass",
     "videos": "LOCKED: 2 / 2; both ≤10 minutes",
     "podcasts": "LOCKED: 2 / 2; distinct shows; both primary 48-hour tier",
-    "images": "5 / 6 accepted_locked; m08 revision 1 preserved (2 rejected); repaired revision 2 attempt 1 WIP",
+    "images": "6 / 6 accepted_locked; set/accessibility review WIP",
     "watchlist": "READY: 1 new / 3 updated / 13 carried; 14/14 checks",
     "books": "READY: 4 / 4 books considered; 32 anchors; 320/320 item-anchor pairs; 10 mappings",
     "bundle": "Not started",
@@ -466,17 +469,22 @@
       "image": 6,
       "task_id": "11.18",
       "candidate": "m08",
-      "attempts": 2,
+      "attempts": 3,
       "generate_started_at": null,
-      "saved_at": "2026-10-01T06:48:44.000Z",
-      "reviewed_at": "2026-10-01T06:48:57.159Z",
-      "accepted_at": null,
-      "status": "Revision 1 repaired after attempt 2; revision 2 attempt 1 prepared",
-      "elapsed_seconds": null,
+      "saved_at": "2026-10-01T06:51:10.000Z",
+      "reviewed_at": "2026-10-01T06:51:26.288Z",
+      "accepted_at": "2026-10-01T06:51:26.288Z",
+      "status": "accepted_locked",
+      "elapsed_seconds": 386.801,
       "last_rejection": "HUMAN_OR_HUMANOID_GLYPHS_PROHIBITED",
       "last_raw_sha256": "b103443b61da3afa63d0c38fd988cf1ab93755947fe22350e51041c81396fb74",
       "last_raw_path": "_records/image-attempts/2026-09-30/m08-attempt-2.png",
-      "request_revision": 2
+      "request_revision": 2,
+      "sha256": "6b4e4b8ee90d558c0e425529c700afb5665a4de58426eac29b9e96fdd3c722eb",
+      "git_blob_sha": "700b28dc32122f18b8a2e27a263775ff718fbdb1",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m08-1.png",
+      "accepted_attempt": 1,
+      "prior_revision_rejections": 2
     }
   ],
   "automations": [
@@ -758,6 +766,21 @@
       "at": "2026-10-01T06:48:57.159Z",
       "request_revision": 2,
       "reason": "abstract non-human identity, role and user tokens"
+    },
+    {
+      "task_id": "11.18",
+      "event": "done_recorded",
+      "at": "2026-10-01T06:51:26.288Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 386.801,
+      "accepted_request_revision": 2,
+      "accepted_attempt": 1
+    },
+    {
+      "task_id": "11.19",
+      "event": "backlog_exit",
+      "at": "2026-10-01T06:51:26.288Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -789,7 +812,7 @@
   },
   "repository": {
     "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
-    "branch_head_before_record": "2fe3730d91eebb15a77a1b8a51ffcbe000e034df",
+    "branch_head_before_record": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
     "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba"
   },
@@ -803,5 +826,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T06:48:57.159Z"
+  "last_durable_progress_at": "2026-10-01T06:51:26.288Z"
 }
