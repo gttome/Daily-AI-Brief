@@ -1,0 +1,10 @@
+{
+  "event_id": "02-active-2026-10-01T16:36:03.202Z",
+  "task_id": "02",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T16:36:03.202Z",
+  "source": "scheduled production run",
+  "reason": "Begin reconciliation of the previous independently verified PUBLIC CLOSED edition.",
+  "proof_commit": null
+}
