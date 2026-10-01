@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0.0",
-  "event_id": "dab-publication-event-20261001T073335.662Z-a479d35c",
+  "event_id": "dab-publication-event-20261001T073640.916Z-eb7dc8b7",
   "run_id": "reliable-edition-20260930-second",
   "phase": "validated",
   "edition_id": "dab-edition-2026-09-30",
-  "observed_at": "2026-10-01T07:33:35.662Z",
+  "observed_at": "2026-10-01T07:36:40.916Z",
   "baseline_main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
-  "staged_tree_digest": "sha256:219f77d574747fc67b04e8ea781db71eba0ac6c4397dd68ca3a8771d74c74242",
+  "staged_tree_digest": "sha256:bd37dfd527c610f2f2f11c33d9999352d87ad3dfa3c4afc2ced131e7107f2b4f",
   "generator_version": "1.0.0",
   "contract_version": "1.0.0",
   "checks": [
