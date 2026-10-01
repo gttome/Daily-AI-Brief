@@ -27,4 +27,5 @@ if(watch.edition_date>='2026-09-23'){
  if(receipt.telemetry)console.log(JSON.stringify({watchlist:receipt.telemetry}));
 }
 const latest=Object.keys(data.editions).sort().at(-1);
-console.log(JSON.stringify({catalog:bookCoverageMetrics(data,latest,data.editions[latest]),note:'Historical mappings are audited, not reselected. Considered counts are zero without a semantic review.'},null,2));
+const catalogDate=[latest,...Object.values(data.references).map(r=>r.verified_date)].sort().at(-1);
+console.log(JSON.stringify({catalog:bookCoverageMetrics(data,catalogDate,data.editions[catalogDate]||[]),note:'Historical mappings are audited, not reselected. Considered counts are zero without a semantic review.'},null,2));

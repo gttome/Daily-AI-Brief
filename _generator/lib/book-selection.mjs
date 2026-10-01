@@ -16,8 +16,8 @@ export function bookItems(edition){
  }
  return [...items,...editionPodcasts(edition).map(p=>({...p,kind:'podcast'}))];
 }
-export function eligibleBookAnchors(data){
- return Object.values(data.references).filter(r=>r.eligible!==false&&SERIES_BOOKS.includes(r.book));
+export function eligibleBookAnchors(data,date='9999-12-31'){
+ return Object.values(data.references).filter(r=>r.eligible!==false&&SERIES_BOOKS.includes(r.book)&&r.verified_date<=date);
 }
 export function validateBookCatalog(data){
  const errors=[];
@@ -36,7 +36,7 @@ export function recentBookUse(data,date,window=7){
  return {editions:dates,mapped_items:uses.length,books:count(uses.map(r=>r.book)),chapters:count(uses.map(chapter)),anchors:count(uses.map(r=>r.id))};
 }
 export function bookSelectionPlan(edition,data){
- const anchors=eligibleBookAnchors(data);
+ const anchors=eligibleBookAnchors(data,edition.brief_date);
  return {schema_version:'1.0.0',edition_date:edition.brief_date,catalog_digest:digest(anchors),items_digest:digest(bookItems(edition)),items:bookItems(edition),anchors,dimensions:MATCH_DIMENSIONS,recent_use:recentBookUse(data,edition.brief_date),instruction:'In the existing editorial semantic pass, score EVERY item × anchor on each dimension from 0 (no connection) to 4 (direct match). Supply an item-specific rationale. Judge mechanism and learning value from verified section titles; do not claim full-text review. No quota. Return one row per item with all anchor scores, including zero scores.'};
 }
 // Semantic judgments come from the editorial pass; code enforces full-catalog coverage,
@@ -67,7 +67,7 @@ export function selectBookReferences(edition,data,review){
  return {selections,rankings,metrics:bookCoverageMetrics(data,edition.brief_date,selections,{items:plan.items.length,anchors:anchors.length})};
 }
 export function bookCoverageMetrics(data,date,selections,{items=0,anchors=0}={}){
- const eligible=eligibleBookAnchors(data),available=[...new Set(eligible.map(r=>r.book))],recent=recentBookUse(data,date);
+ const eligible=eligibleBookAnchors(data,date),available=[...new Set(eligible.map(r=>r.book))],recent=recentBookUse(data,date);
  const current=selections.map(s=>data.references[s.reference_id]);
  const warnings=[];
  for(const [kind,counts] of Object.entries({book:count(current.map(r=>r.book)),chapter:count(current.map(chapter))}))for(const [key,n] of Object.entries(counts))if(current.length>=3&&n/current.length>=0.6)warnings.push({window:'today',kind,key,uses:n,total:current.length});

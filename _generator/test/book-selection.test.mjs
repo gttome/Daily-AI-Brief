@@ -49,3 +49,9 @@ test('no forced match; usage uses prior editions only, repeated chapters warn an
  for(const [id,r] of Object.entries(data.references))if(r.book===SERIES_BOOKS[3])delete data.references[id];
  assert.equal(bookCoverageMetrics(data,'2026-09-30',[]).catalog_incomplete,true);assert.ok(validateBookCatalog(data).length);
 });
+test('later verified anchors do not invalidate an already-reviewed historical edition',()=>{
+ const review=reviewFor(),expanded=structuredClone(catalog);
+ expanded.references['later-anchor']={...expanded.references['prompt-pattern-selection'],id:'later-anchor',verified_date:'2026-10-01'};
+ assert.deepEqual(selectBookReferences(edition,expanded,review),selectBookReferences(edition,catalog,review));
+ assert.equal(bookSelectionPlan({...edition,brief_date:'2026-10-01'},expanded).anchors.length,33);
+});

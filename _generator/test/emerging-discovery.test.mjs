@@ -43,3 +43,11 @@ test('daily counts and complete lists include carried topics and escape names',(
  const date='2026-09-30',html=renderDailyTopicGroups({edition_date:date,topics:[{name:'<New>',first_detected:date},{name:'Updated',updated_at:date},{name:'Carried'}]});
  for(const text of ['1 New today','1 Updated today','1 Carried forward','&lt;New&gt;','<li>Updated</li>','<li>Carried</li>'])assert.ok(html.includes(text));
 });
+test('an update validates against its prior inventory after new evidence is projected',()=>{
+ const r=receipt(),topic={topic_id:'dab-topic-existing',evidence:[{...evidence,development_id:'old'},evidence]};
+ r.candidates_reviewed[0]={...candidate,topic_id:topic.topic_id,same_mechanism_topic_id:topic.topic_id,mechanism_comparison:'The same mechanism now has a distinct primary implementation.',prior_development_ids:['old'],meaningful_new_evidence:true,disposition:'update_existing'};
+ r.new_topic_ids=[];r.updated_topic_ids=[topic.topic_id];r.telemetry=emergingDiscoveryTelemetry(r);
+ assert.deepEqual(validateEmergingDiscovery(r,{topics:[topic]}),[]);
+ delete r.candidates_reviewed[0].prior_development_ids;
+ assert.ok(validateEmergingDiscovery(r,{topics:[topic]}).some(e=>e.includes('prior development')));
+});
