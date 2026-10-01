@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T07:07:13.809Z",
+  "observed_at": "2026-10-01T07:17:03.118Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -12,7 +12,7 @@
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
   "controller_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
   "blocker": null,
-  "next_action": "Seal and independently verify the immutable September 30 source bundle, then advance directly to qualification if valid.",
+  "next_action": "Run full qualification against the immutable September 30 publication manifest and repair only deterministic dependents if a gate fails.",
   "cards": [
     {
       "id": "11.01",
@@ -251,21 +251,24 @@
       "id": "11.21",
       "title": "Refresh digests and seal immutable bundle",
       "depends_on": "20",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T07:07:13.809Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "Seal immutable source bundle and verify artifact identities",
-      "next_action": "Bind the current Sep 30 kernel, evidence, media, Watchlist, book mappings, accepted image handoff and quality record into the publication manifest; verify every digest."
+      "completed_at": "2026-10-01T07:17:03.118Z",
+      "timing": "9m 49.309s",
+      "substage": "Immutable 12-artifact Sep 30 publication bundle sealed and independently verified PASS",
+      "next_action": null,
+      "elapsed_seconds": 589.309
     },
     {
       "id": "11.22",
       "title": "Run qualification and focused repairs",
       "depends_on": "21",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T07:17:03.118Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "Run full publication qualification against the sealed manifest",
+      "next_action": "Execute repository, contract, publication-manifest, image, media, Watchlist, accessibility and integrated-output gates; repair only deterministic dependents."
     },
     {
       "id": "11.23",
@@ -311,7 +314,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 19,
+  "controller_state_version": 20,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -871,6 +874,34 @@
       "event": "backlog_exit",
       "at": "2026-10-01T07:07:13.809Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.21",
+      "event": "contract_repairs_completed",
+      "at": "2026-10-01T07:17:03.118Z",
+      "media_selection_changed": false,
+      "watchlist_semantics_changed": false,
+      "repairs": [
+        "media_receipt_binding",
+        "watchlist_confidence_taxonomy",
+        "watchlist_edition_effective_dates",
+        "watchlist_discovery_v2_ledger"
+      ]
+    },
+    {
+      "task_id": "11.21",
+      "event": "done_recorded",
+      "at": "2026-10-01T07:17:03.118Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 589.309,
+      "publication_manifest_git_blob_sha": "6c2d5c53e5da8214ce5c2ace3c50219776039443",
+      "independent_verification": "PASS"
+    },
+    {
+      "task_id": "11.22",
+      "event": "backlog_exit",
+      "at": "2026-10-01T07:17:03.118Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -916,6 +947,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T07:07:13.809Z"
+  "last_durable_progress_at": "2026-10-01T07:17:03.118Z"
 }
-

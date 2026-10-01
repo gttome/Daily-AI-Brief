@@ -1,75 +1,75 @@
 {
   "schema_version": "1.0.0",
   "manifest_kind": "daily_ai_brief_publication",
-  "edition_date": "2026-09-29",
-  "edition_id": "dab-edition-2026-09-29",
-  "baseline_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
-  "staging_ref": "editorial-handoff/production/2026-09-29",
+  "edition_date": "2026-09-30",
+  "edition_id": "dab-edition-2026-09-30",
+  "baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+  "staging_ref": "reliable-edition/dab-edition-2026-09-30",
   "policy_profile": "under80-v1",
   "artifacts": {
     "kernel": {
-      "path": "_records/editorial-handoff/kernel.json",
+      "path": "_records/editorial-handoff/kernel-2026-09-30.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:7a3cfc966ffef59de53b2b1c1f28cdf98c3f6c3c"
+      "digest": "git_blob_sha1:ef9d1a5dd4d85d23ebac6dc846844222f6c4f173"
     },
     "facts": {
-      "path": "_records/editorial-handoff/facts.json",
+      "path": "_records/editorial-handoff/facts-2026-09-30.json",
       "schema_version": "legacy-unversioned",
       "adapter": "candidate-facts-map-v1",
-      "digest": "git_blob_sha1:70aee59b6245a400da2ec57de8ac038d6823feaf"
+      "digest": "git_blob_sha1:f02ee3150168e7fe2d0703f63b96b4eeddd2c5f4"
     },
     "metadata_candidates": {
-      "path": "_records/editorial-handoff/metadata-candidates.json",
+      "path": "_records/editorial-handoff/metadata-candidates-2026-09-30.json",
       "schema_version": "1.1.0",
-      "digest": "git_blob_sha1:1c2ce9b01a87e77b17e69d33e53215cc5ab5330d"
+      "digest": "git_blob_sha1:91549a06665a0ee87e1d1e031dccdf08af1eeca4"
     },
     "article_evidence": {
-      "path": "_records/editorial-handoff/article-evidence.json",
+      "path": "_records/editorial-handoff/article-evidence-2026-09-30.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:57e64e04061f93174235e998458cb7b4cc04bd8f"
+      "digest": "git_blob_sha1:a1d324719b8b12748f2e8bd019937acba3b04bc0"
     },
     "media": {
-      "path": "_records/editorial-handoff/media.json",
+      "path": "_records/editorial-handoff/media-2026-09-30.json",
       "schema_version": "legacy-unversioned",
       "adapter": "selected-media-v1",
-      "digest": "git_blob_sha1:5b1427b2d7210db36fe57e96b2435c78b186920d"
+      "digest": "git_blob_sha1:659211cfa5eaae83baab82927cce8939377e941c"
     },
     "media_receipt": {
-      "path": "_records/editorial/media-preflight/2026-09-29.json",
+      "path": "_records/editorial/media-preflight/2026-09-30.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:d710ca1215b899715a1ea31681c2811c5476929f"
+      "digest": "git_blob_sha1:0f80cb55f1c68bc20a5e46c4a2ae11ceb98a81ca"
     },
     "image_manifest": {
-      "path": "_records/editorial-handoff/images.json",
+      "path": "_records/editorial-handoff/images-2026-09-30.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:47aab25f4185cd3212b5fe185fc30226a02a6c65"
+      "digest": "git_blob_sha1:b40bec7212f6580080971a48eabc5c7ba5ad7025"
     },
     "image_review": {
-      "path": "_records/editorial-handoff/images.json",
+      "path": "_records/editorial-handoff/images-2026-09-30.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:47aab25f4185cd3212b5fe185fc30226a02a6c65"
+      "digest": "git_blob_sha1:b40bec7212f6580080971a48eabc5c7ba5ad7025"
     },
     "watchlist": {
-      "path": "_records/editorial-handoff/watchlist-2026-09-29.json",
+      "path": "_data/watchlist.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:25395b2c50fc7fdfb20a716efb0112fbc7cb78ed"
+      "digest": "git_blob_sha1:2a2fa400766f61438524b540ffa57f3d574c8c31"
     },
     "watchlist_evidence": {
-      "path": "_records/watchlist-sweeps/2026-09-29.json",
-      "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:59673cee8b86f655b03bf8dc9bf2b5f63b9210c4"
+      "path": "_records/watchlist-sweeps/2026-09-30.json",
+      "schema_version": "2.0.0",
+      "digest": "git_blob_sha1:910cd21b7dff523fc8f54ccbac98a36a825b8a74"
     },
     "book_mappings": {
-      "path": "_records/editorial-handoff/book-mappings-2026-09-29.json",
+      "path": "_records/editorial-handoff/book-mappings-2026-09-30.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:9774f0544d70748e9e81ca911d57fe7dd5363079"
+      "digest": "git_blob_sha1:6d6572f3b04cfa9e9e9fcfb4def9f29806c54eac"
     },
     "image_quality_evidence": {
-      "path": "_records/image-quality/2026-09-29-editorial-v2.json",
+      "path": "_records/image-quality/2026-09-30-editorial-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:b2d0a5bf5ad0b98fd98a97c93b27f4d6d2e5312b"
+      "digest": "git_blob_sha1:49a351eaf5ef510d4a3a7b72e4e5621d03408e91"
     }
   },
   "freeze": {
@@ -90,12 +90,12 @@
       "artifact": "watchlist",
       "evidence_artifact": "watchlist_evidence",
       "counts": {
-        "new_today": 0,
-        "updated_today": 2,
-        "carried_forward": 14
+        "new_today": 1,
+        "updated_today": 3,
+        "carried_forward": 13
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:887187ca35831361867a21cc5336f682a632c8eb",
+      "public_projection_digest": "git_blob_sha1:2d24fb459bc2326e7ca02ab47de6f9251c26976a",
       "repair_allowed_downstream": false
     }
   },
@@ -130,24 +130,17 @@
       "image_quality_evidence"
     ]
   },
-  "migration": {
-    "compatibility_packaging": true,
-    "source_bundle_sha256": "4079821ebe1e72f750c7e0b37c3af0c992313c07b1212cccb869e3cb3afd9f94",
-    "source_release_sha": "e0e7b595c5266f38185d19acbd0a03f15e7a1150",
-    "target_release_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
-    "source_staging_ref": "reliable-edition/dab-edition-2026-09-29",
-    "restart_editorial": false,
-    "regenerate_images": false,
-    "branch_identity_repair": {
-      "from": "editorial-handoff/production/dab-edition-2026-09-29",
-      "to": "editorial-handoff/production/2026-09-29",
-      "reason": "Align production branch identity with protected publication contract without changing qualified content."
-    },
-    "media_preflight_refresh": {
-      "mode": "locked_media_live_reachability_only",
-      "checked_at": "2026-09-30T23:36:16Z",
-      "selection_changed": false,
-      "static_metadata_changed": false
-    }
+  "seal": {
+    "sealed_at": "2026-10-01T07:12:31.865Z",
+    "parent_commit": "27a3b1e08f9cad2e3cebff052aca3df03026d7ad",
+    "artifact_count": 12,
+    "immutable_artifact_digests": true,
+    "selection_changed": false,
+    "repaired_contracts": [
+      "media_receipt_binding",
+      "watchlist_confidence_taxonomy",
+      "watchlist_edition_effective_dates",
+      "watchlist_discovery_v2_ledger"
+    ]
   }
 }

@@ -276,7 +276,7 @@
       "candidate_id": "w30-frontier-gpt61sol",
       "name": "GPT-6.1 Sol cost-performance model",
       "concept_class": "model_family_or_architecture",
-      "disposition": "needs_research",
+      "disposition": "rejected",
       "rationale": "Material model release, but it is a model update rather than a distinct cross-cutting Watchlist mechanism.",
       "evidence_urls": [
         "https://deploymentsafety.openai.com/gpt-6-1-sol/respecting-auto-review",
@@ -343,7 +343,8 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "limitations": "Product announcements establish the mechanism, not comparative reliability, sustained adoption, or safe autonomy across high-impact tasks."
     },
     {
       "candidate_id": "w30-devtools-codex-cloud",
@@ -356,7 +357,7 @@
         "https://help-lb.openai.com/en/articles/20001545-using-codex-cloud"
       ],
       "mechanism": "reusable remote environments for persistent coding-agent tasks",
-      "materially_new": true,
+      "materially_new": false,
       "relevant": true,
       "routine_update": false,
       "promotional_only": false,
@@ -383,7 +384,7 @@
         "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"
       ],
       "mechanism": "vision-and-voice access to persistent agents through glasses",
-      "materially_new": true,
+      "materially_new": false,
       "relevant": true,
       "routine_update": false,
       "promotional_only": false,
@@ -432,7 +433,8 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency."
     },
     {
       "candidate_id": "w30-safety-openshell",
@@ -467,12 +469,13 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime."
     },
     {
       "candidate_id": "w30-open-provenanceguard",
       "name": "Source-aware verification for tool-using agents",
-      "concept_class": "open_source_or_community",
+      "concept_class": "evaluation_or_benchmark",
       "disposition": "new_topic",
       "topic_id": "dab-topic-source-aware-agent-verification",
       "rationale": "A credible original technical source demonstrates a distinct post-generation layer that preserves MCP source identity and blocks cross-source conflation.",
@@ -484,7 +487,7 @@
       "relevant": true,
       "routine_update": false,
       "promotional_only": false,
-      "limitations": "One research system and medical evaluation set; independent replication and production calibration remain unverified.",
+      "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
       "evidence": [
         {
           "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
@@ -496,7 +499,9 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "status": "early_signal",
+      "confidence": "limited"
     }
   ],
   "candidates_reviewed": [
@@ -504,7 +509,7 @@
       "candidate_id": "w30-frontier-gpt61sol",
       "name": "GPT-6.1 Sol cost-performance model",
       "concept_class": "model_family_or_architecture",
-      "disposition": "needs_research",
+      "disposition": "rejected",
       "rationale": "Material model release, but it is a model update rather than a distinct cross-cutting Watchlist mechanism.",
       "evidence_urls": [
         "https://deploymentsafety.openai.com/gpt-6-1-sol/respecting-auto-review",
@@ -571,7 +576,8 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "limitations": "Product announcements establish the mechanism, not comparative reliability, sustained adoption, or safe autonomy across high-impact tasks."
     },
     {
       "candidate_id": "w30-devtools-codex-cloud",
@@ -584,7 +590,7 @@
         "https://help-lb.openai.com/en/articles/20001545-using-codex-cloud"
       ],
       "mechanism": "reusable remote environments for persistent coding-agent tasks",
-      "materially_new": true,
+      "materially_new": false,
       "relevant": true,
       "routine_update": false,
       "promotional_only": false,
@@ -611,7 +617,7 @@
         "https://about.fb.com/news/2026/09/the-biggest-news-from-connect-2026/"
       ],
       "mechanism": "vision-and-voice access to persistent agents through glasses",
-      "materially_new": true,
+      "materially_new": false,
       "relevant": true,
       "routine_update": false,
       "promotional_only": false,
@@ -660,7 +666,8 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency."
     },
     {
       "candidate_id": "w30-safety-openshell",
@@ -695,12 +702,13 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime."
     },
     {
       "candidate_id": "w30-open-provenanceguard",
       "name": "Source-aware verification for tool-using agents",
-      "concept_class": "open_source_or_community",
+      "concept_class": "evaluation_or_benchmark",
       "disposition": "new_topic",
       "topic_id": "dab-topic-source-aware-agent-verification",
       "rationale": "A credible original technical source demonstrates a distinct post-generation layer that preserves MCP source identity and blocks cross-source conflation.",
@@ -712,7 +720,7 @@
       "relevant": true,
       "routine_update": false,
       "promotional_only": false,
-      "limitations": "One research system and medical evaluation set; independent replication and production calibration remain unverified.",
+      "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
       "evidence": [
         {
           "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
@@ -724,7 +732,9 @@
           "kind": "primary",
           "credible": true
         }
-      ]
+      ],
+      "status": "early_signal",
+      "confidence": "limited"
     }
   ],
   "new_topic_ids": [
@@ -738,16 +748,17 @@
   "zero_new_certified": false,
   "zero_new_justification": null,
   "telemetry": {
-    "required_domains": 7,
-    "completed_domains": 7,
-    "focused_checks": 14,
-    "completed_checks": 14,
-    "degraded_checks": 0,
+    "discovery_surfaces_required": 7,
+    "discovery_surfaces_attempted": 7,
+    "discovery_surfaces_complete": 7,
+    "focused_checks_executed": 14,
+    "candidates_discovered": 7,
     "candidates_reviewed": 7,
-    "new_topics": 1,
-    "updated_topics": 3,
-    "needs_research": 3,
-    "rejected": 0
+    "new_topics_admitted": 1,
+    "existing_topics_updated": 3,
+    "candidates_rejected": 1,
+    "candidates_held_for_research": 2,
+    "duplicates": 0
   },
   "sources_reused": [
     "locked September 30 editorial evidence",
@@ -756,5 +767,14 @@
   "story_discovery_rerun": false,
   "editorial_rerun": false,
   "media_rerun": false,
-  "image_rerun": false
+  "image_rerun": false,
+  "concept_classes_reviewed": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "knowledge_worker_workflow",
+    "safety_security_or_governance",
+    "evaluation_or_benchmark"
+  ]
 }

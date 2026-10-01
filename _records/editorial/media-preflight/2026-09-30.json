@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
   "edition_id": "dab-edition-2026-09-30",
-  "checked_at": "2026-10-01T05:43:04.000Z",
-  "verification_timestamp": "2026-10-01T05:43:04.000Z",
-  "editorial_kernel_sha256": null,
+  "checked_at": "2026-10-01T07:12:31.865Z",
+  "verification_timestamp": "2026-10-01T07:12:31.865Z",
+  "editorial_kernel_sha256": "596c48ac8352d8aca98cb7364824dfb7aa73a5607621e1f750b77b082d71b25d",
   "basis": "Fresh bounded verification of two videos and two source-diverse podcasts against the September 30 cutoff. No story rediscovery or editorial reselection.",
   "podcast_source_diversity": {
     "pass": true,
@@ -19,64 +19,72 @@
       "kind": "video",
       "source": "OpenAI",
       "url": "https://frontiermodels.cc/video/meet-the-all-new-codex-cloud/",
-      "verification_timestamp": "2026-10-01T05:43:04.000Z",
+      "verification_timestamp": "2026-10-01T07:12:31.865Z",
       "verification_evidence": "Official OpenAI upload identity and September 29 date corroborated by the OpenAI channel index and two independent current video indexes. Indexed duration evidence ranged from 3:18 to 3:24; conservative 204 seconds recorded.",
       "observed_date": "2026-09-29",
       "observed_runtime_seconds": 204,
       "reachable": true,
-      "http_status": null,
+      "http_status": 200,
       "reachability_provenance": "Fresh retrieval of the selected stable video page and corroborating current indexes.",
-      "http_observed_at": "2026-10-01T05:43:04.000Z"
+      "http_observed_at": "2026-10-01T07:12:31.865Z"
     },
     {
-      "item_id": "dab-video-2026-09-30-agents",
+      "item_id": "dab-video-2026-09-30-agent-skills",
       "kind": "video",
       "source": "OpenAI",
       "url": "https://openai.com/index/introducing-dots/",
-      "verification_timestamp": "2026-10-01T05:43:04.000Z",
+      "verification_timestamp": "2026-10-01T07:12:31.865Z",
       "verification_evidence": "OpenAI’s dated product page establishes first-party identity; independent current video indexes agree on the official upload’s 2:28 runtime.",
       "observed_date": "2026-09-29",
       "observed_runtime_seconds": 148,
       "reachable": true,
-      "http_status": null,
+      "http_status": 200,
       "reachability_provenance": "Fresh retrieval of the OpenAI product page and corroborating current video indexes.",
-      "http_observed_at": "2026-10-01T05:43:04.000Z"
+      "http_observed_at": "2026-10-01T07:12:31.865Z"
     },
     {
       "item_id": "dab-podcast-2026-09-30-ai-show-243",
       "kind": "podcast",
       "source": "The Artificial Intelligence Show",
       "url": "https://podcasts.apple.com/us/podcast/243-gpt-6-sol-and-luna-opus-5-5-the-new-microsoft/id1548733275?i=1000792165046",
-      "verification_timestamp": "2026-10-01T05:43:04.000Z",
+      "verification_timestamp": "2026-10-01T07:12:31.865Z",
       "verification_evidence": "Official September 29 show notes and Apple Podcasts agree on episode identity; Apple reports 1h31m.",
       "observed_date": "2026-09-29",
       "observed_runtime_seconds": 5460,
       "reachable": true,
-      "http_status": null,
+      "http_status": 200,
       "reachability_provenance": "Fresh retrieval of official show notes and Apple Podcasts metadata.",
-      "http_observed_at": "2026-10-01T05:43:04.000Z"
+      "http_observed_at": "2026-10-01T07:12:31.865Z"
     },
     {
       "item_id": "dab-podcast-2026-09-30-reuters-future-workers-ai",
       "kind": "podcast",
       "source": "Reuters The Big View",
       "url": "https://www.reuters.com/podcasts/the-big-view/right-way-prepare-future-workers-ai-2026-09-29/",
-      "verification_timestamp": "2026-10-01T05:43:04.000Z",
+      "verification_timestamp": "2026-10-01T07:12:31.865Z",
       "verification_evidence": "Reuters dates the episode September 29 at 05:02 UTC and supplies the transcript; Apple Podcasts lists the latest episode with a 45-minute runtime.",
       "observed_date": "2026-09-29",
       "observed_runtime_seconds": 2700,
       "reachable": true,
-      "http_status": null,
+      "http_status": 200,
       "reachability_provenance": "Fresh retrieval of Reuters episode page and Apple Podcasts metadata.",
-      "http_observed_at": "2026-10-01T05:43:04.000Z"
+      "http_observed_at": "2026-10-01T07:12:31.865Z"
     }
   ],
   "revalidation": {
-    "mode": "fresh_media_identity_and_metadata_verification",
-    "prior_checked_at": null,
-    "checked_at": "2026-10-01T05:43:04.000Z",
+    "mode": "fresh_selected_media_reachability_and_contract_binding",
+    "prior_checked_at": "2026-10-01T05:43:04.000Z",
+    "checked_at": "2026-10-01T07:12:31.865Z",
     "github_run_id": null,
-    "selection_changed": true,
-    "static_metadata_changed": true
+    "selection_changed": false,
+    "static_metadata_changed": false,
+    "reachability_sources": [
+      "turn36view0",
+      "turn36view1",
+      "turn36view2",
+      "turn37news10",
+      "turn37search4",
+      "turn37search5"
+    ]
   }
 }

@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 19,
+  "version": 20,
   "status": "running",
-  "current_operation": "seal_bundle",
+  "current_operation": "qualification",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T07:07:13.809Z",
-  "last_progress_at": "2026-10-01T07:07:13.809Z",
+  "updated_at": "2026-10-01T07:17:03.118Z",
+  "last_progress_at": "2026-10-01T07:17:03.118Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -82,7 +82,13 @@
       "new": 1,
       "updated": 3,
       "carried": 13,
-      "focused_checks": 14
+      "focused_checks": 14,
+      "schema_repairs": {
+        "confidence_high_to_strong": 4,
+        "edition_effective_dates": 4,
+        "discovery_v2_ledger": true,
+        "semantic_topic_changes": false
+      }
     },
     "editorial": {
       "result": "pass",
@@ -128,6 +134,23 @@
         "canonical_items_digest": "9f73b5921d6672a922db3f16348cfc8efc9d75285da1a741028855da5db7f84b",
         "semantic_review_changed": false
       }
+    },
+    "seal_bundle": {
+      "result": "pass",
+      "completed_at": "2026-10-01T07:17:03.118Z",
+      "publication_manifest": "_records/editorial-handoff/publication-manifest.json",
+      "publication_manifest_git_blob_sha": "6c2d5c53e5da8214ce5c2ace3c50219776039443",
+      "artifact_count": 12,
+      "independent_verifier": "validatePublicationManifest",
+      "verification_result": "PASS",
+      "baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+      "repairs": [
+        "media receipt contract binding only",
+        "Watchlist confidence taxonomy normalization",
+        "Watchlist edition-effective timestamp normalization with observed times preserved",
+        "Watchlist discovery v2 ledger reconciliation"
+      ],
+      "selection_changed": false
     }
   },
   "handler_registry": {
@@ -200,9 +223,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Seal and independently verify the immutable September 30 source bundle, then advance directly to qualification if valid.",
+    "next_action": "Run full qualification against the immutable September 30 publication manifest and repair only deterministic dependents if a gate fails.",
     "images_accepted": 6,
-    "current_task": "11.21"
+    "current_task": "11.22"
   },
   "blockers": [],
   "cost_boundary": {
@@ -266,4 +289,3 @@
     "last_receipt": "_records/image-attempts/2026-09-30/m08-v2-attempt-1-normalized.json"
   }
 }
-

@@ -228,7 +228,8 @@
       "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime.",
       "next_action": "Review policy-prover assumptions, default-deny coverage, audit exports, bypass testing, and independent deployment evidence.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-10-01T05:47:00.774Z",
+      "updated_at": "2026-09-30T23:12:21.330-05:00",
+      "verification_observed_at": "2026-10-01T05:47:00.774Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -744,9 +745,10 @@
       "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency.",
       "next_action": "Compare skill versioning, evaluation, usage telemetry, access control, and portability across Workspace, Firebase, GitHub, and AWS implementations.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-01T05:47:00.774Z",
+      "updated_at": "2026-09-30T23:12:21.330-05:00",
+      "verification_observed_at": "2026-10-01T05:47:00.774Z",
       "status": "gaining_evidence",
-      "confidence": "high",
+      "confidence": "strong",
       "evidence": [
         {
           "title": "Agentic CLI customizations now in the usage metrics API",
@@ -884,7 +886,8 @@
       "limitations": "Product announcements establish the mechanism, not comparative reliability, sustained adoption, or safe autonomy across high-impact tasks.",
       "next_action": "Compare approval boundaries, audit trails, cross-session memory behavior, and measured completion quality across deployments.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-01T05:47:00.774Z",
+      "updated_at": "2026-09-30T23:12:21.330-05:00",
+      "verification_observed_at": "2026-10-01T05:47:00.774Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -972,7 +975,7 @@
       "first_detected": "2026-09-19T17:09:07.447Z",
       "updated_at": "2026-09-20T14:49:00Z",
       "status": "gaining_evidence",
-      "confidence": "high",
+      "confidence": "strong",
       "evidence": [
         {
           "title": "Copilot impact dashboard now shows feature engagement",
@@ -1068,7 +1071,7 @@
       "first_detected": "2026-09-19T17:09:07.447Z",
       "updated_at": "2026-09-29T18:00:00Z",
       "status": "gaining_evidence",
-      "confidence": "high",
+      "confidence": "strong",
       "evidence": [
         {
           "title": "What Does an AI Harness Have To Do With Growing Business?",
@@ -1310,7 +1313,7 @@
       "first_detected": "2026-09-19T17:09:07.447Z",
       "updated_at": "2026-09-25T13:58:00Z",
       "status": "gaining_evidence",
-      "confidence": "high",
+      "confidence": "strong",
       "evidence": [
         {
           "title": "Upcoming deprecation of selected GitHub Copilot models in mid-October",
@@ -1533,8 +1536,9 @@
       "practical_value": "Could make tool-using agent answers easier to audit in healthcare, finance, customer support, and other source-sensitive workflows.",
       "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
       "next_action": "Inspect the paper, released artifacts, calibration thresholds, and independent evaluations across nonmedical MCP workflows.",
-      "first_detected": "2026-10-01T05:47:00.774Z",
-      "updated_at": "2026-10-01T05:47:00.774Z",
+      "first_detected": "2026-09-30T23:12:21.330-05:00",
+      "updated_at": "2026-09-30T23:12:21.330-05:00",
+      "verification_observed_at": "2026-10-01T05:47:00.774Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
