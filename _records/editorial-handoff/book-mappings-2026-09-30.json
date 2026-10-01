@@ -834,7 +834,11 @@
       "schema_version": "1.0.0",
       "edition_date": "2026-09-30",
       "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
-      "items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c",
+      "items_digest": "9f73b5921d6672a922db3f16348cfc8efc9d75285da1a741028855da5db7f84b",
+      "canonical_packaging_rebind": {
+        "previous_items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c",
+        "reason": "Bind the completed 320-pair semantic review to the fully assembled canonical edition objects; item identities, anchors, scores, rationales and selections are unchanged."
+      },
       "review_scope": "all_locked_articles_and_included_media",
       "full_book_text_reviewed": false,
       "items": [

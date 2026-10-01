@@ -6,6 +6,149 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-09-30-77eb0ae9",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/",
+      "title": "OpenShell puts enforceable permissions outside the agent",
+      "summary": "NVIDIA describes OpenShell 0.1.0 as an open-source runtime that can wrap existing agents with sandboxed execution, service controls, credential isolation, network policy, and formal policy analysis. Its examples show the runtime allowing read operations while blocking writes and keeping real credentials outside the agent workload.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m02-2.png?v=sep30-m02-64fbf099a406",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "agent runtime",
+        "permissions",
+        "sandboxing",
+        "credential isolation",
+        "formal policy",
+        "NVIDIA"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-30-bb1d40df",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/",
+      "title": "ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact",
+      "summary": "A Hugging Face team article presents ProvenanceGuard, a post-generation verification layer for multi-tool MCP agents. It preserves source identity through claim decomposition, source routing, support checks, attribution checks, and allow-or-block decisions instead of collapsing all tool outputs into one anonymous evidence pool.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m03-2.png?v=sep30-m03-16fe73d5ef71",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "MCP",
+        "provenance",
+        "agent evaluation",
+        "source attribution",
+        "verification",
+        "Hugging Face",
+        "Multiverse Computing"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-30-5d21346f",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/openai-pairs-small-business-ai-workflows-with-local-human-coaching/",
+      "title": "OpenAI pairs small-business AI workflows with local human coaching",
+      "summary": "OpenAI announced a partnership with America’s SBDC that will train roughly 150 advisors and bring hands-on workshops, follow-up help, and reusable guides to small businesses. A companion report describes owners using AI for finance, supply chain, legal work, marketing, competitive pricing, research, and outreach.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m04-2.png?v=sep30-m04-2bcfa40f8150",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "small business",
+        "AI adoption",
+        "workflow coaching",
+        "knowledge work",
+        "training",
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-30-9d62316c",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/",
+      "title": "Anthropic’s buying agent shifts sales reps toward higher-value conversations",
+      "summary": "Anthropic says its Claude Managed Agents buying agent now handles thousands of inbound conversations a day, answers routine plan and policy questions, and either completes a purchase, hands a complex case to a representative with context, or gives a quick answer. The company reports stronger opportunity conversion and faster closes for escalated leads.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m05-2.png?v=sep30-m05-181860900e6d",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "sales agents",
+        "human escalation",
+        "Claude Managed Agents",
+        "workflow redesign",
+        "feedback loops",
+        "Anthropic"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-30-3b6d7f96",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/gemini-skills-turn-repeated-instructions-into-reusable-team-procedures/",
+      "title": "Gemini Skills turn repeated instructions into reusable team procedures",
+      "summary": "Google Workspace announced reusable Gemini skills for the Gemini app and Workspace and says they will eventually replace Gems for task-specific instructions. Skills let users save custom instructions for recurring work instead of rebuilding the same prompt each time, with a transition path for existing Gems.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m07-2.png?v=sep30-m07-320ee51e3fd8",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "Agent Skills",
+        "Gemini",
+        "reusable instructions",
+        "SKILL.md",
+        "operating knowledge",
+        "Google"
+      ]
+    },
+    {
+      "id": "dab-story-2026-09-30-63e10dfd",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/asanas-coachable-agents-make-roles-memory-and-permissions-visible/",
+      "title": "Asana’s coachable agents make roles, memory, and permissions visible",
+      "summary": "Anthropic’s Asana case study describes AI teammates that work inside Asana’s existing work graph with named roles, visible tasks, scoped permissions, pre-built skills, integrations, and shared memory. Asana separates everyday feedback from permanent memory changes, which are reserved for administrators and editors.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-30/dab-edition-2026-09-30-m08-2.png?v=sep30-m08-28e0215a359a",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "AI teammates",
+        "permissions",
+        "shared memory",
+        "Asana",
+        "human-agent teams",
+        "Anthropic"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-30-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-30/general/",
+      "title": "Meet the all new Codex Cloud",
+      "summary": "A compact product demo of persistent cloud development environments, mobile steering, shared setup, and code-review workflows.",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "dab-video-2026-09-30-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-09-30/agent-skills/",
+      "title": "Introducing dots, always-on agents built to handle everything.",
+      "summary": "A two-and-a-half-minute introduction to always-on agents, their cloud-computer model, and the user-control framing.",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "OpenAI"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-30-ai-show-243",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-30/ai-show-243/",
+      "title": "#243: GPT-6 Sol and Luna, Opus 5.5, the New Microsoft Copilot, Jensen Huang vs. AI Doomers & Introducing AI Score",
+      "summary": "A same-day discussion of model reliability, per-task economics, Copilot changes, and practical adoption implications.",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "AI model economics",
+        "Microsoft Copilot",
+        "agent adoption",
+        "The Artificial Intelligence Show"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-09-30-reuters-future-workers-ai",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-30/future-workers-ai/",
+      "title": "The right way to prepare future workers for AI",
+      "summary": "Daniel Susskind explains why narrow future-proofing is unreliable and why literacy, numeracy, and critical thinking remain durable foundations.",
+      "date_published": "2026-09-30T13:00:00-05:00",
+      "tags": [
+        "future of work",
+        "AI education",
+        "critical thinking",
+        "The Big View"
+      ]
+    },
+    {
       "id": "dab-story-2026-09-29-73a1c827",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/",
       "title": "NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator",
@@ -3029,96 +3172,6 @@
         "human approval",
         "DLP",
         "auditability",
-        "Google"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-31-ae8493a1",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/",
-      "title": "Operant AI puts an intent-aware enforcement layer in front of agent actions",
-      "summary": "Operant AI launched its Semantic Firewall, an inline control layer that evaluates the intent of prompts, commands, tool calls, code and data flows. Its Tool, Code, Data and Scope guards can allow, block or redact activity before execution. Operant says the system makes decisions in real time without routing protected traffic to external providers.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/01-semantic-firewall.svg",
-      "date_published": "2026-08-31T13:00:00-05:00",
-      "tags": [
-        "agent security",
-        "semantic policy enforcement",
-        "tool calls",
-        "data loss prevention",
-        "operant.ai"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-31-a3f5c0f6",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/codex-0-151-makes-subagent-cost-and-restored-permissions-more-visible/",
-      "title": "Codex 0.151 makes subagent cost and restored permissions more visible",
-      "summary": "OpenAI’s Codex CLI `rust-v0.151.0` release accounts subagent token use against root goals, preserves restored permission profiles in TUI sessions, reports which capabilities remote plugin syncs affect, and adds telemetry around escalated stdin reviews and remote-executor MCP discovery. The release also includes test stabilization.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/02-codex-harness-ledger.svg",
-      "date_published": "2026-08-31T13:00:00-05:00",
-      "tags": [
-        "coding agents",
-        "harness observability",
-        "subagent accounting",
-        "permission state",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-31-7b2aa975",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/",
-      "title": "GitHub Spark retires today, turning exportability into a no-code requirement",
-      "summary": "GitHub’s retirement window for Spark on GitHub.com closes today. Existing users were given until August 31 to move app code into a repository with **Create repository**. Deployed apps can continue running, but apps that depend on Spark’s `llm()` helper must replace it with another inference provider for AI features to keep working.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/03-spark-sunset.svg",
-      "date_published": "2026-08-31T13:00:00-05:00",
-      "tags": [
-        "vibe coding",
-        "app portability",
-        "hosted inference",
-        "product retirement",
-        "GitHub"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-31-f5d21908",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/",
-      "title": "The Financial Stability Board frames frontier AI as a resilience problem",
-      "summary": "In a letter to G20 finance ministers and central-bank governors, Financial Stability Board chair Andrew Bailey identifies frontier AI’s effect on cyber risk as the financial system’s most immediate AI concern. The letter says greater attack speed and scale could interact with concentrated technology providers and interconnected infrastructure, and calls for stronger vulnerability management, response and recovery.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/04-systemic-risk-network.svg",
-      "date_published": "2026-08-31T13:00:00-05:00",
-      "tags": [
-        "cyber resilience",
-        "concentration risk",
-        "human oversight",
-        "financial decision support",
-        "fsb.org"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-31-5f4981c9",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/",
-      "title": "Make adds global search across scenarios and their runs",
-      "summary": "Make’s August 31 release notes announce global search for scenarios and scenario runs. Users can search across workflow definitions and past executions from a workspace-level entry point instead of locating the right scenario first and then inspecting its history.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/05-make-global-search.svg",
-      "date_published": "2026-08-31T13:00:00-05:00",
-      "tags": [
-        "no-code automation",
-        "workflow discovery",
-        "run history",
-        "operational review",
-        "help.make.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-08-31-f97bd21f",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/",
-      "title": "Google Cloud schedules a no-code, build-to-deploy customer-agent demonstration",
-      "summary": "Google Cloud announced a September 4 live session that promises to build and deploy a functional customer agent from scratch in under 15 minutes using a no-code/low-code environment. The demonstration is aimed at routine inquiries, multi-turn conversations and brand-aligned responses rather than software-framework setup.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-08-31/06-no-code-agent-workshop.svg",
-      "date_published": "2026-08-31T13:00:00-05:00",
-      "tags": [
-        "no-code agents",
-        "customer service",
-        "visual workflow design",
-        "deployment governance",
         "Google"
       ]
     }

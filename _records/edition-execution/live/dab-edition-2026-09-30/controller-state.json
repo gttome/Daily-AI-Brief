@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 18,
+  "version": 19,
   "status": "running",
   "current_operation": "seal_bundle",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T06:59:41.601Z",
-  "last_progress_at": "2026-10-01T06:59:41.601Z",
+  "updated_at": "2026-10-01T07:07:13.809Z",
+  "last_progress_at": "2026-10-01T07:07:13.809Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -96,7 +96,8 @@
       "mapped_items": 10,
       "books_selected": 4,
       "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
-      "items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c"
+      "items_digest": "9f73b5921d6672a922db3f16348cfc8efc9d75285da1a741028855da5db7f84b",
+      "canonical_packaging_rebind": true
     },
     "images": {
       "result": "pass",
@@ -112,6 +113,21 @@
       },
       "normalization": "deterministic_non_overwriting",
       "low_quality_fallback": false
+    },
+    "assembly": {
+      "result": "pass",
+      "completed_at": "2026-10-01T07:07:13.809Z",
+      "canonical_edition": "_data/editions/2026-09-30.json",
+      "dated_brief": "briefs/2026-09-30.md",
+      "story_pages": 6,
+      "video_pages": 2,
+      "podcast_pages": 2,
+      "derived_generation": "PASS",
+      "book_mapping_rebind": {
+        "previous_items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c",
+        "canonical_items_digest": "9f73b5921d6672a922db3f16348cfc8efc9d75285da1a741028855da5db7f84b",
+        "semantic_review_changed": false
+      }
     }
   },
   "handler_registry": {
@@ -184,9 +200,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Assemble the canonical September 30 edition and derived pages from the locked kernel, media, watchlist, book mappings and accepted image handoff.",
+    "next_action": "Seal and independently verify the immutable September 30 source bundle, then advance directly to qualification if valid.",
     "images_accepted": 6,
-    "current_task": "11.20"
+    "current_task": "11.21"
   },
   "blockers": [],
   "cost_boundary": {
@@ -250,3 +266,4 @@
     "last_receipt": "_records/image-attempts/2026-09-30/m08-v2-attempt-1-normalized.json"
   }
 }
+

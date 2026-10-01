@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T06:59:41.601Z",
+  "observed_at": "2026-10-01T07:07:13.809Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -12,7 +12,7 @@
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
   "controller_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
   "blocker": null,
-  "next_action": "Assemble the canonical September 30 edition and deterministic derived pages from locked inputs.",
+  "next_action": "Seal and independently verify the immutable September 30 source bundle, then advance directly to qualification if valid.",
   "cards": [
     {
       "id": "11.01",
@@ -239,21 +239,24 @@
       "id": "11.20",
       "title": "Assemble canonical edition and pages",
       "depends_on": "08–11,19",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T06:59:41.601Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "Assemble canonical edition and deterministic derived pages from locked inputs",
-      "next_action": "Render the canonical September 30 edition and derived pages without reopening locked upstream stages."
+      "completed_at": "2026-10-01T07:07:13.809Z",
+      "timing": "7m 32.208s",
+      "substage": "Canonical edition, dated brief, six story pages, two video pages, two podcast pages and deterministic derived projections assembled",
+      "next_action": null,
+      "elapsed_seconds": 452.208
     },
     {
       "id": "11.21",
       "title": "Refresh digests and seal immutable bundle",
       "depends_on": "20",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T07:07:13.809Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "Seal immutable source bundle and verify artifact identities",
+      "next_action": "Bind the current Sep 30 kernel, evidence, media, Watchlist, book mappings, accepted image handoff and quality record into the publication manifest; verify every digest."
     },
     {
       "id": "11.22",
@@ -308,7 +311,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 18,
+  "controller_state_version": 19,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -846,6 +849,28 @@
       "event": "backlog_exit",
       "at": "2026-10-01T06:59:41.601Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.20",
+      "event": "book_mapping_canonical_rebind",
+      "at": "2026-10-01T07:07:13.809Z",
+      "previous_items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c",
+      "canonical_items_digest": "9f73b5921d6672a922db3f16348cfc8efc9d75285da1a741028855da5db7f84b",
+      "semantic_review_changed": false
+    },
+    {
+      "task_id": "11.20",
+      "event": "done_recorded",
+      "at": "2026-10-01T07:07:13.809Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 452.208,
+      "derived_generation": "PASS"
+    },
+    {
+      "task_id": "11.21",
+      "event": "backlog_exit",
+      "at": "2026-10-01T07:07:13.809Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -891,5 +916,6 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T06:59:41.601Z"
+  "last_durable_progress_at": "2026-10-01T07:07:13.809Z"
 }
+

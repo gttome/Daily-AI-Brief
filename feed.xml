@@ -4,7 +4,77 @@
   <id>https://gttome.github.io/Daily-AI-Brief/</id>
   <link href="https://gttome.github.io/Daily-AI-Brief/feed.xml" rel="self" />
   <link href="https://gttome.github.io/Daily-AI-Brief/" />
-  <updated>2026-09-30T23:36:17Z</updated>
+  <updated>2026-10-01T07:05:23Z</updated>
+  <entry>
+    <title>OpenShell puts enforceable permissions outside the agent</title>
+    <id>dab-story-2026-09-30-77eb0ae9</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>NVIDIA describes OpenShell 0.1.0 as an open-source runtime that can wrap existing agents with sandboxed execution, service controls, credential isolation, network policy, and formal policy analysis. Its examples show the runtime allowing read operations while blocking writes and keeping real credentials outside the agent workload.</summary>
+  </entry>
+  <entry>
+    <title>ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact</title>
+    <id>dab-story-2026-09-30-bb1d40df</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>A Hugging Face team article presents ProvenanceGuard, a post-generation verification layer for multi-tool MCP agents. It preserves source identity through claim decomposition, source routing, support checks, attribution checks, and allow-or-block decisions instead of collapsing all tool outputs into one anonymous evidence pool.</summary>
+  </entry>
+  <entry>
+    <title>OpenAI pairs small-business AI workflows with local human coaching</title>
+    <id>dab-story-2026-09-30-5d21346f</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/openai-pairs-small-business-ai-workflows-with-local-human-coaching/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>OpenAI announced a partnership with America’s SBDC that will train roughly 150 advisors and bring hands-on workshops, follow-up help, and reusable guides to small businesses. A companion report describes owners using AI for finance, supply chain, legal work, marketing, competitive pricing, research, and outreach.</summary>
+  </entry>
+  <entry>
+    <title>Anthropic’s buying agent shifts sales reps toward higher-value conversations</title>
+    <id>dab-story-2026-09-30-9d62316c</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>Anthropic says its Claude Managed Agents buying agent now handles thousands of inbound conversations a day, answers routine plan and policy questions, and either completes a purchase, hands a complex case to a representative with context, or gives a quick answer. The company reports stronger opportunity conversion and faster closes for escalated leads.</summary>
+  </entry>
+  <entry>
+    <title>Gemini Skills turn repeated instructions into reusable team procedures</title>
+    <id>dab-story-2026-09-30-3b6d7f96</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/gemini-skills-turn-repeated-instructions-into-reusable-team-procedures/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>Google Workspace announced reusable Gemini skills for the Gemini app and Workspace and says they will eventually replace Gems for task-specific instructions. Skills let users save custom instructions for recurring work instead of rebuilding the same prompt each time, with a transition path for existing Gems.</summary>
+  </entry>
+  <entry>
+    <title>Asana’s coachable agents make roles, memory, and permissions visible</title>
+    <id>dab-story-2026-09-30-63e10dfd</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-30/asanas-coachable-agents-make-roles-memory-and-permissions-visible/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>Anthropic’s Asana case study describes AI teammates that work inside Asana’s existing work graph with named roles, visible tasks, scoped permissions, pre-built skills, integrations, and shared memory. Asana separates everyday feedback from permanent memory changes, which are reserved for administrators and editors.</summary>
+  </entry>
+  <entry>
+    <title>Meet the all new Codex Cloud</title>
+    <id>dab-video-2026-09-30-general</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-30/general/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>A compact product demo of persistent cloud development environments, mobile steering, shared setup, and code-review workflows.</summary>
+  </entry>
+  <entry>
+    <title>Introducing dots, always-on agents built to handle everything.</title>
+    <id>dab-video-2026-09-30-agent-skills</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/videos/2026-09-30/agent-skills/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>A two-and-a-half-minute introduction to always-on agents, their cloud-computer model, and the user-control framing.</summary>
+  </entry>
+  <entry>
+    <title>#243: GPT-6 Sol and Luna, Opus 5.5, the New Microsoft Copilot, Jensen Huang vs. AI Doomers &amp; Introducing AI Score</title>
+    <id>dab-podcast-2026-09-30-ai-show-243</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-30/ai-show-243/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>A same-day discussion of model reliability, per-task economics, Copilot changes, and practical adoption implications.</summary>
+  </entry>
+  <entry>
+    <title>The right way to prepare future workers for AI</title>
+    <id>dab-podcast-2026-09-30-reuters-future-workers-ai</id>
+    <link href="https://gttome.github.io/Daily-AI-Brief/podcasts/2026-09-30/future-workers-ai/" />
+    <updated>2026-09-30T18:00:00Z</updated>
+    <summary>Daniel Susskind explains why narrow future-proofing is unreliable and why literacy, numeracy, and critical thinking remain durable foundations.</summary>
+  </entry>
   <entry>
     <title>NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator</title>
     <id>dab-story-2026-09-29-73a1c827</id>
@@ -1467,47 +1537,5 @@
     <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/" />
     <updated>2026-09-01T18:00:00Z</updated>
     <summary>Google began the Scheduled Release rollout of new Workspace Studio controls today. Newly created flows can run with least-privileged agent identities and unique auditable identifiers. Administrators can revoke individual OAuth scopes, inspect flow context in audit events, disable step types or webhooks, require confirmation before externally sharing data, and use DLP conditions to block execution or force review.</summary>
-  </entry>
-  <entry>
-    <title>Operant AI puts an intent-aware enforcement layer in front of agent actions</title>
-    <id>dab-story-2026-08-31-ae8493a1</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/" />
-    <updated>2026-08-31T18:00:00Z</updated>
-    <summary>Operant AI launched its Semantic Firewall, an inline control layer that evaluates the intent of prompts, commands, tool calls, code and data flows. Its Tool, Code, Data and Scope guards can allow, block or redact activity before execution. Operant says the system makes decisions in real time without routing protected traffic to external providers.</summary>
-  </entry>
-  <entry>
-    <title>Codex 0.151 makes subagent cost and restored permissions more visible</title>
-    <id>dab-story-2026-08-31-a3f5c0f6</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/codex-0-151-makes-subagent-cost-and-restored-permissions-more-visible/" />
-    <updated>2026-08-31T18:00:00Z</updated>
-    <summary>OpenAI’s Codex CLI `rust-v0.151.0` release accounts subagent token use against root goals, preserves restored permission profiles in TUI sessions, reports which capabilities remote plugin syncs affect, and adds telemetry around escalated stdin reviews and remote-executor MCP discovery. The release also includes test stabilization.</summary>
-  </entry>
-  <entry>
-    <title>GitHub Spark retires today, turning exportability into a no-code requirement</title>
-    <id>dab-story-2026-08-31-7b2aa975</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/" />
-    <updated>2026-08-31T18:00:00Z</updated>
-    <summary>GitHub’s retirement window for Spark on GitHub.com closes today. Existing users were given until August 31 to move app code into a repository with **Create repository**. Deployed apps can continue running, but apps that depend on Spark’s `llm()` helper must replace it with another inference provider for AI features to keep working.</summary>
-  </entry>
-  <entry>
-    <title>The Financial Stability Board frames frontier AI as a resilience problem</title>
-    <id>dab-story-2026-08-31-f5d21908</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/the-financial-stability-board-frames-frontier-ai-as-a-resilience-problem/" />
-    <updated>2026-08-31T18:00:00Z</updated>
-    <summary>In a letter to G20 finance ministers and central-bank governors, Financial Stability Board chair Andrew Bailey identifies frontier AI’s effect on cyber risk as the financial system’s most immediate AI concern. The letter says greater attack speed and scale could interact with concentrated technology providers and interconnected infrastructure, and calls for stronger vulnerability management, response and recovery.</summary>
-  </entry>
-  <entry>
-    <title>Make adds global search across scenarios and their runs</title>
-    <id>dab-story-2026-08-31-5f4981c9</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/" />
-    <updated>2026-08-31T18:00:00Z</updated>
-    <summary>Make’s August 31 release notes announce global search for scenarios and scenario runs. Users can search across workflow definitions and past executions from a workspace-level entry point instead of locating the right scenario first and then inspecting its history.</summary>
-  </entry>
-  <entry>
-    <title>Google Cloud schedules a no-code, build-to-deploy customer-agent demonstration</title>
-    <id>dab-story-2026-08-31-f97bd21f</id>
-    <link href="https://gttome.github.io/Daily-AI-Brief/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/" />
-    <updated>2026-08-31T18:00:00Z</updated>
-    <summary>Google Cloud announced a September 4 live session that promises to build and deploy a functional customer agent from scratch in under 15 minutes using a no-code/low-code environment. The demonstration is aimed at routine inquiries, multi-turn conversations and brand-aligned responses rather than software-framework setup.</summary>
   </entry>
 </feed>
