@@ -1,0 +1,106 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "36b8a13a6d7880bd61f45a54eb34d5b0aa5ce1085f87298f1f14b239f2c99914",
+  "story_id": "dab-story-2026-09-30-bb1d40df",
+  "candidate_id": "m03",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-7cad22b3-ba35-4fb7-9647-bb0c455b680b",
+    "artifact_id": "generated_images/exec-7cad22b3-ba35-4fb7-9647-bb0c455b680b.png",
+    "generated_at": "2026-10-01T06:31:12.750Z",
+    "raw_sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m03-attempt-1.png",
+      "sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+      "git_blob_sha": "0739bf2cdaf889519799d8f38e2e51a2bf244c85",
+      "commit_sha": "2560a68b3f963ecc2e6ca146a146a92c9d46e218",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-normalized-contact-sheet-2026-09-30",
+    "reviewed_at": "2026-10-01T06:56:50.953Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "16fe73d5ef7167bb71e23797ccab062aac7db075e119db15ac3cef2d8231e642",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "MCP Answer",
+      "Claims",
+      "Source ID",
+      "Support Check",
+      "Attribution Check",
+      "Allow",
+      "Block",
+      "Repair"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1200,
+      "height": 630,
+      "minimum_pass": true,
+      "production_exact_pass": true
+    },
+    "assessment": "Exact 1200×630 production canvas preserves the claim-to-source verification pipeline, all outcome labels, and the accepted story-specific attribution flow without distortion or semantic change.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-2.png",
+    "sha256": "16fe73d5ef7167bb71e23797ccab062aac7db075e119db15ac3cef2d8231e642",
+    "git_blob_sha": "2ea583f8e1b2a07e47a35e793a726617a405dd7d",
+    "commit_sha": "b9f603a3a5a12bc8886fb9c374ae0c1132c992bf",
+    "persisted_at": "2026-10-01T06:56:53.886Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked",
+  "normalization": {
+    "source_asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-1.png",
+    "source_sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+    "source_git_blob_sha": "0739bf2cdaf889519799d8f38e2e51a2bf244c85",
+    "source_dimensions": {
+      "width": 2056,
+      "height": 765
+    },
+    "production_dimensions": {
+      "width": 1200,
+      "height": 630
+    },
+    "processing": "Lanczos proportional fit plus white canvas extent; no regeneration or semantic edit",
+    "normalized_at": "2026-10-01T06:56:50.953Z",
+    "source_preserved": true,
+    "non_overwriting_path": true
+  }
+}

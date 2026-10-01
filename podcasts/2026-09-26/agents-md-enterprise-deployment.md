@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Directly reinforces today's sandboxing, memory, managed-runtime, and production-QA stories.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Reused the completed September 26 media checkpoint; no selection or source-content rediscovery.
 

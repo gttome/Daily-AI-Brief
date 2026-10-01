@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Generative AI adoption often depends on reducing small production frictions rather than adding a new standalone tool. Better narration quality and faster iteration can make AI-assisted video more practical for internal training, presentations, explainers, and other routine knowledge-work communication.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

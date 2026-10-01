@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Adds practical organizational adoption evidence to today's Copilot workflow and governed-runtime coverage.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Reused the completed September 26 media checkpoint; no selection or source-content rediscovery.
 

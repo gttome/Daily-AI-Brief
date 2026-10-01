@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** An agent can make individually valid tool calls and still fail the job. Production evaluation therefore needs end-to-end task outcomes, environment state, recovery behavior, and repeatability—not only model-level or single-call accuracy.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.3 — Verification as the Final Gate</p><p>Use the final-gate framework when evaluating whether an agent actually completed the intended task rather than merely producing plausible intermediate tool calls.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

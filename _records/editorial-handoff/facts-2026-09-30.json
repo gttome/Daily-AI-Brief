@@ -1,0 +1,56 @@
+{
+  "m02": {
+    "candidate_id": "m02",
+    "headline": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
+    "canonical_url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+    "publisher": "NVIDIA Developer",
+    "published_at": "2026-09-28T08:55:00.000Z",
+    "source_reliability": "publisher_authored",
+    "excerpt": "NVIDIA describes OpenShell 0.1.0 as an open-source runtime that adds enforceable controls around existing AI agents without requiring teams to rewrite the agent. The runtime combines sandboxed execution, controlled service access, credential management, network policy, and formal policy analysis. Its example shows read-only GitHub access being allowed while write requests are blocked, with policy decisions visible in logs. Credentials can remain outside the agent workload and be substituted only for approved destinations. Policy changes can require human review, and the policy prover checks modeled permissions independently of the agent’s own explanation. The verified lesson is that runtime enforcement can sit outside a long-running agent and constrain what it can actually do."
+  },
+  "m03": {
+    "candidate_id": "m03",
+    "headline": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+    "canonical_url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
+    "publisher": "Hugging Face",
+    "published_at": "2026-09-29T13:07:00.000Z",
+    "source_reliability": "publisher_authored",
+    "excerpt": "The Hugging Face team article presents ProvenanceGuard, a post-generation verifier for MCP-based agents that preserves source identity instead of pooling all tool evidence together. The system decomposes an answer into claims, routes each claim to a likely source, checks whether that source supports it, compares that source with the one named or implied by the answer, and produces claim-level plus overall allow/block decisions. The authors focus on cross-source conflation: a claim may be true somewhere in the evidence but wrongly attributed to another tool output. In reported medical-agent tests, the approach caught nearly all expert-labeled claims that should be blocked, while also sending some supported claims for review. The article explicitly notes remaining source-identification limits."
+  },
+  "m04": {
+    "candidate_id": "m04",
+    "headline": "Helping small businesses put AI to work",
+    "canonical_url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
+    "publisher": "OpenAI",
+    "published_at": "2026-09-30T00:00:00.000Z",
+    "source_reliability": "publisher_authored",
+    "excerpt": "OpenAI announced a partnership with America’s SBDC to expand hands-on AI training and local guidance for small businesses. The initial plan is to train about 150 Small Business Development Center advisors and reach at least 1,000 businesses through workshops, advising, and reusable resources. OpenAI also published a report saying roughly four million employees at firms with fewer than 500 people used OpenAI tools during a recent September week. The report describes small-business use in finance, supply chain, legal and compliance, marketing, competitive pricing, research, and outreach. The practical signal is not merely tool access: OpenAI is pairing workflow examples with local advisors who can help owners choose a starting task, test it, and assess whether it helps."
+  },
+  "m05": {
+    "candidate_id": "m05",
+    "headline": "How Anthropic's sales team rebuilt inbound with Claude Managed Agents",
+    "canonical_url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+    "publisher": "Anthropic",
+    "published_at": "2026-09-30T00:00:00.000Z",
+    "source_reliability": "publisher_authored",
+    "excerpt": "Anthropic describes an internal buying agent built on Claude Managed Agents to handle inbound sales questions and guide prospects toward purchase or human handoff. The company says the agent now handles thousands of conversations per day and can answer questions about pricing, security, data, plans, and seat counts. Conversations end in purchase, a handoff with context for a sales representative, or a quick answer. Anthropic reports that escalated customers become sales opportunities more than twice as often as leads from the former form and close about five days faster. The article also describes treating escalation reasons as feedback for improving the experience. These are publisher-reported operational results, not an independent comparative study."
+  },
+  "m07": {
+    "candidate_id": "m07",
+    "headline": "Introducing skills in the Gemini app and Workspace, plus what’s next for Gems",
+    "canonical_url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+    "publisher": "Google Workspace",
+    "published_at": "2026-09-30T00:00:00.000Z",
+    "source_reliability": "publisher_authored",
+    "excerpt": "Google Workspace announced that reusable Gemini skills are moving into the Gemini app and Workspace and will eventually replace Gems for task-specific instruction sets. Google describes skills as reusable custom instructions that can be applied whenever a user prompts Gemini, allowing teams or individuals to avoid rebuilding the same directions for recurring work. The announcement gives rollout dates for Workspace and the Gemini app and explains that existing Gems will remain available during a transition before later migration. The broader Skills implementation is based on a portable Markdown-native skill pattern, which makes the concept useful beyond a single one-off chat. For the Brief, this is the one reusable Agent Skills story: encode a repeatable procedure once, maintain it, and reuse it."
+  },
+  "m08": {
+    "candidate_id": "m08",
+    "headline": "Agents you can coach: how Asana builds human-agent teams with Claude",
+    "canonical_url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
+    "publisher": "Anthropic",
+    "published_at": "2026-09-29T00:00:00.000Z",
+    "source_reliability": "publisher_authored",
+    "excerpt": "Anthropic’s Asana case study describes AI teammates that operate in the same work graph as human collaborators, with explicit roles, visible tasks, scoped access, pre-built skills, integrations, and shared memory. Each agent has a profile showing its purpose, allowed users, administrators, instructions, skills, integrations, and permissions. Asana says effective agent access is bounded by the permissions of the person who triggers it. Shared memory is separately governed: anyone can give task feedback, but only administrators and editors can commit changes to permanent memory or undo them. The operating model separates people who use an agent from the smaller set of subject-matter experts who govern its durable behavior."
+  }
+}

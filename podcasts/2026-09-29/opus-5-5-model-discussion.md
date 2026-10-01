@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Useful context for evaluating model choice rather than assuming a stronger model is automatically the right workflow fit.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Reused the completed September 29 source-diverse fallback media checkpoint; no selection or source-content rediscovery.
 

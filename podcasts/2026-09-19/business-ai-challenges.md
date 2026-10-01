@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Pairs with today’s Agent Skills metrics and long-horizon-agent stories by focusing on the organizational controls around agent deployment.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary 48-hour podcast window; source-diverse from Everyday AI.
 

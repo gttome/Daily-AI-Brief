@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The release pushes multimodal reasoning beyond 2D images into full 3D clinical volumes. For AI engineering teams, it highlights the growing importance of structured reasoning, domain-specific evaluation, and workload-specific safety controls for high-stakes multimodal systems.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

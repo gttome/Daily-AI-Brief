@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** For knowledge workers, the adoption question is becoming operational: which steps can an agent execute, what data and tools can it access, where does human approval sit, and how are outcomes measured. Workflow design is becoming more important than feature count.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

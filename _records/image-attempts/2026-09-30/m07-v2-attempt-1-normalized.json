@@ -1,0 +1,107 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "edd31386000555f8a391ca2ad7b15f2dc4aa76308f06a3c61da3228ce5e292a8",
+  "request_revision": 2,
+  "supersedes_request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
+  "story_id": "dab-story-2026-09-30-3b6d7f96",
+  "candidate_id": "m07",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-98811e25-6ec2-4130-aeaf-3deafc55d301",
+    "artifact_id": "generated_images/exec-98811e25-6ec2-4130-aeaf-3deafc55d301.png",
+    "generated_at": "2026-10-01T06:44:31.343Z",
+    "raw_sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m07-v2-attempt-1.png",
+      "sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+      "git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
+      "commit_sha": "d198076a2c3346ab2f49b9279799cc2326f1bbb1",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-normalized-contact-sheet-2026-09-30",
+    "reviewed_at": "2026-10-01T06:56:50.953Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "320ee51e3fd8a812bbf0235f639b07f56b1b7b1863b258e1bc9eea88157c2593",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "Recurring Task",
+      "Gemini Skill",
+      "Instructions",
+      "Examples",
+      "Named Owner",
+      "Team Reuse",
+      "Process Update"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1200,
+      "height": 630,
+      "minimum_pass": true,
+      "production_exact_pass": true
+    },
+    "assessment": "Exact 1200×630 production canvas preserves the reusable-skill packaging and ownership loop, every accepted label, and the non-human geometry without distortion or semantic change.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-2.png",
+    "sha256": "320ee51e3fd8a812bbf0235f639b07f56b1b7b1863b258e1bc9eea88157c2593",
+    "git_blob_sha": "30218d2c8709a4286330be97b5d06c85a4aa4a55",
+    "commit_sha": "b9f603a3a5a12bc8886fb9c374ae0c1132c992bf",
+    "persisted_at": "2026-10-01T06:56:53.886Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked",
+  "normalization": {
+    "source_asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-1.png",
+    "source_sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+    "source_git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
+    "source_dimensions": {
+      "width": 1942,
+      "height": 809
+    },
+    "production_dimensions": {
+      "width": 1200,
+      "height": 630
+    },
+    "processing": "Lanczos proportional fit plus white canvas extent; no regeneration or semantic edit",
+    "normalized_at": "2026-10-01T06:56:50.953Z",
+    "source_preserved": true,
+    "non_overwriting_path": true
+  }
+}

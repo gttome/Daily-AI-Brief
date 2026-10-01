@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The bottleneck for internal agents is increasingly organizational. Reusable agents create value only when people know which work should change, how new behavior is supported, who owns the rollout, and how adoption is measured across teams instead of being treated as a collection of isolated experiments.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

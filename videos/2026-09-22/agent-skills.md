@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Pairs directly with today's agent-evaluation story by showing why the surrounding harness can materially change task outcomes.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=aL4eepffdjM" data-item-id="dab-video-2026-09-22-agent-skills" data-edition-date="2026-09-22" data-action="source_clicks" target="_blank" rel="noopener noreferrer">AICodeKing</a>
 

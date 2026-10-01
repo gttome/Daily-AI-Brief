@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Extends today's engineering coverage into practical coding-agent orchestration and workflow controls.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=9Zbaw69O3QQ" data-item-id="dab-video-2026-09-23-general" data-edition-date="2026-09-23" data-action="source_clicks" target="_blank" rel="noopener noreferrer">AICodeKing</a>
 

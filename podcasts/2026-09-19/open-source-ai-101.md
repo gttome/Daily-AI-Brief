@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** It complements today’s model-lifecycle and enterprise-transformation stories by framing model choice as an operating and cost decision rather than a one-time vendor choice.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary 48-hour podcast window; source-diverse from The AI Daily Brief.
 

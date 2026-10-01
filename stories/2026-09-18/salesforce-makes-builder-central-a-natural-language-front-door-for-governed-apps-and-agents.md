@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Natural-language building becomes more useful when it enters through governed enterprise primitives instead of creating a parallel shadow stack. The design gives knowledge workers a simpler path from intent to working application while retaining administrator controls and existing data boundaries.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

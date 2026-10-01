@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Adds cost discipline to model adoption decisions.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Reused the completed September 29 media checkpoint; no selection or source-content rediscovery.
 

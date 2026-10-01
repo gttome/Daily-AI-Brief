@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Extends today’s engineering and evaluation coverage by showing how model choice can become a measured production decision.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=iTiKeH3FDoQ" data-item-id="dab-video-2026-09-25-general" data-edition-date="2026-09-25" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Microsoft Developer</a>
 

@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Enterprise agents often need access to distributed data without centralizing everything. A gateway-plus-MCP pattern can separate agent orchestration from data ownership while preserving account boundaries and fine-grained authorization.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

@@ -1,0 +1,106 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "941bc346d4c28fabc73eefbe2b99cefffcf90ac45c68e5a88890836e84333f83",
+  "story_id": "dab-story-2026-09-30-9d62316c",
+  "candidate_id": "m05",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-c91b771f-bd16-44bf-bd99-4914b8b7c28b",
+    "artifact_id": "generated_images/exec-c91b771f-bd16-44bf-bd99-4914b8b7c28b.png",
+    "generated_at": "2026-10-01T06:35:00.628Z",
+    "raw_sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m05-attempt-1.png",
+      "sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+      "git_blob_sha": "2123b6924d2ba168676ca271c6ac8fee50623813",
+      "commit_sha": "e046be50a1ce31a62f7111f6d0adf9f8a52e02ab",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-normalized-contact-sheet-2026-09-30",
+    "reviewed_at": "2026-10-01T06:56:50.953Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "181860900e6d63f2eed95f7a1aa454970f6bd7fdac7808f3af24f9b23f48fe8e",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "Inbound Question",
+      "Buying Agent",
+      "Quick Answer",
+      "Purchase",
+      "Human Handoff",
+      "Context Packet",
+      "Escalation Reason",
+      "Weekly Improvement"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1200,
+      "height": 630,
+      "minimum_pass": true,
+      "production_exact_pass": true
+    },
+    "assessment": "Exact 1200×630 production canvas preserves the buying-agent decision branches, escalation path, learning loop, and every accepted label without distortion or semantic change.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-2.png",
+    "sha256": "181860900e6d63f2eed95f7a1aa454970f6bd7fdac7808f3af24f9b23f48fe8e",
+    "git_blob_sha": "5c16d9e4ac361d7e683e78713a55c1d40198672d",
+    "commit_sha": "b9f603a3a5a12bc8886fb9c374ae0c1132c992bf",
+    "persisted_at": "2026-10-01T06:56:53.886Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked",
+  "normalization": {
+    "source_asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-1.png",
+    "source_sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+    "source_git_blob_sha": "2123b6924d2ba168676ca271c6ac8fee50623813",
+    "source_dimensions": {
+      "width": 1774,
+      "height": 887
+    },
+    "production_dimensions": {
+      "width": 1200,
+      "height": 630
+    },
+    "processing": "Lanczos proportional fit plus white canvas extent; no regeneration or semantic edit",
+    "normalized_at": "2026-10-01T06:56:50.953Z",
+    "source_preserved": true,
+    "non_overwriting_path": true
+  }
+}

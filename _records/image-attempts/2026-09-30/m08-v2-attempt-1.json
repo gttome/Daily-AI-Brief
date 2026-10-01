@@ -1,0 +1,90 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "f006e04d1fe690666770683d88596ad03f262cc82200a868f5bfb7b84ae62069",
+  "request_revision": 2,
+  "supersedes_request_sha256": "bd6d5ef3a8b1e41640fa92df35537bc4b070e0502ca7cf36e549d068c5334acf",
+  "story_id": "dab-story-2026-09-30-63e10dfd",
+  "candidate_id": "m08",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-f3b1c470-99a9-4332-b0de-b795cb6392e1",
+    "artifact_id": "generated_images/exec-f3b1c470-99a9-4332-b0de-b795cb6392e1.png",
+    "generated_at": "2026-10-01T06:50:56.528Z",
+    "raw_sha256": "6b4e4b8ee90d558c0e425529c700afb5665a4de58426eac29b9e96fdd3c722eb",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m08-v2-attempt-1.png",
+      "sha256": "6b4e4b8ee90d558c0e425529c700afb5665a4de58426eac29b9e96fdd3c722eb",
+      "git_blob_sha": "700b28dc32122f18b8a2e27a263775ff718fbdb1",
+      "commit_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-original-exec-f3b1c470-99a9-4332-b0de-b795cb6392e1",
+    "reviewed_at": "2026-10-01T06:51:26.288Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "6b4e4b8ee90d558c0e425529c700afb5665a4de58426eac29b9e96fdd3c722eb",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "AI Teammate",
+      "Role",
+      "Approved Users",
+      "Scoped Access",
+      "Visible Tasks",
+      "Task Feedback",
+      "Admin Review",
+      "Shared Memory"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1774,
+      "height": 887,
+      "minimum_pass": true
+    },
+    "assessment": "The repaired version uses only abstract geometry: a faceted circuit token, flag, colored user circles, key boundary, task graph, feedback split, administrative gate and locked memory store. All eight labels appear exactly once with no human, humanoid or person glyphs.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m08-1.png",
+    "sha256": "6b4e4b8ee90d558c0e425529c700afb5665a4de58426eac29b9e96fdd3c722eb",
+    "git_blob_sha": "700b28dc32122f18b8a2e27a263775ff718fbdb1",
+    "commit_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
+    "persisted_at": "2026-10-01T06:51:26.288Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked"
+}

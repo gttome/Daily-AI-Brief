@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** This is a concrete Agent Skills pattern: package a proven procedure once, then let an agent invoke it repeatedly with the same checkpoints. For non-specialists, that can make complex operational work more repeatable without pretending the underlying engineering has disappeared.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Apply the context-quality checklist when packaging instructions, references, tools, validation, monitoring, and cleanup into a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

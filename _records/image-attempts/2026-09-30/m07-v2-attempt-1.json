@@ -1,0 +1,89 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "edd31386000555f8a391ca2ad7b15f2dc4aa76308f06a3c61da3228ce5e292a8",
+  "request_revision": 2,
+  "supersedes_request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
+  "story_id": "dab-story-2026-09-30-3b6d7f96",
+  "candidate_id": "m07",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-98811e25-6ec2-4130-aeaf-3deafc55d301",
+    "artifact_id": "generated_images/exec-98811e25-6ec2-4130-aeaf-3deafc55d301.png",
+    "generated_at": "2026-10-01T06:44:31.343Z",
+    "raw_sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m07-v2-attempt-1.png",
+      "sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+      "git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
+      "commit_sha": "d198076a2c3346ab2f49b9279799cc2326f1bbb1",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-original-exec-98811e25-6ec2-4130-aeaf-3deafc55d301",
+    "reviewed_at": "2026-10-01T06:44:59.487Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "Recurring Task",
+      "Gemini Skill",
+      "Instructions",
+      "Examples",
+      "Named Owner",
+      "Team Reuse",
+      "Process Update"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 1942,
+      "height": 809,
+      "minimum_pass": true
+    },
+    "assessment": "The repaired specification succeeds: one shared intake label and one shared reuse label frame three unlabeled abstract cards, the reusable Skill shows instructions and examples, ownership is a non-human gear, and the process-update loop is explicit. Every allowlisted label appears exactly once with no extra text.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-1.png",
+    "sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+    "git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
+    "commit_sha": "d198076a2c3346ab2f49b9279799cc2326f1bbb1",
+    "persisted_at": "2026-10-01T06:44:59.487Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked"
+}

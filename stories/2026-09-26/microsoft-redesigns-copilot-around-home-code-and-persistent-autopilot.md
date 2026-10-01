@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The knowledge-worker interface is shifting from a chat box toward a workspace where people can converse, build, and delegate. That changes adoption from isolated prompting to deciding which work should remain interactive, become an artifact, or run persistently.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

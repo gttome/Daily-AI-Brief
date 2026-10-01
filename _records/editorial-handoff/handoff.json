@@ -1,7 +1,7 @@
 {
   "schema_version": "1.1.0",
   "execution_mode": "production",
-  "staging_ref": "editorial-handoff/production/2026-09-29",
+  "staging_ref": "reliable-edition/dab-edition-2026-09-30",
   "kernel_path": "_records/editorial-handoff/kernel.json",
   "facts_path": "_records/editorial-handoff/facts.json",
   "images_path": "_records/editorial-handoff/images.json",
@@ -10,14 +10,15 @@
   "article_evidence_path": "_records/editorial-handoff/article-evidence.json",
   "publication_manifest_path": "_records/editorial-handoff/publication-manifest.json",
   "image_transport_method": "github_git_data_api",
-  "coverage_period": "Locked September 29 editorial kernel, reused bounded preflight evidence, two verified videos, two source-diverse podcasts, and six accepted locked story images.",
+  "coverage_period": "Locked September 30 editorial kernel, bounded pre-cutoff evidence, two verified videos, two source-diverse podcasts, and six accepted locked story images.",
   "editorial_model_passes": 1,
   "post_editorial_model_passes": 0,
   "deterministic_validation_model_calls": 0,
-  "recovery_note": "Delivery-first serialization of already-completed Sep29 discovery, editorial, media and 6/6 accepted image checkpoints. No discovery/editorial/media/image rerun.",
-  "deterministic_recovery_trigger": "Compatibility-package the already-qualified bundle onto current trusted main; do not rerun discovery, editorial, media, or images.",
-  "compatibility_packaging_note": "Sep 29 research cutoff represented in America/Chicago while preserving the qualified instant; no content stage rerun.",
+  "recovery_note": "Durable distinct second run reliable-edition-20260930-second; all completed September 30 evidence and accepted image checkpoints are preserved.",
+  "deterministic_recovery_trigger": "Resume only the current durable September 30 operation; repair the smallest invalidated stage and deterministic dependents.",
+  "compatibility_packaging_note": "September 30 research cutoff and edition identity remain fixed; no completed content stage is reopened.",
   "media_preflight_revalidation_note": "Refresh live reachability for the four already-locked media URLs immediately before production staging; retain qualified selections, dates, runtimes, and all accepted images.",
-  "branch_identity_repair_note": "Use date-keyed production staging ref required by protected publication tests; no content, media selection, or image changes.",
+  "branch_identity_repair_note": "Use the durable reliable-edition/dab-edition-2026-09-30 staging ref for protected publication; no content, media selection, or image changes.",
   "media_preflight_timing_note": "Run locked-media live revalidation before capturing PUBLISHED_AT so the fresh receipt precedes publication staging by construction."
 }
+

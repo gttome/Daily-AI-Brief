@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Knowledge-worker adoption depends on more than access to models. Infrastructure, governance, organizational readiness, and employee capability have to advance together if AI is going to become part of normal business operations.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

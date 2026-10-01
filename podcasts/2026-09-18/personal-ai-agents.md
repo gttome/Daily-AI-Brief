@@ -36,7 +36,7 @@ reader_release: true
 
 **Connection to the brief:** Pairs with the CC household-agent story by contrasting market enthusiasm with the design details—identity, permissions, memory, and execution—that determine whether a personal agent is usable.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Coverage:** Primary 48-hour podcast window; one of two source-diverse selections.
 

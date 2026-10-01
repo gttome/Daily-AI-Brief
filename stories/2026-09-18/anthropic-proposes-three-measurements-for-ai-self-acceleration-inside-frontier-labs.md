@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The important shift is from asking only what frontier models can do to measuring how quickly labs are automating the process of building them and whether oversight scales with that automation. Comparable, independently checked operational metrics could make acceleration and control more inspectable.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

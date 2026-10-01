@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Model choice is becoming an operational control rather than a one-model default. Teams can route work by complexity, latency, and cost while keeping governance in the Copilot policy layer.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

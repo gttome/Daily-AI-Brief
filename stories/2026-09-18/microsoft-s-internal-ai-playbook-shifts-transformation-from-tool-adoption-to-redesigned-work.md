@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** The recurring pattern is organizational rather than model-centric: start with an outcome, simplify and redesign the end-to-end workflow, create shared data foundations, then measure completed work. That is a more durable adoption model than distributing AI tools and tracking logins or prompts.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

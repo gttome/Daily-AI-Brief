@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 29, 2026
+# Trend Radar — September 30, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,14 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-19 supporting stories appeared in the latest 7 days and 73 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+20 supporting stories appeared in the latest 7 days and 74 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 30, 2026]({{ '/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/' | relative_url }})
+- [September 30, 2026]({{ '/podcasts/2026-09-30/ai-show-243/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/aws-shows-how-to-build-continuous-quality-checks-into-production-llm-workflows/' | relative_url }})
@@ -107,17 +111,17 @@ Supporting stories:
 - [September 2, 2026]({{ '/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/' | relative_url }})
 
 ## Agent memory and context
 
 **COOLING · high confidence**
 
-8 supporting stories appeared in the latest 7 days and 43 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+7 supporting stories appeared in the latest 7 days and 46 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 30, 2026]({{ '/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/asanas-coachable-agents-make-roles-memory-and-permissions-visible/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/' | relative_url }})
 - [September 29, 2026]({{ '/videos/2026-09-29/general/' | relative_url }})
 - [September 26, 2026]({{ '/stories/2026-09-26/github-gives-agentic-autofix-project-memory-for-security-repairs/' | relative_url }})
@@ -172,12 +176,14 @@ Supporting stories:
 
 ## AI-assisted development
 
-**STABLE · high confidence**
+**COOLING · high confidence**
 
-18 supporting stories appeared in the latest 7 days and 81 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+16 supporting stories appeared in the latest 7 days and 80 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 30, 2026]({{ '/videos/2026-09-30/general/' | relative_url }})
+- [September 30, 2026]({{ '/podcasts/2026-09-30/ai-show-243/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/' | relative_url }})
@@ -272,20 +278,24 @@ Supporting stories:
 - [September 1, 2026]({{ '/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/codex-0-151-makes-subagent-cost-and-restored-permissions-more-visible/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-33 supporting stories appeared in the latest 7 days and 135 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+35 supporting stories appeared in the latest 7 days and 137 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [September 30, 2026]({{ '/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/openai-pairs-small-business-ai-workflows-with-local-human-coaching/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/gemini-skills-turn-repeated-instructions-into-reusable-team-procedures/' | relative_url }})
+- [September 30, 2026]({{ '/stories/2026-09-30/asanas-coachable-agents-make-roles-memory-and-permissions-visible/' | relative_url }})
+- [September 30, 2026]({{ '/videos/2026-09-30/general/' | relative_url }})
+- [September 30, 2026]({{ '/videos/2026-09-30/agent-skills/' | relative_url }})
+- [September 30, 2026]({{ '/podcasts/2026-09-30/ai-show-243/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/microsoft-research-s-quine-links-biological-models-tools-literature-and-scientists-in-one-research-h/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/' | relative_url }})
@@ -449,10 +459,5 @@ Supporting stories:
 - [September 1, 2026]({{ '/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/' | relative_url }})
 - [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/operant-ai-puts-an-intent-aware-enforcement-layer-in-front-of-agent-actions/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/codex-0-151-makes-subagent-cost-and-restored-permissions-more-visible/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/github-spark-retires-today-turning-exportability-into-a-no-code-requirement/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/make-adds-global-search-across-scenarios-and-their-runs/' | relative_url }})
-- [August 31, 2026]({{ '/stories/2026-08-31/google-cloud-schedules-a-no-code-build-to-deploy-customer-agent-demonstration/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

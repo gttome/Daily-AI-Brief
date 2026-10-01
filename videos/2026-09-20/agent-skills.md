@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** It complements today’s Agent Skills and managed-runtime stories by showing the user-facing end state: a small operation built around reusable AI workflows rather than one-off chats.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=QDsenEcAJIk" data-item-id="dab-video-2026-09-20-agent-skills" data-edition-date="2026-09-20" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Nate Herk | AI Automation</a>
 

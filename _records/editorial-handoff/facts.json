@@ -1,116 +1,122 @@
 {
   "m02": {
-    "event_date": "2026-09-29",
+    "event_date": "2026-09-28",
     "source": {
-      "title": "NVIDIA’s TensorRT Model Connect treats coding agents as an engineering system, not a code generator",
+      "title": "Add Runtime Controls to AI Agents with NVIDIA OpenShell",
       "organization": "NVIDIA",
-      "url": "https://developer.nvidia.com/blog/ai-native-by-design-lessons-learned-from-building-nvidia-tensorrt-model-connect/",
-      "publication_date": "2026-09-29",
+      "url": "https://developer.nvidia.com/blog/add-runtime-controls-to-ai-agents-with-nvidia-openshell/",
+      "publication_date": "2026-09-28",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
     "freshness": {
-      "tier": "selected_under_article-24-72-168-v1"
+      "tier": "normal_fallback"
     },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
-    }
+    },
+    "selection_rationale": "Implementation-level runtime control architecture with external enforcement and formal policy checks."
   },
   "m03": {
     "event_date": "2026-09-29",
     "source": {
-      "title": "Microsoft Research’s Quine links biological models, tools, literature, and scientists in one research harness",
-      "organization": "Microsoft Research",
-      "url": "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/",
+      "title": "Getting the Source Right, Not Just the Fact: Source-Aware Verification for MCP Agents",
+      "organization": "Hugging Face / Multiverse Computing",
+      "url": "https://huggingface.co/blog/MultiverseComputingCAI/getting-the-source-right-not-just-the-fact-source",
       "publication_date": "2026-09-29",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
     "freshness": {
-      "tier": "selected_under_article-24-72-168-v1"
+      "tier": "normal_fallback"
     },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
-    }
+    },
+    "selection_rationale": "Distinct source-aware verification mechanism for multi-tool agent outputs."
+  },
+  "m04": {
+    "event_date": "2026-09-30",
+    "source": {
+      "title": "Helping small businesses put AI to work",
+      "organization": "OpenAI",
+      "url": "https://openai.com/index/helping-small-businesses-put-ai-to-work/",
+      "publication_date": "2026-09-30",
+      "evidence_type": "official_primary_source",
+      "availability_status": "published"
+    },
+    "freshness": {
+      "tier": "normal_fallback_conservative_day_precision"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "selection_rationale": "Practical adoption system combining real workflows, local coaching, follow-up, and outcome assessment."
   },
   "m05": {
-    "event_date": "2026-09-29",
+    "event_date": "2026-09-30",
     "source": {
-      "title": "Google Vids upgrades AI voiceovers with Gemini 3.8 Flash Lite TTS",
+      "title": "How Anthropic's sales team rebuilt inbound with Claude Managed Agents",
+      "organization": "Anthropic",
+      "url": "https://claude.com/blog/how-anthropics-sales-team-rebuilt-inbound-with-claude-managed-agents",
+      "publication_date": "2026-09-30",
+      "evidence_type": "official_primary_source",
+      "availability_status": "published"
+    },
+    "freshness": {
+      "tier": "normal_fallback_conservative_day_precision"
+    },
+    "novelty": {
+      "disposition": "new",
+      "prior_story_ids": [],
+      "what_changed": null
+    },
+    "selection_rationale": "Production human-agent workflow with measurable publisher-reported results and a clear escalation feedback loop."
+  },
+  "m07": {
+    "event_date": "2026-09-30",
+    "source": {
+      "title": "Introducing skills in the Gemini app and Workspace, plus what’s next for Gems",
       "organization": "Google Workspace",
-      "url": "https://workspaceupdates.googleblog.com/2026/09/create-more-natural-expressive-ai-voiceovers-in-Google-Vids-with-upgraded-Gemini-3.8-Flash-Lite-TTS.html",
-      "publication_date": "2026-09-29",
+      "url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+      "publication_date": "2026-09-30",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
     "freshness": {
-      "tier": "selected_under_article-24-72-168-v1"
+      "tier": "normal_fallback_conservative_day_precision"
     },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
-    }
-  },
-  "m06": {
-    "event_date": "2026-09-29",
-    "source": {
-      "title": "Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout",
-      "organization": "Microsoft Copilot",
-      "url": "https://techcommunity.microsoft.com/blog/microsoft-copilot-blog/change-management-best-practices-to-drive-value-with-agent-builder/4559753",
-      "publication_date": "2026-09-28",
-      "evidence_type": "official_primary_source",
-      "availability_status": "published"
     },
-    "freshness": {
-      "tier": "selected_under_article-24-72-168-v1"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    }
-  },
-  "m01": {
-    "event_date": "2026-09-29",
-    "source": {
-      "title": "Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex",
-      "organization": "Firebase",
-      "url": "https://firebase.blog/posts/2026/09/firebase-plugin-for-codex",
-      "publication_date": "2026-09-28",
-      "evidence_type": "official_primary_source",
-      "availability_status": "published"
-    },
-    "freshness": {
-      "tier": "selected_under_article-24-72-168-v1"
-    },
-    "novelty": {
-      "disposition": "new",
-      "prior_story_ids": [],
-      "what_changed": null
-    }
+    "selection_rationale": "Current reusable Agent Skills story with maintained instructions and portable operating-knowledge framing."
   },
   "m08": {
     "event_date": "2026-09-29",
     "source": {
-      "title": "AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows",
-      "organization": "AWS",
-      "url": "https://aws.amazon.com/blogs/machine-learning/bring-near-astra-intelligence-to-everyday-work-with-gpt-6-1-sol-on-amazon-bedrock/",
+      "title": "Agents you can coach: how Asana builds human-agent teams with Claude",
+      "organization": "Anthropic / Asana",
+      "url": "https://claude.com/blog/agents-you-can-coach-how-asana-builds-human-agent-teams-with-claude",
       "publication_date": "2026-09-29",
       "evidence_type": "official_primary_source",
       "availability_status": "published"
     },
     "freshness": {
-      "tier": "selected_under_article-24-72-168-v1"
+      "tier": "normal_fallback"
     },
     "novelty": {
       "disposition": "new",
       "prior_story_ids": [],
       "what_changed": null
-    }
+    },
+    "selection_rationale": "Nontechnical governance model combining explicit roles, permissions, visible work, and separately governed durable memory."
   }
 }

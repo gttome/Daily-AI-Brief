@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Sensitive enterprise AI increasingly depends on protecting data while it is in use, not only at rest and in transit. Confidential computing can reduce infrastructure trust assumptions, but teams still need workload-specific security and performance validation.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

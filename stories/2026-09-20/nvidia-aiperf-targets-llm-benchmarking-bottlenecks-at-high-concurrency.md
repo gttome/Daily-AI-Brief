@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** When benchmarking tools saturate before the model-serving stack does, engineering teams can draw the wrong conclusions about capacity. A benchmark designed for larger concurrency makes infrastructure tuning and deployment comparisons more trustworthy.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

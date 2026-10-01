@@ -29,7 +29,7 @@ reader_release: true
 
 **Why it matters:** Complements the day’s agent-memory and reusable-skill stories with a concrete example of matching capability and effort to routine work.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 **Source:** <a href="https://www.youtube.com/watch?v=jKRl_CSVxyI" data-item-id="dab-video-2026-09-26-agent-skills" data-edition-date="2026-09-26" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Claude</a>
 

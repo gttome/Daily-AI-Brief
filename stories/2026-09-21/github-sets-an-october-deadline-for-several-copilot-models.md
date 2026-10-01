@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Model deprecations are operational changes, not just catalog cleanup. Teams need to identify workflows tied to retiring models, test alternatives, and update guidance before the cutoff turns a routine platform change into broken developer workflows.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

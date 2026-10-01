@@ -9,5 +9,7 @@ export function dailyTopicGroups(data){
 }
 export function renderDailyTopicGroups(data){
  const groups=dailyTopicGroups(data),labels={new_today:'New today',updated_today:'Updated today',carried_forward:'Carried forward'};
- return `<div class="watchlist-daily-summary"><p class="watchlist-daily-counts"><strong>${Object.entries(groups).map(([key,items])=>`${items.length} ${labels[key]}`).join(' · ')}</strong></p>${Object.entries(groups).map(([key,items])=>`<p><strong>${labels[key]}:</strong> ${items.length?'':'None'}</p>${items.length?`<ul class="watchlist-daily-items">${items.map(t=>`<li>${escape(t.name)}</li>`).join('')}</ul>`:''}`).join('')}</div>`;
+ const counts=`${groups.new_today.length} new today · ${groups.updated_today.length} updated · ${groups.carried_forward.length} carried forward.`;
+ const accessibleCounts=Object.entries(groups).map(([key,items])=>`${items.length} ${labels[key]}`).join(' · ');
+ return `<div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="${accessibleCounts}"><strong>${counts}</strong></p>${Object.entries(groups).map(([key,items])=>`<p><strong>${labels[key]}:</strong> ${items.length?'':'None'}</p>${items.length?`<ul class="watchlist-daily-items">${items.map(t=>`<li>${escape(t.name)}</li>`).join('')}</ul>`:''}`).join('')}</div>`;
 }

@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** This turns AI-assistance spending into an explicit operating control instead of an informal exception. Managers gain context and an audit trail, while organizations still need budget policy and review criteria that do not punish useful experimentation.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 

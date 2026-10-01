@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Agent Skills turn repeatable methods into portable instructions, but they also create a new failure surface: the agent can choose the wrong skill or ignore the skill’s procedure. Skill-selection and instruction-following metrics make that behavior testable.
 
-<!-- reader-release:start -->
+<span class="story-editorial-note" data-george-implication="" hidden></span><!-- reader-release:start -->
 <aside class="book-bridge"><p class="book-kicker">PUT IT INTO PRACTICE · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3 — Designing High-Quality Contexts</p><p>Use the context-quality checklist when defining the instructions, references, tools, constraints, and evaluation evidence that belong inside a reusable Agent Skill.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 

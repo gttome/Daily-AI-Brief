@@ -31,7 +31,7 @@ reader_release: true
 
 **Why it matters:** Voice agents and meeting systems need reliable speaker identity before transcripts, summaries, or decisions can be attributed correctly. Separating diarization from ASR also makes the architecture easier to evaluate and replace component by component.
 
-
+<span class="story-editorial-note" data-george-implication="" hidden></span>
 
 ## What to do now
 
