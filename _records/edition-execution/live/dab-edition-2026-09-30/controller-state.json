@@ -36,12 +36,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 1,
+  "version": 2,
   "status": "blocked",
   "current_operation": "admission",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T04:12:21.330Z",
-  "last_progress_at": "2026-10-01T04:12:21.330Z",
+  "updated_at": "2026-10-01T04:16:25.733Z",
+  "last_progress_at": "2026-10-01T04:16:25.733Z",
   "completed": {},
   "handler_registry": {
     "admission": {
@@ -113,16 +113,34 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery.",
+    "next_action": "Resume only when this scheduled native host exposes same-result recover(operation_key/native_result_id) plus complete binary bytes for exact Git SHA-256/readback; then persist a fresh image-handoff-proof-v2 bound to release 386dc023e53c354964adf99df3d6b9cacf9e788e and proceed to fresh discovery.",
     "images_accepted": 0
   },
   "blockers": [
     {
-      "code": "CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF",
+      "code": "CAPABILITY_BLOCKED_NATIVE_RECOVERY_API_UNEXPOSED",
       "operation": "admission",
-      "observed_at": "2026-10-01T04:12:21.330Z",
-      "reason": "No fresh native producer recovery proof bound to current protected release. Historical proof expired 2026-09-30T00:56:56Z and binds e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef.",
-      "recovery": "Existing scheduled controller must perform real same-result recovery; do not refresh timestamps or fabricate capability."
+      "observed_at": "2026-10-01T04:16:25.733Z",
+      "reason": "The current scheduled native image tool exposes generation/editing only; it does not expose host.recover by operation_key or native_result_id. The prior proof is expired and release-mismatched. GitHub binary recovery was attempted: fetch_blob rejected the PNG as non-UTF-8, while fetch_file(encoding=base64) returned the exact historical Git blob SHA but omitted payload bytes, so raw SHA-256/readback cannot be freshly recomputed. No throwaway probe or timestamp/release rewrite was used.",
+      "prior_proof": {
+        "branch": "reliable-edition/dab-edition-2026-09-29",
+        "operation_key": "1ca4175cfda41490b8814128c39a5b7b40165e93460b571bdaa232cd154eee95",
+        "native_result_id": "73e1aa5f-0fd7-4018-a83a-7d1aad7e7b11",
+        "artifact_id": "file_000000004c9c81f8b244fb39ab06f2ff",
+        "release_sha": "e3edd09919a7a2b2d8648eb3acd5fb8511a0a4ef",
+        "expired_at": "2026-09-30T00:56:56Z",
+        "git_blob_sha": "77ffaceb440db06914e434bb90e314e5c46ab433",
+        "raw_sha256": "1d2c035d3a46ea2ebdccc0f6c036d5d001181c2616823d27b06b73d4f230cb55"
+      },
+      "recovery_performed": [
+        "Inspected the repository's supported proveImageHandoff path; it requires host.recover plus exact producer association and complete bytes.",
+        "Checked the current second-edition branch: no fresh image-handoff-proof-v2 exists.",
+        "Checked GitHub Actions: no current in-progress writer for this repository.",
+        "Fetched the historical Git blob by SHA; connector rejected binary PNG decoding as UTF-8.",
+        "Fetched the historical immutable path at commit 4dcd14c77a3a66dcd3d91ef9fad737082609fc0a with base64 encoding; GitHub returned blob identity 77ffaceb440db06914e434bb90e314e5c46ab433 but no payload bytes.",
+        "Declined to generate a throwaway probe, rewrite expiry/release, or treat the historical download identity as current host certification."
+      ],
+      "recovery": "A future invocation on the same scheduled native host must expose same-result recovery for the recorded operation/native result and return complete bytes; then proveImageHandoff can write and read back the exact Git object under the pinned release."
     }
   ],
   "cost_boundary": {
