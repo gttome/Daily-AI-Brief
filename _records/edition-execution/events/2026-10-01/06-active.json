@@ -1,0 +1,8 @@
+{
+  "task_id": "06",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T16:54:30.839Z",
+  "source": "scheduled production run",
+  "reason": "Begin bounded evidence verification for all nine candidates, preserving publication dates and extended-fallback disclosure."
+}
