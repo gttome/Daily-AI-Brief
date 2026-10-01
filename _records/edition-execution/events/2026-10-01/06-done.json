@@ -1,0 +1,14 @@
+{
+  "task_id": "06",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:31:01.036Z",
+  "source": "scheduled production continuation",
+  "reason": "All nine frozen candidates received bounded publisher-supported evidence capsules within the 12,000-character evidence budget; publication dates and the one extended 168-hour fallback are preserved.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/article-evidence-2026-10-01.json",
+    "artifact_commit": "4803b88f8bd21d769fd31a1d174738c8b9c4cc3b",
+    "candidate_count": 9,
+    "model_visible_chars": 6642
+  }
+}
