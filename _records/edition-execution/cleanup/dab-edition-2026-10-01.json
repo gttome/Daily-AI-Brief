@@ -1,0 +1,43 @@
+{
+  "schema_version": "daily-brief-run-cleanup-v1",
+  "edition_id": "dab-edition-2026-10-01",
+  "run_number": 3,
+  "terminal_state": "FAILED",
+  "cleanup_completed_at": "2026-10-01T19:43:36Z",
+  "production_mutation": false,
+  "public_closed": false,
+  "accepted_images": 0,
+  "run_specific_executors": {
+    "image_retry_continuation": "disabled",
+    "run_scoped_keeper": "disabled",
+    "prior_one_shot_continuations": "disabled"
+  },
+  "preserved": {
+    "completed_tasks": [
+      "01",
+      "02",
+      "03",
+      "04",
+      "05",
+      "06",
+      "07",
+      "08",
+      "09",
+      "10",
+      "11",
+      "12"
+    ],
+    "first_incomplete_task": "13",
+    "transition_ledger": "_records/edition-execution/events/2026-10-01/",
+    "failure_receipt": "_records/edition-execution/failures/dab-edition-2026-10-01.json",
+    "rejected_image_evidence": "_records/image-quality/2026-10-01-preaccept-rejections.json"
+  },
+  "protected_main_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+  "cleanup_checks": {
+    "no_run3_publication": true,
+    "no_run3_public_closed": true,
+    "no_run3_writer_expected_after_cleanup": true,
+    "prior_public_production_preserved": true
+  },
+  "next_run_gate": "Run 4 must pass Production Readiness Validation before content production."
+}
