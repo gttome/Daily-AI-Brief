@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "professional-editorial-diagram-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-01-m08"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional textbook architecture showing Snowflake governed data remaining in place while zero-copy access connects through a Data Fabric bridge to UiPath automations and agentic skills, with policies, lineage and auditability preserved. White background, no people, no real UI, no performance claims.",
+  "candidate_id": "m08",
+  "edition_id": "dab-edition-2026-10-01",
+  "renderer": "svg-editorial-v1"
+}
