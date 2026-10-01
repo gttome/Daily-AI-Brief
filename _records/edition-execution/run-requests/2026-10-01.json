@@ -1,0 +1,43 @@
+{
+  "schema_version": "daily-brief-run-request-v1",
+  "edition_id": "dab-edition-2026-10-01",
+  "edition_date": "2026-10-01",
+  "scheduled_start": {
+    "local": "2026-10-01T11:30:00-05:00",
+    "utc": "2026-10-01T16:30:00Z",
+    "timezone": "America/Chicago"
+  },
+  "status": "PREFLIGHT_READY",
+  "start_before_scheduled_time": false,
+  "single_writer_required": true,
+  "controller_branch": "reliable-edition/dab-edition-2026-10-01",
+  "baseline_main_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+  "binding": {
+    "status": "PENDING_START",
+    "original_cutoff": null,
+    "execution_id": null,
+    "note": "Bind the actual run identity and original cutoff at/after the scheduled 11:30 AM CT start after refreshing protected main."
+  },
+  "cost_boundary": {
+    "chatgpt_work_authorized": false,
+    "codex_authorized": false,
+    "paid_api_authorized": false,
+    "billable_overage_authorized": false,
+    "new_credentials_authorized": false,
+    "billing_observed": false,
+    "rule": "Use only existing no-incremental-cost production paths. If a required operation is known or reasonably indicated to incur incremental cost, fail closed rather than incur it."
+  },
+  "kanban": {
+    "path": "_records/edition-execution/kanban/2026-10-01.json",
+    "transition_model": "append-only event per state move",
+    "timestamp_every_move": true,
+    "infer_missing_times": false
+  },
+  "production_rules": [
+    "Refresh protected main and durable current-day state before binding the run.",
+    "Exactly one writer/executor.",
+    "Preserve exact 2/2/2 stories and exactly one reusable Agent Skills story.",
+    "Preserve media, Watchlist, Professional Series, six professional image, protected CI, exact-SHA deployment, independent live verification and PUBLIC CLOSED gates.",
+    "Do not start discovery/editorial/media/image work before scheduled start."
+  ]
+}
