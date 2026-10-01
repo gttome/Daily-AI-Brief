@@ -1,0 +1,88 @@
+{
+  "schema_version": "1.0.0",
+  "run_number": 4,
+  "edition_id": "dab-edition-2026-10-01",
+  "cutoff": "2026-10-01T19:52:35Z",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "review_plan_count": 9,
+  "verified": [
+    [
+      "m01",
+      "technical_ai_engineering",
+      "2026-09-30T00:00:00Z",
+      "normal",
+      "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "Google introduced Gemini 4 Argon for long-horizon professional work across software engineering, enterprise knowledge work and defensive cybersecurity; publisher-reported performance claims remain attributed to Google."
+    ],
+    [
+      "m02",
+      "technical_ai_engineering",
+      "2026-09-30T00:00:00Z",
+      "normal",
+      "https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/",
+      "AWS presents a multi-agent production example using AgentCore Runtime Instances; the verified engineering pattern is orchestration and runtime separation for cooperating agents."
+    ],
+    [
+      "m03",
+      "technical_ai_engineering",
+      "2026-10-01T00:00:00Z",
+      "primary",
+      "https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/",
+      "AWS describes governed access to Claude Platform on AWS from several operating environments, emphasizing identity and environment boundaries."
+    ],
+    [
+      "m04",
+      "applied_genai_knowledge_workers",
+      "2026-10-01T00:00:00Z",
+      "primary",
+      "https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/",
+      "AWS pairs generative content with contextual-bandit personalization and measurement, showing a workflow that connects AI-generated variants to explicit decision and evaluation loops."
+    ],
+    [
+      "m05",
+      "applied_genai_knowledge_workers",
+      "2026-10-01T00:00:00Z",
+      "primary",
+      "https://aws.amazon.com/blogs/machine-learning/how-uniopen-customized-amazon-nova-to-their-retail-moderation-policies-for-production-deployment/",
+      "AWS describes adapting a model to an organization-specific retail moderation policy and validating it for production use."
+    ],
+    [
+      "m06",
+      "applied_genai_knowledge_workers",
+      "2026-09-25T00:00:00Z",
+      "extended",
+      "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "Microsoft says Work IQ grounds Copilot and agents in business and productivity data, with relevant preview rollout beginning September 30."
+    ],
+    [
+      "m07",
+      "agents_non_technical_people",
+      "2026-09-29T00:00:00Z",
+      "normal",
+      "https://openai.com/index/introducing-dots/",
+      "OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities."
+    ],
+    [
+      "m08",
+      "agents_non_technical_people",
+      "2026-10-01T00:00:00Z",
+      "primary",
+      "https://www.perplexity.ai/en-GB/hub/blog/perplexity-and-american-express-make-ai-easier-for-growing-businesses",
+      "Perplexity and American Express announced ten pre-built business Skills. Perplexity defines Skills as reusable instruction sets that specify needed information and expected outputs for repeatable work."
+    ],
+    [
+      "m09",
+      "agents_non_technical_people",
+      "2026-09-28T00:00:00Z",
+      "extended",
+      "https://www.salesforce.com/blog/dreamforce-2026-announcements/",
+      "Salesforce describes long-horizon agents using persistent memory, durable execution and dynamic steering, plus an Agent Optimizer for recurring production failures."
+    ]
+  ],
+  "freshness_summary": {
+    "primary": 4,
+    "normal_fallback": 3,
+    "extended_fallback": 2,
+    "outside_window": 0
+  }
+}
