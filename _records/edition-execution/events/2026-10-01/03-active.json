@@ -1,0 +1,8 @@
+{
+  "task_id": "03",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T16:43:31.127Z",
+  "source": "scheduled production run",
+  "reason": "Begin binding the October 1 edition identity, original cutoff, execution ID, and current protected-main baseline."
+}
