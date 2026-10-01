@@ -451,4 +451,3 @@ The strongest pattern in this edition is operationalization: useful generative A
 <div class="subscription-check"><h3>How do I know it worked?</h3><p>The Brief appears in your reader’s subscriptions, and an available edition opens successfully. If the list is empty, refresh your reader and check the address.</p><p>Your reader controls how often it checks for editions and whether it sends notifications. The Brief cannot confirm that you added the feed.</p></div>
 <h3>If you see technical-looking text</h3><p>You opened the feed itself. Copy its address into your feed reader to see the editions as a reading list.</p><h3>Stop following</h3><p>Remove the Brief from your reader’s subscriptions. No email address or account on this site is required.</p></div></section>
 
-
