@@ -1,0 +1,177 @@
+{
+  "schema_version": "1.3.0",
+  "date": "2026-09-29",
+  "mode": "deterministic_delta_validation",
+  "started_at": "2026-10-01T00:24:40.284Z",
+  "ended_at": "2026-10-01T00:24:43.210Z",
+  "elapsed_seconds": 2.926,
+  "publication_sha": "1af871233e8abe5181d71c0a178c50455632b222",
+  "route_count": 16,
+  "model_calls": 0,
+  "input_tokens": null,
+  "output_tokens": null,
+  "owner_observed_credits": null,
+  "coverage": {
+    "articles": 6,
+    "videos": 2,
+    "podcasts": 2,
+    "included_items": 10,
+    "potential_positions": 10,
+    "video_omissions": [],
+    "podcast_omissions": []
+  },
+  "image_readiness": {
+    "expected": 6,
+    "accepted_locked": 6,
+    "integrity_passed": 6,
+    "canonical_hosted": 6,
+    "status": "pass"
+  },
+  "domain_states": {
+    "publication": "verified",
+    "coverage": "complete",
+    "measurements": "credit_target_unverified",
+    "retention": "private_unverified",
+    "learning": "deferred",
+    "book_backlog": "private_unverified"
+  },
+  "checks": [
+    {
+      "check_id": "publication_receipt",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Verified completion receipt for 1af871233e8abe5181d71c0a178c50455632b222."
+    },
+    {
+      "check_id": "canonical_edition_contract",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Six unique stories with 2/2/2 allocation: {\"technical_ai_engineering\":2,\"applied_genai_knowledge_workers\":2,\"agents_non_technical_people\":2}."
+    },
+    {
+      "check_id": "podcast_collection_contract",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Included podcasts=2; distinct sources=2."
+    },
+    {
+      "check_id": "local_release_artifacts",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "236 current release artifacts exist locally."
+    },
+    {
+      "check_id": "image_integrity_dimensions",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six PNG/WebP assets exist at >=1200x630; hashes computed deterministically (60a65c4ce4642648bf6c2cd9cc7c628668d30a3f263e6b321badb7655f2f3e04,c3dffcbf3985573e3a15c14f506405c959fd1688897b8b20d263940ddf806dbb,3668fb77b57f6329f588a403244ff5cea3c53565a5f16c89c014f9667d131784,ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f,3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f,76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d)."
+    },
+    {
+      "check_id": "image_asset_lock",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "{\"expected\":6,\"accepted_locked\":6,\"integrity_passed\":6,\"canonical_hosted\":6,\"status\":\"pass\"}"
+    },
+    {
+      "check_id": "live_changed_routes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "16 homepage/edition/archive/watchlist/feed/story/media routes returned successful HTTP responses."
+    },
+    {
+      "check_id": "live_homepage_edition",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Live homepage identifies September 29, 2026."
+    },
+    {
+      "check_id": "live_dated_edition",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Live dated edition identifies September 29, 2026."
+    },
+    {
+      "check_id": "live_image_assets",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "All six live story image assets returned successful HTTP responses."
+    },
+    {
+      "check_id": "live_image_bytes",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "All six deployed image byte streams exactly match the accepted repository assets."
+    },
+    {
+      "check_id": "source_http_state",
+      "class": "deterministic",
+      "result": "warn",
+      "severity": "medium",
+      "evidence": "{\"transient_source_probe_failures\":[{\"url\":\"https://workspaceupdates.googleblog.com/2026/09/create-more-natural-expressive-ai-voiceovers-in-Google-Vids-with-upgraded-Gemini-3.8-Flash-Lite-TTS.html\",\"status\":429,\"ok\":false,\"resolved_url\":\"https://www.google.com/sorry/index?continue=https://workspaceupdates.googleblog.com/2026/09/create-more-natural-expressive-ai-voiceovers-in-Google-Vids-with-upgraded-Gemini-3.8-Flash-Lite-TTS.html&q=EgSoPsUVGMjQ9tUGIi0XyfQivPMAHWBFtiFQsbI6eWh6eZNVEhpNwHpnTNwaBxRSSxRPEJ2GJIV9vCkyAnJSWgFD\"}],\"classification\":\"nonblocking_postpublication_reachability_warning\",\"reason\":\"Canonical source records remain present; only transient HTTP/network responses were observed during post-deployment reachability recheck. Prepublication source verification remains a hard gate.\"}"
+    },
+    {
+      "check_id": "rating_share_generated_ids",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Six story identities/rating controls are generated and the canonical share JS/CSS foundation is wired through the default layout."
+    },
+    {
+      "check_id": "accessibility_assertions",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "All six story images have substantive alt text."
+    },
+    {
+      "check_id": "canonical_url_parity",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Story routes/date and canonical source URLs are present."
+    },
+    {
+      "check_id": "pages_deployment",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "{\"run_id\":36795944048,\"conclusion\":\"success\",\"verified_at\":\"2026-10-01T00:24:31Z\",\"deployed_sha\":\"1af871233e8abe5181d71c0a178c50455632b222\",\"deployment_url\":\"https://gttome.github.io/Daily-AI-Brief/\"}"
+    },
+    {
+      "check_id": "command_center_access_contract",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "{\"dashboard_read_access\":\"link_accessible\",\"viewer_mode\":\"read_only\",\"owner_authentication_required_for\":[\"administrative_actions\",\"configuration_changes\",\"saved_private_records\",\"private_comments\",\"data_mutation\",\"private_analytics_detail\",\"authoritative_state_changes\"],\"validator_classification\":{\"signed_out_dashboard_read\":\"PASS\",\"signed_out_public_safe_aggregate_read\":\"PASS\",\"signed_out_owner_operation_owner_identity_required\":\"PASS\",\"signed_out_owner_operation_not_executed\":\"NOT_APPLICABLE\",\"signed_out_state_mutation\":\"FAIL_SECURITY\",\"signed_out_private_record_read\":\"FAIL_PRIVACY\",\"owner_authenticated_owner_operation_identity_required\":\"FAIL_OWNER_WORKFLOW\",\"documentation_claims_dashboard_is_private\":\"FAIL_DOCUMENTATION_DRIFT\"}}"
+    },
+    {
+      "check_id": "command_center_public_read",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "high",
+      "evidence": "Signed-out link read returned HTTP 200; expected read-only access."
+    },
+    {
+      "check_id": "command_center_owner_operations",
+      "class": "deterministic",
+      "result": "not_applicable",
+      "severity": "medium",
+      "evidence": "Signed-out validation does not execute owner-only operations."
+    }
+  ],
+  "final_result": "pass",
+  "semantic_escalation_required": false,
+  "diagnostic_packet": [],
+  "automatic_ai_recovery_runs": 0
+}
