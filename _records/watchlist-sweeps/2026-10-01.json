@@ -1,0 +1,272 @@
+{
+  "schema_version": "2.0.0",
+  "edition_date": "2026-10-01",
+  "method": "independent_watchlist",
+  "discovery_scope": "independent_watchlist",
+  "checked_at": "2026-10-01T17:39:22.027Z",
+  "primary_lookback_days": 7,
+  "missed_signal_check": {
+    "completed": true,
+    "lookback_days": 14,
+    "note": "Explicitly included decision-model/Jev discovery so fast non-generative decision models are not missed by story-led discovery."
+  },
+  "surfaces": [
+    {
+      "id": "primary_research",
+      "status": "complete",
+      "queries": [
+        "frontier model and original technical research announcements"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "frontier_and_small_labs",
+      "status": "complete",
+      "queries": [
+        "frontier and smaller-lab model releases including Jev/System One"
+      ],
+      "candidates_found": 3
+    },
+    {
+      "id": "open_source",
+      "status": "complete",
+      "queries": [
+        "open-source agent runtimes, harnesses and decision components"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "technical_communities",
+      "status": "complete",
+      "queries": [
+        "current GitHub/Hugging Face agent and harness work"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "broad_web",
+      "status": "complete",
+      "queries": [
+        "current agents, decision models, enterprise workflows, safety and interfaces"
+      ],
+      "candidates_found": 8
+    },
+    {
+      "id": "youtube_creator_ecosystem",
+      "status": "complete",
+      "queries": [
+        "current official and creator AI-agent video indexes"
+      ],
+      "candidates_found": 2
+    },
+    {
+      "id": "independent_validation",
+      "status": "complete",
+      "queries": [
+        "independent evaluations of emerging model classes and agent mechanisms"
+      ],
+      "candidates_found": 2
+    }
+  ],
+  "domain_checks": [
+    {
+      "id": "frontier_models",
+      "status": "complete",
+      "findings": [
+        "Gemini 4 Argon is a material model release but not by itself a new cross-cutting Watchlist mechanism."
+      ]
+    },
+    {
+      "id": "agents_harnesses",
+      "status": "complete",
+      "findings": [
+        "Persistent Runtime Instances strengthen the existing long-horizon-agent signal."
+      ]
+    },
+    {
+      "id": "developer_tooling",
+      "status": "complete",
+      "findings": [
+        "Codex Cloud remains relevant but does not establish a new mechanism beyond existing harness/cloud-agent topics."
+      ]
+    },
+    {
+      "id": "multimodal_interface",
+      "status": "complete",
+      "findings": [
+        "No sufficiently distinct new interface mechanism admitted today."
+      ]
+    },
+    {
+      "id": "knowledge_worker_workflows",
+      "status": "complete",
+      "findings": [
+        "AWS DevOps Agent Skills add new evidence to reusable governed skills."
+      ]
+    },
+    {
+      "id": "safety_governance",
+      "status": "complete",
+      "findings": [
+        "OpenShell/Open Agent Safety remains an existing updated signal; no separate new topic admitted."
+      ]
+    },
+    {
+      "id": "open_source_community",
+      "status": "complete",
+      "findings": [
+        "Decision-specific models and emerging decider components were reviewed separately from LLM/chat releases."
+      ]
+    }
+  ],
+  "candidate_ledger": [
+    {
+      "candidate_id": "w01-decision-models",
+      "name": "Fast structured decision models for agent control loops",
+      "concept_class": "model_family_or_architecture",
+      "disposition": "new_topic",
+      "topic_id": "dab-topic-decision-models",
+      "mechanism": "specialized non-generative models map state plus typed questions to structured probabilistic decisions for routing, approval, scoring and other high-volume control-loop judgments",
+      "rationale": "Jev establishes a distinct decision-first model class, an independent 37-dataset evaluation supplies non-vendor evidence, and follow-on decider products from major AI vendors indicate the mechanism is becoming a broader ecosystem pattern rather than a one-off launch.",
+      "evidence_urls": [
+        "https://typesafe.ai/blog/introducing-system-one-models-and-jev",
+        "https://arxiv.org/abs/2609.37647",
+        "https://techcrunch.com/2026/09/30/openais-jev-clone-could-help-the-frontier-lab-stop-its-swarming-agents/",
+        "https://venturebeat.com/technology/amazon-unveils-a-free-fast-open-source-jev-killer-strands-decider-2b-makes-decisions-in-fractions-of-a-second"
+      ],
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false,
+      "limitations": "Jev remains proprietary and specialized; independent results show strengths but also threshold/calibration and task-dependent limitations. Follow-on vendor products require their own validation."
+    },
+    {
+      "candidate_id": "w01-long-horizon-runtime",
+      "name": "Persistent infrastructure for multi-agent workflows",
+      "concept_class": "agent_pattern_or_harness",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-long-horizon-agents",
+      "mechanism": "multi-day agent sessions with durable storage and shared session identity",
+      "rationale": "Bedrock AgentCore Runtime Instances add infrastructure-level evidence for agents that persist across long-running multi-agent workflows.",
+      "evidence_urls": [
+        "https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/"
+      ],
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false
+    },
+    {
+      "candidate_id": "w01-reusable-devops-skills",
+      "name": "Operational know-how encoded as reusable agent skills",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "update_existing",
+      "topic_id": "dab-topic-agent-skills-observability",
+      "mechanism": "focused reusable instructions with explicit activation descriptions and composable operational procedures",
+      "rationale": "AWS DevOps Agent Skills provide a distinct operational implementation of reusable agent skills, including activation guidance and MCP-tool usage.",
+      "evidence_urls": [
+        "https://aws.amazon.com/blogs/mt/best-practices-for-writing-aws-devops-agent-skills/"
+      ],
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false
+    },
+    {
+      "candidate_id": "w01-gemini-argon",
+      "name": "Gemini 4 Argon frontier model",
+      "concept_class": "model_family_or_architecture",
+      "disposition": "rejected",
+      "rationale": "Material frontier-model update, but a model release alone is not admitted as a durable cross-cutting Watchlist mechanism.",
+      "evidence_urls": [
+        "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/"
+      ],
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": true,
+      "promotional_only": false
+    },
+    {
+      "candidate_id": "w01-stack-verified-knowledge",
+      "name": "Verified enterprise context for people and agents",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "needs_research",
+      "rationale": "Strong enterprise knowledge-quality signal, but more cross-vendor evidence is needed before creating a durable Watchlist mechanism.",
+      "evidence_urls": [
+        "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai"
+      ],
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false
+    },
+    {
+      "candidate_id": "w01-zero-copy-agent-data",
+      "name": "Zero-copy governed data activation for agents",
+      "concept_class": "knowledge_worker_workflow",
+      "disposition": "needs_research",
+      "rationale": "UiPath/Snowflake and current storage-vendor announcements suggest a pattern, but evidence is still dominated by vendor integration launches.",
+      "evidence_urls": [
+        "https://www.uipath.com/newsroom/uipath-and-snowflake-two-way-integration-marketplace"
+      ],
+      "materially_new": true,
+      "relevant": true,
+      "routine_update": false,
+      "promotional_only": false
+    },
+    {
+      "candidate_id": "w01-agent-safety-runtime",
+      "name": "External runtime controls for agents",
+      "concept_class": "safety_security_or_governance",
+      "disposition": "carry_existing",
+      "topic_id": "dab-topic-adaptive-agent-safeguards",
+      "rationale": "Current evidence reinforces the topic but does not add a distinct new mechanism beyond the September 30 update.",
+      "materially_new": false,
+      "relevant": true,
+      "routine_update": true,
+      "promotional_only": false
+    }
+  ],
+  "candidates_reviewed": 7,
+  "new_topic_ids": [
+    "dab-topic-decision-models"
+  ],
+  "updated_topic_ids": [
+    "dab-topic-long-horizon-agents",
+    "dab-topic-agent-skills-observability"
+  ],
+  "zero_new_certified": false,
+  "telemetry": {
+    "discovery_surfaces_required": 7,
+    "discovery_surfaces_attempted": 7,
+    "discovery_surfaces_complete": 7,
+    "focused_checks_executed": 14,
+    "candidates_discovered": 7,
+    "candidates_reviewed": 7,
+    "new_topics_admitted": 1,
+    "existing_topics_updated": 2,
+    "candidates_rejected": 1,
+    "candidates_held_for_research": 2,
+    "duplicates": 0
+  },
+  "daily_counts": {
+    "new": 1,
+    "updated": 2,
+    "carried_forward": 15,
+    "total_topics_after_sweep": 18
+  },
+  "sources_reused": false,
+  "story_discovery_rerun": false,
+  "editorial_rerun": false,
+  "media_rerun": false,
+  "image_rerun": false,
+  "concept_classes_reviewed": [
+    "model_family_or_architecture",
+    "agent_pattern_or_harness",
+    "developer_tooling",
+    "multimodal_or_interface",
+    "knowledge_worker_workflow",
+    "safety_security_or_governance",
+    "evaluation_or_benchmark"
+  ]
+}
