@@ -3,14 +3,14 @@
   "projection_version": "publication-status-v2",
   "edition_date": "2026-09-29",
   "edition_id": "dab-edition-2026-09-29",
-  "lifecycle_stage": "COMPLETED",
-  "lifecycle_state": "COMPLETED",
-  "operator_state": "COMPLETED",
-  "status": "COMPLETED",
+  "lifecycle_stage": "CC_SYNCED",
+  "lifecycle_state": "CC_SYNCED",
+  "operator_state": "CC_SYNCED",
+  "status": "CC_SYNCED",
   "terminal_outcome": "COMPLETED",
   "current_blocker": null,
   "earliest_failed_stage": null,
-  "last_successful_stage": "COMPLETED",
+  "last_successful_stage": "CC_SYNCED",
   "preserved_completed_work": [
     "PLANNED",
     "PREFLIGHT_READY",
@@ -21,10 +21,11 @@
     "MERGED",
     "PAGES_DEPLOYED",
     "LIVE_VERIFIED",
-    "COMPLETED"
+    "COMPLETED",
+    "CC_SYNCED"
   ],
-  "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
-  "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
+  "next_automatic_recovery_step": null,
+  "next_legal_recovery_action": null,
   "operator_intervention_required": null,
   "baseline_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
   "candidate_sha": "b9f07d2ed87ac60c9b51881ed66ad03c2c783ee9",
@@ -53,17 +54,17 @@
     "state": "verified",
     "path": "_records/publication/2026-09-29/completion.json"
   },
-  "command_center_sync": "pending",
+  "command_center_sync": "complete",
   "command_center": {
-    "state": "pending",
-    "result": "pending",
-    "last_synced_at": null,
-    "source_status_sha256": null,
-    "stale": null
+    "state": "complete",
+    "result": "pass",
+    "last_synced_at": "2026-10-01T03:44:57.733Z",
+    "source_status_sha256": "sha256:f0b61695cda56afab88c6213e09c9f2a78f8347b8795d5ed1903816cba5c3998",
+    "stale": false
   },
   "last_authoritative_state_transition": {
-    "stage": "COMPLETED",
-    "at": "2026-10-01T03:14:48.948Z"
+    "stage": "CC_SYNCED",
+    "at": "2026-10-01T03:44:57.733Z"
   },
   "source_evidence": {
     "lifecycle_path": "_records/publication/2026-09-29/lifecycle.json",
@@ -75,5 +76,5 @@
     "state": "pass",
     "errors": []
   },
-  "updated_at": "2026-10-01T03:14:48.948Z"
+  "updated_at": "2026-10-01T03:44:57.733Z"
 }
