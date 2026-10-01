@@ -16,6 +16,14 @@ test('source HTTP state warns on transient 429 without hiding it',()=>{
   assert.match(r.evidence,/nonblocking_postpublication_reachability_warning/);
 });
 
+test('source HTTP state warns when a publisher blocks automated access',()=>{
+  const r=classifySourceHttpState([{url:'https://publisher.example/article',status:403,ok:false,resolved_url:'https://publisher.example/article'}]);
+  assert.equal(r.result,'warn');
+  assert.equal(r.severity,'medium');
+  assert.match(r.evidence,/403/);
+  assert.match(r.evidence,/publisher_access_controlled/);
+});
+
 test('source HTTP state still fails on a hard 404',()=>{
   const r=classifySourceHttpState([{url:'https://example.test/missing',status:404,ok:false}]);
   assert.equal(r.result,'fail');
