@@ -73,12 +73,16 @@ jobs:
         id: date
         env:
           REQUESTED_DATE: ${{ inputs.date }}
+          EVENT_NAME: ${{ github.event_name }}
         run: |
           if [ -n "$REQUESTED_DATE" ]; then
             value="$REQUESTED_DATE"
+          elif [ "$EVENT_NAME" = "workflow_run" ]; then
+            value="$(find _data/editions -maxdepth 1 -type f -name '*.json' -printf '%f\n' | sed 's/\.json$//' | sort | tail -1)"
           else
             value="$(TZ=America/Chicago date +%F)"
           fi
+          test -n "$value"
           echo "value=$value" >> "$GITHUB_OUTPUT"
 
       - name: Detect already-closed edition
