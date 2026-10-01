@@ -1,0 +1,252 @@
+{
+  "parent_task": "11",
+  "status": "wip",
+  "observed_at": "2026-10-01T04:05:23.505013+00:00",
+  "verified_public_closed": 1,
+  "target_public_closed": 2,
+  "candidate_edition": "2026-09-30",
+  "edition_binding": "Pending admission; date and cutoff not locked",
+  "run_id": null,
+  "images_accepted": 0,
+  "main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+  "controller_branch": "reliable-edition/dab-edition-2026-09-29",
+  "controller_sha": "c59f96ac449b0ac8f63c551545ba9f79a5b3fbbe",
+  "blocker": "Saved native host proof expired and bound to older release",
+  "next_action": "Existing controller: recover prior producer result and refresh admission; bind distinct edition",
+  "cards": [
+    {
+      "id": "11.01",
+      "title": "Refresh main, live state and active runs",
+      "depends_on": "—",
+      "column": "Done",
+      "started_at": null,
+      "completed_at": "2026-10-01T04:05:23.505013+00:00",
+      "timing": "UNKNOWN"
+    },
+    {
+      "id": "11.02",
+      "title": "Reconcile first PUBLIC CLOSED receipt",
+      "depends_on": "01",
+      "column": "Done",
+      "started_at": null,
+      "completed_at": "2026-10-01T04:05:23.505013+00:00",
+      "timing": "UNKNOWN"
+    },
+    {
+      "id": "11.03",
+      "title": "Select distinct edition, cutoff and run ID",
+      "depends_on": "02",
+      "column": "WIP",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "UNKNOWN"
+    },
+    {
+      "id": "11.04",
+      "title": "Start existing controller; record start",
+      "depends_on": "03",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.05",
+      "title": "Discover fresh article candidates",
+      "depends_on": "04",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.06",
+      "title": "Verify evidence and seven-day fallback",
+      "depends_on": "05",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.07",
+      "title": "Lock six stories: 2 / 2 / 2; one Skill",
+      "depends_on": "06",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.08",
+      "title": "Select and verify two videos",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.09",
+      "title": "Select and verify required podcasts",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.10",
+      "title": "Refresh Emerging AI Watchlist",
+      "depends_on": "05",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.11",
+      "title": "Map relevant Professional Series books",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.12",
+      "title": "Seal six story-specific image specs",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.13",
+      "title": "Generate, save and accept image 1",
+      "depends_on": "12",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.14",
+      "title": "Generate, save and accept image 2",
+      "depends_on": "13",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.15",
+      "title": "Generate, save and accept image 3",
+      "depends_on": "14",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.16",
+      "title": "Generate, save and accept image 4",
+      "depends_on": "15",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.17",
+      "title": "Generate, save and accept image 5",
+      "depends_on": "16",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.18",
+      "title": "Generate, save and accept image 6",
+      "depends_on": "17",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.19",
+      "title": "Review six-image set and accessibility",
+      "depends_on": "13–18",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.20",
+      "title": "Assemble canonical edition and pages",
+      "depends_on": "08–11,19",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.21",
+      "title": "Refresh digests and seal immutable bundle",
+      "depends_on": "20",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.22",
+      "title": "Run qualification and focused repairs",
+      "depends_on": "21",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.23",
+      "title": "Open publication PR; pass protected CI",
+      "depends_on": "22",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.24",
+      "title": "Merge and deploy exact approved SHA",
+      "depends_on": "23",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.25",
+      "title": "Independently verify live edition",
+      "depends_on": "24",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.26",
+      "title": "Record PUBLIC CLOSED #2; close task 11",
+      "depends_on": "25",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    }
+  ]
+}
