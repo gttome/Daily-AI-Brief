@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Verified enterprise knowledge trust pipeline">
+<defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#eff6ff"/><stop offset="1" stop-color="#d4e4f4"/></linearGradient><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#ecf8f1"/><stop offset="1" stop-color="#c9ead7"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#17324d" flood-opacity=".14"/></filter><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#3e6388"/></marker></defs>
+<rect width="1200" height="630" fill="#ffffff"/><text x="45" y="62" font-family="Arial" font-size="29" font-weight="700" fill="#10253f">Enterprise Sources</text>
+<rect x="45" y="92" width="205" height="420" rx="26" fill="url(#b)" stroke="#6d91b4" stroke-width="3" filter="url(#s)"/>
+<rect x="75" y="125" width="145" height="58" rx="12" fill="#fff" stroke="#7699b8"/><rect x="75" y="202" width="145" height="58" rx="12" fill="#fff" stroke="#7699b8"/><rect x="75" y="279" width="145" height="58" rx="12" fill="#fff" stroke="#7699b8"/><rect x="75" y="356" width="145" height="58" rx="12" fill="#fff" stroke="#7699b8"/>
+<text x="80" y="475" font-family="Arial" font-size="22" font-weight="700" fill="#315577">Permissions</text><path d="M250 300 H305" stroke="#3e6388" stroke-width="5" marker-end="url(#a)"/>
+<text x="310" y="62" font-family="Arial" font-size="29" font-weight="700" fill="#10253f">Trust Signals</text>
+<rect x="305" y="92" width="430" height="420" rx="28" fill="#fafcff" stroke="#839eb7" stroke-width="3" filter="url(#s)"/>
+<rect x="340" y="125" width="160" height="60" rx="15" fill="#eaf4ff" stroke="#6b99c2"/><text x="365" y="163" font-family="Arial" font-size="22" font-weight="700" fill="#285b84">Provenance</text>
+<rect x="540" y="125" width="160" height="60" rx="15" fill="#edf8f1" stroke="#68a782"/><text x="582" y="163" font-family="Arial" font-size="22" font-weight="700" fill="#326149">Recency</text>
+<rect x="340" y="215" width="160" height="60" rx="15" fill="#fff1db" stroke="#d49b43"/><text x="378" y="253" font-family="Arial" font-size="22" font-weight="700" fill="#76501d">Expertise</text>
+<rect x="540" y="215" width="160" height="60" rx="15" fill="#f4edff" stroke="#9171ba"/><text x="557" y="253" font-family="Arial" font-size="22" font-weight="700" fill="#5c427d">Corroboration</text>
+<rect x="390" y="315" width="260" height="72" rx="18" fill="#ffffff" stroke="#4f8b6d" stroke-width="3"/><text x="421" y="359" font-family="Arial" font-size="23" font-weight="700" fill="#2f654a">Human Validation</text>
+<path d="M420 185 V315 M620 185 V315 M420 275 V315 M620 275 V315" stroke="#7d93aa" stroke-width="3"/>
+<path d="M520 387 V440" stroke="#3e6388" stroke-width="5" marker-end="url(#a)"/>
+<rect x="350" y="440" width="340" height="50" rx="16" fill="#dff2e8" stroke="#4f936d" stroke-width="3"/><text x="421" y="473" font-family="Arial" font-size="23" font-weight="700" fill="#285e44">Verified Knowledge</text>
+<path d="M735 300 H800" stroke="#3e6388" stroke-width="5" marker-end="url(#a)"/>
+<rect x="800" y="150" width="350" height="270" rx="28" fill="url(#g)" stroke="#5f9978" stroke-width="3" filter="url(#s)"/>
+<text x="930" y="195" font-family="Arial" font-size="26" font-weight="700" fill="#10253f">MCP</text>
+<path d="M975 215 V260" stroke="#3e6388" stroke-width="5" marker-end="url(#a)"/>
+<rect x="850" y="275" width="250" height="90" rx="20" fill="#ffffff" stroke="#6e9c83" stroke-width="3"/><text x="892" y="327" font-family="Arial" font-size="24" font-weight="700" fill="#315f48">People and Agents</text>
+<text x="800" y="470" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Permission-aware Retrieval</text>
+<text x="46" y="555" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Source Identity</text><text x="310" y="555" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Evidence Quality</text><text x="605" y="555" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Decision-grade Context</text><text x="930" y="555" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Reusable Access</text>
+</svg>
