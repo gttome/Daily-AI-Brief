@@ -15,6 +15,7 @@
       "proven_production_image_path",
       "svg_fallback_disabled",
       "exact_byte_capture",
+      "small_png_persistence_route_available",
       "append_only_transition_ledger",
       "kanban_derived_from_events",
       "executor_state_visible",
@@ -62,7 +63,25 @@
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
     "svg_fallback": false,
-    "low_quality_fallback": false
+    "low_quality_fallback": false,
+    "small_png_transport": {
+      "required_every_run": true,
+      "primary": "direct_git_data_create_blob_base64",
+      "fallback": "bounded_base64_chunk_bridge",
+      "sequence": [
+        "capture_exact_png_bytes_immediately",
+        "persist_exact_bytes",
+        "verify_content_identity",
+        "review_saved_git_asset",
+        "accept_or_retry"
+      ],
+      "prohibit": [
+        "owner_upload",
+        "conversation_scavenging_as_primary_recovery",
+        "regenerate_while_exact_bytes_are_recoverable",
+        "new_transport_architecture_when_primary_or_fallback_is_available"
+      ]
+    }
   },
   "success_state": "PUBLIC_CLOSED",
   "cost_boundary": {
