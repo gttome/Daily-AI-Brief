@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 5,
+  "version": 6,
   "status": "running",
   "current_operation": "images",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T06:26:25.082Z",
-  "last_progress_at": "2026-10-01T06:26:25.082Z",
+  "updated_at": "2026-10-01T06:29:24.084Z",
+  "last_progress_at": "2026-10-01T06:29:24.084Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -169,9 +169,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Generate m02 attempt 1 from its sealed request, capture returned bytes before yielding, inspect the saved asset, then accept or record a targeted rejection.",
-    "images_accepted": 0,
-    "current_task": "11.13"
+    "next_action": "Generate m03 attempt 1 from its sealed source-aware verification request; persist exact bytes before review.",
+    "images_accepted": 1,
+    "current_task": "11.14"
   },
   "blockers": [],
   "cost_boundary": {
@@ -223,9 +223,10 @@
     "result": "in_progress",
     "specification_manifest": "_records/editorial-handoff/image-specs-2026-09-30.json",
     "specifications_sealed": 6,
-    "accepted": 0,
-    "current_candidate": "m02",
+    "accepted": 1,
+    "current_candidate": "m03",
     "current_attempt": 1,
-    "generation_started": false
+    "generation_started": false,
+    "last_receipt": "_records/image-attempts/2026-09-30/m02-attempt-1.json"
   }
 }

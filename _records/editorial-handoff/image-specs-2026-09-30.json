@@ -21,7 +21,18 @@
         "Allow or Block",
         "Policy Log"
       ],
-      "alt_text": "Textbook architecture diagram showing an AI agent inside a sandbox, an external policy supervisor checking network and credential access, and approved services outside the workload."
+      "alt_text": "Textbook architecture diagram showing an AI agent inside a sandbox, an external policy supervisor checking network and credential access, and approved services outside the workload.",
+      "status": "accepted_locked",
+      "attempt": 1,
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-1.png",
+      "raw_path": "_records/image-attempts/2026-09-30/m02-attempt-1.png",
+      "sha256": "6bc3d8af5a6bf4b9265dbf875dc2374b748854cbea7ddd1a7d5031ff3db34f29",
+      "git_blob_sha": "3a4ed737272d47eaea6e3d98ee65f2daa22cc50e",
+      "width": 1536,
+      "height": 1024,
+      "generated_at": "2026-10-01T06:28:19.186Z",
+      "accepted_at": "2026-10-01T06:29:24.084Z",
+      "receipt_path": "_records/image-attempts/2026-09-30/m02-attempt-1.json"
     },
     {
       "candidate_id": "m03",
@@ -139,5 +150,7 @@
     "m07",
     "m08"
   ],
-  "generation_started": false
+  "generation_started": false,
+  "accepted_count": 1,
+  "current_candidate": "m03"
 }

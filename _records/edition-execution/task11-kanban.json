@@ -1,18 +1,18 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T06:26:25.082Z",
+  "observed_at": "2026-10-01T06:29:24.084Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
   "edition_binding": "Locked",
   "run_id": "reliable-edition-20260930-second",
-  "images_accepted": 0,
+  "images_accepted": 1,
   "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "9cf7e5729117ba7f391115926560a330a05bd928",
+  "controller_sha": "e47ffd29b73488c894be8e15b0e2dec27fee85c8",
   "blocker": null,
-  "next_action": "Generate m02 attempt 1 from its sealed request, capture returned bytes before yielding, inspect the saved asset, then accept or record a targeted rejection.",
+  "next_action": "Generate m03 attempt 1 from its sealed source-aware verification request; persist exact bytes before review.",
   "cards": [
     {
       "id": "11.01",
@@ -155,21 +155,24 @@
       "id": "11.13",
       "title": "Generate, save and accept image 1",
       "depends_on": "12",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T06:26:25.082Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "m02 attempt 1 prepared from the sealed production-image-execution-v2 request",
-      "next_action": "Invoke native generation once; persist returned bytes immediately before any subsequent stage."
+      "completed_at": "2026-10-01T06:29:24.084Z",
+      "timing": "2m 59.002s",
+      "substage": "m02 attempt 1 accepted_locked; exact Git content identity verified",
+      "next_action": null,
+      "proof": "_records/image-attempts/2026-09-30/m02-attempt-1.json"
     },
     {
       "id": "11.14",
       "title": "Generate, save and accept image 2",
       "depends_on": "13",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T06:29:24.084Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "m03 attempt 1 prepared from its sealed single-story request",
+      "next_action": "Invoke native generation once and capture the returned bytes before any other operation."
     },
     {
       "id": "11.15",
@@ -287,7 +290,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 5,
+  "controller_state_version": 6,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -297,15 +300,15 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Task 11.12 completed: six story-only production image executions sealed with exact visible-text allowlists, distinct composition modes, and zero-attempt contamination lint.",
-    "Task 11.13 started: m02 attempt 1 is the only active native image job."
+    "Task 11.13 completed: m02 attempt 1 accepted_locked after exact-byte Git capture and post-generation subject, factual, structural, editorial and exact-text review.",
+    "Task 11.14 started: m03 attempt 1 is the only active image job."
   ],
   "readiness": {
     "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
     "editorial": "LOCKED: one semantic pass; no post-editorial model pass",
     "videos": "LOCKED: 2 / 2; both ≤10 minutes",
     "podcasts": "LOCKED: 2 / 2; distinct shows; both primary 48-hour tier",
-    "images": "0 / 6; six specifications SEALED; m02 attempt 1 WIP",
+    "images": "1 / 6 accepted_locked; m03 attempt 1 WIP",
     "watchlist": "READY: 1 new / 3 updated / 13 carried; 14/14 checks",
     "books": "READY: 4 / 4 books considered; 32 anchors; 320/320 item-anchor pairs; 10 mappings",
     "bundle": "Not started",
@@ -370,24 +373,27 @@
       "image": 1,
       "task_id": "11.13",
       "candidate": "m02",
+      "attempts": 1,
+      "generate_started_at": null,
+      "saved_at": "2026-10-01T06:29:03.000Z",
+      "reviewed_at": "2026-10-01T06:29:24.084Z",
+      "accepted_at": "2026-10-01T06:29:24.084Z",
+      "status": "accepted_locked",
+      "elapsed_seconds": 179.002,
+      "sha256": "6bc3d8af5a6bf4b9265dbf875dc2374b748854cbea7ddd1a7d5031ff3db34f29",
+      "git_blob_sha": "3a4ed737272d47eaea6e3d98ee65f2daa22cc50e",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-1.png"
+    },
+    {
+      "image": 2,
+      "task_id": "11.14",
+      "candidate": "m03",
       "attempts": 0,
       "generate_started_at": null,
       "saved_at": null,
       "reviewed_at": null,
       "accepted_at": null,
       "status": "WIP: attempt 1 prepared",
-      "elapsed_seconds": null
-    },
-    {
-      "image": 2,
-      "task_id": "11.14",
-      "candidate": null,
-      "attempts": 0,
-      "generate_started_at": null,
-      "saved_at": null,
-      "reviewed_at": null,
-      "accepted_at": null,
-      "status": "Not started",
       "elapsed_seconds": null
     },
     {
@@ -593,6 +599,19 @@
       "event": "backlog_exit",
       "at": "2026-10-01T06:26:25.082Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.13",
+      "event": "done_recorded",
+      "at": "2026-10-01T06:29:24.084Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 179.002
+    },
+    {
+      "task_id": "11.14",
+      "event": "backlog_exit",
+      "at": "2026-10-01T06:29:24.084Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -624,7 +643,7 @@
   },
   "repository": {
     "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
-    "branch_head_before_record": "9cf7e5729117ba7f391115926560a330a05bd928",
+    "branch_head_before_record": "e47ffd29b73488c894be8e15b0e2dec27fee85c8",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
     "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba"
   },
@@ -638,5 +657,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T06:26:25.082Z"
+  "last_durable_progress_at": "2026-10-01T06:29:24.084Z"
 }
