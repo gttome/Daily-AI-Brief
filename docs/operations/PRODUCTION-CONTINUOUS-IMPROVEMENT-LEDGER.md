@@ -4,7 +4,7 @@
 
 **Policy:** This Markdown file is a human-readable projection. The JSONL event stream is append-only and authoritative. Historical timing not supported by durable evidence is recorded as unknown rather than inferred.
 
-**Backfilled material problems:** 18
+**Backfilled material problems:** 19
 
 Every future Task 00 reads the full JSONL ledger and proves all permanent fixes/invariants/tests remain present. Every material production problem is appended during the run. Task 29 reconciles status, timing, regression protection and next-run readiness.
 
@@ -242,3 +242,15 @@ Every future Task 00 reads the full JSONL ledger and proves all permanent fixes/
 - **Regression coverage:** _generator/test/run-supervisor.test.mjs
 - **Production invariant(s):** exactly-one-fenced-writer-authority, stale-writer-generation-must-fail
 
+## DAB-OPS-20261001-016 — Supervisor delayed an explicit image-rejection recovery until stale timeout
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261001-run4
+- **Task:** 15
+- **Root cause:** Supervisor health classification used transition-event task state only. A rejected image attempt with an explicit recovery action left Task 15 marked Active, so fresh progress was treated as healthy even though recovery was immediately actionable.
+- **Operational impact:** The next bounded image attempt could sit idle until the stale threshold despite a known deterministic recovery action.
+- **Timing impact:** observed during Run 4; exact final delay avoided by the fix and therefore not inferred
+- **Actual permanent fix:** Promote rejected image-attempt evidence into Supervisor classification. Tasks 11–16 now become immediately BLOCKED_ACTIONABLE for Supervisor decision purposes when the latest immutable rejected attempt supplies a recovery action; the attempt number also drives retry-budget enforcement.
+- **Permanent implementation:** _generator/lib/run-supervisor.mjs#applyImmediateImageRecovery, _tools/run-supervisor.mjs
+- **Regression coverage:** _generator/test/run-supervisor.test.mjs
+- **Production invariant(s):** explicit-image-rejection-recovery-is-immediate, image-attempt-budget-must-not-overrun

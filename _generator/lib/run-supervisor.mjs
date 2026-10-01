@@ -83,6 +83,31 @@ export function classifyRunHealth({
   return {state:'READY_IDLE', action:'start_next_eligible_task'};
 }
 
+export function applyImmediateImageRecovery({
+  task_id,
+  task_state,
+  image_recovery = null,
+  recovery_attempts = 0
+} = {}) {
+  const taskId = String(task_id || '').padStart(2,'0');
+  const isImageTask = ['11','12','13','14','15','16'].includes(taskId);
+  const rejectedWithRecovery = isImageTask && task_state === 'Active' &&
+    image_recovery?.status === 'rejected' &&
+    typeof image_recovery?.recovery_action === 'string' &&
+    image_recovery.recovery_action.trim().length > 0;
+  const attempt = rejectedWithRecovery ? Number(image_recovery.attempt || 0) : 0;
+  const baseRecoveries = Number(recovery_attempts || 0);
+  return {
+    task_state: rejectedWithRecovery ? 'Blocked' : task_state,
+    blocked_recoverable: rejectedWithRecovery,
+    recovery_attempts: rejectedWithRecovery && Number.isFinite(attempt)
+      ? Math.max(baseRecoveries, attempt)
+      : baseRecoveries,
+    immediate_recovery: rejectedWithRecovery,
+    recovery_reason: rejectedWithRecovery ? 'rejected_image_attempt_with_explicit_recovery_action' : null
+  };
+}
+
 export function validateTaskRecoveryContracts(contract = {}) {
   const errors = [];
   if (contract.schema_version !== 'task-recovery-contracts-v1') errors.push('task_recovery_schema_version');
