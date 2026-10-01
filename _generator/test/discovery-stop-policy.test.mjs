@@ -14,10 +14,37 @@ const base={
   absoluteBudget:2500000
 };
 
-test('production discovery still stops at normal acquisition budget',()=>{
+test('production discovery treats the normal acquisition budget as soft while mandatory focus coverage is incomplete',()=>{
   assert.deepEqual(discoveryStopDecision({...base,qualification:false}),{
-    stop:true,reason:'normal_acquisition_budget',focus_minimum:3
+    stop:false,reason:null,focus_minimum:3
   });
+});
+
+test('production discovery treats the normal acquisition budget as soft while a required topic is missing',()=>{
+  assert.deepEqual(discoveryStopDecision({
+    ...base,
+    qualification:false,
+    focusCoverage:{technical_ai_engineering:8,applied_genai_knowledge_workers:4,agents_non_technical_people:6},
+    requiredTopicReady:false
+  }),{stop:false,reason:null,focus_minimum:3});
+});
+
+test('production discovery may stop at the normal budget after mandatory focus and required-topic supply are ready',()=>{
+  assert.deepEqual(discoveryStopDecision({
+    ...base,
+    qualification:false,
+    focusCoverage:{technical_ai_engineering:8,applied_genai_knowledge_workers:4,agents_non_technical_people:6},
+    requiredTopicReady:true
+  }),{stop:true,reason:'normal_acquisition_budget',focus_minimum:3});
+});
+
+test('production discovery keeps the absolute acquisition budget hard',()=>{
+  assert.deepEqual(discoveryStopDecision({
+    ...base,
+    qualification:false,
+    normalChars:2500000,
+    requiredTopicReady:false
+  }),{stop:true,reason:'production_absolute_acquisition_budget',focus_minimum:3});
 });
 
 test('qualification discovery does not stop at normal budget while source supply is insufficient',()=>{
@@ -26,9 +53,16 @@ test('qualification discovery does not stop at normal budget while source supply
   });
 });
 
-test('qualification discovery stops when fresh metadata and focus supply are sufficient',()=>{
+test('qualification discovery waits for required-topic supply even after fresh metadata and focus coverage are sufficient',()=>{
   assert.deepEqual(discoveryStopDecision({
-    ...base,qualification:true,freshMetadata:24,
+    ...base,qualification:true,freshMetadata:24,requiredTopicReady:false,
+    focusCoverage:{technical_ai_engineering:8,applied_genai_knowledge_workers:5,agents_non_technical_people:5}
+  }),{stop:false,reason:null,focus_minimum:5});
+});
+
+test('qualification discovery stops when fresh metadata, focus supply and required-topic supply are sufficient',()=>{
+  assert.deepEqual(discoveryStopDecision({
+    ...base,qualification:true,freshMetadata:24,requiredTopicReady:true,
     focusCoverage:{technical_ai_engineering:8,applied_genai_knowledge_workers:5,agents_non_technical_people:5}
   }),{stop:true,reason:'fresh_metadata_and_focus_sufficiency',focus_minimum:5});
 });

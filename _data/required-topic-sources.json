@@ -13,9 +13,7 @@
           "discovery_endpoint": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills",
           "canonical_url": "https://academy.openai.com/public/clubs/work-users-ynjqu/resources/skills",
           "format": "article",
-          "audience": [
-            "knowledge_worker"
-          ],
+          "audience": ["knowledge_worker"],
           "evidence_class": "publisher_authored",
           "status": "active",
           "metadata_notes": "Public OpenAI Academy Skills resource. Use as background unless a specific material update is independently verified; updated_at alone does not satisfy story freshness.",
@@ -31,10 +29,7 @@
           "discovery_endpoint": "https://www.anthropic.com/research/skills",
           "canonical_url": "https://www.anthropic.com/research/skills",
           "format": "article",
-          "audience": [
-            "knowledge_worker",
-            "technical"
-          ],
+          "audience": ["knowledge_worker", "technical"],
           "evidence_class": "publisher_authored",
           "status": "active"
         },
@@ -44,10 +39,7 @@
           "discovery_endpoint": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
           "canonical_url": "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills",
           "format": "article",
-          "audience": [
-            "knowledge_worker",
-            "technical"
-          ],
+          "audience": ["knowledge_worker", "technical"],
           "evidence_class": "publisher_authored",
           "status": "active"
         },
@@ -57,16 +49,29 @@
           "discovery_endpoint": "https://docs.qoder.com/release-notes/qoder",
           "canonical_url": "https://docs.qoder.com/release-notes/qoder",
           "format": "article",
-          "audience": [
-            "knowledge_worker",
-            "technical"
-          ],
+          "audience": ["knowledge_worker", "technical"],
           "focus_hint": "agents_non_technical_people",
           "evidence_class": "publisher_authored",
           "status": "active",
           "candidate_title": "Qoder 0.4.1 adds Skill evolution suggestions from reusable experience",
           "known_publication_date": "2026-09-23T00:00:00Z",
           "date_source": "official_release_notes",
+          "background_only": false,
+          "material_update_verified": true
+        },
+        {
+          "source_id": "aws-agent-toolkit-skill-updates-2026-09-30",
+          "owner": "AWS",
+          "discovery_endpoint": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/",
+          "canonical_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/",
+          "format": "article",
+          "audience": ["knowledge_worker", "technical"],
+          "focus_hint": "agents_non_technical_people",
+          "evidence_class": "publisher_authored",
+          "status": "active",
+          "candidate_title": "AWS CLI adds bulk skill updates and version checks for the Agent Toolkit for AWS",
+          "known_publication_date": "2026-09-30T00:00:00Z",
+          "date_source": "official_page_metadata",
           "background_only": false,
           "material_update_verified": true
         }
