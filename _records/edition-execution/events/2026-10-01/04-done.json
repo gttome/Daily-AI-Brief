@@ -1,0 +1,12 @@
+{
+  "task_id": "04",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T16:48:40.984Z",
+  "source": "scheduled production run",
+  "reason": "Reliable-edition controller started with direct-capture admission PASS; single writer bound and discovery is the next operation.",
+  "proof": {
+    "controller_commit": "fc91f26a34ba728daa98b105d0ea43a8b21d0bca",
+    "admission_path": "_records/edition-execution/admission/dab-edition-2026-10-01-direct-capture.json"
+  }
+}
