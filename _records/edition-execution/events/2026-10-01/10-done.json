@@ -1,0 +1,18 @@
+{
+  "task_id": "10",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:39:32.943Z",
+  "source": "scheduled production continuation",
+  "reason": "Independent seven-surface Watchlist sweep completed; decision-first models were admitted as a new topic, with two existing topics updated.",
+  "proof": {
+    "artifact": "_records/watchlist-sweeps/2026-10-01.json",
+    "artifact_commit": "ded72373419b6953fad18545c1ea6a38f0d4691a",
+    "counts": {
+      "new": 1,
+      "updated": 2,
+      "carried_forward": 15,
+      "total": 18
+    }
+  }
+}
