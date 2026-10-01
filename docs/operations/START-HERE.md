@@ -28,6 +28,14 @@ sharing/access settings, accepted images, public archives and historical failure
 
 ## First safe unfinished action
 
+Source reading-time repair (September 30): normal research and recovery handoffs
+must retain reviewed **full article body** word counts, source URL, retrieval time
+and counting method. Carry these through `source_word_count` into the canonical
+story's `source.reading_evidence`, or use the URL-bound `source_reading` catalog.
+Never substitute a bounded evidence capsule or Brief summary word count. Existing
+reading-support validation rejects missing estimates for September 30 onward;
+capture counts during the first source review, before discarding the source text.
+
 1. Resolve current `main` and the relevant execution branches. Check actual terminal
    `result.json` before a checkpoint, issue comment or automation snapshot. Resolve
    current-day production separately from qualification. Q24 and Q25 are historical

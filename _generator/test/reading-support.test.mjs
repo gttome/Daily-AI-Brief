@@ -1,7 +1,26 @@
 import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';
-import {renderReadingSupport,readingMinutes,validateReadingSupport} from '../lib/reading-support.mjs';
+import {renderReadingSupport,readingMinutes,sourceReadingMinutes,validateReadingSupport} from '../lib/reading-support.mjs';
 import {readerFoundationFiles} from '../lib/reader.mjs';
 const edition=JSON.parse(fs.readFileSync(new URL('../../_data/editions/2026-09-12.json',import.meta.url)));
+test('September 30 recovery has estimates on every brief and permanent article page',()=>{
+ const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-30.json'));
+ const files=readerFoundationFiles(current,process.cwd());
+ validateReadingSupport(current);
+ for(const story of current.stories){
+  const label=`Source article · about ${sourceReadingMinutes(story)} min read`;
+  assert.ok(sourceReadingMinutes(story)>0);
+  assert.ok(renderReadingSupport(story,story.story_id,current.brief_date).includes(label));
+  assert.ok(files.get(`stories/${current.brief_date}/${story.slug}.md`).includes(label));
+ }
+ const missing={editions:{},source_reading:{}};
+ assert.throws(()=>validateReadingSupport(current,missing),/verified full-source reading evidence required/);
+ const wrongUrl=JSON.parse(fs.readFileSync('_data/reading-support.json'));
+ wrongUrl.source_reading[current.stories[0].story_id].source_url='https://example.com/unrelated';
+ assert.throws(()=>validateReadingSupport(current,wrongUrl),/verified full-source reading evidence required/);
+ const embedded=structuredClone(current);
+ for(const story of embedded.stories)story.source.reading_evidence={status:'verified',word_count:800,verified_at:'2026-10-01T12:00:00Z',method:'retrieved_source_text_whitespace_v1'};
+ assert.doesNotThrow(()=>validateReadingSupport(embedded,missing));
+});
 test('source estimates match the brief and all permanent shared article pages',()=>{
  const current=JSON.parse(fs.readFileSync('_data/editions/2026-09-13.json'));
  const files=readerFoundationFiles(current,process.cwd());

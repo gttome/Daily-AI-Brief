@@ -14,7 +14,7 @@ reader_release: true
 # ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source reading time unavailable</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-29T13:07:00.000Z. Published about 39 hours before the fixed cutoff; selected under the normal 72-hour fallback because it contributes a distinct source-aware verification mechanism and was not used in the September 29 edition.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-29T13:07:00.000Z. Published about 39 hours before the fixed cutoff; selected under the normal 72-hour fallback because it contributes a distinct source-aware verification mechanism and was not used in the September 29 edition.</p></aside>
 <!-- reader-release:end -->
 
 <span class="story-data" data-story-id="dab-story-2026-09-30-bb1d40df" hidden></span>
