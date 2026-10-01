@@ -1,6 +1,17 @@
 # Daily AI Brief — Current Operations Entry Point
 
 > [!IMPORTANT]
+> **Run learning/readiness is now a production gate.** Before every new production run,
+> complete Task 00 using [the Living Run Learning, Cleanup and Readiness Plan](RUN-LEARNING-READINESS-PLAN.md)
+> and `run-learning-readiness-v1`. A one-time schedule may trigger a start, but every run
+> must already have a run-scoped keeper bound through terminal cleanup. An Active task
+> with no durable progress for 15 minutes must be resumed or explicitly Blocked.
+> The proven production image path is locked; repository-generated SVG/basic-diagram
+> substitution and low-quality fallback are prohibited. After `PUBLIC CLOSED` or
+> `FAILED`, Task 29 cleanup and the promotion review are mandatory before the next run.
+
+
+> [!IMPORTANT]
 > Read live machine evidence before narrative status. This entry point is a current
 > index, not another run-state record. Normal image transport remains `connector-first-v1`, implemented through the permanent simple lifecycle **generate → transfer file → verify content identity → review → accept/reject**.
 > Git content-address identity is the primary persistence verification; optional raw reread must not become a publication blocker.
