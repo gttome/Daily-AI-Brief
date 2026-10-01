@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "professional-editorial-diagram-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-01-m05"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional textbook trust pipeline: enterprise sources retain permissions, pass through provenance, recency, expertise, corroboration and human-validation checks, then become verified knowledge exposed through MCP to people and agents. White background, no fabricated metrics or screenshots.",
+  "candidate_id": "m05",
+  "edition_id": "dab-edition-2026-10-01",
+  "renderer": "svg-editorial-v1"
+}
