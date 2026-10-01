@@ -6,6 +6,7 @@ import {
   acquireWriterLease,
   assertWriterFence,
   classifyRunHealth,
+  applyImmediateImageRecovery,
   validateTaskRecoveryContracts,
   taskRecoveryDecision,
   buildWorkerRequest,
@@ -66,6 +67,41 @@ test('actionable Blocked automatically selects recovery contract',()=>{
   const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:0});
   assert.equal(decision.action,'first_recovery');
   assert.equal(decision.capability,'native_chatgpt');
+});
+
+test('rejected Active image attempt becomes immediately actionable without waiting for stale timeout',()=>{
+  const c=contract(); c.tasks['15'].retry_limit=4;
+  const override=applyImmediateImageRecovery({
+    task_id:'15',
+    task_state:'Active',
+    image_recovery:{status:'rejected',attempt:3,recovery_action:'Generate m08 attempt 4 from the sealed spec only.'},
+    recovery_attempts:0
+  });
+  assert.equal(override.immediate_recovery,true);
+  assert.equal(override.task_state,'Blocked');
+  assert.equal(override.recovery_attempts,3);
+  const classification=classifyRunHealth({
+    task_state:override.task_state,
+    blocked_recoverable:override.blocked_recoverable,
+    last_progress_at:'2026-10-01T22:57:13Z',
+    now:'2026-10-01T22:57:14Z'
+  });
+  assert.equal(classification.state,'BLOCKED_ACTIONABLE');
+  const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts});
+  assert.equal(decision.action,'alternate_recovery');
+});
+
+test('image retry budget exhaustion produces terminal failure instead of a fifth attempt',()=>{
+  const c=contract(); c.tasks['15'].retry_limit=4;
+  const override=applyImmediateImageRecovery({
+    task_id:'15',
+    task_state:'Active',
+    image_recovery:{status:'rejected',attempt:4,recovery_action:'Attempt budget exhausted; preserve evidence.'},
+    recovery_attempts:0
+  });
+  const classification=classifyRunHealth({task_state:override.task_state,blocked_recoverable:override.blocked_recoverable});
+  const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:override.recovery_attempts});
+  assert.equal(decision.action,'terminal_failure');
 });
 
 test('all Tasks 00 through 29 require recovery contracts',()=>{
