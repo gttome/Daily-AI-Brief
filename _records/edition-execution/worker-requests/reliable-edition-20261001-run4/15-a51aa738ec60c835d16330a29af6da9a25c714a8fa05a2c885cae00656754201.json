@@ -1,0 +1,14 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "a51aa738ec60c835d16330a29af6da9a25c714a8fa05a2c885cae00656754201",
+  "execution_id": "reliable-edition-20261001-run4",
+  "edition_id": "dab-edition-2026-10-01",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "task_id": "15",
+  "capability": "native_chatgpt",
+  "instruction": "Do not create attempt 5. Do not substitute SVG, basic, low-quality, or transformed derivative imagery. Task 15 remains blocked at the bounded recovery limit.",
+  "writer_generation": 1,
+  "recovery_attempt": 4,
+  "created_at": "2026-10-01T23:12:52.474Z",
+  "status": "queued"
+}
