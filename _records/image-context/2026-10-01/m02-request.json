@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "professional-editorial-diagram-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-01-m02"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional textbook architecture of persistent multi-agent execution: three independently deployed agents share one Runtime Instance session and a persistent volume for artifact handoffs across a multi-day workflow. White background, no people, no product UI, no unsupported metrics.",
+  "candidate_id": "m02",
+  "edition_id": "dab-edition-2026-10-01",
+  "renderer": "svg-editorial-v1"
+}
