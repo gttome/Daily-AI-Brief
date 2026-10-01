@@ -1,0 +1,3342 @@
+{
+  "schema_version": "1.0.0",
+  "edition_date": "2026-10-01",
+  "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
+  "items_digest": "PENDING_CANONICAL_PACKAGING_REBIND",
+  "canonical_packaging_rebind_required": true,
+  "review_scope": "all_locked_articles_and_included_media",
+  "full_book_text_reviewed": false,
+  "books_considered": 4,
+  "anchors_considered": 32,
+  "item_anchor_pairs_considered": 320,
+  "items": [
+    {
+      "item_id": "dab-story-2026-10-01-m01",
+      "title": "AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "Use the verified template-editing/export section to treat an operational skill as a maintained reusable artifact: define its trigger, instructions, examples, owner, and update path rather than rewriting incident guidance each time.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        }
+      ]
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m02",
+      "title": "AgentCore Runtime Instances support persistent multi-agent workflows",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "Use the verified handoffs section to define explicit artifact and state contracts between independently deployed agents sharing a durable session, so persistence does not become implicit coupling.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “AgentCore Runtime Instances support persistent multi-agent workflows,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m04",
+      "title": "Gemini 4 Argon targets long-horizon professional workflows",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "Use the verified evaluation section to test long-horizon model claims against representative professional tasks, explicit quality criteria, latency, cost, and failure conditions before expanding use.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “Gemini 4 Argon targets long-horizon professional workflows,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m05",
+      "title": "Stack Internal turns enterprise context into verified knowledge",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "Use the verified context-quality checklist to make provenance, recency, authority, corroboration, permissions, and human validation explicit before context is reused by people or agents.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “Stack Internal turns enterprise context into verified knowledge,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m07",
+      "title": "OpenAI Dots introduces always-on agents with approvals",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "Use the verified trust-calibration section to define what an always-on agent may do autonomously, what requires approval, and how users can inspect progress before delegating higher-impact work.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “OpenAI Dots introduces always-on agents with approvals,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m08",
+      "title": "UiPath and Snowflake connect governed data to automations and agents",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "Use the verified privacy/compliance section to map data access, lineage, permissions, and action boundaries when agents operate on governed data without copying it into another system.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “UiPath and Snowflake connect governed data to automations and agents,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-video-2026-10-01-general",
+      "title": "Meet the all new Codex Cloud",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "Use the verified launch-readiness section to evaluate persistent cloud coding as an operating workflow: access, shared setup, review ownership, escalation, and criteria for production use.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “Meet the all new Codex Cloud,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-video-2026-10-01-agent-skills",
+      "title": "Introducing dots, always-on agents built to handle everything.",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "Use the verified trust section to compare the video’s autonomy framing with explicit approval boundaries and user-visible activity before relying on background work.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “Introducing dots, always-on agents built to handle everything.,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-podcast-2026-10-01-big-technology-sap",
+      "title": "SAP CEO: AI Won't Kill Software, But It Will Change Your Job",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Expert Critic” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "Use the verified move-from-understanding-to-use section to turn the episode’s discussion of agents, reskilling, and business context into one bounded workflow experiment with measurable outcomes.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “SAP CEO: AI Won't Kill Software, But It Will Change Your Job,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    },
+    {
+      "item_id": "dab-podcast-2026-10-01-rachman-ai-risk",
+      "title": "Could AI really end humanity?",
+      "scores": [
+        {
+          "reference_id": "reliable-verification",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Verification as the Final Gate” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-quality-checklist",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Quick Reference: Context Quality Checklist” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-trust",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Managing Expectations and Calibrating Trust” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-embeddings",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Embeddings - Coordinates in that Space” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-rag",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Hybrid Search - Combining Semantics and Exact Matches” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-agent-failures",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Handling Failures and Conflicts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-handoffs",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Handoffs and Structured Contracts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-injection",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Prompt Injection and Instruction Integrity” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "reliable-audit",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Audit Trails and Legal Defensibility” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-discovery",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Discovery: Define the Work Before You Write the Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-envelope",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “The Context Envelope” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-dynamic-facts",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Dynamic Facts and Current-State Control” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-failure-playbooks",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Failure-Mode Playbooks” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-regression",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Monitoring, Drift, and Regression Management” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-privacy",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Data Privacy and Compliance in Context Engineering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "context-launch",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Cross-Functional Governance and Launch Readiness” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-core-components",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “The Core Components of a Prompt” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-clarify",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Clarify Before Answering” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-expert-critic",
+          "rationale": "Use the verified Expert Critic section to separate claims, assumptions, evidence, counterarguments, and uncertainty when evaluating high-stakes AI-risk arguments rather than accepting a single narrative.",
+          "mechanism": 4,
+          "topic": 4,
+          "practical_lesson": 4,
+          "audience": 4,
+          "section_relevance": 4,
+          "reader_value": 4
+        },
+        {
+          "reference_id": "prompt-structure",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “The Perfect Prompt Structure Explained” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-algorithm-thoughts",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Algorithm of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-graph-thoughts",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Graph of Thoughts” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-pattern-selection",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Pattern Selection Framework” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "prompt-evaluation",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Evaluation and Challenges” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-practice",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Introduction” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-archetypes",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Five Generative AI Prompt Companion Users” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-role-selection",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Enable Role-Based Self-Identification” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-problem-strategies",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Map Real Problems to Practical Prompt Strategies” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-companion",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Generative AI Prompt Engineering Learning Ecosystem - Companion” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-multimedia",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Centralize Learning Resources” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-workflow",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Move From Understanding to Use” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        },
+        {
+          "reference_id": "ecosystem-template-export",
+          "rationale": "For “Could AI really end humanity?,” the verified heading “Enable Template Editing and Export” was considered but was not the strongest direct mechanism or practical next step; no unreviewed book text is inferred.",
+          "mechanism": 0,
+          "topic": 0,
+          "practical_lesson": 0,
+          "audience": 0,
+          "section_relevance": 0,
+          "reader_value": 0
+        }
+      ]
+    }
+  ],
+  "selections": [
+    {
+      "item_id": "dab-story-2026-10-01-m01",
+      "reference_id": "ecosystem-template-export",
+      "label": "READ DEEPER",
+      "why": "Use the verified template-editing/export section to treat an operational skill as a maintained reusable artifact: define its trigger, instructions, examples, owner, and update path rather than rewriting incident guidance each time."
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m02",
+      "reference_id": "reliable-handoffs",
+      "label": "READ DEEPER",
+      "why": "Use the verified handoffs section to define explicit artifact and state contracts between independently deployed agents sharing a durable session, so persistence does not become implicit coupling."
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m04",
+      "reference_id": "prompt-evaluation",
+      "label": "READ DEEPER",
+      "why": "Use the verified evaluation section to test long-horizon model claims against representative professional tasks, explicit quality criteria, latency, cost, and failure conditions before expanding use."
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m05",
+      "reference_id": "context-quality-checklist",
+      "label": "READ DEEPER",
+      "why": "Use the verified context-quality checklist to make provenance, recency, authority, corroboration, permissions, and human validation explicit before context is reused by people or agents."
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m07",
+      "reference_id": "reliable-trust",
+      "label": "READ DEEPER",
+      "why": "Use the verified trust-calibration section to define what an always-on agent may do autonomously, what requires approval, and how users can inspect progress before delegating higher-impact work."
+    },
+    {
+      "item_id": "dab-story-2026-10-01-m08",
+      "reference_id": "context-privacy",
+      "label": "READ DEEPER",
+      "why": "Use the verified privacy/compliance section to map data access, lineage, permissions, and action boundaries when agents operate on governed data without copying it into another system."
+    },
+    {
+      "item_id": "dab-video-2026-10-01-general",
+      "reference_id": "context-launch",
+      "label": "READ DEEPER",
+      "why": "Use the verified launch-readiness section to evaluate persistent cloud coding as an operating workflow: access, shared setup, review ownership, escalation, and criteria for production use."
+    },
+    {
+      "item_id": "dab-video-2026-10-01-agent-skills",
+      "reference_id": "reliable-trust",
+      "label": "READ DEEPER",
+      "why": "Use the verified trust section to compare the video’s autonomy framing with explicit approval boundaries and user-visible activity before relying on background work."
+    },
+    {
+      "item_id": "dab-podcast-2026-10-01-big-technology-sap",
+      "reference_id": "ecosystem-workflow",
+      "label": "READ DEEPER",
+      "why": "Use the verified move-from-understanding-to-use section to turn the episode’s discussion of agents, reskilling, and business context into one bounded workflow experiment with measurable outcomes."
+    },
+    {
+      "item_id": "dab-podcast-2026-10-01-rachman-ai-risk",
+      "reference_id": "prompt-expert-critic",
+      "label": "READ DEEPER",
+      "why": "Use the verified Expert Critic section to separate claims, assumptions, evidence, counterarguments, and uncertainty when evaluating high-stakes AI-risk arguments rather than accepting a single narrative."
+    }
+  ],
+  "books_selected": [
+    "Generative AI Prompt Engineering Learning Ecosystem",
+    "Reliable Generative AI",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Reliable Generative AI Context Engineering"
+  ]
+}
