@@ -1,0 +1,133 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "scheduled_chatgpt_production",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 6642,
+  "model_visible": [
+    {
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "headline": "Best practices for writing AWS DevOps Agent Skills",
+      "canonical_url": "https://aws.amazon.com/blogs/mt/best-practices-for-writing-aws-devops-agent-skills/",
+      "publisher": "AWS Cloud Operations Blog",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "freshness_tier": "24h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "excerpt": "AWS describes DevOps Agent Skills as reusable, modular instruction sets that encode domain knowledge and investigation methods for AWS DevOps Agent. The strongest activation signal is the skill description: it should name concrete services, symptoms, errors, and scenarios so the agent can load the right skill when relevant. AWS recommends focused skills rather than monolithic playbooks, because multiple independently useful skills can be composed during one investigation. Skills can also document how and when to use custom MCP tools and how to interpret their results. The practical engineering pattern is to convert repeatable operational investigation know-how into versioned, narrowly triggered procedures that can be reused across incidents instead of restated in each chat."
+    },
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Build a multi-agent music production pipeline on Amazon Bedrock AgentCore Runtime Instances",
+      "canonical_url": "https://aws.amazon.com/blogs/machine-learning/build-a-multi-agent-music-production-pipeline-on-amazon-bedrock-agentcore-runtime-instances/",
+      "publisher": "AWS Machine Learning Blog",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "freshness_tier": "24h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "AWS introduces AgentCore Runtime Instances as AWS-managed EC2 infrastructure for persistent, long-running agent workflows. Compared with serverless MicroVMs, Runtime Instances add multi-day sessions, persistent volumes, GPU access, and the ability to colocate multiple agents on one instance. The reference pipeline gives three specialized agents the same runtime session ID so they share a filesystem and hand artifacts to one another across stages. Each agent can be deployed independently, while the shared session preserves work across pauses. The engineering lesson is that multi-agent systems with large artifacts or workflows spanning days may need durable compute, storage, and session identity rather than only short-lived serverless execution."
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Build, deploy, and harden AI agents: Three new AWS Jam experiences now available",
+      "canonical_url": "https://aws.amazon.com/blogs/training-and-certification/build-deploy-and-harden-ai-agents-three-new-aws-jam-experiences-now-available/",
+      "publisher": "AWS Training and Certification Blog",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "freshness_tier": "24h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "AWS launched three hands-on Jam experiences covering specification-driven development, AgentCore deployment and security, and advanced multi-agent systems. The AgentCore track includes runtime, gateway, memory, guardrails, IAM isolation, MCP tool integration, and production troubleshooting. The advanced track adds agent-to-agent communication patterns, context optimization, Cedar policy controls, monitoring frameworks, and governance. The verified signal is not a new runtime feature but a training pattern: teams can practice production agent architecture, security, orchestration, and governance in realistic, scored environments before relying on those skills in live systems."
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Gemini 4 Argon: our next era of frontier intelligence",
+      "canonical_url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/",
+      "publisher": "Google",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "freshness_tier": "24h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "Google announced Gemini 4 Argon as a frontier model designed for long-horizon reasoning across software engineering, enterprise knowledge work such as legal and finance, and cybersecurity defense. Google says the model expands the output limit to one million tokens and is initially rolling out to a limited set of trusted cyber defenders through the Fairwind Program while broader access remains phased. Google also reports internal use for specialized coding, research, migrations, and optimization work. For knowledge workers, the practical signal is that models are being designed to sustain much longer professional task trajectories, but availability is limited and publisher-reported benchmark or internal productivity claims should not be treated as independent results."
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Stack Overflow launches the next generation of Stack Internal to power trusted enterprise AI",
+      "canonical_url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+      "publisher": "Stack Overflow",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "freshness_tier": "24h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "Stack Overflow announced a new generation of Stack Internal focused on turning scattered enterprise content into reusable, verified organizational knowledge for both people and agents. The platform emphasizes provenance, recency, expertise, corroboration, and human validation rather than retrieval relevance alone. It can ingest knowledge from enterprise sources, preserve source permissions, and expose verified context to compatible AI tools through an MCP server. The practical knowledge-work pattern is to treat enterprise context as a curated asset with trust signals and human validation, so employees and agents can distinguish information that is merely relevant from information that is sufficiently verified for a decision."
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Work IQ: Business and workplace intelligence in the flow of work",
+      "canonical_url": "https://www.microsoft.com/en-us/dynamics-365/blog/it-professional/2026/09/25/work-iq-business-and-workplace-intelligence-in-the-flow-of-work/",
+      "publisher": "Microsoft",
+      "published_at": "2026-09-25T00:00:00.000Z",
+      "freshness_tier": "extended_168h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "Microsoft describes Work IQ as a shared business-context layer for Copilot and agents. Organizations model records, relationships, business rules, and governed actions once and then reuse that understanding across multiple AI experiences rather than rebuilding context for every agent. Business skills package instructions together with the context and resources needed for a recurring task. Governed actions can present proposed changes, enforce approvals, and update systems of record within user permissions. The useful pattern is a shared semantic and governance layer that lets knowledge workers ask for outcomes across sales, service, finance, operations, and supply chain while keeping source systems authoritative. This item uses the extended 168-hour fallback because it predates the primary 72-hour window."
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "agents_non_technical_people",
+      "headline": "Introducing dots",
+      "canonical_url": "https://openai.com/index/introducing-dots/",
+      "publisher": "OpenAI",
+      "published_at": "2026-09-29T00:00:00.000Z",
+      "freshness_tier": "72h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "OpenAI introduced dots as always-on agents that can work across connected apps and continue useful work when the user is not actively interacting with them. Background proactive research is restricted to read-only connected-app tools, while actions that could affect accounts or share information are checked against instructions, Custom Rules, and safety requirements. Users can allow specific actions, require approval, or block them, and can follow background progress in Activity View. The nontechnical operating pattern is a persistent assistant with explicit permissions and approval boundaries: read-only background research can continue autonomously, while consequential actions remain reviewable or reserved for the user."
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "UiPath and Snowflake announce two-way integration connecting automation and governed data",
+      "canonical_url": "https://www.uipath.com/newsroom/uipath-and-snowflake-two-way-integration-marketplace",
+      "publisher": "UiPath",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "freshness_tier": "24h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "UiPath and Snowflake announced a two-way integration that can bring governed Snowflake data into UiPath automations and trigger UiPath automations directly from Snowflake without copying the underlying data. UiPath says its Data Fabric reads and models Snowflake data in place while preserving access controls, policies, lineage, and auditability. Snowflake CoCo can also call UiPath agentic skills through the integration. The practical pattern for business users is to keep governed data where it already lives while connecting it to automations and agents, reducing the need to move data between systems and helping actions inherit existing security and governance boundaries."
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "UiPath and BDO expand partnership to build agentic solution accelerators for continuous monitoring and testing",
+      "canonical_url": "https://www.uipath.com/newsroom/uipath-expands-partnership-with-bdo",
+      "publisher": "UiPath",
+      "published_at": "2026-09-29T00:00:00.000Z",
+      "freshness_tier": "72h",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "excerpt": "UiPath and BDO announced Agentic Internal Audit solution accelerators aimed at shifting portions of IT application-control and general-control testing from periodic manual work toward agent-driven execution with professional review. The announced accelerators are intended to monitor controls, collect evidence, run testing procedures, package workpapers and evidence trails, and surface exceptions for review. The nontechnical lesson is a bounded automation pattern for audit work: agents can perform repetitive monitoring and evidence preparation, but the workflow still includes professional review and exception handling rather than treating automated execution as final assurance."
+    }
+  ],
+  "recovery_capture": {
+    "method": "bounded_publisher_fact_capsule",
+    "excerpt_is_verbatim": false,
+    "retrieved": 9,
+    "focus_counts": {
+      "technical_ai_engineering": 3,
+      "applied_genai_knowledge_workers": 3,
+      "agents_non_technical_people": 3
+    },
+    "verified_at": "2026-10-01T17:30:51.568Z",
+    "note": "Capsules preserve publisher-supported claims only. Full-source reading counts are captured separately for selected stories before publication."
+  }
+}
