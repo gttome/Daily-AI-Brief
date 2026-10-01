@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "blocked",
-  "observed_at": "2026-10-01T04:21:38.711Z",
+  "observed_at": "2026-10-01T04:23:58.545Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -10,9 +10,9 @@
   "images_accepted": 0,
   "main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
-  "blocker": "Current scheduled native image surface has no same-result recover(operation_key/native_result_id) API; GitHub confirms only the historical blob identity and exposes no payload bytes for a fresh SHA-256/readback.",
-  "next_action": "Resume only when the same scheduled native host exposes same-result recovery plus complete bytes; create a fresh release-bound image-handoff-proof-v2, then start discovery.",
+  "controller_sha": "a86bae956ca640f68ff3d486595e72de9aa77ba0",
+  "blocker": "Scheduled image tool lacks the required same-result recovery operation. Admission remains blocked.",
+  "next_action": "Existing controller: inspect supported recovery capabilities and apply the smallest valid correction; then admit and begin fresh discovery.",
   "cards": [
     {
       "id": "11.01",
@@ -51,8 +51,8 @@
       "completed_at": null,
       "timing": "live",
       "substage": "Native host same-result recovery unavailable",
-      "blocker": "Current scheduled native image surface has no same-result recover(operation_key/native_result_id) API; GitHub confirms only the historical blob identity and exposes no payload bytes for a fresh SHA-256/readback.",
-      "next_action": "Resume only when the same scheduled native host exposes same-result recovery plus complete bytes; create a fresh release-bound image-handoff-proof-v2, then start discovery."
+      "blocker": "Scheduled image tool lacks the required same-result recovery operation. Admission remains blocked.",
+      "next_action": "Existing controller: inspect supported recovery capabilities and apply the smallest valid correction; then admit and begin fresh discovery."
     },
     {
       "id": "11.05",
@@ -262,18 +262,17 @@
   "mission_started_at": "2026-09-29T21:21:00Z",
   "controller_state_version": 2,
   "run_request": {
-    "last_observed_run": "2026-10-01T04:12:49.276109Z",
-    "status": "Primary active in this invocation; admission recovery attempted and durably recorded; no competing writer or active GitHub Action observed.",
+    "last_observed_run": "2026-10-01T04:22:46.484031Z",
+    "status": "New invocation observed; admission clearance and content production unconfirmed.",
     "request_recorded_at": "2026-10-01T04:14:18.505Z",
-    "requested_at": null
+    "requested_at": "2026-10-01T04:22:46.484031Z",
+    "requested_at_source": "automation last_run_time (invocation observed)"
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Performed the supported admission-path audit: proveImageHandoff requires host.recover plus complete native bytes.",
-    "Current native tool surface exposes generation/editing only; no recover-by-key/result operation is available.",
-    "Historical PNG blob identity 77ffaceb44 was confirmed, but binary readback was unavailable; no current certification was claimed.",
-    "Admission remains blocked; discovery was not started and the distinct September 30 binding was preserved.",
-    "Primary completion automation paused after persisting the full capability blocker; keeper and sentinel remain enabled and no duplicate executor was created."
+    "Immediate continuation requested; controller invocation recorded September 30 at 11:22:46 p.m. CT.",
+    "Primary, keeper and sentinel enabled; primary instructed not to self-pause while mission is incomplete.",
+    "No new content-stage completion; first PUBLIC CLOSED preserved; all 26 task cards retained."
   ],
   "readiness": {
     "articles": "0 / 6",
@@ -418,20 +417,20 @@
     {
       "role": "Primary",
       "enabled": true,
-      "last_run_at": "2026-10-01T04:12:49.276109Z",
-      "execution": "Immediate run requested; not confirmed"
-    },
-    {
-      "role": "Keeper",
-      "enabled": true,
-      "last_run_at": "2026-10-01T03:57:05.607139Z",
-      "execution": "No active run confirmed"
+      "last_run_at": "2026-10-01T04:22:46.484031+00:00",
+      "execution": "Invocation observed; stage progress unconfirmed"
     },
     {
       "role": "Sentinel",
       "enabled": true,
-      "last_run_at": "2026-10-01T03:55:04.161948Z",
-      "execution": "No active run confirmed"
+      "last_run_at": "2026-10-01T03:55:04.161948+00:00",
+      "execution": "Enabled; active execution unconfirmed"
+    },
+    {
+      "role": "Keeper",
+      "enabled": true,
+      "last_run_at": "2026-10-01T03:57:05.607139+00:00",
+      "execution": "Enabled; active execution unconfirmed"
     }
   ],
   "task_timing_events": [
@@ -508,5 +507,6 @@
       "GitHub base64 file fetch returned the historical blob identity but zero payload bytes.",
       "No throwaway probe, fake expiry refresh, or historical-download certification."
     ]
-  }
+  },
+  "last_durable_progress_at": "2026-10-01T04:16:25.733Z"
 }

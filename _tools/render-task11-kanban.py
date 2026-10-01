@@ -3,7 +3,7 @@ from pathlib import Path
 from datetime import datetime
 from zoneinfo import ZoneInfo
 import json,math
-ROOT=Path('.');bp=ROOT/'_records/edition-execution/task11-kanban.json';b=json.loads(bp.read_text());now=datetime.now(ZoneInfo('America/Chicago'))
+ROOT=Path('.');bp=ROOT/'_records/edition-execution/task11-kanban.json';b=json.loads(bp.read_text());now=datetime.fromisoformat(b['observed_at'].replace('Z','+00:00')).astimezone(ZoneInfo('America/Chicago'))
 W=3200;M=36;G=20
 font='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf';bold='/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf'
 F=lambda s,bo=False:ImageFont.truetype(bold if bo else font,s)
@@ -46,11 +46,11 @@ text(M,196,'PARENT 11: IN PROGRESS / BLOCKED AT ADMISSION',31,fill='#ffcc55',bo=
 text(1150,196,'Task 11 recorded elapsed: '+dur(b['parent_started_at']),27)
 text(2150,196,'Mission elapsed: '+dur(b['mission_started_at']),27)
 y=250
-for s in ['Run ID: '+b['run_id']+'    |    Edition ID: '+b['edition_id'], 'Fixed cutoff: '+stamp(b['cutoff'])+'    |    Pinned release: '+b['main_sha'][:12], 'Change: distinct identity locked; first closure reconciled; controller, keeper and status instructions updated.', 'Primary restored to enabled; immediate run requested. Active production execution is not yet confirmed.']:
+for s in ['Run ID: '+b['run_id']+'    |    Edition ID: '+b['edition_id'], 'Fixed cutoff: '+stamp(b['cutoff'])+'    |    Pinned release: '+b['main_sha'][:12], 'Change: immediate continuation invoked at '+stamp(b['run_request']['last_observed_run']), 'Controller + keeper + sentinel enabled. Admission blocked; content production is not yet confirmed.']:
  text(M,y,s,28,fill=C['muted'] if y<326 else C['text']);y+=42
 rr((M,430,W-M,535),'#453622','#ba8425')
 txtbox(M+20,445,'CURRENT BLOCKER: '+b['blocker'],W-2*M-40,29,fill='#ffd98a',bo=True)
-txtbox(M+20,490,'NEXT: Same controller recovers the prior native result, verifies exact bytes, then advances fresh discovery.',W-2*M-40,27)
+txtbox(M+20,490,'NEXT: Supported native recovery or a verified permanent correction, then admission and fresh discovery.',W-2*M-40,27)
 # Readiness strip: all ten categories, two rows.
 read=list(b['readiness'].items());tilew=(W-2*M-4*16)//5
 for i,(k,v) in enumerate(read):
@@ -79,10 +79,10 @@ for col,x,width in zip(['Backlog','WIP','Tested','Done'],lx,lw):
    text(cx+16,cy+205,'Historical Backlog exit not recorded',17,fill='#587487')
   else:
    ty=txtbox(cx+126,cy+17,t['title'],ww-144,27,fill=C['ink'],bo=True)
-   text(cx+18,cy+108,'BLOCKED / RECOVERY REQUESTED',23,fill='#9e6100',bo=True)
+   text(cx+18,cy+108,'BLOCKED / INVOCATION OBSERVED',23,fill='#9e6100',bo=True)
    text(cx+18,cy+152,'Elapsed: '+dur(t['started_at']),33,fill=C['ink'],bo=True)
    text(cx+18,cy+195,'Backlog exit: '+stamp(t['started_at']),20,fill='#456176')
-   steps=[('DONE','Bind separate edition and cutoff'),('DONE','Update the existing controller'),('DONE','Restore controller enabled state'),('DONE','Request immediate continuation'),('WAIT','Recover native producer result'),('WAIT','Persist fresh admission proof'),('NEXT','Begin fresh article discovery')]
+   steps=[('DONE','Bind separate edition and cutoff'),('DONE','Update the existing controller'),('DONE','Restore controller enabled state'),('DONE','Immediate invocation observed'),('WAIT','Supported native recovery'),('WAIT','Persist valid admission proof'),('NEXT','Begin fresh article discovery')]
    yy=cy+246
    for status,title in steps:
     text(cx+18,yy,status,20,fill='#008951' if status=='DONE' else '#a56d00',bo=True);txtbox(cx+95,yy,title,ww-112,22,fill=C['ink']);yy+=43
@@ -103,10 +103,10 @@ cx=rx+785
 for i,a in enumerate(b['automations']):
  text(cx+18,py+67+i*75,a['role']+': '+('enabled' if a['enabled'] else 'disabled'),24,bo=True)
  text(cx+18,py+97+i*75,'Last run: '+stamp(a['last_run_at']),19,fill=C['muted'])
-text(cx+18,py+304,'Current step: admission',23);text(cx+18,py+338,'Version 1  |  No active Actions',22,fill=C['muted'])
+text(cx+18,py+304,'Current step: admission / blocked',23);text(cx+18,py+338,'State version '+str(b['controller_state_version'])+' | Execution unconfirmed',22,fill=C['muted'])
 nx=cx+650
-ny=txtbox(nx+18,py+66,'Native recovery proof unavailable for pinned release.',453,27,fill='#ffc76b',bo=True)
-ny=txtbox(nx+18,ny+25,'Next: recover existing producer result; verify same bytes; admit; discover.',453,25)
+ny=txtbox(nx+18,py+66,'Scheduled image tool lacks the required recovery operation.',453,27,fill='#ffc76b',bo=True)
+ny=txtbox(nx+18,ny+25,'Next: supported recovery or verified correction; admit; discover.',453,25)
 # Image timing and evidence panel
 py+=410;rr((M,py,1800,py+426),C['panel'],C['border']);text(M+20,py+20,'Image production — actual phase timing',29,bo=True)
 headers=['IMAGE / TASK','ATTEMPTS','GENERATE','SAVE','REVIEW','ACCEPT','CYCLE']
@@ -118,7 +118,7 @@ for i,img in enumerate(b['images']):
  for x,v in zip(xs,vals):text(x,yy,v,22)
 text(M+20,py+382,'Accepted images are preserved. No phase duration is invented before an actual event.',22,fill=C['muted'])
 rr((1820,py,W-M,py+426),C['panel'],C['border']);text(1842,py+20,'Evidence, timing and changes',29,bo=True)
-notes=['First closure: protected completion + independent validation 36809593413.','Latest stage run 36813464628: SUCCESS, production stages SKIPPED (no-op).','Run-two stages are not marked complete from old-edition evidence.','Backlog: no age. WIP: elapsed from actual recorded exit.','Tested: time waiting. Done: frozen Backlog-to-Done cycle.','Earlier missing starts stay UNKNOWN; estimates are not promises.','Billing meter unobserved. No paid recurring execution enabled.']
+notes=['First closure: protected completion + independent validation 36809593413.','Immediate primary invocation: '+stamp(b['run_request']['last_observed_run']), 'Last durable stage progress: '+stamp(b['last_durable_progress_at']), 'Run-two stages are not marked complete from old-edition evidence.','WIP timer includes blocked waiting; it is not processing time.','Done: frozen Backlog-to-Done cycle; missing starts stay UNKNOWN.','Billing meter unobserved. No paid recurring execution enabled.']
 ny=py+73
 for s in notes:ny=txtbox(1842,ny,s,W-1880,24,fill=C['muted'])+9
 # footer
