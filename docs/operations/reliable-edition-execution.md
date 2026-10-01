@@ -1,6 +1,17 @@
 # Reliable edition execution
 
 > [!IMPORTANT]
+> **October 1 run-liveness amendment:** a production run is not admitted until Task 00
+> `Production Readiness Validation` passes. The run must bind a persistent run-scoped
+> keeper before content production, enforce one writer, use a 15-minute stale-Active
+> guard, inherit the latest successful PUBLIC CLOSED controller/image/publication paths,
+> and retain that keeper through terminal cleanup. The start trigger and liveness keeper
+> are separate responsibilities. After either `PUBLIC CLOSED` or `FAILED`, Task 29
+> `Run Cleanup + Next-Run Readiness` is mandatory before another run may start.
+> See `RUN-LEARNING-READINESS-PLAN.md` and `run-learning-readiness-contract.json`.
+
+
+> [!IMPORTANT]
 > **September 30 simplification / self-healing amendment:** a controller run is a start
 > trigger, not a stage pacer. Once started, the controller drains all safe dependent work
 > until completion, execution-host limits, or a blocker that remains after bounded recovery.
