@@ -230,3 +230,11 @@ connect trusted existing stage handlers, prove six real story-specific image job
 interruption recovery, then complete the first and second distinct public Briefs. Do not
 launch new full Qs or claim unattended success before that evidence exists. No Work,
 Codex, paid-model API, owner transfer, new credentials or low-quality fallback is authorized.
+
+## September 30, 2026 — Same-invocation direct-capture admission
+
+The reliable controller now has two explicit image-handoff admission modes. `native-recovery-proof-v2` remains the default and still requires the existing real producer recovery proof. `same-invocation-direct-capture-v1` is a delivery-first alternative for an execution surface that can perform native generation inside the active controller invocation but does not expose a supported cross-invocation `recover(operation_key)` callback.
+
+Direct-capture admission is deliberately **not** a capability receipt. It records no native result ID, asserts no recovery callback, proves no image generation and proves no bytes. It only allows bounded discovery/editorial/media work to proceed. The image stage must generate one story at a time and persist the returned bytes before yielding, then perform the unchanged subject/factual/structural/editorial review and exact Git content-identity checks. Six distinct accepted/locked images, the full publication manifest, protected CI, deployment and live exact-byte verification remain mandatory.
+
+An invoked result that becomes genuinely unobservable is handled only by the existing bounded `TASK_RESULT_UNRECOVERABLE` evidence: observed invocation, exhaustive supported search, unobservable outcome and real check time. That disposition consumes one of the same four attempts. It is never rewritten as success and never grants a fifth attempt. No deterministic/low-quality fallback is enabled by this admission mode.
