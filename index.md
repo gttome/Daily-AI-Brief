@@ -19,7 +19,7 @@ reader_release: true
 ## 1. Gemini Skills turn repeated instructions into reusable team procedures
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-30T00:00:00.000Z. The publisher exposed a September 30 date without an exact publication time. The gate uses start-of-day conservatively for freshness and separately records a pre-cutoff first-seen timestamp; this is the edition’s one reusable Agent Skills story.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 6 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
@@ -61,7 +61,7 @@ reader_release: true
 ## 2. Asana’s coachable agents make roles, memory, and permissions visible
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 12 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-29T00:00:00.000Z. Published on September 29 and conservatively normalized to the start of that date; it remains inside the normal 72-hour fallback and adds a distinct role, permission, and memory-governance pattern not used in the September 29 edition.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 12 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 29 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
@@ -103,7 +103,7 @@ reader_release: true
 ## 3. OpenAI pairs small-business AI workflows with local human coaching
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-30T00:00:00.000Z. The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, placing it just outside 24 hours while separate first-seen evidence proves it existed before the fixed cutoff.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
@@ -145,7 +145,7 @@ reader_release: true
 ## 4. Anthropic’s buying agent shifts sales reps toward higher-value conversations
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-30T00:00:00.000Z. The publisher exposed a September 30 date without an exact publication time. The gate conservatively treats the start of that date as the freshness timestamp, while independent first-seen evidence establishes that the article was available before the fixed cutoff.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
@@ -187,7 +187,7 @@ reader_release: true
 ## 5. OpenShell puts enforceable permissions outside the agent
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-28T08:55:00.000Z. Published about 67 hours before the fixed cutoff; selected under the normal 72-hour fallback because it is the strongest distinct implementation-level runtime-control story not used in the September 29 edition.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 28 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
@@ -229,7 +229,7 @@ reader_release: true
 ## 6. ProvenanceGuard checks whether an MCP agent cited the right source, not just a true fact
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 2026-09-29T13:07:00.000Z. Published about 39 hours before the fixed cutoff; selected under the normal 72-hour fallback because it contributes a distinct source-aware verification mechanism and was not used in the September 29 edition.</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 29 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
