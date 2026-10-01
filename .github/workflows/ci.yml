@@ -57,6 +57,13 @@ jobs:
           node --test _generator/test/*.test.mjs
           node _tools/validate-contracts.mjs
 
+      - name: Validate persistent supervision and cumulative operational learning
+        run: |
+          node _tools/run-supervisor.mjs validate-contracts --file docs/operations/task-recovery-contracts.json
+          node _tools/operational-learning.mjs validate \
+            --ledger data/operations/production-continuous-improvement-ledger.jsonl \
+            --repo-root .
+
       - name: Validate repository state
         run: node _generator/cli.mjs validate-repo --commit "${GITHUB_SHA}"
 
