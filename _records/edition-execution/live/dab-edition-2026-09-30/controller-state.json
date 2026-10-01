@@ -3,7 +3,7 @@
   "profile": "reliable-edition-v1",
   "mission": {
     "required_public_closed": 2,
-    "verified_public_closed": 1
+    "verified_public_closed": 2
   },
   "controller": {
     "owner": "chatgpt-scheduled-executor",
@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 25,
-  "status": "running",
-  "current_operation": "production_admission",
+  "version": 26,
+  "status": "completed",
+  "current_operation": "public_closed",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T07:39:33.850Z",
-  "last_progress_at": "2026-10-01T07:39:33.850Z",
+  "updated_at": "2026-10-01T08:01:35.000Z",
+  "last_progress_at": "2026-10-01T08:01:35.000Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -170,6 +170,45 @@
       },
       "repair": "Watchlist edition-effective timestamp normalized to a same-date UTC instant and the complete historical efficiency ledger restored before final staging; real verification_observed_at preserved.",
       "selection_changed": false
+    },
+    "production_admission": {
+      "result": "pass",
+      "completed_at": "2026-10-01T07:28:46.000Z",
+      "publication_pr": 308,
+      "candidate_head_sha": "4256c856a74f4577f867677f06cae1ef9ef523df",
+      "protected_ci_run": 36832124999,
+      "protected_ci_conclusion": "success"
+    },
+    "publication": {
+      "result": "pass",
+      "completed_at": "2026-10-01T07:47:16.000Z",
+      "publication_pr": 308,
+      "production_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+      "merged_main_sha": "ebf1f19bff16739d93d43e9912a2a6db073277aa",
+      "pages_run_id": 36832262021,
+      "pages_conclusion": "success"
+    },
+    "public_closed": {
+      "result": "pass",
+      "completed_at": "2026-10-01T08:01:35.000Z",
+      "edition_id": "dab-edition-2026-09-30",
+      "completion_path": "_records/publication/2026-09-30/completion.json",
+      "lifecycle_path": "_records/publication/2026-09-30/lifecycle.json",
+      "run_state_path": "_records/run-state/2026-09-30.json",
+      "production_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+      "independently_live_verified_at": "2026-10-01T07:55:53.483Z",
+      "finalization_pr": 312,
+      "closure_main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
+      "closure_ci_run": 36833694614,
+      "closure_pages_run": 36833693930,
+      "live_url": "https://gttome.github.io/Daily-AI-Brief/briefs/2026-09-30/",
+      "counts": {
+        "articles": 6,
+        "videos": 2,
+        "podcasts": 2,
+        "agent_skills_stories": 1,
+        "accepted_images": 6
+      }
     }
   },
   "handler_registry": {
@@ -237,14 +276,20 @@
     }
   },
   "task11": {
-    "status": "wip",
+    "status": "done",
     "started_at": "2026-10-01T04:05:06.189Z",
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Rerun protected CI on PR #308 with the canonical Watchlist summary, accessible count phrases, and compatible changed-today group label.",
+    "next_action": null,
     "images_accepted": 6,
-    "current_task": "11.23"
+    "current_task": "11.26",
+    "completed_at": "2026-10-01T08:01:35.000Z",
+    "verified_public_closed": 2,
+    "target_public_closed": 2,
+    "cycle_seconds": 14188.811,
+    "run_elapsed_seconds": 13753.67,
+    "mission_elapsed_seconds": 124835
   },
   "blockers": [],
   "cost_boundary": {
@@ -306,5 +351,19 @@
       "height": 630
     },
     "last_receipt": "_records/image-attempts/2026-09-30/m08-v2-attempt-1-normalized.json"
+  },
+  "closure": {
+    "observed_at": "2026-10-01T08:03:00.692Z",
+    "protected_main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
+    "controller_branch_head_before_record": "fbe1413c7dcd7db71fb6e1d5a04ab495e2ec2d64",
+    "completion_records": [
+      "_records/publication/2026-09-29/completion.json",
+      "_records/publication/2026-09-30/completion.json"
+    ],
+    "lifecycle_records": [
+      "_records/publication/2026-09-29/lifecycle.json",
+      "_records/publication/2026-09-30/lifecycle.json"
+    ],
+    "independently_verified_distinct_editions": 2
   }
 }
