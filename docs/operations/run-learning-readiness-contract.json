@@ -1,23 +1,32 @@
 {
-  "schema_version": "run-learning-readiness-v1",
-  "purpose": "Mandatory learning, cleanup and readiness contract for every Daily AI Brief production run.",
+  "schema_version": "run-learning-readiness-v2",
+  "purpose": "Mandatory cumulative learning, persistent supervision, cleanup and readiness contract for every Daily AI Brief production run.",
   "start_gate": {
     "task_id": "00",
     "name": "Production Readiness Validation",
     "must_pass_before_content_production": true,
     "latest_successful_run_inheritance_required": true,
+    "full_operational_learning_ledger_required": true,
     "checks": [
+      "operational_learning_ledger_digest",
+      "all_permanent_fixes_present",
+      "unresolved_risks_loaded",
       "one_writer",
-      "controller_available",
-      "run_scoped_keeper_enabled_and_bound",
-      "stale_active_guard_15m_or_less",
-      "no_competing_writer",
+      "run_supervisor_enabled_and_bound",
+      "supervisor_heartbeat_90s_or_less",
+      "outer_watchdog_enabled",
+      "writer_fencing_enabled",
+      "stale_active_recovery_fault_test",
+      "actionable_blocked_recovery_fault_test",
+      "duplicate_run_rejection_fault_test",
       "proven_production_image_path",
       "svg_fallback_disabled",
+      "low_quality_fallback_disabled",
       "exact_byte_capture",
       "small_png_persistence_route_available",
+      "small_png_readback_identity_verified",
       "append_only_transition_ledger",
-      "kanban_derived_from_events",
+      "kanban_digest_bound_projection",
       "executor_state_visible",
       "cost_boundary",
       "protected_ci",
@@ -26,39 +35,54 @@
       "previous_run_cleanup_pass"
     ]
   },
-  "terminal_cleanup": {
-    "final_task_id": "29",
-    "name": "Run Cleanup + Next-Run Readiness",
-    "required_after": [
-      "PUBLIC_CLOSED",
-      "FAILED"
+  "supervisor": {
+    "version": "run-supervisor-v2",
+    "interval_seconds": 60,
+    "lifecycle": "Task 00 PASS through Task 29 PASS",
+    "worker_count": 1,
+    "writer_authority_count": 1,
+    "writer_fencing": true,
+    "outer_watchdog_minutes": 5,
+    "duplicate_run_policy": "reject any second nonterminal execution; resume only exact same execution identity",
+    "states": [
+      "HEALTHY_ACTIVE",
+      "READY_IDLE",
+      "STALE_ACTIVE",
+      "BLOCKED_ACTIONABLE",
+      "BLOCKED_EXTERNAL",
+      "TERMINAL"
     ],
-    "checks": [
-      "disable_run_specific_executors",
-      "no_active_writer",
-      "reconcile_transition_ledger",
-      "reconcile_kanban",
-      "freeze_timers",
-      "preserve_production_state",
-      "clear_next_run_pointer",
-      "write_cleanup_receipt"
+    "status_requests_are_read_only": true,
+    "github_actions_job_rotation": "Supervisor may rotate before GitHub-hosted job timeout; successor resumes same execution identity under a new fence."
+  },
+  "task_recovery_contracts": {
+    "path": "docs/operations/task-recovery-contracts.json",
+    "tasks": "00-29",
+    "required_fields": [
+      "normal_operation",
+      "success_evidence",
+      "stale_after_seconds",
+      "first_recovery",
+      "alternate_recovery",
+      "retry_limit",
+      "terminal_failure_condition",
+      "invalidate_downstream",
+      "simplification_rule"
     ]
   },
-  "promotion_review": {
-    "required_after_every_run": true,
-    "revise_living_plan": true,
-    "questions": [
-      "What worked and must become mandatory?",
-      "What failed and needs a permanent correction?",
-      "What became slower and why?",
-      "What can be safely simplified?",
-      "What must the next run validate before starting?"
-    ]
+  "operational_learning": {
+    "canonical_jsonl": "data/operations/production-continuous-improvement-ledger.jsonl",
+    "human_projection": "docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md",
+    "run_delta_pattern": "_records/run-learning/incidents/<execution_id>.jsonl",
+    "task00": "Read and validate full canonical ledger; bind digest/invariant set into readiness.",
+    "during_run": "Append every material problem and fix attempt to the run-scoped durable GitHub delta as it occurs.",
+    "task29": "Merge run delta into canonical ledger; reconcile every problem; add regression protection; update timing baseline and next-run invariants."
   },
   "liveness": {
-    "stale_active_threshold_minutes": 15,
-    "stale_action": "resume_same_operation_or_record_explicit_blocked_transition",
-    "silent_active_stall_prohibited": true
+    "stale_active_threshold_minutes_max": 15,
+    "supervisor_check_seconds_target": 60,
+    "silent_active_stall_prohibited": true,
+    "actionable_blocked_wait_for_owner_prohibited": true
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
@@ -83,12 +107,44 @@
       ]
     }
   },
+  "kanban": {
+    "authoritative_source": "append_only_transition_events",
+    "projection_only": true,
+    "source_digest_required": true,
+    "supervisor_repairs_stale_projection": true
+  },
+  "terminal_cleanup": {
+    "final_task_id": "29",
+    "name": "Run Cleanup + Continuous Improvement + Next-Run Readiness",
+    "required_after": [
+      "PUBLIC_CLOSED",
+      "FAILED"
+    ],
+    "checks": [
+      "disable_run_specific_executors",
+      "no_active_writer",
+      "reconcile_transition_ledger",
+      "reconcile_kanban",
+      "freeze_timers",
+      "preserve_production_state",
+      "clear_active_run_pointer",
+      "merge_operational_learning_delta",
+      "certify_run_learning",
+      "promotion_review_complete",
+      "timing_comparison_complete",
+      "regression_protection_updated",
+      "next_run_invariant_set_complete",
+      "write_cleanup_receipt"
+    ]
+  },
   "success_state": "PUBLIC_CLOSED",
   "cost_boundary": {
     "chatgpt_work": false,
     "codex": false,
     "paid_apis": false,
     "billable_overage": false,
-    "new_credentials": false
+    "alternate_accounts": false,
+    "new_credentials": false,
+    "github_runner": "standard public-repository runner only"
   }
 }

@@ -1,0 +1,11 @@
+{
+  "schema_version": "active-production-run-v1",
+  "active": false,
+  "terminal": true,
+  "edition_id": null,
+  "execution_id": null,
+  "execution_key": null,
+  "branch": null,
+  "updated_at": "2026-10-01T22:30:00Z",
+  "note": "Supervisor v2 baseline installed inactive. Adoption of an existing run requires an explicit protected pointer update; the Supervisor/watchdog cannot invent a new execution identity."
+}

@@ -1,0 +1,121 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import {
+  activeRunDecision,
+  acquireWriterLease,
+  assertWriterFence,
+  classifyRunHealth,
+  validateTaskRecoveryContracts,
+  taskRecoveryDecision,
+  buildWorkerRequest,
+  projectKanbanFromEvents,
+  kanbanProjectionFresh
+} from '../lib/run-supervisor.mjs';
+
+function contract(){
+  const tasks={};
+  for(let i=0;i<=29;i++){
+    const id=String(i).padStart(2,'0');
+    tasks[id]={
+      task_id:id,title:'Task '+id,capability:id==='15'?'native_chatgpt':'repository',
+      normal_operation:'Execute task '+id,
+      success_evidence:'Durable success receipt',
+      stale_after_seconds:900,
+      first_recovery:'Resume the same durable operation',
+      alternate_recovery:'Reconcile durable evidence then retry bounded work',
+      retry_limit:2,
+      terminal_failure_condition:'Only external nonrecoverable failure after bounded recovery',
+      invalidate_downstream:[],
+      simplification_rule:'Preserve valid prior work and repair only the affected task'
+    };
+  }
+  return {schema_version:'task-recovery-contracts-v1',tasks};
+}
+
+test('duplicate run is rejected while same identity resumes',()=>{
+  const active={execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',terminal:false};
+  assert.equal(activeRunDecision({activeRun:active,request:{...active}}).action,'resume');
+  assert.equal(activeRunDecision({activeRun:active,request:{execution_id:'run4b',edition_id:active.edition_id,branch:'c'}}).reason,'duplicate_execution_for_same_edition');
+});
+
+test('writer lease fences stale executors and permits takeover only after expiry',()=>{
+  const first=acquireWriterLease(null,{execution_id:'run4',owner_id:'supervisor-a',now:'2026-10-01T20:00:00Z',ttl_ms:120000});
+  assert.equal(first.acquired,true);
+  const blocked=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-b',now:'2026-10-01T20:01:00Z',ttl_ms:120000});
+  assert.equal(blocked.acquired,false);
+  const takeover=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-b',now:'2026-10-01T20:03:00Z',ttl_ms:120000});
+  assert.equal(takeover.acquired,true);
+  assert.ok(takeover.lease.generation>first.lease.generation);
+  const forced=acquireWriterLease(first.lease,{execution_id:'run4',owner_id:'supervisor-c',now:'2026-10-01T20:01:30Z',ttl_ms:120000,takeover_dead_owner:true});
+  assert.equal(forced.acquired,true);
+  assert.ok(forced.lease.generation>first.lease.generation);
+  assert.throws(()=>assertWriterFence(first.lease,{execution_id:'run4',owner_id:'supervisor-a',generation:first.lease.generation,now:'2026-10-01T20:03:01Z'}),/WRITER_LEASE_EXPIRED/);
+});
+
+test('stale Active is detected without an owner status request',()=>{
+  const d=classifyRunHealth({task_state:'Active',executor_state:'Stopped',last_progress_at:'2026-10-01T20:00:00Z',now:'2026-10-01T20:01:00Z'});
+  assert.equal(d.state,'STALE_ACTIVE');
+  assert.equal(d.action,'resume_or_reconcile_same_task');
+});
+
+test('actionable Blocked automatically selects recovery contract',()=>{
+  const c=contract();
+  const classification=classifyRunHealth({task_state:'Blocked',blocked_recoverable:true});
+  assert.equal(classification.state,'BLOCKED_ACTIONABLE');
+  const decision=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:0});
+  assert.equal(decision.action,'first_recovery');
+  assert.equal(decision.capability,'native_chatgpt');
+});
+
+test('all Tasks 00 through 29 require recovery contracts',()=>{
+  assert.deepEqual(validateTaskRecoveryContracts(contract()),[]);
+  const bad=contract(); delete bad.tasks['16'];
+  assert.ok(validateTaskRecoveryContracts(bad).includes('task_recovery_missing:16'));
+});
+
+test('worker request is idempotent for the same durable recovery request',()=>{
+  const args={execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',task_id:'15',capability:'native_chatgpt',instruction:'Resume same image attempt',writer_generation:3,recovery_attempt:1,created_at:'2026-10-01T20:00:00Z'};
+  assert.equal(buildWorkerRequest(args).request_key,buildWorkerRequest(args).request_key);
+});
+
+test('Kanban drift is detected and corrected from authoritative events',()=>{
+  const tasks={ '00':{title:'Readiness'}, '01':{title:'Bind'} };
+  const events=[
+    {task_id:'00',from:'Backlog',to:'Active',at:'2026-10-01T20:00:00Z'},
+    {task_id:'00',from:'Active',to:'Done',at:'2026-10-01T20:01:00Z'},
+    {task_id:'01',from:'Backlog',to:'Active',at:'2026-10-01T20:01:01Z'}
+  ];
+  const k=projectKanbanFromEvents({tasks,events,execution_id:'run4',edition_id:'dab-edition-2026-10-01',observed_at:'2026-10-01T20:02:00Z'});
+  assert.equal(k.tasks['00'].state,'Done');
+  assert.equal(k.tasks['01'].state,'Active');
+  assert.equal(kanbanProjectionFresh({events,kanban:k}).fresh,true);
+  const stale={...k,source_event_digest:'sha256:'+'0'.repeat(64)};
+  assert.equal(kanbanProjectionFresh({events,kanban:stale}).fresh,false);
+});
+
+test('terminal classification always goes to Task 29 before supervisor stop',()=>{
+  const d=classifyRunHealth({terminal:true,task_state:'Done'});
+  assert.equal(d.state,'TERMINAL');
+  assert.equal(taskRecoveryDecision({classification:d,taskContract:contract().tasks['29']}).action,'task29');
+});
+
+test('Supervisor workflow contains the one-minute loop, single concurrency lane and fenced writer',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/group: daily-ai-brief-run-supervisor/);
+  assert.match(y,/cancel-in-progress: false/);
+  assert.match(y,/sleep 60/);
+  assert.match(y,/writer-lease/);
+  assert.match(y,/assert-fence/);
+  assert.match(y,/timeout-minutes: 330/);
+  assert.doesNotMatch(y,/schedule:/);
+});
+
+test('watchdog runs every five minutes and can only restart the active pointer identity',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  assert.match(y,/cron: '\*\/5 \* \* \* \*'/);
+  assert.match(y,/data\/operations\/active-production-run\.json/);
+  assert.match(y,/gh workflow run run-supervisor\.yml/);
+  assert.match(y,/takeover_dead_owner=true/);
+  assert.doesNotMatch(y,/create.*run/i);
+});
