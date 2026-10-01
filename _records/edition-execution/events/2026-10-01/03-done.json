@@ -1,0 +1,14 @@
+{
+  "task_id": "03",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T16:47:22.220Z",
+  "source": "scheduled production run",
+  "reason": "October 1 edition bound to current protected main with a post-start cutoff and distinct execution identity.",
+  "proof": {
+    "edition_id": "dab-edition-2026-10-01",
+    "execution_id": "reliable-edition-20261001",
+    "original_cutoff": "2026-10-01T16:43:31.127Z",
+    "baseline_main_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2"
+  }
+}

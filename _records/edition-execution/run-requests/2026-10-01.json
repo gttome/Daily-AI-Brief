@@ -7,16 +7,18 @@
     "utc": "2026-10-01T16:30:00Z",
     "timezone": "America/Chicago"
   },
-  "status": "PREFLIGHT_READY",
+  "status": "BOUND",
   "start_before_scheduled_time": false,
   "single_writer_required": true,
   "controller_branch": "reliable-edition/dab-edition-2026-10-01",
   "baseline_main_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
   "binding": {
-    "status": "PENDING_START",
-    "original_cutoff": null,
-    "execution_id": null,
-    "note": "Bind the actual run identity and original cutoff at/after the scheduled 11:30 AM CT start after refreshing protected main."
+    "status": "BOUND",
+    "original_cutoff": "2026-10-01T16:43:31.127Z",
+    "execution_id": "reliable-edition-20261001",
+    "bound_at": "2026-10-01T16:47:22.220Z",
+    "release_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+    "research_baseline_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2"
   },
   "cost_boundary": {
     "chatgpt_work_authorized": false,
@@ -31,7 +33,8 @@
     "path": "_records/edition-execution/kanban/2026-10-01.json",
     "transition_model": "append-only event per state move",
     "timestamp_every_move": true,
-    "infer_missing_times": false
+    "infer_missing_times": false,
+    "event_directory": "_records/edition-execution/events/2026-10-01/"
   },
   "production_rules": [
     "Refresh protected main and durable current-day state before binding the run.",
