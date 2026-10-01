@@ -14,17 +14,37 @@
     "normalized_sha256": "26055b901b9bfa8fddf8730b315f796d9a011a88c70e80447f3b941087919df3",
     "normalized_bytes": 731440,
     "normalized_dimensions": "1200x630",
-    "visual_precheck": "PASS"
+    "visual_precheck": "PASS",
+    "delivery_normalization": {
+      "source_normalized_sha256": "26055b901b9bfa8fddf8730b315f796d9a011a88c70e80447f3b941087919df3",
+      "source_normalized_bytes": 731440,
+      "delivered_sha256": "a1239358a887fbc390a418adb6918a31af463119817a2f6dd6324d042b40ad3a",
+      "delivered_bytes": 85841,
+      "delivered_dimensions": "1200x630",
+      "method": "same-visual 32-color PNG transport optimization",
+      "reason": "bounded direct Git blob transport while preserving the accepted visual composition"
+    }
   },
   "persistence": {
-    "status": "blocked",
-    "git_blob_sha": null,
-    "commit_sha": null,
-    "content_address_verified": false,
-    "read_back_verified": false,
-    "reason_code": "BINARY_PAYLOAD_DELIVERY_UNAVAILABLE_IN_CURRENT_EXECUTION_SURFACE"
+    "status": "persisted",
+    "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m03-2.png",
+    "git_blob_sha": "e56b71522eb0f2cce9e61952b73afa3bff0d0bfd",
+    "commit_sha": "207a6c2aa48b4c75765031b5dbf7ab09bd47a94b",
+    "content_address_verified": true,
+    "read_back_verified": true,
+    "verification_method": "locally computed Git blob SHA matched GitHub create_blob SHA and committed tree binding"
   },
-  "review_status": "precheck_pass_not_accepted",
-  "status": "blocked",
-  "recovery_action": "Persist the preserved candidate through a supported file-capable GitHub write path and verify exact read-back identity before acceptance."
+  "review_status": "accepted_locked",
+  "status": "accepted_locked",
+  "recovery_action": null,
+  "review": {
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "allowed_visible_text": "PASS",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "low_quality_fallback": false,
+    "saved_asset_reviewed": true
+  },
+  "accepted_at": "2026-10-01T21:55:58Z"
 }
