@@ -1,0 +1,415 @@
+{
+  "parent_task": "11",
+  "status": "blocked",
+  "observed_at": "2026-10-01T04:13:46.395Z",
+  "verified_public_closed": 1,
+  "target_public_closed": 2,
+  "candidate_edition": "2026-09-30",
+  "edition_binding": "Locked",
+  "run_id": "reliable-edition-20260930-second",
+  "images_accepted": 0,
+  "main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+  "controller_branch": "reliable-edition/dab-edition-2026-09-30",
+  "controller_sha": "b8235ca1f06ca97021592f6651e8cbd285986bfc",
+  "blocker": "Native producer recovery is required; historical proof expired and binds an older release.",
+  "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery.",
+  "cards": [
+    {
+      "id": "11.01",
+      "title": "Refresh main, live state and active runs",
+      "depends_on": "—",
+      "column": "Done",
+      "started_at": null,
+      "completed_at": "2026-10-01T04:05:23.505013+00:00",
+      "timing": "UNKNOWN"
+    },
+    {
+      "id": "11.02",
+      "title": "Reconcile first PUBLIC CLOSED receipt",
+      "depends_on": "01",
+      "column": "Done",
+      "started_at": null,
+      "completed_at": "2026-10-01T04:05:23.505013+00:00",
+      "timing": "UNKNOWN"
+    },
+    {
+      "id": "11.03",
+      "title": "Select distinct edition, cutoff and run ID",
+      "depends_on": "02",
+      "column": "Done",
+      "started_at": null,
+      "completed_at": "2026-10-01T04:12:21.330Z",
+      "timing": "UNKNOWN",
+      "proof": "b8235ca1f0 / distinct binding"
+    },
+    {
+      "id": "11.04",
+      "title": "Start existing controller; record start",
+      "depends_on": "03",
+      "column": "WIP",
+      "started_at": "2026-10-01T04:13:46.395Z",
+      "completed_at": null,
+      "timing": "live",
+      "substage": "Native host admission recovery",
+      "blocker": "Native producer recovery is required; historical proof expired and binds an older release.",
+      "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery."
+    },
+    {
+      "id": "11.05",
+      "title": "Discover fresh article candidates",
+      "depends_on": "04",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.06",
+      "title": "Verify evidence and seven-day fallback",
+      "depends_on": "05",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.07",
+      "title": "Lock six stories: 2 / 2 / 2; one Skill",
+      "depends_on": "06",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.08",
+      "title": "Select and verify two videos",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.09",
+      "title": "Select and verify required podcasts",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.10",
+      "title": "Refresh Emerging AI Watchlist",
+      "depends_on": "05",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.11",
+      "title": "Map relevant Professional Series books",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.12",
+      "title": "Seal six story-specific image specs",
+      "depends_on": "07",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.13",
+      "title": "Generate, save and accept image 1",
+      "depends_on": "12",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.14",
+      "title": "Generate, save and accept image 2",
+      "depends_on": "13",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.15",
+      "title": "Generate, save and accept image 3",
+      "depends_on": "14",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.16",
+      "title": "Generate, save and accept image 4",
+      "depends_on": "15",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.17",
+      "title": "Generate, save and accept image 5",
+      "depends_on": "16",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.18",
+      "title": "Generate, save and accept image 6",
+      "depends_on": "17",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.19",
+      "title": "Review six-image set and accessibility",
+      "depends_on": "13–18",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.20",
+      "title": "Assemble canonical edition and pages",
+      "depends_on": "08–11,19",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.21",
+      "title": "Refresh digests and seal immutable bundle",
+      "depends_on": "20",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.22",
+      "title": "Run qualification and focused repairs",
+      "depends_on": "21",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.23",
+      "title": "Open publication PR; pass protected CI",
+      "depends_on": "22",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.24",
+      "title": "Merge and deploy exact approved SHA",
+      "depends_on": "23",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.25",
+      "title": "Independently verify live edition",
+      "depends_on": "24",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    },
+    {
+      "id": "11.26",
+      "title": "Record PUBLIC CLOSED #2; close task 11",
+      "depends_on": "25",
+      "column": "Backlog",
+      "started_at": null,
+      "completed_at": null,
+      "timing": "Not started"
+    }
+  ],
+  "schema_version": "task11-kanban-v2",
+  "edition_id": "dab-edition-2026-09-30",
+  "edition_date": "2026-09-30",
+  "cutoff": "2026-10-01T04:12:21.330Z",
+  "run_started_at": "2026-10-01T04:12:21.330Z",
+  "parent_started_at": "2026-10-01T04:05:06.189Z",
+  "mission_started_at": "2026-09-29T21:21:00Z",
+  "controller_state_version": 1,
+  "run_request": {
+    "requested_at": "2026-10-01T04:05:55.528578Z",
+    "last_observed_run": "2026-10-01T04:12:49.276109Z",
+    "status": "Prior request executed; no admission evidence written; controller became disabled."
+  },
+  "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
+  "changes": [
+    "Distinct Sep 30 edition bound; original cutoff and run identity locked.",
+    "First closure retained; 26 child cards preserved.",
+    "Controller prompt advanced from stale Sep 29 task08 to second-run admission.",
+    "Primary became disabled after its latest invocation; restoring the same controller."
+  ],
+  "readiness": {
+    "articles": "0 / 6",
+    "editorial": "Not started",
+    "videos": "0 / 2",
+    "podcasts": "0 / 2",
+    "images": "0 / 6",
+    "watchlist": "Not started",
+    "books": "Not started; 4-book catalog",
+    "bundle": "Not started",
+    "qualification": "Not started",
+    "publication": "Not started"
+  },
+  "pipeline": [
+    {
+      "stage": "Admission",
+      "status": "BLOCKED"
+    },
+    {
+      "stage": "Content",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "Bundle",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "Qualified",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "Protected CI",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "Deployed",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "Live verified",
+      "status": "NOT STARTED"
+    },
+    {
+      "stage": "Public closed",
+      "status": "NOT STARTED"
+    }
+  ],
+  "live_public": {
+    "edition": "2026-09-29",
+    "production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+    "latest_pages_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "latest_pages_run": 36812388648,
+    "main_ci_run": 36812389092
+  },
+  "latest_stage_run": {
+    "id": 36813464628,
+    "result": "success",
+    "production_stages": "skipped; no-op"
+  },
+  "timing_policy": {
+    "backlog": "Not started; no age",
+    "wip": "Now minus recorded Backlog exit",
+    "tested": "Now minus Tested entry",
+    "done": "Done entry minus Backlog exit; frozen",
+    "missing": "UNKNOWN; never inferred from screenshot"
+  },
+  "images": [
+    {
+      "image": 1,
+      "task_id": "11.13",
+      "candidate": null,
+      "attempts": 0,
+      "generate_started_at": null,
+      "saved_at": null,
+      "reviewed_at": null,
+      "accepted_at": null,
+      "status": "Not started",
+      "elapsed_seconds": null
+    },
+    {
+      "image": 2,
+      "task_id": "11.14",
+      "candidate": null,
+      "attempts": 0,
+      "generate_started_at": null,
+      "saved_at": null,
+      "reviewed_at": null,
+      "accepted_at": null,
+      "status": "Not started",
+      "elapsed_seconds": null
+    },
+    {
+      "image": 3,
+      "task_id": "11.15",
+      "candidate": null,
+      "attempts": 0,
+      "generate_started_at": null,
+      "saved_at": null,
+      "reviewed_at": null,
+      "accepted_at": null,
+      "status": "Not started",
+      "elapsed_seconds": null
+    },
+    {
+      "image": 4,
+      "task_id": "11.16",
+      "candidate": null,
+      "attempts": 0,
+      "generate_started_at": null,
+      "saved_at": null,
+      "reviewed_at": null,
+      "accepted_at": null,
+      "status": "Not started",
+      "elapsed_seconds": null
+    },
+    {
+      "image": 5,
+      "task_id": "11.17",
+      "candidate": null,
+      "attempts": 0,
+      "generate_started_at": null,
+      "saved_at": null,
+      "reviewed_at": null,
+      "accepted_at": null,
+      "status": "Not started",
+      "elapsed_seconds": null
+    },
+    {
+      "image": 6,
+      "task_id": "11.18",
+      "candidate": null,
+      "attempts": 0,
+      "generate_started_at": null,
+      "saved_at": null,
+      "reviewed_at": null,
+      "accepted_at": null,
+      "status": "Not started",
+      "elapsed_seconds": null
+    }
+  ]
+}
