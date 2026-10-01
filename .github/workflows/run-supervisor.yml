@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - data/operations/active-production-run.json
+      - _generator/lib/run-supervisor.mjs
+      - _tools/run-supervisor.mjs
+      - docs/operations/task-recovery-contracts.json
+      - .github/workflows/run-supervisor.yml
   workflow_dispatch:
     inputs:
       run_branch:
@@ -35,7 +39,7 @@ permissions:
 
 concurrency:
   group: daily-ai-brief-run-supervisor
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   supervise:
@@ -74,7 +78,7 @@ jobs:
             execution_key="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_key)")"
             execution_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_id)")"
             edition_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.edition_id)")"
-            takeover=false
+            takeover=true
             should_run=true
           fi
           {
@@ -160,6 +164,9 @@ jobs:
           set -euo pipefail
           lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
           for loop in $(seq 1 315); do
+            # Hot-reload protected control-plane code/contracts every loop.
+            git -C control fetch --no-tags origin main
+            git -C control reset --hard origin/main
             git -C run fetch --no-tags origin "$RUN_BRANCH"
             git -C run reset --hard "origin/$RUN_BRANCH"
 
