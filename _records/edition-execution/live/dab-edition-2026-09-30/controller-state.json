@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 3,
+  "version": 4,
   "status": "running",
-  "current_operation": "editorial",
+  "current_operation": "images",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T05:48:17.443Z",
-  "last_progress_at": "2026-10-01T05:48:17.443Z",
+  "updated_at": "2026-10-01T06:21:11.880Z",
+  "last_progress_at": "2026-10-01T06:21:11.880Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -83,6 +83,20 @@
       "updated": 3,
       "carried": 13,
       "focused_checks": 14
+    },
+    "editorial": {
+      "result": "pass",
+      "completed_at": "2026-10-01T06:21:11.880Z",
+      "kernel": "_records/editorial-handoff/kernel-2026-09-30.json",
+      "book_mapping": "_records/editorial-handoff/book-mappings-2026-09-30.json",
+      "stories_locked": 6,
+      "items_reviewed": 10,
+      "verified_anchors": 32,
+      "item_anchor_pairs": 320,
+      "mapped_items": 10,
+      "books_selected": 4,
+      "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
+      "items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c"
     }
   },
   "handler_registry": {
@@ -155,9 +169,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Complete the four-book item-anchor review matrix and deterministic mappings; then seal six image specifications.",
+    "next_action": "Seal six story-specific image specifications from the locked kernel, then run the six same-invocation direct-capture image stages serially.",
     "images_accepted": 0,
-    "current_task": "11.11"
+    "current_task": "11.12"
   },
   "blockers": [],
   "cost_boundary": {
