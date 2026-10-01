@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-09-30",
+  "edition_date": "2026-09-30",
+  "policy_id": "production-image-execution-v2",
+  "render_policy_id": "strict-image-render-spec-v1",
+  "status": "sealed",
+  "images": [
+    {
+      "candidate_id": "m02",
+      "story_id": "dab-story-2026-09-30-77eb0ae9",
+      "request_path": "_records/image-context/2026-09-30/m02.json",
+      "request_sha256": "f10c30b2d251d5bf6eccc15e0f253e2b54d54c027fd806c6e967fa164b319545",
+      "composition_mode": "layered_architecture",
+      "visible_text_allowlist": [
+        "Agent Sandbox",
+        "Policy Supervisor",
+        "Network Rules",
+        "Credential Vault",
+        "Approved Services",
+        "Allow or Block",
+        "Policy Log"
+      ],
+      "alt_text": "Textbook architecture diagram showing an AI agent inside a sandbox, an external policy supervisor checking network and credential access, and approved services outside the workload."
+    },
+    {
+      "candidate_id": "m03",
+      "story_id": "dab-story-2026-09-30-bb1d40df",
+      "request_path": "_records/image-context/2026-09-30/m03.json",
+      "request_sha256": "36b8a13a6d7880bd61f45a54eb34d5b0aa5ce1085f87298f1f14b239f2c99914",
+      "composition_mode": "linear_flow",
+      "visible_text_allowlist": [
+        "MCP Answer",
+        "Claims",
+        "Source ID",
+        "Support Check",
+        "Attribution Check",
+        "Allow",
+        "Block",
+        "Repair"
+      ],
+      "alt_text": "Textbook flow diagram showing an MCP answer decomposed into claims, each matched to a source, checked for factual support and attribution, and then allowed, blocked, or repaired."
+    },
+    {
+      "candidate_id": "m04",
+      "story_id": "dab-story-2026-09-30-5d21346f",
+      "request_path": "_records/image-context/2026-09-30/m04.json",
+      "request_sha256": "92ec752f54e88b8b01167190fdbba11c0e8ed4eb8c51ff39d48092c26c5aabf1",
+      "composition_mode": "panel_based_explanation",
+      "visible_text_allowlist": [
+        "Small Business Workflow",
+        "Local Advisor",
+        "Hands-on Test",
+        "Human Review",
+        "Outcome Measure",
+        "Iterate or Stop"
+      ],
+      "alt_text": "Textbook workflow showing a small business choosing a recurring task, receiving hands-on AI coaching, testing the workflow, reviewing results, measuring value, and iterating."
+    },
+    {
+      "candidate_id": "m05",
+      "story_id": "dab-story-2026-09-30-9d62316c",
+      "request_path": "_records/image-context/2026-09-30/m05.json",
+      "request_sha256": "941bc346d4c28fabc73eefbe2b99cefffcf90ac45c68e5a88890836e84333f83",
+      "composition_mode": "annotated_system",
+      "visible_text_allowlist": [
+        "Inbound Question",
+        "Buying Agent",
+        "Quick Answer",
+        "Purchase",
+        "Human Handoff",
+        "Context Packet",
+        "Escalation Reason",
+        "Weekly Improvement"
+      ],
+      "alt_text": "Textbook decision flow showing inbound sales questions going to an AI buying agent, then to purchase, quick answer, or human handoff, with escalation reasons feeding a workflow improvement loop."
+    },
+    {
+      "candidate_id": "m07",
+      "story_id": "dab-story-2026-09-30-3b6d7f96",
+      "request_path": "_records/image-context/2026-09-30/m07.json",
+      "request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
+      "composition_mode": "story_fit_editorial",
+      "visible_text_allowlist": [
+        "Recurring Task",
+        "Gemini Skill",
+        "Instructions",
+        "Examples",
+        "Named Owner",
+        "Team Reuse",
+        "Process Update"
+      ],
+      "alt_text": "Textbook diagram showing repeated prompts becoming a maintained reusable Gemini Skill with instructions, examples, ownership, reuse across tasks, and a versioned update loop."
+    },
+    {
+      "candidate_id": "m08",
+      "story_id": "dab-story-2026-09-30-63e10dfd",
+      "request_path": "_records/image-context/2026-09-30/m08.json",
+      "request_sha256": "bd6d5ef3a8b1e41640fa92df35537bc4b070e0502ca7cf36e549d068c5334acf",
+      "composition_mode": "comparison",
+      "visible_text_allowlist": [
+        "AI Teammate",
+        "Role",
+        "Approved Users",
+        "Scoped Access",
+        "Visible Tasks",
+        "Task Feedback",
+        "Admin Review",
+        "Shared Memory"
+      ],
+      "alt_text": "Textbook operating model showing an AI teammate profile with role, permissions, skills, users and administrators, plus a task-feedback path separated from editor-controlled permanent memory."
+    }
+  ],
+  "packet_count": 6,
+  "sealed_story_ids": [
+    "dab-story-2026-09-30-77eb0ae9",
+    "dab-story-2026-09-30-bb1d40df",
+    "dab-story-2026-09-30-5d21346f",
+    "dab-story-2026-09-30-9d62316c",
+    "dab-story-2026-09-30-3b6d7f96",
+    "dab-story-2026-09-30-63e10dfd"
+  ],
+  "no_cross_story_context": true,
+  "low_quality_fallback": false,
+  "sealed_at": "2026-10-01T06:26:25.082Z",
+  "execution_paths": [
+    "_records/image-context/2026-09-30/m02.json",
+    "_records/image-context/2026-09-30/m03.json",
+    "_records/image-context/2026-09-30/m04.json",
+    "_records/image-context/2026-09-30/m05.json",
+    "_records/image-context/2026-09-30/m07.json",
+    "_records/image-context/2026-09-30/m08.json"
+  ],
+  "review_order": [
+    "m02",
+    "m03",
+    "m04",
+    "m05",
+    "m07",
+    "m08"
+  ],
+  "generation_started": false
+}
