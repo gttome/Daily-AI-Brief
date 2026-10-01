@@ -263,6 +263,30 @@
         "_generator/test/qualification-image-subject-lock.test.mjs",
         "_generator/test/continuous-qualification-contract.test.mjs"
       ]
+    },
+    {
+      "patterns": [
+        "_generator/lib/run-supervisor.mjs",
+        "_generator/lib/operational-learning.mjs",
+        "_generator/lib/run-readiness.mjs",
+        "_tools/run-supervisor.mjs",
+        "_tools/operational-learning.mjs",
+        "_generator/validate-ledgers.mjs",
+        "docs/operations/task-recovery-contracts.json",
+        "docs/operations/run-learning-readiness-contract.json",
+        "docs/operations/RUN-LEARNING-READINESS-PLAN.md",
+        "data/operations/production-continuous-improvement-ledger.jsonl",
+        ".github/workflows/run-supervisor.yml",
+        ".github/workflows/run-supervisor-watchdog.yml"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/run-supervisor.test.mjs",
+        "_generator/test/operational-learning.test.mjs",
+        "_generator/test/run-readiness.test.mjs",
+        "_generator/test/reliable-execution.test.mjs",
+        "_generator/test/run-state-recovery.test.mjs"
+      ]
     }
   ],
   "sentinel_cases": [
@@ -310,7 +334,18 @@
     "wave5_clean_edition_qualifies",
     "wave5_unproven_metric_disqualifies",
     "wave5_consecutive_streak_resets",
-    "wave5_recovery_qualification_matrix"
+    "wave5_recovery_qualification_matrix",
+    "run_supervisor_worker_dies_mid_task",
+    "run_supervisor_stale_active_without_owner_status",
+    "run_supervisor_actionable_blocked_auto_recovery",
+    "run_supervisor_watchdog_same_execution_restart",
+    "run_supervisor_duplicate_run_rejected",
+    "run_supervisor_stale_writer_fence_rejected",
+    "operational_learning_full_ledger_inherited_at_task00",
+    "operational_learning_new_problem_recorded_during_run",
+    "task29_learning_reconciled_before_next_run_ready",
+    "kanban_event_digest_drift_auto_repaired",
+    "small_png_route_executable_task00_gate"
   ],
   "prohibitions": [
     "run_all_by_default_after_isolated_change",
