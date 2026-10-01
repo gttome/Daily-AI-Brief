@@ -1328,3 +1328,18 @@ Operational consequence: future fresh qualification identities must fail fast on
 The production controller may explicitly select `same-invocation-direct-capture-v1` when the native image surface supports generation in the active invocation but exposes no supported same-result recovery callback. This does not certify native recovery or image completion. It moves that proof to the actual image stage: one sealed story → one native generation → immediate exact-byte Git persistence → saved-byte review → accept/retry, with no yield between generation and attempted capture.
 
 Default reliable-edition behavior remains `native-recovery-proof-v2`. Direct-capture admission cannot satisfy an image receipt, image-quality record, bundle, qualification, publication or PUBLIC CLOSED gate. If an invoked native result becomes unobservable before persistence, only complete `TASK_RESULT_UNRECOVERABLE` evidence may consume that bounded attempt and permit the next one. No fifth attempt, manual owner handoff, low-quality renderer fallback or fabricated PASS is allowed.
+
+
+## 2026-10-01 — Run learning, readiness and terminal cleanup amendment
+
+Every production run now begins with **Task 00 — Production Readiness Validation** and ends with **Task 29 — Run Cleanup + Next-Run Readiness**, regardless of whether the terminal state is independently verified `PUBLIC CLOSED` or `FAILED`.
+
+Task 00 validates successful-run inheritance from the most recent PUBLIC CLOSED run, persistent run-scoped supervision, one-writer enforcement, stale-Active recovery, the proven professional image path, append-only timing/Kanban integrity, protected publication gates and the no-incremental-cost boundary. A one-shot start trigger may not be the sole executor.
+
+An Active task with no durable progress for 15 minutes must be resumed by the same-run keeper or explicitly transitioned to Blocked with a timestamped blocker and recovery action. Task state and executor liveness are separate observables.
+
+The production image path is locked to `production-image-execution-v2: generate → transfer exact file → verify content identity → review saved asset → accept/reject`. Repository-generated SVG/basic-diagram substitution and low-quality fallback are prohibited unless the owner explicitly changes policy and the same quality contract passes.
+
+Task 29 disables run-specific executors, verifies no active writer remains, reconciles transition/Kanban timing, freezes terminal metrics, preserves immutable evidence and public production, and writes a PASS cleanup receipt before the next run may start.
+
+After Task 29, a Run Promotion Review records Keep / Fix / Simplify / Validate-next findings and revises `RUN-LEARNING-READINESS-PLAN.md` and its machine contract when new evidence changes the production baseline. Repeated successful runs may produce an empty Fix section; the goal is convergence to stable operations, not continual process growth.
