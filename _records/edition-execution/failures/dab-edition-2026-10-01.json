@@ -1,0 +1,39 @@
+{
+  "schema_version": "daily-brief-run-failure-v1",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001",
+  "terminal_state": "FAILED",
+  "failed_at": "2026-10-01T19:42:42.070381Z",
+  "published": false,
+  "public_closed": false,
+  "accepted_images": 0,
+  "completed_tasks": [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ],
+  "first_incomplete_task": "13",
+  "failure_classes": [
+    "run_liveness_control_regression",
+    "one_shot_executor_without_persistent_supervision",
+    "stale_active_state_not_recovered_automatically",
+    "production_image_path_regression_to_unapproved_svg_renderer"
+  ],
+  "preserved_evidence": [
+    "_records/edition-execution/events/2026-10-01/",
+    "_records/editorial-handoff/",
+    "_records/watchlist-sweeps/2026-10-01.json",
+    "_records/image-quality/2026-10-01-preaccept-rejections.json"
+  ],
+  "publication_effect": "No October 1 edition was published. Existing public production remains unchanged.",
+  "next_required_state": "RUN_CLEANUP_AND_NEXT_RUN_READINESS"
+}
