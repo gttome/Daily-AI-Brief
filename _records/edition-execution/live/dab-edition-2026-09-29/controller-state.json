@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 29,
-  "status": "active",
-  "current_operation": "second_edition_admission",
+  "version": 30,
+  "status": "completed",
+  "current_operation": "second_edition",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -348,7 +348,7 @@
     }
   },
   "blockers": [],
-  "updated_at": "2026-10-01T04:05:06.189Z",
+  "updated_at": "2026-10-01T04:12:57.393Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -386,7 +386,7 @@
     ],
     "compatibility_reason": "controller simplification, bounded self-healing, immutable-result projection, passive timing; no editorial/media/image acceptance semantics weakened"
   },
-  "last_progress_at": "2026-10-01T04:05:06.189Z",
+  "last_progress_at": "2026-10-01T04:12:57.393Z",
   "task08": {
     "status": "done",
     "substage": "qualification_passed",
@@ -444,10 +444,20 @@
     "started_at": "2026-10-01T04:05:06.189Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Refresh native host admission using existing producer result, then bind next distinct edition and execute discovery.",
+    "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery.",
     "candidate_edition_date": "2026-09-30",
     "date_selection_basis": "Next unpublished calendar edition after independently closed 2026-09-29; no second-edition branch or queued binding found.",
-    "edition_binding_status": "pending_admission",
-    "images_accepted": 0
+    "edition_binding_status": "bound",
+    "images_accepted": 0,
+    "active_branch": "reliable-edition/dab-edition-2026-09-30",
+    "active_edition_id": "dab-edition-2026-09-30"
+  },
+  "next_edition": {
+    "edition_id": "dab-edition-2026-09-30",
+    "branch": "reliable-edition/dab-edition-2026-09-30",
+    "state_path": "_records/edition-execution/live/dab-edition-2026-09-30/controller-state.json",
+    "run_id": "reliable-edition-20260930-second",
+    "cutoff": "2026-10-01T04:12:21.330Z",
+    "bound_at": "2026-10-01T04:12:21.330Z"
   }
 }
