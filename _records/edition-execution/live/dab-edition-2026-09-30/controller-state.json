@@ -45,8 +45,8 @@
   "status": "completed",
   "current_operation": "public_closed",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T08:01:35.000Z",
-  "last_progress_at": "2026-10-01T08:01:35.000Z",
+  "updated_at": "2026-10-01T08:04:38.564Z",
+  "last_progress_at": "2026-10-01T08:04:38.564Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -364,6 +364,26 @@
       "_records/publication/2026-09-29/lifecycle.json",
       "_records/publication/2026-09-30/lifecycle.json"
     ],
-    "independently_verified_distinct_editions": 2
+    "independently_verified_distinct_editions": 2,
+    "controller_branch_head_before_shutdown_record": "8f813dc21e65cf90eb5f0488f22a7ed7e715ea9e"
+  },
+  "automations": {
+    "observed_at": "2026-10-01T08:04:38.564Z",
+    "primary": {
+      "id": "6abaf03d6c608191be014dd1765468d3",
+      "enabled": false,
+      "state": "DISABLED_MISSION_COMPLETE"
+    },
+    "keeper": {
+      "id": "6abbc140a31c8191add39f59ba06f522",
+      "enabled": false,
+      "state": "DISABLED_MISSION_COMPLETE"
+    },
+    "sentinel": {
+      "id": "6ab92da22cb08191951062354823191b",
+      "enabled": false,
+      "state": "DISABLED_MISSION_COMPLETE"
+    },
+    "reason": "Two distinct editions are independently PUBLIC CLOSED on protected main."
   }
 }
