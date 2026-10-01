@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T05:01:09.216929Z",
+  "observed_at": "2026-10-01T05:04:00.740393Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -12,7 +12,7 @@
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
   "controller_sha": "3cea9cac92d0c8673ecfb8a6a80e16540e6b013c",
   "blocker": null,
-  "next_action": "Perform exactly one semantic selection pass over the frozen evidence packet and persist the six-story kernel.",
+  "next_action": "Verify two videos, then two source-diverse podcasts; keep the six-story lock unchanged.",
   "cards": [
     {
       "id": "11.01",
@@ -83,21 +83,24 @@
       "id": "11.07",
       "title": "Lock six stories: 2 / 2 / 2; one Skill",
       "depends_on": "06",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T05:01:09.216929Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "Single semantic selection pass over frozen nine-candidate packet",
-      "next_action": "Lock exactly 2 / 2 / 2 with exactly one Agent Skills story."
+      "completed_at": "2026-10-01T05:04:00.740393Z",
+      "timing": "2m 51.524s",
+      "substage": "Six stories locked: exact 2 / 2 / 2; one Agent Skills story; one semantic pass",
+      "next_action": null,
+      "proof": "_records/editorial-handoff/semantic-selection-2026-09-30.json"
     },
     {
       "id": "11.08",
       "title": "Select and verify two videos",
       "depends_on": "07",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T05:04:00.740393Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "Verify two fresh videos under media freshness and duration policy",
+      "next_action": "Select two verified videos, target ≤10 minutes; use ≤20 only if the approved fallback is required."
     },
     {
       "id": "11.09",
@@ -279,12 +282,12 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Task 11.06 completed: nine source-backed capsules, balanced 3 / 3 / 3, 10,937 model-visible characters.",
-    "Task 11.07 started: one semantic pass only; discovery and evidence are frozen."
+    "Task 11.07 completed with six distinct locked stories and exactly one reusable Agent Skills story.",
+    "Task 11.08 started: two-video verification under current freshness and duration policy."
   ],
   "readiness": {
-    "articles": "Deep evidence complete: 9 / 9; semantic selection active",
-    "editorial": "Not started",
+    "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
+    "editorial": "LOCKED: one semantic pass; no post-editorial model pass",
     "videos": "0 / 2",
     "podcasts": "0 / 2",
     "images": "0 / 6",
@@ -504,6 +507,19 @@
       "event": "backlog_exit",
       "at": "2026-10-01T05:01:09.216929Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.07",
+      "event": "done_recorded",
+      "at": "2026-10-01T05:04:00.740393Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 171.524
+    },
+    {
+      "task_id": "11.08",
+      "event": "backlog_exit",
+      "at": "2026-10-01T05:04:00.740393Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -550,5 +566,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T05:01:09.216929Z"
+  "last_durable_progress_at": "2026-10-01T05:04:00.740393Z"
 }
