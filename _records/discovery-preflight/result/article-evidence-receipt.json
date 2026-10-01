@@ -2,8 +2,8 @@
   "schema_version": "1.0.0",
   "evidence_text_version": "article-body-v1",
   "profile_id": "under80-v1",
-  "stage": "bounded_article_evidence_recovery",
-  "execution_owner": "chat_orchestrated_recovery",
+  "stage": "deterministic_article_evidence_preflight",
+  "execution_owner": "github_actions",
   "model_calls": 0,
   "network_retrievals": 9,
   "retrieved": 9,
@@ -12,58 +12,56 @@
     "applied_genai_knowledge_workers": 3,
     "agents_non_technical_people": 3
   },
-  "preferred_agent_skill_candidate_id": "m07",
-  "model_visible_chars": 10937,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9563,
+  "evidence_sha256": "a90ca724dd04a6b3fffd681f02a747e9b3dc88cb03535ad98894665ca3cd0dfa",
   "ready": true,
-  "evidence_sha256": "f364fe87c78405379a1a0ff33f18adbf7b38a73f5ecf6b4a84fdd5a3bea0e208",
-  "hash_basis": "compact JSON over evidence before recovery_capture field; audit hint only, not bundle identity",
   "failures": [],
   "extraction_methods": [
     {
-      "candidate_id": "m01",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 112
-    },
-    {
       "candidate_id": "m02",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 114
+      "method": "html.main",
+      "source_word_count": 2945
     },
     {
       "candidate_id": "m03",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 116
+      "method": "html.main",
+      "source_word_count": 1540
     },
     {
       "candidate_id": "m04",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 119
+      "method": "html.article",
+      "source_word_count": 383
     },
     {
       "candidate_id": "m05",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 112
+      "method": "jsonld.description",
+      "source_word_count": 1216
     },
     {
       "candidate_id": "m06",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 105
+      "method": "html.article",
+      "source_word_count": 1130
     },
     {
       "candidate_id": "m07",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 121
+      "method": "html.article",
+      "source_word_count": 1111
+    },
+    {
+      "candidate_id": "m01",
+      "method": "html.main",
+      "source_word_count": 298
     },
     {
       "candidate_id": "m08",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 108
+      "method": "html.article",
+      "source_word_count": 1164
     },
     {
       "candidate_id": "m09",
-      "method": "bounded_publisher_fact_capsule",
-      "source_word_count": 108
+      "method": "html.article",
+      "source_word_count": 1379
     }
-  ],
-  "honesty_note": "The standard GitHub article-body collector was not dispatched because no workflow-dispatch action is exposed in this invocation. This recovery record does not claim a raw full-body hash or a GitHub Actions fetch. Every capsule was derived from a publisher-authored page retrieved in this invocation and is non-verbatim."
+  ]
 }

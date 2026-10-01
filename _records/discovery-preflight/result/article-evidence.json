@@ -1,0 +1,121 @@
+{
+  "schema_version": "1.0.0",
+  "evidence_text_version": "article-body-v1",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "profile_id": "under80-v1",
+  "execution_owner": "github_actions",
+  "model_calls": 0,
+  "review_plan_count": 9,
+  "preferred_agent_skill_candidate_id": "m01",
+  "model_visible_chars": 9563,
+  "model_visible": [
+    {
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Tracing Agent Harness Behavior with NVIDIA NeMo Relay",
+      "canonical_url": "https://developer.nvidia.com/blog/tracing-agent-harness-behavior-with-nvidia-nemo-relay/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-30T16:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 2945,
+      "excerpt": "Developer Tools & Techniques Tracing Agent Harness Behavior with NVIDIA NeMo Relay Learn how to use execution traces to understand agent behavior and determine whether harness changes improve task outcomes. Sep 30, 2026 By William Markito Oliveira , Maryam Najafian , Moon Chung and Teknium Like Discuss (0) L T F R E AI-Generated Summary NVIDIA NeMo Relay provides a common observability layer that captures ordered lifecycle events and structured trajectories for agent runs. In this tutorial, you’ll run two Hermes Agent examples with NVIDIA NeMo Relay . A step-by-step code walkthrough for evaluating Hermes Agent traces with NeMo Relay…"
+    },
+    {
+      "candidate_id": "m03",
+      "focus": "technical_ai_engineering",
+      "headline": "Expanding AI Storage Access with NVIDIA cuObject and the NVIDIA SCADA Server SDK",
+      "canonical_url": "https://developer.nvidia.com/blog/expanding-ai-storage-access-with-nvidia-cuobject-and-the-nvidia-scada-server-sdk/",
+      "publisher": "NVIDIA Developer",
+      "published_at": "2026-09-30T19:13:02.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1540,
+      "excerpt": "AI Platforms/Deployment Expanding AI Storage Access with NVIDIA cuObject and the NVIDIA SCADA Server SDK Sep 30, 2026 By Harish Arora , Vikram Sharma Mailthody , Kiran K. Modukuri and CJ Newburn Like Discuss (0) L T F R E AI-Generated Summary NVIDIA cuObject client and server libraries are now generally available, providing standardized APIs and an RDMA wire protocol for accelerated object storage access without routing data through the server CPU. NVIDIA Storage-Next initiative coordinates over 40 vendors and customers to define open industry standards for GPU-driven, fine-grained storage access, with SCADA as the supporting software…"
+    },
+    {
+      "candidate_id": "m04",
+      "focus": "technical_ai_engineering",
+      "headline": "HydraFusion in VS Code and the GitHub Copilot app",
+      "canonical_url": "https://github.blog/changelog/2026-09-30-hydrafusion-in-vs-code-and-the-github-copilot-app",
+      "publisher": "GitHub Changelog",
+      "published_at": "2026-09-30T14:31:19.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 383,
+      "excerpt": "Back to changelog The HydraFusion research preview is now available in Visual Studio Code and the GitHub Copilot app, expanding beyond Copilot CLI. Get started In VS Code (version 1.140 or later, or VS Code Insiders): Select HydraFusion from the Copilot Chat model picker. If it does not appear, enable chat.copilot.hydraFusion.enabled . In the GitHub Copilot app: Update to the latest version. HydraFusion explores how Copilot can both select a workflow and coordinate multiple models within a turn."
+    },
+    {
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Skill vs. will: What leaders must solve for AI adoption",
+      "canonical_url": "https://techcommunity.microsoft.com/blog/skills-hub-blog/skill-vs-will-what-leaders-must-solve-for-ai-adoption/4553138",
+      "publisher": "Microsoft Community Hub — Skills Hub",
+      "published_at": "2026-09-30T16:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1216,
+      "excerpt": "A useful starting point is to examine two factors: whether people have the skills to use AI effectively and the willingness to apply those skills. I call this the “skill versus will” framework. System: Do workflows, incentives, leadership behavior, governance, and access make the change possible &nbsp; Use skill and will as the first diagnostic lens but examine the surrounding system before concluding that an employee lacks motivation. Consider what Microsoft’s 2026 Work Trend Index calls “blocked agency.” Ten percent of workers surveyed had strong AI skills but lacked the organizational conditions to use them. That is a system barrier that…"
+    },
+    {
+      "candidate_id": "m06",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Introducing skills in the Gemini app and Workspace, plus what’s next for Gems",
+      "canonical_url": "https://workspaceupdates.googleblog.com/2026/09/skills-gemini-app-workspace.html",
+      "publisher": "Google Workspace",
+      "published_at": "2026-09-30T16:11:32.290Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1130,
+      "excerpt": "arrow_back Back September 30, 2026 Introducing skills in the Gemini app and Workspace, plus what’s next for Gems Gemini Gemini App Google Workspace Other Workspace Studio We recently introduced skills—reusable prompts that guide Gemini—in the Gemini app and Google Workspace . Over the coming weeks, skills will roll out to Workspace users and eventually replace Gems as the tool for tailoring instructions for specific tasks. Read on for more details on skills, plus critical information and dates related to the transition away from Gems in the Gemini app, Workspace, Google Classroom, and more. Skills are reusable, custom instructions that you…"
+    },
+    {
+      "candidate_id": "m07",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Can You Become an Agentic Enterprise? Get a Sneak Peek in The Latest Guide",
+      "canonical_url": "https://www.salesforce.com/blog/small-business/agentic-enterprise-guide-takeaways/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-30T13:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1111,
+      "excerpt": "The Become an Agentic Enterprise: A Step-By-Step Guide breaks down what the research said small businesses are getting right with agentic AI, where change management trips people up, and why keeping a human in the loop is actually the fastest path to ROI — not a limitation on it. About the guide: Become an Agentic Enterprise This guide draws on Salesforce’s own usage data and interviews with over 2,000 AI decision-makers to show how organizations are actually deploying AI agents — where they’re seeing ROI, where initiatives stall, and how much human oversight stays in the loop. Businesses are already seeing ROI from agents, 36% point to a…"
+    },
+    {
+      "candidate_id": "m01",
+      "focus": "agents_non_technical_people",
+      "headline": "aws-agent-toolkit-skill-updates-2026-09-30",
+      "canonical_url": "https://aws.amazon.com/about-aws/whats-new/2026/09/aws-cli-agent-toolkit-update-skill/",
+      "publisher": "AWS",
+      "published_at": "2026-09-30T00:00:00.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": true,
+      "source_word_count": 298,
+      "excerpt": "AWS CLI now supports bulk skill updates and version checks for the Agent Toolkit for AWS Posted on: Sep 30, 2026 Today, AWS expanded the AWS Command Line Interface (CLI) commands for the Agent Toolkit for AWS with two new capabilities that make it easier to keep agent skills up to date. Customers can now run aws agent-toolkit check-skill-updates to compare all installed skills against the latest versions available in the registry, and use aws agent-toolkit update-skill --all to update every outdated skill in a single command. The Agent Toolkit for AWS consists of the AWS MCP Server (which provides a secure, auditable agent interface to…"
+    },
+    {
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "How West Marine Drives Revenue and Scalability with AI-Native Search and Agents",
+      "canonical_url": "https://www.salesforce.com/blog/west-marine-customer-story/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-30T17:33:53.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1164,
+      "excerpt": "By replacing rigid keyword rules with AI-native search and autonomous shopping agents on its ecommerce site, the brand transformed digital discovery to drive higher conversions without overwhelming its digital commerce teams. To bridge the gap, West Marine’s digital team spent hundreds of hours creating manual redirect rules, synonyms, and search overrides. When we moved to Agentic Commerce Search, I said, ‘This is AI, let the AI work.’” The Solution: Intent-Aware Search and an AI Digital Concierge West Marine modernized its online discovery experience by implementing Agentic Commerce Search alongside Salesforce Commerce Cloud B2C Commerce .…"
+    },
+    {
+      "candidate_id": "m09",
+      "focus": "agents_non_technical_people",
+      "headline": "The Tableau Knowledge Engine: How We Built Trustworthy Agentic Analytics",
+      "canonical_url": "https://www.salesforce.com/blog/knowledge-engine-how-we-built-trustworthy-agentic-analytics/",
+      "publisher": "Salesforce",
+      "published_at": "2026-09-30T15:46:48.000Z",
+      "source_reliability": "publisher_authored",
+      "agent_skill_story_ready": false,
+      "source_word_count": 1379,
+      "excerpt": "Tableau Knowledge unifies all of this as semantics (meaning), ontology (structure), context (jargon, process), and connections (relationships) into knowledge graphs, which are shaped through usage and human input, operationalizing knowledge for AI agents. The knowledge engine turns a random search through nameless buildings into a direct, high-speed route, driving the accuracy and efficiency of your AI agents. Watch the Tableau Keynote at Dreamforce 2026 now on Salesforce+ to see how we are delivering a trusted knowledge for trusted agentic analytics. Join the webinar Learn how you can turn your data and semantics into trusted knowledge for…"
+    }
+  ]
+}
