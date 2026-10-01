@@ -1,0 +1,29 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "candidate_id": "m08",
+  "attempt": 1,
+  "fallback_used": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "gen_id": "69e75e96-3284-4e4c-838c-803c22c18077",
+    "native_sha256": "db6e926b674a26d54020f9ad4912b615d6760edc6c731c186b6e941d1295608e",
+    "native_bytes": 1522060,
+    "native_dimensions": "1730x909"
+  },
+  "precheck": {
+    "status": "REJECT",
+    "reason_code": "HUMAN_AVATAR_ICON_PRESENT",
+    "detail": "Hiring panel contains a person/avatar silhouette, violating the sealed no-people requirement."
+  },
+  "persistence": {
+    "status": "not_attempted",
+    "reason": "failed visual precheck before transport"
+  },
+  "review_status": "precheck_rejected",
+  "status": "rejected",
+  "rejected_at": "2026-10-01T22:05:46Z",
+  "recovery_action": "Generate m08 attempt 2 with the same sealed spec and explicitly prohibit person/avatar/humanoid icons."
+}
