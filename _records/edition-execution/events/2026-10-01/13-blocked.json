@@ -1,0 +1,12 @@
+{
+  "task_id": "13",
+  "from": "Active",
+  "to": "Blocked",
+  "at": "2026-10-01T19:42:42.070381Z",
+  "reason": "Run 3 terminated by owner after repeated liveness-control regression and incorrect image-path substitution. Further production work on this edition is not authorized.",
+  "proof": {
+    "last_branch_head": "e827ad73b550167aab47926b7d0531be21fdd675",
+    "accepted_images": 0,
+    "public_closed": false
+  }
+}
