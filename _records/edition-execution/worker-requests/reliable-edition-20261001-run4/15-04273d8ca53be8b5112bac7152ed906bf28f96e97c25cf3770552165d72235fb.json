@@ -1,0 +1,14 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "04273d8ca53be8b5112bac7152ed906bf28f96e97c25cf3770552165d72235fb",
+  "execution_id": "reliable-edition-20261001-run4",
+  "edition_id": "dab-edition-2026-10-01",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "task_id": "15",
+  "capability": "native_chatgpt",
+  "instruction": "Generate m08 attempt 4 from the exact sealed Business Skill specification only: central Business Skill package with Required inputs, Instructions and Expected output; four recurring work lanes Finance, Marketing, Operations and Hiring; maintenance/version loop; no dashboard/status architecture content, no people/avatar/humanoid icons and no chat bubbles.",
+  "writer_generation": 1,
+  "recovery_attempt": 3,
+  "created_at": "2026-10-01T23:04:48.016Z",
+  "status": "queued"
+}
