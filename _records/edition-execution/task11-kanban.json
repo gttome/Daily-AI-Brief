@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "blocked",
-  "observed_at": "2026-10-01T04:17:41.597157+00:00",
+  "observed_at": "2026-10-01T04:16:25.733Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -10,14 +10,14 @@
   "images_accepted": 0,
   "main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "b8235ca1f06ca97021592f6651e8cbd285986bfc",
-  "blocker": "Native producer recovery is required; historical proof expired and binds an older release.",
-  "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery.",
+  "controller_sha": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
+  "blocker": "Current scheduled native image surface has no same-result recover(operation_key/native_result_id) API; GitHub confirms only the historical blob identity and exposes no payload bytes for a fresh SHA-256/readback.",
+  "next_action": "Resume only when the same scheduled native host exposes same-result recovery plus complete bytes; create a fresh release-bound image-handoff-proof-v2, then start discovery.",
   "cards": [
     {
       "id": "11.01",
       "title": "Refresh main, live state and active runs",
-      "depends_on": "\u2014",
+      "depends_on": "—",
       "column": "Done",
       "started_at": null,
       "completed_at": "2026-10-01T04:05:23.505013+00:00",
@@ -50,9 +50,9 @@
       "started_at": "2026-10-01T04:13:46.395Z",
       "completed_at": null,
       "timing": "live",
-      "substage": "Native host admission recovery",
-      "blocker": "Native producer recovery is required; historical proof expired and binds an older release.",
-      "next_action": "Recover the existing native producer result using the supported scheduled host, verify exact Git bytes under pinned release, persist admission, then execute fresh discovery."
+      "substage": "Native host same-result recovery unavailable",
+      "blocker": "Current scheduled native image surface has no same-result recover(operation_key/native_result_id) API; GitHub confirms only the historical blob identity and exposes no payload bytes for a fresh SHA-256/readback.",
+      "next_action": "Resume only when the same scheduled native host exposes same-result recovery plus complete bytes; create a fresh release-bound image-handoff-proof-v2, then start discovery."
     },
     {
       "id": "11.05",
@@ -183,7 +183,7 @@
     {
       "id": "11.19",
       "title": "Review six-image set and accessibility",
-      "depends_on": "13\u201318",
+      "depends_on": "13–18",
       "column": "Backlog",
       "started_at": null,
       "completed_at": null,
@@ -192,7 +192,7 @@
     {
       "id": "11.20",
       "title": "Assemble canonical edition and pages",
-      "depends_on": "08\u201311,19",
+      "depends_on": "08–11,19",
       "column": "Backlog",
       "started_at": null,
       "completed_at": null,
@@ -260,19 +260,19 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 1,
+  "controller_state_version": 2,
   "run_request": {
     "last_observed_run": "2026-10-01T04:12:49.276109Z",
-    "status": "Immediate run requested after correcting stale prompt and restoring enabled state.",
+    "status": "Primary active in this invocation; admission recovery attempted and durably recorded; no competing writer or active GitHub Action observed.",
     "request_recorded_at": "2026-10-01T04:14:18.505Z",
     "requested_at": null
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Distinct Sep 30 edition bound; original cutoff and run identity locked.",
-    "First closure retained; 26 child cards preserved.",
-    "Controller prompt advanced from stale Sep 29 task08 to second-run admission.",
-    "Primary was restored to enabled after its latest invocation; immediate run requested."
+    "Performed the supported admission-path audit: proveImageHandoff requires host.recover plus complete native bytes.",
+    "Current native tool surface exposes generation/editing only; no recover-by-key/result operation is available.",
+    "Historical PNG blob identity 77ffaceb44 was confirmed, but binary readback was unavailable; no current certification was claimed.",
+    "Admission remains blocked; discovery was not started and the distinct September 30 binding was preserved."
   ],
   "readiness": {
     "articles": "0 / 6",
@@ -458,5 +458,53 @@
       "at": "2026-10-01T04:13:46.395Z",
       "cycle_start_known": true
     }
-  ]
+  ],
+  "liveness": {
+    "observed_at": "2026-10-01T04:16:25.733Z",
+    "primary_controller": {
+      "id": "6abaf03d6c608191be014dd1765468d3",
+      "enabled": true,
+      "state": "ACTIVE_THIS_INVOCATION",
+      "last_run_time": "2026-10-01T04:12:49.276109Z"
+    },
+    "keeper": {
+      "id": "6abbc140a31c8191add39f59ba06f522",
+      "enabled": true,
+      "state": "IDLE",
+      "last_run_time": "2026-10-01T03:57:05.607139Z"
+    },
+    "sentinel": {
+      "id": "6ab92da22cb08191951062354823191b",
+      "enabled": true,
+      "state": "IDLE",
+      "last_run_time": "2026-10-01T03:55:04.161948Z"
+    },
+    "github_actions": {
+      "in_progress": 0,
+      "queued_relevant": 0,
+      "note": "One unrelated stale Pages run from 2026-08-17 remains queued; it is not an active writer for this edition."
+    },
+    "one_writer_check": "PASS — this primary invocation is the only active edition writer."
+  },
+  "repository": {
+    "main_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "branch_head_before_record": "5bea01c54c8590d74c935fc8d3fbe42c75a266bb",
+    "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
+    "release_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e"
+  },
+  "admission_recovery": {
+    "attempted_at": "2026-10-01T04:16:25.733Z",
+    "result": "CAPABILITY_BLOCKED_NATIVE_RECOVERY_API_UNEXPOSED",
+    "prior_operation_key": "1ca4175cfda41490b8814128c39a5b7b40165e93460b571bdaa232cd154eee95",
+    "prior_native_result_id": "73e1aa5f-0fd7-4018-a83a-7d1aad7e7b11",
+    "prior_git_blob_sha": "77ffaceb440db06914e434bb90e314e5c46ab433",
+    "checks": [
+      "No fresh proof on the second-edition branch.",
+      "Historical proof expired and binds release e3edd099…, not pinned release 386dc023….",
+      "Current image tool exposes no recover-by-key or recover-by-result call.",
+      "GitHub fetch_blob failed binary UTF-8 decoding.",
+      "GitHub base64 file fetch returned the historical blob identity but zero payload bytes.",
+      "No throwaway probe, fake expiry refresh, or historical-download certification."
+    ]
+  }
 }
