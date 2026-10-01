@@ -203,12 +203,12 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-78663d35ac49",
         "alt": "Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "sep29-m06-ece241906a20"
+        "cache_key": "sep29-m06-78663d35ac49"
       },
       "summary": "Microsoft’s Copilot team describes an operating model for scaling Agent Builder through structured change management, using an HCLTech customer example to illustrate how organizations can combine Microsoft 365 Copilot innovation with an explicit adoption program rather than relying on one-off team deployments.",
       "why_it_matters": "The bottleneck for internal agents is increasingly organizational. Reusable agents create value only when people know which work should change, how new behavior is supported, who owns the rollout, and how adoption is measured across teams instead of being treated as a collection of isolated experiments.",
@@ -242,7 +242,7 @@
       "social": {
         "title": "Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout",
         "description": "The bottleneck for internal agents is increasingly organizational. Reusable agents create value only when people know which work should change, how new behavior is supported, who o",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-78663d35ac49"
       }
     },
     {
@@ -263,12 +263,12 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-0ba4a04d73c5",
         "alt": "Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "sep29-m01-3c677e8d9fba"
+        "cache_key": "sep29-m01-0ba4a04d73c5"
       },
       "summary": "Firebase’s Codex plugin includes Firebase Agent Skills that provide domain expertise, up-to-date documentation, recommended workflows, and tool knowledge. Firebase says the skills are intended to help Codex follow Firebase-recommended configuration and architecture patterns instead of relying only on a general model’s background knowledge.",
       "why_it_matters": "This is a concrete example of Agent Skills as reusable operating knowledge. A product team can package current domain guidance and preferred procedures once, then let an agent apply that context repeatedly across tasks without each user rebuilding the same prompt or workflow from scratch.",
@@ -302,7 +302,7 @@
       "social": {
         "title": "Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex",
         "description": "This is a concrete example of Agent Skills as reusable operating knowledge. A product team can package current domain guidance and preferred procedures once, then let an agent appl",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-0ba4a04d73c5"
       }
     },
     {
@@ -323,12 +323,12 @@
       "companies": [],
       "image": {
         "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-11b37c5208ef",
         "alt": "Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "sep29-m08-76879154e195"
+        "cache_key": "sep29-m08-11b37c5208ef"
       },
       "summary": "AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads. The announcement describes using supported Bedrock APIs for internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.",
       "why_it_matters": "A stronger general model becomes operationally relevant when it can be placed inside existing enterprise infrastructure and used for repeatable workflows rather than only interactive chat. The practical question shifts from raw model capability to which bounded tasks justify migration and how teams will measure the change.",
@@ -360,7 +360,7 @@
       "social": {
         "title": "AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows",
         "description": "A stronger general model becomes operationally relevant when it can be placed inside existing enterprise infrastructure and used for repeatable workflows rather than only interacti",
-        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195"
+        "image_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-11b37c5208ef"
       }
     }
   ],

@@ -2,7 +2,7 @@
 layout: default
 title: "AWS brings GPT-6.1 Sol to Bedrock for everyday agent and professional workflows"
 description: "A stronger general model becomes operationally relevant when it can be placed inside existing enterprise infrastructure and used for repeatable workflows rather than only interacti"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-11b37c5208ef"
 permalink: /stories/2026-09-29/aws-brings-gpt-6-1-sol-to-bedrock-for-everyday-agent-and-professional-workflows/
 brief_date: 2026-09-29
 story_id: dab-story-2026-09-29-196c601d
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195)
+![Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-11b37c5208ef)
 
 **Summary:** AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads. The announcement describes using supported Bedrock APIs for internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.
 
