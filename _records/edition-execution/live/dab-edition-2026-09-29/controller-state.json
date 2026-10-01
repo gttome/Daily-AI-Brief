@@ -35,9 +35,9 @@
     "publication",
     "public_closed"
   ],
-  "version": 27,
+  "version": 28,
   "status": "active",
-  "current_operation": "production_admission",
+  "current_operation": "public_closed",
   "task05": {
     "status": "done",
     "binding_exercised": true,
@@ -264,6 +264,27 @@
       "post_editorial_model_passes": 0,
       "verified_at": "2026-09-30T22:04:05.317Z",
       "note": "Bundle-bound reliable-edition qualification. This is not a public production closure."
+    },
+    "production_admission": {
+      "result": "pass",
+      "operation": "production_admission",
+      "execution_host": "reconciled_from_protected_publication_evidence",
+      "bundle_sha256": "4079821ebe1e72f750c7e0b37c3af0c992313c07b1212cccb869e3cb3afd9f94",
+      "production_sha": "d6de71575a1ea110949f4f424e17ec29a51f2001",
+      "evidence_branch": "finalization/2026-09-29-d6de7157",
+      "reconciled_at": "2026-10-01T02:52:57.922Z"
+    },
+    "publication": {
+      "result": "pass",
+      "operation": "publication",
+      "production_sha": "d6de71575a1ea110949f4f424e17ec29a51f2001",
+      "publication_pr_number": 302,
+      "protected_ci_run_id": 36799840552,
+      "pages_deployment_run_id": 36799943806,
+      "live_validation_run_id": 36800002686,
+      "final_result": "pass",
+      "exact_live_image_bytes": true,
+      "reconciled_at": "2026-10-01T02:52:57.922Z"
     }
   },
   "handler_registry": {
@@ -312,8 +333,19 @@
       "validator": "independent live completion integrity"
     }
   },
-  "blockers": [],
-  "updated_at": "2026-09-30T22:04:05.317Z",
+  "blockers": [
+    {
+      "code": "FINALIZATION_PR_CREATION_TOOL_DENIED",
+      "operation": "public_closed",
+      "branch": "finalization/2026-09-29-d6de7157",
+      "head_sha": "ff42112e6ef85bb0d49971c499773b6013ffed42",
+      "target_branch": "main",
+      "observed_main_sha": "d6de71575a1ea110949f4f424e17ec29a51f2001",
+      "detail": "Closure evidence is complete and fresh, but opening the required protected finalization PR was denied by the current tool safety layer before GitHub mutation.",
+      "observed_at": "2026-10-01T02:52:57.922Z"
+    }
+  ],
+  "updated_at": "2026-10-01T02:52:57.922Z",
   "editorial_input": {
     "source_branch": "discovery-preflight/reliable-edition-2026-09-29",
     "preflight_run_id": 36649105718,
@@ -351,7 +383,7 @@
     ],
     "compatibility_reason": "controller simplification, bounded self-healing, immutable-result projection, passive timing; no editorial/media/image acceptance semantics weakened"
   },
-  "last_progress_at": "2026-09-30T19:42:00Z",
+  "last_progress_at": "2026-10-01T02:52:57.922Z",
   "task08": {
     "status": "done",
     "substage": "qualification_passed",
@@ -372,5 +404,21 @@
       "cutoff": "2026-09-30T00:03:07.131932Z",
       "verified_at": "2026-09-30T21:37:35.656Z"
     }
-  ]
+  ],
+  "task09": {
+    "status": "done",
+    "substage": "protected_publication_and_exact_sha_deployment_passed",
+    "production_sha": "d6de71575a1ea110949f4f424e17ec29a51f2001",
+    "publication_pr_number": 302,
+    "completed_at": "2026-10-01T02:52:57.922Z"
+  },
+  "task10": {
+    "status": "wip",
+    "substage": "closure_evidence_ready_finalization_pr_required",
+    "finalization_branch": "finalization/2026-09-29-d6de7157",
+    "finalization_head": "ff42112e6ef85bb0d49971c499773b6013ffed42",
+    "validation_result": "pass",
+    "live_validation_run_id": 36800002686,
+    "next_action": "open protected finalization PR to main, pass protected CI, merge exact head, then verify closure evidence on protected main"
+  }
 }
