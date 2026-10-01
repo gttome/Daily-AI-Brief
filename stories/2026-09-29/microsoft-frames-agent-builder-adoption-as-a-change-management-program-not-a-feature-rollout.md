@@ -2,7 +2,7 @@
 layout: default
 title: "Microsoft frames Agent Builder adoption as a change-management program, not a feature rollout"
 description: "The bottleneck for internal agents is increasingly organizational. Reusable agents create value only when people know which work should change, how new behavior is supported, who o"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-78663d35ac49"
 permalink: /stories/2026-09-29/microsoft-frames-agent-builder-adoption-as-a-change-management-program-not-a-feature-rollout/
 brief_date: 2026-09-29
 story_id: dab-story-2026-09-29-7eb33bf7
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20)
+![Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-78663d35ac49)
 
 **Summary:** Microsoft’s Copilot team describes an operating model for scaling Agent Builder through structured change management, using an HCLTech customer example to illustrate how organizations can combine Microsoft 365 Copilot innovation with an explicit adoption program rather than relying on one-off team deployments.
 

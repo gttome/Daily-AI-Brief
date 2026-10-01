@@ -5,9 +5,9 @@
   "rollback_target_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
   "policy_profile": "under80-v1",
   "image_review": "_records/editorial-handoff/images.json",
-  "image_review_sha256": "6ab8961992b2f14fa85222803d1b843807ae86da3c9f055cd185ae7d8d44902f",
+  "image_review_sha256": "744a91456bcafe78f72ef2a289282a59eacc869eb751ceea108a52094d966e7b",
   "image_quality_evidence": "_records/image-quality/2026-09-29-editorial-v2.json",
-  "image_quality_evidence_sha256": "9b24a5dc5f9e9a3d4aaabad3d1c31f040c6cd80e4e1b96d3d4a6ccdf60c1c328",
+  "image_quality_evidence_sha256": "230bdc16204f721df551295f410ef157dd3117ebc8685a627536415353b42c05",
   "image_gates": {
     "structural_gate": "pass",
     "editorial_quality_gate": "pass",
@@ -49,38 +49,38 @@
     },
     {
       "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
-      "sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
-      "git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8",
-      "bytes": 389932,
+      "sha256": "78663d35ac4984ecce58f7aea1ef1adeba8ef1c72dcc9357395b1d43a2569cbd",
+      "git_blob_sha": "7cf9ed12a079807a0964fc0006afdf8149017a70",
+      "bytes": 648063,
       "width": 1200,
       "height": 630,
       "format": "png",
-      "cache_key": "sep29-m06-ece241906a20",
-      "asset_version": "sep29-m06-accepted-v1"
+      "cache_key": "sep29-m06-78663d35ac49",
+      "asset_version": "sep29-m06-replacement-v2"
     },
     {
       "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
-      "sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
-      "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f",
-      "bytes": 3452,
+      "sha256": "0ba4a04d73c5f2ab3f2e638cc4dee7e9770d87764fda1487c403052a0a709847",
+      "git_blob_sha": "de80489d0aee296abf103fb6524a5ed501184112",
+      "bytes": 598872,
       "width": 1200,
       "height": 630,
       "format": "png",
-      "cache_key": "sep29-m01-3c677e8d9fba",
-      "asset_version": "sep29-m01-accepted-v1"
+      "cache_key": "sep29-m01-0ba4a04d73c5",
+      "asset_version": "sep29-m01-replacement-v2"
     },
     {
       "path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
-      "sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
-      "git_blob_sha": "8b3706f6355f1f3f269c5af15177ed7637d0c2ec",
-      "bytes": 6976,
+      "sha256": "11b37c5208effd66dd8736318ffd8cf465889541d14f0fa24a45a64757c97757",
+      "git_blob_sha": "099bc3c2c3781bc00d4e71dc4467d9081490a359",
+      "bytes": 712283,
       "width": 1200,
       "height": 630,
       "format": "png",
-      "cache_key": "sep29-m08-76879154e195",
-      "asset_version": "sep29-m08-accepted-v1"
+      "cache_key": "sep29-m08-11b37c5208ef",
+      "asset_version": "sep29-m08-replacement-v2"
     }
   ],
-  "canonical_sha256": "eb032125ad5f5beed7bd2b947e7d9cea42edef0788d2784b1a97d18b5b3e173b",
-  "candidate_digest": "sha256:8ac1df81ff0df408813ff404e7cc6e7100d0d9decb1277805477fd63682dc6e0"
+  "canonical_sha256": "c3ac898eaf9375135f2be743b34392d6762c2897af4eff77527a05367e617899",
+  "candidate_digest": "sha256:29d74dc8420ddc5b735c5be0ee17676e9c523ee133f424e159f1e34c6c1a006c"
 }

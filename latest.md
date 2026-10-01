@@ -28,7 +28,7 @@
 **Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba)
+![Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-0ba4a04d73c5)
 
 **Summary:** Firebase’s Codex plugin includes Firebase Agent Skills that provide domain expertise, up-to-date documentation, recommended workflows, and tool knowledge. Firebase says the skills are intended to help Codex follow Firebase-recommended configuration and architecture patterns instead of relying only on a general model’s background knowledge.
 
@@ -70,7 +70,7 @@
 **Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-76879154e195)
+![Textbook decision diagram showing professional workflows evaluated on quality, latency, tool-use reliability, and cost before selected workloads migrate to GPT-6.1 Sol on Amazon Bedrock.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png?v=sep29-m08-11b37c5208ef)
 
 **Summary:** AWS says GPT-6.1 Sol is generally available on Amazon Bedrock for coding, computer-use, and professional workloads. The announcement describes using supported Bedrock APIs for internal tools that synthesize documents, agents that coordinate work across systems, and customer-facing applications that evaluate multiple inputs.
 
@@ -152,7 +152,7 @@
 **Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-ece241906a20)
+![Textbook workflow showing an Agent Builder use case progressing through stakeholder alignment, behavior-change planning, enablement, support, measurement, and scaled adoption.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png?v=sep29-m06-78663d35ac49)
 
 **Summary:** Microsoft’s Copilot team describes an operating model for scaling Agent Builder through structured change management, using an HCLTech customer example to illustrate how organizations can combine Microsoft 365 Copilot innovation with an explicit adoption program rather than relying on one-off team deployments.
 

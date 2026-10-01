@@ -2,7 +2,7 @@
 layout: default
 title: "Firebase packages domain expertise and recommended workflows as reusable Agent Skills for Codex"
 description: "This is a concrete example of Agent Skills as reusable operating knowledge. A product team can package current domain guidance and preferred procedures once, then let an agent appl"
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-0ba4a04d73c5"
 permalink: /stories/2026-09-29/firebase-packages-domain-expertise-and-recommended-workflows-as-reusable-agent-skills-for-codex/
 brief_date: 2026-09-29
 story_id: dab-story-2026-09-29-e2811e43
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Official Primary Source  
 **Availability:** Published
 
-![Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-3c677e8d9fba)
+![Textbook diagram showing Firebase documentation, architecture rules, workflow steps, and tool knowledge packaged into a reusable Agent Skill that guides Codex implementation tasks.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png?v=sep29-m01-0ba4a04d73c5)
 
 **Summary:** Firebase’s Codex plugin includes Firebase Agent Skills that provide domain expertise, up-to-date documentation, recommended workflows, and tool knowledge. Firebase says the skills are intended to help Codex follow Firebase-recommended configuration and architecture patterns instead of relying only on a general model’s background knowledge.
 

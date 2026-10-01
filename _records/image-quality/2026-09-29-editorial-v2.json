@@ -5,8 +5,8 @@
   "edition_id": "dab-edition-2026-09-29",
   "benchmark_profile": "sep09-sep10-premium3-v1",
   "benchmark_profile_path": "_records/image-quality/benchmark-profile-v1.json",
-  "reviewed_at": "2026-09-30T19:55:00Z",
-  "review_method": "Automated structural verification plus explicit editorial review of the six immutable accepted story diagrams against the locked story mechanisms and professional textbook benchmark.",
+  "reviewed_at": "2026-10-01T01:08:50.201888+00:00",
+  "review_method": "Existing accepted reviews retained for m02/m03/m05; user-approved replacements m01/m06/m08 visually inspected and structurally verified after production resize.",
   "review_status": "complete",
   "image_gate": "pass",
   "generation_method": "professional_editorial_diagram",
@@ -288,12 +288,17 @@
       "candidate_id": "m06",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
-      "asset_hash": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
-      "replacement_sha256": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
-      "git_blob_sha": "7b1e502944ee2c1ef90157a668585656b9f6b0c8",
-      "cache_key": "sep29-m06-ece241906a20",
-      "asset_version": "sep29-m06-accepted-v1",
-      "supersedes": null,
+      "asset_hash": "78663d35ac4984ecce58f7aea1ef1adeba8ef1c72dcc9357395b1d43a2569cbd",
+      "replacement_sha256": "78663d35ac4984ecce58f7aea1ef1adeba8ef1c72dcc9357395b1d43a2569cbd",
+      "git_blob_sha": "7cf9ed12a079807a0964fc0006afdf8149017a70",
+      "cache_key": "sep29-m06-78663d35ac49",
+      "asset_version": "sep29-m06-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m06-3.png",
+        "asset_hash": "ece241906a200268298c74d50ba5aabe51503d4e501856c20102af50e6680a4f",
+        "cache_key": "sep29-m06-ece241906a20",
+        "asset_version": "sep29-m06-accepted-v1"
+      },
       "deployment_verification_required": true,
       "structural_gate": {
         "result": "pass",
@@ -366,19 +371,37 @@
       "overall_gate": "pass",
       "result": "pass",
       "assessment": "The accepted m06 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images.",
-      "composition": "agent-builder-staged-adoption"
+      "composition": "agent-builder-staged-adoption",
+      "upload_provenance": {
+        "source_sha256": "37c6e845b9582844f0a021ed4c1e8c1bebb018aac41f1ae517633cc5c9f4ec36",
+        "source_dimensions": [
+          1731,
+          909
+        ],
+        "production_dimensions": [
+          1200,
+          630
+        ],
+        "processing": "Lanczos resize only; no regeneration",
+        "approval": "User approved and uploaded replacement PNG"
+      }
     },
     {
       "story_id": "dab-story-2026-09-29-e2811e43",
       "candidate_id": "m01",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
-      "asset_hash": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
-      "replacement_sha256": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
-      "git_blob_sha": "f2fafe971417e416dcbc00aaf3621665aacd5a1f",
-      "cache_key": "sep29-m01-3c677e8d9fba",
-      "asset_version": "sep29-m01-accepted-v1",
-      "supersedes": null,
+      "asset_hash": "0ba4a04d73c5f2ab3f2e638cc4dee7e9770d87764fda1487c403052a0a709847",
+      "replacement_sha256": "0ba4a04d73c5f2ab3f2e638cc4dee7e9770d87764fda1487c403052a0a709847",
+      "git_blob_sha": "de80489d0aee296abf103fb6524a5ed501184112",
+      "cache_key": "sep29-m01-0ba4a04d73c5",
+      "asset_version": "sep29-m01-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m01-3.png",
+        "asset_hash": "3c677e8d9fba0b8c866248e3b051ff18312c08917b8291efe6a72d33c7eec84f",
+        "cache_key": "sep29-m01-3c677e8d9fba",
+        "asset_version": "sep29-m01-accepted-v1"
+      },
       "deployment_verification_required": true,
       "structural_gate": {
         "result": "pass",
@@ -451,19 +474,37 @@
       "overall_gate": "pass",
       "result": "pass",
       "assessment": "The accepted m01 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images.",
-      "composition": "four-sources-to-skill-to-task"
+      "composition": "four-sources-to-skill-to-task",
+      "upload_provenance": {
+        "source_sha256": "4db4565524ed5b57c27326e82f746245719ca35ba5a621f9b57ee9123c9b0ca5",
+        "source_dimensions": [
+          1731,
+          909
+        ],
+        "production_dimensions": [
+          1200,
+          630
+        ],
+        "processing": "Lanczos resize only; no regeneration",
+        "approval": "User approved and uploaded replacement PNG"
+      }
     },
     {
       "story_id": "dab-story-2026-09-29-196c601d",
       "candidate_id": "m08",
       "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
       "asset": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
-      "asset_hash": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
-      "replacement_sha256": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
-      "git_blob_sha": "8b3706f6355f1f3f269c5af15177ed7637d0c2ec",
-      "cache_key": "sep29-m08-76879154e195",
-      "asset_version": "sep29-m08-accepted-v1",
-      "supersedes": null,
+      "asset_hash": "11b37c5208effd66dd8736318ffd8cf465889541d14f0fa24a45a64757c97757",
+      "replacement_sha256": "11b37c5208effd66dd8736318ffd8cf465889541d14f0fa24a45a64757c97757",
+      "git_blob_sha": "099bc3c2c3781bc00d4e71dc4467d9081490a359",
+      "cache_key": "sep29-m08-11b37c5208ef",
+      "asset_version": "sep29-m08-replacement-v2",
+      "supersedes": {
+        "asset_path": "briefs/images/2026-09-29/dab-edition-2026-09-29-m08-1.png",
+        "asset_hash": "76879154e1958a04fb56592c66882e9a033dca7336db31af09249856580e993d",
+        "cache_key": "sep29-m08-76879154e195",
+        "asset_version": "sep29-m08-accepted-v1"
+      },
       "deployment_verification_required": true,
       "structural_gate": {
         "result": "pass",
@@ -536,7 +577,20 @@
       "overall_gate": "pass",
       "result": "pass",
       "assessment": "The accepted m08 asset is story-specific, readable at the 1200×630 target, and explains the locked mechanism rather than serving as decoration. Its structure, labels, hierarchy, and connectors match the editorial story while remaining visually distinct from the other five accepted images.",
-      "composition": "bedrock-model-evaluation-funnel"
+      "composition": "bedrock-model-evaluation-funnel",
+      "upload_provenance": {
+        "source_sha256": "b8607dc59b78a9bcca89332008c36fdb2d7c390b41dc391b070e15e19477835f",
+        "source_dimensions": [
+          1731,
+          909
+        ],
+        "production_dimensions": [
+          1200,
+          630
+        ],
+        "processing": "Lanczos resize only; no regeneration",
+        "approval": "User approved and uploaded replacement PNG"
+      }
     }
   ]
 }
