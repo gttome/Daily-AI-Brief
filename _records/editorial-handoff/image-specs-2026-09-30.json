@@ -175,7 +175,13 @@
         "Admin Review",
         "Shared Memory"
       ],
-      "alt_text": "Textbook operating model showing an AI teammate profile with role, permissions, skills, users and administrators, plus a task-feedback path separated from editor-controlled permanent memory."
+      "alt_text": "Textbook operating model showing an AI teammate profile with role, permissions, skills, users and administrators, plus a task-feedback path separated from editor-controlled permanent memory.",
+      "status": "retry_required",
+      "attempts": 1,
+      "last_rejection": "HUMAN_OR_HUMANOID_GLYPHS_PROHIBITED",
+      "last_raw_path": "_records/image-attempts/2026-09-30/m08-attempt-1.png",
+      "last_raw_sha256": "905ba821627e7c8ed9871a102f9ed7a680ee515db291312fc26dcc892c407a95",
+      "next_attempt": 2
     }
   ],
   "packet_count": 6,
@@ -209,6 +215,6 @@
   "generation_started": false,
   "accepted_count": 5,
   "current_candidate": "m08",
-  "current_attempt": 1,
+  "current_attempt": 2,
   "repaired_at": "2026-10-01T06:42:11.142Z"
 }
