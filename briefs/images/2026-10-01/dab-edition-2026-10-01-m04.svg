@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Gemini 4 Argon long-horizon professional workbench">
+<defs><linearGradient id="c" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#e8f1ff"/><stop offset="1" stop-color="#dcd4ff"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#1b3550" flood-opacity=".15"/></filter><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#405d86"/></marker></defs>
+<rect width="1200" height="630" fill="#ffffff"/><text x="50" y="60" font-family="Arial" font-size="30" font-weight="700" fill="#10253f">Long-horizon Task</text>
+<rect x="50" y="90" width="220" height="95" rx="24" fill="#f4f8fc" stroke="#7897b5" stroke-width="3" filter="url(#s)"/><path d="M270 137 H350" stroke="#405d86" stroke-width="5" marker-end="url(#a)"/>
+<rect x="350" y="75" width="310" height="125" rx="30" fill="url(#c)" stroke="#756cae" stroke-width="4" filter="url(#s)"/><text x="407" y="129" font-family="Arial" font-size="31" font-weight="700" fill="#3e376f">Gemini 4 Argon</text><text x="420" y="166" font-family="Arial" font-size="20" font-weight="700" fill="#5b5685">Phased Access</text>
+<path d="M505 200 V250" stroke="#405d86" stroke-width="5" marker-end="url(#a)"/>
+<text x="54" y="270" font-family="Arial" font-size="23" font-weight="700" fill="#10253f">Professional Work Lanes</text>
+<rect x="50" y="295" width="220" height="86" rx="20" fill="#eaf4ff" stroke="#5790c2" stroke-width="3"/><text x="115" y="346" font-family="Arial" font-size="26" font-weight="700" fill="#285d87">Coding</text>
+<rect x="315" y="295" width="220" height="86" rx="20" fill="#f4edff" stroke="#9472bd" stroke-width="3"/><text x="385" y="346" font-family="Arial" font-size="26" font-weight="700" fill="#5d4380">Legal</text>
+<rect x="580" y="295" width="220" height="86" rx="20" fill="#e9f7ee" stroke="#66a783" stroke-width="3"/><text x="640" y="346" font-family="Arial" font-size="26" font-weight="700" fill="#315f49">Finance</text>
+<rect x="845" y="295" width="300" height="86" rx="20" fill="#fff2df" stroke="#d69943" stroke-width="3"/><text x="910" y="346" font-family="Arial" font-size="26" font-weight="700" fill="#7c5420">Cyber Defense</text>
+<path d="M160 381 V440 M425 381 V440 M690 381 V440 M995 381 V440" stroke="#405d86" stroke-width="4" marker-end="url(#a)"/>
+<rect x="55" y="445" width="1090" height="85" rx="22" fill="#f7f9fc" stroke="#8099b0" stroke-width="3"/>
+<circle cx="180" cy="488" r="18" fill="#4a82b3"/><circle cx="420" cy="488" r="18" fill="#7e64a8"/><circle cx="660" cy="488" r="18" fill="#4f9970"/><circle cx="900" cy="488" r="18" fill="#ce8a31"/>
+<path d="M198 488 H402 M438 488 H642 M678 488 H882" stroke="#7890a8" stroke-width="5"/>
+<text x="106" y="570" font-family="Arial" font-size="23" font-weight="700" fill="#10253f">Checkpoint</text><text x="348" y="570" font-family="Arial" font-size="23" font-weight="700" fill="#10253f">Checkpoint</text><text x="588" y="570" font-family="Arial" font-size="23" font-weight="700" fill="#10253f">Checkpoint</text><text x="828" y="570" font-family="Arial" font-size="23" font-weight="700" fill="#10253f">Checkpoint</text>
+<rect x="1000" y="545" width="145" height="48" rx="16" fill="#e9f2fb" stroke="#6688aa" stroke-width="3"/><text x="1017" y="576" font-family="Arial" font-size="20" font-weight="700" fill="#294f73">Human Review</text>
+<text x="760" y="125" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Sustained Context</text><path d="M710 135 H750" stroke="#405d86" stroke-width="4" marker-end="url(#a)"/>
+<text x="760" y="175" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Iterative Reasoning</text>
+</svg>
