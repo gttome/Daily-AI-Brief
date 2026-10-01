@@ -1,0 +1,14 @@
+{
+  "event_id": "02-done-2026-10-01T16:39:48.379Z",
+  "task_id": "02",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T16:39:48.379Z",
+  "source": "scheduled production run",
+  "reason": "September 30 completion, lifecycle, and CLOSED run-state independently reconciled as immutable predecessor evidence.",
+  "proof": {
+    "completion_sha": "2c2709ef52afe739ef9625a857fb8e7b6169f8ee",
+    "lifecycle_sha": "6983f3a43f9a1e92af8e34be95b46cdce5d9cf56",
+    "run_state_sha": "9624a64b44c0d0aa72e2bbf775c7568ee2caadfa"
+  }
+}
