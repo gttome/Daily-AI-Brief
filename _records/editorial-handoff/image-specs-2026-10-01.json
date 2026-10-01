@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-01",
+  "edition_date": "2026-10-01",
+  "policy_id": "production-image-execution-v2",
+  "render_policy_id": "strict-image-render-spec-v1",
+  "status": "sealed",
+  "low_quality_fallback": false,
+  "no_cross_story_context": true,
+  "images": [
+    {
+      "candidate_id": "m01",
+      "story_id": "dab-story-2026-10-01-m01",
+      "subject": "AWS DevOps Agent Skills turn incident know-how into reusable investigation playbooks",
+      "composition_mode": "layered_operational_flow",
+      "verified_scope": "AWS describes focused reusable DevOps Agent Skills with activation descriptions, composable instructions, and guidance for using MCP tools during investigations.",
+      "visible_text_allowlist": [
+        "Incident Signal",
+        "Skill Router",
+        "Focused Skill",
+        "AWS DevOps Agent",
+        "MCP Tools",
+        "Evidence",
+        "Reusable Playbook"
+      ],
+      "alt_text": "Textbook flow showing an incident signal routed to a focused reusable DevOps skill, which guides an AWS DevOps Agent using MCP tools to collect evidence through a reusable investigation playbook.",
+      "visual_instruction": "White background, professional high-detail textbook plate. Show a left-to-right incident investigation mechanism with a small router selecting one of several modular skill cards, then an agent core invoking bounded MCP tool connectors and gathering evidence into a structured investigation record. Use abstract system icons only; no people, humanoids, dashboards, screenshots, decorative art, or unsupported metrics. All labels must be clear, non-overlapping, and limited to the allowlist."
+    },
+    {
+      "candidate_id": "m02",
+      "story_id": "dab-story-2026-10-01-m02",
+      "subject": "Amazon Bedrock AgentCore Runtime Instances support persistent multi-agent workflows",
+      "composition_mode": "persistent_runtime_architecture",
+      "verified_scope": "AWS describes Runtime Instances as AWS-managed EC2 for persistent long-running agent workflows with multi-day sessions, persistent volumes, optional GPU access, multiple agents per instance, and shared session identity/filesystem.",
+      "visible_text_allowlist": [
+        "Runtime Instance",
+        "Shared Session ID",
+        "Agent A",
+        "Agent B",
+        "Agent C",
+        "Persistent Volume",
+        "Shared Artifacts",
+        "Multi-day Workflow"
+      ],
+      "alt_text": "Textbook architecture showing three independently deployed agents sharing one Runtime Instance session and persistent artifact volume across a multi-day workflow.",
+      "visual_instruction": "White background, professional high-detail architecture cutaway. Show one runtime boundary containing three distinct agent processes connected through a shared session identifier to a persistent volume, with staged artifact handoffs over a multi-day timeline. No people, humanoids, product screenshots, unsupported benchmark claims, or decorative imagery. Use only allowlisted text."
+    },
+    {
+      "candidate_id": "m04",
+      "story_id": "dab-story-2026-10-01-m04",
+      "subject": "Gemini 4 Argon targets long-horizon coding, legal, finance, and cyber workflows",
+      "composition_mode": "long_horizon_workbench",
+      "verified_scope": "Google positions Gemini 4 Argon for long-horizon coding and enterprise knowledge work including legal, finance, research, and cyber defense, with phased/limited initial access.",
+      "visible_text_allowlist": [
+        "Long-horizon Task",
+        "Gemini 4 Argon",
+        "Coding",
+        "Legal",
+        "Finance",
+        "Cyber Defense",
+        "Checkpoint",
+        "Human Review",
+        "Phased Access"
+      ],
+      "alt_text": "Textbook workbench showing a long-horizon task entering Gemini 4 Argon, branching into professional work domains, and passing through checkpoints and human review under phased access.",
+      "visual_instruction": "White background, professional editorial textbook diagram. Show a central long-horizon workbench with repeated checkpoint nodes along a sustained task timeline and four labeled work lanes. Include an explicit phased-access boundary. Do not show benchmark scores, pricing, people, real UI, or imply general availability. Use only allowlisted text."
+    },
+    {
+      "candidate_id": "m05",
+      "story_id": "dab-story-2026-10-01-m05",
+      "subject": "Stack Internal turns enterprise context into verified knowledge for people and agents",
+      "composition_mode": "knowledge_trust_pipeline",
+      "verified_scope": "Stack Overflow says Stack Internal ingests enterprise content, preserves permissions, applies trust signals such as provenance, recency, expertise, corroboration and human validation, and exposes verified context to compatible AI tools through MCP.",
+      "visible_text_allowlist": [
+        "Enterprise Sources",
+        "Permissions",
+        "Provenance",
+        "Recency",
+        "Expertise",
+        "Corroboration",
+        "Human Validation",
+        "Verified Knowledge",
+        "MCP",
+        "People and Agents"
+      ],
+      "alt_text": "Textbook knowledge pipeline showing enterprise sources passing through permission preservation and multiple trust checks before becoming verified knowledge available to people and agents through MCP.",
+      "visual_instruction": "White background, high-detail textbook pipeline. Use an integrated trust-filter mechanism with source documents entering a governed boundary, five clearly differentiated trust checks converging on a verified knowledge layer, then bounded output to people-and-agents represented by abstract tokens rather than human figures. No fabricated metrics or UI screenshots. Use only allowlisted text."
+    },
+    {
+      "candidate_id": "m07",
+      "story_id": "dab-story-2026-10-01-m07",
+      "subject": "OpenAI Dots introduces always-on agents with approvals, connected apps, and background research",
+      "composition_mode": "permissioned_agent_loop",
+      "verified_scope": "OpenAI describes Dots as always-on agents that can use connected apps; proactive background research is read-only, users can define allow/approval/block rules, consequential actions are reviewed, and progress is visible in Activity View.",
+      "visible_text_allowlist": [
+        "Always-on Agent",
+        "Connected Apps",
+        "Read-only Research",
+        "Activity View",
+        "Allow",
+        "Approval Required",
+        "Block",
+        "Consequential Action",
+        "User Control"
+      ],
+      "alt_text": "Textbook control-loop diagram showing an always-on agent using connected apps for read-only background research, surfacing progress in Activity View, and routing consequential actions through allow, approval, or block controls.",
+      "visual_instruction": "White background, professional high-detail control-loop diagram. Use abstract app nodes and agent token, a separate read-only research path, activity ledger, and a three-way permission gate before consequential action. No people, faces, anthropomorphic mascots, real product UI, or unsupported autonomy claims. Use only allowlisted text."
+    },
+    {
+      "candidate_id": "m08",
+      "story_id": "dab-story-2026-10-01-m08",
+      "subject": "UiPath and Snowflake connect governed data directly to business automations and agents",
+      "composition_mode": "zero_copy_governed_integration",
+      "verified_scope": "UiPath and Snowflake describe a two-way integration that lets UiPath work with governed Snowflake data without copying it, preserves access controls, policies, lineage and auditability, and lets Snowflake trigger UiPath automations and agentic skills.",
+      "visible_text_allowlist": [
+        "Snowflake",
+        "Governed Data",
+        "Zero-copy Access",
+        "Data Fabric",
+        "UiPath",
+        "Automations",
+        "Agentic Skills",
+        "Policies",
+        "Lineage",
+        "Auditability"
+      ],
+      "alt_text": "Textbook integration architecture showing Snowflake governed data remaining in place while zero-copy access connects it through Data Fabric to UiPath automations and agentic skills, with policies, lineage, and auditability surrounding the exchange.",
+      "visual_instruction": "White background, professional detailed two-way integration architecture. Keep Snowflake data visibly inside its governed boundary, show zero-copy access into a Data Fabric bridge and two-way triggers to UiPath automation and agentic-skill nodes. Wrap the connection with policy, lineage, and auditability tracks. No people, real UI, unsupported performance metrics, or decorative imagery. Use only allowlisted text."
+    }
+  ],
+  "review_order": [
+    "m01",
+    "m02",
+    "m04",
+    "m05",
+    "m07",
+    "m08"
+  ],
+  "production_dimensions": {
+    "width": 1200,
+    "height": 630
+  }
+}
