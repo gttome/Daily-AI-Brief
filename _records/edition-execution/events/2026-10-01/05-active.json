@@ -1,0 +1,8 @@
+{
+  "task_id": "05",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T16:49:29.496Z",
+  "source": "scheduled production run",
+  "reason": "Begin bounded fresh article discovery for the October 1 edition under the 24/72/168-hour policy and pre-bound cutoff."
+}
