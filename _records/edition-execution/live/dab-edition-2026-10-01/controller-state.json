@@ -1,0 +1,129 @@
+{
+  "schema_version": "reliable-edition-controller-state-v1",
+  "profile": "reliable-edition-v1",
+  "mission": {
+    "required_public_closed": 1,
+    "verified_public_closed": 0
+  },
+  "controller": {
+    "owner": "chatgpt-scheduled-executor",
+    "single_controller": true,
+    "durable_control_plane": "github_branch_state",
+    "branch": "reliable-edition/dab-edition-2026-10-01"
+  },
+  "edition": {
+    "edition_id": "dab-edition-2026-10-01",
+    "edition_date": "2026-10-01",
+    "original_cutoff": "2026-10-01T16:43:31.127Z",
+    "release_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+    "research_baseline_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+    "execution_id": "reliable-edition-20261001",
+    "policies": {
+      "article_freshness": "article-24-72-168-v1",
+      "media_freshness": "media-research-cutoff-v1",
+      "image_handoff": "same-invocation-direct-capture-v1"
+    }
+  },
+  "operation_sequence": [
+    "admission",
+    "discovery",
+    "editorial",
+    "media",
+    "images",
+    "seal_bundle",
+    "qualification",
+    "production_admission",
+    "publication",
+    "public_closed"
+  ],
+  "version": 1,
+  "status": "running",
+  "current_operation": "admission",
+  "started_at": "2026-10-01T16:47:48.937Z",
+  "updated_at": "2026-10-01T16:47:48.937Z",
+  "last_progress_at": "2026-10-01T16:47:48.937Z",
+  "completed": {
+    "admission": {
+      "result": "pass",
+      "profile": "reliable-edition-v1",
+      "admission_mode": "same-invocation-direct-capture-v1",
+      "release_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+      "verified_at": "2026-10-01T16:47:48.937Z",
+      "native_recovery_proof_required": false,
+      "native_recovery_capability_claimed": false,
+      "image_generation_proven": false,
+      "exact_bytes_proven": false,
+      "image_stage_deferred": true,
+      "image_stage_requirements": [
+        "one_story_one_attempt",
+        "persist_returned_bytes_before_yield",
+        "exact_git_content_identity",
+        "post_generation_subject_factual_structural_editorial_review",
+        "six_distinct_accepted_locked_images",
+        "full_publication_manifest_and_live_byte_gates"
+      ]
+    }
+  },
+  "handler_registry": {
+    "admission": {
+      "executor": "verifyDirectCaptureAdmission",
+      "validator": "verifyDirectCaptureAdmission"
+    },
+    "discovery": {
+      "executor": "bounded current-source discovery",
+      "validator": "pinned-cutoff discovery assertions"
+    },
+    "editorial": {
+      "executor": "one semantic editorial pass",
+      "validator": "editorial kernel"
+    },
+    "media": {
+      "executor": "saved/current media source review",
+      "validator": "publication manifest media gates"
+    },
+    "images": {
+      "executor": "native image generation in same invocation",
+      "transport": "connector-first Git Data",
+      "validator": "production-image-execution-v2"
+    },
+    "seal_bundle": {
+      "executor": "edition bundle sealing",
+      "validator": "full publication manifest"
+    },
+    "qualification": {
+      "executor": "protected deterministic validation",
+      "validator": "immutable result"
+    },
+    "publication": {
+      "executor": "protected PR/CI + exact-head merge",
+      "validator": "trusted-main candidate validation"
+    },
+    "public_closed": {
+      "executor": "live validation + lifecycle",
+      "validator": "independent live completion integrity"
+    }
+  },
+  "previous_edition": {
+    "edition_id": "dab-edition-2026-09-30",
+    "status": "COMPLETED",
+    "completion_path": "_records/publication/2026-09-30/completion.json"
+  },
+  "blockers": [],
+  "cost_boundary": {
+    "recurring_work_authorized": false,
+    "recurring_codex_authorized": false,
+    "paid_api_authorized": false,
+    "billable_overage_authorized": false,
+    "new_credentials_authorized": false,
+    "billing_observed": false
+  },
+  "task": {
+    "current": "04",
+    "next": "05"
+  },
+  "image_stage": {
+    "status": "not_started",
+    "accepted": 0,
+    "rejected_attempts": 0
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "result": "pass",
+  "profile": "reliable-edition-v1",
+  "admission_mode": "same-invocation-direct-capture-v1",
+  "release_sha": "0a6e27848d56fd1d2c062259f1f76bae7872ade2",
+  "verified_at": "2026-10-01T16:47:48.937Z",
+  "native_recovery_proof_required": false,
+  "native_recovery_capability_claimed": false,
+  "image_generation_proven": false,
+  "exact_bytes_proven": false,
+  "image_stage_deferred": true,
+  "image_stage_requirements": [
+    "one_story_one_attempt",
+    "persist_returned_bytes_before_yield",
+    "exact_git_content_identity",
+    "post_generation_subject_factual_structural_editorial_review",
+    "six_distinct_accepted_locked_images",
+    "full_publication_manifest_and_live_byte_gates"
+  ]
+}

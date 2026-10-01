@@ -1,0 +1,8 @@
+{
+  "task_id": "04",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T16:47:48.937Z",
+  "source": "scheduled production run",
+  "reason": "Start the existing reliable-edition controller for the bound October 1 edition."
+}
