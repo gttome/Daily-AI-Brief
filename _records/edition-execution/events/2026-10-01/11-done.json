@@ -1,0 +1,12 @@
+{
+  "task_id": "11",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:42:57.805Z",
+  "source": "scheduled production continuation",
+  "reason": "Book mapping review completed.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/book-review-2026-10-01.json",
+    "commit": "bcc8313fdf381163349cd328d0d195bcf11fa385"
+  }
+}
