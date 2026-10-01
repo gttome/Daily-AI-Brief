@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "blocked",
-  "observed_at": "2026-10-01T04:13:46.395Z",
+  "observed_at": "2026-10-01T04:17:41.597157+00:00",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -17,7 +17,7 @@
     {
       "id": "11.01",
       "title": "Refresh main, live state and active runs",
-      "depends_on": "—",
+      "depends_on": "\u2014",
       "column": "Done",
       "started_at": null,
       "completed_at": "2026-10-01T04:05:23.505013+00:00",
@@ -183,7 +183,7 @@
     {
       "id": "11.19",
       "title": "Review six-image set and accessibility",
-      "depends_on": "13–18",
+      "depends_on": "13\u201318",
       "column": "Backlog",
       "started_at": null,
       "completed_at": null,
@@ -192,7 +192,7 @@
     {
       "id": "11.20",
       "title": "Assemble canonical edition and pages",
-      "depends_on": "08–11,19",
+      "depends_on": "08\u201311,19",
       "column": "Backlog",
       "started_at": null,
       "completed_at": null,
@@ -262,16 +262,17 @@
   "mission_started_at": "2026-09-29T21:21:00Z",
   "controller_state_version": 1,
   "run_request": {
-    "requested_at": "2026-10-01T04:05:55.528578Z",
     "last_observed_run": "2026-10-01T04:12:49.276109Z",
-    "status": "Prior request executed; no admission evidence written; controller became disabled."
+    "status": "Immediate run requested after correcting stale prompt and restoring enabled state.",
+    "request_recorded_at": "2026-10-01T04:14:18.505Z",
+    "requested_at": null
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
     "Distinct Sep 30 edition bound; original cutoff and run identity locked.",
     "First closure retained; 26 child cards preserved.",
     "Controller prompt advanced from stale Sep 29 task08 to second-run admission.",
-    "Primary became disabled after its latest invocation; restoring the same controller."
+    "Primary was restored to enabled after its latest invocation; immediate run requested."
   ],
   "readiness": {
     "articles": "0 / 6",
@@ -410,6 +411,52 @@
       "accepted_at": null,
       "status": "Not started",
       "elapsed_seconds": null
+    }
+  ],
+  "automations": [
+    {
+      "role": "Primary",
+      "enabled": true,
+      "last_run_at": "2026-10-01T04:12:49.276109Z",
+      "execution": "Immediate run requested; not confirmed"
+    },
+    {
+      "role": "Keeper",
+      "enabled": true,
+      "last_run_at": "2026-10-01T03:57:05.607139Z",
+      "execution": "No active run confirmed"
+    },
+    {
+      "role": "Sentinel",
+      "enabled": true,
+      "last_run_at": "2026-10-01T03:55:04.161948Z",
+      "execution": "No active run confirmed"
+    }
+  ],
+  "task_timing_events": [
+    {
+      "task_id": "11.01",
+      "event": "done_recorded",
+      "at": "2026-10-01T04:05:23.505013+00:00",
+      "cycle_start_known": false
+    },
+    {
+      "task_id": "11.02",
+      "event": "done_recorded",
+      "at": "2026-10-01T04:05:23.505013+00:00",
+      "cycle_start_known": false
+    },
+    {
+      "task_id": "11.03",
+      "event": "done_recorded",
+      "at": "2026-10-01T04:12:21.330Z",
+      "cycle_start_known": false
+    },
+    {
+      "task_id": "11.04",
+      "event": "backlog_exit",
+      "at": "2026-10-01T04:13:46.395Z",
+      "cycle_start_known": true
     }
   ]
 }
