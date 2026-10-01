@@ -51,7 +51,8 @@ test('publication candidate lint detects tampered SVG Git blob identity',()=>{
 test('publication candidate lint preserves a prior verified current-edition pointer before live closure',()=>{
  const manifest=read('_records/editorial-handoff/final-image-review-2026-09-25.json');
  const candidate=inputs(manifest);
- candidate.edition={...candidate.edition,brief_date:'2026-09-26',edition_id:'dab-edition-2026-09-26'};
+ const pointer=read('data/operations/current-edition.json');
+ candidate.edition={...candidate.edition,brief_date:pointer.brief_date,edition_id:'dab-edition-'+pointer.brief_date};
  const errors=lintPublicationCandidate(candidate);
  assert.ok(!errors.includes('current_edition_pointer_invalid_for_candidate'));
 });
@@ -59,7 +60,11 @@ test('publication candidate lint preserves a prior verified current-edition poin
 test('publication candidate lint rejects a current-edition pointer newer than the candidate',()=>{
  const manifest=read('_records/editorial-handoff/final-image-review-2026-09-25.json');
  const candidate=inputs(manifest);
- candidate.edition={...candidate.edition,brief_date:'2026-09-24',edition_id:'dab-edition-2026-09-24'};
+ const pointer=read('data/operations/current-edition.json');
+ const prior=new Date(pointer.brief_date+'T12:00:00Z');
+ prior.setUTCDate(prior.getUTCDate()-1);
+ const priorDate=prior.toISOString().slice(0,10);
+ candidate.edition={...candidate.edition,brief_date:priorDate,edition_id:'dab-edition-'+priorDate};
  const errors=lintPublicationCandidate(candidate);
  assert.ok(errors.includes('current_edition_pointer_invalid_for_candidate'));
 });

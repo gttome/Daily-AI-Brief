@@ -1,9 +1,9 @@
 {
   "schema_version": "2.0.0",
-  "edition_id": "dab-edition-2026-09-26",
-  "brief_date": "2026-09-26",
-  "lifecycle_path": "_records/publication/2026-09-26/lifecycle.json",
-  "completion_path": "_records/publication/2026-09-26/completion.json",
-  "production_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b",
-  "deployed_sha": "10e9d2ac8601243cf0fcdb4698a5f1dc771bfe4b"
+  "edition_id": "dab-edition-2026-09-29",
+  "brief_date": "2026-09-29",
+  "lifecycle_path": "_records/publication/2026-09-29/lifecycle.json",
+  "completion_path": "_records/publication/2026-09-29/completion.json",
+  "production_sha": "1af871233e8abe5181d71c0a178c50455632b222",
+  "deployed_sha": "1af871233e8abe5181d71c0a178c50455632b222"
 }
