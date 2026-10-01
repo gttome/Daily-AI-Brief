@@ -1,0 +1,13 @@
+{
+  "task_id": "12",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:43:53.043Z",
+  "source": "scheduled production continuation",
+  "reason": "Six story-specific professional image specifications were sealed with exact visible-text allowlists and no low-quality fallback.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/image-specs-2026-10-01.json",
+    "commit": "a8079d4ff159dcf7bd2501dafb08ea495f84a451",
+    "count": 6
+  }
+}
