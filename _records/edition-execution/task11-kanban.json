@@ -1,18 +1,18 @@
 {
   "parent_task": "11",
-  "status": "wip",
-  "observed_at": "2026-10-01T07:39:33.850Z",
-  "verified_public_closed": 1,
+  "status": "done",
+  "observed_at": "2026-10-01T08:03:00.692Z",
+  "verified_public_closed": 2,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
   "edition_binding": "Locked",
   "run_id": "reliable-edition-20260930-second",
   "images_accepted": 6,
-  "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+  "main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
+  "controller_sha": "4256c856a74f4577f867677f06cae1ef9ef523df",
   "blocker": null,
-  "next_action": "Rerun protected CI on PR #308 with the canonical Watchlist summary, accessible count phrases, and compatible changed-today group label.",
+  "next_action": null,
   "cards": [
     {
       "id": "11.01",
@@ -276,39 +276,53 @@
       "id": "11.23",
       "title": "Open publication PR; pass protected CI",
       "depends_on": "22",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T07:27:16.758Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "PR #308 open; protected CI attempts 1–4 isolated stale control-plane and compatible Watchlist reader-surface labels",
-      "next_action": "Commit the compatible changed-today group label and regenerated exact publication stage, then rerun protected CI."
+      "completed_at": "2026-10-01T07:45:44.000Z",
+      "timing": "18m 27.242s",
+      "substage": "PR #308 exact head 4256c856a74f4577f867677f06cae1ef9ef523df passed protected CI run 36832124999",
+      "next_action": null,
+      "elapsed_seconds": 1107.242,
+      "proof": "ci:36832124999"
     },
     {
       "id": "11.24",
       "title": "Merge and deploy exact approved SHA",
       "depends_on": "23",
-      "column": "Backlog",
-      "started_at": null,
-      "completed_at": null,
-      "timing": "Not started"
+      "column": "Done",
+      "started_at": "2026-10-01T07:45:44.000Z",
+      "completed_at": "2026-10-01T07:47:16.000Z",
+      "timing": "1m 32.000s",
+      "elapsed_seconds": 92,
+      "substage": "PR #308 merged to ebf1f19bff16739d93d43e9912a2a6db073277aa and Pages run 36832262021 deployed the exact approved SHA",
+      "proof": "pages:36832262021",
+      "next_action": null
     },
     {
       "id": "11.25",
       "title": "Independently verify live edition",
       "depends_on": "24",
-      "column": "Backlog",
-      "started_at": null,
-      "completed_at": null,
-      "timing": "Not started"
+      "column": "Done",
+      "started_at": "2026-10-01T07:47:16.000Z",
+      "completed_at": "2026-10-01T07:55:53.483Z",
+      "timing": "8m 37.483s",
+      "elapsed_seconds": 517.483,
+      "substage": "Independent delta validation passed the live page, all six image assets and exact bytes; closure evidence observed at 2026-10-01T07:55:53.483Z",
+      "proof": "delta:36833186374",
+      "next_action": null
     },
     {
       "id": "11.26",
       "title": "Record PUBLIC CLOSED #2; close task 11",
       "depends_on": "25",
-      "column": "Backlog",
-      "started_at": null,
-      "completed_at": null,
-      "timing": "Not started"
+      "column": "Done",
+      "started_at": "2026-10-01T07:55:53.483Z",
+      "completed_at": "2026-10-01T08:01:35.000Z",
+      "timing": "5m 41.517s",
+      "elapsed_seconds": 341.517,
+      "substage": "Finalization PR #312 passed protected CI, merged CLOSED evidence to main 266be12cece3f7054e395600dc5bbea53e618a90, and exact-sha Pages run 36833693930 succeeded",
+      "proof": "main:266be12cece3f7054e395600dc5bbea53e618a90",
+      "next_action": null
     }
   ],
   "schema_version": "task11-kanban-v2",
@@ -318,7 +332,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 25,
+  "controller_state_version": 26,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -328,8 +342,11 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Task 11.23 protected CI attempt 4 passed the targeted suite and found the remaining full-suite expectation for the changed-today group label.",
-    "Applied the smallest compatible repair: add the changed-today accessible group label; visible counts, topic names, editorial selections and accepted images are unchanged."
+    "PR #308 passed protected CI and merged the distinct September 30 edition at ebf1f19bff16739d93d43e9912a2a6db073277aa; exact-sha Pages deployment passed.",
+    "Narrow permanent source-check correction PR #309 preserved hard 404 failures while classifying publisher 401/403 access controls as explicit nonblocking warnings.",
+    "Finalization correction PR #310 seeded missing candidate run state from canonical qualified artifacts; no provenance or content was regenerated.",
+    "Owner-authored finalization PR #312 preserved exact finalization commit 519f6119243f9cfe7834d13a65b214307bdda12e, passed protected CI, and merged closure records to protected main at 266be12cece3f7054e395600dc5bbea53e618a90.",
+    "Independent live read confirmed the September 30 dated page, exact 6/2/2 content, one reusable Agent Skills story, Watchlist counts, and a 1200x630 production image."
   ],
   "readiness": {
     "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
@@ -341,7 +358,7 @@
     "books": "READY: 4 / 4 books considered; 32 anchors; 320/320 item-anchor pairs; 10 mappings",
     "bundle": "PASS: immutable 12-artifact manifest verified",
     "qualification": "PASS: staged tree sha256:46ad9a9997a47abec432cc54156c2941ce4960b48e6974015f3d5c64e13bf581",
-    "publication": "WIP: production admission and protected PR"
+    "publication": "PUBLIC CLOSED #2: protected main receipts, CLOSED run-state, exact-sha Pages success, and independent live verification"
   },
   "pipeline": [
     {
@@ -362,32 +379,34 @@
     },
     {
       "stage": "Protected CI",
-      "status": "ACTIVE"
+      "status": "PASS"
     },
     {
       "stage": "Deployed",
-      "status": "NOT STARTED"
+      "status": "PASS"
     },
     {
       "stage": "Live verified",
-      "status": "NOT STARTED"
+      "status": "PASS"
     },
     {
       "stage": "Public closed",
-      "status": "NOT STARTED"
+      "status": "PASS"
     }
   ],
   "live_public": {
-    "edition": "2026-09-29",
-    "production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
-    "latest_pages_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
-    "latest_pages_run": 36812388648,
-    "main_ci_run": 36812389092
+    "edition": "2026-09-30",
+    "production_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+    "latest_pages_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
+    "latest_pages_run": 36833693930,
+    "main_ci_run": 36833694614,
+    "live_verified_at": "2026-10-01T07:55:53.483Z",
+    "closure_persisted_at": "2026-10-01T08:00:31Z"
   },
   "latest_stage_run": {
-    "id": 36813464628,
+    "id": 36833693930,
     "result": "success",
-    "production_stages": "skipped; no-op"
+    "production_stages": "final closure status deployed from protected main"
   },
   "timing_policy": {
     "backlog": "Not started; no age",
@@ -1005,6 +1024,65 @@
       ],
       "content_or_selection_changed": false,
       "staged_tree_digest": "sha256:46ad9a9997a47abec432cc54156c2941ce4960b48e6974015f3d5c64e13bf581"
+    },
+    {
+      "task_id": "11.23",
+      "event": "done_recorded",
+      "at": "2026-10-01T07:45:44.000Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 1107.242,
+      "run_id": 36832124999
+    },
+    {
+      "task_id": "11.24",
+      "event": "backlog_exit",
+      "at": "2026-10-01T07:45:44.000Z",
+      "cycle_start_known": true
+    },
+    {
+      "task_id": "11.24",
+      "event": "done_recorded",
+      "at": "2026-10-01T07:47:16.000Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 92,
+      "pages_run_id": 36832262021
+    },
+    {
+      "task_id": "11.25",
+      "event": "backlog_exit",
+      "at": "2026-10-01T07:47:16.000Z",
+      "cycle_start_known": true
+    },
+    {
+      "task_id": "11.25",
+      "event": "done_recorded",
+      "at": "2026-10-01T07:55:53.483Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 517.483,
+      "validation_run_id": 36833186374
+    },
+    {
+      "task_id": "11.26",
+      "event": "backlog_exit",
+      "at": "2026-10-01T07:55:53.483Z",
+      "cycle_start_known": true
+    },
+    {
+      "task_id": "11.26",
+      "event": "done_recorded",
+      "at": "2026-10-01T08:01:35.000Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 341.517,
+      "finalization_pr": 312,
+      "pages_run_id": 36833693930
+    },
+    {
+      "task_id": "11",
+      "event": "done_recorded",
+      "at": "2026-10-01T08:01:35.000Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 14188.811,
+      "verified_public_closed": 2
     }
   ],
   "liveness": {
@@ -1035,10 +1113,13 @@
     "one_writer_check": "PASS — no active edition writer or relevant GitHub Actions run; keeper resumed the durable Task 11.11 operation after the 15-minute inactivity threshold."
   },
   "repository": {
-    "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
-    "branch_head_before_record": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
+    "main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
+    "branch_head_before_record": "4256c856a74f4577f867677f06cae1ef9ef523df",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
-    "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba"
+    "release_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+    "closure_main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
+    "publication_pr": 308,
+    "finalization_pr": 312
   },
   "admission_recovery": {
     "attempted_at": "2026-10-01T04:16:25.733Z",
@@ -1050,5 +1131,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T07:39:33.850Z"
+  "last_durable_progress_at": "2026-10-01T08:01:35.000Z"
 }
