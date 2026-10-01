@@ -1,0 +1,75 @@
+{
+  "schema_version": "run-learning-readiness-v1",
+  "purpose": "Mandatory learning, cleanup and readiness contract for every Daily AI Brief production run.",
+  "start_gate": {
+    "task_id": "00",
+    "name": "Production Readiness Validation",
+    "must_pass_before_content_production": true,
+    "latest_successful_run_inheritance_required": true,
+    "checks": [
+      "one_writer",
+      "controller_available",
+      "run_scoped_keeper_enabled_and_bound",
+      "stale_active_guard_15m_or_less",
+      "no_competing_writer",
+      "proven_production_image_path",
+      "svg_fallback_disabled",
+      "exact_byte_capture",
+      "append_only_transition_ledger",
+      "kanban_derived_from_events",
+      "executor_state_visible",
+      "cost_boundary",
+      "protected_ci",
+      "exact_sha_deploy",
+      "independent_live_verification",
+      "previous_run_cleanup_pass"
+    ]
+  },
+  "terminal_cleanup": {
+    "final_task_id": "29",
+    "name": "Run Cleanup + Next-Run Readiness",
+    "required_after": [
+      "PUBLIC_CLOSED",
+      "FAILED"
+    ],
+    "checks": [
+      "disable_run_specific_executors",
+      "no_active_writer",
+      "reconcile_transition_ledger",
+      "reconcile_kanban",
+      "freeze_timers",
+      "preserve_production_state",
+      "clear_next_run_pointer",
+      "write_cleanup_receipt"
+    ]
+  },
+  "promotion_review": {
+    "required_after_every_run": true,
+    "revise_living_plan": true,
+    "questions": [
+      "What worked and must become mandatory?",
+      "What failed and needs a permanent correction?",
+      "What became slower and why?",
+      "What can be safely simplified?",
+      "What must the next run validate before starting?"
+    ]
+  },
+  "liveness": {
+    "stale_active_threshold_minutes": 15,
+    "stale_action": "resume_same_operation_or_record_explicit_blocked_transition",
+    "silent_active_stall_prohibited": true
+  },
+  "image_path": {
+    "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
+    "svg_fallback": false,
+    "low_quality_fallback": false
+  },
+  "success_state": "PUBLIC_CLOSED",
+  "cost_boundary": {
+    "chatgpt_work": false,
+    "codex": false,
+    "paid_apis": false,
+    "billable_overage": false,
+    "new_credentials": false
+  }
+}
