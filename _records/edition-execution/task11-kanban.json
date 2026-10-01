@@ -10,7 +10,7 @@
   "images_accepted": 6,
   "main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "d12b22d242d1f6c402fe10099698e5ab4b4e85d2",
+  "controller_sha": "7a2241e6649edafdf41a4c2cf72de54adb7a7aec",
   "blocker": null,
   "next_action": null,
   "cards": [
@@ -1107,21 +1107,14 @@
     },
     "github_actions": {
       "in_progress": 0,
-      "queued_relevant": 1,
-      "note": [
-        {
-          "id": 32052011519,
-          "name": "pages build and deployment",
-          "status": "queued",
-          "head_sha": "3f552f9ba7c3a3ca986dfde251aac194a45a05b4"
-        }
-      ]
+      "queued_relevant": 0,
+      "note": "No active or queued current-mission workflow. One unrelated historical Pages run remains queued at head 3f552f9ba7c3a3ca986dfde251aac194a45a05b4."
     },
     "one_writer_check": "PASS — mission complete; primary controller, keeper and sentinel disabled after 2/2 independently verified PUBLIC CLOSED editions."
   },
   "repository": {
     "main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
-    "branch_head_before_record": "d12b22d242d1f6c402fe10099698e5ab4b4e85d2",
+    "branch_head_before_record": "7a2241e6649edafdf41a4c2cf72de54adb7a7aec",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
     "release_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
     "closure_main_sha": "266be12cece3f7054e395600dc5bbea53e618a90",
