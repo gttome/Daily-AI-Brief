@@ -10,5 +10,9 @@
   "writer_generation": 1,
   "recovery_attempt": 3,
   "created_at": "2026-10-01T23:04:48.016Z",
-  "status": "queued"
+  "status": "completed_rejected",
+  "completed_at": "2026-10-01T23:20:01Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261001-run4/15-04273d8ca53be8b5112bac7152ed906bf28f96e97c25cf3770552165d72235fb.json",
+  "attempt_record": "_records/image-attempts/2026-10-01-run4/m08-attempt-4.json",
+  "outcome": "rejected_blocked_no_attempt_5"
 }
