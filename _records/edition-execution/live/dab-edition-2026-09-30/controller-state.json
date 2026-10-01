@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 22,
+  "version": 23,
   "status": "running",
   "current_operation": "production_admission",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T07:30:28.271Z",
-  "last_progress_at": "2026-10-01T07:30:28.271Z",
+  "updated_at": "2026-10-01T07:33:35.662Z",
+  "last_progress_at": "2026-10-01T07:33:35.662Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -157,7 +157,7 @@
       "completed_at": "2026-10-01T07:27:16.758Z",
       "validated_event": "_records/publication/2026-09-30/reliable-edition-20260930-second.validated.json",
       "release_manifest": "_records/releases/2026-09-30.json",
-      "staged_tree_digest": "sha256:2776ec8ac2713ce4a300555f406f6b998d431892100f1ab032e83d9a3b1b146f",
+      "staged_tree_digest": "sha256:219f77d574747fc67b04e8ea781db71eba0ac6c4397dd68ca3a8771d74c74242",
       "publication_manifest_git_blob_sha": "fa1a6a631c5781d5d2e571a71f289a92a5c222af",
       "watchlist_git_blob_sha": "ac6f22641c60db6d77593fb0d4d1f19db36b4e71",
       "watchlist_public_projection_git_blob_sha": "604c4dcb04462ec404e563eab22eac6a097231ab",
@@ -242,7 +242,7 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Rerun protected CI on PR #308 after rebinding the generic handoff and its production-branch assertion to the durable September 30 staging ref.",
+    "next_action": "Rerun protected CI on PR #308 after normalizing the Watchlist summary line to the tested same-edition reader-surface contract.",
     "images_accepted": 6,
     "current_task": "11.23"
   },
