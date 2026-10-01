@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T06:51:26.288Z",
+  "observed_at": "2026-10-01T06:59:41.601Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -12,7 +12,7 @@
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
   "controller_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
   "blocker": null,
-  "next_action": "Review the six accepted images as a complete set for byte uniqueness, story differentiation, accessibility, exact text and visual quality; then freeze the image handoff.",
+  "next_action": "Assemble the canonical September 30 edition and deterministic derived pages from locked inputs.",
   "cards": [
     {
       "id": "11.01",
@@ -227,21 +227,24 @@
       "id": "11.19",
       "title": "Review six-image set and accessibility",
       "depends_on": "13–18",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T06:51:26.288Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "Review all six accepted_locked assets as a differentiated accessible set",
-      "next_action": "Revalidate identity, dimensions, distinct hashes, story fit, exact visible text, alt text and cross-image differentiation."
+      "completed_at": "2026-10-01T06:59:41.601Z",
+      "timing": "8m 15.313s",
+      "substage": "Six-image production set passed exact-canvas, uniqueness, accessibility, story-fit, visible-text and differentiation review",
+      "next_action": null,
+      "elapsed_seconds": 495.313
     },
     {
       "id": "11.20",
       "title": "Assemble canonical edition and pages",
       "depends_on": "08–11,19",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T06:59:41.601Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "Assemble canonical edition and deterministic derived pages from locked inputs",
+      "next_action": "Render the canonical September 30 edition and derived pages without reopening locked upstream stages."
     },
     {
       "id": "11.21",
@@ -305,7 +308,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 17,
+  "controller_state_version": 18,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -395,9 +398,15 @@
       "accepted_at": "2026-10-01T06:29:24.084Z",
       "status": "accepted_locked",
       "elapsed_seconds": 179.002,
-      "sha256": "6bc3d8af5a6bf4b9265dbf875dc2374b748854cbea7ddd1a7d5031ff3db34f29",
-      "git_blob_sha": "3a4ed737272d47eaea6e3d98ee65f2daa22cc50e",
-      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-1.png"
+      "sha256": "64fbf099a406e9de3db620edb64090da384a8f319ec4c8ced17fb149f5e5112a",
+      "git_blob_sha": "5779946c9b0dacb9eebd1d3a2f426700e0add2bf",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m02-2.png",
+      "normalized_at": "2026-10-01T06:56:50.953Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "native_asset_preserved": true
     },
     {
       "image": 2,
@@ -410,9 +419,15 @@
       "accepted_at": "2026-10-01T06:31:38.079Z",
       "status": "accepted_locked",
       "elapsed_seconds": 133.995,
-      "sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
-      "git_blob_sha": "0739bf2cdaf889519799d8f38e2e51a2bf244c85",
-      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-1.png"
+      "sha256": "16fe73d5ef7167bb71e23797ccab062aac7db075e119db15ac3cef2d8231e642",
+      "git_blob_sha": "2ea583f8e1b2a07e47a35e793a726617a405dd7d",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-2.png",
+      "normalized_at": "2026-10-01T06:56:50.953Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "native_asset_preserved": true
     },
     {
       "image": 3,
@@ -425,9 +440,15 @@
       "accepted_at": "2026-10-01T06:33:33.976Z",
       "status": "accepted_locked",
       "elapsed_seconds": 115.897,
-      "sha256": "892fc589910f31799bd9f2f7fab90e30a2d9b95aadc158d70d8389d0c2e1d7cf",
-      "git_blob_sha": "aa04a8c2169f12f35bf7ed0ad59f31e7e66ff54d",
-      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m04-1.png"
+      "sha256": "2bcfa40f815003f2df4f27f481008456972555be21afd179e2b335bc826fec3c",
+      "git_blob_sha": "c1a9431b2b9b4778017e8d27256d9fc7debd7ac6",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m04-2.png",
+      "normalized_at": "2026-10-01T06:56:50.953Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "native_asset_preserved": true
     },
     {
       "image": 4,
@@ -440,9 +461,15 @@
       "accepted_at": "2026-10-01T06:35:24.106Z",
       "status": "accepted_locked",
       "elapsed_seconds": 110.13,
-      "sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
-      "git_blob_sha": "2123b6924d2ba168676ca271c6ac8fee50623813",
-      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-1.png"
+      "sha256": "181860900e6d63f2eed95f7a1aa454970f6bd7fdac7808f3af24f9b23f48fe8e",
+      "git_blob_sha": "5c16d9e4ac361d7e683e78713a55c1d40198672d",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-2.png",
+      "normalized_at": "2026-10-01T06:56:50.953Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "native_asset_preserved": true
     },
     {
       "image": 5,
@@ -459,11 +486,17 @@
       "last_raw_sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
       "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-4.png",
       "request_revision": 2,
-      "sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
-      "git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
-      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-1.png",
+      "sha256": "320ee51e3fd8a812bbf0235f639b07f56b1b7b1863b258e1bc9eea88157c2593",
+      "git_blob_sha": "30218d2c8709a4286330be97b5d06c85a4aa4a55",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-2.png",
       "accepted_attempt": 1,
-      "prior_revision_rejections": 4
+      "prior_revision_rejections": 4,
+      "normalized_at": "2026-10-01T06:56:50.953Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "native_asset_preserved": true
     },
     {
       "image": 6,
@@ -480,11 +513,17 @@
       "last_raw_sha256": "b103443b61da3afa63d0c38fd988cf1ab93755947fe22350e51041c81396fb74",
       "last_raw_path": "_records/image-attempts/2026-09-30/m08-attempt-2.png",
       "request_revision": 2,
-      "sha256": "6b4e4b8ee90d558c0e425529c700afb5665a4de58426eac29b9e96fdd3c722eb",
-      "git_blob_sha": "700b28dc32122f18b8a2e27a263775ff718fbdb1",
-      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m08-1.png",
+      "sha256": "28e0215a359ab789420344d0a2965c364152dc789902f44eb69f5df2ba70abc3",
+      "git_blob_sha": "20f9e477188e2262c879a6b8abeb362b8a636bbd",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m08-2.png",
       "accepted_attempt": 1,
-      "prior_revision_rejections": 2
+      "prior_revision_rejections": 2,
+      "normalized_at": "2026-10-01T06:56:50.953Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "native_asset_preserved": true
     }
   ],
   "automations": [
@@ -781,6 +820,32 @@
       "event": "backlog_exit",
       "at": "2026-10-01T06:51:26.288Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.19",
+      "event": "production_normalization_verified",
+      "at": "2026-10-01T06:56:53.886Z",
+      "production_dimensions": [
+        1200,
+        630
+      ],
+      "source_assets_preserved": true,
+      "semantic_edits": false
+    },
+    {
+      "task_id": "11.19",
+      "event": "done_recorded",
+      "at": "2026-10-01T06:59:41.601Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 495.313,
+      "accepted_locked": 6,
+      "rejected_attempts": 6
+    },
+    {
+      "task_id": "11.20",
+      "event": "backlog_exit",
+      "at": "2026-10-01T06:59:41.601Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -826,5 +891,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T06:51:26.288Z"
+  "last_durable_progress_at": "2026-10-01T06:59:41.601Z"
 }

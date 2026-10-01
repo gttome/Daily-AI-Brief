@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 17,
+  "version": 18,
   "status": "running",
-  "current_operation": "images",
+  "current_operation": "seal_bundle",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T06:51:26.288Z",
-  "last_progress_at": "2026-10-01T06:51:26.288Z",
+  "updated_at": "2026-10-01T06:59:41.601Z",
+  "last_progress_at": "2026-10-01T06:59:41.601Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -97,6 +97,21 @@
       "books_selected": 4,
       "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
       "items_digest": "cc31c8d0a98a68084ad750366406bacde3fb09a375d603bac074bee27f731b7c"
+    },
+    "images": {
+      "result": "pass",
+      "completed_at": "2026-10-01T06:59:41.601Z",
+      "specification_manifest": "_records/editorial-handoff/image-specs-2026-09-30.json",
+      "handoff": "_records/editorial-handoff/images-2026-09-30.json",
+      "quality_evidence": "_records/image-quality/2026-09-30-editorial-v2.json",
+      "accepted_locked": 6,
+      "rejected_attempts": 6,
+      "production_dimensions": {
+        "width": 1200,
+        "height": 630
+      },
+      "normalization": "deterministic_non_overwriting",
+      "low_quality_fallback": false
     }
   },
   "handler_registry": {
@@ -169,9 +184,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Review the six accepted images as a complete set for byte uniqueness, story differentiation, accessibility, exact text and visual quality; then freeze the image handoff.",
+    "next_action": "Assemble the canonical September 30 edition and derived pages from the locked kernel, media, watchlist, book mappings and accepted image handoff.",
     "images_accepted": 6,
-    "current_task": "11.19"
+    "current_task": "11.20"
   },
   "blockers": [],
   "cost_boundary": {
@@ -220,27 +235,18 @@
     "controller_reconcile_merge": "54928cd9216e0a403da4cab90924f3f3802f0453"
   },
   "image_stage": {
-    "result": "in_progress",
+    "result": "pass",
+    "status": "complete",
     "specification_manifest": "_records/editorial-handoff/image-specs-2026-09-30.json",
+    "handoff": "_records/editorial-handoff/images-2026-09-30.json",
+    "quality_evidence": "_records/image-quality/2026-09-30-editorial-v2.json",
     "specifications_sealed": 6,
     "accepted": 6,
-    "current_candidate": null,
-    "current_attempt": null,
-    "generation_started": false,
-    "last_receipt": "_records/image-attempts/2026-09-30/m08-v2-attempt-1.json",
-    "last_rejection": {
-      "attempt": 2,
-      "request_revision": 1,
-      "code": "HUMAN_OR_HUMANOID_GLYPHS_PROHIBITED",
-      "record": "_records/image-attempts/2026-09-30/m08-attempt-2.json"
+    "rejected_attempts": 6,
+    "production_dimensions": {
+      "width": 1200,
+      "height": 630
     },
-    "current_request_revision": null,
-    "spec_repair": {
-      "at": "2026-10-01T06:48:57.159Z",
-      "old_request_sha256": "bd6d5ef3a8b1e41640fa92df35537bc4b070e0502ca7cf36e549d068c5334acf",
-      "new_request_sha256": "f006e04d1fe690666770683d88596ad03f262cc82200a868f5bfb7b84ae62069",
-      "scope": "m08 only"
-    },
-    "status": "set_review_in_progress"
+    "last_receipt": "_records/image-attempts/2026-09-30/m08-v2-attempt-1-normalized.json"
   }
 }
