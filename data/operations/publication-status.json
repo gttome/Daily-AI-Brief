@@ -1,16 +1,16 @@
 {
   "schema_version": "2.0.0",
   "projection_version": "publication-status-v2",
-  "edition_date": "2026-09-29",
-  "edition_id": "dab-edition-2026-09-29",
-  "lifecycle_stage": "CC_SYNCED",
-  "lifecycle_state": "CC_SYNCED",
-  "operator_state": "CC_SYNCED",
-  "status": "CC_SYNCED",
+  "edition_date": "2026-09-30",
+  "edition_id": "dab-edition-2026-09-30",
+  "lifecycle_stage": "COMPLETED",
+  "lifecycle_state": "COMPLETED",
+  "operator_state": "COMPLETED",
+  "status": "COMPLETED",
   "terminal_outcome": "COMPLETED",
   "current_blocker": null,
   "earliest_failed_stage": null,
-  "last_successful_stage": "CC_SYNCED",
+  "last_successful_stage": "COMPLETED",
   "preserved_completed_work": [
     "PLANNED",
     "PREFLIGHT_READY",
@@ -21,60 +21,59 @@
     "MERGED",
     "PAGES_DEPLOYED",
     "LIVE_VERIFIED",
-    "COMPLETED",
-    "CC_SYNCED"
+    "COMPLETED"
   ],
-  "next_automatic_recovery_step": null,
-  "next_legal_recovery_action": null,
+  "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
+  "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
   "operator_intervention_required": null,
-  "baseline_sha": "2f280f26f6a2ff8e3013c96a88146dd44e8b38f4",
-  "candidate_sha": "b9f07d2ed87ac60c9b51881ed66ad03c2c783ee9",
-  "production_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
-  "publication_merge_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
-  "pr_number": 303,
-  "ci_run_id": 36809097161,
+  "baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+  "candidate_sha": "dc16da6ba9667e5ec71f82af08cbaef175cabaa7",
+  "production_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+  "publication_merge_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+  "pr_number": 310,
+  "ci_run_id": 36832963410,
   "ci": {
     "state": "passed",
-    "run_id": 36809097161
+    "run_id": 36832963410
   },
-  "pages_deployment_id": 36809532817,
-  "deployed_sha": "d294c5363c63f7055aa180283bb84395282b69e9",
+  "pages_deployment_id": 36833110569,
+  "deployed_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
   "pages": {
     "state": "succeeded",
-    "run_id": 36809532817,
-    "deployed_sha": "d294c5363c63f7055aa180283bb84395282b69e9"
+    "run_id": 36833110569,
+    "deployed_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c"
   },
-  "live_verification_timestamp": "2026-10-01T03:14:48.948Z",
+  "live_verification_timestamp": "2026-10-01T07:55:53.483Z",
   "live_reader": {
     "state": "verified",
-    "verified_at": "2026-10-01T03:14:48.948Z"
+    "verified_at": "2026-10-01T07:55:53.483Z"
   },
-  "completion_path": "_records/publication/2026-09-29/completion.json",
+  "completion_path": "_records/publication/2026-09-30/completion.json",
   "completion": {
     "state": "verified",
-    "path": "_records/publication/2026-09-29/completion.json"
+    "path": "_records/publication/2026-09-30/completion.json"
   },
-  "command_center_sync": "complete",
+  "command_center_sync": "pending",
   "command_center": {
-    "state": "complete",
-    "result": "pass",
-    "last_synced_at": "2026-10-01T03:44:57.733Z",
-    "source_status_sha256": "sha256:f0b61695cda56afab88c6213e09c9f2a78f8347b8795d5ed1903816cba5c3998",
-    "stale": false
+    "state": "pending",
+    "result": "pending",
+    "last_synced_at": null,
+    "source_status_sha256": null,
+    "stale": null
   },
   "last_authoritative_state_transition": {
-    "stage": "CC_SYNCED",
-    "at": "2026-10-01T03:44:57.733Z"
+    "stage": "COMPLETED",
+    "at": "2026-10-01T07:55:53.483Z"
   },
   "source_evidence": {
-    "lifecycle_path": "_records/publication/2026-09-29/lifecycle.json",
-    "completion_path": "_records/publication/2026-09-29/completion.json",
+    "lifecycle_path": "_records/publication/2026-09-30/lifecycle.json",
+    "completion_path": "_records/publication/2026-09-30/completion.json",
     "current_edition_path": "data/operations/current-edition.json",
-    "run_state_path": "_records/run-state/2026-09-29.json"
+    "run_state_path": "_records/run-state/2026-09-30.json"
   },
   "consistency": {
     "state": "pass",
     "errors": []
   },
-  "updated_at": "2026-10-01T03:44:57.733Z"
+  "updated_at": "2026-10-01T07:55:53.483Z"
 }
