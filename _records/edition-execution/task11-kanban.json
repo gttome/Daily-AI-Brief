@@ -1,18 +1,18 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T06:42:11.142Z",
+  "observed_at": "2026-10-01T06:44:59.487Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
   "edition_binding": "Locked",
   "run_id": "reliable-edition-20260930-second",
-  "images_accepted": 4,
+  "images_accepted": 5,
   "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
-  "controller_sha": "27cdb78690540b0a1613add4e2cab66e744264cb",
+  "controller_sha": "d198076a2c3346ab2f49b9279799cc2326f1bbb1",
   "blocker": null,
-  "next_action": "Generate m07 revision 2 attempt 1 from the repaired sealed request; persist exact bytes before review.",
+  "next_action": "Generate m08 attempt 1 from its sealed governed-teammate request; persist exact bytes before review.",
   "cards": [
     {
       "id": "11.01",
@@ -203,21 +203,24 @@
       "id": "11.17",
       "title": "Generate, save and accept image 5",
       "depends_on": "16",
-      "column": "WIP",
+      "column": "Done",
       "started_at": "2026-10-01T06:35:24.106Z",
-      "completed_at": null,
-      "timing": "live",
-      "substage": "m07 request revision 1 exhausted four text/figure defects; minimal sealed-spec repair complete; revision 2 attempt 1 prepared",
-      "next_action": "Run revision 2 attempt 1 and capture returned bytes before review."
+      "completed_at": "2026-10-01T06:44:59.487Z",
+      "timing": "9m 35.381s",
+      "substage": "m07 accepted_locked on repaired request revision 2 attempt 1; four revision-1 rejections preserved",
+      "next_action": null,
+      "proof": "_records/image-attempts/2026-09-30/m07-v2-attempt-1.json"
     },
     {
       "id": "11.18",
       "title": "Generate, save and accept image 6",
       "depends_on": "17",
-      "column": "Backlog",
-      "started_at": null,
+      "column": "WIP",
+      "started_at": "2026-10-01T06:44:59.487Z",
       "completed_at": null,
-      "timing": "Not started"
+      "timing": "live",
+      "substage": "m08 attempt 1 prepared from its sealed single-story request",
+      "next_action": "Invoke native generation once and capture returned bytes before any other operation."
     },
     {
       "id": "11.19",
@@ -299,7 +302,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 13,
+  "controller_state_version": 14,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -309,15 +312,15 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "m07 revision 1 exhausted four bounded attempts; every raw asset and rejection remains append-only.",
-    "Minimal m07 spec repair sealed as revision 2: repeated cards must be unlabeled, shared group labels appear once, owner is gear-only."
+    "Task 11.17 completed: m07 revision 2 attempt 1 accepted_locked after the minimal spec repair; all four earlier failures remain durable.",
+    "Task 11.18 started: m08 attempt 1 is the only active image job."
   ],
   "readiness": {
     "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
     "editorial": "LOCKED: one semantic pass; no post-editorial model pass",
     "videos": "LOCKED: 2 / 2; both ≤10 minutes",
     "podcasts": "LOCKED: 2 / 2; distinct shows; both primary 48-hour tier",
-    "images": "4 / 6 accepted_locked; m07 revision 1 preserved (4 rejected); repaired revision 2 attempt 1 WIP",
+    "images": "5 / 6 accepted_locked; m08 attempt 1 WIP",
     "watchlist": "READY: 1 new / 3 updated / 13 carried; 14/14 checks",
     "books": "READY: 4 / 4 books considered; 32 anchors; 320/320 item-anchor pairs; 10 mappings",
     "bundle": "Not started",
@@ -442,28 +445,33 @@
       "image": 5,
       "task_id": "11.17",
       "candidate": "m07",
-      "attempts": 4,
+      "attempts": 5,
       "generate_started_at": null,
-      "saved_at": "2026-10-01T06:41:58.000Z",
-      "reviewed_at": "2026-10-01T06:42:11.142Z",
-      "accepted_at": null,
-      "status": "Revision 1 exhausted; revision 2 attempt 1 prepared",
-      "elapsed_seconds": null,
+      "saved_at": "2026-10-01T06:44:44.000Z",
+      "reviewed_at": "2026-10-01T06:44:59.487Z",
+      "accepted_at": "2026-10-01T06:44:59.487Z",
+      "status": "accepted_locked",
+      "elapsed_seconds": 575.381,
       "last_rejection": "VISIBLE_TEXT_DUPLICATE",
       "last_raw_sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
       "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-4.png",
-      "request_revision": 2
+      "request_revision": 2,
+      "sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+      "git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-1.png",
+      "accepted_attempt": 1,
+      "prior_revision_rejections": 4
     },
     {
       "image": 6,
       "task_id": "11.18",
-      "candidate": null,
+      "candidate": "m08",
       "attempts": 0,
       "generate_started_at": null,
       "saved_at": null,
       "reviewed_at": null,
       "accepted_at": null,
-      "status": "Not started",
+      "status": "WIP: attempt 1 prepared",
       "elapsed_seconds": null
     }
   ],
@@ -709,6 +717,21 @@
       "at": "2026-10-01T06:42:11.142Z",
       "request_revision": 2,
       "reason": "single shared labels and non-human owner geometry"
+    },
+    {
+      "task_id": "11.17",
+      "event": "done_recorded",
+      "at": "2026-10-01T06:44:59.487Z",
+      "cycle_start_known": true,
+      "cycle_seconds": 575.381,
+      "accepted_request_revision": 2,
+      "accepted_attempt": 1
+    },
+    {
+      "task_id": "11.18",
+      "event": "backlog_exit",
+      "at": "2026-10-01T06:44:59.487Z",
+      "cycle_start_known": true
     }
   ],
   "liveness": {
@@ -740,7 +763,7 @@
   },
   "repository": {
     "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
-    "branch_head_before_record": "27cdb78690540b0a1613add4e2cab66e744264cb",
+    "branch_head_before_record": "d198076a2c3346ab2f49b9279799cc2326f1bbb1",
     "controller_record_commit": "2c96eb683bc329115e32d5c3e5d607ac027c07b5",
     "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba"
   },
@@ -754,5 +777,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T06:42:11.142Z"
+  "last_durable_progress_at": "2026-10-01T06:44:59.487Z"
 }

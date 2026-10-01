@@ -135,19 +135,29 @@
         "Process Update"
       ],
       "alt_text": "Textbook diagram showing repeated prompts becoming a maintained reusable Gemini Skill with instructions, examples, ownership, reuse across tasks, and a versioned update loop.",
-      "status": "specification_repaired",
+      "status": "accepted_locked",
       "attempts": 0,
       "last_rejection": "VISIBLE_TEXT_DUPLICATE",
       "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-4.png",
       "last_raw_sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
-      "next_attempt": 1,
       "request_revision": 2,
       "supersedes_request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
       "prior_request_attempts": 4,
       "prior_request_terminal": "ATTEMPT_LIMIT_EXHAUSTED",
       "repaired_request_path": "_records/image-context/2026-09-30/m07.json",
       "archived_request_path": "_records/image-context/2026-09-30/m07-v1.json",
-      "repair_reason": "Repeated card layouts caused duplicate allowlisted group labels; revision 2 requires a single shared intake label, a single shared output label, unlabeled repeated cards, and gear-only ownership geometry."
+      "repair_reason": "Repeated card layouts caused duplicate allowlisted group labels; revision 2 requires a single shared intake label, a single shared output label, unlabeled repeated cards, and gear-only ownership geometry.",
+      "attempt": 1,
+      "total_attempts_all_revisions": 5,
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m07-1.png",
+      "raw_path": "_records/image-attempts/2026-09-30/m07-v2-attempt-1.png",
+      "sha256": "3479c274d7ab3b4428b348b91fbb985b5d8584abef480f9f1df5c5477162ad36",
+      "git_blob_sha": "a84f7c935edac3c8c7a2137dc285415a8b1b67c6",
+      "width": 1942,
+      "height": 809,
+      "generated_at": "2026-10-01T06:44:31.343Z",
+      "accepted_at": "2026-10-01T06:44:59.487Z",
+      "receipt_path": "_records/image-attempts/2026-09-30/m07-v2-attempt-1.json"
     },
     {
       "candidate_id": "m08",
@@ -197,8 +207,8 @@
     "m08"
   ],
   "generation_started": false,
-  "accepted_count": 4,
-  "current_candidate": "m07",
+  "accepted_count": 5,
+  "current_candidate": "m08",
   "current_attempt": 1,
   "repaired_at": "2026-10-01T06:42:11.142Z"
 }
