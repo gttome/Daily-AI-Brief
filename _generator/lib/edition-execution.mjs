@@ -8,6 +8,9 @@ import {resolveResumeStageFromRepository, RUN_STAGES, newRunState} from './run-s
 
 export const EDITION_EXECUTION_PROFILE = 'reliable-edition-v1';
 export const EDITION_OPERATIONS = Object.freeze(['admission','discovery','editorial','media','images','seal_bundle','qualification','production_admission','publication','public_closed']);
+export const NATIVE_RECOVERY_ADMISSION = 'native-recovery-proof-v2';
+export const DIRECT_IMAGE_CAPTURE_ADMISSION = 'same-invocation-direct-capture-v1';
+const admissionMode = binding => binding?.policies?.image_handoff || NATIVE_RECOVERY_ADMISSION;
 const assert = (ok, message) => { if (!ok) throw Error(message); };
 const validSha = value => /^[a-f0-9]{40}$/.test(value || '');
 const stamp = value => typeof value === 'string' && /(?:Z|[+-]\d\d:\d\d)$/.test(value) && Number.isFinite(Date.parse(value));
@@ -38,14 +41,20 @@ export async function executeEdition({binding, store, host, transport, probeKey,
   if (terminalResult) return {status: 'terminal', result: terminalResult.result, run_id: terminalResult.run_id,
     resume_permitted: false, publication_complete: false, reason: 'historical_qualification_is_immutable'};
   const admission = async () => {
-    if (!host || !transport) throw new OperationBlocked('CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF');
-    const proof=await proveImageHandoff({host, transport, probeKey, expected: expectedProbe, releaseSha: binding.release_sha, now: options.now});
-    assert(proof.evidence_type==='live','fixture_cannot_admit_live_edition');
     const publicationState=newRunState({date:binding.edition_date,baselineSha:binding.research_baseline_sha});
     publicationState.execution_profile=EDITION_EXECUTION_PROFILE;
     publicationState.original_cutoff=binding.cutoff;
     publicationState.pinned_release_sha=binding.release_sha;
-    return {result:'pass',proof,publication_state:publicationState};
+    if (admissionMode(binding) === DIRECT_IMAGE_CAPTURE_ADMISSION) {
+      const policy = verifyDirectCaptureAdmission({releaseSha: binding.release_sha, now: options.now?.()});
+      return {...policy, proof:null, publication_state:publicationState};
+    }
+    if (admissionMode(binding) !== NATIVE_RECOVERY_ADMISSION)
+      throw new OperationBlocked('UNSUPPORTED_IMAGE_HANDOFF_ADMISSION_POLICY');
+    if (!host || !transport) throw new OperationBlocked('CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF');
+    const proof=await proveImageHandoff({host, transport, probeKey, expected: expectedProbe, releaseSha: binding.release_sha, now: options.now});
+    assert(proof.evidence_type==='live','fixture_cannot_admit_live_edition');
+    return {result:'pass',admission_mode:NATIVE_RECOVERY_ADMISSION,proof,publication_state:publicationState};
   };
   const steps = EDITION_OPERATIONS.map(id => {
     if (id === 'admission') return {id, run: admission, recover: admission};
@@ -252,6 +261,36 @@ export function pinnedResumeDecision(root, state, currentMainSha) {
   return {resume_stage: resume, preserved_stages: RUN_STAGES.filter(s => state.stages?.[s]?.status === 'pass' && RUN_STAGES.indexOf(s) < RUN_STAGES.indexOf(resume)),
     deployment_rebinding_required: currentMainSha !== state.baseline_main_sha, current_main_sha: currentMainSha,
     pinned_research_baseline_sha: state.baseline_main_sha, restart_editorial_due_to_main_change: false};
+}
+
+/** Explicit delivery-first admission for hosts that can return a native image in the
+ * same controller invocation but expose no cross-invocation recover callback. This is
+ * an execution policy, not a native-result proof: it makes no recovery-capability claim
+ * and moves exact-byte handoff enforcement to the image stage. Publication gates remain
+ * unchanged and no image can pass without the normal six-image quality/persistence proof.
+ */
+export function verifyDirectCaptureAdmission({releaseSha, now = new Date().toISOString()} = {}) {
+  assert(validSha(releaseSha) && stamp(now), 'admission_release_and_time_required');
+  return {
+    result:'pass',
+    profile:EDITION_EXECUTION_PROFILE,
+    admission_mode:DIRECT_IMAGE_CAPTURE_ADMISSION,
+    release_sha:releaseSha,
+    verified_at:now,
+    native_recovery_proof_required:false,
+    native_recovery_capability_claimed:false,
+    image_generation_proven:false,
+    exact_bytes_proven:false,
+    image_stage_deferred:true,
+    image_stage_requirements:[
+      'one_story_one_attempt',
+      'persist_returned_bytes_before_yield',
+      'exact_git_content_identity',
+      'post_generation_subject_factual_structural_editorial_review',
+      'six_distinct_accepted_locked_images',
+      'full_publication_manifest_and_live_byte_gates'
+    ]
+  };
 }
 
 /** Offline admission verifier for an ALREADY observed producer result, persisted by
