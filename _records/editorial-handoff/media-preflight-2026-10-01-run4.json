@@ -1,0 +1,9 @@
+{
+  "schema_version":"media-preflight-v1",
+  "edition_id":"dab-edition-2026-10-01",
+  "run_number":4,
+  "cutoff":"2026-10-01T19:52:35Z",
+  "status":"PARTIAL",
+  "videos":{"selected":2,"within_72h":2,"within_10m":2,"titles":["Google launches Gemini 4 Argon, its first AI frontier model release in months","Introducing dots, always-on agents built to handle everything."],"runtime_seconds":[106,148]},
+  "podcasts":{"selected":0,"required":2}
+}
