@@ -1,5 +1,7 @@
 # Generative AI Professional Series integration policy
 
+For editions from September 30, the [four-book selection contract](independent-watchlist-and-book-coverage.md#books) requires every eligible anchor to be scored and records seven-edition usage and concentration QA. It preserves the one-reference-per-item rule and all earlier mappings.
+
 Effective: September 16, 2026
 
 ## Purpose

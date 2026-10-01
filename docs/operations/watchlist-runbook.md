@@ -1,5 +1,7 @@
 # Emerging AI Watchlist — effective September 12, 2026
 
+For editions from September 30, follow [independent discovery and four-book coverage](independent-watchlist-and-book-coverage.md). It supersedes the older six-class/eight-query admission workflow below: seven domains, fourteen focused checks, full candidate ledger, one-primary-source early admission, and explicit mechanism comparison before merging.
+
 ## Daily operation
 
 Run this stage inside the existing Daily AI Brief + QA Work automation. Use its Plus Work/Codex allowance; no paid model API or new subscription. The September 12 edition remains subject to its full existing publication gates. Do not publish a future-dated ordinary edition just to launch this feature.

@@ -66,7 +66,7 @@
     "knowledge_worker_workflow"
   ],
   "minimum_concept_classes_reviewed": 6,
-  "assisted_search_query_budget_max": 8,
+  "assisted_search_query_budget_max": 20,
   "receipt_path_pattern": "_records/watchlist-sweeps/YYYY-MM-DD.json",
   "rules": {
     "one_credible_original_development_can_create_early_signal": true,
@@ -78,6 +78,23 @@
     "zero_new_requires_at_least_3_reviewed_candidate_concepts": true,
     "source_registry_is_not_exhaustive": true,
     "do_not_limit_search_to_existing_watchlist_topics": true,
-    "do_not_force_daily_topic_additions": true
-  }
+    "do_not_force_daily_topic_additions": true,
+    "first_admission_does_not_require_independent_corroboration": true,
+    "merge_only_same_mechanism_with_written_comparison": true,
+    "complete_candidate_disposition_ledger_required": true
+  },
+  "redesign_effective_date": "2026-09-30",
+  "receipt_version": "2.0.0",
+  "independent_of_selected_stories": true,
+  "minimum_focused_checks_per_domain": 2,
+  "discovery_plan_module": "_generator/lib/emerging-discovery.mjs",
+  "required_discovery_domains": [
+    "frontier_models",
+    "agents_harnesses",
+    "developer_tooling",
+    "multimodal_interface",
+    "knowledge_worker_workflows",
+    "safety_governance",
+    "open_source_community"
+  ]
 }

@@ -1,6 +1,7 @@
 import {sourceReadingMinutes} from './reading-support.mjs';
 import fs from 'node:fs';
 import {editionPodcasts} from './podcasts.mjs';
+import {BOOK_COVERAGE_DATE,selectBookReferences} from './book-selection.mjs';
 const catalog = JSON.parse(fs.readFileSync(new URL('../../_data/book-reading.json', import.meta.url), 'utf8'));
 const html = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const SERIES_SEPARATION_DATE='2026-09-16';
@@ -20,9 +21,14 @@ export function validateBookReading(edition, data = catalog) {
     if(!ids.has(s.item_id)||seen.has(s.item_id))throw Error('Book reference has an unknown or duplicate item');
     seen.add(s.item_id);
     if(edition.brief_date>=SERIES_SEPARATION_DATE&&!['READ DEEPER','PUT IT INTO PRACTICE'].includes(s.label))throw Error('Book reference label must be READ DEEPER or PUT IT INTO PRACTICE');
-    if(!r?.book||!r.locator||!r.section_title||!r.verified_date||r.evidence_level!=='public table of contents'||!s.why)throw Error('Book reference requires verified source, exact locator, and reader benefit');
+    if(!r?.book||!r.locator||!r.section_title||!r.verified_date||!['public table of contents','public sample','user-provided book structure'].includes(r.evidence_level)||!s.why)throw Error('Book reference requires verified source, exact locator, and reader benefit');
     if(new URL(r.url).origin!=='https://leanpub.com')throw Error('Book reference destination must be the verified Leanpub page');
     if(s.practice&&!r.practice_title)throw Error('Practice recommendation requires a verified exercise or checklist');
+  }
+  if(edition.brief_date>=BOOK_COVERAGE_DATE){
+    const result=selectBookReferences(edition,data,data.selection_reviews?.[edition.brief_date]);
+    const canonical=rows=>JSON.stringify([...rows].sort((a,b)=>a.item_id.localeCompare(b.item_id)).map(({item_id,reference_id,why})=>({item_id,reference_id,why})));
+    if(canonical(result.selections)!==canonical(selections))throw Error('Book mappings must match the full-catalog semantic selection');
   }
 }
 export function renderBookReading(itemId,date){

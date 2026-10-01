@@ -60,6 +60,12 @@ jobs:
       - name: Validate repository state
         run: node _generator/cli.mjs validate-repo --commit "${GITHUB_SHA}"
 
+      - name: Validate independent discovery and four-book coverage
+        env:
+          PR_BASE: ${{ github.event.pull_request.base.sha }}
+          EVENT_BEFORE: ${{ github.event.before }}
+        run: node _tools/validate-intelligence.mjs
+
       - name: Validate authoritative publication lifecycle
         run: node _tools/publication-lifecycle.mjs validate
 

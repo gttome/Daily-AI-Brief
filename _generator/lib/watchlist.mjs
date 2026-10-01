@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import {renderDailyTopicGroups} from '../../assets/js/watchlist-daily.js';
 import {WEIGHTS} from '../../assets/js/watchlist-evidence.js';
 export {WEIGHTS};
 export function scoreTopic(t){return Math.round(Object.entries(WEIGHTS).reduce((n,[k,w])=>n+w*(t.rubric[k].score??0)/5,0));}
@@ -17,6 +18,7 @@ export function validateWatchlist(data){
  if(data.schema_version!=='1.0.0'||!/^\d{4}-\d{2}-\d{2}$/.test(data.edition_date))errors.push('Invalid watchlist version/date');
  if(!Array.isArray(data.topics)||!data.topics.length)return [...errors,'No researched topics'];
  for(const t of data.topics){
+ if(data.edition_date>='2026-09-30'&&!['limited','moderate','strong'].includes(t.confidence))errors.push('Invalid evidence confidence');
  if(!/^dab-topic-[a-z0-9-]{3,90}$/.test(t.topic_id)||ids.has(t.topic_id))errors.push('Invalid/duplicate topic');ids.add(t.topic_id);
  for(const k of ['name','summary','why_now','practical_value','limitations','next_action','first_detected','updated_at'])if(!t[k])errors.push(`${t.topic_id}: missing ${k}`);
  if(!['early_signal','gaining_evidence','under_research','trial_coverage','established','archived'].includes(t.status))errors.push('Invalid status');
@@ -48,5 +50,6 @@ export function watchlistPreview(date,data=null){
   const label=date>='2026-09-24'?'Changed today':(fresh.length?'New today':'Updated today');
   dailyState=`<p class="watchlist-daily-counts"><strong>${counts.new_today} new today · ${counts.updated_today} updated · ${counts.carried_forward} carried forward.</strong></p>${listed.length?`<p><strong>${label}:</strong></p><ul class="watchlist-daily-items">${listed.map(topic=>`<li>${escapeHtml(topic.name)}</li>`).join('')}</ul>`:''}`;
  }
+ if(current&&date>='2026-09-30')dailyState=renderDailyTopicGroups(current);
  return `\n\n<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2>${dailyState}<p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>\n\n`;
 }
