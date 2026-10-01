@@ -3,6 +3,7 @@ import {imageExecutionHash, validateImageGenerationExecution} from './image-exec
 
 export const NATIVE_IMAGE_DELIVERY_POLICY = 'visual-only-task-delivery-v1';
 export const NATIVE_IMAGE_RESULT_HANDOFF_CAPABILITY_VERSION = '1.0.0';
+export const DIRECT_IMAGE_CAPTURE_POLICY = 'same-invocation-direct-capture-v1';
 
 export function validateNativeImageResultHandoffCapability(capability) {
   const errors = [];
@@ -23,7 +24,11 @@ export function validateNativeImageResultHandoffCapability(capability) {
   return errors;
 }
 
-function prepareImageTaskOrBlock(base, attempt, capability) {
+function prepareImageTaskOrBlock(base, attempt, capability, handoffMode) {
+  if (handoffMode === DIRECT_IMAGE_CAPTURE_POLICY)
+    return {...base, next_action:'GENERATE_CAPTURE_REVIEW_SAME_INVOCATION', attempt,
+      handoff_mode:DIRECT_IMAGE_CAPTURE_POLICY, native_recovery_capability_claimed:false,
+      must_persist_returned_bytes_before_yield:true};
   const capabilityErrors = validateNativeImageResultHandoffCapability(capability);
   if (capabilityErrors.length)
     return {...base, next_action: 'CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF',
@@ -107,7 +112,7 @@ export function assertNativeImageTaskPrompt(submittedPrompt, delivery, execution
  * an image. Existing accepted receipts must be revalidated by the V2 byte gate.
  * Input entries are a small normalized projection of durable attempt records.
  */
-export function planNativeImageContinuation(execution, attempts, resultHandoffCapability = null) {
+export function planNativeImageContinuation(execution, attempts, resultHandoffCapability = null, {handoffMode = 'native-result-recovery-v1'} = {}) {
   assertExecution(execution);
   if (!Array.isArray(attempts)) throw Error('durable_attempt_array_required');
   const requestHash = imageExecutionHash(execution);
@@ -121,7 +126,7 @@ export function planNativeImageContinuation(execution, attempts, resultHandoffCa
     if (i < attempts.length - 1 && !['rejected','unrecoverable'].includes(a.disposition))
       throw Error('later_attempt_before_prior_terminal_failure');
   }
-  if (!attempts.length) return prepareImageTaskOrBlock(base, 1, resultHandoffCapability);
+  if (!attempts.length) return prepareImageTaskOrBlock(base, 1, resultHandoffCapability, handoffMode);
   // Inspect every prior attempt, not only the latest narrative record.
   for (const a of attempts) {
     if (a.disposition === 'accepted_locked')
@@ -147,5 +152,5 @@ export function planNativeImageContinuation(execution, attempts, resultHandoffCa
       return {...base, next_action: 'REVIEW_EXISTING_RAW', attempt: a.attempt};
   }
   if (attempts.length === 4) return {...base, next_action: 'ATTEMPT_LIMIT_EXHAUSTED', attempt: 4};
-  return prepareImageTaskOrBlock(base, attempts.length + 1, resultHandoffCapability);
+  return prepareImageTaskOrBlock(base, attempts.length + 1, resultHandoffCapability, handoffMode);
 }

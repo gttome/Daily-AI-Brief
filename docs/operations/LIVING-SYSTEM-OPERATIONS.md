@@ -1322,3 +1322,9 @@ This is not a quality relaxation and does not make an opaque task result accepta
 The administration layer also showed a separate liveness defect: the long-running publication supervisor repeatedly became disabled before the mission was complete. The active controller is now scheduled as an exact hourly task and a separate administration-only keeper re-enables that same controller if it is found disabled. The keeper never performs publication work or starts a competing executor.
 
 Operational consequence: future fresh qualification identities must fail fast on an unverified image-result bridge, harden the bridge first, and only then spend image attempts. This prevents another Q from losing hours to invisible worker outputs while preserving all valid upstream checkpoints.
+
+## 2026-09-30 — Remove cross-invocation recovery as a research-admission prerequisite
+
+The production controller may explicitly select `same-invocation-direct-capture-v1` when the native image surface supports generation in the active invocation but exposes no supported same-result recovery callback. This does not certify native recovery or image completion. It moves that proof to the actual image stage: one sealed story → one native generation → immediate exact-byte Git persistence → saved-byte review → accept/retry, with no yield between generation and attempted capture.
+
+Default reliable-edition behavior remains `native-recovery-proof-v2`. Direct-capture admission cannot satisfy an image receipt, image-quality record, bundle, qualification, publication or PUBLIC CLOSED gate. If an invoked native result becomes unobservable before persistence, only complete `TASK_RESULT_UNRECOVERABLE` evidence may consume that bounded attempt and permit the next one. No fifth attempt, manual owner handoff, low-quality renderer fallback or fabricated PASS is allowed.

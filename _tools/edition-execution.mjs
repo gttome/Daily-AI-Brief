@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {parseArgs} from '../_generator/lib/util.mjs';
 import {fileOperationStore, operationView} from '../_generator/lib/durable-operation.mjs';
-import {canonicalExecutionStatus, renderExecutionCheckpoint, sealPublicationBundle, verifyPublicationBundle, promotionDecision, verifyAdmissionEvidence, deriveImageProgress, applyDerivedImageProgress, summarizeImagePerformance} from '../_generator/lib/edition-execution.mjs';
+import {canonicalExecutionStatus, renderExecutionCheckpoint, sealPublicationBundle, verifyPublicationBundle, promotionDecision, verifyAdmissionEvidence, verifyDirectCaptureAdmission, DIRECT_IMAGE_CAPTURE_ADMISSION, deriveImageProgress, applyDerivedImageProgress, summarizeImagePerformance} from '../_generator/lib/edition-execution.mjs';
 
 const a=parseArgs(process.argv.slice(2)), command=a._[0], root=path.resolve(a.root||'.');
 const read=p=>JSON.parse(fs.readFileSync(path.resolve(root,p),'utf8'));
@@ -51,9 +51,13 @@ try {
       emit(operationView(await store.load(a.key)));
     }
   } else if(command==='admission-check') {
-    const proof=a.proof||'_records/execution-host/image-handoff-proof.json';
-    if(!fs.existsSync(path.resolve(root,proof)))throw Error('CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF');
-    emit(verifyAdmissionEvidence(root,read(proof),{releaseSha:a.release}));
+    if(a.mode===DIRECT_IMAGE_CAPTURE_ADMISSION){
+      emit(verifyDirectCaptureAdmission({releaseSha:a.release}));
+    } else {
+      const proof=a.proof||'_records/execution-host/image-handoff-proof.json';
+      if(!fs.existsSync(path.resolve(root,proof)))throw Error('CAPABILITY_BLOCKED_NATIVE_RESULT_HANDOFF');
+      emit(verifyAdmissionEvidence(root,read(proof),{releaseSha:a.release}));
+    }
   } else if(command==='seal') {
     emit(sealPublicationBundle(root,a.manifest,{releaseSha:a.release,cutoff:a.cutoff}));
   } else if(command==='verify') {

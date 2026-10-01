@@ -132,3 +132,7 @@ The prior chronological START-HERE record is preserved at
 [the immutable PR #290 revision](https://github.com/gttome/Daily-AI-Brief/blob/57991d30614681b6cce5335819aabef0d1931e71/docs/operations/START-HERE.md).
 No historical evidence or published content was deleted by this index consolidation.
 Maintenance/branch cleanup is a separate explicit task, not part of ordinary continuation.
+
+## September 30 direct-capture note
+
+For the bound September 30 second-edition recovery, use the released `same-invocation-direct-capture-v1` admission mode when the active native image surface has generation/editing but no supported cross-invocation result-recovery callback. This is not a native capability proof: all image-byte, quality, manifest, CI, deployment and live-verification gates remain required. The default recovery-proof mode remains available for hosts that actually implement it.
