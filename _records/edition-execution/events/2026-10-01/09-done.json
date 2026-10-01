@@ -1,0 +1,14 @@
+{
+  "task_id": "09",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:37:37.418Z",
+  "source": "scheduled production continuation",
+  "reason": "Two source-diverse podcasts were verified inside the primary 48-hour window and frozen for the edition.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/podcast-selection-2026-10-01.json",
+    "artifact_commit": "217a291e5b32dc0f619c5d3cb65353c359e635b5",
+    "count": 2,
+    "source_diverse": true
+  }
+}
