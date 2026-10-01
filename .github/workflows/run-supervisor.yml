@@ -1,6 +1,10 @@
 name: Daily AI Brief Run Supervisor
 
 on:
+  push:
+    branches: [main]
+    paths:
+      - data/operations/active-production-run.json
   workflow_dispatch:
     inputs:
       run_branch:
@@ -38,11 +42,6 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 330
     env:
-      RUN_BRANCH: ${{ inputs.run_branch }}
-      EXECUTION_KEY: ${{ inputs.execution_key }}
-      EXECUTION_ID: ${{ inputs.execution_id }}
-      EDITION_ID: ${{ inputs.edition_id }}
-      TAKEOVER_DEAD_OWNER: ${{ inputs.takeover_dead_owner }}
       SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
       - name: Check out protected control plane
@@ -52,19 +51,67 @@ jobs:
           path: control
           fetch-depth: 0
 
-      - name: Check out existing production run
+      - name: Resolve exact existing run identity
+        id: resolve
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            run_branch="${{ inputs.run_branch }}"
+            execution_key="${{ inputs.execution_key }}"
+            execution_id="${{ inputs.execution_id }}"
+            edition_id="${{ inputs.edition_id }}"
+            takeover="${{ inputs.takeover_dead_owner }}"
+            should_run=true
+          else
+            pointer="control/data/operations/active-production-run.json"
+            active="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.active===true && x.terminal!==true))")"
+            if [ "$active" != "true" ]; then
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            run_branch="$(node -e "const x=require('./$pointer');process.stdout.write(x.branch)")"
+            execution_key="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_key)")"
+            execution_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_id)")"
+            edition_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.edition_id)")"
+            takeover=false
+            should_run=true
+          fi
+          {
+            echo "RUN_BRANCH=$run_branch"
+            echo "EXECUTION_KEY=$execution_key"
+            echo "EXECUTION_ID=$execution_id"
+            echo "EDITION_ID=$edition_id"
+            echo "TAKEOVER_DEAD_OWNER=$takeover"
+          } >> "$GITHUB_ENV"
+          {
+            echo "should_run=$should_run"
+            echo "execution_id=$execution_id"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check out repository working copy
+        if: steps.resolve.outputs.should_run == 'true'
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
-          ref: ${{ inputs.run_branch }}
+          ref: main
           path: run
           fetch-depth: 0
 
+      - name: Switch working copy to existing production branch
+        if: steps.resolve.outputs.should_run == 'true'
+        run: |
+          set -euo pipefail
+          git -C run fetch --no-tags origin "$RUN_BRANCH"
+          git -C run checkout --detach "origin/$RUN_BRANCH"
+
       - name: Set up Node.js
+        if: steps.resolve.outputs.should_run == 'true'
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
           node-version: '20'
 
       - name: Validate Supervisor contracts and cumulative learning
+        if: steps.resolve.outputs.should_run == 'true'
         run: |
           set -euo pipefail
           node control/_tools/run-supervisor.mjs validate-contracts \
@@ -74,11 +121,13 @@ jobs:
             --repo-root control
 
       - name: Configure run-branch writer
+        if: steps.resolve.outputs.should_run == 'true'
         run: |
           git -C run config user.name "github-actions[bot]"
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
 
       - name: Acquire fenced writer authority for this exact execution
+        if: steps.resolve.outputs.should_run == 'true'
         id: fence
         run: |
           set -euo pipefail
@@ -104,6 +153,7 @@ jobs:
           fi
 
       - name: Persistent approximately one-minute supervision loop
+        if: steps.resolve.outputs.should_run == 'true'
         env:
           WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
         run: |
