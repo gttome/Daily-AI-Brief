@@ -34,7 +34,7 @@ test('future publication requires a daily emerging-signal receipt matching Watch
  const path='_records/watchlist-sweeps/'+watchlist.edition_date+'.json';
  assert.ok(fs.existsSync(path),'Daily emerging-signal receipt required for '+watchlist.edition_date);
  const receipt=JSON.parse(fs.readFileSync(path,'utf8'));
- assert.deepEqual(validateEmergingSignalSweep(receipt,{editionDate:watchlist.edition_date}),[]);
+ assert.deepEqual(validateEmergingSignalSweep(receipt,{editionDate:watchlist.edition_date,topics:watchlist.topics}),[]);
  const active=(watchlist.topics||[]).filter(t=>t.status!=='archived');
  const newIds=active.filter(t=>String(t.first_detected||'').slice(0,10)===watchlist.edition_date).map(t=>t.topic_id).sort();
  const updatedIds=active.filter(t=>String(t.first_detected||'').slice(0,10)!==watchlist.edition_date&&String(t.updated_at||'').slice(0,10)===watchlist.edition_date).map(t=>t.topic_id).sort();

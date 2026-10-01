@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
 import {sha256} from './util.mjs';
+import {validateEmergingSignalSweep} from './emerging-signal-sweep.mjs';
 import {publicWatchlist,validateWatchlist,watchlistDailyState,watchlistDailySummary} from './watchlist.mjs';
 import {EDITORIAL_IMAGE_QUALITY_EFFECTIVE_DATE,reviewedHandoffImages} from './image-gate.mjs';
 
@@ -19,7 +20,7 @@ const REQUIRED_ARTIFACTS=Object.freeze({
  image_manifest:{adapter:'accepted-images-map-v1'},
  image_review:{adapter:'accepted-images-map-v1'},
  watchlist:{versions:['1.0.0']},
- watchlist_evidence:{versions:['1.0.0']},
+ watchlist_evidence:{versions:['1.0.0','2.0.0']},
  book_mappings:{versions:['1.0.0']}
 });
 export const SUPPORTED_PUBLICATION_MANIFEST_ADAPTERS=Object.freeze([
@@ -146,6 +147,7 @@ function imageErrors(root,ctx,{allowLegacyStoryIdentity=false}={}){
 }
 function watchlistErrors(root,ctx,date,freeze){
  const errors=[],watch=ctx.watchlist,sweep=ctx.watchlistEvidence;
+ if(date>='2026-09-30')errors.push(...validateEmergingSignalSweep(sweep,{editionDate:date,topics:watch?.topics||[]}).map(e=>'publication_manifest_watchlist_discovery:'+e));
  for(const e of validateWatchlist(watch))errors.push('publication_manifest_watchlist_invalid:'+e);
  if(watch?.edition_date!==date||sweep?.edition_date!==date)errors.push('publication_manifest_watchlist_date_mismatch');
  const counts=watchlistDailySummary(watch||{topics:[],edition_date:date});

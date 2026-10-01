@@ -26,6 +26,28 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/book-selection.mjs",
+        "_generator/lib/book-reading.mjs",
+        "_data/book-reading.json",
+        "_generator/lib/emerging-discovery.mjs",
+        "_generator/lib/emerging-signal-sweep.mjs",
+        "_data/emerging-signal-policy.json",
+        "_tools/validate-intelligence.mjs",
+        "_tools/book-selection.mjs",
+        "assets/js/watchlist-daily.js"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/book-selection.test.mjs",
+        "_generator/test/book-reading.test.mjs",
+        "_generator/test/emerging-discovery.test.mjs",
+        "_generator/test/emerging-signal-sweep.test.mjs",
+        "_generator/test/watchlist-daily-state.test.mjs",
+        "_generator/test/publication-manifest.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/durable-operation.mjs",
         "_generator/lib/recoverable-image-job.mjs",
         "_generator/lib/connector-image-delivery.mjs",

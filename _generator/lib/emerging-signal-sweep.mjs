@@ -1,9 +1,11 @@
+import {EMERGING_REDESIGN_DATE,validateEmergingDiscovery} from './emerging-discovery.mjs';
 export const REQUIRED_EMERGING_SURFACES=["primary_research","frontier_and_small_labs","open_source","technical_communities","broad_web","youtube_creator_ecosystem"];
 export const CONCEPT_CLASSES=["model_family_or_architecture","agent_pattern_or_harness","evaluation_or_benchmark","inference_runtime_or_hardware","developer_tooling","multimodal_or_interface","safety_security_or_governance","knowledge_worker_workflow"];
 const isoDate=/^\d{4}-\d{2}-\d{2}$/;
-export function validateEmergingSignalSweep(receipt,{editionDate=null}={}){
+export function validateEmergingSignalSweep(receipt,{editionDate=null,topics=[]}={}){
  const errors=[];
- if(!receipt||receipt.schema_version!=='1.0.0')errors.push('Invalid emerging-signal receipt version');
+ if(!receipt||!['1.0.0','2.0.0'].includes(receipt.schema_version))errors.push('Invalid emerging-signal receipt version');
+ if((editionDate||receipt?.edition_date)>=EMERGING_REDESIGN_DATE)errors.push(...validateEmergingDiscovery(receipt||{},{topics}));
  if(!isoDate.test(receipt?.edition_date||''))errors.push('Invalid emerging-signal edition date');
  if(editionDate&&receipt?.edition_date!==editionDate)errors.push('Emerging-signal receipt date mismatch');
  if(!Number.isInteger(receipt?.primary_lookback_days)||receipt.primary_lookback_days<7)errors.push('Primary emerging-signal lookback must be at least 7 days');
@@ -24,7 +26,7 @@ export function validateEmergingSignalSweep(receipt,{editionDate=null}={}){
  const candidates=receipt?.candidates_reviewed;
  if(!Array.isArray(candidates))errors.push('Reviewed emerging candidates required');
  else for(const c of candidates){
-   if(!c?.name||!CONCEPT_CLASSES.includes(c.concept_class)||!['new_topic','update_existing','needs_research','rejected'].includes(c.disposition)||!c.rationale)errors.push('Incomplete emerging candidate review');
+   if(!c?.name||!CONCEPT_CLASSES.includes(c.concept_class)||!['new_topic','update_existing','duplicate','needs_research','rejected'].includes(c.disposition)||!c.rationale)errors.push('Incomplete emerging candidate review');
    if(!Array.isArray(c?.evidence_urls)||c.evidence_urls.length<1||c.evidence_urls.some(u=>!/^https:\/\//.test(u)))errors.push('Emerging candidate evidence URL required');
  }
  if(!Array.isArray(receipt?.new_topic_ids)||!Array.isArray(receipt?.updated_topic_ids))errors.push('Watchlist delta ids required');

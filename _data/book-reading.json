@@ -31,6 +31,473 @@
       "evidence_level": "public table of contents",
       "verified_date": "2026-09-13",
       "full_text_reviewed": false
+    },
+    "reliable-embeddings": {
+      "id": "reliable-embeddings",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 1, section 1.2",
+      "section_title": "Embeddings - Coordinates in that Space",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliablegenerativeai",
+        "heading": "Embeddings - Coordinates in that Space",
+        "source_location": "Chapter 1, section 1.2"
+      }
+    },
+    "reliable-rag": {
+      "id": "reliable-rag",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 3, section 3.1.3",
+      "section_title": "Hybrid Search - Combining Semantics and Exact Matches",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliablegenerativeai",
+        "heading": "Hybrid Search - Combining Semantics and Exact Matches",
+        "source_location": "Chapter 3, section 3.1.3"
+      }
+    },
+    "reliable-agent-failures": {
+      "id": "reliable-agent-failures",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 3, section 3.2.2",
+      "section_title": "Handling Failures and Conflicts",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliablegenerativeai",
+        "heading": "Handling Failures and Conflicts",
+        "source_location": "Chapter 3, section 3.2.2"
+      }
+    },
+    "reliable-handoffs": {
+      "id": "reliable-handoffs",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 3, section 3.3.1",
+      "section_title": "Handoffs and Structured Contracts",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliablegenerativeai",
+        "heading": "Handoffs and Structured Contracts",
+        "source_location": "Chapter 3, section 3.3.1"
+      }
+    },
+    "reliable-injection": {
+      "id": "reliable-injection",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 3, section 3.4.3",
+      "section_title": "Prompt Injection and Instruction Integrity",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliablegenerativeai",
+        "heading": "Prompt Injection and Instruction Integrity",
+        "source_location": "Chapter 3, section 3.4.3"
+      }
+    },
+    "reliable-audit": {
+      "id": "reliable-audit",
+      "book": "Reliable Generative AI",
+      "locator": "Chapter 4, section 4.2.2",
+      "section_title": "Audit Trails and Legal Defensibility",
+      "url": "https://leanpub.com/reliablegenerativeai",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliablegenerativeai",
+        "heading": "Audit Trails and Legal Defensibility",
+        "source_location": "Chapter 4, section 4.2.2"
+      }
+    },
+    "context-discovery": {
+      "id": "context-discovery",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 3, Discovery",
+      "section_title": "Discovery: Define the Work Before You Write the Prompt",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "Discovery: Define the Work Before You Write the Prompt",
+        "source_location": "Chapter 3, Discovery"
+      }
+    },
+    "context-envelope": {
+      "id": "context-envelope",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 3, Shaping",
+      "section_title": "The Context Envelope",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "The Context Envelope",
+        "source_location": "Chapter 3, Shaping"
+      }
+    },
+    "context-dynamic-facts": {
+      "id": "context-dynamic-facts",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 3, Execution",
+      "section_title": "Dynamic Facts and Current-State Control",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "Dynamic Facts and Current-State Control",
+        "source_location": "Chapter 3, Execution"
+      }
+    },
+    "context-failure-playbooks": {
+      "id": "context-failure-playbooks",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 4",
+      "section_title": "Failure-Mode Playbooks",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "Failure-Mode Playbooks",
+        "source_location": "Chapter 4"
+      }
+    },
+    "context-regression": {
+      "id": "context-regression",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 4",
+      "section_title": "Monitoring, Drift, and Regression Management",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "Monitoring, Drift, and Regression Management",
+        "source_location": "Chapter 4"
+      }
+    },
+    "context-privacy": {
+      "id": "context-privacy",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 5",
+      "section_title": "Data Privacy and Compliance in Context Engineering",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "Data Privacy and Compliance in Context Engineering",
+        "source_location": "Chapter 5"
+      }
+    },
+    "context-launch": {
+      "id": "context-launch",
+      "book": "Reliable Generative AI Context Engineering",
+      "locator": "Chapter 5",
+      "section_title": "Cross-Functional Governance and Launch Readiness",
+      "url": "https://leanpub.com/reliable-context-engineering",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://leanpub.com/reliable-context-engineering",
+        "heading": "Cross-Functional Governance and Launch Readiness",
+        "source_location": "Chapter 5"
+      }
+    },
+    "prompt-core-components": {
+      "id": "prompt-core-components",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 1, p. 35",
+      "section_title": "The Core Components of a Prompt",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "The Core Components of a Prompt",
+        "source_location": "Public sample PDF page 1",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-clarify": {
+      "id": "prompt-clarify",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 2, p. 93",
+      "section_title": "Clarify Before Answering",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "Clarify Before Answering",
+        "source_location": "Public sample PDF page 1",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-expert-critic": {
+      "id": "prompt-expert-critic",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 3, p. 232",
+      "section_title": "Expert Critic",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "Expert Critic",
+        "source_location": "Public sample PDF page 3",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-structure": {
+      "id": "prompt-structure",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 3.5, Section 1, p. 283",
+      "section_title": "The Perfect Prompt Structure Explained",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "The Perfect Prompt Structure Explained",
+        "source_location": "Public sample PDF page 3",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-algorithm-thoughts": {
+      "id": "prompt-algorithm-thoughts",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 4, p. 335",
+      "section_title": "Algorithm of Thoughts",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "Algorithm of Thoughts",
+        "source_location": "Public sample PDF page 4",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-graph-thoughts": {
+      "id": "prompt-graph-thoughts",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 4, p. 337",
+      "section_title": "Graph of Thoughts",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "Graph of Thoughts",
+        "source_location": "Public sample PDF page 4",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-pattern-selection": {
+      "id": "prompt-pattern-selection",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 7, p. 403",
+      "section_title": "Pattern Selection Framework",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "Pattern Selection Framework",
+        "source_location": "Public sample PDF page 4",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "prompt-evaluation": {
+      "id": "prompt-evaluation",
+      "book": "Generative AI Professional Prompt Engineering Guide",
+      "locator": "Chapter 9, p. 477",
+      "section_title": "Evaluation and Challenges",
+      "url": "https://leanpub.com/genaipromptingguide",
+      "evidence_level": "public table of contents",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/genaipromptingguide-sample.pdf",
+        "heading": "Evaluation and Challenges",
+        "source_location": "Public sample PDF page 5",
+        "landing_url": "https://leanpub.com/genaipromptingguide",
+        "sha256": "ca33217e4ba87993a48e366f9c097475df9fb99a2568d31c8e1bb58374ee7316"
+      }
+    },
+    "ecosystem-practice": {
+      "id": "ecosystem-practice",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Introduction, sample PDF p. 4",
+      "section_title": "Introduction",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Introduction",
+        "source_location": "Public sample PDF page 4",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-archetypes": {
+      "id": "ecosystem-archetypes",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Five Generative AI Prompt Companion Users, sample PDF p. 5",
+      "section_title": "Five Generative AI Prompt Companion Users",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Five Generative AI Prompt Companion Users",
+        "source_location": "Public sample PDF page 5",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-role-selection": {
+      "id": "ecosystem-role-selection",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Five Generative AI Prompt Companion Users, sample PDF p. 5",
+      "section_title": "Enable Role-Based Self-Identification",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Enable Role-Based Self-Identification",
+        "source_location": "Public sample PDF page 5",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-problem-strategies": {
+      "id": "ecosystem-problem-strategies",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Five Generative AI Prompt Companion Users, sample PDF p. 5",
+      "section_title": "Map Real Problems to Practical Prompt Strategies",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Map Real Problems to Practical Prompt Strategies",
+        "source_location": "Public sample PDF page 5",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-companion": {
+      "id": "ecosystem-companion",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Generative AI Prompt Engineering Learning Ecosystem - Companion, sample PDF p. 6",
+      "section_title": "Generative AI Prompt Engineering Learning Ecosystem - Companion",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Generative AI Prompt Engineering Learning Ecosystem - Companion",
+        "source_location": "Public sample PDF page 6",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-multimedia": {
+      "id": "ecosystem-multimedia",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Generative AI Prompt Engineering Learning Ecosystem - Companion, sample PDF p. 6",
+      "section_title": "Centralize Learning Resources",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Centralize Learning Resources",
+        "source_location": "Public sample PDF page 6",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-workflow": {
+      "id": "ecosystem-workflow",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Generative AI Prompt Engineering Learning Ecosystem - Companion, sample PDF p. 6",
+      "section_title": "Move From Understanding to Use",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Move From Understanding to Use",
+        "source_location": "Public sample PDF page 6",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
+    },
+    "ecosystem-template-export": {
+      "id": "ecosystem-template-export",
+      "book": "Generative AI Prompt Engineering Learning Ecosystem",
+      "locator": "Generative AI Prompt Engineering Learning Ecosystem - Companion, sample PDF p. 6",
+      "section_title": "Enable Template Editing and Export",
+      "url": "https://leanpub.com/GenAILearn",
+      "evidence_level": "public sample",
+      "verified_date": "2026-09-30",
+      "full_text_reviewed": false,
+      "verification": {
+        "source_url": "https://s3.amazonaws.com/samples.leanpub.com/GenAILearn-sample.pdf",
+        "heading": "Enable Template Editing and Export",
+        "source_location": "Public sample PDF page 6",
+        "landing_url": "https://leanpub.com/GenAILearn",
+        "sha256": "dd03bf7bc9f73eeb30cc5d2c3616f0428adacb4a398d6db00770af44a7e81f3c"
+      }
     }
   },
   "editions": {

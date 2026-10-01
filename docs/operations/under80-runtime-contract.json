@@ -123,7 +123,7 @@
     "separate_ai_validator": false,
     "automatic_ai_recovery": false,
     "emerging_watchlist_sweep_in_same_pass": true,
-    "emerging_watchlist_assisted_search_budget_max": 8
+    "emerging_watchlist_assisted_search_budget_max": 20
   },
   "images": {
     "required": 6,
@@ -396,7 +396,14 @@
     "new_topic_threshold": "One credible original development may create early_signal; gaining_evidence still requires two substantively independent developments.",
     "freeze_stage": "WATCHLIST_READY_before_handoff",
     "public_projection_digest_required": true,
-    "downstream_repair_allowed": false
+    "downstream_repair_allowed": false,
+    "redesign_effective_date": "2026-09-30",
+    "discovery_scope": "independent_watchlist",
+    "required_discovery_domains": "_data/emerging-signal-policy.json#required_discovery_domains",
+    "minimum_focused_checks_per_domain": 2,
+    "receipt_version": "2.0.0",
+    "admission": "One reviewed credible primary source plus material novelty and reader relevance admits early_signal / limited. No independent corroboration or proven durability required. Merge only the same mechanism with an explicit comparison.",
+    "ledger": "Record every candidate ID returned by every actual check and its disposition; derive telemetry. Checks are independent of the six selected stories. Failed checks cannot certify zero new."
   },
   "completion_evidence": {
     "mode": "runtime_artifact_with_repository_history",
@@ -659,5 +666,14 @@
     "legacy_execution_not_silently_migrated": true,
     "native_host_operational_proof": "not_established_by_code_release",
     "reference": "docs/operations/reliable-edition-execution.md"
+  },
+  "book_coverage": {
+    "effective_date": "2026-09-30",
+    "catalog": "_data/book-reading.json",
+    "plan_command": "node _tools/book-selection.mjs plan <edition.json>",
+    "select_command": "node _tools/book-selection.mjs select <edition.json> <semantic-review.json>",
+    "execution": "Score every included article/video/podcast against all 32 verified anchors across four books during the existing semantic pass, using the six dimensions and digests from plan. Save review under catalog.selection_reviews[date] and selected rows under catalog.editions[date]. No extra model pass or paid API. Run selection after canonical item IDs exist, before handoff.",
+    "selection": "Relevance first; recent anchor/chapter/book usage breaks equal-score ties only. No quota. One reference per item.",
+    "qa": "Protected CI recalculates coverage, rankings, repeated anchors and concentration warnings from the complete review matrix. Historical selections are immutable."
   }
 }

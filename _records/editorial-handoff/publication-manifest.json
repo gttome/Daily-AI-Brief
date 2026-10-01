@@ -62,7 +62,7 @@
       "digest": "git_blob_sha1:59673cee8b86f655b03bf8dc9bf2b5f63b9210c4"
     },
     "book_mappings": {
-      "path": "_data/book-reading.json",
+      "path": "_records/editorial-handoff/book-mappings-2026-09-29.json",
       "schema_version": "1.0.0",
       "digest": "git_blob_sha1:9774f0544d70748e9e81ca911d57fe7dd5363079"
     },

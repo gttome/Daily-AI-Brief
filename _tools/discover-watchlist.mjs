@@ -5,6 +5,7 @@ import {retainCandidates} from '../_generator/lib/discovery-queue.mjs';
 import {watchlistDue,recordWatchlistCheck,incrementalCoverage,runWatchlistFallback} from '../_generator/lib/incremental-watchlist.mjs';
 import {sha256} from '../_generator/lib/util.mjs';
 import fs from 'node:fs';
+import {emergingDiscoveryPlan} from '../_generator/lib/emerging-discovery.mjs';
 const started=Date.now(),registry=JSON.parse(fs.readFileSync('_data/watchlist-sources.json','utf8'));
 const early=JSON.parse(fs.readFileSync('_data/early-signal-sources.json','utf8'));
 const now=new Date().toISOString(),date=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago'}).format(new Date());
@@ -55,6 +56,9 @@ const incremental=incrementalCoverage(checks);
 const coverage={checked:incremental.sources_checked,retrieval_success:checks.filter(x=>['retrieved','no_candidate_links'].includes(x.status)).length,with_candidate_links:incremental.sources_returning_candidate_links,no_candidate_links:checks.filter(x=>x.status==='no_candidate_links').length,retrieval_failures:incremental.unavailable,assisted_review_required:incremental.assisted_review_required,...incremental};
 const retained=retainCandidates([...candidates.values()],{limit:2000});
 const data={updated_at:now,coverage,bounded_fallback:boundedFallback,...retained,sources:checks.sort((a,b)=>a.source_id.localeCompare(b.source_id)),early_signal_channels:early.channels.length,efficiency:{...incremental,watchlist_seconds:(Date.now()-started)/1000},note:'Incremental discovery leads only. Not-due checks retain prior evidence and original timestamps. No links, assisted review and unavailable sources remain distinct. Work must verify original evidence, group related developments and update only affected topics. Verified public topic state is retained independently.'};
+// This plan is independent of the Brief shortlist and is consumed by the same
+// semantic pass. Planned checks do not count as executed discovery telemetry.
+data.independent_discovery_plan=emergingDiscoveryPlan(date);
 fs.writeFileSync('_data/watchlist-discoveries.json',JSON.stringify(data,null,2)+'\n');
 fs.writeFileSync(stateFile,JSON.stringify({schema_version:'1.0.0',updated_at:now,sources:nextState},null,2)+'\n');
 fs.mkdirSync('_records/watchlist-discovery',{recursive:true});
