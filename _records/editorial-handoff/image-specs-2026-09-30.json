@@ -123,7 +123,7 @@
       "candidate_id": "m07",
       "story_id": "dab-story-2026-09-30-3b6d7f96",
       "request_path": "_records/image-context/2026-09-30/m07.json",
-      "request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
+      "request_sha256": "edd31386000555f8a391ca2ad7b15f2dc4aa76308f06a3c61da3228ce5e292a8",
       "composition_mode": "story_fit_editorial",
       "visible_text_allowlist": [
         "Recurring Task",
@@ -135,12 +135,19 @@
         "Process Update"
       ],
       "alt_text": "Textbook diagram showing repeated prompts becoming a maintained reusable Gemini Skill with instructions, examples, ownership, reuse across tasks, and a versioned update loop.",
-      "status": "retry_required",
-      "attempts": 3,
+      "status": "specification_repaired",
+      "attempts": 0,
       "last_rejection": "VISIBLE_TEXT_DUPLICATE",
-      "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-3.png",
-      "last_raw_sha256": "20a9429452547f38862e31389dffcb931ffc4e93e176ee600bf458543d26b6a2",
-      "next_attempt": 4
+      "last_raw_path": "_records/image-attempts/2026-09-30/m07-attempt-4.png",
+      "last_raw_sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
+      "next_attempt": 1,
+      "request_revision": 2,
+      "supersedes_request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
+      "prior_request_attempts": 4,
+      "prior_request_terminal": "ATTEMPT_LIMIT_EXHAUSTED",
+      "repaired_request_path": "_records/image-context/2026-09-30/m07.json",
+      "archived_request_path": "_records/image-context/2026-09-30/m07-v1.json",
+      "repair_reason": "Repeated card layouts caused duplicate allowlisted group labels; revision 2 requires a single shared intake label, a single shared output label, unlabeled repeated cards, and gear-only ownership geometry."
     },
     {
       "candidate_id": "m08",
@@ -192,5 +199,6 @@
   "generation_started": false,
   "accepted_count": 4,
   "current_candidate": "m07",
-  "current_attempt": 4
+  "current_attempt": 1,
+  "repaired_at": "2026-10-01T06:42:11.142Z"
 }

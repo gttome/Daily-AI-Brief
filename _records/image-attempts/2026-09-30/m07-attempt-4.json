@@ -1,0 +1,48 @@
+{
+  "schema_version": "image-attempt-record-v1",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "5d1dd2bf5c2839bb609a2e66e765e3f77e513b0d5158d1c5d28f352539e0443d",
+  "story_id": "dab-story-2026-09-30-3b6d7f96",
+  "candidate_id": "m07",
+  "attempt": 4,
+  "disposition": "rejected",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-ee828bde-8379-4221-ac84-43ca10b5ddc7",
+    "artifact_id": "generated_images/exec-ee828bde-8379-4221-ac84-43ca10b5ddc7.png",
+    "generated_at": "2026-10-01T06:41:42.750Z",
+    "raw_sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m07-attempt-4.png",
+      "sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
+      "git_blob_sha": "9a3d48d8d742674ed36cf558e6e98a7a75b84af0",
+      "commit_sha": "27cdb78690540b0a1613add4e2cab66e744264cb",
+      "content_address_verified": true,
+      "read_back_verified": false
+    }
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "reviewed_at": "2026-10-01T06:42:11.142Z",
+    "raw_sha256": "9a5b4f1db03104ecfb5e98a4ae3a501881fe427cf01e17fd9191d405067af1ed",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "visible_text": "fail",
+    "rejection_code": "VISIBLE_TEXT_DUPLICATE",
+    "rejection_reason": "Recurring Task and Team Reuse each appear three times. This exhausts the four-attempt budget for request revision 1.",
+    "rejection_record_path": "_records/image-attempts/2026-09-30/m07-attempt-4.json",
+    "next_action": "Repair only the m07 render specification to require single shared group labels and non-human ownership geometry; retain all four rejected attempts."
+  },
+  "fallback_used": false,
+  "owner_interventions": [],
+  "usage": {
+    "work_invocations": 0,
+    "codex_invocations": 0,
+    "paid_model_api_calls": 0
+  }
+}
