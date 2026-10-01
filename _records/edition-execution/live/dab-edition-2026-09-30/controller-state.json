@@ -16,13 +16,18 @@
     "edition_id": "dab-edition-2026-09-30",
     "edition_date": "2026-09-30",
     "original_cutoff": "2026-10-01T04:12:21.330Z",
-    "release_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
-    "research_baseline_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+    "research_baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
     "execution_id": "reliable-edition-20260930-second",
     "policies": {
       "article_freshness": "article-24-72-168-v1",
-      "media_freshness": "media-research-cutoff-v1"
-    }
+      "media_freshness": "media-research-cutoff-v1",
+      "image_handoff": "same-invocation-direct-capture-v1"
+    },
+    "original_release_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "original_research_baseline_sha": "386dc023e53c354964adf99df3d6b9cacf9e788e",
+    "baseline_rebound_at": "2026-10-01T04:46:28.035993Z",
+    "baseline_rebind_reason": "Protected control-plane correction PR #306 released before any Sep 30 discovery; edition identity and original cutoff unchanged."
   },
   "operation_sequence": [
     "admission",
@@ -37,16 +42,28 @@
     "public_closed"
   ],
   "version": 2,
-  "status": "blocked",
-  "current_operation": "admission",
+  "status": "running",
+  "current_operation": "discovery",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T04:16:25.733Z",
-  "last_progress_at": "2026-10-01T04:16:25.733Z",
-  "completed": {},
+  "updated_at": "2026-10-01T04:46:28.035993Z",
+  "last_progress_at": "2026-10-01T04:46:28.035993Z",
+  "completed": {
+    "admission": {
+      "result": "pass",
+      "mode": "same-invocation-direct-capture-v1",
+      "receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json",
+      "completed_at": "2026-10-01T04:46:28.035993Z",
+      "implementation_pr": 306,
+      "protected_ci_run": 36816428539,
+      "release_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+      "native_recovery_capability_claimed": false,
+      "image_stage_deferred": true
+    }
+  },
   "handler_registry": {
     "admission": {
-      "executor": "node _tools/edition-execution.mjs admission-check",
-      "validator": "verifyAdmissionEvidence"
+      "executor": "node _tools/edition-execution.mjs admission-check --mode same-invocation-direct-capture-v1",
+      "validator": "verifyDirectCaptureAdmission"
     },
     "discovery": {
       "executor": "node _tools/discover-sources.mjs",
@@ -64,7 +81,7 @@
     },
     "images": {
       "executor": "scheduled ChatGPT native image host",
-      "implementation": "_generator/lib/recoverable-image-job.mjs",
+      "implementation": "_generator/lib/native-image-delivery.mjs / same-invocation-direct-capture-v1",
       "transport": "_generator/lib/connector-image-delivery.mjs",
       "validator": "V2 image review + Git content-address identity (optional raw reread) + publication manifest image gates"
     },
@@ -113,10 +130,18 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Resume only when this scheduled native host exposes same-result recover(operation_key/native_result_id) plus complete binary bytes for exact Git SHA-256/readback; then persist a fresh image-handoff-proof-v2 bound to release 386dc023e53c354964adf99df3d6b9cacf9e788e and proceed to fresh discovery.",
-    "images_accepted": 0
+    "next_action": "Discover fresh Sep 30 article candidates under the fixed cutoff 2026-10-01T04:12:21.330Z; then verify evidence under article-24-72-168-v1.",
+    "images_accepted": 0,
+    "current_task": "11.05"
   },
-  "blockers": [
+  "blockers": [],
+  "cost_boundary": {
+    "recurring_work_authorized": false,
+    "recurring_codex_authorized": false,
+    "paid_api_authorized": false,
+    "billing_observed": false
+  },
+  "resolved_blockers": [
     {
       "code": "CAPABILITY_BLOCKED_NATIVE_RECOVERY_API_UNEXPOSED",
       "operation": "admission",
@@ -140,13 +165,19 @@
         "Fetched the historical immutable path at commit 4dcd14c77a3a66dcd3d91ef9fad737082609fc0a with base64 encoding; GitHub returned blob identity 77ffaceb440db06914e434bb90e314e5c46ab433 but no payload bytes.",
         "Declined to generate a throwaway probe, rewrite expiry/release, or treat the historical download identity as current host certification."
       ],
-      "recovery": "A future invocation on the same scheduled native host must expose same-result recovery for the recorded operation/native result and return complete bytes; then proveImageHandoff can write and read back the exact Git object under the pinned release."
+      "recovery": "A future invocation on the same scheduled native host must expose same-result recovery for the recorded operation/native result and return complete bytes; then proveImageHandoff can write and read back the exact Git object under the pinned release.",
+      "resolved_at": "2026-10-01T04:46:28.035993Z",
+      "resolution": "PR #306 released same-invocation-direct-capture-v1; no host.recover capability was asserted. Admission proof was replaced by an explicit deferred image-stage policy, with final byte/quality gates unchanged."
     }
   ],
-  "cost_boundary": {
-    "recurring_work_authorized": false,
-    "recurring_codex_authorized": false,
-    "paid_api_authorized": false,
-    "billing_observed": false
+  "control_plane_release": {
+    "pr": 306,
+    "protected_ci_run": 36816428539,
+    "main_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
+    "main_post_merge_ci_run": 36816505451,
+    "main_pages_run": 36816505037,
+    "controller_reconcile_pr": 307,
+    "controller_reconcile_ci_run": 36816559764,
+    "controller_reconcile_merge": "54928cd9216e0a403da4cab90924f3f3802f0453"
   }
 }
