@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 8,
+  "version": 9,
   "status": "running",
   "current_operation": "images",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T06:33:33.976Z",
-  "last_progress_at": "2026-10-01T06:33:33.976Z",
+  "updated_at": "2026-10-01T06:35:24.106Z",
+  "last_progress_at": "2026-10-01T06:35:24.106Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -169,9 +169,9 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Generate m05 attempt 1 from its sealed sales-handoff request; persist exact bytes before review.",
-    "images_accepted": 3,
-    "current_task": "11.16"
+    "next_action": "Generate m07 attempt 1 from its sealed reusable-skill request; persist exact bytes before review.",
+    "images_accepted": 4,
+    "current_task": "11.17"
   },
   "blockers": [],
   "cost_boundary": {
@@ -223,10 +223,10 @@
     "result": "in_progress",
     "specification_manifest": "_records/editorial-handoff/image-specs-2026-09-30.json",
     "specifications_sealed": 6,
-    "accepted": 3,
-    "current_candidate": "m05",
+    "accepted": 4,
+    "current_candidate": "m07",
     "current_attempt": 1,
     "generation_started": false,
-    "last_receipt": "_records/image-attempts/2026-09-30/m04-attempt-1.json"
+    "last_receipt": "_records/image-attempts/2026-09-30/m05-attempt-1.json"
   }
 }

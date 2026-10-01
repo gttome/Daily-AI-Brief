@@ -106,7 +106,18 @@
         "Escalation Reason",
         "Weekly Improvement"
       ],
-      "alt_text": "Textbook decision flow showing inbound sales questions going to an AI buying agent, then to purchase, quick answer, or human handoff, with escalation reasons feeding a workflow improvement loop."
+      "alt_text": "Textbook decision flow showing inbound sales questions going to an AI buying agent, then to purchase, quick answer, or human handoff, with escalation reasons feeding a workflow improvement loop.",
+      "status": "accepted_locked",
+      "attempt": 1,
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m05-1.png",
+      "raw_path": "_records/image-attempts/2026-09-30/m05-attempt-1.png",
+      "sha256": "8be0f54c35af5e44ef8fa85757819bd1cf5346d3059a84b3131fb9c50fa0c56f",
+      "git_blob_sha": "2123b6924d2ba168676ca271c6ac8fee50623813",
+      "width": 1774,
+      "height": 887,
+      "generated_at": "2026-10-01T06:35:00.628Z",
+      "accepted_at": "2026-10-01T06:35:24.106Z",
+      "receipt_path": "_records/image-attempts/2026-09-30/m05-attempt-1.json"
     },
     {
       "candidate_id": "m07",
@@ -173,6 +184,6 @@
     "m08"
   ],
   "generation_started": false,
-  "accepted_count": 3,
-  "current_candidate": "m05"
+  "accepted_count": 4,
+  "current_candidate": "m07"
 }
