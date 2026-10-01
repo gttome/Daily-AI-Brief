@@ -1,0 +1,14 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "f38495c35061c05f174247adde0bbfa88973abef79e558d685f20919220e2f43",
+  "execution_id": "reliable-edition-20261001-run4",
+  "edition_id": "dab-edition-2026-10-01",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "task_id": "15",
+  "capability": "native_chatgpt",
+  "instruction": "Generate m08 attempt 3 from the exact sealed Business Skill specification only; no dashboard/status content and no people/avatar/humanoid icons.",
+  "writer_generation": 1,
+  "recovery_attempt": 2,
+  "created_at": "2026-10-01T22:54:43.050Z",
+  "status": "queued"
+}
