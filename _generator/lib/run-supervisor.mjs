@@ -123,11 +123,21 @@ export function validateTaskRecoveryContracts(contract = {}) {
     if (!Number.isInteger(task.stale_after_seconds) || task.stale_after_seconds < 60) errors.push(`task_recovery_stale_threshold:${id}`);
     if (!Number.isInteger(task.retry_limit) || task.retry_limit < 0) errors.push(`task_recovery_retry_limit:${id}`);
     if (!Array.isArray(task.invalidate_downstream)) errors.push(`task_recovery_invalidation:${id}`);
+    if (task.engineering_repair !== undefined) {
+      const repair = task.engineering_repair;
+      if (!repair || repair.enabled !== true) errors.push(`engineering_repair_enabled:${id}`);
+      if (!Number.isInteger(repair.max_epochs) || repair.max_epochs < 1) errors.push(`engineering_repair_max_epochs:${id}`);
+      if (repair.capability !== 'repository') errors.push(`engineering_repair_capability:${id}`);
+      if (typeof repair.instruction !== 'string' || !repair.instruction.trim()) errors.push(`engineering_repair_instruction:${id}`);
+      if (!Array.isArray(repair.required_proofs) || !repair.required_proofs.length) errors.push(`engineering_repair_required_proofs:${id}`);
+    }
   }
   return uniq(errors);
 }
 
-export function taskRecoveryDecision({classification, taskContract, attempts = 0, recoveryAttempts = 0} = {}) {
+export function taskRecoveryDecision({
+  classification, taskContract, attempts = 0, recoveryAttempts = 0, repairEpochs = 0
+} = {}) {
   if (!classification?.state || !taskContract) throw Error('classification_and_task_contract_required');
   if (classification.state === 'HEALTHY_ACTIVE') return {action:'observe'};
   if (classification.state === 'READY_IDLE') return {action:'dispatch_normal', capability:taskContract.capability, instruction:taskContract.normal_operation};
@@ -139,7 +149,36 @@ export function taskRecoveryDecision({classification, taskContract, attempts = 0
     return {action:'first_recovery', capability:taskContract.capability, instruction:taskContract.first_recovery};
   if (recoveryAttempts < taskContract.retry_limit)
     return {action:'alternate_recovery', capability:taskContract.capability, instruction:taskContract.alternate_recovery};
+  const repair = taskContract.engineering_repair;
+  if (repair?.enabled === true && Number.isInteger(repair.max_epochs) && repairEpochs < repair.max_epochs)
+    return {
+      action:'engineering_repair',
+      capability:repair.capability || 'repository',
+      instruction:repair.instruction,
+      repair_epoch:repairEpochs + 1,
+      required_proofs:[...(repair.required_proofs || [])]
+    };
   return {action:'terminal_failure', instruction:taskContract.terminal_failure_condition};
+}
+
+export function buildEngineeringRepairRequest({
+  execution_id, edition_id, branch, task_id, instruction, writer_generation,
+  repair_epoch, required_proofs = [], created_at = new Date().toISOString()
+} = {}) {
+  if (!execution_id || !edition_id || !branch || !/^\d{2}$/.test(task_id || '') ||
+      !instruction || !Number.isInteger(writer_generation) || writer_generation < 1 ||
+      !Number.isInteger(repair_epoch) || repair_epoch < 1 ||
+      !Array.isArray(required_proofs) || !required_proofs.length || !stamp(created_at))
+    throw Error('valid_engineering_repair_request_required');
+  const request_key = hash(JSON.stringify({execution_id,task_id,repair_epoch,instruction,required_proofs}));
+  return {
+    schema_version:'run-engineering-repair-request-v1',
+    request_key, request_kind:'engineering_repair',
+    execution_id, edition_id, branch, task_id,
+    capability:'repository', instruction, writer_generation,
+    repair_epoch, required_proofs:[...required_proofs],
+    created_at, status:'queued'
+  };
 }
 
 export function buildWorkerRequest({
