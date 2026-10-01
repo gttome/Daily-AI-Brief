@@ -77,7 +77,18 @@
         "Outcome Measure",
         "Iterate or Stop"
       ],
-      "alt_text": "Textbook workflow showing a small business choosing a recurring task, receiving hands-on AI coaching, testing the workflow, reviewing results, measuring value, and iterating."
+      "alt_text": "Textbook workflow showing a small business choosing a recurring task, receiving hands-on AI coaching, testing the workflow, reviewing results, measuring value, and iterating.",
+      "status": "accepted_locked",
+      "attempt": 1,
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m04-1.png",
+      "raw_path": "_records/image-attempts/2026-09-30/m04-attempt-1.png",
+      "sha256": "892fc589910f31799bd9f2f7fab90e30a2d9b95aadc158d70d8389d0c2e1d7cf",
+      "git_blob_sha": "aa04a8c2169f12f35bf7ed0ad59f31e7e66ff54d",
+      "width": 1774,
+      "height": 887,
+      "generated_at": "2026-10-01T06:33:08.941Z",
+      "accepted_at": "2026-10-01T06:33:33.976Z",
+      "receipt_path": "_records/image-attempts/2026-09-30/m04-attempt-1.json"
     },
     {
       "candidate_id": "m05",
@@ -162,6 +173,6 @@
     "m08"
   ],
   "generation_started": false,
-  "accepted_count": 2,
-  "current_candidate": "m04"
+  "accepted_count": 3,
+  "current_candidate": "m05"
 }
