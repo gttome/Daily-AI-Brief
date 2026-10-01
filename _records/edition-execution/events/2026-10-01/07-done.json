@@ -1,0 +1,20 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-01T17:32:11.500Z",
+  "source": "scheduled production continuation",
+  "reason": "Locked six final stories in exact 2/2/2 order with exactly one reusable Agent Skills story in the one allowed semantic pass.",
+  "proof": {
+    "artifact": "_records/editorial-handoff/semantic-selection-2026-10-01.json",
+    "artifact_commit": "8c0dcb1ea65ce6200bf59e270829c21d0947b864",
+    "selected_candidate_ids": [
+      "m01",
+      "m02",
+      "m04",
+      "m05",
+      "m07",
+      "m08"
+    ]
+  }
+}
