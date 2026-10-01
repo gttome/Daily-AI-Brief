@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "policy_id": "professional-editorial-diagram-v1",
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-01-m01"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional textbook diagram of a DevOps incident signal routed to a focused reusable skill, then to an AWS DevOps Agent using MCP tools to collect evidence and produce a reusable investigation playbook. White background, detailed layered operational flow, no people, no product screenshots, no metrics.",
+  "candidate_id": "m01",
+  "edition_id": "dab-edition-2026-10-01",
+  "renderer": "svg-editorial-v1"
+}
