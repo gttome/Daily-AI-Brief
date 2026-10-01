@@ -1,0 +1,8 @@
+{
+  "task_id": "01",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-01T16:30:04Z",
+  "source": "scheduled production run",
+  "reason": "Begin protected-main, live-state, and active-run refresh."
+}
