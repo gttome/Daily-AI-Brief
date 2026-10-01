@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
 import {lintPublicationCandidate} from '../lib/publication-candidate-lint.mjs';
@@ -48,18 +49,28 @@ test('publication candidate lint detects tampered SVG Git blob identity',()=>{
 });
 
 
-test('publication candidate lint preserves a prior verified current-edition pointer before live closure',()=>{
+function pointerFixture(t,briefDate){
+ const fixtureRoot=fs.mkdtempSync(path.join(os.tmpdir(),'publication-pointer-'));
+ t.after(()=>fs.rmSync(fixtureRoot,{recursive:true,force:true}));
+ fs.mkdirSync(path.join(fixtureRoot,'data/operations'),{recursive:true});
+ fs.writeFileSync(path.join(fixtureRoot,'data/operations/current-edition.json'),JSON.stringify({brief_date:briefDate}));
+ return fixtureRoot;
+}
+
+test('publication candidate lint preserves a prior verified current-edition pointer before live closure',t=>{
  const manifest=read('_records/editorial-handoff/final-image-review-2026-09-25.json');
  const candidate=inputs(manifest);
+ candidate.root=pointerFixture(t,'2026-09-25');
  candidate.edition={...candidate.edition,brief_date:'2026-09-26',edition_id:'dab-edition-2026-09-26'};
  const errors=lintPublicationCandidate(candidate);
- assert.ok(!errors.includes('current_edition_pointer_invalid_for_candidate'));
+ assert.deepEqual(errors.filter(error=>error.startsWith('current_edition_pointer_')),[]);
 });
 
-test('publication candidate lint rejects a current-edition pointer newer than the candidate',()=>{
+test('publication candidate lint rejects a current-edition pointer newer than the candidate',t=>{
  const manifest=read('_records/editorial-handoff/final-image-review-2026-09-25.json');
  const candidate=inputs(manifest);
+ candidate.root=pointerFixture(t,'2026-09-25');
  candidate.edition={...candidate.edition,brief_date:'2026-09-24',edition_id:'dab-edition-2026-09-24'};
  const errors=lintPublicationCandidate(candidate);
- assert.ok(errors.includes('current_edition_pointer_invalid_for_candidate'));
+ assert.deepEqual(errors.filter(error=>error.startsWith('current_edition_pointer_')),['current_edition_pointer_invalid_for_candidate']);
 });
