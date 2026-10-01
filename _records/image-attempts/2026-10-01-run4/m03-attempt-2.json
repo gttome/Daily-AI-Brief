@@ -1,0 +1,30 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "candidate_id": "m03",
+  "attempt": 2,
+  "fallback_used": false,
+  "observed_at": "2026-10-01T21:19:53Z",
+  "candidate": {
+    "native_sha256": "499431d27c078f872d9746cf58c5056f56f1e595fd3c7c21252b20e493cf3c8d",
+    "native_bytes": 1389941,
+    "native_dimensions": "1730x909",
+    "normalized_sha256": "26055b901b9bfa8fddf8730b315f796d9a011a88c70e80447f3b941087919df3",
+    "normalized_bytes": 731440,
+    "normalized_dimensions": "1200x630",
+    "visual_precheck": "PASS"
+  },
+  "persistence": {
+    "status": "blocked",
+    "git_blob_sha": null,
+    "commit_sha": null,
+    "content_address_verified": false,
+    "read_back_verified": false,
+    "reason_code": "BINARY_PAYLOAD_DELIVERY_UNAVAILABLE_IN_CURRENT_EXECUTION_SURFACE"
+  },
+  "review_status": "precheck_pass_not_accepted",
+  "status": "blocked",
+  "recovery_action": "Persist the preserved candidate through a supported file-capable GitHub write path and verify exact read-back identity before acceptance."
+}
