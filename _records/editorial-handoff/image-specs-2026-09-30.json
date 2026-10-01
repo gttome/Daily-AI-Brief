@@ -50,7 +50,18 @@
         "Block",
         "Repair"
       ],
-      "alt_text": "Textbook flow diagram showing an MCP answer decomposed into claims, each matched to a source, checked for factual support and attribution, and then allowed, blocked, or repaired."
+      "alt_text": "Textbook flow diagram showing an MCP answer decomposed into claims, each matched to a source, checked for factual support and attribution, and then allowed, blocked, or repaired.",
+      "status": "accepted_locked",
+      "attempt": 1,
+      "asset_path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-1.png",
+      "raw_path": "_records/image-attempts/2026-09-30/m03-attempt-1.png",
+      "sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+      "git_blob_sha": "0739bf2cdaf889519799d8f38e2e51a2bf244c85",
+      "width": 2056,
+      "height": 765,
+      "generated_at": "2026-10-01T06:31:12.750Z",
+      "accepted_at": "2026-10-01T06:31:38.079Z",
+      "receipt_path": "_records/image-attempts/2026-09-30/m03-attempt-1.json"
     },
     {
       "candidate_id": "m04",
@@ -151,6 +162,6 @@
     "m08"
   ],
   "generation_started": false,
-  "accepted_count": 1,
-  "current_candidate": "m03"
+  "accepted_count": 2,
+  "current_candidate": "m04"
 }

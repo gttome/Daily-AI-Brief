@@ -1,0 +1,88 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "request_sha256": "36b8a13a6d7880bd61f45a54eb34d5b0aa5ce1085f87298f1f14b239f2c99914",
+  "story_id": "dab-story-2026-09-30-bb1d40df",
+  "candidate_id": "m03",
+  "execution_mode": "production",
+  "evidence_type": "live",
+  "trigger": "scheduled",
+  "owner_interventions": [],
+  "runtime_context_isolation": "not_asserted",
+  "attempt": 1,
+  "fallback_used": false,
+  "work_invocations": 0,
+  "codex_invocations": 0,
+  "paid_model_api_calls": 0,
+  "account_billing_observed": false,
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "call_id": "imagegen-exec-7cad22b3-ba35-4fb7-9647-bb0c455b680b",
+    "artifact_id": "generated_images/exec-7cad22b3-ba35-4fb7-9647-bb0c455b680b.png",
+    "generated_at": "2026-10-01T06:31:12.750Z",
+    "raw_sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+    "raw_capture": {
+      "path": "_records/image-attempts/2026-09-30/m03-attempt-1.png",
+      "sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+      "git_blob_sha": "0739bf2cdaf889519799d8f38e2e51a2bf244c85",
+      "commit_sha": "2560a68b3f963ecc2e6ca146a146a92c9d46e218",
+      "content_address_verified": true,
+      "read_back_verified": false,
+      "verification_mode": "git_content_address"
+    },
+    "evidence_type": "live",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "review": {
+    "mode": "automated",
+    "phase": "after_generation",
+    "call_id": "view-image-original-exec-7cad22b3-ba35-4fb7-9647-bb0c455b680b",
+    "reviewed_at": "2026-10-01T06:31:38.079Z",
+    "subject_match": "pass",
+    "factual_support": "pass",
+    "structural_quality": "pass",
+    "editorial_quality": "pass",
+    "asset_sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+    "visible_text_result": "pass_exact_allowlist",
+    "allowed_text": [
+      "MCP Answer",
+      "Claims",
+      "Source ID",
+      "Support Check",
+      "Attribution Check",
+      "Allow",
+      "Block",
+      "Repair"
+    ],
+    "unexpected_text": [],
+    "dimensions": {
+      "width": 2056,
+      "height": 765,
+      "minimum_pass": true
+    },
+    "assessment": "The wide, readable pipeline preserves claim-to-source identity through separate support and attribution checks and terminates in the three specified outcomes. All eight allowlisted labels appear without extra words or cross-story content.",
+    "usage": {
+      "work_invocations": 0,
+      "codex_invocations": 0,
+      "paid_model_api_calls": 0
+    },
+    "owner_interventions": []
+  },
+  "persistence": {
+    "path": "briefs/images/2026-09-30/dab-edition-2026-09-30-m03-1.png",
+    "sha256": "07e3f861ae5dfd8760bc3151de2e7048ddbb998cf5688e7c8884921af1172ba7",
+    "git_blob_sha": "0739bf2cdaf889519799d8f38e2e51a2bf244c85",
+    "commit_sha": "2560a68b3f963ecc2e6ca146a146a92c9d46e218",
+    "persisted_at": "2026-10-01T06:31:38.079Z",
+    "persisted_at_scope": "post_review_content_address_verification_time",
+    "content_address_verified": true,
+    "read_back_verified": false,
+    "verification_mode": "git_content_address"
+  },
+  "status": "accepted_locked"
+}
