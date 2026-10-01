@@ -41,12 +41,12 @@
     "publication",
     "public_closed"
   ],
-  "version": 21,
+  "version": 22,
   "status": "running",
   "current_operation": "production_admission",
   "started_at": "2026-10-01T04:12:21.330Z",
-  "updated_at": "2026-10-01T07:27:16.758Z",
-  "last_progress_at": "2026-10-01T07:27:16.758Z",
+  "updated_at": "2026-10-01T07:30:28.271Z",
+  "last_progress_at": "2026-10-01T07:30:28.271Z",
   "completed": {
     "admission": {
       "result": "pass",
@@ -242,7 +242,7 @@
     "edition_bound_at": "2026-10-01T04:12:21.330Z",
     "required_distinct_edition": true,
     "previous_edition_id": "dab-edition-2026-09-29",
-    "next_action": "Commit the qualified publication stage, bind production admission to the exact candidate SHA, open the publication PR, and pass protected CI.",
+    "next_action": "Rerun protected CI on PR #308 after rebinding the generic handoff and its production-branch assertion to the durable September 30 staging ref.",
     "images_accepted": 6,
     "current_task": "11.23"
   },

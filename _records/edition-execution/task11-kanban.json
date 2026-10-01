@@ -1,7 +1,7 @@
 {
   "parent_task": "11",
   "status": "wip",
-  "observed_at": "2026-10-01T07:27:16.758Z",
+  "observed_at": "2026-10-01T07:30:28.271Z",
   "verified_public_closed": 1,
   "target_public_closed": 2,
   "candidate_edition": "2026-09-30",
@@ -12,7 +12,7 @@
   "controller_branch": "reliable-edition/dab-edition-2026-09-30",
   "controller_sha": "379d6c3b71dc9d2060f9b5e22d0f3965304a7dbe",
   "blocker": null,
-  "next_action": "Commit the qualified publication stage, bind production admission to the exact candidate SHA, open the publication PR, and pass protected CI.",
+  "next_action": "Rerun protected CI on PR #308 after rebinding the generic handoff and its production-branch assertion to the durable September 30 staging ref.",
   "cards": [
     {
       "id": "11.01",
@@ -280,8 +280,8 @@
       "started_at": "2026-10-01T07:27:16.758Z",
       "completed_at": null,
       "timing": "live",
-      "substage": "Bind the qualified stage to the exact candidate SHA and enter protected publication CI",
-      "next_action": "Commit staged bytes, record production admission, open the publication PR, and wait for required checks."
+      "substage": "PR #308 open; repair the single stale September 29 generic handoff/test binding found by protected CI attempt 1",
+      "next_action": "Commit the durable September 30 handoff binding and rerun protected CI."
     },
     {
       "id": "11.24",
@@ -318,7 +318,7 @@
   "run_started_at": "2026-10-01T04:12:21.330Z",
   "parent_started_at": "2026-10-01T04:05:06.189Z",
   "mission_started_at": "2026-09-29T21:21:00Z",
-  "controller_state_version": 21,
+  "controller_state_version": 22,
   "run_request": {
     "last_observed_run": "2026-10-01T04:22:46.484031Z",
     "status": "New invocation observed; admission clearance and content production unconfirmed.",
@@ -328,8 +328,8 @@
   },
   "image_policy": "One sealed story -> generate -> save -> inspect -> accept / targeted retry",
   "changes": [
-    "Task 11.22 completed: full qualification passed after semantic-neutral Watchlist UTC date normalization and restoration of the complete historical efficiency ledger; the actual verification time remains preserved.",
-    "Task 11.23 started: bind the qualified exact candidate SHA and enter protected publication CI."
+    "Task 11.23 protected CI attempt 1 failed only because the generic handoff and its test still referenced the completed September 29 staging branch.",
+    "Applied the smallest control-plane repair: bind the generic handoff to reliable-edition/dab-edition-2026-09-30 and allow that durable date-keyed production ref in the assertion."
   ],
   "readiness": {
     "articles": "LOCKED: 6 / 6; exact 2 / 2 / 2; one Agent Skills story",
@@ -921,6 +921,24 @@
       "event": "backlog_exit",
       "at": "2026-10-01T07:27:16.758Z",
       "cycle_start_known": true
+    },
+    {
+      "task_id": "11.23",
+      "event": "protected_ci_failed",
+      "at": "2026-10-01T07:29:17.326Z",
+      "run_id": 36830556983,
+      "attempt": 1,
+      "reason": "stale_generic_handoff_staging_ref"
+    },
+    {
+      "task_id": "11.23",
+      "event": "focused_repair_completed",
+      "at": "2026-10-01T07:30:28.271Z",
+      "files": [
+        "_records/editorial-handoff/handoff.json",
+        "_generator/test/publication-manifest.test.mjs"
+      ],
+      "content_or_selection_changed": false
     }
   ],
   "liveness": {
@@ -966,5 +984,5 @@
     "controller_reconcile_pr": 307,
     "admission_receipt": "_records/edition-execution/admission/dab-edition-2026-09-30-direct-capture.json"
   },
-  "last_durable_progress_at": "2026-10-01T07:27:16.758Z"
+  "last_durable_progress_at": "2026-10-01T07:30:28.271Z"
 }
