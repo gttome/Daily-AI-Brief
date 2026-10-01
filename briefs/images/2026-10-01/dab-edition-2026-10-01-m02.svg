@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Persistent multi-agent Runtime Instance architecture">
+<defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#edf5ff"/><stop offset="1" stop-color="#cfe0f5"/></linearGradient><linearGradient id="g2" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f5edff"/><stop offset="1" stop-color="#ddc9f5"/></linearGradient><filter id="s"><feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#17324d" flood-opacity=".15"/></filter><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0 0 L9 3 L0 6 Z" fill="#355c82"/></marker></defs>
+<rect width="1200" height="630" fill="#ffffff"/><text x="45" y="58" font-family="Arial" font-size="28" font-weight="700" fill="#10253f">Multi-day Workflow</text>
+<line x1="70" y1="91" x2="1130" y2="91" stroke="#9eb1c3" stroke-width="5"/><circle cx="170" cy="91" r="10" fill="#3b82c4"/><circle cx="590" cy="91" r="10" fill="#3b82c4"/><circle cx="1030" cy="91" r="10" fill="#3b82c4"/>
+<text x="420" y="145" font-family="Arial" font-size="30" font-weight="700" fill="#10253f">Runtime Instance</text>
+<rect x="260" y="165" width="680" height="310" rx="34" fill="url(#g1)" stroke="#6086ad" stroke-width="4" filter="url(#s)"/>
+<text x="430" y="205" font-family="Arial" font-size="22" font-weight="700" fill="#31577d">Shared Session ID</text>
+<rect x="310" y="235" width="170" height="105" rx="22" fill="#ffffff" stroke="#5985ad" stroke-width="3"/><text x="354" y="275" font-family="Arial" font-size="24" font-weight="700" fill="#214c72">Agent A</text><circle cx="395" cy="311" r="17" fill="#5d9bd3"/>
+<rect x="515" y="235" width="170" height="105" rx="22" fill="#ffffff" stroke="#8c70b4" stroke-width="3"/><text x="559" y="275" font-family="Arial" font-size="24" font-weight="700" fill="#5c3e7a">Agent B</text><circle cx="600" cy="311" r="17" fill="#9874c3"/>
+<rect x="720" y="235" width="170" height="105" rx="22" fill="#ffffff" stroke="#4f9b75" stroke-width="3"/><text x="764" y="275" font-family="Arial" font-size="24" font-weight="700" fill="#2e654b">Agent C</text><circle cx="805" cy="311" r="17" fill="#55a67c"/>
+<path d="M395 340 V382 M600 340 V382 M805 340 V382" stroke="#355c82" stroke-width="4" marker-end="url(#a)"/>
+<rect x="360" y="385" width="480" height="62" rx="18" fill="#ffffff" stroke="#55799b" stroke-width="3"/><text x="493" y="423" font-family="Arial" font-size="25" font-weight="700" fill="#234969">Shared Artifacts</text>
+<path d="M600 447 V505" stroke="#355c82" stroke-width="4" marker-end="url(#a)"/>
+<rect x="390" y="505" width="420" height="75" rx="22" fill="url(#g2)" stroke="#8c70b4" stroke-width="3" filter="url(#s)"/><text x="480" y="548" font-family="Arial" font-size="26" font-weight="700" fill="#563c75">Persistent Volume</text>
+<text x="43" y="200" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Independent Deployments</text><path d="M215 215 H255" stroke="#355c82" stroke-width="4" marker-end="url(#a)"/>
+<text x="970" y="210" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Session Continuity</text><path d="M940 225 H970" stroke="#355c82" stroke-width="4" marker-end="url(#a)"/>
+<text x="50" y="415" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Artifact Handoff</text><path d="M210 420 H355" stroke="#355c82" stroke-width="4" marker-end="url(#a)"/>
+<text x="965" y="405" font-family="Arial" font-size="22" font-weight="700" fill="#10253f">Durable State</text><path d="M840 415 H955" stroke="#355c82" stroke-width="4" marker-end="url(#a)"/>
+<text x="58" y="582" font-family="Arial" font-size="21" font-weight="700" fill="#10253f">Optional GPU</text><rect x="55" y="535" width="130" height="30" rx="8" fill="#dff0ff" stroke="#648bb0"/><path d="M75 550 H165" stroke="#4c7ea8" stroke-width="6"/>
+<text x="960" y="555" font-family="Arial" font-size="21" font-weight="700" fill="#10253f">Managed EC2</text><rect x="955" y="570" width="150" height="28" rx="9" fill="#e9f5ef" stroke="#65a282"/>
+</svg>
