@@ -30,5 +30,6 @@ export function watchlistDeltaPlan(priorTopics,nextTopics){
  const next=new Map((nextTopics||[]).map(topic=>[topic.topic_id,topic]));
  const topics=[...next.values()].map(topic=>classifyTopicDelta(prior.get(topic.topic_id),topic));
  const removed=[...prior.keys()].filter(id=>!next.has(id));
- return {schema_version:'1.0.0',topics,changed_topics:topics.filter(x=>x.semantic_refresh_required).map(x=>x.topic_id),carried_topics:topics.filter(x=>!x.semantic_refresh_required).map(x=>x.topic_id),removed_topics:removed,normal_semantic_input_topic_ids:topics.filter(x=>x.semantic_refresh_required).map(x=>x.topic_id),rule:'Only changed/new topic evidence enters semantic refresh. Carried topics retain prior semantic text and require no model call.'};
+ const removed_topic_details=removed.map(id=>{const topic=prior.get(id);if(!topic?.archive_reason)throw Error('watchlist_removed_without_archive_reason:'+id);return {topic_id:id,name:topic.name||id,reason:topic.archive_reason};});
+ return {schema_version:'1.0.0',topics,changed_topics:topics.filter(x=>x.semantic_refresh_required).map(x=>x.topic_id),carried_topics:topics.filter(x=>!x.semantic_refresh_required).map(x=>x.topic_id),removed_topics:removed,removed_topic_details,normal_semantic_input_topic_ids:topics.filter(x=>x.semantic_refresh_required).map(x=>x.topic_id),rule:'Only changed/new topic evidence enters semantic refresh. Carried topics retain prior semantic text. A topic cannot disappear without an archived reason that can be shown to readers.'};
 }
