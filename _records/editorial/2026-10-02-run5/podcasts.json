@@ -1,0 +1,44 @@
+{
+  "schema_version": "run5-podcast-selection-v1",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "research_cutoff": "2026-10-02T12:42:37Z",
+  "verified_at": "2026-10-02T13:27:22Z",
+  "result": "PASS",
+  "podcasts": [
+    {
+      "ordinal": 1,
+      "title": "DX Today AI Daily Brief - Wednesday, September 30, 2026",
+      "show": "DX Today | No-Hype Podcast & News About AI & DX",
+      "host": "Rick Spair",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 666,
+      "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026",
+      "freshness_tier": "primary_48h",
+      "connection": "Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.",
+      "verification": "Podscan reports Sep 30, 2026 and 11 minutes; Podcast Paradise indexes 11:06."
+    },
+    {
+      "ordinal": 2,
+      "title": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "show": "The Morning Brief",
+      "host": "Jeff Bechtel",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 780,
+      "url": "https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952",
+      "freshness_tier": "primary_48h",
+      "connection": "Adds a separate daily-news source with agent-payment controls and AI workflow context.",
+      "verification": "Apple Podcasts lists the Sep 30 episode at 13 minutes."
+    }
+  ],
+  "checks": {
+    "count": 2,
+    "source_diverse": true,
+    "shows": [
+      "DX Today",
+      "The Morning Brief"
+    ],
+    "publication_before_cutoff": true,
+    "prior_edition_exact_episode_repeat": false
+  }
+}
