@@ -213,3 +213,12 @@ Permanent control:
 - any executor that cannot guarantee these context-boundary requirements must fail closed before generation rather than attest isolation optimistically.
 
 IH9 remains immutable `TERMINAL_FAIL` evidence. Attempts 3-4 must not be used because the repeated wrong-subject result established a deterministic contract defect. This correction must pass protected CI, merge to protected `main`, and be proved under a fresh later harness identity before Q13 can advance.
+
+
+## Append-only recovery metadata corrections
+
+An immutable image-attempt receipt is never edited when exact recovered PNG bytes prove that one metadata field is wrong. A recovery-only qualification may add an `image-attempt-metadata-correction-v1` record only when it binds the candidate and attempt, the immutable receipt path and Git blob, the exact original PNG path, byte count, SHA-256 and Git blob, the recorded dimensions, and dimensions read directly from the PNG signature and `IHDR` unsigned 32-bit big-endian width/height fields.
+
+The verifier re-reads the committed receipt copy and original PNG from the qualification commit. It rejects a correction if any receipt identity, original identity, byte count, hash, Git blob, recorded dimension, actual dimension, PNG signature or `IHDR` value differs. The correction is append-only and metadata-only: it cannot modify the receipt or PNG, replace saved-Git review, create owner confirmation, waive the no-Work/no-Codex/no-paid-API boundary, or authorize publication by itself.
+
+For a completed one-time ChatGPT automation, scheduler proof may use a post-completion `automations.peek` observation only when the exact automation ID, conversation ID and one-time schedule match; the task is disabled; `observed_at` is at or after `last_run_time`; and `last_run_time` falls between `DTSTART` and the configured bounded start-delay limit. Recurring controllers must remain enabled.

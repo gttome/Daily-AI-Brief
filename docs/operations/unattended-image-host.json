@@ -1,20 +1,40 @@
 {
   "schema_version": "unattended-image-host-registration-v1",
-  "host_id": null,
-  "status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
-  "reason": "Scheduled non-Work/non-Codex native image generation is now observed for Run 5 m01, but the end-to-end unattended host remains unqualified: the generated candidate failed the exact visible-text gate, the complete binary Git handoff did not reach GitHub, and saved-Git-pixel review was therefore not reached. Full qualification still requires six distinct live images with committed raw/final artifacts under unattended-image-qualification-v1.",
-  "qualification_receipt_path": null,
-  "production_start_authorized": false,
+  "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+  "status": "READY",
+  "reason": "Recovery-only qualification passed with six genuine scheduled native originals, six exact accepted finals, exact-bound m07/m08 metadata corrections, saved-Git visual reviews, owner quality confirmation, and a committed completed one-time scheduler observation.",
+  "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
+  "qualification_receipt_blob_sha": "4ff4d4453f3d5de6594bea90ea7c69dd3a884ff6",
+  "qualification_commit_sha": "0e4bded95dc5ede4e6075d21d57e52e1de90fd71",
+  "qualification_source_commit": "a703ebcc21fc05bf3e7f05b7ce2949b6c7109df8",
+  "immutable_twelve_file_checkpoint": "8b6dcfcedbc9dcb3be1474d23e005b7c14c6f001",
+  "qualified_at": "2026-10-02T18:30:45.015Z",
+  "production_start_authorized": true,
   "non_image_run_start_authorized": true,
-  "blocks": [
-    "image_tasks",
-    "publication",
-    "PUBLIC_CLOSED"
-  ],
+  "image_tasks_authorized": true,
+  "publication_authorized": true,
+  "work_used": false,
+  "codex_used": false,
+  "paid_api_used": false,
+  "alternate_or_new_credentials_used": false,
+  "billing_observed": false,
+  "blocks": [],
   "does_not_block": [
     "run_allocation",
     "non_image_production",
+    "image_tasks",
+    "publication",
+    "PUBLIC_CLOSED",
     "daily_controller",
     "hourly_recovery"
-  ]
+  ],
+  "evidence": {
+    "recovered_file_count": 12,
+    "saved_git_reviews": 6,
+    "owner_quality_confirmation_bound": true,
+    "regression_tests_passed": 6,
+    "generation_calls": 0,
+    "edit_calls": 0,
+    "normalization_calls": 0
+  }
 }

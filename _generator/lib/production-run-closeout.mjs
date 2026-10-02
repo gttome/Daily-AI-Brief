@@ -62,7 +62,9 @@ export function buildProductionRunCloseout({pointer,completion,validation,runSta
   files[`_records/edition-execution/writer-leases/${id}.json`]={schema_version:'run-writer-lease-v1',execution_id:id,
     owner_id:'released-task29',released:true,expires_at:now,publication_candidate_frozen:true};
   files['data/operations/active-production-run.json']={...pointer,active:false,terminal:true,updated_at:now,
-    note:'PUBLIC_CLOSED; Task 29 reconciled through protected finalization. Admission for a future run is separate.'};
+    start_scope:'full_production',image_tasks_authorized:true,publication_authorized:true,deferred_blocker:null,
+    current_task:'29',current_task_state:'Done',
+    note:'PUBLIC_CLOSED; Task 29 PASS through protected finalization. Admission for a future run is separate.'};
   files[`_records/edition-execution/cleanup/${key}.json`]={schema_version:'daily-brief-run-cleanup-v2',result:'PASS',
     edition_id:edition,execution_id:id,run_number:Number(match[2]),terminal_state:'PUBLIC_CLOSED',cleanup_at:now,
     activation:'on_protected_main_merge',source_completion:`_records/publication/${date}/completion.json`,
