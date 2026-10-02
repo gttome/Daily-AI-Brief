@@ -92,6 +92,34 @@ test('rejected Active image attempt becomes immediately actionable without waiti
   assert.equal(decision.action,'alternate_recovery');
 });
 
+test('Blocked image task inherits rejected attempt count for repair-epoch decision',()=>{
+  const c=contract();
+  c.tasks['15'].retry_limit=4;
+  c.tasks['15'].engineering_repair={
+    enabled:true,max_epochs:1,capability:'repository',
+    instruction:'Repair image mechanism before another attempt.',
+    required_proofs:['fresh_single_story_worker_isolation','small_png_exact_byte_transport_preflight_pass']
+  };
+  const override=applyImmediateImageRecovery({
+    task_id:'15',
+    task_state:'Blocked',
+    image_recovery:{status:'rejected',attempt:4,recovery_action:'Do not create attempt 5.'},
+    recovery_attempts:0
+  });
+  assert.equal(override.task_state,'Blocked');
+  assert.equal(override.blocked_recoverable,true);
+  assert.equal(override.recovery_attempts,4);
+  const classification=classifyRunHealth({task_state:'Blocked',blocked_recoverable:override.blocked_recoverable});
+  const decision=taskRecoveryDecision({
+    classification,
+    taskContract:c.tasks['15'],
+    recoveryAttempts:override.recovery_attempts,
+    repairEpochs:0
+  });
+  assert.equal(decision.action,'engineering_repair');
+  assert.equal(decision.repair_epoch,1);
+});
+
 test('image retry budget exhaustion produces terminal failure instead of a fifth attempt',()=>{
   const c=contract(); c.tasks['15'].retry_limit=4;
   const override=applyImmediateImageRecovery({
