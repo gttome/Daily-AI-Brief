@@ -46,6 +46,15 @@ export function validateRunReadiness(input = {}) {
   required(Array.isArray(learning.required_invariants), 'operational_learning_invariants_required');
   required(Array.isArray(learning.unresolved_risks), 'operational_learning_unresolved_risks_required');
 
+  const changes = input.system_changes || {};
+  required(changes.result === 'PASS', 'system_change_readiness_pass_required');
+  required(/^sha256:[a-f0-9]{64}$/.test(changes.ledger_digest || ''), 'system_change_ledger_digest_required');
+  required(Number.isInteger(changes.change_count) && changes.change_count > 0, 'system_change_count_required');
+  required(Array.isArray(changes.changes_since_last_known_good), 'changes_since_last_known_good_required');
+  required(changes.last_known_good_run_id === input.latest_successful_run?.run_id ||
+    changes.last_known_good_run_id === input.latest_successful_run?.execution_id,
+    'system_change_last_known_good_binding_required');
+
   const control = input.control_plane || {};
   required(bool(control.one_writer), 'one_writer_required');
   required(bool(control.controller_available), 'controller_available_required');
@@ -130,6 +139,8 @@ export function validateRunReadiness(input = {}) {
     execution_id:input.execution_id ?? null,
     evaluated_at:input.evaluated_at || new Date().toISOString(),
     operational_learning_ledger_digest:learning.ledger_digest || null,
+    system_change_ledger_digest:changes.ledger_digest || null,
+    changes_since_last_known_good:changes.changes_since_last_known_good || [],
     result:errors.length ? 'FAIL' : 'PASS',
     errors:[...new Set(errors)],
     deferred_blockers:scheduledImageHostReady ? [] : ['proven_scheduled_image_host_required'],
@@ -168,6 +179,7 @@ export function terminalCleanupReceipt({
   production_state_preserved,
   active_run_pointer_cleared,
   operational_learning_reconciled,
+  system_changes_reconciled,
   promotion_review_complete,
   timing_compared,
   regression_protection_updated,
