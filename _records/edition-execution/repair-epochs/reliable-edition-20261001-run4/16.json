@@ -56,5 +56,10 @@
   "post_repair_attempts": 1,
   "repair_digest": "sha256:c1ea4febd4010ed9d06b789f11c41aa841f8e6dac8365f170472ea468def39c2",
   "last_post_repair_request_key": "56c90cdba4b48dda4fe93581093d1e45e457e27b191c930169d388c0d663ba4d",
-  "post_repair_dispatched_at": "2026-10-02T01:43:27.810Z"
+  "post_repair_dispatched_at": "2026-10-02T01:43:27.810Z",
+  "post_repair_outcome": "accepted_locked",
+  "accepted_candidate_id": "m07",
+  "accepted_attempt": 5,
+  "accepted_path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png",
+  "accepted_at": "2026-10-02T02:25:18Z"
 }
