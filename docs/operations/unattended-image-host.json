@@ -47,15 +47,19 @@
     "low_quality_fallback_enabled": false,
     "svg_fallback_enabled": false,
     "owner_upload_required": false,
-    "next_production_run_authorized": false,
-    "next_production_run_authorization_source": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json"
+    "next_production_run_authorized": true,
+    "next_production_run_authorization_source": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json",
+    "authorization_result": "PASS",
+    "authorization_effective_only_on_protected_main": true,
+    "rehearsal_closed_at": "2026-10-02T22:15:33Z"
   },
   "historical_qualification_note": "The disabled one-time qualification automation remains immutable historical proof of qualification execution. It is not the production consumer.",
   "notes": [
     "Protected registration plus bound evidence is the sole mutable source of truth for image-host capability state.",
     "The historical one-time qualification automation remains immutable evidence and is not the reusable production consumer.",
     "The reusable hourly consumer completed the bounded synthetic Task 11 consumption with zero image, publication, Run 5, or production-content mutation.",
-    "Run 5 remains terminal and is not reopened by this registration update.",
-    "Next production allocation remains gated until the protected rehearsal receipt itself passes and merges."
+    "The explicit Task 11 release automatically dispatched the same synthetic Supervisor execution; the terminal boundary caused publication, writer acquisition and persistent supervision to be skipped.",
+    "The pre-next-run rehearsal receipt is PASS. Authorization becomes live only when this registration and the matching receipt pass protected CI and merge to main.",
+    "Run 5 remains terminal and was not reopened, regenerated or modified."
   ]
 }
