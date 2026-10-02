@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:c8e998b4db7133782235aef12b0f4e448ec4b02381db111753eb8682efa19c87`
+Ledger digest: `sha256:93f03baaf813029f6bb1c573dbb4ef830574d20989595f822771f05d2495c615`
 
-Problems: 39 · Events: 56
+Problems: 40 · Events: 57
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -719,3 +719,21 @@ Problems: 39 · Events: 56
 - **Fix:** Project terminal closeout as Task 29 Done, `full_production`, both authorizations true, and no deferred blocker; reconcile the current pointer identically.
 - **Regression protection:** `_generator/test/production-closeout-terminal-pointer.test.mjs`.
 - **Preservation:** No story, image, candidate, completion identity, Run 4 production SHA, or public reader byte is changed.
+
+## DAB-OPS-20261002-020 — Kanban presentation must use Backlog, WIP and Done in that left-to-right order, and must expose task-level and total Brief timing.
+
+- **Status:** mitigated
+- **First observed run:** unknown
+- **Task(s):** 22
+- **Symptom:** A generated Run 5 Kanban used reversed/redundant columns and substituted status words such as Done or accepted where durations were required. It also omitted total Brief elapsed time.
+- **Root cause:** The Kanban presentation contract specified event-derived task state but did not define a canonical visual column order or mandatory timing fields for every card and the overall Brief.
+- **Operational impact:** The board was harder to scan and could not be used reliably to compare production speed, bottlenecks or end-to-end elapsed time across runs.
+- **Timing impact:** 0 seconds
+- **Attempted fixes:** Correct the reporting contract before generating another Kanban.
+- **Actual fix:** The canonical readiness and living-system contracts now define exactly three visual columns—Backlog, WIP, Done—require every task to display a duration or explicit unavailable marker, and require total Brief elapsed time from append-only transition evidence.
+- **Fix outcome:** The corrected Kanban reporting standard is durable. No replacement Run 5 Kanban is generated solely for this documentation correction; renderer enforcement remains a follow-up hardening item.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** Pending: renderer/report validation that rejects wrong column order, a separate Current column, missing per-task duration, or missing total Brief elapsed time.
+- **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time, kanban_timing_comes_from_append_only_transition_evidence
+- **Recurrences:** none recorded
+- **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or an explicit unavailable marker. | Verify the board displays total Brief elapsed time from run start to terminal completion, or live elapsed time while nonterminal.
