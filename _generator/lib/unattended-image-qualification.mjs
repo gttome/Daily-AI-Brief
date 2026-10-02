@@ -27,7 +27,16 @@ export function verifyQualificationScheduler(report,{hostId,readCommitted}={}){
     const observed=JSON.parse(bytes),task=observed.automations?.find(x=>x.id===s.automation_id);
     const started=Date.parse(s.started_at),seen=Date.parse(observed.observed_at);
     if(observed.source!=='automations.peek'||!task||!task.conversation_id||!Number.isFinite(started)||!Number.isFinite(seen)||seen<started)throw Error('actual_scheduled_invocation_observation_required');
-    if(task.is_enabled===true&&Date.parse(task.last_run_time)===started)return [];
+    if(task.is_enabled===true&&Date.parse(task.last_run_time)===started){
+      if(s.schedule!=null||s.conversation_id!=null){
+        if(s.conversation_id!==task.conversation_id||s.schedule!==task.schedule)throw Error('scheduled_task_identity_mismatch');
+        if(!/RRULE:/.test(task.schedule||'')){
+          const dtstart=scheduleStart(task.schedule),max=Number.isInteger(s.max_start_delay_seconds)?s.max_start_delay_seconds:1800;
+          if(!Number.isFinite(dtstart)||started<dtstart||started-dtstart>max*1000)throw Error('active_one_time_scheduler_timing_required');
+        }
+      }
+      return [];
+    }
     if(s.completed_one_time!==true||task.is_enabled!==false||/RRULE:/.test(task.schedule||'')||s.conversation_id!==task.conversation_id||s.schedule!==task.schedule)throw Error('completed_one_time_scheduler_identity_required');
     const dtstart=scheduleStart(task.schedule),last=Date.parse(task.last_run_time),max=Number.isInteger(s.max_start_delay_seconds)?s.max_start_delay_seconds:1800;
     if(!Number.isFinite(dtstart)||!Number.isFinite(last)||last!==started||seen<last||last<dtstart||last-dtstart>max*1000)throw Error('completed_one_time_scheduler_timing_required');
@@ -130,4 +139,3 @@ export function verifyUnattendedImageQualification(report,{hostId,readCommitted}
   add(report.recovery?.generation_calls===0&&report.recovery?.raw_files===6&&report.recovery?.final_files===6,'no_regeneration_recovery_evidence_required');
   return {result:errors.length?'BLOCKED':'PASS',errors:[...new Set(errors)],recovered_file_count:errors.length?null:12,scope:'Committed artifacts and trusted host receipts; no independent billing attestation or pixel judgment is manufactured.'};
 }
-

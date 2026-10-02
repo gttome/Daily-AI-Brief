@@ -40,6 +40,16 @@ test('completed one-time scheduler proof requires exact identity and bounded DTS
     assert.ok(verifyQualificationScheduler({...report,scheduler:{...report.scheduler,...patch}},options).length);
 });
 
+test('an enabled one-time task cannot reuse a stale last_run_time from before DTSTART',()=>{
+  const schedule='BEGIN:VEVENT\nDTSTART:20261002T172506Z\nEND:VEVENT',started='2026-10-02T16:55:04.724Z';
+  const task={id,is_enabled:true,conversation_id:'actual-conversation',schedule,last_run_time:started};
+  const bytes=Buffer.from(JSON.stringify({source:'automations.peek',observed_at:'2026-10-02T17:26:00Z',automations:[task]}));
+  const report={commit_sha:'a'.repeat(40),scheduler:{kind:'chatgpt_automation',automation_id:id,conversation_id:task.conversation_id,schedule,
+    started_at:started,max_start_delay_seconds:1800,observation_path:'_records/qualification/stale.json',
+    observation_sha256:createHash('sha256').update(bytes).digest('hex')}};
+  assert.ok(verifyQualificationScheduler(report,{hostId:'chatgpt-automation:'+id,readCommitted:()=>bytes}).includes('active_one_time_scheduler_timing_required'));
+});
+
 function png(width=1731,height=909,extra=Buffer.alloc(0)){
   const bytes=Buffer.alloc(24+extra.length);Buffer.from('89504e470d0a1a0a','hex').copy(bytes);bytes.writeUInt32BE(13,8);
   bytes.write('IHDR',12,'ascii');bytes.writeUInt32BE(width,16);bytes.writeUInt32BE(height,20);extra.copy(bytes,24);return bytes;
