@@ -142,7 +142,7 @@ ${story.brief_date >= "2026-09-12" ? renderReadingSupport(story,story.story_id,s
 
 **Focus:** ${focusLabelFor(story.focus,story.brief_date)}  
 **Date:** ${formatDate(story.event_date)}  
-${mediaDuration?`**Duration:** ${mediaDuration}  \\n`:''}**Topics:** ${(story.topics || []).join(', ')}  
+${mediaDuration?`**Duration:** ${mediaDuration}  \n`:''}**Topics:** ${(story.topics || []).join(', ')}  
 **Evidence:** ${label(story.evidence_type)}  
 **Availability:** ${label(story.availability_status)}
 
