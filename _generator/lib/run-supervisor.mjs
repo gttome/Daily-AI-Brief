@@ -35,12 +35,17 @@ export function acquireWriterLease(current, {
     return {acquired:false, reason:'writer_lease_owned_by_other_worker', lease:current};
   const sameOwner = current?.execution_id === execution_id && current?.owner_id === owner_id;
   const generation = sameOwner ? current.generation : Math.max(0, Number(current?.generation || 0)) + 1;
+  const requestedExpiryMs = nowMs + ttl_ms;
+  const currentExpiryMs = sameOwner && stamp(current.expires_at) ? Date.parse(current.expires_at) : 0;
   const lease = {
     schema_version:'run-writer-lease-v1',
     execution_id, owner_id, generation,
     acquired_at:sameOwner ? current.acquired_at : now,
     last_heartbeat_at:now,
-    expires_at:new Date(nowMs + ttl_ms).toISOString()
+    // A same-owner heartbeat may extend a lease, but it must never shorten an
+    // already-valid fence. Shortening can strand a healthy long-running
+    // supervisor when a recovery worker uses a smaller default TTL.
+    expires_at:new Date(Math.max(requestedExpiryMs,currentExpiryMs)).toISOString()
   };
   return {acquired:true, reason:sameOwner ? 'lease_renewed' : 'lease_acquired', lease};
 }

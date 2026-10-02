@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:928d1171dfcd06e2caa06ab4d2dcd3212d2c32d940f2aa232a0a3eb0635878b1`
+Ledger digest: `sha256:1b7e3d87fb3401f3e94d826342f24c25ab82171d48e00244ee49c24c6e3e2513`
 
-Problems: 31 · Events: 43
+Problems: 36 · Events: 52
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -548,19 +548,109 @@ Problems: 31 · Events: 43
 
 ## DAB-OPS-20261002-010 — Reusing the existing controller invoked Codex Work, outside the authorized production boundary; no image was generated.
 
-- **Status:** open
+- **Status:** permanently_fixed
 - **First observed run:** scheduled-image-host-qualification-20261002
 - **Task(s):** 00
-- **Symptom:** The controller, hourly keeper and two immediate startup tasks were re-enabled, but the available native image and saved-pixel inspection tools remained exposed through Codex Work.
-- **Root cause:** The automation schedule selects when to invoke the task, not an ordinary non-Work execution surface. The scheduler interface exposes no runtime-mode selector.
-- **Operational impact:** Task 00 remains blocked and Run5 remains unallocated. Repeating the same triggers cannot qualify the host.
+- **Symptom:** The Run 5 controller and recovery keeper were disabled after the scheduled image host was found on a prohibited Work/Codex surface.
+- **Root cause:** Run readiness incorrectly treated unattended image-host qualification as a global Task 00 start prerequisite instead of a route-specific prerequisite for image work and publication.
+- **Operational impact:** Run 5 remained unallocated and all otherwise safe non-image production work stopped for hours.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt. | Repeated the full bootstrap from current protected main, read all 42 ledger events, reconciled Run4 completion evidence and inspected a fresh automations.peek snapshot. The controller now reports a real prior last_run_time.
-- **Actual fix:** Stopped the daily controller, hourly keeper and duplicate one-time startup tasks after the recurrence; kept the independent live validator enabled. Preserved a second immutable probe/result set on the isolated qualification branch.
-- **Fix outcome:** Zero images generated, zero production state mutated and no proof flags changed. Run4 remains PUBLIC_CLOSED at ce3dac9d75949f381821dfd34163048bf08c65d6. The scheduler-observation timing gap is resolved for the earlier invocation, while the runtime-policy blocker remains open.
-- **Permanent implementation:** _records/image-trials/2026-10-02-scheduled/bootstrap-receipt-2.json, _records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json, _records/image-trials/2026-10-02-scheduled/capability-probe-2.json, _records/image-trials/2026-10-02-scheduled/result-2.json, _records/image-trials/2026-10-02-scheduled/schedule-pause-2.json
-- **Regression tests:** none
-- **Production invariants:** schedule_configuration_is_not_runtime_mode_proof, unchanged_prohibited_execution_must_not_repeat, blocked_is_not_progress
+- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt. | Repeated the full bootstrap from current protected main, read all 42 ledger events, reconciled Run4 completion evidence and inspected a fresh automations.peek snapshot. The controller now reports a real prior last_run_time. | Separate run-start readiness from image-host readiness, preserve the existing cost and quality gates, and encode liveness behavior in code and operating contracts.
+- **Actual fix:** Task 00 can now PASS with start_scope=non_image_production while image_tasks_authorized=false and publication_authorized=false. The CLI records missing host proof as a deferred blocker rather than a global failure. Controller/keeper liveness is mandatory during route-specific blockers.
+- **Fix outcome:** Run allocation and Tasks 01-10 may proceed without violating the no-Work/no-Codex boundary. Images and publication remain fail-closed until qualified host evidence exists.
+- **Permanent implementation:** _records/image-trials/2026-10-02-scheduled/bootstrap-receipt-2.json, _records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json, _records/image-trials/2026-10-02-scheduled/capability-probe-2.json, _records/image-trials/2026-10-02-scheduled/result-2.json, _records/image-trials/2026-10-02-scheduled/schedule-pause-2.json, _generator/lib/run-readiness.mjs, _tools/run-readiness.mjs, docs/operations/run-learning-readiness-contract.json, docs/operations/DAILY-UNATTENDED-STARTUP.md, docs/operations/LIVING-SYSTEM-OPERATIONS.md, docs/operations/unattended-image-host.json
+- **Regression tests:** _generator/test/run-readiness.test.mjs, _generator/test/run5-unattended.test.mjs
+- **Production invariants:** schedule_configuration_is_not_runtime_mode_proof, unchanged_prohibited_execution_must_not_repeat, blocked_is_not_progress, route_specific_blocker_never_disables_global_liveness, image_host_required_before_image_tasks_and_publication_not_run_allocation, cost_boundary_remains_fail_closed, blocked_route_rechecked_without_repeating_prohibited_execution
 - **Recurrences:** none recorded
-- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker. | Resume only after a supported ordinary non-Work/non-Codex scheduled image host exists within the zero-paid-service boundary. | Reuse the isolated qualification branch and its valid checkpoints; do not create another controller or repeat Run4.
+- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker. | Resume only after a supported ordinary non-Work/non-Codex scheduled image host exists within the zero-paid-service boundary. | Reuse the isolated qualification branch and its valid checkpoints; do not create another controller or repeat Run4. | Confirm Run 5 allocates and completes non-image Tasks 01-10 while image host remains blocked. | Confirm image tasks and publication cannot proceed until qualified host evidence passes. | Confirm daily controller and hourly keeper remain enabled during the blocked route.
+
+## DAB-OPS-20261002-011 — A same-owner recovery heartbeat shortened the Supervisor's six-hour writer fence to thirty minutes, causing the healthy persistent loop to fail with WRITER_LEASE_EXPIRED.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 10, 11
+- **Symptom:** GitHub Actions run 37009278238 stopped in loop 25 at 2026-10-02T13:25:08Z after the persisted generation-2 lease expired.
+- **Root cause:** Same-owner heartbeats could shorten a valid writer fence, while the persistent loop asserted before renewing its own authority.
+- **Operational impact:** The Supervisor stopped before projecting Tasks 06-10 and before recording the route-scoped Task 11 blocker. Completed content artifacts remained durable on the Run 5 branch.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Reproduce the expiry from workflow logs and lease history, then add the smallest fence-preserving repair.
+- **Actual fix:** Protected PR 352 merged the monotonic same-owner expiry rule and per-loop local six-hour renewal before fence assertion.
+- **Fix outcome:** Deterministic publication CI run 37014908589 passed. Main merged at 32b0efb2f80b6fd4808fa8086fc06472505ac810. The existing recovery path acquired generation 3 for reliable-edition-20261002-run5, projected Tasks 00-10 Done from append-only events, and recorded Task 11 Blocked with generation_started=false and reason NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST. Image and publication authorization remain false.
+- **Permanent implementation:** _generator/lib/run-supervisor.mjs, .github/workflows/run-supervisor.yml
+- **Regression tests:** _generator/test/run-supervisor.test.mjs, _generator/test/run5-unattended.test.mjs, _generator/test/run-readiness.test.mjs
+- **Production invariants:** same_owner_heartbeat_never_shortens_writer_fence, supervisor_renews_before_fence_assertion, different_owner_and_generation_remain_fail_closed, route_specific_blocker_never_disables_global_liveness
+- **Recurrences:** none recorded
+- **Future validation:** Merge only after protected CI passes. | Restart the same Run 5 Supervisor through the existing watchdog or recovery keeper and verify a fresh generation projects all durable events. | Record Task 11 Blocked without invoking the known prohibited image route. | Confirm future recovery heartbeats preserve or extend the active Supervisor expiry. | Keep Task 11 blocked until an authorized unattended native image host is proven; do not repeat the prohibited route. | Keep the Daily Controller and recovery keeper enabled while the route-specific blocker remains.
+
+## DAB-OPS-20261002-012 — Scheduled native generation and exact PNG capture worked, but the complete binary create_blob handoff was rejected before reaching GitHub.
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 11
+- **Symptom:** The documented fallback could not previously reconstruct and persist a complete PNG when direct binary create_blob delivery failed before GitHub.
+- **Root cause:** The fallback existed in operating guidance but had no protected executable consumer tied to the current execution, branch, task and writer generation.
+- **Operational impact:** A valid future image could have remained stranded after generation even though an approved fallback was documented.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Implement a protected Run Supervisor chunk consumer with strict execution, branch, task, path, generation, byte-count, SHA-256, Git-blob, PNG-header, dimensions and read-back checks; remove temporary chunks only after success. | Implement and protect an executable chunk consumer, validate it locally and through protected deterministic CI, then merge it without weakening visual acceptance.
+- **Actual fix:** PR #354 added a bounded Base64 chunk bridge and Supervisor consumer with execution/branch/task/generation binding, byte-count, SHA-256, Git-blob, PNG structure and exact read-back checks. Temporary chunks are removed only after verified persistence.
+- **Fix outcome:** PR #354 merged to protected main at 76d9f952bed6c0b9b9f411ccabd22720652d0513; deterministic publication CI run 37019748073 passed. The repair is released. A real accepted candidate has not yet needed to exercise the bridge because m01 attempt 2 failed the visual gate before transport.
+- **Permanent implementation:** _generator/lib/image-chunk-bridge.mjs, _tools/image-chunk-bridge.mjs, .github/workflows/run-supervisor.yml, docs/operations/DAILY-UNATTENDED-STARTUP.md, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** _generator/test/image-chunk-bridge.test.mjs, _generator/test/run-supervisor.test.mjs
+- **Production invariants:** small_png_chunk_bridge_is_executable, chunk_payload_is_sha256_and_git_blob_bound, chunk_target_is_run_scoped_png_only, temporary_chunks_removed_only_after_verified_readback, transport_success_does_not_self_certify_visual_quality
+- **Recurrences:** none recorded
+- **Future validation:** Merge only after protected CI passes. | Use exactly one fresh scheduled m01 attempt with exact-visible-text enforcement. | If direct create_blob is rejected before GitHub, write the bounded chunk request and let the fenced Supervisor consume it. | Review the saved Git PNG before acceptance; keep publication blocked until six images are accepted and the host qualification contract passes. | Exercise the released chunk bridge on the first visually valid candidate whose direct complete-Base64 create_blob handoff is rejected before GitHub. | Verify exact saved Git bytes and saved-pixel review before acceptance.
+
+## DAB-OPS-20261002-013 — A recoverable image failure was recorded in fields the Supervisor did not consume, so the live loop kept treating Task 11 as externally blocked.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 11
+- **Symptom:** The 14:03:56 Task 11 blocker refresh declared recoverable=true and named a recovery action, but used state=Blocked rather than the canonical to=Blocked transition shape. The m01 attempt-1 receipt used targeted_next_action instead of recovery_action. The Supervisor therefore continued reading the older external blocker and did not dispatch attempt 2.
+- **Root cause:** The scheduled image worker and the Run Supervisor had drifted to two semantically similar but mechanically incompatible recovery-evidence schemas.
+- **Operational impact:** The persistent loop remained alive but could not convert an actually recoverable Task 11 failure into work. Owner/status intervention was required to expose and correct the mismatch.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Diagnose the exact parser/selector expectations, require the next scheduled worker to append a normal to=Blocked recoverable transition, and require image receipts to expose a canonical recovery action.
+- **Actual fix:** Operational recovery instructions now require canonical machine-readable transition fields and a canonical recovery action. Permanent code/schema normalization remains required so semantically equivalent recovery evidence cannot strand a future run.
+- **Fix outcome:** The defect is understood and the next worker was launched from explicit actionable state rather than the stale external blocker. Repository-level normalization/regression coverage is still pending.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** none
+- **Production invariants:** recoverable_blocker_must_be_machine_readable, task_transition_uses_canonical_to_field, image_recovery_exposes_canonical_recovery_action, semantic_recovery_schema_drift_must_not_strand_supervision
+- **Recurrences:** none recorded
+- **Future validation:** Add regression coverage proving a scheduled-worker recoverable image receipt is recognized by the Supervisor without owner intervention. | Fail readiness or normalize safely when a recoverable blocker uses a noncanonical shape.
+
+## DAB-OPS-20261002-014 — A scheduled image retry was bound to writer generation 5 after the restarted Supervisor had already acquired generation 6.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 11
+- **Symptom:** The first dedicated m01 retry inherited generation-5 authority from its schedule prompt while GitHub Supervisor run 37017573659 had acquired generation 6 at 14:06:59Z. The image worker could not safely mutate the Run 5 branch under the stale fence.
+- **Root cause:** The external task prompt captured mutable writer-generation state at scheduling time instead of refreshing durable state and acquiring current fenced authority at execution time. There was no explicit task-specific handoff protocol.
+- **Operational impact:** The retry invocation completed without advancing Task 11, creating additional delay while preserving one-writer safety.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Change the scheduled image worker to refresh the branch and lease first, acquire the next writer generation for the same execution, treat Supervisor bookkeeping as non-substantive progress, and release/expire the task-specific lease at a durable boundary.
+- **Actual fix:** The subsequent m01 worker acquired generation 8 at 14:30:53Z, generated and reviewed attempt 2, persisted its immutable rejection receipt, and expired its lease at the terminal blocked boundary.
+- **Fix outcome:** The operational handoff worked for attempt 2 and preserved single-writer safety. The rule is now documented in the readiness/living contracts; repository-level automated handoff coverage remains a next hardening item.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** none
+- **Production invariants:** scheduled_worker_refreshes_fence_at_execution, stale_generation_never_mutates_run, task_specific_writer_handoff_is_explicit, worker_releases_or_expires_lease_at_durable_boundary
+- **Recurrences:** none recorded
+- **Future validation:** Prove every scheduled native-image worker acquires current authority at invocation rather than embedding a generation in its schedule. | Add a regression test for Supervisor-to-native-worker handoff and automatic Supervisor recovery after worker release.
+
+## DAB-OPS-20261002-015 — Native image generation violated the exact visible-text allowlist in two different ways despite otherwise professional m01 results.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 11, 16
+- **Symptom:** m01 attempt 1 contained multilingual example words beyond the allowlist. m01 attempt 2 passed subject, mechanism, structure, editorial quality, white-background, factual-scope and no-people checks but contained tiny document/interface-like pseudo-text outside the nine permitted strings.
+- **Root cause:** A positive exact-text instruction alone does not prevent the image model from inventing microcopy or text-like glyphs inside document, ribbon or interface-shaped visual primitives.
+- **Operational impact:** Two bounded Task 11 generations were rejected before acceptance. Attempt 2 correctly stopped before transport, avoiding wasted Git persistence of an invalid candidate.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Tighten the next sealed prompt to prohibit all pseudo-text, tiny horizontal copy, faux document lines, code, captions and typographic marks; require blank text-free geometric/document primitives except for the nine explicit labels; preserve pretransport pixel review. | Use professional native generation with story-sealed prompts, exact visible-text controls, pretransport rejection of pseudo-text/humanoid defects, same-visual 1200x630 normalization, exact Git persistence/read-back, and saved-Git visual review before accepted_locked.
+- **Actual fix:** Run 5 completed six professional story-specific images with targeted retries only where a specific visual defect was observed. m01 passed on attempt 3 after pseudo-text hardening; m05 passed on attempt 2 after blanking faux record text; m08 passed on attempt 2 after replacing humanoid collaboration icons with abstract nodes.
+- **Fix outcome:** All six Run 5 images reached accepted_locked with exact Git read-back and saved-Git visual review. After reviewing the completed images, the owner explicitly assessed them as 'very good'. Treat this as positive qualitative validation of the current image-production standard and preserve the characteristics that produced it.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** none
+- **Production invariants:** exact_visible_text_gate_runs_before_transport, pseudo_text_counts_as_visible_text, document_and_ui_like_primitives_are_text_free_unless_allowlisted, invalid_visual_is_not_persisted_as_final_or_accepted, image_retry_budget_remains_bounded, preserve_current_professional_textbook_image_quality, targeted_retry_only_for_specific_visual_defect, pretransport_review_prevents_invalid_asset_persistence, saved_git_review_precedes_acceptance, do_not_reintroduce_svg_basic_or_low_quality_fallback
+- **Recurrences:** none recorded
+- **Future validation:** Verify attempt 3 contains only the nine allowlisted labels and no pseudo-text at any scale. | If attempt 4 is needed, simplify only text-bearing primitives while preserving explanatory detail and mechanism clarity. | Promote the prompt/primitive rule to a tested production helper if the next accepted image demonstrates the guard. | Use the same professional native-generation, pretransport review and saved-Git acceptance pattern on the next production run. | Compare next-run owner feedback and attempt counts against Run 5 before simplifying any image-quality control. | Preserve the current high-detail explanatory visual standard even when optimizing speed.
 

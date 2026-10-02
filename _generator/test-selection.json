@@ -67,6 +67,19 @@
     },
     {
       "patterns": [
+        "_generator/lib/image-chunk-bridge.mjs",
+        "_tools/image-chunk-bridge.mjs",
+        "_generator/test/image-chunk-bridge.test.mjs",
+        ".github/workflows/run-supervisor.yml"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/image-chunk-bridge.test.mjs",
+        "_generator/test/run-supervisor.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/test/image-transport-parity.test.mjs",
         "docs/operations/under80-runtime-contract.json",
         "docs/operations/efficiency-operating-policy.json",

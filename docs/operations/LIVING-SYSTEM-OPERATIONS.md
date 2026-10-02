@@ -37,7 +37,9 @@
 > GitHub's returned blob/tree binding to match, and continue. Raw binary reread is optional
 > strengthening, not a hard publication gate when content identity is already proven.
 > Quality rejection advances the bounded attempt; transport uncertainty resumes the same
-> bytes. Do not create per-image workflows, probes, Base64 text handoffs or owner uploads.
+> bytes. Do not create per-image workflows, probes or owner uploads. The only permitted
+> Base64 text handoff is the protected bounded chunk bridge described below; ad hoc text
+> handoffs remain prohibited.
 > For every future publication blocker, perform a **simplification-first assessment** before
 > adding machinery: reuse an existing primitive, remove redundant proof layers, and choose
 > the smallest change that preserves required quality, provenance, safety and PUBLIC CLOSED
@@ -49,6 +51,8 @@
 > The owner approved producer-owned image delivery, deterministic continuation and immutable build-once edition bundles. The new `reliable-edition-v1` profile uses a durable operation journal and stable operation keys. It resumes interrupted capture/review/persistence rather than regenerating after an unknown outcome. The shared image entry point routes this profile to `executeRecoverableImage`; it cannot silently fall back to the volatile executor. The existing connector route and all quality gates remain.
 
 Normal transport remains `connector-first-v1`. Complete payload delivery failures remain `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`; all V2 raw/final provenance requirements remain unchanged. A current denial stops that operation; no alternate endpoint may evade it.
+
+When the complete Base64 `create_blob` request is rejected before reaching GitHub, `_tools/image-chunk-bridge.mjs` is the protected executable fallback. A fenced scheduled worker may commit canonical Base64 parts and one manifest bound to execution, branch, image task, approved run-scoped target, byte count, SHA-256, Git blob identity and source writer generation. A later fenced Supervisor generation reconstructs and verifies the exact PNG, writes the approved path, verifies read-back, records an immutable result and deletes the temporary parts. Malformed, mismatched, unsafe-path or future-generation requests fail closed. Transport success is never image acceptance; the saved Git asset must still pass visual review.
 
 A real supported native host and binary-reader adapter are still required; their operational availability is **not established by this code release**. No new full Q is authorized until the actual handoff succeeds. New-profile discovery requests check admission before network work. Legacy scheduled/frozen requests are not silently migrated or disabled. Do not repair terminal Q24/Q25 into PASS. Do not confuse local Git/fixture recovery tests with six new native images or public closure.
 
@@ -1348,3 +1352,27 @@ After Task 29, a Run Promotion Review records Keep / Fix / Simplify / Validate-n
 ## October 2 — Restore scheduled execution compatibility
 
 [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) defines the current owner-authorized daily target, mandatory GitHub bootstrap, preserved cost and quality constraints, persistent recovery and event-derived reporting. Reuse the existing controller and keeper identities. A scheduled ChatGPT task proves its own invocation with a committed scheduler observation; it must not manufacture a GitHub workflow ID. This compatibility correction alone does not qualify a host or establish a completed run. Keep the accepted interactive trial and Run 4 closure unchanged.
+
+
+## October 2, 2026 — Route-scoped blockers must never stop production liveness
+
+A blocked execution route is not a terminal run state. The October 2 Run 5 startup correctly refused a Work/Codex image surface, but then incorrectly disabled the daily controller, hourly recovery keeper and one-time starts. That converted an image-capability constraint into a system-wide outage.
+
+Permanent rule: **reject the prohibited route, not the run.** Task 00 may authorize `non_image_production` when the unattended image host is the only deferred blocker. In that state, Run allocation, Tasks 01-10, discovery, evidence review, editorial selection, media work, Watchlist work, book mapping, image-spec sealing, event logging, supervision and recovery remain live. Image Tasks 11-16, image-dependent downstream gates and publication remain blocked until a registered READY unattended host passes the existing scheduled qualification.
+
+The daily controller and hourly recovery keeper remain enabled during route-specific `Blocked` states. Recovery re-reads durable state each cycle, performs newly available safe work, and rechecks the blocked route without repeating a known prohibited Work/Codex execution. Only a run-specific writer stops at terminal cleanup. No Work, Codex, paid API, overage, alternate account, quality fallback, image-proof bypass or publication-gate relaxation is introduced by this liveness correction.
+
+
+## October 2, 2026 — Run 5 recovery evidence, writer handoff and visible-text learning
+
+Run 5 exposed three additional control lessons during Task 11. These are production invariants, not status commentary.
+
+1. **Recoverable means machine-readable.** A human-readable note saying that a blocker is recoverable is insufficient. The durable transition must use the canonical task event shape, including `to: "Blocked"`, `recoverable: true`, `external_blocker: false`, an exact timestamp and an executable recovery action. Image receipts must expose the canonical recovery action consumed by the Supervisor. Semantically similar fields such as `state` or `targeted_next_action` may be retained as descriptive metadata but cannot be the only recovery signal.
+
+2. **External scheduled workers acquire authority at execution time.** Never freeze a mutable writer generation into a future task prompt. A native-image worker refreshes current durable state, acquires the next/current fenced authority for the same execution immediately before mutation, verifies that fence for each write, and expires/releases the task-specific lease at a durable Done or Blocked boundary. A stale generation must fail closed. Supervisor bookkeeping alone does not count as substantive task progress that should prevent a deliberate handoff.
+
+3. **Exact visible-text gates treat pseudo-text as text.** Run 5 m01 attempt 1 was rejected for multilingual example words. Attempt 2 was otherwise professionally valid but was rejected because document/ribbon primitives contained tiny text-like interface copy outside the allowlist. Therefore exact-text stories require a pretransport pixel review that rejects not only readable extra words but also faux document lines, microcopy, pseudo-letters, code-like marks and other glyph clusters that appear linguistic. Document/card/ribbon/interface-shaped primitives stay visually blank unless a label is explicitly allowlisted. Do not persist an invalid candidate merely to exercise transport.
+
+4. **Transport and visual quality remain independent.** PR #354 permanently repaired the previously non-executable bounded PNG chunk fallback. That transport may be exercised only for a visually valid candidate. Successful byte reconstruction/read-back cannot certify image quality, and a visual rejection must not be counted as a transport failure.
+
+5. **Learning is part of the run.** Every material incident must preserve symptom, root cause, operational/timing impact (or explicit unknown), attempted fix, actual fix or pending state, outcome, permanent implementation, regression protection or pending state, production invariant, run evidence and next-run validation. Advancing the run without these records is incomplete recovery.

@@ -1,6 +1,6 @@
 # Daily AI Brief — Current Operations Entry Point
 
-**Observed runtime blocker:** the October 2 live invocation reported Codex Work and stopped before image generation. A later schedule reactivation reproduced the same prohibited host; no image was generated. The daily controller, hourly keeper and duplicate one-time starts are paused to preserve the existing cost boundary. See [current daily startup and live outcome](DAILY-UNATTENDED-STARTUP.md). No Run 5 has been admitted.
+**October 2 liveness correction:** the live invocation correctly rejected a prohibited Work/Codex image route, but the recovery logic incorrectly paused the entire production system. That global-pause behavior is superseded. The cost boundary remains unchanged. The daily controller and hourly keeper stay enabled, Task 00 may admit `non_image_production`, and all dependency-safe non-image work continues while the image route remains explicitly blocked. Images and publication still require a qualified unattended host. See [current daily startup and live outcome](DAILY-UNATTENDED-STARTUP.md).
 
 **October 2 daily authorization:** follow [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) for the next Brief and daily 01:00 America/Chicago execution. Read its complete bootstrap list and cumulative learning. Run 4 is terminal. The scheduled image host remains unqualified until actual live evidence passes.
 
