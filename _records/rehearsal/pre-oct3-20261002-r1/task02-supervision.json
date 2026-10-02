@@ -1,0 +1,27 @@
+{
+  "schema_version": "full-public-rehearsal-supervision-check-v1",
+  "recorded_at": "2026-10-02T23:08:31.000Z",
+  "result": "PASS_WITH_EXPECTED_FENCE_YIELD",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "writer": {
+    "owner_id": "chatgpt-interactive-rehearsal-20261002",
+    "generation": 3,
+    "exclusive": true
+  },
+  "supervisor_run": {
+    "id": 37074656582,
+    "status": "completed",
+    "conclusion": "failure",
+    "last_step": "Persistent approximately one-minute supervision loop",
+    "exit_code": 2
+  },
+  "interpretation": "The generation-2 Supervisor started correctly, validated contracts, acquired its fence and queued Task 00. After the same-execution writer authority moved to generation 3 and the branch advanced, the stale Supervisor stopped rather than overwriting newer work. This is a fail-closed one-writer outcome; it is not a second execution.",
+  "protected_handoff_workflow_sha": "dc545db07683cda0e55cda5f1e19345fd6d0a065",
+  "protected_watchdog_workflow_sha": "d27e537bccb05fde7ad662cb8c5125d4c8e4689b",
+  "continuation_contract": {
+    "repository_worker_drains_tasks_00_through_10_under_generation_3": true,
+    "after_task_10_release_writer_and_trigger_same_rehearsal_supervisor": true,
+    "tasks_11_through_16_use_registered_reusable_image_consumer": true,
+    "canonical_publication_dispatch_for_rehearsal_prohibited": true
+  }
+}
