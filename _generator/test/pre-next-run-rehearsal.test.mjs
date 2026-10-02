@@ -248,3 +248,47 @@ test('final receipt cannot authorize production until protected CI itself is PAS
   assert.equal(receipt.next_production_run_authorized,false);
   assert.ok(receipt.errors.includes('protected_ci_pass_required'));
 });
+
+test('actual scheduled rehearsal evidence proves consumption, stale-generation rejection, zero mutation, handoff contract and Kanban',()=>{
+  const base='_records/hardening/pre-next-run-five-change-2026-10-02';
+  const actualPrestate=JSON.parse(fs.readFileSync(base+'/synthetic-prestate.json','utf8'));
+  const actualRequest=JSON.parse(fs.readFileSync(base+'/synthetic-task11-request.json','utf8'));
+  const actualConsumer=JSON.parse(fs.readFileSync(base+'/synthetic-consumer-result.json','utf8'));
+  const actualRelease=JSON.parse(fs.readFileSync(base+'/synthetic-writer-release.json','utf8'));
+  const scheduled=verifyScheduledConsumerEvidence({
+    prestate:actualPrestate,request:actualRequest,consumerResult:actualConsumer,writerRelease:actualRelease,
+    expectedMainSha:'25675f9e13e2cdf77ebc109cf2c33f31303004f1'
+  });
+  assert.equal(scheduled.result,'PASS',scheduled.errors.join(','));
+  assert.equal(scheduled.request_generation,1);
+  assert.equal(scheduled.current_generation_before,2);
+  assert.equal(scheduled.authority_generation,3);
+  assert.equal(scheduled.release_generation,3);
+  assert.equal(scheduled.generation_calls,0);
+  assert.equal(scheduled.image_edit_calls,0);
+  assert.equal(scheduled.publication_mutations,0);
+  assert.equal(scheduled.run5_mutations,0);
+
+  const workflow=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  const releaseMs=Date.parse(actualRelease.released_at);
+  const automatic=verifyAutomaticSupervisorResume({
+    prestate:actualPrestate,writerRelease:actualRelease,workflowText:workflow,
+    resumedAt:new Date(releaseMs+1000).toISOString()
+  });
+  assert.equal(automatic.result,'PASS',automatic.errors.join(','));
+  assert.equal(automatic.execution_id,REHEARSAL_EXECUTION_ID);
+  assert.equal(automatic.completed_task00_reworked,false);
+  assert.equal(automatic.duplicate_execution_created,false);
+
+  const kanban=buildAndVerifySyntheticKanban({
+    prestate:actualPrestate,writerRelease:actualRelease,
+    observedAt:new Date(releaseMs+1000).toISOString()
+  });
+  assert.equal(kanban.result,'PASS',kanban.errors.join(','));
+  assert.deepEqual(kanban.columns,['Backlog','WIP','Done']);
+  assert.equal(kanban.task_count,30);
+  assert.equal(kanban.fresh,true);
+  assert.equal(kanban.task_durations['12'],'unavailable');
+  assert.notEqual(kanban.total_brief_elapsed,'unavailable');
+});
+
