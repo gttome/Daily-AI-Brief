@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   RUN_READINESS_VERSION,
   PROVEN_IMAGE_PATH,
+  deriveImageHostAdmission,
   validateRunReadiness,
   assertRunReady,
   assertImageTasksReady,
@@ -36,7 +37,18 @@ function goodInput(){
       accepted_locked_required:true,svg_fallback_enabled:false,low_quality_fallback_enabled:false,
       small_png_persistence_route:'direct_git_data_create_blob_base64',
       small_png_readback_identity_verified:true,
-      host_admission:{evidence_type:'live',trigger:'scheduled',execution_mode:'production',generation_executor:'native_chatgpt_image_generation',review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,receipt_path:'_records/test-host-proof.json',receipt_sha256:'a'.repeat(64)}
+      host_admission:{
+        source_of_truth:'protected_host_registration',registration_status:'READY',qualification_verified:true,
+        qualification_host_id:'chatgpt-automation:6abfb619185c819194646f77c3b314a4',
+        evidence_type:'live',trigger:'scheduled',generation_executor:'native_chatgpt_image_generation',
+        review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,
+        receipt_path:'_records/test-host-proof.json',
+        reusable_consumer:{
+          scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
+          enabled:true,role:'scheduled_native_image_request_consumer',observation_verified:true,
+          current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
+        }
+      }
     },
     timing:{
       append_only_transition_ledger:true,kanban_derived_from_events:true,kanban_digest_bound:true,
@@ -139,9 +151,9 @@ test('verified bounded same-visual PNG transport is an approved professional per
   assert.equal(receipt.result,'PASS');
 });
 
-test('missing or interactive image host blocks image/publication only, not non-image run start',()=>{
+test('missing or disabled reusable image consumer blocks image/publication only, not non-image run start',()=>{
   const x=goodInput();
-  x.image_pipeline.host_admission.trigger='active_chat';
+  x.image_pipeline.host_admission.reusable_consumer.enabled=false;
   let receipt=validateRunReadiness(x);
   assert.equal(receipt.result,'PASS');
   assert.equal(receipt.start_authorized,true);
@@ -164,4 +176,24 @@ test('cost-boundary violations still block all run start',()=>{
   assert.equal(receipt.start_authorized,false);
   assert.equal(receipt.start_scope,'blocked');
   assert.ok(receipt.errors.includes('cost_boundary_violation:codex'));
+});
+
+
+test('protected registration is the sole mutable host-state source and includes reusable consumer binding',()=>{
+  const registration={
+    status:'READY',host_id:'chatgpt-automation:6abfb619185c819194646f77c3b314a4',
+    qualification_receipt_path:'_records/q.json',saved_bytes_recovered:true,zero_production_cost_verified:true,
+    reusable_consumer:{
+      scheduler_kind:'chatgpt_automation',automation_id:'6abeb9a2b8a88191949dc420d5e10feb',
+      enabled:true,role:'scheduled_native_image_request_consumer',
+      observation_path:'_records/c.json',observation_sha256:'b'.repeat(64),
+      current_fence_refresh_required:true,explicit_supervisor_handoff_required:true
+    }
+  };
+  const admission=deriveImageHostAdmission({registration,qualification_verified:true,consumer_observation_verified:true});
+  assert.equal(admission.source_of_truth,'protected_host_registration');
+  assert.equal(admission.registration_status,'READY');
+  assert.equal(admission.qualification_verified,true);
+  assert.equal(admission.reusable_consumer.automation_id,'6abeb9a2b8a88191949dc420d5e10feb');
+  assert.equal(admission.reusable_consumer.observation_verified,true);
 });
