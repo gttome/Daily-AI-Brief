@@ -12,7 +12,18 @@ export const EVENT_TYPES = Object.freeze([
 const hash = value => createHash('sha256').update(value).digest('hex');
 const stamp = value => typeof value === 'string' && Number.isFinite(Date.parse(value));
 const uniq = values => [...new Set((values || []).filter(Boolean))];
-const refPath = value => typeof value === 'string' ? value.split('#')[0] : null;
+const refPath = value => {
+  if (typeof value !== 'string') return null;
+  const candidate=value.split('#')[0];
+  // The ledger permits both executable repository references and descriptive
+  // regression labels. Only unambiguous repo-relative path tokens are eligible
+  // for filesystem existence validation; prose labels must not be reinterpreted
+  // as missing files merely because they contain punctuation or a slash.
+  if (!candidate || /\s/.test(candidate)) return null;
+  if (candidate.startsWith('/') || candidate.includes('..')) return null;
+  return /^(?:\.github|_generator|_tools|_records|docs|data|assets|briefs|stories|feeds|scripts|config)\//.test(candidate) ||
+    /^(?:package\.json|Gemfile|README\.md)$/.test(candidate) ? candidate : null;
+};
 
 export function parseOperationalLearningLedger(text = '') {
   if (typeof text !== 'string') throw Error('operational_learning_ledger_text_required');
