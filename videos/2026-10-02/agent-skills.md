@@ -13,14 +13,11 @@ reader_release: true
 
 # Meet Home in Copilot
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>0:20 video</span></div></aside>
-<!-- reader-release:end -->
-
 <span class="story-data" data-story-id="dab-video-2026-10-02-agent-skills" hidden></span>
 
 **Focus:** Agents for Everyone  
 **Date:** September 30, 2026  
+**Duration:** 0:20  
 **Topics:**   
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable
