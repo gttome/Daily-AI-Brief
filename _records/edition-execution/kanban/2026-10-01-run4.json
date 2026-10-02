@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261001-run4",
   "edition_id": "dab-edition-2026-10-01",
-  "observed_at": "2026-10-02T02:26:53.884Z",
+  "observed_at": "2026-10-02T02:55:39.200Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:f8ca8204f3d15507b796bb8f318312e3efd7e507feecec97b0691fa8b07b5c54",
+  "source_event_digest": "sha256:9cfc70488b12a29c58037345274f725e5094ff8a34927fe0222799ea51c7752e",
   "tasks": {
     "10": {
       "id": "10",
@@ -93,14 +93,14 @@
     "17": {
       "id": "17",
       "title": "Review six-image set, differentiation and accessibility",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "entered_backlog_at": "2026-10-02T02:54:46.418Z",
+      "active_started_at": "2026-10-02T02:54:46.418Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T02:54:46.418Z",
+      "cycle_seconds": 0,
+      "active_seconds": 0
     },
     "18": {
       "id": "18",
