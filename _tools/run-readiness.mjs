@@ -19,6 +19,7 @@ try{
     const input=flag('input'); if(!input) throw Error('input_required');
     const value=read(input), result=validateRunReadiness(value);
     if(value.run_number>=5) {
+      const hostProofErrors=[];
       try {
         const registration=read('docs/operations/unattended-image-host.json');
         if(!registration.host_id || registration.status!=='READY') throw Error('NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST');
@@ -28,9 +29,15 @@ try{
         if(createHash('sha256').update(bytes).digest('hex')!==ref.receipt_sha256) throw Error('host_receipt_digest_mismatch');
         const proof=verifyUnattendedImageQualification(JSON.parse(bytes),{hostId:registration.host_id,
           readCommitted:(file,commit)=>execFileSync('git',['show',commit+':'+file],{maxBuffer:32*1024*1024})});
-        result.errors.push(...proof.errors);
-      } catch(error) {result.errors.push(error.message);}
-      result.errors=[...new Set(result.errors)];result.result=result.errors.length?'FAIL':'PASS';result.start_authorized=!result.errors.length;
+        hostProofErrors.push(...proof.errors);
+      } catch(error) {hostProofErrors.push(error.message);}
+      result.errors=[...new Set(result.errors)];
+      result.deferred_blockers=[...new Set([...(result.deferred_blockers||[]),...hostProofErrors.map(x=>'image_host:'+x)])];
+      result.result=result.errors.length?'FAIL':'PASS';
+      result.start_authorized=!result.errors.length;
+      result.image_tasks_authorized=result.start_authorized && result.image_tasks_authorized===true && hostProofErrors.length===0;
+      result.publication_authorized=result.image_tasks_authorized;
+      result.start_scope=result.start_authorized ? (result.image_tasks_authorized?'full_production':'non_image_production') : 'blocked';
     }
     emit(result); if(result.result!=='PASS') process.exitCode=1;
   }else if(command==='stale-active'){
