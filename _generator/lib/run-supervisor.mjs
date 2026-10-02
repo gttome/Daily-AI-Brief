@@ -91,20 +91,22 @@ export function applyImmediateImageRecovery({
 } = {}) {
   const taskId = String(task_id || '').padStart(2,'0');
   const isImageTask = ['11','12','13','14','15','16'].includes(taskId);
-  const rejectedWithRecovery = isImageTask && task_state === 'Active' &&
+  const rejectedWithRecoveryEvidence = isImageTask &&
     image_recovery?.status === 'rejected' &&
     typeof image_recovery?.recovery_action === 'string' &&
     image_recovery.recovery_action.trim().length > 0;
-  const attempt = rejectedWithRecovery ? Number(image_recovery.attempt || 0) : 0;
+  const promoteActiveToBlocked = rejectedWithRecoveryEvidence && task_state === 'Active';
+  const actionableBlocked = rejectedWithRecoveryEvidence && ['Active','Blocked'].includes(task_state);
+  const attempt = rejectedWithRecoveryEvidence ? Number(image_recovery.attempt || 0) : 0;
   const baseRecoveries = Number(recovery_attempts || 0);
   return {
-    task_state: rejectedWithRecovery ? 'Blocked' : task_state,
-    blocked_recoverable: rejectedWithRecovery,
-    recovery_attempts: rejectedWithRecovery && Number.isFinite(attempt)
+    task_state: promoteActiveToBlocked ? 'Blocked' : task_state,
+    blocked_recoverable: actionableBlocked,
+    recovery_attempts: rejectedWithRecoveryEvidence && Number.isFinite(attempt)
       ? Math.max(baseRecoveries, attempt)
       : baseRecoveries,
-    immediate_recovery: rejectedWithRecovery,
-    recovery_reason: rejectedWithRecovery ? 'rejected_image_attempt_with_explicit_recovery_action' : null
+    immediate_recovery: actionableBlocked,
+    recovery_reason: rejectedWithRecoveryEvidence ? 'rejected_image_attempt_with_explicit_recovery_action' : null
   };
 }
 
