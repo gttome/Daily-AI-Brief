@@ -2,9 +2,12 @@ name: Daily AI Brief Run Supervisor
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+      - 'rehearsal/**'
     paths:
       - data/operations/active-production-run.json
+      - _records/rehearsal/active-public-rehearsal.json
       - _generator/lib/run-supervisor.mjs
       - _tools/run-supervisor.mjs
       - docs/operations/task-recovery-contracts.json
@@ -56,6 +59,14 @@ jobs:
           path: control
           fetch-depth: 0
 
+      - name: Check out rehearsal trigger branch
+        if: github.event_name == 'push' && startsWith(github.ref_name, 'rehearsal/')
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.ref_name }}
+          path: trigger
+          fetch-depth: 1
+
       - name: Resolve exact existing run identity
         id: resolve
         shell: bash
@@ -67,6 +78,27 @@ jobs:
             execution_id="${{ inputs.execution_id }}"
             edition_id="${{ inputs.edition_id }}"
             takeover="${{ inputs.takeover_dead_owner }}"
+            should_run=true
+          elif [[ "${GITHUB_REF_NAME}" == rehearsal/* ]]; then
+            pointer="trigger/_records/rehearsal/active-public-rehearsal.json"
+            [ -f "$pointer" ] || { echo "should_run=false" >> "$GITHUB_OUTPUT"; exit 0; }
+            rehearsal_ok="$(node -e "const x=require('./$pointer');process.stdout.write(String(
+              x.mode==='FULL_PUBLIC_REHEARSAL' &&
+              x.active===true &&
+              x.terminal!==true &&
+              x.rehearsal_handoff===true &&
+              x.production_allocation===false &&
+              x.canonical_pointers_mutable===false &&
+              x.image_generation_allowed===true &&
+              x.publication_mode==='isolated_preview' &&
+              x.branch===process.env.GITHUB_REF_NAME
+            ))")"
+            [ "$rehearsal_ok" = "true" ] || exit 1
+            run_branch="$(node -e "const x=require('./$pointer');process.stdout.write(x.branch)")"
+            execution_key="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_key)")"
+            execution_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_id)")"
+            edition_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.edition_id)")"
+            takeover=true
             should_run=true
           else
             pointer="control/data/operations/active-production-run.json"
