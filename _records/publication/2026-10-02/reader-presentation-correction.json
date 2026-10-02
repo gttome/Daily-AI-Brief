@@ -1,0 +1,48 @@
+{
+  "schema_version": "reader-presentation-correction-v1",
+  "edition_date": "2026-10-02",
+  "edition_id": "dab-edition-2026-10-02",
+  "correction_scope": "reader_presentation_only",
+  "recorded_at": "2026-10-02T19:55:00Z",
+  "changes": {
+    "book_connections": "Replace internal Run 5 selection/review wording with short reader-facing explanations of why each verified book section helps understand or apply the Brief item.",
+    "coverage_period": "Display the actual content date range: September 29–October 1, 2026.",
+    "videos": "Remove duplicate duration badge beneath the title and use the field label Duration instead of Runtime.",
+    "podcasts": "Remove duplicate duration badge beneath the title and remove the phrase No episode time limit from Duration.",
+    "watchlist": "Expose recently archived/dropped topics with their recorded archive reason."
+  },
+  "watchlist_reconciliation": {
+    "prior_edition_date": "2026-10-01",
+    "current_edition_date": "2026-10-02",
+    "prior_topic_count": 17,
+    "current_topic_count": 19,
+    "removed_topic_ids": [],
+    "new_topic_ids": [
+      "dab-topic-trusted-enterprise-context",
+      "dab-topic-sovereign-open-ai"
+    ],
+    "recently_archived": [
+      {
+        "topic_id": "dab-topic-source-aware-agent-verification",
+        "name": "Source-aware verification for tool-using agents",
+        "archived_on": "2026-10-01",
+        "reason": "Not retained as a distinct active mechanism after the October 1 independent sweep."
+      }
+    ],
+    "conclusion": "No topic was removed between the October 1 and October 2 canonical Watchlists. The apparent drop was an October 1 archive that the reader summary did not disclose."
+  },
+  "preserved": {
+    "story_slate": true,
+    "story_sources": true,
+    "media_selections": true,
+    "accepted_image_bytes": true,
+    "publication_candidate_identity": true,
+    "run5_public_closed_state": true
+  },
+  "regression_tests": [
+    "_generator/test/reader-copy-contract.test.mjs",
+    "_generator/test/book-selection.test.mjs",
+    "_generator/test/watchlist-daily-state.test.mjs",
+    "_generator/test/watchlist-delta.test.mjs"
+  ]
+}
