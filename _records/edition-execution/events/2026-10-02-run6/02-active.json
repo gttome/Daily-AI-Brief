@@ -1,0 +1,13 @@
+{
+  "task_id": "02",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T23:07:57.000Z",
+  "reason_code": "VERIFY_REHEARSAL_SUPERVISOR_FENCE_LIVENESS",
+  "operation": "verify_rehearsal_supervisor_and_writer_handoff",
+  "proof": {
+    "writer_generation": 3,
+    "writer_owner": "chatgpt-interactive-rehearsal-20261002",
+    "supervisor_run_id": 37074656582
+  }
+}
