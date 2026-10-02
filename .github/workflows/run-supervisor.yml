@@ -141,7 +141,14 @@ jobs:
         if: steps.boundary.outputs.handoff == 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-        run: node control/_tools/dispatch-frozen-publication.mjs
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [[ "$RUN_BRANCH" == rehearsal/* ]]; then
+            echo "Isolated rehearsal candidate frozen. Canonical publication dispatch is prohibited."
+          else
+            node control/_tools/dispatch-frozen-publication.mjs
+          fi
 
       - name: Configure run-branch writer
         if: steps.boundary.outputs.write_allowed == 'true'
@@ -247,7 +254,11 @@ jobs:
             cat /tmp/supervisor-tick.json
             boundary="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.publication.action)")"
             if [ "$boundary" = "protected_publication_handoff" ]; then
-              node control/_tools/dispatch-frozen-publication.mjs
+              if [[ "$RUN_BRANCH" == rehearsal/* ]]; then
+                echo "Isolated rehearsal candidate frozen. Leave publication to the rehearsal preview controller."
+              else
+                node control/_tools/dispatch-frozen-publication.mjs
+              fi
               break
             fi
             if [ "$boundary" = "none" ]; then break; fi

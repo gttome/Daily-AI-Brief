@@ -40,17 +40,34 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          full_public_rehearsal=false
           if [[ "${GITHUB_REF_NAME}" == rehearsal/* ]]; then
-            pointer="run/_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-active-run.json"
-            [ -f "$pointer" ] || exit 0
-            rehearsal_ok="$(node -e "const x=require('./$pointer');process.stdout.write(String(
-              x.mode==='NON_PRODUCTION' &&
-              x.rehearsal_handoff===true &&
-              x.production_allocation===false &&
-              x.image_generation_allowed===false &&
-              /^synthetic-/.test(x.execution_id||'')
-            ))")"
-            [ "$rehearsal_ok" = "true" ] || exit 1
+            full_pointer="run/_records/rehearsal/active-public-rehearsal.json"
+            if [ -f "$full_pointer" ]; then
+              pointer="$full_pointer"
+              rehearsal_ok="$(node -e "const x=require('./$pointer');process.stdout.write(String(
+                x.mode==='FULL_PUBLIC_REHEARSAL' &&
+                x.rehearsal_handoff===true &&
+                x.production_allocation===false &&
+                x.canonical_pointers_mutable===false &&
+                x.image_generation_allowed===true &&
+                x.publication_mode==='isolated_preview' &&
+                x.terminal!==true
+              ))")"
+              [ "$rehearsal_ok" = "true" ] || exit 1
+              full_public_rehearsal=true
+            else
+              pointer="run/_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-active-run.json"
+              [ -f "$pointer" ] || exit 0
+              rehearsal_ok="$(node -e "const x=require('./$pointer');process.stdout.write(String(
+                x.mode==='NON_PRODUCTION' &&
+                x.rehearsal_handoff===true &&
+                x.production_allocation===false &&
+                x.image_generation_allowed===false &&
+                /^synthetic-/.test(x.execution_id||'')
+              ))")"
+              [ "$rehearsal_ok" = "true" ] || exit 1
+            fi
           else
             pointer="control/data/operations/active-production-run.json"
             [ -f "$pointer" ] || exit 0
@@ -73,10 +90,17 @@ jobs:
           lease_execution="$(node -e "const x=require('./$lease');process.stdout.write(String(x.execution_id||''))")"
           [ "$released" = "true" ] || exit 0
           [ "$lease_execution" = "$execution_id" ] || exit 0
-          case "$reason" in
-            TASK_1[1-6]_DONE_HANDOFF_TO_SUPERVISOR|TASK_1[1-6]_BLOCKED_HANDOFF_TO_SUPERVISOR) ;;
-            *) exit 0 ;;
-          esac
+          if [ "$full_public_rehearsal" = "true" ]; then
+            case "$reason" in
+              TASK_1[1-7]_DONE_HANDOFF_TO_SUPERVISOR|TASK_1[1-7]_BLOCKED_HANDOFF_TO_SUPERVISOR) ;;
+              *) exit 0 ;;
+            esac
+          else
+            case "$reason" in
+              TASK_1[1-6]_DONE_HANDOFF_TO_SUPERVISOR|TASK_1[1-6]_BLOCKED_HANDOFF_TO_SUPERVISOR) ;;
+              *) exit 0 ;;
+            esac
+          fi
 
           live="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/run-supervisor.yml/runs?per_page=20" \
             --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
