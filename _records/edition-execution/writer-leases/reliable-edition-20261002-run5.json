@@ -4,6 +4,7 @@
   "owner_id": "github-actions-37009278238-1",
   "generation": 2,
   "acquired_at": "2026-10-02T12:52:19.846Z",
-  "last_heartbeat_at": "2026-10-02T12:52:19.846Z",
-  "expires_at": "2026-10-02T18:52:19.846Z"
+  "last_heartbeat_at": "2026-10-02T12:54:59.960Z",
+  "expires_at": "2026-10-02T13:24:59.960Z",
+  "note": "Run 5 missed-start recovery writer lease renewed while draining Tasks 01-10."
 }
