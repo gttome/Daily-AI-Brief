@@ -654,3 +654,21 @@ Problems: 36 · Events: 52
 - **Recurrences:** none recorded
 - **Future validation:** Verify attempt 3 contains only the nine allowlisted labels and no pseudo-text at any scale. | If attempt 4 is needed, simplify only text-bearing primitives while preserving explanatory detail and mechanism clarity. | Promote the prompt/primitive rule to a tested production helper if the next accepted image demonstrates the guard. | Use the same professional native-generation, pretransport review and saved-Git acceptance pattern on the next production run. | Compare next-run owner feedback and attempt counts against Run 5 before simplifying any image-quality control. | Preserve the current high-detail explanatory visual standard even when optimizing speed.
 
+
+
+## DAB-OPS-20261002-017 — Kanban layout and timing observability contract
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 22 / production reporting
+- **Symptom:** The detailed Run 5 Kanban used reversed and redundant workflow columns, used a separate Current column even though the active task is WIP, replaced some durations with status words, and omitted total Brief elapsed time.
+- **Root cause:** The event-derived Kanban contract defined task state but did not define a canonical visual ordering or mandatory timing presentation.
+- **Operational impact:** The board became harder to scan and could not support reliable bottleneck and end-to-end speed comparison across runs.
+- **Timing impact:** No execution-time change; timing observability was incomplete.
+- **Correct standard:** Exactly three columns, left to right: **Backlog → WIP → Done**. There is no separate Current column; the active task belongs in WIP.
+- **Task timing rule:** Every task card must display a duration. If a duration cannot be derived safely, display **unavailable** rather than substituting a state label such as Done or accepted.
+- **Brief timing rule:** Every Kanban must display total Brief elapsed time. For a running Brief, show live elapsed time from run start to the observation timestamp. For a terminal Brief, show run start through terminal completion.
+- **Fix outcome:** The reporting/readiness contract now records these requirements. No replacement Kanban was generated for this correction.
+- **Regression protection:** Pending renderer/report validation that rejects wrong column order, a separate Current column, missing task duration, or missing total Brief elapsed time.
+- **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time
+- **Future validation:** Apply these rules to the next generated production Kanban and verify all Task 00–29 cards plus the total Brief duration.
