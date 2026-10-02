@@ -21,7 +21,7 @@ reader_release: true
 
 **Focus:** Applied Generative AI for Knowledge Workers  
 **Date:** September 30, 2026  
-**Topics:** m05, applied genai knowledge workers  
+**Topics:** applied genai knowledge workers  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
