@@ -1,0 +1,35 @@
+{
+  "schema_version": "unattended-image-qualification-attempt-v2",
+  "observed_at": "2026-10-02T07:32:11.996Z",
+  "baseline_main_sha": "caa16eb85312eaede6b72b5af560d6fb9c5a20b2",
+  "production_images_modified": false,
+  "run5_allocated": false,
+  "qualification_images_accepted": 0,
+  "attempted_candidate": "m03",
+  "attempts": 2,
+  "capabilities": {
+    "native_image_generation": {"available": true, "executed": true},
+    "immediate_exact_byte_capture": {"available": true, "executed": true},
+    "saved_image_visual_inspection": {"available": true, "executed": true},
+    "sealed_single_story_isolation": {
+      "available": false,
+      "evidence": "Two bounded generations produced Run 5 orchestration dashboards instead of the sealed m03 Claude-on-AWS subject, including after the exact sealed prompt was the immediately preceding tool output."
+    },
+    "git_binary_delivery_from_current_mounted_file": {
+      "available": false,
+      "code": "CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY",
+      "evidence": "Generated PNGs are available as mounted local files, while the connected GitHub blob operation accepts literal Base64 content and exposes no file-backed handoff from the mounted file. The released transfer policy forbids substituting a path, opaque ID, partial payload, or manual unbounded chunking."
+    }
+  },
+  "result": "BLOCKED",
+  "blockers": [
+    "SEALED_PROMPT_CONTEXT_CONTAMINATION",
+    "CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY"
+  ],
+  "production_start_authorized": false,
+  "smallest_supported_recovery": [
+    "Use an isolated scheduled image worker whose task contains only one sealed story specification.",
+    "Provide a supported file-backed bridge from the scheduled runtime's mounted PNG to the existing authenticated GitHub binary route, or execute generation and Git persistence on the same authorized host.",
+    "Retry only m03 first; do not generate the remaining five until subject isolation and exact-byte persistence both pass."
+  ]
+}
