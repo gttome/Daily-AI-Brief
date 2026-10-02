@@ -1,0 +1,11 @@
+{
+  "schema_version": "active-production-run-v1",
+  "active": true,
+  "terminal": false,
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "execution_key": "2026-10-01-run4",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "updated_at": "2026-10-01T22:52:28.311Z",
+  "note": "Adopt existing Run 4 into Supervisor v2. Preserve completed Tasks 00-14, accepted locked images and timing evidence; resume from authoritative current Task 15 state only. Never create a duplicate run."
+}

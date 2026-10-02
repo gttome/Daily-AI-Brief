@@ -1,0 +1,295 @@
+name: Daily AI Brief Run Supervisor
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - data/operations/active-production-run.json
+      - _generator/lib/run-supervisor.mjs
+      - _tools/run-supervisor.mjs
+      - docs/operations/task-recovery-contracts.json
+      - .github/workflows/run-supervisor.yml
+  workflow_dispatch:
+    inputs:
+      run_branch:
+        description: Existing production run branch to supervise
+        required: true
+        type: string
+      execution_key:
+        description: Run event key such as 2026-10-01-run4
+        required: true
+        type: string
+      execution_id:
+        description: Immutable execution identity
+        required: true
+        type: string
+      edition_id:
+        description: Immutable edition identity
+        required: true
+        type: string
+      takeover_dead_owner:
+        description: Permit a new fence only when watchdog confirmed the prior Supervisor is dead
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  actions: read
+  pull-requests: read
+
+concurrency:
+  group: daily-ai-brief-run-supervisor
+  cancel-in-progress: true
+
+jobs:
+  supervise:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      SUPERVISOR_OWNER: github-actions-${{ github.run_id }}-${{ github.run_attempt }}
+    steps:
+      - name: Check out protected control plane
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: control
+          fetch-depth: 0
+
+      - name: Resolve exact existing run identity
+        id: resolve
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            run_branch="${{ inputs.run_branch }}"
+            execution_key="${{ inputs.execution_key }}"
+            execution_id="${{ inputs.execution_id }}"
+            edition_id="${{ inputs.edition_id }}"
+            takeover="${{ inputs.takeover_dead_owner }}"
+            should_run=true
+          else
+            pointer="control/data/operations/active-production-run.json"
+            active="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.active===true && x.terminal!==true))")"
+            if [ "$active" != "true" ]; then
+              echo "should_run=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+            run_branch="$(node -e "const x=require('./$pointer');process.stdout.write(x.branch)")"
+            execution_key="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_key)")"
+            execution_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_id)")"
+            edition_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.edition_id)")"
+            takeover=true
+            should_run=true
+          fi
+          {
+            echo "RUN_BRANCH=$run_branch"
+            echo "EXECUTION_KEY=$execution_key"
+            echo "EXECUTION_ID=$execution_id"
+            echo "EDITION_ID=$edition_id"
+            echo "TAKEOVER_DEAD_OWNER=$takeover"
+          } >> "$GITHUB_ENV"
+          {
+            echo "should_run=$should_run"
+            echo "execution_id=$execution_id"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check out repository working copy
+        if: steps.resolve.outputs.should_run == 'true'
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: run
+          fetch-depth: 0
+
+      - name: Switch working copy to existing production branch
+        if: steps.resolve.outputs.should_run == 'true'
+        run: |
+          set -euo pipefail
+          git -C run fetch --no-tags origin "$RUN_BRANCH"
+          git -C run checkout --detach "origin/$RUN_BRANCH"
+
+      - name: Set up Node.js
+        if: steps.resolve.outputs.should_run == 'true'
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+
+      - name: Validate Supervisor contracts and cumulative learning
+        if: steps.resolve.outputs.should_run == 'true'
+        run: |
+          set -euo pipefail
+          node control/_tools/run-supervisor.mjs validate-contracts \
+            --file control/docs/operations/task-recovery-contracts.json
+          node control/_tools/operational-learning.mjs validate \
+            --ledger control/data/operations/production-continuous-improvement-ledger.jsonl \
+            --repo-root control
+
+      - name: Configure run-branch writer
+        if: steps.resolve.outputs.should_run == 'true'
+        run: |
+          git -C run config user.name "github-actions[bot]"
+          git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+
+      - name: Prepare deterministic native-image consumer
+        if: steps.resolve.outputs.should_run == 'true'
+        run: python -m pip install --disable-pip-version-check --quiet pillow
+
+      - name: Acquire fenced writer authority for this exact execution
+        if: steps.resolve.outputs.should_run == 'true'
+        id: fence
+        run: |
+          set -euo pipefail
+          lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
+          mkdir -p "run/$(dirname "$lease_rel")"
+          current_args=()
+          if [ -f "run/$lease_rel" ]; then current_args=(--current "run/$lease_rel"); fi
+          node control/_tools/run-supervisor.mjs writer-lease \
+            --execution-id "$EXECUTION_ID" \
+            --owner-id "$SUPERVISOR_OWNER" \
+            --ttl-ms 21600000 \
+            --takeover-dead-owner "$TAKEOVER_DEAD_OWNER" \
+            "${current_args[@]}" \
+            --output /tmp/writer-lease.json > /tmp/writer-result.json
+          cp /tmp/writer-lease.json "run/$lease_rel"
+          generation="$(node -e "const x=require('/tmp/writer-lease.json');process.stdout.write(String(x.generation))")"
+          echo "generation=$generation" >> "$GITHUB_OUTPUT"
+          git -C run add "$lease_rel"
+          if ! git -C run diff --cached --quiet; then
+            git -C run commit -m "Supervisor acquire writer fence for ${EXECUTION_ID}"
+            git -C run pull --rebase origin "$RUN_BRANCH"
+            git -C run push origin "HEAD:$RUN_BRANCH"
+          fi
+
+      - name: Persistent approximately one-minute supervision loop
+        if: steps.resolve.outputs.should_run == 'true'
+        env:
+          WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
+        run: |
+          set -euo pipefail
+          lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
+          for loop in $(seq 1 315); do
+            # Hot-reload protected control-plane code/contracts every loop.
+            git -C control fetch --no-tags origin main
+            git -C control reset --hard origin/main
+            git -C run fetch --no-tags origin "$RUN_BRANCH"
+            git -C run reset --hard "origin/$RUN_BRANCH"
+
+            node control/_tools/run-supervisor.mjs assert-fence \
+              --lease "run/$lease_rel" \
+              --execution-id "$EXECUTION_ID" \
+              --owner-id "$SUPERVISOR_OWNER" \
+              --generation "$WRITER_GENERATION" >/tmp/fence-check.json
+
+            last_progress="$(
+              git -C run log -1 --format=%cI -- \
+                "_records/edition-execution/events/${EXECUTION_KEY}" \
+                "_records/image-attempts/${EXECUTION_KEY}" \
+                "_records/editorial-handoff" \
+                "_records/publication" \
+                "_data/editions" 2>/dev/null || true
+            )"
+
+            tick_args=()
+            if [ -n "$last_progress" ]; then tick_args+=(--last-progress-at "$last_progress"); fi
+            node control/_tools/run-supervisor.mjs tick \
+              --run-root run \
+              --execution-key "$EXECUTION_KEY" \
+              --execution-id "$EXECUTION_ID" \
+              --edition-id "$EDITION_ID" \
+              --branch "$RUN_BRANCH" \
+              --contracts control/docs/operations/task-recovery-contracts.json \
+              --writer-generation "$WRITER_GENERATION" \
+              "${tick_args[@]}" > /tmp/supervisor-tick.json
+            cat /tmp/supervisor-tick.json
+
+            kanban_fresh="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.kanban.fresh))")"
+            if [ "$kanban_fresh" != "true" ]; then
+              kanban_path="run/_records/edition-execution/kanban/${EXECUTION_KEY}.json"
+              node control/_tools/run-supervisor.mjs project-kanban \
+                --run-root run \
+                --execution-key "$EXECUTION_KEY" \
+                --execution-id "$EXECUTION_ID" \
+                --edition-id "$EDITION_ID" \
+                --contracts control/docs/operations/task-recovery-contracts.json \
+                --output "$kanban_path" >/tmp/kanban-projection.json
+            fi
+
+            has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
+            if [ "$has_request" = "true" ]; then
+              node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\\n')"
+              node control/_tools/run-supervisor.mjs enqueue \
+                --run-root run \
+                --request /tmp/worker-request.json >/tmp/enqueue-result.json
+              cat /tmp/enqueue-result.json
+
+              request_kind="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_kind||''))")"
+              request_capability="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.capability||''))")"
+              request_task="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.task_id||''))")"
+              if [ "$request_capability" = "native_chatgpt" ] && [[ "$request_task" =~ ^1[1-6]$ ]]; then
+                request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
+                request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
+                python control/_tools/native-image-worker.py \
+                  --run-root run \
+                  --request "run/$request_rel" \
+                  --execution-key "$EXECUTION_KEY" \
+                  --execution-id "$EXECUTION_ID" \
+                  --edition-id "$EDITION_ID" \
+                  --writer-generation "$WRITER_GENERATION" >/tmp/native-image-result.json
+                cat /tmp/native-image-result.json
+              fi
+
+              if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
+                export GH_TOKEN="${{ github.token }}"
+                control_sha="$(git -C control rev-parse HEAD)"
+                repair_pr="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${control_sha}/pulls" --jq '.[0].number // 0')"
+                if [ "$repair_pr" -le 0 ]; then
+                  echo "No protected pull request evidence found for repository-repair control SHA $control_sha."
+                  exit 1
+                fi
+                repair_head="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${repair_pr}" --jq '.head.sha')"
+                repair_ci_run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${repair_head}&per_page=100" \
+                  --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
+                if [ "$repair_ci_run" -le 0 ]; then
+                  echo "No successful protected CI found for repository-repair PR #$repair_pr head $repair_head."
+                  exit 1
+                fi
+                node control/_tools/repository-repair-consumer.mjs consume \
+                  --run-root run \
+                  --control-root control \
+                  --execution-key "$EXECUTION_KEY" \
+                  --request /tmp/worker-request.json \
+                  --writer-generation "$WRITER_GENERATION" \
+                  --protected-ci-run-id "$repair_ci_run" \
+                  --protected-ci-sha "$control_sha" \
+                  --protected-ci-conclusion success >/tmp/repository-repair-result.json
+                cat /tmp/repository-repair-result.json
+              fi
+            fi
+
+            git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
+            git -C run add "_records/edition-execution/events/${EXECUTION_KEY}" 2>/dev/null || true
+            git -C run add "_records/image-attempts/${EXECUTION_KEY}" 2>/dev/null || true
+            git -C run add "briefs/images/${EXECUTION_KEY%-run*}" 2>/dev/null || true
+            for dir in worker-requests worker-results repair-epochs; do
+              if [ -d "run/_records/edition-execution/$dir" ]; then
+                git -C run add "_records/edition-execution/$dir"
+              fi
+            done
+            if ! git -C run diff --cached --quiet; then
+              git -C run commit -m "Supervisor reconcile ${EXECUTION_ID} loop ${loop}"
+              if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
+                git -C run fetch --no-tags origin "$RUN_BRANCH"
+                git -C run rebase "origin/$RUN_BRANCH"
+                git -C run push origin "HEAD:$RUN_BRANCH"
+              fi
+            fi
+
+            terminal="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.terminal))")"
+            if [ "$terminal" = "true" ]; then
+              echo "All Tasks 00-29 are Done; Supervisor may stop."
+              break
+            fi
+
+            sleep 60
+          done
