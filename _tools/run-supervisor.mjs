@@ -3,8 +3,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth, applyImmediateImageRecovery,
+  normalizeTaskEvent, recoverableBlockerEvidence, refreshScheduledWorkerFence, buildTaskWriterHandoffRelease,
   validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest, buildEngineeringRepairRequest,
-  projectKanbanFromEvents, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage
+  projectKanbanFromEvents, validateKanbanContract, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage
 } from '../_generator/lib/run-supervisor.mjs';
 
 const argv=process.argv.slice(2), command=argv.shift();
@@ -40,7 +41,7 @@ function loadEvents(runRoot, executionKey){
     if(!name.endsWith('.json')) continue;
     const file=path.join(dir,name);
     try{
-      const value=JSON.parse(fs.readFileSync(file,'utf8'));
+      const value=normalizeTaskEvent(JSON.parse(fs.readFileSync(file,'utf8')));
       if(value && value.task_id!==undefined && value.to && value.at)
         events.push({...value,task_id:String(value.task_id).padStart(2,'0'),_file:name});
     }catch{}
@@ -136,11 +137,29 @@ try{
     emit({result:assertWriterFence(lease,{
       execution_id:args['execution-id'],owner_id:args['owner-id'],generation:Number(args.generation),now:args.now||new Date().toISOString()
     })?'PASS':'FAIL'});
+  }else if(command==='scheduled-worker-fence'){
+    if(!args.lease||!args.request||!args['owner-id']) throw Error('lease_request_and_owner_required');
+    const result=refreshScheduledWorkerFence(readJson(args.lease),{
+      request:readJson(args.request),owner_id:args['owner-id'],
+      now:args.now||new Date().toISOString(),ttl_ms:Number(args['ttl-ms']||1800000)
+    });
+    if(args.output) writeJson(args.output,result.lease);
+    emit(result);
+  }else if(command==='release-handoff'){
+    if(!args.lease||!args['execution-id']||!args['owner-id']||!args.generation||!args.task) throw Error('handoff_release_fields_required');
+    const result=buildTaskWriterHandoffRelease(readJson(args.lease),{
+      execution_id:args['execution-id'],owner_id:args['owner-id'],generation:Number(args.generation),
+      task_id:safeTask(args.task),boundary:args.boundary||'Done',now:args.now||new Date().toISOString()
+    });
+    if(args.output) writeJson(args.output,result);
+    emit(result);
   }else if(command==='project-kanban'){
     const runRoot=path.resolve(args['run-root']||'.'),executionKey=safeExecutionKey(args['execution-key']);
     const contract=readJson(args.contracts), events=loadEvents(runRoot,executionKey);
     const tasks=Object.fromEntries(Object.entries(contract.tasks).map(([id,t])=>[id,{title:t.title}]));
     const value=projectKanbanFromEvents({tasks,events,execution_id:args['execution-id'],edition_id:args['edition-id'],observed_at:args['observed-at']||new Date().toISOString()});
+    const contractErrors=validateKanbanContract({kanban:value,events,require_all_tasks:true});
+    if(contractErrors.length) throw Error('invalid_kanban_projection:'+contractErrors.join(','));
     if(args.output) writeJson(args.output,value);
     emit(value);
   }else if(command==='enqueue'){
@@ -190,8 +209,8 @@ try{
       image_recovery:image,
       recovery_attempts:Number(args['recovery-attempts']||0)
     });
-    const blockedRecoverable=latest?.external_blocker!==true && ((current?.state==='Blocked' && latest?.recoverable!==false) ||
-      imageOverride.blocked_recoverable);
+    const blockerEvidence=latest ? recoverableBlockerEvidence(latest) : {actionable:false,normalized:null};
+    const blockedRecoverable=blockerEvidence.actionable || imageOverride.blocked_recoverable;
     const classification=classifyRunHealth({
       terminal,task_state:imageOverride.task_state,executor_state:executorState,
       last_progress_at:args['last-progress-at']||latest?.at||null,
@@ -245,7 +264,7 @@ try{
     emit({
       schema_version:'run-supervisor-tick-v1',
       execution_id:args['execution-id'],execution_key:executionKey,edition_id:args['edition-id'],branch:args.branch,
-      current_task:current,latest_task_event:latest,executor_state:executorState,
+      current_task:current,latest_task_event:latest,latest_blocker_evidence:blockerEvidence,executor_state:executorState,
       immediate_image_recovery:imageOverride,repair_epoch_state:repairState,classification,
       decision:publication.write_allowed?decision:{action:publication.action},
       worker_request:publication.write_allowed?request:null,publication,
@@ -253,7 +272,7 @@ try{
       terminal
     });
   }else{
-    throw Error('expected_validate-contracts_active-run-decision_writer-lease_assert-fence_project-kanban_enqueue_or_tick');
+    throw Error('expected_validate-contracts_active-run-decision_writer-lease_assert-fence_scheduled-worker-fence_release-handoff_project-kanban_enqueue_or_tick');
   }
 }catch(error){
   console.error(JSON.stringify({result:'FAIL',error:error.message}));
