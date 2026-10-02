@@ -1,0 +1,25 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "edition_id": "dab-edition-2026-10-02",
+  "task_id": "12",
+  "candidate_id": "m02",
+  "operation": "m02-attempt-1",
+  "writer_generation": 9,
+  "at": "2026-10-02T14:52:17.617Z",
+  "from": "Backlog",
+  "to": "Done",
+  "external_blocker": false,
+  "recoverable": false,
+  "reason": "M02_ATTEMPT_1_ACCEPTED_LOCKED",
+  "evidence_path": "_records/image-attempts/2026-10-02-run5/m02-attempt-1.json",
+  "asset_path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m02-1.png",
+  "sha256": "b4b67b2216ddebccb0eafd14327f3551d74f743734006273d3fb71604151dfa3",
+  "git_blob_sha": "7332ca21ecf4eb2fd09210324d31745753e92f1c",
+  "proof": {
+    "exact_git_read_back": true,
+    "saved_git_asset_reviewed": true,
+    "accepted_locked": true
+  }
+}
