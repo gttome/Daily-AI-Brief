@@ -124,3 +124,11 @@ test('promotion review is owned by Task 29 and carries ledger/timing evidence',(
   assert.equal(review.revise_living_plan,true);
   assert.equal(review.ledger_digest,'sha256:'+'b'.repeat(64));
 });
+
+test('verified bounded same-visual PNG transport is an approved professional persistence route',()=>{
+  const input=goodInput();
+  input.image_pipeline.small_png_persistence_route='bounded_same_visual_png_transport_optimization';
+  input.image_pipeline.small_png_readback_identity_verified=true;
+  const receipt=validateRunReadiness(input);
+  assert.equal(receipt.result,'PASS');
+});
