@@ -1,0 +1,18 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "de7b932d545bfce50bb612e01a7411f6195437cb0913f7bfbdeab6b9363f0e39",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "00",
+  "capability": "repository",
+  "instruction": "Read the full cumulative operational-learning ledger; verify every permanent fix, regression test and invariant; prove one fenced writer, Run Supervisor/watchdog, stale-Active/actionable-Blocked recovery, duplicate-run rejection, small-PNG transport/read-back, publication route and zero-added-cost boundary.",
+  "writer_generation": 1,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-02T22:51:22.210Z",
+  "writer_generation_is_provenance": false,
+  "authority_refresh_required_at_invocation": false,
+  "status": "queued"
+}
