@@ -130,6 +130,12 @@ export function verifyAutomaticSupervisorResume({
   const resumeAt = resumedAt || (stamp(releaseAt) ? new Date(Date.parse(releaseAt)+1000).toISOString() : null);
 
   required(/_records\/edition-execution\/writer-leases\/\*\*/.test(workflowText), 'handoff_workflow_writer_lease_trigger_required');
+  required(/- 'rehearsal\/\*\*'/.test(workflowText), 'handoff_workflow_rehearsal_branch_trigger_required');
+  required(/synthetic-active-run\.json/.test(workflowText) &&
+    /mode==='NON_PRODUCTION'/.test(workflowText) &&
+    /production_allocation===false/.test(workflowText) &&
+    /image_generation_allowed===false/.test(workflowText) &&
+    /\^synthetic-/.test(workflowText),'handoff_workflow_nonproduction_guard_required');
   required(/TASK_1\[1-6\]_DONE_HANDOFF_TO_SUPERVISOR\|TASK_1\[1-6\]_BLOCKED_HANDOFF_TO_SUPERVISOR/.test(workflowText),
     'handoff_workflow_task_specific_release_contract_required');
   required(/gh workflow run run-supervisor\.yml/.test(workflowText), 'handoff_workflow_auto_supervisor_dispatch_required');
