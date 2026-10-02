@@ -21,7 +21,7 @@ reader_release: true
 
 **Focus:** Agents for Everyone  
 **Date:** September 29, 2026  
-**Topics:** m08, agents non technical people  
+**Topics:** agents non technical people  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
