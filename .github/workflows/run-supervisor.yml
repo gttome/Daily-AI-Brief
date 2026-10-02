@@ -193,11 +193,36 @@ jobs:
             git -C run fetch --no-tags origin "$RUN_BRANCH"
             git -C run reset --hard "origin/$RUN_BRANCH"
 
-            node control/_tools/run-supervisor.mjs assert-fence \
+            # Renew locally before asserting the fence. This keeps a healthy
+            # long-running Supervisor alive even if a same-owner recovery
+            # heartbeat persisted a shorter TTL on the run branch.
+            node control/_tools/run-supervisor.mjs writer-lease \
+              --execution-id "$EXECUTION_ID" \
+              --owner-id "$SUPERVISOR_OWNER" \
+              --ttl-ms 21600000 \
+              --current "run/$lease_rel" \
+              --output /tmp/writer-lease.json > /tmp/writer-renewal.json
+            cp /tmp/writer-lease.json "run/$lease_rel"
+
+            if ! node control/_tools/run-supervisor.mjs assert-fence \
               --lease "run/$lease_rel" \
               --execution-id "$EXECUTION_ID" \
               --owner-id "$SUPERVISOR_OWNER" \
-              --generation "$WRITER_GENERATION" >/tmp/fence-check.json
+              --generation "$WRITER_GENERATION" >/tmp/fence-check.json 2>/tmp/fence-check.err; then
+              echo "Writer fence transferred to another owner/generation; Supervisor yields without treating the handoff as a production failure."
+              cat /tmp/fence-check.err || true
+              break
+            fi
+
+            # Consume only complete, hash-bound PNG chunk requests left by a
+            # prior fenced scheduled image worker. Malformed requests fail
+            # closed without stopping the persistent Supervisor.
+            node control/_tools/image-chunk-bridge.mjs consume \
+              --run-root run \
+              --execution-id "$EXECUTION_ID" \
+              --branch "$RUN_BRANCH" \
+              --writer-generation "$WRITER_GENERATION" >/tmp/image-chunk-bridge.json
+            cat /tmp/image-chunk-bridge.json
 
             last_progress="$(
               git -C run log -1 --format=%cI -- \
@@ -299,6 +324,11 @@ jobs:
             for dir in worker-requests worker-results repair-epochs; do
               if [ -d "run/_records/edition-execution/$dir" ]; then
                 git -C run add "_records/edition-execution/$dir"
+              fi
+            done
+            for dir in image-transport-requests image-transport-results; do
+              if [ -d "run/_records/edition-execution/$dir" ]; then
+                git -C run add -A "_records/edition-execution/$dir"
               fi
             done
             if ! git -C run diff --cached --quiet; then

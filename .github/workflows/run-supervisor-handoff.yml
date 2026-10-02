@@ -1,0 +1,78 @@
+name: Daily AI Brief Writer Handoff
+
+on:
+  push:
+    branches:
+      - 'reliable-edition/**'
+    paths:
+      - '_records/edition-execution/writer-leases/**'
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: daily-ai-brief-writer-handoff
+  cancel-in-progress: true
+
+jobs:
+  resume-supervisor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out protected control plane
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: control
+          fetch-depth: 1
+
+      - name: Check out released writer branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: ${{ github.ref_name }}
+          path: run
+          fetch-depth: 1
+
+      - name: Resume the same execution after explicit worker handoff
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          pointer="control/data/operations/active-production-run.json"
+          [ -f "$pointer" ] || exit 0
+
+          active="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.active===true && x.terminal!==true))")"
+          [ "$active" = "true" ] || exit 0
+
+          run_branch="$(node -e "const x=require('./$pointer');process.stdout.write(x.branch)")"
+          [ "$run_branch" = "${GITHUB_REF_NAME}" ] || exit 0
+
+          execution_key="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_key)")"
+          execution_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.execution_id)")"
+          edition_id="$(node -e "const x=require('./$pointer');process.stdout.write(x.edition_id)")"
+          lease="run/_records/edition-execution/writer-leases/${execution_id}.json"
+          [ -f "$lease" ] || exit 0
+
+          released="$(node -e "const x=require('./$lease');process.stdout.write(String(Boolean(x.released_at)))")"
+          reason="$(node -e "const x=require('./$lease');process.stdout.write(String(x.release_reason||''))")"
+          [ "$released" = "true" ] || exit 0
+          case "$reason" in
+            *HANDOFF_TO_SUPERVISOR*) ;;
+            *) exit 0 ;;
+          esac
+
+          live="$(gh api "repos/${GITHUB_REPOSITORY}/actions/workflows/run-supervisor.yml/runs?per_page=20" \
+            --jq '[.workflow_runs[] | select(.status=="queued" or .status=="in_progress")] | length')"
+          if [ "$live" -gt 0 ]; then
+            echo "Supervisor already queued/running."
+            exit 0
+          fi
+
+          gh workflow run run-supervisor.yml \
+            --ref main \
+            -f run_branch="$run_branch" \
+            -f execution_key="$execution_key" \
+            -f execution_id="$execution_id" \
+            -f edition_id="$edition_id" \
+            -f takeover_dead_owner=true
