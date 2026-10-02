@@ -110,7 +110,7 @@ jobs:
         run: |
           set -euo pipefail
           baseline="$(git -C control rev-parse HEAD)"
-          BASELINE_SHA="$baseline" node control/_tools/run5-post-image-finalizer.mjs run
+          BASELINE_SHA="$baseline" node run/_tools/run5-post-image-finalizer.mjs run
 
       - name: Commit Task 18 candidate
         if: steps.boundary.outputs.already_done != 'true'
@@ -130,7 +130,7 @@ jobs:
           set -euo pipefail
           baseline="$(git -C control rev-parse HEAD)"
           candidate="$(git -C run rev-parse HEAD)"
-          BASELINE_SHA="$baseline" RUN_CANDIDATE_SHA="$candidate" node control/_tools/run5-release-sealer.mjs run
+          BASELINE_SHA="$baseline" RUN_CANDIDATE_SHA="$candidate" node run/_tools/run5-release-sealer.mjs run
 
       - name: Commit sealed Run 5 release evidence and hand back to Supervisor
         if: steps.boundary.outputs.already_done != 'true'
