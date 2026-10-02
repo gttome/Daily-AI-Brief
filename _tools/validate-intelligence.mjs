@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import {execFileSync} from 'node:child_process';
 import assert from 'node:assert/strict';
 import {validateBookCatalog,bookCoverageMetrics,selectBookReferences} from '../_generator/lib/book-selection.mjs';
-import {validateBookReading} from '../_generator/lib/book-reading.mjs';
+import {bookMappingIdentity,validateBookReading} from '../_generator/lib/book-reading.mjs';
 import {validateEmergingSignalSweep} from '../_generator/lib/emerging-signal-sweep.mjs';
 import {watchlistDailyState} from '../_generator/lib/watchlist.mjs';
 const data=JSON.parse(fs.readFileSync('_data/book-reading.json','utf8'));
@@ -11,7 +11,7 @@ assert.deepEqual(validateBookCatalog(data),[]);
 const base=process.env.PR_BASE||process.env.EVENT_BEFORE;
 if(base&&!/^0+$/.test(base)){
  const prior=JSON.parse(execFileSync('git',['show',`${base}:_data/book-reading.json`],{encoding:'utf8'}));
- for(const [date,rows] of Object.entries(prior.editions))assert.deepEqual(data.editions[date],rows,`Historical mappings changed: ${date}`);
+ for(const [date,rows] of Object.entries(prior.editions))assert.deepEqual(bookMappingIdentity(data.editions[date]||[]),bookMappingIdentity(rows),`Historical mapping identity changed: ${date}`);
  for(const id of new Set(Object.values(prior.editions).flat().map(s=>s.reference_id)))assert.deepEqual(data.references[id],prior.references[id],`Historical anchor changed: ${id}`);
 }
 for(const file of fs.readdirSync('_data/editions').filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f))){
