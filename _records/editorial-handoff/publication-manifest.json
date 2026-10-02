@@ -1,75 +1,75 @@
 {
   "schema_version": "1.0.0",
   "manifest_kind": "daily_ai_brief_publication",
-  "edition_date": "2026-10-01",
-  "edition_id": "dab-edition-2026-10-01",
-  "baseline_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
-  "staging_ref": "reliable-edition/dab-edition-2026-10-01-run4",
+  "edition_date": "2026-10-02",
+  "edition_id": "dab-edition-2026-10-02",
+  "baseline_sha": "94561942e47616398a31dc9491c333d00c61f90d",
+  "staging_ref": "reliable-edition/dab-edition-2026-10-02-run5",
   "policy_profile": "under80-v1",
   "artifacts": {
     "kernel": {
-      "path": "_records/editorial-handoff/kernel-2026-10-01.json",
+      "path": "_records/editorial-handoff/kernel-2026-10-02.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:a23632e5e74f29991beea3bf4ff6dc3b59eed726"
+      "digest": "git_blob_sha1:5bf4f0610177fadcda17fcf2bab854d7415d3eab"
     },
     "facts": {
-      "path": "_records/editorial-handoff/facts-2026-10-01.json",
+      "path": "_records/editorial-handoff/facts-2026-10-02.json",
       "schema_version": "legacy-unversioned",
       "adapter": "candidate-facts-map-v1",
-      "digest": "git_blob_sha1:8949290f18ec3b7767a0c31227c4a6e4435c1f08"
+      "digest": "git_blob_sha1:65da549c0cb06e2847c7e8dad48be7732463c640"
     },
     "metadata_candidates": {
-      "path": "_records/editorial-handoff/metadata-candidates-2026-10-01-run4.json",
+      "path": "_records/editorial-handoff/metadata-candidates-2026-10-02-run5.json",
       "schema_version": "1.1.0",
-      "digest": "git_blob_sha1:0f15491cbf18a9844764f8565a2376f83277ab9d"
+      "digest": "git_blob_sha1:177fdcb004eee0af91b45bb3d9b6464e079dec0d"
     },
     "article_evidence": {
-      "path": "_records/editorial-handoff/article-evidence-2026-10-01.json",
+      "path": "_records/editorial-handoff/article-evidence-2026-10-02.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:796bc8ba7153126105d324d6963288dbd5e7d600"
+      "digest": "git_blob_sha1:8c57adade8a8f40ff01925034c4f8acd4b3906ec"
     },
     "media": {
-      "path": "_records/editorial-handoff/media-2026-10-01.json",
+      "path": "_records/editorial-handoff/media-2026-10-02.json",
       "schema_version": "legacy-unversioned",
       "adapter": "selected-media-v1",
-      "digest": "git_blob_sha1:a8aec8b9e3d04c4421deb2c62606178f7f61f7f0"
+      "digest": "git_blob_sha1:52d80fa7774489aa0cceb0c6507d2993fb6c0018"
     },
     "media_receipt": {
-      "path": "_records/editorial/media-preflight/2026-10-01.json",
+      "path": "_records/editorial/media-preflight/2026-10-02.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:f39955145da664dacea478036872900a8503bc66"
+      "digest": "git_blob_sha1:16bbd4fc65de40793f451baedcb5c0de29ec9400"
     },
     "image_manifest": {
-      "path": "_records/editorial-handoff/images-2026-10-01.json",
+      "path": "_records/editorial-handoff/images-2026-10-02.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:ab1eb169cc62077d5c4282dbc94c34f72356a8b3"
+      "digest": "git_blob_sha1:5a8ccab172271af5e1a8495e339f1552697591c0"
     },
     "image_review": {
-      "path": "_records/editorial-handoff/images-2026-10-01.json",
+      "path": "_records/editorial-handoff/images-2026-10-02.json",
       "schema_version": "legacy-unversioned",
       "adapter": "accepted-images-map-v1",
-      "digest": "git_blob_sha1:ab1eb169cc62077d5c4282dbc94c34f72356a8b3"
+      "digest": "git_blob_sha1:5a8ccab172271af5e1a8495e339f1552697591c0"
     },
     "watchlist": {
       "path": "_data/watchlist.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:d7d2f4f63d4ee8e13a8b3899bab8e9f103256ec4"
+      "digest": "git_blob_sha1:fb8f132cfed608a1a80912c5a52e58f64904d85e"
     },
     "watchlist_evidence": {
-      "path": "_records/watchlist-sweeps/2026-10-01.json",
+      "path": "_records/watchlist-sweeps/2026-10-02.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:738f934314680fd56d5f0c4f602e2d19f78aa09d"
+      "digest": "git_blob_sha1:b992e68569c85e26fec3dada3b01144d1dd127b8"
     },
     "book_mappings": {
-      "path": "_records/editorial-handoff/book-mappings-2026-10-01.json",
+      "path": "_records/editorial-handoff/book-mappings-2026-10-02.json",
       "schema_version": "1.0.0",
-      "digest": "git_blob_sha1:b546552f970d00c2343acdb55136c48fda6b4c36"
+      "digest": "git_blob_sha1:5a04469b2014a7a815eddee56e4cb6180719817d"
     },
     "image_quality_evidence": {
-      "path": "_records/image-quality/2026-10-01-editorial-v2.json",
+      "path": "_records/image-quality/2026-10-02-editorial-v2.json",
       "schema_version": "2.0.0",
-      "digest": "git_blob_sha1:aa60f3acd201ea6583d95ba1d27114a83e9882b1"
+      "digest": "git_blob_sha1:523df6858eecfb373cecb57bd2c1cacb7077c8b6"
     }
   },
   "freeze": {
@@ -90,12 +90,12 @@
       "artifact": "watchlist",
       "evidence_artifact": "watchlist_evidence",
       "counts": {
-        "new_today": 0,
-        "updated_today": 2,
-        "carried_forward": 14
+        "new_today": 2,
+        "updated_today": 5,
+        "carried_forward": 11
       },
       "public_projection_path": "data/watchlist.json",
-      "public_projection_digest": "git_blob_sha1:70a97661115f105784fe27626e662e2a960e8e0d",
+      "public_projection_digest": "git_blob_sha1:1bffce3bb034982aa0ca111e3e400f10806b2f49",
       "repair_allowed_downstream": false
     }
   },
@@ -131,14 +131,14 @@
     ]
   },
   "seal": {
-    "sealed_at": "2026-10-02T03:18:53Z",
-    "parent_commit": "466441460b5a01530980a815bc907d5ace8916ae",
+    "sealed_at": "2026-10-02T17:02:13.170Z",
+    "parent_commit": "dcf61645df5689c7ab822482dfc47dba70b0ddc6",
     "artifact_count": 12,
     "immutable_artifact_digests": true,
     "selection_changed": false,
     "repaired_contracts": [
-      "run4_release_sealing",
-      "watchlist_v2_projection",
+      "run5_task17_image_set_review",
+      "run5_candidate_assembly",
       "current_publication_manifest"
     ]
   }

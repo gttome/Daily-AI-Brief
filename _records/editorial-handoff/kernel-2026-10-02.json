@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-02",
+  "brief_date": "2026-10-02",
+  "baseline_sha": "94561942e47616398a31dc9491c333d00c61f90d",
+  "policy_profile": "under80-v1",
+  "stories": [
+    {
+      "canonical_ordinal": 1,
+      "story_id": "dab-story-2026-10-02-m01",
+      "candidate_id": "m01",
+      "focus": "technical_ai_engineering",
+      "headline": "Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space",
+      "summary": "Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows.",
+      "why_it_matters": "A shared embedding space lets teams trade quality and speed without maintaining separate retrieval indexes, making model choice an operational control rather than a data-migration event.",
+      "source_url": "https://docs.cohere.com/changelog/embed-v5",
+      "agent_skill": false,
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Cohere Embed 5 retrieval architecture: text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.",
+        "mechanism": "Story-specific accepted Run 5 professional editorial mechanism diagram."
+      }
+    },
+    {
+      "canonical_ordinal": 2,
+      "story_id": "dab-story-2026-10-02-m02",
+      "candidate_id": "m02",
+      "focus": "technical_ai_engineering",
+      "headline": "Dogwood moves agent governance into the action sequence",
+      "summary": "AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed.",
+      "why_it_matters": "Agent safety depends on what happens before and after an action, not only on the action in isolation; sequence-aware policy makes that runtime context enforceable.",
+      "source_url": "https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/",
+      "agent_skill": false,
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Dogwood temporal governance for agent actions: an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.",
+        "mechanism": "Story-specific accepted Run 5 professional editorial mechanism diagram."
+      }
+    },
+    {
+      "canonical_ordinal": 3,
+      "story_id": "dab-story-2026-10-02-m04",
+      "candidate_id": "m04",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Stack Internal makes enterprise knowledge provenance machine-readable for AI",
+      "summary": "Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy.",
+      "why_it_matters": "Enterprise AI needs more than retrieval: it needs evidence about where knowledge came from, how current it is, and when a human should resolve conflicting or uncertain context.",
+      "source_url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+      "agent_skill": false,
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Trusted enterprise context for people and agents: fragmented enterprise knowledge flowing through provenance, recency, corroboration and human-validation layers into a trusted context graph; show an agent deciding whether to use knowledge or route it for expert validation, with an auditable source trail.",
+        "mechanism": "Story-specific accepted Run 5 professional editorial mechanism diagram."
+      }
+    },
+    {
+      "canonical_ordinal": 4,
+      "story_id": "dab-story-2026-10-02-m05",
+      "candidate_id": "m05",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Slack MCP Server turns Lists and records into agent-operable workflow objects",
+      "summary": "Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data.",
+      "why_it_matters": "When agents can safely manipulate structured workflow objects through governed interfaces, teams can automate recurring operational work without relying on brittle screen imitation.",
+      "source_url": "https://slack.com/blog/news/slack-feature-drop-september2026",
+      "agent_skill": false,
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Slack MCP Server operations on Lists and records: an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.",
+        "mechanism": "Story-specific accepted Run 5 professional editorial mechanism diagram."
+      }
+    },
+    {
+      "canonical_ordinal": 5,
+      "story_id": "dab-story-2026-10-02-m07",
+      "candidate_id": "m07",
+      "focus": "agents_non_technical_people",
+      "headline": "Gemini Skills turn repeated prompting into reusable work modules",
+      "summary": "Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks.",
+      "why_it_matters": "A maintained Skill converts prompt craft into reusable operating knowledge that can be reviewed, shared and improved instead of recreated in every conversation.",
+      "source_url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/",
+      "agent_skill": true,
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Reusable Gemini Skills: a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.",
+        "mechanism": "Story-specific accepted Run 5 professional editorial mechanism diagram."
+      }
+    },
+    {
+      "canonical_ordinal": 6,
+      "story_id": "dab-story-2026-10-02-m08",
+      "candidate_id": "m08",
+      "focus": "agents_non_technical_people",
+      "headline": "Meta Muse brings skills, connectors, and approval boundaries to small-business agents",
+      "summary": "Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions.",
+      "why_it_matters": "For nontechnical teams, the useful agent pattern is not unrestricted autonomy but bounded access to real business tools with explicit human approval before consequential actions.",
+      "source_url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+      "agent_skill": false,
+      "visual": {
+        "alt_text": "Textbook mechanism diagram for Muse for Small Business with approval boundaries: a small-business agent hub connected to distinct business systems for marketing, commerce, finance, collaboration and files; requests pass through explicit approval boundaries before actions; show skills/connectors as reusable capability modules, not a dashboard.",
+        "mechanism": "Story-specific accepted Run 5 professional editorial mechanism diagram."
+      }
+    }
+  ],
+  "media_decisions": {
+    "videos": {
+      "target": 2,
+      "status": "locked"
+    },
+    "podcasts": {
+      "target": 2,
+      "status": "locked"
+    }
+  },
+  "changed_watchlist_topics": [
+    "dab-topic-system-one-decision-models",
+    "dab-topic-agent-skills-observability",
+    "dab-topic-repairable-generative-design",
+    "dab-topic-model-lifecycle-governance",
+    "dab-topic-harness-engineering",
+    "dab-topic-trusted-enterprise-context",
+    "dab-topic-sovereign-open-ai"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "m01": {
+    "headline": "Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space",
+    "summary": "Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows.",
+    "why_it_matters": "A shared embedding space lets teams trade quality and speed without maintaining separate retrieval indexes, making model choice an operational control rather than a data-migration event.",
+    "source_url": "https://docs.cohere.com/changelog/embed-v5",
+    "source_published_at": "2026-09-30T00:00:00Z",
+    "focus": "technical_ai_engineering"
+  },
+  "m02": {
+    "headline": "Dogwood moves agent governance into the action sequence",
+    "summary": "AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed.",
+    "why_it_matters": "Agent safety depends on what happens before and after an action, not only on the action in isolation; sequence-aware policy makes that runtime context enforceable.",
+    "source_url": "https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/",
+    "source_published_at": "2026-10-01T00:00:00Z",
+    "focus": "technical_ai_engineering"
+  },
+  "m04": {
+    "headline": "Stack Internal makes enterprise knowledge provenance machine-readable for AI",
+    "summary": "Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy.",
+    "why_it_matters": "Enterprise AI needs more than retrieval: it needs evidence about where knowledge came from, how current it is, and when a human should resolve conflicting or uncertain context.",
+    "source_url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+    "source_published_at": "2026-09-30T00:00:00Z",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m05": {
+    "headline": "Slack MCP Server turns Lists and records into agent-operable workflow objects",
+    "summary": "Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data.",
+    "why_it_matters": "When agents can safely manipulate structured workflow objects through governed interfaces, teams can automate recurring operational work without relying on brittle screen imitation.",
+    "source_url": "https://slack.com/blog/news/slack-feature-drop-september2026",
+    "source_published_at": "2026-09-30T00:00:00Z",
+    "focus": "applied_genai_knowledge_workers"
+  },
+  "m07": {
+    "headline": "Gemini Skills turn repeated prompting into reusable work modules",
+    "summary": "Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks.",
+    "why_it_matters": "A maintained Skill converts prompt craft into reusable operating knowledge that can be reviewed, shared and improved instead of recreated in every conversation.",
+    "source_url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/",
+    "source_published_at": "2026-09-30T00:00:00Z",
+    "focus": "agents_non_technical_people"
+  },
+  "m08": {
+    "headline": "Meta Muse brings skills, connectors, and approval boundaries to small-business agents",
+    "summary": "Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions.",
+    "why_it_matters": "For nontechnical teams, the useful agent pattern is not unrestricted autonomy but bounded access to real business tools with explicit human approval before consequential actions.",
+    "source_url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+    "source_published_at": "2026-09-29T00:00:00Z",
+    "focus": "agents_non_technical_people"
+  }
+}

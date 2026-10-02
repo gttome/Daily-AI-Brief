@@ -4,6 +4,8 @@
   "owner_id": "github-actions-run5-finalizer-37037936280-1",
   "generation": 16,
   "acquired_at": "2026-10-02T17:02:09.787Z",
-  "last_heartbeat_at": "2026-10-02T17:02:09.787Z",
-  "expires_at": "2026-10-02T17:32:09.787Z"
+  "last_heartbeat_at": "2026-10-02T17:02:13.497Z",
+  "expires_at": "2026-10-02T17:02:13.497Z",
+  "released_at": "2026-10-02T17:02:13.497Z",
+  "release_reason": "TASKS_18_THROUGH_21_DONE_HANDOFF_TO_SUPERVISOR"
 }
