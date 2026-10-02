@@ -27,6 +27,35 @@ export function staleActiveDecision({
   return {action:'resume_same_operation_or_block', reason:'stale_active_without_live_executor', stale:true, age_ms};
 }
 
+export function deriveImageHostAdmission({registration = {}, qualification_verified = false, consumer_observation_verified = false} = {}) {
+  const consumer = registration.reusable_consumer || {};
+  return {
+    source_of_truth:'protected_host_registration',
+    registration_status:registration.status || null,
+    qualification_verified:qualification_verified === true,
+    qualification_host_id:registration.qualification_host_id || registration.host_id || null,
+    receipt_path:registration.qualification_receipt_path || null,
+    receipt_sha256:registration.qualification_receipt_sha256 || null,
+    evidence_type:'live',
+    trigger:'scheduled',
+    generation_executor:'native_chatgpt_image_generation',
+    review_method:'saved_image_visual_inspection',
+    saved_bytes_recovered:registration.saved_bytes_recovered === true,
+    zero_production_cost_verified:registration.zero_production_cost_verified === true,
+    reusable_consumer:{
+      scheduler_kind:consumer.scheduler_kind || null,
+      automation_id:consumer.automation_id || null,
+      enabled:consumer.enabled === true,
+      role:consumer.role || null,
+      observation_path:consumer.observation_path || null,
+      observation_sha256:consumer.observation_sha256 || null,
+      observation_verified:consumer_observation_verified === true,
+      current_fence_refresh_required:consumer.current_fence_refresh_required === true,
+      explicit_supervisor_handoff_required:consumer.explicit_supervisor_handoff_required === true
+    }
+  };
+}
+
 export function validateRunReadiness(input = {}) {
   const errors = [];
   const required = (ok, code) => { if (!ok) errors.push(code); };
@@ -66,14 +95,23 @@ export function validateRunReadiness(input = {}) {
 
   const image = input.image_pipeline || {};
   const host = image.host_admission || {};
+  const consumer = host.reusable_consumer || {};
   const scheduledImageHostReady =
+    host.source_of_truth === 'protected_host_registration' &&
+    host.registration_status === 'READY' &&
+    host.qualification_verified === true &&
     host.evidence_type === 'live' && host.trigger === 'scheduled' &&
-    ['production','qualification_nonproduction'].includes(host.execution_mode) &&
     host.generation_executor === 'native_chatgpt_image_generation' &&
     host.review_method === 'saved_image_visual_inspection' &&
     host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
     typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
-    /^[a-f0-9]{64}$/.test(host.receipt_sha256 || '');
+    consumer.scheduler_kind === 'chatgpt_automation' &&
+    /^[a-f0-9]{32}$/.test(consumer.automation_id || '') &&
+    consumer.enabled === true &&
+    consumer.role === 'scheduled_native_image_request_consumer' &&
+    consumer.observation_verified === true &&
+    consumer.current_fence_refresh_required === true &&
+    consumer.explicit_supervisor_handoff_required === true;
   required(image.path === PROVEN_IMAGE_PATH, 'proven_image_path_required');
   required(bool(image.exact_byte_capture), 'exact_byte_capture_required');
   required(bool(image.saved_asset_review), 'saved_asset_review_required');

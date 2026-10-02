@@ -779,3 +779,16 @@ Problems: 44 · Events: 61
 - **Regression tests:** _generator/test/editorial-kernel.test.mjs, _generator/test/reader-copy-contract.test.mjs
 - **Production invariants:** candidate_id_is_internal_metadata_only, reader_topics_are_semantic_reader_facing_labels, mNN_candidate_ids_never_render_as_article_topics
 - **Future validation:** Verify all six article Topics fields contain only reader-facing semantic topics. | Reject any editorial kernel or final edition whose article topics contain an mNN candidate ID.
+
+## Pre-next-run hardening closure addendum — October 2, 2026
+
+This addendum projects new permanent-fix events `DAB-OPS-E-000062` through `DAB-OPS-E-000066` from the canonical JSONL ledger. These are proactive closure of already-recorded Run 5 problems, not new production failures.
+
+- **DAB-OPS-20261002-010 — permanently fixed:** protected `unattended-image-host.json` is the sole mutable image-route readiness source; immutable one-time qualification evidence is separated from the enabled reusable hourly consumer `6abeb9a2b8a88191949dc420d5e10feb`; consumerless `AWAITING_SCHEDULED_EXECUTOR` is prohibited. Regression coverage: `run-readiness.test.mjs`, `scheduled-image-routing.test.mjs`.
+- **DAB-OPS-20261002-013 — permanently fixed:** recoverable blocker aliases are normalized only when explicit recovery semantics remain provable; ambiguous/external blockers do not become actionable. Regression coverage: `run-supervisor.test.mjs`.
+- **DAB-OPS-20261002-014 — permanently fixed:** a scheduled worker refreshes current fenced authority at invocation; embedded generation is provenance only; stale generation cannot mutate; task-specific release is explicit. Regression coverage: `run-supervisor.test.mjs`.
+- **DAB-OPS-20261002-016 — permanently fixed in code, live proof pending rehearsal:** event-driven handoff accepts only an exact Task 11-16 released lease for the same active execution and refuses duplicate Supervisor dispatch. The bounded synthetic rehearsal is the acceptance proof before next production allocation.
+- **DAB-OPS-20261002-021 — permanently fixed:** executable Kanban v3 enforces Backlog → WIP → Done, no Current column, active→WIP, Tasks 00-29, per-task duration or literal `unavailable`, total elapsed, append-only timing, and stale-projection rejection. Five failing fixtures protect these conditions.
+
+The next production run remains unauthorized until the protected non-production rehearsal receipt passes. Run 5 remains immutable and closed.
+

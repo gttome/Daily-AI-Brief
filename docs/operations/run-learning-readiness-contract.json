@@ -151,7 +151,28 @@
       "recoverable=true",
       "external_blocker=false",
       "recovery_action"
-    ]
+    ],
+    "recoverable_blocker_safe_normalization": {
+      "state_to_to": "state=Blocked may normalize to to=Blocked",
+      "targeted_next_action_to_recovery_action": "targeted_next_action may normalize to recovery_action",
+      "explicit_recoverable_required": true,
+      "external_blocker_true_never_normalizes_to_actionable": true,
+      "implementation": "_generator/lib/run-supervisor.mjs#normalizeTaskEvent/recoverableBlockerEvidence"
+    },
+    "scheduled_worker_fence_contract": {
+      "request_generation_is_provenance_only": true,
+      "refresh_current_durable_lease_at_invocation": true,
+      "stale_generation_mutation_rejected": true,
+      "task_specific_owner_required": true,
+      "durable_boundary_release_fields": [
+        "released=true",
+        "released_at",
+        "release_reason ending HANDOFF_TO_SUPERVISOR",
+        "expires_at == released_at"
+      ],
+      "automatic_same_execution_resume": ".github/workflows/run-supervisor-handoff.yml",
+      "completed_tasks_redone": false
+    }
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
@@ -179,10 +200,29 @@
       "identity_rule": "Exact identity is mandatory for the final persisted PNG bytes. A bounded same-visual PNG representation may differ from native generation bytes only when professional composition/content are preserved, source-to-final lineage is recorded, and final Git bytes/read-back are verified."
     },
     "host_admission": {
-      "required": "Registered READY unattended host is required before image Tasks 11-16 and publication. Its absence is a deferred route blocker, not a global Run-start blocker. Interactive and fixture evidence cannot authorize images.",
-      "current_status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
-      "reason": "No supported unattended native image generation/review host is currently bound within the zero-Work/zero-Codex/zero-paid-API boundary; non-image production remains authorized.",
-      "registration_path": "docs/operations/unattended-image-host.json"
+      "source_of_truth": "docs/operations/unattended-image-host.json",
+      "mutable_status_must_not_be_duplicated_in_policy_docs": true,
+      "readiness_derivation": "Task 00 loads the protected host registration, verifies its bound qualification receipt, verifies the committed reusable-consumer observation, then derives current host admission.",
+      "ready_requires": [
+        "registration.status == READY",
+        "qualification receipt verifies PASS against immutable committed evidence",
+        "reusable_consumer.scheduler_kind == chatgpt_automation",
+        "reusable_consumer.enabled == true",
+        "reusable_consumer.role == scheduled_native_image_request_consumer",
+        "reusable consumer observation digest and exact automation identity/schedule verify",
+        "current_fence_refresh_required == true",
+        "explicit_supervisor_handoff_required == true",
+        "no Work, Codex, paid API, overage, new credential, owner upload or fallback violation"
+      ],
+      "registration_path": "docs/operations/unattended-image-host.json",
+      "qualification_and_consumption_are_separate_bindings": true,
+      "qualification_history_is_immutable": true,
+      "reusable_consumer_required": true,
+      "queued_request_terminal_wait_state_prohibited": "AWAITING_SCHEDULED_EXECUTOR",
+      "required_dispatch_state": "QUEUED_FOR_SCHEDULED_CONSUMER",
+      "request_writer_generation_semantics": "scheduling_provenance_only",
+      "production_mutation_authority": "refreshed fenced lease acquired by scheduled consumer at invocation",
+      "next_production_run_gate": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json must PASS before allocation"
     },
     "visible_text_guard": {
       "phase": "pretransport_review",
@@ -208,7 +248,23 @@
     "total_brief_elapsed_time_required": true,
     "nonterminal_total_time_rule": "show live elapsed time from run start to observation timestamp",
     "terminal_total_time_rule": "show elapsed time from run start to terminal completion",
-    "timing_source": "append_only_transition_events"
+    "timing_source": "append_only_transition_events",
+    "missing_duration_literal": "unavailable",
+    "total_brief_elapsed_required": true,
+    "tasks_required": "00-29",
+    "missing_timestamps_never_inferred": true,
+    "executable_enforcement": {
+      "projection": "_generator/lib/run-supervisor.mjs#projectKanbanFromEvents",
+      "validator": "_generator/lib/run-supervisor.mjs#validateKanbanContract",
+      "freshness": "_generator/lib/run-supervisor.mjs#kanbanProjectionFresh",
+      "failing_regressions": [
+        "wrong column order",
+        "Current column present",
+        "missing task duration",
+        "missing total Brief elapsed",
+        "stale event digest"
+      ]
+    }
   },
   "terminal_cleanup": {
     "final_task_id": "29",
@@ -280,5 +336,13 @@
       "saved_git_review_and_owner_quality_confirmation_remain_required",
       "correction_cannot_create_acceptance_without_all_other_qualification_gates"
     ]
+  },
+  "pre_next_run_hardening": {
+    "production_allocation_hold": true,
+    "rehearsal_receipt": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json",
+    "authorization_condition": "result == PASS && next_production_run_authorized == true",
+    "synthetic_execution_required": true,
+    "synthetic_image_generation_prohibited": true,
+    "run5_must_remain_terminal": true
   }
 }

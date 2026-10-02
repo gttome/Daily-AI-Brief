@@ -1,40 +1,57 @@
 {
-  "schema_version": "unattended-image-host-registration-v1",
-  "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+  "schema_version": "unattended-image-host-registration-v2",
   "status": "READY",
-  "reason": "Recovery-only qualification passed with six genuine scheduled native originals, six exact accepted finals, exact-bound m07/m08 metadata corrections, saved-Git visual reviews, owner quality confirmation, and a committed completed one-time scheduler observation.",
+  "authorization_scope": "image_route_capability",
+  "reason": "Protected live qualification evidence remains valid, and the reusable production consumer is now the enabled hourly Daily Brief Recovery scheduler. Qualification evidence and reusable consumption are separate bindings.",
+  "qualification_host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+  "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
   "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
   "qualification_receipt_blob_sha": "4ff4d4453f3d5de6594bea90ea7c69dd3a884ff6",
   "qualification_commit_sha": "0e4bded95dc5ede4e6075d21d57e52e1de90fd71",
   "qualification_source_commit": "a703ebcc21fc05bf3e7f05b7ce2949b6c7109df8",
   "immutable_twelve_file_checkpoint": "8b6dcfcedbc9dcb3be1474d23e005b7c14c6f001",
   "qualified_at": "2026-10-02T18:30:45.015Z",
-  "production_start_authorized": true,
-  "non_image_run_start_authorized": true,
-  "image_tasks_authorized": true,
-  "publication_authorized": true,
-  "work_used": false,
-  "codex_used": false,
-  "paid_api_used": false,
-  "alternate_or_new_credentials_used": false,
-  "billing_observed": false,
-  "blocks": [],
-  "does_not_block": [
-    "run_allocation",
-    "non_image_production",
-    "image_tasks",
-    "publication",
-    "PUBLIC_CLOSED",
-    "daily_controller",
-    "hourly_recovery"
-  ],
-  "evidence": {
-    "recovered_file_count": 12,
-    "saved_git_reviews": 6,
-    "owner_quality_confirmation_bound": true,
-    "regression_tests_passed": 6,
-    "generation_calls": 0,
-    "edit_calls": 0,
-    "normalization_calls": 0
-  }
+  "saved_bytes_recovered": true,
+  "zero_production_cost_verified": true,
+  "reusable_consumer": {
+    "scheduler_kind": "chatgpt_automation",
+    "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "title": "Daily Brief Recovery",
+    "enabled": true,
+    "role": "scheduled_native_image_request_consumer",
+    "schedule": "BEGIN:VEVENT\nDTSTART:20261002T123320Z\nRRULE:FREQ=HOURLY\nEND:VEVENT",
+    "timing_mode": "condition_watch",
+    "observation_path": "_records/hardening/pre-next-run-five-change-2026-10-02/reusable-consumer-observation.json",
+    "observation_sha256": "be049aec214a697255d790e4802c16fb4b72287d1185e7d1439f04fb0d7fd4bc",
+    "observed_at": "2026-10-02T21:19:44.575Z",
+    "current_fence_refresh_required": true,
+    "request_generation_semantics": "scheduling_provenance_only",
+    "stale_generation_mutation_rejected": true,
+    "explicit_supervisor_handoff_required": true,
+    "handoff_reason_suffix": "HANDOFF_TO_SUPERVISOR",
+    "production_task_scope": [
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16"
+    ],
+    "synthetic_rehearsal_no_generation_supported": true
+  },
+  "capability_authorization": {
+    "image_route_ready": true,
+    "low_quality_fallback_enabled": false,
+    "svg_fallback_enabled": false,
+    "owner_upload_required": false,
+    "next_production_run_authorized": false,
+    "next_production_run_authorization_source": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json"
+  },
+  "historical_qualification_note": "The disabled one-time qualification automation remains immutable historical proof of qualification execution. It is not the production consumer.",
+  "notes": [
+    "Protected registration plus bound evidence is the source of truth for image-host capability state.",
+    "Policy documents must derive current status from this file rather than duplicate READY/BLOCKED mutable state.",
+    "Run 5 remains terminal and is not reopened by this registration update.",
+    "A bounded non-production rehearsal PASS is still required before the next production run is authorized."
+  ]
 }

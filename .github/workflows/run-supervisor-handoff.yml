@@ -54,11 +54,13 @@ jobs:
           lease="run/_records/edition-execution/writer-leases/${execution_id}.json"
           [ -f "$lease" ] || exit 0
 
-          released="$(node -e "const x=require('./$lease');process.stdout.write(String(Boolean(x.released_at)))")"
+          released="$(node -e "const x=require('./$lease');process.stdout.write(String(x.released===true && Boolean(x.released_at) && x.expires_at===x.released_at))")"
           reason="$(node -e "const x=require('./$lease');process.stdout.write(String(x.release_reason||''))")"
+          lease_execution="$(node -e "const x=require('./$lease');process.stdout.write(String(x.execution_id||''))")"
           [ "$released" = "true" ] || exit 0
+          [ "$lease_execution" = "$execution_id" ] || exit 0
           case "$reason" in
-            *HANDOFF_TO_SUPERVISOR*) ;;
+            TASK_1[1-6]_DONE_HANDOFF_TO_SUPERVISOR|TASK_1[1-6]_BLOCKED_HANDOFF_TO_SUPERVISOR) ;;
             *) exit 0 ;;
           esac
 

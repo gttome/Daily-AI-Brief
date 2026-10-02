@@ -25,14 +25,33 @@ def main():
     # actual scheduled consumer still owns generation, capture, review and receipt.
     registration=Path(a.host_registration)
     host=json.loads(registration.read_text()) if registration.exists() else {}
-    if host.get('status')=='READY' and str(host.get('host_id','')).startswith('chatgpt-automation:') and host.get('qualification_receipt_path'):
-        result={'schema_version':'scheduled-image-dispatch-v1','status':'AWAITING_SCHEDULED_EXECUTOR',
-            'host_id':host['host_id'],'execution_id':a.execution_id,'task_id':task,
+    consumer=host.get('reusable_consumer') or {}
+    consumer_id=str(consumer.get('automation_id',''))
+    qualified=host.get('status')=='READY' and str(host.get('host_id','')).startswith('chatgpt-automation:') and host.get('qualification_receipt_path')
+    admitted_consumer=(
+        qualified and consumer.get('scheduler_kind')=='chatgpt_automation' and
+        len(consumer_id)==32 and consumer.get('enabled') is True and
+        consumer.get('role')=='scheduled_native_image_request_consumer'
+    )
+    if admitted_consumer:
+        result={'schema_version':'scheduled-image-dispatch-v2','status':'QUEUED_FOR_SCHEDULED_CONSUMER',
+            'qualification_host_id':host['host_id'],'consumer_id':consumer_id,
+            'execution_id':a.execution_id,'task_id':task,
             'generation_started':False,'accepted_locked':False,
-            'next_action':'Qualified scheduled controller consumes this exact fenced request; queueing is not execution.'}
-        if req.get('status')!='awaiting_scheduled_executor':
-            req.update(status='awaiting_scheduled_executor',dispatch=result)
+            'writer_generation_is_provenance':True,'authority_refresh_required_at_invocation':True,
+            'next_action':'Enabled admitted scheduled consumer refreshes current fenced authority at invocation and consumes this exact request.'}
+        if req.get('status')!='queued_for_scheduled_consumer':
+            req.update(status='queued_for_scheduled_consumer',dispatch=result)
             request.write_text(json.dumps(req,indent=2)+'\n')
+        print(json.dumps(result)); return
+    if qualified:
+        now=datetime.now(timezone.utc).isoformat()
+        result={'schema_version':'image-capability-blocker-v1','status':'CAPABILITY_BLOCKED',
+            'reason':'NO_ENABLED_REUSABLE_SCHEDULED_IMAGE_CONSUMER','execution_id':a.execution_id,
+            'task_id':task,'at':now,'generation_started':False,'accepted_locked':False,
+            'next_action':'Bind an enabled reusable scheduled ChatGPT consumer in protected host registration; do not create a duplicate production run.'}
+        req.update(status='capability_blocked',blocker=result)
+        request.write_text(json.dumps(req,indent=2)+'\n')
         print(json.dumps(result)); return
     if req.get('status')=='capability_blocked':
         print(json.dumps({'status':'CAPABILITY_BLOCKED','reused':True})); return

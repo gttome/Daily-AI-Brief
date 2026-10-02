@@ -1398,3 +1398,38 @@ The Emerging AI Watchlist must make recent removals or archives visible. A recen
 ## October 2, 2026 — Reader topic-label contract
 
 Article **Topics** are reader-facing semantic labels only. Internal candidate identifiers such as `m01` through `m08` are operational metadata and must never be placed in, rendered from, indexed as, or displayed as article topics. Candidate identity remains in internal story/run records; public topic labels must describe the subject matter.
+
+## Pre-next-run five-change hardening — October 2, 2026
+
+This section is the current operating contract before the next production allocation. It does **not** reopen Run 5. `reliable-edition-20261002-run5` remains `PUBLIC_CLOSED`, Task 29 Done, with all six accepted images and publication evidence immutable.
+
+### Image host and scheduled consumer
+
+- Current mutable image-route readiness comes only from `docs/operations/unattended-image-host.json` and its bound committed evidence. Narrative policy files do not maintain a second READY/BLOCKED state.
+- The completed one-time qualification automation remains historical execution proof only. The enabled hourly Daily Brief Recovery automation `6abeb9a2b8a88191949dc420d5e10feb` is the reusable scheduled native-image consumer.
+- Qualification and reusable consumption are separate gates. READY without an enabled bound consumer is not production-ready.
+- GitHub routing uses `QUEUED_FOR_SCHEDULED_CONSUMER`. Consumerless `AWAITING_SCHEDULED_EXECUTOR` is prohibited.
+- A queued native-image request's `writer_generation` is scheduling provenance, not mutation authority. The scheduled consumer refreshes durable state and acquires current task-specific fenced authority at invocation.
+- Production image quality and cost boundaries remain unchanged: sealed single-story prompt, professional native generation, visible-text guard, exact-byte persistence/read-back, saved-Git review, bounded targeted retry, no Work/Codex/paid services/new credentials/owner upload, and no SVG/basic/low-quality fallback.
+
+### Recoverable blockers and writer handoff
+
+- Recoverable blocker evidence is actionable only when task identity, valid timestamp, Blocked state, `recoverable=true`, non-external status and a non-empty recovery action are machine-readable.
+- Safe compatibility aliases are normalized: `state=Blocked` may become `to=Blocked`, and `targeted_next_action` may become `recovery_action`. Normalization never invents recoverability or overrides an external blocker.
+- A scheduled Task 11-16 worker releases authority only at a durable Done or Blocked boundary with `released=true`, `released_at`, `expires_at == released_at`, and an exact `TASK_11..16_{DONE|BLOCKED}_HANDOFF_TO_SUPERVISOR` reason.
+- The event-driven writer-handoff workflow resumes only the same active execution, refuses ambiguous release records, and refuses duplicate dispatch while a Supervisor is already queued/running. Completed tasks are never redone as part of the handoff.
+
+### Kanban enforcement
+
+- Visual columns are exactly **Backlog → WIP → Done**. There is no Current column; the active task is WIP.
+- Tasks 00-29 must all be present.
+- Every task card must contain a duration string. When append-only event timestamps do not support a duration, the literal value is `unavailable`; timing is never inferred.
+- Total Brief elapsed time is mandatory. While nonterminal it is measured from the first authoritative transition to the observation time; once terminal it freezes at the last Done transition.
+- The append-only transition digest is the timing/freshness source. Wrong column order, Current, missing task duration, missing total elapsed or stale projection fail the executable contract.
+
+### Next-production authorization gate
+
+The next real Brief is held. Allocation is authorized only after Changes 1-4 merge through protected deterministic CI and a bounded NON-PRODUCTION rehearsal produces protected `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json` with `result=PASS` and `next_production_run_authorized=true`. The rehearsal must use a synthetic execution identity and must prove one coherent Task 00 decision, actual scheduled consumption of a synthetic Task 11 request by the enabled admitted consumer, current writer-fence refresh with stale-generation rejection, explicit release followed by same-execution Supervisor continuation without rework, and the full Kanban contract. The synthetic rehearsal must not generate or edit an image and cannot authorize production content by itself.
+
+Executable sources: `_generator/lib/run-readiness.mjs`, `_tools/run-readiness.mjs`, `_generator/lib/run-supervisor.mjs`, `_tools/run-supervisor.mjs`, `_tools/native-image-worker.py`, `.github/workflows/run-supervisor-handoff.yml`, and their regression tests/fixtures.
+

@@ -112,3 +112,21 @@ test('human-readable ledger is a projection of canonical JSONL',()=>{
   assert.match(md,/Ledger digest: `sha256:/);
   assert.match(md,/permanently_fixed/);
 });
+
+test('descriptive regression labels are not misclassified as missing repository paths',()=>{
+  const event=structuredClone(events[3]);
+  event.event_id='DAB-OPS-E-000005';
+  event.problem_id='DAB-OPS-20261001-002';
+  event.summary='Descriptive regression label coexists with executable references';
+  event.data.permanent_implementation=['_generator/lib/run-supervisor.mjs'];
+  event.data.regression_tests=[
+    'protected deterministic CI workflow syntax/contracts',
+    '_generator/test/run-supervisor.test.mjs'
+  ];
+  const ledger=JSON.stringify(event)+'\n';
+  const existing=new Set(['_generator/lib/run-supervisor.mjs','_generator/test/run-supervisor.test.mjs']);
+  const result=validateOperationalLearningReadiness({ledgerText:ledger,pathExists:p=>existing.has(p)});
+  assert.equal(result.result,'PASS');
+  assert.deepEqual(result.errors,[]);
+});
+
