@@ -1,3 +1,4 @@
+import {visualReviewErrors, visualReviewAccepted} from './image-review-evidence.mjs';
 import {createHash} from 'node:crypto';
 import {buildQualificationImageWorkerPayload,buildQualificationImageGenerationInstruction,validateQualificationImageWorkerPayload} from './image-story-packet.mjs';
 
@@ -75,6 +76,12 @@ export function validateImageExecutionReceipt(r,e,{assetSha256=null,gitBlobSha=n
   if(!zeroUsage(v.usage)||!noOwner(v.owner_interventions)||v.mode!=='automated'||v.phase!=='after_generation'||!nonempty(v.call_id)||!stamp(v.reviewed_at)||Date.parse(v.reviewed_at)<Date.parse(g.generated_at))errors.push('automated_post_generation_review_required');
   for(const key of ['subject_match','factual_support','structural_quality','editorial_quality'])if(v[key]!=='pass')errors.push('automated_image_review_not_pass:'+key);
   if(!/^[a-f0-9]{64}$/.test(v.asset_sha256||'')||v.asset_sha256!==p.sha256)errors.push('reviewed_image_bytes_mismatch');
+  // Existing closed receipts retain their historical validation contract. New live work
+  // must carry observations from a distinct saved-image inspection.
+  if(r.evidence_type==='live' && Date.parse(g.generated_at)>=Date.parse('2026-10-02T04:42:19Z')) {
+    errors.push(...visualReviewErrors(v.visual_inspection,p.sha256));
+    if(!visualReviewAccepted(v.visual_inspection,p.sha256))errors.push('saved_image_visual_quality_not_accepted');
+  }
   if(!safePath(p.path)||!p.path.startsWith('briefs/images/')||!/^[a-f0-9]{40}$/.test(p.git_blob_sha||'')||
     !(p.content_address_verified===true||p.read_back_verified===true)||!stamp(p.persisted_at)||Date.parse(p.persisted_at)<Date.parse(v.reviewed_at))errors.push('exact_image_persistence_required');
   if(assetSha256&&p.sha256!==assetSha256)errors.push('persisted_image_sha256_mismatch');

@@ -131,10 +131,6 @@ jobs:
           git -C run config user.name "github-actions[bot]"
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
 
-      - name: Prepare deterministic native-image consumer
-        if: steps.resolve.outputs.should_run == 'true'
-        run: python -m pip install --disable-pip-version-check --quiet pillow
-
       - name: Acquire fenced writer authority for this exact execution
         if: steps.resolve.outputs.should_run == 'true'
         id: fence

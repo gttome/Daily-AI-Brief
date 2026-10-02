@@ -34,7 +34,8 @@ function goodInput(){
       path:PROVEN_IMAGE_PATH,exact_byte_capture:true,saved_asset_review:true,
       accepted_locked_required:true,svg_fallback_enabled:false,low_quality_fallback_enabled:false,
       small_png_persistence_route:'direct_git_data_create_blob_base64',
-      small_png_readback_identity_verified:true
+      small_png_readback_identity_verified:true,
+      host_admission:{evidence_type:'live',trigger:'scheduled',execution_mode:'production',generation_executor:'native_chatgpt_image_generation',review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,receipt_path:'_records/test-host-proof.json',receipt_sha256:'a'.repeat(64)}
     },
     timing:{
       append_only_transition_ledger:true,kanban_derived_from_events:true,kanban_digest_bound:true,
@@ -132,3 +133,5 @@ test('verified bounded same-visual PNG transport is an approved professional per
   const receipt=validateRunReadiness(input);
   assert.equal(receipt.result,'PASS');
 });
+
+test('interactive image trial cannot authorize unattended production',()=>{const x=goodInput();x.image_pipeline.host_admission.trigger='active_chat';assert.ok(validateRunReadiness(x).errors.includes('proven_scheduled_image_host_required'));delete x.image_pipeline.host_admission;assert.ok(validateRunReadiness(x).errors.includes('proven_scheduled_image_host_required'));});

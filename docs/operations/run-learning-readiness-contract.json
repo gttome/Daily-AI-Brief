@@ -32,7 +32,8 @@
       "protected_ci",
       "exact_sha_deploy",
       "independent_live_verification",
-      "previous_run_cleanup_pass"
+      "previous_run_cleanup_pass",
+      "proven_scheduled_image_host_required"
     ]
   },
   "supervisor": {
@@ -108,6 +109,11 @@
       ],
       "secondary_fallback": "bounded_base64_chunk_bridge",
       "identity_rule": "Exact identity is mandatory for the final persisted PNG bytes. A bounded same-visual PNG representation may differ from native generation bytes only when professional composition/content are preserved, source-to-final lineage is recorded, and final Git bytes/read-back are verified."
+    },
+    "host_admission": {
+      "required": "Live scheduled production generation, saved-image review, exact saved-byte recovery, verified zero-production-cost evidence, receipt path and SHA256. Interactive trial evidence is not admissible.",
+      "current_status": "CAPABILITY_BLOCKED",
+      "reason": "No supported unattended native image generation/review host registered in GitHub Actions."
     }
   },
   "kanban": {

@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:9bd44dad8ad4a0b7f375f66765b7c171458309c0ec9786187bb60cb95a094f1e`
+Ledger digest: `sha256:54d103c1c815001de9f6760b57c9b66f6e1a05338d102f32a23ca209d63124d9`
 
-Problems: 25 · Events: 31
+Problems: 27 · Events: 35
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -386,16 +386,16 @@ Problems: 25 · Events: 31
 
 ## DAB-OPS-20261002-001 — Native image work could be queued without an active consumer
 
-- **Status:** permanently_fixed
+- **Status:** superseded
 - **First observed run:** reliable-edition-20261001-run4
 - **Task(s):** 16
-- **Symptom:** Task 16 native_chatgpt work remained queued with no result consumer.
-- **Root cause:** The Supervisor had a queue producer for native image work but no executor bound to that capability.
+- **Symptom:** The owner rejected m07 and m08 after PUBLIC CLOSED. Inspection found a deterministic Pillow renderer declaring its own visual review PASS.
+- **Root cause:** A queue consumer was mistaken for native generation and independent visual inspection.
 - **Operational impact:** Production could appear active while the sixth image made no progress.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Confirmed the queue item was durable and avoided creating a duplicate run or regenerating accepted images.
-- **Actual fix:** Add a fenced deterministic native image consumer to the Supervisor and persist exact PNG/result/event evidence in the same loop.
-- **Fix outcome:** Task 16 completed accepted_locked and the six-image set remained professional and story-specific.
+- **Actual fix:** Retire the drawing/self-approval path and report an explicit capability blocker. Track visual-review enforcement and real host admission separately below.
+- **Fix outcome:** The historical Run 4 record remains intact; its native-worker quality conclusion is corrected by this append-only event.
 - **Permanent implementation:** .github/workflows/run-supervisor.yml, _tools/native-image-worker.py
 - **Regression tests:** _generator/test/run-supervisor.test.mjs
 - **Production invariants:** native_image_request_must_have_active_consumer, queued_action_without_consumer_is_not_progress
@@ -455,4 +455,40 @@ Problems: 25 · Events: 31
 - **Production invariants:** publication_success_requires_durable_validated_event_for_closure, closure_recovery_must_preserve_original_production_sha, dated_image_manifest_must_be_visible_to_live_validator
 - **Recurrences:** none recorded
 - **Future validation:** Task 00 must prove publication_success_requires_durable_validated_event_for_closure
+
+## DAB-OPS-20261002-005 — An image-producing script could certify its own visual quality without inspecting saved pixels.
+
+- **Status:** permanently_fixed
+- **First observed run:** image-pipeline-trial-20261002
+- **Task(s):** unknown
+- **Symptom:** Sparse, pale images had editorial_quality PASS and saved_asset_reviewed true written by the renderer.
+- **Root cause:** Generation and visual judgment were not separated at the worker boundary.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Inspected the saved images and native worker source; ran a six-image trial with actual post-generation visual inspection.
+- **Actual fix:** Remove the deterministic drawing worker; require byte-bound visual-inspection observations for new live image receipts and stop before persistence when review evidence is missing.
+- **Fix outcome:** Six images accepted in 633.475 seconds wall time, seven tool calls totaling 277.073 seconds, one honest visual rejection and targeted edit, zero transport-driven regenerations. Four ordinary first-pass images completed in 64-74 seconds each; the first included helper setup overhead. All 12 raw/final assets recovered from Git without generation.
+- **Permanent implementation:** _tools/native-image-worker.py, _generator/lib/image-review-evidence.mjs, _generator/lib/image-execution.mjs, _generator/lib/recoverable-image-job.mjs
+- **Regression tests:** _generator/test/image-review-evidence.test.mjs
+- **Production invariants:** renderer_cannot_self_certify_editorial_quality, saved_image_review_requires_hash_bound_observations
+- **Recurrences:** none recorded
+- **Future validation:** Prove a separate saved-image inspection exists for each final image; a script-written PASS is insufficient. | Read _records/image-trials/2026-10-02-six-image/summary.json and recovery-check.json; retain actual waiting and rejected-attempt time.
+
+## DAB-OPS-20261002-006 — Interactive image success does not establish an unattended zero-Work production capability.
+
+- **Status:** mitigated
+- **First observed run:** image-pipeline-trial-20261002
+- **Task(s):** unknown
+- **Symptom:** The interactive tool created good images quickly, but GitHub Actions has no registered native generation/review host.
+- **Root cause:** Production readiness accepted image-path booleans without a scheduled-host evidence requirement.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Executed a real six-image interactive trial and recovered all raw/final files from Git.
+- **Actual fix:** Require a live scheduled-production host admission record and report CAPABILITY_BLOCKED for unsupported runner requests. Do not label the interactive trial zero-Work or autonomous.
+- **Fix outcome:** Interactive capture, review, transfer and recovery are demonstrated. Unattended generation within existing cost restrictions remains unproven.
+- **Permanent implementation:** _generator/lib/run-readiness.mjs, docs/operations/run-learning-readiness-contract.json, _tools/native-image-worker.py
+- **Regression tests:** _generator/test/run-readiness.test.mjs
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Bind a supported unattended native image host and verify live generation, exact raw-byte recovery, saved-image review, transport and the zero-production-cost boundary before production.
 
