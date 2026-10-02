@@ -232,12 +232,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-cb59546b673a",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-m08-5d073551ee00",
         "alt": "Textbook operating-knowledge diagram showing a reusable Business Skill with required inputs, instructions, expected output, four recurring business lanes, and a maintenance loop.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "oct1-m08-cb59546b673a"
+        "cache_key": "oct1-m08-5d073551ee00"
       },
       "summary": "Perplexity and American Express introduced pre-built business Skills covering recurring finance, marketing, operations and hiring work; Skills package reusable instructions around required inputs and expected outputs.",
       "why_it_matters": "For nontechnical teams, a maintained Skill turns repeated prompting into reusable operating knowledge that can be owned, reviewed and improved.",
@@ -283,12 +283,12 @@
       ],
       "image": {
         "path": "briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png",
-        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-1f08333345fc",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-m07-cbcbcf61647e",
         "alt": "Textbook responsibility-loop diagram showing a persistent Dot receiving a goal, working through a bounded cloud computer and connected apps, returning outputs for review, and incorporating feedback.",
         "width": 1200,
         "height": 630,
         "kind": "editorial_explainer",
-        "cache_key": "oct1-m07-1f08333345fc"
+        "cache_key": "oct1-m07-cbcbcf61647e"
       },
       "summary": "OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities.",
       "why_it_matters": "Persistent agents shift the design question from one-off answers to ongoing responsibility: goals, permissions, review checkpoints, current-state context and feedback all need to remain understandable over time.",
