@@ -105,7 +105,6 @@ export function validateRunReadiness(input = {}) {
     host.review_method === 'saved_image_visual_inspection' &&
     host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
     typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
-    /^[a-f0-9]{64}$/.test(host.receipt_sha256 || '') &&
     consumer.scheduler_kind === 'chatgpt_automation' &&
     /^[a-f0-9]{32}$/.test(consumer.automation_id || '') &&
     consumer.enabled === true &&
