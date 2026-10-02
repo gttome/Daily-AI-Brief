@@ -1,0 +1,102 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "dab-publication-event-20261002T033858.000Z-run4",
+  "run_id": "reliable-edition-20261001-run4",
+  "phase": "validated",
+  "edition_id": "dab-edition-2026-10-01",
+  "observed_at": "2026-10-02T03:38:58Z",
+  "baseline_main_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+  "staged_tree_digest": "sha256:fa75478d6c9ab1163159745f172ef1a638c5dddaaad244737810f53b6f53fcd1",
+  "generator_version": "1.0.0",
+  "contract_version": "1.0.0",
+  "checks": [
+    {
+      "check_id": "edition_validation",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Run 4 canonical edition passed protected integrated validation before publication."
+    },
+    {
+      "check_id": "atomic_file_set",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Run 4 canonical and derived publication outputs were generated and validated as one candidate."
+    },
+    {
+      "check_id": "watchlist_freshness",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "October 1 Watchlist projection is manifest-bound at 0 new / 2 updated / 14 carried forward."
+    },
+    {
+      "check_id": "selected_media_preflight",
+      "class": "live_prepublication",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "Two videos and two source-diverse podcasts were verified and sealed before publication."
+    },
+    {
+      "check_id": "image_structural_gate",
+      "class": "deterministic",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "All six accepted_locked story images passed structural validation."
+    },
+    {
+      "check_id": "image_editorial_quality_gate",
+      "class": "editorial_evidence",
+      "result": "pass",
+      "severity": "critical",
+      "evidence": "All six images passed the professional editorial-quality and differentiated-set gates."
+    }
+  ],
+  "file_set": {
+    "canonical_sources": [
+      "_data/editions/2026-10-01.json"
+    ],
+    "assets": [
+      "briefs/images/2026-10-01/dab-edition-2026-10-01-m03-2.png",
+      "briefs/images/2026-10-01/dab-edition-2026-10-01-m01-1.png",
+      "briefs/images/2026-10-01/dab-edition-2026-10-01-m04-1.png",
+      "briefs/images/2026-10-01/dab-edition-2026-10-01-m05-1.png",
+      "briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png",
+      "briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png"
+    ],
+    "derived_outputs": [
+      "briefs/2026-10-01.md",
+      "latest.md",
+      "index.md",
+      "README.md",
+      "archive.md",
+      "feed.xml",
+      "daily-feed.xml",
+      "feed.json",
+      "stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws.md",
+      "stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows.md",
+      "stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops.md",
+      "stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy.md",
+      "stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures.md",
+      "stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents.md",
+      "videos/2026-10-01/general.md",
+      "videos/2026-10-01/agent-skills.md",
+      "podcasts/2026-10-01/ai-show-244.md",
+      "podcasts/2026-10-01/jesse-owen-argon.md"
+    ],
+    "operational_records": [
+      "_records/qualification/2026-10-01-run4/result.json",
+      "_records/editorial-handoff/publication-manifest.json",
+      "_records/image-quality/2026-10-01-editorial-v2.json"
+    ]
+  },
+  "commit_sha": null,
+  "pages": {
+    "run_id": null,
+    "conclusion": "not_run",
+    "verified_at": null
+  },
+  "rollback_target_sha": "31e16f61ae09fe0ab65d7f9ee941612e0e4beacd",
+  "supersedes_event_id": null
+}
