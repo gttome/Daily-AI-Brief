@@ -8,6 +8,23 @@ import {VIDEO_MAX_AGE_HOURS,PODCAST_PRIMARY_AGE_DAYS,PODCAST_FALLBACK_AGE_DAYS,P
 const time=value=>typeof value==='string'&&value.trim()?Date.parse(value):NaN;
 const agentSkillsStory=story=>/agent skills?/i.test([story.headline,...(story.topics||[])].join(' '));
 
+function expectedCoveragePeriod(edition){
+  const dates=[];
+  for(const story of edition.stories||[])if(/^\d{4}-\d{2}-\d{2}$/.test(story.event_date||''))dates.push(story.event_date);
+  for(const slot of Object.values(edition.worth_watching||{}))if(slot?.status==='included'&&/^\d{4}-\d{2}-\d{2}$/.test(slot.upload_date||''))dates.push(slot.upload_date);
+  const podcasts=Array.isArray(edition.podcasts)?edition.podcasts:(edition.podcast?[edition.podcast]:[]);
+  for(const slot of podcasts)if(slot?.status==='included'&&/^\d{4}-\d{2}-\d{2}$/.test(slot.publication_date||''))dates.push(slot.publication_date);
+  if(!dates.length)return null;
+  dates.sort();
+  const parse=value=>{const [year,month,day]=value.split('-').map(Number);return {year,month,day};};
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const a=parse(dates[0]),b=parse(dates.at(-1));
+  if(dates[0]===dates.at(-1))return `${months[a.month-1]} ${a.day}, ${a.year}`;
+  if(a.year===b.year&&a.month===b.month)return `${months[a.month-1]} ${a.day}–${b.day}, ${a.year}`;
+  if(a.year===b.year)return `${months[a.month-1]} ${a.day}–${months[b.month-1]} ${b.day}, ${a.year}`;
+  return `${months[a.month-1]} ${a.day}, ${a.year}–${months[b.month-1]} ${b.day}, ${b.year}`;
+}
+
 export function validateEdition(edition) {
   const errors = [];
   const requireText = (value, field) => {
@@ -36,7 +53,7 @@ export function validateEdition(edition) {
   if(freshnessRequired){
     requireText(edition.research_cutoff_at,'research_cutoff_at');
     if(!Number.isFinite(cutoff)||!edition.research_cutoff_at.startsWith(edition.brief_date))errors.push('research_cutoff_at must be a valid same-edition-date timestamp');
-    if(!/24-hour primary window/i.test(edition.coverage_period||''))errors.push('coverage_period must state the 24-hour primary window');
+    if(edition.brief_date<'2026-10-02'&&!/24-hour primary window/i.test(edition.coverage_period||''))errors.push('coverage_period must state the 24-hour primary window');
   }
   const ids = new Set();
   const slugs = new Set();
@@ -106,7 +123,11 @@ export function validateEdition(edition) {
     }
     if (edition.policy_profile === 'full_v1' && !story.what_to_do_now) errors.push(`${label}.what_to_do_now is required by full_v1`);
   });
-  if(freshnessRequired&&fallbackCount>0&&!/recency fallback/i.test(edition.coverage_period||''))errors.push('coverage_period must disclose recency fallback use');
+  if(edition.brief_date<'2026-10-02'&&freshnessRequired&&fallbackCount>0&&!/recency fallback/i.test(edition.coverage_period||''))errors.push('coverage_period must disclose recency fallback use');
+  if(edition.brief_date>='2026-10-02'){
+    const expected=expectedCoveragePeriod(edition);
+    if(expected&&edition.coverage_period!==expected)errors.push(`coverage_period must equal included content date range: ${expected}`);
+  }
 
   const completeMediaRequired=edition.brief_date>='2026-09-19';
   for (const slot of ['general', 'agents_non_technical_people']) {
