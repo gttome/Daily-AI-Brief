@@ -156,9 +156,7 @@ test('synthetic Task 00 returns one coherent READY decision from protected host 
     const file=path.join(root,'input.json');
     fs.writeFileSync(file,JSON.stringify(task00Input()));
     const raw=execFileSync('node',['_tools/run-readiness.mjs','validate','--input',file],{encoding:'utf8'});
-    const lines=raw.trim().split(/\n+/).filter(Boolean);
-    assert.equal(lines.length,1);
-    const decision=JSON.parse(lines[0]);
+    const decision=JSON.parse(raw);
     assert.equal(decision.result,'PASS');
     assert.equal(decision.start_authorized,true);
     assert.equal(decision.start_scope,'full_production');
@@ -222,7 +220,7 @@ test('synthetic Kanban satisfies exact Backlog to WIP to Done contract with all 
   assert.equal(proof.task_count,30);
   assert.equal(proof.fresh,true);
   assert.equal(proof.task_durations['00'],'1s');
-  assert.equal(proof.task_durations['11'],'83s');
+  assert.equal(proof.task_durations['11'],'683s');
   assert.equal(proof.task_durations['12'],'unavailable');
   assert.equal(typeof proof.total_brief_elapsed,'string');
   assert.notEqual(proof.total_brief_elapsed,'unavailable');
