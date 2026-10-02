@@ -55,3 +55,11 @@ test('later verified anchors do not invalidate an already-reviewed historical ed
  assert.deepEqual(selectBookReferences(edition,expanded,review),selectBookReferences(edition,catalog,review));
  assert.equal(bookSelectionPlan({...edition,brief_date:'2026-10-01'},expanded).anchors.length,33);
 });
+
+test('selected book rationale rejects internal review or run language',()=>{
+ const ed={...edition,worth_watching:{},podcasts:[]};
+ const winner='reliable-verification';
+ const review=reviewFor(catalog,ed,{story:[winner]});
+ review.items.find(x=>x.item_id==='story').scores.find(x=>x.reference_id===winner).rationale='Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.';
+ assert.throws(()=>selectBookReferences(ed,catalog,review),/short reader-facing connection/);
+});
