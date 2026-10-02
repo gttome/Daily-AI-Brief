@@ -4,6 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import {bookSelectionPlan,selectBookReferences} from '../_generator/lib/book-selection.mjs';
 import {publicWatchlist} from '../_generator/lib/watchlist.mjs';
+import {articleFreshness} from '../_generator/lib/article-freshness.mjs';
 
 const root=path.resolve(process.argv[2]||'.');
 const date='2026-10-02';
@@ -106,8 +107,10 @@ const accepted=new Map(selection.selected.map(s=>[s.candidate_id,acceptedAttempt
 const stories=selection.selected.map(s=>{
  const id=s.candidate_id,c=candidateBy.get(id),img=accepted.get(id),review=imageManifest17[id],reading=read(readingFiles[id]);
  if(!c||!copy[id]||!review||reading.status!=='verified')throw Error('story_input_missing:'+id);
- const freshness=c.freshness_band==='primary_24h'?'primary':'fallback';
- const fallbackBand=c.freshness_band==='extended_168h'?'extended':'normal';
+ const observedFreshness=articleFreshness(c.published_date+'T00:00:00Z',cutoff,{policy:'article-24-72-168-v1',agentSkill:s.role==='agent_skills'});
+ if(!observedFreshness)throw Error('selected_story_outside_freshness_ceiling:'+id);
+ const freshness=observedFreshness.tier;
+ const fallbackBand=observedFreshness.fallback_band;
  const cache='oct2-'+id+'-'+img.sha256.slice(0,12);
  return {
   story_id:'dab-story-'+date+'-'+id,
@@ -158,7 +161,7 @@ const edition={
  schema_version:'1.0.0',article_freshness_policy:'article-24-72-168-v1',policy_profile:'under80-v1',
  edition_id:editionId,brief_date:date,timezone:'America/Chicago',
  title:'Daily Generative AI Brief — October 2, 2026',published_at:now(),research_cutoff_at:cutoff,
- coverage_period:'24-hour primary window ending at the fixed Run 5 research cutoff; bounded 72-hour and 168-hour fallback used only where required by the locked 2/2/2 slate.',
+ coverage_period:'24-hour primary window ending at the fixed Run 5 research cutoff. Recency fallback (24-72 hours) and Extended recency fallback (72-168 hours) are used only where required by the locked 2/2/2 slate.',
  status:'staged',stories,worth_watching:worthWatching,podcasts:podcastItems,
  editorial_takeaway:'Today’s strongest pattern is operationalization: retrieval, agent governance, trusted enterprise context, structured workflow actions, reusable skills and approval boundaries are turning generative AI from isolated prompting into governed systems of work.'
 };
