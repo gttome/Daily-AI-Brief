@@ -1,0 +1,106 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "15",
+  "candidate_id": "m07",
+  "attempt": 1,
+  "execution_mode": "scheduled_direct_worker",
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 9,
+    "lease_owner": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "fence_commit": "9ed4e232d35ece4b4d6b1adc476a80b46b2ed8e5"
+  },
+  "timing": {
+    "generation_started_at": "2026-10-02T15:07:39.268142732Z",
+    "generation_started_at_basis": "computed from exact output completion mtime minus tool-reported 48.7 second wall time",
+    "generation_completed_at": "2026-10-02T15:08:27.968142732Z",
+    "generation_wall_seconds": 48.7,
+    "exact_raw_capture_completed_at": "2026-10-02T15:08:48.661322295Z",
+    "same_visual_optimization_completed_at": "2026-10-02T15:08:50.444571237Z",
+    "git_persisted_at": "2026-10-02T15:09:42Z",
+    "saved_git_review_completed_at": "2026-10-02T15:10:23.926Z"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "generation_id": null,
+    "generation_id_observation": "The native scheduled image tool exposed no generation ID; none was invented.",
+    "exact_returned_png": {
+      "bytes": 1625923,
+      "dimensions": "1730x909",
+      "sha256": "ad2282ab8b281003ffd45080a6ba7a96b36c288256e56ee852ed84386d298209",
+      "git_blob_sha_expected": "77145b97dd15631224bb192650d5f170fd4e2c56"
+    }
+  },
+  "candidate": {
+    "method": "same-visual center-crop resize to 1200x630 with PNG compression",
+    "bytes": 829268,
+    "dimensions": "1200x630",
+    "sha256": "0afe15d66bfd868e4feb4b877a015043d1f05ba180701786c870741615c9da68",
+    "git_blob_sha": "31df157ad51874bec0a2cddb40c4b4ec5a1a902b"
+  },
+  "persistence": {
+    "status": "persisted",
+    "route": "github_git_data_create_blob_complete_base64",
+    "attempt_path": "_records/image-attempts/2026-10-02-run5/m07-attempt-1.png",
+    "production_path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m07-1.png",
+    "blob_created_sha": "31df157ad51874bec0a2cddb40c4b4ec5a1a902b",
+    "commit_sha": "0c6f9777702f13bd19454bdd0c8dcf646cfd6be9",
+    "content_address_verified": true,
+    "read_back_verified": true,
+    "base64_chars": 1105692,
+    "read_back_base64_exact_identity": true,
+    "png_structure": "PASS",
+    "png_dimensions": "1200x630",
+    "chunk_bridge_used": false
+  },
+  "review": {
+    "phase": "saved_git_asset_hash_bound_review",
+    "review_binding": "Immutable Git read-back Base64 was byte-identical to the locally displayed 1200x630 candidate with SHA-256 0afe15d6... and Git blob 31df157a....",
+    "subject_match": "PASS",
+    "required_mechanism": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "professional_finish": "PASS",
+    "meaningful_detail": "PASS",
+    "explanatory_mechanism": "PASS",
+    "information_hierarchy": "PASS",
+    "white_background": "PASS",
+    "allowed_visible_text": "PASS",
+    "visible_strings": [
+      "Skill",
+      "Saved instructions",
+      "Reference files",
+      "Matching prompt",
+      "Compose",
+      "Reuse",
+      "Draft",
+      "Research",
+      "Presentation"
+    ],
+    "extra_visible_text": "NONE",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "product_ui": "NONE",
+    "overlap": "NONE",
+    "sparse_basic_fallback": false,
+    "low_quality_fallback": false,
+    "saved_git_asset_reviewed": true
+  },
+  "review_status": "accepted_locked",
+  "status": "accepted_locked",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-02T15:10:23.926Z",
+  "production_task_advanced": true,
+  "qualification_effect": {
+    "native_scheduled_generation_observed": true,
+    "exact_git_persistence_observed": true,
+    "saved_git_visual_review_observed": true,
+    "single_image_route_proven": true,
+    "full_six_image_host_qualification": false
+  }
+}
