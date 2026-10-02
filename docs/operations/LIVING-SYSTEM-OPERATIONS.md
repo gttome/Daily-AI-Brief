@@ -1433,3 +1433,18 @@ The next real Brief is held. Allocation is authorized only after Changes 1-4 mer
 
 Executable sources: `_generator/lib/run-readiness.mjs`, `_tools/run-readiness.mjs`, `_generator/lib/run-supervisor.mjs`, `_tools/run-supervisor.mjs`, `_tools/native-image-worker.py`, `.github/workflows/run-supervisor-handoff.yml`, and their regression tests/fixtures.
 
+## Pre-next-run bounded rehearsal PASS closeout — October 2, 2026
+
+The five-change hardening acceptance gate is now satisfied by durable NON-PRODUCTION evidence. Run 5 remains independently `PUBLIC_CLOSED` / Task 29 Done and was never reopened, regenerated or modified.
+
+- Changes 1–4: PR #380, protected CI `37067213674`, merged protected main `25675f9e13e2cdf77ebc109cf2c33f31303004f1`.
+- Rehearsal infrastructure and actual scheduled-consumer evidence: PR #381, protected CI `37070187985`, merged protected main `cd3cd63c142b9b3223ca288b60761cfc58255146`.
+- The first live synthetic writer-handoff attempt reached the dispatch step but was BLOCKED because `gh workflow run` was invoked from a workspace root with no `.git`. This was a NON-PRODUCTION rehearsal blocker, not a production failure; durable receipt: `_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-handoff-attempt-1-blocked.json`.
+- Exact dispatch-context repair: PR #382, protected CI `37071199146`, merged protected main `66040835e69e08dceae1c0e4b287bc437d97e797`.
+- The enabled reusable consumer `6abeb9a2b8a88191949dc420d5e10feb` actually consumed synthetic Task 11 at 2026-10-02T21:48:48.762Z, treated request generation 1 as provenance, refreshed current generation 2 to task authority generation 3, preserved completed Task 00, created no duplicate execution, and made zero generation/edit/publication/Run-5 mutations.
+- The explicit `TASK_11_DONE_HANDOFF_TO_SUPERVISOR` release automatically triggered writer-handoff run `37071330741`, which succeeded and automatically dispatched Supervisor run `37071366751` for the same synthetic execution. The Supervisor resolved exact branch/execution identity, verified the terminal boundary, and skipped protected publication handoff, writer configuration, writer-fence acquisition and the persistent supervision loop.
+- Kanban proof is PASS: exactly Backlog → WIP → Done, no Current column, active→WIP, Tasks 00–29, duration on every card or literal `unavailable`, mandatory total Brief elapsed, append-only timing and fresh event digest. The five requested failing fixtures remain protected.
+- Final authorization receipt: `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It is effective only on protected `main` after this closeout branch passes deterministic CI and merges.
+
+This hardening process does **not** manually start the next production Brief. Once the PASS receipt is protected, the existing Daily Brief Controller remains responsible for normal scheduled allocation. The hourly Recovery automation remains the reusable Task 11–16 image consumer and recovery keeper.
+

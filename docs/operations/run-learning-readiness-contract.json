@@ -356,11 +356,21 @@
     ]
   },
   "pre_next_run_hardening": {
-    "production_allocation_hold": true,
+    "production_allocation_hold": false,
     "rehearsal_receipt": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json",
     "authorization_condition": "result == PASS && next_production_run_authorized == true",
     "synthetic_execution_required": true,
     "synthetic_image_generation_prohibited": true,
-    "run5_must_remain_terminal": true
+    "run5_must_remain_terminal": true,
+    "status": "PASS",
+    "authorization_satisfied": true,
+    "next_production_run_authorized": true,
+    "authorization_effective_only_on_protected_main": true,
+    "satisfied_at": "2026-10-02T22:15:33Z",
+    "changes_1_4_protected_ci_run_id": 37067213674,
+    "rehearsal_infrastructure_protected_ci_run_id": 37070187985,
+    "handoff_repair_protected_ci_run_id": 37071199146,
+    "live_writer_handoff_run_id": 37071330741,
+    "live_auto_supervisor_run_id": 37071366751
   }
 }
