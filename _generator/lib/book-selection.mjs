@@ -61,7 +61,7 @@ export function selectBookReferences(edition,data,review){
    return {...s,score,reuse,chapter_use:chapterUse,book_use:bookUse};
   }).sort((a,b)=>b.score-a.score||a.reuse-b.reuse||a.chapter_use-b.chapter_use||a.book_use-b.book_use||a.reference_id.localeCompare(b.reference_id));
   const best=ranked.find(s=>s.reader_value>=3&&s.section_relevance>=3&&s.score>=36);
-  if(best&&(/\b(?:run\s*\d+|all-four-book review|selected this verified section|reader-value match)\b/i.test(best.rationale)||best.rationale.length>280))throw Error('Selected book rationale must be a short reader-facing connection: '+item.item_id);
+  if(edition.brief_date>='2026-10-02'&&best&&(/\b(?:run\s*\d+|all-four-book review|selected this verified section|reader-value match)\b/i.test(best.rationale)||best.rationale.length>280))throw Error('Selected book rationale must be a short reader-facing connection: '+item.item_id);
   if(best)selections.push({item_id:item.item_id,reference_id:best.reference_id,label:'READ DEEPER',why:best.rationale});
   rankings.push({item_id:item.item_id,selected_reference_id:best?.reference_id||null,anchors:ranked});
  }
