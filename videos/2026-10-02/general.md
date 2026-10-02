@@ -13,14 +13,11 @@ reader_release: true
 
 # Microsoft Copilot Just Got a Massive Upgrade
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>9:24 video</span></div></aside>
-<!-- reader-release:end -->
-
 <span class="story-data" data-story-id="dab-video-2026-10-02-general" hidden></span>
 
 **Focus:** General Video  
 **Date:** September 29, 2026  
+**Duration:** 9:24  
 **Topics:**   
 **Evidence:** Practitioner Analysis  
 **Availability:** Not Applicable

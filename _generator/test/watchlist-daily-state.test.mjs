@@ -30,3 +30,19 @@ test('Watchlist page visibly explains rolling freshness and daily states',()=>{
  assert.match(js,/Carried forward/);
  assert.match(js,/No newly verified or materially updated topic cleared the evidence gates today/);
 });
+
+test('Watchlist daily groups expose archived topics with the recorded reason',async()=>{
+ const {dailyTopicGroups,renderDailyTopicGroups}=await import('../../assets/js/watchlist-daily.js');
+ const data={edition_date:'2026-10-02',topics:[
+  {topic_id:'topic-active',name:'Active topic',status:'early_signal',first_detected:'2026-10-01T00:00:00Z',updated_at:'2026-10-01T00:00:00Z'},
+  {topic_id:'topic-archived',name:'Archived topic',status:'archived',first_detected:'2026-09-30T00:00:00Z',updated_at:'2026-10-01T00:00:00Z',archive_reason:'Merged into a broader mechanism after review.'},
+  {topic_id:'topic-old-archived',name:'Old archived topic',status:'archived',first_detected:'2026-09-20T00:00:00Z',updated_at:'2026-09-29T00:00:00Z',archive_reason:'Older archive.'}
+ ]};
+ const groups=dailyTopicGroups(data);
+ assert.equal(groups.archived.length,1);
+ assert.equal(groups.archived[0].name,'Archived topic');
+ const html=renderDailyTopicGroups(data);
+ assert.match(html,/Archived \/ dropped recently/);
+ assert.match(html,/Archived topic — Merged into a broader mechanism after review/);
+ assert.doesNotMatch(html,/Old archived topic/);
+});

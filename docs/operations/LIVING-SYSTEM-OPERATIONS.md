@@ -1384,3 +1384,13 @@ Production Kanban reporting uses exactly three workflow columns in this left-to-
 Every Task 00–29 card must display its duration. A task with no safely derivable duration must display **unavailable** rather than a state word such as “Done,” “accepted,” or “queued” in the duration field.
 
 Every Kanban must also display the **total Brief elapsed time**. While a run is nonterminal, this is live elapsed time from the run start through the board observation timestamp. After terminal completion, freeze the total from run start through terminal completion. Timing must be derived from the same append-only transition evidence used for task state.
+
+## October 2, 2026 — Reader-facing presentation contract
+
+Reader pages must explain value, not production mechanics. Book bridges use a short item-specific explanation of how the cited section helps the reader understand or apply the story; internal run, review, scoring, selection, or matching language is prohibited.
+
+The Brief **Coverage period** is the calendar-date range of the content actually included in that edition. Internal freshness windows and fallback policy remain operational metadata and are not used as the public coverage-period description.
+
+Video and podcast duration is displayed once. Video metadata uses **Duration**, not **Runtime**. Podcast duration contains only the verified duration; policy text such as “No episode time limit” is not reader copy.
+
+The Emerging AI Watchlist must make recent removals or archives visible. A recently archived/dropped topic is shown with its recorded reason, and the delta path must fail rather than silently delete a topic without an archive reason. Older archived topics remain available in durable Watchlist history but do not clutter every daily summary.

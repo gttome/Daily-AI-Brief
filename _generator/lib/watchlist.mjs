@@ -22,6 +22,7 @@ export function validateWatchlist(data){
  if(!/^dab-topic-[a-z0-9-]{3,90}$/.test(t.topic_id)||ids.has(t.topic_id))errors.push('Invalid/duplicate topic');ids.add(t.topic_id);
  for(const k of ['name','summary','why_now','practical_value','limitations','next_action','first_detected','updated_at'])if(!t[k])errors.push(`${t.topic_id}: missing ${k}`);
  if(!['early_signal','gaining_evidence','under_research','trial_coverage','established','archived'].includes(t.status))errors.push('Invalid status');
+ if(data.edition_date>='2026-10-02'&&t.status==='archived'&&!t.archive_reason)errors.push(`${t.topic_id}: archived topic requires archive_reason`);
  if(!t.evidence?.length||!t.evidence.some(e=>e.kind==='primary'))errors.push('Original evidence required');
  for(const e of t.evidence||[]){if(!/^https:\/\//.test(e.url)||!e.title||!e.development_id||!e.publisher||!e.checked_at)errors.push('Incomplete evidence');}
  for(const key of Object.keys(WEIGHTS)){const v=t.rubric?.[key];if(!v||!(v.score===null||Number.isInteger(v.score)&&v.score>=0&&v.score<=5)||!v.reason)errors.push('Invalid rubric');}

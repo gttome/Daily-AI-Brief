@@ -871,37 +871,37 @@
         "item_id": "dab-story-2026-10-02-m01",
         "reference_id": "reliable-embeddings",
         "label": "READ DEEPER",
-        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+        "why": "Use this section to connect Embed 5’s shared vector space to the role embeddings play in retrieval, so you can reason about what changes when Pro and Fast models share the same coordinates."
       },
       {
         "item_id": "dab-story-2026-10-02-m02",
         "reference_id": "context-failure-playbooks",
         "label": "READ DEEPER",
-        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+        "why": "Use this chapter to turn Dogwood’s sequence-aware policy checks into concrete failure-mode playbooks: define which action sequences should be blocked, escalated, or audited before tools execute."
       },
       {
         "item_id": "dab-story-2026-10-02-m04",
         "reference_id": "ecosystem-workflow",
         "label": "READ DEEPER",
-        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+        "why": "Use this section to translate Stack Internal’s provenance, recency, and expert-validation signals into a practical workflow for deciding when enterprise context is trustworthy enough for an AI task."
       },
       {
         "item_id": "dab-story-2026-10-02-m05",
         "reference_id": "reliable-handoffs",
         "label": "READ DEEPER",
-        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+        "why": "Use this section to connect Slack MCP’s structured List and record operations to reliable handoffs: explicit contracts make agent actions easier to validate, constrain, and audit."
       },
       {
         "item_id": "dab-story-2026-10-02-m07",
         "reference_id": "prompt-core-components",
         "label": "READ DEEPER",
-        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+        "why": "Use this section to break a reusable Gemini Skill into the prompt components it must preserve—task, context, constraints, and examples—so repeated work stays consistent when the Skill is reused."
       },
       {
         "item_id": "dab-story-2026-10-02-m08",
         "reference_id": "ecosystem-problem-strategies",
         "label": "READ DEEPER",
-        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+        "why": "Use this section to map a real small-business workflow to the right prompt or agent strategy, then decide where Muse’s skills, connectors, and approval steps add value without over-automating the task."
       }
     ]
   },
@@ -7469,7 +7469,7 @@
             },
             {
               "reference_id": "reliable-embeddings",
-              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "rationale": "Use this section to connect Embed 5’s shared vector space to the role embeddings play in retrieval, so you can reason about what changes when Pro and Fast models share the same coordinates.",
               "mechanism": 4,
               "topic": 4,
               "practical_lesson": 4,
@@ -7884,7 +7884,7 @@
             },
             {
               "reference_id": "context-failure-playbooks",
-              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "rationale": "Use this chapter to turn Dogwood’s sequence-aware policy checks into concrete failure-mode playbooks: define which action sequences should be blocked, escalated, or audited before tools execute.",
               "mechanism": 4,
               "topic": 4,
               "practical_lesson": 4,
@@ -8389,7 +8389,7 @@
             },
             {
               "reference_id": "ecosystem-workflow",
-              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "rationale": "Use this section to translate Stack Internal’s provenance, recency, and expert-validation signals into a practical workflow for deciding when enterprise context is trustworthy enough for an AI task.",
               "mechanism": 4,
               "topic": 4,
               "practical_lesson": 4,
@@ -8474,7 +8474,7 @@
             },
             {
               "reference_id": "reliable-handoffs",
-              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "rationale": "Use this section to connect Slack MCP’s structured List and record operations to reliable handoffs: explicit contracts make agent actions easier to validate, constrain, and audit.",
               "mechanism": 4,
               "topic": 4,
               "practical_lesson": 4,
@@ -8899,7 +8899,7 @@
             },
             {
               "reference_id": "prompt-core-components",
-              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "rationale": "Use this section to break a reusable Gemini Skill into the prompt components it must preserve—task, context, constraints, and examples—so repeated work stays consistent when the Skill is reused.",
               "mechanism": 4,
               "topic": 4,
               "practical_lesson": 4,
@@ -9334,7 +9334,7 @@
             },
             {
               "reference_id": "ecosystem-problem-strategies",
-              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "rationale": "Use this section to map a real small-business workflow to the right prompt or agent strategy, then decide where Muse’s skills, connectors, and approval steps add value without over-automating the task.",
               "mechanism": 4,
               "topic": 4,
               "practical_lesson": 4,

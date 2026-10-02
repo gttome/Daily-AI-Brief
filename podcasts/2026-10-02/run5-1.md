@@ -15,10 +15,6 @@ reader_release: true
 
 ### 9. DX Today AI Daily Brief - Wednesday, September 30, 2026
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>11:06 podcast</span></div></aside>
-<!-- reader-release:end -->
-
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-10-02-1" data-podcast-title="DX Today AI Daily Brief - Wednesday, September 30, 2026" data-podcast-url="/podcasts/2026-10-02/run5-1/" hidden></span>
 
 <a href="{{ '/podcasts/2026-10-02/run5-1/' | relative_url }}" data-item-id="dab-podcast-2026-10-02-1" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent podcast page</a>
@@ -27,7 +23,7 @@ reader_release: true
 **Host / guest:** Rick Spair  
 **Focus:** Agents for Everyone  
 **Date:** September 30, 2026  
-**Duration:** 11:06 · No episode time limit  
+**Duration:** 11:06  
 **Topics:** agents, business workflows
 
 **Summary:** Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.

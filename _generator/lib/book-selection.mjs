@@ -37,7 +37,7 @@ export function recentBookUse(data,date,window=7){
 }
 export function bookSelectionPlan(edition,data){
  const anchors=eligibleBookAnchors(data,edition.brief_date);
- return {schema_version:'1.0.0',edition_date:edition.brief_date,catalog_digest:digest(anchors),items_digest:digest(bookItems(edition)),items:bookItems(edition),anchors,dimensions:MATCH_DIMENSIONS,recent_use:recentBookUse(data,edition.brief_date),instruction:'In the existing editorial semantic pass, score EVERY item × anchor on each dimension from 0 (no connection) to 4 (direct match). Supply an item-specific rationale. Judge mechanism and learning value from verified section titles; do not claim full-text review. No quota. Return one row per item with all anchor scores, including zero scores.'};
+ return {schema_version:'1.0.0',edition_date:edition.brief_date,catalog_digest:digest(anchors),items_digest:digest(bookItems(edition)),items:bookItems(edition),anchors,dimensions:MATCH_DIMENSIONS,recent_use:recentBookUse(data,edition.brief_date),instruction:'In the existing editorial semantic pass, score EVERY item × anchor on each dimension from 0 (no connection) to 4 (direct match). Supply an item-specific rationale. For any plausible selected match, the rationale must be one short reader-facing sentence explaining how the book section helps the reader understand or apply this Brief item; never mention runs, review mechanics, selection, scoring, or reader-value matching. Judge mechanism and learning value from verified section titles; do not claim full-text review. No quota. Return one row per item with all anchor scores, including zero scores.'};
 }
 // Semantic judgments come from the editorial pass; code enforces full-catalog coverage,
 // relevance-first ranking and reproducible tie-breaking. No keyword proxy or paid API.
@@ -61,6 +61,7 @@ export function selectBookReferences(edition,data,review){
    return {...s,score,reuse,chapter_use:chapterUse,book_use:bookUse};
   }).sort((a,b)=>b.score-a.score||a.reuse-b.reuse||a.chapter_use-b.chapter_use||a.book_use-b.book_use||a.reference_id.localeCompare(b.reference_id));
   const best=ranked.find(s=>s.reader_value>=3&&s.section_relevance>=3&&s.score>=36);
+  if(edition.brief_date>='2026-10-02'&&best&&(/\b(?:run\s*\d+|all-four-book review|selected this verified section|reader-value match)\b/i.test(best.rationale)||best.rationale.length>280))throw Error('Selected book rationale must be a short reader-facing connection: '+item.item_id);
   if(best)selections.push({item_id:item.item_id,reference_id:best.reference_id,label:'READ DEEPER',why:best.rationale});
   rankings.push({item_id:item.item_id,selected_reference_id:best?.reference_id||null,anchors:ranked});
  }

@@ -8,6 +8,9 @@ const SERIES_SEPARATION_DATE='2026-09-16';
 const MULTI_PODCAST_DATE='2026-09-18';
 export const readerRelease = date => date >= '2026-09-12';
 export const readerAddition = content => content ? `<!-- reader-release:start -->\n${content}\n<!-- reader-release:end -->` : '';
+export function bookMappingIdentity(rows=[]){
+ return [...rows].map(({item_id,reference_id,label})=>({item_id,reference_id,label})).sort((a,b)=>a.item_id.localeCompare(b.item_id));
+}
 export function validateBookReading(edition, data = catalog) {
   const selections=data.editions[edition.brief_date] || [];
   const ids=new Set(edition.stories.map(s=>s.story_id));
@@ -22,6 +25,7 @@ export function validateBookReading(edition, data = catalog) {
     seen.add(s.item_id);
     if(edition.brief_date>=SERIES_SEPARATION_DATE&&!['READ DEEPER','PUT IT INTO PRACTICE'].includes(s.label))throw Error('Book reference label must be READ DEEPER or PUT IT INTO PRACTICE');
     if(!r?.book||!r.locator||!r.section_title||!r.verified_date||!['public table of contents','public sample','user-provided book structure'].includes(r.evidence_level)||!s.why)throw Error('Book reference requires verified source, exact locator, and reader benefit');
+    if(edition.brief_date>='2026-10-02'&&(/\b(?:run\s*\d+|all-four-book review|selected this verified section|reader-value match)\b/i.test(s.why)||s.why.length>280))throw Error('Book reference reader benefit must be a short reader-facing connection, not internal selection operations');
     if(new URL(r.url).origin!=='https://leanpub.com')throw Error('Book reference destination must be the verified Leanpub page');
     if(s.practice&&!r.practice_title)throw Error('Practice recommendation requires a verified exercise or checklist');
   }

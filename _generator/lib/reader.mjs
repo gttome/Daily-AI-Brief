@@ -122,6 +122,8 @@ export function readerStories(repoRoot, edition, days = 30) {
 export function renderStoryPage(story, feedbackEnabled = false) {
   const source = story.source_url || story.normalized_urls?.[0];
   const image = story.image?.url || '';
+  const mediaDuration=story.content_type==='Video'&&Number.isInteger(story.runtime_seconds)&&story.runtime_seconds>0?`${Math.floor(story.runtime_seconds/60)}:${String(story.runtime_seconds%60).padStart(2,'0')}`:null;
+  const readingSupport=story.brief_date>='2026-09-12'?renderReadingSupport(story,story.story_id,story.brief_date,story.content_type||'Article'):'';
   const action = story.what_to_do_now ? `\n\n## What to do now\n\n**${story.what_to_do_now.label}:** ${story.what_to_do_now.rationale}` : '';
   return `---
 layout: default
@@ -137,11 +139,11 @@ ${readerRelease(story.brief_date)?'reader_release: true\n':''}---
 
 # ${story.headline}
 
-${story.brief_date >= "2026-09-12" ? renderReadingSupport(story,story.story_id,story.brief_date,story.content_type||"Article")+"\n\n" : ""}<span class="story-data" data-story-id="${story.story_id}" hidden></span>
+${readingSupport?readingSupport+"\n\n":""}<span class="story-data" data-story-id="${story.story_id}" hidden></span>
 
 **Focus:** ${focusLabelFor(story.focus,story.brief_date)}  
 **Date:** ${formatDate(story.event_date)}  
-**Topics:** ${(story.topics || []).join(', ')}  
+${mediaDuration?`**Duration:** ${mediaDuration}  \n`:''}**Topics:** ${(story.topics || []).join(', ')}  
 **Evidence:** ${label(story.evidence_type)}  
 **Availability:** ${label(story.availability_status)}
 
@@ -346,9 +348,10 @@ export function podcastStory(slot, edition, ordinal=slot.ordinal||9) {
 
 export function renderPodcastItem(slot, briefDate, ordinal=slot?.ordinal||9) {
   if (!slot || slot.status !== 'included') return '';
+  const readingSupport=briefDate>='2026-09-12'?renderReadingSupport(slot,slot.item_id,briefDate,'Podcast'):'';
   return `### ${ordinal}. ${slot.title}
 
-${briefDate >= "2026-09-12" ? renderReadingSupport(slot,slot.item_id,briefDate,"Podcast")+"\n\n" : ""}<span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
+${readingSupport?readingSupport+"\n\n":""}<span class="podcast-data" data-podcast-id="${slot.item_id}" data-podcast-title="${xml(slot.title)}" data-podcast-url="${slot.permanent_url}" hidden></span>
 
 ${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,briefDate,'permanent_page_clicks')}
 
@@ -356,7 +359,7 @@ ${trackedLink(slot.permanent_url,'Open the permanent podcast page',slot.item_id,
 **Host / guest:** ${slot.host}  
 **Focus:** ${focusLabelFor(slot.focus,briefDate)}  
 **Date:** ${formatDate(slot.publication_date)}  
-**Duration:** ${slot.runtime_seconds === null ? 'Not independently verified' : `${Math.floor(slot.runtime_seconds / 60)}:${String(slot.runtime_seconds % 60).padStart(2,'0')}`} · No episode time limit  
+**Duration:** ${slot.runtime_seconds === null ? 'Not independently verified' : `${Math.floor(slot.runtime_seconds / 60)}:${String(slot.runtime_seconds % 60).padStart(2,'0')}`}  
 **Topics:** ${slot.topics.join(', ')}
 
 **Summary:** ${slot.summary}

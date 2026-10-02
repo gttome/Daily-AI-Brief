@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:0331614deb12f91c6499234d1c62db6f335dfb8297e99cc4422516c164f71c0c`
+Ledger digest: `sha256:cd7df51718c1fc97671f39d4e9ca88872f9eb4dabbb2a74f754d8439be1fc5ac`
 
-Problems: 40 · Events: 57
+Problems: 43 · Events: 60
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -748,3 +748,21 @@ Problems: 40 · Events: 57
 - **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time, kanban_timing_comes_from_append_only_transition_evidence
 - **Recurrences:** none recorded
 - **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or explicit unavailable. | Verify total Brief elapsed time is shown from run start to observation time while active and frozen at terminal completion.
+
+## DAB-OPS-20261002-022 — Reader-facing presentation leaked operational copy and hid archive transparency
+
+- **Status:** permanently fixed
+- **First observed run:** post-publication correction for October 2
+- **Task(s):** reader presentation / post-publication correction
+- **Symptom:** The October 2 reader exposed internal book-selection wording, described editorial freshness mechanics instead of the actual content date range, duplicated video/podcast duration beneath titles, labeled video duration as Runtime, appended 'No episode time limit' to podcast duration, and hid an archived Watchlist topic from the daily summary.
+- **Root cause:** Reader rendering reused operational/editorial metadata as public copy, media reading-support duplicated duration already rendered in item metadata, coverage_period was authored as an editorial freshness policy narrative, and the Watchlist daily renderer filtered archived topics without a reader-visible archive reason.
+- **Operational impact:** Reader-facing pages contained unnecessary operational language and incomplete Watchlist change transparency; story selections, sources, media selections, images, and Run 5 publication identity were unaffected.
+- **Timing impact:** 0 seconds
+- **Attempted fixes:** Correct only the October 2 presentation layer and canonical reader contracts while preserving the published slate, media, accepted image bytes, and terminal Run 5 state.
+- **Actual fix:** Book connections now require short reader-facing value explanations; coverage is computed from the included content dates; media reading-support no longer duplicates duration; video metadata uses Duration; podcast duration omits policy commentary; recent Watchlist archives are shown with reasons; and silent topic removal now fails unless an archive reason exists.
+- **Fix outcome:** October 2 reader outputs are corrected on the repair branch and regression coverage protects the same presentation rules for future briefs. Watchlist reconciliation confirmed no topic was removed from October 1 to October 2; two topics were added, while Source-aware verification for tool-using agents had been archived on October 1 and was previously hidden from the daily summary.
+- **Permanent implementation:** _generator/lib/render.mjs, _generator/lib/reader.mjs, _generator/lib/reading-support.mjs, _generator/lib/book-reading.mjs, _generator/lib/book-selection.mjs, _generator/lib/watchlist.mjs, _generator/lib/watchlist-delta.mjs, assets/js/watchlist-daily.js, _records/publication/2026-10-02/reader-presentation-correction.json
+- **Regression tests:** _generator/test/reader-copy-contract.test.mjs, _generator/test/book-selection.test.mjs, _generator/test/watchlist-daily-state.test.mjs, _generator/test/watchlist-delta.test.mjs
+- **Production invariants:** book_bridge_copy_is_reader_facing_not_operational, coverage_period_is_actual_included_content_date_range, media_duration_is_displayed_once, video_duration_label_is_duration, podcast_duration_contains_no_episode_limit_policy_copy, recent_watchlist_archives_are_reader_visible_with_reason, watchlist_topics_never_disappear_without_recorded_reason, post_publication_reader_corrections_preserve_story_media_and_image_identity
+- **Recurrences:** none recorded
+- **Future validation:** Verify the next generated brief contains no run/review/selection language inside book bridges. | Verify Coverage period equals the minimum and maximum publication dates of included articles, videos, and podcasts. | Verify video and podcast duration appears once per item and video uses Duration. | Verify any newly archived or removed Watchlist topic is surfaced with a reason.
