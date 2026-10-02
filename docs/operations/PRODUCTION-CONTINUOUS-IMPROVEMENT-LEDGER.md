@@ -576,3 +576,15 @@ Problems: 31 · Events: 43
 - **Permanent fix:** Task 00 may authorize `non_image_production`; the missing host is a deferred route blocker. Image tasks and publication remain fail-closed. Daily controller and recovery keeper remain enabled.
 - **Regression protection:** `run-readiness.test.mjs` and `run5-unattended.test.mjs` verify non-image liveness, image/publication blocking, and unchanged cost-boundary failure.
 - **Next-run validation:** Run 5 must allocate and drain safe non-image work even while the image route is blocked, and must not publish until host qualification passes.
+
+## DAB-OPS-20261002-011 — Same-owner renewal shortened the active Supervisor fence
+
+- **Status:** mitigated; protected CI pending
+- **Run:** reliable-edition-20261002-run5
+- **Task:** 10 boundary
+- **Symptom:** the persistent Supervisor failed with `WRITER_LEASE_EXPIRED` in loop 25 even though the same Run 5 content worker was still advancing durable Tasks 06–10.
+- **Root cause:** a same-owner recovery heartbeat replaced the six-hour Supervisor expiry with a thirty-minute expiry. The loop asserted that persisted lease without first renewing its own authority.
+- **Operational impact:** the Supervisor stopped before refreshing the event-derived Kanban for Tasks 06–10 and before recording the route-scoped Task 11 image blocker. Completed content artifacts remained durable.
+- **Repair:** same-owner renewal now keeps the later expiry, and every Supervisor loop renews locally with the six-hour TTL before the fence assertion. A different owner or generation still fails closed.
+- **Regression protection:** 38 focused Supervisor, Run 5 unattended, and readiness tests pass locally. Protected CI is still required.
+- **Next-run validation:** merge only after protected CI passes, resume the same Run 5, refresh the Kanban from append-only events, and record Task 11 Blocked without invoking the known prohibited image route.
