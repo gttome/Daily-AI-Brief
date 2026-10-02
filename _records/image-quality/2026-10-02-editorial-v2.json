@@ -1,0 +1,335 @@
+{
+  "schema_version": "2.0.0",
+  "record_kind": "editorial_image_quality",
+  "edition_date": "2026-10-02",
+  "edition_id": "dab-edition-2026-10-02",
+  "reviewed_at": "2026-10-02T16:18:26.041Z",
+  "review_method": "Deterministic set review over six accepted_locked, exact-Git-read-back, saved-Git-reviewed production PNGs.",
+  "review_status": "complete",
+  "image_gate": "pass",
+  "asset_policy": "accepted_locked_reuse_only",
+  "accepted_locked": 6,
+  "set_review": {
+    "result": "PASS",
+    "composition_differentiation": "PASS",
+    "layout_differentiation": "PASS",
+    "mechanism_differentiation": "PASS",
+    "story_specificity": "PASS",
+    "accessibility": "PASS",
+    "basis": "Six distinct sealed subjects/mechanisms and production paths; every saved Git asset independently passed structural/editorial/text/factual/no-people gates and now has story-specific alt text."
+  },
+  "images": [
+    {
+      "story_id": "dab-story-2026-10-02-m01",
+      "candidate_id": "m01",
+      "asset": "briefs/images/2026-10-02/dab-edition-2026-10-02-m01-3.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Cohere Embed 5 retrieval architecture",
+      "mechanism": "Show text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Cohere Embed 5 retrieval architecture: text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m02",
+      "candidate_id": "m02",
+      "asset": "briefs/images/2026-10-02/dab-edition-2026-10-02-m02-1.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Dogwood temporal governance for agent actions",
+      "mechanism": "Show an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Dogwood temporal governance for agent actions: an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m04",
+      "candidate_id": "m04",
+      "asset": "briefs/images/2026-10-02/dab-edition-2026-10-02-m04-1.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Trusted enterprise context for people and agents",
+      "mechanism": "Show fragmented enterprise knowledge flowing through provenance, recency, corroboration and human-validation layers into a trusted context graph; show an agent deciding whether to use knowledge or route it for expert validation, with an auditable source trail.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Trusted enterprise context for people and agents: fragmented enterprise knowledge flowing through provenance, recency, corroboration and human-validation layers into a trusted context graph; show an agent deciding whether to use knowledge or route it for expert validation, with an auditable source trail.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m05",
+      "candidate_id": "m05",
+      "asset": "briefs/images/2026-10-02/dab-edition-2026-10-02-m05-2.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Slack MCP Server operations on Lists and records",
+      "mechanism": "Show an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Slack MCP Server operations on Lists and records: an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m07",
+      "candidate_id": "m07",
+      "asset": "briefs/images/2026-10-02/dab-edition-2026-10-02-m07-1.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Reusable Gemini Skills",
+      "mechanism": "Show a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Reusable Gemini Skills: a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m08",
+      "candidate_id": "m08",
+      "asset": "briefs/images/2026-10-02/dab-edition-2026-10-02-m08-2.png",
+      "result": "pass",
+      "overall_gate": "pass",
+      "subject": "Muse for Small Business with approval boundaries",
+      "mechanism": "Show a small-business agent hub connected to distinct business systems for marketing, commerce, finance, collaboration and files; requests pass through explicit approval boundaries before actions; show skills/connectors as reusable capability modules, not a dashboard.",
+      "accessibility": {
+        "result": "PASS",
+        "alt_text": "Textbook mechanism diagram for Muse for Small Business with approval boundaries: a small-business agent hub connected to distinct business systems for marketing, commerce, finance, collaboration and files; requests pass through explicit approval boundaries before actions; show skills/connectors as reusable capability modules, not a dashboard.",
+        "visible_text_gate": "PASS"
+      },
+      "structural_gate": {
+        "result": "PASS",
+        "checks": {
+          "dimensions": "PASS",
+          "persisted": "PASS",
+          "content_address_verified": "PASS",
+          "read_back_verified": "PASS",
+          "sha256": "PASS",
+          "git_blob": "PASS",
+          "saved_git_asset_reviewed": "PASS",
+          "subject_match": "PASS",
+          "required_mechanism": "PASS",
+          "structural_quality": "PASS",
+          "editorial_quality": "PASS",
+          "professional_finish": "PASS",
+          "meaningful_detail": "PASS",
+          "explanatory_mechanism": "PASS",
+          "information_hierarchy": "PASS",
+          "white_background": "PASS",
+          "allowed_visible_text": "PASS",
+          "factual_scope": "PASS",
+          "no_people": "PASS",
+          "no_product_ui": "PASS",
+          "no_overlap": "PASS",
+          "no_sparse_fallback": "PASS",
+          "no_low_quality_fallback": "PASS"
+        }
+      },
+      "editorial_quality_gate": {
+        "result": "PASS",
+        "story_specificity": "PASS",
+        "professional_finish": "PASS",
+        "meaningful_detail": "PASS",
+        "explanatory_mechanism": "PASS",
+        "information_hierarchy": "PASS",
+        "generic_or_sparse": false,
+        "decorative_only": false
+      }
+    }
+  ]
+}

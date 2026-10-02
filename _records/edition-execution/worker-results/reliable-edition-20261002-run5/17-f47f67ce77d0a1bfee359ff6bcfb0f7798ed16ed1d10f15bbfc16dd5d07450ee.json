@@ -1,0 +1,20 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "f47f67ce77d0a1bfee359ff6bcfb0f7798ed16ed1d10f15bbfc16dd5d07450ee",
+  "execution_id": "reliable-edition-20261002-run5",
+  "edition_id": "dab-edition-2026-10-02",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "17",
+  "request_writer_generation": 11,
+  "status": "passed",
+  "completed_at": "2026-10-02T16:18:26.041Z",
+  "review": {
+    "accepted_locked_images": 6,
+    "required_images": 6,
+    "differentiation": "PASS",
+    "accessibility": "PASS",
+    "image_manifest": "_records/editorial-handoff/images-2026-10-02.json",
+    "quality_evidence": "_records/image-quality/2026-10-02-editorial-v2.json"
+  },
+  "task_outcome": "Done"
+}
