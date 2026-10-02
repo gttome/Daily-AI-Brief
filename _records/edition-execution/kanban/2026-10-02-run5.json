@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261002-run5",
   "edition_id": "dab-edition-2026-10-02",
-  "observed_at": "2026-10-02T12:42:37Z",
+  "observed_at": "2026-10-02T12:52:23.133Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": null,
+  "source_event_digest": "sha256:59d9e0216ee872fd35e5e0fa93f5c90a96fccf2fcb5bc4496c09231381379369",
   "tasks": {
     "10": {
       "id": "10",
@@ -261,21 +261,21 @@
     "01": {
       "id": "01",
       "title": "Bind edition, execution ID, cutoff and baseline",
-      "state": "Active",
+      "state": "Done",
       "entered_backlog_at": "2026-10-02T12:42:37Z",
       "active_started_at": "2026-10-02T12:42:37Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T12:44:28.481Z",
+      "cycle_seconds": 111.481,
+      "active_seconds": 111.481
     },
     "02": {
       "id": "02",
       "title": "Start controller and persistent Run Supervisor",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "entered_backlog_at": "2026-10-02T12:44:28.481Z",
+      "active_started_at": "2026-10-02T12:44:28.481Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
