@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import {execFileSync} from 'node:child_process';
 
 test('live validator accepts the dated editorial image manifest before legacy aliases',()=>{
   const source=fs.readFileSync('_tools/daily-validation.mjs','utf8');
@@ -41,4 +42,8 @@ test('closeout records Command Center reconciliation as repository projection wi
   assert.match(source,/repository_authoritative_projection/);
   assert.match(source,/live_owner_state_mutation:'not_configured'/);
   assert.match(source,/mutation_permitted:false/);
+});
+
+test('Run 4 closeout executable passes Node syntax validation',()=>{
+  execFileSync(process.execPath,['--check','_tools/run4-closeout.mjs'],{stdio:'pipe'});
 });
