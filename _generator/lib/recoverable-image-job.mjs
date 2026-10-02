@@ -1,4 +1,4 @@
-import {visualReviewErrors} from './image-review-evidence.mjs';
+import {visualReviewErrors, visualReviewAccepted} from './image-review-evidence.mjs';
 import {createHash} from 'node:crypto';
 import {drainOperations, OperationBlocked, hashBytes, operationKey} from './durable-operation.mjs';
 import {IMAGE_EXECUTION_POLICY, imageExecutionHash, validateImageGenerationExecution, validateImageExecutionReceipt} from './image-execution.mjs';
@@ -10,6 +10,11 @@ const empty = value => Array.isArray(value) && value.length === 0;
 const timeOK = value => typeof value === 'string' && /(?:Z|[+-]\d\d:\d\d)$/.test(value) && Number.isFinite(Date.parse(value));
 const idOK = value => typeof value === 'string' && /^[a-zA-Z0-9_-]+$/.test(value);
 const assert = (ok, message) => { if (!ok) throw Error(message); };
+// Only explicit transport failures are retryable. Denials, malformed payloads and
+// integrity failures remain blocked; never switch credentials or regenerate.
+const transientTransfer = e => ['ECONNRESET','ETIMEDOUT','EAI_AGAIN','ECONNREFUSED'].includes(e?.code) ||
+  [502,503,504].includes(Number(e?.status ?? e?.statusCode));
+const transferRecovery = async ({operation_attempts}) => ({resolved: operation_attempts < 3, action:'recover'});
 
 /** A producer-side job: the supervisor consumes its durable result, not a filename search.
  * Real native host + complete-byte transport must be provided by the execution host.
@@ -48,6 +53,7 @@ export async function executeRecoverableImage(execution, {store, host, transport
   if (!generationRequested && (Date.parse(admission.verified_at) > Date.parse(now()) || Date.parse(admission.expires_at) <= Date.parse(now())))
     return {status: 'HOST_ADMISSION_EXPIRED', blocker: 'HOST_ADMISSION_EXPIRED', accepted_locked: false, attempts_allocated: 0};
   const rawPath = `_records/image-attempts/${editionId}/${candidate}/attempt-${attempt}/raw.png`;
+  const reviewPath = `_records/image-attempts/${editionId}/${candidate}/attempt-${attempt}/candidate.png`;
   const finalPath = `briefs/images/${editionDate}/${editionId}-${candidate}-${attempt}.png`;
   async function retainGenerated(g, put) {
     assert(Buffer.isBuffer(g?.bytes) && g.bytes.length && g.call_id && g.artifact_id && timeOK(g.generated_at), 'native_result_required');
@@ -57,7 +63,12 @@ export async function executeRecoverableImage(execution, {store, host, transport
     return {metadata, object, raw_sha256: hashBytes(bytes)};
   }
   async function exactStore(file, bytes, key) {
-    const result = await transport.ensure(file, bytes, {key});
+    let result;
+    try { result = await transport.ensure(file, bytes, {key}); }
+    catch (error) {
+      if (!transientTransfer(error)) throw error;
+      throw new OperationBlocked('TRANSIENT_IMAGE_TRANSFER', {outcomeUnknown:true, recoverable:true});
+    }
     assert(result.path === file && empty(result.owner_interventions) && timeOK(result.persisted_at), 'invalid_transport_result');
     const expectedBlob = blob(bytes), expectedSha256 = hashBytes(bytes);
     assert(result.git_blob_sha === expectedBlob && result.content_address_verified === true, 'exact_git_content_identity_failed');
@@ -71,7 +82,9 @@ export async function executeRecoverableImage(execution, {store, host, transport
   }
   const steps = [
     {id: 'generate', run: async c => {
-      return retainGenerated(await host.generate(structuredClone(execution), {key: c.key, attempt}), c.put);
+      // The renderer receives no dashboard, edition or adjacent-story metadata.
+      // Provenance remains in the pinned job; the host gets only the sealed prompt.
+      return retainGenerated(await host.generate({prompt:execution.generation_instruction, output_count:1}, {key: c.key, attempt}), c.put);
     },
       recover: async c => {
         const recovered = await host.recover(c.key);
@@ -79,20 +92,23 @@ export async function executeRecoverableImage(execution, {store, host, transport
         assert(recovered.operation_key === c.key, 'native_result_operation_binding_mismatch');
         return retainGenerated(recovered.result, c.put);
       }},
-    {id: 'capture', replaySafe: true, run: async c => exactStore(rawPath, await c.read(c.results.generate.object), c.key)},
-    {id: 'prepare', replaySafe: true, run: async c => {
+    {id: 'capture', replaySafe: true, resolveBlock:transferRecovery, run: async c => exactStore(rawPath, await c.read(c.results.generate.object), c.key)},
+    {id: 'prepare', replaySafe: true, resolveBlock:transferRecovery, run: async c => {
       const raw = await c.read(c.results.generate.object);
       const bytes = host.prepareFinal ? await host.prepareFinal(Buffer.from(raw)) : raw;
       assert(Buffer.isBuffer(bytes), 'final_bytes_required');
       const inspected = inspectHandoffAsset(bytes, '.png');
       assert(inspected.pass && inspected.width === 1200 && inspected.height === 630, 'final_canvas_invalid');
-      return {object: await c.put(bytes), sha256: hashBytes(bytes), git_blob_sha: blob(bytes)};
+      const object = await c.put(bytes);
+      const saved = await exactStore(reviewPath, bytes, c.key);
+      return {object, sha256: hashBytes(bytes), git_blob_sha: blob(bytes), saved};
     }},
     {id: 'review', replaySafe: true, run: async c => {
       const bytes = await c.read(c.results.prepare.object);
-      const review = await host.review(bytes, structuredClone(execution), {key: c.key, attempt, sha256: hashBytes(bytes)});
+      const review = await host.review(bytes, structuredClone(execution), {key: c.key, attempt, sha256: hashBytes(bytes), saved_asset:c.results.prepare.saved});
       assert(review && usageOK(review.usage) && empty(review.owner_interventions) && review.mode === 'automated' &&
         review.phase === 'after_generation' && review.call_id && timeOK(review.reviewed_at) &&
+        review.call_id !== c.results.generate.metadata.call_id &&
         Date.parse(review.reviewed_at) >= Date.parse(c.results.generate.metadata.generated_at) &&
         review.asset_sha256 === hashBytes(bytes) && ['subject_match','factual_support','structural_quality','editorial_quality'].every(k => ['pass','fail'].includes(review[k])),
         'invalid_review_evidence');
@@ -100,8 +116,10 @@ export async function executeRecoverableImage(execution, {store, host, transport
         assert(!visualReviewErrors(review.visual_inspection,hashBytes(bytes)).length,'actual_saved_image_review_required');
       return review;
     }},
-    {id: 'persist', replaySafe: true, run: async c => {
+    {id: 'persist', replaySafe: true, resolveBlock:transferRecovery, run: async c => {
       if (['subject_match','factual_support','structural_quality','editorial_quality'].some(k => c.results.review[k] !== 'pass')) throw new OperationBlocked('IMAGE_QUALITY_REJECTED');
+      if (c.results.review.visual_inspection && !visualReviewAccepted(c.results.review.visual_inspection,c.results.prepare.sha256))
+        throw new OperationBlocked('IMAGE_QUALITY_REJECTED');
       return exactStore(finalPath, await c.read(c.results.prepare.object), c.key);
     }},
     {id: 'receipt', replaySafe: true, run: async c => {
@@ -111,6 +129,7 @@ export async function executeRecoverableImage(execution, {store, host, transport
         evidence_type: evidenceType, trigger, owner_interventions: [], runtime_context_isolation: 'not_asserted', attempt,
         fallback_used: false, work_invocations: 0, codex_invocations: 0, paid_model_api_calls: 0, account_billing_observed: false,
         generation: {...g, raw_sha256: r.generate.raw_sha256, raw_capture: r.capture},
+        ...(r.prepare.saved?{reviewed_candidate:r.prepare.saved}:{}),
         review: r.review, persistence: r.persist, status: evidenceType === 'live' ? 'accepted_locked' : 'fixture_pass'};
       assert(!validateImageExecutionReceipt(receipt, execution, {assetSha256: r.prepare.sha256, gitBlobSha: r.prepare.git_blob_sha, allowFixture: evidenceType === 'fixture'}).length,
         'v2_acceptance_failed');

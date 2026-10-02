@@ -54,7 +54,9 @@
       "TERMINAL"
     ],
     "status_requests_are_read_only": true,
-    "github_actions_job_rotation": "Supervisor may rotate before GitHub-hosted job timeout; successor resumes same execution identity under a new fence."
+    "github_actions_job_rotation": "Supervisor may rotate before GitHub-hosted job timeout; successor resumes same execution identity under a new fence.",
+    "advancement": "Immediately recheck after real task/image/result changes; sleep only on idle observation; elapsed-time job rotation.",
+    "publication_boundary": "Freeze candidate writes before Task 23, including lease acquisition and projection writes. Existing protected candidate workflow owns promotion; protected delta-validation finalization owns Task29."
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -111,9 +113,10 @@
       "identity_rule": "Exact identity is mandatory for the final persisted PNG bytes. A bounded same-visual PNG representation may differ from native generation bytes only when professional composition/content are preserved, source-to-final lineage is recorded, and final Git bytes/read-back are verified."
     },
     "host_admission": {
-      "required": "Live scheduled production generation, saved-image review, exact saved-byte recovery, verified zero-production-cost evidence, receipt path and SHA256. Interactive trial evidence is not admissible.",
+      "required": "Registered READY unattended host; digest-bound live scheduled six-image nonproduction qualification; exact raw/final committed-byte recovery, automated saved-image inspection, and verified existing zero-production-cost boundary. Interactive and fixture evidence cannot admit production.",
       "current_status": "CAPABILITY_BLOCKED",
-      "reason": "No supported unattended native image generation/review host registered in GitHub Actions."
+      "reason": "No supported unattended native image generation/review host registered in GitHub Actions.",
+      "registration_path": "docs/operations/unattended-image-host.json"
     }
   },
   "kanban": {
@@ -155,5 +158,6 @@
     "alternate_accounts": false,
     "new_credentials": false,
     "github_runner": "standard public-repository runner only"
-  }
+  },
+  "run5_preparation": "docs/operations/RUN5-UNATTENDED-PREPARATION-2026-10-02.md"
 }

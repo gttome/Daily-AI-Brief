@@ -35,7 +35,7 @@ on:
 
 permissions:
   contents: write
-  actions: read
+  actions: write
   pull-requests: read
 
 concurrency:
@@ -125,14 +125,32 @@ jobs:
             --ledger control/data/operations/production-continuous-improvement-ledger.jsonl \
             --repo-root control
 
-      - name: Configure run-branch writer
+      - name: Check publication boundary before acquiring any writer
         if: steps.resolve.outputs.should_run == 'true'
+        id: boundary
+        run: |
+          set -euo pipefail
+          node control/_tools/run-supervisor.mjs tick --run-root run \
+            --execution-key "$EXECUTION_KEY" --execution-id "$EXECUTION_ID" \
+            --edition-id "$EDITION_ID" --branch "$RUN_BRANCH" \
+            --contracts control/docs/operations/task-recovery-contracts.json \
+            --writer-generation 1 > /tmp/boundary.json
+          node -e "const fs=require('fs'),x=require('/tmp/boundary.json');fs.appendFileSync(process.env.GITHUB_OUTPUT,'write_allowed='+x.publication.write_allowed+'\n'+'handoff='+(x.publication.action==='protected_publication_handoff')+'\n')"
+
+      - name: Hand frozen candidate to protected publication
+        if: steps.boundary.outputs.handoff == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node control/_tools/dispatch-frozen-publication.mjs
+
+      - name: Configure run-branch writer
+        if: steps.boundary.outputs.write_allowed == 'true'
         run: |
           git -C run config user.name "github-actions[bot]"
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
 
       - name: Acquire fenced writer authority for this exact execution
-        if: steps.resolve.outputs.should_run == 'true'
+        if: steps.boundary.outputs.write_allowed == 'true'
         id: fence
         run: |
           set -euo pipefail
@@ -158,13 +176,17 @@ jobs:
           fi
 
       - name: Persistent approximately one-minute supervision loop
-        if: steps.resolve.outputs.should_run == 'true'
+        if: steps.boundary.outputs.write_allowed == 'true'
         env:
           WRITER_GENERATION: ${{ steps.fence.outputs.generation }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           lease_rel="_records/edition-execution/writer-leases/${EXECUTION_ID}.json"
-          for loop in $(seq 1 315); do
+          deadline=$((SECONDS + 18900))
+          loop=0
+          while [ "$SECONDS" -lt "$deadline" ]; do
+            loop=$((loop + 1))
             # Hot-reload protected control-plane code/contracts every loop.
             git -C control fetch --no-tags origin main
             git -C control reset --hard origin/main
@@ -198,6 +220,12 @@ jobs:
               --writer-generation "$WRITER_GENERATION" \
               "${tick_args[@]}" > /tmp/supervisor-tick.json
             cat /tmp/supervisor-tick.json
+            boundary="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.publication.action)")"
+            if [ "$boundary" = "protected_publication_handoff" ]; then
+              node control/_tools/dispatch-frozen-publication.mjs
+              break
+            fi
+            if [ "$boundary" = "none" ]; then break; fi
 
             kanban_fresh="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(String(x.kanban.fresh))")"
             if [ "$kanban_fresh" != "true" ]; then
@@ -213,7 +241,7 @@ jobs:
 
             has_request="$(node -e "const x=require('/tmp/supervisor-tick.json');process.stdout.write(x.worker_request?'true':'false')")"
             if [ "$has_request" = "true" ]; then
-              node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\\n')"
+              node -e "const fs=require('fs');const x=require('/tmp/supervisor-tick.json');fs.writeFileSync('/tmp/worker-request.json',JSON.stringify(x.worker_request,null,2)+'\n')"
               node control/_tools/run-supervisor.mjs enqueue \
                 --run-root run \
                 --request /tmp/worker-request.json >/tmp/enqueue-result.json
@@ -263,6 +291,7 @@ jobs:
               fi
             fi
 
+            progress_before="$(git -C run rev-parse HEAD)"
             git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
             git -C run add "_records/edition-execution/events/${EXECUTION_KEY}" 2>/dev/null || true
             git -C run add "_records/image-attempts/${EXECUTION_KEY}" 2>/dev/null || true
@@ -287,5 +316,11 @@ jobs:
               break
             fi
 
+            # Drain a real state advance immediately. Idle reconciliation retains
+            # the minute heartbeat; the elapsed deadline still bounds runner life.
+            progress_after="$(git -C run rev-parse HEAD)"
+            if ! git -C run diff --quiet "$progress_before" "$progress_after" -- "_records/edition-execution/events/$EXECUTION_KEY" "_records/image-attempts/$EXECUTION_KEY" _records/edition-execution/worker-results; then
+              continue
+            fi
             sleep 60
           done

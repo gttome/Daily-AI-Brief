@@ -66,7 +66,7 @@ export function validateRunReadiness(input = {}) {
 
   const image = input.image_pipeline || {};
   const host = image.host_admission || {};
-  required(host.evidence_type === 'live' && host.trigger === 'scheduled' && host.execution_mode === 'production' &&
+  required(host.evidence_type === 'live' && host.trigger === 'scheduled' && ['production','qualification_nonproduction'].includes(host.execution_mode) &&
     host.generation_executor === 'native_chatgpt_image_generation' && host.review_method === 'saved_image_visual_inspection' &&
     host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
     typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
@@ -103,6 +103,10 @@ export function validateRunReadiness(input = {}) {
   required(bool(publication.independent_live_verification), 'independent_live_verification_required');
   required(publication.success_state === 'PUBLIC_CLOSED', 'public_closed_success_required');
   required(bool(publication.cleanup_after_terminal), 'terminal_cleanup_required');
+  if(input.run_number>=5) {
+    required(bool(publication.candidate_write_freeze), 'publication_candidate_write_freeze_required');
+    required(bool(publication.generic_task29_closeout), 'generic_task29_closeout_required');
+  }
 
   const cost = input.cost_boundary || {};
   for (const key of ['chatgpt_work','codex','paid_apis','billable_overage','new_credentials'])

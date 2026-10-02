@@ -1,0 +1,8 @@
+{
+  "schema_version": "unattended-image-host-registration-v1",
+  "host_id": null,
+  "status": "CAPABILITY_BLOCKED",
+  "reason": "No supported unattended generation and saved-image visual-review host is bound within the existing zero-Work, zero-Codex, zero-paid-API production policy.",
+  "qualification_receipt_path": null,
+  "production_start_authorized": false
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "unattended-control-rehearsal-v1",
+  "evidence_type": "fixture",
+  "result": "PASS",
+  "scenarios": [
+    "six_images",
+    "quality_rejection",
+    "transient_raw_transfer",
+    "lost_final_acknowledgement",
+    "runner_restart",
+    "completed_reuse"
+  ],
+  "counts": {
+    "generation": 7,
+    "review": 7,
+    "rawWrites": 14,
+    "finalWrites": 6
+  },
+  "live_generation_tested": false,
+  "live_quality_proven": false,
+  "run5_start_authorized": false,
+  "baseline_sha": "4848daa185f3ea9ffcf223f6469ec893cd082247",
+  "recorded_at": "2026-10-02T05:35:28.597635+00:00",
+  "local_test_count": 769,
+  "contract_checks": 24,
+  "additional_admission_regressions_passed": 2
+}

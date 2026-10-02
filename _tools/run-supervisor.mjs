@@ -4,7 +4,7 @@ import path from 'node:path';
 import {
   activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth, applyImmediateImageRecovery,
   validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest, buildEngineeringRepairRequest,
-  projectKanbanFromEvents, kanbanProjectionFresh
+  projectKanbanFromEvents, kanbanProjectionFresh, publicationWriteBoundary, latestRecoverableImage
 } from '../_generator/lib/run-supervisor.mjs';
 
 const argv=process.argv.slice(2), command=argv.shift();
@@ -50,7 +50,7 @@ function loadEvents(runRoot, executionKey){
 function latestTaskEvent(events,taskId){
   return events.filter(e=>e.task_id===taskId).sort((a,b)=>Date.parse(a.at)-Date.parse(b.at)).at(-1)||null;
 }
-function latestImageRecovery(runRoot,executionKey){
+function latestImageRecovery(runRoot,executionKey,taskId){
   const dir=path.join(runRoot,'_records/image-attempts',executionKey);
   if(!fs.existsSync(dir)) return null;
   const records=[];
@@ -62,8 +62,10 @@ function latestImageRecovery(runRoot,executionKey){
       records.push({...value,_file:name,_at:at});
     }catch{}
   }
-  return records.filter(r=>r.status==='rejected' && r.recovery_action)
-    .sort((a,b)=>Date.parse(a._at||0)-Date.parse(b._at||0)).at(-1)||null;
+  const specFile=path.join(runRoot,'_records/editorial-handoff',`image-specs-${executionKey}.json`);
+  const specs=fs.existsSync(specFile)?readJson(specFile).specs:[];
+  const candidate=specs?.find(s=>Number(s.ordinal)===Number(taskId)-10)?.candidate_id;
+  return latestRecoverableImage(records,{task_id:taskId,candidate_id:candidate});
 }
 function currentTaskFromProjection(tasks){
   for(let n=0;n<=29;n++){
@@ -175,12 +177,13 @@ try{
     const projection=projectKanbanFromEvents({tasks,events,execution_id:args['execution-id'],edition_id:args['edition-id'],observed_at:args.now||new Date().toISOString()});
     const current=currentTaskFromProjection(projection.tasks);
     const terminal=!current;
+    const publication=publicationWriteBoundary(projection.tasks,events);
     const taskId=current?.id||'29';
     const taskContract=contract.tasks[taskId];
     const latest=latestTaskEvent(events,taskId);
     const worker=workerState(runRoot,args['execution-id']);
     const executorState=args['executor-state']||worker.state;
-    const image=Number(taskId)>=11 && Number(taskId)<=16 ? latestImageRecovery(runRoot,executionKey) : null;
+    const image=Number(taskId)>=11 && Number(taskId)<=16 ? latestImageRecovery(runRoot,executionKey,taskId) : null;
     const imageOverride=applyImmediateImageRecovery({
       task_id:taskId,
       task_state:current?.state,
@@ -243,7 +246,9 @@ try{
       schema_version:'run-supervisor-tick-v1',
       execution_id:args['execution-id'],execution_key:executionKey,edition_id:args['edition-id'],branch:args.branch,
       current_task:current,latest_task_event:latest,executor_state:executorState,
-      immediate_image_recovery:imageOverride,repair_epoch_state:repairState,classification,decision,worker_request:request,
+      immediate_image_recovery:imageOverride,repair_epoch_state:repairState,classification,
+      decision:publication.write_allowed?decision:{action:publication.action},
+      worker_request:publication.write_allowed?request:null,publication,
       kanban:{fresh:fresh.fresh,reason:fresh.reason,expected_digest:fresh.expected_digest,observed_digest:fresh.observed_digest,file:path.relative(runRoot,kanban.file)},
       terminal
     });
