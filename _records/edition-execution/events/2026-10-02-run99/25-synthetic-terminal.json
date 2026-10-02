@@ -1,0 +1,14 @@
+{
+  "schema_version": "synthetic-rehearsal-task-event-v1",
+  "mode": "NON_PRODUCTION",
+  "rehearsal_id": "pre-next-run-five-change-20261002-r1",
+  "execution_id": "synthetic-pre-next-run-20261002-01",
+  "edition_id": "synthetic-edition-pre-next-run-2026-10-02",
+  "task_id": "25",
+  "from": "Backlog",
+  "to": "Done",
+  "at": "2026-10-02T22:13:41.000Z",
+  "evidence": "synthetic_terminal_projection_for_handoff_only",
+  "production_mutation": false,
+  "image_generation": false
+}

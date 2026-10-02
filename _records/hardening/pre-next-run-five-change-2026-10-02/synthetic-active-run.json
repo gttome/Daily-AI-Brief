@@ -1,0 +1,23 @@
+{
+  "schema_version": "pre-next-run-synthetic-active-run-v1",
+  "rehearsal_id": "pre-next-run-five-change-20261002-r1",
+  "mode": "NON_PRODUCTION",
+  "rehearsal_handoff": true,
+  "production_allocation": false,
+  "image_generation_allowed": false,
+  "publication_mutation_allowed": false,
+  "active": true,
+  "terminal": false,
+  "branch": "rehearsal/pre-next-run-five-change-2026-10-02",
+  "execution_key": "2026-10-02-run99",
+  "execution_id": "synthetic-pre-next-run-20261002-01",
+  "edition_id": "synthetic-edition-pre-next-run-2026-10-02",
+  "created_at": "2026-10-02T22:13:16Z",
+  "attempt": 2,
+  "purpose": "Second live proof after repository-explicit handoff repair. Supervisor must resume the same synthetic execution and exit at terminal boundary without work.",
+  "source_consumer_result": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-consumer-result.json",
+  "source_writer_release": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-writer-release.json",
+  "source_blocked_attempt": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-handoff-attempt-1-blocked.json",
+  "expected_supervisor_boundary": "terminal_run",
+  "expected_worker_request": null
+}
