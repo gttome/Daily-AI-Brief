@@ -18,5 +18,11 @@
     "operational_learning_updated"
   ],
   "created_at": "2026-10-02T00:14:13.230Z",
-  "status": "queued"
+  "status": "completed_pass",
+  "consumed_at": "2026-10-02T01:26:12.985Z",
+  "completed_at": "2026-10-02T01:26:12.985Z",
+  "consumer_version": "repository-repair-consumer-v1",
+  "consumer_writer_generation": 5,
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261001-run4/15-6e46db1b44d3239f19c56c02a88be7fece0d7d3703a541fd35d4aaf8a4e19eb8.json",
+  "repair_epoch_ref": "_records/edition-execution/repair-epochs/reliable-edition-20261001-run4/15.json"
 }
