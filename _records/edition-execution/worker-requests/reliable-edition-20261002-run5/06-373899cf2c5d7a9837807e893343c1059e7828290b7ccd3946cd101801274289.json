@@ -1,0 +1,16 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "373899cf2c5d7a9837807e893343c1059e7828290b7ccd3946cd101801274289",
+  "execution_id": "reliable-edition-20261002-run5",
+  "edition_id": "dab-edition-2026-10-02",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "06",
+  "capability": "repository",
+  "instruction": "Execute Task 06 (Select and verify two videos) from authoritative durable inputs, preserving all valid completed upstream evidence.",
+  "writer_generation": 2,
+  "recovery_attempt": 0,
+  "repair_epoch": 0,
+  "post_repair_attempt": 0,
+  "created_at": "2026-10-02T13:15:57.889Z",
+  "status": "queued"
+}

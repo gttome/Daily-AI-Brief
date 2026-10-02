@@ -1,0 +1,10 @@
+{
+  "task_id": "11",
+  "state": "Blocked",
+  "at": "2026-10-02T14:03:56Z",
+  "reason_code": "NATIVE_GENERATION_AVAILABLE_BUT_PRODUCTION_ROUTE_NOT_QUALIFIED",
+  "blocker_detail": "The dedicated scheduled worker successfully invoked native image generation, but the candidate failed the exact visible-text rule and the complete binary Git Data handoff did not reach GitHub. No saved Git asset exists for required saved-pixel review.",
+  "evidence_path": "_records/image-attempts/2026-10-02-run5/m01-attempt-1.json",
+  "recoverable": true,
+  "recovery_action": "Use the same scheduled task-specific worker path for a fresh m01 attempt with stricter exact-visible-text enforcement and a supported binary-safe complete-byte Git handoff. Preserve Tasks 00-10. Do not use Work, Codex, paid APIs, owner upload, SVG, or low-quality fallback."
+}

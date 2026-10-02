@@ -1,9 +1,9 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-10-01",
-  "updated_at": "2026-09-30T23:12:21.330Z",
-  "verification_observed_at": "2026-10-01T05:47:00.774Z",
-  "baseline_note": "Independent seven-domain sweep completed 14 focused checks and reviewed seven candidates: 1 new source-aware verification topic, 3 materially updated topics, and 13 carried forward. The six-story editorial lock was unchanged.",
+  "edition_date": "2026-10-02",
+  "updated_at": "2026-10-02T13:29:44Z",
+  "verification_observed_at": "2026-10-02T13:29:44Z",
+  "baseline_note": "Independent Run 5 seven-domain sweep completed 14 focused checks: 2 new topics, 5 existing topics updated, and the remaining active topics carried forward.",
   "topics": [
     {
       "topic_id": "dab-topic-collaborative-vibe-coding",
@@ -87,12 +87,12 @@
       "name": "Repairable AI-generated 3D designs",
       "audience": "Knowledge workers and creators",
       "summary": "Generate a design, inspect its flaws, and guide repairs before fabrication.",
-      "why_now": "MIT describes InstructMesh as an editable generation-and-repair workflow for 3D models.",
+      "why_now": "MIT CSAIL published InstructMesh, enabling selective natural-language and slider-based repair of generated 3D models before fabrication.",
       "practical_value": "A useful example of human review connecting generative output to physical constraints.",
       "limitations": "Research prototype evidence; fabrication success and novice usability need closer assessment. The full news article was not retrievable; the dated lab research summary was checked.",
       "next_action": "Review the underlying study and whether the repair process transfers to other creative tasks.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-12T02:08:04.109758Z",
+      "updated_at": "2026-10-02T13:29:44Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
@@ -105,6 +105,16 @@
           "checked_at": "2026-09-12T02:08:04.109758Z",
           "development_id": "repairable-generative-design",
           "review_depth": "Primary lab researcher page and dated research summary; full news article retrieval unavailable"
+        },
+        {
+          "title": "InstructMesh lets users repair AI-generated 3D models before fabrication",
+          "url": "https://news.mit.edu/2026/instructmesh-tool-lets-users-repair-ai-3d-models-then-fabricate-them-1001",
+          "publisher": "MIT News",
+          "kind": "primary",
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "mit-instructmesh-2026-10-01",
+          "review_depth": "full original research news article"
         }
       ],
       "external_attention": [],
@@ -141,6 +151,7 @@
         }
       },
       "trial_story_ids": [],
+      "verification_observed_at": "2026-10-02T13:29:44Z",
       "research_score": 57
     },
     {
@@ -749,13 +760,13 @@
       "name": "Reusable agent skills become observable",
       "audience": "AI leaders, admins, and agent builders",
       "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose maintained domain knowledge and actual use can be governed and measured.",
-      "why_now": "New first-party evidence shows reusable Skills packaged specifically for recurring finance, marketing, operations and hiring work.",
+      "why_now": "Google moved reusable Skills into Gemini chat, making saved instructions and reference files directly invokable and composable for recurring work.",
       "practical_value": "Makes reusable agent know-how easier to govern while traces and spans make tool/model behavior easier to inspect.",
       "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency.",
       "next_action": "Compare skill versioning, evaluation, usage telemetry, access control, and portability across Workspace, Firebase, GitHub, and AWS implementations.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-10-01T20:08:38Z",
-      "verification_observed_at": "2026-10-01T20:08:38Z",
+      "updated_at": "2026-10-02T13:29:44Z",
+      "verification_observed_at": "2026-10-02T13:29:44Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -848,6 +859,16 @@
           "checked_at": "2026-10-01T05:47:00.774Z",
           "development_id": "google-workspace-team-skills-2026-09-16",
           "review_depth": "full first-party product announcement"
+        },
+        {
+          "title": "Let skills in Gemini tackle your most repetitive tasks",
+          "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/",
+          "publisher": "Google",
+          "kind": "primary",
+          "publication_date": "2026-09-30",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "google-gemini-skills-2026-09-30",
+          "review_depth": "full first-party product article"
         }
       ],
       "external_attention": [],
@@ -1076,12 +1097,12 @@
       "name": "AI harness engineering becomes a first-class layer",
       "audience": "Agent builders and AI engineering teams",
       "summary": "Treat the harness around a model—repository structure, tools, constraints, state, validation, and control loops—as an engineering system in its own right.",
-      "why_now": "NVIDIA’s TensorRT Model Connect describes coding-agent work organized around parallel isolation, reversible changes, and GPU-backed validation, reinforcing the harness as a first-class engineering layer rather than incidental tooling.",
+      "why_now": "AWS Dogwood introduced execution-time temporal governance for sequences of agent actions, moving policy enforcement deeper into the agent runtime.",
       "practical_value": "Helps teams separate model capability from the surrounding controls that determine what an agent can observe, access, execute, and verify.",
       "limitations": "Vendor implementations differ; workflow-specific evaluation is still required.",
       "next_action": "Make observability, permission boundaries, tool/data interfaces, and completion verification explicit in the harness and test them independently.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-29T18:00:00Z",
+      "updated_at": "2026-10-02T13:29:44Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -1194,6 +1215,16 @@
           "checked_at": "2026-09-30T00:17:38.129Z",
           "development_id": "nvidia-tensorrt-model-connect-agent-engineering-2026-09-29",
           "review_depth": "locked September 29 editorial evidence"
+        },
+        {
+          "title": "Introducing the Dogwood Local Engine: temporal governance for agent actions",
+          "url": "https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/",
+          "publisher": "AWS Open Source",
+          "kind": "primary",
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "aws-dogwood-temporal-governance-2026-10-01",
+          "review_depth": "full first-party engineering article"
         }
       ],
       "external_attention": [],
@@ -1236,6 +1267,7 @@
         }
       },
       "trial_story_ids": [],
+      "verification_observed_at": "2026-10-02T13:29:44Z",
       "research_score": 89
     },
     {
@@ -1320,12 +1352,12 @@
       "name": "Model lifecycle governance for AI products",
       "audience": "AI admins, platform owners, and engineering leaders",
       "summary": "Treat model selection, policy, deprecation, and migration as an ongoing operational discipline.",
-      "why_now": "GitHub added GPT-6 Sol and Luna to Copilot on September 22, reinforcing model selection and lifecycle management as an ongoing product-control concern.",
+      "why_now": "CoreWeave Forge connected training, inference, observability, evaluation, curation, post-training and agent development into a continuous improvement loop.",
       "practical_value": "Helps teams route work by complexity, latency, and cost while keeping model choice inside an explicit governance layer.",
       "limitations": "Evidence remains concentrated in the GitHub Copilot ecosystem; teams still need workload-specific evaluation before changing defaults.",
       "next_action": "Inventory workflows that pin or assume a specific model and define tested routing and replacement paths.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-25T13:58:00Z",
+      "updated_at": "2026-10-02T13:29:44Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -1368,6 +1400,16 @@
           "checked_at": "2026-09-25T10:47:33Z",
           "development_id": "github-copilot-default-enablement-2026-09-24",
           "review_depth": "full publisher changelog in bounded September 25 evidence packet"
+        },
+        {
+          "title": "CoreWeave Forge launches",
+          "url": "https://www.coreweave.com/news/coreweave-forge-launches-turning-the-ai-loop-production-run-into-a-better-model-and-agent",
+          "publisher": "CoreWeave",
+          "kind": "primary",
+          "publication_date": "2026-09-30",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "coreweave-forge-2026-09-30",
+          "review_depth": "full first-party announcement"
         }
       ],
       "external_attention": [],
@@ -1410,6 +1452,7 @@
         }
       },
       "trial_story_ids": [],
+      "verification_observed_at": "2026-10-02T13:29:44Z",
       "research_score": 81
     },
     {
@@ -1478,12 +1521,12 @@
       "name": "Decision models emerge as a separate AI systems layer",
       "audience": "AI engineers, agent builders, and technical leaders",
       "summary": "Specialized models return typed, probabilistic decisions for software workflows instead of generating free-form text.",
-      "why_now": "TypeSafe AI introduced Jev on September 15 as its first System One Model, built for fast structured decisions with calibrated probabilities, and the launch has quickly drawn broader technical coverage.",
+      "why_now": "Databricks launched ai_decide on September 30 using a decision model and explicitly cited TypeSafe AI's Jev for fast structured choices, probabilities and scores over governed data.",
       "practical_value": "Could move routing, classification, scoring, triage, and agent-control decisions out of general-purpose text generation and into a lower-latency typed decision layer.",
       "limitations": "The core performance and efficiency claims currently come from the vendor; the model is hosted, its low-level architecture and training data are not public, and teams still need task-specific calibration and independent evaluation.",
       "next_action": "Compare Jev with LLM-based classifiers and simpler baselines on representative routing and agent-control tasks, while tracking calibration, robustness, prompt-injection exposure, latency, and cost.",
       "first_detected": "2026-09-22T14:10:00Z",
-      "updated_at": "2026-09-22T14:10:00Z",
+      "updated_at": "2026-10-02T13:29:44Z",
       "status": "early_signal",
       "confidence": "limited",
       "evidence": [
@@ -1506,6 +1549,16 @@
           "checked_at": "2026-09-22T14:10:00Z",
           "development_id": "typesafe-jev-launch-2026-09-15",
           "review_depth": "independent secondary coverage of the same launch"
+        },
+        {
+          "title": "Introducing ai_decide: Make Fast Decisions on Your Governed Data",
+          "url": "https://www.databricks.com/blog/introducing-aidecide-make-fast-decisions-your-governed-data",
+          "publisher": "Databricks",
+          "kind": "primary",
+          "publication_date": "2026-09-30",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "databricks-ai-decide-2026-09-30",
+          "review_depth": "full first-party product article"
         }
       ],
       "external_attention": [],
@@ -1542,6 +1595,7 @@
         }
       },
       "trial_story_ids": [],
+      "verification_observed_at": "2026-10-02T13:29:44Z",
       "research_score": 76
     },
     {
@@ -1606,6 +1660,130 @@
       "trial_story_ids": [],
       "archive_reason": "Not retained as a distinct active mechanism after the October 1 independent sweep.",
       "research_score": 62
+    },
+    {
+      "topic_id": "dab-topic-trusted-enterprise-context",
+      "name": "Trusted enterprise context becomes machine-readable for agents",
+      "audience": "Knowledge leaders, AI platform owners, and enterprise agent teams",
+      "summary": "Enterprise knowledge systems are exposing provenance, recency, corroboration, expert validation and conflict signals in forms that AI agents can use.",
+      "why_now": "Stack Internal now combines provenance, recency, corroboration, expert validation and conflict handling so agents can reason about whether internal knowledge is trustworthy.",
+      "practical_value": "Lets teams make knowledge quality and escalation rules part of the agent context instead of relying on retrieval alone.",
+      "limitations": "The current evidence comes from one enterprise knowledge platform; portability and measurable outcome gains remain to be established.",
+      "next_action": "Test how provenance, recency and expert-review signals alter agent answer quality, abstention and escalation on internal knowledge tasks.",
+      "first_detected": "2026-10-02T13:29:44Z",
+      "updated_at": "2026-10-02T13:29:44Z",
+      "verification_observed_at": "2026-10-02T13:29:44Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Stack Overflow Launches the Next Generation of Stack Internal to Power Trusted Enterprise AI",
+          "url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+          "publisher": "Stack Overflow",
+          "kind": "primary",
+          "publication_date": "2026-09-30",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "stackoverflow-trusted-enterprise-context-2026-09-30",
+          "review_depth": "full first-party announcement"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; comparable repeated measurements are not yet available."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "Materially new mechanism in the current independent sweep."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "A reviewed first-party source establishes the current development."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "Independent corroboration remains limited at first admission."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "First observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to reliable enterprise AI and agent operations."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "The mechanism can remain useful beyond the initial implementation."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 64
+    },
+    {
+      "topic_id": "dab-topic-sovereign-open-ai",
+      "name": "Sovereign open AI becomes an organized infrastructure layer",
+      "audience": "AI platform leaders, governments, and open-source ecosystem teams",
+      "summary": "Organizations are coordinating open models, tooling and infrastructure as a sovereignty layer rather than treating individual open-source components independently.",
+      "why_now": "The Eclipse Foundation launched a multi-organization Sovereign AI Foundation to map dependencies, evaluate open alternatives and develop guidance across models, tooling and agentic systems.",
+      "practical_value": "Provides a framework for teams evaluating dependency risk, portability, governance and local control across the AI stack.",
+      "limitations": "The foundation is newly launched; concrete reference architectures, adoption evidence and interoperability outcomes are still emerging.",
+      "next_action": "Track the foundation’s dependency maps, reference architectures and concrete cross-stack interoperability guidance.",
+      "first_detected": "2026-10-02T13:29:44Z",
+      "updated_at": "2026-10-02T13:29:44Z",
+      "verification_observed_at": "2026-10-02T13:29:44Z",
+      "status": "early_signal",
+      "confidence": "limited",
+      "evidence": [
+        {
+          "title": "Sovereign AI Foundation announcement",
+          "url": "https://newsroom.eclipse.org/news/announcements",
+          "publisher": "Eclipse Foundation",
+          "kind": "primary",
+          "publication_date": "2026-10-01",
+          "checked_at": "2026-10-02T13:29:44Z",
+          "development_id": "eclipse-sovereign-ai-foundation-2026-10-01",
+          "review_depth": "primary foundation announcement"
+        }
+      ],
+      "external_attention": [],
+      "momentum": {
+        "classification": "baseline",
+        "score": null,
+        "observations": [],
+        "reason": "First Watchlist observation; comparable repeated measurements are not yet available."
+      },
+      "rubric": {
+        "novelty": {
+          "score": 5,
+          "reason": "Materially new mechanism in the current independent sweep."
+        },
+        "evidence": {
+          "score": 3,
+          "reason": "A reviewed first-party source establishes the current development."
+        },
+        "independence": {
+          "score": 2,
+          "reason": "Independent corroboration remains limited at first admission."
+        },
+        "momentum": {
+          "score": null,
+          "reason": "First observation."
+        },
+        "relevance": {
+          "score": 5,
+          "reason": "Directly relevant to reliable enterprise AI and agent operations."
+        },
+        "durability": {
+          "score": 4,
+          "reason": "The mechanism can remain useful beyond the initial implementation."
+        }
+      },
+      "trial_story_ids": [],
+      "research_score": 64
     }
   ]
 }

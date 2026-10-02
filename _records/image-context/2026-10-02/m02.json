@@ -1,0 +1,8 @@
+{
+  "mode": "single_story",
+  "story_ids": [
+    "dab-story-2026-10-02-m02"
+  ],
+  "includes_edition_context": false,
+  "prompt": "Professional high-detail textbook/editorial mechanism diagram on a clean white 1200x630 canvas. Subject: Dogwood temporal governance for agent actions. Mechanism: Show an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.. No people or humanoid figures, no decorative filler, no unsupported metrics, no overlapping text, and only sealed visible labels."
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "16",
+  "candidate_id": "m08",
+  "attempt": 1,
+  "execution_mode": "scheduled_direct_worker",
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 9,
+    "lease_owner": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "fence_commit": "9ed4e232d35ece4b4d6b1adc476a80b46b2ed8e5"
+  },
+  "timing": {
+    "generation_started_at": "2026-10-02T15:12:04.261038745Z",
+    "generation_started_at_basis": "computed from exact output completion mtime minus tool-reported 52.3 second wall time",
+    "generation_completed_at": "2026-10-02T15:12:56.561038745Z",
+    "generation_wall_seconds": 52.3,
+    "exact_raw_capture_completed_at": "2026-10-02T15:13:10.192038972Z",
+    "review_completed_at": "2026-10-02T15:13:10.193469489Z"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "generation_id": null,
+    "generation_id_observation": "The native scheduled image tool exposed no generation ID; none was invented.",
+    "exact_returned_png": {
+      "bytes": 1548203,
+      "dimensions": "1730x909",
+      "sha256": "dbcba62269fea4d89ca525e641b7a4147bdc2da2642f91389007b6f0e8301ff1",
+      "git_blob_sha_expected": "4e50fe34e1c85851e6c729fd8fae154565f0a546"
+    }
+  },
+  "persistence": {
+    "status": "not_attempted",
+    "reason": "Candidate rejected before transport; invalid pixels were not persisted.",
+    "chunk_bridge_used": false
+  },
+  "review": {
+    "phase": "generated_pixels_pre_transport",
+    "subject_match": "PASS",
+    "required_mechanism": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "professional_finish": "PASS",
+    "meaningful_detail": "PASS",
+    "explanatory_mechanism": "PASS",
+    "information_hierarchy": "PASS",
+    "white_background": "PASS",
+    "allowed_visible_text": "PASS",
+    "visible_strings": [
+      "Muse",
+      "Small business",
+      "Skills",
+      "Connectors",
+      "Marketing",
+      "Commerce",
+      "Finance",
+      "Collaboration",
+      "Files",
+      "Approval",
+      "Action"
+    ],
+    "extra_visible_text": "NONE",
+    "factual_scope": "PASS",
+    "people_humanoids": "FAIL: collaboration module contains three human-silhouette icons",
+    "product_ui": "NONE",
+    "overlap": "NONE",
+    "sparse_basic_fallback": false,
+    "low_quality_fallback": false
+  },
+  "review_status": "rejected",
+  "status": "rejected",
+  "accepted_locked": false,
+  "rejection_reason": "HUMANOID_ICON_PRESENT",
+  "recoverable": true,
+  "recovery_action": "Generate a fresh sealed-spec retry using only abstract network nodes for Collaboration and zero human or humanoid silhouettes anywhere."
+}

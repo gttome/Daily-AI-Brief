@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-02",
+  "reviewed_books": [
+    "Reliable Generative AI",
+    "Reliable Generative AI Context Engineering",
+    "Generative AI Professional Prompt Engineering Guide",
+    "Generative AI Prompt Engineering Learning Ecosystem"
+  ],
+  "editions": {
+    "2026-10-02": [
+      {
+        "item_id": "dab-story-2026-10-02-m01",
+        "reference_id": "reliable-embeddings",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m02",
+        "reference_id": "context-failure-playbooks",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m04",
+        "reference_id": "ecosystem-workflow",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m05",
+        "reference_id": "reliable-handoffs",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m07",
+        "reference_id": "prompt-core-components",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m08",
+        "reference_id": "ecosystem-problem-strategies",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      }
+    ]
+  },
+  "selection_review_digest": "a54d8080a888035acf8f370470243d6d33746b3d737cbfd2348785febd265e5e"
+}

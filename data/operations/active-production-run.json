@@ -6,12 +6,12 @@
   "execution_id": "reliable-edition-20261002-run5",
   "execution_key": "2026-10-02-run5",
   "branch": "reliable-edition/dab-edition-2026-10-02-run5",
-  "updated_at": "2026-10-02T15:20:58Z",
-  "start_scope": "full_production",
-  "image_tasks_authorized": true,
+  "updated_at": "2026-10-02T16:27:20.458Z",
+  "start_scope": "non_image_production",
+  "image_tasks_authorized": false,
   "publication_authorized": false,
-  "deferred_blocker": null,
-  "current_task": "17",
-  "current_task_state": "Backlog",
-  "note": "Run 5 Tasks 00-16 are durably Done. Six accepted_locked images are persisted and the image writer released generation 9 with TASKS_11_THROUGH_16_DONE_HANDOFF_TO_SUPERVISOR. Resume the same execution at Task 17; do not redo completed work."
+  "deferred_blocker": "unattended_image_host_qualification_raw_originals",
+  "current_task": "18",
+  "current_task_state": "Blocked",
+  "note": "Tasks 00-17 are Done, including six accepted_locked saved-Git-reviewed images and six-image differentiation/accessibility PASS. Task 18 is blocked only until the scheduled host evidence recovery persists and verifies all six genuine originals plus finals and protected CI registers the unattended host READY."
 }

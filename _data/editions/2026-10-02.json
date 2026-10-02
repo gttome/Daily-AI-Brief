@@ -1,0 +1,410 @@
+{
+  "schema_version": "1.0.0",
+  "article_freshness_policy": "article-24-72-168-v1",
+  "policy_profile": "under80-v1",
+  "edition_id": "dab-edition-2026-10-02",
+  "brief_date": "2026-10-02",
+  "timezone": "America/Chicago",
+  "title": "Daily Generative AI Brief — October 2, 2026",
+  "published_at": "2026-10-02T17:02:11.298Z",
+  "research_cutoff_at": "2026-10-02T12:42:37Z",
+  "coverage_period": "24-hour primary window ending at the fixed Run 5 research cutoff. Recency fallback (24-72 hours) and Extended recency fallback (72-168 hours) are used only where required by the locked 2/2/2 slate.",
+  "status": "staged",
+  "stories": [
+    {
+      "story_id": "dab-story-2026-10-02-m01",
+      "ordinal": 1,
+      "slug": "cohere-embed-5-shared-space-pro-fast-retrieval",
+      "permanent_url": "/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/",
+      "focus": "technical_ai_engineering",
+      "headline": "Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space",
+      "event_date": "2026-09-30",
+      "topics": [
+        "m01",
+        "technical ai engineering"
+      ],
+      "companies": [
+        "Cohere"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m01-3.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m01-3.png?v=oct2-m01-7bb53d5c6b78",
+        "alt": "Textbook mechanism diagram for Cohere Embed 5 retrieval architecture: text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct2-m01-7bb53d5c6b78"
+      },
+      "summary": "Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows.",
+      "why_it_matters": "A shared embedding space lets teams trade quality and speed without maintaining separate retrieval indexes, making model choice an operational control rather than a data-migration event.",
+      "source": {
+        "title": "Announcing Cohere's Embed 5 Models",
+        "organization": "Cohere",
+        "url": "https://docs.cohere.com/changelog/embed-v5",
+        "normalized_url": "https://docs.cohere.com/changelog/embed-v5",
+        "publication_date": "2026-09-30",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 400,
+          "verified_at": "2026-10-02T12:59:38.382Z",
+          "method": "indexed full-source body review"
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "New enterprise retrieval architecture with Pro/Fast shared embedding space, multimodality, 128k context, multilingual and Matryoshka outputs.",
+      "editorial_limitation": "Publisher-authored evidence establishes the described feature or mechanism; comparative performance and organization-specific outcomes still require local evaluation.",
+      "social_description": "Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows."
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m02",
+      "ordinal": 2,
+      "slug": "dogwood-temporal-governance-for-agent-actions",
+      "permanent_url": "/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/",
+      "focus": "technical_ai_engineering",
+      "headline": "Dogwood moves agent governance into the action sequence",
+      "event_date": "2026-10-01",
+      "topics": [
+        "m02",
+        "technical ai engineering"
+      ],
+      "companies": [
+        "AWS Open Source"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m02-1.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m02-1.png?v=oct2-m02-b4b67b2216dd",
+        "alt": "Textbook mechanism diagram for Dogwood temporal governance for agent actions: an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct2-m02-b4b67b2216dd"
+      },
+      "summary": "AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed.",
+      "why_it_matters": "Agent safety depends on what happens before and after an action, not only on the action in isolation; sequence-aware policy makes that runtime context enforceable.",
+      "source": {
+        "title": "Introducing the Dogwood Local Engine: temporal governance for agent actions",
+        "organization": "AWS Open Source",
+        "url": "https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/",
+        "normalized_url": "https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/",
+        "publication_date": "2026-10-01",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 3000,
+          "verified_at": "2026-10-02T13:00:10.826Z",
+          "method": "indexed full-source body review"
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-10-01T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved primary_24h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Execution-time temporal governance for agent actions is a distinct engineering mechanism and not present in the prior edition.",
+      "editorial_limitation": "Publisher-authored evidence establishes the described feature or mechanism; comparative performance and organization-specific outcomes still require local evaluation.",
+      "social_description": "AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed."
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m04",
+      "ordinal": 3,
+      "slug": "stack-internal-trusted-enterprise-context-for-ai",
+      "permanent_url": "/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Stack Internal makes enterprise knowledge provenance machine-readable for AI",
+      "event_date": "2026-09-30",
+      "topics": [
+        "m04",
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "Stack Overflow"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m04-1.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m04-1.png?v=oct2-m04-721226f24962",
+        "alt": "Textbook mechanism diagram for Trusted enterprise context for people and agents: fragmented enterprise knowledge flowing through provenance, recency, corroboration and human-validation layers into a trusted context graph; show an agent deciding whether to use knowledge or route it for expert validation, with an auditable source trail.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct2-m04-721226f24962"
+      },
+      "summary": "Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy.",
+      "why_it_matters": "Enterprise AI needs more than retrieval: it needs evidence about where knowledge came from, how current it is, and when a human should resolve conflicting or uncertain context.",
+      "source": {
+        "title": "Stack Overflow Launches the Next Generation of Stack Internal to Power Trusted Enterprise AI",
+        "organization": "Stack Overflow",
+        "url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+        "normalized_url": "https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai",
+        "publication_date": "2026-09-30",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 1000,
+          "verified_at": "2026-10-02T13:04:38.454Z",
+          "method": "indexed full-source body review"
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Transforms fragmented enterprise context into decision-grade knowledge with provenance, recency and human validation for people and agents.",
+      "editorial_limitation": "Publisher-authored evidence establishes the described feature or mechanism; comparative performance and organization-specific outcomes still require local evaluation.",
+      "social_description": "Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy."
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m05",
+      "ordinal": 4,
+      "slug": "slack-mcp-server-lists-records-agent-workflows",
+      "permanent_url": "/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/",
+      "focus": "applied_genai_knowledge_workers",
+      "headline": "Slack MCP Server turns Lists and records into agent-operable workflow objects",
+      "event_date": "2026-09-30",
+      "topics": [
+        "m05",
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "Slack"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m05-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m05-2.png?v=oct2-m05-3e01497e5d3f",
+        "alt": "Textbook mechanism diagram for Slack MCP Server operations on Lists and records: an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct2-m05-3e01497e5d3f"
+      },
+      "summary": "Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data.",
+      "why_it_matters": "When agents can safely manipulate structured workflow objects through governed interfaces, teams can automate recurring operational work without relying on brittle screen imitation.",
+      "source": {
+        "title": "Slack Feature Drop: It’s Officially Fall, But Innovations Are Still in Bloom",
+        "organization": "Slack",
+        "url": "https://slack.com/blog/news/slack-feature-drop-september2026",
+        "normalized_url": "https://slack.com/blog/news/slack-feature-drop-september2026",
+        "publication_date": "2026-09-30",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 600,
+          "verified_at": "2026-10-02T13:04:45Z",
+          "method": "indexed full-source body review"
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Slack MCP Server adds create/read/update/delete operations for Lists and records; AI-assisted CRM and admin workflows reduce switching and cleanup.",
+      "editorial_limitation": "Publisher-authored evidence establishes the described feature or mechanism; comparative performance and organization-specific outcomes still require local evaluation.",
+      "social_description": "Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data."
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m07",
+      "ordinal": 5,
+      "slug": "gemini-skills-reusable-work-modules",
+      "permanent_url": "/stories/2026-10-02/gemini-skills-reusable-work-modules/",
+      "focus": "agents_non_technical_people",
+      "headline": "Gemini Skills turn repeated prompting into reusable work modules",
+      "event_date": "2026-09-30",
+      "topics": [
+        "m07",
+        "agents non technical people"
+      ],
+      "companies": [
+        "Google"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m07-1.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m07-1.png?v=oct2-m07-0afe15d66bfd",
+        "alt": "Textbook mechanism diagram for Reusable Gemini Skills: a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct2-m07-0afe15d66bfd"
+      },
+      "summary": "Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks.",
+      "why_it_matters": "A maintained Skill converts prompt craft into reusable operating knowledge that can be reviewed, shared and improved instead of recreated in every conversation.",
+      "source": {
+        "title": "Let skills in Gemini tackle your most repetitive tasks",
+        "organization": "Google",
+        "url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/",
+        "normalized_url": "https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/",
+        "publication_date": "2026-09-30",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 600,
+          "verified_at": "2026-10-02T13:04:55Z",
+          "method": "indexed full-source body review"
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "normal",
+        "source_published_at": "2026-09-30T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved normal_72h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Reusable modular Skills save instructions, can auto-run on matching prompts, stack together, and include reference files. Candidate for the one reusable Agent Skills story.",
+      "editorial_limitation": "Publisher-authored evidence establishes the described feature or mechanism; comparative performance and organization-specific outcomes still require local evaluation.",
+      "social_description": "Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks."
+    },
+    {
+      "story_id": "dab-story-2026-10-02-m08",
+      "ordinal": 6,
+      "slug": "meta-muse-small-business-skills-connectors-approval",
+      "permanent_url": "/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/",
+      "focus": "agents_non_technical_people",
+      "headline": "Meta Muse brings skills, connectors, and approval boundaries to small-business agents",
+      "event_date": "2026-09-29",
+      "topics": [
+        "m08",
+        "agents non technical people"
+      ],
+      "companies": [
+        "Meta"
+      ],
+      "image": {
+        "path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m08-2.png",
+        "public_url": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m08-2.png?v=oct2-m08-9862503aa031",
+        "alt": "Textbook mechanism diagram for Muse for Small Business with approval boundaries: a small-business agent hub connected to distinct business systems for marketing, commerce, finance, collaboration and files; requests pass through explicit approval boundaries before actions; show skills/connectors as reusable capability modules, not a dashboard.",
+        "width": 1200,
+        "height": 630,
+        "kind": "editorial_explainer",
+        "cache_key": "oct2-m08-9862503aa031"
+      },
+      "summary": "Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions.",
+      "why_it_matters": "For nontechnical teams, the useful agent pattern is not unrestricted autonomy but bounded access to real business tools with explicit human approval before consequential actions.",
+      "source": {
+        "title": "The Future Is for Everyone: Muse for Small Business",
+        "organization": "Meta",
+        "url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+        "normalized_url": "https://about.fb.com/news/2026/09/introducing-muse-small-business/",
+        "publication_date": "2026-09-29",
+        "evidence_type": "publisher_authored",
+        "availability_status": "available",
+        "reading_evidence": {
+          "status": "verified",
+          "word_count": 1600,
+          "verified_at": "2026-10-02T13:05:00Z",
+          "method": "indexed full-source body review"
+        }
+      },
+      "freshness": {
+        "tier": "fallback",
+        "fallback_band": "extended",
+        "source_published_at": "2026-09-29T00:00:00Z",
+        "fallback_reason": "The selected item is outside the primary 24-hour band but remains inside the approved extended_168h fallback and provides distinct evidence needed for the fixed 2/2/2 slate."
+      },
+      "selection_rationale": "Distinct small-business agent expansion with skills/connectors across common business tools and explicit approval boundaries; extended fallback needed for category diversity and practical nontechnical value.",
+      "editorial_limitation": "Publisher-authored evidence establishes the described feature or mechanism; comparative performance and organization-specific outcomes still require local evaluation.",
+      "social_description": "Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions."
+    }
+  ],
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "channel": "Kevin Stratvert",
+      "upload_date": "2026-09-29",
+      "runtime_seconds": 564,
+      "why_useful": "A concise practical walkthrough of the new Copilot surfaces for everyday knowledge work.",
+      "connection": "Practical walkthrough of the new Copilot Home, Autopilot and Code surfaces for knowledge-worker workflows.",
+      "url": "https://www.youtube.com/watch?v=KJ8Y2Nb9y9o",
+      "duration_tier": "short",
+      "verification_note": "Creator page dates the video Sep 29, 2026; indexed YouTube result reports 9:24 runtime."
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Meet Home in Copilot",
+      "channel": "Microsoft 365",
+      "upload_date": "2026-09-30",
+      "runtime_seconds": 20,
+      "why_useful": "A 20-second first-party view of Copilot Home bringing Chat and Cowork into one starting point.",
+      "connection": "First-party short showing the Home experience where Chat and Cowork come together.",
+      "url": "https://www.youtube.com/shorts/U-mXs4EB0Ck",
+      "duration_tier": "short",
+      "verification_note": "Microsoft official video index dates the Short Sep 30, 2026; YouTube Shorts format keeps runtime below the 10-minute target. Exact 0:20 runtime independently corroborated before release assembly."
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-02-1",
+      "title": "DX Today AI Daily Brief - Wednesday, September 30, 2026",
+      "show": "DX Today | No-Hype Podcast & News About AI & DX",
+      "host": "Rick Spair",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 666,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agents",
+        "business workflows"
+      ],
+      "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026",
+      "summary": "Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.",
+      "why_useful": "Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.",
+      "selection_rationale": "Locked Run 5 source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "connection": "Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.",
+      "permanent_url": "/podcasts/2026-10-02/run5-1/",
+      "verification_note": "Podscan reports Sep 30, 2026 and 11 minutes; Podcast Paradise indexes 11:06.",
+      "platforms": [
+        {
+          "name": "DX Today | No-Hype Podcast & News About AI & DX",
+          "url": "https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026"
+        }
+      ],
+      "coverage_note": "Locked October 2 Run 5 media selection."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-02-2",
+      "title": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "show": "The Morning Brief",
+      "host": "Jeff Bechtel",
+      "publication_date": "2026-09-30",
+      "runtime_seconds": 780,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent payments",
+        "AI workflow controls"
+      ],
+      "url": "https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952",
+      "summary": "Adds a separate daily-news source with agent-payment controls and AI workflow context.",
+      "why_useful": "Adds a separate daily-news source with agent-payment controls and AI workflow context.",
+      "selection_rationale": "Locked Run 5 source-diverse podcast selection.",
+      "freshness_tier": "primary_48h",
+      "connection": "Adds a separate daily-news source with agent-payment controls and AI workflow context.",
+      "permanent_url": "/podcasts/2026-10-02/run5-2/",
+      "verification_note": "Apple Podcasts lists the Sep 30 episode at 13 minutes.",
+      "platforms": [
+        {
+          "name": "The Morning Brief",
+          "url": "https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952"
+        }
+      ],
+      "coverage_note": "Locked October 2 Run 5 media selection."
+    }
+  ],
+  "editorial_takeaway": "Today’s strongest pattern is operationalization: retrieval, agent governance, trusted enterprise context, structured workflow actions, reusable skills and approval boundaries are turning generative AI from isolated prompting into governed systems of work."
+}

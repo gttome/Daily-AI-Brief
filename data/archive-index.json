@@ -4,6 +4,225 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-10-02-m01",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space",
+      "url": "/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "m01",
+        "technical ai engineering"
+      ],
+      "companies": [
+        "Cohere"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-02-m02",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-10-01",
+      "headline": "Dogwood moves agent governance into the action sequence",
+      "url": "/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "m02",
+        "technical ai engineering"
+      ],
+      "companies": [
+        "AWS Open Source"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-02-m04",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "Stack Internal makes enterprise knowledge provenance machine-readable for AI",
+      "url": "/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "m04",
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "Stack Overflow"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-02-m05",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "Slack MCP Server turns Lists and records into agent-operable workflow objects",
+      "url": "/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "m05",
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "Slack"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-02-m07",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "Gemini Skills turn repeated prompting into reusable work modules",
+      "url": "/stories/2026-10-02/gemini-skills-reusable-work-modules/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "m07",
+        "agents non technical people"
+      ],
+      "companies": [
+        "Google"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-02-m08",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-29",
+      "headline": "Meta Muse brings skills, connectors, and approval boundaries to small-business agents",
+      "url": "/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "m08",
+        "agents non technical people"
+      ],
+      "companies": [
+        "Meta"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-02-general",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-29",
+      "headline": "Microsoft Copilot Just Got a Massive Upgrade",
+      "url": "/videos/2026-10-02/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "Kevin Stratvert"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "A concise practical walkthrough of the new Copilot surfaces for everyday knowledge work."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-02-agent-skills",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "Meet Home in Copilot",
+      "url": "/videos/2026-10-02/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "Microsoft 365"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "AI-assisted development"
+      ],
+      "summary": "A 20-second first-party view of Copilot Home bringing Chat and Cowork into one starting point."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-02-1",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "DX Today AI Daily Brief - Wednesday, September 30, 2026",
+      "url": "/podcasts/2026-10-02/run5-1/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agents",
+        "business workflows"
+      ],
+      "companies": [
+        "DX Today | No-Hype Podcast & News About AI & DX"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-02-2",
+      "brief_date": "2026-10-02",
+      "event_date": "2026-09-30",
+      "headline": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "url": "/podcasts/2026-10-02/run5-2/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "agent payments",
+        "AI workflow controls"
+      ],
+      "companies": [
+        "The Morning Brief"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Adds a separate daily-news source with agent-payment controls and AI workflow context."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-10-01-m03",
       "brief_date": "2026-10-01",
       "event_date": "2026-10-01",
@@ -5197,165 +5416,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "Freshdesk updated its documentation for a no-code Workflow Builder that lets administrators create agentic workflows from modular blocks including triggers, information collection, condition paths, API actions, functions, custom responses and human handoffs. The guidance also supports confirmation before high-impact actions, MCP-mediated tool access and workflow versioning."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-02-ad64fbde",
-      "brief_date": "2026-09-02",
-      "event_date": "2026-09-01",
-      "headline": "Anthropic’s Fable 5.1 pushes long-running agent work while separating higher-risk Mythos access",
-      "url": "/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "frontier models",
-        "long-running agents",
-        "coding",
-        "safeguards",
-        "evaluation"
-      ],
-      "companies": [
-        "Anthropic"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Anthropic introduced Claude Fable 5.1 for coding and knowledge work, with support for long-running, multi-application agent tasks, while restricting higher-risk capabilities through a separate Mythos access path."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-02-d4186454",
-      "brief_date": "2026-09-02",
-      "event_date": "2026-09-02",
-      "headline": "Enterprise Frontier Safeguards puts misuse monitoring into customer-controlled infrastructure",
-      "url": "/stories/2026-09-02/enterprise-frontier-safeguards-puts-misuse-monitoring-into-customer-controlled-i/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "zero data retention",
-        "misuse detection",
-        "enterprise security",
-        "privacy",
-        "frontier safeguards"
-      ],
-      "companies": [
-        "Anthropic"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance"
-      ],
-      "summary": "Anthropic announced Enterprise Frontier Safeguards, a phased enterprise offering combining zero data retention with misuse-detection safeguards while keeping monitored data in customer-controlled cloud infrastructure."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-02-ad704042",
-      "brief_date": "2026-09-02",
-      "event_date": "2026-09-01",
-      "headline": "ChatGPT for Healthcare connects EHR context and nine official public-health sources",
-      "url": "/stories/2026-09-02/chatgpt-for-healthcare-connects-ehr-context-and-nine-official-public-health-sour/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "healthcare",
-        "EHR",
-        "governed connectors",
-        "grounding",
-        "authoritative sources",
-        "human review"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI added an Epic EHR integration and a Healthcare Public Data plugin for ChatGPT for Healthcare, connecting official sources including PubMed, ClinicalTrials.gov, DailyMed and CMS Coverage inside a governed workspace."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-02-b368145c",
-      "brief_date": "2026-09-02",
-      "event_date": "2026-09-01",
-      "headline": "Google Pics brings prompt-based image creation and editing into the Workspace flow",
-      "url": "/stories/2026-09-02/google-pics-brings-prompt-based-image-creation-and-editing-into-the-workspace-fl/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "image generation",
-        "editing",
-        "Workspace",
-        "no-code creation",
-        "Docs",
-        "Slides"
-      ],
-      "companies": [
-        "blog.google"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Google made Google Pics available to eligible AI Pro and Ultra subscribers as a Workspace-oriented image creation and editing tool, including generation, refinement, object isolation and text editing or translation within images."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-02-097ae25d",
-      "brief_date": "2026-09-02",
-      "event_date": "2026-09-01",
-      "headline": "OpenAI turns successful business processes into repeatable agent operating patterns",
-      "url": "/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "agent workflows",
-        "onboarding",
-        "account management",
-        "persistent context",
-        "human review"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI published operational examples from Basis, Clay and Exa Labs showing agents used for onboarding, persistent account-management context and opportunity-to-action workflows. The common pattern is stable process definition, durable context, connected tools, evidence and review points."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-02-6dc5626e",
-      "brief_date": "2026-09-02",
-      "event_date": "2026-09-01",
-      "headline": "Gilbert + Tobin shows governed AI adoption as an operating model, not a tool rollout",
-      "url": "/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "law firms",
-        "AI governance",
-        "adoption",
-        "human accountability",
-        "enterprise workflows"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI published a case study describing how Gilbert + Tobin combines leadership commitment, governance and human accountability around ChatGPT Enterprise and Codex, reporting 87% active usage among enabled ChatGPT users."
     }
   ]
 }

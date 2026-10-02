@@ -1,0 +1,138 @@
+{
+  "schema_version": "run5-image-specs-v1",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "sealed_at": "2026-10-02T13:31:37Z",
+  "generation_authorized": false,
+  "publication_authorized": false,
+  "common": {
+    "canvas": "1200x630 landscape",
+    "quality": "professional high-detail textbook/editorial mechanism illustration",
+    "background": "clean white",
+    "restrictions": [
+      "no people or humanoid figures",
+      "no decorative filler",
+      "no product-screen imitation",
+      "no unsupported metrics",
+      "no overlapping text",
+      "no sparse/basic box-and-arrow fallback",
+      "no SVG fallback",
+      "clear safe margins",
+      "story-specific composition"
+    ]
+  },
+  "specs": [
+    {
+      "task_id": "11",
+      "candidate_id": "m01",
+      "subject": "Cohere Embed 5 retrieval architecture",
+      "mechanism": "Show text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.",
+      "allowed_text": [
+        "Embed 5",
+        "Pro",
+        "Fast",
+        "Shared embedding space",
+        "128k context",
+        "Multilingual",
+        "Matryoshka",
+        "Text",
+        "Images"
+      ]
+    },
+    {
+      "task_id": "12",
+      "candidate_id": "m02",
+      "subject": "Dogwood temporal governance for agent actions",
+      "mechanism": "Show an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.",
+      "allowed_text": [
+        "Agent actions",
+        "Temporal policy",
+        "Action history",
+        "State",
+        "Allow",
+        "Deny",
+        "Tool execution",
+        "Execution trace"
+      ]
+    },
+    {
+      "task_id": "13",
+      "candidate_id": "m04",
+      "subject": "Trusted enterprise context for people and agents",
+      "mechanism": "Show fragmented enterprise knowledge flowing through provenance, recency, corroboration and human-validation layers into a trusted context graph; show an agent deciding whether to use knowledge or route it for expert validation, with an auditable source trail.",
+      "allowed_text": [
+        "Enterprise knowledge",
+        "Provenance",
+        "Recency",
+        "Corroboration",
+        "Human validation",
+        "Trusted context",
+        "Expert review",
+        "Audit trail"
+      ]
+    },
+    {
+      "task_id": "14",
+      "candidate_id": "m05",
+      "subject": "Slack MCP Server operations on Lists and records",
+      "mechanism": "Show an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.",
+      "allowed_text": [
+        "AI workflow",
+        "MCP Server",
+        "Create",
+        "Read",
+        "Update",
+        "Delete",
+        "Lists",
+        "Records",
+        "CRM",
+        "Admin"
+      ]
+    },
+    {
+      "task_id": "15",
+      "candidate_id": "m07",
+      "subject": "Reusable Gemini Skills",
+      "mechanism": "Show a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.",
+      "allowed_text": [
+        "Skill",
+        "Saved instructions",
+        "Reference files",
+        "Matching prompt",
+        "Compose",
+        "Reuse",
+        "Draft",
+        "Research",
+        "Presentation"
+      ]
+    },
+    {
+      "task_id": "16",
+      "candidate_id": "m08",
+      "subject": "Muse for Small Business with approval boundaries",
+      "mechanism": "Show a small-business agent hub connected to distinct business systems for marketing, commerce, finance, collaboration and files; requests pass through explicit approval boundaries before actions; show skills/connectors as reusable capability modules, not a dashboard.",
+      "allowed_text": [
+        "Muse",
+        "Small business",
+        "Skills",
+        "Connectors",
+        "Marketing",
+        "Commerce",
+        "Finance",
+        "Collaboration",
+        "Files",
+        "Approval",
+        "Action"
+      ]
+    }
+  ],
+  "checks": {
+    "exact_spec_count": 6,
+    "distinct_compositions": true,
+    "professional_detail_required": true,
+    "people_prohibited": true,
+    "basic_fallback_prohibited": true,
+    "svg_fallback_prohibited": true,
+    "result": "PASS"
+  }
+}

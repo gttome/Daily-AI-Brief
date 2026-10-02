@@ -1,0 +1,9 @@
+{
+  "task_id": "20",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T17:02:13.445Z",
+  "proof": {
+    "qualification": "_records/qualification/2026-10-02-run5/result.json"
+  }
+}

@@ -1,225 +1,185 @@
 ---
 layout: default
 title: Daily Generative AI Brief
-brief_date: 2026-10-01
+brief_date: 2026-10-02
 reader_release: true
 ---
 
-# Daily Generative AI Brief — October 1, 2026
+# Daily Generative AI Brief — October 2, 2026
 
-**Published:** October 1, 2026  
-**Coverage period:** 24-hour primary window ending at the fixed Run 4 research cutoff; recency fallback used only for locked items outside the primary window.
+**Published:** October 2, 2026  
+**Coverage period:** 24-hour primary window ending at the fixed Run 5 research cutoff. Recency fallback (24-72 hours) and Extended recency fallback (72-168 hours) are used only where required by the locked 2/2/2 slate.
 
 <!-- reader-release:start -->
-<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-10-01-m08">Perplexity business Skills package recurring work into reusable procedures</a><span>Article · about 4 min source read</span></li><li><a href="#reading-dab-story-2026-10-01-m07">OpenAI Dots assign persistent responsibilities to always-on agents</a><span>Article · about 2 min source read</span></li><li><a href="#reading-dab-story-2026-10-01-m04">Personalization tied to decision and measurement loops</a><span>Article · about 14 min source read</span></li><li><a href="#reading-dab-story-2026-10-01-m05">Adapting production AI to organization-specific moderation policy</a><span>Article · about 8 min source read</span></li><li><a href="#reading-dab-story-2026-10-01-m03">Governed multi-environment access for Claude Platform on AWS</a><span>Article · about 12 min source read</span></li><li><a href="#reading-dab-story-2026-10-01-m01">Gemini 4 Argon for long-horizon professional workflows</a><span>Article · about 9 min source read</span></li><li><a href="#general">Google launches Gemini 4 Argon, its first AI frontier model release in months</a><span>Video · 1:46</span></li><li><a href="#agents-for-non-technical-people">Introducing dots, always-on agents built to handle everything.</a><span>Video · 2:28</span></li><li><a href="#podcast-dab-podcast-2026-10-01-ai-show-244">#244: How Alibaba.com Is Building the Future of Agent-to-Agent Commerce</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-10-01-jesse-owen-argon">Gemini 4 Argon Puts Controlled Agent Rollouts to the Test</a><span>Podcast</span></li></ol></section>
+<section class="edition-overview" id="edition-overview"><p class="book-kicker">IN THIS EDITION · 6 ARTICLES / 2 VIDEOS / 2 PODCASTS</p><h2>Choose what matters to your work</h2><ol><li><a href="#reading-dab-story-2026-10-02-m07">Gemini Skills turn repeated prompting into reusable work modules</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-10-02-m08">Meta Muse brings skills, connectors, and approval boundaries to small-business agents</a><span>Article · about 8 min source read</span></li><li><a href="#reading-dab-story-2026-10-02-m04">Stack Internal makes enterprise knowledge provenance machine-readable for AI</a><span>Article · about 5 min source read</span></li><li><a href="#reading-dab-story-2026-10-02-m05">Slack MCP Server turns Lists and records into agent-operable workflow objects</a><span>Article · about 3 min source read</span></li><li><a href="#reading-dab-story-2026-10-02-m01">Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space</a><span>Article · about 2 min source read</span></li><li><a href="#reading-dab-story-2026-10-02-m02">Dogwood moves agent governance into the action sequence</a><span>Article · about 15 min source read</span></li><li><a href="#general">Microsoft Copilot Just Got a Massive Upgrade</a><span>Video · 9:24</span></li><li><a href="#agents-for-non-technical-people">Meet Home in Copilot</a><span>Video · 0:20</span></li><li><a href="#podcast-dab-podcast-2026-10-02-1">DX Today AI Daily Brief - Wednesday, September 30, 2026</a><span>Podcast</span></li><li><a href="#podcast-dab-podcast-2026-10-02-2">Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026</a><span>Podcast</span></li></ol></section>
 <!-- reader-release:end -->
 
-<span id="reading-dab-story-2026-10-01-m08"></span>
+<span id="reading-dab-story-2026-10-02-m07"></span>
 
-## 1. Perplexity business Skills package recurring work into reusable procedures
+## 1. Gemini Skills turn repeated prompting into reusable work modules
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 4 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
 
-**Date:** October 1, 2026
+**Date:** September 30, 2026
 
-**Topics:** m08, agents non technical people
+**Topics:** m07, agents non technical people
 
-<span class="story-data" data-story-id="dab-story-2026-10-01-m08" data-story-url="/stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-10-02-m07" data-story-url="/stories/2026-10-02/gemini-skills-reusable-work-modules/" hidden></span>
 
-<a href="{{ '/stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/' | relative_url }}" data-item-id="dab-story-2026-10-01-m08" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-10-02/gemini-skills-reusable-work-modules/' | relative_url }}" data-item-id="dab-story-2026-10-02-m07" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook operating-knowledge diagram showing a reusable Business Skill with required inputs, instructions, expected output, four recurring business lanes, and a maintenance loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-m08-5d073551ee00)
+![Textbook mechanism diagram for Reusable Gemini Skills: a maintained reusable Skill package containing saved instructions and reference files, invoked by matching prompts and composable with other Skills; depict repeated work lanes all reusing the same maintained package to explain why the mechanism reduces repetitive prompting.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m07-1.png?v=oct2-m07-0afe15d66bfd)
 
-**Summary:** Perplexity and American Express introduced pre-built business Skills covering recurring finance, marketing, operations and hiring work; Skills package reusable instructions around required inputs and expected outputs.
+**Summary:** Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks.
 
-**Why it matters:** For nontechnical teams, a maintained Skill turns repeated prompting into reusable operating knowledge that can be owned, reviewed and improved.
+**Why it matters:** A maintained Skill converts prompt craft into reusable operating knowledge that can be reviewed, shared and improved instead of recreated in every conversation.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Prompt Engineering Learning Ecosystem</h3><p class="chapter">Five Generative AI Prompt Companion Users, sample PDF p. 5 — Map Real Problems to Practical Prompt Strategies</p><p>Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item.</p><p><a class="book-cta" href="https://leanpub.com/GenAILearn" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Professional Prompt Engineering Guide</h3><p class="chapter">Chapter 1, p. 35 — The Core Components of a Prompt</p><p>Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.</p><p><a class="book-cta" href="https://leanpub.com/genaipromptingguide" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**Source:** <a href="https://www.perplexity.ai/en-GB/hub/blog/perplexity-and-american-express-make-ai-easier-for-growing-businesses" data-item-id="dab-story-2026-10-01-m08" data-edition-date="2026-10-01" data-action="source_clicks">Perplexity and American Express make AI easier for growing businesses</a>
+**Source:** <a href="https://blog.google/products-and-platforms/products/gemini/automate-tasks-with-skills/" data-item-id="dab-story-2026-10-02-m07" data-edition-date="2026-10-02" data-action="source_clicks">Let skills in Gemini tackle your most repetitive tasks</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-story-2026-10-01-m08">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-story-2026-10-02-m07">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-10-01-m07"></span>
+<span id="reading-dab-story-2026-10-02-m08"></span>
 
-## 2. OpenAI Dots assign persistent responsibilities to always-on agents
+## 2. Meta Muse brings skills, connectors, and approval boundaries to small-business agents
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 2 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 29 Sep 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Extended recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 29 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Agents for Everyone**
 
 **Date:** September 29, 2026
 
-**Topics:** m07, agents non technical people
+**Topics:** m08, agents non technical people
 
-<span class="story-data" data-story-id="dab-story-2026-10-01-m07" data-story-url="/stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-10-02-m08" data-story-url="/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/" hidden></span>
 
-<a href="{{ '/stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/' | relative_url }}" data-item-id="dab-story-2026-10-01-m07" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/' | relative_url }}" data-item-id="dab-story-2026-10-02-m08" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook responsibility-loop diagram showing a persistent Dot receiving a goal, working through a bounded cloud computer and connected apps, returning outputs for review, and incorporating feedback.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-m07-cbcbcf61647e)
+![Textbook mechanism diagram for Muse for Small Business with approval boundaries: a small-business agent hub connected to distinct business systems for marketing, commerce, finance, collaboration and files; requests pass through explicit approval boundaries before actions; show skills/connectors as reusable capability modules, not a dashboard.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m08-2.png?v=oct2-m08-9862503aa031)
 
-**Summary:** OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities.
+**Summary:** Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions.
 
-**Why it matters:** Persistent agents shift the design question from one-off answers to ongoing responsibility: goals, permissions, review checkpoints, current-state context and feedback all need to remain understandable over time.
+**Why it matters:** For nontechnical teams, the useful agent pattern is not unrestricted autonomy but bounded access to real business tools with explicit human approval before consequential actions.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 3, Execution — Dynamic Facts and Current-State Control</p><p>Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Prompt Engineering Learning Ecosystem</h3><p class="chapter">Five Generative AI Prompt Companion Users, sample PDF p. 5 — Map Real Problems to Practical Prompt Strategies</p><p>Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.</p><p><a class="book-cta" href="https://leanpub.com/GenAILearn" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**Source:** <a href="https://openai.com/index/introducing-dots/" data-item-id="dab-story-2026-10-01-m07" data-edition-date="2026-10-01" data-action="source_clicks">Introducing dots</a>
+**Source:** <a href="https://about.fb.com/news/2026/09/introducing-muse-small-business/" data-item-id="dab-story-2026-10-02-m08" data-edition-date="2026-10-02" data-action="source_clicks">The Future Is for Everyone: Muse for Small Business</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-story-2026-10-01-m07">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-story-2026-10-02-m08">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-10-01-m04"></span>
+<span id="reading-dab-story-2026-10-02-m04"></span>
 
-## 3. Personalization tied to decision and measurement loops
+## 3. Stack Internal makes enterprise knowledge provenance machine-readable for AI
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 14 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 5 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** October 1, 2026
+**Date:** September 30, 2026
 
 **Topics:** m04, applied genai knowledge workers
 
-<span class="story-data" data-story-id="dab-story-2026-10-01-m04" data-story-url="/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-10-02-m04" data-story-url="/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/" hidden></span>
 
-<a href="{{ '/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/' | relative_url }}" data-item-id="dab-story-2026-10-01-m04" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/' | relative_url }}" data-item-id="dab-story-2026-10-02-m04" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook closed-loop diagram showing audience context and generated variants entering a contextual bandit, a selected experience producing outcomes, and policy updates feeding later decisions.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m04-1.png?v=oct1-cc4ed8c0a4c4)
+![Textbook mechanism diagram for Trusted enterprise context for people and agents: fragmented enterprise knowledge flowing through provenance, recency, corroboration and human-validation layers into a trusted context graph; show an agent deciding whether to use knowledge or route it for expert validation, with an auditable source trail.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m04-1.png?v=oct2-m04-721226f24962)
 
-**Summary:** AWS presents a workflow combining generated content variants with contextual-bandit personalization and measurement across the acquisition funnel.
+**Summary:** Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy.
 
-**Why it matters:** The useful pattern is the closed loop: generate alternatives, make an explicit decision, observe an outcome and feed evidence back into later choices.
+**Why it matters:** Enterprise AI needs more than retrieval: it needs evidence about where knowledge came from, how current it is, and when a human should resolve conflicting or uncertain context.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Professional Prompt Engineering Guide</h3><p class="chapter">Chapter 9, p. 477 — Evaluation and Challenges</p><p>Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item.</p><p><a class="book-cta" href="https://leanpub.com/genaipromptingguide" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Prompt Engineering Learning Ecosystem</h3><p class="chapter">Generative AI Prompt Engineering Learning Ecosystem - Companion, sample PDF p. 6 — Move From Understanding to Use</p><p>Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.</p><p><a class="book-cta" href="https://leanpub.com/GenAILearn" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/uplifting-conversion-across-the-acquisition-funnel-with-personalization-using-contextual-bandits-on-aws/" data-item-id="dab-story-2026-10-01-m04" data-edition-date="2026-10-01" data-action="source_clicks">Uplifting conversion across the acquisition funnel with personalization using contextual bandits on AWS</a>
+**Source:** <a href="https://stackoverflow.co/company/press/archive/stack-internal-trusted-enterprise-ai" data-item-id="dab-story-2026-10-02-m04" data-edition-date="2026-10-02" data-action="source_clicks">Stack Overflow Launches the Next Generation of Stack Internal to Power Trusted Enterprise AI</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-story-2026-10-01-m04">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-story-2026-10-02-m04">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-10-01-m05"></span>
+<span id="reading-dab-story-2026-10-02-m05"></span>
 
-## 4. Adapting production AI to organization-specific moderation policy
+## 4. Slack MCP Server turns Lists and records into agent-operable workflow objects
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 8 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 3 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Applied Generative AI for Knowledge Workers**
 
-**Date:** October 1, 2026
+**Date:** September 30, 2026
 
 **Topics:** m05, applied genai knowledge workers
 
-<span class="story-data" data-story-id="dab-story-2026-10-01-m05" data-story-url="/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-10-02-m05" data-story-url="/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/" hidden></span>
 
-<a href="{{ '/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/' | relative_url }}" data-item-id="dab-story-2026-10-01-m05" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/' | relative_url }}" data-item-id="dab-story-2026-10-02-m05" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook pipeline showing retail policy becoming labeled examples and evaluation criteria, Amazon Nova model adaptation, held-out evaluation, production moderation, and a review loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m05-1.png?v=oct1-ff648b7d0ae0)
+![Textbook mechanism diagram for Slack MCP Server operations on Lists and records: an AI workflow calling a governed MCP layer that performs create/read/update/delete operations against structured Lists and records; include CRM/admin workflow branches and a return path showing reduced context switching, without mimicking Slack UI.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m05-2.png?v=oct2-m05-3e01497e5d3f)
 
-**Summary:** AWS describes how uniopen adapted Amazon Nova to its own retail moderation policy and evaluated the result before production deployment.
+**Summary:** Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data.
 
-**Why it matters:** Organization-specific policy rarely fits a generic moderation layer perfectly; teams need labeled examples, explicit evaluation criteria and a review path that keeps policy ownership visible.
+**Why it matters:** When agents can safely manipulate structured workflow objects through governed interfaces, teams can automate recurring operational work without relying on brittle screen imitation.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Generative AI Professional Prompt Engineering Guide</h3><p class="chapter">Chapter 7, p. 403 — Pattern Selection Framework</p><p>Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item.</p><p><a class="book-cta" href="https://leanpub.com/genaipromptingguide" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 3, section 3.3.1 — Handoffs and Structured Contracts</p><p>Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/how-uniopen-customized-amazon-nova-to-their-retail-moderation-policies-for-production-deployment/" data-item-id="dab-story-2026-10-01-m05" data-edition-date="2026-10-01" data-action="source_clicks">How uniopen customized Amazon Nova to their retail moderation policies for production deployment</a>
+**Source:** <a href="https://slack.com/blog/news/slack-feature-drop-september2026" data-item-id="dab-story-2026-10-02-m05" data-edition-date="2026-10-02" data-action="source_clicks">Slack Feature Drop: It’s Officially Fall, But Innovations Are Still in Bloom</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-story-2026-10-01-m05">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-story-2026-10-02-m05">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-<span id="reading-dab-story-2026-10-01-m03"></span>
+<span id="reading-dab-story-2026-10-02-m01"></span>
 
-## 5. Governed multi-environment access for Claude Platform on AWS
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 12 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
-<!-- reader-release:end -->
-
-**Focus: Technical AI Engineering**
-
-**Date:** October 1, 2026
-
-**Topics:** m03, technical ai engineering
-
-<span class="story-data" data-story-id="dab-story-2026-10-01-m03" data-story-url="/stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws/" hidden></span>
-
-<a href="{{ '/stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws/' | relative_url }}" data-item-id="dab-story-2026-10-01-m03" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent story page</a>
-
-**Evidence:** Publisher Authored  
-**Availability:** Available
-
-![Textbook architecture diagram showing developer and production environments passing through an identity boundary to Claude Platform on AWS, with approved access paths and an audit trail.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m03-2.png?v=oct1-a1239358a887)
-
-**Summary:** AWS describes a governed design for reaching Claude Platform on AWS from multiple operating environments while keeping identity and environment boundaries explicit.
-
-**Why it matters:** As model access spreads across developer machines and production workloads, identity, authorization and audit become part of the AI system rather than an afterthought.
+## 5. Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 5 — Cross-Functional Governance and Launch Readiness</p><p>Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
-<!-- reader-release:end -->
-
-**Source:** <a href="https://aws.amazon.com/blogs/machine-learning/implementing-multi-environment-access-for-claude-platform-on-aws/" data-item-id="dab-story-2026-10-01-m03" data-edition-date="2026-10-01" data-action="source_clicks">Implementing Multi-Environment Access for Claude Platform on AWS</a>
-
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-story-2026-10-01-m03">
-  <span class="feedback-prompt">How useful was this?</span>
-  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
-  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
-  <span class="feedback-status" aria-live="polite"></span>
-</div>
-
-<span id="reading-dab-story-2026-10-01-m01"></span>
-
-## 6. Gemini 4 Argon for long-horizon professional workflows
-
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 9 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 2 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 30 Sep 2026</p></aside>
 <!-- reader-release:end -->
 
 **Focus: Technical AI Engineering**
@@ -228,26 +188,66 @@ reader_release: true
 
 **Topics:** m01, technical ai engineering
 
-<span class="story-data" data-story-id="dab-story-2026-10-01-m01" data-story-url="/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/" hidden></span>
+<span class="story-data" data-story-id="dab-story-2026-10-02-m01" data-story-url="/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/" hidden></span>
 
-<a href="{{ '/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/' | relative_url }}" data-item-id="dab-story-2026-10-01-m01" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent story page</a>
+<a href="{{ '/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/' | relative_url }}" data-item-id="dab-story-2026-10-02-m01" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent story page</a>
 
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook workflow diagram showing a long-horizon task moving through planning, sustained execution, verification, and staged access for Gemini 4 Argon.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m01-1.png?v=oct1-79e5933f6bef)
+![Textbook mechanism diagram for Cohere Embed 5 retrieval architecture: text and image inputs entering two differentiated Pro/Fast embedding paths that converge into one shared vector space; depict a long-context intake ribbon, multilingual streams, Matryoshka nested vector dimensions, and downstream retrieval neighborhoods without inventing benchmark scores.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m01-3.png?v=oct2-m01-7bb53d5c6b78)
 
-**Summary:** Google introduced Gemini 4 Argon for long-horizon software engineering, enterprise knowledge work and defensive cybersecurity, with access staged while safeguards are tested.
+**Summary:** Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows.
 
-**Why it matters:** Longer-running model work increases the importance of bounded access, review checkpoints and evidence-backed expectations instead of treating benchmark headlines as a deployment plan.
+**Why it matters:** A shared embedding space lets teams trade quality and speed without maintaining separate retrieval indexes, making model choice an operational control rather than a data-migration event.
 
 <!-- reader-release:start -->
-<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 4, section 4.1.2 — Managing Expectations and Calibrating Trust</p><p>Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI</h3><p class="chapter">Chapter 1, section 1.2 — Embeddings - Coordinates in that Space</p><p>Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.</p><p><a class="book-cta" href="https://leanpub.com/reliablegenerativeai" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
 <!-- reader-release:end -->
 
-**Source:** <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-4-argon/" data-item-id="dab-story-2026-10-01-m01" data-edition-date="2026-10-01" data-action="source_clicks">Gemini 4 Argon: our next era of frontier intelligence</a>
+**Source:** <a href="https://docs.cohere.com/changelog/embed-v5" data-item-id="dab-story-2026-10-02-m01" data-edition-date="2026-10-02" data-action="source_clicks">Announcing Cohere&apos;s Embed 5 Models</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-story-2026-10-01-m01">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-story-2026-10-02-m01">
+  <span class="feedback-prompt">How useful was this?</span>
+  <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
+  <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
+  <span class="feedback-status" aria-live="polite"></span>
+</div>
+
+<span id="reading-dab-story-2026-10-02-m02"></span>
+
+## 6. Dogwood moves agent governance into the action sequence
+
+<!-- reader-release:start -->
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span class="coverage-label">Recency fallback</span><span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">Source article · about 15 min read</span></div><p class="recency-disclosure"><strong>Originally published:</strong> 01 Oct 2026</p></aside>
+<!-- reader-release:end -->
+
+**Focus: Technical AI Engineering**
+
+**Date:** October 1, 2026
+
+**Topics:** m02, technical ai engineering
+
+<span class="story-data" data-story-id="dab-story-2026-10-02-m02" data-story-url="/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/" hidden></span>
+
+<a href="{{ '/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/' | relative_url }}" data-item-id="dab-story-2026-10-02-m02" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent story page</a>
+
+**Evidence:** Publisher Authored  
+**Availability:** Available
+
+![Textbook mechanism diagram for Dogwood temporal governance for agent actions: an agent action sequence moving through a temporal policy engine before tools execute; include ordered action history, stateful policy checks, allowed/denied transitions, and an execution trace that makes the sequence constraint visually explicit.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m02-1.png?v=oct2-m02-b4b67b2216dd)
+
+**Summary:** AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed.
+
+**Why it matters:** Agent safety depends on what happens before and after an action, not only on the action in isolation; sequence-aware policy makes that runtime context enforceable.
+
+<!-- reader-release:start -->
+<aside class="book-bridge"><p class="book-kicker">READ DEEPER · GENERATIVE AI PROFESSIONAL SERIES</p><h3>Reliable Generative AI Context Engineering</h3><p class="chapter">Chapter 4 — Failure-Mode Playbooks</p><p>Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.</p><p><a class="book-cta" href="https://leanpub.com/reliable-context-engineering" target="_blank" rel="noopener noreferrer">Get the book and explore contents ↗</a></p><p class="small-note">The link opens the Leanpub.com book webpage; chapter access requires the book.</p></aside>
+<!-- reader-release:end -->
+
+**Source:** <a href="https://aws.amazon.com/blogs/opensource/introducing-the-dogwood-local-engine-temporal-governance-for-agent-actions/" data-item-id="dab-story-2026-10-02-m02" data-edition-date="2026-10-02" data-action="source_clicks">Introducing the Dogwood Local Engine: temporal governance for agent actions</a>
+
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-story-2026-10-02-m02">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -260,27 +260,27 @@ reader_release: true
 
 ## 7. General
 
-### Google launches Gemini 4 Argon, its first AI frontier model release in months
+### Microsoft Copilot Just Got a Massive Upgrade
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>1:46 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>9:24 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-10-01/general/' | relative_url }}" data-item-id="dab-video-2026-10-01-general" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** Yahoo Finance  
-**Date:** October 1, 2026  
-**Runtime:** 1:46  
+<a href="{{ '/videos/2026-10-02/general/' | relative_url }}" data-item-id="dab-video-2026-10-02-general" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** Kevin Stratvert  
+**Date:** September 29, 2026  
+**Runtime:** 9:24  
 **Format:** Video
 
-**Summary:** A concise current-news explanation of the staged Gemini 4 Argon release and why access is initially limited.
+**Summary:** A concise practical walkthrough of the new Copilot surfaces for everyday knowledge work.
 
-**Why it matters:** Complements the technical story by showing how controlled rollout is being communicated outside the primary publisher announcement.
+**Why it matters:** Practical walkthrough of the new Copilot Home, Autopilot and Code surfaces for knowledge-worker workflows.
 
 
 
-**Source:** <a href="https://finance.yahoo.com/video/google-launches-gemini-4-argon-132551356.html" data-item-id="dab-video-2026-10-01-general" data-edition-date="2026-10-01" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on Yahoo Finance</a>
+**Source:** <a href="https://www.youtube.com/watch?v=KJ8Y2Nb9y9o" data-item-id="dab-video-2026-10-02-general" data-edition-date="2026-10-02" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-video-2026-10-01-general">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-video-2026-10-02-general">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -291,27 +291,27 @@ reader_release: true
 
 ## 8. Agents for Everyone
 
-### Introducing dots, always-on agents built to handle everything.
+### Meet Home in Copilot
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>2:28 video</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>0:20 video</span></div></aside>
 <!-- reader-release:end -->
 
-<a href="{{ '/videos/2026-10-01/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-10-01-agent-skills" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent video page</a>  
-**Channel:** OpenAI  
-**Date:** September 29, 2026  
-**Runtime:** 2:28  
+<a href="{{ '/videos/2026-10-02/agent-skills/' | relative_url }}" data-item-id="dab-video-2026-10-02-agent-skills" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent video page</a>  
+**Channel:** Microsoft 365  
+**Date:** September 30, 2026  
+**Runtime:** 0:20  
 **Format:** Video
 
-**Summary:** A short first-party introduction to always-on agents, cloud-computer execution and user control.
+**Summary:** A 20-second first-party view of Copilot Home bringing Chat and Cowork into one starting point.
 
-**Why it matters:** Directly complements the locked Dots story with a nontechnical product walkthrough.
+**Why it matters:** First-party short showing the Home experience where Chat and Cowork come together.
 
 
 
-**Source:** <a href="https://openai.com/index/introducing-dots/" data-item-id="dab-video-2026-10-01-agent-skills" data-edition-date="2026-10-01" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on OpenAI</a>
+**Source:** <a href="https://www.youtube.com/shorts/U-mXs4EB0Ck" data-item-id="dab-video-2026-10-02-agent-skills" data-edition-date="2026-10-02" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Watch on YouTube</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-video-2026-10-01-agent-skills">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-video-2026-10-02-agent-skills">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -320,76 +320,76 @@ reader_release: true
 
 ## Worth Listening — Podcasts
 
-### 9. #244: How Alibaba.com Is Building the Future of Agent-to-Agent Commerce
+### 9. DX Today AI Daily Brief - Wednesday, September 30, 2026
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>47:23 podcast</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>11:06 podcast</span></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-10-01-ai-show-244" data-podcast-title="#244: How Alibaba.com Is Building the Future of Agent-to-Agent Commerce" data-podcast-url="/podcasts/2026-10-01/ai-show-244/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-10-02-1" data-podcast-title="DX Today AI Daily Brief - Wednesday, September 30, 2026" data-podcast-url="/podcasts/2026-10-02/run5-1/" hidden></span>
 
-<a href="{{ '/podcasts/2026-10-01/ai-show-244/' | relative_url }}" data-item-id="dab-podcast-2026-10-01-ai-show-244" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-10-02/run5-1/' | relative_url }}" data-item-id="dab-podcast-2026-10-02-1" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
-**Show:** The Artificial Intelligence Show  
-**Host / guest:** Mike Kaput with Kuo Zhang  
+**Show:** DX Today | No-Hype Podcast & News About AI & DX  
+**Host / guest:** Rick Spair  
 **Focus:** Agents for Everyone  
-**Date:** October 1, 2026  
-**Duration:** 47:23 · No episode time limit  
-**Topics:** agent-to-agent commerce, business transformation
+**Date:** September 30, 2026  
+**Duration:** 11:06 · No episode time limit  
+**Topics:** agents, business workflows
 
-**Summary:** A discussion of Alibaba.com’s Accio agent platform and agent-to-agent commerce.
+**Summary:** Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.
 
-**Why it matters:** Adds a business-operations perspective on multi-step agent work.
+**Why it matters:** Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.
 
-**Connection to the brief:** Extends the edition’s reusable-skill and persistent-agent themes.
+**Connection to the brief:** Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.
 
 
 
-**Coverage:** Locked October 1 Run 4 media selection.
+**Coverage:** Locked October 2 Run 5 media selection.
 
-**Evidence:** Practitioner analysis. Official show notes dated October 1, 2026; indexed runtime 47:23.
+**Evidence:** Practitioner analysis. Podscan reports Sep 30, 2026 and 11 minutes; Podcast Paradise indexes 11:06.
 
-**Listen / watch:** <a href="https://podcast.smarterx.ai/shownotes/244" data-item-id="dab-podcast-2026-10-01-ai-show-244" data-edition-date="2026-10-01" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Official show notes</a>
+**Listen / watch:** <a href="https://www.podscan.fm/podcasts/dx-today-no-hype-podcast-amp-news-about-ai-amp-dx/episodes/dx-today-ai-daily-brief-wednesday-september-30-2026" data-item-id="dab-podcast-2026-10-02-1" data-edition-date="2026-10-02" data-action="source_clicks" target="_blank" rel="noopener noreferrer">DX Today | No-Hype Podcast &amp; News About AI &amp; DX</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-podcast-2026-10-01-ai-show-244">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-podcast-2026-10-02-1">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
   <span class="feedback-status" aria-live="polite"></span>
 </div>
 
-### 10. Gemini 4 Argon Puts Controlled Agent Rollouts to the Test
+### 10. Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026
 
 <!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>19:00 podcast</span></div></aside>
+<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>13:00 podcast</span></div></aside>
 <!-- reader-release:end -->
 
-<span class="podcast-data" data-podcast-id="dab-podcast-2026-10-01-jesse-owen-argon" data-podcast-title="Gemini 4 Argon Puts Controlled Agent Rollouts to the Test" data-podcast-url="/podcasts/2026-10-01/jesse-owen-argon/" hidden></span>
+<span class="podcast-data" data-podcast-id="dab-podcast-2026-10-02-2" data-podcast-title="Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026" data-podcast-url="/podcasts/2026-10-02/run5-2/" hidden></span>
 
-<a href="{{ '/podcasts/2026-10-01/jesse-owen-argon/' | relative_url }}" data-item-id="dab-podcast-2026-10-01-jesse-owen-argon" data-edition-date="2026-10-01" data-action="permanent_page_clicks">Open the permanent podcast page</a>
+<a href="{{ '/podcasts/2026-10-02/run5-2/' | relative_url }}" data-item-id="dab-podcast-2026-10-02-2" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent podcast page</a>
 
-**Show:** AI & Tech Daily with Jesse Owen  
-**Host / guest:** Jesse Owen  
+**Show:** The Morning Brief  
+**Host / guest:** Jeff Bechtel  
 **Focus:** Technical AI Engineering  
-**Date:** October 1, 2026  
-**Duration:** 19:00 · No episode time limit  
-**Topics:** Gemini 4 Argon, controlled rollout
+**Date:** September 30, 2026  
+**Duration:** 13:00 · No episode time limit  
+**Topics:** agent payments, AI workflow controls
 
-**Summary:** A concise daily briefing on Gemini 4 Argon’s controlled access and staged deployment.
+**Summary:** Adds a separate daily-news source with agent-payment controls and AI workflow context.
 
-**Why it matters:** Provides a source-diverse practitioner interpretation of controlled rollout and governance.
+**Why it matters:** Adds a separate daily-news source with agent-payment controls and AI workflow context.
 
-**Connection to the brief:** Reinforces environment boundaries, staged access and verification.
+**Connection to the brief:** Adds a separate daily-news source with agent-payment controls and AI workflow context.
 
 
 
-**Coverage:** Locked October 1 Run 4 media selection.
+**Coverage:** Locked October 2 Run 5 media selection.
 
-**Evidence:** Practitioner analysis. October 1 show page and podcast indexes identify the episode and approximately 19-minute runtime.
+**Evidence:** Practitioner analysis. Apple Podcasts lists the Sep 30 episode at 13 minutes.
 
-**Listen / watch:** <a href="https://www.owenonthenet.com/podcast/2026-10-01/" data-item-id="dab-podcast-2026-10-01-jesse-owen-argon" data-edition-date="2026-10-01" data-action="source_clicks" target="_blank" rel="noopener noreferrer">Show transcript</a>
+**Listen / watch:** <a href="https://podcasts.apple.com/us/podcast/the-morning-brief/id1889037952" data-item-id="dab-podcast-2026-10-02-2" data-edition-date="2026-10-02" data-action="source_clicks" target="_blank" rel="noopener noreferrer">The Morning Brief</a>
 
-<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-01" data-feedback-story-id="dab-podcast-2026-10-01-jesse-owen-argon">
+<div class="story-feedback story-feedback-compact star-feedback" data-feedback-scale="stars" data-feedback-brief-date="2026-10-02" data-feedback-story-id="dab-podcast-2026-10-02-2">
   <span class="feedback-prompt">How useful was this?</span>
   <div class="feedback-buttons" role="group" aria-label="Rate usefulness from 1 to 5 stars"><button type="button" data-feedback-rating="1" title="1 — Not useful" aria-label="1 star: Not useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="2" title="2 — Slightly useful" aria-label="2 stars: Slightly useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="3" title="3 — Useful" aria-label="3 stars: Useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="4" title="4 — Very useful" aria-label="4 stars: Very useful" aria-pressed="false">☆</button><button type="button" data-feedback-rating="5" title="5 — Extremely useful" aria-label="5 stars: Extremely useful" aria-pressed="false">☆</button></div>
   <span class="feedback-privacy">Anonymous feedback. No name or email collected.</span>
@@ -399,14 +399,14 @@ reader_release: true
 <!-- reader-release:start -->
 
 
-<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="0 New today · 2 Updated today · 14 Carried forward"><strong>0 new today · 2 updated · 14 carried forward.</strong></p><p><strong>New today:</strong> None</p><p><strong>Updated today:</strong> </p><ul class="watchlist-daily-items"><li>Agent safeguards tailored to the task</li><li>Reusable agent skills become observable</li></ul><p><strong>Carried forward:</strong> </p><ul class="watchlist-daily-items"><li>Collaborative vibe coding</li><li>Repairable AI-generated 3D designs</li><li>Restoring images after repeated AI edits</li><li>Language models that also predict concepts</li><li>Turning agent memory into compact plans</li><li>Building 3D worlds through recursive code</li><li>Smaller model memory through selective precision</li><li>Agents that persist across sessions</li><li>AI adoption measured at the feature level</li><li>AI harness engineering becomes a first-class layer</li><li>Agentic workloads move toward measured edge inference</li><li>Model lifecycle governance for AI products</li><li>Agents that overclaim task completion</li><li>Decision models emerge as a separate AI systems layer</li></ul></div><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
+<section class="watchlist-preview" aria-labelledby="watchlist-preview-heading"><h2 id="watchlist-preview-heading">Emerging AI Watchlist</h2><div class="watchlist-daily-summary" aria-label="Changed today:"><p class="watchlist-daily-counts" aria-label="2 New today · 5 Updated today · 11 Carried forward"><strong>2 new today · 5 updated · 11 carried forward.</strong></p><p><strong>New today:</strong> </p><ul class="watchlist-daily-items"><li>Trusted enterprise context becomes machine-readable for agents</li><li>Sovereign open AI becomes an organized infrastructure layer</li></ul><p><strong>Updated today:</strong> </p><ul class="watchlist-daily-items"><li>Repairable AI-generated 3D designs</li><li>Reusable agent skills become observable</li><li>AI harness engineering becomes a first-class layer</li><li>Model lifecycle governance for AI products</li><li>Decision models emerge as a separate AI systems layer</li></ul><p><strong>Carried forward:</strong> </p><ul class="watchlist-daily-items"><li>Collaborative vibe coding</li><li>Restoring images after repeated AI edits</li><li>Agent safeguards tailored to the task</li><li>Language models that also predict concepts</li><li>Turning agent memory into compact plans</li><li>Building 3D worlds through recursive code</li><li>Smaller model memory through selective precision</li><li>Agents that persist across sessions</li><li>AI adoption measured at the feature level</li><li>Agentic workloads move toward measured edge inference</li><li>Agents that overclaim task completion</li></ul></div><p>Help choose what we investigate next. Explore emerging ideas and tell us which interest you.</p><div data-watchlist-preview></div><p><a href="{{ '/watchlist/' | relative_url }}">Explore the watchlist and vote →</a></p></section>
 
 
 <!-- reader-release:end -->
 
 ## Editorial takeaway
 
-The strongest pattern today is operational control: frontier models and agents are becoming more useful when access boundaries, reusable procedures, measurement loops, policy adaptation and review checkpoints are designed as part of the workflow.
+Today’s strongest pattern is operationalization: retrieval, agent governance, trusted enterprise context, structured workflow actions, reusable skills and approval boundaries are turning generative AI from isolated prompting into governed systems of work.
 
 <!-- reader-release:start -->
 <aside class="series-invitation" id="explore-series"><p class="book-kicker">CONTINUE LEARNING</p><h2>Explore the Generative AI Professional Series</h2><p>Take the next step from today’s developments to deeper professional learning with books on prompting, context, and reliable AI.</p><p><a class="book-cta" href="https://leanpub.com/u/george-tome" target="_blank" rel="noopener noreferrer">Explore the books ↗</a></p><p class="small-note">Purchasing a book supports continued development of the series and the Daily Generative AI Brief.</p></aside>
