@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:07f55b7edb04fb821ec6b2b988d1c4f70cd5724376342f65b882efd9dbf7e778`
+Ledger digest: `sha256:7e52a1d4ef630b1f4912607b33d19f253d6a60842c8f6ea77222a838f9a70308`
 
-Problems: 29 · Events: 39
+Problems: 30 · Events: 40
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -527,4 +527,22 @@ Problems: 29 · Events: 39
 - **Production invariants:** image_recovery_is_candidate_scoped, accepted_image_suppresses_stale_rejection
 - **Recurrences:** none recorded
 - **Future validation:** Verify each image task maps to its own sealed candidate before dispatch.
+
+## DAB-OPS-20261002-009 — The image migration removed the prior worker before an unattended replacement was proven and incorrectly required GitHub-only scheduler evidence.
+
+- **Status:** mitigated
+- **First observed run:** scheduled-executor-restoration-20261002
+- **Task(s):** unknown
+- **Symptom:** not recorded
+- **Root cause:** An interactive development trial and component improvements were treated as sufficient migration progress; the new admission validator only recognized numeric GitHub workflow IDs, excluding the existing scheduled ChatGPT controller.
+- **Operational impact:** Run 5 remains unadmitted until a live authorized scheduled executor proves the image path.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Restore compatibility with actual ChatGPT automation invocation observations, preserve the existing automation identities, and provide a durable daily startup/recovery contract.
+- **Actual fix:** Accept committed digest-bound real scheduler observations for ChatGPT tasks while retaining all six-image receipt, byte recovery, quality and cost gates. Preserve old schedule prompts before updating their terminal Run 4 scope.
+- **Fix outcome:** Targeted compatibility and negative-evidence tests pass. Schedule activation and the live qualification must still be observed; no production success or zero account usage is inferred.
+- **Permanent implementation:** _generator/lib/unattended-image-qualification.mjs, docs/operations/DAILY-UNATTENDED-STARTUP.md
+- **Regression tests:** _generator/test/scheduled-image-host.test.mjs
+- **Production invariants:** production_cutover_requires_live_unattended_compatibility, scheduler_identity_must_match_actual_executor
+- **Recurrences:** none recorded
+- **Future validation:** Observe the scheduled invocation and actual native generation, saved-pixel review and exact-byte recovery. | Do not retire an existing execution path on the strength of interactive or fixture success. | Keep daily and recovery schedules independent of owner status requests.
 

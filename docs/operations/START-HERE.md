@@ -1,5 +1,7 @@
 # Daily AI Brief — Current Operations Entry Point
 
+**October 2 daily authorization:** follow [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) for the next Brief and daily 01:00 America/Chicago execution. Read its complete bootstrap list and cumulative learning. Run 4 is terminal. The scheduled image host remains unqualified until actual live evidence passes.
+
 > [!IMPORTANT]
 > **Run learning/readiness is now a production gate.** Before every new production run,
 > complete Task 00 using [the Living Run Learning, Cleanup and Readiness Plan](RUN-LEARNING-READINESS-PLAN.md)
