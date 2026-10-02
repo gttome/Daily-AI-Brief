@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:b817c2a0bcafc2a5d2b6e5ee7d1fabe9cb0b23150b8886a5d5862d40926acc6b`
+Ledger digest: `sha256:76010d6a326f0ce4e38aefcb52dc85a907ba6f9556f8eaaf11db6c2d2f76582b`
 
-Problems: 30 · Events: 41
+Problems: 31 · Events: 42
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -545,4 +545,22 @@ Problems: 30 · Events: 41
 - **Production invariants:** production_cutover_requires_live_unattended_compatibility, scheduler_identity_must_match_actual_executor
 - **Recurrences:** none recorded
 - **Future validation:** Observe the scheduled invocation and actual native generation, saved-pixel review and exact-byte recovery. | Do not retire an existing execution path on the strength of interactive or fixture success. | Keep daily and recovery schedules independent of owner status requests. | Verify the registered scheduled worker consumes the exact operation and fence and saves real generation/review evidence. | Do not equate awaiting_scheduled_executor with active execution or successful generation.
+
+## DAB-OPS-20261002-010 — The current automation invocation exposes native image tools only from a prohibited Codex Work surface and does not yet provide post-run scheduler identity evidence.
+
+- **Status:** open
+- **First observed run:** scheduled-image-host-qualification-20261002
+- **Task(s):** 00
+- **Symptom:** not recorded
+- **Root cause:** The configured controller was invoked in an execution surface outside the authorized ordinary ChatGPT-only boundary; during the invocation automations.peek still reported last_run_time null.
+- **Operational impact:** The six-image unattended qualification and Run 5 Task 00 cannot honestly pass in this invocation.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Read the complete bootstrap set, inspect actual runtime capabilities, capture the exact automation object, and create the required isolated qualification branch without generating images.
+- **Actual fix:** not yet determined
+- **Fix outcome:** Exact blocker evidence was durably prepared. Zero qualification images were generated, no prior trial was relabeled, and Run 4 remained immutable.
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** no_work_or_codex_image_generation, actual_scheduler_invocation_observation_required, blocked_is_not_pass
+- **Recurrences:** none recorded
+- **Future validation:** Run the qualification only from an ordinary cloud-scheduled ChatGPT host that exposes native generation and saved-pixel inspection inside the authorized boundary. | After that invocation completes, persist automations.peek evidence whose last_run_time matches scheduler.started_at. | Reuse the isolated branch and do not repeat Run 4 or the interactive six-image trial.
 
