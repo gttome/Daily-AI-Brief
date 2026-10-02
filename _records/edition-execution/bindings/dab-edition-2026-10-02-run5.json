@@ -8,7 +8,17 @@
   "original_cutoff": "2026-10-02T12:42:37Z",
   "baseline_main_sha": "3e97356f9f497fef7ffc2851e7a106dbf47d01f3",
   "bound_at": "2026-10-02T12:49:06Z",
-  "start_scope": "non_image_production",
-  "image_tasks_authorized": false,
-  "publication_authorized": false
+  "start_scope": "full_production",
+  "image_tasks_authorized": true,
+  "publication_authorized": true,
+  "authorization_reconciled_at": "2026-10-02T18:41:15.000Z",
+  "unattended_image_host": {
+    "host_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "status": "READY",
+    "registration_main_sha": "9f7c8842a9d8af7c21b109bea7284a0fe5171dde",
+    "registration_blob_sha": "5ecaa1bad71dad267a801705cb7ba0c11b8ce819",
+    "qualification_receipt_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/qualification-receipt-complete-1.json",
+    "qualification_receipt_blob_sha": "4ff4d4453f3d5de6594bea90ea7c69dd3a884ff6"
+  },
+  "sequencing_anomaly": "PR #364 merged before host registration and run authorization; preserved and tracked as DAB-OPS-20261002-018."
 }
