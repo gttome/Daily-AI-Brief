@@ -115,6 +115,82 @@ export function applyImmediateImageRecovery({
   };
 }
 
+export function normalizeTaskEvent(event = {}) {
+  const normalized = {...event};
+  if (!normalized.to && typeof normalized.state === 'string') normalized.to = normalized.state;
+  if (!normalized.at && typeof normalized.blocker?.at === 'string') normalized.at = normalized.blocker.at;
+  if (normalized.recoverable === undefined && typeof normalized.blocker?.recoverable === 'boolean')
+    normalized.recoverable = normalized.blocker.recoverable;
+  if (normalized.external_blocker === undefined && typeof normalized.blocker?.external_blocker === 'boolean')
+    normalized.external_blocker = normalized.blocker.external_blocker;
+  if (!normalized.recovery_action && typeof normalized.targeted_next_action === 'string')
+    normalized.recovery_action = normalized.targeted_next_action;
+  if (!normalized.recovery_action && typeof normalized.blocker?.recovery_action === 'string')
+    normalized.recovery_action = normalized.blocker.recovery_action;
+  if (!normalized.recovery_action && typeof normalized.blocker?.targeted_next_action === 'string')
+    normalized.recovery_action = normalized.blocker.targeted_next_action;
+  if (normalized.task_id !== undefined) normalized.task_id = String(normalized.task_id).padStart(2,'0');
+  return normalized;
+}
+
+export function recoverableBlockerEvidence(event = {}) {
+  const normalized = normalizeTaskEvent(event);
+  const actionable =
+    /^\d{2}$/.test(normalized.task_id || '') &&
+    normalized.to === 'Blocked' &&
+    stamp(normalized.at) &&
+    normalized.recoverable === true &&
+    normalized.external_blocker !== true &&
+    typeof normalized.recovery_action === 'string' &&
+    normalized.recovery_action.trim().length > 0;
+  return {
+    actionable,
+    normalized,
+    reason: actionable ? 'recoverable_blocker_machine_readable' : 'recoverable_blocker_not_actionable'
+  };
+}
+
+export function refreshScheduledWorkerFence(current, {
+  request, owner_id, now = new Date().toISOString(), ttl_ms = DEFAULT_WRITER_LEASE_MS
+} = {}) {
+  const taskId = String(request?.task_id || '').padStart(2,'0');
+  if (!current || !request?.execution_id || current.execution_id !== request.execution_id ||
+      request.capability !== 'native_chatgpt' || !['11','12','13','14','15','16'].includes(taskId) ||
+      !owner_id || !stamp(now))
+    throw Error('valid_scheduled_worker_handoff_required');
+  const schedulingGeneration = Number(request.writer_generation);
+  const currentGeneration = Number(current.generation);
+  const result = acquireWriterLease(current,{
+    execution_id:request.execution_id, owner_id, now, ttl_ms, takeover_dead_owner:true
+  });
+  if (!result.acquired) throw Error('scheduled_worker_fence_acquire_failed');
+  return {
+    ...result,
+    task_id:taskId,
+    scheduling_generation:Number.isInteger(schedulingGeneration) ? schedulingGeneration : null,
+    current_generation_before:Number.isInteger(currentGeneration) ? currentGeneration : null,
+    stale_scheduling_generation:Number.isInteger(schedulingGeneration) && schedulingGeneration !== currentGeneration,
+    request_generation_is_provenance:true,
+    authority_generation:result.lease.generation
+  };
+}
+
+export function buildTaskWriterHandoffRelease(lease, {
+  execution_id, owner_id, generation, task_id, boundary = 'Done', now = new Date().toISOString()
+} = {}) {
+  const taskId = String(task_id || '').padStart(2,'0');
+  if (!['11','12','13','14','15','16'].includes(taskId) || !['Done','Blocked'].includes(boundary) || !stamp(now))
+    throw Error('valid_task_specific_handoff_release_required');
+  assertWriterFence(lease,{execution_id,owner_id,generation,now});
+  return {
+    ...lease,
+    released:true,
+    released_at:now,
+    release_reason:`TASK_${taskId}_${boundary.toUpperCase()}_HANDOFF_TO_SUPERVISOR`,
+    expires_at:now
+  };
+}
+
 export function validateTaskRecoveryContracts(contract = {}) {
   const errors = [];
   if (contract.schema_version !== 'task-recovery-contracts-v1') errors.push('task_recovery_schema_version');
@@ -215,6 +291,8 @@ export function buildWorkerRequest({
     request_key:key,
     execution_id,edition_id,branch,task_id,capability,instruction,
     writer_generation,recovery_attempt,repair_epoch,post_repair_attempt,created_at,
+    writer_generation_is_provenance:capability==='native_chatgpt',
+    authority_refresh_required_at_invocation:capability==='native_chatgpt',
     status:'queued'
   };
 }
@@ -243,6 +321,11 @@ export function latestRecoverableImage(records, {task_id,candidate_id} = {}) {
     .sort((a,b)=>Date.parse(a.rejected_at||0)-Date.parse(b.rejected_at||0)).at(-1)||null;
 }
 
+export const KANBAN_VISUAL_COLUMNS = Object.freeze(['Backlog','WIP','Done']);
+
+const durationText = value => Number.isFinite(value) ? `${Number(value.toFixed(3))}s` : 'unavailable';
+const visualColumn = state => state === 'Done' ? 'Done' : state === 'Backlog' ? 'Backlog' : 'WIP';
+
 export function projectKanbanFromEvents({tasks = {}, events = [], execution_id, edition_id, observed_at = new Date().toISOString()} = {}) {
   if (!execution_id || !edition_id || !stamp(observed_at)) throw Error('kanban_projection_identity_required');
   const projection = {};
@@ -251,20 +334,27 @@ export function projectKanbanFromEvents({tasks = {}, events = [], execution_id, 
       id,
       title:task.title || task.normal_operation || `Task ${id}`,
       state:'Backlog',
+      column:'Backlog',
       entered_backlog_at:task.entered_backlog_at || null,
       active_started_at:null,
       review_started_at:null,
       blocked_started_at:null,
       done_at:null,
       cycle_seconds:null,
-      active_seconds:null
+      active_seconds:null,
+      duration_seconds:null,
+      duration:'unavailable'
     };
   }
-  const ordered = [...events].filter(e=>e && e.task_id && e.to && stamp(e.at)).sort((a,b)=>Date.parse(a.at)-Date.parse(b.at));
+  const ordered = [...events]
+    .map(normalizeTaskEvent)
+    .filter(e=>e && e.task_id && e.to && stamp(e.at))
+    .sort((a,b)=>Date.parse(a.at)-Date.parse(b.at));
   for (const event of ordered) {
     const task = projection[String(event.task_id).padStart(2,'0')];
     if (!task) continue;
     task.state = event.to;
+    task.column = visualColumn(event.to);
     if (event.to === 'Active' && !task.active_started_at) task.active_started_at = event.at;
     if (event.to === 'Tested' && !task.review_started_at) task.review_started_at = event.at;
     if (event.to === 'Blocked' && !task.blocked_started_at) task.blocked_started_at = event.at;
@@ -272,22 +362,73 @@ export function projectKanbanFromEvents({tasks = {}, events = [], execution_id, 
     if (!task.entered_backlog_at && event.from === 'Backlog') task.entered_backlog_at = event.at;
   }
   for (const task of Object.values(projection)) {
-    if (task.done_at && task.entered_backlog_at) task.cycle_seconds = Math.max(0,(Date.parse(task.done_at)-Date.parse(task.entered_backlog_at))/1000);
-    if (task.done_at && task.active_started_at) task.active_seconds = Math.max(0,(Date.parse(task.done_at)-Date.parse(task.active_started_at))/1000);
+    if (task.done_at && task.entered_backlog_at)
+      task.cycle_seconds = Math.max(0,(Date.parse(task.done_at)-Date.parse(task.entered_backlog_at))/1000);
+    if (task.done_at && task.active_started_at)
+      task.active_seconds = Math.max(0,(Date.parse(task.done_at)-Date.parse(task.active_started_at))/1000);
+    const durationEnd = task.done_at || (task.column === 'WIP' ? observed_at : null);
+    if (durationEnd && task.entered_backlog_at)
+      task.duration_seconds = Math.max(0,(Date.parse(durationEnd)-Date.parse(task.entered_backlog_at))/1000);
+    task.duration = durationText(task.duration_seconds);
   }
+  const eventTimes=ordered.map(e=>Date.parse(e.at)).filter(Number.isFinite);
+  const runStartedAt=eventTimes.length ? new Date(Math.min(...eventTimes)).toISOString() : null;
+  const terminal=Object.keys(projection).length>0 && Object.values(projection).every(t=>t.state==='Done');
+  const doneTimes=Object.values(projection).map(t=>Date.parse(t.done_at||'')).filter(Number.isFinite);
+  const elapsedEnd=runStartedAt ? (terminal && doneTimes.length ? new Date(Math.max(...doneTimes)).toISOString() : observed_at) : null;
+  const totalSeconds=runStartedAt && elapsedEnd ? Math.max(0,(Date.parse(elapsedEnd)-Date.parse(runStartedAt))/1000) : null;
   return {
-    schema_version:'production-kanban-projection-v2',
+    schema_version:'production-kanban-projection-v3',
     execution_id,edition_id,observed_at,
+    columns:[...KANBAN_VISUAL_COLUMNS],
+    current_column_prohibited:true,
+    active_task_maps_to:'WIP',
     authoritative_source:'append_only_transition_events',
-    source_event_digest:eventLedgerDigest(events),
+    missing_timestamps_policy:'never_infer_use_unavailable',
+    source_event_digest:eventLedgerDigest(events.map(normalizeTaskEvent)),
+    run_started_at:runStartedAt,
+    terminal_at:terminal && doneTimes.length ? new Date(Math.max(...doneTimes)).toISOString() : null,
+    total_brief_elapsed_seconds:totalSeconds,
+    total_brief_elapsed:durationText(totalSeconds),
     tasks:projection
   };
 }
 
+export function validateKanbanContract({kanban = null, events = [], require_all_tasks = true} = {}) {
+  const errors=[];
+  if (!kanban || typeof kanban !== 'object') return ['kanban_missing'];
+  if (JSON.stringify(kanban.columns)!==JSON.stringify(KANBAN_VISUAL_COLUMNS)) errors.push('kanban_column_order_required');
+  if ((kanban.columns||[]).includes('Current') || Object.prototype.hasOwnProperty.call(kanban,'current_column'))
+    errors.push('kanban_current_column_prohibited');
+  if (kanban.active_task_maps_to!=='WIP') errors.push('kanban_active_maps_to_wip_required');
+  if (kanban.authoritative_source!=='append_only_transition_events') errors.push('kanban_event_timing_source_required');
+  if (kanban.missing_timestamps_policy!=='never_infer_use_unavailable') errors.push('kanban_missing_timestamp_policy_required');
+  const tasks=kanban.tasks||{};
+  if (require_all_tasks) {
+    for(let n=0;n<=29;n++){
+      const id=String(n).padStart(2,'0');
+      if(!tasks[id]) errors.push(`kanban_task_missing:${id}`);
+    }
+  }
+  for(const [id,task] of Object.entries(tasks)){
+    if(!KANBAN_VISUAL_COLUMNS.includes(task.column)) errors.push(`kanban_task_column_invalid:${id}`);
+    if(task.state==='Active' && task.column!=='WIP') errors.push(`kanban_active_task_not_wip:${id}`);
+    if(typeof task.duration!=='string' || !task.duration.trim()) errors.push(`kanban_task_duration_missing:${id}`);
+    if(task.duration==='unavailable' && task.duration_seconds!==null) errors.push(`kanban_unavailable_duration_mismatch:${id}`);
+  }
+  if(typeof kanban.total_brief_elapsed!=='string' || !kanban.total_brief_elapsed.trim())
+    errors.push('kanban_total_elapsed_missing');
+  const expected=eventLedgerDigest(events.map(normalizeTaskEvent));
+  if(kanban.source_event_digest!==expected) errors.push('kanban_projection_stale');
+  return uniq(errors);
+}
+
 export function kanbanProjectionFresh({events = [], kanban = null} = {}) {
-  if (!kanban) return {fresh:false, reason:'kanban_missing', expected_digest:eventLedgerDigest(events), observed_digest:null};
-  const expected = eventLedgerDigest(events), observed = kanban.source_event_digest || null;
-  return {fresh:expected === observed, reason:expected === observed ? 'projection_matches_events' : 'projection_digest_mismatch', expected_digest:expected, observed_digest:observed};
+  if (!kanban) return {fresh:false, reason:'kanban_missing', expected_digest:eventLedgerDigest(events.map(normalizeTaskEvent)), observed_digest:null, errors:['kanban_missing']};
+  const expected = eventLedgerDigest(events.map(normalizeTaskEvent)), observed = kanban.source_event_digest || null;
+  const errors=validateKanbanContract({kanban,events,require_all_tasks:true});
+  const fresh=expected===observed && errors.length===0;
+  return {fresh, reason:fresh ? 'projection_matches_events_and_contract' : (expected!==observed ? 'projection_digest_mismatch' : 'projection_contract_invalid'), expected_digest:expected, observed_digest:observed, errors};
 }
 
 export function supervisorHeartbeat({
