@@ -719,3 +719,14 @@ Problems: 39 · Events: 56
 - **Fix:** Project terminal closeout as Task 29 Done, `full_production`, both authorizations true, and no deferred blocker; reconcile the current pointer identically.
 - **Regression protection:** `_generator/test/production-closeout-terminal-pointer.test.mjs`.
 - **Preservation:** No story, image, candidate, completion identity, Run 4 production SHA, or public reader byte is changed.
+
+## DAB-OPS-20261002-020 — Promotion workflow redeclared its manifest binding
+
+- **Run / task:** `reliable-edition-20261002-run5` / Task 29
+- **Status:** permanently fixed
+- **Observed:** 2026-10-02T19:13:17.963Z
+- **Symptom:** Post-editorial deterministic publication run 37052666870 failed before eligibility checks with `SyntaxError: Identifier 'manifest' has already been declared`.
+- **Root cause:** The merge-time authorization guard added a pre-merge manifest binding to a script that already declared `manifest` after merge.
+- **Fix:** Keep the authorization binding as `manifest`; rename the post-merge dispatch binding to `mergedManifest` and test both references.
+- **Regression protection:** `_generator/test/publication-identity-binding.test.mjs`.
+- **Preservation:** Run 5 remains PUBLIC CLOSED; no reader, candidate, image, lifecycle, or deployment evidence is changed.
