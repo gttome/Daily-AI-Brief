@@ -29,14 +29,14 @@ test('source estimates match the brief and all permanent shared article pages',(
 test('approved article and podcast context is safe and preserves uncertainty',()=>{
  validateReadingSupport(edition);
  const p=renderReadingSupport(edition.podcast,edition.podcast.item_id,edition.brief_date,'Podcast');
- assert.match(p,/Related perspective: practical AI risks/);assert.match(p,/does not substantiate/);assert.match(p,/duration not verified/);
+ assert.match(p,/Related perspective: practical AI risks/);assert.match(p,/does not substantiate/);assert.doesNotMatch(p,/duration not verified|\d+:\d{2} podcast/);
  const a=renderReadingSupport(edition.stories[0],edition.stories[0].story_id,edition.brief_date);assert.match(a,/Update/);assert.match(a,/Agent ensemble/);assert.match(a,/What you’ll learn/);assert.doesNotMatch(a,/Why this coverage label/);
 });
 test('duration and estimated reading time have explicit boundaries',()=>{
  assert.equal(readingMinutes({summary:'word '.repeat(201)}),null);
  assert.equal(readingMinutes({status:'verified',word_count:201,source_url:'https://example.com/article',verified_at:'2026-09-13',method:'main text'}),2);
  assert.match(renderReadingSupport({summary:'word '.repeat(1000)},'unknown','2026-09-13'),/Source reading time unavailable/);
- assert.match(renderReadingSupport({runtime_seconds:429},'new','2026-09-13','Video'),/7:09 video/);
+ assert.equal(renderReadingSupport({runtime_seconds:429},'new','2026-09-13','Video'),'');
  assert.doesNotMatch(renderReadingSupport({summary:'text'},'unknown','2026-09-13'),/coverage-label|Earlier in the Brief/);
  assert.equal(renderReadingSupport({},'old','2026-09-11'),'');
 });
