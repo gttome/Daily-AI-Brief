@@ -30,3 +30,9 @@ test('both autonomous publication promotion paths require protected unattended h
   assert.equal((promotionWorkflow.match(/host\.status!=='READY'/g)||[]).length,2);
   assert.equal((promotionWorkflow.match(/host\.qualification_receipt\?\.blob_sha/g)||[]).length,2);
 });
+
+test('publication promotion keeps pre-merge and post-merge manifests in distinct bindings',()=>{
+  assert.match(promotionWorkflow,/const mergedManifest=JSON\.parse/);
+  assert.match(promotionWorkflow,/date:mergedManifest\.edition_date/);
+  assert.doesNotMatch(promotionWorkflow,/const manifest=JSON\.parse\(Buffer\.from\(manifestResponse/);
+});
