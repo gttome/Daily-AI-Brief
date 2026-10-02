@@ -1,0 +1,16 @@
+{
+  "schema_version": "run-worker-request-v1",
+  "request_key": "1c56337f91291774fc55bb17b3829dc2c773c50517013e826538d8a306d88cdb",
+  "execution_id": "reliable-edition-20261001-run4",
+  "edition_id": "dab-edition-2026-10-01",
+  "branch": "reliable-edition/dab-edition-2026-10-01-run4",
+  "task_id": "15",
+  "capability": "native_chatgpt",
+  "instruction": "Execute exactly one fresh-context post-repair image attempt for only this blocked candidate. Use the sealed single-story specification plus the repair directive, no orchestration/dashboard context, and no people/avatar/humanoid primitives. Capture the generated professional visual and full source lineage; persist either the exact native PNG or a bounded same-visual professional PNG transport representation; verify the final persisted Git bytes and independent read-back identity; review the saved Git asset; and accept_locked or record one exact post-repair failure. Do not use SVG/basic/low-quality fallback and do not alter any previously accepted image or completed upstream task.",
+  "writer_generation": 5,
+  "recovery_attempt": 4,
+  "repair_epoch": 1,
+  "post_repair_attempt": 1,
+  "created_at": "2026-10-02T01:27:14.629Z",
+  "status": "queued"
+}
