@@ -57,7 +57,9 @@ function verifyProtectedQualificationRegistration(registration,bytes){
       const observation=JSON.parse(observationBytes),task=observation.automations?.find(x=>x.id===scheduler.automation_id);
       add(observation.source==='automations.peek'&&task&&task.is_enabled===false&&task.id===scheduler.automation_id&&
         task.conversation_id===scheduler.conversation_id&&task.schedule===scheduler.schedule&&
-        task.last_run_time===scheduler.last_run_time,'registered_qualification_scheduler_observation_mismatch');
+        Number.isFinite(Date.parse(task.last_run_time||''))&&Number.isFinite(Date.parse(scheduler.last_run_time||''))&&
+        Date.parse(task.last_run_time)===Date.parse(scheduler.last_run_time),
+        'registered_qualification_scheduler_observation_mismatch');
     }catch(error){errors.push('registered_qualification_scheduler_observation_unreadable:'+error.message);}
   }
   return {result:errors.length?'BLOCKED':'PASS',errors:[...new Set(errors)]};
