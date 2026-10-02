@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:1b7e3d87fb3401f3e94d826342f24c25ab82171d48e00244ee49c24c6e3e2513`
+Ledger digest: `sha256:c8e998b4db7133782235aef12b0f4e448ec4b02381db111753eb8682efa19c87`
 
-Problems: 36 · Events: 52
+Problems: 39 · Events: 56
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -654,27 +654,57 @@ Problems: 36 · Events: 52
 - **Recurrences:** none recorded
 - **Future validation:** Verify attempt 3 contains only the nine allowlisted labels and no pseudo-text at any scale. | If attempt 4 is needed, simplify only text-bearing primitives while preserving explanatory detail and mechanism clarity. | Promote the prompt/primitive rule to a tested production helper if the next accepted image demonstrates the guard. | Use the same professional native-generation, pretransport review and saved-Git acceptance pattern on the next production run. | Compare next-run owner feedback and attempt counts against Run 5 before simplifying any image-quality control. | Preserve the current high-detail explanatory visual standard even when optimizing speed.
 
-## DAB-OPS-20261002-017 — Exact-bound recovery qualification
+## DAB-OPS-20261002-016 — Run 5 completed all six images, but the Supervisor did not automatically resume after the external image writer released its fence.
 
 - **Status:** mitigated
-- **Observed:** Run 5 had twelve identity-verified recovery files, but qualification remained blocked by two one-pixel immutable receipt metadata errors and scheduler observations captured before one-time completion.
-- **Actual fix:** Preserve the receipts and PNGs; add append-only m07/m08 corrections bound to candidate, attempt, receipt blob, bytes, SHA-256, Git blob and PNG IHDR. Bind the exact completed scheduler observation at commit `a703ebcc21fc05bf3e7f05b7ce2949b6c7109df8` and validate exact automation, conversation, schedule and bounded DTSTART-to-last-run timing.
-- **Fix outcome:** `qualification-receipt-complete-1.json` passed at qualification commit `0e4bded95dc5ede4e6075d21d57e52e1de90fd71`: 12/12 exact files, six saved-Git reviews, owner quality confirmation, zero generation/edit/normalization calls, and 6/6 regression tests.
-- **Production invariants:** immutable receipts and PNGs are never rewritten; metadata corrections are append-only and exact-bound; completed one-time scheduler evidence is identity/time-bound; hashes never replace saved-Git visual review.
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 17
+- **Symptom:** GitHub Supervisor run 37019747940 exited when the scheduled ChatGPT worker replaced writer generation 7 with generation 8. After Tasks 11-16 completed, generation 9 was explicitly released with TASKS_11_THROUGH_16_DONE_HANDOFF_TO_SUPERVISOR, yet Task 17 remained Backlog and no Supervisor was running.
+- **Root cause:** Writer-fence transfer was treated as an action failure, the five-minute cron watchdog was not a sufficiently reliable handoff mechanism, and there was no event-driven consumer of an explicit worker release.
+- **Operational impact:** The run preserved all accepted images and completed evidence but stalled at the Task 16 to Task 17 boundary until status inspection.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Convert fence transfer into a graceful Supervisor yield, immediately restart failed/cancelled Supervisors via workflow_run, add an explicit writer-release handoff workflow for reliable-edition branches, and refresh the protected active-run pointer to Task 17.
+- **Actual fix:** The repair branch adds graceful fence-yield behavior, a failure/cancellation restart trigger, a writer-lease HANDOFF_TO_SUPERVISOR trigger, and a current Run 5 pointer refresh. Protected CI and same-run restart are required before permanent-fix status.
+- **Fix outcome:** Implementation staged for protected CI; no completed Run 5 task or accepted image is modified.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, .github/workflows/run-supervisor-watchdog.yml, .github/workflows/run-supervisor-handoff.yml, data/operations/active-production-run.json
+- **Regression tests:** protected deterministic CI workflow syntax/contracts, same-run restart must acquire a fresh writer generation and advance from Task 17 without touching Tasks 00-16
+- **Production invariants:** writer_fence_transfer_is_a_handoff_not_a_production_failure, explicit_worker_release_resumes_same_execution, completed_tasks_are_never_redone_during_handoff, cron_is_not_the_only_run_liveness_mechanism, active_pointer_matches_durable_run_boundary
+- **Recurrences:** none recorded
+- **Future validation:** Verify merge triggers the existing Run 5 Supervisor through the refreshed active-run pointer. | Verify the same execution acquires a fresh writer generation after released generation 9. | Verify Task 17 is the next task and Tasks 00-16 remain Done. | On the next native-image worker release, verify the writer-handoff workflow resumes the Supervisor without owner/status intervention.
 
-## DAB-OPS-20261002-018 — Publication sequencing race
-
-- **Status:** open
-- **Observed:** PR #364 merged exact head `be96230e8a71825e945748a7aa7b771d354a7bee` at 2026-10-02T18:15:02Z before the protected host registration and Run 5 publication authorization were durable.
-- **Operational impact:** Candidate and accepted image bytes stayed exact and protected CI run 37044705745 succeeded, but qualification-before-publication sequencing was violated.
-- **Recovery:** Preserve the merge and all candidate bytes; complete protected host registration, reconcile authorization, verify the exact deployed SHA independently, and record PUBLIC CLOSED append-only. Do not hide or rewrite the ordering anomaly.
-- **Future validation:** Enforce host READY and same-run `publication_authorized` at merge time, independent of earlier candidate CI.
-
-### Resolution event DAB-OPS-E-000056 — Merge-time gate mitigation
+## DAB-OPS-20261002-017 — Recovery-only scheduled image-host qualification passed after binding exact completed scheduler evidence and exact PNG-header metadata corrections.
 
 - **Status:** mitigated
-- **Mitigated:** 2026-10-02T18:55:42.337Z
-- **Actual fix:** Preserve the historical out-of-order merge, bind completion to publication PR #364 / exact candidate `be96230e8a71825e945748a7aa7b771d354a7bee` / merge `8f3217480edb5eb603d9f9940128cb6589af7946` / protected CI 37044705745, and require both autonomous promotion paths to re-read protected main immediately before merge.
-- **Permanent guard:** The exact active run must still match the candidate manifest and have `image_tasks_authorized=true` plus `publication_authorized=true`; the registered unattended host must be `READY` with a bound qualification receipt. Any mismatch fails closed.
-- **Verification:** Pages run 37050386973 deployed protected main `b57d7be754daaae858b4b05ea26dd806a01a3f6f`; deterministic live validation in run 37050486737 passed before persistence stopped only at this learning reconciliation gate.
-- **Preservation:** Reader content, publication candidate files and all six accepted image bytes remain unchanged.
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 17
+- **Symptom:** Qualification remained blocked after all twelve recovered files were identity-verified because m07/m08 immutable receipts contained raw width metadata one pixel below the PNG IHDR value, and earlier scheduler observations did not prove the same one-time invocation after completion.
+- **Root cause:** The verifier previously required immutable receipt dimensions literally and scheduler evidence was captured before the one-time task had reached its disabled completed state.
+- **Operational impact:** Host READY registration and publication authorization could not truthfully advance despite six accepted_locked finals and exact recovered originals.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Add append-only exact-bound metadata corrections, validate them against immutable receipt blob identity and PNG IHDR bytes, and accept a committed post-completion one-time scheduler observation only when automation, conversation, schedule and bounded DTSTART-to-last-run timing all match.
+- **Actual fix:** The protected verifier and six regression tests validate the two narrow corrections and completed one-time scheduler proof. Receipt qualification-receipt-complete-1.json passed against checkpoint 8b6dcfcedbc9dcb3be1474d23e005b7c14c6f001 with 12/12 files and zero generation, edit or normalization calls.
+- **Fix outcome:** PASS at qualification commit 0e4bded95dc5ede4e6075d21d57e52e1de90fd71; historical BLOCKED receipts and every image byte remain unchanged.
+- **Permanent implementation:** _generator/lib/unattended-image-qualification.mjs, _generator/test/scheduled-image-host.test.mjs, docs/operations/CONTINUOUS-QUALIFICATION-IMAGE-HARNESS.md, docs/operations/run-learning-readiness-contract.json
+- **Regression tests:** exact-bound correction accepts only matching candidate/attempt/receipt/blob/bytes/SHA-256/IHDR dimensions, completed one-time scheduler proof rejects wrong identity, stale observation, pre-DTSTART last run and unbounded delay
+- **Production invariants:** immutable_attempt_receipts_are_never_rewritten, metadata_corrections_are_append_only_and_exact_bound, qualification_requires_six_originals_and_six_finals, completed_one_time_scheduler_proof_is_identity_and_time_bound, hashes_do_not_replace_saved_git_visual_review, recovery_only_qualification_makes_zero_image_mutations
+- **Recurrences:** none recorded
+- **Future validation:** Capture the one-time scheduler observation only after completion. | Continue requiring 12/12 exact file recovery plus quality and policy evidence. | Do not weaken image or scheduler gates to force READY.
+
+## DAB-OPS-20261002-018 — Publication PR #364 merged before the protected unattended-host registration and Run 5 publication authorization became durable.
+
+- **Status:** mitigated
+- **First observed run:** reliable-edition-20261002-run5
+- **Task(s):** 24, 29
+- **Symptom:** PR #364 merged before protected host READY registration and same-run publication authorization were durable.
+- **Root cause:** Both autonomous promotion paths checked policy and candidate CI but did not re-read protected host readiness and same-run authorization immediately before merge.
+- **Operational impact:** The exact candidate and six image bytes remained valid, but the sequencing invariant was violated and publication closure initially lacked its validated event.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Register the now-genuine PASS through protected CI, then reconcile authorization, deployment, live verification and append-only closeout without re-merging or changing candidate content. | Preserve the historical anomaly, register the genuine host qualification, reconcile Run 5 authorization, restore the missing validated publication event, and require exact PR/candidate/merge/CI identities during completion.
+- **Actual fix:** Protected main now contains READY host registration and Run 5 authorization; PR #367 restored the append-only validated event and exact completion identity; both autonomous merge paths now fail closed unless protected main proves the exact active run is image/publication authorized and the qualified host is READY.
+- **Fix outcome:** Permanent guard implemented after Pages deployment 37050386973 and deterministic live validation in run 37050486737 passed; closure may resume from the learning gate without changing reader or image bytes.
+- **Permanent implementation:** docs/operations/unattended-image-host.json, docs/operations/publisher-runbook.md, .github/workflows/post-editorial-kernel.yml, .github/workflows/daily-delta-validation.yml, _records/publication/2026-10-02/reliable-edition-20261002-run5.validated.json, _generator/test/publication-identity-binding.test.mjs
+- **Regression tests:** publication merge gate must read protected host READY and same-run publication_authorized at merge time, both autonomous publication promotion paths require protected same-run publication_authorized and image_tasks_authorized immediately before merge, both autonomous publication promotion paths require protected unattended host READY with bound qualification receipt, completion persistence preserves the exact validated PR, candidate, merge and successful protected CI identities
+- **Production invariants:** never_rewrite_or_hide_out_of_order_publication, candidate_head_and_accepted_image_bytes_remain_immutable, registration_and_authorization_are_required_before_public_closed, merge_time_host_ready_and_same_run_authorization_are_mandatory, completion_identity_never_substitutes_a_later_unrelated_main_pr
+- **Recurrences:** none recorded
+- **Future validation:** Add or verify a merge-time authorization gate independent of earlier CI. | Reconcile this run from durable evidence without repeating Tasks 00-22. | Exercise both autonomous promotion paths with READY/authorized and blocked fixtures. | Reject merge if host status, qualification receipt, active-run identity, or authorization changes after candidate CI. | Bind closure to the validated publication event rather than the most recent main commit PR.
+

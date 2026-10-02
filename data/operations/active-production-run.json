@@ -1,17 +1,17 @@
 {
   "schema_version": "active-production-run-v1",
-  "active": true,
-  "terminal": false,
+  "active": false,
+  "terminal": true,
   "edition_id": "dab-edition-2026-10-02",
   "execution_id": "reliable-edition-20261002-run5",
   "execution_key": "2026-10-02-run5",
   "branch": "reliable-edition/dab-edition-2026-10-02-run5",
-  "updated_at": "2026-10-02T16:27:20.458Z",
+  "updated_at": "2026-10-02T19:03:40.890Z",
   "start_scope": "non_image_production",
   "image_tasks_authorized": false,
   "publication_authorized": false,
   "deferred_blocker": "unattended_image_host_qualification_raw_originals",
   "current_task": "18",
   "current_task_state": "Blocked",
-  "note": "Tasks 00-17 are Done, including six accepted_locked saved-Git-reviewed images and six-image differentiation/accessibility PASS. Task 18 is blocked only until the scheduled host evidence recovery persists and verifies all six genuine originals plus finals and protected CI registers the unattended host READY."
+  "note": "PUBLIC_CLOSED; Task 29 reconciled through protected finalization. Admission for a future run is separate."
 }
