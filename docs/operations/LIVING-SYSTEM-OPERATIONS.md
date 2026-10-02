@@ -1343,3 +1343,8 @@ The production image path is locked to `production-image-execution-v2: generate 
 Task 29 disables run-specific executors, verifies no active writer remains, reconciles transition/Kanban timing, freezes terminal metrics, preserves immutable evidence and public production, and writes a PASS cleanup receipt before the next run may start.
 
 After Task 29, a Run Promotion Review records Keep / Fix / Simplify / Validate-next findings and revises `RUN-LEARNING-READINESS-PLAN.md` and its machine contract when new evidence changes the production baseline. Repeated successful runs may produce an empty Fix section; the goal is convergence to stable operations, not continual process growth.
+
+
+## October 2 — Restore scheduled execution compatibility
+
+[Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) defines the current owner-authorized daily target, mandatory GitHub bootstrap, preserved cost and quality constraints, persistent recovery and event-derived reporting. Reuse the existing controller and keeper identities. A scheduled ChatGPT task proves its own invocation with a committed scheduler observation; it must not manufacture a GitHub workflow ID. This compatibility correction alone does not qualify a host or establish a completed run. Keep the accepted interactive trial and Run 4 closure unchanged.
