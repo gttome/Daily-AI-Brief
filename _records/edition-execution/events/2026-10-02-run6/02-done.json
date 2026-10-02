@@ -1,0 +1,14 @@
+{
+  "task_id": "02",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T23:08:31.000Z",
+  "reason_code": "ONE_WRITER_FENCE_AND_REHEARSAL_HANDOFF_VERIFIED",
+  "operation": "verify_rehearsal_supervisor_and_writer_handoff",
+  "proof": {
+    "receipt": "_records/rehearsal/pre-oct3-20261002-r1/task02-supervision.json",
+    "writer_generation": 3,
+    "supervisor_fail_closed": true,
+    "duplicate_execution_created": false
+  }
+}
