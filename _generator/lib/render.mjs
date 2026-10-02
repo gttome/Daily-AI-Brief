@@ -29,6 +29,7 @@ function label(value) {
 function focusLabel(value,briefDate){
   return value==='agents_non_technical_people'&&briefDate>='2026-09-19'?'Agents for Everyone':FOCUS[value];
 }
+const publicTopics=topics=>(topics||[]).filter(topic=>!/^m\d{2}$/i.test(String(topic).trim()));
 
 function readerSafeItem(item) {
   if (!item || typeof item !== 'object') return item;
@@ -70,7 +71,7 @@ ${renderReadingSupport(story,story.story_id,briefDate)}
 
 **Date:** ${formatDate(story.event_date)}
 
-**Topics:** ${story.topics.join(', ')}
+**Topics:** ${publicTopics(story.topics).join(', ')}
 
 <span class="story-data" data-story-id="${story.story_id}" data-story-url="${story.permanent_url}" hidden></span>
 
