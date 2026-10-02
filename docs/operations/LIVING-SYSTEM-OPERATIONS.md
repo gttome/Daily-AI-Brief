@@ -37,7 +37,9 @@
 > GitHub's returned blob/tree binding to match, and continue. Raw binary reread is optional
 > strengthening, not a hard publication gate when content identity is already proven.
 > Quality rejection advances the bounded attempt; transport uncertainty resumes the same
-> bytes. Do not create per-image workflows, probes, Base64 text handoffs or owner uploads.
+> bytes. Do not create per-image workflows, probes or owner uploads. The only permitted
+> Base64 text handoff is the protected bounded chunk bridge described below; ad hoc text
+> handoffs remain prohibited.
 > For every future publication blocker, perform a **simplification-first assessment** before
 > adding machinery: reuse an existing primitive, remove redundant proof layers, and choose
 > the smallest change that preserves required quality, provenance, safety and PUBLIC CLOSED
@@ -49,6 +51,8 @@
 > The owner approved producer-owned image delivery, deterministic continuation and immutable build-once edition bundles. The new `reliable-edition-v1` profile uses a durable operation journal and stable operation keys. It resumes interrupted capture/review/persistence rather than regenerating after an unknown outcome. The shared image entry point routes this profile to `executeRecoverableImage`; it cannot silently fall back to the volatile executor. The existing connector route and all quality gates remain.
 
 Normal transport remains `connector-first-v1`. Complete payload delivery failures remain `CAPABILITY_BLOCKED_CONNECTOR_BINARY_PAYLOAD_DELIVERY`; all V2 raw/final provenance requirements remain unchanged. A current denial stops that operation; no alternate endpoint may evade it.
+
+When the complete Base64 `create_blob` request is rejected before reaching GitHub, `_tools/image-chunk-bridge.mjs` is the protected executable fallback. A fenced scheduled worker may commit canonical Base64 parts and one manifest bound to execution, branch, image task, approved run-scoped target, byte count, SHA-256, Git blob identity and source writer generation. A later fenced Supervisor generation reconstructs and verifies the exact PNG, writes the approved path, verifies read-back, records an immutable result and deletes the temporary parts. Malformed, mismatched, unsafe-path or future-generation requests fail closed. Transport success is never image acceptance; the saved Git asset must still pass visual review.
 
 A real supported native host and binary-reader adapter are still required; their operational availability is **not established by this code release**. No new full Q is authorized until the actual handoff succeeds. New-profile discovery requests check admission before network work. Legacy scheduled/frozen requests are not silently migrated or disabled. Do not repair terminal Q24/Q25 into PASS. Do not confuse local Git/fixture recovery tests with six new native images or public closure.
 

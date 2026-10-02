@@ -239,6 +239,9 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
   assert.match(y,/assert-fence/);
   const loop=y.slice(y.indexOf('Persistent approximately one-minute supervision loop'));
   assert.ok(loop.indexOf('writer-lease')<loop.indexOf('assert-fence'));
+  assert.ok(loop.indexOf('assert-fence')<loop.indexOf('image-chunk-bridge.mjs consume'));
+  assert.match(loop,/image-transport-requests/);
+  assert.match(loop,/image-transport-results/);
   assert.match(y,/timeout-minutes: 330/);
   assert.doesNotMatch(y,/schedule:/);
 });

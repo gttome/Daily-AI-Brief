@@ -210,6 +210,16 @@ jobs:
               --owner-id "$SUPERVISOR_OWNER" \
               --generation "$WRITER_GENERATION" >/tmp/fence-check.json
 
+            # Consume only complete, hash-bound PNG chunk requests left by a
+            # prior fenced scheduled image worker. Malformed requests fail
+            # closed without stopping the persistent Supervisor.
+            node control/_tools/image-chunk-bridge.mjs consume \
+              --run-root run \
+              --execution-id "$EXECUTION_ID" \
+              --branch "$RUN_BRANCH" \
+              --writer-generation "$WRITER_GENERATION" >/tmp/image-chunk-bridge.json
+            cat /tmp/image-chunk-bridge.json
+
             last_progress="$(
               git -C run log -1 --format=%cI -- \
                 "_records/edition-execution/events/${EXECUTION_KEY}" \
@@ -310,6 +320,11 @@ jobs:
             for dir in worker-requests worker-results repair-epochs; do
               if [ -d "run/_records/edition-execution/$dir" ]; then
                 git -C run add "_records/edition-execution/$dir"
+              fi
+            done
+            for dir in image-transport-requests image-transport-results; do
+              if [ -d "run/_records/edition-execution/$dir" ]; then
+                git -C run add -A "_records/edition-execution/$dir"
               fi
             done
             if ! git -C run diff --cached --quiet; then

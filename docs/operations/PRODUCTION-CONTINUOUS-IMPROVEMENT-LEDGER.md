@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:928d1171dfcd06e2caa06ab4d2dcd3212d2c32d940f2aa232a0a3eb0635878b1`
+Ledger digest: `sha256:3ecd0320c927b64fffdbdd65a200e3c08515c7071f1f5afe5983015d005ff801`
 
-Problems: 32 · Events: 46
+Problems: 33 · Events: 47
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -589,3 +589,14 @@ Problems: 32 · Events: 46
 - **Regression protection:** 38 focused Supervisor, Run 5 unattended, and readiness tests pass locally and in protected deterministic CI run `37014908589`.
 - **Outcome:** PR #352 merged at `32b0efb2f80b6fd4808fa8086fc06472505ac810`. Recovery acquired writer generation 3 for the same Run 5, refreshed the event-derived Kanban through Task 10, and recorded Task 11 Blocked with `generation_started=false`; image and publication authorization remain false.
 - **Next-run validation:** confirm every future same-owner recovery heartbeat preserves or extends the active expiry, and keep the image route blocked without retrying it until an authorized unattended native host is proven.
+
+## DAB-OPS-20261002-012 — Documented PNG chunk fallback was not executable
+
+- **Status:** mitigated; protected CI and live proof pending
+- **Run:** reliable-edition-20261002-run5
+- **Task:** 11
+- **Symptom:** scheduled m01 attempt 1 proved native generation and exact returned PNG access, but its complete binary `create_blob` handoff was rejected before GitHub. No saved Git asset existed for review. The candidate also failed the exact-visible-text gate and was not accepted.
+- **Root cause:** the bounded Base64 chunk bridge existed only in contracts and operating prose; no protected consumer reconstructed, identity-checked, persisted and cleaned the chunks.
+- **Repair:** add an executable chunk consumer to the fenced Supervisor loop. It validates execution, branch, task, run-scoped target, writer generation, byte count, SHA-256, Git blob identity, PNG header/dimensions and read-back before removing temporary chunks. Transport never self-certifies visual quality.
+- **Regression protection:** `_generator/test/image-chunk-bridge.test.mjs` covers successful exact reconstruction/cleanup, payload mismatch, unsafe paths and future-generation requests; the Supervisor workflow test requires consumption after fence assertion.
+- **Next-run validation:** protected CI must pass, then one fresh scheduled m01 attempt may use direct `create_blob` or the bounded chunk request. Review the saved Git PNG before acceptance; publication remains blocked.
