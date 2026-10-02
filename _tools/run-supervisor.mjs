@@ -75,12 +75,18 @@ function currentTaskFromProjection(tasks){
 function repairEpochState(runRoot,executionId,taskId){
   const safeExec=executionId.replace(/[^A-Za-z0-9._-]/g,'_');
   const file=path.join(runRoot,'_records/edition-execution/repair-epochs',safeExec,taskId+'.json');
-  if(!fs.existsSync(file)) return {epochs_completed:0,file,value:null};
+  if(!fs.existsSync(file)) return {epochs_completed:0,repair_ready:false,post_repair_attempts:0,file,value:null};
   try{
     const value=JSON.parse(fs.readFileSync(file,'utf8'));
     const epochs=Number(value.epochs_completed||value.repair_epoch||0);
-    return {epochs_completed:Number.isFinite(epochs)?Math.max(0,epochs):0,file,value};
-  }catch{return {epochs_completed:0,file,value:null};}
+    const post=Number(value.post_repair_attempts||0);
+    return {
+      epochs_completed:Number.isFinite(epochs)?Math.max(0,epochs):0,
+      repair_ready:value.status==='PASS' && value.required_proofs_passed===true,
+      post_repair_attempts:Number.isFinite(post)?Math.max(0,post):0,
+      file,value
+    };
+  }catch{return {epochs_completed:0,repair_ready:false,post_repair_attempts:0,file,value:null};}
 }
 
 function workerState(runRoot,executionId){
@@ -181,7 +187,8 @@ try{
     const decision=taskRecoveryDecision({
       classification,taskContract,
       attempts:Number(args.attempts||0),recoveryAttempts:imageOverride.recovery_attempts,
-      repairEpochs:repairState.epochs_completed
+      repairEpochs:repairState.epochs_completed,repairReady:repairState.repair_ready,
+      postRepairAttempts:repairState.post_repair_attempts
     });
     let request=null;
     if(decision.action==='engineering_repair'){
@@ -190,6 +197,16 @@ try{
         task_id:taskId,instruction:decision.instruction,
         writer_generation:Number(args['writer-generation']),
         repair_epoch:decision.repair_epoch,required_proofs:decision.required_proofs,
+        created_at:args.now||new Date().toISOString()
+      });
+    }else if(decision.action==='post_repair_attempt'){
+      request=buildWorkerRequest({
+        execution_id:args['execution-id'],edition_id:args['edition-id'],branch:args.branch,
+        task_id:taskId,capability:decision.capability,instruction:decision.instruction,
+        writer_generation:Number(args['writer-generation']),
+        recovery_attempt:imageOverride.recovery_attempts,
+        repair_epoch:decision.repair_epoch,
+        post_repair_attempt:decision.post_repair_attempt,
         created_at:args.now||new Date().toISOString()
       });
     }else if(['dispatch_normal','first_recovery','alternate_recovery'].includes(decision.action)){
