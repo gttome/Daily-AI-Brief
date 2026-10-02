@@ -34,6 +34,7 @@ export function validateEditorialKernel(kernel){
   if(!str(story.candidate_id)||candidates.has(story.candidate_id))errors.push(`unique_candidate_id_required:${index+1}`);else candidates.add(story.candidate_id);
   if(story.agent_skill===true)agentSkill++;
   if(!Array.isArray(story.topic_labels)||story.topic_labels.length<1)errors.push(`topic_labels_required:${index+1}`);
+   if(kernel.brief_date>='2026-10-02'&&(story.topic_labels||[]).some(topic=>/^m\d{2}$/i.test(String(topic).trim())))errors.push(`internal_candidate_id_not_reader_topic:${index+1}`);
   if(!str(story.source_url))errors.push(`source_url_required:${index+1}`);else{try{normalizeUrl(story.source_url);}catch{errors.push(`valid_source_url_required:${index+1}`);}}
  }
  for(const focus of STORY_FOCUSES)if(focusCounts[focus]!==2)errors.push(`allocation_must_be_two:${focus}`);

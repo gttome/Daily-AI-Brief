@@ -1394,3 +1394,7 @@ The Brief **Coverage period** is the calendar-date range of the content actually
 Video and podcast duration is displayed once. Video metadata uses **Duration**, not **Runtime**. Podcast duration contains only the verified duration; policy text such as “No episode time limit” is not reader copy.
 
 The Emerging AI Watchlist must make recent removals or archives visible. A recently archived/dropped topic is shown with its recorded reason, and the delta path must fail rather than silently delete a topic without an archive reason. Older archived topics remain available in durable Watchlist history but do not clutter every daily summary.
+
+## October 2, 2026 — Reader topic-label contract
+
+Article **Topics** are reader-facing semantic labels only. Internal candidate identifiers such as `m01` through `m08` are operational metadata and must never be placed in, rendered from, indexed as, or displayed as article topics. Candidate identity remains in internal story/run records; public topic labels must describe the subject matter.

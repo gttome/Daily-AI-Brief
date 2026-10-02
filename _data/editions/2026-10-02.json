@@ -20,7 +20,6 @@
       "headline": "Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space",
       "event_date": "2026-09-30",
       "topics": [
-        "m01",
         "technical ai engineering"
       ],
       "companies": [
@@ -71,7 +70,6 @@
       "headline": "Dogwood moves agent governance into the action sequence",
       "event_date": "2026-10-01",
       "topics": [
-        "m02",
         "technical ai engineering"
       ],
       "companies": [
@@ -122,7 +120,6 @@
       "headline": "Stack Internal makes enterprise knowledge provenance machine-readable for AI",
       "event_date": "2026-09-30",
       "topics": [
-        "m04",
         "applied genai knowledge workers"
       ],
       "companies": [
@@ -173,7 +170,6 @@
       "headline": "Slack MCP Server turns Lists and records into agent-operable workflow objects",
       "event_date": "2026-09-30",
       "topics": [
-        "m05",
         "applied genai knowledge workers"
       ],
       "companies": [
@@ -224,7 +220,6 @@
       "headline": "Gemini Skills turn repeated prompting into reusable work modules",
       "event_date": "2026-09-30",
       "topics": [
-        "m07",
         "agents non technical people"
       ],
       "companies": [
@@ -275,7 +270,6 @@
       "headline": "Meta Muse brings skills, connectors, and approval boundaries to small-business agents",
       "event_date": "2026-09-29",
       "topics": [
-        "m08",
         "agents non technical people"
       ],
       "companies": [

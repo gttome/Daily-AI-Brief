@@ -120,7 +120,7 @@ const stories=selection.selected.map(s=>{
   focus:s.focus,
   headline:copy[id].headline,
   event_date:c.published_date,
-  topics:[id,s.focus.replaceAll('_',' ')],
+  topics:[s.focus.replaceAll('_',' ')],
   companies:[c.publisher],
   image:{path:img.path,public_url:'https://gttome.github.io/Daily-AI-Brief/'+img.path+'?v='+cache,alt:review.alt,width:1200,height:630,kind:'editorial_explainer',cache_key:cache},
   summary:copy[id].summary,

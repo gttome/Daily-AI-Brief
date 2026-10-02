@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:cd7df51718c1fc97671f39d4e9ca88872f9eb4dabbb2a74f754d8439be1fc5ac`
+Ledger digest: `sha256:42f5df4e69f678cf83bc42adb7c59137705b4f927f0c89fda7d58eb76d9a1528`
 
-Problems: 43 · Events: 60
+Problems: 44 · Events: 61
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -766,3 +766,16 @@ Problems: 43 · Events: 60
 - **Production invariants:** book_bridge_copy_is_reader_facing_not_operational, coverage_period_is_actual_included_content_date_range, media_duration_is_displayed_once, video_duration_label_is_duration, podcast_duration_contains_no_episode_limit_policy_copy, recent_watchlist_archives_are_reader_visible_with_reason, watchlist_topics_never_disappear_without_recorded_reason, post_publication_reader_corrections_preserve_story_media_and_image_identity
 - **Recurrences:** none recorded
 - **Future validation:** Verify the next generated brief contains no run/review/selection language inside book bridges. | Verify Coverage period equals the minimum and maximum publication dates of included articles, videos, and podcasts. | Verify video and podcast duration appears once per item and video uses Duration. | Verify any newly archived or removed Watchlist topic is surfaced with a reason.
+
+## DAB-OPS-20261002-023 — Internal candidate IDs appeared in reader-facing article Topics
+
+- **Status:** permanently fixed
+- **Symptom:** October 2 articles displayed Topics such as 'm01, technical ai engineering' even though m01–m08 are internal candidate identifiers.
+- **Root cause:** The Run 5 finalizer copied candidate_id into the public topics array, while rendering and final validation did not distinguish internal candidate identifiers from reader-facing topic labels.
+- **Operational impact:** Reader-facing metadata exposed implementation identifiers that add no reader value.
+- **Actual fix:** Canonical October 2 topics were cleaned; renderers defensively filter mNN IDs; editorial-kernel and final-edition validation reject mNN topic labels from October 2 forward; the Run 5 finalizer source is corrected; regression tests cover Brief and permanent story pages.
+- **Fix outcome:** Internal candidate IDs are no longer reader-facing topic labels and future publication attempts fail closed if they re-enter canonical topic data.
+- **Permanent implementation:** _generator/lib/editorial-kernel.mjs, _generator/lib/validate.mjs, _generator/lib/render.mjs, _generator/lib/reader.mjs, _tools/run5-post-image-finalizer.mjs
+- **Regression tests:** _generator/test/editorial-kernel.test.mjs, _generator/test/reader-copy-contract.test.mjs
+- **Production invariants:** candidate_id_is_internal_metadata_only, reader_topics_are_semantic_reader_facing_labels, mNN_candidate_ids_never_render_as_article_topics
+- **Future validation:** Verify all six article Topics fields contain only reader-facing semantic topics. | Reject any editorial kernel or final edition whose article topics contain an mNN candidate ID.

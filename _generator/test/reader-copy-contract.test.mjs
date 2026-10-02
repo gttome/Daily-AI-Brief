@@ -48,3 +48,14 @@ test('permanent media pages use one explicit Duration field',()=>{
   assert.match(podcast2,/\*\*Duration:\*\* 13:00/);
   for(const page of [podcast1,podcast2])assert.doesNotMatch(page,/\d+:\d{2} podcast<\/span>|No episode time limit/);
 });
+
+test('article Topics never expose internal candidate IDs',()=>{
+  const body=renderBody(edition,{watchlist});
+  assert.doesNotMatch(body,/\*\*Topics:\*\*\s*m\d{2}(?:,|\s|$)/i);
+  const files=readerFoundationFiles(edition,root);
+  for(const story of edition.stories){
+    const page=files.get(`stories/${edition.brief_date}/${story.slug}.md`);
+    assert.doesNotMatch(page,/\*\*Topics:\*\*\s*m\d{2}(?:,|\s|$)/i);
+  }
+});
+

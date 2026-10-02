@@ -21,7 +21,7 @@ reader_release: true
 
 **Focus:** Technical AI Engineering  
 **Date:** October 1, 2026  
-**Topics:** m02, technical ai engineering  
+**Topics:** technical ai engineering  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 

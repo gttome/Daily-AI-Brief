@@ -74,6 +74,7 @@ export function validateEdition(edition) {
     ids.add(story.story_id);
     slugs.add(story.slug);
     if (!Array.isArray(story.topics) || !story.topics.length) errors.push(`${label}.topics is required`);
+    if(edition.brief_date>='2026-10-02'&&(story.topics||[]).some(topic=>/^m\d{2}$/i.test(String(topic).trim())))errors.push(`${label}.topics cannot contain internal candidate IDs`);
     if (!story.image || !story.image.path?.startsWith(`briefs/images/${edition.brief_date}/`)) errors.push(`${label}.image path must match brief_date`);
     requireText(story.image?.alt, `${label}.image.alt`);
     try { new URL(story.image?.public_url); } catch { errors.push(`${label}.image.public_url is invalid`); }

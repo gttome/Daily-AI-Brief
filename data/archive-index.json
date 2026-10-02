@@ -11,7 +11,6 @@
       "url": "/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/",
       "focus": "technical_ai_engineering",
       "topics": [
-        "m01",
         "technical ai engineering"
       ],
       "companies": [
@@ -34,7 +33,6 @@
       "url": "/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/",
       "focus": "technical_ai_engineering",
       "topics": [
-        "m02",
         "technical ai engineering"
       ],
       "companies": [
@@ -57,7 +55,6 @@
       "url": "/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "m04",
         "applied genai knowledge workers"
       ],
       "companies": [
@@ -79,7 +76,6 @@
       "url": "/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "m05",
         "applied genai knowledge workers"
       ],
       "companies": [
@@ -101,7 +97,6 @@
       "url": "/stories/2026-10-02/gemini-skills-reusable-work-modules/",
       "focus": "agents_non_technical_people",
       "topics": [
-        "m07",
         "agents non technical people"
       ],
       "companies": [
@@ -123,7 +118,6 @@
       "url": "/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/",
       "focus": "agents_non_technical_people",
       "topics": [
-        "m08",
         "agents non technical people"
       ],
       "companies": [
@@ -230,7 +224,6 @@
       "url": "/stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws/",
       "focus": "technical_ai_engineering",
       "topics": [
-        "m03",
         "technical ai engineering"
       ],
       "companies": [
@@ -250,7 +243,6 @@
       "url": "/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/",
       "focus": "technical_ai_engineering",
       "topics": [
-        "m01",
         "technical ai engineering"
       ],
       "companies": [
@@ -274,7 +266,6 @@
       "url": "/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "m04",
         "applied genai knowledge workers"
       ],
       "companies": [
@@ -297,7 +288,6 @@
       "url": "/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/",
       "focus": "applied_genai_knowledge_workers",
       "topics": [
-        "m05",
         "applied genai knowledge workers"
       ],
       "companies": [
@@ -320,7 +310,6 @@
       "url": "/stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/",
       "focus": "agents_non_technical_people",
       "topics": [
-        "m08",
         "agents non technical people"
       ],
       "companies": [
@@ -342,7 +331,6 @@
       "url": "/stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/",
       "focus": "agents_non_technical_people",
       "topics": [
-        "m07",
         "agents non technical people"
       ],
       "companies": [
