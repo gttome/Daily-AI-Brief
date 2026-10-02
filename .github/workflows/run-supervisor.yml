@@ -36,6 +36,7 @@ on:
 permissions:
   contents: write
   actions: read
+  pull-requests: read
 
 concurrency:
   group: daily-ai-brief-run-supervisor
@@ -217,12 +218,43 @@ jobs:
                 --run-root run \
                 --request /tmp/worker-request.json >/tmp/enqueue-result.json
               cat /tmp/enqueue-result.json
+
+              request_kind="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_kind||''))")"
+              request_capability="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.capability||''))")"
+              if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
+                export GH_TOKEN="${{ github.token }}"
+                control_sha="$(git -C control rev-parse HEAD)"
+                repair_pr="$(gh api "repos/${GITHUB_REPOSITORY}/commits/${control_sha}/pulls" --jq '.[0].number // 0')"
+                if [ "$repair_pr" -le 0 ]; then
+                  echo "No protected pull request evidence found for repository-repair control SHA $control_sha."
+                  exit 1
+                fi
+                repair_head="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${repair_pr}" --jq '.head.sha')"
+                repair_ci_run="$(gh api "repos/${GITHUB_REPOSITORY}/actions/runs?head_sha=${repair_head}&per_page=100" \
+                  --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
+                if [ "$repair_ci_run" -le 0 ]; then
+                  echo "No successful protected CI found for repository-repair PR #$repair_pr head $repair_head."
+                  exit 1
+                fi
+                node control/_tools/repository-repair-consumer.mjs consume \
+                  --run-root run \
+                  --control-root control \
+                  --execution-key "$EXECUTION_KEY" \
+                  --request /tmp/worker-request.json \
+                  --writer-generation "$WRITER_GENERATION" \
+                  --protected-ci-run-id "$repair_ci_run" \
+                  --protected-ci-sha "$control_sha" \
+                  --protected-ci-conclusion success >/tmp/repository-repair-result.json
+                cat /tmp/repository-repair-result.json
+              fi
             fi
 
             git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
-            if [ -d "run/_records/edition-execution/worker-requests" ]; then
-              git -C run add "_records/edition-execution/worker-requests"
-            fi
+            for dir in worker-requests worker-results repair-epochs; do
+              if [ -d "run/_records/edition-execution/$dir" ]; then
+                git -C run add "_records/edition-execution/$dir"
+              fi
+            done
             if ! git -C run diff --cached --quiet; then
               git -C run commit -m "Supervisor reconcile ${EXECUTION_ID} loop ${loop}"
               if ! git -C run push origin "HEAD:$RUN_BRANCH"; then
