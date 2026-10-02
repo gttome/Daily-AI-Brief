@@ -1376,3 +1376,11 @@ Run 5 exposed three additional control lessons during Task 11. These are product
 4. **Transport and visual quality remain independent.** PR #354 permanently repaired the previously non-executable bounded PNG chunk fallback. That transport may be exercised only for a visually valid candidate. Successful byte reconstruction/read-back cannot certify image quality, and a visual rejection must not be counted as a transport failure.
 
 5. **Learning is part of the run.** Every material incident must preserve symptom, root cause, operational/timing impact (or explicit unknown), attempted fix, actual fix or pending state, outcome, permanent implementation, regression protection or pending state, production invariant, run evidence and next-run validation. Advancing the run without these records is incomplete recovery.
+
+## October 2, 2026 — Kanban display and timing contract
+
+Production Kanban reporting uses exactly three workflow columns in this left-to-right order: **Backlog → WIP → Done**. Do not add a separate **Current** column; the currently executing task is represented in **WIP**.
+
+Every Task 00–29 card must display its duration. A task with no safely derivable duration must display **unavailable** rather than a state word such as “Done,” “accepted,” or “queued” in the duration field.
+
+Every Kanban must also display the **total Brief elapsed time**. While a run is nonterminal, this is live elapsed time from the run start through the board observation timestamp. After terminal completion, freeze the total from run start through terminal completion. Timing must be derived from the same append-only transition evidence used for task state.
