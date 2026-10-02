@@ -20,6 +20,7 @@ const label = value => String(value || 'unspecified').split('_').map(word => wor
 const focusLabelFor=(focus,date)=>focus==='agents_non_technical_people'&&date>='2026-09-19'?'Agents for Everyone':(focusLabels[focus]||label(focus));
 const yamlString = value => JSON.stringify(String(value || ''));
 const xml = value => String(value || '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&apos;');
+const publicTopics=topics=>(topics||[]).filter(topic=>!/^m\d{2}$/i.test(String(topic).trim()));
 
 export function renderInlineFeedback(story, compact = true) {
   if (story.brief_date >= '2026-09-10') return renderStarFeedback(story);
@@ -59,7 +60,7 @@ function canonicalStory(story, edition) {
     permanent_url: story.permanent_url,
     event_date: story.event_date,
     focus: story.focus,
-    topics: story.topics,
+    topics: publicTopics(story.topics),
     companies: story.companies || [story.source.organization].filter(Boolean),
     normalized_urls: [story.source.normalized_url],
     ...(story.freshness?.fallback_band?{freshness:story.freshness}:{}),
@@ -143,7 +144,7 @@ ${readingSupport?readingSupport+"\n\n":""}<span class="story-data" data-story-id
 
 **Focus:** ${focusLabelFor(story.focus,story.brief_date)}  
 **Date:** ${formatDate(story.event_date)}  
-${mediaDuration?`**Duration:** ${mediaDuration}  \n`:''}**Topics:** ${(story.topics || []).join(', ')}  
+${mediaDuration?`**Duration:** ${mediaDuration}  \n`:''}**Topics:** ${publicTopics(story.topics).join(', ')}  
 **Evidence:** ${label(story.evidence_type)}  
 **Availability:** ${label(story.availability_status)}
 
