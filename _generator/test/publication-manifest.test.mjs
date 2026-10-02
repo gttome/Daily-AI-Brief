@@ -12,21 +12,7 @@ test('current manifest binds completed artifacts without rework',()=>{
  const manifest=load();
  const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
  assert.equal(manifest.staging_ref,handoff.staging_ref);
- if(handoff.execution_mode==='production')assert.ok(manifest.staging_ref===`editorial-handoff/production/${manifest.edition_date}`||new RegExp(`^reliable-edition/dab-edition-${manifest.edition_date}(?:-run\\d+)?import test from 'node:test';
-import assert from 'node:assert/strict';
-import fs from 'node:fs';
-import {
- PUBLICATION_MANIFEST_PATH,publicationManifestErrors,validatePublicationManifest
-} from '../lib/publication-manifest.mjs';
-
-const root=process.cwd();
-const load=()=>JSON.parse(fs.readFileSync(PUBLICATION_MANIFEST_PATH,'utf8'));
-
-test('current manifest binds completed artifacts without rework',()=>{
- const manifest=load();
- const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
- assert.equal(manifest.staging_ref,handoff.staging_ref);
- ).test(manifest.staging_ref));
+ if(handoff.execution_mode==='production')assert.ok(manifest.staging_ref===`editorial-handoff/production/${manifest.edition_date}`||new RegExp(`^reliable-edition/dab-edition-${manifest.edition_date}(?:-run\\d+)?$`).test(manifest.staging_ref));
  else {
   assert.equal(handoff.execution_mode,'qualification_nonproduction');
   assert.equal(manifest.staging_ref.startsWith('editorial-handoff/qualification/'),true);
