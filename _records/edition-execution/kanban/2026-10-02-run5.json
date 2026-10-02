@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261002-run5",
   "edition_id": "dab-edition-2026-10-02",
-  "observed_at": "2026-10-02T12:57:36.273Z",
+  "observed_at": "2026-10-02T13:13:53.148Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:8f98e7f54829f9950e6860482dc70dd75d23a00be20e9b086bd8cbd1e0696ba1",
+  "source_event_digest": "sha256:40f26c6c4a0e005b259fe1d5f5b3768e5695bd6ff2e2f8235e0c14337e3fc71c",
   "tasks": {
     "10": {
       "id": "10",
@@ -297,14 +297,14 @@
     "04": {
       "id": "04",
       "title": "Verify evidence and freshness fallback",
-      "state": "Active",
+      "state": "Done",
       "entered_backlog_at": "2026-10-02T12:57:28.656Z",
       "active_started_at": "2026-10-02T12:57:28.656Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T13:06:23Z",
+      "cycle_seconds": 534.344,
+      "active_seconds": 534.344
     },
     "05": {
       "id": "05",
