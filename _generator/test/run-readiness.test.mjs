@@ -5,6 +5,7 @@ import {
   PROVEN_IMAGE_PATH,
   validateRunReadiness,
   assertRunReady,
+  assertImageTasksReady,
   staleActiveDecision,
   terminalCleanupReceipt,
   buildPromotionReview
@@ -63,7 +64,11 @@ test('evidence-based readiness passes and authorizes start',()=>{
   const receipt=validateRunReadiness(goodInput());
   assert.equal(receipt.result,'PASS');
   assert.equal(receipt.start_authorized,true);
+  assert.equal(receipt.image_tasks_authorized,true);
+  assert.equal(receipt.publication_authorized,true);
+  assert.equal(receipt.start_scope,'full_production');
   assert.equal(assertRunReady(receipt),true);
+  assert.equal(assertImageTasksReady(receipt),true);
 });
 
 test('missing Supervisor, ledger proof and small-PNG route fail readiness',()=>{
@@ -134,4 +139,29 @@ test('verified bounded same-visual PNG transport is an approved professional per
   assert.equal(receipt.result,'PASS');
 });
 
-test('interactive image trial cannot authorize unattended production',()=>{const x=goodInput();x.image_pipeline.host_admission.trigger='active_chat';assert.ok(validateRunReadiness(x).errors.includes('proven_scheduled_image_host_required'));delete x.image_pipeline.host_admission;assert.ok(validateRunReadiness(x).errors.includes('proven_scheduled_image_host_required'));});
+test('missing or interactive image host blocks image/publication only, not non-image run start',()=>{
+  const x=goodInput();
+  x.image_pipeline.host_admission.trigger='active_chat';
+  let receipt=validateRunReadiness(x);
+  assert.equal(receipt.result,'PASS');
+  assert.equal(receipt.start_authorized,true);
+  assert.equal(receipt.start_scope,'non_image_production');
+  assert.equal(receipt.image_tasks_authorized,false);
+  assert.equal(receipt.publication_authorized,false);
+  assert.ok(receipt.deferred_blockers.includes('proven_scheduled_image_host_required'));
+  assert.throws(()=>assertImageTasksReady(receipt),/IMAGE_TASKS_NOT_AUTHORIZED/);
+  delete x.image_pipeline.host_admission;
+  receipt=validateRunReadiness(x);
+  assert.equal(receipt.start_authorized,true);
+  assert.equal(receipt.image_tasks_authorized,false);
+});
+
+test('cost-boundary violations still block all run start',()=>{
+  const x=goodInput();
+  x.cost_boundary.codex=true;
+  const receipt=validateRunReadiness(x);
+  assert.equal(receipt.result,'FAIL');
+  assert.equal(receipt.start_authorized,false);
+  assert.equal(receipt.start_scope,'blocked');
+  assert.ok(receipt.errors.includes('cost_boundary_violation:codex'));
+});
