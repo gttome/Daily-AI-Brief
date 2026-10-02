@@ -792,3 +792,13 @@ This addendum projects new permanent-fix events `DAB-OPS-E-000062` through `DAB-
 
 The next production run remains unauthorized until the protected non-production rehearsal receipt passes. Run 5 remains immutable and closed.
 
+## Pre-next-run bounded rehearsal PASS — October 2, 2026
+
+Canonical events `DAB-OPS-E-000067` through `DAB-OPS-E-000069` close the live verification of existing problems 010, 016 and 021. These are not new production failures.
+
+- **Problem 010:** the enabled hourly Recovery automation actually consumed the synthetic Task 11 request; request generation 1 was provenance only, current generation 2 was refreshed to authority generation 3, and all image/edit/publication/Run-5 mutation counters remained zero.
+- **Problem 016:** live writer-handoff attempt 1 was blocked by GitHub CLI repository inference from the workspace root. The exact repair added repository-explicit dispatch; protected CI passed; live attempt 2 succeeded as writer-handoff run `37071330741` and automatically dispatched same-execution Supervisor run `37071366751`, which exited at the terminal boundary without acquiring a writer or redoing work.
+- **Problem 021:** the executable Kanban contract passed with exactly Backlog → WIP → Done, all Tasks 00–29, required durations/`unavailable`, mandatory total elapsed and freshness enforcement.
+
+The authoritative gate is `_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json`. It authorizes the next production run only after the closeout change passes protected deterministic CI and is merged to `main`. Run 5 remains immutable and independently `PUBLIC_CLOSED`.
+
