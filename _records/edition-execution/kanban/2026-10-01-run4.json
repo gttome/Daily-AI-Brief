@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261001-run4",
   "edition_id": "dab-edition-2026-10-01",
-  "observed_at": "2026-10-02T03:19:02.931Z",
+  "observed_at": "2026-10-02T03:29:13.710Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:1c2576557ca4f1c9c8d6475738c6c5db8df393593a0052595115aa830c531916",
+  "source_event_digest": "sha256:f521d7c2275e4a695f55ea81b1444e495e703c0eee5d7fc78b7767bfb7d70240",
   "tasks": {
     "10": {
       "id": "10",
@@ -153,21 +153,21 @@
     "22": {
       "id": "22",
       "title": "Open publication PR",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "entered_backlog_at": "2026-10-02T03:19:02.891Z",
+      "active_started_at": "2026-10-02T03:19:02.891Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T03:19:24Z",
+      "cycle_seconds": 21.109,
+      "active_seconds": 21.109
     },
     "23": {
       "id": "23",
       "title": "Pass protected CI on exact candidate",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "entered_backlog_at": "2026-10-02T03:25:42Z",
+      "active_started_at": "2026-10-02T03:25:42Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
