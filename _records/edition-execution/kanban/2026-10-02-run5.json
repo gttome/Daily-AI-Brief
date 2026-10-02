@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261002-run5",
   "edition_id": "dab-edition-2026-10-02",
-  "observed_at": "2026-10-02T13:37:58.082Z",
+  "observed_at": "2026-10-02T13:38:00.130Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:7df73b14ce71ed52e679785a4319c43b04cf5be873eba371ec5c6df189bbb3bf",
+  "source_event_digest": "sha256:b524388127513a27f0ab728759d5ec7bf206a5d1d6302a2be956c4fdc909b287",
   "tasks": {
     "10": {
       "id": "10",
@@ -21,11 +21,11 @@
     "11": {
       "id": "11",
       "title": "Generate, persist, review and accept image 1",
-      "state": "Backlog",
+      "state": "Blocked",
       "entered_backlog_at": null,
       "active_started_at": null,
       "review_started_at": null,
-      "blocked_started_at": null,
+      "blocked_started_at": "2026-10-02T13:37:58.243197+00:00",
       "done_at": null,
       "cycle_seconds": null,
       "active_seconds": null
