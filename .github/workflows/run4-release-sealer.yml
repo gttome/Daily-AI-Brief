@@ -1,0 +1,53 @@
+name: Seal and qualify active Run 4
+on:
+  push:
+    branches: [main]
+    paths:
+      - _tools/run4-release-sealer.mjs
+      - .github/workflows/run4-release-sealer.yml
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: run4-release-sealer
+  cancel-in-progress: false
+jobs:
+  seal:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out protected control plane
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: main
+          path: control
+          fetch-depth: 0
+      - name: Check out existing Run 4 branch
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+        with:
+          ref: reliable-edition/dab-edition-2026-10-01-run4
+          path: run
+          fetch-depth: 0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: '20'
+      - name: Merge protected main without rebasing
+        run: |
+          set -euo pipefail
+          git -C run config user.name "github-actions[bot]"
+          git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
+          git -C run fetch --no-tags origin main
+          if ! git -C run merge-base --is-ancestor origin/main HEAD; then
+            git -C run merge --no-edit origin/main
+          fi
+      - name: Seal current candidate and run production qualification
+        env:
+          RUN_CANDIDATE_SHA: 466441460b5a01530980a815bc907d5ace8916ae
+        run: node run/_tools/run4-release-sealer.mjs run
+      - name: Commit sealed release evidence to existing Run 4 branch
+        run: |
+          set -euo pipefail
+          git -C run add -A
+          if ! git -C run diff --cached --quiet; then
+            git -C run commit -m "Seal and qualify Run 4 October 1 release candidate"
+          fi
+          git -C run push origin HEAD:reliable-edition/dab-edition-2026-10-01-run4
