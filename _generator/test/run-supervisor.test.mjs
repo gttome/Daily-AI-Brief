@@ -155,6 +155,30 @@ test('retry exhaustion enters one engineering repair epoch instead of dead-endin
   assert.equal(after.action,'terminal_failure');
 });
 
+test('successful repair epoch authorizes exactly one post-repair attempt',()=>{
+  const c=contract();
+  c.tasks['15'].retry_limit=4;
+  c.tasks['15'].engineering_repair={
+    enabled:true,max_epochs:1,capability:'repository',
+    instruction:'Repair image mechanism before another attempt.',
+    required_proofs:['proof-a'],
+    post_repair_attempt_limit:1,
+    post_repair_operation:'Run one fresh post-repair image attempt.'
+  };
+  const classification=classifyRunHealth({task_state:'Blocked',blocked_recoverable:true});
+  const allowed=taskRecoveryDecision({
+    classification,taskContract:c.tasks['15'],recoveryAttempts:4,
+    repairEpochs:1,repairReady:true,postRepairAttempts:0
+  });
+  assert.equal(allowed.action,'post_repair_attempt');
+  assert.equal(allowed.post_repair_attempt,1);
+  const exhausted=taskRecoveryDecision({
+    classification,taskContract:c.tasks['15'],recoveryAttempts:4,
+    repairEpochs:1,repairReady:true,postRepairAttempts:1
+  });
+  assert.equal(exhausted.action,'terminal_failure');
+});
+
 test('engineering repair request is deterministic and bound to exact run/task/epoch',()=>{
   const args={
     execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',task_id:'15',
