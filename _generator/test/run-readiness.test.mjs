@@ -18,11 +18,15 @@ function goodInput(){
     edition_date:'2026-10-02',
     edition_id:'dab-edition-2026-10-02',
     execution_id:'reliable-edition-20261002-run5',
-    latest_successful_run:{terminal_state:'PUBLIC_CLOSED',closed_at:'2026-10-01T23:00:00Z'},
+    latest_successful_run:{terminal_state:'PUBLIC_CLOSED',closed_at:'2026-10-01T23:00:00Z',run_id:'run4'},
     previous_run_cleanup:{result:'PASS'},
     operational_learning:{
       result:'PASS',ledger_digest:'sha256:'+'a'.repeat(64),event_count:20,problem_count:10,
       required_invariants:['run-supervisor-v2'],unresolved_risks:[]
+    },
+    system_changes:{
+      result:'PASS',ledger_digest:'sha256:'+'c'.repeat(64),change_count:13,
+      last_known_good_run_id:'run4',changes_since_last_known_good:['DAB-CHG-20261002-001']
     },
     control_plane:{
       one_writer:true,controller_available:true,run_supervisor_enabled:true,
@@ -108,7 +112,7 @@ test('Task 29 cleanup requires learning, timing and invariant reconciliation',()
     terminal_at:'2026-10-01T23:00:00Z',cleanup_at:'2026-10-01T23:05:00Z',
     run_specific_executors_disabled:true,no_active_writer:true,transition_ledger_reconciled:true,
     kanban_reconciled:true,timers_frozen:true,production_state_preserved:true,active_run_pointer_cleared:true,
-    operational_learning_reconciled:true,promotion_review_complete:true,timing_compared:true,
+    operational_learning_reconciled:true,system_changes_reconciled:true,promotion_review_complete:true,timing_compared:true,
     regression_protection_updated:true,next_run_invariant_set_complete:true
   };
   const pass=terminalCleanupReceipt(base);
@@ -164,4 +168,27 @@ test('cost-boundary violations still block all run start',()=>{
   assert.equal(receipt.start_authorized,false);
   assert.equal(receipt.start_scope,'blocked');
   assert.ok(receipt.errors.includes('cost_boundary_violation:codex'));
+});
+
+
+test('Task 00 fails when system change exposure is missing',()=>{
+  const input=goodInput();
+  input.system_changes.result='FAIL';
+  const receipt=validateRunReadiness(input);
+  assert.equal(receipt.result,'FAIL');
+  assert.ok(receipt.errors.includes('system_change_readiness_pass_required'));
+});
+
+test('Task 29 requires system change outcomes reconciled',()=>{
+  const base={
+    edition_id:'dab-edition-2026-10-01',execution_id:'reliable-edition-20261001-run4',
+    run_number:4,terminal_state:'PUBLIC_CLOSED',terminal_at:'2026-10-01T23:00:00Z',cleanup_at:'2026-10-01T23:05:00Z',
+    run_specific_executors_disabled:true,no_active_writer:true,transition_ledger_reconciled:true,
+    kanban_reconciled:true,timers_frozen:true,production_state_preserved:true,active_run_pointer_cleared:true,
+    operational_learning_reconciled:true,system_changes_reconciled:false,promotion_review_complete:true,
+    timing_compared:true,regression_protection_updated:true,next_run_invariant_set_complete:true
+  };
+  const receipt=terminalCleanupReceipt(base);
+  assert.equal(receipt.result,'FAIL');
+  assert.ok(receipt.errors.includes('cleanup_check_failed:system_changes_reconciled'));
 });
