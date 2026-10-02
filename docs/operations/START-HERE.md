@@ -1,5 +1,7 @@
 # Daily AI Brief — Current Operations Entry Point
 
+**Observed runtime blocker:** the October 2 live invocation reported Codex Work and stopped before image generation. The newly enabled daily controller/keeper are paused to preserve the existing cost boundary. See [current daily startup and live outcome](DAILY-UNATTENDED-STARTUP.md). No Run 5 has been admitted.
+
 **October 2 daily authorization:** follow [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) for the next Brief and daily 01:00 America/Chicago execution. Read its complete bootstrap list and cumulative learning. Run 4 is terminal. The scheduled image host remains unqualified until actual live evidence passes.
 
 > [!IMPORTANT]

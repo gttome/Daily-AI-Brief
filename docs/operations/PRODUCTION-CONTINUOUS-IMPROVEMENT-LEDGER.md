@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:b817c2a0bcafc2a5d2b6e5ee7d1fabe9cb0b23150b8886a5d5862d40926acc6b`
+Ledger digest: `sha256:feb8f1395563ab150eb4942c19874f8f7dd8cd9d13ddec8c617193ce68c97b98`
 
-Problems: 30 · Events: 41
+Problems: 31 · Events: 42
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -545,4 +545,22 @@ Problems: 30 · Events: 41
 - **Production invariants:** production_cutover_requires_live_unattended_compatibility, scheduler_identity_must_match_actual_executor
 - **Recurrences:** none recorded
 - **Future validation:** Observe the scheduled invocation and actual native generation, saved-pixel review and exact-byte recovery. | Do not retire an existing execution path on the strength of interactive or fixture success. | Keep daily and recovery schedules independent of owner status requests. | Verify the registered scheduled worker consumes the exact operation and fence and saves real generation/review evidence. | Do not equate awaiting_scheduled_executor with active execution or successful generation.
+
+## DAB-OPS-20261002-010 — Reusing the existing controller invoked Codex Work, outside the authorized production boundary; no image was generated.
+
+- **Status:** open
+- **First observed run:** scheduled-image-host-qualification-20261002
+- **Task(s):** 00
+- **Symptom:** not recorded
+- **Root cause:** The live automation reported its native image tools were exposed from a Codex Work surface. The available scheduler configuration has no execution-mode selector. During the invocation last_run_time was still null.
+- **Operational impact:** Daily unattended production cannot be admitted under the existing no-Work/no-Codex policy using this observed runtime. Run5 was not allocated.
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt.
+- **Actual fix:** Paused the newly enabled controller and keeper after the prohibited runtime was observed; restored the pre-existing live validator prompt. Preserved all probe records and Run4. No image generation, cost-proof bypass or paid adapter was used.
+- **Fix outcome:** The live probe demonstrates a runtime-policy incompatibility, not an image-quality PASS. Account billing remains unobserved. A repository rollback cannot change the external execution surface.
+- **Permanent implementation:** none
+- **Regression tests:** none
+- **Production invariants:** none
+- **Recurrences:** none recorded
+- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker.
 
