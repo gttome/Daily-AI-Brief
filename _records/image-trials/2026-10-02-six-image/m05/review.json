@@ -1,0 +1,38 @@
+{
+  "method": "saved_image_visual_inspection",
+  "reviewer_kind": "assistant_visual_inspection",
+  "reviewer_id": "conversation-assistant",
+  "inspection_reference": "view_image:_records/image-trials/2026-10-02-six-image/m05/final.png",
+  "reviewed_at": "2026-10-02T04:55:31.734Z",
+  "asset_sha256": "1b5920a33978fce90fd46369c190759783a0e4f1842d9ac692f2296c0c5f9167",
+  "criteria": {
+    "subject_match": {
+      "verdict": "pass",
+      "observation": "Retail policy and labeled examples surround Amazon Nova model adaptation and moderation."
+    },
+    "mechanism_detail": {
+      "verdict": "pass",
+      "observation": "A decision taxonomy, distinct evaluation set, moderation categories and review return path are shown."
+    },
+    "legible_labels": {
+      "verdict": "pass",
+      "observation": "All seven specified labels are readable at 1200 by 630."
+    },
+    "contrast": {
+      "verdict": "pass",
+      "observation": "Dark blue labels and return arrow contrast with white; outcome colors are distinct."
+    },
+    "composition": {
+      "verdict": "pass",
+      "observation": "Policy-to-model flow and a separate evaluation lane preserve the story structure."
+    },
+    "no_people": {
+      "verdict": "pass",
+      "observation": "No people, faces, avatars or humanoid figures appear; product glyphs are examples within the mechanism."
+    },
+    "no_overlap": {
+      "verdict": "pass",
+      "observation": "Labels sit above their components with no text crossing arrows."
+    }
+  }
+}

@@ -187,8 +187,8 @@ try{
       image_recovery:image,
       recovery_attempts:Number(args['recovery-attempts']||0)
     });
-    const blockedRecoverable=(current?.state==='Blocked' && latest?.recoverable!==false && latest?.external_blocker!==true) ||
-      imageOverride.blocked_recoverable;
+    const blockedRecoverable=latest?.external_blocker!==true && ((current?.state==='Blocked' && latest?.recoverable!==false) ||
+      imageOverride.blocked_recoverable);
     const classification=classifyRunHealth({
       terminal,task_state:imageOverride.task_state,executor_state:executorState,
       last_progress_at:args['last-progress-at']||latest?.at||null,

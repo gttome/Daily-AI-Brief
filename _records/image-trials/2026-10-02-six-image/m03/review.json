@@ -1,0 +1,38 @@
+{
+  "method": "saved_image_visual_inspection",
+  "reviewer_kind": "assistant_visual_inspection",
+  "reviewer_id": "conversation-assistant",
+  "inspection_reference": "view_image:_records/image-trials/2026-10-02-six-image/m03/final.png",
+  "reviewed_at": "2026-10-02T04:49:55.654Z",
+  "asset_sha256": "76555e980a590a8e90417a37b07cc048fa8250d1aec4b24babcef91d2fce18f7",
+  "criteria": {
+    "subject_match": {
+      "verdict": "pass",
+      "observation": "Two caller environments enter identity controls before Claude Platform on AWS."
+    },
+    "mechanism_detail": {
+      "verdict": "pass",
+      "observation": "Credential paths, approval gates and separate audit records form a detailed mechanism."
+    },
+    "legible_labels": {
+      "verdict": "pass",
+      "observation": "All six specified labels are readable at the saved 1200 by 630 size."
+    },
+    "contrast": {
+      "verdict": "pass",
+      "observation": "Navy labels and blue, green, amber pathways contrast clearly with the white background."
+    },
+    "composition": {
+      "verdict": "pass",
+      "observation": "Caller zones flank a central security cutaway; audit evidence sits in a distinct lower lane."
+    },
+    "no_people": {
+      "verdict": "pass",
+      "observation": "No people, faces or humanoid figures appear in the saved image."
+    },
+    "no_overlap": {
+      "verdict": "pass",
+      "observation": "Labels are separated from connectors and stay within the image canvas."
+    }
+  }
+}

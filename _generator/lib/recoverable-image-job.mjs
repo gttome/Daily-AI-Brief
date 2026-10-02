@@ -1,3 +1,4 @@
+import {visualReviewErrors} from './image-review-evidence.mjs';
 import {createHash} from 'node:crypto';
 import {drainOperations, OperationBlocked, hashBytes, operationKey} from './durable-operation.mjs';
 import {IMAGE_EXECUTION_POLICY, imageExecutionHash, validateImageGenerationExecution, validateImageExecutionReceipt} from './image-execution.mjs';
@@ -95,6 +96,8 @@ export async function executeRecoverableImage(execution, {store, host, transport
         Date.parse(review.reviewed_at) >= Date.parse(c.results.generate.metadata.generated_at) &&
         review.asset_sha256 === hashBytes(bytes) && ['subject_match','factual_support','structural_quality','editorial_quality'].every(k => ['pass','fail'].includes(review[k])),
         'invalid_review_evidence');
+      if(evidenceType==='live' && Date.parse(c.results.generate.metadata.generated_at)>=Date.parse('2026-10-02T04:42:19Z'))
+        assert(!visualReviewErrors(review.visual_inspection,hashBytes(bytes)).length,'actual_saved_image_review_required');
       return review;
     }},
     {id: 'persist', replaySafe: true, run: async c => {

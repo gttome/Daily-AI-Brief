@@ -65,6 +65,12 @@ export function validateRunReadiness(input = {}) {
   required(bool(control.duplicate_run_rejection_tested), 'duplicate_run_rejection_test_required');
 
   const image = input.image_pipeline || {};
+  const host = image.host_admission || {};
+  required(host.evidence_type === 'live' && host.trigger === 'scheduled' && host.execution_mode === 'production' &&
+    host.generation_executor === 'native_chatgpt_image_generation' && host.review_method === 'saved_image_visual_inspection' &&
+    host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
+    typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
+    /^[a-f0-9]{64}$/.test(host.receipt_sha256 || ''), 'proven_scheduled_image_host_required');
   required(image.path === PROVEN_IMAGE_PATH, 'proven_image_path_required');
   required(bool(image.exact_byte_capture), 'exact_byte_capture_required');
   required(bool(image.saved_asset_review), 'saved_asset_review_required');
