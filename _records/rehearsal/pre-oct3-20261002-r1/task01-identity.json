@@ -1,0 +1,19 @@
+{
+  "schema_version": "full-public-rehearsal-identity-binding-v1",
+  "recorded_at": "2026-10-02T23:06:02.000Z",
+  "result": "PASS",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "execution_key": "2026-10-02-run6",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "preview_path": "rehearsals/pre-oct3-20261002-r1",
+  "preview_url": "https://gttome.github.io/Daily-AI-Brief/rehearsals/pre-oct3-20261002-r1/",
+  "original_bound_main_sha": "dce34063a013e22a9b0d1ecc21bb9469c68e5e97",
+  "effective_control_plane_main_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
+  "branch_contains_effective_main": true,
+  "branch_behind_main_by": 0,
+  "production_allocation": false,
+  "canonical_pointers_mutable": false,
+  "october3_identity_consumed": false,
+  "hard_cutoff": "2026-10-03T00:30:00-05:00"
+}
