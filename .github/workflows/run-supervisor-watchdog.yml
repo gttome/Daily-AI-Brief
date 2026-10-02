@@ -2,7 +2,7 @@ name: Daily AI Brief Run Supervisor Watchdog
 
 on:
   schedule:
-    - cron: '3-58/5 * * * *'
+    - cron: '*/5 * * * *'
   workflow_dispatch:
   workflow_run:
     workflows: ["Daily AI Brief Run Supervisor"]
