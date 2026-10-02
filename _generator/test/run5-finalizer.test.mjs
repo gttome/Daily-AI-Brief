@@ -44,3 +44,11 @@ test('Run 5 finalizer resolves only the known active-pointer merge conflict',()=
   assert.match(y,/checkout --ours data\/operations\/active-production-run\.json/);
   assert.match(y,/Unexpected merge conflicts/);
 });
+
+
+test('Run 5 finalizer executes release code from the active run working tree',()=>{
+  const y=fs.readFileSync('.github/workflows/run5-finalizer.yml','utf8');
+  assert.match(y,/node run\/_tools\/run5-post-image-finalizer\.mjs run/);
+  assert.match(y,/node run\/_tools\/run5-release-sealer\.mjs run/);
+  assert.doesNotMatch(y,/node control\/_tools\/run5-(?:post-image-finalizer|release-sealer)\.mjs run/);
+});
