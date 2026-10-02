@@ -1,4 +1,8 @@
 {
   "schema_version": "run5-evidence-review-v1",
-  "status": "in_progress"
+  "status": "in_progress",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "verified_at": "2026-10-02T12:59:03.588Z",
+  "items": ["m01","m02","m03","m04","m05","m06","m07","m08","m09"]
 }
