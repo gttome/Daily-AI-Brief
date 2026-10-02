@@ -32,9 +32,47 @@
       "protected_ci",
       "exact_sha_deploy",
       "independent_live_verification",
-      "previous_run_cleanup_pass",
-      "proven_scheduled_image_host_required"
-    ]
+      "previous_run_cleanup_pass"
+    ],
+    "deferred_route_gates": {
+      "unattended_image_host": {
+        "required_before_tasks": [
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21",
+          "22",
+          "23",
+          "24",
+          "25",
+          "26",
+          "27",
+          "28",
+          "29"
+        ],
+        "permits_start_scope": "non_image_production",
+        "blocks": [
+          "image_generation",
+          "image_acceptance",
+          "publication",
+          "PUBLIC_CLOSED"
+        ],
+        "does_not_block": [
+          "run_allocation",
+          "Tasks 01-10",
+          "controller_liveness",
+          "hourly_recovery",
+          "independent_safe_non_image_work"
+        ]
+      }
+    }
   },
   "supervisor": {
     "version": "run-supervisor-v2",
@@ -85,7 +123,10 @@
     "stale_active_threshold_minutes_max": 15,
     "supervisor_check_seconds_target": 60,
     "silent_active_stall_prohibited": true,
-    "actionable_blocked_wait_for_owner_prohibited": true
+    "actionable_blocked_wait_for_owner_prohibited": true,
+    "route_specific_blocker_must_not_pause_controller": true,
+    "controller_and_keeper_remain_enabled_during_blocked_external": true,
+    "blocked_route_rechecked_each_recovery_cycle": true
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
@@ -113,9 +154,9 @@
       "identity_rule": "Exact identity is mandatory for the final persisted PNG bytes. A bounded same-visual PNG representation may differ from native generation bytes only when professional composition/content are preserved, source-to-final lineage is recorded, and final Git bytes/read-back are verified."
     },
     "host_admission": {
-      "required": "Registered READY unattended host; digest-bound live scheduled six-image nonproduction qualification; exact raw/final committed-byte recovery, automated saved-image inspection, and verified existing zero-production-cost boundary. Interactive and fixture evidence cannot admit production.",
-      "current_status": "CAPABILITY_BLOCKED",
-      "reason": "No supported unattended native image generation/review host registered in GitHub Actions.",
+      "required": "Registered READY unattended host is required before image Tasks 11-16 and publication. Its absence is a deferred route blocker, not a global Run-start blocker. Interactive and fixture evidence cannot authorize images.",
+      "current_status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
+      "reason": "No supported unattended native image generation/review host is currently bound within the zero-Work/zero-Codex/zero-paid-API boundary; non-image production remains authorized.",
       "registration_path": "docs/operations/unattended-image-host.json"
     }
   },
