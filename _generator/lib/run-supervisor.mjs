@@ -132,13 +132,16 @@ export function validateTaskRecoveryContracts(contract = {}) {
       if (repair.capability !== 'repository') errors.push(`engineering_repair_capability:${id}`);
       if (typeof repair.instruction !== 'string' || !repair.instruction.trim()) errors.push(`engineering_repair_instruction:${id}`);
       if (!Array.isArray(repair.required_proofs) || !repair.required_proofs.length) errors.push(`engineering_repair_required_proofs:${id}`);
+      if (!Number.isInteger(repair.post_repair_attempt_limit) || repair.post_repair_attempt_limit < 1) errors.push(`engineering_repair_post_attempt_limit:${id}`);
+      if (typeof repair.post_repair_operation !== 'string' || !repair.post_repair_operation.trim()) errors.push(`engineering_repair_post_operation:${id}`);
     }
   }
   return uniq(errors);
 }
 
 export function taskRecoveryDecision({
-  classification, taskContract, attempts = 0, recoveryAttempts = 0, repairEpochs = 0
+  classification, taskContract, attempts = 0, recoveryAttempts = 0, repairEpochs = 0,
+  repairReady = false, postRepairAttempts = 0
 } = {}) {
   if (!classification?.state || !taskContract) throw Error('classification_and_task_contract_required');
   if (classification.state === 'HEALTHY_ACTIVE') return {action:'observe'};
@@ -159,6 +162,16 @@ export function taskRecoveryDecision({
       instruction:repair.instruction,
       repair_epoch:repairEpochs + 1,
       required_proofs:[...(repair.required_proofs || [])]
+    };
+  if (repair?.enabled === true && repairReady === true &&
+      Number.isInteger(repair.post_repair_attempt_limit) &&
+      postRepairAttempts < repair.post_repair_attempt_limit)
+    return {
+      action:'post_repair_attempt',
+      capability:taskContract.capability,
+      instruction:repair.post_repair_operation || taskContract.normal_operation,
+      repair_epoch:Math.max(1,repairEpochs),
+      post_repair_attempt:postRepairAttempts + 1
     };
   return {action:'terminal_failure', instruction:taskContract.terminal_failure_condition};
 }
@@ -185,17 +198,18 @@ export function buildEngineeringRepairRequest({
 
 export function buildWorkerRequest({
   execution_id, edition_id, branch, task_id, capability, instruction,
-  writer_generation, recovery_attempt = 0, created_at = new Date().toISOString()
+  writer_generation, recovery_attempt = 0, repair_epoch = 0, post_repair_attempt = 0,
+  created_at = new Date().toISOString()
 } = {}) {
   if (!execution_id || !edition_id || !branch || !/^\d{2}$/.test(task_id || '') ||
       !WORKER_CAPABILITIES.includes(capability) || !instruction || !Number.isInteger(writer_generation) || writer_generation < 1 || !stamp(created_at))
     throw Error('valid_worker_request_required');
-  const key = hash(JSON.stringify({execution_id,task_id,capability,instruction,recovery_attempt}));
+  const key = hash(JSON.stringify({execution_id,task_id,capability,instruction,recovery_attempt,repair_epoch,post_repair_attempt}));
   return {
     schema_version:'run-worker-request-v1',
     request_key:key,
     execution_id,edition_id,branch,task_id,capability,instruction,
-    writer_generation,recovery_attempt,created_at,
+    writer_generation,recovery_attempt,repair_epoch,post_repair_attempt,created_at,
     status:'queued'
   };
 }
