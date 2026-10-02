@@ -66,11 +66,14 @@ export function validateRunReadiness(input = {}) {
 
   const image = input.image_pipeline || {};
   const host = image.host_admission || {};
-  required(host.evidence_type === 'live' && host.trigger === 'scheduled' && ['production','qualification_nonproduction'].includes(host.execution_mode) &&
-    host.generation_executor === 'native_chatgpt_image_generation' && host.review_method === 'saved_image_visual_inspection' &&
+  const scheduledImageHostReady =
+    host.evidence_type === 'live' && host.trigger === 'scheduled' &&
+    ['production','qualification_nonproduction'].includes(host.execution_mode) &&
+    host.generation_executor === 'native_chatgpt_image_generation' &&
+    host.review_method === 'saved_image_visual_inspection' &&
     host.saved_bytes_recovered === true && host.zero_production_cost_verified === true &&
     typeof host.receipt_path === 'string' && host.receipt_path.startsWith('_records/') &&
-    /^[a-f0-9]{64}$/.test(host.receipt_sha256 || ''), 'proven_scheduled_image_host_required');
+    /^[a-f0-9]{64}$/.test(host.receipt_sha256 || '');
   required(image.path === PROVEN_IMAGE_PATH, 'proven_image_path_required');
   required(bool(image.exact_byte_capture), 'exact_byte_capture_required');
   required(bool(image.saved_asset_review), 'saved_asset_review_required');
@@ -129,13 +132,24 @@ export function validateRunReadiness(input = {}) {
     operational_learning_ledger_digest:learning.ledger_digest || null,
     result:errors.length ? 'FAIL' : 'PASS',
     errors:[...new Set(errors)],
-    start_authorized:errors.length === 0
+    deferred_blockers:scheduledImageHostReady ? [] : ['proven_scheduled_image_host_required'],
+    start_scope:errors.length ? 'blocked' : (scheduledImageHostReady ? 'full_production' : 'non_image_production'),
+    start_authorized:errors.length === 0,
+    image_tasks_authorized:errors.length === 0 && scheduledImageHostReady,
+    publication_authorized:errors.length === 0 && scheduledImageHostReady
   };
 }
 
 export function assertRunReady(receipt) {
   if (receipt?.schema_version !== RUN_READINESS_VERSION || receipt.result !== 'PASS' || receipt.start_authorized !== true)
     throw Error('RUN_READINESS_NOT_PASS');
+  return true;
+}
+
+export function assertImageTasksReady(receipt) {
+  if (receipt?.schema_version !== RUN_READINESS_VERSION || receipt.result !== 'PASS' ||
+      receipt.start_authorized !== true || receipt.image_tasks_authorized !== true)
+    throw Error('IMAGE_TASKS_NOT_AUTHORIZED');
   return true;
 }
 

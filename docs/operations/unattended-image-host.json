@@ -1,8 +1,20 @@
 {
   "schema_version": "unattended-image-host-registration-v1",
   "host_id": null,
-  "status": "CAPABILITY_BLOCKED",
-  "reason": "No supported unattended generation and saved-image visual-review host is bound within the existing zero-Work, zero-Codex, zero-paid-API production policy.",
+  "status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
+  "reason": "No supported unattended generation and saved-image visual-review host is bound within the zero-Work, zero-Codex, zero-paid-API policy. This blocks image tasks and publication only; it must not stop Run allocation, non-image work, controller liveness or recovery.",
   "qualification_receipt_path": null,
-  "production_start_authorized": false
+  "production_start_authorized": false,
+  "non_image_run_start_authorized": true,
+  "blocks": [
+    "image_tasks",
+    "publication",
+    "PUBLIC_CLOSED"
+  ],
+  "does_not_block": [
+    "run_allocation",
+    "non_image_production",
+    "daily_controller",
+    "hourly_recovery"
+  ]
 }

@@ -564,3 +564,15 @@ Problems: 31 · Events: 43
 - **Recurrences:** none recorded
 - **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker. | Resume only after a supported ordinary non-Work/non-Codex scheduled image host exists within the zero-paid-service boundary. | Reuse the isolated qualification branch and its valid checkpoints; do not create another controller or repeat Run4.
 
+
+
+## DAB-OPS-20261002-010 — Route-scoped blocker incorrectly stopped global production
+
+- **Status:** permanently fixed
+- **Run:** run5-liveness-repair-20261002
+- **Task:** 00
+- **Symptom:** the controller and hourly keeper were disabled after the unattended image route resolved to a prohibited Work/Codex surface.
+- **Root cause:** image-host admission was implemented as a global Run-start gate instead of an image/publication gate.
+- **Permanent fix:** Task 00 may authorize `non_image_production`; the missing host is a deferred route blocker. Image tasks and publication remain fail-closed. Daily controller and recovery keeper remain enabled.
+- **Regression protection:** `run-readiness.test.mjs` and `run5-unattended.test.mjs` verify non-image liveness, image/publication blocking, and unchanged cost-boundary failure.
+- **Next-run validation:** Run 5 must allocate and drain safe non-image work even while the image route is blocked, and must not publish until host qualification passes.

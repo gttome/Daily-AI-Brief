@@ -1348,3 +1348,12 @@ After Task 29, a Run Promotion Review records Keep / Fix / Simplify / Validate-n
 ## October 2 — Restore scheduled execution compatibility
 
 [Daily unattended startup](DAILY-UNATTENDED-STARTUP.md) defines the current owner-authorized daily target, mandatory GitHub bootstrap, preserved cost and quality constraints, persistent recovery and event-derived reporting. Reuse the existing controller and keeper identities. A scheduled ChatGPT task proves its own invocation with a committed scheduler observation; it must not manufacture a GitHub workflow ID. This compatibility correction alone does not qualify a host or establish a completed run. Keep the accepted interactive trial and Run 4 closure unchanged.
+
+
+## October 2, 2026 — Route-scoped blockers must never stop production liveness
+
+A blocked execution route is not a terminal run state. The October 2 Run 5 startup correctly refused a Work/Codex image surface, but then incorrectly disabled the daily controller, hourly recovery keeper and one-time starts. That converted an image-capability constraint into a system-wide outage.
+
+Permanent rule: **reject the prohibited route, not the run.** Task 00 may authorize `non_image_production` when the unattended image host is the only deferred blocker. In that state, Run allocation, Tasks 01-10, discovery, evidence review, editorial selection, media work, Watchlist work, book mapping, image-spec sealing, event logging, supervision and recovery remain live. Image Tasks 11-16, image-dependent downstream gates and publication remain blocked until a registered READY unattended host passes the existing scheduled qualification.
+
+The daily controller and hourly recovery keeper remain enabled during route-specific `Blocked` states. Recovery re-reads durable state each cycle, performs newly available safe work, and rechecks the blocked route without repeating a known prohibited Work/Codex execution. Only a run-specific writer stops at terminal cleanup. No Work, Codex, paid API, overage, alternate account, quality fallback, image-proof bypass or publication-gate relaxation is introduced by this liveness correction.
