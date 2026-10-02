@@ -55,6 +55,15 @@ test('writer lease fences stale executors and permits takeover only after expiry
   assert.throws(()=>assertWriterFence(first.lease,{execution_id:'run4',owner_id:'supervisor-a',generation:first.lease.generation,now:'2026-10-01T20:03:01Z'}),/WRITER_LEASE_EXPIRED/);
 });
 
+test('same-owner lease renewal never shortens an existing fence',()=>{
+  const first=acquireWriterLease(null,{execution_id:'run5',owner_id:'supervisor-a',now:'2026-10-02T12:00:00Z',ttl_ms:21_600_000});
+  const renewed=acquireWriterLease(first.lease,{execution_id:'run5',owner_id:'supervisor-a',now:'2026-10-02T12:05:00Z',ttl_ms:1_800_000});
+  assert.equal(renewed.acquired,true);
+  assert.equal(renewed.reason,'lease_renewed');
+  assert.equal(renewed.lease.generation,first.lease.generation);
+  assert.equal(renewed.lease.expires_at,first.lease.expires_at);
+});
+
 test('stale Active is detected without an owner status request',()=>{
   const d=classifyRunHealth({task_state:'Active',executor_state:'Stopped',last_progress_at:'2026-10-01T20:00:00Z',now:'2026-10-01T20:01:00Z'});
   assert.equal(d.state,'STALE_ACTIVE');
@@ -228,6 +237,8 @@ test('Supervisor workflow contains the one-minute loop, single concurrency lane 
   assert.match(y,/sleep 60/);
   assert.match(y,/writer-lease/);
   assert.match(y,/assert-fence/);
+  const loop=y.slice(y.indexOf('Persistent approximately one-minute supervision loop'));
+  assert.ok(loop.indexOf('writer-lease')<loop.indexOf('assert-fence'));
   assert.match(y,/timeout-minutes: 330/);
   assert.doesNotMatch(y,/schedule:/);
 });
