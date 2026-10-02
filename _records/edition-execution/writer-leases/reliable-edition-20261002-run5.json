@@ -2,8 +2,8 @@
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261002-run5",
   "owner_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
-  "generation": 8,
-  "acquired_at": "2026-10-02T14:30:53.374Z",
-  "last_heartbeat_at": "2026-10-02T14:34:50.767Z",
-  "expires_at": "2026-10-02T14:34:50.767Z"
+  "generation": 9,
+  "acquired_at": "2026-10-02T14:39:14.595Z",
+  "last_heartbeat_at": "2026-10-02T14:39:14.595Z",
+  "expires_at": "2026-10-02T20:39:14.595Z"
 }
