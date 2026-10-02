@@ -2,13 +2,13 @@
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261002-run5",
   "owner_id": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
-  "generation": 17,
-  "acquired_at": "2026-10-02T18:40:27.226Z",
-  "last_heartbeat_at": "2026-10-02T18:40:27.226Z",
-  "expires_at": "2026-10-02T19:10:27.226Z",
+  "generation": 18,
+  "acquired_at": "2026-10-02T19:10:56.151Z",
+  "last_heartbeat_at": "2026-10-02T19:10:56.151Z",
+  "expires_at": "2026-10-02T19:40:56.152Z",
   "released_at": null,
   "release_reason": null,
-  "purpose": "QUALIFICATION_REGISTRATION_PUBLICATION_CLOSEOUT_RECONCILIATION",
-  "prior_generation": 16,
-  "prior_release_reason": "TASKS_18_THROUGH_21_DONE_HANDOFF_TO_SUPERVISOR"
+  "purpose": "FINAL_PUBLIC_CLOSED_RECONCILIATION",
+  "prior_generation": 17,
+  "prior_release_reason": "LEASE_EXPIRED_AFTER_PROTECTED_CLOSEOUT_HANDOFF"
 }
