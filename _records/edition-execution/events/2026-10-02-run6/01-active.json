@@ -1,0 +1,17 @@
+{
+  "task_id": "01",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T23:05:36.000Z",
+  "reason_code": "REHEARSAL_IDENTITY_BINDING_VERIFY",
+  "operation": "bind_isolated_rehearsal_identity",
+  "proof": {
+    "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+    "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+    "execution_key": "2026-10-02-run6",
+    "branch": "rehearsal/dab-edition-2026-10-02-run6",
+    "preview_path": "rehearsals/pre-oct3-20261002-r1",
+    "production_allocation": false,
+    "canonical_pointers_mutable": false
+  }
+}
