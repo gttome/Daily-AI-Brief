@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:7e52a1d4ef630b1f4912607b33d19f253d6a60842c8f6ea77222a838f9a70308`
+Ledger digest: `sha256:b817c2a0bcafc2a5d2b6e5ee7d1fabe9cb0b23150b8886a5d5862d40926acc6b`
 
-Problems: 30 · Events: 40
+Problems: 30 · Events: 41
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -538,11 +538,11 @@ Problems: 30 · Events: 40
 - **Operational impact:** Run 5 remains unadmitted until a live authorized scheduled executor proves the image path.
 - **Timing impact:** unknown / not safely inferable
 - **Attempted fixes:** Restore compatibility with actual ChatGPT automation invocation observations, preserve the existing automation identities, and provide a durable daily startup/recovery contract.
-- **Actual fix:** Accept committed digest-bound real scheduler observations for ChatGPT tasks while retaining all six-image receipt, byte recovery, quality and cost gates. Preserve old schedule prompts before updating their terminal Run 4 scope.
-- **Fix outcome:** Targeted compatibility and negative-evidence tests pass. Schedule activation and the live qualification must still be observed; no production success or zero account usage is inferred.
-- **Permanent implementation:** _generator/lib/unattended-image-qualification.mjs, docs/operations/DAILY-UNATTENDED-STARTUP.md
-- **Regression tests:** _generator/test/scheduled-image-host.test.mjs
+- **Actual fix:** When protected registration is READY and binds a ChatGPT automation qualification receipt, preserve the exact fenced request as awaiting_scheduled_executor. The GitHub script does not generate, review, accept, or mark the task Done. Without qualification the capability blocker remains.
+- **Fix outcome:** Routing and no-fabricated-acceptance tests pass. The daily 01:00 Chicago controller and hourly keeper are enabled; an immediate invocation was requested. Actual scheduled qualification and Run5 admission remain unobserved.
+- **Permanent implementation:** _generator/lib/unattended-image-qualification.mjs, docs/operations/DAILY-UNATTENDED-STARTUP.md, _tools/native-image-worker.py
+- **Regression tests:** _generator/test/scheduled-image-host.test.mjs, _generator/test/scheduled-image-routing.test.mjs
 - **Production invariants:** production_cutover_requires_live_unattended_compatibility, scheduler_identity_must_match_actual_executor
 - **Recurrences:** none recorded
-- **Future validation:** Observe the scheduled invocation and actual native generation, saved-pixel review and exact-byte recovery. | Do not retire an existing execution path on the strength of interactive or fixture success. | Keep daily and recovery schedules independent of owner status requests.
+- **Future validation:** Observe the scheduled invocation and actual native generation, saved-pixel review and exact-byte recovery. | Do not retire an existing execution path on the strength of interactive or fixture success. | Keep daily and recovery schedules independent of owner status requests. | Verify the registered scheduled worker consumes the exact operation and fence and saves real generation/review evidence. | Do not equate awaiting_scheduled_executor with active execution or successful generation.
 

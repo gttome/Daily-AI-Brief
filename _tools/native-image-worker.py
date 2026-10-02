@@ -1,9 +1,7 @@
 #!/usr/bin/env python3
-"""Report the real GitHub Actions capability gap; never render or self-approve an image.
+"""Route to a qualified scheduled host or report the actual capability gap.
 
-The supervised interactive pipeline can generate and review images. No supported
-unattended native-image adapter is registered on this runner. Retain the legacy
-entry point so queued requests receive an explicit durable blocker, not a fake PASS.
+This GitHub runner never renders, visually reviews or accepts an image itself.
 """
 import argparse, json
 from pathlib import Path
@@ -13,6 +11,7 @@ def main():
     p=argparse.ArgumentParser()
     for name in ['run-root','request','execution-key','execution-id','edition-id','writer-generation']:
         p.add_argument('--'+name, required=True)
+    p.add_argument('--host-registration', default=str(Path(__file__).resolve().parents[1]/'docs/operations/unattended-image-host.json'))
     a=p.parse_args(); root=Path(a.run_root); request=Path(a.request)
     req=json.loads(request.read_text()); task=str(req.get('task_id',''))
     if req.get('capability')!='native_chatgpt' or task not in ['11','12','13','14','15','16']:
@@ -22,6 +21,19 @@ def main():
     done=root/f'_records/edition-execution/events/{a.execution_key}/{task}-done.json'
     if done.exists():
         print(json.dumps({'status':'already_done','preserved':True})); return
+    # Protected host registration is written only after live qualification. The
+    # actual scheduled consumer still owns generation, capture, review and receipt.
+    registration=Path(a.host_registration)
+    host=json.loads(registration.read_text()) if registration.exists() else {}
+    if host.get('status')=='READY' and str(host.get('host_id','')).startswith('chatgpt-automation:') and host.get('qualification_receipt_path'):
+        result={'schema_version':'scheduled-image-dispatch-v1','status':'AWAITING_SCHEDULED_EXECUTOR',
+            'host_id':host['host_id'],'execution_id':a.execution_id,'task_id':task,
+            'generation_started':False,'accepted_locked':False,
+            'next_action':'Qualified scheduled controller consumes this exact fenced request; queueing is not execution.'}
+        if req.get('status')!='awaiting_scheduled_executor':
+            req.update(status='awaiting_scheduled_executor',dispatch=result)
+            request.write_text(json.dumps(req,indent=2)+'\n')
+        print(json.dumps(result)); return
     if req.get('status')=='capability_blocked':
         print(json.dumps({'status':'CAPABILITY_BLOCKED','reused':True})); return
     now=datetime.now(timezone.utc).isoformat()
