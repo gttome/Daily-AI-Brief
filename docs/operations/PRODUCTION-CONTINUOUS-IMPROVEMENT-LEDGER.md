@@ -4,7 +4,7 @@ Canonical source: `data/operations/production-continuous-improvement-ledger.json
 
 Ledger digest: `sha256:928d1171dfcd06e2caa06ab4d2dcd3212d2c32d940f2aa232a0a3eb0635878b1`
 
-Problems: 31 · Events: 43
+Problems: 32 · Events: 46
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -579,12 +579,13 @@ Problems: 31 · Events: 43
 
 ## DAB-OPS-20261002-011 — Same-owner renewal shortened the active Supervisor fence
 
-- **Status:** mitigated; protected CI pending
+- **Status:** permanently fixed
 - **Run:** reliable-edition-20261002-run5
 - **Task:** 10 boundary
 - **Symptom:** the persistent Supervisor failed with `WRITER_LEASE_EXPIRED` in loop 25 even though the same Run 5 content worker was still advancing durable Tasks 06–10.
 - **Root cause:** a same-owner recovery heartbeat replaced the six-hour Supervisor expiry with a thirty-minute expiry. The loop asserted that persisted lease without first renewing its own authority.
 - **Operational impact:** the Supervisor stopped before refreshing the event-derived Kanban for Tasks 06–10 and before recording the route-scoped Task 11 image blocker. Completed content artifacts remained durable.
 - **Repair:** same-owner renewal now keeps the later expiry, and every Supervisor loop renews locally with the six-hour TTL before the fence assertion. A different owner or generation still fails closed.
-- **Regression protection:** 38 focused Supervisor, Run 5 unattended, and readiness tests pass locally. Protected CI is still required.
-- **Next-run validation:** merge only after protected CI passes, resume the same Run 5, refresh the Kanban from append-only events, and record Task 11 Blocked without invoking the known prohibited image route.
+- **Regression protection:** 38 focused Supervisor, Run 5 unattended, and readiness tests pass locally and in protected deterministic CI run `37014908589`.
+- **Outcome:** PR #352 merged at `32b0efb2f80b6fd4808fa8086fc06472505ac810`. Recovery acquired writer generation 3 for the same Run 5, refreshed the event-derived Kanban through Task 10, and recorded Task 11 Blocked with `generation_started=false`; image and publication authorization remain false.
+- **Next-run validation:** confirm every future same-owner recovery heartbeat preserves or extends the active expiry, and keep the image route blocked without retrying it until an authorized unattended native host is proven.
