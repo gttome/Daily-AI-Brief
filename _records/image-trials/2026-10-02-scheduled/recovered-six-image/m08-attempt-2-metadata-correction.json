@@ -1,0 +1,41 @@
+{
+  "schema_version": "image-attempt-metadata-correction-v1",
+  "correction_id": "2026-10-02-run5-m08-attempt-2-raw-dimensions",
+  "recorded_at": "2026-10-02T17:25:59.441Z",
+  "append_only": true,
+  "receipt_unchanged": true,
+  "png_unchanged": true,
+  "candidate_id": "m08",
+  "attempt": 2,
+  "reason": "IMMUTABLE_RECEIPT_RAW_DIMENSIONS_METADATA_ERROR",
+  "immutable_receipt": {
+    "source_path": "_records/image-attempts/2026-10-02-run5/m08-attempt-2.json",
+    "qualification_copy_path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/source-receipts/m08-attempt-2.json",
+    "git_blob_sha": "41aeefa2f79226c9e944f06606170ca1b9900c39"
+  },
+  "original": {
+    "path": "_records/image-trials/2026-10-02-scheduled/recovered-six-image/m08-attempt-2-original.png",
+    "bytes": 1316157,
+    "sha256": "b7ae0ffd809bd6b35fcc8d01d0c12319ceced7dad67512c9e74ff1d043e4b91a",
+    "git_blob_sha": "052dfcc9708989e6f8863f9cf07d3384e372a32c"
+  },
+  "recorded_dimensions": "1730x909",
+  "actual_dimensions": "1731x909",
+  "inspection": {
+    "method": "png_ihdr_uint32_be",
+    "png_signature_hex": "89504e470d0a1a0a",
+    "ihdr_chunk_type": "IHDR",
+    "width_offset_bytes": 16,
+    "height_offset_bytes": 20,
+    "integer_encoding": "unsigned_32_bit_big_endian",
+    "result": "1731x909"
+  },
+  "supersedes_only": "generation.exact_returned_png.dimensions metadata for qualification comparison",
+  "does_not_change": [
+    "immutable attempt receipt",
+    "original PNG",
+    "final PNG",
+    "accepted_locked status",
+    "saved-Git review"
+  ]
+}
