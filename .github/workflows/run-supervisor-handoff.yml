@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'reliable-edition/**'
+      - 'rehearsal/**'
     paths:
       - '_records/edition-execution/writer-leases/**'
 
@@ -39,8 +40,21 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          pointer="control/data/operations/active-production-run.json"
-          [ -f "$pointer" ] || exit 0
+          if [[ "${GITHUB_REF_NAME}" == rehearsal/* ]]; then
+            pointer="run/_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-active-run.json"
+            [ -f "$pointer" ] || exit 0
+            rehearsal_ok="$(node -e "const x=require('./$pointer');process.stdout.write(String(
+              x.mode==='NON_PRODUCTION' &&
+              x.rehearsal_handoff===true &&
+              x.production_allocation===false &&
+              x.image_generation_allowed===false &&
+              /^synthetic-/.test(x.execution_id||'')
+            ))")"
+            [ "$rehearsal_ok" = "true" ] || exit 1
+          else
+            pointer="control/data/operations/active-production-run.json"
+            [ -f "$pointer" ] || exit 0
+          fi
 
           active="$(node -e "const x=require('./$pointer');process.stdout.write(String(x.active===true && x.terminal!==true))")"
           [ "$active" = "true" ] || exit 0
