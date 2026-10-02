@@ -83,6 +83,7 @@ function canonicalStory(story, edition) {
 function historicalStory(story) {
   return {
     ...story,
+    topics: publicTopics(story.topics),
     companies: [story.source_organization].filter(Boolean),
     source_url: story.normalized_urls[0] || null,
     evidence_type: 'unspecified',
