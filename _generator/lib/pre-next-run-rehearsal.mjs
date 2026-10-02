@@ -56,10 +56,15 @@ export function verifyScheduledConsumerEvidence({
   const resultAutomation = pick(consumerResult,['automation_id','consumer_id','consumer_automation_id']);
   const observedMainSha = pick(consumerResult,['protected_main_sha_observed','protected_main_sha','observed_main_sha']);
   const invokedAt = pick(consumerResult,['invoked_at','observed_at','consumed_at','completed_at']);
-  const requestGeneration = Number(pick(consumerResult,['request_generation','writer_generation_request','scheduled_generation','writer_generation']));
-  const currentBefore = Number(pick(consumerResult,['current_generation_before','writer_generation_before','live_generation_before']));
-  const authorityGeneration = Number(pick(consumerResult,['authority_generation','fresh_authority_generation','writer_generation_acquired','fresh_generation']));
-  const staleRejected = pick(consumerResult,['stale_generation_rejected','request_generation_rejected_as_authority','stale_request_generation_rejected']);
+  const authority = consumerResult.authority || {};
+  const requestGeneration = Number(pick(consumerResult,['request_generation','writer_generation_request','scheduled_generation','writer_generation']) ??
+    pick(authority,['request_generation','scheduled_generation']));
+  const currentBefore = Number(pick(consumerResult,['current_generation_before','writer_generation_before','live_generation_before']) ??
+    pick(authority,['current_generation_before','writer_generation_before']));
+  const authorityGeneration = Number(pick(consumerResult,['authority_generation','fresh_authority_generation','writer_generation_acquired','fresh_generation']) ??
+    pick(authority,['authority_generation','fresh_authority_generation','writer_generation_acquired','fresh_generation']));
+  const staleRejected = pick(consumerResult,['stale_generation_rejected','request_generation_rejected_as_authority','stale_request_generation_rejected']) ??
+    pick(authority,['stale_generation_rejected','request_generation_rejected_as_authority','stale_request_generation_rejected_as_mutation_authority']);
   const noDuplicate = pick(consumerResult,['no_duplicate_execution','duplicate_execution_created']);
   const completed = pick(consumerResult,['completed_tasks','preserved_completed_tasks']) || [];
   const generationCalls = Number(pick(consumerResult,['generation_calls','image_generation_calls']) ?? NaN);
@@ -93,7 +98,8 @@ export function verifyScheduledConsumerEvidence({
   required(stamp(writerRelease.released_at), 'rehearsal_release_timestamp_required');
   required(writerRelease.expires_at === writerRelease.released_at, 'rehearsal_release_immediate_expiry_required');
   required(writerRelease.release_reason === 'TASK_11_DONE_HANDOFF_TO_SUPERVISOR', 'rehearsal_release_reason_required');
-  required(Number(writerRelease.generation) === authorityGeneration, 'rehearsal_release_generation_mismatch');
+  const releaseGeneration=Number(pick(writerRelease,['generation','authority_generation']));
+  required(releaseGeneration === authorityGeneration, 'rehearsal_release_generation_mismatch');
 
   return {
     schema_version:PRE_NEXT_RUN_REHEARSAL_VERSION,
@@ -104,7 +110,7 @@ export function verifyScheduledConsumerEvidence({
     request_generation:Number.isFinite(requestGeneration) ? requestGeneration : null,
     current_generation_before:Number.isFinite(currentBefore) ? currentBefore : null,
     authority_generation:Number.isFinite(authorityGeneration) ? authorityGeneration : null,
-    release_generation:Number(writerRelease.generation) || null,
+    release_generation:Number(pick(writerRelease,['generation','authority_generation'])) || null,
     generation_calls:Number.isFinite(generationCalls) ? generationCalls : null,
     image_edit_calls:Number.isFinite(imageEditCalls) ? imageEditCalls : null,
     publication_mutations:Number.isFinite(publicationMutations) ? publicationMutations : null,
@@ -139,7 +145,8 @@ export function verifyAutomaticSupervisorResume({
 
   let supervisorLease = null;
   if (!errors.length) {
-    const acquired = acquireWriterLease(writerRelease,{
+    const releaseLease={...writerRelease,generation:Number(pick(writerRelease,['generation','authority_generation']))};
+    const acquired = acquireWriterLease(releaseLease,{
       execution_id:prestate.execution_id,
       owner_id:'synthetic-supervisor:post-worker-handoff',
       now:resumeAt,
@@ -149,7 +156,7 @@ export function verifyAutomaticSupervisorResume({
     required(acquired.acquired === true, 'handoff_supervisor_lease_not_acquired');
     supervisorLease = acquired.lease;
     required(supervisorLease?.execution_id === prestate.execution_id, 'handoff_supervisor_execution_changed');
-    required(Number(supervisorLease?.generation) > Number(writerRelease.generation), 'handoff_supervisor_generation_not_advanced');
+    required(Number(supervisorLease?.generation) > Number(pick(writerRelease,['generation','authority_generation'])), 'handoff_supervisor_generation_not_advanced');
   }
 
   const completedBefore = Array.isArray(prestate.completed_tasks) ? [...prestate.completed_tasks] : [];
@@ -163,7 +170,7 @@ export function verifyAutomaticSupervisorResume({
     errors:uniq(errors),
     automatic_dispatch_contract:'event_driven_writer_release_to_run_supervisor',
     execution_id:prestate.execution_id || null,
-    release_generation:Number(writerRelease.generation) || null,
+    release_generation:Number(pick(writerRelease,['generation','authority_generation'])) || null,
     resumed_supervisor_generation:supervisorLease?.generation ?? null,
     resumed_at:resumeAt,
     completed_tasks_before:completedBefore,
