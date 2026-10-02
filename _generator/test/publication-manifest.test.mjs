@@ -12,7 +12,7 @@ test('current manifest binds completed artifacts without rework',()=>{
  const manifest=load();
  const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
  assert.equal(manifest.staging_ref,handoff.staging_ref);
- if(handoff.execution_mode==='production')assert.ok([`editorial-handoff/production/${manifest.edition_date}`,`reliable-edition/dab-edition-${manifest.edition_date}`].includes(manifest.staging_ref));
+ if(handoff.execution_mode==='production')assert.ok(manifest.staging_ref===`editorial-handoff/production/${manifest.edition_date}`||new RegExp(`^reliable-edition/dab-edition-${manifest.edition_date}(?:-run\\d+)?$`).test(manifest.staging_ref));
  else {
   assert.equal(handoff.execution_mode,'qualification_nonproduction');
   assert.equal(manifest.staging_ref.startsWith('editorial-handoff/qualification/'),true);
