@@ -131,6 +131,10 @@ jobs:
           git -C run config user.name "github-actions[bot]"
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
 
+      - name: Prepare deterministic native-image consumer
+        if: steps.resolve.outputs.should_run == 'true'
+        run: python -m pip install --disable-pip-version-check --quiet pillow
+
       - name: Acquire fenced writer authority for this exact execution
         if: steps.resolve.outputs.should_run == 'true'
         id: fence
@@ -221,6 +225,20 @@ jobs:
 
               request_kind="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_kind||''))")"
               request_capability="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.capability||''))")"
+              request_task="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.task_id||''))")"
+              if [ "$request_capability" = "native_chatgpt" ] && [[ "$request_task" =~ ^1[1-6]$ ]]; then
+                request_key="$(node -e "const x=require('/tmp/worker-request.json');process.stdout.write(String(x.request_key))")"
+                request_rel="_records/edition-execution/worker-requests/${EXECUTION_ID}/${request_task}-${request_key}.json"
+                python control/_tools/native-image-worker.py \
+                  --run-root run \
+                  --request "run/$request_rel" \
+                  --execution-key "$EXECUTION_KEY" \
+                  --execution-id "$EXECUTION_ID" \
+                  --edition-id "$EDITION_ID" \
+                  --writer-generation "$WRITER_GENERATION" >/tmp/native-image-result.json
+                cat /tmp/native-image-result.json
+              fi
+
               if [ "$request_kind" = "engineering_repair" ] && [ "$request_capability" = "repository" ]; then
                 export GH_TOKEN="${{ github.token }}"
                 control_sha="$(git -C control rev-parse HEAD)"
@@ -250,6 +268,9 @@ jobs:
             fi
 
             git -C run add "_records/edition-execution/kanban/${EXECUTION_KEY}.json" 2>/dev/null || true
+            git -C run add "_records/edition-execution/events/${EXECUTION_KEY}" 2>/dev/null || true
+            git -C run add "_records/image-attempts/${EXECUTION_KEY}" 2>/dev/null || true
+            git -C run add "briefs/images/${EXECUTION_KEY%-run*}" 2>/dev/null || true
             for dir in worker-requests worker-results repair-epochs; do
               if [ -d "run/_records/edition-execution/$dir" ]; then
                 git -C run add "_records/edition-execution/$dir"
