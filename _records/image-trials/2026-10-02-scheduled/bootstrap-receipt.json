@@ -1,18 +1,18 @@
 {
   "schema_version": "daily-unattended-bootstrap-receipt-v1",
   "observed_at": "2026-10-02T06:21:34.576Z",
-  "main_sha": "0f6cc4e5115f3604bb98aa6fc8099b54d69c3757",
+  "main_sha": "9a662e4c2b8f5a244efe3a148a6bec05a633f9c5",
   "ledger": {
     "path": "data/operations/production-continuous-improvement-ledger.jsonl",
-    "line_count": 40,
+    "line_count": 41,
     "entire_file_read": true,
-    "sha256": "7e52a1d4ef630b1f4912607b33d19f253d6a60842c8f6ea77222a838f9a70308"
+    "sha256": "b817c2a0bcafc2a5d2b6e5ee7d1fabe9cb0b23150b8886a5d5862d40926acc6b"
   },
   "documents": [
     {"path":"docs/operations/START-HERE.md","sha256":"ac1e036c483a65b7534cf38e1ee9619ac0d7a26ce61bc3f80ff648d68ad1ba40"},
-    {"path":"docs/operations/DAILY-UNATTENDED-STARTUP.md","sha256":"3d7fce3c1e69cd31d45938d2794c7b9ce5c2ddd1ab73b1b688b2cf0617664794"},
-    {"path":"data/operations/production-continuous-improvement-ledger.jsonl","sha256":"7e52a1d4ef630b1f4912607b33d19f253d6a60842c8f6ea77222a838f9a70308"},
-    {"path":"docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md","sha256":"9d85bf687dbfbbc696a0c22cf3a1447c46dc5a68573bb4afb8a135c21f1e7749"},
+    {"path":"docs/operations/DAILY-UNATTENDED-STARTUP.md","sha256":"5c17a49f4cd7fecfc23797f30700e18e0a079a366a04f141f2906695f5e65137"},
+    {"path":"data/operations/production-continuous-improvement-ledger.jsonl","sha256":"b817c2a0bcafc2a5d2b6e5ee7d1fabe9cb0b23150b8886a5d5862d40926acc6b"},
+    {"path":"docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md","sha256":"877a94f733c0977f11b7ba57cf8a593017afacf3feb53cc5b9afd743b9fed581"},
     {"path":"docs/operations/LIVING-SYSTEM-OPERATIONS.md","sha256":"a1950bbee2f485ad3d87c7104e6a5ea7f875cc49d001be159784138811080021"},
     {"path":"docs/operations/task-recovery-contracts.json","sha256":"73ae80db674597b109f7bc8899042ab4a27480fbf6952e21da6f5b9eeaa204fd"},
     {"path":"docs/operations/run-learning-readiness-contract.json","sha256":"9f4b279c338cc76c1352e167b9c75ecd7f2e72c02b3b91b103e38e1cb04e0a56"},
