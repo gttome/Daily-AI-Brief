@@ -1,0 +1,15 @@
+{
+  "task_id": "01",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T23:06:02.000Z",
+  "reason_code": "ISOLATED_REHEARSAL_IDENTITY_BOUND",
+  "operation": "bind_isolated_rehearsal_identity",
+  "proof": {
+    "identity_receipt": "_records/rehearsal/pre-oct3-20261002-r1/task01-identity.json",
+    "effective_main_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
+    "behind_main_by": 0,
+    "production_allocation": false,
+    "canonical_pointers_mutable": false
+  }
+}
