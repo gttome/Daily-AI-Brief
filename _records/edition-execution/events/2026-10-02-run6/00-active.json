@@ -1,0 +1,14 @@
+{
+  "task_id": "00",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T23:00:34.043Z",
+  "reason_code": "QUEUED_REHEARSAL_READINESS_WORKER_CONSUMED",
+  "operation": "full_public_rehearsal_task00_readiness",
+  "proof": {
+    "request_key": "de7b932d545bfce50bb612e01a7411f6195437cb0913f7bfbdeab6b9363f0e39",
+    "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+    "observed_writer_generation": 2,
+    "production_allocation": false
+  }
+}
