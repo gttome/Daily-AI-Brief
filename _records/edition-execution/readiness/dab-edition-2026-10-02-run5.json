@@ -1,0 +1,47 @@
+{
+  "schema_version": "run-learning-readiness-v2",
+  "run_number": 5,
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "evaluated_at": "2026-10-02T12:40:12Z",
+  "result": "PASS",
+  "errors": [],
+  "deferred_blockers": [
+    "proven_scheduled_image_host_required",
+    "image_host:NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST"
+  ],
+  "start_scope": "non_image_production",
+  "start_authorized": true,
+  "image_tasks_authorized": false,
+  "publication_authorized": false,
+  "evidence": {
+    "protected_main_sha": "3e97356f9f497fef7ffc2851e7a106dbf47d01f3",
+    "liveness_fix_pr": 350,
+    "previous_run_cleanup_path": "_records/edition-execution/cleanup/dab-edition-2026-10-01-run4.json",
+    "previous_run_cleanup_result": "PASS",
+    "previous_run_production_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+    "current_learning_ledger_path": "data/operations/production-continuous-improvement-ledger.jsonl",
+    "current_learning_ledger_blob_sha": "14468480175ed9b5118e1faa35f53473ce60e1d0",
+    "current_learning_event_count": 44,
+    "previous_certified_ledger_digest": "sha256:9bd44dad8ad4a0b7f375f66765b7c171458309c0ec9786187bb60cb95a094f1e",
+    "startup_contract_blob_sha": "78f13bc0adeb14bf88ef0d10c6ca460c472edc1f",
+    "readiness_contract_blob_sha": "71d336c1ec0ac834f7dcb5497ec4ab36f233f6b1",
+    "image_host_registration_blob_sha": "09ddeb2b347fa2e60deaf580e6d60e6070510fe9",
+    "image_host_status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
+    "daily_controller_enabled": true,
+    "hourly_recovery_enabled": true,
+    "live_validator_enabled": true,
+    "one_writer": true,
+    "writer_fencing_enabled": true,
+    "no_competing_writer": true,
+    "cost_boundary": {
+      "chatgpt_work": false,
+      "codex": false,
+      "paid_apis": false,
+      "billable_overage": false,
+      "new_credentials": false
+    },
+    "quality_gates_preserved": true,
+    "publication_gates_preserved": true
+  }
+}
