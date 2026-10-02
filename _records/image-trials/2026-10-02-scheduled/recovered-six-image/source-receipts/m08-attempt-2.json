@@ -1,0 +1,108 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "16",
+  "candidate_id": "m08",
+  "attempt": 2,
+  "execution_mode": "scheduled_direct_worker",
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 9,
+    "lease_owner": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "fence_commit": "9ed4e232d35ece4b4d6b1adc476a80b46b2ed8e5"
+  },
+  "timing": {
+    "generation_started_at": "2026-10-02T15:14:37.207778180Z",
+    "generation_started_at_basis": "computed from exact output completion mtime minus tool-reported 44.4 second wall time",
+    "generation_completed_at": "2026-10-02T15:15:21.607778180Z",
+    "generation_wall_seconds": 44.4,
+    "exact_raw_capture_completed_at": "2026-10-02T15:15:40.893883917Z",
+    "same_visual_optimization_completed_at": "2026-10-02T15:15:42.812178468Z",
+    "git_persisted_at": "2026-10-02T15:16:32Z",
+    "saved_git_review_completed_at": "2026-10-02T15:17:11.834Z"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "generation_id": null,
+    "generation_id_observation": "The native scheduled image tool exposed no generation ID; none was invented.",
+    "exact_returned_png": {
+      "bytes": 1316157,
+      "dimensions": "1730x909",
+      "sha256": "b7ae0ffd809bd6b35fcc8d01d0c12319ceced7dad67512c9e74ff1d043e4b91a",
+      "git_blob_sha_expected": "052dfcc9708989e6f8863f9cf07d3384e372a32c"
+    }
+  },
+  "candidate": {
+    "method": "same-visual center-crop resize to 1200x630 with PNG compression",
+    "bytes": 700163,
+    "dimensions": "1200x630",
+    "sha256": "9862503aa03128da67fecf654375241d6d0f40d10a103d174e2141b438ef82a4",
+    "git_blob_sha": "7bdf40446fbb8bf63ef793a60202ee9f2735d2f2"
+  },
+  "persistence": {
+    "status": "persisted",
+    "route": "github_git_data_create_blob_complete_base64",
+    "attempt_path": "_records/image-attempts/2026-10-02-run5/m08-attempt-2.png",
+    "production_path": "briefs/images/2026-10-02/dab-edition-2026-10-02-m08-2.png",
+    "blob_created_sha": "7bdf40446fbb8bf63ef793a60202ee9f2735d2f2",
+    "commit_sha": "d0e4c7c2ac457a10e1121fc79528a732cd780446",
+    "content_address_verified": true,
+    "read_back_verified": true,
+    "base64_chars": 933552,
+    "read_back_base64_exact_identity": true,
+    "png_structure": "PASS",
+    "png_dimensions": "1200x630",
+    "chunk_bridge_used": false
+  },
+  "review": {
+    "phase": "saved_git_asset_hash_bound_review",
+    "review_binding": "Immutable Git read-back Base64 was byte-identical to the locally displayed 1200x630 candidate with SHA-256 9862503a... and Git blob 7bdf4044....",
+    "subject_match": "PASS",
+    "required_mechanism": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "professional_finish": "PASS",
+    "meaningful_detail": "PASS",
+    "explanatory_mechanism": "PASS",
+    "information_hierarchy": "PASS",
+    "white_background": "PASS",
+    "allowed_visible_text": "PASS",
+    "visible_strings": [
+      "Muse",
+      "Small business",
+      "Skills",
+      "Connectors",
+      "Marketing",
+      "Commerce",
+      "Finance",
+      "Collaboration",
+      "Files",
+      "Approval",
+      "Action"
+    ],
+    "extra_visible_text": "NONE",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "product_ui": "NONE",
+    "overlap": "NONE",
+    "sparse_basic_fallback": false,
+    "low_quality_fallback": false,
+    "saved_git_asset_reviewed": true
+  },
+  "review_status": "accepted_locked",
+  "status": "accepted_locked",
+  "accepted_locked": true,
+  "accepted_at": "2026-10-02T15:17:11.834Z",
+  "production_task_advanced": true,
+  "qualification_effect": {
+    "native_scheduled_generation_observed": true,
+    "exact_git_persistence_observed": true,
+    "saved_git_visual_review_observed": true,
+    "single_image_route_proven": true,
+    "full_six_image_host_qualification": true
+  }
+}
