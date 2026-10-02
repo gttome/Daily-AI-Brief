@@ -1,0 +1,63 @@
+{
+  "schema_version": "run-timing-comparison-v1",
+  "edition_id": "dab-edition-2026-10-01",
+  "execution_id": "reliable-edition-20261001-run4",
+  "run_number": 4,
+  "completed_at": "2026-10-02T04:05:19Z",
+  "total_wall_seconds": 29632,
+  "task_cycle_seconds": {
+    "10": 92,
+    "11": 6289,
+    "12": 166,
+    "13": 165,
+    "14": 172,
+    "15": 12887,
+    "16": 2765,
+    "17": 0,
+    "18": 0,
+    "19": 0,
+    "20": 0,
+    "21": 0,
+    "22": 21.109,
+    "23": 774,
+    "24": 22,
+    "25": 55,
+    "26": 1520.695,
+    "27": 1,
+    "28": 1,
+    "29": 1,
+    "00": 43,
+    "01": 17,
+    "02": 34,
+    "03": 79,
+    "04": 59,
+    "05": 108,
+    "06": 222,
+    "07": 185,
+    "08": 100,
+    "09": 44
+  },
+  "prior_run": {
+    "execution_id": "reliable-edition-20261001",
+    "terminal_state": "FAILED",
+    "timing_seconds": {
+      "task01": 144.944,
+      "task02": 225.177,
+      "task03": 231.093,
+      "task04": 52.047,
+      "task05": 261.08,
+      "task06": 2190.197,
+      "task07": 36.715,
+      "task08": 94.411,
+      "task09": 39.502,
+      "task10": 106.86,
+      "task11": 139.014,
+      "task12": 41.87
+    }
+  },
+  "observations": [
+    "Run 4 preserved all completed work across recovery; no task timing was reset by status requests.",
+    "Image Tasks 11 and 15 contain the dominant delay caused by persistence/recovery defects; their full cycle times remain visible rather than being normalized away.",
+    "Publication Tasks 23-29 use exact event timestamps from protected CI, merge, Pages, independent live verification and closure."
+  ]
+}
