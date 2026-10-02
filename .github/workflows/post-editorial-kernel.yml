@@ -406,6 +406,20 @@ jobs:
             const fs=require('fs');
             const handoff=JSON.parse(fs.readFileSync('_records/editorial-handoff/handoff.json','utf8'));
             const manifest=JSON.parse(fs.readFileSync(handoff.publication_manifest_path,'utf8'));
+            // Merge-time publication authorization gate.
+            const readMainJson=async path=>{
+              const response=await github.rest.repos.getContent({...context.repo,path,ref:'main'});
+              if(Array.isArray(response.data)||!response.data.content)throw new Error('Required protected-main authorization record unavailable: '+path);
+              return JSON.parse(Buffer.from(response.data.content,'base64').toString('utf8'));
+            };
+            const pointer=await readMainJson('data/operations/active-production-run.json');
+            const host=await readMainJson('docs/operations/unattended-image-host.json');
+            if(!pointer.active||pointer.terminal||pointer.edition_id!==manifest.edition_id||pointer.branch!==manifest.staging_ref||pointer.image_tasks_authorized!==true||pointer.publication_authorized!==true){
+              throw new Error('Protected main does not authorize publication for this exact active run.');
+            }
+            if(host.status!=='READY'||host.host_id!=='chatgpt-automation:6abfb619185c819194646f77c3b314a4'||!host.qualification_receipt?.path||!host.qualification_receipt?.blob_sha){
+              throw new Error('Protected main unattended image host is not READY with exact qualification evidence.');
+            }
             const mainBefore=(await github.rest.git.getRef({...context.repo,ref:'heads/main'})).data.object.sha;
             if(mainBefore!==manifest.baseline_sha)throw new Error('Trusted main moved after candidate validation; narrow revalidation required.');
             pr=(await github.rest.pulls.get({...context.repo,pull_number:pr.number})).data;
@@ -510,6 +524,24 @@ jobs:
             const policy = JSON.parse(Buffer.from(policyResponse.data.content, 'base64').toString('utf8'));
             if (policy.profile_id !== 'under80-v1' || policy.autonomous_main_merge_enabled !== true) {
               core.info('Current main policy does not authorize under80 autonomous publication promotion.');
+              return;
+            }
+
+            // Merge-time publication authorization gate.
+            const readJson=async(path,ref)=>{
+              const response=await github.rest.repos.getContent({...context.repo,path,ref});
+              if(Array.isArray(response.data)||!response.data.content)throw new Error('Required publication authorization evidence unavailable: '+path);
+              return JSON.parse(Buffer.from(response.data.content,'base64').toString('utf8'));
+            };
+            const manifest=await readJson('_records/editorial-handoff/publication-manifest.json',run.head_sha);
+            const pointer=await readJson('data/operations/active-production-run.json','main');
+            const host=await readJson('docs/operations/unattended-image-host.json','main');
+            if(!pointer.active||pointer.terminal||pointer.edition_id!==manifest.edition_id||pointer.branch!==manifest.staging_ref||pointer.image_tasks_authorized!==true||pointer.publication_authorized!==true){
+              core.setFailed('Protected main does not authorize publication for this exact active run.');
+              return;
+            }
+            if(host.status!=='READY'||host.host_id!=='chatgpt-automation:6abfb619185c819194646f77c3b314a4'||!host.qualification_receipt?.path||!host.qualification_receipt?.blob_sha){
+              core.setFailed('Protected main unattended image host is not READY with exact qualification evidence.');
               return;
             }
 

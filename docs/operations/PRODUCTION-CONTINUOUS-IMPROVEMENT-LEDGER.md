@@ -670,3 +670,11 @@ Problems: 36 · Events: 52
 - **Recovery:** Preserve the merge and all candidate bytes; complete protected host registration, reconcile authorization, verify the exact deployed SHA independently, and record PUBLIC CLOSED append-only. Do not hide or rewrite the ordering anomaly.
 - **Future validation:** Enforce host READY and same-run `publication_authorized` at merge time, independent of earlier candidate CI.
 
+### Resolution event DAB-OPS-E-000056 — Merge-time gate mitigation
+
+- **Status:** mitigated
+- **Mitigated:** 2026-10-02T18:55:42.337Z
+- **Actual fix:** Preserve the historical out-of-order merge, bind completion to publication PR #364 / exact candidate `be96230e8a71825e945748a7aa7b771d354a7bee` / merge `8f3217480edb5eb603d9f9940128cb6589af7946` / protected CI 37044705745, and require both autonomous promotion paths to re-read protected main immediately before merge.
+- **Permanent guard:** The exact active run must still match the candidate manifest and have `image_tasks_authorized=true` plus `publication_authorized=true`; the registered unattended host must be `READY` with a bound qualification receipt. Any mismatch fails closed.
+- **Verification:** Pages run 37050386973 deployed protected main `b57d7be754daaae858b4b05ea26dd806a01a3f6f`; deterministic live validation in run 37050486737 passed before persistence stopped only at this learning reconciliation gate.
+- **Preservation:** Reader content, publication candidate files and all six accepted image bytes remain unchanged.
