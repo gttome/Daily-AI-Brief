@@ -1,11 +1,9 @@
 {
   "schema_version": "run-writer-lease-v1",
   "execution_id": "reliable-edition-20261002-run5",
-  "owner_id": "chatgpt-automation:6abeb9a2b8a88191949dc420d5e10feb",
-  "generation": 10,
-  "acquired_at": "2026-10-02T16:05:58.605Z",
-  "last_heartbeat_at": "2026-10-02T16:06:41.009Z",
-  "expires_at": "2026-10-02T16:06:41.009Z",
-  "released_at": "2026-10-02T16:06:41.009Z",
-  "release_reason": "TASK17_QUALIFICATION_EVIDENCE_RECOVERY_SCHEDULED"
+  "owner_id": "github-actions-37031826712-1",
+  "generation": 11,
+  "acquired_at": "2026-10-02T16:08:17.502Z",
+  "last_heartbeat_at": "2026-10-02T16:08:17.502Z",
+  "expires_at": "2026-10-02T22:08:17.502Z"
 }
