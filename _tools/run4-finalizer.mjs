@@ -73,7 +73,7 @@ write(qualityPath,quality);const qSha=sha256(fs.readFileSync(path.join(root,qual
 stories.forEach((story,i)=>{const id=selected[i].candidate_id,info=imgInfo(id);imageManifest[id]={story_id:story.story_id,candidate_id:id,path:info.path,alt:story.image.alt,width:1200,height:630,sha256:info.sha256,git_blob_sha:info.git_blob_sha,accepted_locked:true,lock_status:'accepted_locked',locked:true,inspection_result:'pass',generation_method:'professional_editorial_diagram',renderer_verified:true,visual_reviewed:true,quality_accepted:true,overall_gate:'pass',quality_evidence_path:qualityPath,quality_evidence_sha256:qSha,cache_key:story.image.cache_key,asset_version:'oct1-'+id+'-accepted-v1',supersedes:null,deployment_verification_required:true,execution_receipt_path:'_records/image-attempts/2026-10-01-run4/'+attempts[id]};});
 const imageReviewPath='_records/editorial-handoff/images-2026-10-01.json';write(imageReviewPath,imageManifest);
 
-const files=generatedFiles(edition,root,{watchlist});
+const files=generatedFiles(edition,root,{watchlist:watch});
 for(const [name,content] of files)write(name,content.endsWith('\n')?content:content+'\n');
 const errors=validateIntegratedRepository(edition,root,{imageReviewPath});
 console.log(JSON.stringify({edition:editionId,stories:stories.length,errors},null,2));
