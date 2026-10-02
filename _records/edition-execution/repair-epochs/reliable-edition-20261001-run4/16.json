@@ -53,6 +53,8 @@
   "consumer_version": "repository-repair-consumer-v1",
   "consumer_writer_generation": 5,
   "completed_at": "2026-10-02T01:42:26.198Z",
-  "post_repair_attempts": 0,
-  "repair_digest": "sha256:c1ea4febd4010ed9d06b789f11c41aa841f8e6dac8365f170472ea468def39c2"
+  "post_repair_attempts": 1,
+  "repair_digest": "sha256:c1ea4febd4010ed9d06b789f11c41aa841f8e6dac8365f170472ea468def39c2",
+  "last_post_repair_request_key": "56c90cdba4b48dda4fe93581093d1e45e457e27b191c930169d388c0d663ba4d",
+  "post_repair_dispatched_at": "2026-10-02T01:43:27.810Z"
 }
