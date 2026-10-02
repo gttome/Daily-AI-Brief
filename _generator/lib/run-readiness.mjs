@@ -3,7 +3,7 @@ export const RUN_PROMOTION_VERSION = 'run-promotion-review-v2';
 export const DEFAULT_STALE_ACTIVE_MS = 15 * 60 * 1000;
 export const MAX_SUPERVISOR_HEARTBEAT_SECONDS = 90;
 export const PROVEN_IMAGE_PATH = 'production-image-execution-v2:generate-transfer-verify-review-accept';
-export const SMALL_PNG_ROUTES = Object.freeze(['direct_git_data_create_blob_base64','bounded_base64_chunk_bridge']);
+export const SMALL_PNG_ROUTES = Object.freeze(['direct_git_data_create_blob_base64','bounded_base64_chunk_bridge','bounded_same_visual_png_transport_optimization']);
 export const TERMINAL_RUN_STATES = Object.freeze(['PUBLIC_CLOSED','FAILED']);
 
 const stamp = value => typeof value === 'string' && Number.isFinite(Date.parse(value));

@@ -91,20 +91,23 @@
     "small_png_transport": {
       "required_every_run": true,
       "primary": "direct_git_data_create_blob_base64",
-      "fallback": "bounded_base64_chunk_bridge",
+      "fallback": "bounded_same_visual_png_transport_optimization",
       "sequence": [
-        "capture_exact_png_bytes_immediately",
-        "persist_exact_bytes",
-        "verify_content_identity",
+        "capture_generated_professional_visual_and_source_lineage",
+        "persist_exact_native_png_or_bounded_same_visual_png_representation",
+        "verify_final_persisted_content_identity_and_git_readback",
         "review_saved_git_asset",
         "accept_or_retry"
       ],
       "prohibit": [
         "owner_upload",
         "conversation_scavenging_as_primary_recovery",
-        "regenerate_while_exact_bytes_are_recoverable",
-        "new_transport_architecture_when_primary_or_fallback_is_available"
-      ]
+        "regenerate_while_accepted_visual_is_safely_persistable",
+        "svg_basic_or_low_quality_image_fallback",
+        "new_transport_architecture_when_an_approved_route_is_available"
+      ],
+      "secondary_fallback": "bounded_base64_chunk_bridge",
+      "identity_rule": "Exact identity is mandatory for the final persisted PNG bytes. A bounded same-visual PNG representation may differ from native generation bytes only when professional composition/content are preserved, source-to-final lineage is recorded, and final Git bytes/read-back are verified."
     }
   },
   "kanban": {

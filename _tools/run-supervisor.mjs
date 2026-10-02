@@ -144,14 +144,28 @@ try{
   }else if(command==='enqueue'){
     const runRoot=path.resolve(args['run-root']||'.'), request=readJson(args.request);
     const file=requestPath(runRoot,request);
+    let queueResult='QUEUED';
     if(fs.existsSync(file)){
       const existing=readJson(file);
       if(existing.request_key!==request.request_key) throw Error('worker_request_path_conflict');
-      emit({result:'REUSED',file:path.relative(runRoot,file),request_key:request.request_key});
+      queueResult='REUSED';
     }else{
       writeJson(file,request);
-      emit({result:'QUEUED',file:path.relative(runRoot,file),request_key:request.request_key});
     }
+    if(Number(request.post_repair_attempt||0)>0){
+      const repair=repairEpochState(runRoot,request.execution_id,String(request.task_id).padStart(2,'0'));
+      if(!repair.value||repair.value.status!=='PASS'||repair.value.required_proofs_passed!==true)
+        throw Error('post_repair_dispatch_requires_passed_repair_epoch');
+      const updated={
+        ...repair.value,
+        post_repair_attempts:Math.max(Number(repair.value.post_repair_attempts||0),Number(request.post_repair_attempt)),
+        last_post_repair_request_key:request.request_key,
+        post_repair_dispatched_at:request.created_at||new Date().toISOString()
+      };
+      writeJson(repair.file,updated);
+    }
+    emit({result:queueResult,file:path.relative(runRoot,file),request_key:request.request_key,
+      post_repair_attempt:Number(request.post_repair_attempt||0)});
   }else if(command==='tick'){
     const runRoot=path.resolve(args['run-root']||'.'), executionKey=safeExecutionKey(args['execution-key']);
     const contract=readJson(args.contracts), errors=validateTaskRecoveryContracts(contract);

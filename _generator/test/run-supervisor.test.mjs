@@ -240,3 +240,19 @@ test('watchdog runs every five minutes and can only restart the active pointer i
   assert.match(y,/takeover_dead_owner=true/);
   assert.doesNotMatch(y,/create.*run/i);
 });
+
+test('Supervisor consumes repository engineering repairs instead of leaving passive queue entries',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/repository-repair-consumer\.mjs consume/);
+  assert.match(y,/request_kind.*engineering_repair/);
+  assert.match(y,/request_capability.*repository/);
+  assert.match(y,/pull-requests: read/);
+  assert.match(y,/worker-results repair-epochs/);
+});
+
+test('enqueue records the one permitted post-repair dispatch in the repair epoch',()=>{
+  const tool=fs.readFileSync('_tools/run-supervisor.mjs','utf8');
+  assert.match(tool,/post_repair_attempts:Math\.max/);
+  assert.match(tool,/last_post_repair_request_key/);
+  assert.match(tool,/post_repair_dispatch_requires_passed_repair_epoch/);
+});

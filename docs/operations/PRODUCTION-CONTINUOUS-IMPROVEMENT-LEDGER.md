@@ -4,7 +4,7 @@
 
 **Policy:** This Markdown file is a human-readable projection. The JSONL event stream is append-only and authoritative. Historical timing not supported by durable evidence is recorded as unknown rather than inferred.
 
-**Backfilled material problems:** 19
+**Material problems tracked:** 21
 
 Every future Task 00 reads the full JSONL ledger and proves all permanent fixes/invariants/tests remain present. Every material production problem is appended during the run. Task 29 reconciles status, timing, regression protection and next-run readiness.
 
@@ -254,3 +254,30 @@ Every future Task 00 reads the full JSONL ledger and proves all permanent fixes/
 - **Permanent implementation:** _generator/lib/run-supervisor.mjs#applyImmediateImageRecovery, _tools/run-supervisor.mjs
 - **Regression coverage:** _generator/test/run-supervisor.test.mjs
 - **Production invariant(s):** explicit-image-rejection-recovery-is-immediate, image-attempt-budget-must-not-overrun
+
+
+## DAB-OPS-20261001-017 — Long-running orchestration context contaminated repeated m08 story-image generations
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261001-run4
+- **Task:** 15
+- **Root cause:** The image request was executed with unrelated orchestration/dashboard context available to the generation worker. Fresh single-story isolation removed the repeated subject mismatch.
+- **Operational impact:** Two bounded m08 attempts generated the wrong subject and delayed Task 15.
+- **Actual permanent fix:** After a context/subject mismatch, require a fresh single-story image worker using only the sealed image specification and explicitly exclude orchestration/dashboard context.
+- **Fix outcome:** Fresh-context attempt 4 restored subject_match=PASS; its separate human-icon and PNG-transport defects remain owned by the engineering-repair epoch.
+- **Permanent implementation:** docs/operations/task-recovery-contracts.json, _generator/lib/repository-repair-consumer.mjs
+- **Regression coverage:** _generator/test/repository-repair-consumer.test.mjs
+- **Production invariant(s):** fresh_single_story_image_worker_after_context_mismatch
+
+## DAB-OPS-20261001-018 — Repository engineering-repair request was queued without any active consumer
+
+- **Status:** permanently_fixed
+- **First observed run:** reliable-edition-20261001-run4
+- **Task:** 15
+- **Root cause:** Supervisor enqueue persisted a repository engineering-repair JSON request, but no GitHub Actions repository-repair consumer existed.
+- **Operational impact:** The one-minute Supervisor could remain alive while production made no progress, making owner observation an accidental liveness mechanism.
+- **Actual permanent fix:** Consume repository engineering repairs in the fenced Supervisor lifecycle immediately after enqueue/reuse, require protected-CI evidence, persist an idempotent repair epoch/result, and classify a queue item without a consumer beyond one interval as a liveness defect.
+- **Fix outcome:** Repository repair is executable work rather than a passive queue.
+- **Permanent implementation:** .github/workflows/run-supervisor.yml, _tools/repository-repair-consumer.mjs, _generator/lib/repository-repair-consumer.mjs, _tools/run-supervisor.mjs
+- **Regression coverage:** _generator/test/repository-repair-consumer.test.mjs, _generator/test/run-supervisor.test.mjs
+- **Production invariant(s):** queued_action_without_consumer_is_not_progress, repository_repair_request_must_have_active_consumer
