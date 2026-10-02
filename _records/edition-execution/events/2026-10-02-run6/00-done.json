@@ -1,0 +1,18 @@
+{
+  "task_id": "00",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T23:02:59.119Z",
+  "reason_code": "REHEARSAL_READINESS_PASS",
+  "operation": "full_public_rehearsal_task00_readiness",
+  "proof": {
+    "request_key": "de7b932d545bfce50bb612e01a7411f6195437cb0913f7bfbdeab6b9363f0e39",
+    "result_ref": "_records/edition-execution/worker-results/reliable-rehearsal-20261002-pre-oct3-r1/00-de7b932d545bfce50bb612e01a7411f6195437cb0913f7bfbdeab6b9363f0e39.json",
+    "protected_main_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
+    "production_allocation": false,
+    "canonical_pointers_mutable": false,
+    "five_change_rehearsal": "PASS",
+    "image_host": "READY",
+    "run5_preserved": true
+  }
+}
