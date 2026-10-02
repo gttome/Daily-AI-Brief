@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261001-run4",
   "edition_id": "dab-edition-2026-10-01",
-  "observed_at": "2026-10-02T02:55:39.200Z",
+  "observed_at": "2026-10-02T03:19:02.931Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:9cfc70488b12a29c58037345274f725e5094ff8a34927fe0222799ea51c7752e",
+  "source_event_digest": "sha256:1c2576557ca4f1c9c8d6475738c6c5db8df393593a0052595115aa830c531916",
   "tasks": {
     "10": {
       "id": "10",
@@ -105,50 +105,50 @@
     "18": {
       "id": "18",
       "title": "Assemble canonical Brief and permanent pages",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "entered_backlog_at": "2026-10-02T03:18:53Z",
+      "active_started_at": "2026-10-02T03:18:53Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T03:18:53Z",
+      "cycle_seconds": 0,
+      "active_seconds": 0
     },
     "19": {
       "id": "19",
       "title": "Refresh digests and seal immutable bundle",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "entered_backlog_at": "2026-10-02T03:18:53Z",
+      "active_started_at": "2026-10-02T03:18:53Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T03:18:53Z",
+      "cycle_seconds": 0,
+      "active_seconds": 0
     },
     "20": {
       "id": "20",
       "title": "Run qualification",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "entered_backlog_at": "2026-10-02T03:18:53Z",
+      "active_started_at": "2026-10-02T03:18:53Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T03:18:53Z",
+      "cycle_seconds": 0,
+      "active_seconds": 0
     },
     "21": {
       "id": "21",
       "title": "Perform focused repair only if qualification identifies a defect",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Done",
+      "entered_backlog_at": "2026-10-02T03:18:53Z",
+      "active_started_at": "2026-10-02T03:18:53Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T03:18:53Z",
+      "cycle_seconds": 0,
+      "active_seconds": 0
     },
     "22": {
       "id": "22",
