@@ -6,10 +6,12 @@
   "execution_id": "reliable-edition-20261002-run5",
   "execution_key": "2026-10-02-run5",
   "branch": "reliable-edition/dab-edition-2026-10-02-run5",
-  "updated_at": "2026-10-02T12:40:12Z",
+  "updated_at": "2026-10-02T12:42:37Z",
   "start_scope": "non_image_production",
   "image_tasks_authorized": false,
   "publication_authorized": false,
   "deferred_blocker": "unattended_image_host",
-  "note": "Run 5 durably allocated during missed-start recovery after PR #350. Task 00 is Active. The image-host blocker is route-scoped and must not stop non-image production."
+  "note": "Run 5 durably allocated during missed-start recovery after PR #350. Task 00 is Active. The image-host blocker is route-scoped and must not stop non-image production.",
+  "current_task": "01",
+  "current_task_state": "Active"
 }
