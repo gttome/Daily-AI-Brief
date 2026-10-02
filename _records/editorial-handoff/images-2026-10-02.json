@@ -17,8 +17,13 @@
     "visual_reviewed": true,
     "quality_accepted": true,
     "overall_gate": "pass",
-    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m01-attempt-3.json",
-    "deployment_verification_required": true
+    "quality_evidence_path": "_records/image-quality/2026-10-02-editorial-v2.json",
+    "quality_evidence_sha256": "62ea97161920567b67c6b89ef1eb7e8ed4e3c6fbe32e43a259d9bbf5ee4e3e02",
+    "cache_key": "oct2-m01-7bb53d5c6b78",
+    "asset_version": "oct2-m01-accepted-v1",
+    "supersedes": null,
+    "deployment_verification_required": true,
+    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m01-attempt-3.json"
   },
   "m02": {
     "story_id": "dab-story-2026-10-02-m02",
@@ -38,8 +43,13 @@
     "visual_reviewed": true,
     "quality_accepted": true,
     "overall_gate": "pass",
-    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m02-attempt-1.json",
-    "deployment_verification_required": true
+    "quality_evidence_path": "_records/image-quality/2026-10-02-editorial-v2.json",
+    "quality_evidence_sha256": "62ea97161920567b67c6b89ef1eb7e8ed4e3c6fbe32e43a259d9bbf5ee4e3e02",
+    "cache_key": "oct2-m02-b4b67b2216dd",
+    "asset_version": "oct2-m02-accepted-v1",
+    "supersedes": null,
+    "deployment_verification_required": true,
+    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m02-attempt-1.json"
   },
   "m04": {
     "story_id": "dab-story-2026-10-02-m04",
@@ -59,8 +69,13 @@
     "visual_reviewed": true,
     "quality_accepted": true,
     "overall_gate": "pass",
-    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m04-attempt-1.json",
-    "deployment_verification_required": true
+    "quality_evidence_path": "_records/image-quality/2026-10-02-editorial-v2.json",
+    "quality_evidence_sha256": "62ea97161920567b67c6b89ef1eb7e8ed4e3c6fbe32e43a259d9bbf5ee4e3e02",
+    "cache_key": "oct2-m04-721226f24962",
+    "asset_version": "oct2-m04-accepted-v1",
+    "supersedes": null,
+    "deployment_verification_required": true,
+    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m04-attempt-1.json"
   },
   "m05": {
     "story_id": "dab-story-2026-10-02-m05",
@@ -80,8 +95,13 @@
     "visual_reviewed": true,
     "quality_accepted": true,
     "overall_gate": "pass",
-    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m05-attempt-2.json",
-    "deployment_verification_required": true
+    "quality_evidence_path": "_records/image-quality/2026-10-02-editorial-v2.json",
+    "quality_evidence_sha256": "62ea97161920567b67c6b89ef1eb7e8ed4e3c6fbe32e43a259d9bbf5ee4e3e02",
+    "cache_key": "oct2-m05-3e01497e5d3f",
+    "asset_version": "oct2-m05-accepted-v1",
+    "supersedes": null,
+    "deployment_verification_required": true,
+    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m05-attempt-2.json"
   },
   "m07": {
     "story_id": "dab-story-2026-10-02-m07",
@@ -101,8 +121,13 @@
     "visual_reviewed": true,
     "quality_accepted": true,
     "overall_gate": "pass",
-    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m07-attempt-1.json",
-    "deployment_verification_required": true
+    "quality_evidence_path": "_records/image-quality/2026-10-02-editorial-v2.json",
+    "quality_evidence_sha256": "62ea97161920567b67c6b89ef1eb7e8ed4e3c6fbe32e43a259d9bbf5ee4e3e02",
+    "cache_key": "oct2-m07-0afe15d66bfd",
+    "asset_version": "oct2-m07-accepted-v1",
+    "supersedes": null,
+    "deployment_verification_required": true,
+    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m07-attempt-1.json"
   },
   "m08": {
     "story_id": "dab-story-2026-10-02-m08",
@@ -122,7 +147,12 @@
     "visual_reviewed": true,
     "quality_accepted": true,
     "overall_gate": "pass",
-    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m08-attempt-2.json",
-    "deployment_verification_required": true
+    "quality_evidence_path": "_records/image-quality/2026-10-02-editorial-v2.json",
+    "quality_evidence_sha256": "62ea97161920567b67c6b89ef1eb7e8ed4e3c6fbe32e43a259d9bbf5ee4e3e02",
+    "cache_key": "oct2-m08-9862503aa031",
+    "asset_version": "oct2-m08-accepted-v1",
+    "supersedes": null,
+    "deployment_verification_required": true,
+    "execution_receipt_path": "_records/image-attempts/2026-10-02-run5/m08-attempt-2.json"
   }
 }

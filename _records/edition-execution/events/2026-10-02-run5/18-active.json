@@ -1,0 +1,10 @@
+{
+  "task_id": "18",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T17:02:11.620Z",
+  "proof": {
+    "task17_done": true,
+    "accepted_images": 6
+  }
+}

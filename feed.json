@@ -6,6 +6,128 @@
   "description": "Six AI articles, up to two videos, and up to two podcasts selected daily.",
   "items": [
     {
+      "id": "dab-story-2026-10-02-m01",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-02/cohere-embed-5-shared-space-pro-fast-retrieval/",
+      "title": "Cohere Embed 5 splits retrieval into Pro and Fast models with one shared space",
+      "summary": "Cohere introduced Embed 5 Pro and Fast as multimodal enterprise embedding models that share one vector space while supporting long-context, multilingual and Matryoshka-style retrieval workflows.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m01-3.png?v=oct2-m01-7bb53d5c6b78",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "m01",
+        "technical ai engineering",
+        "Cohere"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-02-m02",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-02/dogwood-temporal-governance-for-agent-actions/",
+      "title": "Dogwood moves agent governance into the action sequence",
+      "summary": "AWS introduced the Dogwood Local Engine to apply temporal policy to ordered agent actions, using execution history and state to decide whether a tool action should proceed.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m02-1.png?v=oct2-m02-b4b67b2216dd",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "m02",
+        "technical ai engineering",
+        "AWS Open Source"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-02-m04",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-02/stack-internal-trusted-enterprise-context-for-ai/",
+      "title": "Stack Internal makes enterprise knowledge provenance machine-readable for AI",
+      "summary": "Stack Overflow’s next Stack Internal release adds provenance, recency, corroboration and expert validation signals so people and agents can reason about whether internal knowledge is trustworthy.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m04-1.png?v=oct2-m04-721226f24962",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "m04",
+        "applied genai knowledge workers",
+        "Stack Overflow"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-02-m05",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-02/slack-mcp-server-lists-records-agent-workflows/",
+      "title": "Slack MCP Server turns Lists and records into agent-operable workflow objects",
+      "summary": "Slack’s September feature release expands its MCP Server with create, read, update and delete operations for Lists and records, enabling AI-assisted CRM and administrative workflows inside structured work data.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m05-2.png?v=oct2-m05-3e01497e5d3f",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "m05",
+        "applied genai knowledge workers",
+        "Slack"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-02-m07",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-02/gemini-skills-reusable-work-modules/",
+      "title": "Gemini Skills turn repeated prompting into reusable work modules",
+      "summary": "Google added reusable Skills to Gemini so people can save instructions and reference files, invoke them on matching work, and compose multiple Skills for repeated tasks.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m07-1.png?v=oct2-m07-0afe15d66bfd",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "m07",
+        "agents non technical people",
+        "Google"
+      ]
+    },
+    {
+      "id": "dab-story-2026-10-02-m08",
+      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-02/meta-muse-small-business-skills-connectors-approval/",
+      "title": "Meta Muse brings skills, connectors, and approval boundaries to small-business agents",
+      "summary": "Meta introduced Muse for Small Business as an agent experience that connects common business systems through reusable skills and connectors while keeping approval boundaries around actions.",
+      "image": "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-02/dab-edition-2026-10-02-m08-2.png?v=oct2-m08-9862503aa031",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "m08",
+        "agents non technical people",
+        "Meta"
+      ]
+    },
+    {
+      "id": "dab-video-2026-10-02-general",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-10-02/general/",
+      "title": "Microsoft Copilot Just Got a Massive Upgrade",
+      "summary": "A concise practical walkthrough of the new Copilot surfaces for everyday knowledge work.",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "Kevin Stratvert"
+      ]
+    },
+    {
+      "id": "dab-video-2026-10-02-agent-skills",
+      "url": "https://gttome.github.io/Daily-AI-Brief/videos/2026-10-02/agent-skills/",
+      "title": "Meet Home in Copilot",
+      "summary": "A 20-second first-party view of Copilot Home bringing Chat and Cowork into one starting point.",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "Microsoft 365"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-10-02-1",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-02/run5-1/",
+      "title": "DX Today AI Daily Brief - Wednesday, September 30, 2026",
+      "summary": "Covers Dots, Meta Muse, AI policy, tooling and enterprise developments relevant to the selected edition.",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "agents",
+        "business workflows",
+        "DX Today | No-Hype Podcast & News About AI & DX"
+      ]
+    },
+    {
+      "id": "dab-podcast-2026-10-02-2",
+      "url": "https://gttome.github.io/Daily-AI-Brief/podcasts/2026-10-02/run5-2/",
+      "title": "Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026",
+      "summary": "Adds a separate daily-news source with agent-payment controls and AI workflow context.",
+      "date_published": "2026-10-02T13:00:00-05:00",
+      "tags": [
+        "agent payments",
+        "AI workflow controls",
+        "The Morning Brief"
+      ]
+    },
+    {
       "id": "dab-story-2026-10-01-m03",
       "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws/",
       "title": "Governed multi-environment access for Claude Platform on AWS",
@@ -3103,104 +3225,6 @@
         "human handoff",
         "versioning",
         "support.freshdesk.com"
-      ]
-    },
-    {
-      "id": "dab-story-2026-09-02-ad64fbde",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/",
-      "title": "Anthropic’s Fable 5.1 pushes long-running agent work while separating higher-risk Mythos access",
-      "summary": "Anthropic introduced Claude Fable 5.1 for coding and knowledge work, with support for long-running, multi-application agent tasks, while restricting higher-risk capabilities through a separate Mythos access path.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/01-claude-51-models.svg?v=20260902-2",
-      "date_published": "2026-09-02T13:00:00-05:00",
-      "tags": [
-        "frontier models",
-        "long-running agents",
-        "coding",
-        "safeguards",
-        "evaluation",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-09-02-d4186454",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/enterprise-frontier-safeguards-puts-misuse-monitoring-into-customer-controlled-i/",
-      "title": "Enterprise Frontier Safeguards puts misuse monitoring into customer-controlled infrastructure",
-      "summary": "Anthropic announced Enterprise Frontier Safeguards, a phased enterprise offering combining zero data retention with misuse-detection safeguards while keeping monitored data in customer-controlled cloud infrastructure.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/02-enterprise-frontier-safeguards.svg",
-      "date_published": "2026-09-02T13:00:00-05:00",
-      "tags": [
-        "zero data retention",
-        "misuse detection",
-        "enterprise security",
-        "privacy",
-        "frontier safeguards",
-        "Anthropic"
-      ]
-    },
-    {
-      "id": "dab-story-2026-09-02-ad704042",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/chatgpt-for-healthcare-connects-ehr-context-and-nine-official-public-health-sour/",
-      "title": "ChatGPT for Healthcare connects EHR context and nine official public-health sources",
-      "summary": "OpenAI added an Epic EHR integration and a Healthcare Public Data plugin for ChatGPT for Healthcare, connecting official sources including PubMed, ClinicalTrials.gov, DailyMed and CMS Coverage inside a governed workspace.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/03-healthcare-connectors.svg",
-      "date_published": "2026-09-02T13:00:00-05:00",
-      "tags": [
-        "healthcare",
-        "EHR",
-        "governed connectors",
-        "grounding",
-        "authoritative sources",
-        "human review",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-09-02-b368145c",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/google-pics-brings-prompt-based-image-creation-and-editing-into-the-workspace-fl/",
-      "title": "Google Pics brings prompt-based image creation and editing into the Workspace flow",
-      "summary": "Google made Google Pics available to eligible AI Pro and Ultra subscribers as a Workspace-oriented image creation and editing tool, including generation, refinement, object isolation and text editing or translation within images.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/04-google-pics.svg?v=20260902-2",
-      "date_published": "2026-09-02T13:00:00-05:00",
-      "tags": [
-        "image generation",
-        "editing",
-        "Workspace",
-        "no-code creation",
-        "Docs",
-        "Slides",
-        "blog.google"
-      ]
-    },
-    {
-      "id": "dab-story-2026-09-02-097ae25d",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/",
-      "title": "OpenAI turns successful business processes into repeatable agent operating patterns",
-      "summary": "OpenAI published operational examples from Basis, Clay and Exa Labs showing agents used for onboarding, persistent account-management context and opportunity-to-action workflows. The common pattern is stable process definition, durable context, connected tools, evidence and review points.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/05-ai-native-workflows.svg",
-      "date_published": "2026-09-02T13:00:00-05:00",
-      "tags": [
-        "agent workflows",
-        "onboarding",
-        "account management",
-        "persistent context",
-        "human review",
-        "OpenAI"
-      ]
-    },
-    {
-      "id": "dab-story-2026-09-02-6dc5626e",
-      "url": "https://gttome.github.io/Daily-AI-Brief/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/",
-      "title": "Gilbert + Tobin shows governed AI adoption as an operating model, not a tool rollout",
-      "summary": "OpenAI published a case study describing how Gilbert + Tobin combines leadership commitment, governance and human accountability around ChatGPT Enterprise and Codex, reporting 87% active usage among enabled ChatGPT users.",
-      "image": "https://raw.githubusercontent.com/gttome/Daily-AI-Brief/main/briefs/images/2026-09-02/06-gilbert-tobin-governance.svg?v=20260902-2",
-      "date_published": "2026-09-02T13:00:00-05:00",
-      "tags": [
-        "law firms",
-        "AI governance",
-        "adoption",
-        "human accountability",
-        "enterprise workflows",
-        "OpenAI"
       ]
     }
   ]

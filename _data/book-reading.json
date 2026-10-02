@@ -865,6 +865,44 @@
         "label": "READ DEEPER",
         "why": "Run 4 all-four-book review selected this verified section as the direct mechanism and reader-value match for this item."
       }
+    ],
+    "2026-10-02": [
+      {
+        "item_id": "dab-story-2026-10-02-m01",
+        "reference_id": "reliable-embeddings",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m02",
+        "reference_id": "context-failure-playbooks",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m04",
+        "reference_id": "ecosystem-workflow",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m05",
+        "reference_id": "reliable-handoffs",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m07",
+        "reference_id": "prompt-core-components",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      },
+      {
+        "item_id": "dab-story-2026-10-02-m08",
+        "reference_id": "ecosystem-problem-strategies",
+        "label": "READ DEEPER",
+        "why": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item."
+      }
     ]
   },
   "selection_reviews": {
@@ -7379,6 +7417,3264 @@
             {
               "reference_id": "ecosystem-template-export",
               "rationale": "This verified section was reviewed for the item but the sealed Run 4 review did not identify a direct enough mechanism or reader-value match; no unreviewed book text is inferred.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        }
+      ]
+    },
+    "2026-10-02": {
+      "schema_version": "1.0.0",
+      "edition_date": "2026-10-02",
+      "catalog_digest": "95cac16503b72b8a06c6dce9f6dbd484d74a30c6f82a0d592f3c87ea4767b320",
+      "items_digest": "35c41d823b698457dd67208862beb38cd1fc21b2c12641b870e2b786626e9dd7",
+      "items": [
+        {
+          "item_id": "dab-story-2026-10-02-m01",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-02-m02",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-02-m04",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-02-m05",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-02-m07",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-story-2026-10-02-m08",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "Run 5 all-four-book review selected this verified section as a direct mechanism and reader-value match for the item.",
+              "mechanism": 4,
+              "topic": 4,
+              "practical_lesson": 4,
+              "audience": 4,
+              "section_relevance": 4,
+              "reader_value": 4
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-video-2026-10-02-general",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-video-2026-10-02-agent-skills",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-podcast-2026-10-02-1",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            }
+          ]
+        },
+        {
+          "item_id": "dab-podcast-2026-10-02-2",
+          "scores": [
+            {
+              "reference_id": "reliable-verification",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-quality-checklist",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-trust",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-embeddings",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-rag",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-agent-failures",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-handoffs",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-injection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "reliable-audit",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-discovery",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-envelope",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-dynamic-facts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-failure-playbooks",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-regression",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-privacy",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "context-launch",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-core-components",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-clarify",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-expert-critic",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-structure",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-algorithm-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-graph-thoughts",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-pattern-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "prompt-evaluation",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-practice",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-archetypes",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-role-selection",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-problem-strategies",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-companion",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-multimedia",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-workflow",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
+              "mechanism": 0,
+              "topic": 0,
+              "practical_lesson": 0,
+              "audience": 0,
+              "section_relevance": 0,
+              "reader_value": 0
+            },
+            {
+              "reference_id": "ecosystem-template-export",
+              "rationale": "This verified section was reviewed but was not the strongest direct mechanism/reader-value match for this item.",
               "mechanism": 0,
               "topic": 0,
               "practical_lesson": 0,

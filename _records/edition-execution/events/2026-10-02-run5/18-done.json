@@ -1,0 +1,12 @@
+{
+  "task_id": "18",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T17:02:11.621Z",
+  "proof": {
+    "canonical_edition": "_data/editions/2026-10-02.json",
+    "permanent_pages": "PASS",
+    "integrated_repository_validation": "PASS",
+    "accepted_images_reused": 6
+  }
+}
