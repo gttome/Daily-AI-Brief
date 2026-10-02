@@ -204,11 +204,15 @@ jobs:
               --output /tmp/writer-lease.json > /tmp/writer-renewal.json
             cp /tmp/writer-lease.json "run/$lease_rel"
 
-            node control/_tools/run-supervisor.mjs assert-fence \
+            if ! node control/_tools/run-supervisor.mjs assert-fence \
               --lease "run/$lease_rel" \
               --execution-id "$EXECUTION_ID" \
               --owner-id "$SUPERVISOR_OWNER" \
-              --generation "$WRITER_GENERATION" >/tmp/fence-check.json
+              --generation "$WRITER_GENERATION" >/tmp/fence-check.json 2>/tmp/fence-check.err; then
+              echo "Writer fence transferred to another owner/generation; Supervisor yields without treating the handoff as a production failure."
+              cat /tmp/fence-check.err || true
+              break
+            fi
 
             # Consume only complete, hash-bound PNG chunk requests left by a
             # prior fenced scheduled image worker. Malformed requests fail

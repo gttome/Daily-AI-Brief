@@ -255,6 +255,30 @@ test('watchdog runs every five minutes and can only restart the active pointer i
   assert.doesNotMatch(y,/create.*run/i);
 });
 
+test('watchdog immediately reacts to a failed Supervisor completion',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-watchdog.yml','utf8');
+  assert.match(y,/workflow_run:/);
+  assert.match(y,/Daily AI Brief Run Supervisor/);
+  assert.match(y,/conclusion != 'success'/);
+});
+
+test('explicit worker release can hand the same run back to the Supervisor',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor-handoff.yml','utf8');
+  assert.match(y,/writer-leases/);
+  assert.match(y,/HANDOFF_TO_SUPERVISOR/);
+  assert.match(y,/active-production-run\.json/);
+  assert.match(y,/gh workflow run run-supervisor\.yml/);
+  assert.match(y,/takeover_dead_owner=true/);
+});
+
+test('Supervisor yields cleanly when another fenced writer takes ownership',()=>{
+  const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
+  assert.match(y,/if ! node control\/_tools\/run-supervisor\.mjs assert-fence/);
+  assert.match(y,/Supervisor yields without treating the handoff as a production failure/);
+  assert.match(y,/cat \/tmp\/fence-check\.err \|\| true/);
+  assert.match(y,/break/);
+});
+
 test('Supervisor consumes repository engineering repairs instead of leaving passive queue entries',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
   assert.match(y,/repository-repair-consumer\.mjs consume/);
