@@ -8,6 +8,9 @@ const SERIES_SEPARATION_DATE='2026-09-16';
 const MULTI_PODCAST_DATE='2026-09-18';
 export const readerRelease = date => date >= '2026-09-12';
 export const readerAddition = content => content ? `<!-- reader-release:start -->\n${content}\n<!-- reader-release:end -->` : '';
+export function bookMappingIdentity(rows=[]){
+ return [...rows].map(({item_id,reference_id,label})=>({item_id,reference_id,label})).sort((a,b)=>a.item_id.localeCompare(b.item_id));
+}
 export function validateBookReading(edition, data = catalog) {
   const selections=data.editions[edition.brief_date] || [];
   const ids=new Set(edition.stories.map(s=>s.story_id));
