@@ -1,0 +1,27 @@
+{
+  "schema_version": "run-worker-result-v1",
+  "request_key": "de7b932d545bfce50bb612e01a7411f6195437cb0913f7bfbdeab6b9363f0e39",
+  "execution_id": "reliable-rehearsal-20261002-pre-oct3-r1",
+  "edition_id": "dab-rehearsal-2026-10-02-pre-oct3-r1",
+  "branch": "rehearsal/dab-edition-2026-10-02-run6",
+  "task_id": "00",
+  "request_writer_generation": 2,
+  "status": "passed",
+  "completed_at": "2026-10-02T23:01:45.675Z",
+  "task_outcome": "Done",
+  "evidence": {
+    "protected_main_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
+    "full_learning_ledger_read": true,
+    "learning_events": 69,
+    "learning_problems": 44,
+    "latest_permanently_fixed_problems": 37,
+    "permanent_fix_contracts_complete": true,
+    "protected_five_change_receipt": "PASS",
+    "image_host": "READY",
+    "run5_terminal": "PUBLIC_CLOSED",
+    "run5_task29": "Done",
+    "rehearsal_production_allocation": false,
+    "canonical_pointers_mutable": false,
+    "isolated_preview_route": true
+  }
+}
