@@ -26,6 +26,22 @@
   "rules": [
     {
       "patterns": [
+        "_generator/lib/system-change-ledger.mjs",
+        "_tools/system-change-ledger.mjs",
+        "_generator/test/system-change-ledger.test.mjs",
+        "data/operations/production-system-change-ledger.jsonl",
+        "docs/operations/PRODUCTION-SYSTEM-CHANGE-LEDGER.md",
+        "_generator/validate-ledgers.mjs"
+      ],
+      "tier": "A",
+      "tests": [
+        "_generator/test/system-change-ledger.test.mjs",
+        "_generator/test/operational-learning.test.mjs",
+        "_generator/test/run-readiness.test.mjs"
+      ]
+    },
+    {
+      "patterns": [
         "_generator/lib/book-selection.mjs",
         "_generator/lib/book-reading.mjs",
         "_data/book-reading.json",
