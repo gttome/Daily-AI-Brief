@@ -59,3 +59,7 @@ The daily controller starts work; the hourly keeper resumes missed starts or sta
 - Existing live validation: `6aadf3587b1c8191846a078f49102633`.
 
 Archive old prompts before changing their Run 4 scope. Configuration and a run request are not proof that execution or publication completed.
+
+## GitHub image request routing
+
+Once protected host registration is READY with its actual scheduled qualification receipt, the existing GitHub image entry point leaves the exact fenced request in `awaiting_scheduled_executor` for that controller. The controller consumes it using the admitted generation/capture/review path. The routing script performs no generation, visual review, acceptance or Done transition. Without a qualified registration it retains the explicit capability blocker. Pending dispatch is not proof of an active consumer.
