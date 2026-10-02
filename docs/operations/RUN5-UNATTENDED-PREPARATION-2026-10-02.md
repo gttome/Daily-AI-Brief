@@ -1,6 +1,6 @@
 # Run 5 unattended preparation — October 2, 2026
 
-The execution improvements are implemented. **Run 5 is not started or admitted.** The live unattended image host remains unavailable under the existing no-Work, no-Codex, no-paid-API production policy. No supervised image stage or paid adapter is introduced.
+The execution improvements are implemented. **Run 5 may start in `non_image_production` scope even while the unattended image host remains unavailable.** The live unattended image route remains blocked under the existing no-Work, no-Codex, no-paid-API production policy. No supervised image stage or paid adapter is introduced. Image Tasks 11-16 and publication remain blocked until a qualified unattended host exists; Run allocation, controller liveness and dependency-safe non-image work must continue.
 
 Run 4 remains PUBLIC CLOSED with Task 29 PASS and original production SHA `ce3dac9d75949f381821dfd34163048bf08c65d6`. Its accepted artifacts, image replacements, six-image interactive trial, completed tasks and historical closure receipts are preserved.
 
@@ -18,7 +18,7 @@ Run 4 remains PUBLIC CLOSED with Task 29 PASS and original production SHA `ce3da
 | Publication | After Tasks 00–22 complete, the Supervisor checks the write boundary before taking a lease and on every tick. It stops writing the candidate and dispatches the existing trusted candidate workflow. |
 | Protected promotion | Autonomous mode requires the exact active run, completed upstream tasks, current baseline and durable validated event. Trusted candidate validation, site build, exact-head CI and protected PR merge precede Pages/live validation. |
 | Closure | Existing deterministic live validation calls generic run closeout for new active runs. Task 29, learning reconciliation, timing, promotion review, writer release and the terminal pointer travel through the protected finalization PR. The frozen run branch is not rewritten. |
-| Admission | Run 5's executable Task 00 additionally requires a registered READY host and the actual six-image qualification report. It validates each receipt and reads twelve raw/final assets from their recorded Git commit. Interactive trials and fixture PASS records cannot qualify. |
+| Admission | Task 00 may authorize `non_image_production` without a READY image host. A registered READY host plus the actual six-image qualification report is required before image Tasks 11-16 and publication. Interactive trials and fixture PASS records cannot qualify the image route. |
 
 A capability declaration still requires a trusted, working host implementation. Receipt validation cannot manufacture actual visual judgment, verify unobserved account billing, or supply a missing runtime. The registry therefore remains CAPABILITY_BLOCKED.
 
@@ -40,10 +40,11 @@ Evidence: [`control-rehearsal.json`](../../_records/run5-preparation/2026-10-02/
 
 ## Remaining admission requirements
 
-1. Bind a supported unattended image generator and saved-image visual reviewer within the existing cost policy. No such host is currently registered.
-2. Execute the existing six-image batch engine from that runtime in isolated nonproduction qualification, without owner prompts, uploads or per-image approvals.
-3. Retain real quality observations, all rejected attempts, actual timestamps, and raw/final files. Recover all twelve accepted files from Git without generation.
-4. Register the qualification report and validate Task 00 using `_tools/run-readiness.mjs validate --input <readiness-input.json>`. The CLI checks the report digest, committed files, scheduled/live receipts and preserved cost boundary.
-5. In the first admitted future run, verify the newly connected publication and generic cleanup path against real CI, merge, Pages and live evidence. Fixture tests are not a completed production rehearsal.
+1. Start or resume Run 5 in `non_image_production` scope and drain all dependency-safe non-image work while preserving the image blocker.
+2. Bind a supported unattended image generator and saved-image visual reviewer within the existing cost policy. No such host is currently registered.
+3. Execute the existing six-image batch engine from that runtime in isolated nonproduction qualification, without owner prompts, uploads or per-image approvals.
+4. Retain real quality observations, all rejected attempts, actual timestamps, and raw/final files. Recover all twelve accepted files from Git without generation.
+5. Register the qualification report and re-evaluate readiness; the CLI keeps the run alive but will not authorize image tasks or publication until the report passes.
+6. In the first fully admitted image-capable run, verify the connected publication and generic cleanup path against real CI, merge, Pages and live evidence. Fixture tests are not a completed production rehearsal.
 
-Status requests remain observational. Neither the Supervisor nor the watchdog waits for a status request to progress. The original cumulative ledger is retained verbatim, with events 36–39 appended for this work.
+Status requests remain observational. Neither the Supervisor nor the watchdog waits for a status request to progress. A route-specific blocker must not disable the controller or keeper. The original cumulative ledger is retained, with later liveness corrections superseding the earlier global-stop interpretation.
