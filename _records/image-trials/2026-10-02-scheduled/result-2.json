@@ -1,0 +1,40 @@
+{
+  "schema_version": "unattended-image-qualification-attempt-v1",
+  "observed_at": "2026-10-02T07:26:26Z",
+  "branch": "qualification/scheduled-image-host-2026-10-02",
+  "baseline_main_sha": "caa16eb85312eaede6b72b5af560d6fb9c5a20b2",
+  "requested_qualification_schema": "unattended-image-qualification-v1",
+  "result": "BLOCKED",
+  "blocker": "CURRENT_IMAGE_HOST_OUTSIDE_AUTHORIZED_COST_BOUNDARY",
+  "details": [
+    "The owner-requested schedule reactivation reached the same prohibited Codex Work execution surface.",
+    "No production or qualification image was generated.",
+    "No interactive or fixture evidence was relabeled as scheduled.",
+    "No Work/Codex/paid-API zero-use claim was manufactured.",
+    "The controller now has a real prior last_run_time, resolving only the earlier observation-timing gap; it does not qualify the prohibited host.",
+    "Run 4 remains PUBLIC CLOSED with Task 29 PASS at production SHA ce3dac9d75949f381821dfd34163048bf08c65d6.",
+    "Run 5 was not allocated because Task 00 admission remains blocked."
+  ],
+  "evidence": {
+    "bootstrap_receipt": "_records/image-trials/2026-10-02-scheduled/bootstrap-receipt-2.json",
+    "scheduler_observation": "_records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json",
+    "capability_probe": "_records/image-trials/2026-10-02-scheduled/capability-probe-2.json",
+    "schedule_pause": "_records/image-trials/2026-10-02-scheduled/schedule-pause-2.json"
+  },
+  "smallest_supported_recovery": {
+    "action": "Bind an ordinary non-Work/non-Codex scheduled ChatGPT image host within the existing zero-paid-service boundary, then resume this same isolated qualification from its preserved checkpoints.",
+    "reuse": [
+      "the six sealed nonproduction story specs",
+      "the released durable batch and exact-byte transport code",
+      "both bootstrap receipts and scheduler observations"
+    ],
+    "do_not_repeat": [
+      "Run 4",
+      "the interactive six-image trial",
+      "fixture control rehearsal",
+      "any accepted production image",
+      "unchanged prohibited schedule reactivation"
+    ]
+  },
+  "production_start_authorized": false
+}

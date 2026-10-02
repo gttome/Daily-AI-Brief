@@ -1,0 +1,41 @@
+{
+  "schema_version": "scheduled-image-host-capability-probe-v1",
+  "observed_at": "2026-10-02T07:26:26Z",
+  "requested_host_id": "chatgpt-automation:6abeba31fe28819184544abf70874a80",
+  "evidence_type": "live_capability_probe_recurrence",
+  "qualification_images_generated": 0,
+  "owner_interventions": [],
+  "account_billing_observed": false,
+  "probes": {
+    "native_image_generation": {
+      "available": true,
+      "permitted_under_authorized_cost_boundary": false,
+      "reason": "The native image tool is exposed through the current Codex Work execution surface. The run authorization explicitly prohibits Work and Codex usage."
+    },
+    "immediate_exact_byte_capture": {
+      "available_if_generation_were_permitted": true,
+      "executed": false,
+      "reason": "No image generation was called because its host surface remains outside the authorized boundary."
+    },
+    "saved_image_visual_inspection": {
+      "available_if_generation_were_permitted": true,
+      "executed": false,
+      "reason": "There were no new saved qualification pixels to inspect."
+    },
+    "git_binary_delivery": {
+      "available": true,
+      "method": "Git Data create_blob with base64, then content-addressed tree binding",
+      "executed_for_images": false,
+      "reason": "No authorized image bytes were generated."
+    },
+    "scheduler_invocation_proof": {
+      "prior_controller_invocation_observed": true,
+      "prior_last_run_time": "2026-10-02T06:32:04.923341+00:00",
+      "current_invocation_bound_post_run": false,
+      "observation_path": "_records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json",
+      "reason": "The post-run scheduler snapshot now proves the earlier controller invocation, but neither that proof nor schedule reactivation changes the observed runtime-policy incompatibility."
+    }
+  },
+  "result": "CAPABILITY_BLOCKED_POLICY_BOUNDARY",
+  "production_start_authorized": false
+}

@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:feb8f1395563ab150eb4942c19874f8f7dd8cd9d13ddec8c617193ce68c97b98`
+Ledger digest: `sha256:928d1171dfcd06e2caa06ab4d2dcd3212d2c32d940f2aa232a0a3eb0635878b1`
 
-Problems: 31 · Events: 42
+Problems: 31 · Events: 43
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -551,16 +551,16 @@ Problems: 31 · Events: 42
 - **Status:** open
 - **First observed run:** scheduled-image-host-qualification-20261002
 - **Task(s):** 00
-- **Symptom:** not recorded
-- **Root cause:** The live automation reported its native image tools were exposed from a Codex Work surface. The available scheduler configuration has no execution-mode selector. During the invocation last_run_time was still null.
-- **Operational impact:** Daily unattended production cannot be admitted under the existing no-Work/no-Codex policy using this observed runtime. Run5 was not allocated.
+- **Symptom:** The controller, hourly keeper and two immediate startup tasks were re-enabled, but the available native image and saved-pixel inspection tools remained exposed through Codex Work.
+- **Root cause:** The automation schedule selects when to invoke the task, not an ordinary non-Work execution surface. The scheduler interface exposes no runtime-mode selector.
+- **Operational impact:** Task 00 remains blocked and Run5 remains unallocated. Repeating the same triggers cannot qualify the host.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt.
-- **Actual fix:** Paused the newly enabled controller and keeper after the prohibited runtime was observed; restored the pre-existing live validator prompt. Preserved all probe records and Run4. No image generation, cost-proof bypass or paid adapter was used.
-- **Fix outcome:** The live probe demonstrates a runtime-policy incompatibility, not an image-quality PASS. Account billing remains unobserved. A repository rollback cannot change the external execution surface.
-- **Permanent implementation:** none
+- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt. | Repeated the full bootstrap from current protected main, read all 42 ledger events, reconciled Run4 completion evidence and inspected a fresh automations.peek snapshot. The controller now reports a real prior last_run_time.
+- **Actual fix:** Stopped the daily controller, hourly keeper and duplicate one-time startup tasks after the recurrence; kept the independent live validator enabled. Preserved a second immutable probe/result set on the isolated qualification branch.
+- **Fix outcome:** Zero images generated, zero production state mutated and no proof flags changed. Run4 remains PUBLIC_CLOSED at ce3dac9d75949f381821dfd34163048bf08c65d6. The scheduler-observation timing gap is resolved for the earlier invocation, while the runtime-policy blocker remains open.
+- **Permanent implementation:** _records/image-trials/2026-10-02-scheduled/bootstrap-receipt-2.json, _records/image-trials/2026-10-02-scheduled/scheduler-observation-2.json, _records/image-trials/2026-10-02-scheduled/capability-probe-2.json, _records/image-trials/2026-10-02-scheduled/result-2.json, _records/image-trials/2026-10-02-scheduled/schedule-pause-2.json
 - **Regression tests:** none
-- **Production invariants:** none
+- **Production invariants:** schedule_configuration_is_not_runtime_mode_proof, unchanged_prohibited_execution_must_not_repeat, blocked_is_not_progress
 - **Recurrences:** none recorded
-- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker.
+- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker. | Resume only after a supported ordinary non-Work/non-Codex scheduled image host exists within the zero-paid-service boundary. | Reuse the isolated qualification branch and its valid checkpoints; do not create another controller or repeat Run4.
 
