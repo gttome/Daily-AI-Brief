@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261002-run5",
   "edition_id": "dab-edition-2026-10-02",
-  "observed_at": "2026-10-02T13:14:55.664Z",
+  "observed_at": "2026-10-02T13:15:57.982Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:8d6ed4f8e0dc03edd240340a906a71963394c39a6a0477f4348c4246e942482b",
+  "source_event_digest": "sha256:e83f01287e17bcc6cf3f7ab067df5832c9c6d80665fdd80cb0a8571e54ad5145",
   "tasks": {
     "10": {
       "id": "10",
@@ -309,14 +309,14 @@
     "05": {
       "id": "05",
       "title": "Lock six stories exact 2/2/2 plus one Agent Skills story",
-      "state": "Active",
+      "state": "Done",
       "entered_backlog_at": "2026-10-02T13:14:05Z",
       "active_started_at": "2026-10-02T13:14:05Z",
       "review_started_at": null,
       "blocked_started_at": null,
-      "done_at": null,
-      "cycle_seconds": null,
-      "active_seconds": null
+      "done_at": "2026-10-02T13:14:46Z",
+      "cycle_seconds": 41,
+      "active_seconds": 41
     },
     "06": {
       "id": "06",
