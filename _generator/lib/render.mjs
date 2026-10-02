@@ -97,6 +97,24 @@ function runtime(value) {
   return `${minutes}:${seconds}`;
 }
 
+export function contentCoveragePeriod(edition) {
+  const dates=[];
+  for(const story of edition.stories||[])if(/^\d{4}-\d{2}-\d{2}$/.test(story.event_date||''))dates.push(story.event_date);
+  for(const slot of Object.values(edition.worth_watching||{}))if(slot?.status==='included'&&/^\d{4}-\d{2}-\d{2}$/.test(slot.upload_date||''))dates.push(slot.upload_date);
+  const podcasts=Array.isArray(edition.podcasts)?edition.podcasts:(edition.podcast?[edition.podcast]:[]);
+  for(const slot of podcasts)if(slot?.status==='included'&&/^\d{4}-\d{2}-\d{2}$/.test(slot.publication_date||''))dates.push(slot.publication_date);
+  if(!dates.length)return formatDate(edition.brief_date);
+  dates.sort();
+  const first=dates[0],last=dates.at(-1);
+  const parse=value=>{const [year,month,day]=value.split('-').map(Number);return {year,month,day};};
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const a=parse(first),b=parse(last);
+  if(first===last)return `${months[a.month-1]} ${a.day}, ${a.year}`;
+  if(a.year===b.year&&a.month===b.month)return `${months[a.month-1]} ${a.day}–${b.day}, ${a.year}`;
+  if(a.year===b.year)return `${months[a.month-1]} ${a.day}–${months[b.month-1]} ${b.day}, ${a.year}`;
+  return `${months[a.month-1]} ${a.day}, ${a.year}–${months[b.month-1]} ${b.day}, ${b.year}`;
+}
+
 function renderVideo(name, slot, briefDate, slotId) {
   const ordinal = slotId === 'general' ? 7 : 8;
   const anchor = slotId === 'general' ? 'general' : 'agents-for-non-technical-people';
@@ -111,7 +129,7 @@ ${renderReadingSupport(slot,`dab-video-${briefDate}-${slotId}`,briefDate,"Video"
 ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
 **Channel:** ${slot.channel}  
 **Date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
-**Runtime:** ${runtime(slot.runtime_seconds)}${slot.runtime_seconds>600 && briefDate>='2026-09-11'?' · Longer selection today: no suitable video of 10 minutes or less was found.':''}  
+**Duration:** ${runtime(slot.runtime_seconds)}${slot.runtime_seconds>600 && briefDate>='2026-09-11'?' · Longer selection today: no suitable video of 10 minutes or less was found.':''}  
 **Format:** Video
 
 **Summary:** ${slot.why_useful}
@@ -134,7 +152,7 @@ ${renderReadingSupport(slot,`dab-video-${briefDate}-${slotId}`,briefDate,"Video"
 ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
 **Channel:** ${slot.channel}  
 **Date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
-**Runtime:** ${runtime(slot.runtime_seconds)}${slot.runtime_seconds>600?' · Longer selection today: no suitable video of 10 minutes or less was found.':''}  
+**Duration:** ${runtime(slot.runtime_seconds)}${slot.runtime_seconds>600?' · Longer selection today: no suitable video of 10 minutes or less was found.':''}  
 **Format:** Video
 
 **Summary:** ${slot.why_useful}
@@ -164,7 +182,7 @@ export function renderBody(edition,{watchlist=null}={}) {
   return `# Daily Generative AI Brief — ${formatDate(edition.brief_date)}
 
 **Published:** ${formatDate(edition.brief_date)}  
-**Coverage period:** ${edition.coverage_period}
+**Coverage period:** ${contentCoveragePeriod(edition)}
 
 ${readerRelease(edition.brief_date)?renderEditionOverview({...edition,stories:readerStories})+'\n\n':watchlistPreview(edition.brief_date,watchlist)}${readerStories.map((story,index) => renderStory(story, edition.brief_date,index+1)).join('\n\n')}
 
