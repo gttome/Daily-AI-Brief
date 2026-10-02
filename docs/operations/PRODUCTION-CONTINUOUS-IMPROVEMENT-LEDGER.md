@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:d2c14958bb5cf1ebda77e0cd7d39ff6af8d20f8bbbfbd20165756479fc9ae361`
+Ledger digest: `sha256:1b7e3d87fb3401f3e94d826342f24c25ab82171d48e00244ee49c24c6e3e2513`
 
-Problems: 36 · Events: 51
+Problems: 36 · Events: 52
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -638,19 +638,19 @@ Problems: 36 · Events: 51
 
 ## DAB-OPS-20261002-015 — Native image generation violated the exact visible-text allowlist in two different ways despite otherwise professional m01 results.
 
-- **Status:** open
+- **Status:** mitigated
 - **First observed run:** reliable-edition-20261002-run5
-- **Task(s):** 11
+- **Task(s):** 11, 16
 - **Symptom:** m01 attempt 1 contained multilingual example words beyond the allowlist. m01 attempt 2 passed subject, mechanism, structure, editorial quality, white-background, factual-scope and no-people checks but contained tiny document/interface-like pseudo-text outside the nine permitted strings.
 - **Root cause:** A positive exact-text instruction alone does not prevent the image model from inventing microcopy or text-like glyphs inside document, ribbon or interface-shaped visual primitives.
 - **Operational impact:** Two bounded Task 11 generations were rejected before acceptance. Attempt 2 correctly stopped before transport, avoiding wasted Git persistence of an invalid candidate.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Tighten the next sealed prompt to prohibit all pseudo-text, tiny horizontal copy, faux document lines, code, captions and typographic marks; require blank text-free geometric/document primitives except for the nine explicit labels; preserve pretransport pixel review.
-- **Actual fix:** The current safety control is pretransport rejection of any non-allowlisted text or text-like glyph cluster. A permanent prompt/visual-primitive guard is being validated by the next bounded m01 attempt; no acceptance rule was weakened.
-- **Fix outcome:** Attempt 2 was rejected honestly before transport. Attempt 3 is authorized under the stricter text-free primitive rule; if the narrow defect recurs, one final bounded attempt may simplify text-bearing primitives without lowering professional detail.
+- **Attempted fixes:** Tighten the next sealed prompt to prohibit all pseudo-text, tiny horizontal copy, faux document lines, code, captions and typographic marks; require blank text-free geometric/document primitives except for the nine explicit labels; preserve pretransport pixel review. | Use professional native generation with story-sealed prompts, exact visible-text controls, pretransport rejection of pseudo-text/humanoid defects, same-visual 1200x630 normalization, exact Git persistence/read-back, and saved-Git visual review before accepted_locked.
+- **Actual fix:** Run 5 completed six professional story-specific images with targeted retries only where a specific visual defect was observed. m01 passed on attempt 3 after pseudo-text hardening; m05 passed on attempt 2 after blanking faux record text; m08 passed on attempt 2 after replacing humanoid collaboration icons with abstract nodes.
+- **Fix outcome:** All six Run 5 images reached accepted_locked with exact Git read-back and saved-Git visual review. After reviewing the completed images, the owner explicitly assessed them as 'very good'. Treat this as positive qualitative validation of the current image-production standard and preserve the characteristics that produced it.
 - **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
 - **Regression tests:** none
-- **Production invariants:** exact_visible_text_gate_runs_before_transport, pseudo_text_counts_as_visible_text, document_and_ui_like_primitives_are_text_free_unless_allowlisted, invalid_visual_is_not_persisted_as_final_or_accepted, image_retry_budget_remains_bounded
+- **Production invariants:** exact_visible_text_gate_runs_before_transport, pseudo_text_counts_as_visible_text, document_and_ui_like_primitives_are_text_free_unless_allowlisted, invalid_visual_is_not_persisted_as_final_or_accepted, image_retry_budget_remains_bounded, preserve_current_professional_textbook_image_quality, targeted_retry_only_for_specific_visual_defect, pretransport_review_prevents_invalid_asset_persistence, saved_git_review_precedes_acceptance, do_not_reintroduce_svg_basic_or_low_quality_fallback
 - **Recurrences:** none recorded
-- **Future validation:** Verify attempt 3 contains only the nine allowlisted labels and no pseudo-text at any scale. | If attempt 4 is needed, simplify only text-bearing primitives while preserving explanatory detail and mechanism clarity. | Promote the prompt/primitive rule to a tested production helper if the next accepted image demonstrates the guard.
+- **Future validation:** Verify attempt 3 contains only the nine allowlisted labels and no pseudo-text at any scale. | If attempt 4 is needed, simplify only text-bearing primitives while preserving explanatory detail and mechanism clarity. | Promote the prompt/primitive rule to a tested production helper if the next accepted image demonstrates the guard. | Use the same professional native-generation, pretransport review and saved-Git acceptance pattern on the next production run. | Compare next-run owner feedback and attempt counts against Run 5 before simplifying any image-quality control. | Preserve the current high-detail explanatory visual standard even when optimizing speed.
 
