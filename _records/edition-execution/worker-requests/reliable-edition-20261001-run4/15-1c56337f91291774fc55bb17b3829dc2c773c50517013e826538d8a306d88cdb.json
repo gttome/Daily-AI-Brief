@@ -12,5 +12,9 @@
   "repair_epoch": 1,
   "post_repair_attempt": 1,
   "created_at": "2026-10-02T01:27:14.629Z",
-  "status": "queued"
+  "status": "completed_accepted",
+  "consumed_at": "2026-10-02T01:39:11Z",
+  "completed_at": "2026-10-02T01:39:11Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261001-run4/15-1c56337f91291774fc55bb17b3829dc2c773c50517013e826538d8a306d88cdb.json",
+  "image_attempt_ref": "_records/image-attempts/2026-10-01-run4/m08-attempt-5.json"
 }
