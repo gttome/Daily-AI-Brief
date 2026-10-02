@@ -41,7 +41,7 @@ jobs:
             git -C run merge --no-edit origin/main
           fi
       - name: Build and validate October 1 candidate
-        run: node control/_tools/run4-finalizer.mjs run
+        run: node run/_tools/run4-finalizer.mjs run
       - name: Commit validated candidate to existing Run 4 branch
         run: |
           set -euo pipefail
