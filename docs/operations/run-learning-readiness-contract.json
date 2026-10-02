@@ -94,7 +94,8 @@
     "status_requests_are_read_only": true,
     "github_actions_job_rotation": "Supervisor may rotate before GitHub-hosted job timeout; successor resumes same execution identity under a new fence.",
     "advancement": "Immediately recheck after real task/image/result changes; sleep only on idle observation; elapsed-time job rotation.",
-    "publication_boundary": "Freeze candidate writes before Task 23, including lease acquisition and projection writes. Existing protected candidate workflow owns promotion; protected delta-validation finalization owns Task29."
+    "publication_boundary": "Freeze candidate writes before Task 23, including lease acquisition and projection writes. Existing protected candidate workflow owns promotion; protected delta-validation finalization owns Task29.",
+    "external_native_worker_handoff": "A scheduled/native task worker must refresh durable state at invocation, acquire the current fenced writer generation for the same execution before mutation, never rely on a generation embedded at scheduling time, and release/expire its task-specific lease at a durable Done or Blocked boundary so supervision can resume."
   },
   "task_recovery_contracts": {
     "path": "docs/operations/task-recovery-contracts.json",
@@ -117,7 +118,22 @@
     "run_delta_pattern": "_records/run-learning/incidents/<execution_id>.jsonl",
     "task00": "Read and validate full canonical ledger; bind digest/invariant set into readiness.",
     "during_run": "Append every material problem and fix attempt to the run-scoped durable GitHub delta as it occurs.",
-    "task29": "Merge run delta into canonical ledger; reconcile every problem; add regression protection; update timing baseline and next-run invariants."
+    "task29": "Merge run delta into canonical ledger; reconcile every problem; add regression protection; update timing baseline and next-run invariants.",
+    "material_incident_required_fields": [
+      "symptom",
+      "root_cause",
+      "operational_impact",
+      "timing_impact_or_explicit_unknown",
+      "attempted_fix",
+      "actual_fix_or_explicit_pending",
+      "fix_outcome",
+      "permanent_implementation_or_explicit_none",
+      "regression_tests_or_explicit_pending",
+      "invariants",
+      "next_run_validation",
+      "run_evidence_when_available"
+    ],
+    "learning_completion_rule": "A material production issue is not considered learned merely because the run advanced. Record it in the canonical JSONL and human projection during the run; when behavior changes, synchronize the living operations/readiness contract; record permanent implementation, regression protection and next-run validation or explicitly mark them pending."
   },
   "liveness": {
     "stale_active_threshold_minutes_max": 15,
@@ -126,7 +142,16 @@
     "actionable_blocked_wait_for_owner_prohibited": true,
     "route_specific_blocker_must_not_pause_controller": true,
     "controller_and_keeper_remain_enabled_during_blocked_external": true,
-    "blocked_route_rechecked_each_recovery_cycle": true
+    "blocked_route_rechecked_each_recovery_cycle": true,
+    "recoverable_blocker_machine_readable": true,
+    "recoverable_blocker_required_fields": [
+      "task_id",
+      "to=Blocked",
+      "at",
+      "recoverable=true",
+      "external_blocker=false",
+      "recovery_action"
+    ]
   },
   "image_path": {
     "required": "production-image-execution-v2:generate-transfer-verify-review-accept",
@@ -158,6 +183,12 @@
       "current_status": "CAPABILITY_BLOCKED_ROUTE_ONLY",
       "reason": "No supported unattended native image generation/review host is currently bound within the zero-Work/zero-Codex/zero-paid-API boundary; non-image production remains authorized.",
       "registration_path": "docs/operations/unattended-image-host.json"
+    },
+    "visible_text_guard": {
+      "phase": "pretransport_review",
+      "rule": "When a story specification defines an exact visible-text allowlist, any additional language, pseudo-text, microcopy, faux document lines, code-like glyphs or text-like marks fail the candidate before final Git persistence.",
+      "primitive_rule": "Document, card, ribbon and interface-like visual primitives must be text-free unless the specific visible label is allowlisted.",
+      "retry_policy": "Use only the existing bounded attempt budget; simplify text-bearing primitives before reducing explanatory detail or professional quality."
     }
   },
   "kanban": {
