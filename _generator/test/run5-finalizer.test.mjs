@@ -35,3 +35,12 @@ test('Tasks 19-21 require manifest and integrated qualification before Done',()=
   assert.match(s,/event\('21','Done'/);
   assert.match(s,/work_usage:0,codex_usage:0,paid_api_usage:0/);
 });
+
+
+test('Run 5 finalizer resolves only the known active-pointer merge conflict',()=>{
+  const y=fs.readFileSync('.github/workflows/run5-finalizer.yml','utf8');
+  assert.match(y,/diff --name-only --diff-filter=U/);
+  assert.match(y,/conflicts\" != \"data\/operations\/active-production-run\.json/);
+  assert.match(y,/checkout --ours data\/operations\/active-production-run\.json/);
+  assert.match(y,/Unexpected merge conflicts/);
+});
