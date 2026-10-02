@@ -52,3 +52,12 @@ test('Run 5 finalizer executes release code from the active run working tree',()
   assert.match(y,/node run\/_tools\/run5-release-sealer\.mjs run/);
   assert.doesNotMatch(y,/node control\/_tools\/run5-(?:post-image-finalizer|release-sealer)\.mjs run/);
 });
+
+
+test('Run 5 Task 18 derives article freshness from the fixed cutoff and discloses recency fallback',()=>{
+  const s=fs.readFileSync('_tools/run5-post-image-finalizer.mjs','utf8');
+  assert.match(s,/articleFreshness\(c\.published_date\+'T00:00:00Z',cutoff/);
+  assert.match(s,/Recency fallback \(24-72 hours\)/);
+  assert.match(s,/Extended recency fallback \(72-168 hours\)/);
+  assert.doesNotMatch(s,/c\.freshness_band==='primary_24h'\?'primary'/);
+});
