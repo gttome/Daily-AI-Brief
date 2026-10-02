@@ -1,10 +1,7 @@
 {
-  "schema_version": "production-kanban-projection-v2",
+  "schema_version": "run-timing-observations-v1",
   "execution_id": "reliable-edition-20261002-run5",
-  "edition_id": "dab-edition-2026-10-02",
   "observed_at": "2026-10-02T19:03:40.890Z",
-  "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:35b02fca43c04ceb011355ff915be24f97baf9a5f46c95f49cf526852ad9d972",
   "tasks": {
     "10": {
       "id": "10",
@@ -366,5 +363,6 @@
       "cycle_seconds": 31,
       "active_seconds": 31
     }
-  }
+  },
+  "note": "No missing start time or duration is inferred. Publication source timestamps remain in completion evidence."
 }
