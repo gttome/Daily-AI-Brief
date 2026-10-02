@@ -195,7 +195,20 @@
     "authoritative_source": "append_only_transition_events",
     "projection_only": true,
     "source_digest_required": true,
-    "supervisor_repairs_stale_projection": true
+    "supervisor_repairs_stale_projection": true,
+    "visual_column_order": [
+      "Backlog",
+      "WIP",
+      "Done"
+    ],
+    "current_column_prohibited": true,
+    "active_task_maps_to": "WIP",
+    "every_task_duration_required": true,
+    "missing_duration_display": "unavailable",
+    "total_brief_elapsed_time_required": true,
+    "nonterminal_total_time_rule": "show live elapsed time from run start to observation timestamp",
+    "terminal_total_time_rule": "show elapsed time from run start to terminal completion",
+    "timing_source": "append_only_transition_events"
   },
   "terminal_cleanup": {
     "final_task_id": "29",
