@@ -15,10 +15,6 @@ reader_release: true
 
 ### 10. Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026
 
-<!-- reader-release:start -->
-<aside class="reading-context" aria-label="Reading context"><div class="reading-meta"><span>13:00 podcast</span></div></aside>
-<!-- reader-release:end -->
-
 <span class="podcast-data" data-podcast-id="dab-podcast-2026-10-02-2" data-podcast-title="Morning Brief — Confidence Drop, Venue Access, NFIP Relief, and Agent Payments - September 30, 2026" data-podcast-url="/podcasts/2026-10-02/run5-2/" hidden></span>
 
 <a href="{{ '/podcasts/2026-10-02/run5-2/' | relative_url }}" data-item-id="dab-podcast-2026-10-02-2" data-edition-date="2026-10-02" data-action="permanent_page_clicks">Open the permanent podcast page</a>
@@ -27,7 +23,7 @@ reader_release: true
 **Host / guest:** Jeff Bechtel  
 **Focus:** Technical AI Engineering  
 **Date:** September 30, 2026  
-**Duration:** 13:00 · No episode time limit  
+**Duration:** 13:00  
 **Topics:** agent payments, AI workflow controls
 
 **Summary:** Adds a separate daily-news source with agent-payment controls and AI workflow context.
