@@ -12,5 +12,8 @@
   "repair_epoch": 0,
   "post_repair_attempt": 0,
   "created_at": "2026-10-02T03:19:02.891Z",
-  "status": "queued"
+  "status": "completed_pass",
+  "consumed_at": "2026-10-02T03:19:24Z",
+  "completed_at": "2026-10-02T03:19:24Z",
+  "result_ref": "_records/edition-execution/worker-results/reliable-edition-20261001-run4/22-de9d9e81db55d605c71193be0cdf9d80ab5b79718dc4886389154dfec6c2172d.json"
 }
