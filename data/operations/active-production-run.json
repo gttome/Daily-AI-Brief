@@ -1,11 +1,11 @@
 {
   "schema_version": "active-production-run-v1",
   "active": false,
-  "terminal": false,
+  "terminal": true,
   "edition_id": "dab-edition-2026-10-01",
   "execution_id": "reliable-edition-20261001-run4",
   "execution_key": "2026-10-01-run4",
   "branch": "reliable-edition/dab-edition-2026-10-01-run4",
-  "updated_at": "2026-10-02T03:29:30Z",
-  "note": "Temporarily pause the Run 4 Supervisor writer during exact-SHA protected publication. Run remains nonterminal; Tasks 23-29 continue through publication/closure control paths without minute-loop branch mutation."
+  "updated_at": "2026-10-02T04:05:19Z",
+  "note": "Run 4 PUBLIC_CLOSED; Task 29 PASS. Run-specific writer released, closure evidence reconciled, next-run readiness certified."
 }

@@ -1,0 +1,11 @@
+{
+  "task_id": "27",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T04:05:15Z",
+  "proof": {
+    "completion": "_records/publication/2026-10-01/completion.json",
+    "lifecycle": "_records/publication/2026-10-01/lifecycle.json",
+    "run_state": "_records/run-state/2026-10-01.json"
+  }
+}

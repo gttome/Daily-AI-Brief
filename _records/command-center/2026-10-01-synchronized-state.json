@@ -1,0 +1,13 @@
+{
+  "source_status_sha256": "sha256:eba2c63c51233d43c8be996b46f8186d3437ccb0317ae27b64f4e93dee45f55d",
+  "edition_date": "2026-10-01",
+  "lifecycle_state": "CC_SYNCED",
+  "production_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+  "deployed_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+  "completion_state": "verified",
+  "live_reader_state": "verified",
+  "refresh_result": "pass",
+  "synchronized_at": "2026-10-02T04:05:16Z",
+  "mode": "repository_authoritative_projection",
+  "live_owner_state_mutation": "not_configured"
+}

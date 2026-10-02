@@ -1,0 +1,12 @@
+{
+  "task_id": "26",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T04:05:13.695Z",
+  "proof": {
+    "validation": "_records/publication/2026-10-01/delta-validation.json",
+    "final_result": "pass",
+    "production_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+    "route_count": 16
+  }
+}

@@ -1,16 +1,16 @@
 {
   "schema_version": "2.0.0",
   "projection_version": "publication-status-v2",
-  "edition_date": "2026-09-30",
-  "edition_id": "dab-edition-2026-09-30",
-  "lifecycle_stage": "COMPLETED",
-  "lifecycle_state": "COMPLETED",
-  "operator_state": "COMPLETED",
-  "status": "COMPLETED",
+  "edition_date": "2026-10-01",
+  "edition_id": "dab-edition-2026-10-01",
+  "lifecycle_stage": "CC_SYNCED",
+  "lifecycle_state": "CC_SYNCED",
+  "operator_state": "CC_SYNCED",
+  "status": "CC_SYNCED",
   "terminal_outcome": "COMPLETED",
   "current_blocker": null,
   "earliest_failed_stage": null,
-  "last_successful_stage": "COMPLETED",
+  "last_successful_stage": "CC_SYNCED",
   "preserved_completed_work": [
     "PLANNED",
     "PREFLIGHT_READY",
@@ -21,59 +21,60 @@
     "MERGED",
     "PAGES_DEPLOYED",
     "LIVE_VERIFIED",
-    "COMPLETED"
+    "COMPLETED",
+    "CC_SYNCED"
   ],
-  "next_automatic_recovery_step": "Synchronize Command Center from canonical status.",
-  "next_legal_recovery_action": "Synchronize Command Center from canonical status.",
+  "next_automatic_recovery_step": null,
+  "next_legal_recovery_action": null,
   "operator_intervention_required": null,
-  "baseline_sha": "f24a28d9f0cabd601c8c0a5ba53a7681de19b9ba",
-  "candidate_sha": "dc16da6ba9667e5ec71f82af08cbaef175cabaa7",
-  "production_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
-  "publication_merge_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
-  "pr_number": 310,
-  "ci_run_id": 36832963410,
+  "baseline_sha": "8e6328fc50254fecf3d12d103d6e3b8ec5460dc8",
+  "candidate_sha": "ca3702a4b3e276456402257305fe39c3ec82b002",
+  "production_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+  "publication_merge_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
+  "pr_number": 335,
+  "ci_run_id": 36961015454,
   "ci": {
     "state": "passed",
-    "run_id": 36832963410
+    "run_id": 36961015454
   },
-  "pages_deployment_id": 36833110569,
-  "deployed_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c",
+  "pages_deployment_id": 36961091571,
+  "deployed_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6",
   "pages": {
     "state": "succeeded",
-    "run_id": 36833110569,
-    "deployed_sha": "57f1d2aaeeaa26e7b7ff1855ccf50bee0c031c4c"
+    "run_id": 36961091571,
+    "deployed_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6"
   },
-  "live_verification_timestamp": "2026-10-01T07:55:53.483Z",
+  "live_verification_timestamp": "2026-10-02T04:05:13.695Z",
   "live_reader": {
     "state": "verified",
-    "verified_at": "2026-10-01T07:55:53.483Z"
+    "verified_at": "2026-10-02T04:05:13.695Z"
   },
-  "completion_path": "_records/publication/2026-09-30/completion.json",
+  "completion_path": "_records/publication/2026-10-01/completion.json",
   "completion": {
     "state": "verified",
-    "path": "_records/publication/2026-09-30/completion.json"
+    "path": "_records/publication/2026-10-01/completion.json"
   },
-  "command_center_sync": "pending",
+  "command_center_sync": "complete",
   "command_center": {
-    "state": "pending",
-    "result": "pending",
-    "last_synced_at": null,
-    "source_status_sha256": null,
-    "stale": null
+    "state": "complete",
+    "result": "pass",
+    "last_synced_at": "2026-10-02T04:05:16Z",
+    "source_status_sha256": "sha256:70437453820d26d4bc9ecda5e25724eaece4cbaa3f9059bfa23a0470749db735",
+    "stale": false
   },
   "last_authoritative_state_transition": {
-    "stage": "COMPLETED",
-    "at": "2026-10-01T07:55:53.483Z"
+    "stage": "CC_SYNCED",
+    "at": "2026-10-02T04:05:16Z"
   },
   "source_evidence": {
-    "lifecycle_path": "_records/publication/2026-09-30/lifecycle.json",
-    "completion_path": "_records/publication/2026-09-30/completion.json",
+    "lifecycle_path": "_records/publication/2026-10-01/lifecycle.json",
+    "completion_path": "_records/publication/2026-10-01/completion.json",
     "current_edition_path": "data/operations/current-edition.json",
-    "run_state_path": "_records/run-state/2026-09-30.json"
+    "run_state_path": "_records/run-state/2026-10-01.json"
   },
   "consistency": {
     "state": "pass",
     "errors": []
   },
-  "updated_at": "2026-10-01T07:55:53.483Z"
+  "updated_at": "2026-10-02T04:05:16Z"
 }

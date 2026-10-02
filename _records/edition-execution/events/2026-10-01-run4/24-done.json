@@ -1,0 +1,11 @@
+{
+  "task_id": "24",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T03:38:58Z",
+  "proof": {
+    "pr_number": 335,
+    "candidate_sha": "ca3702a4b3e276456402257305fe39c3ec82b002",
+    "production_sha": "ce3dac9d75949f381821dfd34163048bf08c65d6"
+  }
+}
