@@ -17,3 +17,12 @@ test('material evidence/source change scopes semantic refresh to changed topic o
  const plan=watchlistDeltaPlan([base,priorB],[unchanged,changed]);
  assert.deepEqual(plan.carried_topics,['topic-a']);assert.deepEqual(plan.changed_topics,['topic-b']);assert.deepEqual(plan.normal_semantic_input_topic_ids,['topic-b']);
 });
+
+test('Watchlist topics cannot disappear without a reader-visible archive reason',()=>{
+ const named={...structuredClone(base),name:'Topic A'};
+ assert.throws(()=>watchlistDeltaPlan([named],[]),/watchlist_removed_without_archive_reason:topic-a/);
+ const archived={...named,archive_reason:'Merged into a broader mechanism after review.'};
+ const plan=watchlistDeltaPlan([archived],[]);
+ assert.deepEqual(plan.removed_topics,['topic-a']);
+ assert.deepEqual(plan.removed_topic_details,[{topic_id:'topic-a',name:'Topic A',reason:'Merged into a broader mechanism after review.'}]);
+});
