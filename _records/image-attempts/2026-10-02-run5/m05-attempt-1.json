@@ -1,0 +1,80 @@
+{
+  "schema_version": "2.0.0",
+  "policy_id": "production-image-execution-v2",
+  "edition_id": "dab-edition-2026-10-02",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "branch": "reliable-edition/dab-edition-2026-10-02-run5",
+  "task_id": "14",
+  "candidate_id": "m05",
+  "attempt": 1,
+  "execution_mode": "scheduled_direct_worker",
+  "fallback_used": false,
+  "worker_authority": {
+    "writer_generation": 9,
+    "lease_owner": "chatgpt-automation:6abfb619185c819194646f77c3b314a4",
+    "fence_commit": "9ed4e232d35ece4b4d6b1adc476a80b46b2ed8e5"
+  },
+  "timing": {
+    "generation_started_at": "2026-10-02T15:00:33.532194049Z",
+    "generation_started_at_basis": "computed from exact output completion mtime minus tool-reported 58.4 second wall time",
+    "generation_completed_at": "2026-10-02T15:01:31.932194049Z",
+    "generation_wall_seconds": 58.4,
+    "exact_raw_capture_completed_at": "2026-10-02T15:01:50.596812003Z",
+    "review_completed_at": "2026-10-02T15:01:50.598246917Z"
+  },
+  "generation": {
+    "executor": "native_chatgpt_image_generation",
+    "generation_id": null,
+    "generation_id_observation": "The native scheduled image tool exposed no generation ID; none was invented.",
+    "exact_returned_png": {
+      "bytes": 1611754,
+      "dimensions": "1730x909",
+      "sha256": "22ac952a1f223adbc676c5bd07ed96b5a7a6ca4719b6de4234f88569a40c5e28",
+      "git_blob_sha_expected": "77075f084cb1189dc57fa56e3cdb921ea0c29c3c"
+    }
+  },
+  "persistence": {
+    "status": "not_attempted",
+    "reason": "Candidate rejected before transport; invalid pixels were not persisted.",
+    "chunk_bridge_used": false
+  },
+  "review": {
+    "phase": "generated_pixels_pre_transport",
+    "subject_match": "PASS",
+    "required_mechanism": "PASS",
+    "structural_quality": "PASS",
+    "editorial_quality": "PASS",
+    "professional_finish": "PASS",
+    "meaningful_detail": "PASS",
+    "explanatory_mechanism": "PASS",
+    "information_hierarchy": "PASS",
+    "white_background": "PASS",
+    "allowed_visible_text": "FAIL",
+    "visible_strings": [
+      "AI workflow",
+      "MCP Server",
+      "Create",
+      "Read",
+      "Update",
+      "Delete",
+      "Lists",
+      "Records",
+      "CRM",
+      "Admin"
+    ],
+    "extra_visible_text": "Tiny document/interface-like horizontal text lines appeared inside several record cards.",
+    "factual_scope": "PASS",
+    "people_humanoids": "NONE",
+    "product_ui": "NONE",
+    "overlap": "NONE",
+    "sparse_basic_fallback": false,
+    "low_quality_fallback": false
+  },
+  "review_status": "rejected",
+  "status": "rejected",
+  "accepted_locked": false,
+  "rejection_reason": "EXTRA_DOCUMENT_INTERFACE_TEXT",
+  "recoverable": true,
+  "recovery_action": "Generate a fresh sealed-spec retry with completely blank record/list primitives and zero pseudo-text or line-like faux copy."
+}

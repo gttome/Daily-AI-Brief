@@ -1,0 +1,18 @@
+{
+  "schema_version": "task-transition-event-v1",
+  "execution_id": "reliable-edition-20261002-run5",
+  "execution_key": "2026-10-02-run5",
+  "edition_id": "dab-edition-2026-10-02",
+  "task_id": "14",
+  "candidate_id": "m05",
+  "operation": "m05-attempt-1",
+  "writer_generation": 9,
+  "at": "2026-10-02T15:01:50.598Z",
+  "from": "Backlog",
+  "to": "Blocked",
+  "external_blocker": false,
+  "recoverable": true,
+  "reason": "EXTRA_DOCUMENT_INTERFACE_TEXT",
+  "evidence_path": "_records/image-attempts/2026-10-02-run5/m05-attempt-1.json",
+  "recovery_action": "Generate a fresh sealed-spec retry with completely blank record/list primitives and zero pseudo-text or line-like faux copy."
+}
