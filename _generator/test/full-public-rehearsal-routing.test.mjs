@@ -23,6 +23,15 @@ test('full public rehearsal routes remain isolated from canonical production pub
   assert.ok(handoff.includes('TASK_1[1-7]_BLOCKED_HANDOFF_TO_SUPERVISOR'));
   assert.ok(handoff.includes('synthetic-active-run.json'), 'existing synthetic rehearsal route must remain');
 
+  for (const required of [
+    "'rehearsal/**'",
+    '_records/rehearsal/active-public-rehearsal.json',
+    'GITHUB_REF_NAME',
+    "x.mode==='FULL_PUBLIC_REHEARSAL'",
+    'x.production_allocation===false',
+    'x.canonical_pointers_mutable===false',
+    "x.publication_mode==='isolated_preview'"
+  ]) assert.ok(supervisor.includes(required), 'supervisor startup missing '+required);
   assert.ok(supervisor.includes('if [[ "$RUN_BRANCH" == rehearsal/* ]]'));
   assert.equal(
     supervisor.split('Canonical publication dispatch is prohibited.').length - 1, 1,
