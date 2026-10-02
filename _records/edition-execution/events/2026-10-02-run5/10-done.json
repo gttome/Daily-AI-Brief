@@ -1,0 +1,16 @@
+{
+  "task_id": "10",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T13:32:17Z",
+  "reason": "Sealed six differentiated professional textbook/editorial image specifications without using the unqualified image route.",
+  "proof": {
+    "specs_path": "_records/image-specs/2026-10-02-run5.json",
+    "spec_count": 6,
+    "generation_authorized": false,
+    "svg_fallback_prohibited": true,
+    "basic_fallback_prohibited": true,
+    "result": "PASS",
+    "writer_generation": 2
+  }
+}
