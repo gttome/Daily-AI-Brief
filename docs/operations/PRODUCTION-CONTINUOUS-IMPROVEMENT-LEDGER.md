@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:c8e998b4db7133782235aef12b0f4e448ec4b02381db111753eb8682efa19c87`
+Ledger digest: `sha256:0331614deb12f91c6499234d1c62db6f335dfb8297e99cc4422516c164f71c0c`
 
-Problems: 39 · Events: 56
+Problems: 40 · Events: 57
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -730,3 +730,21 @@ Problems: 39 · Events: 56
 - **Fix:** Keep the authorization binding as `manifest`; rename the post-merge dispatch binding to `mergedManifest` and test both references.
 - **Regression protection:** `_generator/test/publication-identity-binding.test.mjs`.
 - **Preservation:** Run 5 remains PUBLIC CLOSED; no reader, candidate, image, lifecycle, or deployment evidence is changed.
+
+## DAB-OPS-20261002-021 — Kanban presentation must use Backlog, WIP and Done in that left-to-right order, with task-level durations and total Brief elapsed time.
+
+- **Status:** mitigated
+- **First observed run:** unknown
+- **Task(s):** 22
+- **Symptom:** A Run 5 Kanban used reversed/redundant workflow columns, included a separate Current column, replaced some durations with state words, and omitted total Brief elapsed time.
+- **Root cause:** The Kanban projection contract defined event-derived state but did not define a canonical visual column order or mandatory timing presentation.
+- **Operational impact:** The board was harder to scan and could not reliably support bottleneck or end-to-end speed comparison across runs.
+- **Timing impact:** 0 seconds
+- **Attempted fixes:** Record the owner correction as durable learning without regenerating the already-completed Run 5 board.
+- **Actual fix:** The canonical readiness and living-system contracts now require exactly Backlog, WIP, Done; map the active task to WIP; require a duration or explicit unavailable marker on every task; require total Brief elapsed time; and derive timing from append-only transition evidence.
+- **Fix outcome:** The reporting contract is durable for future boards. Renderer/report regression enforcement remains a follow-up hardening item.
+- **Permanent implementation:** docs/operations/run-learning-readiness-contract.json, docs/operations/LIVING-SYSTEM-OPERATIONS.md
+- **Regression tests:** Pending: reject wrong column order, a separate Current column, missing per-task duration, or missing total Brief elapsed time.
+- **Production invariants:** kanban_columns_are_backlog_wip_done_left_to_right, current_is_not_a_separate_column_active_task_is_wip, every_task_card_displays_duration, missing_duration_is_explicitly_unavailable_not_replaced_by_status, kanban_displays_total_brief_elapsed_time, kanban_timing_comes_from_append_only_transition_evidence
+- **Recurrences:** none recorded
+- **Future validation:** Generate the next production Kanban with exactly Backlog, WIP and Done columns in that order. | Verify every Task 00-29 card shows its duration or explicit unavailable. | Verify total Brief elapsed time is shown from run start to observation time while active and frozen at terminal completion.
