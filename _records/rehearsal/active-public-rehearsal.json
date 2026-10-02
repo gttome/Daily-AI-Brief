@@ -26,9 +26,9 @@
   "canonical_edition_date_reserved": false,
   "october3_identity_consumed": false,
   "current_task": "00",
-  "current_task_state": "Backlog",
-  "status_note": "Isolated full-public rehearsal admitted after protected Supervisor-start CI; canonical publication pointers remain immutable.",
+  "current_task_state": "Done",
+  "status_note": "Task 00 readiness evidence is durable. Resume same rehearsal from Task 01; production pointers remain immutable.",
   "control_plane_main_sha": "f0d61eb7b4481d28755db549e53826fb7ccf4ade",
   "control_plane_ci_run_id": 37074501039,
-  "startup_trigger_sequence": 1
+  "startup_trigger_sequence": 2
 }
