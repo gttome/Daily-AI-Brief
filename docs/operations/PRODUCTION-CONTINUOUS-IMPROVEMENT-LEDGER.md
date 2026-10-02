@@ -708,3 +708,14 @@ Problems: 39 · Events: 56
 - **Recurrences:** none recorded
 - **Future validation:** Add or verify a merge-time authorization gate independent of earlier CI. | Reconcile this run from durable evidence without repeating Tasks 00-22. | Exercise both autonomous promotion paths with READY/authorized and blocked fixtures. | Reject merge if host status, qualification receipt, active-run identity, or authorization changes after candidate CI. | Bind closure to the validated publication event rather than the most recent main commit PR.
 
+
+## DAB-OPS-20261002-019 — Terminal closeout retained stale pre-qualification pointer fields
+
+- **Run / task:** `reliable-edition-20261002-run5` / Task 29
+- **Status:** permanently fixed
+- **Observed:** 2026-10-02T19:08:11.489Z
+- **Symptom:** Run 5 was PUBLIC CLOSED with Task 29 PASS, but the terminal active pointer still reported Task 18 Blocked, `non_image_production`, false image/publication authorization, and an obsolete qualification blocker.
+- **Root cause:** The protected closeout generator spread the earlier pointer and changed only `active`, `terminal`, timestamp and note. It did not canonicalize the final task, authorization state, or cleared blocker from live-verified completion evidence.
+- **Fix:** Project terminal closeout as Task 29 Done, `full_production`, both authorizations true, and no deferred blocker; reconcile the current pointer identically.
+- **Regression protection:** `_generator/test/production-closeout-terminal-pointer.test.mjs`.
+- **Preservation:** No story, image, candidate, completion identity, Run 4 production SHA, or public reader byte is changed.
