@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0.0",
-  "edition_date": "2026-09-30",
+  "edition_date": "2026-10-01",
   "updated_at": "2026-09-30T23:12:21.330Z",
   "verification_observed_at": "2026-10-01T05:47:00.774Z",
   "baseline_note": "Independent seven-domain sweep completed 14 focused checks and reviewed seven candidates: 1 new source-aware verification topic, 3 materially updated topics, and 13 carried forward. The six-story editorial lock was unchanged.",
@@ -224,13 +224,13 @@
       "name": "Agent safeguards tailored to the task",
       "audience": "Agent builders and consultants",
       "summary": "Generate and evaluate protective rules and executable checks for a particular agent deployment.",
-      "why_now": "NVIDIA OpenShell adds enforceable network, credential, filesystem, and process controls outside an agent workload, supplying a concrete implementation of deployment-specific safeguards.",
+      "why_now": "New first-party evidence strengthens limiting frontier-agent use through staged access, identity boundaries and environment-specific controls.",
       "practical_value": "Could improve how training materials explain agent permissions, checks and deployment-specific evaluation.",
       "limitations": "First-party technical evidence does not establish complete containment or independent assurance across every agent and runtime.",
       "next_action": "Review policy-prover assumptions, default-deny coverage, audit exports, bypass testing, and independent deployment evidence.",
       "first_detected": "2026-09-12T02:08:04.109758Z",
-      "updated_at": "2026-09-30T23:12:21.330-05:00",
-      "verification_observed_at": "2026-10-01T05:47:00.774Z",
+      "updated_at": "2026-10-01T20:08:38Z",
+      "verification_observed_at": "2026-10-01T20:08:38Z",
       "status": "gaining_evidence",
       "confidence": "moderate",
       "evidence": [
@@ -741,13 +741,13 @@
       "name": "Reusable agent skills become observable",
       "audience": "AI leaders, admins, and agent builders",
       "summary": "Treat skills, custom agents, MCP servers, commands, and plugins as reusable components whose maintained domain knowledge and actual use can be governed and measured.",
-      "why_now": "Google Workspace now packages team rules, templates, and reference files as reusable Gemini skills, adding a workplace implementation to existing coding-agent skill and observability evidence.",
+      "why_now": "New first-party evidence shows reusable Skills packaged specifically for recurring finance, marketing, operations and hiring work.",
       "practical_value": "Makes reusable agent know-how easier to govern while traces and spans make tool/model behavior easier to inspect.",
       "limitations": "First-party availability and workflow claims do not yet establish cross-vendor portability, measurable quality gains, or governance consistency.",
       "next_action": "Compare skill versioning, evaluation, usage telemetry, access control, and portability across Workspace, Firebase, GitHub, and AWS implementations.",
       "first_detected": "2026-09-19T17:09:07.447Z",
-      "updated_at": "2026-09-30T23:12:21.330-05:00",
-      "verification_observed_at": "2026-10-01T05:47:00.774Z",
+      "updated_at": "2026-10-01T20:08:38Z",
+      "verification_observed_at": "2026-10-01T20:08:38Z",
       "status": "gaining_evidence",
       "confidence": "strong",
       "evidence": [
@@ -1538,9 +1538,9 @@
       "limitations": "One original research system and a medical evaluation set; independent replication, broader-domain calibration, and production reliability remain unverified.",
       "next_action": "Inspect the paper, released artifacts, calibration thresholds, and independent evaluations across nonmedical MCP workflows.",
       "first_detected": "2026-09-30T23:12:21.330-05:00",
-      "updated_at": "2026-09-30T23:12:21.330-05:00",
+      "updated_at": "2026-10-01T20:08:38Z",
       "verification_observed_at": "2026-10-01T05:47:00.774Z",
-      "status": "early_signal",
+      "status": "archived",
       "confidence": "limited",
       "evidence": [
         {
@@ -1587,7 +1587,8 @@
           "reason": "Source attribution is a recurring control problem across agent deployments."
         }
       },
-      "trial_story_ids": []
+      "trial_story_ids": [],
+      "archive_reason": "Not retained as a distinct active mechanism after the October 1 independent sweep."
     }
   ]
 }

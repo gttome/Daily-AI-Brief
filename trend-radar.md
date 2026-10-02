@@ -5,7 +5,7 @@ permalink: /trend-radar/
 description: Evidence-linked Generative AI trend signals from the Daily AI Brief.
 ---
 
-# Trend Radar — September 30, 2026
+# Trend Radar — October 1, 2026
 
 Classifications use the stated 30-day evidence window. They describe coverage signals, not market forecasts.
 
@@ -13,10 +13,12 @@ Classifications use the stated 30-day evidence window. They describe coverage si
 
 **STABLE · high confidence**
 
-20 supporting stories appeared in the latest 7 days and 74 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+22 supporting stories appeared in the latest 7 days and 72 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 1, 2026]({{ '/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/' | relative_url }})
+- [October 1, 2026]({{ '/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/' | relative_url }})
@@ -109,17 +111,16 @@ Supporting stories:
 - [September 2, 2026]({{ '/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/enterprise-frontier-safeguards-puts-misuse-monitoring-into-customer-controlled-i/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
 
 ## Agent memory and context
 
 **COOLING · high confidence**
 
-7 supporting stories appeared in the latest 7 days and 46 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+8 supporting stories appeared in the latest 7 days and 44 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 1, 2026]({{ '/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/anthropics-buying-agent-shifts-sales-reps-toward-higher-value-conversations/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/asanas-coachable-agents-make-roles-memory-and-permissions-visible/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/google-vids-upgrades-ai-voiceovers-with-gemini-3-8-flash-lite-tts/' | relative_url }})
@@ -171,17 +172,16 @@ Supporting stories:
 - [September 3, 2026]({{ '/stories/2026-09-03/copilot-studio-brings-a-reasoning-heavy-harness-into-the-low-code-agent-builder/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/chatgpt-for-healthcare-connects-ehr-context-and-nine-official-public-health-sour/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
 
 ## AI-assisted development
 
-**COOLING · high confidence**
+**STABLE · high confidence**
 
-16 supporting stories appeared in the latest 7 days and 80 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+17 supporting stories appeared in the latest 7 days and 77 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 1, 2026]({{ '/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/' | relative_url }})
 - [September 30, 2026]({{ '/videos/2026-09-30/general/' | relative_url }})
 - [September 30, 2026]({{ '/podcasts/2026-09-30/ai-show-243/' | relative_url }})
 - [September 29, 2026]({{ '/stories/2026-09-29/nvidia-s-tensorrt-model-connect-treats-coding-agents-as-an-engineering-system-not-a-code-generator/' | relative_url }})
@@ -275,18 +275,23 @@ Supporting stories:
 - [September 2, 2026]({{ '/stories/2026-09-02/anthropic-s-fable-5-1-pushes-long-running-agent-work-while-separating-higher-ris/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/google-pics-brings-prompt-based-image-creation-and-editing-into-the-workspace-fl/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
 
 ## Accessible agents for knowledge work
 
 **STABLE · high confidence**
 
-35 supporting stories appeared in the latest 7 days and 137 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
+43 supporting stories appeared in the latest 7 days and 133 in the preceding 23 days. Classification follows normalized story frequency and remains an editorial signal, not a forecast.
 
 Supporting stories:
 
+- [October 1, 2026]({{ '/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/' | relative_url }})
+- [October 1, 2026]({{ '/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/' | relative_url }})
+- [October 1, 2026]({{ '/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/' | relative_url }})
+- [October 1, 2026]({{ '/stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/' | relative_url }})
+- [October 1, 2026]({{ '/stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/' | relative_url }})
+- [October 1, 2026]({{ '/videos/2026-10-01/agent-skills/' | relative_url }})
+- [October 1, 2026]({{ '/podcasts/2026-10-01/ai-show-244/' | relative_url }})
+- [October 1, 2026]({{ '/podcasts/2026-10-01/jesse-owen-argon/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/openshell-puts-enforceable-permissions-outside-the-agent/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/provenanceguard-checks-whether-an-mcp-agent-cited-the-right-source-not-just-a-true-fact/' | relative_url }})
 - [September 30, 2026]({{ '/stories/2026-09-30/openai-pairs-small-business-ai-workflows-with-local-human-coaching/' | relative_url }})
@@ -455,9 +460,5 @@ Supporting stories:
 - [September 2, 2026]({{ '/stories/2026-09-02/google-pics-brings-prompt-based-image-creation-and-editing-into-the-workspace-fl/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/openai-turns-successful-business-processes-into-repeatable-agent-operating-patte/' | relative_url }})
 - [September 2, 2026]({{ '/stories/2026-09-02/gilbert-tobin-shows-governed-ai-adoption-as-an-operating-model-not-a-tool-rollou/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/' | relative_url }})
-- [September 1, 2026]({{ '/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/' | relative_url }})
 
 [← Home]({{ '/' | relative_url }})

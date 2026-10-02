@@ -4,6 +4,220 @@
   "stories": [
     {
       "content_type": "Article",
+      "story_id": "dab-story-2026-10-01-m03",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "Governed multi-environment access for Claude Platform on AWS",
+      "url": "/stories/2026-10-01/governed-multi-environment-access-for-claude-platform-on-aws/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "m03",
+        "technical ai engineering"
+      ],
+      "companies": [
+        "AWS Machine Learning"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [],
+      "summary": "AWS describes a governed design for reaching Claude Platform on AWS from multiple operating environments while keeping identity and environment boundaries explicit."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-01-m01",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-09-30",
+      "headline": "Gemini 4 Argon for long-horizon professional workflows",
+      "url": "/stories/2026-10-01/gemini-4-argon-for-long-horizon-professional-workflows/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "m01",
+        "technical ai engineering"
+      ],
+      "companies": [
+        "Google"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "AI-assisted development",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Google introduced Gemini 4 Argon for long-horizon software engineering, enterprise knowledge work and defensive cybersecurity, with access staged while safeguards are tested."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-01-m04",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "Personalization tied to decision and measurement loops",
+      "url": "/stories/2026-10-01/personalization-tied-to-decision-and-measurement-loops/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "m04",
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "AWS Machine Learning"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent memory and context",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS presents a workflow combining generated content variants with contextual-bandit personalization and measurement across the acquisition funnel."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-01-m05",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "Adapting production AI to organization-specific moderation policy",
+      "url": "/stories/2026-10-01/adapting-production-ai-to-organization-specific-moderation-policy/",
+      "focus": "applied_genai_knowledge_workers",
+      "topics": [
+        "m05",
+        "applied genai knowledge workers"
+      ],
+      "companies": [
+        "AWS Machine Learning"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Agent reliability and governance",
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "AWS describes how uniopen adapted Amazon Nova to its own retail moderation policy and evaluated the result before production deployment."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-01-m08",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "Perplexity business Skills package recurring work into reusable procedures",
+      "url": "/stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "m08",
+        "agents non technical people"
+      ],
+      "companies": [
+        "Perplexity"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "Perplexity and American Express introduced pre-built business Skills covering recurring finance, marketing, operations and hiring work; Skills package reusable instructions around required inputs and expected outputs."
+    },
+    {
+      "content_type": "Article",
+      "story_id": "dab-story-2026-10-01-m07",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-09-29",
+      "headline": "OpenAI Dots assign persistent responsibilities to always-on agents",
+      "url": "/stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "m07",
+        "agents non technical people"
+      ],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "publisher_authored",
+      "availability_status": "available",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-01-general",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "Google launches Gemini 4 Argon, its first AI frontier model release in months",
+      "url": "/videos/2026-10-01/general/",
+      "focus": "general_video",
+      "topics": [],
+      "companies": [
+        "Yahoo Finance"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [],
+      "summary": "A concise current-news explanation of the staged Gemini 4 Argon release and why access is initially limited."
+    },
+    {
+      "content_type": "Video",
+      "story_id": "dab-video-2026-10-01-agent-skills",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-09-29",
+      "headline": "Introducing dots, always-on agents built to handle everything.",
+      "url": "/videos/2026-10-01/agent-skills/",
+      "focus": "agents_non_technical_people",
+      "topics": [],
+      "companies": [
+        "OpenAI"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A short first-party introduction to always-on agents, cloud-computer execution and user control."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-01-ai-show-244",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "#244: How Alibaba.com Is Building the Future of Agent-to-Agent Commerce",
+      "url": "/podcasts/2026-10-01/ai-show-244/",
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent-to-agent commerce",
+        "business transformation"
+      ],
+      "companies": [
+        "The Artificial Intelligence Show"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A discussion of Alibaba.com’s Accio agent platform and agent-to-agent commerce."
+    },
+    {
+      "content_type": "Podcast",
+      "story_id": "dab-podcast-2026-10-01-jesse-owen-argon",
+      "brief_date": "2026-10-01",
+      "event_date": "2026-10-01",
+      "headline": "Gemini 4 Argon Puts Controlled Agent Rollouts to the Test",
+      "url": "/podcasts/2026-10-01/jesse-owen-argon/",
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Gemini 4 Argon",
+        "controlled rollout"
+      ],
+      "companies": [
+        "AI & Tech Daily with Jesse Owen"
+      ],
+      "evidence_type": "practitioner_analysis",
+      "availability_status": "not_applicable",
+      "trends": [
+        "Accessible agents for knowledge work"
+      ],
+      "summary": "A concise daily briefing on Gemini 4 Argon’s controlled access and staged deployment."
+    },
+    {
+      "content_type": "Article",
       "story_id": "dab-story-2026-09-30-77eb0ae9",
       "brief_date": "2026-09-30",
       "event_date": "2026-09-28",
@@ -5142,157 +5356,6 @@
         "Accessible agents for knowledge work"
       ],
       "summary": "OpenAI published a case study describing how Gilbert + Tobin combines leadership commitment, governance and human accountability around ChatGPT Enterprise and Codex, reporting 87% active usage among enabled ChatGPT users."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-01-4df260d4",
-      "brief_date": "2026-09-01",
-      "event_date": "2026-09-01",
-      "headline": "Codex 0.152 puts limits and durable evidence around agent tool use",
-      "url": "/stories/2026-09-01/codex-0-152-puts-limits-and-durable-evidence-around-agent-tool-use/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "coding agents",
-        "MCP",
-        "output budgets",
-        "authorization evidence",
-        "cloud-task security"
-      ],
-      "companies": [
-        "GitHub"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "OpenAI released Codex CLI 0.152 with per-tool `output_token_limit` settings for MCP tools, configurable shell-command timeouts, package-style MCP server names, and fixes that preserve user instructions, answers and valid authorizations across approval-history compaction. The release also keeps MCP tools available through cache and plugin changes, restores saved working directories on resumed threads, and rejects untrusted cloud-task backend URLs and redirects."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-01-09eff21b",
-      "brief_date": "2026-09-01",
-      "event_date": "2026-08-28",
-      "headline": "ContextPilot teaches agents when to plan, remember and offload context",
-      "url": "/stories/2026-09-01/contextpilot-teaches-agents-when-to-plan-remember-and-offload-context/",
-      "focus": "technical_ai_engineering",
-      "topics": [
-        "context engineering",
-        "long-term memory",
-        "context offloading",
-        "reinforcement learning"
-      ],
-      "companies": [
-        "arXiv"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent memory and context",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Tencent researchers introduced ContextPilot, a proactive context-management framework that extends an agent’s tools beyond search, deletion and summarization to include planning, structured long-term memory and “soft” context offloading. Its training method samples branches around high-impact context edits and assigns credit to intermediate context decisions rather than applying only the final trajectory reward. The authors report stronger results with more compact working context across long-context QA and deep-search tasks."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-01-5005fc67",
-      "brief_date": "2026-09-01",
-      "event_date": "2026-08-31",
-      "headline": "Google Meet gives the room a visible pause switch for AI notes",
-      "url": "/stories/2026-09-01/google-meet-gives-the-room-a-visible-pause-switch-for-ai-notes/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "meeting notes",
-        "human control",
-        "privacy",
-        "off-the-record discussion"
-      ],
-      "companies": [
-        "Google"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [],
-      "summary": "Google began rolling out direct controls for “Take notes for me” on Google Meet hardware touch controllers. In eligible meetings, in-room participants can see whether Gemini note-taking is active, stop it for an off-the-record discussion and resume it without joining from a laptop in Companion mode. Early Preview devices began receiving the feature August 31; broader rollout is scheduled to begin September 8."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-01-f20296c3",
-      "brief_date": "2026-09-01",
-      "event_date": "2026-08-28",
-      "headline": "Gemini labels Drive files at scale while owners retain review authority",
-      "url": "/stories/2026-09-01/gemini-labels-drive-files-at-scale-while-owners-retain-review-authority/",
-      "focus": "applied_genai_knowledge_workers",
-      "topics": [
-        "data classification",
-        "Google Drive",
-        "human review",
-        "DLP",
-        "audit logs"
-      ],
-      "companies": [
-        "Google"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [],
-      "summary": "Google opened Gemini-based data classification in Drive to beta. Administrators choose a label, write instructions and define the file audience; Gemini evaluates files and applies labels without a manually labeled training set. Eligible owners and editors can accept or modify the proposed label, and audit logs record both automated labeling and human changes. Labels can support DLP, retention and investigations."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-01-2881d03e",
-      "brief_date": "2026-09-01",
-      "event_date": "2026-08-31",
-      "headline": "ChatGPT Work can discover tools provided directly by a website",
-      "url": "/stories/2026-09-01/chatgpt-work-can-discover-tools-provided-directly-by-a-website/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "WebMCP",
-        "website tools",
-        "ChatGPT Work",
-        "browser agents",
-        "confirmations"
-      ],
-      "companies": [
-        "OpenAI"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "ChatGPT Work and Codex can now discover and use actions that supported websites expose through WebMCP in the desktop app’s built-in browser. A user can inspect available site tools from the address bar and ask the agent to use them without configuring a separate connector. OpenAI’s documentation gives actions such as finding a document section or adding a comment as examples. Existing website-access and sensitive-action confirmations still apply."
-    },
-    {
-      "content_type": "Article",
-      "story_id": "dab-story-2026-09-01-c324f577",
-      "brief_date": "2026-09-01",
-      "event_date": "2026-09-01",
-      "headline": "Workspace Studio’s no-code agents gain least privilege, approvals and audit context",
-      "url": "/stories/2026-09-01/workspace-studio-s-no-code-agents-gain-least-privilege-approvals-and-audit-conte/",
-      "focus": "agents_non_technical_people",
-      "topics": [
-        "no-code agents",
-        "least privilege",
-        "human approval",
-        "DLP",
-        "auditability"
-      ],
-      "companies": [
-        "Google"
-      ],
-      "evidence_type": "unspecified",
-      "availability_status": "unspecified",
-      "trends": [
-        "Agent reliability and governance",
-        "Agent memory and context",
-        "AI-assisted development",
-        "Accessible agents for knowledge work"
-      ],
-      "summary": "Google began the Scheduled Release rollout of new Workspace Studio controls today. Newly created flows can run with least-privileged agent identities and unique auditable identifiers. Administrators can revoke individual OAuth scopes, inspect flow context in audit events, disable step types or webhooks, require confirmation before externally sharing data, and use DLP conditions to block execution or force review."
     }
   ]
 }
