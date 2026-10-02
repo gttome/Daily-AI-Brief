@@ -287,13 +287,33 @@ jobs:
           cp /tmp/completion-evidence.json "$completion"
           cp /tmp/daily-validation.json "$validation"
           cc="_records/command-center/$EDITION_DATE-public-safe-delta.json"
-          pr="$(gh api "repos/$GITHUB_REPOSITORY/commits/$EXPECTED_SHA/pulls" --jq '.[0].number // 0' 2>/dev/null || echo 0)"
-          if [ "$pr" -le 0 ]; then echo "No protected publication PR found for $EXPECTED_SHA."; exit 1; fi
-          candidate_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.head.sha')"
-          publication_merge_sha="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr" --jq '.merge_commit_sha // empty')"
-          if ! [[ "$candidate_sha" =~ ^[0-9a-f]{40}$ ]] || ! [[ "$publication_merge_sha" =~ ^[0-9a-f]{40}$ ]]; then echo "Publication PR evidence is incomplete."; exit 1; fi
-          ci_run_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$candidate_sha&per_page=100" --jq '[.workflow_runs[] | select(.name=="Deterministic publication CI" and (.event=="pull_request" or .event=="workflow_dispatch") and .conclusion=="success")] | sort_by(.updated_at) | reverse | .[0].id // 0')"
-          if [ "$ci_run_id" -le 0 ]; then echo "No successful protected CI found for publication candidate $candidate_sha."; exit 1; fi
+          read_publication_field() {
+            node -e "const x=require('./$completion');const v=x[process.argv[1]];process.stdout.write(v==null?'':String(v))" "$1"
+          }
+          pr="$(read_publication_field pr_number)"
+          candidate_sha="$(read_publication_field candidate_sha)"
+          publication_merge_sha="$(read_publication_field publication_merge_sha)"
+          ci_run_id="$(read_publication_field ci_run_id)"
+          if ! [[ "$pr" =~ ^[1-9][0-9]*$ ]] || ! [[ "$candidate_sha" =~ ^[0-9a-f]{40}$ ]] || ! [[ "$publication_merge_sha" =~ ^[0-9a-f]{40}$ ]] || ! [[ "$ci_run_id" =~ ^[1-9][0-9]*$ ]]; then
+            echo "Validated publication event must bind exact PR, candidate, merge, and protected CI identities."
+            exit 1
+          fi
+          pr_evidence="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$pr")"
+          actual_candidate_sha="$(jq -r '.head.sha // empty' <<<"$pr_evidence")"
+          actual_merge_sha="$(jq -r '.merge_commit_sha // empty' <<<"$pr_evidence")"
+          actual_merged="$(jq -r '.merged // false' <<<"$pr_evidence")"
+          if [ "$actual_merged" != "true" ] || [ "$actual_candidate_sha" != "$candidate_sha" ] || [ "$actual_merge_sha" != "$publication_merge_sha" ]; then
+            echo "Validated publication identity does not match protected PR evidence."
+            exit 1
+          fi
+          ci_evidence="$(gh api "repos/$GITHUB_REPOSITORY/actions/runs/$ci_run_id")"
+          actual_ci_name="$(jq -r '.name // empty' <<<"$ci_evidence")"
+          actual_ci_sha="$(jq -r '.head_sha // empty' <<<"$ci_evidence")"
+          actual_ci_conclusion="$(jq -r '.conclusion // empty' <<<"$ci_evidence")"
+          if [ "$actual_ci_name" != "Deterministic publication CI" ] || [ "$actual_ci_sha" != "$candidate_sha" ] || [ "$actual_ci_conclusion" != "success" ]; then
+            echo "Validated publication CI identity does not match the exact candidate."
+            exit 1
+          fi
           node - "$completion" /tmp/daily-validation.json "$EXPECTED_SHA" "$candidate_sha" "$publication_merge_sha" "$pr" "$ci_run_id" <<'NODE'
           const fs=require('fs');
           const [p,validationPath,productionSha,candidateSha,mergeSha,prNumber,ciRunId]=process.argv.slice(2);
