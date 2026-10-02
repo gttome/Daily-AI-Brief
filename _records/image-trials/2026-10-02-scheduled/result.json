@@ -2,7 +2,7 @@
   "schema_version": "unattended-image-qualification-attempt-v1",
   "observed_at": "2026-10-02T06:21:34.576Z",
   "branch": "qualification/scheduled-image-host-2026-10-02",
-  "baseline_main_sha": "9a662e4c2b8f5a244efe3a148a6bec05a633f9c5",
+  "baseline_main_sha": "0f6cc4e5115f3604bb98aa6fc8099b54d69c3757",
   "requested_qualification_schema": "unattended-image-qualification-v1",
   "result": "BLOCKED",
   "blocker": "CURRENT_IMAGE_HOST_OUTSIDE_AUTHORIZED_COST_BOUNDARY",

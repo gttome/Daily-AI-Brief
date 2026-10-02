@@ -2,7 +2,7 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:76010d6a326f0ce4e38aefcb52dc85a907ba6f9556f8eaaf11db6c2d2f76582b`
+Ledger digest: `sha256:feb8f1395563ab150eb4942c19874f8f7dd8cd9d13ddec8c617193ce68c97b98`
 
 Problems: 31 · Events: 42
 
@@ -546,21 +546,21 @@ Problems: 31 · Events: 42
 - **Recurrences:** none recorded
 - **Future validation:** Observe the scheduled invocation and actual native generation, saved-pixel review and exact-byte recovery. | Do not retire an existing execution path on the strength of interactive or fixture success. | Keep daily and recovery schedules independent of owner status requests. | Verify the registered scheduled worker consumes the exact operation and fence and saves real generation/review evidence. | Do not equate awaiting_scheduled_executor with active execution or successful generation.
 
-## DAB-OPS-20261002-010 — The current automation invocation exposes native image tools only from a prohibited Codex Work surface and does not yet provide post-run scheduler identity evidence.
+## DAB-OPS-20261002-010 — Reusing the existing controller invoked Codex Work, outside the authorized production boundary; no image was generated.
 
 - **Status:** open
 - **First observed run:** scheduled-image-host-qualification-20261002
 - **Task(s):** 00
 - **Symptom:** not recorded
-- **Root cause:** The configured controller was invoked in an execution surface outside the authorized ordinary ChatGPT-only boundary; during the invocation automations.peek still reported last_run_time null.
-- **Operational impact:** The six-image unattended qualification and Run 5 Task 00 cannot honestly pass in this invocation.
+- **Root cause:** The live automation reported its native image tools were exposed from a Codex Work surface. The available scheduler configuration has no execution-mode selector. During the invocation last_run_time was still null.
+- **Operational impact:** Daily unattended production cannot be admitted under the existing no-Work/no-Codex policy using this observed runtime. Run5 was not allocated.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Read the complete bootstrap set, inspect actual runtime capabilities, capture the exact automation object, and create the required isolated qualification branch without generating images.
-- **Actual fix:** not yet determined
-- **Fix outcome:** Exact blocker evidence was durably prepared. Zero qualification images were generated, no prior trial was relabeled, and Run 4 remained immutable.
+- **Attempted fixes:** Re-enabled the existing daily controller and keeper, requested an immediate invocation, and inspected its actual GitHub capability receipt.
+- **Actual fix:** Paused the newly enabled controller and keeper after the prohibited runtime was observed; restored the pre-existing live validator prompt. Preserved all probe records and Run4. No image generation, cost-proof bypass or paid adapter was used.
+- **Fix outcome:** The live probe demonstrates a runtime-policy incompatibility, not an image-quality PASS. Account billing remains unobserved. A repository rollback cannot change the external execution surface.
 - **Permanent implementation:** none
 - **Regression tests:** none
-- **Production invariants:** no_work_or_codex_image_generation, actual_scheduler_invocation_observation_required, blocked_is_not_pass
+- **Production invariants:** none
 - **Recurrences:** none recorded
-- **Future validation:** Run the qualification only from an ordinary cloud-scheduled ChatGPT host that exposes native generation and saved-pixel inspection inside the authorized boundary. | After that invocation completes, persist automations.peek evidence whose last_run_time matches scheduler.started_at. | Reuse the isolated branch and do not repeat Run 4 or the interactive six-image trial.
+- **Future validation:** Use an actually supported ordinary non-Work/non-Codex scheduled image host within existing cost policy before re-enabling production. | Do not retry unchanged prohibited scheduled execution or treat scheduling instructions as a runtime-mode selector. | A post-run scheduler observation can resolve last_run_time timing, but cannot remove the runtime-policy blocker.
 
