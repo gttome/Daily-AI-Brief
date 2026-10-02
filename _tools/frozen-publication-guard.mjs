@@ -17,5 +17,7 @@ const pub=path.join(root,'_records/publication',manifest.edition_date);
 const validated=fs.readdirSync(pub).filter(p=>p.endsWith('.json')).map(p=>read(path.join(pub,p)));
 const baselineSha=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 const result=assertFrozenPublication({pointer,branch:process.env.STAGING_REF,tasks:projection.tasks,events,manifest,validated,baselineSha});
-fs.writeFileSync('/tmp/frozen-publication.json',JSON.stringify({...result,baseline_sha:baselineSha,candidate_sha:execFileSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'}).trim()}));
+const candidateSha=execFileSync('git',['-C',root,'rev-parse','HEAD'],{encoding:'utf8'}).trim();
+if(process.env.EXPECTED_SHA && process.env.EXPECTED_SHA!==candidateSha) throw Error('frozen_dispatch_candidate_changed');
+fs.writeFileSync('/tmp/frozen-publication.json',JSON.stringify({...result,baseline_sha:baselineSha,candidate_sha:candidateSha}));
 console.log(JSON.stringify(result));

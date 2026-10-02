@@ -71,7 +71,9 @@ test('Task00 CLI rejects Run5 even if admission flags are supplied without a reg
   try {
     const input={run_number:5,image_pipeline:{host_admission:{evidence_type:'live',trigger:'scheduled',execution_mode:'production',generation_executor:'native_chatgpt_image_generation',review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,receipt_path:'_records/invented.json',receipt_sha256:'a'.repeat(64)}}};
     const file=path.join(dir,'input.json');fs.writeFileSync(file,JSON.stringify(input));
-    const r=spawnSync(process.execPath,['_tools/run-readiness.mjs','validate','--input',file],{encoding:'utf8'});
+    fs.mkdirSync(path.join(dir,'docs/operations'),{recursive:true});
+    fs.writeFileSync(path.join(dir,'docs/operations/unattended-image-host.json'),JSON.stringify({host_id:null,status:'CAPABILITY_BLOCKED'}));
+    const r=spawnSync(process.execPath,[new URL('../../_tools/run-readiness.mjs',import.meta.url).pathname,'validate','--input',file],{encoding:'utf8',cwd:dir});
     const result=JSON.parse(r.stdout);assert.equal(result.start_authorized,false);assert.equal(r.status,1);
     assert.ok(result.errors.includes('NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST'));
   } finally {fs.rmSync(dir,{recursive:true,force:true});}

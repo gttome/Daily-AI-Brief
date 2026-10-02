@@ -1,5 +1,5 @@
 name: Publish validated candidate
-run-name: Publish candidate ${{ inputs.staging_ref }}
+run-name: Publish candidate ${{ inputs.staging_ref }} ${{ inputs.expected_sha }}
 on:
   workflow_dispatch:
     inputs:
@@ -12,6 +12,10 @@ on:
         required: true
         default: true
         type: boolean
+      expected_sha:
+        description: Exact frozen candidate SHA for autonomous handoff
+        required: false
+        type: string
       autonomous_run:
         description: Continue a frozen active production run through protected CI and existing live closure
         required: false
@@ -46,6 +50,7 @@ jobs:
         if: inputs.autonomous_run == true
         env:
           STAGING_REF: ${{ inputs.staging_ref }}
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
         run: node _tools/frozen-publication-guard.mjs
       - name: Build candidate site
         uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697
@@ -83,7 +88,8 @@ jobs:
             if(!pr) throw Error('exact_frozen_publication_pr_required');
             const runs=async()=> (await github.rest.actions.listWorkflowRuns({...repo,workflow_id:'ci.yml',branch:f.branch,per_page:100})).data.workflow_runs.filter(r=>r.head_sha===f.candidate_sha);
             let existing=await runs();
-            if(!existing.some(r=>r.conclusion==='success'||r.status!=='completed'))
+            if(existing.length && existing.every(r=>r.status==='completed'&&r.conclusion!=='success')) throw Error('unchanged_candidate_ci_failed_repair_required');
+            if(!existing.length)
               await github.rest.actions.createWorkflowDispatch({...repo,workflow_id:'ci.yml',ref:f.branch});
             let passing=existing.find(r=>r.conclusion==='success');
             for(let i=0;!passing&&i<60;i++) {

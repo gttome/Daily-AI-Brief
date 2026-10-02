@@ -15,11 +15,14 @@ if(merged) {
   }
   process.exit(0);
 }
-const title='Publish candidate '+branch;
+const candidateSha=JSON.parse(gh(['api',`repos/${repo}/git/ref/heads/${branch}`])).object.sha;
+const title='Publish candidate '+branch+' '+candidateSha;
 const runs=JSON.parse(gh(['api',`repos/${repo}/actions/workflows/publish-candidate.yml/runs?per_page=100`])).workflow_runs;
 if(runs.some(r=>r.display_title===title && ['queued','in_progress','waiting','requested','pending'].includes(r.status))) {
   console.log(JSON.stringify({status:'PUBLICATION_EXECUTOR_ALREADY_ACTIVE',branch}));
+} else if(runs.filter(r=>r.display_title===title && r.status==='completed' && r.conclusion!=='success').length>=3) {
+  console.log(JSON.stringify({status:'PUBLICATION_HANDOFF_RETRY_BUDGET_EXHAUSTED',branch,run_branch_written:false}));
 } else {
-  gh(['workflow','run','publish-candidate.yml','--ref','main','-f',`staging_ref=${branch}`,'-f','dry_run=false','-f','autonomous_run=true']);
+  gh(['workflow','run','publish-candidate.yml','--ref','main','-f',`staging_ref=${branch}`,'-f','dry_run=false','-f','autonomous_run=true','-f',`expected_sha=${candidateSha}`]);
   console.log(JSON.stringify({status:'PUBLICATION_HANDOFF_DISPATCHED',branch,run_branch_written:false}));
 }
