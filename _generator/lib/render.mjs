@@ -124,8 +124,6 @@ function renderVideo(name, slot, briefDate, slotId) {
 
 ### ${slot.title}
 
-${renderReadingSupport(slot,`dab-video-${briefDate}-${slotId}`,briefDate,"Video")}
-
 ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
 **Channel:** ${slot.channel}  
 **Date:** ${slot.upload_date ? formatDate(slot.upload_date) : 'Not available'}  
@@ -146,8 +144,6 @@ ${renderInlineFeedback({
   return `${heading}
 
 ### ${slot.title}
-
-${renderReadingSupport(slot,`dab-video-${briefDate}-${slotId}`,briefDate,"Video")}
 
 ${trackedLink(`/videos/${briefDate}/${slotId}/`,'Open the permanent video page',`dab-video-${briefDate}-${slotId}`,briefDate,'permanent_page_clicks')}  
 **Channel:** ${slot.channel}  
