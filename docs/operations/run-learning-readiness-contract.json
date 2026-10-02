@@ -231,5 +231,41 @@
     "new_credentials": false,
     "github_runner": "standard public-repository runner only"
   },
-  "run5_preparation": "docs/operations/RUN5-UNATTENDED-PREPARATION-2026-10-02.md"
+  "run5_preparation": "docs/operations/RUN5-UNATTENDED-PREPARATION-2026-10-02.md",
+  "image_qualification_metadata_corrections": {
+    "schema_version": "image-attempt-metadata-correction-v1",
+    "scope": "append-only correction of demonstrably wrong immutable image-attempt metadata during exact-byte qualification recovery",
+    "immutable_source_preserved": true,
+    "required_bindings": [
+      "candidate_id",
+      "attempt",
+      "immutable_receipt_source_path",
+      "immutable_receipt_git_blob_sha",
+      "exact_original_path",
+      "exact_original_bytes",
+      "exact_original_sha256",
+      "exact_original_git_blob_sha",
+      "recorded_dimensions",
+      "actual_png_ihdr_dimensions"
+    ],
+    "inspection_method": "png_ihdr_uint32_be",
+    "acceptance": "A correction is admissible only when the committed receipt copy has the bound Git blob, the exact original bytes match byte count/SHA-256/Git blob, and PNG signature plus IHDR width/height match actual_dimensions.",
+    "rejection": [
+      "wrong candidate or attempt",
+      "wrong receipt blob",
+      "wrong original path",
+      "wrong byte count",
+      "wrong SHA-256",
+      "wrong Git blob",
+      "wrong recorded dimensions",
+      "wrong actual dimensions",
+      "invalid PNG signature or IHDR"
+    ],
+    "invariants": [
+      "receipt_and_png_remain_immutable",
+      "correction_scope_is_metadata_only",
+      "saved_git_review_and_owner_quality_confirmation_remain_required",
+      "correction_cannot_create_acceptance_without_all_other_qualification_gates"
+    ]
+  }
 }

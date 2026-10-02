@@ -654,3 +654,19 @@ Problems: 36 · Events: 52
 - **Recurrences:** none recorded
 - **Future validation:** Verify attempt 3 contains only the nine allowlisted labels and no pseudo-text at any scale. | If attempt 4 is needed, simplify only text-bearing primitives while preserving explanatory detail and mechanism clarity. | Promote the prompt/primitive rule to a tested production helper if the next accepted image demonstrates the guard. | Use the same professional native-generation, pretransport review and saved-Git acceptance pattern on the next production run. | Compare next-run owner feedback and attempt counts against Run 5 before simplifying any image-quality control. | Preserve the current high-detail explanatory visual standard even when optimizing speed.
 
+## DAB-OPS-20261002-017 — Exact-bound recovery qualification
+
+- **Status:** mitigated
+- **Observed:** Run 5 had twelve identity-verified recovery files, but qualification remained blocked by two one-pixel immutable receipt metadata errors and scheduler observations captured before one-time completion.
+- **Actual fix:** Preserve the receipts and PNGs; add append-only m07/m08 corrections bound to candidate, attempt, receipt blob, bytes, SHA-256, Git blob and PNG IHDR. Bind the exact completed scheduler observation at commit `a703ebcc21fc05bf3e7f05b7ce2949b6c7109df8` and validate exact automation, conversation, schedule and bounded DTSTART-to-last-run timing.
+- **Fix outcome:** `qualification-receipt-complete-1.json` passed at qualification commit `0e4bded95dc5ede4e6075d21d57e52e1de90fd71`: 12/12 exact files, six saved-Git reviews, owner quality confirmation, zero generation/edit/normalization calls, and 6/6 regression tests.
+- **Production invariants:** immutable receipts and PNGs are never rewritten; metadata corrections are append-only and exact-bound; completed one-time scheduler evidence is identity/time-bound; hashes never replace saved-Git visual review.
+
+## DAB-OPS-20261002-018 — Publication sequencing race
+
+- **Status:** open
+- **Observed:** PR #364 merged exact head `be96230e8a71825e945748a7aa7b771d354a7bee` at 2026-10-02T18:15:02Z before the protected host registration and Run 5 publication authorization were durable.
+- **Operational impact:** Candidate and accepted image bytes stayed exact and protected CI run 37044705745 succeeded, but qualification-before-publication sequencing was violated.
+- **Recovery:** Preserve the merge and all candidate bytes; complete protected host registration, reconcile authorization, verify the exact deployed SHA independently, and record PUBLIC CLOSED append-only. Do not hide or rewrite the ordering anomaly.
+- **Future validation:** Enforce host READY and same-run `publication_authorized` at merge time, independent of earlier candidate CI.
+
