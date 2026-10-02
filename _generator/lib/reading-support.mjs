@@ -49,15 +49,20 @@ export function validateReadingSupport(edition,data=catalog){
 }
 export function renderReadingSupport(item,id,date,kind='Article'){
  if(date<'2026-09-12')return '';
- if(kind!=='Article')return '';
  const x=(catalog.editions[date]||[]).find(x=>x.item_id===id);
- const seconds=item.runtime_seconds;
- const minutes=sourceReadingMinutes(item,id);
- const duration=kind==='Article'?(minutes?`Source article · about ${minutes} min read`:'Source reading time unavailable'):Number.isInteger(seconds)&&seconds>0?`${Math.floor(seconds/60)}:${String(seconds%60).padStart(2,'0')} ${kind.toLowerCase()}`:`${kind} · duration not verified`;
  const r=x?.related;
- const fallback=kind==='Article'&&item.freshness?.tier==='fallback'&&item.freshness.fallback_band?item.freshness:null;
+ const contextBlock=x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:'';
+ const relatedBlock=r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:'';
+ if(kind!=='Article'){
+  if(!x&&!r)return '';
+  const coverageLabel=x?.coverage_label;
+  return readerAddition(`<aside class="reading-context" aria-label="Reading context">${coverageLabel?`<div class="reading-meta"><span class="coverage-label">${esc(coverageLabel)}</span></div>`:''}${contextBlock}${relatedBlock}</aside>`);
+ }
+ const minutes=sourceReadingMinutes(item,id);
+ const duration=minutes?`Source article · about ${minutes} min read`:'Source reading time unavailable';
+ const fallback=item.freshness?.tier==='fallback'&&item.freshness.fallback_band?item.freshness:null;
  const coverageLabel=fallback?articleFallbackLabel(fallback):x?.coverage_label;
- const published=kind==='Article'?publicationDateLabel(item.source?.publication_date||item.freshness?.source_published_at):'';
+ const published=publicationDateLabel(item.source?.publication_date||item.freshness?.source_published_at);
  const disclosure=published?`<p class="recency-disclosure"><strong>Originally published:</strong> ${published}</p>`:'';
- return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${coverageLabel?`<span class="coverage-label">${esc(coverageLabel)}</span>`:''}<span${kind==='Article'?' title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified."':''}>${esc(duration)}</span></div>${disclosure}${x?`<p><strong>${esc(x.context_term)}:</strong> ${esc(x.context)}</p><div class="learning-outcome"><strong>What you’ll learn</strong><p>${esc(x.learning_outcome)}</p></div>`:''}${r?`<div class="related-coverage"><strong>${esc(r.label||'Earlier Brief')}</strong><p><a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a></p><p>${esc(r.brief_date)} · ${esc(r.connection)}</p></div>`:''}</aside>`);
+ return readerAddition(`<aside class="reading-context" aria-label="Reading context"><div class="reading-meta">${coverageLabel?`<span class="coverage-label">${esc(coverageLabel)}</span>`:''}<span title="Estimated from the linked source’s main text at 200 words per minute. Navigation and unrelated promotional material are excluded. Unavailable means a reliable source-text estimate has not been verified.">${esc(duration)}</span></div>${disclosure}${contextBlock}${relatedBlock}</aside>`);
 }
