@@ -48,3 +48,13 @@ test('September 19 expansion serves canonical images from the Brief domain',()=>
  const edition=expandEditorialKernel(k,{candidateFacts,imageAssets,metadataCandidates,media,publishedAt:'2026-09-19T15:00:00Z',coveragePeriod:'24-hour primary window ending at 2026-09-19T14:41:06Z.'});
  assert.match(edition.stories[0].image.public_url,/^https:\/\/gttome\.github\.io\/Daily-AI-Brief\/briefs\/images\/2026-09-19\/01-story\.webp\?v=abc123$/);
 });
+
+test('kernel rejects internal candidate IDs in reader topic labels from October 2 forward',()=>{
+ const bad=structuredClone(kernel);
+ bad.brief_date='2026-10-02';
+ bad.edition_id='dab-edition-2026-10-02';
+ bad.stories[0].topic_labels=['m01','retrieval'];
+ const errors=validateEditorialKernel(bad);
+ assert.ok(errors.includes('internal_candidate_id_not_reader_topic:1'));
+});
+
