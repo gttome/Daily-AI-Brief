@@ -2,9 +2,9 @@
   "schema_version": "production-kanban-projection-v2",
   "execution_id": "reliable-edition-20261002-run5",
   "edition_id": "dab-edition-2026-10-02",
-  "observed_at": "2026-10-02T12:52:26.871Z",
+  "observed_at": "2026-10-02T12:53:29.454Z",
   "authoritative_source": "append_only_transition_events",
-  "source_event_digest": "sha256:4e1416ba83d674a13144502801f0f2d4184f34eab9d3f5aa2e126cfc30d24620",
+  "source_event_digest": "sha256:d8c634af0073ff5a7ca3734b6e992d66ea08e22701e311331e817390545658e9",
   "tasks": {
     "10": {
       "id": "10",
@@ -285,9 +285,9 @@
     "03": {
       "id": "03",
       "title": "Discover fresh article candidates",
-      "state": "Backlog",
-      "entered_backlog_at": null,
-      "active_started_at": null,
+      "state": "Active",
+      "entered_backlog_at": "2026-10-02T12:52:55.445Z",
+      "active_started_at": "2026-10-02T12:52:55.445Z",
       "review_started_at": null,
       "blocked_started_at": null,
       "done_at": null,
