@@ -139,6 +139,7 @@ export function verifyAutomaticSupervisorResume({
   required(/TASK_1\[1-6\]_DONE_HANDOFF_TO_SUPERVISOR\|TASK_1\[1-6\]_BLOCKED_HANDOFF_TO_SUPERVISOR/.test(workflowText),
     'handoff_workflow_task_specific_release_contract_required');
   required(/gh workflow run run-supervisor\.yml/.test(workflowText), 'handoff_workflow_auto_supervisor_dispatch_required');
+  required(/-R "\$GITHUB_REPOSITORY"/.test(workflowText), 'handoff_workflow_repository_explicit_dispatch_required');
   required(/\[ "\$run_branch" = "\$\{GITHUB_REF_NAME\}" \]/.test(workflowText), 'handoff_workflow_same_branch_guard_required');
   required(/\[ "\$lease_execution" = "\$execution_id" \]/.test(workflowText), 'handoff_workflow_same_execution_guard_required');
 
