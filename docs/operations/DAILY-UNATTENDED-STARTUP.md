@@ -1,6 +1,6 @@
 # Daily unattended startup
 
-**Live outcome, October 2:** the reused controller reported a Codex Work execution surface and generated no images. Daily controller and hourly keeper were paused after that evidence, preserving the no-Work/no-Codex boundary. See `_records/image-trials/2026-10-02-scheduled/result.json` and `schedule-pause.json`. Do not repeat unchanged prohibited execution. The scheduled host and Run 5 remain unadmitted.
+**Live outcome, October 2:** the reused controller reported a Codex Work execution surface and generated no images. A later owner-requested schedule reactivation reproduced the same host boundary; the now-visible prior `last_run_time` closes only the scheduler-observation timing gap and does not qualify the host. Daily controller, hourly keeper and duplicate one-time starts were paused after the recurrence, preserving the no-Work/no-Codex boundary. See `_records/image-trials/2026-10-02-scheduled/result-2.json` and `schedule-pause-2.json`. Do not repeat unchanged prohibited execution. The scheduled host and Run 5 remain unadmitted.
 
 Owner authorization: start the next Brief now and every day at **01:00 America/Chicago**, without owner interaction, uploads, approvals, an open chat or status requests. Reuse the existing ordinary scheduled ChatGPT path and GitHub Actions. Do not activate Work, Codex, paid APIs, overage, alternate accounts or new credentials. Actual account billing remains unobserved unless measured; a prompt is not a cost receipt.
 
