@@ -21,7 +21,7 @@ reader_release: true
 
 **Focus:** Technical AI Engineering  
 **Date:** September 30, 2026  
-**Topics:** m01, technical ai engineering  
+**Topics:** technical ai engineering  
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
