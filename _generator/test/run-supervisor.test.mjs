@@ -288,19 +288,30 @@ test('Kanban contract is exactly Backlog to WIP to Done with all 30 task duratio
   assert.equal(kanbanProjectionFresh({events,kanban:k}).fresh,true);
 });
 
-test('Kanban fails closed on wrong order, Current column, missing task duration, missing total elapsed and stale projection',()=>{
+test('Kanban failing fixtures enforce wrong order, Current column, missing durations, missing total elapsed and stale projection',()=>{
+  const fixtures=JSON.parse(fs.readFileSync(new URL('./fixtures/kanban-contract-failures.json',import.meta.url),'utf8'));
   const tasks=Object.fromEntries(Array.from({length:30},(_,i)=>[String(i).padStart(2,'0'),{title:'Task '+i}]));
   const events=[{task_id:'00',from:'Backlog',to:'Active',at:'2026-10-01T20:00:00Z'}];
-  const k=projectKanbanFromEvents({tasks,events,execution_id:'run4',edition_id:'dab-edition-2026-10-01',observed_at:'2026-10-01T20:02:00Z'});
-  assert.ok(validateKanbanContract({kanban:{...k,columns:['Done','WIP','Backlog']},events}).includes('kanban_column_order_required'));
-  assert.ok(validateKanbanContract({kanban:{...k,columns:['Backlog','Current','WIP','Done']},events}).includes('kanban_current_column_prohibited'));
-  const missingDuration=structuredClone(k); delete missingDuration.tasks['00'].duration;
-  assert.ok(validateKanbanContract({kanban:missingDuration,events}).includes('kanban_task_duration_missing:00'));
-  const missingTotal={...k}; delete missingTotal.total_brief_elapsed;
-  assert.ok(validateKanbanContract({kanban:missingTotal,events}).includes('kanban_total_elapsed_missing'));
-  const stale={...k,source_event_digest:'sha256:'+'0'.repeat(64)};
-  assert.ok(validateKanbanContract({kanban:stale,events}).includes('kanban_projection_stale'));
-  assert.equal(kanbanProjectionFresh({events,kanban:stale}).fresh,false);
+  const base=projectKanbanFromEvents({tasks,events,execution_id:'run4',edition_id:'dab-edition-2026-10-01',observed_at:'2026-10-01T20:02:00Z'});
+  const setPath=(obj,dotted,value)=>{
+    const keys=dotted.split('.'); let cur=obj;
+    for(const key of keys.slice(0,-1)) cur=cur[key];
+    cur[keys.at(-1)]=value;
+  };
+  const deletePath=(obj,dotted)=>{
+    const keys=dotted.split('.'); let cur=obj;
+    for(const key of keys.slice(0,-1)) cur=cur[key];
+    delete cur[keys.at(-1)];
+  };
+  assert.equal(fixtures.length,5);
+  for(const fixture of fixtures){
+    const candidate=structuredClone(base);
+    if(fixture.set) setPath(candidate,fixture.set.path,fixture.set.value);
+    if(fixture.delete) deletePath(candidate,fixture.delete);
+    const errors=validateKanbanContract({kanban:candidate,events});
+    assert.ok(errors.includes(fixture.expected_error),`${fixture.name}: ${errors.join(',')}`);
+    assert.equal(kanbanProjectionFresh({events,kanban:candidate}).fresh,false,fixture.name);
+  }
 });
 
 test('terminal classification always goes to Task 29 before supervisor stop',()=>{
