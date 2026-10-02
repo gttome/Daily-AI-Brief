@@ -17,7 +17,7 @@ test('Task 17 consumer requires six exact accepted Git-reviewed images and write
     const bytes=Buffer.from('png-'+id);
     fs.mkdirSync(path.join(root,path.dirname(asset)),{recursive:true});fs.writeFileSync(path.join(root,asset),bytes);
     const sha=crypto.createHash('sha256').update(bytes).digest('hex');
-    const blob=crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\\0'),bytes])).digest('hex');
+    const blob=crypto.createHash('sha1').update(Buffer.concat([Buffer.from('blob '+bytes.length+'\0'),bytes])).digest('hex');
     specs.specs.push({task_id:task,candidate_id:id,subject:'subject '+id,mechanism:'Show distinct mechanism '+id});
     j(path.join(root,'_records/image-attempts',runKey,`${id}-attempt-1.json`),{
       candidate_id:id,accepted_locked:true,status:'accepted_locked',candidate:{dimensions:'1200x630',sha256:sha,git_blob_sha:blob},
