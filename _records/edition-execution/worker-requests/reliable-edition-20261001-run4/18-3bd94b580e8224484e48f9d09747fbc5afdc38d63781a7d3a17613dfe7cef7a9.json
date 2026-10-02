@@ -12,5 +12,8 @@
   "repair_epoch": 0,
   "post_repair_attempt": 0,
   "created_at": "2026-10-02T02:55:39.161Z",
-  "status": "queued"
+  "status": "completed_pass",
+  "consumed_at": "2026-10-02T03:18:53Z",
+  "completed_at": "2026-10-02T03:18:53Z",
+  "result_ref": "_records/qualification/2026-10-01-run4/result.json"
 }

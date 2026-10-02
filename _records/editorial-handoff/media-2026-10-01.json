@@ -1,0 +1,94 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-01",
+  "research_cutoff": "2026-10-01T19:52:35Z",
+  "verified_at": "2026-10-02T03:18:53Z",
+  "worth_watching": {
+    "general": {
+      "status": "included",
+      "title": "Google launches Gemini 4 Argon, its first AI frontier model release in months",
+      "channel": "Yahoo Finance",
+      "upload_date": "2026-10-01",
+      "runtime_seconds": 106,
+      "why_useful": "A concise current-news explanation of the staged Gemini 4 Argon release and why access is initially limited.",
+      "connection": "Complements the technical story by showing how controlled rollout is being communicated outside the primary publisher announcement.",
+      "url": "https://finance.yahoo.com/video/google-launches-gemini-4-argon-132551356.html",
+      "duration_tier": "short",
+      "verification_note": "Locked Run 4 media preflight selection."
+    },
+    "agents_non_technical_people": {
+      "status": "included",
+      "title": "Introducing dots, always-on agents built to handle everything.",
+      "channel": "OpenAI",
+      "upload_date": "2026-09-29",
+      "runtime_seconds": 148,
+      "why_useful": "A short first-party introduction to always-on agents, cloud-computer execution and user control.",
+      "connection": "Directly complements the locked Dots story with a nontechnical product walkthrough.",
+      "url": "https://openai.com/index/introducing-dots/",
+      "duration_tier": "short",
+      "verification_note": "Locked Run 4 media preflight selection."
+    }
+  },
+  "podcasts": [
+    {
+      "status": "included",
+      "ordinal": 9,
+      "item_id": "dab-podcast-2026-10-01-ai-show-244",
+      "title": "#244: How Alibaba.com Is Building the Future of Agent-to-Agent Commerce",
+      "show": "The Artificial Intelligence Show",
+      "host": "Mike Kaput with Kuo Zhang",
+      "publication_date": "2026-10-01",
+      "runtime_seconds": 2843,
+      "focus": "agents_non_technical_people",
+      "topics": [
+        "agent-to-agent commerce",
+        "business transformation"
+      ],
+      "url": "https://podcast.smarterx.ai/shownotes/244",
+      "summary": "A discussion of Alibaba.com’s Accio agent platform and agent-to-agent commerce.",
+      "why_useful": "Adds a business-operations perspective on multi-step agent work.",
+      "selection_rationale": "Locked Run 4 podcast; primary 48-hour freshness.",
+      "freshness_tier": "primary_48h",
+      "connection": "Extends the edition’s reusable-skill and persistent-agent themes.",
+      "permanent_url": "/podcasts/2026-10-01/ai-show-244/",
+      "verification_note": "Official show notes dated October 1, 2026; indexed runtime 47:23.",
+      "platforms": [
+        {
+          "name": "Official show notes",
+          "url": "https://podcast.smarterx.ai/shownotes/244"
+        }
+      ],
+      "coverage_note": "Locked October 1 Run 4 media selection."
+    },
+    {
+      "status": "included",
+      "ordinal": 10,
+      "item_id": "dab-podcast-2026-10-01-jesse-owen-argon",
+      "title": "Gemini 4 Argon Puts Controlled Agent Rollouts to the Test",
+      "show": "AI & Tech Daily with Jesse Owen",
+      "host": "Jesse Owen",
+      "publication_date": "2026-10-01",
+      "runtime_seconds": 1140,
+      "focus": "technical_ai_engineering",
+      "topics": [
+        "Gemini 4 Argon",
+        "controlled rollout"
+      ],
+      "url": "https://www.owenonthenet.com/podcast/2026-10-01/",
+      "summary": "A concise daily briefing on Gemini 4 Argon’s controlled access and staged deployment.",
+      "why_useful": "Provides a source-diverse practitioner interpretation of controlled rollout and governance.",
+      "selection_rationale": "Locked Run 4 podcast; primary 48-hour freshness.",
+      "freshness_tier": "primary_48h",
+      "connection": "Reinforces environment boundaries, staged access and verification.",
+      "permanent_url": "/podcasts/2026-10-01/jesse-owen-argon/",
+      "verification_note": "October 1 show page and podcast indexes identify the episode and approximately 19-minute runtime.",
+      "platforms": [
+        {
+          "name": "Show transcript",
+          "url": "https://www.owenonthenet.com/podcast/2026-10-01/"
+        }
+      ],
+      "coverage_note": "Locked October 1 Run 4 media selection."
+    }
+  ]
+}

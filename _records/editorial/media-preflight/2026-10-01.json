@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0.0",
+  "edition_id": "dab-edition-2026-10-01",
+  "checked_at": "2026-10-02T03:18:53Z",
+  "verification_timestamp": "2026-10-02T03:18:53Z",
+  "editorial_kernel_sha256": "8a19da961d81993e091707a17a87b7e7068c0cd4905d82c21d25b8c92e2ce213",
+  "basis": "Release sealing of the already locked Run 4 two-video/two-podcast media set; no downstream discovery or substitution.",
+  "podcast_source_diversity": {
+    "pass": true,
+    "distinct_sources": 2,
+    "sources": [
+      "The Artificial Intelligence Show",
+      "AI & Tech Daily with Jesse Owen"
+    ]
+  },
+  "items": [
+    {
+      "item_id": "dab-video-2026-10-01-general",
+      "kind": "video",
+      "source": "Yahoo Finance",
+      "url": "https://finance.yahoo.com/video/google-launches-gemini-4-argon-132551356.html",
+      "observed_date": "2026-10-01",
+      "observed_runtime_seconds": 106,
+      "verification_evidence": "Locked Run 4 media preflight verified title, publication date, stable source identity and runtime.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-02T03:18:53Z",
+      "http_observed_at": "2026-10-02T03:18:53Z",
+      "reachability_provenance": "Run 4 bounded media verification and release sealing read-back."
+    },
+    {
+      "item_id": "dab-video-2026-10-01-agent-skills",
+      "kind": "video",
+      "source": "OpenAI",
+      "url": "https://openai.com/index/introducing-dots/",
+      "observed_date": "2026-09-29",
+      "observed_runtime_seconds": 148,
+      "verification_evidence": "Locked Run 4 media preflight verified the official Dots video identity, publication date and runtime.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-02T03:18:53Z",
+      "http_observed_at": "2026-10-02T03:18:53Z",
+      "reachability_provenance": "Run 4 bounded media verification and release sealing read-back."
+    },
+    {
+      "item_id": "dab-podcast-2026-10-01-ai-show-244",
+      "kind": "podcast",
+      "source": "The Artificial Intelligence Show",
+      "url": "https://podcast.smarterx.ai/shownotes/244",
+      "observed_date": "2026-10-01",
+      "observed_runtime_seconds": 2843,
+      "verification_evidence": "Official show notes dated October 1, 2026; indexed runtime 47:23.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-02T03:18:53Z",
+      "http_observed_at": "2026-10-02T03:18:53Z",
+      "reachability_provenance": "Run 4 bounded media verification and release sealing read-back."
+    },
+    {
+      "item_id": "dab-podcast-2026-10-01-jesse-owen-argon",
+      "kind": "podcast",
+      "source": "AI & Tech Daily with Jesse Owen",
+      "url": "https://www.owenonthenet.com/podcast/2026-10-01/",
+      "observed_date": "2026-10-01",
+      "observed_runtime_seconds": 1140,
+      "verification_evidence": "October 1 show page and podcast indexes identify the episode and approximately 19-minute runtime.",
+      "reachable": true,
+      "http_status": 200,
+      "verification_timestamp": "2026-10-02T03:18:53Z",
+      "http_observed_at": "2026-10-02T03:18:53Z",
+      "reachability_provenance": "Run 4 bounded media verification and release sealing read-back."
+    }
+  ]
+}
