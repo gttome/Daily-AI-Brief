@@ -90,7 +90,7 @@ export function fileOperationStore(root) {
 
 export const operationKey = binding => hash({version: DURABLE_OPERATION_VERSION, binding});
 export function operationTimingSummary(state) {
-  const summary = {completed_ms_by_operation: {}, blocked_ms_by_operation: {}, total_completed_ms: 0, total_blocked_ms: 0};
+  const summary = {completed_ms_by_operation: {}, blocked_ms_by_operation: {}, total_completed_ms: 0, total_blocked_ms: 0, total_wait_ms:0};
   for (const event of state?.events || []) {
     if (!Number.isFinite(event?.duration_ms) || event.duration_ms < 0 || !event.operation) continue;
     if (event.type === 'completed') {
@@ -99,6 +99,8 @@ export function operationTimingSummary(state) {
     } else if (event.type === 'blocked') {
       summary.blocked_ms_by_operation[event.operation] = (summary.blocked_ms_by_operation[event.operation] || 0) + event.duration_ms;
       summary.total_blocked_ms += event.duration_ms;
+    } else if (event.type === 'wait_ended') {
+      summary.total_wait_ms += event.duration_ms;
     }
   }
   return summary;
@@ -149,10 +151,12 @@ export async function drainOperations({store, binding, steps, owner = randomUUID
       return {key, state, executed, ...operationView(state)};
     }
     const fence = (state.current?.fence || 0) + 1;
+    const waitEvent=state.blocker?.blocked_at ? [{at:start,operation:step.id,type:'wait_ended',
+      duration_ms:Math.max(0,Date.parse(start)-Date.parse(state.blocker.blocked_at))}] : [];
     await save({...state, status: 'running', blocker: null,
       current: {id: step.id, logical_key: logicalKey, fence, lease: {owner, expires_at: new Date(Date.parse(start) + leaseMs).toISOString()}},
       attempts: {...state.attempts, [step.id]: (state.attempts[step.id] || 0) + 1},
-      events: [...state.events, {at: start, operation: step.id, type: recovering ? 'recovery_requested' : 'requested', key: logicalKey}]});
+      events: [...state.events, ...waitEvent, {at: start, operation: step.id, type: recovering ? 'recovery_requested' : 'requested', key: logicalKey}]});
     let result;
     try {
       result = await handler({key: logicalKey, binding: structuredClone(binding), results: structuredClone(state.results),
@@ -169,7 +173,7 @@ export async function drainOperations({store, binding, steps, owner = randomUUID
       const durationMs = Math.max(0, Date.parse(blockedAt) - Date.parse(start));
       await save({...state, status: 'blocked', current: {...state.current, lease: null},
         blocker: {code: error.code || error.message, outcome_unknown: !(error instanceof OperationBlocked) || error.outcomeUnknown,
-          retry_at: retryAt, signal_digest: signalHash, recoverable: error instanceof OperationBlocked && error.recoverable === true},
+          retry_at: retryAt, blocked_at:blockedAt, signal_digest: signalHash, recoverable: error instanceof OperationBlocked && error.recoverable === true},
         events: [...state.events, {at: blockedAt, operation: step.id, type: 'blocked', reason: error.code || error.message, duration_ms: durationMs}]});
       const recoveries = blockRecoveryCounts[step.id] || 0;
       if (error instanceof OperationBlocked && error.recoverable === true && typeof step.resolveBlock === 'function' &&
@@ -179,7 +183,8 @@ export async function drainOperations({store, binding, steps, owner = randomUUID
         try {
           resolution = await step.resolveBlock({code: error.code, outcomeUnknown: error.outcomeUnknown,
             key: logicalKey, binding: structuredClone(binding), results: structuredClone(state.results),
-            put: bytes => store.put(bytes), read: ref => store.read(ref), recovery_attempt: blockRecoveryCounts[step.id]});
+            put: bytes => store.put(bytes), read: ref => store.read(ref), recovery_attempt: blockRecoveryCounts[step.id],
+            operation_attempts:state.attempts[step.id]});
           stableJson(resolution);
         } catch {
           resolution = null;

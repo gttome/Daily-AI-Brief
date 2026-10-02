@@ -326,10 +326,12 @@ jobs:
           node _tools/command-center-delta.mjs "${args[@]}"
           cp /tmp/command-center-delta.json "$cc"
           node _tools/run-state.mjs finalize --date "$EDITION_DATE" --production-sha "$EXPECTED_SHA" --pr "$pr" --completion "$completion" --validation "$validation" --cc "$cc"
+          node _tools/finalize-production-run.mjs "$EDITION_DATE"
           git config user.name "github-actions[bot]"
           git config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$branch"
           git add "$completion" "$validation" "$state" "$cc" "_records/publication/$EDITION_DATE/lifecycle.json" "data/operations/current-edition.json" "data/operations/publication-status.json"
+          git add _records/edition-execution _records/run-learning data/operations/active-production-run.json data/operations/production-continuous-improvement-ledger.jsonl docs/operations/PRODUCTION-CONTINUOUS-IMPROVEMENT-LEDGER.md
           git commit -m "Persist $EDITION_DATE publication completion and closure evidence"
           git push origin "HEAD:$branch"
           echo "needed=true" >> "$GITHUB_OUTPUT"

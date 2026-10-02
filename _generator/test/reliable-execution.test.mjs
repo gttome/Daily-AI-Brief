@@ -47,11 +47,11 @@ test('unexpired lease prevents a second executor',async()=>{const store=fileOper
 test('same pinned job cannot quietly change its operation order',async()=>{const store=fileOperationStore(temp()),binding={job:'pin'};await drainOperations({store,binding,now,steps:[{id:'one',run:async()=>({})}]});await assert.rejects(drainOperations({store,binding,now,steps:[{id:'different',run:async()=>({})}]}),/pinned_execution_changed/);});
 test('fixture operation cannot assert real public completion',async()=>{const r=await drainOperations({store:fileOperationStore(temp()),binding:{evidence_type:'fixture'},now,steps:[{id:'public_closed',run:async()=>({verified:true})}]});assert.equal(r.publication_complete,false);});
 
-test('durable image job completes all phases with unchanged V2 validation',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet()),r=await executeRecoverableImage(e,f);assert.equal(r.status,'fixture_pass');assert.deepEqual(validateImageExecutionReceipt(r,e,{allowFixture:true}),[]);assert.ok(validateImageExecutionReceipt(r,e).length);assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:1,finalWrites:1});});
-test('accepted durable image is reused without generation, review or upload',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet());await executeRecoverableImage(e,f);const r=await executeRecoverableImage(e,f);assert.equal(r.reused,true);assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:1,finalWrites:1});});
+test('durable image job completes all phases with unchanged V2 validation',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet()),r=await executeRecoverableImage(e,f);assert.equal(r.status,'fixture_pass');assert.deepEqual(validateImageExecutionReceipt(r,e,{allowFixture:true}),[]);assert.ok(validateImageExecutionReceipt(r,e).length);assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:2,finalWrites:1});});
+test('accepted durable image is reused without generation, review or upload',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet());await executeRecoverableImage(e,f);const r=await executeRecoverableImage(e,f);assert.equal(r.reused,true);assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:2,finalWrites:1});});
 test('generation acknowledgement loss recovers real result before capture; no duplicate generation',async()=>{const f=fixture(),generate=f.host.generate;f.host.generate=async(...args)=>{await generate(...args);throw Error('generation ack lost');};const e=buildImageGenerationExecution(packet());let r=await executeRecoverableImage(e,f);assert.equal(r.accepted_locked,false);r=await executeRecoverableImage(e,{...f,signal:'native-response-now-visible'});assert.equal(r.status,'fixture_pass');assert.equal(f.counts.generation,1);});
-test('final upload acknowledgement loss resumes persistence, not generation or review',async()=>{const f=fixture(),ensure=f.transport.ensure;let lose=true;f.transport.ensure=async(...args)=>{const r=await ensure(...args);if(args[0].startsWith('briefs/')&&lose){lose=false;throw Error('final ack lost');}return r;};const e=buildImageGenerationExecution(packet());await executeRecoverableImage(e,f);const r=await executeRecoverableImage(e,{...f,signal:'storage-reconciled'});assert.equal(r.status,'fixture_pass');assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:1,finalWrites:1});});
-test('crash after raw capture resumes remaining phases with original bytes',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet());let once=true;await assert.rejects(executeRecoverableImage(e,{...f,afterSave:async v=>{if(once&&v.completed_operations.includes('capture')){once=false;throw Error('crash');}}}),/crash/);const r=await executeRecoverableImage(e,f);assert.equal(r.status,'fixture_pass');assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:1,finalWrites:1});});
+test('final upload acknowledgement loss resumes persistence, not generation or review',async()=>{const f=fixture(),ensure=f.transport.ensure;let lose=true;f.transport.ensure=async(...args)=>{const r=await ensure(...args);if(args[0].startsWith('briefs/')&&lose){lose=false;throw Error('final ack lost');}return r;};const e=buildImageGenerationExecution(packet());await executeRecoverableImage(e,f);const r=await executeRecoverableImage(e,{...f,signal:'storage-reconciled'});assert.equal(r.status,'fixture_pass');assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:2,finalWrites:1});});
+test('crash after raw capture resumes remaining phases with original bytes',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet());let once=true;await assert.rejects(executeRecoverableImage(e,{...f,afterSave:async v=>{if(once&&v.completed_operations.includes('capture')){once=false;throw Error('crash');}}}),/crash/);const r=await executeRecoverableImage(e,f);assert.equal(r.status,'fixture_pass');assert.deepEqual(f.counts,{generation:1,review:1,rawWrites:2,finalWrites:1});});
 test('quality rejection preserves review and raw without final upload',async()=>{const f=fixture(),review=f.host.review;f.host.review=async(...a)=>({...await review(...a),subject_match:'fail'});const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);assert.equal(r.quality_rejected,true);assert.equal(f.counts.finalWrites,0);assert.equal(r.state.results.review.subject_match,'fail');});
 test('missing native recovery capability consumes zero image attempts',async()=>{const f=fixture();delete f.host.recover;const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);assert.equal(r.attempts_allocated,0);assert.equal(f.counts.generation,0);});
 test('new shared executor profile cannot silently fall back to volatile execution',async()=>{const r=await executeImageRequest(buildImageGenerationExecution(packet()),{executionProfile:'reliable-edition-v1'});assert.equal(r.status,'CAPABILITY_BLOCKED_DURABLE_STORE_REQUIRED');assert.equal(r.attempts_allocated,0);});
@@ -111,3 +111,62 @@ test('a text-only readback cannot be accepted as binary persistence',async()=>{c
 test('a refreshed admission proof reuses the identical completed image job',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet());const first=await executeRecoverableImage(e,f);f.admission={...f.admission,verified_at:'2026-09-29T15:59:00Z',expires_at:'2026-09-29T17:30:00Z'};const second=await executeRecoverableImage(e,f);assert.equal(second.job_key,first.job_key);assert.equal(second.reused,true);assert.equal(f.counts.generation,1);});
 test('expired pre-generation admission consumes no attempt and leaves no generation intent',async()=>{const f=fixture(),e=buildImageGenerationExecution(packet());f.admission.expires_at='2026-09-29T15:59:00Z';const r=await executeRecoverableImage(e,f);assert.equal(r.status,'HOST_ADMISSION_EXPIRED');assert.equal(r.attempts_allocated,0);assert.equal(f.counts.generation,0);f.admission.expires_at='2026-09-29T17:00:00Z';const done=await executeRecoverableImage(e,f);assert.equal(done.status,'fixture_pass');assert.equal(f.counts.generation,1);});
 test('offline admission requires real recovered bytes, not true capability flags',()=>{const root=temp(),key='e'.repeat(64),bytes=png(),p=path.join(root,'_records/image-attempts/handoff-proof',key,'raw.png');fs.mkdirSync(path.dirname(p),{recursive:true});fs.writeFileSync(p,bytes);const proof={schema_version:'image-handoff-proof-v2',host_id:'declared-test-host',invocation_id:'test-invocation',native_result_id:'test-result',artifact_id:'test-artifact',release_sha:sha,evidence_type:'live',operation_key:key,git_readback_verified:true,git_commit_sha:sha,raw_sha256:hashBytes(bytes),git_blob_sha:gitBlob(bytes),verified_at:'2026-09-29T15:00:00Z',expires_at:'2026-09-29T17:00:00Z'};assert.equal(verifyAdmissionEvidence(root,proof,{releaseSha:sha,now:now()}).result,'pass');assert.throws(()=>verifyAdmissionEvidence(root,{...proof,raw_sha256:'0'.repeat(64)},{releaseSha:sha,now:now()}),/MISMATCH/);assert.throws(()=>verifyAdmissionEvidence(root,{...proof,evidence_type:'fixture'},{releaseSha:sha,now:now()}),/CAPABILITY_BLOCKED/);assert.throws(()=>verifyAdmissionEvidence(root,proof,{releaseSha:'f'.repeat(40),now:now()}),/CAPABILITY_BLOCKED/);assert.throws(()=>verifyAdmissionEvidence(root,proof,{releaseSha:sha,now:'2026-09-29T18:00:00Z'}),/EXPIRED/);});
+
+test('transient transfer recovers in the same drain without another image or review',async()=>{
+  const f=fixture(),ensure=f.transport.ensure;let n=0;
+  f.transport.ensure=async(...a)=>{if(n++===0)throw Object.assign(Error('reset'),{code:'ECONNRESET'});return ensure(...a);};
+  const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);
+  assert.equal(r.status,'fixture_pass');assert.equal(f.counts.generation,1);assert.equal(f.counts.review,1);
+});
+test('transient transfer budget is bounded and unchanged status ticks cannot loop',async()=>{
+  const f=fixture();let n=0;f.transport.ensure=async()=>{n++;throw Object.assign(Error('timeout'),{code:'ETIMEDOUT'});};
+  const e=buildImageGenerationExecution(packet()),r=await executeRecoverableImage(e,f);
+  assert.equal(r.blocker,'TRANSIENT_IMAGE_TRANSFER');assert.equal(n,3);
+  await executeRecoverableImage(e,f);assert.equal(n,3);assert.equal(f.counts.generation,1);
+});
+test('candidate is saved before review and renderer receives only the sealed prompt',async()=>{
+  const f=fixture(),g=f.host.generate,v=f.host.review;
+  f.host.generate=async(input,context)=>{assert.deepEqual(Object.keys(input).sort(),['output_count','prompt']);assert.ok(!input.prompt.includes('https://example.com'));return g(input,context);};
+  f.host.review=async(bytes,e,context)=>{assert.ok(f.stored.get(context.saved_asset.path).equals(bytes));assert.ok(context.saved_asset.path.endsWith('/candidate.png'));return v(bytes,e,context);};
+  assert.equal((await executeRecoverableImage(buildImageGenerationExecution(packet()),f)).status,'fixture_pass');
+});
+test('failed pixel criterion cannot be published despite four top-level PASS fields',async()=>{
+  const f=fixture(),review=f.host.review;
+  f.host.review=async(...a)=>({...await review(...a),visual_inspection:{method:'saved_image_visual_inspection',asset_sha256:a[2].sha256,criteria:{no_people:{verdict:'fail'}}}});
+  const r=await executeRecoverableImage(buildImageGenerationExecution(packet()),f);
+  assert.equal(r.quality_rejected,true);assert.equal(f.counts.finalWrites,0);assert.equal(f.counts.rawWrites,2);
+});
+test('actual blocked waiting time is recorded separately from operation time',async()=>{
+  const f=fixture(),e=buildImageGenerationExecution(packet()),ensure=f.transport.ensure;let unavailable=true;
+  f.transport.ensure=async(...a)=>{if(unavailable)throw Error('offline');return ensure(...a);};
+  await executeRecoverableImage(e,f);unavailable=false;
+  const r=await executeRecoverableImage(e,{...f,now:()=> '2026-09-29T16:02:00Z',signal:'transport_restored'});
+  const state=await f.store.load(r.job_key);assert.equal(operationView(state).timing.total_wait_ms,120000);
+});
+test('six-image unattended control rehearsal resumes a crash, rejects one image and recovers transfers',async()=>{
+  const {executeImageBatch}=await import('../lib/image-execution.mjs');
+  const f=fixture(),generate=f.host.generate,review=f.host.review,ensure=f.transport.ensure;
+  const ids=['m03','m01','m04','m05','m08','m07'],images=new Map(ids.map(id=>[id,fs.readFileSync(new URL(`../../_records/image-trials/2026-10-02-six-image/${id}/final.png`,import.meta.url))]));
+  const executions=ids.map(id=>{const p=packet(id);p.visual_brief+=' Mechanism '+id;return buildImageGenerationExecution(p);});
+  let reject=true,rawFailure=true,ackFailure=true,crash=true;
+  f.host.generate=async(input,c)=>{const g=await generate(input,c),id=ids.find(id=>input.prompt.includes('Mechanism '+id));g.bytes=Buffer.from(images.get(id));return g;};
+  f.host.review=async(...a)=>{const r=await review(...a);if(a[1].sealed_story_packet.candidate_id==='m04'&&reject){reject=false;r.editorial_quality='fail';}return r;};
+  f.transport.ensure=async(...a)=>{
+    if(a[0].endsWith('/raw.png')&&rawFailure){rawFailure=false;throw Object.assign(Error('transient'),{code:'ETIMEDOUT'});}
+    const r=await ensure(...a);
+    if(a[0].startsWith('briefs/')&&ackFailure){ackFailure=false;throw Object.assign(Error('ack lost'),{code:'ECONNRESET'});}
+    return r;
+  };
+  const options={...f,executionProfile:'reliable-edition-v1',operationStore:f.store,
+    afterSave:async v=>{if(crash&&f.counts.finalWrites===3&&v.completed_operations.includes('receipt')){crash=false;throw Error('runner_restart');}}};
+  await assert.rejects(executeImageBatch(executions,options),/runner_restart/);
+  const result=await executeImageBatch(executions,options);
+  assert.equal(result.status,'fixture_pass');assert.equal(result.results.length,6);
+  assert.deepEqual(f.counts,{generation:7,review:7,rawWrites:14,finalWrites:6});
+  assert.equal(result.unattended_image_stage_evidence_complete,false);
+  const before={...f.counts};await executeImageBatch(executions,options);assert.deepEqual(f.counts,before);
+  if(process.env.RUN5_CONTROL_REPORT_PATH)fs.writeFileSync(process.env.RUN5_CONTROL_REPORT_PATH,JSON.stringify({
+    schema_version:'unattended-control-rehearsal-v1',evidence_type:'fixture',result:'PASS',
+    scenarios:['six_images','quality_rejection','transient_raw_transfer','lost_final_acknowledgement','runner_restart','completed_reuse'],
+    counts:f.counts,live_generation_tested:false,live_quality_proven:false,run5_start_authorized:false},null,2)+'\n');
+});

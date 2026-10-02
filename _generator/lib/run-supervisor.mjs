@@ -219,6 +219,25 @@ export function eventLedgerDigest(events = []) {
   return 'sha256:' + hash(normalized + (normalized ? '\n' : ''));
 }
 
+/** A completed candidate becomes read-only before Task 23. Later reconciliation
+ * belongs to protected closure, never to the branch whose CI head is being merged. */
+export function publicationWriteBoundary(tasks = {}, events = []) {
+  const terminal=Array.from({length:30},(_,i)=>tasks[String(i).padStart(2,'0')]?.state==='Done').every(Boolean);
+  const candidateReady=Array.from({length:23},(_,i)=>tasks[String(i).padStart(2,'0')]?.state==='Done').every(Boolean);
+  const publicationStarted=events.some(e=>Number(e.task_id)>=23 && ['Active','Tested','Done'].includes(e.to));
+  return {write_allowed:!terminal && !candidateReady && !publicationStarted,
+    frozen:candidateReady || publicationStarted, terminal,
+    action:terminal?'none':candidateReady || publicationStarted?'protected_publication_handoff':'supervise',
+    reason:terminal?'terminal_run':candidateReady || publicationStarted?'publication_candidate_write_freeze_before_task23':'candidate_in_progress'};
+}
+
+export function latestRecoverableImage(records, {task_id,candidate_id} = {}) {
+  const relevant=records.filter(r=>r.task_id===task_id || (candidate_id && r.candidate_id===candidate_id));
+  if(relevant.some(r=>r.status==='accepted_locked')) return null;
+  return relevant.filter(r=>r.status==='rejected' && r.recovery_action)
+    .sort((a,b)=>Date.parse(a.rejected_at||0)-Date.parse(b.rejected_at||0)).at(-1)||null;
+}
+
 export function projectKanbanFromEvents({tasks = {}, events = [], execution_id, edition_id, observed_at = new Date().toISOString()} = {}) {
   if (!execution_id || !edition_id || !stamp(observed_at)) throw Error('kanban_projection_identity_required');
   const projection = {};

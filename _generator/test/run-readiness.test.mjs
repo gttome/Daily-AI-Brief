@@ -48,7 +48,7 @@ function goodInput(){
     },
     publication:{
       protected_ci:true,exact_sha_deploy:true,independent_live_verification:true,
-      success_state:'PUBLIC_CLOSED',cleanup_after_terminal:true
+      success_state:'PUBLIC_CLOSED',cleanup_after_terminal:true,candidate_write_freeze:true,generic_task29_closeout:true
     },
     cost_boundary:{chatgpt_work:false,codex:false,paid_apis:false,billable_overage:false,new_credentials:false},
     inheritance:{

@@ -2,9 +2,9 @@
 
 Canonical source: `data/operations/production-continuous-improvement-ledger.jsonl`
 
-Ledger digest: `sha256:54d103c1c815001de9f6760b57c9b66f6e1a05338d102f32a23ca209d63124d9`
+Ledger digest: `sha256:07f55b7edb04fb821ec6b2b988d1c4f70cd5724376342f65b882efd9dbf7e778`
 
-Problems: 27 · Events: 35
+Problems: 29 · Events: 39
 
 ## DAB-OPS-20260930-001 — Image progress reconciliation could loop without advancing
 
@@ -426,17 +426,17 @@ Problems: 27 · Events: 35
 - **First observed run:** reliable-edition-20261001-run4
 - **Task(s):** 23
 - **Symptom:** Minute-loop reconciliation commits moved the publication PR head between CI PASS and merge.
-- **Root cause:** Writer liveness remained enabled after the run entered exact-SHA protected publication.
+- **Root cause:** The Supervisor could continue committing while protected CI and merge depended on a stable candidate SHA.
 - **Operational impact:** A valid protected CI result became stale before merge and publication was delayed.
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Paused the existing Run 4 writer through protected main and confirmed the old Supervisor was cancelled before retriggering CI.
-- **Actual fix:** Write-freeze the run branch before protected publication and keep closure work on protected finalization paths.
-- **Fix outcome:** Final exact head ca3702a4b3e276456402257305fe39c3ec82b002 remained stable, passed CI and merged as ce3dac9d75949f381821dfd34163048bf08c65d6.
-- **Permanent implementation:** none
-- **Regression tests:** none
-- **Production invariants:** none
+- **Attempted fixes:** Paused the existing Run 4 writer through protected main and confirmed the old Supervisor was cancelled before retriggering CI. | Introduce an executable pre-lease and per-tick publication boundary and fault-oriented closure tests.
+- **Actual fix:** Freeze the run writer after Tasks00-22; automatically hand off to trusted candidate validation, exact-SHA CI/merge and existing Pages/live validation. Persist generic Task29 cleanup on the protected closure branch.
+- **Fix outcome:** Deterministic tests pass; no live Run5 publication or closure has been attempted. Existing Run4 closeout is preserved.
+- **Permanent implementation:** _generator/lib/frozen-publication.mjs, _generator/lib/production-run-closeout.mjs, .github/workflows/run-supervisor.yml, .github/workflows/publish-candidate.yml, .github/workflows/daily-delta-validation.yml
+- **Regression tests:** _generator/test/run5-unattended.test.mjs
+- **Production invariants:** publication_candidate_write_freeze_before_task23, protected_finalization_owns_post_publication_run_cleanup
 - **Recurrences:** none recorded
-- **Future validation:** Task 00 must prove publication_candidate_write_freeze_before_task23 | Task 00 must prove no run-branch mutation between exact-SHA CI PASS and merge
+- **Future validation:** Task 00 must prove publication_candidate_write_freeze_before_task23 | Task 00 must prove no run-branch mutation between exact-SHA CI PASS and merge | Prove the unchanged candidate SHA through CI and merge in an admitted future run. | Verify generic Task29 closure from real deployment and live-verification evidence.
 
 ## DAB-OPS-20261002-004 — Emergency publication path lacked the durable validated-event bridge required by closure
 
@@ -480,15 +480,51 @@ Problems: 27 · Events: 35
 - **First observed run:** image-pipeline-trial-20261002
 - **Task(s):** unknown
 - **Symptom:** The interactive tool created good images quickly, but GitHub Actions has no registered native generation/review host.
-- **Root cause:** Production readiness accepted image-path booleans without a scheduled-host evidence requirement.
+- **Root cause:** Interactive image quality and declared admission flags do not establish an unattended zero-cost production host.
 - **Operational impact:** not recorded
 - **Timing impact:** unknown / not safely inferable
-- **Attempted fixes:** Executed a real six-image interactive trial and recovered all raw/final files from Git.
-- **Actual fix:** Require a live scheduled-production host admission record and report CAPABILITY_BLOCKED for unsupported runner requests. Do not label the interactive trial zero-Work or autonomous.
-- **Fix outcome:** Interactive capture, review, transfer and recovery are demonstrated. Unattended generation within existing cost restrictions remains unproven.
-- **Permanent implementation:** _generator/lib/run-readiness.mjs, docs/operations/run-learning-readiness-contract.json, _tools/native-image-worker.py
-- **Regression tests:** _generator/test/run-readiness.test.mjs
+- **Attempted fixes:** Executed a real six-image interactive trial and recovered all raw/final files from Git. | Run the existing six-image batch engine with recovery faults and audit the live host registration.
+- **Actual fix:** Require a registered READY host and a digest-bound six-image live scheduled qualification report; recover raw/final files from its Git commit and validate each execution receipt before Task00 can pass.
+- **Fix outcome:** Control rehearsal PASS; actual unattended image qualification remains CAPABILITY_BLOCKED. No Run5 or paid/Work/Codex production adapter was started.
+- **Permanent implementation:** _generator/lib/run-readiness.mjs, docs/operations/run-learning-readiness-contract.json, _tools/native-image-worker.py, _tools/run-readiness.mjs, _generator/lib/unattended-image-qualification.mjs, docs/operations/unattended-image-host.json
+- **Regression tests:** _generator/test/run-readiness.test.mjs, _generator/test/run5-unattended.test.mjs, _generator/test/reliable-execution.test.mjs
 - **Production invariants:** none
 - **Recurrences:** none recorded
-- **Future validation:** Bind a supported unattended native image host and verify live generation, exact raw-byte recovery, saved-image review, transport and the zero-production-cost boundary before production.
+- **Future validation:** Bind a supported unattended native image host and verify live generation, exact raw-byte recovery, saved-image review, transport and the zero-production-cost boundary before production. | Bind and demonstrate a supported unattended generator and saved-image visual reviewer within the existing cost policy. | Recover all twelve raw/final files from the live six-image trial without generation; inspect quality evidence and measured waits.
+
+## DAB-OPS-20261002-007 — Recoverable transport errors and late visual rejection could delay image completion.
+
+- **Status:** permanently_fixed
+- **First observed run:** run5-preparation-20261002
+- **Task(s):** unknown
+- **Symptom:** not recorded
+- **Root cause:** Known transient transfer errors fell through to a generic blocked state; per-criterion visual failures could be caught after the final asset was persisted.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Exercise the existing durable engine with transfer faults and a saved-image visual rejection.
+- **Actual fix:** Retry recognized transport failures up to three operation attempts using the same bytes and operation key; save the review candidate before review and reject failed visual criteria before final persistence.
+- **Fix outcome:** Fault-injected six-image control rehearsal passes without transport-driven regeneration. This is fixture evidence, not live host admission.
+- **Permanent implementation:** _generator/lib/recoverable-image-job.mjs, _generator/lib/durable-operation.mjs
+- **Regression tests:** _generator/test/reliable-execution.test.mjs
+- **Production invariants:** transient_transfer_recovery_preserves_generation_and_review, review_candidate_persisted_before_inspection, visual_failure_stops_before_final_persistence
+- **Recurrences:** none recorded
+- **Future validation:** Measure actual unattended generation, capture, review, transport and waiting time on the registered live host.
+
+## DAB-OPS-20261002-008 — An earlier image rejection could influence recovery for a later image task.
+
+- **Status:** permanently_fixed
+- **First observed run:** run5-preparation-20261002
+- **Task(s):** unknown
+- **Symptom:** not recorded
+- **Root cause:** The Supervisor selected the latest rejection across all candidates and did not suppress rejections once that candidate was accepted_locked.
+- **Operational impact:** not recorded
+- **Timing impact:** unknown / not safely inferable
+- **Attempted fixes:** Trace the selector and test two candidate identities plus an accepted result.
+- **Actual fix:** Scope rejection recovery to the current task or its sealed ordinal-to-candidate binding, and preserve accepted_locked results.
+- **Fix outcome:** Regression tests reject cross-candidate recovery and stale rejected attempts.
+- **Permanent implementation:** _generator/lib/run-supervisor.mjs#latestRecoverableImage, _tools/run-supervisor.mjs
+- **Regression tests:** _generator/test/run5-unattended.test.mjs
+- **Production invariants:** image_recovery_is_candidate_scoped, accepted_image_suppresses_stale_rejection
+- **Recurrences:** none recorded
+- **Future validation:** Verify each image task maps to its own sealed candidate before dispatch.
 

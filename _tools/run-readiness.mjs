@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import {execFileSync} from 'node:child_process';
+import {createHash} from 'node:crypto';
+import {verifyUnattendedImageQualification} from '../_generator/lib/unattended-image-qualification.mjs';
 import {validateRunReadiness, staleActiveDecision, terminalCleanupReceipt, buildPromotionReview} from '../_generator/lib/run-readiness.mjs';
 
 const [,,command,...args]=process.argv;
@@ -14,7 +17,22 @@ const emit=x=>process.stdout.write(JSON.stringify(x,null,2)+'\n');
 try{
   if(command==='validate'){
     const input=flag('input'); if(!input) throw Error('input_required');
-    const result=validateRunReadiness(read(input)); emit(result); if(result.result!=='PASS') process.exitCode=1;
+    const value=read(input), result=validateRunReadiness(value);
+    if(value.run_number>=5) {
+      try {
+        const registration=read('docs/operations/unattended-image-host.json');
+        if(!registration.host_id || registration.status!=='READY') throw Error('NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST');
+        const ref=value.image_pipeline?.host_admission;
+        if(!ref || ref.receipt_path!==registration.qualification_receipt_path || !/^_records\/[\w/.-]+\.json$/.test(ref.receipt_path)||ref.receipt_path.includes('..')) throw Error('registered_qualification_receipt_required');
+        const bytes=fs.readFileSync(ref.receipt_path);
+        if(createHash('sha256').update(bytes).digest('hex')!==ref.receipt_sha256) throw Error('host_receipt_digest_mismatch');
+        const proof=verifyUnattendedImageQualification(JSON.parse(bytes),{hostId:registration.host_id,
+          readCommitted:(file,commit)=>execFileSync('git',['show',commit+':'+file],{maxBuffer:32*1024*1024})});
+        result.errors.push(...proof.errors);
+      } catch(error) {result.errors.push(error.message);}
+      result.errors=[...new Set(result.errors)];result.result=result.errors.length?'FAIL':'PASS';result.start_authorized=!result.errors.length;
+    }
+    emit(result); if(result.result!=='PASS') process.exitCode=1;
   }else if(command==='stale-active'){
     const input=flag('input'); if(!input) throw Error('input_required');
     emit(staleActiveDecision(read(input)));
