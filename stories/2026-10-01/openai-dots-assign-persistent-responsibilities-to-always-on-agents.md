@@ -2,7 +2,7 @@
 layout: default
 title: "OpenAI Dots assign persistent responsibilities to always-on agents"
 description: "OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-1f08333345fc"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-m07-cbcbcf61647e"
 permalink: /stories/2026-10-01/openai-dots-assign-persistent-responsibilities-to-always-on-agents/
 brief_date: 2026-10-01
 story_id: dab-story-2026-10-01-m07
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook responsibility-loop diagram showing a persistent Dot receiving a goal, working through a bounded cloud computer and connected apps, returning outputs for review, and incorporating feedback.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-1f08333345fc)
+![Textbook responsibility-loop diagram showing a persistent Dot receiving a goal, working through a bounded cloud computer and connected apps, returning outputs for review, and incorporating feedback.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m07-postrepair-1.png?v=oct1-m07-cbcbcf61647e)
 
 **Summary:** OpenAI introduced Dots as always-on agents with their own cloud computer, connected apps and feedback-driven personalization for continuing responsibilities.
 

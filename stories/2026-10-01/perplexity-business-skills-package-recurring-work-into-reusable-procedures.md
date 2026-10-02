@@ -2,7 +2,7 @@
 layout: default
 title: "Perplexity business Skills package recurring work into reusable procedures"
 description: "Perplexity and American Express introduced pre-built business Skills covering recurring finance, marketing, operations and hiring work; Skills package reusable instructions around required inputs and expected outputs."
-image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-cb59546b673a"
+image: "https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-m08-5d073551ee00"
 permalink: /stories/2026-10-01/perplexity-business-skills-package-recurring-work-into-reusable-procedures/
 brief_date: 2026-10-01
 story_id: dab-story-2026-10-01-m08
@@ -25,7 +25,7 @@ reader_release: true
 **Evidence:** Publisher Authored  
 **Availability:** Available
 
-![Textbook operating-knowledge diagram showing a reusable Business Skill with required inputs, instructions, expected output, four recurring business lanes, and a maintenance loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-cb59546b673a)
+![Textbook operating-knowledge diagram showing a reusable Business Skill with required inputs, instructions, expected output, four recurring business lanes, and a maintenance loop.](https://gttome.github.io/Daily-AI-Brief/briefs/images/2026-10-01/dab-edition-2026-10-01-m08-postrepair-1.png?v=oct1-m08-5d073551ee00)
 
 **Summary:** Perplexity and American Express introduced pre-built business Skills covering recurring finance, marketing, operations and hiring work; Skills package reusable instructions around required inputs and expected outputs.
 
