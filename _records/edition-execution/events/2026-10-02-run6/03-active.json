@@ -1,0 +1,13 @@
+{
+  "task_id": "03",
+  "from": "Backlog",
+  "to": "Active",
+  "at": "2026-10-02T23:09:26.000Z",
+  "reason_code": "BEGIN_FRESH_METADATA_DISCOVERY",
+  "operation": "discover_fresh_article_candidates",
+  "proof": {
+    "research_cutoff": "2026-10-02T23:09:26.000Z",
+    "prior_run5_selection_excluded": true,
+    "article_policy": "article-24-72-168-v1"
+  }
+}
