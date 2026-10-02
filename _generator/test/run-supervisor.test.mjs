@@ -10,6 +10,7 @@ import {
   validateTaskRecoveryContracts,
   taskRecoveryDecision,
   buildWorkerRequest,
+  buildEngineeringRepairRequest,
   projectKanbanFromEvents,
   kanbanProjectionFresh
 } from '../lib/run-supervisor.mjs';
@@ -110,6 +111,35 @@ test('all Tasks 00 through 29 require recovery contracts',()=>{
   assert.ok(validateTaskRecoveryContracts(bad).includes('task_recovery_missing:16'));
 });
 
+test('retry exhaustion enters one engineering repair epoch instead of dead-ending',()=>{
+  const c=contract();
+  c.tasks['15'].retry_limit=4;
+  c.tasks['15'].engineering_repair={
+    enabled:true,max_epochs:1,capability:'repository',
+    instruction:'Repair image mechanism before another attempt.',
+    required_proofs:['fresh_single_story_worker_isolation','small_png_exact_byte_transport_preflight_pass']
+  };
+  const classification=classifyRunHealth({task_state:'Blocked',blocked_recoverable:true});
+  const first=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:4,repairEpochs:0});
+  assert.equal(first.action,'engineering_repair');
+  assert.equal(first.repair_epoch,1);
+  const after=taskRecoveryDecision({classification,taskContract:c.tasks['15'],recoveryAttempts:4,repairEpochs:1});
+  assert.equal(after.action,'terminal_failure');
+});
+
+test('engineering repair request is deterministic and bound to exact run/task/epoch',()=>{
+  const args={
+    execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',task_id:'15',
+    instruction:'Repair exact mechanism',writer_generation:3,repair_epoch:1,
+    required_proofs:['proof-a','proof-b'],created_at:'2026-10-01T20:00:00Z'
+  };
+  const a=buildEngineeringRepairRequest(args), b=buildEngineeringRepairRequest(args);
+  assert.equal(a.request_key,b.request_key);
+  assert.equal(a.request_kind,'engineering_repair');
+  assert.equal(a.capability,'repository');
+  assert.equal(a.repair_epoch,1);
+});
+
 test('worker request is idempotent for the same durable recovery request',()=>{
   const args={execution_id:'run4',edition_id:'dab-edition-2026-10-01',branch:'b',task_id:'15',capability:'native_chatgpt',instruction:'Resume same image attempt',writer_generation:3,recovery_attempt:1,created_at:'2026-10-01T20:00:00Z'};
   assert.equal(buildWorkerRequest(args).request_key,buildWorkerRequest(args).request_key);
@@ -139,7 +169,10 @@ test('terminal classification always goes to Task 29 before supervisor stop',()=
 test('Supervisor workflow contains the one-minute loop, single concurrency lane and fenced writer',()=>{
   const y=fs.readFileSync('.github/workflows/run-supervisor.yml','utf8');
   assert.match(y,/group: daily-ai-brief-run-supervisor/);
-  assert.match(y,/cancel-in-progress: false/);
+  assert.match(y,/cancel-in-progress: true/);
+  assert.match(y,/_generator\/lib\/run-supervisor\.mjs/);
+  assert.match(y,/docs\/operations\/task-recovery-contracts\.json/);
+  assert.match(y,/takeover=true/);
   assert.match(y,/sleep 60/);
   assert.match(y,/writer-lease/);
   assert.match(y,/assert-fence/);

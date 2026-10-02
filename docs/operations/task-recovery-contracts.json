@@ -67,7 +67,20 @@
         "28",
         "29"
       ],
-      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation."
+      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation.",
+      "engineering_repair": {
+        "enabled": true,
+        "max_epochs": 1,
+        "capability": "repository",
+        "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. Preserve every accepted_locked image and all completed upstream tasks. For subject/context defects, require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+        "required_proofs": [
+          "fresh_single_story_worker_isolation",
+          "no_people_or_humanoid_visual_primitives",
+          "small_png_exact_byte_transport_preflight_pass",
+          "protected_ci_pass",
+          "operational_learning_updated"
+        ]
+      }
     },
     "12": {
       "task_id": "12",
@@ -99,7 +112,20 @@
         "28",
         "29"
       ],
-      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation."
+      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation.",
+      "engineering_repair": {
+        "enabled": true,
+        "max_epochs": 1,
+        "capability": "repository",
+        "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. Preserve every accepted_locked image and all completed upstream tasks. For subject/context defects, require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+        "required_proofs": [
+          "fresh_single_story_worker_isolation",
+          "no_people_or_humanoid_visual_primitives",
+          "small_png_exact_byte_transport_preflight_pass",
+          "protected_ci_pass",
+          "operational_learning_updated"
+        ]
+      }
     },
     "13": {
       "task_id": "13",
@@ -130,7 +156,20 @@
         "28",
         "29"
       ],
-      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation."
+      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation.",
+      "engineering_repair": {
+        "enabled": true,
+        "max_epochs": 1,
+        "capability": "repository",
+        "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. Preserve every accepted_locked image and all completed upstream tasks. For subject/context defects, require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+        "required_proofs": [
+          "fresh_single_story_worker_isolation",
+          "no_people_or_humanoid_visual_primitives",
+          "small_png_exact_byte_transport_preflight_pass",
+          "protected_ci_pass",
+          "operational_learning_updated"
+        ]
+      }
     },
     "14": {
       "task_id": "14",
@@ -160,7 +199,20 @@
         "28",
         "29"
       ],
-      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation."
+      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation.",
+      "engineering_repair": {
+        "enabled": true,
+        "max_epochs": 1,
+        "capability": "repository",
+        "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. Preserve every accepted_locked image and all completed upstream tasks. For subject/context defects, require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+        "required_proofs": [
+          "fresh_single_story_worker_isolation",
+          "no_people_or_humanoid_visual_primitives",
+          "small_png_exact_byte_transport_preflight_pass",
+          "protected_ci_pass",
+          "operational_learning_updated"
+        ]
+      }
     },
     "15": {
       "task_id": "15",
@@ -189,7 +241,20 @@
         "28",
         "29"
       ],
-      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation."
+      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation.",
+      "engineering_repair": {
+        "enabled": true,
+        "max_epochs": 1,
+        "capability": "repository",
+        "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. Preserve every accepted_locked image and all completed upstream tasks. For subject/context defects, require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+        "required_proofs": [
+          "fresh_single_story_worker_isolation",
+          "no_people_or_humanoid_visual_primitives",
+          "small_png_exact_byte_transport_preflight_pass",
+          "protected_ci_pass",
+          "operational_learning_updated"
+        ]
+      }
     },
     "16": {
       "task_id": "16",
@@ -217,7 +282,20 @@
         "28",
         "29"
       ],
-      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation."
+      "simplification_rule": "Preserve valid completed evidence; repair only the earliest invalid/currently blocked scope; never redo accepted artifacts without explicit invalidation.",
+      "engineering_repair": {
+        "enabled": true,
+        "max_epochs": 1,
+        "capability": "repository",
+        "instruction": "Repair the demonstrated image-production failure mechanism before authorizing another native image attempt. Preserve every accepted_locked image and all completed upstream tasks. For subject/context defects, require a fresh single-story worker using only the sealed image specification and prohibit orchestration/dashboard context leakage. For people/avatar defects, replace people/humanoid visual primitives with non-human artifacts such as documents, checklists, folders, role cards, process tokens or abstract symbols. For exact-PNG persistence defects, prove one approved exact-byte transport route end-to-end before generation. Put the repair through protected CI, record the operational-learning problem/fix/outcome, then create one bounded post-repair epoch for only the blocked candidate.",
+        "required_proofs": [
+          "fresh_single_story_worker_isolation",
+          "no_people_or_humanoid_visual_primitives",
+          "small_png_exact_byte_transport_preflight_pass",
+          "protected_ci_pass",
+          "operational_learning_updated"
+        ]
+      }
     },
     "17": {
       "task_id": "17",

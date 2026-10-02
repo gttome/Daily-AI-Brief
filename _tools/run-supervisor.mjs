@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {
   activeRunDecision, acquireWriterLease, assertWriterFence, classifyRunHealth, applyImmediateImageRecovery,
-  validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest,
+  validateTaskRecoveryContracts, taskRecoveryDecision, buildWorkerRequest, buildEngineeringRepairRequest,
   projectKanbanFromEvents, kanbanProjectionFresh
 } from '../_generator/lib/run-supervisor.mjs';
 
@@ -72,6 +72,17 @@ function currentTaskFromProjection(tasks){
   }
   return null;
 }
+function repairEpochState(runRoot,executionId,taskId){
+  const safeExec=executionId.replace(/[^A-Za-z0-9._-]/g,'_');
+  const file=path.join(runRoot,'_records/edition-execution/repair-epochs',safeExec,taskId+'.json');
+  if(!fs.existsSync(file)) return {epochs_completed:0,file,value:null};
+  try{
+    const value=JSON.parse(fs.readFileSync(file,'utf8'));
+    const epochs=Number(value.epochs_completed||value.repair_epoch||0);
+    return {epochs_completed:Number.isFinite(epochs)?Math.max(0,epochs):0,file,value};
+  }catch{return {epochs_completed:0,file,value:null};}
+}
+
 function workerState(runRoot,executionId){
   const file=path.join(runRoot,'_records/edition-execution/workers',executionId+'.json');
   if(!fs.existsSync(file)) return {state:'Unknown',file:null};
@@ -166,12 +177,22 @@ try{
       now:args.now||new Date().toISOString(),
       stale_threshold_ms:(taskContract?.stale_after_seconds||900)*1000
     });
+    const repairState=repairEpochState(runRoot,args['execution-id'],taskId);
     const decision=taskRecoveryDecision({
       classification,taskContract,
-      attempts:Number(args.attempts||0),recoveryAttempts:imageOverride.recovery_attempts
+      attempts:Number(args.attempts||0),recoveryAttempts:imageOverride.recovery_attempts,
+      repairEpochs:repairState.epochs_completed
     });
     let request=null;
-    if(['dispatch_normal','first_recovery','alternate_recovery'].includes(decision.action)){
+    if(decision.action==='engineering_repair'){
+      request=buildEngineeringRepairRequest({
+        execution_id:args['execution-id'],edition_id:args['edition-id'],branch:args.branch,
+        task_id:taskId,instruction:decision.instruction,
+        writer_generation:Number(args['writer-generation']),
+        repair_epoch:decision.repair_epoch,required_proofs:decision.required_proofs,
+        created_at:args.now||new Date().toISOString()
+      });
+    }else if(['dispatch_normal','first_recovery','alternate_recovery'].includes(decision.action)){
       let instruction=decision.instruction;
       let recoveryAttempt=imageOverride.recovery_attempts;
       if(image?.recovery_action){
@@ -191,7 +212,7 @@ try{
       schema_version:'run-supervisor-tick-v1',
       execution_id:args['execution-id'],execution_key:executionKey,edition_id:args['edition-id'],branch:args.branch,
       current_task:current,latest_task_event:latest,executor_state:executorState,
-      immediate_image_recovery:imageOverride,classification,decision,worker_request:request,
+      immediate_image_recovery:imageOverride,repair_epoch_state:repairState,classification,decision,worker_request:request,
       kanban:{fresh:fresh.fresh,reason:fresh.reason,expected_digest:fresh.expected_digest,observed_digest:fresh.observed_digest,file:path.relative(runRoot,kanban.file)},
       terminal
     });
