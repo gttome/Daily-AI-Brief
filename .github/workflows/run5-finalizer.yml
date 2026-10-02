@@ -69,7 +69,16 @@ jobs:
           git -C run config user.email "4189826+github-actions[bot]@users.noreply.github.com"
           git -C run fetch --no-tags origin main
           if ! git -C run merge-base --is-ancestor origin/main HEAD; then
-            git -C run merge --no-edit origin/main
+            if ! git -C run merge --no-edit origin/main; then
+              conflicts="$(git -C run diff --name-only --diff-filter=U)"
+              if [ "$conflicts" != "data/operations/active-production-run.json" ]; then
+                echo "Unexpected merge conflicts: $conflicts" >&2
+                exit 1
+              fi
+              git -C run checkout --ours data/operations/active-production-run.json
+              git -C run add data/operations/active-production-run.json
+              git -C run commit --no-edit
+            fi
           fi
 
       - name: Acquire fenced writer authority for Tasks 18-21
