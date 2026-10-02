@@ -1,0 +1,14 @@
+{
+  "task_id": "07",
+  "from": "Active",
+  "to": "Done",
+  "at": "2026-10-02T13:27:45Z",
+  "reason": "Verified two source-diverse podcast episodes published before the frozen cutoff under the primary freshness tier.",
+  "proof": {
+    "podcasts_path": "_records/editorial/2026-10-02-run5/podcasts.json",
+    "count": 2,
+    "source_diverse": true,
+    "result": "PASS",
+    "writer_generation": 2
+  }
+}
