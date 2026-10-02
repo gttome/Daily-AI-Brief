@@ -49,6 +49,7 @@ export function validateReadingSupport(edition,data=catalog){
 }
 export function renderReadingSupport(item,id,date,kind='Article'){
  if(date<'2026-09-12')return '';
+ if(kind!=='Article')return '';
  const x=(catalog.editions[date]||[]).find(x=>x.item_id===id);
  const seconds=item.runtime_seconds;
  const minutes=sourceReadingMinutes(item,id);
