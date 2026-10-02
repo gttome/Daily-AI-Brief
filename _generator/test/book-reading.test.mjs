@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import {renderBody} from '../lib/render.mjs';
 import {readerFoundationFiles} from '../lib/reader.mjs';
-import {renderBookReading,validateBookReading} from '../lib/book-reading.mjs';
+import {bookMappingIdentity,renderBookReading,validateBookReading} from '../lib/book-reading.mjs';
 const edition=JSON.parse(fs.readFileSync('_data/editions/2026-09-12.json'));
 const catalog=JSON.parse(fs.readFileSync('_data/book-reading.json'));
 test('historical approved reading remains byte-compatible in edition and permanent article, video and podcast',()=>{
@@ -83,4 +83,12 @@ test('latest edition must record at least one verified Professional Series mappi
   assert.ok(Array.isArray(catalog.editions[latest])&&catalog.editions[latest].length>=1,`Professional Series mapping required for latest edition ${latest}`);
   assert.doesNotThrow(()=>validateBookReading(current,catalog));
  }
+});
+
+test('historical mapping identity ignores reader-facing why edits but detects remapping',()=>{
+ const original=[{item_id:'story-a',reference_id:'reliable-verification',label:'READ DEEPER',why:'Old internal copy.'}];
+ const copy=[{...original[0],why:'Use this section to understand the mechanism in reader-facing terms.'}];
+ assert.deepEqual(bookMappingIdentity(copy),bookMappingIdentity(original));
+ const remapped=[{...copy[0],reference_id:'reliable-handoffs'}];
+ assert.notDeepEqual(bookMappingIdentity(remapped),bookMappingIdentity(original));
 });
