@@ -66,16 +66,35 @@ test('fixture PASS records cannot stand in for six live scheduled image receipts
   assert.equal(r.result,'BLOCKED');assert.ok(r.errors.includes('live_unattended_qualification_required'));
 });
 
-test('Task00 CLI rejects Run5 even if admission flags are supplied without a registered host',()=>{
+test('Task00 CLI starts Run5 non-image work while keeping image/publication blocked without a registered host',()=>{
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'run5-admission-'));
   try {
-    const input={run_number:5,image_pipeline:{host_admission:{evidence_type:'live',trigger:'scheduled',execution_mode:'production',generation_executor:'native_chatgpt_image_generation',review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,receipt_path:'_records/invented.json',receipt_sha256:'a'.repeat(64)}}};
-    const file=path.join(dir,'input.json');fs.writeFileSync(file,JSON.stringify(input));
+    const base={
+      schema_version:'run-learning-readiness-v2',run_number:5,edition_date:'2026-10-02',
+      edition_id:'dab-edition-2026-10-02',execution_id:'reliable-edition-20261002-run5',
+      latest_successful_run:{terminal_state:'PUBLIC_CLOSED',closed_at:'2026-10-02T04:00:00Z'},
+      previous_run_cleanup:{result:'PASS'},
+      operational_learning:{result:'PASS',ledger_digest:'sha256:'+'a'.repeat(64),event_count:43,problem_count:31,required_invariants:[],unresolved_risks:[]},
+      control_plane:{one_writer:true,controller_available:true,run_supervisor_enabled:true,supervisor_scope:'reliable-edition-20261002-run5',supervisor_until_terminal_cleanup:true,watchdog_enabled:true,writer_fencing_enabled:true,supervisor_interval_seconds:60,stale_active_threshold_ms:900000,no_competing_writer:true,actionable_blocked_recovery_tested:true,stale_active_recovery_tested:true,duplicate_run_rejection_tested:true},
+      image_pipeline:{path:'production-image-execution-v2:generate-transfer-verify-review-accept',exact_byte_capture:true,saved_asset_review:true,accepted_locked_required:true,svg_fallback_enabled:false,low_quality_fallback_enabled:false,small_png_persistence_route:'direct_git_data_create_blob_base64',small_png_readback_identity_verified:true,host_admission:{evidence_type:'live',trigger:'scheduled',execution_mode:'production',generation_executor:'native_chatgpt_image_generation',review_method:'saved_image_visual_inspection',saved_bytes_recovered:true,zero_production_cost_verified:true,receipt_path:'_records/invented.json',receipt_sha256:'a'.repeat(64)}},
+      timing:{append_only_transition_ledger:true,kanban_derived_from_events:true,kanban_digest_bound:true,executor_state_visible:true,missing_timestamps_never_inferred:true},
+      content_contract:{story_count:6,allocation:'2/2/2',agent_skills_story_count:1,videos:2,podcasts:2,podcast_source_diversity:true,watchlist_refresh:true,professional_series_books_considered:4,professional_story_images:6},
+      publication:{protected_ci:true,exact_sha_deploy:true,independent_live_verification:true,success_state:'PUBLIC_CLOSED',cleanup_after_terminal:true,candidate_write_freeze:true,generic_task29_closeout:true},
+      cost_boundary:{chatgpt_work:false,codex:false,paid_apis:false,billable_overage:false,new_credentials:false},
+      inheritance:{controller_matches_latest_success:true,supervisor_matches_latest_success_or_current_baseline:true,image_path_matches_latest_success:true,publication_path_matches_latest_success:true,all_permanent_fixes_present:true,unexplained_regressions_absent:true}
+    };
+    const file=path.join(dir,'input.json');fs.writeFileSync(file,JSON.stringify(base));
     fs.mkdirSync(path.join(dir,'docs/operations'),{recursive:true});
     fs.writeFileSync(path.join(dir,'docs/operations/unattended-image-host.json'),JSON.stringify({host_id:null,status:'CAPABILITY_BLOCKED'}));
     const r=spawnSync(process.execPath,[new URL('../../_tools/run-readiness.mjs',import.meta.url).pathname,'validate','--input',file],{encoding:'utf8',cwd:dir});
-    const result=JSON.parse(r.stdout);assert.equal(result.start_authorized,false);assert.equal(r.status,1);
-    assert.ok(result.errors.includes('NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST'));
+    const result=JSON.parse(r.stdout);
+    assert.equal(r.status,0);
+    assert.equal(result.result,'PASS');
+    assert.equal(result.start_authorized,true);
+    assert.equal(result.start_scope,'non_image_production');
+    assert.equal(result.image_tasks_authorized,false);
+    assert.equal(result.publication_authorized,false);
+    assert.ok(result.deferred_blockers.includes('image_host:NO_SUPPORTED_UNATTENDED_NATIVE_IMAGE_HOST'));
   } finally {fs.rmSync(dir,{recursive:true,force:true});}
 });
 test('purported live qualification must recover real execution receipts and exact files',()=>{
