@@ -1,0 +1,38 @@
+{
+  "schema_version": "pre-next-run-synthetic-scheduled-request-v1",
+  "rehearsal_id": "pre-next-run-five-change-20261002-r1",
+  "mode": "NON_PRODUCTION",
+  "status": "queued_for_scheduled_consumer",
+  "created_at": "2026-10-02T21:32:43Z",
+  "execution_id": "synthetic-pre-next-run-20261002-01",
+  "edition_id": "synthetic-edition-pre-next-run-2026-10-02",
+  "branch": "rehearsal/pre-next-run-five-change-2026-10-02",
+  "task_id": "11",
+  "capability": "native_chatgpt",
+  "reusable_consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "writer_generation": 1,
+  "writer_generation_is_provenance": true,
+  "authority_refresh_required_at_invocation": true,
+  "rehearsal_no_generation": true,
+  "generation_calls_allowed": 0,
+  "image_edits_allowed": 0,
+  "publication_mutation_allowed": false,
+  "run5_mutation_allowed": false,
+  "required_evidence": {
+    "refresh_protected_main": true,
+    "verify_host_registration": true,
+    "verify_consumer_identity": true,
+    "current_writer_generation_before": 2,
+    "reject_request_generation_as_mutation_authority": true,
+    "acquire_fresh_task_specific_generation": true,
+    "release_reason": "TASK_11_DONE_HANDOFF_TO_SUPERVISOR",
+    "preserve_completed_tasks": [
+      "00"
+    ],
+    "no_duplicate_execution": true
+  },
+  "output_paths": {
+    "consumer_result": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-consumer-result.json",
+    "writer_release": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-writer-release.json"
+  }
+}

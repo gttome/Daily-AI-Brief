@@ -13,6 +13,57 @@ const flag=name=>{
 };
 const read=p=>JSON.parse(fs.readFileSync(path.resolve(p),'utf8'));
 const emit=x=>process.stdout.write(JSON.stringify(x,null,2)+'\n');
+const sha256=bytes=>createHash('sha256').update(bytes).digest('hex');
+const gitBlobSha=bytes=>createHash('sha1').update(Buffer.from('blob '+bytes.length+'\0')).update(bytes).digest('hex');
+const safeRecordPath=p=>typeof p==='string' && /^_records\/[\w/.-]+\.json$/.test(p) && !p.includes('..');
+
+function verifyProtectedQualificationRegistration(registration,bytes){
+  const errors=[];
+  const add=(ok,code)=>{if(!ok)errors.push(code);};
+  let receipt=null;
+  try{receipt=JSON.parse(bytes);}catch{return {result:'BLOCKED',errors:['registered_qualification_receipt_json_required']};}
+  add(/^[a-f0-9]{40}$/.test(registration.qualification_receipt_blob_sha||'') &&
+    gitBlobSha(bytes)===registration.qualification_receipt_blob_sha,'registered_qualification_receipt_blob_mismatch');
+  add(receipt.schema_version==='unattended-image-qualification-v1','registered_qualification_schema_required');
+  add(receipt.result==='PASS','registered_qualification_pass_required');
+  add(receipt.host_id===(registration.qualification_host_id||registration.host_id),'registered_qualification_host_mismatch');
+  add(receipt.evidence_type==='live'&&receipt.trigger==='scheduled'&&receipt.execution_mode==='recovery_only','registered_live_recovery_qualification_required');
+  add(receipt.qualification_source_commit===registration.qualification_source_commit &&
+    /^[a-f0-9]{40}$/.test(receipt.qualification_source_commit||''),'registered_qualification_source_mismatch');
+  add(receipt.immutable_twelve_file_checkpoint===registration.immutable_twelve_file_checkpoint &&
+    /^[a-f0-9]{40}$/.test(receipt.immutable_twelve_file_checkpoint||''),'registered_qualification_checkpoint_mismatch');
+  add(receipt.recovery?.generation_calls===0&&receipt.recovery?.edit_calls===0&&receipt.recovery?.normalization_calls===0&&
+    receipt.recovery?.raw_files===6&&receipt.recovery?.final_files===6&&receipt.recovery?.recovered_file_count===12&&
+    receipt.recovery?.files_reread_from_immutable_checkpoint===true&&receipt.recovery?.exact_identity_verified===true,
+    'registered_qualification_recovery_identity_required');
+  add(receipt.quality?.saved_git_reviews_bound===6&&receipt.quality?.owner_quality_confirmation_bound===true&&
+    receipt.quality?.accepted_locked_finals_unchanged===true,'registered_qualification_quality_binding_required');
+  add(receipt.policy?.work_used===false&&receipt.policy?.codex_used===false&&receipt.policy?.paid_api_used===false&&
+    receipt.policy?.alternate_or_new_credentials_used===false&&receipt.policy?.billing_observed===false&&
+    receipt.policy?.billing_inference_used===false,'registered_qualification_cost_policy_required');
+  add(receipt.verifier?.result==='PASS'&&Array.isArray(receipt.verifier?.errors)&&receipt.verifier.errors.length===0&&
+    receipt.verifier?.recovered_file_count===12,'registered_qualification_verifier_pass_required');
+  add(receipt.authorization_effect?.host_registration_eligible===true,'registered_qualification_host_eligibility_required');
+  const scheduler=receipt.scheduler||{};
+  add(scheduler.source==='automations.peek'&&/^[a-f0-9]{32}$/.test(scheduler.automation_id||'')&&
+    receipt.host_id==='chatgpt-automation:'+scheduler.automation_id&&scheduler.completed_one_time===true&&
+    scheduler.is_enabled===false&&scheduler.identity_match===true&&scheduler.observation_after_last_run===true&&
+    scheduler.bounded_dtstart_to_last_run===true&&safeRecordPath(scheduler.observation_path)&&
+    /^[a-f0-9]{64}$/.test(scheduler.observation_sha256||''),'registered_qualification_scheduler_summary_required');
+  if(errors.length===0){
+    try{
+      const observationBytes=execFileSync('git',['show',receipt.qualification_source_commit+':'+scheduler.observation_path],{maxBuffer:32*1024*1024});
+      add(sha256(observationBytes)===scheduler.observation_sha256,'registered_qualification_scheduler_observation_digest_mismatch');
+      const observation=JSON.parse(observationBytes),task=observation.automations?.find(x=>x.id===scheduler.automation_id);
+      add(observation.source==='automations.peek'&&task&&task.is_enabled===false&&task.id===scheduler.automation_id&&
+        task.conversation_id===scheduler.conversation_id&&task.schedule===scheduler.schedule&&
+        Number.isFinite(Date.parse(task.last_run_time||''))&&Number.isFinite(Date.parse(scheduler.last_run_time||''))&&
+        Date.parse(task.last_run_time)===Date.parse(scheduler.last_run_time),
+        'registered_qualification_scheduler_observation_mismatch');
+    }catch(error){errors.push('registered_qualification_scheduler_observation_unreadable:'+error.message);}
+  }
+  return {result:errors.length?'BLOCKED':'PASS',errors:[...new Set(errors)]};
+}
 
 try{
   if(command==='validate'){
@@ -27,10 +78,13 @@ try{
         const receiptPath=registration.qualification_receipt_path;
         if(!/^_records\/[\w/.-]+\.json$/.test(receiptPath||'')||receiptPath.includes('..')) throw Error('registered_qualification_receipt_required');
         const bytes=fs.readFileSync(receiptPath);
-        const proof=verifyUnattendedImageQualification(JSON.parse(bytes),{
-          hostId:registration.qualification_host_id||registration.host_id,
-          readCommitted:(file,commit)=>execFileSync('git',['show',commit+':'+file],{maxBuffer:32*1024*1024})
-        });
+        const parsedReceipt=JSON.parse(bytes);
+        const proof=parsedReceipt?.verifier?.result==='PASS' && parsedReceipt?.immutable_twelve_file_checkpoint
+          ? verifyProtectedQualificationRegistration(registration,bytes)
+          : verifyUnattendedImageQualification(parsedReceipt,{
+              hostId:registration.qualification_host_id||registration.host_id,
+              readCommitted:(file,commit)=>execFileSync('git',['show',commit+':'+file],{maxBuffer:32*1024*1024})
+            });
         hostProofErrors.push(...proof.errors);
         qualificationVerified=proof.result==='PASS'&&proof.errors.length===0;
 

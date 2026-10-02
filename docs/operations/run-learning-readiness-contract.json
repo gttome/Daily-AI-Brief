@@ -222,13 +222,31 @@
       "required_dispatch_state": "QUEUED_FOR_SCHEDULED_CONSUMER",
       "request_writer_generation_semantics": "scheduling_provenance_only",
       "production_mutation_authority": "refreshed fenced lease acquired by scheduled consumer at invocation",
-      "next_production_run_gate": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json must PASS before allocation"
+      "next_production_run_gate": "_records/hardening/pre-next-run-five-change-2026-10-02/rehearsal-receipt.json must PASS before allocation",
+      "reusable_consumer_stable_schedule": "exact hourly scheduler with explicit America/Chicago TZID",
+      "nonproduction_handoff_rehearsal_path": ".github/workflows/run-supervisor-handoff.yml rehearsal/** branch-local pointer guarded by mode=NON_PRODUCTION, production_allocation=false, image_generation_allowed=false and synthetic execution identity"
     },
     "visible_text_guard": {
       "phase": "pretransport_review",
       "rule": "When a story specification defines an exact visible-text allowlist, any additional language, pseudo-text, microcopy, faux document lines, code-like glyphs or text-like marks fail the candidate before final Git persistence.",
       "primitive_rule": "Document, card, ribbon and interface-like visual primitives must be text-free unless the specific visible label is allowlisted.",
       "retry_policy": "Use only the existing bounded attempt budget; simplify text-bearing primitives before reducing explanatory detail or professional quality."
+    },
+    "qualification_receipt_validation": {
+      "source": "protected unattended-image-host registration",
+      "summary_receipt_supported": true,
+      "summary_receipt_required_checks": [
+        "Git blob identity matches qualification_receipt_blob_sha",
+        "schema/result/host/evidence/trigger/recovery-only mode match protected registration",
+        "qualification_source_commit and immutable_twelve_file_checkpoint match protected registration",
+        "zero generation/edit/normalization recovery and exact 12-file identity are asserted",
+        "six saved-Git reviews, owner quality confirmation and accepted finals remain bound",
+        "Work/Codex/paid API/new credentials/billing inference remain false",
+        "embedded verifier result is PASS with zero errors and recovered_file_count=12",
+        "completed one-time qualification scheduler observation digest and exact disabled task identity verify against qualification_source_commit"
+      ],
+      "raw_report_fallback": "Only non-summary qualification inputs are passed to verifyUnattendedImageQualification.",
+      "invariant": "A protected PASS summary must never be reinterpreted as though it were the low-level verifier input schema."
     }
   },
   "kanban": {

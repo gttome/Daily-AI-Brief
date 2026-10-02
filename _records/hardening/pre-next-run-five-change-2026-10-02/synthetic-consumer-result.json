@@ -1,0 +1,66 @@
+{
+  "schema_version": "pre-next-run-synthetic-consumer-result-v1",
+  "rehearsal_id": "pre-next-run-five-change-20261002-r1",
+  "mode": "NON_PRODUCTION",
+  "result": "PASS",
+  "observed_at": "2026-10-02T21:48:48.468Z",
+  "invoked_at": "2026-10-02T21:48:48.468Z",
+  "automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+  "execution_id": "synthetic-pre-next-run-20261002-01",
+  "edition_id": "synthetic-edition-pre-next-run-2026-10-02",
+  "branch": "rehearsal/pre-next-run-five-change-2026-10-02",
+  "task_id": "11",
+  "capability": "native_chatgpt",
+  "rehearsal_no_generation": true,
+  "protected_main_sha_observed": "25675f9e13e2cdf77ebc109cf2c33f31303004f1",
+  "host_registration": {
+    "path": "docs/operations/unattended-image-host.json",
+    "blob_sha": "ef443a9c1c3d14de3949cffb9e376e2a86509173",
+    "status": "READY",
+    "reusable_consumer_automation_id": "6abeb9a2b8a88191949dc420d5e10feb",
+    "binding_verified": true
+  },
+  "request_evidence": {
+    "path": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-task11-request.json",
+    "blob_sha": "6a25728476d102e3aa568073670fb804058b87df",
+    "branch_head_before_consumption": "3f93dc4bd204bd2296e7577df3e60a77b5bc2d65",
+    "status_observed": "queued_for_scheduled_consumer",
+    "writer_generation": 1
+  },
+  "prestate_evidence": {
+    "path": "_records/hardening/pre-next-run-five-change-2026-10-02/synthetic-prestate.json",
+    "blob_sha": "628ce6666d12b699c6580eaf99ec790fbb836c9b",
+    "branch_head_before_consumption": "3f93dc4bd204bd2296e7577df3e60a77b5bc2d65",
+    "current_writer_generation_before": 2,
+    "supervisor_owner_id": "synthetic-supervisor:pre-next-run-five-change"
+  },
+  "authority": {
+    "request_generation": 1,
+    "request_generation_is_provenance_only": true,
+    "stale_request_generation_rejected_as_mutation_authority": true,
+    "current_generation_before": 2,
+    "fresh_authority_generation": 3,
+    "generation_is_greater_than_current": true,
+    "owner_id": "scheduled-consumer:6abeb9a2b8a88191949dc420d5e10feb:synthetic-pre-next-run-20261002-01:task-11:generation-3",
+    "task_specific": true,
+    "same_execution": true
+  },
+  "completed_tasks": [
+    "00"
+  ],
+  "completed_tasks_preserved": true,
+  "no_duplicate_execution": true,
+  "generation_calls": 0,
+  "image_edit_calls": 0,
+  "image_normalization_calls": 0,
+  "image_persistence_calls": 0,
+  "image_review_calls": 0,
+  "publication_mutations": 0,
+  "run5_mutations": 0,
+  "production_content_mutations": 0,
+  "notes": [
+    "Synthetic scheduling/fencing/handoff proof only.",
+    "No image was generated, edited, normalized, persisted, or reviewed.",
+    "Run 5, publication state, active production pointers, public pages, and production content were unchanged."
+  ]
+}
